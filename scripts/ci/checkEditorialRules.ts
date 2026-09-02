@@ -2,7 +2,7 @@
 /**
  * Editorial CI rules gate for AFRIK fiches — ETNI-32.
  *
- * Enforces four decolonial-posture rules on the fiches under
+ * Enforces five decolonial-posture rules on the fiches under
  * `dataset/source/afrik/`:
  *
  *   Rule 1 — Endonym (autonym) required.
@@ -32,6 +32,12 @@
  *     not declare renders exactly like one that resolves, so the claim reads
  *     as sourced while citing nothing.
  *
+ *   Rule 5 — Reader-facing register.
+ *     `gaps[].reason`, `sources[].title` and `sources[].notes` are rendered to
+ *     the visitor verbatim, so they may carry no repository path, no JSON field
+ *     path, no raw corpus identifier and none of the pipeline's own vocabulary.
+ *     See `docs/editorial/reader-facing-register.md`.
+ *
  *   Rule 3 — DoctrineLinkCard snapshot presence.
  *     If `classification_status` ∈ {contested, colonial-legacy}, look for a
  *     test file in the repo referencing `DoctrineLinkCard`. If no such test
@@ -56,6 +62,7 @@ export type RuleName =
   | "sources-count"
   | "doctrine-link-card-snapshot"
   | "source-ref-resolves"
+  | "reader-facing-register"
   | "json-parse";
 
 export interface RuleResult {
@@ -72,6 +79,9 @@ export interface Fiche {
   confidence?: string | null;
   classification_status?: string | null;
   classificationStatus?: string | null;
+  gaps?: unknown[];
+  sources?: unknown[];
+  names?: unknown[];
   content?: {
     appellations?: { selfAppellation?: string | null };
     decolonialHeader?: { selfAppellation?: string | null };
@@ -385,6 +395,140 @@ export function checkDoctrineLinkCardSnapshot(
   };
 }
 
+// ───── Rule 5: reader-facing register ─────────────────────────────────────
+
+const REGISTER_RULE: RuleName = "reader-facing-register";
+
+export interface ProseField {
+  path: string;
+  text: string;
+}
+
+/**
+ * The prose a fiche publishes verbatim.
+ *
+ * `gaps[].reason` is rendered by `FieldProvenanceMarker` and the `sources[]`
+ * entries by the Sources chapter, neither of which draws a curation/reader
+ * distinction: whatever the corpus holds in these three fields is what the
+ * visitor reads. Name fiches nest their sources one level deeper.
+ *
+ * Every other string in a fiche — `_meta.directives` included — is authoring
+ * metadata that no surface renders, and stays the curator's to write.
+ */
+export function readerFacingProseFields(fiche: Fiche): ProseField[] {
+  const fields: ProseField[] = [];
+
+  const pushSources = (sources: unknown, prefix: string): void => {
+    if (!Array.isArray(sources)) return;
+    sources.forEach((source, i) => {
+      if (!isRecord(source)) return;
+      for (const key of ["title", "notes"] as const) {
+        const value = source[key];
+        if (typeof value === "string" && value.trim() !== "") {
+          fields.push({ path: `${prefix}[${i}].${key}`, text: value });
+        }
+      }
+    });
+  };
+
+  if (Array.isArray(fiche.gaps)) {
+    fiche.gaps.forEach((gap, i) => {
+      if (!isRecord(gap)) return;
+      const reason = gap.reason;
+      if (typeof reason === "string" && reason.trim() !== "") {
+        fields.push({ path: `gaps[${i}].reason`, text: reason });
+      }
+    });
+  }
+
+  pushSources(fiche.sources, "sources");
+
+  if (Array.isArray(fiche.names)) {
+    fiche.names.forEach((entry, i) => {
+      if (!isRecord(entry)) return;
+      pushSources(entry.sources, `names[${i}].sources`);
+    });
+  }
+
+  return fields;
+}
+
+/**
+ * What marks a sentence as written for the curator rather than for the reader.
+ *
+ * Three kinds, and the third is the one worth naming. A repository path or a
+ * raw `PPL_`/`FLG_`/`PAT_` identifier is obvious once seen. The pipeline's own
+ * vocabulary is not: "la file d'attente des candidats", "le protocole de
+ * recherche par fiche", "la revue claim-level reste requise" all read as
+ * ordinary French, so they survived every review — while telling the visitor
+ * about a work queue, a research backlog and an unresolved tier that describe
+ * how the atlas is made, not what it knows.
+ *
+ * The reader is owed the silence itself ("l'atlas ne documente pas encore ce
+ * point"), never the reason the workshop has not filled it yet.
+ */
+export const INTERNAL_REGISTER_PATTERNS: ReadonlyArray<{
+  label: string;
+  pattern: RegExp;
+}> = [
+  {
+    label: "repository path",
+    pattern: /\b(?:dataset|docs|scripts|src|public)\/[\w./-]+/,
+  },
+  { label: "file name", pattern: /\b[\w-]+\.json\b/ },
+  {
+    label: "JSON field path",
+    pattern:
+      /\b(?:content|_meta)\.\w+|\bfieldPath\b|\bsourceRefs\b|\bsourceKey\b|\bverificationLead\b|\btargetPatronymeId\b|\bclassificationStatus\b/,
+  },
+  {
+    label: "raw corpus identifier",
+    pattern: /\b(?:PPL|FLG|PAT)_[A-Z0-9_]+/,
+  },
+  {
+    label: "curation vocabulary",
+    pattern:
+      /file d'attente|passe de recherche|passe anthroponymique|protocole de recherche|claim-level|tier hérité|hors corpus|plan de couverture|vague \d+ du plan/i,
+  },
+  { label: "internal corpus label", pattern: /Corpus AFRIK\s*—/i },
+];
+
+/**
+ * `_`-prefixed files under the corpus are the curator's own worksheets — the
+ * candidate queue, the coverage findings, the manifest. Nothing loads them and
+ * no surface renders them, so their notes are allowed to stay notes.
+ */
+export function isCuratorWorksheet(relPath: string): boolean {
+  return path.basename(relPath).startsWith("_");
+}
+
+export function checkReaderFacingRegister(
+  fiche: Fiche,
+  file: string
+): RuleResult[] {
+  if (isCuratorWorksheet(file)) return [];
+
+  const slug = getSlug(fiche, file);
+  const findings: RuleResult[] = [];
+
+  for (const field of readerFacingProseFields(fiche)) {
+    for (const { label, pattern } of INTERNAL_REGISTER_PATTERNS) {
+      const hit = field.text.match(pattern);
+      if (hit === null) continue;
+      findings.push({
+        rule: REGISTER_RULE,
+        severity: "error",
+        file,
+        slug,
+        message: `${field.path} is published verbatim to the reader but carries a ${label} ("${hit[0]}"). Say what the atlas does not know; never how the workshop knows it does not.`,
+      });
+      break;
+    }
+  }
+
+  return findings;
+}
+
 // ───── Loader ─────────────────────────────────────────────────────────────
 
 interface LoadedFiche {
@@ -522,6 +666,8 @@ export function runEditorialRules(opts: RunOptions): RunResult {
     if (r3) findings.push(r3);
 
     findings.push(...checkPatronymeSourceRefs(fiche, relPath));
+
+    findings.push(...checkReaderFacingRegister(fiche, relPath));
   }
 
   const annotations = findings.map(formatAnnotation);

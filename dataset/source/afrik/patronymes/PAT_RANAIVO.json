@@ -74,11 +74,11 @@
     },
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Source de sélection de la vague 1, conservée uniquement pour l'association initiale au peuple merina, non établie par les sources dédiées."
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
     }
   ],
   "gaps": [

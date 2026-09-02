@@ -98,7 +98,14 @@ describe("ETNI-1684 first clan-name dossiers", () => {
         tier: "unverified",
         source_kind: "repository",
       });
-      expect(corpusSource.notes).toContain("revue claim-level");
+      // The note names the people fiche and the chapter the passage was taken
+      // from — the reader's form of that provenance. This used to be asserted
+      // on "revue claim-level", a curator's to-do the fiche published verbatim
+      // in its Sources chapter; the "never silently promoted" half of the
+      // invariant is the tier / source_kind assertion just above.
+      expect(corpusSource.notes).toMatch(
+        /^Reprise du chapitre « .+ » de la fiche du peuple .+\./
+      );
 
       for (const source of raw.sources as Source[]) {
         expect(

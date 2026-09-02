@@ -61,11 +61,11 @@
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "La graphie exacte Ojulu provient de dataset/source/afrik/patronymes/_candidates-by-country.json et reste non vérifiée. La recherche dédiée a trouvé Ojula/Ajula dans The Anuak Legacy, mais aucune source ne permet d’assimiler sans réserve Ojulu à cette forme ; la source AI est donc conservée uniquement pour signaler la provenance de la graphie exacte."
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
     },
     {
       "sourceKey": "osterlund-anuak-legacy-2021",

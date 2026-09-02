@@ -104,11 +104,11 @@
   "sources": [
     {
       "sourceKey": "corpus-ppl-bambara-organisation",
-      "title": "Corpus AFRIK — PPL_BAMBARA, organisation clanique",
+      "title": "EthniAfrica — fiche du peuple Bambara, organisation clanique",
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_MANDE/PPL_BAMBARA.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Bambara."
     },
     {
       "sourceKey": "jansen-sunjata-paradigm",
@@ -142,7 +142,7 @@
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'Histoire générale de l'Afrique documente amplement Ngolo Diarra (1766-1790) et la dynastie des Ngolosi qui lui succède, mais le présente comme un ton-jon parvenu au pouvoir : elle ne rattache à aucun moment son jamu au clan bamana Jara. Le lien serait une homonymie de patronyme, que ce champ écarte, et non une descendance. Aucun autre porteur décédé n'a été rattaché au clan."
+      "reason": "L'Histoire générale de l'Afrique documente amplement Ngolo Diarra (1766-1790) et la dynastie des Ngolosi qui lui succède, mais le présente comme un ton-jon parvenu au pouvoir : elle ne rattache à aucun moment son jamu au clan bamana Jara. Le lien serait une homonymie de patronyme, que ce champ écarte, et non une descendance. Aucun autre porteur n'a été rattaché au clan."
     },
     {
       "fieldPath": "homonyms",

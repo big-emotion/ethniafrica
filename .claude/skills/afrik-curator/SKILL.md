@@ -80,6 +80,13 @@ These are failure conditions, not preferences.
 10. **A real person's name never yields their ethnic origin.** DEC-040 and RGPD art. 9.
     Living individuals are not listed as bearers unless they have publicly
     self-identified, cited as their own statement. This is absolute.
+11. **`gaps[].reason`, `sources[].title` and `sources[].notes` are published verbatim.**
+    No repository path, no JSON field path, no raw `PPL_`/`FLG_`/`PAT_` identifier, and
+    none of your own working vocabulary — _file d'attente_, _la passe_, _protocole de
+    recherche_, _revue claim-level_, _tier hérité_. Say what the atlas does not know, never
+    why the workshop has not filled it yet. Working notes belong in `_meta.directives` or
+    the `_`-prefixed worksheets. Enforced by `checkEditorialRules.ts`
+    (`reader-facing-register`); doctrine in `docs/editorial/reader-facing-register.md`.
 
 When the user's input conflicts with a rule, say so. Do not quietly accommodate.
 

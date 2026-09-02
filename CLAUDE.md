@@ -212,6 +212,14 @@ A fiche sourced only at `unverified` is published and visibly marked low-confide
 
 Keep colonial-era names but explain why they are problematic, and always surface the autonym. `checkEditorialRules.ts` enforces: an autonym is required at `confidence >= medium`, and ≥2 sources when `classification_status` is `contested` or `colonial-legacy`.
 
+### Reader-facing register
+
+Three fiche fields are published to the reader **verbatim**, with no sanitising layer: `gaps[].reason`, `sources[].title` and `sources[].notes` (nested under `names[].sources[]` on name fiches). Everything else, `_meta.directives` included, is authoring metadata nothing renders.
+
+So those three may carry no repository path, no JSON field path, no raw `PPL_`/`FLG_`/`PAT_` identifier, and none of the pipeline's own vocabulary — _file d'attente_, _la passe_, _protocole de recherche_, _revue claim-level_, _tier hérité_. That last class is the one that got through: it carries no path and no identifier, so it reads as ordinary French, and 774 name fiches told their visitors which queue they came from and which research protocol they awaited. **The reader is owed the silence itself, never the reason the workshop has not filled it yet.**
+
+`checkEditorialRules.ts` enforces this as `reader-facing-register` at error severity; the banned vocabulary is one exported constant, `INTERNAL_REGISTER_PATTERNS`. Doctrine, rewrite table and a paste-able prompt block for curation sessions: `docs/editorial/reader-facing-register.md`.
+
 ### TypeScript
 
 `strict: false`, `strictNullChecks: false`, `noImplicitAny: false`. The compiler will not catch nullability here — tests are the real gate. `@/` aliases `src/`.

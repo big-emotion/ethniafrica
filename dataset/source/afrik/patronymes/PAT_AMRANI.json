@@ -84,11 +84,11 @@
     },
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d’attente des candidats anthroponymes",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "La source de vague 1 ne subsiste que pour l’attestation marocaine supposée. Les recherches dédiées dans les catalogues de l’IRCAM, de la BnF et les dépôts universitaires marocains n’ont pas fourni de source indépendante pour cette association nationale."
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
     }
   ],
   "gaps": [

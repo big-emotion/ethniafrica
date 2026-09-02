@@ -118,11 +118,11 @@
   "sources": [
     {
       "sourceKey": "corpus-ppl-dioula-organisation",
-      "title": "Corpus AFRIK — PPL_DIOULA, organisation clanique",
+      "title": "EthniAfrica — fiche du peuple Dioula, organisation clanique",
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Dioula."
     },
     {
       "sourceKey": "niane-1960",

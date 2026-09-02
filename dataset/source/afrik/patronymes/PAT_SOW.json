@@ -70,11 +70,11 @@
   "sources": [
     {
       "sourceKey": "corpus-ppl-wolof-organisation",
-      "title": "Corpus AFRIK — PPL_WOLOF, organisation clanique",
+      "title": "Fiche des Wolof de l'atlas — organisation clanique",
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_ATLANTIQUE/PPL_WOLOF.json#content.organization.clanOrganization. Cette source interne maintient l’association wolof et les pays Sénégal, Gambie et Mauritanie au niveau non vérifié, dans l’attente d’une revue claim-level."
+      "notes": "Reprise du chapitre « organisation clanique » de la fiche du peuple wolof. L’association wolof et les pays Sénégal, Gambie et Mauritanie restent au niveau non vérifié tant qu’aucune source dédiée à ce nom ne les confirme."
     },
     {
       "sourceKey": "familysearch-sow-dafn",

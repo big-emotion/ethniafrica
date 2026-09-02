@@ -84,11 +84,11 @@
   "sources": [
     {
       "sourceKey": "corpus-ppl-ndau-moz-organisation",
-      "title": "Corpus AFRIK — PPL_NDAU_MOZ, organisation clanique",
+      "title": "EthniAfrica — fiche du peuple Ndau, organisation clanique",
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDAU_MOZ.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Ndau."
     },
     {
       "sourceKey": "nomina-africana-nguni-naming",
@@ -108,17 +108,17 @@
     },
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
     }
   ],
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "Deux choses distinctes, que la rédaction précédente confondait. Les izithakazelo lient bien un clan à ses ancêtres et non deux clans entre eux : il n'y a pas chez les Nguni d'équivalent du sanankuya mandingue, cousinage à plaisanterie institué par paires. Mais l'alliance entre clans nommés existe et Bryant la documente — sujétion négociée, adoption d'un lignage réfugié, mariage politique. Ce qui bloque le champ est que targetPatronymeId doit désigner un PAT_ existant : les partenaires attestés n'ont pas de fiche."
+      "reason": "Deux choses distinctes, que la rédaction précédente confondait. Les izithakazelo lient bien un clan à ses ancêtres et non deux clans entre eux : il n'y a pas chez les Nguni d'équivalent du sanankuya mandingue, cousinage à plaisanterie institué par paires. Mais l'alliance entre clans nommés existe et Bryant la documente — sujétion négociée, adoption d'un lignage réfugié, mariage politique. Le champ ne peut désigner qu'un nom ayant lui-même une fiche dans l'atlas : les partenaires attestés n'en ont pas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

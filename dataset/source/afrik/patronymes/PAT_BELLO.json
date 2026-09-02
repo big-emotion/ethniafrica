@@ -104,7 +104,7 @@
     },
     {
       "fieldPath": "countries.CMR",
-      "reason": "La recherche ciblée « Bello Cameroun site:gouv.cm » et les sources académiques consultées n'ont pas confirmé l'attestation camerounaise héritée de la file d'attente ; elle a donc été retirée."
+      "reason": "La recherche ciblée « Bello Cameroun site:gouv.cm » et les sources académiques consultées n'ont pas confirmé l'attestation camerounaise non sourcée ; elle a donc été retirée."
     },
     {
       "fieldPath": "alliances",

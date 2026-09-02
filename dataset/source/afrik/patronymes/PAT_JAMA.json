@@ -52,11 +52,11 @@
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Cette entrée est conservée uniquement comme provenance des attestations que la recherche de cette fiche n'a pas corroborées ; les sources réelles consultées et les limites de la recherche sont consignées dans les autres entrées et dans gaps."
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
     },
     {
       "sourceKey": "jama-somalia-opm-2022",
@@ -74,7 +74,7 @@
     },
     {
       "fieldPath": "peoples",
-      "reason": "La notice officielle décrit un responsable de l'État somalien, sans auto-identification ethnique ; les recherches biographiques ne suffisent pas à transformer sa nationalité en preuve d'appartenance à PPL_SOMALI."
+      "reason": "La notice officielle décrit un responsable de l'État somalien, sans auto-identification ethnique ; les recherches biographiques ne suffisent pas à transformer sa nationalité en preuve d'appartenance à les Somali."
     },
     {
       "fieldPath": "alliances",

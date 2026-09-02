@@ -113,11 +113,11 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "Roscoe documente bien des rattachements nommés entre ebika — le clan du Chien au clan de la Civette, ceux du Chacal et du Corbeau à celui de la Loutre — et une seconde institution d'alliance : les clans écartés du trône donnaient leurs filles à d'autres clans pour que leurs petits-fils redeviennent éligibles. L'alliance ganda existe donc et est attestée par paires nommées. Aucune de ces paires ne relie deux des quatre ebika dotés d'une fiche, et le champ exige un targetPatronymeId présent dans le corpus : c'est la couverture du corpus qui bloque, non la documentation."
+      "reason": "Roscoe documente bien des rattachements nommés entre ebika — le clan du Chien au clan de la Civette, ceux du Chacal et du Corbeau à celui de la Loutre — et une seconde institution d'alliance : les clans écartés du trône donnaient leurs filles à d'autres clans pour que leurs petits-fils redeviennent éligibles. L'alliance ganda existe donc et est attestée par paires nommées. Aucune de ces paires ne relie deux des quatre ebika dotés d'une fiche, et le champ exige un nom déjà présent dans l'atlas : c'est la couverture du corpus qui bloque, non la documentation."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Les sections claniques de Roscoe nomment abondamment — chefs, prêtres, médiums, épouses royales. Mais Roscoe établit au même chapitre que ces noms sont des titres transmis au successeur, et que le détenteur « parle des événements passés comme s'il y avait assisté », au point de se dire le père de gens morts depuis longtemps. Enregistrer l'un d'eux en porteur individuel décédé reviendrait à prendre une charge pour une personne. L'absence n'est pas ici un défaut de recherche mais une propriété du système."
+      "reason": "Les sections claniques de Roscoe nomment abondamment — chefs, prêtres, médiums, épouses royales. Mais Roscoe établit au même chapitre que ces noms sont des titres transmis au successeur, et que le détenteur « parle des événements passés comme s'il y avait assisté », au point de se dire le père de gens morts depuis longtemps. Enregistrer l'un d'eux en porteur individuel reviendrait à prendre une charge pour une personne. L'absence n'est pas ici un défaut de recherche mais une propriété du système."
     },
     {
       "fieldPath": "homonyms",

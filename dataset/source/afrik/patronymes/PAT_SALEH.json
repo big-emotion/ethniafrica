@@ -61,11 +61,11 @@
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
     },
     {
       "sourceKey": "btn-surname-saleh",
@@ -73,7 +73,7 @@
       "url": "https://surnames.behindthename.com/name/saleh",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle classe Saleh comme nom de famille arabe formé sur le nom personnel Salih. Elle n'établit pas les rattachements tchadien ou égyptien de la file d'attente."
+      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle classe Saleh comme nom de famille arabe formé sur le nom personnel Salih. Elle n'établit pas les rattachements tchadien ou égyptien."
     }
   ],
   "gaps": [
@@ -87,7 +87,7 @@
     },
     {
       "fieldPath": "peoples",
-      "reason": "Les recherches exactes « Saleh anthroponymie », « Saleh onomastique », « Saleh surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. La ou les sources propres au nom ne démontrent pas une association exclusive avec les peuples indiqués par la file d'attente ; ces rattachements restent non vérifiés."
+      "reason": "Les recherches exactes « Saleh anthroponymie », « Saleh onomastique », « Saleh surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. La ou les sources propres au nom ne démontrent pas une association exclusive avec les peuples indiqués ; ces rattachements restent non vérifiés."
     },
     {
       "fieldPath": "alliances",
@@ -107,7 +107,7 @@
     },
     {
       "fieldPath": "countries",
-      "reason": "Les sources propres à « Saleh » ne suffisent pas à confirmer les pays hérités de la file d'attente ; les recherches exactes par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
+      "reason": "Les sources propres à « Saleh » n'ont pas confirmé les pays où il est porté ; les recherches par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
     }
   ]
 }

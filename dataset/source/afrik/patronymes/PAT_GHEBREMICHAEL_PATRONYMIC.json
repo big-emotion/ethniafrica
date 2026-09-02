@@ -99,7 +99,7 @@
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au nom par une source dédiée lors de la passe ; dans ce système, le partage d'un second élément n'établit aucune parenté."
+      "reason": "Aucun porteur n'a pu être rattaché au nom par une source dédiée ; dans ce système, le partage d'un second élément n'établit aucune parenté."
     },
     {
       "fieldPath": "homonyms",

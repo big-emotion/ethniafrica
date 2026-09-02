@@ -113,11 +113,11 @@
   "sources": [
     {
       "sourceKey": "corpus-ppl-bambara-organisation",
-      "title": "Corpus AFRIK — PPL_BAMBARA, organisation clanique",
+      "title": "EthniAfrica — fiche du peuple Bambara, organisation clanique",
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_MANDE/PPL_BAMBARA.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Bambara."
     },
     {
       "sourceKey": "jansen-sunjata-paradigm",

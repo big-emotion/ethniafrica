@@ -391,11 +391,17 @@ export const translations = {
       nonHereditaryGuidance:
         "Ce patronyme n'est pas transmis de façon héréditaire : il ne se lit pas comme un nom de famille au sens européen. Sa portée varie selon la région — les peuples et pays ci-dessous indiquent où ce mode de nommage est documenté.",
       bearersTitle: "Porteurs et porteuses",
-      // DEC-040: no code path derives a living person's ethnic origin from
-      // this patronyme, and this note states that editorial guarantee to
-      // the reader rather than leave it implicit in what the list omits.
+      // DEC-040: no code path derives a person's ethnic origin from this
+      // patronyme, and this note states that editorial guarantee to the reader
+      // rather than leave it implicit in what the list omits.
+      //
+      // It used to open on the eligibility class DEC-040 actually defines —
+      // "des personnes publiques ou décédées" — which made a section that
+      // simply lists who bears a name read as a search through the dead. The
+      // guarantee is the point; who qualifies is a curation rule, and it is
+      // stated second and without the word.
       bearersEditorialNote:
-        "Cette liste ne mentionne que des personnes publiques ou décédées, ou s'étant elles-mêmes revendiquées de ce patronyme. Elle ne permet de déduire l'origine ethnique d'aucune personne vivante à partir de ce nom.",
+        "N'y figurent que des personnalités publiques ou historiques, et des personnes qui se sont elles-mêmes reconnues dans ce nom. La liste documente le nom : elle ne permet de déduire l'origine ethnique d'aucune personne qui le porte.",
       roleCategoryFallback: "Rôle non renseigné",
       // The name dimension as the people and country fiches carry it
       // (REQ-133, `docs/design/name-to-country-linking.md`). The country

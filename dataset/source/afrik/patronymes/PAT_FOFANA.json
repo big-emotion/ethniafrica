@@ -104,11 +104,11 @@
   "sources": [
     {
       "sourceKey": "corpus-ppl-dioula-organisation",
-      "title": "Corpus AFRIK — PPL_DIOULA, organisation clanique",
+      "title": "EthniAfrica — fiche du peuple Dioula, organisation clanique",
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Dioula."
     },
     {
       "sourceKey": "jansen-sunjata-paradigm",
@@ -138,7 +138,7 @@
   "gaps": [
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a été rattaché au jamu Fofana par les sources de cette passe : ni l'Histoire générale de l'Afrique, qui nomme pourtant clan par clan les lignages ralliés à Soundiata, ni le dictionnaire des jamuw, ni Charry ne l'attachent à une personne."
+      "reason": "Aucun porteur n'a été rattaché au jamu Fofana par les sources consultées : ni l'Histoire générale de l'Afrique, qui nomme pourtant clan par clan les lignages ralliés à Soundiata, ni le dictionnaire des jamuw, ni Charry ne l'attachent à une personne."
     },
     {
       "fieldPath": "homonyms",

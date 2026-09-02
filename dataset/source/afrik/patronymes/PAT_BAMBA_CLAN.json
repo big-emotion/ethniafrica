@@ -96,11 +96,11 @@
   "sources": [
     {
       "sourceKey": "corpus-ppl-dioula-organisation",
-      "title": "Corpus AFRIK — PPL_DIOULA, organisation clanique",
+      "title": "EthniAfrica — fiche du peuple Dioula, organisation clanique",
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Dioula."
     },
     {
       "sourceKey": "jansen-sunjata-paradigm",
@@ -112,11 +112,11 @@
     },
     {
       "sourceKey": "afrik-pass-distinction-2026-09",
-      "title": "Distinction posée par la passe de recherche anthroponymique AFRIK (septembre 2026)",
+      "title": "Rapprochement établi par la rédaction de l'atlas (septembre 2026)",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Rapprochement établi par la passe elle-même, non repris d'une source consultée. Étiqueté conformément à la doctrine des tiers : texte généré, donc unverified x ai_generated, soit un poids de confiance de 0,2. Sert aux seuls constats de non-recouvrement entre deux traditions de nomination, jamais à porter une étymologie ni une généalogie. Une source dédiée reste due sur chacun des points qu'il couvre."
+      "notes": "Rapprochement établi par la rédaction de l'atlas et non repris d'une source consultée : il est publié au palier le plus bas et signalé comme généré. Il ne sert qu'au constat de non-recouvrement entre deux traditions de nomination, jamais à porter une étymologie ni une généalogie. Une source dédiée reste due sur chacun des points qu'il couvre."
     },
     {
       "sourceKey": "bamadaba-jamuw",
@@ -134,7 +134,7 @@
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a été rattaché au jamu par les sources de cette passe : ni l'Histoire générale de l'Afrique, qui ne connaît le mot Bamba que comme toponyme, ni le dictionnaire des jamuw, qui localise l'entrée à Sikasso sans nommer personne. Le porteur le mieux documenté du nom, Cheikh Ahmadou Bamba Mbacké, relève précisément de l'homonymie signalée plus haut et non de ce jamu."
+      "reason": "Aucun porteur n'a été rattaché au jamu par les sources consultées : ni l'Histoire générale de l'Afrique, qui ne connaît le mot Bamba que comme toponyme, ni le dictionnaire des jamuw, qui localise l'entrée à Sikasso sans nommer personne. Le porteur le mieux documenté du nom, Cheikh Ahmadou Bamba Mbacké, relève précisément de l'homonymie signalée plus haut et non de ce jamu."
     }
   ]
 }

@@ -53,11 +53,11 @@
     },
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file produite hors corpus. Elle est conservée uniquement comme trace de l'hypothèse que Yalinga serait un patronyme centrafricain ; aucune source nominative indépendante n'a été trouvée pour la confirmer."
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
     }
   ],
   "gaps": [
@@ -67,7 +67,7 @@
     },
     {
       "fieldPath": "peoples",
-      "reason": "Les recherches ciblées sur Yalinga et les Banda n'ont trouvé qu'un toponyme centrafricain ; aucune source dédiée n'a confirmé l'association à PPL_BANDA, qui provenait seulement de la file de candidats et a été retirée."
+      "reason": "Les recherches ciblées sur Yalinga et les Banda n'ont trouvé qu'un toponyme centrafricain ; aucune source dédiée n'a confirmé l'association à les Banda, qui provenait seulement de la file de candidats et a été retirée."
     },
     {
       "fieldPath": "countries",

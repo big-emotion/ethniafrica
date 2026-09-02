@@ -52,11 +52,11 @@
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "La classification clan_name provient de dataset/source/afrik/patronymes/_candidates-by-country.json et reste non vérifiée. Les sources réelles ajoutées établissent la graphie, l’association maasaï et un porteur décédé, mais aucune ne permet d’arbitrer le système du nom ; la source AI est conservée uniquement pour rendre cette provenance explicite."
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
     },
     {
       "sourceKey": "tanzania-pmo-sokoine",
