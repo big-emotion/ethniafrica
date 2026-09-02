@@ -54,21 +54,44 @@ function stripQuotes(scalar: string): string {
   return quoted ? quoted[1] : scalar;
 }
 
+interface StepContext {
+  /** The key this `run:` is nested under — `with:` means it is an input. */
+  parentKey: string | null;
+  /** The step's declared `shell:`, when one precedes the `run:`. */
+  shell: string | null;
+}
+
 /**
- * The step's `shell:` is looked up backwards only. Every declaration in this
- * repository precedes its `run:`, which is also the conventional ordering; a
- * trailing one would be checked as bash and fail loudly rather than silently.
+ * One backward walk answers both questions a `run:` key raises. The `shell:` is
+ * looked up backwards only: every declaration in this repository precedes its
+ * `run:`, which is also the conventional ordering, and a trailing one would be
+ * checked as bash — a loud failure rather than a silent skip.
  */
-function shellBefore(lines: string[], runIndex: number, keyIndent: number) {
+function contextOf(
+  lines: string[],
+  runIndex: number,
+  keyIndent: number
+): StepContext {
+  let shell: string | null = null;
+
   for (let index = runIndex - 1; index >= 0; index -= 1) {
     const line = lines[index];
     if (line.trim() === "") continue;
-    if (indentOf(line) < keyIndent) return null;
+
+    const indent = indentOf(line);
+    if (indent < keyIndent) {
+      const parent = line.match(/^\s*(?:-\s+)?([A-Za-z_][\w-]*):/);
+      return { parentKey: parent ? parent[1] : null, shell };
+    }
+    if (indent > keyIndent) continue;
+
     const declared = line.match(SHELL_KEY);
-    if (declared && indentOf(line) === keyIndent) return declared[2];
-    if (SEQUENCE_ITEM.test(line) && indentOf(line) < keyIndent) return null;
+    if (declared && !shell) shell = declared[2];
+    // A sequence dash at this indent starts the step, so nothing above it belongs to it.
+    if (SEQUENCE_ITEM.test(line)) return { parentKey: null, shell };
   }
-  return null;
+
+  return { parentKey: null, shell };
 }
 
 export function extractRunScripts(content: string): RunScript[] {
@@ -79,11 +102,12 @@ export function extractRunScripts(content: string): RunScript[] {
     const key = lines[index].match(RUN_KEY);
     if (!key) continue;
 
-    // `run:` under a `with:` block is an action input, not a shell script. A
-    // step's own `run:` is either the first key of the sequence item or aligned
-    // with its siblings, never nested deeper than the mapping it belongs to.
     const keyIndent = lines[index].indexOf("run:");
-    const shell = shellBefore(lines, index, keyIndent);
+    const { parentKey, shell } = contextOf(lines, index, keyIndent);
+
+    // `run:` nested under `with:` is an input an action happens to have named
+    // `run`, not a shell script — parsing it as bash invents a finding.
+    if (parentKey === "with") continue;
     if (shell && !BASH_COMPATIBLE_SHELLS.has(shell)) continue;
 
     const remainder = key[2].trim();

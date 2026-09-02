@@ -69,13 +69,17 @@ describe("extractRunScripts", () => {
   });
 
   // @req REQ-085
-  it("ignores a run key that belongs to a with: block rather than a step", () => {
+  it("ignores a run input of an action, keeping the step's own run", () => {
     const workflow = `      - uses: owner/action@sha
         with:
-          command: npm ci
+          run: this is prose, not a shell script - "
+
+      - run: npm ci
 `;
 
-    expect(extractRunScripts(workflow)).toEqual([]);
+    expect(extractRunScripts(workflow)).toEqual([
+      { line: 5, script: "npm ci" },
+    ]);
   });
 });
 
