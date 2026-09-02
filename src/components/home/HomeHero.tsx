@@ -134,9 +134,15 @@ export function HomeHero({
       <div className="home-hero-seam" aria-hidden="true" />
 
       <style>{`
+        /* overflow-x, and clip rather than hidden. The band needs the 100vw
+           bleed bounded, but overflow:hidden bound both axes and so trapped
+           the search panel that opens under the field — which is why that
+           panel used to sit in the flow and push the page down. Unlike
+           hidden, clip does not force the other axis to a scroll container,
+           so overflow-y stays genuinely visible. */
         .home-hero {
           position: relative;
-          overflow: hidden;
+          overflow-x: clip;
           width: 100vw;
           margin-left: calc(50% - 50vw);
           margin-right: calc(50% - 50vw);
