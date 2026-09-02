@@ -821,7 +821,134 @@ export const RESEARCH = {
         "dédiée n'a permis de rattacher une personne décédée nommément au clan " +
         "plutôt qu'au seul patronyme."
     ),
-    sourceKeys: ["bolaaro-clans-peuls"],
+    // The 1734 memoir is the oldest written attestation of the name found, and
+    // it settles the one question the clan blog could not: whether Jallo is a
+    // heritable family name or a link in the Arabic-style patronymic chain.
+    // Bluett states both forms side by side for the same man.
+    origin: {
+      oralTraditions: [],
+      writtenChronicles: [
+        {
+          claim:
+            "La plus ancienne attestation écrite du nom relevée lors de la " +
+            "passe date de 1734. Bluett y consigne que les compatriotes " +
+            "d'Ayuba Suleiman Diallo « se désignent par les noms de leurs " +
+            "ancêtres » et remontent plusieurs degrés, « bien qu'ils aient " +
+            "aussi des noms de famille pour distinguer leurs familles " +
+            "particulières » ; il donne pour le même homme la chaîne " +
+            "patronymique HYUBA, BOON SALUMENA, BOON HIBRAHEMA — Ayuba fils " +
+            "de Suleiman fils d'Ibrahim — puis, distinctement, « The Surname " +
+            "of his Family is Jallo ». Le nom est donc déjà, en 1734, un nom " +
+            "de famille héréditaire tenu pour distinct de la filiation " +
+            "énoncée degré par degré.",
+          claimStatus: "established",
+          sourceRefs: ["bluett-1734-job-jallo"],
+        },
+        {
+          claim:
+            "Bluett situe la famille à Boonda, dans le Bundu, sur le haut " +
+            "Sénégal, et rapporte que le grand-père d'Ayuba, Ibrahim, y avait " +
+            "fondé la ville une cinquantaine d'années plus tôt sous le règne " +
+            "de Bubaker, roi du Futa, cumulant la propriété éminente du lieu " +
+            "et la charge de grand prêtre (alpha) ; il y avait institué que " +
+            "nul s'y réfugiant ne pût être réduit en esclavage. La géographie " +
+            "de Bluett est celle des cartes de son temps et se contredit " +
+            "elle-même : la revendication clanique du Fouta-Djalon et cette " +
+            "lignée du Bundu ne sont pas rapportées l'une à l'autre par une " +
+            "source consultée.",
+          claimStatus: "claimed",
+          sourceRefs: ["bluett-1734-job-jallo"],
+        },
+      ],
+      linguisticReconstructions: [
+        {
+          claim:
+            "Le nom relève des quatre clans par lesquels les Fulɓe se " +
+            "reconnaissent — Diallo, Bâ, Barry et Sow — dont la quadripartition " +
+            "structure l'identification clanique du Fouta.",
+          claimStatus: "claimed",
+          sourceRefs: ["bolaaro-clans-peuls"],
+        },
+      ],
+    },
+    // Diallo is the French colonial transcription; Jallo is what the man
+    // himself gave Bluett in 1734, so the two are recorded as spellings of one
+    // name rather than the older form being folded into the newer.
+    spellings: [
+      {
+        spelling: "Diallo",
+        attestations: [
+          { countryId: "GIN", sourceRefs: ["corpus-ppl-fula-foret-organisation"] },
+          { countryId: "CIV", sourceRefs: ["corpus-ppl-fula-foret-organisation"] },
+          { countryId: "CMR", sourceRefs: ["corpus-ppl-fula-foret-organisation"] },
+          { countryId: "GAB", sourceRefs: ["corpus-ppl-fula-foret-organisation"] },
+        ],
+      },
+      {
+        spelling: "Jallo",
+        attestations: [
+          { countryId: "SEN", sourceRefs: ["bluett-1734-job-jallo"] },
+        ],
+      },
+    ],
+    countries: [
+      {
+        countryId: "GIN",
+        status: "attested",
+        sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+      },
+      {
+        countryId: "CIV",
+        status: "attested",
+        sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+      },
+      {
+        countryId: "CMR",
+        status: "attested",
+        sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+      },
+      {
+        countryId: "GAB",
+        status: "attested",
+        sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+      },
+      {
+        countryId: "SEN",
+        status: "attested",
+        sourceRefs: ["bluett-1734-job-jallo"],
+      },
+    ],
+    bearers: [
+      {
+        status: "deceased",
+        displayName: "Ayuba Suleiman Diallo (Hyuba boon Salumena boon Hibrahema)",
+        sourceRefs: ["bluett-1734-job-jallo"],
+      },
+    ],
+    sourceKeys: ["bolaaro-clans-peuls", "bluett-1734-job-jallo"],
+    gapReasons: {
+      alliances:
+        "Le dendiraagal (parenté à plaisanterie peule) est documenté comme " +
+        "institution mais aucune paire nommant ce clan n'a été trouvée.",
+      casteOrSocialFunction:
+        "Bluett donne à la lignée d'Ayuba une charge religieuse héréditaire — " +
+        "son grand-père puis son père sont alpha, grand prêtre de Boonda, et " +
+        "lui-même assistait son père — mais elle s'attache à une famille " +
+        "précise du Bundu, non au nom : la source ne dit rien d'une fonction " +
+        "que porteraient les Jallo comme tels. Les castes de spécialistes du " +
+        "Fouta portent par ailleurs d'autres noms.",
+      homonyms:
+        "Les répertoires onomastiques consultés laissent l'étymologie de " +
+        "Diallo inexpliquée : aucune racine pulaar établie ne la porte, et " +
+        "Bluett, qui donne pourtant la forme de 1734, n'en propose aucune. " +
+        "Les rattachements proposés — à un jallo qui vaudrait " +
+        "« commandement », ou au mandingue diala pour la noblesse — ne sont " +
+        "corroborés par aucune source linguistique primaire et ressemblent à " +
+        "des étymologies populaires nées du contact peul-mandingue. " +
+        "L'absence d'étymologie établie est ici le résultat de la recherche, " +
+        "non son défaut. Les transcriptions Jallo, Jalloh, Jallow et Djaló " +
+        "désignent le même nom et ne sont donc pas des homonymes.",
+    },
   },
   PAT_SOW: {
     ...fulbeClan(

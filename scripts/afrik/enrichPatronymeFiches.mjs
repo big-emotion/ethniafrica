@@ -131,6 +131,11 @@ async function main() {
       "bearers",
       "homonyms",
       "spellings",
+      // Research can extend the reach of a name, not only explain it: a dated
+      // attestation in a country the selection pass never saw belongs in the
+      // fiche's own associations, not only in a claim about it.
+      "peoples",
+      "countries",
       "nisbaSubtype",
       "patronymicChainDepth",
       "totemicFoodProhibition",
