@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
   },
   "id": "PAT_BENJELLOUN",
   "nameMain": "Benjelloun",
@@ -11,11 +11,14 @@
     {
       "spelling": "Benjelloun",
       "attestations": [
-        { "countryId": "MAR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "MAR",
+          "sourceRefs": ["afrik-candidate-queue", "ircam-benjelloun"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "hereditary",
   "designatedSocialUnit": "other",
   "origin": {
     "oralTraditions": [],
@@ -33,7 +36,7 @@
     {
       "countryId": "MAR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "ircam-benjelloun"]
     }
   ],
   "alliances": [],
@@ -48,36 +51,48 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "ircam-benjelloun",
+      "title": "Tatouage de la Mémoire — Institut royal de la culture amazighe",
+      "url": "https://biblio.ircam.ma/pmb/uploads/publications/72.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Publication de l’IRCAM consultée le 2 septembre 2026. Elle cite Benjelloun parmi des patronymes urbains marocains transmis de génération en génération ; elle ne propose pas d’étymologie particulière à ce nom."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches exactes « Benjelloun anthroponymie », « Benjelloun onomastique » et « Benjelloun surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. La source propre au nom n’établit qu’une graphie ou une distribution et ne permet d’énoncer ni étymologie ni origine de lignée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Benjelloun anthroponymie », « Benjelloun onomastique » et « Benjelloun surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué par la file d’attente ; ce rattachement reste au niveau non vérifié."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Benjelloun alliance à plaisanterie », « Benjelloun joking relationship » et « Benjelloun parenté à plaisanterie » n’ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Benjelloun caste », « Benjelloun métier héréditaire » et « Benjelloun social function » n’ont livré aucune fonction sociale ou professionnelle héréditaire propre à cette graphie."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches biographiques exactes sur « Benjelloun » dans les catalogues, notices institutionnelles et archives accessibles n’ont pas permis d’isoler un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches exactes « Benjelloun homonym surname », « Benjelloun homonyme patronyme » et les variantes graphiques de la fiche n’ont pas établi deux origines distinctes et documentées pour la même forme."
     },
     {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « nisba » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "nameSystem",
+      "reason": "Les sources consultées attestent la graphie « Benjelloun » sans établir assez précisément le système dénominatif ; la valeur nisba héritée de la vague 1 n’est donc pas étendue par inférence."
     },
     {
       "fieldPath": "designatedSocialUnit",
-      "reason": "Le système « nisba » ne détermine pas à lui seul l'unité sociale désignée : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Benjelloun lignée », « Benjelloun clan », « Benjelloun tribe » et « Benjelloun place name » n’ont pas permis de déterminer si cette graphie désigne une lignée, un clan, une caste, une classe d’âge ou un établissement dans le contexte précis de la fiche."
     }
   ]
 }
