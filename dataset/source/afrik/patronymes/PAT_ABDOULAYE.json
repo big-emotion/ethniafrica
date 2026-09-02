@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Abdoulaye ; les lacunes consignent les recherches restées sans résultat."
   },
   "id": "PAT_ABDOULAYE",
   "nameMain": "Abdoulaye",
@@ -11,13 +11,10 @@
     {
       "spelling": "Abdoulaye",
       "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
-      ]
-    },
-    {
-      "spelling": "Abdulai",
-      "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NER",
+          "sourceRefs": ["gouv-niger-ministres-2026", "btn-abdoulaye"]
+        }
       ]
     }
   ],
@@ -26,20 +23,31 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "La graphie Abdoulaye est présentée comme une forme ouest-africaine, façonnée par l'orthographe française, de l'arabe Abd Allah ; la forme haoussa rapprochée par la même source est Abdullahi. Ryan atteste séparément Abdullahi dans la nomenclature personnelle haoussa et le glose « serviteur d'Allah ».",
+        "claimStatus": "claimed",
+        "sourceRefs": ["btn-abdoulaye", "ryan-1981-abdoulaye"]
+      },
+      {
+        "claim": "Dans le système haoussa décrit par Chamo, le nom personnel est suivi le plus souvent du nom du père, parfois introduit par ɗan (« fils de »), et cet élément ne constitue pas un nom de famille héréditaire stable.",
+        "claimStatus": "established",
+        "sourceRefs": ["chamo-2018-abdoulaye"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_HAUSA",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["btn-abdoulaye", "ryan-1981-abdoulaye"]
     }
   ],
   "countries": [
     {
       "countryId": "NER",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["gouv-niger-ministres-2026"]
     }
   ],
   "alliances": [],
@@ -48,34 +56,62 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "ryan-1981-abdoulaye",
+      "title": "An Introduction to Hausa Personal Nomenclature",
+      "url": "https://ans-names.pitt.edu/ans/article/download/942/941/1886",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Pauline M. Ryan, Names 29(2), 1981, pp. 139-164. Le tableau I a été consulté dans le PDF intégral : il atteste Abdullahi parmi les noms masculins islamiques haoussa et donne la glose « slave of Allah ». Il n'atteste pas directement la graphie Abdoulaye."
+    },
+    {
+      "sourceKey": "chamo-2018-abdoulaye",
+      "title": "Language and Identity in Africa: The Use of Place Names as Part of a Person’s Name in Hausa",
+      "url": "https://auadamu.com/phocadownload/Books/%5B2018%5D%20Festschrift%20in%20Honour%20of%20Abdalla%20Uba%20Adamu%20-%20Media%20-Knowledge%20Transfer%20and%20African%20Identity.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Isa Yusuf Chamo, 2018, pp. 251-252 du chapitre consulté dans le volume intégral. Décrit le prénom suivi du nom du père ou du grand-père et précise que l'usage haoussa ne repose pas sur des noms de famille héréditaires généralisés ; la source ne traite pas l'étymologie d'Abdoulaye."
+    },
+    {
+      "sourceKey": "btn-abdoulaye",
+      "title": "Abdoulaye — Behind the Name",
+      "url": "https://www.behindthename.com/name/abdoulaye",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Page communautaire consultée directement. Elle relie la graphie Abdoulaye à Abd Allah dans l'Afrique de l'Ouest francophone et cite Abdullahi comme forme haoussa. Cette chaîne indirecte reste une proposition, non une étymologie savante propre à la graphie nigérienne."
+    },
+    {
+      "sourceKey": "gouv-niger-ministres-2026",
+      "title": "Les membres du Gouvernement — Portail officiel du Gouvernement du Niger",
+      "url": "https://www.gouv.ne/index.php/les-ministeres/liste-des-ministeres/96-13-ministere-de-l-",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Page officielle consultée directement le 2 septembre 2026. Elle atteste la graphie Abdoulaye au Niger dans le nom d'Abdoulaye Seydou ; elle n'établit ni origine linguistique ni appartenance ethnique."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La requête ciblée « Abdoulaye Hausa oral tradition griot lineage », Ryan (1981), Chamo (2018) et l'article d'Amoo, Ajayi et Sabo (2022) n'ont livré ni griot nommé ni transcription attribuable à cette graphie."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Abdoulaye Hausa Arabic chronicle manuscript colonial record » et « Abdoulaye Niger archives » n'ont livré aucune chronique ou pièce d'archives établissant une origine propre à cette graphie."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Abdoulaye Hausa joking relationship », « Abdoulaye sanankuya », « Abdoulaye kal » et « Abdoulaye dandiraaɓe » n'ont établi aucune paire de patronymes documentée disposant de deux fiches PAT_*."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Ryan (1981), Chamo (2018) et les recherches « Abdoulaye Hausa hereditary occupation caste » n'ont associé ce nom personnel non héréditaire à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La page officielle nigérienne et les recherches « Abdoulaye Niger obituary biography » n'ont livré que des personnes vivantes ou des mentions insuffisantes ; aucun porteur décédé n'a été retenu."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Abdoulaye homonym etymology » et les pages consacrées à Abdoulaye et Abd Allah n'ont pas établi une graphie identique d'origine distincte."
     }
   ]
 }

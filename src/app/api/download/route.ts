@@ -29,7 +29,7 @@ function applyCorsHeaders(response: NextResponse): NextResponse {
   return response;
 }
 
-async function generateCSVZip(): Promise<Buffer> {
+async function generateCSVZip(): Promise<Buffer<ArrayBuffer>> {
   const [families, peoples, countries] = await Promise.all([
     getAllAfrikLanguageFamilies(),
     getAllAfrikPeoples(),
@@ -90,7 +90,7 @@ async function generateCSVZip(): Promise<Buffer> {
   return Buffer.concat(chunks);
 }
 
-async function generateExcel(): Promise<Buffer> {
+async function generateExcel(): Promise<Buffer<ArrayBuffer>> {
   const [families, peoples, countries] = await Promise.all([
     getAllAfrikLanguageFamilies(),
     getAllAfrikPeoples(),
@@ -143,7 +143,7 @@ async function generateExcel(): Promise<Buffer> {
   }
 
   const buffer = await workbook.xlsx.writeBuffer();
-  return Buffer.from(buffer);
+  return Buffer.from(buffer as ArrayBuffer);
 }
 
 /** @req REQ-005 */

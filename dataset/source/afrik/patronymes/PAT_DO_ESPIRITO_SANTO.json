@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon docs/runbooks/anthroponym-fiche-research.md. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
   },
   "id": "PAT_DO_ESPIRITO_SANTO",
   "nameMain": "do Espírito Santo",
@@ -11,22 +11,34 @@
     {
       "spelling": "do Espírito Santo",
       "attestations": [
-        { "countryId": "STP", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "STP",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     },
     {
       "spelling": "Espirito Santo",
       "attestations": [
-        { "countryId": "STP", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "STP",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "bilateral",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Ciberdúvidas classe Espírito Santo parmi les patronymes portugais composés dérivés de noms religieux. Cette analyse explique la structure de la forme « do Espírito Santo », mais ne permet pas d'identifier les circonstances dans lesquelles une lignée santoméenne l'a reçue.",
+        "claimStatus": "established",
+        "sourceRefs": ["ciberduvidas-espirito-santo-2014"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -54,32 +66,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "ohchr-stp-crc-2003",
+      "title": "Initial reports of States parties due in 1993: São Tomé and Príncipe",
+      "url": "https://docstore.ohchr.org/SelfServices/FilesHandler.ashx?enc=wnlPh%2BG8eU62Pknyw5xbuLBEESyDSBKbuv8TN1AlTGExo3BaisIUwhHlRW4QkXzV78paKU%2BOKmKjEvn1ZMsywg%3D%3D",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "Nations Unies, Comité des droits de l'enfant, CRC/C/8/Add.49, 1er décembre 2003, par. 146. Le rapport de l'État indique que la loi no 2/77 impose à l'enfant de porter les noms de sa mère et de son père."
+    },
+    {
+      "sourceKey": "ciberduvidas-espirito-santo-2014",
+      "title": "Apelidos/sobrenomes compostos",
+      "url": "https://ciberduvidas.iscte-iul.pt/pergunta.php?id=32772",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Ciberdúvidas da Língua Portuguesa, 7 août 2014. La réponse classe Espírito Santo parmi les patronymes composés dérivés de noms religieux. Elle documente la formation portugaise, non une lignée santoméenne particulière."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "les résultats exacts « do Espírito Santo », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant do Espírito Santo à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "les résultats exacts « do Espírito Santo », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe, complétés par « caste », « statut héréditaire », « métier » et « social function », n'ont établi aucune fonction sociale héréditaire propre aux porteurs de do Espírito Santo. Une étymologie professionnelle éventuelle n'est pas assimilée à un statut contemporain."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "les résultats exacts « do Espírito Santo », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe n'ont pas fourni, dans cette passe, un porteur à la fois décédé, clairement rattaché au patronyme étudié et documenté par une source distincte de la simple homonymie. Les personnes vivantes rencontrées dans les sources officielles ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "les résultats exacts « do Espírito Santo », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe n'ont pas permis d'isoler deux lignées homonymes dotées d'origines distinctes et documentées. Lorsque le dictionnaire propose plusieurs formations possibles, elles restent des hypothèses linguistiques et non des lignées séparées."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier français limité à la forme Namsio attestée dans un document officiel des Nations unies."
   },
   "id": "PAT_NAMSIO",
   "nameMain": "Namsio",
@@ -10,30 +10,22 @@
   "spellings": [
     {
       "spelling": "Namsio",
-      "attestations": [
-        { "countryId": "CAF", "sourceRefs": ["afrik-candidate-queue"] }
-      ]
+      "attestations": [{ "countryId": "CAF", "sourceRefs": ["un-s-2014-762"] }]
     }
   ],
   "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
     "linguisticReconstructions": []
   },
-  "peoples": [
-    {
-      "peopleId": "PPL_SARA",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
-    }
-  ],
+  "peoples": [],
   "countries": [
     {
       "countryId": "CAF",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["un-s-2014-762"]
     }
   ],
   "alliances": [],
@@ -42,38 +34,46 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "un-s-2014-762",
+      "title": "Letter dated 28 October 2014 from the Panel of Experts on the Central African Republic established pursuant to Security Council resolution 2127 (2013)",
+      "url": "https://digitallibrary.un.org/record/782335/files/S_2014_762-EN.pdf",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "Rapport final S/2014/762 du Conseil de sécurité, publié le 29 octobre 2014. L'annexe 10, dans une liste intitulée « NOM ET PRENOMS », porte « Commandant NAMSIO Emotion Brice ». Cette source atteste la graphie et le contexte centrafricain, mais ni une affiliation sara, ni un statut clanique, ni un mode de transmission."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes « Namsio », « Namsio onomastique », « Namsio anthroponymie » et « Namsio étymologie » dans les catalogues universitaires, Google Scholar, Persée, OpenEdition et les documents centrafricains n'ont livré ni récit d'origine, ni chronique ancienne, ni reconstruction linguistique."
     },
     {
-      "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "peoples",
+      "reason": "Le rapport des Nations unies situe le porteur dans le contexte centrafricain sans indiquer son appartenance ethnique ; aucune source dédiée trouvée n'a confirmé les Sara, association issue de la seule file de candidats et donc retirée."
     },
     {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "nameSystem",
+      "reason": "L'intitulé administratif « NOM ET PRENOMS » ne permet pas d'isoler avec certitude le statut de Namsio, et le rapport ne parle pas de clan ; clan_name demeure une valeur technique héritée faute de catégorie indéterminée."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Le rapport des Nations unies et les recherches académiques ciblées ne documentent aucun mode de transmission de Namsio ; la valeur reste donc other."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Namsio alliance clan » et « Namsio parenté à plaisanterie » n'ont livré aucune alliance entre patronymes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Le grade de commandant concerne le porteur cité, non une fonction sociale héréditaire du nom ; aucune source consultée n'établit une caste ou une charge nominale."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Le rapport de 2014 nomme Emotion Brice Namsio sans établir son décès ni fournir une auto-identification conforme au schéma ; aucun porteur n'est donc enregistré."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes dans les catalogues et documents centrafricains n'ont pas établi un homonyme de Namsio doté d'une origine distincte."
     }
   ]
 }

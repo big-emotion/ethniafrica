@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche par fiche : distinguer l'emploi ethnolinguistique attesté de Danágla de la graphie patronymique candidate al-Danagla."
   },
   "id": "PAT_AL_DANAGLA",
   "nameMain": "al-Danagla",
@@ -19,6 +19,12 @@
       "attestations": [
         { "countryId": "SDN", "sourceRefs": ["afrik-candidate-queue"] }
       ]
+    },
+    {
+      "spelling": "Danágla",
+      "attestations": [
+        { "countryId": "SDN", "sourceRefs": ["jaeger-2024-danagla"] }
+      ]
     }
   ],
   "transmissionMode": "other",
@@ -26,20 +32,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Jaeger emploie Danágla pour les Nubiens dongolawi et décrit Dongolawi comme un exonyme. En arabe, les locuteurs se nomment dungulanderi (« je suis de Dongola ») ou dungulawi, tandis qu'Andaandi est le nom de leur langue dans celle-ci. Cette documentation établit un ensemble de désignations liées à Dongola, mais pas l'étymologie propre de la graphie patronymique al-Danagla.",
+        "claimStatus": "established",
+        "sourceRefs": ["jaeger-2024-danagla"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_NUBIENS",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["jaeger-2024-danagla"]
     }
   ],
   "countries": [
     {
       "countryId": "SDN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["jaeger-2024-danagla"]
     }
   ],
   "alliances": [],
@@ -54,36 +66,48 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "jaeger-2024-danagla",
+      "title": "Wise Sayings and Proverbs among Andaandi and Mattokki speaking Nubians",
+      "url": "https://kups.ub.uni-koeln.de/74842/1/AM%20Proverbs%20publication%20A5%20Glossar%20italics.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Marcus Jaeger, thèse de doctorat, Universität zu Köln, 2024, p. 18-19. Le texte distingue Andaandi/Dongolawi/Danágla au Soudan, qualifie Dongolawi d'exonyme et documente les auto-désignations dungulanderi et dungulawi. Il n'atteste pas al-Danagla comme patronyme."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La thèse de Jaeger sur les Nubians andaandi/dongolawi et les recherches bibliographiques ciblées sur al-Danagla n'ont livré aucune tradition orale attribuée à un griot ou à un transmetteur nommé."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "La thèse de Jaeger et les recherches ciblées dans les catalogues relatifs au Soudan n'ont livré aucune chronique ni pièce administrative attestant al-Danagla comme patronyme."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La thèse de Jaeger et les recherches « al-Danagla alliance » et « Danagla joking kinship » n'ont livré aucune alliance entre patronymes dont les deux fiches existent dans le corpus."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La thèse de Jaeger décrit une identité ethnolinguistique, sans fonction sociale ou statut professionnel héréditaire attaché à al-Danagla ; les recherches patronymiques ciblées n'en ont pas trouvé."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La thèse de Jaeger et les recherches de la graphie exacte al-Danagla n'ont livré aucun porteur historique décédé dont le nom complet soit documenté par une source dédiée."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Jaeger atteste Danágla comme désignation collective dongolawi, mais cette désignation partage le même ancrage nubien que la fiche candidate ; les recherches n'ont pas établi une lignée homonyme d'origine distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "La nisba ne détermine pas à elle seule le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Jaeger documente Danágla comme ethnonyme et Dongolawi comme exonyme, non comme nom de famille transmis ; les recherches dans le catalogue du Central Bureau of Statistics soudanais et sur « al-Danagla surname » n'ont pas établi de règle de transmission."
     },
     {
       "fieldPath": "designatedSocialUnit",
-      "reason": "La nisba ne détermine pas à elle seule l'unité sociale désignée : l'atlas ne la documente pas encore pour ce nom."
+      "reason": "La source établit une désignation ethnolinguistique, catégorie absente de l'énumération designatedSocialUnit, mais aucune unité patronymique plus précise (lignage, clan ou établissement) ; la valeur reste donc other."
     }
   ]
 }

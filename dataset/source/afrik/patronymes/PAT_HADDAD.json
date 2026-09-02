@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
   },
   "id": "PAT_HADDAD",
   "nameMain": "Haddad",
@@ -11,7 +11,10 @@
     {
       "spelling": "Haddad",
       "attestations": [
-        { "countryId": "DZA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "DZA",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
@@ -20,7 +23,13 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "La notice distingue au moins deux formations de Haddad : le nom de métier arabe signifiant « forgeron » et un patronyme tiré du nom personnel biblique Hadad. Ces voies indépendantes interdisent de réduire tous les porteurs à une seule origine.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["anu-haddad"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -38,8 +47,22 @@
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
-  "homonyms": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Isaac Haddad",
+      "sourceRefs": ["anu-haddad"]
+    }
+  ],
+  "homonyms": [
+    {
+      "label": "Haddad patronymique biblique",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "La base de l'ANU distingue du nom professionnel arabe « forgeron » une formation patronymique sur le nom personnel biblique Hadad, attestée notamment dans des familles juives.",
+      "sourceRefs": ["anu-haddad"]
+    }
+  ],
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
@@ -48,36 +71,52 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "anu-haddad",
+      "title": "HADDAD Origin of surname — ANU Museum of the Jewish People",
+      "url": "https://dbs.anumuseum.org.il/skn/en/c6/e218199/Family_Name/HADDAD",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Notice de la base de recherche de l'ANU Museum of the Jewish People, consultée le 2 septembre 2026. Elle distingue une formation professionnelle arabe « forgeron » d'une formation patronymique sur le nom biblique Hadad et documente des attestations juives tunisiennes et marocaines. Elle ne confirme pas l'association générale aux Arabes d'Afrique."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « Haddad anthroponymie », « Haddad onomastique », « Haddad surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune tradition orale attribuée à un griot ou informateur nommé, accompagnée d'une transcription vérifiable, n'a été trouvée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches exactes « Haddad anthroponymie », « Haddad onomastique », « Haddad surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune chronique historique consultée ne rattache la fiche à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Haddad anthroponymie », « Haddad onomastique », « Haddad surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. La ou les sources propres au nom ne démontrent pas une association exclusive avec les peuples indiqués ; ces rattachements restent non vérifiés."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Haddad alliance à plaisanterie », « Haddad joking relationship » et « Haddad parenté à plaisanterie » n'ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Haddad caste », « Haddad métier héréditaire » et « Haddad social function » n'ont livré aucune fonction sociale héréditaire propre aux porteurs de cette graphie. Une étymologie professionnelle éventuelle ne prouve pas une caste."
     },
     {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "countries",
+      "reason": "Les sources propres à « Haddad » n'ont pas confirmé les pays où il est porté ; les recherches par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
     },
     {
-      "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "nameSystem",
+      "reason": "Les sources consultées décrivent la graphie « Haddad » sans établir assez précisément le système dénominatif que le corpus doit encoder ; la valeur nisba héritée de la vague 1 n'est donc pas étendue par inférence."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "La nisba ne détermine pas à elle seule le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les recherches « Haddad transmission patronyme », « Haddad filiation » et « Haddad hereditary surname » n'ont pas établi si, ni comment, cette forme se transmet dans les communautés africaines concernées."
     },
     {
       "fieldPath": "designatedSocialUnit",
-      "reason": "La nisba ne détermine pas à elle seule l'unité sociale désignée : l'atlas ne la documente pas encore pour ce nom."
+      "reason": "Les mêmes recherches n'ont pas permis de déterminer si « Haddad » désigne un individu, une lignée, un clan, une caste, une classe d'âge ou un établissement dans le contexte précis de la fiche."
     }
   ]
 }

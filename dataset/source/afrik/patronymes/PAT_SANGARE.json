@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
   },
   "id": "PAT_SANGARE",
   "nameMain": "Sangaré",
@@ -11,13 +11,19 @@
     {
       "spelling": "Sangaré",
       "attestations": [
-        { "countryId": "MLI", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "MLI",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     },
     {
       "spelling": "Sangare",
       "attestations": [
-        { "countryId": "MLI", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "MLI",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
@@ -25,14 +31,23 @@
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Dans leur étude des élites gouvernementales guinéennes, Rainer et Trebbi décrivent les porteurs de Sangaré comme originaires du Wassoulou : leur consultant les classe comme Peuls intégrés linguistiquement et culturellement aux Malinkés, tandis que les sources divergent entre les deux appartenances.",
+        "claimStatus": "contested",
+        "sourceRefs": ["rainer-trebbi-2012-political-power"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_FULA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "afrik-candidate-queue",
+        "rainer-trebbi-2012-political-power"
+      ]
     }
   ],
   "countries": [
@@ -54,32 +69,36 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "rainer-trebbi-2012-political-power",
+      "title": "New Tools for the Analysis of Political Power in Africa",
+      "url": "https://www.nber.org/papers/w18424.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ilia Rainer et Francesco Trebbi, NBER Working Paper 18424, septembre 2012. L’annexe sur la Guinée, p. 43, explique séparément la classification de Diakite, Sidibe et Sangare : originaires du Wassoulou, décrits comme Peuls intégrés aux populations malinké, ils sont codés par les auteurs à parts égales peuls et malinké. Le document précise qu’il n’a pas été évalué par les pairs."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "L’annexe guinéenne de Rainer et Trebbi a été recherchée pour une alliance à plaisanterie propre à Sangaré ; elle ne documente aucune paire patronymique."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Rainer et Trebbi documentent une classification ethnique disputée pour Sangaré, mais aucune caste ni fonction héréditaire ; les recherches ciblées n’ont pas fourni d’autre étude dédiée."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Rainer et Trebbi citent des ministres pour établir leur codage ethnique, mais la recherche n’a pas vérifié un porteur décédé et son rattachement lignager ; aucun bearer n’est ajouté."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les variantes accentuées et non accentuées de Sangaré ont été recherchées dans l’annexe de Rainer et Trebbi ; la source ne distingue pas deux origines homonymes."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Rainer et Trebbi expliquent l’identification peule/malinké de Sangaré sans décrire la règle de transmission du nom ; aucun travail onomastique dédié établissant une filiation patrilinéaire, matrilinéaire ou élective n’a été trouvé."
     }
   ]
 }

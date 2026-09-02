@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Dossier français prudent sur une désignation tribale historique classée provisoirement comme nisba."
+    "directives": "Dossier français prudent sur une désignation tribale zénète ; l’hypothèse lexicale publiée reste explicitement une hypothèse."
   },
   "id": "PAT_BANU_IFRAN",
   "nameMain": "Banu Ifran",
@@ -12,37 +12,45 @@
       "spelling": "Banu Ifran",
       "attestations": [
         {
+          "countryId": "DZA",
+          "sourceRefs": ["banu-ifran-kci"]
+        },
+        {
           "countryId": "MAR",
-          "sourceRefs": ["brown-sale-1971"]
+          "sourceRefs": ["banu-ifran-kci"]
         }
       ]
     },
     {
-      "spelling": "Banu Yefren",
+      "spelling": "Beni Ifren",
       "attestations": [
         {
           "countryId": "DZA",
-          "sourceRefs": ["zenata-branches-2021"]
+          "sourceRefs": ["ifren-encyclopedie-berbere"]
+        },
+        {
+          "countryId": "MAR",
+          "sourceRefs": ["ifren-encyclopedie-berbere"]
         }
       ]
     }
   ],
-  "transmissionMode": "patrilineal",
-  "designatedSocialUnit": "lineage",
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [
       {
-        "claim": "Ibn Khaldûn fait dériver le nom des Banu Ifran d'un ancêtre éponyme, Ifri, dont le nom signifie « caverne » en langues berbères.",
-        "claimStatus": "claimed",
-        "sourceRefs": ["ibn-khaldun-ibar", "ethnonymie-berbere-ibar"]
+        "claim": "L’Encyclopédie berbère range les Beni Ifren parmi les quatre grandes familles qui ont commandé les Zénètes et retrace leurs implantations au Maghreb.",
+        "claimStatus": "established",
+        "sourceRefs": ["ifren-encyclopedie-berbere"]
       }
     ],
     "linguisticReconstructions": [
       {
-        "claim": "Ibn Khaldûn expose le paradigme onomastique zénète à partir de l'ancêtre éponyme Jana : Zana/Zanat, Iznaten, Zanata — la nisba tribale y est construite sur le nom de l'ancêtre.",
-        "claimStatus": "established",
-        "sourceRefs": ["ethnonymie-berbere-ibar"]
+        "claim": "C. Agabi rapproche prudemment Ifren du berbère ifri, « caverne » ou « grotte », et présente l’idée d’ancêtres troglodytes comme une possibilité, non comme une étymologie démontrée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["ifren-encyclopedie-berbere"]
       }
     ]
   },
@@ -50,72 +58,71 @@
     {
       "peopleId": "PPL_ZENATA",
       "status": "attested",
-      "sourceRefs": ["zenata-branches-2021"]
+      "sourceRefs": ["ifren-encyclopedie-berbere"]
     }
   ],
-  "countries": [],
+  "countries": [
+    {
+      "countryId": "DZA",
+      "status": "attested",
+      "sourceRefs": ["ifren-encyclopedie-berbere", "banu-ifran-kci"]
+    },
+    {
+      "countryId": "MAR",
+      "status": "attested",
+      "sourceRefs": ["ifren-encyclopedie-berbere", "banu-ifran-kci"]
+    }
+  ],
   "alliances": [],
   "casteOrSocialFunction": null,
   "bearers": [],
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "brown-sale-1971",
-      "title": "People of Salé: Tradition and Change in a Moroccan City, 1830–1930",
-      "url": "https://www.hesperis-tamuda.com/Downloads/1970-1979/Hesperis-Tamuda%201971.pdf",
+      "sourceKey": "ifren-encyclopedie-berbere",
+      "title": "Ifren (Beni)",
+      "url": "https://journals.openedition.org/encyclopedieberbere/1543",
       "tier": "referenced",
       "source_kind": "academic",
-      "notes": "L'étude publiée par l'Université Mohammed V emploie Banu Ifran pour une tribu zénète liée à l'histoire de Salé."
+      "notes": "C. Agabi, Encyclopédie berbère, vol. 24, 2001, p. 3657-3659. L’article dédié a été consulté pour la place du groupe parmi les Zénètes et pour l’hypothèse ifri ; les marques de prudence de l’auteur sont conservées."
     },
     {
-      "sourceKey": "zenata-branches-2021",
-      "title": "The Political and the Religious Doctrines Roles of the Zenata Tribe in Central Maghreb: The Case of Banu Yefren and Maghrawa",
-      "url": "https://asjp.cerist.dz/index.php/en/article/164273",
+      "sourceKey": "banu-ifran-kci",
+      "title": "A study on the Berber tribes ‘Banu Ifran’ of Andalucia and Maghreb",
+      "url": "https://journal.kci.go.kr/ccs/archive/articleView?artiId=ART002535759",
       "tier": "referenced",
       "source_kind": "academic",
-      "notes": "L'article universitaire atteste la variante Banu Yefren et présente le groupe comme une branche zénète du Maghreb central."
-    },
-    {
-      "sourceKey": "ibn-khaldun-ibar",
-      "title": "Histoire des Berbères et des dynasties musulmanes de l'Afrique septentrionale (Kitāb al-ʿIbar)",
-      "url": "https://archive.org/details/histoiredesberbe01ibnk",
-      "tier": "referenced",
-      "source_kind": "archive",
-      "notes": "Ibn Khaldūn, XIVe siècle ; traduction de William MacGuckin de Slane, Alger, Imprimerie du gouvernement, 1852. La notice sur les Zénètes et leurs branches court sur les tomes I et III ; le lien pointe le tome I. Traduction coloniale du XIXe siècle, à lire comme telle."
-    },
-    {
-      "sourceKey": "ethnonymie-berbere-ibar",
-      "title": "Ibn Khaldûn, une source historique majeure : l'apport du Kitâb al-'Ibar à la connaissance de l'ethnonymie berbère",
-      "url": "https://www.researchgate.net/publication/382346129_Ibn_Khaldun_une_source_historique_majeure_l'apport_du_Kitab_al-'Ibar_a_la_connaissance_de_l'ethnonymie_berbere",
-      "tier": "referenced",
-      "source_kind": "academic",
-      "notes": "Analyse moderne de l'ethnonymie berbère chez Ibn Khaldûn : paradigme onomastique Zana/Zanat/Iznaten/Zanata et branches principales (Jarawa, Maghrawa, Banu Ifren)."
+      "notes": "Gi-Dae Lim, Cross-Cultural Studies 57, 2019, p. 339-367. La page et sa bibliographie complète ont été vérifiées. Plusieurs références de l’article sont des pages Wikipédia ou des reprises commerciales ; cette source n’est donc utilisée ici que pour l’attestation publiée de la graphie Banu Ifran et son cadre Maghreb-Andalousie, jamais pour l’étymologie."
     }
   ],
   "gaps": [
     {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L’Encyclopédie berbère, les catalogues maghrébins et les recherches « Beni Ifren tradition orale », « Banū Ifrān généalogie » et leurs équivalents arabes n’ont livré aucun récit avec transmetteur nommé et transcription."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Les sources décrivent une grande famille ou tribu zénète, mais ne précisent pas la règle d’affiliation nominale ; les recherches sur la filiation des Beni Ifren n’ont pas permis de choisir entre patrilinéarité et autre mode."
+    },
+    {
       "fieldPath": "alliances",
-      "reason": "Les alliances entre tribus zénètes relèvent de l'histoire politique et n'ont pas été établies comme alliances entre noms."
+      "reason": "Les textes consultés décrivent des coalitions et conflits politiques entre groupes historiques, mais aucune relation ne répond au modèle d’alliance nominale entre deux fiches PAT_* ; les recherches « Beni Ifren alliance » et « parenté à plaisanterie » sont restées négatives."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau de la tribu : la nisba zénète dit une appartenance tribale, non un métier, et Ibn Khaldûn ne lui attache aucune spécialisation transmise."
+      "reason": "L’article dédié de l’Encyclopédie berbère et les recherches sur une fonction héréditaire des Beni Ifren ne signalent ni métier transmis ni statut de caste attaché au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Ibn Khaldûn nomme les souverains des dynasties issues de ces tribus, mais une nisba tribale se porte collectivement : verser un émir au champ des porteurs ferait passer une histoire dynastique pour l'attestation d'un nom, ce que l'atlas s'interdit."
+      "reason": "Les sources nomment des chefs et dynastes associés à la tribu, mais ne les présentent pas comme porteurs individuels de Banu Ifran ou Beni Ifren ; les verser ici confondrait appartenance politique et patronyme."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'homonymie est structurelle dans un système de nisba : le nom marque l'appartenance à la tribu et non la descendance d'un lignage, de sorte que deux porteurs sans parenté le partagent normalement. Ce n'est donc pas ici une donnée à recenser."
-    },
-    {
-      "fieldPath": "countries",
-      "reason": "La fiche rattache le nom aux Zenata, documentés en Algérie, au Maroc, en Tunisie et en Libye, mais aucune des sources qu'elle déclare n'attribue à cette nisba un pays au sens des frontières actuelles — Ibn Khaldūn raisonne en aires tribales du Maghreb médiéval. Le travail mené jusqu'ici ne portait que sur les peuples ; l'attribution par pays reste à établir."
+      "reason": "Les variantes Ifren, Ifran et Yefren repérées dans les répertoires relèvent de transcriptions d’une même désignation ; aucune origine indépendante sous une graphie identique n’a été établie."
     }
   ],
   "nisbaSubtype": {
     "value": "tribal",
-    "sourceRefs": ["ethnonymie-berbere-ibar"]
+    "sourceRefs": ["ifren-encyclopedie-berbere"]
   }
 }

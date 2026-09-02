@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Bédié ; les lacunes consignent les recherches restées sans résultat."
   },
   "id": "PAT_BEDIE",
   "nameMain": "Bédié",
@@ -11,13 +11,19 @@
     {
       "spelling": "Bédié",
       "attestations": [
-        { "countryId": "CIV", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     },
     {
       "spelling": "Bedie",
       "attestations": [
-        { "countryId": "CIV", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["presidence-ci-deces-bedie-2023"]
+        }
       ]
     }
   ],
@@ -39,12 +45,18 @@
     {
       "countryId": "CIV",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["presidence-ci-deces-bedie-2023"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Henri Konan Bédié",
+      "sourceRefs": ["presidence-ci-deces-bedie-2023"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
@@ -54,32 +66,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "presidence-ci-deces-bedie-2023",
+      "title": "Communiqué de la Présidence de la République — décès du Président Henri Konan Bédié",
+      "url": "https://www.presidence.ci/wp-content/uploads/2023/08/Communique-de-la-Presidence-Deces-du-President-henri-Konan-BEDIE-1.pdf",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Communiqué officiel signé par le président Alassane Ouattara le 2 août 2023 et consulté dans son PDF intégral. Il atteste la graphie BEDIE, la qualité d'ancien président ivoirien et le décès d'Henri Konan Bédié le 1er août 2023 ; il n'établit pas l'étymologie du nom."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Bédié Baoulé étymologie », « Bedie surname origin Akan », le chapitre baoulé de Pagnet (2005) et les pages institutionnelles ivoiriennes consultées n'ont livré aucune étymologie ni histoire de formation propre au nom Bédié."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Bédié Baoulé joking relationship », « Bédié alliance patronyme » et « Bedie sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le communiqué présidentiel et les recherches « Bédié Baoulé hereditary occupation caste » n'ont associé le nom à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Bédié homonym etymology » et « Bedie surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Le communiqué présidentiel atteste un porteur, mais ni lui ni les recherches « Bédié family name inheritance Côte d'Ivoire » ne décrivent la règle de transmission du nom."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Les sources consultées attestent un nom individuel dans l'état civil sans permettre de déterminer si son origine renvoie à un lignage, un clan ou une autre unité sociale."
     }
   ]
 }

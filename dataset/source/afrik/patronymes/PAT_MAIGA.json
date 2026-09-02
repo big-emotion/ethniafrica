@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche par fiche : distinguer le récit chronique sur le clan royal Maïga des lignages Maega documentés en Aribinda et de leurs origines multiples."
   },
   "id": "PAT_MAIGA",
   "nameMain": "Maïga",
@@ -11,7 +11,7 @@
     {
       "spelling": "Maïga",
       "attestations": [
-        { "countryId": "MLI", "sourceRefs": ["afrik-candidate-queue"] },
+        { "countryId": "MLI", "sourceRefs": ["massing-2004-maiga"] },
         { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
       ]
     },
@@ -21,38 +21,66 @@
         { "countryId": "MLI", "sourceRefs": ["afrik-candidate-queue"] },
         { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
       ]
+    },
+    {
+      "spelling": "Maega",
+      "attestations": [
+        { "countryId": "BFA", "sourceRefs": ["guillaud-1993-maega"] }
+      ]
     }
   ],
   "transmissionMode": "other",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Massing rapporte un récit du Tarikh al-Fattash dans lequel une captive nommée Meinga devient l'ancêtre des Maïga, qualifiés de clan royal songhay ; il en propose une lecture wangara. La filiation est enregistrée comme un récit chronique revendiqué, non comme un fait généalogique établi.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["massing-2004-maiga"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_SONGHAI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["massing-2004-maiga", "guillaud-1993-maega"]
     }
   ],
   "countries": [
     {
       "countryId": "MLI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["massing-2004-maiga"]
     },
     {
       "countryId": "NER",
       "status": "attested",
       "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": ["guillaud-1993-maega"]
     }
   ],
   "alliances": [],
-  "casteOrSocialFunction": null,
+  "casteOrSocialFunction": {
+    "value": "Dans l'histoire locale d'Aribinda recueillie par Guillaud, Maega est le patronyme des sujets et serviteurs accompagnant les chefs Werem et le nom originel de nombreux lignages songhay. Cette position sociale est locale et historique : elle ne démontre pas une caste héréditaire commune à tous les Maïga.",
+    "sourceRefs": ["guillaud-1993-maega"]
+  },
   "bearers": [],
-  "homonyms": [],
+  "homonyms": [
+    {
+      "label": "Maega d'Aribinda d'ascendance mossi",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "Guillaud distingue les lignages songhay anciennement nommés Maega des descendants des premiers Mossi de Boulsa et de femmes songhay qui ont pris le même patronyme en accédant à la chefferie d'Aribinda. La graphie identique recouvre donc, dans cette histoire locale, deux récits d'origine.",
+      "sourceRefs": ["guillaud-1993-maega"]
+    }
+  ],
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
@@ -61,32 +89,44 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "massing-2004-maiga",
+      "title": "Baghayogho: A Soninke Muslim Diaspora in the Mande World",
+      "url": "https://journals.openedition.org/etudesafricaines/pdf/4850",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Andreas W. Massing, Cahiers d'études africaines 176, 2004, p. 887-922, DOI 10.4000/etudesafricaines.4850. À la p. 888, l'auteur rapporte le récit du Tarikh al-Fattash sur Meinga et les Maïga, « clan royal » songhay, puis explicite sa propre interprétation wangara. Ces deux niveaux sont conservés comme récit et interprétation, non comme généalogie prouvée."
+    },
+    {
+      "sourceKey": "guillaud-1993-maega",
+      "title": "L'ombre du mil : un système agropastoral en Aribinda (Burkina Faso)",
+      "url": "https://www.editions.ird.fr/open_access_download/1094/639",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Dominique Guillaud, ORSTOM/IRD Éditions, 1993, DOI 10.4000/books.irdeditions.14921 ; recherche de terrain conduite de 1982 à 1984. Les p. 64 et 69 documentent Maega comme patronyme de sujets et serviteurs songhay, nom de lignages songhay et nom repris par une chefferie issue d'ascendants mossi et de femmes songhay."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Guillaud signale que l'histoire de Maega repose en partie sur des informations orales, mais ne rattache pas ce récit précis à un griot ou transmetteur nommé avec transcription. Massing et les recherches ciblées n'ont pas fourni l'attribution exigée par le modèle."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Massing rapporte une ancêtre Meinga et Guillaud décrit les usages sociaux de Maega, mais ni ces travaux ni les recherches onomastiques ciblées n'établissent un étymon par comparaison linguistique."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Massing, Guillaud, le catalogue INSTAT/RAVEC et les recherches « Maïga alliance patronymique » n'ont livré aucune parenté à plaisanterie ou pacte nommé avec un autre patronyme disposant d'une fiche PAT_*. L'alliance matrimoniale mossi-songhay décrite par Guillaud n'est pas une alliance patronymique."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Guillaud nomme Nonguma Maega comme interprète de terrain, mais ne documente pas son décès ; il n'est donc pas ajouté. Massing, le catalogue INSTAT/RAVEC et les recherches ciblées n'ont pas livré d'autre porteur historique dont le statut deceased soit sourcé."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Guillaud montre des lignages Maega et décrit la transmission patrilinéaire des terres en Aribinda, mais n'établit pas que le patronyme lui-même suit cette règle. Massing et le catalogue INSTAT/RAVEC ne documentent pas davantage sa transmission ; la valeur reste other."
     }
   ]
 }

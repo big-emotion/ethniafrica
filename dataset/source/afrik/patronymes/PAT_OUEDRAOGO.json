@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier mossi documenté par fiche ; traiter le récit de Yennenga, Rialé et Ouédraogo comme histoire traditionnelle publiée, non comme généalogie historique démontrée."
   },
   "id": "PAT_OUEDRAOGO",
   "nameMain": "Ouédraogo",
@@ -11,41 +11,71 @@
     {
       "spelling": "Ouédraogo",
       "attestations": [
-        { "countryId": "BFA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["tiendrebeogo-1963-histoire-mossi"]
+        }
       ]
     },
     {
       "spelling": "Ouedraogo",
       "attestations": [
-        { "countryId": "BFA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["niggli-2008-kasena-names"]
+        }
       ]
     },
     {
       "spelling": "Wedraogo",
       "attestations": [
-        { "countryId": "BFA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["burkina-provisional-patronyme-register"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "writtenChronicles": [
+      {
+        "claim": "Dans l'histoire traditionnelle publiée par Yamba Tiendrebeogo, la princesse Yennenga quitte Gambaga sur un cheval qui l'emporte dans la brousse, rencontre le chasseur Rialé et donne naissance à un fils que son père nomme Ouedraogo en souvenir de ce cheval. Ce récit fondateur est attesté comme tradition écrite ; il ne constitue pas à lui seul une généalogie historique vérifiée de tous les porteurs du patronyme.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["tiendrebeogo-1963-histoire-mossi"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le répertoire provisoire donne Wédraoogo comme forme d'origine et la traduit par « cheval mâle » ou « étalon ». Cette glose concorde avec la fonction du cheval dans le récit publié, mais aucune analyse morphologique universitaire consultée ne l'établit indépendamment.",
+        "claimStatus": "claimed",
+        "sourceRefs": [
+          "tiendrebeogo-1963-histoire-mossi",
+          "burkina-provisional-patronyme-register"
+        ]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_MOSSI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "tiendrebeogo-1963-histoire-mossi",
+        "niggli-2008-kasena-names"
+      ]
     }
   ],
   "countries": [
     {
       "countryId": "BFA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "tiendrebeogo-1963-histoire-mossi",
+        "niggli-2008-kasena-names"
+      ]
     }
   ],
   "alliances": [],
@@ -54,38 +84,58 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "izard-1973-mossi-buudu",
+      "title": "La Lance et les guenilles",
+      "url": "https://www.persee.fr/doc/hom_0439-4216_1973_num_13_3_367368?pageId=T1_141",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Michel Izard, L'Homme, 13(3), 1973, p. 139-149. La p. 141 a été consultée : le buudu mossi y est défini comme groupe de descendance patrilinéaire et unité exogamique, identifié notamment par le nom collectif ou sondre. Cette source établit le cadre de transmission, non l'étymologie d'Ouédraogo."
+    },
+    {
+      "sourceKey": "tiendrebeogo-1963-histoire-mossi",
+      "title": "Histoire traditionnelle des Mossi de Ouagadougou",
+      "url": "https://www.persee.fr/doc/jafr_0037-9166_1963_num_33_1_1365?pageId=T1_9",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Yamba Tiendrebeogo, Journal de la Société des Africanistes, 33(1), 1963, p. 7-46. Les p. 8-9 ont été consultées : elles nomment Yennenga, Rialé et leur fils Ouedraogo, ainsi appelé par son père en souvenir du cheval fougueux de la princesse. Il s'agit d'une mise par écrit d'histoire traditionnelle, pas d'une démonstration généalogique moderne."
+    },
+    {
+      "sourceKey": "niggli-2008-kasena-names",
+      "title": "Noms des Kasena",
+      "url": "https://sil-burkina.org/sites/default/files/Noms%20des%20Kassena.pdf",
+      "tier": "official",
+      "source_kind": "linguistic_reference",
+      "notes": "Urs et Idda Niggli, Société internationale de linguistique, Ouagadougou, 2008. La section 6.4, p. 42, a été consultée ; elle cite Ouedraogo parmi les exemples de noms de famille mossi, sans en proposer l'étymologie."
+    },
+    {
+      "sourceKey": "burkina-provisional-patronyme-register",
+      "title": "Projet de répertoire des patronymes au Burkina Faso — version provisoire",
+      "url": "https://pdfcoffee.com/repertoire-des-patronymes-nationaux-du-burkina-pdf-free.html",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "government",
+      "notes": "Document de travail de la Direction du patrimoine culturel, sans date ni validation finale visibles, consulté sur une copie PDFCoffee non authentifiée. Seule la notice OUEDRAOGO, p. 163-164, a été utilisée ici pour la forme Wédraoogo et sa glose ; les listes locales d'alliances et d'interdits n'ont pas été généralisées."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L'article de Tiendrebeogo et la notice OUEDRAOGO transcrivent une histoire traditionnelle, mais la fiche ne dispose pas d'un griot nommé et d'une transcription attribuable répondant au schéma des traditions orales."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La notice OUEDRAOGO cite les San et plusieurs couples de localités ; la recherche n'a pas établi de paire Ouédraogo/PAT_* nominative, réciproque et vérifiable."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "L'histoire de Yennenga et Rialé, la liste SIL et le répertoire ont été vérifiés ; ils ne permettent pas d'attribuer une profession ou fonction héréditaire générale aux porteurs du nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le personnage fondateur Ouedraogo appartient au registre de l'histoire traditionnelle et n'est pas ajouté comme porteur historique vérifié ; les recherches biographiques n'ont pas livré de porteur décédé utile à l'histoire anthroponymique."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les graphies Ouédraogo, Ouedraogo et Wedraogo ont été comparées dans l'article, la liste SIL et le répertoire ; aucune lignée distincte homonyme n'a été établie."
     }
   ]
 }

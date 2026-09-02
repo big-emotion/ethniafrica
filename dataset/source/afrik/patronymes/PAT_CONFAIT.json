@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon docs/runbooks/anthroponym-fiche-research.md. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
   },
   "id": "PAT_CONFAIT",
   "nameMain": "Confait",
@@ -11,12 +11,18 @@
     {
       "spelling": "Confait",
       "attestations": [
-        { "countryId": "SYC", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SYC",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "seychelles-nation-confait-elections"
+          ]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "elective",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
@@ -33,7 +39,10 @@
     {
       "countryId": "SYC",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "afrik-candidate-queue",
+        "seychelles-nation-confait-elections"
+      ]
     }
   ],
   "alliances": [],
@@ -48,32 +57,44 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "seychelles-civil-status-act-2022",
+      "title": "Civil Status Act, Chapter 34 — section 39B, Surname of child",
+      "url": "https://seylii.org/akn/sc/act/1883/4/eng@2022-11-01/source",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Version consolidée au 1er novembre 2022. La section 39B permet, lorsque les parents portent des noms différents et sont tous deux inscrits, de choisir le nom de la mère, celui du père ou les deux. Utilisé pour qualifier la transmission d'élective, non pour une étymologie."
+    },
+    {
+      "sourceKey": "seychelles-nation-confait-elections",
+      "title": "National Assembly elections in the Third Republic",
+      "url": "https://www.nation.sc/archive/250983/national-assembly-elections-in-the-third-republic",
+      "tier": "referenced",
+      "source_kind": "community",
+      "notes": "Récapitulatif historique de Seychelles Nation qui nomme Walter Confait comme élu d'Anse Aux Pins. Utilisé comme attestation du patronyme ; l'article ne donne aucune étymologie."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "les résultats exacts « Confait », le catalogue des Seychelles National Archives, le Family Tree Project et les recherches patrimoniales décrites par O'Gorman ont été consultés. Ils attestent le nom ou décrivent le fonds disponible, mais n'ont livré ni étymologie publiée ni chronique attribuable à une lignée précise ; l'origine reste donc vide."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "les résultats exacts « Confait », le catalogue des Seychelles National Archives, le Family Tree Project et les recherches patrimoniales décrites par O'Gorman, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Confait à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "les résultats exacts « Confait », le catalogue des Seychelles National Archives, le Family Tree Project et les recherches patrimoniales décrites par O'Gorman, complétés par « caste », « statut héréditaire », « métier » et « social function », n'ont établi aucune fonction sociale héréditaire propre aux porteurs de Confait. Une étymologie professionnelle éventuelle n'est pas assimilée à un statut contemporain."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "les résultats exacts « Confait », le catalogue des Seychelles National Archives, le Family Tree Project et les recherches patrimoniales décrites par O'Gorman n'ont pas fourni, dans cette passe, un porteur à la fois décédé, clairement rattaché au patronyme étudié et documenté par une source distincte de la simple homonymie. Les personnes vivantes rencontrées dans les sources officielles ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "les résultats exacts « Confait », le catalogue des Seychelles National Archives, le Family Tree Project et les recherches patrimoniales décrites par O'Gorman n'ont pas permis d'isoler deux lignées homonymes dotées d'origines distinctes et documentées. Lorsque le dictionnaire propose plusieurs formations possibles, elles restent des hypothèses linguistiques et non des lignées séparées."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. La documentation consultée établit la classification patrilinéaire du nom clanique Hawiye, sans en fournir l'étymologie."
   },
   "id": "PAT_HAWIYE",
   "nameMain": "Hawiye",
@@ -11,29 +11,38 @@
     {
       "spelling": "Hawiye",
       "attestations": [
-        { "countryId": "SOM", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SOM",
+          "sourceRefs": ["afrik-candidate-queue", "hawiye-hinds-2013"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "La synthèse de Hinds classe Hawiye parmi les quatre grandes familles claniques patrilinéaires auxquelles appartient la majorité somalie ; elle documente un principe de filiation, mais pas l'étymologie du nom.",
+        "claimStatus": "established",
+        "sourceRefs": ["hawiye-hinds-2013"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_SOMALI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "hawiye-hinds-2013"]
     }
   ],
   "countries": [
     {
       "countryId": "SOM",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "hawiye-hinds-2013"]
     }
   ],
   "alliances": [],
@@ -48,32 +57,36 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "hawiye-hinds-2013",
+      "title": "Somali networks — structures of clan and society",
+      "url": "https://gsdrc.org/publications/somali-networks-structures-of-clan-and-society/",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Róisín Hinds, GSDRC Helpdesk Research Report 949, juin 2013. Le rapport et sa bibliographie ont été vérifiés : la section sur les structures claniques nomme Hawiye parmi les quatre grandes familles claniques patrilinéaires somalies. Il s'agit d'une synthèse destinée au développement international, non d'une étude onomastique."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Le rapport de Hinds (2013), sa bibliographie et les requêtes « Hawiye name etymology » et « Hawiye genealogy » ont été examinés ; aucune étymologie linguistique publiée et vérifiable de Hawiye n'a été trouvée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les sections de Hinds sur les réseaux, le xeer et la coopération, puis les recherches « Hawiye joking relationship », ont été examinées ; aucun couple de patronymes en parenté à plaisanterie correspondant à deux PAT_* existants n'y est documenté."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le rapport de Hinds décrit les niveaux de l'organisation clanique somalie ; il n'attache à Hawiye aucune caste ni fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches biographiques « Hawiye person/name » dans le rapport et les catalogues associés n'ont identifié aucun porteur décédé pour lequel Hawiye soit clairement un nom personnel plutôt qu'une affiliation clanique."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Hawiye a été recherché comme nom clanique, nom individuel et toponyme dans le rapport de Hinds et les catalogues bibliographiques ; aucun homonyme distinct répondant au modèle du corpus n'a été établi."
     }
   ]
 }

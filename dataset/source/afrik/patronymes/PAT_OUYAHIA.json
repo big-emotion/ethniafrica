@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier français prudent fondé sur une thèse doctorale d’anthroponymie algérienne et son catalogue institutionnel."
   },
   "id": "PAT_OUYAHIA",
   "nameMain": "Ouyahia",
@@ -11,7 +11,10 @@
     {
       "spelling": "Ouyahia",
       "attestations": [
-        { "countryId": "DZA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "DZA",
+          "sourceRefs": ["ouyahia-tidjet", "ouyahia-ccdz"]
+        }
       ]
     }
   ],
@@ -20,20 +23,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Mustapha Tidjet analyse Ou comme un morphème berbère de filiation ou d’appartenance, singulier de Ait/At, et classe Ouyahia avec les formes signifiant « de la famille Yahya ».",
+        "claimStatus": "established",
+        "sourceRefs": ["ouyahia-tidjet", "ouyahia-ccdz"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_KABYLE",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["ouyahia-tidjet"]
     }
   ],
   "countries": [
     {
       "countryId": "DZA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["ouyahia-tidjet", "ouyahia-ccdz"]
     }
   ],
   "alliances": [],
@@ -42,38 +51,50 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "ouyahia-tidjet",
+      "title": "La patronymie dans les daïras de Timezrit, Sidi-Aïch et Chemini : étude morphologique et sémantique",
+      "url": "https://fr.doczz.net/doc/6484275/la-patronymie-dans-les-dairas-de-timezrit--sidi",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Mustapha Tidjet, thèse de doctorat, Université Mouloud Mammeri de Tizi-Ouzou, janvier 2013. La transcription intégrale du dépôt miroir a été vérifiée aux passages sur le morphème Ou et sur Ouyahia. Le miroir est cité pour l’accès au texte ; l’existence et les métadonnées de la thèse sont contrôlées dans le catalogue CCDZ."
+    },
+    {
+      "sourceKey": "ouyahia-ccdz",
+      "title": "Notice CCDZ : La patronymie dans les daïras de Timezrit, Sidi-Aïch et Chemini",
+      "url": "https://www.ccdz.cerist.dz/admin/notice.php?id=00000000000000787140000632",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Catalogue collectif algérien des thèses, géré par le CERIST. La notice a été consultée pour authentifier la thèse de Mustapha Tidjet ; le contenu du claim provient du texte intégral, pas de cette notice seule."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La thèse de Tidjet, les dépôts de l’UMMTO et les recherches « Ouyahia tradition orale », « Ou Yahia ancêtre » et « généalogie Ouyahia » n’ont livré aucun récit avec transmetteur nommé et transcription."
     },
     {
-      "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues CCDZ, BnF, Persée et OpenEdition ont été interrogés sans trouver de chronique ou d’archive ancienne consacrée à la formation du patronyme Ouyahia."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "La thèse établit une morphologie de filiation ou d’appartenance familiale, mais ne décrit pas la règle de transmission du nom d’état civil ; elle ne suffit pas à conclure à une transmission patrilinéaire."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches combinant Ouyahia avec « alliance », « leff », « pacte » et « parenté à plaisanterie » n’ont fourni aucune paire attestée avec une autre fiche PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La thèse anthroponymique et les recherches sur un métier ou statut héréditaire lié à Ouyahia n’en signalent aucun."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les catalogues d’autorité et recherches biographiques ont surtout fait apparaître Ahmed Ouyahia, vivant ; le protocole exclut les personnes vivantes et aucun porteur décédé suffisamment documenté n’a été trouvé."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les formes Ouyahia, Ou Yahia, Aït Yahia et Yahiaoui ont été comparées dans la thèse et les catalogues ; aucune seconde origine autonome sous la graphie exacte Ouyahia n’a été établie."
     }
   ]
 }

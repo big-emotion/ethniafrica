@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier mossi documenté par fiche ; conserver les variantes du répertoire sans choisir entre ses récits concurrents."
   },
   "id": "PAT_ILBOUDO",
   "nameMain": "Ilboudo",
@@ -11,29 +11,56 @@
     {
       "spelling": "Ilboudo",
       "attestations": [
-        { "countryId": "BFA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["niggli-2008-kasena-names"]
+        }
+      ]
+    },
+    {
+      "spelling": "Lilboudo",
+      "attestations": [
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["burkina-provisional-patronyme-register"]
+        }
+      ]
+    },
+    {
+      "spelling": "Yilboudo",
+      "attestations": [
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["burkina-provisional-patronyme-register"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le répertoire provisoire réunit Ilboudo, Lilboudo et Yilboudo sous une même entrée, mais juxtapose plusieurs récits, localisations et interprétations sans démontrer leur unité historique. La relation graphique est attestée ; l'étymologie commune reste indéterminée.",
+        "claimStatus": "contested",
+        "sourceRefs": ["burkina-provisional-patronyme-register"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_MOSSI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["niggli-2008-kasena-names"]
     }
   ],
   "countries": [
     {
       "countryId": "BFA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["niggli-2008-kasena-names"]
     }
   ],
   "alliances": [],
@@ -42,38 +69,54 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "izard-1973-mossi-buudu",
+      "title": "La Lance et les guenilles",
+      "url": "https://www.persee.fr/doc/hom_0439-4216_1973_num_13_3_367368?pageId=T1_141",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Michel Izard, L'Homme, 13(3), 1973, p. 139-149. La p. 141 définit le buudu mossi comme groupe de descendance patrilinéaire identifié par un nom collectif ou sondre. Cette source établit le cadre de transmission, non l'étymologie d'Ilboudo."
+    },
+    {
+      "sourceKey": "niggli-2008-kasena-names",
+      "title": "Noms des Kasena",
+      "url": "https://sil-burkina.org/sites/default/files/Noms%20des%20Kassena.pdf",
+      "tier": "official",
+      "source_kind": "linguistic_reference",
+      "notes": "Urs et Idda Niggli, Société internationale de linguistique, Ouagadougou, 2008. La section 6.4, p. 42, cite Ilboudo parmi les exemples de noms de famille mossi, sans proposer d'étymologie."
+    },
+    {
+      "sourceKey": "burkina-provisional-patronyme-register",
+      "title": "Projet de répertoire des patronymes au Burkina Faso — version provisoire",
+      "url": "https://pdfcoffee.com/repertoire-des-patronymes-nationaux-du-burkina-pdf-free.html",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "government",
+      "notes": "Document de travail de la Direction du patrimoine culturel, sans date ni validation finale visibles, consulté sur une copie PDFCoffee non authentifiée. L'entrée ILBOUDO/LILBOUDO/YILBOUDO a été lue pour les variantes et pour constater la pluralité non arbitrée des récits ; aucune interprétation n'est élevée au rang de fait."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les récits de l'entrée Ilboudo/Lilboudo/Yilboudo ne sont rattachés à aucun griot nommé et n'ont pas de transcription publiée conforme au schéma."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches Ilboudo, Lilboudo et Yilboudo dans Persée, theses.fr et les catalogues burkinabè n'ont pas livré de chronique historique indépendante."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les relations mentionnées par le répertoire concernent des groupes ou localités ; aucune paire avec une fiche PAT_* déterminée n'a pu être validée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La liste SIL, l'étude du buudu et la notice Ilboudo ont été vérifiées ; aucune fonction sociale ni profession héréditaire générale n'est établie."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches biographiques exactes sur les trois graphies n'ont pas trouvé de porteur décédé relié par une source institutionnelle à l'histoire du patronyme."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les trois formes sont regroupées par le répertoire comme variantes ; aucune source consultée ne distingue une seconde lignée homonyme."
     }
   ]
 }

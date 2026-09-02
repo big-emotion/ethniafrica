@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier mossi documenté par fiche ; distinguer l'attestation du nom de famille des gloses non critiques du répertoire provisoire."
   },
   "id": "PAT_NIKIEMA",
   "nameMain": "Nikiéma",
@@ -11,35 +11,68 @@
     {
       "spelling": "Nikiéma",
       "attestations": [
-        { "countryId": "BFA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["niggli-2008-kasena-names"]
+        }
       ]
     },
     {
       "spelling": "Nikiema",
       "attestations": [
-        { "countryId": "BFA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["burkina-provisional-patronyme-register"]
+        }
+      ]
+    },
+    {
+      "spelling": "Nitiema",
+      "attestations": [
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["burkina-provisional-patronyme-register"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "writtenChronicles": [
+      {
+        "claim": "Le répertoire provisoire raconte que, parmi deux frères, celui qui avait reçu les attributs de chasse aurait rapporté un éléphant à son frère devenu chef et aurait alors été qualifié de Nikièma. Ce récit collecté n'est pas attribué à un témoin et n'est pas corroboré par une étude historique.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["burkina-provisional-patronyme-register"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "La notice NIKIEMA/NITIEMA propose plusieurs gloses — « hommes forts », « bras valides », descendants de Rialé, personne bien portante ou digne, puis « brave homme » dans le récit du chasseur. Leur articulation linguistique n'étant pas démontrée, elles restent des interprétations collectées et contestées.",
+        "claimStatus": "contested",
+        "sourceRefs": ["burkina-provisional-patronyme-register"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_MOSSI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "niggli-2008-kasena-names",
+        "burkina-provisional-patronyme-register"
+      ]
     }
   ],
   "countries": [
     {
       "countryId": "BFA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "niggli-2008-kasena-names",
+        "burkina-provisional-patronyme-register"
+      ]
     }
   ],
   "alliances": [],
@@ -48,38 +81,50 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "izard-1973-mossi-buudu",
+      "title": "La Lance et les guenilles",
+      "url": "https://www.persee.fr/doc/hom_0439-4216_1973_num_13_3_367368?pageId=T1_141",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Michel Izard, L'Homme, 13(3), 1973, p. 139-149. La p. 141 a été consultée : le buudu mossi y est défini comme groupe de descendance patrilinéaire et unité exogamique, identifié notamment par le nom collectif ou sondre. Cette source établit le cadre de transmission, non l'étymologie de Nikiéma."
+    },
+    {
+      "sourceKey": "niggli-2008-kasena-names",
+      "title": "Noms des Kasena",
+      "url": "https://sil-burkina.org/sites/default/files/Noms%20des%20Kassena.pdf",
+      "tier": "official",
+      "source_kind": "linguistic_reference",
+      "notes": "Urs et Idda Niggli, Société internationale de linguistique, Ouagadougou, 2008. La section 6.4, p. 42, a été consultée ; elle cite Nikiéma parmi les exemples de noms de famille mossi, sans en proposer l'étymologie."
+    },
+    {
+      "sourceKey": "burkina-provisional-patronyme-register",
+      "title": "Projet de répertoire des patronymes au Burkina Faso — version provisoire",
+      "url": "https://pdfcoffee.com/repertoire-des-patronymes-nationaux-du-burkina-pdf-free.html",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "government",
+      "notes": "Document de travail de la Direction du patrimoine culturel, sans date ni validation finale visibles, consulté sur une copie PDFCoffee non authentifiée. Seule la notice NIKIEMA/NITIEMA, p. 157, a été utilisée ici. Ses gloses et son récit restent au statut claimed ou contested faute d'appareil critique."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La notice NIKIEMA/NITIEMA et les recherches ciblées dans les catalogues Persée, OpenEdition, Horizon IRD et Google Scholar n'ont livré aucun récit attribué à un griot nommé avec transcription."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le répertoire cite des groupes et des ressortissants de localités comme partenaires à plaisanterie, mais aucun couple Nikiéma/PAT_* nominatif, réciproque et vérifiable n'a été établi."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le récit de chasse du répertoire, la liste SIL et les recherches savantes ciblées ne démontrent pas une fonction de chasseur héréditaire ni une autre profession générale des Nikiéma."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches biographiques exactes sur Nikiéma et Nitiema ont surtout livré des personnalités contemporaines ; aucune source institutionnelle consultée n'a documenté un porteur décédé pertinent pour l'histoire du nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les graphies Nikiéma, Nikiema et Nitiema ont été comparées dans la liste SIL, le répertoire et les catalogues savants ; aucune lignée distincte homonyme n'a été établie."
     }
   ]
 }

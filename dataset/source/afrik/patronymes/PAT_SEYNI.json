@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche ciblé sur Seyni ; l'attestation zarma ne vaut pas étymologie du nom."
   },
   "id": "PAT_SEYNI",
   "nameMain": "Seyni",
@@ -11,7 +11,7 @@
     {
       "spelling": "Seyni",
       "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+        { "countryId": "NER", "sourceRefs": ["apollis-2023-seyni-kountche"] }
       ]
     }
   ],
@@ -26,19 +26,25 @@
     {
       "peopleId": "PPL_ZARMA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["apollis-2023-seyni-kountche"]
     }
   ],
   "countries": [
     {
       "countryId": "NER",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["apollis-2023-seyni-kountche"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Seyni Kountché",
+      "sourceRefs": ["apollis-2023-seyni-kountche"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
@@ -48,28 +54,32 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "apollis-2023-seyni-kountche",
+      "title": "Seyni Kountché (1931-1987)",
+      "url": "https://bibliotheque.sceaux.fr/doc/UNIVERSALIS/oai-universalis.fr-ark--34885-T081132-edu/seyni-kountche-1931-1987",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Gilbert Apollis, Encyclopædia Universalis, édition 2023, notice diffusée par la Médiathèque de Sceaux. La notice atteste Seyni Kountché au Niger et le rattache à une famille de chefs coutumiers d'une branche du peuple djerma ; elle n'explique pas l'étymologie de Seyni."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches ciblées sur « Seyni » dans les travaux d'anthroponymie songhay-zarma, les catalogues bibliographiques et les notices d'autorité n'ont livré ni étymologie étayée, ni tradition orale attribuée, ni chronique consacrée à l'origine du nom."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches associant « Seyni » à parenté à plaisanterie, alliance, cousinage et sanankuya n'ont identifié aucune paire documentée entre deux fiches PAT existantes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches associant « Seyni » aux termes caste, métier héréditaire, jasare et fonction sociale n'ont fourni aucune attribution sourcée applicable au nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La graphie exacte a été recherchée dans les catalogues d'autorité, la bibliographie songhay-zarma et les sources institutionnelles consultées ; aucune origine distincte susceptible de constituer un homonyme n'a été établie."
     }
   ]
 }

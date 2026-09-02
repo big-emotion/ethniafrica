@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier révisé par recherche dédiée. L'agrégateur cité confirme seulement l'existence et la distribution du nom ; les autres rubriques restent explicitement non établies."
   },
   "id": "PAT_GBEDEE",
   "nameMain": "Gbedee",
@@ -11,7 +11,10 @@
     {
       "spelling": "Gbedee",
       "attestations": [
-        { "countryId": "LBR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "LBR",
+          "sourceRefs": ["forebears-gbedee"]
+        }
       ]
     }
   ],
@@ -25,7 +28,7 @@
   "peoples": [
     {
       "peopleId": "PPL_BASSA",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     }
   ],
@@ -33,7 +36,7 @@
     {
       "countryId": "LBR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-gbedee"]
     }
   ],
   "alliances": [],
@@ -41,6 +44,14 @@
   "bearers": [],
   "homonyms": [],
   "sources": [
+    {
+      "sourceKey": "forebears-gbedee",
+      "title": "Gbedee Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/gbedee",
+      "tier": "unverified",
+      "source_kind": "discovery",
+      "notes": "Agrégateur de distribution anthroponymique consulté le 2 septembre 2026. Il classe explicitement Gbedee comme nom de famille, recense 66 occurrences au Liberia dans ses données de 2014 et indique que la signification n'est pas renseignée. Sa répartition par comté ne permet pas d'inférer une appartenance ethnique ; le site formule lui-même cette réserve."
+    },
     {
       "sourceKey": "afrik-candidate-queue",
       "title": "Relevé de couverture anthroponymique EthniAfrica",
@@ -52,28 +63,44 @@
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "nameSystem",
+      "reason": "Forebears qualifie Gbedee de nom de famille, mais ne distingue pas nom de clan, patronyme lignager ou autre système. Les recherches exactes « Gbedee Bassa Liberia surname » n'ont livré aucune étude permettant de résoudre cette typologie."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "La recherche dans les catalogues onomastiques, les publications sur les Bassa du Liberia et les documents officiels libériens n'a relié Gbedee à aucun clan ou lignage nommé ; l'unité sociale désignée reste inconnue."
+    },
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Gbedee Bassa oral tradition » et « Gbedee Liberia clan » n'ont trouvé aucun récit attribué à un griot ou à un transmetteur identifiable."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les résultats consultés dans les dépôts universitaires, les rapports de l'administration libérienne et les catalogues bibliographiques ne contiennent aucune chronique d'origine consacrée au nom Gbedee."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Forebears indique expressément que la signification n'est pas répertoriée. Les recherches « Gbedee etymology », « Gbedee Bassa name meaning » et « Gbedee onomastics » n'ont produit aucune analyse linguistique vérifiable."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Gbedee Bassa joking relationship » et « Gbedee clan alliance Liberia » n'ont nommé aucune alliance ou parenté à plaisanterie avec un autre patronyme du corpus."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Forebears ne documente aucune fonction, et les recherches dans les publications sur l'organisation sociale bassa et les documents officiels libériens n'ont associé Gbedee à aucun rôle héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches nominatives dans les documents du Liberia Revenue Authority, du Ministry of Public Works et dans les catalogues biographiques ont livré des personnes contemporaines sans preuve de décès ni notice historique ; aucun porteur admissible n'a été retenu."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Forebears signale que Gbedee peut aussi être un prénom, mais n'en fournit aucune origine indépendante. Les recherches exactes sur cet emploi n'ont pas établi une lignée homonyme distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Ni Forebears, ni les documents officiels libériens repérés, ni les recherches sur l'organisation sociale bassa ne décrivent comment le nom Gbedee se transmet ; le modèle impose une valeur, qui reste « other » faute de preuve."
     }
   ]
 }

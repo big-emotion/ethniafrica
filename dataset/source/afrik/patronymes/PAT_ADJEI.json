@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. La distribution de Adjei est attestée séparément ; aucune étymologie n'est déduite de cette distribution."
   },
   "id": "PAT_ADJEI",
   "nameMain": "Adjei",
@@ -11,8 +11,14 @@
     {
       "spelling": "Adjei",
       "attestations": [
-        { "countryId": "GHA", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "TGO", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["forebears-adjei"]
+        },
+        {
+          "countryId": "TGO",
+          "sourceRefs": ["forebears-adjei"]
+        }
       ]
     }
   ],
@@ -26,12 +32,12 @@
   "peoples": [
     {
       "peopleId": "PPL_AKAN",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     },
     {
       "peopleId": "PPL_EWE",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     }
   ],
@@ -39,12 +45,12 @@
     {
       "countryId": "GHA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-adjei"]
     },
     {
       "countryId": "TGO",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-adjei"]
     }
   ],
   "alliances": [],
@@ -59,32 +65,48 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "forebears-adjei",
+      "title": "Adjei Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/adjei",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page Forebears propre à Adjei, consultée directement. La base agrégée atteste la graphie et sa distribution dans GHA et TGO, mais ne donne aucun sens ; elle précise qu'une distribution géographique ne permet pas d'inférer une appartenance ethnique. Ces données sont donc conservées au niveau « unverified » et ne soutiennent aucune étymologie."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches bibliographiques et web « Adjei Akan et ewe anthroponymie étymologie », « Adjei onomastique » et « Adjei surname meaning », ainsi que la page Forebears propre au nom, n'ont livré aucune étymologie ni histoire de formation vérifiable. La distribution observée n'est pas interprétée comme une origine."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches « Adjei Akan et ewe anthroponymie » et « Adjei ethnic group » n'ont fourni aucune source propre au nom établissant son rattachement au peuple proposé par la file de candidats ; ce rattachement reste donc au statut « supposed »."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Adjei joking relationship », « Adjei alliance patronyme » et « Adjei sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Adjei hereditary occupation caste title » et « Adjei fonction sociale » n'ont associé ce nom à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Adjei obituary biography deceased » et « Adjei nécrologie » n'ont pas permis de retenir un porteur décédé sur une notice suffisamment fiable et propre au nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Adjei homonym etymology » et « Adjei surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "La page Forebears atteste une distribution du nom, mais ni elle ni les recherches « Adjei family name inheritance » ne décrivent sa règle de transmission."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Les sources consultées ne permettent pas de déterminer si Adjei désigne historiquement un lignage, un clan ou une autre unité sociale."
     }
   ]
 }

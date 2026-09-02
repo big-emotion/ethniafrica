@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier français prudent : Rhissa est traité comme nom personnel dans une chaîne anthroponymique touarègue, non comme patronyme héréditaire."
   },
   "id": "PAT_RHISSA",
   "nameMain": "Rhissa",
@@ -10,9 +10,7 @@
   "spellings": [
     {
       "spelling": "Rhissa",
-      "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
-      ]
+      "attestations": [{ "countryId": "NER", "sourceRefs": ["rhissa-ird"] }]
     }
   ],
   "transmissionMode": "non_hereditary",
@@ -20,20 +18,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Aghali-Zakara décrit chez les Touaregs des noms individuels donnés à la naissance, simples ou complexes. L’étude de terrain de Grégoire et Scholze atteste Rhissa dans la chaîne Rhissa ag Boula au Niger ; le croisement établit ici un usage personnel touareg, sans fournir l’étymon de Rhissa.",
+        "claimStatus": "established",
+        "sourceRefs": ["rhissa-aghali-zakara", "rhissa-ird"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_TUAREG",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["rhissa-aghali-zakara", "rhissa-ird"]
     }
   ],
   "countries": [
     {
       "countryId": "NER",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["rhissa-ird"]
     }
   ],
   "alliances": [],
@@ -42,34 +46,46 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "rhissa-aghali-zakara",
+      "title": "Anthroponymie touarègue : dénominations multiples des individualités",
+      "url": "https://www.persee.fr/doc/onoma_0755-7752_2003_num_41_1_1452",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Mohamed Aghali-Zakara, Nouvelle revue d’onomastique 41-42, 2003, p. 221-229, DOI 10.3406/onoma.2003.1452. Le texte a été consulté pour le nom donné à la naissance et la distinction des énoncés simples et complexes ; il ne contient pas une étymologie propre à Rhissa."
+    },
+    {
+      "sourceKey": "rhissa-ird",
+      "title": "Identité, imaginaire et tourisme en pays touareg au Niger",
+      "url": "https://horizon.documentation.ird.fr/exl-doc/pleins_textes/divers18-04/010072521.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Emmanuel Grégoire et Marko Scholze, Via 2, 2012. Le texte intégral déposé par l’IRD a été consulté ; il situe explicitement Rhissa ag Boula parmi les Touaregs de l’Aïr au Niger. Le porteur est vivant et n’est pas enregistré dans bearers."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L’article d’Aghali-Zakara, le dépôt IRD et les recherches « Rhissa tradition touarègue », « Rhissa prénom origine » et leurs variantes en français et en anglais n’ont livré aucun récit d’origine avec transmetteur nommé et transcription."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues Persée, IRD, BnF et les travaux sur l’histoire touarègue ont été interrogés sans trouver de chronique ou d’archive ancienne expliquant le nom personnel Rhissa."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Un nom personnel non héréditaire ne suffit pas à porter une alliance entre patronymes ; les recherches « Rhissa alliance », « joking relationship » et « pacte touareg » n’ont fourni aucune paire avec une autre fiche PAT_*."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les deux études décrivent le système de nomination et un acteur touareg, sans associer Rhissa à une fonction héréditaire ; un nom personnel ne permet pas d’inférer une caste."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Rhissa ag Boula est la seule attestation individuelle solide trouvée dans les sources dédiées, mais il est vivant ; le protocole interdit son enregistrement comme porteur."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Dans un système de noms personnels, la répétition de Rhissa entre individus ne constitue pas à elle seule un homonyme patronymique ; les catalogues consultés n’ont pas établi une seconde origine lexicale distincte."
     }
   ]
 }

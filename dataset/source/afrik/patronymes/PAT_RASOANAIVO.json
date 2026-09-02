@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche limité à l'attestation institutionnelle de Rasoanaivo ; aucune histoire d'origine n'a été trouvée."
   },
   "id": "PAT_RASOANAIVO",
   "nameMain": "Rasoanaivo",
@@ -11,12 +11,12 @@
     {
       "spelling": "Rasoanaivo",
       "attestations": [
-        { "countryId": "MDG", "sourceRefs": ["afrik-candidate-queue"] }
+        { "countryId": "MDG", "sourceRefs": ["twas-imra-rasoanaivo"] }
       ]
     }
   ],
-  "transmissionMode": "non_hereditary",
-  "designatedSocialUnit": "individual",
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
@@ -33,7 +33,7 @@
     {
       "countryId": "MDG",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["twas-imra-rasoanaivo"]
     }
   ],
   "alliances": [],
@@ -41,6 +41,14 @@
   "bearers": [],
   "homonyms": [],
   "sources": [
+    {
+      "sourceKey": "twas-imra-rasoanaivo",
+      "title": "Profiles of Research Institutions in Developing Countries — Malagasy Institute for Applied Research",
+      "url": "https://twas.org/sites/default/files/twas_packard_imra.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Profil institutionnel publié par TWAS avec le soutien de la Packard Foundation. La p. 20 présente Philippe Rasoanaivo, directeur de la recherche scientifique et du laboratoire de phytochimie de l'IMRA à Madagascar."
+    },
     {
       "sourceKey": "afrik-candidate-queue",
       "title": "Relevé de couverture anthroponymique EthniAfrica",
@@ -53,23 +61,31 @@
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes « Rasoanaivo etymology », « Rasoanaivo onomastics », leurs équivalents français et les résultats académiques n'ont livré ni tradition attribuée, ni chronique d'origine, ni reconstruction linguistique ; les gloses de sites génériques ont été rejetées faute de sources."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Le profil TWAS atteste un scientifique, pas une généalogie. Les recherches avec famille, père, fils et transmission n'ont pas établi le mode ; « other » maintient l'indétermination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source consultée n'établit l'unité sociale historiquement désignée par Rasoanaivo."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches Rasoanaivo avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes associant Rasoanaivo à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; les fonctions scientifiques de Philippe Rasoanaivo sont individuelles."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le profil TWAS et les recherches exactes « Rasoanaivo obituary » et « Rasoanaivo décès » ne fournissent aucune date de décès pour Philippe Rasoanaivo ; aucun porteur décédé directement sourcé n'a été identifié."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les catalogues et recherches exactes consultés n'établissent pas de lignée Rasoanaivo d'origine distincte."
     }
   ]
 }

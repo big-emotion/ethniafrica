@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Jama est attesté dans une chaîne de noms officielle somalienne ; son étymologie n'est pas établie par la source retenue."
   },
   "id": "PAT_JAMA",
   "nameMain": "Jama",
@@ -11,7 +11,10 @@
     {
       "spelling": "Jama",
       "attestations": [
-        { "countryId": "SOM", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SOM",
+          "sourceRefs": ["afrik-candidate-queue", "jama-somalia-opm-2022"]
+        }
       ]
     }
   ],
@@ -19,14 +22,20 @@
   "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le bureau du Premier ministre de Somalie atteste Jama comme dernier élément de la chaîne de noms Salah Ahmed Jama ; la notice ne qualifie pas la relation généalogique exprimée par cet élément.",
+        "claimStatus": "established",
+        "sourceRefs": ["jama-somalia-opm-2022"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_SOMALI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "jama-somalia-opm-2022"]
     }
   ],
   "countries": [
@@ -48,28 +57,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "jama-somalia-opm-2022",
+      "title": "H.E. Salah Ahmed Jama — Deputy Prime Minister",
+      "url": "https://opm.gov.so/prime-ministers/h-e-salah-ahmed-jama",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Bureau du Premier ministre de la République fédérale de Somalie, notice consultée intégralement. Elle donne la chaîne Salah Ahmed Jama et sa fonction à partir d'août 2022. Le porteur étant vivant, il n'est pas encodé dans bearers sans auto-identification conforme au schéma."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les graphies Jama, Jaamac, Djama et Giama ont été recherchées dans les catalogues somalistes et avec « name etymology/Friday » ; les notices trouvées attestent des variantes, mais aucune analyse linguistique savante consultable n'a démontré l'étymologie proposée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "La notice officielle décrit un responsable de l'État somalien, sans auto-identification ethnique ; les recherches biographiques ne suffisent pas à transformer sa nationalité en preuve d'appartenance à les Somali."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La notice officielle et les recherches « Jama/Jaamac joking relationship » n'ont livré aucune alliance de parenté à plaisanterie entre deux PAT_* existants."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les fonctions publiques du porteur sont individuelles ; aucune caste ni fonction héréditaire n'est attachée au nom Jama dans les sources consultées."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le porteur directement attesté est vivant et n'a pas fourni l'auto-identification exigée par le schéma ; aucun porteur décédé avec une notice assez précise n'a été retenu."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Jama, Jaamac et Djama ont été recherchés comme anthroponymes, ethnonymes et toponymes ; aucun homonyme distinct et sourcé ne répond au modèle du corpus."
     }
   ]
 }

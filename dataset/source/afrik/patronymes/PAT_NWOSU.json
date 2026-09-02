@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Nwosu ; les lacunes consignent les recherches restées sans résultat."
   },
   "id": "PAT_NWOSU",
   "nameMain": "Nwosu",
@@ -11,69 +11,93 @@
     {
       "spelling": "Nwosu",
       "attestations": [
-        { "countryId": "NGA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["hanks-nwosu", "nkamigbo-2019-igbo-names"]
+        }
       ]
     }
   ],
   "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "designatedSocialUnit": "other",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le Dictionary of American Family Names analyse Nwosu comme un nom personnel igbo signifiant « enfant d'une personne consacrée à une divinité ». Nkamigbo atteste le nom parmi les formes devenues moins fréquentes dans les pratiques contemporaines.",
+        "claimStatus": "established",
+        "sourceRefs": ["hanks-nwosu", "nkamigbo-2019-igbo-names"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_IGBO",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["hanks-nwosu", "nkamigbo-2019-igbo-names"]
     }
   ],
   "countries": [
     {
       "countryId": "NGA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["hanks-nwosu", "nkamigbo-2019-igbo-names"]
     }
   ],
   "alliances": [],
-  "casteOrSocialFunction": null,
+  "casteOrSocialFunction": {
+    "value": "Le sens historique donné par le dictionnaire renvoie à la catégorie ọ̀su, personne consacrée à une divinité, et à sa descendance ; cette mention ne permet pas d'assigner ce statut à un porteur contemporain.",
+    "sourceRefs": ["hanks-nwosu"]
+  },
   "bearers": [],
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "hanks-nwosu",
+      "title": "Nwosu Name Meaning and Nwosu Family History at FamilySearch",
+      "url": "https://www.familysearch.org/en/surname?surname=nwosu",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Entrée Nwosu du Dictionary of American Family Names de Patrick Hanks (2003, 2006), hébergée par FamilySearch et consultée directement. La fiche du dictionnaire identifie explicitement la forme comme nom igbo du Nigeria."
+    },
+    {
+      "sourceKey": "nkamigbo-2019-igbo-names",
+      "title": "The Sociolinguistics of Igbo Personal Names",
+      "url": "https://www.nigerianjournalsonline.org/index.php/JOLLC/article/download/4155/3899/7523",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Linda Chinelo Nkamigbo, Journal of Linguistics, Language and Culture, vol. 6, no 1, 2019. Le PDF intégral a été consulté, notamment les typologies des noms de jours de marché et les changements contemporains de noms igbo."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Nwosu Igbo oral tradition griot transcription » et « Nwosu Igbo lineage oral history » ainsi que l'entrée du dictionnaire de Hanks et l'article de Nkamigbo (2019) n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Nwosu Igbo chronicle manuscript archive » et « Nwosu colonial register Nigeria » n'ont livré aucune chronique ni pièce d'archives établissant l'histoire de cette forme."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Nwosu Igbo joking relationship », « Nwosu joking kinship » et « Nwosu sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "l'entrée du dictionnaire de Hanks et l'article de Nkamigbo (2019) et les recherches « Nwosu obituary biography deceased » n'ont pas permis de retenir un porteur décédé sur une notice propre au nom et suffisamment fiable."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Nwosu homonym etymology » et « Nwosu surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "l'entrée du dictionnaire de Hanks et l'article de Nkamigbo (2019) atteste l'emploi comme nom personnel ou nom de famille, mais ne décrit pas une règle de transmission stable ; les recherches « Nwosu Igbo surname inheritance » n'ont pas tranché entre usages familiaux et individuels."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "l'entrée du dictionnaire de Hanks et l'article de Nkamigbo (2019) ne permet pas de décider si chaque emploi contemporain désigne un individu, une famille, une charge ou un lignage ; aucune monographie propre à Nwosu n'a été trouvée."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier documenté au niveau du système de noms dagomba ; distinguer la forme administrative Abdulai de la forme dagbani Abudulai décrite par la source linguistique."
   },
   "id": "PAT_ABDULAI",
   "nameMain": "Abdulai",
@@ -11,13 +11,28 @@
     {
       "spelling": "Abdulai",
       "attestations": [
-        { "countryId": "GHA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["ghana-ec-2024-northern-voters"]
+        }
+      ]
+    },
+    {
+      "spelling": "Abudulai",
+      "attestations": [
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["dakubu-2000-dagomba-names"]
+        }
       ]
     },
     {
       "spelling": "Abdulaï",
       "attestations": [
-        { "countryId": "GHA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
@@ -26,20 +41,29 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Dans l'inventaire dagomba de M. E. Kropp Dakubu, Abudulai est une réalisation dagbani du nom musulman Abdullah. L'autrice classe ces noms parmi les noms primaires d'origine arabe, transmis en dagbani le plus souvent par l'intermédiaire du haoussa et parfois du mandingue.",
+        "claimStatus": "established",
+        "sourceRefs": ["dakubu-2000-dagomba-names"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_DAGOMBA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["dakubu-2000-dagomba-names"]
     }
   ],
   "countries": [
     {
       "countryId": "GHA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "dakubu-2000-dagomba-names",
+        "ghana-ec-2024-northern-voters"
+      ]
     }
   ],
   "alliances": [],
@@ -47,6 +71,22 @@
   "bearers": [],
   "homonyms": [],
   "sources": [
+    {
+      "sourceKey": "dakubu-2000-dagomba-names",
+      "title": "Personal Names of the Dagomba",
+      "url": "https://pdfproc.lib.msu.edu/?file=%2FDMC%2FAfrican+Journals%2Fpdfs%2FInstitue+of+African+Studies+Research+Review%2F2000v16n2%2Fasrv016002006.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "M. E. Kropp Dakubu, Research Review, nouvelle série, vol. 16, no 2, 2000, p. 53-65. Le texte intégral a été consulté, notamment la section 4 sur les noms primaires islamiques : la liste masculine du samedi donne Abdullah et Abudulai et la discussion précise les voies de transmission arabe-haoussa-dagbani. La source n'atteste pas la graphie administrative Abdulai."
+    },
+    {
+      "sourceKey": "ghana-ec-2024-northern-voters",
+      "title": "Electoral Commission of Ghana — Northern Region Special Voters List 2024",
+      "url": "https://ec.gov.gh/wp-content/uploads/2024/07/NORTHERN-SPECIAL-VOTERS-LIST.pdf",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Liste électorale spéciale officielle de la région Northern, circonscription de Yendi, consultée pour l'attestation répétée de la graphie Abdulai. Les personnes vivantes de cette liste ne sont pas reprises comme porteurs dans le dossier."
+    },
     {
       "sourceKey": "afrik-candidate-queue",
       "title": "Relevé de couverture anthroponymique EthniAfrica",
@@ -58,24 +98,28 @@
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L'article de Dakubu et les catalogues onomastiques consultés ne livrent ni récit d'origine attribué à un griot nommé ni transcription vérifiable pour cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "La recherche dans l'article de Dakubu, les catalogues de l'Université du Ghana et les registres officiels ghanéens n'a pas livré de chronique historique consacrée à Abdulai ou Abudulai."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes sur Abdulai et Abudulai dans la littérature dagomba consultée n'ont pas identifié de parenté à plaisanterie entre deux patronymes disposant chacun d'une fiche PAT_* vérifiable."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Dakubu classe Abudulai comme nom primaire musulman ; l'article et les recherches complémentaires n'établissent aucune fonction sociale ou profession héréditaire attachée au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les listes officielles et notices institutionnelles ghanéennes consultées attestent surtout des personnes vivantes ; aucune notice de personne décédée ne relie de façon vérifiable un porteur précis à l'analyse anthroponymique dagomba de cette fiche."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les variantes Abdullah, Abudulai et Abdulai ont été recherchées dans les sources linguistiques et administratives consultées ; elles renvoient au même continuum de formes, sans lignée homonyme distincte établie."
     }
   ]
 }

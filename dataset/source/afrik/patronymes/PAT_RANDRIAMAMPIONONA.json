@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche limité à une attestation individuelle de Randriamampionona ; aucune origine ou transmission n'a été établie."
   },
   "id": "PAT_RANDRIAMAMPIONONA",
   "nameMain": "Randriamampionona",
@@ -11,12 +11,15 @@
     {
       "spelling": "Randriamampionona",
       "attestations": [
-        { "countryId": "MDG", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "MDG",
+          "sourceRefs": ["academia-denis-randriamampionona"]
+        }
       ]
     }
   ],
-  "transmissionMode": "non_hereditary",
-  "designatedSocialUnit": "individual",
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
@@ -33,7 +36,7 @@
     {
       "countryId": "MDG",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["academia-denis-randriamampionona"]
     }
   ],
   "alliances": [],
@@ -41,6 +44,14 @@
   "bearers": [],
   "homonyms": [],
   "sources": [
+    {
+      "sourceKey": "academia-denis-randriamampionona",
+      "title": "Denis Randriamampionona — University of Antananarivo College of Agronomics Sciences",
+      "url": "https://radisoncelestin.academia.edu/DenisRandriamampionona",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Profil individuel sur Academia.edu, non contrôlé par l'université. Il atteste la graphie et un rattachement professionnel à l'Université d'Antananarivo ; sa nature autoéditée impose le niveau non vérifié."
+    },
     {
       "sourceKey": "afrik-candidate-queue",
       "title": "Relevé de couverture anthroponymique EthniAfrica",
@@ -53,23 +64,31 @@
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes « Randriamampionona etymology », « Randriamampionona onomastics », leurs équivalents français, Google Books et les résultats académiques n'ont livré ni récit attribué, ni chronique d'origine, ni reconstruction linguistique."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Le profil atteste un individu sans filiation. Les recherches Randriamampionona avec père, fils, famille et généalogie n'ont pas établi le mode de transmission ; « other » maintient l'indétermination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source consultée n'établit l'unité sociale historiquement désignée par Randriamampionona."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches Randriamampionona avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes associant Randriamampionona à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; la fonction universitaire du porteur est individuelle."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le profil consulté ne documente aucun décès et ne peut donc alimenter la liste des porteurs décédés. Les recherches n'ont livré aucun autre porteur décédé avec une source vérifiable."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes n'établissent pas de lignée Randriamampionona d'origine distincte."
     }
   ]
 }

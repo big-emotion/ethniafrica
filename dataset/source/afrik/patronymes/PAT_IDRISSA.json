@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche ciblé sur Idrissa ; l'étymologie du nom-source Idris reste disputée et l'association zarma n'est pas confirmée."
   },
   "id": "PAT_IDRISSA",
   "nameMain": "Idrissa",
@@ -11,7 +11,10 @@
     {
       "spelling": "Idrissa",
       "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NER",
+          "sourceRefs": ["behindthename-idrissa", "niger-cm-2024-idrissa"]
+        }
       ]
     },
     {
@@ -26,13 +29,24 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Idrissa est présenté comme une forme d'Idris courante en Afrique de l'Ouest.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["behindthename-idrissa"]
+      },
+      {
+        "claim": "Pour le nom-source Idris, le rapprochement traditionnel avec la racine arabe d-r-s, « étudier », est rejeté par l'étude, qui examine plusieurs hypothèses d'emprunt sans clore le débat.",
+        "claimStatus": "contested",
+        "sourceRefs": ["erder-1990-idris"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_ZARMA",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["niger-cm-2024-idrissa"]
     }
   ],
   "countries": [
@@ -54,28 +68,60 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "behindthename-idrissa",
+      "title": "Meaning, origin and history of the name Idrissa",
+      "url": "https://www.behindthename.com/name/idrissa/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Notice onomastique communautaire consultée en anglais. Elle présente Idrissa comme une forme d'Idris courante en Afrique de l'Ouest. Cette affirmation reste au tier unverified et au statut claimed."
+    },
+    {
+      "sourceKey": "erder-1990-idris",
+      "title": "The Origin of the Name Idrīs in the Qurʾān: A Study of the Influence of Qumran Literature on Early Islam",
+      "url": "https://cris.tau.ac.il/en/publications/the-origin-of-the-name-idr%C4%ABs-in-the-qur%CA%BE%C4%81n-a-study-of-the-influen/",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Yoram Erder, Journal of Near Eastern Studies 49(4), 1990, p. 339-350. La notice institutionnelle de l'Université de Tel-Aviv et le texte intégral en anglais ont été consultés. L'article porte sur Idris, le nom-source d'Idrissa, et conteste l'analyse populaire par la racine arabe d-r-s."
+    },
+    {
+      "sourceKey": "niger-cm-2024-idrissa",
+      "title": "Conseil des ministres du 4 janvier 2024",
+      "url": "https://www.gouv.ne/index.php/les-communiques-du-gouvernement/510-conseil-des-ministres-du-04-01-2024-adoption-de-plusieurs-projets-de-textes-et-mesures-nominatives",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Communiqué officiel du Gouvernement du Niger, consulté en français. Les mesures nominatives attestent plusieurs porteurs de la graphie Idrissa au Niger ; elles ne renseignent ni leur peuple ni l'étymologie du nom."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches sur « Idrissa » dans les corpus et travaux songhay-zarma, avec les termes tradition orale, griot et jasare, n'ont livré aucun récit attribué et transcrit."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues bibliographiques, notices d'autorité et résultats sur Idrissa/Idris ont été consultés ; aucun document historique ne retrace l'introduction d'Idrissa chez les Zarma."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les travaux d'anthroponymie songhay-zarma et les recherches associant « Idrissa » à Zarma, Djerma et Songhay n'ont fourni aucune attestation ethnique dédiée ; l'association initiale reste donc supposée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches associant « Idrissa » à parenté à plaisanterie, alliance, cousinage et sanankuya n'ont identifié aucune paire documentée entre deux fiches PAT existantes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches associant « Idrissa » aux termes caste, métier héréditaire, jasare et fonction sociale n'ont fourni aucune attribution sourcée applicable au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les notices d'autorité et pages institutionnelles consultées attestent des porteurs, mais la recherche n'a pas établi leur décès ; aucun porteur n'est donc enregistré dans ce champ limité aux personnes décédées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les formes Idrissa, Idrissou et Idris ont été distinguées dans les recherches onomastiques ; aucune origine indépendante de la forme ouest-africaine d'Idris n'a été établie pour constituer un homonyme."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
   },
   "id": "PAT_YOHANNES",
   "nameMain": "Yohannes",
@@ -11,7 +11,10 @@
     {
       "spelling": "Yohannes",
       "attestations": [
-        { "countryId": "ERI", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "ERI",
+          "sourceRefs": ["afrik-candidate-queue", "dafn-yohannes"]
+        }
       ]
     }
   ],
@@ -20,7 +23,13 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le Dictionary of American Family Names traite Yohannes comme un nom personnel éthiopien et érythréen équivalent à John. Il précise que son enregistrement comme surname dans la diaspora ne reflète pas un nom familial héréditaire dans ces systèmes.",
+        "claimStatus": "established",
+        "sourceRefs": ["dafn-yohannes"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -33,13 +42,21 @@
     {
       "countryId": "ERI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "dafn-yohannes"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
   "bearers": [],
-  "homonyms": [],
+  "homonyms": [
+    {
+      "label": "Yohannes germanique",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "Le Dictionary of American Family Names signale séparément une américanisation du patronyme allemand Johannes : cette origine germanique est indépendante de l'usage éthiopien et érythréen du nom personnel Yohannes.",
+      "sourceRefs": ["dafn-yohannes"]
+    }
+  ],
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
@@ -48,28 +65,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "dafn-yohannes",
+      "title": "Dictionary of American Family Names, 2nd ed. — Yohannes (Ancestry)",
+      "url": "https://www.ancestry.com/last-name-meaning/yohannes",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Entrée du Dictionary of American Family Names, 2e éd. (Oxford University Press, 2022), reproduite par Ancestry et consultée le 2 septembre 2026. Elle traite Yohannes comme nom personnel éthiopien et érythréen équivalent à John, distingue une forme germanique indépendante et précise le caractère non héréditaire des systèmes éthiopien et érythréen."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Yohannes anthroponymie », « Yohannes onomastique », « Yohannes etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche, ni aucune tradition orale attribuée à un griot ou informateur nommé avec transcription vérifiable."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Yohannes anthroponymie », « Yohannes onomastique », « Yohannes etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche, ni chronique historique qui rattache ce nom à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches « Yohannes anthroponymie », « Yohannes onomastique », « Yohannes etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué ; ce rattachement reste au niveau non vérifié."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Yohannes alliance à plaisanterie », « Yohannes joking relationship » et « Yohannes parenté à plaisanterie » n'ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Yohannes caste », « Yohannes métier héréditaire » et « Yohannes social function » n'ont livré aucune fonction sociale ou professionnelle héréditaire attribuable à ce nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches biographiques sur « Yohannes » dans les résultats de catalogues et répertoires consultés n'ont pas permis d'identifier un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
     }
   ]
 }

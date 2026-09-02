@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon docs/runbooks/anthroponym-fiche-research.md. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
   },
   "id": "PAT_LOPES",
   "nameMain": "Lopes",
@@ -11,16 +11,25 @@
     {
       "spelling": "Lopes",
       "attestations": [
-        { "countryId": "CPV", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CPV",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "bilateral",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le Dictionary of American Family Names décrit Lopes comme un patronyme portugais formé sur le prénom médiéval Lopo, lui-même rattaché au latin lupus (« loup »). Cette analyse linguistique ne localise pas la branche capverdienne.",
+        "claimStatus": "established",
+        "sourceRefs": ["dafn-lopes-2022"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -48,32 +57,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "drotbohm-2009-cape-verde-names",
+      "title": "Horizons of long-distance intimacies: Reciprocity, contribution and disjuncture in Cape Verde",
+      "url": "https://doi.org/10.1016/j.hisfam.2009.02.002",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Heike Drotbohm, The History of the Family 14(2), 2009, p. 132-149. La note sur les noms précise qu'au Cap-Vert l'enfant porte les noms de famille du père et de la mère. Cette source établit la règle générale de transmission bilatérale, non l'origine d'un patronyme particulier."
+    },
+    {
+      "sourceKey": "dafn-lopes-2022",
+      "title": "Lopes Surname Meaning — Dictionary of American Family Names, 2nd edition",
+      "url": "https://www.ancestry.com/last-name-meaning/lopes?geo-lang=en",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Patrick Hanks et al., Dictionary of American Family Names, 2e éd., Oxford University Press, 2022, notice reproduite par Ancestry. La notice est utilisée pour la morphologie patronymique portugaise, sans reconstruction de lignée."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Lopes » associées au Cap-Vert, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Lopes à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Lopes » associées au Cap-Vert, complétés par « caste », « statut héréditaire », « métier » et « social function », n'ont établi aucune fonction sociale héréditaire propre aux porteurs de Lopes. Une étymologie professionnelle éventuelle n'est pas assimilée à un statut contemporain."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Lopes » associées au Cap-Vert n'ont pas fourni, dans cette passe, un porteur à la fois décédé, clairement rattaché au patronyme étudié et documenté par une source distincte de la simple homonymie. Les personnes vivantes rencontrées dans les sources officielles ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Lopes » associées au Cap-Vert n'ont pas permis d'isoler deux lignées homonymes dotées d'origines distinctes et documentées. Lorsque le dictionnaire propose plusieurs formations possibles, elles restent des hypothèses linguistiques et non des lignées séparées."
     }
   ]
 }

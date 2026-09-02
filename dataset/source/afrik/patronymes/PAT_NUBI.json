@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche par fiche : une attestation personnelle datée de la forme al-Nūbī ne suffit pas à établir son étymologie ni son caractère héréditaire."
   },
   "id": "PAT_NUBI",
   "nameMain": "Nubi",
@@ -19,13 +19,25 @@
       "attestations": [
         { "countryId": "EGY", "sourceRefs": ["afrik-candidate-queue"] }
       ]
+    },
+    {
+      "spelling": "al-Nūbī",
+      "attestations": [
+        { "countryId": "EGY", "sourceRefs": ["princeton-geniza-miac-208"] }
+      ]
     }
   ],
   "transmissionMode": "other",
   "designatedSocialUnit": "other",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le catalogue de la Princeton Geniza Project décrit une lettre arabe datée du 24 février 1925, envoyée par l'avocat Muḥammad Ḥasan al-Nūbī. Le document établit l'emploi daté de la forme al-Nūbī dans un nom personnel en Égypte, sans préciser s'il s'agit d'un patronyme héréditaire ou d'une nisba descriptive.",
+        "claimStatus": "established",
+        "sourceRefs": ["princeton-geniza-miac-208"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
@@ -39,7 +51,7 @@
     {
       "countryId": "EGY",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["princeton-geniza-miac-208"]
     }
   ],
   "alliances": [],
@@ -54,36 +66,48 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "princeton-geniza-miac-208",
+      "title": "Princeton Geniza Project — Letter MIAC 208 (PGPID 34857)",
+      "url": "https://geniza.princeton.edu/en/documents/34857/",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Notice d'archive universitaire pour une lettre arabe du 24 février 1925 conservée au Museum of Islamic Art, no 208. La notice nomme l'avocat Muḥammad Ḥasan al-Nūbī, ne fournit ni image ni transcription et indique qu'aucune étude n'est liée au document ; elle sert uniquement à l'attestation personnelle datée."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Le catalogue Princeton Geniza, le répertoire de l'American University in Cairo et les recherches ciblées sur Nubi/al-Nūbī n'ont livré aucune tradition orale avec transmetteur nommé et transcription."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "La notice MIAC 208 atteste al-Nūbī sans l'analyser. Les recherches dans les travaux sur les nisbas arabes et la littérature nubienne n'ont pas livré une étude dédiée qui établisse l'étymon de Nubi comme patronyme ; aucune traduction intuitive n'est donc ajoutée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le catalogue Princeton Geniza, le répertoire de l'American University in Cairo et les recherches « Nubi alliance » n'ont livré aucune alliance patronymique enregistrable avec une autre fiche PAT_*."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "MIAC 208 qualifie son auteur d'avocat, mais une profession individuelle en 1925 n'établit pas une fonction héréditaire du nom ; aucune source consultée n'en documente."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "MIAC 208 nomme Muḥammad Ḥasan al-Nūbī en 1925, mais la notice ne fournit pas son décès. Faute de source établissant le statut deceased exigé par le modèle, il n'est pas ajouté comme porteur."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le répertoire de l'American University in Cairo atteste al-Nubi comme titre d'un roman d'Idris Ali, mais cet emploi littéraire ne fonde pas une origine patronymique distincte ; les recherches n'ont pas trouvé de lignée homonyme indépendante."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "La nisba ne détermine pas à elle seule le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Une seule attestation personnelle dans MIAC 208 ne permet pas de distinguer nisba descriptive et nom familial. Les recherches dans le catalogue CAPMAS, Princeton Geniza et sur « al-Nūbī surname » n'ont pas établi de règle de transmission ; la valeur reste other."
     },
     {
       "fieldPath": "designatedSocialUnit",
-      "reason": "La nisba ne détermine pas à elle seule l'unité sociale désignée : l'atlas ne la documente pas encore pour ce nom."
+      "reason": "MIAC 208 documente un individu sans expliquer ce que désigne al-Nūbī dans son nom. Les sources consultées n'ont pas établi s'il renvoie à une origine, un lignage ou un clan ; la valeur reste other."
     }
   ]
 }

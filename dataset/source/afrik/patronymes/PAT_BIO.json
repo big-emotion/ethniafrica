@@ -2,38 +2,56 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier fondé sur l'onomastique baatombu ; Bio est ici un nom individuel de rang de naissance et non un nom de clan."
   },
   "id": "PAT_BIO",
   "nameMain": "Bio",
-  "nameSystem": "clan_name",
+  "nameSystem": "non_hereditary_patronymic",
   "spellings": [
     {
       "spelling": "Bio",
       "attestations": [
-        { "countryId": "BEN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BEN",
+          "sourceRefs": ["williams-2023-baatombu-names"]
+        },
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["williams-2023-baatombu-names"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Dans le système baatombu documenté au Bénin et au Nigeria, Bio est le nom masculin ouvert du troisième enfant dans la série des noms de rang de naissance. Il peut être porté seul ou précéder un nom de maison ou de clan ; il ne constitue donc pas, en lui-même, un nom clanique héréditaire.",
+        "claimStatus": "established",
+        "sourceRefs": ["williams-2023-baatombu-names"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_BARIBA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["williams-2023-baatombu-names"]
     }
   ],
   "countries": [
     {
       "countryId": "BEN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["williams-2023-baatombu-names"]
+    },
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["williams-2023-baatombu-names"]
     }
   ],
   "alliances": [],
@@ -42,38 +60,38 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "williams-2023-baatombu-names",
+      "title": "Personal names and power: Binary personal naming system of the Baatombu people in Nigeria and Republic of Benin",
+      "url": "https://onomajournal.org/wp-content/uploads/2024/01/Onoma-58-3.03-Williams-final.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Azibaoguanasi Williams, Onoma 58, 2023, p. 305-324, DOI 10.34158/ONOMA.58/2023/17. Article évalué et fondé sur des entretiens et observations de terrain. Le tableau p. 321 donne explicitement Bio comme nom masculin du troisième enfant ; les p. 315-316 distinguent ces noms de rang des racines de maison ou de clan. L'autrice emploie l'auto-désignation Baatombu et signale que Bariba est un exonyme, tandis que l'identifiant historique du corpus reste les Bariba."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L'article de Williams synthétise des entretiens mais ne fournit, pour Bio, ni griot nommé ni transcription d'un récit d'origine conforme au schéma."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les articles onomastiques de Williams et Schottman ainsi que les catalogues universitaires consultés décrivent une règle de nomination, sans chronique historique propre à Bio."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La littérature baatombu consultée sur les noms de rang et les noms de maison ne signale aucune alliance anthroponymique impliquant Bio et une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Williams classe Bio parmi les noms ouverts de rang de naissance ; la distinction de statut décrite dans l'article ne lui assigne aucune profession ni fonction héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches bibliographiques et biographiques exactes sur Bio chez les Baatombu n'ont pas livré de porteur décédé dont le statut et le nom de rang soient établis par une source institutionnelle."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les usages de Bio comme nom simple ou élément de noms composés ont été recherchés dans Williams et Schottman ; aucune lignée homonyme distincte n'est démontrée."
     }
   ]
 }

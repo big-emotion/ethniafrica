@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Une source gouvernementale somalienne atteste Abdi dans une chaîne de noms ; l'expansion et l'étymologie de cette forme courte ne sont pas établies par la recherche consultable."
   },
   "id": "PAT_ABDI",
   "nameMain": "Abdi",
@@ -11,7 +11,10 @@
     {
       "spelling": "Abdi",
       "attestations": [
-        { "countryId": "SOM", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SOM",
+          "sourceRefs": ["afrik-candidate-queue", "abdi-somalia-opm-2026"]
+        }
       ]
     }
   ],
@@ -19,14 +22,20 @@
   "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le bureau du Premier ministre de Somalie atteste Abdi comme dernier élément de la chaîne de noms Jibril Abdirashid Haji Abdi ; la page ne précise pas si cet élément est une forme courte, un nom de père ou un nom familial administrativement stabilisé.",
+        "claimStatus": "established",
+        "sourceRefs": ["abdi-somalia-opm-2026"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_SOMALI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "abdi-somalia-opm-2026"]
     }
   ],
   "countries": [
@@ -48,28 +57,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "abdi-somalia-opm-2026",
+      "title": "Hon. Jibril Abdirashid Haji Abdi — Second Deputy Prime Minister",
+      "url": "https://cabinet.gov.so/prime-ministers/hon-jibril-abdirashid-haji-abdi",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Bureau du Premier ministre de la République fédérale de Somalie, page consultée intégralement. Elle identifie Jibril Abdirashid Haji Abdi comme homme d'État somalien et donne son mandat à partir de juin 2025. Le porteur étant vivant, il n'est pas ajouté à bearers sans auto-identification conforme au schéma."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les requêtes « Abdi/Cabdi Somali name etymology », les dictionnaires somali-anglais et les travaux sur les noms théophores arabes ont été examinés ; aucune étude consultable n'a établi si Abdi est ici autonome ou l'abréviation d'un composé déterminé."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "La page officielle emploie « Somali » au sens civique pour un responsable de l'État et ne contient aucune auto-identification ethnique ; elle ne suffit donc pas à valider les Somali."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La biographie officielle et les recherches « Abdi Somali joking relationship/alliance » n'ont documenté aucune parenté à plaisanterie entre deux PAT_* existants."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les sources consultées traitent Abdi comme élément de nom individuel et n'y attachent aucune caste ni fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le seul porteur directement établi par la source officielle est vivant ; les recherches biographiques complémentaires n'ont pas identifié de porteur décédé suffisamment documenté pour cette fiche."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Abdi et Cabdi ont été recherchés comme anthroponymes, termes lexicaux et toponymes ; aucune entité homonyme distincte et sourcée ne répond au modèle du corpus."
     }
   ]
 }

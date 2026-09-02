@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier prudent fondé sur une notice gouvernementale provisoire consultée sur un miroir non authentifié ; conserver les interprétations concurrentes au statut contesté."
   },
   "id": "PAT_OUOBA",
   "nameMain": "Ouoba",
@@ -11,7 +11,10 @@
     {
       "spelling": "Ouoba",
       "attestations": [
-        { "countryId": "BFA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["burkina-provisional-patronyme-register"]
+        }
       ]
     }
   ],
@@ -20,20 +23,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le répertoire provisoire burkinabè rassemble pour Ouoba plusieurs gloses incompatibles — « celui qui se lave lui-même », « il n'est pas tombé » et « celui qui se cache et cherche » — puis propose un rapprochement avec uooni, « se cacher », et kiba, « gagner ». Faute d'analyse linguistique publiée, aucune de ces interprétations ne peut être retenue comme étymologie établie.",
+        "claimStatus": "contested",
+        "sourceRefs": ["burkina-provisional-patronyme-register"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_GOURMANTCHE",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["burkina-provisional-patronyme-register"]
     }
   ],
   "countries": [
     {
       "countryId": "BFA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["burkina-provisional-patronyme-register"]
     }
   ],
   "alliances": [],
@@ -42,38 +51,42 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "burkina-provisional-patronyme-register",
+      "title": "Projet de répertoire des patronymes au Burkina Faso — version provisoire",
+      "url": "https://pdfcoffee.com/repertoire-des-patronymes-nationaux-du-burkina-pdf-free.html",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "government",
+      "notes": "Document de travail de la Direction du patrimoine culturel du ministère burkinabè chargé de la Culture, sans date ni validation finale visibles, consulté sur une copie PDFCoffee non authentifiée. La notice OUOBA a été lue intégralement : formes, gloses, implantation à Kantchari, Logobou, Fada N'Gourma et dans la Tapoa, ainsi que relations rapportées. Le document collecte des traditions sans appareil critique ; ses propositions restent donc revendiquées ou contestées, jamais établies."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La notice OUOBA du répertoire rapporte des explications collectives sans nommer de griot ni fournir de transcription ; les recherches complémentaires en gourmantchéma n'ont pas trouvé de récit attribuable conforme au schéma."
     },
     {
-      "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues Persée, theses.fr, Glottolog et les recherches exactes Ouoba/gourmantché consultés n'ont pas livré de chronique historique consacrée au nom."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "La notice OUOBA et les travaux linguistiques gourmantchéma repérés n'expliquent pas la ligne de transmission du nom ; le mode reste donc « other »."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Le répertoire cite des relations avec des groupes et des localités, mais aucune paire suffisamment précise entre Ouoba et une autre fiche PAT_* existante n'a été établie."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La notice OUOBA et les recherches savantes consultées ne décrivent aucune fonction sociale ni profession héréditaire attachée au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les requêtes biographiques exactes et catalogues institutionnels consultés n'ont pas livré de porteur décédé dont l'appartenance gourmantché et la pertinence anthroponymique soient toutes deux sourcées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les trois gloses concurrentes de la même notice ont été vérifiées, mais aucune source consultée ne les rattache à des lignées homonymes distinctes."
     }
   ]
 }

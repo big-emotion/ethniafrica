@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
   },
   "id": "PAT_EL_ANDALOUSI",
   "nameMain": "El Andalousi",
@@ -11,22 +11,34 @@
     {
       "spelling": "El Andalousi",
       "attestations": [
-        { "countryId": "MAR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "MAR",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     },
     {
       "spelling": "Andaloussi",
       "attestations": [
-        { "countryId": "MAR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "MAR",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
   "transmissionMode": "other",
-  "designatedSocialUnit": "other",
+  "designatedSocialUnit": "settlement",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "L’étude de patronymie maghrébine donne Andalousi pour « l’Andalou » et réunit des variantes avec l’article El/Al. Cette analyse établit une formation géographique, non le lieu précis ni la généalogie de chaque famille marocaine homonyme.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["crasc-el-andalousi"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -54,36 +66,52 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "crasc-el-andalousi",
+      "title": "Le nom propre maghrébin de l’homme — CRASC",
+      "url": "https://ouvrages.crasc.dz/pdfs/2013-nom-propre-maghrebin-fr-yermeche-sadat-ouerdia.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ouvrage scientifique consulté le 2 septembre 2026. Il analyse Andalousi comme « l’Andalou » et documente des variantes à article ; il ne prouve pas la distribution marocaine propre à la fiche."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « El Andalousi anthroponymie », « El Andalousi onomastique » et « El Andalousi surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. Les requêtes « El Andalousi tradition orale », « El Andalousi griot » et « El Andalousi oral history » n’ont livré aucun griot ou informateur nommé avec transcription vérifiable."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches exactes « El Andalousi anthroponymie », « El Andalousi onomastique » et « El Andalousi surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. Les recherches dans les catalogues historiques et archivistiques n’ont livré aucune chronique rattachant cette graphie à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « El Andalousi anthroponymie », « El Andalousi onomastique » et « El Andalousi surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué par la file d’attente ; ce rattachement reste au niveau non vérifié."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « El Andalousi alliance à plaisanterie », « El Andalousi joking relationship » et « El Andalousi parenté à plaisanterie » n’ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « El Andalousi caste », « El Andalousi métier héréditaire » et « El Andalousi social function » n’ont livré aucune fonction sociale ou professionnelle héréditaire propre à cette graphie."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches biographiques exactes sur « El Andalousi » dans les catalogues, notices institutionnelles et archives accessibles n’ont pas permis d’isoler un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes « El Andalousi homonym surname », « El Andalousi homonyme patronyme » et les variantes graphiques de la fiche n’ont pas établi deux origines distinctes et documentées pour la même forme."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "La nisba ne détermine pas à elle seule le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les recherches « El Andalousi transmission patronyme », « El Andalousi filiation » et « El Andalousi hereditary surname » n’ont pas établi si, ni comment, cette forme se transmet dans les communautés concernées."
     },
     {
-      "fieldPath": "designatedSocialUnit",
-      "reason": "La nisba ne détermine pas à elle seule l'unité sociale désignée : l'atlas ne la documente pas encore pour ce nom."
+      "fieldPath": "countries",
+      "reason": "La source propre au nom ne confirme pas le ou les pays MAR hérités de la file d’attente. Les recherches exactes « El Andalousi surname » avec ces pays n’ont pas livré de registre officiel exploitable ; l’association reste non vérifiée."
     }
   ]
 }

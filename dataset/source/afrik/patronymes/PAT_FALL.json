@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
   },
   "id": "PAT_FALL",
   "nameMain": "Fall",
@@ -11,41 +11,64 @@
     {
       "spelling": "Fall",
       "attestations": [
-        { "countryId": "SEN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SEN",
+          "sourceRefs": [
+            "madubuike-1994-african-names",
+            "dafn-familysearch-fall"
+          ]
+        }
       ]
     },
     {
       "spelling": "Faal",
       "attestations": [
-        { "countryId": "SEN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Madubuike rapporte une tradition qui rattache les Fall wolof aux descendants du damel du Cayor ; l’entrée DAFN décrit cependant Fall d’abord comme un nom toucouleur d’étymologie inexpliquée, également porté chez les Wolof et les Soninké.",
+        "claimStatus": "contested",
+        "sourceRefs": ["madubuike-1994-african-names", "dafn-familysearch-fall"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_WOLOF",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["madubuike-1994-african-names", "dafn-familysearch-fall"]
     }
   ],
   "countries": [
     {
       "countryId": "SEN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["madubuike-1994-african-names", "dafn-familysearch-fall"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
   "bearers": [],
-  "homonyms": [],
+  "homonyms": [
+    {
+      "label": "Fall — patronymes européens",
+      "entityType": "other",
+      "entityId": null,
+      "distinction": "Les formes écossaise ou irlandaise abrégée de McFall et les noms topographiques anglais ou allemands ont des étymologies propres, distinctes du patronyme ouest-africain.",
+      "sourceRefs": ["dafn-familysearch-fall"]
+    }
+  ],
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
@@ -54,32 +77,36 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "madubuike-1994-african-names",
+      "title": "A Handbook of African Names",
+      "url": "https://dokumen.pub/a-handbook-of-african-names-2-revnbsped-0894104381-9780894104381-0894104373.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ihechukwu Madubuike, 2e éd., Three Continents Press, 1994. La section consacrée aux Wolof indique que les enfants prennent le nom familial du père et cite Diop, Ndiaye, Fall et Gueye parmi les patronymes communs transmis par les hommes. La consultation a porté sur une transcription numérique miroir du volume imprimé."
+    },
+    {
+      "sourceKey": "dafn-familysearch-fall",
+      "title": "Dictionary of American Family Names — Fall entry",
+      "url": "https://www.familysearch.org/en/surname?surname=fall",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Entrée FamilySearch reproduisant le Dictionary of American Family Names. Elle distingue plusieurs homonymes européens et un usage ouest-africain, principalement sénégalais, présenté comme toucouleur et aussi attesté chez les Wolof et les Soninké, d’étymologie inexpliquée."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "L’article de Lamine Ndiaye sur la parenté à plaisanterie wolof et les entrées Fall de Madubuike et du DAFN ont été recherchés ; aucune paire patronymique explicite n’a été trouvée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La tradition dynastique rapportée par Madubuike et la notice multiethnique du DAFN ne suffisent pas à établir une caste ou une fonction héréditaire attachée à tous les Fall."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Madubuike et l’entrée DAFN/FamilySearch ont été vérifiés pour des porteurs historiques, mais aucun individu décédé n’y est documenté avec une auto-identification lignagère vérifiable."
     }
   ]
 }

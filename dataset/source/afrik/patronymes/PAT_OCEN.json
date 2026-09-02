@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
   },
   "id": "PAT_OCEN",
   "nameMain": "Ocen",
@@ -11,13 +11,10 @@
     {
       "spelling": "Ocen",
       "attestations": [
-        { "countryId": "UGA", "sourceRefs": ["afrik-candidate-queue"] }
-      ]
-    },
-    {
-      "spelling": "Ochen",
-      "attestations": [
-        { "countryId": "UGA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["agea-eton-lango-naming-2026"]
+        }
       ]
     }
   ],
@@ -25,21 +22,27 @@
   "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Ocen est documenté dans le système lango comme le nom masculin du second jumeau ; Acen est la forme féminine correspondante, non une simple variante graphique du même nom.",
+        "claimStatus": "established",
+        "sourceRefs": ["agea-eton-lango-naming-2026"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_LANGO",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["agea-eton-lango-naming-2026"]
     }
   ],
   "countries": [
     {
       "countryId": "UGA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["agea-eton-lango-naming-2026"]
     }
   ],
   "alliances": [],
@@ -48,34 +51,38 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "agea-eton-lango-naming-2026",
+      "title": "Naming as Cultural Epistemology: Knowledge, Belief, and Identity in Lango Personal Naming",
+      "url": "https://www.researchgate.net/publication/405133463_Naming_as_Cultural_Epistemology_Knowledge_Belief_and_Identity_in_Lango_Personal_Naming",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jacob Godfrey Agea et Marus Eton, East African Journal of Traditions, Culture and Religion 9(1), 2026, DOI 10.37284/eajtcr.9.1.5010. L’étude de 131 noms recueillis auprès de 78 détenteurs de savoir donne Ocen/Acen pour le second jumeau et Opio/Apio pour le premier."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Ocen tradition orale », « Ocen griot » et « Ocen oral history », ainsi que l’enquête de terrain d’Agea et Eton sur 131 noms lango et les recherches par graphie exacte dans ses tableaux, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches « Ocen etymology » et « Ocen meaning », complétées par l’enquête de terrain d’Agea et Eton sur 131 noms lango et les recherches par graphie exacte dans ses tableaux, n’ont livré aucune analyse linguistique publiée qui permette une reconstruction prudente."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Ocen joking kinship », « Ocen name alliance » et « Ocen clan pact », ainsi que l’enquête de terrain d’Agea et Eton sur 131 noms lango et les recherches par graphie exacte dans ses tableaux, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Ocen caste », « Ocen occupational group » ainsi que les passages sociaux consultés dans l’enquête de terrain d’Agea et Eton sur 131 noms lango et les recherches par graphie exacte dans ses tableaux, n’ont établi aucune fonction héréditaire propre à ce nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches biographiques et nécrologiques sur « Ocen » dans les catalogues universitaires et institutionnels, complétées par l’enquête de terrain d’Agea et Eton sur 131 noms lango et les recherches par graphie exacte dans ses tableaux, n’ont pas permis de vérifier un porteur décédé avec une identité suffisamment précise ; les personnes vivantes repérées ne sont pas ajoutées sans auto-identification."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches sur la graphie exacte « Ocen » dans les index onomastiques et l’enquête de terrain d’Agea et Eton sur 131 noms lango et les recherches par graphie exacte dans ses tableaux n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
     }
   ]
 }

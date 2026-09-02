@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
   },
   "id": "PAT_AL_GADDAFI",
   "nameMain": "Al-Gaddafi",
@@ -11,19 +11,37 @@
     {
       "spelling": "Al-Gaddafi",
       "attestations": [
-        { "countryId": "LBY", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "LBY",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "isof-gaddafi-transliteration"
+          ]
+        }
       ]
     },
     {
       "spelling": "Kadhafi",
       "attestations": [
-        { "countryId": "LBY", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "LBY",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "isof-gaddafi-transliteration"
+          ]
+        }
       ]
     },
     {
       "spelling": "Qadhadhfa",
       "attestations": [
-        { "countryId": "LBY", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "LBY",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "isof-gaddafi-transliteration"
+          ]
+        }
       ]
     }
   ],
@@ -45,7 +63,7 @@
     {
       "countryId": "LBY",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "isof-gaddafi-transliteration"]
     }
   ],
   "alliances": [],
@@ -60,36 +78,52 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "isof-gaddafi-transliteration",
+      "title": "Så ska utländska namn skrivas på svenska — Institutet för språk och folkminnen",
+      "url": "https://www.isof.se/svenska-spraket/artiklar/sa-ska-utlandska-namn-skrivas-pa-svenska",
+      "tier": "official",
+      "source_kind": "linguistic_reference",
+      "notes": "Guide officiel suédois de transcription consulté le 2 septembre 2026. Il donne Qadhdhāfi comme translittération et explique que Gaddafi reflète la prononciation libyenne locale ; il ne propose pas d’étymologie familiale."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes « Al-Gaddafi anthroponymie », « Al-Gaddafi onomastique » et « Al-Gaddafi surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. La source propre au nom n’établit qu’une graphie ou une distribution et ne permet d’énoncer ni étymologie ni origine de lignée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Al-Gaddafi anthroponymie », « Al-Gaddafi onomastique » et « Al-Gaddafi surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué par la file d’attente ; ce rattachement reste au niveau non vérifié."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Al-Gaddafi alliance à plaisanterie », « Al-Gaddafi joking relationship » et « Al-Gaddafi parenté à plaisanterie » n’ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Al-Gaddafi caste », « Al-Gaddafi métier héréditaire » et « Al-Gaddafi social function » n’ont livré aucune fonction sociale ou professionnelle héréditaire propre à cette graphie."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches biographiques exactes sur « Al-Gaddafi » dans les catalogues, notices institutionnelles et archives accessibles n’ont pas permis d’isoler un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes « Al-Gaddafi homonym surname », « Al-Gaddafi homonyme patronyme » et les variantes graphiques de la fiche n’ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Les sources consultées attestent la graphie « Al-Gaddafi » sans établir assez précisément le système dénominatif ; la valeur nisba héritée de la vague 1 n’est donc pas étendue par inférence."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "La nisba ne détermine pas à elle seule le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les recherches « Al-Gaddafi transmission patronyme », « Al-Gaddafi filiation » et « Al-Gaddafi hereditary surname » n’ont pas établi si, ni comment, cette forme se transmet dans les communautés concernées."
     },
     {
       "fieldPath": "designatedSocialUnit",
-      "reason": "La nisba ne détermine pas à elle seule l'unité sociale désignée : l'atlas ne la documente pas encore pour ce nom."
+      "reason": "Les recherches « Al-Gaddafi lignée », « Al-Gaddafi clan », « Al-Gaddafi tribe » et « Al-Gaddafi place name » n’ont pas permis de déterminer si cette graphie désigne une lignée, un clan, une caste, une classe d’âge ou un établissement dans le contexte précis de la fiche."
     }
   ]
 }

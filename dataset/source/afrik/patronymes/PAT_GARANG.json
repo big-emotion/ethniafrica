@@ -2,78 +2,105 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
   },
   "id": "PAT_GARANG",
   "nameMain": "Garang",
-  "nameSystem": "clan_name",
+  "nameSystem": "non_hereditary_patronymic",
   "spellings": [
     {
       "spelling": "Garang",
       "attestations": [
-        { "countryId": "SSD", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SSD",
+          "sourceRefs": ["edinburgh-dinka-songs-readme"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Garang est aussi le nom d’une free-divinity dinka décrite par Nikkel comme céleste et associée au soleil. L’identité formelle est établie, mais aucune source consultée ne démontre que chaque nom personnel Garang dérive de ce théonyme ; le lien onomastique reste contested.",
+        "claimStatus": "contested",
+        "sourceRefs": ["nikkel-dinka-christianity-1993"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_DINKA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["edinburgh-dinka-songs-readme"]
     }
   ],
   "countries": [
     {
       "countryId": "SSD",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["edinburgh-dinka-songs-readme"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "John Garang",
+      "sourceRefs": ["impey-dinka-cassette-2013"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "edinburgh-dinka-songs-readme",
+      "title": "A Collection of Dinka Songs — README",
+      "url": "https://datashare.ed.ac.uk/bitstream/handle/10283/184/ACollectionofDinkaSongs_readme.pdf",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Documentation du corpus sonore de Bert Remijsen et de l’équipe du projet Metre and Melody in Dinka Speech and Song, University of Edinburgh et SOAS, 2012. Elle précise que les Dinka n’ont pas de nom de famille fixe et que le nom individuel est suivi de ceux du père puis des ascendants."
+    },
+    {
+      "sourceKey": "nikkel-dinka-christianity-1993",
+      "title": "The Origins and Development of Christianity among the Dinka of Sudan",
+      "url": "https://era.ed.ac.uk/items/8e0f0fba-5c36-4071-8f28-9168cf2e688f",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Thèse de Marc R. Nikkel, University of Edinburgh, 1993. Le chapitre sur la religion dinka décrit Deng et Garang comme des free-divinities : Deng est associé à la pluie, au tonnerre et aux éclairs, Garang au ciel et au soleil. Le texte ne démontre pas que tous les noms personnels identiques dérivent de ces théonymes."
+    },
+    {
+      "sourceKey": "impey-dinka-cassette-2013",
+      "title": "Keeping in touch via cassette: tracing Dinka songs from cattle camp to transnational audio-letter",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/13696815.2013.775038",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Angela Impey, Journal of African Cultural Studies 25(2), 2013, p. 197-210. L’analyse d’un chant identifie Majok comme un nom personnel attribué suivant la préséance maternelle et une hiérarchie de robes bovines ; la note 19 décrit le bovin blanc à tête, cou et croupe noirs."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Garang tradition orale », « Garang griot » et « Garang oral history », ainsi que la documentation du corpus de chants dinka d’Édimbourg et la thèse religieuse de Nikkel, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Garang chronicle », « Garang history » et « Garang genealogy », complétées par la documentation du corpus de chants dinka d’Édimbourg et la thèse religieuse de Nikkel, n’ont livré aucune chronique primaire qui explique l’origine du nom."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Garang joking kinship », « Garang name alliance » et « Garang clan pact », ainsi que la documentation du corpus de chants dinka d’Édimbourg et la thèse religieuse de Nikkel, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Garang caste », « Garang occupational group » ainsi que les passages sociaux consultés dans la documentation du corpus de chants dinka d’Édimbourg et la thèse religieuse de Nikkel, n’ont établi aucune fonction héréditaire propre à ce nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les recherches sur la graphie exacte « Garang » dans les index onomastiques et la documentation du corpus de chants dinka d’Édimbourg et la thèse religieuse de Nikkel n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
     }
   ]
 }

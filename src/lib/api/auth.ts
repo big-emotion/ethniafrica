@@ -22,7 +22,7 @@ export function getKeyPrefix(rawKey: string): string {
 
 async function pbkdf2Derive(
   rawKey: string,
-  salt: Uint8Array,
+  salt: Uint8Array<ArrayBuffer>,
   iterations: number
 ): Promise<string> {
   const keyMaterial = await crypto.subtle.importKey(

@@ -37,12 +37,20 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    # The apply step walks the whole corpus, and the corpus only grows: at 1721
-    # fiches it ran 19m16s and was still writing patronymes when a 20-minute cap
-    # killed it mid-load, leaving recette holding a partial corpus. Everything
-    # before it (checkout, npm ci, validation, the dry-run preview) costs under a
-    # minute together, so this budget is the apply step's, with room to grow.
-    timeout-minutes: 45
+    # The apply step walks the whole corpus and has never once run to completion:
+    # 20 minutes killed it mid-patronymes, and 45 killed it again 45m42s in. The
+    # database is the only progress signal the step gives — it writes nothing to
+    # stdout until it returns — and it shows patronymes finishing ~15 minutes in,
+    # with the remaining half hour spent in loadPeopleAppellations,
+    # loadNameRecords and loadRelations. `name_records` in recette still carries
+    # a timestamp from a run that never reached it.
+    #
+    # 90 minutes is twice the longest measured run, not a measured figure itself:
+    # nothing has yet observed this step finish. The stages after patronymes are
+    # slow enough (~3700 name records against ~30 minutes) to suggest per-row
+    # round trips, which is the actual fix — this budget only stops a partial
+    # load from being published as a cancelled run.
+    timeout-minutes: 90
     environment: recette
     env:
       # Recette's own credentials — the pair the rest of CI uses. The production

@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
   },
   "id": "PAT_OJULU",
   "nameMain": "Ojulu",
@@ -11,7 +11,19 @@
     {
       "spelling": "Ojulu",
       "attestations": [
-        { "countryId": "ETH", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    },
+    {
+      "spelling": "Ojula",
+      "attestations": [
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["osterlund-anuak-legacy-2021"]
+        }
       ]
     }
   ],
@@ -19,21 +31,27 @@
   "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "La monographie d’Osterlund documente Ojula/Ajula comme nom du deuxième enfant dans l’ordre de naissance anuak. Elle n’atteste pas la graphie exacte Ojulu ; le rapprochement entre Ojulu et Ojula reste donc contested.",
+        "claimStatus": "contested",
+        "sourceRefs": ["osterlund-anuak-legacy-2021"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_ANUAK",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["osterlund-anuak-legacy-2021"]
     }
   ],
   "countries": [
     {
       "countryId": "ETH",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["osterlund-anuak-legacy-2021"]
     }
   ],
   "alliances": [],
@@ -48,28 +66,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "osterlund-anuak-legacy-2021",
+      "title": "The Anuak Legacy: Music & Culture",
+      "url": "https://mlpp.pressbooks.pub/isbn9781732566125/chapter/social-and-cultural-characteristics-of-the-anuak-tribe/",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Monographie de David C. Osterlund, University of Northwestern Berntsen Library, 2021, issue d’un terrain de 1972-1973 et d’une thèse de 1978. La section Naming donne Ojula/Ajula au deuxième enfant. Elle n’atteste pas la graphie exacte Ojulu ; cette relation orthographique reste donc contestée."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Ojulu tradition orale », « Ojulu griot » et « Ojulu oral history », ainsi que la section Naming de The Anuak Legacy, ses notes de terrain et les recherches exactes Ojulu/Ojula dans les catalogues anuak, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches « Ojulu etymology » et « Ojulu meaning », complétées par la section Naming de The Anuak Legacy, ses notes de terrain et les recherches exactes Ojulu/Ojula dans les catalogues anuak, n’ont livré aucune analyse linguistique publiée qui permette une reconstruction prudente."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Ojulu joking kinship », « Ojulu name alliance » et « Ojulu clan pact », ainsi que la section Naming de The Anuak Legacy, ses notes de terrain et les recherches exactes Ojulu/Ojula dans les catalogues anuak, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Ojulu caste », « Ojulu occupational group » ainsi que les passages sociaux consultés dans la section Naming de The Anuak Legacy, ses notes de terrain et les recherches exactes Ojulu/Ojula dans les catalogues anuak, n’ont établi aucune fonction héréditaire propre à ce nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches biographiques et nécrologiques sur « Ojulu » dans les catalogues universitaires et institutionnels, complétées par la section Naming de The Anuak Legacy, ses notes de terrain et les recherches exactes Ojulu/Ojula dans les catalogues anuak, n’ont pas permis de vérifier un porteur décédé avec une identité suffisamment précise ; les personnes vivantes repérées ne sont pas ajoutées sans auto-identification."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches sur la graphie exacte « Ojulu » dans les index onomastiques et la section Naming de The Anuak Legacy, ses notes de terrain et les recherches exactes Ojulu/Ojula dans les catalogues anuak n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
     }
   ]
 }

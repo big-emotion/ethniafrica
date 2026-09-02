@@ -2,84 +2,166 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier français consacré à l'élément patronymique personnel Déby dans la chaîne anthroponymique bideyat documentée ; ne pas le confondre avec le clan Kolyala et ne lui attribuer aucune étymologie sans source linguistique dédiée."
   },
   "id": "PAT_DEBY",
   "nameMain": "Déby",
-  "nameSystem": "clan_name",
+  "nameSystem": "non_hereditary_patronymic",
   "spellings": [
     {
       "spelling": "Déby",
       "attestations": [
-        { "countryId": "TCD", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "TCD",
+          "sourceRefs": ["elysee-idriss-deby-2021"]
+        },
+        {
+          "countryId": "SDN",
+          "sourceRefs": ["tubiana-chad-sudan-2008"]
+        }
       ]
     },
     {
       "spelling": "Deby",
       "attestations": [
-        { "countryId": "TCD", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "TCD",
+          "sourceRefs": ["world-bank-chad-poverty-2021"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Dans la généalogie publiée d'Idriss Déby Itno, Déby est le nom personnel de son père et Hitno celui de son grand-père. Tubiana présente Hitno et son fils Déby comme des cheikhs représentant leur clan à Shigek-Karo, tandis que Rosenhart identifie séparément ce clan comme Kolyala, au sein des Bilia/Bideyat/Zaghawa. Les sources distinguent donc l'élément patronymique Déby du nom de clan Kolyala.",
+        "claimStatus": "established",
+        "sourceRefs": [
+          "tubiana-chad-sudan-2008",
+          "rosenhart-tribal-identity-2024"
+        ]
+      },
+      {
+        "claim": "La monographie communautaire arabe الزغاوة: ماضٍ وحاضر recense l'entrée « إيناء ديبي حنتو » dans une liste d'autorités bideyat du Tchad et du Soudan. Cette attestation écrite confirme seulement la présence de la graphie arabe ديبي en contexte bideyat ; elle ne fournit ni étymologie du nom ni tradition orale attribuée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["suleiman-zaghawa-1988"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_ZAGHAWA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "tubiana-chad-sudan-2008",
+        "rosenhart-tribal-identity-2024"
+      ]
     }
   ],
   "countries": [
     {
       "countryId": "TCD",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["elysee-idriss-deby-2021", "world-bank-chad-poverty-2021"]
+    },
+    {
+      "countryId": "SDN",
+      "status": "attested",
+      "sourceRefs": ["tubiana-chad-sudan-2008"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
-  "homonyms": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Idriss Déby Itno",
+      "sourceRefs": ["elysee-idriss-deby-2021", "world-bank-chad-poverty-2021"]
+    }
+  ],
+  "homonyms": [
+    {
+      "label": "Deby en Alsace et en Lorraine",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "Le Dictionary of American Family Names décrit le Deby alsacien et lorrain comme une forme abrégée du nom personnel allemand Debus. Cette étymologie européenne concerne un homonyme et ne doit pas être transférée au Déby de la chaîne patronymique bideyat.",
+      "sourceRefs": ["familysearch-deby"]
+    }
+  ],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "tubiana-chad-sudan-2008",
+      "title": "La guerre par procuration entre le Tchad et le Soudan et la « darfourisation » du Tchad : mythes et réalité",
+      "url": "https://www.smallarmssurvey.org/sites/default/files/resources/HSBA-WP-12-Chad-Sudan-Proxy-War-french.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jérôme Tubiana, Small Arms Survey, document de travail 12, 2008, p. 12. Le texte intégral a été vérifié : Hitno, grand-père d'Idriss Déby, et son fils Déby y sont présentés comme cheikhs représentant leur clan à Shigek-Karo, place forte bideyat au nord d'Um Buru. Les versions française et anglaise de Wikipédia ont été croisées uniquement comme index de découverte ; elles ne fondent aucune affirmation de cette fiche."
+    },
+    {
+      "sourceKey": "rosenhart-tribal-identity-2024",
+      "title": "Exploiting Tribal Identity: Evidence from the Darfur Conflict (2001-) and the Chad-Sudan Proxy War (2005-2010)",
+      "url": "https://doi.org/10.69755/2995-2212.1281",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Eline Rosenhart, Journal of Social Encounters, vol. 8, n° 2, 2024, p. 97. La notice DOI et le texte intégral déposé par l'autrice ont été vérifiés. L'article explique que, dans le cas étudié, les personnes sont identifiées par les noms personnels du père, du grand-père et de l'arrière-grand-père ; il donne Itno comme grand-père d'Idriss Déby et Kolyala comme clan bideyat distinct."
+    },
+    {
+      "sourceKey": "elysee-idriss-deby-2021",
+      "title": "Décès du Président de la République du Tchad Idriss Déby Itno",
+      "url": "https://www.elysee.fr/emmanuel-macron/2021/04/20/deces-du-president-de-la-republique-du-tchad-idriss-deby-itno",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Communiqué de la présidence de la République française, 20 avril 2021. Atteste la graphie accentuée « Idriss Déby Itno » et le décès du porteur."
+    },
+    {
+      "sourceKey": "world-bank-chad-poverty-2021",
+      "title": "Chad Poverty Assessment: Investing in Rural Income Growth, Human Capital, and Resilience to Support Sustainable Poverty Reduction",
+      "url": "https://documents1.worldbank.org/curated/en/642041633397593711/pdf/Chad-Poverty-Assessment-Investing-in-Rural-Income-Growth-Human-Capital-and-Resilience-to-Support-Sustainable-Poverty-Reduction.pdf",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "Banque mondiale, 2021, préface p. x. Le texte intégral a été vérifié : il emploie la graphie non accentuée « Idriss Deby » et date son décès du 20 avril 2021."
+    },
+    {
+      "sourceKey": "suleiman-zaghawa-1988",
+      "title": "الزغاوة: ماضٍ وحاضر (Les Zaghawa : passé et présent)",
+      "url": "https://zaghawa.org/sahifa3/wp-content/uploads/2024/04/zaghawa-past-present-first-edition-1.pdf",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Ouvrage communautaire arabe, première édition, Koweït, avril 1988. Le PDF intégral et les pages physiques 100-101 ont été vérifiés visuellement. La page 101 porte l'entrée exacte « إيناء ديبي حنتو » dans une liste d'autorités bideyat ; la fiche conserve cette graphie sans traduire le titre إيناء ni en déduire une étymologie."
+    },
+    {
+      "sourceKey": "familysearch-deby",
+      "title": "Deby Name Meaning and Deby Family History at FamilySearch",
+      "url": "https://www.familysearch.org/en/surname?surname=deby",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Répertoire généalogique FamilySearch citant le Dictionary of American Family Names de Patrick Hanks. La page a été vérifiée directement ; elle décrit le Deby d'Alsace et de Lorraine comme une forme abrégée du nom personnel allemand Debus. Cette source faible ne porte que l'homonyme européen."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches ciblées sur « Déby » avec « griot », « tradition orale », « Bideyat » et « Zaghawa », ainsi que la lecture des passages nominatifs de Tubiana et Rosenhart, n'ont livré aucun récit attribué à un transmetteur nommé avec une transcription vérifiable."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches ciblées sur une étymologie de Déby en beria ou baele, croisées avec les graphies Deby et Déby et les ethnonymes Bideyat et Zaghawa, n'ont livré ni étymon publié ni analyse comparative. Tubiana et Rosenhart établissent la chaîne de noms, pas le sens lexical de Déby."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches combinant Déby avec « alliance », « parenté à plaisanterie », « kal » et « sanankuya », puis avec Bideyat et Zaghawa, n'ont livré aucune paire de noms attestée. Les sources consultées rattachent les relations collectives au clan Kolyala, distinct du patronyme personnel Déby."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les recherches combinant Déby avec « caste », « Hadaheed », « fonction héréditaire », Bideyat et Zaghawa, ainsi que les passages de Tubiana et Rosenhart, n'ont établi aucune fonction sociale héréditaire attachée au nom Déby. Les charges de cheikh décrites par Tubiana concernent des personnes et leur représentation clanique, non une caste portée par ce nom."
     }
-  ]
+  ],
+  "patronymicChainDepth": {
+    "generations": 3,
+    "sourceRefs": ["rosenhart-tribal-identity-2024"]
+  }
 }

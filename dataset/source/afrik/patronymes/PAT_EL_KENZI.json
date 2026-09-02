@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche par fiche : la dérivation de Kenzi/Kenûzi est documentée comme discutée et ne doit pas être transformée en certitude généalogique."
   },
   "id": "PAT_EL_KENZI",
   "nameMain": "El Kenzi",
@@ -17,7 +17,25 @@
     {
       "spelling": "Kenzi",
       "attestations": [
-        { "countryId": "EGY", "sourceRefs": ["afrik-candidate-queue"] }
+        { "countryId": "EGY", "sourceRefs": ["satzinger-2010-kenzi"] }
+      ]
+    },
+    {
+      "spelling": "Kenûzi",
+      "attestations": [
+        { "countryId": "EGY", "sourceRefs": ["satzinger-2010-kenzi"] }
+      ]
+    },
+    {
+      "spelling": "Kunûzi",
+      "attestations": [
+        { "countryId": "EGY", "sourceRefs": ["satzinger-2010-kenzi"] }
+      ]
+    },
+    {
+      "spelling": "Kanzi",
+      "attestations": [
+        { "countryId": "EGY", "sourceRefs": ["satzinger-2010-kenzi"] }
       ]
     }
   ],
@@ -26,20 +44,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Satzinger rapporte la dérivation de Kenzi/Kenûzi depuis l'épithète arabe kanz al-dawla (« trésor de l'Empire »), titre associé aux Banū Kanz. Il juge toutefois que le premier scénario historique n'explique pas les données linguistiques et envisage un second porteur du titre ; la filiation étymologique reste donc contestée.",
+        "claimStatus": "contested",
+        "sourceRefs": ["satzinger-2010-kenzi"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_NUBIENS",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["satzinger-2010-kenzi"]
     }
   ],
   "countries": [
     {
       "countryId": "EGY",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["satzinger-2010-kenzi"]
     }
   ],
   "alliances": [],
@@ -54,36 +78,48 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "satzinger-2010-kenzi",
+      "title": "Old Nubian — Black African Language of the Most Ancient Attestation",
+      "url": "https://homepage.univie.ac.at/helmut.satzinger/Texte/OldNubian.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Helmut Satzinger, dans Between the Cataracts, Part Two, Polish Archaeology in the Mediterranean Supplement Series 2.2/2, 2010, p. 747-754. Les p. 748-749 situent Kenzi/Kenûzi/Kunûzi/Kanzi dans le nord de la Nubie égyptienne et discutent deux filiations possibles autour du titre kanz al-dawla, sans trancher une généalogie patronymique."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L'étude de Satzinger et les recherches ciblées sur El Kenzi/Kenûzi n'ont livré aucune tradition orale avec griot ou transmetteur nommé et transcription consultable."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Satzinger résume deux scénarios historiques autour du titre kanz al-dawla, mais la recherche n'a pas livré de chronique primaire directement consultable qui atteste El Kenzi comme patronyme ; aucun claim n'est donc classé comme chronique écrite."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "L'étude de Satzinger et les recherches « El Kenzi alliance » et « Kenzi joking kinship » n'ont livré aucune alliance patronymique enregistrable avec une autre fiche PAT_*."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Satzinger traite de langue, d'ethnonyme et d'histoire, sans fonction sociale héréditaire attachée à El Kenzi ; les recherches patronymiques ciblées n'en ont pas trouvé."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "L'étude de Satzinger et les recherches de la graphie exacte El Kenzi n'ont livré aucun porteur historique décédé documenté par une source dédiée."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Kenzi est aussi le nom d'une langue et Kenûzi celui d'un groupe nubien dans la source, mais ces emplois relèvent du même dossier historique ; aucune origine homonyme indépendante n'a été établie."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "La nisba ne détermine pas à elle seule le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Satzinger n'étudie pas El Kenzi comme nom familial. Les recherches dans le catalogue CAPMAS et sur « El Kenzi surname » n'ont pas établi si la forme est héréditaire, descriptive ou les deux ; la valeur reste other."
     },
     {
       "fieldPath": "designatedSocialUnit",
-      "reason": "La nisba ne détermine pas à elle seule l'unité sociale désignée : l'atlas ne la documente pas encore pour ce nom."
+      "reason": "Satzinger atteste une langue et un groupe ethnolinguistique, mais pas l'unité sociale désignée par El Kenzi comme patronyme ; les recherches n'ont pas départagé individu, lignage ou clan, donc la valeur reste other."
     }
   ]
 }

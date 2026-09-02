@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
   },
   "id": "PAT_NHASSE",
   "nameMain": "Nhassé",
@@ -11,35 +11,47 @@
     {
       "spelling": "Nhassé",
       "attestations": [
-        { "countryId": "GNB", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["intumbo-2007-guinean-creole-balanta"]
+        }
       ]
     },
     {
       "spelling": "Nhasse",
       "attestations": [
-        { "countryId": "GNB", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "La thèse linguistique d’Intumbo atteste la graphie Nhassé dans le nom de l’actrice Male Nhassé, explicitement présentée comme locutrice native balante ; elle ne propose toutefois aucune étymologie du patronyme.",
+        "claimStatus": "established",
+        "sourceRefs": ["intumbo-2007-guinean-creole-balanta"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_BALANTA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["intumbo-2007-guinean-creole-balanta"]
     }
   ],
   "countries": [
     {
       "countryId": "GNB",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["intumbo-2007-guinean-creole-balanta"]
     }
   ],
   "alliances": [],
@@ -54,32 +66,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "intumbo-2007-guinean-creole-balanta",
+      "title": "Estudo comparativo da morfossintaxe do crioulo guineense, do balanta e do português",
+      "url": "https://www.uc.pt/ciuc/creolistics/research/guine/intumbo_2007",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Incanha Intumbo, mémoire de master en linguistique descriptive, Université de Coimbra, 2007. À la p. 11, l’auteur cite l’actrice Male Nhassé comme exemple de locutrice native balante dans le film Mortu Nega."
+    },
+    {
+      "sourceKey": "biifa-2022-balanta-names",
+      "title": "O processo da assimilação na etnia Balanta na Guiné-Bissau: significados dos nomes e sobrenomes",
+      "url": "https://repositorio.unilab.edu.br/jspui/bitstream/123456789/6647/1/SANDRA%20DAM%20ADELINO%20BAPTISTA%20BIIFA.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Sandra Dam Adelino Baptista Biifa, travail de conclusion de bacharelado, UNILAB, 2022. L’autrice, qui s’identifie comme balante, décrit les patronymes comme noms d’ancêtres ou de grands-pères paternels transmis aux enfants, petits-enfants et arrière-petits-enfants et associés à la morança familiale."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La thèse d’Intumbo et l’étude de Biifa sur les noms balantes ont été recherchées pour une alliance ou une paire patronymique nommant Nhassé ; aucune n’a été trouvée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Intumbo atteste une porteuse et Biifa décrit la filiation patronymique balante en général, sans associer Nhassé à une caste, un métier héréditaire ou une fonction sociale."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Male Nhassé n’est pas ajoutée comme bearer : la source linguistique ne documente pas son décès et ne fournit pas l’auto-identification exigée pour un porteur vivant."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les graphies Nhassé et Nhasse ont été recherchées dans Intumbo et Biifa ; aucune origine homonyme distincte n’y est documentée."
     }
   ]
 }

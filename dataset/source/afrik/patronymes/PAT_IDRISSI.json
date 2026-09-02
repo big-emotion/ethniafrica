@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
   },
   "id": "PAT_IDRISSI",
   "nameMain": "Idrissi",
@@ -11,13 +11,19 @@
     {
       "spelling": "Idrissi",
       "attestations": [
-        { "countryId": "MAR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "MAR",
+          "sourceRefs": ["afrik-candidate-queue", "forebears-idrissi"]
+        }
       ]
     },
     {
       "spelling": "El Idrissi",
       "attestations": [
-        { "countryId": "MAR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "MAR",
+          "sourceRefs": ["afrik-candidate-queue", "forebears-idrissi"]
+        }
       ]
     }
   ],
@@ -39,7 +45,7 @@
     {
       "countryId": "MAR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "forebears-idrissi"]
     }
   ],
   "alliances": [],
@@ -54,36 +60,52 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "forebears-idrissi",
+      "title": "Idrissi Surname Origin, Meaning & Last Name History — Forebears",
+      "url": "https://forebears.io/surnames/idrissi",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Répertoire communautaire consulté le 2 septembre 2026. Il recense Idrissi au Maroc mais ne fournit pas, sur la page propre à cette graphie, une étymologie documentée."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes « Idrissi anthroponymie », « Idrissi onomastique » et « Idrissi surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Aucun travail savant consacré à l’origine ou à l’histoire d’une lignée portant exactement cette graphie n’a été trouvé. La source propre au nom n’établit qu’une graphie ou une distribution et ne permet d’énoncer ni étymologie ni origine de lignée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Idrissi anthroponymie », « Idrissi onomastique » et « Idrissi surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Aucun travail savant consacré à l’origine ou à l’histoire d’une lignée portant exactement cette graphie n’a été trouvé. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué par la file d’attente ; ce rattachement reste au niveau non vérifié."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Idrissi alliance à plaisanterie », « Idrissi joking relationship » et « Idrissi parenté à plaisanterie » n’ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Idrissi caste », « Idrissi métier héréditaire » et « Idrissi social function » n’ont livré aucune fonction sociale ou professionnelle héréditaire propre à cette graphie."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches biographiques exactes sur « Idrissi » dans les catalogues, notices institutionnelles et archives accessibles n’ont pas permis d’isoler un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes « Idrissi homonym surname », « Idrissi homonyme patronyme » et les variantes graphiques de la fiche n’ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Les sources consultées attestent la graphie « Idrissi » sans établir assez précisément le système dénominatif ; la valeur nisba héritée de la vague 1 n’est donc pas étendue par inférence."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "La nisba ne détermine pas à elle seule le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les recherches « Idrissi transmission patronyme », « Idrissi filiation » et « Idrissi hereditary surname » n’ont pas établi si, ni comment, cette forme se transmet dans les communautés concernées."
     },
     {
       "fieldPath": "designatedSocialUnit",
-      "reason": "La nisba ne détermine pas à elle seule l'unité sociale désignée : l'atlas ne la documente pas encore pour ce nom."
+      "reason": "Les recherches « Idrissi lignée », « Idrissi clan », « Idrissi tribe » et « Idrissi place name » n’ont pas permis de déterminer si cette graphie désigne une lignée, un clan, une caste, une classe d’âge ou un établissement dans le contexte précis de la fiche."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
   },
   "id": "PAT_DJALO",
   "nameMain": "Djaló",
@@ -11,41 +11,56 @@
     {
       "spelling": "Djaló",
       "attestations": [
-        { "countryId": "GNB", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["sadjo-2019-kaabu"]
+        }
       ]
     },
     {
       "spelling": "Diallo",
       "attestations": [
-        { "countryId": "GNB", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["sadjo-2019-kaabu"]
+        }
       ]
     },
     {
       "spelling": "Jalo",
       "attestations": [
-        { "countryId": "GNB", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["sadjo-2019-kaabu"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Pour la Guinée-Bissau, Sadjo rattache les graphies Diallo, Djaló et Jaló au groupe Djal-Djaló parmi les principaux groupes fulas et décrit une organisation qui privilégie la ligne paternelle.",
+        "claimStatus": "established",
+        "sourceRefs": ["sadjo-2019-kaabu"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_FULA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["sadjo-2019-kaabu"]
     }
   ],
   "countries": [
     {
       "countryId": "GNB",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["sadjo-2019-kaabu"]
     }
   ],
   "alliances": [],
@@ -54,38 +69,30 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "sadjo-2019-kaabu",
+      "title": "Fulas e Mandingas na luta pelo poder e conquista do Império de Kaabu: causas e consequências (século XVI-XIX)",
+      "url": "https://repositorio.unilab.edu.br/jspui/bitstream/123456789/3467/1/ibu%20djalo_tcc.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ibu Sadjo, mémoire de bacharelado, UNILAB, 2019. Aux p. 19-20, le mémoire cite Djaló (2013) sur le groupe Djal-Djaló, ses graphies Diallo, Djaló et Jaló en Guinée-Bissau et la priorité accordée à la filiation paternelle."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le mémoire de Sadjo a été recherché pour une alliance à plaisanterie nommant Djaló, Diallo ou Jaló ; il ne fournit aucune paire patronymique enregistrable."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les passages de Sadjo sur Djal-Djaló décrivent un groupe fula et sa filiation, sans lui attribuer de métier héréditaire ni de statut social propre."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les occurrences de Djaló chez Sadjo servent à décrire le groupe ; elles n’établissent pas le décès et l’auto-identification lignagère d’un porteur individuel."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Sadjo réunit Diallo, Djaló et Jaló comme graphies du même groupe Djal-Djaló ; la recherche n’a pas établi une lignée homonyme distincte."
     }
   ]
 }

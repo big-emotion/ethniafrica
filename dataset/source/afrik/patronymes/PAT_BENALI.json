@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
   },
   "id": "PAT_BENALI",
   "nameMain": "Benali",
@@ -11,13 +11,19 @@
     {
       "spelling": "Benali",
       "attestations": [
-        { "countryId": "DZA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "DZA",
+          "sourceRefs": ["afrik-candidate-queue", "forebears-benali"]
+        }
       ]
     },
     {
       "spelling": "Ben Ali",
       "attestations": [
-        { "countryId": "DZA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "DZA",
+          "sourceRefs": ["afrik-candidate-queue", "forebears-benali"]
+        }
       ]
     }
   ],
@@ -26,7 +32,13 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Une contribution communautaire interprète Benali comme « fils d’Ali ». Cette lecture morphologique plausible est conservée au niveau non vérifié : la page ne démontre ni la fixation du patronyme ni une filiation commune.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["forebears-benali"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -39,7 +51,7 @@
     {
       "countryId": "DZA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "forebears-benali"]
     }
   ],
   "alliances": [],
@@ -54,36 +66,52 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "forebears-benali",
+      "title": "Benali Surname Origin, Meaning & Last Name History — Forebears",
+      "url": "https://forebears.io/surnames/benali",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Répertoire communautaire consulté le 2 septembre 2026. Il recense Benali en Algérie et reproduit une interprétation utilisateur « fils d’Ali » sans référence savante."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « Benali anthroponymie », « Benali onomastique » et « Benali surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Aucun travail savant consacré à l’origine ou à l’histoire d’une lignée portant exactement cette graphie n’a été trouvé. Les requêtes « Benali tradition orale », « Benali griot » et « Benali oral history » n’ont livré aucun griot ou informateur nommé avec transcription vérifiable."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches exactes « Benali anthroponymie », « Benali onomastique » et « Benali surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Aucun travail savant consacré à l’origine ou à l’histoire d’une lignée portant exactement cette graphie n’a été trouvé. Les recherches dans les catalogues historiques et archivistiques n’ont livré aucune chronique rattachant cette graphie à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Benali anthroponymie », « Benali onomastique » et « Benali surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Aucun travail savant consacré à l’origine ou à l’histoire d’une lignée portant exactement cette graphie n’a été trouvé. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué par la file d’attente ; ce rattachement reste au niveau non vérifié."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Benali alliance à plaisanterie », « Benali joking relationship » et « Benali parenté à plaisanterie » n’ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Benali caste », « Benali métier héréditaire » et « Benali social function » n’ont livré aucune fonction sociale ou professionnelle héréditaire propre à cette graphie."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches biographiques exactes sur « Benali » dans les catalogues, notices institutionnelles et archives accessibles n’ont pas permis d’isoler un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes « Benali homonym surname », « Benali homonyme patronyme » et les variantes graphiques de la fiche n’ont pas établi deux origines distinctes et documentées pour la même forme."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "La nisba ne détermine pas à elle seule le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les recherches « Benali transmission patronyme », « Benali filiation » et « Benali hereditary surname » n’ont pas établi si, ni comment, cette forme se transmet dans les communautés concernées."
     },
     {
       "fieldPath": "designatedSocialUnit",
-      "reason": "La nisba ne détermine pas à elle seule l'unité sociale désignée : l'atlas ne la documente pas encore pour ce nom."
+      "reason": "Les recherches « Benali lignée », « Benali clan », « Benali tribe » et « Benali place name » n’ont pas permis de déterminer si cette graphie désigne une lignée, un clan, une caste, une classe d’âge ou un établissement dans le contexte précis de la fiche."
     }
   ]
 }

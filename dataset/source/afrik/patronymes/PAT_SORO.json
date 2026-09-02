@@ -2,78 +2,136 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier sénoufo documenté par fiche ; distinguer Soro/Horo du patronyme yarse et du patronyme san homonymes au Burkina Faso."
   },
   "id": "PAT_SORO",
   "nameMain": "Soro",
-  "nameSystem": "clan_name",
+  "nameSystem": "totemic_clan",
   "spellings": [
     {
       "spelling": "Soro",
       "attestations": [
-        { "countryId": "CIV", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["coulibaly-2019-noms-senoufo"]
+        }
+      ]
+    },
+    {
+      "spelling": "Horo",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["coulibaly-2019-noms-senoufo"]
+        }
+      ]
+    },
+    {
+      "spelling": "Solo",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["tauxier-2003-etats-kong"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "bilateral",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "writtenChronicles": [
+      {
+        "claim": "Tauxier rapporte chez les Pallakha qu'un ancêtre aurait fait tomber un couteau menaçant le groupe pendant une descente mythique du ciel, ce qui lui aurait valu le nom Soro, « brave ». Ce récit colonialement transcrit n'est pas attribué à un informateur nommé et ne doit pas être généralisé aux autres sous-groupes sénoufo.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["tauxier-2003-etats-kong"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Les interprétations consultées ne se réduisent pas à une seule glose : Tauxier consigne Soro au sens de « brave », puis discute le rapprochement avec sora/sorao, « léopard » ou « panthère », d'où aurait pu dériver l'idée de force ou de courage ; le tableau de Coulibaly associe aussi Soro/Horo à plusieurs éponymes animaux selon les régions. L'étymologie reste donc contestée et localisée.",
+        "claimStatus": "contested",
+        "sourceRefs": ["coulibaly-2019-noms-senoufo", "tauxier-2003-etats-kong"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_SENUFO",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["coulibaly-2019-noms-senoufo", "tauxier-2003-etats-kong"]
     }
   ],
   "countries": [
     {
       "countryId": "CIV",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["coulibaly-2019-noms-senoufo", "tauxier-2003-etats-kong"]
     }
   ],
-  "alliances": [],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_SILUE",
+      "allianceType": "parenté à plaisanterie sénoufo",
+      "sourceRefs": ["coulibaly-2019-noms-senoufo"]
+    }
+  ],
   "casteOrSocialFunction": null,
   "bearers": [],
-  "homonyms": [],
+  "homonyms": [
+    {
+      "label": "Soro yarse du Burkina Faso",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "Le répertoire burkinabè décrit une entrée SORO yarse, anciennement Ouédraogo selon sa tradition compilée, distincte du matriclan sénoufo de Côte d'Ivoire.",
+      "sourceRefs": ["burkina-provisional-patronyme-register"]
+    },
+    {
+      "label": "Soro san du Burkina Faso",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "Le même répertoire donne séparément SORO comme patronyme san, sans information suffisante pour le rattacher au matriclan sénoufo de Côte d'Ivoire.",
+      "sourceRefs": ["burkina-provisional-patronyme-register"]
+    }
+  ],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "coulibaly-2019-noms-senoufo",
+      "title": "La perception des Sénoufo de Côte d'Ivoire de leurs noms traditionnels",
+      "url": "https://www.histoire-univdaloa.net/wp-content/uploads/2019/10/RISH-JUIN-2019-DEF.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Yalamoussa Coulibaly, Revue ivoirienne des sciences historiques, no 5, juin 2019, p. 37-44. Les p. 39-43 ont été consultées : le Tienne ou Fè peut être pris du père ou de la mère, celui de la mère demeurant le plus important ; Soro figure parmi les matriclans, avec la forme régionale Horo, et la paire Soro/Silué est explicitement donnée comme relation réciproque de dépendance et de plaisanterie."
+    },
+    {
+      "sourceKey": "tauxier-2003-etats-kong",
+      "title": "Les États de Kong (Côte d'Ivoire)",
+      "url": "https://horizon.documentation.ird.fr/exl-doc/pleins_textes/2022-12/010075008.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Louis Tauxier, réédition Karthala de 2003 d'une enquête coloniale publiée en 1921. Les p. 171 et 203-205 ont été consultées : elles donnent Soro/Solo parmi les noms de clan sénoufo, discutent les sens « brave » et « léopard/panthère » et rapportent un récit d'origine pallakha. Le vocabulaire racial et les généralisations de l'ouvrage relèvent de son cadre colonial ; seuls les passages nommément localisés sont retenus."
+    },
+    {
+      "sourceKey": "burkina-provisional-patronyme-register",
+      "title": "Projet de répertoire des patronymes au Burkina Faso — version provisoire",
+      "url": "https://pdfcoffee.com/repertoire-des-patronymes-nationaux-du-burkina-pdf-free.html",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "government",
+      "notes": "Document de travail de la Direction du patrimoine culturel, sans date ni validation finale visibles, consulté sur une copie PDFCoffee non authentifiée. Seules les deux entrées SORO puis SORO (San), p. 189-190, ont été utilisées afin de distinguer les homonymes burkinabè du matriclan sénoufo documenté ici."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Tauxier rapporte un récit sans identifier d'informateur ou de griot et sans transcription attribuée ; l'article de Coulibaly ne fournit pas davantage les deux éléments exigés pour une tradition orale."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "L'article de Coulibaly et les chapitres localisés de Tauxier documentent un matriclan et des animaux sacrés, mais aucune profession ni fonction héréditaire propre aux Soro."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les recherches biographiques exactes sur Soro, Horo et Solo ont livré des personnes contemporaines ou des individus sans statut vital vérifiable ; aucun porteur décédé pertinent pour l'histoire du nom n'a été retenu."
     }
   ]
 }

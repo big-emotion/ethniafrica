@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche ciblé sur Soumanou ; l'attestation administrative béninoise ne confirme ni une origine dendi ni une étymologie."
   },
   "id": "PAT_SOUMANOU",
   "nameMain": "Soumanou",
@@ -11,7 +11,7 @@
     {
       "spelling": "Soumanou",
       "attestations": [
-        { "countryId": "BEN", "sourceRefs": ["afrik-candidate-queue"] }
+        { "countryId": "BEN", "sourceRefs": ["benin-mtfp-2024-soumanou"] }
       ]
     }
   ],
@@ -25,8 +25,8 @@
   "peoples": [
     {
       "peopleId": "PPL_DENDI",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["benin-mtfp-2024-soumanou"]
     }
   ],
   "countries": [
@@ -48,28 +48,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "benin-mtfp-2024-soumanou",
+      "title": "Liste des dossiers rejetés — concours de recrutement, juillet 2024",
+      "url": "https://travail.gouv.bj/open-pdf/communiques/rejet-2407314635-814.pdf",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Document du ministère du Travail et de la Fonction publique du Bénin, consulté en français. La liste nominale atteste Soumanou dans la colonne « Noms et prénoms » au Bénin ; elle ne fournit ni appartenance dendi, ni mode de transmission, ni origine du nom."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches ciblées sur « Soumanou » dans les travaux d'anthroponymie béninoise et dendi, les catalogues bibliographiques et les documents institutionnels n'ont livré ni étymologie étayée, ni tradition orale attribuée, ni chronique consacrée à l'origine du nom."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Le document officiel béninois atteste la graphie sans indiquer le peuple des porteurs ; les recherches associant « Soumanou » à Dendi, Zarma et Songhay n'ont fourni aucune attestation ethnique dédiée, donc l'association initiale reste supposée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches associant « Soumanou » à parenté à plaisanterie, alliance, cousinage et sanankuya n'ont identifié aucune paire documentée entre deux fiches PAT existantes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches associant « Soumanou » aux termes caste, métier héréditaire, griot et fonction sociale n'ont fourni aucune attribution sourcée applicable au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La liste administrative atteste des porteurs sans établir leur décès ; les catalogues d'autorité consultés n'ont pas fourni de porteur décédé vérifiable."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La graphie exacte a été recherchée dans les catalogues bibliographiques, les documents béninois et les résultats d'onomastique dendi ; aucune lignée homonyme d'origine distincte n'a été établie."
     }
   ]
 }

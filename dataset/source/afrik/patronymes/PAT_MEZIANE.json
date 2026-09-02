@@ -2,38 +2,55 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier français prudent fondé sur deux travaux onomastiques kabyles distincts : l’un établit les variantes, l’autre le sens de la forme de base."
   },
   "id": "PAT_MEZIANE",
   "nameMain": "Meziane",
-  "nameSystem": "nisba",
+  "nameSystem": "clan_name",
   "spellings": [
     {
       "spelling": "Meziane",
+      "attestations": [{ "countryId": "DZA", "sourceRefs": ["meziane-chalal"] }]
+    },
+    {
+      "spelling": "Ameziane",
       "attestations": [
-        { "countryId": "DZA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "DZA",
+          "sourceRefs": ["meziane-chalal", "ameziane-ummto"]
+        }
       ]
+    },
+    {
+      "spelling": "Amezyan",
+      "attestations": [{ "countryId": "DZA", "sourceRefs": ["ameziane-ummto"] }]
     }
   ],
   "transmissionMode": "other",
-  "designatedSocialUnit": "other",
+  "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Kahina Chalal classe Meziane parmi les variantes issues d’Ameziane par suppression de l’initiale a, article masculin berbère. Un second mémoire analyse Ameziane/Amezyan comme « petit, jeune », dérivé du verbe d’état kabyle imẓi « être jeune, être petit », et note son emploi comme prénom.",
+        "claimStatus": "established",
+        "sourceRefs": ["meziane-chalal", "ameziane-ummto"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_KABYLE",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["meziane-chalal", "ameziane-ummto"]
     }
   ],
   "countries": [
     {
       "countryId": "DZA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["meziane-chalal", "ameziane-ummto"]
     }
   ],
   "alliances": [],
@@ -42,42 +59,50 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "meziane-chalal",
+      "title": "Les anthroponymes algériens entre francisation et arabisation : étude historique et sociolinguistique d’un corpus kabyle (état civil de Tizi-Ouzou)",
+      "url": "https://dspace.ummto.dz/bitstream/handle/ummto/374/CHALAL%20Kahina%20TM.%20238.pdf?sequence=1&isAllowed=y",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Kahina Chalal, mémoire de magister, Université Mouloud Mammeri de Tizi-Ouzou, soutenu en 2016. Le tableau du patronyme aməzjen a été vérifié : il donne Ameziane, Meziane et d’autres variantes, et explique la suppression de l’initiale a."
+    },
+    {
+      "sourceKey": "ameziane-ummto",
+      "title": "Étude onomastique des anthroponymes de régions kabyles : Mezrara et Ait Ali Ou Mouhand",
+      "url": "https://dspace.ummto.dz/server/api/core/bitstreams/0b445207-b22e-4eb5-bbd0-985c5669c1a6/content",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Naima Amrani et Thileli Saidani, mémoire de master, Université Mouloud Mammeri de Tizi-Ouzou, 2020-2021. L’entrée Ameziane/Amezyan a été consultée dans le texte intégral pour la racine, le sens et l’usage comme prénom."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les deux mémoires onomastiques, les dictionnaires kabyles et les recherches « Meziane tradition familiale », « Ameziane oral tradition » et « généalogie Meziane » n’ont livré aucun récit avec transmetteur nommé et transcription."
     },
     {
-      "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues BnF, Persée, OpenEdition et les dépôts universitaires algériens ont été interrogés sans trouver de chronique ou d’archive ancienne consacrée à la formation du nom Meziane."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "La nisba ne détermine pas à elle seule le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les sources établissent le passage du prénom ou descriptif à des graphies patronymiques d’état civil, mais ne documentent pas la règle familiale de transmission ; aucune enquête généalogique dédiée n’a été trouvée."
     },
     {
-      "fieldPath": "designatedSocialUnit",
-      "reason": "La nisba ne détermine pas à elle seule l'unité sociale désignée : l'atlas ne la documente pas encore pour ce nom."
+      "fieldPath": "alliances",
+      "reason": "Les recherches combinant Meziane ou Ameziane avec « alliance », « leff », « pacte » et « parenté à plaisanterie » n’ont pas fourni de paire attestée avec une autre fiche PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les deux travaux onomastiques et les recherches sur un métier ou statut héréditaire lié à Meziane n’en signalent aucun."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les catalogues BnF, IdRef et les recherches biographiques ont été vérifiés sans trouver de porteur décédé dont une source dédiée relie clairement le nom exact à l’origine kabyle décrite dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les travaux consultés traitent Meziane comme variante d’Ameziane ; les usages arabes ou hassaniens repérés dans des agrégateurs n’étaient pas accompagnés d’une étude d’origine indépendante et ne suffisent pas à créer un homonyme."
     }
   ]
 }

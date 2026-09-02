@@ -2,38 +2,47 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Okafor ; les lacunes consignent les recherches restées sans résultat."
   },
   "id": "PAT_OKAFOR",
   "nameMain": "Okafor",
-  "nameSystem": "clan_name",
+  "nameSystem": "non_hereditary_patronymic",
   "spellings": [
     {
       "spelling": "Okafor",
       "attestations": [
-        { "countryId": "NGA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["hanks-okafor", "nkamigbo-2019-igbo-names"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Okafor est un nom personnel igbo signifiant « homme né le jour Afor ». Le dictionnaire et Nkamigbo rattachent Afor/Afọ à l'un des quatre jours de marché de la semaine igbo.",
+        "claimStatus": "established",
+        "sourceRefs": ["hanks-okafor", "nkamigbo-2019-igbo-names"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_IGBO",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["hanks-okafor", "nkamigbo-2019-igbo-names"]
     }
   ],
   "countries": [
     {
       "countryId": "NGA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["hanks-okafor", "nkamigbo-2019-igbo-names"]
     }
   ],
   "alliances": [],
@@ -42,38 +51,46 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "hanks-okafor",
+      "title": "Okafor Name Meaning and Okafor Family History at FamilySearch",
+      "url": "https://www.familysearch.org/en/surname?surname=okafor",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Entrée Okafor du Dictionary of American Family Names de Patrick Hanks (2003, 2006), hébergée par FamilySearch et consultée directement. La fiche du dictionnaire identifie explicitement la forme comme nom igbo du Nigeria."
+    },
+    {
+      "sourceKey": "nkamigbo-2019-igbo-names",
+      "title": "The Sociolinguistics of Igbo Personal Names",
+      "url": "https://www.nigerianjournalsonline.org/index.php/JOLLC/article/download/4155/3899/7523",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Linda Chinelo Nkamigbo, Journal of Linguistics, Language and Culture, vol. 6, no 1, 2019. Le PDF intégral a été consulté, notamment les typologies des noms de jours de marché et les changements contemporains de noms igbo."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Okafor Igbo oral tradition griot transcription » et « Okafor Igbo lineage oral history » ainsi que l'entrée du dictionnaire de Hanks et l'article de Nkamigbo (2019) n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Okafor Igbo chronicle manuscript archive » et « Okafor colonial register Nigeria » n'ont livré aucune chronique ni pièce d'archives établissant l'histoire de cette forme."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Okafor Igbo joking relationship », « Okafor joking kinship » et « Okafor sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "l'entrée du dictionnaire de Hanks et l'article de Nkamigbo (2019) et les recherches « Okafor Igbo hereditary occupation title caste » n'ont associé ce nom à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "l'entrée du dictionnaire de Hanks et l'article de Nkamigbo (2019) et les recherches « Okafor obituary biography deceased » n'ont pas permis de retenir un porteur décédé sur une notice propre au nom et suffisamment fiable."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les recherches « Okafor homonym etymology » et « Okafor surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
     }
   ]
 }

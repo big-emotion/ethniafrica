@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
   },
   "id": "PAT_AL_MIRGHANI",
   "nameMain": "al-Mirghani",
@@ -11,21 +11,33 @@
     {
       "spelling": "al-Mirghani",
       "attestations": [
-        { "countryId": "SDN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SDN",
+          "sourceRefs": ["afrik-candidate-queue", "oxford-al-mirghani"]
+        }
       ]
     },
     {
       "spelling": "Mirghani",
       "attestations": [
-        { "countryId": "SDN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SDN",
+          "sourceRefs": ["afrik-candidate-queue", "oxford-al-mirghani"]
+        }
       ]
     }
   ],
   "transmissionMode": "other",
-  "designatedSocialUnit": "other",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "L’étude d’Oxford indique qu’au Soudan le nom Al-Mirghani signale les descendants du fondateur de l’ordre soufi Khatmiyya. Cette tradition écrite concerne cette famille religieuse et ne doit pas être étendue aux homographes sans preuve.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["oxford-al-mirghani"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
@@ -39,7 +51,7 @@
     {
       "countryId": "SDN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "oxford-al-mirghani"]
     }
   ],
   "alliances": [],
@@ -54,36 +66,48 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "oxford-al-mirghani",
+      "title": "Sufism and Politics in Sudan — Oxford Research Archive",
+      "url": "https://ora.ox.ac.uk/objects/uuid%3A6cba3331-02f2-4ae9-af12-ce697e4dd5c8/files/rv979v447b",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Travail universitaire consulté le 2 septembre 2026. Il présente Al-Mirghani comme nom des descendants du fondateur de la Khatmiyya ; aucune généalogie exhaustive des porteurs contemporains n’y est établie."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « al-Mirghani anthroponymie », « al-Mirghani onomastique » et « al-Mirghani surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. Les requêtes « al-Mirghani tradition orale », « al-Mirghani griot » et « al-Mirghani oral history » n’ont livré aucun griot ou informateur nommé avec transcription vérifiable."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches exactes « al-Mirghani anthroponymie », « al-Mirghani onomastique » et « al-Mirghani surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. Les recherches linguistiques comparatives n’ont livré aucune reconstruction indépendante permettant de généraliser l’origine lexicale à tous les porteurs."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « al-Mirghani anthroponymie », « al-Mirghani onomastique » et « al-Mirghani surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué par la file d’attente ; ce rattachement reste au niveau non vérifié."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « al-Mirghani alliance à plaisanterie », « al-Mirghani joking relationship » et « al-Mirghani parenté à plaisanterie » n’ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « al-Mirghani caste », « al-Mirghani métier héréditaire » et « al-Mirghani social function » n’ont livré aucune fonction sociale ou professionnelle héréditaire propre à cette graphie."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches biographiques exactes sur « al-Mirghani » dans les catalogues, notices institutionnelles et archives accessibles n’ont pas permis d’isoler un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes « al-Mirghani homonym surname », « al-Mirghani homonyme patronyme » et les variantes graphiques de la fiche n’ont pas établi deux origines distinctes et documentées pour la même forme."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "La nisba ne détermine pas à elle seule le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
-    },
-    {
-      "fieldPath": "designatedSocialUnit",
-      "reason": "La nisba ne détermine pas à elle seule l'unité sociale désignée : l'atlas ne la documente pas encore pour ce nom."
+      "reason": "Les recherches « al-Mirghani transmission patronyme », « al-Mirghani filiation » et « al-Mirghani hereditary surname » n’ont pas établi si, ni comment, cette forme se transmet dans les communautés concernées."
     }
   ]
 }

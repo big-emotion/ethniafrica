@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche conservant comme telle une explication communautaire du nom de plume ; aucune reconstruction savante n'en est déduite."
   },
   "id": "PAT_RAHARIMANANA",
   "nameMain": "Raharimanana",
@@ -11,15 +11,24 @@
     {
       "spelling": "Raharimanana",
       "attestations": [
-        { "countryId": "MDG", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "MDG",
+          "sourceRefs": ["bnf-nour-raharimanana", "voie-jaguar-raharimanana"]
+        }
       ]
     }
   ],
-  "transmissionMode": "non_hereditary",
+  "transmissionMode": "elective",
   "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une notice communautaire attribue à Raharimanana le sens « celui qui a le don de créer » et rapporte que le grand-père de Jean-Luc Raharimanana donna ce nom à son père, avant que l'écrivain ne l'adopte comme nom de plume. Cette explication est conservée comme affirmation de la notice, non comme étymologie établie.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["voie-jaguar-raharimanana"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
@@ -33,7 +42,7 @@
     {
       "countryId": "MDG",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["bnf-nour-raharimanana", "voie-jaguar-raharimanana"]
     }
   ],
   "alliances": [],
@@ -41,6 +50,22 @@
   "bearers": [],
   "homonyms": [],
   "sources": [
+    {
+      "sourceKey": "bnf-nour-raharimanana",
+      "title": "Notice bibliographique « Nour, 1947 : roman / Raharimanana »",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb456384376",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Notice de la Bibliothèque nationale de France attribuant l'ouvrage à Raharimanana, Jean-Luc (1967-), et attestant la forme publiée du nom."
+    },
+    {
+      "sourceKey": "voie-jaguar-raharimanana",
+      "title": "Raharimanana — La voie du jaguar",
+      "url": "https://www.lavoiedujaguar.net/_Raharimanana_",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Notice communautaire non signée. Elle rapporte le sens du nom et sa transmission familiale avant son adoption comme nom de plume, sans citer de travail linguistique ; le niveau non vérifié est maintenu."
+    },
     {
       "sourceKey": "afrik-candidate-queue",
       "title": "Relevé de couverture anthroponymique EthniAfrica",
@@ -52,24 +77,28 @@
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La notice communautaire rapporte une histoire familiale sans nommer de transmetteur interrogé ni fournir de transcription ; elle ne satisfait donc pas le modèle des traditions orales."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches exactes dans les catalogues et résultats académiques n'ont retrouvé aucune étude linguistique confirmant la glose publiée par la notice communautaire ; elle n'est donc pas promue au rang de reconstruction."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches Raharimanana avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes associant Raharimanana à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; la création littéraire de l'écrivain est individuelle."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les notices consultées concernent Jean-Luc Raharimanana, né en 1967 ; aucun décès n'y est attesté et le protocole exclut donc ce porteur vivant. Aucun porteur décédé sourcé n'a été trouvé."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les catalogues et recherches exactes consultés n'établissent pas de lignée Raharimanana d'origine distincte."
     }
   ]
 }

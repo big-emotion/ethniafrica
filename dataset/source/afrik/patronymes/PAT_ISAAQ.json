@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. La source établit Isaaq comme famille clanique patrilinéaire, sans valider une étymologie ni une généalogie fondatrice."
   },
   "id": "PAT_ISAAQ",
   "nameMain": "Isaaq",
@@ -11,35 +11,47 @@
     {
       "spelling": "Isaaq",
       "attestations": [
-        { "countryId": "SOM", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SOM",
+          "sourceRefs": ["afrik-candidate-queue", "isaaq-medani-2022"]
+        }
       ]
     },
     {
       "spelling": "Isaq",
       "attestations": [
-        { "countryId": "SOM", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SOM",
+          "sourceRefs": ["afrik-candidate-queue", "isaaq-medani-2022"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Medani décrit Isaaq comme l'une des familles claniques somalies structurées par des liens de parenté patrilinéaires ; il distingue la famille clanique de ses groupes de paiement de la diya, sans proposer d'étymologie du nom.",
+        "claimStatus": "established",
+        "sourceRefs": ["isaaq-medani-2022"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_SOMALI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "isaaq-medani-2022"]
     }
   ],
   "countries": [
     {
       "countryId": "SOM",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "isaaq-medani-2022"]
     }
   ],
   "alliances": [],
@@ -54,32 +66,36 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "isaaq-medani-2022",
+      "title": "State Collapse, Informal Networks, and the Dilemma of State Building in Somalia",
+      "url": "https://www.cambridge.org/core/books/black-markets-and-militants/state-collapse-informal-networks-and-the-dilemma-of-state-building-in-somalia/190802472753A92D8970F284356B8871",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Khalid Mustafa Medani, chapitre de Black Markets and Militants, Cambridge University Press, publication en ligne le 20 août 2022. Le texte intégral a été vérifié : il nomme Isaaq parmi les familles claniques reliées par filiation patrilinéaire et décrit les groupes de paiement de la diya. Il n'étudie pas l'étymologie d'Isaaq."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Le chapitre de Medani, sa bibliographie et les requêtes « Isaaq/Isaq name etymology » et « Isaaq genealogy » ont été examinés ; aucune étymologie linguistique consacrée à Isaaq n'a été trouvée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Medani documente le xeer, les groupes de paiement de la diya et les réseaux informels ; les passages et les recherches « Isaaq joking relationship » ne nomment aucun couple de parenté à plaisanterie entre deux PAT_* existants."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le chapitre de Medani traite de structures de parenté et d'économie politique, sans attacher à Isaaq une caste ni une fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les index du chapitre et les recherches biographiques « Isaaq/Isaq person » ont été examinés ; aucun porteur décédé pour lequel Isaaq soit clairement un nom personnel plutôt qu'une affiliation clanique n'a été trouvé."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les graphies Isaaq et Isaq ont été recherchées comme nom clanique, nom individuel et toponyme dans le chapitre et les catalogues associés ; aucun homonyme distinct répondant au modèle du corpus n'a été établi."
     }
   ]
 }

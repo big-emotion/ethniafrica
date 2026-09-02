@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
   },
   "id": "PAT_KIPROTICH",
   "nameMain": "Kiprotich",
@@ -11,7 +11,10 @@
     {
       "spelling": "Kiprotich",
       "attestations": [
-        { "countryId": "KEN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "KEN",
+          "sourceRefs": ["nos-kalenjin-kip-names-2014"]
+        }
       ]
     }
   ],
@@ -20,20 +23,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "La presse publique néerlandaise explique Kiprotich comme un nom kalenjin lié au moment où le bétail est ramené. Faute d’étude linguistique dédiée trouvée, cette explication reste claimed.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["nos-kalenjin-kip-names-2014"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_KALENJIN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["nos-kalenjin-kip-names-2014"]
     }
   ],
   "countries": [
     {
       "countryId": "KEN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["nos-kalenjin-kip-names-2014"]
     }
   ],
   "alliances": [],
@@ -42,34 +51,38 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "nos-kalenjin-kip-names-2014",
+      "title": "Waarom heten ze allemaal Kip?",
+      "url": "https://nos.nl/artikel/635315-waarom-heten-ze-allemaal-kip",
+      "tier": "referenced",
+      "source_kind": "unknown",
+      "notes": "Article du radiodiffuseur public néerlandais NOS, 13 avril 2014. Il explique que les noms kalenjin renvoient aux circonstances de naissance et donne séparément Kipchoge et Kiprotich. Il s’agit d’une source de presse, non d’un travail universitaire ; les sens précis restent donc au statut claimed."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Kiprotich tradition orale », « Kiprotich griot » et « Kiprotich oral history », ainsi que l’article NOS qui énonce le nom et les recherches bibliographiques Kalenjin/Tugen/Kipsigis par graphie exacte, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Kiprotich chronicle », « Kiprotich history » et « Kiprotich genealogy », complétées par l’article NOS qui énonce le nom et les recherches bibliographiques Kalenjin/Tugen/Kipsigis par graphie exacte, n’ont livré aucune chronique primaire qui explique l’origine du nom."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Kiprotich joking kinship », « Kiprotich name alliance » et « Kiprotich clan pact », ainsi que l’article NOS qui énonce le nom et les recherches bibliographiques Kalenjin/Tugen/Kipsigis par graphie exacte, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Kiprotich caste », « Kiprotich occupational group » ainsi que les passages sociaux consultés dans l’article NOS qui énonce le nom et les recherches bibliographiques Kalenjin/Tugen/Kipsigis par graphie exacte, n’ont établi aucune fonction héréditaire propre à ce nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches biographiques et nécrologiques sur « Kiprotich » dans les catalogues universitaires et institutionnels, complétées par l’article NOS qui énonce le nom et les recherches bibliographiques Kalenjin/Tugen/Kipsigis par graphie exacte, n’ont pas permis de vérifier un porteur décédé avec une identité suffisamment précise ; les personnes vivantes repérées ne sont pas ajoutées sans auto-identification."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches sur la graphie exacte « Kiprotich » dans les index onomastiques et l’article NOS qui énonce le nom et les recherches bibliographiques Kalenjin/Tugen/Kipsigis par graphie exacte n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
     }
   ]
 }

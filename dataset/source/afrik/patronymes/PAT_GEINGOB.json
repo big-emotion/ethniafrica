@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier enrichi par une recherche dédiée au patronyme Geingob ; toute extension doit conserver une source propre à chaque affirmation."
   },
   "id": "PAT_GEINGOB",
   "nameMain": "Geingob",
@@ -11,69 +11,131 @@
     {
       "spelling": "Geingob",
       "attestations": [
-        { "countryId": "NAM", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NAM",
+          "sourceRefs": ["unam-geingob-1967", "nbc-damara-festival-2023"]
+        }
+      ]
+    },
+    {
+      "spelling": "Geingos",
+      "attestations": [
+        {
+          "countryId": "NAM",
+          "sourceRefs": ["haacke-khoekhoegowab-2015", "namibian-geingos-2024"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "writtenChronicles": [
+      {
+        "claim": "La forme Geingob est attestée au plus tard en 1967 dans le titre d'un texte autobiographique de Gottfried Hage Geingob conservé par les archives de l'Université de Namibie au sein de la collection de l'Institut des Nations unies pour la Namibie.",
+        "claimStatus": "established",
+        "sourceRefs": ["unam-geingob-1967"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "En khoekhoegowab, le marqueur postclitique de troisième personne du singulier est s au féminin et b au masculin. Les formes attestées Geingos et Geingob appliquent cette opposition grammaticale au même radical patronymique Geing-.",
+        "claimStatus": "established",
+        "sourceRefs": ["haacke-khoekhoegowab-2015", "namibian-geingos-2024"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_DAMARA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["nbc-damara-festival-2023"]
     }
   ],
   "countries": [
     {
       "countryId": "NAM",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["nbc-damara-festival-2023", "namibia-parliament-2024"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Hage Gottfried Geingob",
+      "sourceRefs": ["unam-geingob-1967", "namibia-parliament-2024"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "unam-geingob-1967",
+      "title": "Experiences as a student and as a teacher",
+      "url": "https://archives.unam.edu.na/index.php/geingob-hage-gottfried-experiences-as-student-and-as-teacher-by-gottfried-hage-geingob-london-1967",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Notice PA 4/1/1/70 des archives de l'Université de Namibie, collection de l'Institut des Nations unies pour la Namibie. La notice attribue le texte à Gottfried Hage Geingob et le date de Londres, 1967. Consultée le 2 septembre 2026."
+    },
+    {
+      "sourceKey": "nbc-damara-festival-2023",
+      "title": "Damara community urged to uphold values of unity",
+      "url": "https://nbcnews.na/node/103262",
+      "tier": "referenced",
+      "source_kind": "community",
+      "notes": "Reportage de Blanche Goreses pour la Namibian Broadcasting Corporation sur le 46e festival culturel damara. Il identifie Hage Geingob comme issu du clan ǀGaio-Daman et atteste Geingob et Geingos en Namibie. Consulté le 2 septembre 2026."
+    },
+    {
+      "sourceKey": "haacke-khoekhoegowab-2015",
+      "title": "Lexical borrowing by Khoekhoegowab from Cape Dutch and Afrikaans",
+      "url": "https://spilplus.journals.ac.za/pub/article/view/653/616",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Haacke, W. H. G., Stellenbosch Papers in Linguistics Plus 47, 2015, pages 59 à 74, DOI 10.5842/47-0-653. La page 60 décrit les marqueurs de personne, genre et nombre : s au féminin singulier et b au masculin singulier. Consulté le 2 septembre 2026."
+    },
+    {
+      "sourceKey": "namibian-geingos-2024",
+      "title": "Papa was indeed a father of the nation — Geingob's daughter",
+      "url": "https://www.namibian.com.na/papa-was-indeed-a-father-of-the-nation-geingobs-daughter/",
+      "tier": "referenced",
+      "source_kind": "community",
+      "notes": "Article de Shelleygan Petersen, The Namibian, 22 février 2024. Il identifie Nangula Geingos comme fille aînée de Hage Geingob et Lemmy Geingob comme cousin, ce qui atteste la transmission familiale du radical et ses formes genrées. Consulté le 2 septembre 2026."
+    },
+    {
+      "sourceKey": "namibia-parliament-2024",
+      "title": "Minutes of Proceedings of the Joint Session on the Opening of Parliament",
+      "url": "https://www.parliament.na/wp-content/uploads/2024/02/Minutes-6-Feb-2024.pdf",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Parlement de la République de Namibie, 6 février 2024. Le procès-verbal consigne le décès de Hage G. Geingob le 4 février 2024 et nomme Madame Monica Geingos, les enfants et la famille étendue. Consulté le 2 septembre 2026."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "nameSystem",
+      "reason": "Les archives de l'Université de Namibie, la presse namibienne, le reportage du festival damara et les recherches « Geingob clan name » et « Geingob Damara surname » n'ont pas établi que Geingob est lui-même le nom d'un clan plutôt qu'un patronyme de lignage. La catégorie clan_name héritée de la sélection reste donc provisoire."
+    },
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Le reportage de la NBC sur le festival damara, les notices d'archives de l'Université de Namibie et les recherches « Geingob oral history » et « Geingob clan tradition » n'ont livré aucun récit attribué à un griot ou transmetteur nommé avec une transcription."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions (radical Geing-)",
+      "reason": "L'article linguistique de Haacke, les catalogues d'archives et les recherches « Geingob meaning Khoekhoegowab » et « Geingob etymology » ont permis d'analyser les suffixes b et s, mais n'ont fourni aucune étymologie publiée du radical Geing-."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Geingob joking kinship », « Geingob alliance Damara clan » et « Geingob ǀGaio-Daman alliance », ainsi que le reportage du festival damara, n'ont signalé aucune alliance à plaisanterie ou pacte avec un autre patronyme muni d'une fiche PAT_."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les notices d'archives, les sources biographiques et les recherches sur Geingob dans la littérature relative aux clans damara n'ont attribué au patronyme aucune fonction professionnelle ou caste héréditaire."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Les catalogues d'archives de l'Université de Namibie et des Nations unies, la presse namibienne et les recherches onomastiques sur Geingob n'ont révélé aucune forme identique rattachée à une origine distincte."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Ojo ; les lacunes consignent les recherches restées sans résultat."
   },
   "id": "PAT_OJO",
   "nameMain": "Ojo",
@@ -11,22 +11,31 @@
     {
       "spelling": "Ojo",
       "attestations": [
-        { "countryId": "NGA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["yorubanames-ojo", "afrik-candidate-queue"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "other",
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "YorubaNames décrit Òjó comme un àmútọ̀runwá, nom déterminé par les circonstances de naissance, attribué à un garçon né avec le cordon ombilical autour du cou.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["yorubanames-ojo"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_YORUBA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["yorubanames-ojo"]
     }
   ],
   "countries": [
@@ -48,36 +57,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "yorubanames-ojo",
+      "title": "Òjó — YorubaNames",
+      "url": "https://www.yorubaname.com/entries/Ojo?lang=yo",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page de la base collaborative YorubaNames consultée directement pour Ojo. Elle fournit la forme tonale, une glose et une segmentation morphologique ; son contenu communautaire est conservé au niveau « unverified »."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Ojo Yoruba oral tradition griot transcription » et « Ojo oriki oral history » ainsi que la page YorubaNames consultée n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Ojo Yoruba chronicle manuscript colonial register » et « Ojo archive Nigeria Benin » n'ont livré aucune chronique ni pièce d'archives établissant une histoire propre à cette forme."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Ojo Yoruba joking relationship », « Ojo joking kinship » et « Ojo sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la page YorubaNames consultée et les recherches « Ojo Yoruba hereditary occupation caste title » n'ont associé ce nom à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la page YorubaNames consultée et les recherches « Ojo obituary biography deceased » n'ont pas permis d'établir un porteur décédé avec une notice suffisamment fiable sans recourir à Wikipédia."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom d'éloge (jamu) ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
-    },
-    {
-      "fieldPath": "designatedSocialUnit",
-      "reason": "Le nom d'éloge (jamu) ne détermine pas à lui seul l'unité sociale désignée : l'atlas ne la documente pas encore pour ce nom."
+      "reason": "Les recherches « Ojo homonym etymology » et « Ojo surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
     }
   ]
 }

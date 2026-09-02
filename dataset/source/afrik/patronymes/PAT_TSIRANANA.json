@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche limité à l'attestation officielle de Philibert Tsiranana et à son origine tsimihety documentée."
   },
   "id": "PAT_TSIRANANA",
   "nameMain": "Tsiranana",
@@ -11,12 +11,12 @@
     {
       "spelling": "Tsiranana",
       "attestations": [
-        { "countryId": "MDG", "sourceRefs": ["afrik-candidate-queue"] }
+        { "countryId": "MDG", "sourceRefs": ["assemblee-philibert-tsiranana"] }
       ]
     }
   ],
-  "transmissionMode": "non_hereditary",
-  "designatedSocialUnit": "individual",
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
@@ -26,50 +26,60 @@
     {
       "peopleId": "PPL_TSIMIHETY",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["assemblee-philibert-tsiranana"]
     }
   ],
   "countries": [
     {
       "countryId": "MDG",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["assemblee-philibert-tsiranana"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Philibert Tsiranana",
+      "sourceRefs": ["assemblee-philibert-tsiranana"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "assemblee-philibert-tsiranana",
+      "title": "Philibert Tsiranana — Base de données des députés français depuis 1789",
+      "url": "https://www2.assemblee-nationale.fr/sycomore/fiche?num_dept=7169",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Biographie officielle de l'Assemblée nationale française : dates 1912-1978, Madagascar, origine tsimihety et carrière de Philibert Tsiranana."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La biographie documente l'origine tsimihety du porteur, pas celle du nom. Les recherches exactes « Tsiranana etymology », « Tsiranana onomastics », leurs équivalents français et les résultats académiques n'ont livré ni tradition attribuée, ni chronique de formation, ni reconstruction linguistique."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La biographie officielle donne le milieu familial de Philibert Tsiranana sans filiation portant le même nom. Les recherches généalogiques n'ont pas établi le mode de transmission ; « other » maintient l'indétermination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "L'origine tsimihety du porteur ne démontre pas que Tsiranana désigne un clan ou un lignage ; aucune source consultée ne précise l'unité sociale du nom."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches Tsiranana avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes associant Tsiranana à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; les fonctions d'enseignant et de président de Philibert Tsiranana sont individuelles."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "La biographie officielle, les catalogues et recherches exactes consultés n'établissent pas de lignée Tsiranana d'origine distincte."
     }
   ]
 }

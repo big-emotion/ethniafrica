@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier français prudent fondé sur une étude dédiée et une encyclopédie biographique ; la nisba est établie pour le cas historique documenté."
   },
   "id": "PAT_KHATTABI",
   "nameMain": "Khattabi",
@@ -11,79 +11,108 @@
     {
       "spelling": "Khattabi",
       "attestations": [
-        { "countryId": "MAR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "MAR",
+          "sourceRefs": ["khattabi-shinar", "khattabi-tdv"]
+        }
       ]
     },
     {
       "spelling": "El Khattabi",
+      "attestations": [{ "countryId": "MAR", "sourceRefs": ["khattabi-tdv"] }]
+    },
+    {
+      "spelling": "al-Khaṭṭābī",
       "attestations": [
-        { "countryId": "MAR", "sourceRefs": ["afrik-candidate-queue"] }
+        { "countryId": "MAR", "sourceRefs": ["khattabi-shinar"] }
       ]
     }
   ],
   "transmissionMode": "other",
-  "designatedSocialUnit": "other",
+  "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "writtenChronicles": [
+      {
+        "claim": "Pessah Shinar situe le clan Ait Khaṭṭāb autour d’Ajdir dans le Rif et précise que la nisba al-Khaṭṭābī d’Abd el-Krim en dérive.",
+        "claimStatus": "established",
+        "sourceRefs": ["khattabi-shinar"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "La forme al-Khaṭṭābī est une nisba construite sur le nom du clan Ait Khaṭṭāb ; la source établit cette relation morphologique dans le cas rifain étudié.",
+        "claimStatus": "established",
+        "sourceRefs": ["khattabi-shinar"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_RIFAIN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["khattabi-shinar", "khattabi-tdv"]
     }
   ],
   "countries": [
     {
       "countryId": "MAR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["khattabi-shinar", "khattabi-tdv"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Muhammad ibn Abd al-Karim al-Khattabi",
+      "sourceRefs": ["khattabi-tdv"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "khattabi-shinar",
+      "title": "ʿAbd al-Qādir and ʿAbd al-Krīm",
+      "url": "https://www.tifraznarif.net/pdf/livres/Abdelkader%20%26%20Abdelkrim.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Pessah Shinar, Studies in Islam 1(3), 1964, p. 150-164. Le passage consacré au clan Ait Khaṭṭāb et à la formation de la nisba al-Khaṭṭābī a été vérifié dans le texte ; cette source n’est utilisée pour aucun autre patronyme."
+    },
+    {
+      "sourceKey": "khattabi-tdv",
+      "title": "Abdülkerîm el-Hattâbî",
+      "url": "https://islamansiklopedisi.org.tr/abdulkerim-el-hattabi",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ercüment Kuran, TDV İslâm Ansiklopedisi, 1988. La notice intégrale a été consultée ; elle donne le nom de naissance Muhammad ibn Abd al-Karim, Ajdir dans le Rif marocain, l’appartenance familiale aux Uriyagel et le décès au Caire en 1963."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L’étude de Shinar, la TDV İslâm Ansiklopedisi et les recherches « Ait Khattab tradition orale », « Khattabi genealogy » et leurs équivalents arabes n’ont livré aucun récit avec transmetteur nommé et transcription."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "La nisba ne détermine pas à elle seule le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Shinar établit l’appartenance clanique exprimée par la nisba, mais ne décrit pas sa règle de transmission ; les recherches sur la filiation des Ait Khattab n’ont pas permis de retenir patrilinéaire, bilatérale ou autre."
     },
     {
-      "fieldPath": "designatedSocialUnit",
-      "reason": "La nisba ne détermine pas à elle seule l'unité sociale désignée : l'atlas ne la documente pas encore pour ce nom."
+      "fieldPath": "alliances",
+      "reason": "Les alliances militaires du Rif rencontrées dans les sources concernent des tribus et des acteurs politiques, non une alliance nominale entre deux fiches PAT_* ; aucune paire documentée n’a été trouvée avec les requêtes Khattabi, pacte et alliance."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les deux sources dédiées et les recherches « Ait Khattab hereditary occupation » ou « caste » n’attribuent aucune fonction sociale héréditaire au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les catalogues d’autorité et travaux consultés n’ont pas établi une seconde origine autonome sous Khattabi ; les graphies Hattabi, Khattabi et al-Khaṭṭābī sont traitées comme variations de transcription."
     }
-  ]
+  ],
+  "nisbaSubtype": {
+    "value": "tribal",
+    "sourceRefs": ["khattabi-shinar"]
+  }
 }

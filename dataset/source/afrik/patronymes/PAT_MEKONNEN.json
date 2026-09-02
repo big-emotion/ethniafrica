@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
   },
   "id": "PAT_MEKONNEN",
   "nameMain": "Mekonnen",
@@ -11,7 +11,10 @@
     {
       "spelling": "Mekonnen",
       "attestations": [
-        { "countryId": "ETH", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
@@ -48,28 +51,44 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "btn-mekonnen",
+      "title": "Meaning, origin and history of the name Mekonnen — Behind the Name",
+      "url": "https://www.behindthename.com/name/mekonnen",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle traite Mekonnen comme transcription alternative de l'amharique መኮንን et renvoie à Makonnen ; elle n'établit pas, sur cette page, une étymologie complète ni une lignée."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Mekonnen anthroponymie », « Mekonnen onomastique », « Mekonnen etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche. Les pages exactes consultées n'apportent qu'une attestation de forme ou de répartition ; aucune étymologie n'est donc ajoutée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches « Mekonnen anthroponymie », « Mekonnen onomastique », « Mekonnen etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué ; ce rattachement reste au niveau non vérifié."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Mekonnen alliance à plaisanterie », « Mekonnen joking relationship » et « Mekonnen parenté à plaisanterie » n'ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Mekonnen caste », « Mekonnen métier héréditaire » et « Mekonnen social function » n'ont livré aucune fonction sociale ou professionnelle héréditaire attribuable à ce nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches biographiques sur « Mekonnen » dans les résultats de catalogues et répertoires consultés n'ont pas permis d'identifier un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes « Mekonnen homonym surname », « Mekonnen homonyme patronyme » et les variantes graphiques de la fiche n'ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "La source propre au nom n'a pas confirmé le pays où il est porté ; les recherches « Mekonnen » avec Ethiopia, Eritrea et les variantes de la fiche n'ont pas livré de registre officiel exploitable."
     }
   ]
 }

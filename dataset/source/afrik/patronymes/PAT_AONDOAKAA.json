@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. La source gouvernementale atteste Aondoakaa au Nigeria ; aucune étymologie n'est extrapolée depuis le morphème tiv Aondo."
   },
   "id": "PAT_AONDOAKAA",
   "nameMain": "Aondoakaa",
@@ -11,7 +11,10 @@
     {
       "spelling": "Aondoakaa",
       "attestations": [
-        { "countryId": "NGA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["nigeria-justice-aondoakaa"]
+        }
       ]
     }
   ],
@@ -25,7 +28,7 @@
   "peoples": [
     {
       "peopleId": "PPL_TIV",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     }
   ],
@@ -33,7 +36,7 @@
     {
       "countryId": "NGA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["nigeria-justice-aondoakaa"]
     }
   ],
   "alliances": [],
@@ -48,32 +51,48 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "nigeria-justice-aondoakaa",
+      "title": "Past Attorney General of the Federation",
+      "url": "https://justice.gov.ng/past-attorney-general-of-the-federation/",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Page du ministère fédéral nigérian de la Justice consultée directement. Elle atteste « Chief Michael A. Aondoakaa » comme Attorney General et ministre de la Justice du 26 juillet 2007 au 10 février 2010 ; elle n'établit ni l'étymologie du nom ni son rattachement tiv."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Aondoakaa Tiv name meaning », « Aondoakaa anthroponymy » et l'article de Mensah (2020) sur les noms personnels tiv ont été consultés. Ils documentent Aondo dans d'autres noms, mais aucun ne décompose ni n'explique Aondoakaa ; aucune étymologie n'est donc proposée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "La source gouvernementale atteste un porteur nigérian, mais ni elle ni les recherches « Aondoakaa Tiv anthroponym » n'établissent directement le rattachement tiv de la forme complète ; il reste au statut « supposed »."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Aondoakaa joking relationship », « Aondoakaa alliance patronyme » et « Aondoakaa sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Aondoakaa hereditary occupation caste title » et « Aondoakaa fonction sociale » n'ont associé ce nom à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Aondoakaa obituary biography deceased » et « Aondoakaa nécrologie » n'ont pas permis de retenir un porteur décédé sur une notice suffisamment fiable et propre au nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Aondoakaa homonym etymology » et « Aondoakaa surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "La notice gouvernementale atteste un porteur, mais les recherches « Aondoakaa surname inheritance Tiv » n'ont livré aucune règle de transmission."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Les sources consultées ne permettent pas de déterminer si Aondoakaa désigne historiquement un lignage, un clan ou une autre unité sociale."
     }
   ]
 }

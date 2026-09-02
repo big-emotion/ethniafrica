@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche ciblé sur Yacouba ; la relation à Yaqub est documentée par une source communautaire et l'association zarma n'est pas confirmée."
   },
   "id": "PAT_YACOUBA",
   "nameMain": "Yacouba",
@@ -11,7 +11,10 @@
     {
       "spelling": "Yacouba",
       "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NER",
+          "sourceRefs": ["behindthename-yacouba", "unff-yacouba-seybou"]
+        }
       ]
     },
     {
@@ -26,13 +29,19 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Yacouba est présenté comme une forme de Yaqub employée dans l'Afrique de l'Ouest francophone.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["behindthename-yacouba"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_ZARMA",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["unff-yacouba-seybou"]
     }
   ],
   "countries": [
@@ -54,28 +63,52 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "behindthename-yacouba",
+      "title": "Meaning, origin and history of the name Yacouba",
+      "url": "https://www.behindthename.com/name/yacouba",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Notice onomastique communautaire consultée en anglais. Elle présente Yacouba comme une forme de Yaqub utilisée dans l'Afrique de l'Ouest francophone ; l'affirmation reste au tier unverified et au statut claimed."
+    },
+    {
+      "sourceKey": "unff-yacouba-seybou",
+      "title": "UNFF National Focal Points — Niger",
+      "url": "https://forests.desa.un.org/about/national-focal-points?page=9",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "Répertoire officiel du Forum des Nations unies sur les forêts, consulté en anglais. La notice du Niger identifie Yacouba Seybou comme directeur général des Eaux et Forêts à Niamey ; elle ne renseigne ni son peuple ni l'étymologie du nom."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches sur « Yacouba » dans les corpus et travaux songhay-zarma, avec les termes tradition orale, griot et jasare, n'ont livré aucun récit attribué et transcrit."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues bibliographiques, notices d'autorité et résultats sur Yacouba/Yaqub ont été consultés ; aucun document historique ne retrace l'introduction de Yacouba chez les Zarma."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les travaux d'anthroponymie songhay-zarma et les recherches associant « Yacouba » à Zarma, Djerma et Songhay n'ont fourni aucune attestation ethnique dédiée ; l'association initiale reste donc supposée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches associant « Yacouba » à parenté à plaisanterie, alliance, cousinage et sanankuya n'ont identifié aucune paire documentée entre deux fiches PAT existantes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches associant « Yacouba » aux termes caste, métier héréditaire, jasare et fonction sociale n'ont fourni aucune attribution sourcée applicable au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le répertoire des Nations unies atteste un porteur sans établir son décès ; les catalogues d'autorité consultés n'ont pas fourni de porteur décédé vérifiable."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les formes Yacouba, Yakouba et Yaqub ont été distinguées dans les recherches onomastiques ; aucune origine indépendante n'a été établie pour constituer un homonyme."
     }
   ]
 }

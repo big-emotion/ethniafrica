@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Oumarou ; les lacunes consignent les recherches restées sans résultat."
   },
   "id": "PAT_OUMAROU",
   "nameMain": "Oumarou",
@@ -11,13 +11,10 @@
     {
       "spelling": "Oumarou",
       "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
-      ]
-    },
-    {
-      "spelling": "Umaru",
-      "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NER",
+          "sourceRefs": ["btn-oumarou", "gouv-niger-conseil-2024-oumarou"]
+        }
       ]
     }
   ],
@@ -26,20 +23,31 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "La graphie Oumarou est présentée comme une forme de l'arabe Umar employée dans l'Afrique de l'Ouest sous influence française. Ryan atteste Umaru dans la nomenclature personnelle haoussa et l'identifie au deuxième calife ; aucune étude consultée ne documente directement le passage graphique à Oumarou.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["btn-oumarou", "ryan-1981-oumarou"]
+      },
+      {
+        "claim": "Dans le système haoussa décrit par Chamo, le nom personnel du père ou parfois du grand-père fournit un élément du nom sans former un patronyme héréditaire stable.",
+        "claimStatus": "established",
+        "sourceRefs": ["chamo-2018-oumarou"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_HAUSA",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["btn-oumarou", "ryan-1981-oumarou"]
     }
   ],
   "countries": [
     {
       "countryId": "NER",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["gouv-niger-conseil-2024-oumarou"]
     }
   ],
   "alliances": [],
@@ -48,34 +56,62 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "ryan-1981-oumarou",
+      "title": "An Introduction to Hausa Personal Nomenclature",
+      "url": "https://ans-names.pitt.edu/ans/article/download/942/941/1886",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Pauline M. Ryan, Names 29(2), 1981, pp. 139-164. Le tableau I consulté dans le PDF intégral atteste Umaru dans la nomenclature haoussa et le relie au deuxième calife. Il n'atteste pas Oumarou."
+    },
+    {
+      "sourceKey": "chamo-2018-oumarou",
+      "title": "Language and Identity in Africa: The Use of Place Names as Part of a Person’s Name in Hausa",
+      "url": "https://auadamu.com/phocadownload/Books/%5B2018%5D%20Festschrift%20in%20Honour%20of%20Abdalla%20Uba%20Adamu%20-%20Media%20-Knowledge%20Transfer%20and%20African%20Identity.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Isa Yusuf Chamo, 2018, pp. 251-252 du chapitre consulté dans le volume intégral. Établit le fonctionnement non héréditaire du patronyme haoussa ; ne traite pas l'étymologie d'Oumarou."
+    },
+    {
+      "sourceKey": "btn-oumarou",
+      "title": "Oumarou — Behind the Name",
+      "url": "https://www.behindthename.com/name/oumarou",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Page communautaire consultée directement. Elle présente Oumarou comme une forme d'Umar employée en Afrique de l'Ouest francophone et cite Umaru parmi les formes haoussa. Elle n'attribue pas spécifiquement la graphie exacte au peuple haoussa."
+    },
+    {
+      "sourceKey": "gouv-niger-conseil-2024-oumarou",
+      "title": "Conseil des ministres du 4 janvier 2024 — Portail officiel du Gouvernement du Niger",
+      "url": "https://www.gouv.ne/index.php/les-communiques-du-gouvernement/510-conseil-des-ministres-du-04-01-2024-adoption-de-plusieurs-projets-de-textes-et-mesures-nominatives",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Communiqué officiel consulté directement. Il atteste Oumarou au Niger dans les noms de Moussa Oumarou, Sani Oumarou et Sabo Oumarou ; il ne fournit aucune origine linguistique ou appartenance ethnique."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La requête « Oumarou Hausa oral tradition griot lineage », Ryan (1981), Chamo (2018) et Amoo, Ajayi et Sabo (2022) n'ont livré ni griot nommé ni transcription attribuable à Oumarou."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Oumarou Hausa Arabic chronicle manuscript » et « Oumarou Niger colonial record » n'ont livré aucune chronique ou archive dédiée établissant l'histoire de la graphie."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Oumarou Hausa joking relationship », « Oumarou sanankuya », « Oumarou kal » et « Oumarou dandiraaɓe » n'ont établi aucune paire entre deux fiches PAT_* existantes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Ryan (1981), Chamo (2018) et la recherche « Oumarou Hausa hereditary occupation caste » n'ont associé ce nom personnel à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Le communiqué officiel nigérien et les recherches « Oumarou Niger obituary biography » n'ont fourni dans cette passe aucune notice dédiée de porteur décédé ajoutant une information anthroponymique ; les vivants n'ont pas été enregistrés."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Oumarou homonym etymology » et les sources consacrées à Oumarou, Umar et Umaru n'ont pas établi une graphie identique d'origine distincte."
     }
   ]
 }

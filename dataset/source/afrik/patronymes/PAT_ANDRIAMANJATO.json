@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche limité aux attestations biographiques et à la transmission familiale directement documentées ; les chapitres non établis restent déclarés comme lacunes."
   },
   "id": "PAT_ANDRIAMANJATO",
   "nameMain": "Andriamanjato",
@@ -11,15 +11,24 @@
     {
       "spelling": "Andriamanjato",
       "attestations": [
-        { "countryId": "MDG", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "MDG",
+          "sourceRefs": ["bnf-richard-andriamanjato", "ifri-crise-malgache"]
+        }
       ]
     }
   ],
-  "transmissionMode": "non_hereditary",
-  "designatedSocialUnit": "individual",
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une analyse de l'Ifri identifie Ny Hasina Andriamanjato comme le fils du pasteur Richard Andriamanjato. Cette occurrence sur deux générations établit ici une transmission patrilinéaire du nom, sans préjuger de son étymologie.",
+        "claimStatus": "established",
+        "sourceRefs": ["ifri-crise-malgache"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
@@ -33,14 +42,36 @@
     {
       "countryId": "MDG",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["bnf-richard-andriamanjato", "ifri-crise-malgache"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Richard Andriamanjato",
+      "sourceRefs": ["bnf-richard-andriamanjato"]
+    }
+  ],
   "homonyms": [],
   "sources": [
+    {
+      "sourceKey": "bnf-richard-andriamanjato",
+      "title": "Notice de personne « Andriamanjato, Richard (1930-2013) »",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb12088464c",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Notice d'autorité de la Bibliothèque nationale de France : graphie, rattachement à Madagascar, dates 1930-2013 et activités de Richard Andriamanjato."
+    },
+    {
+      "sourceKey": "ifri-crise-malgache",
+      "title": "Madagascar Crisis",
+      "url": "https://www.ifri.org/en/node/5242",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Entretien-analyse de Mathieu Pellerin publié par l'Ifri le 23 février 2009. La note 29 identifie Ny Hasina Andriamanjato comme fils du pasteur Richard Andriamanjato."
+    },
     {
       "sourceKey": "afrik-candidate-queue",
       "title": "Relevé de couverture anthroponymique EthniAfrica",
@@ -52,24 +83,24 @@
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes sur Andriamanjato avec tradition orale, razana, ancêtre fondateur et généalogie n'ont livré aucun récit attribué à un transmetteur nommé avec transcription."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches exactes « Andriamanjato etymology », « Andriamanjato onomastics » et leurs équivalents français n'ont livré aucune étude linguistique dédiée ; les décompositions proposées par des répertoires de noms non sourcés ont été écartées."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches sur Andriamanjato avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique nommée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les notices biographiques et les recherches exactes sur le nom n'attestent aucune fonction sociale ou professionnelle héréditaire ; les métiers de porteurs individuels ne sont pas une fonction du nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les catalogues d'autorité et recherches exactes consultés n'ont pas établi de lignée homonyme d'origine distincte."
     }
   ]
 }

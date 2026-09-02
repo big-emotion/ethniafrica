@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier français limité à l'attestation tchadienne et à la porteuse décédée établies par la presse publique nationale."
   },
   "id": "PAT_NADJITA",
   "nameMain": "Nadjita",
@@ -11,69 +11,73 @@
     {
       "spelling": "Nadjita",
       "attestations": [
-        { "countryId": "TCD", "sourceRefs": ["afrik-candidate-queue"] }
+        { "countryId": "TCD", "sourceRefs": ["atpe-2026-nadjita"] }
       ]
     }
   ],
   "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
     "linguisticReconstructions": []
   },
-  "peoples": [
-    {
-      "peopleId": "PPL_SARA",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
-    }
-  ],
+  "peoples": [],
   "countries": [
     {
       "countryId": "TCD",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["atpe-2026-nadjita"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Danmadji Esther Nadjita",
+      "sourceRefs": ["atpe-2026-nadjita"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "atpe-2026-nadjita",
+      "title": "Nécrologie : derniers hommages à Danmadji Esther Nadjita",
+      "url": "https://atpe.td/necrologie-derniers-hommages-a-danmadji-esther-nadjita/",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Dépêche de l'Agence tchadienne de presse et d'édition. Elle donne le nom complet, la naissance le 2 mai 1963, le décès le 20 juin 2026 et les obsèques du 27 juin 2026 ; elle atteste une porteuse tchadienne sans documenter l'origine ni la transmission du nom."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches exactes « Nadjita », « Nadjita onomastique », « Nadjita anthroponymie » et « Nadjita étymologie » dans les catalogues universitaires, Persée, OpenEdition, Google Scholar et la presse tchadienne n'ont livré ni récit d'origine, ni première attestation historique, ni analyse linguistique."
     },
     {
-      "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "peoples",
+      "reason": "La dépêche de l'ATPE atteste une porteuse tchadienne sans identification ethnique ; aucune source dédiée trouvée n'a confirmé l'association à les Sara, qui provenait uniquement de la file de candidats et a été retirée."
     },
     {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "nameSystem",
+      "reason": "La source traite Nadjita comme élément du nom d'une personne, sans le qualifier de nom de clan ; clan_name demeure la valeur technique héritée faute de catégorie indéterminée dans le modèle."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "La notice biographique de l'ATPE et les recherches onomastiques effectuées ne décrivent aucun mode de transmission familiale de Nadjita ; la valeur reste donc other."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Nadjita alliance clan Tchad » et « Nadjita parenté à plaisanterie » n'ont livré aucune alliance entre patronymes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La profession de photographe de la porteuse est individuelle ; la dépêche et les recherches ciblées n'établissent aucune caste ni fonction sociale héréditaire attachée au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes du nom dans les catalogues et les résultats tchadiens n'ont pas établi un homonyme d'origine distincte."
     }
   ]
 }

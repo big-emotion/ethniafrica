@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier révisé par recherche dédiée. La décomposition publiée du nom est conservée comme affirmation prudente, sans être promue au rang d'étymologie établie."
   },
   "id": "PAT_GBAGBO",
   "nameMain": "Gbagbo",
@@ -11,7 +11,10 @@
     {
       "spelling": "Gbagbo",
       "attestations": [
-        { "countryId": "CIV", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["kakou-2024-gbagbo"]
+        }
       ]
     }
   ],
@@ -20,20 +23,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Une analyse publiée décompose Gbagbo en gba, compris en bété comme « dire ou faire », et gbo, « palabre ou logorrhée » ; l'auteur propose parmi les sens possibles « faire notre palabre ».",
+        "claimStatus": "claimed",
+        "sourceRefs": ["kakou-2024-gbagbo"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_BETE",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["kakou-2024-gbagbo"]
     }
   ],
   "countries": [
     {
       "countryId": "CIV",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["kakou-2024-gbagbo"]
     }
   ],
   "alliances": [],
@@ -42,38 +51,50 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "kakou-2024-gbagbo",
+      "title": "Espaces et personnage : pour une approche du sens dans Pour le bonheur des miens",
+      "url": "https://www.revuesociotexte.org/wp-content/uploads/2025/08/PDF-fin-numero-LIBRE-SOCIOTEXTE-Bi-Trah-4.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article de Bi Trah Alphonse Cheriff Kakou, Université Alassane Ouattara, publié dans Sociotexte, numéro 14, décembre 2024, pages 72 à 83. À la page imprimée 82, l'auteur identifie Gbagbo comme un nom bété, le décompose en gba et gbo et formule le sens avec « peut vouloir dire ». Comme l'article relève de la sémiotique littéraire et n'expose ni corpus linguistique ni enquête auprès de porteurs, la proposition est conservée au statut « claimed »."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "nameSystem",
+      "reason": "L'article de Kakou traite Gbagbo comme un nom propre bété, sans préciser s'il s'agit d'un nom de clan, de lignage ou d'un autre système anthroponymique. Les recherches exactes « Gbagbo nom clan bété » n'ont pas résolu cette typologie."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Les études consultées sur la société bété décrivent l'organisation lignagère en général, mais aucune source propre à Gbagbo ne relie ce nom à un clan ou lignage déterminé ; l'unité sociale désignée reste inconnue."
+    },
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Gbagbo tradition orale bété », les catalogues universitaires et les travaux consultés sur la littérature orale bété n'ont livré aucun récit du nom attribué à un griot ou à un transmetteur identifiable avec transcription."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "L'article de Kakou, les recherches dans les catalogues de l'IRD et les études historiques bété consultées ne fournissent aucune chronique écrite retraçant l'apparition ou la diffusion du patronyme Gbagbo."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches « Gbagbo alliance patronymique », « Gbagbo parenté à plaisanterie » et les travaux sur l'organisation sociale bété n'ont nommé aucune alliance avec un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "L'article de Kakou n'associe le nom à aucune fonction, et les recherches dans la littérature anthropologique bété n'ont trouvé aucun rôle héréditaire propre aux Gbagbo."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les recherches biographiques ont principalement livré Laurent Gbagbo, personne vivante donc exclue par le protocole. Aucun porteur historique défunt, documenté et rattachable à cette fiche sans inférence, n'a été trouvé."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "Les catalogues onomastiques, les recherches exactes « Gbagbo surname other origin » et l'article de Kakou n'ont révélé aucune graphie identique dotée d'une origine indépendante."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "Ni l'analyse de Kakou, ni les études générales sur les Bété, ni les recherches « Gbagbo transmission patronyme » ne documentent la règle de transmission de ce nom ; la valeur reste « other » faute de preuve."
     }
   ]
 }
