@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { SEARCH_RESULT_GROUPS } from "@/components/home/HomeHeroSearch";
+import { SEARCH_RESULT_GROUPS } from "@/lib/search/searchVocabulary";
 import { SEARCH_ENTITY_ACCENT } from "@/components/search/searchEntityAccent";
 import { CORPUS_CLASSES } from "@/lib/home/corpusClasses";
 import {

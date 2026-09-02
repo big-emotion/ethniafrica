@@ -20,6 +20,11 @@ import { HomeHeroSeeds } from "./HomeHeroSeeds";
 import type { SeedWordsByKind } from "@/lib/home/seedWords";
 import { search as searchCorpus, searchWithLeads } from "@/lib/afrikLoader";
 import {
+  SEARCH_LABEL,
+  SEARCH_PLACEHOLDER,
+  SEARCH_RESULT_GROUPS,
+} from "@/lib/search/searchVocabulary";
+import {
   getCountryRoute,
   getFamilyRoute,
   getLanguageRoute,
@@ -67,48 +72,11 @@ import type { Language } from "@/types/shared";
  */
 
 /**
- * The field's one visible label, and the field's accessible name — the same
- * string, so what is read and what is heard cannot drift (WCAG 2.5.3).
- *
- * The rule is unchanged and is the whole point of this constant: **it names
- * exactly the kinds `SEARCH_RESULT_GROUPS` below can show, no more and no
- * fewer.** What moved is the number. The label promised three because
- * `/api/v2/search` once answered `{ peoples, countries, families }`; it has
- * answered six kinds since migration 069 — languages, patronymes and persons
- * besides — while the panel still grouped three. Widening the panel is what
- * lets the label widen with it.
- *
- * Persons stay out of both. `persons` has no rows, and naming a kind the
- * corpus cannot answer with is the promise this surface may not break — which
- * is what the three-kind rule was protecting all along.
- *
- * Note what this is *not* aligned with. The headline above names five
- * **corpus classes**, and their fifth is appellations — the 3134 folded name
- * forms of the peoples. The panel's fifth is *Noms*, the 30 patronyme fiches.
- * Two different objects that are both names: the headline counts how peoples
- * are named, this returns records about family names. Four classes are
- * shared, the fifth is not, and collapsing them would have the panel claim
- * 3134 of something it returns 30 of.
- *
- * There is no second line of help under it. What the reader gets — a
+ * The label carries no second line of help under it. What the reader gets — a
  * documented record, with its sources — is what the hero's own answer states
  * forty pixels above, and saying it twice is the failure that cost this band
  * its previous standfirst (see the docblock in HomeHero).
  */
-// @req REQ-002
-export const SEARCH_LABEL =
-  "Cherchez un peuple, une langue, un pays, une famille linguistique ou un nom";
-
-/**
- * Concrete examples complement the scope named by the visible label.
- *
- * Four, not five: the label names the classes, and a placeholder long enough
- * to exemplify every one of them is truncated on a phone anyway. Each of these
- * is a row that exists — "Fulfulde" is what the corpus calls the language a
- * reader would type as "peul", and "Keïta" carries its diaeresis where
- * "Traore" is stored without one.
- */
-const SEARCH_PLACEHOLDER = "Ex. Bafut, Fulfulde, Namibie, Keïta";
 
 const MIN_QUERY_LENGTH = 2;
 // @req REQ-002
@@ -126,25 +94,6 @@ export const PENDING_DELAY_MS = 150;
 const PENDING_MIN_MS = 400;
 /** Enough to prove the kind exists without turning the band into a listing. */
 const MAX_PER_GROUP = 3;
-
-// Plural of the singular labels in SEARCH_ENTITY_ACCENT — a group heads a set.
-// The accent still comes from that one table, so a kind's colour is assigned
-// in a single place across the whole product.
-// Exported so a charter contract can hold the headline and this panel to the
-// same set of classes — the two used to drift apart in separate files, which
-// is how the band came to name one class above a panel that showed three
-// above a corpus that holds five.
-// @req REQ-002
-export const SEARCH_RESULT_GROUPS: {
-  type: SearchEntityType;
-  heading: string;
-}[] = [
-  { type: "people", heading: "Peuples" },
-  { type: "language", heading: "Langues" },
-  { type: "country", heading: "Pays" },
-  { type: "languageFamily", heading: "Familles linguistiques" },
-  { type: "patronyme", heading: "Noms" },
-];
 
 // Hoisted, not written inline as a default parameter: a fresh closure on every
 // render is a fresh dependency for the effect below, which resets state on its

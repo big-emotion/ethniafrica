@@ -34,6 +34,10 @@ import {
   type SearchRelation,
 } from "@/lib/search/relationSearch";
 import { selectPivot } from "@/lib/search/pivot";
+import {
+  SEARCH_LABEL,
+  SEARCH_PLACEHOLDER,
+} from "@/lib/search/searchVocabulary";
 import { groupPeopleResults } from "@/lib/search/groupPeopleResults";
 import { getFrenchCountryCommonName } from "@/lib/countryNames";
 import type {
@@ -333,11 +337,7 @@ export function RecherchePageContent() {
       language={language}
       onLanguageChange={setLanguage}
       title={showQueryHead ? undefined : "Recherche"}
-      subtitle={
-        showQueryHead
-          ? undefined
-          : "Rechercher des peuples, familles linguistiques et pays"
-      }
+      subtitle={showQueryHead ? undefined : SEARCH_LABEL}
       heroHead={heroHead}
     >
       {/* The SERP's one page-level accent (brand charter §2): everything on
@@ -362,8 +362,8 @@ export function RecherchePageContent() {
               ref={inputRef}
               type="search"
               {...suggest.comboboxProps}
-              aria-label="Rechercher un peuple, une famille linguistique ou un pays"
-              placeholder="Rechercher un peuple, une famille ou un pays..."
+              aria-label={SEARCH_LABEL}
+              placeholder={SEARCH_PLACEHOLDER}
               value={inputValue}
               onChange={(e) => suggest.setQuery(e.target.value)}
               onKeyDown={suggest.handleKeyDown}
