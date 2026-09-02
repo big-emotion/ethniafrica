@@ -58,7 +58,7 @@ const SORTS: ReadonlyArray<{ value: SourcesFacetSort; label: string }> = [
   { value: "ajout", label: "Ajout au corpus, le plus récent d'abord" },
 ];
 
-// @req REQ-014
+// @req REQ-114
 export const metadata: Metadata = {
   title: "Sources",
   description:
