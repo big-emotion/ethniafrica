@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_KGOSI",
   "nameMain": "Kgosi",
@@ -11,7 +11,10 @@
     {
       "spelling": "Kgosi",
       "attestations": [
-        { "countryId": "BWA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BWA",
+          "sourceRefs": ["forebears-kgosi"]
+        }
       ]
     }
   ],
@@ -20,20 +23,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "L'étude de Thapelo Otlogetswe sur un corpus de plus d'un million de noms botswanais définit kgosi comme « roi » ou « chef » et classe Kgosi parmi les noms personnels masculins setswana liés aux rapports de pouvoir. La base de Forebears atteste séparément l'emploi de Kgosi comme nom de famille, surtout au Botswana, mais ne fournit aucune étymologie du patronyme : le sens lexical du nom personnel ne suffit donc pas à prouver une origine unique de toutes les lignées patronymiques.",
+        "claimStatus": "established",
+        "sourceRefs": ["otlogetswe-2018-kgosi", "forebears-kgosi"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_TSWANA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["otlogetswe-2018-kgosi"]
     }
   ],
   "countries": [
     {
       "countryId": "BWA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-kgosi"]
     }
   ],
   "alliances": [],
@@ -42,38 +51,46 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "otlogetswe-2018-kgosi",
+      "title": "Power Relations in Setswana Names: A Study of Kgotla and Kgosi Names",
+      "url": "https://journals.co.za/doi/10.2989/NA.2018.32.2.2.1326",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article de Thapelo Otlogetswe, Nomina Africana 32(2), consulté via sa page intégrale et son résumé. L'étude porte sur le Botswana Names Corpus, définit kgosi et décrit les noms personnels formés avec ce lexème chez les Batswana. Elle ne traite pas la transmission du patronyme autonome Kgosi."
+    },
+    {
+      "sourceKey": "forebears-kgosi",
+      "title": "Kgosi Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/kgosi",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement. Elle recense Kgosi comme nom de famille principalement au Botswana et signale explicitement qu'aucune signification n'est renseignée. Ses chiffres ne démontrent ni appartenance ethnique individuelle ni règle de transmission."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web combinant « Kgosi », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article onomastique de Thapelo Otlogetswe et la page de répartition patronymique Forebears consacrée à Kgosi, n'ont pas établi que la catégorie provisoire « clan_name » décrive ce nom lui-même ; elle est conservée comme hypothèse de classement en attendant une étude anthroponymique dédiée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kgosi », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article onomastique de Thapelo Otlogetswe et la page de répartition patronymique Forebears consacrée à Kgosi, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kgosi », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article onomastique de Thapelo Otlogetswe et la page de répartition patronymique Forebears consacrée à Kgosi, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kgosi », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article onomastique de Thapelo Otlogetswe et la page de répartition patronymique Forebears consacrée à Kgosi, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kgosi », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article onomastique de Thapelo Otlogetswe et la page de répartition patronymique Forebears consacrée à Kgosi, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web combinant « Kgosi », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article onomastique de Thapelo Otlogetswe et la page de répartition patronymique Forebears consacrée à Kgosi, n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }
