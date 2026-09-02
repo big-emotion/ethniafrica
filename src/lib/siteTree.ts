@@ -93,7 +93,7 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
       id: "corpus",
       title: "Le corpus, dans l'ordre AFRIK",
       blurb:
-        "Famille linguistique → langue → peuple → pays. C'est la hiérarchie du corpus lui-même, et chaque fiche se lit depuis celle du dessus.",
+        "Famille linguistique → langue → peuple → pays. C'est la hiérarchie du corpus lui-même, et chaque fiche se lit depuis celle du dessus. Les appellations et les noms la traversent : ils nomment, ils ne situent pas.",
       links: [
         {
           href: route("families"),
