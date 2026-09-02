@@ -1247,6 +1247,25 @@ const options: swaggerJsdoc.Options = {
               type: "string",
               enum: ["sourced", "derived"],
             },
+            isoCode639_3: {
+              type: "string",
+              pattern: "^[a-z]{3}$",
+              example: "yor",
+            },
+            glottocode: { type: ["string", "null"], example: "yoru1245" },
+            nameEn: { type: ["string", "null"], example: "Yoruba" },
+            alternateNames: {
+              type: "array",
+              items: { type: "string", minLength: 1 },
+            },
+            spellingAliases: {
+              type: "array",
+              items: { type: "string", minLength: 1 },
+            },
+            dialects: {
+              type: "array",
+              items: { type: "string", minLength: 1 },
+            },
             family: {
               type: "object",
               properties: {
@@ -1285,6 +1304,12 @@ const options: swaggerJsdoc.Options = {
             "id",
             "name",
             "nameProvenance",
+            "isoCode639_3",
+            "glottocode",
+            "nameEn",
+            "alternateNames",
+            "spellingAliases",
+            "dialects",
             "family",
             "speakingPeoples",
             "vehicularRole",

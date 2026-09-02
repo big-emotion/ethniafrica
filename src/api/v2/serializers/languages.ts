@@ -4,6 +4,12 @@ interface LanguageAggregate {
   id: PublicLanguage["id"];
   name: PublicLanguage["name"];
   nameProvenance: PublicLanguage["nameProvenance"];
+  isoCode639_3: PublicLanguage["isoCode639_3"];
+  glottocode: PublicLanguage["glottocode"];
+  nameEn: PublicLanguage["nameEn"];
+  alternateNames: PublicLanguage["alternateNames"];
+  spellingAliases: PublicLanguage["spellingAliases"];
+  dialects: PublicLanguage["dialects"];
   family: PublicLanguage["family"];
   speakingPeoples: PublicLanguage["speakingPeoples"];
   vehicularRole: PublicLanguage["vehicularRole"];
@@ -27,6 +33,12 @@ export function serializeLanguage(language: LanguageAggregate): PublicLanguage {
     id: language.id,
     name: language.name,
     nameProvenance: language.nameProvenance,
+    isoCode639_3: language.isoCode639_3,
+    glottocode: language.glottocode,
+    nameEn: language.nameEn,
+    alternateNames: language.alternateNames,
+    spellingAliases: language.spellingAliases,
+    dialects: language.dialects,
     family: {
       id: language.family.id,
       name: language.family.name,

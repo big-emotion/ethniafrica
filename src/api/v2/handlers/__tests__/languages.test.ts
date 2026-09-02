@@ -12,6 +12,12 @@ const YORUBA = {
   id: "yor",
   name: "Yoruba",
   nameProvenance: "sourced" as const,
+  isoCode639_3: "yor",
+  glottocode: "yoru1245",
+  nameEn: "Yoruba",
+  alternateNames: [] as string[],
+  spellingAliases: [] as string[],
+  dialects: [] as string[],
   family: { id: "FLG_BENOUECONGO", name: "Bénoué-Congo" },
   speakingPeoples: [
     { id: "PPL_YORUBA", name: "Yoruba" },

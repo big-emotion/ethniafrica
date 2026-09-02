@@ -17,53 +17,104 @@ const base: PublicPatronyme = {
 
 describe("PatronymeOriginSection (REQ-133)", () => {
   // @req REQ-133
-  it("renders nothing when the corpus documents no origin", () => {
-    const { container } = render(<PatronymeOriginSection patronyme={base} />);
-    expect(container).toBeEmptyDOMElement();
+  it("keeps the chapter and marks it when the corpus documents no origin", () => {
+    render(<PatronymeOriginSection patronyme={base} />);
+
+    // It used to return null here, which removed the chapter from the page
+    // and from the rail — the rail reads its entries from the rendered DOM.
+    expect(
+      screen.getByRole("heading", { name: "Origine" })
+    ).toBeInTheDocument();
+    expect(screen.getByText("Donnée manquante")).toBeInTheDocument();
   });
 
   // @req REQ-133
-  it("states a griot oral-tradition origin, attributed to its griot", () => {
+  it("prints the editor's own reason where the dossier gives one", () => {
+    render(
+      <PatronymeOriginSection
+        patronyme={{
+          ...base,
+          content: {
+            gaps: [
+              {
+                fieldPath: "origin",
+                reason:
+                  "Le passage ne documente aucune origine orale, écrite ou linguistique du nom.",
+              },
+            ],
+          },
+        }}
+      />
+    );
+
+    expect(
+      screen.getByText(
+        "Le passage ne documente aucune origine orale, écrite ou linguistique du nom."
+      )
+    ).toBeInTheDocument();
+    expect(screen.queryByText("Donnée manquante")).not.toBeInTheDocument();
+  });
+
+  // @req REQ-133
+  it("attributes an oral tradition to its griot rather than stating it flat", () => {
     render(
       <PatronymeOriginSection
         patronyme={{
           ...base,
           content: {
             origin: {
-              originType: "griot_oral_tradition",
-              sources: [
+              oralTraditions: [
                 {
-                  title: "Récit de Fadama Diarra",
-                  url: null,
-                  tier: "unverified",
+                  claim: "Le nom vient du Mandé.",
+                  claimStatus: "contested",
+                  griot: "Fadama Diarra",
                 },
               ],
-              griot: "Fadama Diarra",
             },
           },
         }}
       />
     );
 
-    expect(screen.getByText(/tradition orale griotique/)).toBeInTheDocument();
+    expect(screen.getByText("Tradition orale griotique")).toBeInTheDocument();
+    expect(screen.getByText(/Le nom vient du Mandé/)).toBeInTheDocument();
     expect(
       screen.getByText(/Transmis par\s+Fadama Diarra/)
     ).toBeInTheDocument();
-    expect(screen.getByText("Récit de Fadama Diarra")).toBeInTheDocument();
   });
 
   // @req REQ-133
-  it("states a written-chronicle origin without the griot wording", () => {
+  it("carries an oral tradition and a written chronicle side by side", () => {
     render(
       <PatronymeOriginSection
         patronyme={{
           ...base,
           content: {
             origin: {
-              originType: "written_chronicle",
-              sources: [
-                { title: "Tarikh es-Soudan", url: null, tier: "referenced" },
-              ],
+              oralTraditions: [{ claim: "Version griotique." }],
+              writtenChronicles: [{ claim: "Version chroniquée." }],
+            },
+          },
+        }}
+      />
+    );
+
+    // Two testimonies about one name; neither is promoted over the other.
+    expect(screen.getByText("Tradition orale griotique")).toBeInTheDocument();
+    expect(screen.getByText("Chronique écrite")).toBeInTheDocument();
+    expect(screen.getByText(/Version griotique/)).toBeInTheDocument();
+    expect(screen.getByText(/Version chroniquée/)).toBeInTheDocument();
+  });
+
+  // @req REQ-133
+  it("omits the griot wording when no oral tradition is documented", () => {
+    render(
+      <PatronymeOriginSection
+        patronyme={{
+          ...base,
+          content: {
+            origin: {
+              writtenChronicles: [{ claim: "Cité dans le Tarikh es-Soudan." }],
             },
           },
         }}
@@ -72,7 +123,7 @@ describe("PatronymeOriginSection (REQ-133)", () => {
 
     expect(screen.getByText("Chronique écrite")).toBeInTheDocument();
     expect(
-      screen.queryByText(/tradition orale griotique/)
+      screen.queryByText(/transmise par tradition orale griotique/)
     ).not.toBeInTheDocument();
   });
 });

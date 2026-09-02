@@ -29,6 +29,8 @@ export interface Source {
   title: string;
   url: string | null;
   tier: SourceTier | null;
+  /** Why the source carries this tier — the corpus's `sources[].notes`. */
+  notes: string | null;
 }
 
 export interface ConfidenceScore {
@@ -123,7 +125,7 @@ export async function getSourcesMap(
     for (const sids of sourceIdChunks) {
       const { data, error } = await supabase
         .from("sources")
-        .select("id, title, url, tier")
+        .select("id, title, url, tier, notes")
         .in("id", sids);
 
       if (error) {
@@ -138,6 +140,10 @@ export async function getSourcesMap(
           title: src.title,
           url: src.url,
           tier: isSourceTier(src.tier) ? src.tier : null,
+          // Why the source carries the tier it does. The corpus fills it on
+          // all 24 language fiches; it was never fetched, so no fiche could
+          // show the reasoning behind a standing it displays.
+          notes: src.notes ?? null,
         });
       }
     }

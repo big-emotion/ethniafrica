@@ -1,48 +1,140 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  readAttestedForms,
+  readAlliances,
   readDesignatedSocialUnit,
-  readFiliationClaims,
+  readGaps,
+  readHomonyms,
   readNisbaSubtype,
   readOrigin,
+  readPatronymeSources,
   readPermittedGivenNames,
+  readSpellings,
   readTotemicFoodProhibition,
   readTransmissionMode,
 } from "@/lib/patronymes/content";
 
 describe("patronyme content readers (REQ-133)", () => {
   // @req REQ-133
-  it("reads attested forms with their attestation source", () => {
-    const forms = readAttestedForms({
-      attestedForms: [
+  it("reads each spelling with the countries attesting it", () => {
+    const forms = readSpellings({
+      spellings: [
         {
-          spelling: "Keïta",
-          attestation: {
-            title: "Charte du Manden",
-            url: null,
-            tier: "referenced",
-          },
+          spelling: "Camara",
+          attestations: [
+            { countryId: "LBR", sourceRefs: ["corpus-ppl-vai-organisation"] },
+            { countryId: "SLE", sourceRefs: ["corpus-ppl-vai-organisation"] },
+          ],
         },
         "not an object",
       ],
     });
-    expect(forms).toEqual([
-      {
-        spelling: "Keïta",
-        attestation: {
-          title: "Charte du Manden",
-          url: null,
-          tier: "referenced",
+    expect(forms).toEqual([{ spelling: "Camara", countryIds: ["LBR", "SLE"] }]);
+  });
+
+  // @req REQ-133
+  it("does not repeat a country attesting the same spelling twice", () => {
+    const forms = readSpellings({
+      spellings: [
+        {
+          spelling: "Camara",
+          attestations: [
+            { countryId: "MLI", sourceRefs: ["a"] },
+            { countryId: "MLI", sourceRefs: ["b"] },
+          ],
         },
+      ],
+    });
+    expect(forms).toEqual([{ spelling: "Camara", countryIds: ["MLI"] }]);
+  });
+
+  // @req REQ-133
+  it("reads nothing from the retired attestedForms key", () => {
+    // The key the fiche read for months, which no dossier has ever written.
+    expect(readSpellings({ attestedForms: [{ spelling: "Keïta" }] })).toEqual(
+      []
+    );
+    expect(readSpellings({})).toEqual([]);
+    expect(readSpellings({ spellings: "not-an-array" })).toEqual([]);
+  });
+
+  // @req REQ-133
+  it("reads a non-hereditary transmission mode, written by four dossiers", () => {
+    expect(readTransmissionMode({ transmissionMode: "non_hereditary" })).toBe(
+      "non_hereditary"
+    );
+  });
+
+  // @req REQ-133
+  it("reads the gap notes an editor wrote for the fields left empty", () => {
+    expect(
+      readGaps({
+        gaps: [
+          { fieldPath: "alliances", reason: "Aucune alliance documentée." },
+          { fieldPath: "bearers" },
+          "not an object",
+        ],
+      })
+    ).toEqual([
+      { fieldPath: "alliances", reason: "Aucune alliance documentée." },
+    ]);
+  });
+
+  // @req REQ-133
+  it("reads the dossier's own sources", () => {
+    expect(
+      readPatronymeSources({
+        sources: [
+          {
+            sourceKey: "corpus-ppl-vai",
+            title: "Fiche PPL_VAI",
+            url: null,
+            tier: "referenced",
+            notes: "Passage clanique.",
+          },
+        ],
+      })
+    ).toEqual([
+      {
+        title: "Fiche PPL_VAI",
+        url: null,
+        tier: "referenced",
+        notes: "Passage clanique.",
       },
     ]);
   });
 
   // @req REQ-133
-  it("returns an empty list when attestedForms is absent or malformed", () => {
-    expect(readAttestedForms({})).toEqual([]);
-    expect(readAttestedForms({ attestedForms: "not-an-array" })).toEqual([]);
+  it("reads alliances by their attested term", () => {
+    expect(
+      readAlliances({
+        alliances: [
+          { targetPatronymeId: "PAT_TRAORE", allianceType: "sanankuya" },
+          { allianceType: "orphaned" },
+        ],
+      })
+    ).toEqual([{ targetPatronymeId: "PAT_TRAORE", allianceType: "sanankuya" }]);
+  });
+
+  // @req REQ-133
+  it("reads homonyms with what distinguishes them", () => {
+    expect(
+      readHomonyms({
+        homonyms: [
+          {
+            label: "Bambara",
+            entityType: "people",
+            distinction: "Peuple mandé, sans lien étymologique démontré.",
+          },
+        ],
+      })
+    ).toEqual([
+      {
+        label: "Bambara",
+        entityType: "people",
+        distinction: "Peuple mandé, sans lien étymologique démontré.",
+      },
+    ]);
   });
 
   // @req REQ-133
@@ -75,29 +167,71 @@ describe("patronyme content readers (REQ-133)", () => {
   });
 
   // @req REQ-133
-  it("reads an origin with its type, sources and optional griot attribution", () => {
+  it("reads the three origin strands the corpus actually writes", () => {
     const origin = readOrigin({
       origin: {
-        originType: "griot_oral_tradition",
-        sources: [
-          { title: "Récit de Fadama Diarra", url: null, tier: "unverified" },
+        oralTraditions: [
+          {
+            claim: "Le nom vient du Mandé.",
+            claimStatus: "contested",
+            griot: "Fadama Diarra",
+            transcription: "Monteil 1962, p. 44",
+          },
         ],
-        griot: "Fadama Diarra",
+        writtenChronicles: [{ claim: "Cité dans la Charte du Manden." }],
+        linguisticReconstructions: [],
       },
     });
-    expect(origin).toEqual({
-      originType: "griot_oral_tradition",
-      sources: [
-        { title: "Récit de Fadama Diarra", url: null, tier: "unverified" },
-      ],
-      griot: "Fadama Diarra",
-    });
+
+    expect(origin.oralTraditions).toEqual([
+      {
+        claim: "Le nom vient du Mandé.",
+        claimStatus: "contested",
+        griot: "Fadama Diarra",
+        transcription: "Monteil 1962, p. 44",
+      },
+    ]);
+    expect(origin.writtenChronicles).toEqual([
+      {
+        claim: "Cité dans la Charte du Manden.",
+        claimStatus: null,
+        griot: null,
+        transcription: null,
+      },
+    ]);
+    expect(origin.linguisticReconstructions).toEqual([]);
   });
 
   // @req REQ-133
-  it("returns null when origin is absent or its type is unrecognised", () => {
-    expect(readOrigin({})).toBe(null);
-    expect(readOrigin({ origin: { originType: "invented" } })).toBe(null);
+  it("keeps an oral tradition and a written chronicle side by side", () => {
+    const origin = readOrigin({
+      origin: {
+        oralTraditions: [{ claim: "Version griotique." }],
+        writtenChronicles: [{ claim: "Version chroniquée." }],
+      },
+    });
+
+    // Two testimonies about one name, neither overruling the other — the
+    // reason the corpus writes three lists rather than one classification.
+    expect(origin.oralTraditions).toHaveLength(1);
+    expect(origin.writtenChronicles).toHaveLength(1);
+  });
+
+  // @req REQ-133
+  it("returns three empty strands rather than null when origin is absent", () => {
+    expect(readOrigin({})).toEqual({
+      oralTraditions: [],
+      writtenChronicles: [],
+      linguisticReconstructions: [],
+    });
+    // The shape the reader used to require, which no dossier has ever had.
+    expect(
+      readOrigin({ origin: { originType: "griot_oral_tradition" } })
+    ).toEqual({
+      oralTraditions: [],
+      writtenChronicles: [],
+      linguisticReconstructions: [],
+    });
   });
 
   // @req REQ-133
@@ -127,34 +261,25 @@ describe("patronyme content readers (REQ-133)", () => {
   });
 
   // @req REQ-133
-  it("reads filiation claims alongside their competing account (AC2)", () => {
-    const claims = readFiliationClaims({
-      filiationClaims: [
-        {
-          claim: "Descendance de Soundiata Keïta",
-          competingAccount:
-            "Contestée par une partie de l'historiographie académique",
-          sources: [
-            { title: "Charte du Manden", url: null, tier: "referenced" },
-          ],
-        },
-      ],
-    });
-    expect(claims).toEqual([
-      {
-        claim: "Descendance de Soundiata Keïta",
-        competingAccount:
-          "Contestée par une partie de l'historiographie académique",
-        sources: [{ title: "Charte du Manden", url: null, tier: "referenced" }],
+  it("reads a claimed filiation as an origin strand, where the corpus puts it", () => {
+    // There is no `filiationClaims` reader any more: the key it read appears
+    // in no model, no parser and no dossier, so the section that depended on
+    // it could never render. A contested descent claim is an oral tradition
+    // with a claimStatus, which is where the corpus has always written it.
+    const origin = readOrigin({
+      origin: {
+        oralTraditions: [
+          {
+            claim: "Descendance de Soundiata Keïta",
+            claimStatus: "contested",
+          },
+        ],
       },
-    ]);
-  });
+    });
 
-  // @req REQ-133
-  it("returns an empty list when filiationClaims is absent or malformed", () => {
-    expect(readFiliationClaims({})).toEqual([]);
-    expect(readFiliationClaims({ filiationClaims: [{ claim: 42 }] })).toEqual(
-      []
-    );
+    expect(origin.oralTraditions[0]).toMatchObject({
+      claim: "Descendance de Soundiata Keïta",
+      claimStatus: "contested",
+    });
   });
 });

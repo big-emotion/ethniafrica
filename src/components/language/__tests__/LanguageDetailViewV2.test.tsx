@@ -8,6 +8,14 @@ const fullData: LanguagePageData = {
   id: "yor",
   name: "Yoruba",
   nameProvenance: "sourced",
+  isoCode639_3: "yor",
+  glottocode: "yoru1245",
+  nameEn: "Yoruba",
+  // Filled, so that each test below leaves exactly one chapter empty and can
+  // still assert a single missing marker.
+  alternateNames: ["Yariba"],
+  spellingAliases: ["Yorouba"],
+  dialects: ["Ọ̀yọ́"],
   family: { id: "FLG_NIGER_CONGO", name: "Niger-Congo" },
   speakingPeoples: [{ id: "PPL_YORUBA", name: "Yoruba" }],
   vehicularRole: "Langue véhiculaire au Nigeria du Sud-Ouest",

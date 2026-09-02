@@ -109,6 +109,7 @@ describe("AFRIK Languages Queries", () => {
           name: "Yoruba",
           family_id: "FLG_BENOUECONGO",
           content: { nameProvenance: "sourced" },
+          spelling_aliases: ["Yorouba"],
           family: {
             id: "FLG_BENOUECONGO",
             name_fr: "Bénoué-Congo",
@@ -121,7 +122,7 @@ describe("AFRIK Languages Queries", () => {
 
       expect(mockSupabase.from).toHaveBeenCalledWith("afrik_languages");
       expect(mockSupabase.select).toHaveBeenCalledWith(
-        "id, name, family_id, content, family:afrik_language_families(id, name_fr)"
+        "id, name, family_id, content, spelling_aliases, family:afrik_language_families(id, name_fr)"
       );
       expect(mockSupabase.eq).toHaveBeenCalledWith("id", "yor");
       expect(result).toEqual({
@@ -129,6 +130,7 @@ describe("AFRIK Languages Queries", () => {
         name: "Yoruba",
         family: { id: "FLG_BENOUECONGO", name: "Bénoué-Congo" },
         content: { nameProvenance: "sourced" },
+        spellingAliases: ["Yorouba"],
       });
     });
 

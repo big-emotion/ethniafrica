@@ -24,8 +24,8 @@
           "author": "<Auteur>",
           "year": 0,
           "url": "<URL résolvable>",
-          "tier": 1,
-          "notes": "<Si tier 2 : chemin Wikipedia avec versions linguistiques croisées>"
+          "tier": "official | referenced | unverified",
+          "notes": "<Provenance du tier. Si la source a été atteinte via Wikipédia : les versions linguistiques croisées, pour que la chaîne reste auditable.>"
         }
       ]
     }

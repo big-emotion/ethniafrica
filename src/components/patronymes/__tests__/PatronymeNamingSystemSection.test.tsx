@@ -23,7 +23,12 @@ describe("PatronymeNamingSystemSection (AC1, REQ-133)", () => {
         patronyme={{
           ...base,
           content: {
-            attestedForms: [{ spelling: "Keita", attestation: null }],
+            spellings: [
+              {
+                spelling: "Keita",
+                attestations: [{ countryId: "MLI", sourceRefs: ["s1"] }],
+              },
+            ],
             transmissionMode: "patrilineal",
             designatedSocialUnit: "clan",
           },
@@ -32,8 +37,51 @@ describe("PatronymeNamingSystemSection (AC1, REQ-133)", () => {
     );
 
     expect(screen.getByText("Keita")).toBeInTheDocument();
+    expect(screen.getByText(/attestée en\s+MLI/)).toBeInTheDocument();
     expect(screen.getByText("Patrilinéaire")).toBeInTheDocument();
     expect(screen.getByText("Clan")).toBeInTheDocument();
+  });
+
+  // @req REQ-133
+  it("names a non-hereditary transmission instead of blanking it", () => {
+    render(
+      <PatronymeNamingSystemSection
+        patronyme={{
+          ...base,
+          nameSystem: "non_hereditary_patronymic",
+          content: { transmissionMode: "non_hereditary" },
+        }}
+      />
+    );
+
+    // Written by 4 dossiers and absent from the allow-list, which blanked it.
+    expect(screen.getByText("Non héréditaire")).toBeInTheDocument();
+  });
+
+  // @req REQ-133
+  it("prints the editor's reason for a field the dossier leaves empty", () => {
+    render(
+      <PatronymeNamingSystemSection
+        patronyme={{
+          ...base,
+          content: {
+            gaps: [
+              {
+                fieldPath: "transmissionMode",
+                reason:
+                  "Le passage ne précise pas le mode de transmission du nom.",
+              },
+            ],
+          },
+        }}
+      />
+    );
+
+    expect(
+      screen.getByText(
+        "Le passage ne précise pas le mode de transmission du nom."
+      )
+    ).toBeInTheDocument();
   });
 
   // @req REQ-133
