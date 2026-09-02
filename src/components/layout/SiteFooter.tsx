@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -33,7 +34,7 @@ const FOOTER_LINK_CLASS =
  */
 const SOCIAL_NETWORKS: ReadonlyArray<{
   name: string;
-  Glyph: (props: { className?: string }) => JSX.Element;
+  Glyph: (props: { className?: string }) => ReactElement;
   href: string | null;
 }> = [
   { name: "Facebook", Glyph: FacebookGlyph, href: null },
