@@ -31,7 +31,6 @@ describe("segmentPolicy", () => {
       T2: "content.appellations.selfAppellation",
       T3: "content.demography.distributionByCountry",
       T4: "content.languages.mainLanguage",
-      T5: "content.languages.isoCodes",
       T6: "content.culture.majorRites",
       T7: "content.culture.spiritualities",
       T8: "content.culture.symbols",

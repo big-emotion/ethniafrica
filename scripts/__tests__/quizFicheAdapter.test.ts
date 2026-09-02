@@ -68,7 +68,7 @@ describe("source tier feeding the FR65 gate", () => {
 
 describe("normalizeFieldPath", () => {
   // @req REQ-103
-  it("passes through exact T1/T2/T4/T5 field paths", () => {
+  it("passes through exact T1/T2/T4 field paths", () => {
     expect(normalizeFieldPath("languageFamilyId")).toBe("languageFamilyId");
     expect(normalizeFieldPath("content.appellations.selfAppellation")).toBe(
       "content.appellations.selfAppellation"
@@ -76,9 +76,15 @@ describe("normalizeFieldPath", () => {
     expect(normalizeFieldPath("content.languages.mainLanguage")).toBe(
       "content.languages.mainLanguage"
     );
-    expect(normalizeFieldPath("content.languages.isoCodes")).toBe(
-      "content.languages.isoCodes"
-    );
+  });
+
+  // The path is registry-driven, so retiring the template that read it turns
+  // the path back into one nothing reads. Assertions already written there stay
+  // in the database and stop binding to anything, which is why the sweep must
+  // not run before the questions at that path are revoked.
+  // @req REQ-103
+  it("stops recognising the field path of a retired template", () => {
+    expect(normalizeFieldPath("content.languages.isoCodes")).toBeNull();
   });
 
   // @req REQ-103
@@ -142,7 +148,6 @@ describe("mapPeopleRowToFiche", () => {
         { countryId: "NGA", countryNameFr: "Nigéria", population: 40_000_000 },
       ],
       mainLanguage: { autonym: "Yoruba" },
-      isoCode: "yor",
       totalPopulation: null,
       exonyms: ["Yoruba people"],
       whyProblematic: null,
@@ -173,6 +178,30 @@ describe("mapPeopleRowToFiche", () => {
     expect(fiche).not.toBeNull();
     expect(fiche?.rubrics.T6).toBeNull();
     expect(fiche?.selfAppellation).toBe("Ọmọ Yorùbá");
+  });
+
+  /**
+   * The all-or-nothing guard held an ISO code among its required fields, so a
+   * fiche whose language carries no code was dropped from the eleven templates
+   * that never asked for one. With T5 retired the field is read by nothing, and
+   * rejecting on it would be rejecting on a value no round can use.
+   */
+  // @req REQ-103
+  it("maps a fiche whose language carries no ISO code", () => {
+    const fiche = mapPeopleRowToFiche(
+      {
+        ...completeRow,
+        content: {
+          ...completeRow.content,
+          languages: { mainLanguage: "Yoruba" },
+        },
+      },
+      familyNameById,
+      countryNameById
+    );
+
+    expect(fiche).not.toBeNull();
+    expect(fiche?.mainLanguage).toEqual({ autonym: "Yoruba" });
   });
 
   // @req REQ-121
@@ -239,21 +268,6 @@ describe("mapPeopleRowToFiche", () => {
       mapPeopleRowToFiche(row, familyNameById, countryNameById)
     ).toBeNull();
   });
-
-  // @req REQ-103
-  it("returns null when the iso code is missing", () => {
-    const row: PeopleRow = {
-      ...completeRow,
-      content: {
-        ...completeRow.content,
-        languages: { mainLanguage: "Yoruba", isoCodes: [] },
-      },
-    };
-    expect(
-      mapPeopleRowToFiche(row, familyNameById, countryNameById)
-    ).toBeNull();
-  });
-
   // @req REQ-103
   it("returns null when language_family_id is missing", () => {
     const row: PeopleRow = { ...completeRow, language_family_id: null };

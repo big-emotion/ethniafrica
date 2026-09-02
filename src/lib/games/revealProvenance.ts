@@ -45,7 +45,6 @@ const WORDING_BY_FIELD_PATH: Record<string, string> = {
     "la répartition par pays déclarée par la fiche",
   "content.languages.mainLanguage":
     "la langue principale déclarée par la fiche",
-  "content.languages.isoCodes": "les codes ISO 639-3 déclarés par la fiche",
   "content.culture.majorRites": "les rites majeurs décrits par la fiche",
   "content.culture.spiritualities": "les spiritualités décrites par la fiche",
   "content.culture.symbols": "les symboles décrits par la fiche",

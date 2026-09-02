@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { swaggerSpecV2 } from "@/lib/api/openapiV2";
+import { QUIZ_TEMPLATE_IDS } from "@/lib/quiz/segmentPolicy";
 
 describe("OpenAPI v2 contract", () => {
   // @req REQ-036
@@ -59,5 +60,30 @@ describe("OpenAPI v2 contract", () => {
       identifiers: { type: ["object", "null"] },
       url: { type: ["string", "null"] },
     });
+  });
+
+  /**
+   * The templateId enum is hand-written here and derived nowhere, so it had
+   * gone stale twice over: it still advertised T5 after that template was
+   * retired, and had never gained T13-T18. Nothing failed either time, because
+   * no test compared it to the policy that owns the list.
+   */
+  // @req REQ-097
+  it("advertises exactly the templates the policy declares", () => {
+    const question = (
+      swaggerSpecV2 as {
+        components: {
+          schemas: {
+            QuizSessionQuestion: {
+              properties: { templateId: { enum: string[] } };
+            };
+          };
+        };
+      }
+    ).components.schemas.QuizSessionQuestion;
+
+    expect([...question.properties.templateId.enum].sort()).toEqual(
+      [...QUIZ_TEMPLATE_IDS].sort()
+    );
   });
 });

@@ -12,6 +12,7 @@ import {
 import {
   QUIZ_THEME_IDS,
   QUIZ_THEME_SPECIMENS_FR,
+  TEMPLATE_FIELD_PATHS,
 } from "@/lib/quiz/segmentPolicy";
 
 /**
@@ -191,5 +192,34 @@ describe("Quiz charter contract (REQ-103)", () => {
     expect(populationOf(session[0].entityId)).toBeGreaterThan(
       populationOf(session[session.length - 1].entityId)
     );
+  });
+});
+
+/**
+ * Charter §8 — the register a stem is allowed to use.
+ *
+ * « Technical vocabulary belongs in the reveal, where it can be explained,
+ * never in the stem, where it blocks. » T5 asked for a language's ISO 639-3
+ * code, which is a registry identifier rather than a name: it can only be
+ * recalled, never reasoned about, so it also failed the kill test. Asserting it
+ * here rather than in a unit test means the next template reaching for a
+ * standards code fails as a charter breach, which is what it is.
+ */
+describe("games charter §8 — no stem asks for a registry identifier", () => {
+  // @req REQ-103
+  it("reads no template off a field holding a standards code", () => {
+    expect(Object.values(TEMPLATE_FIELD_PATHS)).not.toContain(
+      "content.languages.isoCodes"
+    );
+  });
+
+  // @req REQ-103
+  it("names no standards registry in the stems it builds", () => {
+    const templates = readFileSync(
+      join(process.cwd(), "src", "lib", "quiz", "questionTemplates.ts"),
+      "utf8"
+    );
+
+    expect(templates).not.toMatch(/ISO 639-3/);
   });
 });

@@ -36,7 +36,6 @@ const yoruba: QuizPeopleFixture = {
     { countryId: "TGO", countryNameFr: "Togo", population: 3_000_000 },
   ],
   mainLanguage: { autonym: "Èdè Yorùbá", exonym: "Yoruba" },
-  isoCode: "yor",
   totalPopulation: 50_000_000,
   exonyms: [],
   rubrics: { T6: null, T7: null, T8: null, T9: null, T10: null, T11: null },
@@ -57,7 +56,6 @@ const zulu: QuizPeopleFixture = {
     },
   ],
   mainLanguage: { autonym: "isiZulu", exonym: "Zoulou" },
-  isoCode: "zul",
   totalPopulation: 12_000_000,
   exonyms: [],
   rubrics: { T6: null, T7: null, T8: null, T9: null, T10: null, T11: null },
@@ -73,7 +71,6 @@ const pools: QuizCandidatePools = {
     { autonym: "Hausa" },
     { autonym: "Wolof" },
   ],
-  isoCodes: ["swa", "hau", "wol"],
   peopleNames: [
     { autonym: "Ashanti" },
     { autonym: "Wolof" },
@@ -114,13 +111,12 @@ function fullBindings(): Record<string, AssertionBinding> {
       "content.demography.distributionByCountry"
     ),
     "content.languages.mainLanguage": binding("content.languages.mainLanguage"),
-    "content.languages.isoCodes": binding("content.languages.isoCodes"),
   };
 }
 
 describe("resolveCurrentAnswer", () => {
   // @req REQ-080
-  it("resolves the T1..T5 answer fields from a people fixture", () => {
+  it("resolves the T1..T4 answer fields from a people fixture", () => {
     expect(resolveCurrentAnswer("T1", yoruba)).toBe("Niger-Congo");
     expect(resolveCurrentAnswer("T2", yoruba)).toBe("Yorùbá");
     expect(resolveCurrentAnswer("T3", yoruba)).toBe("Nigeria");
@@ -128,7 +124,6 @@ describe("resolveCurrentAnswer", () => {
       autonym: "Èdè Yorùbá",
       exonym: "Yoruba",
     });
-    expect(resolveCurrentAnswer("T5", yoruba)).toBe("yor");
   });
 
   // @req REQ-080
@@ -611,7 +606,6 @@ const hausa: QuizPeopleFixture = {
     { countryId: "NER", countryNameFr: "Niger", population: 3_000_000 },
   ],
   mainLanguage: { autonym: "Harshen Hausa", exonym: "Haoussa" },
-  isoCode: "hau",
   totalPopulation: 10_000_000,
   exonyms: [],
   rubrics: { T6: null, T7: null, T8: null, T9: null, T10: null, T11: null },
@@ -628,7 +622,6 @@ const maasai: QuizPeopleFixture = {
     { countryId: "KEN", countryNameFr: "Kenya", population: 5_000_000 },
   ],
   mainLanguage: { autonym: "ɔl Maa", exonym: "Maasai" },
-  isoCode: "mas",
   totalPopulation: 900_000,
   exonyms: [],
   rubrics: { T6: null, T7: null, T8: null, T9: null, T10: null, T11: null },
@@ -669,22 +662,14 @@ describe("orderPoolsBySubjectProximity", () => {
   });
 
   // @req REQ-080
-  it("ranks the code of a people sharing a country ahead of a stranger's", () => {
-    const ordered = orderPoolsBySubjectProximity(yoruba, corpus, {
-      ...pools,
-      isoCodes: ["mas", "hau"],
-    });
-    expect(ordered.isoCodes).toEqual(["hau", "mas"]);
-  });
-
-  // @req REQ-080
   it("keeps corpus order between two candidates of equal nearness", () => {
-    // Neither code belongs to anyone in the corpus, so nothing separates them.
+    // Neither autonym belongs to anyone in the corpus, so nothing separates
+    // them and the pool has to come back in the order it went in.
     const ordered = orderPoolsBySubjectProximity(yoruba, corpus, {
       ...pools,
-      isoCodes: ["wol", "swa"],
+      autonyms: ["Wolof", "Swahili"],
     });
-    expect(ordered.isoCodes).toEqual(["wol", "swa"]);
+    expect(ordered.autonyms).toEqual(["Wolof", "Swahili"]);
   });
 
   // @req REQ-080
@@ -698,7 +683,6 @@ describe("orderPoolsBySubjectProximity", () => {
       [...pools.countryNames].sort()
     );
     expect(ordered.languages).toHaveLength(pools.languages.length);
-    expect([...ordered.isoCodes].sort()).toEqual([...pools.isoCodes].sort());
   });
 
   // @req REQ-080

@@ -13,9 +13,10 @@
  * was written against the `topics-sensibles` doctrine clause (migration
  * `018_editorial_doctrine_seed.sql`), but measured against the five templates
  * that exist it excluded exactly one thing from the children segment: T5, the
- * ISO 639-3 code of a language. Not a sensitive topic — a dull one. None of
- * T1-T5 reads colonisation, violence or any event-derived path, so the clause
- * had nothing to bite on.
+ * ISO 639-3 code of a language. Not a sensitive topic — a dull one, and one
+ * dull enough that the template itself was later retired under games charter
+ * §8. None of the atomic templates reads colonisation, violence or any
+ * event-derived path, so the clause had nothing to bite on.
  *
  * That does not make its removal free. The doctrine still says sensitive
  * content must not reach a children's surface, and after this change the quiz
@@ -39,7 +40,6 @@ export const QUIZ_TEMPLATE_IDS: readonly QuizTemplateId[] = [
   "T2",
   "T3",
   "T4",
-  "T5",
   "T6",
   "T7",
   "T8",
@@ -59,7 +59,7 @@ export const QUIZ_TEMPLATE_IDS: readonly QuizTemplateId[] = [
  * Target field path for each question template, per the Epic 10 spec's
  * template table ("Question templates" section).
  *
- * T1-T5 ask about a field whose value is an atom, so the atom is the answer.
+ * T1-T4 ask about a field whose value is an atom, so the atom is the answer.
  * T6-T11 read a prose rubric and **invert**: the fragment becomes the stimulus
  * and the people becomes the answer, which is how the atlas's own subject
  * matter — rites, beliefs, kingdoms, migrations — becomes playable at all.
@@ -72,7 +72,6 @@ export const TEMPLATE_FIELD_PATHS: Record<QuizTemplateId, string> = {
   T2: "content.appellations.selfAppellation",
   T3: "content.demography.distributionByCountry",
   T4: "content.languages.mainLanguage",
-  T5: "content.languages.isoCodes",
   T6: "content.culture.majorRites",
   T7: "content.culture.spiritualities",
   T8: "content.culture.symbols",
@@ -102,7 +101,6 @@ export const TEMPLATE_ENTITY_TYPES: Record<QuizTemplateId, QuizEntityType> = {
   T2: "people",
   T3: "people",
   T4: "people",
-  T5: "people",
   T6: "people",
   T7: "people",
   T8: "people",
@@ -185,7 +183,6 @@ export const TEMPLATE_THEMES: Record<QuizTemplateId, QuizThemeId> = {
   T2: "noms",
   T3: "territoire",
   T4: "langues",
-  T5: "langues",
   T6: "rites-et-culture",
   T7: "croyances",
   T8: "rites-et-culture",
