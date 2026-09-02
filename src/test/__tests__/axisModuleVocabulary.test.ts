@@ -24,26 +24,26 @@ describe("axis module vocabulary — a three-letter module name still counts", (
   // @req REQ-113
   it("recognises the Nom module in a sentence that names it", () => {
     expect(modulesNamedIn("atlas", "Les fiches de pays et de noms.")).toContain(
-      "Nom"
+      "Noms"
     );
   });
 
   // @req REQ-113
   it("recognises it in the singular too", () => {
-    expect(modulesNamedIn("atlas", "L'origine d'un nom.")).toContain("Nom");
+    expect(modulesNamedIn("atlas", "L'origine d'un nom.")).toContain("Noms");
   });
 
   // @req REQ-132
   it("does not let « nommage » stand for the Nom module", () => {
     expect(
       modulesNamedIn("atlas", "Les systèmes de nommage documentés.")
-    ).not.toContain("Nom");
+    ).not.toContain("Noms");
   });
 
   // @req REQ-132
   it("does not let « nombre » stand for it either", () => {
     expect(modulesNamedIn("atlas", "Le nombre de fiches.")).not.toContain(
-      "Nom"
+      "Noms"
     );
   });
 

@@ -243,102 +243,90 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
     data as Record<string, unknown>;
 
   return [
-    ...asRows(peoples).map(
-      (row): SearchResult => ({
-        type: "people",
-        id: String(row.id),
-        name: String(row.nameMain ?? ""),
-        languageFamilyId:
-          row.languageFamilyId as SearchResult["languageFamilyId"],
-        languageFamilyName: (row.languageFamilyName as string) || undefined,
-        countryIds: row.currentCountries as SearchResult["countryIds"],
-        population: totalPopulationOf(row.content),
-        ...appellationsOf(row.content),
-        ...sourceMetadataOf(row.content),
-        snippet: (row.snippet as string) || undefined,
-        relevance: numberOrUndefined(row.relevance),
-        exactMatch: row.exactMatch === true,
-        classificationStatus:
-          row.classificationStatus as SearchResult["classificationStatus"],
-        confidence: numberOrUndefined(row.confidence),
-      })
-    ),
-    ...asRows(countries).map(
-      (row): SearchResult => ({
-        type: "country",
-        id: String(row.id),
-        name: String(row.nameFr ?? ""),
-        // The match excerpt says why this row surfaced; the etymology only
-        // says what the country is. Prefer the former when the API sends it.
-        snippet:
-          (row.snippet as string) || (row.etymology as string) || undefined,
-        relevance: numberOrUndefined(row.relevance),
-        exactMatch: row.exactMatch === true,
-      })
-    ),
-    ...asRows(families).map(
-      (row): SearchResult => ({
-        type: "languageFamily",
-        id: String(row.id),
-        name: String(row.nameFr ?? ""),
-        relevance: numberOrUndefined(row.relevance),
-        exactMatch: row.exactMatch === true,
-      })
-    ),
+    ...asRows(peoples).map((row): SearchResult => ({
+      type: "people",
+      id: String(row.id),
+      name: String(row.nameMain ?? ""),
+      languageFamilyId:
+        row.languageFamilyId as SearchResult["languageFamilyId"],
+      languageFamilyName: (row.languageFamilyName as string) || undefined,
+      countryIds: row.currentCountries as SearchResult["countryIds"],
+      population: totalPopulationOf(row.content),
+      ...appellationsOf(row.content),
+      ...sourceMetadataOf(row.content),
+      snippet: (row.snippet as string) || undefined,
+      relevance: numberOrUndefined(row.relevance),
+      exactMatch: row.exactMatch === true,
+      classificationStatus:
+        row.classificationStatus as SearchResult["classificationStatus"],
+      confidence: numberOrUndefined(row.confidence),
+    })),
+    ...asRows(countries).map((row): SearchResult => ({
+      type: "country",
+      id: String(row.id),
+      name: String(row.nameFr ?? ""),
+      // The match excerpt says why this row surfaced; the etymology only
+      // says what the country is. Prefer the former when the API sends it.
+      snippet:
+        (row.snippet as string) || (row.etymology as string) || undefined,
+      relevance: numberOrUndefined(row.relevance),
+      exactMatch: row.exactMatch === true,
+    })),
+    ...asRows(families).map((row): SearchResult => ({
+      type: "languageFamily",
+      id: String(row.id),
+      name: String(row.nameFr ?? ""),
+      relevance: numberOrUndefined(row.relevance),
+      exactMatch: row.exactMatch === true,
+    })),
     // REQ-126: roleCategory and peopleLinks are carried through untouched —
     // an `observation` relation must never be coerced to `membership`, which
     // is what would make an ethnographer read as a member of the people they
     // studied.
-    ...asRows(persons).map(
-      (row): SearchResult => ({
-        type: "person",
-        id: String(row.id),
-        name: String(row.fullName ?? ""),
-        roleCategory: String(row.roleCategory ?? ""),
-        peopleLinks: (row.peopleLinks as PersonPeopleLink[] | undefined) ?? [],
-        snippet: (row.snippet as string) || undefined,
-        relevance: numberOrUndefined(row.relevance),
-        exactMatch: row.exactMatch === true,
-      })
-    ),
+    ...asRows(persons).map((row): SearchResult => ({
+      type: "person",
+      id: String(row.id),
+      name: String(row.fullName ?? ""),
+      roleCategory: String(row.roleCategory ?? ""),
+      peopleLinks: (row.peopleLinks as PersonPeopleLink[] | undefined) ?? [],
+      snippet: (row.snippet as string) || undefined,
+      relevance: numberOrUndefined(row.relevance),
+      exactMatch: row.exactMatch === true,
+    })),
     // ETNI-1463: the name (patronyme) reaches the unified surface as its own
     // kind — a query that resolves to a lineage name rather than a people,
     // country or family must still return something.
-    ...asRows(patronymes).map(
-      (row): SearchResult => ({
-        type: "patronyme",
-        id: String(row.id),
-        name: String(row.nameMain ?? ""),
-        nameSystem: row.nameSystem as SearchResult["nameSystem"],
-        casteOrSocialFunction:
-          row.casteOrSocialFunction as SearchResult["casteOrSocialFunction"],
-        ...patronymeAssociationsOf(row.content),
-        ...sourceMetadataOf(row.content),
-        snippet: (row.snippet as string) || undefined,
-        relevance: numberOrUndefined(row.relevance),
-        exactMatch: row.exactMatch === true,
-      })
-    ),
+    ...asRows(patronymes).map((row): SearchResult => ({
+      type: "patronyme",
+      id: String(row.id),
+      name: String(row.nameMain ?? ""),
+      nameSystem: row.nameSystem as SearchResult["nameSystem"],
+      casteOrSocialFunction:
+        row.casteOrSocialFunction as SearchResult["casteOrSocialFunction"],
+      ...patronymeAssociationsOf(row.content),
+      ...sourceMetadataOf(row.content),
+      snippet: (row.snippet as string) || undefined,
+      relevance: numberOrUndefined(row.relevance),
+      exactMatch: row.exactMatch === true,
+    })),
     // REQ-136: a language reaches the unified surface as its own kind, not
     // only through the peoples that mention it.
-    ...asRows(languages).map(
-      (row): SearchResult => ({
-        type: "language",
-        id: String(row.id),
-        name: String(row.name ?? ""),
-        languageFamilyId: row.familyId as SearchResult["languageFamilyId"],
-        languageFamilyName: (row.familyName as string) || undefined,
-        // `id` already is the ISO 639-3 code (afrik_languages is keyed on
-        // it); duplicated under its own name so a consumer never has to know
-        // that.
-        isoCode639_3: (row.id as string) || undefined,
-        speakerPeopleIds: speakerPeopleIdsOf(row.content),
-        ...sourceMetadataOf(row.content),
-        snippet: (row.snippet as string) || undefined,
-        relevance: numberOrUndefined(row.relevance),
-        exactMatch: row.exactMatch === true,
-      })
-    ),
+    ...asRows(languages).map((row): SearchResult => ({
+      type: "language",
+      id: String(row.id),
+      name: String(row.name ?? ""),
+      languageFamilyId: row.familyId as SearchResult["languageFamilyId"],
+      languageFamilyName: (row.familyName as string) || undefined,
+      // `id` already is the ISO 639-3 code (afrik_languages is keyed on
+      // it); duplicated under its own name so a consumer never has to know
+      // that.
+      isoCode639_3: (row.id as string) || undefined,
+      speakerPeopleIds: speakerPeopleIdsOf(row.content),
+      ...sourceMetadataOf(row.content),
+      snippet: (row.snippet as string) || undefined,
+      relevance: numberOrUndefined(row.relevance),
+      exactMatch: row.exactMatch === true,
+    })),
   ];
 }
 

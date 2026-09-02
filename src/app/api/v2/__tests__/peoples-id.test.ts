@@ -32,6 +32,7 @@ describe("API v2 - Single People Route", () => {
         languageFamilyId: "FLG_BANTU",
         currentCountries: ["ZWE"],
         content: {},
+        patronymes: [],
       };
 
       const mockEnvelope = {

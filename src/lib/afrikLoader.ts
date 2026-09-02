@@ -289,7 +289,6 @@ function transformMeta(
     perPage: (apiMeta.perPage as number) || perPage,
     totalPages: Math.ceil(total / perPage) || 0,
     unclassifiedPeoplesCount: apiMeta.unclassifiedPeoplesCount as
-      | number
-      | undefined,
+      number | undefined,
   };
 }

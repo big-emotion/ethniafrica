@@ -17,10 +17,7 @@ export type NameRecordEntityType = (typeof NAME_RECORD_ENTITY_TYPES)[number];
 export type PatronymeId = `PAT_${string}`;
 
 export type NameRecordType =
-  | "endonym"
-  | "exonym"
-  | "historical_spelling"
-  | "surname";
+  "endonym" | "exonym" | "historical_spelling" | "surname";
 
 export interface NameRecordSource {
   title: string;

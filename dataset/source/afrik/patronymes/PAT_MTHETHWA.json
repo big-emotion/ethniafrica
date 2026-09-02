@@ -22,7 +22,13 @@
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le clan aba-kwa-Mtetwa, « ceux de Mtetwa », occupait vers 1808 la bande côtière comprise entre la rivière Ntseleni et le lagon de Sainte-Lucie et s'étendait sur une trentaine de kilomètres vers l'intérieur. Il n'était pas le plus nombreux des clans du nord nguni : c'est l'ascendant de son souverain Dingiswayo qui lui donna la prééminence.",
+        "claimStatus": "established",
+        "sourceRefs": ["bryant-1929-olden-times"]
+      }
+    ],
     "linguisticReconstructions": [
       {
         "claim": "Chez les Nguni, l'isibongo (patronyme) et les izithakazelo (louanges de clan) sont deux objets distincts : le second dit l'ascendance et gouverne l'exogamie, le premier sert d'identifiant d'état civil.",
@@ -65,6 +71,14 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Nomina Africana: Journal of African Onomastics, vol. 39 n° 1. Établit l'articulation entre patronyme (isibongo) et louanges de clan (izithakazelo) chez les Nguni."
+    },
+    {
+      "sourceKey": "bryant-1929-olden-times",
+      "title": "Olden Times in Zululand and Natal — Containing Earlier Political History of the Eastern-Nguni Clans",
+      "url": "https://archive.org/details/bwb_KT-091-892",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Bryant, Alfred T., Longmans Green, 1929. Ethnographie missionnaire coloniale, à lire comme telle : Bryant écrit depuis la mission catholique du Natal et sa chronologie clanique est reconstruite à partir de généalogies orales recueillies au tournant du siècle. C'est néanmoins la seule source imprimée qui donne, clan par clan, une origine nommée pour les clans nguni orientaux. Consulté sur le texte intégral, pas sur un index. Son orthographe est celle de 1929 (Mtetwa, Ntungwa) ; les fiches conservent la graphie du corpus et citent la sienne comme variante."
     }
   ],
   "gaps": [
@@ -74,15 +88,15 @@
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau du clan."
+      "reason": "La prééminence des Mthethwa sous Dingiswayo est une hégémonie politique, non une fonction héréditaire de caste au sens du champ."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
+      "reason": "Dingiswayo est amplement documenté par Bryant, mais comme souverain mthethwa et non comme attestation de l'origine du nom ; la fiche ne l'enregistre pas en porteur pour ne pas faire d'une biographie royale la source d'une étymologie."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "Aucune lignée homonyme d'origine distincte n'a été trouvée dans le texte intégral de Bryant, qui suit pourtant le clan sur seize passages."
     }
   ]
 }

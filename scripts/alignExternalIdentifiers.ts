@@ -102,10 +102,7 @@ export interface ResolvedIdentifiers {
 }
 
 export type AlignmentSkipReason =
-  | "no-match"
-  | "ambiguous"
-  | "already-aligned"
-  | "error";
+  "no-match" | "ambiguous" | "already-aligned" | "error";
 
 export interface AlignmentReportEntry {
   id: string;

@@ -22,7 +22,13 @@
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Les Dube sont comptés parmi les Nguni mthethwa. Vers 1650 ils descendent avec les Mbonambi la côte du Zululand jusqu'à la Mhlathuze. Le clan traverse les règnes de Dingiswayo et de Shaka sans perdre son territoire, puis est détruit sous Dingane : son chef Nzwakele est tué et le clan dispersé, la plupart de ses membres franchissant la Thukela vers le Natal, où le nom est aujourd'hui répandu.",
+        "claimStatus": "established",
+        "sourceRefs": ["bryant-1929-olden-times"]
+      }
+    ],
     "linguisticReconstructions": [
       {
         "claim": "Chez les Nguni, l'isibongo (patronyme) et les izithakazelo (louanges de clan) sont deux objets distincts : le second dit l'ascendance et gouverne l'exogamie, le premier sert d'identifiant d'état civil.",
@@ -65,6 +71,14 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Nomina Africana: Journal of African Onomastics, vol. 39 n° 1. Établit l'articulation entre patronyme (isibongo) et louanges de clan (izithakazelo) chez les Nguni."
+    },
+    {
+      "sourceKey": "bryant-1929-olden-times",
+      "title": "Olden Times in Zululand and Natal — Containing Earlier Political History of the Eastern-Nguni Clans",
+      "url": "https://archive.org/details/bwb_KT-091-892",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Bryant, Alfred T., Longmans Green, 1929. Ethnographie missionnaire coloniale, à lire comme telle : Bryant écrit depuis la mission catholique du Natal et sa chronologie clanique est reconstruite à partir de généalogies orales recueillies au tournant du siècle. C'est néanmoins la seule source imprimée qui donne, clan par clan, une origine nommée pour les clans nguni orientaux. Consulté sur le texte intégral, pas sur un index. Son orthographe est celle de 1929 (Mtetwa, Ntungwa) ; les fiches conservent la graphie du corpus et citent la sienne comme variante."
     }
   ],
   "gaps": [
@@ -74,15 +88,15 @@
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau du clan."
+      "reason": "Aucune fonction héréditaire attestée : Bryant décrit les Dube comme un clan territorial doté de ses propres chefs, non comme un corps de spécialistes."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
+      "reason": "Le chef Nzwakele, tué sous Dingane, est nommé par Bryant, mais sans dates ni généalogie propre ; il documente la dispersion du clan et non l'origine du nom, et n'est donc pas enregistré en porteur."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "Bryant distingue une branche Lushozi-Dube sans lui donner d'origine séparée : faute de trajectoire distincte attestée, elle est traitée comme une subdivision et non comme un homonyme."
     }
   ]
 }

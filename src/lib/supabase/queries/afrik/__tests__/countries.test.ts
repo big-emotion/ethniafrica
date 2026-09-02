@@ -4,7 +4,11 @@ vi.mock("../../../server", () => ({
   createServerClient: vi.fn(),
 }));
 
-import { getAllAfrikCountries, getAfrikCountryById } from "../countries";
+import {
+  getAllAfrikCountries,
+  getAfrikCountryById,
+  getAfrikCountryIndexRows,
+} from "../countries";
 import { createServerClient } from "../../../server";
 
 describe("AFRIK Countries Queries", () => {
@@ -108,6 +112,48 @@ describe("AFRIK Countries Queries", () => {
       const result = await getAfrikCountryById("XXX");
 
       expect(result).toBeNull();
+    });
+  });
+
+  describe("getAfrikCountryIndexRows", () => {
+    // @req REQ-116
+    it("asks the database for the two columns the index keeps", async () => {
+      mockSupabase.order.mockResolvedValue({
+        data: [
+          { id: "COM", name_fr: "Comores" },
+          { id: "NGA", name_fr: "Nigeria" },
+        ],
+        error: null,
+      });
+
+      const rows = await getAfrikCountryIndexRows();
+
+      // The point of this reader: `select("*")` here shipped the whole
+      // `content` JSONB — 951 KB on the corpus — to keep 2 KB of names.
+      expect(mockSupabase.select).toHaveBeenCalledWith("id, name_fr");
+      expect(rows).toEqual([
+        { id: "COM", nameFr: "Comores" },
+        { id: "NGA", nameFr: "Nigeria" },
+      ]);
+    });
+
+    // @req REQ-116
+    it("orders by the name a reader reads, not by the ISO code", async () => {
+      mockSupabase.order.mockResolvedValue({ data: [], error: null });
+
+      await getAfrikCountryIndexRows();
+
+      expect(mockSupabase.order).toHaveBeenCalledWith("name_fr");
+    });
+
+    // @req REQ-116
+    it("raises a failed read rather than reporting an empty corpus", async () => {
+      mockSupabase.order.mockResolvedValue({
+        data: null,
+        error: { message: "AbortError: This operation was aborted" },
+      });
+
+      await expect(getAfrikCountryIndexRows()).rejects.toBeDefined();
     });
   });
 });

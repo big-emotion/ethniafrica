@@ -6,6 +6,7 @@ import { describe, expect, it, vi } from "vitest";
 
 import { HomeHero } from "@/components/home/HomeHero";
 import { PRODUCT_NAME } from "@/lib/brand";
+import { CORPUS_CLASSES } from "@/lib/home/corpusClasses";
 import { HOME_HERO_IMAGES } from "@/lib/home/homeHeroVisuals";
 
 // The band carries an interactive island since the search field landed in it,
@@ -52,6 +53,12 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // headline asks about the continent; the tile band under the search states
   // the classes it counts. \s rather than a literal space: the no-break space
   // before « ? » is deliberate and must not be asserted as an ordinary one.
+  //
+  // The words come from the registry rather than a literal list. They were
+  // written out once — peuples, langues, pays — and the day pays gave its tile
+  // to noms this assertion failed on a band that was correct, which is the
+  // shape of a test that pins the classes instead of the division of labour
+  // between the headline and the band.
   // @req REQ-044
   it("asks about the continent and leaves the totals to the tile band", () => {
     render(<HomeHero />);
@@ -60,9 +67,10 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
     expect(h1.textContent).toMatch(/^Une question sur l'Afrique\s?\?$/);
 
     const tiles = screen.getByTestId("home-corpus-counts");
-    for (const word of ["peuples", "langues", "pays"]) {
-      expect(h1.textContent).not.toContain(word);
-      expect(tiles.textContent).toContain(word);
+    for (const { tileLabel } of CORPUS_CLASSES) {
+      const className = tileLabel.split(" ")[0];
+      expect(h1.textContent).not.toContain(className);
+      expect(tiles.textContent).toContain(className);
     }
   });
 

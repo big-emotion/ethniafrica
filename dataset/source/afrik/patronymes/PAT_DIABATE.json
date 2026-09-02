@@ -29,6 +29,11 @@
         "claim": "Le jamu est un nom de clan patrilinéaire : il désigne l'appartenance à un groupe de descendance, et non une filiation individuelle au père.",
         "claimStatus": "established",
         "sourceRefs": ["jansen-sunjata-paradigm"]
+      },
+      {
+        "claim": "Les nyamakalaw — groupes endogames d'artisans et de musiciens — sont attestés chez les Malinké au plus tard vers 1300 et se retrouvent chez plus de quinze peuples ouest-africains. Le statut se transmet avec le jamu, ce qui fait du nom de clan le support de la position sociale autant que de la descendance.",
+        "claimStatus": "established",
+        "sourceRefs": ["tamari-1991-caste"]
       }
     ]
   },
@@ -53,8 +58,12 @@
   ],
   "alliances": [],
   "casteOrSocialFunction": {
-    "value": "Jeli (griot) : les Diabaté comptent parmi les clans de jeli identifiés comme tels dans le Manden, aux côtés des Kouyaté, Kanté et Cissoko.",
-    "sourceRefs": ["jelis-multilingualism-2024"]
+    "value": "Jeli (griot) : les Diabaté comptent parmi les clans de jeli identifiés comme tels dans le Manden, aux côtés des Kouyaté, Kanté et Cissoko. Charry retient Diabaté et Kouyaté comme les deux jamuw qui signalent par eux-mêmes l'appartenance jeli.",
+    "sourceRefs": [
+      "jelis-multilingualism-2024",
+      "charry-1996-jembe",
+      "tamari-1991-caste"
+    ]
   },
   "bearers": [],
   "homonyms": [],
@@ -82,6 +91,22 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Journal of Multilingual and Multicultural Development, 2024. Établit que les jeli se recrutent dans des clans identifiables (Kouyaté, Diabaté, Kanté, Cissoko) et que la fonction est héréditaire."
+    },
+    {
+      "sourceKey": "charry-1996-jembe",
+      "title": "A Guide to the Jembe",
+      "url": "https://echarry.web.wesleyan.edu/jembearticle/article.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Charry, Eric, Percussive Notes 34(2), avril 1996, p. 66-72 ; l'auteur est l'ethnomusicologue de Mande Music (University of Chicago Press, 2000). Article de revue spécialisée, non de revue à comité de lecture : il est cité ici pour l'attribution des jamuw aux statuts sociaux mandingues (numu, jeli, horon), qu'il énonce nommément clan par clan, et non pour l'histoire du jembe."
+    },
+    {
+      "sourceKey": "tamari-1991-caste",
+      "title": "The Development of Caste Systems in West Africa",
+      "url": "https://shs.hal.science/halshs-00690180v1",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Tamari, Tal, The Journal of African History 32(2), 1991, p. 221-250 ; dépôt ouvert HAL-SHS. Établit que les groupes endogames d'artisans et de musiciens se rencontrent chez plus de quinze peuples ouest-africains et qu'ils sont attestés chez les Malinké au plus tard vers 1300. Utilisé pour l'institution de la caste, jamais pour rattacher un clan nommé à une caste : cette attribution-là vient d'une autre source."
     }
   ],
   "gaps": [
@@ -91,11 +116,11 @@
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
+      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source distincte de l'homonymie de patronyme lors de la passe : les Diabaté documentés le sont comme musiciens contemporains, que la règle des porteurs écarte."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "Aucune lignée homonyme d'origine distincte n'a été trouvée ; la graphie Diabaté transcrit le mandingue Jabate."
     }
   ]
 }

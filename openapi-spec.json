@@ -1,11 +1,11 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Ethniafrique Atlas API v2 - AFRIK",
+    "title": "EthniAfrica API v2 - AFRIK",
     "version": "2.2.0",
     "description": "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.\n\n## Response envelope\n\nEvery `/api/v2/*` response uses the Module #0 envelope: `{ data, meta: { license, attribution, pagination?, confidence?, pinned_url? }, errors }`. License and attribution are always present (AR8); `errors` is empty on success and populated on non-2xx responses. List endpoints place their pagination values under `meta.pagination`.\n\n## 2.1.0 — one source-tier vocabulary (breaking)\n\nSource authority is now one three-value scale — `official` | `referenced` | `unverified` — spoken identically by the database, the payloads and the UI. Provenance stays on the separate `source_kind` axis, so AI-generated text is `tier: \"unverified\"` + `source_kind: \"ai_generated\"` rather than a tier of its own.\n\nRemoved, all superseded by `tier`:\n\n- the numeric evidence-tier property on `Source`, `ReferenceSource` and `ReferenceCreateInput` (a `1 | 2 | null` scale that could not express an unverified source);\n- the legacy `Source.type` enum, which read a column dropped in migration 015 and was therefore always `null`;\n- the two catalogue gating properties on `Source.policy`, which decided whether a citation could be published at all. Under the source doctrine no citation is refused, so `Source.policy.tier` carries the signal instead.",
     "contact": {
-      "name": "Ethniafrique Atlas",
+      "name": "EthniAfrica",
       "url": "https://github.com/big-emotion/ethniafrica"
     }
   },
@@ -41,7 +41,7 @@
       "description": "API key management (issuance)"
     },
     {
-      "name": "API v2 - Module #0",
+      "name": "API v2 - Source Transparency",
       "description": "Source Transparency Fabric — sources, confidence scores, editorial doctrine"
     },
     {
@@ -675,7 +675,7 @@
       "get": {
         "summary": "Get confidence metadata for a fiche",
         "description": "Returns the pre-computed confidence record for a people or language-family fiche.",
-        "tags": ["API v2 - Module #0"],
+        "tags": ["API v2 - Source Transparency"],
         "parameters": [
           {
             "in": "path",
@@ -745,7 +745,7 @@
     "/api/v2/countries/{iso}": {
       "get": {
         "summary": "Détails d'un pays",
-        "description": "Retourne les détails complets d'un pays par son code ISO 3166-1 alpha-3",
+        "description": "Retourne les détails complets d'un pays par son code ISO 3166-1 alpha-3, et le bloc `patronymes` — les noms attestés dans ce pays et, séparément, ceux que portent ses peuples sans y être attestés. Les deux listes affirment des choses différentes et ne sont jamais additionnées.\n",
         "tags": ["API v2 - Countries"],
         "parameters": [
           {
@@ -862,7 +862,7 @@
       "get": {
         "summary": "List current editorial doctrine",
         "description": "Returns the current version of every doctrine slug. Takes no query parameters.",
-        "tags": ["API v2 - Module #0"],
+        "tags": ["API v2 - Source Transparency"],
         "responses": {
           "200": {
             "description": "Doctrine envelope",
@@ -3090,7 +3090,7 @@
     "/api/v2/peoples/{id}": {
       "get": {
         "summary": "Détails d'un peuple",
-        "description": "Retourne les détails complets d'un peuple par son identifiant PPL_*",
+        "description": "Retourne les détails complets d'un peuple par son identifiant PPL_*, et le bloc `patronymes` — les noms que porte ce peuple. À ne pas confondre avec `/peoples/{id}/names`, qui porte les ethnonymes : ce que le peuple est *appelé*, et non ce que ses membres *portent*.\n",
         "tags": ["API v2 - Peoples"],
         "parameters": [
           {
@@ -3865,7 +3865,7 @@
     "/api/v2/sources/{id}": {
       "get": {
         "summary": "Get a single Module",
-        "tags": ["API v2 - Module #0"],
+        "tags": ["API v2 - Source Transparency"],
         "parameters": [
           {
             "in": "path",
@@ -3926,7 +3926,7 @@
       "get": {
         "summary": "List Module",
         "description": "Returns a paginated list of sources backing AFRIK assertions.",
-        "tags": ["API v2 - Module #0"],
+        "tags": ["API v2 - Source Transparency"],
         "parameters": [
           {
             "in": "query",
@@ -5228,11 +5228,125 @@
         },
         "required": ["data", "meta", "errors"]
       },
+      "PatronymeLinkV2": {
+        "type": "object",
+        "description": "A name as a fiche lists it — enough to name it and to link to its dossier.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^PAT_[A-Z0-9_]+$",
+            "example": "PAT_KEITA"
+          },
+          "nameMain": {
+            "type": "string",
+            "example": "Keïta"
+          },
+          "nameSystem": {
+            "type": "string",
+            "enum": [
+              "clan_name",
+              "non_hereditary_patronymic",
+              "nisba",
+              "praise_name",
+              "totemic_clan"
+            ]
+          }
+        },
+        "required": ["id", "nameMain", "nameSystem"]
+      },
+      "PatronymeReachV2": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PatronymeLinkV2"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "viaPeoples": {
+                "type": "array",
+                "description": "The peoples of this country that bear the name. They are what makes the entry reach rather than attestation, and what lets a reader audit the inference.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "PPL_ZENATA"
+                    },
+                    "nameMain": {
+                      "type": "string",
+                      "example": "Zénètes"
+                    }
+                  },
+                  "required": ["id", "nameMain"]
+                }
+              }
+            },
+            "required": ["viaPeoples"]
+          }
+        ]
+      },
+      "CountryPatronymesV2": {
+        "type": "object",
+        "description": "The two name routes a country answers along, kept apart. They assert different things and neither contains the other — measured on the corpus, 2 countries are reachable only directly and 6 only through their peoples. Summing them publishes an inference under the heading of a sourced fact.",
+        "properties": {
+          "attested": {
+            "type": "array",
+            "description": "Names a source attests in this country (afrik_patronyme_countries).",
+            "items": {
+              "$ref": "#/components/schemas/PatronymeLinkV2"
+            }
+          },
+          "borneByPeoples": {
+            "type": "array",
+            "description": "Names borne by this country's peoples that are not attested here. The reader is told where the bearers live, not where the name is recorded.",
+            "items": {
+              "$ref": "#/components/schemas/PatronymeReachV2"
+            }
+          }
+        },
+        "required": ["attested", "borneByPeoples"]
+      },
+      "PeopleDetailV2": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PeopleV2"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "patronymes": {
+                "type": "array",
+                "description": "The names this people bears. Distinct from the ethnonym dossier at /peoples/{id}/names, which holds what the people is called. An empty array is the ordinary state of the corpus, not an omission.",
+                "items": {
+                  "$ref": "#/components/schemas/PatronymeLinkV2"
+                }
+              }
+            },
+            "required": ["patronymes"]
+          }
+        ]
+      },
+      "CountryDetailV2": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CountryV2"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "patronymes": {
+                "$ref": "#/components/schemas/CountryPatronymesV2"
+              }
+            },
+            "required": ["patronymes"]
+          }
+        ]
+      },
       "PeopleDetailEnvelope": {
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/PeopleV2"
+            "$ref": "#/components/schemas/PeopleDetailV2"
           },
           "meta": {
             "$ref": "#/components/schemas/ApiResponseMeta"
@@ -5280,7 +5394,7 @@
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/CountryV2"
+            "$ref": "#/components/schemas/CountryDetailV2"
           },
           "meta": {
             "$ref": "#/components/schemas/ApiResponseMeta"
@@ -7879,20 +7993,25 @@
           },
           "templateId": {
             "type": "string",
-            "description": "T1-T5 ask about an atomic fiche field; T6-T11 quote a prose rubric and ask which people it belongs to; T12 asks which of a people's exonyms is contested.",
+            "description": "T1-T4 ask about an atomic fiche field; T6-T11 quote a prose rubric of a people and ask which people it belongs to; T12 asks which of a people's exonyms is contested; T13-T18 do the same over countries. Kept in step with QUIZ_TEMPLATE_IDS by openapiV2 contract tests — the enum had gone stale twice.",
             "enum": [
               "T1",
               "T2",
               "T3",
               "T4",
-              "T5",
               "T6",
               "T7",
               "T8",
               "T9",
               "T10",
               "T11",
-              "T12"
+              "T12",
+              "T13",
+              "T14",
+              "T15",
+              "T16",
+              "T17",
+              "T18"
             ]
           },
           "promptFr": {

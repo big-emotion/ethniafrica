@@ -87,7 +87,7 @@
       "entityType": "person",
       "entityId": null,
       "distinction": "Bamba est ici un élément de nom personnel wolof porté par le fondateur de la confrérie mouride, sans rapport de descendance avec le jamu dioula Bamba : homonymie de graphie, pas de lignage.",
-      "sourceRefs": ["jansen-sunjata-paradigm"]
+      "sourceRefs": ["afrik-pass-distinction-2026-09"]
     }
   ],
   "sources": [
@@ -106,6 +106,14 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Jansen, Jan, Universiteit Leiden. Travail critique sur la transmission de l'épopée et sur le jamu comme institution sociale plutôt que comme mémoire historique ; utilisé ici pour la nature du jamu, non pour dater un ancêtre."
+    },
+    {
+      "sourceKey": "afrik-pass-distinction-2026-09",
+      "title": "Distinction posée par la passe de recherche anthroponymique AFRIK (septembre 2026)",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Rapprochement établi par la passe elle-même, non repris d'une source consultée. Étiqueté conformément à la doctrine des tiers : texte généré, donc unverified x ai_generated, soit un poids de confiance de 0,2. Sert aux seuls constats de non-recouvrement entre deux traditions de nomination, jamais à porter une étymologie ni une généalogie. Une source dédiée reste due sur chacun des points qu'il couvre."
     }
   ],
   "gaps": [
@@ -115,11 +123,11 @@
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau du clan."
+      "reason": "Bamba ne figure dans aucune des listes de lignages numu, jeli ou horon que Charry énumère : le nom n'a été rattaché à aucun statut par les sources consultées."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
+      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée. Le porteur le mieux documenté du nom, Cheikh Ahmadou Bamba Mbacké, relève précisément de l'homonymie signalée plus haut et non de ce jamu."
     }
   ]
 }

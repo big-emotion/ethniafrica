@@ -16,6 +16,7 @@ const FULL_CORPUS = {
   countries: 54,
   families: 24,
   nameForms: 3134,
+  patronymes: 33,
   migrations: 6,
 };
 
@@ -70,10 +71,10 @@ describe("home charter — what the band claims the corpus is", () => {
   });
 
   // The band counts three of the corpus's classes and no longer counts
-  // familles or appellations. That is an editorial choice, and the only thing
-  // that keeps it from understating the product is the scope word on every
-  // label: three *documented* totals, not the corpus entire. Drop the word and
-  // the band silently reasserts the claim it gave up making.
+  // familles, pays or appellations. That is an editorial choice, and the only
+  // thing that keeps it from understating the product is the scope word on
+  // every label: three *documented* totals, not the corpus entire. Drop the
+  // word and the band silently reasserts the claim it gave up making.
   // @req REQ-113
   it("never lets three totals read as the whole corpus", () => {
     render(<HomeCorpusCounts counts={FULL_CORPUS} />);
@@ -106,8 +107,8 @@ describe("home charter — what the band claims the corpus is", () => {
   // asserts the asymmetry so the next reader does not "restore" a tile per
   // search group. The criterion is the figure, not the class: a total claims
   // exhaustiveness, naming a class claims nothing. So the band counts the
-  // three classes worth a headline number, while familles, appellations and
-  // patronymes keep their menu entry, their index and their search group.
+  // three classes worth a headline number, while familles, pays and
+  // appellations keep their menu entry, their index and their search group.
   // @req REQ-113
   it("counts fewer classes than the search panel returns kinds", () => {
     const groupedTypes = SEARCH_RESULT_GROUPS.map((group) => group.type);
@@ -117,5 +118,20 @@ describe("home charter — what the band claims the corpus is", () => {
     expect(CORPUS_CLASSES.map((entity) => entity.key)).not.toContain(
       "nameForms"
     );
+  });
+
+  // The band's third figure and the search's fifth group are the same axis,
+  // and the exclusion above is about the *other* name object. Asserted so a
+  // later reader repairing one of the two lists cannot resolve « nameForms is
+  // banned here » into « no name axis belongs on this band »: the appellations
+  // are the ones that lost their figure, the noms are the ones that took it.
+  // @req REQ-113
+  it("counts the nom axis it declares, and not the appellations beside it", () => {
+    const countedKeys = CORPUS_CLASSES.map((entity) => entity.key);
+
+    expect(countedKeys).toContain("patronymes");
+    expect(
+      CORPUS_CLASSES.find((entity) => entity.key === "patronymes")?.tileLabel
+    ).toBe("noms documentés");
   });
 });

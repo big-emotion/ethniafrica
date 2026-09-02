@@ -6,7 +6,11 @@
  * /api/v2/peoples/{id}:
  *   get:
  *     summary: Détails d'un peuple
- *     description: Retourne les détails complets d'un peuple par son identifiant PPL_*
+ *     description: >
+ *       Retourne les détails complets d'un peuple par son identifiant PPL_*,
+ *       et le bloc `patronymes` — les noms que porte ce peuple. À ne pas
+ *       confondre avec `/peoples/{id}/names`, qui porte les ethnonymes : ce que
+ *       le peuple est *appelé*, et non ce que ses membres *portent*.
  *     tags: [API v2 - Peoples]
  *     parameters:
  *       - in: path

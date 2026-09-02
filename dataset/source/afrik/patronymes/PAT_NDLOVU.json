@@ -22,7 +22,13 @@
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le sous-clan aba-kwa-Ndlovu a pour fondateur éponyme un homme personnellement nommé Ndlovu, un Mpungose fils de Kuba, qui quitta les environs de Ntlazatshe pour s'établir à la colline eThaleni, en territoire emaCunwini, vraisemblablement sous le règne de Shaka.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["bryant-1929-olden-times"]
+      }
+    ],
     "linguisticReconstructions": [
       {
         "claim": "Chez les Nguni, l'isibongo (patronyme) et les izithakazelo (louanges de clan) sont deux objets distincts : le second dit l'ascendance et gouverne l'exogamie, le premier sert d'identifiant d'état civil.",
@@ -33,6 +39,11 @@
         "claim": "Ndlovu signifie « éléphant » en langues nguni ; le clan revendique une descendance du troupeau d'éléphants du territoire où il s'est établi.",
         "claimStatus": "claimed",
         "sourceRefs": ["iafrika-izithakazelo-ndlovu"]
+      },
+      {
+        "claim": "Le sens lexical « éléphant » est celui du nom de personne porté par l'ancêtre ; il ne suit pas de là que le clan soit nommé d'après un totem. La chronique clanique donne un éponyme, non un animal tutélaire, et les deux explications ne se recouvrent pas.",
+        "claimStatus": "contested",
+        "sourceRefs": ["bryant-1929-olden-times", "iafrika-izithakazelo-ndlovu"]
       }
     ]
   },
@@ -53,7 +64,15 @@
   "alliances": [],
   "casteOrSocialFunction": null,
   "bearers": [],
-  "homonyms": [],
+  "homonyms": [
+    {
+      "label": "aba-kwa-Ndlovu de la Ntsuze",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "Bryant décrit un second clan aba-kwa-Ndlovu, établi sur la rive gauche de la Ntsuze face aux Kanyile et donné pour apparenté aux amaCunu. Il est distinct du sous-clan fondé par Ndlovu fils de Kuba : même isibongo, deux origines, qui ne sont pas fusionnées ici.",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    }
+  ],
   "sources": [
     {
       "sourceKey": "corpus-ppl-ndebele-nord-organisation",
@@ -79,6 +98,14 @@
       "source_kind": "community",
       "isSelfIdentification": true,
       "notes": "Site communautaire de louanges de clan. Auto-identification : cité pour le totem de l'éléphant et la filiation revendiquée par le clan Ndlovu."
+    },
+    {
+      "sourceKey": "bryant-1929-olden-times",
+      "title": "Olden Times in Zululand and Natal — Containing Earlier Political History of the Eastern-Nguni Clans",
+      "url": "https://archive.org/details/bwb_KT-091-892",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Bryant, Alfred T., Longmans Green, 1929. Ethnographie missionnaire coloniale, à lire comme telle : Bryant écrit depuis la mission catholique du Natal et sa chronologie clanique est reconstruite à partir de généalogies orales recueillies au tournant du siècle. C'est néanmoins la seule source imprimée qui donne, clan par clan, une origine nommée pour les clans nguni orientaux. Consulté sur le texte intégral, pas sur un index. Son orthographe est celle de 1929 (Mtetwa, Ntungwa) ; les fiches conservent la graphie du corpus et citent la sienne comme variante."
     }
   ],
   "gaps": [
@@ -88,15 +115,11 @@
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau du clan."
+      "reason": "Aucune fonction héréditaire attestée au niveau du clan ; Bryant décrit les Ndlovu comme un sous-clan territorial, non comme un corps de spécialistes."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "L'ancêtre éponyme Ndlovu fils de Kuba est nommé par Bryant mais sans dates ni éléments biographiques ; il est retenu comme origine du nom, pas comme porteur documenté."
     }
   ]
 }

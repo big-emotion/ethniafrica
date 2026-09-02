@@ -62,8 +62,7 @@ export interface FamilyTreeBranchResult {
 }
 
 export type FamilyTreeBranchSelector =
-  | { language: string }
-  | { group: "unlinked" };
+  { language: string } | { group: "unlinked" };
 
 export interface FamilyTreeBranchPagination {
   limit: number;

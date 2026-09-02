@@ -120,15 +120,15 @@
   "gaps": [
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée : clan de statut horon."
+      "reason": "Le jamu ne figure ni parmi les lignages numu ni parmi les lignages jeli que Charry énumère ; il ne figure pas non plus dans la courte liste de jamuw horon qu'il donne (Keita, Konaté, Koné, Traoré). Le statut horon que lui prêtent les répertoires courants n'a donc pas été retrouvé dans une source dédiée, et n'est pas affirmé ici."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
+      "reason": "Biton Coulibaly, fondateur du royaume bambara de Ségou, est amplement documenté, mais comme figure politique : aucune source consultée ne s'appuie sur lui pour établir l'origine du jamu, et la fiche ne l'enregistre donc pas en porteur."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "Coulibaly transcrit le mandingue Kulibali ; aucune lignée d'origine distincte n'a été trouvée sous l'une ou l'autre graphie."
     }
   ]
 }

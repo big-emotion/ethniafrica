@@ -6,7 +6,11 @@
  * /api/v2/countries/{iso}:
  *   get:
  *     summary: Détails d'un pays
- *     description: Retourne les détails complets d'un pays par son code ISO 3166-1 alpha-3
+ *     description: >
+ *       Retourne les détails complets d'un pays par son code ISO 3166-1
+ *       alpha-3, et le bloc `patronymes` — les noms attestés dans ce pays et,
+ *       séparément, ceux que portent ses peuples sans y être attestés. Les deux
+ *       listes affirment des choses différentes et ne sont jamais additionnées.
  *     tags: [API v2 - Countries]
  *     parameters:
  *       - in: path

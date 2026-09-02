@@ -26,6 +26,11 @@
         "claim": "Le jamu est un nom de clan patrilinéaire : il désigne l'appartenance à un groupe de descendance, et non une filiation individuelle au père.",
         "claimStatus": "established",
         "sourceRefs": ["jansen-sunjata-paradigm"]
+      },
+      {
+        "claim": "Les nyamakalaw — groupes endogames d'artisans et de musiciens — sont attestés chez les Malinké au plus tard vers 1300 et se retrouvent chez plus de quinze peuples ouest-africains. Le statut se transmet avec le jamu, ce qui fait du nom de clan le support de la position sociale autant que de la descendance.",
+        "claimStatus": "established",
+        "sourceRefs": ["tamari-1991-caste"]
       }
     ]
   },
@@ -49,7 +54,10 @@
     }
   ],
   "alliances": [],
-  "casteOrSocialFunction": null,
+  "casteOrSocialFunction": {
+    "value": "Lignage de forgerons (numu), l'une des castes nyamakalaw ; le jamu est nommément rangé parmi les lignages numu, aux côtés de Kanté.",
+    "sourceRefs": ["charry-1996-jembe", "tamari-1991-caste"]
+  },
   "bearers": [],
   "homonyms": [],
   "sources": [
@@ -68,6 +76,22 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Jansen, Jan, Universiteit Leiden. Travail critique sur la transmission de l'épopée et sur le jamu comme institution sociale plutôt que comme mémoire historique ; utilisé ici pour la nature du jamu, non pour dater un ancêtre."
+    },
+    {
+      "sourceKey": "charry-1996-jembe",
+      "title": "A Guide to the Jembe",
+      "url": "https://echarry.web.wesleyan.edu/jembearticle/article.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Charry, Eric, Percussive Notes 34(2), avril 1996, p. 66-72 ; l'auteur est l'ethnomusicologue de Mande Music (University of Chicago Press, 2000). Article de revue spécialisée, non de revue à comité de lecture : il est cité ici pour l'attribution des jamuw aux statuts sociaux mandingues (numu, jeli, horon), qu'il énonce nommément clan par clan, et non pour l'histoire du jembe."
+    },
+    {
+      "sourceKey": "tamari-1991-caste",
+      "title": "The Development of Caste Systems in West Africa",
+      "url": "https://shs.hal.science/halshs-00690180v1",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Tamari, Tal, The Journal of African History 32(2), 1991, p. 221-250 ; dépôt ouvert HAL-SHS. Établit que les groupes endogames d'artisans et de musiciens se rencontrent chez plus de quinze peuples ouest-africains et qu'ils sont attestés chez les Malinké au plus tard vers 1300. Utilisé pour l'institution de la caste, jamais pour rattacher un clan nommé à une caste : cette attribution-là vient d'une autre source."
     }
   ],
   "gaps": [
@@ -76,16 +100,12 @@
       "reason": "Aucune paire de sanankuya nommant ce clan n'a été trouvée."
     },
     {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau du clan."
-    },
-    {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
+      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source distincte de l'homonymie de patronyme lors de la passe."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "La graphie Camara est la transcription francophone de Kamara ; ce sont deux orthographes d'un même nom, non deux lignées, et elles ne sont donc pas traitées en homonymes."
     }
   ]
 }

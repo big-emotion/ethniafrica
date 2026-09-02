@@ -9,7 +9,9 @@ import {
 } from "@/components/country";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
+import { CountryAttestedNamesSection } from "@/components/patronymes/CountryAttestedNamesSection";
 import { transformCountryData } from "@/lib/countryDataTransformer";
+import type { CountryPatronymes } from "@/api/v2/services/patronymeFicheLinks";
 import type { CountryDetail } from "@/types/afrik-frontend";
 
 /**
@@ -44,6 +46,12 @@ export interface CountryRecordViewProps {
    */
   fromPeopleName?: string;
   fromPeopleId?: string;
+  /**
+   * The country's two name lists (REQ-133), resolved by the route. `null`
+   * says the read failed; two empty lists say the corpus reaches no name
+   * here, which the chapter states rather than hides.
+   */
+  patronymes?: CountryPatronymes | null;
   /** Cloudflare Turnstile public site key; without it the flag control is inert. */
 }
 
@@ -53,6 +61,7 @@ export function CountryRecordView({
   hasSourceFlag,
   fromPeopleName,
   fromPeopleId,
+  patronymes = null,
 }: CountryRecordViewProps) {
   const data = transformCountryData(country);
 
@@ -86,6 +95,14 @@ export function CountryRecordView({
             <FieldProvenanceMarker state="missing" />
           )}
         </Section>
+
+        {/* After the languages, not beside "Noms à travers l'histoire": that
+            chapter and "Étymologie du nom" are about what the *country* has
+            been called, and this one about the names its inhabitants bear.
+            Adjacent, three chapters opening on "Nom" would read as a menu of
+            one subject rather than three claims. Spoken here, then named
+            here, then the rest of the culture. */}
+        <CountryAttestedNamesSection patronymes={patronymes} />
 
         <Section title="Culture et société">
           <CultureGrid data={data.culture} />
