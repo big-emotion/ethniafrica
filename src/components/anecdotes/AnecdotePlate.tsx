@@ -79,13 +79,15 @@ export function AnecdotePlate({ plate }: AnecdotePlateProps) {
         }
         /* The imposed name is set in the reading face and held back: it is
            the one the anecdote is questioning, not the one it endorses. */
-        .anecdote-plate-given {
+        .anecdote-plate .anecdote-plate-given {
           margin: 0;
+          max-width: none;
+          text-align: center;
           font-size: var(--afh-text-h2);
           line-height: 1.15;
           color: var(--afh-text-soft);
         }
-        .anecdote-plate-rule {
+        .anecdote-plate .anecdote-plate-rule {
           width: min(240px, 70%);
           height: 12px;
           fill: var(--accent-ink, var(--afh-text-soft));
@@ -93,23 +95,31 @@ export function AnecdotePlate({ plate }: AnecdotePlateProps) {
           stroke-width: 1;
           opacity: 0.55;
         }
-        .anecdote-plate-own {
+        .anecdote-plate .anecdote-plate-own {
           margin: 0;
+          max-width: none;
+          text-align: center;
           font-family: var(--afh-font-display, Georgia, serif);
           font-weight: 700;
           font-size: var(--afh-text-hero);
           line-height: 1.05;
           color: var(--accent-ink, var(--afh-fg));
         }
-        .anecdote-plate-origin {
+        /* The eyebrow face everywhere else on the site is the mono stack.
+           Not here: these lines carry ordinal superscripts — « XIXᵉ » — and
+           the mono fallback has no U+1D49, so it substitutes a degree sign
+           and the century reads as a temperature. */
+        .anecdote-plate .anecdote-plate-origin {
           margin: 2px 0 0;
-          font-family: var(--font-mono, ui-monospace, monospace);
+          max-width: none;
+          text-align: center;
+          font-family: inherit;
           font-size: var(--afh-text-eyebrow);
           letter-spacing: 0.05em;
           text-transform: uppercase;
           color: var(--afh-fg-muted);
         }
-        .anecdote-plate-credit {
+        .anecdote-plate .anecdote-plate-credit {
           margin: 10px auto 0;
           max-width: 56ch;
           font-family: var(--font-mono, ui-monospace, monospace);
