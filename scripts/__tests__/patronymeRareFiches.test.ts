@@ -8,6 +8,9 @@ import {
   parsePatronymeFile,
 } from "../../src/lib/afrik/parsers/patronymeParser";
 
+/** The lone source a wave-1 generated or queue-merged claim cites. */
+const CANDIDATE_QUEUE_SOURCE_KEY = "afrik-candidate-queue";
+
 const FICHES = {
   PAT_FFUMBE: "totemic_clan",
   PAT_LUGAVE: "totemic_clan",
@@ -61,16 +64,27 @@ describe("ETNI-1682 rare patronyme fiches", () => {
       expect(fiche.casteOrSocialFunction, id).toBeNull();
       expect(fiche.bearers, id).toEqual([]);
       expect(fiche.sources.length, id).toBeGreaterThan(0);
-      expect(fiche.sources, id).toSatisfy(
-        (sources: Array<{ tier?: string; url?: string }>) =>
-          sources.every(
-            (source) =>
-              ["official", "referenced", "unverified"].includes(
-                source.tier ?? ""
-              ) &&
-              /^https:\/\//.test(source.url ?? "") &&
-              !/wikipedia\.org/i.test(source.url ?? "")
-          )
+      // Scoped to the researched citations. The candidate queue is a
+      // provenance marker rather than a citable work — it has no URL to give
+      // by design — so requiring one of it would force a fabricated link,
+      // which is the opposite of what this assertion is for. Every source
+      // that does claim to be a work is still held to a direct, non-Wikipedia
+      // https URL.
+      const researched = (
+        fiche.sources as Array<{ sourceKey?: string; url?: string }>
+      ).filter((source) => source.sourceKey !== CANDIDATE_QUEUE_SOURCE_KEY);
+      expect(researched.length, id).toBeGreaterThan(0);
+      expect(researched, id).toSatisfy((sources: Array<{ url?: string }>) =>
+        sources.every(
+          (source) =>
+            /^https:\/\//.test(source.url ?? "") &&
+            !/wikipedia\.org/i.test(source.url ?? "")
+        )
+      );
+      expect(fiche.sources, id).toSatisfy((sources: Array<{ tier?: string }>) =>
+        sources.every((source) =>
+          ["official", "referenced", "unverified"].includes(source.tier ?? "")
+        )
       );
     }
   });

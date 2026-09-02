@@ -5,6 +5,9 @@ import { describe, expect, it } from "vitest";
 
 import { parsePatronymeFile } from "../../src/lib/afrik/parsers/patronymeParser";
 
+/** The lone source a wave-1 generated or queue-merged claim cites. */
+const CANDIDATE_QUEUE_SOURCE_KEY = "afrik-candidate-queue";
+
 const EXPECTED = [
   ["PAT_TRAORE", "Traore", "PPL_BAMBARA", "patrilineal"],
   ["PAT_COULIBALY", "Coulibaly", "PPL_BAMBARA", "patrilineal"],
@@ -68,8 +71,18 @@ describe("ETNI-1684 first clan-name dossiers", () => {
       expect(
         raw.spellings.map(({ spelling }: { spelling: string }) => spelling)
       ).toContain(name);
+      // Scoped to what the research established. Wave 1 of the anthroponym
+      // coverage plan appends countries the candidate queue attests and this
+      // fiche did not claim — a separate, weaker assertion carrying its own
+      // source. The equality being guarded is still the researched one: the
+      // corpus passage's countries are exactly the people fiche's.
       expect(
-        raw.countries.map(({ countryId }: { countryId: string }) => countryId)
+        raw.countries
+          .filter(
+            ({ sourceRefs }: { sourceRefs: string[] }) =>
+              !sourceRefs.every((ref) => ref === CANDIDATE_QUEUE_SOURCE_KEY)
+          )
+          .map(({ countryId }: { countryId: string }) => countryId)
       ).toEqual(sourcePeople.currentCountries);
       // The corpus passage the selection pass rested on is never dropped, and
       // never silently promoted: the research pass adds sources beside it.
