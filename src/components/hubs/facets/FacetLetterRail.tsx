@@ -68,5 +68,3 @@ export function FacetLetterRail({
     </nav>
   );
 }
-
-export default FacetLetterRail;

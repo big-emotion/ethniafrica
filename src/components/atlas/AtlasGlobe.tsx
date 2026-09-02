@@ -1975,5 +1975,3 @@ export function AtlasGlobe({
     </div>
   );
 }
-
-export default AtlasGlobe;

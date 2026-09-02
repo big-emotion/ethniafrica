@@ -198,5 +198,3 @@ export function FacetPagination({
     </nav>
   );
 }
-
-export default FacetPagination;

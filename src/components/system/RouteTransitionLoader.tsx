@@ -170,5 +170,3 @@ export function RouteTransitionLoader() {
     </div>
   );
 }
-
-export default RouteTransitionLoader;

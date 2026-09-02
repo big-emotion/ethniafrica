@@ -24,5 +24,3 @@ export function PatronymeFicheTitle({
     </header>
   );
 }
-
-export default PatronymeFicheTitle;

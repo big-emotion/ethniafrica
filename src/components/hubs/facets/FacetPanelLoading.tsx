@@ -41,5 +41,3 @@ export function FacetPanelLoading({ facet }: FacetPanelLoadingProps) {
     </div>
   );
 }
-
-export default FacetPanelLoading;

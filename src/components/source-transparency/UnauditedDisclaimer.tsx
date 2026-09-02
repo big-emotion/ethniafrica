@@ -136,5 +136,3 @@ export function UnauditedDisclaimer({
     </div>
   );
 }
-
-export default UnauditedDisclaimer;

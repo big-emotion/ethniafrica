@@ -91,5 +91,3 @@ export function ApiKeyRevealCard({
     </section>
   );
 }
-
-export default ApiKeyRevealCard;

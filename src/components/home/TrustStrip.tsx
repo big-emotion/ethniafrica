@@ -64,5 +64,3 @@ export function TrustStrip({ language }: TrustStripProps) {
     </aside>
   );
 }
-
-export default TrustStrip;

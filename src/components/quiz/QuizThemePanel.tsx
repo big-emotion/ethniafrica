@@ -106,5 +106,3 @@ export const QuizThemePanel = forwardRef<HTMLDivElement, QuizThemePanelProps>(
     );
   }
 );
-
-export default QuizThemePanel;

@@ -715,5 +715,3 @@ export function AxisModulePanel({
     </section>
   );
 }
-
-export default AxisModulePanel;

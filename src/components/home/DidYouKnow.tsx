@@ -405,5 +405,3 @@ export function DidYouKnow({
     </section>
   );
 }
-
-export default DidYouKnow;

@@ -122,5 +122,3 @@ export function CompareSectionRow({
     </section>
   );
 }
-
-export default CompareSectionRow;

@@ -81,5 +81,3 @@ export const QuizTrackCard = ({
     {children}
   </Card>
 );
-
-export default QuizTrackCard;

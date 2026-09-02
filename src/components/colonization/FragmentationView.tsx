@@ -186,5 +186,3 @@ export function FragmentationView({
     </div>
   );
 }
-
-export default FragmentationView;

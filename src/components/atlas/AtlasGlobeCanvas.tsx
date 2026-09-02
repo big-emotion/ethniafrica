@@ -869,5 +869,3 @@ export function AtlasGlobeCanvas({
     />
   );
 }
-
-export default AtlasGlobeCanvas;

@@ -42,5 +42,3 @@ export function QuizSessionWait() {
     </div>
   );
 }
-
-export default QuizSessionWait;

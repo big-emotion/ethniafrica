@@ -107,5 +107,3 @@ export function PatronymeIndexList({
     </div>
   );
 }
-
-export default PatronymeIndexList;

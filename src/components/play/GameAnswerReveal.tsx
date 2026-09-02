@@ -188,5 +188,3 @@ export const GameAnswerReveal = ({
     </div>
   );
 };
-
-export default GameAnswerReveal;

@@ -153,5 +153,3 @@ export const MercatorSurface = ({
     </div>
   );
 };
-
-export default MercatorSurface;

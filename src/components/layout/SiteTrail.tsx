@@ -34,5 +34,3 @@ export function SiteTrail({ entityLabel }: SiteTrailProps) {
 
   return <AfrikBreadcrumbs items={deriveTrail(pathname ?? "", entityLabel)} />;
 }
-
-export default SiteTrail;

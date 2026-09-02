@@ -122,5 +122,3 @@ export function GazeEventNarrativeSection({
     </section>
   );
 }
-
-export default GazeEventNarrativeSection;

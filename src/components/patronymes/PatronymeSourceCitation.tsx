@@ -27,5 +27,3 @@ export function PatronymeSourceCitation({
     </span>
   );
 }
-
-export default PatronymeSourceCitation;

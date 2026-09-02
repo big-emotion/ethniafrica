@@ -83,5 +83,3 @@ export function FicheSection({
     </Tag>
   );
 }
-
-export default FicheSection;

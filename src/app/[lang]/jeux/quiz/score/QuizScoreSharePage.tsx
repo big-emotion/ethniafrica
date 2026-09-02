@@ -76,5 +76,3 @@ export const QuizScoreSharePage = (props: QuizScoreSharePageProps) => {
     />
   );
 };
-
-export default QuizScoreSharePage;

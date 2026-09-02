@@ -39,5 +39,3 @@ export const QuizSessionExit = ({
     {label}
   </Link>
 );
-
-export default QuizSessionExit;

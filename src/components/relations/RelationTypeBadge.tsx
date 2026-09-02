@@ -78,5 +78,3 @@ export function RelationTypeBadge({
     </span>
   );
 }
-
-export default RelationTypeBadge;

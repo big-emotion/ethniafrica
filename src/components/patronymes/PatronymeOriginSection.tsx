@@ -89,5 +89,3 @@ export function PatronymeOriginSection({
     </FicheSection>
   );
 }
-
-export default PatronymeOriginSection;

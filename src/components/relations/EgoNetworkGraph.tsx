@@ -404,5 +404,3 @@ export function EgoNetworkGraph({
     </div>
   );
 }
-
-export default EgoNetworkGraph;

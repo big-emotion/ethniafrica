@@ -151,5 +151,3 @@ export function CompareValueCell({
     </>
   );
 }
-
-export default CompareValueCell;

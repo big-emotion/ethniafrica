@@ -122,5 +122,3 @@ function HeroStageStyles() {
     `}</style>
   );
 }
-
-export default HeroModuleStage;

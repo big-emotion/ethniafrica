@@ -47,5 +47,3 @@ export function CompareStickyBar({
     </div>
   );
 }
-
-export default CompareStickyBar;

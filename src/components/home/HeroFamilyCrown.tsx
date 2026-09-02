@@ -119,5 +119,3 @@ export function HeroFamilyCrown({ families }: HeroFamilyCrownProps) {
     </div>
   );
 }
-
-export default HeroFamilyCrown;

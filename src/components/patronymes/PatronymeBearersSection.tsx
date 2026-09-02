@@ -42,5 +42,3 @@ export function PatronymeBearersSection({
     </FicheSection>
   );
 }
-
-export default PatronymeBearersSection;

@@ -101,5 +101,3 @@ export function EventChronologyTable({ events }: EventChronologyTableProps) {
     </table>
   );
 }
-
-export default EventChronologyTable;

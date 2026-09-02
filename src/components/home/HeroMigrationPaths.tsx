@@ -102,5 +102,3 @@ export function HeroMigrationPaths({ paths }: HeroMigrationPathsProps) {
 function formatYear(year: number): string {
   return year < 0 ? `${Math.abs(year)} av. J.-C.` : `${year}`;
 }
-
-export default HeroMigrationPaths;

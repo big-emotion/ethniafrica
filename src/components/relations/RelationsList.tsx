@@ -221,5 +221,3 @@ export function RelationsList({
     </div>
   );
 }
-
-export default RelationsList;

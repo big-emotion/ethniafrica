@@ -98,5 +98,3 @@ export function NameOriginCard({
     </article>
   );
 }
-
-export default NameOriginCard;

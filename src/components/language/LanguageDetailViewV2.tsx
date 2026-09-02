@@ -147,5 +147,3 @@ export function LanguageDetailViewV2({
     </div>
   );
 }
-
-export default LanguageDetailViewV2;
