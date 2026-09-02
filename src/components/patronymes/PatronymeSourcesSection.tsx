@@ -44,13 +44,10 @@ export function PatronymeSourcesSection({
       id="sources"
     >
       {sources.length > 0 ? (
-        <ul>
+        <ul className="afh-sources">
           {sources.map((source) => (
-            <li key={source.title}>
+            <li key={source.title} className="afh-source-row">
               <PatronymeSourceCitation source={source} />
-              {source.notes ? (
-                <span className="afh-parchment-note"> {source.notes}</span>
-              ) : null}
             </li>
           ))}
         </ul>

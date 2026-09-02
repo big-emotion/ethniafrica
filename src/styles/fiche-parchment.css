@@ -419,9 +419,28 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
+  /* The site centres text under 768px from the body down. That rule left the
+     chip on the row's left edge and the citation centred beside it — two
+     alignments inside one card, which brand charter §8.1 forbids and which is
+     visible on every fiche's Sources block, not only this one. */
+  text-align: start;
   font-size: var(--afh-text-small);
   line-height: 1.65;
   color: var(--afh-text-soft);
+}
+
+/* A flex item will not shrink below its content, and a corpus source title is
+   routinely a path with no space in it — `dataset/source/afrik/peuples/…`.
+   Without these two the row grows past the parchment at 430px and the title,
+   its notes and the card's right edge all leave the screen together. The chip
+   keeps its width because a tier read at half a word is worse than no tier. */
+.afh-source-row > .afh-chip {
+  flex: none;
+}
+
+.afh-source-row > :not(.afh-chip) {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .afh-source-row a {

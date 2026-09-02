@@ -353,14 +353,12 @@ export const translations = {
       // hereditary-surname model that `nameSystem` elsewhere denies.
       nonHereditaryGuidance:
         "Ce patronyme n'est pas transmis de façon héréditaire : il ne se lit pas comme un nom de famille au sens européen. Sa portée varie selon la région — les peuples et pays ci-dessous indiquent où ce mode de nommage est documenté.",
-      associationsEmpty: "Aucun peuple ou pays associé n'est documenté.",
       bearersTitle: "Porteurs et porteuses",
       // DEC-040: no code path derives a living person's ethnic origin from
       // this patronyme, and this note states that editorial guarantee to
       // the reader rather than leave it implicit in what the list omits.
       bearersEditorialNote:
         "Cette liste ne mentionne que des personnes publiques ou décédées, ou s'étant elles-mêmes revendiquées de ce patronyme. Elle ne permet de déduire l'origine ethnique d'aucune personne vivante à partir de ce nom.",
-      bearersEmpty: "Aucun porteur ou porteuse n'est encore documenté.",
       roleCategoryFallback: "Rôle non renseigné",
       // The /fr/atlas/noms index (ETNI-1803, REQ-139) — the corpus-class
       // listing that leads to the fiches above. Kept nested here rather than

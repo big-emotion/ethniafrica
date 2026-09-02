@@ -59,13 +59,14 @@ describe("PatronymeBearersSection (AC3, DEC-040, REQ-133)", () => {
     ).toBeInTheDocument();
   });
 
-  // @req REQ-133
+  // Charter §4 asks the chapter to say it holds nothing; REQ-119 fixes *how*
+  // — the shared provenance marker, so an undocumented chapter never reads as
+  // a sentence the corpus wrote.
+  // @req REQ-119
   it("states explicitly when no bearer is documented (atlas charter §4)", () => {
     render(<PatronymeBearersSection patronyme={base} />);
 
-    expect(
-      screen.getByText("Aucun porteur ou porteuse n'est encore documenté.")
-    ).toBeInTheDocument();
+    expect(screen.getByRole("status")).toBeInTheDocument();
   });
 
   // @req REQ-133
