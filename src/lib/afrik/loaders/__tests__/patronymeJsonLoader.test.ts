@@ -279,6 +279,51 @@ describe("patronymeJsonLoader", () => {
     expect(database.writes).toEqual([]);
   });
 
+  // @req REQ-130
+  it("accepts a declared off-map country the atlas stores no row for", async () => {
+    const database = createSupabaseDouble({
+      countryIds: ["MLI"],
+      patronymeIds: ["PAT_KONDE"],
+    });
+    const diaspora = validPatronymeFiche({
+      countries: [
+        { countryId: "MLI", status: "attested", sourceRefs: [SOURCE_KEY] },
+        { countryId: "ESP", status: "attested", sourceRefs: [SOURCE_KEY] },
+      ],
+    }) as PatronymeDossier;
+
+    const report = await loadPatronymes(database.client as never, {
+      dossiers: [diaspora],
+      errors: [],
+    });
+
+    expect(report.errors).toEqual([]);
+    expect(report).toMatchObject({ total: 1, inserted: 1 });
+  });
+
+  // @req REQ-130
+  it("still rejects a country that is neither African nor a declared diaspora presence", async () => {
+    const database = createSupabaseDouble({
+      countryIds: ["MLI"],
+      patronymeIds: ["PAT_KONDE"],
+    });
+    const bogus = validPatronymeFiche({
+      countries: [
+        { countryId: "GBN", status: "attested", sourceRefs: [SOURCE_KEY] },
+      ],
+    }) as PatronymeDossier;
+
+    const report = await loadPatronymes(database.client as never, {
+      dossiers: [bogus],
+      errors: [],
+    });
+
+    expect(report.errors).toContainEqual(
+      expect.stringMatching(/GBN does not exist/)
+    );
+    expect(report).toMatchObject({ inserted: 0 });
+  });
+
   // @req REQ-133
   // @req REQ-134
   it("rejects conflicting authority labels for the same source before writing", async () => {

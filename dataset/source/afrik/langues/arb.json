@@ -19,7 +19,7 @@
     "vitalityStatus": null,
     "sources": [
       {
-        "title": "Glottolog 5.3",
+        "title": "Glottolog 5.3 — Arabe standard moderne (stan1318)",
         "url": "https://glottolog.org/resource/languoid/id/stan1318",
         "tier": "official",
         "notes": "Glottolog name: Standard Arabic; classification includes Semitic. Les dialectes listés sont les sous-languoids que Glottolog rattache à stan1318, hors languoids portant leur propre code ISO 639-3."

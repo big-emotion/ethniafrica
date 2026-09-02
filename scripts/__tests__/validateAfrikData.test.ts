@@ -25,6 +25,7 @@ import {
   checkCountryCodesResolve,
   checkHistoricalAffiliationModel,
   OFF_MAP_COUNTRIES,
+  checkSourceIdentity,
   AFRICAN_REFERENCE_COUNTRY_CODES,
 } from "../validateAfrikData";
 
@@ -1051,6 +1052,102 @@ describe("validateAfrikData – new integrity checks", () => {
   });
 
   // ── Source tiers ────────────────────────────────────────────────────────
+
+  describe("checkSourceIdentity", () => {
+    const cite = (source: Record<string, unknown>) => ({
+      content: {
+        languages: { isoCodes: ["zul"] },
+        demography: {
+          distributionByCountry: [{ country: "ZAF", population: 10000 }],
+        },
+        sources: [source],
+      },
+    });
+
+    // @req REQ-092
+    it("passes when one title always carries the same locator", () => {
+      const source = {
+        title: "Statistics South Africa — Census 2011",
+        url: "https://www.statssa.gov.za/census/census_2011/",
+        tier: "official",
+      };
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU", cite(source));
+      writePPL(tmpDir, "FLG_BANTU", "PPL_SOTHO", cite(source));
+
+      expect(checkSourceIdentity(tmpDir)).toMatchObject({
+        ok: true,
+        errors: [],
+      });
+    });
+
+    // @req REQ-092
+    it("fails when one title is cited with two different URLs", () => {
+      const title = "The Morphological Analysis of Zulu Clan Names";
+      writePPL(
+        tmpDir,
+        "FLG_BANTU",
+        "PPL_ZULU",
+        cite({
+          title,
+          url: "https://doi.org/10.5430/elr.v9n3p36",
+          tier: "referenced",
+        })
+      );
+      writePPL(
+        tmpDir,
+        "FLG_BANTU",
+        "PPL_SOTHO",
+        cite({
+          title,
+          url: "https://www.researchgate.net/publication/345494106",
+          tier: "referenced",
+        })
+      );
+
+      const result = checkSourceIdentity(tmpDir);
+
+      expect(result.ok).toBe(false);
+      expect(result.errors).toContainEqual(
+        expect.stringContaining("one title, one locator")
+      );
+    });
+
+    // @req REQ-092
+    it("rejects a standing left over from the retired numeric scale", () => {
+      writePPL(
+        tmpDir,
+        "FLG_BANTU",
+        "PPL_ZULU",
+        cite({
+          title: "General History of Africa",
+          url: "https://unesco.org",
+          tier: 1,
+        })
+      );
+
+      const result = checkSourceIdentity(tmpDir);
+
+      expect(result.ok).toBe(false);
+      expect(result.errors).toContainEqual(
+        expect.stringContaining('declares standing "1"')
+      );
+    });
+
+    // @req REQ-092
+    it("accepts needs_review, which marks an unadjudicated source rather than a weak one", () => {
+      writePPL(
+        tmpDir,
+        "FLG_BANTU",
+        "PPL_ZULU",
+        cite({ title: "Oral testimony, Ulundi", tier: "needs_review" })
+      );
+
+      expect(checkSourceIdentity(tmpDir)).toMatchObject({
+        ok: true,
+        errors: [],
+      });
+    });
+  });
 
   describe("checkAuthorizedSourceTiers", () => {
     // @req REQ-092

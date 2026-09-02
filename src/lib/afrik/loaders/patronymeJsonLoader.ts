@@ -9,6 +9,7 @@ import { join } from "path";
 import { logger } from "@/lib/api/logger";
 import { normalizeToKey } from "@/lib/normalize";
 import { parsePatronymeFile } from "@/lib/afrik/parsers/patronymeParser";
+import { isOffMapCountry } from "@/lib/afrik/offMapCountries";
 import type {
   PatronymeAlliance,
   PatronymeDossier,
@@ -192,6 +193,22 @@ function requireReference(
   if (!validIds.has(id)) errors.push(`${location}: ${id} does not exist`);
 }
 
+/**
+ * `afrik_countries` holds the 54 African countries, so a diaspora attestation
+ * resolves to no row — ESP on PAT_BORICO is Spain hosting an Equatorial-Guinean
+ * surname, not a missing country. Those codes are legitimate and declared; a
+ * code that is neither still fails, which is what keeps a typo from passing.
+ */
+function requireCountryReference(
+  validIds: Set<string>,
+  id: string,
+  location: string,
+  errors: string[]
+): void {
+  if (isOffMapCountry(id)) return;
+  requireReference(validIds, id, location, errors);
+}
+
 function validateHomonymReference(
   dossier: PatronymeDossier,
   index: number,
@@ -210,7 +227,7 @@ function validateHomonymReference(
   } else if (entityId.startsWith("PAT_")) {
     requireReference(validPatronymeIds, entityId, location, errors);
   } else if (/^[A-Z]{3}$/.test(entityId)) {
-    requireReference(references.countryIds, entityId, location, errors);
+    requireCountryReference(references.countryIds, entityId, location, errors);
   }
 }
 
@@ -264,7 +281,7 @@ export function preflightPatronymeBatch(
       )
     );
     dossier.countries.forEach(({ countryId }, index) =>
-      requireReference(
+      requireCountryReference(
         references.countryIds,
         countryId,
         `${dossier.id}.countries[${index}].countryId`,
@@ -273,7 +290,7 @@ export function preflightPatronymeBatch(
     );
     dossier.spellings.forEach((spelling, spellingIndex) =>
       spelling.attestations.forEach(({ countryId }, attestationIndex) =>
-        requireReference(
+        requireCountryReference(
           references.countryIds,
           countryId,
           `${dossier.id}.spellings[${spellingIndex}].attestations[${attestationIndex}].countryId`,

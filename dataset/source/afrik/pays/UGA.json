@@ -217,8 +217,8 @@
       },
       {
         "title": "CIA World Factbook – Uganda",
-        "url": null,
-        "tier": "needs_review",
+        "url": "https://www.cia.gov/the-world-factbook/countries/uganda/",
+        "tier": "official",
         "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
       },
       {
@@ -252,7 +252,7 @@
         "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
       },
       {
-        "title": "UNFPA – World Population Dashboard",
+        "title": "UNFPA – World Population Dashboard — Ouganda",
         "url": "https://www.unfpa.org/data/world-population/UG",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."

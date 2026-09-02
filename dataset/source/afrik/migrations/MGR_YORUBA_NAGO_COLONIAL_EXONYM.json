@@ -17,7 +17,12 @@
       [1.226, 6.132]
     ]
   },
-  "peoplesInvolved": [{ "id": "PPL_YORUBA", "role": "affected" }],
+  "peoplesInvolved": [
+    {
+      "id": "PPL_YORUBA",
+      "role": "affected"
+    }
+  ],
   "content": {
     "summary": "Durant la période coloniale française au Dahomey (1894-1960), l'administration a systématisé l'usage de l'exonyme « Nago » pour désigner les populations yorubaphones du sud-est du territoire, en lieu et place de l'endonyme « Yorùbá ».",
     "narrative": "L'ethnonyme « Nago » — probablement forgé à l'origine par le royaume du Danxomè (Abomey), rival politique des cités yoruba — est repris et diffusé par l'administration coloniale française au Dahomey à partir de la conquête du royaume d'Abomey (1892-1894) pour désigner administrativement les populations yorubaphones de la région de Porto-Novo et d'Abomey, ainsi que celles du Togo voisin. Ce choix administratif, distinct de l'endonyme « Yorùbá » employé par les populations elles-mêmes, s'inscrit dans une taxonomie ethnique coloniale plus large qui a durablement marqué les catégorisations officielles jusqu'à l'indépendance du Dahomey en 1960 et au-delà.",
@@ -27,14 +32,14 @@
         "title": "Glottolog 5.0 — Yoruboid: Yoruba",
         "url": "https://glottolog.org/resource/languoid/id/yoru1245",
         "year": 2024,
-        "tier": 1,
+        "tier": "official",
         "notes": ""
       },
       {
         "title": "Ethnicity and the Slave Trade: 'Lucumi' and 'Nago' as Ethnonyms in West Africa (Robin Law, History in Africa, vol. 24, 1997, pp. 205-219)",
         "url": "https://www.cambridge.org/core/journals/history-in-africa/article/abs/ethnicity-and-the-slave-trade-lucumi-and-nago-as-ethnonyms-in-west-africa1/80BEE99BEC504093D17F8BC37583AF0D",
         "year": 1997,
-        "tier": 2,
+        "tier": "referenced",
         "notes": "Vérifié via Wikipedia EN « Yoruba people » et FR « Yoruba (peuple) » ; source académique primaire sur l'origine et l'usage colonial de l'ethnonyme Nago."
       }
     ]

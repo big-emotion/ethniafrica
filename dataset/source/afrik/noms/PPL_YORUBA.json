@@ -25,7 +25,7 @@
           "author": "SIL International",
           "year": 2024,
           "url": "https://www.ethnologue.com/language/yor",
-          "tier": 1,
+          "tier": "official",
           "notes": ""
         }
       ]
@@ -47,7 +47,7 @@
           "author": "Max Planck Institute for Evolutionary Anthropology",
           "year": 2024,
           "url": "https://glottolog.org/resource/languoid/id/yoru1245",
-          "tier": 1,
+          "tier": "official",
           "notes": ""
         }
       ]
