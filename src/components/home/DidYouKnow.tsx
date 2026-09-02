@@ -65,7 +65,7 @@ function HomeFact({ fact, imageSide, language, priority }: HomeFactProps) {
       className={`home-dyk-card home-dyk-card--image-${imageSide}`}
       data-testid="home-dyk-fact"
     >
-      {illustration ? (
+      {illustration?.kind === "picture" ? (
         <figure className="home-dyk-figure">
           <div className="home-dyk-frame">
             <Image

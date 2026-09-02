@@ -66,3 +66,48 @@ the descriptions above.
 - **`cote-ivoire`** and **`lingala`** carry no named author on Commons. They are
   credited to the holding institution and to the public domain respectively,
   which is what the file pages support.
+
+## Second batch — the corpus's naming mechanisms (2026-09-03)
+
+Forty-three anecdotes were drawn from the people fiches of
+`dataset/source/afrik`. Ten of them found a picture that is a document the
+anecdote is _about_: the plant that carries the slur, the river a language
+family was named after, the person who did the naming, or the people's own
+sculpture. The other thirty-three are illustrated by a drawn plate
+(`kind: "plate"`) rather than by a photograph — see `AnecdotePlate` for why
+a landscape would have illustrated nothing.
+
+Sourced across four providers, licences read from each API rather than
+assumed: `scripts/anecdotes/sourceIllustrations.ts`. Fetched at 900 px on
+the long edge, JPEG quality 70 — the card never displays more than 460 px,
+and the first batch's 1100 px average of 233 Ko was weight for pixels no
+screen shows.
+
+| Anecdote              | File                      | Work                                                                                                                                                                                 | Author                     | Licence       | Source    |
+| --------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------- | ------------- | --------- |
+| `azande-niamniam`     | `azande-niamniam.jpg`     | Impatiens niamniamensis kz04.jpg                                                                                                                                                     | Krzysztof Ziarnek, Kenraiz | CC BY 4.0     | commons   |
+| `omotique-fleuve-omo` | `omotique-fleuve-omo.jpg` | Omo Valley in Ethiopia.jpg                                                                                                                                                           | pxfuel.com                 | CC0           | commons   |
+| `gur-mabia`           | `gur-mabia.jpg`           | Trees reflecting on the Volta River.jpg                                                                                                                                              | ARchIvlst07                | CC BY-SA 4.0  | commons   |
+| `ronga-junod`         | `ronga-junod.jpg`         | HJ-1-P16.png                                                                                                                                                                         | Henry Junod                | Public domain | commons   |
+| `beti-cranes`         | `beti-cranes.jpg`         | Portrait of Paul Belloni Du Chaillu.jpg                                                                                                                                              | Elliott Fry                | Public domain | commons   |
+| `tabwa-attache`       | `tabwa-attache.jpg`       | Figure- Male MET 1978.412.592 a.jpeg                                                                                                                                                 | —                          | CC0           | commons   |
+| `fang-reputation`     | `fang-reputation.jpg`     | Eyema byeri (reliquary guardian figure)                                                                                                                                              | Okak-Fang artist           | CC0           | openverse |
+| `bambara-refus`       | `bambara-refus.jpg`       | Chi Wara Headdress, Bamana people, Mali, 20th century, wood - Huntington Museum of Art - DSC05130.JPG                                                                                | Daderot                    | CC0           | commons   |
+| `guere-wobe`          | `guere-wobe.jpg`          | Ritual mask, Gere people, Ivory Coast 01.jpg                                                                                                                                         | Mickey Mystique            | CC BY-SA 4.0  | commons   |
+| `dioula-metier`       | `dioula-metier.jpg`       | ASC Leiden - van Achterberg Collection - 5 - 005 - La Grande Mosquée de Bobo-Dioulasso, avec 21 niveaux de protubérances en bois - Bobo-Dioulasso, Burkina Faso, 19-26 août 2001.tif | Angeline A. van Achterberg | CC BY-SA 4.0  | commons   |
+
+Three pictures were deliberately **not** taken, and the reason is
+editorial rather than legal:
+
+- **`west-taa-masarwa`** — Commons offers photographs captioned "Bushmen".
+  The anecdote is about that word being rejected; illustrating it with the
+  word would reproduce the naming the anecdote criticises.
+- **`iteso-bakedi`** and **`datoga-mangati`** — photographs of living people
+  exist and are freely licensed, but the anecdotes are about slurs made
+  against them. A plate showing the two names says the same thing without
+  putting a face under the insult.
+
+The ten pictures here carry `licenceUrl` and `filePage`, so the caption
+publishes the licence rather than naming it (brand charter §9, and §4(a) of
+CC BY-SA itself). **The twenty-four pictures of the first batch still only
+name their licence** — a gap this batch did not close.

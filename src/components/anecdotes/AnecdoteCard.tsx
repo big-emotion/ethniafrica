@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { AnecdotePlate } from "@/components/anecdotes/AnecdotePlate";
 import type {
   DidYouKnowEntity,
   DidYouKnowFact,
@@ -77,7 +78,7 @@ export function AnecdoteCard({
   return (
     <article className="anecdote-card" id={fact.id}>
       <div className={`anecdote-split anecdote-split--image-${imageSide}`}>
-        {illustration ? (
+        {illustration?.kind === "picture" ? (
           <figure className="anecdote-figure">
             <div className="anecdote-frame">
               <Image
@@ -91,8 +92,39 @@ export function AnecdoteCard({
             </div>
             <figcaption className="anecdote-credit">
               {illustration.credit}
+              {/* The licence's URI and the file's page, both reachable. A
+                  notice a reader cannot open is not a notice — brand charter
+                  §9, and §4(a) of CC BY-SA itself. */}
+              {illustration.filePage ? (
+                <>
+                  {" · "}
+                  <a
+                    href={illustration.filePage}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                  >
+                    fichier
+                  </a>
+                </>
+              ) : null}
+              {illustration.licenceUrl ? (
+                <>
+                  {" · "}
+                  <a
+                    href={illustration.licenceUrl}
+                    rel="noreferrer noopener license"
+                    target="_blank"
+                  >
+                    licence
+                  </a>
+                </>
+              ) : null}
             </figcaption>
           </figure>
+        ) : null}
+
+        {illustration?.kind === "plate" ? (
+          <AnecdotePlate plate={illustration} />
         ) : null}
 
         <div className="anecdote-text">

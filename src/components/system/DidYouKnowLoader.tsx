@@ -85,7 +85,10 @@ export function DidYouKnowLoader({
   // order a reader's eye travels in cannot drift apart.
   let step = 0;
   const nextStep = () => stepClass(step++);
-  const illustration = fact ? illustrationFor(fact.id) : undefined;
+  const picture = fact ? illustrationFor(fact.id) : undefined;
+  // The interstitial is a photograph or nothing: a plate needs reading time
+  // that a wait between two pages does not have.
+  const illustration = picture?.kind === "picture" ? picture : undefined;
   const imageSide = fact ? illustrationSideFor(fact.id) : "start";
 
   return (

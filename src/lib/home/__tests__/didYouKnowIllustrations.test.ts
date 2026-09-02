@@ -34,7 +34,11 @@ describe("Anecdote illustrations — a picture that cites itself (REQ-113)", () 
   // @req REQ-113
   it("points every picture at a file the repo actually ships", () => {
     const absent = Object.entries(DID_YOU_KNOW_ILLUSTRATIONS)
-      .filter(([, picture]) => !existsSync(join(PUBLIC_DIR, picture.src)))
+      .filter(
+        ([, picture]) =>
+          picture.kind === "picture" &&
+          !existsSync(join(PUBLIC_DIR, picture.src))
+      )
       .map(([id]) => id);
 
     expect(absent).toEqual([]);
@@ -45,7 +49,11 @@ describe("Anecdote illustrations — a picture that cites itself (REQ-113)", () 
   // @req REQ-113
   it("names a licence in every credit line", () => {
     const uncredited = Object.entries(DID_YOU_KNOW_ILLUSTRATIONS)
-      .filter(([, picture]) => !/CC |domaine public|CC0/.test(picture.credit))
+      .filter(
+        ([, picture]) =>
+          picture.kind === "picture" &&
+          !/CC |domaine public|CC0/.test(picture.credit)
+      )
       .map(([id]) => id);
 
     expect(uncredited).toEqual([]);
@@ -62,6 +70,27 @@ describe("Anecdote illustrations — a picture that cites itself (REQ-113)", () 
     for (const picture of Object.values(DID_YOU_KNOW_ILLUSTRATIONS)) {
       expect(picture.alt.length).toBeGreaterThan(20);
     }
+  });
+
+  // A plate exists to show the two names. One that repeats the same word
+  // twice, or leaves either side blank, shows nothing and should have been a
+  // photograph or nothing at all.
+  // @req REQ-113
+  it("gives every drawn plate two different names and an origin", () => {
+    const hollow = Object.entries(DID_YOU_KNOW_ILLUSTRATIONS)
+      .filter(([, illustration]) => illustration.kind === "plate")
+      .filter(([, plate]) => {
+        if (plate.kind !== "plate") return false;
+        return (
+          plate.given.trim() === "" ||
+          plate.own.trim() === "" ||
+          plate.givenBy.trim() === "" ||
+          plate.given.trim() === plate.own.trim()
+        );
+      })
+      .map(([id]) => id);
+
+    expect(hollow).toEqual([]);
   });
 
   // @req REQ-113

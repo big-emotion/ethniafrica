@@ -123,6 +123,7 @@ describe("AnecdoteCard — the fact a reader can cite (REQ-113)", () => {
         language="fr"
         fact={SOURCED}
         illustration={{
+          kind: "picture",
           src: "/images/anecdotes/cameroun.jpg",
           alt: "Pirogues alignées sur la rive de l'estuaire du Wouri.",
           credit:
