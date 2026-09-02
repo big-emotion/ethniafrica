@@ -37,5 +37,3 @@ export function FicheHeroHead({
     </div>
   );
 }
-
-export default FicheHeroHead;

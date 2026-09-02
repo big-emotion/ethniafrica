@@ -940,5 +940,3 @@ export function SiteHeader({
     </header>
   );
 }
-
-export default SiteHeader;

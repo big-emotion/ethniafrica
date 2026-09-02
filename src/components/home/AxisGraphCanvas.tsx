@@ -41,5 +41,3 @@ export function AxisGraphCanvas({ onLayerReady }: AxisGraphCanvasProps) {
 
   return <LazyAxisGraphScene onLayerReady={onLayerReady} />;
 }
-
-export default AxisGraphCanvas;

@@ -126,5 +126,3 @@ export function BorderCrossingTable({ crossings }: BorderCrossingTableProps) {
     </div>
   );
 }
-
-export default BorderCrossingTable;

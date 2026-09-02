@@ -130,5 +130,3 @@ export function PatronymeNamingSystemSection({
     </FicheSection>
   );
 }
-
-export default PatronymeNamingSystemSection;

@@ -53,5 +53,3 @@ export const ScaleFactCard = ({ fact, className }: ScaleFactCardProps) => {
     </aside>
   );
 };
-
-export default ScaleFactCard;

@@ -97,5 +97,3 @@ export function MigrationEventCard({
     </article>
   );
 }
-
-export default MigrationEventCard;

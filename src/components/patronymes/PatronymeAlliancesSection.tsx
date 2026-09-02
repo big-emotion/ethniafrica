@@ -53,5 +53,3 @@ export function PatronymeAlliancesSection({
     </FicheSection>
   );
 }
-
-export default PatronymeAlliancesSection;

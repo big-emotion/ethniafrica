@@ -150,5 +150,3 @@ export function HomeHeadlineReel({ segments }: HomeHeadlineReelProps) {
     </span>
   );
 }
-
-export default HomeHeadlineReel;

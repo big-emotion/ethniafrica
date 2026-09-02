@@ -383,5 +383,3 @@ export function AnecdoteCard({
     </article>
   );
 }
-
-export default AnecdoteCard;

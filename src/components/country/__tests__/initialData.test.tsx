@@ -13,16 +13,8 @@ import type { CountryDetail } from "@/types/afrik-frontend";
  * requirements now lives in `components/people/__tests__/`.
  */
 
-const { mockHasActiveSourceFlag } = vi.hoisted(() => ({
-  mockHasActiveSourceFlag: vi.fn(),
-}));
-
 vi.mock("next/navigation", () => ({
   useSearchParams: () => new URLSearchParams(),
-}));
-
-vi.mock("@/lib/flags-client", () => ({
-  hasActiveSourceFlag: (...args: unknown[]) => mockHasActiveSourceFlag(...args),
 }));
 
 vi.mock("@/hooks/use-consent", () => ({
@@ -53,7 +45,6 @@ const senegal: CountryDetail = {
 describe("the country dossier with server-provided data", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mockHasActiveSourceFlag.mockResolvedValue(false);
   });
 
   // @req REQ-046

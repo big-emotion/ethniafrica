@@ -145,5 +145,3 @@ export const GamePlayIsland = ({
     </div>
   );
 };
-
-export default GamePlayIsland;

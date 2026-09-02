@@ -77,5 +77,3 @@ export function MigrationNarrative({
     </div>
   );
 }
-
-export default MigrationNarrative;

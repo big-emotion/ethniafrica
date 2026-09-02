@@ -103,5 +103,3 @@ export const EstimateSlider = ({
     </section>
   );
 };
-
-export default EstimateSlider;

@@ -140,8 +140,6 @@ describe("sitemap.xml", () => {
       "/fr/admin",
       `${getLocalizedRoute("fr", "quiz")}/score`,
       "/fr/report-error",
-      "/fr/confidentialite",
-      "/fr/politique-confidentialite",
     ]) {
       expect(
         paths.filter((path) => path.startsWith(fragment)),
@@ -183,7 +181,11 @@ describe("sitemap.xml", () => {
   // @req REQ-110
   it("keeps UNLISTED_ROUTES documented alongside what it excludes", () => {
     expect(UNLISTED_ROUTES).toContain("admin");
-    expect(UNLISTED_ROUTES).toContain("politique-confidentialite");
+    expect(UNLISTED_ROUTES).toContain("report-error");
+    // The two duplicate privacy pages were retired rather than hidden, so
+    // they are no longer anything's business to exclude.
+    expect(UNLISTED_ROUTES).not.toContain("confidentialite");
+    expect(UNLISTED_ROUTES).not.toContain("politique-confidentialite");
   });
 });
 
@@ -197,12 +199,16 @@ describe("robots.txt", () => {
     expect(rules.host).toBe(`https://${CANONICAL_DOMAIN}`);
   });
 
+  // The duplicate privacy pages used to be listed here too. Deleting a route
+  // is a stronger guarantee than asking a crawler not to index it, so the
+  // disallow list shrank back to what authentication alone hides.
   // @req REQ-110
-  it("bans the authenticated surfaces and the duplicate privacy pages", () => {
+  it("bans the authenticated surfaces", () => {
     const rule = robots().rules;
     const disallow = Array.isArray(rule) ? rule[0].disallow : rule.disallow;
 
     expect(disallow).toContain("/fr/admin/");
-    expect(disallow).toContain("/fr/politique-confidentialite");
+    expect(disallow).not.toContain("/fr/politique-confidentialite");
+    expect(disallow).not.toContain("/fr/confidentialite");
   });
 });

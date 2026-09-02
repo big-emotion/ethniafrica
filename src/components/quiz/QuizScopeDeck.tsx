@@ -177,5 +177,3 @@ export const QuizScopeDeck = ({
     </ul>
   );
 };
-
-export default QuizScopeDeck;

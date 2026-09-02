@@ -72,5 +72,3 @@ export function FamilyFicheTitle({ family }: { family: LanguageFamily }) {
     </>
   );
 }
-
-export default FamilyFicheTitle;

@@ -278,5 +278,3 @@ export function FicheChapterBar({
     </nav>
   );
 }
-
-export default FicheChapterBar;

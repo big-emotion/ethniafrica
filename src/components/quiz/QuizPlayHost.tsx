@@ -46,5 +46,3 @@ export const QuizPlayHost = ({
     exitHref={exitHref}
   />
 );
-
-export default QuizPlayHost;

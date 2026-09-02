@@ -273,5 +273,3 @@ export function ApiKeysManager({ initialKeys }: ApiKeysManagerProps) {
     </div>
   );
 }
-
-export default ApiKeysManager;

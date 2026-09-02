@@ -205,5 +205,3 @@ export function ContinentGlobeStage({
     </div>
   );
 }
-
-export default ContinentGlobeStage;

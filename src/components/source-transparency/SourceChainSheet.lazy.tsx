@@ -10,6 +10,7 @@ const LazyInner = React.lazy(() => import("./SourceChainSheet"));
  * Lazy-loaded wrapper. Consumers should use this from fiche pages to keep the
  * sheet bundle out of the initial chunk.
  */
+// @req REQ-008
 export const LazySourceChainSheet: React.FC<SourceChainSheetProps> = (
   props
 ) => {
@@ -20,5 +21,3 @@ export const LazySourceChainSheet: React.FC<SourceChainSheetProps> = (
     </React.Suspense>
   );
 };
-
-export default LazySourceChainSheet;

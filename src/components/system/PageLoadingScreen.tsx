@@ -60,5 +60,3 @@ export function PageLoadingScreen({ label }: PageLoadingScreenProps) {
     </PageLayout>
   );
 }
-
-export default PageLoadingScreen;

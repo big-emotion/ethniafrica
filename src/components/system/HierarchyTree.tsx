@@ -469,5 +469,3 @@ export function HierarchyTree({
     </>
   );
 }
-
-export default HierarchyTree;

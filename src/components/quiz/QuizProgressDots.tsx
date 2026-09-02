@@ -46,5 +46,3 @@ export const QuizProgressDots = ({
     </div>
   );
 };
-
-export default QuizProgressDots;

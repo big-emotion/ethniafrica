@@ -120,5 +120,3 @@ export function LanguageIndexList({
     </div>
   );
 }
-
-export default LanguageIndexList;

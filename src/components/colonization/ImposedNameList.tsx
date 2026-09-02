@@ -74,5 +74,3 @@ export function ImposedNameList({ items, className }: ImposedNameListProps) {
     </ul>
   );
 }
-
-export default ImposedNameList;

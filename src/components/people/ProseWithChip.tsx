@@ -154,5 +154,3 @@ export function ProseWithChip({ text, chip, className }: ProseWithChipProps) {
     </>
   );
 }
-
-export default ProseWithChip;

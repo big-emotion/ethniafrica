@@ -54,17 +54,20 @@ describe("detail route streaming", () => {
     expect(peopleView).not.toContain("useSearchParams");
   });
 
+  // The anon browser client this used to name is gone — the fiche views stopped
+  // reading flags from the browser, and with them went the only caller of
+  // `lib/supabase/client.ts`. Naming a deleted module would make this assertion
+  // unfailable, so the guard widens to the invariant that outlived it: a fiche
+  // view reaches Supabase through the route that already awaited it, never
+  // through a client of its own. `auth-client` is deliberately not exempted —
+  // a fiche has no business authenticating anyone.
   // @req REQ-046
-  it("does not load the Supabase browser client for server-rendered flags", () => {
+  it("reaches Supabase through the route, never from a fiche view", () => {
     for (const relativePath of [
       "src/components/country/CountryRecordView.tsx",
       "src/components/people/PeopleDetailViewV2.tsx",
     ]) {
-      const source = readSource(relativePath);
-      expect(source).not.toContain(
-        'import { hasActiveSourceFlag } from "@/lib/flags-client"'
-      );
-      expect(source).not.toContain('import("@/lib/flags-client")');
+      expect(readSource(relativePath)).not.toContain("@/lib/supabase/");
     }
   });
 
