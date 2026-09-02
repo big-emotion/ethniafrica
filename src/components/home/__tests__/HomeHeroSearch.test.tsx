@@ -435,6 +435,110 @@ describe("HomeHeroSearch", () => {
     expect(field()).toHaveAttribute("name", "q");
   });
 
+  /**
+   * The panel sat in the flow, so opening it pushed the seed chips, the visual
+   * and everything below them down the page. The reason recorded for that was
+   * the band's own `overflow: hidden`; the reader's experience of it is the
+   * content jumping under a panel that should have covered it.
+   *
+   * happy-dom carries no layout engine and does not resolve the component's
+   * own <style>, so a measured assertion would pass against any value at all
+   * (siteBrandLockup.test.tsx says as much). The rule the component ships is
+   * read instead — the instrument singleSearchSurface.test.ts already uses.
+   * Measuring the result is the browser pass's job, not this one's.
+   */
+  describe("the suggestions panel covers the band", () => {
+    function shippedCss(container: HTMLElement): string {
+      return Array.from(container.querySelectorAll("style"))
+        .map((sheet) => sheet.textContent ?? "")
+        .join("\n");
+    }
+
+    // @req REQ-002
+    it("takes the panel out of the flow rather than pushing the content down", async () => {
+      const { container } = renderSearch();
+
+      await type("yoruba");
+      await screen.findByRole("listbox");
+
+      const css = shippedCss(container);
+      expect(css).toMatch(
+        /\.home-hero-search-panel\s*\{[^}]*position:\s*absolute/
+      );
+    });
+
+    // Anchored to the field, not to the whole block: hung off
+    // `.home-hero-search` the panel would open below the seed chips instead of
+    // directly under the field it belongs to.
+    // @req REQ-002
+    it("anchors the panel to the field it belongs to", async () => {
+      const { container } = renderSearch();
+
+      await type("yoruba");
+      const listbox = await screen.findByRole("listbox");
+
+      const anchor = listbox.parentElement as HTMLElement;
+      expect(anchor).toContainElement(screen.getByRole("search"));
+
+      const anchorClass = anchor.className.trim().split(/\s+/)[0];
+      expect(shippedCss(container)).toMatch(
+        new RegExp(`\\.${anchorClass}\\s*\\{[^}]*position:\\s*relative`)
+      );
+    });
+  });
+
+  /**
+   * The panel had no dismissal beyond Escape and emptying the field — no blur,
+   * no press outside it, nothing on the way to another page. It therefore
+   * stayed open over whatever came next, which is what a reader reports as the
+   * bar still being active once they have left for the results page.
+   */
+  describe("the panel gives way", () => {
+    // @req REQ-002
+    it("closes once the focus leaves the field", async () => {
+      renderSearch();
+
+      await type("yoruba");
+      await screen.findByRole("listbox");
+
+      fireEvent.blur(field());
+
+      await waitFor(() =>
+        expect(screen.queryByRole("listbox")).not.toBeInTheDocument()
+      );
+    });
+
+    // @req REQ-002
+    it("closes once a suggestion is followed", async () => {
+      renderSearch();
+
+      await type("yoruba");
+      await screen.findByRole("listbox");
+
+      fireEvent.click(screen.getByRole("option", { name: /Yoruba/ }));
+
+      await waitFor(() =>
+        expect(screen.queryByRole("listbox")).not.toBeInTheDocument()
+      );
+    });
+
+    // The one the reader described: the query goes to the results page and the
+    // panel has to be gone by the time that page is what they are looking at.
+    // @req REQ-002
+    it("closes once the query is handed to the results page", async () => {
+      renderSearch();
+
+      await type("yoruba");
+      await screen.findByRole("listbox");
+
+      fireEvent.submit(screen.getByRole("search"));
+
+      await waitFor(() =>
+        expect(screen.queryByRole("listbox")).not.toBeInTheDocument()
+      );
+    });
+  });
+
   // The silence between the last keystroke and the panel is the debounce plus
   // a round trip — long enough on a phone to read as a broken field.
   describe("while the corpus is being asked", () => {

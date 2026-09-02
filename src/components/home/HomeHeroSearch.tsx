@@ -310,6 +310,30 @@ export function HomeHeroSearch({
     inputRef.current?.focus();
   };
 
+  /**
+   * Escape and an emptied field used to be the only two ways out of this
+   * panel, so it outlived every other gesture — including the one that takes
+   * the reader to the results page, where it then covered the answer they had
+   * just asked for.
+   *
+   * Dismissing is deliberately not the same as clearing: the query stays in
+   * the field, because a reader who submits it is about to see it again at the
+   * top of the results page.
+   */
+  const dismissPanel = () => {
+    setDismissed(true);
+    setActiveIndex(-1);
+  };
+
+  // Anything inside the anchor — an option being tabbed to, the clear button —
+  // is still this control. Only focus landing outside it closes the panel.
+  const handleFocusLeave = (event: React.FocusEvent<HTMLDivElement>) => {
+    if (event.currentTarget.contains(event.relatedTarget as Node | null)) {
+      return;
+    }
+    dismissPanel();
+  };
+
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Escape") {
       // The panel first, the text second. Escape is the platform's clear
@@ -344,88 +368,151 @@ export function HomeHeroSearch({
 
   return (
     <div className="home-hero-search afh-accent-ocre">
-      {/* A plain GET form, not a router push: submitting then works before
+      {/* The panel's containing block, and it stops at the form on purpose:
+          hung off .home-hero-search instead, an overlay would open below the
+          seed chips rather than under the field it answers for. */}
+      <div className="home-hero-search-anchor" onBlur={handleFocusLeave}>
+        {/* A plain GET form, not a router push: submitting then works before
           React has hydrated, and the panel below is the enhancement rather
           than the feature. The page it lands on shows everything the panel
           caps at three per kind, with the filters — which is how a reader
           leaves the hero without dead-ending. */}
-      <form
-        role="search"
-        method="get"
-        action={searchRoute}
-        className="home-hero-search-form"
-      >
-        <label htmlFor={inputId} className="home-hero-search-label">
-          {SEARCH_LABEL}
-        </label>
-
-        <div className="home-hero-search-field">
-          {/* The indicator takes the magnifier's slot rather than a slot of
-              its own: same width, so the text never shifts as it appears. */}
-          {showPending ? (
-            <span
-              data-testid="home-hero-search-pending"
-              aria-hidden="true"
-              className="home-hero-search-spinner"
-            />
-          ) : (
-            <Search
-              aria-hidden="true"
-              className="size-5 shrink-0 text-afh-text-soft"
-            />
-          )}
-          <input
-            ref={inputRef}
-            id={inputId}
-            name="q"
-            aria-busy={pending}
-            role="combobox"
-            aria-expanded={showListbox}
-            aria-controls={listboxId}
-            aria-autocomplete="list"
-            aria-activedescendant={
-              activeIndex >= 0 ? optionId(activeIndex) : undefined
-            }
-            placeholder={SEARCH_PLACEHOLDER}
-            type="search"
-            inputMode="search"
-            enterKeyHint="search"
-            autoComplete="off"
-            autoCorrect="off"
-            autoCapitalize="off"
-            spellCheck={false}
-            value={query}
-            onChange={(event) => {
-              setQuery(event.target.value);
-              setDismissed(false);
-            }}
-            onFocus={() => setFieldTouched(true)}
-            onKeyDown={handleKeyDown}
-          />
-
-          {/* type="button" is load-bearing: this sits inside a GET form, where
-              a button with no type is a submit button — the cross would
-              navigate to the search page instead of emptying the field. */}
-          {query && (
-            <button
-              type="button"
-              aria-label="Effacer la recherche"
-              className="home-hero-search-clear"
-              onClick={clearQuery}
-            >
-              <X aria-hidden="true" className="size-4" />
-            </button>
-          )}
-        </div>
-
-        <Button
-          type="submit"
-          variant="accent"
-          className="home-hero-search-submit"
+        <form
+          role="search"
+          method="get"
+          action={searchRoute}
+          className="home-hero-search-form"
+          onSubmit={dismissPanel}
         >
-          Rechercher
-        </Button>
-      </form>
+          <label htmlFor={inputId} className="home-hero-search-label">
+            {SEARCH_LABEL}
+          </label>
+
+          <div className="home-hero-search-field">
+            {/* The indicator takes the magnifier's slot rather than a slot of
+                its own: same width, so the text never shifts as it appears. */}
+            {showPending ? (
+              <span
+                data-testid="home-hero-search-pending"
+                aria-hidden="true"
+                className="home-hero-search-spinner"
+              />
+            ) : (
+              <Search
+                aria-hidden="true"
+                className="size-5 shrink-0 text-afh-text-soft"
+              />
+            )}
+            <input
+              ref={inputRef}
+              id={inputId}
+              name="q"
+              aria-busy={pending}
+              role="combobox"
+              aria-expanded={showListbox}
+              aria-controls={listboxId}
+              aria-autocomplete="list"
+              aria-activedescendant={
+                activeIndex >= 0 ? optionId(activeIndex) : undefined
+              }
+              placeholder={SEARCH_PLACEHOLDER}
+              type="search"
+              inputMode="search"
+              enterKeyHint="search"
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="off"
+              spellCheck={false}
+              value={query}
+              onChange={(event) => {
+                setQuery(event.target.value);
+                setDismissed(false);
+              }}
+              onFocus={() => setFieldTouched(true)}
+              onKeyDown={handleKeyDown}
+            />
+
+            {/* type="button" is load-bearing: this sits inside a GET form,
+                where a button with no type is a submit button — the cross
+                would navigate to the search page instead of emptying the
+                field. */}
+            {query && (
+              <button
+                type="button"
+                aria-label="Effacer la recherche"
+                className="home-hero-search-clear"
+                onClick={clearQuery}
+              >
+                <X aria-hidden="true" className="size-4" />
+              </button>
+            )}
+          </div>
+
+          <Button
+            type="submit"
+            variant="accent"
+            className="home-hero-search-submit"
+          >
+            Rechercher
+          </Button>
+        </form>
+
+        {showListbox && (
+          <div
+            id={listboxId}
+            role="listbox"
+            aria-label="Suggestions"
+            className="home-hero-search-panel"
+          >
+            {groups.map((group) => (
+              <div
+                key={group.type}
+                role="group"
+                aria-label={group.heading}
+                className={
+                  SEARCH_ENTITY_ACCENT[group.type].accentScopeClassName
+                }
+              >
+                <p aria-hidden="true" className="home-hero-search-group">
+                  {group.heading}
+                </p>
+                {group.options.map(({ result, index }) => (
+                  <Link
+                    key={result.id}
+                    id={optionId(index)}
+                    role="option"
+                    aria-selected={index === activeIndex}
+                    href={ficheHref(result, language)}
+                    className={cn(
+                      "home-hero-search-option",
+                      index === activeIndex && "is-active"
+                    )}
+                    onMouseEnter={() => setActiveIndex(index)}
+                    onClick={dismissPanel}
+                  >
+                    {result.name}
+                  </Link>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {open && flat.length === 0 && (
+          <div className="home-hero-search-panel home-hero-search-empty">
+            <p data-testid="state-copy">
+              Aucune fiche pour «&nbsp;{trimmed}&nbsp;».
+            </p>
+            <NoResultsLeads leads={leads} language={language} />
+            <Link
+              href={getLocalizedRoute(language, "families")}
+              onClick={dismissPanel}
+            >
+              {SEARCH_EMPTY_LINK_LABEL}
+            </Link>
+          </div>
+        )}
+      </div>
 
       <HomeHeroSeeds
         onPick={runSeed}
@@ -445,56 +532,6 @@ export function HomeHeroSearch({
               : "Aucune suggestion"
             : ""}
       </div>
-
-      {showListbox && (
-        <div
-          id={listboxId}
-          role="listbox"
-          aria-label="Suggestions"
-          className="home-hero-search-panel"
-        >
-          {groups.map((group) => (
-            <div
-              key={group.type}
-              role="group"
-              aria-label={group.heading}
-              className={SEARCH_ENTITY_ACCENT[group.type].accentScopeClassName}
-            >
-              <p aria-hidden="true" className="home-hero-search-group">
-                {group.heading}
-              </p>
-              {group.options.map(({ result, index }) => (
-                <Link
-                  key={result.id}
-                  id={optionId(index)}
-                  role="option"
-                  aria-selected={index === activeIndex}
-                  href={ficheHref(result, language)}
-                  className={cn(
-                    "home-hero-search-option",
-                    index === activeIndex && "is-active"
-                  )}
-                  onMouseEnter={() => setActiveIndex(index)}
-                >
-                  {result.name}
-                </Link>
-              ))}
-            </div>
-          ))}
-        </div>
-      )}
-
-      {open && flat.length === 0 && (
-        <div className="home-hero-search-panel home-hero-search-empty">
-          <p data-testid="state-copy">
-            Aucune fiche pour «&nbsp;{trimmed}&nbsp;».
-          </p>
-          <NoResultsLeads leads={leads} language={language} />
-          <Link href={getLocalizedRoute(language, "families")}>
-            {SEARCH_EMPTY_LINK_LABEL}
-          </Link>
-        </div>
-      )}
 
       <style>{`
         /* The search remains a distinct action while sitting close enough to
@@ -654,16 +691,35 @@ export function HomeHeroSearch({
           background: var(--accent-tint);
         }
 
-        /* In the flow, not absolutely positioned: .home-hero sets
-           overflow:hidden for its full-bleed 100vw inset, so an overlay panel
-           is clipped at the band's edge. Pushing the content down also keeps
-           the suggestions above the phone keyboard. */
+        /* The containing block for both panels, and it deliberately wraps only
+           the form: anchored to .home-hero-search the panel would open below
+           the seed chips instead of under the field. */
+        .home-hero-search-anchor {
+          position: relative;
+        }
+
+        /* Over the band, not in it. This used to sit in the flow and push the
+           seed chips, the visual and the whole page down as the reader typed —
+           the band's overflow:hidden was the reason, and that clip is now
+           overflow-x:clip in HomeHero, which bounds the 100vw bleed without
+           trapping anything that opens downward.
+
+           Capped and scrollable rather than unbounded: on a phone the panel
+           opens over the fold and a long list would otherwise run past the
+           bottom of the screen with no way back to the field. */
         .home-hero-search-panel {
-          margin-top: 12px;
+          position: absolute;
+          top: calc(100% + 8px);
+          left: 0;
+          right: 0;
+          z-index: 20;
+          max-height: min(60vh, 420px);
+          overflow-y: auto;
           padding: 8px;
           background: var(--afh-surface);
           border: 1px solid var(--afh-border);
           border-radius: var(--afh-radius-lg);
+          box-shadow: var(--afh-elev-warm);
         }
 
         /* Three classes deep on purpose. src/styles/mobile-text.css centres
