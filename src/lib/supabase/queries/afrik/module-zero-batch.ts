@@ -316,3 +316,122 @@ export async function getLatestRevisionMap(
   }
   return map;
 }
+
+/**
+ * One source of a note callout, with the parts a citation needs.
+ *
+ * Wider than `Source` above because a callout opens a panel showing the
+ * citation rather than just a title: author and year are what make a line read
+ * as a reference.
+ */
+export interface NoteSource {
+  id: string;
+  title: string;
+  url: string | null;
+  tier: SourceTier | null;
+  notes: string | null;
+  author: string | null;
+  year: number | null;
+}
+
+/** What one field of a fiche rests on. */
+export interface FieldNote {
+  /** The JSON path the assertion is about — `content.culture.majorRites`. */
+  fieldPath: string;
+  assertionId: string;
+  statement: string;
+  confidenceLevel: string | null;
+  sources: NoteSource[];
+}
+
+/**
+ * Every sourced field of one fiche, keyed by the field it is about.
+ *
+ * The sibling of `getSourcesMap`: that one answers "what does this entity rest
+ * on" across a batch of entities, which is what a footer needs; this answers
+ * "what does each field rest on" for one entity, which is what a note callout
+ * needs. Same two-step shape, same chunking, and the same refusal to throw —
+ * the fiche is the page, and its callouts must never be able to cost it.
+ */
+// @req REQ-007
+export async function getFieldNotes(
+  entityType: string,
+  entityId: string
+): Promise<FieldNote[]> {
+  if (!entityId) return [];
+
+  const supabase = createServerClient();
+
+  const { data: assertionData, error: assertionError } = await supabase
+    .from("assertions")
+    .select("id, field_path, statement, confidence_level, source_ids")
+    .eq("entity_type", entityType)
+    .eq("entity_id", entityId)
+    // A superseded assertion is a claim the corpus has moved past; a callout
+    // on it would cite the fiche for something it no longer says.
+    .is("superseded_by", null);
+
+  if (assertionError) {
+    logger.error("module-zero-batch.getFieldNotes failed", assertionError);
+    return [];
+  }
+
+  const assertions = (assertionData || []) as Array<{
+    id: string;
+    field_path: string;
+    statement: string | null;
+    confidence_level: string | null;
+    source_ids: string[] | null;
+  }>;
+
+  const allSourceIds = uniqueStrings(
+    assertions.flatMap((row) => row.source_ids ?? [])
+  );
+  if (allSourceIds.length === 0) return [];
+
+  const sourcesById = new Map<string, NoteSource>();
+  for (const ids of chunk(allSourceIds, CHUNK_SIZE)) {
+    const { data, error } = await supabase
+      .from("sources")
+      .select("id, title, url, tier, notes, author, year")
+      .in("id", ids);
+
+    if (error) {
+      logger.error("module-zero-batch.getFieldNotes failed", error);
+      return [];
+    }
+
+    for (const src of data || []) {
+      sourcesById.set(src.id, {
+        id: src.id,
+        title: src.title,
+        url: src.url ?? null,
+        tier: isSourceTier(src.tier) ? src.tier : null,
+        notes: src.notes ?? null,
+        author: src.author ?? null,
+        year: src.year ?? null,
+      });
+    }
+  }
+
+  const notes: FieldNote[] = [];
+  for (const row of assertions) {
+    const sources = (row.source_ids ?? [])
+      .map((id) => sourcesById.get(id))
+      .filter((source): source is NoteSource => Boolean(source));
+
+    // A field whose sources have all gone is not a field with an empty
+    // bibliography — it is a field with no callout.
+    if (sources.length === 0) continue;
+
+    notes.push({
+      fieldPath: row.field_path,
+      assertionId: row.id,
+      statement: row.statement ?? "",
+      confidenceLevel: row.confidence_level ?? null,
+      sources,
+    });
+  }
+
+  return notes;
+}
