@@ -129,6 +129,33 @@ describe("sitemap entity ids", () => {
     });
   });
 
+  // A database that never answers reaches this walk as a throw, not as an
+  // `{ error }`: the deadline in requestDeadline.ts aborts the fetch and
+  // Supabase rejects. Both are the same outcome for a sitemap, so an
+  // exception must not escape the walk either.
+  // @req REQ-110
+  it("yields empty lists rather than throwing when a query rejects", async () => {
+    const client = {
+      from: vi.fn(() => client),
+      select: vi.fn(() => client),
+      order: vi.fn(() => client),
+      range: vi.fn(async () => {
+        throw new Error("The operation was aborted");
+      }),
+    };
+    (createServerClient as unknown as ReturnType<typeof vi.fn>).mockReturnValue(
+      client
+    );
+
+    await expect(getSitemapEntityIds()).resolves.toEqual({
+      peoples: [],
+      countries: [],
+      families: [],
+      languages: [],
+      patronymes: [],
+    });
+  });
+
   // @req REQ-110
   it("yields empty lists when the client itself cannot be built", async () => {
     (
