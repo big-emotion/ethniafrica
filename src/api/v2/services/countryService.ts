@@ -5,6 +5,7 @@
 import {
   getAllAfrikCountries,
   getAfrikCountryById,
+  getAfrikCountryIndexRows,
 } from "@/lib/supabase/queries/afrik/countries";
 import {
   compactCountryAtlasLanguages,
@@ -37,13 +38,17 @@ export async function getCountries(
  * Deliberately not derived from the admin-0 geometry: three geometric
  * entries have no fiche and six fiches have no geometry, so a list built
  * from the asset would offer dead ends and hide real countries.
+ *
+ * Read through its own narrow query rather than through `getAllAfrikCountries`,
+ * for the reason that query records: the `/fr/atlas` layout calls this on every
+ * route in the subtree, and a whole-fiche read for two columns is what pushed it
+ * past the Supabase deadline.
  */
 // @req REQ-116
 export async function getCountryIndex(): Promise<
   Array<{ id: string; nameFr: string }>
 > {
-  const all = await getAllAfrikCountries();
-  return all.map((country) => ({ id: country.id, nameFr: country.nameFr }));
+  return getAfrikCountryIndexRows();
 }
 
 export interface CountryAtlasIndexEntry {

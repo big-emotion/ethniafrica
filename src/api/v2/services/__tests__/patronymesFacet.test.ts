@@ -256,9 +256,13 @@ describe("name facet — what the reader may narrow to", () => {
         );
       }
       if (table === "afrik_peoples") {
+        // The row shape the corpus actually has. `content` carries no
+        // `nameMain` on any of the 790 fiches — the name is the `name_main`
+        // column — so a double that supplied one had the label resolve in the
+        // test and fall back to the raw `PPL_*` id on the page.
         return buildChain(
           {
-            data: [{ id: "PPL_BAMANA", content: { nameMain: "Bamana" } }],
+            data: [{ id: "PPL_BAMANA", name_main: "Bamana" }],
             error: null,
           },
           calls
@@ -282,6 +286,53 @@ describe("name facet — what the reader may narrow to", () => {
     expect(choices.countries).toEqual([{ id: "MLI", label: "Mali" }]);
     expect(choices.nameSystems.map((option) => option.id)).toEqual([
       "clan_name",
+    ]);
+  });
+
+  // @req REQ-139
+  it("asks afrik_peoples for the name column rather than the whole fiche", async () => {
+    const calls: Call[] = [];
+    fromMock.mockImplementation((table: string) => {
+      if (table === "afrik_peoples") {
+        return buildChain(
+          { data: [{ id: "PPL_BAMANA", name_main: "Bamana" }], error: null },
+          calls
+        );
+      }
+      if (table === "afrik_patronyme_peoples") {
+        return buildChain({ data: [{ people_id: "PPL_BAMANA" }] }, calls);
+      }
+      return buildChain({ data: [], error: null }, calls);
+    });
+
+    await getPatronymesFacetChoices();
+
+    const peopleSelect = calls.find(
+      ([method, args]) => method === "select" && args[0] === "id, name_main"
+    );
+    expect(peopleSelect).toBeDefined();
+  });
+
+  // @req REQ-139
+  it("falls back to the identifier only when the corpus names nothing", async () => {
+    const calls: Call[] = [];
+    fromMock.mockImplementation((table: string) => {
+      if (table === "afrik_peoples") {
+        return buildChain(
+          { data: [{ id: "PPL_UNNAMED", name_main: null }], error: null },
+          calls
+        );
+      }
+      if (table === "afrik_patronyme_peoples") {
+        return buildChain({ data: [{ people_id: "PPL_UNNAMED" }] }, calls);
+      }
+      return buildChain({ data: [], error: null }, calls);
+    });
+
+    const choices = await getPatronymesFacetChoices();
+
+    expect(choices.peoples).toEqual([
+      { id: "PPL_UNNAMED", label: "PPL_UNNAMED" },
     ]);
   });
 });
