@@ -8,7 +8,25 @@ title = "ethniafrica gitleaks config"
 useDefault = true
 
 [allowlist]
-description = "Global allowlist for known non-secret paths"
+description = "Global allowlist for known non-secret paths and corpus source keys"
+
+# Matched against the whole line, so the exemption can be anchored on the field
+# name rather than on the value alone.
+regexTarget = "line"
+regexes = [
+  # AFRIK fiches cite each claim through a `sourceKey` — a bibliographic handle
+  # in author-year-subject form (`roscoe-1911-baganda`). generic-api-key reads
+  # those as credentials, which reddened every PR on the branch once the first
+  # patronyme fiches landed.
+  #
+  # Keyed on the field AND on the shape of its value: lowercase alphanumeric
+  # kebab-case, which all 84 sourceKeys in the corpus follow. The narrowness is
+  # the point — a real credential dropped into a sourceKey would carry
+  # uppercase, underscores or symbols and would still be caught. Exempting the
+  # corpus by path instead would have blinded the scanner to ~890 files.
+  '''"sourceKey"\s*:\s*"[a-z0-9]+(?:-[a-z0-9]+)*"''',
+]
+
 paths = [
   # Anchored so prefixes/suffixes (e.g. backup/package-lock.json) don't match.
   '''^package-lock\.json$''',
