@@ -100,7 +100,12 @@ Rules:
     record the mismatch — do not silently misfile it.
   - `peopleIds` must be real `PPL_*` ids present in the corpus. The generator
     fails on an unknown id and warns when a people is not attested in the
-    country claimed; leave the array empty rather than guess.
+    country claimed; leave the array empty rather than guess. Treat this as part
+    of the deliverable rather than an optional field: a candidate that reaches
+    wave 1 with an empty array becomes a fiche no people page will ever list,
+    and the people route is how a reader is expected to find names. Leave it
+    empty only where the name genuinely designates no group — a non-hereditary
+    patronymic names one person's father, not a lineage.
   - No duplicate name within a country. Across countries is fine and expected:
     a name attested in five countries is one fiche with five attestations.
   - Prefer names that are frequent *and* onomastically informative. Ten
@@ -209,11 +214,64 @@ states what was searched and did not turn up rather than that the corpus passage
 did not mention it.
 ```
 
-## What is deliberately not in this plan
+## The parallel track: making the coverage visible
 
-**A per-country names section on the country fiche.** Coverage exists in the
-data long before it is visible: today a name is reachable at
-`/fr/atlas/noms/[slug]` and through `/api/v2/patronymes`, but no country page
-lists its names. "Every country represented by names" is only true to a reader
-once that section ships. It is a front-end ticket, independent of every wave
-above, and it can be built as soon as wave 1 lands.
+Coverage exists in the data long before a reader sees it. Today a name is
+reachable at `/fr/atlas/noms/[slug]` and through `/api/v2/patronymes`, but no
+people page and no country page lists its names — so "every country represented
+by names" can be true in the corpus and false on screen.
+
+This track **does not depend on any wave** and can start immediately: both join
+tables exist and are populated, so it is an API and UI change with no migration.
+It gets better as the waves land, and it is what makes them worth landing.
+
+`docs/design/name-to-country-linking.md` is the model. Its one load-bearing
+finding, measured rather than assumed: the direct country link and the
+people→country route return **different sets** — 21 countries against 25, with
+two reachable only directly and six only via peoples. They are different claims,
+attestation against reach, and merging them into one list would publish an
+inference as a sourced fact.
+
+```text
+You are working on the EthniAfrica front end and API.
+
+Surface the name dimension on the people and country fiches, following
+docs/design/name-to-country-linking.md. Read it first — it carries the one
+constraint that makes this non-trivial.
+
+Add:
+  - `/api/v2/peoples/{id}` — the names borne by this people, from
+    afrik_patronyme_peoples. Route, handler and service, per the three-layer
+    rule in CLAUDE.md, plus the OpenAPI spec in src/lib/api/openapiV2.ts.
+  - `/api/v2/countries/{id}` — the names attested in this country, from
+    afrik_patronyme_countries.
+  - a "Noms portés" section on the people fiche and a "Noms attestés" section on
+    the country fiche, each linking through to /fr/atlas/noms/[slug].
+
+The constraint: the direct country link and the people→country route return
+different sets and mean different things — where the name is attested, against
+where the people who bear it live. Keep them as separate, separately headed
+lists, worded so the second reads as reach and not as attestation. Do not sum
+them into one country list.
+
+Handle the empty case as a declared gap, not a blank: a people with no names yet
+is the normal state today (13 peoples out of ~800 carry one), and the section
+should say so rather than disappear.
+
+Mobile first — 430px, then 720, then 800. Invoke /afrik-art-director before
+deciding anything about how the section looks.
+```
+
+## Running these in parallel
+
+| Track                | Depends on                                               | Can start                          |
+| -------------------- | -------------------------------------------------------- | ---------------------------------- |
+| Link surface (above) | nothing                                                  | now                                |
+| Wave 0, per country  | nothing                                                  | now, and several countries at once |
+| Wave 2 on FLG_MANDE  | the 12 Mande fiches, which exist                         | now                                |
+| Wave 1               | nothing technically; better after wave 0 so it runs once | after wave 0                       |
+| Waves 3+             | wave 1, for the fiches to exist                          | after wave 1                       |
+
+Wave 1 is a generator, so re-running it after wave 0 grows the queue costs
+nothing — the sequencing above is about not reviewing the same 780 fiches twice,
+not about a technical dependency.
