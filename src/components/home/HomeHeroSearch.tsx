@@ -491,9 +491,12 @@ export function HomeHeroSearch({
 
       <style>{`
         /* The search remains a distinct action while sitting close enough to
-           the answer to read as its way into the corpus. */
+           the answer to read as its way into the corpus. 36px on the phone,
+           not the desktop 24 that used to apply everywhere: at 430px the
+           title, the answer and the search sat close enough to read as one
+           dense paragraph rather than a question followed by its way in. */
         .home-hero-search {
-          margin-top: 24px;
+          margin-top: 36px;
           text-align: left;
         }
 

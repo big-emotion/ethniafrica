@@ -248,8 +248,13 @@ export function HomeHero({
           color: var(--afh-text-soft);
         }
 
+        /* Taller on the phone than the desktop's original 26px: it is the
+           one thing that tells a reader the hero has ended and the next
+           section has begun, and at 430px the two used to abut close enough
+           to read as one band. The @media below restores the desktop value,
+           which was never the complaint. */
         .home-hero-seam {
-          height: 26px;
+          height: 44px;
           background: var(--afh-bg);
           border-bottom: 1px solid var(--afh-cat-ocre);
         }
@@ -258,6 +263,9 @@ export function HomeHero({
           .home-hero-inner {
             gap: 24px;
             padding-block: 32px 36px;
+          }
+          .home-hero-seam {
+            height: 26px;
           }
           .home-hero-globe .home-globe-stage {
             min-height: 380px;
