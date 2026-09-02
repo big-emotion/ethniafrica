@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
   },
   "id": "PAT_GUEYE",
   "nameMain": "Gueye",
@@ -11,35 +11,62 @@
     {
       "spelling": "Gueye",
       "attestations": [
-        { "countryId": "SEN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SEN",
+          "sourceRefs": [
+            "madubuike-1994-african-names",
+            "dafn-familysearch-gueye"
+          ]
+        }
       ]
     },
     {
       "spelling": "Géey",
       "attestations": [
-        { "countryId": "SEN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    },
+    {
+      "spelling": "Guèye",
+      "attestations": [
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["dafn-familysearch-gueye"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Gueye est documenté parmi les patronymes wolof transmis par les hommes ; l’entrée DAFN atteste aussi la graphie Guèye chez les Wolof, Lébou et Toucouleur du Sénégal, tout en laissant l’étymologie inexpliquée.",
+        "claimStatus": "established",
+        "sourceRefs": [
+          "madubuike-1994-african-names",
+          "dafn-familysearch-gueye"
+        ]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_WOLOF",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["madubuike-1994-african-names", "dafn-familysearch-gueye"]
     }
   ],
   "countries": [
     {
       "countryId": "SEN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["madubuike-1994-african-names", "dafn-familysearch-gueye"]
     }
   ],
   "alliances": [],
@@ -53,33 +80,41 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Source de vague 1 conservée uniquement pour la graphie Géey, absente des deux références consultées. Gueye et Guèye, l’association wolof et l’ancrage sénégalais sont désormais documentés séparément."
+    },
+    {
+      "sourceKey": "madubuike-1994-african-names",
+      "title": "A Handbook of African Names",
+      "url": "https://dokumen.pub/a-handbook-of-african-names-2-revnbsped-0894104381-9780894104381-0894104373.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ihechukwu Madubuike, 2e éd., Three Continents Press, 1994. La section consacrée aux Wolof indique que les enfants prennent le nom familial du père et cite Diop, Ndiaye, Fall et Gueye parmi les patronymes communs transmis par les hommes. La consultation a porté sur une transcription numérique miroir du volume imprimé."
+    },
+    {
+      "sourceKey": "dafn-familysearch-gueye",
+      "title": "Dictionary of American Family Names — Gueye entry",
+      "url": "https://www.familysearch.org/en/surname?surname=Gueye",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Entrée FamilySearch reproduisant le Dictionary of American Family Names de Patrick Hanks. Elle atteste Gueye/Guèye principalement au Sénégal chez les Wolof, Lébou et Toucouleur et indique que l’étymologie demeure inexpliquée."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L’article de Lamine Ndiaye sur la parenté à plaisanterie wolof et les entrées Gueye de Madubuike et du DAFN ont été recherchés ; aucune paire patronymique explicite n’a été trouvée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Madubuike et l’entrée DAFN/FamilySearch documentent Gueye comme patronyme et sa transmission, sans lui attribuer de caste, métier héréditaire ou fonction sociale propre."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Le manuel de Madubuike et l’entrée DAFN/FamilySearch ne fournissent aucun porteur décédé dont le rattachement lignager serait établi au-delà de la simple homonymie."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L’entrée DAFN/FamilySearch a été recherchée pour plusieurs origines de Gueye ; elle atteste le nom chez trois peuples voisins mais ne décrit pas de lignée homonyme distincte."
     }
   ]
 }

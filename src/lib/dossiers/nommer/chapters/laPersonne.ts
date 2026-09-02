@@ -40,7 +40,7 @@ export const CHAPITRE_LA_PERSONNE: DossierChapter = {
       heading: "Ce que le corpus tient",
       blocks: [
         {
-          text: "L'atlas documente trente systèmes de nomination. Ils ne se ressemblent pas : un nom de clan, un nom de louange récité, un nom d'attribution géographique, un nom totémique assorti d'un interdit alimentaire. Ce que le mot « patronyme » recouvre en français est, ici, une demi-douzaine de choses différentes.",
+          text: "L'atlas documente trente-six systèmes de nomination. Ils ne se ressemblent pas : un nom de clan, un nom de louange récité, un nom d'attribution géographique, un nom totémique assorti d'un interdit alimentaire. Ce que le mot « patronyme » recouvre en français est, ici, une demi-douzaine de choses différentes.",
           sourceRefs: ["afrik-naming-taxonomy"],
           figureRefs: ["patronyme-fiches"],
         },
@@ -206,7 +206,7 @@ export const CHAPITRE_LA_PERSONNE: DossierChapter = {
           figureRefs: [],
         },
         {
-          text: "Trente fiches de nom, c'est peu au regard des systèmes qui existent. La chaîne somalie, l'abtirsi, n'a pas encore la sienne, et le corpus ne porte aucune fiche dont le système déclaré soit le postnom. Le glossaire les définit quand même, en disant qu'il les définit sans les instancier.",
+          text: "Trente-six fiches de nom, c'est peu au regard des systèmes qui existent. La chaîne somalie, l'abtirsi, n'a pas encore la sienne, et le corpus ne porte aucune fiche dont le système déclaré soit le postnom. Le glossaire les définit quand même, en disant qu'il les définit sans les instancier.",
           sourceRefs: [],
           figureRefs: ["patronyme-fiches"],
         },

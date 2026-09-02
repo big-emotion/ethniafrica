@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier mossi documenté par fiche ; distinguer l'histoire localisée du lignage de Niaogo des gloses générales du répertoire provisoire."
   },
   "id": "PAT_COMPAORE",
   "nameMain": "Compaoré",
@@ -11,35 +11,59 @@
     {
       "spelling": "Compaoré",
       "attestations": [
-        { "countryId": "BFA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["niggli-2008-kasena-names"]
+        }
       ]
     },
     {
       "spelling": "Compaore",
       "attestations": [
-        { "countryId": "BFA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["burkina-provisional-patronyme-register"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "writtenChronicles": [
+      {
+        "claim": "Une étude de peuplement situe un lignage Compaoré à Niaogo, venu de Guiéri puis segmenté vers Sondogo et Widi. La même étude rapporte prudemment que ce lignage aurait auparavant porté le nom Savadogo ; cette dernière filiation reste une hypothèse localisée et non une origine générale de tous les Compaoré.",
+        "claimStatus": "contested",
+        "sourceRefs": ["lahuec-1979-mobilite-bissa-mossi"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le répertoire provisoire rattache Compaoré à une formule en mooré évoquant ceux qui peuvent manquer la chefferie sans manquer d'être descendants de Naaba Oubri. Cette explication collectée n'est pas corroborée par une analyse linguistique publiée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["burkina-provisional-patronyme-register"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_MOSSI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "niggli-2008-kasena-names",
+        "lahuec-1979-mobilite-bissa-mossi"
+      ]
     }
   ],
   "countries": [
     {
       "countryId": "BFA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "niggli-2008-kasena-names",
+        "lahuec-1979-mobilite-bissa-mossi"
+      ]
     }
   ],
   "alliances": [],
@@ -48,38 +72,58 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
+      "sourceKey": "izard-1973-mossi-buudu",
+      "title": "La Lance et les guenilles",
+      "url": "https://www.persee.fr/doc/hom_0439-4216_1973_num_13_3_367368?pageId=T1_141",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Michel Izard, L'Homme, 13(3), 1973, p. 139-149. La p. 141 a été consultée : le buudu y est défini comme groupe de descendance patrilinéaire et unité exogamique, identifié notamment par le nom collectif ou sondre. Cette source établit le cadre de transmission mossi, non l'étymologie de Compaoré."
+    },
+    {
+      "sourceKey": "niggli-2008-kasena-names",
+      "title": "Noms des Kasena",
+      "url": "https://sil-burkina.org/sites/default/files/Noms%20des%20Kassena.pdf",
+      "tier": "official",
+      "source_kind": "linguistic_reference",
+      "notes": "Urs et Idda Niggli, Société internationale de linguistique, Ouagadougou, 2008. La section 6.4, p. 42, a été consultée ; elle donne Compaoré parmi les exemples de noms de famille mossi. Elle ne propose aucune étymologie pour ce nom."
+    },
+    {
+      "sourceKey": "lahuec-1979-mobilite-bissa-mossi",
+      "title": "La mobilité du peuplement Bissa et Mossi",
+      "url": "https://horizon.documentation.ird.fr/exl-doc/pleins_textes/pleins_textes_5/pt5/travaux_d/21153.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Étude ORSTOM consultée au passage sur Niaogo, p. 27 : elle qualifie explicitement Compaoré de patronyme mossi, décrit les segments du lignage local et formule avec réserve l'hypothèse d'un ancien nom Savadogo. La conclusion ne doit pas être étendue aux autres lignages Compaoré."
+    },
+    {
+      "sourceKey": "burkina-provisional-patronyme-register",
+      "title": "Projet de répertoire des patronymes au Burkina Faso — version provisoire",
+      "url": "https://pdfcoffee.com/repertoire-des-patronymes-nationaux-du-burkina-pdf-free.html",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "source_kind": "government",
+      "notes": "Document de travail de la Direction du patrimoine culturel, sans date ni validation finale visibles, consulté sur une copie PDFCoffee non authentifiée. Seule la notice COMPAORE a été utilisée ici. Ses traditions et gloses restent au statut claimed faute d'appareil critique."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La notice COMPAORE rapporte une tradition sans griot nommé ni transcription ; l'étude de Niaogo est une synthèse écrite et ne fournit pas ces éléments."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Le répertoire cite des relations locales et intergroupes, mais la recherche n'a pas établi de paire Compaoré/PAT_* précise, réciproque et vérifiable."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les études de Niaogo, du buudu mossi et la notice COMPAORE ont été vérifiées ; aucune fonction ou profession héréditaire générale n'en ressort."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches biographiques ont surtout livré des responsables politiques contemporains ; aucune notice consultée de porteur décédé ne documente l'histoire anthroponymique du nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les formes Compaoré/Compaore et l'hypothèse locale Savadogo ont été comparées ; la seconde est une ancienne désignation supposée, non une lignée homonyme établie."
     }
   ]
 }

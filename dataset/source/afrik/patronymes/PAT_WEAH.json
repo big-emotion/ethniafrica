@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier révisé par recherche dédiée. L'origine comme nom personnel kru et une attestation historique de son anglicisation sont documentées ; les autres rubriques restent bornées par leurs lacunes."
   },
   "id": "PAT_WEAH",
   "nameMain": "Weah",
@@ -11,7 +11,10 @@
     {
       "spelling": "Weah",
       "attestations": [
-        { "countryId": "LBR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "LBR",
+          "sourceRefs": ["dafn-2022-weah", "gunn-2019-kru-workers"]
+        }
       ]
     }
   ],
@@ -19,21 +22,33 @@
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "writtenChronicles": [
+      {
+        "claim": "Dans l'histoire des établissements de la côte kru, King Weah's Town apparaît aussi sous le nom anglais King William's Town ; William y est présenté comme l'anglicisation de Weah.",
+        "claimStatus": "established",
+        "sourceRefs": ["gunn-2019-kru-workers"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Au Liberia, le patronyme Weah provient d'un nom personnel masculin attesté chez les Kru. Son étymologie lexicale demeure inexpliquée.",
+        "claimStatus": "established",
+        "sourceRefs": ["dafn-2022-weah"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_KRU",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["dafn-2022-weah", "gunn-2019-kru-workers"]
     }
   ],
   "countries": [
     {
       "countryId": "LBR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["dafn-2022-weah", "gunn-2019-kru-workers"]
     }
   ],
   "alliances": [],
@@ -42,38 +57,54 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "sourceKey": "dafn-2022-weah",
+      "title": "Dictionary of American Family Names, 2nd edition — Weah",
+      "url": "https://www.ancestry.com/last-name-meaning/weah",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Entrée de la deuxième édition du Dictionary of American Family Names (2022), diffusée par Ancestry. Elle rattache explicitement le nom libérien Weah à un nom personnel masculin kru et déclare son étymologie inexpliquée."
+    },
+    {
+      "sourceKey": "gunn-2019-kru-workers",
+      "title": "Homeland, Diasporas and Labour Networks: The Case of Kru Workers, 1792-1900",
+      "url": "https://yorkspace.library.yorku.ca/bitstreams/2c05f6bf-dec9-4daa-b10d-af069cb37512/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Thèse de doctorat en histoire de Jeffrey David Gunn, York University, 2019. À la page imprimée 39 (page 48 du fichier PDF), l'auteur situe King William's Town parmi les premiers établissements kru et précise que William est l'anglicisation de Weah. Cette attestation historique n'établit ni une étymologie lexicale ni une règle de transmission patronymique."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "nameSystem",
+      "reason": "Le Dictionary of American Family Names qualifie Weah de patronyme issu d'un nom personnel masculin, et Gunn documente une anglicisation historique du nom. Aucun de ces travaux ne dit si le patronyme désigne un clan ; la valeur typologique exigée par le modèle reste non résolue."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Gunn décrit les panton ou patrilignages kru en général, mais ne rattache pas Weah à l'un d'eux. L'entrée onomastique ne nomme pas davantage d'unité sociale ; aucune désignation de clan ou de lignage ne peut être affirmée."
+    },
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Gunn cite des traditions kru recueillies par James Connelly, mais le passage propre à Weah est une explication historique d'anglicisation et n'attribue aucun récit du nom à un griot identifiable. Les recherches « Weah Kru oral tradition » n'ont pas fourni la transcription requise."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Weah Kru joking relationship », « Weah clan alliance Liberia » et la littérature historique kru consultée n'ont nommé aucune parenté à plaisanterie avec un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La thèse de Gunn décrit des fonctions et classes d'âge kru, mais n'en attache aucune au nom Weah. L'entrée onomastique et les documents administratifs consultés ne signalent pas non plus de fonction héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches biographiques ont surtout livré George Weah, personne vivante donc exclue par le protocole. Le King Weah évoqué dans la toponymie historique n'est pas établi comme porteur du patronyme moderne ; aucun porteur défunt admissible n'a été ajouté."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Le Dictionary of American Family Names, les catalogues onomastiques et les recherches exactes « Weah surname other origin » n'ont pas révélé de graphie identique dotée d'une origine indépendante."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Le Dictionary of American Family Names établit une origine dans un nom personnel masculin, tandis que Gunn décrit des patrilignages kru sans rattacher Weah à l'un d'eux. Aucun passage ne documente la transmission de ce patronyme ; la valeur reste « other »."
     }
   ]
 }

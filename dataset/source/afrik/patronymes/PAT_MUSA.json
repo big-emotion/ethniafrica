@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Musa ; les lacunes consignent les recherches restées sans résultat."
   },
   "id": "PAT_MUSA",
   "nameMain": "Musa",
@@ -11,13 +11,10 @@
     {
       "spelling": "Musa",
       "attestations": [
-        { "countryId": "NGA", "sourceRefs": ["afrik-candidate-queue"] }
-      ]
-    },
-    {
-      "spelling": "Moussa",
-      "attestations": [
-        { "countryId": "NGA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["ryan-1981-musa", "statehouse-cabinet-musa"]
+        }
       ]
     }
   ],
@@ -26,20 +23,31 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Ryan atteste Musa dans la nomenclature masculine islamique haoussa et le rapproche de Moïse. Amoo, Ajayi et Sabo confirment que Musa figure parmi les noms de prophètes employés dans les pratiques de nomination musulmanes haoussa.",
+        "claimStatus": "established",
+        "sourceRefs": ["ryan-1981-musa", "amoo-2022-musa"]
+      },
+      {
+        "claim": "Dans le système haoussa décrit par Chamo, le nom personnel du père est couramment placé après le prénom de l'enfant sans devenir un nom de famille héréditaire stable.",
+        "claimStatus": "established",
+        "sourceRefs": ["chamo-2018-musa"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_HAUSA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["ryan-1981-musa", "amoo-2022-musa"]
     }
   ],
   "countries": [
     {
       "countryId": "NGA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["statehouse-cabinet-musa"]
     }
   ],
   "alliances": [],
@@ -48,34 +56,62 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "sourceKey": "ryan-1981-musa",
+      "title": "An Introduction to Hausa Personal Nomenclature",
+      "url": "https://ans-names.pitt.edu/ans/article/download/942/941/1886",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Pauline M. Ryan, Names 29(2), 1981, pp. 139-164. Le tableau I consulté dans le PDF intégral atteste exactement Musa dans la nomenclature islamique haoussa et donne Moses comme équivalent."
+    },
+    {
+      "sourceKey": "amoo-2022-musa",
+      "title": "Personal names and naming practices in Hausa and English",
+      "url": "https://www.researchgate.net/publication/380826040_Personal_names_and_naming_practices_in_Hausa_and_English",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Amoo, Ajayi et Sabo, Papers in African Languages and Linguistics 9, 2022, pp. 46-74. Le texte intégral consulté classe Musa parmi les noms de prophètes employés par les Haoussa musulmans. L'hébergement ResearchGate est un dépôt, pas l'éditeur de la revue."
+    },
+    {
+      "sourceKey": "chamo-2018-musa",
+      "title": "Language and Identity in Africa: The Use of Place Names as Part of a Person’s Name in Hausa",
+      "url": "https://auadamu.com/phocadownload/Books/%5B2018%5D%20Festschrift%20in%20Honour%20of%20Abdalla%20Uba%20Adamu%20-%20Media%20-Knowledge%20Transfer%20and%20African%20Identity.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Isa Yusuf Chamo, 2018, pp. 251-252 du chapitre consulté dans le volume intégral. Établit le fonctionnement non héréditaire du patronyme haoussa ; ne traite pas l'étymologie de Musa."
+    },
+    {
+      "sourceKey": "statehouse-cabinet-musa",
+      "title": "The Cabinet — The State House, Abuja",
+      "url": "https://statehouse.gov.ng/the-cabinet/",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Page officielle consultée directement le 2 septembre 2026. Elle atteste Musa au Nigeria dans les noms de Hannatu Musa Musawa et Christopher G. Musa ; elle ne porte aucune affirmation ethnique ou étymologique."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La requête « Musa Hausa oral tradition griot lineage », Ryan (1981), Chamo (2018) et Amoo, Ajayi et Sabo (2022) n'ont livré ni griot nommé ni transcription attribuable à Musa."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Musa Hausa Arabic chronicle manuscript » et « Musa Nigeria colonial record » n'ont livré aucune chronique dédiée établissant l'histoire de cette forme dans la nomenclature haoussa."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Musa Hausa joking relationship », « Musa sanankuya », « Musa kal » et « Musa dandiraaɓe » n'ont établi aucune paire entre deux fiches PAT_* existantes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Ryan (1981), Chamo (2018), Amoo, Ajayi et Sabo (2022) et la recherche « Musa Hausa hereditary occupation caste » n'ont associé ce nom personnel à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La page du gouvernement nigérian et les recherches « Musa Nigeria obituary biography » n'ont fourni dans cette passe aucune notice dédiée de porteur décédé ajoutant une information anthroponymique ; aucun vivant n'a été enregistré."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Musa homonym etymology Hausa » et les travaux académiques consultés n'ont pas établi une graphie identique d'origine distincte dans le corpus africain."
     }
   ]
 }
