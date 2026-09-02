@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_KAAPANDA",
   "nameMain": "Kaapanda",
@@ -11,7 +11,10 @@
     {
       "spelling": "Kaapanda",
       "attestations": [
-        { "countryId": "NAM", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NAM",
+          "sourceRefs": ["namibia-gazette-kaapanda"]
+        }
       ]
     }
   ],
@@ -25,7 +28,7 @@
   "peoples": [
     {
       "peopleId": "PPL_OVAMBO",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     }
   ],
@@ -33,7 +36,7 @@
     {
       "countryId": "NAM",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["namibia-gazette-kaapanda"]
     }
   ],
   "alliances": [],
@@ -42,38 +45,46 @@
   "homonyms": [],
   "sources": [
     {
+      "sourceKey": "namibia-gazette-kaapanda",
+      "title": "Government Gazette of the Republic of Namibia, 21 November 2013",
+      "url": "https://mict.gov.na/documents/869282/1009163/DTT%2BPolicy.pdf/cb29d77c-33d1-5aab-f781-180b583bda6d?t=1656589890556",
+      "tier": "official",
+      "source_kind": "archive",
+      "notes": "Document primaire de la Gazette officielle namibienne consulté intégralement. Il porte la signature de Joël N. Kaapanda, alors ministre de l'Information et des Technologies de la communication, et atteste la graphie en Namibie sans documenter son appartenance ovambo, son origine ou sa transmission."
+    },
+    {
       "sourceKey": "afrik-candidate-queue",
       "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kaapanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la « Government Gazette of the Republic of Namibia » du 21 novembre 2013 n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine du nom. Les attestations géographiques ou individuelles trouvées ne sont pas transformées en étymologie."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kaapanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la « Government Gazette of the Republic of Namibia » du 21 novembre 2013 n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kaapanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la « Government Gazette of the Republic of Namibia » du 21 novembre 2013 n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kaapanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la « Government Gazette of the Republic of Namibia » du 21 novembre 2013 n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kaapanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la « Government Gazette of the Republic of Namibia » du 21 novembre 2013 n'ont pas établi de lignée homonyme d'origine distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web combinant « Kaapanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la « Government Gazette of the Republic of Namibia » du 21 novembre 2013 n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }

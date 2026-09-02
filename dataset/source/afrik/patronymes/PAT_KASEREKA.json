@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_KASEREKA",
   "nameMain": "Kasereka",
@@ -11,7 +11,19 @@
     {
       "spelling": "Kasereka",
       "attestations": [
-        { "countryId": "COD", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "COD",
+          "sourceRefs": ["mrac-kinande-kasereka"]
+        }
+      ]
+    },
+    {
+      "spelling": "Kaseréka",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["mrac-kinande-kasereka"]
+        }
       ]
     }
   ],
@@ -20,20 +32,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le Dictionnaire kinande-français du Musée royal de l'Afrique centrale donne Kaseréka comme nom chronologique nande attribué au troisième enfant mâle et le rapproche de Kábúyahia, Máte et Kámatê. Il documente ainsi une règle de rang de naissance, sans faire de Kasereka un patronyme héréditaire.",
+        "claimStatus": "established",
+        "sourceRefs": ["mrac-kinande-kasereka"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_NANDE",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["mrac-kinande-kasereka"]
     }
   ],
   "countries": [
     {
       "countryId": "COD",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["mrac-kinande-kasereka"]
     }
   ],
   "alliances": [],
@@ -42,34 +60,30 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "mrac-kinande-kasereka",
+      "title": "Dictionnaire kinande-français avec index français-kinande",
+      "url": "https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/documents-social-sciences-humanities/dictionnaire-kinande-francais.pdf",
+      "tier": "official",
+      "source_kind": "linguistic_reference",
+      "notes": "Dictionnaire de Kambale Kavutirwaki et Ngessimo M. Mutaka publié par le Musée royal de l'Afrique centrale en 2012, consulté intégralement. L'entrée Kaseréka le définit explicitement comme nom chronologique nande du troisième enfant mâle."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kasereka », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le Dictionnaire kinande-français de Kambale Kavutirwaki et Ngessimo M. Mutaka, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kasereka », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le Dictionnaire kinande-français de Kambale Kavutirwaki et Ngessimo M. Mutaka, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kasereka », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le Dictionnaire kinande-français de Kambale Kavutirwaki et Ngessimo M. Mutaka, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kasereka », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le Dictionnaire kinande-français de Kambale Kavutirwaki et Ngessimo M. Mutaka, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
     }
   ]
 }

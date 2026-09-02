@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_ESSOMBA",
   "nameMain": "Essomba",
@@ -11,7 +11,10 @@
     {
       "spelling": "Essomba",
       "attestations": [
-        { "countryId": "CMR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["yaounde-essomba-traditions"]
+        }
       ]
     }
   ],
@@ -19,21 +22,27 @@
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Un récit attribué à Ndougsa Vincent présente Essomba Na Ba'ana comme l'un des enfants de Fura ou Fouda Togo et fait dériver de sa descendance plusieurs familles et lignages ewondo. La publication est secondaire et communautaire ; cette généalogie reste donc revendiquée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["actu-cameroun-essomba-2024"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_EWONDO",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["yaounde-essomba-traditions"]
     }
   ],
   "countries": [
     {
       "countryId": "CMR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["yaounde-essomba-traditions"]
     }
   ],
   "alliances": [],
@@ -42,38 +51,42 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "yaounde-essomba-traditions",
+      "title": "Traditions et Cultures — Communauté urbaine de Yaoundé",
+      "url": "https://yaounde.cm/?page_id=1907",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Page officielle de la Communauté urbaine de Yaoundé consultée intégralement. Elle situe les populations ewondo à Yaoundé, décrit leurs lignages et donne « Epsum », « chez Essomba », comme un ancien nom de la ville. Elle confirme le contexte ewondo et camerounais, non l'étymologie du patronyme."
+    },
+    {
+      "sourceKey": "actu-cameroun-essomba-2024",
+      "title": "Origines des Éwondo : récit de Ndougsa Vincent",
+      "url": "https://actucameroun.com/2024/02/18/histoire-voici-les-origines-des-ewondo/",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "unknown",
+      "notes": "Article d'Armand Djaleu, 18 février 2024, consulté intégralement. Il reproduit un récit attribué à Ndougsa Vincent et nomme Essomba Na Ba'ana ainsi que plusieurs rameaux Mvog Essomba. Faute de transcription primaire et d'identification d'un griot, le récit est conservé comme chronique écrite revendiquée, pas comme tradition orale structurée."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Essomba », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Traditions et Cultures — Communauté urbaine de Yaoundé » et « Origines des Éwondo : récit de Ndougsa Vincent » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Essomba à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Essomba », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Traditions et Cultures — Communauté urbaine de Yaoundé » et « Origines des Éwondo : récit de Ndougsa Vincent » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Essomba."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Essomba », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « Traditions et Cultures — Communauté urbaine de Yaoundé » et « Origines des Éwondo : récit de Ndougsa Vincent », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Essomba », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « Traditions et Cultures — Communauté urbaine de Yaoundé » et « Origines des Éwondo : récit de Ndougsa Vincent », n'ont pas établi de lignée homonyme d'origine distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web combinant « Essomba », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Traditions et Cultures — Communauté urbaine de Yaoundé » et « Origines des Éwondo : récit de Ndougsa Vincent » n'ont établi aucune règle propre à Essomba permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }

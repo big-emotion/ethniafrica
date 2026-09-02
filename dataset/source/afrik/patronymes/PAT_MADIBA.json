@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_MADIBA",
   "nameMain": "Madiba",
@@ -11,69 +11,91 @@
     {
       "spelling": "Madiba",
       "attestations": [
-        { "countryId": "ZAF", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "ZAF",
+          "sourceRefs": ["mandela-foundation-madiba-names"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "La Nelson Mandela Foundation explique que Madiba était le nom d'un chef thembu du Transkei au XVIIIe siècle et que le clan dont Nelson Mandela était membre porte son nom. Dans son autobiographie, Mandela situe ce clan dans la société xhosa patrilinéaire et le décrit comme remontant à un ancêtre précis.",
+        "claimStatus": "established",
+        "sourceRefs": [
+          "mandela-foundation-madiba-names",
+          "mandela-autobiography-madiba"
+        ]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_XHOSA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["mandela-autobiography-madiba"]
     }
   ],
   "countries": [
     {
       "countryId": "ZAF",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["mandela-foundation-biography"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Nelson Rolihlahla Mandela, président sud-africain (1918–2013)",
+      "sourceRefs": ["mandela-foundation-biography"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "mandela-foundation-madiba-names",
+      "title": "Names",
+      "url": "https://www.nelsonmandela.org/names",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Notice de la Nelson Mandela Foundation consultée directement. Elle distingue le clan name du surname et explique que Madiba fut un chef thembu du XVIIIe siècle dont descend le clan de Mandela."
+    },
+    {
+      "sourceKey": "mandela-autobiography-madiba",
+      "title": "Long Walk to Freedom: The Autobiography of Nelson Mandela",
+      "url": "https://repository.act.ac.rw/server/api/core/bitstreams/1781d4c1-64c6-4fa2-87e7-b693e01b24d4/content",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Autobiographie consultée dans le PDF archivé. Mandela décrit les Xhosa comme patrilinéaires, explique que chaque personne appartient à un clan remontant à un ancêtre et identifie Madiba comme son propre clan, nommé d'après un chef thembu."
+    },
+    {
+      "sourceKey": "mandela-foundation-biography",
+      "title": "Biography of Nelson Mandela",
+      "url": "https://www.nelsonmandela.org/biography",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Biographie institutionnelle consultée directement. Elle donne les dates 1918–2013, la naissance de Mandela dans le clan Madiba et son ancrage sud-africain."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Madiba », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la notice « Names », la biographie de la Nelson Mandela Foundation et le passage autobiographique où Mandela décrit son clan Madiba, n'ont identifié aucune parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Madiba », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la notice « Names », la biographie de la Nelson Mandela Foundation et le passage autobiographique où Mandela décrit son clan Madiba, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web combinant « Madiba », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la notice « Names », la biographie de la Nelson Mandela Foundation et le passage autobiographique où Mandela décrit son clan Madiba, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
     }
   ]
 }

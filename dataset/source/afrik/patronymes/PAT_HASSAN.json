@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_HASSAN",
   "nameMain": "Hassan",
@@ -11,6 +11,14 @@
     {
       "spelling": "Hassan",
       "attestations": [
+        {
+          "countryId": "TZA",
+          "sourceRefs": ["tanzania-presidency-hassan"]
+        },
+        {
+          "countryId": "SOM",
+          "sourceRefs": ["behind-name-hassan"]
+        },
         {
           "countryId": "TCD",
           "sourceRefs": ["afrik-candidate-queue"]
@@ -24,14 +32,6 @@
           "sourceRefs": ["afrik-candidate-queue"]
         },
         {
-          "countryId": "SOM",
-          "sourceRefs": ["afrik-candidate-queue"]
-        },
-        {
-          "countryId": "TZA",
-          "sourceRefs": ["afrik-candidate-queue"]
-        },
-        {
           "countryId": "EGY",
           "sourceRefs": ["afrik-candidate-queue"]
         }
@@ -42,7 +42,7 @@
       "attestations": [
         {
           "countryId": "SOM",
-          "sourceRefs": ["afrik-candidate-queue"]
+          "sourceRefs": ["behind-name-hassan"]
         }
       ]
     }
@@ -54,9 +54,13 @@
     "writtenChronicles": [],
     "linguisticReconstructions": [
       {
-        "claim": "L'entrée consultée classe Hassan comme un nom de famille formé sur le nom personnel Hassan et atteste la graphie حسن. Cette formation existe dans plusieurs espaces linguistiques et ne prouve aucune appartenance africaine exclusive.",
+        "claim": "Une étude de morphologie arabe identifie Hassan comme un nom personnel masculin arabe homophone de l'adjectif signifiant « beau », tout en avertissant que le nom propre ne porte pas automatiquement le sens lexical de son homophone. Une ressource onomastique communautaire distingue en outre deux graphies arabes que la translittération Hassan peut recouvrir et classe le patronyme comme issu du prénom ; cette filiation reste donc une attribution revendiquée plutôt qu'une reconstruction démontrée pour chaque lignée africaine.",
         "claimStatus": "claimed",
-        "sourceRefs": ["btn-surname-hassan"]
+        "sourceRefs": [
+          "idrissi-prunet-beland-hassan",
+          "behind-name-hassan",
+          "behind-surname-hassan"
+        ]
       }
     ]
   },
@@ -64,48 +68,48 @@
     {
       "peopleId": "PPL_SOMALI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["behind-name-hassan"]
     },
     {
       "peopleId": "PPL_SWAHILI",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     },
     {
       "peopleId": "PPL_ARABES_AFRIQUE",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     }
   ],
   "countries": [
     {
       "countryId": "TCD",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     },
     {
       "countryId": "SDN",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     },
     {
       "countryId": "DJI",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     },
     {
       "countryId": "SOM",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["behind-name-hassan"]
     },
     {
       "countryId": "TZA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["tanzania-presidency-hassan"]
     },
     {
       "countryId": "EGY",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     }
   ],
@@ -115,54 +119,62 @@
   "homonyms": [],
   "sources": [
     {
+      "sourceKey": "idrissi-prunet-beland-hassan",
+      "title": "On the Mental Representation of Arabic Roots",
+      "url": "https://medfam.umontreal.ca/wp-content/uploads/sites/32/publicationsBelandR_representationArabic2008.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article d'Ali Idrissi, Jean-François Prunet et Renée Béland consulté en texte intégral. À la page 242, les auteurs donnent Hassan comme nom masculin arabe homophone de l'adjectif « handsome », précisément pour montrer qu'un nom propre ne reçoit pas automatiquement le sens définitionnel du mot homophone."
+    },
+    {
+      "sourceKey": "behind-name-hassan",
+      "title": "Meaning, origin and history of the name Hassan",
+      "url": "https://www.behindthename.com/name/hassan",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Ressource onomastique communautaire consultée intégralement. Elle présente Hassan comme translittération usuelle de حسن, mais aussi comme translittération possible du nom distinct حسّان, et donne Xasan comme forme somalie. Cette source faible est conservée et explicitement tierée ; ses attributions ne sont pas élevées au rang d'étymologie établie."
+    },
+    {
+      "sourceKey": "behind-surname-hassan",
+      "title": "Meaning, origin and history of the surname Hassan",
+      "url": "https://surnames.behindthename.com/name/hassan",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Fiche communautaire du patronyme consultée intégralement. Elle classe Hassan comme nom de famille arabe issu du prénom Hassan, sans documenter séparément les lignées africaines portant cette graphie."
+    },
+    {
+      "sourceKey": "tanzania-presidency-hassan",
+      "title": "Wasifu — Samia Suluhu Hassan",
+      "url": "https://www.ikulu.go.tz/index.php/administration/about_biography/69",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Page officielle de la présidence tanzanienne consultée intégralement. Elle atteste Hassan dans le nom de la présidente Samia Suluhu Hassan et ne documente ni l'étymologie ni le mode de transmission de ce composant."
+    },
+    {
       "sourceKey": "afrik-candidate-queue",
       "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
-    },
-    {
-      "sourceKey": "btn-surname-hassan",
-      "title": "Meaning, origin and history of the surname Hassan — Behind the Name",
-      "url": "https://surnames.behindthename.com/name/hassan",
-      "tier": "unverified",
-      "source_kind": "community",
-      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle classe Hassan comme nom de famille arabe, persan et ourdou issu du nom personnel Hassan, avec la graphie حسن. Elle n'établit aucun rattachement africain exclusif."
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin.oralTraditions",
-      "reason": "Les recherches exactes « Hassan anthroponymie », « Hassan onomastique », « Hassan surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune tradition orale attribuée à un griot ou informateur nommé, accompagnée d'une transcription vérifiable, n'a été trouvée."
-    },
-    {
-      "fieldPath": "origin.writtenChronicles",
-      "reason": "Les recherches exactes « Hassan anthroponymie », « Hassan onomastique », « Hassan surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune chronique historique consultée ne rattache la fiche à un ancêtre ou à une lignée déterminée."
-    },
-    {
-      "fieldPath": "peoples",
-      "reason": "Les recherches exactes « Hassan anthroponymie », « Hassan onomastique », « Hassan surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. La ou les sources propres au nom ne démontrent pas une association exclusive avec les peuples indiqués ; ces rattachements restent non vérifiés."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "Les recherches « Hassan alliance à plaisanterie », « Hassan joking relationship » et « Hassan parenté à plaisanterie » n'ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+      "reason": "la recherche web combinant « Hassan », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de l'article « On the Mental Representation of Arabic Roots », les deux fiches Behind the Name et la biographie officielle tanzanienne de Samia Suluhu Hassan n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Les recherches « Hassan caste », « Hassan métier héréditaire » et « Hassan social function » n'ont livré aucune fonction sociale héréditaire propre aux porteurs de cette graphie. Une étymologie professionnelle éventuelle ne prouve pas une caste."
+      "reason": "la recherche web combinant « Hassan », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de l'article « On the Mental Representation of Arabic Roots », les deux fiches Behind the Name et la biographie officielle tanzanienne de Samia Suluhu Hassan n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Les recherches biographiques exactes sur « Hassan » dans les catalogues et répertoires consultés n'ont pas permis d'isoler un porteur décédé dont ce segment soit explicitement documenté dans la position anthroponymique pertinente. Les personnes vivantes repérées ont été exclues."
+      "reason": "la recherche web combinant « Hassan », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de l'article « On the Mental Representation of Arabic Roots », les deux fiches Behind the Name et la biographie officielle tanzanienne de Samia Suluhu Hassan n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Les recherches exactes « Hassan homonym surname », « Hassan homonyme patronyme » et les variantes graphiques de la fiche n'ont pas établi deux origines distinctes et documentées pour la même forme."
-    },
-    {
-      "fieldPath": "countries",
-      "reason": "Les sources propres à « Hassan » n'ont pas confirmé les pays où il est porté ; les recherches par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
+      "reason": "la recherche web combinant « Hassan », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de l'article « On the Mental Representation of Arabic Roots », les deux fiches Behind the Name et la biographie officielle tanzanienne de Samia Suluhu Hassan n'ont pas établi de lignée homonyme d'origine distincte."
     }
   ]
 }

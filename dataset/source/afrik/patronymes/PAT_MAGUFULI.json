@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_MAGUFULI",
   "nameMain": "Magufuli",
@@ -11,7 +11,10 @@
     {
       "spelling": "Magufuli",
       "attestations": [
-        { "countryId": "TZA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "TZA",
+          "sourceRefs": ["tandfonline-magufuli-ethnicity"]
+        }
       ]
     }
   ],
@@ -19,61 +22,88 @@
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une étude politique spécialisée identifie John Magufuli comme Zinza, sous-groupe du vaste ensemble sukuma dont les membres s'identifient souvent comme Sukuma. Sa biographie officielle le situe à Chato en Tanzanie. Ces sources établissent un porteur sukuma-zinza, mais ne donnent aucune origine linguistique au patronyme.",
+        "claimStatus": "established",
+        "sourceRefs": [
+          "tandfonline-magufuli-ethnicity",
+          "ikulu-magufuli-profile"
+        ]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_SUKUMA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["tandfonline-magufuli-ethnicity"]
     }
   ],
   "countries": [
     {
       "countryId": "TZA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["ikulu-magufuli-profile"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "John Pombe Joseph Magufuli, président tanzanien (1959–2021)",
+      "sourceRefs": ["ikulu-magufuli-profile", "ikulu-magufuli-death"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "tandfonline-magufuli-ethnicity",
+      "title": "Tanzania under Magufuli: The Personalization of a Party-Based Regime",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/13510347.2023.2273871",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article scientifique consulté sur la page de l'éditeur et dans son texte disponible. Il précise que John Magufuli était Zinza, sous-groupe du vaste ensemble sukuma, et explique l'usage contextuel de cette identification."
+    },
+    {
+      "sourceKey": "ikulu-magufuli-profile",
+      "title": "Wasifu: Mhe. Dkt. John Pombe Joseph Magufuli",
+      "url": "https://www.ikulu.go.tz/administration/profile/6",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Biographie officielle en swahili consultée directement. Elle donne le nom complet, la naissance à Chato en 1959 et la carrière du cinquième président tanzanien."
+    },
+    {
+      "sourceKey": "ikulu-magufuli-death",
+      "title": "Taarifa kwa Vyombo vya Habari: Heshima za mwisho kwa John Pombe Magufuli",
+      "url": "https://www.ikulu.go.tz/documents/press-releases?page=3",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Communiqué officiel consulté directement. Il indique que John Pombe Magufuli est mort le 17 mars 2021 et devait être inhumé à Chato."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web combinant « Magufuli », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article sur le régime Magufuli, la biographie et le communiqué funéraire officiels de la présidence tanzanienne, ainsi que des requêtes sur l'origine du nom, n'ont pas établi que la catégorie provisoire « clan_name » décrive ce nom lui-même ; elle reste une hypothèse de classement."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Magufuli », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article sur le régime Magufuli, la biographie et le communiqué funéraire officiels de la présidence tanzanienne, ainsi que des requêtes sur l'origine du nom, n'ont identifié aucune parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Magufuli », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article sur le régime Magufuli, la biographie et le communiqué funéraire officiels de la présidence tanzanienne, ainsi que des requêtes sur l'origine du nom, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Magufuli », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article sur le régime Magufuli, la biographie et le communiqué funéraire officiels de la présidence tanzanienne, ainsi que des requêtes sur l'origine du nom, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web combinant « Magufuli », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article sur le régime Magufuli, la biographie et le communiqué funéraire officiels de la présidence tanzanienne, ainsi que des requêtes sur l'origine du nom, n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }

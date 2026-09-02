@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_MBA",
   "nameMain": "Mba",
@@ -11,9 +11,18 @@
     {
       "spelling": "Mba",
       "attestations": [
-        { "countryId": "CMR", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "GAB", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "GNQ", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["forebears-mba"]
+        },
+        {
+          "countryId": "GAB",
+          "sourceRefs": ["forebears-mba"]
+        },
+        {
+          "countryId": "GNQ",
+          "sourceRefs": ["forebears-mba"]
+        }
       ]
     }
   ],
@@ -27,30 +36,30 @@
   "peoples": [
     {
       "peopleId": "PPL_BETI",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["forebears-mba"]
     },
     {
       "peopleId": "PPL_FANG",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["forebears-mba"]
     }
   ],
   "countries": [
     {
       "countryId": "CMR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-mba"]
     },
     {
       "countryId": "GAB",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-mba"]
     },
     {
       "countryId": "GNQ",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-mba"]
     }
   ],
   "alliances": [],
@@ -59,38 +68,42 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "forebears-mba",
+      "title": "Mba Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/mba",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement. Elle atteste Mba notamment au Cameroun et au Gabon, mais ne permet pas de distinguer les lignées beti, fang ou les homonymes d'autres régions."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mba », « Beti », « Fang », « Cameroun », « Gabon », « patronyme », « clan », « étymologie », « transmission » et « homonyme », ainsi que la page Forebears dédiée n'ont livré aucune tradition attribuée, chronique ou étude linguistique établissant l'origine de Mba. Les rapprochements portant sur un homonyme d'une autre langue ou sur la seule géographie ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Mba », « Beti », « Fang », « Cameroun », « Gabon », « patronyme », « clan », « étymologie », « transmission » et « homonyme », ainsi que la page Forebears dédiée n'ont pas établi que la catégorie provisoire « clan_name » décrive Mba lui-même ; elle reste une hypothèse de classement, sans être transformée en affirmation."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mba », « Beti », « Fang », « Cameroun », « Gabon », « patronyme », « clan », « étymologie », « transmission » et « homonyme », ainsi que la page Forebears dédiée n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Mba à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mba », « Beti », « Fang », « Cameroun », « Gabon », « patronyme », « clan », « étymologie », « transmission » et « homonyme », ainsi que la page Forebears dédiée n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Mba."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mba », « Beti », « Fang », « Cameroun », « Gabon », « patronyme », « clan », « étymologie », « transmission » et « homonyme », ainsi que la page Forebears dédiée n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mba », « Beti », « Fang », « Cameroun », « Gabon », « patronyme », « clan », « étymologie », « transmission » et « homonyme », ainsi que la page Forebears dédiée n'ont pas établi de lignée homonyme d'origine distincte documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web et bibliographique combinant « Mba », « Beti », « Fang », « Cameroun », « Gabon », « patronyme », « clan », « étymologie », « transmission » et « homonyme », ainsi que la page Forebears dédiée n'ont établi aucune règle propre à Mba permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }

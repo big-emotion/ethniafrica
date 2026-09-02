@@ -49,6 +49,11 @@
         "claim": "L'entrée consultée classe Ahmed comme un nom de famille dérivé du nom personnel Ahmad et atteste la graphie arabe أحمد. Elle ne permet pas d'attribuer cette formation à un seul peuple africain.",
         "claimStatus": "claimed",
         "sourceRefs": ["btn-surname-ahmed"]
+      },
+      {
+        "claim": "Une seconde notice communautaire présente Ahmed comme une variante de Ahmad ; faute de bibliographie propre à l'entrée, cette relation ne constitue pas une reconstruction savante.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["behindthename-ahmed"]
       }
     ]
   },
@@ -102,7 +107,7 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
     },
     {
       "sourceKey": "btn-surname-ahmed",
@@ -110,7 +115,15 @@
       "url": "https://surnames.behindthename.com/name/ahmed",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle classe Ahmed comme nom de famille dérivé du nom personnel Ahmad et donne la graphie arabe أحمد. Elle n'établit aucun des rattachements ethniques ou nationaux."
+      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle classe Ahmed comme nom de famille dérivé du nom personnel Ahmad et donne la graphie arabe أحمد. Elle n'établit aucun des rattachements ethniques ou nationaux indiqués."
+    },
+    {
+      "sourceKey": "behindthename-ahmed",
+      "title": "Meaning, origin and history of the name Ahmed",
+      "url": "https://www.behindthename.com/name/ahmed",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Notice communautaire dédiée consultée intégralement. Elle traite Ahmed comme une variante de Ahmad en usage arabe, turc, bosniaque et bengali. Elle ne documente pas à elle seule les associations somalie ou comorienne de la fiche."
     }
   ],
   "gaps": [
@@ -144,7 +157,7 @@
     },
     {
       "fieldPath": "countries",
-      "reason": "Les sources propres à « Ahmed » n'ont pas confirmé les pays où il est porté ; les recherches par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
+      "reason": "Les sources propres à « Ahmed » n'ont pas confirmé les pays où il est porté ; les recherches exactes par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
     }
   ]
 }

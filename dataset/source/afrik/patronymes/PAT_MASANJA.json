@@ -2,38 +2,47 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_MASANJA",
   "nameMain": "Masanja",
-  "nameSystem": "clan_name",
+  "nameSystem": "non_hereditary_patronymic",
   "spellings": [
     {
       "spelling": "Masanja",
       "attestations": [
-        { "countryId": "TZA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "TZA",
+          "sourceRefs": ["forebears-masanja"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "L'étude sémantique de Peter G. Shigini classe Masanja parmi les noms personnels sukuma liés aux événements familiaux : le nom signifie « union », « rassemblement » ou « unification » et est normalement attribué à un garçon né au moment d'un rapprochement entre personnes, familles ou clans. La source établit ce nom de naissance, non une étymologie universelle de chaque lignée qui l'emploie aujourd'hui comme nom de famille.",
+        "claimStatus": "established",
+        "sourceRefs": ["shigini-2020-masanja"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_SUKUMA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["shigini-2020-masanja"]
     }
   ],
   "countries": [
     {
       "countryId": "TZA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-masanja"]
     }
   ],
   "alliances": [],
@@ -42,38 +51,38 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "shigini-2020-masanja",
+      "title": "The Semantic Nature of Sukuma Personal Names",
+      "url": "https://repository.mocu.ac.tz/xmlui/bitstream/handle/123456789/258/The%20semantic%20nature%20of%20Sukuma%20personal%20names%20PAPER-2-By%20PETER-SHIGINI.pdf?isAllowed=y&sequence=1",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article de Peter G. Shigini dans l'East African Journal of Social and Applied Sciences, PDF du dépôt de Moshi Co-operative University consulté directement. Il définit Masanja comme un nom personnel sukuma donné à un garçon né lors d'une union entre personnes, familles ou clans."
+    },
+    {
+      "sourceKey": "forebears-masanja",
+      "title": "Masanja Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/masanja",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement pour confirmer l'emploi moderne de Masanja comme nom de famille en Tanzanie. Elle n'est pas utilisée pour l'étymologie."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Masanja », « Sukuma », « personal name », « surname », « meaning », « clan », « transmission », « alliance » et « obituary », ainsi que l'article de Peter G. Shigini et la page Forebears dédiée n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Masanja à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Masanja », « Sukuma », « personal name », « surname », « meaning », « clan », « transmission », « alliance » et « obituary », ainsi que l'article de Peter G. Shigini et la page Forebears dédiée n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Masanja."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Masanja », « Sukuma », « personal name », « surname », « meaning », « clan », « transmission », « alliance » et « obituary », ainsi que l'article de Peter G. Shigini et la page Forebears dédiée n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web et bibliographique combinant « Masanja », « Sukuma », « personal name », « surname », « meaning », « clan », « transmission », « alliance » et « obituary », ainsi que l'article de Peter G. Shigini et la page Forebears dédiée n'ont pas établi de lignée homonyme d'origine distincte documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
     }
   ]
 }

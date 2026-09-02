@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_NYONI",
   "nameMain": "Nyoni",
@@ -11,7 +11,10 @@
     {
       "spelling": "Nyoni",
       "attestations": [
-        { "countryId": "ZWE", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "ZWE",
+          "sourceRefs": ["forebears-nyoni"]
+        }
       ]
     }
   ],
@@ -25,15 +28,15 @@
   "peoples": [
     {
       "peopleId": "PPL_NDEBELE",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["forebears-nyoni"]
     }
   ],
   "countries": [
     {
       "countryId": "ZWE",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-nyoni"]
     }
   ],
   "alliances": [],
@@ -42,38 +45,42 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "forebears-nyoni",
+      "title": "Nyoni Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/nyoni",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement. Elle atteste Nyoni principalement au Zimbabwe, mais n'en donne pas la signification et précise que la géographie ne suffit pas à attribuer une appartenance ethnique."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Nyoni », « Ndebele », « Zimbabwe », « surname », « totem », « clan name », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », les études sur les noms et l'ethnicité ndebele, ainsi que la page Forebears dédiée n'ont livré aucune tradition attribuée, chronique ou étude linguistique propre à ce nom qui en établirait l'origine ; les rapprochements fondés sur la seule ressemblance ou la seule géographie ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Nyoni », « Ndebele », « Zimbabwe », « surname », « totem », « clan name », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », les études sur les noms et l'ethnicité ndebele, ainsi que la page Forebears dédiée n'ont pas établi que la catégorie de système nominal portée par la fiche provisoire décrive ce nom lui-même ; elle reste une hypothèse de classement et n'est pas transformée en fait."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Nyoni », « Ndebele », « Zimbabwe », « surname », « totem », « clan name », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », les études sur les noms et l'ethnicité ndebele, ainsi que la page Forebears dédiée n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Nyoni », « Ndebele », « Zimbabwe », « surname », « totem », « clan name », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », les études sur les noms et l'ethnicité ndebele, ainsi que la page Forebears dédiée n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à ce nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Nyoni », « Ndebele », « Zimbabwe », « surname », « totem », « clan name », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », les études sur les noms et l'ethnicité ndebele, ainsi que la page Forebears dédiée n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche ; les personnes vivantes ou de statut vital incertain ont été exclues."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Nyoni », « Ndebele », « Zimbabwe », « surname », « totem », « clan name », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », les études sur les noms et l'ethnicité ndebele, ainsi que la page Forebears dédiée n'ont pas établi de lignée homonyme d'origine distincte documentable ; une diffusion dans plusieurs pays ou une graphie voisine ne suffit pas à créer un homonyme."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le clan totémique ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web et bibliographique combinant « Nyoni », « Ndebele », « Zimbabwe », « surname », « totem », « clan name », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », les études sur les noms et l'ethnicité ndebele, ainsi que la page Forebears dédiée n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }

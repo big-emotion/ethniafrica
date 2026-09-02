@@ -138,7 +138,7 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
     },
     {
       "sourceKey": "btn-surname-mohamed",
@@ -146,7 +146,23 @@
       "url": "https://surnames.behindthename.com/name/mohamed",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle classe Mohamed comme nom de famille arabe dérivé du nom personnel Muhammad et fournit la graphie محمّد. Elle n'établit pas les multiples rattachements ethniques et nationaux."
+      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle classe Mohamed comme nom de famille arabe dérivé du nom personnel Muhammad et fournit la graphie محمّد. Elle n'établit pas les multiples rattachements ethniques et nationaux indiqués."
+    },
+    {
+      "sourceKey": "forebears-mohamed",
+      "title": "Mohamed Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/mohamed",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement pour attester l'emploi moderne de Mohamed comme nom de famille et sa présence dans les pays indiqués. La géographie ne prouve ni une appartenance ethnique exclusive ni une étymologie ; les définitions contributives éventuelles ne sont pas élevées au rang de faits."
+    },
+    {
+      "sourceKey": "cambridge-somali-naming-mohamed",
+      "title": "Recommendations for Somali Entries in Library Cataloguing Systems",
+      "url": "https://www.cambridge.org/core/journals/african-research-and-documentation/article/abs/recommendations-for-somali-entries-in-library-cataloguing-systems/7B1BAF9FA536389313CA58F386A8DAAF",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article consulté directement sur Cambridge Core. Il décrit la chaîne de noms somalie — nom individuel, nom du père, parfois nom du grand-père — sans nom de famille héréditaire. Il ne permet pas d'étendre cette règle aux emplois swahili, arabes africains ou comoriens de Mohamed."
     }
   ],
   "gaps": [
@@ -180,7 +196,7 @@
     },
     {
       "fieldPath": "countries",
-      "reason": "Les sources propres à « Mohamed » n'ont pas confirmé les pays où il est porté ; les recherches par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
+      "reason": "Les sources propres à « Mohamed » n'ont pas confirmé les pays où il est porté ; les recherches exactes par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_SOILIHI",
   "nameMain": "Soilihi",
@@ -11,11 +11,14 @@
     {
       "spelling": "Soilihi",
       "attestations": [
-        { "countryId": "COM", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "COM",
+          "sourceRefs": ["forebears-soilihi"]
+        }
       ]
     }
   ],
-  "transmissionMode": "non_hereditary",
+  "transmissionMode": "other",
   "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
@@ -25,15 +28,15 @@
   "peoples": [
     {
       "peopleId": "PPL_COMORIEN",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["forebears-soilihi"]
     }
   ],
   "countries": [
     {
       "countryId": "COM",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-soilihi"]
     }
   ],
   "alliances": [],
@@ -42,34 +45,42 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "forebears-soilihi",
+      "title": "Soilihi Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/soilihi",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement : elle atteste Soilihi principalement aux Comores et ne fournit aucune signification. Les résultats biographiques et politiques ont été écartés pour l'origine."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Soilihi », « Comoros », « Comorian », « surname », « onomastics », « etymology » et « transmission », ainsi que la consultation directe de « Soilihi Surname Origin, Meaning & Last Name History » n'ont livré aucune tradition attribuée, chronique ou étude linguistique établissant l'origine de Soilihi. Les rapprochements fondés uniquement sur la géographie, une biographie ou une contribution non référencée ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Soilihi », « Comoros », « Comorian », « surname », « onomastics », « etymology » et « transmission », ainsi que la consultation directe de « Soilihi Surname Origin, Meaning & Last Name History » n'ont pas établi que la catégorie provisoire « non_hereditary_patronymic » décrive Soilihi lui-même ; elle reste un classement de travail et non une origine démontrée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Soilihi », « Comoros », « Comorian », « surname », « onomastics », « etymology » et « transmission », ainsi que la consultation directe de « Soilihi Surname Origin, Meaning & Last Name History » n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Soilihi à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Soilihi », « Comoros », « Comorian », « surname », « onomastics », « etymology » et « transmission », ainsi que la consultation directe de « Soilihi Surname Origin, Meaning & Last Name History » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Soilihi."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Soilihi », « Comoros », « Comorian », « surname », « onomastics », « etymology » et « transmission », ainsi que la consultation directe de « Soilihi Surname Origin, Meaning & Last Name History » n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé de Soilihi, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Soilihi », « Comoros », « Comorian », « surname », « onomastics », « etymology » et « transmission », ainsi que la consultation directe de « Soilihi Surname Origin, Meaning & Last Name History » n'ont pas établi de lignée homonyme de Soilihi dotée d'une origine distincte et documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Soilihi », « Comoros », « Comorian », « surname », « onomastics », « etymology » et « transmission », ainsi que la consultation directe de « Soilihi Surname Origin, Meaning & Last Name History » n'ont établi aucune règle propre à Soilihi permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }

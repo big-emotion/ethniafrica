@@ -32,6 +32,11 @@
         "claim": "L'entrée consultée décrit Abdallah comme un nom de famille formé sur le nom personnel homographe dans l'usage swahili. Elle ne permet pas de généraliser ce mécanisme à tous les porteurs africains de la graphie.",
         "claimStatus": "claimed",
         "sourceRefs": ["btn-surname-abdallah"]
+      },
+      {
+        "claim": "Deux dictionnaires historiques reproduits par Forebears analysent Abdallah comme un nom arabe signifiant « serviteur de Dieu » ; cette glose lexicale ne démontre ni une lignée commune ni une origine ethnique des porteurs.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["forebears-abdallah"]
       }
     ]
   },
@@ -70,7 +75,7 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
     },
     {
       "sourceKey": "btn-surname-abdallah",
@@ -78,7 +83,15 @@
       "url": "https://surnames.behindthename.com/name/abdallah",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle classe Abdallah comme nom de famille swahili formé sur le nom personnel Abdallah. Elle n'établit pas à elle seule les rattachements égyptien, comorien ou ethniques."
+      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle classe Abdallah comme nom de famille swahili formé sur le nom personnel Abdallah. Elle n'établit pas à elle seule les rattachements égyptien, comorien ou ethniques indiqués."
+    },
+    {
+      "sourceKey": "forebears-abdallah",
+      "title": "Abdallah Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/abdallah",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page dédiée consultée intégralement. Elle atteste le patronyme au Soudan, en Égypte et aux Comores et reproduit deux dictionnaires anciens donnant la glose arabe « serviteur de Dieu ». Les contributions déposées par les utilisateurs n'ont pas été retenues. Forebears avertit que la distribution géographique ne permet pas d'inférer une appartenance ethnique."
     }
   ],
   "gaps": [
@@ -112,7 +125,7 @@
     },
     {
       "fieldPath": "countries",
-      "reason": "Les sources propres à « Abdallah » n'ont pas confirmé les pays où il est porté ; les recherches par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
+      "reason": "Les sources propres à « Abdallah » n'ont pas confirmé les pays où il est porté ; les recherches exactes par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
     }
   ]
 }

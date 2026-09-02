@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_NJOROGE",
   "nameMain": "Njoroge",
@@ -11,7 +11,10 @@
     {
       "spelling": "Njoroge",
       "attestations": [
-        { "countryId": "KEN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "KEN",
+          "sourceRefs": ["otiso-2017-njoroge"]
+        }
       ]
     }
   ],
@@ -20,20 +23,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "L'étude d'Otiso identifie Njoroge comme la forme kikuyu à partir de laquelle l'ekegusii a créé la forme empruntée Nchoroke, en substituant notamment l'affriquée et la fricative vélaires. Cette comparaison établit l'appartenance linguistique de la forme, mais pas son étymologie lexicale.",
+        "claimStatus": "established",
+        "sourceRefs": ["otiso-2017-njoroge"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_KIKUYU",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["otiso-2017-njoroge"]
     }
   ],
   "countries": [
     {
       "countryId": "KEN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["otiso-2017-njoroge"]
     }
   ],
   "alliances": [],
@@ -42,34 +51,30 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "otiso-2017-njoroge",
+      "title": "Gender identity through the Ekegusii naming system",
+      "url": "https://erepository.uonbi.ac.ke/server/api/core/bitstreams/9cd30361-434c-4fe3-bdcf-495e7fb30e62/content",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article de Zipporah K. Otiso dans The University of Nairobi Journal of Language and Linguistics, volume 6, 2017, consulté dans le dépôt de l'Université de Nairobi. Il identifie explicitement Njoroge comme nom kikuyu et décrit son adaptation phonologique en Nchoroke lors de son emprunt en ekegusii ; il n'en propose pas d'étymologie lexicale."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Njoroge », « Kikuyu », « Kenya », « surname », « personal name », « onomastics », « etymology », « clan », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que l'article d'Otiso sur les emprunts de noms kikuyu en ekegusii n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Njoroge », « Kikuyu », « Kenya », « surname », « personal name », « onomastics », « etymology », « clan », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que l'article d'Otiso sur les emprunts de noms kikuyu en ekegusii n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à ce nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Njoroge », « Kikuyu », « Kenya », « surname », « personal name », « onomastics », « etymology », « clan », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que l'article d'Otiso sur les emprunts de noms kikuyu en ekegusii n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche ; les personnes vivantes ou de statut vital incertain ont été exclues."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Njoroge », « Kikuyu », « Kenya », « surname », « personal name », « onomastics », « etymology », « clan », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que l'article d'Otiso sur les emprunts de noms kikuyu en ekegusii n'ont pas établi de lignée homonyme d'origine distincte documentable ; une diffusion dans plusieurs pays ou une graphie voisine ne suffit pas à créer un homonyme."
     }
   ]
 }
