@@ -60,7 +60,10 @@ describe("PatronymeAssociationsSection (AC4, REQ-133)", () => {
     ).not.toBeInTheDocument();
   });
 
-  // @req REQ-133
+  // The silence is now marked the way every other fiche marks one — a
+  // provenance badge, not a sentence of the section's own — so a reader tells
+  // "the corpus has not documented this" apart from "the corpus wrote this".
+  // @req REQ-119
   it("states explicitly when no association is documented", () => {
     render(
       <PatronymeAssociationsSection
@@ -68,8 +71,6 @@ describe("PatronymeAssociationsSection (AC4, REQ-133)", () => {
       />
     );
 
-    expect(
-      screen.getByText(/Aucun peuple ou pays associé/)
-    ).toBeInTheDocument();
+    expect(screen.getByRole("status")).toBeInTheDocument();
   });
 });

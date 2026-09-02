@@ -1,5 +1,8 @@
 import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
 import { FicheSection } from "@/components/fiche/FicheSection";
+import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
+import { readGaps } from "@/lib/patronymes/content";
+import { resolveChapter } from "@/lib/fieldProvenance";
 import { translations } from "@/lib/translations";
 
 const t = translations.fr.patronymes;
@@ -25,12 +28,23 @@ export function PatronymeBearersSection({
 }) {
   const { bearers } = patronyme;
 
+  // An undocumented chapter is marked the way every other fiche marks one
+  // (charter §4, REQ-119), rather than by a sentence of its own: this section
+  // used to print a bare paragraph, which read as prose the corpus had written
+  // instead of as a silence the corpus is admitting to.
+  const chapter = resolveChapter(
+    "name",
+    "bearers",
+    bearers.length > 0 ? bearers : null,
+    readGaps(patronyme.content)
+  );
+
   return (
     <FicheSection title={t.bearersTitle} note={t.bearersEditorialNote}>
       {bearers.length === 0 ? (
-        <p>{t.bearersEmpty}</p>
+        <FieldProvenanceMarker state={chapter.state} reason={chapter.reason} />
       ) : (
-        <ul>
+        <ul className="afh-prose-list">
           {bearers.map((bearer) => (
             <li key={bearer.id}>
               <span>{bearer.fullName}</span> —{" "}
