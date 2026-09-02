@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon docs/runbooks/anthroponym-fiche-research.md. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
   },
   "id": "PAT_BARROS",
   "nameMain": "Barros",
@@ -11,17 +11,29 @@
     {
       "spelling": "Barros",
       "attestations": [
-        { "countryId": "CPV", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "STP", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CPV",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "STP",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "bilateral",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le Dictionary of American Family Names analyse Barros comme un nom d'habitation portugais et galicien issu de lieux nommés au pluriel de barro (« argile, terre limoneuse »). Cette analyse porte sur la forme portugaise et n'établit pas la généalogie d'une lignée capverdienne particulière.",
+        "claimStatus": "established",
+        "sourceRefs": ["dafn-barros-2022"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -54,32 +66,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "drotbohm-2009-cape-verde-names",
+      "title": "Horizons of long-distance intimacies: Reciprocity, contribution and disjuncture in Cape Verde",
+      "url": "https://doi.org/10.1016/j.hisfam.2009.02.002",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Heike Drotbohm, The History of the Family 14(2), 2009, p. 132-149. La note sur les noms précise qu'au Cap-Vert l'enfant porte les noms de famille du père et de la mère. Cette source établit la règle générale de transmission bilatérale, non l'origine d'un patronyme particulier."
+    },
+    {
+      "sourceKey": "dafn-barros-2022",
+      "title": "Barros Surname Meaning — Dictionary of American Family Names, 2nd edition",
+      "url": "https://www.ancestry.com/last-name-meaning/barros?geo-lang=en",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Patrick Hanks et al., Dictionary of American Family Names, 2e éd., Oxford University Press, 2022, notice reproduite par Ancestry. La notice est utilisée pour l'analyse de la forme portugaise, pas pour postuler un ancêtre capverdien."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Barros » associées au Cap-Vert, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Barros à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Barros » associées au Cap-Vert, complétés par « caste », « statut héréditaire », « métier » et « social function », n'ont établi aucune fonction sociale héréditaire propre aux porteurs de Barros. Une étymologie professionnelle éventuelle n'est pas assimilée à un statut contemporain."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Barros » associées au Cap-Vert n'ont pas fourni, dans cette passe, un porteur à la fois décédé, clairement rattaché au patronyme étudié et documenté par une source distincte de la simple homonymie. Les personnes vivantes rencontrées dans les sources officielles ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Barros » associées au Cap-Vert n'ont pas permis d'isoler deux lignées homonymes dotées d'origines distinctes et documentées. Lorsque le dictionnaire propose plusieurs formations possibles, elles restent des hypothèses linguistiques et non des lignées séparées."
     }
   ]
 }
