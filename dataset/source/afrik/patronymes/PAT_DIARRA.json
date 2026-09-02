@@ -120,15 +120,15 @@
   "gaps": [
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée : clan de statut horon."
+      "reason": "Le jamu ne figure ni parmi les lignages numu ni parmi les lignages jeli que Charry énumère ; il ne figure pas non plus dans la courte liste de jamuw horon qu'il donne (Keita, Konaté, Koné, Traoré). Le statut horon que lui prêtent les répertoires courants n'a donc pas été retrouvé dans une source dédiée, et n'est pas affirmé ici."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source distincte de l'homonymie de patronyme lors de la passe."
+      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source distincte de l'homonymie de patronyme lors de la passe : les Diarra de la dynastie de Ségou relèvent de l'histoire politique et ne documentent pas le nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "Diarra et Jara sont deux graphies d'un même jamu. Aucune lignée d'origine distincte n'a été trouvée, mais l'étymologie du nom restant elle-même ouverte, une homonymie ne pourrait pas être écartée sur cette base."
     }
   ]
 }

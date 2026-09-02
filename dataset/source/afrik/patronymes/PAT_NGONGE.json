@@ -27,6 +27,11 @@
         "claim": "Le totem principal (omuziro) de ce clan est la loutre. Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
         "claimStatus": "claimed",
         "sourceRefs": ["roscoe-1911-baganda", "buganda-heritage-clans"]
+      },
+      {
+        "claim": "Le totem secondaire (akabbiro) de ce clan est la genette (kasimba), au rang nº 4 de la liste de Roscoe.",
+        "claimStatus": "established",
+        "sourceRefs": ["roscoe-1911-baganda"]
       }
     ],
     "linguisticReconstructions": [
@@ -78,7 +83,7 @@
       "url": "https://archive.org/details/bagandaaccountof00roscuoft",
       "tier": "referenced",
       "source_kind": "academic",
-      "notes": "Roscoe, John, Macmillan, 1911, chapitre VI « The Clans and their Totems » (p. 133-185). Ethnographie missionnaire coloniale, à lire comme telle ; Apolo Kaggwa en fut le collecteur de traditions. Établit le système totémique (totem principal + akabbiro, interdit alimentaire). L'attribution du totem clan par clan a été atteinte via les articles de clans de la Wikipédia anglophone : la vérification page à page dans le chapitre VI reste due."
+      "notes": "Roscoe, John, Macmillan, 1911, chapitre VI « The Clans and their Totems » (p. 133-185). Ethnographie missionnaire coloniale, à lire comme telle ; Apolo Kaggwa en fut le collecteur de traditions. Établit le système totémique (totem principal + akabbiro, interdit alimentaire). L'attribution du totem clan par clan avait été atteinte via les articles de clans de la Wikipédia anglophone ; la vérification page à page était due et a été faite sur le texte intégral, « List of the Clans with their Totems », p. 138-139 : Ngonge (loutre) nº 4, Fumbe (civette) nº 6, Lugave (Manis, pangolin) nº 11, Njaza nº 25. Roscoe glose Njaza par « Roebuck » (chevreuil), là où l'usage actuel donne le redunca ; l'écart de glose est conservé plutôt que corrigé en silence."
     },
     {
       "sourceKey": "buganda-heritage-clans",
@@ -97,15 +102,15 @@
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Les charges héréditaires attachées aux clans ganda existent mais n'ont pas été établies pour ce clan lors de la passe."
+      "reason": "Les titres de chef de clan donnés par les sites patrimoniaux ganda (Walusimbi pour le Ffumbe, Ndugwa pour le Lugave) ont été cherchés dans le texte intégral de Roscoe : Walusimbi y apparaît six fois, mais comme détenteur de prérogatives rituelles à l'intronisation, jamais rattaché explicitement à son ekika ; Ndugwa n'y figure que dans une liste de noms de garçons. La charge héréditaire est donc plausible et non établie."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
+      "reason": "Le texte intégral de Roscoe a été parcouru pour ce clan : il nomme des chefs et des officiants, mais sans généalogie permettant de rattacher une personne décédée au clan par une source dédiée."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "Le nom de ce clan est celui de son totem, mot commun du luganda ; aucune lignée homonyme d'origine distincte n'a été trouvée."
     }
   ],
   "totemicFoodProhibition": {
