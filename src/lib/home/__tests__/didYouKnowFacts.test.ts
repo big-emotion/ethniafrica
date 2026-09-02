@@ -127,7 +127,12 @@ describe("the Saviez-vous bank", () => {
       ).toBeGreaterThan(0);
       for (const source of entry.sources ?? []) {
         expect(source.title).not.toBe("");
-        expect(source.url.startsWith("https://"), source.url).toBe(true);
+        // A printed work may legitimately have no address. What it may not
+        // have is an address that goes nowhere, so the check holds on the
+        // shape of the ones that are given rather than on their presence.
+        if (source.url !== undefined) {
+          expect(source.url.startsWith("https://"), source.url).toBe(true);
+        }
       }
     }
   });

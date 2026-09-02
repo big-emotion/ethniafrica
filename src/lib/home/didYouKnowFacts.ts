@@ -19,6 +19,8 @@
  * cost, not its integration.
  */
 
+import { shuffleAnecdoteOrder } from "@/lib/home/anecdoteDeck";
+
 export type DidYouKnowEntityKind = "people" | "country" | "family";
 
 export interface DidYouKnowEntity {
@@ -41,7 +43,13 @@ export type DidYouKnowTier = "official" | "referenced" | "unverified";
  */
 export interface DidYouKnowSource {
   title: string;
-  url: string;
+  /**
+   * Absent for a work that has no address — a 1937 monograph, a journal issue
+   * that never went online. Inventing a plausible URL for one would be worse
+   * than omitting it: a reader clicks it, lands nowhere, and learns that the
+   * citations on this page are decorative.
+   */
+  url?: string;
   tier: DidYouKnowTier;
   /** What the citation actually supports, or what it deliberately leaves open. */
   notes?: string;
@@ -583,6 +591,1240 @@ export const DID_YOU_KNOW_FACTS: DidYouKnowFact[] = [
       },
     ],
   },
+  // ——————————————————————————————————————————————————————————————————————
+  // Les noms que les voisins donnent
+  //
+  // The bank opened country-heavy: Monrovia, la Côte d'Ivoire, le Cameroun.
+  // Those are the names a reader already half-knows. The corpus's real
+  // holding is the other side of the ledger — the eight hundred fiches whose
+  // `appellations` chapter records who named the people, in what language,
+  // and what the word meant before it became an ethnonym. What follows is
+  // drawn from there, one naming mechanism per anecdote.
+  // ——————————————————————————————————————————————————————————————————————
+  {
+    id: "iteso-bakedi",
+    headline:
+      "Les Iteso ont longtemps été désignés par un mot qui veut dire « les nus ».",
+    body: [
+      "Bakedi — aussi écrit Bakidi — est le nom que les Baganda leur donnent au XIXᵉ siècle. Il qualifie une manière de se vêtir, jugée depuis l'extérieur, et il est aujourd'hui tenu pour insultant.",
+      "Deux autres mots entourent le premier sans le dire. Teso ne nomme pas le peuple mais son territoire, et Ateso sa langue : trois entités, trois mots, que l'usage a fini par confondre en un seul. La frontière coloniale de 1902 a fait le reste, en séparant les Iteso de l'Ouganda de ceux du Kenya.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_ITESO", label: "Iteso" },
+      { kind: "country", id: "UGA", label: "Ouganda" },
+      { kind: "country", id: "KEN", label: "Kenya" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Ateso (teo)",
+        url: "https://www.ethnologue.com/language/teo/",
+        tier: "official",
+        notes:
+          "Atteste les appellations Teso, Bakedi et Wamia et la répartition Ouganda-Kenya. Le sens de Bakedi et son caractère péjoratif sont rapportés par la notice de ce peuple dans l'atlas.",
+      },
+    ],
+  },
+  {
+    id: "datoga-mangati",
+    headline:
+      "Les Datooga sont connus sous deux noms, et le plus courant signifie « les ennemis ».",
+    body: [
+      "Mang'ati est le mot par lequel les Maasai et plusieurs peuples bantous voisins les désignent. Ce n'est pas une description, c'est une position : le nom dit la relation, pas le peuple.",
+      "L'autre nom courant, Barabaig, est celui du plus grand de leurs sous-groupes. Les Datooga en comptent au moins dix. Un peuple appelé par le nom de sa fraction la plus visible est un peuple dont on n'a compté qu'une partie — l'erreur est de recensement autant que de vocabulaire.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_DATOGA", label: "Datooga" },
+      { kind: "country", id: "TZA", label: "Tanzanie" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Datooga (tcc)",
+        url: "https://www.ethnologue.com/language/tcc/",
+        tier: "official",
+        notes:
+          "Atteste l'endonyme Datooga, les variantes Tatog et Barabaig et le rapport de sous-groupe.",
+      },
+      {
+        title: "Glottolog — Datooga (dato1239)",
+        url: "https://glottolog.org/resource/languoid/id/dato1239",
+        tier: "official",
+      },
+    ],
+  },
+  {
+    id: "azande-niamniam",
+    headline:
+      "Une calomnie faite aux Azande a fini par nommer une plante et entrer dans le turc.",
+    body: [
+      "Azande signifie dans leur langue « ceux qui possèdent beaucoup de terre ». Le nom que l'Europe a retenu au XIXᵉ siècle est un autre : Niam-Niam, employé par les voisins arabes puis par les explorateurs, et censé imiter le bruit d'une bouche qui mange. Il accusait tout un peuple de cannibalisme.",
+      "Le mot a voyagé plus loin que l'accusation. Le turc yamyam en dérive. Une balsamine décrite par les botanistes porte encore le nom d'Impatiens niamniamensis. Une calomnie du XIXᵉ siècle survit ainsi dans une nomenclature qui ne sait plus ce qu'elle répète.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_AZANDE_SUD", label: "Azande" },
+      { kind: "country", id: "SSD", label: "Soudan du Sud" },
+      { kind: "country", id: "COD", label: "République démocratique du Congo" },
+      { kind: "country", id: "CAF", label: "République centrafricaine" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title:
+          "Evans-Pritchard, E. E. — Witchcraft, Oracles and Magic Among the Azande. Oxford University Press, 1937",
+        tier: "referenced",
+        notes:
+          "L'ethnographie de référence sur les Azande, et la source de la distinction entre le peuple et la réputation qu'on lui a faite.",
+      },
+      {
+        title: "SIL Ethnologue — Zande (zne)",
+        url: "https://www.ethnologue.com/language/zne/",
+        tier: "official",
+        notes:
+          "Atteste l'ethnonyme et les variantes, dont Niam-Niam, relevée comme appellation dépréciative.",
+      },
+    ],
+  },
+  {
+    id: "wonnin-godie",
+    headline:
+      "Le nom officiel des Wonnin est un sobriquet de voisin : « chimpanzé-panthère ».",
+    body: [
+      "Gwèdji, en langue néyo, associe deux animaux pour qualifier un caractère jugé belliqueux. Les Néyo l'appliquent à leurs voisins ; la forme francisée Godié est aujourd'hui celle des cartes, des recensements et des codes de langue.",
+      "Wonnin est le nom que le groupe se donne. Il n'a jamais quitté l'usage domestique, ce qui laisse le sobriquet occuper seul l'espace public — l'ordinaire de cette page : le nom qui circule est rarement celui qu'on s'est choisi.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_WONNIN", label: "Wonnin (Godié)" },
+      { kind: "country", id: "CIV", label: "Côte d'Ivoire" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Godié (god)",
+        url: "https://www.ethnologue.com/language/god/",
+        tier: "official",
+        notes:
+          "Atteste l'appellation Godié et ses variantes. L'étymologie néyo Gwèdji est rapportée par la notice de ce peuple dans l'atlas.",
+      },
+    ],
+  },
+  {
+    id: "murle-moden",
+    headline:
+      "Trois voisins ont donné trois noms différents aux Murle, et les Murle n'ont qu'un mot pour les trois.",
+    body: [
+      "Beir chez les Dinka, Jebe chez les Luo et les Nuer, Ajibba chez les Anuak : la littérature coloniale britannique enregistre ces trois formes avant que l'autonyme Murle ne soit reconnu. Un peuple porte autant de noms qu'il a de voisins.",
+      "La symétrie est exacte de l'autre côté. En murle, tous les non-Murle sont moden — un seul mot, qui dit à la fois l'étranger et l'ennemi. Nommer ses voisins et être nommé par eux sont le même geste, pris dans les deux sens.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_MURLE", label: "Murle" },
+      { kind: "country", id: "SSD", label: "Soudan du Sud" },
+      { kind: "country", id: "ETH", label: "Éthiopie" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "WALS Online — Murle (ISO 639-3 : mur)",
+        url: "https://wals.info/languoid/lect/wals_code_mrl",
+        tier: "official",
+      },
+      {
+        title: "Glottolog — Murle (murl1244)",
+        url: "https://glottolog.org/resource/languoid/id/murl1244",
+        tier: "official",
+        notes:
+          "Atteste l'ethnonyme et les exonymes voisins. Le sens de moden est rapporté par la notice de ce peuple dans l'atlas.",
+      },
+    ],
+  },
+  {
+    id: "kirdi-paien",
+    headline:
+      "« Kirdi » ne désigne aucun peuple : il désigne quarante peuples qui ont refusé l'islam.",
+    body: [
+      "Le mot vient du kanouri-haoussa et signifie païen. Les populations islamisées du nord du Cameroun et du Tchad — Peuls, Mandaras, Kotokos — l'appliquent à celles qui ne le sont pas. La première mention occidentale date du récit de voyage du major Denham, en 1826, sous la forme Kerdies.",
+      "Il recouvre plus de quarante ethnies sans parenté linguistique ni culturelle, dont la seule chose commune est ce refus. Depuis les années 1990, un mouvement politique l'a retourné en « Kirditude » et s'en sert comme drapeau — un des rares cas où une insulte de vainqueur est reprise par ceux qu'elle visait.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_KIRDI", label: "Kirdi" },
+      { kind: "country", id: "CMR", label: "Cameroun" },
+      { kind: "country", id: "TCD", label: "Tchad" },
+      { kind: "country", id: "NGA", label: "Nigeria" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Mafa (maf)",
+        url: "https://www.ethnologue.com/language/maf/",
+        tier: "official",
+        notes:
+          "Atteste l'une des langues rassemblées sous l'étiquette. L'étymologie et la mention de Denham en 1826 sont rapportées par la notice de ce peuple dans l'atlas.",
+      },
+    ],
+  },
+  {
+    id: "bambara-refus",
+    headline: "Bambara veut probablement dire « ceux qui refusent ».",
+    body: [
+      "L'étymologie est débattue — on l'a rattachée à l'arabe comme au mandingue — mais le sens que retiennent les sources du XVIIIᵉ siècle est stable : infidèle, mécréant. Le mot est alors employé par les Mandingues islamisés pour désigner les Bamana restés animistes.",
+      "Bamana est la forme que les locuteurs emploient. Bambara, lui, a suivi le chemin inverse de la plupart des noms de cette page : porté par l'usage jusqu'à en perdre sa charge, il nomme aujourd'hui une langue véhiculaire que des millions de personnes parlent sans y entendre le reproche d'origine.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_BAMBARA", label: "Bambara (Bamana)" },
+      { kind: "country", id: "MLI", label: "Mali" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Bambara (bam)",
+        url: "https://www.ethnologue.com/language/bam/",
+        tier: "official",
+        notes:
+          "Atteste les formes Bambara et Bamana et le statut véhiculaire de la langue. L'étymologie dépréciative est rapportée par la notice de ce peuple dans l'atlas, qui la donne pour débattue.",
+      },
+    ],
+  },
+  {
+    id: "dogon-habe",
+    headline:
+      "Dans les sources anciennes, les Dogon s'appellent Habe — un mot peul pour « étranger ».",
+    body: [
+      "Habe est employé par les Peuls pour désigner ceux qui ont refusé l'islamisation ; le mot dit à la fois l'étranger et le paysan, et il est utilisé péjorativement. Les références anciennes le mettent régulièrement à la place de Dogon.",
+      "Dogon a fini par s'imposer partout, y compris chez les intéressés. Ce que le nom unique masque, c'est qu'il recouvre une douzaine de langues et une cinquantaine de sous-dialectes dont beaucoup ne s'entendent pas entre eux : l'unité dogon est culturelle et territoriale avant d'être linguistique.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_DOGON", label: "Dogon" },
+      { kind: "country", id: "MLI", label: "Mali" },
+      { kind: "country", id: "BFA", label: "Burkina Faso" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "UNESCO — Falaises de Bandiagara, pays dogon",
+        url: "https://whc.unesco.org/fr/list/516/",
+        tier: "official",
+        notes:
+          "Atteste le territoire et la désignation Dogon. L'exonyme peul Habe et son sens sont rapportés par la notice de ce peuple dans l'atlas.",
+      },
+    ],
+  },
+  {
+    id: "le-nom-est-une-reponse",
+    headline:
+      "Trois peuples d'Afrique de l'Ouest portent pour nom la réponse qu'un ancêtre a faite à une question.",
+    body: [
+      "Les Nankana du Ghana sont administrativement des Frafra depuis les Britanniques. Le mot est la corruption d'une salutation en gurune, Ya fara fara ? — « comment va ton travail, ta peine ? ». On a pris la formule de politesse pour le nom du peuple qui la prononçait.",
+      "Le même accident se répète deux fois. Busanga, l'exonyme des Bissa, vient de bisag gua — « homme bissa » —, la réponse donnée aux premiers Européens qui demandaient qui ils étaient. Et les Ma'di du Nil rapportent que leur nom vient de madi, « une personne », répondu dans les mêmes circonstances. Trois fois, la question « qui êtes-vous ? » a produit un nom qui n'en était pas un.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_NANKANA", label: "Nankana (Frafra)" },
+      { kind: "people", id: "PPL_BUSANSI", label: "Bissa" },
+      { kind: "people", id: "PPL_MADI", label: "Ma'di" },
+      { kind: "country", id: "GHA", label: "Ghana" },
+      { kind: "country", id: "BFA", label: "Burkina Faso" },
+      { kind: "country", id: "UGA", label: "Ouganda" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Farefare (gur)",
+        url: "https://www.ethnologue.com/language/gur/",
+        tier: "official",
+        notes: "Atteste l'appellation Frafra et ses variantes.",
+      },
+      {
+        title: "SIL Ethnologue — Bisa (bib)",
+        url: "https://www.ethnologue.com/language/bib/",
+        tier: "official",
+        notes: "Atteste les formes Bissa, Busansi et Busanga.",
+      },
+      {
+        title: "SIL Ethnologue — Ma'di (mhi)",
+        url: "https://www.ethnologue.com/language/mhi/",
+        tier: "official",
+        notes:
+          "Atteste l'ethnonyme. Les trois récits d'origine sont rapportés par les fiches AFRIK des peuples concernés, qui les donnent pour traditionnels.",
+      },
+    ],
+  },
+  {
+    id: "guere-wobe",
+    headline:
+      "Un même peuple s'appelle Guéré en Côte d'Ivoire et Krahn au Liberia, et Wè chez lui.",
+    body: [
+      "Wè est le nom que ce peuple se donne — les sources le glosent « les hommes qui pardonnent facilement ». Guéré est l'exonyme qu'un administrateur colonial français a introduit, et la France y a ajouté une division interne, Guéré au sud, Wobé au nord, qui ne correspondait à aucune frontière culturelle ni linguistique préexistante.",
+      "De l'autre côté de la ligne coloniale, au Liberia, les mêmes gens sont nommés Krahn par leurs voisins kru. Quatre noms pour un peuple, dont trois viennent de l'extérieur — et la division inventée s'est institutionnalisée jusqu'à devenir vraie.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_GUERE", label: "Guéré" },
+      { kind: "people", id: "PPL_WE", label: "Wè" },
+      { kind: "country", id: "CIV", label: "Côte d'Ivoire" },
+      { kind: "country", id: "LBR", label: "Liberia" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title:
+          "Holsoe, S. E. & Lauer, J. — « Who Are the Kran/Guere and the Gio/Yacouba? », African Studies Review 19(1), 1976",
+        url: "https://www.cambridge.org/core/journals/african-studies-review/article/who-are-the-kranguere-and-the-gioyacouba-ethnic-identifications-along-the-liberiaivory-coast-border/4E33CA4D6CDC5962A21AEE535A3E10AD",
+        tier: "referenced",
+        notes:
+          "L'article qui pose la question de l'identité de ce groupe de part et d'autre de la frontière Liberia-Côte d'Ivoire.",
+      },
+      {
+        title: "SIL Ethnologue — Wè Southern (gxx)",
+        url: "https://www.ethnologue.com/language/gxx/",
+        tier: "official",
+        notes: "Atteste les appellations Wè, Guéré, Wobé et Krahn.",
+      },
+    ],
+  },
+  // ——————————————————————————————————————————————————————————————————————
+  // Les noms que l'administration a créés
+  // ——————————————————————————————————————————————————————————————————————
+  {
+    id: "bamileke-cent-royaumes",
+    headline:
+      "« Bamiléké » est une étiquette allemande posée sur une centaine de royaumes.",
+    body: [
+      "L'administration coloniale du Kamerun l'introduit à partir de 1884 pour désigner collectivement les populations des hauts plateaux de l'Ouest. L'étymologie reste débattue ; l'une des lectures la rend par « les gens du bas », en référence à la position des arrivants venus des plaines du nord.",
+      "Sous le mot unique, il y a une centaine de fondoms, chacun avec sa langue, son chef et son histoire — et c'est par le nom de son fondom qu'un Bamiléké se désigne d'ordinaire. L'étiquette a effacé cette diversité avant d'être instrumentalisée dans les tensions politiques de l'après-indépendance.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_BAMILEKE", label: "Bamiléké" },
+      { kind: "country", id: "CMR", label: "Cameroun" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — sous-groupe bamiléké",
+        url: "https://www.ethnologue.com/subgroup/589/",
+        tier: "official",
+        notes:
+          "Atteste la pluralité des langues rassemblées sous l'étiquette. L'origine administrative allemande et l'étymologie débattue sont rapportées par la notice de ce peuple dans l'atlas.",
+      },
+    ],
+  },
+  {
+    id: "sara-douzaine",
+    headline:
+      "Les Sara ne se sont jamais appelés Sara : le mot vient de ceux qui les regardaient.",
+    body: [
+      "Il désigne un ensemble de peuples non musulmans du sud du Tchad dont les langues s'entendent entre elles. Chacun d'eux se nomme autrement — Ngambay, Sar, Mbay — et aucun n'employait le terme collectif.",
+      "L'administration coloniale française l'a amplifié, et l'indépendance lui a donné une réalité politique qu'il n'avait pas. Un regroupement fait de l'extérieur pour la commodité du classement finit par produire le groupe qu'il prétendait décrire.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_SARA", label: "Sara" },
+      { kind: "country", id: "TCD", label: "Tchad" },
+      { kind: "country", id: "CAF", label: "République centrafricaine" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Ngambay (sba)",
+        url: "https://www.ethnologue.com/language/sba/",
+        tier: "official",
+        notes:
+          "Atteste l'une des langues rassemblées sous l'étiquette et le nom que ce groupe se donne.",
+      },
+      {
+        title: "Glottolog — Ngambay (ngam1268)",
+        url: "https://glottolog.org/resource/languoid/id/ngam1268",
+        tier: "official",
+      },
+    ],
+  },
+  {
+    id: "bete-plantation",
+    headline:
+      "L'ethnie bété a été assemblée par l'administration coloniale à partir de 93 sous-groupes.",
+    body: [
+      "Le terme est d'origine locale et ne porte pas de charge coloniale repérable ; ce qui est colonial, c'est le périmètre. Il aurait émergé comme désignation générique des populations travaillant sur les plantations, avant d'être fixé comme catégorie administrative française.",
+      "Ces 93 sous-groupes n'avaient aucune unité politique précoloniale. Magwé, l'ethnonyme traditionnel le plus ancien, est partagé avec les Wè, dont les Bété tiennent un ancêtre commun — une parenté que la nouvelle étiquette a rendue invisible.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_BETE", label: "Bété" },
+      { kind: "country", id: "CIV", label: "Côte d'Ivoire" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title:
+          "Dozon, Jean-Pierre — La société bété : histoires d'une ethnie de Côte d'Ivoire. Karthala / ORSTOM, 1985",
+        url: "https://www.documentation.ird.fr/hor/fdi:17296",
+        tier: "referenced",
+        notes:
+          "L'étude qui pose la formation de l'ethnie bété comme un processus historique plutôt que comme un donné.",
+      },
+      {
+        title: "Ethnologue — Bété, Daloa (bev)",
+        url: "https://www.ethnologue.com/language/bev/",
+        tier: "official",
+        notes:
+          "Atteste que trois langues distinctes portent aujourd'hui le nom bété.",
+      },
+    ],
+  },
+  {
+    id: "bassa-nge-distinction",
+    headline:
+      "Un nom colonial a, pour une fois, empêché une confusion au lieu d'en créer une.",
+    body: [
+      "Deux peuples sans lien — les Bassa Nge, d'origine nupe, et les Bassa Komu, dont la langue est benue-congo — ont migré presque en même temps vers la même province coloniale britannique, dite province de Bassa. Sous le seul nom de Bassa, ils auraient été comptés comme un.",
+      "Les administrateurs ont ajouté le suffixe nupe Nge pour les distinguer. La distinction tient encore. C'est l'exception qui mesure la règle : ailleurs, la même administration a passé son temps à fondre en une case des peuples que rien ne rapprochait.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_BASSA_NIGERIA", label: "Bassa Nge" },
+      { kind: "country", id: "NGA", label: "Nigeria" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "Glottolog — langues nupoïdes (nupo1239)",
+        url: "https://glottolog.org/resource/languoid/id/nupo1239",
+        tier: "official",
+        notes:
+          "Atteste le rattachement nupe des Bassa Nge, et donc leur distance d'avec les Bassa Komu.",
+      },
+      {
+        title: "SIL Ethnologue — Nupe-Nupe-Tako (nup)",
+        url: "https://www.ethnologue.com/language/nup/",
+        tier: "official",
+      },
+    ],
+  },
+  {
+    id: "tswa-recensement",
+    headline:
+      "Les Vatswa disparaissent à chaque recensement, absorbés dans une case voisine.",
+    body: [
+      "Les recensements mozambicains les comptent comme Tsonga. L'étiquette Shangaan, tirée du nom du chef Soshangane, leur a été appliquée par extension alors que les Vatswa précèdent historiquement son empire.",
+      "Un nom qui n'a pas sa case administrative n'a pas d'existence statistique : il n'apparaît dans aucun tableau, donc dans aucune politique publique. La confusion remonte à l'administration coloniale portugaise, qui écrivait Tshwa, et elle a survécu à tous les États qui ont suivi.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_TSWA_MOZ", label: "Vatswa" },
+      { kind: "people", id: "PPL_RONGA", label: "Ronga" },
+      { kind: "country", id: "MOZ", label: "Mozambique" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Tswa (tsc)",
+        url: "https://www.ethnologue.com/language/tsc/",
+        tier: "official",
+        notes:
+          "Atteste le xitswa comme langue distincte et ses appellations concurrentes.",
+      },
+      {
+        title: "CLEAR Global — Language data for Mozambique (2024)",
+        url: "https://clearglobal.org/language-data-for-mozambique/",
+        tier: "referenced",
+        notes:
+          "Documente l'écart entre les langues effectivement parlées et les catégories du recensement.",
+      },
+    ],
+  },
+  {
+    id: "hutu-cartes-identite",
+    headline:
+      "Personne ne s'accorde sur ce que veut dire Hutu, et une administration en a fait une race.",
+    body: [
+      "L'étymologie est disputée depuis un siècle. Ernest Viaene, en 1910, propose « esclave ». René Bourgeois le réfute et propose l'inverse, « seigneurs » — chez les Mongo du Congo, les mots apparentés Bahoto et Bawoto désignent bien des dirigeants. Le mot que les intéressés emploient est Abahutu.",
+      "L'incertitude n'a gêné personne. Dans les années 1920, l'administration coloniale belge institue des cartes d'identité ethniques obligatoires et fait de la distinction Hutu-Tutsi une hiérarchie fixe, tranchée notamment sur le nombre de vaches possédées. Une catégorie dont le sens n'était pas établi a été rendue administrativement irréversible.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_KIRUNDI_HUTU", label: "Hutu" },
+      { kind: "country", id: "RWA", label: "Rwanda" },
+      { kind: "country", id: "BDI", label: "Burundi" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title:
+          "United States Holocaust Memorial Museum — Divided by Ethnicity: Rwanda",
+        url: "https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
+        tier: "referenced",
+        notes:
+          "Atteste l'institution des cartes d'identité ethniques par l'administration coloniale belge et ses critères.",
+      },
+      {
+        title: "SIL Ethnologue — Kirundi (run)",
+        url: "https://www.ethnologue.com/language/run",
+        tier: "official",
+        notes:
+          "Atteste la langue commune aux trois catégories. Les deux étymologies concurrentes sont rapportées par la notice de ce peuple dans l'atlas, qui les donne pour débattues.",
+      },
+    ],
+  },
+  {
+    id: "kasem-gurunsi",
+    headline:
+      "« Gurunsi » signifie « le fer ne pénètre pas » : c'était le nom d'une troupe, pas d'un peuple.",
+    body: [
+      "Le mot est d'origine djerma. Il désignait les soldats que le chef de guerre Babatu recruta dans les années 1890 parmi plusieurs groupes de la région — une formule de protection, portée par des hommes réputés invulnérables aux armes.",
+      "Les colonisateurs européens l'ont repris comme nom d'ethnie. Les Kasena, qu'il englobe, n'ont de parenté proche ni linguistique ni culturelle avec tous ceux qu'il recouvre. Et le partage franco-britannique de 1898 les a coupés en deux communautés, l'une au Ghana, l'autre au Burkina Faso.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_KASEM", label: "Kasena" },
+      { kind: "country", id: "GHA", label: "Ghana" },
+      { kind: "country", id: "BFA", label: "Burkina Faso" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Kasem (xsm)",
+        url: "https://www.ethnologue.com/language/xsm/",
+        tier: "official",
+        notes:
+          "Atteste la langue, l'autonyme Kasena et la répartition de part et d'autre de la frontière.",
+      },
+      {
+        title: "WALS Online — Kasem",
+        url: "https://wals.info/languoid/lect/wals_code_ksm",
+        tier: "official",
+      },
+    ],
+  },
+  // ——————————————————————————————————————————————————————————————————————
+  // Les noms que le commerce a laissés
+  // ——————————————————————————————————————————————————————————————————————
+  {
+    id: "dioula-metier",
+    headline: "Les Dioula portent pour nom de peuple un nom de métier.",
+    body: [
+      "Dioula est un nom commun mandingue : marchand, commerçant itinérant. Il s'est appliqué aux communautés mandé islamisées spécialisées dans le commerce à longue distance, jusqu'à devenir leur ethnonyme. En Afrique de l'Ouest anglophone, les mêmes réseaux s'appellent Wangara.",
+      "Le peuple lui-même dit Julakan, « les gens du commerce » — il assume donc le métier comme identité. Un piège demeure pour le lecteur pressé : les Diola de Casamance n'ont rien à voir, ni la langue, ni la famille, ni l'histoire. Deux noms voisins à l'œil, deux peuples sans rapport.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_DIOULA", label: "Dioula" },
+      { kind: "country", id: "CIV", label: "Côte d'Ivoire" },
+      { kind: "country", id: "BFA", label: "Burkina Faso" },
+      { kind: "country", id: "MLI", label: "Mali" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Jula (dyu)",
+        url: "https://www.ethnologue.com/language/dyu/",
+        tier: "official",
+        notes:
+          "Atteste les graphies Dioula, Jula, Dyula et l'aire des réseaux marchands.",
+      },
+    ],
+  },
+  {
+    id: "teke-vendre",
+    headline: "En langue teke, « teke » veut dire vendre.",
+    body: [
+      "Le nom du peuple est le verbe de son activité historique. Le préfixe bantou donne BaTeke au pluriel, MuTeke au singulier : « ceux du commerce », en un seul mot.",
+      "C'est le même geste que chez les Dioula, à trois mille kilomètres et dans une autre famille de langues. Quand un peuple tient les routes, ce sont les routes qui finissent par le nommer.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_TEKE_NORD", label: "Teke" },
+      { kind: "country", id: "COG", label: "Congo" },
+      { kind: "country", id: "GAB", label: "Gabon" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Teke-Tege (teg)",
+        url: "https://www.ethnologue.com/language/teg/",
+        tier: "official",
+        notes:
+          "Atteste l'ethnonyme et ses formes préfixées. Le sens du radical est rapporté par la notice de ce peuple dans l'atlas.",
+      },
+    ],
+  },
+  {
+    id: "tetela-watetera",
+    headline:
+      "« Batetela » est apparu dans des revues de géographie européennes entre 1885 et 1887.",
+    body: [
+      "Le mot dérive de Watetera, terme arabe qui désignait les populations du Maniema à l'époque du commerce esclavagiste. Il entre dans la littérature savante avec les explorateurs, et n'en est jamais ressorti : c'est aujourd'hui le nom courant.",
+      "Le nom que le peuple se donne dit autre chose. Motetela viendrait d'une divinité locale, et se traduit « celui qui ne rit pas » ou « celui dont on ne peut se moquer ». Deux noms, deux points de vue, et un seul a été imprimé.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_TETELA", label: "Tetela" },
+      { kind: "country", id: "COD", label: "République démocratique du Congo" },
+    ],
+    tier: "unverified",
+    sources: [
+      {
+        title: "Tangaza University — A Collection of 100 Tetela Proverbs",
+        url: "https://afriprov.tangaza.ac.ke/wp-content/uploads/2008/11/ebooks_tetela.pdf",
+        tier: "referenced",
+        notes:
+          "Recueil de proverbes en tetela. Il documente la langue, non l'étymologie de l'ethnonyme : les deux origines rapportées ici viennent de la notice de ce peuple dans l'atlas et n'ont pas de source dédiée, d'où la fiabilité basse du fait.",
+      },
+    ],
+  },
+  {
+    id: "tabwa-attache",
+    headline:
+      "Le nom des Tabwa viendrait d'un verbe de leur langue qui signifie « être attaché ».",
+    body: [
+      "Le rapprochement renvoie à la période où ils furent pris dans la traite. Si l'étymologie tient, c'est un peuple qui porte le nom de ce qui lui a été fait.",
+      "L'identité tabwa est elle-même en partie coloniale : ce qui s'appelle aujourd'hui les Tabwa était une série de villages distincts, aux histoires différentes, que l'administration belge a réunis sous un seul nom. La frontière avec les Lungu voisins reste floue, et plusieurs sources confondent les deux.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_TABWA", label: "Tabwa" },
+      { kind: "country", id: "COD", label: "République démocratique du Congo" },
+      { kind: "country", id: "ZMB", label: "Zambie" },
+    ],
+    tier: "unverified",
+    sources: [
+      {
+        title:
+          "Roberts, Allen F. — The Rising of a New Moon: A Century of Tabwa Art. University of Michigan Museum of Art, 1985",
+        tier: "referenced",
+        notes:
+          "L'étude de référence sur les Tabwa et sur la formation coloniale de leur identité. L'étymologie « être attaché » est rapportée par la notice de ce peuple dans l'atlas au conditionnel, d'où la fiabilité basse du fait.",
+      },
+      {
+        title: "SIL Ethnologue — Taabwa (tap)",
+        url: "https://www.ethnologue.com/language/tap/",
+        tier: "official",
+      },
+    ],
+  },
+  {
+    id: "angolar-naufrage",
+    headline:
+      "Les Angolares de São Tomé portent le nom du pays d'où leurs ancêtres n'ont pas achevé le voyage.",
+    body: [
+      "La tradition rapporte qu'un navire négrier fit naufrage au large des côtes sud de l'île vers 1540, et que les survivants fondèrent une communauté marronne dans les forêts de l'intérieur. L'ethnonyme renvoie directement à l'Angola, région d'origine de la plupart de leurs ancêtres.",
+      "Le nom est donc un point de départ transformé en identité — et il est régulièrement mal employé : on le donne à tous les créolophones de l'île, alors qu'il désigne cette communauté précise, historiquement stigmatisée comme le bas de l'échelle sociale santoméenne.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_ANGOLAR", label: "Angolares" },
+      { kind: "country", id: "STP", label: "São Tomé-et-Príncipe" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title:
+          "Bouyer et al. — The Genes of Freedom: Genome-Wide Insights into Marronage (2021)",
+        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8229774/",
+        tier: "referenced",
+        notes:
+          "Étude génomique de la communauté angolar, qui discute le récit du naufrage et l'origine angolaise des ancêtres.",
+      },
+      {
+        title: "SIL Ethnologue — Angolar (aoa)",
+        url: "https://www.ethnologue.com/language/aoa/",
+        tier: "official",
+      },
+    ],
+  },
+  {
+    id: "crioulo-cap-vert",
+    headline:
+      "Au Cap-Vert, un mot qui désignait l'esclave né dans la colonie est devenu le nom de la nation.",
+    body: [
+      "Le portugais crioulo nommait d'abord les esclaves africains nés dans les colonies, puis les personnes de descendance mixte. C'était une catégorie de statut, produite par le système qui la nommait.",
+      "Sur l'archipel, il s'est étendu à toute la population et a cessé d'être discriminant : il est devenu le marqueur d'une identité nationale inclusive, et le nom de la langue que le pays parle. Peu de mots ont changé de camp aussi complètement.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_CREOLE_CABOVERDIEN", label: "Cap-Verdiens" },
+      { kind: "country", id: "CPV", label: "Cap-Vert" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Cape Verdean Creole (kea)",
+        url: "https://www.ethnologue.com/language/kea/",
+        tier: "official",
+        notes:
+          "Atteste le kabuverdianu comme langue de l'archipel et ses appellations.",
+      },
+      {
+        title: "JSTOR Daily — Cape Verde's Dilemma(s)",
+        url: "https://daily.jstor.org/cape-verdes-dilemmas/",
+        tier: "referenced",
+        notes:
+          "Revient sur l'enjeu politique du rattachement identitaire au moment de l'indépendance.",
+      },
+    ],
+  },
+  // ——————————————————————————————————————————————————————————————————————
+  // Les noms que le lieu a donnés
+  // ——————————————————————————————————————————————————————————————————————
+  {
+    id: "kavango-riviere",
+    headline: "Les vaKavango portent le nom de la rivière qui les sépare.",
+    body: [
+      "L'Okavango marque la frontière naturelle entre la Namibie et l'Angola dans cette région. Le peuple riverain en a pris le nom, et la région administrative namibienne — coupée en Kavango Est et Kavango Ouest en 2013 — a pris le sien.",
+      "Le mot a donc fait trois fois le tour : de l'eau au peuple, du peuple à la province, et de la province à l'état civil de ceux qui y vivent. Une frontière tracée par un fleuve finit par nommer les gens des deux rives.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_KAVANGO", label: "vaKavango" },
+      { kind: "country", id: "NAM", label: "Namibie" },
+      { kind: "country", id: "AGO", label: "Angola" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Kwangali (kwn)",
+        url: "https://www.ethnologue.com/language/kwn/",
+        tier: "official",
+        notes:
+          "Atteste la langue et la localisation riveraine. Le rapport de nom entre la rivière, le peuple et la région est rapporté par la notice de ce peuple dans l'atlas.",
+      },
+    ],
+  },
+  {
+    id: "kaonde-riviere",
+    headline:
+      "Le nom des Kaonde leur a été donné par le chef qui venait de les vaincre.",
+    body: [
+      "La tradition rapporte que le chef lunda Musokantanda, après avoir défait le chef Mushima, le surnomma Mushima wa Kaonde — Mushima de la rivière Kaonde, un affluent de la Mukwizhi. Le vaincu a hérité du nom du cours d'eau où il se trouvait.",
+      "Une étymologie populaire tire par ailleurs Kaonde vers « le mince » ou « le petit nombre », en référence à cette même défaite. Deux lectures, une seule direction : dans les deux cas, le nom est écrit par le vainqueur.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_KAONDE", label: "Kaonde" },
+      { kind: "country", id: "ZMB", label: "Zambie" },
+      { kind: "country", id: "COD", label: "République démocratique du Congo" },
+    ],
+    tier: "unverified",
+    sources: [
+      {
+        title: "Kaonde — DICE Database, University of Missouri",
+        url: "https://dice.missouri.edu/assets/docs/niger-congo/Kaonde.pdf",
+        tier: "referenced",
+        notes:
+          "Fiche linguistique sur le kaonde. Les deux récits d'origine sont traditionnels et rapportés par la notice de ce peuple dans l'atlas, sans source qui les arbitre : d'où la fiabilité basse du fait.",
+      },
+    ],
+  },
+  {
+    id: "manianga-marche",
+    headline:
+      "Les Manianga s'appellent peut-être d'après un marché, ou d'après un mot lâché par Stanley.",
+    body: [
+      "Manianga n'était pas un ethnonyme. Selon Van Bulck, c'est le nom d'un marché fondé près de Kimbanza par l'ancêtre Volumina, seul marché de la région à subsister à l'époque coloniale. Selon Monnier et Wiliame, c'est un surnom lancé par Stanley et sa suite en 1881 près des chutes de Mpioka, appliqué à un peuple qui s'appelait Sundi.",
+      "Les deux versions racontent la même chose : un mot de circonstance, ramassé par l'écrit colonial, devenu le nom d'un groupe. Ba-sundi reste l'appellation ethnique propre — Ba- étant le préfixe bantou du pluriel des humains.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_MANIANGA", label: "Manianga (Ba-sundi)" },
+      { kind: "country", id: "COD", label: "République démocratique du Congo" },
+      { kind: "country", id: "COG", label: "Congo" },
+    ],
+    tier: "unverified",
+    sources: [
+      {
+        title: "SIL Ethnologue — Kikongo (kon)",
+        url: "https://www.ethnologue.com/language/kon",
+        tier: "official",
+        notes:
+          "Atteste la langue et le rattachement kongo. Les deux hypothèses sur l'origine du nom sont rapportées par la notice de ce peuple dans l'atlas d'après Van Bulck d'une part, Monnier et Wiliame d'autre part, sans arbitrage.",
+      },
+    ],
+  },
+  {
+    id: "gorowa-village-voisin",
+    headline:
+      "Les Gorwaa sont désignés par le nom du plus gros village de leurs voisins.",
+    body: [
+      "Kimbulu — ou Mbulu — est emprunté au principal village iraqw. Les exonymes swahilis Fiome et Ufiomi circulent en parallèle, et les Datooga, éleveurs voisins, les appellent Gobreik, mot qui désigne les anciens groupes couchitiques agriculteurs dont Gorwaa et Iraqw descendent.",
+      "L'affaire n'est pas historique. En ville, beaucoup de jeunes Gorwaa se disent eux-mêmes Mbulu, et l'étiquette absorbe progressivement les deux groupes en un seul. Un nom emprunté au voisin finit par effacer la distinction qu'il servait à marquer.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_GOROWA", label: "Gorwaa" },
+      { kind: "country", id: "TZA", label: "Tanzanie" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title:
+          "Harvey, Andrew — Gorwaa (Tanzania), Language Documentation and Description",
+        url: "https://www.lddjournal.org/article/1200/galley/2445/download/",
+        tier: "referenced",
+        notes:
+          "Documentation de terrain qui relève les appellations concurrentes et le glissement urbain vers Mbulu.",
+      },
+      {
+        title: "SIL Ethnologue — Gorwaa (gow)",
+        url: "https://www.ethnologue.com/language/gow/",
+        tier: "official",
+      },
+    ],
+  },
+  {
+    id: "kalabari-calabar",
+    headline:
+      "Kalabari et Calabar sonnent pareil et n'ont rien en commun : les Européens ont confondu les deux.",
+    body: [
+      "Kalabari vient d'un ancêtre éponyme, Perebo Kalabari, fils de Meinowei. Calabar est un nom efik, celui d'une ville du Cross River. Les Portugais, arrivés sur la côte, ont écrit Calabari sous l'influence du voisinage ; les Britanniques ont prononcé Calabar. Deux toponymes sans parenté ont fusionné dans l'oreille des arrivants.",
+      "Le peuple, lui, se nomme Awome. Et le nom du lieu principal, Elem Kalabari, dit « nouveau port d'expédition » — c'est-à-dire ce que le commerce en avait fait.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_KALAIBARI", label: "Kalabari" },
+      { kind: "country", id: "NGA", label: "Nigeria" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title:
+          "Alagoa, E. J. — A History of the Niger Delta. Onyoma Research Publications, 2009",
+        tier: "referenced",
+        notes:
+          "L'histoire de référence du delta du Niger, et la source de la distinction entre Kalabari et Calabar.",
+      },
+      {
+        title: "SIL Ethnologue — Kalabari (ijn)",
+        url: "https://www.ethnologue.com/language/ijn/",
+        tier: "official",
+      },
+    ],
+  },
+  // ——————————————————————————————————————————————————————————————————————
+  // Les noms que les savants ont donnés
+  // ——————————————————————————————————————————————————————————————————————
+  {
+    id: "omotique-fleuve-omo",
+    headline:
+      "Une famille de langues d'Éthiopie a été rebaptisée en 1969 d'après un fleuve, pour cesser de dire « couchitique occidental ».",
+    body: [
+      "Jusqu'à Greenberg, en 1963, ces langues du sud-ouest éthiopien sont classées comme une branche occidentale du couchitique. Harold C. Fleming propose en 1969 de les tenir pour une branche indépendante de l'afro-asiatique, et de les appeler omotiques — du nom de l'Omo, le fleuve au bord duquel vivent la plupart de ces peuples. Les travaux de Bender, en 1971, font accepter la proposition.",
+      "Le mot ne désigne aucune identité partagée : Bench, Dizi, Kafa, Wolaita, Gamo, Hamer ne se pensent pas omotiques. Et l'unité de la famille est contestée — pour certains linguistes, les langues mao et sud-omotiques n'appartiennent même pas à l'afro-asiatique. Une catégorie savante peut se renommer une fois et rester discutée un demi-siècle.",
+    ],
+    entities: [
+      {
+        kind: "people",
+        id: "PPL_OMOTIQUE_MACRO",
+        label: "Peuples omotiques",
+      },
+      { kind: "family", id: "FLG_OMOTIQUE", label: "Langues omotiques" },
+      { kind: "country", id: "ETH", label: "Éthiopie" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title:
+          "Bender, M. Lionel — Omotic: A New Afroasiatic Language Family. Southern Illinois University, 1975",
+        tier: "referenced",
+        notes:
+          "L'ouvrage qui installe la famille omotique comme branche indépendante, après la proposition de Fleming.",
+      },
+      {
+        title:
+          "The Cambridge Handbook of Linguistic Typology — The Omotic Language Family",
+        url: "https://www.cambridge.org/core/books/cambridge-handbook-of-linguistic-typology/omotic-language-family/376C86AD112F0E4C5F5677AE4F3DB5FA",
+        tier: "referenced",
+        notes:
+          "État de la question, y compris les contestations de l'unité interne de la famille.",
+      },
+    ],
+  },
+  {
+    id: "gur-mabia",
+    headline:
+      "Les langues gur ont changé trois fois de nom, et la dernière proposition vient de l'intérieur.",
+    body: [
+      "Koelle les range en 1854 dans son « North-Eastern High Sudan ». Elles deviennent ensuite les langues voltaïques, du nom du fleuve Volta, puis gur. Aucun de ces noms ne vient des peuples concernés : ils n'ont d'ailleurs pas de sentiment d'appartenance commune, la famille étant une catégorie de linguistes.",
+      "En 2017, le linguiste Adams Bodomo propose Mabia pour l'ensemble du gur central : du proto-gur ma-, mère, et bia, enfant. Le nom dit une parenté au lieu de dire un fleuve, et il est proposé par quelqu'un dont c'est la langue. C'est rare assez pour être noté.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_GUR_MACRO", label: "Peuples gur" },
+      { kind: "family", id: "FLG_GUR", label: "Langues gur" },
+      { kind: "country", id: "BFA", label: "Burkina Faso" },
+      { kind: "country", id: "GHA", label: "Ghana" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title:
+          "Bodomo, Adams — Mabia: its etymological genesis, geographical spread, and some salient genetic features, 2017",
+        tier: "referenced",
+        notes:
+          "La proposition de renommer Mabia le gur central, et l'argument étymologique ma- + bia.",
+      },
+      {
+        title:
+          "Kleinewillinghöfer, Ulrich — Gur-Adamawa relationship, Journal of West African Languages, 2014",
+        tier: "referenced",
+        notes:
+          "Situe la famille gur et la fragilité de ses contours, dont l'appellation dépend.",
+      },
+    ],
+  },
+  {
+    id: "ronga-junod",
+    headline:
+      "L'ethnonyme ronga a été mis en circulation par un philologue suisse.",
+    body: [
+      "Henri-Alexandre Junod, missionnaire et linguiste, est le premier à étudier la langue à la fin du XIXᵉ siècle, et c'est son usage qui fixe le terme dans la littérature européenne. Le mot n'était pas inventé : les sources portugaises du XVIᵉ siècle mentionnaient déjà des chefferies rhonga autour de la baie de Delagoa, l'actuelle baie de Maputo.",
+      "Ce que le savant fixe, il le fixe aussi contre autre chose. Les recensements mozambicains et sud-africains ont ensuite rangé les Ronga sous Tsonga ou sous Shangaan, et la question de savoir si le xironga est une langue ou un dialecte du xitsonga n'est toujours pas close.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_RONGA", label: "Ronga" },
+      { kind: "country", id: "MOZ", label: "Mozambique" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title:
+          "Junod, Henri-Alexandre — The Life of a South African Tribe, 1912-1913",
+        tier: "referenced",
+        notes:
+          "L'ethnographie qui installe le vocabulaire dont la littérature ultérieure hérite.",
+      },
+      {
+        title: "SIL Ethnologue — Ronga (rng)",
+        url: "https://www.ethnologue.com/language/rng/",
+        tier: "official",
+        notes: "Atteste le xironga comme langue et ses appellations voisines.",
+      },
+    ],
+  },
+  // ——————————————————————————————————————————————————————————————————————
+  // Les noms réfractés par les langues d'Europe
+  // ——————————————————————————————————————————————————————————————————————
+  {
+    id: "fulbe-quatre-noms",
+    headline:
+      "Les Fulbe portent quatre noms internationaux, et aucun des quatre n'est le leur.",
+    body: [
+      "Peul vient du wolof Pel, repris par les colonisateurs français. Fula est l'anglicisation d'un terme mandingue. Fulani est la forme haoussa, devenue courante au Nigeria et dans tout le monde anglophone. Fellata est le terme arabe du Soudan et du Tchad, appliqué à ceux installés sur les routes du pèlerinage — et il est chargé de stéréotypes assez négatifs pour qu'on l'évite.",
+      "Le nom du peuple, en peul, est Fulbe au pluriel et Pullo au singulier. Quatre langues voisines ont chacune fabriqué sa propre étiquette, et ce sont ces quatre-là qui ont voyagé.",
+    ],
+    entities: [
+      {
+        kind: "people",
+        id: "PPL_FULANI_MASSINA",
+        label: "Fulbe du Massina",
+      },
+      { kind: "country", id: "MLI", label: "Mali" },
+      { kind: "country", id: "BFA", label: "Burkina Faso" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Fulfulde, Maasina (ffm)",
+        url: "https://www.ethnologue.com/language/ffm/",
+        tier: "official",
+        notes:
+          "Atteste les appellations Peul, Fula, Fulani et Fulbe pour la même langue.",
+      },
+      {
+        title: "Seydou, Christiane — La poésie pastorale peule. Karthala, 1977",
+        tier: "referenced",
+        notes:
+          "Travail de référence sur la langue et la tradition orale peules, et sur ce que le peuple nomme lui-même.",
+      },
+    ],
+  },
+  {
+    id: "malinke-manden",
+    headline:
+      "Malinké, Mandinka, Mandingo, Maninka : un seul nom, réfracté par les routes de la dispersion.",
+    body: [
+      "Tous viennent du Manden, la région historique berceau de l'empire du Mali. Malinké en est la forme française, Maninka celle de Guinée et du Mali, Mandinka celle du Sénégal, de la Gambie et de la Guinée-Bissau, Mandingo la version anglaise coloniale encore employée en Gambie et en Sierra Leone.",
+      "Chaque forme marque une route de dispersion et l'administration qui l'a écrite. Quinze millions de personnes environ sont concernées, et l'ISO 639-3 a fini par découper l'ensemble en une demi-douzaine de langues séparées — parce qu'un nom qui se dit de six façons finit par être classé six fois.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_MALINKE", label: "Malinké" },
+      { kind: "country", id: "MLI", label: "Mali" },
+      { kind: "country", id: "GIN", label: "Guinée" },
+      { kind: "country", id: "SEN", label: "Sénégal" },
+      { kind: "country", id: "GMB", label: "Gambie" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — macrolangue mandingue (man)",
+        url: "https://www.ethnologue.com/language/man/",
+        tier: "official",
+        notes:
+          "Atteste les formes concurrentes et le découpage en langues distinctes par l'ISO 639-3.",
+      },
+    ],
+  },
+  {
+    id: "fang-reputation",
+    headline:
+      "Les Fang ont laissé courir une réputation de cannibales pour tenir les étrangers à distance.",
+    body: [
+      "Pahouin est l'étiquette française, Pangwe l'allemande, Pamue l'espagnole : trois empires, trois orthographes, un seul peuple, qui se nomme Fang. Le terme Pahouin est aujourd'hui tenu pour péjoratif.",
+      "Il l'est notamment parce qu'il s'est chargé d'une réputation de guerriers cannibales — que les Fang, rapporte la notice de ce peuple, ont eux-mêmes cultivée pour dissuader les visiteurs. Un peuple peut donc contribuer à sa propre légende noire, et découvrir ensuite qu'elle lui survit et le dessert.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_FANG_GABON", label: "Fang" },
+      { kind: "country", id: "GAB", label: "Gabon" },
+      { kind: "country", id: "GNQ", label: "Guinée équatoriale" },
+      { kind: "country", id: "CMR", label: "Cameroun" },
+    ],
+    tier: "unverified",
+    sources: [
+      {
+        title: "SIL Ethnologue — Fang (fan)",
+        url: "https://www.ethnologue.com/language/fan/",
+        tier: "official",
+        notes: "Atteste l'ethnonyme et les étiquettes coloniales concurrentes.",
+      },
+      {
+        title: "Smarthistory — Fang reliquary guardian figure",
+        url: "https://smarthistory.org/fang-reliquary-figure/",
+        tier: "referenced",
+        notes:
+          "Contexte sur les Fang et leur art. La culture délibérée de la réputation est rapportée par la notice de ce peuple dans l'atlas sans source dédiée, d'où la fiabilité basse du fait.",
+      },
+    ],
+  },
+  {
+    id: "beti-cranes",
+    headline:
+      "L'accusation de cannibalisme portée contre les Béti reposait sur des crânes d'ancêtres.",
+    body: [
+      "Paul Du Chaillu, en 1856, observe des crânes près des villages et conclut à l'anthropophagie. C'étaient des crânes d'ancêtres, conservés comme tels. L'erreur de lecture a été reprise, imprimée, et a servi à justifier la violence coloniale.",
+      "Le mot qui l'a portée est Pahouin, déformation française du Pangwe allemand, étiquette administrative qui amalgamait Ewondo, Bulu, Fang, Eton et Bane sous un seul nom. Une catégorie fausse et une calomnie fausse ont voyagé ensemble, et l'une a rendu l'autre plus facile à croire.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_BETI", label: "Béti" },
+      { kind: "country", id: "CMR", label: "Cameroun" },
+      { kind: "country", id: "GNQ", label: "Guinée équatoriale" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Ewondo (ewo)",
+        url: "https://www.ethnologue.com/language/ewo/",
+        tier: "official",
+        notes:
+          "Atteste l'une des langues rassemblées sous l'étiquette Beti-Pahouin.",
+      },
+      {
+        title: "SIL Ethnologue — Fang (fan)",
+        url: "https://www.ethnologue.com/language/fan/",
+        tier: "official",
+        notes:
+          "Atteste l'autre. L'épisode Du Chaillu et la nature des crânes sont rapportés par la notice de ce peuple dans l'atlas.",
+      },
+    ],
+  },
+  // ——————————————————————————————————————————————————————————————————————
+  // Les noms que ceux qui les portent ont repris
+  // ——————————————————————————————————————————————————————————————————————
+  {
+    id: "khwe-penduka",
+    headline:
+      "En 2000, à Penduka, des peuples se sont réunis pour décider comment leur nom s'écrit.",
+    body: [
+      "Les Khwe du Kalahari et de l'Okavango étaient nommés Kxoe, Hukwe, Xun, Barakwena, Mbarakwena selon la source — et « Water Bushmen » dans les documents coloniaux, du fait de leur habitat riverain. Plusieurs de ces formes sont dépréciatives ; le mot Bushmen est aujourd'hui largement rejeté.",
+      "La déclaration de Penduka, en 2000, recommande une orthographe standardisée : Khwe. C'est le geste inverse de tout le reste de cette page — non pas un nom reçu, mais un nom arrêté par ceux qui le portent, à une date qu'on peut citer.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_KXOE", label: "Khwe" },
+      { kind: "country", id: "BWA", label: "Botswana" },
+      { kind: "country", id: "NAM", label: "Namibie" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "Glottolog — Kxoe (kxoe1243, ISO 639-3 : xuu)",
+        url: "https://glottolog.org/resource/languoid/id/kxoe1243",
+        tier: "official",
+        notes: "Atteste la langue et les appellations concurrentes.",
+      },
+      {
+        title:
+          "Kilian-Hatz, Christa — Khwe Dictionary. Rüdiger Köppe Verlag, 2003",
+        tier: "referenced",
+        notes:
+          "Le dictionnaire de référence, publié sous l'orthographe recommandée par la déclaration de Penduka.",
+      },
+    ],
+  },
+  {
+    id: "west-taa-masarwa",
+    headline:
+      "Les !Xoon s'appellent « les gens de l'ouest », et leurs voisins les appellent Masarwa.",
+    body: [
+      "ǃama ʘʔâni, en taa, dit la direction : les gens de l'ouest. Masarwa est le mot tswana, généralement tenu pour péjoratif ; Magong en est une variante régionale. L'étiquette West Taa, elle, est venue des linguistes, pour distinguer ce parler du !Xoon oriental documenté par Anthony Traill.",
+      "Trois registres se superposent donc sur les mêmes personnes : ce qu'elles se disent, ce que le voisin en dit, ce que la science en note. Aucun des trois n'est traduisible dans les deux autres, et c'est le troisième qui figure dans les catalogues.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_WEST_TAA", label: "!Xoon occidental" },
+      { kind: "country", id: "BWA", label: "Botswana" },
+      { kind: "country", id: "NAM", label: "Namibie" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Taa (nmn)",
+        url: "https://www.ethnologue.com/language/nmn/",
+        tier: "official",
+        notes: "Atteste la langue, l'autonyme !Xoon et l'exonyme Masarwa.",
+      },
+      {
+        title: "Glottolog — West !Xoon (xooo1239)",
+        url: "https://glottolog.org/resource/languoid/id/xooo1239",
+        tier: "official",
+      },
+    ],
+  },
+  {
+    id: "antambahoaka-surnom",
+    headline:
+      "Les Antambahoaka de Madagascar portent la déformation d'un surnom : « aimé de son peuple ».",
+    body: [
+      "Ratiambahoaka était le surnom du fondateur Ravalarivo. Le groupe qui s'est constitué autour de lui a pris le mot, usé par l'usage, pour nom collectif.",
+      "En interne, un autre nom circule : Zafiraminia, « fils de Raminia », réservé aux membres initiés après la circoncision — le sambatra. Un peuple peut ainsi porter deux noms qui ne s'adressent pas au même public.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_ANTAMBAHOAKA", label: "Antambahoaka" },
+      { kind: "country", id: "MDG", label: "Madagascar" },
+    ],
+    tier: "unverified",
+    sources: [
+      {
+        title: "SIL Ethnologue — malgache (mlg)",
+        url: "https://www.ethnologue.com/language/mlg/",
+        tier: "official",
+        notes:
+          "Atteste la macrolangue et ses variétés. L'étymologie du nom est une tradition rapportée par la notice de ce peuple dans l'atlas, sans source qui l'atteste : d'où la fiabilité basse du fait.",
+      },
+    ],
+  },
+  {
+    id: "masa-banana",
+    headline:
+      "Tous les noms donnés par les voisins ne blessent pas : « Banana » veut dire amical.",
+    body: [
+      "C'est l'exonyme des Masa dans plusieurs langues voisines, et il vient de leur réputation d'hospitalité. Yagoua, autre appellation courante, est simplement le nom de leur ville principale au Cameroun.",
+      "Le contraste rend le reste lisible. Les mêmes Masa sont aussi appelés Kirdi — « païen » —, mot qu'ils rejettent. Un peuple reçoit des noms de plusieurs voisins à la fois, et ce sont les rapports de force, pas la langue, qui décident lequel s'imprime.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_MASA", label: "Masa" },
+      { kind: "country", id: "TCD", label: "Tchad" },
+      { kind: "country", id: "CMR", label: "Cameroun" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Masana (mcn)",
+        url: "https://www.ethnologue.com/language/mcn/",
+        tier: "official",
+        notes:
+          "Atteste l'endonyme Masana et les appellations Massa, Banana et Yagoua.",
+      },
+    ],
+  },
+  {
+    id: "rendille-baton",
+    headline:
+      "Les Rendille se disent « porteurs du bâton de Dieu ». Les Somali les appellent « ceux qui ont refusé ».",
+    body: [
+      "L'ethnonyme rendille est traduit par une référence à un bâton sacré de chef. Le mot somali Rertit — Reer Til, les rejetés — dit tout autre chose : ceux qui ont refusé le territoire somali et sont restés à Marsabit.",
+      "Les Somali poussent la distinction plus loin encore, en séparant les « vrais » Rendille, dits asil, de ceux qui parlent samburu et sont tenus pour assimilés. Nommer son voisin, ici, revient à trancher ce qu'il aurait dû être.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_RENDILLE", label: "Rendille" },
+      { kind: "country", id: "KEN", label: "Kenya" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Rendille (rel)",
+        url: "https://www.ethnologue.com/language/rel/",
+        tier: "official",
+        notes: "Atteste la langue et les appellations voisines.",
+      },
+      {
+        title:
+          "Schlee, Günther — Identities on the Move: Clanship and Pastoralism in Northern Kenya. Manchester University Press, 1989",
+        tier: "referenced",
+        notes:
+          "L'étude de référence sur les identités et les appartenances claniques dans le nord du Kenya.",
+      },
+    ],
+  },
+  // ——————————————————————————————————————————————————————————————————————
+  // Les noms dont l'étymologie célèbre ne tient pas
+  // ——————————————————————————————————————————————————————————————————————
+  {
+    id: "kaffa-cafe",
+    headline:
+      "Non, le mot « café » ne vient probablement pas du royaume de Kaffa.",
+    body: [
+      "L'hypothèse est trop belle pour ne pas circuler : le caféier pousse dans cette région d'Éthiopie, le royaume s'appelle Kaffa, donc le mot en viendrait. Les linguistes la jugent peu probable, et la littérature la rapporte comme une hypothèse, pas comme un fait.",
+      "Ce que Kaffa nomme réellement est déjà triple : un peuple — qui se dit Kafficho —, un royaume historique, et une zone administrative éthiopienne actuelle. Keffa en est la translittération amharique. Trois choses sous un mot suffisent ; la quatrième était de trop.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_KAFFA", label: "Kafficho" },
+      { kind: "country", id: "ETH", label: "Éthiopie" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "Glottolog — Kafa (kafa1242)",
+        url: "https://glottolog.org/resource/languoid/id/kafa1242",
+        tier: "official",
+        notes:
+          "Atteste la langue et l'autonyme. Le caractère peu probable de l'étymologie du mot café est rapporté par la notice de ce peuple dans l'atlas d'après la littérature linguistique.",
+      },
+      {
+        title: "Pankhurst, Richard — The Ethiopian Borderlands, 1997",
+        tier: "referenced",
+        notes:
+          "Histoire des marches éthiopiennes, dont le royaume de Kaffa et son incorporation.",
+      },
+    ],
+  },
+  {
+    id: "bono-brong-ahafo",
+    headline:
+      "Un exonyme est devenu, en 1959, le nom officiel d'une région du Ghana.",
+    body: [
+      "Les Bono se nomment Bono, ou Bonofoɔ — « les pionniers », « les premiers-nés de la terre ». Brong est la forme que les Asante et les Gonja employaient pour désigner les peuples de la zone située entre les Asante et le Volta, et que les administrateurs britanniques ont reprise. En Côte d'Ivoire, la même population est dite Abron.",
+      "En 1959, l'exonyme entre dans la géographie officielle avec la région Brong-Ahafo, qui amalgame des peuples d'origines différentes. Le pays l'a depuis scindée en Bono, Bono Est et Ahafo : il aura fallu soixante ans pour que le nom que le peuple se donne revienne sur la carte.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_BONO", label: "Bono" },
+      { kind: "people", id: "PPL_BRONG", label: "Brong (Abron)" },
+      { kind: "country", id: "GHA", label: "Ghana" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "SIL Ethnologue — Abron (abr)",
+        url: "https://www.ethnologue.com/language/abr/",
+        tier: "official",
+        notes: "Atteste les formes Bono, Brong et Abron pour la même langue.",
+      },
+      {
+        title:
+          "Stahl, Ann Brower — Making History in Banda: Anthropological Visions of Africa's Past. Cambridge University Press, 2001",
+        tier: "referenced",
+        notes:
+          "Archéologie et histoire de la zone, et de ce que les découpages régionaux y ont recouvert.",
+      },
+    ],
+  },
+  {
+    id: "toura-wen",
+    headline:
+      "Chez les Toura, le nom colonial est resté officiel et le nom propre est resté domestique.",
+    body: [
+      "Toura est la forme adoptée par l'administration coloniale française ; elle reste en usage officiel en Côte d'Ivoire, et Tura en est la variante anglophone. Wen, ou Wenmebo, est l'endonyme.",
+      "Le partage est net et il est banal : l'un des deux noms figure sur les papiers, l'autre se parle à la maison. La douzaine d'autres appellations relevées — Gwane, Nebou, Yaramassa — sont des noms de sous-groupes que le nom unique a effacés.",
+    ],
+    entities: [
+      { kind: "people", id: "PPL_TOURA", label: "Toura (Wen)" },
+      { kind: "country", id: "CIV", label: "Côte d'Ivoire" },
+      { kind: "country", id: "GIN", label: "Guinée" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "Glottolog — Dan-Toura (dant1235)",
+        url: "https://glottolog.org/resource/languoid/id/dant1235",
+        tier: "official",
+        notes:
+          "Atteste le rattachement de la langue et les appellations concurrentes.",
+      },
+    ],
+  },
 ];
 
 function hasOfficialSource(fact: DidYouKnowFact): boolean {
@@ -652,18 +1894,13 @@ export function shuffleDidYouKnowDeck(
   facts: DidYouKnowFact[] = DID_YOU_KNOW_FACTS,
   avoidLeading: string | null = null
 ): DidYouKnowFact[] {
-  const deck = [...facts];
+  const byId = new Map(facts.map((fact) => [fact.id, fact]));
 
-  for (let index = deck.length - 1; index > 0; index -= 1) {
-    const target = Math.floor(random() * (index + 1));
-    [deck[index], deck[target]] = [deck[target], deck[index]];
-  }
-
-  if (deck.length > 1 && avoidLeading !== null && deck[0].id === avoidLeading) {
-    [deck[0], deck[1]] = [deck[1], deck[0]];
-  }
-
-  return deck;
+  return shuffleAnecdoteOrder(
+    facts.map((fact) => fact.id),
+    random,
+    avoidLeading
+  ).map((id) => byId.get(id) as DidYouKnowFact);
 }
 
 /**

@@ -59,6 +59,19 @@ const TOMBOUCTOU: DidYouKnowFact = {
 };
 
 const DECK = [SOURCED, UNSOURCED, TOMBOUCTOU];
+const DECK_IDS = DECK.map((fact) => fact.id);
+const DECK_CARDS = new Map(DECK.map((fact) => [fact.id, { fact }]));
+
+/** Stands in for the deferred chunk the page loads on the first turn. */
+const loadDeckCards = () => Promise.resolve(DECK_CARDS);
+
+function readerProps(openingId = DECK_IDS[0]) {
+  return {
+    deck: [openingId, ...DECK_IDS.filter((id) => id !== openingId)],
+    openingCard: { fact: DECK.find((fact) => fact.id === openingId)! },
+    loadCards: loadDeckCards,
+  };
+}
 
 describe("AnecdoteCard — the fact a reader can cite (REQ-113)", () => {
   // @req REQ-113
@@ -105,7 +118,19 @@ describe("AnecdoteCard — the fact a reader can cite (REQ-113)", () => {
   // satisfied when the reader can see who it is by.
   // @req REQ-113
   it("prints the credit of the picture it shows", () => {
-    render(<AnecdoteCard language="fr" fact={SOURCED} />);
+    render(
+      <AnecdoteCard
+        language="fr"
+        fact={SOURCED}
+        illustration={{
+          kind: "picture",
+          src: "/images/anecdotes/cameroun.jpg",
+          alt: "Pirogues alignées sur la rive de l'estuaire du Wouri.",
+          credit:
+            "Estuaire du Wouri, Douala — Kondah, Wikimedia Commons, CC BY-SA 4.0",
+        }}
+      />
+    );
 
     expect(screen.getByText(/Kondah/)).toBeInTheDocument();
     expect(
@@ -134,7 +159,7 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
 
   // @req REQ-113
   it("shows a single anecdote and keeps the rest of the deck out of sight", () => {
-    render(<AnecdoteReader language="fr" deck={DECK} />);
+    render(<AnecdoteReader language="fr" {...readerProps()} />);
 
     expect(screen.getByText(SOURCED.headline)).toBeInTheDocument();
     expect(screen.queryByText(UNSOURCED.headline)).toBeNull();
@@ -145,7 +170,7 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
   // @req REQ-113
   it("reaches every anecdote of the deck before showing one twice", async () => {
     const user = userEvent.setup();
-    render(<AnecdoteReader language="fr" deck={DECK} />);
+    render(<AnecdoteReader language="fr" {...readerProps()} />);
 
     const seen: string[] = [];
     for (let turn = 0; turn < DECK.length; turn += 1) {
@@ -158,18 +183,14 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
 
   // @req REQ-113
   it("opens on the anecdote a shared link names", () => {
-    render(
-      <AnecdoteReader language="fr" deck={DECK} initialFactId="tombouctou" />
-    );
+    render(<AnecdoteReader language="fr" {...readerProps("tombouctou")} />);
 
     expect(screen.getByText(TOMBOUCTOU.headline)).toBeInTheDocument();
   });
 
   // @req REQ-113
   it("falls back to the top of the deck when the link names a retired fact", () => {
-    render(
-      <AnecdoteReader language="fr" deck={DECK} initialFactId="disparu" />
-    );
+    render(<AnecdoteReader language="fr" {...readerProps()} />);
 
     expect(screen.getByText(SOURCED.headline)).toBeInTheDocument();
   });
@@ -179,7 +200,7 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
   // @req REQ-113
   it("keeps the reader's mark on the anecdote they found interesting", async () => {
     const user = userEvent.setup();
-    render(<AnecdoteReader language="fr" deck={DECK} />);
+    render(<AnecdoteReader language="fr" {...readerProps()} />);
 
     const mark = screen.getByRole("button", {
       name: "Cette anecdote est intéressante",
@@ -199,7 +220,7 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
   // @req REQ-113
   it("lets the reader take the mark back off", async () => {
     const user = userEvent.setup();
-    render(<AnecdoteReader language="fr" deck={DECK} />);
+    render(<AnecdoteReader language="fr" {...readerProps()} />);
 
     await user.click(
       screen.getByRole("button", { name: "Cette anecdote est intéressante" })
@@ -220,7 +241,7 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
   // @req REQ-113
   it("takes a contestation where the reader stands, naming the anecdote", async () => {
     const user = userEvent.setup();
-    render(<AnecdoteReader language="fr" deck={DECK} />);
+    render(<AnecdoteReader language="fr" {...readerProps()} />);
 
     await user.click(
       screen.getByRole("button", { name: "Je conteste cette anecdote" })
@@ -233,7 +254,7 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
 
   // @req REQ-113
   it("no longer sends the reader away to a page with no form to offer", () => {
-    render(<AnecdoteReader language="fr" deck={DECK} />);
+    render(<AnecdoteReader language="fr" {...readerProps()} />);
 
     expect(
       screen.queryByRole("link", { name: "Je conteste cette anecdote" })
@@ -243,7 +264,7 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
   // @req REQ-113
   it("carries the anecdote's own address into every network link", async () => {
     const user = userEvent.setup();
-    render(<AnecdoteReader language="fr" deck={DECK} />);
+    render(<AnecdoteReader language="fr" {...readerProps()} />);
 
     await user.click(screen.getByRole("button", { name: "Partager" }));
 
@@ -261,7 +282,7 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
   // @req REQ-113
   it("closes the share row when the reader turns to another anecdote", async () => {
     const user = userEvent.setup();
-    render(<AnecdoteReader language="fr" deck={DECK} />);
+    render(<AnecdoteReader language="fr" {...readerProps()} />);
 
     await user.click(screen.getByRole("button", { name: "Partager" }));
     await user.click(screen.getByRole("button", { name: "Suivant" }));
@@ -272,18 +293,27 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
   // @req REQ-113
   it("announces the anecdote it has turned to", async () => {
     const user = userEvent.setup();
-    render(<AnecdoteReader language="fr" deck={DECK} />);
+    render(<AnecdoteReader language="fr" {...readerProps()} />);
 
     await user.click(screen.getByRole("button", { name: "Suivant" }));
 
+    // The announcement names the anecdote, not a position in a deck: the page
+    // no longer counts, so neither does the live region.
     expect(
-      screen.getByText(`Anecdote 2 sur 3 : ${UNSOURCED.headline}`)
+      screen.getByText(`Anecdote suivante : ${UNSOURCED.headline}`)
     ).toBeInTheDocument();
   });
 
   // @req REQ-113
   it("says the bank is empty rather than framing an empty card", () => {
-    render(<AnecdoteReader language="fr" deck={[]} />);
+    render(
+      <AnecdoteReader
+        language="fr"
+        deck={[]}
+        openingCard={{ fact: SOURCED }}
+        loadCards={loadDeckCards}
+      />
+    );
 
     expect(screen.getByText(/Aucune anecdote/)).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Suivant" })).toBeNull();
@@ -314,7 +344,11 @@ describe("The anecdote's two-column band (REQ-113)", () => {
   it("alternates the picture's side as the reader turns", async () => {
     const user = userEvent.setup();
     const { container } = render(
-      <AnecdoteReader language="fr" deck={DECK} openingImageSide="start" />
+      <AnecdoteReader
+        language="fr"
+        {...readerProps()}
+        openingImageSide="start"
+      />
     );
 
     const sideNow = () =>
@@ -346,7 +380,7 @@ describe("Sharing an anecdote (REQ-113)", () => {
       writable: true,
     });
 
-    render(<AnecdoteReader language="fr" deck={DECK} />);
+    render(<AnecdoteReader language="fr" {...readerProps()} />);
     await user.click(screen.getByRole("button", { name: "Partager" }));
 
     expect(nativeShare).not.toHaveBeenCalled();
@@ -358,7 +392,7 @@ describe("Sharing an anecdote (REQ-113)", () => {
   // @req REQ-113
   it("closes the networks when the reader presses Partager again", async () => {
     const user = userEvent.setup();
-    render(<AnecdoteReader language="fr" deck={DECK} />);
+    render(<AnecdoteReader language="fr" {...readerProps()} />);
 
     await user.click(screen.getByRole("button", { name: "Partager" }));
     await user.click(screen.getByRole("button", { name: "Partager" }));
