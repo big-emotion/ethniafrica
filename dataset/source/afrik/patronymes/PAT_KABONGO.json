@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_KABONGO",
   "nameMain": "Kabongo",
@@ -11,7 +11,10 @@
     {
       "spelling": "Kabongo",
       "attestations": [
-        { "countryId": "COD", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "COD",
+          "sourceRefs": ["donohugh-berry-kabongo-1932"]
+        }
       ]
     }
   ],
@@ -19,21 +22,27 @@
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Un article ethnographique de 1932 sur les Luba du Katanga situe l'une des trois grandes divisions luba sous l'autorité du chef Kabongo. Il s'agit d'une attestation historique du nom dans une fonction de chefferie, non d'une étymologie du patronyme contemporain.",
+        "claimStatus": "established",
+        "sourceRefs": ["donohugh-berry-kabongo-1932"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_LUBA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["donohugh-berry-kabongo-1932"]
     }
   ],
   "countries": [
     {
       "countryId": "COD",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["donohugh-berry-kabongo-1932"]
     }
   ],
   "alliances": [],
@@ -42,38 +51,34 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "donohugh-berry-kabongo-1932",
+      "title": "A Luba Tribe in Katanga: Customs and Folklore",
+      "url": "https://www.cambridge.org/core/journals/africa/article/abs/luba-tribe-in-katanga1-customs-and-folklore/A6B8D4D7C96529ADEFB39106ED748E78",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article d'Agnes C. L. Donohugh et Priscilla Berry publié dans Africa en avril 1932, dont l'extrait éditorial a été consulté sur Cambridge Core. L'extrait nomme explicitement le chef Kabongo et les Luba du Katanga ; il ne définit pas Kabongo et ne permet pas de conclure que toute occurrence moderne relève de cette chefferie."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kabongo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de l'article « A Luba Tribe in Katanga: Customs and Folklore » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kabongo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de l'article « A Luba Tribe in Katanga: Customs and Folklore » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kabongo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de l'article « A Luba Tribe in Katanga: Customs and Folklore » n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kabongo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de l'article « A Luba Tribe in Katanga: Customs and Folklore » n'ont pas établi de lignée homonyme d'origine distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web combinant « Kabongo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de l'article « A Luba Tribe in Katanga: Customs and Folklore » n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }
