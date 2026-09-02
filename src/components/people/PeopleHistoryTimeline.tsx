@@ -1,16 +1,20 @@
 import type { PeopleHistoryData } from "@/lib/peopleDataTransformer";
+import type { ParagraphNoteData } from "@/components/people/peopleFicheNotes";
 import { ProseWithChip } from "./ProseWithChip";
 import type { HistoryChips } from "./ProseWithChip";
 
 interface PeopleHistoryTimelineProps {
   data: PeopleHistoryData;
   chips?: HistoryChips;
+  /** One note callout per sourced field, keyed as `chips` is. */
+  notes?: Partial<Record<string, ParagraphNoteData>>;
 }
 
 // @req REQ-003
 export function PeopleHistoryTimeline({
   data,
   chips,
+  notes,
 }: PeopleHistoryTimelineProps) {
   const hasContent =
     data.kingdomsOrChiefdoms ||
@@ -29,6 +33,7 @@ export function PeopleHistoryTimeline({
             <ProseWithChip
               text={data.kingdomsOrChiefdoms}
               chip={chips?.kingdomsOrChiefdoms}
+              note={notes?.kingdomsOrChiefdoms}
             />
           </dd>
         </div>
@@ -41,6 +46,7 @@ export function PeopleHistoryTimeline({
             <ProseWithChip
               text={data.relationsWithNeighbors}
               chip={chips?.relationsWithNeighbors}
+              note={notes?.relationsWithNeighbors}
             />
           </dd>
         </div>
@@ -53,6 +59,7 @@ export function PeopleHistoryTimeline({
             <ProseWithChip
               text={data.conflictsOrAlliances}
               chip={chips?.conflictsOrAlliances}
+              note={notes?.conflictsOrAlliances}
             />
           </dd>
         </div>
@@ -62,7 +69,11 @@ export function PeopleHistoryTimeline({
         <div>
           <dt className="people-section-label">Diaspora</dt>
           <dd className="afh-prose-def">
-            <ProseWithChip text={data.diaspora} chip={chips?.diaspora} />
+            <ProseWithChip
+              text={data.diaspora}
+              chip={chips?.diaspora}
+              note={notes?.diaspora}
+            />
           </dd>
         </div>
       )}

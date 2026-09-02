@@ -1,11 +1,13 @@
+import { SourceCitation } from "@/components/sources/SourceCitation";
 import type { PatronymeSource } from "@/lib/patronymes/content";
-import { sourceStandingLabelFr } from "@/types/sources";
 
 /**
- * One citation, shared by every patronyme section that reads a `<source>`
- * out of the opaque `content` bag (attested-form attestations, an origin's
- * sources, a filiation claim's sources) — one rendering for the Source Tier
- * Policy rather than three slightly different ones.
+ * The patronyme fiche's citation, now a caller of the shared one.
+ *
+ * It keeps its own name and its own `@req` because the fiche's sections read
+ * a `<source>` out of the opaque `content` bag and this is where that shape
+ * is adapted — `tier` there, `standing` in the shared component, one policy
+ * either way.
  */
 // @req REQ-133
 export function PatronymeSourceCitation({
@@ -13,17 +15,13 @@ export function PatronymeSourceCitation({
 }: {
   source: PatronymeSource;
 }) {
-  const tierLabel = sourceStandingLabelFr(source.tier);
   return (
-    <span className="afh-source-citation" data-source-tier={source.tier}>
-      {source.url ? (
-        <a href={source.url} target="_blank" rel="noreferrer noopener">
-          {source.title}
-        </a>
-      ) : (
-        source.title
-      )}{" "}
-      <span className="afh-source-tier-label">({tierLabel})</span>
-    </span>
+    <SourceCitation
+      source={{
+        title: source.title,
+        url: source.url ?? null,
+        standing: source.tier,
+      }}
+    />
   );
 }

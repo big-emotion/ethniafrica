@@ -276,11 +276,18 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   // Distinct from "noms"/Appellations: a patronyme is the naming *system* a
   // person is named under, not a people's autonym/exonym. Filed beside it
   // because both take a name and return a fiche, which is Explorer's rule,
-  // but kept a separate id and name so neither shadows the other in the menu
-  // (ETNI-1801).
+  // but kept a separate id so neither shadows the other (ETNI-1801).
+  //
+  // The id stays `patronymes` and the label is `Nom`, which is DEC-038's split
+  // rather than an inconsistency: the reader-facing word is the one a
+  // francophone types, and the internal word is what keeps this entity apart
+  // from the two other things the repository calls "nom" — the ethnonym
+  // dossier above and ARCH-018's person. This entry said "Patronymes" for the
+  // whole of ETNI-1803, so the menu named the axis one way while the trail,
+  // the footer and the URL named it another.
   {
     id: "patronymes",
-    name: "Patronymes",
+    name: "Nom",
     accessMode: "atlas",
     page: "patronymes",
     availability: "data",
@@ -305,6 +312,26 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   // answer. Readiness is "ready" because the surface is complete on the day
   // it ships — every fact it holds is written and cited, which is not
   // something the modules around it can say yet.
+  // First of the rubric, and not by seniority: it is the question the other
+  // three presuppose. The anecdotes bank is already onomastic by contract —
+  // "every fact here is about a *name*: who gave it, when, and what it was
+  // hiding" — and the colonial gaze is one answer to the same question. This
+  // dossier is where that question is put, so it opens the axis.
+  //
+  // `static` for the same reason the anecdotes are: the corpus behind it is
+  // the repository, not a table, so there is nothing for the availability
+  // probe to count and "static" is the honest answer.
+  {
+    id: "nommer",
+    name: "Qui a donné ce nom ?",
+    accessMode: "dossiers",
+    page: "nommer",
+    availability: "static",
+    // Written and sourced on the day it ships. What is still open is the
+    // walk-back from Wikipedia to the primary works, which the dossier's own
+    // suite tracks by name — see AWAITING_PRIMARY_SOURCE.
+    editorialReadiness: "ready",
+  },
   {
     id: "anecdotes",
     name: "Anecdotes",

@@ -8,11 +8,15 @@ import {
   SheetTitle,
   SheetDescription,
 } from "@/components/ui/sheet";
+import Link from "next/link";
+
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import { cn } from "@/lib/utils";
+import { getSourceRoute } from "@/lib/routing";
 import {
   SOURCE_TIERS,
   SOURCE_TIER_LABELS_FR,
+  sourceStandingLabelFr,
   toSourceTier,
   type SourceTier,
 } from "@/types/sources";
@@ -28,7 +32,17 @@ export type Source = {
   year?: number;
   page?: string;
   url?: string;
-  tier: SourceTier;
+  /**
+   * The source's standing.
+   *
+   * `needs_review` is not a fourth tier — it is a source nobody has classified
+   * yet, and the corpus keeps it apart from `unverified` because "not yet
+   * classified" is not a judgement anyone made. The sheet used to fold it in
+   * with everything it did not recognise.
+   */
+  tier: SourceTier | "needs_review";
+  /** Its place in the citing fiche's bibliography, when the fiche has one. */
+  bibliographyNumber?: number;
   /** ISO date string YYYY-MM-DD when the nightly health-check flagged the link. */
   brokenAt?: string | null;
   /** Formatted citation string, used as the FlagTarget snapshotQuote (AC6). */
@@ -82,8 +96,14 @@ export type SourceChainSheetProps = {
 
 const TIER_LABELS = SOURCE_TIER_LABELS_FR;
 
-/** Most authoritative first — the reading order of the tier groups. */
-const TIER_ORDER = SOURCE_TIERS;
+/**
+ * Most authoritative first — the reading order of the groups.
+ *
+ * `needs_review` closes the list rather than joining the tiers, because it is
+ * not one: it is the sources nobody has classified, and ranking them among the
+ * three would place a judgement where none was made.
+ */
+const TIER_ORDER = [...SOURCE_TIERS, "needs_review" as const];
 
 const CITE_DELAY_MS = 4000;
 
@@ -209,16 +229,21 @@ function useUrlAnchorSync(
 /*  Helpers                                                                    */
 /* -------------------------------------------------------------------------- */
 
-function groupByTier(sources: Source[]): Record<SourceTier, Source[]> {
-  const out: Record<SourceTier, Source[]> = {
+type SourceStanding = SourceTier | "needs_review";
+
+function groupByTier(sources: Source[]): Record<SourceStanding, Source[]> {
+  const out: Record<SourceStanding, Source[]> = {
     official: [],
     referenced: [],
     unverified: [],
+    needs_review: [],
   };
   for (const s of sources) {
-    // Legacy rows can still carry an unrecognised tier; they read as unverified
-    // rather than crashing the sheet on an undefined bucket.
-    out[toSourceTier(s.tier)].push(s);
+    // An untiered source keeps its own bucket. Everything else unrecognised
+    // still reads as unverified rather than crashing on an undefined one.
+    const standing: SourceStanding =
+      s.tier === "needs_review" ? "needs_review" : toSourceTier(s.tier);
+    out[standing].push(s);
   }
   return out;
 }
@@ -280,17 +305,42 @@ function SourceItem({ source }: { source: Source }) {
     >
       <div className="flex items-start justify-between gap-2">
         <p className="text-afh-small font-medium text-[var(--afh-fg,var(--country-fg,#111827))]">
+          {/* The number the fiche's bibliography gave this source. It is the
+              only place a reader sees the two numbering schemes together —
+              the callout counts passages, the footer counts sources — so
+              without it the footer's numbering indexes nothing followable. */}
+          {source.bibliographyNumber !== undefined && (
+            <span
+              data-testid={`source-number-${source.id}`}
+              className="mr-1 tabular-nums"
+            >
+              {source.bibliographyNumber}.
+            </span>
+          )}
           {source.title}
         </p>
         <span
           data-testid={`source-tier-${source.id}`}
           className="shrink-0 rounded-full bg-[var(--afh-muted,var(--country-muted,#f3f4f6))] px-2 py-0.5 text-afh-caption font-medium text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]"
         >
-          {TIER_LABELS[source.tier]}
+          {sourceStandingLabelFr(source.tier)}
         </span>
       </div>
       <p className="text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
         {[source.author, source.year, source.page].filter(Boolean).join(" · ")}
+      </p>
+      {/* The source's own page, which outlives the fiche quoting it and says
+          what else rests on it. The outward link below goes to the work; this
+          one goes to what the corpus knows about it. */}
+      <p>
+        <Link
+          href={getSourceRoute("fr", source.id)}
+          prefetch={false}
+          data-testid={`source-directory-${source.id}`}
+          className="inline-block text-afh-caption underline underline-offset-2"
+        >
+          Voir dans la bibliographie
+        </Link>
       </p>
       {source.url ? (
         renderAsLink ? (
@@ -339,12 +389,18 @@ function SourceItem({ source }: { source: Source }) {
   );
 }
 
-function TierGroup({ tier, sources }: { tier: SourceTier; sources: Source[] }) {
+function TierGroup({
+  tier,
+  sources,
+}: {
+  tier: SourceStanding;
+  sources: Source[];
+}) {
   if (sources.length === 0) return null;
   return (
     <div data-testid={`tier-group-${tier}`} className="space-y-2">
       <h4 className="text-afh-eyebrow font-semibold uppercase tracking-wide text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
-        {TIER_LABELS[tier]}
+        {sourceStandingLabelFr(tier)}
       </h4>
       <ul className="space-y-2">
         {sources.map((s) => (

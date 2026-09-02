@@ -419,13 +419,62 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
+  /* The site centres text under 768px from the body down. That rule left the
+     chip on the row's left edge and the citation centred beside it — two
+     alignments inside one card, which brand charter §8.1 forbids and which is
+     visible on every fiche's Sources block, not only this one. */
+  text-align: start;
   font-size: var(--afh-text-small);
   line-height: 1.65;
   color: var(--afh-text-soft);
 }
 
+/* A flex item will not shrink below its content, and a corpus source title is
+   routinely a path with no space in it — `dataset/source/afrik/peuples/…`.
+   Without these two the row grows past the parchment at 430px and the title,
+   its notes and the card's right edge all leave the screen together. The chip
+   keeps its width because a tier read at half a word is worse than no tier. */
+.afh-source-row > .afh-chip {
+  flex: none;
+}
+
+.afh-source-row > :not(.afh-chip) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .afh-source-row a {
   color: var(--accent-ink, var(--accent));
+}
+
+/* `SourceCitation` emits these two, and until now no stylesheet defined
+   either: the tier arrived as parenthesised body text on the name fiche, and
+   the shared component carried the omission to the bibliography and the
+   dossier when it was extracted. Defining them here rather than changing the
+   component's markup keeps one citation across the three surfaces and gives
+   the standing the weight the Source Tier Policy asks for. */
+.afh-source-citation {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* `--afh-text-soft`, not `--afh-text-muted`: the muted ink fails AA at this
+   size on every parchment ground, which `ficheParchmentContrast` holds the
+   whole stylesheet to. */
+.afh-source-tier-label {
+  white-space: nowrap;
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+}
+
+/* The standing is read from the source's own record, never chosen by the
+   surface — same rule the tier chips above follow. */
+.afh-source-citation[data-source-tier="official"] .afh-source-tier-label {
+  color: var(--afh-color-verified, var(--afh-text-soft));
+}
+
+.afh-source-citation[data-source-tier="needs_review"] .afh-source-tier-label {
+  color: var(--afh-color-colonial, var(--afh-text-soft));
 }
 
 /* Tier colours come from the tier, so a source cannot be shown at a

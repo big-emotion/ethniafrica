@@ -30,6 +30,11 @@ const TRAIL_PAGE_LABELS: Record<PageType, string> = {
   migrations: "Migrations",
   quiz: "Quiz",
   colonization: "Colonisation & résistances",
+  // Shorter than the module's own label ("Qui a donné ce nom ?"), which is a
+  // question and would wrap the crumb on a phone. The trail names the
+  // destination; the menu asks the question.
+  nommer: "Nommer",
+  glossary: "Glossaire",
   atlasHub: ACCESS_MODE_LABELS.atlas,
   dossiersHub: ACCESS_MODE_LABELS.dossiers,
   jeuxHub: ACCESS_MODE_LABELS.jeux,
@@ -113,6 +118,7 @@ export const translations = {
         doctrine: "Doctrine éditoriale",
         about: "À propos",
         sources: "Sources",
+        glossary: "Glossaire",
         followHeading: "Nous suivre",
         followPending: "compte à venir",
       },
@@ -200,8 +206,23 @@ export const translations = {
     },
     names: {
       pageTitle: "Appellations",
+      // The deck says what the page is; `purpose` below says why it exists.
+      // They used to be one sentence printed twice — once in the head band and
+      // again as the first paragraph under it — which read as a stutter and
+      // still left unsaid what a reader comes here to do.
       pageSubtitle:
-        "Comment un peuple se nomme-t-il, et comment l'a-t-on nommé ? L'atlas rassemble les endonymes, les exonymes et les appellations imposées attachés à chaque peuple d'Afrique.",
+        "Les noms sous lesquels chaque peuple d'Afrique est désigné : ceux qu'il se donne, et ceux qu'on lui a donnés.",
+      /**
+       * Why the page exists, in the reader's terms.
+       *
+       * Naming a people is contested, and the corpus takes no side: it records
+       * every attested form and says where each came from. Without this said
+       * plainly, a reader meets three thousand forms and no reason for them —
+       * and the page reads as a duplicate of the people fiches, which name one
+       * autonym each and cannot be entered from a name heard elsewhere.
+       */
+      purpose:
+        "Un peuple porte rarement un seul nom. Il en a un qu'il emploie lui-même, d'autres que ses voisins lui donnent, d'autres encore qu'une administration coloniale a fixés par écrit — et certains sont péjoratifs. Cette page les recense tous, pour qu'un nom entendu quelque part mène au peuple qu'il désigne, sans décider lequel est le bon.",
       // The note used to say the genealogy of personal names was "not covered
       // yet". It is: the patronyme fiches exist and now have their own route
       // (DEC-038), so the note points there instead of closing the door.
@@ -212,6 +233,11 @@ export const translations = {
         "Rechercher un nom (endonyme, exonyme, graphie historique...)",
       searchSubmit: "Rechercher",
       filtersLabel: "Filtrer par type de nom",
+      // The four chips are the page's own vocabulary and were glossed nowhere
+      // a reader passes through — « endonyme » and « exonyme » least of all,
+      // and they are the two that carry the page's whole argument.
+      filtersLegend:
+        "Un endonyme est le nom qu'un peuple se donne ; un exonyme, celui que d'autres lui donnent ; une graphie historique, une forme fixée par écrit à une époque ; un nom imposé, une appellation attribuée de l'extérieur.",
       filters: {
         all: "tous",
         endonym: "endonyme",
@@ -280,8 +306,14 @@ export const translations = {
     // Patronyme fiche (ETNI-1464, REQ-133). Distinct from `names` above:
     // `names` covers ethnonyms (how a *people* is called); this covers
     // patronymes (the naming system a *person* is named under).
+    //
+    // The key is the internal word and the copy is the public one — DEC-038,
+    // same split as `TRAIL_PAGE_LABELS.patronymes` above. Anything a reader
+    // sees under this key says "nom", except where "patronyme" names one of
+    // the five naming systems, which is onomastic vocabulary and not a label
+    // for the axis.
     patronymes: {
-      eyebrow: "Patronyme",
+      eyebrow: "Nom",
       nameSystemSectionTitle: "Le nom",
       nameSystemStatementPrefix: "Système de nommage :",
       nameSystemLabels: {
@@ -353,14 +385,12 @@ export const translations = {
       // hereditary-surname model that `nameSystem` elsewhere denies.
       nonHereditaryGuidance:
         "Ce patronyme n'est pas transmis de façon héréditaire : il ne se lit pas comme un nom de famille au sens européen. Sa portée varie selon la région — les peuples et pays ci-dessous indiquent où ce mode de nommage est documenté.",
-      associationsEmpty: "Aucun peuple ou pays associé n'est documenté.",
       bearersTitle: "Porteurs et porteuses",
       // DEC-040: no code path derives a living person's ethnic origin from
       // this patronyme, and this note states that editorial guarantee to
       // the reader rather than leave it implicit in what the list omits.
       bearersEditorialNote:
         "Cette liste ne mentionne que des personnes publiques ou décédées, ou s'étant elles-mêmes revendiquées de ce patronyme. Elle ne permet de déduire l'origine ethnique d'aucune personne vivante à partir de ce nom.",
-      bearersEmpty: "Aucun porteur ou porteuse n'est encore documenté.",
       roleCategoryFallback: "Rôle non renseigné",
       // The /fr/atlas/noms index (ETNI-1803, REQ-139) — the corpus-class
       // listing that leads to the fiches above. Kept nested here rather than
@@ -372,9 +402,9 @@ export const translations = {
           "Les systèmes de nommage des personnes documentés dans le corpus — noms de clan, patronymes non héréditaires, nisba et noms d'éloge.",
         unavailable:
           "Les noms n'ont pas pu être chargés. Le problème vient de notre côté, pas d'un corpus vide.",
-        countSingular: "patronyme",
-        countPlural: "patronymes",
-        emptyState: "Aucun patronyme n'est encore documenté.",
+        countSingular: "nom",
+        countPlural: "noms",
+        emptyState: "Aucun nom n'est encore documenté.",
         pagination: {
           label: "Pagination des noms",
           previous: "Précédent",
@@ -530,10 +560,15 @@ export const translations = {
         // inside, and neither is glossed anywhere a reader passes through
         // (ETNI-857) — so the menu that is supposed to say where a click
         // lands was written in the vocabulary of the people who built it.
+        // Ordered by the corpus's own hierarchy — famille → langue → peuple →
+        // pays — then the two axes that name rather than place. Both sentences
+        // listed four of six classes, each omitting a different pair, so a
+        // reader met a different atlas depending on whether they read the menu
+        // or the page under it.
         blurb:
-          "L'axe des fiches : peuples, pays, langues et familles linguistiques, chacun sous la sienne.",
+          "L'axe des fiches : familles linguistiques, langues, peuples, pays, appellations et noms, chacun sous la sienne.",
         menuBlurb:
-          "Les fiches de pays, de peuples, de familles linguistiques et d'appellations, plus la recherche.",
+          "Les fiches de familles, langues, peuples, pays, appellations et noms, plus la recherche.",
         hubEntryName: "Le hub d'exploration",
       },
       dossiers: {
@@ -542,7 +577,7 @@ export const translations = {
         blurb:
           "L'axe des relations : d'où vient un nom, par où sont passés les peuples, et sur quelles sources l'atlas s'appuie.",
         menuBlurb:
-          "Des anecdotes sourcées, les premiers repères de migrations et un dossier sur la colonisation.",
+          "Qui a donné ces noms, des anecdotes sourcées, les migrations et la colonisation.",
         hubEntryName: "Le hub de lecture",
       },
       jeux: {
@@ -601,6 +636,14 @@ export const translations = {
         peuples: "Peuples",
         pays: "Pays",
         familles: "Familles",
+        // The five chapters of the Nommer dossier. They are segments rather
+        // than page types on purpose (see NOMMER_CHAPTER_SLUGS in routing.ts),
+        // so this map is the only place the trail can learn their words.
+        "le-peuple": "Le peuple",
+        "le-pays": "Le pays",
+        "la-personne": "La personne",
+        "la-langue": "La langue",
+        "la-chose": "La chose",
       } as Record<string, string>,
       /**
        * Prefixes the fiche a reader arrived from. Provenance, not ancestry:

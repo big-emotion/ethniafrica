@@ -36,7 +36,7 @@ export function PatronymeAlliancesSection({
   return (
     <FicheSection title={t.alliancesTitle}>
       {alliances.length > 0 ? (
-        <ul>
+        <ul className="afh-prose-list">
           {alliances.map((alliance) => (
             <li key={alliance.targetPatronymeId}>
               <Link href={getPatronymeRoute("fr", alliance.targetPatronymeId)}>

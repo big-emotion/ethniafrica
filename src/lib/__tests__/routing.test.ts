@@ -2,10 +2,13 @@ import { describe, expect, it } from "vitest";
 
 import * as routing from "@/lib/routing";
 import {
+  NOMMER_CHAPTER_KEYS,
+  NOMMER_CHAPTER_SLUGS,
   PAGE_TYPES,
   getCountryRoute,
   getFamilyRoute,
   getLocalizedRoute,
+  getNommerChapterRoute,
   getPageFromRoute,
   getPatronymeRoute,
   getPeopleLinksRoute,
@@ -164,6 +167,58 @@ describe("colonization page type (Epic 13, Story 13.9, ETNI-533, FR90)", () => {
   it("answers the hub, not the article, for the bare /fr/dossiers/regards directory", () => {
     expect(getPageFromRoute("/fr/dossiers/regards")).toBe("dossiersHub");
     expect(getPageFromRoute("/fr/dossiers/regards")).not.toBe("colonization");
+  });
+});
+
+describe("the Nommer dossier and its chapters (REQ-091)", () => {
+  // @req REQ-091
+  it("resolves the nested slug for the dossier's pillar page", () => {
+    expect(getLocalizedRoute("fr", "nommer")).toBe("/fr/dossiers/nommer");
+  });
+
+  // @req REQ-091
+  it("resolves the glossary at the root, on no axis", () => {
+    expect(getLocalizedRoute("fr", "glossary")).toBe("/fr/glossaire");
+  });
+
+  // @req REQ-091
+  it("composes a chapter route under the pillar", () => {
+    expect(getNommerChapterRoute("fr", "le-peuple")).toBe(
+      "/fr/dossiers/nommer/le-peuple"
+    );
+    expect(getNommerChapterRoute("fr", "la-chose")).toBe(
+      "/fr/dossiers/nommer/la-chose"
+    );
+  });
+
+  // A chapter is not a page type, so the longest-slug sort has to answer the
+  // pillar for it. That is what keeps the module marked current in the header
+  // while a chapter is being read, and what gives `deriveTrail` an axis crumb
+  // to hang the chapter segment from.
+  // @req REQ-091
+  it("answers the pillar, not the axis, for a chapter URL", () => {
+    expect(getPageFromRoute("/fr/dossiers/nommer/le-peuple")).toBe("nommer");
+    expect(getPageFromRoute("/fr/dossiers/nommer/la-langue")).toBe("nommer");
+  });
+
+  // @req REQ-091
+  it("declares the five chapters in reading order", () => {
+    expect(NOMMER_CHAPTER_KEYS).toEqual([
+      "le-peuple",
+      "le-pays",
+      "la-personne",
+      "la-langue",
+      "la-chose",
+    ]);
+  });
+
+  // Every key has to resolve to a slug, or a chapter would compose a route
+  // ending in `undefined` — which renders a 404 rather than failing loudly.
+  // @req REQ-091
+  it("gives every chapter key a slug", () => {
+    for (const key of NOMMER_CHAPTER_KEYS) {
+      expect(NOMMER_CHAPTER_SLUGS.fr[key]).toBeTruthy();
+    }
   });
 });
 

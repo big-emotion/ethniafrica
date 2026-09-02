@@ -71,8 +71,12 @@ export default async function AppellationsPage({
   return (
     <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
       <div className="space-y-6 min-[720px]:space-y-8">
+        {/* Not the deck again: `PageLayout` already prints `pageSubtitle` in
+            the head band, and printing it a second time here left the page
+            saying the same sentence twice and its reason for existing not at
+            all. */}
         <p className="max-w-2xl text-afh-small text-muted-foreground">
-          {t.pageSubtitle}
+          {t.purpose}
         </p>
         <p
           role="note"

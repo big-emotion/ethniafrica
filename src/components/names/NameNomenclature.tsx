@@ -154,6 +154,13 @@ export function NameNomenclature({
         )}
       </div>
 
+      {/* The chips are the page's own vocabulary, and « endonyme » and
+          « exonyme » — the two that carry its whole argument — were glossed
+          nowhere a reader passes through. */}
+      <p className="max-w-2xl text-afh-caption text-muted-foreground">
+        {t.filtersLegend}
+      </p>
+
       {/* The range, not just the total: the count and the list used to name
           different things — "3679 résultats" above 100 rendered rows. */}
       <p aria-live="polite" className="text-afh-small text-muted-foreground">

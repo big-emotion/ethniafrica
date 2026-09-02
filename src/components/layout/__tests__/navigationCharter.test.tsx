@@ -129,11 +129,22 @@ describe("atlas charter §3 — the menu is generated, never hand-listed", () =>
   // A module name written into the component is a name that can go stale
   // the day the registry renames it, which is how the previous bar came to
   // promise « Colonisation » from two files and the registry from none.
+  /**
+   * Matched on word boundaries, not as a substring.
+   *
+   * DEC-038 renamed a module to « Nom », three letters, and a comment in the
+   * component says « Nommer dossier now holds this map » — so `includes()`
+   * reported a transcribed module name where there is none. Neither the name
+   * nor the comment is at fault; the substring test was. `axisModuleVocabulary`
+   * hit the identical trap on the same rename and answers it the same way.
+   */
   // @req REQ-114
   it("writes no module name into the component", () => {
     const text = source();
     const transcribed = MODULE_DEFINITIONS.filter((def) =>
-      text.includes(def.name)
+      new RegExp(
+        `\\b${def.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`
+      ).test(text)
     );
 
     expect(transcribed.map((def) => def.name)).toEqual([]);
