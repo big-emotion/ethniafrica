@@ -70,8 +70,12 @@ export default async function AnecdotesPage({
   return (
     <PageLayout language="fr" title={PAGE_TITLE} subtitle={PAGE_SUBTITLE}>
       <div className="anecdotes-page">
+        {/* Not a count. « 67 anecdotes » turns the page into an inventory the
+            reader has to get through, and the number is the least interesting
+            thing about it; what the line owes the reader is how to read the
+            page, which is one card and a press. */}
         <p className="anecdotes-count">
-          {`${DID_YOU_KNOW_FACTS.length} anecdotes — une à la fois, tirée au hasard`}
+          Une à la fois, dans un ordre que le hasard décide
         </p>
 
         {opening ? (

@@ -297,8 +297,10 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
 
     await user.click(screen.getByRole("button", { name: "Suivant" }));
 
+    // The announcement names the anecdote, not a position in a deck: the page
+    // no longer counts, so neither does the live region.
     expect(
-      screen.getByText(`Anecdote 2 sur 3 : ${UNSOURCED.headline}`)
+      screen.getByText(`Anecdote suivante : ${UNSOURCED.headline}`)
     ).toBeInTheDocument();
   });
 

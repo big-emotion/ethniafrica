@@ -257,7 +257,7 @@ export function AnecdoteReader({
           without this the only thing announced is that focus is still where
           the reader left it. */}
       <p className="sr-only" aria-live="polite">
-        {`Anecdote ${position + 1} sur ${order.length} : ${fact.headline}`}
+        {`Anecdote suivante : ${fact.headline}`}
       </p>
 
       <AnecdoteCard
@@ -367,11 +367,16 @@ export function AnecdoteReader({
           </ul>
         ) : null}
 
-        <p className="anecdote-progress">
-          {marked.length > 0
-            ? `${position + 1} / ${order.length} — ${marked.length} retenue${marked.length > 1 ? "s" : ""} sur cet appareil`
-            : `${position + 1} / ${order.length}`}
-        </p>
+        {/* No « 3 / 67 ». A tally under a card the reader did not choose is a
+            length to get through, and it turns an invitation into a chore —
+            the reader starts counting what is left instead of reading what is
+            there. What survives is the reader's own trail, which they built
+            and which says nothing about how much remains. */}
+        {marked.length > 0 ? (
+          <p className="anecdote-progress">
+            {`${marked.length} anecdote${marked.length > 1 ? "s" : ""} retenue${marked.length > 1 ? "s" : ""} sur cet appareil`}
+          </p>
+        ) : null}
       </div>
 
       <style>{`
