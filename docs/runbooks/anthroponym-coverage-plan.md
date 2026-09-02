@@ -57,19 +57,49 @@ coverage — they change how much each fiche says.
 
 ### Depth wave order
 
-Ordered by how many peoples the family carries in the corpus, so each wave
-unlocks the most fiches per unit of research:
+Two different orderings, because two different numbers matter at two different
+times — and confusing them is easy. **Fiches per family** decides what can be
+deepened today; **peoples per family** decides what is worth deepening once
+wave 1 has created fiches across all 24.
 
-| Wave | Family                    | Peoples | Why this order                                                             |
-| ---: | ------------------------- | ------: | -------------------------------------------------------------------------- |
-|    2 | FLG_MANDE                 |      32 | Best-documented onomastics; the jamu and sanankuya work is already started |
-|    3 | FLG_BANTU                 |     174 | Largest block; isibongo, izithakazelo and ekika systems                    |
-|    4 | FLG_NIGERCONGO            |     180 | Broadest, most heterogeneous                                               |
-|    5 | FLG_BENOUECONGO           |      60 | Yoruba oríkì and Igbo naming                                               |
-|    6 | FLG_COUCHITIQUE           |      58 | Habesha and Somali non-hereditary systems                                  |
-|    7 | FLG_ATLANTIQUE            |      28 | Fulɓe and Wolof clans                                                      |
-|    8 | FLG_BERBERE               |      14 | Nisba; Ibn Khaldūn already cited                                           |
-|   9+ | the remaining 16 families |       — | By size                                                                    |
+#### Now — the 30 existing fiches, by fiches per family
+
+All six families below are available immediately. Nothing about depth work waits
+on wave 1 for these: the fiches exist and have had one shallow pass.
+
+| Family          | Fiches | What it holds                                                  |
+| --------------- | -----: | -------------------------------------------------------------- |
+| FLG_NIGERCONGO  |     12 | The Nguni block (isibongo, izithakazelo) and the Baganda ebika |
+| FLG_MANDE       |     10 | Jamu and sanankuya; the best-documented of the six             |
+| FLG_SEMITIQUE   |      4 | The Habesha non-hereditary patronymics                         |
+| FLG_BERBERE     |      2 | Zenata nisba; Ibn Khaldūn already cited                        |
+| FLG_ATLANTIQUE  |      1 | `PAT_SOW`                                                      |
+| FLG_BENOUECONGO |      1 | `PAT_ABIKAN_PRAISE`, the Yoruba oríkì                          |
+
+Three of these are large enough to be a session on their own — NIGERCONGO,
+MANDE, SEMITIQUE — and they can run in parallel. The three singletons fold into
+whichever session is nearest.
+
+Start with **FLG_NIGERCONGO**, not MANDE, if only one runs: it is the largest
+block and the one where the first pass is thinnest. Its origin claims rest on
+community clan sites at `unverified`, where the Mande fiches already carry Niane
+and Jansen at `referenced`.
+
+#### After wave 1 — all 24 families, by peoples per family
+
+| Family                    | Peoples | Fiches today | What it opens                           |
+| ------------------------- | ------: | -----------: | --------------------------------------- |
+| FLG_NIGERCONGO            |     180 |           12 | Broadest, most heterogeneous            |
+| FLG_BANTU                 |     174 |        **0** | Largest block, entirely uncovered today |
+| FLG_BENOUECONGO           |      60 |            1 | Yoruba oríkì and Igbo naming            |
+| FLG_COUCHITIQUE           |      58 |        **0** | Somali `qabiil` and the Oromo systems   |
+| FLG_MANDE                 |      32 |           10 | Already the deepest                     |
+| FLG_ATLANTIQUE            |      28 |            1 | Fulɓe and Wolof clans                   |
+| FLG_BERBERE               |      14 |            2 | Nisba                                   |
+| the remaining 17 families |       — |            0 | By size                                 |
+
+Note FLG_BANTU: 174 peoples and **not one fiche**. It is the single largest gap
+in the name dimension, and no amount of depth work reaches it before wave 1.
 
 ---
 
@@ -264,13 +294,13 @@ deciding anything about how the section looks.
 
 ## Running these in parallel
 
-| Track                | Depends on                                               | Can start                          |
-| -------------------- | -------------------------------------------------------- | ---------------------------------- |
-| Link surface (above) | nothing                                                  | now                                |
-| Wave 0, per country  | nothing                                                  | now, and several countries at once |
-| Wave 2 on FLG_MANDE  | the 12 Mande fiches, which exist                         | now                                |
-| Wave 1               | nothing technically; better after wave 0 so it runs once | after wave 0                       |
-| Waves 3+             | wave 1, for the fiches to exist                          | after wave 1                       |
+| Track                                    | Depends on                                               | Can start                          |
+| ---------------------------------------- | -------------------------------------------------------- | ---------------------------------- |
+| Link surface (above)                     | nothing                                                  | now                                |
+| Wave 0, per country                      | nothing                                                  | now, and several countries at once |
+| Depth on any of the six covered families | the 30 fiches, which exist                               | now, three sessions at once        |
+| Wave 1                                   | nothing technically; better after wave 0 so it runs once | after wave 0                       |
+| Waves 3+                                 | wave 1, for the fiches to exist                          | after wave 1                       |
 
 Wave 1 is a generator, so re-running it after wave 0 grows the queue costs
 nothing — the sequencing above is about not reviewing the same 780 fiches twice,
