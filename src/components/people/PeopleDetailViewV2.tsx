@@ -36,6 +36,8 @@ import { ExternalRegistryLinksSection } from "@/components/people/ExternalRegist
 import { PeopleNamesSection } from "@/components/names/PeopleNamesSection";
 import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
 import type { PeopleNamesDossier } from "@/api/v2/schemas/names";
+import type { PeopleFicheNotes } from "@/components/people/peopleFicheNotes";
+import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
 
 export interface PeopleDetailViewV2Props {
   people: PeopleDetail;
@@ -52,11 +54,12 @@ export interface PeopleDetailViewV2Props {
    */
   relations?: readonly SourcedRelation[];
   /**
-   * Turnstile's public site key, which the culture section's report control
-   * needs to be more than a shell. Absent — as it is until the key is
-   * configured — the section renders the disabled placeholder instead, the
-   * same way the country fiche does.
+   * The fiche's note callouts and its numbered bibliography, resolved by the
+   * route. Absent, the fiche renders exactly as it did before callouts
+   * existed — which is what a fiche the corpus has not sourced must do.
    */
+  notes?: PeopleFicheNotes;
+  bibliography?: readonly FicheSourceEntry[];
 }
 
 /**
@@ -104,8 +107,17 @@ export function PeopleDetailViewV2({
   fragmentation = null,
   hasSourceFlag = false,
   relations = [],
+  notes,
+  bibliography,
 }: PeopleDetailViewV2Props) {
   const data = transformPeopleData(people, namesDossier);
+  /**
+   * The numbered bibliography when the route resolved one, the fiche's own
+   * declared list otherwise. A fiche the corpus has not sourced keeps the
+   * unnumbered footer it has always had — numbering a list nothing points at
+   * would promise an anchor that does not exist.
+   */
+  const sources = bibliography ?? data.sources;
   const distribution = people.demography?.distributionByCountry;
   const relationsPreview = transformSourcedRelationsPreview(relations);
 
@@ -154,7 +166,7 @@ export function PeopleDetailViewV2({
 
       <FicheSection title="Origines & formation">
         {hasOriginContent(data.origin) ? (
-          <PeopleOriginBlock data={data.origin} />
+          <PeopleOriginBlock data={data.origin} notes={notes?.origin} />
         ) : (
           <FieldProvenanceMarker state="missing" />
         )}
@@ -165,7 +177,7 @@ export function PeopleDetailViewV2({
         data.language.isoCodes.length > 0 ||
         data.language.dialects.length > 0 ||
         data.language.vehicularRole ? (
-          <PeopleLanguageSection data={data.language} />
+          <PeopleLanguageSection data={data.language} notes={notes?.language} />
         ) : (
           <FieldProvenanceMarker state="missing" />
         )}
@@ -191,7 +203,7 @@ export function PeopleDetailViewV2({
         data.history.relationsWithNeighbors ||
         data.history.conflictsOrAlliances ||
         data.history.diaspora ? (
-          <PeopleHistoryTimeline data={data.history} />
+          <PeopleHistoryTimeline data={data.history} notes={notes?.history} />
         ) : (
           <FieldProvenanceMarker state="missing" />
         )}
@@ -208,7 +220,7 @@ export function PeopleDetailViewV2({
 
       <FicheSection title="Culture & spiritualité">
         {hasCultureContent(data.culture) ? (
-          <PeopleCultureGrid data={data.culture} />
+          <PeopleCultureGrid data={data.culture} notes={notes?.culture} />
         ) : (
           <FieldProvenanceMarker state="missing" />
         )}
@@ -284,9 +296,9 @@ export function PeopleDetailViewV2({
         as="footer"
         id="sources"
       >
-        {data.sources.length > 0 ? (
+        {sources.length > 0 ? (
           <SourcesFooter
-            sources={data.sources}
+            sources={[...sources]}
             hasSourceFlag={hasSourceFlag}
             variant="parchment"
           />

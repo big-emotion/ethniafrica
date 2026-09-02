@@ -13,6 +13,10 @@ import {
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleDetailViewV2 } from "@/components/people/PeopleDetailViewV2";
+import { buildPeopleFicheNotes } from "@/components/people/peopleFicheNotes";
+import { buildFicheSourceRegister } from "@/lib/fiche/ficheSourceRegister";
+import { ficheSourceEntries } from "@/lib/afrik/ficheSourceLabel";
+import { getFieldNotes } from "@/lib/supabase/queries/afrik/module-zero-batch";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
@@ -147,19 +151,41 @@ export default async function PeoplesSlugPage({
   // itself from the browser, and the count only ever existed to decide whether
   // the voices chapter got an anchor before hydration. The parchment has no
   // such chapter to gate.
-  const [people, sourceFlags, namesDossier, fragmentation, egoNetwork] =
-    await Promise.all([
-      loadPeopleFiche(parsed.slug),
-      getActiveSourceFlags("people", parsed.slug),
-      getPeopleNamesDossier(parsed.slug).catch(() => null),
-      getPeopleFragmentation(parsed.slug).catch(() => null),
-      getEgoNetwork(parsed.slug),
-    ]);
+  const [
+    people,
+    sourceFlags,
+    namesDossier,
+    fragmentation,
+    egoNetwork,
+    fieldNotes,
+  ] = await Promise.all([
+    loadPeopleFiche(parsed.slug),
+    getActiveSourceFlags("people", parsed.slug),
+    getPeopleNamesDossier(parsed.slug).catch(() => null),
+    getPeopleFragmentation(parsed.slug).catch(() => null),
+    getEgoNetwork(parsed.slug),
+    // Alongside its neighbours rather than after them, and caught like them:
+    // the citation apparatus must never be able to cost the fiche.
+    getFieldNotes("people", parsed.slug).catch(() => []),
+  ]);
   if (!people) {
     notFound();
   }
 
   const peopleDetail = mapPeopleDetail(people);
+
+  /**
+   * The fiche's bibliography, and the callouts that index it.
+   *
+   * The register is built from both lists — what the fiche declares and what
+   * its assertions cite — because a callout must never point at an unnumbered
+   * source, and a declared source must never disappear for want of a citation.
+   */
+  const register = buildFicheSourceRegister(
+    ficheSourceEntries(people.content?.sources),
+    fieldNotes.flatMap((note) => note.sources)
+  );
+  const notes = buildPeopleFicheNotes(fieldNotes, register.numberBySourceId);
   const peopleFieldOverlay = buildPeopleFieldOverlay(
     peopleDetail.demography?.distributionByCountry
   );
@@ -236,6 +262,10 @@ export default async function PeoplesSlugPage({
             fragmentation={fragmentation}
             hasSourceFlag={sourceFlags.length > 0}
             relations={egoNetwork.sourced}
+            notes={notes}
+            // Only when something cites it: a bibliography numbered for
+            // nobody promises an anchor that does not exist.
+            bibliography={notes.count > 0 ? register.entries : undefined}
           />
         }
       />
