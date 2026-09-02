@@ -430,7 +430,7 @@ export async function middleware(request: NextRequest) {
   //
   // Self-guarding on the pathname, so wrapping a return that also serves pages
   // costs nothing and cannot leak the public API's version onto /fr or
-  // /api/contributions.
+  // /api/entities.
   const versioned = <ResponseType extends Response>(response: ResponseType) =>
     applyVersioningHeaders(response, pathname);
   // The whole /api/v2/keys subtree sits outside api_keys Bearer auth: /issue

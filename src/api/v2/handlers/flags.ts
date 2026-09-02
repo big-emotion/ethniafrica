@@ -46,7 +46,14 @@ import {
 import { logger } from "@/lib/api/logger";
 import * as Sentry from "@sentry/nextjs";
 
-const FLAG_KINDS = [
+/**
+ * The kinds that report on something the corpus already says.
+ *
+ * Every one of them anchors: a report names the claim it disputes. Kept apart
+ * from `FLAG_KINDS` because that property is what the create schema enforces,
+ * and `contribution` is the kind that cannot have it.
+ */
+const REPORT_KINDS = [
   "inaccurate",
   "missing-source",
   "broken-url",
@@ -54,6 +61,8 @@ const FLAG_KINDS = [
   "correction-proposal",
   "other",
 ] as const;
+
+const FLAG_KINDS = [...REPORT_KINDS, "contribution"] as const;
 
 const FLAG_STATUSES = [
   "open",
@@ -74,11 +83,8 @@ const trimmedRequiredString = z.string().trim().min(1);
  */
 const MIN_DWELL_MS = 3_000;
 
-const flagCreateSchema = z.object({
-  target_type: trimmedRequiredString,
-  target_id: trimmedRequiredString,
+const submissionShape = {
   target_field_path: trimmedRequiredString.optional(),
-  flag_kind: z.enum(FLAG_KINDS),
   reason_text: z.string().trim().min(10).max(2000),
   counter_source_url: z.string().trim().pipe(z.url()).optional(),
   counter_source_citation: z.string().trim().max(2000).optional(),
@@ -100,6 +106,27 @@ const flagCreateSchema = z.object({
   website: z.string().max(0).optional(),
   /** Milliseconds the form was open. Instant submissions are not readers. */
   elapsedMs: z.number().int().nonnegative().optional(),
+};
+
+const flagCreateSchema = z.object({
+  ...submissionShape,
+  target_type: trimmedRequiredString,
+  target_id: trimmedRequiredString,
+  flag_kind: z.enum(REPORT_KINDS),
+});
+
+/**
+ * A contribution proposes something the corpus does not hold yet, so it is the
+ * one submission that may name no entity. Its proposal is required instead:
+ * a contribution with nothing proposed is an empty form, not a contribution.
+ * The anchor stays mandatory everywhere else — see migration 081.
+ */
+const contributionCreateSchema = z.object({
+  ...submissionShape,
+  target_type: trimmedRequiredString.optional(),
+  target_id: trimmedRequiredString.optional(),
+  flag_kind: z.literal("contribution"),
+  contribution_payload: z.record(z.string(), z.unknown()),
 });
 
 const flagListSchema = z.object({
@@ -232,7 +259,16 @@ export async function handleFlagCreate(
   const dependencies = resolveDependencies(injectedDependencies);
   const accessToken = context.accessToken?.trim();
 
-  const parsed = flagCreateSchema.safeParse(rawInput);
+  /**
+   * The kind decides which contract the body is held to, so it is read before
+   * validation rather than after. A body that does not say `contribution` is
+   * judged as a report — including an empty one, which still owes an anchor.
+   */
+  const declaredKind = (rawInput as { flag_kind?: unknown } | null)?.flag_kind;
+  const parsed =
+    declaredKind === "contribution"
+      ? contributionCreateSchema.safeParse(rawInput)
+      : flagCreateSchema.safeParse(rawInput);
   if (!parsed.success) {
     return {
       status: 400,
@@ -289,6 +325,10 @@ export async function handleFlagCreate(
     counter_source_url: parsed.data.counter_source_url,
     counter_source_citation: parsed.data.counter_source_citation,
     proposed_rewrite: parsed.data.proposed_rewrite,
+    contribution_payload:
+      "contribution_payload" in parsed.data
+        ? parsed.data.contribution_payload
+        : undefined,
   };
   // The cast is the price of `strictNullChecks: false`: zod infers every
   // property of a parsed object as optional, so a schema that guarantees these

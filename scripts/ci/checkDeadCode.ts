@@ -58,8 +58,11 @@ export const DEAD_CODE_CEILINGS: Readonly<Record<DeadCodeCategory, number>> = {
   unlisted: 0,
   binaries: 0,
   unresolved: 0,
-  exports: 25,
-  types: 52,
+  // Lowered from 25/52 when contributions became flags: the legacy
+  // /admin/contributions console, its API routes and `lib/auth/supabase-auth`
+  // went with it, and the ratchet does not let the room they freed be reused.
+  exports: 24,
+  types: 50,
   duplicates: 0,
 };
 

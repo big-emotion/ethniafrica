@@ -16,6 +16,8 @@ export interface QueuedReport {
   target_type: string | null;
   target_id: string | null;
   created_at: string;
+  /** Set on a contribution, null on a report. */
+  contribution_payload?: Record<string, unknown> | null;
 }
 
 export interface ModerationQueueProps {
@@ -45,6 +47,18 @@ const MOVES: Record<
 
 /** States that close a report, and therefore require a stated reason. */
 const TERMINAL = new Set(["accepted", "rejected", "duplicate"]);
+
+/**
+ * The two things the queue holds, and the reason the row says which.
+ *
+ * A report disputes something the atlas already publishes, so a moderator
+ * decides on it. A contribution proposes something the atlas does not hold
+ * yet, and deciding on it here would mean nothing: the corpus is edited from
+ * `dataset/source/afrik/*.json`, never from this screen. So a contribution is
+ * read, and carries no moves — the buttons that used to write it straight into
+ * the tables went with the console they lived on.
+ */
+const CONTRIBUTION_KIND = "contribution";
 
 const STATUS_LABELS: Record<string, string> = {
   open: "Ouvert",
@@ -81,7 +95,8 @@ function QueueRow({ report }: { report: QueuedReport }) {
   const [error, setError] = useState("");
   const [pending, setPending] = useState(false);
 
-  const moves = MOVES[status] ?? [];
+  const isContribution = report.flag_kind === CONTRIBUTION_KIND;
+  const moves = isContribution ? [] : (MOVES[status] ?? []);
 
   async function apply(next: string) {
     // Charter §5: a terminal decision carries its reason. Closing in silence
@@ -128,12 +143,29 @@ function QueueRow({ report }: { report: QueuedReport }) {
     <li className="rounded-afh-md border border-afh-border p-afh-lg">
       <div className="flex flex-wrap items-baseline gap-afh-md text-afh-caption text-afh-text-soft">
         <span className="font-mono">{report.public_slug}</span>
+        <span
+          className="rounded-afh-sm border border-afh-border px-2 py-0.5"
+          data-testid="queue-row-type"
+        >
+          {isContribution ? "Contribution" : "Signalement"}
+        </span>
         <span>{STATUS_LABELS[status] ?? status}</span>
         <span>{formatDate(report.created_at)}</span>
         {report.target_id && <span>{report.target_id}</span>}
       </div>
 
       <p className="mt-afh-md text-afh-body">{report.reason_text}</p>
+
+      {isContribution && report.contribution_payload && (
+        <details className="mt-afh-md">
+          <summary className="cursor-pointer text-afh-small text-afh-text-soft">
+            Proposition soumise
+          </summary>
+          <pre className="mt-afh-md overflow-x-auto rounded-afh-md border border-afh-border p-afh-md text-afh-caption">
+            {JSON.stringify(report.contribution_payload, null, 2)}
+          </pre>
+        </details>
+      )}
 
       {moves.length > 0 && (
         <>

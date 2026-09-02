@@ -3060,6 +3060,9 @@ const options: swaggerJsdoc.Options = {
             "offensive",
             "correction-proposal",
             "other",
+            // A proposal for content the corpus does not hold yet, so it is the
+            // one kind that may carry no target — see migration 081.
+            "contribution",
           ],
           example: "inaccurate",
         },

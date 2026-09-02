@@ -1,52 +1,36 @@
 import { describe, expect, it } from "vitest";
-import {
-  contributionSchema,
-  getContributionSourceCitations,
-} from "@/lib/validations/contribution";
-
-const baseContribution = {
-  type: "new_people" as const,
-  proposed_payload: {
-    sources: [{ url: "https://www.unesco.org/en/culture" }],
-  },
-};
+import { getContributionSourceCitations } from "@/lib/validations/contribution";
 
 /**
  * These three used to be refusals. Under the source doctrine no citation is
  * refused — it is tiered, and a weak tier lowers the fiche's confidence
  * instead of silencing the claim. The inversion is kept in the suite so the
  * behaviour change stays visible rather than disappearing with the old tests.
+ *
+ * They used to assert acceptance by round-tripping through `contributionSchema`,
+ * which validated the body of the retired `POST /api/contributions`. A
+ * contribution is now a flag and is validated by the flags handler, so what is
+ * left here is the part these tests were always about: the tier a citation
+ * earns.
  */
-describe("contributionSchema", () => {
+describe("getContributionSourceCitations", () => {
   // @req REQ-092
-  it("accepts a discovery-surface citation and tiers it unverified", () => {
+  it("tiers a discovery-surface citation unverified rather than refusing it", () => {
     const payload = {
       sources: [{ url: "https://fr.wikipedia.org/wiki/Yoruba" }],
     };
 
-    expect(
-      contributionSchema.safeParse({
-        ...baseContribution,
-        proposed_payload: payload,
-      }).success
-    ).toBe(true);
     expect(getContributionSourceCitations(payload)).toEqual([
       expect.objectContaining({ tier: "unverified", sourceKind: "discovery" }),
     ]);
   });
 
   // @req REQ-092
-  it("accepts an AI-generated citation, keeping provenance off the tier axis", () => {
+  it("keeps AI provenance off the tier axis", () => {
     const payload = {
       sources: [{ url: "https://chatgpt.com/share/example" }],
     };
 
-    expect(
-      contributionSchema.safeParse({
-        ...baseContribution,
-        proposed_payload: payload,
-      }).success
-    ).toBe(true);
     expect(getContributionSourceCitations(payload)).toEqual([
       expect.objectContaining({
         tier: "unverified",
@@ -56,17 +40,11 @@ describe("contributionSchema", () => {
   });
 
   // @req REQ-092
-  it("accepts an off-catalogue citation as unverified", () => {
+  it("tiers an off-catalogue citation unverified and records where it sits", () => {
     const payload = {
       sources: [{ url: "https://archives.example.org/yoruba" }],
     };
 
-    expect(
-      contributionSchema.safeParse({
-        ...baseContribution,
-        proposed_payload: payload,
-      }).success
-    ).toBe(true);
     expect(getContributionSourceCitations(payload)).toEqual([
       expect.objectContaining({
         tier: "unverified",
@@ -77,9 +55,11 @@ describe("contributionSchema", () => {
 
   // @req REQ-092
   it("tiers a catalogued authority as official", () => {
-    expect(
-      getContributionSourceCitations(baseContribution.proposed_payload)
-    ).toEqual([
+    const payload = {
+      sources: [{ url: "https://www.unesco.org/en/culture" }],
+    };
+
+    expect(getContributionSourceCitations(payload)).toEqual([
       expect.objectContaining({
         url: "https://www.unesco.org/en/culture",
         tier: "official",

@@ -16,14 +16,14 @@ import { describe, expect, it } from "vitest";
  * `Referer` — headers only a browser is obliged to tell the truth about. Any
  * non-browser client sets them freely, so the routes were an unauthenticated
  * dump of every people, country and language family. Nothing in the tree
- * called them; the contribution form uses `/api/contributions/entities/*`,
+ * called them; the contribution form uses `/api/entities/*`,
  * which is a different path with its own handler. They were deleted rather
  * than paginated, because a paginated copy of a route with no callers is just
  * a smaller thing to keep working.
  *
  * This guards the shape rather than the three filenames: a `getAllAfrik*` call
  * under `src/app/api/v2` is by construction unpaginated, so the rule is that
- * none appears there. `/api/download` and `/api/contributions/*` are outside
+ * none appears there. `/api/download` and `/api/entities/*` are outside
  * `/api/v2` and outside this rule — they answer to their own contracts.
  */
 
