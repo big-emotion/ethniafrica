@@ -30,8 +30,7 @@ import type { LanguageFamily, PeopleId } from "@/types/afrik";
  * reader cannot see is an area they have to take on trust.
  */
 export type FamilyFootprintProvenance =
-  | "member-peoples"
-  | "declared-associated-peoples";
+  "member-peoples" | "declared-associated-peoples";
 
 /**
  * The peoples the fiche names in `associatedPeoples`, deduplicated, in the

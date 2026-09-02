@@ -32,9 +32,7 @@ const COLORS = [
 ];
 
 export type DemographicsChartType =
-  | "byFamily"
-  | "byCountry"
-  | "peopleDistribution";
+  "byFamily" | "byCountry" | "peopleDistribution";
 
 interface ChartDataItem {
   name: string;

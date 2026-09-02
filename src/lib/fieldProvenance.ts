@@ -74,11 +74,7 @@ export function classifyFieldProvenance(
 type ContentBagLike = Record<string, unknown>;
 
 export type AfrikEntityKind =
-  | "language-family"
-  | "people"
-  | "country"
-  | "language"
-  | "name";
+  "language-family" | "people" | "country" | "language" | "name";
 
 /**
  * The object a field path resolves against, per class.

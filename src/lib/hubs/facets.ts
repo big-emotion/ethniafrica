@@ -15,11 +15,7 @@ import type { Language } from "@/types/shared";
  * exactly one answer instead of three that drift.
  */
 export type FacetKey =
-  | "peoples"
-  | "families"
-  | "languages"
-  | "countries"
-  | "patronymes";
+  "peoples" | "families" | "languages" | "countries" | "patronymes";
 
 export interface FacetDefinition {
   key: FacetKey;

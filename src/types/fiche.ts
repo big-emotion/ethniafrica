@@ -15,8 +15,4 @@
  * (the `globe` prop is optional for exactly this case).
  */
 export type FicheEntityType =
-  | "people"
-  | "country"
-  | "language-family"
-  | "language"
-  | "name";
+  "people" | "country" | "language-family" | "language" | "name";
