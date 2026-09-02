@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import archiver from "archiver";
+import { ZipArchive } from "archiver";
 import ExcelJS from "exceljs";
 import { corsOptionsResponse } from "@/lib/api/cors";
 import { getAllAfrikCountries } from "@/lib/supabase/queries/afrik/countries";
@@ -36,7 +36,7 @@ async function generateCSVZip(): Promise<Buffer> {
     getAllAfrikCountries(),
   ]);
 
-  const archive = archiver("zip", { zlib: { level: 9 } });
+  const archive = new ZipArchive({ zlib: { level: 9 } });
   const chunks: Buffer[] = [];
 
   archive.on("data", (chunk: Buffer) => chunks.push(chunk));
@@ -146,6 +146,7 @@ async function generateExcel(): Promise<Buffer> {
   return Buffer.from(buffer);
 }
 
+/** @req REQ-005 */
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
@@ -195,6 +196,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
+/** @req REQ-005 */
 export async function OPTIONS() {
   return corsOptionsResponse();
 }
