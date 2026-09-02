@@ -168,8 +168,9 @@ hand shortly after a deploy, check whether that workflow has already done it —
 
 `recette-data-sync.yml` loads the corpus into recette on every push to `recette` that touches
 `dataset/source/afrik/**`, the loaders, or the sync script — and on manual dispatch. It reads
-the ordinary `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` repository secrets,
-which are recette's.
+`NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` from the **`recette` GitHub
+Environment** (the job pins `environment: recette`), not from plain repository secrets — the
+`recette` environment must provide both.
 
 Until it existed, **nothing loaded the corpus into recette**: the only two loader calls in the
 repository were `--target=production`. A merge applied its migrations here and left the corpus
@@ -187,8 +188,38 @@ Three properties worth knowing:
 - It cannot reach production. `AFRIK_PRODUCTION_SUPABASE_URL` is left unset, and the loader
   resolves `--target=recette` against a checked-in project ref.
 
-Without the secrets — on a fork or a Dependabot branch — it warns and skips rather than failing
-on an authentication error.
+Without the credentials it **fails**, deliberately, rather than skipping: this workflow only
+ever runs on a push to `recette` or a manual dispatch, never from a fork, so the credentials are
+always readable, and an absent value means the environment is misconfigured. A skipped load is
+indistinguishable from a successful one on the board — that indistinguishability is the defect
+this workflow exists to close, so it is not reintroduced by treating a missing credential as
+"skip".
+
+### Cache invalidation: deliberately absent
+
+`production-data-sync.yml` ends with a step that POSTs to `/api/admin/revalidate` for the tags
+`afrik-language-families`, `afrik-peoples` and `afrik-countries`. `recette-data-sync.yml` has no
+equivalent step, and that is a decision, not an oversight:
+
+- Vercel no longer auto-deploys recette (`vercel.json`: `git.deploymentEnabled: false`); the
+  recette preview is only rebuilt on demand, via the deploy hook in
+  `deploy-preview-recette.yml`. A corpus load and a rebuild are two independent, manually
+  triggered events, so there is no deploy step this sync could chain a revalidation off the way
+  production does.
+- Even granting a running recette instance, the AFRIK read services
+  (`src/api/v2/services/{countryFacet,languagesFacet,languageFamilyAtlas,continentPeopleCounts}.ts`)
+  cache with `unstable_cache(..., { revalidate: 3600 })` — time-based, with no `tags` option.
+  Nothing in the codebase attaches the `afrik-language-families` / `afrik-peoples` /
+  `afrik-countries` tags to a cache entry; only the revalidate route and
+  `src/lib/cache/dataVersion.ts` reference those strings. Mirroring production's step onto
+  recette would call `revalidateTag()` against tags no cache entry carries — it would not bust
+  the caches that actually matter, so it would add a false sense of freshness rather than real
+  invalidation.
+
+The bound on staleness for recette is therefore the same one-hour `revalidate` window the
+service layer already has everywhere, which is acceptable for a review environment that is not
+serving continuous public traffic. Revisit this if the AFRIK service caches ever gain real
+`tags`, or if recette starts auto-deploying again.
 
 ---
 
