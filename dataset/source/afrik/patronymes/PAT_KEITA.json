@@ -158,11 +158,11 @@
   "sources": [
     {
       "sourceKey": "corpus-ppl-malinke-organisation",
-      "title": "Corpus AFRIK — PPL_MALINKE, organisation clanique",
+      "title": "EthniAfrica — fiche du peuple Malinké, organisation clanique",
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_MANDE/PPL_MALINKE.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Malinké."
     },
     {
       "sourceKey": "niane-1960",

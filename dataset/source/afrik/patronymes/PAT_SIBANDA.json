@@ -57,11 +57,11 @@
   "sources": [
     {
       "sourceKey": "corpus-ppl-ndebele-nord-organisation",
-      "title": "Corpus AFRIK — PPL_NDEBELE_NORD, organisation clanique",
+      "title": "EthniAfrica — fiche du peuple Ndebele du Nord, organisation clanique",
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDEBELE_NORD.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Ndebele du Nord."
     },
     {
       "sourceKey": "nomina-africana-nguni-naming",
@@ -77,13 +77,13 @@
       "url": "https://doi.org/10.3366/afr.2004.74.2.173",
       "tier": "referenced",
       "source_kind": "academic",
-      "notes": "Lindgren, Björn, Africa (Journal of the International African Institute) 74(2), 2004, p. 173-193. Réserve à porter avec la citation : le texte intégral est sous péage chez Cambridge Core et n'a pas pu être lu lors de la passe ; seuls la notice et le résumé ont été vérifiés. Ce qui est cité ici s'y limite — l'isibongo est en Matabeleland du Sud un opérateur de classement qui articule nom de clan, origine revendiquée et « caste », et qui découpe la catégorie ndébélé en parties. Aucune glose de nom particulier ne lui est empruntée."
+      "notes": "Lindgren, Björn, Africa (Journal of the International African Institute) 74(2), 2004, p. 173-193. Réserve à porter avec la citation : le texte intégral est sous péage chez Cambridge Core et n'a pas pu être lu lors de ce travail ; seuls la notice et le résumé ont été vérifiés. Ce qui est cité ici s'y limite — l'isibongo est en Matabeleland du Sud un opérateur de classement qui articule nom de clan, origine revendiquée et « caste », et qui découpe la catégorie ndébélé en parties. Aucune glose de nom particulier ne lui est empruntée."
     }
   ],
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "Deux choses distinctes, que la rédaction précédente confondait. Les izithakazelo lient bien un clan à ses ancêtres et non deux clans entre eux : il n'y a pas chez les Nguni d'équivalent du sanankuya mandingue, cousinage à plaisanterie institué par paires. Mais l'alliance entre clans nommés existe et Bryant la documente — sujétion négociée, adoption d'un lignage réfugié, mariage politique. Ce qui bloque le champ est que targetPatronymeId doit désigner un PAT_ existant : les partenaires attestés n'ont pas de fiche."
+      "reason": "Deux choses distinctes, que la rédaction précédente confondait. Les izithakazelo lient bien un clan à ses ancêtres et non deux clans entre eux : il n'y a pas chez les Nguni d'équivalent du sanankuya mandingue, cousinage à plaisanterie institué par paires. Mais l'alliance entre clans nommés existe et Bryant la documente — sujétion négociée, adoption d'un lignage réfugié, mariage politique. Le champ ne peut désigner qu'un nom ayant lui-même une fiche dans l'atlas : les partenaires attestés n'en ont pas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

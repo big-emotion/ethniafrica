@@ -90,15 +90,15 @@
   "sources": [
     {
       "sourceKey": "corpus-ppl-swazi-organisation",
-      "title": "Corpus AFRIK — PPL_SWAZI, organisation clanique",
+      "title": "EthniAfrica — fiche du peuple Swazi, organisation clanique",
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_SWAZI.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Swazi."
     },
     {
       "sourceKey": "un-eswatini-country-facts",
-      "title": "eSwatini — Country Facts (UN Member States)",
+      "title": "ESwatini — Country Facts (UN Member States)",
       "url": "https://www.un.int/eswatini/swaziland/country-facts",
       "tier": "official",
       "source_kind": "government",
@@ -132,7 +132,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "Bryant documente pour ce clan une alliance nommée : après que Dingiswayo eut tué Nyanya, les Dlamini de l'emBekamuzi jugèrent prudent de sacrifier leur indépendance et de se placer sous le chef mbatha voisin, Mangcengeza, fils de Kali. L'alliance nguni entre clans nommés existe donc bel et bien. Le champ reste vide parce que targetPatronymeId doit désigner un PAT_ existant et que les Mbatha n'ont pas de fiche."
+      "reason": "Bryant documente pour ce clan une alliance nommée : après que Dingiswayo eut tué Nyanya, les Dlamini de l'emBekamuzi jugèrent prudent de sacrifier leur indépendance et de se placer sous le chef mbatha voisin, Mangcengeza, fils de Kali. L'alliance nguni entre clans nommés existe donc bel et bien. Le champ reste vide parce qu'il ne peut désigner qu'un nom ayant lui-même une fiche dans l'atlas, et que les Mbatha n'ont pas de fiche."
     },
     {
       "fieldPath": "casteOrSocialFunction",

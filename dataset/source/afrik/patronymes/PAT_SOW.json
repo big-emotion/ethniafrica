@@ -66,11 +66,11 @@
   "sources": [
     {
       "sourceKey": "corpus-ppl-wolof-organisation",
-      "title": "Corpus AFRIK — PPL_WOLOF, organisation clanique",
+      "title": "EthniAfrica — fiche du peuple Wolof, organisation clanique",
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_ATLANTIQUE/PPL_WOLOF.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Wolof."
     },
     {
       "sourceKey": "bolaaro-clans-peuls",
@@ -78,15 +78,15 @@
       "url": "https://bolaaro.wordpress.com/2016/02/13/les-clans-peulhs-du-fouta-djallon/",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Blog communautaire peul. Cité pour les quatre clans fondateurs (Diallo, Bâ, Barry, Sow) ; aucune source académique n'a été trouvée pour cette quadripartition lors de la passe."
+      "notes": "Blog communautaire peul. Cité pour les quatre clans fondateurs (Diallo, Bâ, Barry, Sow) ; aucune source académique n'a été trouvée pour cette quadripartition lors de ce travail."
     },
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
     }
   ],
   "gaps": [
@@ -100,7 +100,7 @@
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source distincte de la simple homonymie de patronyme lors de la passe."
+      "reason": "Aucun porteur n'a pu être rattaché au clan par une source distincte de la simple homonymie de patronyme."
     },
     {
       "fieldPath": "homonyms",

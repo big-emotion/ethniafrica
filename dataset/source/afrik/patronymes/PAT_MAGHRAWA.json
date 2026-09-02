@@ -86,7 +86,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "Les alliances entre tribus zénètes relèvent de l'histoire politique et n'ont pas été établies comme alliances entre noms lors de la passe."
+      "reason": "Les alliances entre tribus zénètes relèvent de l'histoire politique et n'ont pas été établies comme alliances entre noms."
     },
     {
       "fieldPath": "casteOrSocialFunction",
@@ -94,7 +94,7 @@
     },
     {
       "fieldPath": "bearers",
-      "reason": "Ibn Khaldûn nomme les souverains des dynasties issues de ces tribus, mais une nisba tribale se porte collectivement : verser un émir au champ des porteurs ferait passer une histoire dynastique pour l'attestation d'un nom, ce que la passe s'interdit."
+      "reason": "Ibn Khaldûn nomme les souverains des dynasties issues de ces tribus, mais une nisba tribale se porte collectivement : verser un émir au champ des porteurs ferait passer une histoire dynastique pour l'attestation d'un nom, ce que l'atlas s'interdit."
     },
     {
       "fieldPath": "homonyms",
@@ -102,7 +102,7 @@
     },
     {
       "fieldPath": "countries",
-      "reason": "Recherche : la fiche rattache le nom aux Zenata (PPL_ZENATA), documentés en Algérie, au Maroc, en Tunisie et en Libye, mais aucune des sources qu'elle déclare n'attribue à cette nisba un pays au sens des frontières actuelles — Ibn Khaldūn raisonne en aires tribales du Maghreb médiéval. La passe en cours ne portait que sur les peuples ; l'attribution par pays reste à établir."
+      "reason": "La fiche rattache le nom aux Zenata, documentés en Algérie, au Maroc, en Tunisie et en Libye, mais aucune des sources qu'elle déclare n'attribue à cette nisba un pays au sens des frontières actuelles — Ibn Khaldūn raisonne en aires tribales du Maghreb médiéval. Le travail mené jusqu'ici ne portait que sur les peuples ; l'attribution par pays reste à établir."
     }
   ],
   "nisbaSubtype": {

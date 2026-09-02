@@ -99,11 +99,11 @@
   "sources": [
     {
       "sourceKey": "corpus-ppl-dioula-organisation",
-      "title": "Corpus AFRIK — PPL_DIOULA, organisation clanique",
+      "title": "EthniAfrica — fiche du peuple Dioula, organisation clanique",
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Dioula."
     },
     {
       "sourceKey": "jansen-sunjata-paradigm",
@@ -141,7 +141,7 @@
   "gaps": [
     {
       "fieldPath": "bearers",
-      "reason": "Le porteur que les répertoires courants rattachent au clan est Fakoli, le forgeron neveu de Soumaoro passé du côté de Soundiata, sous la forme « Fakoli Doumbia ». La transcription de Niane a été relue sur ce point : elle le nomme Fakoli Koroma, et l'Histoire générale de l'Afrique de même. Le jamu Doumbia ne lui est donc donné par aucune des sources consultées, et aucun autre porteur décédé n'a pu être rattaché au clan."
+      "reason": "Le porteur que les répertoires courants rattachent au clan est Fakoli, le forgeron neveu de Soumaoro passé du côté de Soundiata, sous la forme « Fakoli Doumbia ». La transcription de Niane a été relue sur ce point : elle le nomme Fakoli Koroma, et l'Histoire générale de l'Afrique de même. Le jamu Doumbia ne lui est donc donné par aucune des sources consultées, et aucun autre porteur n'a pu être rattaché au clan."
     },
     {
       "fieldPath": "homonyms",

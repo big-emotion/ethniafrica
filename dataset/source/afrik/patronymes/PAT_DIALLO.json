@@ -112,11 +112,11 @@
   "sources": [
     {
       "sourceKey": "corpus-ppl-fula-foret-organisation",
-      "title": "Corpus AFRIK — PPL_FULA_FORET, organisation clanique",
+      "title": "EthniAfrica — fiche du peuple Fula, organisation clanique",
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_FULA_FORET.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Fula."
     },
     {
       "sourceKey": "bolaaro-clans-peuls",
@@ -124,15 +124,15 @@
       "url": "https://bolaaro.wordpress.com/2016/02/13/les-clans-peulhs-du-fouta-djallon/",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Blog communautaire peul. Cité pour les quatre clans fondateurs (Diallo, Bâ, Barry, Sow) ; aucune source académique n'a été trouvée pour cette quadripartition lors de la passe."
+      "notes": "Blog communautaire peul. Cité pour les quatre clans fondateurs (Diallo, Bâ, Barry, Sow) ; aucune source académique n'a été trouvée pour cette quadripartition lors de ce travail."
     },
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
     },
     {
       "sourceKey": "bluett-1734-job-jallo",
@@ -140,7 +140,7 @@
       "url": "https://nationalhumanitiescenter.org/pds/maai/freedom/text1/diallo.pdf",
       "tier": "referenced",
       "source_kind": "archive",
-      "notes": "Bluett, Thomas, Londres, 1734. Document primaire : le récit dicté par Ayuba Suleiman Diallo à Bluett pendant sa captivité, imprimé de son vivant. C'est la plus ancienne attestation écrite connue du nom, et elle est explicite sur le système : « The Surname of his Family is Jallo », posé en regard de la chaîne patronymique « HYUBA, BOON SALUMENA, BOON HIBRAHEMA ». L'URL est l'édition d'extraits du National Humanities Center (2009), seule version dont le texte a pu être lu intégralement ici ; le texte complet est à Documenting the American South (docsouth.unc.edu/neh/bluett/menu.html), dont le serveur a refusé la connexion lors de la passe. Sections I et III vérifiées mot à mot. Source coloniale à lire comme telle : Bluett écrit en anglais, en abolitionniste anglican, à propos d'un homme qu'il a contribué à affranchir, et la graphie « Jallo » est la sienne."
+      "notes": "Bluett, Thomas, Londres, 1734. Document primaire : le récit dicté par Ayuba Suleiman Diallo à Bluett pendant sa captivité, imprimé de son vivant. C'est la plus ancienne attestation écrite connue du nom, et elle est explicite sur le système : « The Surname of his Family is Jallo », posé en regard de la chaîne patronymique « HYUBA, BOON SALUMENA, BOON HIBRAHEMA ». L'URL est l'édition d'extraits du National Humanities Center (2009), seule version dont le texte a pu être lu intégralement ici ; le texte complet est à Documenting the American South (docsouth.unc.edu/neh/bluett/menu.html), dont le serveur a refusé la connexion lors de ce travail. Sections I et III vérifiées mot à mot. Source coloniale à lire comme telle : Bluett écrit en anglais, en abolitionniste anglican, à propos d'un homme qu'il a contribué à affranchir, et la graphie « Jallo » est la sienne."
     }
   ],
   "gaps": [
