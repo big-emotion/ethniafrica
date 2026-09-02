@@ -280,8 +280,14 @@ export const translations = {
     // Patronyme fiche (ETNI-1464, REQ-133). Distinct from `names` above:
     // `names` covers ethnonyms (how a *people* is called); this covers
     // patronymes (the naming system a *person* is named under).
+    //
+    // The key is the internal word and the copy is the public one — DEC-038,
+    // same split as `TRAIL_PAGE_LABELS.patronymes` above. Anything a reader
+    // sees under this key says "nom", except where "patronyme" names one of
+    // the five naming systems, which is onomastic vocabulary and not a label
+    // for the axis.
     patronymes: {
-      eyebrow: "Patronyme",
+      eyebrow: "Nom",
       nameSystemSectionTitle: "Le nom",
       nameSystemStatementPrefix: "Système de nommage :",
       nameSystemLabels: {
@@ -372,9 +378,9 @@ export const translations = {
           "Les systèmes de nommage des personnes documentés dans le corpus — noms de clan, patronymes non héréditaires, nisba et noms d'éloge.",
         unavailable:
           "Les noms n'ont pas pu être chargés. Le problème vient de notre côté, pas d'un corpus vide.",
-        countSingular: "patronyme",
-        countPlural: "patronymes",
-        emptyState: "Aucun patronyme n'est encore documenté.",
+        countSingular: "nom",
+        countPlural: "noms",
+        emptyState: "Aucun nom n'est encore documenté.",
         pagination: {
           label: "Pagination des noms",
           previous: "Précédent",

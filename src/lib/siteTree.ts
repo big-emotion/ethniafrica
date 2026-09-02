@@ -114,8 +114,8 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
         },
         {
           href: route("patronymes"),
-          label: "Patronymes",
-          note: "30 systèmes de nomination, distincts des appellations d'un peuple.",
+          label: "Nom",
+          note: "30 systèmes de nommage des personnes, distincts des appellations d'un peuple.",
         },
         {
           href: route("search"),

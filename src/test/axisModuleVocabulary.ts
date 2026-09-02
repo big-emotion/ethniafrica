@@ -27,6 +27,21 @@ const UNDISTINCTIVE = new Set([
   "vous",
 ]);
 
+/**
+ * The words below four letters that do carry signal, admitted by name.
+ *
+ * The floor is a consequence of the lookup being a substring test, not a
+ * judgement that short words say nothing \u2014 and DEC-038 named an axis \u00ab Nom \u00bb,
+ * which the floor then dropped. The module stopped being recognised the moment
+ * the registry was corrected, and both consuming suites stayed green because
+ * they only ask for *two* modules to be named.
+ *
+ * A word admitted here is matched on a word boundary instead, which is what
+ * the floor was standing in for: \u00ab nom \u00bb must not answer for \u00ab nommage \u00bb, the
+ * very word this axis's own copy uses.
+ */
+const SHORT_BUT_DISTINCTIVE = new Set(["nom"]);
+
 const fold = (text: string) =>
   text
     .toLowerCase()
@@ -36,7 +51,17 @@ const fold = (text: string) =>
 const distinctiveWords = (moduleName: string) =>
   fold(moduleName)
     .split(/[^a-z]+/)
-    .filter((word) => word.length >= 4 && !UNDISTINCTIVE.has(word));
+    .filter(
+      (word) =>
+        !UNDISTINCTIVE.has(word) &&
+        (word.length >= 4 || SHORT_BUT_DISTINCTIVE.has(word))
+    );
+
+/** Long enough to stand on its own inside a word; short enough to need edges. */
+const sentenceNames = (word: string, foldedSentence: string) =>
+  SHORT_BUT_DISTINCTIVE.has(word)
+    ? new RegExp(`\\b${word}s?\\b`).test(foldedSentence)
+    : foldedSentence.includes(word);
 
 /** The modules of `mode` whose name the sentence picks up. */
 // @req REQ-113
@@ -46,7 +71,7 @@ export const modulesNamedIn = (mode: AccessMode, sentence: string) => {
 
   return getNavModules(mode)
     .filter((module) =>
-      distinctiveWords(module.name).some((word) => folded.includes(word))
+      distinctiveWords(module.name).some((word) => sentenceNames(word, folded))
     )
     .map((module) => module.name);
 };
