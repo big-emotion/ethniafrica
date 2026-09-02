@@ -4,7 +4,7 @@
   "generatedBy": "scripts/afrik/buildAnthroponymCandidates.mjs",
   "countryCount": 54,
   "candidateCount": 848,
-  "quotaTotal": 780,
+  "quotaTotal": 770,
   "deficitTotal": 0,
   "methodologyFr": "Le corpus AFRIK documente l'organisation clanique, pas l'anthroponymie : l'extraction de la prose n'a livré que 30 candidats exploitables (ETNI-1680). Cette liste étend la couverture à au moins dix anthroponymes de haute fréquence par pays à partir de connaissances externes au corpus. Conformément à la politique Source Tier, rien n'est écarté pour faiblesse : chaque entrée porte le tier le plus bas (unverified × ai_generated = 0.2) et reste un candidat tant qu'une source dédiée ne l'a pas établie. Le classement est un classement d'attestation, pas un décompte de porteurs : aucune table publique de fréquence patronymique ne couvre la majorité des 54 pays.",
   "defaultProvenance": {
@@ -664,7 +664,7 @@
       "dominantNameSystem": "clan_name",
       "onomasticNote": "Les noms mossi (Ouédraogo, Compaoré, Kaboré) sont des noms de lignage rattachés à la geste de Naaba Wedraogo, non des jamu mandingues ; la parenté à plaisanterie y opère aussi. Sankara reste sans peopleIds : le nom est revendiqué à la fois comme lignage silmi-mossi et comme jamu mandingue, et trancher sur la seule ascendance de Thomas Sankara reviendrait à déduire une lignée d'un porteur.",
       "verificationLead": "Listes électorales CENI, INSD, onomastique mooré et dioula",
-      "quota": 20,
+      "quota": 10,
       "deficit": 0,
       "entries": [
         {

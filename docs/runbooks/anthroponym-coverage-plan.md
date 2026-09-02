@@ -12,18 +12,25 @@ Every country represented, with more names where more people live. A flat ten
 would give Nigeria and the Seychelles the same representation, which is not a
 fair proportion in any reading.
 
-| Band         | Countries                                                                      | Names |
-| ------------ | ------------------------------------------------------------------------------ | ----: |
-| ≥ 100M       | NGA, COD, ETH, EGY                                                             |    30 |
-| ≥ 25M        | TZA, ZAF, KEN, UGA, SDN, DZA, MAR, AGO, GHA, MOZ, CIV, MDG, CMR, NER, MLI, BFA |    20 |
-| the other 34 | —                                                                              |    10 |
+| Band         | Countries                                                                 | Names |
+| ------------ | ------------------------------------------------------------------------- | ----: |
+| ≥ 100M       | NGA, COD, ETH, EGY                                                        |    30 |
+| ≥ 25M        | TZA, ZAF, KEN, SDN, UGA, DZA, AGO, MAR, MOZ, GHA, MDG, CIV, CMR, NER, MLI |    20 |
+| the other 35 | —                                                                         |    10 |
 
-**Total quota: 780.** The bands are population, declared in
-`scripts/afrik/buildAnthroponymCandidates.mjs` and owed a check against the UN
-WPP 2025 table the corpus already uses as its demographic reference year. They
-are deliberately _not_ derived from the corpus's own `distributionByCountry`
-sums: those double-count, because a macro-people and its sub-peoples are both
-attested in the same country, which puts Burundi ahead of Algeria.
+**Total quota: 770.** The bands are population, declared in
+`scripts/afrik/buildAnthroponymCandidates.mjs`. They are deliberately _not_
+derived from the corpus's own `distributionByCountry` sums: those double-count,
+because a macro-people and its sub-peoples are both attested in the same
+country, which puts Burundi ahead of Algeria.
+
+Checked 2026-09-02 against **UN World Population Prospects 2024 revision**,
+medium variant, mid-2025 estimates. One country was misbanded: Burkina Faso was
+declared ≥ 25M and is at 24.1M, so it moves to the base band and the total quota
+drops from 780 to 770. Its twenty authored candidates stay — the quota is a
+floor, not a ceiling. Mali, at 25.2M, is the closest country still above the
+line, and the pair to re-check when a WPP revision lands. Nothing in the base
+band reaches 25M: Malawi 22.2M, Zambia 21.9M and Chad 21.0M lead it.
 
 ## Where things stand
 
@@ -36,6 +43,7 @@ attested in the same country, which puts Burundi ahead of Algeria.
 | **Countries meeting their quota**    |           **0 / 54** |
 | Candidates queued                    |                  848 |
 | Queue deficit against quota          | 0 — wave 0 is closed |
+| Candidates with no people attached   |             37 / 848 |
 
 The generator prints the deficit per country on every run — it is the progress
 meter for wave 0, not an error:
@@ -48,8 +56,8 @@ node scripts/afrik/buildAnthroponymCandidates.mjs
 
 | Wave    | What it does                         | Output                               | Shape of the work                |
 | ------- | ------------------------------------ | ------------------------------------ | -------------------------------- |
-| **0**   | Close the queue deficit              | 848 candidates, quota 780 met        | Authoring, one country at a time |
-| **1**   | Candidates → fiches, minimal depth   | 780 fiches, 54/54 countries at quota | **A script, not an agent**       |
+| **0**   | Close the queue deficit              | 848 candidates, quota 770 met        | Authoring, one country at a time |
+| **1**   | Candidates → fiches, minimal depth   | 767 fiches, 54/54 countries at quota | **A script, not an agent**       |
 | **2…N** | Research depth, by linguistic family | Confidence rises per family          | The per-fiche protocol           |
 
 Wave 1 is where the coverage target is actually met. Waves 2+ never change
@@ -106,7 +114,7 @@ in the name dimension, and no amount of depth work reaches it before wave 1.
 ## Wave 0 — close the queue deficit
 
 **Closed.** The 200 missing candidates were authored across the 20 deficit
-countries, and the generator reports a deficit of 0 against the 780 quota.
+countries, and the generator reports a deficit of 0 against the 770 quota.
 
 The prompt below stays here because the quota is a floor, not a ceiling: raising
 a band, adding a country, or replacing a thin entry after research reopens a
@@ -158,7 +166,7 @@ Do not create fiches. This wave only fills the queue.
 
 ## Wave 1 — breadth: candidates into fiches
 
-**Write a generator, do not have an agent author 780 files.** The candidates
+**Write a generator, do not have an agent author 767 files.** The candidates
 already carry everything a minimal fiche needs; turning them into fiches is a
 deterministic transformation, and a script makes it re-runnable when the queue
 grows.
@@ -308,5 +316,5 @@ deciding anything about how the section looks.
 | Waves 3+                                 | wave 1, for the fiches to exist                          | after wave 1                       |
 
 Wave 1 is a generator, so re-running it after wave 0 grows the queue costs
-nothing — the sequencing above is about not reviewing the same 780 fiches twice,
+nothing — the sequencing above is about not reviewing the same 767 fiches twice,
 not about a technical dependency.
