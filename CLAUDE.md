@@ -41,6 +41,7 @@ npm run storybook           # :6006
 npm run lint:req                    # @req annotation traceability (see below)
 npm run check:jira-template         # docs/templates/jira-ticket-template.md must exist and match
 npm run check:action-pins           # every third-party GitHub Action must be SHA-pinned
+npm run check:workflow-shell        # every workflow `run:` block must parse under `bash -n`
 npm run check:env-example           # .env.example and the code agree, both directions
 npm run check:migration-files       # no duplicate version or name, no hole in the sequence
 npm run check:dead                  # knip: unreferenced files, exports, dependencies (ratcheted ceilings)

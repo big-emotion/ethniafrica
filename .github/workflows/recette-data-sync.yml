@@ -62,10 +62,14 @@ jobs:
       # This workflow only ever runs on a push to `recette` or a manual dispatch,
       # never from a fork, so secrets are always readable here. An empty value is
       # a misconfigured repository and must stop the run.
-      - name: Require the recette project's credentials
+      # No apostrophe in either message: inside `${VAR:?word}` bash re-reads the
+      # quoting of `word` even within double quotes, so one would open a string
+      # that is never closed and kill the step with `exit 2`. `check:workflow-shell`
+      # now catches that, but the messages stay readable rather than escaped.
+      - name: Require the recette project credentials
         run: |
           : "${NEXT_PUBLIC_SUPABASE_URL:?NEXT_PUBLIC_SUPABASE_URL is not set — the AFRIK corpus cannot be loaded into recette. Set it to the Supabase project backing recette.}"
-          : "${SUPABASE_SERVICE_ROLE_KEY:?SUPABASE_SERVICE_ROLE_KEY is not set — this must be the recette project's service-role key.}"
+          : "${SUPABASE_SERVICE_ROLE_KEY:?SUPABASE_SERVICE_ROLE_KEY is not set — it must be the service-role key of the recette Supabase project.}"
 
       # A corpus that fails its own integrity gate must not reach any database.
       # URL reachability is left off: it is a network check on ~5 000 sources and
