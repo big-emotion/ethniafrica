@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_MREMA",
   "nameMain": "Mrema",
@@ -11,7 +11,10 @@
     {
       "spelling": "Mrema",
       "attestations": [
-        { "countryId": "TZA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "TZA",
+          "sourceRefs": ["forebears-mrema"]
+        }
       ]
     }
   ],
@@ -20,20 +23,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "L'étude onomastique de Rombo classe Mrema et Mremi parmi les noms claniques chagga et les rattache au verbe rema ou rima, associé à la culture et au travail des champs. Les auteurs qualifient eux-mêmes la déduction de plausible ; elle ne doit donc pas être généralisée sans réserve à chaque lignée Mrema.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["lusekelo-mtenga-2020-mrema"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_CHAGA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["lusekelo-mtenga-2020-mrema"]
     }
   ],
   "countries": [
     {
       "countryId": "TZA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-mrema"]
     }
   ],
   "alliances": [],
@@ -42,38 +51,42 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "forebears-mrema",
+      "title": "Mrema Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/mrema",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement pour attester l'emploi moderne de Mrema comme nom de famille et sa présence dans les pays indiqués. La géographie ne prouve ni une appartenance ethnique exclusive ni une étymologie ; les définitions contributives éventuelles ne sont pas élevées au rang de faits."
+    },
+    {
+      "sourceKey": "lusekelo-mtenga-2020-mrema",
+      "title": "Historicity of personal names in Tanzania: the case of the names in the Rombo-Chagga community in Kilimanjaro",
+      "url": "https://www.researchgate.net/publication/342876767_Historicity_of_personal_names_in_Tanzania_the_case_of_the_names_in_the_Rombo-Chagga_community_in_Kilimanjaro",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article d'Amani Lusekelo et Vedasto Mtenga dans l'International Journal of Modern Anthropology, texte consulté directement. Il recense Mrema parmi les noms claniques rombo-chagga et rattache Mrema/Mremi au verbe rema/rima et au travail de culture des champs."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mrema », « CHAGA », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Mrema à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mrema », « CHAGA », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Mrema."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mrema », « CHAGA », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement contextuel retenu dans cette fiche."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mrema », « CHAGA », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont pas établi de lignée homonyme d'origine distincte documentable ; la diffusion dans plusieurs pays et les ressemblances graphiques ne suffisent pas à créer un homonyme."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web et bibliographique combinant « Mrema », « CHAGA », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont établi aucune règle propre à l'ensemble des emplois de Mrema permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }
