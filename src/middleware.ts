@@ -35,6 +35,8 @@ const isDeveloperPortalPage = (pathname: string) =>
 
 // Strict routes allow the two fixed Next.js 16 runtime <style> payloads by
 // exact hash because the framework does not propagate the request nonce.
+const SUPABASE_ORIGIN_FALLBACK = "https://supabase.ethniafrica.com";
+
 const NEXT_RUNTIME_STYLE_HASHES = [
   "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='",
   "'sha256-CIxDM5jnsGiKqXs2v7NKCY5MzdR9gu6TtiMJrDw29AY='",
@@ -55,6 +57,28 @@ const MEDIA_SRC_HOSTS = ["https://images.prismic.io"].join(" ");
 // directive still exists explicitly (not an implicit default-src fallback)
 // and stays a deliberate host-by-host allowlist once REQ-128 names a host.
 const FRAME_SRC_HOSTS: string[] = [];
+/**
+ * The self-hosted Supabase origin the browser is allowed to reach.
+ *
+ * `*.supabase.co` covers every hosted project, but production runs its own
+ * Supabase behind a custom domain, which that wildcard does not match. Baking
+ * one deployment's hostname into the policy meant any other deployment — a
+ * self-hosted staging, a branch database, a fork — had its Supabase calls
+ * blocked by the browser with no server-side error to find. Derived from
+ * NEXT_PUBLIC_SUPABASE_URL so it follows the database the app is actually
+ * pointed at, with the production host as the fallback.
+ */
+function selfHostedSupabaseOrigin(): string {
+  const configured = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+  if (!configured) return SUPABASE_ORIGIN_FALLBACK;
+  try {
+    const { origin } = new URL(configured);
+    return origin.endsWith(".supabase.co") ? "" : origin;
+  } catch {
+    return SUPABASE_ORIGIN_FALLBACK;
+  }
+}
+
 function applySecurityHeaders(
   response: NextResponse,
   nonce: string,
@@ -90,7 +114,7 @@ function applySecurityHeaders(
     // relaxation above is only for public pages, these two are for all of them.
     "base-uri 'self'",
     "form-action 'self'",
-    "connect-src 'self' https://*.supabase.co https://supabase.ethniafrica.com https://*.ingest.de.sentry.io https://plausible.io https://*.upstash.io",
+    `connect-src 'self' https://*.supabase.co ${selfHostedSupabaseOrigin()} https://*.ingest.de.sentry.io https://plausible.io https://*.upstash.io`,
   ].join("; ");
   response.headers.set("Content-Security-Policy", csp);
 }

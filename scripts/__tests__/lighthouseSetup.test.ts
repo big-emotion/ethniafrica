@@ -20,7 +20,7 @@ describe("Lighthouse browser setup", () => {
 
     expect(page.goto).toHaveBeenCalledWith(
       "http://localhost:3000/fr/pays/SEN",
-      { waitUntil: "networkidle0" }
+      { waitUntil: "domcontentloaded", timeout: 30_000 }
     );
     const [storageCallback, consentState] = page.evaluate.mock.calls[0];
     expect(storageCallback.toString()).toContain(
@@ -35,5 +35,27 @@ describe("Lighthouse browser setup", () => {
       },
     });
     expect(page.close).toHaveBeenCalledOnce();
+  });
+
+  // @req REQ-046
+  it("audits the route anyway when the consent seed cannot be planted", async () => {
+    const page = {
+      goto: vi.fn().mockRejectedValue(new Error("Navigation timeout exceeded")),
+      evaluate: vi.fn(),
+      close: vi.fn().mockResolvedValue(undefined),
+    };
+    const browser = { newPage: vi.fn().mockResolvedValue(page) };
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+
+    // lhci aborts collection on the first URL whose setup throws, which left
+    // every route after it unmeasured — the budgets were not failing, they
+    // were never evaluated.
+    await expect(
+      prepareLighthouseSession(browser, { url: "http://localhost:3000/fr" })
+    ).resolves.toBeUndefined();
+
+    expect(warn).toHaveBeenCalled();
+    expect(page.close).toHaveBeenCalledOnce();
+    warn.mockRestore();
   });
 });

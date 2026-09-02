@@ -46,7 +46,9 @@ const MODEL = {
     summary: "<placeholder>",
     narrative: "<placeholder>",
     debate: null,
-    sources: [{ title: "<t>", url: "<u>", year: 0, tier: 1, notes: "" }],
+    sources: [
+      { title: "<t>", url: "<u>", year: 0, tier: "official", notes: "" },
+    ],
   },
 };
 
@@ -83,7 +85,13 @@ function validFiche(overrides: Record<string, unknown> = {}) {
       narrative: "Récit.",
       debate: null,
       sources: [
-        { title: "T", url: "https://un.org/x", year: 2000, tier: 1, notes: "" },
+        {
+          title: "T",
+          url: "https://un.org/x",
+          year: 2000,
+          tier: "official",
+          notes: "",
+        },
       ],
     },
     ...overrides,
@@ -169,7 +177,7 @@ describe("validateMigrationEvents (FR80, Story 12.1)", () => {
             title: "T",
             url: "https://un.org/x",
             year: 2000,
-            tier: 1,
+            tier: "official",
             notes: "",
           },
         ],

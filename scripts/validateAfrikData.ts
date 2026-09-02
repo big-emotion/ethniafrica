@@ -2707,9 +2707,9 @@ export function validateMigrationEvents(
       // is that anything short of `official` carries that provenance note.
       if (!SOURCE_STANDINGS.has(String(source.tier))) {
         errors.push(
-          `${file}: content.sources[${i}] must record a standing (${[
+          `${file}: content.sources[${i}] must record a tier — one of ${[
             ...SOURCE_STANDINGS,
-          ].join(", ")})`
+          ].join(", ")}`
         );
       } else if (
         source.tier !== "official" &&
@@ -2895,9 +2895,9 @@ export function checkColonialEventCr4(datasetRoot: string): ValidationResult {
       }
       if (!SOURCE_STANDINGS.has(String(source.tier))) {
         errors.push(
-          `CR4: ${file}: content.sources[${i}] must record a standing (${[
+          `CR4: ${file}: content.sources[${i}] must record a tier — one of ${[
             ...SOURCE_STANDINGS,
-          ].join(", ")})`
+          ].join(", ")}`
         );
         return;
       }
