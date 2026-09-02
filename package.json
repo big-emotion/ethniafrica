@@ -16,6 +16,7 @@
     "lint:req:staged": "tsx scripts/lintReqAnnotations.ts --staged",
     "check:jira-template": "tsx scripts/checkJiraTemplate.ts",
     "check:action-pins": "tsx scripts/checkGithubActionPins.ts",
+    "check:workflow-shell": "tsx scripts/checkWorkflowShellSyntax.ts",
     "check:dead": "tsx scripts/ci/checkDeadCode.ts",
     "check:env-example": "tsx scripts/checkEnvExample.ts",
     "check:migration-state": "tsx scripts/ci/checkMigrationState.ts",

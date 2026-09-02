@@ -105,6 +105,11 @@ jobs:
 
       - run: npm run check:action-pins
 
+      # A `run:` block is shell source that YAML validation never parses, so a
+      # quoting mistake in one only surfaces as a red run, minutes later, with
+      # the step having done nothing. `bash -n` is the parser the runner uses.
+      - run: npm run check:workflow-shell
+
       - run: npm run check:env-example
 
       # The one question none of the gates above asks: does anything still
