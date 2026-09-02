@@ -305,6 +305,26 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   // answer. Readiness is "ready" because the surface is complete on the day
   // it ships — every fact it holds is written and cited, which is not
   // something the modules around it can say yet.
+  // First of the rubric, and not by seniority: it is the question the other
+  // three presuppose. The anecdotes bank is already onomastic by contract —
+  // "every fact here is about a *name*: who gave it, when, and what it was
+  // hiding" — and the colonial gaze is one answer to the same question. This
+  // dossier is where that question is put, so it opens the axis.
+  //
+  // `static` for the same reason the anecdotes are: the corpus behind it is
+  // the repository, not a table, so there is nothing for the availability
+  // probe to count and "static" is the honest answer.
+  {
+    id: "nommer",
+    name: "Qui a donné ce nom ?",
+    accessMode: "dossiers",
+    page: "nommer",
+    availability: "static",
+    // Written and sourced on the day it ships. What is still open is the
+    // walk-back from Wikipedia to the primary works, which the dossier's own
+    // suite tracks by name — see AWAITING_PRIMARY_SOURCE.
+    editorialReadiness: "ready",
+  },
   {
     id: "anecdotes",
     name: "Anecdotes",

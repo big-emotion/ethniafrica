@@ -547,7 +547,7 @@ export const translations = {
         blurb:
           "L'axe des relations : d'où vient un nom, par où sont passés les peuples, et sur quelles sources l'atlas s'appuie.",
         menuBlurb:
-          "Des anecdotes sourcées, les premiers repères de migrations et un dossier sur la colonisation.",
+          "Qui a donné ces noms, des anecdotes sourcées, les migrations et la colonisation.",
         hubEntryName: "Le hub de lecture",
       },
       jeux: {
