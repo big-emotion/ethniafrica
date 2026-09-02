@@ -217,16 +217,23 @@ export function HomeHero({
 
            A rank below both — small labels, soft ink, figures in display type
            — because these are the corpus's own measurements and not the band's
-           argument. The gap is larger than the one above the field: the tiles
-           close the copy column, and at 24px they read as its footer instead
-           of as a fourth thing the reader is being handed.
+           argument.
+
+           32px, and the ramp's reason for it (brand charter §7). The search
+           is a block of three parts — label, field, chips — held together at
+           8 and 16; at 24 the tiles sat one ramp step from the chips above
+           them, close enough that the band's rows read as one stack of
+           controls and the figures as a fourth row of suggestions. 32 puts
+           the tiles a rank away without reaching the 36/48 that separates
+           the search from the prose: they close the copy column as its
+           footer rather than becoming a fourth thing the reader is handed.
 
            No max-width of its own. The prose keeps its 52ch measure through
            .home-hero-answer; the tiles are a grid, and holding them to a text
            measure would leave the third one hanging off the column's edge at
            1440. */
         .home-hero-copy .home-corpus-counts {
-          margin-top: 24px;
+          margin-top: 32px;
         }
 
         .home-hero-visual {

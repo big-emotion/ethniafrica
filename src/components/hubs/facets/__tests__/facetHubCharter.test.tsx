@@ -157,7 +157,7 @@ describe("facet switcher — plain anchors, not a widget", () => {
     const labels = screen
       .getAllByRole("link")
       .map((link) => link.textContent?.trim());
-    expect(labels).toEqual(["Familles", "Langues", "Peuples", "Pays", "Nom"]);
+    expect(labels).toEqual(["Familles", "Langues", "Peuples", "Pays", "Noms"]);
   });
 
   // @req REQ-114
