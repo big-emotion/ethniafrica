@@ -236,6 +236,31 @@ generated from it, never hand-listed.
   row count could ever have spoken for it: its readiness was never measurable,
   only declarable, and that is precisely the gap this field closes.
 
+- **A source that does not answer is not an empty source.** The measured half
+  has three states, not two: the corpus holds something, it holds nothing, or
+  nothing came back. Only the second withholds the invitation — a query that
+  errored or timed out leaves the module offered.
+
+  The asymmetry is the argument. An empty list costs a reader one click; a
+  door that is not there costs them the page, and costs it silently, since
+  nothing on the surface says a database was ever consulted. Measured
+  2026-09-02: 790 published peoples sat behind **Bientôt** because the probe
+  asked PostgREST for an exact count over `afrik_peoples` — a whole-relation
+  question against 38 MB of TOASTed JSONB — which blew the three-second `anon`
+  statement timeout, and the resolver read `error` and `count: 0` as the same
+  answer. The corpus had been loaded the whole time.
+
+  So the question put to the database is now `exists`, not `count`: liveness
+  never needed a total, and asking for one made the answer time grow with the
+  corpus — the largest fiche set failing first, which is the opposite of what
+  a health probe should do. `hub_module_corpus_presence` (migration 080)
+  answers for every source in one round trip.
+
+  Fail-open is scoped to the measured half. A module declared `draft` stays
+  inert through any outage, or an unreachable database could publish work its
+  editor called unready — which would invert the rule above rather than
+  soften it.
+
 - **A page states one availability, not one per surface.** A navigation entry
   and any scene advertising it are two assertions about the same module; when
   they disagree, the interface is simply wrong. Every surface therefore takes
