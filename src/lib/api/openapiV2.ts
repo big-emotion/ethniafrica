@@ -1669,12 +1669,38 @@ const options: swaggerJsdoc.Options = {
             },
             title: { type: "string" },
             url: { type: ["string", "null"] },
-            pinnedUrl: { type: ["string", "null"] },
+            pinnedUrl: {
+              type: ["string", "null"],
+              deprecated: true,
+              description:
+                "Always null: no column backs this field. Kept because removing a published property is a breaking change, and null before reads the same as absent after.",
+            },
             year: { type: ["integer", "null"] },
             author: { type: ["string", "null"] },
             publisher: { type: ["string", "null"] },
-            resolvable: { type: ["boolean", "null"] },
+            resolvable: {
+              type: ["boolean", "null"],
+              deprecated: true,
+              description:
+                "Always null: the nightly link check writes a log file, not a column. Kept for the same reason as pinnedUrl.",
+            },
             lastVerifiedAt: {
+              type: ["string", "null"],
+              format: "date-time",
+              description:
+                "When a human last verified the source. Read from `verified_at`.",
+            },
+            notes: {
+              type: ["string", "null"],
+              description:
+                "Why the source carries the tier it carries — the catalogue entry, domain rule, or citation form the tier was read from.",
+            },
+            page: {
+              type: ["string", "null"],
+              description:
+                "Locator inside the work, when the citation named one.",
+            },
+            addedAt: {
               type: ["string", "null"],
               format: "date-time",
             },

@@ -11,6 +11,7 @@ import {
   getPeopleLinksRoute,
   getPeopleRoute,
   getPersonRoute,
+  getSourceRoute,
   resolveCountryDeepLink,
   resolveFamilyDeepLink,
   resolvePeopleDeepLink,
@@ -54,6 +55,17 @@ describe("entity routes (ContextTriad, ETNI-818)", () => {
   it("builds a localized person fiche href", () => {
     expect(getPersonRoute("fr", "PER_DELAFOSSE")).toBe(
       "/fr/atlas/personnes/PER_DELAFOSSE"
+    );
+  });
+
+  /**
+   * Sources carry no axis prefix — no hub lists them, so nesting one would
+   * invent an ancestor the menu never offers.
+   */
+  // @req REQ-092
+  it("builds a source href on the identifier, without an axis prefix", () => {
+    expect(getSourceRoute("fr", "11111111-1111-1111-1111-111111111111")).toBe(
+      "/fr/sources/11111111-1111-1111-1111-111111111111"
     );
   });
 });

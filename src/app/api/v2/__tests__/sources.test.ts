@@ -99,6 +99,46 @@ describe("GET /api/v2/sources", () => {
     expect(listSourcesHandler).toHaveBeenCalledWith({ page: 3, perPage: 50 });
   });
 
+  /**
+   * The directory narrows at the database; the public endpoint had no way to
+   * ask for the same narrowing, so an API consumer could only page through
+   * 4 395 rows in title order.
+   */
+  // @req REQ-092
+  it("honours the narrowing query params", async () => {
+    vi.mocked(listSourcesHandler).mockResolvedValue(baseEnvelope<Source[]>([]));
+    const request = new NextRequest(
+      "http://localhost/api/v2/sources?q=ethnologue&tier=official&decade=1990&sort=year"
+    );
+
+    await listGet(request);
+
+    // The page names its parameters in French for the reader; the API keeps
+    // the English of the rest of v2, and the page translates at its own
+    // address composer.
+    expect(listSourcesHandler).toHaveBeenCalledWith(
+      expect.objectContaining({
+        q: "ethnologue",
+        tier: "official",
+        decade: 1990,
+        sort: "year",
+      })
+    );
+  });
+
+  // @req REQ-092
+  it("rejects a tier outside the three the corpus recognises", async () => {
+    const request = new NextRequest(
+      "http://localhost/api/v2/sources?tier=primary"
+    );
+    const response = await listGet(request);
+    const body = await response.json();
+
+    expect(response.status).toBe(400);
+    expect(body.errors[0].code).toBe("VALIDATION_ERROR");
+    expect(listSourcesHandler).not.toHaveBeenCalled();
+  });
+
   it("returns 400 with a VALIDATION error when params are invalid", async () => {
     const request = new NextRequest(
       "http://localhost/api/v2/sources?perPage=9999"
