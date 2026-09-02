@@ -1,3 +1,6 @@
+import { readdirSync, statSync } from "node:fs";
+import { basename, join, resolve } from "node:path";
+
 import { describe, expect, it } from "vitest";
 
 import { NOMMER_BIBLIOGRAPHY } from "@/lib/dossiers/nommer/bibliography";
@@ -29,6 +32,7 @@ const AWAITING_PRIMARY_SOURCE = new Set([
   "civil-registration-surnames",
   "zaire-authenticite-1972",
   "bleek-1862",
+  "bantu-class-prefixes",
   "bantu-education-act-1953",
   "vlisco-helmond",
   "kente-nwentoma",
@@ -252,5 +256,46 @@ describe("the Nommer dossier's chapters", () => {
   it("finds a chapter by its key and nothing by an unknown one", () => {
     expect(getNommerChapter("la-chose")?.title).toBe("La chose");
     expect(getNommerChapter("le-peuple")?.ordinal).toBe("01");
+  });
+
+  // Same contract the anecdotes bank holds itself to: a chip pointing at a
+  // fiche the corpus does not carry is a 404 the reader finds before we do.
+  // Reading the directory is the only version of this that can fail for the
+  // reason its name gives.
+  // @req REQ-113
+  it("opens only onto entities the corpus actually holds", () => {
+    const root = resolve(process.cwd(), "dataset/source/afrik");
+    const stem = (file: string) => basename(file, ".json");
+
+    const corpus: Record<string, Set<string>> = {
+      country: new Set(readdirSync(join(root, "pays")).map(stem)),
+      family: new Set(
+        readdirSync(join(root, "famille_linguistique")).map(stem)
+      ),
+      people: new Set<string>(),
+    };
+
+    const peoplesRoot = join(root, "peuples");
+    for (const branch of readdirSync(peoplesRoot)) {
+      const branchPath = join(peoplesRoot, branch);
+      if (!statSync(branchPath).isDirectory()) continue;
+      for (const file of readdirSync(branchPath)) {
+        if (file.startsWith("PPL_") && file.endsWith(".json")) {
+          corpus.people.add(stem(file));
+        }
+      }
+    }
+
+    const dangling: string[] = [];
+    for (const chapter of NOMMER_CHAPTERS) {
+      for (const entity of chapter.entities) {
+        expect(entity.label, `${chapter.key} → ${entity.id}`).not.toBe("");
+        if (!corpus[entity.kind].has(entity.id)) {
+          dangling.push(`${chapter.key} → ${entity.kind} ${entity.id}`);
+        }
+      }
+    }
+
+    expect(dangling).toEqual([]);
   });
 });

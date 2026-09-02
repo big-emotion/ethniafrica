@@ -234,6 +234,20 @@ export const NOMMER_BIBLIOGRAPHY: Record<SourceKey, DossierSource> = {
       "Atteste la forge de 1862 et le devenir politique du mot en Afrique du Sud. Ne suffit pas pour le Bantu Education Act de 1953, qu'il faut citer sur son propre texte.",
     discoveredVia: [],
   },
+  "bantu-class-prefixes": {
+    sourceKey: "bantu-class-prefixes",
+    title:
+      "Les préfixes de classe nominale et la distinction langue / peuple / pays",
+    authors: [],
+    publicationYear: null,
+    publisher: null,
+    url: null,
+    standing: "needs_review",
+    sourceKind: "linguistic_reference",
+    notes:
+      "isi- pour la langue et ama- pour le peuple en zoulou, se- et ba- en tswana, ki- en swahili, otji- et ova- en herero. Le fait grammatical est élémentaire et bien décrit ; ce qui doit être sourcé proprement, c'est l'affirmation que l'usage européen a systématiquement supprimé le préfixe. Une grammaire de référence, pas une notice.",
+    discoveredVia: ["fr.wikipedia", "en.wikipedia"],
+  },
   "bantu-education-act-1953": {
     sourceKey: "bantu-education-act-1953",
     title: "Bantu Education Act, No. 47 of 1953",
