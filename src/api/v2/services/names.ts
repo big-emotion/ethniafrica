@@ -236,8 +236,7 @@ export interface ListNamesResult {
 function mapPeopleRowToSummary(row: Record<string, unknown>): PeopleSummary {
   const content = (row.content as Record<string, unknown>) ?? {};
   const appellations = content.appellations as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   const autonym =
     typeof appellations?.selfAppellation === "string"
       ? appellations.selfAppellation

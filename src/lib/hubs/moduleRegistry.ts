@@ -214,10 +214,7 @@ export interface HubModuleDefinition {
  */
 // @req REQ-115
 export type HeroPreviewKind =
-  | "globe"
-  | "game"
-  | "migration-paths"
-  | "family-crown";
+  "globe" | "game" | "migration-paths" | "family-crown";
 
 // @req REQ-115
 export const HERO_PREVIEW_KINDS: HeroPreviewKind[] = [
