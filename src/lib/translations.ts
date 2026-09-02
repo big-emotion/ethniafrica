@@ -118,6 +118,7 @@ export const translations = {
         doctrine: "Doctrine éditoriale",
         about: "À propos",
         sources: "Sources",
+        glossary: "Glossaire",
         followHeading: "Nous suivre",
         followPending: "compte à venir",
       },

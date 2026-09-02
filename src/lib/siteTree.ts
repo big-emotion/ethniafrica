@@ -227,6 +227,11 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
       links: [
         { href: `/${language}/about`, label: "À propos" },
         {
+          href: route("glossary"),
+          label: "Glossaire",
+          note: "Les mots avec lesquels l'atlas nomme, définis une fois.",
+        },
+        {
           href: route("sources"),
           label: "Sources",
           note: "La bibliographie qui documente le corpus.",

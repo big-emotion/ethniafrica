@@ -25,6 +25,7 @@
 @import "./styles/fiche-chapter-bar.css";
 @import "./styles/classification-tree.css";
 @import "./styles/dossier-nommer.css";
+@import "./styles/glossaire.css";
 /* Last, and unlayered on purpose: the rule is inherited from `body`, so it
    must sit after every sheet above it and outside the `base` layer that
    Tailwind's preflight occupies. */

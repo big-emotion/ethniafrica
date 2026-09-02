@@ -109,6 +109,13 @@ export function SiteFooter({ language }: SiteFooterProps) {
           label: directory.sources,
           href: getLocalizedRoute(language, "sources"),
         },
+        // The glossary belongs to the project rather than to an axis: it
+        // serves the atlas, the dossiers and the games alike, so filing it
+        // under one of them would invent an ancestor the menu never offers.
+        {
+          label: directory.glossary,
+          href: getLocalizedRoute(language, "glossary"),
+        },
       ],
     },
   ];

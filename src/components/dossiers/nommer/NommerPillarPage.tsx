@@ -5,6 +5,7 @@ import { ChapterHeading } from "@/components/pages/ChapterHeading";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { NOMMER_CHAPTERS } from "@/lib/dossiers/nommer/chapters";
 import { NOMMER_FIGURES } from "@/lib/dossiers/nommer/figures";
+import { GLOSSARY_ENTRIES } from "@/lib/glossaire/entries";
 import { getLocalizedRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
@@ -27,6 +28,27 @@ const UNDECLARED_SENTENCE = `${countedValue("status-undeclared")} fiches de peup
 
 const MISSING_IMPOSITION_REASON =
   missingImposition.kind === "missing" ? missingImposition.reason : "";
+
+const glossaryHref = getLocalizedRoute(LANGUAGE, "glossary");
+
+/**
+ * Six terms as chips, one per doorway rather than one per family: they are an
+ * invitation, and a reader who wanted the whole list would take the link
+ * beneath them. Chosen for being the words this dossier cannot be read
+ * without, not for covering the three families evenly.
+ */
+const GLOSSARY_DOORWAY_IDS = [
+  "endonyme",
+  "exonyme",
+  "ethnonyme",
+  "glossonyme",
+  "reification-ethnique",
+  "tribu",
+];
+
+const GLOSSARY_DOORWAY_TERMS = GLOSSARY_DOORWAY_IDS.map((id) =>
+  GLOSSARY_ENTRIES.find((entry) => entry.id === id)
+).filter(Boolean);
 
 /**
  * The pillar of « Qui a donné ce nom ? ».
@@ -96,6 +118,35 @@ export const NommerPillarPage = () => (
             Lire la doctrine éditoriale
           </ActionLink>
         </div>
+      </section>
+
+      <section aria-labelledby="nommer-glossaire">
+        <ChapterHeading
+          stepLabel="Le vocabulaire"
+          heading="Trente mots, définis une fois"
+          id="nommer-glossaire"
+        />
+        <p className="mb-afh-lg mt-afh-md text-afh-body text-afh-text-soft">
+          Endonyme, exonyme, glossonyme, réification ethnique : ce dossier
+          emploie des mots que le site affichait sans les définir nulle part. Le
+          glossaire les tient, chacun avec un exemple pris dans le corpus — ou
+          avec la raison pour laquelle le corpus n’en a pas.
+        </p>
+        <ul className="mb-afh-lg flex list-none flex-wrap gap-afh-sm p-0">
+          {GLOSSARY_DOORWAY_TERMS.map((entry) => (
+            <li key={entry.id}>
+              <a
+                href={`${glossaryHref}#terme-${entry.id}`}
+                className="inline-flex min-h-11 items-center rounded-afh-full border border-afh-border px-afh-md text-afh-small font-semibold text-[color:var(--accent-ink)] no-underline hover:underline focus-visible:underline focus-visible:outline-none focus-visible:shadow-[var(--afh-ring-focus)]"
+              >
+                {entry.fr}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <ActionLink href={glossaryHref}>
+          {`Ouvrir le glossaire — ${GLOSSARY_ENTRIES.length} termes`}
+        </ActionLink>
       </section>
     </div>
   </PageLayout>
