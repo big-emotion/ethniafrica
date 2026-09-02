@@ -1,0 +1,219 @@
+# Anthroponym coverage plan
+
+Getting the name dimension from 30 fiches on 21 countries to full coverage of
+the 54, breadth first and depth in waves.
+
+This file is written to be **pasted from**. Each wave carries a self-contained
+prompt: open a fresh session, paste the prompt, and it has everything it needs.
+
+## The target
+
+Every country represented, with more names where more people live. A flat ten
+would give Nigeria and the Seychelles the same representation, which is not a
+fair proportion in any reading.
+
+| Band         | Countries                                                                      | Names |
+| ------------ | ------------------------------------------------------------------------------ | ----: |
+| ≥ 100M       | NGA, COD, ETH, EGY                                                             |    30 |
+| ≥ 25M        | TZA, ZAF, KEN, UGA, SDN, DZA, MAR, AGO, GHA, MOZ, CIV, MDG, CMR, NER, MLI, BFA |    20 |
+| the other 34 | —                                                                              |    10 |
+
+**Total quota: 780.** The bands are population, declared in
+`scripts/afrik/buildAnthroponymCandidates.mjs` and owed a check against the UN
+WPP 2025 table the corpus already uses as its demographic reference year. They
+are deliberately _not_ derived from the corpus's own `distributionByCountry`
+sums: those double-count, because a macro-people and its sub-peoples are both
+attested in the same country, which puts Burundi ahead of Algeria.
+
+## Where things stand
+
+|                                      |                          |
+| ------------------------------------ | -----------------------: |
+| `PAT_*` fiches                       |                       30 |
+| Countries with ≥ 1 fiche             |                  21 / 54 |
+| Countries with zero                  |                       33 |
+| Best-covered country (MLI, CIV, BFA) |                        9 |
+| **Countries meeting their quota**    |               **0 / 54** |
+| Candidates queued                    |                      648 |
+| Queue deficit against quota          | 200, across 20 countries |
+
+The generator prints the deficit per country on every run — it is the progress
+meter for wave 0, not an error:
+
+```bash
+node scripts/afrik/buildAnthroponymCandidates.mjs
+```
+
+## The waves
+
+| Wave    | What it does                         | Output                               | Shape of the work                |
+| ------- | ------------------------------------ | ------------------------------------ | -------------------------------- |
+| **0**   | Close the queue deficit              | 780 candidates                       | Authoring, one country at a time |
+| **1**   | Candidates → fiches, minimal depth   | 780 fiches, 54/54 countries at quota | **A script, not an agent**       |
+| **2…N** | Research depth, by linguistic family | Confidence rises per family          | The per-fiche protocol           |
+
+Wave 1 is where the coverage target is actually met. Waves 2+ never change
+coverage — they change how much each fiche says.
+
+### Depth wave order
+
+Ordered by how many peoples the family carries in the corpus, so each wave
+unlocks the most fiches per unit of research:
+
+| Wave | Family                    | Peoples | Why this order                                                             |
+| ---: | ------------------------- | ------: | -------------------------------------------------------------------------- |
+|    2 | FLG_MANDE                 |      32 | Best-documented onomastics; the jamu and sanankuya work is already started |
+|    3 | FLG_BANTU                 |     174 | Largest block; isibongo, izithakazelo and ekika systems                    |
+|    4 | FLG_NIGERCONGO            |     180 | Broadest, most heterogeneous                                               |
+|    5 | FLG_BENOUECONGO           |      60 | Yoruba oríkì and Igbo naming                                               |
+|    6 | FLG_COUCHITIQUE           |      58 | Habesha and Somali non-hereditary systems                                  |
+|    7 | FLG_ATLANTIQUE            |      28 | Fulɓe and Wolof clans                                                      |
+|    8 | FLG_BERBERE               |      14 | Nisba; Ibn Khaldūn already cited                                           |
+|   9+ | the remaining 16 families |       — | By size                                                                    |
+
+---
+
+## Wave 0 — close the queue deficit
+
+200 candidates missing, in 20 countries. Run one country per invocation, or a
+band at a time.
+
+```text
+You are an Africanist anthroponymist working on the EthniAfrica corpus.
+
+Extend the anthroponym candidate queue for <COUNTRY_ISO3> up to its quota.
+
+Read first:
+  - scripts/afrik/anthroponymCandidates.data.mjs — the authored table; find the
+    <COUNTRY_ISO3> block and read its `onomasticNote` and `verificationLead`
+  - scripts/afrik/buildAnthroponymCandidates.mjs — the quota bands and the
+    validation the table must pass
+  - docs/runbooks/anthroponym-coverage-plan.md — this plan
+
+Add entries to the <COUNTRY_ISO3> `names` array until it reaches the quota the
+generator reports. Entry shape: [name, nameSystem, peopleIds, variants, note?]
+
+Rules:
+  - `nameSystem` is one of clan_name, non_hereditary_patronymic, nisba,
+    praise_name, totemic_clan. Where the local tradition does not map onto one
+    of the five, pick the closest and extend the country's `onomasticNote` to
+    record the mismatch — do not silently misfile it.
+  - `peopleIds` must be real `PPL_*` ids present in the corpus. The generator
+    fails on an unknown id and warns when a people is not attested in the
+    country claimed; leave the array empty rather than guess.
+  - No duplicate name within a country. Across countries is fine and expected:
+    a name attested in five countries is one fiche with five attestations.
+  - Prefer names that are frequent *and* onomastically informative. Ten
+    spellings of the same Arabic given name teach the reader nothing; a nisba,
+    a clan name and a patronymic chain element teach three different things.
+
+Then run `node scripts/afrik/buildAnthroponymCandidates.mjs` and confirm the
+country's deficit is 0 and no error is printed. Run `npx prettier --check` on
+the two script files.
+
+Do not create fiches. This wave only fills the queue.
+```
+
+---
+
+## Wave 1 — breadth: candidates into fiches
+
+**Write a generator, do not have an agent author 780 files.** The candidates
+already carry everything a minimal fiche needs; turning them into fiches is a
+deterministic transformation, and a script makes it re-runnable when the queue
+grows.
+
+```text
+You are working on the EthniAfrica AFRIK corpus.
+
+Write scripts/afrik/generatePatronymeFichesFromCandidates.mjs, which turns every
+entry of dataset/source/afrik/patronymes/_candidates-by-country.json into a
+minimal `PAT_*` fiche, and run it.
+
+Read first:
+  - src/lib/afrik/parsers/patronymeTypes.ts — `PatronymeDossier`, the strict
+    shape. This, not public/modele-nom.json, which is the appellation model.
+  - src/types/sources.ts — `SOURCE_KINDS` is a closed vocabulary. There is no
+    `book`, `blog` or `website`.
+  - scripts/afrik/enrichPatronymeFiches.mjs — the merge and gap-rewriting
+    conventions to follow, including the two source invariants.
+  - dataset/source/afrik/patronymes/PAT_BAMBA_CLAN.json — a real fiche.
+
+One fiche per distinct name, not per candidate row: a name queued for five
+countries becomes one fiche with five country attestations and five spellings
+entries. Derive the id as PAT_<NAME UPPERCASED, non-alphanumerics to _>; when
+that collides with one of the 30 existing fiches, skip the candidate and report
+it rather than overwrite — those 30 are already researched.
+
+Each generated fiche carries:
+  - nameMain, nameSystem, spellings (canonical + queued variants, each attested
+    to its countries), peoples, countries
+  - transmissionMode and designatedSocialUnit only where the candidate's
+    nameSystem determines them unambiguously; otherwise "other" and a gap
+  - empty origin, alliances, bearers, homonyms, and casteOrSocialFunction null
+  - exactly one source: tier "unverified", source_kind "ai_generated", whose
+    notes name the candidate queue as the origin and state that no dedicated
+    source has been consulted yet
+  - a `gaps` entry for every empty field, whose reason says the fiche was
+    generated from the candidate queue and awaits the research protocol
+
+Do not invent an etymology, a bearer, an alliance or a caste. This wave creates
+coverage, not knowledge, and the confidence score must say so: unverified ×
+ai_generated is 0.2, which is the correct and intended reading of these fiches.
+
+Verify, and do not stop until all pass:
+  - every fiche parses under parsePatronymeFile
+  - loadAllPatronymeDossiers() returns 0 errors
+  - npx tsx scripts/validateAfrikData.ts — 0 errors
+  - npx tsx scripts/ci/checkEditorialRules.ts — 0 errors
+  - make check
+  - every country reaches its quota, counted over fiches rather than candidates
+
+Then report the per-country coverage table.
+```
+
+**Expect existing tests to fail, and read them before changing them.**
+`scripts/__tests__/patronymeClanFiches.test.ts` and `patronymeRareFiches.test.ts`
+assert properties of the batch of 30. A test that breaks because the corpus grew
+is updated; a test that breaks because a fiche is malformed is a real failure.
+`patronymeRareFiches` requires an `https://` URL on every source and forbids
+`wikipedia.org` — a generated fiche has no URL to give, so that assertion needs
+scoping to the researched batch rather than loosening.
+
+---
+
+## Waves 2…N — depth, by linguistic family
+
+The per-fiche protocol is `docs/runbooks/anthroponym-fiche-research.md`; its
+prompt is the one to paste. Add this framing at the top of a wave:
+
+```text
+Run the anthroponym fiche research protocol
+(docs/runbooks/anthroponym-fiche-research.md) over every PAT_* fiche whose
+`peoples` belong to <FLG_FAMILY>.
+
+Process one fiche at a time and do not carry a source from one to the next: a
+name attested for one people is not thereby attested for another. Traoré, Keïta
+and Coulibaly appear in the same corpus sentence, and treating that sentence as
+a source for all three is how the first batch ended up with one shared passage
+standing in for thirty etymologies.
+
+Share sources through a table keyed by sourceKey, the way
+scripts/afrik/patronymeResearch.data.mjs does — patronymeJsonLoader keys sources
+by title and rejects the batch when the same title appears twice with a
+conflicting tier, URL or provenance.
+
+A wave is done when, for every fiche it covers: transmissionMode is no longer
+"other", origin carries at least one sourced claim, and every remaining gap
+states what was searched and did not turn up rather than that the corpus passage
+did not mention it.
+```
+
+## What is deliberately not in this plan
+
+**A per-country names section on the country fiche.** Coverage exists in the
+data long before it is visible: today a name is reachable at
+`/fr/atlas/noms/[slug]` and through `/api/v2/patronymes`, but no country page
+lists its names. "Every country represented by names" is only true to a reader
+once that section ships. It is a front-end ticket, independent of every wave
+above, and it can be built as soon as wave 1 lands.
