@@ -2,22 +2,28 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_NYOBE",
   "nameMain": "Nyobè",
   "nameSystem": "clan_name",
   "spellings": [
     {
-      "spelling": "Nyobè",
+      "spelling": "Nyobe",
       "attestations": [
-        { "countryId": "CMR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["sharp-2013-nyobe"]
+        }
       ]
     },
     {
-      "spelling": "Nyobe",
+      "spelling": "Nyobé",
       "attestations": [
-        { "countryId": "CMR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["sharp-2013-nyobe"]
+        }
       ]
     }
   ],
@@ -32,54 +38,60 @@
     {
       "peopleId": "PPL_BASSA_CAM",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["sharp-2013-nyobe"]
     }
   ],
   "countries": [
     {
       "countryId": "CMR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["sharp-2013-nyobe"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Ruben Um Nyobé",
+      "sourceRefs": ["sharp-2013-nyobe"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "sharp-2013-nyobe",
+      "title": "The International Possibilities of Insurgency and Statehood in Africa: The U.P.C. and Cameroon, 1948-1971",
+      "url": "https://pure.manchester.ac.uk/ws/portalfiles/portal/54549482/FULL_TEXT.PDF",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Thèse de Thomas Sharp, Université de Manchester, 2013, consultée dans son PDF intégral. Elle atteste la graphie Nyobé, présente Ruben Um Nyobé comme originaire de la population bassa de Sanaga-Maritime et traite explicitement de sa mort en 1958 ; elle ne fournit aucune étymologie du nom."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Nyobe », « Nyobé », « Bassa », « Cameroun », « patronyme », « anthroponymie », « étymologie », « clan », « transmission », « alliance », « caste » et « homonyme », ainsi que la thèse de Sharp consacrée à l'UPC et à Ruben Um Nyobé n'ont livré aucune tradition attribuée, chronique ou étude linguistique propre à ce nom qui en établirait l'origine ; les rapprochements fondés sur la seule ressemblance ou la seule géographie ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Nyobe », « Nyobé », « Bassa », « Cameroun », « patronyme », « anthroponymie », « étymologie », « clan », « transmission », « alliance », « caste » et « homonyme », ainsi que la thèse de Sharp consacrée à l'UPC et à Ruben Um Nyobé n'ont pas établi que la catégorie de système nominal portée par la fiche provisoire décrive ce nom lui-même ; elle reste une hypothèse de classement et n'est pas transformée en fait."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Nyobe », « Nyobé », « Bassa », « Cameroun », « patronyme », « anthroponymie », « étymologie », « clan », « transmission », « alliance », « caste » et « homonyme », ainsi que la thèse de Sharp consacrée à l'UPC et à Ruben Um Nyobé n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Nyobe », « Nyobé », « Bassa », « Cameroun », « patronyme », « anthroponymie », « étymologie », « clan », « transmission », « alliance », « caste » et « homonyme », ainsi que la thèse de Sharp consacrée à l'UPC et à Ruben Um Nyobé n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à ce nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Nyobe », « Nyobé », « Bassa », « Cameroun », « patronyme », « anthroponymie », « étymologie », « clan », « transmission », « alliance », « caste » et « homonyme », ainsi que la thèse de Sharp consacrée à l'UPC et à Ruben Um Nyobé n'ont pas établi de lignée homonyme d'origine distincte documentable ; une diffusion dans plusieurs pays ou une graphie voisine ne suffit pas à créer un homonyme."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web et bibliographique combinant « Nyobe », « Nyobé », « Bassa », « Cameroun », « patronyme », « anthroponymie », « étymologie », « clan », « transmission », « alliance », « caste » et « homonyme », ainsi que la thèse de Sharp consacrée à l'UPC et à Ruben Um Nyobé n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }
