@@ -167,6 +167,20 @@ export const getPatronymeRoute = (language: Language, id: string): string =>
 export const getLanguageRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "languages")}/${id}`;
 
+/**
+ * A source's own address, on its UUID.
+ *
+ * The identifier is ugly and deliberately so: it is the only stable one. The
+ * title is the conflict target of `upsert(onConflict: "title")` in four AFRIK
+ * loaders, so it is precisely the value a re-sourcing rewrites, and there is no
+ * redirect table to catch the links that would break. `source_key` is stable
+ * but no loader has ever written one. The segment is named `id` rather than
+ * `uuid` so a future key can resolve here without moving the route.
+ */
+// @req REQ-092
+export const getSourceRoute = (language: Language, id: string): string =>
+  `${getLocalizedRoute(language, "sources")}/${id}`;
+
 // A person (REQ-126) is not a fourth peer of pays/peuples/familles on the
 // Explorer axis — it is reached only from a search result or from the people
 // it is linked to, never from a hub listing — so it takes a standalone slug
