@@ -47,7 +47,7 @@ eight are retired** until the loop below is proven.
 
 | Surface                                            | Why it survives                                                                                                                                                   |
 | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **« Le quiz des parcours »** (`quiz`)              | The hub's one full loop: a bank of items, a scope, a ladder and a score card. It reads its own table and is the surface every rule below was written for.         |
+| **« Le quiz »** (`quiz`)                           | The hub's one full loop: a bank of items, a scope, a ladder and a score card. It reads its own table and is the surface every rule below was written for.         |
 | **« La taille qu'on vous a cachée »** (`mercator`) | One idea, cleanly: Mercator inflates the north and shrinks Africa. Cheap to finish, it carries a real claim, and the home already owns the figure that proves it. |
 
 **The second cut, 2026-08-29.** Three became two. « Eux, ou les autres ? »
@@ -93,6 +93,24 @@ question that retired the last two: **what does this teach that the quiz does
 not already ask?** `familles` remains the strongest candidate, because a
 language family has a naturally plausible distractor pool (the other families)
 and already supplies the context every other game needs.
+
+**A template retired, 2026-09-02.** The cut above removed whole games; this one
+removes a round from the surviving quiz. **T5** asked « Quel code ISO 639-3
+désigne la langue X ? ». A standards code is a registry identifier, not a name:
+there is nothing in it to reason from, so the round could only be recalled — the
+kill test — and the stem carried a term the fiche never glosses, which §8
+forbids outright. On `PPL_BANTU` it was also simply wrong, interpolating a
+family gloss behind « la langue » and answering `swh`, which is Swahili.
+
+Two things are recorded rather than left to be rediscovered. **Retiring a
+template does not retire its questions**: the serving side resolves a theme from
+`field_path` and never from `template_id`, so the 621 rows had to be revoked by
+migration, before the code reached each environment — see
+`docs/runbooks/quiz-bank-regeneration.md`. And **eight scope × theme pairs left
+the picker with it** — Eswatini, Comores, Somalie, Algérie, Égypte, and the Tuu,
+Kx'a and Nilo-saharienne families, all on « Langues ». They are not restored:
+they were playable only on the strength of a round that failed the kill test,
+and the floor of eight exists to refuse exactly that.
 
 ---
 

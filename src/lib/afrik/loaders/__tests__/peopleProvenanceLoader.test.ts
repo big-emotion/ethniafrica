@@ -146,7 +146,6 @@ describe("peopleAssertionTargets", () => {
       "content.appellations.selfAppellation",
       "content.demography.distributionByCountry",
       "content.languages.mainLanguage",
-      "content.languages.isoCodes",
     ]);
   });
 
@@ -156,13 +155,13 @@ describe("peopleAssertionTargets", () => {
       languageFamilyId: undefined,
       content: {
         ...fiche().content,
-        languages: { mainLanguage: "Èdè Yorùbá", isoCodes: [] },
+        languages: { mainLanguage: "  " },
       },
     });
 
     const paths = peopleAssertionTargets(incomplete).map((t) => t.fieldPath);
     expect(paths).not.toContain("languageFamilyId");
-    expect(paths).not.toContain("content.languages.isoCodes");
+    expect(paths).not.toContain("content.languages.mainLanguage");
   });
 
   /**
@@ -313,7 +312,7 @@ describe("loadPeopleProvenance", () => {
 
     const report = await loadPeopleProvenance(asClient(double), [fiche()]);
 
-    expect(report.assertionsWritten).toBe(5);
+    expect(report.assertionsWritten).toBe(4);
     expect(double.sources).toHaveLength(1);
     for (const assertion of double.assertions) {
       expect(assertion.source_ids).toEqual([double.sources[0].id]);
@@ -362,7 +361,7 @@ describe("loadPeopleProvenance", () => {
     await loadPeopleProvenance(asClient(double), [fiche()]);
     await loadPeopleProvenance(asClient(double), [fiche()]);
 
-    expect(double.assertions).toHaveLength(5);
+    expect(double.assertions).toHaveLength(4);
   });
 
   // @req REQ-092

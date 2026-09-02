@@ -52,7 +52,6 @@ export interface QuizCandidatePools {
   autonyms: string[];
   countryNames: string[];
   languages: AutonymExonymName[];
-  isoCodes: string[];
   /**
    * Every people's own name — the option space of the inversion templates,
    * whose answer is the subject rather than one of its field values.
@@ -209,8 +208,6 @@ export function resolveCurrentAnswer(
     }
     case "T4":
       return people.mainLanguage;
-    case "T5":
-      return people.isoCode;
     // The inversion templates answer with the subject itself, so the stored
     // answer is the fiche's own name and cannot go stale the way a field value
     // can. What *can* go stale is the stimulus, and `decideRevocation` checks
@@ -277,8 +274,6 @@ function buildCandidate(
       return questionTemplateBuilders.T3(people, pools.countryNames);
     case "T4":
       return questionTemplateBuilders.T4(people, pools.languages);
-    case "T5":
-      return questionTemplateBuilders.T5(people, pools.isoCodes);
     case "T6":
       return questionTemplateBuilders.T6(people, pools.peopleNames);
     case "T7":
@@ -444,7 +439,6 @@ export function orderPoolsBySubjectProximity(
       pools.languages,
       (fiche) => fiche.mainLanguage.autonym
     ),
-    isoCodes: byCarrier(pools.isoCodes, (fiche) => fiche.isoCode),
     // A people's own name carries its nearness directly: the value *is* the
     // carrier, so the same ranking that makes a family plausible makes a
     // neighbouring people plausible.

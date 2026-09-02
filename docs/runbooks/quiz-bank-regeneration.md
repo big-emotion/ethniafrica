@@ -199,3 +199,45 @@ update quiz_questions
 
 Restore only the `regenerated` rows. Anything revoked for a gate failure or a
 stale answer left the bank on its own merits and must stay out.
+
+## Retiring a template
+
+A template is retired in code, but its questions are not. The serving side
+resolves a question's theme from `field_path` and never from `template_id`
+(`themeOfFieldPath`, `src/lib/quiz/segmentPolicy.ts`), so deleting the
+generator removes nothing from the bank: the rows stay active and keep being
+served, while `themeOfFieldPath` now answers `null` for them. They then count
+in the picker's total and in no theme at all — ghost questions, served in a
+whole-corpus run and invisible in a themed one.
+
+So a retirement is two changes, and **the migration goes first in every
+environment**. Revoking under the old code drops the questions and lowers a few
+counters; deploying the new code without revoking serves the ghosts.
+
+Revoke by `field_path`, not by `template_id` — the path is what the serving
+side reads, so it is what defines the ghost:
+
+```sql
+update quiz_questions
+   set revoked_at = now(), revoked_reason = 'template_retired_<id>'
+ where revoked_at is null
+   and field_path = '<the path that template read>';
+```
+
+Restore with the same marker:
+
+```sql
+update quiz_questions set revoked_at = null, revoked_reason = null
+ where revoked_reason = 'template_retired_<id>';
+```
+
+**Do not run the sweep before the migration.** With the template gone from the
+registry, `normalizeFieldPath` no longer recognises its path, so
+`decideRevocation` revokes the very same rows under
+`gate_failed:entity_missing` — a reason that asserts the fiche disappeared,
+which is false. The audit trail then records a cause that never happened, and
+the migration afterwards is a no-op that hides it.
+
+Expect scopes to fall under the eight-question floor: measure which, and list
+them in the pull request. `078_revoke_iso_code_questions.sql` is the worked
+example — 621 rows, and eight scope × theme pairs that left the picker with it.

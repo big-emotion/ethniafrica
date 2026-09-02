@@ -64,6 +64,60 @@ describe("sources service", () => {
       });
     });
 
+    /**
+     * Four columns the table holds and the payload never showed. `notes` is
+     * the one that matters: it records why a source carries the tier it
+     * carries, it is filled on all 4 395 rows, and without it a directory
+     * shows a standing with no reasoning behind it.
+     */
+    // @req REQ-092
+    it("projects the editorial columns the table has always held", async () => {
+      const row = {
+        id: "44444444-4444-4444-4444-444444444444",
+        title: "Ethnologue: Languages of the World, 27th edition",
+        url: "https://www.ethnologue.com",
+        tier: "official",
+        notes: "SIL International — catalogue entry, official tier by domain.",
+        page: "p. 214",
+        added_at: "2026-02-11T09:00:00.000Z",
+        verified_at: "2026-07-30T12:00:00.000Z",
+      };
+      const query = buildListQuery([row], 1);
+      fromMock.mockReturnValue(query);
+
+      const result = await listSources({ page: 1, perPage: 20 });
+
+      expect(result.data[0]).toMatchObject({
+        notes: "SIL International — catalogue entry, official tier by domain.",
+        page: "p. 214",
+        addedAt: "2026-02-11T09:00:00.000Z",
+        lastVerifiedAt: "2026-07-30T12:00:00.000Z",
+      });
+    });
+
+    /**
+     * `lastVerifiedAt` was declared against `last_verified_at`, a column that
+     * exists in no migration, so the field answered null however recently a
+     * source had been checked. The column carrying that fact is `verified_at`.
+     */
+    // @req REQ-092
+    it("reads lastVerifiedAt from verified_at, not from a column that never shipped", async () => {
+      const row = {
+        id: "55555555-5555-5555-5555-555555555555",
+        title: "UNESCO Atlas of the World's Languages in Danger",
+        url: null,
+        tier: "official",
+        verified_at: "2026-08-01T00:00:00.000Z",
+        last_verified_at: "1999-01-01T00:00:00.000Z",
+      };
+      const query = buildListQuery([row], 1);
+      fromMock.mockReturnValue(query);
+
+      const result = await listSources({ page: 1, perPage: 20 });
+
+      expect(result.data[0].lastVerifiedAt).toBe("2026-08-01T00:00:00.000Z");
+    });
+
     it("queries the `sources` table with the requested page slice", async () => {
       const row = {
         id: "11111111-1111-1111-1111-111111111111",
@@ -75,7 +129,7 @@ describe("sources service", () => {
         author: null,
         publisher: "World Bank",
         resolvable: true,
-        last_verified_at: "2026-01-01T00:00:00.000Z",
+        verified_at: "2026-01-01T00:00:00.000Z",
       };
       const query = buildListQuery([row], 1);
       fromMock.mockReturnValue(query);

@@ -30,7 +30,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(ACCESS_MODE_LABELS).toEqual({
       atlas: "L'atlas",
       dossiers: "Les dossiers",
-      jeux: "Les jeux",
+      jeux: "Jouer",
     });
   });
 
@@ -127,11 +127,20 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     });
   });
 
-  // Ordered from the most concrete question to the method that answers it.
+  // Ordered from the most concrete question to the method that answers it —
+  // with `nommer` ahead of all of them, because it is the question the other
+  // three presuppose. Declaration order is display order (`getModulesFor
+  // AccessMode` is a plain filter), so this is also the rubric's order in the
+  // menu, on the home panel and in the mobile drawer.
   // @req REQ-114
   it("gives comprendre only the questions asked of the corpus", () => {
     const ids = getModulesForAccessMode("dossiers").map((m) => m.id);
-    expect(ids).toEqual(["anecdotes", "frise", "regards-colonisation"]);
+    expect(ids).toEqual([
+      "nommer",
+      "anecdotes",
+      "frise",
+      "regards-colonisation",
+    ]);
   });
 
   // @req REQ-114 @req REQ-120
@@ -245,6 +254,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     );
     expect(staticModules.map((m) => m.id)).toEqual([
       "recherche",
+      "nommer",
       "anecdotes",
       "regards-colonisation",
     ]);
@@ -335,6 +345,14 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
   // is what makes that repaint a decision rather than a side effect: ETNI-1801
   // inserted langues after familles and patronymes after noms, which pushes
   // every module from recherche onward two steps further round the cycle.
+  //
+  // Putting `nommer` at the head of the dossiers block shifts every module
+  // after it by one more step, so the five below `recherche` all change hue.
+  // That is accepted rather than worked around: the charter says a positional
+  // accent carries no meaning and is read as decoration, so nothing a reader
+  // could have learnt is lost — and pinning an accent per module to avoid the
+  // shift would introduce the one thing the charter does forbid, a component
+  // choosing its own.
   // @req REQ-114
   // @req REQ-139
   it("pins the accent every module wears after the regrouping", () => {
@@ -346,11 +364,12 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
       noms: "afh-accent-ocre",
       patronymes: "afh-accent-teal",
       recherche: "afh-accent-terre",
-      anecdotes: "afh-accent-perv",
-      frise: "afh-accent-ocre",
-      "regards-colonisation": "afh-accent-teal",
-      quiz: "afh-accent-terre",
-      mercator: "afh-accent-perv",
+      nommer: "afh-accent-perv",
+      anecdotes: "afh-accent-ocre",
+      frise: "afh-accent-teal",
+      "regards-colonisation": "afh-accent-terre",
+      quiz: "afh-accent-perv",
+      mercator: "afh-accent-ocre",
     } as const);
 
     for (const [id, accent] of Object.entries(expectedAccents)) {

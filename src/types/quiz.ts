@@ -4,7 +4,7 @@
  */
 
 /**
- * T1-T5 ask about an atomic field value; T6-T11 invert a prose rubric so the
+ * T1-T4 ask about an atomic field value; T6-T11 invert a prose rubric so the
  * people is the answer; T12 asks which of a people's exonyms is contested.
  *
  * Declared here and re-exported by `@/lib/quiz/segmentPolicy`, which owns the
@@ -16,7 +16,9 @@ export type QuizTemplateId =
   | "T2"
   | "T3"
   | "T4"
-  | "T5"
+  // T5 asked for a language's ISO 639-3 code. Retired: a registry identifier
+  // is not a name, so the round could only be recalled and never reasoned
+  // about — games charter §8 and its kill test. The id is not reused.
   | "T6"
   | "T7"
   | "T8"
@@ -57,7 +59,7 @@ export interface QuizQuestionCandidate {
   promptFr: string;
   /**
    * Verbatim corpus text shown above the stem, for the templates whose answer
-   * is the subject. Null for T1-T5 and T12, which name their subject in
+   * is the subject. Null for T1-T4 and T12, which name their subject in
    * `promptFr` and have nothing to set up.
    */
   stimulusFr: string | null;
@@ -82,7 +84,7 @@ export interface QuizCountryShare {
 }
 
 /**
- * Minimal slice of a people fiche needed to instantiate templates T1-T5.
+ * Minimal slice of a people fiche needed to instantiate templates T1-T4.
  * Field names mirror the strict-model field paths they are drawn from.
  */
 export interface QuizPeopleFixture {
@@ -93,7 +95,6 @@ export interface QuizPeopleFixture {
   selfAppellation: string;
   distributionByCountry: QuizCountryShare[];
   mainLanguage: AutonymExonymName;
-  isoCode: string;
   /**
    * `content.demography.totalPopulation`, set on all 789 fiches. The games
    * charter's difficulty ladder (§4) reads notoriety off it: a people of ten

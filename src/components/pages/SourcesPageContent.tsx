@@ -1,4 +1,6 @@
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
+import { SourceCitation } from "@/components/sources/SourceCitation";
+import { NOMMER_BIBLIOGRAPHY } from "@/lib/dossiers/nommer/bibliography";
 
 /**
  * /[lang]/sources content — editorial family (charter §4/§7, FR107).
@@ -565,6 +567,22 @@ function renderCountrySources(
   ));
 }
 
+/**
+ * The editorial bibliographies, by dossier.
+ *
+ * A record rather than a hand-written block, so a second dossier adds a row
+ * instead of reopening the component. Sorted by title, which is the order a
+ * bibliography is scanned in.
+ */
+const DOSSIER_BIBLIOGRAPHIES = [
+  {
+    title: "Qui a donné ce nom ?",
+    sources: Object.values(NOMMER_BIBLIOGRAPHY).sort((left, right) =>
+      left.title.localeCompare(right.title, "fr")
+    ),
+  },
+];
+
 // @req REQ-091
 export default function SourcesPageContent() {
   const t = content.fr;
@@ -740,6 +758,56 @@ export default function SourcesPageContent() {
             t.complementary.pewResearch.url
           )}
         </ul>
+      </section>
+
+      {/*
+        The fifth section diverges from the four above it, and deliberately.
+        Those list *providers* — the UN, the World Bank — and carry no tier,
+        because an institution is not a work. This one lists works cited in
+        support of dated claims, so each has to show its standing: otherwise
+        the site's own bibliography would be the single place where a source
+        appears without visible provenance.
+
+        It derives from `NOMMER_BIBLIOGRAPHY` rather than restating it. A
+        hand-kept copy would have drifted from the dossier the week after it
+        shipped, and the shape is a record keyed by dossier so a second dossier
+        does not reopen this component.
+      */}
+      <section className="space-y-4">
+        <ChapterHeading
+          stepLabel="05 · Dossiers éditoriaux"
+          heading="Sources des dossiers"
+        />
+
+        <p className="max-w-4xl">
+          Wikipédia n&apos;est pas une source. Une source primaire trouvée par
+          son intermédiaire est citée à son propre palier, par sa propre
+          adresse, et les versions linguistiques croisées sont notées. Les
+          entrées marquées « En attente d&apos;examen » sont celles dont ce
+          travail de remontée n&apos;est pas terminé.
+        </p>
+
+        {DOSSIER_BIBLIOGRAPHIES.map((dossier) => (
+          <div key={dossier.title} className="ml-4 space-y-3">
+            <p className="font-semibold">{dossier.title}</p>
+            <ul className="list-disc space-y-2">
+              {dossier.sources.map((source) => (
+                <li key={source.sourceKey} className="ml-4">
+                  <SourceCitation
+                    source={{
+                      title: source.title,
+                      url: source.url,
+                      standing: source.standing,
+                    }}
+                  />
+                  <span className="block text-afh-caption text-afh-text-soft">
+                    {source.notes}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </section>
     </div>
   );

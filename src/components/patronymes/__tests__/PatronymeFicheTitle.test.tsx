@@ -20,7 +20,9 @@ describe("PatronymeFicheTitle (REQ-133)", () => {
   it("opens on the eyebrow and the name", () => {
     render(<PatronymeFicheTitle patronyme={patronyme} />);
 
-    expect(screen.getByText("Patronyme")).toBeInTheDocument();
+    // « Nom », not « Patronyme »: DEC-038 gives the reader the word a
+    // francophone types and keeps `patronyme` for the code.
+    expect(screen.getByText("Nom")).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Keïta" })).toBeInTheDocument();
   });
 

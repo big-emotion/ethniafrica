@@ -16,6 +16,8 @@ export type PageType =
   | "migrations"
   | "quiz"
   | "colonization"
+  | "nommer"
+  | "glossary"
   | "atlasHub"
   | "dossiersHub"
   | "jeuxHub";
@@ -69,6 +71,19 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     quiz: "jeux/quiz",
     // Epic 13 (Gazes), FR90 — French-only, no locale alternates.
     colonization: "dossiers/regards/colonisation-et-resistances",
+    // The founding dossier. Its five chapters sit under this slug but are not
+    // page types of their own — see NOMMER_CHAPTER_SLUGS below.
+    //
+    // One character keeps this route from being rewritten: `middleware.ts`
+    // retired `dossiers/noms` to `atlas/appellations`, and the prefix match
+    // there requires a trailing slash, so `dossiers/nommer` misses it. Do not
+    // "simplify" that guard.
+    nommer: "dossiers/nommer",
+    // No axis lists the glossary, so it carries no prefix — the same reason
+    // `about`, `doctrine` and `sources` carry none. It serves the atlas and
+    // the games as much as the dossiers, and it is reached from the footer's
+    // "Le projet" rubric.
+    glossary: "glossaire",
     // REQ-114/REQ-138: one hub route per access mode. The slug is the verb
     // the reader arrived with, which is what keeps it from colliding with
     // the resource pages (peuples/pays/familles) it now holds.
@@ -167,6 +182,20 @@ export const getPatronymeRoute = (language: Language, id: string): string =>
 export const getLanguageRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "languages")}/${id}`;
 
+/**
+ * A source's own address, on its UUID.
+ *
+ * The identifier is ugly and deliberately so: it is the only stable one. The
+ * title is the conflict target of `upsert(onConflict: "title")` in four AFRIK
+ * loaders, so it is precisely the value a re-sourcing rewrites, and there is no
+ * redirect table to catch the links that would break. `source_key` is stable
+ * but no loader has ever written one. The segment is named `id` rather than
+ * `uuid` so a future key can resolve here without moving the route.
+ */
+// @req REQ-092
+export const getSourceRoute = (language: Language, id: string): string =>
+  `${getLocalizedRoute(language, "sources")}/${id}`;
+
 // A person (REQ-126) is not a fourth peer of pays/peuples/familles on the
 // Explorer axis — it is reached only from a search result or from the people
 // it is linked to, never from a hub listing — so it takes a standalone slug
@@ -180,6 +209,61 @@ const PERSON_SLUG: Record<Language, string> = {
 // @req REQ-126
 export const getPersonRoute = (language: Language, id: string): string =>
   `/${language}/${PERSON_SLUG[language]}/${id}`;
+
+// ---------------------------------------------------------------------------
+// Chapters of the Nommer dossier
+// ---------------------------------------------------------------------------
+
+/**
+ * The five chapters of `/fr/dossiers/nommer`, keyed by their own slug.
+ *
+ * They are a standalone slug map rather than five `PageType` members, for the
+ * same reason `PERSON_SLUG` is — but the deciding argument here is the trail.
+ * `deriveTrail` builds the axis crumb through `getAxisForPage`, which reads
+ * `moduleRegistry`, and a chapter cannot be a module there: the shelf
+ * mechanism is locked to Jouer, and five registry entries would mean five
+ * menu rows and five maturities to declare for what is one dossier.
+ *
+ * As page types the chapters would therefore trail `Accueil › Le peuple`,
+ * losing both the axis and the pillar. Left as segments, the existing segment
+ * loop renders `Accueil › Les dossiers › Qui a donné ce nom ? › Le peuple`
+ * with nothing to write — `getPageFromRoute` already answers `nommer` for a
+ * chapter URL, because it sorts by slug length.
+ *
+ * Declaration order is reading order: the pillar's tile grid and each
+ * chapter's previous/next are derived from it rather than declared twice.
+ */
+export type NommerChapterKey =
+  | "le-peuple"
+  | "le-pays"
+  | "la-personne"
+  | "la-langue"
+  | "la-chose";
+
+const NOMMER_CHAPTER_SLUG_TABLE = {
+  fr: {
+    "le-peuple": "le-peuple",
+    "le-pays": "le-pays",
+    "la-personne": "la-personne",
+    "la-langue": "la-langue",
+    "la-chose": "la-chose",
+  },
+} satisfies Record<Language, Record<NommerChapterKey, string>>;
+
+// @req REQ-091
+export const NOMMER_CHAPTER_SLUGS = NOMMER_CHAPTER_SLUG_TABLE;
+
+// @req REQ-091
+export const NOMMER_CHAPTER_KEYS = Object.keys(
+  NOMMER_CHAPTER_SLUG_TABLE.fr
+) as NommerChapterKey[];
+
+// @req REQ-091
+export const getNommerChapterRoute = (
+  language: Language,
+  chapter: NommerChapterKey
+): string =>
+  `${getLocalizedRoute(language, "nommer")}/${NOMMER_CHAPTER_SLUGS[language][chapter]}`;
 
 // ---------------------------------------------------------------------------
 // Retired directory deep links

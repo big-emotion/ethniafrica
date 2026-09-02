@@ -9,7 +9,8 @@
  * nothing filters by audience at all.
  *
  * Measured against the five templates that exist, the allowlist was excluding
- * exactly one thing from children: T5, the ISO 639-3 code of a language. Not a
+ * exactly one thing from children: T5, the ISO 639-3 code of a language — a
+ * template since retired under games charter §8. Not a
  * sensitive topic. The property it was meant to protect — that no template
  * reads colonisation or event content — was always a property of
  * `TEMPLATE_FIELD_PATHS`, and that is what is asserted here directly.

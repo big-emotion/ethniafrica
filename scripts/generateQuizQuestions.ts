@@ -272,7 +272,6 @@ async function buildFicheEntries(
     languages: dedupeAutonyms(
       entries.map((e) => e.fiche.mainLanguage as AutonymExonymName)
     ),
-    isoCodes: [...new Set(entries.map((e) => e.fiche.isoCode))],
     peopleNames: dedupeAutonyms(entries.map((e) => e.fiche.subjectName)),
     countryOwnNames: dedupeAutonyms(
       countryEntries.map((e) => e.fiche.subjectName)

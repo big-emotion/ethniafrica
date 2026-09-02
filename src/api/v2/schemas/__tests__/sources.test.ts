@@ -17,6 +17,9 @@ const source = {
   publisher: null,
   resolvable: null,
   lastVerifiedAt: null,
+  notes: null,
+  page: null,
+  addedAt: null,
 };
 
 describe("sourceSchema", () => {

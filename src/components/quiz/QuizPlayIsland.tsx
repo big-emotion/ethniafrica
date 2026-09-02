@@ -120,7 +120,7 @@ export const QuizPlayIsland = ({
     <div className={cn("flex flex-col gap-4", className)}>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-afh-small text-afh-text-soft">
-          {t.playingScopePrefix} <strong>{scopeLabelFr}</strong>
+          <strong>{scopeLabelFr}</strong>
         </p>
         <QuizSessionExit href={exitHref} label={t.leaveSession} />
       </div>

@@ -1,7 +1,11 @@
 import { describe, expect, it } from "vitest";
 
 import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
-import { getLocalizedRoute } from "@/lib/routing";
+import {
+  NOMMER_CHAPTER_KEYS,
+  getLocalizedRoute,
+  getNommerChapterRoute,
+} from "@/lib/routing";
 import { getSiteTree, getSiteTreePaths } from "@/lib/siteTree";
 
 describe("getSiteTree — access modes are sections, not destinations", () => {
@@ -76,5 +80,44 @@ describe("getSiteTree — the corpus section lists languages and patronymes", ()
 
     expect(paths).toContain(getLocalizedRoute("fr", "languages"));
     expect(paths).toContain(getLocalizedRoute("fr", "patronymes"));
+  });
+});
+
+// The dossier is the first doorway of its rubric, and its five chapters are
+// listed under it. That is a deliberate exception to this file's own rule —
+// "the reader wants the ways in" — because `getSiteTreePaths` is the sole feed
+// of the sitemap, and a chapter left out is an editorial page no crawler is
+// ever told about.
+describe("getSiteTree — the Nommer dossier and its chapters", () => {
+  // @req REQ-110
+  it("opens the dossiers rubric on the founding dossier", () => {
+    const dossiers = getSiteTree("fr").find(
+      (section) => section.id === "dossiers"
+    );
+
+    expect(dossiers?.links[0]?.href).toBe(getLocalizedRoute("fr", "nommer"));
+  });
+
+  // @req REQ-110
+  it("lists the five chapters, in reading order, right under it", () => {
+    const dossiers = getSiteTree("fr").find(
+      (section) => section.id === "dossiers"
+    );
+    const hrefs = dossiers?.links.map((link) => link.href) ?? [];
+
+    const chapterHrefs = NOMMER_CHAPTER_KEYS.map((key) =>
+      getNommerChapterRoute("fr", key)
+    );
+
+    expect(hrefs.slice(1, 1 + chapterHrefs.length)).toEqual(chapterHrefs);
+  });
+
+  // @req REQ-110
+  it("puts every chapter in the paths the sitemap is built from", () => {
+    const paths = getSiteTreePaths("fr");
+
+    for (const key of NOMMER_CHAPTER_KEYS) {
+      expect(paths).toContain(getNommerChapterRoute("fr", key));
+    }
   });
 });

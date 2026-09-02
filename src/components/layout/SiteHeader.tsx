@@ -12,6 +12,7 @@ import {
 } from "react";
 import {
   ArrowUpDown,
+  BookUser,
   ChevronDown,
   Circle,
   Crown,
@@ -21,6 +22,7 @@ import {
   HelpCircle,
   History,
   Landmark,
+  Languages,
   Link2,
   Maximize2,
   MapPin,
@@ -30,6 +32,8 @@ import {
   Scale,
   Scissors,
   Search,
+  Signature,
+  Sparkles,
   Tag,
   Tags,
   Users,
@@ -100,6 +104,15 @@ const MODULE_GLYPHS: Record<string, LucideIcon> = {
   familles: Network,
   recherche: Search,
   noms: Tag,
+  // Three modules had been reaching the fallback in silence — `anecdotes`
+  // since the bank shipped, `langues` and `patronymes` since ETNI-1801 added
+  // them. Each was wearing a blank disc beside twenty modules carrying a sign,
+  // which no test could see and no diff showed. The contract suite of the
+  // Nommer dossier now holds this map.
+  langues: Languages,
+  patronymes: BookUser,
+  nommer: Signature,
+  anecdotes: Sparkles,
   frise: History,
   "regards-colonisation": Eye,
   quiz: HelpCircle,

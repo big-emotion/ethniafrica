@@ -168,16 +168,26 @@ describe("name fiche surface — the parchment's own vocabulary", () => {
     expect(undressed).toEqual([]);
   });
 
+  /**
+   * The citation itself is `SourceCitation`, shared with the bibliography and
+   * the dossier — this fiche's own component now adapts the corpus's source
+   * shape onto it and nothing more. What stays this surface's contract is that
+   * the sources are laid out as the atlas's rows, and that the standing is
+   * rendered from the source's own record.
+   */
   // @req REQ-133
-  it("cites its sources through the atlas-wide row, tier chip included", () => {
+  it("cites its sources through the atlas-wide row, standing included", () => {
     const { container } = render(<PatronymeFicheView patronyme={filled} />);
 
     const rows = container.querySelectorAll(".afh-sources .afh-source-row");
 
     expect(rows).toHaveLength(1);
-    expect(rows[0].querySelector(".afh-chip")?.getAttribute("data-tier")).toBe(
-      "referenced"
-    );
+    expect(
+      rows[0]
+        .querySelector(".afh-source-citation")
+        ?.getAttribute("data-source-tier")
+    ).toBe("referenced");
+    expect(rows[0].querySelector(".afh-source-tier-label")).not.toBeNull();
   });
 
   // @req REQ-133
