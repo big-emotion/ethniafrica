@@ -214,7 +214,9 @@ function validateHomonymReference(
   }
 }
 
-function preflightBatch(
+// @req REQ-133
+// @req REQ-134
+export function preflightPatronymeBatch(
   dossiers: PatronymeDossier[],
   references: PatronymeReferenceIds
 ): string[] {
@@ -595,7 +597,7 @@ export async function loadPatronymes(
     return report;
   }
 
-  report.errors.push(...preflightBatch(batch.dossiers, references));
+  report.errors.push(...preflightPatronymeBatch(batch.dossiers, references));
   if (report.errors.length > 0) return report;
 
   const planned = plannedProjectionCounts(batch.dossiers);

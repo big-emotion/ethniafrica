@@ -23,10 +23,6 @@
         {
           "countryId": "GNQ",
           "sourceRefs": ["forebears-borico"]
-        },
-        {
-          "countryId": "ESP",
-          "sourceRefs": ["idescat-borico-2025"]
         }
       ]
     }
@@ -50,11 +46,6 @@
       "countryId": "GNQ",
       "status": "attested",
       "sourceRefs": ["forebears-borico"]
-    },
-    {
-      "countryId": "ESP",
-      "status": "attested",
-      "sourceRefs": ["idescat-borico-2025"]
     }
   ],
   "alliances": [],

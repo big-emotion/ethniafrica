@@ -13,11 +13,15 @@ function readWorkflow(): string {
   return readFileSync(workflowPath, "utf8");
 }
 
-function getValidatorSteps(workflow: string): string[] {
+function getSteps(workflow: string): string[] {
   return (
-    workflow
-      .match(/ {6}- name: [^\n]+\n(?:(?! {6}- name:)[\s\S])*/g)
-      ?.filter((step) => step.includes("scripts/validateAfrikData.ts")) ?? []
+    workflow.match(/ {6}- name: [^\n]+\n(?:(?! {6}- name:)[\s\S])*/g) ?? []
+  );
+}
+
+function getValidatorSteps(workflow: string): string[] {
+  return getSteps(workflow).filter((step) =>
+    step.includes("scripts/validateAfrikData.ts")
   );
 }
 
@@ -59,6 +63,20 @@ describe("data integrity workflow", () => {
   // @req REQ-032
   it("pins every third-party action to a full commit SHA", () => {
     expect(validateActionPins(readWorkflow(), workflowPath)).toEqual([]);
+  });
+
+  // The per-fiche validator passed on all five corpus contradictions that kept
+  // the name dimension seventeen waves behind the database.
+  // @req REQ-133
+  it("runs the loader preflight on every pull request, alongside the validator", () => {
+    const [preflightStep, ...extras] = getSteps(readWorkflow()).filter((step) =>
+      step.includes("check:afrik-loader")
+    );
+
+    expect(extras).toEqual([]);
+    expect(preflightStep).toContain("run: npm run check:afrik-loader");
+    expect(preflightStep).not.toContain("continue-on-error");
+    expect(preflightStep).not.toContain("if:");
   });
 
   // @req REQ-080 (ETNI-494)
