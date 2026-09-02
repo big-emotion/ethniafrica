@@ -38,6 +38,14 @@ jobs:
         env:
           CHECK_SOURCE_URLS: "true"
 
+      # The validator reads one fiche at a time and so cannot see a corpus that
+      # contradicts itself across files. When it does, the loader refuses the
+      # whole batch, the sync exits before --apply, and the database keeps its
+      # previous content while the pull request merges green. Runs the loader's
+      # own cross-reference pass, with no database.
+      - name: Check the AFRIK corpus still loads
+        run: npm run check:afrik-loader
+
       # Descending ratchet on sources with no explicit tier (needs_review or
       # absent). Fails when the count grows; the threshold lives in the script.
       - name: Check source tier coverage

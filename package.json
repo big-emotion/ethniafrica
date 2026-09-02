@@ -19,6 +19,7 @@
     "check:workflow-shell": "tsx scripts/checkWorkflowShellSyntax.ts",
     "check:dead": "tsx scripts/ci/checkDeadCode.ts",
     "check:env-example": "tsx scripts/checkEnvExample.ts",
+    "check:afrik-loader": "tsx scripts/ci/checkAfrikLoaderPreflight.ts",
     "check:migration-state": "tsx scripts/ci/checkMigrationState.ts",
     "check:migration-files": "tsx scripts/ci/checkMigrationState.ts --files-only",
     "migrations:diff": "tsx scripts/migrationsDiff.ts",
