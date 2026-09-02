@@ -39,8 +39,8 @@ export const CHAPITRE_LE_PAYS: DossierChapter = {
       heading: "Un avertissement, avant le premier chiffre",
       blocks: [
         {
-          text: "Les cinquante-quatre fiches de pays de l'atlas renseignent toutes l'étymologie de leur nom et l'acteur qui l'a donné. Aucune ne rattache cette étymologie à une source : le chapitre des sources documente la démographie, jamais le nom.",
-          sourceRefs: [],
+          text: "Les cinquante-quatre fiches de pays de l'atlas renseignent toutes l'étymologie de leur nom et l'acteur qui l'a donné. Une seule rattache cette étymologie à une source — celle du Nigeria, corrigée en écrivant ce chapitre. Pour les cinquante-trois autres, le chapitre des sources documente la démographie et jamais le nom.",
+          sourceRefs: ["shaw-times-nigeria"],
           figureRefs: ["corpus-countries"],
         },
         {
@@ -148,12 +148,12 @@ export const CHAPITRE_LE_PAYS: DossierChapter = {
           figureRefs: [],
         },
         {
-          text: "Le Bénin est un nom africain choisi par des Africains — et emprunté à un royaume qui se trouvait dans un autre pays, le Nigeria actuel. Il remplace en 1975 le « Dahomey » colonial, tiré du royaume fon, et il a été retenu pour sa neutralité : il ne désigne aucun des peuples du territoire. Se renommer soi-même a exigé de se désindexer de tous.",
+          text: "Le Bénin remplace le 30 novembre 1975 le « Dahomey » colonial, tiré du royaume fon. Le nom retenu n'est celui d'aucun groupe du territoire — c'est précisément ce qu'on lui demandait, dans un régime qui subordonnait les appartenances ethno-régionales. Il n'est pas pour autant arbitraire : le golfe du Bénin borde la côte, et lui donne un ancrage. Se renommer soi-même a exigé de se désindexer de tous ses peuples à la fois.",
           sourceRefs: ["afrik-pays-ben"],
           figureRefs: [],
         },
         {
-          text: "Le Ghana fait le même geste, avec la même liberté. Nkrumah reprend en 1957 le nom d'un empire médiéval qui ne se trouvait pas sur le territoire actuel — la fiche du corpus le note elle-même. Le nom restauré est un choix politique, pas une exactitude géographique, et le chapitre l'assume plutôt que de le masquer.",
+          text: "Le Ghana fait le geste inverse, et l'assume. Le 6 mars 1957, la Gold Coast prend le nom d'un empire médiéval du Soudan occidental, dont le territoire — l'actuel sud de la Mauritanie et l'ouest du Mali — ne recouvre à aucun moment le sien. Le choix n'est pas une erreur de géographie : il vient de décennies de réflexion d'enseignants et de lettrés sur l'étiquette coloniale. Un nom restauré est un acte politique, pas une exactitude.",
           sourceRefs: ["afrik-pays-gha"],
           figureRefs: [],
         },
@@ -182,9 +182,13 @@ export const CHAPITRE_LE_PAYS: DossierChapter = {
       heading: "Ce que la source ne dit pas",
       blocks: [
         {
-          text: "Aucune des étymologies citées ici n'est adossée à une source dans le corpus, et deux d'entre elles sont ouvertement discutées ailleurs. La date de forge du nom « Nigeria » varie selon les récits, et la fiche du corpus retient l'année de l'unification plutôt que celle de l'article.",
-          sourceRefs: ["shaw-times-nigeria"],
-          figureRefs: [],
+          text: "Trois des étymologies citées ici — Nigeria, Bénin, Ghana — ont été sourcées en écrivant ce chapitre, et la fiche du Nigeria a été corrigée au passage : elle datait de 1914 un nom proposé en 1897, et attribuait à Flora Shaw une officialisation qui fut celle de Lugard. Les cinquante et une autres restent des affirmations que le corpus porte sans les appuyer.",
+          sourceRefs: [
+            "shaw-times-nigeria",
+            "afrik-pays-ben",
+            "afrik-pays-gha",
+          ],
+          figureRefs: ["corpus-countries"],
         },
         {
           text: "Un champ typé permettrait de compter au lieu de lire, et de cartographier les quatre familles. Il n'existe pas. Tant qu'il n'existe pas, ce chapitre reste ce qu'il annonce en ouverture : une lecture, publiée avec sa méthode et ses trous.",

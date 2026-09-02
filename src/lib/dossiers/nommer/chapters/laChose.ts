@@ -113,8 +113,13 @@ export const CHAPITRE_LA_CHOSE: DossierChapter = {
           figureRefs: [],
         },
         {
-          text: "Le kente est le cas exactement inverse, et il corrige une intuition répandue. Le tissu est africain : tissé à la bande sur métier akan et éwé, au Ghana et au Togo. C'est le nom qui voyage — les Akan disent nwentoma, « tissu tissé », ou kente ; les Éwé disent kete ; et « kita » est la forme que l'Afrique de l'Ouest francophone a fixée par-dessus les deux.",
+          text: "Le kente est le cas exactement inverse, et il corrige une intuition répandue. Le tissu est africain : tissé à la bande sur métier akan et éwé, au Ghana et au Togo. Et il porte deux noms qui disent chacun ce qu'ils décrivent. En akan, nwentoma, « tissu tissé » ; kente est rapproché de kɛntɛn, le panier, pour le motif. En éwé, kete, des deux gestes alternés du métier — ke, ouvrir, et te, presser.",
           sourceRefs: ["conversation-kente", "kente-nwentoma"],
+          figureRefs: [],
+        },
+        {
+          text: "« Kita » n'est ni l'un ni l'autre. C'est la forme que l'Afrique de l'Ouest francophone a fixée par-dessus les deux, et elle ne dit ni le tissage ni le panier ni le geste : elle ne dit rien du tout. Un objet africain, deux étymologies africaines qui expliquent le nom, et un troisième nom posé dessus qui n'explique plus rien.",
+          sourceRefs: ["kente-nwentoma"],
           figureRefs: [],
         },
         {

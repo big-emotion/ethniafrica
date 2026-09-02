@@ -33,10 +33,7 @@ import { SOURCE_TIERS } from "@/types/sources";
  */
 const AWAITING_PRIMARY_SOURCE = new Set([
   "san-council-2003",
-  "afrik-pays-ben",
-  "afrik-pays-gha",
-  "civil-registration-surnames",
-  "kente-nwentoma",
+  "native-administration-act-1927",
   "drewal-2012",
   "nala-damajanti",
   "mami-wata-pidgin",

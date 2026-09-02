@@ -109,7 +109,7 @@ export const CHAPITRE_LA_PERSONNE: DossierChapter = {
       heading: "L'état civil, ou le nom rendu héréditaire par l'écriture",
       blocks: [
         {
-          text: "Le nom de famille obligatoire et transmissible est un outil d'État avant d'être un usage. Il sert à lever l'impôt, à conscrire et à recenser : il faut pouvoir retrouver la même famille d'une génération à l'autre, et un nom qui change à chaque naissance ne le permet pas.",
+          text: "Le nom de famille obligatoire et transmissible est un outil d'État avant d'être un usage. James Scott range le nom de famille permanent parmi les instruments par lesquels un État se rend ses sujets lisibles, au même titre que le recensement, la langue unifiée et les unités de mesure standard : il faut pouvoir retrouver la même famille d'une génération à l'autre, et un nom qui change à chaque naissance ne le permet pas.",
           sourceRefs: ["civil-registration-surnames"],
           figureRefs: [],
         },
