@@ -226,6 +226,8 @@ describe("createFlag", () => {
       counter_source_url: "https://example.org/census",
       counter_source_citation: "Example Census Bureau (2025)",
       proposed_rewrite: "Replace the figure with the 2025 census total.",
+      // Null on a report: only a contribution carries a proposal.
+      contribution_payload: null,
       contributor_id: "user-123",
       status: "open",
       human_verified: true,
