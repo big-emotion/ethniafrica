@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { notFound, redirect } from "next/navigation";
 
-import { loadCountryFiche } from "@/lib/fiche/ficheExistence";
+import {
+  isFicheKnownAbsent,
+  loadCountryFiche,
+} from "@/lib/fiche/ficheExistence";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import { ficheCanonical } from "@/lib/seo/ficheCanonical";
 import { getCountryRoute } from "@/lib/routing";
@@ -71,7 +74,10 @@ export async function generateMetadata({
   // Only the `live` mode is settled here. `latest` redirects and `pinned` reads
   // a revision snapshot, and both already resolve before the body streams
   // anything of their own.
-  if (parsed?.mode === "live" && !(await loadCountryFiche(parsed.slug))) {
+  if (
+    parsed?.mode === "live" &&
+    (await isFicheKnownAbsent(loadCountryFiche, parsed.slug))
+  ) {
     notFound();
   }
 

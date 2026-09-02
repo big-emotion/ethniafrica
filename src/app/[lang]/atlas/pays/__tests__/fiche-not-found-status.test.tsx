@@ -73,6 +73,28 @@ describe("country fiche not-found status", () => {
     ).resolves.toEqual({ title: "x" });
   });
 
+  // A corpus read that fails is not an answer, and answering it as "absent"
+  // costs more than a wrong status here. `generateMetadata` settles after the
+  // Suspense shell — and its `200` — has been flushed, so Next cannot turn the
+  // rejection into a 404; it drops the metadata instead and the document loses
+  // every title it had, the root layout's included. That is the serious
+  // `document-title` violation the axe gate reported on this route.
+  // @req REQ-019
+  it("still resolves metadata when the corpus read fails", async () => {
+    mockGetCountryById.mockRejectedValue(
+      Object.assign(new Error("This operation was aborted"), {
+        name: "AbortError",
+      })
+    );
+    const { generateMetadata } = await import("../[slug]/page");
+
+    await expect(
+      generateMetadata({
+        params: Promise.resolve({ lang: "fr", slug: "SEN" }),
+      })
+    ).resolves.toEqual({ title: "x" });
+  });
+
   // A pinned URL reads a revision snapshot rather than the live entity, so the
   // live lookup must not decide its fate — pinning a version of a fiche that
   // was later withdrawn is a supported archive URL, not a 404.
