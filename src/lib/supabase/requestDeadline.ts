@@ -24,27 +24,56 @@
 export const SUPABASE_REQUEST_TIMEOUT_MS = 10_000;
 
 /**
- * `fetch`, with the deadline applied.
+ * Two minutes, for a batch run rather than a page.
+ *
+ * The reasoning above holds only for a request whose answer a reader is
+ * waiting on. The corpus loader is the other case: it reads whole content
+ * tables — `select("id, content")` over the 37.7 MB of TOASTed JSONB in
+ * `afrik_peoples` — and tens of seconds there is the job working, not a host
+ * gone silent. Held to the page deadline it never finished a single sync:
+ * `Failed to read afrik_language_families: AbortError`, ten seconds in, on
+ * every push to `recette`.
+ *
+ * Widened rather than lifted. A loader that hangs forever is still a loader
+ * that never reports, and the sync job would sit until the runner's own
+ * six-hour ceiling — so the deadline stays, with room for the read it has to
+ * make.
+ */
+// @req REQ-110
+export const SUPABASE_BATCH_REQUEST_TIMEOUT_MS = 120_000;
+
+/**
+ * Builds a `fetch` bound to one deadline.
  *
  * The caller's own signal is composed with the deadline rather than replaced:
  * a Supabase query that carries `.abortSignal()` keeps aborting when its
  * caller says so, and now also when time runs out.
  */
 // @req REQ-110
-export async function fetchWithDeadline(
-  input: RequestInfo | URL,
-  init?: RequestInit
-): Promise<Response> {
-  const overdue = new AbortController();
-  const timer = setTimeout(() => overdue.abort(), SUPABASE_REQUEST_TIMEOUT_MS);
+export function createFetchWithDeadline(
+  timeoutMs: number
+): (input: RequestInfo | URL, init?: RequestInit) => Promise<Response> {
+  return async function fetchBeforeDeadline(input, init) {
+    const overdue = new AbortController();
+    const timer = setTimeout(() => overdue.abort(), timeoutMs);
 
-  const signal = init?.signal
-    ? AbortSignal.any([init.signal, overdue.signal])
-    : overdue.signal;
+    const signal = init?.signal
+      ? AbortSignal.any([init.signal, overdue.signal])
+      : overdue.signal;
 
-  try {
-    return await fetch(input, { ...init, signal });
-  } finally {
-    clearTimeout(timer);
-  }
+    try {
+      return await fetch(input, { ...init, signal });
+    } finally {
+      clearTimeout(timer);
+    }
+  };
 }
+
+/**
+ * `fetch`, with the page deadline applied. What every server client uses
+ * unless it says otherwise.
+ */
+// @req REQ-110
+export const fetchWithDeadline = createFetchWithDeadline(
+  SUPABASE_REQUEST_TIMEOUT_MS
+);
