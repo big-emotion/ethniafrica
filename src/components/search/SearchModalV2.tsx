@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Search, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -10,25 +12,22 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { EmptyState } from "@/components/ui/EmptyState";
 import { Language } from "@/types/shared";
-import { searchWithLeads } from "@/lib/afrikLoader";
-import { SearchResultCard } from "@/components/search/SearchResultCard";
-import { NoResultsLeads } from "@/components/search/NoResultsLeads";
-import { NoNameFicheNote } from "@/components/search/NoNameFicheNote";
-import { SearchLensBar } from "@/components/search/SearchLensBar";
+import { search } from "@/lib/afrikLoader";
+import { ficheHrefFor } from "@/components/search/SearchResultCard";
 import {
-  EMPTY_SEARCH_LENS_COUNTS,
-  type SearchLensCounts,
-} from "@/lib/search/searchEnvelope";
-import type {
-  SearchResult,
-  SearchEntityType,
-  SearchLead,
-} from "@/types/afrik-frontend";
+  SearchEntityMark,
+  getSearchEntityLabel,
+} from "@/components/search/searchEntityAccent";
+import { getLocalizedRoute } from "@/lib/routing";
+import type { SearchResult } from "@/types/afrik-frontend";
 
-// Selecting a result no longer travels back up to the host: each card is a
-// link and navigates on its own, so the modal only needs to close itself.
+// ETNI-1809 (parent ETNI-1796): the overlay used to duplicate the full SERP —
+// lenses, result cards, near-miss leads — as a second, competing results
+// surface. It is now suggest-only: it fetches the same corpus results to
+// power a lightweight suggestions dropdown, but a query is only ever
+// resolved on the canonical SERP (/fr/atlas/recherche) or on the fiche a
+// suggestion points straight at.
 interface SearchModalV2Props {
   open: boolean;
   onClose: () => void;
@@ -41,24 +40,15 @@ export const SearchModalV2 = ({
   onClose,
   language,
 }: SearchModalV2Props) => {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeLens, setActiveLens] = useState<SearchEntityType | "all">("all");
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [leads, setLeads] = useState<SearchLead[]>([]);
-  const [counts, setCounts] = useState<SearchLensCounts>({
-    ...EMPTY_SEARCH_LENS_COUNTS,
-  });
-  const [countsReady, setCountsReady] = useState(false);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!open) {
       setSearchQuery("");
       setResults([]);
-      setLeads([]);
-      setCounts({ ...EMPTY_SEARCH_LENS_COUNTS });
-      setCountsReady(false);
-      setActiveLens("all");
     }
   }, [open]);
 
@@ -66,31 +56,15 @@ export const SearchModalV2 = ({
     const searchData = async () => {
       if (!searchQuery.trim() || searchQuery.length < 2) {
         setResults([]);
-        setLeads([]);
-        setCounts({ ...EMPTY_SEARCH_LENS_COUNTS });
-        setCountsReady(false);
         return;
       }
 
       setLoading(true);
       try {
-        const searchFilters: { type?: SearchEntityType } =
-          activeLens !== "all" ? { type: activeLens } : {};
-        const {
-          results: data,
-          leads: nearMisses,
-          counts: lensCounts,
-        } = await searchWithLeads(searchQuery, searchFilters);
-        setResults(data);
-        setLeads(nearMisses);
-        setCounts(lensCounts);
-        setCountsReady(true);
+        setResults(await search(searchQuery));
       } catch (error) {
         console.error("Search error:", error);
         setResults([]);
-        setLeads([]);
-        setCounts({ ...EMPTY_SEARCH_LENS_COUNTS });
-        setCountsReady(false);
       } finally {
         setLoading(false);
       }
@@ -98,13 +72,7 @@ export const SearchModalV2 = ({
 
     const debounce = setTimeout(searchData, 300);
     return () => clearTimeout(debounce);
-  }, [searchQuery, activeLens]);
-
-  const dialogTitle = "Recherche";
-
-  const getPlaceholder = () => {
-    return "Rechercher une famille, un peuple ou un pays...";
-  };
+  }, [searchQuery]);
 
   const getNoResultsText = () => {
     if (!searchQuery.trim()) {
@@ -116,24 +84,28 @@ export const SearchModalV2 = ({
     return "Aucun résultat trouvé";
   };
 
-  const hasQuery = searchQuery.trim().length >= 2;
-  const showNoResultsGuidance = !loading && hasQuery && results.length === 0;
-  const showPrompt = !loading && !hasQuery && results.length === 0;
-  // ETNI-1463 AC2: persons came back but the corpus holds no name fiche for
-  // this query — shown as an absence, not silence.
-  const showNoNameFicheNote =
-    !loading &&
-    results.some((result) => result.type === "person") &&
-    !results.some((result) => result.type === "patronyme");
+  const hasResults = results.length > 0;
+
+  // The raw query is what the canonical SERP resolves — a suggestion click
+  // never reaches this, it navigates straight to its own fiche instead.
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    const trimmed = searchQuery.trim();
+    if (!trimmed) return;
+    router.push(
+      `${getLocalizedRoute(language, "search")}?${new URLSearchParams({ q: trimmed })}`
+    );
+    onClose();
+  };
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl h-[80vh] p-0 flex flex-col">
         <DialogHeader className="px-6 pt-6 pb-4 border-b border-afh-border">
-          <DialogTitle>{dialogTitle}</DialogTitle>
+          <DialogTitle>Recherche</DialogTitle>
         </DialogHeader>
 
-        <div className="px-6 pt-4 pb-2 space-y-4">
+        <form onSubmit={handleSubmit} className="px-6 pt-4 pb-2">
           <div className="relative">
             <Search
               className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-afh-text-muted"
@@ -141,21 +113,14 @@ export const SearchModalV2 = ({
             />
             <Input
               type="text"
-              placeholder={getPlaceholder()}
+              placeholder="Rechercher une famille, un peuple ou un pays..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10"
               autoFocus
             />
           </div>
-
-          <SearchLensBar
-            active={activeLens}
-            counts={counts}
-            showCounts={countsReady}
-            onChange={setActiveLens}
-          />
-        </div>
+        </form>
 
         <ScrollArea className="flex-1 px-6 pb-6">
           {loading ? (
@@ -165,37 +130,37 @@ export const SearchModalV2 = ({
                 aria-label="Chargement en cours"
               />
             </div>
-          ) : showNoResultsGuidance ? (
-            <EmptyState
-              message={`Aucun résultat pour « ${searchQuery.trim()} ».`}
-              variant="search"
-              lang={language}
-            >
-              <NoResultsLeads
-                leads={leads}
-                language={language}
-                onNavigate={onClose}
-              />
-            </EmptyState>
-          ) : showPrompt ? (
+          ) : hasResults ? (
+            <ul className="space-y-1" data-testid="search-suggestions-list">
+              {results.map((result, index) => (
+                <li
+                  key={`${result.type}-${result.id}-${index}`}
+                  className="flex items-center gap-2 rounded-afh-lg px-2 min-h-11 hover:bg-afh-bg-warm"
+                >
+                  <SearchEntityMark type={result.type} />
+                  <Link
+                    href={ficheHrefFor(result, language)}
+                    onClick={onClose}
+                    className="flex-1 truncate text-afh-text"
+                  >
+                    {result.name}
+                  </Link>
+                  <span
+                    aria-hidden="true"
+                    className="shrink-0 text-afh-caption text-afh-text-soft"
+                  >
+                    {getSearchEntityLabel(result.type)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          ) : (
             <div className="flex flex-col items-center justify-center h-64 text-center gap-2">
               <Search
                 className="h-12 w-12 text-afh-text-muted opacity-50"
                 aria-hidden="true"
               />
               <p className="text-afh-text-soft">{getNoResultsText()}</p>
-            </div>
-          ) : (
-            <div className="space-y-2" data-testid="search-results-list">
-              {showNoNameFicheNote && <NoNameFicheNote className="mb-2" />}
-              {results.map((result, index) => (
-                <SearchResultCard
-                  key={`${result.type}-${result.id}-${index}`}
-                  result={result}
-                  language={language}
-                  onNavigate={onClose}
-                />
-              ))}
             </div>
           )}
         </ScrollArea>

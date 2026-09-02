@@ -12,11 +12,158 @@ function countLabel(count: number, singular: string, plural: string): string {
   return `${numberFr.format(count)} ${count > 1 ? plural : singular}`;
 }
 
+interface FactRow {
+  testId: string;
+  label: string;
+  value: string;
+}
+
+/**
+ * Facts the "En bref" card can show, one field set per entity type. Every
+ * type used to share the people set (population, confidence, country ids,
+ * exonyms, sources); a patronyme or language pivot never carries those, so
+ * the card rendered its title over a permanently empty `<dl>` — falsely
+ * implying the corpus knows nothing about the entity. `country` and
+ * `languageFamily` results carry nothing beyond name/id yet
+ * (`mapSearchEnvelope`), so their row list stays empty rather than
+ * fabricating a field; the panel then renders nothing for them (see below).
+ */
+function factRowsFor(result: SearchResult): FactRow[] {
+  switch (result.type) {
+    case "people":
+      return [
+        result.population != null
+          ? {
+              testId: "dominant-answer-population",
+              label: "Population",
+              value: numberFr.format(Math.round(result.population)),
+            }
+          : null,
+        result.confidence != null
+          ? {
+              testId: "dominant-answer-confidence",
+              label: "Confiance",
+              value: `${numberFr.format(Math.round(result.confidence * 100))} %`,
+            }
+          : null,
+        (result.countryIds?.length ?? 0) > 0
+          ? {
+              testId: "dominant-answer-countries",
+              label: "Pays",
+              value: countLabel(result.countryIds!.length, "pays", "pays"),
+            }
+          : null,
+        (result.exonyms?.length ?? 0) > 0
+          ? {
+              testId: "dominant-answer-exonyms",
+              label: "Exonymes",
+              value: countLabel(result.exonyms!.length, "exonyme", "exonymes"),
+            }
+          : null,
+        result.sourceCount != null
+          ? {
+              testId: "dominant-answer-sources",
+              label: "Sources",
+              value: countLabel(result.sourceCount, "source", "sources"),
+            }
+          : null,
+      ].filter((row): row is FactRow => row !== null);
+
+    case "patronyme":
+      return [
+        result.nameSystem
+          ? {
+              testId: "dominant-answer-name-system",
+              label: "Système de nom",
+              value: result.nameSystem,
+            }
+          : null,
+        (result.associatedPeopleIds?.length ?? 0) > 0
+          ? {
+              testId: "dominant-answer-associated-peoples",
+              label: "Peuples associés",
+              value: countLabel(
+                result.associatedPeopleIds!.length,
+                "peuple",
+                "peuples"
+              ),
+            }
+          : null,
+        (result.attestedCountryIds?.length ?? 0) > 0
+          ? {
+              testId: "dominant-answer-attested-countries",
+              label: "Pays attestés",
+              value: countLabel(
+                result.attestedCountryIds!.length,
+                "pays",
+                "pays"
+              ),
+            }
+          : null,
+        result.sourceCount != null
+          ? {
+              testId: "dominant-answer-sources",
+              label: "Sources",
+              value: countLabel(result.sourceCount, "source", "sources"),
+            }
+          : null,
+      ].filter((row): row is FactRow => row !== null);
+
+    case "language":
+      return [
+        result.languageFamilyName
+          ? {
+              testId: "dominant-answer-family",
+              label: "Famille",
+              value: result.languageFamilyName,
+            }
+          : null,
+        result.isoCode639_3
+          ? {
+              testId: "dominant-answer-iso-code",
+              label: "Code ISO 639-3",
+              value: result.isoCode639_3,
+            }
+          : null,
+        (result.speakerPeopleIds?.length ?? 0) > 0
+          ? {
+              testId: "dominant-answer-speaker-peoples",
+              label: "Peuples locuteurs",
+              value: countLabel(
+                result.speakerPeopleIds!.length,
+                "peuple",
+                "peuples"
+              ),
+            }
+          : null,
+        result.sourceCount != null
+          ? {
+              testId: "dominant-answer-sources",
+              label: "Sources",
+              value: countLabel(result.sourceCount, "source", "sources"),
+            }
+          : null,
+      ].filter((row): row is FactRow => row !== null);
+
+    default:
+      // `country` and `languageFamily` carry no facts beyond name/id yet.
+      return [];
+  }
+}
+
 // @req REQ-124
 export function DominantAnswerPanel({ result }: DominantAnswerPanelProps) {
+  const factRows = factRowsFor(result);
   const externalLinks = (result.externalLinks ?? []).filter(
     ({ title, url }) => title.trim().length > 0 && url.trim().length > 0
   );
+
+  // Nothing this type's fact set covers is populated: a titled card over an
+  // empty `<dl>` would read as "the corpus knows nothing", which is false —
+  // it just doesn't know facts of *this* shape. Render nothing instead.
+  if (factRows.length === 0) {
+    return null;
+  }
 
   return (
     <aside aria-label="Réponse dominante" className="h-fit">
@@ -29,65 +176,22 @@ export function DominantAnswerPanel({ result }: DominantAnswerPanelProps) {
         </h2>
 
         <dl className="mt-afh-md grid grid-cols-2 gap-afh-sm">
-          {result.population != null && (
-            <div className="border-t border-afh-border pt-afh-xs">
-              <dt className="text-afh-caption text-afh-fg-muted">Population</dt>
+          {factRows.map((row) => (
+            <div
+              key={row.testId}
+              className="border-t border-afh-border pt-afh-xs"
+            >
+              <dt className="text-afh-caption text-afh-fg-muted">
+                {row.label}
+              </dt>
               <dd
-                data-testid="dominant-answer-population"
+                data-testid={row.testId}
                 className="text-afh-small font-semibold text-afh-text"
               >
-                {numberFr.format(Math.round(result.population))}
+                {row.value}
               </dd>
             </div>
-          )}
-
-          {result.confidence != null && (
-            <div className="border-t border-afh-border pt-afh-xs">
-              <dt className="text-afh-caption text-afh-fg-muted">Confiance</dt>
-              <dd
-                data-testid="dominant-answer-confidence"
-                className="text-afh-small font-semibold text-afh-text"
-              >
-                {numberFr.format(Math.round(result.confidence * 100))} %
-              </dd>
-            </div>
-          )}
-
-          {(result.countryIds?.length ?? 0) > 0 && (
-            <div className="border-t border-afh-border pt-afh-xs">
-              <dt className="text-afh-caption text-afh-fg-muted">Pays</dt>
-              <dd
-                data-testid="dominant-answer-countries"
-                className="text-afh-small font-semibold text-afh-text"
-              >
-                {countLabel(result.countryIds.length, "pays", "pays")}
-              </dd>
-            </div>
-          )}
-
-          {(result.exonyms?.length ?? 0) > 0 && (
-            <div className="border-t border-afh-border pt-afh-xs">
-              <dt className="text-afh-caption text-afh-fg-muted">Exonymes</dt>
-              <dd
-                data-testid="dominant-answer-exonyms"
-                className="text-afh-small font-semibold text-afh-text"
-              >
-                {countLabel(result.exonyms.length, "exonyme", "exonymes")}
-              </dd>
-            </div>
-          )}
-
-          {result.sourceCount != null && (
-            <div className="border-t border-afh-border pt-afh-xs">
-              <dt className="text-afh-caption text-afh-fg-muted">Sources</dt>
-              <dd
-                data-testid="dominant-answer-sources"
-                className="text-afh-small font-semibold text-afh-text"
-              >
-                {countLabel(result.sourceCount, "source", "sources")}
-              </dd>
-            </div>
-          )}
+          ))}
         </dl>
 
         {externalLinks.length > 0 && (

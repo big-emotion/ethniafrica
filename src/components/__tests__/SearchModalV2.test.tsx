@@ -1,6 +1,8 @@
 // @req REQ-002
 // @req REQ-050
 // @req REQ-091 — Charter V2 search overlay restyle (ETNI-802 · FR107)
+// @req REQ-124 — ETNI-1809: the modal becomes suggest-only, the canonical
+// SERP (/fr/atlas/recherche) is the one place results render (ETNI-1796).
 import { useState } from "react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import {
@@ -14,56 +16,40 @@ import {
 import userEvent from "@testing-library/user-event";
 import { SearchModalV2 } from "../search/SearchModalV2";
 import * as afrikLoader from "@/lib/afrikLoader";
-import type { SearchLead, SearchResult } from "@/types/afrik-frontend";
-import { getFamilyRoute, getPeopleRoute } from "@/lib/routing";
+import type { SearchResult } from "@/types/afrik-frontend";
+import { getPeopleRoute, getLocalizedRoute } from "@/lib/routing";
 
-// Mock afrikLoader
-vi.mock("@/lib/afrikLoader", () => ({
-  searchWithLeads: vi.fn(),
+const mockPush = vi.fn();
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({ push: mockPush }),
 }));
 
-const ZERO_LENS_COUNTS = {
-  all: 0,
-  people: 0,
-  country: 0,
-  languageFamily: 0,
-  language: 0,
-  person: 0,
-  patronyme: 0,
-};
+// Mock afrikLoader — the modal now only ever needs plain results, the same
+// path HomeHeroSearch's suggestion panel uses (no leads, no lens counts).
+vi.mock("@/lib/afrikLoader", () => ({
+  search: vi.fn(),
+}));
 
-/** Approximates the corpus-wide totals the API would return, from the mocked page alone. */
-function countsOf(results: SearchResult[]) {
-  const counts = { ...ZERO_LENS_COUNTS };
-  for (const result of results) {
-    counts[result.type] += 1;
-    counts.all += 1;
-  }
-  return counts;
+function mockSearch(results: SearchResult[]) {
+  vi.mocked(afrikLoader.search).mockResolvedValue(results);
 }
 
-function mockSearch(
-  results: SearchResult[],
-  leads: SearchLead[] = [],
-  counts = countsOf(results)
-) {
-  vi.mocked(afrikLoader.searchWithLeads).mockResolvedValue({
-    results,
-    leads,
-    counts,
-  });
-}
-
-// Mock next/link (used by the shared EmptyState no-results CTA)
+// Mock next/link (used by the suggestion rows)
 vi.mock("next/link", () => ({
   __esModule: true,
   default: ({
     href,
     children,
+    onClick,
   }: {
     href: string;
     children: React.ReactNode;
-  }) => <a href={href}>{children}</a>,
+    onClick?: () => void;
+  }) => (
+    <a href={href} onClick={onClick}>
+      {children}
+    </a>
+  ),
 }));
 
 // Mock ResizeObserver for ScrollArea
@@ -138,24 +124,6 @@ describe("SearchModalV2", () => {
     ).toBeInTheDocument();
   });
 
-  // @req REQ-124
-  it("should display named lenses", () => {
-    render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-
-    expect(screen.getByText("Tout")).toBeInTheDocument();
-    expect(screen.getByText("Familles")).toBeInTheDocument();
-    // @req REQ-136
-    expect(screen.getByText("Langues")).toBeInTheDocument();
-    expect(screen.getByText("Peuples")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Pays" })).toBeInTheDocument();
-    // @req REQ-126
-    expect(
-      screen.getByRole("button", { name: "Personnes" })
-    ).toBeInTheDocument();
-    // @req REQ-135
-    expect(screen.getByRole("button", { name: "Noms" })).toBeInTheDocument();
-  });
-
   it("should show instruction text when search query is empty", () => {
     render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
@@ -175,21 +143,6 @@ describe("SearchModalV2", () => {
     expect(searchInput).toHaveValue("test");
   });
 
-  // @req REQ-124
-  it("should have working lens structure", () => {
-    render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-
-    // Verify the lens group structure exists
-    const lensGroup = screen.getByRole("group", {
-      name: "Filtrer les résultats par type",
-    });
-    expect(lensGroup).toBeInTheDocument();
-
-    // Verify all lenses are rendered
-    const lenses = within(lensGroup).getAllByRole("button");
-    expect(lenses).toHaveLength(7); // Tout, Familles, Langues, Peuples, Pays, Personnes, Noms
-  });
-
   it("should not render when closed", () => {
     render(<SearchModalV2 open={false} onClose={mockOnClose} language="fr" />);
 
@@ -200,11 +153,10 @@ describe("SearchModalV2", () => {
   // AC2); it never fetches /api/v2/search itself.
   // @req REQ-108
   // @req REQ-124
-  it("queries the corpus through afrikLoader.searchWithLeads, scoped to the active lens", async () => {
+  it("queries the corpus through afrikLoader.search as the reader types", async () => {
     mockSearch(mockSearchResults);
     render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
-    fireEvent.click(screen.getByRole("button", { name: "Peuples" }));
     await act(async () => {
       fireEvent.change(screen.getByPlaceholderText(/Rechercher une famille/i), {
         target: { value: "Shona" },
@@ -212,125 +164,14 @@ describe("SearchModalV2", () => {
       await new Promise((r) => setTimeout(r, 350));
     });
 
-    expect(afrikLoader.searchWithLeads).toHaveBeenCalledWith("Shona", {
-      type: "people",
-    });
+    expect(afrikLoader.search).toHaveBeenCalledWith("Shona");
   });
 
-  // ── R3 — named-lens chips (44px) ────────────────────────────────────────────
+  // ── ETNI-1809 — suggest-only overlay ────────────────────────────────────
 
-  describe("named-lens chips", () => {
-    // @req REQ-091
-    it("each lens is a rounded-full pill", () => {
-      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-      for (const name of [
-        "Tout",
-        "Familles",
-        "Langues",
-        "Peuples",
-        "Pays",
-        "Personnes",
-        "Noms",
-      ]) {
-        expect(screen.getByRole("button", { name }).className).toMatch(
-          /rounded-full/
-        );
-      }
-    });
-
-    // @req REQ-091
-    it("each lens exposes a >=44px hit area (charter §5)", () => {
-      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-      for (const name of [
-        "Tout",
-        "Familles",
-        "Langues",
-        "Peuples",
-        "Pays",
-        "Personnes",
-        "Noms",
-      ]) {
-        expect(screen.getByRole("button", { name }).className).toMatch(
-          /min-h-11/
-        );
-      }
-    });
-
+  describe("suggestions dropdown", () => {
     // @req REQ-124
-    it("carries no count before a search has resolved", () => {
-      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-
-      expect(
-        screen.getByRole("button", { name: "Peuples" })
-      ).toBeInTheDocument();
-    });
-
-    // @req REQ-124
-    it("shows each lens carrying its own corpus-wide count once a search resolves", async () => {
-      mockSearch(mockMixedResults);
-      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-
-      await act(async () => {
-        fireEvent.change(
-          screen.getByPlaceholderText(/Rechercher une famille/i),
-          { target: { value: "Shona" } }
-        );
-        await new Promise((r) => setTimeout(r, 350));
-      });
-
-      await waitFor(() => {
-        expect(
-          screen.getByRole("button", { name: "Tout (3)" })
-        ).toBeInTheDocument();
-      });
-      expect(
-        screen.getByRole("button", { name: "Peuples (1)" })
-      ).toBeInTheDocument();
-      expect(
-        screen.getByRole("button", { name: "Pays (1)" })
-      ).toBeInTheDocument();
-      expect(
-        screen.getByRole("button", { name: "Familles (1)" })
-      ).toBeInTheDocument();
-      expect(
-        screen.getByRole("button", { name: "Langues (0)" })
-      ).toBeInTheDocument();
-    });
-
-    // @req REQ-124
-    it("refines the results list in place, without navigating, when a lens is chosen", async () => {
-      mockSearch(mockMixedResults);
-      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-
-      await act(async () => {
-        fireEvent.change(
-          screen.getByPlaceholderText(/Rechercher une famille/i),
-          { target: { value: "Shona" } }
-        );
-        await new Promise((r) => setTimeout(r, 350));
-      });
-
-      await waitFor(() => {
-        expect(screen.getByText("Recherche")).toBeInTheDocument();
-      });
-
-      fireEvent.click(screen.getByRole("button", { name: /^Peuples/ }));
-
-      await waitFor(() => {
-        expect(afrikLoader.searchWithLeads).toHaveBeenLastCalledWith("Shona", {
-          type: "people",
-        });
-      });
-      // The dialog itself never closes or navigates on a lens choice.
-      expect(screen.getByText("Recherche")).toBeInTheDocument();
-    });
-  });
-
-  // ── R3 — grouped result cards: cat-token mark + text label ─────────────────
-
-  describe("entity-type marks", () => {
-    // @req REQ-091
-    it("pairs a color mark with a text label for every result type (never color alone)", async () => {
+    it("shows a suggestion per matching entity once the search resolves", async () => {
       mockSearch(mockMixedResults);
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
@@ -342,28 +183,15 @@ describe("SearchModalV2", () => {
         await new Promise((r) => setTimeout(r, 350));
       });
 
-      await waitFor(() => {
-        expect(screen.getByText("Shona")).toBeInTheDocument();
-      });
-
-      const resultsList = screen.getByTestId("search-results-list");
-      const marks = within(resultsList).getAllByTestId("search-entity-mark");
-      expect(marks).toHaveLength(mockMixedResults.length);
-      // every mark is decorative — the meaning lives in the adjacent text label
-      for (const mark of marks) {
-        expect(mark).toHaveAttribute("aria-hidden", "true");
-      }
-      expect(within(resultsList).getByText("Peuple")).toBeInTheDocument();
-      // "Pays" also names a tab pill, so scope to the results list to avoid
-      // matching that unrelated element.
-      expect(within(resultsList).getByText("Pays")).toBeInTheDocument();
-      expect(
-        within(resultsList).getByText("Famille linguistique")
-      ).toBeInTheDocument();
+      const suggestions = await screen.findByTestId("search-suggestions-list");
+      expect(within(suggestions).getByText("Shona")).toBeInTheDocument();
+      expect(within(suggestions).getByText("Zimbabwe")).toBeInTheDocument();
+      expect(within(suggestions).getByText("Bantou")).toBeInTheDocument();
     });
 
     // @req REQ-002
-    it("reaches each result's fiche through a keyboard-accessible link", async () => {
+    // @req REQ-124
+    it("reaches each suggestion's fiche through a keyboard-accessible link", async () => {
       mockSearch(mockMixedResults);
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
@@ -379,16 +207,17 @@ describe("SearchModalV2", () => {
         expect(screen.getByText("Shona")).toBeInTheDocument();
       });
 
-      const resultsList = screen.getByTestId("search-results-list");
       // Previously the card navigated from an onClick on a div, which no
-      // keyboard user could reach.
-      expect(
-        within(resultsList).getByRole("link", { name: "Shona" })
-      ).toHaveAttribute("href", getPeopleRoute("fr", "PPL_SHONA"));
+      // keyboard user could reach — a suggestion is still a real link.
+      expect(screen.getByRole("link", { name: "Shona" })).toHaveAttribute(
+        "href",
+        getPeopleRoute("fr", "PPL_SHONA")
+      );
     });
 
     // @req REQ-002
-    it("closes itself when a result link is activated", async () => {
+    // @req REQ-124
+    it("closes itself when a suggestion link is activated", async () => {
       mockSearch(mockMixedResults);
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
@@ -408,69 +237,10 @@ describe("SearchModalV2", () => {
 
       expect(mockOnClose).toHaveBeenCalled();
     });
-  });
 
-  // ── ETNI-1463 AC2 — absence of a name fiche shown explicitly ────────────
-
-  describe("no-name absence marker", () => {
-    // @req REQ-135
-    it("shows an explicit absence marker when persons are found but no name fiche is", async () => {
-      mockSearch([
-        {
-          type: "person",
-          id: "PER_X",
-          name: "Someone",
-          roleCategory: "historian",
-        },
-      ]);
-      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-
-      const searchInput = screen.getByPlaceholderText(
-        /Rechercher une famille/i
-      );
-      await act(async () => {
-        fireEvent.change(searchInput, { target: { value: "Someone" } });
-        await new Promise((r) => setTimeout(r, 350));
-      });
-
-      await waitFor(() => {
-        expect(screen.getByText("Someone")).toBeInTheDocument();
-      });
-      expect(screen.getByTestId("no-name-fiche-note")).toBeInTheDocument();
-    });
-
-    // @req REQ-135
-    it("does not show the absence marker when a name fiche is also found", async () => {
-      mockSearch([
-        {
-          type: "person",
-          id: "PER_X",
-          name: "Someone",
-          roleCategory: "historian",
-        },
-        { type: "patronyme", id: "PATR_X", name: "Someone" },
-      ]);
-      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-
-      const searchInput = screen.getByPlaceholderText(
-        /Rechercher une famille/i
-      );
-      await act(async () => {
-        fireEvent.change(searchInput, { target: { value: "Someone" } });
-        await new Promise((r) => setTimeout(r, 350));
-      });
-
-      await waitFor(() => {
-        expect(screen.getAllByText("Someone").length).toBeGreaterThan(0);
-      });
-      expect(
-        screen.queryByTestId("no-name-fiche-note")
-      ).not.toBeInTheDocument();
-    });
-
-    // @req REQ-135
-    it("does not show the absence marker when there are no person results either", async () => {
-      mockSearch(mockMixedResults);
+    // @req REQ-124
+    it("renders no result card and no lens bar, even once a search resolves", async () => {
+      mockSearch(mockSearchResults);
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
       const searchInput = screen.getByPlaceholderText(
@@ -484,95 +254,55 @@ describe("SearchModalV2", () => {
       await waitFor(() => {
         expect(screen.getByText("Shona")).toBeInTheDocument();
       });
+
       expect(
-        screen.queryByTestId("no-name-fiche-note")
+        screen.queryByTestId("search-result-card")
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole("group", { name: "Filtrer les résultats par type" })
+      ).not.toBeInTheDocument();
+      // The snippet and population line only ever rendered on the full card.
+      expect(
+        screen.queryByText("The Shona people of Zimbabwe")
       ).not.toBeInTheDocument();
     });
   });
 
-  // ── R3 — no-result guidance ──────────────────────────────────────────────
+  // ── ETNI-1809 — submitting goes to the canonical SERP ───────────────────
 
-  describe("no-result guidance", () => {
-    // @req REQ-091
-    it("shows a guidance sentence and one CTA when a real search yields zero results", async () => {
-      mockSearch([]);
+  describe("submit to the canonical SERP", () => {
+    // @req REQ-124
+    it("navigates to the canonical SERP with the current query on Enter", async () => {
+      mockSearch(mockSearchResults);
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
       const searchInput = screen.getByPlaceholderText(
         /Rechercher une famille/i
       );
       await act(async () => {
-        fireEvent.change(searchInput, { target: { value: "xyzzy" } });
+        fireEvent.change(searchInput, { target: { value: "Shona" } });
         await new Promise((r) => setTimeout(r, 350));
       });
 
-      await waitFor(() => {
-        expect(screen.getByText(/aucun résultat pour/i)).toBeInTheDocument();
-      });
-      expect(screen.getAllByRole("link")).toHaveLength(1);
-    });
+      fireEvent.submit(searchInput.closest("form")!);
 
-    // @req REQ-125
-    it("shows near-miss leads alongside the guidance sentence", async () => {
-      mockSearch(
-        [],
-        [
-          {
-            type: "languageFamily",
-            id: "FLG_MANDE",
-            name: "Mandé",
-            similarity: 0.3,
-          },
-        ]
+      expect(mockPush).toHaveBeenCalledWith(
+        `${getLocalizedRoute("fr", "search")}?q=Shona`
       );
-      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-
-      const searchInput = screen.getByPlaceholderText(
-        /Rechercher une famille/i
-      );
-      await act(async () => {
-        fireEvent.change(searchInput, { target: { value: "mnde" } });
-        await new Promise((r) => setTimeout(r, 350));
-      });
-
-      await waitFor(() => {
-        expect(screen.getByRole("link", { name: /Mandé/ })).toHaveAttribute(
-          "href",
-          getFamilyRoute("fr", "FLG_MANDE")
-        );
-      });
-    });
-
-    // @req REQ-125
-    it("closes the modal when a lead link is activated", async () => {
-      mockSearch(
-        [],
-        [
-          {
-            type: "languageFamily",
-            id: "FLG_MANDE",
-            name: "Mandé",
-            similarity: 0.3,
-          },
-        ]
-      );
-      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-
-      const searchInput = screen.getByPlaceholderText(
-        /Rechercher une famille/i
-      );
-      await act(async () => {
-        fireEvent.change(searchInput, { target: { value: "mnde" } });
-        await new Promise((r) => setTimeout(r, 350));
-      });
-
-      await waitFor(() => {
-        expect(screen.getByRole("link", { name: /Mandé/ })).toBeInTheDocument();
-      });
-
-      fireEvent.click(screen.getByRole("link", { name: /Mandé/ }));
-
       expect(mockOnClose).toHaveBeenCalled();
+    });
+
+    // @req REQ-124
+    it("does not navigate on Enter when the query is empty", async () => {
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      const searchInput = screen.getByPlaceholderText(
+        /Rechercher une famille/i
+      );
+      fireEvent.submit(searchInput.closest("form")!);
+
+      expect(mockPush).not.toHaveBeenCalled();
+      expect(mockOnClose).not.toHaveBeenCalled();
     });
   });
 
