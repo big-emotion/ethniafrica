@@ -34,6 +34,22 @@ export interface PatronymeAggregate {
   bearers: PatronymeBearerSummary[];
 }
 
+export interface PatronymeListItem {
+  id: string;
+  nameMain: string;
+  nameSystem: PatronymeNameSystem;
+}
+
+export interface ListPatronymesQuery {
+  page: number;
+  perPage: number;
+}
+
+export interface ListPatronymesResult {
+  data: PatronymeListItem[];
+  total: number;
+}
+
 function uniqueStrings(values: string[]): string[] {
   return Array.from(new Set(values));
 }
@@ -168,6 +184,48 @@ async function getBearers(
     fullName: row.full_name,
     roleCategory: row.role_category,
   }));
+}
+
+const PATRONYME_LIST_SELECT = "id, content, name_system";
+
+// Index-row query for the noms hub (ETNI-1799). Selects only the
+// afrik_patronymes columns a list entry needs — no peoples/countries/bearers
+// joins, unlike getPatronymeById's full aggregate.
+// @req REQ-133
+export async function listPatronymes(
+  query: ListPatronymesQuery
+): Promise<ListPatronymesResult> {
+  const supabase = createServerClient();
+  const from = (query.page - 1) * query.perPage;
+  const to = from + query.perPage - 1;
+
+  const { data, error, count } = await supabase
+    .from("afrik_patronymes")
+    .select(PATRONYME_LIST_SELECT, { count: "exact" })
+    .order("id")
+    .range(from, to);
+
+  if (error) {
+    throw new Error(`Failed to list patronymes: ${error.message}`);
+  }
+
+  const rows = (data ?? []) as Array<{
+    id: string;
+    content: Record<string, unknown> | null;
+    name_system: PatronymeNameSystem;
+  }>;
+
+  return {
+    data: rows.map((row) => {
+      const content = row.content ?? {};
+      return {
+        id: row.id,
+        nameMain: typeof content.nameMain === "string" ? content.nameMain : "",
+        nameSystem: row.name_system,
+      };
+    }),
+    total: count ?? rows.length,
+  };
 }
 
 // @req REQ-133

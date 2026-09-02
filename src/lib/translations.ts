@@ -96,6 +96,11 @@ export const translations = {
         countries: "Pays",
         peoples: "Peuples",
         families: "Familles",
+        languages: "Langues",
+        // Same public-facing word as the trail label (TRAIL_PAGE_LABELS.patronymes
+        // above), distinct from "Appellations" so the two corpus entities never
+        // read as one entry in a menu.
+        patronymes: "Nom",
         participateHeading: "Participer",
         contribute: "Contribuer",
         reportError: "Signaler une erreur",
@@ -249,6 +254,29 @@ export const translations = {
         reportMissing: "Signaler une donnée manquante",
       },
     },
+    // Languages index (ETNI-1802/REQ-139). 748 languages for 532 distinct
+    // names — e.g. "Fulfulde" names both fuf and fuv — so the copy itself
+    // flags why every row needs a family + id, not just the name.
+    languages: {
+      pageTitle: "Langues",
+      pageSubtitle:
+        "Les langues attestées d'Afrique, classées par famille linguistique. Le corpus recense 748 langues pour 532 noms distincts — plusieurs langues partagent un même nom (par exemple « Fulfulde », qui désigne à la fois le fuf et le fuv), d'où la famille et l'identifiant ISO 639-3 affichés sur chaque ligne.",
+      unavailable:
+        "Les langues du corpus sont momentanément indisponibles. Réessayez dans un instant.",
+      range: {
+        none: "Aucune langue",
+        of: "sur",
+        languagesSingular: "langue",
+        languagesPlural: "langues",
+      },
+      emptyState: "Aucune langue ne commence par cette lettre.",
+      pagination: {
+        label: "Pagination des langues",
+        previous: "Précédent",
+        next: "Suivant",
+        page: "Page",
+      },
+    },
     // Patronyme fiche (ETNI-1464, REQ-133). Distinct from `names` above:
     // `names` covers ethnonyms (how a *people* is called); this covers
     // patronymes (the naming system a *person* is named under).
@@ -326,6 +354,26 @@ export const translations = {
         "Cette liste ne mentionne que des personnes publiques ou décédées, ou s'étant elles-mêmes revendiquées de ce patronyme. Elle ne permet de déduire l'origine ethnique d'aucune personne vivante à partir de ce nom.",
       bearersEmpty: "Aucun porteur ou porteuse n'est encore documenté.",
       roleCategoryFallback: "Rôle non renseigné",
+      // The /fr/atlas/noms index (ETNI-1803, REQ-139) — the corpus-class
+      // listing that leads to the fiches above. Kept nested here rather than
+      // as a sibling top-level key: it is patronyme copy, distinct from
+      // `fr.names` (the unrelated Appellations/ethnonym page).
+      index: {
+        pageTitle: "Noms",
+        pageSubtitle:
+          "Les systèmes de nommage des personnes documentés dans le corpus — noms de clan, patronymes non héréditaires, nisba et noms d'éloge.",
+        unavailable:
+          "Les noms n'ont pas pu être chargés. Le problème vient de notre côté, pas d'un corpus vide.",
+        countSingular: "patronyme",
+        countPlural: "patronymes",
+        emptyState: "Aucun patronyme n'est encore documenté.",
+        pagination: {
+          label: "Pagination des noms",
+          previous: "Précédent",
+          next: "Suivant",
+          page: "Page",
+        },
+      },
     },
     migrations: {
       navLabel: "Migrations",

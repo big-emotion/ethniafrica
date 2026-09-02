@@ -32,15 +32,25 @@ const TABLES = {
   peoples: "afrik_peoples",
   countries: "afrik_countries",
   families: "afrik_language_families",
+  languages: "afrik_languages",
+  patronymes: "afrik_patronymes",
 } as const;
 
 export interface SitemapEntityIds {
   peoples: string[];
   countries: string[];
   families: string[];
+  languages: string[];
+  patronymes: string[];
 }
 
-const EMPTY: SitemapEntityIds = { peoples: [], countries: [], families: [] };
+const EMPTY: SitemapEntityIds = {
+  peoples: [],
+  countries: [],
+  families: [],
+  languages: [],
+  patronymes: [],
+};
 
 type SupabaseClient = ReturnType<typeof createServerClient>;
 
@@ -74,7 +84,8 @@ async function idsInTable(
 }
 
 /**
- * Every people, country and language-family identifier, walked page by page.
+ * Every people, country, language-family, language and patronyme identifier,
+ * walked page by page.
  *
  * Never throws. `sitemap.xml` is served from a route that must answer, and a
  * database that is unreachable should cost the entity URLs — the static
@@ -90,11 +101,14 @@ export async function getSitemapEntityIds(): Promise<SitemapEntityIds> {
     return EMPTY;
   }
 
-  const [peoples, countries, families] = await Promise.all([
-    idsInTable(supabase, TABLES.peoples),
-    idsInTable(supabase, TABLES.countries),
-    idsInTable(supabase, TABLES.families),
-  ]);
+  const [peoples, countries, families, languages, patronymes] =
+    await Promise.all([
+      idsInTable(supabase, TABLES.peoples),
+      idsInTable(supabase, TABLES.countries),
+      idsInTable(supabase, TABLES.families),
+      idsInTable(supabase, TABLES.languages),
+      idsInTable(supabase, TABLES.patronymes),
+    ]);
 
-  return { peoples, countries, families };
+  return { peoples, countries, families, languages, patronymes };
 }

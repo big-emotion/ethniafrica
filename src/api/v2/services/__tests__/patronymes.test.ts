@@ -13,7 +13,7 @@ vi.mock("@/lib/api/logger", () => ({
   logger: { info: vi.fn(), error: vi.fn(), warn: vi.fn(), debug: vi.fn() },
 }));
 
-import { getPatronymeById } from "../patronymes";
+import { getPatronymeById, listPatronymes } from "../patronymes";
 
 type FakeQuery = Record<string, ReturnType<typeof vi.fn>>;
 
@@ -237,5 +237,151 @@ describe("patronymes service — getPatronymeById", () => {
     ).toHaveLength(1);
     expect(calledTables.filter((t) => t === "persons")).toHaveLength(1);
     expect(calledTables).toHaveLength(7);
+  });
+});
+
+// ETNI-1799: the index-row query behind the (separately owned) /atlas/noms
+// page. Deliberately paginated even though the corpus holds 30 rows today —
+// ETNI-1461 treats that as a first tranche, not a ceiling.
+describe("patronymes service — listPatronymes", () => {
+  beforeEach(() => {
+    fromMock.mockReset();
+  });
+
+  function buildListQuery(
+    rows: Array<Record<string, unknown>>,
+    count: number | null
+  ): FakeQuery {
+    const query: FakeQuery = {} as FakeQuery;
+    query.select = vi.fn(() => query);
+    query.order = vi.fn(() => query);
+    query.range = vi.fn(() =>
+      Promise.resolve({ data: rows, error: null, count })
+    );
+    return query;
+  }
+
+  // @req REQ-133
+  it("returns a page of index rows shaped for a fiche link", async () => {
+    const query = buildListQuery(
+      [
+        {
+          id: "PAT_KEITA",
+          content: { nameMain: "Keita" },
+          name_system: "clan_name",
+        },
+        {
+          id: "PAT_DIALLO",
+          content: { nameMain: "Diallo" },
+          name_system: "patronym",
+        },
+      ],
+      2
+    );
+    fromMock.mockReturnValue(query);
+
+    const result = await listPatronymes({ page: 1, perPage: 20 });
+
+    expect(fromMock).toHaveBeenCalledWith("afrik_patronymes");
+    expect(query.select).toHaveBeenCalledWith("id, content, name_system", {
+      count: "exact",
+    });
+    expect(result.data).toEqual([
+      { id: "PAT_KEITA", nameMain: "Keita", nameSystem: "clan_name" },
+      { id: "PAT_DIALLO", nameMain: "Diallo", nameSystem: "patronym" },
+    ]);
+    expect(result.total).toBe(2);
+  });
+
+  // @req REQ-133
+  it("turns the page and perPage params into a zero-based range offset", async () => {
+    const query = buildListQuery([], 45);
+    fromMock.mockReturnValue(query);
+
+    await listPatronymes({ page: 3, perPage: 10 });
+
+    expect(query.range).toHaveBeenCalledWith(20, 29);
+  });
+
+  // @req REQ-133
+  it("uses the default first-page range when called with page 1", async () => {
+    const query = buildListQuery([], 30);
+    fromMock.mockReturnValue(query);
+
+    await listPatronymes({ page: 1, perPage: 20 });
+
+    expect(query.range).toHaveBeenCalledWith(0, 19);
+  });
+
+  // @req REQ-133
+  it("throws a clear error when the Supabase query fails", async () => {
+    const query: FakeQuery = {} as FakeQuery;
+    query.select = vi.fn(() => query);
+    query.order = vi.fn(() => query);
+    query.range = vi.fn(() =>
+      Promise.resolve({
+        data: null,
+        error: { message: "connection reset" },
+        count: null,
+      })
+    );
+    fromMock.mockReturnValue(query);
+
+    await expect(listPatronymes({ page: 1, perPage: 20 })).rejects.toThrow(
+      "Failed to list patronymes: connection reset"
+    );
+  });
+
+  // @req REQ-133
+  it("returns a total from which the caller can derive an exact page count", async () => {
+    const query = buildListQuery([], 45);
+    fromMock.mockReturnValue(query);
+
+    const result = await listPatronymes({ page: 1, perPage: 20 });
+
+    expect(result.total).toBe(45);
+    expect(Math.ceil(result.total / 20)).toBe(3);
+  });
+
+  // @req REQ-133
+  it("queries only afrik_patronymes — never the peoples/countries/bearers join tables", async () => {
+    const query = buildListQuery(
+      [
+        {
+          id: "PAT_KEITA",
+          content: { nameMain: "Keita" },
+          name_system: "clan_name",
+        },
+      ],
+      1
+    );
+    fromMock.mockReturnValue(query);
+
+    await listPatronymes({ page: 1, perPage: 20 });
+
+    const calledTables = fromMock.mock.calls.map((call) => call[0]);
+    expect(calledTables).toEqual(["afrik_patronymes"]);
+    expect(calledTables).not.toContain("afrik_patronyme_peoples");
+    expect(calledTables).not.toContain("afrik_patronyme_countries");
+    expect(calledTables).not.toContain("afrik_patronyme_persons");
+  });
+
+  // @req REQ-133
+  it("falls back to the returned row count when Supabase omits the exact count", async () => {
+    const query = buildListQuery(
+      [
+        {
+          id: "PAT_KEITA",
+          content: { nameMain: "Keita" },
+          name_system: "clan_name",
+        },
+      ],
+      null
+    );
+    fromMock.mockReturnValue(query);
+
+    const result = await listPatronymes({ page: 1, perPage: 20 });
+
+    expect(result.total).toBe(1);
   });
 });

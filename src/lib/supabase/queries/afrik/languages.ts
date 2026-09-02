@@ -23,6 +23,32 @@ export interface AfrikSpeakingPeople {
   name: string;
 }
 
+// @req REQ-136
+export interface AfrikLanguageListItem {
+  id: string;
+  name: string;
+  family: {
+    id: string;
+    name: string;
+  };
+}
+
+// @req REQ-136
+export interface ListAfrikLanguagesParams {
+  page?: number;
+  perPage?: number;
+}
+
+// @req REQ-136
+export interface ListAfrikLanguagesResult {
+  languages: AfrikLanguageListItem[];
+  total: number;
+  pageCount: number;
+}
+
+const DEFAULT_LANGUAGES_PAGE = 1;
+const DEFAULT_LANGUAGES_PER_PAGE = 48;
+
 /**
  * Count every AFRIK language in the corpus.
  *
@@ -118,6 +144,63 @@ export async function getAfrikLanguageById(
       name: row.family?.name_fr ?? row.family_id,
     },
     content: row.content ?? {},
+  };
+}
+
+/**
+ * One page of the languages index (748 rows, 532 distinct names — e.g.
+ * "Fulfulde" names both `fuf` and `fuv`), so every row carries its family
+ * alongside the id to disambiguate homonyms.
+ *
+ * Ordered by family then name to mirror the AFRIK hierarchy (family →
+ * language → people → country) rather than a flat alphabetical list.
+ */
+// @req REQ-136
+export async function listAfrikLanguages(
+  params: ListAfrikLanguagesParams = {}
+): Promise<ListAfrikLanguagesResult> {
+  const page = params.page ?? DEFAULT_LANGUAGES_PAGE;
+  const perPage = params.perPage ?? DEFAULT_LANGUAGES_PER_PAGE;
+  const offset = (page - 1) * perPage;
+
+  const supabase = createServerClient();
+  const { data, error, count } = await supabase
+    .from("afrik_languages")
+    .select(
+      "id, name, family_id, family:afrik_language_families(id, name_fr)",
+      { count: "exact" }
+    )
+    .order("family_id")
+    .order("name")
+    .range(offset, offset + perPage - 1);
+
+  if (error) {
+    logger.error("Error listing AFRIK languages", error);
+    throw error;
+  }
+
+  const rows = (data ?? []) as unknown as Array<{
+    id: string;
+    name: string;
+    family_id: string;
+    family: { id: string; name_fr: string } | null;
+  }>;
+
+  const languages: AfrikLanguageListItem[] = rows.map((row) => ({
+    id: row.id,
+    name: row.name,
+    family: {
+      id: row.family?.id ?? row.family_id,
+      name: row.family?.name_fr ?? row.family_id,
+    },
+  }));
+
+  const total = count ?? languages.length;
+
+  return {
+    languages,
+    total,
+    pageCount: Math.max(1, Math.ceil(total / perPage)),
   };
 }
 

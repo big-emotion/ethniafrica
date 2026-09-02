@@ -58,6 +58,8 @@ export type ModuleDataSource =
   | "afrik_peoples"
   | "afrik_countries"
   | "afrik_language_families"
+  | "afrik_languages"
+  | "afrik_patronymes"
   | "name_records"
   | "migration_events"
   | "afrik_people_relations"
@@ -241,6 +243,19 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     dataSource: "afrik_language_families",
     heroable: "family-crown",
   },
+  // Filed directly after familles: a language is the next rung down the
+  // AFRIK hierarchy (famille → langue → peuple → pays), and a reader who
+  // arrives holding a language's name reaches it the same way as one holding
+  // a family's (ETNI-1801/ETNI-1795).
+  {
+    id: "langues",
+    name: "Les langues d'Afrique",
+    accessMode: "atlas",
+    page: "languages",
+    availability: "data",
+    editorialReadiness: "ready",
+    dataSource: "afrik_languages",
+  },
   // The fourth nominal entry point. A reader who arrives holding a name the
   // corpus files as an appellation — an exonym, a colonial-era spelling —
   // arrives the same way as one holding a country's, and ETNI-1453 gives
@@ -257,6 +272,20 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     // therefore follow the route that was already public.
     editorialReadiness: "ready",
     dataSource: "name_records",
+  },
+  // Distinct from "noms"/Appellations: a patronyme is the naming *system* a
+  // person is named under, not a people's autonym/exonym. Filed beside it
+  // because both take a name and return a fiche, which is Explorer's rule,
+  // but kept a separate id and name so neither shadows the other in the menu
+  // (ETNI-1801).
+  {
+    id: "patronymes",
+    name: "Patronymes",
+    accessMode: "atlas",
+    page: "patronymes",
+    availability: "data",
+    editorialReadiness: "ready",
+    dataSource: "afrik_patronymes",
   },
   // Recherche closes Explorer: it is where a reader goes once naming the
   // entity has not been enough.
