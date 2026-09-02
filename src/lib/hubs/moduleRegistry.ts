@@ -38,7 +38,7 @@ export const ACCESS_MODES: AccessMode[] = ["atlas", "dossiers", "jeux"];
 export const ACCESS_MODE_LABELS = {
   atlas: "L'atlas",
   dossiers: "Les dossiers",
-  jeux: "Les jeux",
+  jeux: "Jouer",
 } satisfies Record<AccessMode, string>;
 
 // One categorical accent per mode, from the CVD-validated four (color.css
@@ -350,7 +350,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   {
     id: "quiz",
     group: "jeux-quiz",
-    name: "Le quiz des parcours",
+    name: "Le quiz",
     accessMode: "jeux",
     page: "quiz",
     // Read from its own bank, like every other data module reads its table.

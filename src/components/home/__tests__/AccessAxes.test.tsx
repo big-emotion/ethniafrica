@@ -322,7 +322,7 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
     const darkJouer: HubModuleDefinition[] = [
       {
         id: "quiz",
-        name: "Le quiz des parcours",
+        name: "Le quiz",
         accessMode: "jeux",
         page: "quiz",
         availability: "data",

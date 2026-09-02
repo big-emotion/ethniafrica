@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import {
   isInversionTemplate,
   QUIZ_TEMPLATE_IDS,
+  quizTrackLabelFr,
   TEMPLATE_FIELD_PATHS,
 } from "../segmentPolicy";
 
@@ -80,5 +81,24 @@ describe("segmentPolicy", () => {
     for (const templateId of QUIZ_TEMPLATE_IDS) {
       expect(TEMPLATE_FIELD_PATHS[templateId]).toMatch(/^[\w.]+$/);
     }
+  });
+
+  // @req REQ-121
+  it("names both halves of a track that crosses a scope with a theme", () => {
+    expect(quizTrackLabelFr("Afrique du Sud", "langues")).toBe(
+      "Afrique du Sud · Langues"
+    );
+    expect(quizTrackLabelFr("Ghana", null)).toBe("Ghana");
+    expect(quizTrackLabelFr(null, "croyances")).toBe("Croyances");
+    expect(quizTrackLabelFr(null, null)).toBe("");
+  });
+
+  // A theme arrives from the query string, so it reaches the label before
+  // anything has validated it. Printing it back would put an arbitrary
+  // reader-supplied string in the page's <title>.
+  // @req REQ-121
+  it("drops a theme the policy does not declare instead of printing it back", () => {
+    expect(quizTrackLabelFr("Ghana", "nimportequoi")).toBe("Ghana");
+    expect(quizTrackLabelFr(null, "nimportequoi")).toBe("");
   });
 });

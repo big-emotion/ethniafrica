@@ -229,6 +229,30 @@ export const QUIZ_THEME_LABELS_FR: Record<QuizThemeId, string> = {
 };
 
 /**
+ * What a track is called once a scope and a theme have both been chosen.
+ *
+ * The two halves reach the page through different pipes — the scope label is
+ * resolved against the database by `describeScope`, the theme arrives raw in
+ * the query string — and until this helper existed only the first was ever
+ * rendered. A reader crossing « Afrique du Sud » with « Langues » was told the
+ * country and never the theme, so nothing on screen said which half of the
+ * country's questions they were being asked.
+ *
+ * An undeclared theme is dropped rather than printed: the value is
+ * reader-supplied and this label reaches the page's `<title>`.
+ */
+// @req REQ-121
+export function quizTrackLabelFr(
+  scopeLabelFr: string | null,
+  theme: string | null
+): string {
+  const themeLabel =
+    theme && isQuizThemeId(theme) ? QUIZ_THEME_LABELS_FR[theme] : null;
+
+  return [scopeLabelFr, themeLabel].filter(Boolean).join(" · ");
+}
+
+/**
  * One question each theme actually asks, for the card that offers it.
  *
  * A specimen, not a tagline: the picker replaced a `<select>` whose options

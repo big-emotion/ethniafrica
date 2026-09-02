@@ -30,7 +30,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(ACCESS_MODE_LABELS).toEqual({
       atlas: "L'atlas",
       dossiers: "Les dossiers",
-      jeux: "Les jeux",
+      jeux: "Jouer",
     });
   });
 

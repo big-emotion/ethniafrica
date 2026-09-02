@@ -1,5 +1,8 @@
 import { GAME_DEFINITIONS } from "@/lib/games/gameRegistry";
-import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
+import {
+  ACCESS_MODE_LABELS,
+  getModulesForAccessMode,
+} from "@/lib/hubs/moduleRegistry";
 import { getLocalizedRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
@@ -164,7 +167,12 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
       links: [
         {
           href: route("quiz"),
-          label: "Le quiz des parcours",
+          // Read off the registry rather than transcribed: the line below
+          // already derives the games from theirs, and a hand-copied name is
+          // one the registry can rename out from under.
+          label: getModulesForAccessMode("jeux").find(
+            (hubModule) => hubModule.page === "quiz"
+          ).name,
         },
         ...GAME_DEFINITIONS.map((game) => ({
           href: `${route("jeuxHub")}/${game.slug}`,

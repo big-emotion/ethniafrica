@@ -47,7 +47,7 @@ eight are retired** until the loop below is proven.
 
 | Surface                                            | Why it survives                                                                                                                                                   |
 | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **« Le quiz des parcours »** (`quiz`)              | The hub's one full loop: a bank of items, a scope, a ladder and a score card. It reads its own table and is the surface every rule below was written for.         |
+| **« Le quiz »** (`quiz`)                           | The hub's one full loop: a bank of items, a scope, a ladder and a score card. It reads its own table and is the surface every rule below was written for.         |
 | **« La taille qu'on vous a cachée »** (`mercator`) | One idea, cleanly: Mercator inflates the north and shrinks Africa. Cheap to finish, it carries a real claim, and the home already owns the figure that proves it. |
 
 **The second cut, 2026-08-29.** Three became two. « Eux, ou les autres ? »
