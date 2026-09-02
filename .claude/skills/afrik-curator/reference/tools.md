@@ -43,9 +43,10 @@ same files the curator edits. No credentials, and no dependence on a database ha
 loaded, which matters because recette's had not been for the fiches merged on 31 August 2026. It never guesses by similarity: a near-miss that silently won would send the curator
 to edit the wrong fiche.
 
-> This replaces `searchAfrikAll`, `searchAfrikPeoples`, `searchAfrikCountries` and
-> `searchAfrikLanguageFamilies`. All four were removed when ranking moved into Postgres
-> (migrations 043/044, then 069). Anything still naming them is stale.
+> **Removed — do not call.** This replaces four functions that no longer exist in `src/`:
+> `searchAfrikAll`, `searchAfrikPeoples`, `searchAfrikCountries` and
+> `searchAfrikLanguageFamilies`. All four were deleted when ranking moved into Postgres
+> (migrations 043/044, then 069). Anything still naming them as a usable tool is stale.
 
 A failed lookup usually means a missing `spellingAliases` entry, not a missing fiche —
 they are filled on 12 fiches out of 800.
