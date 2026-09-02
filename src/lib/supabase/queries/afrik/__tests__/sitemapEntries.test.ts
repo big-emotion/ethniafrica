@@ -5,11 +5,7 @@ vi.mock("../../../server", () => ({
 }));
 
 import { createServerClient } from "../../../server";
-import {
-  SITEMAP_ID_PAGE_SIZE,
-  SITEMAP_QUERY_TIMEOUT_MS,
-  getSitemapEntityIds,
-} from "../sitemapEntries";
+import { SITEMAP_ID_PAGE_SIZE, getSitemapEntityIds } from "../sitemapEntries";
 
 /**
  * A Supabase double that answers `.range(start, end)` out of a per-table
@@ -26,7 +22,6 @@ function supabaseServing(rowsByTable: Record<string, { id: string }[]>) {
     }),
     select: vi.fn(() => client),
     order: vi.fn(() => client),
-    abortSignal: vi.fn(() => client),
     range: vi.fn(async (start: number, end: number) => ({
       data: (rowsByTable[table] ?? []).slice(start, end + 1),
       error: null,
@@ -119,7 +114,6 @@ describe("sitemap entity ids", () => {
       from: vi.fn(() => client),
       select: vi.fn(() => client),
       order: vi.fn(() => client),
-      abortSignal: vi.fn(() => client),
       range: vi.fn(async () => ({ data: null, error: { message: "down" } })),
     };
     (createServerClient as unknown as ReturnType<typeof vi.fn>).mockReturnValue(
@@ -135,46 +129,31 @@ describe("sitemap entity ids", () => {
     });
   });
 
-  // An unreachable host does not answer "down" — it says nothing at all. The
-  // CI build points `NEXT_PUBLIC_SUPABASE_URL` at a placeholder domain that
-  // accepts the connection and never replies, and Next kills a static route
-  // that takes more than 60s. The walk therefore has to give up on its own.
+  // A database that never answers reaches this walk as a throw, not as an
+  // `{ error }`: the deadline in requestDeadline.ts aborts the fetch and
+  // Supabase rejects. Both are the same outcome for a sitemap, so an
+  // exception must not escape the walk either.
   // @req REQ-110
-  it("gives up on a table that never answers", async () => {
-    vi.useFakeTimers();
-    let pending: AbortSignal;
+  it("yields empty lists rather than throwing when a query rejects", async () => {
     const client = {
       from: vi.fn(() => client),
       select: vi.fn(() => client),
       order: vi.fn(() => client),
-      abortSignal: vi.fn((signal: AbortSignal) => {
-        pending = signal;
-        return client;
+      range: vi.fn(async () => {
+        throw new Error("The operation was aborted");
       }),
-      range: vi.fn(
-        () =>
-          new Promise((_resolve, reject) => {
-            pending.addEventListener("abort", () =>
-              reject(new Error("aborted"))
-            );
-          })
-      ),
     };
     (createServerClient as unknown as ReturnType<typeof vi.fn>).mockReturnValue(
       client
     );
 
-    const walked = getSitemapEntityIds();
-    await vi.advanceTimersByTimeAsync(SITEMAP_QUERY_TIMEOUT_MS);
-
-    await expect(walked).resolves.toEqual({
+    await expect(getSitemapEntityIds()).resolves.toEqual({
       peoples: [],
       countries: [],
       families: [],
       languages: [],
       patronymes: [],
     });
-    vi.useRealTimers();
   });
 
   // @req REQ-110
