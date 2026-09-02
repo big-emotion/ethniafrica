@@ -34,6 +34,7 @@ const FACET_PAGES = [
   "src/app/[lang]/atlas/familles/page.tsx",
   "src/app/[lang]/atlas/pays/page.tsx",
   "src/app/[lang]/atlas/noms/page.tsx",
+  "src/app/[lang]/atlas/langues/page.tsx",
 ];
 
 describe("The facet hub reading is the page's own ground (REQ-114)", () => {

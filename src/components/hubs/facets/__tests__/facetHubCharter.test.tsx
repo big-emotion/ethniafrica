@@ -151,13 +151,13 @@ describe("facet switcher — plain anchors, not a widget", () => {
    * of famille → langue → peuple → pays.
    */
   // @req REQ-114
-  it("reads pays, peuples, familles, then nom", () => {
+  it("runs the corpus hierarchy, then the axis that cuts across it", () => {
     render(<FacetSwitcher active="peoples" />);
 
     const labels = screen
       .getAllByRole("link")
       .map((link) => link.textContent?.trim());
-    expect(labels).toEqual(["Pays", "Peuples", "Familles", "Nom"]);
+    expect(labels).toEqual(["Familles", "Langues", "Peuples", "Pays", "Nom"]);
   });
 
   // @req REQ-114

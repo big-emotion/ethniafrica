@@ -14,7 +14,12 @@ import type { Language } from "@/types/shared";
  * the accent scope and the shell all read, so that "which facet am I on" has
  * exactly one answer instead of three that drift.
  */
-export type FacetKey = "peoples" | "families" | "countries" | "patronymes";
+export type FacetKey =
+  | "peoples"
+  | "families"
+  | "languages"
+  | "countries"
+  | "patronymes";
 
 export interface FacetDefinition {
   key: FacetKey;
@@ -60,20 +65,39 @@ export interface FacetDefinition {
 
 // @req REQ-114
 export const FACETS: readonly FacetDefinition[] = [
-  // Declaration order is the order the switcher walks, and it matches the
-  // Explorer hub's module list above it: pays, peuples, familles. The two are
-  // one running order seen twice, so they are ordered together or the reader
-  // meets the same three entities in two different sequences.
+  /**
+   * Declaration order is the order the switcher walks, and it is the corpus's
+   * own nesting read from the outside in: famille linguistique → langue →
+   * peuple → pays, then the axis that belongs to no rung of it.
+   *
+   * It used to open on Pays, on the reading that a reader reaches for the
+   * country they know. That held while there were three facets and no
+   * hierarchy to see; with five, the switcher is the first place the reader
+   * meets the shape of the corpus, and the site plan, the atlas blurb and the
+   * About page all state that shape in this order. A switcher running a
+   * different one would be the fourth statement disagreeing with three.
+   */
   {
-    key: "countries",
-    page: "countries",
-    entityType: "country",
-    label: "Pays",
-    sectionName: "Pays",
-    eyebrow: "atlas · les pays d'Afrique",
-    title: "Les pays d'Afrique",
+    key: "families",
+    page: "families",
+    entityType: "language-family",
+    label: "Familles",
+    sectionName: "Familles linguistiques",
+    eyebrow: "atlas · les familles linguistiques",
+    title: "Familles linguistiques",
     filterHint:
-      "La liste est faite de pays. Les filtres la restreignent sans changer sa nature : filtrer par famille linguistique montre les pays où cette famille est présente, pas la famille elle-même.",
+      "La liste est faite de familles linguistiques. Les filtres la restreignent sans changer sa nature : filtrer par pays montre les familles présentes dans ce pays, pas le pays lui-même.",
+  },
+  {
+    key: "languages",
+    page: "languages",
+    entityType: "language",
+    label: "Langues",
+    sectionName: "Langues",
+    eyebrow: "atlas · les langues d'Afrique",
+    title: "Les langues d'Afrique",
+    filterHint:
+      "La liste est faite de langues. Les filtres la restreignent sans changer sa nature : filtrer par pays montre les langues qu'on y parle, pas le pays lui-même.",
   },
   {
     key: "peoples",
@@ -87,15 +111,15 @@ export const FACETS: readonly FacetDefinition[] = [
       "La liste est faite de peuples. Les filtres la restreignent sans changer sa nature : filtrer par pays montre les peuples que ce pays documente, pas le pays lui-même.",
   },
   {
-    key: "families",
-    page: "families",
-    entityType: "language-family",
-    label: "Familles",
-    sectionName: "Familles linguistiques",
-    eyebrow: "atlas · les familles linguistiques",
-    title: "Familles linguistiques",
+    key: "countries",
+    page: "countries",
+    entityType: "country",
+    label: "Pays",
+    sectionName: "Pays",
+    eyebrow: "atlas · les pays d'Afrique",
+    title: "Les pays d'Afrique",
     filterHint:
-      "La liste est faite de familles linguistiques. Les filtres la restreignent sans changer sa nature : filtrer par pays montre les familles présentes dans ce pays, pas le pays lui-même.",
+      "La liste est faite de pays. Les filtres la restreignent sans changer sa nature : filtrer par famille linguistique montre les pays où cette famille est présente, pas la famille elle-même.",
   },
   {
     key: "patronymes",
