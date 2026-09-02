@@ -4,6 +4,8 @@
  */
 import { createClient } from "@supabase/supabase-js";
 
+import { fetchWithDeadline } from "./requestDeadline";
+
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
@@ -13,10 +15,14 @@ if (!supabaseUrl || !supabaseAnonKey) {
   );
 }
 
+// @req REQ-054
 export const createServerClient = () => {
   return createClient(supabaseUrl, supabaseAnonKey, {
     auth: {
       persistSession: false,
+    },
+    global: {
+      fetch: fetchWithDeadline,
     },
   });
 };
