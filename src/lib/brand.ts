@@ -75,11 +75,18 @@ export const OG_TITLE =
   process.env.NEXT_PUBLIC_OG_TITLE ||
   "EthniAfrica — Atlas des Peuples d'Afrique";
 
-/** Open Graph description for social media previews */
+/**
+ * Open Graph description for social media previews.
+ *
+ * It names all six corpus classes, and `siteDescription.test.ts` holds it to
+ * the registry so a seventh cannot ship without this sentence saying so. The
+ * three sentences that describe the product to someone who has not arrived
+ * yet named four for as long as the atlas kept growing.
+ */
 // @req REQ-019
 export const OG_DESCRIPTION =
   process.env.NEXT_PUBLIC_OG_DESCRIPTION ||
-  "Encyclopédie des peuples, langues et familles linguistiques d'Afrique";
+  "Encyclopédie des peuples, langues, familles linguistiques, pays, appellations et noms d'Afrique";
 
 /** Default site locale for i18n */
 // @req REQ-019
