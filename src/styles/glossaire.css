@@ -10,7 +10,10 @@
 
 .afh-glossaire [id^="terme-"],
 .afh-glossaire [id^="famille-"] {
-  scroll-margin-top: calc(var(--afh-header-height) + var(--afh-space-lg));
+  /* `--afh-header-height` reads 60px while the bar measures 61, so the
+     breathing room is the whole margin of error. Measured at 430px, this
+     lands a term 15px clear of the masthead. */
+  scroll-margin-top: calc(var(--afh-header-height) + var(--afh-space-2xl));
 }
 
 @media (prefers-reduced-motion: no-preference) {

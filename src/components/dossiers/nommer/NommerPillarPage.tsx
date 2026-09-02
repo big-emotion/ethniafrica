@@ -123,7 +123,7 @@ export const NommerPillarPage = () => (
       <section aria-labelledby="nommer-glossaire">
         <ChapterHeading
           stepLabel="Le vocabulaire"
-          heading="Trente mots, définis une fois"
+          heading={`${GLOSSARY_ENTRIES.length} mots, définis une fois`}
           id="nommer-glossaire"
         />
         <p className="mb-afh-lg mt-afh-md text-afh-body text-afh-text-soft">

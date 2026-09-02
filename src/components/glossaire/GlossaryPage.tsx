@@ -10,9 +10,14 @@ const LANGUAGE: Language = "fr";
 
 // @req REQ-144
 export const GLOSSARY_PAGE_TITLE = "Glossaire";
+/**
+ * Counted rather than written out, and the first draft is why: it announced
+ * "Trente termes" over thirty-one entries. A number stated in prose beside a
+ * list it describes is a number that will be wrong the next time the list
+ * changes — and on this page, of all pages, the copy has to hold.
+ */
 // @req REQ-144
-export const GLOSSARY_PAGE_SUBTITLE =
-  "Les mots avec lesquels l'atlas nomme. Trente termes, chacun avec un exemple pris dans le corpus — ou avec la raison pour laquelle le corpus n'en a pas.";
+export const GLOSSARY_PAGE_SUBTITLE = `Les mots avec lesquels l'atlas nomme. ${GLOSSARY_ENTRIES.length} termes, chacun avec un exemple pris dans le corpus — ou avec la raison pour laquelle le corpus n'en a pas.`;
 
 /**
  * The three questions a reader arrives with, in the order they arrive.

@@ -10,12 +10,15 @@ vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({
     children,
     title,
+    subtitle,
   }: {
     children: React.ReactNode;
     title?: string;
+    subtitle?: string;
   }) => (
     <div>
       <h1>{title}</h1>
+      <p>{subtitle}</p>
       {children}
     </div>
   ),
@@ -68,6 +71,20 @@ describe("the glossary page", () => {
       "href",
       getNommerChapterRoute("fr", entry.chapterRef)
     );
+  });
+
+  // The first draft announced "Trente termes" over thirty-one entries. A count
+  // written in prose beside the list it describes is a count that goes wrong
+  // the next time the list changes, and on this page the copy has to hold.
+  // @req REQ-144
+  it("announces the number of terms it actually renders", () => {
+    const { container } = render(<GlossairePage />);
+    const rendered = container.querySelectorAll('[id^="terme-"]').length;
+
+    expect(rendered).toBe(GLOSSARY_ENTRIES.length);
+    expect(
+      screen.getByText(new RegExp(`${rendered} termes`))
+    ).toBeInTheDocument();
   });
 
   // @req REQ-144
