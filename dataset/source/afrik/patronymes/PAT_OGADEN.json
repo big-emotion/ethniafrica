@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Ogaden désigne à la fois une lignée clanique somalie et un territoire historique ; les généalogies sont documentées comme discours social, non comme équivalents mécaniques de la parenté biologique."
   },
   "id": "PAT_OGADEN",
   "nameMain": "Ogaden",
@@ -11,41 +11,84 @@
     {
       "spelling": "Ogaden",
       "attestations": [
-        { "countryId": "ETH", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "ETH",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "ogaden-thompson-matshanda-2023",
+            "ogaden-irb-2017"
+          ]
+        }
       ]
     },
     {
       "spelling": "Ogadeen",
       "attestations": [
-        { "countryId": "ETH", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue", "ogaden-irb-2017"]
+        }
+      ]
+    },
+    {
+      "spelling": "Ogaadeen",
+      "attestations": [
+        { "countryId": "ETH", "sourceRefs": ["ogaden-irb-2017"] }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Thompson et Matshanda décrivent Ogaden comme le plus grand groupe clanique de l'État régional somali d'Éthiopie et montrent que ses généalogies sont des cadres d'identification patrilinéaire dont les interprétations historiques restent politiquement disputées.",
+        "claimStatus": "established",
+        "sourceRefs": ["ogaden-thompson-matshanda-2023"]
+      },
+      {
+        "claim": "La synthèse canadienne classe Ogaden, aussi écrit Ogaadeen, comme un sous-clan darood et reproduit une généalogie masculine ; elle avertit que ces schémas expriment des appartenances revendiquées et ne cartographient pas nécessairement la parenté biologique exacte.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["ogaden-irb-2017"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_SOMALI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "afrik-candidate-queue",
+        "ogaden-thompson-matshanda-2023",
+        "ogaden-irb-2017"
+      ]
     }
   ],
   "countries": [
     {
       "countryId": "ETH",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "afrik-candidate-queue",
+        "ogaden-thompson-matshanda-2023",
+        "ogaden-irb-2017"
+      ]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
   "bearers": [],
-  "homonyms": [],
+  "homonyms": [
+    {
+      "label": "Ogaden (territoire historique d'Éthiopie)",
+      "entityType": "place",
+      "entityId": null,
+      "distinction": "La littérature distingue la lignée Ogaadeen du territoire appelé Ogaden, dont le nom dérive du groupe clanique ; la présente fiche décrit le nom clanique, pas la région géographique ni les institutions qui en ont repris le nom.",
+      "sourceRefs": ["ogaden-thompson-matshanda-2023", "ogaden-irb-2017"]
+    }
+  ],
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
@@ -54,32 +97,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "ogaden-thompson-matshanda-2023",
+      "title": "Political Identity as Temporal Collapse: Ethiopian Federalism and Contested Ogaden Histories",
+      "url": "https://academic.oup.com/afraf/article/122/486/119/7026175",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Daniel K. Thompson et Namhla Thando Matshanda, African Affairs 122(486), 2023, p. 119-145, DOI 10.1093/afraf/adad003. Le texte intégral a été vérifié : il repose sur terrain et archives, traite explicitement la patrilinéarité, les récits généalogiques disputés et la distinction entre groupe clanique et territoire."
+    },
+    {
+      "sourceKey": "ogaden-irb-2017",
+      "title": "Somalia: The Ogaden clan, including areas of occupation, clan members and affiliation with other clans",
+      "url": "https://www.ecoi.net/en/document/1428637.html",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Commission de l'immigration et du statut de réfugié du Canada, réponse SOM106004.EF, 23 novembre 2017, reproduite par ecoi.net. La réponse complète a été vérifiée : elle donne les graphies Ogaden/Ogaadeen, la classification darood, une généalogie masculine et l'avertissement méthodologique sur les cartes généalogiques."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "L'article de Thompson et Matshanda (2023), la réponse SOM106004.EF, leurs bibliographies et les requêtes « Ogaden/Ogaadeen etymology » ont été examinés ; ils expliquent le transfert du nom clanique au territoire, mais aucune étymologie linguistique du nom lui-même n'a été trouvée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L'article de 2023 et la réponse canadienne documentent concurrence, commerce, mariages et alliances politiques avec d'autres clans, notamment Isaaq, mais aucune parenté à plaisanterie bilatérale entre deux PAT_* existants ; aucune alliance n'est donc encodée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les deux sources décrivent la segmentation clanique et les rôles d'élites, mais n'attachent au nom Ogaden aucune caste ni fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les index d'auteurs, les personnes citées dans l'article de 2023 et les recherches « Ogaden/Ogaadeen person/name » ont été examinés ; les occurrences renvoient surtout à l'affiliation, et aucun porteur décédé pour lequel Ogaden soit clairement un nom personnel n'a été établi."
     }
   ]
 }
