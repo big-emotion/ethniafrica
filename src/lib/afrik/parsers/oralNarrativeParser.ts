@@ -17,7 +17,7 @@ const oralNarrativeSchema = z
         languageFamilyId: nullableText,
         peopleId: nullableText,
         countryId: nullableText,
-        assertionId: z.string().uuid().nullable(),
+        assertionId: z.uuid().nullable(),
       })
       .strict(),
     attribution: z
