@@ -18,12 +18,23 @@
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Chez les Nguni, l'isibongo (patronyme) et les izithakazelo (louanges de clan) sont deux objets distincts : le second dit l'ascendance et gouverne l'exogamie, le premier sert d'identifiant d'état civil.",
+        "claimStatus": "established",
+        "sourceRefs": ["nomina-africana-nguni-naming"]
+      },
+      {
+        "claim": "Ndlovu signifie « éléphant » en langues nguni ; le clan revendique une descendance du troupeau d'éléphants du territoire où il s'est établi.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["iafrika-izithakazelo-ndlovu"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -51,32 +62,41 @@
       "tier": "unverified",
       "source_kind": "repository",
       "notes": "Passage source : dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDEBELE_NORD.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+    },
+    {
+      "sourceKey": "nomina-africana-nguni-naming",
+      "title": "Derivation of given names from ethnonyms, surnames and clan praises: unveiling gendered naming trends in Nguni",
+      "url": "https://journals.co.za/doi/10.10520/ejc-nomina_v39_n1_a3",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Nomina Africana: Journal of African Onomastics, vol. 39 n° 1. Établit l'articulation entre patronyme (isibongo) et louanges de clan (izithakazelo) chez les Nguni."
+    },
+    {
+      "sourceKey": "iafrika-izithakazelo-ndlovu",
+      "title": "Izithakazelo zakwa Ndlovu — Clan Names",
+      "url": "https://iafrika.org/izithakazelo-zakwa-ndlovu-clan-names/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "isSelfIdentification": true,
+      "notes": "Site communautaire de louanges de clan. Auto-identification : cité pour le totem de l'éléphant et la filiation revendiquée par le clan Ndlovu."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "transmissionMode",
-      "reason": "Le passage ne précise pas le mode de transmission du nom."
-    },
-    {
-      "fieldPath": "origin",
-      "reason": "Le passage ne documente aucune origine orale, écrite ou linguistique du nom."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "Aucune alliance entre patronymes n'est documentée dans le passage."
+      "reason": "Le système nguni n'a pas d'équivalent du sanankuya : les izithakazelo lient un clan à ses ancêtres, pas deux clans entre eux."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction sociale propre à ce nom n'est établie au niveau du claim."
+      "reason": "Aucune fonction héréditaire attestée au niveau du clan."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé vérifiable n'est documenté dans le passage."
+      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'est documenté dans le passage."
+      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
     }
   ]
 }

@@ -149,7 +149,7 @@ describe("ETNI-1680 patronyme batch selection manifest", () => {
 
     for (const entry of manifest.entries) {
       expect(Object.keys(entry).sort()).toEqual(ENTRY_KEYS);
-      expect(entry.reviewStatus).toBe("selected_pending_fiche_research");
+      expect(entry.reviewStatus).toBe("fiche_research_first_pass_complete");
 
       const familyFiche = readCorpusJson(entry.familyEvidence.file);
       expect(entry.familyEvidence).toEqual({

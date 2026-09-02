@@ -57,9 +57,23 @@
   "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
-    "oralTraditions": [],
+    "oralTraditions": [
+      {
+        "claim": "Le clan Keïta est celui de Soundiata et de la dynastie impériale du Mali ; la geste lui donne le lion pour ancêtre-totem, d'où l'épithète « fils du Lion ».",
+        "claimStatus": "claimed",
+        "griot": "Djeli Mamadou Kouyaté (Djeliba Koro, Siguiri)",
+        "transcription": "Niane, Djibril Tamsir, Soundjata ou l'épopée mandingue, 1960",
+        "sourceRefs": ["niane-1960"]
+      }
+    ],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le jamu est un nom de clan patrilinéaire : il désigne l'appartenance à un groupe de descendance, et non une filiation individuelle au père.",
+        "claimStatus": "established",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -120,9 +134,21 @@
       "sourceRefs": ["corpus-ppl-malinke-organisation"]
     }
   ],
-  "alliances": [],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_COULIBALY",
+      "allianceType": "sanankuya",
+      "sourceRefs": ["segoublog-sanankuya"]
+    }
+  ],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Soundiata Keïta",
+      "sourceRefs": ["niane-1960"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
@@ -132,28 +158,40 @@
       "tier": "unverified",
       "source_kind": "repository",
       "notes": "Passage source : dataset/source/afrik/peuples/FLG_MANDE/PPL_MALINKE.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+    },
+    {
+      "sourceKey": "niane-1960",
+      "title": "Soundjata ou l'épopée mandingue",
+      "url": "https://books.google.com/books/about/Soundjata.html?id=PtJyAAAAMAAJ",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Niane, Djibril Tamsir, Présence Africaine, 1960. Transcription du récit du griot Djeli Mamadou Kouyaté de Djeliba Koro (Siguiri). Source de référence pour la geste de Soundiata et les lignages qu'elle fonde ; c'est une mise par écrit d'une tradition orale, pas un document d'archive."
+    },
+    {
+      "sourceKey": "jansen-sunjata-paradigm",
+      "title": "Beyond the Mali Empire — A New Paradigm for the Sunjata Epic",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jansen, Jan, Universiteit Leiden. Travail critique sur la transmission de l'épopée et sur le jamu comme institution sociale plutôt que comme mémoire historique ; utilisé ici pour la nature du jamu, non pour dater un ancêtre."
+    },
+    {
+      "sourceKey": "segoublog-sanankuya",
+      "title": "Sinankouya ou Sanankuya : cousinage, parenté à plaisanterie",
+      "url": "https://segoublog.wordpress.com/2019/12/27/piqure-de-rappel-sinankouya-ou-sanankuya-cousinage-parente-a-plaisanterie/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Blog malien. Cité pour les paires de sanankuya nommées (Traoré/Diarra, Keïta/Coulibaly) ; le pacte est rapporté comme remontant à Soundiata, ce que la source n'établit pas elle-même."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Le passage ne documente aucune origine orale, écrite ou linguistique du nom."
-    },
-    {
-      "fieldPath": "alliances",
-      "reason": "Aucune alliance entre patronymes n'est documentée dans le passage."
-    },
-    {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction sociale propre à ce nom n'est établie au niveau du claim."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé vérifiable n'est documenté dans le passage."
+      "reason": "Clan royal de statut horon : la royauté n'est pas une fonction héréditaire de caste au sens du champ."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'est documenté dans le passage."
+      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
     }
   ]
 }

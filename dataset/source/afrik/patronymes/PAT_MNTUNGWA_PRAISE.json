@@ -10,20 +10,21 @@
   "spellings": [
     {
       "spelling": "Mntungwa",
-      "attestations": [
-        {
-          "countryId": "ZAF",
-          "sourceRefs": ["nwu-zulu-names"]
-        }
-      ]
+      "attestations": [{ "countryId": "ZAF", "sourceRefs": ["nwu-zulu-names"] }]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Mntungwa relève des izithakazelo — les louanges de clan nguni, distinctes de l'isibongo (patronyme) : elles nomment les figures marquantes du lignage et se récitent en salutation.",
+        "claimStatus": "established",
+        "sourceRefs": ["nomina-africana-nguni-naming"]
+      }
+    ]
   },
   "peoples": [],
   "countries": [
@@ -45,28 +46,32 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "L'étude présente Mntungwa dans la séquence des izithakazelo khumalo, ce qui fournit une attestation directe comme nom de louange de lignée."
+    },
+    {
+      "sourceKey": "nomina-africana-nguni-naming",
+      "title": "Derivation of given names from ethnonyms, surnames and clan praises: unveiling gendered naming trends in Nguni",
+      "url": "https://journals.co.za/doi/10.10520/ejc-nomina_v39_n1_a3",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Nomina Africana: Journal of African Onomastics, vol. 39 n° 1. Établit l'articulation entre patronyme (isibongo) et louanges de clan (izithakazelo) chez les Nguni."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "peoples",
-      "reason": "Le lien de sélection vers la fiche ndebele du Nord ne suffit pas à établir une association ethnique directe ; aucune attribution à une personne n'est faite."
+      "fieldPath": "alliances",
+      "reason": "Le système nguni n'a pas d'équivalent du sanankuya : les izithakazelo lient un clan à ses ancêtres, pas deux clans entre eux."
     },
     {
-      "fieldPath": "origin",
-      "reason": "La source atteste la séquence de louange, mais ne fournit pas une tradition d'origine transcrite complète."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le mode précis de transmission de Mntungwa n'est pas établi par l'extrait académique."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "La distinction avec une entité de clan Khumalo reste à documenter par une source séparée."
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction héréditaire attestée au niveau du clan."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur individuel n'est ajouté à partir d'une séquence de louange."
+      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
     }
   ]
 }

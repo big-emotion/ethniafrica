@@ -15,10 +15,7 @@
           "countryId": "BFA",
           "sourceRefs": ["corpus-ppl-dafing-organisation"]
         },
-        {
-          "countryId": "MLI",
-          "sourceRefs": ["corpus-ppl-dafing-organisation"]
-        }
+        { "countryId": "MLI", "sourceRefs": ["corpus-ppl-dafing-organisation"] }
       ]
     }
   ],
@@ -27,7 +24,13 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le jamu est un nom de clan patrilinéaire : il désigne l'appartenance à un groupe de descendance, et non une filiation individuelle au père.",
+        "claimStatus": "established",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -49,7 +52,10 @@
     }
   ],
   "alliances": [],
-  "casteOrSocialFunction": null,
+  "casteOrSocialFunction": {
+    "value": "Jeli (griot) : les Diabaté comptent parmi les clans de jeli identifiés comme tels dans le Manden, aux côtés des Kouyaté, Kanté et Cissoko.",
+    "sourceRefs": ["jelis-multilingualism-2024"]
+  },
   "bearers": [],
   "homonyms": [],
   "sources": [
@@ -60,28 +66,36 @@
       "tier": "unverified",
       "source_kind": "repository",
       "notes": "Passage source : dataset/source/afrik/peuples/FLG_MANDE/PPL_DAFING.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+    },
+    {
+      "sourceKey": "jansen-sunjata-paradigm",
+      "title": "Beyond the Mali Empire — A New Paradigm for the Sunjata Epic",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jansen, Jan, Universiteit Leiden. Travail critique sur la transmission de l'épopée et sur le jamu comme institution sociale plutôt que comme mémoire historique ; utilisé ici pour la nature du jamu, non pour dater un ancêtre."
+    },
+    {
+      "sourceKey": "jelis-multilingualism-2024",
+      "title": "Language choices reflecting social changes: multilingualism in the popular music of Guinean jelis",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/14790718.2024.2379547",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Journal of Multilingual and Multicultural Development, 2024. Établit que les jeli se recrutent dans des clans identifiables (Kouyaté, Diabaté, Kanté, Cissoko) et que la fonction est héréditaire."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Le passage ne documente aucune origine orale, écrite ou linguistique du nom."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "Aucune alliance entre patronymes n'est documentée dans le passage."
-    },
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction sociale propre à ce nom n'est établie au niveau du claim."
+      "reason": "Aucune paire de sanankuya nommant les Diabaté n'a été trouvée."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé vérifiable n'est documenté dans le passage."
+      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'est documenté dans le passage."
+      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
     }
   ]
 }

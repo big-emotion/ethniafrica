@@ -35,7 +35,13 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le nom relève des quatre clans par lesquels les Fulɓe se reconnaissent — Diallo, Bâ, Barry et Sow — dont la quadripartition structure l'identification clanique du Fouta.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["bolaaro-clans-peuls"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -78,28 +84,32 @@
       "tier": "unverified",
       "source_kind": "repository",
       "notes": "Passage source : dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_FULA_FORET.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+    },
+    {
+      "sourceKey": "bolaaro-clans-peuls",
+      "title": "Les clans peulhs du Fouta Djallon",
+      "url": "https://bolaaro.wordpress.com/2016/02/13/les-clans-peulhs-du-fouta-djallon/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Blog communautaire peul. Cité pour les quatre clans fondateurs (Diallo, Bâ, Barry, Sow) ; aucune source académique n'a été trouvée pour cette quadripartition lors de la passe."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Le passage ne documente aucune origine orale, écrite ou linguistique du nom."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "Aucune alliance entre patronymes n'est documentée dans le passage."
+      "reason": "Le dendiraagal (parenté à plaisanterie peule) est documenté comme institution mais aucune paire nommant ce clan n'a été trouvée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction sociale propre à ce nom n'est établie au niveau du claim."
+      "reason": "Aucune fonction héréditaire attestée au niveau du clan."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé vérifiable n'est documenté dans le passage."
+      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'est documenté dans le passage."
+      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
     }
   ]
 }

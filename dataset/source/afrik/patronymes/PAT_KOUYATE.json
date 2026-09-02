@@ -27,19 +27,30 @@
           "countryId": "GHA",
           "sourceRefs": ["corpus-ppl-dioula-organisation"]
         },
-        {
-          "countryId": "GNB",
-          "sourceRefs": ["corpus-ppl-dioula-organisation"]
-        }
+        { "countryId": "GNB", "sourceRefs": ["corpus-ppl-dioula-organisation"] }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
-    "oralTraditions": [],
+    "oralTraditions": [
+      {
+        "claim": "Les Kouyaté se disent descendants de Balla Fasséké Kouyaté, griot de Soundiata, et jeli attitrés des princes Keïta du Manden depuis le XIIIe siècle.",
+        "claimStatus": "claimed",
+        "griot": "Djeli Mamadou Kouyaté (Djeliba Koro, Siguiri)",
+        "transcription": "Niane, Djibril Tamsir, Soundjata ou l'épopée mandingue, 1960",
+        "sourceRefs": ["niane-1960"]
+      }
+    ],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le jamu est un nom de clan patrilinéaire : il désigne l'appartenance à un groupe de descendance, et non une filiation individuelle au père.",
+        "claimStatus": "established",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -76,8 +87,22 @@
     }
   ],
   "alliances": [],
-  "casteOrSocialFunction": null,
-  "bearers": [],
+  "casteOrSocialFunction": {
+    "value": "Jeli (griot) : fonction héréditaire de dépositaire de la parole, de l'histoire et de la médiation, exercée par un groupe endogame distinct des clans horon.",
+    "sourceRefs": ["jelis-multilingualism-2024"]
+  },
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Balla Fasséké Kouyaté",
+      "sourceRefs": ["niane-1960"]
+    },
+    {
+      "status": "deceased",
+      "displayName": "Djeli Mamadou Kouyaté",
+      "sourceRefs": ["niane-1960"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
@@ -87,32 +112,40 @@
       "tier": "unverified",
       "source_kind": "repository",
       "notes": "Passage source : dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+    },
+    {
+      "sourceKey": "niane-1960",
+      "title": "Soundjata ou l'épopée mandingue",
+      "url": "https://books.google.com/books/about/Soundjata.html?id=PtJyAAAAMAAJ",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Niane, Djibril Tamsir, Présence Africaine, 1960. Transcription du récit du griot Djeli Mamadou Kouyaté de Djeliba Koro (Siguiri). Source de référence pour la geste de Soundiata et les lignages qu'elle fonde ; c'est une mise par écrit d'une tradition orale, pas un document d'archive."
+    },
+    {
+      "sourceKey": "jansen-sunjata-paradigm",
+      "title": "Beyond the Mali Empire — A New Paradigm for the Sunjata Epic",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jansen, Jan, Universiteit Leiden. Travail critique sur la transmission de l'épopée et sur le jamu comme institution sociale plutôt que comme mémoire historique ; utilisé ici pour la nature du jamu, non pour dater un ancêtre."
+    },
+    {
+      "sourceKey": "jelis-multilingualism-2024",
+      "title": "Language choices reflecting social changes: multilingualism in the popular music of Guinean jelis",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/14790718.2024.2379547",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Journal of Multilingual and Multicultural Development, 2024. Établit que les jeli se recrutent dans des clans identifiables (Kouyaté, Diabaté, Kanté, Cissoko) et que la fonction est héréditaire."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "transmissionMode",
-      "reason": "Le passage ne précise pas le mode de transmission du nom."
-    },
-    {
-      "fieldPath": "origin",
-      "reason": "Le passage ne documente aucune origine orale, écrite ou linguistique du nom."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "Aucune alliance entre patronymes n'est documentée dans le passage."
-    },
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction sociale propre à ce nom n'est établie au niveau du claim."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé vérifiable n'est documenté dans le passage."
+      "reason": "Aucune paire de sanankuya nommant les Kouyaté n'a été trouvée lors de la passe ; la relation jeli/horon n'est pas un sanankuya."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'est documenté dans le passage."
+      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
     }
   ]
 }

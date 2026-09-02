@@ -10,20 +10,21 @@
   "spellings": [
     {
       "spelling": "Abikan",
-      "attestations": [
-        {
-          "countryId": "NGA",
-          "sourceRefs": ["ayeleru-oriki"]
-        }
-      ]
+      "attestations": [{ "countryId": "NGA", "sourceRefs": ["ayeleru-oriki"] }]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "L'oríkì orílẹ̀ est la louange de lignage : distincte de l'oríkì personnel, elle nomme les fondateurs et la localité d'origine et se transmet, chaque enfant héritant du vers collectif de sa famille.",
+        "claimStatus": "established",
+        "sourceRefs": ["discoveryoruba-oriki"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -51,24 +52,32 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "L'article identifie la séquence généalogique Omo Abikan comme un oríkì yoruba, explicitement décrit comme nom de louange de lignée."
+    },
+    {
+      "sourceKey": "discoveryoruba-oriki",
+      "title": "The Power of Oríkì: How Praise Names Shape Identity",
+      "url": "https://discoveryoruba.com/power-of-oriki-how-praise-names-shape-identity/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Site culturel yoruba. Cité pour la distinction entre oríkì personnel et oríkì orílẹ̀ (louange de lignage, héritée), non pour un lignage particulier."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "La source atteste la fonction de louange de lignée, mais ne fournit pas une tradition d'origine transcrite complète."
+      "fieldPath": "alliances",
+      "reason": "Le système yoruba ne documente pas d'alliance formelle entre oríkì de lignages."
     },
     {
-      "fieldPath": "transmissionMode",
-      "reason": "Le mode précis de transmission d'Abikan n'est pas établi par l'extrait académique."
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction héréditaire attestée pour ce lignage."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur individuel n'est ajouté à partir d'un exemple littéraire."
+      "reason": "Aucun porteur décédé n'a pu être rattaché au lignage par une source dédiée lors de la passe."
     },
     {
-      "fieldPath": "alliances",
-      "reason": "Aucune alliance entre lignées n'est documentée par la source retenue."
+      "fieldPath": "homonyms",
+      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
     }
   ]
 }

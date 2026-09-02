@@ -11,14 +11,8 @@
     {
       "spelling": "Dlamini",
       "attestations": [
-        {
-          "countryId": "SWZ",
-          "sourceRefs": ["corpus-ppl-swazi-organisation"]
-        },
-        {
-          "countryId": "ZAF",
-          "sourceRefs": ["corpus-ppl-swazi-organisation"]
-        }
+        { "countryId": "SWZ", "sourceRefs": ["corpus-ppl-swazi-organisation"] },
+        { "countryId": "ZAF", "sourceRefs": ["corpus-ppl-swazi-organisation"] }
       ]
     }
   ],
@@ -26,8 +20,20 @@
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "writtenChronicles": [
+      {
+        "claim": "Les Nkosi Dlamini se sont détachés du courant migratoire nguni conduit par le chef Ngwane et se sont installés dans la région de la Pongolo, absorbant les clans nguni et sotho présents.",
+        "claimStatus": "established",
+        "sourceRefs": ["un-eswatini-country-facts"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Chez les Nguni, l'isibongo (patronyme) et les izithakazelo (louanges de clan) sont deux objets distincts : le second dit l'ascendance et gouverne l'exogamie, le premier sert d'identifiant d'état civil.",
+        "claimStatus": "established",
+        "sourceRefs": ["nomina-africana-nguni-naming"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -50,7 +56,13 @@
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Sobhuza II",
+      "sourceRefs": ["un-eswatini-country-facts"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
@@ -60,28 +72,36 @@
       "tier": "unverified",
       "source_kind": "repository",
       "notes": "Passage source : dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_SWAZI.json#content.organization.clanOrganization. Le tier hérité n'est pas résolu ; la revue claim-level reste requise."
+    },
+    {
+      "sourceKey": "un-eswatini-country-facts",
+      "title": "eSwatini — Country Facts (UN Member States)",
+      "url": "https://www.un.int/eswatini/swaziland/country-facts",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Mission permanente de l'Eswatini auprès des Nations unies. Source d'État pour la scission des Nkosi Dlamini du courant nguni sous Ngwane et leur installation sur la Pongolo."
+    },
+    {
+      "sourceKey": "nomina-africana-nguni-naming",
+      "title": "Derivation of given names from ethnonyms, surnames and clan praises: unveiling gendered naming trends in Nguni",
+      "url": "https://journals.co.za/doi/10.10520/ejc-nomina_v39_n1_a3",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Nomina Africana: Journal of African Onomastics, vol. 39 n° 1. Établit l'articulation entre patronyme (isibongo) et louanges de clan (izithakazelo) chez les Nguni."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Le passage ne documente aucune origine orale, écrite ou linguistique du nom."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "Aucune alliance entre patronymes n'est documentée dans le passage."
+      "reason": "Le système nguni n'a pas d'équivalent du sanankuya : les izithakazelo lient un clan à ses ancêtres, pas deux clans entre eux."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction sociale propre à ce nom n'est établie au niveau du claim."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé vérifiable n'est documenté dans le passage."
+      "reason": "Clan royal de l'Eswatini : la royauté n'est pas une fonction héréditaire de caste au sens du champ."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'est documenté dans le passage."
+      "reason": "Dlamini est porté dans les branches xhosa, zoulou, swazi et sotho du groupe nguni ; faute de source établissant des origines distinctes, ces branches ne sont pas traitées comme des homonymes."
     }
   ]
 }

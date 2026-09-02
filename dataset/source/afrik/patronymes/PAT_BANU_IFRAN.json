@@ -11,28 +11,34 @@
     {
       "spelling": "Banu Ifran",
       "attestations": [
-        {
-          "countryId": "MAR",
-          "sourceRefs": ["brown-sale-1971"]
-        }
+        { "countryId": "MAR", "sourceRefs": ["brown-sale-1971"] }
       ]
     },
     {
       "spelling": "Banu Yefren",
       "attestations": [
-        {
-          "countryId": "DZA",
-          "sourceRefs": ["zenata-branches-2021"]
-        }
+        { "countryId": "DZA", "sourceRefs": ["zenata-branches-2021"] }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "other",
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "writtenChronicles": [
+      {
+        "claim": "Ibn Khaldûn fait dériver le nom des Banu Ifran d'un ancêtre éponyme, Ifri, dont le nom signifie « caverne » en langues berbères.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["ibn-khaldun-ibar", "ethnonymie-berbere-ibar"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Ibn Khaldûn expose le paradigme onomastique zénète à partir de l'ancêtre éponyme Jana : Zana/Zanat, Iznaten, Zanata — la nisba tribale y est construite sur le nom de l'ancêtre.",
+        "claimStatus": "established",
+        "sourceRefs": ["ethnonymie-berbere-ibar"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -62,24 +68,44 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "L'article universitaire atteste la variante Banu Yefren et présente le groupe comme une branche zénète du Maghreb central."
+    },
+    {
+      "sourceKey": "ibn-khaldun-ibar",
+      "title": "Histoire des Berbères et des dynasties musulmanes de l'Afrique septentrionale (Kitāb al-ʿIbar)",
+      "url": "https://archive.org/details/histoiredesberbe01ibnk",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Ibn Khaldūn, XIVe siècle ; traduction de William MacGuckin de Slane, Alger, Imprimerie du gouvernement, 1852. La notice sur les Zénètes et leurs branches court sur les tomes I et III ; le lien pointe le tome I. Traduction coloniale du XIXe siècle, à lire comme telle."
+    },
+    {
+      "sourceKey": "ethnonymie-berbere-ibar",
+      "title": "Ibn Khaldûn, une source historique majeure : l'apport du Kitâb al-'Ibar à la connaissance de l'ethnonymie berbère",
+      "url": "https://www.researchgate.net/publication/382346129_Ibn_Khaldun_une_source_historique_majeure_l'apport_du_Kitab_al-'Ibar_a_la_connaissance_de_l'ethnonymie_berbere",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Analyse moderne de l'ethnonymie berbère chez Ibn Khaldûn : paradigme onomastique Zana/Zanat/Iznaten/Zanata et branches principales (Jarawa, Maghrawa, Banu Ifren)."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "nisbaSubtype",
-      "reason": "Les sources établissent une désignation tribale historique, mais pas son emploi comme nisba personnelle ; le sous-type reste donc vide."
+      "fieldPath": "alliances",
+      "reason": "Les alliances entre tribus zénètes relèvent de l'histoire politique et n'ont pas été établies comme alliances entre noms lors de la passe."
     },
     {
-      "fieldPath": "transmissionMode",
-      "reason": "Aucune source ne permet de traiter Banu Ifran comme un nom de famille héréditaire moderne."
-    },
-    {
-      "fieldPath": "countries",
-      "reason": "Les codes pays des attestations situent les contextes documentaires ; aucune distribution contemporaine du nom n'est affirmée."
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction héréditaire attestée au niveau de la tribu."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur individuel sûr n'est documenté dans le périmètre de cette fiche."
+      "reason": "Aucun porteur décédé n'a pu être rattaché à la tribu par une source dédiée lors de la passe."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
     }
-  ]
+  ],
+  "nisbaSubtype": {
+    "value": "tribal",
+    "sourceRefs": ["ethnonymie-berbere-ibar"]
+  }
 }

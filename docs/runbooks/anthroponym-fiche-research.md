@@ -7,32 +7,59 @@ The per-fiche research pass that ETNI-1461 never ran.
 ETNI-1461 shipped 30 `PAT_*` fiches and closed. What it actually delivered was a
 **selection**: each fiche is a short dossier derived from a single passage of
 prose already present in a peoples fiche, under the directive _"ne pas étendre
-les affirmations sans source dédiée"_. The selection manifest still says so —
-all 30 entries sit at `selected_pending_fiche_research`.
+les affirmations sans source dédiée"_. The selection manifest said so — all 30
+entries sat at `selected_pending_fiche_research` until the pass below ran.
 
-Measured across the 30 fiches:
+26 of the 30 had an empty `externalSelectionSources`: no source outside the
+corpus was consulted. The Jira ticket is closed; the corpus said the work was
+pending.
 
-| Field                                                                       | Filled                            |
-| --------------------------------------------------------------------------- | --------------------------------- |
-| `origin.oralTraditions` / `writtenChronicles` / `linguisticReconstructions` | 0 / 0 / 0                         |
-| `alliances`                                                                 | 0                                 |
-| `bearers`                                                                   | 0                                 |
-| `homonyms`                                                                  | 0                                 |
-| `casteOrSocialFunction`                                                     | 0                                 |
-| `spellings`                                                                 | 31 across 30 fiches — no variants |
-| declared `gaps`                                                             | 149                               |
+A first pass of this protocol has since run, via
+`scripts/afrik/enrichPatronymeFiches.mjs`. Measured across the 30 fiches:
 
-26 of the 30 have an empty `externalSelectionSources`: no source outside the
-corpus was consulted. The Jira ticket is closed; the corpus says the work is
-pending. This protocol closes that gap.
+| Field                              | Before | After |
+| ---------------------------------- | -----: | ----: |
+| `origin.oralTraditions`            |      0 |     3 |
+| `origin.writtenChronicles`         |      0 |     7 |
+| `origin.linguisticReconstructions` |      0 |    36 |
+| `alliances`                        |      0 |     4 |
+| `bearers`                          |      0 |     5 |
+| `homonyms`                         |      0 |     1 |
+| `casteOrSocialFunction`            |      0 |     2 |
+| `transmissionMode` still `other`   |     13 |     0 |
+| `sources`                          |     33 |    84 |
+| declared `gaps`                    |    149 |   109 |
+
+The 109 remaining gaps are the point, not a shortfall. Each now says what was
+searched and did not turn up, which is a finding; before, they said the corpus
+passage did not mention it, which was a to-do. Where a whole naming system makes
+a field meaningless — a non-hereditary patronymic cannot carry a hereditary
+caste, and homonymy is its normal condition rather than a datum — the gap says
+so instead of implying the research simply failed.
 
 ## What a researcher is asked to produce
 
-One strict-model JSON proposal per fiche, conforming to `public/modele-nom.json`,
-in which **every claim carries its own source entry** — not a source inherited
-from the peoples fiche the name was extracted from. A field that research cannot
-establish stays a declared `gap` with a reason. An invented etymology is worse
-than an empty chapter.
+One strict-model JSON proposal per fiche in which **every claim carries its own
+source entry** — not a source inherited from the peoples fiche the name was
+extracted from. A field that research cannot establish stays a declared `gap`
+with a reason. An invented etymology is worse than an empty chapter.
+
+The shape is `PatronymeDossier` in `src/lib/afrik/parsers/patronymeTypes.ts`,
+not `public/modele-nom.json` — that file is the _appellation_ model, addressed
+by `PPL_*`, and describes the ethnonym dossier served at `/v2/names`. Two
+constraints only the real type states:
+
+- `origin.oralTraditions[]` requires a `griot` and a `transcription` alongside
+  the claim. An oral tradition with no named transmitter does not typecheck,
+  which is the schema refusing an unattributable "the ancestors say".
+- `alliances[].targetPatronymeId` must be another `PAT_*` in the batch, and
+  self-alliance is rejected. A joking-kinship pair is only recordable when both
+  patronyms have fiches.
+
+`source_kind` is a closed vocabulary — `SOURCE_KINDS` in `src/types/sources.ts`,
+mirroring the `sources_source_kind_check` constraint of migration 031. It has no
+`book`, `blog` or `website`: a scholarly work is `academic`, a community or
+personal site is `community`, a primary historical document is `archive`.
 
 Fiche prose is written in French; this document and any commit message are in
 English, per the repository convention.
@@ -43,7 +70,8 @@ Paste this per fiche, substituting the fiche id.
 
 ```text
 You are an Africanist anthroponymist. Research the AFRIK name fiche <PAT_ID> and
-return one strict-model JSON proposal conforming to public/modele-nom.json.
+return one JSON proposal conforming to PatronymeDossier in
+src/lib/afrik/parsers/patronymeTypes.ts.
 
 Read first, before searching anything:
   - dataset/source/afrik/patronymes/<PAT_ID>.json — the current skeletal fiche

@@ -11,10 +11,7 @@
     {
       "spelling": "Ghebremichael",
       "attestations": [
-        {
-          "countryId": "ERI",
-          "sourceRefs": ["munden-eritrean-names"]
-        }
+        { "countryId": "ERI", "sourceRefs": ["munden-eritrean-names"] }
       ]
     }
   ],
@@ -23,7 +20,18 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Ghebre procède du guèze gäbrä, « serviteur de » ; Ghebremichael se lit « serviteur de Michel », composé théophore formé sur l'archange.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["familysearch-ethiopia-naming"]
+      },
+      {
+        "claim": "Le système habesha ne comporte pas de nom de famille héréditaire : le second élément est le nom personnel du père, celui du grand-père servant à désambiguïser. Il change donc à chaque génération.",
+        "claimStatus": "established",
+        "sourceRefs": ["cultural-atlas-ethiopian-naming"]
+      }
+    ]
   },
   "peoples": [],
   "countries": [
@@ -45,24 +53,44 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "La note sur les noms érythréens identifie Ghebremichael comme nom personnel du père dans Yohannes Ghebremichael Kifle et explique que cet élément n'est pas un nom de famille héréditaire."
+    },
+    {
+      "sourceKey": "cultural-atlas-ethiopian-naming",
+      "title": "Ethiopian Culture — Naming",
+      "url": "https://culturalatlas.sbs.com.au/ethiopian-culture/ethiopian-culture-naming",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Cultural Atlas, publié par SBS (radiodiffuseur public australien). Établit l'absence de nom de famille et la structure prénom + prénom du père, le grand-père servant à désambiguïser."
+    },
+    {
+      "sourceKey": "familysearch-ethiopia-naming",
+      "title": "Ethiopia Naming Customs",
+      "url": "https://www.familysearch.org/en/wiki/Ethiopia_Naming_Customs",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Wiki généalogique de FamilySearch. Contributif : cité pour les éléments guèzes Gäbrä (« serviteur de ») et Wäldä (« fils de »), à recouper sur un dictionnaire de guèze."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "peoples",
-      "reason": "Le lien de recherche vers une fiche tigréenne ne suffit pas à attribuer une identité ethnique à la personne citée par l'exemple."
+      "fieldPath": "alliances",
+      "reason": "Un patronyme non héréditaire ne désigne pas de groupe : aucune alliance entre noms n'est possible dans ce système."
     },
     {
-      "fieldPath": "origin",
-      "reason": "L'étymologie et les variantes de translittération ne sont pas établies par la source retenue."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Cette fiche documente Ghebremichael comme élément du nom personnel du père, et non comme nom de famille héréditaire ; aucune lignée permanente n'est affirmée."
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction héréditaire ne peut s'attacher à un nom qui change à chaque génération."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'exemple académique illustre une structure de nom et n'est pas traité comme une attribution ethnique ou comme une fiche de personne."
+      "reason": "Aucun porteur décédé n'a pu être rattaché au nom par une source dédiée lors de la passe ; dans ce système, le partage d'un second élément n'établit aucune parenté."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "L'homonymie est la règle et non l'exception dans un système patronymique non héréditaire : elle n'y est pas une donnée à recenser."
     }
-  ]
+  ],
+  "patronymicChainDepth": {
+    "generations": 3,
+    "sourceRefs": ["cultural-atlas-ethiopian-naming"]
+  }
 }
