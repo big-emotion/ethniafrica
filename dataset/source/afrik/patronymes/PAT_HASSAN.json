@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. La graphie Hassan peut représenter deux noms arabes distincts ; cette ambiguïté est conservée au lieu d'imposer une étymologie unique."
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
   },
   "id": "PAT_HASSAN",
   "nameMain": "Hassan",
@@ -11,18 +11,39 @@
     {
       "spelling": "Hassan",
       "attestations": [
-        { "countryId": "TCD", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "SDN", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "DJI", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "SOM", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "TZA", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "EGY", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "TCD",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "SDN",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "DJI",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "SOM",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "TZA",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "EGY",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     },
     {
       "spelling": "Xasan",
       "attestations": [
-        { "countryId": "SOM", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SOM",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
@@ -33,9 +54,9 @@
     "writtenChronicles": [],
     "linguisticReconstructions": [
       {
-        "claim": "La graphie Hassan est ambiguë : elle représente le plus souvent l'arabe Ḥasan (حسن), mais peut aussi transcrire Ḥassān (حسّان), nom distinct interprété comme « embellisseur, améliorateur ». La même notice relie la forme somalie Xasan à Ḥasan.",
-        "claimStatus": "contested",
-        "sourceRefs": ["hassan-behindthename"]
+        "claim": "L'entrée consultée classe Hassan comme un nom de famille formé sur le nom personnel Hassan et atteste la graphie حسن. Cette formation existe dans plusieurs espaces linguistiques et ne prouve aucune appartenance africaine exclusive.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["btn-surname-hassan"]
       }
     ]
   },
@@ -43,7 +64,7 @@
     {
       "peopleId": "PPL_SOMALI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue", "hassan-behindthename"]
+      "sourceRefs": ["afrik-candidate-queue"]
     },
     {
       "peopleId": "PPL_SWAHILI",
@@ -99,41 +120,49 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Cette entrée est conservée uniquement comme provenance des attestations que la recherche de cette fiche n'a pas corroborées ; les sources réelles consultées et les limites de la recherche sont consignées dans les autres entrées et dans gaps."
+      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
     },
     {
-      "sourceKey": "hassan-behindthename",
-      "title": "Meaning, origin and history of the name Hassan",
-      "url": "https://www.behindthename.com/name/hassan",
+      "sourceKey": "btn-surname-hassan",
+      "title": "Meaning, origin and history of the surname Hassan — Behind the Name",
+      "url": "https://surnames.behindthename.com/name/hassan",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Behind the Name, notice consultée intégralement le 2 septembre 2026. Elle distingue explicitement حسن et حسّان, donne leurs prononciations et relie Xasan au somali. Elle cite A Dictionary of Muslim Names de Salahuddin Ahmed (NYU, 1999, p. 70) pour Ḥassān ; cet ouvrage n'a pas été consulté directement."
+      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle classe Hassan comme nom de famille arabe, persan et ourdou issu du nom personnel Hassan, avec la graphie حسن. Elle n'établit aucun rattachement africain exclusif."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "peoples",
-      "reason": "La notice communautaire étaye Xasan comme forme somalie et Hassan comme graphie arabe, mais les recherches ciblées n'ont pas établi un usage propre aux Swahili ni une attestation ethnographique des Arabes d'Afrique."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « Hassan anthroponymie », « Hassan onomastique », « Hassan surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune tradition orale attribuée à un griot ou informateur nommé, accompagnée d'une transcription vérifiable, n'a été trouvée."
     },
     {
-      "fieldPath": "countries",
-      "reason": "Les catalogues de noms du Tchad, Soudan, Djibouti, Somalie, Tanzanie et Égypte ont été recherchés ; aucune source homogène n'a établi les six associations et elles restent au niveau de la file candidate."
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches exactes « Hassan anthroponymie », « Hassan onomastique », « Hassan surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune chronique historique consultée ne rattache la fiche à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Hassan anthroponymie », « Hassan onomastique », « Hassan surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. La ou les sources propres au nom ne démontrent pas une association exclusive avec les peuples indiqués par la file d'attente ; ces rattachements restent non vérifiés."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Les requêtes « Hassan/Xasan joking relationship/alliance » par peuple n'ont livré aucune parenté à plaisanterie entre deux PAT_* existants."
+      "reason": "Les recherches « Hassan alliance à plaisanterie », « Hassan joking relationship » et « Hassan parenté à plaisanterie » n'ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "La notice traite Hassan comme nom individuel et n'y attache aucune caste ni fonction sociale héréditaire ; les recherches par peuple n'ont rien ajouté."
+      "reason": "Les recherches « Hassan caste », « Hassan métier héréditaire » et « Hassan social function » n'ont livré aucune fonction sociale héréditaire propre aux porteurs de cette graphie. Une étymologie professionnelle éventuelle ne prouve pas une caste."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Les catalogues biographiques ont été interrogés pour Hassan, Hasan, Ḥassān et Xasan ; aucun porteur décédé n'a pu être relié sans ambiguïté à l'une des associations de cette fiche par une source individuelle dédiée."
+      "reason": "Les recherches biographiques exactes sur « Hassan » dans les catalogues et répertoires consultés n'ont pas permis d'isoler un porteur décédé dont ce segment soit explicitement documenté dans la position anthroponymique pertinente. Les personnes vivantes repérées ont été exclues."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Les graphies Hassan, Hasan et Xasan ont été recherchées comme noms individuels, noms de famille et toponymes ; aucune entité homonyme distincte répondant au modèle du corpus n'a été isolée."
+      "reason": "Les recherches exactes « Hassan homonym surname », « Hassan homonyme patronyme » et les variantes graphiques de la fiche n'ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "Les sources propres à « Hassan » ne suffisent pas à confirmer les pays hérités de la file d'attente ; les recherches exactes par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
   },
   "id": "PAT_AKINYI",
   "nameMain": "Akinyi",
@@ -11,7 +11,10 @@
     {
       "spelling": "Akinyi",
       "attestations": [
-        { "countryId": "KEN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "KEN",
+          "sourceRefs": ["oluoch-dholuo-toponyms-2022"]
+        }
       ]
     }
   ],
@@ -20,20 +23,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Akinyi est documenté comme un nom féminin donné à une enfant née au lever du jour, entre environ 5 h et 7 h.",
+        "claimStatus": "established",
+        "sourceRefs": ["oluoch-dholuo-toponyms-2022", "onyoyo-dholuo-grammar"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_LUO",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["oluoch-dholuo-toponyms-2022"]
     }
   ],
   "countries": [
     {
       "countryId": "KEN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["oluoch-dholuo-toponyms-2022"]
     }
   ],
   "alliances": [],
@@ -42,34 +51,46 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "sourceKey": "oluoch-dholuo-toponyms-2022",
+      "title": "A Morpho-semantic Study of Toponyms in Dholuo",
+      "url": "https://erepository.uonbi.ac.ke/items/a3c4bee8-cbe3-4861-95be-02de1999ade8",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Mémoire d’Angeline A. Oluoch, University of Nairobi, 2022. Les pages consacrées au système anthroponymique dholuo donnent séparément les noms de naissance Akinyi, Ochieng, Odhiambo, Onyango et Otieno avec leur tranche horaire. La source est citée dans chaque fiche seulement pour le nom qu’elle énonce."
+    },
+    {
+      "sourceKey": "onyoyo-dholuo-grammar",
+      "title": "Dholuo Grammar for Beginners",
+      "url": "https://erepository.uonbi.ac.ke/bitstream/handle/11295/71359/Dholuo%20grammar%20for%20beginners.pdf?sequence=1",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Grammaire de Peter Onyango Onyoyo, Lake Publishers & Enterprises. La section sur les noms personnels confirme les séries liées au moment de la naissance. Le PDF intégral a été consulté depuis le dépôt de l’University of Nairobi."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Akinyi tradition orale », « Akinyi griot » et « Akinyi oral history », ainsi que les sections anthroponymiques d’Oluoch (2022) et de Dholuo Grammar for Beginners, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Akinyi chronicle », « Akinyi history » et « Akinyi genealogy », complétées par les sections anthroponymiques d’Oluoch (2022) et de Dholuo Grammar for Beginners, n’ont livré aucune chronique primaire qui explique l’origine du nom."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Akinyi joking kinship », « Akinyi name alliance » et « Akinyi clan pact », ainsi que les sections anthroponymiques d’Oluoch (2022) et de Dholuo Grammar for Beginners, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Akinyi caste », « Akinyi occupational group » ainsi que les passages sociaux consultés dans les sections anthroponymiques d’Oluoch (2022) et de Dholuo Grammar for Beginners, n’ont établi aucune fonction héréditaire propre à ce nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches biographiques et nécrologiques sur « Akinyi » dans les catalogues universitaires et institutionnels, complétées par les sections anthroponymiques d’Oluoch (2022) et de Dholuo Grammar for Beginners, n’ont pas permis de vérifier un porteur décédé avec une identité suffisamment précise ; les personnes vivantes repérées ne sont pas ajoutées sans auto-identification."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches sur la graphie exacte « Akinyi » dans les index onomastiques et les sections anthroponymiques d’Oluoch (2022) et de Dholuo Grammar for Beginners n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
     }
   ]
 }

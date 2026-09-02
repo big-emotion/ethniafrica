@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Le sens arabe « lumière » et la forme somalie Nuur sont documentés par une notice communautaire qui renvoie à des dictionnaires imprimés non consultés directement."
+    "directives": "Dossier français distinguant les chaînes de noms non héréditaires soudanaise et somalie."
   },
   "id": "PAT_NUR",
   "nameMain": "Nur",
@@ -11,20 +11,31 @@
     {
       "spelling": "Nur",
       "attestations": [
-        { "countryId": "SDN", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "SOM", "sourceRefs": ["afrik-candidate-queue"] }
-      ]
-    },
-    {
-      "spelling": "Noor",
-      "attestations": [
-        { "countryId": "SDN", "sourceRefs": ["afrik-candidate-queue"] }
+        { "countryId": "SOM", "sourceRefs": ["mansuur-2021-somali-names"] }
       ]
     },
     {
       "spelling": "Nuur",
       "attestations": [
-        { "countryId": "SOM", "sourceRefs": ["afrik-candidate-queue"] }
+        { "countryId": "SOM", "sourceRefs": ["mansuur-2021-somali-names"] }
+      ]
+    },
+    {
+      "spelling": "Noor",
+      "attestations": [
+        { "countryId": "SOM", "sourceRefs": ["mansuur-2021-somali-names"] }
+      ]
+    },
+    {
+      "spelling": "Nour",
+      "attestations": [
+        { "countryId": "SOM", "sourceRefs": ["mansuur-2021-somali-names"] }
+      ]
+    },
+    {
+      "spelling": "al-Nur",
+      "attestations": [
+        { "countryId": "SDN", "sourceRefs": ["sudan-tribune-2007-al-nur"] }
       ]
     }
   ],
@@ -35,9 +46,14 @@
     "writtenChronicles": [],
     "linguisticReconstructions": [
       {
-        "claim": "Une notice onomastique analyse Nur (نور) comme le nom arabe signifiant « lumière » et donne Noor parmi ses variantes ainsi que Nuur comme forme somalie ; l'analyse reste claimed au tier communautaire.",
-        "claimStatus": "claimed",
-        "sourceRefs": ["nur-behindthename"]
+        "claim": "Dans le système somali, Nuur est un nom personnel qui peut occuper l'un des trois rangs de la chaîne nom du porteur, nom du père, nom du grand-père ; les graphies Noor, Nour et Nur reflètent des conventions étrangères différentes, non des patronymes distincts.",
+        "claimStatus": "established",
+        "sourceRefs": ["mansuur-2021-somali-names"]
+      },
+      {
+        "claim": "Au Soudan, les quatre éléments officiels sont le nom personnel, le nom du père, celui du grand-père et celui de l'arrière-grand-père ; il n'existe pas de nom de famille au sens administratif décrit par la source.",
+        "claimStatus": "established",
+        "sourceRefs": ["uk-hm-passport-2026-sudan-names"]
       }
     ]
   },
@@ -45,24 +61,27 @@
     {
       "peopleId": "PPL_FOUR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue", "nur-behindthename"]
+      "sourceRefs": ["sudan-tribune-2007-al-nur"]
     },
     {
       "peopleId": "PPL_SOMALI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["mansuur-2021-somali-names"]
     }
   ],
   "countries": [
     {
       "countryId": "SDN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "uk-hm-passport-2026-sudan-names",
+        "sudan-tribune-2007-al-nur"
+      ]
     },
     {
       "countryId": "SOM",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["mansuur-2021-somali-names"]
     }
   ],
   "alliances": [],
@@ -71,46 +90,62 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Cette entrée est conservée uniquement comme provenance des attestations que la recherche de cette fiche n'a pas corroborées ; les sources réelles consultées et les limites de la recherche sont consignées dans les autres entrées et dans gaps."
+      "sourceKey": "mansuur-2021-somali-names",
+      "title": "Somali names and individual identity",
+      "url": "https://wardheernews.com/wp-content/uploads/2021/06/Somali-names-and-indvidual-identity-By-Abdalla-Mansuur.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Cabdalla Cumar Mansuur, 14 juin 2021. Le texte intégral hébergé par WardheerNews décrit la chaîne généalogique somalie à trois noms et donne, pour une même personne, les graphies Nuur, Noor, Nour et Nur selon la langue administrative."
     },
     {
-      "sourceKey": "nur-behindthename",
-      "title": "Meaning, origin and history of the name Nur",
-      "url": "https://www.behindthename.com/name/nur",
+      "sourceKey": "uk-hm-passport-2026-sudan-names",
+      "title": "Sudan: Knowledge Base profile",
+      "url": "https://www.gov.uk/government/publications/sudan-knowledge-base-profile/sudan-knowledge-base-profile",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Guide opérationnel de His Majesty's Passport Office, version 4.0 publiée le 16 mars 2026. Il décrit les quatre éléments du nom soudanais et précise que les noms de famille n'existent pas dans ce système."
+    },
+    {
+      "sourceKey": "sudan-tribune-2007-al-nur",
+      "title": "UN envoy faces opposition in heartland of Darfur rebel leader",
+      "url": "https://sudantribune.com/article/25187",
       "tier": "unverified",
       "source_kind": "community",
-      "notes": "Behind the Name, notice consultée intégralement le 2 septembre 2026. Elle donne le sens arabe « light », les graphies Nur/Noor et la forme somalie Nuur. Elle renvoie à Salahuddin Ahmed (1999, p. 303) et Hans Wehr (1979, p. 1182), ouvrages non consultés directement pour cette fiche."
+      "notes": "Dépêche Associated Press publiée par Sudan Tribune le 9 décembre 2007. Elle nomme Abdelwahid al-Nur et son père Mohamed Ahmed al-Nur au sein d'un milieu explicitement four ; elle atteste cette graphie et cette association sans établir une transmission héréditaire."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "peoples",
-      "reason": "La notice étaye Nuur comme forme somalie, mais les recherches « Nur/Noor Fur/Four name » et dans les études du Darfour n'ont pas établi un usage propre au peuple four."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Nur Somali oral tradition », « al-Nur Fur lineage » et les sources consultées n'ont livré aucune tradition attribuée à un griot ou transmetteur nommé avec transcription."
     },
     {
-      "fieldPath": "countries",
-      "reason": "Les catalogues soudanais et somalis ont été recherchés pour Nur, Noor et Nuur ; aucune source primaire ou étude démographique consultable n'a établi séparément les deux attestations nationales de la file candidate."
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Le guide administratif soudanais, l'étude des noms somalis et les recherches dans les catalogues n'ont livré aucune chronique datée de l'introduction de Nur dans ces deux usages."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions.etymon",
+      "reason": "Les recherches « Nur Nuur etymology Somali Fur » ont livré des glosses arabes générales mais aucune étude comparative reliant un étymon précis aux attestations four et somalie ; aucune étymologie n'est donc affirmée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Les recherches « Nur/Noor/Nuur joking relationship/alliance » chez les Four et les Somali n'ont livré aucune parenté à plaisanterie entre deux PAT_* existants."
+      "reason": "Un élément individuel de chaîne patronymique ne désigne pas à lui seul un groupe allié ; les recherches « al-Nur Fur clan alliance » et « Nuur Somali clan alliance » n'ont en outre livré aucune paire de patronymes documentée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "La notice onomastique traite Nur comme nom individuel et n'y attache aucune caste ni fonction sociale héréditaire ; les recherches ethnographiques n'ont rien ajouté."
+      "reason": "Les études des systèmes de noms soudanais et somali consultées n'attachent aucune fonction sociale héréditaire à Nur."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Les catalogues biographiques ont été interrogés pour Nur, Noor et Nuur avec les contextes four et somali ; aucun porteur décédé suffisamment documenté n'a été retenu."
+      "reason": "Les porteurs nommés par les sources dédiées sont vivants ou leur décès n'est pas établi ; le protocole interdit de les ajouter."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Nur, Noor et Nuur ont été recherchés comme noms personnels, termes lexicaux et toponymes ; aucune entité homonyme distincte conforme au modèle du corpus n'a été établie."
+      "reason": "La variation Nur/Nuur/Noor/Nour est explicitement orthographique dans la source somalie ; aucune source consultée n'établit ici deux origines homonymes distinctes."
     }
-  ]
+  ],
+  "patronymicChainDepth": {
+    "generations": 3,
+    "sourceRefs": ["mansuur-2021-somali-names"]
+  }
 }

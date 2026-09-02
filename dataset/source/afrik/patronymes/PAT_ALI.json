@@ -112,6 +112,18 @@
   ],
   "gaps": [
     {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « Ali anthroponymie », « Ali onomastique », « Ali surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune tradition orale attribuée à un griot ou informateur nommé, accompagnée d'une transcription vérifiable, n'a été trouvée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches exactes « Ali anthroponymie », « Ali onomastique », « Ali surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune chronique historique consultée ne rattache la fiche à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "Les sources propres à « Ali » ne suffisent pas à confirmer les pays hérités de la file d'attente ; les recherches exactes par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
+    },
+    {
       "fieldPath": "peoples",
       "reason": "Les recherches onomastiques « Ali + Afar/Somali/Comorian/African Arabs », le dictionnaire arabe et l'étude d'Al-Jarf ont été examinés ; ils établissent l'origine et la diffusion générales du nom, mais aucune source savante consultable n'a documenté séparément les quatre associations de la fiche."
     },

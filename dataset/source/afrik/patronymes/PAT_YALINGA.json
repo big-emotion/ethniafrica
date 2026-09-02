@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier français conservant l'hypothèse patronymique à son niveau non vérifié et distinguant le toponyme centrafricain officiellement attesté."
   },
   "id": "PAT_YALINGA",
   "nameMain": "Yalinga",
@@ -16,64 +16,82 @@
     }
   ],
   "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "designatedSocialUnit": "other",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
     "linguisticReconstructions": []
   },
-  "peoples": [
-    {
-      "peopleId": "PPL_BANDA",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
-    }
-  ],
+  "peoples": [],
   "countries": [
     {
       "countryId": "CAF",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
   "bearers": [],
-  "homonyms": [],
+  "homonyms": [
+    {
+      "label": "Yalinga (République centrafricaine)",
+      "entityType": "place",
+      "entityId": null,
+      "distinction": "La carte des Nations unies atteste Yalinga comme localité de Haute-Kotto ; elle ne fournit aucune preuve que cette graphie soit aussi un patronyme.",
+      "sourceRefs": ["un-car-map-2020"]
+    }
+  ],
   "sources": [
+    {
+      "sourceKey": "un-car-map-2020",
+      "title": "Central African Republic, Map No. 4048 Rev. 9.1",
+      "url": "https://www.un.org/geospatial/sites/www.un.org.geospatial/files/files/documents/2020/Apr/central_african_republic_4048_r9.1_feb20.pdf",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "Carte officielle des Nations unies révisée en février 2020. Elle localise Yalinga en Haute-Kotto et n'est citée que pour distinguer ce toponyme de l'hypothèse patronymique. Les versions française et anglaise de Wikipédia ont été croisées uniquement pour le repérage et ne sont pas citées."
+    },
     {
       "sourceKey": "afrik-candidate-queue",
       "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file produite hors corpus. Elle est conservée uniquement comme trace de l'hypothèse que Yalinga serait un patronyme centrafricain ; aucune source nominative indépendante n'a été trouvée pour la confirmer."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches exactes « Yalinga patronyme », « Yalinga surname », « Yalinga onomastique », « Yalinga anthroponymie » et « Yalinga étymologie » dans les catalogues universitaires, Persée, OpenEdition, Google Scholar et les résultats centrafricains n'ont livré ni récit d'origine, ni chronique nominative, ni reconstruction linguistique."
     },
     {
-      "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "peoples",
+      "reason": "Les recherches ciblées sur Yalinga et les Banda n'ont trouvé qu'un toponyme centrafricain ; aucune source dédiée n'a confirmé l'association à PPL_BANDA, qui provenait seulement de la file de candidats et a été retirée."
     },
     {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "countries",
+      "reason": "La carte des Nations unies atteste le lieu Yalinga en République centrafricaine, pas un patronyme ; faute de registre nominatif ou d'étude dédiée trouvé, le pays du nom reste seulement supposed."
     },
     {
-      "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "nameSystem",
+      "reason": "Aucune source consultée ne confirme que Yalinga soit un patronyme, encore moins un nom de clan ; clan_name demeure la valeur technique de la file de candidats faute de catégorie indéterminée."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches patronymiques, toponymiques et académiques n'ont livré aucune attestation de transmission du nom Yalinga ; la valeur reste donc other."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Yalinga alliance clan » et « Yalinga parenté à plaisanterie » n'ont livré aucune paire de patronymes documentée."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les sources cartographiques et les recherches nominatives consultées n'établissent aucune caste ni fonction sociale attachée à Yalinga."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches exactes du nom dans les sources centrafricaines et internationales n'ont identifié aucun porteur vérifiable répondant aux critères du schéma."
     }
   ]
 }
