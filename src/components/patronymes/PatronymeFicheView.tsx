@@ -1,15 +1,27 @@
 import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
 import { PatronymeNamingSystemSection } from "@/components/patronymes/PatronymeNamingSystemSection";
 import { PatronymeOriginSection } from "@/components/patronymes/PatronymeOriginSection";
-import { PatronymeFiliationSection } from "@/components/patronymes/PatronymeFiliationSection";
 import { PatronymeAssociationsSection } from "@/components/patronymes/PatronymeAssociationsSection";
+import { PatronymeAlliancesSection } from "@/components/patronymes/PatronymeAlliancesSection";
+import { PatronymeHomonymsSection } from "@/components/patronymes/PatronymeHomonymsSection";
 import { PatronymeBearersSection } from "@/components/patronymes/PatronymeBearersSection";
+import { PatronymeSourcesSection } from "@/components/patronymes/PatronymeSourcesSection";
 
 /**
- * The Record of a patronyme fiche: naming system (AC1), origin, filiation
- * (AC2), associations (AC4) and bearers (AC3/DEC-040), in the order a reader
- * meets a name's facts — what it is, where it comes from, who it is claimed
- * from, where it reaches, who is known to carry it.
+ * The parchment of a name fiche, in the order a reader meets a name's facts:
+ * what it is, where it comes from, where it reaches, who it is allied with,
+ * what else answers to the same string, who is known to carry it, and what
+ * all of that rests on.
+ *
+ * Every chapter here is one the strict model declares, and every one is
+ * printed whether or not the corpus fills it (atlas charter §4). Three of
+ * them — alliances, homonyms, sources — had no section at all until now,
+ * although the corpus carries sources on all 30 dossiers, and the filiation
+ * section that stood here read `content.filiationClaims`, a key no model and
+ * no dossier has ever had.
+ *
+ * Sources stays last: it is the footer the confidence chip's `#sources`
+ * anchor points at, and that anchor was dead on every name fiche.
  */
 // @req REQ-133
 export function PatronymeFicheView({
@@ -21,9 +33,11 @@ export function PatronymeFicheView({
     <div className="afh-parchment" id="fiche">
       <PatronymeNamingSystemSection patronyme={patronyme} />
       <PatronymeOriginSection patronyme={patronyme} />
-      <PatronymeFiliationSection patronyme={patronyme} />
       <PatronymeAssociationsSection patronyme={patronyme} />
+      <PatronymeAlliancesSection patronyme={patronyme} />
+      <PatronymeHomonymsSection patronyme={patronyme} />
       <PatronymeBearersSection patronyme={patronyme} />
+      <PatronymeSourcesSection patronyme={patronyme} />
     </div>
   );
 }

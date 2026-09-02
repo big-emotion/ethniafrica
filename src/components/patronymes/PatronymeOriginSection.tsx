@@ -1,20 +1,32 @@
 import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
 import { FicheSection } from "@/components/fiche/FicheSection";
-import { PatronymeSourceCitation } from "@/components/patronymes/PatronymeSourceCitation";
-import { readOrigin } from "@/lib/patronymes/content";
+import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
+import {
+  readGaps,
+  readOrigin,
+  type OriginAccount,
+} from "@/lib/patronymes/content";
+import { resolveChapter } from "@/lib/fieldProvenance";
 import { translations } from "@/lib/translations";
 
 const t = translations.fr.patronymes;
 
 /**
- * The sourced origin of a naming system. A `griot_oral_tradition` origin
- * gets its own wording and its own attribution line: an oral chain of
- * transmission is the source, and presenting it as a bare fact would let a
- * griot's telling read as the corpus's own claim rather than a transcription
- * of one (docs/design/naming-subtype-taxonomy.md).
+ * Where a name is said to come from.
  *
- * Renders nothing when the corpus documents no origin — omitted, not shown
- * empty, matching the rest of the patronyme fiche's opaque-content posture.
+ * Three parallel lists rather than one classified origin, because that is
+ * what the corpus writes and what the subject needs: a griot's telling and a
+ * colonial chronicle are two testimonies about the same name, and ranking one
+ * as *the* origin would decide by format what the sources leave open.
+ *
+ * An oral tradition is presented as a transcription with its griot named,
+ * never as a bare fact — a fiche that dropped that attribution would make a
+ * griot's account read as the corpus's own claim.
+ *
+ * The section is printed whether or not the corpus fills it (atlas charter
+ * §4). It used to return null on a shape mismatch, which removed it from the
+ * page *and* from the chapter rail — the rail reads its entries from the
+ * rendered DOM, so the omission hid its own evidence.
  */
 // @req REQ-133
 export function PatronymeOriginSection({
@@ -23,35 +35,56 @@ export function PatronymeOriginSection({
   patronyme: PublicPatronyme;
 }) {
   const origin = readOrigin(patronyme.content);
-  if (!origin) return null;
+  const gaps = readGaps(patronyme.content);
 
-  const isGriotOralTradition = origin.originType === "griot_oral_tradition";
+  const strands: Array<{ label: string; accounts: OriginAccount[] }> = [
+    { label: t.originOralTraditionsLabel, accounts: origin.oralTraditions },
+    {
+      label: t.originWrittenChroniclesLabel,
+      accounts: origin.writtenChronicles,
+    },
+    {
+      label: t.originLinguisticReconstructionsLabel,
+      accounts: origin.linguisticReconstructions,
+    },
+  ].filter((strand) => strand.accounts.length > 0);
+
+  const chapter = resolveChapter(
+    "name",
+    "origin",
+    strands.length > 0 ? strands : null,
+    gaps
+  );
 
   return (
     <FicheSection title={t.originTitle}>
-      <p>{t.originTypeLabels[origin.originType]}</p>
-      {isGriotOralTradition ? (
-        <p className="afh-parchment-note">
-          {t.griotOriginNote}
-          {origin.griot ? (
-            <>
-              {" "}
-              {t.griotAttributionPrefix} {origin.griot}.
-            </>
-          ) : null}
-        </p>
-      ) : null}
-      {origin.sources.length > 0 ? (
-        <>
-          <h3>{t.sourcesTitle}</h3>
-          <ul>
-            {origin.sources.map((source) => (
-              <li key={source.title}>
-                <PatronymeSourceCitation source={source} />
-              </li>
-            ))}
-          </ul>
-        </>
+      {strands.length > 0 ? (
+        strands.map((strand) => (
+          <div key={strand.label}>
+            <h3>{strand.label}</h3>
+            <ul>
+              {strand.accounts.map((account) => (
+                <li key={account.claim}>
+                  {account.claim}
+                  {account.claimStatus ? (
+                    <> — {t.originClaimStatusLabels[account.claimStatus]}</>
+                  ) : null}
+                  {account.griot ? (
+                    <>
+                      {" "}
+                      {t.griotAttributionPrefix} {account.griot}.
+                    </>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      ) : (
+        <FieldProvenanceMarker state={chapter.state} reason={chapter.reason} />
+      )}
+      {origin.oralTraditions.length > 0 ? (
+        <p className="afh-parchment-note">{t.griotOriginNote}</p>
       ) : null}
     </FicheSection>
   );

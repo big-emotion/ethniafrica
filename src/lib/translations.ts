@@ -293,12 +293,14 @@ export const translations = {
       },
       casteOrSocialFunctionLabel: "Caste ou fonction sociale",
       attestedFormsTitle: "Graphies attestées",
+      spellingAttestedInPrefix: "attestée en",
       transmissionModeLabel: "Mode de transmission",
       transmissionModeLabels: {
         patrilineal: "Patrilinéaire",
         matrilineal: "Matrilinéaire",
         bilateral: "Bilatérale",
         elective: "Élective",
+        non_hereditary: "Non héréditaire",
         other: "Autre",
       },
       designatedSocialUnitLabel: "Unité sociale désignée",
@@ -321,10 +323,16 @@ export const translations = {
         other: "Autre",
       },
       originTitle: "Origine",
-      originTypeLabels: {
-        griot_oral_tradition: "Tradition orale griotique",
-        written_chronicle: "Chronique écrite",
-        linguistic_reconstruction: "Reconstruction linguistique",
+      // Three parallel lists, not one classification: the corpus can hold a
+      // griot's account and a written chronicle for the same name without
+      // either overruling the other.
+      originOralTraditionsLabel: "Tradition orale griotique",
+      originWrittenChroniclesLabel: "Chronique écrite",
+      originLinguisticReconstructionsLabel: "Reconstruction linguistique",
+      originClaimStatusLabels: {
+        claimed: "Revendiquée",
+        contested: "Contestée",
+        established: "Établie",
       },
       // Attributed to the transcription and its griot rather than stated as
       // a bare fact: an oral chain of transmission is the source, and a
@@ -334,9 +342,9 @@ export const translations = {
         "Cette origine est transmise par tradition orale griotique. Elle est présentée telle que transcrite, avec sa source et, lorsqu'il est documenté, le griot qui l'a transmise.",
       griotAttributionPrefix: "Transmis par",
       sourcesTitle: "Sources",
-      filiationTitle: "Filiation",
-      filiationClaimedLabel: "Filiation revendiquée",
-      filiationCompetingLabel: "Version concurrente",
+      alliancesTitle: "Alliances",
+      allianceTypeFallback: "Alliance documentée",
+      homonymsTitle: "Homonymes",
       associationsTitle: "Peuples et pays concernés",
       associatedPeoplesLabel: "Peuples",
       associatedCountriesLabel: "Pays",

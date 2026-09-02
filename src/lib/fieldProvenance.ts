@@ -15,6 +15,9 @@ import modelePeuple from "../../public/modele-peuple.json";
 import modelePays from "../../public/modele-pays.json";
 import modeleLangue from "../../public/modele-langue.json";
 import modeleNomPatronyme from "../../public/modele-nom-patronyme.json";
+import modeleNomNisba from "../../public/modele-nom-nisba.json";
+import modeleNomPatronymique from "../../public/modele-nom-patronymique.json";
+import modeleNomTotemique from "../../public/modele-nom-totemique.json";
 
 export type ProvenanceState = "declared" | "derived" | "missing";
 
@@ -68,6 +71,8 @@ export function classifyFieldProvenance(
   return { state: "missing" };
 }
 
+type ContentBagLike = Record<string, unknown>;
+
 export type AfrikEntityKind =
   | "language-family"
   | "people"
@@ -89,12 +94,44 @@ export type AfrikEntityKind =
  * language fiches, 15 across the 30 patronyme dossiers — so the model is a
  * sound contract to read chapters off, not an approximation of one.
  */
+/**
+ * The name class declares a base model plus one per naming system, and only
+ * the base one describes what the corpus writes: all 30 dossiers match
+ * `modele-nom-patronyme.json` key for key, while the four subtype models
+ * still describe the retired vocabulary the fiche was reading — `namingSystem`
+ * for `nameSystem`, `attestedForms` for `spellings`. Merging all five would
+ * re-admit exactly the drift this resolver exists to catch.
+ *
+ * So the base model is the contract, extended with the subtype fields that a
+ * dossier's `gaps[]` actually cites — otherwise those gaps would be dismissed
+ * as fields that do not exist, and the editor's wording would stay unread for
+ * a second reason after the first is fixed.
+ *
+ * The extension is deliberately not narrowed per `nameSystem`: the view only
+ * asks about a subtype field on a fiche of that subtype, so keeping one root
+ * avoids threading the discriminant through a purely structural check.
+ */
+const NAME_SUBTYPE_FIELDS = {
+  totemicFoodProhibition: (modeleNomTotemique as ContentBagLike)
+    .totemicFoodProhibition,
+  permittedGivenNames: (modeleNomTotemique as ContentBagLike)
+    .permittedGivenNames,
+  nisbaSubtype: (modeleNomNisba as ContentBagLike).nisbaSubtype,
+  patronymicChainDepth: (modeleNomPatronymique as ContentBagLike)
+    .patronymicChainDepth,
+};
+
+const NAME_MODEL_FIELD_ROOT = {
+  ...modeleNomPatronyme,
+  ...NAME_SUBTYPE_FIELDS,
+};
+
 const MODEL_FIELD_ROOT_BY_ENTITY: Record<AfrikEntityKind, unknown> = {
   "language-family": (modeleLinguistique as { content?: unknown }).content,
   people: (modelePeuple as { content?: unknown }).content,
   country: (modelePays as { content?: unknown }).content,
   language: modeleLangue,
-  name: modeleNomPatronyme,
+  name: NAME_MODEL_FIELD_ROOT,
 };
 
 /**

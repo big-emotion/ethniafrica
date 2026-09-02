@@ -139,6 +139,29 @@ describe("fiche chapters — the list comes from the strict model (REQ-119)", ()
     }
   });
 
+  // @req REQ-133
+  it("keeps the subtype models' retired vocabulary out of the name's field space", () => {
+    // The four per-subtype models still describe `namingSystem`/`attestedForms`,
+    // which no dossier has ever written. Only the base model matches the corpus.
+    expect(isStructurallyExpectedField("name", "namingSystem")).toBe(false);
+    expect(isStructurallyExpectedField("name", "attestedForms")).toBe(false);
+    expect(isStructurallyExpectedField("name", "nameSystem")).toBe(true);
+    expect(isStructurallyExpectedField("name", "spellings")).toBe(true);
+  });
+
+  // @req REQ-133
+  it("counts a naming subtype's own fields among the name's, so their gaps resolve", () => {
+    // Cited by gaps[] on 4, 4 and 2 dossiers respectively, and declared only
+    // by the totemique and nisba models rather than the base one.
+    for (const key of [
+      "totemicFoodProhibition",
+      "permittedGivenNames",
+      "nisbaSubtype",
+    ]) {
+      expect(isStructurallyExpectedField("name", key)).toBe(true);
+    }
+  });
+
   // @req REQ-119
   it("never offers the model's own metadata as a chapter", () => {
     for (const kind of [
