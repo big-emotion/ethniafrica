@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Youssouf est attesté officiellement à Djibouti et décrit comme forme francophone de Yusuf par une notice communautaire ; les usages tchadien et comorien restent à sourcer."
   },
   "id": "PAT_YOUSSOUF",
   "nameMain": "Youssouf",
@@ -12,7 +12,13 @@
       "spelling": "Youssouf",
       "attestations": [
         { "countryId": "TCD", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "DJI", "sourceRefs": ["afrik-candidate-queue"] },
+        {
+          "countryId": "DJI",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "youssouf-presidence-djibouti-2017"
+          ]
+        },
         { "countryId": "COM", "sourceRefs": ["afrik-candidate-queue"] }
       ]
     },
@@ -33,14 +39,29 @@
   "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "writtenChronicles": [
+      {
+        "claim": "La Présidence de Djibouti atteste Youssouf comme dernier élément de la chaîne de noms du député Omar Ahmed Youssouf ; la notice ne qualifie pas la relation généalogique exprimée.",
+        "claimStatus": "established",
+        "sourceRefs": ["youssouf-presidence-djibouti-2017"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Une notice communautaire présente Youssouf comme une forme de Yusuf diffusée surtout dans des régions d'Afrique occidentale sous influence française ; elle ne démontre pas ses emplois somali ou comorien.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["youssouf-behindthename"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_SOMALI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "afrik-candidate-queue",
+        "youssouf-presidence-djibouti-2017"
+      ]
     },
     {
       "peopleId": "PPL_COMORIEN",
@@ -67,7 +88,13 @@
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Omar Ahmed Youssouf",
+      "sourceRefs": ["youssouf-presidence-djibouti-2017"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
@@ -76,29 +103,45 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Cette entrée est conservée uniquement comme provenance des attestations que la recherche de cette fiche n'a pas corroborées ; les sources réelles consultées et les limites de la recherche sont consignées dans les autres entrées et dans gaps."
+    },
+    {
+      "sourceKey": "youssouf-behindthename",
+      "title": "Meaning, origin and history of the name Youssouf",
+      "url": "https://www.behindthename.com/name/youssouf",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Behind the Name, notice consultée intégralement le 2 septembre 2026. Elle présente Youssouf comme forme de Yusuf dans des régions ouest-africaines francophones et distingue Yuusuf comme forme somalie. La page ne fournit pas de référence bibliographique dédiée."
+    },
+    {
+      "sourceKey": "youssouf-presidence-djibouti-2017",
+      "title": "Le Président de la République rend hommage à la mémoire de feu Omar Ahmed Youssouf dit Vincent",
+      "url": "https://www.presidence.dj/article/le-president-de-la-republique-rend-hommage-a-la-memoire-de-feu-omar-ahmed-youssouf-dit-vincent-324",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Présidence de la République de Djibouti, 22 janvier 2017. La page complète a été vérifiée : elle donne à plusieurs reprises Omar Ahmed Youssouf, le décrit comme ancien député et figure de la scène politique djiboutienne, et confirme son décès."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "peoples",
+      "reason": "La notice communautaire distingue Youssouf de la forme somalie Yuusuf et ne documente pas le comorien ; la notice officielle djiboutienne n'indique aucune auto-identification ethnique. Les deux associations de peuples restent donc non confirmées."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "L'attestation djiboutienne est établie par la notice officielle ; les catalogues tchadiens et comoriens ont été recherchés sans fournir de source primaire ou savante vérifiable pour Youssouf/Yousouf."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Youssouf/Yusuf joking relationship/alliance » dans les contextes djiboutien, tchadien et comorien n'ont livré aucune parenté à plaisanterie entre deux PAT_* existants."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La fonction politique du porteur est individuelle ; aucune caste ni fonction sociale héréditaire attachée à Youssouf n'est mentionnée dans les sources consultées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Youssouf, Yousouf, Yusuf et Yuusuf ont été recherchés comme anthroponymes et toponymes ; aucune entité homonyme distincte conforme au modèle du corpus n'a été isolée."
     }
   ]
 }

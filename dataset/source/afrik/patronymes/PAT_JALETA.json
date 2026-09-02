@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Une publication ethnographique atteste Jaleta dans un nom d'auteur éthiopien travaillant sur les Guji-Oromo, sans fournir l'étymologie du nom."
   },
   "id": "PAT_JALETA",
   "nameMain": "Jaleta",
@@ -11,7 +11,10 @@
     {
       "spelling": "Jaleta",
       "attestations": [
-        { "countryId": "ETH", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue", "jaleta-jirata-2019"]
+        }
       ]
     }
   ],
@@ -47,29 +50,37 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Cette entrée est conservée uniquement comme provenance des attestations que la recherche de cette fiche n'a pas corroborées ; les sources réelles consultées et les limites de la recherche sont consignées dans les autres entrées et dans gaps."
+    },
+    {
+      "sourceKey": "jaleta-jirata-2019",
+      "title": "Contesting Images of Womanhood: The Narrative Construction of Gender Relations in Ethiopia",
+      "url": "https://asq.africa.ufl.edu/wp-content/uploads/sites/168/v18i3a1.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Tadesse Jaleta Jirata, African Studies Quarterly 18(3), 2019, p. 1-14. Le PDF a été vérifié : il atteste Jaleta dans le nom de l'auteur, affilié à Dilla University, et repose sur dix mois de terrain chez les Guji-Oromo ; il n'analyse pas l'élément Jaleta."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L'article de Tadesse Jaleta Jirata, sa bibliographie et les requêtes « Jaleta Oromo name/etymology » ont été examinés ; aucune étude linguistique dédiée du nom Jaleta n'a été trouvée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les matériaux de parenté et de relations sociales guji-oromo de l'article ont été recherchés ; aucune alliance à plaisanterie entre Jaleta et un autre PAT_* existant n'y est nommée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L'article traite les rapports de genre et le système gada, mais ne rattache Jaleta à aucune caste ni fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches biographiques sur Jaleta ont surtout identifié des universitaires vivants ; aucun porteur décédé avec une identification oromo explicite n'a été trouvé."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Jaleta a été recherché comme nom personnel, patronymique et lexème afaan oromo ; aucun homonyme distinct et sourcé n'a été identifié."
     }
   ]
 }

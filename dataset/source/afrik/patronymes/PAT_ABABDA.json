@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. La source savante repère Ababda avec un point d'interrogation dans la nomenclature beja ; elle ne suffit pas à établir une étymologie ni un patronyme héréditaire."
   },
   "id": "PAT_ABABDA",
   "nameMain": "Ababda",
@@ -11,7 +11,10 @@
     {
       "spelling": "Ababda",
       "attestations": [
-        { "countryId": "EGY", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "EGY",
+          "sourceRefs": ["afrik-candidate-queue", "ababda-barnard-2009"]
+        }
       ]
     },
     {
@@ -25,7 +28,13 @@
   "designatedSocialUnit": "other",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Dans un tableau comparatif de désignations beja contemporaines, Barnard reproduit la forme « Ababda(?) » ; le point d'interrogation de la source impose de traiter l'identification et le niveau social exact comme incertains.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["ababda-barnard-2009"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
@@ -53,37 +62,45 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Cette entrée est conservée uniquement comme provenance des attestations que la recherche de cette fiche n'a pas corroborées ; les sources réelles consultées et les limites de la recherche sont consignées dans les autres entrées et dans gaps."
+    },
+    {
+      "sourceKey": "ababda-barnard-2009",
+      "title": "The Archaeology of Pastoral Nomads between the Nile and the Red Sea",
+      "url": "https://isac.uchicago.edu/sites/oi.uchicago.edu/files/uploads/shared/docs/ois5.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Hans Barnard, dans Jeffrey Szuchman (dir.), Nomads, Tribes, and the State in the Ancient Near East, Oriental Institute Seminars 5, 2009, tableau 2.2, p. 27. Le tableau compare des noms de clans et de tribus beja et imprime « Ababda(?) » ; le signe d'incertitude est conservé dans l'interprétation."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Le tableau de Barnard (2009), ses renvois à la littérature ethnographique beja et les recherches « Ababda/Ababdeh etymology/name » ont été examinés ; aucune analyse linguistique dédiée et vérifiable du nom n'a été trouvée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les tableaux de nomenclature beja et les recherches sur les relations des Ababda n'ont fourni aucune alliance de parenté à plaisanterie nommant un second PAT_* du corpus."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les études ethnographiques et archéologiques signalées par Barnard ont été recherchées pour une spécialisation sociale attachée au nom ; aucune caste ni fonction héréditaire propre à Ababda n'a été établie."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les requêtes biographiques Ababda/Ababdeh et les références de Barnard n'ont pas livré de porteur décédé individualisé pour lequel Ababda serait clairement un élément anthroponymique plutôt qu'une désignation collective."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La recherche a surtout retrouvé Ababda comme désignation collective ; faute d'entité distincte et d'une source établissant la coexistence d'un patronyme autonome, aucun homonyme n'est enregistré."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le système « nisba » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Barnard (2009) classe les formes dans une nomenclature de clans et de tribus, mais ne décrit pas la transmission de la forme Ababda comme nom de personne ; les recherches ciblées n'ont pas permis d'établir un mode héréditaire."
     },
     {
       "fieldPath": "designatedSocialUnit",
-      "reason": "Le système « nisba » ne détermine pas à lui seul l'unité sociale désignée : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La mise en colonnes du tableau de Barnard et son « Ababda(?) » ne permettent pas de trancher entre clan, tribu ou autre collectif pour cette forme ; l'unité reste donc « other » plutôt que d'inventer une précision."
     }
   ]
 }

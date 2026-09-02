@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Une ressource lexicographique communautaire fournit une piste afar, conservée au niveau non vérifié en l'absence de publication savante accessible."
   },
   "id": "PAT_KAMIL",
   "nameMain": "Kamil",
@@ -20,13 +20,19 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "L'entrée lexicographique communautaire analyse l'afar Káamil comme un prénom masculin emprunté à l'arabe kāmil ; faute de vérification indépendante dans la thèse citée par l'entrée, cette analyse demeure une proposition.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["kamil-wiktionary-afar"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_AFAR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "kamil-wiktionary-afar"]
     }
   ],
   "countries": [
@@ -47,29 +53,37 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Cette entrée est conservée uniquement comme provenance des attestations que la recherche de cette fiche n'a pas corroborées ; les sources réelles consultées et les limites de la recherche sont consignées dans les autres entrées et dans gaps."
+    },
+    {
+      "sourceKey": "kamil-wiktionary-afar",
+      "title": "Kaamil — Wiktionary, Afar entry",
+      "url": "https://en.wiktionary.org/wiki/Kaamil",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Entrée lexicographique collaborative consultée dans sa section afar : elle donne Káamil comme prénom masculin et propose un emprunt à l'arabe kāmil. Elle renvoie à une thèse de Mohamed Hassan Kamil (2015), mais le texte de cette thèse n'a pas pu être vérifié ; la proposition n'est donc pas promue au niveau référencé."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Kamil/Kaamil Afar name », les catalogues de linguistique afar et la thèse citée dans l'entrée communautaire ont été suivis ; aucun texte historique ou passage savant accessible n'a été trouvé pour documenter l'introduction du nom chez les Afar."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les requêtes « Kamil Afar alliance/kinship » et les ressources de noms afars consultées ne signalent aucune alliance de parenté à plaisanterie avec un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L'entrée afar de Kaamil et les recherches bibliographiques associées décrivent un prénom, sans caste ni fonction sociale héréditaire attachée au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches biographiques « Kamil/Kaamil Afar » et les catalogues institutionnels djiboutiens consultables n'ont pas permis d'identifier un porteur décédé dont l'identité afar soit établie par une source individuelle."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les formes Kamil, Kaamil et Káamil ont été recherchées dans les ressources afar et arabes ; aucun homonyme distinct répondant aux critères du corpus n'a été documenté."
     }
   ]
 }

@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Une étude de terrain chez les Borana Oromo atteste Wako dans un nom d'auteur éthiopien, sans analyser son étymologie."
   },
   "id": "PAT_WAKO",
   "nameMain": "Wako",
@@ -11,7 +11,10 @@
     {
       "spelling": "Wako",
       "attestations": [
-        { "countryId": "ETH", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue", "wako-buusaa-2023"]
+        }
       ]
     }
   ],
@@ -47,29 +50,37 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Cette entrée est conservée uniquement comme provenance des attestations que la recherche de cette fiche n'a pas corroborées ; les sources réelles consultées et les limites de la recherche sont consignées dans les autres entrées et dans gaps."
+    },
+    {
+      "sourceKey": "wako-buusaa-2023",
+      "title": "Indigenous Social Protection Mechanism: The Practices and Challenges of Buusaa-gonofaa in the Borana Oromo, Southern Ethiopia",
+      "url": "https://journals.brandonu.ca/jrcd/article/download/2292/627/7475",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Wario Wako et al., Journal of Rural and Community Development 18(4), 2023, p. 84-102. Le PDF a été vérifié : il atteste Wako dans le nom du premier auteur, affilié à Jimma University, et documente un terrain borana-oromo en Éthiopie ; il ne donne pas le sens de Wako."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L'article de Wario Wako, les études de noms oromo et les requêtes « Wako/Waqo Oromo name etymology » ont été examinés ; aucune reconstruction linguistique dédiée et vérifiable n'a été trouvée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les sections de l'article sur les moitiés intermarieuses, les clans et l'entraide ont été recherchées ; elles ne nomment aucune alliance à plaisanterie entre Wako et un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Le système Buusaa-gonofaa et les rôles claniques décrits dans l'article ne constituent pas une caste ni une fonction héréditaire attachée au nom Wako."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches biographiques Wako/Waqo ont identifié des universitaires et acteurs publics vivants ; aucun porteur décédé répondant aux critères documentaires n'a été retenu."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les graphies Wako, Waqo et Waaqo ont été recherchées comme noms et comme rapprochements avec Waaqa ; aucune source savante ne permet d'enregistrer un homonyme distinct ou de valider ce rapprochement pour cette fiche."
     }
   ]
 }
