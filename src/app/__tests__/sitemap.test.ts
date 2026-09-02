@@ -140,8 +140,6 @@ describe("sitemap.xml", () => {
       "/fr/admin",
       `${getLocalizedRoute("fr", "quiz")}/score`,
       "/fr/report-error",
-      "/fr/confidentialite",
-      "/fr/politique-confidentialite",
     ]) {
       expect(
         paths.filter((path) => path.startsWith(fragment)),
@@ -183,7 +181,22 @@ describe("sitemap.xml", () => {
   // @req REQ-110
   it("keeps UNLISTED_ROUTES documented alongside what it excludes", () => {
     expect(UNLISTED_ROUTES).toContain("admin");
-    expect(UNLISTED_ROUTES).toContain("politique-confidentialite");
+    expect(UNLISTED_ROUTES).toContain("report-error");
+  });
+
+  // The site used to carry three privacy policies — one canonical and two
+  // orphans hidden from crawlers — and the consent banner linked an orphan.
+  // Hiding a second policy is not the same as not having one.
+  // @req REQ-110
+  it("serves exactly one privacy policy", async () => {
+    const all = await urls();
+    const policies = all.filter((url) =>
+      /confidentialite|politique-de-donnees/.test(url)
+    );
+
+    expect(policies).toEqual([
+      `https://${CANONICAL_DOMAIN}/fr/politique-de-donnees`,
+    ]);
   });
 });
 
@@ -198,11 +211,22 @@ describe("robots.txt", () => {
   });
 
   // @req REQ-110
-  it("bans the authenticated surfaces and the duplicate privacy pages", () => {
+  it("bans the authenticated surfaces", () => {
     const rule = robots().rules;
     const disallow = Array.isArray(rule) ? rule[0].disallow : rule.disallow;
 
     expect(disallow).toContain("/fr/admin/");
-    expect(disallow).toContain("/fr/politique-confidentialite");
+  });
+
+  // The two orphan policies were disallowed rather than retired; now that
+  // they are gone there is nothing left here to hide from a crawler.
+  // @req REQ-110
+  it("no longer hides a privacy policy from crawlers", () => {
+    const rule = robots().rules;
+    const disallow = Array.isArray(rule) ? rule[0].disallow : rule.disallow;
+
+    expect(
+      (disallow as string[]).filter((path) => /confidentialite/.test(path))
+    ).toEqual([]);
   });
 });

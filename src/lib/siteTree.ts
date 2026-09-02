@@ -44,11 +44,6 @@ export interface SiteTreeSection {
  *     entered cold from a search result.
  *   · `comparer/[entityType]/[...ids]` — combinatorial. The `/comparer`
  *     entry point is listed; the pairs it can build are not.
- *   · `confidentialite`, `politique-confidentialite` — two orphan pages that
- *     restate `politique-de-donnees` and that nothing links to. Listing three
- *     privacy policies would make the reader pick one; retiring the two
- *     duplicates is a legal call, not a routing one, so they are left
- *     unlisted and unindexed until it is made.
  */
 // @req REQ-110
 export const UNLISTED_ROUTES = [
@@ -57,8 +52,6 @@ export const UNLISTED_ROUTES = [
   "quiz/score",
   "report-error",
   "comparer/[entityType]/[...ids]",
-  "confidentialite",
-  "politique-confidentialite",
 ] as const;
 
 // @req REQ-110

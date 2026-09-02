@@ -24,15 +24,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        // Authenticated surfaces, and the two orphan privacy pages that
-        // duplicate /fr/politique-de-donnees — indexing three near-identical
-        // policies splits the ranking and gives the reader a choice they
-        // should not have to make.
-        disallow: [
-          "/fr/admin/",
-          "/fr/confidentialite",
-          "/fr/politique-confidentialite",
-        ],
+        // Authenticated surfaces. The two orphan privacy pages that used to
+        // be hidden here are gone: /fr/politique-de-donnees is now the only
+        // policy the site serves, so there is no ranking left to split.
+        disallow: ["/fr/admin/"],
       },
     ],
     sitemap: `https://${CANONICAL_DOMAIN}/sitemap.xml`,

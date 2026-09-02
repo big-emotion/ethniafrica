@@ -591,11 +591,9 @@ export const translations = {
         // `compte`, `inscription` and `profil` were removed with the pages
         // they named: there are no public accounts, so nothing registers, and
         // a segment nobody can reach needs no word.
-        confidentialite: "Confidentialité",
         contribute: "Contribuer",
         "mentions-legales": "Mentions légales",
         "plan-du-site": "Plan du site",
-        "politique-confidentialite": "Politique de confidentialité",
         "politique-de-donnees": "Politique de données",
         "report-error": "Signaler une erreur",
         signalements: "Signalements",
