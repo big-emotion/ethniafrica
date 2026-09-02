@@ -2,9 +2,9 @@
   "id": "NGA",
   "nameFr": "Nigeria",
   "nameOfficial": "République fédérale du Nigeria (Federal Republic of Nigeria)",
-  "summary": "Le Nigeria porte un nom composé en 1914 par Flora Shaw, à partir du fleuve Niger et du suffixe « -ia ». Califat de Sokoto, royaume d'Oyo, royaume du Bénin et sultanats haoussa s'y étaient épanouis avant l'unification coloniale. Hausa-Fulani, Yoruba, Igbo, Ijaw, Kanuri et Tiv font du pays le plus peuplé du continent l'un des plus divers.",
-  "etymology": "Le nom \"Nigeria\" a été créé en 1914 par Flora Shaw (épouse de Lord Lugard, gouverneur général de la colonie) en combinant \"Niger\" (fleuve Niger) avec le suffixe \"-ia\" (pays). Le nom fait référence au fleuve Niger qui traverse le pays.",
-  "nameOriginActor": "Le nom a été créé par Flora Shaw en 1914 lors de l'\"Amalgamation\" (unification) des protectorats du Nord et du Sud par les Britanniques. C'est un nom colonial qui ne reflète pas les appellations précoloniales.",
+  "summary": "Le Nigeria porte un nom proposé en 1897 par la journaliste Flora Shaw, à partir du fleuve Niger et du suffixe « -ia ». Califat de Sokoto, royaume d'Oyo, royaume du Bénin et sultanats haoussa s'y étaient épanouis avant l'unification coloniale. Hausa-Fulani, Yoruba, Igbo, Ijaw, Kanuri et Tiv font du pays le plus peuplé du continent l'un des plus divers.",
+  "etymology": "Le nom « Nigeria » est proposé le 8 janvier 1897 par Flora Shaw, correspondante coloniale du Times de Londres, pour désigner d'un seul mot la « Niger Area » administrée par la Royal Niger Company : « Niger », le fleuve, et le suffixe latin « -ia », le pays. Il n'est officialisé que seize ans plus tard, en 1914, par Lord Lugard lors de l'unification des protectorats du Nord et du Sud. Des occurrences antérieures de « Nigerian » sont signalées chez William Cole (1862) et Richard Burton (1863), sans qu'il soit établi qu'elles soient contemporaines plutôt qu'ajoutées à l'édition.",
+  "nameOriginActor": "Le nom est proposé par une journaliste, Flora Shaw, dans un article du Times du 8 janvier 1897, puis officialisé en 1914 par l'administration coloniale britannique lors de l'« Amalgamation » des protectorats du Nord et du Sud. C'est un nom colonial qui ne reflète aucune appellation précoloniale — et l'attribution elle-même demande une nuance : Shaw a suggéré le nom, elle ne l'a pas imposé.",
   "content": {
     "historicalNames": {
       "formerNames": [
@@ -258,6 +258,12 @@
         "url": "https://unstats.un.org/unsd/methodology/m49/",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "Dubawa — How true is the claim that Flora Shaw coined the name Nigeria?",
+        "url": "https://dubawa.org/nigeria60-how-true-is-claim-that-flora-shaw-british-journalist-coined-the-name-nigeria/",
+        "tier": "referenced",
+        "notes": "Vérification qui établit la date du 8 janvier 1897 et l'article du Times, distingue « suggérer » de « imposer », et signale les occurrences antérieures de « Nigerian » chez Cole (1862) et Burton (1863) comme débattues. Première source d'étymologie attachée à une fiche pays du corpus."
       }
     ],
     "demographics": {

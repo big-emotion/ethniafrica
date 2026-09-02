@@ -105,7 +105,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
           {
             id: "jeux" as AccessMode,
             description:
-              "Le quiz des parcours, et un jeu qui rend aux pays leur taille réelle.",
+              "Un quiz tiré des fiches, et un jeu qui rend aux pays leur taille réelle.",
             accentClass: "afh-accent-perv",
           },
         ],

@@ -1,62 +1,33 @@
 /**
  * Sources service — Supabase queries for the public `sources` table.
  *
- * Reads the column layout introduced by migration 014 (ETNI-22). Columns
- * absent before 014 (`pinned_url`, `year`, `author`, `publisher`,
- * `resolvable`, `last_verified_at`) are normalised to `null` so the public
- * envelope stays type-stable regardless of the migration cursor.
+ * The columns read here are the ones migrations 015, 031, 041 and 078 built.
+ * `pinned_url` and `resolvable` are not among them and never were: the mapper
+ * answers `null` for both so the public envelope stays type-stable, and the
+ * schema module records why the fields survive their missing columns.
+ *
+ * The query is `select("*")` rather than a column list, which is what let the
+ * payload keep promising four columns that did not exist without the request
+ * ever failing. Naming them would have surfaced it years earlier — but it
+ * would also break the endpoint outright the moment a column is renamed, so
+ * the mapper below stays the single place that knows the layout.
  */
 
 import { createServerClient } from "@/lib/supabase/server";
-import {
-  evaluateSourceUrl,
-  sourceKindSchema,
-} from "@/lib/sources/authorized-source-catalog";
+import { mapRowToSource } from "@/api/v2/services/sourceMapper";
+import { narrowSourcesQuery } from "@/api/v2/services/sourcesFacet";
 import type { Source, ListSourcesQuery } from "@/api/v2/schemas/sources";
-import { isSourceTier } from "@/types/sources";
-
-function mapRowToSource(row: Record<string, unknown>): Source {
-  const rawSourceKind = row.source_kind as string | null | undefined;
-  const rawIdentifiers = row.identifiers;
-  const url = typeof row.url === "string" ? row.url : null;
-  const sourceKindResult = sourceKindSchema.safeParse(rawSourceKind);
-  const sourceKind = sourceKindResult.success ? sourceKindResult.data : null;
-  // An untiered legacy row stays null here rather than being coerced: the
-  // payload distinguishes "not yet classified" from "classified unverified".
-  const tier = isSourceTier(row.tier) ? row.tier : null;
-  const identifiers =
-    rawIdentifiers &&
-    typeof rawIdentifiers === "object" &&
-    !Array.isArray(rawIdentifiers)
-      ? Object.fromEntries(
-          Object.entries(rawIdentifiers).filter(
-            ([, value]) => typeof value === "string"
-          )
-        )
-      : null;
-
-  return {
-    id: row.id as string,
-    sourceKey: (row.source_key as string | null) ?? null,
-    sourceKind,
-    tier,
-    identifiers,
-    title: (row.title as string) ?? "",
-    url,
-    pinnedUrl: (row.pinned_url as string | null) ?? null,
-    year: (row.year as number | null) ?? null,
-    author: (row.author as string | null) ?? null,
-    publisher: (row.publisher as string | null) ?? null,
-    resolvable: (row.resolvable as boolean | null) ?? null,
-    lastVerifiedAt: (row.last_verified_at as string | null) ?? null,
-    policy: evaluateSourceUrl(url ?? ""),
-  };
-}
 
 export interface ListSourcesResult {
   data: Source[];
   total: number;
 }
+
+const API_SORT_COLUMNS = {
+  title: { column: "title", ascending: true },
+  year: { column: "year", ascending: false },
+  added: { column: "added_at", ascending: false },
+} as const;
 
 // @req REQ-092
 export async function listSources(
@@ -66,10 +37,22 @@ export async function listSources(
   const from = (query.page - 1) * query.perPage;
   const to = from + query.perPage - 1;
 
-  const { data, error, count } = await supabase
-    .from("sources")
-    .select("*", { count: "exact" })
-    .order("title")
+  // The same narrowing the directory applies, through the same helper: a
+  // request must not mean one thing at /fr/sources and another at /api/v2.
+  const narrowed = narrowSourcesQuery(
+    supabase.from("sources").select("*", { count: "exact" }),
+    {
+      search: query.q ?? null,
+      standing: query.tier ?? null,
+      sourceKind: query.sourceKind ?? null,
+      decade: query.decade ?? null,
+      letter: null,
+    }
+  );
+
+  const order = API_SORT_COLUMNS[query.sort ?? "title"];
+  const { data, error, count } = await narrowed
+    .order(order.column, { ascending: order.ascending })
     .range(from, to);
 
   if (error) {

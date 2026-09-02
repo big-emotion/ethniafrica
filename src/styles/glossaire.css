@@ -1,0 +1,23 @@
+/**
+ * The glossary's anchors.
+ *
+ * Without `scroll-margin-top`, a term reached from a chapter lands *under*
+ * the sticky masthead and the reader concludes the link is broken. The header
+ * publishes its own height as a token and remeasures it at runtime
+ * (`use-header-reveal.ts`), so the offset follows a retracted or expanded bar
+ * rather than guessing at one.
+ */
+
+.afh-glossaire [id^="terme-"],
+.afh-glossaire [id^="famille-"] {
+  /* `--afh-header-height` reads 60px while the bar measures 61, so the
+     breathing room is the whole margin of error. Measured at 430px, this
+     lands a term 15px clear of the masthead. */
+  scroll-margin-top: calc(var(--afh-header-height) + var(--afh-space-2xl));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .afh-glossaire {
+    scroll-behavior: smooth;
+  }
+}

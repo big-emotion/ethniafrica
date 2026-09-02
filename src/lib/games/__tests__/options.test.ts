@@ -85,7 +85,7 @@ describe("correctOptionIndex", () => {
   // @req REQ-120
   it("varies with the discriminator so one entity does not answer in the same slot everywhere", () => {
     const slots = new Set(
-      ["T1", "T2", "T3", "T4", "T5"].map((discriminator) =>
+      ["T1", "T2", "T3", "T4", "T12"].map((discriminator) =>
         correctOptionIndex("PPL_YORUBA", discriminator)
       )
     );

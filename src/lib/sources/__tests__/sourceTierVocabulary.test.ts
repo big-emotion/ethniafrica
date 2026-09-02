@@ -216,6 +216,9 @@ describe("source tier vocabulary contract", () => {
       publisher: null,
       resolvable: null,
       lastVerifiedAt: null,
+      notes: null,
+      page: null,
+      addedAt: null,
       policy: { key: "unknown", tier: "unverified", sourceKind: "unknown" },
     };
     expect(

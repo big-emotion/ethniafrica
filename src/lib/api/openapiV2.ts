@@ -1669,12 +1669,38 @@ const options: swaggerJsdoc.Options = {
             },
             title: { type: "string" },
             url: { type: ["string", "null"] },
-            pinnedUrl: { type: ["string", "null"] },
+            pinnedUrl: {
+              type: ["string", "null"],
+              deprecated: true,
+              description:
+                "Always null: no column backs this field. Kept because removing a published property is a breaking change, and null before reads the same as absent after.",
+            },
             year: { type: ["integer", "null"] },
             author: { type: ["string", "null"] },
             publisher: { type: ["string", "null"] },
-            resolvable: { type: ["boolean", "null"] },
+            resolvable: {
+              type: ["boolean", "null"],
+              deprecated: true,
+              description:
+                "Always null: the nightly link check writes a log file, not a column. Kept for the same reason as pinnedUrl.",
+            },
             lastVerifiedAt: {
+              type: ["string", "null"],
+              format: "date-time",
+              description:
+                "When a human last verified the source. Read from `verified_at`.",
+            },
+            notes: {
+              type: ["string", "null"],
+              description:
+                "Why the source carries the tier it carries — the catalogue entry, domain rule, or citation form the tier was read from.",
+            },
+            page: {
+              type: ["string", "null"],
+              description:
+                "Locator inside the work, when the citation named one.",
+            },
+            addedAt: {
               type: ["string", "null"],
               format: "date-time",
             },
@@ -3513,13 +3539,12 @@ const options: swaggerJsdoc.Options = {
             templateId: {
               type: "string",
               description:
-                "T1-T5 ask about an atomic fiche field; T6-T11 quote a prose rubric and ask which people it belongs to; T12 asks which of a people's exonyms is contested.",
+                "T1-T4 ask about an atomic fiche field; T6-T11 quote a prose rubric of a people and ask which people it belongs to; T12 asks which of a people's exonyms is contested; T13-T18 do the same over countries. Kept in step with QUIZ_TEMPLATE_IDS by openapiV2 contract tests — the enum had gone stale twice.",
               enum: [
                 "T1",
                 "T2",
                 "T3",
                 "T4",
-                "T5",
                 "T6",
                 "T7",
                 "T8",
@@ -3527,6 +3552,12 @@ const options: swaggerJsdoc.Options = {
                 "T10",
                 "T11",
                 "T12",
+                "T13",
+                "T14",
+                "T15",
+                "T16",
+                "T17",
+                "T18",
               ],
             },
             promptFr: { type: "string" },

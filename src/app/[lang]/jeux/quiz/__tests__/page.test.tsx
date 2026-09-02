@@ -184,6 +184,52 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
     );
   });
 
+  /**
+   * The theme reached the fetch and never the page. A reader crossing a country
+   * with a theme was told the country alone, so nothing on screen said which
+   * half of its questions they were being asked.
+   */
+  // @req REQ-121
+  it("names the theme beside the scope once a track crosses both", async () => {
+    mockDescribeScope.mockResolvedValue({
+      kind: "country",
+      entityId: "ZAF",
+      labelFr: "Afrique du Sud",
+    });
+
+    render(
+      await QuizPage({
+        searchParams: Promise.resolve({ pays: "ZAF", theme: "langues" }),
+      })
+    );
+
+    expect(screen.getByTestId("quiz-play-host")).toHaveAttribute(
+      "data-label",
+      "Afrique du Sud · Langues"
+    );
+  });
+
+  // « Tout le continent » is the absence of narrowing, so pairing it with a
+  // theme reads as two scopes rather than one track. A theme-only track is
+  // named by its theme.
+  // @req REQ-121
+  it("names a theme-only track by its theme alone", async () => {
+    mockDescribeScope.mockResolvedValue({
+      kind: "mixed",
+      entityId: null,
+      labelFr: "Tout le continent",
+    });
+
+    render(
+      await QuizPage({ searchParams: Promise.resolve({ theme: "croyances" }) })
+    );
+
+    expect(screen.getByTestId("quiz-play-host")).toHaveAttribute(
+      "data-label",
+      "Croyances"
+    );
+  });
+
   // @req REQ-103 FR66
   it("falls back to the picker when the URL names a country the corpus lacks", async () => {
     // A 404 would be wrong: the route exists, and the reader's next move is to
