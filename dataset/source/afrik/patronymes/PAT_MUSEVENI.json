@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_MUSEVENI",
   "nameMain": "Museveni",
@@ -11,7 +11,10 @@
     {
       "spelling": "Museveni",
       "attestations": [
-        { "countryId": "UGA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["forebears-museveni"]
+        }
       ]
     }
   ],
@@ -19,21 +22,27 @@
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Un profil institutionnel de Makerere University Business School rapporte que Museveni signifie « fils d’un homme du Septième », en référence au Seventh Battalion des King’s African Rifles dans lequel son père aurait servi pendant la Seconde Guerre mondiale. Cette explication biographique est conservée comme affirmation attribuée, non comme reconstruction linguistique généralisable.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["mubs-museveni-profile"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_BANYANKOLE",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["mubs-museveni-profile"]
     }
   ],
   "countries": [
     {
       "countryId": "UGA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-museveni"]
     }
   ],
   "alliances": [],
@@ -42,38 +51,46 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "mubs-museveni-profile",
+      "title": "President Museveni",
+      "url": "https://ldpc.mubs.ac.ug/wp-content/uploads/2016/09/Yoweri_Kaguta_Museveni.pdf",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Profil institutionnel du Leadership Centre de Makerere University Business School consulté dans son PDF. Il rattache explicitement Yoweri Museveni aux Banyankole et explique le patronyme par le service de son père dans le Seventh Battalion des King’s African Rifles ; il ne démontre pas une règle générale de transmission."
+    },
+    {
+      "sourceKey": "forebears-museveni",
+      "title": "Museveni Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/museveni",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement. Elle atteste l’orthographe Museveni et sa présence dans l’Ouganda, mais la distribution ne démontre ni l’appartenance Banyankole, ni une origine unique, ni un mode de transmission."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Museveni », « Banyankole », « l’Ouganda », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « President Museveni » et la page Forebears propre au nom, consultées directement, n’a pas établi que la catégorie provisoire portée par la fiche décrive Museveni lui-même ; elle reste une hypothèse de classement technique, sans être transformée en affirmation historique."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Museveni », « Banyankole », « l’Ouganda », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « President Museveni » et la page Forebears propre au nom, consultées directement, n’a identifié aucune alliance ni parenté à plaisanterie documentée reliant Museveni à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Museveni », « Banyankole », « l’Ouganda », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « President Museveni » et la page Forebears propre au nom, consultées directement, n’a établi aucune fonction sociale ou professionnelle héréditaire propre à Museveni."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Museveni », « Banyankole », « l’Ouganda », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « President Museveni » et la page Forebears propre au nom, consultées directement, n’a livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Museveni », « Banyankole », « l’Ouganda », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « President Museveni » et la page Forebears propre au nom, consultées directement, n’a pas établi de lignée homonyme d’origine distincte documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web et bibliographique combinant « Museveni », « Banyankole », « l’Ouganda », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « President Museveni » et la page Forebears propre au nom, consultées directement, n’a établi aucune règle propre à Museveni permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }
