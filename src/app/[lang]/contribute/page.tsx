@@ -16,7 +16,6 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { ContributionForm } from "@/components/ContributionForm";
-import { ATTRIBUTION_STRING } from "@/lib/brand";
 import { getLocalizedRoute } from "@/lib/routing";
 
 // @req REQ-045
@@ -97,7 +96,6 @@ export default function ContributePage() {
         text: "Le projet est open source et hébergé sur GitHub. Vous pouvez contribuer en soumettant des issues, des pull requests, ou en améliorant le code source.",
         button: "Participer sur GitHub",
       },
-      footer: ATTRIBUTION_STRING,
     },
   };
 
