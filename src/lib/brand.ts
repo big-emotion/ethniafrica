@@ -56,6 +56,17 @@ export const PRODUCT_TAGLINE = "Atlas des Peuples d'Afrique";
 export const CANONICAL_DOMAIN =
   process.env.NEXT_PUBLIC_CANONICAL_DOMAIN || "ethniafrica.com";
 
+/**
+ * Where a reader writes to the publisher.
+ *
+ * Composed from {@link CANONICAL_DOMAIN} rather than written out, for the same
+ * reason §1 of the brand charter gives about the name: an address printed in a
+ * page and a different one used by the mailer is a contact channel that reads
+ * as open and is not. Rebranding the domain moves the mailbox with it.
+ */
+// @req REQ-019
+export const CONTACT_EMAIL = `contact@${CANONICAL_DOMAIN}`;
+
 /** Attribution string shown in footers and credits */
 // @req REQ-019
 export const ATTRIBUTION_STRING =

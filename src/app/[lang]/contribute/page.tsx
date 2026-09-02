@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { Language } from "@/types/shared";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Script from "next/script";
+import { ActionLink } from "@/components/ui/ActionLink";
 import {
   ExternalLink,
   Download,
@@ -89,7 +89,8 @@ export default function ContributePage() {
       },
       contact: {
         title: "Contact",
-        text: "Vous souhaitez me contacter ou proposer une contribution ? Utilisez le formulaire ci-dessous.",
+        text: "Vous souhaitez nous écrire — une erreur à signaler, une source à proposer, une réutilisation des données à discuter ?",
+        link: "Aller au formulaire de contact",
       },
       github: {
         title: "Contribuer via GitHub",
@@ -193,20 +194,18 @@ export default function ContributePage() {
           </div>
         </section>
 
-        {/* Section Contact / Typeform */}
+        {/* Section Contact */}
         <section className="space-y-4">
           <h3 className="text-afh-h2 font-semibold flex items-center gap-2">
             <MessageSquare className="h-5 w-5" />
             {t.contact.title}
           </h3>
           <p className="text-muted-foreground">{t.contact.text}</p>
-          <div className="w-full">
-            <div data-tf-live="01K9T08MHEFWHMK9NBWKE46DV6" />
+          <div className="pt-2">
+            <ActionLink href={`/${language}/contact`}>
+              {t.contact.link}
+            </ActionLink>
           </div>
-          <Script
-            src="//embed.typeform.com/next/embed.js"
-            strategy="afterInteractive"
-          />
         </section>
       </div>
     </PageLayout>

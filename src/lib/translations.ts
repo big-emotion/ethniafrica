@@ -123,6 +123,7 @@ export const translations = {
         about: "À propos",
         sources: "Sources",
         glossary: "Glossaire",
+        contact: "Contact",
         followHeading: "Nous suivre",
         followPending: "compte à venir",
       },
