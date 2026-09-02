@@ -7,7 +7,10 @@ title = "ethniafrica gitleaks config"
 [extend]
 useDefault = true
 
-[allowlist]
+# `[[allowlists]]`, not `[allowlist]`. The singular form is deprecated and
+# gitleaks refuses a config that carries both, so admitting the second block
+# below meant converting this one too. The entries are unchanged.
+[[allowlists]]
 description = "Global allowlist for known non-secret paths"
 paths = [
   # Anchored so prefixes/suffixes (e.g. backup/package-lock.json) don't match.
@@ -20,4 +23,23 @@ paths = [
   # Local agent-runtime skill mirrors (gitignored, ~13MB of vendored prompts)
   # trip generic-api-key rules on their example snippets.
   '''^\.(agents|codex)/''',
+]
+
+# A citation slug is not a key, and `generic-api-key` cannot tell them apart:
+# the rule fires on the identifier, and every AFRIK source entry names itself
+# `sourceKey`. Four fiches trip it — PAT_FFUMBE, PAT_LUGAVE, PAT_NGONGE,
+# PAT_NJAZA — on values like "roscoe-1911-baganda" and "buganda-heritage-clans",
+# which are bibliographic handles a reader could type.
+#
+# Allowlisted by line and not by path, which is the whole point: the corpus is
+# ~890 editorial files a curator edits by hand, and an allowlisted path would go
+# on hiding a real credential pasted into one of them forever. This suppresses
+# exactly the shape of a slug — lowercase, digits and hyphens — under exactly
+# that field name. Anything else, on any other line of those same files, is
+# still scanned.
+[[allowlists]]
+description = "AFRIK source citation slugs are bibliographic handles, not keys"
+regexTarget = "line"
+regexes = [
+  '''"sourceKey"\s*:\s*"[a-z0-9][a-z0-9-]*"''',
 ]
