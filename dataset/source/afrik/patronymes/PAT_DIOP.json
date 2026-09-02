@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
   },
   "id": "PAT_DIOP",
   "nameMain": "Diop",
@@ -11,35 +11,50 @@
     {
       "spelling": "Diop",
       "attestations": [
-        { "countryId": "SEN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SEN",
+          "sourceRefs": [
+            "madubuike-1994-african-names",
+            "dafn-familysearch-diop"
+          ]
+        }
       ]
     },
     {
       "spelling": "Jóob",
       "attestations": [
-        { "countryId": "SEN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Diop est documenté comme nom de clan wolof et lébou au Sénégal, d’étymologie non expliquée ; Madubuike le classe parmi les patronymes wolof transmis par les hommes et note son association historique aux chefferies traditionnelles de Dakar.",
+        "claimStatus": "established",
+        "sourceRefs": ["dafn-familysearch-diop", "madubuike-1994-african-names"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_WOLOF",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["madubuike-1994-african-names", "dafn-familysearch-diop"]
     }
   ],
   "countries": [
     {
       "countryId": "SEN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["madubuike-1994-african-names", "dafn-familysearch-diop"]
     }
   ],
   "alliances": [],
@@ -53,33 +68,41 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Source de vague 1 conservée uniquement pour la graphie Jóob, que les sources consultées n’attestent pas directement. La graphie Diop, l’association wolof et l’ancrage sénégalais sont désormais documentés séparément."
+    },
+    {
+      "sourceKey": "madubuike-1994-african-names",
+      "title": "A Handbook of African Names",
+      "url": "https://dokumen.pub/a-handbook-of-african-names-2-revnbsped-0894104381-9780894104381-0894104373.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ihechukwu Madubuike, 2e éd., Three Continents Press, 1994. La section consacrée aux Wolof indique que les enfants prennent le nom familial du père et cite Diop, Ndiaye, Fall et Gueye parmi les patronymes communs transmis par les hommes. La consultation a porté sur une transcription numérique miroir du volume imprimé."
+    },
+    {
+      "sourceKey": "dafn-familysearch-diop",
+      "title": "Dictionary of American Family Names — Diop entry",
+      "url": "https://www.familysearch.org/en/surname?surname=diop",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Entrée FamilySearch reproduisant le Dictionary of American Family Names de Patrick Hanks. Elle décrit Diop comme un nom de clan wolof et lébou principalement sénégalais et qualifie son étymologie d’inexpliquée."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "« Parenté à plaisanterie et régulation sociale chez les Wolof du Sénégal » de Lamine Ndiaye ainsi que les entrées Diop de Madubuike et du DAFN ont été recherchées ; aucune paire de patronymes nommant Diop n’a été trouvée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Madubuike associe fréquemment Diop aux chefs traditionnels de Dakar, mais ne décrit ni charge héréditaire systématique ni caste propre au nom ; la fonction n’est donc pas codée."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Madubuike et l’entrée DAFN/FamilySearch ont été vérifiés pour un porteur historique décédé ; aucun rattachement lignager individuel suffisamment documenté n’y est fourni."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L’entrée DAFN/FamilySearch a été recherchée pour des origines distinctes de Diop ; elle mentionne plusieurs peuples sénégalais mais ne distingue pas de lignée homonyme séparée."
     }
   ]
 }

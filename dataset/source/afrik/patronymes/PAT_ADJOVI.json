@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. L'histoire d'Adjovi est attribuée au porteur interrogé par Gnanguenon et conservée comme revendication, non comme fait indépendant."
   },
   "id": "PAT_ADJOVI",
   "nameMain": "Adjovi",
@@ -11,29 +11,38 @@
     {
       "spelling": "Adjovi",
       "attestations": [
-        { "countryId": "BEN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BEN",
+          "sourceRefs": ["gnanguenon-2017-adjovi"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Gnanguenon rapporte une histoire familiale attribuée à Côme Adjovi : au XVIIe siècle, l'annonce du premier garçon de Dâh Ayihou pendant une danse au tambour « ADJO » aurait produit la formule ADJO-VI-VI, ensuite abrégée en Adjovi. Le récit présente ce fils comme garant de la postérité et transmetteur du nom aux générations suivantes.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["gnanguenon-2017-adjovi"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_FON",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["gnanguenon-2017-adjovi"]
     }
   ],
   "countries": [
     {
       "countryId": "BEN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["gnanguenon-2017-adjovi"]
     }
   ],
   "alliances": [],
@@ -42,38 +51,38 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "sourceKey": "gnanguenon-2017-adjovi",
+      "title": "Le dictionnaire étymologique des noms propres de personne au Bénin : langues fon et français",
+      "url": "https://fr.scribd.com/document/728470135/Le-Dictionnaire-Etymologique-Des-Noms-Propres-de-Personnes-Au-Benin-Langues-Fon-Et-Francais-Cossi-Boniface-Gnanguenon-Z-lib-org-1",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Cossi Boniface Gnanguenon, L’Harmattan, 2017, ISBN 978-2-343-12064-5, pp. 223-224 de l'édition numérisée consultée. L'auteur attribue explicitement la petite histoire à Côme Adjovi, porteur du nom ; cette attribution impose de conserver le récit au statut « claimed »."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Adjovi fon du Bénin oral tradition griot transcription » et « Adjovi oral history » n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Adjovi fon du Bénin chronicle manuscript archive » et « Adjovi colonial register » n'ont livré aucune chronique ni pièce d'archives retraçant cette forme."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Adjovi joking relationship », « Adjovi alliance patronyme » et « Adjovi sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Adjovi hereditary occupation caste title » et « Adjovi fonction sociale » n'ont associé ce nom à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Adjovi obituary biography deceased » et « Adjovi nécrologie » n'ont pas permis de retenir un porteur décédé sur une notice suffisamment fiable et propre au nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Adjovi homonym etymology » et « Adjovi surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
     }
   ]
 }

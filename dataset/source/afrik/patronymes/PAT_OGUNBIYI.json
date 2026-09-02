@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Ogunbiyi ; les lacunes consignent les recherches restées sans résultat."
   },
   "id": "PAT_OGUNBIYI",
   "nameMain": "Ogunbiyi",
@@ -11,22 +11,31 @@
     {
       "spelling": "Ogunbiyi",
       "attestations": [
-        { "countryId": "BEN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "BEN",
+          "sourceRefs": ["yorubanames-ogunbiyi", "afrik-candidate-queue"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "other",
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "YorubaNames analyse Ogunbiyi comme ògún-bí-èyìí, « Ògún a enfanté celui-ci », et recommande les graphies phonétiques Ògúnbíyìí ou Ògúnbíìyí.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["yorubanames-ogunbiyi"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_YORUBA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["yorubanames-ogunbiyi"]
     }
   ],
   "countries": [
@@ -48,36 +57,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "yorubanames-ogunbiyi",
+      "title": "Ògúnbíyìí — YorubaNames",
+      "url": "https://www.yorubaname.com/entries/Ogunbiyi?lang=yo",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page de la base collaborative YorubaNames consultée directement pour Ogunbiyi. Elle fournit la forme tonale, une glose et une segmentation morphologique ; son contenu communautaire est conservé au niveau « unverified »."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Ogunbiyi Yoruba oral tradition griot transcription » et « Ogunbiyi oriki oral history » ainsi que la page YorubaNames consultée n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Ogunbiyi Yoruba chronicle manuscript colonial register » et « Ogunbiyi archive Nigeria Benin » n'ont livré aucune chronique ni pièce d'archives établissant une histoire propre à cette forme."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Ogunbiyi Yoruba joking relationship », « Ogunbiyi joking kinship » et « Ogunbiyi sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "la page YorubaNames consultée et les recherches « Ogunbiyi Yoruba hereditary occupation caste title » n'ont associé ce nom à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "la page YorubaNames consultée et les recherches « Ogunbiyi obituary biography deceased » n'ont pas permis d'établir un porteur décédé avec une notice suffisamment fiable sans recourir à Wikipédia."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « praise_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "designatedSocialUnit",
-      "reason": "Le système « praise_name » ne détermine pas à lui seul l'unité sociale désignée : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Ogunbiyi homonym etymology » et « Ogunbiyi surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
     }
   ]
 }

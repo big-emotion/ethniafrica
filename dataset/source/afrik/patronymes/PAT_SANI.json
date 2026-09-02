@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Sani ; l'homonyme arabe est distingué de l'usage ordinal haoussa."
   },
   "id": "PAT_SANI",
   "nameMain": "Sani",
@@ -11,7 +11,10 @@
     {
       "spelling": "Sani",
       "attestations": [
-        { "countryId": "NGA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["ryan-1981-sani", "statehouse-sani-2026"]
+        }
       ]
     }
   ],
@@ -20,56 +23,107 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Ryan atteste Sani comme nom attribué au deuxième enfant lorsque plusieurs membres d'une fratrie reçoivent le même nom islamique, notamment Muhammadu. La page haoussa consacrée au nom le rapproche de l'arabe thānin, « deuxième », et décrit le même usage ordinal.",
+        "claimStatus": "established",
+        "sourceRefs": ["ryan-1981-sani", "btn-sani-hausa"]
+      },
+      {
+        "claim": "Dans le système haoussa décrit par Chamo, le nom personnel du père est couramment placé après le prénom de l'enfant sans devenir un nom de famille héréditaire stable.",
+        "claimStatus": "established",
+        "sourceRefs": ["chamo-2018-sani"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_HAUSA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["ryan-1981-sani", "btn-sani-hausa"]
     }
   ],
   "countries": [
     {
       "countryId": "NGA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["statehouse-sani-2026"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
   "bearers": [],
-  "homonyms": [],
+  "homonyms": [
+    {
+      "label": "Sani (nom arabe)",
+      "entityType": "other",
+      "entityId": null,
+      "distinction": "Nom arabe de même graphie donné avec le sens « brillant, splendide », distinct de l'usage ordinal haoussa « deuxième » documenté dans cette fiche.",
+      "sourceRefs": ["btn-sani-arabic", "btn-sani-hausa"]
+    }
+  ],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
+      "sourceKey": "ryan-1981-sani",
+      "title": "An Introduction to Hausa Personal Nomenclature",
+      "url": "https://ans-names.pitt.edu/ans/article/download/942/941/1886",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Pauline M. Ryan, Names 29(2), 1981, pp. 139-164. Le tableau II consulté dans le PDF intégral atteste exactement Sani et le définit comme le deuxième enfant parmi des frères ou sœurs partageant un même nom de livre, avec Muhammadu comme exemple."
+    },
+    {
+      "sourceKey": "chamo-2018-sani",
+      "title": "Language and Identity in Africa: The Use of Place Names as Part of a Person’s Name in Hausa",
+      "url": "https://auadamu.com/phocadownload/Books/%5B2018%5D%20Festschrift%20in%20Honour%20of%20Abdalla%20Uba%20Adamu%20-%20Media%20-Knowledge%20Transfer%20and%20African%20Identity.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Isa Yusuf Chamo, 2018, pp. 251-252 du chapitre consulté dans le volume intégral. Établit le fonctionnement non héréditaire du patronyme haoussa ; ne traite pas l'étymologie de Sani."
+    },
+    {
+      "sourceKey": "btn-sani-hausa",
+      "title": "Sani (Hausa) — Behind the Name",
+      "url": "https://www.behindthename.com/name/sani-2",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "source_kind": "community",
+      "notes": "Page communautaire consultée directement. Elle dérive Sani de l'arabe thānin, « deuxième », et décrit son ajout au nom du deuxième membre d'une fratrie portant le même prénom. Ryan recoupe indépendamment l'usage ordinal."
+    },
+    {
+      "sourceKey": "btn-sani-arabic",
+      "title": "Sani (Arabic) — Behind the Name",
+      "url": "https://www.behindthename.com/name/sani-1",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page communautaire consultée directement. Elle documente un nom arabe Sani de même graphie avec le sens « brillant, splendide ». Le dictionnaire de Wehr qu'elle cite n'a pas été consulté directement ; l'homonyme reste donc au niveau non vérifié."
+    },
+    {
+      "sourceKey": "statehouse-sani-2026",
+      "title": "President Tinubu Appoints Governor Uba Sani as Renewed Hope Ambassador — The State House, Abuja",
+      "url": "https://statehouse.gov.ng/president-tinubu-appoints-governor-uba-sani-of-kaduna-state-as-renewed-hope-ambassador-and-deputy-director-general/",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Communiqué officiel consulté directement. Il atteste la graphie Sani au Nigeria dans le nom d'Uba Sani. Le porteur étant vivant, il n'est pas ajouté aux bearers."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La requête « Sani Hausa oral tradition griot lineage », Ryan (1981), Chamo (2018) et Amoo, Ajayi et Sabo (2022) n'ont livré ni griot nommé ni transcription attribuable à Sani."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Sani Hausa Arabic chronicle manuscript » et « Sani Nigeria colonial record » n'ont livré aucune chronique ou archive dédiée établissant l'histoire de l'usage ordinal."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Sani Hausa joking relationship », « Sani sanankuya », « Sani kal » et « Sani dandiraaɓe » n'ont établi aucune paire entre deux fiches PAT_* existantes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Ryan (1981), Chamo (2018) et la recherche « Sani Hausa hereditary occupation caste » n'ont associé ce nom personnel ordinal à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Le communiqué présidentiel consulté concerne un porteur vivant ; les recherches « Sani Nigeria obituary biography » n'ont pas fourni dans cette passe une notice officielle dédiée à un autre porteur décédé retenable."
     }
   ]
 }

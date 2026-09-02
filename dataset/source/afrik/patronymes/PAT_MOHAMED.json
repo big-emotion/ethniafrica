@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
   },
   "id": "PAT_MOHAMED",
   "nameMain": "Mohamed",
@@ -11,25 +11,52 @@
     {
       "spelling": "Mohamed",
       "attestations": [
-        { "countryId": "SDN", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "DJI", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "SOM", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "TZA", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "EGY", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "COM", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SDN",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "DJI",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "SOM",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "TZA",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "EGY",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "COM",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     },
     {
       "spelling": "Muhammad",
       "attestations": [
-        { "countryId": "SDN", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "EGY", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SDN",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "EGY",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     },
     {
       "spelling": "Maxamed",
       "attestations": [
-        { "countryId": "SOM", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SOM",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
@@ -38,7 +65,13 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "L'entrée consultée décrit Mohamed comme un nom de famille dérivé du nom personnel Muhammad et atteste la graphie محمّد. Cette formation largement partagée ne prouve aucune origine ethnique exclusive.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["btn-surname-mohamed"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -106,28 +139,48 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "btn-surname-mohamed",
+      "title": "Meaning, origin and history of the surname Mohamed — Behind the Name",
+      "url": "https://surnames.behindthename.com/name/mohamed",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle classe Mohamed comme nom de famille arabe dérivé du nom personnel Muhammad et fournit la graphie محمّد. Elle n'établit pas les multiples rattachements ethniques et nationaux hérités de la file d'attente."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « Mohamed anthroponymie », « Mohamed onomastique », « Mohamed surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune tradition orale attribuée à un griot ou informateur nommé, accompagnée d'une transcription vérifiable, n'a été trouvée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches exactes « Mohamed anthroponymie », « Mohamed onomastique », « Mohamed surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune chronique historique consultée ne rattache la fiche à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Mohamed anthroponymie », « Mohamed onomastique », « Mohamed surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. La ou les sources propres au nom ne démontrent pas une association exclusive avec les peuples indiqués par la file d'attente ; ces rattachements restent non vérifiés."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Mohamed alliance à plaisanterie », « Mohamed joking relationship » et « Mohamed parenté à plaisanterie » n'ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Mohamed caste », « Mohamed métier héréditaire » et « Mohamed social function » n'ont livré aucune fonction sociale héréditaire propre aux porteurs de cette graphie. Une étymologie professionnelle éventuelle ne prouve pas une caste."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches biographiques exactes sur « Mohamed » dans les catalogues et répertoires consultés n'ont pas permis d'isoler un porteur décédé dont ce segment soit explicitement documenté dans la position anthroponymique pertinente. Les personnes vivantes repérées ont été exclues."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches exactes « Mohamed homonym surname », « Mohamed homonyme patronyme » et les variantes graphiques de la fiche n'ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "Les sources propres à « Mohamed » ne suffisent pas à confirmer les pays hérités de la file d'attente ; les recherches exactes par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
     }
   ]
 }

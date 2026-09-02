@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
   },
   "id": "PAT_SOKOINE",
   "nameMain": "Sokoine",
@@ -11,7 +11,10 @@
     {
       "spelling": "Sokoine",
       "attestations": [
-        { "countryId": "TZA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "TZA",
+          "sourceRefs": ["tanzania-pmo-sokoine", "uongozi-sokoine-2024"]
+        }
       ]
     }
   ],
@@ -26,19 +29,25 @@
     {
       "peopleId": "PPL_MAASAI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["uongozi-sokoine-2024"]
     }
   ],
   "countries": [
     {
       "countryId": "TZA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["tanzania-pmo-sokoine"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Edward Moringe Sokoine",
+      "sourceRefs": ["tanzania-pmo-sokoine", "uongozi-sokoine-2024"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
@@ -47,33 +56,65 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "La classification clan_name provient de dataset/source/afrik/patronymes/_candidates-by-country.json et reste non vérifiée. Les sources réelles ajoutées établissent la graphie, l’association maasaï et un porteur décédé, mais aucune ne permet d’arbitrer le système du nom ; la source AI est conservée uniquement pour rendre cette provenance explicite."
+    },
+    {
+      "sourceKey": "tanzania-pmo-sokoine",
+      "title": "Wasifu — Edward Moringe Sokoine",
+      "url": "https://www.pmo.go.tz/administration/profile/16",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Notice biographique de l’Office du Premier ministre de Tanzanie. Elle atteste le nom complet Edward Moringe Sokoine, sa fonction d’ancien Premier ministre et son décès le 12 avril 1984."
+    },
+    {
+      "sourceKey": "uongozi-sokoine-2024",
+      "title": "The book on the late Prime Minister Edward Moringe Sokoine",
+      "url": "https://www.uongozi.go.tz/sw/memoirs/the-book-on-the-late-prime-minister-edward-moringe-sokoine/",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Notice de l’UONGOZI Institute, organisme tanzanien de leadership, 27 septembre 2024. Elle décrit le parcours d’Edward Moringe Sokoine depuis la communauté maasaï jusqu’à la primature ; elle n’explique ni le sens ni le mode de transmission du nom Sokoine."
+    },
+    {
+      "sourceKey": "sane-maasai-animal-names-2022",
+      "title": "Animal names applied to a person in Maasai society",
+      "url": "https://benjamins.com/catalog/ijolc.20006.san",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Eliakimu Sane, International Journal of Language and Culture 9(2), 2022, p. 177-193, DOI 10.1075/ijolc.20006.san. L’article documente les noms substitutifs et les termes d’adresse maasaï ; la forme Sokoine n’y apparaît pas."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Sokoine tradition orale », « Sokoine griot » et « Sokoine oral history », ainsi que les notices gouvernementales tanzaniennes sur Edward Moringe Sokoine, l’article de Sane sur l’onomastique maasaï et les recherches exactes Sokoine en Maa, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Sokoine chronicle », « Sokoine history » et « Sokoine genealogy », complétées par les notices gouvernementales tanzaniennes sur Edward Moringe Sokoine, l’article de Sane sur l’onomastique maasaï et les recherches exactes Sokoine en Maa, n’ont livré aucune chronique primaire qui explique l’origine du nom."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches « Sokoine etymology » et « Sokoine meaning », complétées par les notices gouvernementales tanzaniennes sur Edward Moringe Sokoine, l’article de Sane sur l’onomastique maasaï et les recherches exactes Sokoine en Maa, n’ont livré aucune analyse linguistique publiée qui permette une reconstruction prudente."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Sokoine joking kinship », « Sokoine name alliance » et « Sokoine clan pact », ainsi que les notices gouvernementales tanzaniennes sur Edward Moringe Sokoine, l’article de Sane sur l’onomastique maasaï et les recherches exactes Sokoine en Maa, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Sokoine caste », « Sokoine occupational group » ainsi que les passages sociaux consultés dans les notices gouvernementales tanzaniennes sur Edward Moringe Sokoine, l’article de Sane sur l’onomastique maasaï et les recherches exactes Sokoine en Maa, n’ont établi aucune fonction héréditaire propre à ce nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches sur la graphie exacte « Sokoine » dans les index onomastiques et les notices gouvernementales tanzaniennes sur Edward Moringe Sokoine, l’article de Sane sur l’onomastique maasaï et les recherches exactes Sokoine en Maa n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les notices gouvernementales sur Edward Moringe Sokoine, l’article de Sane sur les noms maasaï et les recherches « Sokoine inheritance/transmission » ne décrivent aucune règle de transmission ; le mode reste « other »."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "La notice UONGOZI rattache Edward Moringe Sokoine à la communauté maasaï, mais ni cette notice, ni l’article de Sane, ni les recherches « Sokoine Maa clan/name » n’établissent si Sokoine est un nom de clan, un nom personnel ou une forme héritée. La classification vague 1 est conservée faute de meilleure preuve et reste à arbitrer."
     }
   ]
 }

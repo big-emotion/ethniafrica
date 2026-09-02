@@ -2,38 +2,50 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
   },
   "id": "PAT_RIEK",
   "nameMain": "Riek",
-  "nameSystem": "clan_name",
+  "nameSystem": "non_hereditary_patronymic",
   "spellings": [
     {
       "spelling": "Riek",
       "attestations": [
-        { "countryId": "SSD", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SSD",
+          "sourceRefs": ["wikinames-south-sudan-2025"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Deux sources communautaires divergent : Wikinames donne à Riek le sens « problème », tandis que PaanLuel Wël rapporte « sanctuaire » ou « trouble ». Aucune analyse linguistique publiée n’a permis de départager ces propositions ; l’origine reste contested.",
+        "claimStatus": "contested",
+        "sourceRefs": [
+          "wikinames-south-sudan-2025",
+          "paanluel-riek-biography-2014"
+        ]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_NUER",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["wikinames-south-sudan-2025"]
     }
   ],
   "countries": [
     {
       "countryId": "SSD",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["wikinames-south-sudan-2025"]
     }
   ],
   "alliances": [],
@@ -42,38 +54,62 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
+      "sourceKey": "wikinames-south-sudan-2025",
+      "title": "Wikinames South Sudan 2025",
+      "url": "https://meta.wikimedia.org/wiki/Wikinames_South_Sudan_2025",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "source_kind": "community",
+      "notes": "Collecte communautaire de noms sud-soudanais publiée sur Meta-Wiki. Le tableau Naath/Nuer donne séparément Chuol, Gatluaak et Machar avec une circonstance de nomination ; un premier tableau donne Riek « problem ». Les entrées sont en attente de versement et sans appareil critique individuel : elles sont citées au tier unverified, jamais comme étymologies établies."
+    },
+    {
+      "sourceKey": "marko-south-sudan-names-2021",
+      "title": "Given Names and Lived Closeness: Kinship Measurement in the South Sudanese Citizenship Office",
+      "url": "https://www.researchgate.net/publication/359727088_Given_Names_and_Lived_Closeness_Kinship_Measurement_in_the_South_Sudanese_Citizenship_Office",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ferenc Dávid Markó, Social Analysis 65(4), 2021, p. 70-89, DOI 10.3167/sa.2021.650404. L’article décrit pour les Dinka et les Nuer une suite de noms individuels — nom, père, grand-père, arrière-grand-père — qui change d’une génération à l’autre, et non un patronyme familial fixe."
+    },
+    {
+      "sourceKey": "indiana-nuer-grammar",
+      "title": "A Precis of the Nuer Grammar",
+      "url": "https://dlib.indiana.edu/collections/nuer/grammar/gramintro.utx.html",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Grammaire pédagogique du Nuer Field Notes Project, Indiana University. La section Proper Names décrit les préfixes nya- « fille » et gat- « fils, enfant » et l’emploi du nom du père au génitif dans le nom complet."
+    },
+    {
+      "sourceKey": "paanluel-riek-biography-2014",
+      "title": "Who is Dr. Riek Machar Teny?",
+      "url": "https://paanluelwel2011.wordpress.com/2014/02/07/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Billet biographique sud-soudanais de PaanLuel Wël Media, 7 février 2014. Il rapporte deux sens concurrents, « shrine » et « trouble », sans analyse linguistique ni informateur nommé ; ce témoignage faible est conservé comme tel."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Riek tradition orale », « Riek griot » et « Riek oral history », ainsi que les tableaux Naath/Nuer de Wikinames, la grammaire nuer d’Indiana, l’article de Markó et les recherches bibliographiques par graphie exacte, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Riek chronicle », « Riek history » et « Riek genealogy », complétées par les tableaux Naath/Nuer de Wikinames, la grammaire nuer d’Indiana, l’article de Markó et les recherches bibliographiques par graphie exacte, n’ont livré aucune chronique primaire qui explique l’origine du nom."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Riek joking kinship », « Riek name alliance » et « Riek clan pact », ainsi que les tableaux Naath/Nuer de Wikinames, la grammaire nuer d’Indiana, l’article de Markó et les recherches bibliographiques par graphie exacte, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Riek caste », « Riek occupational group » ainsi que les passages sociaux consultés dans les tableaux Naath/Nuer de Wikinames, la grammaire nuer d’Indiana, l’article de Markó et les recherches bibliographiques par graphie exacte, n’ont établi aucune fonction héréditaire propre à ce nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches biographiques et nécrologiques sur « Riek » dans les catalogues universitaires et institutionnels, complétées par les tableaux Naath/Nuer de Wikinames, la grammaire nuer d’Indiana, l’article de Markó et les recherches bibliographiques par graphie exacte, n’ont pas permis de vérifier un porteur décédé avec une identité suffisamment précise ; les personnes vivantes repérées ne sont pas ajoutées sans auto-identification."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches sur la graphie exacte « Riek » dans les index onomastiques et les tableaux Naath/Nuer de Wikinames, la grammaire nuer d’Indiana, l’article de Markó et les recherches bibliographiques par graphie exacte n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
     }
   ]
 }

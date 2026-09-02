@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
   },
   "id": "PAT_MAYARDIT",
   "nameMain": "Mayardit",
@@ -11,11 +11,23 @@
     {
       "spelling": "Mayardit",
       "attestations": [
-        { "countryId": "SSD", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "SSD",
+          "sourceRefs": ["leroux-rutledge-south-sudan-2016"]
+        }
+      ]
+    },
+    {
+      "spelling": "Mayaardit",
+      "attestations": [
+        {
+          "countryId": "SSD",
+          "sourceRefs": ["leroux-rutledge-south-sudan-2016"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
@@ -26,14 +38,14 @@
     {
       "peopleId": "PPL_DINKA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["leroux-rutledge-south-sudan-2016"]
     }
   ],
   "countries": [
     {
       "countryId": "SSD",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["leroux-rutledge-south-sudan-2016"]
     }
   ],
   "alliances": [],
@@ -42,38 +54,50 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "sourceKey": "leroux-rutledge-south-sudan-2016",
+      "title": "Public Narratives as Symbolic Resources for Gender and Development",
+      "url": "https://etheses.lse.ac.uk/3548/1/LeRoux-Rutledge_Public_Narratives_as_Symbolic.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Thèse d’Emily LeRoux-Rutledge, London School of Economics, 2016. L’enquête de terrain situe Turalei parmi les Dinka du clan Twic Mayaardit et atteste également la graphie Mayardit dans le nom de la radio locale ; elle cite Nyandeng Malek dans ce même terrain."
+    },
+    {
+      "sourceKey": "lienhardt-african-personal-names-1988",
+      "title": "Social and cultural implications of some African personal names",
+      "url": "https://ora.ox.ac.uk/objects/uuid%3A29267519-7f9c-46c7-826d-75f043d7ce60",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Godfrey Lienhardt, Journal of the Anthropological Society of Oxford 19(2), 1988, p. 105-116. L’article distingue la chaîne de noms personnels patrilinéaires dinka du nom de clan, qui n’entre pas dans le nom complet, et décrit l’ascendance agnatique."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Mayardit tradition orale », « Mayardit griot » et « Mayardit oral history », ainsi que la thèse de LeRoux-Rutledge sur le terrain twic, l’article de Lienhardt sur les noms dinka et les recherches exactes Mayardit/Mayaardit, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Mayardit chronicle », « Mayardit history » et « Mayardit genealogy », complétées par la thèse de LeRoux-Rutledge sur le terrain twic, l’article de Lienhardt sur les noms dinka et les recherches exactes Mayardit/Mayaardit, n’ont livré aucune chronique primaire qui explique l’origine du nom."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches « Mayardit etymology » et « Mayardit meaning », complétées par la thèse de LeRoux-Rutledge sur le terrain twic, l’article de Lienhardt sur les noms dinka et les recherches exactes Mayardit/Mayaardit, n’ont livré aucune analyse linguistique publiée qui permette une reconstruction prudente."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Mayardit joking kinship », « Mayardit name alliance » et « Mayardit clan pact », ainsi que la thèse de LeRoux-Rutledge sur le terrain twic, l’article de Lienhardt sur les noms dinka et les recherches exactes Mayardit/Mayaardit, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Mayardit caste », « Mayardit occupational group » ainsi que les passages sociaux consultés dans la thèse de LeRoux-Rutledge sur le terrain twic, l’article de Lienhardt sur les noms dinka et les recherches exactes Mayardit/Mayaardit, n’ont établi aucune fonction héréditaire propre à ce nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches biographiques et nécrologiques sur « Mayardit » dans les catalogues universitaires et institutionnels, complétées par la thèse de LeRoux-Rutledge sur le terrain twic, l’article de Lienhardt sur les noms dinka et les recherches exactes Mayardit/Mayaardit, n’ont pas permis de vérifier un porteur décédé avec une identité suffisamment précise ; les personnes vivantes repérées ne sont pas ajoutées sans auto-identification."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches sur la graphie exacte « Mayardit » dans les index onomastiques et la thèse de LeRoux-Rutledge sur le terrain twic, l’article de Lienhardt sur les noms dinka et les recherches exactes Mayardit/Mayaardit n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
     }
   ]
 }
