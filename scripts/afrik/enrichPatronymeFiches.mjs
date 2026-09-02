@@ -89,16 +89,19 @@ async function main() {
     join(FICHES, "PAT_KEITA.json")
   );
 
-  // A fiche the research pass silently skipped is the exact failure this whole
-  // exercise exists to correct, so the two sets must match before anything is
-  // written.
+  // A research entry with no fiche is still a hard failure: it means a claim
+  // was written for a name the corpus does not carry.
+  //
+  // The reverse direction stopped being one when the candidate queue landed.
+  // A fiche with no research entry used to mean the pass had silently skipped
+  // it; it now means the queue has generated a fiche this pass has not reached
+  // yet, which is the ordinary state of the corpus and not an error. It is
+  // reported as a count so the size of the backlog stays visible.
   const onDisk = readdirSync(FICHES)
     .filter((f) => f.startsWith("PAT_") && f.endsWith(".json"))
     .map((f) => f.replace(/\.json$/, ""));
   const researched = new Set(Object.keys(RESEARCH));
-  for (const id of onDisk) {
-    if (!researched.has(id)) errors.push(`${id}: fiche has no research entry`);
-  }
+  const awaitingResearch = onDisk.filter((id) => !researched.has(id)).length;
   for (const id of researched) {
     if (!onDisk.includes(id)) errors.push(`${id}: research entry has no fiche`);
   }
@@ -177,7 +180,8 @@ async function main() {
 
   for (const e of errors) console.error(`ERROR ${e}`);
   console.log(
-    `${enriched} fiches enriched, ${filledFields} fields written, ${remainingGaps} gaps remaining`
+    `${enriched} fiches enriched, ${filledFields} fields written, ` +
+      `${remainingGaps} gaps remaining, ${awaitingResearch} fiches awaiting research`
   );
   if (errors.length) process.exit(1);
 }

@@ -51,6 +51,26 @@
       "countryId": "SLE",
       "status": "attested",
       "sourceRefs": ["corpus-ppl-vai-organisation", "gha-v-16-18"]
+    },
+    {
+      "countryId": "GMB",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "GIN",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "GNB",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
     }
   ],
   "alliances": [
@@ -128,6 +148,14 @@
       "tier": "official",
       "source_kind": "intergovernmental",
       "notes": "UNESCO, Histoire générale de l'Afrique, vol. V, dir. B. A. Ogot, 1992 ; consulté sur le texte intégral. Chapitre 12, « From the Niger to the Volta » (M. Izard et J. Ki-Zerbo) : le sanankunya entre les Kulibali (Kurubari) et les Keita ou les Ture, donné comme indice de relations anciennes entre Bambara et Malinké (p. 330) ; l'étymologie kulu « pirogue » + bali privatif, tirée de la traversée du fleuve sans pirogue, assortie par la source elle-même de la mention qu'il en existe d'autres (p. 330 n. 7) ; la généalogie de Mamari Kulibali dit Biton (1712-1755), arrière-petit-fils de Baramangolo par Kaladian, Danfassari et Soma (p. 330-333). Chapitre 13, « The states and cultures of the Upper Guinean coast » (C. Wondji) : la migration des Kongo-Vai depuis le haut Niger sous la conduite du clan Camara, vers Bopolou puis les rivières Mano et Moa, et le déplacement corrélé des Kono et des Vai vers les côtes du Liberia et de la Sierra Leone (p. 375-377)."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
     }
   ],
   "gaps": [

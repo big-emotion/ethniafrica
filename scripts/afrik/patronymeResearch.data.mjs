@@ -149,6 +149,22 @@ export const SOURCES = {
       "pour l'institution de la caste, jamais pour rattacher un clan nommé à " +
       "une caste : cette attribution-là vient d'une autre source.",
   },
+  // Déclaration reprise mot pour mot de generatePatronymeFichesFromCandidates.mjs :
+  // le chargeur rejette le lot si un même titre revient avec un tier, une URL
+  // ou une provenance divergents.
+  "afrik-candidate-queue": {
+    title: "Corpus AFRIK — file d'attente des candidats anthroponymes",
+    url: null,
+    tier: "unverified",
+    source_kind: "ai_generated",
+    notes:
+      "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, " +
+      "file d'attente produite hors corpus et non vérifiée. Aucune source dédiée " +
+      "n'a encore été consultée pour ce nom : la fiche existe pour la couverture, " +
+      "pas pour ce qu'elle affirme. Les pistes de vérification par pays " +
+      "(registres électoraux, instituts statistiques, travaux d'onomastique) sont " +
+      "portées par le champ verificationLead de ce même fichier.",
+  },
   "gha-iv-mali": {
     title:
       "General History of Africa, IV: Africa from the Twelfth to the Sixteenth Century",
@@ -890,6 +906,28 @@ export const RESEARCH = {
         status: "attested",
         sourceRefs: ["corpus-ppl-vai-organisation", "gha-v-16-18"],
       },
+      // Rattachements posés par la file d'attente des candidats, conservés
+      // avec leur provenance : cette passe n'a pas cherché à les résoudre.
+      {
+        countryId: "GMB",
+        status: "attested",
+        sourceRefs: ["afrik-candidate-queue"],
+      },
+      {
+        countryId: "MLI",
+        status: "attested",
+        sourceRefs: ["afrik-candidate-queue"],
+      },
+      {
+        countryId: "GIN",
+        status: "attested",
+        sourceRefs: ["afrik-candidate-queue"],
+      },
+      {
+        countryId: "GNB",
+        status: "attested",
+        sourceRefs: ["afrik-candidate-queue"],
+      },
     ],
     bearers: [
       {
@@ -909,6 +947,7 @@ export const RESEARCH = {
       "bamadaba-jamuw",
       "gha-iv-mali",
       "gha-v-16-18",
+      "afrik-candidate-queue",
     ],
     gapReasons: {
       origin:

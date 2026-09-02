@@ -52,6 +52,11 @@
       "countryId": "MRT",
       "status": "attested",
       "sourceRefs": ["corpus-ppl-wolof-organisation"]
+    },
+    {
+      "countryId": "GIN",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
     }
   ],
   "alliances": [],
@@ -74,6 +79,14 @@
       "tier": "unverified",
       "source_kind": "community",
       "notes": "Blog communautaire peul. Cité pour les quatre clans fondateurs (Diallo, Bâ, Barry, Sow) ; aucune source académique n'a été trouvée pour cette quadripartition lors de la passe."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
     }
   ],
   "gaps": [
