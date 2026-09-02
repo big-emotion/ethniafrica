@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { ContributionForm } from "@/components/ContributionForm";
 import { ATTRIBUTION_STRING } from "@/lib/brand";
+import { getLocalizedRoute } from "@/lib/routing";
 
 // @req REQ-045
 export default function ContributePage() {
@@ -36,12 +37,22 @@ export default function ContributePage() {
       title: "Contribuer",
       intro: {
         title: "Contribution et participation",
+        // Deliberately not a list of what the corpus holds. This sentence
+        // named three of its classes for as long as the corpus had six, and
+        // any list kept here is a second copy of one that already exists.
+        // À propos owns that enumeration; this page owns how to contribute.
         text1: (
           <>
             Le site est alimenté par une{" "}
-            <strong>base de données structurée</strong> regroupant les données
-            sur les peuples africains, les familles linguistiques et les pays,
-            organisées selon la méthodologie AFRIK.
+            <strong>base de données structurée</strong>, organisée selon la
+            méthodologie AFRIK. La page{" "}
+            <Link
+              href={getLocalizedRoute(language, "about")}
+              className="underline underline-offset-4"
+            >
+              À propos
+            </Link>{" "}
+            détaille ce que contient le corpus.
           </>
         ),
         text2: (
@@ -53,7 +64,7 @@ export default function ContributePage() {
             aider, n&apos;hésitez pas à me contacter ou à proposer directement
             sur le{" "}
             <a
-              href="https://github.com/big-emotion/ethniafrique-atlas"
+              href="https://github.com/big-emotion/ethniafrica"
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-4"
@@ -66,7 +77,9 @@ export default function ContributePage() {
       },
       apiDocs: {
         title: "Documentation API",
-        text: "Consultez la documentation complète de l'API pour comprendre comment récupérer les données de manière programmatique. L'API fournit des endpoints pour les peuples, familles linguistiques et pays.",
+        // Same rule as `intro.text1`: the second sentence used to name three
+        // resources out of eighteen. /docs/api lists them from the spec.
+        text: "Consultez la documentation complète de l'API pour comprendre comment récupérer les données de manière programmatique. Elle liste chaque famille de ressources et ses endpoints.",
         button: "Voir la documentation API",
       },
       download: {
@@ -170,7 +183,7 @@ export default function ContributePage() {
           <p className="text-muted-foreground">{t.github.text}</p>
           <div className="pt-2">
             <Link
-              href="https://github.com/big-emotion/ethniafrique-atlas"
+              href="https://github.com/big-emotion/ethniafrica"
               target="_blank"
               rel="noopener noreferrer"
             >
