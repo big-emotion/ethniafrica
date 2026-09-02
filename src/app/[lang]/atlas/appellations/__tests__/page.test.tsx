@@ -114,14 +114,34 @@ describe("the Appellations nomenclature page", () => {
 
   // ETNI-1196/DEC-019: the lede must state which question the ethnonym
   // atlas answers, so a visitor is not left inferring it from the title.
+  // The deck said what the page contains; this says what a reader comes to
+  // do with it, which is the half that was missing.
   // @req REQ-022
-  it("renders a lede stating which question the module answers", async () => {
+  it("says why the page exists, not only what it holds", async () => {
     const ui = await AppellationsPage({ searchParams: Promise.resolve({}) });
     render(ui);
 
     expect(
-      screen.getByText(/Comment un peuple se nomme-t-il/)
+      screen.getByText(/Un peuple porte rarement un seul nom/)
     ).toBeInTheDocument();
+  });
+
+  /**
+   * The deck used to be printed twice — once by `PageLayout`'s head band and
+   * again as the first paragraph under it. This suite mocks `PageLayout`, so
+   * it cannot see the band and cannot count the repetition; what it can hold
+   * is that the paragraph under the band is no longer the deck. The gloss on
+   * the filter chips belongs to `NameNomenclature`, which is mocked here too
+   * and asserts it in its own suite.
+   */
+  // @req REQ-022
+  it("gives the paragraph under the band to the purpose, not to the deck", async () => {
+    const ui = await AppellationsPage({ searchParams: Promise.resolve({}) });
+    render(ui);
+
+    expect(
+      screen.queryByText(/Les noms sous lesquels chaque peuple/)
+    ).toBeNull();
   });
 
   // DEC-038 separates the two objects the corpus calls "name". A visitor

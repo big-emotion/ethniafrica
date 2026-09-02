@@ -40,6 +40,21 @@ function renderNomenclature(
 
 describe("NameNomenclature", () => {
   /**
+   * The four chips are the page's own vocabulary, and « endonyme » and
+   * « exonyme » — the two that carry its whole argument, 715 forms against
+   * 2 742 — were glossed nowhere a reader passes through. A filter whose label
+   * a reader cannot read is a filter they will not use.
+   */
+  // @req REQ-022
+  it("glosses the kinds of name it filters by", () => {
+    renderNomenclature();
+
+    expect(
+      screen.getByText(/Un endonyme est le nom qu'un peuple se donne/)
+    ).toBeVisible();
+  });
+
+  /**
    * The defect this surface was rebuilt for: the peoples bearing a name were
    * rendered `sr-only`, so four entries for four different Songhay fiches
    * looked like the same row repeated, and the page read as a duplicate of
