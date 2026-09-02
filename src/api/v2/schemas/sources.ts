@@ -1,10 +1,19 @@
 /**
  * Zod schemas for /v2/sources endpoints (Module #0).
  *
- * NOTE: Column layout reflects the target schema introduced by ETNI-22
- * (migration 014). Until 014 has been applied, the `pinned_url`, `year`,
- * `author`, `publisher`, `resolvable`, and `last_verified_at` columns may
- * be absent and will be returned as `null` by the service layer.
+ * The column layout is the one migrations 015, 031, 041 and 078 actually
+ * built. An earlier note here credited "migration 014 (ETNI-22)" with
+ * introducing half of these columns; 014 is the flag-severity migration and
+ * never touched `sources`, and chasing that claim is a wasted afternoon.
+ *
+ * Two fields have no column behind them and answer `null` for every row:
+ * `pinnedUrl` (an archived copy of a rotted link) and `resolvable` (the
+ * outcome of the nightly link check, which today writes only a log file).
+ * They are kept, marked deprecated in the OpenAPI document, because removing
+ * a published property is a breaking change that `openapi:diff` gates — and
+ * one that would buy a consumer nothing, since `null` before and absent after
+ * read the same. They go when something fills them, or in a deliberate
+ * breaking release.
  */
 
 import { z } from "zod";
@@ -39,6 +48,11 @@ export const sourceSchema = z.object({
   publisher: z.string().nullable(),
   resolvable: z.boolean().nullable(),
   lastVerifiedAt: z.string().nullable(),
+  /** Why this source carries the tier it carries. Set on every row. */
+  notes: z.string().nullable(),
+  /** The locator inside the work, when the citation named one. */
+  page: z.string().nullable(),
+  addedAt: z.string().nullable(),
   policy: sourcePolicySchema,
 });
 

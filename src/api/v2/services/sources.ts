@@ -1,10 +1,16 @@
 /**
  * Sources service — Supabase queries for the public `sources` table.
  *
- * Reads the column layout introduced by migration 014 (ETNI-22). Columns
- * absent before 014 (`pinned_url`, `year`, `author`, `publisher`,
- * `resolvable`, `last_verified_at`) are normalised to `null` so the public
- * envelope stays type-stable regardless of the migration cursor.
+ * The columns read here are the ones migrations 015, 031, 041 and 078 built.
+ * `pinned_url` and `resolvable` are not among them and never were: the mapper
+ * answers `null` for both so the public envelope stays type-stable, and the
+ * schema module records why the fields survive their missing columns.
+ *
+ * The query is `select("*")` rather than a column list, which is what let the
+ * payload keep promising four columns that did not exist without the request
+ * ever failing. Naming them would have surfaced it years earlier — but it
+ * would also break the endpoint outright the moment a column is renamed, so
+ * the mapper below stays the single place that knows the layout.
  */
 
 import { createServerClient } from "@/lib/supabase/server";
@@ -48,7 +54,12 @@ function mapRowToSource(row: Record<string, unknown>): Source {
     author: (row.author as string | null) ?? null,
     publisher: (row.publisher as string | null) ?? null,
     resolvable: (row.resolvable as boolean | null) ?? null,
-    lastVerifiedAt: (row.last_verified_at as string | null) ?? null,
+    // `verified_at` is the column; `last_verified_at` never existed, so this
+    // field reported null however recently a source had been checked.
+    lastVerifiedAt: (row.verified_at as string | null) ?? null,
+    notes: (row.notes as string | null) ?? null,
+    page: (row.page as string | null) ?? null,
+    addedAt: (row.added_at as string | null) ?? null,
     policy: evaluateSourceUrl(url ?? ""),
   };
 }
