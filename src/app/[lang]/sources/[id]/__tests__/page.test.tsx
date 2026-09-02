@@ -4,6 +4,7 @@ import { render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { Source } from "@/api/v2/schemas/sources";
+import { getPeopleRoute } from "@/lib/routing";
 
 const { getSourceByIdMock, getSourceCitationsMock, notFoundMock } = vi.hoisted(
   () => ({
@@ -139,7 +140,7 @@ describe("source page", () => {
           entityType: "people",
           entityId: "PPL_YORUBA",
           label: "Yoruba",
-          href: "/fr/atlas/peuples/PPL_YORUBA",
+          href: getPeopleRoute("fr", "PPL_YORUBA"),
           assertionCount: 18,
         },
       ],
@@ -150,7 +151,7 @@ describe("source page", () => {
 
     expect(screen.getByRole("link", { name: "Yoruba" })).toHaveAttribute(
       "href",
-      "/fr/atlas/peuples/PPL_YORUBA"
+      getPeopleRoute("fr", "PPL_YORUBA")
     );
   });
 

@@ -14,68 +14,20 @@
  */
 
 import { createServerClient } from "@/lib/supabase/server";
-import {
-  evaluateSourceUrl,
-  sourceKindSchema,
-} from "@/lib/sources/authorized-source-catalog";
+import { mapRowToSource } from "@/api/v2/services/sourceMapper";
+import { narrowSourcesQuery } from "@/api/v2/services/sourcesFacet";
 import type { Source, ListSourcesQuery } from "@/api/v2/schemas/sources";
-import { isSourceTier } from "@/types/sources";
-
-/**
- * The single place that knows the `sources` column layout.
- *
- * Exported for the directory facet, which builds its own narrowed query but
- * must not grow a second opinion about what a row means — that divergence is
- * how `lastVerifiedAt` read one column here and another one there.
- */
-// @req REQ-092
-export function mapRowToSource(row: Record<string, unknown>): Source {
-  const rawSourceKind = row.source_kind as string | null | undefined;
-  const rawIdentifiers = row.identifiers;
-  const url = typeof row.url === "string" ? row.url : null;
-  const sourceKindResult = sourceKindSchema.safeParse(rawSourceKind);
-  const sourceKind = sourceKindResult.success ? sourceKindResult.data : null;
-  // An untiered legacy row stays null here rather than being coerced: the
-  // payload distinguishes "not yet classified" from "classified unverified".
-  const tier = isSourceTier(row.tier) ? row.tier : null;
-  const identifiers =
-    rawIdentifiers &&
-    typeof rawIdentifiers === "object" &&
-    !Array.isArray(rawIdentifiers)
-      ? Object.fromEntries(
-          Object.entries(rawIdentifiers).filter(
-            ([, value]) => typeof value === "string"
-          )
-        )
-      : null;
-
-  return {
-    id: row.id as string,
-    sourceKey: (row.source_key as string | null) ?? null,
-    sourceKind,
-    tier,
-    identifiers,
-    title: (row.title as string) ?? "",
-    url,
-    pinnedUrl: (row.pinned_url as string | null) ?? null,
-    year: (row.year as number | null) ?? null,
-    author: (row.author as string | null) ?? null,
-    publisher: (row.publisher as string | null) ?? null,
-    resolvable: (row.resolvable as boolean | null) ?? null,
-    // `verified_at` is the column; `last_verified_at` never existed, so this
-    // field reported null however recently a source had been checked.
-    lastVerifiedAt: (row.verified_at as string | null) ?? null,
-    notes: (row.notes as string | null) ?? null,
-    page: (row.page as string | null) ?? null,
-    addedAt: (row.added_at as string | null) ?? null,
-    policy: evaluateSourceUrl(url ?? ""),
-  };
-}
 
 export interface ListSourcesResult {
   data: Source[];
   total: number;
 }
+
+const API_SORT_COLUMNS = {
+  title: { column: "title", ascending: true },
+  year: { column: "year", ascending: false },
+  added: { column: "added_at", ascending: false },
+} as const;
 
 // @req REQ-092
 export async function listSources(
@@ -85,10 +37,22 @@ export async function listSources(
   const from = (query.page - 1) * query.perPage;
   const to = from + query.perPage - 1;
 
-  const { data, error, count } = await supabase
-    .from("sources")
-    .select("*", { count: "exact" })
-    .order("title")
+  // The same narrowing the directory applies, through the same helper: a
+  // request must not mean one thing at /fr/sources and another at /api/v2.
+  const narrowed = narrowSourcesQuery(
+    supabase.from("sources").select("*", { count: "exact" }),
+    {
+      search: query.q ?? null,
+      standing: query.tier ?? null,
+      sourceKind: query.sourceKind ?? null,
+      decade: query.decade ?? null,
+      letter: null,
+    }
+  );
+
+  const order = API_SORT_COLUMNS[query.sort ?? "title"];
+  const { data, error, count } = await narrowed
+    .order(order.column, { ascending: order.ascending })
     .range(from, to);
 
   if (error) {

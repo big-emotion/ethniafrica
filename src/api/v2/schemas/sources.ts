@@ -61,10 +61,25 @@ export type Source = z.infer<typeof sourceSchema>;
 /**
  * GET /v2/sources query parameters
  */
+/**
+ * Every field but the two page ones is `.optional()` with no default, so an
+ * unnarrowed request produces exactly the object it always did — the endpoint's
+ * existing callers keep the payload they were written against.
+ *
+ * `tier` accepts the literal `needs_review` alongside the three real tiers. It
+ * is not a fourth: it selects the rows that carry none, which the corpus
+ * distinguishes from `unverified` because "not yet classified" is not a
+ * judgement anyone made.
+ */
 // @req REQ-092
 export const listSourcesQuerySchema = z.object({
   page: z.coerce.number().int().min(1).default(1),
   perPage: z.coerce.number().int().min(1).max(100).default(20),
+  q: z.string().trim().min(1).optional(),
+  tier: z.union([sourceTierSchema, z.literal("needs_review")]).optional(),
+  sourceKind: sourceKindSchema.optional(),
+  decade: z.coerce.number().int().min(1000).max(2999).optional(),
+  sort: z.enum(["title", "year", "added"]).optional(),
 });
 
 export type ListSourcesQuery = z.infer<typeof listSourcesQuerySchema>;

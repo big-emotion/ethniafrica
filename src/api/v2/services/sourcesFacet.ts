@@ -1,4 +1,4 @@
-import { mapRowToSource } from "@/api/v2/services/sources";
+import { mapRowToSource } from "@/api/v2/services/sourceMapper";
 import type { Source } from "@/api/v2/schemas/sources";
 import { createServerClient } from "@/lib/supabase/server";
 import { escapeSearchTerm } from "@/lib/supabase/searchTerm";
@@ -117,6 +117,66 @@ function standingOf(tier: unknown): SourceStanding {
     : "needs_review";
 }
 
+/** The narrowings a source query understands. Sort and paging stay per caller. */
+export type SourceNarrowing = Pick<
+  SourcesFacetFilters,
+  "search" | "standing" | "sourceKind" | "decade" | "letter"
+>;
+
+/** The subset of the PostgREST builder a narrowing touches. */
+interface NarrowableQuery {
+  or(filter: string): NarrowableQuery;
+  eq(column: string, value: string): NarrowableQuery;
+  is(column: string, value: null): NarrowableQuery;
+  gte(column: string, value: number): NarrowableQuery;
+  lt(column: string, value: number): NarrowableQuery;
+  ilike(column: string, pattern: string): NarrowableQuery;
+}
+
+/**
+ * Applies a reader's narrowing to a `sources` query.
+ *
+ * Shared by the directory and the public endpoint on purpose: the same request
+ * has to mean the same thing through both doors, and two copies of "what
+ * `needs_review` selects" would be one copy away from the two disagreeing.
+ */
+// @req REQ-114
+export function narrowSourcesQuery<T>(query: T, filters: SourceNarrowing): T {
+  let narrowed = query as unknown as NarrowableQuery;
+
+  const term = filters.search ? escapeSearchTerm(filters.search) : "";
+  if (term) {
+    narrowed = narrowed.or(
+      [`title.ilike.%${term}%`, `author.ilike.%${term}%`].join(",")
+    );
+  }
+
+  // `needs_review` is the absence of a tier, so it is IS NULL — an equality
+  // against null matches nothing and would report an empty corpus.
+  if (filters.standing === "needs_review") {
+    narrowed = narrowed.is("tier", null);
+  } else if (filters.standing) {
+    narrowed = narrowed.eq("tier", filters.standing);
+  }
+
+  if (filters.sourceKind) {
+    narrowed = narrowed.eq("source_kind", filters.sourceKind);
+  }
+
+  if (filters.decade !== null && filters.decade !== undefined) {
+    // Half-open, so 1999 belongs to the nineties and 2000 does not.
+    narrowed = narrowed
+      .gte("year", filters.decade)
+      .lt("year", filters.decade + 10);
+  }
+
+  if (filters.letter) {
+    narrowed = narrowed.ilike("title", `${filters.letter}%`);
+  }
+
+  return narrowed as unknown as T;
+}
+
 /**
  * One page of the directory, narrowed at the database.
  *
@@ -134,29 +194,10 @@ export async function getSourcesFacetPage(
 ): Promise<SourcesFacetPage> {
   const read = async (which: number) => {
     const supabase = createServerClient();
-    let query = supabase.from("sources").select("*", { count: "exact" });
-
-    const term = filters.search ? escapeSearchTerm(filters.search) : "";
-    if (term) {
-      query = query.or(
-        [`title.ilike.%${term}%`, `author.ilike.%${term}%`].join(",")
-      );
-    }
-
-    if (filters.standing === "needs_review") {
-      query = query.is("tier", null);
-    } else if (filters.standing) {
-      query = query.eq("tier", filters.standing);
-    }
-
-    if (filters.sourceKind) query = query.eq("source_kind", filters.sourceKind);
-
-    if (filters.decade !== null && filters.decade !== undefined) {
-      // Half-open, so 1999 belongs to the nineties and 2000 does not.
-      query = query.gte("year", filters.decade).lt("year", filters.decade + 10);
-    }
-
-    if (filters.letter) query = query.ilike("title", `${filters.letter}%`);
+    let query = narrowSourcesQuery(
+      supabase.from("sources").select("*", { count: "exact" }),
+      filters
+    );
 
     const order = SORT_COLUMNS[filters.sort ?? "titre"] ?? SORT_COLUMNS.titre;
     query = query.order(order.column, { ascending: order.ascending });
