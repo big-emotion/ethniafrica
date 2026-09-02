@@ -137,36 +137,51 @@ describe("checkAutonym (Rule 1)", () => {
       confidence: "high",
       content: { appellations: { selfAppellation: "Test" } },
     };
-    const r = checkAutonym(fiche, "PPL_X.json");
+    const r = checkAutonym(
+      fiche,
+      "dataset/source/afrik/peuples/FLG_X/PPL_X.json"
+    );
     expect(r).toBeNull();
   });
 
   it("warns when autonym missing and confidence < medium", () => {
     const fiche: Fiche = { id: "PPL_X", confidence: "low", content: {} };
-    const r = checkAutonym(fiche, "PPL_X.json");
+    const r = checkAutonym(
+      fiche,
+      "dataset/source/afrik/peuples/FLG_X/PPL_X.json"
+    );
     expect(r).not.toBeNull();
     expect(r!.severity).toBe("warning");
     expect(r!.rule).toBe("autonym-required");
-    expect(r!.file).toBe("PPL_X.json");
+    expect(r!.file).toBe("dataset/source/afrik/peuples/FLG_X/PPL_X.json");
     expect(r!.slug).toBe("PPL_X");
   });
 
   it("errors when autonym missing and confidence >= medium", () => {
     const fiche: Fiche = { id: "PPL_X", confidence: "medium", content: {} };
-    const r = checkAutonym(fiche, "PPL_X.json");
+    const r = checkAutonym(
+      fiche,
+      "dataset/source/afrik/peuples/FLG_X/PPL_X.json"
+    );
     expect(r).not.toBeNull();
     expect(r!.severity).toBe("error");
   });
 
   it("errors when autonym missing and confidence = high", () => {
     const fiche: Fiche = { id: "PPL_X", confidence: "high", content: {} };
-    const r = checkAutonym(fiche, "PPL_X.json");
+    const r = checkAutonym(
+      fiche,
+      "dataset/source/afrik/peuples/FLG_X/PPL_X.json"
+    );
     expect(r!.severity).toBe("error");
   });
 
   it("warns (not errors) when autonym missing and confidence is null/missing", () => {
     const fiche: Fiche = { id: "PPL_X", content: {} };
-    const r = checkAutonym(fiche, "PPL_X.json");
+    const r = checkAutonym(
+      fiche,
+      "dataset/source/afrik/peuples/FLG_X/PPL_X.json"
+    );
     expect(r!.severity).toBe("warning");
   });
 
