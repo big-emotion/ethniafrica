@@ -503,8 +503,14 @@ export const RESEARCH = {
     gapReasons: {
       homonyms:
         "Traoré et Tarawele sont deux graphies d'un même jamu, la première " +
-        "issue de la transcription coloniale : ce ne sont pas des lignées " +
-        "distinctes et elles ne sont donc pas traitées en homonymes.",
+        "issue de la transcription coloniale ; le dictionnaire des jamuw en " +
+        "ajoute une troisième, Taraore, sous la même entrée. Il range en outre " +
+        "Sane, Mane, Ouédraogo, Dembélé, Diouf et — à Ségou — Touré parmi ses " +
+        "équivalences, des noms de clan d'autres peuples tenus pour le même, " +
+        "institution que l'Histoire générale de l'Afrique décrit de son côté en " +
+        "notant qu'un Traoré installé en pays wolof peut prendre le nom Diop. " +
+        "Ni les graphies ni les équivalences ne font des lignées distinctes : " +
+        "aucune n'est traitée en homonyme.",
     },
   },
 
@@ -561,10 +567,12 @@ export const RESEARCH = {
         "homonymie de patronyme, que ce champ écarte, et non une descendance. " +
         "Aucun autre porteur décédé n'a été rattaché au clan.",
       homonyms:
-        "Diarra et Jara sont deux graphies d'un même jamu. Aucune lignée " +
-        "d'origine distincte n'a été trouvée, mais l'étymologie du nom restant " +
-        "elle-même ouverte, une homonymie ne pourrait pas être écartée sur " +
-        "cette base.",
+        "Diarra et Jara sont deux graphies d'un même jamu. Le dictionnaire des " +
+        "jamuw range Condé, Ndiaye et Koné parmi les équivalences de l'entrée " +
+        "Jàra — des noms de clan d'autres peuples tenus pour le même, non des " +
+        "homonymes. Aucune lignée d'origine distincte n'a été trouvée, mais " +
+        "l'étymologie du nom restant elle-même ouverte, une homonymie ne " +
+        "pourrait pas être écartée sur cette base.",
     },
   },
 
@@ -622,7 +630,9 @@ export const RESEARCH = {
         "Aucune lignée homonyme d'origine distincte n'a été trouvée. Le jamu " +
         "est porté bien au-delà de la descendance dynastique, par affiliation " +
         "et par adoption, mais c'est là une extension du même nom et non une " +
-        "seconde origine.",
+        "seconde origine. Le dictionnaire des jamuw réunit de même Kéyità, " +
+        "Kétà et Kɛ́yità sous une entrée unique et range Souma, Koné et " +
+        "Beawɔgi parmi ses équivalences.",
     },
   },
 
@@ -683,8 +693,10 @@ export const RESEARCH = {
     ],
     gapReasons: {
       homonyms:
-        "Coulibaly transcrit le mandingue Kulibali ; aucune lignée d'origine " +
-        "distincte n'a été trouvée sous l'une ou l'autre graphie.",
+        "Coulibaly transcrit le mandingue Kulibali, que le dictionnaire des " +
+        "jamuw écrit aussi Kùlubàli et que l'Histoire générale de l'Afrique " +
+        "donne sous la forme Kurubari. Aucune de ces graphies ne recouvre une " +
+        "lignée d'origine distincte dans les sources consultées.",
     },
   },
 
@@ -756,7 +768,10 @@ export const RESEARCH = {
       homonyms:
         "Aucune lignée homonyme d'origine distincte n'a été trouvée : les " +
         "Kouyaté relevés par les sources consultées se rattachent tous au même " +
-        "lignage de jeli.",
+        "lignage de jeli, celui dont l'Histoire générale de l'Afrique dit que " +
+        "le griot du mansa y était toujours pris. Le dictionnaire des jamuw " +
+        "réunit Kúyate, Kúwate et Kúyatɛ sous une entrée unique et ne lui " +
+        "connaît pas d'équivalence dans un autre peuple.",
     },
   },
 
@@ -818,8 +833,10 @@ export const RESEARCH = {
         "la passe, en dehors de leur statut de clan de jeli. La geste de " +
         "Soundiata les nomme sans raconter l'origine du jamu.",
       homonyms:
-        "Aucune lignée homonyme d'origine distincte n'a été trouvée ; la " +
-        "graphie Diabaté transcrit le mandingue Jabate.",
+        "La graphie Diabaté transcrit le mandingue Jɛbatɛ, que le dictionnaire " +
+        "des jamuw réunit avec Jabatɛ, Jubatɛ, Jabagatɛ, Jɛbaatɛ et Jɛbagatɛ " +
+        "sous une seule entrée. Six orthographes d'un même jamu, et aucune " +
+        "lignée d'origine distincte dans les sources consultées.",
     },
   },
 
@@ -899,8 +916,11 @@ export const RESEARCH = {
         "de la passe. La geste de Soundiata nomme les Kamara parmi les lignages " +
         "de forgerons sans raconter l'origine du nom lui-même.",
       homonyms:
-        "La graphie Camara est la transcription francophone de Kamara ; ce sont " +
-        "deux orthographes d'un même nom, non deux lignées, et elles ne sont " +
+        "La graphie Camara est la transcription francophone de Kamara ; le " +
+        "dictionnaire des jamuw y ajoute Kámala, et range Koiwogi — chez les " +
+        "Loma — ainsi que Dansogo, Fofana et Magasa parmi ses équivalences, " +
+        "des noms de clan d'autres peuples tenus pour le même. Ce sont des " +
+        "orthographes et des correspondances, non deux lignées : elles ne sont " +
         "donc pas traitées en homonymes.",
     },
   },
@@ -951,7 +971,13 @@ export const RESEARCH = {
         "dictionnaire des jamuw, ni Charry ne l'attachent à une personne.",
       homonyms:
         "Fofana est porté dans les aires mandingue et soninké sans qu'une " +
-        "source dédiée établisse deux origines distinctes.",
+        "source dédiée établisse deux origines distinctes. Le dictionnaire des " +
+        "jamuw traite cette dispersion sous une entrée unique — il y attache " +
+        "cinq codes d'aire dialectale qu'il ne développe pas — et range Fònba, " +
+        "Magasa, Dancogo, Kamara et Diomandé parmi ses équivalences, des noms " +
+        "de clan d'autres peuples tenus pour le même. Une équivalence n'est pas " +
+        "une homonymie : elle dit que deux noms désignent le même groupe, non " +
+        "que le même nom en désigne deux.",
     },
   },
   PAT_DOUMBIA: {
@@ -1002,8 +1028,11 @@ export const RESEARCH = {
         "des sources consultées, et aucun autre porteur décédé n'a pu être " +
         "rattaché au clan.",
       homonyms:
-        "Aucune lignée homonyme d'origine distincte n'a été trouvée lors de la " +
-        "passe.",
+        "Le dictionnaire des jamuw réunit Dunbiya, Dunbuya, Dumuya et Dunmuya " +
+        "sous une seule entrée et range Kouroma et Sissoko parmi ses " +
+        "équivalences — des noms de clan d'autres peuples tenus pour le même. " +
+        "Quatre graphies et deux correspondances, aucune lignée d'origine " +
+        "distincte.",
     },
   },
 
@@ -1050,10 +1079,12 @@ export const RESEARCH = {
         "n'enregistre une paire que si les deux patronymes en ont une. La " +
         "recherche a donc trouvé des senankun sans qu'aucun soit inscriptible.",
       bearers:
-        "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
-        "dédiée. Le porteur le mieux documenté du nom, Cheikh Ahmadou Bamba " +
-        "Mbacké, relève précisément de l'homonymie signalée plus haut et non de " +
-        "ce jamu.",
+        "Aucun porteur décédé n'a été rattaché au jamu par les sources de cette " +
+        "passe : ni l'Histoire générale de l'Afrique, qui ne connaît le mot " +
+        "Bamba que comme toponyme, ni le dictionnaire des jamuw, qui localise " +
+        "l'entrée à Sikasso sans nommer personne. Le porteur le mieux documenté " +
+        "du nom, Cheikh Ahmadou Bamba Mbacké, relève précisément de " +
+        "l'homonymie signalée plus haut et non de ce jamu.",
     },
   },
 
