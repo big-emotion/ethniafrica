@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier révisé par recherche dédiée. L'association bété reste prudente, un porteur défunt est documenté, et aucune origine lexicale n'est avancée faute de source."
   },
   "id": "PAT_ZADI",
   "nameMain": "Zadi",
@@ -11,7 +11,10 @@
     {
       "spelling": "Zadi",
       "attestations": [
-        { "countryId": "CIV", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["bnf-zadi-zaourou", "gronner-1982-bete-soubre"]
+        }
       ]
     }
   ],
@@ -25,55 +28,89 @@
   "peoples": [
     {
       "peopleId": "PPL_BETE",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["gronner-1982-bete-soubre", "wiktionnaire-zadi"]
     }
   ],
   "countries": [
     {
       "countryId": "CIV",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["bnf-zadi-zaourou", "gronner-1982-bete-soubre"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Bernard Zadi Zaourou",
+      "sourceRefs": ["bnf-zadi-zaourou"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
+      "sourceKey": "gronner-1982-bete-soubre",
+      "title": "Les Bété de Soubré et le développement régional (sud-ouest de la Côte d'Ivoire)",
+      "url": "https://horizon.documentation.ird.fr/exl-doc/pleins_textes/divers14-08/03780.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Thèse de troisième cycle de Joël Gronner, EHESS, publiée par l'ORSTOM en 1982. Dans son étude des communautés bété de Soubré, l'auteur nomme notamment Zadi Kessi Marcel et son père Gboté Zadi René, ainsi que le groupe Zadiayo. Ces occurrences situent le nom dans un contexte familial bété, mais ne suffisent pas à établir son étymologie, son statut de clan ou une règle de transmission ; l'association à PPL_BETE reste donc « supposed »."
+    },
+    {
+      "sourceKey": "bnf-zadi-zaourou",
+      "title": "Notice de personne « Zadi Zaourou, Bernard (1938-2012) »",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb11887909m",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Notice d'autorité de la Bibliothèque nationale de France, identifiant FRBNF11887909. Elle établit les formes du nom, la naissance à Soubré en 1938 et le décès à Abidjan le 20 mars 2012. Elle documente le porteur et son ancrage ivoirien, sans attribuer d'origine ethnique ou lexicale au patronyme."
+    },
+    {
+      "sourceKey": "wiktionnaire-zadi",
+      "title": "Wiktionnaire — Zadi",
+      "url": "https://fr.wiktionary.org/wiki/Zadi",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "source_kind": "community",
+      "notes": "Page communautaire consultée le 2 septembre 2026. Elle qualifie Zadi de nom de famille bété de Côte d'Ivoire, mais ne fournit aucune référence étymologique dédiée : son affirmation est conservée à faible autorité et seulement comme appui secondaire à l'association proposée. La page Wikipédia liée n'a pas été utilisée comme source."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "nameSystem",
+      "reason": "Gronner atteste plusieurs personnes et un groupe Zadiayo dans les communautés bété de Soubré, tandis que la BnF confirme un nom de personne. Aucune de ces sources ne classe Zadi comme nom de clan ; la typologie exigée par le modèle reste non résolue."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "La thèse de Gronner a été vérifiée pour les occurrences Zadi et Zadiayo, mais elle ne démontre pas que le patronyme moderne désigne ce groupe ou un lignage précis. L'unité sociale désignée reste inconnue."
+    },
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les vingt et une chroniques villageoises publiées par Gronner et leurs occurrences de Zadiayo ont été examinées. Elles ne donnent pas de récit d'origine du patronyme Zadi attribué à un griot ou à un transmetteur identifiable avec une transcription propre au nom."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "La thèse de Gronner, la notice d'autorité de la BnF et les études littéraires consacrées à Bernard Zadi Zaourou attestent des personnes ou des groupes, mais aucune chronique ne retrace l'apparition du patronyme Zadi."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Wiktionnaire affirme seulement que Zadi est un nom bété et Forebears indique que sa signification n'est pas répertoriée. Les recherches « Zadi étymologie bété », « Zadi anthroponymie » et « Zadi onomastique » n'ont produit aucune analyse linguistique dédiée et vérifiable."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Gronner décrit des alliances entre groupes bété et mentionne des relations impliquant les Zadiayo, mais aucune n'est établie comme parenté à plaisanterie entre le patronyme Zadi et un autre PAT_* existant. Les recherches exactes n'ont fourni aucune paire admissible."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les fonctions exercées par des porteurs cités par Gronner ou la BnF sont individuelles. Les recherches dans la littérature anthropologique bété n'ont associé le nom Zadi à aucune fonction héréditaire."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Forebears signale des occurrences de Zadi dans plusieurs pays, mais avertit que la géographie ne détermine pas l'origine et ne fournit aucune étymologie. Les recherches sur les formes pakistanaise et nord-africaine n'ont pas établi de lignée homonyme avec une origine vérifiable."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La thèse de Gronner nomme un père et son fils portant Zadi dans des positions différentes au sein de leurs noms, ce qui ne suffit pas à définir une règle générale. Ni la BnF, ni Wiktionnaire, ni les recherches « Zadi transmission patronyme bété » ne documentent le mode de transmission ; la valeur reste « other »."
     }
   ]
 }

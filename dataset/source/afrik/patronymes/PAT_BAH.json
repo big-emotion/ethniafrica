@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
   },
   "id": "PAT_BAH",
   "nameMain": "Bah",
@@ -11,30 +11,52 @@
     {
       "spelling": "Bah",
       "attestations": [
-        { "countryId": "GMB", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "GIN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "GMB",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "GIN",
+          "sourceRefs": ["afrik-candidate-queue", "vieillard-fouta-clans"]
+        }
       ]
     },
     {
       "spelling": "Ba",
       "attestations": [
-        { "countryId": "GMB", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "GIN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "GMB",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "GIN",
+          "sourceRefs": ["afrik-candidate-queue", "vieillard-fouta-clans"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Au Fouta-Djalon, Bâ, Bah et Baldé sont donnés comme les noms du groupe classique Uururɓe ; une étude historique ultérieure confirme Bah parmi les quatre yettore employés comme noms de famille et marqueurs fulɓe.",
+        "claimStatus": "established",
+        "sourceRefs": ["vieillard-fouta-clans", "straussberger-2016-futa"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_FULA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "afrik-candidate-queue",
+        "vieillard-fouta-clans",
+        "straussberger-2016-futa"
+      ]
     }
   ],
   "countries": [
@@ -46,7 +68,11 @@
     {
       "countryId": "GIN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "afrik-candidate-queue",
+        "vieillard-fouta-clans",
+        "straussberger-2016-futa"
+      ]
     }
   ],
   "alliances": [],
@@ -60,33 +86,41 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Source de vague 1 conservée uniquement pour les attestations géographiques qui ne sont pas confirmées par la recherche dédiée. Les formes Bah et Ba ainsi que leur association au Fouta-Djalon sont désormais attestées par Vieillard et Straussberger ; la présence gambienne reste issue de la file de candidats."
+    },
+    {
+      "sourceKey": "vieillard-fouta-clans",
+      "title": "Notes sur les Peuls du Fouta-Djallon — Clans et familles",
+      "url": "https://webfuuta.site/bibliotheque/gilbert_vieillard/notes/chap03.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Gilbert Vieillard, enquête ethnographique publiée en 1939 et reproduite par WebFuuta. Le chapitre distingue les quatre groupes classiques, donne leurs graphies patronymiques et décrit la famille du Fouta-Djalon comme patrilinéaire. Cette source coloniale est utilisée comme témoignage situé, non comme vérité intemporelle."
+    },
+    {
+      "sourceKey": "straussberger-2016-futa",
+      "title": "Storming the Citadel: Decolonization and Political Contestation in Guinea's Futa Jallon, 1945–61",
+      "url": "https://www.cambridge.org/core/journals/journal-of-african-history/article/abs/storming-the-citadel-decolonization-and-political-contestation-in-guineas-futa-jallon-194561/1F793ADC739F5A7A6B328C7CCEF585C5",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "John Straussberger, The Journal of African History 57/2, 2016, p. 231-249, DOI 10.1017/S0021853716000050. La note 35 nomme explicitement Diallo, Barry, Sow et Bah comme yettore employés comme noms de famille et marqueurs fulɓe au Fouta-Djalon."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Le chapitre « Clans et familles » de Vieillard et l’article de Straussberger ont été recherchés pour des paires de dendiraagal nommant Bah ; aucun partenaire patronymique explicite n’y est donné."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Straussberger qualifie les yettore de groupements transversaux aux rangs, et Vieillard ne rattache Bah à aucun métier héréditaire ; aucune fonction de caste propre à Bah n’a donc été établie."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les occurrences Bah dans Straussberger concernent des acteurs modernes, mais la recherche n’a pas établi le décès et l’auto-identification clanique d’un porteur ; aucun bearer n’est enregistré."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Vieillard et Straussberger ont été vérifiés pour des lignées distinctes portant Bah ou Ba ; ils présentent ces graphies dans le même ensemble Uururɓe et ne documentent pas d’homonyme séparé."
     }
   ]
 }
