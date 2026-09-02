@@ -37,7 +37,12 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # The apply step walks the whole corpus, and the corpus only grows: at 1721
+    # fiches it ran 19m16s and was still writing patronymes when a 20-minute cap
+    # killed it mid-load, leaving recette holding a partial corpus. Everything
+    # before it (checkout, npm ci, validation, the dry-run preview) costs under a
+    # minute together, so this budget is the apply step's, with room to grow.
+    timeout-minutes: 45
     environment: recette
     env:
       # Recette's own credentials — the pair the rest of CI uses. The production
