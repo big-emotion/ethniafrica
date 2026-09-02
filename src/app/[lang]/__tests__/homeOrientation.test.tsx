@@ -55,9 +55,9 @@ const precedes = (first: Element, second: Element) =>
   );
 
 describe("home — what the reader meets, and in what order (REQ-113)", () => {
-  // The DOM is the phone composition: copy/search/seeds, globe, then the
-  // counters. Desktop reuses those nodes through grid areas rather than
-  // maintaining a second reading order.
+  // The DOM is the phone composition: copy/search/seeds, then the globe.
+  // Desktop reuses those nodes through grid areas rather than maintaining a
+  // second reading order.
   // @req REQ-113
   it("orders the search-first hero for mobile before enhancing it for desktop", async () => {
     const { container } = await renderHome();
@@ -68,13 +68,10 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
     // the second class. Reading order is the same whichever kind is drawn, so
     // the assertion belongs on the slot rather than on one of its outcomes.
     const visual = container.querySelector(".home-hero-visual");
-    const counts = container.querySelector(".home-hero-counts");
 
     expect(copy).not.toBeNull();
     expect(visual).not.toBeNull();
-    expect(counts).not.toBeNull();
     expect(precedes(copy!, visual!)).toBe(true);
-    expect(precedes(visual!, counts!)).toBe(true);
   });
 
   // @req REQ-113
@@ -125,30 +122,9 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
     expect(screen.getAllByRole("heading", { level: 3 })).toHaveLength(2);
   });
 
-  // Counts keep their definition-list semantics even when the display order
-  // puts each number above its label.
-  // @req REQ-113
-  it("presents the corpus scale as five labelled values", async () => {
-    await renderHome();
-
-    const counts = screen.getAllByRole("term")[0].closest("dl");
-    expect(counts).toHaveAttribute("aria-label", "Le corpus en chiffres");
-    expect(within(counts!).getAllByRole("term")).toHaveLength(5);
-    expect(within(counts!).getAllByRole("definition")).toHaveLength(5);
-    for (const label of [
-      "Peuples",
-      "Langues",
-      "Pays",
-      "Familles linguistiques",
-      "Appellations",
-    ]) {
-      expect(within(counts!).getByText(label).tagName).toBe("DT");
-    }
-  });
-
   // The one action names the five entity types the corpus can resolve — the
-  // same five the tiles above count. No retired axis copy survives around it
-  // to compete for the first decision.
+  // same five the headline reel turns through. No retired axis copy survives
+  // around it to compete for the first decision.
   // @req REQ-113
   it("names the searchable entity kinds without legacy entry-point rhetoric", async () => {
     const { container } = await renderHome();

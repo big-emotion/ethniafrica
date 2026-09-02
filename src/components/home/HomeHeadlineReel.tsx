@@ -34,7 +34,7 @@ import { useSlotReel } from "@/hooks/use-slot-reel";
  * speed would be read as flicker rather than as a list.
  */
 // @req REQ-115
-export const HEADLINE_DWELL_MS = 4000;
+export const HEADLINE_DWELL_MS = 6500;
 
 /**
  * Long enough that the headline is still on its first class when the page
