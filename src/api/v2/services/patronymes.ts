@@ -87,7 +87,8 @@ export const PATRONYME_FACET_WALK_SIZE = 500;
  * reaching it means the range is being ignored, and a loop against a server
  * that ignores it would never end.
  */
-const PATRONYME_FACET_MAX_PAGES = 40;
+// @req REQ-139
+export const PATRONYME_FACET_MAX_PAGES = 40;
 
 /**
  * The subset of the PostgREST builder the shared filters need.
@@ -156,7 +157,8 @@ function withPatronymeFilters<Query>(
  * would quietly drop the names of the best-documented countries — the ones the
  * filter is most used on.
  */
-async function getPatronymeIdsLinkedTo(
+// @req REQ-139
+export async function getPatronymeIdsLinkedTo(
   table: "afrik_patronyme_peoples" | "afrik_patronyme_countries",
   column: "people_id" | "country_id",
   value: string

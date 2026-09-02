@@ -395,6 +395,33 @@ export const translations = {
       bearersEditorialNote:
         "Cette liste ne mentionne que des personnes publiques ou décédées, ou s'étant elles-mêmes revendiquées de ce patronyme. Elle ne permet de déduire l'origine ethnique d'aucune personne vivante à partir de ce nom.",
       roleCategoryFallback: "Rôle non renseigné",
+      // The name dimension as the people and country fiches carry it
+      // (REQ-133, `docs/design/name-to-country-linking.md`). The country
+      // labels are the load-bearing copy: the two lists answer different
+      // questions, and only the wording keeps a reader from reading the
+      // second as an attestation the corpus never made.
+      onFiche: {
+        peopleTitle: "Noms portés",
+        peopleEmpty:
+          "Le corpus ne rattache encore aucun nom à ce peuple. La dimension des noms vient d'ouvrir et ne couvre qu'une petite part de l'atlas.",
+        peopleUnavailable:
+          "Les noms portés n'ont pas pu être chargés. Le problème vient de notre côté, pas d'un corpus vide.",
+        countryTitle: "Noms attestés",
+        countryNote:
+          "Deux registres distincts : ce qu'une source atteste dans ce pays, et ce que portent les peuples qui y vivent.",
+        attestedLabel: "Attestés dans le pays",
+        // Says both halves of the inference in the label itself — whose
+        // names these are, and that no source places them here. A label
+        // reading merely "Portés par les peuples" would let the chapter
+        // title supply the missing word, and the word it would supply is
+        // "attestés".
+        reachLabel: "Portés par les peuples du pays, sans attestation ici",
+        reachViaPrefix: "par",
+        countryEmpty:
+          "Le corpus n'atteste encore aucun nom dans ce pays, et aucun des peuples qui y vivent n'en porte de documenté.",
+        countryUnavailable:
+          "Les noms n'ont pas pu être chargés. Le problème vient de notre côté, pas d'un corpus vide.",
+      },
       // The /fr/atlas/noms index (ETNI-1803, REQ-139) — the corpus-class
       // listing that leads to the fiches above. Kept nested here rather than
       // as a sibling top-level key: it is patronyme copy, distinct from

@@ -187,6 +187,16 @@
   margin: 0 0 12px;
   padding-inline-start: 1.15em;
   list-style: disc;
+  /* The site centres text from the body down, and a list is the one block that
+     cannot survive it: the marker stays on the inline start while the item's
+     text drifts to the middle, so every row carries two alignments and the
+     bullets end up pointing at nothing. Brand charter §8.1 — one alignment per
+     block. Same fix, and the same reason, as `.afh-source-row` below.
+
+     The country parchment happened to reset this on its own; the people
+     parchment did not, which is how one component rendered left on one fiche
+     and centred on the other. */
+  text-align: start;
 }
 
 .afh-prose-list li {
