@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche ciblé sur Salifou ; l'origine proposée vient d'une contribution communautaire non vérifiée et l'association zarma n'est pas confirmée."
   },
   "id": "PAT_SALIFOU",
   "nameMain": "Salifou",
@@ -11,7 +11,13 @@
     {
       "spelling": "Salifou",
       "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NER",
+          "sourceRefs": [
+            "behindthename-salifou-submitted",
+            "niger-mae-andre-salifou"
+          ]
+        }
       ]
     },
     {
@@ -26,13 +32,19 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Salifou est présenté comme une variante du nom Salifu.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["behindthename-salifou-submitted"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_ZARMA",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["niger-mae-andre-salifou"]
     }
   ],
   "countries": [
@@ -53,29 +65,53 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json. Conservée comme provenance de la variante Salif et de l'hypothèse d'association zarma, que les sources réelles consultées n'ont pas confirmée."
+    },
+    {
+      "sourceKey": "behindthename-salifou-submitted",
+      "title": "User-submitted name Salifou",
+      "url": "https://www.behindthename.com/name/salifou/submitted",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Contribution d'utilisateur consultée en anglais ; le site précise que ces contributions ne sont pas vérifiées par son équipe éditoriale. Elle présente Salifou comme une variante de Salifu ; cette proposition reste au statut claimed."
+    },
+    {
+      "sourceKey": "niger-mae-andre-salifou",
+      "title": "Prof. André Salifou",
+      "url": "https://diplomatie.gouv.ne/index.php/le-ministere/actualites/11-liste-ministres-ae/61-prof-andre-salifou",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Notice du ministère nigérien des Affaires étrangères, consultée en français. Elle atteste André Salifou comme ministre d'État en 1996 ; elle ne renseigne ni son peuple ni l'étymologie du nom."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches sur « Salifou » dans les corpus et travaux songhay-zarma, avec les termes tradition orale, griot et jasare, n'ont livré aucun récit attribué et transcrit."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues bibliographiques, notices d'autorité et résultats sur Salifou/Salifu ont été consultés ; aucun document historique ne retrace l'introduction de Salifou chez les Zarma."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les travaux d'anthroponymie songhay-zarma et les recherches associant « Salifou » à Zarma, Djerma et Songhay n'ont fourni aucune attestation ethnique dédiée ; l'association initiale reste donc supposée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches associant « Salifou » à parenté à plaisanterie, alliance, cousinage et sanankuya n'ont identifié aucune paire documentée entre deux fiches PAT existantes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches associant « Salifou » aux termes caste, métier héréditaire, jasare et fonction sociale n'ont fourni aucune attribution sourcée applicable au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La notice ministérielle atteste un porteur sans indiquer son décès ; les catalogues d'autorité consultés n'ont pas fourni de porteur décédé vérifiable."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les formes Salifou, Salifu et Salif ont été distinguées dans les recherches onomastiques ; aucune origine indépendante n'a été établie pour constituer un homonyme."
     }
   ]
 }

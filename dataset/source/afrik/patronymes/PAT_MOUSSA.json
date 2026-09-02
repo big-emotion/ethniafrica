@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de recherche ciblé sur Moussa ; la relation à Musa est documentée par une source communautaire et l'association zarma n'est pas confirmée."
   },
   "id": "PAT_MOUSSA",
   "nameMain": "Moussa",
@@ -11,13 +11,16 @@
     {
       "spelling": "Moussa",
       "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NER",
+          "sourceRefs": ["behindthename-moussa", "niger-cm-2023-moussa"]
+        }
       ]
     },
     {
       "spelling": "Musa",
       "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+        { "countryId": "NER", "sourceRefs": ["behindthename-moussa"] }
       ]
     }
   ],
@@ -26,13 +29,19 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Moussa est présenté comme une transcription de l'arabe Mūsā couramment employée en Afrique de l'Ouest.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["behindthename-moussa"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_ZARMA",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["niger-cm-2023-moussa"]
     }
   ],
   "countries": [
@@ -53,29 +62,53 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json. Conservée uniquement comme provenance de l'hypothèse d'association zarma, que les sources réelles consultées n'ont pas confirmée."
+    },
+    {
+      "sourceKey": "behindthename-moussa",
+      "title": "Meaning, origin and history of the name Moussa",
+      "url": "https://www.behindthename.com/name/moussa/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Notice onomastique communautaire consultée en anglais. Elle décrit Moussa comme une transcription de Mūsā utilisée en Afrique de l'Ouest. L'étymologie est enregistrée au tier unverified et au statut claimed."
+    },
+    {
+      "sourceKey": "niger-cm-2023-moussa",
+      "title": "Conseil des ministres du 9 septembre 2023",
+      "url": "https://www.gouv.ne/index.php/les-communiques-du-gouvernement/508-conseil-des-ministres-du-09-09-2023-adoption-de-plusieurs-projets-de-textes-et-mesures-nominatives-2",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Communiqué officiel du Gouvernement du Niger, consulté en français. Les mesures nominatives attestent la graphie Moussa au Niger ; elles ne renseignent ni le peuple des porteurs ni l'étymologie du nom."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches sur « Moussa » dans les corpus et travaux songhay-zarma, avec les termes tradition orale, griot et jasare, n'ont livré aucun récit attribué et transcrit."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues bibliographiques, notices d'autorité et résultats sur Moussa/Mūsā ont été consultés ; aucun document historique ne retrace l'introduction de Moussa chez les Zarma."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les travaux d'anthroponymie songhay-zarma et les recherches associant « Moussa » à Zarma, Djerma et Songhay n'ont fourni aucune attestation ethnique dédiée ; l'association initiale reste donc supposée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches associant « Moussa » à parenté à plaisanterie, alliance, cousinage et sanankuya n'ont identifié aucune paire documentée entre deux fiches PAT existantes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches associant « Moussa » aux termes caste, métier héréditaire, jasare et fonction sociale n'ont fourni aucune attribution sourcée applicable au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les pages institutionnelles consultées attestent des porteurs contemporains, mais la recherche n'a pas établi leur décès ; aucun porteur n'est donc enregistré dans ce champ limité aux personnes décédées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les formes Moussa et Musa ont été comparées dans les recherches onomastiques ; aucune origine distincte susceptible de constituer un homonyme n'a été établie."
     }
   ]
 }
