@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_BELL",
   "nameMain": "Bell",
@@ -11,35 +11,47 @@
     {
       "spelling": "Bell",
       "attestations": [
-        { "countryId": "CMR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["balandier-duala-1975"]
+        }
       ]
     },
     {
       "spelling": "Manga Bell",
       "attestations": [
-        { "countryId": "CMR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "L'analyse historique de Georges Balandier présente Bona jo, dit Bell, comme l'une des quatre unités principales de l'ancienne formation duala et précise que celle-ci reposait sur une patrilignée dominante.",
+        "claimStatus": "established",
+        "sourceRefs": ["balandier-duala-1975"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_DUALA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["balandier-duala-1975"]
     }
   ],
   "countries": [
     {
       "countryId": "CMR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["balandier-duala-1975"]
     }
   ],
   "alliances": [],
@@ -49,37 +61,37 @@
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "notes": "Source héritée de dataset/source/afrik/patronymes/_candidates-by-country.json. Après recherche dédiée, elle ne subsiste que pour les associations ou graphies encore marquées « supposed » qu'aucune source indépendante n'a confirmées ; elle ne soutient aucune étymologie ni aucun fait nouveau."
+    },
+    {
+      "sourceKey": "balandier-duala-1975",
+      "title": "Économie, société et pouvoir chez les Duala anciens",
+      "url": "https://www.persee.fr/doc/cea_0008-0055_1975_num_15_59_2576?pageId=T1_363",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article de Georges Balandier, Cahiers d'Études africaines, vol. 15, no 59, 1975, p. 361-380, consulté intégralement. Il nomme « Bona jo dit Bell » parmi les quatre unités principales duala, décrit la patrilignée dominante et la rivalité entre Bell et Akwa. Aucune fiche PAT_AKWA n'existe dans le corpus, donc aucune alliance structurée n'est ajoutée."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "L'article « Économie, société et pouvoir chez les Duala anciens » documente une rivalité entre Bell et Akwa, mais aucune fiche PAT_AKWA n'existe dans le corpus. Les recherches « Bell Duala alliance clan Akwa patronyme », « Bell Duala joking kinship » et « Bell Duala parenté à plaisanterie » n'ont révélé aucune autre paire dont les deux noms disposent de fiches PAT_* ; aucune alliance valide ne peut donc être encodée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Bell », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Économie, société et pouvoir chez les Duala anciens » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Bell."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Bell », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « Économie, société et pouvoir chez les Duala anciens », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web combinant « Bell », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « Économie, société et pouvoir chez les Duala anciens », n'ont pas établi de lignée homonyme d'origine distincte."
     }
   ]
 }
