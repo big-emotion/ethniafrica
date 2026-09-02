@@ -1,14 +1,21 @@
 import type { PeopleOriginData } from "@/lib/peopleDataTransformer";
+import type { ParagraphNoteData } from "@/components/people/peopleFicheNotes";
 import { ProseWithChip } from "./ProseWithChip";
 import type { OriginChips } from "./ProseWithChip";
 
 interface PeopleOriginBlockProps {
   data: PeopleOriginData;
   chips?: OriginChips;
+  /** One note callout per sourced field, keyed as `chips` is. */
+  notes?: Partial<Record<string, ParagraphNoteData>>;
 }
 
 // @req REQ-003
-export function PeopleOriginBlock({ data, chips }: PeopleOriginBlockProps) {
+export function PeopleOriginBlock({
+  data,
+  chips,
+  notes,
+}: PeopleOriginBlockProps) {
   const hasContent =
     data.ancientOrigins ||
     data.formationPeriod ||
@@ -29,6 +36,7 @@ export function PeopleOriginBlock({ data, chips }: PeopleOriginBlockProps) {
             <ProseWithChip
               text={data.ancientOrigins}
               chip={chips?.ancientOrigins}
+              note={notes?.ancientOrigins}
             />
           </dd>
         </div>
@@ -41,6 +49,7 @@ export function PeopleOriginBlock({ data, chips }: PeopleOriginBlockProps) {
             <ProseWithChip
               text={data.formationPeriod}
               chip={chips?.formationPeriod}
+              note={notes?.formationPeriod}
             />
           </dd>
         </div>
@@ -84,6 +93,7 @@ export function PeopleOriginBlock({ data, chips }: PeopleOriginBlockProps) {
             <ProseWithChip
               text={data.unificationsOrDivisions}
               chip={chips?.unificationsOrDivisions}
+              note={notes?.unificationsOrDivisions}
             />
           </dd>
         </div>
@@ -96,6 +106,7 @@ export function PeopleOriginBlock({ data, chips }: PeopleOriginBlockProps) {
             <ProseWithChip
               text={data.externalInfluences}
               chip={chips?.externalInfluences}
+              note={notes?.externalInfluences}
             />
           </dd>
         </div>
@@ -108,6 +119,7 @@ export function PeopleOriginBlock({ data, chips }: PeopleOriginBlockProps) {
             <ProseWithChip
               text={data.majorHistoricalEvents}
               chip={chips?.majorHistoricalEvents}
+              note={notes?.majorHistoricalEvents}
             />
           </dd>
         </div>
