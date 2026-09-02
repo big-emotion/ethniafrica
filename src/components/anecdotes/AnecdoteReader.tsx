@@ -452,5 +452,3 @@ export function AnecdoteReader({
     </div>
   );
 }
-
-export default AnecdoteReader;

@@ -164,5 +164,3 @@ export function PinnedVersionBanner({
     </aside>
   );
 }
-
-export default PinnedVersionBanner;

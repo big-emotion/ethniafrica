@@ -60,5 +60,3 @@ export function PatronymeSourcesSection({
     </FicheSection>
   );
 }
-
-export default PatronymeSourcesSection;

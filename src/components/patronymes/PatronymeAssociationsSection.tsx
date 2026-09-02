@@ -65,5 +65,3 @@ export function PatronymeAssociationsSection({
     </FicheSection>
   );
 }
-
-export default PatronymeAssociationsSection;

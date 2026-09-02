@@ -141,5 +141,3 @@ export const QuizScopePicker = ({
     </div>
   );
 };
-
-export default QuizScopePicker;

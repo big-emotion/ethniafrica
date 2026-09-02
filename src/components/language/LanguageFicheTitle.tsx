@@ -27,5 +27,3 @@ export function LanguageFicheTitle({ data }: { data: LanguagePageData }) {
     </header>
   );
 }
-
-export default LanguageFicheTitle;

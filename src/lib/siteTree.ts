@@ -44,6 +44,12 @@ export interface SiteTreeSection {
  *     entered cold from a search result.
  *   · `comparer/[entityType]/[...ids]` — combinatorial. The `/comparer`
  *     entry point is listed; the pairs it can build are not.
+ *
+ * `confidentialite` and `politique-confidentialite` were here too — two
+ * hand-written pages restating `politique-de-donnees`, left unlisted while the
+ * legal call to retire them was pending. That call was made: they are deleted,
+ * the consent banner names the canonical page, and one privacy policy is now
+ * the only one a reader can reach.
  */
 // @req REQ-110
 export const UNLISTED_ROUTES = [

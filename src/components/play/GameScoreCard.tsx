@@ -140,5 +140,3 @@ export const GameScoreCard = ({
     </div>
   );
 };
-
-export default GameScoreCard;

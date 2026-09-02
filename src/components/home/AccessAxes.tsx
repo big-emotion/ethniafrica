@@ -746,5 +746,3 @@ export function AccessAxes({
     </>
   );
 }
-
-export default AccessAxes;

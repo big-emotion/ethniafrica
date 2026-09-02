@@ -250,6 +250,48 @@ stored value is a new-format `sb_secret_…` key rather than an `eyJ…` JWT bef
 
 ---
 
+## Closed — privileged functions on the RPC surface (2026-09-02)
+
+The security linter reported six `SECURITY DEFINER` functions in `public` as callable by `anon`
+and twenty functions with a role-mutable `search_path`. Migrations `076_pin_function_search_path`
+and `077_unexpose_privileged_functions` close both. Two facts were measured against recette in a
+rolled-back transaction before the migrations were written, because they decide the remedy and
+guessing them wrong breaks moderation:
+
+| Question                                                               | Answer                                                        | Consequence                                                                     |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Does an RLS policy expression need `EXECUTE` on the function it calls? | **Yes** — `42501 permission denied for function is_admin`     | Revoking a policy predicate breaks the query, it does not merely return no rows |
+| Does a trigger need `EXECUTE` at fire time?                            | **No** — the privilege is checked when the trigger is created | Revoking a trigger function is free                                             |
+
+So the flat remedy "revoke EXECUTE from `anon` and `authenticated` on the six" is wrong twice
+over, and must not be reproposed:
+
+- it would break the **fifteen** live policies that call `is_admin()`,
+  `is_moderator_or_admin()` or `is_protected_records_editor()` — the fifteenth is on
+  `storage.objects`, outside `public`, and is the one an audit reading only the public schema
+  misses;
+- and it would not have worked anyway: these functions carry the default grant to `PUBLIC`, so
+  revoking from the two named roles leaves them callable. The revokes name `PUBLIC` first.
+
+The three predicates therefore moved to a `private` schema instead. PostgREST serves only the
+schemas on its exposed list (`public`, `graphql_public`), so a function in `private` keeps working
+inside policies and stops being an HTTP endpoint. **Never add `private` to that list.**
+
+`update_api_key_last_used(text)` was the one worth the trouble: `SECURITY DEFINER`, it writes, it
+answers true/false for a guessed key hash — and nothing calls it, since `src/lib/api/auth.ts`
+updates `last_used_at` directly. Revoked.
+
+`publish_revision(uuid, text)` is deliberately left granted to `authenticated`. The audit read the
+grant as "any signed-in account can publish"; the body (051) raises unless the caller is a
+`senior_editor` or `admin`, and `publishRevision.ts` calls it through the SSR client under the
+reader's own session. Revoking it would break admin publication and close nothing.
+
+Still open after these two migrations, both dashboard toggles rather than schema:
+leaked-password protection (HaveIBeenPwned) and the MFA method count, under
+Authentication → Policies.
+
+---
+
 ## Related
 
 - [`../DEPLOYMENT.md`](../DEPLOYMENT.md) — environment variables and where each one lives

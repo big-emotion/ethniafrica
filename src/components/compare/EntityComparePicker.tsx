@@ -260,5 +260,3 @@ export function EntityComparePicker({
     </div>
   );
 }
-
-export default EntityComparePicker;

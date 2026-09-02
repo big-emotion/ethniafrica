@@ -86,5 +86,3 @@ export function HeroProvenanceChip({
     </Link>
   );
 }
-
-export default HeroProvenanceChip;

@@ -117,5 +117,3 @@ export function PeopleNamesSection({ data }: PeopleNamesSectionProps) {
     </section>
   );
 }
-
-export default PeopleNamesSection;

@@ -70,5 +70,3 @@ export function HierarchyTextIndex({ nodes }: HierarchyTextIndexProps) {
     </ol>
   );
 }
-
-export default HierarchyTextIndex;

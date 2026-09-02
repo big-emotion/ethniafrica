@@ -135,5 +135,3 @@ export function FeaturedModule({
     </section>
   );
 }
-
-export default FeaturedModule;

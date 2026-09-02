@@ -59,5 +59,3 @@ export function AfricaBasemap({
     </svg>
   );
 }
-
-export default AfricaBasemap;

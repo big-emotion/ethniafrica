@@ -154,5 +154,3 @@ export function ComparisonView({ data, language = "fr" }: ComparisonViewProps) {
     </div>
   );
 }
-
-export default ComparisonView;

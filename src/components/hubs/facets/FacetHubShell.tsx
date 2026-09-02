@@ -111,5 +111,3 @@ export function FacetHubShell({
     </PageLayout>
   );
 }
-
-export default FacetHubShell;

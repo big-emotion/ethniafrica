@@ -270,5 +270,3 @@ function FacetSelect({
     </select>
   );
 }
-
-export default FacetFilterBar;

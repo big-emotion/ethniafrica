@@ -277,5 +277,3 @@ export function NameNomenclature({
     </div>
   );
 }
-
-export default NameNomenclature;

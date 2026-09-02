@@ -167,6 +167,9 @@ describe("ConsentBanner", () => {
     expect(privacyLink).toHaveAttribute("href", "/fr/politique-de-donnees");
   });
 
+  // The banner used to point at `/fr/confidentialite`, one of two hand-written
+  // privacy pages that restated the canonical one. Those are gone; the link
+  // names the page the footer and the site tree already name.
   it("has a link to the privacy policy", () => {
     render(<ConsentBanner />);
 

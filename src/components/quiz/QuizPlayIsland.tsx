@@ -146,5 +146,3 @@ export const QuizPlayIsland = ({
     </div>
   );
 };
-
-export default QuizPlayIsland;

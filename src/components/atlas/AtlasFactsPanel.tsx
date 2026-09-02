@@ -163,5 +163,3 @@ export function AtlasFactsPanel({
     </DialogPrimitive.Root>
   );
 }
-
-export default AtlasFactsPanel;

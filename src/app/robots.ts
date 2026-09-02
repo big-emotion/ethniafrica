@@ -24,9 +24,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        // Authenticated surfaces. The two orphan privacy pages that used to
-        // be hidden here are gone: /fr/politique-de-donnees is now the only
-        // policy the site serves, so there is no ranking left to split.
+        // Authenticated surfaces only. Two orphan privacy pages used to be
+        // listed beside them; they were deleted rather than hidden, which is
+        // the stronger guarantee — a crawler can ignore a disallow line, it
+        // cannot index a route that is gone.
         disallow: ["/fr/admin/"],
       },
     ],

@@ -303,5 +303,3 @@ export function AutonymExonymHeading({
     </div>
   );
 }
-
-export default AutonymExonymHeading;

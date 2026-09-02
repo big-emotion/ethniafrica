@@ -51,5 +51,3 @@ export function PatronymeHomonymsSection({
     </FicheSection>
   );
 }
-
-export default PatronymeHomonymsSection;

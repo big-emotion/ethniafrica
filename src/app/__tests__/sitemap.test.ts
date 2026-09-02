@@ -182,11 +182,15 @@ describe("sitemap.xml", () => {
   it("keeps UNLISTED_ROUTES documented alongside what it excludes", () => {
     expect(UNLISTED_ROUTES).toContain("admin");
     expect(UNLISTED_ROUTES).toContain("report-error");
+    // The two duplicate privacy pages were retired rather than hidden, so
+    // they are no longer anything's business to exclude.
+    expect(UNLISTED_ROUTES).not.toContain("confidentialite");
+    expect(UNLISTED_ROUTES).not.toContain("politique-confidentialite");
   });
 
-  // The site used to carry three privacy policies — one canonical and two
-  // orphans hidden from crawlers — and the consent banner linked an orphan.
-  // Hiding a second policy is not the same as not having one.
+  // The registry no longer listing them is one half; this is the other — what
+  // the site actually emits. Hiding a second policy was never the same as not
+  // having one, and it is the emitted set a reader can reach.
   // @req REQ-110
   it("serves exactly one privacy policy", async () => {
     const all = await urls();
@@ -210,16 +214,21 @@ describe("robots.txt", () => {
     expect(rules.host).toBe(`https://${CANONICAL_DOMAIN}`);
   });
 
+  // The duplicate privacy pages used to be listed here too. Deleting a route
+  // is a stronger guarantee than asking a crawler not to index it, so the
+  // disallow list shrank back to what authentication alone hides.
   // @req REQ-110
   it("bans the authenticated surfaces", () => {
     const rule = robots().rules;
     const disallow = Array.isArray(rule) ? rule[0].disallow : rule.disallow;
 
     expect(disallow).toContain("/fr/admin/");
+    expect(disallow).not.toContain("/fr/politique-confidentialite");
+    expect(disallow).not.toContain("/fr/confidentialite");
   });
 
-  // The two orphan policies were disallowed rather than retired; now that
-  // they are gone there is nothing left here to hide from a crawler.
+  // Named routes are what a rewrite would drop; this holds the whole rule to
+  // the property instead — nothing about a privacy policy is hidden here.
   // @req REQ-110
   it("no longer hides a privacy policy from crawlers", () => {
     const rule = robots().rules;

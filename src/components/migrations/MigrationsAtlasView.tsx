@@ -163,5 +163,3 @@ export function MigrationsAtlasView({
     </div>
   );
 }
-
-export default MigrationsAtlasView;

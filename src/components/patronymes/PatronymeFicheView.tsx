@@ -41,5 +41,3 @@ export function PatronymeFicheView({
     </div>
   );
 }
-
-export default PatronymeFicheView;

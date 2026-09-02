@@ -102,5 +102,3 @@ export function AxisGraphScene({ onLayerReady }: AxisGraphSceneProps) {
 
   return <canvas ref={canvasRef} aria-hidden="true" className="axis-graph" />;
 }
-
-export default AxisGraphScene;

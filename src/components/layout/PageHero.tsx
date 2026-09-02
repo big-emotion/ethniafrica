@@ -76,5 +76,3 @@ export function PageHero({ title, subtitle, head, trail }: PageHeroProps) {
     </section>
   );
 }
-
-export default PageHero;

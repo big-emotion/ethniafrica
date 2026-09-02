@@ -31,5 +31,3 @@ export interface GamePlayHostProps {
 export const GamePlayHost = ({ game, rounds }: GamePlayHostProps) => {
   return <LazyGamePlayIsland game={game} rounds={rounds} />;
 };
-
-export default GamePlayHost;

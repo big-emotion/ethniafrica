@@ -43,6 +43,7 @@ npm run check:jira-template         # docs/templates/jira-ticket-template.md mus
 npm run check:action-pins           # every third-party GitHub Action must be SHA-pinned
 npm run check:env-example           # .env.example and the code agree, both directions
 npm run check:migration-files       # no duplicate version or name, no hole in the sequence
+npm run check:dead                  # knip: unreferenced files, exports, dependencies (ratcheted ceilings)
 npm run test:charter-contracts      # aggregated design-charter contract suite
 npx tsx scripts/validateAfrikData.ts        # AFRIK data integrity (FR26–FR52)
 npx tsx scripts/ci/checkEditorialRules.ts   # decolonial editorial rules on fiches
@@ -89,11 +90,12 @@ Editorial work on fiches has a dedicated project skill: `.claude/skills/afrik-cu
 
 Loading the corpus is `scripts/migrateAfrikToDatabase.ts --target=recette|production` (`--target=staging` is retired and throws). `scripts/lib/afrikSyncTarget.ts` checks in the recette ref only; production comes from `AFRIK_PRODUCTION_SUPABASE_URL` with **no default**, because the default used to hold the recette ref and every production deploy loaded the corpus into recette. Runbook: `docs/runbooks/afrik-data-sync.md`.
 
-### Supabase: three clients, never interchangeable
+### Supabase: two data clients, never interchangeable
 
-- `src/lib/supabase/client.ts` — browser, anon key
 - `src/lib/supabase/server.ts` — SSR / server components
 - `src/lib/supabase/admin.ts` — service-role key, **server-only**
+
+**The browser never reads the corpus from Supabase.** There used to be a third client — `client.ts`, anon key, browser — and this file described it for months after its last caller went away. Every read now goes through `/api/v2`, which is the better architecture, but it was only ever true in the code. The dead chain (`client.ts` ← `flags-client.ts` ← nobody) was removed rather than documented. `src/lib/supabase/auth-client.ts` is a separate, living thing: the browser authenticates directly, it just does not query.
 
 Migrations are numbered and sequential in `supabase/migrations/` (049 at last count). A merge into `recette` applies the pending ones there automatically (`migrate-recette.yml`, needs the `RECETTE_SUPABASE_DB_URL` secret); production stays manual on purpose. `npm run migrations:diff` shows what a database is missing, `npm run check:migration-state` fails on anything pending, orphaned or edited-after-applying. Which of them are live on which project is tracked in `docs/runbooks/migration-state.md` — the ledger records some under timestamp versions rather than filenames, so a tool comparing version strings reports applied migrations as pending. **Both Supabase projects label their environment "production"** — a Supabase project has exactly one environment and Supabase names it "production", so the label describes the project, not the application it serves. `shmrjtnfbqzceovroqjj` serves **recette**; `jajggbeimfudpzcxytbb` serves **production** — invisible to this repo's Supabase token, so its ledger is read over a direct Postgres connection, never over the MCP. Every migration is a two-step rollout: recette first, prod second. Applying one and calling it done has already left a corpus loaded on one and missing on the other.
 
@@ -114,6 +116,29 @@ Migrations are numbered and sequential in `supabase/migrations/` (049 at last co
 Every `test()`/`it()` call needs `// @req REQ-NNN` within the 3 lines above it, and any exported symbol annotated `@req REQ-NNN` must have a test annotated with the same ID. IDs are validated against `docs/confluence-spec/req-catalog.json`. Pre-existing tests are grandfathered by diffing against the previous file content, so _new or renamed_ tests are the ones that fail.
 
 **Never delete `docs/confluence-spec/*.json` or `docs/templates/jira-ticket-template.md`.** With the catalog missing, `lintReqAnnotations.ts` returns early and reports OK while checking nothing — a silently disarmed gate, which is worse than a red one.
+
+### Dead code (`npm run check:dead`, CI-blocking)
+
+`knip` (config in `knip.json`) tallies unreferenced files, exports, types and
+dependencies; `scripts/ci/checkDeadCode.ts` compares each tally against a
+recorded ceiling. **The ceiling is a ratchet, not a budget** — a count above it
+fails, and so does a count _below_ it, with the line to change. A ceiling left
+standing above the real number is a licence to climb back to it.
+
+Six categories are held at zero (files, dependencies, devDependencies, unlisted,
+binaries, duplicates); `exports` and `types` sit where they were measured and
+can only go down. `ADVISORY_CATEGORIES` softens a category the way
+`SOFT_CHECK_NAMES` does in `validateAfrikData.ts` — a visible line in a source
+file, never a flag in a config. It is currently empty.
+
+A hand-run script or a config-loaded module is **declared in `knip.json`, not
+deleted**: `scripts/**`, `e2e/**`, the `src/lib/atlas/assets/generate-*.mjs`
+asset generators, `src/test/server-only-stub.ts` (a vitest alias) and the edge
+functions are all entry points nothing imports on purpose. Three dependencies
+are in `ignoreDependencies` because knip cannot see their use: `sharp` (Next's
+production image optimizer), `puppeteer` (`@lhci/utils` does not depend on it —
+`.lighthouserc.js`'s `puppeteerScript` resolves it from the project) and
+`@storybook/blocks` (imported by `.mdx` stories knip does not parse).
 
 ### Custom ESLint rules (`eslint/rules/`, plugin `afh`)
 

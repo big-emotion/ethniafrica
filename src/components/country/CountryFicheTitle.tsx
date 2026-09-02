@@ -65,5 +65,3 @@ export function CountryFicheTitle({
     </>
   );
 }
-
-export default CountryFicheTitle;

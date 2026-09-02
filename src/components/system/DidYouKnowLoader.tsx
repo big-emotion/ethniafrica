@@ -382,5 +382,3 @@ export function DidYouKnowLoader({
     </div>
   );
 }
-
-export default DidYouKnowLoader;

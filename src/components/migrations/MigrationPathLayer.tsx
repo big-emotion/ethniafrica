@@ -188,5 +188,3 @@ export function MigrationPathLayer({
     </div>
   );
 }
-
-export default MigrationPathLayer;

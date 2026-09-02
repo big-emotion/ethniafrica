@@ -101,5 +101,3 @@ export function ColonizationModulePage({ data }: ColonizationModulePageProps) {
     </PageLayout>
   );
 }
-
-export default ColonizationModulePage;

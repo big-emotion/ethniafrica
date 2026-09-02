@@ -92,5 +92,3 @@ export function NameTypeBadge({
     </Badge>
   );
 }
-
-export default NameTypeBadge;

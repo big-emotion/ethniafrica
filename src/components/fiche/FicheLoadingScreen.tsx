@@ -66,5 +66,3 @@ export function FicheLoadingScreen({ entityType }: FicheLoadingScreenProps) {
     </PageLayout>
   );
 }
-
-export default FicheLoadingScreen;
