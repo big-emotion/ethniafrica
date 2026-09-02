@@ -7,11 +7,15 @@ title = "ethniafrica gitleaks config"
 [extend]
 useDefault = true
 
-# `[[allowlists]]`, not `[allowlist]`. The singular form is deprecated and
-# gitleaks refuses a config that carries both, so admitting the second block
-# below meant converting this one too. The entries are unchanged.
-[[allowlists]]
-description = "Global allowlist for known non-secret paths"
+# One `[allowlist]` block, singular, and it has to stay that way while CI pins
+# v8.21.2. The plural `[[allowlists]]` form reads as valid TOML to that version
+# and is then **silently ignored** — the config loads, the scan runs, and the
+# findings it was meant to allow are still reported. Locally, on a newer
+# gitleaks, the same file passes. So a config split across the two forms is
+# green on a developer's machine and red in CI, which is exactly how this entry
+# was first written.
+[allowlist]
+description = "Global allowlist for known non-secret paths and citation slugs"
 paths = [
   # Anchored so prefixes/suffixes (e.g. backup/package-lock.json) don't match.
   '''^package-lock\.json$''',
@@ -29,16 +33,16 @@ paths = [
 # the rule fires on the identifier, and every AFRIK source entry names itself
 # `sourceKey`. Four fiches trip it — PAT_FFUMBE, PAT_LUGAVE, PAT_NGONGE,
 # PAT_NJAZA — on values like "roscoe-1911-baganda" and "buganda-heritage-clans",
-# which are bibliographic handles a reader could type.
+# which are bibliographic handles a reader could type. Thirty fiches carry the
+# field and four clear the rule's entropy floor, which is the tell that the
+# signal is the field name and not the value.
 #
-# Allowlisted by line and not by path, which is the whole point: the corpus is
-# ~890 editorial files a curator edits by hand, and an allowlisted path would go
-# on hiding a real credential pasted into one of them forever. This suppresses
-# exactly the shape of a slug — lowercase, digits and hyphens — under exactly
-# that field name. Anything else, on any other line of those same files, is
-# still scanned.
-[[allowlists]]
-description = "AFRIK source citation slugs are bibliographic handles, not keys"
+# A line regex and not a path entry, which is the whole point: the corpus is
+# ~890 editorial files a curator edits by hand, and the header above is right
+# that an allowlisted path would go on hiding a real credential pasted into one
+# of them forever. This matches exactly the shape of a slug — lowercase, digits
+# and hyphens — under exactly that field name. Anything else, on any other line
+# of those same files, is still scanned.
 regexTarget = "line"
 regexes = [
   '''"sourceKey"\s*:\s*"[a-z0-9][a-z0-9-]*"''',
