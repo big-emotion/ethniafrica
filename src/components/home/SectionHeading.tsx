@@ -31,6 +31,12 @@ export interface SectionHeadingProps {
  * push every item in the section to h4 and announce two titles for one
  * section to a screen reader.
  *
+ * A unit with an eyebrow and no title is marked `is-untitled`, because the
+ * kicker is then the only heading text the section has and the 12 px dress
+ * it wears above a title leaves it smaller than the body copy it governs.
+ * The modifier moves the size and nothing else: brand charter §8.5 forbids
+ * the eyebrow inheriting the title's rank, and it does not acquire one here.
+ *
  * Both halves are optional, for opposite reasons. A section whose title
  * already files it takes no eyebrow. A section whose items are its own
  * subjects — the anecdote band, which draws its two facts at random — takes
@@ -53,7 +59,12 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div
-      className={cn("afh-section-heading", centred && "is-centred", className)}
+      className={cn(
+        "afh-section-heading",
+        centred && "is-centred",
+        eyebrow && !title && "is-untitled",
+        className
+      )}
     >
       {eyebrow ? (
         <p className="afh-section-heading-eyebrow">{eyebrow}</p>
