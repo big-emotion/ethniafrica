@@ -560,10 +560,15 @@ export const translations = {
         // inside, and neither is glossed anywhere a reader passes through
         // (ETNI-857) — so the menu that is supposed to say where a click
         // lands was written in the vocabulary of the people who built it.
+        // Ordered by the corpus's own hierarchy — famille → langue → peuple →
+        // pays — then the two axes that name rather than place. Both sentences
+        // listed four of six classes, each omitting a different pair, so a
+        // reader met a different atlas depending on whether they read the menu
+        // or the page under it.
         blurb:
-          "L'axe des fiches : peuples, pays, langues et familles linguistiques, chacun sous la sienne.",
+          "L'axe des fiches : familles linguistiques, langues, peuples, pays, appellations et noms, chacun sous la sienne.",
         menuBlurb:
-          "Les fiches de pays, de peuples, de familles linguistiques et d'appellations, plus la recherche.",
+          "Les fiches de familles, langues, peuples, pays, appellations et noms, plus la recherche.",
         hubEntryName: "Le hub d'exploration",
       },
       dossiers: {

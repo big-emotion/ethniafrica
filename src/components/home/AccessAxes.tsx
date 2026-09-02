@@ -63,7 +63,7 @@ const AXES: AxisDefinition[] = [
       // « Le corpus » is the team's word for the collection, not the
       // reader's: it names the thing from the inside, and a first-time
       // visitor has no way to guess it means "the fiches on this site".
-      "Les fiches du site : peuples, pays, langues et familles linguistiques.",
+      "Les fiches du site : familles, langues, peuples, pays, appellations et noms.",
     figure: (counts) =>
       `${plural(counts.peoples, "peuple")} · ${plural(counts.countries, "pays", "pays")}`,
   },
