@@ -17,19 +17,34 @@ cat dataset/source/afrik/famille_linguistique/<FLG_*>.json
 
 Prefer the `Read` tool over `cat`.
 
+## Resolving a name to an identifier
+
+```bash
+npx tsx scripts/resolveAfrikFiche.ts "Zoulou"
+# PPL_ZULU	people	exact	nameMain=Zoulou
+```
+
+Columns: `ID · kind · match type · matched name`. Match types rank `id` → `exact` → `contains` → `partial` (`partial` is the French plural falling back onto the singular the corpus declares — "Bantous" onto `FLG_BANTU`). Exit code 1 and a message on stderr when nothing matched.
+
+It searches every declared name of all four fiche classes: a people's `nameMain`, `mainName`, `selfAppellation`, `exonyms`, `historicalNames` and `spellingAliases`; a country's `nameFr`, `nameOfficial` and `historicalNames`; a family's `nameFr`/`nameEn`; a language's `nameFr`, `nameEn`, `alternateNames` and `spellingAliases`.
+
+It reads `dataset/source/afrik/` — the corpus in git, which is the editorial truth and the same files the curator edits. No credentials, and no dependence on a database having been loaded.
+
+> This replaces `searchAfrikAll`, `searchAfrikPeoples`, `searchAfrikCountries` and `searchAfrikLanguageFamilies`. All four were removed when ranking moved into Postgres (migrations 043/044, then 069). Anything still naming them is stale.
+
 ## Live Supabase queries
 
 Functions exported from `src/lib/supabase/queries/afrik/`:
 
-| File                  | Functions                                                                                                                       |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `peoples.ts`          | `getAllAfrikPeoples`, `getAfrikPeopleById`, `getAfrikPeoplesByLanguageFamily`, `getAfrikPeoplesByCountry`, `searchAfrikPeoples` |
-| `countries.ts`        | `getAllAfrikCountries`, `getAfrikCountryById`, `searchAfrikCountries`                                                           |
-| `languageFamilies.ts` | `getAllAfrikLanguageFamilies`, `getAfrikLanguageFamilyById`, `searchAfrikLanguageFamilies`                                      |
-| `search.ts`           | `searchAfrikAll`                                                                                                                |
-| `flags.ts`            | `getActiveSourceFlags`                                                                                                          |
+| File                  | Functions                                                                                                 |
+| --------------------- | --------------------------------------------------------------------------------------------------------- |
+| `peoples.ts`          | `getAllAfrikPeoples`, `getAfrikPeopleById`, `getAfrikPeoplesByLanguageFamily`, `getAfrikPeoplesByCountry` |
+| `countries.ts`        | `getAllAfrikCountries`, `getAfrikCountryById`, `getAfrikCountriesByIds`                                   |
+| `languageFamilies.ts` | `getAllAfrikLanguageFamilies`, `getAfrikLanguageFamilyById`, `getAfrikLanguageFamilyRoster`               |
+| `search.ts`           | `ftsSearchEntities` — ranked in Postgres; needs a request context, so prefer the resolver above           |
+| `flags.ts`            | `getActiveSourceFlags`                                                                                    |
 
-These need server-side Supabase credentials (`SUPABASE_SERVICE_ROLE_KEY`) and the `NEXT_PUBLIC_SUPABASE_*` env vars loaded.
+These need server-side Supabase credentials (`SUPABASE_SERVICE_ROLE_KEY`) and the `NEXT_PUBLIC_SUPABASE_*` env vars loaded. Use them to read what the _database_ currently holds — Phase 2's divergence check. To find out what the corpus declares, read the JSON.
 
 ### One-shot invocation from a Claude session
 
@@ -37,14 +52,13 @@ These need server-side Supabase credentials (`SUPABASE_SERVICE_ROLE_KEY`) and th
 # Print a single people from the database
 tsx -e "import('./src/lib/supabase/queries/afrik/peoples.ts').then(async m => { const p = await m.getAfrikPeopleById('PPL_ZULU'); console.log(JSON.stringify(p, null, 2)); })"
 
-# Resolve a human name to candidate IDs
-tsx -e "import('./src/lib/supabase/queries/afrik/search.ts').then(async m => { console.log(JSON.stringify(await m.searchAfrikAll('zoulou'), null, 2)); })"
-
 # All peoples of a family (for cross-checks)
 tsx -e "import('./src/lib/supabase/queries/afrik/peoples.ts').then(async m => { const ps = await m.getAfrikPeoplesByLanguageFamily('FLG_BANTU'); console.log(ps.map(p => p.id).join('\n')); })"
 ```
 
 If `tsx -e` chokes on env loading, fall back to a tiny one-off script in `scripts/` (do not create a new long-lived script — clean it up after).
+
+A database read that comes back empty is a loaded-corpus question before it is a data question: recette is loaded by `recette-data-sync.yml` on a merge, production by `production-data-sync.yml` after a release.
 
 ## Existing project scripts (reusable)
 
