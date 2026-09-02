@@ -276,11 +276,18 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   // Distinct from "noms"/Appellations: a patronyme is the naming *system* a
   // person is named under, not a people's autonym/exonym. Filed beside it
   // because both take a name and return a fiche, which is Explorer's rule,
-  // but kept a separate id and name so neither shadows the other in the menu
-  // (ETNI-1801).
+  // but kept a separate id so neither shadows the other (ETNI-1801).
+  //
+  // The id stays `patronymes` and the label is `Nom`, which is DEC-038's split
+  // rather than an inconsistency: the reader-facing word is the one a
+  // francophone types, and the internal word is what keeps this entity apart
+  // from the two other things the repository calls "nom" — the ethnonym
+  // dossier above and ARCH-018's person. This entry said "Patronymes" for the
+  // whole of ETNI-1803, so the menu named the axis one way while the trail,
+  // the footer and the URL named it another.
   {
     id: "patronymes",
-    name: "Patronymes",
+    name: "Nom",
     accessMode: "atlas",
     page: "patronymes",
     availability: "data",
