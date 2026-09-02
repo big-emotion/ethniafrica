@@ -17,6 +17,7 @@ vi.mock("@/hooks/use-quiz-session", () => ({
 const GHANA: QuizScope = { kind: "country", entityId: "GHA" };
 
 const QUESTION: QuizSessionQuestionView = {
+  id: "q-1",
   templateId: "T2",
   promptFr: "Quelle est l'auto-appellation de ce peuple ?",
   optionsFr: ["Alpha", "Beta"],

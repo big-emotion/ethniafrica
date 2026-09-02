@@ -37,9 +37,7 @@ const personPeopleLinkSchema = z
       message: "peopleId must match ^PPL_[A-Z0-9_]+$",
     }),
     relationLabel: z.enum(PERSON_PEOPLE_RELATION_LABELS, {
-      errorMap: () => ({
-        message: "relationLabel must be one of membership, observation",
-      }),
+      error: "relationLabel must be one of membership, observation",
     }),
   })
   .strict();

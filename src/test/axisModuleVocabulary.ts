@@ -28,7 +28,8 @@ const UNDISTINCTIVE = new Set([
 ]);
 
 /**
- * The words below four letters that do carry signal, admitted by name.
+ * The words matched on a word boundary instead of as a substring, admitted by
+ * name. Membership also lifts the four-letter floor.
  *
  * The floor is a consequence of the lookup being a substring test, not a
  * judgement that short words say nothing \u2014 and DEC-038 named an axis \u00ab Nom \u00bb,
@@ -36,11 +37,15 @@ const UNDISTINCTIVE = new Set([
  * the registry was corrected, and both consuming suites stayed green because
  * they only ask for *two* modules to be named.
  *
- * A word admitted here is matched on a word boundary instead, which is what
- * the floor was standing in for: \u00ab nom \u00bb must not answer for \u00ab nommage \u00bb, the
- * very word this axis's own copy uses.
+ * Boundary matching is the other half: \u00ab nom \u00bb must not answer for
+ * \u00ab nommage \u00bb, the very word this axis's own copy uses.
+ *
+ * \u00ab noms \u00bb is here for that half alone. The registry pluralised the axis for
+ * the navigation, so its name clears the floor unaided \u2014 but a substring test
+ * on \u00ab noms \u00bb stops recognising \u00ab l'origine d'un nom \u00bb, which is how prose
+ * names this axis more often than not. Matching folds the number instead.
  */
-const SHORT_BUT_DISTINCTIVE = new Set(["nom"]);
+const BOUNDARY_MATCHED = new Set(["nom", "noms"]);
 
 const fold = (text: string) =>
   text
@@ -54,13 +59,13 @@ const distinctiveWords = (moduleName: string) =>
     .filter(
       (word) =>
         !UNDISTINCTIVE.has(word) &&
-        (word.length >= 4 || SHORT_BUT_DISTINCTIVE.has(word))
+        (word.length >= 4 || BOUNDARY_MATCHED.has(word))
     );
 
 /** Long enough to stand on its own inside a word; short enough to need edges. */
 const sentenceNames = (word: string, foldedSentence: string) =>
-  SHORT_BUT_DISTINCTIVE.has(word)
-    ? new RegExp(`\\b${word}s?\\b`).test(foldedSentence)
+  BOUNDARY_MATCHED.has(word)
+    ? new RegExp(`\\b${word.replace(/s$/, "")}s?\\b`).test(foldedSentence)
     : foldedSentence.includes(word);
 
 /** The modules of `mode` whose name the sentence picks up. */

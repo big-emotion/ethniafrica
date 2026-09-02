@@ -6,6 +6,7 @@ import { QuizQuestionCard } from "@/components/quiz/QuizQuestionCard";
 import type { QuizSessionQuestionView } from "@/api/v2/schemas/quiz";
 
 const QUESTION: QuizSessionQuestionView = {
+  id: "q-1",
   templateId: "T2",
   promptFr: "Quelle est l'auto-appellation de ce peuple ?",
   optionsFr: ["Alpha", "Beta", "Gamma", "Delta"],
@@ -24,6 +25,7 @@ const QUESTION: QuizSessionQuestionView = {
 
 const NAME_OPTIONS_QUESTION: QuizSessionQuestionView = {
   ...QUESTION,
+  id: "q-2",
   optionsFr: [
     { autonym: "Wolof", exonym: "Ouolof" },
     { autonym: "Fulani", exonym: "Peul" },
@@ -32,6 +34,7 @@ const NAME_OPTIONS_QUESTION: QuizSessionQuestionView = {
 
 const INVERSION_QUESTION: QuizSessionQuestionView = {
   ...QUESTION,
+  id: "q-3",
   templateId: "T6",
   promptFr: "Quel peuple pratique ces rites ?",
   stimulusFr:

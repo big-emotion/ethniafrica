@@ -147,11 +147,11 @@
   "gaps": [
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire n'est attachée au jamu Tarawele : c'est un clan de statut horon (noble), non un clan de spécialistes."
+      "reason": "Charry range nommément Traoré parmi les jamuw horon, de statut noble et non artisan : aucune fonction héréditaire n'est attachée au jamu Tarawele, et cette absence est établie plutôt que constatée faute de recherche."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "Traoré et Tarawele sont deux graphies d'un même jamu, la première issue de la transcription coloniale : ce ne sont pas des lignées distinctes et elles ne sont donc pas traitées en homonymes."
     }
   ]
 }

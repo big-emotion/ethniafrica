@@ -214,10 +214,7 @@ export interface HubModuleDefinition {
  */
 // @req REQ-115
 export type HeroPreviewKind =
-  | "globe"
-  | "game"
-  | "migration-paths"
-  | "family-crown";
+  "globe" | "game" | "migration-paths" | "family-crown";
 
 // @req REQ-115
 export const HERO_PREVIEW_KINDS: HeroPreviewKind[] = [
@@ -302,22 +299,29 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   // because both take a name and return a fiche, which is Explorer's rule,
   // but kept a separate id so neither shadows the other (ETNI-1801).
   //
-  // The id stays `patronymes` and the label is `Nom`, which is DEC-038's split
-  // rather than an inconsistency: the reader-facing word is the one a
-  // francophone types, and the internal word is what keeps this entity apart
+  // The id stays `patronymes` and the reader-facing word is `nom`, which is
+  // DEC-038's split rather than an inconsistency: the public label is the word
+  // a francophone types, and the internal word is what keeps this entity apart
   // from the two other things the repository calls "nom" — the ethnonym
   // dossier above and ARCH-018's person. This entry said "Patronymes" for the
   // whole of ETNI-1803, so the menu named the axis one way while the trail,
   // the footer and the URL named it another.
+  //
+  // Plural, like every module beside it. A menu entry names a destination
+  // holding many fiches, and « Nom » was the one singular in a row reading
+  // Familles · Langues · Peuples · Pays · Appellations — which made it read as
+  // a field on a form rather than as an index. The singular survives where it
+  // is right: above one fiche (`patronymes.eyebrow`) and on one search hit
+  // (`SEARCH_ENTITY_ACCENT.patronyme`).
   {
     id: "patronymes",
-    name: "Nom",
+    name: "Noms",
     accessMode: "atlas",
     page: "patronymes",
     availability: "data",
     editorialReadiness: "ready",
     dataSource: "afrik_patronymes",
-    corpusNoun: "Nom",
+    corpusNoun: "Noms",
   },
   // Recherche closes Explorer: it is where a reader goes once naming the
   // entity has not been enough.

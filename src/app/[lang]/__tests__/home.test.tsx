@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { OG_DESCRIPTION, OG_TITLE } from "@/lib/brand";
+import { CORPUS_CLASSES } from "@/lib/home/corpusClasses";
 
 const {
   getCorpusCountsMock,
@@ -28,6 +29,7 @@ const fixtureCounts = {
   families: 37,
   languages: 748,
   nameForms: 3134,
+  patronymes: 33,
   migrations: 5,
 };
 
@@ -129,8 +131,15 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
   it("states the three documented totals and shows exactly two sourced facts", async () => {
     await renderHome();
 
+    // Built from the registry, not spelled out: the labels were written into
+    // this pattern once, and the day pays gave its tile to noms the assertion
+    // failed on a band that was right. What the page owes is the declared
+    // classes in the declared order, whichever three those are.
     expect(screen.getByTestId("home-corpus-counts").textContent).toMatch(
-      /peuples documentés.*langues documentées.*pays documentés/i
+      new RegExp(
+        CORPUS_CLASSES.map(({ tileLabel }) => tileLabel).join(".*"),
+        "i"
+      )
     );
     expect(screen.getAllByTestId("home-did-you-know")).toHaveLength(1);
     expect(
@@ -166,9 +175,9 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
 
     expect(screen.getByRole("search")).toBeInTheDocument();
 
-    for (const word of ["peuples", "langues", "pays"]) {
+    for (const { tileLabel } of CORPUS_CLASSES) {
       expect(screen.getByTestId("home-corpus-counts").textContent).toContain(
-        word
+        tileLabel
       );
     }
 

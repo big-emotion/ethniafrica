@@ -91,9 +91,7 @@ export interface CompareFamilyEntity {
 }
 
 export type CompareEntityPayload =
-  | ComparePeopleEntity
-  | CompareCountryEntity
-  | CompareFamilyEntity;
+  ComparePeopleEntity | CompareCountryEntity | CompareFamilyEntity;
 
 export type CompareEntityType = CompareEntityPayload["type"];
 
@@ -179,9 +177,7 @@ export interface ComparisonPageData {
 // ==========================================
 
 export type ComparisonInputErrorReason =
-  | "MIXED_TYPES"
-  | "INVALID_COUNT"
-  | "DUPLICATE_IDS";
+  "MIXED_TYPES" | "INVALID_COUNT" | "DUPLICATE_IDS";
 
 // @req REQ-097
 export class ComparisonInputError extends Error {

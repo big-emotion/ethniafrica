@@ -19,8 +19,6 @@ export const ficheSourceTierSchema = z.union(
       .transform((value) => sourceTierFromLegacyNumber(value)),
   ],
   {
-    errorMap: () => ({
-      message: `tier must be one of ${SOURCE_TIERS.join(", ")}`,
-    }),
+    error: `tier must be one of ${SOURCE_TIERS.join(", ")}`,
   }
 );

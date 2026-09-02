@@ -16,11 +16,7 @@
  * two scales had merged.
  */
 export type DirectoryEntityType =
-  | "people"
-  | "country"
-  | "language-family"
-  | "language"
-  | "patronyme";
+  "people" | "country" | "language-family" | "language" | "patronyme";
 
 /**
  * The scale is one class per entity, and it stopped being one *hue* per entity

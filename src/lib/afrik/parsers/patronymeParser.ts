@@ -31,11 +31,9 @@ const patronymeSourceSchema = z
   .object({
     sourceKey: z.string().min(1),
     title: z.string().min(1),
-    url: z.string().url().nullable(),
+    url: z.url().nullable(),
     tier: z.enum(SOURCE_TIERS, {
-      errorMap: () => ({
-        message: `tier must be one of ${SOURCE_TIERS.join(", ")}`,
-      }),
+      error: `tier must be one of ${SOURCE_TIERS.join(", ")}`,
     }),
     source_kind: z.enum(SOURCE_KINDS).optional(),
     notes: z.string().optional(),

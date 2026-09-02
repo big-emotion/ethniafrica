@@ -13,16 +13,13 @@ const stableSourceKeySchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, {
   message: "sourceKey must be a stable kebab-case key",
 });
 
-const httpUrlSchema = z
-  .string()
-  .url()
-  .refine(
-    (value) => {
-      const protocol = new URL(value).protocol;
-      return protocol === "http:" || protocol === "https:";
-    },
-    { message: "url must use HTTP or HTTPS" }
-  );
+const httpUrlSchema = z.url().refine(
+  (value) => {
+    const protocol = new URL(value).protocol;
+    return protocol === "http:" || protocol === "https:";
+  },
+  { message: "url must use HTTP or HTTPS" }
+);
 
 // @req REQ-093
 export const structuredSourceKindSchema = sourceKindSchema.exclude([
@@ -40,7 +37,7 @@ export const sourceRecordSchema = z
     publicationYear: z.number().int(),
     sourceKind: structuredSourceKindSchema,
     tier: sourceTierSchema,
-    identifiers: z.record(z.string().min(1)),
+    identifiers: z.record(z.string(), z.string().min(1)),
     publisher: z.string().min(1).nullable(),
     url: httpUrlSchema.nullable(),
   })

@@ -9,6 +9,7 @@ const FULL_CORPUS = {
   families: 37,
   languages: 748,
   nameForms: 3134,
+  patronymes: 33,
   migrations: 5,
 };
 
@@ -21,14 +22,15 @@ describe("HomeCorpusCounts — what the atlas documents, in three figures", () =
       /4\s?213/
     );
     expect(screen.getByTestId("home-count-languages")).toHaveTextContent("748");
-    expect(screen.getByTestId("home-count-countries")).toHaveTextContent("91");
+    expect(screen.getByTestId("home-count-patronymes")).toHaveTextContent("33");
   });
 
-  // Family → language → people → country is the corpus's own hierarchy, read
-  // outwards from the reader: peoples first, because that is the question most
-  // arrive with.
+  // Peoples first, because that is the question most arrive with, then the
+  // languages they speak and the names they carry. Not the corpus's own
+  // famille → langue → peuple → pays nesting any more: the third tile left
+  // that ladder when pays gave up its figure, and a nom sits on no rung of it.
   // @req REQ-113
-  it("orders the figures the way the corpus nests", () => {
+  it("orders the figures the way the reader arrives at them", () => {
     render(<HomeCorpusCounts counts={FULL_CORPUS} />);
 
     const labels = screen
@@ -38,15 +40,17 @@ describe("HomeCorpusCounts — what the atlas documents, in three figures", () =
     expect(labels).toEqual([
       "peuples documentés",
       "langues documentées",
-      "pays documentés",
+      "noms documentés",
     ]);
   });
 
-  // Three totals out of the corpus's five classes may not read as the corpus
+  // Three totals out of the corpus's six classes may not read as the corpus
   // entire. Every label carries the scope word, so a reader counting 790 + 748
-  // + 54 is told what those three figures are a count *of* — and the band's
+  // + 33 is told what those three figures are a count *of* — and the band's
   // accessible name says the same rather than « Le corpus en chiffres », which
-  // is the claim a three-tile band is no longer allowed to make.
+  // is the claim a three-tile band is no longer allowed to make. The word does
+  // the most work on the smallest figure: « noms documentés » says the atlas
+  // has documented 33, never that Africa holds 33.
   // @req REQ-113
   it("scopes every figure to what the atlas documents", () => {
     render(<HomeCorpusCounts counts={FULL_CORPUS} />);
@@ -112,6 +116,36 @@ describe("HomeCorpusCounts — what the atlas documents, in three figures", () =
     expect(declarations[1]).toMatch(/text-align:\s*left/);
     expect(styles.indexOf("min-width: 1200px")).toBeLessThan(
       styles.lastIndexOf(".home-corpus-count dt")
+    );
+  });
+
+  // Three totals are printed to be read across, so they have to sit on one
+  // line. A tile is 116px of text at 430px, where « peuples documentés » and
+  // « langues documentées » wrap and a 15-character label does not — and a
+  // centred flex column then dropped the odd figure out of the row, measured
+  // at 538 · 538 · 547. Two reserved label lines are what hold the row.
+  //
+  // The reservation may not be hidden behind a width, which is why this reads
+  // the position of the declaration and not only its text: where a label stops
+  // wrapping depends on the label, not the viewport, so a breakpoint tuned to
+  // today's three strings stops holding the moment one is reworded — silently,
+  // because a band that has drifted apart by nine pixels still renders.
+  // Asserted on the declaration because happy-dom resolves no cascade across
+  // the component's own <style>: a render here cannot see the defect.
+  // @req REQ-113
+  it("reserves a label height that keeps the three figures on one line", () => {
+    const { container } = render(<HomeCorpusCounts counts={FULL_CORPUS} />);
+    const styles = Array.from(container.querySelectorAll("style"))
+      .map((style) => style.textContent)
+      .join("\n");
+
+    const reservation = styles.match(
+      /\.home-corpus-count dt\s*\{[^}]*min-height:\s*2lh[^}]*\}/
+    );
+
+    expect(reservation).not.toBeNull();
+    expect(styles.indexOf(reservation[0])).toBeLessThan(
+      styles.indexOf("@media")
     );
   });
 

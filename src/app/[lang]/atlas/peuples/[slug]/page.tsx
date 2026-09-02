@@ -27,6 +27,7 @@ import { buildPeoplePresenceFacts } from "@/components/people/peoplePresenceFact
 import { peopleFallbackNote } from "@/components/people/peopleFallbackNote";
 import { getPeopleById } from "@/api/v2/services/peopleService";
 import { getPeopleNamesDossier } from "@/api/v2/services/names";
+import { getPatronymesBorneByPeople } from "@/api/v2/services/patronymeFicheLinks";
 import { getPeopleFragmentation } from "@/api/v2/services/peopleFragmentation";
 import { getEgoNetwork } from "@/api/v2/services/relations";
 import { mapPeopleDetail } from "@/lib/afrikDetailMapper";
@@ -158,6 +159,7 @@ export default async function PeoplesSlugPage({
     fragmentation,
     egoNetwork,
     fieldNotes,
+    borneNames,
   ] = await Promise.all([
     loadPeopleFiche(parsed.slug),
     getActiveSourceFlags("people", parsed.slug),
@@ -167,6 +169,10 @@ export default async function PeoplesSlugPage({
     // Alongside its neighbours rather than after them, and caught like them:
     // the citation apparatus must never be able to cost the fiche.
     getFieldNotes("people", parsed.slug).catch(() => []),
+    // Caught to `null` rather than to `[]`: an empty list is the corpus
+    // saying this people carries no name, which is the ordinary answer and
+    // one the chapter prints. A failed read must not be able to say that.
+    getPatronymesBorneByPeople(parsed.slug).catch(() => null),
   ]);
   if (!people) {
     notFound();
@@ -263,6 +269,7 @@ export default async function PeoplesSlugPage({
             hasSourceFlag={sourceFlags.length > 0}
             relations={egoNetwork.sourced}
             notes={notes}
+            borneNames={borneNames}
             // Only when something cites it: a bibliography numbered for
             // nobody promises an anchor that does not exist.
             bibliography={notes.count > 0 ? register.entries : undefined}

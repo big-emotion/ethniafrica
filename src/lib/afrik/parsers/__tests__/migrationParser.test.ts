@@ -71,7 +71,26 @@ describe("parseMigrationFile", () => {
 
     expect(result.success).toBe(false);
     expect(result.errors).toContainEqual(
-      expect.objectContaining({ path: "eventType" })
+      expect.objectContaining({
+        path: "eventType",
+        message: `eventType must be one of ${MIGRATION_EVENT_TYPES.join(", ")}`,
+      })
+    );
+  });
+
+  // @req REQ-080
+  it("rejects a classificationStatus outside the migration vocabulary", () => {
+    const result = parseMigrationFile(
+      validMigration({ classificationStatus: "disputed" })
+    );
+
+    expect(result.success).toBe(false);
+    expect(result.errors).toContainEqual(
+      expect.objectContaining({
+        path: "classificationStatus",
+        message:
+          "classificationStatus must be one of consensual, contested, colonial-legacy, reconstructive",
+      })
     );
   });
 
@@ -110,7 +129,10 @@ describe("parseMigrationFile", () => {
 
     expect(result.success).toBe(false);
     expect(result.errors).toContainEqual(
-      expect.objectContaining({ path: "content.sources.0.tier" })
+      expect.objectContaining({
+        path: "content.sources.0.tier",
+        message: "tier must be one of official, referenced, unverified",
+      })
     );
   });
 

@@ -22,18 +22,24 @@ import { getTranslation } from "@/lib/translations";
  * the copy that is right. This asserts on the objects the surfaces read from
  * instead, and the second block guards the opposite mistake: a later rename
  * that takes the naming system with it.
+ *
+ * The decision constrains the *word*, not its number, and the two are asserted
+ * apart here on purpose. Navigation points at an index and says « Noms », in
+ * the plural its four neighbours are already in; a fiche's eyebrow names the
+ * one thing under it and stays singular. Asserting a single string for both
+ * would make either surface's correct copy fail the gate.
  */
 
 const NAME_AXIS_ROUTE = getLocalizedRoute("fr", "patronymes");
 
 describe("DEC-038 — the reader meets the name axis as « Nom »", () => {
   // @req REQ-138
-  it("names the atlas menu entry « Nom »", () => {
+  it("names the atlas menu entry « Noms »", () => {
     const entry = MODULE_DEFINITIONS.find(
       (module) => module.page === "patronymes"
     );
 
-    expect(entry?.name).toBe("Nom");
+    expect(entry?.name).toBe("Noms");
   });
 
   // @req REQ-138
@@ -51,13 +57,13 @@ describe("DEC-038 — the reader meets the name axis as « Nom »", () => {
   });
 
   // @req REQ-138
-  it("labels the site plan entry « Nom »", () => {
+  it("labels the site plan entry « Noms »", () => {
     const link = getSiteTree("fr")
       .flatMap((section) => section.links)
       .find((candidate) => candidate.href === NAME_AXIS_ROUTE);
 
     expect(link).toBeDefined();
-    expect(link?.label).toBe("Nom");
+    expect(link?.label).toBe("Noms");
     expect(link?.note).not.toMatch(/patronyme/i);
   });
 });

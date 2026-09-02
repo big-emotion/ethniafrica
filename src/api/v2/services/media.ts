@@ -1,10 +1,7 @@
 import { createServerClient } from "@/lib/supabase/server";
 
 export type MediaEntityType =
-  | "language_family"
-  | "language"
-  | "people"
-  | "country";
+  "language_family" | "language" | "people" | "country";
 
 export type MediaDepictionTiming = "contemporary" | "reconstitution";
 

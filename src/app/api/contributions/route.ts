@@ -79,7 +79,7 @@ export async function POST(request: NextRequest) {
       return jsonWithCors(
         {
           error: "Invalid input",
-          details: validationResult.error.errors,
+          details: validationResult.error.issues,
         },
         { status: 400 }
       );

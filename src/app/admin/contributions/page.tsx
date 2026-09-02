@@ -18,8 +18,7 @@ import {
 } from "@/components/ui/alert-dialog";
 
 type PendingAction =
-  | { kind: "approve"; id: string }
-  | { kind: "reject"; id: string };
+  { kind: "approve"; id: string } | { kind: "reject"; id: string };
 
 // @req REQ-091
 export default function AdminContributionsPage() {

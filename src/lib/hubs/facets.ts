@@ -15,11 +15,7 @@ import type { Language } from "@/types/shared";
  * exactly one answer instead of three that drift.
  */
 export type FacetKey =
-  | "peoples"
-  | "families"
-  | "languages"
-  | "countries"
-  | "patronymes";
+  "peoples" | "families" | "languages" | "countries" | "patronymes";
 
 export interface FacetDefinition {
   key: FacetKey;
@@ -127,8 +123,11 @@ export const FACETS: readonly FacetDefinition[] = [
     entityType: "patronyme",
     // DEC-038's public word. The identifier stays `patronymes` because two
     // other things in this repository are called "nom"; the reader sees the
-    // word a francophone types.
-    label: "Nom",
+    // word a francophone types. Plural, and now the same string as
+    // `sectionName`: the switcher sets this label beside "Familles",
+    // "Langues", "Peuples" and "Pays", and a lone singular among four plurals
+    // reads as a filter field rather than as the fifth facet.
+    label: "Noms",
     sectionName: "Noms",
     eyebrow: "atlas · les noms d'Afrique",
     title: "Les noms d'Afrique",

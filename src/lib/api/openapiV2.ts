@@ -1414,10 +1414,109 @@ const options: swaggerJsdoc.Options = {
           },
           required: ["data", "meta", "errors"],
         },
+        PatronymeLinkV2: {
+          type: "object",
+          description:
+            "A name as a fiche lists it — enough to name it and to link to its dossier.",
+          properties: {
+            id: {
+              type: "string",
+              pattern: "^PAT_[A-Z0-9_]+$",
+              example: "PAT_KEITA",
+            },
+            nameMain: { type: "string", example: "Keïta" },
+            nameSystem: {
+              type: "string",
+              enum: [
+                "clan_name",
+                "non_hereditary_patronymic",
+                "nisba",
+                "praise_name",
+                "totemic_clan",
+              ],
+            },
+          },
+          required: ["id", "nameMain", "nameSystem"],
+        },
+        PatronymeReachV2: {
+          allOf: [
+            { $ref: "#/components/schemas/PatronymeLinkV2" },
+            {
+              type: "object",
+              properties: {
+                viaPeoples: {
+                  type: "array",
+                  description:
+                    "The peoples of this country that bear the name. They are what makes the entry reach rather than attestation, and what lets a reader audit the inference.",
+                  items: {
+                    type: "object",
+                    properties: {
+                      id: { type: "string", example: "PPL_ZENATA" },
+                      nameMain: { type: "string", example: "Zénètes" },
+                    },
+                    required: ["id", "nameMain"],
+                  },
+                },
+              },
+              required: ["viaPeoples"],
+            },
+          ],
+        },
+        CountryPatronymesV2: {
+          type: "object",
+          description:
+            "The two name routes a country answers along, kept apart. They assert different things and neither contains the other — measured on the corpus, 2 countries are reachable only directly and 6 only through their peoples. Summing them publishes an inference under the heading of a sourced fact.",
+          properties: {
+            attested: {
+              type: "array",
+              description:
+                "Names a source attests in this country (afrik_patronyme_countries).",
+              items: { $ref: "#/components/schemas/PatronymeLinkV2" },
+            },
+            borneByPeoples: {
+              type: "array",
+              description:
+                "Names borne by this country's peoples that are not attested here. The reader is told where the bearers live, not where the name is recorded.",
+              items: { $ref: "#/components/schemas/PatronymeReachV2" },
+            },
+          },
+          required: ["attested", "borneByPeoples"],
+        },
+        PeopleDetailV2: {
+          allOf: [
+            { $ref: "#/components/schemas/PeopleV2" },
+            {
+              type: "object",
+              properties: {
+                patronymes: {
+                  type: "array",
+                  description:
+                    "The names this people bears. Distinct from the ethnonym dossier at /peoples/{id}/names, which holds what the people is called. An empty array is the ordinary state of the corpus, not an omission.",
+                  items: { $ref: "#/components/schemas/PatronymeLinkV2" },
+                },
+              },
+              required: ["patronymes"],
+            },
+          ],
+        },
+        CountryDetailV2: {
+          allOf: [
+            { $ref: "#/components/schemas/CountryV2" },
+            {
+              type: "object",
+              properties: {
+                patronymes: {
+                  $ref: "#/components/schemas/CountryPatronymesV2",
+                },
+              },
+              required: ["patronymes"],
+            },
+          ],
+        },
         PeopleDetailEnvelope: {
           type: "object",
           properties: {
-            data: { $ref: "#/components/schemas/PeopleV2" },
+            data: { $ref: "#/components/schemas/PeopleDetailV2" },
             meta: { $ref: "#/components/schemas/ApiResponseMeta" },
             errors: {
               type: "array",
@@ -1451,7 +1550,7 @@ const options: swaggerJsdoc.Options = {
         CountryDetailEnvelope: {
           type: "object",
           properties: {
-            data: { $ref: "#/components/schemas/CountryV2" },
+            data: { $ref: "#/components/schemas/CountryDetailV2" },
             meta: { $ref: "#/components/schemas/ApiResponseMeta" },
             errors: {
               type: "array",

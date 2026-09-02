@@ -19,10 +19,7 @@ import type {
 // ==========================================
 
 export type RelationBadgeType =
-  | "linguistic"
-  | "migratory"
-  | "commercial"
-  | "religious";
+  "linguistic" | "migratory" | "commercial" | "religious";
 
 export interface RelationListItem {
   id: string;

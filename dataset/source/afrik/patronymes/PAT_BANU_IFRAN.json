@@ -93,15 +93,15 @@
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau de la tribu."
+      "reason": "Aucune fonction héréditaire attestée au niveau de la tribu : la nisba zénète dit une appartenance tribale, non un métier, et Ibn Khaldûn ne lui attache aucune spécialisation transmise."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché à la tribu par une source dédiée lors de la passe."
+      "reason": "Ibn Khaldûn nomme les souverains des dynasties issues de ces tribus, mais une nisba tribale se porte collectivement : verser un émir au champ des porteurs ferait passer une histoire dynastique pour l'attestation d'un nom, ce que la passe s'interdit."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "L'homonymie est structurelle dans un système de nisba : le nom marque l'appartenance à la tribu et non la descendance d'un lignage, de sorte que deux porteurs sans parenté le partagent normalement. Ce n'est donc pas ici une donnée à recenser."
     }
   ],
   "nisbaSubtype": {

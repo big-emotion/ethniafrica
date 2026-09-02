@@ -291,8 +291,7 @@ function assertResponseMatchesSomeDocumentedStatus(
       `among its documented responses (${Object.keys(opCase.op.responses).join(", ")})`
   ).toBeDefined();
   return documented?.content?.["application/json"]?.schema as
-    | JsonSchema
-    | undefined;
+    JsonSchema | undefined;
 }
 
 beforeEach(() => {

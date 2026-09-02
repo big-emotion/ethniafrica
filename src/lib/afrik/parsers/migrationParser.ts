@@ -15,18 +15,14 @@ import type { MigrationRecord } from "@/types/migrations";
 import { ficheSourceTierSchema } from "./ficheSourceTier";
 
 const migrationEventTypeSchema = z.enum(MIGRATION_EVENT_TYPES, {
-  errorMap: () => ({
-    message: `eventType must be one of ${MIGRATION_EVENT_TYPES.join(", ")}`,
-  }),
+  error: `eventType must be one of ${MIGRATION_EVENT_TYPES.join(", ")}`,
 });
 
 const migrationClassificationStatusSchema = z.enum(
   ["consensual", "contested", "colonial-legacy", "reconstructive"],
   {
-    errorMap: () => ({
-      message:
-        "classificationStatus must be one of consensual, contested, colonial-legacy, reconstructive",
-    }),
+    error:
+      "classificationStatus must be one of consensual, contested, colonial-legacy, reconstructive",
   }
 );
 

@@ -9,11 +9,13 @@ import {
 vi.mock("@/lib/supabase/queries/afrik/countries", () => ({
   getAllAfrikCountries: vi.fn(),
   getAfrikCountryById: vi.fn(),
+  getAfrikCountryIndexRows: vi.fn(),
 }));
 
 import {
   getAllAfrikCountries,
   getAfrikCountryById,
+  getAfrikCountryIndexRows,
 } from "@/lib/supabase/queries/afrik/countries";
 
 describe("Country Service", () => {
@@ -103,9 +105,9 @@ describe("Country Service", () => {
   describe("getCountryIndex", () => {
     // @req REQ-116
     it("lists every country the corpus holds a fiche for, id and name only", async () => {
-      vi.mocked(getAllAfrikCountries).mockResolvedValue([
-        { id: "NGA", nameFr: "Nigeria", content: {} },
-        { id: "COM", nameFr: "Comores", content: {} },
+      vi.mocked(getAfrikCountryIndexRows).mockResolvedValue([
+        { id: "NGA", nameFr: "Nigeria" },
+        { id: "COM", nameFr: "Comores" },
       ]);
 
       const index = await getCountryIndex();
@@ -116,6 +118,19 @@ describe("Country Service", () => {
         { id: "NGA", nameFr: "Nigeria" },
         { id: "COM", nameFr: "Comores" },
       ]);
+    });
+
+    // @req REQ-116
+    it("never reads the whole fiche to keep two of its columns", async () => {
+      vi.mocked(getAfrikCountryIndexRows).mockResolvedValue([]);
+
+      await getCountryIndex();
+
+      // This index is read by the `/fr/atlas` layout, so every fiche in the
+      // subtree pays for it. Through `getAllAfrikCountries` that was a
+      // 951 KB `select("*")`, and past the 10s deadline of `requestDeadline`
+      // the layout's catch handed the globe an empty country list.
+      expect(getAllAfrikCountries).not.toHaveBeenCalled();
     });
   });
 

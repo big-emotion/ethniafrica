@@ -27,3 +27,15 @@ if (typeof globalThis.Path2D === "undefined") {
 // configured, so route tests asserting on that header need one. Tests that
 // exercise the unconfigured case delete this variable themselves.
 process.env.CORS_ALLOWED_ORIGIN ??= "http://localhost:3000";
+
+// happy-dom 20.12 began shipping Element.animate, and its animations never
+// reach onfinish while vitest holds the clock. useSlotReel books the next word
+// from that callback, so under fake timers a reel settles on the word it opened
+// on and stays there for good — eight assertions across the two hero suites
+// turned red on the bump alone, with the hook untouched.
+//
+// Withdrawing the method restores the branch useSlotReel already documents for
+// "an old browser, or the test environment", where the word changes without
+// travelling. The suites assert the sequence of words, never the flourish, so
+// nothing they cover is lost. This hook is the codebase's only WAAPI caller.
+delete (Element.prototype as { animate?: unknown }).animate;

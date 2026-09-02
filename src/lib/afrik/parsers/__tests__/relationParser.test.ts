@@ -45,7 +45,11 @@ describe("parseRelationFile", () => {
 
     expect(result.success).toBe(false);
     expect(result.errors).toContainEqual(
-      expect.objectContaining({ path: "relationType" })
+      expect.objectContaining({
+        path: "relationType",
+        message:
+          "relationType must be one of migratory, commercial, religious (linguistic is derived-only and never stored — FR73)",
+      })
     );
   });
 

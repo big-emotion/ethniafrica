@@ -119,15 +119,15 @@
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau du clan."
+      "reason": "Aucune fonction héréditaire attestée au niveau du clan : la quadripartition Diallo, Bâ, Barry, Sow ordonne la descendance et non le métier, et les castes de spécialistes du Fouta portent d'autres noms."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
+      "reason": "Les Diallo comptent parmi les familles fondatrices de l'État théocratique du Fouta-Djalon au XVIIIe siècle, mais aucune source dédiée n'a permis de rattacher une personne décédée nommément au clan plutôt qu'au seul patronyme."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "Les répertoires onomastiques consultés laissent l'étymologie de Diallo inexpliquée : aucune racine pulaar établie ne la porte. Les rattachements proposés — à un jallo qui vaudrait « commandement », ou au mandingue diala pour la noblesse — ne sont corroborés par aucune source linguistique primaire et ressemblent à des étymologies populaires nées du contact peul-mandingue. L'absence d'étymologie établie est ici le résultat de la recherche, non son défaut. Les transcriptions Jalloh, Jallow et Djaló désignent le même nom et ne sont donc pas des homonymes."
     }
   ]
 }

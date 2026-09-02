@@ -43,8 +43,7 @@ export const HOME_HERO_IMAGES = [
 ] as const satisfies readonly HomeHeroImage[];
 
 export type HomeHeroVisual =
-  | { kind: "globe" }
-  | { kind: "image"; image: HomeHeroImage };
+  { kind: "globe" } | { kind: "image"; image: HomeHeroImage };
 
 /**
  * Draw the homepage visual once per server request.

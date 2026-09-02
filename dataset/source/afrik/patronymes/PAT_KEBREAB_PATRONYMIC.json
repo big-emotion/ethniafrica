@@ -23,8 +23,8 @@
     "linguisticReconstructions": [
       {
         "claim": "Kebreab procède du guèze kəbrä ab, « gloire du père » ; le nom est porté comme prénom et devient patronyme à la génération suivante.",
-        "claimStatus": "claimed",
-        "sourceRefs": ["familysearch-ethiopia-naming"]
+        "claimStatus": "established",
+        "sourceRefs": ["leslau-1987-geez", "familysearch-ethiopia-naming"]
       },
       {
         "claim": "Le système habesha ne comporte pas de nom de famille héréditaire : le second élément est le nom personnel du père, celui du grand-père servant à désambiguïser. Il change donc à chaque génération.",
@@ -66,6 +66,14 @@
       "tier": "referenced",
       "source_kind": "linguistic_reference",
       "notes": "Cultural Atlas, publié par SBS (radiodiffuseur public australien). Établit l'absence de nom de famille et la structure prénom + prénom du père, le grand-père servant à désambiguïser."
+    },
+    {
+      "sourceKey": "leslau-1987-geez",
+      "title": "Comparative Dictionary of Geʿez (Classical Ethiopic) — Geʿez-English / English-Geʿez, with an Index of the Semitic Roots",
+      "url": "https://archive.org/details/leslau-comparative-dictionary-of-geez-1987",
+      "tier": "official",
+      "source_kind": "academic",
+      "notes": "Leslau, Wolf, Otto Harrassowitz, Wiesbaden, 1987. Lexique de référence du guèze. Les quatre éléments portés par les fiches habesha y ont été vérifiés un à un dans le texte intégral : gabr « esclave, serviteur, vassal » (le verbe gabra valant « faire, agir »), wald « fils » — l'état construit walda wald donnant « petit-fils » —, hayl « puissance, force, vaillance » et kabr « honneur, gloire, prestige ». Remplace ici un site de généalogie qui portait seul ces étymologies."
     },
     {
       "sourceKey": "familysearch-ethiopia-naming",

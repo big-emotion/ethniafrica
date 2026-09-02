@@ -28,6 +28,7 @@ import { buildCountryOutlineOverlay } from "@/lib/atlas/overlays";
 import { buildCountryPickerTargets } from "@/lib/atlas/targets";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import { getCountryAtlasIndex } from "@/api/v2/services/countryService";
+import { getCountryPatronymes } from "@/api/v2/services/patronymeFicheLinks";
 import { mapCountryDetail } from "@/lib/afrikDetailMapper";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
 
@@ -142,7 +143,7 @@ export default async function PaysSlugPage({
     );
   }
 
-  const [country, sourceFlags, countryAtlasIndex, peopleCounts] =
+  const [country, sourceFlags, countryAtlasIndex, peopleCounts, patronymes] =
     await Promise.all([
       loadCountryFiche(parsed.slug),
       getActiveSourceFlags("country", parsed.slug),
@@ -151,6 +152,10 @@ export default async function PaysSlugPage({
       // for any country. A failed count costs the other countries' subtitle,
       // never the fiche.
       getContinentPeopleCounts().catch(() => ({}) as Record<string, number>),
+      // Caught to `null` rather than to two empty lists: empty is the corpus
+      // saying no name reaches this country, which the chapter prints as a
+      // fact. A dropped query must not be able to make that claim.
+      getCountryPatronymes(parsed.slug).catch(() => null),
     ]);
   if (!country) {
     notFound();
@@ -252,6 +257,7 @@ export default async function PaysSlugPage({
               hasSourceFlag={sourceFlags.length > 0}
               fromPeopleName={navigationContext.fromPeopleName}
               fromPeopleId={navigationContext.fromPeopleId}
+              patronymes={patronymes}
             />
           </>
         }

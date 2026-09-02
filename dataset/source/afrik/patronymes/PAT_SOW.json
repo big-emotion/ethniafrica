@@ -96,15 +96,15 @@
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Aucune fonction héréditaire attestée au niveau du clan."
+      "reason": "Aucune fonction héréditaire attestée au niveau du clan : la quadripartition Diallo, Bâ, Barry, Sow ordonne la descendance et non le métier, et les castes de spécialistes du Fouta portent d'autres noms."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source dédiée lors de la passe."
+      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source distincte de la simple homonymie de patronyme lors de la passe."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucun homonyme distinct n'a été trouvé lors de la passe de recherche."
+      "reason": "Sow est porté à la fois dans l'aire peule et, par contact, dans l'aire wolof du Sénégal, sans qu'une source dédiée établisse deux origines distinctes : la répartition géographique ne suffit pas à faire un homonyme, et les deux usages ne sont donc pas séparés."
     }
   ]
 }
