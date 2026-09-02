@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "transmissionMode": "hereditary",
+  "transmissionMode": "other",
   "designatedSocialUnit": "other",
   "origin": {
     "oralTraditions": [],
@@ -89,6 +89,10 @@
     {
       "fieldPath": "nameSystem",
       "reason": "Les sources consultées attestent la graphie « Benjelloun » sans établir assez précisément le système dénominatif ; la valeur nisba héritée de la vague 1 n’est donc pas étendue par inférence."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La publication de l’IRCAM indique que Benjelloun s’est transmis de génération en génération, mais les recherches « Benjelloun transmission patronyme », « Benjelloun filiation » et « Benjelloun hereditary surname » n’ont pas établi si cette transmission est patrilinéaire, matrilinéaire, bilatérale ou élective."
     },
     {
       "fieldPath": "designatedSocialUnit",
