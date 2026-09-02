@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
   },
   "id": "PAT_BELLO",
   "nameMain": "Bello",
@@ -11,8 +11,14 @@
     {
       "spelling": "Bello",
       "attestations": [
-        { "countryId": "NGA", "sourceRefs": ["afrik-candidate-queue"] },
-        { "countryId": "CMR", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["ryan-1981-hausa-nomenclature"]
+        },
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
@@ -21,25 +27,31 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Dans son tableau des noms masculins islamiques haoussa, Ryan classe Bello comme un nom d’origine peule dérivé de l’expression « aide de l’islam » ; l’étude atteste cet usage dans le nord du Nigeria.",
+        "claimStatus": "established",
+        "sourceRefs": ["ryan-1981-hausa-nomenclature"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_HAUSA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["ryan-1981-hausa-nomenclature"]
     },
     {
       "peopleId": "PPL_FULA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "ryan-1981-hausa-nomenclature"]
     }
   ],
   "countries": [
     {
       "countryId": "NGA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["ryan-1981-hausa-nomenclature"]
     },
     {
       "countryId": "CMR",
@@ -58,29 +70,33 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Source de vague 1 conservée uniquement pour la présence camerounaise, non confirmée par l’étude nigériane. L’usage haoussa au Nigeria et l’indication d’une origine peule du nom sont désormais documentés par Ryan."
+    },
+    {
+      "sourceKey": "ryan-1981-hausa-nomenclature",
+      "title": "An Introduction to Hausa Personal Nomenclature",
+      "url": "https://ans-names.pitt.edu/ans/article/download/942/941/1886",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Pauline M. Ryan, Names: A Journal of Onomastics 29/2, 1981, p. 139-164, DOI 10.1179/nam.1981.29.2.139. L’étude porte sur les pratiques de dénomination haoussa du nord du Nigeria et distingue les noms publics islamiques attribués individuellement lors de la cérémonie du septième jour. Son tableau I cite Bello comme nom masculin, le qualifie de peul et donne le sens « aide de l’islam »."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "L’article de Ryan a été recherché pour une alliance ou une paire patronymique associée à Bello ; il traite de choix de noms individuels et n’en fournit aucune."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Le sens religieux indiqué par Ryan ne constitue ni un métier héréditaire ni une caste ; aucune fonction sociale propre à Bello n’est décrite."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Ryan documente une catégorie de nom et non des porteurs biographiques ; aucun porteur décédé rattaché à une lignée Bello n’a été trouvé."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La recherche de Bello dans l’étude de Ryan n’a pas distingué plusieurs lignées ou étymologies homonymes."
     }
   ]
 }
