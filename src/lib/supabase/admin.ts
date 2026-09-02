@@ -10,6 +10,8 @@ import "server-only";
  */
 import { createClient } from "@supabase/supabase-js";
 
+import { fetchWithDeadline } from "./requestDeadline";
+
 // @req REQ-054
 export const createAdminClient = () => {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -25,6 +27,9 @@ export const createAdminClient = () => {
     auth: {
       autoRefreshToken: false,
       persistSession: false,
+    },
+    global: {
+      fetch: fetchWithDeadline,
     },
   });
 };
