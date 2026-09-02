@@ -68,10 +68,12 @@ describe("ETNI-1684 first clan-name dossiers", () => {
       expect(
         raw.spellings.map(({ spelling }: { spelling: string }) => spelling)
       ).toContain(name);
-      // Where the people lives now is a floor, not a ceiling. A name can be
-      // attested where the people no longer is — Bluett records Jallo in the
-      // Bundu in 1734 — so research may add a country, provided it brings a
-      // source, but may never drop one the people fiche carries.
+      // Where the people lives now is a floor, not a ceiling, and two waves
+      // now raise it. The coverage queue appends countries it attests, and
+      // research appends countries a dated source attests — Bluett records
+      // Jallo in the Bundu in 1734, where the Fula of the forest are not. So
+      // the people fiche's countries must all still be there, nothing may be
+      // dropped, and anything beyond them must carry its own source.
       const ficheCountries = raw.countries.map(
         ({ countryId }: { countryId: string }) => countryId
       );

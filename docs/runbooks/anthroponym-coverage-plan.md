@@ -27,15 +27,20 @@ attested in the same country, which puts Burundi ahead of Algeria.
 
 ## Where things stand
 
-|                                      |                          |
-| ------------------------------------ | -----------------------: |
-| `PAT_*` fiches                       |                       30 |
-| Countries with ≥ 1 fiche             |                  21 / 54 |
-| Countries with zero                  |                       33 |
-| Best-covered country (MLI, CIV, BFA) |                        9 |
-| **Countries meeting their quota**    |               **0 / 54** |
-| Candidates queued                    |                      648 |
-| Queue deficit against quota          | 200, across 20 countries |
+|                                   |                                    |
+| --------------------------------- | ---------------------------------: |
+| `PAT_*` fiches                    | 777 — 30 researched, 747 generated |
+| Countries with ≥ 1 fiche          |                            54 / 54 |
+| Countries with zero               |                                  0 |
+| **Countries meeting their quota** |                        **54 / 54** |
+| Candidates queued                 |                                848 |
+| Queue deficit against quota       |               0 — wave 0 is closed |
+
+The coverage target is met. What it means is narrow, and worth stating plainly:
+747 of those fiches assert a name, its countries and its peoples, and nothing
+else. They cite one source — the queue — at `unverified` × `ai_generated`, which
+is 0.2, and carry a gap on every field research has not filled. Coverage is not
+knowledge, and waves 2+ are where that changes.
 
 The generator prints the deficit per country on every run — it is the progress
 meter for wave 0, not an error:
@@ -48,8 +53,8 @@ node scripts/afrik/buildAnthroponymCandidates.mjs
 
 | Wave    | What it does                         | Output                               | Shape of the work                |
 | ------- | ------------------------------------ | ------------------------------------ | -------------------------------- |
-| **0**   | Close the queue deficit              | 780 candidates                       | Authoring, one country at a time |
-| **1**   | Candidates → fiches, minimal depth   | 780 fiches, 54/54 countries at quota | **A script, not an agent**       |
+| **0**   | Close the queue deficit              | 848 candidates, quota 780 met        | Authoring, one country at a time |
+| **1**   | Candidates → fiches, minimal depth   | 777 fiches, 54/54 countries at quota | **A script, not an agent**       |
 | **2…N** | Research depth, by linguistic family | Confidence rises per family          | The per-fiche protocol           |
 
 Wave 1 is where the coverage target is actually met. Waves 2+ never change
@@ -62,10 +67,17 @@ times — and confusing them is easy. **Fiches per family** decides what can be
 deepened today; **peoples per family** decides what is worth deepening once
 wave 1 has created fiches across all 24.
 
-#### Now — the 30 existing fiches, by fiches per family
+#### Done — the 30 existing fiches, by fiches per family
 
-All six families below are available immediately. Nothing about depth work waits
-on wave 1 for these: the fiches exist and have had one shallow pass.
+**Closed by #774**, and across all six families at once rather than the single
+family this section proposed. It also repaired the defect the protocol warns
+about: every Mande fiche had carried the same Jansen sentence as its only
+reconstruction, and every Nguni fiche the same isibongo passage — a shared source
+that had merely moved up a level. Each name now has an origin of its own, and
+Roscoe's clan list is verified page by page (Ngonge/genet no 4, Fumbe/frog no 6,
+Lugave/mushroom no 11, Njaza/antelope no 25, pp. 138-139).
+
+The table below is kept as the record of what that pass covered.
 
 | Family          | Fiches | What it holds                                                  |
 | --------------- | -----: | -------------------------------------------------------------- |
@@ -76,14 +88,10 @@ on wave 1 for these: the fiches exist and have had one shallow pass.
 | FLG_ATLANTIQUE  |      1 | `PAT_SOW`                                                      |
 | FLG_BENOUECONGO |      1 | `PAT_ABIKAN_PRAISE`, the Yoruba oríkì                          |
 
-Three of these are large enough to be a session on their own — NIGERCONGO,
-MANDE, SEMITIQUE — and they can run in parallel. The three singletons fold into
-whichever session is nearest.
-
-Start with **FLG_NIGERCONGO**, not MANDE, if only one runs: it is the largest
-block and the one where the first pass is thinnest. Its origin claims rest on
-community clan sites at `unverified`, where the Mande fiches already carry Niane
-and Jansen at `referenced`.
+The advice that stood here — run the three large families in parallel, start
+with NIGERCONGO because its first pass was thinnest — is what #774 did, in one
+pass over all six. It transfers to the 747 generated fiches, which are now the
+whole of the remaining depth work.
 
 #### After wave 1 — all 24 families, by peoples per family
 
@@ -105,7 +113,12 @@ in the name dimension, and no amount of depth work reaches it before wave 1.
 
 ## Wave 0 — close the queue deficit
 
-200 candidates missing, in 20 countries. Run one country per invocation, or a
+**Closed.** The 200 missing candidates were authored across the 20 deficit
+countries, and the generator reports a deficit of 0 against the 780 quota.
+
+The prompt below stays here because the quota is a floor, not a ceiling: raising
+a band, adding a country, or replacing a thin entry after research reopens a
+deficit, and this is how it gets closed. Run one country per invocation, or a
 band at a time.
 
 ```text
@@ -152,6 +165,30 @@ Do not create fiches. This wave only fills the queue.
 ---
 
 ## Wave 1 — breadth: candidates into fiches
+
+**Closed.** `scripts/afrik/generatePatronymeFichesFromCandidates.mjs` writes 747
+fiches from the 767 distinct queued names and defers the other 20 to the
+researched fiches that already hold them. Re-running is idempotent: a fiche
+citing nothing but the queue is regenerated rather than mistaken for research,
+so a corrected candidate propagates.
+
+Three things the prompt below did not anticipate, all resolved in the script and
+worth reading before changing it:
+
+- **Deferring a candidate was discarding its countries.** Nine researched fiches
+  are queued for countries they do not list — the Nguni batch was researched
+  from a Zimbabwe source, so Ndlovu, Mthethwa and Nxumalo attested only ZWE and
+  reached no South African page. The script now merges those twelve country
+  claims in, additively and citing the queue, which is what takes ZAF from 18 to
+  its quota of 20.
+- **An id collision is not the only kind.** `PAT_BAMBA` does not collide with the
+  researched `PAT_BAMBA_CLAN`, but both carry nameMain "Bamba"; generating it
+  would leave two fiches for one name, the second empty. Five names defer on
+  nameMain rather than id.
+- **A name can be queued under two systems.** Adam, Gatluak and Molefe are, and
+  `nameSystem` is a dossier's discriminant — one fiche cannot hold both. The most
+  frequent value wins and the disagreement is written down as a gap, because the
+  arbitration (which may be that they are homographs) is editorial.
 
 **Write a generator, do not have an agent author 780 files.** The candidates
 already carry everything a minimal fiche needs; turning them into fiches is a
@@ -214,6 +251,23 @@ is updated; a test that breaks because a fiche is malformed is a real failure.
 `patronymeRareFiches` requires an `https://` URL on every source and forbids
 `wikipedia.org` — a generated fiche has no URL to give, so that assertion needs
 scoping to the researched batch rather than loosening.
+
+Three did break, and all three were scoped rather than relaxed:
+
+- `patronymeRareFiches` — the https/non-Wikipedia rule now runs over the sources
+  that claim to be works. The queue is a provenance marker with no URL by
+  design, and requiring one of it would force a fabricated link.
+- `patronymeClanFiches` — the fiche's countries no longer have to equal the
+  people fiche's outright; the countries sourced to the corpus passage do. The
+  queue's additions are a separate, weaker claim.
+- `nommerFigures` — the one that mattered. It compares the published figure
+  "fiches de nom" against the directory, and the chapter around that figure
+  reads « L'atlas documente trente systèmes de nomination ». Bumping it to 777
+  would have made a reader-facing sentence false, because a stub documents
+  nothing. The figure and its `method` now count researched fiches — those
+  carrying a source other than the queue — so the number stays 30 and the claim
+  stays true. **If a later wave researches a generated fiche, this count rises
+  on its own, which is the intended behaviour.**
 
 ---
 
@@ -294,13 +348,24 @@ deciding anything about how the section looks.
 
 ## Running these in parallel
 
-| Track                                    | Depends on                                               | Can start                          |
-| ---------------------------------------- | -------------------------------------------------------- | ---------------------------------- |
-| Link surface (above)                     | nothing                                                  | now                                |
-| Wave 0, per country                      | nothing                                                  | now, and several countries at once |
-| Depth on any of the six covered families | the 30 fiches, which exist                               | now, three sessions at once        |
-| Wave 1                                   | nothing technically; better after wave 0 so it runs once | after wave 0                       |
-| Waves 3+                                 | wave 1, for the fiches to exist                          | after wave 1                       |
+| Track                             | Depends on                      | State                             |
+| --------------------------------- | ------------------------------- | --------------------------------- |
+| Link surface                      | nothing                         | done — #776                       |
+| Wave 0, per country               | nothing                         | done — 848 queued, deficit 0      |
+| Depth on the six covered families | the 30 fiches                   | done — #774, all six in one pass  |
+| Wave 1                            | better after wave 0             | done — 747 fiches, 54/54 at quota |
+| Depth on the 747 generated fiches | wave 1, for the fiches to exist | the remaining work, by family     |
+
+Everything up to and including wave 1 is closed. What is left is depth on the
+747, which is the long haul: one fiche at a time, a dedicated source per name,
+and **no source carried from one fiche to the next** — the failure #774 had to go
+back and repair.
+
+One operational lesson from getting here: waves 0 and 1 were authored in a
+session that could not see #774 and #776 landing on `recette` in parallel, and
+the two collided on seven files. Depth over 747 fiches is far more divisible than
+that — split it by linguistic family, one branch per family, and the collisions
+stay inside a family instead of across the corpus.
 
 Wave 1 is a generator, so re-running it after wave 0 grows the queue costs
 nothing — the sequencing above is about not reviewing the same 780 fiches twice,
