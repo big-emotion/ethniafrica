@@ -4,6 +4,7 @@ import { QuizPlayHost } from "@/components/quiz/QuizPlayHost";
 import { QuizScopePicker } from "@/components/quiz/QuizScopePicker";
 import { describeScope, getQuizScopesHandler } from "@/api/v2/handlers/quiz";
 import { parseQuizScope } from "@/lib/quiz/quizScope";
+import { quizTrackLabelFr } from "@/lib/quiz/segmentPolicy";
 import { getLocalizedRoute } from "@/lib/routing";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { translations } from "@/lib/translations";
@@ -60,8 +61,21 @@ export default async function QuizPage({ searchParams }: QuizPageProps) {
   const scope = chose ? await describeScope(asked) : null;
 
   if (scope) {
+    // The scope label and the theme reach this component through different
+    // pipes — one resolved against the database, one raw from the query string
+    // — and joining them here is the only place both are in hand. It feeds the
+    // subtitle and the session's own trail, which were each missing the theme.
+    // A theme picked on its own carries no scope half: « Tout le continent » is
+    // the absence of narrowing, and printing it beside a theme reads as two
+    // scopes rather than one track.
+    const narrowedByPlace = Boolean(query.pays || query.famille || query.mode);
+    const trackLabelFr = quizTrackLabelFr(
+      narrowedByPlace ? scope.labelFr : null,
+      query.theme ?? null
+    );
+
     return (
-      <PageLayout language="fr" title={t.pageTitle} subtitle={scope.labelFr}>
+      <PageLayout language="fr" title={t.pageTitle} subtitle={trackLabelFr}>
         {/* The axis accent, bound here for the reason spelled out in
             src/app/[lang]/jeux/[jeu]/page.tsx: a quiz page is not a hub, so
             nothing else on the route binds `--accent` and it fell through to
@@ -72,7 +86,7 @@ export default async function QuizPage({ searchParams }: QuizPageProps) {
           <QuizPlayHost
             scope={asked}
             theme={query.theme ?? null}
-            scopeLabelFr={scope.labelFr}
+            scopeLabelFr={trackLabelFr}
             exitHref={QUIZ_PATH}
           />
         </div>

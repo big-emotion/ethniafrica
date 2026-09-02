@@ -95,7 +95,7 @@ describe("QuizPlayIsland (Epic 10, Story 10.9, ETNI-1137)", () => {
 
     expect(
       screen.getByText(
-        "Aucune question disponible pour ce parcours — réessaie plus tard."
+        "Aucune question disponible sur ce sujet — réessaie plus tard."
       )
     ).toBeInTheDocument();
   });
@@ -114,13 +114,18 @@ describe("QuizPlayIsland (Epic 10, Story 10.9, ETNI-1137)", () => {
     );
   });
 
+  // The label the page composes already says what is being played — a country,
+  // a family, a theme, or a country crossed with one. Prefixing it with a
+  // category name promised a progression the session does not keep.
   // @req REQ-103 FR67
   it("names the track being played", () => {
     mockUseQuizSession.mockReturnValue(baseSession());
 
     renderIsland();
 
-    expect(screen.getByText("Ghana")).toBeInTheDocument();
+    const named = screen.getByText("Ghana");
+    expect(named).toBeInTheDocument();
+    expect(named.closest("p")?.textContent).toBe("Ghana");
   });
 
   // @req REQ-103 FR67

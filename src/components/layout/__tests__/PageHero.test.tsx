@@ -18,10 +18,10 @@ const trail = <nav aria-label="Fil d'ariane">Accueil › Jouer › Quiz</nav>;
 describe("the page hero — the plate, and what it carries (REQ-115)", () => {
   // @req REQ-115
   it("names the page in the one h1 the band raises", () => {
-    render(<PageHero title="Choisis ton parcours" />);
+    render(<PageHero title="Familles linguistiques" />);
 
     const heading = screen.getByRole("heading", { level: 1 });
-    expect(heading).toHaveTextContent("Choisis ton parcours");
+    expect(heading).toHaveTextContent("Familles linguistiques");
   });
 
   /**
@@ -33,7 +33,7 @@ describe("the page hero — the plate, and what it carries (REQ-115)", () => {
   it("renders the subtitle the shell used to swallow", () => {
     render(
       <PageHero
-        title="Choisis ton parcours"
+        title="Familles linguistiques"
         subtitle="Huit questions, tirées du corpus."
       />
     );

@@ -451,7 +451,7 @@ export const translations = {
     },
     quiz: {
       navLabel: "Quiz",
-      pageTitle: "Choisis ton parcours",
+      pageTitle: "Sur quoi veux-tu jouer ?",
       pageSubtitle:
         "Un pays, une famille de langues, un sujet — ou tout le continent. Huit questions à chaque fois.",
       scopeThemeHeading: "Un sujet",
@@ -464,11 +464,10 @@ export const translations = {
       scopeMixedHint:
         "Huit questions tirées de tout le corpus, des peuples les plus connus aux moins documentés.",
       scopeRandomHint: "Huit questions au hasard, sans ordre de difficulté.",
-      playingScopePrefix: "Parcours :",
       leaveSession: "Quitter le quiz",
       seeScoreCard: "Voir la carte de score",
       comingSoon:
-        "les questions de ce parcours arrivent — les fiches correspondantes sont en cours de vérification",
+        "les questions de cette sélection arrivent — les fiches correspondantes sont en cours de vérification",
       validate: "Valider",
       questionProgressPrefix: "question",
       questionProgressSeparator: "sur",
@@ -480,8 +479,8 @@ export const translations = {
       seeScore: "Voir le score",
       loadingSession: "Chargement de la session…",
       emptySession:
-        "Aucune question disponible pour ce parcours — réessaie plus tard.",
-      backToPicker: "Choisir un autre parcours",
+        "Aucune question disponible sur ce sujet — réessaie plus tard.",
+      backToPicker: "Choisir autre chose",
       sessionError:
         "Impossible de charger cette session — réessaie dans un instant.",
       scoreHeading: "Score",
@@ -552,7 +551,7 @@ export const translations = {
         blurb:
           "L'axe de la mise à l'épreuve : des jeux et des quiz tirés des fiches, dont chaque réponse renvoie à la sienne.",
         menuBlurb:
-          "Le quiz des parcours et un jeu sur la taille réelle des pays.",
+          "Un quiz tiré des fiches, et un jeu sur la taille réelle des pays.",
         hubEntryName: "Le hub des jeux",
       },
       unavailableLabel: "Bientôt",
