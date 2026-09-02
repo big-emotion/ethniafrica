@@ -2,38 +2,47 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_MBUYI",
   "nameMain": "Mbuyi",
-  "nameSystem": "clan_name",
+  "nameSystem": "non_hereditary_patronymic",
   "spellings": [
     {
       "spelling": "Mbuyi",
       "attestations": [
-        { "countryId": "COD", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "COD",
+          "sourceRefs": ["forebears-mbuyi"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "L'étude consacrée aux noms d'enfants dits spéciaux chez les Luba-Kasaï classe Mbuyi parmi les noms liés aux naissances multiples et le définit comme le nom du premier-né de jumeaux. Elle décrit un nom personnel attribué à la naissance ; l'emploi moderne du même graphème comme nom de famille est attesté séparément et ne permet pas de supposer une seule lignée.",
+        "claimStatus": "established",
+        "sourceRefs": ["betu-2023-mbuyi", "forebears-mbuyi"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_LUBA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["betu-2023-mbuyi"]
     }
   ],
   "countries": [
     {
       "countryId": "COD",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-mbuyi"]
     }
   ],
   "alliances": [],
@@ -42,38 +51,38 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "betu-2023-mbuyi",
+      "title": "Socio-Cultural Meanings of Special Children Names in the Luba Culture of Kasaï",
+      "url": "https://www.researchgate.net/publication/385699879_Socio-Cultural_Meanings_of_Special_Children_Names_in_The_Luba_Culture_of_Kasai",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article de Betu et al., Journal of Digital Learning and Distance Education 2(7), consulté directement. Il classe Mbuyi parmi les noms personnels luba-kasaï des naissances multiples et l'identifie comme le premier-né de jumeaux."
+    },
+    {
+      "sourceKey": "forebears-mbuyi",
+      "title": "Mbuyi Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/mbuyi",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement pour attester l'emploi moderne comme nom de famille en République démocratique du Congo. Sa glose issue d'un répertoire zambien lunda n'est pas utilisée pour la fiche luba."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mbuyi », « Luba », « Tshiluba », « twin name », « surname », « clan », « transmission », « alliance » et « obituary », ainsi que l'article sur les noms d'enfants spéciaux luba-kasaï et la page Forebears dédiée n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Mbuyi à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mbuyi », « Luba », « Tshiluba », « twin name », « surname », « clan », « transmission », « alliance » et « obituary », ainsi que l'article sur les noms d'enfants spéciaux luba-kasaï et la page Forebears dédiée n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Mbuyi."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mbuyi », « Luba », « Tshiluba », « twin name », « surname », « clan », « transmission », « alliance » et « obituary », ainsi que l'article sur les noms d'enfants spéciaux luba-kasaï et la page Forebears dédiée n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web et bibliographique combinant « Mbuyi », « Luba », « Tshiluba », « twin name », « surname », « clan », « transmission », « alliance » et « obituary », ainsi que l'article sur les noms d'enfants spéciaux luba-kasaï et la page Forebears dédiée n'ont pas établi de lignée homonyme d'origine distincte documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
     }
   ]
 }

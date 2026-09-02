@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_MENGUE",
   "nameMain": "Mengue",
@@ -11,7 +11,10 @@
     {
       "spelling": "Mengue",
       "attestations": [
-        { "countryId": "GAB", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "GAB",
+          "sourceRefs": ["forebears-mengue"]
+        }
       ]
     }
   ],
@@ -20,20 +23,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "L'étude des dictionnaires de noms gabonais atteste Mengue dans la construction Mengue Me Ngou, analysée comme « Mengue de Ngou ». Elle établit la structure relationnelle d'une dénomination bantoue gabonaise où la filiation peut être élidée, mais ne propose ni étymologie lexicale de Mengue ni preuve que toutes les lignées modernes suivent ce modèle.",
+        "claimStatus": "established",
+        "sourceRefs": ["ndinga-koumba-2025-mengue"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_FANG",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["ndinga-koumba-2025-mengue"]
     }
   ],
   "countries": [
     {
       "countryId": "GAB",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-mengue"]
     }
   ],
   "alliances": [],
@@ -42,38 +51,46 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "ndinga-koumba-2025-mengue",
+      "title": "Dictionnaires des noms personnels gabonais : promesses d'un domaine de la lexicographie gabonaise",
+      "url": "https://www.researchgate.net/publication/388322761_Dictionnaires_des_Noms_Personnels_Gabonais_Promesses_d'un_Domaine_de_la_Lexicographie_Gabonaise",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article métalexicographique de Ndinga-Koumba-Binza consulté directement. Il donne Mengue Me Ngou comme exemple de dénomination bantoue gabonaise signifiant structurellement « Mengue de Ngou » et décrit l'élision cognitive de fils/fille ; il ne fournit pas le sens lexical de Mengue."
+    },
+    {
+      "sourceKey": "forebears-mengue",
+      "title": "Mengue Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/mengue",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement. Elle atteste Mengue au Gabon, au Cameroun et en Guinée équatoriale mais n'en donne pas la signification et ne suffit pas à isoler les lignées fang."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Mengue », « Fang », « Gabon », « nom personnel », « patronyme », « étymologie », « filiation », « clan » et « transmission », ainsi que l'article sur les dictionnaires anthroponymiques gabonais et la page Forebears dédiée n'ont pas établi que la catégorie provisoire « clan_name » décrive Mengue lui-même ; elle reste une hypothèse de classement, sans être transformée en affirmation."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mengue », « Fang », « Gabon », « nom personnel », « patronyme », « étymologie », « filiation », « clan » et « transmission », ainsi que l'article sur les dictionnaires anthroponymiques gabonais et la page Forebears dédiée n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Mengue à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mengue », « Fang », « Gabon », « nom personnel », « patronyme », « étymologie », « filiation », « clan » et « transmission », ainsi que l'article sur les dictionnaires anthroponymiques gabonais et la page Forebears dédiée n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Mengue."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mengue », « Fang », « Gabon », « nom personnel », « patronyme », « étymologie », « filiation », « clan » et « transmission », ainsi que l'article sur les dictionnaires anthroponymiques gabonais et la page Forebears dédiée n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mengue », « Fang », « Gabon », « nom personnel », « patronyme », « étymologie », « filiation », « clan » et « transmission », ainsi que l'article sur les dictionnaires anthroponymiques gabonais et la page Forebears dédiée n'ont pas établi de lignée homonyme d'origine distincte documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web et bibliographique combinant « Mengue », « Fang », « Gabon », « nom personnel », « patronyme », « étymologie », « filiation », « clan » et « transmission », ainsi que l'article sur les dictionnaires anthroponymiques gabonais et la page Forebears dédiée n'ont établi aucune règle propre à Mengue permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }

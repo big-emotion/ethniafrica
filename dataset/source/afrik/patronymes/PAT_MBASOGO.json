@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_MBASOGO",
   "nameMain": "Mbasogo",
@@ -11,7 +11,10 @@
     {
       "spelling": "Mbasogo",
       "attestations": [
-        { "countryId": "GNQ", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "GNQ",
+          "sourceRefs": ["forebears-mbasogo"]
+        }
       ]
     }
   ],
@@ -26,14 +29,14 @@
     {
       "peopleId": "PPL_FANG",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["sundiata-2017-mbasogo"]
     }
   ],
   "countries": [
     {
       "countryId": "GNQ",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-mbasogo"]
     }
   ],
   "alliances": [],
@@ -42,38 +45,50 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "sundiata-2017-mbasogo",
+      "title": "State building and the politics of succession in Equatorial Guinea",
+      "url": "https://academicjournals.org/ebook/journal1515396578_AJPSIR%20December%202017%20ebook.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article historique et politique consulté dans le PDF intégral de l'African Journal of Political Science and International Relations. Il situe Maria Mbasogo Ngui dans la généalogie familiale fang de Teodoro Obiang Nguema, mais ne donne ni sens lexical ni règle de transmission propre à Mbasogo."
+    },
+    {
+      "sourceKey": "forebears-mbasogo",
+      "title": "Mbasogo Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/mbasogo",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Page patronymique consultée directement pour l'attestation orthographique et géographique en Guinée équatoriale. Elle n'établit aucune étymologie."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mbasogo », « Fang », « Equatorial Guinea », « surname origin », « lineage », « clan », « transmission » et « obituary », ainsi que l'article historique consacré à la succession équato-guinéenne et la page Forebears dédiée n'ont livré aucune tradition attribuée, chronique ou étude linguistique établissant l'origine de Mbasogo. Les rapprochements portant sur un homonyme d'une autre langue ou sur la seule géographie ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Mbasogo », « Fang », « Equatorial Guinea », « surname origin », « lineage », « clan », « transmission » et « obituary », ainsi que l'article historique consacré à la succession équato-guinéenne et la page Forebears dédiée n'ont pas établi que la catégorie provisoire « clan_name » décrive Mbasogo lui-même ; elle reste une hypothèse de classement, sans être transformée en affirmation."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mbasogo », « Fang », « Equatorial Guinea », « surname origin », « lineage », « clan », « transmission » et « obituary », ainsi que l'article historique consacré à la succession équato-guinéenne et la page Forebears dédiée n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Mbasogo à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mbasogo », « Fang », « Equatorial Guinea », « surname origin », « lineage », « clan », « transmission » et « obituary », ainsi que l'article historique consacré à la succession équato-guinéenne et la page Forebears dédiée n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Mbasogo."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mbasogo », « Fang », « Equatorial Guinea », « surname origin », « lineage », « clan », « transmission » et « obituary », ainsi que l'article historique consacré à la succession équato-guinéenne et la page Forebears dédiée n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Mbasogo », « Fang », « Equatorial Guinea », « surname origin », « lineage », « clan », « transmission » et « obituary », ainsi que l'article historique consacré à la succession équato-guinéenne et la page Forebears dédiée n'ont pas établi de lignée homonyme d'origine distincte documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web et bibliographique combinant « Mbasogo », « Fang », « Equatorial Guinea », « surname origin », « lineage », « clan », « transmission » et « obituary », ainsi que l'article historique consacré à la succession équato-guinéenne et la page Forebears dédiée n'ont établi aucune règle propre à Mbasogo permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }
