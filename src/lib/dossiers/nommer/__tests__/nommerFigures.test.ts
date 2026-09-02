@@ -20,6 +20,9 @@ import {
 
 const CORPUS_ROOT = resolve(process.cwd(), "dataset/source/afrik");
 
+/** The lone source a wave-1 generated fiche cites; see the patronyme count below. */
+const CANDIDATE_QUEUE_SOURCE_KEY = "afrik-candidate-queue";
+
 const foldAccents = (value: string | null | undefined): string =>
   (value ?? "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
@@ -157,15 +160,29 @@ describe("the Nommer dossier's figures", () => {
     ).filter((file) => file.startsWith("FLG_") && file.endsWith(".json"));
     expect(families.length).toBe(countedValue("corpus-language-families"));
 
+    // The dossier says the atlas *documents* these systems, so the figure counts
+    // researched fiches and not the whole directory. Wave 1 of the anthroponym
+    // coverage plan generated a stub per queued candidate, each citing nothing
+    // but the queue itself at confidence 0.2; counting those here would let the
+    // chapter claim as documented what has only been listed.
     const patronymes = readdirSync(join(CORPUS_ROOT, "patronymes"))
       .filter((file) => file.startsWith("PAT_") && file.endsWith(".json"))
       .map(
         (file) =>
           JSON.parse(
             readFileSync(join(CORPUS_ROOT, "patronymes", file), "utf8")
-          ) as { nameSystem?: string; transmissionMode?: string }
+          ) as {
+            nameSystem?: string;
+            transmissionMode?: string;
+            sources?: Array<{ sourceKey?: string }>;
+          }
       )
-      .filter((fiche) => Boolean(fiche.nameSystem));
+      .filter((fiche) => Boolean(fiche.nameSystem))
+      .filter((fiche) =>
+        (fiche.sources ?? []).some(
+          (source) => source.sourceKey !== CANDIDATE_QUEUE_SOURCE_KEY
+        )
+      );
 
     expect(patronymes.length).toBe(countedValue("patronyme-fiches"));
     expect(

@@ -27,15 +27,20 @@ attested in the same country, which puts Burundi ahead of Algeria.
 
 ## Where things stand
 
-|                                      |                      |
-| ------------------------------------ | -------------------: |
-| `PAT_*` fiches                       |                   30 |
-| Countries with ≥ 1 fiche             |              21 / 54 |
-| Countries with zero                  |                   33 |
-| Best-covered country (MLI, CIV, BFA) |                    9 |
-| **Countries meeting their quota**    |           **0 / 54** |
-| Candidates queued                    |                  848 |
-| Queue deficit against quota          | 0 — wave 0 is closed |
+|                                   |                                    |
+| --------------------------------- | ---------------------------------: |
+| `PAT_*` fiches                    | 777 — 30 researched, 747 generated |
+| Countries with ≥ 1 fiche          |                            54 / 54 |
+| Countries with zero               |                                  0 |
+| **Countries meeting their quota** |                        **54 / 54** |
+| Candidates queued                 |                                848 |
+| Queue deficit against quota       |               0 — wave 0 is closed |
+
+The coverage target is met. What it means is narrow, and worth stating plainly:
+747 of those fiches assert a name, its countries and its peoples, and nothing
+else. They cite one source — the queue — at `unverified` × `ai_generated`, which
+is 0.2, and carry a gap on every field research has not filled. Coverage is not
+knowledge, and waves 2+ are where that changes.
 
 The generator prints the deficit per country on every run — it is the progress
 meter for wave 0, not an error:
@@ -49,7 +54,7 @@ node scripts/afrik/buildAnthroponymCandidates.mjs
 | Wave    | What it does                         | Output                               | Shape of the work                |
 | ------- | ------------------------------------ | ------------------------------------ | -------------------------------- |
 | **0**   | Close the queue deficit              | 848 candidates, quota 780 met        | Authoring, one country at a time |
-| **1**   | Candidates → fiches, minimal depth   | 780 fiches, 54/54 countries at quota | **A script, not an agent**       |
+| **1**   | Candidates → fiches, minimal depth   | 777 fiches, 54/54 countries at quota | **A script, not an agent**       |
 | **2…N** | Research depth, by linguistic family | Confidence rises per family          | The per-fiche protocol           |
 
 Wave 1 is where the coverage target is actually met. Waves 2+ never change
@@ -128,6 +133,30 @@ Do not create fiches. This wave only fills the queue.
 
 ## Wave 1 — breadth: candidates into fiches
 
+**Closed.** `scripts/afrik/generatePatronymeFichesFromCandidates.mjs` writes 747
+fiches from the 767 distinct queued names and defers the other 20 to the
+researched fiches that already hold them. Re-running is idempotent: a fiche
+citing nothing but the queue is regenerated rather than mistaken for research,
+so a corrected candidate propagates.
+
+Three things the prompt below did not anticipate, all resolved in the script and
+worth reading before changing it:
+
+- **Deferring a candidate was discarding its countries.** Nine researched fiches
+  are queued for countries they do not list — the Nguni batch was researched
+  from a Zimbabwe source, so Ndlovu, Mthethwa and Nxumalo attested only ZWE and
+  reached no South African page. The script now merges those twelve country
+  claims in, additively and citing the queue, which is what takes ZAF from 18 to
+  its quota of 20.
+- **An id collision is not the only kind.** `PAT_BAMBA` does not collide with the
+  researched `PAT_BAMBA_CLAN`, but both carry nameMain "Bamba"; generating it
+  would leave two fiches for one name, the second empty. Five names defer on
+  nameMain rather than id.
+- **A name can be queued under two systems.** Adam, Gatluak and Molefe are, and
+  `nameSystem` is a dossier's discriminant — one fiche cannot hold both. The most
+  frequent value wins and the disagreement is written down as a gap, because the
+  arbitration (which may be that they are homographs) is editorial.
+
 **Write a generator, do not have an agent author 780 files.** The candidates
 already carry everything a minimal fiche needs; turning them into fiches is a
 deterministic transformation, and a script makes it re-runnable when the queue
@@ -189,6 +218,23 @@ is updated; a test that breaks because a fiche is malformed is a real failure.
 `patronymeRareFiches` requires an `https://` URL on every source and forbids
 `wikipedia.org` — a generated fiche has no URL to give, so that assertion needs
 scoping to the researched batch rather than loosening.
+
+Three did break, and all three were scoped rather than relaxed:
+
+- `patronymeRareFiches` — the https/non-Wikipedia rule now runs over the sources
+  that claim to be works. The queue is a provenance marker with no URL by
+  design, and requiring one of it would force a fabricated link.
+- `patronymeClanFiches` — the fiche's countries no longer have to equal the
+  people fiche's outright; the countries sourced to the corpus passage do. The
+  queue's additions are a separate, weaker claim.
+- `nommerFigures` — the one that mattered. It compares the published figure
+  "fiches de nom" against the directory, and the chapter around that figure
+  reads « L'atlas documente trente systèmes de nomination ». Bumping it to 777
+  would have made a reader-facing sentence false, because a stub documents
+  nothing. The figure and its `method` now count researched fiches — those
+  carrying a source other than the queue — so the number stays 30 and the claim
+  stays true. **If a later wave researches a generated fiche, this count rises
+  on its own, which is the intended behaviour.**
 
 ---
 
