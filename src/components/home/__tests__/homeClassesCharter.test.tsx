@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import { HomeCensusLine } from "@/components/home/HomeCensusLine";
-import { SEARCH_RESULT_GROUPS } from "@/components/home/HomeHeroSearch";
+import { SEARCH_RESULT_GROUPS } from "@/lib/search/searchVocabulary";
 import { SEARCH_ENTITY_ACCENT } from "@/components/search/searchEntityAccent";
 import { CORPUS_CLASSES } from "@/lib/home/corpusClasses";
 import { corpusCensus } from "@/lib/home/corpusCensus";

@@ -12,9 +12,11 @@ import {
   HomeHeroSearch,
   DEBOUNCE_MS,
   PENDING_DELAY_MS,
+} from "../HomeHeroSearch";
+import {
   SEARCH_LABEL,
   SEARCH_RESULT_GROUPS,
-} from "../HomeHeroSearch";
+} from "@/lib/search/searchVocabulary";
 import { seedPools } from "../HomeHeroSeeds";
 import { SEARCH_ENTITY_ACCENT } from "@/components/search/searchEntityAccent";
 import { FALLBACK_SEED_WORDS } from "@/lib/home/seedWords";

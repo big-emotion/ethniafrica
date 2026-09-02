@@ -10,6 +10,7 @@ import {
 import * as nextNavigation from "next/navigation";
 import { RecherchePageContent } from "../RecherchePageContent";
 import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
+import { SEARCH_RESULT_GROUPS } from "@/lib/search/searchVocabulary";
 
 // ── next/navigation ──────────────────────────────────────────────────────────
 vi.mock("next/navigation", () => ({
@@ -32,15 +33,18 @@ vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({
     children,
     title,
+    subtitle,
     heroHead,
   }: {
     children: React.ReactNode;
     title?: string;
+    subtitle?: string;
     heroHead?: React.ReactNode;
   }) => (
     <>
       <div data-testid="page-hero-mock">
         {heroHead ?? (title ? <h1>{title}</h1> : null)}
+        {subtitle ? <p data-testid="page-subtitle">{subtitle}</p> : null}
       </div>
       <div data-testid="page-layout">{children}</div>
     </>
@@ -175,6 +179,77 @@ async function renderPivotWithRelatedResults() {
 }
 
 // ── tests ─────────────────────────────────────────────────────────────────────
+
+/**
+ * The words a heading uses to claim a kind, folded so a plural claim answers
+ * for a singular one — the panel heads a set ("Langues") where the SERP
+ * addresses a reader ("une langue").
+ */
+const claimStems = (heading: string) =>
+  heading
+    .toLowerCase()
+    .split(/\s+/)
+    .map((word) => word.replace(/s$/, ""));
+
+describe("the scope the SERP declares", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
+      new URLSearchParams() as ReturnType<typeof nextNavigation.useSearchParams>
+    );
+    vi.mocked(nextNavigation.useRouter).mockReturnValue({
+      replace: vi.fn(),
+      push: vi.fn(),
+    } as unknown as ReturnType<typeof nextNavigation.useRouter>);
+    mockFetch.mockResolvedValue(okJson(emptyApiResponse));
+  });
+
+  // The landing state of /fr/recherche is where a reader decides whether the
+  // engine can answer a language or a surname at all. Its scope wording is
+  // static prose: unlike a lens chip, which SearchLensBar drops when a kind
+  // returns nothing, a sentence cannot retract itself. So it owes the reader
+  // every kind the search can return — derived from the panel's own registry
+  // rather than restated here, which is how it came to promise three of five.
+  // @req REQ-002
+  it("names every kind the search can return, in both of its scope statements", () => {
+    render(<RecherchePageContent />);
+
+    const scopeStatements = [
+      screen.getByTestId("page-subtitle").textContent ?? "",
+      screen.getByRole("combobox").getAttribute("aria-label") ?? "",
+    ];
+
+    for (const statement of scopeStatements) {
+      const folded = statement.toLowerCase();
+      for (const { heading } of SEARCH_RESULT_GROUPS) {
+        for (const stem of claimStems(heading)) {
+          expect(folded).toContain(stem);
+        }
+      }
+    }
+  });
+
+  // `persons` has no rows, so naming it would promise an answer the corpus
+  // cannot give — the same reason SEARCH_RESULT_GROUPS leaves it out and the
+  // lens bar filters it away at zero. The neutral accent it takes in the
+  // palette (REQ-126) follows from that, it does not cause it.
+  // @req REQ-002
+  it("names no kind the corpus cannot answer with", () => {
+    render(<RecherchePageContent />);
+
+    const combobox = screen.getByRole("combobox");
+    const wording = [
+      screen.getByTestId("page-subtitle").textContent ?? "",
+      combobox.getAttribute("aria-label") ?? "",
+      combobox.getAttribute("placeholder") ?? "",
+    ];
+
+    for (const statement of wording) {
+      expect(statement.toLowerCase()).not.toContain("personne");
+    }
+  });
+});
+
 describe("RecherchePageContent", () => {
   beforeEach(() => {
     vi.clearAllMocks();
