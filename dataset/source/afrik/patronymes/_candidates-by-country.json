@@ -3,9 +3,9 @@
   "reviewStatus": "candidates_pending_verification",
   "generatedBy": "scripts/afrik/buildAnthroponymCandidates.mjs",
   "countryCount": 54,
-  "candidateCount": 648,
+  "candidateCount": 848,
   "quotaTotal": 780,
-  "deficitTotal": 200,
+  "deficitTotal": 0,
   "methodologyFr": "Le corpus AFRIK documente l'organisation clanique, pas l'anthroponymie : l'extraction de la prose n'a livré que 30 candidats exploitables (ETNI-1680). Cette liste étend la couverture à au moins dix anthroponymes de haute fréquence par pays à partir de connaissances externes au corpus. Conformément à la politique Source Tier, rien n'est écarté pour faiblesse : chaque entrée porte le tier le plus bas (unverified × ai_generated = 0.2) et reste un candidat tant qu'une source dédiée ne l'a pas établie. Le classement est un classement d'attestation, pas un décompte de porteurs : aucune table publique de fréquence patronymique ne couvre la majorité des 54 pays.",
   "defaultProvenance": {
     "tier": "unverified",
@@ -375,7 +375,7 @@
       "onomasticNote": "Le jamu mandingue est le cas de référence du corpus : nom de clan patrilinéaire, adossé au sanankuya (parenté à plaisanterie) qui lie des patronymes deux à deux.",
       "verificationLead": "RAVEC (registre biométrique malien), INSTAT, travaux d'onomastique mandingue",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "Traoré",
@@ -544,6 +544,118 @@
           },
           "verificationLead": "RAVEC (registre biométrique malien), INSTAT, travaux d'onomastique mandingue",
           "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Dembélé",
+          "nameSystem": "clan_name",
+          "variants": ["Dembele"],
+          "peopleIds": ["PPL_BAMBARA"],
+          "countryId": "MLI",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "RAVEC (registre biométrique malien), INSTAT, travaux d'onomastique mandingue",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Sangaré",
+          "nameSystem": "clan_name",
+          "variants": ["Sangare"],
+          "peopleIds": ["PPL_FULA"],
+          "countryId": "MLI",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "RAVEC (registre biométrique malien), INSTAT, travaux d'onomastique mandingue",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Camara",
+          "nameSystem": "clan_name",
+          "variants": ["Kamara"],
+          "peopleIds": ["PPL_MALINKE"],
+          "countryId": "MLI",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "RAVEC (registre biométrique malien), INSTAT, travaux d'onomastique mandingue",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Fofana",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_SONINKE"],
+          "countryId": "MLI",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "RAVEC (registre biométrique malien), INSTAT, travaux d'onomastique mandingue",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kanté",
+          "nameSystem": "clan_name",
+          "variants": ["Kante"],
+          "peopleIds": ["PPL_MALINKE"],
+          "countryId": "MLI",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "RAVEC (registre biométrique malien), INSTAT, travaux d'onomastique mandingue",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Sanogo",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_SENUFO"],
+          "countryId": "MLI",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "RAVEC (registre biométrique malien), INSTAT, travaux d'onomastique mandingue",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Bagayoko",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_BAMBARA"],
+          "countryId": "MLI",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "RAVEC (registre biométrique malien), INSTAT, travaux d'onomastique mandingue",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Guindo",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_DOGON"],
+          "countryId": "MLI",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "RAVEC (registre biométrique malien), INSTAT, travaux d'onomastique mandingue",
+          "reviewStatus": "candidate_pending_verification"
         }
       ]
     },
@@ -553,7 +665,7 @@
       "onomasticNote": "Les noms mossi (Ouédraogo, Compaoré, Kaboré) sont des noms de lignage rattachés à la geste de Naaba Wedraogo, non des jamu mandingues ; la parenté à plaisanterie y opère aussi.",
       "verificationLead": "Listes électorales CENI, INSD, onomastique mooré et dioula",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "Ouédraogo",
@@ -722,16 +834,128 @@
           },
           "verificationLead": "Listes électorales CENI, INSD, onomastique mooré et dioula",
           "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Congo",
+          "nameSystem": "clan_name",
+          "variants": ["Kongo"],
+          "peopleIds": ["PPL_MOSSI"],
+          "countryId": "BFA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Listes électorales CENI, INSD, onomastique mooré et dioula",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Nacoulma",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_MOSSI"],
+          "countryId": "BFA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Listes électorales CENI, INSD, onomastique mooré et dioula",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Tapsoba",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_MOSSI"],
+          "countryId": "BFA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Listes électorales CENI, INSD, onomastique mooré et dioula",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Yaméogo",
+          "nameSystem": "clan_name",
+          "variants": ["Yameogo"],
+          "peopleIds": ["PPL_MOSSI"],
+          "countryId": "BFA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Listes électorales CENI, INSD, onomastique mooré et dioula",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Sorgho",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_MOSSI"],
+          "countryId": "BFA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Listes électorales CENI, INSD, onomastique mooré et dioula",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ouoba",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_GOURMANTCHE"],
+          "countryId": "BFA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Listes électorales CENI, INSD, onomastique mooré et dioula",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Barry",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_FULA"],
+          "countryId": "BFA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Listes électorales CENI, INSD, onomastique mooré et dioula",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Coulibaly",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_DIOULA"],
+          "countryId": "BFA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Listes électorales CENI, INSD, onomastique mooré et dioula",
+          "reviewStatus": "candidate_pending_verification"
         }
       ]
     },
     {
       "countryId": "NER",
       "dominantNameSystem": "non_hereditary_patronymic",
-      "onomasticNote": "Chez les Hausa et les Zarma-Songhay, le second nom est massivement le prénom du père et change à chaque génération ; les noms hérités (Maïga, Kountché) restent minoritaires.",
+      "onomasticNote": "Chez les Hausa et les Zarma-Songhay, le second nom est massivement le prénom du père et change à chaque génération ; les noms hérités (Maïga, Kountché) restent minoritaires. La chaîne touarègue explicite la filiation par la particule Ag (« fils de ») là où le haoussa et le zarma se contentent de juxtaposer : Rhissa est ici classé en patronyme non héréditaire au titre de l'élément de chaîne, non de la particule.",
       "verificationLead": "Fichier électoral CENI Niger, INS Niger, travaux d'anthroponymie haoussa et zarma",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "Maïga",
@@ -892,6 +1116,118 @@
           "nameSystem": "non_hereditary_patronymic",
           "variants": ["Abdulai"],
           "peopleIds": ["PPL_HAUSA"],
+          "countryId": "NER",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Fichier électoral CENI Niger, INS Niger, travaux d'anthroponymie haoussa et zarma",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kountché",
+          "nameSystem": "clan_name",
+          "variants": ["Kounche"],
+          "peopleIds": ["PPL_ZARMA"],
+          "countryId": "NER",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Fichier électoral CENI Niger, INS Niger, travaux d'anthroponymie haoussa et zarma",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Diori",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_ZARMA"],
+          "countryId": "NER",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Fichier électoral CENI Niger, INS Niger, travaux d'anthroponymie haoussa et zarma",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mahamadou",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Mahamane"],
+          "peopleIds": ["PPL_HAUSA"],
+          "countryId": "NER",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Fichier électoral CENI Niger, INS Niger, travaux d'anthroponymie haoussa et zarma",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Issoufou",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Yssoufou"],
+          "peopleIds": ["PPL_HAUSA"],
+          "countryId": "NER",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Fichier électoral CENI Niger, INS Niger, travaux d'anthroponymie haoussa et zarma",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Yacouba",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Yakouba"],
+          "peopleIds": ["PPL_ZARMA"],
+          "countryId": "NER",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Fichier électoral CENI Niger, INS Niger, travaux d'anthroponymie haoussa et zarma",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Salifou",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Salif"],
+          "peopleIds": ["PPL_ZARMA"],
+          "countryId": "NER",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Fichier électoral CENI Niger, INS Niger, travaux d'anthroponymie haoussa et zarma",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ousmane",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Usman"],
+          "peopleIds": ["PPL_FULA"],
+          "countryId": "NER",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Fichier électoral CENI Niger, INS Niger, travaux d'anthroponymie haoussa et zarma",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Rhissa",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_TUAREG"],
           "countryId": "NER",
           "provenance": {
             "tier": "unverified",
@@ -1265,7 +1601,7 @@
       "onomasticNote": "Les noms akan les plus fréquents (Kouassi, Yao, Kouamé, Konan) sont des noms de jour (kradin) devenus héréditaires : ni jamu clanique ni patronyme non héréditaire au sens strict. La classification retenue ici est provisoire et doit être tranchée à la revue.",
       "verificationLead": "Liste électorale CEI, RGPH INS Côte d'Ivoire, travaux sur les noms de jour akan",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "Kouassi",
@@ -1434,6 +1770,118 @@
           },
           "verificationLead": "Liste électorale CEI, RGPH INS Côte d'Ivoire, travaux sur les noms de jour akan",
           "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kouadio",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_BAOULE"],
+          "countryId": "CIV",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Liste électorale CEI, RGPH INS Côte d'Ivoire, travaux sur les noms de jour akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kouakou",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_BAOULE"],
+          "countryId": "CIV",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Liste électorale CEI, RGPH INS Côte d'Ivoire, travaux sur les noms de jour akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Bédié",
+          "nameSystem": "clan_name",
+          "variants": ["Bedie"],
+          "peopleIds": ["PPL_BAOULE"],
+          "countryId": "CIV",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Liste électorale CEI, RGPH INS Côte d'Ivoire, travaux sur les noms de jour akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Gbagbo",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_BETE"],
+          "countryId": "CIV",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Liste électorale CEI, RGPH INS Côte d'Ivoire, travaux sur les noms de jour akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Zadi",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_BETE"],
+          "countryId": "CIV",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Liste électorale CEI, RGPH INS Côte d'Ivoire, travaux sur les noms de jour akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Silué",
+          "nameSystem": "clan_name",
+          "variants": ["Silue"],
+          "peopleIds": ["PPL_SENUFO"],
+          "countryId": "CIV",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Liste électorale CEI, RGPH INS Côte d'Ivoire, travaux sur les noms de jour akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Soro",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_SENUFO"],
+          "countryId": "CIV",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Liste électorale CEI, RGPH INS Côte d'Ivoire, travaux sur les noms de jour akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Fofana",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_DIOULA"],
+          "countryId": "CIV",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Liste électorale CEI, RGPH INS Côte d'Ivoire, travaux sur les noms de jour akan",
+          "reviewStatus": "candidate_pending_verification"
         }
       ]
     },
@@ -1443,7 +1891,7 @@
       "onomasticNote": "Les noms de jour akan (Mensah, Kwame, Yaw, Kofi) coexistent avec des noms de famille hérités (Boateng, Owusu, Asante) et, au nord, des patronymes musulmans dagomba.",
       "verificationLead": "Ghana Statistical Service (PHC), Electoral Commission roll, littérature sur l'onomastique akan",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "Mensah",
@@ -1604,6 +2052,118 @@
           "nameSystem": "clan_name",
           "variants": [],
           "peopleIds": ["PPL_AKAN"],
+          "countryId": "GHA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ghana Statistical Service (PHC), Electoral Commission roll, littérature sur l'onomastique akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kwame",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Kwamé"],
+          "peopleIds": ["PPL_AKAN"],
+          "countryId": "GHA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ghana Statistical Service (PHC), Electoral Commission roll, littérature sur l'onomastique akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kofi",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_AKAN"],
+          "countryId": "GHA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ghana Statistical Service (PHC), Electoral Commission roll, littérature sur l'onomastique akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Yeboah",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_ASANTE"],
+          "countryId": "GHA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ghana Statistical Service (PHC), Electoral Commission roll, littérature sur l'onomastique akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ansah",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_FANTE"],
+          "countryId": "GHA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ghana Statistical Service (PHC), Electoral Commission roll, littérature sur l'onomastique akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Nkrumah",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_NZEMA"],
+          "countryId": "GHA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ghana Statistical Service (PHC), Electoral Commission roll, littérature sur l'onomastique akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Nortey",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_GA"],
+          "countryId": "GHA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ghana Statistical Service (PHC), Electoral Commission roll, littérature sur l'onomastique akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Gbedemah",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_EWE"],
+          "countryId": "GHA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ghana Statistical Service (PHC), Electoral Commission roll, littérature sur l'onomastique akan",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Abdulai",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Abdulaï"],
+          "peopleIds": ["PPL_DAGOMBA"],
           "countryId": "GHA",
           "provenance": {
             "tier": "unverified",
@@ -1974,10 +2534,10 @@
     {
       "countryId": "NGA",
       "dominantNameSystem": "praise_name",
-      "onomasticNote": "Trois systèmes distincts : oríkì yoruba (le nom est un énoncé sur l'òrìṣà ou le lignage), noms igbo théophores (Chukwu-, Nna-), et chaîne patronymique haoussa-peule au nord.",
+      "onomasticNote": "Trois systèmes distincts : oríkì yoruba (le nom est un énoncé sur l'òrìṣà ou le lignage), noms igbo théophores (Chukwu-, Nna-), et chaîne patronymique haoussa-peule au nord. Les oruko amutorunwa — noms « apportés du ciel », attribués par la circonstance de la naissance (Taiwo et Kehinde pour les jumeaux, Ojo pour l'enfant né le cordon au cou) — ne sont ni des oríkì ni des noms de lignage : ils sont classés ici en praise_name faute de valeur plus proche, et la classification reste à trancher à la revue.",
       "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
       "quota": 30,
-      "deficit": 18,
+      "deficit": 0,
       "entries": [
         {
           "name": "Adebayo",
@@ -2138,6 +2698,258 @@
           "nameSystem": "praise_name",
           "variants": [],
           "peopleIds": ["PPL_YORUBA"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Adekunle",
+          "nameSystem": "praise_name",
+          "variants": [],
+          "peopleIds": ["PPL_YORUBA"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Olawale",
+          "nameSystem": "praise_name",
+          "variants": ["Olawalé"],
+          "peopleIds": ["PPL_YORUBA"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Babatunde",
+          "nameSystem": "praise_name",
+          "variants": ["Babatundé"],
+          "peopleIds": ["PPL_YORUBA"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Taiwo",
+          "nameSystem": "praise_name",
+          "variants": ["Taiye"],
+          "peopleIds": ["PPL_YORUBA"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kehinde",
+          "nameSystem": "praise_name",
+          "variants": ["Kehindé"],
+          "peopleIds": ["PPL_YORUBA"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ojo",
+          "nameSystem": "praise_name",
+          "variants": [],
+          "peopleIds": ["PPL_YORUBA"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Okoro",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_IGBO"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Nwosu",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_IGBO"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Obi",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_IGBO"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Chinedu",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_IGBO"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Yusuf",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Yusufu"],
+          "peopleIds": ["PPL_HAUSA"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Aliyu",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_HAUSA"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Sani",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_HAUSA"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Danjuma",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_HAUSA"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ekpo",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_IBIBIO"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Gyang",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_BEROM"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Aondoakaa",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_TIV"],
+          "countryId": "NGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Amachree",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_KALAIBARI"],
           "countryId": "NGA",
           "provenance": {
             "tier": "unverified",
@@ -2867,7 +3679,7 @@
       "onomasticNote": "Le pays cumule quatre onomastiques : noms de lignage beti-fang (Mba, Ndongo), noms bamiléké rattachés à une chefferie, patronymes peuls et kanuri au nord, patronymes anglophones à l'ouest.",
       "verificationLead": "ELECAM voter register, BUCREP (recensement), travaux sur l'anthroponymie beti et bamiléké",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "Mba",
@@ -3028,6 +3840,118 @@
           "nameSystem": "clan_name",
           "variants": [],
           "peopleIds": ["PPL_SAWA"],
+          "countryId": "CMR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ELECAM voter register, BUCREP (recensement), travaux sur l'anthroponymie beti et bamiléké",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Biya",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_BULU"],
+          "countryId": "CMR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ELECAM voter register, BUCREP (recensement), travaux sur l'anthroponymie beti et bamiléké",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Onana",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_EWONDO"],
+          "countryId": "CMR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ELECAM voter register, BUCREP (recensement), travaux sur l'anthroponymie beti et bamiléké",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mvondo",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_EWONDO"],
+          "countryId": "CMR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ELECAM voter register, BUCREP (recensement), travaux sur l'anthroponymie beti et bamiléké",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kameni",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_BAMILEKE"],
+          "countryId": "CMR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ELECAM voter register, BUCREP (recensement), travaux sur l'anthroponymie beti et bamiléké",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Djoumessi",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_BAMILEKE"],
+          "countryId": "CMR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ELECAM voter register, BUCREP (recensement), travaux sur l'anthroponymie beti et bamiléké",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Bell",
+          "nameSystem": "clan_name",
+          "variants": ["Manga Bell"],
+          "peopleIds": ["PPL_DUALA"],
+          "countryId": "CMR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ELECAM voter register, BUCREP (recensement), travaux sur l'anthroponymie beti et bamiléké",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Nyobè",
+          "nameSystem": "clan_name",
+          "variants": ["Nyobe"],
+          "peopleIds": ["PPL_BASSA_CAM"],
+          "countryId": "CMR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ELECAM voter register, BUCREP (recensement), travaux sur l'anthroponymie beti et bamiléké",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Aboubakar",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Abubakar"],
+          "peopleIds": ["PPL_FULA"],
           "countryId": "CMR",
           "provenance": {
             "tier": "unverified",
@@ -3932,10 +4856,10 @@
     {
       "countryId": "COD",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "L'authenticité mobutiste (1972) a proscrit les prénoms chrétiens et imposé le postnom africain : une rupture d'état civil qui rend la série des patronymes congolais datable.",
+      "onomasticNote": "L'authenticité mobutiste (1972) a proscrit les prénoms chrétiens et imposé le postnom africain : une rupture d'état civil qui rend la série des patronymes congolais datable. Deux séries échappent au nom de clan et sont classées en patronyme non héréditaire faute de valeur plus proche : les noms nande de rang de naissance (Kambale, Muhindo, Kasereka) désignent la place dans la fratrie et non une filiation, et le postnom swahiliphone de l'Est (Bahati) est un prénom repris en position de nom. Nsimba et Nzuzi forment de leur côté une paire kongo de jumeaux, aîné puis cadet.",
       "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
       "quota": 30,
-      "deficit": 18,
+      "deficit": 0,
       "entries": [
         {
           "name": "Kabila",
@@ -4104,6 +5028,258 @@
           },
           "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
           "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mutombo",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_LUBA"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kanyinda",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_LUBA"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kabongo",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_LUBA"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Tshibangu",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_LUBA_KASAI"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Nkongolo",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_LUBA"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kalala",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_LUBA"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mulumba",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_LUBA"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kazadi",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_LUBA"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kayembe",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_LUBA"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mobutu",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_NGBANDE"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kimbangu",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_KONGO"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Nsimba",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_KONGO"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Nzuzi",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_KONGO"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ngoma",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_KONGO"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kambale",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_NANDE"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Muhindo",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_NANDE"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kasereka",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_NANDE"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Bahati",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_SWAHILI"],
+          "countryId": "COD",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
+          "reviewStatus": "candidate_pending_verification"
         }
       ]
     },
@@ -4113,7 +5289,7 @@
       "onomasticNote": "Patronymes portugais massivement imposés (dos Santos, Neto), sous lesquels subsistent des noms ovimbundu et kimbundu (Savimbi, Nzinga) que l'état civil colonial n'a pas effacés.",
       "verificationLead": "INE Angola (recenseamento), Conservatória, travaux sur l'assimilação et les noms ovimbundu",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "dos Santos",
@@ -4274,6 +5450,118 @@
           "nameSystem": "clan_name",
           "variants": [],
           "peopleIds": ["PPL_AMBUNDU"],
+          "countryId": "AGO",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Angola (recenseamento), Conservatória, travaux sur l'assimilação et les noms ovimbundu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Gonçalves",
+          "nameSystem": "clan_name",
+          "variants": ["Goncalves"],
+          "peopleIds": [],
+          "countryId": "AGO",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Angola (recenseamento), Conservatória, travaux sur l'assimilação et les noms ovimbundu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Nascimento",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": [],
+          "countryId": "AGO",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Angola (recenseamento), Conservatória, travaux sur l'assimilação et les noms ovimbundu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Baptista",
+          "nameSystem": "clan_name",
+          "variants": ["Batista"],
+          "peopleIds": [],
+          "countryId": "AGO",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Angola (recenseamento), Conservatória, travaux sur l'assimilação et les noms ovimbundu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ngola",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_AMBUNDU"],
+          "countryId": "AGO",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Angola (recenseamento), Conservatória, travaux sur l'assimilação et les noms ovimbundu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ekuikui",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_OVIMBUNDU"],
+          "countryId": "AGO",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Angola (recenseamento), Conservatória, travaux sur l'assimilação et les noms ovimbundu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Chitunda",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_OVIMBUNDU"],
+          "countryId": "AGO",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Angola (recenseamento), Conservatória, travaux sur l'assimilação et les noms ovimbundu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Samakuva",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_OVIMBUNDU"],
+          "countryId": "AGO",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Angola (recenseamento), Conservatória, travaux sur l'assimilação et les noms ovimbundu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Lukamba",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_CHOKWE"],
           "countryId": "AGO",
           "provenance": {
             "tier": "unverified",
@@ -4469,7 +5757,7 @@
       "onomasticNote": "Chaîne de prénoms arabe (ism + nasab) doublée d'une nisba tribale (al-Jaʿali, al-Shaygiya) qui, elle, se transmet. Le Darfour non arabophone (Four, Zaghawa) suit une logique de lignage distincte.",
       "verificationLead": "CBS Sudan (recensement), registre d'état civil, travaux sur les nisba tribales soudanaises",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "Mohamed",
@@ -4630,6 +5918,118 @@
           "nameSystem": "non_hereditary_patronymic",
           "variants": [],
           "peopleIds": ["PPL_BEJA"],
+          "countryId": "SDN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CBS Sudan (recensement), registre d'état civil, travaux sur les nisba tribales soudanaises",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "al-Mahdi",
+          "nameSystem": "nisba",
+          "variants": ["Mahdi", "El Mahdi"],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "SDN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CBS Sudan (recensement), registre d'état civil, travaux sur les nisba tribales soudanaises",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "al-Mirghani",
+          "nameSystem": "nisba",
+          "variants": ["Mirghani"],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "SDN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CBS Sudan (recensement), registre d'état civil, travaux sur les nisba tribales soudanaises",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "al-Kabbashi",
+          "nameSystem": "nisba",
+          "variants": ["Kabbashi"],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "SDN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CBS Sudan (recensement), registre d'état civil, travaux sur les nisba tribales soudanaises",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "al-Rizeigat",
+          "nameSystem": "nisba",
+          "variants": ["Rizeigat", "Rizigat"],
+          "peopleIds": ["PPL_BAGGAR"],
+          "countryId": "SDN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CBS Sudan (recensement), registre d'état civil, travaux sur les nisba tribales soudanaises",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Digna",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_BEJA"],
+          "countryId": "SDN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CBS Sudan (recensement), registre d'état civil, travaux sur les nisba tribales soudanaises",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Adam",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_FOUR"],
+          "countryId": "SDN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CBS Sudan (recensement), registre d'état civil, travaux sur les nisba tribales soudanaises",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Nur",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Noor"],
+          "peopleIds": ["PPL_FOUR"],
+          "countryId": "SDN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CBS Sudan (recensement), registre d'état civil, travaux sur les nisba tribales soudanaises",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Deng",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_DINKA"],
           "countryId": "SDN",
           "provenance": {
             "tier": "unverified",
@@ -4822,10 +6222,10 @@
     {
       "countryId": "ETH",
       "dominantNameSystem": "non_hereditary_patronymic",
-      "onomasticNote": "Cas d'école du patronyme non héréditaire : le deuxième nom est le prénom du père et change à chaque génération. Abiy Ahmed Ali n'a pas de nom de famille — Ahmed est son père, Ali son grand-père. L'annuaire téléphonique d'Addis-Abeba se classe au prénom.",
+      "onomasticNote": "Cas d'école du patronyme non héréditaire : le deuxième nom est le prénom du père et change à chaque génération. Abiy Ahmed Ali n'a pas de nom de famille — Ahmed est son père, Ali son grand-père. L'annuaire téléphonique d'Addis-Abeba se classe au prénom. Le pays n'est cependant pas d'un seul système : le qabiil somali (Ogaden) et le kedo afar (Hanfare) sont, eux, des noms de groupe transmis, et sont classés en nom de clan — la chaîne habesha et ces deux-là ne décrivent pas la même chose. Chez les Nuer, le préfixe Gat- (« fils de ») explicite la filiation que l'amharique laisse implicite.",
       "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
       "quota": 30,
-      "deficit": 18,
+      "deficit": 0,
       "entries": [
         {
           "name": "Tesfaye",
@@ -4986,6 +6386,258 @@
           "nameSystem": "non_hereditary_patronymic",
           "variants": [],
           "peopleIds": ["PPL_OROMO"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Gebre",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Gebra"],
+          "peopleIds": ["PPL_AMHARA"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Desta",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_AMHARA"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Alemayehu",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_AMHARA"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Assefa",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Asefa"],
+          "peopleIds": ["PPL_AMHARA"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mulugeta",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_AMHARA"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Teshome",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_AMHARA"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Gebremariam",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Gebre Mariam"],
+          "peopleIds": ["PPL_TIGRAY"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Berhane",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_TIGRAY"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Abera",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_OROMO"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Wako",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_OROMO"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Jaleta",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_OROMO"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Gudina",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_OROMO"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Lemma",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_OROMO"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Farah",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_SOMALI"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ogaden",
+          "nameSystem": "clan_name",
+          "variants": ["Ogadeen"],
+          "peopleIds": ["PPL_SOMALI"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Hanfare",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_AFAR"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Gatluak",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_NUER"],
+          "countryId": "ETH",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ojulu",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_ANUAK"],
           "countryId": "ETH",
           "provenance": {
             "tier": "unverified",
@@ -5534,10 +7186,10 @@
     {
       "countryId": "KEN",
       "dominantNameSystem": "non_hereditary_patronymic",
-      "onomasticNote": "Trois logiques : le kikuyu recycle les noms des grands-parents, le luo nomme selon le moment de la naissance (Otieno = né la nuit, Ochieng = né le jour), le kalenjin préfixe Kip- (garçon) ou Che- (fille). Aucune n'est un patronyme héréditaire d'origine.",
+      "onomasticNote": "Trois logiques : le kikuyu recycle les noms des grands-parents, le luo nomme selon le moment de la naissance (Otieno = né la nuit, Ochieng = né le jour), le kalenjin préfixe Kip- (garçon) ou Che- (fille). Aucune n'est un patronyme héréditaire d'origine. Le luo marque en outre le genre par le préfixe : O- pour les hommes (Otieno, Onyango), A- pour les femmes (Akinyi) sur la même racine temporelle. Le gusii fait exception avec des noms de clan transmis (Nyakundi), seuls classés ici en nom de clan.",
       "verificationLead": "KNBS (recensement), IEBC voter register, travaux sur l'anthroponymie luo et kikuyu",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "Kamau",
@@ -5706,6 +7358,118 @@
           },
           "verificationLead": "KNBS (recensement), IEBC voter register, travaux sur l'anthroponymie luo et kikuyu",
           "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Njeri",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_KIKUYU"],
+          "countryId": "KEN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "KNBS (recensement), IEBC voter register, travaux sur l'anthroponymie luo et kikuyu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Karanja",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_KIKUYU"],
+          "countryId": "KEN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "KNBS (recensement), IEBC voter register, travaux sur l'anthroponymie luo et kikuyu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Onyango",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_LUO"],
+          "countryId": "KEN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "KNBS (recensement), IEBC voter register, travaux sur l'anthroponymie luo et kikuyu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Akinyi",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_LUO"],
+          "countryId": "KEN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "KNBS (recensement), IEBC voter register, travaux sur l'anthroponymie luo et kikuyu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Chebet",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_KALENJIN"],
+          "countryId": "KEN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "KNBS (recensement), IEBC voter register, travaux sur l'anthroponymie luo et kikuyu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mutiso",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_KAMBA"],
+          "countryId": "KEN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "KNBS (recensement), IEBC voter register, travaux sur l'anthroponymie luo et kikuyu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Nyakundi",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_KISII"],
+          "countryId": "KEN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "KNBS (recensement), IEBC voter register, travaux sur l'anthroponymie luo et kikuyu",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Katana",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_MIJIKENDA"],
+          "countryId": "KEN",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "KNBS (recensement), IEBC voter register, travaux sur l'anthroponymie luo et kikuyu",
+          "reviewStatus": "candidate_pending_verification"
         }
       ]
     },
@@ -5715,7 +7479,7 @@
       "onomasticNote": "La côte swahilie suit la chaîne patronymique arabo-musulmane ; l'intérieur chagga, sukuma et haya porte des noms de lignage hérités (Kimaro, Massawe, Shayo).",
       "verificationLead": "NBS Tanzania (sensa), RITA (état civil), travaux sur l'onomastique swahilie et chagga",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "Juma",
@@ -5884,16 +7648,128 @@
           },
           "verificationLead": "NBS Tanzania (sensa), RITA (état civil), travaux sur l'onomastique swahilie et chagga",
           "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mwinyi",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_SWAHILI"],
+          "countryId": "TZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "NBS Tanzania (sensa), RITA (état civil), travaux sur l'onomastique swahilie et chagga",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mkapa",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_MAKONDE"],
+          "countryId": "TZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "NBS Tanzania (sensa), RITA (état civil), travaux sur l'onomastique swahilie et chagga",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kikwete",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_ZARAMO"],
+          "countryId": "TZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "NBS Tanzania (sensa), RITA (état civil), travaux sur l'onomastique swahilie et chagga",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Magufuli",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_SUKUMA"],
+          "countryId": "TZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "NBS Tanzania (sensa), RITA (état civil), travaux sur l'onomastique swahilie et chagga",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mwaipopo",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_NYAKYUSA"],
+          "countryId": "TZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "NBS Tanzania (sensa), RITA (état civil), travaux sur l'onomastique swahilie et chagga",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Lyimo",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_CHAGA"],
+          "countryId": "TZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "NBS Tanzania (sensa), RITA (état civil), travaux sur l'onomastique swahilie et chagga",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mrema",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_CHAGA"],
+          "countryId": "TZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "NBS Tanzania (sensa), RITA (état civil), travaux sur l'onomastique swahilie et chagga",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Sokoine",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_MAASAI"],
+          "countryId": "TZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "NBS Tanzania (sensa), RITA (état civil), travaux sur l'onomastique swahilie et chagga",
+          "reviewStatus": "candidate_pending_verification"
         }
       ]
     },
     {
       "countryId": "UGA",
       "dominantNameSystem": "totemic_clan",
-      "onomasticNote": "Le Buganda est le cas totémique du corpus : l'ekika est une liste fermée de clans à totem animal ou végétal, et chaque clan détient un stock de noms (amannya g'ekika) que seuls ses membres peuvent porter. Le nord acholi et langi suit une logique tout autre.",
+      "onomasticNote": "Le Buganda est le cas totémique du corpus : l'ekika est une liste fermée de clans à totem animal ou végétal, et chaque clan détient un stock de noms (amannya g'ekika) que seuls ses membres peuvent porter. Le nord acholi et langi suit une logique tout autre. Les noms de jumeaux font exception dans les deux sens : Wasswa et Kato pour les garçons, Babirye et Nakato pour les filles, sont attribués par le rang de naissance et non tirés du stock de l'ekika — ils restent classés en clan totémique faute de valeur plus proche. Le préfixe Na- marque le féminin (Lubega / Nalubega). Le luo du nord a sa propre paire de jumeaux, Opio, sur un système sans rapport avec l'ekika.",
       "verificationLead": "UBOS (recensement), Buganda Kingdom clan registers, travaux sur l'ekika ganda",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "Mukasa",
@@ -6054,6 +7930,118 @@
           "nameSystem": "clan_name",
           "variants": [],
           "peopleIds": ["PPL_BANYANKOLE"],
+          "countryId": "UGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "UBOS (recensement), Buganda Kingdom clan registers, travaux sur l'ekika ganda",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kaggwa",
+          "nameSystem": "totemic_clan",
+          "variants": [],
+          "peopleIds": ["PPL_BAGANDA"],
+          "countryId": "UGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "UBOS (recensement), Buganda Kingdom clan registers, travaux sur l'ekika ganda",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kiwanuka",
+          "nameSystem": "totemic_clan",
+          "variants": [],
+          "peopleIds": ["PPL_BAGANDA"],
+          "countryId": "UGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "UBOS (recensement), Buganda Kingdom clan registers, travaux sur l'ekika ganda",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Nalubega",
+          "nameSystem": "totemic_clan",
+          "variants": [],
+          "peopleIds": ["PPL_BAGANDA"],
+          "countryId": "UGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "UBOS (recensement), Buganda Kingdom clan registers, travaux sur l'ekika ganda",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Kato",
+          "nameSystem": "totemic_clan",
+          "variants": [],
+          "peopleIds": ["PPL_BAGANDA"],
+          "countryId": "UGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "UBOS (recensement), Buganda Kingdom clan registers, travaux sur l'ekika ganda",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Babirye",
+          "nameSystem": "totemic_clan",
+          "variants": [],
+          "peopleIds": ["PPL_BAGANDA"],
+          "countryId": "UGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "UBOS (recensement), Buganda Kingdom clan registers, travaux sur l'ekika ganda",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Museveni",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_BANYANKOLE"],
+          "countryId": "UGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "UBOS (recensement), Buganda Kingdom clan registers, travaux sur l'ekika ganda",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ojok",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_ACHOLI"],
+          "countryId": "UGA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "UBOS (recensement), Buganda Kingdom clan registers, travaux sur l'ekika ganda",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Opio",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Opiyo"],
+          "peopleIds": ["PPL_LANGO"],
           "countryId": "UGA",
           "provenance": {
             "tier": "unverified",
@@ -6424,10 +8412,10 @@
     {
       "countryId": "ZAF",
       "dominantNameSystem": "clan_name",
-      "onomasticNote": "Le nom de famille nguni et l'isiduko (nom de clan) sont deux choses différentes : on demande « ubuhlobo bakho ? » pour l'isiduko, jamais le patronyme d'état civil. Les patronymes afrikaans et anglais forment une strate coloniale distincte.",
+      "onomasticNote": "Le nom de famille nguni et l'isiduko (nom de clan) sont deux choses différentes : on demande « ubuhlobo bakho ? » pour l'isiduko, jamais le patronyme d'état civil. Les patronymes afrikaans et anglais forment une strate coloniale distincte. Mandela et Madiba sont queués séparément parce qu'ils illustrent précisément cette différence : Mandela est le nom d'état civil, Madiba l'isiduko du même homme. Les deux portent la valeur clan_name, qui ne distingue pas les deux registres — une limite du vocabulaire à trancher à la revue, pas une équivalence.",
       "verificationLead": "Stats SA (recensement), Department of Home Affairs, travaux sur l'isiduko xhosa et les izithakazelo zoulou",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "Dlamini",
@@ -6588,6 +8576,118 @@
           "nameSystem": "clan_name",
           "variants": [],
           "peopleIds": ["PPL_XHOSA"],
+          "countryId": "ZAF",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Stats SA (recensement), Department of Home Affairs, travaux sur l'isiduko xhosa et les izithakazelo zoulou",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mandela",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_XHOSA"],
+          "countryId": "ZAF",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Stats SA (recensement), Department of Home Affairs, travaux sur l'isiduko xhosa et les izithakazelo zoulou",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Madiba",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_XHOSA"],
+          "countryId": "ZAF",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Stats SA (recensement), Department of Home Affairs, travaux sur l'isiduko xhosa et les izithakazelo zoulou",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mbeki",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_XHOSA"],
+          "countryId": "ZAF",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Stats SA (recensement), Department of Home Affairs, travaux sur l'isiduko xhosa et les izithakazelo zoulou",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Zuma",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_ZULU"],
+          "countryId": "ZAF",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Stats SA (recensement), Department of Home Affairs, travaux sur l'isiduko xhosa et les izithakazelo zoulou",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ramaphosa",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_VENDA"],
+          "countryId": "ZAF",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Stats SA (recensement), Department of Home Affairs, travaux sur l'isiduko xhosa et les izithakazelo zoulou",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Motsepe",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_TSWANA"],
+          "countryId": "ZAF",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Stats SA (recensement), Department of Home Affairs, travaux sur l'isiduko xhosa et les izithakazelo zoulou",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Baloyi",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_TSONGA"],
+          "countryId": "ZAF",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "Stats SA (recensement), Department of Home Affairs, travaux sur l'isiduko xhosa et les izithakazelo zoulou",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mabuza",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_SWAZI"],
           "countryId": "ZAF",
           "provenance": {
             "tier": "unverified",
@@ -7851,7 +9951,7 @@
       "onomasticNote": "Patronymes portugais imposés à l'assimilação, sous lesquels subsistent des noms makua, tsonga et sena (Machel, Sitoe, Macuácua). Le nord makua est matrilinéaire.",
       "verificationLead": "INE Moçambique (recenseamento), Conservatória, travaux sur l'onomastique makua et tsonga",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "Machel",
@@ -8020,16 +10120,128 @@
           },
           "verificationLead": "INE Moçambique (recenseamento), Conservatória, travaux sur l'onomastique makua et tsonga",
           "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "dos Santos",
+          "nameSystem": "clan_name",
+          "variants": ["Santos"],
+          "peopleIds": [],
+          "countryId": "MOZ",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Moçambique (recenseamento), Conservatória, travaux sur l'onomastique makua et tsonga",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Matsinhe",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_TSONGA"],
+          "countryId": "MOZ",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Moçambique (recenseamento), Conservatória, travaux sur l'onomastique makua et tsonga",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Chirindza",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_TSONGA"],
+          "countryId": "MOZ",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Moçambique (recenseamento), Conservatória, travaux sur l'onomastique makua et tsonga",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mucavele",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_TSONGA"],
+          "countryId": "MOZ",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Moçambique (recenseamento), Conservatória, travaux sur l'onomastique makua et tsonga",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Chiziane",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_TSONGA"],
+          "countryId": "MOZ",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Moçambique (recenseamento), Conservatória, travaux sur l'onomastique makua et tsonga",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mocumbi",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_TSWA"],
+          "countryId": "MOZ",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Moçambique (recenseamento), Conservatória, travaux sur l'onomastique makua et tsonga",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Chipande",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_MAKONDE"],
+          "countryId": "MOZ",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Moçambique (recenseamento), Conservatória, travaux sur l'onomastique makua et tsonga",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Momade",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Mamade"],
+          "peopleIds": ["PPL_MAKUA"],
+          "countryId": "MOZ",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INE Moçambique (recenseamento), Conservatória, travaux sur l'onomastique makua et tsonga",
+          "reviewStatus": "candidate_pending_verification"
         }
       ]
     },
     {
       "countryId": "MAR",
       "dominantNameSystem": "nisba",
-      "onomasticNote": "La nisba domine : el-Fassi (de Fès), el-Alaoui (des Alaouites), er-Rifi (du Rif). Elle dit une ville, une tribu ou une lignée chérifienne, et se transmet — contrairement au nasab (« ben X ») qui, lui, désigne le père.",
+      "onomasticNote": "La nisba domine : el-Fassi (de Fès), el-Alaoui (des Alaouites), er-Rifi (du Rif). Elle dit une ville, une tribu ou une lignée chérifienne, et se transmet — contrairement au nasab (« ben X ») qui, lui, désigne le père. Certaines nisba ne disent pas un lieu marocain mais une origine étrangère devenue héréditaire : Sqalli (de Sicile) et El Andalousi (d'al-Andalus) datent des expulsions ibériques, et font du patronyme une trace de migration.",
       "verificationLead": "HCP Maroc (RGPH), état civil, travaux sur les nisba et les patronymes amazighs",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "El Alami",
@@ -8198,6 +10410,118 @@
           },
           "verificationLead": "HCP Maroc (RGPH), état civil, travaux sur les nisba et les patronymes amazighs",
           "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Benkirane",
+          "nameSystem": "nisba",
+          "variants": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "MAR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "HCP Maroc (RGPH), état civil, travaux sur les nisba et les patronymes amazighs",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Chraïbi",
+          "nameSystem": "nisba",
+          "variants": ["Chraibi"],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "MAR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "HCP Maroc (RGPH), état civil, travaux sur les nisba et les patronymes amazighs",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Lahlou",
+          "nameSystem": "nisba",
+          "variants": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "MAR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "HCP Maroc (RGPH), état civil, travaux sur les nisba et les patronymes amazighs",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Doukkali",
+          "nameSystem": "nisba",
+          "variants": ["El Doukkali"],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "MAR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "HCP Maroc (RGPH), état civil, travaux sur les nisba et les patronymes amazighs",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Sqalli",
+          "nameSystem": "nisba",
+          "variants": ["Squalli"],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "MAR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "HCP Maroc (RGPH), état civil, travaux sur les nisba et les patronymes amazighs",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "El Andalousi",
+          "nameSystem": "nisba",
+          "variants": ["Andaloussi"],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "MAR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "HCP Maroc (RGPH), état civil, travaux sur les nisba et les patronymes amazighs",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Khattabi",
+          "nameSystem": "nisba",
+          "variants": ["El Khattabi"],
+          "peopleIds": ["PPL_RIFAIN"],
+          "countryId": "MAR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "HCP Maroc (RGPH), état civil, travaux sur les nisba et les patronymes amazighs",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Akhannouch",
+          "nameSystem": "clan_name",
+          "variants": ["Akhenouch"],
+          "peopleIds": ["PPL_CHLEUH"],
+          "countryId": "MAR",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "HCP Maroc (RGPH), état civil, travaux sur les nisba et les patronymes amazighs",
+          "reviewStatus": "candidate_pending_verification"
         }
       ]
     },
@@ -8207,7 +10531,7 @@
       "onomasticNote": "L'état civil de 1882 a imposé des patronymes fixes à une population qui n'en portait pas : beaucoup de noms algériens datent de cette opération administrative, parfois attribués arbitrairement voire par dérision. Les noms kabyles en Aït- ou At- marquent, eux, le lignage.",
       "verificationLead": "ONS Algérie (RGPH), état civil, travaux sur l'état civil colonial de 1882 et l'onomastique kabyle",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "Benali",
@@ -8368,6 +10692,118 @@
           "nameSystem": "nisba",
           "variants": [],
           "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "DZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ONS Algérie (RGPH), état civil, travaux sur l'état civil colonial de 1882 et l'onomastique kabyle",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Bouteflika",
+          "nameSystem": "nisba",
+          "variants": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "DZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ONS Algérie (RGPH), état civil, travaux sur l'état civil colonial de 1882 et l'onomastique kabyle",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ben Badis",
+          "nameSystem": "nisba",
+          "variants": ["Benbadis"],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "DZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ONS Algérie (RGPH), état civil, travaux sur l'état civil colonial de 1882 et l'onomastique kabyle",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Cherif",
+          "nameSystem": "nisba",
+          "variants": ["Chérif"],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "DZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ONS Algérie (RGPH), état civil, travaux sur l'état civil colonial de 1882 et l'onomastique kabyle",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Amara",
+          "nameSystem": "nisba",
+          "variants": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "DZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ONS Algérie (RGPH), état civil, travaux sur l'état civil colonial de 1882 et l'onomastique kabyle",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Haddad",
+          "nameSystem": "nisba",
+          "variants": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "DZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ONS Algérie (RGPH), état civil, travaux sur l'état civil colonial de 1882 et l'onomastique kabyle",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Zeroual",
+          "nameSystem": "nisba",
+          "variants": ["Zéroual"],
+          "peopleIds": ["PPL_CHAOUI"],
+          "countryId": "DZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ONS Algérie (RGPH), état civil, travaux sur l'état civil colonial de 1882 et l'onomastique kabyle",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Aït Menguellet",
+          "nameSystem": "clan_name",
+          "variants": ["Ait Menguellet"],
+          "peopleIds": ["PPL_KABYLE"],
+          "countryId": "DZA",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "ONS Algérie (RGPH), état civil, travaux sur l'état civil colonial de 1882 et l'onomastique kabyle",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Mammeri",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": ["PPL_KABYLE"],
           "countryId": "DZA",
           "provenance": {
             "tier": "unverified",
@@ -8738,10 +11174,10 @@
     {
       "countryId": "EGY",
       "dominantNameSystem": "non_hereditary_patronymic",
-      "onomasticNote": "Le nom égyptien est une chaîne de prénoms (ism + nom du père + du grand-père) ; le nom de famille fixe reste minoritaire hors des grandes familles et des Coptes.",
+      "onomasticNote": "Le nom égyptien est une chaîne de prénoms (ism + nom du père + du grand-père) ; le nom de famille fixe reste minoritaire hors des grandes familles et des Coptes. Les noms coptes (Shenouda, Guirguis, Boutros, Bishara, Tadros) et le nom d'origine circassienne Abaza sont queués sans peopleIds : le corpus ne porte aucune fiche de peuple pour les Coptes ni pour la strate ottomane, et les rattacher à PPL_ARABES_AFRIQUE serait un classement faux plutôt qu'un champ vide. La nisba, elle, fait tenir la diversité que la chaîne de prénoms masque : elle dit une ville (El Fayoumi), une origine amazighe de Haute-Égypte (El Hawary, des Hawwara), une oasis (El Siwi), un groupe bedja (Ababda, Bishari) ou une des deux populations nubiennes (El Kenzi, Fadicca).",
       "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
       "quota": 30,
-      "deficit": 18,
+      "deficit": 0,
       "entries": [
         {
           "name": "Mohamed",
@@ -8910,16 +11346,268 @@
           },
           "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
           "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Youssef",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": ["Yusuf"],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Abdel Aziz",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "El Masry",
+          "nameSystem": "nisba",
+          "variants": ["Al-Masri"],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "El Sherbini",
+          "nameSystem": "nisba",
+          "variants": ["Sherbini"],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "El Mansoury",
+          "nameSystem": "nisba",
+          "variants": ["Mansouri"],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "El Fayoumi",
+          "nameSystem": "nisba",
+          "variants": ["Fayoumi"],
+          "peopleIds": ["PPL_ARABES_AFRIQUE"],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "El Hawary",
+          "nameSystem": "nisba",
+          "variants": ["Hawary"],
+          "peopleIds": ["PPL_AMAZIGH_MACRO"],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "El Siwi",
+          "nameSystem": "nisba",
+          "variants": ["Siwi"],
+          "peopleIds": ["PPL_SIWI"],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ababda",
+          "nameSystem": "nisba",
+          "variants": ["Ababdeh"],
+          "peopleIds": ["PPL_BEJA"],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Bishari",
+          "nameSystem": "nisba",
+          "variants": ["Bisharin"],
+          "peopleIds": ["PPL_BEJA"],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "El Kenzi",
+          "nameSystem": "nisba",
+          "variants": ["Kenzi"],
+          "peopleIds": ["PPL_NUBIENS"],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Fadicca",
+          "nameSystem": "nisba",
+          "variants": ["Fadija"],
+          "peopleIds": ["PPL_NUBIENS"],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Shenouda",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": [],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Guirguis",
+          "nameSystem": "clan_name",
+          "variants": ["Girgis"],
+          "peopleIds": [],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Boutros",
+          "nameSystem": "clan_name",
+          "variants": ["Botros"],
+          "peopleIds": [],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Bishara",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": [],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Tadros",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": [],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Abaza",
+          "nameSystem": "clan_name",
+          "variants": [],
+          "peopleIds": [],
+          "countryId": "EGY",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
+          "reviewStatus": "candidate_pending_verification"
         }
       ]
     },
     {
       "countryId": "MDG",
       "dominantNameSystem": "non_hereditary_patronymic",
-      "onomasticNote": "L'anarana malgache est un composé long, souvent préfixé Ra- (honorifique) ou Andrian- (noble), et n'est pas hérité de manière systématique : les cinq systèmes du modèle décrivent mal ce cas, la classification est provisoire.",
+      "onomasticNote": "L'anarana malgache est un composé long, souvent préfixé Ra- (honorifique) ou Andrian- (noble), et n'est pas hérité de manière systématique : les cinq systèmes du modèle décrivent mal ce cas, la classification est provisoire. Le préfixe Ra- est de surcroît une marque des hautes terres : les noms côtiers queués ici (Zafy et Tsiranana chez les Tsimihety, Monja chez les Antandroy, Tsiaraso chez les Sakalava) s'en passent, et une liste qui ne retiendrait que des Ra- ferait passer l'anthroponymie merina pour celle de l'île entière.",
       "verificationLead": "INSTAT Madagascar (RGPH), état civil, travaux sur l'anarana et les préfixes Ra-/Andrian-",
       "quota": 20,
-      "deficit": 8,
+      "deficit": 0,
       "entries": [
         {
           "name": "Rakotomalala",
@@ -9080,6 +11768,118 @@
           "nameSystem": "non_hereditary_patronymic",
           "variants": [],
           "peopleIds": ["PPL_MERINA"],
+          "countryId": "MDG",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INSTAT Madagascar (RGPH), état civil, travaux sur l'anarana et les préfixes Ra-/Andrian-",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Rabearivelo",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_MERINA"],
+          "countryId": "MDG",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INSTAT Madagascar (RGPH), état civil, travaux sur l'anarana et les préfixes Ra-/Andrian-",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ranaivo",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_MERINA"],
+          "countryId": "MDG",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INSTAT Madagascar (RGPH), état civil, travaux sur l'anarana et les préfixes Ra-/Andrian-",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Ramanantsoa",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_MERINA"],
+          "countryId": "MDG",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INSTAT Madagascar (RGPH), état civil, travaux sur l'anarana et les préfixes Ra-/Andrian-",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Rajaonarimampianina",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_MERINA"],
+          "countryId": "MDG",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INSTAT Madagascar (RGPH), état civil, travaux sur l'anarana et les préfixes Ra-/Andrian-",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Zafy",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_TSIMIHETY"],
+          "countryId": "MDG",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INSTAT Madagascar (RGPH), état civil, travaux sur l'anarana et les préfixes Ra-/Andrian-",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Tsiranana",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_TSIMIHETY"],
+          "countryId": "MDG",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INSTAT Madagascar (RGPH), état civil, travaux sur l'anarana et les préfixes Ra-/Andrian-",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Monja",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_ANTANDROY"],
+          "countryId": "MDG",
+          "provenance": {
+            "tier": "unverified",
+            "source_kind": "ai_generated",
+            "confidenceWeight": 0.2
+          },
+          "verificationLead": "INSTAT Madagascar (RGPH), état civil, travaux sur l'anarana et les préfixes Ra-/Andrian-",
+          "reviewStatus": "candidate_pending_verification"
+        },
+        {
+          "name": "Tsiaraso",
+          "nameSystem": "non_hereditary_patronymic",
+          "variants": [],
+          "peopleIds": ["PPL_SAKALAVA"],
           "countryId": "MDG",
           "provenance": {
             "tier": "unverified",

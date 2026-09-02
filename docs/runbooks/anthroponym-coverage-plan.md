@@ -27,15 +27,15 @@ attested in the same country, which puts Burundi ahead of Algeria.
 
 ## Where things stand
 
-|                                      |                          |
-| ------------------------------------ | -----------------------: |
-| `PAT_*` fiches                       |                       30 |
-| Countries with ≥ 1 fiche             |                  21 / 54 |
-| Countries with zero                  |                       33 |
-| Best-covered country (MLI, CIV, BFA) |                        9 |
-| **Countries meeting their quota**    |               **0 / 54** |
-| Candidates queued                    |                      648 |
-| Queue deficit against quota          | 200, across 20 countries |
+|                                      |                      |
+| ------------------------------------ | -------------------: |
+| `PAT_*` fiches                       |                   30 |
+| Countries with ≥ 1 fiche             |              21 / 54 |
+| Countries with zero                  |                   33 |
+| Best-covered country (MLI, CIV, BFA) |                    9 |
+| **Countries meeting their quota**    |           **0 / 54** |
+| Candidates queued                    |                  848 |
+| Queue deficit against quota          | 0 — wave 0 is closed |
 
 The generator prints the deficit per country on every run — it is the progress
 meter for wave 0, not an error:
@@ -48,7 +48,7 @@ node scripts/afrik/buildAnthroponymCandidates.mjs
 
 | Wave    | What it does                         | Output                               | Shape of the work                |
 | ------- | ------------------------------------ | ------------------------------------ | -------------------------------- |
-| **0**   | Close the queue deficit              | 780 candidates                       | Authoring, one country at a time |
+| **0**   | Close the queue deficit              | 848 candidates, quota 780 met        | Authoring, one country at a time |
 | **1**   | Candidates → fiches, minimal depth   | 780 fiches, 54/54 countries at quota | **A script, not an agent**       |
 | **2…N** | Research depth, by linguistic family | Confidence rises per family          | The per-fiche protocol           |
 
@@ -105,7 +105,12 @@ in the name dimension, and no amount of depth work reaches it before wave 1.
 
 ## Wave 0 — close the queue deficit
 
-200 candidates missing, in 20 countries. Run one country per invocation, or a
+**Closed.** The 200 missing candidates were authored across the 20 deficit
+countries, and the generator reports a deficit of 0 against the 780 quota.
+
+The prompt below stays here because the quota is a floor, not a ceiling: raising
+a band, adding a country, or replacing a thin entry after research reopens a
+deficit, and this is how it gets closed. Run one country per invocation, or a
 band at a time.
 
 ```text

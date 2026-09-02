@@ -84,6 +84,14 @@ export const COUNTRY_CANDIDATES = {
       ["Touré", "clan_name", ["PPL_SONINKE"], ["Toure"]],
       ["Maïga", "clan_name", ["PPL_SONGHAI"], ["Maiga"]],
       ["Diakité", "clan_name", ["PPL_FULA"], ["Diakite"]],
+      ["Dembélé", "clan_name", ["PPL_BAMBARA"], ["Dembele"]],
+      ["Sangaré", "clan_name", ["PPL_FULA"], ["Sangare"]],
+      ["Camara", "clan_name", ["PPL_MALINKE"], ["Kamara"]],
+      ["Fofana", "clan_name", ["PPL_SONINKE"], []],
+      ["Kanté", "clan_name", ["PPL_MALINKE"], ["Kante"]],
+      ["Sanogo", "clan_name", ["PPL_SENUFO"], []],
+      ["Bagayoko", "clan_name", ["PPL_BAMBARA"], []],
+      ["Guindo", "clan_name", ["PPL_DOGON"], []],
     ],
   },
 
@@ -107,6 +115,14 @@ export const COUNTRY_CANDIDATES = {
       ["Bationo", "clan_name", ["PPL_MOSSI"], []],
       ["Sankara", "clan_name", [], []],
       ["Ilboudo", "clan_name", ["PPL_MOSSI"], []],
+      ["Congo", "clan_name", ["PPL_MOSSI"], ["Kongo"]],
+      ["Nacoulma", "clan_name", ["PPL_MOSSI"], []],
+      ["Tapsoba", "clan_name", ["PPL_MOSSI"], []],
+      ["Yaméogo", "clan_name", ["PPL_MOSSI"], ["Yameogo"]],
+      ["Sorgho", "clan_name", ["PPL_MOSSI"], []],
+      ["Ouoba", "clan_name", ["PPL_GOURMANTCHE"], []],
+      ["Barry", "clan_name", ["PPL_FULA"], []],
+      ["Coulibaly", "clan_name", ["PPL_DIOULA"], []],
     ],
   },
 
@@ -114,7 +130,10 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "non_hereditary_patronymic",
     onomasticNote:
       "Chez les Hausa et les Zarma-Songhay, le second nom est massivement le prénom du père " +
-      "et change à chaque génération ; les noms hérités (Maïga, Kountché) restent minoritaires.",
+      "et change à chaque génération ; les noms hérités (Maïga, Kountché) restent minoritaires. " +
+      "La chaîne touarègue explicite la filiation par la particule Ag (« fils de ») là où le " +
+      "haoussa et le zarma se contentent de juxtaposer : Rhissa est ici classé en patronyme non " +
+      "héréditaire au titre de l'élément de chaîne, non de la particule.",
     verificationLead:
       "Fichier électoral CENI Niger, INS Niger, travaux d'anthroponymie haoussa et zarma",
     names: [
@@ -130,6 +149,14 @@ export const COUNTRY_CANDIDATES = {
       ["Souley", "non_hereditary_patronymic", ["PPL_ZARMA"], ["Soulé"]],
       ["Hamidou", "non_hereditary_patronymic", ["PPL_FULA"], []],
       ["Abdoulaye", "non_hereditary_patronymic", ["PPL_HAUSA"], ["Abdulai"]],
+      ["Kountché", "clan_name", ["PPL_ZARMA"], ["Kounche"]],
+      ["Diori", "clan_name", ["PPL_ZARMA"], []],
+      ["Mahamadou", "non_hereditary_patronymic", ["PPL_HAUSA"], ["Mahamane"]],
+      ["Issoufou", "non_hereditary_patronymic", ["PPL_HAUSA"], ["Yssoufou"]],
+      ["Yacouba", "non_hereditary_patronymic", ["PPL_ZARMA"], ["Yakouba"]],
+      ["Salifou", "non_hereditary_patronymic", ["PPL_ZARMA"], ["Salif"]],
+      ["Ousmane", "non_hereditary_patronymic", ["PPL_FULA"], ["Usman"]],
+      ["Rhissa", "non_hereditary_patronymic", ["PPL_TUAREG"], []],
     ],
   },
 
@@ -205,6 +232,14 @@ export const COUNTRY_CANDIDATES = {
       ["Diomandé", "clan_name", ["PPL_DAN"], ["Diomande"]],
       ["N'Guessan", "non_hereditary_patronymic", ["PPL_BAOULE"], ["Nguessan"]],
       ["Doumbia", "clan_name", ["PPL_DIOULA"], []],
+      ["Kouadio", "non_hereditary_patronymic", ["PPL_BAOULE"], []],
+      ["Kouakou", "non_hereditary_patronymic", ["PPL_BAOULE"], []],
+      ["Bédié", "clan_name", ["PPL_BAOULE"], ["Bedie"]],
+      ["Gbagbo", "clan_name", ["PPL_BETE"], []],
+      ["Zadi", "clan_name", ["PPL_BETE"], []],
+      ["Silué", "clan_name", ["PPL_SENUFO"], ["Silue"]],
+      ["Soro", "clan_name", ["PPL_SENUFO"], []],
+      ["Fofana", "clan_name", ["PPL_DIOULA"], []],
     ],
   },
 
@@ -228,6 +263,14 @@ export const COUNTRY_CANDIDATES = {
       ["Tetteh", "non_hereditary_patronymic", ["PPL_GA"], ["Teteh"]],
       ["Quartey", "clan_name", ["PPL_GA"], []],
       ["Adjei", "clan_name", ["PPL_AKAN"], []],
+      ["Kwame", "non_hereditary_patronymic", ["PPL_AKAN"], ["Kwamé"]],
+      ["Kofi", "non_hereditary_patronymic", ["PPL_AKAN"], []],
+      ["Yeboah", "clan_name", ["PPL_ASANTE"], []],
+      ["Ansah", "clan_name", ["PPL_FANTE"], []],
+      ["Nkrumah", "clan_name", ["PPL_NZEMA"], []],
+      ["Nortey", "clan_name", ["PPL_GA"], []],
+      ["Gbedemah", "clan_name", ["PPL_EWE"], []],
+      ["Abdulai", "non_hereditary_patronymic", ["PPL_DAGOMBA"], ["Abdulaï"]],
     ],
   },
 
@@ -281,7 +324,11 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "praise_name",
     onomasticNote:
       "Trois systèmes distincts : oríkì yoruba (le nom est un énoncé sur l'òrìṣà ou le lignage), " +
-      "noms igbo théophores (Chukwu-, Nna-), et chaîne patronymique haoussa-peule au nord.",
+      "noms igbo théophores (Chukwu-, Nna-), et chaîne patronymique haoussa-peule au nord. " +
+      "Les oruko amutorunwa — noms « apportés du ciel », attribués par la circonstance de la " +
+      "naissance (Taiwo et Kehinde pour les jumeaux, Ojo pour l'enfant né le cordon au cou) — " +
+      "ne sont ni des oríkì ni des noms de lignage : ils sont classés ici en praise_name faute " +
+      "de valeur plus proche, et la classification reste à trancher à la revue.",
     verificationLead:
       "INEC voter register, NPC census, littérature sur l'oríkì yoruba et l'anthroponymie igbo",
     names: [
@@ -297,6 +344,24 @@ export const COUNTRY_CANDIDATES = {
       ["Abubakar", "non_hereditary_patronymic", ["PPL_HAUSA"], ["Abubakre"]],
       ["Eze", "clan_name", ["PPL_IGBO"], []],
       ["Balogun", "praise_name", ["PPL_YORUBA"], []],
+      ["Adekunle", "praise_name", ["PPL_YORUBA"], []],
+      ["Olawale", "praise_name", ["PPL_YORUBA"], ["Olawalé"]],
+      ["Babatunde", "praise_name", ["PPL_YORUBA"], ["Babatundé"]],
+      ["Taiwo", "praise_name", ["PPL_YORUBA"], ["Taiye"]],
+      ["Kehinde", "praise_name", ["PPL_YORUBA"], ["Kehindé"]],
+      ["Ojo", "praise_name", ["PPL_YORUBA"], []],
+      ["Okoro", "clan_name", ["PPL_IGBO"], []],
+      ["Nwosu", "clan_name", ["PPL_IGBO"], []],
+      ["Obi", "clan_name", ["PPL_IGBO"], []],
+      ["Chinedu", "clan_name", ["PPL_IGBO"], []],
+      ["Yusuf", "non_hereditary_patronymic", ["PPL_HAUSA"], ["Yusufu"]],
+      ["Aliyu", "non_hereditary_patronymic", ["PPL_HAUSA"], []],
+      ["Sani", "non_hereditary_patronymic", ["PPL_HAUSA"], []],
+      ["Danjuma", "non_hereditary_patronymic", ["PPL_HAUSA"], []],
+      ["Ekpo", "clan_name", ["PPL_IBIBIO"], []],
+      ["Gyang", "clan_name", ["PPL_BEROM"], []],
+      ["Aondoakaa", "clan_name", ["PPL_TIV"], []],
+      ["Amachree", "clan_name", ["PPL_KALAIBARI"], []],
     ],
   },
 
@@ -415,6 +480,14 @@ export const COUNTRY_CANDIDATES = {
       ["Bello", "non_hereditary_patronymic", ["PPL_FULA"], []],
       ["Njoya", "clan_name", [], []],
       ["Eyoum", "clan_name", ["PPL_SAWA"], []],
+      ["Biya", "clan_name", ["PPL_BULU"], []],
+      ["Onana", "clan_name", ["PPL_EWONDO"], []],
+      ["Mvondo", "clan_name", ["PPL_EWONDO"], []],
+      ["Kameni", "clan_name", ["PPL_BAMILEKE"], []],
+      ["Djoumessi", "clan_name", ["PPL_BAMILEKE"], []],
+      ["Bell", "clan_name", ["PPL_DUALA"], ["Manga Bell"]],
+      ["Nyobè", "clan_name", ["PPL_BASSA_CAM"], ["Nyobe"]],
+      ["Aboubakar", "non_hereditary_patronymic", ["PPL_FULA"], ["Abubakar"]],
     ],
   },
 
@@ -536,7 +609,12 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "clan_name",
     onomasticNote:
       "L'authenticité mobutiste (1972) a proscrit les prénoms chrétiens et imposé le postnom " +
-      "africain : une rupture d'état civil qui rend la série des patronymes congolais datable.",
+      "africain : une rupture d'état civil qui rend la série des patronymes congolais datable. " +
+      "Deux séries échappent au nom de clan et sont classées en patronyme non héréditaire faute " +
+      "de valeur plus proche : les noms nande de rang de naissance (Kambale, Muhindo, Kasereka) " +
+      "désignent la place dans la fratrie et non une filiation, et le postnom swahiliphone de " +
+      "l'Est (Bahati) est un prénom repris en position de nom. Nsimba et Nzuzi forment de leur " +
+      "côté une paire kongo de jumeaux, aîné puis cadet.",
     verificationLead:
       "CENI RDC (fichier électoral), INS RDC, travaux sur la zaïrianisation des noms (1972)",
     names: [
@@ -552,6 +630,24 @@ export const COUNTRY_CANDIDATES = {
       ["Lumumba", "clan_name", [], []],
       ["Bemba", "clan_name", [], []],
       ["Mputu", "clan_name", ["PPL_KONGO"], []],
+      ["Mutombo", "clan_name", ["PPL_LUBA"], []],
+      ["Kanyinda", "clan_name", ["PPL_LUBA"], []],
+      ["Kabongo", "clan_name", ["PPL_LUBA"], []],
+      ["Tshibangu", "clan_name", ["PPL_LUBA_KASAI"], []],
+      ["Nkongolo", "clan_name", ["PPL_LUBA"], []],
+      ["Kalala", "clan_name", ["PPL_LUBA"], []],
+      ["Mulumba", "clan_name", ["PPL_LUBA"], []],
+      ["Kazadi", "clan_name", ["PPL_LUBA"], []],
+      ["Kayembe", "clan_name", ["PPL_LUBA"], []],
+      ["Mobutu", "clan_name", ["PPL_NGBANDE"], []],
+      ["Kimbangu", "clan_name", ["PPL_KONGO"], []],
+      ["Nsimba", "clan_name", ["PPL_KONGO"], []],
+      ["Nzuzi", "clan_name", ["PPL_KONGO"], []],
+      ["Ngoma", "clan_name", ["PPL_KONGO"], []],
+      ["Kambale", "non_hereditary_patronymic", ["PPL_NANDE"], []],
+      ["Muhindo", "non_hereditary_patronymic", ["PPL_NANDE"], []],
+      ["Kasereka", "non_hereditary_patronymic", ["PPL_NANDE"], []],
+      ["Bahati", "non_hereditary_patronymic", ["PPL_SWAHILI"], []],
     ],
   },
 
@@ -575,6 +671,14 @@ export const COUNTRY_CANDIDATES = {
       ["Nzinga", "clan_name", ["PPL_AMBUNDU"], []],
       ["Kiala", "clan_name", ["PPL_KONGO"], []],
       ["Kalandula", "clan_name", ["PPL_AMBUNDU"], []],
+      ["Gonçalves", "clan_name", [], ["Goncalves"]],
+      ["Nascimento", "clan_name", [], []],
+      ["Baptista", "clan_name", [], ["Batista"]],
+      ["Ngola", "clan_name", ["PPL_AMBUNDU"], []],
+      ["Ekuikui", "clan_name", ["PPL_OVIMBUNDU"], []],
+      ["Chitunda", "clan_name", ["PPL_OVIMBUNDU"], []],
+      ["Samakuva", "clan_name", ["PPL_OVIMBUNDU"], []],
+      ["Lukamba", "clan_name", ["PPL_CHOKWE"], []],
     ],
   },
 
@@ -624,6 +728,14 @@ export const COUNTRY_CANDIDATES = {
       ["al-Rashaida", "nisba", [], ["Rashaida"]],
       ["Ibrahim", "non_hereditary_patronymic", [], []],
       ["Idris", "non_hereditary_patronymic", ["PPL_BEJA"], []],
+      ["al-Mahdi", "nisba", ["PPL_ARABES_AFRIQUE"], ["Mahdi", "El Mahdi"]],
+      ["al-Mirghani", "nisba", ["PPL_ARABES_AFRIQUE"], ["Mirghani"]],
+      ["al-Kabbashi", "nisba", ["PPL_ARABES_AFRIQUE"], ["Kabbashi"]],
+      ["al-Rizeigat", "nisba", ["PPL_BAGGAR"], ["Rizeigat", "Rizigat"]],
+      ["Digna", "clan_name", ["PPL_BEJA"], []],
+      ["Adam", "non_hereditary_patronymic", ["PPL_FOUR"], []],
+      ["Nur", "non_hereditary_patronymic", ["PPL_FOUR"], ["Noor"]],
+      ["Deng", "clan_name", ["PPL_DINKA"], []],
     ],
   },
 
@@ -655,7 +767,11 @@ export const COUNTRY_CANDIDATES = {
     onomasticNote:
       "Cas d'école du patronyme non héréditaire : le deuxième nom est le prénom du père et " +
       "change à chaque génération. Abiy Ahmed Ali n'a pas de nom de famille — Ahmed est son père, " +
-      "Ali son grand-père. L'annuaire téléphonique d'Addis-Abeba se classe au prénom.",
+      "Ali son grand-père. L'annuaire téléphonique d'Addis-Abeba se classe au prénom. " +
+      "Le pays n'est cependant pas d'un seul système : le qabiil somali (Ogaden) et le kedo afar " +
+      "(Hanfare) sont, eux, des noms de groupe transmis, et sont classés en nom de clan — la " +
+      "chaîne habesha et ces deux-là ne décrivent pas la même chose. Chez les Nuer, le préfixe " +
+      "Gat- (« fils de ») explicite la filiation que l'amharique laisse implicite.",
     verificationLead:
       "Ethiopian Statistics Service (recensement), registre d'état civil, travaux sur l'anthroponymie amharique et oromo",
     names: [
@@ -671,6 +787,29 @@ export const COUNTRY_CANDIDATES = {
       ["Kebede", "non_hereditary_patronymic", ["PPL_AMHARA"], []],
       ["Gemechu", "non_hereditary_patronymic", ["PPL_OROMO"], []],
       ["Bulcha", "non_hereditary_patronymic", ["PPL_OROMO"], []],
+      ["Gebre", "non_hereditary_patronymic", ["PPL_AMHARA"], ["Gebra"]],
+      ["Desta", "non_hereditary_patronymic", ["PPL_AMHARA"], []],
+      ["Alemayehu", "non_hereditary_patronymic", ["PPL_AMHARA"], []],
+      ["Assefa", "non_hereditary_patronymic", ["PPL_AMHARA"], ["Asefa"]],
+      ["Mulugeta", "non_hereditary_patronymic", ["PPL_AMHARA"], []],
+      ["Teshome", "non_hereditary_patronymic", ["PPL_AMHARA"], []],
+      [
+        "Gebremariam",
+        "non_hereditary_patronymic",
+        ["PPL_TIGRAY"],
+        ["Gebre Mariam"],
+      ],
+      ["Berhane", "non_hereditary_patronymic", ["PPL_TIGRAY"], []],
+      ["Abera", "non_hereditary_patronymic", ["PPL_OROMO"], []],
+      ["Wako", "non_hereditary_patronymic", ["PPL_OROMO"], []],
+      ["Jaleta", "non_hereditary_patronymic", ["PPL_OROMO"], []],
+      ["Gudina", "non_hereditary_patronymic", ["PPL_OROMO"], []],
+      ["Lemma", "non_hereditary_patronymic", ["PPL_OROMO"], []],
+      ["Farah", "non_hereditary_patronymic", ["PPL_SOMALI"], []],
+      ["Ogaden", "clan_name", ["PPL_SOMALI"], ["Ogadeen"]],
+      ["Hanfare", "clan_name", ["PPL_AFAR"], []],
+      ["Gatluak", "non_hereditary_patronymic", ["PPL_NUER"], []],
+      ["Ojulu", "non_hereditary_patronymic", ["PPL_ANUAK"], []],
     ],
   },
 
@@ -754,7 +893,10 @@ export const COUNTRY_CANDIDATES = {
     onomasticNote:
       "Trois logiques : le kikuyu recycle les noms des grands-parents, le luo nomme selon le " +
       "moment de la naissance (Otieno = né la nuit, Ochieng = né le jour), le kalenjin préfixe " +
-      "Kip- (garçon) ou Che- (fille). Aucune n'est un patronyme héréditaire d'origine.",
+      "Kip- (garçon) ou Che- (fille). Aucune n'est un patronyme héréditaire d'origine. " +
+      "Le luo marque en outre le genre par le préfixe : O- pour les hommes (Otieno, Onyango), " +
+      "A- pour les femmes (Akinyi) sur la même racine temporelle. Le gusii fait exception avec " +
+      "des noms de clan transmis (Nyakundi), seuls classés ici en nom de clan.",
     verificationLead:
       "KNBS (recensement), IEBC voter register, travaux sur l'anthroponymie luo et kikuyu",
     names: [
@@ -770,6 +912,14 @@ export const COUNTRY_CANDIDATES = {
       ["Wafula", "non_hereditary_patronymic", ["PPL_LUHYA"], []],
       ["Mutua", "non_hereditary_patronymic", ["PPL_KAMBA"], []],
       ["Kimani", "non_hereditary_patronymic", ["PPL_KIKUYU"], []],
+      ["Njeri", "non_hereditary_patronymic", ["PPL_KIKUYU"], []],
+      ["Karanja", "non_hereditary_patronymic", ["PPL_KIKUYU"], []],
+      ["Onyango", "non_hereditary_patronymic", ["PPL_LUO"], []],
+      ["Akinyi", "non_hereditary_patronymic", ["PPL_LUO"], []],
+      ["Chebet", "non_hereditary_patronymic", ["PPL_KALENJIN"], []],
+      ["Mutiso", "non_hereditary_patronymic", ["PPL_KAMBA"], []],
+      ["Nyakundi", "clan_name", ["PPL_KISII"], []],
+      ["Katana", "non_hereditary_patronymic", ["PPL_MIJIKENDA"], []],
     ],
   },
 
@@ -793,6 +943,14 @@ export const COUNTRY_CANDIDATES = {
       ["Nyerere", "clan_name", ["PPL_NYAMWEZI"], []],
       ["Masanja", "clan_name", ["PPL_SUKUMA"], []],
       ["Rutasitara", "clan_name", ["PPL_HAYA"], []],
+      ["Mwinyi", "clan_name", ["PPL_SWAHILI"], []],
+      ["Mkapa", "clan_name", ["PPL_MAKONDE"], []],
+      ["Kikwete", "clan_name", ["PPL_ZARAMO"], []],
+      ["Magufuli", "clan_name", ["PPL_SUKUMA"], []],
+      ["Mwaipopo", "clan_name", ["PPL_NYAKYUSA"], []],
+      ["Lyimo", "clan_name", ["PPL_CHAGA"], []],
+      ["Mrema", "clan_name", ["PPL_CHAGA"], []],
+      ["Sokoine", "clan_name", ["PPL_MAASAI"], []],
     ],
   },
 
@@ -801,7 +959,12 @@ export const COUNTRY_CANDIDATES = {
     onomasticNote:
       "Le Buganda est le cas totémique du corpus : l'ekika est une liste fermée de clans à " +
       "totem animal ou végétal, et chaque clan détient un stock de noms (amannya g'ekika) que " +
-      "seuls ses membres peuvent porter. Le nord acholi et langi suit une logique tout autre.",
+      "seuls ses membres peuvent porter. Le nord acholi et langi suit une logique tout autre. " +
+      "Les noms de jumeaux font exception dans les deux sens : Wasswa et Kato pour les garçons, " +
+      "Babirye et Nakato pour les filles, sont attribués par le rang de naissance et non tirés " +
+      "du stock de l'ekika — ils restent classés en clan totémique faute de valeur plus proche. " +
+      "Le préfixe Na- marque le féminin (Lubega / Nalubega). Le luo du nord a sa propre paire " +
+      "de jumeaux, Opio, sur un système sans rapport avec l'ekika.",
     verificationLead:
       "UBOS (recensement), Buganda Kingdom clan registers, travaux sur l'ekika ganda",
     names: [
@@ -817,6 +980,14 @@ export const COUNTRY_CANDIDATES = {
       ["Okello", "non_hereditary_patronymic", ["PPL_ACHOLI"], []],
       ["Ocen", "non_hereditary_patronymic", ["PPL_LANGO"], ["Ochen"]],
       ["Byaruhanga", "clan_name", ["PPL_BANYANKOLE"], []],
+      ["Kaggwa", "totemic_clan", ["PPL_BAGANDA"], []],
+      ["Kiwanuka", "totemic_clan", ["PPL_BAGANDA"], []],
+      ["Nalubega", "totemic_clan", ["PPL_BAGANDA"], []],
+      ["Kato", "totemic_clan", ["PPL_BAGANDA"], []],
+      ["Babirye", "totemic_clan", ["PPL_BAGANDA"], []],
+      ["Museveni", "clan_name", ["PPL_BANYANKOLE"], []],
+      ["Ojok", "non_hereditary_patronymic", ["PPL_ACHOLI"], []],
+      ["Opio", "non_hereditary_patronymic", ["PPL_LANGO"], ["Opiyo"]],
     ],
   },
 
@@ -875,7 +1046,11 @@ export const COUNTRY_CANDIDATES = {
     onomasticNote:
       "Le nom de famille nguni et l'isiduko (nom de clan) sont deux choses différentes : on " +
       "demande « ubuhlobo bakho ? » pour l'isiduko, jamais le patronyme d'état civil. " +
-      "Les patronymes afrikaans et anglais forment une strate coloniale distincte.",
+      "Les patronymes afrikaans et anglais forment une strate coloniale distincte. " +
+      "Mandela et Madiba sont queués séparément parce qu'ils illustrent précisément cette " +
+      "différence : Mandela est le nom d'état civil, Madiba l'isiduko du même homme. Les deux " +
+      "portent la valeur clan_name, qui ne distingue pas les deux registres — une limite du " +
+      "vocabulaire à trancher à la revue, pas une équivalence.",
     verificationLead:
       "Stats SA (recensement), Department of Home Affairs, travaux sur l'isiduko xhosa et les izithakazelo zoulou",
     names: [
@@ -891,6 +1066,14 @@ export const COUNTRY_CANDIDATES = {
       ["Mahlangu", "clan_name", ["PPL_NDEBELE"], []],
       ["Mabaso", "clan_name", ["PPL_ZULU"], []],
       ["Ngcobo", "clan_name", ["PPL_XHOSA"], []],
+      ["Mandela", "clan_name", ["PPL_XHOSA"], []],
+      ["Madiba", "clan_name", ["PPL_XHOSA"], []],
+      ["Mbeki", "clan_name", ["PPL_XHOSA"], []],
+      ["Zuma", "clan_name", ["PPL_ZULU"], []],
+      ["Ramaphosa", "clan_name", ["PPL_VENDA"], []],
+      ["Motsepe", "clan_name", ["PPL_TSWANA"], []],
+      ["Baloyi", "clan_name", ["PPL_TSONGA"], []],
+      ["Mabuza", "clan_name", ["PPL_SWAZI"], []],
     ],
   },
 
@@ -1076,6 +1259,14 @@ export const COUNTRY_CANDIDATES = {
       ["Simango", "clan_name", ["PPL_SENA"], []],
       ["Mabote", "clan_name", ["PPL_TSONGA"], []],
       ["Nhaca", "clan_name", ["PPL_TSONGA"], []],
+      ["dos Santos", "clan_name", [], ["Santos"]],
+      ["Matsinhe", "clan_name", ["PPL_TSONGA"], []],
+      ["Chirindza", "clan_name", ["PPL_TSONGA"], []],
+      ["Mucavele", "clan_name", ["PPL_TSONGA"], []],
+      ["Chiziane", "clan_name", ["PPL_TSONGA"], []],
+      ["Mocumbi", "clan_name", ["PPL_TSWA"], []],
+      ["Chipande", "clan_name", ["PPL_MAKONDE"], []],
+      ["Momade", "non_hereditary_patronymic", ["PPL_MAKUA"], ["Mamade"]],
     ],
   },
 
@@ -1087,7 +1278,10 @@ export const COUNTRY_CANDIDATES = {
     onomasticNote:
       "La nisba domine : el-Fassi (de Fès), el-Alaoui (des Alaouites), er-Rifi (du Rif). " +
       "Elle dit une ville, une tribu ou une lignée chérifienne, et se transmet — contrairement " +
-      "au nasab (« ben X ») qui, lui, désigne le père.",
+      "au nasab (« ben X ») qui, lui, désigne le père. Certaines nisba ne disent pas un lieu " +
+      "marocain mais une origine étrangère devenue héréditaire : Sqalli (de Sicile) et " +
+      "El Andalousi (d'al-Andalus) datent des expulsions ibériques, et font du patronyme une " +
+      "trace de migration.",
     verificationLead:
       "HCP Maroc (RGPH), état civil, travaux sur les nisba et les patronymes amazighs",
     names: [
@@ -1103,6 +1297,14 @@ export const COUNTRY_CANDIDATES = {
       ["Amrani", "nisba", ["PPL_AMAZIGH_MACRO"], []],
       ["Aït Ahmed", "clan_name", ["PPL_CHLEUH"], ["Ait Ahmed"]],
       ["Rifi", "nisba", ["PPL_RIFAIN"], ["Er-Rifi"]],
+      ["Benkirane", "nisba", ["PPL_ARABES_AFRIQUE"], []],
+      ["Chraïbi", "nisba", ["PPL_ARABES_AFRIQUE"], ["Chraibi"]],
+      ["Lahlou", "nisba", ["PPL_ARABES_AFRIQUE"], []],
+      ["Doukkali", "nisba", ["PPL_ARABES_AFRIQUE"], ["El Doukkali"]],
+      ["Sqalli", "nisba", ["PPL_ARABES_AFRIQUE"], ["Squalli"]],
+      ["El Andalousi", "nisba", ["PPL_ARABES_AFRIQUE"], ["Andaloussi"]],
+      ["Khattabi", "nisba", ["PPL_RIFAIN"], ["El Khattabi"]],
+      ["Akhannouch", "clan_name", ["PPL_CHLEUH"], ["Akhenouch"]],
     ],
   },
 
@@ -1127,6 +1329,14 @@ export const COUNTRY_CANDIDATES = {
       ["Aït Ahmed", "clan_name", ["PPL_KABYLE"], ["Ait Ahmed"]],
       ["Ouyahia", "clan_name", ["PPL_KABYLE"], []],
       ["Benyoucef", "nisba", ["PPL_ARABES_AFRIQUE"], []],
+      ["Bouteflika", "nisba", ["PPL_ARABES_AFRIQUE"], []],
+      ["Ben Badis", "nisba", ["PPL_ARABES_AFRIQUE"], ["Benbadis"]],
+      ["Cherif", "nisba", ["PPL_ARABES_AFRIQUE"], ["Chérif"]],
+      ["Amara", "nisba", ["PPL_ARABES_AFRIQUE"], []],
+      ["Haddad", "nisba", ["PPL_ARABES_AFRIQUE"], []],
+      ["Zeroual", "nisba", ["PPL_CHAOUI"], ["Zéroual"]],
+      ["Aït Menguellet", "clan_name", ["PPL_KABYLE"], ["Ait Menguellet"]],
+      ["Mammeri", "clan_name", ["PPL_KABYLE"], []],
     ],
   },
 
@@ -1180,7 +1390,14 @@ export const COUNTRY_CANDIDATES = {
     dominantNameSystem: "non_hereditary_patronymic",
     onomasticNote:
       "Le nom égyptien est une chaîne de prénoms (ism + nom du père + du grand-père) ; " +
-      "le nom de famille fixe reste minoritaire hors des grandes familles et des Coptes.",
+      "le nom de famille fixe reste minoritaire hors des grandes familles et des Coptes. " +
+      "Les noms coptes (Shenouda, Guirguis, Boutros, Bishara, Tadros) et le nom d'origine " +
+      "circassienne Abaza sont queués sans peopleIds : le corpus ne porte aucune fiche de " +
+      "peuple pour les Coptes ni pour la strate ottomane, et les rattacher à PPL_ARABES_AFRIQUE " +
+      "serait un classement faux plutôt qu'un champ vide. La nisba, elle, fait tenir la " +
+      "diversité que la chaîne de prénoms masque : elle dit une ville (El Fayoumi), une origine " +
+      "amazighe de Haute-Égypte (El Hawary, des Hawwara), une oasis (El Siwi), un groupe bedja " +
+      "(Ababda, Bishari) ou une des deux populations nubiennes (El Kenzi, Fadicca).",
     verificationLead:
       "CAPMAS (recensement), état civil, travaux sur l'onomastique arabe et copte d'Égypte",
     names: [
@@ -1206,6 +1423,29 @@ export const COUNTRY_CANDIDATES = {
       ["Saleh", "non_hereditary_patronymic", ["PPL_ARABES_AFRIQUE"], []],
       ["Abdallah", "non_hereditary_patronymic", ["PPL_ARABES_AFRIQUE"], []],
       ["Nubi", "nisba", ["PPL_NUBIENS"], ["El Nubi"]],
+      [
+        "Youssef",
+        "non_hereditary_patronymic",
+        ["PPL_ARABES_AFRIQUE"],
+        ["Yusuf"],
+      ],
+      ["Abdel Aziz", "non_hereditary_patronymic", ["PPL_ARABES_AFRIQUE"], []],
+      ["El Masry", "nisba", ["PPL_ARABES_AFRIQUE"], ["Al-Masri"]],
+      ["El Sherbini", "nisba", ["PPL_ARABES_AFRIQUE"], ["Sherbini"]],
+      ["El Mansoury", "nisba", ["PPL_ARABES_AFRIQUE"], ["Mansouri"]],
+      ["El Fayoumi", "nisba", ["PPL_ARABES_AFRIQUE"], ["Fayoumi"]],
+      ["El Hawary", "nisba", ["PPL_AMAZIGH_MACRO"], ["Hawary"]],
+      ["El Siwi", "nisba", ["PPL_SIWI"], ["Siwi"]],
+      ["Ababda", "nisba", ["PPL_BEJA"], ["Ababdeh"]],
+      ["Bishari", "nisba", ["PPL_BEJA"], ["Bisharin"]],
+      ["El Kenzi", "nisba", ["PPL_NUBIENS"], ["Kenzi"]],
+      ["Fadicca", "nisba", ["PPL_NUBIENS"], ["Fadija"]],
+      ["Shenouda", "clan_name", [], []],
+      ["Guirguis", "clan_name", [], ["Girgis"]],
+      ["Boutros", "clan_name", [], ["Botros"]],
+      ["Bishara", "clan_name", [], []],
+      ["Tadros", "clan_name", [], []],
+      ["Abaza", "clan_name", [], []],
     ],
   },
 
@@ -1217,7 +1457,11 @@ export const COUNTRY_CANDIDATES = {
     onomasticNote:
       "L'anarana malgache est un composé long, souvent préfixé Ra- (honorifique) ou " +
       "Andrian- (noble), et n'est pas hérité de manière systématique : les cinq systèmes du " +
-      "modèle décrivent mal ce cas, la classification est provisoire.",
+      "modèle décrivent mal ce cas, la classification est provisoire. Le préfixe Ra- est de " +
+      "surcroît une marque des hautes terres : les noms côtiers queués ici (Zafy et Tsiranana " +
+      "chez les Tsimihety, Monja chez les Antandroy, Tsiaraso chez les Sakalava) s'en passent, " +
+      "et une liste qui ne retiendrait que des Ra- ferait passer l'anthroponymie merina pour " +
+      "celle de l'île entière.",
     verificationLead:
       "INSTAT Madagascar (RGPH), état civil, travaux sur l'anarana et les préfixes Ra-/Andrian-",
     names: [
@@ -1233,6 +1477,14 @@ export const COUNTRY_CANDIDATES = {
       ["Randriamampionona", "non_hereditary_patronymic", ["PPL_MERINA"], []],
       ["Raharimanana", "non_hereditary_patronymic", ["PPL_BETSILEO"], []],
       ["Andriamanjato", "non_hereditary_patronymic", ["PPL_MERINA"], []],
+      ["Rabearivelo", "non_hereditary_patronymic", ["PPL_MERINA"], []],
+      ["Ranaivo", "non_hereditary_patronymic", ["PPL_MERINA"], []],
+      ["Ramanantsoa", "non_hereditary_patronymic", ["PPL_MERINA"], []],
+      ["Rajaonarimampianina", "non_hereditary_patronymic", ["PPL_MERINA"], []],
+      ["Zafy", "non_hereditary_patronymic", ["PPL_TSIMIHETY"], []],
+      ["Tsiranana", "non_hereditary_patronymic", ["PPL_TSIMIHETY"], []],
+      ["Monja", "non_hereditary_patronymic", ["PPL_ANTANDROY"], []],
+      ["Tsiaraso", "non_hereditary_patronymic", ["PPL_SAKALAVA"], []],
     ],
   },
 
