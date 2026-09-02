@@ -111,15 +111,17 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
     expect(answer).toHaveTextContent(/sourc/i);
   });
 
-  // One page title, one section title, then the two fact titles. The corpus
-  // figures are values, not three headings competing with the page question.
+  // One page title, then one title per drawn fact. The corpus figures are
+  // values, not headings competing with the page question — and the band
+  // itself takes no group title, because it draws its two facts at random:
+  // any sentence written over them is true of every draw or of none.
   // @req REQ-113
-  it("keeps one h1 and gives the two facts a shared h2", async () => {
+  it("keeps one h1 and gives each drawn fact its own h2", async () => {
     await renderHome();
 
     expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
-    expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(1);
-    expect(screen.getAllByRole("heading", { level: 3 })).toHaveLength(2);
+    expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(2);
+    expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
   });
 
   // The one action names the five entity types the corpus can resolve — the

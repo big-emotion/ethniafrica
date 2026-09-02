@@ -49,6 +49,10 @@ interface HomeFactProps {
  * One home-page preview: the document first on phones, then document and text
  * side by side from the tablet breakpoint. It deliberately carries none of
  * AnecdoteReader's paging, reaction, contest or sharing controls.
+ *
+ * The headline is the band's own h2, not an h3 under a group title: the band
+ * carries no title over a random draw (brand charter §8.5), so each fact is a
+ * section of the page in its own right.
  */
 function HomeFact({ fact, imageSide, language, priority }: HomeFactProps) {
   const illustration = illustrationFor(fact.id);
@@ -80,7 +84,7 @@ function HomeFact({ fact, imageSide, language, priority }: HomeFactProps) {
       ) : null}
 
       <div className="home-dyk-text">
-        <h3 className="home-dyk-headline">{fact.headline}</h3>
+        <h2 className="home-dyk-headline">{fact.headline}</h2>
 
         <div className="home-dyk-prose">
           {fact.body.map((paragraph, position) => (
@@ -139,6 +143,11 @@ function HomeFact({ fact, imageSide, language, priority }: HomeFactProps) {
  * facts are part of the page's editorial flow: two complete image/text blocks
  * that alternate at tablet and desktop widths, while phones preserve one
  * predictable image-first reading order.
+ *
+ * The band is filed by its kicker alone. It carried « Deux noms, deux
+ * histoires » over a pair drawn at random from the bank — a sentence true of
+ * some draws and of no others, in the slot that names the section. Brand
+ * charter §8.5: a group title must be able to be wrong.
  */
 // @req REQ-113
 export function DidYouKnow({
@@ -161,7 +170,6 @@ export function DidYouKnow({
         <SectionHeading
           centred
           eyebrow="Saviez-vous que"
-          title="Deux noms, deux histoires"
           className="home-dyk-heading"
         />
 
@@ -220,9 +228,6 @@ export function DidYouKnow({
           position: relative;
           max-width: 1120px;
           margin: 0 auto;
-        }
-        .home-dyk .afh-section-heading.is-centred .afh-section-heading-title {
-          max-width: 32ch;
         }
         .home-dyk-list {
           display: grid;
