@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_SHIKONGO",
   "nameMain": "Shikongo",
@@ -11,7 +11,10 @@
     {
       "spelling": "Shikongo",
       "attestations": [
-        { "countryId": "NAM", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NAM",
+          "sourceRefs": ["forebears-shikongo"]
+        }
       ]
     }
   ],
@@ -25,15 +28,15 @@
   "peoples": [
     {
       "peopleId": "PPL_OVAMBO",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "status": "supposed",
+      "sourceRefs": ["forebears-shikongo"]
     }
   ],
   "countries": [
     {
       "countryId": "NAM",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-shikongo"]
     }
   ],
   "alliances": [],
@@ -42,38 +45,42 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
+      "sourceKey": "forebears-shikongo",
+      "title": "Shikongo Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/shikongo",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement : elle atteste Shikongo surtout en Namibie et ne fournit aucune signification. Cette distribution n'est pas employée pour prouver une origine ovambo."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Shikongo », « Ovambo », « Oshiwambo », « Namibia », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Shikongo Surname Origin, Meaning & Last Name History » n'ont livré aucune tradition attribuée, chronique ou étude linguistique établissant l'origine de Shikongo. Les rapprochements fondés uniquement sur la géographie, une biographie ou une contribution non référencée ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Shikongo », « Ovambo », « Oshiwambo », « Namibia », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Shikongo Surname Origin, Meaning & Last Name History » n'ont pas établi que la catégorie provisoire « clan_name » décrive Shikongo lui-même ; elle reste un classement de travail et non une origine démontrée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Shikongo », « Ovambo », « Oshiwambo », « Namibia », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Shikongo Surname Origin, Meaning & Last Name History » n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Shikongo à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Shikongo », « Ovambo », « Oshiwambo », « Namibia », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Shikongo Surname Origin, Meaning & Last Name History » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Shikongo."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Shikongo », « Ovambo », « Oshiwambo », « Namibia », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Shikongo Surname Origin, Meaning & Last Name History » n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé de Shikongo, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Shikongo », « Ovambo », « Oshiwambo », « Namibia », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Shikongo Surname Origin, Meaning & Last Name History » n'ont pas établi de lignée homonyme de Shikongo dotée d'une origine distincte et documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web et bibliographique combinant « Shikongo », « Ovambo », « Oshiwambo », « Namibia », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Shikongo Surname Origin, Meaning & Last Name History » n'ont établi aucune règle propre à Shikongo permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
     }
   ]
 }

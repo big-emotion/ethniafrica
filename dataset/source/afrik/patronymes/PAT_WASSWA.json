@@ -2,44 +2,56 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_WASSWA",
   "nameMain": "Wasswa",
-  "nameSystem": "totemic_clan",
+  "nameSystem": "non_hereditary_patronymic",
   "spellings": [
     {
       "spelling": "Wasswa",
       "attestations": [
-        { "countryId": "UGA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["wild-wood-2020-waswa"]
+        }
       ]
     },
     {
       "spelling": "Waswa",
       "attestations": [
-        { "countryId": "UGA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["wild-wood-2020-waswa"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le chapitre consacré à Apolo Kivebulaya indique qu'il naquit sous le nom Waswa, nom de l'aîné de jumeaux garçons en Buganda. Cette règle de rang de naissance établit un nom personnel non héréditaire ; elle ne suffit pas à expliquer tout usage moderne de Wasswa comme patronyme.",
+        "claimStatus": "established",
+        "sourceRefs": ["wild-wood-2020-waswa"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_BAGANDA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["wild-wood-2020-waswa"]
     }
   ],
   "countries": [
     {
       "countryId": "UGA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["wild-wood-2020-waswa"]
     }
   ],
   "alliances": [],
@@ -48,38 +60,30 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "wild-wood-2020-waswa",
+      "title": "Waswa, a commoner in the Kingdom of Buganda (c.1865–c.1884)",
+      "url": "https://www.cambridge.org/core/books/abs/mission-of-apolo-kivebulaya/waswa-a-commoner-in-the-kingdom-of-buganda-c1865c1884/3BC8F0B346AAFFCD6C1EF624C8867C12",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Chapitre d'Emma Wild-Wood publié par Cambridge University Press, résumé consulté directement. Il établit Waswa comme le nom de l'aîné de jumeaux garçons en Buganda au XIXe siècle."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Wasswa », « Waswa », « Baganda », « Buganda », « twin name », « surname », « etymology » et « transmission », ainsi que la consultation directe de « Waswa, a commoner in the Kingdom of Buganda (c.1865–c.1884) » n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Wasswa à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Wasswa », « Waswa », « Baganda », « Buganda », « twin name », « surname », « etymology » et « transmission », ainsi que la consultation directe de « Waswa, a commoner in the Kingdom of Buganda (c.1865–c.1884) » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Wasswa."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web et bibliographique combinant « Wasswa », « Waswa », « Baganda », « Buganda », « twin name », « surname », « etymology » et « transmission », ainsi que la consultation directe de « Waswa, a commoner in the Kingdom of Buganda (c.1865–c.1884) » n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé de Wasswa, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le clan totémique ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+      "reason": "la recherche web et bibliographique combinant « Wasswa », « Waswa », « Baganda », « Buganda », « twin name », « surname », « etymology » et « transmission », ainsi que la consultation directe de « Waswa, a commoner in the Kingdom of Buganda (c.1865–c.1884) » n'ont pas établi de lignée homonyme de Wasswa dotée d'une origine distincte et documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
     }
   ]
 }
