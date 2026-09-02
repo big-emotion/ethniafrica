@@ -21,7 +21,15 @@ import {
 import type { Source, ListSourcesQuery } from "@/api/v2/schemas/sources";
 import { isSourceTier } from "@/types/sources";
 
-function mapRowToSource(row: Record<string, unknown>): Source {
+/**
+ * The single place that knows the `sources` column layout.
+ *
+ * Exported for the directory facet, which builds its own narrowed query but
+ * must not grow a second opinion about what a row means — that divergence is
+ * how `lastVerifiedAt` read one column here and another one there.
+ */
+// @req REQ-092
+export function mapRowToSource(row: Record<string, unknown>): Source {
   const rawSourceKind = row.source_kind as string | null | undefined;
   const rawIdentifiers = row.identifiers;
   const url = typeof row.url === "string" ? row.url : null;
