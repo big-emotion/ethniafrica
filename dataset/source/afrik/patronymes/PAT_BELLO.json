@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. La double attestation haoussa et peule est documentée sans étendre l'origine proposée au-delà des sources consacrées à Bello."
   },
   "id": "PAT_BELLO",
   "nameMain": "Bello",
@@ -13,11 +13,7 @@
       "attestations": [
         {
           "countryId": "NGA",
-          "sourceRefs": ["ryan-1981-hausa-nomenclature"]
-        },
-        {
-          "countryId": "CMR",
-          "sourceRefs": ["afrik-candidate-queue"]
+          "sourceRefs": ["ryan-1981-bello", "nigeria-defence-bello"]
         }
       ]
     }
@@ -29,9 +25,14 @@
     "writtenChronicles": [],
     "linguisticReconstructions": [
       {
-        "claim": "Dans son tableau des noms masculins islamiques haoussa, Ryan classe Bello comme un nom d’origine peule dérivé de l’expression « aide de l’islam » ; l’étude atteste cet usage dans le nord du Nigeria.",
+        "claim": "Ryan atteste Bello dans la nomenclature masculine haoussa, le décrit comme un emprunt au peul et lui attribue le sens « auxiliaire de l'islam ». Une source communautaire consacrée au nom confirme les usages peul et haoussa mais ne donne « auxiliaire » que comme étymologie possible ; la reconstruction est donc conservée comme proposition.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["ryan-1981-bello", "btn-bello"]
+      },
+      {
+        "claim": "Pour l'association haoussa de cette fiche, Chamo décrit un système où le nom du père sert de second élément sans devenir un nom de famille héréditaire stable.",
         "claimStatus": "established",
-        "sourceRefs": ["ryan-1981-hausa-nomenclature"]
+        "sourceRefs": ["chamo-2018-bello"]
       }
     ]
   },
@@ -39,24 +40,19 @@
     {
       "peopleId": "PPL_HAUSA",
       "status": "attested",
-      "sourceRefs": ["ryan-1981-hausa-nomenclature"]
+      "sourceRefs": ["ryan-1981-bello", "btn-bello"]
     },
     {
       "peopleId": "PPL_FULA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue", "ryan-1981-hausa-nomenclature"]
+      "sourceRefs": ["ryan-1981-bello", "btn-bello"]
     }
   ],
   "countries": [
     {
       "countryId": "NGA",
       "status": "attested",
-      "sourceRefs": ["ryan-1981-hausa-nomenclature"]
-    },
-    {
-      "countryId": "CMR",
-      "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["nigeria-defence-bello"]
     }
   ],
   "alliances": [],
@@ -65,38 +61,66 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Source de vague 1 conservée uniquement pour la présence camerounaise, non confirmée par l’étude nigériane. L’usage haoussa au Nigeria et l’indication d’une origine peule du nom sont désormais documentés par Ryan."
-    },
-    {
-      "sourceKey": "ryan-1981-hausa-nomenclature",
+      "sourceKey": "ryan-1981-bello",
       "title": "An Introduction to Hausa Personal Nomenclature",
       "url": "https://ans-names.pitt.edu/ans/article/download/942/941/1886",
       "tier": "referenced",
       "source_kind": "academic",
-      "notes": "Pauline M. Ryan, Names: A Journal of Onomastics 29/2, 1981, p. 139-164, DOI 10.1179/nam.1981.29.2.139. L’étude porte sur les pratiques de dénomination haoussa du nord du Nigeria et distingue les noms publics islamiques attribués individuellement lors de la cérémonie du septième jour. Son tableau I cite Bello comme nom masculin, le qualifie de peul et donne le sens « aide de l’islam »."
+      "notes": "Pauline M. Ryan, Names 29(2), 1981, pp. 139-164. Le tableau I du PDF intégral atteste exactement Bello dans la nomenclature haoussa, le donne comme emprunt peul et propose la glose « helper of Islam »."
+    },
+    {
+      "sourceKey": "chamo-2018-bello",
+      "title": "Language and Identity in Africa: The Use of Place Names as Part of a Person’s Name in Hausa",
+      "url": "https://auadamu.com/phocadownload/Books/%5B2018%5D%20Festschrift%20in%20Honour%20of%20Abdalla%20Uba%20Adamu%20-%20Media%20-Knowledge%20Transfer%20and%20African%20Identity.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Isa Yusuf Chamo, 2018, pp. 251-252 du chapitre consulté dans le volume intégral. Établit le fonctionnement non héréditaire du patronyme haoussa ; la source ne décrit pas la transmission du nom Bello dans les communautés peules."
+    },
+    {
+      "sourceKey": "btn-bello",
+      "title": "Bello — Behind the Name",
+      "url": "https://www.behindthename.com/name/bello",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page communautaire consultée directement. Elle atteste l'usage du nom en peul et en haoussa et donne le peul ballo, « auxiliaire », comme origine seulement possible. Cette réserve empêche de transformer la proposition en fait établi."
+    },
+    {
+      "sourceKey": "nigeria-defence-bello",
+      "title": "Honourable Minister of State for Defence — Federal Ministry of Defence, Nigeria",
+      "url": "https://defence.gov.ng/minister-of-state.html",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Page officielle consultée directement le 2 septembre 2026. Elle atteste Bello au Nigeria dans le nom de Bello Mohammed Matawalle ; elle ne porte aucune affirmation ethnique ou étymologique."
     }
   ],
   "gaps": [
     {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Bello Hausa Fulani oral tradition griot lineage », Ryan (1981) et Chamo (2018) n'ont livré ni griot nommé ni transcription attribuable à Bello."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Bello Hausa Fulani Arabic chronicle manuscript » et « Bello Sokoto chronicle name origin » n'ont livré aucune chronique établissant l'étymologie du nom, distinctement des personnes qui le portent."
+    },
+    {
+      "fieldPath": "countries.CMR",
+      "reason": "La recherche ciblée « Bello Cameroun site:gouv.cm » et les sources académiques consultées n'ont pas confirmé l'attestation camerounaise héritée de la file d'attente ; elle a donc été retirée."
+    },
+    {
       "fieldPath": "alliances",
-      "reason": "L’article de Ryan a été recherché pour une alliance ou une paire patronymique associée à Bello ; il traite de choix de noms individuels et n’en fournit aucune."
+      "reason": "Les recherches « Bello Hausa Fulani joking relationship », « Bello sanankuya », « Bello kal » et « Bello dandiraaɓe » n'ont établi aucune paire entre deux fiches PAT_* existantes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Le sens religieux indiqué par Ryan ne constitue ni un métier héréditaire ni une caste ; aucune fonction sociale propre à Bello n’est décrite."
+      "reason": "Ryan (1981), Chamo (2018) et la recherche « Bello Hausa Fulani hereditary occupation caste » n'ont associé ce nom personnel à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Ryan documente une catégorie de nom et non des porteurs biographiques ; aucun porteur décédé rattaché à une lignée Bello n’a été trouvé."
+      "reason": "La page officielle nigériane et les recherches « Bello Nigeria deceased bearer biography » n'ont fourni dans cette passe aucun porteur décédé dont la notice ajoute une information anthroponymique vérifiable ; aucun vivant n'a été enregistré."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "La recherche de Bello dans l’étude de Ryan n’a pas distingué plusieurs lignées ou étymologies homonymes."
+      "reason": "Les recherches « Bello homonym etymology Hausa Fulani Italian » ont trouvé des formes graphiquement identiques hors du contexte africain, mais aucune source consultée n'établit qu'elles fonctionnent comme patronymes africains de cette fiche ; aucun rapprochement n'a été enregistré."
     }
   ]
 }

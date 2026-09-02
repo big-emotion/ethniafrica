@@ -262,7 +262,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "patronyme-non-hereditary",
     label: "systèmes documentés où le nom ne se transmet pas",
-    value: 12,
+    value: 18,
     method:
       "fiches de nom recherchées dont transmissionMode vaut non_hereditary, au " +
       "même périmètre que le compte ci-dessus",
