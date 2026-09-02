@@ -200,8 +200,23 @@ export const translations = {
     },
     names: {
       pageTitle: "Appellations",
+      // The deck says what the page is; `purpose` below says why it exists.
+      // They used to be one sentence printed twice — once in the head band and
+      // again as the first paragraph under it — which read as a stutter and
+      // still left unsaid what a reader comes here to do.
       pageSubtitle:
-        "Comment un peuple se nomme-t-il, et comment l'a-t-on nommé ? L'atlas rassemble les endonymes, les exonymes et les appellations imposées attachés à chaque peuple d'Afrique.",
+        "Les noms sous lesquels chaque peuple d'Afrique est désigné : ceux qu'il se donne, et ceux qu'on lui a donnés.",
+      /**
+       * Why the page exists, in the reader's terms.
+       *
+       * Naming a people is contested, and the corpus takes no side: it records
+       * every attested form and says where each came from. Without this said
+       * plainly, a reader meets three thousand forms and no reason for them —
+       * and the page reads as a duplicate of the people fiches, which name one
+       * autonym each and cannot be entered from a name heard elsewhere.
+       */
+      purpose:
+        "Un peuple porte rarement un seul nom. Il en a un qu'il emploie lui-même, d'autres que ses voisins lui donnent, d'autres encore qu'une administration coloniale a fixés par écrit — et certains sont péjoratifs. Cette page les recense tous, pour qu'un nom entendu quelque part mène au peuple qu'il désigne, sans décider lequel est le bon.",
       // The note used to say the genealogy of personal names was "not covered
       // yet". It is: the patronyme fiches exist and now have their own route
       // (DEC-038), so the note points there instead of closing the door.
@@ -212,6 +227,11 @@ export const translations = {
         "Rechercher un nom (endonyme, exonyme, graphie historique...)",
       searchSubmit: "Rechercher",
       filtersLabel: "Filtrer par type de nom",
+      // The four chips are the page's own vocabulary and were glossed nowhere
+      // a reader passes through — « endonyme » and « exonyme » least of all,
+      // and they are the two that carry the page's whole argument.
+      filtersLegend:
+        "Un endonyme est le nom qu'un peuple se donne ; un exonyme, celui que d'autres lui donnent ; une graphie historique, une forme fixée par écrit à une époque ; un nom imposé, une appellation attribuée de l'extérieur.",
       filters: {
         all: "tous",
         endonym: "endonyme",
