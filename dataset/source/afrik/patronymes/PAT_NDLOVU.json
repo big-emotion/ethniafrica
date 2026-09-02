@@ -36,6 +36,11 @@
         "sourceRefs": ["nomina-africana-nguni-naming"]
       },
       {
+        "claim": "Dans le Matabeleland du Sud, l'isibongo ne sert pas seulement à nommer un clan : il fonctionne comme opérateur de classement, articulant nom de clan, origine revendiquée et « caste », et découpant de l'intérieur la catégorie ndébélé plutôt que de la refléter. Un même isibongo peut donc y recouvrir des origines revendiquées distinctes.",
+        "claimStatus": "established",
+        "sourceRefs": ["lindgren-2004-ndebele-castes"]
+      },
+      {
         "claim": "Ndlovu signifie « éléphant » en langues nguni ; le clan revendique une descendance du troupeau d'éléphants du territoire où il s'est établi.",
         "claimStatus": "claimed",
         "sourceRefs": ["iafrika-izithakazelo-ndlovu"]
@@ -122,6 +127,14 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Bryant, Alfred T., Longmans Green, 1929. Ethnographie missionnaire coloniale, à lire comme telle : Bryant écrit depuis la mission catholique du Natal et sa chronologie clanique est reconstruite à partir de généalogies orales recueillies au tournant du siècle. C'est néanmoins la seule source imprimée qui donne, clan par clan, une origine nommée pour les clans nguni orientaux. Consulté sur le texte intégral, pas sur un index. Son orthographe est celle de 1929 (Mtetwa, Ntungwa) ; les fiches conservent la graphie du corpus et citent la sienne comme variante."
+    },
+    {
+      "sourceKey": "lindgren-2004-ndebele-castes",
+      "title": "The Internal Dynamics of Ethnicity: Clan Names, Origins and Castes in Southern Zimbabwe",
+      "url": "https://doi.org/10.3366/afr.2004.74.2.173",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Lindgren, Björn, Africa (Journal of the International African Institute) 74(2), 2004, p. 173-193. Réserve à porter avec la citation : le texte intégral est sous péage chez Cambridge Core et n'a pas pu être lu lors de la passe ; seuls la notice et le résumé ont été vérifiés. Ce qui est cité ici s'y limite — l'isibongo est en Matabeleland du Sud un opérateur de classement qui articule nom de clan, origine revendiquée et « caste », et qui découpe la catégorie ndébélé en parties. Aucune glose de nom particulier ne lui est empruntée."
     }
   ],
   "gaps": [

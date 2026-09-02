@@ -377,6 +377,25 @@ const NGUNI_ISIBONGO = {
   designatedSocialUnit: "clan",
 };
 
+/**
+ * Four fiches attach an Nguni clan name to PPL_NDEBELE_NORD, the Ndebele of
+ * Zimbabwe, while the chronicle backing them — Bryant — documents the clans of
+ * Zululand and Natal. The two are not the same object, and nothing in the
+ * fiches said so. This claim is what a source actually establishes about the
+ * Matabeleland end, and it is deliberately about the system rather than about
+ * any one name: Lindgren glosses no individual isibongo, and neither does this.
+ */
+const MATABELELAND_ISIBONGO = {
+  claim:
+    "Dans le Matabeleland du Sud, l'isibongo ne sert pas seulement à nommer " +
+    "un clan : il fonctionne comme opérateur de classement, articulant nom de " +
+    "clan, origine revendiquée et « caste », et découpant de l'intérieur la " +
+    "catégorie ndébélé plutôt que de la refléter. Un même isibongo peut donc " +
+    "y recouvrir des origines revendiquées distinctes.",
+  claimStatus: "established",
+  sourceRefs: ["lindgren-2004-ndebele-castes"],
+};
+
 const NGUNI_RECONSTRUCTION = {
   claim:
     "Chez les Nguni, l'isibongo (patronyme) et les izithakazelo (louanges de " +
@@ -887,10 +906,22 @@ export const RESEARCH = {
       {
         spelling: "Diallo",
         attestations: [
-          { countryId: "GIN", sourceRefs: ["corpus-ppl-fula-foret-organisation"] },
-          { countryId: "CIV", sourceRefs: ["corpus-ppl-fula-foret-organisation"] },
-          { countryId: "CMR", sourceRefs: ["corpus-ppl-fula-foret-organisation"] },
-          { countryId: "GAB", sourceRefs: ["corpus-ppl-fula-foret-organisation"] },
+          {
+            countryId: "GIN",
+            sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+          },
+          {
+            countryId: "CIV",
+            sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+          },
+          {
+            countryId: "CMR",
+            sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+          },
+          {
+            countryId: "GAB",
+            sourceRefs: ["corpus-ppl-fula-foret-organisation"],
+          },
         ],
       },
       {
@@ -930,7 +961,8 @@ export const RESEARCH = {
     bearers: [
       {
         status: "deceased",
-        displayName: "Ayuba Suleiman Diallo (Hyuba boon Salumena boon Hibrahema)",
+        displayName:
+          "Ayuba Suleiman Diallo (Hyuba boon Salumena boon Hibrahema)",
         sourceRefs: ["bluett-1734-job-jallo"],
       },
     ],
@@ -1081,6 +1113,7 @@ export const RESEARCH = {
       ],
       linguisticReconstructions: [
         NGUNI_RECONSTRUCTION,
+        MATABELELAND_ISIBONGO,
         {
           claim:
             "Ndlovu signifie « éléphant » en langues nguni ; le clan revendique " +
@@ -1121,6 +1154,7 @@ export const RESEARCH = {
       "iafrika-izithakazelo-ndlovu",
       "ngonipeople-izithakazelo",
       "bryant-1929-olden-times",
+      "lindgren-2004-ndebele-castes",
     ],
     gapReasons: {
       alliances: NGUNI_GAPS.alliances,
@@ -1174,12 +1208,13 @@ export const RESEARCH = {
           sourceRefs: ["bryant-1929-olden-times"],
         },
       ],
-      linguisticReconstructions: [NGUNI_RECONSTRUCTION],
+      linguisticReconstructions: [NGUNI_RECONSTRUCTION, MATABELELAND_ISIBONGO],
     },
     sourceKeys: [
       "nomina-africana-nguni-naming",
       "ngonipeople-izithakazelo",
       "bryant-1929-olden-times",
+      "lindgren-2004-ndebele-castes",
     ],
     gapReasons: {
       alliances: NGUNI_GAPS.alliances,
@@ -1235,6 +1270,7 @@ export const RESEARCH = {
       ],
       linguisticReconstructions: [
         NGUNI_RECONSTRUCTION,
+        MATABELELAND_ISIBONGO,
         {
           claim:
             "L'explication courante rattache Nxumalo à l'umNxuma, entonnoir de " +
@@ -1251,6 +1287,7 @@ export const RESEARCH = {
       "nomina-africana-nguni-naming",
       "ngonipeople-izithakazelo",
       "bryant-1929-olden-times",
+      "lindgren-2004-ndebele-castes",
     ],
     gapReasons: {
       alliances: NGUNI_GAPS.alliances,
@@ -1292,26 +1329,40 @@ export const RESEARCH = {
     origin: {
       oralTraditions: [],
       writtenChronicles: [],
-      linguisticReconstructions: [NGUNI_RECONSTRUCTION],
+      linguisticReconstructions: [NGUNI_RECONSTRUCTION, MATABELELAND_ISIBONGO],
     },
-    sourceKeys: ["nomina-africana-nguni-naming"],
+    sourceKeys: [
+      "nomina-africana-nguni-naming",
+      "lindgren-2004-ndebele-castes",
+    ],
     gapReasons: {
       alliances: NGUNI_GAPS.alliances,
       casteOrSocialFunction:
-        "Aucune fonction héréditaire attestée au niveau du clan. Sibanda est " +
-        "aujourd'hui surtout porté au Zimbabwe, où il est donné aussi bien dans " +
-        "des familles ndébélé que sotho, ce qui écarte l'hypothèse d'un corps de " +
-        "spécialistes propre à un clan.",
+        "Le champ demande une charge héréditaire attachée au nom, et le " +
+        "Matabeleland du Sud en propose une autre lecture qu'aucune source " +
+        "consultée ne permet de trancher pour Sibanda en particulier. " +
+        "Lindgren établit que l'isibongo y indexe une « caste » — le clivage " +
+        "entre venus du Zululand, agrégés en route et incorporés sur place — " +
+        "mais c'est un rang dans l'ordre de la conquête, non un métier " +
+        "héréditaire, et son article ne glose aucun nom en particulier. Le " +
+        "rang de Sibanda dans ce classement n'a pas pu être établi : le texte " +
+        "intégral est sous péage et n'a pas été lu.",
       bearers:
-        "Le texte intégral de Bryant, qui est la source de référence pour les " +
-        "clans nguni orientaux, ne contient aucune occurrence de Sibanda : le " +
-        "nom relève de l'aire ndébélé du Zimbabwe, hors du champ géographique " +
-        "que Bryant couvre. Aucun porteur décédé n'a donc pu être établi.",
+        "Le texte intégral de Bryant, source de référence pour les clans nguni " +
+        "orientaux et déjà dépouillée pour les six autres fiches nguni de " +
+        "cette vague, ne contient pas une seule occurrence de Sibanda. Ce " +
+        "silence est un résultat et non un manque : le nom relève de l'aire " +
+        "ndébélé du Zimbabwe, hors du champ géographique de Bryant, et il " +
+        "confirme que les deux aires ne se recouvrent pas. Aucune chronique " +
+        "équivalente pour le Matabeleland n'a été trouvée en accès libre.",
       homonyms:
-        "L'absence de Sibanda chez Bryant est elle-même le résultat de la " +
-        "recherche : faute de chronique clanique le suivant lignée par lignée, " +
-        "les origines multiples que suggèrent les répertoires communautaires ne " +
-        "peuvent être ni distinguées ni écartées.",
+        "Les répertoires communautaires font remonter Sibanda tantôt à une " +
+        "lignée nguni, tantôt au Sebata des BaTau sotho-tswana dont il serait " +
+        "l'adaptation nguni. Aucune source publiée accessible ne tranche : " +
+        "Bryant ne connaît pas le nom, et Lindgren, qui traite précisément de " +
+        "la pluralité d'origines revendiquées sous un même isibongo au " +
+        "Matabeleland, n'a pu être lu au-delà de son résumé. Les deux " +
+        "filiations sont donc laissées ouvertes plutôt qu'arbitrées.",
     },
   },
 
