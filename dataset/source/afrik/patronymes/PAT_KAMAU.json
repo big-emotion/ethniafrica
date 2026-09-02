@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
   },
   "id": "PAT_KAMAU",
   "nameMain": "Kamau",
@@ -11,7 +11,10 @@
     {
       "spelling": "Kamau",
       "attestations": [
-        { "countryId": "KEN", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "KEN",
+          "sourceRefs": ["familysearch-kamau"]
+        }
       ]
     }
   ],
@@ -19,21 +22,27 @@
   "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le Dictionary of American Family Names, reproduit par FamilySearch, classe Kamau comme nom kikuyu du Kenya dont le sens demeure incertain. Il le rapproche du nom d'un ensemble régimentaire traditionnel du XVIIIe siècle et avance, avec prudence, que son emploi comme nom de famille occidental a pu être popularisé par le prénom de Jomo Kenyatta. Cette proposition historique n'est pas une étymologie démontrée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["familysearch-kamau"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_KIKUYU",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["familysearch-kamau"]
     }
   ],
   "countries": [
     {
       "countryId": "KEN",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["familysearch-kamau"]
     }
   ],
   "alliances": [],
@@ -42,34 +51,30 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+      "sourceKey": "familysearch-kamau",
+      "title": "Kamau Name Meaning and Kamau Family History",
+      "url": "https://www.familysearch.org/en/surname?surname=kamau",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Entrée FamilySearch consultée intégralement ; le texte est attribué au Dictionary of American Family Names de Patrick Hanks (éditions 2003 et 2006). Il dit explicitement que le sens est incertain et formule au conditionnel le passage du nom personnel au patronyme."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kamau », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'entrée « Kamau Name Meaning and Kamau Family History », qui reproduit le Dictionary of American Family Names, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kamau », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'entrée « Kamau Name Meaning and Kamau Family History », qui reproduit le Dictionary of American Family Names, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kamau », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'entrée « Kamau Name Meaning and Kamau Family History », qui reproduit le Dictionary of American Family Names, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+      "reason": "la recherche web combinant « Kamau », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'entrée « Kamau Name Meaning and Kamau Family History », qui reproduit le Dictionary of American Family Names, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
     }
   ]
 }
