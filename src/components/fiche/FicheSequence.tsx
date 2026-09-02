@@ -45,11 +45,14 @@ import { cn } from "@/lib/utils";
  * in fiche-vivante.test.tsx) unable to tell a fiche's own root from
  * another entity's, since both would match the identical class.
  *
- * `name` (REQ-133) reuses `ocre` rather than allocating a fourth accent: a
- * patronyme is a naming fact about a people, the closest kinship of the three
- * existing scopes, and the atlas charter's accent table is closed at three
- * cartographic entities — a name fiche carries no globe of its own to justify
- * a new row in it.
+ * `name` (REQ-133) reads under `ocre` rather than allocating a fourth accent:
+ * a patronyme is a naming fact about a people, the closest kinship of the
+ * three existing scopes, and the atlas charter's accent table is closed at
+ * three cartographic entities — a name fiche carries no globe of its own to
+ * justify a new row in it. It gets its own class, `afh-accent-name`, for the
+ * same reason `language` does: it was painted through `afh-accent-ocre`
+ * itself, so the "no foreign accent" check could not tell a name fiche's own
+ * scope from a people fiche's leaking into it.
  */
 // @req REQ-091
 export const ACCENT_CLASS_BY_ENTITY: Record<FicheEntityType, string> = {
@@ -57,7 +60,7 @@ export const ACCENT_CLASS_BY_ENTITY: Record<FicheEntityType, string> = {
   country: "afh-accent-teal",
   "language-family": "afh-accent-perv",
   language: "afh-accent-language",
-  name: "afh-accent-ocre",
+  name: "afh-accent-name",
 };
 
 export interface FicheSequenceProps {

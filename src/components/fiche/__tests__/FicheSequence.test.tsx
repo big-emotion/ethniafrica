@@ -10,10 +10,15 @@ import type { FicheEntityType } from "@/types/fiche";
 
 const RECORD = <p>Dossier AFRIK complet</p>;
 
+// All five classes, not the original three. Language and name were covered
+// only incidentally by the `Object.values(...)` loop below, so nothing
+// asserted that their own scopes behaved like the others'.
 const ENTITY_TYPES: readonly FicheEntityType[] = [
   "people",
   "country",
   "language-family",
+  "language",
+  "name",
 ];
 
 function sectionIds(container: HTMLElement): string[] {
@@ -28,6 +33,8 @@ describe("FicheSequence — accent scope", () => {
     ["people", "afh-accent-ocre"],
     ["country", "afh-accent-teal"],
     ["language-family", "afh-accent-perv"],
+    ["language", "afh-accent-language"],
+    ["name", "afh-accent-name"],
   ] as const)(
     "scopes the %s fiche to its own accent class",
     (entityType, expectedClass) => {

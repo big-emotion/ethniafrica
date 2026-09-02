@@ -101,11 +101,25 @@ was rendered under.
 
 **Three surfaces carry three different mappings, all deliberate:**
 
-| Surface      | People | Country | Family   | Source of truth                        |
-| ------------ | ------ | ------- | -------- | -------------------------------------- |
-| Home modules | teal   | ocre    | terre    | `src/lib/hubs/moduleRegistry.ts`       |
-| Facet        | terre  | ocre    | teal     | `lib/hubs/directoryAccent.ts`          |
-| **Fiche**    | ocre   | teal    | **perv** | `FicheSequence.ACCENT_CLASS_BY_ENTITY` |
+| Surface      | People | Country | Family   | Language | Name | Source of truth                        |
+| ------------ | ------ | ------- | -------- | -------- | ---- | -------------------------------------- |
+| Home modules | teal   | ocre    | terre    | —        | —    | `src/lib/hubs/moduleRegistry.ts`       |
+| Facet        | terre  | ocre    | teal     | —        | —    | `lib/hubs/directoryAccent.ts`          |
+| **Fiche**    | ocre   | teal    | **perv** | perv     | ocre | `FicheSequence.ACCENT_CLASS_BY_ENTITY` |
+
+The last two columns were missing from this table for as long as the two
+classes had fiches, which is part of how they drifted out of the template
+without anyone noticing. Neither opens a fifth hue: the four categorical
+accents are CVD-validated as a set, and terre is off-limits for a fiche scope
+for the reason below. A **language** reads under its family's pervenche — it
+sits directly beneath a family in the hierarchy — and a **name** under ocre,
+because a patronyme is a naming fact about a people.
+
+Both still get their own selector, `.afh-accent-language` and
+`.afh-accent-name`, rather than being literal aliases of `.afh-accent-perv`
+and `.afh-accent-ocre`. Two entity types resolving to one selector make "no
+foreign accent on this page" unable to tell a fiche's own root from another
+entity's, since both match the identical class.
 
 The Home-modules row is **positional, not an entity mapping**: `accentForModule`
 walks `ACCENT_CYCLE` by declaration index, so a module's hue is where it sits in

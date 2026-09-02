@@ -454,6 +454,20 @@
   --accent-ink: var(--afh-cat-perv-ink);
 }
 
+/* The name fiche (REQ-133) reads under ocre, like the people fiche: a
+   patronyme is a naming fact about a people, and the charter's accent table
+   is closed at the three cartographic entities. It gets its own selector for
+   the same reason the language fiche does — the name route was painted
+   through `.afh-accent-ocre` itself, so "no foreign accent on this page"
+   could not tell a name fiche's own scope from a people fiche's leaking
+   into it. Aliasing rather than adding a hue keeps the categorical set at
+   four. */
+.afh-accent-name {
+  --accent: var(--afh-cat-ocre);
+  --accent-tint: var(--afh-cat-ocre-tint);
+  --accent-ink: var(--afh-cat-ocre-ink);
+}
+
 /* A person search result (REQ-126) deliberately does NOT take a fifth
    --afh-cat-* hue. The four categorical accents (brand charter §5.2) name
    the corpus's peer entity kinds — pays/peuples/familles/langues — and a
@@ -511,4 +525,11 @@
 .afh-accent-language.dark,
 .afh-accent-language.afh-on-night {
   --accent-ink: var(--afh-cat-perv-ink-night);
+}
+
+.dark .afh-accent-name,
+.afh-on-night .afh-accent-name,
+.afh-accent-name.dark,
+.afh-accent-name.afh-on-night {
+  --accent-ink: var(--afh-cat-ocre-ink-night);
 }
