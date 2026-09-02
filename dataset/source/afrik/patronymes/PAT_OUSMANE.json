@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
   },
   "id": "PAT_OUSMANE",
   "nameMain": "Ousmane",
@@ -11,13 +11,37 @@
     {
       "spelling": "Ousmane",
       "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NER",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     },
     {
       "spelling": "Usman",
       "attestations": [
-        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NER",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    },
+    {
+      "spelling": "Ousman",
+      "attestations": [
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["gabana-bello-2025-cameroon-anthroponyms"]
+        }
+      ]
+    },
+    {
+      "spelling": "Usuman",
+      "attestations": [
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["ryan-1981-hausa-nomenclature"]
+        }
       ]
     }
   ],
@@ -25,7 +49,16 @@
   "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Ryan documente Usuman comme nom public islamique renvoyant au troisième calife dans l’onomastique haoussa du nord du Nigeria ; Gabana et Bello attestent séparément Ousman parmi les noms de califes devenus patronymes au Nord-Cameroun.",
+        "claimStatus": "established",
+        "sourceRefs": [
+          "ryan-1981-hausa-nomenclature",
+          "gabana-bello-2025-cameroon-anthroponyms"
+        ]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
@@ -33,6 +66,11 @@
       "peopleId": "PPL_FULA",
       "status": "attested",
       "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "peopleId": "PPL_HAUSA",
+      "status": "attested",
+      "sourceRefs": ["ryan-1981-hausa-nomenclature"]
     }
   ],
   "countries": [
@@ -40,6 +78,16 @@
       "countryId": "NER",
       "status": "attested",
       "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "CMR",
+      "status": "attested",
+      "sourceRefs": ["gabana-bello-2025-cameroon-anthroponyms"]
+    },
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["ryan-1981-hausa-nomenclature"]
     }
   ],
   "alliances": [],
@@ -53,29 +101,41 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "Source de vague 1 conservée pour Ousmane et Usman au Niger ainsi que pour l’association précise au peuple fula. Ousman au Cameroun et Usuman dans le contexte haoussa nigérian sont désormais attestés par des sources dédiées."
+    },
+    {
+      "sourceKey": "ryan-1981-hausa-nomenclature",
+      "title": "An Introduction to Hausa Personal Nomenclature",
+      "url": "https://ans-names.pitt.edu/ans/article/download/942/941/1886",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Pauline M. Ryan, Names: A Journal of Onomastics 29/2, 1981, p. 139-164, DOI 10.1179/nam.1981.29.2.139. L’étude porte sur les pratiques de dénomination haoussa du nord du Nigeria et distingue les noms publics islamiques attribués individuellement lors de la cérémonie du septième jour. Son tableau I cite Usuman et le rattache au troisième calife."
+    },
+    {
+      "sourceKey": "gabana-bello-2025-cameroon-anthroponyms",
+      "title": "Anthroponymes et dynamique identitaire dans les sociétés camerounaises : des noms locaux aux appellations importées (XVIIIe–XXe siècles)",
+      "url": "https://www.researchgate.net/publication/393426204_Anthroponymes_et_dynamique_identitaire_dans_les_societes_camerounaises_Des_noms_locaux_aux_appellations_importees_XVllle-XXe_siecles",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jean Francis Gabana et Assana Bello, contribution publiée en 2025 dans Le patrimoine culturel des populations des sites défensifs du pourtour du lac Tchad à l’épreuve de la modernité, p. 301-321. Les p. 312-314 décrivent l’adoption de noms de califes comme patronymes et l’adaptation phonologique de noms arabo-islamiques au Nord-Cameroun. Le passage nomme Ousman parmi les noms de califes adoptés comme patronymes."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les sections consacrées à Usuman chez Ryan et à Ousman chez Gabana et Bello ont été recherchées pour une alliance à plaisanterie ou une paire patronymique ; elles n’en documentent aucune."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les deux études décrivent un nom islamique individuel puis son emploi comme patronyme, sans lui attribuer de caste, métier héréditaire ou fonction sociale propre."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les sources établissent le référent religieux et l’histoire d’adoption du nom, mais aucun porteur africain décédé dont le rattachement familial soit vérifié."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les graphies Ousmane, Usman, Ousman et Usuman ont été comparées dans les deux études ; aucune lignée homonyme d’origine distincte n’y est établie."
     }
   ]
 }
