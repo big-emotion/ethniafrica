@@ -15,14 +15,22 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": [
+      "Bake",
+      "Dabuso",
+      "Fadashi",
+      "Gobato",
+      "Mayu",
+      "Shuru",
+      "Undu"
+    ],
     "vitalityStatus": null,
     "sources": [
       {
         "title": "Glottolog 5.3 - Berta",
         "url": "https://glottolog.org/resource/languoid/id/bert1248",
         "tier": "official",
-        "notes": "Glottolog direct official languoid record; source of the name and glottocode."
+        "notes": "Glottolog direct official languoid record; source of the name and glottocode. Les dialectes listés sont les sous-languoids que Glottolog rattache à bert1248, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }

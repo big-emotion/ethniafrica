@@ -15,14 +15,14 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": ["Barlavento", "Kabuverdianu Sotavento", "Sotavento"],
     "vitalityStatus": null,
     "sources": [
       {
         "title": "Glottolog 5.3 - Kabuverdianu",
         "url": "https://glottolog.org/resource/languoid/id/kabu1256",
         "tier": "official",
-        "notes": "Glottolog direct official languoid record; source of the name and glottocode."
+        "notes": "Glottolog direct official languoid record; source of the name and glottocode. Les dialectes listés sont les sous-languoids que Glottolog rattache à kabu1256, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }

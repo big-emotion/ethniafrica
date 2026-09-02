@@ -15,14 +15,47 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": [
+      "Kplebo",
+      "Wedebo",
+      "Borobo",
+      "Dorobo {Central Grebo}",
+      "Globo",
+      "Nyenebo",
+      "Trembo",
+      "Biabo",
+      "Dediebo",
+      "Gederobo",
+      "Nyanoun",
+      "Gboloo-Central Grebo",
+      "Barclayville-Gboloo-Central Liberian Grebo",
+      "Chedepo",
+      "E Je",
+      "Fopo-Bua",
+      "Gbepo",
+      "Jedepo",
+      "Klepo",
+      "Ketiepo",
+      "Nitiabo",
+      "Sabo",
+      "Tuobo",
+      "Webo",
+      "Northeastern Grebo",
+      "Palipo",
+      "Tienpo",
+      "North-Central Liberian Grebo",
+      "Glebo",
+      "Jabo",
+      "Nyabo",
+      "Wrelpo"
+    ],
     "vitalityStatus": null,
     "sources": [
       {
         "title": "Glottolog 5.3",
         "url": "https://glottolog.org/resource/languoid/id/greb1256",
         "tier": "official",
-        "notes": "Glottolog name: Liberian Grebo; classification includes Kru."
+        "notes": "Glottolog name: Liberian Grebo; classification includes Kru. Les dialectes listés sont les sous-languoids que Glottolog rattache à greb1256, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }

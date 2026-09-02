@@ -15,14 +15,46 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": [
+      "Abiliang",
+      "Ageer",
+      "Dongjol",
+      "Luac",
+      "Ngok-Sobat",
+      "Rut",
+      "Thoi",
+      "Alor {Nilotic}",
+      "Ngok-Kordofan",
+      "Pan Aru",
+      "Pawany",
+      "Agar",
+      "Aliap",
+      "Ciec",
+      "Gok",
+      "Athoc",
+      "Bor",
+      "Ghol",
+      "Nyarweng",
+      "Tuic",
+      "Abiem",
+      "Aguok",
+      "Apuk",
+      "Awan",
+      "Lau {Nilotic}",
+      "Luac {Southwestern Dinka}",
+      "Malual",
+      "Paliet",
+      "Palioupiny",
+      "Rek",
+      "Tuic {Southwestern Dinka}"
+    ],
     "vitalityStatus": null,
     "sources": [
       {
         "title": "Glottolog 5.3",
         "url": "https://glottolog.org/resource/languoid/id/dink1262",
         "tier": "official",
-        "notes": "Glottolog name: Dinka; classification includes Nilotic."
+        "notes": "Glottolog name: Dinka; classification includes Nilotic. Les dialectes listés sont les sous-languoids que Glottolog rattache à dink1262, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }

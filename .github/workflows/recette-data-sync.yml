@@ -75,6 +75,14 @@ jobs:
           CHECK_SOURCE_URLS: "false"
         run: npx tsx scripts/validateAfrikData.ts
 
+      # Loading a corpus into a schema that is behind it writes the old shape and
+      # reports success — the same silent-green failure this workflow exists to
+      # close, one layer down. migrate-recette.yml fires on the same push, so a
+      # merge carrying both a migration and a fiche runs the two concurrently;
+      # this step makes the ordering explicit instead of a race.
+      - name: Refuse to load ahead of a pending migration
+        run: npm run check:migration-state
+
       # `--conditions=react-server` is load-bearing rather than stylistic. The
       # loader reaches src/lib/supabase/admin.ts, which imports `server-only`;
       # that package resolves to an empty module under the react-server condition

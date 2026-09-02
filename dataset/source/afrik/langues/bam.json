@@ -15,14 +15,22 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": [
+      "Beledugu",
+      "Ganadugu",
+      "San",
+      "Segou",
+      "Sikasso",
+      "Somono",
+      "Standard Bambara"
+    ],
     "vitalityStatus": null,
     "sources": [
       {
         "title": "Glottolog 5.3",
         "url": "https://glottolog.org/resource/languoid/id/bamb1269",
         "tier": "official",
-        "notes": "Glottolog name: Bambara; classification includes Mande."
+        "notes": "Glottolog name: Bambara; classification includes Mande. Les dialectes listés sont les sous-languoids que Glottolog rattache à bamb1269, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }
