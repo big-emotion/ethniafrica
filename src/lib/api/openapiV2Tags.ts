@@ -39,7 +39,7 @@ export const OPENAPI_V2_TAGS: { name: string; description: string }[] = [
     description: "API key management (issuance)",
   },
   {
-    name: "API v2 - Module #0",
+    name: "API v2 - Source Transparency",
     description:
       "Source Transparency Fabric — sources, confidence scores, editorial doctrine",
   },
