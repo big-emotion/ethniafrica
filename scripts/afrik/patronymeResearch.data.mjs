@@ -149,6 +149,85 @@ export const SOURCES = {
       "pour l'institution de la caste, jamais pour rattacher un clan nommé à " +
       "une caste : cette attribution-là vient d'une autre source.",
   },
+  "gha-iv-mali": {
+    title:
+      "General History of Africa, IV: Africa from the Twelfth to the Sixteenth Century",
+    url: "https://archive.org/details/unesco_general_history_africa_iv",
+    tier: "official",
+    source_kind: "intergovernmental",
+    notes:
+      "UNESCO, Histoire générale de l'Afrique, vol. IV, dir. D. T. Niane, 1984 ; " +
+      "consulté sur le texte intégral de l'exemplaire numérisé, non sur un index. " +
+      "Le chapitre 6, « Mali and the second Mandingo expansion » (D. T. Niane, " +
+      "p. 117-171), donne lignage par lignage l'implantation des clans malinké : " +
+      "les Kamara tenant Sibi et Tabon et les Traoré le Gangaran (p. 127), les " +
+      "deux branches Camara conduites par Tabon-Wana et Kamadian Camara de Sibi " +
+      "(p. 131), Tiramaghan Traoré fondateur du Gabu (p. 127 n. 28, p. 133), la " +
+      "correspondance des noms de clan d'un peuple à l'autre — un Traoré est reçu " +
+      "comme frère par les Diop en pays wolof et peut prendre leur nom (p. 134 " +
+      "n. 43) —, les griots Diabaté de Keyla et la réfection septennale du " +
+      "Kamablon de Kangaba (p. 127 n. 28), et le griot du mansa toujours choisi " +
+      "dans le clan Kouyaté (p. 160). L'ouvrage est une synthèse savante, non une " +
+      "chronique : les claims qu'il porte ici sont donc rangés hors " +
+      "writtenChronicles.",
+  },
+  "gha-v-16-18": {
+    title:
+      "General History of Africa, V: Africa from the Sixteenth to the Eighteenth Century",
+    url: "https://archive.org/details/unesco_general_history_africa_v",
+    tier: "official",
+    source_kind: "intergovernmental",
+    notes:
+      "UNESCO, Histoire générale de l'Afrique, vol. V, dir. B. A. Ogot, 1992 ; " +
+      "consulté sur le texte intégral. Chapitre 12, « From the Niger to the " +
+      "Volta » (M. Izard et J. Ki-Zerbo) : le sanankunya entre les Kulibali " +
+      "(Kurubari) et les Keita ou les Ture, donné comme indice de relations " +
+      "anciennes entre Bambara et Malinké (p. 330) ; l'étymologie kulu " +
+      "« pirogue » + bali privatif, tirée de la traversée du fleuve sans pirogue, " +
+      "assortie par la source elle-même de la mention qu'il en existe d'autres " +
+      "(p. 330 n. 7) ; la généalogie de Mamari Kulibali dit Biton (1712-1755), " +
+      "arrière-petit-fils de Baramangolo par Kaladian, Danfassari et Soma " +
+      "(p. 330-333). Chapitre 13, « The states and cultures of the Upper Guinean " +
+      "coast » (C. Wondji) : la migration des Kongo-Vai depuis le haut Niger " +
+      "sous la conduite du clan Camara, vers Bopolou puis les rivières Mano et " +
+      "Moa, et le déplacement corrélé des Kono et des Vai vers les côtes du " +
+      "Liberia et de la Sierra Leone (p. 375-377).",
+  },
+  "bamadaba-jamuw": {
+    title: "Bamadaba — dictionnaire des noms claniques (jamuw)",
+    url: "http://cormand.huma-num.fr/dicos/jamuw.zip",
+    tier: "referenced",
+    source_kind: "linguistic_reference",
+    notes:
+      "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français " +
+      "supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, " +
+      "Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms " +
+      "claniques est signalée comme telle par Vydrin, « Vers une lexicographie " +
+      "mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, " +
+      "p. 89-110. 375 entrées au format MDF, consultées sur le fichier complet. " +
+      "Le fichier ne livre aucune légende de ses marqueurs, et la lecture " +
+      "retenue est celle que le fichier impose : \\ca porte les termes de statut " +
+      "mandingues eux-mêmes (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, " +
+      "gesere) ; \\sn se lit senankun parce que l'entrée Kúyate annote sa propre " +
+      "ligne « \\sn Keyita » d'une réserve disant que cette relation-là est une " +
+      "entente amicale et non un senankuya. Les liens \\sn ne sont pas " +
+      "systématiquement réciproques d'une entrée à l'autre : chaque paire est " +
+      "donc citée d'après l'entrée qui la porte, nommée dans le claim ou le gap.",
+  },
+  "nichols-2020-diabate-review": {
+    title:
+      "Review of Massa Makan Diabaté, The Lieutenant of Kouta (trans. Auerbach & Yost)",
+    url: "https://www.cambridge.org/core/journals/african-studies-review/article/massa-makan-diabate-the-lieutenant-of-kouta-translated-from-french-by-shane-auerbach-and-david-yost-east-lansing-michigan-state-university-press-2017-xi-113-pp-introduction-2000-paper-isbn-9781611862270/01AF0FE3900BD82768691B37BA6E998C",
+    tier: "referenced",
+    source_kind: "academic",
+    notes:
+      "Nichols, Eliza, African Studies Review 63(2), Cambridge University Press, " +
+      "2020. Donne les dates de Massa Makan Diabaté (1938-1988), son ascendance " +
+      "de griots et le fait qu'il fut le seul écrivain de sa génération à " +
+      "conserver le patronyme qui le rattache à la caste des généalogistes — " +
+      "soit une source portant sur le nom lui-même, et non sur la seule " +
+      "homonymie de patronyme.",
+  },
   "bryant-1929-olden-times": {
     title:
       "Olden Times in Zululand and Natal — Containing Earlier Political History of the Eastern-Nguni Clans",
@@ -327,13 +406,6 @@ const NYAMAKALA_RECONSTRUCTION = {
   sourceRefs: ["tamari-1991-caste"],
 };
 
-const NUMU_FUNCTION = {
-  value:
-    "Lignage de forgerons (numu), l'une des castes nyamakalaw ; le jamu est " +
-    "nommément rangé parmi les lignages numu, aux côtés de Kanté.",
-  sourceRefs: ["charry-1996-jembe", "tamari-1991-caste"],
-};
-
 const NGUNI_ISIBONGO = {
   transmissionMode: "patrilineal",
   designatedSocialUnit: "clan",
@@ -383,37 +455,62 @@ export const RESEARCH = {
           claimStatus: "contested",
           sourceRefs: ["jansen-sunjata-paradigm"],
         },
+        {
+          claim:
+            "Le nom entre dans un système de correspondances entre patronymes " +
+            "de peuples différents, établi après Soundiata : en pays wolof, un " +
+            "Traoré est reçu comme frère par les Diop et peut prendre leur nom, " +
+            "et réciproquement. Le jamu n'est donc pas seulement héréditaire, " +
+            "il est convertible d'une aire à l'autre.",
+          claimStatus: "established",
+          sourceRefs: ["gha-iv-mali"],
+        },
       ],
     },
     alliances: [
       {
         targetPatronymeId: "PAT_DIARRA",
         allianceType: "sanankuya",
-        sourceRefs: ["segoublog-sanankuya"],
+        sourceRefs: ["segoublog-sanankuya", "bamadaba-jamuw"],
       },
     ],
+    casteOrSocialFunction: {
+      value:
+        "Statut variable d'une aire à l'autre, et non absence de statut. Charry " +
+        "range Traoré parmi les jamuw hɔrɔn, de condition libre et non " +
+        "artisanale ; le dictionnaire des jamuw enregistre pour la même entrée " +
+        "hɔ́rɔn, puis tontigi chez les Bamana et les Maninka, puis nùmu " +
+        "(forgeron) chez les Kagoro et les Wassoulounké. Le versant numu du jamu " +
+        "est donc attesté, et l'absence de fonction héréditaire ne vaut pas " +
+        "pour toute l'aire du nom.",
+      sourceRefs: ["charry-1996-jembe", "bamadaba-jamuw"],
+    },
     bearers: [
       {
         status: "deceased",
         displayName: "Tiramaghan Traoré",
-        sourceRefs: ["niane-1960"],
+        sourceRefs: ["niane-1960", "gha-iv-mali"],
       },
     ],
     sourceKeys: [
       "niane-1960",
       "jansen-sunjata-paradigm",
       "segoublog-sanankuya",
+      "bamadaba-jamuw",
+      "charry-1996-jembe",
+      "gha-iv-mali",
     ],
     gapReasons: {
-      casteOrSocialFunction:
-        "Charry range nommément Traoré parmi les jamuw horon, de statut noble " +
-        "et non artisan : aucune fonction héréditaire n'est attachée au jamu " +
-        "Tarawele, et cette absence est établie plutôt que constatée faute de " +
-        "recherche.",
       homonyms:
         "Traoré et Tarawele sont deux graphies d'un même jamu, la première " +
-        "issue de la transcription coloniale : ce ne sont pas des lignées " +
-        "distinctes et elles ne sont donc pas traitées en homonymes.",
+        "issue de la transcription coloniale ; le dictionnaire des jamuw en " +
+        "ajoute une troisième, Taraore, sous la même entrée. Il range en outre " +
+        "Sane, Mane, Ouédraogo, Dembélé, Diouf et — à Ségou — Touré parmi ses " +
+        "équivalences, des noms de clan d'autres peuples tenus pour le même, " +
+        "institution que l'Histoire générale de l'Afrique décrit de son côté en " +
+        "notant qu'un Traoré installé en pays wolof peut prendre le nom Diop. " +
+        "Ni les graphies ni les équivalences ne font des lignées distinctes : " +
+        "aucune n'est traitée en homonyme.",
     },
   },
 
@@ -428,10 +525,27 @@ export const RESEARCH = {
       {
         targetPatronymeId: "PAT_TRAORE",
         allianceType: "sanankuya",
-        sourceRefs: ["segoublog-sanankuya"],
+        sourceRefs: ["segoublog-sanankuya", "bamadaba-jamuw"],
+      },
+      {
+        // Porté par l'entrée Jàra, qui liste Dunbuya parmi ses senankun.
+        targetPatronymeId: "PAT_DOUMBIA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
+      },
+      {
+        // Porté par l'entrée Jɛbatɛ, qui liste Jara ; l'entrée Jàra ne rend
+        // pas le lien, les marqueurs \sn n'étant pas réciproques.
+        targetPatronymeId: "PAT_DIABATE",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
       },
     ],
-    sourceKeys: ["jansen-sunjata-paradigm", "segoublog-sanankuya"],
+    sourceKeys: [
+      "jansen-sunjata-paradigm",
+      "segoublog-sanankuya",
+      "bamadaba-jamuw",
+    ],
     gapReasons: {
       origin:
         "L'étymologie courante rattachant Diarra à jara (« lion ») n'a été " +
@@ -441,18 +555,24 @@ export const RESEARCH = {
         "Le jamu ne figure ni parmi les lignages numu ni parmi les lignages " +
         "jeli que Charry énumère ; il ne figure pas non plus dans la courte " +
         "liste de jamuw horon qu'il donne (Keita, Konaté, Koné, Traoré). Le " +
-        "statut horon que lui prêtent les répertoires courants n'a donc pas été " +
-        "retrouvé dans une source dédiée, et n'est pas affirmé ici.",
+        "dictionnaire des jamuw, qui donne un statut à sept des dix jamuw " +
+        "mandé du lot, n'en porte aucun sur l'entrée Jàra. Le statut horon que " +
+        "prêtent au nom les répertoires courants reste donc introuvable dans " +
+        "une source dédiée, et n'est pas affirmé ici.",
       bearers:
-        "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
-        "distincte de l'homonymie de patronyme lors de la passe : les Diarra " +
-        "de la dynastie de Ségou relèvent de l'histoire politique et ne " +
-        "documentent pas le nom.",
+        "L'Histoire générale de l'Afrique documente amplement Ngolo Diarra " +
+        "(1766-1790) et la dynastie des Ngolosi qui lui succède, mais le " +
+        "présente comme un ton-jon parvenu au pouvoir : elle ne rattache à " +
+        "aucun moment son jamu au clan bamana Jara. Le lien serait une " +
+        "homonymie de patronyme, que ce champ écarte, et non une descendance. " +
+        "Aucun autre porteur décédé n'a été rattaché au clan.",
       homonyms:
-        "Diarra et Jara sont deux graphies d'un même jamu. Aucune lignée " +
-        "d'origine distincte n'a été trouvée, mais l'étymologie du nom restant " +
-        "elle-même ouverte, une homonymie ne pourrait pas être écartée sur " +
-        "cette base.",
+        "Diarra et Jara sont deux graphies d'un même jamu. Le dictionnaire des " +
+        "jamuw range Condé, Ndiaye et Koné parmi les équivalences de l'entrée " +
+        "Jàra — des noms de clan d'autres peuples tenus pour le même, non des " +
+        "homonymes. Aucune lignée d'origine distincte n'a été trouvée, mais " +
+        "l'étymologie du nom restant elle-même ouverte, une homonymie ne " +
+        "pourrait pas être écartée sur cette base.",
     },
   },
 
@@ -473,7 +593,13 @@ export const RESEARCH = {
       {
         targetPatronymeId: "PAT_COULIBALY",
         allianceType: "sanankuya",
-        sourceRefs: ["segoublog-sanankuya"],
+        sourceRefs: ["gha-v-16-18", "bamadaba-jamuw", "segoublog-sanankuya"],
+      },
+      {
+        // Porté par l'entrée Fófana, qui liste Keyita parmi ses senankun.
+        targetPatronymeId: "PAT_FOFANA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
       },
     ],
     bearers: [
@@ -487,18 +613,26 @@ export const RESEARCH = {
       "niane-1960",
       "jansen-sunjata-paradigm",
       "segoublog-sanankuya",
+      "gha-v-16-18",
+      "bamadaba-jamuw",
     ],
     gapReasons: {
       casteOrSocialFunction:
         "Charry range nommément Keita parmi les jamuw horon, c'est-à-dire les " +
-        "noms de statut noble et non artisan. L'absence de fonction héréditaire " +
-        "est donc ici un résultat établi et non une recherche infructueuse : la " +
-        "royauté n'est pas une caste au sens de ce champ.",
+        "noms de statut noble et non artisan. Le dictionnaire des jamuw va dans " +
+        "le même sens par son silence : l'entrée Kéyità est l'une des rares du " +
+        "bloc mandé à ne porter aucun marqueur de statut, là où Traoré, " +
+        "Coulibaly, Camara, Diabaté, Kouyaté, Bamba et Fofana en portent tous " +
+        "au moins un. L'absence de fonction héréditaire est donc un résultat " +
+        "établi et non une recherche infructueuse : la royauté n'est pas une " +
+        "caste au sens de ce champ.",
       homonyms:
         "Aucune lignée homonyme d'origine distincte n'a été trouvée. Le jamu " +
         "est porté bien au-delà de la descendance dynastique, par affiliation " +
         "et par adoption, mais c'est là une extension du même nom et non une " +
-        "seconde origine.",
+        "seconde origine. Le dictionnaire des jamuw réunit de même Kéyità, " +
+        "Kétà et Kɛ́yità sous une entrée unique et range Souma, Koné et " +
+        "Beawɔgi parmi ses équivalences.",
     },
   },
 
@@ -507,35 +641,62 @@ export const RESEARCH = {
     origin: {
       oralTraditions: [],
       writtenChronicles: [],
-      linguisticReconstructions: [JAMU_RECONSTRUCTION],
+      linguisticReconstructions: [
+        JAMU_RECONSTRUCTION,
+        {
+          // La source pose l'étymologie et, dans la même note, dit qu'il en
+          // existe d'autres : le claimStatus suit la source, pas l'usage.
+          claim:
+            "Le récit d'origine des dynasties bambara fait traverser le fleuve " +
+            "sans pirogue aux deux frères Baramangolo et Niangolo ; de cette " +
+            "traversée est tiré le patronyme Kulibali (Kurubari), de kulu " +
+            "« pirogue » et du privatif bali. La source qui l'énonce ajoute " +
+            "aussitôt qu'il en existe d'autres.",
+          claimStatus: "contested",
+          sourceRefs: ["gha-v-16-18"],
+        },
+      ],
     },
     alliances: [
       {
         targetPatronymeId: "PAT_KEITA",
         allianceType: "sanankuya",
-        sourceRefs: ["segoublog-sanankuya"],
+        sourceRefs: ["gha-v-16-18", "bamadaba-jamuw", "segoublog-sanankuya"],
+      },
+      {
+        // Porté par l'entrée Fófana, qui liste Kulibali parmi ses senankun.
+        targetPatronymeId: "PAT_FOFANA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
       },
     ],
-    sourceKeys: ["jansen-sunjata-paradigm", "segoublog-sanankuya"],
+    casteOrSocialFunction: {
+      value:
+        "Le dictionnaire des jamuw donne à l'entrée Kùlibàli le statut hɔ́rɔn, " +
+        "puis tontigi chez les Bamana, les Maninka et les Minianka, puis numu " +
+        "(forgeron) au Wassoulou. Le jamu porte donc à la fois une condition " +
+        "libre et, selon l'aire, une fonction artisanale héréditaire.",
+      sourceRefs: ["bamadaba-jamuw"],
+    },
+    bearers: [
+      {
+        status: "deceased",
+        displayName: "Mamari Kulibali, dit Biton Coulibaly (1712-1755)",
+        sourceRefs: ["gha-v-16-18"],
+      },
+    ],
+    sourceKeys: [
+      "jansen-sunjata-paradigm",
+      "segoublog-sanankuya",
+      "gha-v-16-18",
+      "bamadaba-jamuw",
+    ],
     gapReasons: {
-      origin:
-        "Aucune source dédiée n'a été trouvée pour l'origine du jamu Kulibali " +
-        "lors de la passe ; le rattachement à la dynastie de Ségou relève de " +
-        "l'histoire politique, pas de l'origine du nom.",
-      casteOrSocialFunction:
-        "Le jamu ne figure ni parmi les lignages numu ni parmi les lignages " +
-        "jeli que Charry énumère ; il ne figure pas non plus dans la courte " +
-        "liste de jamuw horon qu'il donne (Keita, Konaté, Koné, Traoré). Le " +
-        "statut horon que lui prêtent les répertoires courants n'a donc pas été " +
-        "retrouvé dans une source dédiée, et n'est pas affirmé ici.",
-      bearers:
-        "Biton Coulibaly, fondateur du royaume bambara de Ségou, est amplement " +
-        "documenté, mais comme figure politique : aucune source consultée ne " +
-        "s'appuie sur lui pour établir l'origine du jamu, et la fiche ne " +
-        "l'enregistre donc pas en porteur.",
       homonyms:
-        "Coulibaly transcrit le mandingue Kulibali ; aucune lignée d'origine " +
-        "distincte n'a été trouvée sous l'une ou l'autre graphie.",
+        "Coulibaly transcrit le mandingue Kulibali, que le dictionnaire des " +
+        "jamuw écrit aussi Kùlubàli et que l'Histoire générale de l'Afrique " +
+        "donne sous la forme Kurubari. Aucune de ces graphies ne recouvre une " +
+        "lignée d'origine distincte dans les sources consultées.",
     },
   },
 
@@ -559,19 +720,25 @@ export const RESEARCH = {
       value:
         "Jeli (griot) : fonction héréditaire de dépositaire de la parole, de " +
         "l'histoire et de la médiation, exercée par un groupe endogame distinct " +
-        "des clans horon. Kouyaté est l'un des deux jamuw que Charry donne comme " +
-        "signalant par eux-mêmes l'appartenance jeli.",
+        "des clans horon. La charge est nommée jusqu'à la cour impériale — le " +
+        "griot du mansa était toujours pris dans le clan Kouyaté, que la " +
+        "tradition fait descendre de Balla Fasséké. Kouyaté est l'un des deux " +
+        "jamuw que Charry donne comme signalant par eux-mêmes l'appartenance " +
+        "jeli. Le dictionnaire des jamuw attache en outre à l'entrée le statut " +
+        "garanke, qu'il ne glose pas.",
       sourceRefs: [
+        "gha-iv-mali",
         "jelis-multilingualism-2024",
         "charry-1996-jembe",
         "tamari-1991-caste",
+        "bamadaba-jamuw",
       ],
     },
     bearers: [
       {
         status: "deceased",
         displayName: "Balla Fasséké Kouyaté",
-        sourceRefs: ["niane-1960"],
+        sourceRefs: ["niane-1960", "gha-iv-mali"],
       },
       {
         status: "deceased",
@@ -585,15 +752,26 @@ export const RESEARCH = {
       "jelis-multilingualism-2024",
       "charry-1996-jembe",
       "tamari-1991-caste",
+      "gha-iv-mali",
+      "bamadaba-jamuw",
     ],
     gapReasons: {
       alliances:
-        "Aucune paire de sanankuya nommant les Kouyaté n'a été trouvée lors de " +
-        "la passe ; la relation jeli/horon n'est pas un sanankuya.",
+        "Le dictionnaire des jamuw range Keyita, Konate et Nakalu parmi les " +
+        "senankun de Kúyate, mais annote la première de ces trois lignes d'une " +
+        "réserve : la relation aux Keïta y est donnée pour une entente amicale " +
+        "et non pour un senankuya. Konate et Nakalu n'ont pas de fiche dans le " +
+        "lot, et le schéma n'enregistre une paire que si les deux patronymes " +
+        "en ont une. Aucune paire n'est donc inscriptible ici — ce qui est un " +
+        "résultat, non une recherche restée sans réponse. La relation jeli/horon " +
+        "n'est pas davantage un sanankuya.",
       homonyms:
         "Aucune lignée homonyme d'origine distincte n'a été trouvée : les " +
         "Kouyaté relevés par les sources consultées se rattachent tous au même " +
-        "lignage de jeli.",
+        "lignage de jeli, celui dont l'Histoire générale de l'Afrique dit que " +
+        "le griot du mansa y était toujours pris. Le dictionnaire des jamuw " +
+        "réunit Kúyate, Kúwate et Kúyatɛ sous une entrée unique et ne lui " +
+        "connaît pas d'équivalence dans un autre peuple.",
     },
   },
 
@@ -609,37 +787,56 @@ export const RESEARCH = {
     },
     casteOrSocialFunction: {
       value:
-        "Jeli (griot) : les Diabaté comptent parmi les clans de jeli identifiés " +
-        "comme tels dans le Manden, aux côtés des Kouyaté, Kanté et Cissoko. " +
-        "Charry retient Diabaté et Kouyaté comme les deux jamuw qui signalent " +
-        "par eux-mêmes l'appartenance jeli.",
+        "Jeli (griot), avec une charge nommée : les Diabaté de Keyla, près de " +
+        "Kangaba, gardent les traditions de la famille royale Keïta, refont " +
+        "tous les sept ans la toiture du Kamablon et y récitent l'histoire de " +
+        "Soundiata et l'origine de l'empire du Mali. Charry retient Diabaté et " +
+        "Kouyaté comme les deux jamuw qui signalent par eux-mêmes " +
+        "l'appartenance jeli. Le dictionnaire des jamuw enregistre pour la même " +
+        "entrée jèli, puis hɔ̀rɔn au sud-est du Mali, puis nùmu, puis gesere " +
+        "chez les Soninké : la fonction de griot ne couvre donc pas tout le jamu.",
       sourceRefs: [
+        "gha-iv-mali",
         "jelis-multilingualism-2024",
         "charry-1996-jembe",
         "tamari-1991-caste",
+        "bamadaba-jamuw",
       ],
     },
+    alliances: [
+      {
+        // Porté par l'entrée Jɛbatɛ, qui liste Jara parmi ses senankun.
+        targetPatronymeId: "PAT_DIARRA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
+      },
+    ],
+    bearers: [
+      {
+        status: "deceased",
+        displayName: "Massa Makan Diabaté (1938-1988)",
+        sourceRefs: ["gha-iv-mali", "nichols-2020-diabate-review"],
+      },
+    ],
     sourceKeys: [
       "jansen-sunjata-paradigm",
       "jelis-multilingualism-2024",
       "charry-1996-jembe",
       "tamari-1991-caste",
+      "bamadaba-jamuw",
+      "gha-iv-mali",
+      "nichols-2020-diabate-review",
     ],
     gapReasons: {
       origin:
         "Aucune tradition d'origine propre aux Diabaté n'a été trouvée lors de " +
         "la passe, en dehors de leur statut de clan de jeli. La geste de " +
         "Soundiata les nomme sans raconter l'origine du jamu.",
-      alliances:
-        "Aucune paire de sanankuya nommant les Diabaté n'a été trouvée.",
-      bearers:
-        "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
-        "distincte de l'homonymie de patronyme lors de la passe : les Diabaté " +
-        "documentés le sont comme musiciens contemporains, que la règle des " +
-        "porteurs écarte.",
       homonyms:
-        "Aucune lignée homonyme d'origine distincte n'a été trouvée ; la " +
-        "graphie Diabaté transcrit le mandingue Jabate.",
+        "La graphie Diabaté transcrit le mandingue Jɛbatɛ, que le dictionnaire " +
+        "des jamuw réunit avec Jabatɛ, Jubatɛ, Jabagatɛ, Jɛbaatɛ et Jɛbagatɛ " +
+        "sous une seule entrée. Six orthographes d'un même jamu, et aucune " +
+        "lignée d'origine distincte dans les sources consultées.",
     },
   },
 
@@ -654,47 +851,133 @@ export const RESEARCH = {
         NYAMAKALA_RECONSTRUCTION,
       ],
     },
-    casteOrSocialFunction: NUMU_FUNCTION,
+    casteOrSocialFunction: {
+      value:
+        "Lignage de forgerons (numu) : Charry range nommément le jamu parmi les " +
+        "lignages numu, aux côtés de Kanté. Le dictionnaire des jamuw donne " +
+        "toutefois trois statuts pour la même entrée Kàmara — hɔ̀rɔn, finɛ et " +
+        "nùmu au Wassoulou —, si bien que la fonction de forgeron vaut pour une " +
+        "part du jamu et non pour tout ce qui le porte.",
+      sourceRefs: ["charry-1996-jembe", "tamari-1991-caste", "bamadaba-jamuw"],
+    },
+    alliances: [
+      {
+        // La seule paire du bloc mandé que les deux entrées se rendent l'une à
+        // l'autre : Kàmara liste Fofana, Fófana liste Kamara.
+        targetPatronymeId: "PAT_FOFANA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
+      },
+    ],
+    // Le rattachement aux Vai et aux deux pays ne reposait que sur le passage
+    // de corpus ; l'Histoire générale de l'Afrique conduit la migration
+    // kongo-vai depuis le haut Niger sous la conduite même du clan Camara.
+    peoples: [
+      {
+        peopleId: "PPL_VAI",
+        status: "attested",
+        sourceRefs: ["corpus-ppl-vai-organisation", "gha-v-16-18"],
+      },
+    ],
+    countries: [
+      {
+        countryId: "LBR",
+        status: "attested",
+        sourceRefs: ["corpus-ppl-vai-organisation", "gha-v-16-18"],
+      },
+      {
+        countryId: "SLE",
+        status: "attested",
+        sourceRefs: ["corpus-ppl-vai-organisation", "gha-v-16-18"],
+      },
+    ],
+    bearers: [
+      {
+        // La geste et l'Histoire générale de l'Afrique le donnent chef de
+        // l'une des deux branches du clan ; la même collection rattache la
+        // branche vai de ce clan au clan du haut Niger, ce qui fait tenir la
+        // mention sur une fiche rattachée aux Vai.
+        status: "deceased",
+        displayName: "Kamadian Camara, de Sibi",
+        sourceRefs: ["gha-iv-mali", "gha-v-16-18"],
+      },
+    ],
     sourceKeys: [
       "jansen-sunjata-paradigm",
       "charry-1996-jembe",
       "tamari-1991-caste",
+      "bamadaba-jamuw",
+      "gha-iv-mali",
+      "gha-v-16-18",
     ],
     gapReasons: {
       origin:
         "Aucune tradition d'origine propre au jamu Kamara n'a été trouvée lors " +
         "de la passe. La geste de Soundiata nomme les Kamara parmi les lignages " +
         "de forgerons sans raconter l'origine du nom lui-même.",
-      alliances: "Aucune paire de sanankuya nommant ce clan n'a été trouvée.",
-      bearers:
-        "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
-        "distincte de l'homonymie de patronyme lors de la passe.",
       homonyms:
-        "La graphie Camara est la transcription francophone de Kamara ; ce sont " +
-        "deux orthographes d'un même nom, non deux lignées, et elles ne sont " +
+        "La graphie Camara est la transcription francophone de Kamara ; le " +
+        "dictionnaire des jamuw y ajoute Kámala, et range Koiwogi — chez les " +
+        "Loma — ainsi que Dansogo, Fofana et Magasa parmi ses équivalences, " +
+        "des noms de clan d'autres peuples tenus pour le même. Ce sont des " +
+        "orthographes et des correspondances, non deux lignées : elles ne sont " +
         "donc pas traitées en homonymes.",
     },
   },
   PAT_FOFANA: {
     ...MANDE_JAMU,
     ...mandeThin(),
+    // L'entrée Fófana est la plus riche du bloc en senankun : elle en nomme
+    // cinq, dont trois ont une fiche dans le lot.
+    alliances: [
+      {
+        targetPatronymeId: "PAT_CAMARA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
+      },
+      {
+        targetPatronymeId: "PAT_KEITA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
+      },
+      {
+        targetPatronymeId: "PAT_COULIBALY",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
+      },
+    ],
+    casteOrSocialFunction: {
+      value:
+        "Le dictionnaire des jamuw donne à l'entrée Fófana deux statuts, hɔ̀rɔn " +
+        "— la condition libre et non artisanale au sens où Charry définit le " +
+        "terme — et wage, qu'il ne glose pas. Aucun des deux n'est une caste " +
+        "nyamakala : le jamu ordonne une condition, pas un métier héréditaire.",
+      sourceRefs: ["bamadaba-jamuw", "charry-1996-jembe"],
+    },
+    sourceKeys: [
+      "jansen-sunjata-paradigm",
+      "bamadaba-jamuw",
+      "charry-1996-jembe",
+    ],
     gapReasons: {
       origin:
         "Aucune tradition d'origine propre au jamu Fofana n'a été trouvée lors " +
         "de la passe : seule la nature clanique et patrilinéaire du jamu est " +
         "établie.",
-      alliances: "Aucune paire de sanankuya nommant ce clan n'a été trouvée.",
-      casteOrSocialFunction:
-        "Fofana ne figure ni dans les lignages numu ni dans les lignages jeli " +
-        "que Charry énumère, ni parmi les jamuw horon qu'il nomme : le nom n'a " +
-        "été rattaché à aucun statut par les sources consultées, ce qui laisse " +
-        "la question ouverte plutôt que tranchée par la négative.",
       bearers:
-        "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
-        "distincte de l'homonymie de patronyme lors de la passe.",
+        "Aucun porteur décédé n'a été rattaché au jamu Fofana par les sources " +
+        "de cette passe : ni l'Histoire générale de l'Afrique, qui nomme " +
+        "pourtant clan par clan les lignages ralliés à Soundiata, ni le " +
+        "dictionnaire des jamuw, ni Charry ne l'attachent à une personne.",
       homonyms:
         "Fofana est porté dans les aires mandingue et soninké sans qu'une " +
-        "source dédiée établisse deux origines distinctes.",
+        "source dédiée établisse deux origines distinctes. Le dictionnaire des " +
+        "jamuw traite cette dispersion sous une entrée unique — il y attache " +
+        "cinq codes d'aire dialectale qu'il ne développe pas — et range Fònba, " +
+        "Magasa, Dancogo, Kamara et Diomandé parmi ses équivalences, des noms " +
+        "de clan d'autres peuples tenus pour le même. Une équivalence n'est pas " +
+        "une homonymie : elle dit que deux noms désignent le même groupe, non " +
+        "que le même nom en désigne deux.",
     },
   },
   PAT_DOUMBIA: {
@@ -708,24 +991,48 @@ export const RESEARCH = {
         NYAMAKALA_RECONSTRUCTION,
       ],
     },
-    casteOrSocialFunction: NUMU_FUNCTION,
+    casteOrSocialFunction: {
+      value:
+        "Lignage de forgerons (numu) : Charry range nommément le jamu parmi les " +
+        "lignages numu, aux côtés de Kanté. L'attribution repose sur cette " +
+        "seule source — le dictionnaire des jamuw, qui donne un statut à sept " +
+        "des dix jamuw mandé du lot, n'en porte aucun sur l'entrée Dunbiya.",
+      sourceRefs: ["charry-1996-jembe", "tamari-1991-caste", "bamadaba-jamuw"],
+    },
+    alliances: [
+      {
+        // Porté par l'entrée Jàra, qui liste Dunbuya — variante de Dunbiya —
+        // parmi ses senankun ; l'entrée Dunbiya ne rend pas le lien.
+        targetPatronymeId: "PAT_DIARRA",
+        allianceType: "sanankuya",
+        sourceRefs: ["bamadaba-jamuw"],
+      },
+    ],
     sourceKeys: [
       "jansen-sunjata-paradigm",
       "charry-1996-jembe",
       "tamari-1991-caste",
+      "bamadaba-jamuw",
     ],
     gapReasons: {
       origin:
         "Aucune tradition d'origine propre au jamu Doumbia n'a été trouvée lors " +
         "de la passe. La geste de Soundiata nomme les Doumbia parmi les lignages " +
         "de forgerons sans raconter l'origine du nom lui-même.",
-      alliances: "Aucune paire de sanankuya nommant ce clan n'a été trouvée.",
       bearers:
-        "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
-        "distincte de l'homonymie de patronyme lors de la passe.",
+        "Le porteur que les répertoires courants rattachent au clan est Fakoli, " +
+        "le forgeron neveu de Soumaoro passé du côté de Soundiata, sous la " +
+        "forme « Fakoli Doumbia ». La transcription de Niane a été relue sur ce " +
+        "point : elle le nomme Fakoli Koroma, et l'Histoire générale de " +
+        "l'Afrique de même. Le jamu Doumbia ne lui est donc donné par aucune " +
+        "des sources consultées, et aucun autre porteur décédé n'a pu être " +
+        "rattaché au clan.",
       homonyms:
-        "Aucune lignée homonyme d'origine distincte n'a été trouvée lors de la " +
-        "passe.",
+        "Le dictionnaire des jamuw réunit Dunbiya, Dunbuya, Dumuya et Dunmuya " +
+        "sous une seule entrée et range Kouroma et Sissoko parmi ses " +
+        "équivalences — des noms de clan d'autres peuples tenus pour le même. " +
+        "Quatre graphies et deux correspondances, aucune lignée d'origine " +
+        "distincte.",
     },
   },
 
@@ -748,21 +1055,36 @@ export const RESEARCH = {
         sourceRefs: ["afrik-pass-distinction-2026-09"],
       },
     ],
-    sourceKeys: ["jansen-sunjata-paradigm", "afrik-pass-distinction-2026-09"],
+    casteOrSocialFunction: {
+      value:
+        "Le dictionnaire des jamuw localise l'entrée Bánbà à Sikasso et lui " +
+        "donne deux statuts, nùmu (forgeron) et hɔ́rɔn (condition libre, non " +
+        "artisanale). Le jamu porte donc bien un statut, que les listes de " +
+        "Charry ne relevaient pas.",
+      sourceRefs: ["bamadaba-jamuw"],
+    },
+    sourceKeys: [
+      "jansen-sunjata-paradigm",
+      "afrik-pass-distinction-2026-09",
+      "bamadaba-jamuw",
+    ],
     gapReasons: {
       origin:
         "Aucune tradition d'origine propre au jamu Bamba n'a été trouvée lors de " +
         "la passe.",
-      alliances: "Aucune paire de sanankuya nommant les Bamba n'a été trouvée.",
-      casteOrSocialFunction:
-        "Bamba ne figure dans aucune des listes de lignages numu, jeli ou horon " +
-        "que Charry énumère : le nom n'a été rattaché à aucun statut par les " +
-        "sources consultées.",
+      alliances:
+        "Le dictionnaire des jamuw donne à l'entrée Bánbà trois senankun : " +
+        "Kane, les Peuls et les Songhaï. Les deux derniers sont des peuples et " +
+        "non des patronymes ; Kane n'a pas de fiche dans le lot, et le schéma " +
+        "n'enregistre une paire que si les deux patronymes en ont une. La " +
+        "recherche a donc trouvé des senankun sans qu'aucun soit inscriptible.",
       bearers:
-        "Aucun porteur décédé n'a pu être rattaché au clan par une source " +
-        "dédiée. Le porteur le mieux documenté du nom, Cheikh Ahmadou Bamba " +
-        "Mbacké, relève précisément de l'homonymie signalée plus haut et non de " +
-        "ce jamu.",
+        "Aucun porteur décédé n'a été rattaché au jamu par les sources de cette " +
+        "passe : ni l'Histoire générale de l'Afrique, qui ne connaît le mot " +
+        "Bamba que comme toponyme, ni le dictionnaire des jamuw, qui localise " +
+        "l'entrée à Sikasso sans nommer personne. Le porteur le mieux documenté " +
+        "du nom, Cheikh Ahmadou Bamba Mbacké, relève précisément de " +
+        "l'homonymie signalée plus haut et non de ce jamu.",
     },
   },
 

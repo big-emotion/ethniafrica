@@ -85,7 +85,17 @@
     {
       "targetPatronymeId": "PAT_TRAORE",
       "allianceType": "sanankuya",
-      "sourceRefs": ["segoublog-sanankuya"]
+      "sourceRefs": ["segoublog-sanankuya", "bamadaba-jamuw"]
+    },
+    {
+      "targetPatronymeId": "PAT_DOUMBIA",
+      "allianceType": "sanankuya",
+      "sourceRefs": ["bamadaba-jamuw"]
+    },
+    {
+      "targetPatronymeId": "PAT_DIABATE",
+      "allianceType": "sanankuya",
+      "sourceRefs": ["bamadaba-jamuw"]
     }
   ],
   "casteOrSocialFunction": null,
@@ -115,20 +125,28 @@
       "tier": "unverified",
       "source_kind": "community",
       "notes": "Blog malien. Cité pour les paires de sanankuya nommées (Traoré/Diarra, Keïta/Coulibaly) ; le pacte est rapporté comme remontant à Soundiata, ce que la source n'établit pas elle-même."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms claniques est signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. 375 entrées au format MDF, consultées sur le fichier complet. Le fichier ne livre aucune légende de ses marqueurs, et la lecture retenue est celle que le fichier impose : \\ca porte les termes de statut mandingues eux-mêmes (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere) ; \\sn se lit senankun parce que l'entrée Kúyate annote sa propre ligne « \\sn Keyita » d'une réserve disant que cette relation-là est une entente amicale et non un senankuya. Les liens \\sn ne sont pas systématiquement réciproques d'une entrée à l'autre : chaque paire est donc citée d'après l'entrée qui la porte, nommée dans le claim ou le gap."
     }
   ],
   "gaps": [
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Le jamu ne figure ni parmi les lignages numu ni parmi les lignages jeli que Charry énumère ; il ne figure pas non plus dans la courte liste de jamuw horon qu'il donne (Keita, Konaté, Koné, Traoré). Le statut horon que lui prêtent les répertoires courants n'a donc pas été retrouvé dans une source dédiée, et n'est pas affirmé ici."
+      "reason": "Le jamu ne figure ni parmi les lignages numu ni parmi les lignages jeli que Charry énumère ; il ne figure pas non plus dans la courte liste de jamuw horon qu'il donne (Keita, Konaté, Koné, Traoré). Le dictionnaire des jamuw, qui donne un statut à sept des dix jamuw mandé du lot, n'en porte aucun sur l'entrée Jàra. Le statut horon que prêtent au nom les répertoires courants reste donc introuvable dans une source dédiée, et n'est pas affirmé ici."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Aucun porteur décédé n'a pu être rattaché au clan par une source distincte de l'homonymie de patronyme lors de la passe : les Diarra de la dynastie de Ségou relèvent de l'histoire politique et ne documentent pas le nom."
+      "reason": "L'Histoire générale de l'Afrique documente amplement Ngolo Diarra (1766-1790) et la dynastie des Ngolosi qui lui succède, mais le présente comme un ton-jon parvenu au pouvoir : elle ne rattache à aucun moment son jamu au clan bamana Jara. Le lien serait une homonymie de patronyme, que ce champ écarte, et non une descendance. Aucun autre porteur décédé n'a été rattaché au clan."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Diarra et Jara sont deux graphies d'un même jamu. Aucune lignée d'origine distincte n'a été trouvée, mais l'étymologie du nom restant elle-même ouverte, une homonymie ne pourrait pas être écartée sur cette base."
+      "reason": "Diarra et Jara sont deux graphies d'un même jamu. Le dictionnaire des jamuw range Condé, Ndiaye et Koné parmi les équivalences de l'entrée Jàra — des noms de clan d'autres peuples tenus pour le même, non des homonymes. Aucune lignée d'origine distincte n'a été trouvée, mais l'étymologie du nom restant elle-même ouverte, une homonymie ne pourrait pas être écartée sur cette base."
     }
   ]
 }
