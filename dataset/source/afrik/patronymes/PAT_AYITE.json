@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. La distribution de Ayité est attestée séparément ; aucune étymologie n'est déduite de cette distribution."
   },
   "id": "PAT_AYITE",
   "nameMain": "Ayité",
@@ -11,13 +11,19 @@
     {
       "spelling": "Ayité",
       "attestations": [
-        { "countryId": "TGO", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "TGO",
+          "sourceRefs": ["forebears-ayite"]
+        }
       ]
     },
     {
       "spelling": "Ayite",
       "attestations": [
-        { "countryId": "TGO", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "TGO",
+          "sourceRefs": ["forebears-ayite"]
+        }
       ]
     }
   ],
@@ -31,7 +37,7 @@
   "peoples": [
     {
       "peopleId": "PPL_EWE",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     }
   ],
@@ -39,7 +45,7 @@
     {
       "countryId": "TGO",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["forebears-ayite"]
     }
   ],
   "alliances": [],
@@ -54,32 +60,48 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "forebears-ayite",
+      "title": "Ayite Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/ayite",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page Forebears propre à Ayité, consultée directement. La base agrégée atteste la graphie et sa distribution dans TGO, mais ne donne aucun sens ; elle précise qu'une distribution géographique ne permet pas d'inférer une appartenance ethnique. Ces données sont donc conservées au niveau « unverified » et ne soutiennent aucune étymologie."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches bibliographiques et web « Ayité ewe anthroponymie étymologie », « Ayité onomastique » et « Ayité surname meaning », ainsi que la page Forebears propre au nom, n'ont livré aucune étymologie ni histoire de formation vérifiable. La distribution observée n'est pas interprétée comme une origine."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches « Ayité ewe anthroponymie » et « Ayité ethnic group » n'ont fourni aucune source propre au nom établissant son rattachement au peuple proposé par la file de candidats ; ce rattachement reste donc au statut « supposed »."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Ayité joking relationship », « Ayité alliance patronyme » et « Ayité sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Ayité hereditary occupation caste title » et « Ayité fonction sociale » n'ont associé ce nom à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Ayité obituary biography deceased » et « Ayité nécrologie » n'ont pas permis de retenir un porteur décédé sur une notice suffisamment fiable et propre au nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Ayité homonym etymology » et « Ayité surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La page Forebears atteste une distribution du nom, mais ni elle ni les recherches « Ayité family name inheritance » ne décrivent sa règle de transmission."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Les sources consultées ne permettent pas de déterminer si Ayité désigne historiquement un lignage, un clan ou une autre unité sociale."
     }
   ]
 }
