@@ -68,9 +68,25 @@ describe("ETNI-1684 first clan-name dossiers", () => {
       expect(
         raw.spellings.map(({ spelling }: { spelling: string }) => spelling)
       ).toContain(name);
-      expect(
-        raw.countries.map(({ countryId }: { countryId: string }) => countryId)
-      ).toEqual(sourcePeople.currentCountries);
+      // Where the people lives now is a floor, not a ceiling. A name can be
+      // attested where the people no longer is — Bluett records Jallo in the
+      // Bundu in 1734 — so research may add a country, provided it brings a
+      // source, but may never drop one the people fiche carries.
+      const ficheCountries = raw.countries.map(
+        ({ countryId }: { countryId: string }) => countryId
+      );
+      expect(ficheCountries, `${id}: countries`).toEqual(
+        expect.arrayContaining(sourcePeople.currentCountries)
+      );
+      for (const country of raw.countries as Array<{
+        countryId: string;
+        sourceRefs: string[];
+      }>) {
+        expect(
+          country.sourceRefs,
+          `${id}/${country.countryId}: country sources`
+        ).not.toHaveLength(0);
+      }
       // The corpus passage the selection pass rested on is never dropped, and
       // never silently promoted: the research pass adds sources beside it.
       const corpusSource = raw.sources.find(({ sourceKey }: Source) =>
