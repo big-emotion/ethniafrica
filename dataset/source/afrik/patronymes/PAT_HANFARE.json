@@ -2,43 +2,63 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. La source disponible documente l'emploi dynastique du nom à Aussa, mais ne fournit pas son étymologie."
   },
   "id": "PAT_HANFARE",
   "nameMain": "Hanfare",
-  "nameSystem": "clan_name",
+  "nameSystem": "non_hereditary_patronymic",
   "spellings": [
     {
       "spelling": "Hanfare",
       "attestations": [
-        { "countryId": "ETH", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue", "hanfare-hailu-jemere-2017"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "La liste des sultans d'Aussa emploie Hanfare à différentes positions dans des chaînes de noms personnelles, tandis que l'article nomme explicitement Aydahiso comme clan ; Hanfare est donc traité ici comme nom personnel et élément patronymique, non comme nom de clan.",
+        "claimStatus": "established",
+        "sourceRefs": ["hanfare-hailu-jemere-2017"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_AFAR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "hanfare-hailu-jemere-2017"]
     }
   ],
   "countries": [
     {
       "countryId": "ETH",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "hanfare-hailu-jemere-2017"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": null,
-  "bearers": [],
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Sultan Mohammed Hanfare « Illalta »",
+      "sourceRefs": ["hanfare-hailu-jemere-2017"]
+    },
+    {
+      "status": "deceased",
+      "displayName": "Sultan Hanfare Kadafo Aydahis",
+      "sourceRefs": ["hanfare-hailu-jemere-2017"]
+    }
+  ],
   "homonyms": [],
   "sources": [
     {
@@ -48,32 +68,32 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "hanfare-hailu-jemere-2017",
+      "title": "Recalling the history of Sultan Mohammed Hanfare “Illalta”: Was he a democratic Sultan of Aussa in Afar, Ethiopia?",
+      "url": "https://academicjournals.org/journal/AJHC/article-full-text/54E525066800",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Berihun Kassa Hailu et Jemal Abebe Jemere, African Journal of History and Culture 9(9), 2017, p. 72-77, DOI 10.5897/AJHC2017.0370. La chronologie des sultans et la discussion de la succession distinguent les chaînes de noms comportant Hanfare du clan Aydahiso."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "L'article de Hailu et Jemere (2017), sa bibliographie et les recherches sur « Hanfare », « Aussa » et l'onomastique afar ont été examinés ; ils documentent des porteurs et une succession dynastique, mais aucune analyse linguistique du nom Hanfare."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les passages de Hailu et Jemere (2017) sur les chefs de clan, la succession et la guerre civile ont été recherchés ; ils ne décrivent aucune alliance de parenté à plaisanterie entre Hanfare et un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La chronologie de la dynastie d'Aussa et les fonctions politiques décrites par Hailu et Jemere (2017) ont été vérifiées ; aucune caste ou fonction sociale héréditaire attachée au nom Hanfare n'y est établie."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les formes Hanfare et Mohammed Hanfare ont été recherchées dans l'article et les résultats bibliographiques associés ; aucun homonyme distinct et documenté n'a été trouvé."
     }
   ]
 }
