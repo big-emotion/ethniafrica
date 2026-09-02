@@ -18,6 +18,15 @@
       ]
     },
     {
+      "spelling": "Silue",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["civ-fonction-publique-2025-silue"]
+        }
+      ]
+    },
+    {
       "spelling": "Hili",
       "attestations": [
         {
@@ -95,6 +104,14 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Louis Tauxier, réédition Karthala de 2003 d'une enquête coloniale publiée en 1921. Les p. 188 et 203-204 ont été consultées : l'auteur donne Silivvé parmi les noms de clan sénoufo, le traduit localement par le nom d'une antilope en pallakha et rapporte deux récits divergents sur cette association. Le vocabulaire racial et les généralisations de l'ouvrage relèvent de son cadre colonial ; seuls les passages nommément localisés sont retenus."
+    },
+    {
+      "sourceKey": "civ-fonction-publique-2025-silue",
+      "title": "Cinquième édition des Journées de la Fonction publique — remise des lots de la tombola",
+      "url": "https://fonctionpublique.gouv.ci/index.php/front-page/navigator/viewpage/_alaune/2285",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Page officielle du ministère ivoirien de la Fonction publique consultée pour la seule attestation de la graphie administrative non accentuée SILUE. La personne vivante citée sur cette page n'est pas reprise comme porteuse dans le dossier."
     }
   ],
   "gaps": [

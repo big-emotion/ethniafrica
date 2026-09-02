@@ -25,6 +25,15 @@
           "sourceRefs": ["dakubu-2000-dagomba-names"]
         }
       ]
+    },
+    {
+      "spelling": "Abdulaï",
+      "attestations": [
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
     }
   ],
   "transmissionMode": "non_hereditary",
@@ -77,6 +86,14 @@
       "tier": "official",
       "source_kind": "government",
       "notes": "Liste électorale spéciale officielle de la région Northern, circonscription de Yendi, consultée pour l'attestation répétée de la graphie Abdulai. Les personnes vivantes de cette liste ne sont pas reprises comme porteurs dans le dossier."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Source interne de la vague 1 conservée uniquement pour ne pas supprimer silencieusement la graphie Abdulaï présente dans le corpus initial. Les recherches exactes dans l'article de Dakubu, les registres ghanéens et les catalogues consultés n'ont pas retrouvé cette graphie accentuée ; elle ne soutient aucune autre affirmation de la fiche."
     }
   ],
   "gaps": [
