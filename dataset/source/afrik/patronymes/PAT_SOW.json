@@ -13,7 +13,10 @@
       "attestations": [
         {
           "countryId": "SEN",
-          "sourceRefs": ["corpus-ppl-wolof-organisation"]
+          "sourceRefs": [
+            "corpus-ppl-wolof-organisation",
+            "familysearch-sow-dafn"
+          ]
         },
         {
           "countryId": "GMB",
@@ -21,20 +24,10 @@
         },
         {
           "countryId": "MRT",
-          "sourceRefs": ["corpus-ppl-wolof-organisation"]
-        },
-        {
-          "countryId": "GIN",
-          "sourceRefs": ["vieillard-fouta-clans", "straussberger-2016-futa"]
-        }
-      ]
-    },
-    {
-      "spelling": "Sô",
-      "attestations": [
-        {
-          "countryId": "GIN",
-          "sourceRefs": ["vieillard-fouta-clans"]
+          "sourceRefs": [
+            "corpus-ppl-wolof-organisation",
+            "familysearch-sow-dafn"
+          ]
         }
       ]
     }
@@ -43,17 +36,7 @@
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [
-      {
-        "claim": "Au Fouta-Djalon, Sô et Sow sont donnés comme les noms du groupe classique Feroɓɓe ; Straussberger confirme Sow parmi les quatre yettore employés comme noms de famille et marqueurs fulɓe.",
-        "claimStatus": "established",
-        "sourceRefs": [
-          "vieillard-fouta-clans",
-          "straussberger-2016-futa",
-          "bolaaro-clans-peuls"
-        ]
-      }
-    ],
+    "writtenChronicles": [],
     "linguisticReconstructions": []
   },
   "peoples": [
@@ -61,15 +44,6 @@
       "peopleId": "PPL_WOLOF",
       "status": "attested",
       "sourceRefs": ["corpus-ppl-wolof-organisation"]
-    },
-    {
-      "peopleId": "PPL_FULA",
-      "status": "attested",
-      "sourceRefs": [
-        "vieillard-fouta-clans",
-        "straussberger-2016-futa",
-        "bolaaro-clans-peuls"
-      ]
     }
   ],
   "countries": [
@@ -87,11 +61,6 @@
       "countryId": "MRT",
       "status": "attested",
       "sourceRefs": ["corpus-ppl-wolof-organisation"]
-    },
-    {
-      "countryId": "GIN",
-      "status": "attested",
-      "sourceRefs": ["vieillard-fouta-clans", "straussberger-2016-futa"]
     }
   ],
   "alliances": [],
@@ -105,49 +74,37 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Passage source : dataset/source/afrik/peuples/FLG_ATLANTIQUE/PPL_WOLOF.json#content.organization.clanOrganization. Cette source interne maintient l’association wolof et les pays Sénégal, Gambie et Mauritanie au niveau non vérifié."
+      "notes": "Passage source : dataset/source/afrik/peuples/FLG_ATLANTIQUE/PPL_WOLOF.json#content.organization.clanOrganization. Cette source interne maintient l’association wolof et les pays Sénégal, Gambie et Mauritanie au niveau non vérifié, dans l’attente d’une revue claim-level."
     },
     {
-      "sourceKey": "bolaaro-clans-peuls",
-      "title": "Les clans peulhs du Fouta Djallon",
-      "url": "https://bolaaro.wordpress.com/2016/02/13/les-clans-peulhs-du-fouta-djallon/",
-      "tier": "unverified",
-      "source_kind": "community",
-      "notes": "Blog communautaire peul conservé comme source orale/publique de faible niveau : il nomme Sow parmi quatre clans du Fouta-Djalon. La fiche ne s’appuie pas sur lui seul ; Vieillard et Straussberger fournissent une triangulation académique."
-    },
-    {
-      "sourceKey": "vieillard-fouta-clans",
-      "title": "Notes sur les Peuls du Fouta-Djallon — Clans et familles",
-      "url": "https://webfuuta.site/bibliotheque/gilbert_vieillard/notes/chap03.html",
+      "sourceKey": "familysearch-sow-dafn",
+      "title": "Sow Name Meaning — Dictionary of American Family Names",
+      "url": "https://www.familysearch.org/en/surname?surname=sow",
       "tier": "referenced",
-      "source_kind": "academic",
-      "notes": "Gilbert Vieillard, enquête ethnographique publiée en 1939 et reproduite par WebFuuta. Le chapitre donne Sô et Sow pour les Feroɓɓe et décrit la famille du Fouta-Djalon comme patrilinéaire. Cette source coloniale est utilisée comme témoignage situé."
-    },
-    {
-      "sourceKey": "straussberger-2016-futa",
-      "title": "Storming the Citadel: Decolonization and Political Contestation in Guinea's Futa Jallon, 1945–61",
-      "url": "https://www.cambridge.org/core/journals/journal-of-african-history/article/abs/storming-the-citadel-decolonization-and-political-contestation-in-guineas-futa-jallon-194561/1F793ADC739F5A7A6B328C7CCEF585C5",
-      "tier": "referenced",
-      "source_kind": "academic",
-      "notes": "John Straussberger, The Journal of African History 57/2, 2016, p. 231-249, DOI 10.1017/S0021853716000050. La note 35 nomme explicitement Sow parmi quatre yettore employés comme noms de famille et marqueurs fulɓe."
+      "source_kind": "repository",
+      "notes": "Notice du Dictionary of American Family Names (Patrick Hanks, 2003/2006), consultée directement sur FamilySearch. Elle atteste Sow au Sénégal et en Mauritanie, mais le rattache aux groupes fulani et tukulor, non aux Wolof ; elle ne peut donc pas établir l'origine de l'association wolof conservée depuis le corpus."
     }
   ],
   "gaps": [
     {
+      "fieldPath": "origin",
+      "reason": "La notice FamilySearch/Dictionary of American Family Names et la référence bibliographique de M'Bodj, Becker et Martin, « Notes sur les patronymes wolof » (1980), ont été recherchées pour une origine wolof de Sow. La première rattache plutôt le nom aux Fulani et Toucouleurs, tandis que le texte intégral de la seconde n'a pas été retrouvé ; aucune origine propre à l'association wolof de cette fiche n'est donc affirmée."
+    },
+    {
       "fieldPath": "alliances",
-      "reason": "Vieillard, Straussberger et la publication communautaire Bolaaro ont été recherchés pour une paire de dendiraagal nommant Sow ; aucune paire patronymique explicite n’y est fournie."
+      "reason": "La notice FamilySearch et la référence bibliographique de M'Bodj, Becker et Martin ont été recherchées pour une paire de parenté à plaisanterie nommant Sow ; aucune paire patronymique vérifiable n'a été trouvée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Straussberger décrit les yettore comme transversaux aux rangs et Vieillard ne rattache Sow à aucun métier héréditaire ; aucune fonction de caste propre au nom n’est établie."
+      "reason": "La notice FamilySearch et la référence bibliographique de M'Bodj, Becker et Martin ont été recherchées pour une fonction sociale ou un métier héréditaire propre au Sow wolof ; aucune fonction vérifiable n'a été trouvée."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Les sources consultées attestent Sow comme nom collectif ; elles n’établissent pas à la fois le décès et l’auto-identification lignagère d’un porteur individuel."
+      "reason": "La notice FamilySearch a été recherchée pour un porteur décédé dont l'identification au lignage wolof serait documentée ; elle ne fournit aucun porteur individuel répondant à ces critères."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "L’association wolof interne et l’attestation fula de Vieillard/Straussberger ont été comparées ; aucune source dédiée n’établit deux origines distinctes, donc ces usages ne sont pas séparés en homonymes."
+      "reason": "La notice FamilySearch rattache Sow aux Fulani et Toucouleurs, tandis que la source interne conserve une association wolof non vérifiée. Cette divergence a été recherchée comme homonymie possible, mais aucune source dédiée n'établit deux étymologies distinctes."
     }
   ]
 }
