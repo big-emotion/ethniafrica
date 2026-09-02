@@ -285,6 +285,44 @@ export const SOURCES = {
       "Site culturel yoruba. Cité pour la distinction entre oríkì personnel et " +
       "oríkì orílẹ̀ (louange de lignage, héritée), non pour un lignage particulier.",
   },
+  "bluett-1734-job-jallo": {
+    title:
+      "Some Memoirs of the Life of Job, the Son of Solomon, the High Priest of Boonda in Africa",
+    url: "https://nationalhumanitiescenter.org/pds/maai/freedom/text1/diallo.pdf",
+    tier: "referenced",
+    source_kind: "archive",
+    notes:
+      "Bluett, Thomas, Londres, 1734. Document primaire : le récit dicté par " +
+      "Ayuba Suleiman Diallo à Bluett pendant sa captivité, imprimé de son " +
+      "vivant. C'est la plus ancienne attestation écrite connue du nom, et " +
+      "elle est explicite sur le système : « The Surname of his Family is " +
+      "Jallo », posé en regard de la chaîne patronymique « HYUBA, BOON " +
+      "SALUMENA, BOON HIBRAHEMA ». L'URL est l'édition d'extraits du National " +
+      "Humanities Center (2009), seule version dont le texte a pu être lu " +
+      "intégralement ici ; le texte complet est à Documenting the American " +
+      "South (docsouth.unc.edu/neh/bluett/menu.html), dont le serveur a refusé " +
+      "la connexion lors de la passe. Sections I et III vérifiées mot à mot. " +
+      "Source coloniale à lire comme telle : Bluett écrit en anglais, en " +
+      "abolitionniste anglican, à propos d'un homme qu'il a contribué à " +
+      "affranchir, et la graphie « Jallo » est la sienne.",
+  },
+  "lindgren-2004-ndebele-castes": {
+    title:
+      "The Internal Dynamics of Ethnicity: Clan Names, Origins and Castes in Southern Zimbabwe",
+    url: "https://doi.org/10.3366/afr.2004.74.2.173",
+    tier: "referenced",
+    source_kind: "academic",
+    notes:
+      "Lindgren, Björn, Africa (Journal of the International African " +
+      "Institute) 74(2), 2004, p. 173-193. Réserve à porter avec la " +
+      "citation : le texte intégral est sous péage chez Cambridge Core et " +
+      "n'a pas pu être lu lors de la passe ; seuls la notice et le résumé ont " +
+      "été vérifiés. Ce qui est cité ici s'y limite — l'isibongo est en " +
+      "Matabeleland du Sud un opérateur de classement qui articule nom de " +
+      "clan, origine revendiquée et « caste », et qui découpe la catégorie " +
+      "ndébélé en parties. Aucune glose de nom particulier ne lui est " +
+      "empruntée.",
+  },
 };
 
 /** Shared across the twelve Mande fiches: the jamu is a patrilineal clan name. */
@@ -1163,27 +1201,128 @@ export const RESEARCH = {
   // ===========================================================================
   // Buganda — ebika totémiques
   // ===========================================================================
-  PAT_FFUMBE: bugandaClan(
-    "la civette d'Afrique",
-    "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
-    "la grenouille (kikerekere), au rang nº 6 de la liste de Roscoe"
-  ),
-  PAT_LUGAVE: bugandaClan(
-    "le pangolin",
-    "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
-    "le champignon (butiko), au rang nº 11 de la liste de Roscoe"
-  ),
-  PAT_NGONGE: bugandaClan(
-    "la loutre",
-    "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
-    "la genette (kasimba), au rang nº 4 de la liste de Roscoe"
-  ),
-  PAT_NJAZA: bugandaClan(
-    "le redunca (antilope des roseaux)",
-    "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
-    "une antilope (njugulu), au rang nº 25 de la liste de Roscoe, qui glose " +
-      "lui-même le totem principal par « Roebuck » et non par le redunca"
-  ),
+  PAT_FFUMBE: bugandaClan({
+    totem: "la civette d'Afrique",
+    banansangwa:
+      "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
+    akabbiro: "la grenouille (kikerekere), au rang nº 6 de la liste de Roscoe",
+    forefather:
+      "Le clan de la Civette se dit établi dans le pays bien avant la venue " +
+      "de Kintu, et le plus important des clans qui l'y précédaient. Il fait " +
+      "remonter son origine à Ntege, qu'il donne pour roi de l'Ouganda : " +
+      "Kintu le déposa, lui laissa plusieurs domaines et l'autorisation de " +
+      "garder le titre de Kabaka.",
+    courtFunction:
+      "Le clan fournit au palais l'épouse royale portant le titre de Naku. " +
+      "Cwa, fils de Kintu, prit pour femme Naku, fille de Ntege, et depuis " +
+      "lors chaque Kabaka prend dans ce clan une épouse qui reçoit ce nom. " +
+      "Le clan fournit également l'homme qui administrait l'ordalie par le " +
+      "poison, ouverte en appel d'une décision du roi, et le prêtre du dieu " +
+      "Baka, toujours pris parmi ses membres — le médium, lui, pouvait venir " +
+      "de n'importe quel clan.",
+    chronicles: [
+      {
+        claim:
+          "Walusimbi, fils de Ntege, fut un favori du roi Cwa et l'un de ses " +
+          "conseillers. Sur son domaine de Baka se tenait une partie des " +
+          "cérémonies de prolongation de la vie du roi, au retour du domaine " +
+          "de Nankere.",
+        claimStatus: "claimed",
+        sourceRefs: ["roscoe-1911-baganda"],
+      },
+    ],
+  }),
+  PAT_LUGAVE: bugandaClan({
+    totem: "le pangolin",
+    banansangwa:
+      "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
+    akabbiro: "le champignon (butiko), au rang nº 11 de la liste de Roscoe",
+    forefather:
+      "Le clan du Pangolin se donne pour l'un des plus anciens du pays et se " +
+      "dit déjà établi dans le district de Busiro quand Kintu vint. Il fait " +
+      "remonter son origine à Mukibe Sekiwunga, à qui Kintu donna la colline " +
+      "de Kapeka.",
+    courtFunction:
+      "Le clan a la garde des tambours royaux Mujaguzo, le chef titré Ntenga " +
+      "fournissant les batteurs ; il lui est confié le tapis d'apparat Kiyu, " +
+      "sur lequel le roi se tenait lors des cérémonies d'État. L'intendant en " +
+      "chef de la reine est pris dans ce clan, de même que les chefs titrés " +
+      "Nakaianza, qui avait la charge de l'épouse royale Kabeja et la garde " +
+      "du dieu Nantaba, et Nantiga, chargé de l'épouse royale Nanzigu.",
+    chronicles: [
+      {
+        claim:
+          "Le clan tenait deux temples avec leurs prêtres et leurs médiums : " +
+          "celui de Wanga sur la colline de Wasozi et celui de Wamala sur la " +
+          "colline de Sekiwunga.",
+        claimStatus: "claimed",
+        sourceRefs: ["roscoe-1911-baganda"],
+      },
+    ],
+  }),
+  PAT_NGONGE: bugandaClan({
+    totem: "la loutre",
+    banansangwa:
+      "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
+    akabbiro: "la genette (kasimba), au rang nº 4 de la liste de Roscoe",
+    forefather:
+      "Le clan de la Loutre fait remonter son origine à Mwanga Kisole, donné " +
+      "pour katikkiro — premier ministre — de Kintu, et que ce roi aurait " +
+      "tué dans un accès de colère. À sa mort son fantôme prit un médium ; " +
+      "il fut divinisé et un temple lui fut bâti sur la colline de Nsoke, " +
+      "desservi par un prêtre du clan.",
+    courtFunction:
+      "Le clan est fabricant d'étoffes d'écorce pour le roi. Il lui fournit " +
+      "une épouse chargée de faire le lit royal, charge héréditaire dans le " +
+      "clan : à la mort du roi, cette femme gagnait son temple funéraire et " +
+      "y demeurait à vie, une autre femme du clan prenant sa place à sa " +
+      "propre mort, tandis que le nouveau roi prenait au clan une nouvelle " +
+      "épouse-lingère. Le clan fournit aussi le serviteur chargé du tabac " +
+      "royal, ainsi que les prêtres des temples des dieux Mukasa, sur la " +
+      "colline de Kyange, et Wamala, sur celle de Nsoke.",
+  }),
+  PAT_NJAZA: bugandaClan({
+    totem: "le redunca (antilope des roseaux)",
+    banansangwa:
+      "Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
+    akabbiro:
+      "une antilope (njugulu), au rang nº 25 de la liste de Roscoe, qui glose " +
+      "lui-même le totem principal par « Roebuck » et non par le redunca",
+    forefather:
+      "Le clan du Redunca se dit établi de tout temps dans la forêt de " +
+      "Mabira, en Kyagwe, et donne pour ancêtre Lutimba, qui s'y trouvait " +
+      "quand Kintu s'installa en Ouganda.",
+    courtFunction:
+      "Chasseurs d'éléphants depuis leurs origines, les membres du clan " +
+      "devinrent, une fois le pays organisé en monarchie, les chasseurs du " +
+      "roi et lui payèrent tribut en ivoire. Ils avaient la garde du dieu de " +
+      "la chasse pour leur contrée — Mpaamaso au premier chef, avec ses " +
+      "prêtres. Au lendemain du couronnement, le clan apportait au nouveau " +
+      "roi une défense d'ivoire qu'il enjambait, geste censé multiplier les " +
+      "éléphants.",
+    chronicles: [
+      {
+        claim:
+          "Dans la liste de Roscoe, le clan du Redunca porte la marque (a) : " +
+          "il faisait partie des clans qui n'étaient jamais autorisés à " +
+          "présenter un prince candidat au trône. Le roi pouvait épouser une " +
+          "femme du clan, mais l'appartenance maternelle en écartait " +
+          "l'enfant ; dans la plupart des cas les garçons nés de ces unions " +
+          "étaient tués à la naissance et seules les filles vivaient.",
+        claimStatus: "established",
+        sourceRefs: ["roscoe-1911-baganda"],
+      },
+      {
+        claim:
+          "L'éléphant tué, le clan extrayait le nerf de la défense, " +
+          "l'emportait au loin et l'enterrait en signalant le lieu : le " +
+          "fantôme de l'animal y étant réputé attaché, le malheur devait " +
+          "frapper qui l'enjamberait sans le savoir.",
+        claimStatus: "claimed",
+        sourceRefs: ["roscoe-1911-baganda"],
+      },
+    ],
+  }),
 
   // ===========================================================================
   // Habesha — patronyme non héréditaire
@@ -1262,12 +1401,51 @@ export const RESEARCH = {
   },
 };
 
-function bugandaClan(totem, banansangwa, akabbiro) {
+/**
+ * Roscoe's chapter VI is two different documents bolted together, and the first
+ * pass only read the first. Pages 138-139 are the bare totem list — that is what
+ * the earlier fiches quote. Pages 141-171 then give each clan its own narrative
+ * section, headed by the English name of the totem rather than the Luganda one,
+ * which is why a grep for "Lugave" returns a single hit and the section headed
+ * "The Manis Clan" was missed. Those sections carry the founding ancestor, the
+ * court offices and the estates, so the four ebika fiches are written from them
+ * here rather than from the list.
+ *
+ * `courtFunction` is what the sections establish and the earlier pass declared
+ * unfound: in Buganda a clan holds named, inherited duties at the Kabaka's
+ * court, which is precisely `casteOrSocialFunction`.
+ */
+function bugandaClan({
+  totem,
+  banansangwa,
+  akabbiro,
+  forefather,
+  courtFunction,
+  chronicles = [],
+  gapReasons = {},
+}) {
   return {
     transmissionMode: "patrilineal",
     designatedSocialUnit: "clan",
     origin: {
-      oralTraditions: [],
+      oralTraditions: [
+        {
+          claim: forefather,
+          claimStatus: "claimed",
+          griot:
+            "Les chefs de clan et officiants baganda réunis pour Roscoe par " +
+            "Sir Apolo Kagwa, katikkiro du Buganda",
+          transcription:
+            "John Roscoe, The Baganda, Macmillan, 1911, chapitre VI « The " +
+            "Clans and their Totems ». Roscoe écrit dans sa préface avoir " +
+            "reçu « the principal men from each clan » plusieurs semaines " +
+            "durant, par l'entremise de Kagwa, et avoir consigné leurs " +
+            "récits ; les sections claniques rapportent donc ce que chaque " +
+            "clan dit de lui-même, au style indirect (« they assert », " +
+            "« they trace their origin to »).",
+          sourceRefs: ["roscoe-1911-baganda"],
+        },
+      ],
       writtenChronicles: [
         {
           claim: `Le totem principal (omuziro) de ce clan est ${totem}. ${banansangwa}`,
@@ -1279,6 +1457,7 @@ function bugandaClan(totem, banansangwa, akabbiro) {
           claimStatus: "established",
           sourceRefs: ["roscoe-1911-baganda"],
         },
+        ...chronicles,
       ],
       linguisticReconstructions: [
         {
@@ -1289,7 +1468,23 @@ function bugandaClan(totem, banansangwa, akabbiro) {
           claimStatus: "established",
           sourceRefs: ["roscoe-1911-baganda"],
         },
+        {
+          claim:
+            "Le clan (ekika) se subdivise en branches (essiga) puis en " +
+            "sous-branches (enda), et s'ancre sur des tenures funéraires " +
+            "(obutaka) : trois générations inhumées en un lieu y fixent le " +
+            "droit du lignage, que le Kabaka lui-même se gardait de " +
+            "contester. La tête de clan porte un titre, et non un nom : le " +
+            "titre est celui du premier détenteur de la charge et passe au " +
+            "successeur.",
+          claimStatus: "established",
+          sourceRefs: ["roscoe-1911-baganda"],
+        },
       ],
+    },
+    casteOrSocialFunction: {
+      value: courtFunction,
+      sourceRefs: ["roscoe-1911-baganda"],
     },
     totemicFoodProhibition: {
       value:
@@ -1301,22 +1496,29 @@ function bugandaClan(totem, banansangwa, akabbiro) {
     sourceKeys: ["roscoe-1911-baganda", "buganda-heritage-clans"],
     gapReasons: {
       alliances:
-        "Le système ganda ne documente pas d'alliance formelle entre ebika ; " +
-        "l'exogamie clanique en est l'inverse.",
-      casteOrSocialFunction:
-        "Les titres de chef de clan donnés par les sites patrimoniaux ganda " +
-        "(Walusimbi pour le Ffumbe, Ndugwa pour le Lugave) ont été cherchés dans " +
-        "le texte intégral de Roscoe : Walusimbi y apparaît six fois, mais comme " +
-        "détenteur de prérogatives rituelles à l'intronisation, jamais rattaché " +
-        "explicitement à son ekika ; Ndugwa n'y figure que dans une liste de noms " +
-        "de garçons. La charge héréditaire est donc plausible et non établie.",
+        "Roscoe documente bien des rattachements nommés entre ebika — le clan " +
+        "du Chien au clan de la Civette, ceux du Chacal et du Corbeau à celui " +
+        "de la Loutre — et une seconde institution d'alliance : les clans " +
+        "écartés du trône donnaient leurs filles à d'autres clans pour que " +
+        "leurs petits-fils redeviennent éligibles. L'alliance ganda existe " +
+        "donc et est attestée par paires nommées. Aucune de ces paires ne " +
+        "relie deux des quatre ebika dotés d'une fiche, et le champ exige un " +
+        "targetPatronymeId présent dans le corpus : c'est la couverture du " +
+        "corpus qui bloque, non la documentation.",
       bearers:
-        "Le texte intégral de Roscoe a été parcouru pour ce clan : il nomme des " +
-        "chefs et des officiants, mais sans généalogie permettant de rattacher " +
-        "une personne décédée au clan par une source dédiée.",
+        "Les sections claniques de Roscoe nomment abondamment — chefs, " +
+        "prêtres, médiums, épouses royales. Mais Roscoe établit au même " +
+        "chapitre que ces noms sont des titres transmis au successeur, et " +
+        "que le détenteur « parle des événements passés comme s'il y avait " +
+        "assisté », au point de se dire le père de gens morts depuis " +
+        "longtemps. Enregistrer l'un d'eux en porteur individuel décédé " +
+        "reviendrait à prendre une charge pour une personne. L'absence " +
+        "n'est pas ici un défaut de recherche mais une propriété du système.",
       homonyms:
         "Le nom de ce clan est celui de son totem, mot commun du luganda ; " +
-        "aucune lignée homonyme d'origine distincte n'a été trouvée.",
+        "aucune lignée homonyme d'origine distincte n'a été trouvée dans les " +
+        "sections claniques de Roscoe ni sur le site patrimonial ganda.",
+      ...gapReasons,
     },
   };
 }
