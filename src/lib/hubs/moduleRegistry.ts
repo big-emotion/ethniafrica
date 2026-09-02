@@ -376,6 +376,36 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     // opened on. The chip still sends a reader to the game itself.
     heroable: "globe",
   },
+  /**
+   * The long-form counterpart of the two naming axes. Appellations and Nom
+   * index what the corpus records and have no room to say why recording it is
+   * contested — a question crossing many fiches, so it files under Les
+   * dossiers and not under L'atlas.
+   *
+   * **Filed last, out of its accessMode's block, on purpose.** The accent is
+   * the entry's index cycled through four, continuous across the whole
+   * registry, so inserting beside `anecdotes` repaints every module after it —
+   * in the header, in the site plan and on the home's axis ring. That is a
+   * site-wide visual change for zero reader benefit, and the docstring on
+   * `accentForModule` names it as the cost of deriving the accent. Appending
+   * shifts nothing. `getModulesForAccessMode` filters, so the reader still
+   * meets it under Les dossiers, last, which is where a draft belongs.
+   *
+   * "static" because it renders from a module in the repo; "draft" because it
+   * ships with a starting text. Every claim in it is a statement about this
+   * corpus, checkable against the page it links to, and none cites an outside
+   * work yet — inventing a bibliography to fill a template is the one thing
+   * this atlas cannot afford, so the maturity says so instead of the prose
+   * pretending otherwise.
+   */
+  {
+    id: "nommer-les-peuples",
+    name: "Nommer les peuples",
+    accessMode: "dossiers",
+    page: "naming",
+    availability: "static",
+    editorialReadiness: "draft",
+  },
 ];
 
 // @req REQ-114

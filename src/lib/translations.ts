@@ -22,6 +22,7 @@ const TRAIL_PAGE_LABELS: Record<PageType, string> = {
   about: "À propos",
   sources: "Sources",
   anecdotes: "Anecdotes",
+  naming: "Nommer les peuples",
   names: "Appellations",
   // The public label DEC-038 gives the patronyme, which is why the trail
   // reads "Nom" where the code says `patronymes`.

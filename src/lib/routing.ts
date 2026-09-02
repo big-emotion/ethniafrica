@@ -10,6 +10,7 @@ export type PageType =
   | "about"
   | "sources"
   | "anecdotes"
+  | "naming"
   | "names"
   | "patronymes"
   | "compare"
@@ -55,6 +56,11 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     about: "about",
     sources: "sources",
     anecdotes: "dossiers/anecdotes",
+    // The long-form counterpart of the two naming axes. Appellations and Nom
+    // index what the corpus records; this explains why recording it is
+    // contested, which is an explanation crossing many fiches and therefore
+    // a dossier rather than an atlas page.
+    naming: "dossiers/nommer-les-peuples",
     names: "atlas/appellations",
     // DEC-038 separates the two objects the corpus calls "name": an
     // *appellation* is how a people is called (an ethnonym, an access point

@@ -128,10 +128,19 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   });
 
   // Ordered from the most concrete question to the method that answers it.
+  // « Nommer les peuples » reads last because it is filed at the end of the
+  // registry rather than beside its peers — the accent is an entry's index
+  // cycled through four, so inserting it in the middle would repaint every
+  // module after it across the header, the site plan and the home.
   // @req REQ-114
   it("gives comprendre only the questions asked of the corpus", () => {
     const ids = getModulesForAccessMode("dossiers").map((m) => m.id);
-    expect(ids).toEqual(["anecdotes", "frise", "regards-colonisation"]);
+    expect(ids).toEqual([
+      "anecdotes",
+      "frise",
+      "regards-colonisation",
+      "nommer-les-peuples",
+    ]);
   });
 
   // @req REQ-114 @req REQ-120
@@ -247,6 +256,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
       "recherche",
       "anecdotes",
       "regards-colonisation",
+      "nommer-les-peuples",
     ]);
     for (const def of staticModules) {
       expect(def.page).not.toBeNull();
