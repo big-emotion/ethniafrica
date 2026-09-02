@@ -117,6 +117,10 @@ export function SiteFooter({ language }: SiteFooterProps) {
           label: directory.glossary,
           href: getLocalizedRoute(language, "glossary"),
         },
+        // Contact sits under the project rather than under Participer: the
+        // two rubrics beside it are ways of correcting the corpus, and this
+        // one is a way of reaching whoever publishes it.
+        { label: directory.contact, href: `/${language}/contact` },
       ],
     },
   ];
