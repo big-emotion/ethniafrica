@@ -14,6 +14,7 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleDetailViewV2 } from "@/components/people/PeopleDetailViewV2";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
+import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { PeopleFicheTitle } from "@/components/people/PeopleFicheTitle";
@@ -26,12 +27,6 @@ import { getPeopleFragmentation } from "@/api/v2/services/peopleFragmentation";
 import { getEgoNetwork } from "@/api/v2/services/relations";
 import { mapPeopleDetail } from "@/lib/afrikDetailMapper";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
-import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
-import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
-import {
-  DoctrineLinkCard,
-  isDoctrineSlug,
-} from "@/components/source-transparency/DoctrineLinkCard";
 
 // @req REQ-019
 export const revalidate = 3600;
@@ -80,83 +75,6 @@ export async function generateMetadata({
 }
 
 // ---------------------------------------------------------------------------
-// Snapshot view (pinned URLs — data is immutable, read from revisions only)
-// ---------------------------------------------------------------------------
-
-interface SnapshotViewProps {
-  entityId: string;
-  version: number;
-  publishedAt: string | null;
-  confidence: number | null;
-  doctrine?: {
-    slug: string;
-    version: number;
-  } | null;
-  snapshotData: Record<string, unknown>;
-  lang: string;
-}
-
-function SnapshotFicheView({
-  entityId,
-  version,
-  publishedAt,
-  confidence,
-  doctrine,
-  snapshotData,
-  lang,
-}: SnapshotViewProps) {
-  const nameMain =
-    typeof snapshotData.nameMain === "string"
-      ? snapshotData.nameMain
-      : typeof snapshotData.name_main === "string"
-        ? snapshotData.name_main
-        : entityId;
-
-  return (
-    <div data-testid="people-snapshot-view" className="space-y-4">
-      {/* Snapshot content */}
-      <div className="space-y-2">
-        <h1 className="text-afh-h2 font-semibold">{nameMain}</h1>
-        <p className="text-afh-small text-muted-foreground font-mono">
-          {entityId}
-        </p>
-      </div>
-
-      <PinnedVersionBanner
-        pinnedAt={publishedAt}
-        versionTag={String(version)}
-        liveUrl={getPeopleRoute(lang as Language, entityId)}
-      />
-
-      {/* Frozen confidence chip (AR14) */}
-      {confidence !== null && (
-        <div className="px-1">
-          <ConfidenceChip
-            confidenceScore={confidence}
-            sourceCount={null}
-            lastHumanAuditAt={publishedAt}
-            variant="hero"
-          />
-        </div>
-      )}
-
-      {/* "Version introuvable" copy is rendered by notFound() — this component
-          is only reached when the version exists */}
-      <div className="prose prose-neutral max-w-none text-afh-small text-muted-foreground">
-        <p>
-          Ce contenu est une capture archivée&nbsp;(v{version}) et ne sera
-          jamais modifié.
-        </p>
-      </div>
-
-      {doctrine && isDoctrineSlug(doctrine.slug) && (
-        <DoctrineLinkCard slug={doctrine.slug} version={doctrine.version} />
-      )}
-    </div>
-  );
-}
-
-// ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
 
@@ -200,7 +118,8 @@ export default async function PeoplesSlugPage({
     return (
       <PageLayout language="fr" sectionName="Peuples">
         <div className="container mx-auto max-w-4xl px-4 py-8">
-          <SnapshotFicheView
+          <FicheSnapshotView
+            kind="people"
             entityId={parsed.slug}
             version={parsed.version}
             publishedAt={snapshot.published_at}
