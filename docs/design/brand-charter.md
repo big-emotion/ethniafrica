@@ -506,9 +506,28 @@ to the `<h2>` while keeping its 12 px kicker dress would paint a heading three
 roles below its own children — the inversion `typography-charter.md` §3 names
 as a lie rather than a divergence.
 
+**But it does inherit the title's job, so it is not left at the title's
+kicker size.** The rule above takes the band's `<h2>` away; what it left
+behind was a section whose only heading text was 12 px, over 30 px headlines
+and 22 px body copy. The label of the band rendered two and a half times
+smaller than the prose it governed, and read as a stray caption between two
+articles rather than as the thing that made them one band — the reader met
+two unrelated facts where the page meant to show a section.
+
+An eyebrow that files a section with no title therefore takes
+`--afh-text-small`, and moves nothing else: the dress stays uppercase, 600
+and tracked at 0.16em, because a kicker that keeps only its size has become a
+caption (`typography-charter.md` §1). The ceiling is the rank rule above —
+`h3` and up would paint the kicker at the rank this section refuses it, so
+the step exists to make the band legible, never to give it back the title it
+is not allowed to have. `SectionHeading` marks the case itself, from the
+absence of a `title`; no caller opts in, so no caller can get it wrong.
+
 Gated by `didYouKnowCharter.test.ts` (the band files itself with a kicker and
 titles nothing), `SectionHeading.test.tsx` (a title-less unit renders no
-heading) and `homeOrientation.test.tsx` (the home's document plan).
+heading, is marked `is-untitled`, is sized at `small`, and is asserted never
+to reach a heading role) and `homeOrientation.test.tsx` (the home's document
+plan).
 
 ---
 

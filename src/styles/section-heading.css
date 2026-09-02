@@ -79,3 +79,22 @@
   margin-inline: auto;
   max-width: 28ch;
 }
+/* A unit that files its section with an eyebrow and no title — the anecdote
+   band, whose two facts are drawn at random, so no group title could be true
+   of every draw (brand charter §8.5).
+
+   The kicker is then the only heading text the band has, and at
+   --afh-text-eyebrow it rendered 12 px over 30 px headlines and 22 px body:
+   two and a half times smaller than the prose it governed. It read as a
+   stray caption between two articles rather than as the label of one band,
+   and the reader never registered the two facts as a section at all.
+
+   It takes --afh-text-small, the step the scale already holds for a label
+   that is read rather than skimmed. Not a heading role: h3 and above would
+   paint a kicker at the rank the same §8.5 refuses it, which
+   typography-charter.md §3 calls a lie rather than a divergence. The dress —
+   uppercase, 600, 0.16em — stays with the base rule, because an eyebrow that
+   keeps only its size has become a caption. Only the size moves. */
+.afh-section-heading.is-untitled .afh-section-heading-eyebrow {
+  font-size: var(--afh-text-small);
+}
