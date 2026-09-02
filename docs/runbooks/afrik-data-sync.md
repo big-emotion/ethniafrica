@@ -164,11 +164,45 @@ hand shortly after a deploy, check whether that workflow has already done it —
 
 ---
 
+## The automated recette sync
+
+`recette-data-sync.yml` loads the corpus into recette on every push to `recette` that touches
+`dataset/source/afrik/**`, the loaders, or the sync script — and on manual dispatch. It reads
+the ordinary `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` repository secrets,
+which are recette's.
+
+Until it existed, **nothing loaded the corpus into recette**: the only two loader calls in the
+repository were `--target=production`. A merge applied its migrations here and left the corpus
+at whatever someone had last loaded by hand, which is the mechanism behind "I contributed and I
+see nothing".
+
+Three properties worth knowing:
+
+- It validates the corpus against the strict models **before** loading, so a fiche that
+  violates its model never reaches the database.
+- It runs `check:migration-state` first and **refuses to load ahead of a pending migration**.
+  `migrate-recette.yml` fires on the same push, so on a merge carrying both a migration and a
+  fiche the two workflows are concurrent; this is what makes the ordering explicit rather than
+  a race.
+- It cannot reach production. `AFRIK_PRODUCTION_SUPABASE_URL` is left unset, and the loader
+  resolves `--target=recette` against a checked-in project ref.
+
+Without the secrets — on a fork or a Dependabot branch — it warns and skips rather than failing
+on an authentication error.
+
+---
+
 ## The automated production sync
 
-The workflow fires on a successful Vercel _Production_ deployment of `main`, runs
-`--target=production`, then POSTs a cache revalidation to `https://ethniafrica.com`. It reads
-two repository secrets, **both belonging to the Supabase project that backs production**:
+The workflow chains off the **OVH production deploy** (`workflow_run` on "Deploy Production
+(OVH)"), runs `--target=production`, then POSTs a cache revalidation to
+`https://ethniafrica.com`. It used to key on a Vercel _Production_ deployment of `main`;
+production left Vercel, so `vercel[bot]` will never create such a deployment again and the
+workflow would simply have stopped running, silently. Note that `workflow_run` only fires for a
+workflow file that lives on the **default branch** — on `recette` alone it is inert.
+
+It reads two repository secrets, **both belonging to the Supabase project that backs
+production**:
 
 | Secret                                 | Used as                                                        |
 | -------------------------------------- | -------------------------------------------------------------- |
@@ -197,12 +231,24 @@ were rejected during parsing or insertion — do not treat the run as successful
 | `afrik_people_relations`  | 12            |
 | `fiche_revisions`         | 18            |
 | `assertions`              | 18            |
-| `name_records`            | **0**         |
+| `name_records`            | ~3 727        |
 
-`name_records = 0` is correct, not a failure. The only file in
-`dataset/source/afrik/noms/` is `PPL_YORUBA.json`, which carries `_meta.illustrative: true` and
-is skipped by design. `/fr/noms` stays empty until someone authors a real dossier, and any
-ticket expecting a non-zero name count is mis-specified.
+This row used to read **0**, on the reasoning that the only file in
+`dataset/source/afrik/noms/` was `PPL_YORUBA.json`, which carries `_meta.illustrative: true`
+and is skipped by design. That stopped being true. `name_records` now has three feeders, and a
+count near zero is a failure rather than the expected state:
+
+| Feeder                                                 | Rows   |
+| ------------------------------------------------------ | ------ |
+| `nameRecordJsonLoader` — 10 real dossiers in `noms/`   | 17     |
+| `patronymeJsonLoader` — one per spelling, `surname`    | 31     |
+| `peopleAppellationLoader` — derived from people fiches | ~3 679 |
+
+`PPL_YORUBA.json` is still illustrative and still skipped, so 10 of the 11 dossiers load.
+
+Note that the 31 `surname` rows sit in a partition the listing excludes: both
+`afrik_name_forms` and `afrik_name_type_counts` filter `where nr.entity_type = 'people'`, so
+they are present in the table and invisible in `/fr/atlas/appellations` (ETNI-1821).
 
 A `HEAD` request with `Prefer: count=exact` reads a count without fetching rows:
 
