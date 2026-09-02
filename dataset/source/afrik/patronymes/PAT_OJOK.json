@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
   },
   "id": "PAT_OJOK",
   "nameMain": "Ojok",
@@ -11,7 +11,10 @@
     {
       "spelling": "Ojok",
       "attestations": [
-        { "countryId": "UGA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["amone-acholi-naming-2014"]
+        }
       ]
     }
   ],
@@ -19,21 +22,27 @@
   "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
-    "writtenChronicles": [],
+    "writtenChronicles": [
+      {
+        "claim": "Ojok est documenté comme un nom personnel masculin acholi donné à un enfant né avec une marque ou une particularité physique inhabituelle.",
+        "claimStatus": "established",
+        "sourceRefs": ["amone-acholi-naming-2014"]
+      }
+    ],
     "linguisticReconstructions": []
   },
   "peoples": [
     {
       "peopleId": "PPL_ACHOLI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["amone-acholi-naming-2014"]
     }
   ],
   "countries": [
     {
       "countryId": "UGA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["amone-acholi-naming-2014"]
     }
   ],
   "alliances": [],
@@ -42,34 +51,38 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "sourceKey": "amone-acholi-naming-2014",
+      "title": "Identity, Memory and Gender in Child Naming Among the Acholi People of Northern Uganda",
+      "url": "https://ijournals.in/wp-content/uploads/2017/07/IJSRC-2505.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Charles Amone, International Journal of Social Relevance & Concern 2(5), 2014. L’article porte sur les noms personnels acholi en Ouganda du Nord et donne séparément Ojok, enfant né avec une marque physique inhabituelle, et Okello, enfant né après des jumeaux."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Ojok tradition orale », « Ojok griot » et « Ojok oral history », ainsi que l’étude de Charles Amone sur la nomination des enfants acholi et ses tableaux nom par nom, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches « Ojok etymology » et « Ojok meaning », complétées par l’étude de Charles Amone sur la nomination des enfants acholi et ses tableaux nom par nom, n’ont livré aucune analyse linguistique publiée qui permette une reconstruction prudente."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Ojok joking kinship », « Ojok name alliance » et « Ojok clan pact », ainsi que l’étude de Charles Amone sur la nomination des enfants acholi et ses tableaux nom par nom, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Ojok caste », « Ojok occupational group » ainsi que les passages sociaux consultés dans l’étude de Charles Amone sur la nomination des enfants acholi et ses tableaux nom par nom, n’ont établi aucune fonction héréditaire propre à ce nom."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches biographiques et nécrologiques sur « Ojok » dans les catalogues universitaires et institutionnels, complétées par l’étude de Charles Amone sur la nomination des enfants acholi et ses tableaux nom par nom, n’ont pas permis de vérifier un porteur décédé avec une identité suffisamment précise ; les personnes vivantes repérées ne sont pas ajoutées sans auto-identification."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches sur la graphie exacte « Ojok » dans les index onomastiques et l’étude de Charles Amone sur la nomination des enfants acholi et ses tableaux nom par nom n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
     }
   ]
 }
