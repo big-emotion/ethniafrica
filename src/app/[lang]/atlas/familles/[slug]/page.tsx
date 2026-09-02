@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { notFound, redirect } from "next/navigation";
 
-import { loadLanguageFamilyFiche } from "@/lib/fiche/ficheExistence";
+import {
+  isFicheKnownAbsent,
+  loadLanguageFamilyFiche,
+} from "@/lib/fiche/ficheExistence";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import { ficheCanonical } from "@/lib/seo/ficheCanonical";
 import { getFamilyRoute } from "@/lib/routing";
@@ -70,11 +73,9 @@ export async function generateMetadata({
   const parsedForExistence = parseVersionedSlug(decodeURIComponent(slug));
   if (
     parsedForExistence?.mode === "live" &&
-    !(await loadLanguageFamilyFiche(parsedForExistence.slug))
+    (await isFicheKnownAbsent(loadLanguageFamilyFiche, parsedForExistence.slug))
   ) {
-    {
-      notFound();
-    }
+    notFound();
   }
   return ficheCanonical("family", lang as Language, slug);
 }

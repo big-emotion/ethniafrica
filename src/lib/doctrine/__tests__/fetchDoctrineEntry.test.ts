@@ -122,4 +122,27 @@ describe("fetchDoctrineEntry", () => {
       fetchDoctrineEntry("classifications-contestees", 999)
     ).resolves.toBeNull();
   });
+
+  /**
+   * "The database did not answer" and "there is no such doctrine" are not the
+   * same fact, and only the second one is a 404. The caller turns a `null` into
+   * `notFound()`, so collapsing the two told crawlers a published page had been
+   * withdrawn every time a read failed — which is exactly what
+   * `/fr/doctrine/classifications-contestees` reported for hours while the row
+   * sat in the table, unsuperseded, the whole time.
+   */
+  // @req REQ-025
+  it("raises rather than reporting a read failure as an unknown slug", async () => {
+    const query = createDoctrineQueryMock({
+      data: null,
+      error: { message: "AbortError: This operation was aborted" },
+    });
+    mockFrom.mockReturnValue(query);
+
+    await expect(
+      fetchDoctrineEntry("classifications-contestees")
+    ).rejects.toMatchObject({
+      message: "AbortError: This operation was aborted",
+    });
+  });
 });
