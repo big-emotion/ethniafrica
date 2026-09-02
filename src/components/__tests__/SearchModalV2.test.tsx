@@ -215,6 +215,70 @@ describe("SearchModalV2", () => {
       );
     });
 
+    /**
+     * The overlay is reachable from the masthead of every page and by a
+     * keyboard shortcut, and it was the one search bar that answered no
+     * arrow key and declared no combobox — the most reachable of the four
+     * and the least finished.
+     */
+    // @req REQ-002
+    it("walks its suggestions with the arrow keys and opens the highlighted one on Enter", async () => {
+      mockSearch(mockMixedResults);
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      const searchInput = screen.getByRole("combobox");
+      await act(async () => {
+        fireEvent.change(searchInput, { target: { value: "Shona" } });
+        await new Promise((r) => setTimeout(r, 350));
+      });
+      await screen.findByRole("listbox");
+
+      await act(async () => {
+        fireEvent.keyDown(searchInput, { key: "ArrowDown" });
+        fireEvent.keyDown(searchInput, { key: "ArrowDown" });
+      });
+
+      const options = screen.getAllByRole("option");
+      expect(searchInput).toHaveAttribute(
+        "aria-activedescendant",
+        options[1].id
+      );
+
+      await act(async () => {
+        fireEvent.keyDown(searchInput, { key: "Enter" });
+      });
+
+      // The second suggestion is Zimbabwe, not the SERP the raw query would
+      // have resolved to.
+      expect(mockPush).toHaveBeenCalledWith(
+        expect.stringContaining("/pays/ZWE")
+      );
+      expect(mockOnClose).toHaveBeenCalled();
+    });
+
+    // @req REQ-002
+    it("caps how many suggestions it renders", async () => {
+      mockSearch(
+        Array.from({ length: 20 }, (_, index) => ({
+          type: "people" as const,
+          id: `PPL_${index}`,
+          name: `Peuple ${index}`,
+          relevance: 1 - index / 100,
+        }))
+      );
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      await act(async () => {
+        fireEvent.change(screen.getByRole("combobox"), {
+          target: { value: "peuple" },
+        });
+        await new Promise((r) => setTimeout(r, 350));
+      });
+      await screen.findByRole("listbox");
+
+      expect(screen.getAllByRole("option")).toHaveLength(6);
+    });
+
     // @req REQ-002
     // @req REQ-124
     it("closes itself when a suggestion link is activated", async () => {

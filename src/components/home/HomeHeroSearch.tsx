@@ -1,6 +1,13 @@
 "use client";
 
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Search, X } from "lucide-react";
@@ -21,6 +28,7 @@ import {
   getPeopleRoute,
   getPersonRoute,
 } from "@/lib/routing";
+import { useAutocomplete } from "@/hooks/use-autocomplete";
 import { cn } from "@/lib/utils";
 import type {
   SearchEntityType,
@@ -193,68 +201,56 @@ export function HomeHeroSearch({
   seedWords,
 }: HomeHeroSearchProps = {}) {
   const router = useRouter();
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState<SearchResult[]>([]);
   const [leads, setLeads] = useState<SearchLead[]>([]);
-  const [dismissed, setDismissed] = useState(false);
-  const [answered, setAnswered] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(-1);
-  const [pending, setPending] = useState(false);
   const [showPending, setShowPending] = useState(false);
   // The seed reels stop at the first sign of the reader. Hovering or tabbing
   // into the row is one such sign and the row hears it itself; reaching for
   // the field is the other, and only this component is in a position to know.
   const [fieldTouched, setFieldTouched] = useState(false);
   const inputId = useId();
-  const listboxId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
   const pendingShownAt = useRef(0);
-  // Only the newest query may write to state: a slow "yor" landing after
-  // "yoruba" would otherwise repopulate the panel with the wrong answer.
-  const latestQuery = useRef(0);
 
-  const trimmed = query.trim();
-  const longEnough = trimmed.length >= MIN_QUERY_LENGTH;
+  /**
+   * Each class is capped on its own, so five kinds each keep a foothold in the
+   * panel instead of one prolific kind filling it. Done here rather than after
+   * the fact because the hook numbers the options it is handed, and a reader
+   * pressing ArrowDown must land on the option they can see.
+   */
+  const capPerGroup = useCallback(
+    (found: SearchResult[]) =>
+      SEARCH_RESULT_GROUPS.flatMap(({ type }) =>
+        found.filter((result) => result.type === type).slice(0, MAX_PER_GROUP)
+      ),
+    []
+  );
 
-  useEffect(() => {
-    if (!longEnough) {
-      // Keeping the array's identity when it is already empty is what lets
-      // React bail out instead of scheduling another render of this effect.
-      setResults((current) => (current.length === 0 ? current : []));
-      setLeads((current) => (current.length === 0 ? current : []));
-      setAnswered(false);
-      setPending(false);
+  /**
+   * REQ-125: near-misses are worth asking for only once the corpus itself came
+   * back empty. Fired without awaiting — they are a secondary enhancement and
+   * must never hold the busy indicator up for a second round trip. The hook
+   * calls this for the winning query only, so a slow lead cannot land under a
+   * newer answer.
+   */
+  const handleResolved = (found: SearchResult[], forQuery: string) => {
+    if (found.length > 0) {
+      setLeads([]);
       return;
     }
+    fetchLeads(forQuery).then(setLeads);
+  };
 
-    const ticket = ++latestQuery.current;
-    const timer = setTimeout(async () => {
-      // Armed here rather than on the keystroke: the debounce is deliberate
-      // dead time, and reporting it would blink the indicator on every letter.
-      setPending(true);
-      try {
-        const found = await fetchResults(trimmed);
-        if (ticket !== latestQuery.current) return;
-        setResults(found);
-        setAnswered(true);
-        // REQ-125: only worth asking for once the corpus itself came back
-        // empty — a query that already matched never needs a near-miss.
-        // Fired without awaiting: the leads are a secondary enhancement and
-        // must never hold the busy indicator up for a second round trip.
-        if (found.length === 0) {
-          fetchLeads(trimmed).then((nearMisses) => {
-            if (ticket === latestQuery.current) setLeads(nearMisses);
-          });
-        } else {
-          setLeads([]);
-        }
-      } finally {
-        if (ticket === latestQuery.current) setPending(false);
-      }
-    }, DEBOUNCE_MS);
+  const suggest = useAutocomplete<SearchResult>({
+    fetchSuggestions: fetchResults,
+    onSelect: (result) => router.push(ficheHref(result, language)),
+    onResolved: handleResolved,
+    minLength: MIN_QUERY_LENGTH,
+    debounceMs: DEBOUNCE_MS,
+    arrange: capPerGroup,
+  });
 
-    return () => clearTimeout(timer);
-  }, [trimmed, longEnough, fetchResults, fetchLeads]);
+  const { query, activeIndex, pending } = suggest;
+  const trimmed = query.trim();
 
   useEffect(() => {
     if (pending) {
@@ -274,39 +270,28 @@ export function HomeHeroSearch({
     return () => clearTimeout(timer);
   }, [pending, showPending]);
 
+  const flat = suggest.options;
+
+  /**
+   * The panel's headings, rebuilt from the options the hook numbered — same
+   * partition, same order, so a group's option carries the index the keyboard
+   * and `aria-activedescendant` both refer to.
+   */
   const groups = useMemo(() => {
     let cursor = 0;
     return SEARCH_RESULT_GROUPS.map(({ type, heading }) => {
-      const options = results
+      const options = flat
         .filter((result) => result.type === type)
-        .slice(0, MAX_PER_GROUP)
         .map((result) => ({ result, index: cursor++ }));
       return { type, heading, options };
     }).filter((group) => group.options.length > 0);
-  }, [results]);
+  }, [flat]);
 
-  const flat = useMemo(
-    () =>
-      groups.flatMap((group) => group.options.map((option) => option.result)),
-    [groups]
-  );
-
-  const open = longEnough && answered && !dismissed;
-  const showListbox = open && flat.length > 0;
-
-  useEffect(() => {
-    setActiveIndex(-1);
-  }, [flat.length, trimmed]);
-
-  const optionId = (index: number) => `${listboxId}-option-${index}`;
-
-  const goTo = (result: SearchResult) =>
-    router.push(ficheHref(result, language));
+  const open = suggest.isAnswered;
+  const showListbox = suggest.isOpen;
 
   const clearQuery = () => {
-    setQuery("");
-    setDismissed(false);
-    setActiveIndex(-1);
+    suggest.clear();
     inputRef.current?.focus();
   };
 
@@ -320,10 +305,7 @@ export function HomeHeroSearch({
    * the field, because a reader who submits it is about to see it again at the
    * top of the results page.
    */
-  const dismissPanel = () => {
-    setDismissed(true);
-    setActiveIndex(-1);
-  };
+  const dismissPanel = () => suggest.dismiss();
 
   // Anything inside the anchor — an option being tabbed to, the clear button —
   // is still this control. Only focus landing outside it closes the panel.
@@ -335,31 +317,16 @@ export function HomeHeroSearch({
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Escape") {
-      // The panel first, the text second. Escape is the platform's clear
-      // gesture in a search field and its dismiss gesture for a popup; taking
-      // the reader's words while a panel is covering them would be the wrong
-      // one of the two.
-      if (open) {
-        setDismissed(true);
-        setActiveIndex(-1);
-      } else if (query) {
-        clearQuery();
-      }
+    // The panel first, the text second. Escape is the platform's clear gesture
+    // in a search field and its dismiss gesture for a popup; taking the
+    // reader's words while a panel is covering them would be the wrong one of
+    // the two. Only the second step is this field's own — the shared hook
+    // dismisses, and never empties.
+    if (event.key === "Escape" && !open && query) {
+      clearQuery();
       return;
     }
-    if (!showListbox) return;
-
-    if (event.key === "ArrowDown") {
-      event.preventDefault();
-      setActiveIndex((index) => Math.min(index + 1, flat.length - 1));
-    } else if (event.key === "ArrowUp") {
-      event.preventDefault();
-      setActiveIndex((index) => Math.max(index - 1, 0));
-    } else if (event.key === "Enter" && activeIndex >= 0) {
-      event.preventDefault();
-      goTo(flat[activeIndex]);
-    }
+    suggest.handleKeyDown(event);
   };
 
   const searchRoute = getLocalizedRoute(language, "search");
@@ -408,13 +375,7 @@ export function HomeHeroSearch({
               id={inputId}
               name="q"
               aria-busy={pending}
-              role="combobox"
-              aria-expanded={showListbox}
-              aria-controls={listboxId}
-              aria-autocomplete="list"
-              aria-activedescendant={
-                activeIndex >= 0 ? optionId(activeIndex) : undefined
-              }
+              {...suggest.comboboxProps}
               placeholder={SEARCH_PLACEHOLDER}
               type="search"
               inputMode="search"
@@ -424,10 +385,7 @@ export function HomeHeroSearch({
               autoCapitalize="off"
               spellCheck={false}
               value={query}
-              onChange={(event) => {
-                setQuery(event.target.value);
-                setDismissed(false);
-              }}
+              onChange={(event) => suggest.setQuery(event.target.value)}
               onFocus={() => setFieldTouched(true)}
               onKeyDown={handleKeyDown}
             />
@@ -459,7 +417,7 @@ export function HomeHeroSearch({
 
         {showListbox && (
           <div
-            id={listboxId}
+            id={suggest.listboxId}
             role="listbox"
             aria-label="Suggestions"
             className="home-hero-search-panel"
@@ -479,15 +437,13 @@ export function HomeHeroSearch({
                 {group.options.map(({ result, index }) => (
                   <Link
                     key={result.id}
-                    id={optionId(index)}
-                    role="option"
-                    aria-selected={index === activeIndex}
+                    {...suggest.getOptionProps(index)}
                     href={ficheHref(result, language)}
                     className={cn(
                       "home-hero-search-option",
                       index === activeIndex && "is-active"
                     )}
-                    onMouseEnter={() => setActiveIndex(index)}
+                    onMouseEnter={() => suggest.highlight(index)}
                     onClick={dismissPanel}
                   >
                     {result.name}
