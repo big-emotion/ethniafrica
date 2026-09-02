@@ -222,11 +222,13 @@ export function HomeHero({
           font-variant-numeric: tabular-nums;
           text-wrap: balance;
         }
-        /* An entry never breaks internally: its figure, its word and the
-           separator that precedes it travel together or not at all. */
-        .home-hero-census-entry {
-          white-space: nowrap;
-        }
+        /* No \`white-space: nowrap\` here, and that is the point. An entry
+           holds no breakable space of its own — the figure is tied to its word
+           and to its trailing separator by U+00A0 — so it is already
+           unbreakable, and declaring nowrap on top of that also suppressed the
+           plain space *after* each separator, which is the line's only break
+           opportunity. The census then measured 499px at a 430px viewport and
+           dragged the copy column out of the band with it. */
         .home-hero-census-figure {
           font-weight: 700;
           color: var(--afh-text);
@@ -243,11 +245,14 @@ export function HomeHero({
           font-weight: 400;
           color: var(--afh-fg-muted);
         }
-        /* No colour of its own: the separator inherits the line's soft ink.
-           A dimmer punctuation mark would have to come from the non-text
-           ramp, which is exactly the token this line may not use. */
+        /* Neither colour nor padding of its own. The ink is the line's soft
+           ink, because a dimmer punctuation mark would have to come from the
+           non-text ramp, which is exactly the token this line may not use; and
+           the spacing is the two real spaces the separator is written with,
+           because padding would have added air without adding the break
+           opportunity that air implies. */
         .home-hero-census-sep {
-          padding-inline: 0.5ch;
+          font-variant-numeric: normal;
         }
 
         .home-hero-visual {
@@ -320,11 +325,13 @@ export function HomeHero({
 
         @media (min-width: 1200px) {
           .home-hero-inner {
-            /* 1.15/0.85, not an even split: the copy column keeps the room
-               that lets « Une question sur les » stay on one line (see
-               .home-hero-copy below). The visual gives up ~18% of its width
-               and nothing else: its 620px is a max-width, a ceiling and not
-               a floor. */
+            /* 1.15/0.85, not an even split. It was set to give the rotating
+               headline the room its widest segment needed; that headline is
+               gone and the split stays, because what now claims the width is
+               the census line — 499px on one row at 1440, which an even 0.5fr
+               column would fold onto two. The visual gives up ~18% of its
+               width and nothing else: its 620px is a max-width, a ceiling and
+               not a floor. */
             grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
             grid-template-areas: "copy globe";
             align-items: center;
@@ -336,15 +343,20 @@ export function HomeHero({
             margin: 0;
             /* The column, not 36rem. That cap was set when the two columns
                split evenly at 564px; the left one is 648px now, and holding
-               the copy at 576 was breaking « Une question sur les » across two
-               lines inside a column with room for it — the headline stayed at
-               four lines even after the reel got a line of its own. The prose
-               keeps its own measure through .home-hero-answer's 52ch, which is
-               what actually governs reading comfort here. */
+               the copy at 576 was breaking the headline across a line more
+               than it needed inside a column with room for it. The prose keeps
+               its own measure through .home-hero-answer's 52ch, which is what
+               actually governs reading comfort here. */
             max-width: 100%;
             text-align: left;
           }
-          .home-hero-answer {
+          /* Both prose blocks, in one declaration. They are centred boxes on a
+             phone and flush-left here, and when the census had its own
+             \`margin: auto\` it stayed centred inside a left-aligned column —
+             a second left edge inside one block, which §8.1 of the brand
+             charter counts as a defect. One rule, so they cannot part. */
+          .home-hero-answer,
+          .home-hero-census {
             margin-inline: 0;
           }
           .home-hero-globe .home-globe-stage {
