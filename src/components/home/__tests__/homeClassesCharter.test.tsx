@@ -1,11 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-import { HomeCensusLine } from "@/components/home/HomeCensusLine";
+import { HomeCorpusCounts } from "@/components/home/HomeCorpusCounts";
 import { SEARCH_RESULT_GROUPS } from "@/lib/search/searchVocabulary";
 import { SEARCH_ENTITY_ACCENT } from "@/components/search/searchEntityAccent";
 import { CORPUS_CLASSES } from "@/lib/home/corpusClasses";
-import { corpusCensus } from "@/lib/home/corpusCensus";
 
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
@@ -21,30 +20,27 @@ const FULL_CORPUS = {
 };
 
 /**
- * The home says what the corpus holds in two places at once — the census line
- * states the classes, the search panel groups what comes back — and each used
- * to keep its own list in its own file. They drifted: the band asked "Qui sont
+ * The home says what the corpus holds in two places at once — the tile band
+ * prints totals, the search panel groups what comes back — and each used to
+ * keep its own list in its own file. They drifted: the band asked "Qui sont
  * les peuples d'Afrique ?" above a panel of three groups, while the corpus
  * held five classes and the API answered six kinds. A reader was told the
  * product was a third of its size.
  *
  * There are two invariants here, not one, and conflating them is its own
- * failure. The census speaks of **corpus classes**; the panel and the field's
- * label speak of **search result kinds**. They overlap in four places and part
- * company in the fifth — appellations are name forms of peoples, Noms are
- * patronyme fiches.
+ * failure. The tiles print **totals**; the panel and the field's label speak
+ * of **search result kinds**. The two lists are neither equal nor nested, and
+ * making them equal is the "fix" this file exists to refuse.
  */
 describe("home charter — what the band claims the corpus is", () => {
   // @req REQ-113
-  it("names exactly the classes the corpus declares, in the same order", () => {
-    const census = corpusCensus(FULL_CORPUS);
+  it("prints exactly the classes the tile band declares, in the same order", () => {
+    render(<HomeCorpusCounts counts={FULL_CORPUS} />);
 
-    expect(census).toHaveLength(CORPUS_CLASSES.length);
-    expect(census).toEqual(
-      CORPUS_CLASSES.map((entity) => ({
-        word: entity.censusWord,
-        figure: new Intl.NumberFormat("fr-FR").format(FULL_CORPUS[entity.key]),
-      }))
+    const tiles = screen.getAllByTestId(/^home-count-/);
+    expect(tiles).toHaveLength(CORPUS_CLASSES.length);
+    expect(tiles.map((tile) => tile.getAttribute("data-testid"))).toEqual(
+      CORPUS_CLASSES.map(({ key }) => `home-count-${key}`)
     );
   });
 
@@ -59,19 +55,34 @@ describe("home charter — what the band claims the corpus is", () => {
     }
   });
 
-  // The band must state every class it holds, to every reader, at once. The
-  // rotating headline this replaced could not: it showed one class at a time,
-  // and none at all under prefers-reduced-motion, where its reel never armed
-  // and the home named a single class for good. The census line is what
-  // carries the invariant now, which is why the assertion is on the rendered
-  // line rather than on a heading's accessible name.
+  // The band must state every class it prints, to every reader, at once. The
+  // rotating headline this lineage replaced could not: it showed one class at
+  // a time, and none at all under prefers-reduced-motion, where its reel never
+  // armed and the home named a single class for good.
   // @req REQ-113
-  it("states every class the corpus declares, on the band itself", () => {
-    render(<HomeCensusLine entries={corpusCensus(FULL_CORPUS)} />);
+  it("states every class it declares, on the band itself", () => {
+    render(<HomeCorpusCounts counts={FULL_CORPUS} />);
 
-    const line = screen.getByTestId("home-hero-census");
-    for (const { censusWord } of CORPUS_CLASSES) {
-      expect(line.textContent).toContain(censusWord);
+    const band = screen.getByTestId("home-corpus-counts");
+    for (const { tileLabel } of CORPUS_CLASSES) {
+      expect(band.textContent).toContain(tileLabel);
+    }
+  });
+
+  // The band counts three of the corpus's classes and no longer counts
+  // familles or appellations. That is an editorial choice, and the only thing
+  // that keeps it from understating the product is the scope word on every
+  // label: three *documented* totals, not the corpus entire. Drop the word and
+  // the band silently reasserts the claim it gave up making.
+  // @req REQ-113
+  it("never lets three totals read as the whole corpus", () => {
+    render(<HomeCorpusCounts counts={FULL_CORPUS} />);
+
+    expect(screen.getByTestId("home-corpus-counts")).toHaveAccessibleName(
+      /ce que l'atlas documente/i
+    );
+    for (const { tileLabel } of CORPUS_CLASSES) {
+      expect(tileLabel).toMatch(/document/i);
     }
   });
 
@@ -91,16 +102,20 @@ describe("home charter — what the band claims the corpus is", () => {
     );
   });
 
-  // The overlap is deliberate and partial. Asserting it keeps the next reader
-  // from "fixing" the asymmetry by making the census count patronymes.
+  // Counting fewer classes than the search resolves is deliberate, and this
+  // asserts the asymmetry so the next reader does not "restore" a tile per
+  // search group. The criterion is the figure, not the class: a total claims
+  // exhaustiveness, naming a class claims nothing. So the band counts the
+  // three classes worth a headline number, while familles, appellations and
+  // patronymes keep their menu entry, their index and their search group.
   // @req REQ-113
-  it("shares four classes with the search panel and parts company on the fifth", () => {
+  it("counts fewer classes than the search panel returns kinds", () => {
     const groupedTypes = SEARCH_RESULT_GROUPS.map((group) => group.type);
 
     expect(groupedTypes).toContain("patronyme");
-    expect(CORPUS_CLASSES.map((entity) => entity.key)).toContain("nameForms");
+    expect(CORPUS_CLASSES.length).toBeLessThan(groupedTypes.length);
     expect(CORPUS_CLASSES.map((entity) => entity.key)).not.toContain(
-      "patronymes"
+      "nameForms"
     );
   });
 });

@@ -126,11 +126,11 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
   });
 
   // @req REQ-113
-  it("states the five real corpus classes and shows exactly two sourced facts", async () => {
+  it("states the three documented totals and shows exactly two sourced facts", async () => {
     await renderHome();
 
-    expect(screen.getByTestId("home-hero-census").textContent).toMatch(
-      /peuples.*langues.*pays.*familles.*appellations/i
+    expect(screen.getByTestId("home-corpus-counts").textContent).toMatch(
+      /peuples documentés.*langues documentées.*pays documentés/i
     );
     expect(screen.getAllByTestId("home-did-you-know")).toHaveLength(1);
     expect(
@@ -156,29 +156,31 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
 
   // A rejected count query means “unknown”, never “empty”. The other hero
   // data still renders because each server read owns its own fallback, and
-  // the census keeps every class word while withholding its figure — see
-  // corpusCensus' own doctrine for a class whose total could not be read.
+  // every tile keeps its label while withholding its figure — see
+  // HomeCorpusCounts' own doctrine for a class whose total could not be read.
   // @req REQ-113
-  it("keeps the home usable and withholds every census figure on read failure", async () => {
+  it("keeps the home usable and withholds every tile figure on read failure", async () => {
     getCorpusCountsMock.mockRejectedValueOnce(new Error("database offline"));
 
     await renderHome();
 
     expect(screen.getByRole("search")).toBeInTheDocument();
 
-    const census = screen.getByTestId("home-hero-census");
-    for (const word of [
-      "peuples",
-      "langues",
-      "pays",
-      "familles",
-      "appellations",
-    ]) {
-      expect(census.textContent).toContain(word);
+    for (const word of ["peuples", "langues", "pays"]) {
+      expect(screen.getByTestId("home-corpus-counts").textContent).toContain(
+        word
+      );
     }
+
     // Every class marked unreadable, and not one of them printed as a zero.
-    expect(census.querySelectorAll(".is-unavailable")).toHaveLength(5);
-    expect(census.textContent).not.toContain("0");
+    // Read off each `dd` rather than the list's textContent: the band carries
+    // its own <style> child, whose declarations are full of zeroes.
+    const tiles = screen.getAllByTestId(/^home-count-/);
+    expect(tiles).toHaveLength(3);
+    for (const tile of tiles) {
+      expect(tile).toHaveAttribute("data-state", "unavailable");
+      expect(tile.querySelector("dd")?.textContent).toBe("Indisponible");
+    }
   });
 
   // @req REQ-113
