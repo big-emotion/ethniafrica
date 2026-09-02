@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à N'Guessan ; les lacunes consignent les recherches restées sans résultat."
   },
   "id": "PAT_N_GUESSAN",
   "nameMain": "N'Guessan",
@@ -11,13 +11,19 @@
     {
       "spelling": "N'Guessan",
       "attestations": [
-        { "countryId": "CIV", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["pagnet-2005-noms-baoule"]
+        }
       ]
     },
     {
       "spelling": "Nguessan",
       "attestations": [
-        { "countryId": "CIV", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
       ]
     }
   ],
@@ -26,20 +32,26 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Pagnet décrit N'Guessan comme l'évolution de Gnissan, nom ordinal baoulé du troisième enfant lorsque celui-ci est du même sexe que ses deux aînés. La segmentation proposée, reprise de Koffi (2001), associe GNI à une personnalité puissante et NSAN à « trois ».",
+        "claimStatus": "claimed",
+        "sourceRefs": ["pagnet-2005-noms-baoule"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_BAOULE",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["pagnet-2005-noms-baoule"]
     }
   ],
   "countries": [
     {
       "countryId": "CIV",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["pagnet-2005-noms-baoule"]
     }
   ],
   "alliances": [],
@@ -54,28 +66,40 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "pagnet-2005-noms-baoule",
+      "title": "Les noms Wè : valeur expressive et didactique, un exemple de créativité poétique dans la littérature orale africaine",
+      "url": "https://fr.scribd.com/document/854608222/These-Pagnet-Doh-Clement-UFHB-I",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Thèse de Doh Clément Pagnet, Université d'Abidjan-Cocody, année universitaire 2004-2005, soutenue le 20 mai 2005. Le texte intégral a été consulté ; le chapitre « Les noms chez les Baoulé », pp. 259-263, atteste les noms semainiers et ordinaux cités."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « N'Guessan Baoulé oral tradition griot transcription » et « N'Guessan Akan naming oral history » ainsi que la thèse de Pagnet (2005) n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « N'Guessan Baoulé chronicle manuscript archive » et « N'Guessan colonial register Côte d'Ivoire » n'ont livré aucune chronique ni pièce d'archives retraçant cette forme."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « N'Guessan Baoulé joking relationship », « N'Guessan joking kinship » et « N'Guessan sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "la thèse de Pagnet (2005) et les recherches « N'Guessan Baoulé hereditary occupation caste » n'ont associé ce nom de naissance à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "la thèse de Pagnet (2005) et les recherches « N'Guessan Côte d'Ivoire obituary biography deceased » n'ont pas permis de retenir un porteur décédé sur une notice propre au nom et suffisamment fiable."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « N'Guessan homonym etymology » et « N'Guessan surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
     }
   ]
 }

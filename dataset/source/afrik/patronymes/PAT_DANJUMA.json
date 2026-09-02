@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Danjuma ; les lacunes consignent les recherches restées sans résultat."
   },
   "id": "PAT_DANJUMA",
   "nameMain": "Danjuma",
@@ -11,7 +11,10 @@
     {
       "spelling": "Danjuma",
       "attestations": [
-        { "countryId": "NGA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["ryan-1981-danjuma", "statehouse-danjuma-2025"]
+        }
       ]
     }
   ],
@@ -20,20 +23,31 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Ryan classe Danjuma parmi les noms personnels haoussa dérivés du vendredi. La graphie haoussa Ɗanjuma est analysée dans une source communautaire comme ɗa, « fils », suivi de Jumma'a, « vendredi ».",
+        "claimStatus": "established",
+        "sourceRefs": ["ryan-1981-danjuma", "btn-danjuma"]
+      },
+      {
+        "claim": "Dans le système haoussa décrit par Chamo, le nom du père sert couramment de second élément, éventuellement avec ɗan, sans constituer un nom de famille héréditaire stable.",
+        "claimStatus": "established",
+        "sourceRefs": ["chamo-2018-danjuma"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_HAUSA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["ryan-1981-danjuma", "btn-danjuma"]
     }
   ],
   "countries": [
     {
       "countryId": "NGA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["statehouse-danjuma-2025", "ryan-1981-danjuma"]
     }
   ],
   "alliances": [],
@@ -42,34 +56,62 @@
   "homonyms": [],
   "sources": [
     {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
-      "url": null,
+      "sourceKey": "ryan-1981-danjuma",
+      "title": "An Introduction to Hausa Personal Nomenclature",
+      "url": "https://ans-names.pitt.edu/ans/article/download/942/941/1886",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Pauline M. Ryan, Names 29(2), 1981, pp. 139-164. Le tableau consacré aux noms liés aux jours, consulté dans le PDF intégral, atteste exactement Danjuma sous Friday/Jumma'a."
+    },
+    {
+      "sourceKey": "chamo-2018-danjuma",
+      "title": "Language and Identity in Africa: The Use of Place Names as Part of a Person’s Name in Hausa",
+      "url": "https://auadamu.com/phocadownload/Books/%5B2018%5D%20Festschrift%20in%20Honour%20of%20Abdalla%20Uba%20Adamu%20-%20Media%20-Knowledge%20Transfer%20and%20African%20Identity.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Isa Yusuf Chamo, 2018, pp. 251-252 du chapitre consulté dans le volume intégral. Décrit le fonctionnement non héréditaire du patronyme haoussa ; ne traite pas l'étymologie de Danjuma."
+    },
+    {
+      "sourceKey": "btn-danjuma",
+      "title": "Ɗanjuma — Behind the Name",
+      "url": "https://www.behindthename.com/name/d27anjuma",
       "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "source_kind": "community",
+      "notes": "Page communautaire consultée directement. Elle donne la graphie haoussa Ɗanjuma et l'analyse en ɗa, « fils », plus Jumma'a, « vendredi ». Ryan recoupe indépendamment l'association au vendredi."
+    },
+    {
+      "sourceKey": "statehouse-danjuma-2025",
+      "title": "President Tinubu’s Goodwill Message to General TY Danjuma on His 88th Birthday — The State House, Abuja",
+      "url": "https://statehouse.gov.ng/president-tinubus-goodwill-message-to-general-ty-danjuma-on-his-88th-birthday/",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Communiqué officiel consulté directement. Il atteste la graphie Danjuma au Nigeria dans le nom de Theophilus Yakubu Danjuma. Le porteur étant vivant à la date de consultation, il n'est pas ajouté aux bearers."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La requête « Danjuma Hausa oral tradition griot lineage », Ryan (1981), Chamo (2018) et Amoo, Ajayi et Sabo (2022) n'ont livré ni griot nommé ni transcription attribuable à Danjuma."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Danjuma Hausa Arabic chronicle manuscript » et « Danjuma Nigeria colonial record » n'ont livré aucune chronique ou archive dédiée à l'histoire du nom."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Danjuma Hausa joking relationship », « Danjuma sanankuya », « Danjuma kal » et « Danjuma dandiraaɓe » n'ont établi aucune paire entre deux fiches PAT_* existantes."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Ryan (1981), Chamo (2018) et la recherche « Danjuma Hausa hereditary occupation caste » n'ont associé ce nom personnel à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Le communiqué présidentiel consulté concerne un porteur vivant ; les recherches « Danjuma Nigeria obituary biography » n'ont pas fourni dans cette passe une notice officielle dédiée à un autre porteur décédé retenable."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Danjuma homonym etymology » et les sources consacrées à Danjuma n'ont pas établi une graphie identique d'origine distincte."
     }
   ]
 }

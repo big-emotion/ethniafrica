@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Dossier français prudent : l’attestation marocaine est officielle, tandis que l’association chleuhe et l’origine restent non établies."
   },
   "id": "PAT_AKHANNOUCH",
   "nameMain": "Akhannouch",
@@ -11,13 +11,7 @@
     {
       "spelling": "Akhannouch",
       "attestations": [
-        { "countryId": "MAR", "sourceRefs": ["afrik-candidate-queue"] }
-      ]
-    },
-    {
-      "spelling": "Akhenouch",
-      "attestations": [
-        { "countryId": "MAR", "sourceRefs": ["afrik-candidate-queue"] }
+        { "countryId": "MAR", "sourceRefs": ["akhannouch-gov-ma"] }
       ]
     }
   ],
@@ -31,7 +25,7 @@
   "peoples": [
     {
       "peopleId": "PPL_CHLEUH",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     }
   ],
@@ -39,7 +33,7 @@
     {
       "countryId": "MAR",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["akhannouch-gov-ma"]
     }
   ],
   "alliances": [],
@@ -48,38 +42,46 @@
   "homonyms": [],
   "sources": [
     {
+      "sourceKey": "akhannouch-gov-ma",
+      "title": "Sa Majesté le Roi nomme M. Aziz Akhannouch Chef du gouvernement",
+      "url": "https://www.cg.gov.ma/fr/node/10419",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Portail officiel du Chef du gouvernement du Royaume du Maroc, 10 septembre 2021. La page a été consultée pour confirmer la graphie et l’usage marocain ; la personne citée est vivante et n’est donc pas versée parmi les porteurs."
+    },
+    {
       "sourceKey": "afrik-candidate-queue",
-      "title": "Corpus AFRIK — file d'attente des candidats anthroponymes",
+      "title": "Corpus AFRIK — file d’attente des candidats anthroponymes",
       "url": null,
       "tier": "unverified",
       "source_kind": "ai_generated",
-      "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+      "notes": "La source de vague 1 ne subsiste que pour l’association supposée aux Chleuhs. Les recherches dédiées dans les catalogues de l’IRCAM, de l’Institut royal de la culture amazighe, de l’UMMTO et de Google Scholar n’ont pas fourni de publication reliant explicitement le patronyme à ce peuple."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les catalogues de l’IRCAM, de l’UMMTO, Persée, OpenEdition et Google Scholar ont été interrogés avec « Akhannouch patronyme », « Akhannouch étymologie », « ⴰⵅⵏⵏⵓⵛ » et « أخنوش أصل اللقب » ; aucune étude anthroponymique ou tradition attribuée n’a été trouvée."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "La page gouvernementale n’atteste qu’un usage contemporain du nom. Les recherches « Akhannouch filiation », « famille Akhannouch généalogie » et leurs équivalents arabes n’ont pas établi la règle de transmission."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches combinant Akhannouch avec « alliance tribale », « parenté à plaisanterie », « pacte » et « leff » n’ont livré aucune paire documentée avec une autre fiche PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La source gouvernementale et les recherches « Akhannouch métier héréditaire », « caste » et « fonction sociale » ne signalent aucune fonction héréditaire attachée au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques et catalogues d’autorité ont confirmé surtout des personnes vivantes, notamment Aziz Akhannouch ; le protocole exclut ces personnes et aucun porteur décédé suffisamment documenté n’a été trouvé."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les catalogues d’autorité, répertoires onomastiques et recherches multilingues consultés n’ont pas permis d’identifier deux origines distinctes sous la graphie Akhannouch."
     }
   ]
 }

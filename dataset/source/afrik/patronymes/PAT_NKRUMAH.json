@@ -2,30 +2,39 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Le sens de Nkrumah est repris d'une recension onomastique qui cite exactement cette forme."
   },
   "id": "PAT_NKRUMAH",
   "nameMain": "Nkrumah",
-  "nameSystem": "clan_name",
+  "nameSystem": "non_hereditary_patronymic",
   "spellings": [
     {
       "spelling": "Nkrumah",
       "attestations": [
-        { "countryId": "GHA", "sourceRefs": ["afrik-candidate-queue"] }
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["smith-1973-review-nkrumah"]
+        }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "clan",
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "La recension d'Elsdon C. Smith cite Nkrumah comme nom masculin akan du Ghana signifiant « neuvième-né ».",
+        "claimStatus": "established",
+        "sourceRefs": ["smith-1973-review-nkrumah"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_NZEMA",
-      "status": "attested",
+      "status": "supposed",
       "sourceRefs": ["afrik-candidate-queue"]
     }
   ],
@@ -33,7 +42,7 @@
     {
       "countryId": "GHA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["smith-1973-review-nkrumah"]
     }
   ],
   "alliances": [],
@@ -48,32 +57,44 @@
       "tier": "unverified",
       "source_kind": "ai_generated",
       "notes": "Origine : dataset/source/afrik/patronymes/_candidates-by-country.json, file d'attente produite hors corpus et non vérifiée. Aucune source dédiée n'a encore été consultée pour ce nom : la fiche existe pour la couverture, pas pour ce qu'elle affirme. Les pistes de vérification par pays (registres électoraux, instituts statistiques, travaux d'onomastique) sont portées par le champ verificationLead de ce même fichier."
+    },
+    {
+      "sourceKey": "smith-1973-review-nkrumah",
+      "title": "Review of Names from Africa, Their Origin, Meaning, and Pronunciation",
+      "url": "https://ans-names.pitt.edu/ans/article/download/733/732",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Recension d'Elsdon C. Smith dans Names, pp. 56-58 du PDF consulté, portant sur l'ouvrage d'Ogonna Chuks-orji (1972). La recension cite exactement Nkrumah, sa prononciation, le sens « ninth born », l'akan et le Ghana. Elle ne précise pas le sous-groupe nzema."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "origin",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Nkrumah akan du Ghana oral tradition griot transcription » et « Nkrumah oral history » n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Nkrumah akan du Ghana chronicle manuscript archive » et « Nkrumah colonial register » n'ont livré aucune chronique ni pièce d'archives retraçant cette forme."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Nkrumah joking relationship », « Nkrumah alliance patronyme » et « Nkrumah sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Nkrumah hereditary occupation caste title » et « Nkrumah fonction sociale » n'ont associé ce nom à aucune fonction sociale héréditaire."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Nkrumah obituary biography deceased » et « Nkrumah nécrologie » n'ont pas permis de retenir un porteur décédé sur une notice suffisamment fiable et propre au nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "reason": "Les recherches « Nkrumah homonym etymology » et « Nkrumah surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
     },
     {
-      "fieldPath": "transmissionMode",
-      "reason": "Le système « clan_name » ne détermine pas à lui seul le mode de transmission : Fiche générée depuis la file d'attente des candidats : le champ n'a pas été renseigné faute de recherche, et attend le protocole de recherche par fiche."
+      "fieldPath": "peoples",
+      "reason": "La recension attribue Nkrumah à la langue akan sans préciser le sous-groupe nzema ; les recherches « Nkrumah Nzema name » et « Nkrumah Nzema anthroponymy » n'ont pas établi cette précision, qui reste « supposed »."
     }
   ]
 }
