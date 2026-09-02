@@ -1,0 +1,23 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": [
+    "src/app/**/{page,layout,loading,error,global-error,not-found,template,default,forbidden,unauthorized,route,sitemap,robots,manifest,icon,apple-icon,opengraph-image,twitter-image}.{ts,tsx}",
+    "src/{middleware,instrumentation,instrumentation-client}.ts",
+    ".lighthouserc.js",
+    ".storybook/{main,preview}.ts",
+
+    "**/*.{test,stories}.{ts,tsx}",
+    "**/__tests__/**/*.{ts,tsx}",
+    "eslint/**/*.js",
+
+    "scripts/**/*.{ts,mjs,cjs}",
+    "e2e/**/*.ts",
+    "src/test/server-only-stub.ts",
+    "src/lib/atlas/assets/generate-*.mjs",
+    "supabase/functions/**/index.ts",
+    "docs/design/mockups/**/*.{js,css}"
+  ],
+  "project": ["src/**/*.{ts,tsx}", "scripts/**/*.{ts,mjs}", "e2e/**/*.ts"],
+  "ignoreDependencies": ["sharp", "puppeteer", "@storybook/blocks"],
+  "ignoreExportsUsedInFile": true
+}

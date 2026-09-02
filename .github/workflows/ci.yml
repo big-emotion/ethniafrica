@@ -107,6 +107,14 @@ jobs:
 
       - run: npm run check:env-example
 
+      # The one question none of the gates above asks: does anything still
+      # import this? Ten checks watched traceability, action pins, the env
+      # example, the migration sequence and the charters, and none of them
+      # noticed thirty-two unreferenced files or thirteen unused dependencies
+      # accumulating. The ceilings live in scripts/ci/checkDeadCode.ts and can
+      # only go down.
+      - run: npm run check:dead
+
       # Pre-merge, only what is knowable without a database: no two files
       # claiming the same version or name, no hole in the sequence. Whether a
       # migration is *applied* is meaningless here — the one this PR adds is

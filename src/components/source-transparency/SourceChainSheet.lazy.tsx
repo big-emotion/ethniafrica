@@ -20,5 +20,3 @@ export const LazySourceChainSheet: React.FC<SourceChainSheetProps> = (
     </React.Suspense>
   );
 };
-
-export default LazySourceChainSheet;

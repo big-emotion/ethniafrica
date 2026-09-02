@@ -43,6 +43,7 @@ npm run check:jira-template         # docs/templates/jira-ticket-template.md mus
 npm run check:action-pins           # every third-party GitHub Action must be SHA-pinned
 npm run check:env-example           # .env.example and the code agree, both directions
 npm run check:migration-files       # no duplicate version or name, no hole in the sequence
+npm run check:dead                  # knip: unreferenced files, exports, dependencies (ratcheted ceilings)
 npm run test:charter-contracts      # aggregated design-charter contract suite
 npx tsx scripts/validateAfrikData.ts        # AFRIK data integrity (FR26–FR52)
 npx tsx scripts/ci/checkEditorialRules.ts   # decolonial editorial rules on fiches
@@ -115,6 +116,29 @@ Migrations are numbered and sequential in `supabase/migrations/` (049 at last co
 Every `test()`/`it()` call needs `// @req REQ-NNN` within the 3 lines above it, and any exported symbol annotated `@req REQ-NNN` must have a test annotated with the same ID. IDs are validated against `docs/confluence-spec/req-catalog.json`. Pre-existing tests are grandfathered by diffing against the previous file content, so _new or renamed_ tests are the ones that fail.
 
 **Never delete `docs/confluence-spec/*.json` or `docs/templates/jira-ticket-template.md`.** With the catalog missing, `lintReqAnnotations.ts` returns early and reports OK while checking nothing — a silently disarmed gate, which is worse than a red one.
+
+### Dead code (`npm run check:dead`, CI-blocking)
+
+`knip` (config in `knip.json`) tallies unreferenced files, exports, types and
+dependencies; `scripts/ci/checkDeadCode.ts` compares each tally against a
+recorded ceiling. **The ceiling is a ratchet, not a budget** — a count above it
+fails, and so does a count _below_ it, with the line to change. A ceiling left
+standing above the real number is a licence to climb back to it.
+
+Six categories are held at zero (files, dependencies, devDependencies, unlisted,
+binaries, duplicates); `exports` and `types` sit where they were measured and
+can only go down. `ADVISORY_CATEGORIES` softens a category the way
+`SOFT_CHECK_NAMES` does in `validateAfrikData.ts` — a visible line in a source
+file, never a flag in a config. It is currently empty.
+
+A hand-run script or a config-loaded module is **declared in `knip.json`, not
+deleted**: `scripts/**`, `e2e/**`, the `src/lib/atlas/assets/generate-*.mjs`
+asset generators, `src/test/server-only-stub.ts` (a vitest alias) and the edge
+functions are all entry points nothing imports on purpose. Three dependencies
+are in `ignoreDependencies` because knip cannot see their use: `sharp` (Next's
+production image optimizer), `puppeteer` (`@lhci/utils` does not depend on it —
+`.lighthouserc.js`'s `puppeteerScript` resolves it from the project) and
+`@storybook/blocks` (imported by `.mdx` stories knip does not parse).
 
 ### Custom ESLint rules (`eslint/rules/`, plugin `afh`)
 
