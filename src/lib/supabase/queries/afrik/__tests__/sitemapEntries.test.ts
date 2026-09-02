@@ -5,7 +5,11 @@ vi.mock("../../../server", () => ({
 }));
 
 import { createServerClient } from "../../../server";
-import { SITEMAP_ID_PAGE_SIZE, getSitemapEntityIds } from "../sitemapEntries";
+import {
+  SITEMAP_ID_PAGE_SIZE,
+  SITEMAP_QUERY_TIMEOUT_MS,
+  getSitemapEntityIds,
+} from "../sitemapEntries";
 
 /**
  * A Supabase double that answers `.range(start, end)` out of a per-table
@@ -22,6 +26,7 @@ function supabaseServing(rowsByTable: Record<string, { id: string }[]>) {
     }),
     select: vi.fn(() => client),
     order: vi.fn(() => client),
+    abortSignal: vi.fn(() => client),
     range: vi.fn(async (start: number, end: number) => ({
       data: (rowsByTable[table] ?? []).slice(start, end + 1),
       error: null,
@@ -114,6 +119,7 @@ describe("sitemap entity ids", () => {
       from: vi.fn(() => client),
       select: vi.fn(() => client),
       order: vi.fn(() => client),
+      abortSignal: vi.fn(() => client),
       range: vi.fn(async () => ({ data: null, error: { message: "down" } })),
     };
     (createServerClient as unknown as ReturnType<typeof vi.fn>).mockReturnValue(
@@ -127,6 +133,48 @@ describe("sitemap entity ids", () => {
       languages: [],
       patronymes: [],
     });
+  });
+
+  // An unreachable host does not answer "down" — it says nothing at all. The
+  // CI build points `NEXT_PUBLIC_SUPABASE_URL` at a placeholder domain that
+  // accepts the connection and never replies, and Next kills a static route
+  // that takes more than 60s. The walk therefore has to give up on its own.
+  // @req REQ-110
+  it("gives up on a table that never answers", async () => {
+    vi.useFakeTimers();
+    let pending: AbortSignal;
+    const client = {
+      from: vi.fn(() => client),
+      select: vi.fn(() => client),
+      order: vi.fn(() => client),
+      abortSignal: vi.fn((signal: AbortSignal) => {
+        pending = signal;
+        return client;
+      }),
+      range: vi.fn(
+        () =>
+          new Promise((_resolve, reject) => {
+            pending.addEventListener("abort", () =>
+              reject(new Error("aborted"))
+            );
+          })
+      ),
+    };
+    (createServerClient as unknown as ReturnType<typeof vi.fn>).mockReturnValue(
+      client
+    );
+
+    const walked = getSitemapEntityIds();
+    await vi.advanceTimersByTimeAsync(SITEMAP_QUERY_TIMEOUT_MS);
+
+    await expect(walked).resolves.toEqual({
+      peoples: [],
+      countries: [],
+      families: [],
+      languages: [],
+      patronymes: [],
+    });
+    vi.useRealTimers();
   });
 
   // @req REQ-110

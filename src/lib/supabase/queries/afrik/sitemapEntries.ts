@@ -28,6 +28,18 @@ export const SITEMAP_ID_PAGE_SIZE = 500;
  */
 const SITEMAP_MAX_PAGES = 40;
 
+/**
+ * How long one page of ids may take before the walk abandons the table.
+ *
+ * An unreachable database is not the same failure as a broken one: a wrong
+ * host accepts the connection and then says nothing, so the query neither
+ * resolves nor rejects. Next allows a static route 60s before it kills the
+ * build, and five tables are walked at once — so the bound has to be well
+ * under that. A real page of 500 ids comes back in tens of milliseconds.
+ */
+// @req REQ-110
+export const SITEMAP_QUERY_TIMEOUT_MS = 10_000;
+
 const TABLES = {
   peoples: "afrik_peoples",
   countries: "afrik_countries",
@@ -54,6 +66,30 @@ const EMPTY: SitemapEntityIds = {
 
 type SupabaseClient = ReturnType<typeof createServerClient>;
 
+/**
+ * One page of ids, or an error — never a promise that outlives the build.
+ */
+async function pageOfIds(
+  supabase: SupabaseClient,
+  table: string,
+  start: number
+): Promise<{ data: { id: string }[] | null; error: unknown }> {
+  const giveUp = new AbortController();
+  const timer = setTimeout(() => giveUp.abort(), SITEMAP_QUERY_TIMEOUT_MS);
+
+  try {
+    return await supabase
+      .from(table)
+      .select("id")
+      .abortSignal(giveUp.signal)
+      .range(start, start + SITEMAP_ID_PAGE_SIZE - 1);
+  } catch (error) {
+    return { data: null, error };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 async function idsInTable(
   supabase: SupabaseClient,
   table: string
@@ -62,10 +98,7 @@ async function idsInTable(
 
   for (let page = 0; page < SITEMAP_MAX_PAGES; page++) {
     const start = page * SITEMAP_ID_PAGE_SIZE;
-    const { data, error } = await supabase
-      .from(table)
-      .select("id")
-      .range(start, start + SITEMAP_ID_PAGE_SIZE - 1);
+    const { data, error } = await pageOfIds(supabase, table, start);
 
     if (error) {
       logger.error(`Sitemap: could not read ids from ${table}`, error);
