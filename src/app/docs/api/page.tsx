@@ -4,6 +4,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Code, GitBranch, Info } from "lucide-react";
 import Link from "next/link";
+import { PRODUCT_NAME } from "@/lib/brand";
+import { apiTagLabel, OPENAPI_V2_TAGS } from "@/lib/api/openapiV2Tags";
 
 // @req REQ-099
 export default function ApiDocsPage() {
@@ -21,7 +23,7 @@ export default function ApiDocsPage() {
                 API Documentation
               </h1>
               <p className="text-muted-foreground mt-1">
-                Documentation de l&apos;API AFRIK - Ethniafrique Atlas
+                Documentation de l&apos;API AFRIK — {PRODUCT_NAME}
               </p>
             </div>
           </div>
@@ -32,9 +34,9 @@ export default function ApiDocsPage() {
           <div className="space-y-3">
             <h2 className="text-afh-h3 font-semibold">API AFRIK v2</h2>
             <p className="text-afh-small text-muted-foreground">
-              L&apos;API Ethniafrique Atlas est basée sur la méthodologie AFRIK
-              avec des identifiants stables (FLG_*, PPL_*, codes ISO) et un
-              format de réponse standardisé avec pagination.
+              L&apos;API {PRODUCT_NAME} est basée sur la méthodologie AFRIK avec
+              des identifiants stables (FLG_*, PPL_*, codes ISO) et un format de
+              réponse standardisé avec pagination.
             </p>
           </div>
         </Card>
@@ -53,30 +55,27 @@ export default function ApiDocsPage() {
                 <p className="text-afh-small text-muted-foreground">
                   API basée sur la méthodologie AFRIK avec identifiants stables
                   (FLG_*, PPL_*, codes ISO), pagination et contenu évolutif.
-                  Accès aux pays, peuples, familles linguistiques et recherche
-                  multi-entités.
+                  Elle expose {OPENAPI_V2_TAGS.length} familles de ressources,
+                  listées ci-dessous et détaillées dans la référence.
                 </p>
               </div>
               <span className="px-3 py-1 text-afh-caption rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
                 v2.0.0
               </span>
             </div>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
-                Recherche
-              </span>
-              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
-                Pays
-              </span>
-              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
-                Peuples
-              </span>
-              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
-                Familles linguistiques
-              </span>
-              <span className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary">
-                Pagination
-              </span>
+            {/* Read from the spec's own tag block rather than restated: this
+                card claimed four resources while the API had grown to
+                eighteen, and a hand-kept list was always going to lose that
+                race. */}
+            <div data-testid="api-v2-coverage" className="flex flex-wrap gap-2">
+              {OPENAPI_V2_TAGS.map((tag) => (
+                <span
+                  key={tag.name}
+                  className="px-2 py-1 text-afh-caption rounded-md bg-primary/10 text-primary"
+                >
+                  {apiTagLabel(tag.name)}
+                </span>
+              ))}
             </div>
             <div className="flex gap-3 pt-2">
               <Link href="/docs/api/v2" className="flex-1">
@@ -113,27 +112,29 @@ export default function ApiDocsPage() {
           </div>
         </Card>
 
-        {/* Quick Info */}
+        {/* The "Endpoints disponibles" card that stood here listed four routes
+            out of thirty, hand-written. It was the third list on this page
+            saying an overlapping thing, and the two others are now derived —
+            so it is removed rather than made to drift more slowly. The
+            reference below enumerates every route, from the spec itself. */}
         <Card className="p-6">
           <div className="flex items-start gap-3">
-            <Info className="h-5 w-5 text-primary mt-0.5" />
+            <Info className="h-5 w-5 text-primary mt-0.5 shrink-0" />
             <div className="space-y-2">
-              <h3 className="font-semibold">Endpoints disponibles</h3>
-              <ul className="text-afh-small text-muted-foreground space-y-1 list-disc list-inside">
-                <li>
-                  <code>/api/v2/search</code> - Recherche multi-entités
-                </li>
-                <li>
-                  <code>/api/v2/countries</code> - Liste et détail des pays
-                </li>
-                <li>
-                  <code>/api/v2/peoples</code> - Liste et détail des peuples
-                </li>
-                <li>
-                  <code>/api/v2/language-families</code> - Liste et détail des
-                  familles linguistiques
-                </li>
-              </ul>
+              <h3 className="font-semibold">
+                Chaque route, avec ses paramètres
+              </h3>
+              <p className="text-afh-small text-muted-foreground">
+                La référence est engendrée à partir de la spécification servie :
+                chemins, paramètres, schémas de réponse et codes d&apos;erreur y
+                sont à jour par construction.
+              </p>
+              <Link
+                href="/docs/api/v2"
+                className="inline-block text-afh-small text-primary underline underline-offset-2"
+              >
+                Ouvrir la référence v2
+              </Link>
             </div>
           </div>
         </Card>
