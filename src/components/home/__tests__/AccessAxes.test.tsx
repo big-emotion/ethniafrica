@@ -23,6 +23,7 @@ const counts: CorpusCounts = {
   countries: 54,
   families: 24,
   nameForms: 3134,
+  patronymes: 33,
   migrations: 6,
 };
 
@@ -279,6 +280,7 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
     countries: 54,
     families: 24,
     nameForms: 3134,
+    patronymes: 33,
     migrations: 6,
   };
 

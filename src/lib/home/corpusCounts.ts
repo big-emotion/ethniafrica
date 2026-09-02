@@ -3,6 +3,7 @@ import { getCountries } from "@/api/v2/services/countryService";
 import { countAfrikLanguageFamilies } from "@/lib/supabase/queries/afrik/languageFamilies";
 import { countAfrikLanguages } from "@/lib/supabase/queries/afrik/languages";
 import { listNameForms } from "@/api/v2/services/names";
+import { listPatronymes } from "@/api/v2/services/patronymes";
 import { listMigrations } from "@/api/v2/services/migrations";
 
 /**
@@ -16,6 +17,7 @@ export interface CorpusCounts {
   families: number | null;
   languages: number | null;
   nameForms: number | null;
+  patronymes: number | null;
   migrations: number | null;
 }
 
@@ -44,24 +46,49 @@ const unavailable = () => null;
  * four peoples is one appellation, not four. It is the figure
  * `/fr/atlas/appellations` shows, and asking `listNameForms` for it keeps the
  * two surfaces reading the same view.
+ *
+ * `patronymes` and `nameForms` are two counts and never one. DEC-038 separates
+ * the objects: an *appellation* is how a people is called, a *nom* is the
+ * system a person is named under. They are an order of magnitude apart, so
+ * serving one where the band asked for the other is a wrong figure that reads
+ * as a plausible one.
  */
 // @req REQ-113
 export async function getCorpusCounts(): Promise<CorpusCounts> {
-  const [peoples, countries, families, languages, nameForms, migrations] =
-    await Promise.all([
-      getPeoples(1, 1).then((page) => page.total, unavailable),
-      getCountries(1, 1).then((page) => page.total, unavailable),
-      countAfrikLanguageFamilies().catch(unavailable),
-      countAfrikLanguages().catch(unavailable),
-      listNameForms({ page: 1, perPage: 1, imposedOnly: false }).then(
-        (page) => page.total,
-        unavailable
-      ),
-      listMigrations({ limit: 1, offset: 0 }).then(
-        (page) => page.total,
-        unavailable
-      ),
-    ]);
+  const [
+    peoples,
+    countries,
+    families,
+    languages,
+    nameForms,
+    patronymes,
+    migrations,
+  ] = await Promise.all([
+    getPeoples(1, 1).then((page) => page.total, unavailable),
+    getCountries(1, 1).then((page) => page.total, unavailable),
+    countAfrikLanguageFamilies().catch(unavailable),
+    countAfrikLanguages().catch(unavailable),
+    listNameForms({ page: 1, perPage: 1, imposedOnly: false }).then(
+      (page) => page.total,
+      unavailable
+    ),
+    listPatronymes({ page: 1, perPage: 1 }).then(
+      (page) => page.total,
+      unavailable
+    ),
+    listMigrations({ limit: 1, offset: 0 }).then(
+      (page) => page.total,
+      unavailable
+    ),
+  ]);
 
-  return { peoples, countries, families, languages, nameForms, migrations };
+  return {
+    peoples,
+    countries,
+    families,
+    languages,
+    nameForms,
+    patronymes,
+    migrations,
+  };
 }
