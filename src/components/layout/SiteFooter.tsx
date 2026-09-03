@@ -22,8 +22,15 @@ interface SiteFooterProps {
  * Written once rather than seven times. The seven copies it replaces were
  * identical, which is exactly why the eighth would not have been.
  */
+// Every footer link is a row in a nav list, never a word inside a sentence, so
+// none of them takes WCAG 2.5.8's inline exception: at 22px they missed even
+// its 24px AA minimum, well under the 44px this project's own UX spec asks of a
+// control. `inline-flex` + `min-h-11` gives the row the target without
+// touching the type, which stays at the column's `small`.
+// `min-w-11` as well as `min-h-11`: a short label — « API », « Noms » — drew a
+// 26px-wide target however tall the row was, and the floor is a square.
 const FOOTER_LINK_CLASS =
-  "underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  "inline-flex min-h-11 min-w-11 items-center justify-center underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 /**
  * Where the project is followed, and where it will be.
@@ -348,7 +355,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
               href="https://big-emotion.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="inline-flex min-h-11 items-center gap-2 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <span>{footer.attribution}</span>
               <Image

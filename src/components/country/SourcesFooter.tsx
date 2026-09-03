@@ -109,7 +109,10 @@ export function SourcesFooter({
                 href={source.url}
                 rel="noreferrer noopener"
                 target="_blank"
-                className="underline underline-offset-2"
+                // A citation is a row in the source list, not a word inside a
+                // sentence, so it owes the 44px target rather than the height
+                // of the line it happens to occupy — these measured 21px.
+                className="inline-flex min-h-11 items-center underline underline-offset-2"
               >
                 {source.label}
               </a>
