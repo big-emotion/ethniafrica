@@ -23,10 +23,47 @@ permissions:
   contents: read
 
 jobs:
+  # Production's schema state used to be a claim in a runbook rather than a
+  # measurement. At the 4.1.0 release that claim said production stood at `049`
+  # while thirty-two migrations had landed on recette — including the ones that
+  # create `afrik_patronymes`, `persons` and every unified-search RPC. Deploying
+  # onto that would have shipped a release whose headline features query tables
+  # the database does not have.
+  #
+  # `applied_migrations()` (migration 042) makes the ledger readable over
+  # PostgREST, so this is measurable rather than remembered. It runs as its own
+  # job so the deploy below keeps carrying an SSH key and nothing else.
+  schema:
+    name: Production schema is not behind the code
+    if: github.event.release.prerelease == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout the released tag
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.release.tag_name }}
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Measure the production ledger
+        env:
+          PRODUCTION_SUPABASE_URL: ${{ secrets.PRODUCTION_SUPABASE_URL }}
+          PRODUCTION_SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.PRODUCTION_SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run check:migration-state:production
+
   deploy:
     # A pre-release is a release too as far as GitHub is concerned. Shipping `v1.2.0-rc.1`
     # to ethniafrica.com because someone ticked "pre-release" would be a surprise.
     if: github.event.release.prerelease == false
+    needs: schema
     runs-on: ubuntu-latest
     timeout-minutes: 30
     environment:

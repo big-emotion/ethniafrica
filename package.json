@@ -21,6 +21,7 @@
     "check:env-example": "tsx scripts/checkEnvExample.ts",
     "check:afrik-loader": "tsx scripts/ci/checkAfrikLoaderPreflight.ts",
     "check:migration-state": "tsx scripts/ci/checkMigrationState.ts",
+    "check:migration-state:production": "tsx scripts/ci/checkMigrationState.ts --target=production",
     "check:migration-files": "tsx scripts/ci/checkMigrationState.ts --files-only",
     "migrations:diff": "tsx scripts/migrationsDiff.ts",
     "check:pagination-contract": "tsx scripts/checkPaginationContractDrift.ts",

@@ -24,7 +24,7 @@ Consequences this skill must state truthfully, every run:
 - **Pushing `main` deploys nothing.** `vercel.json` sets `git.deploymentEnabled: false`, so no push and no pull request builds anything on Vercel any more. That was deliberate: automatic preview builds from parallel agent sessions exhausted the Hobby plan's deployment quota, and the rate limit eventually landed on `main` itself.
 - **Pushing the tag deploys nothing either.** The tag is the thing the Release will point at. It has to exist on `origin` before the Release is created, which is why Step 7 pushes it and Step 8 publishes the Release — in that order, never merged into one step.
 - **Creating the Release is therefore no longer optional.** Step 8 is part of shipping, not a nicety. A release that stops after the tag has bumped a version and shipped nothing.
-- **The AFRIK corpus sync rides on the deploy.** `production-data-sync.yml` triggers on `workflow_run` of `Deploy Production (OVH)` and only when it concluded `success`. A failed deploy leaves the production corpus untouched, which is correct.
+- **The AFRIK corpus sync rides on the deploy.** `production-data-sync.yml` triggers on `workflow_run` of `Deploy Production (OVH)` and only when it concluded `success`. A failed deploy leaves the production corpus untouched, which is correct. When the sync itself fails, its per-fiche error report is uploaded as the `afrik-migration-errors-production` artifact — the loader only logs a path, and a path on a runner is unreadable.
 - **`workflow_run` only fires for workflow files that live on the default branch.** Both workflows must be on `main` for the chain to work. Precondition 6 (`recette` is an ancestor of `main`) already covers the usual way this goes wrong.
 - The recette preview still exists on Vercel but is manual: `deploy-preview-recette.yml`, `workflow_dispatch` only.
 - The CI/quality workflows (`ci.yml`, `a11y.yml`, `lighthouse.yml`, `data-integrity.yml`, `openapi-diff.yml`, `e2e.yml`) still react to pushes and pull requests. None of them deploy.
@@ -62,7 +62,32 @@ Verify all of the following before any write. If any fail, **do not modify anyth
    npm run build
    ```
    CI (precondition 5) covers the same ground on the PR commit, but a release tags the merge result; these run against the exact tree being tagged. `npm run build` is the expensive one — it is not optional, because the VPS runs the same build inside Docker during the deploy, and a failure there leaves the tag and the Release page published with production untouched.
-8. **No unapplied Supabase migrations** — compare `ls supabase/migrations/` against what the runbooks record as applied (`docs/runbooks/`). A migration present in the repo but not applied to production means the deploy ships code whose schema does not exist yet. If any is unapplied, stop and tell the user to apply it (or confirm explicitly that the release does not depend on it).
+8. **No unapplied Supabase migrations — measured, not remembered.** Run:
+
+   ```bash
+   PRODUCTION_SUPABASE_URL=… PRODUCTION_SUPABASE_SERVICE_ROLE_KEY=… \
+     npm run check:migration-state:production
+   ```
+
+   This reads production's own ledger through `applied_migrations()` (migration
+   `042`), so it reports what the database holds rather than what a runbook
+   remembers. It exits 1 on anything pending, orphaned or drifted, and it
+   refuses to answer at all rather than fall back to recette's credentials.
+
+   **Do not substitute `docs/runbooks/migration-state.md` for this command.**
+   That is what the earlier version of this precondition said to do, and at the
+   4.1.0 release the runbook claimed production stood at `049` while thirty-two
+   migrations had landed on recette — including `053` (`afrik_patronymes`),
+   `057` (`persons`), `064`, and `069` (every unified-search RPC). Releasing on
+   that reading would have shipped a version whose headline features query
+   tables production does not have. A hand-kept ledger drifts; the database
+   does not.
+
+   If the credentials are not available to you, say so and stop — an
+   unmeasured schema is not a green precondition. The same check now runs
+   automatically as the `schema` job of `deploy-production.yml`, which the
+   deploy `needs:`, so a Release published against a behind schema fails before
+   anything reaches the VPS.
 
 ## Inputs
 

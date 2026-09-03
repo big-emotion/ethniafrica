@@ -19,11 +19,15 @@
  *                  failed: failing here would flag the whole early history.
  *
  * Usage:
- *   npx tsx scripts/ci/checkMigrationState.ts            # gate; exits 1 when dirty
- *   npx tsx scripts/ci/checkMigrationState.ts --json     # machine-readable
+ *   npx tsx scripts/ci/checkMigrationState.ts                      # recette
+ *   npx tsx scripts/ci/checkMigrationState.ts --target=production  # production
+ *   npx tsx scripts/ci/checkMigrationState.ts --json               # machine-readable
  *
- * Reads NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY. Without them it
- * exits 1 saying so, rather than reporting a clean database it never reached.
+ * Reads NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY for recette, and
+ * PRODUCTION_SUPABASE_URL / PRODUCTION_SUPABASE_SERVICE_ROLE_KEY under
+ * `--target=production`. Without them it exits 1 saying so, rather than
+ * reporting a clean database it never reached — and it never falls back from
+ * one environment's credentials to the other's.
  */
 import path from "node:path";
 
@@ -35,6 +39,7 @@ import {
   type Reconciliation,
 } from "../lib/migrationLedger";
 import { ADJUDICATED_DRIFT, unadjudicatedDrift } from "./adjudicatedDrift";
+import { resolveMigrationStateTarget } from "../lib/migrationStateTarget";
 
 const MIGRATIONS_DIR = path.resolve(
   import.meta.dirname,
@@ -208,13 +213,25 @@ async function runCli(): Promise<void> {
     return;
   }
 
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const targetFlag = process.argv
+    .find((argument) => argument.startsWith("--target="))
+    ?.slice("--target=".length);
 
-  if (!supabaseUrl || !serviceRoleKey) {
-    console.error(
-      "check:migration-state — NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required. Refusing to report a database this run never reached."
-    );
+  let supabaseUrl: string;
+  let serviceRoleKey: string;
+  let environment: string;
+  try {
+    ({ supabaseUrl, serviceRoleKey, environment } = resolveMigrationStateTarget(
+      {
+        environment: targetFlag,
+        recetteUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
+        recetteKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
+        productionUrl: process.env.PRODUCTION_SUPABASE_URL,
+        productionKey: process.env.PRODUCTION_SUPABASE_SERVICE_ROLE_KEY,
+      }
+    ));
+  } catch (error) {
+    console.error(`check:migration-state — ${(error as Error).message}`);
     process.exitCode = 1;
     return;
   }
@@ -231,7 +248,7 @@ async function runCli(): Promise<void> {
   }
 
   const result = reconcileMigrations(files, ledger);
-  const target = new URL(supabaseUrl).host;
+  const target = `${environment} (${new URL(supabaseUrl).host})`;
 
   if (asJson) {
     console.log(JSON.stringify({ target, ...result }, null, 2));
