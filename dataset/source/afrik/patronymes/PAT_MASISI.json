@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_MASISI",
+  "nameMain": "Masisi",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Masisi",
+      "attestations": [
+        {
+          "countryId": "BWA",
+          "sourceRefs": ["forebears-masisi"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_TSWANA",
+      "status": "supposed",
+      "sourceRefs": ["forebears-masisi"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "BWA",
+      "status": "attested",
+      "sourceRefs": ["forebears-masisi"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-masisi",
+      "title": "Masisi Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/masisi",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement. Elle place la densité maximale au Botswana mais ne donne aucune signification. Une étude sur la famille Masisi et le milieu setswana a été repérée, mais son texte intégral a refusé ou interrompu les deux accès directs ; aucune affirmation de cette étude n'est donc intégrée."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web et bibliographique combinant « Masisi », « Tswana », « Botswana », « surname origin », « clan », « onomastics », « transmission » et « obituary », deux tentatives d'accès au texte intégral de l'étude repérée sur la famille Masisi, ainsi que la page Forebears dédiée n'ont livré aucune tradition attribuée, chronique ou étude linguistique établissant l'origine de Masisi. Les rapprochements portant sur un homonyme d'une autre langue ou sur la seule géographie ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Masisi », « Tswana », « Botswana », « surname origin », « clan », « onomastics », « transmission » et « obituary », deux tentatives d'accès au texte intégral de l'étude repérée sur la famille Masisi, ainsi que la page Forebears dédiée n'ont pas établi que la catégorie provisoire « clan_name » décrive Masisi lui-même ; elle reste une hypothèse de classement, sans être transformée en affirmation."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Masisi », « Tswana », « Botswana », « surname origin », « clan », « onomastics », « transmission » et « obituary », deux tentatives d'accès au texte intégral de l'étude repérée sur la famille Masisi, ainsi que la page Forebears dédiée n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Masisi à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Masisi », « Tswana », « Botswana », « surname origin », « clan », « onomastics », « transmission » et « obituary », deux tentatives d'accès au texte intégral de l'étude repérée sur la famille Masisi, ainsi que la page Forebears dédiée n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Masisi."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Masisi », « Tswana », « Botswana », « surname origin », « clan », « onomastics », « transmission » et « obituary », deux tentatives d'accès au texte intégral de l'étude repérée sur la famille Masisi, ainsi que la page Forebears dédiée n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Masisi », « Tswana », « Botswana », « surname origin », « clan », « onomastics », « transmission » et « obituary », deux tentatives d'accès au texte intégral de l'étude repérée sur la famille Masisi, ainsi que la page Forebears dédiée n'ont pas établi de lignée homonyme d'origine distincte documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Masisi », « Tswana », « Botswana », « surname origin », « clan », « onomastics », « transmission » et « obituary », deux tentatives d'accès au texte intégral de l'étude repérée sur la famille Masisi, ainsi que la page Forebears dédiée n'ont établi aucune règle propre à Masisi permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

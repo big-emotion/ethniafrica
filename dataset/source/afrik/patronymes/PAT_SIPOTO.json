@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_SIPOTO",
+  "nameMain": "Sipoto",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Sipoto",
+      "attestations": [
+        {
+          "countryId": "GNQ",
+          "sourceRefs": ["buele-2003-sipoto"]
+        }
+      ]
+    },
+    {
+      "spelling": "Sipotó",
+      "attestations": [
+        {
+          "countryId": "GNQ",
+          "sourceRefs": ["buele-2003-sipoto"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une lettre familiale de 2003 cite des entrées de baptême et de confirmation de 1912-1913 où Andrés Buele Siesa est aussi désigné « Sipotó » à Basilé, dans un contexte bubi de Bioko. Elle établit cette graphie historique, sans expliquer l'origine du nom.",
+        "claimStatus": "established",
+        "sourceRefs": ["buele-2003-sipoto"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BUBI",
+      "status": "attested",
+      "sourceRefs": ["buele-2003-sipoto"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GNQ",
+      "status": "attested",
+      "sourceRefs": ["buele-2003-sipoto"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Andrés Buele Siesa « Sipotó »",
+      "sourceRefs": ["buele-2003-sipoto"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "buele-2003-sipoto",
+      "title": "Las autoridades guineanas niegan el visado de entrada al diputado del Parlamento balear Cecili Buale i Ramis",
+      "url": "https://guinea-ecuatorial.net/inicio.asp?cd=ni1609",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Lettre familiale publiée par un portail communautaire et consultée directement. Elle transcrit des registres baptismaux de 1912-1913 nommant Andrés Buele Siesa « Sipotó », né à Basilé Bubi, et donne son décès en 1999. La source est conservée à son niveau communautaire et ne fournit aucune étymologie."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "la recherche web et bibliographique combinant « Sipoto », « Sipotó », « Bubi », « Bioko », « surname », « baptism », « etymology » et « transmission », ainsi que la consultation directe de « Las autoridades guineanas niegan el visado de entrada al diputado del Parlamento balear Cecili Buale i Ramis » ont établi une attestation historique de Sipoto, mais aucune analyse linguistique attribuée permettant d'en reconstruire l'étymologie."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Sipoto », « Sipotó », « Bubi », « Bioko », « surname », « baptism », « etymology » et « transmission », ainsi que la consultation directe de « Las autoridades guineanas niegan el visado de entrada al diputado del Parlamento balear Cecili Buale i Ramis » n'ont pas établi que la catégorie provisoire « clan_name » décrive Sipoto lui-même ; elle reste un classement de travail et non une origine démontrée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Sipoto », « Sipotó », « Bubi », « Bioko », « surname », « baptism », « etymology » et « transmission », ainsi que la consultation directe de « Las autoridades guineanas niegan el visado de entrada al diputado del Parlamento balear Cecili Buale i Ramis » n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Sipoto à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Sipoto », « Sipotó », « Bubi », « Bioko », « surname », « baptism », « etymology » et « transmission », ainsi que la consultation directe de « Las autoridades guineanas niegan el visado de entrada al diputado del Parlamento balear Cecili Buale i Ramis » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Sipoto."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Sipoto », « Sipotó », « Bubi », « Bioko », « surname », « baptism », « etymology » et « transmission », ainsi que la consultation directe de « Las autoridades guineanas niegan el visado de entrada al diputado del Parlamento balear Cecili Buale i Ramis » n'ont pas établi de lignée homonyme de Sipoto dotée d'une origine distincte et documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Sipoto », « Sipotó », « Bubi », « Bioko », « surname », « baptism », « etymology » et « transmission », ainsi que la consultation directe de « Las autoridades guineanas niegan el visado de entrada al diputado del Parlamento balear Cecili Buale i Ramis » n'ont établi aucune règle propre à Sipoto permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

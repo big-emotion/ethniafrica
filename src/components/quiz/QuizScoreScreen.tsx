@@ -77,5 +77,3 @@ export const QuizScoreScreen = ({
     </div>
   );
 };
-
-export default QuizScoreScreen;

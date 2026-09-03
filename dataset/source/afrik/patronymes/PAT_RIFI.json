@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français prudent : l’histoire du vocable et de la nisba rîfî est documentée, sans généraliser une généalogie commune à tous les porteurs modernes."
+  },
+  "id": "PAT_RIFI",
+  "nameMain": "Rifi",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "Rifi",
+      "attestations": [{ "countryId": "MAR", "sourceRefs": ["rifi-bam-2019"] }]
+    },
+    {
+      "spelling": "rîfî",
+      "attestations": [{ "countryId": "MAR", "sourceRefs": ["rifi-bam-2019"] }]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "settlement",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "L’étude croise des dictionnaires et chroniques médiévales pour montrer que Rîf désigne des espaces de rive ou de campagne, dont le Rîf du Maghreb, et que des sources parlent des tribus rîfiyya.",
+        "claimStatus": "established",
+        "sourceRefs": ["rifi-bam-2019"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "La nisba historique rîfî est analysée comme « villageois » ou « rustique ». Le vocable Rîf possède aussi les sens de lieu fertile abondant en eau et, plus précisément, de rive maritime ou fluviale ; le rattachement moderne au Rif marocain est donc géographique, non la preuve d’un lignage unique.",
+        "claimStatus": "established",
+        "sourceRefs": ["rifi-bam-2019"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_RIFAIN",
+      "status": "attested",
+      "sourceRefs": ["rifi-bam-2019"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MAR",
+      "status": "attested",
+      "sourceRefs": ["rifi-bam-2019"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "rifi-bam-2019",
+      "title": "Sur les significations historiques du vocable Rîf et sa relation avec les toponymes Jabâla et Ghumâra : une proposition d’interprétation",
+      "url": "https://app.wadi.dev/api/media/image?inline=&path=stores%2F45%2Fcontenu_de_publication%2F36332%2F15-Virgilio-12_07_20.pdf_0171751348729.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Virgilio Martínez Enamorado et Jacques/Jawhar Vignet-Zunz, Bulletin d’Archéologie Marocaine 24, 2019, p. 197-214. Le texte intégral a été vérifié, notamment la nisba rîfî et les conclusions sémantiques. L’article traite le vocable historique ; il n’établit pas la transmission de chaque famille Rifi moderne."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L’article dédié, les catalogues de l’IRCAM et les recherches « Rifi tradition orale », « famille Rifi origine » et « الريفي نسب » n’ont livré aucun récit avec transmetteur nommé et transcription."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La source établit une nisba et un rattachement géographique historiques, mais ne décrit pas la transmission des familles modernes Rifi ; les recherches généalogiques dédiées n’ont pas permis de choisir un mode."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches combinant Rifi avec « alliance », « pacte », « leff » et « parenté à plaisanterie » n’ont fourni aucune relation nominale avec une autre fiche PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "L’article historique et les recherches sur un métier ou statut héréditaire lié à Rifi ne signalent aucune fonction sociale transmise."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les catalogues BnF, IdRef et les recherches biographiques ont été vérifiés sans trouver de porteur décédé dont une notice dédiée permette de distinguer clairement le patronyme de la simple nisba géographique."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La source montre que rîfî a pu s’appliquer à plusieurs régions historiques, mais aucune documentation patronymique ne permet de séparer deux lignées modernes homonymes sous l’orthographe Rifi."
+    }
+  ],
+  "nisbaSubtype": {
+    "value": "geographic",
+    "sourceRefs": ["rifi-bam-2019"]
+  }
+}

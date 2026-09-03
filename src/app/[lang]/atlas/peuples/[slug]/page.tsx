@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { notFound, redirect } from "next/navigation";
 
-import { loadPeopleFiche } from "@/lib/fiche/ficheExistence";
+import {
+  isFicheKnownAbsent,
+  loadPeopleFiche,
+} from "@/lib/fiche/ficheExistence";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import { ficheCanonical } from "@/lib/seo/ficheCanonical";
 import { getPeopleRoute } from "@/lib/routing";
@@ -13,7 +16,12 @@ import {
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleDetailViewV2 } from "@/components/people/PeopleDetailViewV2";
+import { buildPeopleFicheNotes } from "@/components/people/peopleFicheNotes";
+import { buildFicheSourceRegister } from "@/lib/fiche/ficheSourceRegister";
+import { ficheSourceEntries } from "@/lib/afrik/ficheSourceLabel";
+import { getFieldNotes } from "@/lib/supabase/queries/afrik/module-zero-batch";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
+import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { PeopleFicheTitle } from "@/components/people/PeopleFicheTitle";
@@ -22,16 +30,11 @@ import { buildPeoplePresenceFacts } from "@/components/people/peoplePresenceFact
 import { peopleFallbackNote } from "@/components/people/peopleFallbackNote";
 import { getPeopleById } from "@/api/v2/services/peopleService";
 import { getPeopleNamesDossier } from "@/api/v2/services/names";
+import { getPatronymesBorneByPeople } from "@/api/v2/services/patronymeFicheLinks";
 import { getPeopleFragmentation } from "@/api/v2/services/peopleFragmentation";
 import { getEgoNetwork } from "@/api/v2/services/relations";
 import { mapPeopleDetail } from "@/lib/afrikDetailMapper";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
-import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
-import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
-import {
-  DoctrineLinkCard,
-  isDoctrineSlug,
-} from "@/components/source-transparency/DoctrineLinkCard";
 
 // @req REQ-019
 export const revalidate = 3600;
@@ -70,90 +73,11 @@ export async function generateMetadata({
   const parsedForExistence = parseVersionedSlug(decodeURIComponent(slug));
   if (
     parsedForExistence?.mode === "live" &&
-    !(await loadPeopleFiche(parsedForExistence.slug))
+    (await isFicheKnownAbsent(loadPeopleFiche, parsedForExistence.slug))
   ) {
-    {
-      notFound();
-    }
+    notFound();
   }
   return ficheCanonical("people", lang as Language, slug);
-}
-
-// ---------------------------------------------------------------------------
-// Snapshot view (pinned URLs — data is immutable, read from revisions only)
-// ---------------------------------------------------------------------------
-
-interface SnapshotViewProps {
-  entityId: string;
-  version: number;
-  publishedAt: string | null;
-  confidence: number | null;
-  doctrine?: {
-    slug: string;
-    version: number;
-  } | null;
-  snapshotData: Record<string, unknown>;
-  lang: string;
-}
-
-function SnapshotFicheView({
-  entityId,
-  version,
-  publishedAt,
-  confidence,
-  doctrine,
-  snapshotData,
-  lang,
-}: SnapshotViewProps) {
-  const nameMain =
-    typeof snapshotData.nameMain === "string"
-      ? snapshotData.nameMain
-      : typeof snapshotData.name_main === "string"
-        ? snapshotData.name_main
-        : entityId;
-
-  return (
-    <div data-testid="people-snapshot-view" className="space-y-4">
-      {/* Snapshot content */}
-      <div className="space-y-2">
-        <h1 className="text-afh-h2 font-semibold">{nameMain}</h1>
-        <p className="text-afh-small text-muted-foreground font-mono">
-          {entityId}
-        </p>
-      </div>
-
-      <PinnedVersionBanner
-        pinnedAt={publishedAt}
-        versionTag={String(version)}
-        liveUrl={getPeopleRoute(lang as Language, entityId)}
-      />
-
-      {/* Frozen confidence chip (AR14) */}
-      {confidence !== null && (
-        <div className="px-1">
-          <ConfidenceChip
-            confidenceScore={confidence}
-            sourceCount={null}
-            lastHumanAuditAt={publishedAt}
-            variant="hero"
-          />
-        </div>
-      )}
-
-      {/* "Version introuvable" copy is rendered by notFound() — this component
-          is only reached when the version exists */}
-      <div className="prose prose-neutral max-w-none text-afh-small text-muted-foreground">
-        <p>
-          Ce contenu est une capture archivée&nbsp;(v{version}) et ne sera
-          jamais modifié.
-        </p>
-      </div>
-
-      {doctrine && isDoctrineSlug(doctrine.slug) && (
-        <DoctrineLinkCard slug={doctrine.slug} version={doctrine.version} />
-      )}
-    </div>
-  );
 }
 
 // ---------------------------------------------------------------------------
@@ -200,7 +124,8 @@ export default async function PeoplesSlugPage({
     return (
       <PageLayout language="fr" sectionName="Peuples">
         <div className="container mx-auto max-w-4xl px-4 py-8">
-          <SnapshotFicheView
+          <FicheSnapshotView
+            kind="people"
             entityId={parsed.slug}
             version={parsed.version}
             publishedAt={snapshot.published_at}
@@ -228,19 +153,46 @@ export default async function PeoplesSlugPage({
   // itself from the browser, and the count only ever existed to decide whether
   // the voices chapter got an anchor before hydration. The parchment has no
   // such chapter to gate.
-  const [people, sourceFlags, namesDossier, fragmentation, egoNetwork] =
-    await Promise.all([
-      loadPeopleFiche(parsed.slug),
-      getActiveSourceFlags("people", parsed.slug),
-      getPeopleNamesDossier(parsed.slug).catch(() => null),
-      getPeopleFragmentation(parsed.slug).catch(() => null),
-      getEgoNetwork(parsed.slug),
-    ]);
+  const [
+    people,
+    sourceFlags,
+    namesDossier,
+    fragmentation,
+    egoNetwork,
+    fieldNotes,
+    borneNames,
+  ] = await Promise.all([
+    loadPeopleFiche(parsed.slug),
+    getActiveSourceFlags("people", parsed.slug),
+    getPeopleNamesDossier(parsed.slug).catch(() => null),
+    getPeopleFragmentation(parsed.slug).catch(() => null),
+    getEgoNetwork(parsed.slug),
+    // Alongside its neighbours rather than after them, and caught like them:
+    // the citation apparatus must never be able to cost the fiche.
+    getFieldNotes("people", parsed.slug).catch(() => []),
+    // Caught to `null` rather than to `[]`: an empty list is the corpus
+    // saying this people carries no name, which is the ordinary answer and
+    // one the chapter prints. A failed read must not be able to say that.
+    getPatronymesBorneByPeople(parsed.slug).catch(() => null),
+  ]);
   if (!people) {
     notFound();
   }
 
   const peopleDetail = mapPeopleDetail(people);
+
+  /**
+   * The fiche's bibliography, and the callouts that index it.
+   *
+   * The register is built from both lists — what the fiche declares and what
+   * its assertions cite — because a callout must never point at an unnumbered
+   * source, and a declared source must never disappear for want of a citation.
+   */
+  const register = buildFicheSourceRegister(
+    ficheSourceEntries(people.content?.sources),
+    fieldNotes.flatMap((note) => note.sources)
+  );
+  const notes = buildPeopleFicheNotes(fieldNotes, register.numberBySourceId);
   const peopleFieldOverlay = buildPeopleFieldOverlay(
     peopleDetail.demography?.distributionByCountry
   );
@@ -317,6 +269,11 @@ export default async function PeoplesSlugPage({
             fragmentation={fragmentation}
             hasSourceFlag={sourceFlags.length > 0}
             relations={egoNetwork.sourced}
+            notes={notes}
+            borneNames={borneNames}
+            // Only when something cites it: a bibliography numbered for
+            // nobody promises an anchor that does not exist.
+            bibliography={notes.count > 0 ? register.entries : undefined}
           />
         }
       />

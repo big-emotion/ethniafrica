@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français prudent : l’usage égyptien et le gentilé siwi sont attestés séparément ; leur relation anthroponymique reste une inférence."
+  },
+  "id": "PAT_EL_SIWI",
+  "nameMain": "El Siwi",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "El Siwi",
+      "attestations": [
+        { "countryId": "EGY", "sourceRefs": ["el-siwi-forebears"] }
+      ]
+    },
+    {
+      "spelling": "El-Siwi",
+      "attestations": [
+        { "countryId": "EGY", "sourceRefs": ["el-siwi-forebears"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "settlement",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le Max Planck Institute donne Isiwan comme nom des Siwis et situe leur langue dans l’oasis de Siwa en Égypte. Le rapprochement de la forme égyptienne El Siwi avec ce gentilé géographique est plausible, mais reste une inférence : aucune source consultée n’analyse directement le patronyme.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["siwi-mpi", "el-siwi-forebears"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SIWI",
+      "status": "supposed",
+      "sourceRefs": ["siwi-mpi", "el-siwi-forebears"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "EGY",
+      "status": "attested",
+      "sourceRefs": ["siwi-mpi", "el-siwi-forebears"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Samy El Siwi",
+      "sourceRefs": ["samy-el-siwi-elcinema"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "siwi-mpi",
+      "title": "An Acoustically-based Phonology and Morphophonology of Siwi (Berber)",
+      "url": "https://www.eva.mpg.de/linguistics/past-research-resources/documentation-and-description/an-acoustically-based-phonology-and-morphophonology-of-siwi-berber/",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Projet de Christfried Naumann au Max Planck Institute for Evolutionary Anthropology. La page a été consultée pour la forme Isiwan, sa glose « Siwis », l’oasis de Siwa et le classement berbère ; elle ne traite pas le patronyme El Siwi."
+    },
+    {
+      "sourceKey": "el-siwi-forebears",
+      "title": "El Siwi Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/el_siwi",
+      "tier": "unverified",
+      "source_kind": "discovery",
+      "notes": "Agrégateur mondial de patronymes. La page atteste la graphie El Siwi et une concentration déclarée en Égypte, mais n’indique pas ses sources individuelles et dit explicitement ne pas connaître le sens du nom ; elle n’est utilisée ni comme preuve étymologique ni comme preuve d’appartenance ethnique."
+    },
+    {
+      "sourceKey": "samy-el-siwi-elcinema",
+      "title": "سامي السيوي — Samy El Siwi",
+      "url": "https://elcinema.com/person/1100116/",
+      "tier": "unverified",
+      "source_kind": "discovery",
+      "notes": "Notice d’une base de cinéma égyptienne, consultée pour le nom du réalisateur et les dates 1949-2025. Source sectorielle non académique, conservée à son tier faible."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les travaux linguistiques sur Siwa, les catalogues égyptiens et les recherches « El Siwi oral tradition », « السيوي نسب » et « Siwa family tradition » n’ont livré aucun récit avec transmetteur nommé et transcription."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues de l’IFAO, de la BnF, du Max Planck Institute et les dépôts égyptologiques consultés n’ont pas livré de chronique ou d’archive expliquant l’apparition du patronyme El Siwi."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Les sources attestent le gentilé, la graphie et un porteur, mais aucune ne décrit la règle de transmission du nom ; les recherches « El Siwi genealogy » et « السيوي اسم العائلة » n’ont pas fourni d’étude familiale."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches combinant El Siwi avec « alliance », « Siwa tribes pact » et « joking relationship » n’ont pas établi de relation nominale avec une autre fiche PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les études linguistiques de Siwa et les recherches sur El Siwi n’ont associé aucune fonction sociale héréditaire au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les graphies El Siwi, El-Siwi et al-Siwi ont été croisées dans les catalogues et bases consultés sans qu’une seconde origine indépendante soit démontrée."
+    }
+  ],
+  "nisbaSubtype": {
+    "value": "geographic",
+    "sourceRefs": ["siwi-mpi", "el-siwi-forebears"]
+  }
+}

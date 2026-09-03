@@ -61,5 +61,3 @@ export function FacetSwitcher({ active, className }: FacetSwitcherProps) {
     </nav>
   );
 }
-
-export default FacetSwitcher;

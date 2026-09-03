@@ -1,0 +1,99 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Obi ; les lacunes consignent les recherches restées sans résultat."
+  },
+  "id": "PAT_OBI",
+  "nameMain": "Obi",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Obi",
+      "attestations": [
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["hanks-obi"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le Dictionary of American Family Names donne deux analyses igbo de Obi : le titre obì d'un ancien, chef ou roi traditionnel, et la forme courte d'un nom personnel composé tel que Obialo.",
+        "claimStatus": "established",
+        "sourceRefs": ["hanks-obi"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_IGBO",
+      "status": "attested",
+      "sourceRefs": ["hanks-obi"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["hanks-obi"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": {
+    "value": "Titre igbo obì pouvant désigner un ancien, un chef ou un roi traditionnel ; la source signale aussi une origine comme nom personnel abrégé.",
+    "sourceRefs": ["hanks-obi"]
+  },
+  "bearers": [],
+  "homonyms": [
+    {
+      "label": "Obi (nom japonais)",
+      "entityType": "other",
+      "entityId": null,
+      "distinction": "Le même dictionnaire atteste un patronyme japonais écrit notamment 小尾, d'origine distincte des analyses igbo.",
+      "sourceRefs": ["hanks-obi"]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "hanks-obi",
+      "title": "Obi Name Meaning and Obi Family History at FamilySearch",
+      "url": "https://www.familysearch.org/en/surname?surname=obi",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Entrée Obi du Dictionary of American Family Names de Patrick Hanks (2003, 2006), hébergée par FamilySearch et consultée directement. La fiche du dictionnaire identifie explicitement la forme comme nom igbo du Nigeria."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Obi Igbo oral tradition griot transcription » et « Obi Igbo lineage oral history » ainsi que l'entrée du dictionnaire de Hanks consultée n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Obi Igbo chronicle manuscript archive » et « Obi colonial register Nigeria » n'ont livré aucune chronique ni pièce d'archives établissant l'histoire de cette forme."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Obi Igbo joking relationship », « Obi joking kinship » et « Obi sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "l'entrée du dictionnaire de Hanks consultée et les recherches « Obi obituary biography deceased » n'ont pas permis de retenir un porteur décédé sur une notice propre au nom et suffisamment fiable."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "l'entrée du dictionnaire de Hanks consultée atteste l'emploi comme nom personnel ou nom de famille, mais ne décrit pas une règle de transmission stable ; les recherches « Obi Igbo surname inheritance » n'ont pas tranché entre usages familiaux et individuels."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "l'entrée du dictionnaire de Hanks consultée ne permet pas de décider si chaque emploi contemporain désigne un individu, une famille, une charge ou un lignage ; aucune monographie propre à Obi n'a été trouvée."
+    }
+  ]
+}

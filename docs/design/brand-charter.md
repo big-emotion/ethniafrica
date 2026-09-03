@@ -326,9 +326,8 @@ each other by a test, so the next weight added to one has to be added to the
 other.
 
 **A legal page does not outrank a fiche.** `Mentions légales` renders its `h1`
-at 52 px — `--afh-text-hero`, the scale's top step — while `!Kung, un peuple
-sans bord` renders at 40 px. The top of the scale belongs to the pages the
-atlas exists for.
+at 52 px — `--afh-text-hero`, the scale's top step — while `!Kung` renders at
+40 px. The top of the scale belongs to the pages the atlas exists for.
 
 ---
 
@@ -477,6 +476,58 @@ whole, so there is no still thing for a band to keep still.
 
 Gated by `loaderCoverage.test.ts` (every wait screen, no page identity) and by
 the counterpart clause in `heroCoverageCharter.test.ts`.
+
+### 8.5 A group title must be able to be wrong
+
+The anecdote band on the home draws two facts at random from the bank on every
+request, and titled them **« Deux noms, deux histoires »**. The bank holds 24
+facts, so the band has 276 possible pairs and that sentence describes a
+fraction of them; on the rest it sat over an anecdote about a coastline, a
+prefix or a migration and said something the reader could see was not the
+case. It occupied the one slot that names the section, and it could not be
+false, because nothing computed it.
+
+This is the composition-level twin of the fiche rule already written in
+`atlas-charter.md` §1: a predicate is only a title if there is a condition that
+makes it drop. `« un peuple sans bord »` was true of all 924 peoples, so it
+distinguished none of them; a title over a random draw is the same defect run
+the other way — written for one draw, applied to every draw.
+
+**The rule.** A section title states something about the section's actual
+contents. Where the contents are drawn, filtered or otherwise unknown at write
+time, the section takes an eyebrow and no title, and its items carry the
+headings — `SectionHeading` renders no `<h2>` when given no `title`. A band
+with no group heading does not leave a hole in the outline: its items move up
+a rung, so the anecdote band contributes two `<h2>`s to the home rather than
+one `<h2>` over two `<h3>`s.
+
+**The eyebrow does not inherit the title's rank.** Promoting `Saviez-vous que`
+to the `<h2>` while keeping its 12 px kicker dress would paint a heading three
+roles below its own children — the inversion `typography-charter.md` §3 names
+as a lie rather than a divergence.
+
+**But it does inherit the title's job, so it is not left at the title's
+kicker size.** The rule above takes the band's `<h2>` away; what it left
+behind was a section whose only heading text was 12 px, over 30 px headlines
+and 22 px body copy. The label of the band rendered two and a half times
+smaller than the prose it governed, and read as a stray caption between two
+articles rather than as the thing that made them one band — the reader met
+two unrelated facts where the page meant to show a section.
+
+An eyebrow that files a section with no title therefore takes
+`--afh-text-small`, and moves nothing else: the dress stays uppercase, 600
+and tracked at 0.16em, because a kicker that keeps only its size has become a
+caption (`typography-charter.md` §1). The ceiling is the rank rule above —
+`h3` and up would paint the kicker at the rank this section refuses it, so
+the step exists to make the band legible, never to give it back the title it
+is not allowed to have. `SectionHeading` marks the case itself, from the
+absence of a `title`; no caller opts in, so no caller can get it wrong.
+
+Gated by `didYouKnowCharter.test.ts` (the band files itself with a kicker and
+titles nothing), `SectionHeading.test.tsx` (a title-less unit renders no
+heading, is marked `is-untitled`, is sized at `small`, and is asserted never
+to reach a heading role) and `homeOrientation.test.tsx` (the home's document
+plan).
 
 ---
 

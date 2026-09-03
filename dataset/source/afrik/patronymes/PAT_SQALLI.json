@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_SQALLI",
+  "nameMain": "Sqalli",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "Sqalli",
+      "attestations": [
+        {
+          "countryId": "MAR",
+          "sourceRefs": ["afrik-candidate-queue", "aida-sqalli"]
+        }
+      ]
+    },
+    {
+      "spelling": "Squalli",
+      "attestations": [
+        {
+          "countryId": "MAR",
+          "sourceRefs": ["afrik-candidate-queue", "aida-sqalli"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "settlement",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "L’étude linguistique donne l’arabe standard ṣiqillī, « Sicilien », et documente ṣqallī comme forme patronymique courante au nord du Maroc. Elle établit une formation géographique, pas une ascendance sicilienne pour chaque porteur.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["aida-sqalli"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ARABES_AFRIQUE",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MAR",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "aida-sqalli"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "aida-sqalli",
+      "title": "AIDA 16 Booklet of Abstracts — Arabic Dialectology Association",
+      "url": "https://aidacatania.unict.it/AIDA16_Booklet_of_Abstracts_09_06_2026_DEF.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Résumé scientifique consulté le 2 septembre 2026. Il compare ṣiqillī « Sicilien » et la forme marocaine ṣqallī ; aucune généalogie de famille n’y est avancée."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « Sqalli anthroponymie », « Sqalli onomastique » et « Sqalli surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. Les requêtes « Sqalli tradition orale », « Sqalli griot » et « Sqalli oral history » n’ont livré aucun griot ou informateur nommé avec transcription vérifiable."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches exactes « Sqalli anthroponymie », « Sqalli onomastique » et « Sqalli surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. Les recherches dans les catalogues historiques et archivistiques n’ont livré aucune chronique rattachant cette graphie à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Sqalli anthroponymie », « Sqalli onomastique » et « Sqalli surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué par la file d’attente ; ce rattachement reste au niveau non vérifié."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Sqalli alliance à plaisanterie », « Sqalli joking relationship » et « Sqalli parenté à plaisanterie » n’ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Sqalli caste », « Sqalli métier héréditaire » et « Sqalli social function » n’ont livré aucune fonction sociale ou professionnelle héréditaire propre à cette graphie."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques exactes sur « Sqalli » dans les catalogues, notices institutionnelles et archives accessibles n’ont pas permis d’isoler un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes « Sqalli homonym surname », « Sqalli homonyme patronyme » et les variantes graphiques de la fiche n’ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Les recherches « Sqalli transmission patronyme », « Sqalli filiation » et « Sqalli hereditary surname » n’ont pas établi si, ni comment, cette forme se transmet dans les communautés concernées."
+    }
+  ]
+}

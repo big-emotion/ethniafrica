@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_BANDA",
+  "nameMain": "Banda",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Banda",
+      "attestations": [
+        {
+          "countryId": "ZMB",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "MWI",
+          "sourceRefs": ["mbalaka-chewa-yawo-2019"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "matrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une étude consacrée aux femmes chewa et yao du Malawi classe Banda parmi les noms de clan chewa et le glose « ceux qui foulent l'herbe sous leurs pieds » ; elle associe aussi ce clan au sol et à la capacité de faire venir la pluie.",
+        "claimStatus": "established",
+        "sourceRefs": ["mbalaka-chewa-yawo-2019"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_CHEWA",
+      "status": "attested",
+      "sourceRefs": ["mbalaka-chewa-yawo-2019"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZMB",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "MWI",
+      "status": "attested",
+      "sourceRefs": ["mbalaka-chewa-yawo-2019"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": {
+    "value": "L'étude décrit le clan Banda comme étroitement associé au sol et reconnu comme capable de faire venir la pluie ; elle ne présente pas cette capacité comme une caste professionnelle.",
+    "sourceRefs": ["mbalaka-chewa-yawo-2019"]
+  },
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
+    },
+    {
+      "sourceKey": "mbalaka-chewa-yawo-2019",
+      "title": "Gender, Religion and Migration: A Study of Malawian Chewa and Yawo Muslim Women in Durban, 1994–2017",
+      "url": "https://researchspace.ukzn.ac.za/bitstreams/181a927d-f2c5-41ff-8677-9fb4e2be0244/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Thèse de doctorat de Joseph Y. Mbalaka, University of KwaZulu-Natal, consultée en texte intégral. Les pages 60 à 63 décrivent les clans matrilinéaires au Malawi, citent Banda parmi les noms de clan chewa, donnent la glose et l'association au sol et à la pluie. Le travail ne documente pas séparément l'attestation zambienne."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Banda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Gender, Religion and Migration: A Study of Malawian Chewa and Yawo Muslim Women in Durban, 1994–2017 » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Banda à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Banda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « Gender, Religion and Migration: A Study of Malawian Chewa and Yawo Muslim Women in Durban, 1994–2017 », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Banda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « Gender, Religion and Migration: A Study of Malawian Chewa and Yawo Muslim Women in Durban, 1994–2017 », n'ont pas établi de lignée homonyme d'origine distincte."
+    }
+  ]
+}

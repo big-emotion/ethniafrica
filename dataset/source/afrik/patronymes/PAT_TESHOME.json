@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_TESHOME",
+  "nameMain": "Teshome",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Teshome",
+      "attestations": [
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue", "forebears-teshome"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_AMHARA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ETH",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "forebears-teshome"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "forebears-teshome",
+      "title": "Teshome Surname Origin, Meaning & Last Name History — Forebears",
+      "url": "https://forebears.io/surnames/teshome",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page d'agrégation consultée le 2 septembre 2026. Elle atteste massivement la graphie Teshome en Éthiopie et indique aussi son usage comme prénom, mais déclare explicitement ne pas en connaître la signification. Elle n'est utilisée ni pour une étymologie ni pour une attribution ethnique."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches « Teshome anthroponymie », « Teshome onomastique », « Teshome etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche. Les pages exactes consultées n'apportent qu'une attestation de forme ou de répartition ; aucune étymologie n'est donc ajoutée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches « Teshome anthroponymie », « Teshome onomastique », « Teshome etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué ; ce rattachement reste au niveau non vérifié."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Teshome alliance à plaisanterie », « Teshome joking relationship » et « Teshome parenté à plaisanterie » n'ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Teshome caste », « Teshome métier héréditaire » et « Teshome social function » n'ont livré aucune fonction sociale ou professionnelle héréditaire attribuable à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques sur « Teshome » dans les résultats de catalogues et répertoires consultés n'ont pas permis d'identifier un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes « Teshome homonym surname », « Teshome homonyme patronyme » et les variantes graphiques de la fiche n'ont pas établi deux origines distinctes et documentées pour la même forme."
+    }
+  ]
+}

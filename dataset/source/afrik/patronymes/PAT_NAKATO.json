@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_NAKATO",
+  "nameMain": "Nakato",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Nakato",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["forebears-nakato"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Dans le tableau comparatif des noms de jumeaux, Nakato est le nom ganda systématiquement attribué à la seconde jumelle. Il s’agit d’un nom individuel déterminé par l’ordre de naissance, non d’un nom de clan héréditaire.",
+        "claimStatus": "established",
+        "sourceRefs": ["turamyomwe-katushemererwe-2024-nakato"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BAGANDA",
+      "status": "attested",
+      "sourceRefs": ["turamyomwe-katushemererwe-2024-nakato"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["forebears-nakato"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "turamyomwe-katushemererwe-2024-nakato",
+      "title": "Conflict and Forced Migration in the Emergence and Shaping of Runyaruguru",
+      "url": "https://www.researchgate.net/publication/394343547_Linguistics_and_Language_The_Promise_of_Linguistics_and_Language_The_Promise_of_Studies_in_Africa",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Chapitre de Justus Turamyomwe et Fridah Katushemererwe dans The Promise of Linguistics and Language Studies in Africa, consulté en texte intégral. Son tableau des noms de jumeaux donne Nakato comme nom systématique de la seconde jumelle en ganda."
+    },
+    {
+      "sourceKey": "forebears-nakato",
+      "title": "Nakato Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/nakato",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement. Elle atteste l’orthographe Nakato et sa présence dans l’Ouganda, mais la distribution ne démontre ni l’appartenance Ganda, ni une origine unique, ni un mode de transmission."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Nakato », « Ganda », « l’Ouganda », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « Conflict and Forced Migration in the Emergence and Shaping of Runyaruguru » et la page Forebears propre au nom, consultées directement, n’a identifié aucune alliance ni parenté à plaisanterie documentée reliant Nakato à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Nakato », « Ganda », « l’Ouganda », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « Conflict and Forced Migration in the Emergence and Shaping of Runyaruguru » et la page Forebears propre au nom, consultées directement, n’a établi aucune fonction sociale ou professionnelle héréditaire propre à Nakato."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Nakato », « Ganda », « l’Ouganda », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « Conflict and Forced Migration in the Emergence and Shaping of Runyaruguru » et la page Forebears propre au nom, consultées directement, n’a livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Nakato », « Ganda », « l’Ouganda », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « Conflict and Forced Migration in the Emergence and Shaping of Runyaruguru » et la page Forebears propre au nom, consultées directement, n’a pas établi de lignée homonyme d’origine distincte documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    }
+  ]
+}

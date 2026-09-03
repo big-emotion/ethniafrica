@@ -4,7 +4,7 @@ import { evaluateSourceUrl } from "@/lib/sources/authorized-source-catalog";
 import { sourceSchema } from "../sources";
 
 const source = {
-  id: "11111111-1111-1111-1111-111111111111",
+  id: "11111111-1111-4111-8111-111111111111",
   sourceKey: null,
   sourceKind: null,
   tier: "official",
@@ -17,6 +17,9 @@ const source = {
   publisher: null,
   resolvable: null,
   lastVerifiedAt: null,
+  notes: null,
+  page: null,
+  addedAt: null,
 };
 
 describe("sourceSchema", () => {

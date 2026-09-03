@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier lyélé fondé sur une analyse publiée du système d'état civil ; conserver séparées les formes sexuées Bationo et Kantiono."
+  },
+  "id": "PAT_BATIONO",
+  "nameMain": "Bationo",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Bationo",
+      "attestations": [
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["moyenga-2019-identites-lyele"]
+        }
+      ]
+    },
+    {
+      "spelling": "Kantiono",
+      "attestations": [
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["moyenga-2019-identites-lyele"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "L'analyse du système d'identification lyélé présente Bationo comme la forme masculine et Kantiono comme la forme féminine du nom du clan Tiono ; elle donne à Tiono le sens de « lumière » en lyélé. Ces formes sexuées ne doivent donc pas être traitées comme deux clans indépendants.",
+        "claimStatus": "established",
+        "sourceRefs": ["moyenga-2019-identites-lyele"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_GOUROUNSI",
+      "status": "attested",
+      "sourceRefs": ["moyenga-2019-identites-lyele"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": ["moyenga-2019-identites-lyele"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "moyenga-2019-identites-lyele",
+      "title": "Identités en conflit : l'état civil burkinabè dans le quotidien de la communauté lyele",
+      "url": "https://journals.openedition.org/cjm/pdf/731",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Paul-Marie Moyenga, Cahiers Jean Moulin, no 5, 2019, DOI 10.4000/cjm.731. Le texte intégral a été consulté au passage consacré aux patronymes sexués : il rattache les Lyélé à l'ensemble gourounsi, situe la communauté à Réo et décrit Bationo/Kantiono comme les formes du clan Tiono. Le passage comporte une incohérence interne entre la glose des préfixes Ba-/Kan- et les exemples sexués ; le dossier ne reprend donc que l'appariement explicite des formes et la glose de Tiono."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L'article de Moyenga et les recherches ciblées sur Bationo, Kantiono et le clan Tiono n'ont livré aucun récit attribué à un griot nommé avec transcription."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "La recherche dans Cahiers Jean Moulin, les catalogues universitaires et les études lyélé repérées n'a pas livré de chronique historique du clan Tiono."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Moyenga établit la variation du patronyme selon le sexe et le maintien du nom clanique, mais le passage consulté ne décrit pas assez précisément la ligne de transmission du clan Tiono pour choisir patrilinéaire, matrilinéaire ou bilatérale."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches sur le clan Tiono dans l'article de Moyenga, les catalogues savants et les ressources communautaires lyélé n'ont pas établi de paire de parenté à plaisanterie entre deux fiches PAT_* existantes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les passages consultés décrivent une appartenance clanique et une variation sexuée, sans fonction sociale ni profession héréditaire propre au clan Tiono."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques exactes sur Bationo et Kantiono ont livré des personnes contemporaines, mais aucune source institutionnelle consultée n'établit un porteur décédé pertinent pour l'histoire du nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Bationo et Kantiono ont été vérifiés comme formes sexuées d'un même clan, non comme homonymes ; les recherches n'ont pas établi de lignée distincte portant le même nom."
+    }
+  ]
+}

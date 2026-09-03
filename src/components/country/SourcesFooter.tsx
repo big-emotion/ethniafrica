@@ -30,6 +30,14 @@ export function SourcesFooter({
   if (!sources || sources.length === 0) return null;
 
   const isParchment = variant === "parchment";
+  /**
+   * Numbered only when a note callout has something to point at. Country and
+   * family declare sources and cite none of them from their prose, so their
+   * bibliography stays an unordered list — numbering one that nothing links to
+   * would promise an anchor that does not exist.
+   */
+  const numbered = sources.some((source) => Boolean(source.number));
+  const ListTag = numbered ? "ol" : "ul";
 
   return (
     <div
@@ -63,12 +71,20 @@ export function SourcesFooter({
           {hasSourceFlag && <SourceVerifyBadge />}
         </p>
       )}
-      <ul className="flex flex-col gap-[6px]">
+      <ListTag className="flex flex-col gap-[6px]">
         {sources.map((source, index) => (
           <li
-            key={`${source.label}-${index}`}
+            key={source.sourceId ?? `${source.label}-${index}`}
+            id={source.number ? `source-${source.number}` : undefined}
             className="flex items-baseline gap-2 flex-wrap"
           >
+            {/* The number a note callout printed, not the list's own counter:
+                a callout says [4] and must land on the entry that says 4. */}
+            {source.number && (
+              <span className="shrink-0 tabular-nums text-afh-eyebrow">
+                {source.number}.
+              </span>
+            )}
             <span
               data-source-standing={source.standing}
               className="shrink-0 rounded-full px-2 py-0.5 text-afh-eyebrow font-medium"
@@ -100,9 +116,18 @@ export function SourcesFooter({
             ) : (
               <span>{source.label}</span>
             )}
+            {/* Why the source carries the standing shown beside it. The
+                corpus writes it on every language fiche; until the query
+                fetched the column, no fiche could show the reasoning behind
+                a standing it was already displaying. */}
+            {source.notes && (
+              <span className="basis-full text-afh-eyebrow text-[var(--country-text-soft)]">
+                {source.notes}
+              </span>
+            )}
           </li>
         ))}
-      </ul>
+      </ListTag>
     </div>
   );
 }

@@ -1,0 +1,102 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_CHAABANE",
+  "nameMain": "Chaabane",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "Chaabane",
+      "attestations": [
+        {
+          "countryId": "TUN",
+          "sourceRefs": ["afrik-candidate-queue", "forebears-chaabane"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ARABES_AFRIQUE",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "TUN",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "forebears-chaabane"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "forebears-chaabane",
+      "title": "Chaabane Surname Origin, Meaning & Last Name History — Forebears",
+      "url": "https://forebears.io/surnames/chaabane",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Répertoire communautaire consulté le 2 septembre 2026. Il atteste Chaabane en Tunisie mais ne fournit pas d’étymologie sourcée ni d’histoire familiale."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Chaabane anthroponymie », « Chaabane onomastique » et « Chaabane surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Aucun travail savant consacré à l’origine ou à l’histoire d’une lignée portant exactement cette graphie n’a été trouvé. La source propre au nom n’établit qu’une graphie ou une distribution et ne permet d’énoncer ni étymologie ni origine de lignée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Chaabane anthroponymie », « Chaabane onomastique » et « Chaabane surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Aucun travail savant consacré à l’origine ou à l’histoire d’une lignée portant exactement cette graphie n’a été trouvé. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué par la file d’attente ; ce rattachement reste au niveau non vérifié."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Chaabane alliance à plaisanterie », « Chaabane joking relationship » et « Chaabane parenté à plaisanterie » n’ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Chaabane caste », « Chaabane métier héréditaire » et « Chaabane social function » n’ont livré aucune fonction sociale ou professionnelle héréditaire propre à cette graphie."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques exactes sur « Chaabane » dans les catalogues, notices institutionnelles et archives accessibles n’ont pas permis d’isoler un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes « Chaabane homonym surname », « Chaabane homonyme patronyme » et les variantes graphiques de la fiche n’ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Les sources consultées attestent la graphie « Chaabane » sans établir assez précisément le système dénominatif ; la valeur nisba héritée de la vague 1 n’est donc pas étendue par inférence."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Les recherches « Chaabane transmission patronyme », « Chaabane filiation » et « Chaabane hereditary surname » n’ont pas établi si, ni comment, cette forme se transmet dans les communautés concernées."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Les recherches « Chaabane lignée », « Chaabane clan », « Chaabane tribe » et « Chaabane place name » n’ont pas permis de déterminer si cette graphie désigne une lignée, un clan, une caste, une classe d’âge ou un établissement dans le contexte précis de la fiche."
+    }
+  ]
+}

@@ -12,7 +12,7 @@
  *     summary: List Module #0 citation sources
  *     description: Returns a paginated list of sources backing AFRIK assertions.
  *     tags:
- *       - "API v2 - Module #0"
+ *       - "API v2 - Source Transparency"
  *     parameters:
  *       - in: query
  *         name: page
@@ -27,6 +27,36 @@
  *           minimum: 1
  *           maximum: 100
  *           default: 20
+ *       - in: query
+ *         name: q
+ *         description: Substring match over title and author.
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: tier
+ *         description: >-
+ *           Authority the source carries. `needs_review` is not a fourth tier:
+ *           it selects the sources that carry none, which the corpus keeps
+ *           distinct from `unverified`.
+ *         schema:
+ *           type: string
+ *           enum: [official, referenced, unverified, needs_review]
+ *       - in: query
+ *         name: sourceKind
+ *         description: Provenance of the source, recorded on few rows so far.
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: decade
+ *         description: First year of a decade; matches years in [decade, decade + 10).
+ *         schema:
+ *           type: integer
+ *       - in: query
+ *         name: sort
+ *         schema:
+ *           type: string
+ *           enum: [title, year, added]
+ *           default: title
  *     responses:
  *       200:
  *         description: Paginated list of sources
@@ -63,6 +93,7 @@ import { logger } from "@/lib/api/logger";
 const SOURCES_CACHE_CONTROL =
   "public, s-maxage=86400, stale-while-revalidate=86400";
 
+// @req REQ-092
 export async function GET(request: NextRequest) {
   const startTime = Date.now();
   try {
@@ -70,6 +101,11 @@ export async function GET(request: NextRequest) {
     const parsed = listSourcesQuerySchema.safeParse({
       page: searchParams.get("page") ?? undefined,
       perPage: searchParams.get("perPage") ?? undefined,
+      q: searchParams.get("q") ?? undefined,
+      tier: searchParams.get("tier") ?? undefined,
+      sourceKind: searchParams.get("sourceKind") ?? undefined,
+      decade: searchParams.get("decade") ?? undefined,
+      sort: searchParams.get("sort") ?? undefined,
     });
 
     if (!parsed.success) {
@@ -115,6 +151,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
+// @req REQ-092
 export function OPTIONS() {
   return corsOptionsResponse();
 }

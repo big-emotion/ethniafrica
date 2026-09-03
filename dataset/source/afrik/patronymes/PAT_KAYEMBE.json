@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KAYEMBE",
+  "nameMain": "Kayembe",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Kayembe",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["icg-kayembe"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_LUBA",
+      "status": "attested",
+      "sourceRefs": ["icg-kayembe"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COD",
+      "status": "attested",
+      "sourceRefs": ["icg-kayembe"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "icg-kayembe",
+      "title": "Scramble for the Congo: Anatomy of an Ugly War",
+      "url": "https://www.justice.gov/file/275476/dl?inline=",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Rapport de l'International Crisis Group du 20 décembre 2000, conservé dans le dépôt documentaire du Department of Justice des États-Unis et consulté intégralement. Son annexe sur les forces armées congolaises décrit le major-général Dieudonné Kayembe comme Luba du Kasaï. Elle atteste l'association sans donner l'étymologie ou la règle de transmission du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Kayembe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le rapport « Scramble for the Congo: Anatomy of an Ugly War » et son annexe prosopographique sur les forces armées congolaises, n'ont livré aucune étymologie, chronique d'origine ou tradition orale attribuable à un témoin pour ce nom. Les rapprochements seulement plausibles ont été écartés."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kayembe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le rapport « Scramble for the Congo: Anatomy of an Ugly War » et son annexe prosopographique sur les forces armées congolaises, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kayembe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le rapport « Scramble for the Congo: Anatomy of an Ugly War » et son annexe prosopographique sur les forces armées congolaises, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kayembe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le rapport « Scramble for the Congo: Anatomy of an Ugly War » et son annexe prosopographique sur les forces armées congolaises, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kayembe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le rapport « Scramble for the Congo: Anatomy of an Ugly War » et son annexe prosopographique sur les forces armées congolaises, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Kayembe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le rapport « Scramble for the Congo: Anatomy of an Ugly War » et son annexe prosopographique sur les forces armées congolaises, n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

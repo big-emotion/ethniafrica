@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_BIYA",
+  "nameMain": "Biya",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Biya",
+      "attestations": [
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["historical-dictionary-cameroon-2010"]
+        }
+      ]
+    },
+    {
+      "spelling": "Biya'a",
+      "attestations": [
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["actu-cameroun-biya-2026"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Un récit publié en 2026, qui reproduit et résume un passage d'un ouvrage collectif de 1983 fondé sur des informations recueillies à Mvomeka'a auprès du patriarche Raymond Abondo, présente Biya'a comme le sobriquet d'Abondo Mengue, né d'une formule d'exaspération, puis transmis comme nom d'homonyme à Paul Biya. Cette chaîne indirecte reste revendiquée, non établie par consultation de l'ouvrage original.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["actu-cameroun-biya-2026"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BULU",
+      "status": "attested",
+      "sourceRefs": ["historical-dictionary-cameroon-2010"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "CMR",
+      "status": "attested",
+      "sourceRefs": ["historical-dictionary-cameroon-2010"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "historical-dictionary-cameroon-2010",
+      "title": "Historical Dictionary of the Republic of Cameroon",
+      "url": "https://shcas.shnu.edu.cn/_upload/article/files/0e/08/4b0564f84fd9b9a65bde70ec5e4a/67ccaabe-3afc-4fb2-9df9-b7b27b0ebc0a.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ouvrage de référence consulté en texte intégral. La notice consacrée à Paul Biya le rattache au clan Yezum du groupe bulu au Cameroun. Elle établit l'association documentée d'un porteur, non l'étymologie générale du nom ni son mode de transmission."
+    },
+    {
+      "sourceKey": "actu-cameroun-biya-2026",
+      "title": "Origine du nom Biya : l'histoire méconnue révélée par Jean Paul Ntsengue",
+      "url": "https://actucameroun.com/2026/05/17/origine-du-nom-biya-lhistoire-meconnue-revelee-par-jean-paul-ntsengue/",
+      "tier": "unverified",
+      "source_kind": "unknown",
+      "notes": "Article de presse de Liliane Ndangue, 17 mai 2026, consulté intégralement. Il reproduit le récit communiqué par Jean Paul Ntsengue et l'attribue à un passage de « Paul Biya ou l'incarnation de la rigueur » (Publications de l'Université de Yaoundé/Sopecam, 1983), lui-même fondé sur un témoignage du patriarche Raymond Abondo. L'ouvrage de 1983 n'ayant pas été consulté, le récit reste au niveau unverified."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Biya », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Historical Dictionary of the Republic of Cameroon » et « Origine du nom Biya : l'histoire méconnue révélée par Jean Paul Ntsengue » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Biya à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Biya », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Historical Dictionary of the Republic of Cameroon » et « Origine du nom Biya : l'histoire méconnue révélée par Jean Paul Ntsengue » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Biya."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Biya », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « Historical Dictionary of the Republic of Cameroon » et « Origine du nom Biya : l'histoire méconnue révélée par Jean Paul Ntsengue », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Biya », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « Historical Dictionary of the Republic of Cameroon » et « Origine du nom Biya : l'histoire méconnue révélée par Jean Paul Ntsengue », n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La recherche « Biya Bulu surname transmission inheritance clan » et la lecture de « Historical Dictionary of the Republic of Cameroon » et de l'article « Origine du nom Biya » ont trouvé un cas de transmission par homonymie à Paul Biya, mais aucune règle générale permettant de classer le nom comme patrilinéaire, matrilinéaire ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

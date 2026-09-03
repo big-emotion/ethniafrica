@@ -57,6 +57,7 @@ const SECTION_TITLES: Record<CompareEntityType, Record<string, string>> = {
   },
 };
 
+// @req REQ-098
 export function getRowLabel(
   entityType: CompareEntityType,
   key: string
@@ -67,6 +68,7 @@ export function getRowLabel(
 // The demography rows carry a fixed "réf. 2025" caption (CLAUDE.md: 2025
 // reference year) rather than a per-fiche referenceYear field, since the
 // country-level demographics section does not carry one.
+// @req REQ-098
 export const DEMOGRAPHY_ROW_KEYS = new Set(["demography", "demographics"]);
 
 function isEmptyRowValue(value: unknown): boolean {
@@ -77,6 +79,7 @@ function isEmptyRowValue(value: unknown): boolean {
   return false;
 }
 
+// @req REQ-098
 export function isRowEmpty(row: ComparisonRow): boolean {
   return Object.values(row.values).every(isEmptyRowValue);
 }
@@ -122,5 +125,3 @@ export function CompareSectionRow({
     </section>
   );
 }
-
-export default CompareSectionRow;

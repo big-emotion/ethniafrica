@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité à la transformation nominale et au porteur documentés par la biographie parlementaire officielle."
+  },
+  "id": "PAT_RABEMANANJARA",
+  "nameMain": "Rabemananjara",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Rabemananjara",
+      "attestations": [
+        { "countryId": "MDG", "sourceRefs": ["assemblee-rabemananjara"] }
+      ]
+    }
+  ],
+  "transmissionMode": "elective",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "La biographie de l'Assemblée nationale indique que Bemananjara Totoasidy était le nom originel et que ses nom et prénom furent respectivement mérinisé et francisé pour devenir Rabemananjara Jacques. Elle documente ainsi une transformation individuelle du nom, sans en fournir l'étymon.",
+        "claimStatus": "established",
+        "sourceRefs": ["assemblee-rabemananjara"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MERINA",
+      "status": "attested",
+      "sourceRefs": ["assemblee-rabemananjara"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["assemblee-rabemananjara"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Jacques Rabemananjara",
+      "sourceRefs": ["assemblee-rabemananjara"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "assemblee-rabemananjara",
+      "title": "Jacques Rabemananjara — Base de données des députés français depuis 1789",
+      "url": "https://www2.assemblee-nationale.fr/sycomore/fiche?num_dept=6566",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Biographie officielle de l'Assemblée nationale française : dates 1913-2005, origine à Madagascar, filiation paternelle merina et passage de Bemananjara Totoasidy à Rabemananjara Jacques."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La biographie parlementaire et les recherches sur Rabemananjara avec tradition familiale, razana et généalogie n'ont livré aucun récit oral attribué et transcrit."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "La source officielle qualifie la transformation de mérinisation, mais n'en donne pas l'analyse morphologique ; les recherches « Rabemananjara etymology » et « Rabemananjara onomastique » n'ont livré aucune reconstruction linguistique dédiée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches Rabemananjara avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches exactes associant Rabemananjara à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; les fonctions politiques et littéraires de Jacques Rabemananjara sont individuelles."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La biographie officielle et les catalogues consultés n'établissent pas de lignée Rabemananjara d'origine distincte."
+    }
+  ]
+}

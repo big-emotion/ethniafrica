@@ -1,0 +1,146 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français distinguant les attestations de Adam chez les Four et aux Seychelles d'une origine commune non établie. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
+  },
+  "id": "PAT_ADAM",
+  "nameMain": "Adam",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Adam",
+      "attestations": [
+        {
+          "countryId": "SDN",
+          "sourceRefs": ["verney-2019-sudan-names", "harvard-2018-guy-adam"]
+        },
+        {
+          "countryId": "SYC",
+          "sourceRefs": ["seychelles-state-house-2026-ziggy-adam"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Dans l'usage soudanais documenté, Adam peut occuper l'un des éléments d'une chaîne de noms personnels formée par le nom du porteur, celui du père et celui du grand-père ; ce n'est pas un nom de famille héréditaire.",
+        "claimStatus": "established",
+        "sourceRefs": ["verney-2019-sudan-names"]
+      },
+      {
+        "claim": "Pour le patronyme européen, le Dictionary of American Family Names rattache Adam au prénom biblique Adam, lui-même expliqué par l'hébreu générique pour « homme » et rapproché de adama (« terre »). Cette analyse ne doit pas être transférée au système non héréditaire associé aux Four/Fur dans la même fiche.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["dafn-adam-2022"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FOUR",
+      "status": "attested",
+      "sourceRefs": ["harvard-2018-guy-adam"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "SDN",
+      "status": "attested",
+      "sourceRefs": ["verney-2019-sudan-names", "harvard-2018-guy-adam"]
+    },
+    {
+      "countryId": "SYC",
+      "status": "attested",
+      "sourceRefs": ["seychelles-state-house-2026-ziggy-adam"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "verney-2019-sudan-names",
+      "title": "Tongue-tied: How interpreting errors hurt Sudanese asylum cases",
+      "url": "https://sssuk.org/sites/default/files/sudanStudies/SS59.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Peter Verney, Sudan Studies, no 59, janvier 2019, p. 68. L'article décrit la chaîne soudanaise fondée sur les noms du père et du grand-père et cite expressément le cas d'un Darfouri nommé Adam Suleiman."
+    },
+    {
+      "sourceKey": "harvard-2018-guy-adam",
+      "title": "Survivor of Darfur violence comes to Harvard with a mission in mind",
+      "url": "https://news.harvard.edu/gazette/story/2018/06/genocide-survivor-comes-to-harvard-with-a-mission-in-mind/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Entretien institutionnel publié par la Harvard Gazette le 29 juin 2018. Abdelhamid Yousif Ismail Adam s'y identifie comme Four ; la source atteste Adam dans son nom, mais ne fournit ni étymologie ni règle de transmission propre aux Four."
+    },
+    {
+      "sourceKey": "seychelles-state-house-2026-ziggy-adam",
+      "title": "Appointment of the Culture Reform Council",
+      "url": "https://www.statehouse.gov.sc/index.php/cabinet-decisions/7105/appointment-of-the-culture-reform-council",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Communiqué de la présidence des Seychelles du 3 juillet 2026 qui atteste la graphie Adam dans le nom de Ziggy Adam. Il n'établit pas l'appartenance créole du porteur."
+    },
+    {
+      "sourceKey": "seychelles-civil-status-act-2022",
+      "title": "Civil Status Act, Chapter 34 — section 39B, Surname of child",
+      "url": "https://seylii.org/akn/sc/act/1883/4/eng@2022-11-01/source",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Version consolidée au 1er novembre 2022. La section 39B permet, lorsque les parents portent des noms différents et sont tous deux inscrits, de choisir le nom de la mère, celui du père ou les deux. Utilisé pour qualifier la transmission d'élective, non pour une étymologie."
+    },
+    {
+      "sourceKey": "dafn-adam-2022",
+      "title": "Adam Surname Meaning — Dictionary of American Family Names, 2nd edition",
+      "url": "https://www.ancestry.com/last-name-meaning/adam?geo-lang=en",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Patrick Hanks et al., Dictionary of American Family Names, 2e éd., Oxford University Press, 2022, notice reproduite par Ancestry. La notice couvre le patronyme européen ; elle ne caractérise pas le patronyme non héréditaire associé aux Four/Fur."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Adam Fur oral tradition », « Adam Darfur griot » et les trois sources dédiées consultées n'ont livré aucune tradition attribuée à un transmetteur nommé avec transcription."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "La recherche dans Sudan Studies, les notices bibliographiques et les pages institutionnelles seychelloises n'a livré aucune chronique datée sur l'apparition de Adam chez les Four ou aux Seychelles."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions.SYC",
+      "reason": "Les recherches « Adam Seychelles surname origin » et « Adam Seychelles Creole onomastics » n'ont livré aucune étude linguistique reliant cette attestation seychelloise à l'usage soudanais."
+    },
+    {
+      "fieldPath": "peoples.PPL_CREOLE_SEYCHELLES",
+      "reason": "Les résultats du State House, des services d'état civil et les recherches d'onomastique créole attestaient le nom aux Seychelles sans auto-identification ni source attribuant le porteur à les Créoles des Seychelles ; cette association a donc été retirée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Adam Fur alliance clan » et « Adam Seychelles joking kinship » n'ont livré aucune alliance entre patronymes documentée par une source dédiée."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les travaux consultés sur les chaînes de noms soudanaises et les résultats seychellois n'attestent aucune fonction sociale héréditaire attachée à Adam."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les sources dédiées consultées attestent des porteurs vivants ; conformément au protocole, ils ne sont pas ajoutés comme porteurs historiques."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches ont confirmé deux contextes géographiques sans établir deux origines distinctes et sourcées ; aucune homonymie autonome n'est donc enregistrée."
+    }
+  ],
+  "patronymicChainDepth": {
+    "generations": 3,
+    "sourceRefs": ["verney-2019-sudan-names"]
+  }
+}

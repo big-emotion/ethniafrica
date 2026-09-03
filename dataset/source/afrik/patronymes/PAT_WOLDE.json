@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_WOLDE",
+  "nameMain": "Wolde",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Wolde",
+      "attestations": [
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue", "dafn-wolde"]
+        }
+      ]
+    },
+    {
+      "spelling": "Welde",
+      "attestations": [
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le Dictionary of American Family Names analyse Wolde comme un nom personnel en ge'ez ou en amharique, interprété « mon fils » et, dans les composés chrétiens, « fils de ». Il précise que son enregistrement comme surname dans la diaspora ne reflète pas un nom familial héréditaire éthiopien.",
+        "claimStatus": "established",
+        "sourceRefs": ["dafn-wolde"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_HABESHA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ETH",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "dafn-wolde"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [
+    {
+      "label": "Wolde nord-allemand et anglais",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "Le Dictionary of American Family Names distingue de l'élément de nom personnel éthiopien deux formations européennes indépendantes : un nom d'habitation nord-allemand lié à des lieux appelés Wolde ou Wolda, et une variante anglaise de Wold.",
+      "sourceRefs": ["dafn-wolde"]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "dafn-wolde",
+      "title": "Dictionary of American Family Names, 2nd ed. — Wolde (Ancestry)",
+      "url": "https://www.ancestry.com/last-name-meaning/Wolde?geo-lang=en",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Entrée du Dictionary of American Family Names, 2e éd. (Oxford University Press, 2022), reproduite par Ancestry et consultée le 2 septembre 2026. Elle distingue l'élément de nom personnel éthiopien Wolde d'homonymes nord-allemand et anglais et précise le caractère non héréditaire du système éthiopien."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Wolde anthroponymie », « Wolde onomastique », « Wolde etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche, ni aucune tradition orale attribuée à un griot ou informateur nommé avec transcription vérifiable."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Wolde anthroponymie », « Wolde onomastique », « Wolde etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche, ni chronique historique qui rattache ce nom à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches « Wolde anthroponymie », « Wolde onomastique », « Wolde etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué ; ce rattachement reste au niveau non vérifié."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Wolde alliance à plaisanterie », « Wolde joking relationship » et « Wolde parenté à plaisanterie » n'ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Wolde caste », « Wolde métier héréditaire » et « Wolde social function » n'ont livré aucune fonction sociale ou professionnelle héréditaire attribuable à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques sur « Wolde » dans les résultats de catalogues et répertoires consultés n'ont pas permis d'identifier un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
+    }
+  ]
+}

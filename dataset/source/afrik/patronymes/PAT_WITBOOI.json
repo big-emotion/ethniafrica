@@ -1,0 +1,157 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier enrichi par une recherche dédiée au patronyme Witbooi ; toute extension doit conserver une source propre à chaque affirmation."
+  },
+  "id": "PAT_WITBOOI",
+  "nameMain": "Witbooi",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Witbooi",
+      "attestations": [
+        {
+          "countryId": "NAM",
+          "sourceRefs": ["bosman-witbooi-2011", "blackler-witbooi-2017"]
+        },
+        {
+          "countryId": "ZAF",
+          "sourceRefs": ["bosman-witbooi-2011"]
+        }
+      ]
+    },
+    {
+      "spelling": "Witboi",
+      "attestations": [
+        {
+          "countryId": "NAM",
+          "sourceRefs": ["deutsche-biographie-witbooi", "bosman-witbooi-2011"]
+        }
+      ]
+    },
+    {
+      "spelling": "Wittboy",
+      "attestations": [
+        {
+          "countryId": "NAM",
+          "sourceRefs": ["deutsche-biographie-witbooi", "bosman-witbooi-2011"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Dans une lettre datée du 3 janvier 1890, Hendrik Witbooi se présente comme le continuateur de la migration conduite par son grand-père David Witbooi et désigne son peuple par l'autre nom /Khowese. L'édition de 1929 identifie explicitement /Khowese comme une désignation des Witbooi.",
+        "claimStatus": "established",
+        "sourceRefs": ["dbnl-witbooi-diary-1890"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "L'appellation Witbooi signifie littéralement « garçons blancs » dans la source académique consultée. Elle y est expliquée par les étoffes ou écharpes blanches portées sur les chapeaux, notamment lors des expéditions militaires, pour distinguer ce groupe des autres groupes de langue nama.",
+        "claimStatus": "established",
+        "sourceRefs": ["bosman-witbooi-2011"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_NAMA",
+      "status": "attested",
+      "sourceRefs": ["bosman-witbooi-2011", "blackler-witbooi-2017"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NAM",
+      "status": "attested",
+      "sourceRefs": ["bosman-witbooi-2011", "blackler-witbooi-2017"]
+    },
+    {
+      "countryId": "ZAF",
+      "status": "attested",
+      "sourceRefs": ["bosman-witbooi-2011", "deutsche-biographie-witbooi"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "David (Kido) Witbooi",
+      "sourceRefs": ["blackler-witbooi-2017", "dbnl-witbooi-diary-1890"]
+    },
+    {
+      "status": "deceased",
+      "displayName": "Moses Witbooi",
+      "sourceRefs": ["blackler-witbooi-2017", "dbnl-witbooi-diary-1890"]
+    },
+    {
+      "status": "deceased",
+      "displayName": "Hendrik Witbooi",
+      "sourceRefs": [
+        "bosman-witbooi-2011",
+        "blackler-witbooi-2017",
+        "deutsche-biographie-witbooi"
+      ]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "bosman-witbooi-2011",
+      "title": "A Nama ‘Exodus’? A Postcolonial Reading of the Diaries of Hendrik Witbooi",
+      "url": "https://scriptura.journals.ac.za/pub/article/download/6/6",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Hendrik Bosman, Scriptura 108, 2011, pages 329 à 341. L'article situe la naissance de Hendrik Witbooi à Pella dans l'actuel Cap-du-Nord, l'installation du groupe en Namibie en 1863, explique l'appellation Witbooi par les étoffes blanches portées aux chapeaux et consigne son décès en 1905. Consulté le 2 septembre 2026."
+    },
+    {
+      "sourceKey": "blackler-witbooi-2017",
+      "title": "From Boondoggle to Settlement Colony: Hendrik Witbooi and the Evolution of Germany's Imperial Project in Southwest Africa, 1884–1894",
+      "url": "https://www.cambridge.org/core/journals/central-european-history/article/from-boondoggle-to-settlement-colony-hendrik-witbooi-and-the-evolution-of-germanys-imperial-project-in-southwest-africa-18841894/FCFB2D98384A5380494F38821AF76DB8",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Adam A. Blackler, Central European History 50(4), 2017, pages 449 à 470, DOI 10.1017/S0008938917000887. L'article documente la succession de la chefferie de David Witbooi à son fils Moses et la filiation de Hendrik, ainsi que l'établissement du groupe à Gibeon. Consulté le 2 septembre 2026."
+    },
+    {
+      "sourceKey": "dbnl-witbooi-diary-1890",
+      "title": "Die dagboek van Hendrik Witbooi — no 20, Hornkrans, 3 janvier 1890",
+      "url": "https://www.dbnl.org/tekst/witb002dagb01_01/witb002dagb01_01_0023.php",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Lettre de Hendrik Witbooi datée du 3 janvier 1890, reproduite dans l'édition de 1929 de Die dagboek van Hendrik Witbooi par la Digitale Bibliotheek voor de Nederlandse Letteren. Le texte nomme David Witbooi et le peuple /Khowese ; la note éditoriale identifie /Khowese aux Witbooi et propose une explication du nom. Elle reproduit aussi une lettre de Moses Witbooi du 4 mars 1881. Consultée le 2 septembre 2026."
+    },
+    {
+      "sourceKey": "deutsche-biographie-witbooi",
+      "title": "Witbooi, Hendrik — Gemeinsame Normdatei 118634097",
+      "url": "https://www.deutsche-biographie.de/gnd118634097.html",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Notice d'autorité de la Deutsche Biographie reliée à la Gemeinsame Normdatei. Elle donne les dates 1830-1905, le Cap-du-Nord comme lieu de naissance, Koes comme lieu de décès et répertorie Witboi et Wittboy parmi les variantes de nom. Consultée le 2 septembre 2026."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L'article de Bosman, le journal numérisé et les recherches « Witbooi oral tradition », « Witbooi oral history » et « Witbooi genealogy » n'ont livré aucun récit d'origine du patronyme attribué à un griot ou transmetteur nommé et accompagné d'une transcription."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Le journal contient des traités de paix et l'article de Bosman décrit des alliances politiques historiques, mais les recherches « Witbooi joking kinship », « Witbooi surname alliance » et « Witbooi clan pact » n'ont établi aucune alliance à plaisanterie ou pacte patronymique avec un autre nom muni d'une fiche PAT_."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les articles de Bosman et Blackler documentent une chefferie familiale, une charge ecclésiale et des apprentissages artisanaux, mais les recherches « Witbooi caste », « Witbooi hereditary occupation » et « Witbooi social function surname » n'ont attribué au patronyme aucune caste ou fonction professionnelle héréditaire."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La notice d'autorité GND, les deux articles académiques et les recherches « Witbooi surname homonym » et « Witbooi name origin » n'ont révélé aucune forme Witbooi identique rattachée à une origine distincte."
+    }
+  ]
+}

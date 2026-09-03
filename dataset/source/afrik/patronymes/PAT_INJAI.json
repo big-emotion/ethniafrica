@@ -1,0 +1,105 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
+  },
+  "id": "PAT_INJAI",
+  "nameMain": "Injai",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Injai",
+      "attestations": [
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["dn-2010-antonio-indjai", "icg-2012-beyond-turf-wars"]
+        }
+      ]
+    },
+    {
+      "spelling": "Indjai",
+      "attestations": [
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["dn-2010-antonio-indjai", "icg-2012-beyond-turf-wars"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Un portrait de 2010 décrit António Indjai comme d’origine balante mais précise que son patronyme est mandingue ; l’association au peuple balante atteste donc un porteur et ne permet pas de conclure à une origine balante du nom.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["dn-2010-antonio-indjai"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BALANTA",
+      "status": "attested",
+      "sourceRefs": ["dn-2010-antonio-indjai"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GNB",
+      "status": "attested",
+      "sourceRefs": ["dn-2010-antonio-indjai", "icg-2012-beyond-turf-wars"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "dn-2010-antonio-indjai",
+      "title": "O novo chefe dos militares guineenses",
+      "url": "https://www.dn.pt/arquivo/diario-de-noticias/o-novo-chefe-dos-militares-guineenses.html",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Brève du Diário de Notícias, 4 avril 2010. Elle donne António Indjai comme d’origine balante et affirme que le patronyme est mandingue. Faute de référence onomastique dans l’article, cette attribution d’origine reste au niveau non vérifié."
+    },
+    {
+      "sourceKey": "icg-2012-beyond-turf-wars",
+      "title": "Beyond Turf Wars: Managing the Post-Coup Transition in Guinea-Bissau",
+      "url": "https://www.files.ethz.ch/isn/152105/190-beyond-turf-wars-managing-the-post-coup-transition-in-guinea-bissau.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "International Crisis Group, Africa Report no 190, 17 août 2012. Le rapport atteste les graphies António Injai/Indjai en Guinée-Bissau et situe l’acteur dans les réseaux militaires balantes, sans fournir d’étymologie ni de règle de transmission du patronyme."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "Le portrait du Diário de Notícias et le rapport de l’International Crisis Group ont été recherchés pour une alliance patronymique nommant Injai/Indjai ; aucune paire n’y est documentée."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La fonction militaire d’António Indjai est individuelle et non héréditaire ; les deux sources ne rattachent le patronyme à aucune caste ou profession transmissible."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "António Indjai ne peut être enregistré comme bearer : les sources consultées n’établissent pas son décès et ne fournissent ni identifiant PER_* ni source d’auto-identification conforme pour un porteur vivant."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les graphies Injai et Indjai ont été comparées dans les deux sources ; aucune seconde lignée homonyme n’y est distinguée."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Le Diário de Notícias qualifie le patronyme de mandingue et le rapport Crisis Group n’en décrit pas la filiation ; l’étude de Biifa sur la transmission balante a aussi été vérifiée mais ne nomme pas Injai, donc sa règle n’est pas extrapolée."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune des sources consacrées à António Injai ne dit si le patronyme désigne un lignage, un clan, une maison ou une autre unité sociale."
+    }
+  ]
+}

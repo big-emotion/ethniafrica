@@ -137,6 +137,33 @@ describe("bandSubjectsByPopulation", () => {
     expect(bandSubjectsByPopulation(large).get("PPL_X")).toBe("difficile");
   });
 
+  /**
+   * Why a people is not a scope, stated as behaviour rather than as a claim
+   * about how much the corpus holds. Banding is relative to the scoped pool, so
+   * a pool of one subject has one band and a session drawn from it is eight
+   * rounds in a row at the same rung — a pile, not a track.
+   */
+  // @req REQ-103
+  it("produces no ladder from a pool of one subject", () => {
+    const bands = bandSubjectsByPopulation([
+      { id: "PPL_ONLY", totalPopulation: 400_000 },
+    ]);
+    expect(bands.get("PPL_ONLY")).toBe("facile");
+
+    const session = composeLadder(
+      Array.from({ length: 8 }, (_, index) => ({
+        id: `q-${index}`,
+        entityId: "PPL_ONLY",
+      })),
+      bands
+    );
+
+    expect(session).toHaveLength(8);
+    expect(new Set(session.map((round) => bands.get(round.entityId)))).toEqual(
+      new Set(["facile"])
+    );
+  });
+
   // @req REQ-103
   it("sorts a fiche with no population last", () => {
     const bands = bandSubjectsByPopulation([

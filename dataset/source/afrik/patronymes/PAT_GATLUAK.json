@@ -1,0 +1,130 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
+  },
+  "id": "PAT_GATLUAK",
+  "nameMain": "Gatluak",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Gatluak",
+      "attestations": [
+        {
+          "countryId": "SSD",
+          "sourceRefs": ["wikinames-south-sudan-2025"]
+        },
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["forebears-gatluak-distribution"]
+        }
+      ]
+    },
+    {
+      "spelling": "Gatluaak",
+      "attestations": [
+        {
+          "countryId": "SSD",
+          "sourceRefs": ["wikinames-south-sudan-2025"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "La collecte communautaire Wikinames rapporte Gatluaak/Nyaluaak lorsqu’une famille a construit une grande étable. La grammaire nuer établit seulement que gat- signifie « fils, enfant » ; elle ne permet pas de reconstruire le second élément. L’explication complète reste claimed.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["wikinames-south-sudan-2025", "indiana-nuer-grammar"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_NUER",
+      "status": "attested",
+      "sourceRefs": ["wikinames-south-sudan-2025"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "SSD",
+      "status": "attested",
+      "sourceRefs": ["wikinames-south-sudan-2025"]
+    },
+    {
+      "countryId": "ETH",
+      "status": "attested",
+      "sourceRefs": ["forebears-gatluak-distribution"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "wikinames-south-sudan-2025",
+      "title": "Wikinames South Sudan 2025",
+      "url": "https://meta.wikimedia.org/wiki/Wikinames_South_Sudan_2025",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Collecte communautaire de noms sud-soudanais publiée sur Meta-Wiki. Le tableau Naath/Nuer donne séparément Chuol, Gatluaak et Machar avec une circonstance de nomination ; un premier tableau donne Riek « problem ». Les entrées sont en attente de versement et sans appareil critique individuel : elles sont citées au tier unverified, jamais comme étymologies établies."
+    },
+    {
+      "sourceKey": "marko-south-sudan-names-2021",
+      "title": "Given Names and Lived Closeness: Kinship Measurement in the South Sudanese Citizenship Office",
+      "url": "https://www.researchgate.net/publication/359727088_Given_Names_and_Lived_Closeness_Kinship_Measurement_in_the_South_Sudanese_Citizenship_Office",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ferenc Dávid Markó, Social Analysis 65(4), 2021, p. 70-89, DOI 10.3167/sa.2021.650404. L’article décrit pour les Dinka et les Nuer une suite de noms individuels — nom, père, grand-père, arrière-grand-père — qui change d’une génération à l’autre, et non un patronyme familial fixe."
+    },
+    {
+      "sourceKey": "indiana-nuer-grammar",
+      "title": "A Precis of the Nuer Grammar",
+      "url": "https://dlib.indiana.edu/collections/nuer/grammar/gramintro.utx.html",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Grammaire pédagogique du Nuer Field Notes Project, Indiana University. La section Proper Names décrit les préfixes nya- « fille » et gat- « fils, enfant » et l’emploi du nom du père au génitif dans le nom complet."
+    },
+    {
+      "sourceKey": "forebears-gatluak-distribution",
+      "title": "Gatluak Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/gatluak",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Agrégateur de répartition anthroponymique consulté uniquement pour l’attestation faible de Gatluak en Éthiopie. Sa proposition étymologique est une contribution d’utilisateur et n’est reprise dans aucun claim."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Gatluak tradition orale », « Gatluak griot » et « Gatluak oral history », ainsi que les tableaux Naath/Nuer de Wikinames, la grammaire nuer d’Indiana, l’article de Markó et les recherches bibliographiques par graphie exacte, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Gatluak chronicle », « Gatluak history » et « Gatluak genealogy », complétées par les tableaux Naath/Nuer de Wikinames, la grammaire nuer d’Indiana, l’article de Markó et les recherches bibliographiques par graphie exacte, n’ont livré aucune chronique primaire qui explique l’origine du nom."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Gatluak joking kinship », « Gatluak name alliance » et « Gatluak clan pact », ainsi que les tableaux Naath/Nuer de Wikinames, la grammaire nuer d’Indiana, l’article de Markó et les recherches bibliographiques par graphie exacte, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Gatluak caste », « Gatluak occupational group » ainsi que les passages sociaux consultés dans les tableaux Naath/Nuer de Wikinames, la grammaire nuer d’Indiana, l’article de Markó et les recherches bibliographiques par graphie exacte, n’ont établi aucune fonction héréditaire propre à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques et nécrologiques sur « Gatluak » dans les catalogues universitaires et institutionnels, complétées par les tableaux Naath/Nuer de Wikinames, la grammaire nuer d’Indiana, l’article de Markó et les recherches bibliographiques par graphie exacte, n’ont pas permis de vérifier un porteur décédé avec une identité suffisamment précise ; les personnes vivantes repérées ne sont pas ajoutées sans auto-identification."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches sur la graphie exacte « Gatluak » dans les index onomastiques et les tableaux Naath/Nuer de Wikinames, la grammaire nuer d’Indiana, l’article de Markó et les recherches bibliographiques par graphie exacte n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
+    }
+  ]
+}

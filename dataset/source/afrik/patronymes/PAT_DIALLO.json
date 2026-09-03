@@ -1,0 +1,160 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_DIALLO",
+  "nameMain": "Diallo",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Diallo",
+      "attestations": [
+        {
+          "countryId": "GIN",
+          "sourceRefs": ["corpus-ppl-fula-foret-organisation"]
+        },
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["corpus-ppl-fula-foret-organisation"]
+        },
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["corpus-ppl-fula-foret-organisation"]
+        },
+        {
+          "countryId": "GAB",
+          "sourceRefs": ["corpus-ppl-fula-foret-organisation"]
+        }
+      ]
+    },
+    {
+      "spelling": "Jallo",
+      "attestations": [
+        { "countryId": "SEN", "sourceRefs": ["bluett-1734-job-jallo"] }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "La plus ancienne attestation écrite du nom relevée lors de la passe date de 1734. Bluett y consigne que les compatriotes d'Ayuba Suleiman Diallo « se désignent par les noms de leurs ancêtres » et remontent plusieurs degrés, « bien qu'ils aient aussi des noms de famille pour distinguer leurs familles particulières » ; il donne pour le même homme la chaîne patronymique HYUBA, BOON SALUMENA, BOON HIBRAHEMA — Ayuba fils de Suleiman fils d'Ibrahim — puis, distinctement, « The Surname of his Family is Jallo ». Le nom est donc déjà, en 1734, un nom de famille héréditaire tenu pour distinct de la filiation énoncée degré par degré.",
+        "claimStatus": "established",
+        "sourceRefs": ["bluett-1734-job-jallo"]
+      },
+      {
+        "claim": "Bluett situe la famille à Boonda, dans le Bundu, sur le haut Sénégal, et rapporte que le grand-père d'Ayuba, Ibrahim, y avait fondé la ville une cinquantaine d'années plus tôt sous le règne de Bubaker, roi du Futa, cumulant la propriété éminente du lieu et la charge de grand prêtre (alpha) ; il y avait institué que nul s'y réfugiant ne pût être réduit en esclavage. La géographie de Bluett est celle des cartes de son temps et se contredit elle-même : la revendication clanique du Fouta-Djalon et cette lignée du Bundu ne sont pas rapportées l'une à l'autre par une source consultée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["bluett-1734-job-jallo"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le nom relève des quatre clans par lesquels les Fulɓe se reconnaissent — Diallo, Bâ, Barry et Sow — dont la quadripartition structure l'identification clanique du Fouta.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["bolaaro-clans-peuls"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FULA_FORET",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-fula-foret-organisation"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GIN",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-fula-foret-organisation"]
+    },
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-fula-foret-organisation"]
+    },
+    {
+      "countryId": "CMR",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-fula-foret-organisation"]
+    },
+    {
+      "countryId": "GAB",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-fula-foret-organisation"]
+    },
+    {
+      "countryId": "SEN",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "bluett-1734-job-jallo"]
+    },
+    {
+      "countryId": "MRT",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Ayuba Suleiman Diallo (Hyuba boon Salumena boon Hibrahema)",
+      "sourceRefs": ["bluett-1734-job-jallo"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-fula-foret-organisation",
+      "title": "EthniAfrica — fiche du peuple Fula, organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Fula."
+    },
+    {
+      "sourceKey": "bolaaro-clans-peuls",
+      "title": "Les clans peulhs du Fouta Djallon",
+      "url": "https://bolaaro.wordpress.com/2016/02/13/les-clans-peulhs-du-fouta-djallon/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Blog communautaire peul. Cité pour les quatre clans fondateurs (Diallo, Bâ, Barry, Sow) ; aucune source académique n'a été trouvée pour cette quadripartition lors de ce travail."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "bluett-1734-job-jallo",
+      "title": "Some Memoirs of the Life of Job, the Son of Solomon, the High Priest of Boonda in Africa",
+      "url": "https://nationalhumanitiescenter.org/pds/maai/freedom/text1/diallo.pdf",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Bluett, Thomas, Londres, 1734. Document primaire : le récit dicté par Ayuba Suleiman Diallo à Bluett pendant sa captivité, imprimé de son vivant. C'est la plus ancienne attestation écrite connue du nom, et elle est explicite sur le système : « The Surname of his Family is Jallo », posé en regard de la chaîne patronymique « HYUBA, BOON SALUMENA, BOON HIBRAHEMA ». L'URL est l'édition d'extraits du National Humanities Center (2009), seule version dont le texte a pu être lu intégralement ici ; le texte complet est à Documenting the American South (docsouth.unc.edu/neh/bluett/menu.html), dont le serveur a refusé la connexion lors de ce travail. Sections I et III vérifiées mot à mot. Source coloniale à lire comme telle : Bluett écrit en anglais, en abolitionniste anglican, à propos d'un homme qu'il a contribué à affranchir, et la graphie « Jallo » est la sienne."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "Le dendiraagal (parenté à plaisanterie peule) est documenté comme institution mais aucune paire nommant ce clan n'a été trouvée."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Bluett donne à la lignée d'Ayuba une charge religieuse héréditaire — son grand-père puis son père sont alpha, grand prêtre de Boonda, et lui-même assistait son père — mais elle s'attache à une famille précise du Bundu, non au nom : la source ne dit rien d'une fonction que porteraient les Jallo comme tels. Les castes de spécialistes du Fouta portent par ailleurs d'autres noms."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les répertoires onomastiques consultés laissent l'étymologie de Diallo inexpliquée : aucune racine pulaar établie ne la porte, et Bluett, qui donne pourtant la forme de 1734, n'en propose aucune. Les rattachements proposés — à un jallo qui vaudrait « commandement », ou au mandingue diala pour la noblesse — ne sont corroborés par aucune source linguistique primaire et ressemblent à des étymologies populaires nées du contact peul-mandingue. L'absence d'étymologie établie est ici le résultat de la recherche, non son défaut. Les transcriptions Jallo, Jalloh, Jallow et Djaló désignent le même nom et ne sont donc pas des homonymes."
+    }
+  ]
+}

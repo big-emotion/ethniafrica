@@ -18,6 +18,7 @@ import { parse } from "csv-parse/sync";
 import { evaluateSourceUrl } from "@/lib/sources/authorized-source-catalog";
 import { parseRelationFile } from "../src/lib/afrik/parsers/relationParser";
 import { parseNameRecordFile } from "../src/lib/afrik/parsers/nameRecordParser";
+import { parsePatronymeFile } from "../src/lib/afrik/parsers/patronymeParser";
 import type { SourceTier } from "../src/types/sources";
 // The same resolver the globe uses, so this gate and the rendering can never
 // disagree about which countries are drawable.
@@ -881,6 +882,229 @@ export function checkPplDuplicates(datasetRoot: string): ValidationResult {
   return { ok: errors.length === 0, errors, warnings };
 }
 
+const WIKIDATA_ID_PATTERN = /^Q[1-9][0-9]*$/;
+const GLOTTOCODE_PATTERN = /^[a-z]{4}[0-9]{4}$/;
+// ISO_639_3_PATTERN is declared once, near the top of the file, and reused here.
+
+/**
+ * ETNI-1414 (DEC-033) – `content.externalIdentifiers` (wikidataId, glottocode,
+ * iso639_3) links a people fiche to Wikidata/Glottolog/ISO 639-3 once an
+ * editor has confirmed the match. All three fields are optional — most
+ * fiches have none yet — but a present field must be well-formed, since a
+ * malformed id would silently fail to resolve downstream instead of failing
+ * this build.
+ */
+export function checkExternalIdentifierFormats(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const { fullPath } of collectPplFiles(datasetRoot)) {
+    let data: {
+      id?: string;
+      content?: {
+        externalIdentifiers?: {
+          wikidataId?: unknown;
+          glottocode?: unknown;
+          iso639_3?: unknown;
+        };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      continue; // parse failures are surfaced by FR27/other checks
+    }
+
+    const externalIdentifiers = data.content?.externalIdentifiers;
+    if (!externalIdentifiers) continue;
+
+    const pplId = data.id ?? fullPath;
+    const checks: Array<
+      [field: "wikidataId" | "glottocode" | "iso639_3", pattern: RegExp]
+    > = [
+      ["wikidataId", WIKIDATA_ID_PATTERN],
+      ["glottocode", GLOTTOCODE_PATTERN],
+      ["iso639_3", ISO_639_3_PATTERN],
+    ];
+
+    for (const [field, pattern] of checks) {
+      const value = externalIdentifiers[field];
+      if (value === undefined) continue;
+      if (typeof value !== "string" || !pattern.test(value)) {
+        errors.push(
+          `${pplId}: externalIdentifiers.${field} "${value}" does not match ${pattern.source}`
+        );
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * ETNI-1391 – A split people's fiches must agree on their group identity.
+ *
+ * `content.appellations.peopleGroupId`/`peopleGroupLabel` is the fiche-level
+ * opt-in that lets several PPL fiches (e.g. `PPL_FULANI`, `PPL_FULANI_MASSINA`)
+ * declare themselves one people, split — grouping is applied at display time
+ * from this pair alone (see `src/lib/search/groupPeopleResults.ts`), so a
+ * fiche with a stray id, a missing label, or a label that disagrees with its
+ * siblings would silently produce either no group or a mislabeled one.
+ */
+export function checkPeopleGroupConsistency(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const labelsById = new Map<string, Map<string, string[]>>(); // groupId → label → files
+  const membersById = new Map<string, string[]>(); // groupId → files
+
+  for (const { fullPath } of collectPplFiles(datasetRoot)) {
+    let data: {
+      content?: {
+        appellations?: { peopleGroupId?: unknown; peopleGroupLabel?: unknown };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      continue; // parse failures are surfaced by FR27/other checks
+    }
+
+    const appellations = data.content?.appellations;
+    const peopleGroupId =
+      typeof appellations?.peopleGroupId === "string"
+        ? appellations.peopleGroupId
+        : undefined;
+    const peopleGroupLabel =
+      typeof appellations?.peopleGroupLabel === "string"
+        ? appellations.peopleGroupLabel
+        : undefined;
+
+    if (!peopleGroupId && !peopleGroupLabel) continue;
+
+    if (peopleGroupId && !peopleGroupLabel) {
+      errors.push(
+        `${fullPath}: peopleGroupId "${peopleGroupId}" is set but peopleGroupLabel is missing`
+      );
+      continue;
+    }
+    if (!peopleGroupId && peopleGroupLabel) {
+      errors.push(
+        `${fullPath}: peopleGroupLabel "${peopleGroupLabel}" is set but peopleGroupId is missing`
+      );
+      continue;
+    }
+
+    const id = peopleGroupId as string;
+    const label = peopleGroupLabel as string;
+
+    membersById.set(id, [...(membersById.get(id) ?? []), fullPath]);
+
+    const byLabel = labelsById.get(id) ?? new Map<string, string[]>();
+    byLabel.set(label, [...(byLabel.get(label) ?? []), fullPath]);
+    labelsById.set(id, byLabel);
+  }
+
+  for (const [id, byLabel] of labelsById) {
+    if (byLabel.size <= 1) continue;
+    const labels = [...byLabel.entries()]
+      .map(([label, files]) => `"${label}" (${files.join(", ")})`)
+      .join(" vs ");
+    errors.push(`peopleGroupId "${id}" carries disagreeing labels: ${labels}`);
+  }
+
+  for (const [id, files] of membersById) {
+    if (files.length === 1) {
+      warnings.push(
+        `peopleGroupId "${id}" is declared by a single fiche (${files[0]}) — no split to group yet`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+const HISTORICAL_AFFILIATION_TIERS: ReadonlySet<SourceTier> = new Set([
+  "official",
+  "referenced",
+  "unverified",
+]);
+
+/**
+ * FR111 (REQ-127) – `content.historicalAffiliation` is the field a Creole
+ * people fiche carries when it has no defensible linguistic-family
+ * affiliation to an African family: Glottolog classifies every creole under
+ * the family of its lexifier, never under an African family, so
+ * `languageFamilyId` cannot be made to say what this field says instead.
+ *
+ * The field is optional — most fiches have a defensible `languageFamilyId`
+ * and never fill it — but when present it must stand on its own evidence:
+ * a non-empty `description` and at least one explicitly tiered source,
+ * independently of the fiche's other `sources`. This never reads or writes
+ * `languageFamilyId`, matching the AC that the two fields never interact.
+ */
+export function checkHistoricalAffiliationModel(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const { file, fullPath } of collectPplFiles(datasetRoot)) {
+    let data: {
+      content?: {
+        historicalAffiliation?: {
+          description?: unknown;
+          sources?: unknown;
+        };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      continue; // parse failures are surfaced by FR27/other checks
+    }
+
+    const affiliation = data.content?.historicalAffiliation;
+    if (!affiliation) continue;
+
+    if (
+      typeof affiliation.description !== "string" ||
+      !affiliation.description.trim()
+    ) {
+      errors.push(
+        `FR111: ${file}: content.historicalAffiliation.description is missing or empty`
+      );
+    }
+
+    const sources = Array.isArray(affiliation.sources)
+      ? affiliation.sources
+      : [];
+    if (sources.length === 0) {
+      errors.push(
+        `FR111: ${file}: content.historicalAffiliation.sources must cite at least one source, sourced and tiered independently of the fiche's other sources`
+      );
+    }
+
+    sources.forEach((source, i) => {
+      const tier = (source as { tier?: unknown })?.tier;
+      if (
+        typeof tier !== "string" ||
+        !HISTORICAL_AFFILIATION_TIERS.has(tier as SourceTier)
+      ) {
+        errors.push(
+          `FR111: ${file}: content.historicalAffiliation.sources[${i}] carries no valid tier (official | referenced | unverified)`
+        );
+      }
+    });
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
 /**
  * The 54 UN-recognised sovereign African states, ISO 3166-1 alpha-3. This is
  * the geographic boundary for FR28/FR28-strict (REQ-131, supersedes REQ-028):
@@ -1129,16 +1353,32 @@ export function checkIsoValidity(datasetRoot: string): ValidationResult {
  * checked that a code was three uppercase letters, which is how "GBN" stood in
  * for Gabon on PPL_IGBO for as long as the fiche existed: well-formed,
  * meaningless, and silently undrawable.
+ *
+ * This governs what a fiche may *declare*. It is deliberately not wired into
+ * the patronyme loader: `afrik_countries` holds the 54 African countries, so a
+ * structural link to an off-map code has no row to point at, and accepting one
+ * at preflight would only move the failure into the middle of the write.
  */
 export const OFF_MAP_COUNTRIES = new Set([
   "AUS",
+  "BLZ",
+  "BRA",
   "CAN",
+  "COL",
   "ESP",
   "FRA",
   "GBR",
+  "GLP",
+  "GTM",
+  "GUF",
+  "HND",
+  "HTI",
+  "JAM",
+  "NIC",
   "NLD",
   "OMN",
   "PRT",
+  "SUR",
   "USA",
   "YEM",
 ]);
@@ -1567,6 +1807,102 @@ export function checkAuthorizedSourceTiers(
 }
 
 /**
+ * The four standings a `sources[]` entry may declare. Three are tiers carrying
+ * authority; `needs_review` is the explicit "nobody has adjudicated this yet"
+ * marker, stored as NULL rather than folded onto `unverified` — folding it
+ * would state a judgement nobody made. Anything else is a straggler from a
+ * retired scale.
+ */
+export const SOURCE_STANDINGS: ReadonlySet<string> = new Set([
+  "official",
+  "referenced",
+  "unverified",
+  "needs_review",
+]);
+
+/**
+ * A source title is the global identity of a source row: `sources_title_key`
+ * is UNIQUE and every loader upserts `onConflict: "title"`. So one title must
+ * carry one locator, or the corpus silently disagrees with itself.
+ *
+ * This models what the loaders already enforce, and the validator did not. The
+ * patronyme loader rejects a conflicting title outright — that is how five
+ * fiches froze all 777 dossiers while this script reported 0 errors. The other
+ * loaders resolve the conflict by last-write-wins, which is worse: 54 country
+ * fiches citing one "UNFPA – World Population Dashboard" collapsed onto a
+ * single row whose URL was whichever country loaded last, so a reader
+ * following the citation landed on another country's page.
+ */
+export function checkSourceIdentity(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const locatorsByTitle = new Map<string, Map<string, string[]>>();
+
+  const visit = (node: unknown, fiche: string): void => {
+    if (Array.isArray(node)) {
+      node.forEach((item) => visit(item, fiche));
+      return;
+    }
+    if (typeof node !== "object" || node === null) return;
+
+    for (const [key, value] of Object.entries(node)) {
+      if (key === "sources" && Array.isArray(value)) {
+        for (const entry of value) {
+          if (typeof entry !== "object" || entry === null) continue;
+          const {
+            title,
+            tier,
+            url,
+            source_kind: kind,
+          } = entry as Record<string, unknown>;
+          if (typeof title !== "string" || title.length === 0) continue;
+
+          if (tier !== undefined && !SOURCE_STANDINGS.has(String(tier))) {
+            errors.push(
+              `${fiche}: source "${title}" declares standing "${String(tier)}", ` +
+                `which is not one of ${[...SOURCE_STANDINGS].join(", ")}`
+            );
+          }
+
+          const locator = JSON.stringify([
+            tier ?? null,
+            url ?? null,
+            kind ?? null,
+          ]);
+          const seen =
+            locatorsByTitle.get(title) ?? new Map<string, string[]>();
+          seen.set(locator, [...(seen.get(locator) ?? []), fiche]);
+          locatorsByTitle.set(title, seen);
+        }
+      }
+      visit(value, fiche);
+    }
+  };
+
+  for (const fullPath of collectJsonFiles(datasetRoot)) {
+    let data: unknown;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      continue;
+    }
+    visit(data, path.relative(datasetRoot, fullPath));
+  }
+
+  for (const [title, locators] of [...locatorsByTitle].sort(([a], [b]) =>
+    a.localeCompare(b)
+  )) {
+    if (locators.size < 2) continue;
+    const where = [...locators.values()].flat().sort().slice(0, 4).join(", ");
+    errors.push(
+      `source "${title}" is cited with ${locators.size} different ` +
+        `tier/URL/provenance combinations (${where}) — one title, one locator`
+    );
+  }
+
+  return { ok: errors.length === 0, errors, warnings: [] };
+}
+
+/**
  * FR30 + FR31 – Source URL resolvability (nightly only).
  * Skipped unless process.env.CHECK_SOURCE_URLS === "true".
  * Writes results to dataset/source-url-health.log (two levels above datasetRoot,
@@ -1977,14 +2313,17 @@ export function checkColonialBorderCr1(datasetRoot: string): ValidationResult {
         continue;
       }
 
-      if (tier !== 1 && tier !== 2) {
+      if (!isAuthoritativeTier(tier)) {
         errors.push(
-          `CR1: ${layerId}: source with invalid tier "${tier}" — only tier 1 or 2 is allowed`
+          `CR1: ${layerId}: source at standing "${String(tier)}" — a colonial border needs an official or referenced citation`
         );
         continue;
       }
 
-      if (tier === 2 && !/wikipedia/i.test(notes)) {
+      if (
+        normalizedNameRecordTier(tier) === "referenced" &&
+        !/wikipedia/i.test(notes)
+      ) {
         errors.push(
           `CR1: ${layerId}: tier 2 source missing the Wikipedia cross-check path in notes`
         );
@@ -2394,12 +2733,18 @@ export function validateMigrationEvents(
     }
 
     sources.forEach((source, i) => {
-      if (source.tier !== 1 && source.tier !== 2) {
+      // Migration 041 retired the numeric Tier 1/2 scale for the three
+      // standings. The old rule "Tier 2 requires notes" existed so a
+      // non-authoritative citation stayed auditable; its faithful translation
+      // is that anything short of `official` carries that provenance note.
+      if (!SOURCE_STANDINGS.has(String(source.tier))) {
         errors.push(
-          `${file}: content.sources[${i}] must record tier: 1 or tier: 2`
+          `${file}: content.sources[${i}] must record a tier — one of ${[
+            ...SOURCE_STANDINGS,
+          ].join(", ")}`
         );
       } else if (
-        source.tier === 2 &&
+        source.tier !== "official" &&
         (typeof source.notes !== "string" || !source.notes.trim())
       ) {
         errors.push(
@@ -2565,7 +2910,7 @@ export function checkColonialEventCr4(datasetRoot: string): ValidationResult {
         ? data.classificationStatus
         : undefined;
 
-    const validSources = sources.filter((s) => s.tier === 1 || s.tier === 2);
+    const validSources = sources.filter((s) => isAuthoritativeTier(s.tier));
     if (validSources.length === 0) {
       errors.push(
         `CR4: ${file}: no source with tier 1 or tier 2 — at least one Tier 1/2 source is required`
@@ -2580,14 +2925,16 @@ export function checkColonialEventCr4(datasetRoot: string): ValidationResult {
         );
         return;
       }
-      if (source.tier !== 1 && source.tier !== 2) {
+      if (!SOURCE_STANDINGS.has(String(source.tier))) {
         errors.push(
-          `CR4: ${file}: content.sources[${i}] must record tier: 1 or tier: 2`
+          `CR4: ${file}: content.sources[${i}] must record a tier — one of ${[
+            ...SOURCE_STANDINGS,
+          ].join(", ")}`
         );
         return;
       }
       const notes = typeof source.notes === "string" ? source.notes : "";
-      if (source.tier === 2 && !/wikipedia/i.test(notes)) {
+      if (source.tier === "referenced" && !/wikipedia/i.test(notes)) {
         errors.push(
           `CR4: ${file}: content.sources[${i}] is Tier 2 and requires the Wikipedia cross-check path in notes`
         );
@@ -2840,18 +3187,18 @@ export function checkRelationSources(datasetRoot: string): ValidationResult {
     }
 
     const sources = Array.isArray(data.sources) ? data.sources : [];
-    const hasValidTierSource = sources.some(
-      (s) => s?.tier === 1 || s?.tier === 2
+    const hasValidTierSource = sources.some((s) =>
+      isAuthoritativeTier(s?.tier)
     );
     if (!hasValidTierSource) {
       errors.push(
-        `REL-5: ${file}: no source with tier 1 or tier 2 — at least one Tier 1/2 source is required`
+        `REL-5: ${file}: no source at official or referenced standing — at least one authoritative citation is required`
       );
     }
 
     sources.forEach((source, i) => {
       if (
-        source?.tier === 2 &&
+        normalizedNameRecordTier(source?.tier) === "referenced" &&
         (typeof source.notes !== "string" || !source.notes.trim())
       ) {
         errors.push(
@@ -3049,6 +3396,17 @@ export function checkNameRecordModel(datasetRoot: string): ValidationResult {
   }
 
   return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * True when a source carries publishable authority — the current-vocabulary
+ * equivalent of the retired "Tier 1/2". `unverified` and the unadjudicated
+ * `needs_review` are deliberately excluded: both are legal standings that
+ * publish, neither can satisfy a gate asking for an authoritative citation.
+ */
+function isAuthoritativeTier(tier: unknown): boolean {
+  const normalized = normalizedNameRecordTier(tier);
+  return normalized === "official" || normalized === "referenced";
 }
 
 /**
@@ -3264,6 +3622,51 @@ export function checkNameRecordDuplicates(
       } else {
         seen.set(key, file);
       }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * REQ-133/REQ-134 — strict per-name PAT_* fiche model.
+ *
+ * The parser is the single shape contract. This integration only discovers
+ * corpus files and gives parser errors stable, file-qualified gate messages.
+ */
+export function checkPatronymeFicheModel(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const dir = path.join(datasetRoot, "patronymes");
+
+  if (!fs.existsSync(dir)) return { ok: true, errors, warnings };
+
+  for (const file of fs
+    .readdirSync(dir)
+    .filter((name) => /^PAT_[A-Z0-9_]+\.json$/.test(name))) {
+    const fullPath = path.join(dir, file);
+    let raw: unknown;
+    try {
+      raw = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      errors.push(`PAT-model: ${file}: could not parse JSON`);
+      continue;
+    }
+
+    const parsed = parsePatronymeFile(raw);
+    if (!parsed.success) {
+      for (const error of parsed.errors ?? []) {
+        errors.push(`PAT-model: ${file}: ${error.path}: ${error.message}`);
+      }
+      continue;
+    }
+
+    if (file !== `${parsed.data?.id}.json`) {
+      errors.push(
+        `PAT-model: ${file}: filename must match patronyme id ${parsed.data?.id}.json`
+      );
     }
   }
 
@@ -3750,6 +4153,18 @@ async function main() {
     result: checkPplDuplicates(datasetRoot),
   });
 
+  console.log("ETNI-1391 – People-group consistency...");
+  newChecks.push({
+    name: "ETNI-1391 People-group consistency",
+    result: checkPeopleGroupConsistency(datasetRoot),
+  });
+
+  console.log("ETNI-1414 – External identifier formats...");
+  newChecks.push({
+    name: "ETNI-1414 External identifier formats",
+    result: checkExternalIdentifierFormats(datasetRoot),
+  });
+
   console.log("FR28 – Population sums...");
   newChecks.push({
     name: "FR28 Population sums",
@@ -3786,6 +4201,12 @@ async function main() {
   newChecks.push({
     name: "Source catalogue tiers",
     result: checkAuthorizedSourceTiers(datasetRoot),
+  });
+
+  console.log("Source identity – one title, one locator...");
+  newChecks.push({
+    name: "Source identity",
+    result: checkSourceIdentity(datasetRoot),
   });
 
   console.log("FR52 – Classification-tree integrity...");
@@ -3928,6 +4349,14 @@ async function main() {
   });
 
   console.log(
+    "REQ-133/REQ-134 – Per-name PAT_* fiche model (strict shape + DEC-040)..."
+  );
+  newChecks.push({
+    name: "REQ-133/REQ-134 Patronyme fiche model",
+    result: checkPatronymeFicheModel(datasetRoot),
+  });
+
+  console.log(
     "ETNI-1460 – Naming-system model (subtype fields + undetermined)..."
   );
   newChecks.push({
@@ -3952,6 +4381,14 @@ async function main() {
       datasetRoot,
       path.join(PUBLIC_ROOT, "modele-langue.json")
     ),
+  });
+
+  console.log(
+    "FR111 – Historical-affiliation model (REQ-127: sourced and tiered, distinct from languageFamilyId)..."
+  );
+  newChecks.push({
+    name: "FR111 Historical-affiliation model",
+    result: checkHistoricalAffiliationModel(datasetRoot),
   });
 
   if (process.env.CHECK_SOURCE_URLS === "true") {

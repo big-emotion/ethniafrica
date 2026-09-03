@@ -118,6 +118,39 @@ describe("MigrationNarrative", () => {
     expect(screen.getByText("Débat historiographique")).toBeInTheDocument();
   });
 
+  /**
+   * The page above this component is a PageLayout, whose title is the only h1
+   * on the route. Opening the narrative at h3 skipped h2 entirely, which
+   * Lighthouse scored as a `heading-order` failure (accessibility 0.98 against
+   * a required 1.0) on /fr/dossiers/migrations. axe stayed green on the same
+   * tree because the live-route gate only reports `serious` and `critical`, and
+   * `heading-order` is `moderate` — so this contract is asserted here, where it
+   * cannot pass by being filtered out.
+   *
+   * MigrationEventCard keeps h3 by default: on the colonization page it sits
+   * under an h2 section, where h3 is the correct level.
+   */
+  // @req REQ-101 FR81 FR82 FR78
+  it("opens each event at h2 so the page's h1 is not followed by an h3", () => {
+    render(
+      <MigrationNarrative
+        events={[
+          makeEvent({
+            classificationStatus: "contested",
+            debate: "Les historiens ne s'accordent pas sur la datation.",
+          }),
+        ]}
+      />
+    );
+
+    expect(
+      screen.getByRole("heading", { name: "Expansion test", level: 2 })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Débat historiographique", level: 3 })
+    ).toBeInTheDocument();
+  });
+
   // @req REQ-101 FR81 FR82 FR78
   it("renders no debate section for a consensual event, even if debate text is present", () => {
     render(
@@ -156,7 +189,12 @@ describe("MigrationNarrative", () => {
         ]}
       />
     );
-    const headings = screen.getAllByRole("heading", { level: 3 });
+    // Each event opens at h2; the linked-people chips inside a card are h2 too,
+    // so the event titles are picked out by name rather than by level alone.
+    const headings = screen.getAllByRole("heading", {
+      level: 2,
+      name: /événement/,
+    });
     expect(headings.map((h) => h.textContent)).toEqual([
       "Premier événement",
       "Second événement",

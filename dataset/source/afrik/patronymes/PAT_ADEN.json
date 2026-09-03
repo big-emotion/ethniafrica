@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Une source officielle atteste Aden dans une chaîne de noms djiboutienne ; elle ne permet pas de trancher l'étymologie ni la transmission précise de cet élément."
+  },
+  "id": "PAT_ADEN",
+  "nameMain": "Aden",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Aden",
+      "attestations": [
+        {
+          "countryId": "DJI",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "aden-presidence-djibouti-2026"
+          ]
+        }
+      ]
+    },
+    {
+      "spelling": "Adan",
+      "attestations": [
+        { "countryId": "DJI", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "La Présidence de Djibouti atteste Aden comme dernier élément de la chaîne de noms du parlementaire Djama Guedi Aden ; la page ne précise pas si cet élément est le nom du père, du grand-père ou un nom familial stabilisé.",
+        "claimStatus": "established",
+        "sourceRefs": ["aden-presidence-djibouti-2026"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SOMALI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "aden-presidence-djibouti-2026"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "DJI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Djama Guedi Aden",
+      "sourceRefs": ["aden-presidence-djibouti-2026"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "aden-presidence-djibouti-2026",
+      "title": "Le Président Guelleh salue la mémoire de feu Djama Guedi Aden, Parlementaire djiboutien",
+      "url": "https://www.presidence.dj/article/le-president-guelleh-salue-la-memoire-de-feu-djama-guedi-aden-parlementaire-djiboutien-1634",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Présidence de la République de Djibouti, 22 juin 2026. La page complète a été vérifiée : son titre, son ouverture et sa conclusion donnent Djama Guedi Aden et confirment son décès. Une phrase intermédiaire écrit toutefois « Djama Guedi Ahmed » ; cette incohérence empêche d'utiliser la page pour rapprocher Aden et Ahmed."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les requêtes « Aden/Adan Somali name etymology », les catalogues onomastiques et la page présidentielle ont été examinés ; aucun travail savant consultable n'a distingué de façon sûre cette forme du nom Adam/Adan et du toponyme Aden."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "La source officielle établit une carrière et une chaîne de noms djiboutiennes, pas une auto-identification somalie ; les recherches biographiques complémentaires n'ont pas établi l'appartenance ethnique du porteur."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "La page présidentielle et les recherches « Aden/Adan Djibouti joking relationship » n'ont livré aucune alliance de parenté à plaisanterie entre deux PAT_* existants."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La notice parlementaire décrit une fonction politique individuelle, sans caste ni fonction héréditaire attachée à Aden."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aden et Adan ont été recherchés comme anthroponymes et toponymes ; la possible homographie avec la ville yéménite n'est pas encodée faute de source établissant le rapport ou la distinction avec cette fiche précise."
+    }
+  ]
+}

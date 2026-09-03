@@ -85,5 +85,3 @@ export function ActionLink({
     </Link>
   );
 }
-
-export default ActionLink;

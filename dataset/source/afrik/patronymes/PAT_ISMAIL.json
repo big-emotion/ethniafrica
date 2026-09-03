@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. La forme arabe Ismail et la correspondance somalie Ismaaciil sont documentées par une notice communautaire et restent à confirmer par la littérature savante."
+  },
+  "id": "PAT_ISMAIL",
+  "nameMain": "Ismail",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Ismail",
+      "attestations": [
+        { "countryId": "DJI", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "La notice consultée présente Ismail (إسماعيل) comme la forme arabe d'Ishmael et répertorie Ismaaciil comme forme somalie ; ce rapprochement est conservé comme claimed au tier communautaire.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["ismail-behindthename"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SOMALI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "ismail-behindthename"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "DJI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "ismail-behindthename",
+      "title": "Meaning, origin and history of the name Ismail",
+      "url": "https://www.behindthename.com/name/ismail",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Behind the Name, notice consultée intégralement le 2 septembre 2026. Elle donne le script arabe إسماعيل, décrit Ismail comme forme arabe d'Ishmael et répertorie Ismaaciil en somali. Aucun ouvrage savant n'est cité directement dans la notice."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "countries",
+      "reason": "Les registres et catalogues djiboutiens ont été recherchés pour Ismail/Ismaaciil ; aucune source primaire consultable n'a établi l'attestation géographique portée par la file candidate."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Ismail/Ismaaciil Somali joking relationship/alliance » n'ont livré aucune parenté à plaisanterie entre deux PAT_* existants."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La notice communautaire traite Ismail comme nom individuel ; les recherches somalistes n'y attachent aucune caste ni fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les catalogues biographiques djiboutiens et somalis ont été interrogés pour Ismail et Ismaaciil ; aucun porteur décédé n'a été retenu faute de source individuelle établissant aussi le contexte de cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Ismail, Ismaïl et Ismaaciil ont été recherchés comme anthroponymes et toponymes ; aucun homonyme distinct répondant au modèle du corpus n'a été établi."
+    }
+  ]
+}

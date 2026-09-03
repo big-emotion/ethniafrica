@@ -32,17 +32,50 @@ const TABLES = {
   peoples: "afrik_peoples",
   countries: "afrik_countries",
   families: "afrik_language_families",
+  languages: "afrik_languages",
+  patronymes: "afrik_patronymes",
 } as const;
 
 export interface SitemapEntityIds {
   peoples: string[];
   countries: string[];
   families: string[];
+  languages: string[];
+  patronymes: string[];
 }
 
-const EMPTY: SitemapEntityIds = { peoples: [], countries: [], families: [] };
+const EMPTY: SitemapEntityIds = {
+  peoples: [],
+  countries: [],
+  families: [],
+  languages: [],
+  patronymes: [],
+};
 
 type SupabaseClient = ReturnType<typeof createServerClient>;
+
+/**
+ * One page of ids, as an `{ error }` either way.
+ *
+ * The walk below reads errors, not exceptions. A query that throws — the
+ * deadline in `requestDeadline.ts` firing on a database that never answers,
+ * or the socket dropping — is the same outcome for a sitemap as PostgREST
+ * replying with one, so it arrives by the same door.
+ */
+async function pageOfIds(
+  supabase: SupabaseClient,
+  table: string,
+  start: number
+): Promise<{ data: { id: string }[] | null; error: unknown }> {
+  try {
+    return await supabase
+      .from(table)
+      .select("id")
+      .range(start, start + SITEMAP_ID_PAGE_SIZE - 1);
+  } catch (error) {
+    return { data: null, error };
+  }
+}
 
 async function idsInTable(
   supabase: SupabaseClient,
@@ -52,10 +85,7 @@ async function idsInTable(
 
   for (let page = 0; page < SITEMAP_MAX_PAGES; page++) {
     const start = page * SITEMAP_ID_PAGE_SIZE;
-    const { data, error } = await supabase
-      .from(table)
-      .select("id")
-      .range(start, start + SITEMAP_ID_PAGE_SIZE - 1);
+    const { data, error } = await pageOfIds(supabase, table, start);
 
     if (error) {
       logger.error(`Sitemap: could not read ids from ${table}`, error);
@@ -74,7 +104,8 @@ async function idsInTable(
 }
 
 /**
- * Every people, country and language-family identifier, walked page by page.
+ * Every people, country, language-family, language and patronyme identifier,
+ * walked page by page.
  *
  * Never throws. `sitemap.xml` is served from a route that must answer, and a
  * database that is unreachable should cost the entity URLs — the static
@@ -90,11 +121,14 @@ export async function getSitemapEntityIds(): Promise<SitemapEntityIds> {
     return EMPTY;
   }
 
-  const [peoples, countries, families] = await Promise.all([
-    idsInTable(supabase, TABLES.peoples),
-    idsInTable(supabase, TABLES.countries),
-    idsInTable(supabase, TABLES.families),
-  ]);
+  const [peoples, countries, families, languages, patronymes] =
+    await Promise.all([
+      idsInTable(supabase, TABLES.peoples),
+      idsInTable(supabase, TABLES.countries),
+      idsInTable(supabase, TABLES.families),
+      idsInTable(supabase, TABLES.languages),
+      idsInTable(supabase, TABLES.patronymes),
+    ]);
 
-  return { peoples, countries, families };
+  return { peoples, countries, families, languages, patronymes };
 }

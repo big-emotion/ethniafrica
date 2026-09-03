@@ -1,0 +1,194 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_KOUYATE",
+  "nameMain": "Kouyate",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Kouyate",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["corpus-ppl-dioula-organisation"]
+        },
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["corpus-ppl-dioula-organisation"]
+        },
+        {
+          "countryId": "MLI",
+          "sourceRefs": ["corpus-ppl-dioula-organisation"]
+        },
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["corpus-ppl-dioula-organisation"]
+        },
+        { "countryId": "GNB", "sourceRefs": ["corpus-ppl-dioula-organisation"] }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [
+      {
+        "claim": "Les Kouyaté se disent descendants de Balla Fasséké Kouyaté, griot de Soundiata, et jeli attitrés des princes Keïta du Manden depuis le XIIIe siècle.",
+        "claimStatus": "claimed",
+        "griot": "Djeli Mamadou Kouyaté (Djeliba Koro, Siguiri)",
+        "transcription": "Niane, Djibril Tamsir, Soundjata ou l'épopée mandingue, 1960",
+        "sourceRefs": ["niane-1960"]
+      }
+    ],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le jamu est un nom de clan patrilinéaire : il désigne l'appartenance à un groupe de descendance, et non une filiation individuelle au père.",
+        "claimStatus": "established",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      },
+      {
+        "claim": "Les nyamakalaw — groupes endogames d'artisans et de musiciens — sont attestés chez les Malinké au plus tard vers 1300 et se retrouvent chez plus de quinze peuples ouest-africains. Le statut se transmet avec le jamu, ce qui fait du nom de clan le support de la position sociale autant que de la descendance.",
+        "claimStatus": "established",
+        "sourceRefs": ["tamari-1991-caste"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_DIOULA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    },
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    },
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    },
+    {
+      "countryId": "GHA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    },
+    {
+      "countryId": "GNB",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": {
+    "value": "Jeli (griot) : fonction héréditaire de dépositaire de la parole, de l'histoire et de la médiation, exercée par un groupe endogame distinct des clans horon. La charge est nommée jusqu'à la cour impériale — le griot du mansa était toujours pris dans le clan Kouyaté, que la tradition fait descendre de Balla Fasséké. Kouyaté est l'un des deux jamuw que Charry donne comme signalant par eux-mêmes l'appartenance jeli. Le dictionnaire des jamuw attache en outre à l'entrée le statut garanke, qu'il ne glose pas.",
+    "sourceRefs": [
+      "gha-iv-mali",
+      "jelis-multilingualism-2024",
+      "charry-1996-jembe",
+      "tamari-1991-caste",
+      "bamadaba-jamuw"
+    ]
+  },
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Balla Fasséké Kouyaté",
+      "sourceRefs": ["niane-1960", "gha-iv-mali"]
+    },
+    {
+      "status": "deceased",
+      "displayName": "Djeli Mamadou Kouyaté",
+      "sourceRefs": ["niane-1960"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-dioula-organisation",
+      "title": "EthniAfrica — fiche du peuple Dioula, organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Dioula."
+    },
+    {
+      "sourceKey": "niane-1960",
+      "title": "Soundjata ou l'épopée mandingue",
+      "url": "https://books.google.com/books/about/Soundjata.html?id=PtJyAAAAMAAJ",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Niane, Djibril Tamsir, Présence Africaine, 1960. Transcription du récit du griot Djeli Mamadou Kouyaté de Djeliba Koro (Siguiri). Source de référence pour la geste de Soundiata et les lignages qu'elle fonde ; c'est une mise par écrit d'une tradition orale, pas un document d'archive."
+    },
+    {
+      "sourceKey": "jansen-sunjata-paradigm",
+      "title": "Beyond the Mali Empire — A New Paradigm for the Sunjata Epic",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jansen, Jan, Universiteit Leiden. Travail critique sur la transmission de l'épopée et sur le jamu comme institution sociale plutôt que comme mémoire historique ; utilisé ici pour la nature du jamu, non pour dater un ancêtre."
+    },
+    {
+      "sourceKey": "jelis-multilingualism-2024",
+      "title": "Language choices reflecting social changes: multilingualism in the popular music of Guinean jelis",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/14790718.2024.2379547",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Journal of Multilingual and Multicultural Development, 2024. Établit que les jeli se recrutent dans des clans identifiables (Kouyaté, Diabaté, Kanté, Cissoko) et que la fonction est héréditaire."
+    },
+    {
+      "sourceKey": "charry-1996-jembe",
+      "title": "A Guide to the Jembe",
+      "url": "https://echarry.web.wesleyan.edu/jembearticle/article.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Charry, Eric, Percussive Notes 34(2), avril 1996, p. 66-72 ; l'auteur est l'ethnomusicologue de Mande Music (University of Chicago Press, 2000). Article de revue spécialisée, non de revue à comité de lecture : il est cité ici pour l'attribution des jamuw aux statuts sociaux mandingues (numu, jeli, horon), qu'il énonce nommément clan par clan, et non pour l'histoire du jembe."
+    },
+    {
+      "sourceKey": "tamari-1991-caste",
+      "title": "The Development of Caste Systems in West Africa",
+      "url": "https://shs.hal.science/halshs-00690180v1",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Tamari, Tal, The Journal of African History 32(2), 1991, p. 221-250 ; dépôt ouvert HAL-SHS. Établit que les groupes endogames d'artisans et de musiciens se rencontrent chez plus de quinze peuples ouest-africains et qu'ils sont attestés chez les Malinké au plus tard vers 1300. Utilisé pour l'institution de la caste, jamais pour rattacher un clan nommé à une caste : cette attribution-là vient d'une autre source."
+    },
+    {
+      "sourceKey": "gha-iv-mali",
+      "title": "General History of Africa, IV: Africa from the Twelfth to the Sixteenth Century",
+      "url": "https://archive.org/details/unesco_general_history_africa_iv",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "UNESCO, Histoire générale de l'Afrique, vol. IV, dir. D. T. Niane, 1984 ; consulté sur le texte intégral de l'exemplaire numérisé, non sur un index. Le chapitre 6, « Mali and the second Mandingo expansion » (D. T. Niane, p. 117-171), donne lignage par lignage l'implantation des clans malinké : les Kamara tenant Sibi et Tabon et les Traoré le Gangaran (p. 127), les deux branches Camara conduites par Tabon-Wana et Kamadian Camara de Sibi (p. 131), Tiramaghan Traoré fondateur du Gabu (p. 127 n. 28, p. 133), la correspondance des noms de clan d'un peuple à l'autre — un Traoré est reçu comme frère par les Diop en pays wolof et peut prendre leur nom (p. 134 n. 43) —, les griots Diabaté de Keyla et la réfection septennale du Kamablon de Kangaba (p. 127 n. 28), et le griot du mansa toujours choisi dans le clan Kouyaté (p. 160). L'ouvrage est une synthèse savante, non une chronique : les claims qu'il porte ici sont donc rangés hors writtenChronicles."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms claniques est signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. 375 entrées au format MDF, consultées sur le fichier complet. Le fichier ne livre aucune légende de ses marqueurs, et la lecture retenue est celle que le fichier impose : \\ca porte les termes de statut mandingues eux-mêmes (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere) ; \\sn se lit senankun parce que l'entrée Kúyate annote sa propre ligne « \\sn Keyita » d'une réserve disant que cette relation-là est une entente amicale et non un senankuya. Les liens \\sn ne sont pas systématiquement réciproques d'une entrée à l'autre : chaque paire est donc citée d'après l'entrée qui la porte, nommée dans le claim ou le gap."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "Le dictionnaire des jamuw range Keyita, Konate et Nakalu parmi les senankun de Kúyate, mais annote la première de ces trois lignes d'une réserve : la relation aux Keïta y est donnée pour une entente amicale et non pour un senankuya. Konate et Nakalu n'ont pas de fiche dans le lot, et le schéma n'enregistre une paire que si les deux patronymes en ont une. Aucune paire n'est donc inscriptible ici — ce qui est un résultat, non une recherche restée sans réponse. La relation jeli/horon n'est pas davantage un sanankuya."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucune lignée homonyme d'origine distincte n'a été trouvée : les Kouyaté relevés par les sources consultées se rattachent tous au même lignage de jeli, celui dont l'Histoire générale de l'Afrique dit que le griot du mansa y était toujours pris. Le dictionnaire des jamuw réunit Kúyate, Kúwate et Kúyatɛ sous une entrée unique et ne lui connaît pas d'équivalence dans un autre peuple."
+    }
+  ]
+}

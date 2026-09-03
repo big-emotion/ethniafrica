@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité à l'attestation antandroy et à la transmission familiale documentées par une source historique dédiée."
+  },
+  "id": "PAT_MONJA",
+  "nameMain": "Monja",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Monja",
+      "attestations": [
+        { "countryId": "MDG", "sourceRefs": ["allen-covell-monja-2005"] }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le dictionnaire historique documente Monja Jaona (1910-1994), d'ascendance antandroy, puis son fils Roindefo Zafitsimivalo Monja à la tête du MONIMA. La récurrence de Monja chez le père et le fils établit une transmission patrilinéaire de l'élément nominal dans cette lignée.",
+        "claimStatus": "established",
+        "sourceRefs": ["allen-covell-monja-2005"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ANTANDROY",
+      "status": "attested",
+      "sourceRefs": ["allen-covell-monja-2005"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["allen-covell-monja-2005"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Monja Jaona",
+      "sourceRefs": ["allen-covell-monja-2005"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "allen-covell-monja-2005",
+      "title": "Historical Dictionary of Madagascar — entrée « Monja Jaona »",
+      "url": "https://shcas.shnu.edu.cn/_upload/article/files/da/7b/8c36ac3a43f280c89d9171a127d4/97c4215b-2044-4149-9f30-43352af1a2ad.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Philip M. Allen et Maureen Covell, 2e éd., Scarecrow Press, 2005, p. 185. L'entrée donne les dates de Monja Jaona, son ascendance antandroy et la succession du MONIMA par son fils Roindefo Zafitsimivalo Monja."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches Monja avec tradition antandroy, razana, généalogie et récit d'origine n'ont livré aucun témoignage attribué à un transmetteur nommé avec transcription."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches exactes « Monja etymology », « Monja anthroponymy » et « Monja nom malgache » n'ont livré aucune étude établissant l'étymon du nom ; un article sur Raramonja ne suffit pas à établir l'origine de Monja."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Le dictionnaire historique et les recherches Monja avec alliance, fihavanana et parenté à plaisanterie ne documentent aucune alliance patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les notices de famille consultées et les recherches exactes « Monja caste » et « Monja fonction sociale héréditaire » n'ont livré aucune caste ou charge attachée au patronyme ; les fonctions politiques de Monja Jaona et de son fils sont individuelles."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "L'entrée historique et les recherches exactes n'ont pas permis de distinguer une autre lignée Monja d'origine indépendante."
+    }
+  ]
+}

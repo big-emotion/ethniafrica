@@ -1,6 +1,13 @@
 "use client";
 
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Search, X } from "lucide-react";
@@ -8,17 +15,31 @@ import { Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SEARCH_EMPTY_LINK_LABEL } from "@/components/ui/EmptyState";
 import { SEARCH_ENTITY_ACCENT } from "@/components/search/searchEntityAccent";
+import { NoResultsLeads } from "@/components/search/NoResultsLeads";
 import { HomeHeroSeeds } from "./HomeHeroSeeds";
 import type { SeedWordsByKind } from "@/lib/home/seedWords";
-import { search as searchCorpus } from "@/lib/afrikLoader";
+import { search as searchCorpus, searchWithLeads } from "@/lib/afrikLoader";
+import {
+  SEARCH_LABEL,
+  SEARCH_PLACEHOLDER,
+  SEARCH_RESULT_GROUPS,
+} from "@/lib/search/searchVocabulary";
 import {
   getCountryRoute,
   getFamilyRoute,
+  getLanguageRoute,
   getLocalizedRoute,
+  getPatronymeRoute,
   getPeopleRoute,
+  getPersonRoute,
 } from "@/lib/routing";
+import { useAutocomplete } from "@/hooks/use-autocomplete";
 import { cn } from "@/lib/utils";
-import type { SearchEntityType, SearchResult } from "@/types/afrik-frontend";
+import type {
+  SearchEntityType,
+  SearchLead,
+  SearchResult,
+} from "@/types/afrik-frontend";
 import type { Language } from "@/types/shared";
 
 /**
@@ -33,14 +54,16 @@ import type { Language } from "@/types/shared";
  * here, because both ask the reader to classify a query they often cannot:
  * Kongo is a people *and* a country, Yoruba a people *and* a language. So the
  * field takes plain text and the panel groups what comes back — which is also
- * the shape `/api/v2/search` already answers in (`{ peoples, countries,
- * families }`, never one flat list). The taxonomy is taught in the result,
- * where it costs the reader nothing, instead of demanded as a precondition.
+ * the shape `/api/v2/search` already answers in (one key per kind, never one
+ * flat list). The taxonomy is taught in the result, where it costs the reader
+ * nothing, instead of demanded as a precondition.
  *
  * The seed chips carry the same teaching in the corpus' own words — literally,
  * since the words are drawn from the fiches on every request (seedWords.ts):
- * three chips show all entity kinds on a phone and a fourth people example
- * uses the extra desktop room. Each reels through corpus examples, drawn
+ * three chips on a phone, and a fourth people example uses the extra desktop
+ * room. They cover three of the five kinds the panel now groups rather than
+ * all of them; a chip per kind would wrap the row, and the classes the chips
+ * leave out are named by the headline above. Each reels through corpus examples, drawn
  * again on every visit. That motion is deliberately on the
  * chips and not on the placeholder — a placeholder is a control's name, it
  * would be renamed under a screen reader six times a minute, and it vanishes
@@ -49,25 +72,11 @@ import type { Language } from "@/types/shared";
  */
 
 /**
- * The field's one visible label, and the field's accessible name — the same
- * string, so what is read and what is heard cannot drift (WCAG 2.5.3).
- *
- * It names three kinds and no more. `/api/v2/search` answers
- * `{ peoples, countries, families }`; a label mentioning languages would
- * promise a result the panel can never produce, which is the one promise this
- * surface may not break.
- *
- * There is no second line of help under it. What the reader gets — a
+ * The label carries no second line of help under it. What the reader gets — a
  * documented record, with its sources — is what the hero's own answer states
  * forty pixels above, and saying it twice is the failure that cost this band
  * its previous standfirst (see the docblock in HomeHero).
  */
-// @req REQ-002
-export const SEARCH_LABEL =
-  "Cherchez un peuple, un pays ou une famille linguistique";
-
-/** Concrete examples complement the scope named by the visible label. */
-const SEARCH_PLACEHOLDER = "Ex. Bafut, Namibie, Bantou";
 
 const MIN_QUERY_LENGTH = 2;
 // @req REQ-002
@@ -86,31 +95,49 @@ const PENDING_MIN_MS = 400;
 /** Enough to prove the kind exists without turning the band into a listing. */
 const MAX_PER_GROUP = 3;
 
-// Plural of the singular labels in SEARCH_ENTITY_ACCENT — a group heads a set.
-// The accent still comes from that one table, so a kind's colour is assigned
-// in a single place across the whole product.
-const GROUPS: { type: SearchEntityType; heading: string }[] = [
-  { type: "people", heading: "Peuples" },
-  { type: "country", heading: "Pays" },
-  { type: "languageFamily", heading: "Familles linguistiques" },
-];
-
 // Hoisted, not written inline as a default parameter: a fresh closure on every
 // render is a fresh dependency for the effect below, which resets state on its
 // way through and so re-renders — one unstable identity is an infinite loop.
 const fetchFromCorpus = (query: string) => searchCorpus(query);
 
+// REQ-125: a second, independent request rather than a `fetchResults` return
+// shape change — every existing caller and test injects `fetchResults` as
+// `(query) => Promise<SearchResult[]>`, and that contract stays untouched.
+const fetchLeadsFromCorpus = (query: string) =>
+  searchWithLeads(query).then((r) => r.leads);
+
+/**
+ * A table rather than a chain of ifs, and typed `Record<SearchEntityType, …>`
+ * so a seventh kind cannot be added to the union without a route for it.
+ *
+ * The chain this replaces ended in `return getPeopleRoute(...)`, which was
+ * correct while the panel showed three kinds and silently wrong the moment it
+ * showed five: a language would have been addressed as `/fr/atlas/peuples/bam`
+ * and answered 404. `strictNullChecks` is off in this project, so no compiler
+ * error was ever going to catch that — an exhaustive record is what does.
+ */
+const FICHE_ROUTE: Record<
+  SearchEntityType,
+  (language: Language, id: string) => string
+> = {
+  people: getPeopleRoute,
+  country: getCountryRoute,
+  languageFamily: getFamilyRoute,
+  language: getLanguageRoute,
+  patronyme: getPatronymeRoute,
+  person: getPersonRoute,
+};
+
 function ficheHref(result: SearchResult, language: Language): string {
-  if (result.type === "country") return getCountryRoute(language, result.id);
-  if (result.type === "languageFamily")
-    return getFamilyRoute(language, result.id);
-  return getPeopleRoute(language, result.id);
+  return FICHE_ROUTE[result.type](language, result.id);
 }
 
 export interface HomeHeroSearchProps {
   language?: Language;
   /** Injected by tests; defaults to the corpus search every other surface uses. */
   fetchResults?: (query: string) => Promise<SearchResult[]>;
+  /** Injected by tests; defaults to the corpus's near-miss leads (REQ-125). */
+  fetchLeads?: (query: string) => Promise<SearchLead[]>;
   /** Drawn from the corpus by the server on every request; see seedWords.ts. */
   seedWords?: SeedWordsByKind;
 }
@@ -119,58 +146,60 @@ export interface HomeHeroSearchProps {
 export function HomeHeroSearch({
   language = "fr",
   fetchResults = fetchFromCorpus,
+  fetchLeads = fetchLeadsFromCorpus,
   seedWords,
 }: HomeHeroSearchProps = {}) {
   const router = useRouter();
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState<SearchResult[]>([]);
-  const [dismissed, setDismissed] = useState(false);
-  const [answered, setAnswered] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(-1);
-  const [pending, setPending] = useState(false);
+  const [leads, setLeads] = useState<SearchLead[]>([]);
   const [showPending, setShowPending] = useState(false);
   // The seed reels stop at the first sign of the reader. Hovering or tabbing
   // into the row is one such sign and the row hears it itself; reaching for
   // the field is the other, and only this component is in a position to know.
   const [fieldTouched, setFieldTouched] = useState(false);
   const inputId = useId();
-  const listboxId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
   const pendingShownAt = useRef(0);
-  // Only the newest query may write to state: a slow "yor" landing after
-  // "yoruba" would otherwise repopulate the panel with the wrong answer.
-  const latestQuery = useRef(0);
 
-  const trimmed = query.trim();
-  const longEnough = trimmed.length >= MIN_QUERY_LENGTH;
+  /**
+   * Each class is capped on its own, so five kinds each keep a foothold in the
+   * panel instead of one prolific kind filling it. Done here rather than after
+   * the fact because the hook numbers the options it is handed, and a reader
+   * pressing ArrowDown must land on the option they can see.
+   */
+  const capPerGroup = useCallback(
+    (found: SearchResult[]) =>
+      SEARCH_RESULT_GROUPS.flatMap(({ type }) =>
+        found.filter((result) => result.type === type).slice(0, MAX_PER_GROUP)
+      ),
+    []
+  );
 
-  useEffect(() => {
-    if (!longEnough) {
-      // Keeping the array's identity when it is already empty is what lets
-      // React bail out instead of scheduling another render of this effect.
-      setResults((current) => (current.length === 0 ? current : []));
-      setAnswered(false);
-      setPending(false);
+  /**
+   * REQ-125: near-misses are worth asking for only once the corpus itself came
+   * back empty. Fired without awaiting — they are a secondary enhancement and
+   * must never hold the busy indicator up for a second round trip. The hook
+   * calls this for the winning query only, so a slow lead cannot land under a
+   * newer answer.
+   */
+  const handleResolved = (found: SearchResult[], forQuery: string) => {
+    if (found.length > 0) {
+      setLeads([]);
       return;
     }
+    fetchLeads(forQuery).then(setLeads);
+  };
 
-    const ticket = ++latestQuery.current;
-    const timer = setTimeout(async () => {
-      // Armed here rather than on the keystroke: the debounce is deliberate
-      // dead time, and reporting it would blink the indicator on every letter.
-      setPending(true);
-      try {
-        const found = await fetchResults(trimmed);
-        if (ticket !== latestQuery.current) return;
-        setResults(found);
-        setAnswered(true);
-      } finally {
-        if (ticket === latestQuery.current) setPending(false);
-      }
-    }, DEBOUNCE_MS);
+  const suggest = useAutocomplete<SearchResult>({
+    fetchSuggestions: fetchResults,
+    onSelect: (result) => router.push(ficheHref(result, language)),
+    onResolved: handleResolved,
+    minLength: MIN_QUERY_LENGTH,
+    debounceMs: DEBOUNCE_MS,
+    arrange: capPerGroup,
+  });
 
-    return () => clearTimeout(timer);
-  }, [trimmed, longEnough, fetchResults]);
+  const { query, activeIndex, pending } = suggest;
+  const trimmed = query.trim();
 
   useEffect(() => {
     if (pending) {
@@ -190,68 +219,63 @@ export function HomeHeroSearch({
     return () => clearTimeout(timer);
   }, [pending, showPending]);
 
+  const flat = suggest.options;
+
+  /**
+   * The panel's headings, rebuilt from the options the hook numbered — same
+   * partition, same order, so a group's option carries the index the keyboard
+   * and `aria-activedescendant` both refer to.
+   */
   const groups = useMemo(() => {
     let cursor = 0;
-    return GROUPS.map(({ type, heading }) => {
-      const options = results
+    return SEARCH_RESULT_GROUPS.map(({ type, heading }) => {
+      const options = flat
         .filter((result) => result.type === type)
-        .slice(0, MAX_PER_GROUP)
         .map((result) => ({ result, index: cursor++ }));
       return { type, heading, options };
     }).filter((group) => group.options.length > 0);
-  }, [results]);
+  }, [flat]);
 
-  const flat = useMemo(
-    () =>
-      groups.flatMap((group) => group.options.map((option) => option.result)),
-    [groups]
-  );
-
-  const open = longEnough && answered && !dismissed;
-  const showListbox = open && flat.length > 0;
-
-  useEffect(() => {
-    setActiveIndex(-1);
-  }, [flat.length, trimmed]);
-
-  const optionId = (index: number) => `${listboxId}-option-${index}`;
-
-  const goTo = (result: SearchResult) =>
-    router.push(ficheHref(result, language));
+  const open = suggest.isAnswered;
+  const showListbox = suggest.isOpen;
 
   const clearQuery = () => {
-    setQuery("");
-    setDismissed(false);
-    setActiveIndex(-1);
+    suggest.clear();
     inputRef.current?.focus();
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Escape") {
-      // The panel first, the text second. Escape is the platform's clear
-      // gesture in a search field and its dismiss gesture for a popup; taking
-      // the reader's words while a panel is covering them would be the wrong
-      // one of the two.
-      if (open) {
-        setDismissed(true);
-        setActiveIndex(-1);
-      } else if (query) {
-        clearQuery();
-      }
+  /**
+   * Escape and an emptied field used to be the only two ways out of this
+   * panel, so it outlived every other gesture — including the one that takes
+   * the reader to the results page, where it then covered the answer they had
+   * just asked for.
+   *
+   * Dismissing is deliberately not the same as clearing: the query stays in
+   * the field, because a reader who submits it is about to see it again at the
+   * top of the results page.
+   */
+  const dismissPanel = () => suggest.dismiss();
+
+  // Anything inside the anchor — an option being tabbed to, the clear button —
+  // is still this control. Only focus landing outside it closes the panel.
+  const handleFocusLeave = (event: React.FocusEvent<HTMLDivElement>) => {
+    if (event.currentTarget.contains(event.relatedTarget as Node | null)) {
       return;
     }
-    if (!showListbox) return;
+    dismissPanel();
+  };
 
-    if (event.key === "ArrowDown") {
-      event.preventDefault();
-      setActiveIndex((index) => Math.min(index + 1, flat.length - 1));
-    } else if (event.key === "ArrowUp") {
-      event.preventDefault();
-      setActiveIndex((index) => Math.max(index - 1, 0));
-    } else if (event.key === "Enter" && activeIndex >= 0) {
-      event.preventDefault();
-      goTo(flat[activeIndex]);
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    // The panel first, the text second. Escape is the platform's clear gesture
+    // in a search field and its dismiss gesture for a popup; taking the
+    // reader's words while a panel is covering them would be the wrong one of
+    // the two. Only the second step is this field's own — the shared hook
+    // dismisses, and never empties.
+    if (event.key === "Escape" && !open && query) {
+      clearQuery();
+      return;
     }
+    suggest.handleKeyDown(event);
   };
 
   const searchRoute = getLocalizedRoute(language, "search");
@@ -260,88 +284,140 @@ export function HomeHeroSearch({
 
   return (
     <div className="home-hero-search afh-accent-ocre">
-      {/* A plain GET form, not a router push: submitting then works before
+      {/* The panel's containing block, and it stops at the form on purpose:
+          hung off .home-hero-search instead, an overlay would open below the
+          seed chips rather than under the field it answers for. */}
+      <div className="home-hero-search-anchor" onBlur={handleFocusLeave}>
+        {/* A plain GET form, not a router push: submitting then works before
           React has hydrated, and the panel below is the enhancement rather
           than the feature. The page it lands on shows everything the panel
           caps at three per kind, with the filters — which is how a reader
           leaves the hero without dead-ending. */}
-      <form
-        role="search"
-        method="get"
-        action={searchRoute}
-        className="home-hero-search-form"
-      >
-        <label htmlFor={inputId} className="home-hero-search-label">
-          {SEARCH_LABEL}
-        </label>
-
-        <div className="home-hero-search-field">
-          {/* The indicator takes the magnifier's slot rather than a slot of
-              its own: same width, so the text never shifts as it appears. */}
-          {showPending ? (
-            <span
-              data-testid="home-hero-search-pending"
-              aria-hidden="true"
-              className="home-hero-search-spinner"
-            />
-          ) : (
-            <Search
-              aria-hidden="true"
-              className="size-5 shrink-0 text-afh-text-soft"
-            />
-          )}
-          <input
-            ref={inputRef}
-            id={inputId}
-            name="q"
-            aria-busy={pending}
-            role="combobox"
-            aria-expanded={showListbox}
-            aria-controls={listboxId}
-            aria-autocomplete="list"
-            aria-activedescendant={
-              activeIndex >= 0 ? optionId(activeIndex) : undefined
-            }
-            placeholder={SEARCH_PLACEHOLDER}
-            type="search"
-            inputMode="search"
-            enterKeyHint="search"
-            autoComplete="off"
-            autoCorrect="off"
-            autoCapitalize="off"
-            spellCheck={false}
-            value={query}
-            onChange={(event) => {
-              setQuery(event.target.value);
-              setDismissed(false);
-            }}
-            onFocus={() => setFieldTouched(true)}
-            onKeyDown={handleKeyDown}
-          />
-
-          {/* type="button" is load-bearing: this sits inside a GET form, where
-              a button with no type is a submit button — the cross would
-              navigate to the search page instead of emptying the field. */}
-          {query && (
-            <button
-              type="button"
-              aria-label="Effacer la recherche"
-              className="home-hero-search-clear"
-              onClick={clearQuery}
-            >
-              <X aria-hidden="true" className="size-4" />
-            </button>
-          )}
-        </div>
-
-        <Button
-          type="submit"
-          variant="accent"
-          className="home-hero-search-submit"
+        <form
+          role="search"
+          method="get"
+          action={searchRoute}
+          className="home-hero-search-form"
+          onSubmit={dismissPanel}
         >
-          Rechercher
-        </Button>
-      </form>
+          <label htmlFor={inputId} className="home-hero-search-label">
+            {SEARCH_LABEL}
+          </label>
+
+          <div className="home-hero-search-field">
+            {/* The indicator takes the magnifier's slot rather than a slot of
+                its own: same width, so the text never shifts as it appears. */}
+            {showPending ? (
+              <span
+                data-testid="home-hero-search-pending"
+                aria-hidden="true"
+                className="home-hero-search-spinner"
+              />
+            ) : (
+              <Search
+                aria-hidden="true"
+                className="size-5 shrink-0 text-afh-text-soft"
+              />
+            )}
+            <input
+              ref={inputRef}
+              id={inputId}
+              name="q"
+              aria-busy={pending}
+              {...suggest.comboboxProps}
+              placeholder={SEARCH_PLACEHOLDER}
+              type="search"
+              inputMode="search"
+              enterKeyHint="search"
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="off"
+              spellCheck={false}
+              value={query}
+              onChange={(event) => suggest.setQuery(event.target.value)}
+              onFocus={() => setFieldTouched(true)}
+              onKeyDown={handleKeyDown}
+            />
+
+            {/* type="button" is load-bearing: this sits inside a GET form,
+                where a button with no type is a submit button — the cross
+                would navigate to the search page instead of emptying the
+                field. */}
+            {query && (
+              <button
+                type="button"
+                aria-label="Effacer la recherche"
+                className="home-hero-search-clear"
+                onClick={clearQuery}
+              >
+                <X aria-hidden="true" className="size-4" />
+              </button>
+            )}
+          </div>
+
+          <Button
+            type="submit"
+            variant="accent"
+            className="home-hero-search-submit"
+          >
+            Rechercher
+          </Button>
+        </form>
+
+        {showListbox && (
+          <div
+            id={suggest.listboxId}
+            role="listbox"
+            aria-label="Suggestions"
+            className="home-hero-search-panel"
+          >
+            {groups.map((group) => (
+              <div
+                key={group.type}
+                role="group"
+                aria-label={group.heading}
+                className={
+                  SEARCH_ENTITY_ACCENT[group.type].accentScopeClassName
+                }
+              >
+                <p aria-hidden="true" className="home-hero-search-group">
+                  {group.heading}
+                </p>
+                {group.options.map(({ result, index }) => (
+                  <Link
+                    key={result.id}
+                    {...suggest.getOptionProps(index)}
+                    href={ficheHref(result, language)}
+                    className={cn(
+                      "home-hero-search-option",
+                      index === activeIndex && "is-active"
+                    )}
+                    onMouseEnter={() => suggest.highlight(index)}
+                    onClick={dismissPanel}
+                  >
+                    {result.name}
+                  </Link>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {open && flat.length === 0 && (
+          <div className="home-hero-search-panel home-hero-search-empty">
+            <p data-testid="state-copy">
+              Aucune fiche pour «&nbsp;{trimmed}&nbsp;».
+            </p>
+            <NoResultsLeads leads={leads} language={language} />
+            <Link
+              href={getLocalizedRoute(language, "families")}
+              onClick={dismissPanel}
+            >
+              {SEARCH_EMPTY_LINK_LABEL}
+            </Link>
+          </div>
+        )}
+      </div>
 
       <HomeHeroSeeds
         onPick={runSeed}
@@ -362,60 +438,14 @@ export function HomeHeroSearch({
             : ""}
       </div>
 
-      {showListbox && (
-        <div
-          id={listboxId}
-          role="listbox"
-          aria-label="Suggestions"
-          className="home-hero-search-panel"
-        >
-          {groups.map((group) => (
-            <div
-              key={group.type}
-              role="group"
-              aria-label={group.heading}
-              className={SEARCH_ENTITY_ACCENT[group.type].accentScopeClassName}
-            >
-              <p aria-hidden="true" className="home-hero-search-group">
-                {group.heading}
-              </p>
-              {group.options.map(({ result, index }) => (
-                <Link
-                  key={result.id}
-                  id={optionId(index)}
-                  role="option"
-                  aria-selected={index === activeIndex}
-                  href={ficheHref(result, language)}
-                  className={cn(
-                    "home-hero-search-option",
-                    index === activeIndex && "is-active"
-                  )}
-                  onMouseEnter={() => setActiveIndex(index)}
-                >
-                  {result.name}
-                </Link>
-              ))}
-            </div>
-          ))}
-        </div>
-      )}
-
-      {open && flat.length === 0 && (
-        <div className="home-hero-search-panel home-hero-search-empty">
-          <p data-testid="state-copy">
-            Aucune fiche pour «&nbsp;{trimmed}&nbsp;».
-          </p>
-          <Link href={getLocalizedRoute(language, "families")}>
-            {SEARCH_EMPTY_LINK_LABEL}
-          </Link>
-        </div>
-      )}
-
       <style>{`
         /* The search remains a distinct action while sitting close enough to
-           the answer to read as its way into the corpus. */
+           the answer to read as its way into the corpus. 36px on the phone,
+           not the desktop 24 that used to apply everywhere: at 430px the
+           title, the answer and the search sat close enough to read as one
+           dense paragraph rather than a question followed by its way in. */
         .home-hero-search {
-          margin-top: 24px;
+          margin-top: 36px;
           text-align: left;
         }
 
@@ -543,12 +573,16 @@ export function HomeHeroSearch({
            property of the block (brand charter §8.1), and this row sits in the
            same header as the question and its answer — a left-aligned row of
            chips under a centred headline is the third alignment in one block. */
+        /* 16px, one ramp step above the 8px between two chips (brand charter
+           §7). At 12 the row sat closer to the field than the chips sat to
+           each other, so the four of them read as a fifth row of the control
+           rather than as suggestions offered under it. */
         .home-hero-search-seeds {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
           gap: 8px;
-          margin: 12px 0 0;
+          margin: 16px 0 0;
           padding: 0;
           list-style: none;
         }
@@ -569,16 +603,35 @@ export function HomeHeroSearch({
           background: var(--accent-tint);
         }
 
-        /* In the flow, not absolutely positioned: .home-hero sets
-           overflow:hidden for its full-bleed 100vw inset, so an overlay panel
-           is clipped at the band's edge. Pushing the content down also keeps
-           the suggestions above the phone keyboard. */
+        /* The containing block for both panels, and it deliberately wraps only
+           the form: anchored to .home-hero-search the panel would open below
+           the seed chips instead of under the field. */
+        .home-hero-search-anchor {
+          position: relative;
+        }
+
+        /* Over the band, not in it. This used to sit in the flow and push the
+           seed chips, the visual and the whole page down as the reader typed —
+           the band's overflow:hidden was the reason, and that clip is now
+           overflow-x:clip in HomeHero, which bounds the 100vw bleed without
+           trapping anything that opens downward.
+
+           Capped and scrollable rather than unbounded: on a phone the panel
+           opens over the fold and a long list would otherwise run past the
+           bottom of the screen with no way back to the field. */
         .home-hero-search-panel {
-          margin-top: 12px;
+          position: absolute;
+          top: calc(100% + 8px);
+          left: 0;
+          right: 0;
+          z-index: 20;
+          max-height: min(60vh, 420px);
+          overflow-y: auto;
           padding: 8px;
           background: var(--afh-surface);
           border: 1px solid var(--afh-border);
           border-radius: var(--afh-radius-lg);
+          box-shadow: var(--afh-elev-warm);
         }
 
         /* Three classes deep on purpose. src/styles/mobile-text.css centres

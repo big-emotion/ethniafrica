@@ -1,7 +1,11 @@
 import Link from "next/link";
 
 import { PurposeBlocks } from "@/components/home/PurposeBlocks";
-import { ACCESS_MODE_LABELS, type AccessMode } from "@/lib/hubs/moduleRegistry";
+import {
+  ACCESS_MODE_LABELS,
+  MODULE_DEFINITIONS,
+  type AccessMode,
+} from "@/lib/hubs/moduleRegistry";
 import { getLocalizedRoute, type PageType } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
@@ -25,6 +29,20 @@ interface AboutPageContentProps {
  * bibliography moved to its own page, `/[lang]/sources`, reachable from the
  * same footer rubric — a reading list is not part of the project pitch.
  */
+/**
+ * The heading a corpus-class card wears, from the registry that declares the
+ * class rather than spelled again here.
+ *
+ * This page names what the corpus holds, and it spelled the six nouns beside
+ * the six links; the links were derived and the headings were not, so the
+ * headings were free to drift from the menu they mirror. They are the same
+ * nouns the site's own description owes (siteDescription.test.ts).
+ */
+const corpusNoun = (page: PageType): string =>
+  MODULE_DEFINITIONS.find(
+    (module) => module.accessMode === "atlas" && module.page === page
+  )?.corpusNoun ?? "";
+
 // @req REQ-091 @req REQ-132
 export default function AboutPageContent({ language }: AboutPageContentProps) {
   const content = {
@@ -32,16 +50,16 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
       title: "À propos",
       overview: {
         eyebrow: "Le projet",
-        lead: "EthniAfrica est un atlas éditorial en français consacré aux peuples, aux langues, aux familles linguistiques et aux pays d’Afrique.",
-        body: "Le corpus relie ces quatre types de fiches pour permettre de les situer sans les confondre. Il se construit progressivement, à partir d’informations documentées et rendues accessibles dans un même espace de consultation.",
+        lead: "EthniAfrica est un atlas éditorial en français consacré aux peuples d’Afrique et aux pays, langues, familles linguistiques, appellations et noms documentés par le corpus.",
+        body: "Le corpus relie ces six types de fiches pour permettre de les situer sans les confondre. Il se construit progressivement, à partir d’informations documentées et rendues accessibles dans un même espace de consultation.",
       },
       contentFamilies: {
         title: "Ce que contient EthniAfrica",
         intro:
-          "Quatre objets distincts structurent le corpus. Chaque fiche peut renvoyer vers les autres lorsque la relation est documentée.",
+          "Six objets distincts structurent le corpus. Chaque fiche peut renvoyer vers les autres lorsque la relation est documentée.",
         items: [
           {
-            title: "Peuples",
+            title: corpusNoun("peoples"),
             description:
               "Des fiches consacrées aux peuples, à leurs appellations et aux relations documentées dans le corpus.",
             accentClass: "afh-accent-ocre",
@@ -49,13 +67,18 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
             linkLabel: "Parcourir les peuples",
           },
           {
-            title: "Langues",
+            title: corpusNoun("languages"),
             description:
               "Les langues sont présentées comme des objets propres et reliées aux peuples et aux familles concernées.",
-            accentClass: "afh-accent-perv",
+            // The one card that named a class and offered no way into it: it
+            // was written before the languages index existed (ETNI-1802), and
+            // nothing sent the reader there once it did.
+            accentClass: "afh-accent-language",
+            page: "languages" as PageType,
+            linkLabel: "Parcourir les langues",
           },
           {
-            title: "Familles linguistiques",
+            title: corpusNoun("families"),
             description:
               "Les regroupements linguistiques disposent de leurs propres fiches et ne sont pas assimilés à des peuples.",
             accentClass: "afh-accent-terre",
@@ -63,12 +86,32 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
             linkLabel: "Parcourir les familles",
           },
           {
-            title: "Pays",
+            title: corpusNoun("countries"),
             description:
               "Les fiches pays donnent le cadre territorial dans lequel le corpus situe ses autres entrées.",
             accentClass: "afh-accent-teal",
             page: "countries" as PageType,
             linkLabel: "Parcourir les pays",
+          },
+          {
+            title: corpusNoun("names"),
+            description:
+              "Les autonymes, les exonymes et les autres appellations documentées sont présentés avec leur contexte et leur provenance.",
+            accentClass: "afh-accent-neutral",
+            page: "names" as PageType,
+            linkLabel: "Parcourir les appellations",
+          },
+          {
+            title: corpusNoun("patronymes"),
+            // Distinct from Appellations directly above, and the page is where
+            // a reader is most likely to conflate the two: one names a people,
+            // the other names a person. Said here rather than left to the two
+            // titles to imply.
+            description:
+              "Les systèmes de nommage des personnes — noms de clan, nisba, noms d’éloge — qui ne se lisent pas tous comme un nom de famille européen.",
+            accentClass: "afh-accent-name",
+            page: "patronymes" as PageType,
+            linkLabel: "Parcourir les noms",
           },
         ],
       },
@@ -76,23 +119,28 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         title: "Trois manières d’entrer dans l’atlas",
         intro:
           "Le même corpus se parcourt selon l’intention du moment : chercher une fiche, approfondir une question ou mettre ses repères à l’épreuve.",
+        // Each description lists the modules the axis actually holds, doing
+        // the same job as the header panel's `menuBlurb`: a reader who has
+        // not opened the menu meets the three axes here first, and the
+        // previous wording stated the intention behind an axis without ever
+        // saying what was behind it.
         items: [
           {
             id: "atlas" as AccessMode,
             description:
-              "Retrouver une fiche et parcourir le corpus par peuple, famille linguistique, pays ou appellation.",
+              "Les fiches du site : familles, langues, peuples, pays, appellations et noms, plus la recherche libre.",
             accentClass: "afh-accent-ocre",
           },
           {
             id: "dossiers" as AccessMode,
             description:
-              "Suivre les sujets qui traversent plusieurs fiches et replacer les informations dans leur contexte.",
+              "Des anecdotes sourcées, les premiers repères de migrations et un dossier sur la colonisation.",
             accentClass: "afh-accent-teal",
           },
           {
             id: "jeux" as AccessMode,
             description:
-              "Interroger ses repères grâce aux jeux construits à partir du corpus.",
+              "Un quiz tiré des fiches, et un jeu qui rend aux pays leur taille réelle.",
             accentClass: "afh-accent-perv",
           },
         ],
@@ -137,7 +185,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         </div>
         <ul
           data-testid="about-content-families"
-          className="grid grid-cols-1 gap-afh-md min-[720px]:grid-cols-2 min-[1240px]:grid-cols-4"
+          className="grid grid-cols-1 gap-afh-md min-[720px]:grid-cols-2 min-[1240px]:grid-cols-5"
           role="list"
         >
           {t.contentFamilies.items.map((family) => (
@@ -185,12 +233,18 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
             {t.accessModes.items.map((mode) => (
               <li
                 key={mode.id}
+                data-testid={`about-access-mode-${mode.id}`}
                 className={`${mode.accentClass} border-l-2 border-[var(--accent)] pl-afh-md text-afh-small leading-relaxed text-afh-text-soft`}
               >
                 <p className="font-bold text-afh-text">
                   {ACCESS_MODE_LABELS[mode.id]}
                 </p>
-                <p className="mt-afh-xs">{mode.description}</p>
+                <p
+                  data-testid={`about-access-mode-description-${mode.id}`}
+                  className="mt-afh-xs"
+                >
+                  {mode.description}
+                </p>
               </li>
             ))}
           </ul>

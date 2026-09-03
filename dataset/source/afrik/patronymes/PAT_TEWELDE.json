@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_TEWELDE",
+  "nameMain": "Tewelde",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Tewelde",
+      "attestations": [
+        {
+          "countryId": "ERI",
+          "sourceRefs": ["afrik-candidate-queue", "shabait-tewelde"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_TIGRAY",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ERI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "shabait-tewelde"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "shabait-tewelde",
+      "title": "Eritrean Names, Towards Cultural Identity — Eritrea Ministry of Information",
+      "url": "https://shabait.com/2019/10/26/eritrean-names-towards-cultural-identity/",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Article du ministère érythréen de l'Information consulté le 2 septembre 2026. Il cite explicitement Tewelde parmi les noms entendus à l'étranger qui évoquent l'Érythrée ou l'Éthiopie ; il ne fournit pas d'étymologie du nom ni de règle de transmission propre à ses porteurs."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches « Tewelde anthroponymie », « Tewelde onomastique », « Tewelde etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche. Les pages exactes consultées n'apportent qu'une attestation de forme ou de répartition ; aucune étymologie n'est donc ajoutée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches « Tewelde anthroponymie », « Tewelde onomastique », « Tewelde etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué ; ce rattachement reste au niveau non vérifié."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Tewelde alliance à plaisanterie », « Tewelde joking relationship » et « Tewelde parenté à plaisanterie » n'ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Tewelde caste », « Tewelde métier héréditaire » et « Tewelde social function » n'ont livré aucune fonction sociale ou professionnelle héréditaire attribuable à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques sur « Tewelde » dans les résultats de catalogues et répertoires consultés n'ont pas permis d'identifier un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes « Tewelde homonym surname », « Tewelde homonyme patronyme » et les variantes graphiques de la fiche n'ont pas établi deux origines distinctes et documentées pour la même forme."
+    }
+  ]
+}

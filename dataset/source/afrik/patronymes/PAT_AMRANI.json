@@ -1,0 +1,124 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français prudent issu d’une recherche dédiée ; l’analyse sémantique publiée est rapportée comme une proposition, non comme une certitude absolue."
+  },
+  "id": "PAT_AMRANI",
+  "nameMain": "Amrani",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "Amrani",
+      "attestations": [
+        {
+          "countryId": "DZA",
+          "sourceRefs": ["amrani-ummto", "amrani-bnf"]
+        },
+        { "countryId": "MAR", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    },
+    {
+      "spelling": "Ɛemrani",
+      "attestations": [{ "countryId": "DZA", "sourceRefs": ["amrani-ummto"] }]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Un mémoire d’anthroponymie kabyle analyse Amrani/Ɛemrani comme un dérivé du prénom arabo-musulman Amran, auquel il attribue les sens « longue vie » ou « prospérité » d’après le dictionnaire de Mustapha Tidjet.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["amrani-ummto"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_AMAZIGH_MACRO",
+      "status": "attested",
+      "sourceRefs": ["amrani-ummto"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "DZA",
+      "status": "attested",
+      "sourceRefs": ["amrani-ummto", "amrani-bnf"]
+    },
+    {
+      "countryId": "MAR",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Abderrahmane Amrani, dit Dahmane el-Harrachi",
+      "sourceRefs": ["amrani-bnf"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "amrani-ummto",
+      "title": "Étude linguistique des anthroponymes des deux localités kabyles : Berkouka et Iguer Guedmimen — analyses morphologique et sémantique",
+      "url": "https://dspace.ummto.dz/server/api/core/bitstreams/5591d5a2-d7be-409b-b845-7140f0d5df69/content",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Fetta Mestar et Melissa Ramdane Cherif, mémoire de master, Université Mouloud Mammeri de Tizi-Ouzou, 2023-2024. L’entrée Amrani a été vérifiée dans le texte intégral. Sa glose dépend d’un dictionnaire secondaire ; elle est donc rapportée comme proposition de la source."
+    },
+    {
+      "sourceKey": "amrani-bnf",
+      "title": "Notice de personne : Dahmane el-Harrachi (1926-1980)",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb13954498s",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Notice d’autorité de la Bibliothèque nationale de France. Elle donne Abderrahmane Amrani comme identité de naissance, ainsi que les dates et l’ancrage algérien du porteur."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les dépôts universitaires kabyles, les catalogues marocains et les recherches « Amrani tradition familiale », « généalogie Amrani » et « العمراني أصل العائلة » n’ont livré aucun récit oral avec transmetteur nommé et transcription."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues BnF, IdRef, Persée, OpenEdition et les dépôts maghrébins n’ont pas livré de chronique ou d’archive ancienne expliquant la formation du patronyme Amrani."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Le mémoire analyse une dérivation depuis un prénom mais ne détermine pas si l’usage familial moderne relève d’une nisba, d’un nom de clan ou d’un ancien patronymique ; la classification héritée reste donc provisoire."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Ni le mémoire anthroponymique ni la notice BnF ne décrivent la règle de transmission familiale ; les recherches « Amrani filiation » et « Amrani patronyme transmission » n’ont pas fourni d’enquête généalogique probante."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches combinant Amrani avec « alliance », « parenté à plaisanterie », « pacte » et « leff » n’ont établi aucune relation entre noms compatible avec une autre fiche PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Le mémoire de l’UMMTO, la notice BnF et les recherches sur un métier ou statut héréditaire lié à Amrani n’en signalent aucun."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les répertoires onomastiques, catalogues d’autorité et recherches multilingues consultés n’ont pas permis de distinguer deux origines autonomes sous la même graphie Amrani."
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Waberi est attesté dans une chaîne de noms djiboutienne ; son origine linguistique et son rattachement ethnique restent non démontrés."
+  },
+  "id": "PAT_WABERI",
+  "nameMain": "Waberi",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Waberi",
+      "attestations": [
+        {
+          "countryId": "DJI",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "waberi-presidence-djibouti-2020"
+          ]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une notice officielle djiboutienne atteste Waberi comme dernier élément de la chaîne de noms de l'artiste Habiba Abdillahi Waberi ; elle ne décrit pas la relation généalogique encodée par cet élément.",
+        "claimStatus": "established",
+        "sourceRefs": ["waberi-presidence-djibouti-2020"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SOMALI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "waberi-presidence-djibouti-2020"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "DJI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Habiba Abdillahi Waberi",
+      "sourceRefs": ["waberi-presidence-djibouti-2020"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "waberi-presidence-djibouti-2020",
+      "title": "Hommage posthume de la Première Dame à la mémoire de feu Habiba Abdillahi Waberi",
+      "url": "https://www.presidence.dj/index.php/article/hommage-posthume-de-la-premiere-dame-a-la-memoire-de-feu-habiba-abdillahi-waberi-812",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Présidence de la République de Djibouti, 24 juin 2020. La page complète a été vérifiée : elle identifie Habiba Abdillahi Waberi comme artiste djiboutienne, confirme son décès et retrace près de quatre décennies de carrière."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les requêtes « Waberi/Waaberi Somali name etymology », les dictionnaires somali-anglais et les catalogues d'onomastique ont été examinés ; aucune analyse linguistique savante du nom n'a été trouvée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "La notice officielle qualifie la porteuse de Djiboutienne et documente sa carrière artistique, mais ne fournit aucune auto-identification somalie ; les recherches biographiques complémentaires n'ont pas confirmé ce rattachement."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "La notice artistique et les recherches « Waberi Djibouti alliance/parenté à plaisanterie » n'ont livré aucune alliance entre deux PAT_* existants."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La carrière artistique de la porteuse est individuelle ; aucune caste ni fonction sociale héréditaire attachée à Waberi n'est mentionnée."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Waberi et Waaberi ont été recherchés comme anthroponymes, ethnonymes, toponymes et noms de quartier ; aucune homonymie distincte n'a pu être reliée à cette forme sans spéculation."
+    }
+  ]
+}

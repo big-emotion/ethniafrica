@@ -1,0 +1,116 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche ciblé sur Souley ; l'origine proposée reste une piste communautaire non vérifiée et l'association zarma n'est pas confirmée."
+  },
+  "id": "PAT_SOULEY",
+  "nameMain": "Souley",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Souley",
+      "attestations": [
+        {
+          "countryId": "NER",
+          "sourceRefs": ["wisdomlib-souley", "un-memorial-adamou-souley"]
+        }
+      ]
+    },
+    {
+      "spelling": "Soulé",
+      "attestations": [
+        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Souley est présenté comme une forme abrégée ou une variante de Souleymane en Afrique de l'Ouest.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["wisdomlib-souley"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ZARMA",
+      "status": "supposed",
+      "sourceRefs": ["un-memorial-adamou-souley"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NER",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Adamou Biga Souley",
+      "sourceRefs": ["un-memorial-adamou-souley"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "wisdomlib-souley",
+      "title": "Souley : signification, origine et popularité",
+      "url": "https://www.wisdomlib.org/fr/names/souley",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page communautaire tertiaire consultée en français. Elle propose un lien entre Souley et Souleymane sans citer de travail linguistique identifiable ; l'information est conservée au tier unverified et au statut claimed."
+    },
+    {
+      "sourceKey": "un-memorial-adamou-souley",
+      "title": "Adamou Biga Souley — United Nations Haiti Memorial",
+      "url": "https://www.un.org/en/memorial/haiti/souley.shtml",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "Notice mémorielle officielle des Nations unies, consultée en anglais et recoupée avec la version française. Elle identifie Adamou Biga Souley comme Nigérien et donne ses dates 1973-2010."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches sur « Souley » dans les corpus et travaux songhay-zarma, avec les termes tradition orale, griot et jasare, n'ont livré aucun récit attribué et transcrit."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues bibliographiques, notices d'autorité et résultats sur Souley/Souleymane ont été consultés ; aucun document historique ne retrace l'introduction de Souley chez les Zarma."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les travaux d'anthroponymie songhay-zarma et les recherches associant « Souley » à Zarma, Djerma et Songhay n'ont fourni aucune attestation ethnique dédiée ; l'association initiale reste donc supposée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches associant « Souley » à parenté à plaisanterie, alliance, cousinage et sanankuya n'ont identifié aucune paire documentée entre deux fiches PAT existantes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches associant « Souley » aux termes caste, métier héréditaire, jasare et fonction sociale n'ont fourni aucune attribution sourcée applicable au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les formes Souley, Soulé et Souleymane ont été distinguées dans les recherches onomastiques ; aucune origine indépendante n'a été établie pour constituer un homonyme."
+    }
+  ]
+}

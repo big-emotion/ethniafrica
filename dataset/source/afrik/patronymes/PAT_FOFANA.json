@@ -1,0 +1,148 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_FOFANA",
+  "nameMain": "Fofana",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Fofana",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["corpus-ppl-dioula-organisation"]
+        },
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["corpus-ppl-dioula-organisation"]
+        },
+        {
+          "countryId": "MLI",
+          "sourceRefs": ["corpus-ppl-dioula-organisation"]
+        },
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["corpus-ppl-dioula-organisation"]
+        },
+        { "countryId": "GNB", "sourceRefs": ["corpus-ppl-dioula-organisation"] }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le jamu est un nom de clan patrilinéaire : il désigne l'appartenance à un groupe de descendance, et non une filiation individuelle au père.",
+        "claimStatus": "established",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_DIOULA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    },
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    },
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    },
+    {
+      "countryId": "GHA",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    },
+    {
+      "countryId": "GNB",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-dioula-organisation"]
+    }
+  ],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_CAMARA",
+      "allianceType": "sanankuya",
+      "sourceRefs": ["bamadaba-jamuw"]
+    },
+    {
+      "targetPatronymeId": "PAT_KEITA",
+      "allianceType": "sanankuya",
+      "sourceRefs": ["bamadaba-jamuw"]
+    },
+    {
+      "targetPatronymeId": "PAT_COULIBALY",
+      "allianceType": "sanankuya",
+      "sourceRefs": ["bamadaba-jamuw"]
+    }
+  ],
+  "casteOrSocialFunction": {
+    "value": "Le dictionnaire des jamuw donne à l'entrée Fófana deux statuts, hɔ̀rɔn — la condition libre et non artisanale au sens où Charry définit le terme — et wage, qu'il ne glose pas. Aucun des deux n'est une caste nyamakala : le jamu ordonne une condition, pas un métier héréditaire.",
+    "sourceRefs": ["bamadaba-jamuw", "charry-1996-jembe"]
+  },
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-dioula-organisation",
+      "title": "EthniAfrica — fiche du peuple Dioula, organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Dioula."
+    },
+    {
+      "sourceKey": "jansen-sunjata-paradigm",
+      "title": "Beyond the Mali Empire — A New Paradigm for the Sunjata Epic",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jansen, Jan, Universiteit Leiden. Travail critique sur la transmission de l'épopée et sur le jamu comme institution sociale plutôt que comme mémoire historique ; utilisé ici pour la nature du jamu, non pour dater un ancêtre."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms claniques est signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. 375 entrées au format MDF, consultées sur le fichier complet. Le fichier ne livre aucune légende de ses marqueurs, et la lecture retenue est celle que le fichier impose : \\ca porte les termes de statut mandingues eux-mêmes (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere) ; \\sn se lit senankun parce que l'entrée Kúyate annote sa propre ligne « \\sn Keyita » d'une réserve disant que cette relation-là est une entente amicale et non un senankuya. Les liens \\sn ne sont pas systématiquement réciproques d'une entrée à l'autre : chaque paire est donc citée d'après l'entrée qui la porte, nommée dans le claim ou le gap."
+    },
+    {
+      "sourceKey": "charry-1996-jembe",
+      "title": "A Guide to the Jembe",
+      "url": "https://echarry.web.wesleyan.edu/jembearticle/article.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Charry, Eric, Percussive Notes 34(2), avril 1996, p. 66-72 ; l'auteur est l'ethnomusicologue de Mande Music (University of Chicago Press, 2000). Article de revue spécialisée, non de revue à comité de lecture : il est cité ici pour l'attribution des jamuw aux statuts sociaux mandingues (numu, jeli, horon), qu'il énonce nommément clan par clan, et non pour l'histoire du jembe."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur n'a été rattaché au jamu Fofana par les sources consultées : ni l'Histoire générale de l'Afrique, qui nomme pourtant clan par clan les lignages ralliés à Soundiata, ni le dictionnaire des jamuw, ni Charry ne l'attachent à une personne."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Fofana est porté dans les aires mandingue et soninké sans qu'une source dédiée établisse deux origines distinctes. Le dictionnaire des jamuw traite cette dispersion sous une entrée unique — il y attache cinq codes d'aire dialectale qu'il ne développe pas — et range Fònba, Magasa, Dancogo, Kamara et Diomandé parmi ses équivalences, des noms de clan d'autres peuples tenus pour le même. Une équivalence n'est pas une homonymie : elle dit que deux noms désignent le même groupe, non que le même nom en désigne deux."
+    }
+  ]
+}

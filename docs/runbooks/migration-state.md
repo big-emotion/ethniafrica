@@ -3,6 +3,26 @@
 **Last verified:** 2026-08-31 (live read of `supabase_migrations.schema_migrations` on **both** projects)
 **Applies to:** every file under `supabase/migrations/`
 
+> **13 of the 81 migration files are not in the table below.** They were added after the last
+> full read, so this runbook has never recorded whether either project carries them:
+>
+> `053_name_table`, `057_person_schema`, `064_patronyme_persons`, `065_afrik_search_persons`,
+> `067_patronyme_name_record_source_tiers`, `071_afrik_name_forms`, `074_admin_allowlist`,
+> `075_flag_reporter_contacts`, `076_pin_function_search_path`, `077_unexpose_privileged_functions`,
+> `079_sources_directory_indexes`, `080_hub_module_corpus_presence`, `081_contributions_into_flags`.
+>
+> Two of them — `076` and `077` — are security migrations, which is the worst class to be unsure
+> about: pinning a function's `search_path` and unexposing privileged functions are exactly the
+> changes whose absence on one project is invisible until it is exploited. Every migration is a
+> two-step rollout, recette then production, and this list is the part of that rollout nobody can
+> currently confirm. The next live read should cover all 13 and fold them into the table; until
+> then, treat their state on **both** projects as unknown rather than applied.
+>
+> The scattered per-entry notes further down ("omitted from this table, added after the last full
+> read") say the same thing one file at a time. This is the consolidated view, because a gap
+> spread across six footnotes reads as housekeeping rather than as thirteen unverified schema
+> changes.
+
 There are two Supabase projects, and both look like "production" for a structural reason: **a
 Supabase project has exactly one environment, and Supabase itself calls that environment
 "production".** There is no staging branch inside a project. So "production" in a Supabase
@@ -209,6 +229,71 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `061_name_alliances.sql`                      | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `062_restore_038_rls_comments.sql`            | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
 | `063_afrik_search_trigram.sql`                | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `066_afrik_search_patronymes.sql`             | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `068_afrik_search_languages.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `069_unified_search_surface.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `070_afrik_search_leads.sql`                  | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `072_people_historical_affiliation.sql`       | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `073_afrik_media.sql`                         | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
+| `078_revoke_iso_code_questions.sql`           | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand, **before** the code deploys   |
+
+> **REQ-127 (ETNI-1384).** `072` adds a `CHECK` constraint on `afrik_peoples.content` enforcing
+> the same shape `checkHistoricalAffiliationModel` (FR111) already enforces on the JSON corpus:
+> when `content->'historicalAffiliation'` is present, it carries a non-empty `description` and a
+> non-empty `sources` array whose every entry has a `tier` from the corpus-wide
+> `official`/`referenced`/`unverified` vocabulary. It is independent of `recompute_confidence()`
+> and the assertions/sources tables — `historicalAffiliation` is a fiche-content field, not a
+> normalized source row, so it does not participate in confidence scoring. File `071` is omitted
+> from this table (added after the last full read, same as `050`/`064`/`065`/`067`); `072` is the
+> next free version on `recette`.
+
+> **REQ-002 (ETNI-1707).** `069` is the blocking SQL contract behind cross-kind search. It adds
+> `public.afrik_search_normalized_score`, which maps each kind's own relevance onto one bounded
+> `[0,1]` scale, and threads it through every search RPC. The problem it closes is that the
+> per-kind scores were never comparable: peoples multiply `ts_rank` by a confidence weight,
+> countries return a bare `ts_rank`, and families used a JavaScript tier ladder an order of
+> magnitude larger than either — merging those numbers ranked by which kind a row came from. The
+> score gives the match class (exact / lexical / fallback) a disjoint band and places the raw
+> magnitude inside it, so the class dominates and the magnitude only breaks ties within one class.
+> `relevance` and `exactMatch` keep their current values on every RPC; `normalizedScore` is added
+> beside them, so nothing reading these functions has to change to keep working.
+>
+> `069` also gives two kinds an RPC for the first time: `afrik_search_language_families`, which
+> reproduces `rankLanguageFamilies`' four tiers in SQL over the `056` search vector, and
+> `afrik_search_quiz`, over the active bank only (`revoked_at IS NULL`, matching `036`'s RLS
+> policy) and joined to each question's subject entity so a reader who types a people's name
+> reaches the questions about it. That function's projection is a closed list: `options_fr` and
+> `correct_option` are the answer key and are never returned, and `explanation_fr` is searched but
+> never projected — including out of the snippet — because it states the answer in prose.
+>
+> Files `064`, `065` and `067` are omitted from this table (added after the last full read, same
+> as `050`); `069` is the next free version after `068_afrik_search_languages`. Until production
+> carries `069`, quiz questions and the family ladder rank on recette and not there, and a merged
+> result list on production keeps ordering by kind.
+
+> **REQ-136 (ETNI-1506).** `068` gives the language entity (`afrik_languages`) the search
+> apparatus every other atlas entity already has: a `name_unaccent_vector` column (mirroring
+> `afrik_peoples`/`afrik_countries`, `052`) and `afrik_search_languages`, modelled on
+> `afrik_search_countries` (`052`) — no confidence/classification filters, since
+> `afrik_languages` carries neither. It differs in one respect: the exact-match bonus fires on
+> the ISO 639-3 id as well as on the name, so a reader who types "swa" reaches Swahili exactly as
+> precisely as one who types its name (the language's `search_vector` already weights the ISO id
+> at tier A since migration `055`, so no new column was needed for that half). File `067` is
+> omitted from this table (added after the last full read, same as `050`/`064`/`065`); `068` is
+> the next free version on `recette`.
+
+> **REQ-135 (ETNI-1457).** `066` gives the name entity (`afrik_patronymes`, `053`) the search
+> apparatus every other entity already has, plus one mechanism none of them do: a
+> `name_phonetic` (fuzzystrmatch `dmetaphone()`) column and index, so a phonetic transcription
+> ("Keyta") reaches a canonically spelled name ("Keïta") that neither an accent fold nor a
+> trigram overlap would bridge. It also extends `public.afrik_unaccent` in place to fold
+> apostrophes as well as accents — a shared helper, not a `afrik_patronymes`-only fix — and adds
+> a `name_main`/`name_unaccent_vector`/`search_vector` trio and a trigram index following the
+> `afrik_search_persons` (`065`) shape exactly. Files `064` and `065` are omitted from this table
+> (added after the last full read, same as `050`); `066` is the next free version on `recette`.
+> Because the apostrophe fold only affects a `name_unaccent_vector` on the next write of an
+> existing row, `afrik_peoples`/`afrik_countries`/`persons` do not retroactively pick it up until
+> their next full corpus reload — no acceptance criterion of this ticket needs them to sooner.
 
 > **ETNI-1411 (DEC-034).** `063` is DEC-034's second mechanism: pg_trgm plus a trigram GIN index
 > on the accent-folded `afrik_peoples.name_main`, and a fallback tier inside

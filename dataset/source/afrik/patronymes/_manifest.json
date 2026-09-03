@@ -1,0 +1,834 @@
+{
+  "schemaVersion": 1,
+  "ticket": "ETNI-1461",
+  "selectionSubtask": "ETNI-1680",
+  "reviewStatus": "selection_review_required",
+  "familyCounts": {
+    "FLG_MANDE": 10,
+    "FLG_NIGERCONGO": 12,
+    "FLG_ATLANTIQUE": 1,
+    "FLG_SEMITIQUE": 4,
+    "FLG_BERBERE": 2,
+    "FLG_BENOUECONGO": 1
+  },
+  "coverageCorrections": [
+    {
+      "staleClaim": "FLG_SONGHAY has zero extracted clan-name candidates",
+      "currentFinding": ["Kurtey", "Taguru"],
+      "evidence": [
+        {
+          "name": "Kurtey",
+          "file": "dataset/source/afrik/peuples/FLG_SONGHAY/PPL_KURTEY.json",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Structure clanique patrilinéaire héritée de l'ascendance peule et consolidée par le métissage avec les Songhaï-Zarma. Les clans Kurtey maintiennent des généalogies qui les rattachent à la fois aux Peuls fondateurs et aux populations songhaï-zarma assimilées. Endogamie clanale partielle : préférence pour les alliances matrimoniales au sein du même groupe ou avec les Wogo. Castes spécialisées héritées : pêcheurs (héritage sorko), agriculteurs, éleveurs (héritage peul)."
+        },
+        {
+          "name": "Taguru",
+          "file": "dataset/source/afrik/peuples/FLG_SONGHAY/PPL_ZARMA.json",
+          "fieldPath": "content.historicalRole.kingdomsOrChiefdoms",
+          "excerpt": "Le sultanat de Dosso (fonde ca. 1750 par Zarmakoy Aboubacar du clan Taguru) est la principale entite politique zarma historique. Il survit ceremonielement a ce jour. Zarmakoy Kossom (1856-1865) unifia l'ensemble de la Zarma orientale. Le Zarmakoy de Dosso devint un pilier de l'administration coloniale francaise, recevant en contrepartie des pouvoirs etendus — l'un des exemples les plus elabores d'administration indirecte en Afrique francophone. En 1923, la capitale coloniale fut deplacee de Zinder a Niamey, en territoire zarma. L'emirat zarma des Zabarma fonda au 19e siecle un etat militaire sur le plateau voltaique (Burkina Faso actuel, nord Ghana), sous le commandement de Babatu."
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "PAT_TRAORE",
+      "name": "Traore",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_MANDE",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_BAMBARA.json",
+        "sourceFicheId": "PPL_BAMBARA",
+        "linguisticFamilyId": "FLG_MANDE"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_BAMBARA.json",
+          "sourceFicheId": "PPL_BAMBARA",
+          "linguisticFamilyId": "FLG_MANDE",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Societe organisee en clans patrilineaires (jamu ou jamuw), chaque clan portant un patronyme emblematique (Coulibaly, Traore, Diarra, Keita, etc.). Les forgerons (numu) et les griots (jeli) constituent des castes endogames distinctes avec des fonctions sociales hereditaires.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "Preserve the corpus spelling Traore without silently adding an accent (REQ-135)."
+    },
+    {
+      "id": "PAT_COULIBALY",
+      "name": "Coulibaly",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_MANDE",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_BAMBARA.json",
+        "sourceFicheId": "PPL_BAMBARA",
+        "linguisticFamilyId": "FLG_MANDE"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_BAMBARA.json",
+          "sourceFicheId": "PPL_BAMBARA",
+          "linguisticFamilyId": "FLG_MANDE",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Societe organisee en clans patrilineaires (jamu ou jamuw), chaque clan portant un patronyme emblematique (Coulibaly, Traore, Diarra, Keita, etc.). Les forgerons (numu) et les griots (jeli) constituent des castes endogames distinctes avec des fonctions sociales hereditaires.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "The extractor cannot attribute this prose sentence to one fiche source; tier review remains required."
+    },
+    {
+      "id": "PAT_KEITA",
+      "name": "Keïta",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_MANDE",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_MALINKE.json",
+        "sourceFicheId": "PPL_MALINKE",
+        "linguisticFamilyId": "FLG_MANDE"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_MALINKE.json",
+          "sourceFicheId": "PPL_MALINKE",
+          "linguisticFamilyId": "FLG_MANDE",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Structure clanique patrilinéaire. Castes héréditaires endogames : horon/foro (libres, principalement agriculteurs et nobles), nyamakala/nyamolo (artisans-griots, incluant forgerons, cordonniers, potiers, sculpteurs, griots/jalolu), et jonw/jongo (anciens esclaves, descendants de captifs). Les castes Jakhanke (clercs islamiques) ont une identité particulière depuis le 13e siècle. Les mariages hors caste étaient traditionnellement interdits. Le clan Keïta (descendants de Soundiata) occupe une place particulière dans la hiérarchie sociale.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "Keïta is an independently attested spelling and must not be collapsed into the unaccented Keita passages during selection review."
+    },
+    {
+      "id": "PAT_DIALLO",
+      "name": "Diallo",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_FULA_FORET.json",
+        "sourceFicheId": "PPL_FULA_FORET",
+        "linguisticFamilyId": "FLG_NIGERCONGO"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_FULA_FORET.json",
+          "sourceFicheId": "PPL_FULA_FORET",
+          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Structure clanique patrilineaire identique aux autres Fula. Organisation en familles etendues et lignages. Les noms de famille (Diallo, Balde, Barry, Sow, Bah, Jallow) signalent les origines regionales et les lignages. Le boeuf reste le marqueur de richesse et de statut, meme si dans les zones tres forestieres les Fula ont souvent adapte leur elevage aux caprins et aux ovins.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "The family count follows the current source fiche classification, not a generalized Fula family assignment."
+    },
+    {
+      "id": "PAT_BAMBA_CLAN",
+      "name": "Bamba",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_MANDE",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json",
+        "sourceFicheId": "PPL_DIOULA",
+        "linguisticFamilyId": "FLG_MANDE"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json",
+          "sourceFicheId": "PPL_DIOULA",
+          "linguisticFamilyId": "FLG_MANDE",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Clans structures autour de grandes familles patronymiques partagees avec les Bambara et les Malinke (Ouattara/Wattara, Coulibaly, Traore, Diarra, Doumbia, Fofana, Kone, Keita, Kouyate, Bamba, Camara, etc.). Les Ouattara detiennent le pouvoir coutumier, les Baro et Saganogo le pouvoir religieux.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "Keep this Manding clan-name entity distinct from the Amba ethnonym and individual Bamba nicknames found elsewhere in the corpus."
+    },
+    {
+      "id": "PAT_CAMARA",
+      "name": "Camara",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_MANDE",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_VAI.json",
+        "sourceFicheId": "PPL_VAI",
+        "linguisticFamilyId": "FLG_MANDE"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_VAI.json",
+          "sourceFicheId": "PPL_VAI",
+          "linguisticFamilyId": "FLG_MANDE",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Structure clanique organisee autour de lignes de descent. Le clan Camara constitue le groupe fondateur, la famille Massaquoi la lignee royale. Villages rectangulaires comptant generalement de deux a six pieces, avec cuisine et sanitaires separees.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "Selection records the Vai fiche occurrence without inferring that every Camara bearer belongs to this lineage."
+    },
+    {
+      "id": "PAT_KOUYATE",
+      "name": "Kouyate",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_MANDE",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json",
+        "sourceFicheId": "PPL_DIOULA",
+        "linguisticFamilyId": "FLG_MANDE"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json",
+          "sourceFicheId": "PPL_DIOULA",
+          "linguisticFamilyId": "FLG_MANDE",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Clans structures autour de grandes familles patronymiques partagees avec les Bambara et les Malinke (Ouattara/Wattara, Coulibaly, Traore, Diarra, Doumbia, Fofana, Kone, Keita, Kouyate, Bamba, Camara, etc.). Les Ouattara detiennent le pouvoir coutumier, les Baro et Saganogo le pouvoir religieux.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "This is a search candidate only; social function must not be inferred from the string."
+    },
+    {
+      "id": "PAT_DIARRA",
+      "name": "Diarra",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_MANDE",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_BAMBARA.json",
+        "sourceFicheId": "PPL_BAMBARA",
+        "linguisticFamilyId": "FLG_MANDE"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_BAMBARA.json",
+          "sourceFicheId": "PPL_BAMBARA",
+          "linguisticFamilyId": "FLG_MANDE",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Societe organisee en clans patrilineaires (jamu ou jamuw), chaque clan portant un patronyme emblematique (Coulibaly, Traore, Diarra, Keita, etc.). Les forgerons (numu) et les griots (jeli) constituent des castes endogames distinctes avec des fonctions sociales hereditaires.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "The passage supports selection, not an inference about any present-day bearer."
+    },
+    {
+      "id": "PAT_DIABATE",
+      "name": "Diabate",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_MANDE",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_DAFING.json",
+        "sourceFicheId": "PPL_DAFING",
+        "linguisticFamilyId": "FLG_MANDE"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_DAFING.json",
+          "sourceFicheId": "PPL_DAFING",
+          "linguisticFamilyId": "FLG_MANDE",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Organisation clanique patrilineaire. Les clans principaux portent des patronymes comme Coulibaly, Traore, Dembele et Diabate. La structure sociale comprend une noblesse marchande et religieuse, une classe d'artisans (forgerons, tisserands) et une classe paysanne.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "Do not infer caste or occupation from the adjacent prose; a fiche needs claim-level sourcing."
+    },
+    {
+      "id": "PAT_FOFANA",
+      "name": "Fofana",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_MANDE",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json",
+        "sourceFicheId": "PPL_DIOULA",
+        "linguisticFamilyId": "FLG_MANDE"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json",
+          "sourceFicheId": "PPL_DIOULA",
+          "linguisticFamilyId": "FLG_MANDE",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Clans structures autour de grandes familles patronymiques partagees avec les Bambara et les Malinke (Ouattara/Wattara, Coulibaly, Traore, Diarra, Doumbia, Fofana, Kone, Keita, Kouyate, Bamba, Camara, etc.). Les Ouattara detiennent le pouvoir coutumier, les Baro et Saganogo le pouvoir religieux.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "No source tier is inherited until an editor resolves which fiche source supports this sentence."
+    },
+    {
+      "id": "PAT_DOUMBIA",
+      "name": "Doumbia",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_MANDE",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json",
+        "sourceFicheId": "PPL_DIOULA",
+        "linguisticFamilyId": "FLG_MANDE"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json",
+          "sourceFicheId": "PPL_DIOULA",
+          "linguisticFamilyId": "FLG_MANDE",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Clans structures autour de grandes familles patronymiques partagees avec les Bambara et les Malinke (Ouattara/Wattara, Coulibaly, Traore, Diarra, Doumbia, Fofana, Kone, Keita, Kouyate, Bamba, Camara, etc.). Les Ouattara detiennent le pouvoir coutumier, les Baro et Saganogo le pouvoir religieux.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "Selection retains the exact unaccented spelling in the source passage."
+    },
+    {
+      "id": "PAT_SOW",
+      "name": "Sow",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_ATLANTIQUE",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_ATLANTIQUE/PPL_WOLOF.json",
+        "sourceFicheId": "PPL_WOLOF",
+        "linguisticFamilyId": "FLG_ATLANTIQUE"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_ATLANTIQUE/PPL_WOLOF.json",
+          "sourceFicheId": "PPL_WOLOF",
+          "linguisticFamilyId": "FLG_ATLANTIQUE",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Organisation en lignages patrilineaires, renforcee depuis l'epoque de l'Empire Jolof qui a entraine le passage d'un systeme matrilineaire a un systeme patrilineaire. Les noms de famille (Ndiaye, Diop, Ndour, Fall, Mbaye, Sow) sont associes a des origines claniques ou regionales specifiques.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "The Wolof occurrence is selected independently of same-spelling occurrences in Fula fiches."
+    },
+    {
+      "id": "PAT_DUBE",
+      "name": "Dube",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDAU_MOZ.json",
+        "sourceFicheId": "PPL_NDAU_MOZ",
+        "linguisticFamilyId": "FLG_NIGERCONGO"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDAU_MOZ.json",
+          "sourceFicheId": "PPL_NDAU_MOZ",
+          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Structure clanique patrilinéaire avec système de totems (mitupo) interdisant le mariage entre membres du même clan. Les noms de famille distinguent les clans ndau : les influences nguni sont visibles dans certains noms (Sithole, Sibanda, Dube, Moyo). Les clans organisent la transmission foncière, les obligations rituelles et les alliances matrimoniales. Le bridewealth (lobolo) est pratiqué, avec des négociations entre familles.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "The manifest records a Ndau corpus occurrence; homonymous Dube entities require separate fiche research."
+    },
+    {
+      "id": "PAT_MTHETHWA",
+      "name": "Mthethwa",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDEBELE_NORD.json",
+        "sourceFicheId": "PPL_NDEBELE_NORD",
+        "linguisticFamilyId": "FLG_NIGERCONGO"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDEBELE_NORD.json",
+          "sourceFicheId": "PPL_NDEBELE_NORD",
+          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Le clan dominant est celui des Khumalo (lignée royale de Mzilikazi). La nation Mthwakazi intégrait de nombreux clans d'origines diverses (Nguni, Sotho, Rozvi, Kalanga). Les izibongo (noms de clans et chants de louange) structurent l'identité clanique. Les principaux clans Nguni inclus : Khumalo (royal), Mthethwa, Nxumalo, Ndlovu, Dlomo, Sibanda, Mpofu.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "The clan-name entity remains distinct from the Mthethwa polity and any personal bearer."
+    },
+    {
+      "id": "PAT_NDLOVU",
+      "name": "Ndlovu",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDEBELE_NORD.json",
+        "sourceFicheId": "PPL_NDEBELE_NORD",
+        "linguisticFamilyId": "FLG_NIGERCONGO"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDEBELE_NORD.json",
+          "sourceFicheId": "PPL_NDEBELE_NORD",
+          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Le clan dominant est celui des Khumalo (lignée royale de Mzilikazi). La nation Mthwakazi intégrait de nombreux clans d'origines diverses (Nguni, Sotho, Rozvi, Kalanga). Les izibongo (noms de clans et chants de louange) structurent l'identité clanique. Les principaux clans Nguni inclus : Khumalo (royal), Mthethwa, Nxumalo, Ndlovu, Dlomo, Sibanda, Mpofu.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "No linguistic meaning or totem relation is asserted at manifest stage."
+    },
+    {
+      "id": "PAT_NXUMALO",
+      "name": "Nxumalo",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDEBELE_NORD.json",
+        "sourceFicheId": "PPL_NDEBELE_NORD",
+        "linguisticFamilyId": "FLG_NIGERCONGO"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDEBELE_NORD.json",
+          "sourceFicheId": "PPL_NDEBELE_NORD",
+          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Le clan dominant est celui des Khumalo (lignée royale de Mzilikazi). La nation Mthwakazi intégrait de nombreux clans d'origines diverses (Nguni, Sotho, Rozvi, Kalanga). Les izibongo (noms de clans et chants de louange) structurent l'identité clanique. Les principaux clans Nguni inclus : Khumalo (royal), Mthethwa, Nxumalo, Ndlovu, Dlomo, Sibanda, Mpofu.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "The source phrase mixes clan names and praise poetry; subtype needs confirmation during fiche research."
+    },
+    {
+      "id": "PAT_SIBANDA",
+      "name": "Sibanda",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDEBELE_NORD.json",
+        "sourceFicheId": "PPL_NDEBELE_NORD",
+        "linguisticFamilyId": "FLG_NIGERCONGO"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDEBELE_NORD.json",
+          "sourceFicheId": "PPL_NDEBELE_NORD",
+          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Le clan dominant est celui des Khumalo (lignée royale de Mzilikazi). La nation Mthwakazi intégrait de nombreux clans d'origines diverses (Nguni, Sotho, Rozvi, Kalanga). Les izibongo (noms de clans et chants de louange) structurent l'identité clanique. Les principaux clans Nguni inclus : Khumalo (royal), Mthethwa, Nxumalo, Ndlovu, Dlomo, Sibanda, Mpofu.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "Keep this selected spelling distinct from Sibande, which is separately attested in the corpus."
+    },
+    {
+      "id": "PAT_DLAMINI_CLAN",
+      "name": "Dlamini",
+      "nameSystem": "clan_name",
+      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_SWAZI.json",
+        "sourceFicheId": "PPL_SWAZI",
+        "linguisticFamilyId": "FLG_NIGERCONGO"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_SWAZI.json",
+          "sourceFicheId": "PPL_SWAZI",
+          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "La société swazi est organisée en clans patrilinéaires (emindeni). Les 17 clans bemdzabuko (vrais Swazi) ont un statut particulier car ils accompagnèrent les rois Dlamini dans leur migration fondatrice. Le clan Dlamini est le clan royal. Les clans emakhandzambili sont les peuples autochtones intégrés à la nation. Chaque clan a ses propres traditions, tabous alimentaires (imitimba) et chants de louange (imbongi).",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "This ID explicitly denotes the clan-name entity; royal persons and praise expressions remain separate homonyms."
+    },
+    {
+      "id": "PAT_FFUMBE",
+      "name": "Ffumbe",
+      "nameSystem": "totemic_clan",
+      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
+        "sourceFicheId": "PPL_GANDA",
+        "linguisticFamilyId": "FLG_NIGERCONGO"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
+          "sourceFicheId": "PPL_GANDA",
+          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Plus de 52 clans (ebika) reconnus, chacun avec un totem principal (omuziro) et un totem secondaire (akabbiro). Les cinq clans originels (banansangwa) sont : Ffumbe (civette), Lugave (pangolin), Ngonge (otarie), Njaza (rat), Nnyonyi (oiseau). Parmi les clans importants : Mmamba (lungfish, dont le Gabunga amiral de la flotte royale), Ngabi (impala, dont la lignee du Kabaka), Mpologoma (lion). Chaque clan a un chef (owokasolya) et une hierarchie interne : ssiga, mutuba, lunyiriri, ennyumba (maison/famille nucleaire). Le mariage est exogame : un Muganda ne peut epouser quelqu'un de son propre clan.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "Selected from a Baganda self-designation fiche; do not merge with similarly prefixed Rwanda or Burundi clan strings."
+    },
+    {
+      "id": "PAT_LUGAVE",
+      "name": "Lugave",
+      "nameSystem": "totemic_clan",
+      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
+        "sourceFicheId": "PPL_GANDA",
+        "linguisticFamilyId": "FLG_NIGERCONGO"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
+          "sourceFicheId": "PPL_GANDA",
+          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Plus de 52 clans (ebika) reconnus, chacun avec un totem principal (omuziro) et un totem secondaire (akabbiro). Les cinq clans originels (banansangwa) sont : Ffumbe (civette), Lugave (pangolin), Ngonge (otarie), Njaza (rat), Nnyonyi (oiseau). Parmi les clans importants : Mmamba (lungfish, dont le Gabunga amiral de la flotte royale), Ngabi (impala, dont la lignee du Kabaka), Mpologoma (lion). Chaque clan a un chef (owokasolya) et une hierarchie interne : ssiga, mutuba, lunyiriri, ennyumba (maison/famille nucleaire). Le mariage est exogame : un Muganda ne peut epouser quelqu'un de son propre clan.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "The totem association is a research lead, not yet a sourced fiche assertion."
+    },
+    {
+      "id": "PAT_NGONGE",
+      "name": "Ngonge",
+      "nameSystem": "totemic_clan",
+      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
+        "sourceFicheId": "PPL_GANDA",
+        "linguisticFamilyId": "FLG_NIGERCONGO"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
+          "sourceFicheId": "PPL_GANDA",
+          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Plus de 52 clans (ebika) reconnus, chacun avec un totem principal (omuziro) et un totem secondaire (akabbiro). Les cinq clans originels (banansangwa) sont : Ffumbe (civette), Lugave (pangolin), Ngonge (otarie), Njaza (rat), Nnyonyi (oiseau). Parmi les clans importants : Mmamba (lungfish, dont le Gabunga amiral de la flotte royale), Ngabi (impala, dont la lignee du Kabaka), Mpologoma (lion). Chaque clan a un chef (owokasolya) et une hierarchie interne : ssiga, mutuba, lunyiriri, ennyumba (maison/famille nucleaire). Le mariage est exogame : un Muganda ne peut epouser quelqu'un de son propre clan.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "PPL_BAGANDA gives a different animal gloss; the future fiche must expose and source the disagreement."
+    },
+    {
+      "id": "PAT_NJAZA",
+      "name": "Njaza",
+      "nameSystem": "totemic_clan",
+      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
+        "sourceFicheId": "PPL_GANDA",
+        "linguisticFamilyId": "FLG_NIGERCONGO"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
+          "sourceFicheId": "PPL_GANDA",
+          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Plus de 52 clans (ebika) reconnus, chacun avec un totem principal (omuziro) et un totem secondaire (akabbiro). Les cinq clans originels (banansangwa) sont : Ffumbe (civette), Lugave (pangolin), Ngonge (otarie), Njaza (rat), Nnyonyi (oiseau). Parmi les clans importants : Mmamba (lungfish, dont le Gabunga amiral de la flotte royale), Ngabi (impala, dont la lignee du Kabaka), Mpologoma (lion). Chaque clan a un chef (owokasolya) et une hierarchie interne : ssiga, mutuba, lunyiriri, ennyumba (maison/famille nucleaire). Le mariage est exogame : un Muganda ne peut epouser quelqu'un de son propre clan.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "PPL_BAGANDA gives a different animal gloss; this conflict remains an explicit editorial risk."
+    },
+    {
+      "id": "PAT_KEBREAB_PATRONYMIC",
+      "name": "Kebreab",
+      "nameSystem": "non_hereditary_patronymic",
+      "primaryLinguisticFamilyId": "FLG_SEMITIQUE",
+      "selectionBasis": "external_academic_or_institutional",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_SEMITIQUE/PPL_TIGRAY.json",
+        "sourceFicheId": "PPL_TIGRAY",
+        "linguisticFamilyId": "FLG_SEMITIQUE"
+      },
+      "corpusPassages": [],
+      "externalSelectionSources": [
+        {
+          "title": "Names of Persons: National Usages for Entry in Catalogues — Ethiopia",
+          "url": "https://www.ifla.org/files/assets/cataloguing/pubs/names-of-persons_1996.pdf",
+          "organization": "International Federation of Library Associations and Institutions",
+          "sourceType": "institutional",
+          "accessedAt": "2026-09-01",
+          "supports": "The Ethiopia table gives Kebreab as the father's personal name in the example Ermias Kebreab and explains that the father's name is not a hereditary family name."
+        }
+      ],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "No corpus passage names this candidate. The source supports selection for research, not a completed factual fiche."
+    },
+    {
+      "id": "PAT_WOLDE_MARIAM_PATRONYMIC",
+      "name": "Wolde Mariam",
+      "nameSystem": "non_hereditary_patronymic",
+      "primaryLinguisticFamilyId": "FLG_SEMITIQUE",
+      "selectionBasis": "external_academic_or_institutional",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_SEMITIQUE/PPL_AMHARA.json",
+        "sourceFicheId": "PPL_AMHARA",
+        "linguisticFamilyId": "FLG_SEMITIQUE"
+      },
+      "corpusPassages": [],
+      "externalSelectionSources": [
+        {
+          "title": "Names of Persons: National Usages for Entry in Catalogues — Ethiopia",
+          "url": "https://www.ifla.org/files/assets/cataloguing/pubs/names-of-persons_1996.pdf",
+          "organization": "International Federation of Library Associations and Institutions",
+          "sourceType": "institutional",
+          "accessedAt": "2026-09-01",
+          "supports": "The Ethiopia table lists Wolde Mariam as a compound father's personal name in the example Habte Sellassie Wolde Mariam."
+        }
+      ],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "No corpus passage names this candidate; compound spelling and transliteration need source-led fiche research."
+    },
+    {
+      "id": "PAT_GHEBREMICHAEL_PATRONYMIC",
+      "name": "Ghebremichael",
+      "nameSystem": "non_hereditary_patronymic",
+      "primaryLinguisticFamilyId": "FLG_SEMITIQUE",
+      "selectionBasis": "external_academic_or_institutional",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_SEMITIQUE/PPL_TIGRAY.json",
+        "sourceFicheId": "PPL_TIGRAY",
+        "linguisticFamilyId": "FLG_SEMITIQUE"
+      },
+      "corpusPassages": [],
+      "externalSelectionSources": [
+        {
+          "title": "How students in Eritrea and Norway make sense of literature",
+          "url": "https://brage.inn.no/inn-xmlui/bitstream/handle/11250/132010/Munden_J_How%20students%20in%20Eritrea%20and%20Norway.pdf?sequence=3&isAllowed=y",
+          "organization": "Inland Norway University of Applied Sciences institutional repository",
+          "sourceType": "academic",
+          "accessedAt": "2026-09-01",
+          "supports": "The note on Eritrean names identifies Ghebremichael as Yohannes's father's name in Yohannes Ghebremichael Kifle and explains that the second element is a non-hereditary patronymic."
+        }
+      ],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "No corpus passage names this candidate; the current family link is a search starting point, not an ethnic attribution."
+    },
+    {
+      "id": "PAT_HAILE_PATRONYMIC",
+      "name": "Haile",
+      "nameSystem": "non_hereditary_patronymic",
+      "primaryLinguisticFamilyId": "FLG_SEMITIQUE",
+      "selectionBasis": "external_academic_or_institutional",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_SEMITIQUE/PPL_AMHARA.json",
+        "sourceFicheId": "PPL_AMHARA",
+        "linguisticFamilyId": "FLG_SEMITIQUE"
+      },
+      "corpusPassages": [],
+      "externalSelectionSources": [
+        {
+          "title": "Ethiopian Names and Titles",
+          "url": "https://academic.oup.com/book/57485/chapter-abstract/466896790",
+          "organization": "Oxford University Press",
+          "sourceType": "academic",
+          "accessedAt": "2026-09-01",
+          "supports": "The chapter explains that Ethiopians add a father's name rather than a family surname and uses Makonnen Haile as the son of Haile Mangasha."
+        }
+      ],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "No corpus passage names this candidate. Haile may occur as a given name elsewhere and that homonym must remain distinct."
+    },
+    {
+      "id": "PAT_MAGHRAWA",
+      "name": "Maghrawa",
+      "nameSystem": "nisba",
+      "primaryLinguisticFamilyId": "FLG_BERBERE",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_BERBERE/PPL_ZENATA.json",
+        "sourceFicheId": "PPL_ZENATA",
+        "linguisticFamilyId": "FLG_BERBERE"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_BERBERE/PPL_ZENATA.json",
+          "sourceFicheId": "PPL_ZENATA",
+          "linguisticFamilyId": "FLG_BERBERE",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Les trois grandes tribus identifiees par Ibn Khaldun (Jarawa, Maghrawa, Banu Ifran) se subdivisaient en clans et familles etendues. L'organisation clanique permettait de mobiliser rapidement des contingents militaires (notamment la cavalerie legere, la gineteria, reputee dans tout l'Occident). Les alliances entre clans etaient scellees par des mariages et des pactes guerriers.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "Nisba is provisional: the fiche research must distinguish tribal designation, dynasty, and personal nisba uses."
+    },
+    {
+      "id": "PAT_BANU_IFRAN",
+      "name": "Banu Ifran",
+      "nameSystem": "nisba",
+      "primaryLinguisticFamilyId": "FLG_BERBERE",
+      "selectionBasis": "corpus",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_BERBERE/PPL_ZENATA.json",
+        "sourceFicheId": "PPL_ZENATA",
+        "linguisticFamilyId": "FLG_BERBERE"
+      },
+      "corpusPassages": [
+        {
+          "file": "dataset/source/afrik/peuples/FLG_BERBERE/PPL_ZENATA.json",
+          "sourceFicheId": "PPL_ZENATA",
+          "linguisticFamilyId": "FLG_BERBERE",
+          "fieldPath": "content.organization.clanOrganization",
+          "excerpt": "Les trois grandes tribus identifiees par Ibn Khaldun (Jarawa, Maghrawa, Banu Ifran) se subdivisaient en clans et familles etendues. L'organisation clanique permettait de mobiliser rapidement des contingents militaires (notamment la cavalerie legere, la gineteria, reputee dans tout l'Occident). Les alliances entre clans etaient scellees par des mariages et des pactes guerriers.",
+          "inheritedTier": null,
+          "tierResolution": "review_required",
+          "sourceReviewStatus": "unreviewed"
+        }
+      ],
+      "externalSelectionSources": [],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "Nisba is provisional; Banu Ifran as a collective tribal name must not be treated as a modern hereditary surname without direct evidence."
+    },
+    {
+      "id": "PAT_ABIKAN_PRAISE",
+      "name": "Abikan",
+      "nameSystem": "praise_name",
+      "primaryLinguisticFamilyId": "FLG_BENOUECONGO",
+      "selectionBasis": "external_academic_or_institutional",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_BENOUECONGO/PPL_YORUBA.json",
+        "sourceFicheId": "PPL_YORUBA",
+        "linguisticFamilyId": "FLG_BENOUECONGO"
+      },
+      "corpusPassages": [],
+      "externalSelectionSources": [
+        {
+          "title": "Language Hybridization in African Literary Texts: A Study of Selected Novels by Lola Fassinou and Abimbola Adelakun",
+          "url": "https://english.fullerton.edu/publications/clnArchives/pdf/Ayeleru%20NOVEL.pdf",
+          "organization": "California State University, Fullerton — California Linguistic Notes",
+          "sourceType": "academic",
+          "accessedAt": "2026-09-01",
+          "supports": "The article identifies the genealogy line Omo Abikan as Yoruba oriki, explicitly described as a lineage praise name."
+        }
+      ],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "No corpus passage supplies this selection. Research must distinguish Abikan as a lineage reference from the full praise poem."
+    },
+    {
+      "id": "PAT_MNTUNGWA_PRAISE",
+      "name": "Mntungwa",
+      "nameSystem": "praise_name",
+      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "selectionBasis": "external_academic_or_institutional",
+      "familyEvidence": {
+        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_NDEBELE_NORD.json",
+        "sourceFicheId": "PPL_NDEBELE_NORD",
+        "linguisticFamilyId": "FLG_NIGERCONGO"
+      },
+      "corpusPassages": [],
+      "externalSelectionSources": [
+        {
+          "title": "The Social and Literary Aspects of Zulu Personal Names",
+          "url": "https://repository.nwu.ac.za/bitstreams/ea16f498-c289-4e9a-8f98-c9ed3b0354ab/download",
+          "organization": "North-West University institutional repository",
+          "sourceType": "academic",
+          "accessedAt": "2026-09-01",
+          "supports": "The study presents Mntungwa in the Khumalo izithakazelo sequence, providing a direct academic lead for a lineage praise-name fiche."
+        }
+      ],
+      "reviewStatus": "fiche_research_first_pass_complete",
+      "editorialNotes": "No corpus passage supplies this selection. Keep the Mntungwa praise-name candidate distinct from the Khumalo clan-name entity."
+    }
+  ]
+}

@@ -783,6 +783,8 @@ export interface AtlasGlobeProps {
    * figure. The default retains the complete atlas toolbar over the stage.
    */
   presentation?: "standard" | "editorial";
+  /** Opt-in gentle arrival rotation, used by the homepage only. */
+  autoRotate?: boolean;
   /** Multiplier applied to the rendered camera without changing atlas limits. */
   viewScale?: number;
 }
@@ -816,7 +818,10 @@ const TAP_TRAVEL_TOLERANCE_PX = 6;
  * surface actually has. A flat map cannot be turned, and announcing a turn there
  * sent a reader dragging for a rotation that was never going to happen.
  */
-function globeSurfaceLabel(turns: boolean): string {
+function globeSurfaceLabel(turns: boolean, autoRotating = false): string {
+  if (autoRotating) {
+    return "Globe de l'atlas. Interagissez avec le globe pour arrêter la rotation.";
+  }
   return turns
     ? "Globe de l'atlas. Glissez ou utilisez les flèches pour tourner."
     : "Carte de l'atlas. Glissez ou utilisez les flèches pour déplacer.";
@@ -1052,6 +1057,7 @@ export function AtlasGlobe({
   showTissot = false,
   presentation = "standard",
   viewScale = 1,
+  autoRotate = false,
 }: AtlasGlobeProps) {
   /**
    * Three states, not two: `undefined` is "not probed yet", and it is different
@@ -1225,7 +1231,8 @@ export function AtlasGlobe({
   const camera = useGlobeCamera(
     destination,
     restPose,
-    reducedMotion || !cameraFollowsChoice
+    reducedMotion || !cameraFollowsChoice,
+    autoRotate && !reducedMotion && webglSupported === true && !canvasGaveUp
   );
 
   /**
@@ -1256,6 +1263,9 @@ export function AtlasGlobe({
         ? FLAT_MORPH
         : SPHERE_MORPH;
   const flat = morph <= NEARLY_FLAT_MORPH;
+  useEffect(() => {
+    if (autoRotate && flat) camera.stopAutoRotation();
+  }, [autoRotate, camera.stopAutoRotation, flat]);
   const dragging = useRef(false);
   const lastPointer = useRef({ x: 0, y: 0 });
   /**
@@ -1319,6 +1329,7 @@ export function AtlasGlobe({
   };
 
   const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    camera.stopAutoRotation();
     dragging.current = true;
     travelled.current = 0;
     lastPointer.current = { x: event.clientX, y: event.clientY };
@@ -1360,6 +1371,7 @@ export function AtlasGlobe({
 
   /** One arrow press, routed to whichever motion the current surface has. */
   const steer = (towardsX: number, towardsY: number) => {
+    camera.stopAutoRotation();
     if (surfaceTurns) {
       // Up sends the surface up, which is a decrease in pitch — the same
       // convention the drag follows.
@@ -1374,6 +1386,21 @@ export function AtlasGlobe({
   };
 
   const handleKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
+    if (
+      ![
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowUp",
+        "ArrowDown",
+        "+",
+        "=",
+        "-",
+        "_",
+      ].includes(event.key)
+    ) {
+      return;
+    }
+    camera.stopAutoRotation();
     switch (event.key) {
       case "ArrowLeft":
         steer(-1, 0);
@@ -1574,7 +1601,7 @@ export function AtlasGlobe({
       <div
         data-atlas-surface=""
         role="application"
-        aria-label={globeSurfaceLabel(surfaceTurns)}
+        aria-label={globeSurfaceLabel(surfaceTurns, camera.autoRotating)}
         tabIndex={0}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
@@ -1670,9 +1697,11 @@ export function AtlasGlobe({
             style={{ color: "var(--afh-globe-stage-ink)" }}
           >
             {presentation === "editorial"
-              ? surfaceTurns
-                ? "Glissez pour tourner."
-                : "Glissez pour déplacer."
+              ? camera.autoRotating
+                ? "Interagissez avec le globe pour arrêter la rotation."
+                : surfaceTurns
+                  ? "Glissez pour tourner."
+                  : "Glissez pour déplacer."
               : globeLegendSentence(surfaceTurns, marksCountries)}
           </p>
         )}
@@ -1733,9 +1762,10 @@ export function AtlasGlobe({
                 value={Math.round(morph * MORPH_BAR_STEPS)}
                 aria-label="Morphing de la carte plate vers le globe"
                 aria-valuetext={projectionSurfaceName(morph)}
-                onChange={(event) =>
-                  setReaderMorph(Number(event.target.value) / MORPH_BAR_STEPS)
-                }
+                onChange={(event) => {
+                  camera.stopAutoRotation();
+                  setReaderMorph(Number(event.target.value) / MORPH_BAR_STEPS);
+                }}
                 className="atlas-morph-range h-11 min-w-0 flex-1 cursor-pointer bg-transparent"
               />
               <span
@@ -1816,7 +1846,10 @@ export function AtlasGlobe({
               <button
                 type="button"
                 aria-pressed={chosenCountryId === null}
-                onClick={() => setChosenCountryId(null)}
+                onClick={() => {
+                  camera.stopAutoRotation();
+                  setChosenCountryId(null);
+                }}
                 className={TOOLBAR_BUTTON_CLASS}
                 style={TOOLBAR_BUTTON_STYLE}
               >
@@ -1833,11 +1866,12 @@ export function AtlasGlobe({
                   <button
                     type="button"
                     aria-pressed={flat}
-                    onClick={() =>
+                    onClick={() => {
+                      camera.stopAutoRotation();
                       setReaderMorph((current) =>
                         current <= NEARLY_FLAT_MORPH ? SPHERE_MORPH : FLAT_MORPH
-                      )
-                    }
+                      );
+                    }}
                     className={TOOLBAR_BUTTON_CLASS}
                     style={TOOLBAR_BUTTON_STYLE}
                   >
@@ -1862,7 +1896,10 @@ export function AtlasGlobe({
             <button
               type="button"
               aria-pressed={discsLit}
-              onClick={() => setDiscsLit((lit) => !lit)}
+              onClick={() => {
+                camera.stopAutoRotation();
+                setDiscsLit((lit) => !lit);
+              }}
               className={TOOLBAR_BUTTON_CLASS}
               style={TOOLBAR_BUTTON_STYLE}
             >
@@ -1880,7 +1917,10 @@ export function AtlasGlobe({
               aria-label="Dézoomer"
               title="Dézoomer"
               disabled={atMinZoom}
-              onClick={() => camera.zoomBy(1 / ZOOM_STEP)}
+              onClick={() => {
+                camera.stopAutoRotation();
+                camera.zoomBy(1 / ZOOM_STEP);
+              }}
               className={ZOOM_BUTTON_CLASS}
               style={TOOLBAR_BUTTON_STYLE}
             >
@@ -1891,21 +1931,29 @@ export function AtlasGlobe({
               aria-label="Zoomer"
               title="Zoomer"
               disabled={atMaxZoom}
-              onClick={() => camera.zoomBy(ZOOM_STEP)}
+              onClick={() => {
+                camera.stopAutoRotation();
+                camera.zoomBy(ZOOM_STEP);
+              }}
               className={ZOOM_BUTTON_CLASS}
               style={TOOLBAR_BUTTON_STYLE}
             >
               <span aria-hidden="true">+</span>
             </button>
           </div>
-          {presentation === "standard" && (
+          {(presentation === "standard" || presentation === "editorial") && (
             <button
               type="button"
-              onClick={recentre}
+              onClick={() => {
+                camera.stopAutoRotation();
+                recentre();
+              }}
               className={TOOLBAR_BUTTON_CLASS}
               style={TOOLBAR_BUTTON_STYLE}
             >
-              Recentrer
+              {presentation === "editorial"
+                ? "Recentrer sur l’Afrique"
+                : "Recentrer"}
             </button>
           )}
         </div>
@@ -1927,5 +1975,3 @@ export function AtlasGlobe({
     </div>
   );
 }
-
-export default AtlasGlobe;

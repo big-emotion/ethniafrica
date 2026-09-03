@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_SAMBI",
+  "nameMain": "Sambi",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Sambi",
+      "attestations": [
+        {
+          "countryId": "COM",
+          "sourceRefs": ["forebears-sambi"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_COMORIEN",
+      "status": "supposed",
+      "sourceRefs": ["forebears-sambi"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COM",
+      "status": "attested",
+      "sourceRefs": ["forebears-sambi"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [
+    {
+      "label": "Sambi lozi (attribution contributive)",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "La source contributive attribue à un Sambi lozi le sens de « garde royal » ; cette attribution distincte et non vérifiée ne documente pas l'origine du Sambi comorien.",
+      "sourceRefs": ["forebears-sambi"]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "forebears-sambi",
+      "title": "Sambi Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/sambi",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement : elle atteste Sambi aux Comores, mais sa plus forte présence se situe en RDC. Sa notice contributive attribue séparément le nom aux Lozi ; cette piste faible est conservée comme homonymie possible, sans être appliquée au Sambi comorien."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web et bibliographique combinant « Sambi », « Comoros », « Comorian », « surname », « onomastics », « etymology », « Lozi » et « transmission », ainsi que la consultation directe de « Sambi Surname Origin, Meaning & Last Name History » n'ont livré aucune tradition attribuée, chronique ou étude linguistique établissant l'origine de Sambi. Les rapprochements fondés uniquement sur la géographie, une biographie ou une contribution non référencée ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Sambi », « Comoros », « Comorian », « surname », « onomastics », « etymology », « Lozi » et « transmission », ainsi que la consultation directe de « Sambi Surname Origin, Meaning & Last Name History » n'ont pas établi que la catégorie provisoire « non_hereditary_patronymic » décrive Sambi lui-même ; elle reste un classement de travail et non une origine démontrée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Sambi », « Comoros », « Comorian », « surname », « onomastics », « etymology », « Lozi » et « transmission », ainsi que la consultation directe de « Sambi Surname Origin, Meaning & Last Name History » n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Sambi à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Sambi », « Comoros », « Comorian », « surname », « onomastics », « etymology », « Lozi » et « transmission », ainsi que la consultation directe de « Sambi Surname Origin, Meaning & Last Name History » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Sambi."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Sambi », « Comoros », « Comorian », « surname », « onomastics », « etymology », « Lozi » et « transmission », ainsi que la consultation directe de « Sambi Surname Origin, Meaning & Last Name History » n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé de Sambi, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Sambi », « Comoros », « Comorian », « surname », « onomastics », « etymology », « Lozi » et « transmission », ainsi que la consultation directe de « Sambi Surname Origin, Meaning & Last Name History » n'ont établi aucune règle propre à Sambi permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

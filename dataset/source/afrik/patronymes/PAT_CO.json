@@ -1,0 +1,110 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
+  },
+  "id": "PAT_CO",
+  "nameMain": "Có",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Có",
+      "attestations": [
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["barros-schuchardt-1885-co"]
+        }
+      ]
+    },
+    {
+      "spelling": "Co",
+      "attestations": [
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    },
+    {
+      "spelling": "Cól",
+      "attestations": [
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["barros-schuchardt-1885-co"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Dans des notes envoyées en 1885 à Hugo Schuchardt, Marcelino Marques de Barros explique les formes Cól et Có comme l’appellation d’un groupe papel et comme son patronyme ; il les situe dans l’île de Bissau.",
+        "claimStatus": "established",
+        "sourceRefs": ["barros-schuchardt-1885-co"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_PAPEL",
+      "status": "attested",
+      "sourceRefs": ["barros-schuchardt-1885-co"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GNB",
+      "status": "attested",
+      "sourceRefs": ["barros-schuchardt-1885-co"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "barros-schuchardt-1885-co",
+      "title": "Marcelino Marques de Barros à Hugo Schuchardt (03-00537), avec notes sur « Cojjête Jangá »",
+      "url": "https://gams.uni-graz.at/o:hsa.letter.2779/sdef:TEI/get?context=context:hsa.letters&locale=de",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Document portugais daté du 5 juillet 1885, édité par Silvio Moreira de Sousa en 2015 dans le Hugo Schuchardt Archiv de l’Université de Graz. Les feuillets annexés emploient la terminologie historique « tribo Có » et précisent « Cól ou Có, tribu papel com este appelido ». Cette terminologie coloniale est contextualisée et non reprise comme catégorie actuelle."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "La lettre et les notes linguistiques de Barros ont été recherchées pour une relation entre Có et un autre patronyme ; elles mentionnent une parenté individuelle sans nommer de paire d’alliances entre lignages."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Le document de 1885 identifie Có/Cól comme groupe et patronyme papel, mais n’attribue au nom ni métier héréditaire, ni caste, ni fonction sociale."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Cojjête Jangá est décrit comme parent d’une poétesse du groupe Có, sans que Có soit établi comme son patronyme personnel ; aucun bearer n’est donc créé."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les formes Có, Cól et Co ont été recherchées dans le document d’archive ; aucune origine homonyme distincte n’y est décrite."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La source primaire de 1885 qualifie Có/Cól de patronyme papel sans expliquer s’il se transmet par filiation paternelle, maternelle, bilatérale ou par affiliation."
+    }
+  ]
+}

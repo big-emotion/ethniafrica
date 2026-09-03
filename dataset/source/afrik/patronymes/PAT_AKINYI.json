@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
+  },
+  "id": "PAT_AKINYI",
+  "nameMain": "Akinyi",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Akinyi",
+      "attestations": [
+        {
+          "countryId": "KEN",
+          "sourceRefs": ["oluoch-dholuo-toponyms-2022"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Akinyi est documenté comme un nom féminin donné à une enfant née au lever du jour, entre environ 5 h et 7 h.",
+        "claimStatus": "established",
+        "sourceRefs": ["oluoch-dholuo-toponyms-2022", "onyoyo-dholuo-grammar"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_LUO",
+      "status": "attested",
+      "sourceRefs": ["oluoch-dholuo-toponyms-2022"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "KEN",
+      "status": "attested",
+      "sourceRefs": ["oluoch-dholuo-toponyms-2022"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "oluoch-dholuo-toponyms-2022",
+      "title": "A Morpho-semantic Study of Toponyms in Dholuo",
+      "url": "https://erepository.uonbi.ac.ke/items/a3c4bee8-cbe3-4861-95be-02de1999ade8",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Mémoire d’Angeline A. Oluoch, University of Nairobi, 2022. Les pages consacrées au système anthroponymique dholuo donnent séparément les noms de naissance Akinyi, Ochieng, Odhiambo, Onyango et Otieno avec leur tranche horaire. La source est citée dans chaque fiche seulement pour le nom qu’elle énonce."
+    },
+    {
+      "sourceKey": "onyoyo-dholuo-grammar",
+      "title": "Dholuo Grammar for Beginners",
+      "url": "https://erepository.uonbi.ac.ke/bitstream/handle/11295/71359/Dholuo%20grammar%20for%20beginners.pdf?sequence=1",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Grammaire de Peter Onyango Onyoyo, Lake Publishers & Enterprises. La section sur les noms personnels confirme les séries liées au moment de la naissance. Le PDF intégral a été consulté depuis le dépôt de l’University of Nairobi."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Akinyi tradition orale », « Akinyi griot » et « Akinyi oral history », ainsi que les sections anthroponymiques d’Oluoch (2022) et de Dholuo Grammar for Beginners, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Akinyi chronicle », « Akinyi history » et « Akinyi genealogy », complétées par les sections anthroponymiques d’Oluoch (2022) et de Dholuo Grammar for Beginners, n’ont livré aucune chronique primaire qui explique l’origine du nom."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Akinyi joking kinship », « Akinyi name alliance » et « Akinyi clan pact », ainsi que les sections anthroponymiques d’Oluoch (2022) et de Dholuo Grammar for Beginners, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Akinyi caste », « Akinyi occupational group » ainsi que les passages sociaux consultés dans les sections anthroponymiques d’Oluoch (2022) et de Dholuo Grammar for Beginners, n’ont établi aucune fonction héréditaire propre à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques et nécrologiques sur « Akinyi » dans les catalogues universitaires et institutionnels, complétées par les sections anthroponymiques d’Oluoch (2022) et de Dholuo Grammar for Beginners, n’ont pas permis de vérifier un porteur décédé avec une identité suffisamment précise ; les personnes vivantes repérées ne sont pas ajoutées sans auto-identification."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches sur la graphie exacte « Akinyi » dans les index onomastiques et les sections anthroponymiques d’Oluoch (2022) et de Dholuo Grammar for Beginners n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
+    }
+  ]
+}

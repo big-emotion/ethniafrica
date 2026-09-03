@@ -1,0 +1,100 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon docs/runbooks/anthroponym-fiche-research.md. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
+  },
+  "id": "PAT_COOPER",
+  "nameMain": "Cooper",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Cooper",
+      "attestations": [
+        {
+          "countryId": "LBR",
+          "sourceRefs": ["afrik-candidate-queue", "uva-liberia-cooper-1829"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "La base archivistique Virginia Emigrants to Liberia enregistre en 1829 Charles, Garret, Nancy, Randolph, Reed et Thomas Cooper parmi un groupe parti de Norfolk vers le Liberia. Elle établit une présence migratoire ancienne du patronyme, sans démontrer que tous les Cooper libériens descendent de ce groupe.",
+        "claimStatus": "established",
+        "sourceRefs": ["uva-liberia-cooper-1829"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_AMERICANO_LIBERIENS",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "LBR",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "uva-liberia-cooper-1829"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "hlophe-1978-americo-liberian-families",
+      "title": "Class, Ethnicity and Politics in Liberia: The Impact of an Emergent Technocratic Class on the Liberian Oligarchy from 1944-1975",
+      "url": "https://escholarship.mcgill.ca/downloads/tm70mx926.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Stephen Shisizwe Hlophe, thèse de doctorat, McGill University, 1978, p. 167. L'auteur décrit la famille américano-libérienne comme un réseau de lignage qui peut aussi intégrer conjoints, enfants placés et personnes adoptant le nom. Cette pluralité empêche de réduire la transmission à une règle unique."
+    },
+    {
+      "sourceKey": "uva-liberia-cooper-1829",
+      "title": "Virginia Emigrants to Liberia — Event 261: 1829 emigration",
+      "url": "https://virginians-to-liberia.iath.virginia.edu/events/261",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Édition numérique savante de l'University of Virginia fondée sur les archives de l'American Colonization Society à la Library of Congress. L'événement réunit six Cooper partis de Norfolk vers le Liberia en 1829."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "les résultats exacts « Cooper », Virginia Emigrants to Liberia, les archives de l'American Colonization Society et les travaux sur les familles américano-libériennes, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Cooper à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "les résultats exacts « Cooper », Virginia Emigrants to Liberia, les archives de l'American Colonization Society et les travaux sur les familles américano-libériennes, complétés par « caste », « statut héréditaire », « métier » et « social function », n'ont établi aucune fonction sociale héréditaire propre aux porteurs de Cooper. Une étymologie professionnelle éventuelle n'est pas assimilée à un statut contemporain."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "les résultats exacts « Cooper », Virginia Emigrants to Liberia, les archives de l'American Colonization Society et les travaux sur les familles américano-libériennes n'ont pas fourni, dans cette passe, un porteur à la fois décédé, clairement rattaché au patronyme étudié et documenté par une source distincte de la simple homonymie. Les personnes vivantes rencontrées dans les sources officielles ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "les résultats exacts « Cooper », Virginia Emigrants to Liberia, les archives de l'American Colonization Society et les travaux sur les familles américano-libériennes n'ont pas permis d'isoler deux lignées homonymes dotées d'origines distinctes et documentées. Lorsque le dictionnaire propose plusieurs formations possibles, elles restent des hypothèses linguistiques et non des lignées séparées."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "les résultats exacts « Cooper », Virginia Emigrants to Liberia, les archives de l'American Colonization Society et les travaux sur les familles américano-libériennes décrivent des familles de lignage mais aussi l'intégration de conjoints, d'enfants placés et de personnes adoptant le nom. Aucune règle univoque patrilinéaire, matrilinéaire, bilatérale ou élective n'a donc pu être établie pour Cooper."
+    }
+  ]
+}

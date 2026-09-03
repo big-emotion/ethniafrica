@@ -36,7 +36,10 @@ vi.mock("@/lib/supabase/queries/afrik/module-zero-batch", () => ({
 
 interface RowFilter {
   column: string;
+  /** Equality against any of these, unless `prefix` is set. */
   values: string[];
+  /** `.like("col", "foo%")` — the only pattern shape the service uses. */
+  prefix?: boolean;
 }
 
 /**
@@ -53,11 +56,12 @@ function fakeFrom(table: string) {
 
     let rows = [...(tableRows.get(table) ?? [])];
     for (const filter of filters) {
-      rows = rows.filter((row) =>
-        filter.values.includes(
-          String((row as Record<string, unknown>)[filter.column])
-        )
-      );
+      rows = rows.filter((row) => {
+        const cell = String((row as Record<string, unknown>)[filter.column]);
+        return filter.prefix
+          ? filter.values.some((value) => cell.startsWith(value))
+          : filter.values.includes(cell);
+      });
     }
     return single
       ? { data: rows[0] ?? null, error: null }
@@ -74,6 +78,14 @@ function fakeFrom(table: string) {
     },
     in: (column: string, values: unknown[]) => {
       filters.push({ column, values: values.map(String) });
+      return query;
+    },
+    like: (column: string, pattern: string) => {
+      filters.push({
+        column,
+        values: [pattern.replace(/%$/, "")],
+        prefix: true,
+      });
       return query;
     },
     maybeSingle: () => {
@@ -167,7 +179,12 @@ describe("getQuizScopeCatalogue", () => {
     // PPL_C holds a question but lives in no country: it counts for the family
     // and for the corpus, and for no country track.
     expect(catalogue.countries).toEqual([
-      { id: "GHA", labelFr: "Ghana", activeQuestionCount: 3 },
+      {
+        id: "GHA",
+        labelFr: "Ghana",
+        activeQuestionCount: 3,
+        questionCountByTheme: { "parente-linguistique": 3 },
+      },
     ]);
     expect(catalogue.families[0].activeQuestionCount).toBe(4);
     expect(catalogue.totalActiveQuestionCount).toBe(4);
@@ -210,6 +227,97 @@ describe("getQuizScopeCatalogue", () => {
     expect(byId.get("migrations")?.activeQuestionCount).toBe(0);
   });
 
+  /**
+   * The per-track breakdown the picker needs to offer a theme only where it can
+   * actually be played. Same derivation as the corpus totals above, kept per
+   * country and per family rather than only in aggregate.
+   */
+  // @req REQ-121
+  it("counts each country's and family's bank per theme", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q1", "PPL_A", {
+        template_id: "T7",
+        field_path: "content.culture.spiritualities",
+      }),
+      questionRow("q2", "PPL_B", {
+        template_id: "T7",
+        field_path: "content.culture.spiritualities",
+      }),
+      questionRow("q3", "PPL_A"),
+      // PPL_C lives in no country: it pays the family and not the country.
+      questionRow("q4", "PPL_C", {
+        template_id: "T11",
+        field_path: "content.origins.migrationRoutes",
+      }),
+    ]);
+
+    const catalogue = await getQuizScopeCatalogue();
+
+    expect(catalogue.countries[0].questionCountByTheme).toEqual({
+      croyances: 2,
+      "parente-linguistique": 1,
+    });
+    expect(catalogue.families[0].questionCountByTheme).toEqual({
+      croyances: 2,
+      "parente-linguistique": 1,
+      migrations: 1,
+    });
+  });
+
+  /**
+   * A country's own fiche answers for its own track, exactly as it already does
+   * for `activeQuestionCount` — otherwise the picker would offer a theme the
+   * country pays for and count none of it.
+   */
+  // @req REQ-121
+  it("counts a country's own questions toward its themes", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q1", "GHA", {
+        entity_type: "country",
+        template_id: "T13",
+        field_path: "etymology",
+      }),
+    ]);
+
+    const catalogue = await getQuizScopeCatalogue();
+
+    expect(catalogue.countries[0].questionCountByTheme).toEqual({ noms: 1 });
+  });
+
+  /**
+   * `withoutSelfAnsweringCountryRounds` drops every round whose answer is the
+   * scoped country's own name, and T3 — « dans quel pays ce peuple est-il
+   * présent ? » — answers exactly that for roughly half the corpus. Counting
+   * those rounds here would have the picker offer 16 country × Territoire
+   * tracks the session then refuses.
+   */
+  // @req REQ-121
+  it("discounts the Territoire rounds a country track throws away", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q1", "PPL_A", {
+        template_id: "T3",
+        field_path: "content.demography.distributionByCountry",
+        options_fr: ["Ghana", "Bénin", "Togo", "Mali"],
+        correct_option: 0,
+      }),
+      questionRow("q2", "PPL_B", {
+        template_id: "T3",
+        field_path: "content.demography.distributionByCountry",
+        options_fr: ["Ghana", "Bénin", "Togo", "Mali"],
+        correct_option: 1,
+      }),
+    ]);
+
+    const catalogue = await getQuizScopeCatalogue();
+
+    // Ghana keeps only the round whose answer is not Ghana.
+    expect(catalogue.countries[0].questionCountByTheme.territoire).toBe(1);
+    // The family scope applies no such filter, so both rounds stand.
+    expect(catalogue.families[0].questionCountByTheme.territoire).toBe(2);
+    // And the corpus total is untouched: nothing was revoked.
+    expect(catalogue.totalActiveQuestionCount).toBe(2);
+  });
+
   // @req REQ-121
   it("names every theme in a fixed order, so the picker does not reshuffle as the bank grows", async () => {
     tableRows.set("quiz_questions", []);
@@ -247,6 +355,42 @@ describe("getQuizScopeLabel", () => {
 });
 
 describe("composeQuizSession", () => {
+  /**
+   * The pool is what the corpus held for the scope, after the theme filter and
+   * the self-answering drop and before the ladder. The handler needs it to tell
+   * « this pair cannot fill a session » from « the freshness gate shortened a
+   * session that could have ».
+   */
+  // @req REQ-103
+  it("reports the pool it drew from, not the session it dealt", async () => {
+    tableRows.set("quiz_questions", [
+      questionRow("q-a", "PPL_A"),
+      questionRow("q-b", "PPL_B"),
+      questionRow("q-c", "PPL_C"),
+    ]);
+
+    const draw = await composeQuizSession({
+      scope: { kind: "family", entityId: "FLG_NIGER_CONGO" },
+      count: 8,
+    });
+
+    expect(draw.poolSize).toBe(3);
+    expect(draw.questions).toHaveLength(3);
+  });
+
+  // @req REQ-103
+  it("reports an empty pool when the scope holds nothing", async () => {
+    tableRows.set("quiz_questions", []);
+
+    const draw = await composeQuizSession({
+      scope: { kind: "country", entityId: "GHA" },
+      count: 8,
+    });
+
+    expect(draw.poolSize).toBe(0);
+    expect(draw.questions).toEqual([]);
+  });
+
   // @req REQ-103
   it("draws only from the peoples of the scoped country", async () => {
     tableRows.set("quiz_questions", [
@@ -255,7 +399,7 @@ describe("composeQuizSession", () => {
       questionRow("q-c", "PPL_C"),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "country", entityId: "GHA" },
       count: 8,
     });
@@ -271,7 +415,7 @@ describe("composeQuizSession", () => {
       questionRow("q-b", "PPL_B"),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "family", entityId: "FLG_NIGER_CONGO" },
       count: 3,
     });
@@ -297,7 +441,7 @@ describe("composeQuizSession", () => {
       }),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "country", entityId: "GHA" },
       count: 8,
     });
@@ -316,7 +460,7 @@ describe("composeQuizSession", () => {
       }),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "mixed" },
       count: 8,
     });
@@ -337,7 +481,7 @@ describe("composeQuizSession", () => {
       ])
     );
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "mixed" },
       count: 8,
     });
@@ -352,7 +496,7 @@ describe("composeQuizSession", () => {
       new Map([["PPL_A", { openCount: 1 }]])
     );
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "mixed" },
       count: 8,
     });
@@ -367,7 +511,7 @@ describe("composeQuizSession", () => {
       ["q1", "q2", "q3", "q4", "q5"].map((id) => questionRow(id, "PPL_A"))
     );
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "mixed" },
       count: 3,
     });
@@ -379,7 +523,7 @@ describe("composeQuizSession", () => {
   it("returns an empty array without consulting the batched lookups when the scope is empty", async () => {
     tableRows.set("quiz_questions", []);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "country", entityId: "ZZZ" },
       count: 8,
     });
@@ -406,7 +550,7 @@ describe("composeQuizSession", () => {
       }),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "country", entityId: "GHA" },
       count: 8,
       theme: "croyances",
@@ -425,7 +569,7 @@ describe("composeQuizSession", () => {
       }),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "country", entityId: "GHA" },
       count: 8,
     });
@@ -452,7 +596,7 @@ describe("composeQuizSession", () => {
       }),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "country", entityId: "GHA" },
       count: 8,
     });
@@ -483,7 +627,7 @@ describe("composeQuizSession", () => {
       questionRow("q-people", "PPL_A"),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "country", entityId: "GHA" },
       count: 8,
     });
@@ -503,7 +647,7 @@ describe("composeQuizSession", () => {
       }),
     ]);
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "mixed" },
       count: 8,
     });
@@ -515,7 +659,7 @@ describe("composeQuizSession", () => {
   it("returns an empty array without throwing on a query error", async () => {
     tableErrors.set("quiz_questions", { message: "boom" });
 
-    const session = await composeQuizSession({
+    const { questions: session } = await composeQuizSession({
       scope: { kind: "mixed" },
       count: 8,
     });

@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_NSIMBA",
+  "nameMain": "Nsimba",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Nsimba",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["ndoma-1977-nsimba"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Ndoma classe Nsimba parmi les noms kongo donnés selon la chronologie de la naissance : le premier jumeau est appelé Nsimba parce qu'il « tient » l'autre, à partir de simba, « tenir ». Dans le système décrit, il s'agit d'un nom circonstanciel individuel, non d'un nom de clan transmis.",
+        "claimStatus": "established",
+        "sourceRefs": ["ndoma-1977-nsimba"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_KONGO",
+      "status": "attested",
+      "sourceRefs": ["ndoma-1977-nsimba"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COD",
+      "status": "attested",
+      "sourceRefs": ["ndoma-1977-nsimba"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "ndoma-1977-nsimba",
+      "title": "Kongo Personal Names: A Sketch",
+      "url": "https://ans-names.pitt.edu/ans/article/download/845/844",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article d'Ungina Ndoma, Names 25(2), 1977, consulté dans son PDF intégral. La section sur les circonstances internes de naissance identifie Nsimba comme le nom du premier jumeau chez les Kongo et l'analyse à partir du verbe simba, « tenir »."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Nsimba », « Kongo », « Congo », « twin name », « personal names », « etymology », « clan », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que l'article intégral de Ndoma sur les noms personnels kongo n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Nsimba », « Kongo », « Congo », « twin name », « personal names », « etymology », « clan », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que l'article intégral de Ndoma sur les noms personnels kongo n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Nsimba », « Kongo », « Congo », « twin name », « personal names », « etymology », « clan », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que l'article intégral de Ndoma sur les noms personnels kongo n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche ; les personnes vivantes ou de statut vital incertain ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Nsimba », « Kongo », « Congo », « twin name », « personal names », « etymology », « clan », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que l'article intégral de Ndoma sur les noms personnels kongo n'ont pas établi de lignée homonyme d'origine distincte documentable ; une diffusion dans plusieurs pays ou une graphie voisine ne suffit pas à créer un homonyme."
+    }
+  ]
+}

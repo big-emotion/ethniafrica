@@ -8,6 +8,7 @@ import {
   getAfrikLanguageById,
   getAfrikLanguagesByFamily,
   getAfrikSpeakingPeoples,
+  listAfrikLanguages,
 } from "../languages";
 import { createServerClient } from "../../../server";
 
@@ -18,6 +19,7 @@ interface MockSupabase {
   order: ReturnType<typeof vi.fn>;
   maybeSingle: ReturnType<typeof vi.fn>;
   in: ReturnType<typeof vi.fn>;
+  range: ReturnType<typeof vi.fn>;
 }
 
 describe("AFRIK Languages Queries", () => {
@@ -31,6 +33,7 @@ describe("AFRIK Languages Queries", () => {
       order: vi.fn(() => mockSupabase),
       maybeSingle: vi.fn(),
       in: vi.fn(),
+      range: vi.fn(),
     };
     vi.clearAllMocks();
     vi.mocked(createServerClient).mockReturnValue(
@@ -106,6 +109,7 @@ describe("AFRIK Languages Queries", () => {
           name: "Yoruba",
           family_id: "FLG_BENOUECONGO",
           content: { nameProvenance: "sourced" },
+          spelling_aliases: ["Yorouba"],
           family: {
             id: "FLG_BENOUECONGO",
             name_fr: "Bénoué-Congo",
@@ -118,7 +122,7 @@ describe("AFRIK Languages Queries", () => {
 
       expect(mockSupabase.from).toHaveBeenCalledWith("afrik_languages");
       expect(mockSupabase.select).toHaveBeenCalledWith(
-        "id, name, family_id, content, family:afrik_language_families(id, name_fr)"
+        "id, name, family_id, content, spelling_aliases, family:afrik_language_families(id, name_fr)"
       );
       expect(mockSupabase.eq).toHaveBeenCalledWith("id", "yor");
       expect(result).toEqual({
@@ -126,6 +130,7 @@ describe("AFRIK Languages Queries", () => {
         name: "Yoruba",
         family: { id: "FLG_BENOUECONGO", name: "Bénoué-Congo" },
         content: { nameProvenance: "sourced" },
+        spellingAliases: ["Yorouba"],
       });
     });
 
@@ -202,6 +207,129 @@ describe("AFRIK Languages Queries", () => {
       expect(result).toEqual([]);
       expect(mockSupabase.from).toHaveBeenCalledTimes(1);
       expect(mockSupabase.in).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("listAfrikLanguages", () => {
+    // @req REQ-136
+    it("returns rows ordered by family then name, with total and pageCount", async () => {
+      const mockData = [
+        {
+          id: "kon",
+          name: "Kikongo",
+          family_id: "FLG_BANTU",
+          family: { id: "FLG_BANTU", name_fr: "Bantou" },
+        },
+        {
+          id: "swa",
+          name: "Swahili",
+          family_id: "FLG_BANTU",
+          family: { id: "FLG_BANTU", name_fr: "Bantou" },
+        },
+      ];
+      mockSupabase.range.mockResolvedValue({
+        data: mockData,
+        error: null,
+        count: 748,
+      });
+
+      const result = await listAfrikLanguages();
+
+      expect(mockSupabase.from).toHaveBeenCalledWith("afrik_languages");
+      expect(mockSupabase.order).toHaveBeenNthCalledWith(1, "family_id");
+      expect(mockSupabase.order).toHaveBeenNthCalledWith(2, "name");
+      expect(result.languages).toEqual([
+        {
+          id: "kon",
+          name: "Kikongo",
+          family: { id: "FLG_BANTU", name: "Bantou" },
+        },
+        {
+          id: "swa",
+          name: "Swahili",
+          family: { id: "FLG_BANTU", name: "Bantou" },
+        },
+      ]);
+      expect(result.total).toBe(748);
+      expect(result.pageCount).toBe(16);
+    });
+
+    // @req REQ-136
+    it("keeps homonyms distinguishable by id and family", async () => {
+      const mockData = [
+        {
+          id: "fuf",
+          name: "Fulfulde",
+          family_id: "FLG_ATLANTIQUE",
+          family: { id: "FLG_ATLANTIQUE", name_fr: "Atlantique" },
+        },
+        {
+          id: "fuv",
+          name: "Fulfulde",
+          family_id: "FLG_MANDE",
+          family: { id: "FLG_MANDE", name_fr: "Mandé" },
+        },
+      ];
+      mockSupabase.range.mockResolvedValue({
+        data: mockData,
+        error: null,
+        count: 2,
+      });
+
+      const result = await listAfrikLanguages();
+
+      expect(result.languages).toHaveLength(2);
+      expect(result.languages[0].id).not.toBe(result.languages[1].id);
+      expect(result.languages[0].family.id).not.toBe(
+        result.languages[1].family.id
+      );
+      expect(result.languages.every((row) => row.name === "Fulfulde")).toBe(
+        true
+      );
+    });
+
+    // @req REQ-136
+    it("maps page/perPage to the correct .range() bounds", async () => {
+      mockSupabase.range.mockResolvedValue({ data: [], error: null, count: 0 });
+
+      await listAfrikLanguages({ page: 3, perPage: 20 });
+
+      expect(mockSupabase.range).toHaveBeenCalledWith(40, 59);
+    });
+
+    // @req REQ-136
+    it("logs via logger and throws on a Supabase error", async () => {
+      const dbError = new Error("db down");
+      mockSupabase.range.mockResolvedValue({
+        data: null,
+        error: dbError,
+        count: null,
+      });
+
+      await expect(listAfrikLanguages()).rejects.toThrow("db down");
+    });
+
+    // @req REQ-136
+    it("falls back to family_id when a family fails to hydrate", async () => {
+      mockSupabase.range.mockResolvedValue({
+        data: [
+          {
+            id: "orphan",
+            name: "Orphan",
+            family_id: "FLG_UNKNOWN",
+            family: null,
+          },
+        ],
+        error: null,
+        count: 1,
+      });
+
+      const result = await listAfrikLanguages();
+
+      expect(result.languages[0].family).toEqual({
+        id: "FLG_UNKNOWN",
+        name: "FLG_UNKNOWN",
+      });
     });
   });
 });

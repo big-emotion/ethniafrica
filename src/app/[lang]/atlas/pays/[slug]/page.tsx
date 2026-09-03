@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { notFound, redirect } from "next/navigation";
 
-import { loadCountryFiche } from "@/lib/fiche/ficheExistence";
+import {
+  isFicheKnownAbsent,
+  loadCountryFiche,
+} from "@/lib/fiche/ficheExistence";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import { ficheCanonical } from "@/lib/seo/ficheCanonical";
 import { getCountryRoute } from "@/lib/routing";
@@ -10,10 +13,10 @@ import type { Language } from "@/types/shared";
 import {
   getLatestEntityRevisionVersion,
   getRevisionSnapshot,
-  type FrozenDoctrineReference,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
+import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { CountryFicheTitle } from "@/components/country/CountryFicheTitle";
@@ -28,14 +31,9 @@ import { buildCountryOutlineOverlay } from "@/lib/atlas/overlays";
 import { buildCountryPickerTargets } from "@/lib/atlas/targets";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import { getCountryAtlasIndex } from "@/api/v2/services/countryService";
+import { getCountryPatronymes } from "@/api/v2/services/patronymeFicheLinks";
 import { mapCountryDetail } from "@/lib/afrikDetailMapper";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
-import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
-import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
-import {
-  DoctrineLinkCard,
-  isDoctrineSlug,
-} from "@/components/source-transparency/DoctrineLinkCard";
 
 // @req REQ-019
 export const revalidate = 3600;
@@ -76,7 +74,10 @@ export async function generateMetadata({
   // Only the `live` mode is settled here. `latest` redirects and `pinned` reads
   // a revision snapshot, and both already resolve before the body streams
   // anything of their own.
-  if (parsed?.mode === "live" && !(await loadCountryFiche(parsed.slug))) {
+  if (
+    parsed?.mode === "live" &&
+    (await isFicheKnownAbsent(loadCountryFiche, parsed.slug))
+  ) {
     notFound();
   }
 
@@ -86,76 +87,6 @@ export async function generateMetadata({
 interface PageSearchParams {
   fromPeopleName?: string;
   fromPeopleId?: string;
-}
-
-// ---------------------------------------------------------------------------
-// Snapshot view (pinned URLs — data is immutable, read from revisions only)
-// ---------------------------------------------------------------------------
-
-interface CountrySnapshotViewProps {
-  entityId: string;
-  version: number;
-  publishedAt: string | null;
-  confidence: number | null;
-  snapshotData: Record<string, unknown>;
-  doctrine: FrozenDoctrineReference | null;
-  lang: string;
-}
-
-function CountrySnapshotFicheView({
-  entityId,
-  version,
-  publishedAt,
-  confidence,
-  snapshotData,
-  doctrine,
-  lang,
-}: CountrySnapshotViewProps) {
-  const nameFr =
-    typeof snapshotData.name_fr === "string"
-      ? snapshotData.name_fr
-      : typeof snapshotData.nameFr === "string"
-        ? snapshotData.nameFr
-        : entityId;
-
-  return (
-    <div data-testid="country-snapshot-view" className="space-y-4">
-      <div className="space-y-2">
-        <h1 className="text-afh-h2 font-semibold">{nameFr}</h1>
-        <p className="text-afh-small text-muted-foreground font-mono">
-          {entityId}
-        </p>
-      </div>
-
-      <PinnedVersionBanner
-        pinnedAt={publishedAt}
-        versionTag={String(version)}
-        liveUrl={getCountryRoute(lang as Language, entityId)}
-      />
-
-      {confidence !== null && (
-        <div className="px-1">
-          <ConfidenceChip
-            confidenceScore={confidence}
-            sourceCount={null}
-            lastHumanAuditAt={publishedAt}
-            variant="hero"
-          />
-        </div>
-      )}
-
-      <div className="prose prose-neutral max-w-none text-afh-small text-muted-foreground">
-        <p>
-          Ce contenu est une capture archivée&nbsp;(v{version}) et ne sera
-          jamais modifié.
-        </p>
-      </div>
-
-      {doctrine && isDoctrineSlug(doctrine.slug) && (
-        <DoctrineLinkCard slug={doctrine.slug} version={doctrine.version} />
-      )}
-    </div>
-  );
 }
 
 // ---------------------------------------------------------------------------
@@ -203,7 +134,8 @@ export default async function PaysSlugPage({
     return (
       <PageLayout language="fr" sectionName="Pays">
         <div className="container mx-auto max-w-4xl px-4 py-8">
-          <CountrySnapshotFicheView
+          <FicheSnapshotView
+            kind="country"
             entityId={parsed.slug}
             version={parsed.version}
             publishedAt={snapshot.published_at}
@@ -217,7 +149,7 @@ export default async function PaysSlugPage({
     );
   }
 
-  const [country, sourceFlags, countryAtlasIndex, peopleCounts] =
+  const [country, sourceFlags, countryAtlasIndex, peopleCounts, patronymes] =
     await Promise.all([
       loadCountryFiche(parsed.slug),
       getActiveSourceFlags("country", parsed.slug),
@@ -226,6 +158,10 @@ export default async function PaysSlugPage({
       // for any country. A failed count costs the other countries' subtitle,
       // never the fiche.
       getContinentPeopleCounts().catch(() => ({}) as Record<string, number>),
+      // Caught to `null` rather than to two empty lists: empty is the corpus
+      // saying no name reaches this country, which the chapter prints as a
+      // fact. A dropped query must not be able to make that claim.
+      getCountryPatronymes(parsed.slug).catch(() => null),
     ]);
   if (!country) {
     notFound();
@@ -327,6 +263,7 @@ export default async function PaysSlugPage({
               hasSourceFlag={sourceFlags.length > 0}
               fromPeopleName={navigationContext.fromPeopleName}
               fromPeopleId={navigationContext.fromPeopleId}
+              patronymes={patronymes}
             />
           </>
         }

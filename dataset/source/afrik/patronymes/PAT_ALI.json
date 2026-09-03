@@ -1,0 +1,160 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. L'étymologie arabe générale est documentée séparément des associations africaines encore issues de la file candidate."
+  },
+  "id": "PAT_ALI",
+  "nameMain": "Ali",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Ali",
+      "attestations": [
+        { "countryId": "DJI", "sourceRefs": ["afrik-candidate-queue"] },
+        { "countryId": "SOM", "sourceRefs": ["afrik-candidate-queue"] },
+        { "countryId": "EGY", "sourceRefs": ["afrik-candidate-queue"] },
+        { "countryId": "COM", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Ali correspond au nom personnel arabe ʿAlī ; le dictionnaire de l'Académie de la langue arabe du Caire rattache ʿaliyy à la racine ʿ-l-w et lui donne les sens « élevé », « puissant » ou « de haut rang ».",
+        "claimStatus": "established",
+        "sourceRefs": ["ali-arabic-academy", "ali-aljarf-2023"]
+      },
+      {
+        "claim": "Une étude onomastique décrit Ali parmi les noms personnels arabes empruntés dans de nombreuses communautés musulmanes ; cette diffusion générale ne prouve pas, à elle seule, une transmission spécifique chez les Afar, Somali, Arabes d'Afrique ou Comoriens.",
+        "claimStatus": "established",
+        "sourceRefs": ["ali-aljarf-2023"]
+      },
+      {
+        "claim": "Le Dictionary of American Family Names, reproduit par FamilySearch, rattache également le patronyme arabe au nom personnel ʿAlī, décrit comme signifiant « élevé », « noble » ou « sublime ».",
+        "claimStatus": "established",
+        "sourceRefs": ["familysearch-ali"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_AFAR",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "peopleId": "PPL_SOMALI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "peopleId": "PPL_ARABES_AFRIQUE",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "peopleId": "PPL_COMORIEN",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "DJI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "SOM",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "EGY",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "COM",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
+    },
+    {
+      "sourceKey": "ali-arabic-academy",
+      "title": "معنى «علي» في المعجم — مجمع اللغة العربية بالقاهرة",
+      "url": "https://www.arabicacademy.gov.eg/ar/%D9%85%D8%AD%D8%B1%D9%83-%D8%A7%D9%84%D8%A8%D8%AD%D8%AB/%D9%85%D8%B9%D8%AC%D9%85/dic-19/%D8%B9%D9%84%D9%8A",
+      "tier": "official",
+      "source_kind": "linguistic_reference",
+      "notes": "Entrée du dictionnaire de l'Académie de la langue arabe du Caire, vérifiée en arabe. Elle rattache عليّ à la racine ع ل و et définit le lexème par l'élévation, la force et le haut rang."
+    },
+    {
+      "sourceKey": "ali-aljarf-2023",
+      "title": "The Interchange of Personal Names in Muslim Communities: An Onomastic Study",
+      "url": "https://doi.org/10.32996/jgcs.2023.3.1.5",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Reima Al-Jarf, Journal of Gender, Culture and Society 3(1), 2023. L'article a été vérifié sur la page de l'éditeur ; il cite Ali parmi les noms arabes diffusés et adaptés dans des communautés musulmanes non arabophones. Il ne fournit pas d'attestation propre aux quatre peuples de cette fiche."
+    },
+    {
+      "sourceKey": "familysearch-ali",
+      "title": "Ali Name Meaning and Ali Family History at FamilySearch",
+      "url": "https://www.familysearch.org/en/surname?surname=ali",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Notice consultée intégralement. FamilySearch reproduit l'entrée du Dictionary of American Family Names (Oxford University Press, 2022), qui rattache le nom arabe au nom personnel ʿAlī. La notice ne suffit pas à attribuer tous les porteurs africains à un même peuple."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « Ali anthroponymie », « Ali onomastique », « Ali surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune tradition orale attribuée à un griot ou informateur nommé, accompagnée d'une transcription vérifiable, n'a été trouvée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches exactes « Ali anthroponymie », « Ali onomastique », « Ali surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune chronique historique consultée ne rattache la fiche à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "Les sources propres à « Ali » n'ont pas confirmé les pays où il est porté ; les recherches par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches onomastiques « Ali + Afar/Somali/Comorian/African Arabs », le dictionnaire arabe et l'étude d'Al-Jarf ont été examinés ; ils établissent l'origine et la diffusion générales du nom, mais aucune source savante consultable n'a documenté séparément les quatre associations de la fiche."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les études de diffusion du nom Ali et les recherches de parenté à plaisanterie dans les contextes afar, somali et comorien n'ont livré aucune paire nommée avec un autre PAT_* existant."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Le dictionnaire arabe et l'étude onomastique consultés ne rattachent Ali à aucune caste ni fonction sociale héréditaire dans les communautés couvertes."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les requêtes biographiques combinant Ali avec chacun des quatre peuples ont produit de nombreux individus, sans permettre d'attribuer avec certitude le même élément de nom au système décrit par cette fiche ; aucun porteur décédé n'est retenu."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les usages de ʿAlī comme prénom, patronyme non héréditaire et nom divin ont été distingués dans les sources consultées ; aucun homonyme africain distinct satisfaisant le modèle du corpus n'a été trouvé."
+    }
+  ]
+}

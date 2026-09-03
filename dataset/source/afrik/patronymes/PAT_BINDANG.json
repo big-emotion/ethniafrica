@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_BINDANG",
+  "nameMain": "Bindang",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Bindang",
+      "attestations": [
+        {
+          "countryId": "GNQ",
+          "sourceRefs": ["un-africa-renewal-bindang"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FANG",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GNQ",
+      "status": "attested",
+      "sourceRefs": ["un-africa-renewal-bindang"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
+    },
+    {
+      "sourceKey": "un-africa-renewal-bindang",
+      "title": "Youth Profile: Agripina Ndoho Ngumu Bindang from Equatorial Guinea",
+      "url": "https://africarenewal.un.org/en/magazine/youth-profile-agripina-ndoho-ngumu-bindang-equatorial-guinea",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "Portrait publié par Afrique Renouveau des Nations Unies et consulté intégralement. Le titre et la notice attestent Bindang dans le nom public d'une personne née à Ebibeyin et vivant à Malabo, en Guinée équatoriale. La personne est vivante et n'est pas ajoutée aux porteurs ; le texte ne donne pas d'appartenance fang."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Bindang », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Youth Profile: Agripina Ndoho Ngumu Bindang from Equatorial Guinea » n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine de Bindang. Les attestations géographiques ou individuelles trouvées ne sont pas transformées en étymologie."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Bindang », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Youth Profile: Agripina Ndoho Ngumu Bindang from Equatorial Guinea » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Bindang à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Bindang », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Youth Profile: Agripina Ndoho Ngumu Bindang from Equatorial Guinea » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Bindang."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Bindang », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « Youth Profile: Agripina Ndoho Ngumu Bindang from Equatorial Guinea », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Bindang », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « Youth Profile: Agripina Ndoho Ngumu Bindang from Equatorial Guinea », n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Bindang », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Youth Profile: Agripina Ndoho Ngumu Bindang from Equatorial Guinea » n'ont établi aucune règle propre à Bindang permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

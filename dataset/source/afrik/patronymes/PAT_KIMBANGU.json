@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KIMBANGU",
+  "nameMain": "Kimbangu",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Kimbangu",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["encyclopaedia-africana-kimbangu"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "L'Encyclopaedia Africana identifie Simon Kimbangu comme appartenant au groupe kikongo et le situe à Nkamba, au Congo, avant sa mort en 1951. Cette notice établit l'ancrage historique du nom dans un milieu kongo congolais, sans proposer d'étymologie ni démontrer que Kimbangu désigne un clan.",
+        "claimStatus": "established",
+        "sourceRefs": ["encyclopaedia-africana-kimbangu"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_KONGO",
+      "status": "attested",
+      "sourceRefs": ["encyclopaedia-africana-kimbangu"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COD",
+      "status": "attested",
+      "sourceRefs": ["encyclopaedia-africana-kimbangu"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Simon Kimbangu, prédicateur et fondateur religieux (vers 1890–1951)",
+      "sourceRefs": ["encyclopaedia-africana-kimbangu"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "encyclopaedia-africana-kimbangu",
+      "title": "Kimbangu, Simon",
+      "url": "https://encyclopaediaafricana.com/kimbangu-simon/",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Notice de l'Encyclopaedia Africana consultée intégralement. Elle donne l'identité kikongo, le lieu de naissance, l'activité religieuse et la date de décès de Simon Kimbangu. Elle n'analyse pas le nom comme patronyme ou nom clanique."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web combinant « Kimbangu », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la notice biographique complète de Simon Kimbangu dans l'Encyclopaedia Africana et les recherches ciblées sur l'étymologie et la transmission du nom, n'ont pas établi que la catégorie provisoire « clan_name » décrive ce nom lui-même ; elle est conservée comme hypothèse de classement en attendant une étude anthroponymique dédiée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kimbangu », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la notice biographique complète de Simon Kimbangu dans l'Encyclopaedia Africana et les recherches ciblées sur l'étymologie et la transmission du nom, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kimbangu », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la notice biographique complète de Simon Kimbangu dans l'Encyclopaedia Africana et les recherches ciblées sur l'étymologie et la transmission du nom, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kimbangu », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la notice biographique complète de Simon Kimbangu dans l'Encyclopaedia Africana et les recherches ciblées sur l'étymologie et la transmission du nom, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Kimbangu », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la notice biographique complète de Simon Kimbangu dans l'Encyclopaedia Africana et les recherches ciblées sur l'étymologie et la transmission du nom, n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

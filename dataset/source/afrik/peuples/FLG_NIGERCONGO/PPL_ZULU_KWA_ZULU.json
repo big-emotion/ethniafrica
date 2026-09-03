@@ -16,6 +16,8 @@
       "originOfExonyms": "KwaZulu signifie Place des Zulu ou Terre des Zulu (kwa- = lieu de, Zulu = clan et peuple fondateur). Ce nom a d'abord designe le territoire ancestral (Zululand) puis a ete repris par le gouvernement d'apartheid pour nommer le bantustan cree en 1970. KwaZulu-Natal est le nom de la province issue de la fusion de KwaZulu et du Natal en 1994. La distinction KwaZulu souligne le contexte specifique du bantustan et du Zululand historique.",
       "whyProblematic": "Cette fiche se distingue de PPL_ZULU en se concentrant sur les Zulu du territoire historique et du bantustan de KwaZulu, aujourd'hui province de KwaZulu-Natal. Le bantustan de KwaZulu (1970-1994) etait artificiel et fragmente (11 exclaves non contiguus), cree par le regime d'apartheid pour priver les Zulu de leur citoyennete sud-africaine. Traiter les Zulu de KwaZulu comme une entite separee comporte donc un risque de reproduire les categories de l'apartheid.",
       "contemporaryUsage": "Aujourd'hui, la province de KwaZulu-Natal est le foyer ancestral de la grande majorite des Zulu d'Afrique du Sud. Le roi zulu (depuis 2021, le roi Misuzulu kaZwelithini) reside a Nongoma. L'institution royale zulu est formellement reconnue par la Constitution sud-africaine post-apartheid. L'Ingonyama Trust administre environ 32 % des terres de la province au nom de la nation zulu.",
+      "peopleGroupId": "PGRP_ZULU",
+      "peopleGroupLabel": "Zulu (AmaZulu)",
       "linguisticFamily": "FLG_NIGERCONGO",
       "ethnoLinguisticGroup": "Bantou (Zone S, Nguni meridional, groupe S42)",
       "historicalRegion": "Zululand / KwaZulu — territoire ancestral zulu dans le nord et le centre de l'actuelle province de KwaZulu-Natal (autour de Nongoma, Ulundi, Eshowe, Empangeni)",

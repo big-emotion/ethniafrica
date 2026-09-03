@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_MWALE",
+  "nameMain": "Mwale",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Mwale",
+      "attestations": [
+        {
+          "countryId": "ZMB",
+          "sourceRefs": ["forebears-mwale"]
+        },
+        {
+          "countryId": "MWI",
+          "sourceRefs": ["forebears-mwale"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "matrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Une monographie de 1906 atteste Amwale/Mwale comme nom de clan chez les Yao et les Anyanja et donne mwale au sens de « fille » en nyanja. Elle décrit des enfants recevant le clan Mwale de leur mère ; cette donnée historique ne permet pas de généraliser à toutes les lignées contemporaines de Zambie et du Malawi.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["werner-1906-mwale"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_CHEWA",
+      "status": "supposed",
+      "sourceRefs": ["forebears-mwale"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZMB",
+      "status": "attested",
+      "sourceRefs": ["forebears-mwale"]
+    },
+    {
+      "countryId": "MWI",
+      "status": "attested",
+      "sourceRefs": ["forebears-mwale"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "werner-1906-mwale",
+      "title": "The Natives of British Central Africa",
+      "url": "https://www.gutenberg.org/cache/epub/71018/pg71018-images.html",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Monographie d’Alice Werner publiée en 1906 et consultée dans la transcription intégrale de Project Gutenberg. Elle décrit Amwale/Mwale comme nom de clan chez les Yao et les Anyanja, transmis par la mère, et donne mwale au sens de « fille » en nyanja. Ce témoignage colonial daté ne suffit pas à attribuer toutes les lignées modernes Mwale à une origine unique."
+    },
+    {
+      "sourceKey": "forebears-mwale",
+      "title": "Mwale Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/mwale",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement. Elle atteste l’orthographe Mwale et sa présence dans la Zambie et le Malawi, mais la distribution ne démontre ni l’appartenance Chewa, ni une origine unique, ni un mode de transmission."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Mwale », « Chewa », « la Zambie et le Malawi », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « The Natives of British Central Africa » et la page Forebears propre au nom, consultées directement, n’a identifié aucune alliance ni parenté à plaisanterie documentée reliant Mwale à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Mwale », « Chewa », « la Zambie et le Malawi », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « The Natives of British Central Africa » et la page Forebears propre au nom, consultées directement, n’a établi aucune fonction sociale ou professionnelle héréditaire propre à Mwale."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Mwale », « Chewa », « la Zambie et le Malawi », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « The Natives of British Central Africa » et la page Forebears propre au nom, consultées directement, n’a livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Mwale », « Chewa », « la Zambie et le Malawi », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « The Natives of British Central Africa » et la page Forebears propre au nom, consultées directement, n’a pas établi de lignée homonyme d’origine distincte documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_BONGO",
+  "nameMain": "Bongo",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Bongo",
+      "attestations": [
+        {
+          "countryId": "GAB",
+          "sourceRefs": ["ondo-sociogenese-bongo-2021"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une étude de sociogenèse du pouvoir d'Omar Bongo décrit la « famille Bongo » comme une construction politique pouvant être définie minimalement comme un clan, dont Omar Bongo devient l'ancêtre fondateur et le patriarche ; cette analyse ne constitue pas une étymologie du nom.",
+        "claimStatus": "established",
+        "sourceRefs": ["ondo-sociogenese-bongo-2021"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_TEKE",
+      "status": "attested",
+      "sourceRefs": ["ondo-sociogenese-bongo-2021"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GAB",
+      "status": "attested",
+      "sourceRefs": ["ondo-sociogenese-bongo-2021"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Omar Bongo, président du Gabon et patriarche de la famille politique étudiée",
+      "sourceRefs": ["ondo-sociogenese-bongo-2021"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "ondo-sociogenese-bongo-2021",
+      "title": "Une sociogenèse de la structure du pouvoir d'Omar Bongo",
+      "url": "https://inrs.gouv.tg/wp-content/uploads/2024/08/ET-RTS-V15-N%C2%B02-Juillet-Decembre-2021.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article de Placide Ondo, Université Omar Bongo, Études Togolaises, Revue Togolaise des Sciences, vol. 15, no 2, 2021, consulté en texte intégral. Le tableau généalogique qualifie le père d'Omar Bongo de Téké et sa mère d'Obamba ; l'analyse définit la famille Bongo comme un clan construit autour d'Omar Bongo et mentionne ses obsèques."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Bongo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Une sociogenèse de la structure du pouvoir d'Omar Bongo » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Bongo à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Bongo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Une sociogenèse de la structure du pouvoir d'Omar Bongo » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Bongo."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Bongo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « Une sociogenèse de la structure du pouvoir d'Omar Bongo », n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La recherche « Bongo Gabon Teke surname transmission inheritance clan » et la lecture de « Une sociogenèse de la structure du pouvoir d'Omar Bongo » documentent la reproduction d'une famille politique mais pas la règle anthroponymique de transmission du nom Bongo ; le mode reste donc « other »."
+    }
+  ]
+}

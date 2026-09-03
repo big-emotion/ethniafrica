@@ -1,0 +1,121 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier mossi documenté par fiche ; conserver le récit d'Oubri et Weèga comme tradition compilée, faute de témoin nommé et d'étude dédiée."
+  },
+  "id": "PAT_TAPSOBA",
+  "nameMain": "Tapsoba",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Tapsoba",
+      "attestations": [
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["burkina-provisional-patronyme-register"]
+        }
+      ]
+    },
+    {
+      "spelling": "Tabsoba",
+      "attestations": [
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["niggli-2008-kasena-names"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le répertoire provisoire fait des Tapsoba les descendants de Naba Oubri et de Naba Weèga venus de Gambaga. Il rattache la naissance du nom à la promesse d'Oubri de tendre un arc au nom de son frère pour défendre leurs oncles à Guiloungou. Ce récit n'est pas attribué à un informateur et n'est pas corroboré par une étude historique dédiée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["burkina-provisional-patronyme-register"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "La notice TAPSOBA traduit le nom par « détenteur de l'arc » dans le cadre de son récit d'Oubri et Weèga. Faute d'analyse morphologique publiée consultable, cette traduction reste une glose collectée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["burkina-provisional-patronyme-register"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MOSSI",
+      "status": "attested",
+      "sourceRefs": [
+        "niggli-2008-kasena-names",
+        "burkina-provisional-patronyme-register"
+      ]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": [
+        "niggli-2008-kasena-names",
+        "burkina-provisional-patronyme-register"
+      ]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "izard-1973-mossi-buudu",
+      "title": "La Lance et les guenilles",
+      "url": "https://www.persee.fr/doc/hom_0439-4216_1973_num_13_3_367368?pageId=T1_141",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Michel Izard, L'Homme, 13(3), 1973, p. 139-149. La p. 141 a été consultée : le buudu mossi y est défini comme groupe de descendance patrilinéaire et unité exogamique, identifié notamment par le nom collectif ou sondre. Cette source établit le cadre de transmission, non l'origine de Tapsoba."
+    },
+    {
+      "sourceKey": "niggli-2008-kasena-names",
+      "title": "Noms des Kasena",
+      "url": "https://sil-burkina.org/sites/default/files/Noms%20des%20Kassena.pdf",
+      "tier": "official",
+      "source_kind": "linguistic_reference",
+      "notes": "Urs et Idda Niggli, Société internationale de linguistique, Ouagadougou, 2008. La section 6.4, p. 42, a été consultée ; elle cite la graphie Tabsoba parmi les exemples de noms de famille mossi, sans en proposer l'étymologie."
+    },
+    {
+      "sourceKey": "burkina-provisional-patronyme-register",
+      "title": "Projet de répertoire des patronymes au Burkina Faso — version provisoire",
+      "url": "https://pdfcoffee.com/repertoire-des-patronymes-nationaux-du-burkina-pdf-free.html",
+      "tier": "unverified",
+      "source_kind": "government",
+      "notes": "Document de travail de la Direction du patrimoine culturel, sans date ni validation finale visibles, consulté sur une copie PDFCoffee non authentifiée. Seule la notice TAPSOBA, p. 199-200, a été utilisée ici. Son récit et sa glose restent au statut claimed faute d'attribution et d'appareil critique."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La notice TAPSOBA et les recherches ciblées dans Persée, OpenEdition, Horizon IRD et Google Scholar n'ont livré aucun récit attribué à un griot nommé avec transcription."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Le répertoire cite les San comme partenaires à plaisanterie, mais aucune paire Tapsoba/PAT_* nominative, réciproque et vérifiable n'a été trouvée."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La promesse de tendre un arc et des mentions voisines de guerriers ont été vérifiées dans le répertoire ; elles ne suffisent pas à établir une fonction militaire héréditaire commune à tous les Tapsoba."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques exactes sur Tapsoba et Tabsoba ont surtout livré des personnes contemporaines ; aucun porteur décédé pertinent pour l'histoire du nom n'a été documenté par une source institutionnelle consultée."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les graphies Tapsoba et Tabsoba ont été comparées dans la liste SIL, le répertoire et les catalogues savants ; aucune lignée distincte homonyme n'a été établie."
+    }
+  ]
+}

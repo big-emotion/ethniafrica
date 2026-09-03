@@ -2,11 +2,7 @@ import { randomUUID } from "node:crypto";
 import { getSupabaseAdmin } from "../clients/supabase-admin";
 
 export type FlagStatus =
-  | "pending"
-  | "in_review"
-  | "resolved"
-  | "rejected"
-  | "escalated";
+  "pending" | "in_review" | "resolved" | "rejected" | "escalated";
 
 export type SeededFlag = {
   flagId: string;

@@ -1,10 +1,13 @@
 import swaggerJsdoc from "swagger-jsdoc";
 
+import { OPENAPI_V2_TAGS } from "@/lib/api/openapiV2Tags";
+import { PRODUCT_NAME } from "@/lib/brand";
+
 const options: swaggerJsdoc.Options = {
   definition: {
     openapi: "3.1.0",
     info: {
-      title: "Ethniafrique Atlas API v2 - AFRIK",
+      title: `${PRODUCT_NAME} API v2 - AFRIK`,
       version: "2.2.0",
       description:
         "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.\n\n" +
@@ -17,7 +20,7 @@ const options: swaggerJsdoc.Options = {
         "- the legacy `Source.type` enum, which read a column dropped in migration 015 and was therefore always `null`;\n" +
         "- the two catalogue gating properties on `Source.policy`, which decided whether a citation could be published at all. Under the source doctrine no citation is refused, so `Source.policy.tier` carries the signal instead.",
       contact: {
-        name: "Ethniafrique Atlas",
+        name: PRODUCT_NAME,
         url: "https://github.com/big-emotion/ethniafrica",
       },
     },
@@ -33,87 +36,7 @@ const options: swaggerJsdoc.Options = {
           : "Serveur de développement",
       },
     ],
-    tags: [
-      {
-        name: "API v2 - Search",
-        description: "Recherche multi-entités (API v2)",
-      },
-      {
-        name: "API v2 - Countries",
-        description: "Opérations sur les pays (API v2)",
-      },
-      {
-        name: "API v2 - Peoples",
-        description: "Opérations sur les peuples (API v2)",
-      },
-      {
-        name: "API v2 - Language Families",
-        description: "Opérations sur les familles linguistiques (API v2)",
-      },
-      {
-        name: "API v2 - Languages",
-        description: "Opérations sur les langues (API v2)",
-      },
-      {
-        name: "API v2 - Keys",
-        description: "API key management (issuance)",
-      },
-      {
-        name: "API v2 - Module #0",
-        description:
-          "Source Transparency Fabric — sources, confidence scores, editorial doctrine",
-      },
-      {
-        name: "API v2 - Oral Narratives",
-        description:
-          "Public, attributed oral narratives. Restricted narratives and protected metadata are never returned.",
-      },
-      {
-        name: "API v2 - Feed",
-        description:
-          "Revision feed — cursor-paginated Atom + JSON feed of recent published revisions (FR38, AR19, NFR32)",
-      },
-      {
-        name: "API v2 - Flags",
-        description:
-          "Editorial reports on AFRIK entities. Submission is open — a bearer token is optional and decides attribution only. The control is a proof of work computed in the reader's browser and verified here, so no visitor data reaches a third party (moderation charter §2).",
-      },
-      {
-        name: "API v2 - Reference Library",
-        description:
-          "Authenticated contributor workspace for structured references, assertion locators, and private working assets.",
-      },
-      {
-        name: "API v2 - Names",
-        description:
-          "Name-variant records (endonyms, exonyms, historical spellings, surnames) — browsable, filterable, searchable index (FR53, FR55, FR58).",
-      },
-      {
-        name: "API v2 - Patronymes",
-        description:
-          "Family names (patronymes) — a name's naming system, caste or social function, associated peoples and countries, and bearers. Distinct from API v2 - Names (the ethnonym dossier); bearer entries are a narrow allow-listed summary and never carry ethnic-origin data for a named living person (DEC-040, REQ-133).",
-      },
-      {
-        name: "API v2 - Compare",
-        description:
-          "Comparison of 2–3 entities of the same type (peoples, countries, or language families), reusing the same assembly path as the SSR comparison page (FR64, AR8, AR9, NFR38).",
-      },
-      {
-        name: "API v2 - Relations",
-        description:
-          "Sourced inter-people relations plus read-time-computed derived linguistic links (Epic 11, FR73).",
-      },
-      {
-        name: "API v2 - Migrations",
-        description:
-          "Spatio-temporal migration events (Bantu expansion phases, trade routes, forced displacements, pastoral movements) with GeoJSON geometry, time range, peoples, sources, and confidence (Epic 12, FR83, AR8/AR9).",
-      },
-      {
-        name: "API v2 - Quiz",
-        description:
-          "Smart quiz engine — audience segments with per-rung question counts, and randomly-composed sessions drawn from the verified AFRIK corpus, gate-checked at serve time (Epic 10, FR65/FR66, AR8/AR9, NFR38).",
-      },
-    ],
+    tags: OPENAPI_V2_TAGS,
     paths: {
       "/api/v2/reference-library": {
         get: {
@@ -528,31 +451,55 @@ const options: swaggerJsdoc.Options = {
         SearchResponseData: {
           type: "object",
           description:
-            "Search result data. Each entity kind is returned in its own array, already ordered — an exact name match first (accent- and case-insensitive), then ts_rank over the weighted search_vector (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the accent-insensitive name_unaccent_vector, both matched with a prefix operator on the last word of q (migration 052, REQ-129), multiplied for peoples by a 0.5–1.0 confidence factor. `relevance` is therefore comparable within an array and NOT between arrays: peoples are scored ts_rank × confidence, countries by bare ts_rank, families by a match tier, persons by the same prefix/unaccent/trigram ranking as peoples but with no confidence factor (migration 065, REQ-126). Order across kinds on `exactMatch`, which means the same thing everywhere. A person's link to a studied people is carried by `peopleLinks[].relationLabel` (`membership` | `observation`) and is never confused with that people's own membership.",
+            "Search result data for one of two exclusive modes. Without `lens`, `results` is the canonical cross-kind ranking for the five mergeable non-quiz kinds: every hit, best first, each row carrying a `kind` discriminator; languages remain a grouped facet, and quiz questions are neither queried nor returned. With `lens=quiz`, only quiz questions are queried and returned, in both `quizzes` and `results`, while every non-quiz array and total is empty or zero. In the main stream, each entity kind is ALSO returned in its own array, already ordered — an exact name match first (accent- and case-insensitive), then ts_rank over the weighted search_vector (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the accent-insensitive name_unaccent_vector, both matched with a prefix operator on the last word of q (migration 052, REQ-129), multiplied for peoples by a 0.5–1.0 confidence factor. `relevance` is comparable within an array and NOT between arrays: peoples are scored ts_rank × confidence, countries by bare ts_rank, families by a match tier, persons and patronymes by the same prefix/unaccent/trigram ranking as peoples but with no confidence factor (migration 065, REQ-126; migration 066, REQ-135 — patronymes additionally fold in a dmetaphone phonetic match), languages by the same prefix/unaccent ranking with no confidence factor and an exact-match bonus that also fires on the ISO 639-3 id (migration 068, REQ-136). `normalizedScore` is the magnitude that IS comparable across kinds: migration 069 places each kind's raw relevance inside a band chosen by the match class (exact [0.90,1.00], lexical [0.50,0.90], fallback [0.00,0.50]), and it is what `results` sorts on; languages are exposed as a facet only and are not folded into `results`. A person's link to a studied people is carried by `peopleLinks[].relationLabel` (`membership` | `observation`) and is never confused with that people's own membership.",
           properties: {
             peoples: {
               type: "array",
               items: { $ref: "#/components/schemas/PeopleV2" },
               description:
-                "Matching peoples, ranked. Each carries relevance, exactMatch, confidence, languageFamilyName and a snippet whose matched terms are wrapped in [[ ]].",
+                "Matching peoples, ranked. Each carries relevance, exactMatch, normalizedScore, confidence, languageFamilyName and a snippet whose matched terms are wrapped in [[ ]].",
             },
             countries: {
               type: "array",
               items: { $ref: "#/components/schemas/CountryV2" },
               description:
-                "Matching countries, ranked by ts_rank with name_fr outranking etymology. Empty when the request carries only a relation scope.",
+                "Matching countries, ranked by ts_rank with name_fr outranking etymology. Each carries relevance, exactMatch, normalizedScore and a snippet. Empty when the request carries only a relation scope.",
             },
             families: {
               type: "array",
               items: { $ref: "#/components/schemas/LanguageFamilyV2" },
               description:
-                "Matching language families, name-matched rather than FTS-ranked (no tsvector column on the table): accent-insensitive substring match, tiered exact > prefix > substring (REQ-129).",
+                "Matching language families, ranked by afrik_search_language_families (migration 069): accent-insensitive exact (1.0) > prefix (0.6) > substring (0.3) on the French name, then a prose tier (0.1) through search_vector for a term that appears only in the decolonial text (DEC-028). Each carries relevance, exactMatch, normalizedScore and a snippet.",
             },
             persons: {
               type: "array",
               items: { $ref: "#/components/schemas/PersonSearchResultV2" },
               description:
-                "Matching named persons (REQ-126), ranked by afrik_search_persons (migration 065): exact full_name match, then a prefix/accent-insensitive lexical match, then a pg_trgm typo-tolerance fallback. Each carries relevance, exactMatch, a snippet, and peopleLinks typing its relation to any studied/belonged-to people.",
+                "Matching named persons (REQ-126), ranked by afrik_search_persons (migration 065): exact full_name match, then a prefix/accent-insensitive lexical match, then a pg_trgm typo-tolerance fallback. Each carries relevance, exactMatch, normalizedScore, a snippet, and peopleLinks typing its relation to any studied/belonged-to people.",
+            },
+            patronymes: {
+              type: "array",
+              items: { $ref: "#/components/schemas/PatronymeSearchResultV2" },
+              description:
+                "Matching names (REQ-135), ranked by afrik_search_patronymes (migration 066): exact name match, then a prefix/accent-insensitive lexical match, then a dmetaphone phonetic match, then a pg_trgm typo-tolerance fallback. Each carries relevance, exactMatch, normalizedScore and a snippet.",
+            },
+            quizzes: {
+              type: "array",
+              items: { $ref: "#/components/schemas/QuizSearchResultV2" },
+              description:
+                "Dedicated quiz-lens page: empty without `lens` and populated only with `lens=quiz` (REQ-121). Matches active-bank questions ranked by afrik_search_quiz (migration 069) on the stem, the stimulus, the explanation and the subject entity's name. Revoked questions are invisible; the options, the correct answer and the explanation are never returned.",
+            },
+            results: {
+              type: "array",
+              items: { $ref: "#/components/schemas/SearchHitV2" },
+              description:
+                "Canonical page for the selected mode, ordered on normalizedScore descending, ties broken on the French collation of the name then on the id. Without `lens`, it merges the main stream and excludes quiz questions; with `lens=quiz`, it contains only quiz questions.",
+            },
+            languages: {
+              type: "array",
+              items: { $ref: "#/components/schemas/LanguageSearchResultV2" },
+              description:
+                "Matching languages (REQ-136), ranked by afrik_search_languages (migration 068): exact match on the ISO 639-3 id or the name, then a prefix/accent-insensitive lexical match. Each carries relevance, exactMatch, familyName and a snippet.",
             },
             peoplesTotal: {
               type: "integer",
@@ -575,11 +522,33 @@ const options: swaggerJsdoc.Options = {
               description: "Named persons matching corpus-wide",
               example: 0,
             },
+            patronymesTotal: {
+              type: "integer",
+              description: "Names (patronymes) matching corpus-wide",
+              example: 0,
+            },
+            quizzesTotal: {
+              type: "integer",
+              description:
+                "Zero without `lens`; the corpus-wide count of matching active quiz questions with `lens=quiz`.",
+              example: 0,
+            },
+            languagesTotal: {
+              type: "integer",
+              description: "Languages matching corpus-wide",
+              example: 0,
+            },
             total: {
               type: "integer",
               description:
-                "Sum of the four corpus-wide counts. Changed in 2.2.0: this used to report the size of the returned page, which made it useless for paging.",
+                "Without `lens`, the sum of the six non-quiz corpus-wide counts. With `lens=quiz`, this equals `quizzesTotal`. Changed in 2.2.0: this used to report the size of the returned page, which made it useless for paging.",
               example: 17,
+            },
+            leads: {
+              type: "array",
+              items: { $ref: "#/components/schemas/SearchLeadV2" },
+              description:
+                "Near-miss leads (REQ-125), populated only when total is 0: up to 3 suggestions across peoples, countries and language families, ranked by pg_trgm similarity alone (migration 069) below the main search's own fuzzy floor. Always an empty array when total is greater than 0.",
             },
           },
           required: [
@@ -587,12 +556,138 @@ const options: swaggerJsdoc.Options = {
             "countries",
             "families",
             "persons",
+            "patronymes",
+            "quizzes",
+            "languages",
+            "results",
             "peoplesTotal",
             "countriesTotal",
             "familiesTotal",
             "personsTotal",
+            "patronymesTotal",
+            "quizzesTotal",
+            "languagesTotal",
             "total",
+            "leads",
           ],
+        },
+        SearchLeadV2: {
+          type: "object",
+          description:
+            "A near-miss lead (REQ-125): what the search engine almost understood, only ever returned when the main search's total is 0.",
+          properties: {
+            kind: {
+              type: "string",
+              enum: ["people", "country", "family"],
+              description:
+                "The entity kind this lead belongs to — the three kinds the search surface names to the reader.",
+            },
+            id: { type: "string", description: "The entity's own identifier." },
+            name: { type: "string", description: "The entity's display name." },
+            similarity: {
+              type: "number",
+              description:
+                "pg_trgm similarity of the folded query against this name, in [0.2, 1].",
+              example: 0.27,
+            },
+          },
+          required: ["kind", "id", "name", "similarity"],
+        },
+        QuizSearchResultV2: {
+          type: "object",
+          description:
+            "A quiz-bank search hit (REQ-121). The projection is a closed list: options_fr and correct_option are the answer key and explanation_fr states the answer in prose, so all three are searched and none is returned — finding a question through search must not answer it.",
+          properties: {
+            id: { type: "string", example: "b1f0e2c4-…" },
+            prompt: {
+              type: "string",
+              description: "The question stem, as asked.",
+              example: "Quel est l'autonyme des Wolof ?",
+            },
+            entityType: {
+              type: "string",
+              description: "The subject's kind — `people` or `country`.",
+              example: "people",
+            },
+            entityId: { type: "string", example: "PPL_WOLOF" },
+            subjectName: {
+              type: ["string", "null"],
+              description:
+                "French name of the people or country the question is about — how a reader reaches the bank, since nobody searches the wording of a question.",
+              example: "Wolof",
+            },
+            relevance: { type: "number", example: 0.42 },
+            exactMatch: {
+              type: "boolean",
+              description:
+                "True when the reader named the question's subject, not when they retyped the stem.",
+            },
+            normalizedScore: {
+              type: "number",
+              minimum: 0,
+              maximum: 1,
+              description:
+                "Cross-kind ranking score on [0,1] (migration 069), the magnitude `results` sorts on.",
+              example: 0.94,
+            },
+            snippet: {
+              type: ["string", "null"],
+              description:
+                "Match excerpt over the subject, the stem and the stimulus only; matched terms are wrapped in [[ ]]. Never draws on the explanation.",
+            },
+          },
+          required: [
+            "id",
+            "prompt",
+            "entityType",
+            "entityId",
+            "subjectName",
+            "relevance",
+            "exactMatch",
+            "normalizedScore",
+            "snippet",
+          ],
+        },
+        SearchHitV2: {
+          type: "object",
+          description:
+            "One row of the canonical cross-kind ranking. The grouped arrays answer what a query found among peoples, or among countries; this answers what it found, best first, whatever the kind.",
+          properties: {
+            kind: {
+              type: "string",
+              enum: [
+                "people",
+                "country",
+                "languageFamily",
+                "person",
+                "patronyme",
+                "quiz",
+              ],
+              description:
+                "Which array of this same response carries the full record for this id.",
+            },
+            id: { type: "string", example: "PPL_WOLOF" },
+            name: {
+              type: "string",
+              description:
+                "The hit's French display name — the question stem for a quiz row.",
+              example: "Wolof",
+            },
+            normalizedScore: {
+              type: "number",
+              minimum: 0,
+              maximum: 1,
+              description:
+                "Cross-kind ranking score on [0,1] (migration 069). The match class picks a disjoint band and the kind's own raw relevance is placed inside it, so the class always dominates and the raw magnitude — measured on a different scale per kind — only breaks ties within one class.",
+              example: 0.94,
+            },
+            snippet: {
+              type: ["string", "null"],
+              description:
+                "Match excerpt where the kind provides one; matched terms are wrapped in [[ ]].",
+            },
+          },
+          required: ["kind", "id", "name", "normalizedScore", "snippet"],
         },
         SearchResponse: {
           type: "object",
@@ -848,6 +943,14 @@ const options: swaggerJsdoc.Options = {
               type: "boolean",
               example: false,
             },
+            normalizedScore: {
+              type: "number",
+              minimum: 0,
+              maximum: 1,
+              description:
+                "Cross-kind ranking score on [0,1] (migration 069), the magnitude `results` sorts on.",
+              example: 0.94,
+            },
             snippet: {
               type: "string",
               description:
@@ -866,8 +969,123 @@ const options: swaggerJsdoc.Options = {
             "roleCategory",
             "relevance",
             "exactMatch",
+            "normalizedScore",
             "snippet",
             "peopleLinks",
+          ],
+        },
+        PatronymeSearchResultV2: {
+          type: "object",
+          description:
+            "A name (patronyme) search hit (REQ-135), ranked by afrik_search_patronymes (migration 066): exact name match, then a prefix/accent-insensitive lexical match, then a dmetaphone phonetic match (bridging spellings like Keyta/Keïta), then a pg_trgm typo-tolerance fallback.",
+          properties: {
+            id: {
+              type: "string",
+              description: "Identifiant PATR_*",
+              example: "PATR_KEITA",
+            },
+            nameMain: {
+              type: "string",
+              example: "Keïta",
+            },
+            nameSystem: {
+              type: "string",
+              description: "DEC-039's naming-system discriminant.",
+              example: "patronymic",
+            },
+            casteOrSocialFunction: {
+              type: ["string", "null"],
+            },
+            content: {
+              type: "object",
+              description: "Evolutionary JSONB content, forwarded opaquely.",
+            },
+            relevance: {
+              type: "number",
+              example: 0.82,
+            },
+            exactMatch: {
+              type: "boolean",
+              example: false,
+            },
+            normalizedScore: {
+              type: "number",
+              minimum: 0,
+              maximum: 1,
+              description:
+                "Cross-kind ranking score on [0,1] (migration 069), the magnitude `results` sorts on.",
+              example: 0.94,
+            },
+            snippet: {
+              type: "string",
+              description:
+                "Match excerpt over nameMain; matched terms are wrapped in [[ ]].",
+            },
+          },
+          required: [
+            "id",
+            "nameMain",
+            "nameSystem",
+            "casteOrSocialFunction",
+            "content",
+            "relevance",
+            "exactMatch",
+            "normalizedScore",
+            "snippet",
+          ],
+        },
+        LanguageSearchResultV2: {
+          type: "object",
+          description:
+            "A language search hit (REQ-136), ranked by afrik_search_languages (migration 068): exact match on the ISO 639-3 id or the accent/case-insensitive name, then a prefix/accent-insensitive lexical match over the weighted search_vector (migration 055) OR name_unaccent_vector (this migration).",
+          properties: {
+            id: {
+              type: "string",
+              description: "ISO 639-3 code",
+              example: "swa",
+            },
+            name: {
+              type: "string",
+              example: "Swahili",
+            },
+            familyId: {
+              type: "string",
+              description: "Identifiant FLG_*",
+              example: "FLG_NIGER_CONGO",
+            },
+            familyName: {
+              type: ["string", "null"],
+              example: "Niger-Congo",
+            },
+            content: {
+              type: "object",
+              description: "Evolutionary JSONB content, forwarded opaquely.",
+            },
+            relevance: {
+              type: "number",
+              example: 0.82,
+            },
+            exactMatch: {
+              type: "boolean",
+              description:
+                'Fires on the ISO 639-3 id as well as on the name — a reader who types "swa" has named the language exactly as precisely as one who types "Swahili".',
+              example: false,
+            },
+            snippet: {
+              type: "string",
+              description:
+                "Match excerpt over name; matched terms are wrapped in [[ ]].",
+            },
+          },
+          required: [
+            "id",
+            "name",
+            "familyId",
+            "familyName",
+            "content",
+            "relevance",
+            "exactMatch",
+            "snippet",
           ],
         },
         LanguageFamilyV2: {
@@ -947,6 +1165,25 @@ const options: swaggerJsdoc.Options = {
               type: "string",
               enum: ["sourced", "derived"],
             },
+            isoCode639_3: {
+              type: "string",
+              pattern: "^[a-z]{3}$",
+              example: "yor",
+            },
+            glottocode: { type: ["string", "null"], example: "yoru1245" },
+            nameEn: { type: ["string", "null"], example: "Yoruba" },
+            alternateNames: {
+              type: "array",
+              items: { type: "string", minLength: 1 },
+            },
+            spellingAliases: {
+              type: "array",
+              items: { type: "string", minLength: 1 },
+            },
+            dialects: {
+              type: "array",
+              items: { type: "string", minLength: 1 },
+            },
             family: {
               type: "object",
               properties: {
@@ -985,6 +1222,12 @@ const options: swaggerJsdoc.Options = {
             "id",
             "name",
             "nameProvenance",
+            "isoCode639_3",
+            "glottocode",
+            "nameEn",
+            "alternateNames",
+            "spellingAliases",
+            "dialects",
             "family",
             "speakingPeoples",
             "vehicularRole",
@@ -1171,10 +1414,109 @@ const options: swaggerJsdoc.Options = {
           },
           required: ["data", "meta", "errors"],
         },
+        PatronymeLinkV2: {
+          type: "object",
+          description:
+            "A name as a fiche lists it — enough to name it and to link to its dossier.",
+          properties: {
+            id: {
+              type: "string",
+              pattern: "^PAT_[A-Z0-9_]+$",
+              example: "PAT_KEITA",
+            },
+            nameMain: { type: "string", example: "Keïta" },
+            nameSystem: {
+              type: "string",
+              enum: [
+                "clan_name",
+                "non_hereditary_patronymic",
+                "nisba",
+                "praise_name",
+                "totemic_clan",
+              ],
+            },
+          },
+          required: ["id", "nameMain", "nameSystem"],
+        },
+        PatronymeReachV2: {
+          allOf: [
+            { $ref: "#/components/schemas/PatronymeLinkV2" },
+            {
+              type: "object",
+              properties: {
+                viaPeoples: {
+                  type: "array",
+                  description:
+                    "The peoples of this country that bear the name. They are what makes the entry reach rather than attestation, and what lets a reader audit the inference.",
+                  items: {
+                    type: "object",
+                    properties: {
+                      id: { type: "string", example: "PPL_ZENATA" },
+                      nameMain: { type: "string", example: "Zénètes" },
+                    },
+                    required: ["id", "nameMain"],
+                  },
+                },
+              },
+              required: ["viaPeoples"],
+            },
+          ],
+        },
+        CountryPatronymesV2: {
+          type: "object",
+          description:
+            "The two name routes a country answers along, kept apart. They assert different things and neither contains the other — measured on the corpus, 2 countries are reachable only directly and 6 only through their peoples. Summing them publishes an inference under the heading of a sourced fact.",
+          properties: {
+            attested: {
+              type: "array",
+              description:
+                "Names a source attests in this country (afrik_patronyme_countries).",
+              items: { $ref: "#/components/schemas/PatronymeLinkV2" },
+            },
+            borneByPeoples: {
+              type: "array",
+              description:
+                "Names borne by this country's peoples that are not attested here. The reader is told where the bearers live, not where the name is recorded.",
+              items: { $ref: "#/components/schemas/PatronymeReachV2" },
+            },
+          },
+          required: ["attested", "borneByPeoples"],
+        },
+        PeopleDetailV2: {
+          allOf: [
+            { $ref: "#/components/schemas/PeopleV2" },
+            {
+              type: "object",
+              properties: {
+                patronymes: {
+                  type: "array",
+                  description:
+                    "The names this people bears. Distinct from the ethnonym dossier at /peoples/{id}/names, which holds what the people is called. An empty array is the ordinary state of the corpus, not an omission.",
+                  items: { $ref: "#/components/schemas/PatronymeLinkV2" },
+                },
+              },
+              required: ["patronymes"],
+            },
+          ],
+        },
+        CountryDetailV2: {
+          allOf: [
+            { $ref: "#/components/schemas/CountryV2" },
+            {
+              type: "object",
+              properties: {
+                patronymes: {
+                  $ref: "#/components/schemas/CountryPatronymesV2",
+                },
+              },
+              required: ["patronymes"],
+            },
+          ],
+        },
         PeopleDetailEnvelope: {
           type: "object",
           properties: {
-            data: { $ref: "#/components/schemas/PeopleV2" },
+            data: { $ref: "#/components/schemas/PeopleDetailV2" },
             meta: { $ref: "#/components/schemas/ApiResponseMeta" },
             errors: {
               type: "array",
@@ -1208,7 +1550,7 @@ const options: swaggerJsdoc.Options = {
         CountryDetailEnvelope: {
           type: "object",
           properties: {
-            data: { $ref: "#/components/schemas/CountryV2" },
+            data: { $ref: "#/components/schemas/CountryDetailV2" },
             meta: { $ref: "#/components/schemas/ApiResponseMeta" },
             errors: {
               type: "array",
@@ -1344,12 +1686,38 @@ const options: swaggerJsdoc.Options = {
             },
             title: { type: "string" },
             url: { type: ["string", "null"] },
-            pinnedUrl: { type: ["string", "null"] },
+            pinnedUrl: {
+              type: ["string", "null"],
+              deprecated: true,
+              description:
+                "Always null: no column backs this field. Kept because removing a published property is a breaking change, and null before reads the same as absent after.",
+            },
             year: { type: ["integer", "null"] },
             author: { type: ["string", "null"] },
             publisher: { type: ["string", "null"] },
-            resolvable: { type: ["boolean", "null"] },
+            resolvable: {
+              type: ["boolean", "null"],
+              deprecated: true,
+              description:
+                "Always null: the nightly link check writes a log file, not a column. Kept for the same reason as pinnedUrl.",
+            },
             lastVerifiedAt: {
+              type: ["string", "null"],
+              format: "date-time",
+              description:
+                "When a human last verified the source. Read from `verified_at`.",
+            },
+            notes: {
+              type: ["string", "null"],
+              description:
+                "Why the source carries the tier it carries — the catalogue entry, domain rule, or citation form the tier was read from.",
+            },
+            page: {
+              type: ["string", "null"],
+              description:
+                "Locator inside the work, when the citation named one.",
+            },
+            addedAt: {
               type: ["string", "null"],
               format: "date-time",
             },
@@ -1683,6 +2051,55 @@ const options: swaggerJsdoc.Options = {
             data: {
               type: "array",
               items: { $ref: "#/components/schemas/OralNarrative" },
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+        },
+        Media: {
+          type: "object",
+          description:
+            "A media credit (author, licence URI, source page) attached to a fiche. Carries no binary media content or image URL — matching an actual image to a fiche is a separate, manually-curated step (ETNI-1412).",
+          properties: {
+            id: { type: "string", format: "uuid" },
+            entityType: {
+              type: "string",
+              enum: ["language_family", "language", "people", "country"],
+            },
+            entityId: { type: "string", example: "PPL_SHONA" },
+            author: { type: ["string", "null"] },
+            licenceUri: {
+              type: "string",
+              format: "uri",
+              example: "https://creativecommons.org/licenses/by-sa/4.0/",
+            },
+            sourcePageUrl: { type: ["string", "null"], format: "uri" },
+            period: { type: ["string", "null"] },
+            depictionTiming: {
+              type: "string",
+              enum: ["contemporary", "reconstitution"],
+            },
+          },
+          required: [
+            "id",
+            "entityType",
+            "entityId",
+            "author",
+            "licenceUri",
+            "sourcePageUrl",
+            "period",
+            "depictionTiming",
+          ],
+        },
+        MediaListResponse: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/Media" },
             },
             meta: { $ref: "#/components/schemas/ApiResponseMeta" },
             errors: {
@@ -2355,7 +2772,7 @@ const options: swaggerJsdoc.Options = {
               type: "string",
               enum: ["language-corpus", "people-fiches"],
               description:
-                "Which source produced `branches`: the language corpus, or a reconstruction from the ISO codes the people fiches declare. `afrik_languages` is empty in every deployed database, so `people-fiches` is the normal case.",
+                "Which source produced `branches`: the language corpus, or a reconstruction from the ISO codes the people fiches declare. `afrik_languages` now holds 748 rows in recette, but coverage still varies by family, so `people-fiches` remains a common fallback.",
             },
             declaredBranches: {
               type: "array",
@@ -2643,6 +3060,9 @@ const options: swaggerJsdoc.Options = {
             "offensive",
             "correction-proposal",
             "other",
+            // A proposal for content the corpus does not hold yet, so it is the
+            // one kind that may carry no target — see migration 081.
+            "contribution",
           ],
           example: "inaccurate",
         },
@@ -2693,6 +3113,14 @@ const options: swaggerJsdoc.Options = {
               minLength: 10,
               maxLength: 2000,
               example: "Population figure appears outdated vs. 2024 census.",
+            },
+            reporter_email: {
+              type: "string",
+              format: "email",
+              maxLength: 320,
+              example: "lectrice@example.org",
+              description:
+                "Optional reply address. The report is created and published whether or not it is supplied. A single-use link is e-mailed to confirm the address, and only a confirmed address ever receives the moderation decision. Never published, and never returned by any endpoint.",
             },
             counter_source_url: {
               type: "string",
@@ -2991,8 +3419,21 @@ const options: swaggerJsdoc.Options = {
             labelFr: { type: "string", example: "Ghana" },
             activeQuestionCount: { type: "integer", minimum: 0 },
             playable: { type: "boolean" },
+            playableThemeIds: {
+              type: "array",
+              items: { type: "string" },
+              description:
+                "The themes this track can fill a session of, in the picker's order. A theme absent from the list cannot be crossed with this track — `?pays=GHA&theme=…` naming an omitted theme answers 422.",
+              example: ["noms", "langues", "croyances"],
+            },
           },
-          required: ["id", "labelFr", "activeQuestionCount", "playable"],
+          required: [
+            "id",
+            "labelFr",
+            "activeQuestionCount",
+            "playable",
+            "playableThemeIds",
+          ],
         },
         QuizThemeOption: {
           type: "object",
@@ -3118,13 +3559,12 @@ const options: swaggerJsdoc.Options = {
             templateId: {
               type: "string",
               description:
-                "T1-T5 ask about an atomic fiche field; T6-T11 quote a prose rubric and ask which people it belongs to; T12 asks which of a people's exonyms is contested.",
+                "T1-T4 ask about an atomic fiche field; T6-T11 quote a prose rubric of a people and ask which people it belongs to; T12 asks which of a people's exonyms is contested; T13-T18 do the same over countries. Kept in step with QUIZ_TEMPLATE_IDS by openapiV2 contract tests — the enum had gone stale twice.",
               enum: [
                 "T1",
                 "T2",
                 "T3",
                 "T4",
-                "T5",
                 "T6",
                 "T7",
                 "T8",
@@ -3132,6 +3572,12 @@ const options: swaggerJsdoc.Options = {
                 "T10",
                 "T11",
                 "T12",
+                "T13",
+                "T14",
+                "T15",
+                "T16",
+                "T17",
+                "T18",
               ],
             },
             promptFr: { type: "string" },

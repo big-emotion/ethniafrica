@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
+  },
+  "id": "PAT_OJOK",
+  "nameMain": "Ojok",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Ojok",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["amone-acholi-naming-2014"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Ojok est documenté comme un nom personnel masculin acholi donné à un enfant né avec une marque ou une particularité physique inhabituelle.",
+        "claimStatus": "established",
+        "sourceRefs": ["amone-acholi-naming-2014"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ACHOLI",
+      "status": "attested",
+      "sourceRefs": ["amone-acholi-naming-2014"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["amone-acholi-naming-2014"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "amone-acholi-naming-2014",
+      "title": "Identity, Memory and Gender in Child Naming Among the Acholi People of Northern Uganda",
+      "url": "https://ijournals.in/wp-content/uploads/2017/07/IJSRC-2505.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Charles Amone, International Journal of Social Relevance & Concern 2(5), 2014. L’article porte sur les noms personnels acholi en Ouganda du Nord et donne séparément Ojok, enfant né avec une marque physique inhabituelle, et Okello, enfant né après des jumeaux."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Ojok tradition orale », « Ojok griot » et « Ojok oral history », ainsi que l’étude de Charles Amone sur la nomination des enfants acholi et ses tableaux nom par nom, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches « Ojok etymology » et « Ojok meaning », complétées par l’étude de Charles Amone sur la nomination des enfants acholi et ses tableaux nom par nom, n’ont livré aucune analyse linguistique publiée qui permette une reconstruction prudente."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Ojok joking kinship », « Ojok name alliance » et « Ojok clan pact », ainsi que l’étude de Charles Amone sur la nomination des enfants acholi et ses tableaux nom par nom, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Ojok caste », « Ojok occupational group » ainsi que les passages sociaux consultés dans l’étude de Charles Amone sur la nomination des enfants acholi et ses tableaux nom par nom, n’ont établi aucune fonction héréditaire propre à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques et nécrologiques sur « Ojok » dans les catalogues universitaires et institutionnels, complétées par l’étude de Charles Amone sur la nomination des enfants acholi et ses tableaux nom par nom, n’ont pas permis de vérifier un porteur décédé avec une identité suffisamment précise ; les personnes vivantes repérées ne sont pas ajoutées sans auto-identification."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches sur la graphie exacte « Ojok » dans les index onomastiques et l’étude de Charles Amone sur la nomination des enfants acholi et ses tableaux nom par nom n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
+    }
+  ]
+}

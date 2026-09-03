@@ -1,0 +1,119 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les regles de redaction completes."
+  },
+  "id": "PPL_CREOLE_GUADELOUPE",
+  "nameMain": "Créoles guadeloupéens",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["GLP"],
+  "classificationStatus": "colonial-legacy",
+  "content": {
+    "appellations": {
+      "mainName": "Créoles guadeloupéens",
+      "selfAppellation": "Gwadloupéyen",
+      "exonyms": ["Antillais", "Créoles des Antilles françaises"],
+      "spellingAliases": ["Gwadloupéyen(ne)"],
+      "originOfExonyms": "Le terme « créole » provient de l'espagnol criollo et du portugais crioulo, eux-mêmes dérivés du latin creare (« élever », « faire naître »), et désignait à l'origine les personnes nées dans les colonies plutôt qu'en métropole.",
+      "whyProblematic": "Le terme « créole » peut être perçu comme portant l'héritage de classifications coloniales fondées sur le lieu de naissance et l'ascendance, opposant historiquement Blancs créoles, libres de couleur et descendants d'esclaves.",
+      "contemporaryUsage": "« Gwadloupéyen » est l'auto-désignation courante et valorisée des habitants de la Guadeloupe ; « créole » qualifie aujourd'hui surtout la langue et la culture issues de la créolisation antillaise.",
+      "peopleGroupId": null,
+      "peopleGroupLabel": null
+    },
+    "ethnicities": [
+      "Aradas (Dahomey, golfe du Bénin)",
+      "Congos (bassin du Congo/Angola)",
+      "Mines (Côte de l'Or, actuel Ghana)",
+      "Sénégambiens"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Créoles guadeloupéens ne constituent pas un peuple originaire d'Afrique mais un peuple ethnogénéré aux Antilles françaises par la créolisation de plusieurs vagues d'Africains réduits en esclavage et déportés vers la Guadeloupe à partir du XVIIe siècle.",
+      "formationPeriod": "Colonisation française de la Guadeloupe à partir de 1635 ; formation de la société créole guadeloupéenne du milieu du XVIIe siècle à l'abolition définitive de l'esclavage en 1848.",
+      "migrationRoutes": [
+        "Sénégambie, golfe du Bénin (Dahomey), Côte de l'Or et, à partir des années 1770, bassin du Congo/Angola, vers la Guadeloupe, XVIIe-XIXe siècle"
+      ],
+      "historicalSettlementZones": [
+        "Ensemble de l'archipel guadeloupéen (Basse-Terre, Grande-Terre et dépendances)"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": null,
+      "majorHistoricalEvents": "1635 : début de la colonisation française de la Guadeloupe. 1685 : promulgation du Code noir. 28 mai 1802 : à Matouba, Louis Delgrès et environ 300 compagnons se donnent la mort plutôt que de se rendre aux troupes napoléoniennes venues rétablir l'esclavage. 27 avril 1848 : décret Schoelcher abolissant l'esclavage dans les colonies françaises. 27 mai 1848 : le gouverneur Layrle proclame l'abolition effective de l'esclavage en Guadeloupe."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": null,
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": null,
+      "religiousAuthority": null
+    },
+    "languages": {
+      "mainLanguage": "Créole guadeloupéen / Kréyòl Gwadloup (créole à base lexicale française) (gcf)",
+      "isoCodes": ["gcf"],
+      "dialects": [],
+      "vehicularRole": "Langue régionale de France reconnue depuis 2008 (article 75-1 de la Constitution) ; langue vernaculaire majoritaire de l'archipel aux côtés du français, langue officielle."
+    },
+    "historicalAffiliation": {
+      "description": "La population créole guadeloupéenne descend d'Africains réduits en esclavage et déportés vers la Guadeloupe dans le cadre de la traite négrière transatlantique française, du milieu du XVIIe siècle jusqu'à l'interdiction de la traite au début du XIXe siècle. Les registres coloniaux distinguent, dès le milieu du XVIIe siècle, jusqu'à une douzaine de groupes d'origine parmi les personnes déportées vers les Antilles françaises : des Aradas venus du Dahomey (golfe du Bénin), des Mines de la Côte de l'Or (actuel Ghana), des populations de Sénégambie, puis, à partir des années 1770, des Congos originaires du bassin du Congo et de l'Angola, recherchés notamment par les planteurs de café. Cette généalogie plurielle explique la diversité des apports africains, linguistiques comme culturels, dans la société créole qui s'est formée sur l'archipel. Le rétablissement de l'esclavage par Bonaparte en 1802, après son abolition par la Convention en 1794, s'est heurté en Guadeloupe à la résistance armée de l'officier métis Louis Delgrès : encerclé au fort Saint-Charles puis retranché sur les hauteurs du Matouba, il choisit le 28 mai 1802, avec environ 300 compagnons d'armes, de faire sauter leurs réserves de poudre plutôt que de se rendre aux troupes du général Richepance. L'esclavage n'est aboli définitivement en Guadeloupe que le 27 mai 1848, un mois après le décret signé à Paris sous l'impulsion de Victor Schoelcher, lorsque le gouverneur Layrle proclame l'abolition sur l'île avant même l'arrivée officielle du texte.",
+      "sources": [
+        {
+          "title": "Debien, Gabriel (1982) - « Les Esclaves », in Histoire des Antilles et de la Guyane (dir. Pierre Pluchon), Privat, pp. 141-161 — hébergé par Généalogie et Histoire de la Caraïbe (GHC)",
+          "url": "https://www.ghcaraibe.org/debien/NHC210bis-htm.htm",
+          "tier": "referenced",
+          "notes": "Ouvrage académique cité avec auteur, éditeur et pagination ; hébergement par une association spécialisée en généalogie/histoire caribéenne (GHC), non listée au catalogue de domaines officiels."
+        },
+        {
+          "title": "Fondation pour la mémoire de l'esclavage - Biographie de Louis Delgrès",
+          "url": "https://memoire-esclavage.org/biographies/louis-delgres",
+          "tier": "referenced",
+          "notes": "Fondation nommée, institution de référence sur la mémoire de l'esclavage ; non listée au catalogue de domaines officiels, tier inféré de la forme éditoriale (notice biographique référencée)."
+        }
+      ]
+    },
+    "culture": {
+      "majorRites": null,
+      "symbols": null,
+      "artsAndMusic": null,
+      "spiritualities": null
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": null,
+      "conflictsOrAlliances": null,
+      "diaspora": "Diaspora guadeloupéenne importante en France hexagonale, notamment en Île-de-France, depuis les vagues de migration de travail organisées à partir des années 1960 (Bumidom)."
+    },
+    "demography": {
+      "totalPopulation": 380400,
+      "referenceYear": 2025,
+      "source": "Insee Flash Guadeloupe n° 217, Bilan démographique 2024 en Guadeloupe (10 avril 2025) : population estimée à 380 400 habitants au 1er janvier 2025.",
+      "distributionByCountry": [
+        {
+          "country": "GLP",
+          "population": 380400,
+          "percentage": 100,
+          "note": "Ensemble de l'archipel guadeloupéen (Basse-Terre, Grande-Terre, Marie-Galante, Les Saintes, La Désirade)."
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "Insee - L'essentiel sur... la Guadeloupe",
+        "url": "https://www.insee.fr/fr/statistiques/4481456",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry — institut national de la statistique."
+      },
+      {
+        "title": "Ministère de la Culture - créole guadeloupéen (portail des langues de France)",
+        "url": "https://www.culture.gouv.fr/fr/Thematiques/portail-langues-en-france/langues/creole-guadeloupeen",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry — domaine ministériel gouvernemental (culture.gouv.fr) ; contenu (auto-désignation « Kréyòl Gwadloup », statut de langue régionale) confirmé par indexation moteur de recherche, la récupération directe de la page étant bloquée par une protection anti-robot."
+      },
+      {
+        "title": "Glottolog 5.3 - Guadeloupean Creole French (guad1243)",
+        "url": "https://glottolog.org/resource/languoid/id/guad1243",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
+    ]
+  }
+}

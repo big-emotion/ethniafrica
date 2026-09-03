@@ -1,0 +1,134 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
+  },
+  "id": "PAT_ABOUBAKAR",
+  "nameMain": "Aboubakar",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Aboubakar",
+      "attestations": [
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    },
+    {
+      "spelling": "Abubakar",
+      "attestations": [
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["ryan-1981-hausa-nomenclature"]
+        }
+      ]
+    },
+    {
+      "spelling": "Aboubacar",
+      "attestations": [
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["gabana-bello-2025-cameroon-anthroponyms"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Ryan documente Abubakar comme nom public islamique renvoyant au premier calife dans l’onomastique haoussa du nord du Nigeria ; Gabana et Bello attestent séparément Aboubacar parmi les noms de califes devenus patronymes au Nord-Cameroun.",
+        "claimStatus": "established",
+        "sourceRefs": [
+          "ryan-1981-hausa-nomenclature",
+          "gabana-bello-2025-cameroon-anthroponyms"
+        ]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FULA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "peopleId": "PPL_HAUSA",
+      "status": "attested",
+      "sourceRefs": ["ryan-1981-hausa-nomenclature"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "CMR",
+      "status": "attested",
+      "sourceRefs": [
+        "afrik-candidate-queue",
+        "gabana-bello-2025-cameroon-anthroponyms"
+      ]
+    },
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["ryan-1981-hausa-nomenclature"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "ryan-1981-hausa-nomenclature",
+      "title": "An Introduction to Hausa Personal Nomenclature",
+      "url": "https://ans-names.pitt.edu/ans/article/download/942/941/1886",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Pauline M. Ryan, Names: A Journal of Onomastics 29/2, 1981, p. 139-164, DOI 10.1179/nam.1981.29.2.139. L’étude porte sur les pratiques de dénomination haoussa du nord du Nigeria et distingue les noms publics islamiques attribués individuellement lors de la cérémonie du septième jour."
+    },
+    {
+      "sourceKey": "gabana-bello-2025-cameroon-anthroponyms",
+      "title": "Anthroponymes et dynamique identitaire dans les sociétés camerounaises : des noms locaux aux appellations importées (XVIIIe–XXe siècles)",
+      "url": "https://www.researchgate.net/publication/393426204_Anthroponymes_et_dynamique_identitaire_dans_les_societes_camerounaises_Des_noms_locaux_aux_appellations_importees_XVllle-XXe_siecles",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jean Francis Gabana et Assana Bello, contribution publiée en 2025 dans Le patrimoine culturel des populations des sites défensifs du pourtour du lac Tchad à l’épreuve de la modernité, p. 301-321. Les p. 312-314 décrivent l’adoption de noms de califes comme patronymes et l’adaptation phonologique de noms arabo-islamiques au Nord-Cameroun."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "Les sections consacrées à Abubakar chez Ryan et à Aboubacar chez Gabana et Bello ont été recherchées pour une alliance à plaisanterie ou une paire patronymique ; elles n’en documentent aucune."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les deux études décrivent un nom islamique individuel puis son emploi comme patronyme, sans lui attribuer de caste, métier héréditaire ou fonction sociale propre."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Ryan et Gabana/Bello citent des référents religieux ou des processus collectifs, mais aucun porteur africain décédé dont le rattachement familial soit vérifié."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les graphies Abubakar, Aboubakar et Aboubacar ont été comparées dans les deux études ; aucune lignée homonyme d’origine distincte n’y est établie."
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français limité à l'attestation académique d'un nom de louange de lignée."
+  },
+  "id": "PAT_MNTUNGWA_PRAISE",
+  "nameMain": "Mntungwa",
+  "nameSystem": "praise_name",
+  "spellings": [
+    {
+      "spelling": "Mntungwa",
+      "attestations": [
+        {
+          "countryId": "ZAF",
+          "sourceRefs": ["nwu-zulu-names"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Les abaNtungwa sont, chez Bryant, l'ensemble nguni demeuré sur place après la séparation d'avec les Xhosa et les Thembu, datée des environs de 1500, et c'est de lui que les Zoulou tirent leur descendance. Le groupe se déplace ensuite par fractions vers Utrecht et Vryheid, puis au cœur du Zululand.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["bryant-1929-olden-times"]
+      },
+      {
+        "claim": "La tradition ntungwa se dit d'une formule : ils « descendirent avec les grands paniers à grain », b'-ehla ngesiLulu, l'isiLulu étant un panier d'herbe tressée en forme de calebasse, d'un mètre environ, où l'on conservait le grain. Bryant note que la formule peut aussi se lire « descendirent à cause des iziLulu », le mot ayant pu servir de sobriquet aux étrangers qui apparurent munis de ces paniers.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["bryant-1929-olden-times"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Mntungwa relève des izithakazelo — les louanges de clan nguni, distinctes de l'isibongo (patronyme) : elles nomment les figures marquantes du lignage et se récitent en salutation.",
+        "claimStatus": "established",
+        "sourceRefs": ["nomina-africana-nguni-naming"]
+      },
+      {
+        "claim": "Le terme est contesté par ceux qu'il désigne. Bryant reconnaît qu'abaNtungwa est « dans une certaine mesure un terme de commodité » et que bon nombre des clans auxquels il l'applique le récusent ; il maintient l'appellation faute de mieux et met ces clans au défi de s'en donner une autre. L'étiquette est donc celle de l'ethnographe autant que celle du groupe.",
+        "claimStatus": "contested",
+        "sourceRefs": ["bryant-1929-olden-times"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_NGUNI",
+      "status": "attested",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    },
+    {
+      "peopleId": "PPL_ZULU",
+      "status": "supposed",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    },
+    {
+      "peopleId": "PPL_ZULU_KWA_ZULU",
+      "status": "attested",
+      "sourceRefs": ["bryant-1929-olden-times", "nwu-zulu-names"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZAF",
+      "status": "attested",
+      "sourceRefs": ["nwu-zulu-names"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "nwu-zulu-names",
+      "title": "The Social and Literary Aspects of Zulu Personal Names",
+      "url": "https://repository.nwu.ac.za/bitstreams/ea16f498-c289-4e9a-8f98-c9ed3b0354ab/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "L'étude présente Mntungwa dans la séquence des izithakazelo khumalo, ce qui fournit une attestation directe comme nom de louange de lignée."
+    },
+    {
+      "sourceKey": "nomina-africana-nguni-naming",
+      "title": "Derivation of given names from ethnonyms, surnames and clan praises: unveiling gendered naming trends in Nguni",
+      "url": "https://journals.co.za/doi/10.10520/ejc-nomina_v39_n1_a3",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Nomina Africana: Journal of African Onomastics, vol. 39 n° 1. Établit l'articulation entre patronyme (isibongo) et louanges de clan (izithakazelo) chez les Nguni."
+    },
+    {
+      "sourceKey": "bryant-1929-olden-times",
+      "title": "Olden Times in Zululand and Natal — Containing Earlier Political History of the Eastern-Nguni Clans",
+      "url": "https://archive.org/details/bwb_KT-091-892",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Bryant, Alfred T., Longmans Green, 1929. Ethnographie missionnaire coloniale, à lire comme telle : Bryant écrit depuis la mission catholique du Natal et sa chronologie clanique est reconstruite à partir de généalogies orales recueillies au tournant du siècle. C'est néanmoins la seule source imprimée qui donne, clan par clan, une origine nommée pour les clans nguni orientaux. Consulté sur le texte intégral, pas sur un index. Son orthographe est celle de 1929 (Mtetwa, Ntungwa) ; les fiches conservent la graphie du corpus et citent la sienne comme variante."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "Deux choses distinctes, que la rédaction précédente confondait. Les izithakazelo lient bien un clan à ses ancêtres et non deux clans entre eux : il n'y a pas chez les Nguni d'équivalent du sanankuya mandingue, cousinage à plaisanterie institué par paires. Mais l'alliance entre clans nommés existe et Bryant la documente — sujétion négociée, adoption d'un lignage réfugié, mariage politique. Le champ ne peut désigner qu'un nom ayant lui-même une fiche dans l'atlas : les partenaires attestés n'en ont pas."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Mntungwa désigne un ensemble de descendance, non un métier : aucune charge héréditaire ne s'y attache, et la question ne se pose pas au niveau d'une louange de clan."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Bryant rattache à l'ensemble ntungwa la lignée d'où sortent les rois zoulou, mais une louange de clan se porte collectivement : lui affecter un porteur individuel reviendrait à confondre l'izithakazelo avec l'isibongo, que la fiche distingue précisément."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucune lignée homonyme d'origine distincte n'a été trouvée ; les 111 occurrences du terme chez Bryant renvoient toutes au même ensemble."
+    }
+  ]
+}

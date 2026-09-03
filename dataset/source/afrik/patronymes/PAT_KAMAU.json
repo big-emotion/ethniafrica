@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KAMAU",
+  "nameMain": "Kamau",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Kamau",
+      "attestations": [
+        {
+          "countryId": "KEN",
+          "sourceRefs": ["familysearch-kamau"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le Dictionary of American Family Names, reproduit par FamilySearch, classe Kamau comme nom kikuyu du Kenya dont le sens demeure incertain. Il le rapproche du nom d'un ensemble régimentaire traditionnel du XVIIIe siècle et avance, avec prudence, que son emploi comme nom de famille occidental a pu être popularisé par le prénom de Jomo Kenyatta. Cette proposition historique n'est pas une étymologie démontrée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["familysearch-kamau"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_KIKUYU",
+      "status": "attested",
+      "sourceRefs": ["familysearch-kamau"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "KEN",
+      "status": "attested",
+      "sourceRefs": ["familysearch-kamau"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "familysearch-kamau",
+      "title": "Kamau Name Meaning and Kamau Family History",
+      "url": "https://www.familysearch.org/en/surname?surname=kamau",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Entrée FamilySearch consultée intégralement ; le texte est attribué au Dictionary of American Family Names de Patrick Hanks (éditions 2003 et 2006). Il dit explicitement que le sens est incertain et formule au conditionnel le passage du nom personnel au patronyme."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kamau », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'entrée « Kamau Name Meaning and Kamau Family History », qui reproduit le Dictionary of American Family Names, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kamau », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'entrée « Kamau Name Meaning and Kamau Family History », qui reproduit le Dictionary of American Family Names, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kamau », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'entrée « Kamau Name Meaning and Kamau Family History », qui reproduit le Dictionary of American Family Names, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kamau », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'entrée « Kamau Name Meaning and Kamau Family History », qui reproduit le Dictionary of American Family Names, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    }
+  ]
+}

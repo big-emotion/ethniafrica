@@ -1,0 +1,121 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Taiwo ; les lacunes consignent les recherches restées sans résultat."
+  },
+  "id": "PAT_TAIWO",
+  "nameMain": "Taiwo",
+  "nameSystem": "praise_name",
+  "spellings": [
+    {
+      "spelling": "Taiwo",
+      "attestations": [
+        {
+          "countryId": "NGA",
+          "sourceRefs": [
+            "yorubanames-taiwo",
+            "merryfield-1989-yoruba",
+            "afrik-candidate-queue"
+          ]
+        }
+      ]
+    },
+    {
+      "spelling": "Taiye",
+      "attestations": [
+        {
+          "countryId": "NGA",
+          "sourceRefs": [
+            "yorubanames-taiwo",
+            "merryfield-1989-yoruba",
+            "afrik-candidate-queue"
+          ]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Taiwo est attribué au premier des jumeaux : le manuel universitaire précise qu'il est tenu pour le cadet dans la convention yoruba ; YorubaNames explique le nom comme « celui ou celle qui goûte le monde/la vie » et atteste Táyé parmi ses variantes.",
+        "claimStatus": "established",
+        "sourceRefs": ["yorubanames-taiwo", "merryfield-1989-yoruba"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_YORUBA",
+      "status": "attested",
+      "sourceRefs": ["yorubanames-taiwo", "merryfield-1989-yoruba"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["merryfield-1989-yoruba"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "yorubanames-taiwo",
+      "title": "Táíwò — YorubaNames",
+      "url": "https://www.yorubaname.com/entries/Ta%CC%81i%CC%81wo%CC%80?lang=yo",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page de la base collaborative YorubaNames consultée directement pour Taiwo. Elle fournit la forme tonale, une glose et une segmentation morphologique ; son contenu communautaire est conservé au niveau « unverified »."
+    },
+    {
+      "sourceKey": "merryfield-1989-yoruba",
+      "title": "Lessons from Africa: A Supplement to Middle School Courses in World Cultures, Global Studies, and World Geography",
+      "url": "https://files.eric.ed.gov/fulltext/ED304395.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Merry M. Merryfield (dir.), ERIC Clearinghouse et Social Studies Development Center, Indiana University, 1989, leçon 5, pp. 45-48 du document. Le PDF intégral a été consulté ; la liste des noms et significations est attribuée à E. B. Ogundimu."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Taiwo Yoruba oral tradition griot transcription » et « Taiwo oriki oral history » ainsi que le manuel universitaire de Merryfield (1989) et YorubaNames n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Taiwo Yoruba chronicle manuscript colonial register » et « Taiwo archive Nigeria Benin » n'ont livré aucune chronique ni pièce d'archives établissant une histoire propre à cette forme."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Taiwo Yoruba joking relationship », « Taiwo joking kinship » et « Taiwo sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "le manuel universitaire de Merryfield (1989) et YorubaNames et les recherches « Taiwo Yoruba hereditary occupation caste title » n'ont associé ce nom à aucune fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "le manuel universitaire de Merryfield (1989) et YorubaNames et les recherches « Taiwo obituary biography deceased » n'ont pas permis d'établir un porteur décédé avec une notice suffisamment fiable sans recourir à Wikipédia."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Taiwo homonym etymology » et « Taiwo surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KATANA",
+  "nameMain": "Katana",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Katana",
+      "attestations": [
+        {
+          "countryId": "KEN",
+          "sourceRefs": ["kenya-tvet-katana"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MIJIKENDA",
+      "status": "attested",
+      "sourceRefs": ["kenya-tvet-katana"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "KEN",
+      "status": "attested",
+      "sourceRefs": ["kenya-tvet-katana"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "kenya-tvet-katana",
+      "title": "List of Applicants for Advertised Positions in TVET CDACC",
+      "url": "https://tvetcdacc.go.ke/wp-content/uploads/2024/07/LIST-OF-APPLICANTS-FOR-ADVERTISED-POSITIONS-IN-TVET-CDACC-1.pdf",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Liste officielle du TVET Curriculum Development, Assessment and Certification Council du Kenya consultée intégralement. Elle enregistre Moses Chaka Katana, né dans le comté de Kilifi, avec l'ethnicité Mijikenda. Ce document administratif atteste l'association mais ne renseigne ni origine ni transmission du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Katana », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la liste officielle des candidats du TVET CDACC et des recherches ciblées dans les dépôts universitaires kenyans sur les noms mijikenda, n'ont livré aucune étymologie, chronique d'origine ou tradition orale attribuable à un témoin pour ce nom. Les rapprochements seulement plausibles ont été écartés."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Katana », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la liste officielle des candidats du TVET CDACC et des recherches ciblées dans les dépôts universitaires kenyans sur les noms mijikenda, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Katana », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la liste officielle des candidats du TVET CDACC et des recherches ciblées dans les dépôts universitaires kenyans sur les noms mijikenda, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Katana », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la liste officielle des candidats du TVET CDACC et des recherches ciblées dans les dépôts universitaires kenyans sur les noms mijikenda, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Katana », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la liste officielle des candidats du TVET CDACC et des recherches ciblées dans les dépôts universitaires kenyans sur les noms mijikenda, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    }
+  ]
+}

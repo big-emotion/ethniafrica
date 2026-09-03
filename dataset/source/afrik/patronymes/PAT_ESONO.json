@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_ESONO",
+  "nameMain": "Esono",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Esono",
+      "attestations": [
+        {
+          "countryId": "GNQ",
+          "sourceRefs": ["scielo-fang-esono-2023"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "L'étude onomastique consultée classe Esono parmi les noms fang considérés comme originaux, pour lesquels elle ne trouve ni dérivation ni composition circonstancielle ; la glose populaire « né le dimanche » repérée sur un site sans références n'est pas retenue.",
+        "claimStatus": "established",
+        "sourceRefs": ["scielo-fang-esono-2023"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FANG",
+      "status": "attested",
+      "sourceRefs": ["scielo-fang-esono-2023"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GNQ",
+      "status": "attested",
+      "sourceRefs": ["scielo-fang-esono-2023"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "scielo-fang-esono-2023",
+      "title": "La cultura para el reconocimiento de la identidad: caso de la cultura fang de Guinea Ecuatorial",
+      "url": "https://doi.org/10.29166/catedra.v6i1.4282",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Version espagnole HTML de l'article de Revista Cátedra 6(1), 2023, DOI 10.29166/catedra.v6i1.4282, consultée intégralement pour la fiche Esono. Elle cite explicitement Esono parmi les noms fang non décomposables et décrit la répétition du patronyme paternel chez les enfants pour perpétuer la lignée. Cette source est utilisée ici uniquement pour ses énoncés explicites sur Esono et le système fang."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Esono », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « La cultura para el reconocimiento de la identidad: caso de la cultura fang de Guinea Ecuatorial » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Esono à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Esono », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « La cultura para el reconocimiento de la identidad: caso de la cultura fang de Guinea Ecuatorial » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Esono."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Esono », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « La cultura para el reconocimiento de la identidad: caso de la cultura fang de Guinea Ecuatorial », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Esono », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « La cultura para el reconocimiento de la identidad: caso de la cultura fang de Guinea Ecuatorial », n'ont pas établi de lignée homonyme d'origine distincte."
+    }
+  ]
+}

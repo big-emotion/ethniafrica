@@ -1,0 +1,127 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Abubakar ; les lacunes consignent les recherches restées sans résultat."
+  },
+  "id": "PAT_ABUBAKAR",
+  "nameMain": "Abubakar",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Abubakar",
+      "attestations": [
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["ryan-1981-abubakar", "statehouse-cabinet-abubakar"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Ryan classe Abubakar parmi les noms masculins islamiques de la nomenclature haoussa et l'identifie au premier calife ; la page consacrée au nom le présente comme une forme d'Abu Bakr employée au Nigeria.",
+        "claimStatus": "established",
+        "sourceRefs": ["ryan-1981-abubakar", "btn-abubakar"]
+      },
+      {
+        "claim": "Dans le système haoussa décrit par Chamo, le nom personnel peut devenir le second élément du nom d'un enfant sans constituer un nom de famille héréditaire stable.",
+        "claimStatus": "established",
+        "sourceRefs": ["chamo-2018-abubakar"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_HAUSA",
+      "status": "attested",
+      "sourceRefs": ["ryan-1981-abubakar", "btn-abubakar"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["statehouse-cabinet-abubakar", "cbn-balewa-abubakar"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Alhaji Sir Abubakar Tafawa Balewa (1912-1966)",
+      "sourceRefs": ["cbn-balewa-abubakar"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "ryan-1981-abubakar",
+      "title": "An Introduction to Hausa Personal Nomenclature",
+      "url": "https://ans-names.pitt.edu/ans/article/download/942/941/1886",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Pauline M. Ryan, Names 29(2), 1981, pp. 139-164. Le tableau I du PDF intégral atteste exactement Abubakar parmi les noms masculins islamiques haoussa et le relie au premier calife."
+    },
+    {
+      "sourceKey": "chamo-2018-abubakar",
+      "title": "Language and Identity in Africa: The Use of Place Names as Part of a Person’s Name in Hausa",
+      "url": "https://auadamu.com/phocadownload/Books/%5B2018%5D%20Festschrift%20in%20Honour%20of%20Abdalla%20Uba%20Adamu%20-%20Media%20-Knowledge%20Transfer%20and%20African%20Identity.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Isa Yusuf Chamo, 2018, pp. 251-252 du chapitre consulté dans le volume intégral. Décrit la chaîne prénom + nom du père ou du grand-père et l'absence de noms de famille héréditaires généralisés en haoussa ; ne propose pas une étymologie d'Abubakar."
+    },
+    {
+      "sourceKey": "btn-abubakar",
+      "title": "Abubakar — Behind the Name",
+      "url": "https://www.behindthename.com/name/abubakar",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page communautaire consultée directement. Elle présente Abubakar comme une forme d'Abu Bakr employée en haoussa et au Nigeria. La source est conservée à son niveau non vérifié."
+    },
+    {
+      "sourceKey": "statehouse-cabinet-abubakar",
+      "title": "The Cabinet — The State House, Abuja",
+      "url": "https://statehouse.gov.ng/the-cabinet/",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Page officielle consultée directement le 2 septembre 2026. Elle atteste la graphie Abubakar au Nigeria dans le nom du ministre Abubakar Kyari ; elle ne porte aucune affirmation ethnique ou étymologique."
+    },
+    {
+      "sourceKey": "cbn-balewa-abubakar",
+      "title": "Alhaji Sir Abubakar Tafawa Balewa (1912-1966) — Central Bank of Nigeria",
+      "url": "https://www.cbn.gov.ng/currency/Biodata/balewa.html",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Notice officielle consultée directement. Elle documente le premier Premier ministre du Nigeria, son nom complet et ses dates 1912-1966 ; elle sert uniquement à l'attestation nationale et au porteur décédé."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La requête « Abubakar Hausa oral tradition griot lineage », Ryan (1981), Chamo (2018) et Amoo, Ajayi et Sabo (2022) n'ont livré ni griot nommé ni transcription attribuable à Abubakar."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Abubakar Hausa Arabic chronicle manuscript » et « Abubakar Nigeria colonial record » n'ont pas livré de chronique dédiée établissant l'entrée de cette forme dans l'usage haoussa."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Abubakar Hausa joking relationship », « Abubakar sanankuya », « Abubakar kal » et « Abubakar dandiraaɓe » n'ont établi aucune alliance entre deux fiches PAT_* existantes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Ryan (1981), Chamo (2018) et la recherche « Abubakar Hausa hereditary occupation caste » n'ont associé ce nom personnel à aucune fonction héréditaire."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Abubakar homonym etymology » et les sources consacrées à Abubakar et Abu Bakr n'ont pas établi une graphie identique d'origine distincte."
+    }
+  ]
+}

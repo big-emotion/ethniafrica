@@ -15,12 +15,131 @@ export interface AfrikLanguageDetail {
     name: string;
   };
   content: Record<string, unknown>;
+  /** Its own column since migration 060, not part of `content`. */
+  spellingAliases: string[];
 }
 
 // @req REQ-136
 export interface AfrikSpeakingPeople {
   id: string;
   name: string;
+}
+
+// @req REQ-136
+export interface AfrikLanguageListItem {
+  id: string;
+  name: string;
+  family: {
+    id: string;
+    name: string;
+  };
+}
+
+/** The reader's narrowing, as the query layer names it. */
+// @req REQ-139
+export interface LanguageQueryFilters {
+  search?: string;
+  initialLetter?: string;
+  familyId?: string;
+  /**
+   * Language ids already resolved from the derived footprint — never a country
+   * code. Nothing links a language to a country, so that relation is a fold
+   * over two whole tables, cached hourly (`getLanguagePresence`); redoing it
+   * inside a page query would repeat it once per page of every facet.
+   */
+  ids?: readonly string[];
+}
+
+/**
+ * The subset of the PostgREST builder the shared filters need.
+ *
+ * Restated rather than imported, as `peoples.ts` restates its own: constraining
+ * the generic to the real builder makes the compiler unfold supabase-js's
+ * column-string inference once per filter and give up.
+ */
+interface FilterableLanguageQuery {
+  textSearch(
+    column: string,
+    query: string,
+    options: { type: "websearch"; config: string }
+  ): FilterableLanguageQuery;
+  ilike(column: string, pattern: string): FilterableLanguageQuery;
+  eq(column: string, value: string): FilterableLanguageQuery;
+  in(column: string, values: string[]): FilterableLanguageQuery;
+}
+
+/**
+ * The reader's narrowing, applied to whichever languages query is being built.
+ *
+ * `.ilike` does not fold accents, so « Éwé » does not answer under E.
+ * `withPeopleFilters` has the identical behaviour on `name_main`: this is
+ * consistency, not a fix. If it is worth fixing it is worth fixing once, in the
+ * letter rail, for every facet.
+ */
+function withLanguageFilters<Query>(
+  query: Query,
+  filters: LanguageQueryFilters
+): Query {
+  let scoped = query as unknown as FilterableLanguageQuery;
+
+  if (filters.search) {
+    scoped = scoped.textSearch("search_vector", filters.search, {
+      type: "websearch",
+      config: "french",
+    });
+  }
+  if (filters.initialLetter) {
+    scoped = scoped.ilike("name", `${filters.initialLetter}%`);
+  }
+  if (filters.familyId) {
+    scoped = scoped.eq("family_id", filters.familyId);
+  }
+  if (filters.ids) {
+    scoped = scoped.in("id", [...filters.ids]);
+  }
+
+  return scoped as unknown as Query;
+}
+
+// @req REQ-136
+export interface ListAfrikLanguagesParams {
+  page?: number;
+  perPage?: number;
+  /** Absent means the whole corpus, which is what every caller asked for until REQ-139. */
+  filters?: LanguageQueryFilters;
+}
+
+// @req REQ-136
+export interface ListAfrikLanguagesResult {
+  languages: AfrikLanguageListItem[];
+  total: number;
+  pageCount: number;
+}
+
+const DEFAULT_LANGUAGES_PAGE = 1;
+const DEFAULT_LANGUAGES_PER_PAGE = 48;
+
+/**
+ * Count every AFRIK language in the corpus.
+ *
+ * Mirrors `countAfrikLanguageFamilies`: a `head: true` count rather than a
+ * ranged fetch, because the home needs the corpus-wide total and never the
+ * rows. It throws rather than returning 0 on error — zero is a valid total,
+ * so the caller has to be able to tell an empty corpus from an unreadable one.
+ */
+// @req REQ-113
+export async function countAfrikLanguages(): Promise<number> {
+  const supabase = createServerClient();
+  const { count, error } = await supabase
+    .from("afrik_languages")
+    .select("*", { count: "exact", head: true });
+
+  if (error) {
+    logger.error("Error counting AFRIK languages", error);
+    throw error;
+  }
+
+  return count ?? 0;
 }
 
 /**
@@ -67,7 +186,7 @@ export async function getAfrikLanguageById(
   const { data, error } = await supabase
     .from("afrik_languages")
     .select(
-      "id, name, family_id, content, family:afrik_language_families(id, name_fr)"
+      "id, name, family_id, content, spelling_aliases, family:afrik_language_families(id, name_fr)"
     )
     .eq("id", id)
     .maybeSingle();
@@ -84,6 +203,7 @@ export async function getAfrikLanguageById(
     name: string;
     family_id: string;
     content: Record<string, unknown> | null;
+    spelling_aliases: unknown;
     family: { id: string; name_fr: string } | null;
   };
 
@@ -95,6 +215,79 @@ export async function getAfrikLanguageById(
       name: row.family?.name_fr ?? row.family_id,
     },
     content: row.content ?? {},
+    spellingAliases: Array.isArray(row.spelling_aliases)
+      ? row.spelling_aliases.filter(
+          (entry): entry is string => typeof entry === "string"
+        )
+      : [],
+  };
+}
+
+/**
+ * One page of the languages index (748 rows, 532 distinct names — e.g.
+ * "Fulfulde" names both `fuf` and `fuv`), so every row carries its family
+ * alongside the id to disambiguate homonyms.
+ *
+ * Ordered by family then name to mirror the AFRIK hierarchy (family →
+ * language → people → country) rather than a flat alphabetical list.
+ */
+// @req REQ-136
+export async function listAfrikLanguages(
+  params: ListAfrikLanguagesParams = {}
+): Promise<ListAfrikLanguagesResult> {
+  const page = params.page ?? DEFAULT_LANGUAGES_PAGE;
+  const perPage = params.perPage ?? DEFAULT_LANGUAGES_PER_PAGE;
+  const offset = (page - 1) * perPage;
+
+  const filters = params.filters ?? {};
+  // An empty id list is a filter the derivation satisfies with nothing, and
+  // PostgREST rejects `in.()` — falling through would serve all 748 languages
+  // under that country's name.
+  if (filters.ids && filters.ids.length === 0) {
+    return { languages: [], total: 0, pageCount: 1 };
+  }
+
+  const supabase = createServerClient();
+  const { data, error, count } = await withLanguageFilters(
+    supabase
+      .from("afrik_languages")
+      .select(
+        "id, name, family_id, family:afrik_language_families(id, name_fr)",
+        { count: "exact" }
+      ),
+    filters
+  )
+    .order("family_id")
+    .order("name")
+    .range(offset, offset + perPage - 1);
+
+  if (error) {
+    logger.error("Error listing AFRIK languages", error);
+    throw error;
+  }
+
+  const rows = (data ?? []) as unknown as Array<{
+    id: string;
+    name: string;
+    family_id: string;
+    family: { id: string; name_fr: string } | null;
+  }>;
+
+  const languages: AfrikLanguageListItem[] = rows.map((row) => ({
+    id: row.id,
+    name: row.name,
+    family: {
+      id: row.family?.id ?? row.family_id,
+      name: row.family?.name_fr ?? row.family_id,
+    },
+  }));
+
+  const total = count ?? languages.length;
+
+  return {
+    languages,
+    total,
+    pageCount: Math.max(1, Math.ceil(total / perPage)),
   };
 }
 

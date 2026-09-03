@@ -1,0 +1,133 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Yusuf ; les lacunes consignent les recherches restées sans résultat."
+  },
+  "id": "PAT_YUSUF",
+  "nameMain": "Yusuf",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Yusuf",
+      "attestations": [
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["amoo-2022-yusuf", "statehouse-yusuf-2026"]
+        }
+      ]
+    },
+    {
+      "spelling": "Yusufu",
+      "attestations": [
+        { "countryId": "NGA", "sourceRefs": ["ryan-1981-yusuf"] }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Amoo, Ajayi et Sabo classent Yusuf parmi les noms de prophètes employés dans les pratiques de nomination musulmanes haoussa. Ryan atteste la forme Yusufu et la rapproche de Joseph ; la source consacrée à Yusuf le décrit comme la forme arabe et coranique de Yosef.",
+        "claimStatus": "established",
+        "sourceRefs": ["amoo-2022-yusuf", "ryan-1981-yusuf", "btn-yusuf"]
+      },
+      {
+        "claim": "Dans le système haoussa décrit par Chamo, le nom personnel du père est couramment placé après le prénom de l'enfant sans devenir un nom de famille héréditaire stable.",
+        "claimStatus": "established",
+        "sourceRefs": ["chamo-2018-yusuf"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_HAUSA",
+      "status": "attested",
+      "sourceRefs": ["amoo-2022-yusuf", "ryan-1981-yusuf"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["statehouse-yusuf-2026"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Dr Aminu Yusuf",
+      "sourceRefs": ["statehouse-yusuf-2026"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "amoo-2022-yusuf",
+      "title": "Personal names and naming practices in Hausa and English",
+      "url": "https://www.researchgate.net/publication/380826040_Personal_names_and_naming_practices_in_Hausa_and_English",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Amoo, Ajayi et Sabo, Papers in African Languages and Linguistics 9, 2022, pp. 46-74. Le texte intégral consulté classe exactement Yusuf parmi les noms de prophètes employés par les Haoussa musulmans. L'hébergement ResearchGate est un dépôt, pas l'éditeur de la revue."
+    },
+    {
+      "sourceKey": "ryan-1981-yusuf",
+      "title": "An Introduction to Hausa Personal Nomenclature",
+      "url": "https://ans-names.pitt.edu/ans/article/download/942/941/1886",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Pauline M. Ryan, Names 29(2), 1981, pp. 139-164. Le tableau I consulté dans le PDF intégral atteste Yusufu dans la nomenclature haoussa et donne Joseph comme équivalent."
+    },
+    {
+      "sourceKey": "chamo-2018-yusuf",
+      "title": "Language and Identity in Africa: The Use of Place Names as Part of a Person’s Name in Hausa",
+      "url": "https://auadamu.com/phocadownload/Books/%5B2018%5D%20Festschrift%20in%20Honour%20of%20Abdalla%20Uba%20Adamu%20-%20Media%20-Knowledge%20Transfer%20and%20African%20Identity.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Isa Yusuf Chamo, 2018, pp. 251-252 du chapitre consulté dans le volume intégral. Établit le fonctionnement non héréditaire du patronyme haoussa ; ne traite pas l'étymologie de Yusuf."
+    },
+    {
+      "sourceKey": "btn-yusuf",
+      "title": "Yusuf — Behind the Name",
+      "url": "https://www.behindthename.com/name/yusuf",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page communautaire consultée directement. Elle décrit Yusuf comme la forme arabe et coranique de Yosef. Les travaux académiques d'Amoo, Ajayi et Sabo et de Ryan établissent séparément son usage haoussa."
+    },
+    {
+      "sourceKey": "statehouse-yusuf-2026",
+      "title": "President Tinubu Mourns NPC Chairman, Dr Aminu Yusuf — The State House, Abuja",
+      "url": "https://statehouse.gov.ng/president-tinubu-mourns-npc-chairman-dr-aminu-yusuf/",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Communiqué officiel consulté directement, daté du 29 août 2026. Il indique que le Dr Aminu Yusuf, âgé de 66 ans, est mort le 28 août 2026 et documente son service public au Nigeria ; il sert à l'attestation nationale et au porteur décédé seulement."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La requête « Yusuf Hausa oral tradition griot lineage », Ryan (1981), Chamo (2018) et Amoo, Ajayi et Sabo (2022) n'ont livré ni griot nommé ni transcription attribuable à Yusuf."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Yusuf Hausa Arabic chronicle manuscript » et « Yusuf Nigeria colonial record » n'ont livré aucune chronique dédiée établissant l'histoire de cette forme dans la nomenclature haoussa."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Yusuf Hausa joking relationship », « Yusuf sanankuya », « Yusuf kal » et « Yusuf dandiraaɓe » n'ont établi aucune paire entre deux fiches PAT_* existantes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Ryan (1981), Chamo (2018), Amoo, Ajayi et Sabo (2022) et la recherche « Yusuf Hausa hereditary occupation caste » n'ont associé ce nom personnel à aucune fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Yusuf homonym etymology Hausa » et les sources consacrées à Yusuf n'ont pas établi une graphie identique d'origine distincte dans le corpus africain."
+    }
+  ]
+}

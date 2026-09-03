@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français prudent : l’attestation algérienne et un porteur décédé sont établis, mais aucune étymologie dédiée n’a été trouvée."
+  },
+  "id": "PAT_MAMMERI",
+  "nameMain": "Mammeri",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Mammeri",
+      "attestations": [{ "countryId": "DZA", "sourceRefs": ["mammeri-bnf"] }]
+    },
+    {
+      "spelling": "Muʿammarī",
+      "attestations": [{ "countryId": "DZA", "sourceRefs": ["mammeri-bnf"] }]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_KABYLE",
+      "status": "supposed",
+      "sourceRefs": ["mammeri-bnf"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "DZA",
+      "status": "attested",
+      "sourceRefs": ["mammeri-bnf"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Mouloud Mammeri",
+      "sourceRefs": ["mammeri-bnf"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "mammeri-bnf",
+      "title": "Notice de personne : Mammeri, Mouloud (1917-1989)",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb11914192s",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Notice d’autorité de la Bibliothèque nationale de France, consultée intégralement. Elle atteste Mammeri, la translittération Muʿammarī, l’Algérie, la naissance à Beni Yenni, les dates 1917-1989 et le travail en langue et littérature orale berbères. Ce contexte rend l’association kabyle plausible sans constituer une auto-identification ethnique."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "La notice BnF, les deux tomes du Dictionnaire des patronymes algériens du HCA, les dépôts de l’UMMTO, Persée et OpenEdition ont été interrogés avec « Mammeri patronyme », « Mammeri étymologie », « At Maʿmmer » et « معمري أصل اللقب » ; aucune étude dédiée ne permet d’établir une origine."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La notice d’autorité atteste un nom de famille mais ne décrit pas sa transmission ; les recherches « Mammeri filiation » et « famille Mammeri généalogie » n’ont pas fourni d’étude probante."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches combinant Mammeri avec « alliance », « leff », « pacte » et « parenté à plaisanterie » n’ont établi aucune relation nominale avec une autre fiche PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La notice BnF et les recherches sur un métier ou statut héréditaire lié à Mammeri ne signalent aucune fonction sociale transmise."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les formes Mammeri, Maʿmari et Muʿammarī ont été croisées dans les catalogues d’autorité, sans étude démontrant deux origines indépendantes sous la même graphie."
+    }
+  ]
+}

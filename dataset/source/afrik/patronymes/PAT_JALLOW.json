@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
+  },
+  "id": "PAT_JALLOW",
+  "nameMain": "Jallow",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Jallow",
+      "attestations": [
+        {
+          "countryId": "GMB",
+          "sourceRefs": ["dafn2-geneanet-jallow"]
+        }
+      ]
+    },
+    {
+      "spelling": "Diallo",
+      "attestations": [
+        {
+          "countryId": "GMB",
+          "sourceRefs": ["dafn2-geneanet-jallow"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "L’entrée issue du Dictionary of American Family Names présente Jallow comme la variante surtout gambienne de Diallo, nom de clan peul ; elle indique que l’étymologie de Diallo demeure inexpliquée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["dafn2-geneanet-jallow"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FULA",
+      "status": "attested",
+      "sourceRefs": ["dafn2-geneanet-jallow"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GMB",
+      "status": "attested",
+      "sourceRefs": ["dafn2-geneanet-jallow"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "dafn2-geneanet-jallow",
+      "title": "Dictionary of American Family Names, 2nd edition — Jallow/Jalloh entry",
+      "url": "https://de.geneanet.org/familiennamen/JALLOW",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Entrée Geneanet reproduisant le Dictionary of American Family Names, 2e éd., Oxford University Press, 2022. Elle donne séparément Jallow comme variante principalement gambienne de Diallo, nom de clan peul, et précise que l’étymologie de Diallo est inexpliquée. Le portail affiche une traduction automatique allemande."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "L’entrée DAFN2/Geneanet a été recherchée pour une alliance à plaisanterie associée à Jallow ; elle ne documente aucune paire patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "L’entrée DAFN2/Geneanet classe Jallow comme variante d’un nom de clan peul, mais n’indique ni caste, ni métier héréditaire, ni fonction sociale propre."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "L’entrée DAFN2/Geneanet est lexicographique et ne fournit aucun porteur décédé rattaché au clan par une source biographique distincte."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La recherche DAFN2/Geneanet rattache Jallow à Diallo et ne distingue aucune lignée homonyme d’une autre origine."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "L’entrée DAFN2/Geneanet établit la variante et son ancrage gambien, mais ne décrit pas la règle de transmission familiale de Jallow."
+    }
+  ]
+}

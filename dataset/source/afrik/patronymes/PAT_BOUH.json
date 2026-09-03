@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Bouh est attesté dans une chaîne de noms djiboutienne, mais son origine linguistique et son rattachement au peuple somali restent à documenter."
+  },
+  "id": "PAT_BOUH",
+  "nameMain": "Bouh",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Bouh",
+      "attestations": [
+        {
+          "countryId": "DJI",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "bouh-presidence-djibouti-2022"
+          ]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "La Présidence de Djibouti atteste Bouh comme élément médian de la chaîne de noms Absieh Bouh Abdallah ; la notice ne qualifie pas la relation généalogique exprimée par cet élément.",
+        "claimStatus": "established",
+        "sourceRefs": ["bouh-presidence-djibouti-2022"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SOMALI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "bouh-presidence-djibouti-2022"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "DJI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Absieh Bouh Abdallah",
+      "sourceRefs": ["bouh-presidence-djibouti-2022"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "bouh-presidence-djibouti-2022",
+      "title": "Le Président Guelleh rend un vibrant hommage à la mémoire de feu Absieh Bouh Abdallah",
+      "url": "https://www.presidence.dj/index.php/article/le-president-guelleh-rend-un-vibrant-hommage-a-la-memoire-de-feu-absieh-bouh-abdallah-figure-de-proue-de-la-lutte-djiboutienne-pour-l-independance-nationale-1091",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Présidence de la République de Djibouti, 2 juin 2022. La page a été lue intégralement : elle donne de manière répétée le nom Absieh Bouh Abdallah, le décrit comme dirigeant indépendantiste et ancien ambassadeur, et indique son décès à 90 ans."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les requêtes « Bouh Somali name etymology », « Buux/Buuh personal name » et les catalogues d'onomastique somalie ont été examinés ; aucune analyse savante consultable n'a établi l'étymologie de Bouh."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "La notice présidentielle établit la nationalité et les fonctions du porteur, mais aucune auto-identification somalie ; les recherches biographiques complémentaires n'ont pas permis de confirmer ce rattachement."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "La notice d'Absieh Bouh Abdallah et les requêtes « Bouh Djibouti alliance/parenté à plaisanterie » n'ont documenté aucun couple de PAT_* alliés."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La source décrit des fonctions politiques et diplomatiques personnelles, non une caste ni une fonction sociale héréditaire attachée à Bouh."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Bouh, Buuh et Buux ont été recherchés comme anthroponymes, ethnonymes et toponymes ; aucun homonyme distinct et suffisamment documenté n'a été trouvé."
+    }
+  ]
+}

@@ -20,12 +20,25 @@ jobs:
     timeout-minutes: 25
 
     env:
-      # Test Supabase project — NEVER production credentials.
-      # Provide these as repository secrets pointing at a dedicated test
-      # project (or local Supabase CLI running in a separate job step).
-      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.TEST_SUPABASE_URL }}
-      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.TEST_SUPABASE_SERVICE_ROLE_KEY }}
-      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.TEST_SUPABASE_ANON_KEY }}
+      # NEVER production credentials.
+      #
+      # `TEST_SUPABASE_*` names a dedicated test project and wins when it is
+      # set. Absent that, the suite runs against **recette** — the
+      # pre-production database, which is what these specs want anyway: they
+      # read the real corpus, and a project with an empty corpus would assert
+      # nothing. The seventeen specs navigate, measure a11y and search; the
+      # single `.fill()` in the suite types into a search box. Nothing writes.
+      #
+      # The service-role key falls back too, because `e2e/global.setup.ts`
+      # asserts it before any test runs. No current spec uses it: the write
+      # factories (flag, fiche, key) exist, and Playwright fixtures are lazy,
+      # so `supabaseAdmin` is never constructed by the seventeen specs that
+      # ship today. Withholding it bought no isolation either — the same
+      # secret is already handed to `recette-data-sync.yml`. Worth narrowing
+      # the assertion to the specs that need it, which is its own change.
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.TEST_SUPABASE_URL || secrets.NEXT_PUBLIC_SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.TEST_SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.TEST_SUPABASE_ANON_KEY || secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
       CI: "true"
       # Epic 10, Story 10.11 (ETNI-500) — /fr/quiz 404s (isQuizFeatureEnabled)
       # unless this is set, which would silently skip the quiz e2e specs.
@@ -44,17 +57,25 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      # Skip cleanly on forks / Dependabot PRs that cannot access the test
-      # Supabase secrets. When the secrets are set (i.e. on PRs from the same
-      # repo) the gate is enforced — no continue-on-error masks failures.
+      # A fork or bot PR genuinely cannot read repository secrets, so it skips.
+      # Anywhere else, absent secrets mean the suite cannot run — and a job that
+      # reports success without running 17 spec files is worse than a red one,
+      # because it is budgeted for as though it works. This step used to treat
+      # both cases alike and concluded success on every run in the repo's history.
       - name: Check required secrets are present
         id: secrets
+        env:
+          IS_FORK_PR: ${{ github.event.pull_request.head.repo.fork || false }}
+          IS_BOT: ${{ github.actor == 'dependabot[bot]' }}
         run: |
-          if [ -n "${{ secrets.TEST_SUPABASE_URL }}" ] && [ -n "${{ secrets.TEST_SUPABASE_ANON_KEY }}" ]; then
+          if [ -n "$NEXT_PUBLIC_SUPABASE_URL" ] && [ -n "$NEXT_PUBLIC_SUPABASE_ANON_KEY" ]; then
             echo "present=true" >> "$GITHUB_OUTPUT"
-          else
+          elif [ "$IS_FORK_PR" = "true" ] || [ "$IS_BOT" = "true" ]; then
             echo "present=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::Skipping Playwright E2E — TEST_SUPABASE_URL / TEST_SUPABASE_ANON_KEY secrets not available (fork, Dependabot PR, or unconfigured repo). Configure these repo secrets to enable."
+            echo "::notice::Skipping Playwright E2E — a fork or bot PR cannot read repository secrets."
+          else
+            echo "::error::No Supabase URL and anon key reached this job, so the Playwright suite cannot run. Set TEST_SUPABASE_URL / TEST_SUPABASE_ANON_KEY, or NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY, to arm this gate; until then it fails rather than reporting a success it has not earned."
+            exit 1
           fi
 
       - name: Install Playwright browsers

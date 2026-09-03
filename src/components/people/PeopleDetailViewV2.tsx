@@ -11,6 +11,7 @@ import type { SourcedRelation } from "@/types/relations";
 import {
   PeopleOriginBlock,
   PeopleLanguageSection,
+  PeopleHistoricalAffiliationBlock,
   PeopleHistoryTimeline,
   PeopleCultureGrid,
   PeopleRelatedPeoplesSection,
@@ -30,9 +31,15 @@ import {
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { FragmentationView } from "@/components/colonization/FragmentationView";
 import { OralNarrativesSection } from "@/components/people/OralNarrativesSection";
+import { MediaCreditSection } from "@/components/people/MediaCreditSection";
+import { ExternalRegistryLinksSection } from "@/components/people/ExternalRegistryLinksSection";
 import { PeopleNamesSection } from "@/components/names/PeopleNamesSection";
+import { PeopleBorneNamesSection } from "@/components/patronymes/PeopleBorneNamesSection";
+import type { PatronymeLinkSummary } from "@/api/v2/services/patronymeFicheLinks";
 import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
 import type { PeopleNamesDossier } from "@/api/v2/schemas/names";
+import type { PeopleFicheNotes } from "@/components/people/peopleFicheNotes";
+import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
 
 export interface PeopleDetailViewV2Props {
   people: PeopleDetail;
@@ -49,11 +56,18 @@ export interface PeopleDetailViewV2Props {
    */
   relations?: readonly SourcedRelation[];
   /**
-   * Turnstile's public site key, which the culture section's report control
-   * needs to be more than a shell. Absent — as it is until the key is
-   * configured — the section renders the disabled placeholder instead, the
-   * same way the country fiche does.
+   * The fiche's note callouts and its numbered bibliography, resolved by the
+   * route. Absent, the fiche renders exactly as it did before callouts
+   * existed — which is what a fiche the corpus has not sourced must do.
    */
+  notes?: PeopleFicheNotes;
+  bibliography?: readonly FicheSourceEntry[];
+  /**
+   * The names this people bears (REQ-133), resolved by the route. `null` says
+   * the read failed; an empty array says the corpus holds none, which is the
+   * ordinary answer today and is printed as such.
+   */
+  borneNames?: PatronymeLinkSummary[] | null;
 }
 
 /**
@@ -83,13 +97,16 @@ export interface PeopleDetailViewV2Props {
  * being silent about a people's origins is a fact about the corpus, and
  * dropping the chapter is what deletes that fact.
  *
- * Two things on this page deliberately stay conditional, because their absence
- * is not a silence. The globe's grammar section explains a map that a fiche
- * with no distribution does not draw, and colonial fragmentation only exists
- * where a people straddles a border. Neither is a rubric anyone failed to
- * fill, and marking them would invent a gap. The same line holds one level
- * down: an optional field inside a block — an exonym, a `whyProblematic` —
- * stays absent, because the model never asked every fiche for one.
+ * Three things on this page deliberately stay conditional, because their
+ * absence is not a silence. The globe's grammar section explains a map that
+ * a fiche with no distribution does not draw, colonial fragmentation only
+ * exists where a people straddles a border, and filiation historique
+ * (REQ-127) only applies to a people with no defensible linguistic-family
+ * affiliation to an African family. None of these is a rubric anyone failed
+ * to fill, and marking them would invent a gap. The same line holds one
+ * level down: an optional field inside a block — an exonym, a
+ * `whyProblematic` — stays absent, because the model never asked every
+ * fiche for one.
  */
 // @req REQ-091
 export function PeopleDetailViewV2({
@@ -98,8 +115,18 @@ export function PeopleDetailViewV2({
   fragmentation = null,
   hasSourceFlag = false,
   relations = [],
+  notes,
+  bibliography,
+  borneNames = null,
 }: PeopleDetailViewV2Props) {
   const data = transformPeopleData(people, namesDossier);
+  /**
+   * The numbered bibliography when the route resolved one, the fiche's own
+   * declared list otherwise. A fiche the corpus has not sourced keeps the
+   * unnumbered footer it has always had — numbering a list nothing points at
+   * would promise an anchor that does not exist.
+   */
+  const sources = bibliography ?? data.sources;
   const distribution = people.demography?.distributionByCountry;
   const relationsPreview = transformSourcedRelationsPreview(relations);
 
@@ -148,7 +175,7 @@ export function PeopleDetailViewV2({
 
       <FicheSection title="Origines & formation">
         {hasOriginContent(data.origin) ? (
-          <PeopleOriginBlock data={data.origin} />
+          <PeopleOriginBlock data={data.origin} notes={notes?.origin} />
         ) : (
           <FieldProvenanceMarker state="missing" />
         )}
@@ -159,18 +186,33 @@ export function PeopleDetailViewV2({
         data.language.isoCodes.length > 0 ||
         data.language.dialects.length > 0 ||
         data.language.vehicularRole ? (
-          <PeopleLanguageSection data={data.language} />
+          <PeopleLanguageSection data={data.language} notes={notes?.language} />
         ) : (
           <FieldProvenanceMarker state="missing" />
         )}
       </FicheSection>
+
+      {/* Filiation historique (REQ-127) — only for a people with no
+          defensible linguistic-family affiliation to an African family
+          (e.g. Creole-speaking groups). Not a rubric of the fiche model but
+          a reading that only exists where that condition holds, so its
+          absence is inapplicability, not a corpus gap, and it carries no
+          missing marker — same doctrine as the globe's grammar section and
+          colonial fragmentation below. */}
+      {people.historicalAffiliation && (
+        <FicheSection title="Filiation historique">
+          <PeopleHistoricalAffiliationBlock
+            data={people.historicalAffiliation}
+          />
+        </FicheSection>
+      )}
 
       <FicheSection title="Rôle historique">
         {data.history.kingdomsOrChiefdoms ||
         data.history.relationsWithNeighbors ||
         data.history.conflictsOrAlliances ||
         data.history.diaspora ? (
-          <PeopleHistoryTimeline data={data.history} />
+          <PeopleHistoryTimeline data={data.history} notes={notes?.history} />
         ) : (
           <FieldProvenanceMarker state="missing" />
         )}
@@ -178,12 +220,23 @@ export function PeopleDetailViewV2({
 
       <OralNarrativesSection peopleId={data.hero.peopleId} />
 
+      <MediaCreditSection peopleId={data.hero.peopleId} />
+
+      <ExternalRegistryLinksSection identifiers={people.externalIdentifiers} />
+
       {/* Noms & appellations (below the fold; chips hydrate second-wave, UX-DR18) */}
       <PeopleNamesSection data={data.names} />
 
+      {/* The second naming register, next to the first: the chapter above
+          holds what this people is *called* — its ethnonyms, and the exonyms
+          imposed on it — and this one what its members *bear*. Reading them
+          apart is how "nom" came to mean two unrelated things in this
+          codebase; on the page they answer each other. */}
+      <PeopleBorneNamesSection patronymes={borneNames} />
+
       <FicheSection title="Culture & spiritualité">
         {hasCultureContent(data.culture) ? (
-          <PeopleCultureGrid data={data.culture} />
+          <PeopleCultureGrid data={data.culture} notes={notes?.culture} />
         ) : (
           <FieldProvenanceMarker state="missing" />
         )}
@@ -259,9 +312,9 @@ export function PeopleDetailViewV2({
         as="footer"
         id="sources"
       >
-        {data.sources.length > 0 ? (
+        {sources.length > 0 ? (
           <SourcesFooter
-            sources={data.sources}
+            sources={[...sources]}
             hasSourceFlag={hasSourceFlag}
             variant="parchment"
           />

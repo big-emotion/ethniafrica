@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité à l'attestation institutionnelle de Ravalomanana et à l'association merina explicitement publiée."
+  },
+  "id": "PAT_RAVALOMANANA",
+  "nameMain": "Ravalomanana",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Ravalomanana",
+      "attestations": [
+        { "countryId": "MDG", "sourceRefs": ["asom-marc-ravalomanana"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MERINA",
+      "status": "attested",
+      "sourceRefs": ["asom-marc-ravalomanana"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["asom-marc-ravalomanana"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "asom-marc-ravalomanana",
+      "title": "Ravalomanana Marc — Académie des sciences d'outre-mer",
+      "url": "https://www.academieoutremer.fr/academiciens/?aId=132&tId=A",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Notice institutionnelle de l'Académie : elle présente Marc Ravalomanana, ancien président de Madagascar, et indique explicitement son appartenance merina. Elle ne traite pas de l'origine du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Ravalomanana etymology », « Ravalomanana onomastics », « origine nom Ravalomanana » et les résultats académiques n'ont livré ni tradition attribuée, ni chronique d'origine, ni reconstruction linguistique ; les sites automatiques de noms ont été rejetés."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La notice institutionnelle atteste un porteur et son appartenance merina, pas une filiation nominale. Les recherches familiales et généalogiques n'ont pas établi le mode de transmission ; « other » maintient l'indétermination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "L'appartenance merina du porteur n'établit pas que le nom désigne un clan ou un lignage ; aucune source consultée ne précise son unité sociale."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches Ravalomanana avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches exactes associant Ravalomanana à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; les fonctions politiques et industrielles de Marc Ravalomanana sont individuelles."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La notice institutionnelle ne constate aucun décès de Marc Ravalomanana, qui est donc exclu de la liste des porteurs. Aucun porteur décédé directement sourcé n'a été trouvé."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les catalogues et recherches exactes consultés n'établissent pas de lignée Ravalomanana d'origine distincte."
+    }
+  ]
+}

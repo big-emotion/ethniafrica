@@ -1,0 +1,100 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_MULUGETA",
+  "nameMain": "Mulugeta",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Mulugeta",
+      "attestations": [
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue", "lojs-mulugeta"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le répertoire consulté transcrit Mulugeta en ሙሉጌታ et propose les gloses « seigneur accompli » ou « maître complet ». Faute d'appareil critique et de seconde analyse indépendante, cette lecture demeure revendiquée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["lojs-mulugeta"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_AMHARA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ETH",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "lojs-mulugeta"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "lojs-mulugeta",
+      "title": "Ethiopian Names — Letter M — Lion of Judah Society",
+      "url": "https://www.lojs.org/ethiopian-names-letter-m/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Répertoire communautaire consulté le 2 septembre 2026. L'entrée Mulugeta donne la graphie ሙሉጌታ et les gloses anglaises « full lord, complete master ». Le site vend et agrège des répertoires de noms mais ne fournit pas ici d'appareil critique."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Mulugeta anthroponymie », « Mulugeta onomastique », « Mulugeta etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche, ni aucune tradition orale attribuée à un griot ou informateur nommé avec transcription vérifiable."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Mulugeta anthroponymie », « Mulugeta onomastique », « Mulugeta etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche, ni chronique historique qui rattache ce nom à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches « Mulugeta anthroponymie », « Mulugeta onomastique », « Mulugeta etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué ; ce rattachement reste au niveau non vérifié."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Mulugeta alliance à plaisanterie », « Mulugeta joking relationship » et « Mulugeta parenté à plaisanterie » n'ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Mulugeta caste », « Mulugeta métier héréditaire » et « Mulugeta social function » n'ont livré aucune fonction sociale ou professionnelle héréditaire attribuable à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques sur « Mulugeta » dans les résultats de catalogues et répertoires consultés n'ont pas permis d'identifier un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes « Mulugeta homonym surname », « Mulugeta homonyme patronyme » et les variantes graphiques de la fiche n'ont pas établi deux origines distinctes et documentées pour la même forme."
+    }
+  ]
+}

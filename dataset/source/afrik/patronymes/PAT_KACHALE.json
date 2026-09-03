@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KACHALE",
+  "nameMain": "Kachale",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Kachale",
+      "attestations": [
+        {
+          "countryId": "MWI",
+          "sourceRefs": ["unima-kachale-thesis-2025"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_CHEWA",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MWI",
+      "status": "attested",
+      "sourceRefs": ["unima-kachale-thesis-2025"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "unima-kachale-thesis-2025",
+      "title": "Impact of Various Educational Inputs on Varying Academic Performance in Secondary School: A Case Study of Mangochi District, Malawi",
+      "url": "https://research.unima.ac.mw/research-theses/theses/Kachale%20G.S.%202025.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Mémoire de maîtrise de Gracian Sangulukani Kachale, University of Malawi, janvier 2025, consulté en texte intégral. Le titre, la déclaration et les annexes attestent la graphie Kachale au Malawi. Le document ne traite pas de l'origine du nom et ne donne pas l'appartenance chewa de son auteur."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Kachale », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de le mémoire de l'University of Malawi signé Gracian Sangulukani Kachale et les recherches ciblées « Kachale Chewa surname », « Kachale clan Malawi » et « Kachale obituary » n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine du nom. Les attestations géographiques ou individuelles trouvées ne sont pas transformées en étymologie."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kachale », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de le mémoire de l'University of Malawi signé Gracian Sangulukani Kachale et les recherches ciblées « Kachale Chewa surname », « Kachale clan Malawi » et « Kachale obituary » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kachale », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de le mémoire de l'University of Malawi signé Gracian Sangulukani Kachale et les recherches ciblées « Kachale Chewa surname », « Kachale clan Malawi » et « Kachale obituary » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kachale », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de le mémoire de l'University of Malawi signé Gracian Sangulukani Kachale et les recherches ciblées « Kachale Chewa surname », « Kachale clan Malawi » et « Kachale obituary » n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kachale », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de le mémoire de l'University of Malawi signé Gracian Sangulukani Kachale et les recherches ciblées « Kachale Chewa surname », « Kachale clan Malawi » et « Kachale obituary » n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Kachale », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de le mémoire de l'University of Malawi signé Gracian Sangulukani Kachale et les recherches ciblées « Kachale Chewa surname », « Kachale clan Malawi » et « Kachale obituary » n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

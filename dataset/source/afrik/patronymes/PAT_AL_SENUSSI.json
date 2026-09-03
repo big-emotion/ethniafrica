@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_AL_SENUSSI",
+  "nameMain": "Al-Senussi",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "Al-Senussi",
+      "attestations": [
+        {
+          "countryId": "LBY",
+          "sourceRefs": ["afrik-candidate-queue", "treccani-senussi"]
+        }
+      ]
+    },
+    {
+      "spelling": "Senussi",
+      "attestations": [
+        {
+          "countryId": "LBY",
+          "sourceRefs": ["afrik-candidate-queue", "treccani-senussi"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "L’encyclopédie Treccani emploie Senussi pour les descendants de Muhammad ibn Ali al-Sanusi, fondateur de la confrérie, dans le contexte de la Cyrénaïque. Cette définition historique est limitée à ce lignage.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["treccani-senussi"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ARABES_AFRIQUE",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "LBY",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "treccani-senussi"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "treccani-senussi",
+      "title": "Senussi — Enciclopedia Treccani",
+      "url": "https://www.treccani.it/enciclopedia/senussi/",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Notice encyclopédique consultée le 2 septembre 2026. Elle définit les Senussi comme descendants de Muhammad ibn Ali al-Sanusi et situe leur histoire en Cyrénaïque ; elle ne couvre pas les homographes éventuels."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « Al-Senussi anthroponymie », « Al-Senussi onomastique » et « Al-Senussi surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. Les requêtes « Al-Senussi tradition orale », « Al-Senussi griot » et « Al-Senussi oral history » n’ont livré aucun griot ou informateur nommé avec transcription vérifiable."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches exactes « Al-Senussi anthroponymie », « Al-Senussi onomastique » et « Al-Senussi surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. Les recherches linguistiques comparatives n’ont livré aucune reconstruction indépendante permettant de généraliser l’origine lexicale à tous les porteurs."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Al-Senussi anthroponymie », « Al-Senussi onomastique » et « Al-Senussi surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué par la file d’attente ; ce rattachement reste au niveau non vérifié."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Al-Senussi alliance à plaisanterie », « Al-Senussi joking relationship » et « Al-Senussi parenté à plaisanterie » n’ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Al-Senussi caste », « Al-Senussi métier héréditaire » et « Al-Senussi social function » n’ont livré aucune fonction sociale ou professionnelle héréditaire propre à cette graphie."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques exactes sur « Al-Senussi » dans les catalogues, notices institutionnelles et archives accessibles n’ont pas permis d’isoler un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes « Al-Senussi homonym surname », « Al-Senussi homonyme patronyme » et les variantes graphiques de la fiche n’ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Les recherches « Al-Senussi transmission patronyme », « Al-Senussi filiation » et « Al-Senussi hereditary surname » n’ont pas établi si, ni comment, cette forme se transmet dans les communautés concernées."
+    }
+  ]
+}

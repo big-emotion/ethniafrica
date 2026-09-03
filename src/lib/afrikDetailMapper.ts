@@ -27,6 +27,8 @@ interface PeopleDetailRecord {
     origins?: PeopleDetail["origins"];
     organization?: PeopleDetail["organization"];
     languages?: PeopleDetail["languages"];
+    externalIdentifiers?: PeopleDetail["externalIdentifiers"];
+    historicalAffiliation?: PeopleDetail["historicalAffiliation"];
     culture?: PeopleDetail["culture"];
     historicalRole?: PeopleDetail["historicalRole"];
     demography?: PeopleDetail["demography"];
@@ -80,6 +82,8 @@ export function mapPeopleDetail(apiData: PeopleDetailRecord): PeopleDetail {
     origins: apiData.content?.origins,
     organization: apiData.content?.organization,
     languages: apiData.content?.languages,
+    externalIdentifiers: apiData.content?.externalIdentifiers,
+    historicalAffiliation: apiData.content?.historicalAffiliation,
     culture: apiData.content?.culture,
     historicalRole: apiData.content?.historicalRole,
     demography: apiData.content?.demography,

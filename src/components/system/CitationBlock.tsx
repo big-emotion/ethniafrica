@@ -286,5 +286,3 @@ export function CitationBlock({
     </section>
   );
 }
-
-export default CitationBlock;

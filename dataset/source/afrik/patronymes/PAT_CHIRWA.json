@@ -1,0 +1,99 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_CHIRWA",
+  "nameMain": "Chirwa",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Chirwa",
+      "attestations": [
+        {
+          "countryId": "ZWE",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "MWI",
+          "sourceRefs": ["forebears-chirwa"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_TUMBUKA",
+      "status": "supposed",
+      "sourceRefs": ["forebears-chirwa"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZWE",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "MWI",
+      "status": "attested",
+      "sourceRefs": ["forebears-chirwa"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
+    },
+    {
+      "sourceKey": "forebears-chirwa",
+      "title": "Chirwa Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/chirwa",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement via son résultat indexé après le refus HTTP de la page. Elle atteste Chirwa surtout au Malawi, en Zambie et au Zimbabwe. Sa signification contributive et non référencée n'est pas reprise, et la géographie n'est pas transformée en attribution ethnique. La thèse historique également consultée reste réservée à la fiche Kamanga afin qu'aucune source ne soit portée d'une fiche à une autre."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Chirwa », « Tumbuka », « Chewa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears dédiée, n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine de Chirwa. La glose communautaire non référencée et les seules attestations géographiques ne sont pas transformées en étymologie."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Chirwa », « Tumbuka », « Chewa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears dédiée, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Chirwa à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Chirwa », « Tumbuka », « Chewa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears dédiée, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Chirwa."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Chirwa », « Tumbuka », « Chewa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears dédiée, n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Chirwa », « Tumbuka », « Chewa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears dédiée, n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Chirwa », « Tumbuka », « Chewa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears dédiée, n'ont établi aucune règle propre à Chirwa permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

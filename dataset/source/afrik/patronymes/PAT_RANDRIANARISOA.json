@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité à une attestation bibliographique de Randrianarisoa ; aucune conclusion étymologique n'en est tirée."
+  },
+  "id": "PAT_RANDRIANARISOA",
+  "nameMain": "Randrianarisoa",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Randrianarisoa",
+      "attestations": [
+        {
+          "countryId": "MDG",
+          "sourceRefs": ["googlebooks-pierre-randrianarisoa"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MERINA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["googlebooks-pierre-randrianarisoa"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "googlebooks-pierre-randrianarisoa",
+      "title": "L'enfant et son éducation dans la civilisation traditionnelle malgache",
+      "url": "https://books.google.com/books/about/L_enfant_et_son_%C3%A9ducation_dans_la_civil.html?hl=fr&id=Pc0oAAAAYAAJ",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Notice Google Books de l'ouvrage de Pierre Randrianarisoa, Imprimerie Caron, 1981, 144 p. Elle atteste la graphie et le contexte malgache, pas l'origine du nom."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Randrianarisoa etymology », « Randrianarisoa onomastics », « origine nom Randrianarisoa », Google Books et les résultats académiques n'ont livré aucune source d'origine dédiée ; les sites commerciaux sans bibliographie ont été rejetés."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La notice bibliographique atteste un auteur sans filiation. Les recherches avec famille, père, fils et généalogie n'ont pas établi le mode de transmission ; « other » maintient l'indétermination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source consultée n'établit si Randrianarisoa désigne historiquement un individu, un lignage ou un clan."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches Randrianarisoa avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches exactes associant Randrianarisoa à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; la qualité d'auteur de Pierre Randrianarisoa est individuelle."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La notice Google Books ne donne aucune date de décès pour Pierre Randrianarisoa. Aucun porteur décédé directement sourcé n'a été identifié lors de la passe."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les catalogues et recherches exactes consultés n'établissent pas de lignée homonyme d'origine distincte."
+    }
+  ]
+}

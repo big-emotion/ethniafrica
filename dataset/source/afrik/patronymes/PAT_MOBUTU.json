@@ -1,0 +1,116 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français distinguant le nom personnel Mobutu du long nom d'authenticité adopté en 1972."
+  },
+  "id": "PAT_MOBUTU",
+  "nameMain": "Mobutu",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Mobutu",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": [
+            "lemonde-1997-mobutu-poussiere",
+            "meditz-haney-2014-congo-dictionary"
+          ]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "elective",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Un portrait publié du vivant de Mobutu rapporte que son père avait choisi pour lui le nom Mobutu et le glose « Poussière ». Cette étymologie journalistique n'est pas élevée au rang de reconstruction linguistique.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["lemonde-1997-mobutu-poussiere"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_NGBANDE",
+      "status": "attested",
+      "sourceRefs": ["meditz-haney-2014-congo-dictionary"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COD",
+      "status": "attested",
+      "sourceRefs": [
+        "lemonde-1997-mobutu-poussiere",
+        "meditz-haney-2014-congo-dictionary"
+      ]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Mobutu Sese Seko",
+      "sourceRefs": ["lemonde-1997-mobutu-obituary"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "lemonde-1997-mobutu-poussiere",
+      "title": "Le crépuscule du maréchal « Poussière »",
+      "url": "https://www.lemonde.fr/archives/article/1997/05/06/le-crepuscule-du-marechal-poussiere_3757478_1819218.html",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Portrait de Catherine Simon publié le 6 mai 1997. Il rapporte que Mobutu, glosé « Poussière », fut choisi par le père du porteur ; il distingue ce nom du surnom d'authenticité que celui-ci se donna en 1972."
+    },
+    {
+      "sourceKey": "meditz-haney-2014-congo-dictionary",
+      "title": "Historical Dictionary of the Democratic Republic of the Congo, Third Edition",
+      "url": "https://shcas.shnu.edu.cn/_upload/article/files/dc/3d/863da74f4f1dbe922dc9702d9de9/a6f95c07-9183-4c78-a7c4-ec5ea565507a.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Emizet François Kisangani et F. Scott Bobb, 2010. L'entrée biographique situe la famille maternelle de Mobutu dans le groupe ngbandi de Gbadolite. Les versions française et anglaise de Wikipédia ont seulement servi à repérer des références, puis le dictionnaire a été contrôlé directement."
+    },
+    {
+      "sourceKey": "lemonde-1997-mobutu-obituary",
+      "title": "Mobutu, l'ex-président zaïrois, est mort à Rabat moins de quatre mois après son départ en exil",
+      "url": "https://www.lemonde.fr/archives/article/1997/09/09/mobutu-l-ex-president-zairois-est-mort-a-rabat-moins-de-quatre-mois-apres-son-depart-en-exil_3778758_1819218.html",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Notice de Frédéric Fritscher publiée le 9 septembre 1997 ; elle établit le décès de Mobutu Sese Seko à Rabat le 7 septembre 1997."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Mobutu name oral tradition Ngbandi », les biographies et le dictionnaire historique n'ont livré aucune tradition attribuée à un transmetteur nommé avec transcription."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Le Monde donne la glose « Poussière », mais les recherches dans les dictionnaires ngbandi et les travaux d'onomastique n'ont pas livré d'analyse comparative permettant de l'établir linguistiquement."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Les sources décrivent Mobutu comme nom personnel choisi par son père, non comme nom de clan ; le modèle ne proposant pas de catégorie générique pour le prénom ou nom individuel, clan_name est conservé comme valeur technique avec cette réserve explicite."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Mobutu Ngbandi alliance clan » et dans les biographies consultées n'ont livré aucune alliance entre patronymes enregistrables."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La carrière politique du porteur ne constitue pas une fonction héréditaire du nom ; aucune source consultée n'attache une caste ou charge sociale à Mobutu."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les dictionnaires historiques, biographies et recherches exactes n'ont pas établi une seconde origine homonyme du nom Mobutu."
+    }
+  ]
+}

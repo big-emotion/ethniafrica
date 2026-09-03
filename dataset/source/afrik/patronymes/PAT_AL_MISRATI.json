@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_AL_MISRATI",
+  "nameMain": "Al-Misrati",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "Al-Misrati",
+      "attestations": [
+        {
+          "countryId": "LBY",
+          "sourceRefs": ["afrik-candidate-queue", "oxford-al-misrati"]
+        }
+      ]
+    },
+    {
+      "spelling": "Misrati",
+      "attestations": [
+        {
+          "countryId": "LBY",
+          "sourceRefs": ["afrik-candidate-queue", "oxford-al-misrati"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "settlement",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "La recherche d’Oxford analyse Al-Miṣrātī comme une nisba reliant son porteur à la ville ou au district de Misrata, tout en signalant aussi une section Misrata des Hawwara. Ces possibilités ne suffisent pas à attribuer tous les porteurs à une seule lignée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["oxford-al-misrati"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ARABES_AFRIQUE",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "LBY",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "oxford-al-misrati"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "oxford-al-misrati",
+      "title": "Libyan Arabic Personal Names — Oxford Research Archive",
+      "url": "https://ora.ox.ac.uk/objects/uuid%3A91e386fb-56e6-4c10-9a71-514b875c1eb6/files/mb4cb97b8fc65dc94bb6b8c19332b4614",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Étude universitaire consultée le 2 septembre 2026. Elle rattache la nisba Al-Miṣrātī à Misrata et mentionne une section homonyme des Hawwara ; cette ambiguïté empêche une conclusion généalogique générale."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « Al-Misrati anthroponymie », « Al-Misrati onomastique » et « Al-Misrati surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. Les requêtes « Al-Misrati tradition orale », « Al-Misrati griot » et « Al-Misrati oral history » n’ont livré aucun griot ou informateur nommé avec transcription vérifiable."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches exactes « Al-Misrati anthroponymie », « Al-Misrati onomastique » et « Al-Misrati surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. Les recherches dans les catalogues historiques et archivistiques n’ont livré aucune chronique rattachant cette graphie à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Al-Misrati anthroponymie », « Al-Misrati onomastique » et « Al-Misrati surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué par la file d’attente ; ce rattachement reste au niveau non vérifié."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Al-Misrati alliance à plaisanterie », « Al-Misrati joking relationship » et « Al-Misrati parenté à plaisanterie » n’ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Al-Misrati caste », « Al-Misrati métier héréditaire » et « Al-Misrati social function » n’ont livré aucune fonction sociale ou professionnelle héréditaire propre à cette graphie."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques exactes sur « Al-Misrati » dans les catalogues, notices institutionnelles et archives accessibles n’ont pas permis d’isoler un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes « Al-Misrati homonym surname », « Al-Misrati homonyme patronyme » et les variantes graphiques de la fiche n’ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Les recherches « Al-Misrati transmission patronyme », « Al-Misrati filiation » et « Al-Misrati hereditary surname » n’ont pas établi si, ni comment, cette forme se transmet dans les communautés concernées."
+    }
+  ]
+}

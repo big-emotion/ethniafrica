@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Le sens positionnel de Tetteh repose sur une source ga qui cite exactement cette forme ; la variante Teteh reste non confirmée."
+  },
+  "id": "PAT_TETTEH",
+  "nameMain": "Tetteh",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Tetteh",
+      "attestations": [
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["ghana-news-agency-2024-tetteh"]
+        }
+      ]
+    },
+    {
+      "spelling": "Teteh",
+      "attestations": [
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Dans le système de noms ga décrit par la Ghana News Agency, Tetteh, avec l'appellation Mpata, est généralement attribué au deuxième garçon d'une fratrie.",
+        "claimStatus": "established",
+        "sourceRefs": ["ghana-news-agency-2024-tetteh"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_GA",
+      "status": "attested",
+      "sourceRefs": ["ghana-news-agency-2024-tetteh"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GHA",
+      "status": "attested",
+      "sourceRefs": ["ghana-news-agency-2024-tetteh"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "ghana-news-agency-2024-tetteh",
+      "title": "Sustaining the Ga Tradition with the Unique Naming Pattern",
+      "url": "https://gna.org.gh/2024/07/sustaining-the-ga-tradition-with-the-unique-naming-pattern/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Dossier de Laudia Sawer publié par la Ghana News Agency le 2 juillet 2024 et consulté directement. Il expose le système ga et cite exactement Tetteh comme nom du deuxième garçon, avec l'appellation Mpata. Sa nature journalistique et communautaire justifie le niveau « unverified »."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Tetteh ga du Ghana oral tradition griot transcription » et « Tetteh oral history » n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Tetteh ga du Ghana chronicle manuscript archive » et « Tetteh colonial register » n'ont livré aucune chronique ni pièce d'archives retraçant cette forme."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Tetteh joking relationship », « Tetteh alliance patronyme » et « Tetteh sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Tetteh hereditary occupation caste title » et « Tetteh fonction sociale » n'ont associé ce nom à aucune fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches « Tetteh obituary biography deceased » et « Tetteh nécrologie » n'ont pas permis de retenir un porteur décédé sur une notice suffisamment fiable et propre au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Tetteh homonym etymology » et « Tetteh surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
+    },
+    {
+      "fieldPath": "spellings[1]",
+      "reason": "Les recherches « Teteh Ga name », « Teteh Ghana naming » et la source GNA consultée n'ont pas confirmé la variante sans double t final ; elle reste attribuée à la file de candidats."
+    }
+  ]
+}

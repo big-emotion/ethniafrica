@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_SERETSE",
+  "nameMain": "Seretse",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Seretse",
+      "attestations": [
+        {
+          "countryId": "BWA",
+          "sourceRefs": ["saho-seretse-khama"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "La notice de Seretse Khama explique que son nom personnel signifie « l'argile qui lie » et renvoie à la réconciliation d'une rupture entre son père et son grand-père. Cette explication concerne ce nom de naissance documenté, non toutes les familles qui emploient aujourd'hui Seretse comme patronyme.",
+        "claimStatus": "established",
+        "sourceRefs": ["saho-seretse-khama"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_TSWANA",
+      "status": "attested",
+      "sourceRefs": ["saho-seretse-khama"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "BWA",
+      "status": "attested",
+      "sourceRefs": ["saho-seretse-khama"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Seretse Khama",
+      "sourceRefs": ["saho-seretse-khama"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "saho-seretse-khama",
+      "title": "President Seretse Khama",
+      "url": "https://sahistory.org.za/people/president-seretse-khama",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Notice biographique de South African History Online consultée directement. Elle donne les dates de Seretse Khama, son ancrage bangwato au Botswana et explique Seretse comme un nom personnel lié à une réconciliation familiale."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Seretse », « Setswana », « Tswana », « personal name », « surname », « meaning », « transmission » et « obituary », ainsi que la consultation directe de « President Seretse Khama » n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Seretse à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Seretse », « Setswana », « Tswana », « personal name », « surname », « meaning », « transmission » et « obituary », ainsi que la consultation directe de « President Seretse Khama » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Seretse."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Seretse », « Setswana », « Tswana », « personal name », « surname », « meaning », « transmission » et « obituary », ainsi que la consultation directe de « President Seretse Khama » n'ont pas établi de lignée homonyme de Seretse dotée d'une origine distincte et documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    }
+  ]
+}

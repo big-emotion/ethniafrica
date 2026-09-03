@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KIALA",
+  "nameMain": "Kiala",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Kiala",
+      "attestations": [
+        {
+          "countryId": "AGO",
+          "sourceRefs": ["massiala-2024-kiala"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "L'étude cultulinguistique des noms propres bakongo explique que Kiala fait partie des noms indiquant l'ordre des initiés au sein d'une classe d'âge. Cette fonction documente un nom individuel lié au rang initiatique, et non un nom de clan transmis héréditairement.",
+        "claimStatus": "established",
+        "sourceRefs": ["massiala-2024-kiala"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_KONGO",
+      "status": "attested",
+      "sourceRefs": ["massiala-2024-kiala"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "AGO",
+      "status": "attested",
+      "sourceRefs": ["massiala-2024-kiala"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "massiala-2024-kiala",
+      "title": "O kikongo e a cultura do povo bakongo: a cultulinguística nos nomes próprios",
+      "url": "https://revistas.unilab.edu.br/index.php/njingaesape/article/view/1866",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article de João Baptista Massiala, consulté sur la revue Njinga & Sepé. Le passage consacré aux anthroponymes bakongo cite explicitement Kiala parmi les noms d'ordre des initiés d'une classe d'âge. La source ne donne pas de décomposition morphologique plus fine."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kiala », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article cultulinguistique de João Baptista Massiala sur les noms propres kikongo et bakongo, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kiala », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article cultulinguistique de João Baptista Massiala sur les noms propres kikongo et bakongo, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kiala », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article cultulinguistique de João Baptista Massiala sur les noms propres kikongo et bakongo, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kiala », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article cultulinguistique de João Baptista Massiala sur les noms propres kikongo et bakongo, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    }
+  ]
+}

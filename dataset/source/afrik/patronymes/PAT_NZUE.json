@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_NZUE",
+  "nameMain": "Nzue",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Nzue",
+      "attestations": [
+        {
+          "countryId": "GAB",
+          "sourceRefs": ["forebears-nzue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FANG",
+      "status": "supposed",
+      "sourceRefs": ["forebears-nzue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GAB",
+      "status": "attested",
+      "sourceRefs": ["forebears-nzue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-nzue",
+      "title": "Nzue Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/nzue",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement. Elle atteste Nzue principalement au Gabon, mais n'en donne pas la signification et précise que la géographie ne suffit pas à attribuer une appartenance ethnique."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web et bibliographique combinant « Nzue », « Fang », « Gabon », « patronyme », « nom personnel », « anthroponymie », « étymologie », « clan », « transmission », « alliance », « caste », « homonyme » et « nécrologie », les travaux sur les dictionnaires anthroponymiques gabonais, ainsi que la page Forebears dédiée n'ont livré aucune tradition attribuée, chronique ou étude linguistique propre à ce nom qui en établirait l'origine ; les rapprochements fondés sur la seule ressemblance ou la seule géographie ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Nzue », « Fang », « Gabon », « patronyme », « nom personnel », « anthroponymie », « étymologie », « clan », « transmission », « alliance », « caste », « homonyme » et « nécrologie », les travaux sur les dictionnaires anthroponymiques gabonais, ainsi que la page Forebears dédiée n'ont pas établi que la catégorie de système nominal portée par la fiche provisoire décrive ce nom lui-même ; elle reste une hypothèse de classement et n'est pas transformée en fait."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Nzue », « Fang », « Gabon », « patronyme », « nom personnel », « anthroponymie », « étymologie », « clan », « transmission », « alliance », « caste », « homonyme » et « nécrologie », les travaux sur les dictionnaires anthroponymiques gabonais, ainsi que la page Forebears dédiée n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Nzue », « Fang », « Gabon », « patronyme », « nom personnel », « anthroponymie », « étymologie », « clan », « transmission », « alliance », « caste », « homonyme » et « nécrologie », les travaux sur les dictionnaires anthroponymiques gabonais, ainsi que la page Forebears dédiée n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Nzue », « Fang », « Gabon », « patronyme », « nom personnel », « anthroponymie », « étymologie », « clan », « transmission », « alliance », « caste », « homonyme » et « nécrologie », les travaux sur les dictionnaires anthroponymiques gabonais, ainsi que la page Forebears dédiée n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche ; les personnes vivantes ou de statut vital incertain ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Nzue », « Fang », « Gabon », « patronyme », « nom personnel », « anthroponymie », « étymologie », « clan », « transmission », « alliance », « caste », « homonyme » et « nécrologie », les travaux sur les dictionnaires anthroponymiques gabonais, ainsi que la page Forebears dédiée n'ont pas établi de lignée homonyme d'origine distincte documentable ; une diffusion dans plusieurs pays ou une graphie voisine ne suffit pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Nzue », « Fang », « Gabon », « patronyme », « nom personnel », « anthroponymie », « étymologie », « clan », « transmission », « alliance », « caste », « homonyme » et « nécrologie », les travaux sur les dictionnaires anthroponymiques gabonais, ainsi que la page Forebears dédiée n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

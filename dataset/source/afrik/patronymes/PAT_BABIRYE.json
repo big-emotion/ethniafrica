@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_BABIRYE",
+  "nameMain": "Babirye",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Babirye",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["uganda-parliament-babirye"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "La notice dédiée identifie Babirye comme un nom féminin ganda signifiant « première des jumeaux » en luganda ; faute de bibliographie propre à l'entrée, la glose est conservée comme attribution communautaire.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["behindthename-babirye"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BAGANDA",
+      "status": "attested",
+      "sourceRefs": ["behindthename-babirye"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["uganda-parliament-babirye"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "behindthename-babirye",
+      "title": "Meaning, origin and history of the name Babirye",
+      "url": "https://www.behindthename.com/name/babirye",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Notice communautaire dédiée consultée intégralement. Elle identifie Babirye comme un nom féminin d'usage ganda et le glose « first of twins » en luganda. Elle ne contient pas de bibliographie propre à l'entrée."
+    },
+    {
+      "sourceKey": "uganda-parliament-babirye",
+      "title": "Parliament of Uganda — Hon. Babalanda Milly Babirye",
+      "url": "https://mpsdb.parliament.go.ug/home/mp/eyJpdiI6Ii9rYmVPdi9zVElYYzNQSXFqc1AvTXc9PSIsInZhbHVlIjoid0k5eFNONTd0dzlmSG4vaTVVREFaUT09IiwibWFjIjoiNGY3Y2I3NmJlNTZlYWMwYTk1ZDg1OTJhMGZiYTA2MGM0MjFmNTVjMGNhMTIwMTI3MzNlZTFmMjQ1MTVjN2YwOCIsInRhZyI6IiJ9",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Page officielle consultée intégralement. Elle atteste Babirye dans le nom public d'une parlementaire ougandaise vivante ; elle n'est donc pas enregistrée comme porteuse individuelle dans le champ réservé aux personnes décédées ou auto-identifiées."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "La recherche web combinant « Babirye », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Meaning, origin and history of the name Babirye » et « Parliament of Uganda — Hon. Babalanda Milly Babirye » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Babirye à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La recherche web combinant « Babirye », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Meaning, origin and history of the name Babirye » et « Parliament of Uganda — Hon. Babalanda Milly Babirye » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Babirye."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La recherche web combinant « Babirye », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », qui comprenait le terme « obituary », ainsi que « Meaning, origin and history of the name Babirye » et « Parliament of Uganda — Hon. Babalanda Milly Babirye » n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La recherche web combinant « Babirye », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », qui comprenait le terme « homonyme », et la lecture de « Meaning, origin and history of the name Babirye » et « Parliament of Uganda — Hon. Babalanda Milly Babirye » n'ont pas établi de lignée homonyme d'origine distincte."
+    }
+  ]
+}

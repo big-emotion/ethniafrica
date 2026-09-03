@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité à l'attestation parlementaire de Razafindrakoto ; les étymologies commerciales non référencées sont exclues."
+  },
+  "id": "PAT_RAZAFINDRAKOTO",
+  "nameMain": "Razafindrakoto",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Razafindrakoto",
+      "attestations": [
+        {
+          "countryId": "MDG",
+          "sourceRefs": ["assemblee-mg-victor-razafindrakoto"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MERINA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["assemblee-mg-victor-razafindrakoto"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "assemblee-mg-victor-razafindrakoto",
+      "title": "Razafindrakoto Victor — Assemblée nationale de Madagascar",
+      "url": "https://assemblee-nationale.mg/depute/victor-razafindrakoto/",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Fiche officielle d'un ancien mandat parlementaire à Fianarantsoa : elle atteste la graphie Razafindrakoto dans un contexte institutionnel malgache. Elle ne documente ni l'origine ni la filiation du nom."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Razafindrakoto etymology », « Razafindrakoto onomastics », « origine nom Razafindrakoto », les archives et les résultats académiques n'ont livré aucune étude dédiée. Les explications de sites commerciaux ont été rejetées faute de références et parce qu'elles confondaient segmentation plausible et histoire attestée."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La fiche parlementaire atteste un porteur sans filiation. Les recherches avec père, fils, famille et généalogie n'ont pas établi le mode de transmission ; « other » maintient l'indétermination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source consultée n'établit l'unité sociale historiquement désignée par Razafindrakoto."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches Razafindrakoto avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches exactes associant Razafindrakoto à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; le mandat et l'emploi public de Victor Razafindrakoto sont individuels."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La fiche parlementaire ne documente aucun décès de Victor Razafindrakoto. Les recherches d'archives n'ont pas livré un porteur décédé dont l'identité et la graphie puissent être vérifiées dans une source accessible."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les archives, catalogues et recherches exactes consultés n'établissent pas de lignée Razafindrakoto d'origine distincte."
+    }
+  ]
+}

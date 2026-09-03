@@ -15,14 +15,14 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": ["Bangri", "Dam", "Gol", "Kibar"],
     "vitalityStatus": null,
     "sources": [
       {
-        "title": "Glottolog 5.3",
+        "title": "Glottolog 5.3 — Bagirmi (bagi1246)",
         "url": "https://glottolog.org/resource/languoid/id/bagi1246",
         "tier": "official",
-        "notes": "Glottolog name: Bagirmi; classification includes Central Sudanic."
+        "notes": "Glottolog name: Bagirmi; classification includes Central Sudanic. Les dialectes listés sont les sous-languoids que Glottolog rattache à bagi1246, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }

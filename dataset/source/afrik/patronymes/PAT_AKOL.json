@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
+  },
+  "id": "PAT_AKOL",
+  "nameMain": "Akol",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Akol",
+      "attestations": [
+        {
+          "countryId": "SSD",
+          "sourceRefs": ["baak-negotiating-belongings-2016"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Akol est attesté comme nom personnel dinka distinct du clan dans l’ethnographie de Baak. Ladd glose le lexème dinka akOl, dans une orthographe antérieure, par « soleil, jour » ; faute d’analyse onomastique reliant explicitement les deux, le sens du nom personnel reste claimed.",
+        "claimStatus": "claimed",
+        "sourceRefs": [
+          "baak-negotiating-belongings-2016",
+          "ladd-dinka-orthography"
+        ]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_DINKA",
+      "status": "attested",
+      "sourceRefs": ["baak-negotiating-belongings-2016"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "SSD",
+      "status": "attested",
+      "sourceRefs": ["baak-negotiating-belongings-2016"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "baak-negotiating-belongings-2016",
+      "title": "Negotiating Belongings: Stories of Forced Migration of Dinka Women from South Sudan",
+      "url": "https://www.researchgate.net/publication/307802615_Negotiating_Belongings",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Monographie ethnographique de Melanie Baak, Sense Publishers, 2016, DOI 10.1007/978-94-6300-588-3. Le chapitre Kooc Pan Da transcrit le récit de Nyanut Akol et montre qu’Akol est le nom de son père, distinct de l’appartenance clanique."
+    },
+    {
+      "sourceKey": "ladd-dinka-orthography",
+      "title": "Orthographic reform in Dinka: some general considerations and a proposal",
+      "url": "https://www.lel.ed.ac.uk/~bob/PAPERS/orth.posted.pdf",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Étude de D. Robert Ladd sur l’orthographe dinka. L’exemple lexical akOl, réécrit akOál dans la proposition orthographique, est glosé « sun, day ». La source ne relie pas elle-même ce lexème au nom personnel Akol."
+    },
+    {
+      "sourceKey": "edinburgh-dinka-songs-readme",
+      "title": "A Collection of Dinka Songs — README",
+      "url": "https://datashare.ed.ac.uk/bitstream/handle/10283/184/ACollectionofDinkaSongs_readme.pdf",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Documentation du corpus sonore de Bert Remijsen et de l’équipe du projet Metre and Melody in Dinka Speech and Song, University of Edinburgh et SOAS, 2012. Elle précise que les Dinka n’ont pas de nom de famille fixe et que le nom individuel est suivi de ceux du père puis des ascendants."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Akol tradition orale », « Akol griot » et « Akol oral history », ainsi que l’ethnographie de Baak, l’étude orthographique de Ladd et la documentation du corpus de chants dinka d’Édimbourg, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Akol chronicle », « Akol history » et « Akol genealogy », complétées par l’ethnographie de Baak, l’étude orthographique de Ladd et la documentation du corpus de chants dinka d’Édimbourg, n’ont livré aucune chronique primaire qui explique l’origine du nom."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Akol joking kinship », « Akol name alliance » et « Akol clan pact », ainsi que l’ethnographie de Baak, l’étude orthographique de Ladd et la documentation du corpus de chants dinka d’Édimbourg, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Akol caste », « Akol occupational group » ainsi que les passages sociaux consultés dans l’ethnographie de Baak, l’étude orthographique de Ladd et la documentation du corpus de chants dinka d’Édimbourg, n’ont établi aucune fonction héréditaire propre à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques et nécrologiques sur « Akol » dans les catalogues universitaires et institutionnels, complétées par l’ethnographie de Baak, l’étude orthographique de Ladd et la documentation du corpus de chants dinka d’Édimbourg, n’ont pas permis de vérifier un porteur décédé avec une identité suffisamment précise ; les personnes vivantes repérées ne sont pas ajoutées sans auto-identification."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches sur la graphie exacte « Akol » dans les index onomastiques et l’ethnographie de Baak, l’étude orthographique de Ladd et la documentation du corpus de chants dinka d’Édimbourg n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
+    }
+  ]
+}

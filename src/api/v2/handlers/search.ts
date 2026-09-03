@@ -6,7 +6,11 @@
 
 import { ftsSearch } from "../services/searchService";
 import { createApiResponse } from "../utils/response";
-import type { FtsSearchParams } from "@/types/afrik";
+import type {
+  FtsSearchParams,
+  FtsSearchResponse,
+  RankedSearchHit,
+} from "@/types/afrik";
 import type { ApiEnvelope } from "../utils/response";
 
 export interface FtsSearchData {
@@ -14,6 +18,15 @@ export interface FtsSearchData {
   countries: object[];
   families: object[];
   persons: object[];
+  patronymes: object[];
+  quizzes: object[];
+  languages: object[];
+  /**
+   * Every hit in the selected stream, ordered on `normalizedScore` (migration
+   * 069). The grouped arrays stay beside it because a facet asks about one
+   * kind. Main search excludes quizzes; the quiz lens contains only quizzes.
+   */
+  results: RankedSearchHit[];
   /**
    * Corpus-wide match counts. `total` used to be the size of the returned
    * page, which made it useless for paging; the ranking functions of
@@ -23,7 +36,12 @@ export interface FtsSearchData {
   countriesTotal: number;
   familiesTotal: number;
   personsTotal: number;
+  patronymesTotal: number;
+  quizzesTotal: number;
+  languagesTotal: number;
   total: number;
+  /** Near-miss leads (REQ-125), populated only when `total` is 0. */
+  leads: object[];
 }
 
 // @req REQ-002
@@ -31,17 +49,69 @@ export async function ftsSearchHandler(
   params: FtsSearchParams
 ): Promise<ApiEnvelope<FtsSearchData>> {
   const result = await ftsSearch(params);
-  // The database already ordered these. Re-sorting here is what produced the
-  // per-page ordering this endpoint used to return.
-  return createApiResponse<FtsSearchData>({
-    peoples: result.peoples as object[],
-    countries: result.countries as object[],
+  return createApiResponse<FtsSearchData>(shapeSearchData(result, params.lens));
+}
+
+/** Keep the public main and quiz streams isolated even if an upstream layer regresses. */
+function shapeSearchData(
+  result: FtsSearchResponse,
+  lens: FtsSearchParams["lens"]
+): FtsSearchData {
+  const quizzesTotal = result.quizzesTotal ?? 0;
+
+  if (lens === "quiz") {
+    return {
+      peoples: [],
+      countries: [],
+      families: [],
+      persons: [],
+      patronymes: [],
+      quizzes: (result.quizzes ?? []) as object[],
+      languages: [],
+      results: (result.results ?? []).filter((hit) => hit.kind === "quiz"),
+      peoplesTotal: 0,
+      countriesTotal: 0,
+      familiesTotal: 0,
+      personsTotal: 0,
+      patronymesTotal: 0,
+      quizzesTotal,
+      languagesTotal: 0,
+      total: quizzesTotal,
+      leads: [],
+    };
+  }
+
+  const peoplesTotal = result.peoplesTotal ?? 0;
+  const countriesTotal = result.countriesTotal ?? 0;
+  const familiesTotal = result.familiesTotal ?? 0;
+  const personsTotal = result.personsTotal ?? 0;
+  const patronymesTotal = result.patronymesTotal ?? 0;
+  const languagesTotal = result.languagesTotal ?? 0;
+
+  return {
+    peoples: (result.peoples ?? []) as object[],
+    countries: (result.countries ?? []) as object[],
     families: (result.families ?? []) as object[],
     persons: (result.persons ?? []) as object[],
-    peoplesTotal: result.peoplesTotal,
-    countriesTotal: result.countriesTotal,
-    familiesTotal: result.familiesTotal,
-    personsTotal: result.personsTotal,
-    total: result.total,
-  });
+    patronymes: (result.patronymes ?? []) as object[],
+    quizzes: [],
+    languages: (result.languages ?? []) as object[],
+    // Preserve the database order while excluding the other stream.
+    results: (result.results ?? []).filter((hit) => hit.kind !== "quiz"),
+    peoplesTotal,
+    countriesTotal,
+    familiesTotal,
+    personsTotal,
+    patronymesTotal,
+    quizzesTotal: 0,
+    languagesTotal,
+    total:
+      peoplesTotal +
+      countriesTotal +
+      familiesTotal +
+      personsTotal +
+      patronymesTotal +
+      languagesTotal,
+    leads: (result.leads ?? []) as object[],
+  };
 }

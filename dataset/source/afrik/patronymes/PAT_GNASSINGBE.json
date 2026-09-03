@@ -1,0 +1,99 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+  },
+  "id": "PAT_GNASSINGBE",
+  "nameMain": "Gnassingbé",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Gnassingbé",
+      "attestations": [
+        {
+          "countryId": "TGO",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    },
+    {
+      "spelling": "Gnassingbe",
+      "attestations": [
+        {
+          "countryId": "TGO",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_KABYE",
+      "status": "supposed",
+      "sourceRefs": ["corpus-ppl-kabye-gnassingbe"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "TGO",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "corpus-ppl-kabye-gnassingbe",
+      "title": "EthniAfrica — fiche du peuple Kabye, unifications et divisions",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Reprise du chapitre « Unifications et divisions » et « Événements historiques » de la fiche du peuple Kabye. Les deux passages donnent Gnassingbé Eyadema comme Kabiyè. Ils attestent un porteur revendiqué par le peuple, non le nom comme lignage kabiyè : d'où le statut « supposed »."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Le nom de clan ne détermine pas à lui seul le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+    }
+  ]
+}

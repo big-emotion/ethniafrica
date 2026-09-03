@@ -1,0 +1,145 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_NXUMALO",
+  "nameMain": "Nxumalo",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Nxumalo",
+      "attestations": [
+        {
+          "countryId": "ZWE",
+          "sourceRefs": ["corpus-ppl-ndebele-nord-organisation"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Les Nxumalo forment une section du clan ndwandwe. Le nom de clan aba-kwa-Nxumalo, « ceux de Nxumalo », fut créé pour dénouer une infraction à l'exogamie : le chef épousa une femme de son propre clan, union prohibée, et la famille de l'épouse reçut un nom de clan neuf afin que le mariage cessât d'être incestueux. Le nom procède ici d'un acte de droit matrimonial, non d'un ancêtre ni d'un totem.",
+        "claimStatus": "established",
+        "sourceRefs": ["bryant-1929-olden-times"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Chez les Nguni, l'isibongo (patronyme) et les izithakazelo (louanges de clan) sont deux objets distincts : le second dit l'ascendance et gouverne l'exogamie, le premier sert d'identifiant d'état civil.",
+        "claimStatus": "established",
+        "sourceRefs": ["nomina-africana-nguni-naming"]
+      },
+      {
+        "claim": "Dans le Matabeleland du Sud, l'isibongo ne sert pas seulement à nommer un clan : il fonctionne comme opérateur de classement, articulant nom de clan, origine revendiquée et « caste », et découpant de l'intérieur la catégorie ndébélé plutôt que de la refléter. Un même isibongo peut donc y recouvrir des origines revendiquées distinctes.",
+        "claimStatus": "established",
+        "sourceRefs": ["lindgren-2004-ndebele-castes"]
+      },
+      {
+        "claim": "L'explication courante rattache Nxumalo à l'umNxuma, entonnoir de cuir par lequel on faisait téter un nourrisson, Manukuza ayant perdu sa mère en bas âge. Bryant rapporte cette explication comme celle qu'on donne d'ordinaire et la juge peu convaincante, sans en proposer d'autre : l'étymologie du nom reste ouverte.",
+        "claimStatus": "contested",
+        "sourceRefs": ["bryant-1929-olden-times"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_NDEBELE_NORD",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-ndebele-nord-organisation"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZWE",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-ndebele-nord-organisation"]
+    },
+    {
+      "countryId": "ZAF",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Mkatshwa, chef de la section nxumalo du clan ndwandwe au début du XIXe siècle",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    },
+    {
+      "status": "deceased",
+      "displayName": "Malusi, fils de Mkatshwa, époux d'une fille de Jobe le Mthethwa",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    },
+    {
+      "status": "deceased",
+      "displayName": "Sotondose Nxumalo, réfugié rallié à la traversée de Mawa vers le Natal",
+      "sourceRefs": ["bryant-1929-olden-times"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-ndebele-nord-organisation",
+      "title": "EthniAfrica — fiche du peuple Ndebele du Nord, organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Ndebele du Nord."
+    },
+    {
+      "sourceKey": "nomina-africana-nguni-naming",
+      "title": "Derivation of given names from ethnonyms, surnames and clan praises: unveiling gendered naming trends in Nguni",
+      "url": "https://journals.co.za/doi/10.10520/ejc-nomina_v39_n1_a3",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Nomina Africana: Journal of African Onomastics, vol. 39 n° 1. Établit l'articulation entre patronyme (isibongo) et louanges de clan (izithakazelo) chez les Nguni."
+    },
+    {
+      "sourceKey": "bryant-1929-olden-times",
+      "title": "Olden Times in Zululand and Natal — Containing Earlier Political History of the Eastern-Nguni Clans",
+      "url": "https://archive.org/details/bwb_KT-091-892",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Bryant, Alfred T., Longmans Green, 1929. Ethnographie missionnaire coloniale, à lire comme telle : Bryant écrit depuis la mission catholique du Natal et sa chronologie clanique est reconstruite à partir de généalogies orales recueillies au tournant du siècle. C'est néanmoins la seule source imprimée qui donne, clan par clan, une origine nommée pour les clans nguni orientaux. Consulté sur le texte intégral, pas sur un index. Son orthographe est celle de 1929 (Mtetwa, Ntungwa) ; les fiches conservent la graphie du corpus et citent la sienne comme variante."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "lindgren-2004-ndebele-castes",
+      "title": "The Internal Dynamics of Ethnicity: Clan Names, Origins and Castes in Southern Zimbabwe",
+      "url": "https://doi.org/10.3366/afr.2004.74.2.173",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Lindgren, Björn, Africa (Journal of the International African Institute) 74(2), 2004, p. 173-193. Réserve à porter avec la citation : le texte intégral est sous péage chez Cambridge Core et n'a pas pu être lu lors de ce travail ; seuls la notice et le résumé ont été vérifiés. Ce qui est cité ici s'y limite — l'isibongo est en Matabeleland du Sud un opérateur de classement qui articule nom de clan, origine revendiquée et « caste », et qui découpe la catégorie ndébélé en parties. Aucune glose de nom particulier ne lui est empruntée."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "Deux choses distinctes, que la rédaction précédente confondait. Les izithakazelo lient bien un clan à ses ancêtres et non deux clans entre eux : il n'y a pas chez les Nguni d'équivalent du sanankuya mandingue, cousinage à plaisanterie institué par paires. Mais l'alliance entre clans nommés existe et Bryant la documente — sujétion négociée, adoption d'un lignage réfugié, mariage politique. Le champ ne peut désigner qu'un nom ayant lui-même une fiche dans l'atlas : les partenaires attestés n'en ont pas."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction héréditaire attestée : les Nxumalo sont une section d'un clan royal, statut politique et non charge de spécialistes."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucune lignée homonyme d'origine distincte n'a été trouvée : les occurrences relevées chez Bryant renvoient toutes à la section ndwandwe."
+    }
+  ]
+}

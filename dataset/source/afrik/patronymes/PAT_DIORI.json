@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche ciblé sur Diori ; chaque affirmation est limitée à ce qu'établit sa source propre."
+  },
+  "id": "PAT_DIORI",
+  "nameMain": "Diori",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Diori",
+      "attestations": [
+        { "countryId": "NER", "sourceRefs": ["assemblee-nationale-diori"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ZARMA",
+      "status": "attested",
+      "sourceRefs": ["bondaz-2022-diori"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NER",
+      "status": "attested",
+      "sourceRefs": ["assemblee-nationale-diori"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Hamani Diori",
+      "sourceRefs": ["assemblee-nationale-diori"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "assemblee-nationale-diori",
+      "title": "Diori Hamani Diori — Base Sycomore",
+      "url": "https://www2.assemblee-nationale.fr/sycomore/fiche/3736",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Notice biographique de l'Assemblée nationale française, consultée dans sa version française. Elle atteste la graphie Diori au Niger et donne les dates de Hamani Diori (1916-1989)."
+    },
+    {
+      "sourceKey": "bondaz-2022-diori",
+      "title": "La musée-transe. Autour du film Hampi. Le ciel est posé sur la terre de Jean Rouch (1961)",
+      "url": "https://journals.openedition.org/civilisations/7080",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Julien Bondaz, Civilisations 71, 2022, DOI 10.4000/civilisations.7080. L'article qualifie Diori Hamani de Songhay-Zarma ; il est utilisé uniquement pour cette association, pas comme étymologie du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches ciblées sur « Diori » dans les travaux d'anthroponymie songhay-zarma, les catalogues bibliographiques et les notices d'autorité n'ont livré ni étymologie étayée, ni tradition orale attribuée, ni chronique consacrée à l'origine du nom."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches associant « Diori » à parenté à plaisanterie, alliance, cousinage et sanankuya n'ont identifié aucune paire documentée entre deux fiches PAT existantes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches associant « Diori » aux termes caste, métier héréditaire, jasare et fonction sociale n'ont fourni aucune attribution sourcée applicable au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La graphie exacte a été recherchée dans les catalogues d'autorité, la bibliographie songhay-zarma et les sources institutionnelles consultées ; aucune lignée homonyme d'origine distincte n'a été établie."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La notice de l'Assemblée nationale et l'article de Bondaz attestent un porteur et son association songhay-zarma, mais ne décrivent pas la transmission de Diori ; les recherches sur filiation, héritage du nom et clan n'ont pas permis de remplacer « other »."
+    }
+  ]
+}

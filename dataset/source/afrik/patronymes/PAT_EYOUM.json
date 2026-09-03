@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_EYOUM",
+  "nameMain": "Eyoum",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Eyoum",
+      "attestations": [
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["peuplesawa-eyoum-profiles"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SAWA",
+      "status": "attested",
+      "sourceRefs": ["peuplesawa-eyoum-profiles"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "CMR",
+      "status": "attested",
+      "sourceRefs": ["peuplesawa-eyoum-profiles"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "peuplesawa-eyoum-profiles",
+      "title": "PeupleSawa.com — Profils E",
+      "url": "https://www.peuplesawa.com/fr/bnprofiles.php?letter=E",
+      "tier": "unverified",
+      "source_kind": "community",
+      "isSelfIdentification": true,
+      "notes": "Page communautaire de profils consultée intégralement. Plusieurs contributions autonomes portant Eyoum se déclarent sawa, douala ou d'origine camerounaise ; l'une écrit explicitement « je suis d'origine sawa ». Ces auto-identifications sont conservées à leur niveau unverified. Elles n'établissent ni étymologie, ni clan commun, ni mode de transmission."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Eyoum », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « PeupleSawa.com — Profils E » n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine de Eyoum. Les attestations géographiques ou individuelles trouvées ne sont pas transformées en étymologie."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Eyoum », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « PeupleSawa.com — Profils E » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Eyoum à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Eyoum », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « PeupleSawa.com — Profils E » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Eyoum."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Eyoum », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « PeupleSawa.com — Profils E », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Eyoum », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « PeupleSawa.com — Profils E », n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Eyoum », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « PeupleSawa.com — Profils E » n'ont établi aucune règle propre à Eyoum permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

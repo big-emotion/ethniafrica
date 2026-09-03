@@ -1,0 +1,132 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français limité aux attestations directement sourcées du clan totémique baganda."
+  },
+  "id": "PAT_NGONGE",
+  "nameMain": "Ngonge",
+  "nameSystem": "totemic_clan",
+  "spellings": [
+    {
+      "spelling": "Ngonge",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["accord-ekika-2012", "uganda-journal-clans"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [
+      {
+        "claim": "Le clan de la Loutre fait remonter son origine à Mwanga Kisole, donné pour katikkiro — premier ministre — de Kintu, et que ce roi aurait tué dans un accès de colère. À sa mort son fantôme prit un médium ; il fut divinisé et un temple lui fut bâti sur la colline de Nsoke, desservi par un prêtre du clan.",
+        "claimStatus": "claimed",
+        "griot": "Les chefs de clan et officiants baganda réunis pour Roscoe par Sir Apolo Kagwa, katikkiro du Buganda",
+        "transcription": "John Roscoe, The Baganda, Macmillan, 1911, chapitre VI « The Clans and their Totems ». Roscoe écrit dans sa préface avoir reçu « the principal men from each clan » plusieurs semaines durant, par l'entremise de Kagwa, et avoir consigné leurs récits ; les sections claniques rapportent donc ce que chaque clan dit de lui-même, au style indirect (« they assert », « they trace their origin to »).",
+        "sourceRefs": ["roscoe-1911-baganda"]
+      }
+    ],
+    "writtenChronicles": [
+      {
+        "claim": "Le totem principal (omuziro) de ce clan est la loutre. Clan Banansangwa, l'un des cinq clans trouvés sur place à l'arrivée de Kintu.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["roscoe-1911-baganda", "buganda-heritage-clans"]
+      },
+      {
+        "claim": "Le totem secondaire (akabbiro) de ce clan est la genette (kasimba), au rang nº 4 de la liste de Roscoe.",
+        "claimStatus": "established",
+        "sourceRefs": ["roscoe-1911-baganda"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "L'ekika ganda est un clan totémique : chaque clan porte un totem principal (omuziro) et un totem secondaire (akabbiro), et le nom du clan est celui du totem.",
+        "claimStatus": "established",
+        "sourceRefs": ["roscoe-1911-baganda"]
+      },
+      {
+        "claim": "Le clan (ekika) se subdivise en branches (essiga) puis en sous-branches (enda), et s'ancre sur des tenures funéraires (obutaka) : trois générations inhumées en un lieu y fixent le droit du lignage, que le Kabaka lui-même se gardait de contester. La tête de clan porte un titre, et non un nom : le titre est celui du premier détenteur de la charge et passe au successeur.",
+        "claimStatus": "established",
+        "sourceRefs": ["roscoe-1911-baganda"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_GANDA",
+      "status": "attested",
+      "sourceRefs": ["accord-ekika-2012"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["accord-ekika-2012"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": {
+    "value": "Le clan est fabricant d'étoffes d'écorce pour le roi. Il lui fournit une épouse chargée de faire le lit royal, charge héréditaire dans le clan : à la mort du roi, cette femme gagnait son temple funéraire et y demeurait à vie, une autre femme du clan prenant sa place à sa propre mort, tandis que le nouveau roi prenait au clan une nouvelle épouse-lingère. Le clan fournit aussi le serviteur chargé du tabac royal, ainsi que les prêtres des temples des dieux Mukasa, sur la colline de Kyange, et Wamala, sur celle de Nsoke.",
+    "sourceRefs": ["roscoe-1911-baganda"]
+  },
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "accord-ekika-2012",
+      "title": "Conflict Resolution under the Ekika System of the Baganda in Uganda",
+      "url": "https://www.accord.org.za/wp-content/uploads/2024/06/Monograph-July-2012-Conflict-resolution-under-the-Ekika-system-of-the-Baganda-in-Uganda.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "La monographie institutionnelle cite Ngonge parmi les cinq groupes de parenté originels baganda."
+    },
+    {
+      "sourceKey": "uganda-journal-clans",
+      "title": "Clan Names",
+      "url": "https://tile.loc.gov/storage-services/service/gdc/gdcwdl/wd/l_/13/80/8/wdl_13808/wdl_13808.pdf",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Numéro de l'Uganda Journal numérisé par la Library of Congress ; le tableau des noms de clan donne Ngonge et le totem loutre."
+    },
+    {
+      "sourceKey": "roscoe-1911-baganda",
+      "title": "The Baganda: An Account of their Native Customs and Beliefs",
+      "url": "https://archive.org/details/bagandaaccountof00roscuoft",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Roscoe, John, Macmillan, 1911, chapitre VI « The Clans and their Totems » (p. 133-185). Ethnographie missionnaire coloniale, à lire comme telle ; Apolo Kaggwa en fut le collecteur de traditions. Établit le système totémique (totem principal + akabbiro, interdit alimentaire). L'attribution du totem clan par clan avait été atteinte via les articles de clans de la Wikipédia anglophone ; la vérification page à page était due et a été faite sur le texte intégral, « List of the Clans with their Totems », p. 138-139 : Ngonge (loutre) nº 4, Fumbe (civette) nº 6, Lugave (Manis, pangolin) nº 11, Njaza nº 25. Roscoe glose Njaza par « Roebuck » (chevreuil), là où l'usage actuel donne le redunca ; l'écart de glose est conservé plutôt que corrigé en silence."
+    },
+    {
+      "sourceKey": "buganda-heritage-clans",
+      "title": "Buganda Heritage and Information Centre — Clans",
+      "url": "https://www.bugandaheritage.org.uk/culture/clans",
+      "tier": "unverified",
+      "source_kind": "community",
+      "isSelfIdentification": true,
+      "notes": "Site patrimonial ganda. Auto-identification : donne les cinq clans indigènes Banansangwa (Ffumbe, Lugave, Nggonge, Njaza, Nnyonyi), le passage à 52 clans en 1966, et l'interdit alimentaire."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "Roscoe documente bien des rattachements nommés entre ebika — le clan du Chien au clan de la Civette, ceux du Chacal et du Corbeau à celui de la Loutre — et une seconde institution d'alliance : les clans écartés du trône donnaient leurs filles à d'autres clans pour que leurs petits-fils redeviennent éligibles. L'alliance ganda existe donc et est attestée par paires nommées. Aucune de ces paires ne relie deux des quatre ebika dotés d'une fiche, et le champ exige un nom déjà présent dans l'atlas : c'est la couverture du corpus qui bloque, non la documentation."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les sections claniques de Roscoe nomment abondamment — chefs, prêtres, médiums, épouses royales. Mais Roscoe établit au même chapitre que ces noms sont des titres transmis au successeur, et que le détenteur « parle des événements passés comme s'il y avait assisté », au point de se dire le père de gens morts depuis longtemps. Enregistrer l'un d'eux en porteur individuel reviendrait à prendre une charge pour une personne. L'absence n'est pas ici un défaut de recherche mais une propriété du système."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Le nom de ce clan est celui de son totem, mot commun du luganda ; aucune lignée homonyme d'origine distincte n'a été trouvée dans les sections claniques de Roscoe ni sur le site patrimonial ganda."
+    }
+  ],
+  "totemicFoodProhibition": {
+    "value": "Il est tabou pour un Muganda de consommer son propre clan, qu'il s'agisse de nourriture, de viande fraîche, de légume, de poisson ou de fruit.",
+    "sourceRefs": ["buganda-heritage-clans", "roscoe-1911-baganda"]
+  }
+}

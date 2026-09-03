@@ -1,0 +1,110 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche distinguant l'attestation lexicographique de l'anthroponyme Ranaivo d'une étymologie historique, qui reste inconnue."
+  },
+  "id": "PAT_RANAIVO",
+  "nameMain": "Ranaivo",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Ranaivo",
+      "attestations": [
+        {
+          "countryId": "MDG",
+          "sourceRefs": ["bnf-flavien-ranaivo", "malagasyword-ranaivo"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le Malagasy Dictionary and Encyclopedia classe ranaivo comme anthroponyme et l'analyse en deux éléments, ra- et ivo. L'entrée ne donne ni traduction globale ni démonstration historique : cette segmentation est enregistrée sans la convertir en étymologie du patronyme.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["malagasyword-ranaivo"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MERINA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["bnf-flavien-ranaivo", "malagasyword-ranaivo"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Flavien Ranaivo",
+      "sourceRefs": ["bnf-flavien-ranaivo"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "bnf-flavien-ranaivo",
+      "title": "Notice de personne « Ranaivo, Flavien (1914-1999) »",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb11921117h",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Notice d'autorité de la Bibliothèque nationale de France : graphie, Madagascar, dates 1914-1999 et activités de Flavien Ranaivo."
+    },
+    {
+      "sourceKey": "malagasyword-ranaivo",
+      "title": "Malagasy Dictionary and Encyclopedia — ranaivo",
+      "url": "https://malagasyword.org/bins/teny2/ranaivo",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Agrégateur lexicographique malgache : classe ranaivo comme nom anthroponymique et renvoie aux éléments ra- et ivo. La page ne fournit pas d'auteur d'analyse ni d'étymologie complète ; le niveau non vérifié est conservé."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches Ranaivo avec tradition familiale, razana, ancêtre et généalogie n'ont livré aucun récit attribué à un transmetteur nommé avec transcription."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "La notice BnF documente un porteur mais pas l'origine du nom ; les recherches historiques exactes n'ont livré aucune chronique de formation de Ranaivo."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La notice BnF, la ressource lexicographique et les recherches exactes « Ranaivo filiation », « Ranaivo family » et « Ranaivo généalogie » n'ont livré aucune source de filiation ; « other » maintient le mode indéterminé."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches Ranaivo avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches exactes associant Ranaivo à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; les activités d'écrivain et de journaliste de Flavien Ranaivo sont individuelles."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les catalogues et recherches exactes consultés n'établissent pas de lignée homonyme d'origine distincte."
+    }
+  ]
+}

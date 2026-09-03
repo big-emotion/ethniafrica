@@ -272,7 +272,6 @@ async function buildFicheEntries(
     languages: dedupeAutonyms(
       entries.map((e) => e.fiche.mainLanguage as AutonymExonymName)
     ),
-    isoCodes: [...new Set(entries.map((e) => e.fiche.isoCode))],
     peopleNames: dedupeAutonyms(entries.map((e) => e.fiche.subjectName)),
     countryOwnNames: dedupeAutonyms(
       countryEntries.map((e) => e.fiche.subjectName)
@@ -428,11 +427,12 @@ async function runGenerationSweep(
   supabase: SupabaseClient,
   rebuildAll: boolean
 ): Promise<void> {
-  const { entries, pools } = await buildFicheEntries(supabase);
+  const { entries, countryEntries, pools } = await buildFicheEntries(supabase);
   const activeQuestions = await fetchActiveQuestions(supabase);
 
   const plan = computeSweepPlan({
     entries,
+    countryEntries,
     pools,
     activeQuestions,
     rebuildAll,

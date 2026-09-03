@@ -157,23 +157,26 @@ describe("ConsentBanner", () => {
       name: /personnaliser/i,
     });
     const privacyLink = screen.getByRole("link", {
-      name: /politique de confidentialité/i,
+      name: /politique de données/i,
     });
 
     // Verify all interactive elements are focusable (exist and are not disabled)
     expect(acceptButton).not.toBeDisabled();
     expect(rejectButton).not.toBeDisabled();
     expect(customizeButton).not.toBeDisabled();
-    expect(privacyLink).toHaveAttribute("href", "/fr/confidentialite");
+    expect(privacyLink).toHaveAttribute("href", "/fr/politique-de-donnees");
   });
 
+  // The banner used to point at `/fr/confidentialite`, one of two hand-written
+  // privacy pages that restated the canonical one. Those are gone; the link
+  // names the page the footer and the site tree already name.
   it("has a link to the privacy policy", () => {
     render(<ConsentBanner />);
 
     const privacyLink = screen.getByRole("link", {
-      name: /politique de confidentialité/i,
+      name: /politique de données/i,
     });
-    expect(privacyLink).toHaveAttribute("href", "/fr/confidentialite");
+    expect(privacyLink).toHaveAttribute("href", "/fr/politique-de-donnees");
   });
 
   it("saves custom preferences when save button is clicked", async () => {

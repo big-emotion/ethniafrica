@@ -33,6 +33,11 @@ const GRANDFATHERED_SOFT_404_SEGMENTS = [
   "atlas/familles/[slug]",
   "atlas/pays/[slug]",
   "atlas/peuples/[slug]",
+  "atlas/langues/[slug]",
+  // The patronyme fiche, which moved off `atlas/appellations/[slug]` when
+  // DEC-038's two objects stopped sharing a URL prefix. Same route, same
+  // pre-existing soft 404 — a rename, not a new entry.
+  "atlas/noms/[slug]",
 ];
 
 /**

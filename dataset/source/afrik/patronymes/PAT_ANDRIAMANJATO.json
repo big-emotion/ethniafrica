@@ -1,0 +1,106 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité aux attestations biographiques et à la transmission familiale directement documentées ; les chapitres non établis restent déclarés comme lacunes."
+  },
+  "id": "PAT_ANDRIAMANJATO",
+  "nameMain": "Andriamanjato",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Andriamanjato",
+      "attestations": [
+        {
+          "countryId": "MDG",
+          "sourceRefs": ["bnf-richard-andriamanjato", "ifri-crise-malgache"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une analyse de l'Ifri identifie Ny Hasina Andriamanjato comme le fils du pasteur Richard Andriamanjato. Cette occurrence sur deux générations établit ici une transmission patrilinéaire du nom, sans préjuger de son étymologie.",
+        "claimStatus": "established",
+        "sourceRefs": ["ifri-crise-malgache"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MERINA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["bnf-richard-andriamanjato", "ifri-crise-malgache"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Richard Andriamanjato",
+      "sourceRefs": ["bnf-richard-andriamanjato"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "bnf-richard-andriamanjato",
+      "title": "Notice de personne « Andriamanjato, Richard (1930-2013) »",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb12088464c",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Notice d'autorité de la Bibliothèque nationale de France : graphie, rattachement à Madagascar, dates 1930-2013 et activités de Richard Andriamanjato."
+    },
+    {
+      "sourceKey": "ifri-crise-malgache",
+      "title": "Madagascar Crisis",
+      "url": "https://www.ifri.org/en/node/5242",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Entretien-analyse de Mathieu Pellerin publié par l'Ifri le 23 février 2009. La note 29 identifie Ny Hasina Andriamanjato comme fils du pasteur Richard Andriamanjato."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes sur Andriamanjato avec tradition orale, razana, ancêtre fondateur et généalogie n'ont livré aucun récit attribué à un transmetteur nommé avec transcription."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches exactes « Andriamanjato etymology », « Andriamanjato onomastics » et leurs équivalents français n'ont livré aucune étude linguistique dédiée ; les décompositions proposées par des répertoires de noms non sourcés ont été écartées."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches sur Andriamanjato avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique nommée."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les notices biographiques et les recherches exactes sur le nom n'attestent aucune fonction sociale ou professionnelle héréditaire ; les métiers de porteurs individuels ne sont pas une fonction du nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les catalogues d'autorité et recherches exactes consultés n'ont pas établi de lignée homonyme d'origine distincte."
+    }
+  ]
+}

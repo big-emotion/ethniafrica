@@ -1,0 +1,114 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. La documentation établit Bishariyyn comme désignation tribale beja, sans démontrer que Bishari est un patronyme ni comment cette forme se transmet."
+  },
+  "id": "PAT_BISHARI",
+  "nameMain": "Bishari",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "Bishari",
+      "attestations": [
+        { "countryId": "EGY", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    },
+    {
+      "spelling": "Bisharin",
+      "attestations": [
+        { "countryId": "EGY", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    },
+    {
+      "spelling": "Bishariyyn",
+      "attestations": [
+        { "countryId": "SDN", "sourceRefs": ["bishari-pantuliano-2002"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Pantuliano présente les Bishariyyn comme l'une des principales tribus de la confédération beja du nord-est soudanais ; la source documente une désignation collective et non l'étymologie d'un patronyme Bishari.",
+        "claimStatus": "established",
+        "sourceRefs": ["bishari-pantuliano-2002"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BEJA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "bishari-pantuliano-2002"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "EGY",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "SDN",
+      "status": "attested",
+      "sourceRefs": ["bishari-pantuliano-2002"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "bishari-pantuliano-2002",
+      "title": "Sustaining Livelihoods across the Rural-Urban Divide: Changes and Challenges Facing the Beja Pastoralists of North Eastern Sudan",
+      "url": "https://www.iied.org/sites/default/files/pdfs/migrate/9163IIED.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Sara Pantuliano, IIED, 2002, p. 7-8. L'étude nomme les Bishariyyn parmi les principales tribus beja et décrit la filiation patrilinéaire segmentaire et le diwab ; elle ne dit pas que Bishari se transmet comme nom de personne."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "L'étude de Pantuliano (2002), sa bibliographie et les recherches « Bishari/Bisharin/Bishariyyn etymology » ont été examinées ; aucune étymologie linguistique dédiée et vérifiable n'a été trouvée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les passages sur le diwab, les négociations silif et l'organisation tribale ont été recherchés dans Pantuliano (2002) ; aucun couple de patronymes alliés correspondant à deux PAT_* existants n'y est nommé."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Pantuliano (2002) décrit des transformations économiques et des activités professionnelles chez les Bishariyyn, mais aucune caste ni fonction héréditaire attachée à la forme Bishari."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques Bishari/Bishariyyn dans l'étude et les catalogues associés n'ont pas identifié de porteur décédé pour lequel Bishari soit clairement un nom personnel plutôt qu'une affiliation collective."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les trois graphies ont été recherchées comme ethnonyme, nom personnel et toponyme ; la documentation consultée ne permet pas d'isoler un homonyme distinct selon le modèle du corpus."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Pantuliano (2002) établit une filiation patrilinéaire des segments beja, mais ne documente pas la transmission de Bishari comme anthroponyme ; appliquer automatiquement la règle du groupe au nom reproduirait précisément une inférence non sourcée."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "La source qualifie Bishariyyn de tribu, catégorie absente du vocabulaire fermé de designatedSocialUnit ; « other » est conservé et ne doit pas être remplacé arbitrairement par « clan » ou « lineage »."
+    }
+  ]
+}

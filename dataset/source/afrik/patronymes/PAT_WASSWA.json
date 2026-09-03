@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_WASSWA",
+  "nameMain": "Wasswa",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Wasswa",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["wild-wood-2020-waswa"]
+        }
+      ]
+    },
+    {
+      "spelling": "Waswa",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["wild-wood-2020-waswa"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le chapitre consacré à Apolo Kivebulaya indique qu'il naquit sous le nom Waswa, nom de l'aîné de jumeaux garçons en Buganda. Cette règle de rang de naissance établit un nom personnel non héréditaire ; elle ne suffit pas à expliquer tout usage moderne de Wasswa comme patronyme.",
+        "claimStatus": "established",
+        "sourceRefs": ["wild-wood-2020-waswa"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BAGANDA",
+      "status": "attested",
+      "sourceRefs": ["wild-wood-2020-waswa"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["wild-wood-2020-waswa"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "wild-wood-2020-waswa",
+      "title": "Waswa, a commoner in the Kingdom of Buganda (c.1865–c.1884)",
+      "url": "https://www.cambridge.org/core/books/abs/mission-of-apolo-kivebulaya/waswa-a-commoner-in-the-kingdom-of-buganda-c1865c1884/3BC8F0B346AAFFCD6C1EF624C8867C12",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Chapitre d'Emma Wild-Wood publié par Cambridge University Press, résumé consulté directement. Il établit Waswa comme le nom de l'aîné de jumeaux garçons en Buganda au XIXe siècle."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Wasswa », « Waswa », « Baganda », « Buganda », « twin name », « surname », « etymology » et « transmission », ainsi que la consultation directe de « Waswa, a commoner in the Kingdom of Buganda (c.1865–c.1884) » n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Wasswa à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Wasswa », « Waswa », « Baganda », « Buganda », « twin name », « surname », « etymology » et « transmission », ainsi que la consultation directe de « Waswa, a commoner in the Kingdom of Buganda (c.1865–c.1884) » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Wasswa."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Wasswa », « Waswa », « Baganda », « Buganda », « twin name », « surname », « etymology » et « transmission », ainsi que la consultation directe de « Waswa, a commoner in the Kingdom of Buganda (c.1865–c.1884) » n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé de Wasswa, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Wasswa », « Waswa », « Baganda », « Buganda », « twin name », « surname », « etymology » et « transmission », ainsi que la consultation directe de « Waswa, a commoner in the Kingdom of Buganda (c.1865–c.1884) » n'ont pas établi de lignée homonyme de Wasswa dotée d'une origine distincte et documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    }
+  ]
+}

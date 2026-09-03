@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité à l'attestation d'autorité de Rakotoarisoa ; les interprétations non sourcées ont été écartées."
+  },
+  "id": "PAT_RAKOTOARISOA",
+  "nameMain": "Rakotoarisoa",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Rakotoarisoa",
+      "attestations": [
+        { "countryId": "MDG", "sourceRefs": ["bnf-jean-aime-rakotoarisoa"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MERINA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["bnf-jean-aime-rakotoarisoa"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "bnf-jean-aime-rakotoarisoa",
+      "title": "Notice de personne « Rakotoarisoa, Jean-Aimé »",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb13327959b",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Notice d'autorité de la Bibliothèque nationale de France : graphie, Madagascar et activité universitaire de Jean-Aimé Rakotoarisoa. La notice ne donne aucune date de décès."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Rakotoarisoa etymology », « Rakotoarisoa onomastics », leurs équivalents français et les résultats académiques n'ont livré aucune étude d'origine ; une page commerciale de signification des noms a été rejetée faute de références."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La notice d'autorité atteste un porteur sans filiation. Les recherches avec famille, père, fils et généalogie n'ont pas établi le mode de transmission ; « other » conserve cette indétermination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source consultée n'établit l'unité sociale historiquement désignée par Rakotoarisoa."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches Rakotoarisoa avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune paire patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches exactes associant Rakotoarisoa à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; les fonctions universitaires du porteur cité sont individuelles."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La notice BnF ne fournit aucune date de décès pour Jean-Aimé Rakotoarisoa ; il ne peut donc pas être enregistré comme porteur décédé. Aucun autre porteur décédé directement sourcé n'a été trouvé."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les catalogues et recherches exactes consultés n'établissent pas de lignée homonyme d'origine distincte."
+    }
+  ]
+}

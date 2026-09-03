@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français traitant Ngarta comme nom personnel choisi et laudatif, non comme nom de clan héréditaire."
+  },
+  "id": "PAT_NGARTA",
+  "nameMain": "Ngarta",
+  "nameSystem": "praise_name",
+  "spellings": [
+    {
+      "spelling": "Ngarta",
+      "attestations": [
+        {
+          "countryId": "TCD",
+          "sourceRefs": [
+            "loc-chad-tombalbaye-era",
+            "champion-ngarta-tombalbaye"
+          ]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "elective",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "François Tombalbaye substitua Ngarta à son prénom chrétien pendant la campagne d'authenticité tchadienne engagée en 1973.",
+        "claimStatus": "established",
+        "sourceRefs": ["loc-chad-tombalbaye-era", "champion-ngarta-tombalbaye"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le chapitre d'anthropologie juridique rattache Ngarta au sara ngar, « chef » ; cette glose est conservée comme proposition de l'auteur, faute d'étude comparative dédiée au lexème.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["champion-ngarta-tombalbaye"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SARA",
+      "status": "attested",
+      "sourceRefs": ["champion-ngarta-tombalbaye"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "TCD",
+      "status": "attested",
+      "sourceRefs": ["loc-chad-tombalbaye-era", "champion-ngarta-tombalbaye"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "François Ngarta Tombalbaye",
+      "sourceRefs": ["loc-chad-tombalbaye-era"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "loc-chad-tombalbaye-era",
+      "title": "Chad — Tombalbaye Era, 1960–75",
+      "url": "https://countrystudies.us/chad/10.htm",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Reproduction en ligne du Federal Research Division Country Study de la Library of Congress. La page date la campagne d'authenticité, indique que Tombalbaye remplaça son prénom par Ngarta et relate sa mort lors de la mutinerie du 13 avril 1975."
+    },
+    {
+      "sourceKey": "champion-ngarta-tombalbaye",
+      "title": "« Authentique ! Sans papier ! » : sur la chute de François Tombalbaye",
+      "url": "https://www.anthropologieenligne.com/pages/04/4.1.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Bernard Champion, département d'Ethnologie et d'Anthropologie de l'université de La Réunion ; chapitre repris du Bulletin du laboratoire d'Anthropologie juridique de Paris, no 20, 1996. Il présente Ngarta comme prénom substitué, propose la glose sara ngar « chef » et reproduit les acclamations laudatives d'un griot non nommé. Les versions française et anglaise de Wikipédia ont seulement servi au repérage et ne sont pas citées."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Le chapitre de Champion mentionne un griot attaché à Tombalbaye et transcrit des acclamations, mais ne le nomme pas ; le schéma refusant un transmetteur anonyme, aucune tradition orale n'est enregistrée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Ngarta alliance clan Sara » et « Ngarta joking kinship » n'ont livré aucune alliance entre deux patronymes existants du corpus."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La glose « chef » décrit le sens revendiqué du nom choisi ; ni Champion ni le Country Study n'en font une charge ou une caste héréditaire attachée aux porteurs de Ngarta."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches dans les catalogues, les études tchadiennes et les variantes sans accent n'ont pas établi un homonyme de Ngarta doté d'une autre origine."
+    }
+  ]
+}

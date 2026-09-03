@@ -15,6 +15,7 @@
  * `person_peoples`/`person_countries` or `content`.
  */
 
+import { logger } from "@/lib/api/logger";
 import { createServerClient } from "@/lib/supabase/server";
 import type {
   PatronymeBearerSummary,
@@ -34,6 +35,209 @@ export interface PatronymeAggregate {
   bearers: PatronymeBearerSummary[];
 }
 
+export interface PatronymeListItem {
+  id: string;
+  nameMain: string;
+  nameSystem: PatronymeNameSystem;
+}
+
+/** The reader's narrowing, as the query layer names it. */
+export interface PatronymeQueryFilters {
+  search?: string;
+  initialLetter?: string;
+  nameSystem?: PatronymeNameSystem;
+  /** Resolved against the join table *before* the names query — see resolveRelationScope. */
+  peopleId?: string;
+  /** Same, against afrik_patronyme_countries. */
+  countryId?: string;
+}
+
+export interface ListPatronymesQuery {
+  page: number;
+  perPage: number;
+  /** Absent means the whole corpus, which is what every caller asked for until REQ-139. */
+  filters?: PatronymeQueryFilters;
+}
+
+export interface ListPatronymesResult {
+  data: PatronymeListItem[];
+  total: number;
+}
+
+/** One name of the selection and the countries the corpus attests it in. */
+export interface PatronymeCountryIndexRow {
+  id: string;
+  nameMain: string;
+  countryIds: string[];
+}
+
+/**
+ * Rows per request when walking a name's relations.
+ *
+ * Well under PostgREST's 1000-row ceiling for the reason `peoples.ts` keeps
+ * its own: a page the server truncated comes back short, and a short page is
+ * how the walk knows it has reached the end. At the ceiling the two are
+ * indistinguishable.
+ */
+// @req REQ-139
+export const PATRONYME_FACET_WALK_SIZE = 500;
+
+/**
+ * Thirty dossiers over fifty-four countries cannot fill this many pages;
+ * reaching it means the range is being ignored, and a loop against a server
+ * that ignores it would never end.
+ */
+// @req REQ-139
+export const PATRONYME_FACET_MAX_PAGES = 40;
+
+/**
+ * The subset of the PostgREST builder the shared filters need.
+ *
+ * Restated rather than imported, exactly as `peoples.ts` restates its own:
+ * constraining the helper's generic to the real builder makes the compiler
+ * unfold supabase-js's column-string inference once per filter and give up
+ * ("type instantiation is excessively deep"). The two casts below buy one
+ * filter definition instead of two copies drifting apart.
+ */
+interface FilterablePatronymeQuery {
+  textSearch(
+    column: string,
+    query: string,
+    options: { type: "websearch"; config: string }
+  ): FilterablePatronymeQuery;
+  ilike(column: string, pattern: string): FilterablePatronymeQuery;
+  eq(column: string, value: string): FilterablePatronymeQuery;
+  in(column: string, values: string[]): FilterablePatronymeQuery;
+}
+
+/**
+ * The reader's narrowing, applied to whichever names query is being built.
+ *
+ * One place rather than two: the list and the map index answer the same
+ * question about the same selection, and a filter that drifted between them
+ * would show a globe panel naming names the list beside it does not.
+ *
+ * `search` goes to `search_vector` (migration 066), so it matches the same
+ * index `/recherche` already uses. Its D tier is `content::text`, so a query
+ * can match a dossier's prose and return a row whose *name* does not match —
+ * the cheap upgrade, if that proves noisy on a control labelled "rechercher un
+ * nom", is `name_unaccent_vector`, which requires folding the query text
+ * client-side to match `public.afrik_unaccent`.
+ */
+function withPatronymeFilters<Query>(
+  query: Query,
+  filters: PatronymeQueryFilters,
+  scopedIds: string[] | null
+): Query {
+  let scoped = query as unknown as FilterablePatronymeQuery;
+
+  if (filters.search) {
+    scoped = scoped.textSearch("search_vector", filters.search, {
+      type: "websearch",
+      config: "french",
+    });
+  }
+  if (filters.initialLetter) {
+    scoped = scoped.ilike("name_main", `${filters.initialLetter}%`);
+  }
+  if (filters.nameSystem) {
+    scoped = scoped.eq("name_system", filters.nameSystem);
+  }
+  if (scopedIds) {
+    scoped = scoped.in("id", scopedIds);
+  }
+
+  return scoped as unknown as Query;
+}
+
+/**
+ * The names a join table links to one entity, walked with an explicit range.
+ *
+ * An unranged select is capped server-side by PostgREST's max-rows, which here
+ * would quietly drop the names of the best-documented countries — the ones the
+ * filter is most used on.
+ */
+// @req REQ-139
+export async function getPatronymeIdsLinkedTo(
+  table: "afrik_patronyme_peoples" | "afrik_patronyme_countries",
+  column: "people_id" | "country_id",
+  value: string
+): Promise<string[]> {
+  const supabase = createServerClient();
+  const patronymeIds: string[] = [];
+
+  for (let page = 0; page < PATRONYME_FACET_MAX_PAGES; page++) {
+    const start = page * PATRONYME_FACET_WALK_SIZE;
+    const { data, error } = await supabase
+      .from(table)
+      .select("patronyme_id")
+      .eq(column, value)
+      .range(start, start + PATRONYME_FACET_WALK_SIZE - 1);
+
+    if (error) {
+      logger.error(
+        `Error fetching patronyme ids for ${column} ${value}`,
+        error
+      );
+      throw error;
+    }
+
+    const rows = (data ?? []) as Array<{ patronyme_id: string }>;
+    for (const row of rows) patronymeIds.push(row.patronyme_id);
+    if (rows.length < PATRONYME_FACET_WALK_SIZE) return patronymeIds;
+  }
+
+  logger.error(
+    `Patronyme ids for ${column} ${value} exceeded ${PATRONYME_FACET_MAX_PAGES} pages — the list is truncated`
+  );
+  return patronymeIds;
+}
+
+/**
+ * Resolves the relation filters, or reports that nothing can match them.
+ *
+ * `null` means "no relation filter"; an empty array means "a filter the corpus
+ * satisfies with nothing", and the two must not collapse — PostgREST rejects
+ * `in.()`, and falling through to the unfiltered query would serve all thirty
+ * names under that country's name.
+ *
+ * Two filters intersect rather than the last one winning. `peoples.ts` never
+ * had to answer this, because a people carries one country filter and no
+ * second relation; a name carries both, and "which names do the Bamana carry
+ * in Mali" is the question the axis exists for.
+ */
+async function resolveRelationScope(
+  filters: PatronymeQueryFilters
+): Promise<string[] | null> {
+  const scopes: string[][] = [];
+
+  if (filters.peopleId) {
+    scopes.push(
+      await getPatronymeIdsLinkedTo(
+        "afrik_patronyme_peoples",
+        "people_id",
+        filters.peopleId
+      )
+    );
+  }
+  if (filters.countryId) {
+    scopes.push(
+      await getPatronymeIdsLinkedTo(
+        "afrik_patronyme_countries",
+        "country_id",
+        filters.countryId
+      )
+    );
+  }
+
+  if (scopes.length === 0) return null;
+
+  return scopes.reduce((intersection, scope) => {
+    const held = new Set(scope);
+    return intersection.filter((id) => held.has(id));
+  });
+}
+
 function uniqueStrings(values: string[]): string[] {
   return Array.from(new Set(values));
 }
@@ -43,8 +247,7 @@ function mapPeopleRowToSummary(
 ): PatronymePeopleSummary {
   const content = (row.content as Record<string, unknown>) ?? {};
   const appellations = content.appellations as
-    | Record<string, unknown>
-    | undefined;
+    Record<string, unknown> | undefined;
   const autonym =
     typeof appellations?.selfAppellation === "string"
       ? appellations.selfAppellation
@@ -168,6 +371,124 @@ async function getBearers(
     fullName: row.full_name,
     roleCategory: row.role_category,
   }));
+}
+
+/**
+ * The three columns a row of the list draws, and no fourth.
+ *
+ * The name was read out of `content` until the atlas hub started failing its
+ * corpus reads: the dossier body is 52 KB a page of names never renders, and
+ * `name_main` holds the same string — identical on all thirty fiches, the
+ * column being what `053` filled from `content.nameMain` in the first place.
+ */
+const PATRONYME_LIST_SELECT = "id, name_main, name_system";
+
+// Index-row query for the noms hub (ETNI-1799). Selects only the
+// afrik_patronymes columns a list entry needs — no peoples/countries/bearers
+// joins, unlike getPatronymeById's full aggregate.
+// @req REQ-133
+export async function listPatronymes(
+  query: ListPatronymesQuery
+): Promise<ListPatronymesResult> {
+  const filters = query.filters ?? {};
+  const scopedIds = await resolveRelationScope(filters);
+  if (scopedIds && scopedIds.length === 0) return { data: [], total: 0 };
+
+  const supabase = createServerClient();
+  const from = (query.page - 1) * query.perPage;
+  const to = from + query.perPage - 1;
+
+  // Ordered by the name a reader reads, not by the corpus identifier. `id`
+  // is only accidentally alphabetical: PAT_ABIKAN_PRAISE sorts on its
+  // naming-system suffix, so « Abikan » landed between two unrelated names.
+  const { data, error, count } = await withPatronymeFilters(
+    supabase
+      .from("afrik_patronymes")
+      .select(PATRONYME_LIST_SELECT, { count: "exact" }),
+    filters,
+    scopedIds
+  )
+    .order("name_main")
+    .range(from, to);
+
+  if (error) {
+    throw new Error(`Failed to list patronymes: ${error.message}`);
+  }
+
+  const rows = (data ?? []) as Array<{
+    id: string;
+    name_main: string | null;
+    name_system: PatronymeNameSystem;
+  }>;
+
+  return {
+    data: rows.map((row) => ({
+      id: row.id,
+      nameMain: row.name_main ?? "",
+      nameSystem: row.name_system,
+    })),
+    total: count ?? rows.length,
+  };
+}
+
+/**
+ * Every name of the current selection, with the countries it reaches.
+ *
+ * The whole selection, never the page being read: publishing only the current
+ * page would make the globe panel's answer depend on where the reader had
+ * paged to, which is not a property of the corpus — the same rule
+ * `getAfrikPeopleCountryIndex` states for peoples.
+ *
+ * One query, no N+1: the foreign key on `afrik_patronyme_countries` lets
+ * PostgREST embed the join, so a name and its countries arrive together.
+ */
+// @req REQ-117
+export async function getPatronymeCountryIndex(
+  filters: PatronymeQueryFilters = {}
+): Promise<PatronymeCountryIndexRow[]> {
+  const scopedIds = await resolveRelationScope(filters);
+  if (scopedIds && scopedIds.length === 0) return [];
+
+  const supabase = createServerClient();
+  const rows: PatronymeCountryIndexRow[] = [];
+
+  for (let page = 0; page < PATRONYME_FACET_MAX_PAGES; page++) {
+    const start = page * PATRONYME_FACET_WALK_SIZE;
+    const { data, error } = await withPatronymeFilters(
+      supabase
+        .from("afrik_patronymes")
+        .select("id, name_main, afrik_patronyme_countries(country_id)"),
+      filters,
+      scopedIds
+    ).range(start, start + PATRONYME_FACET_WALK_SIZE - 1);
+
+    if (error) {
+      logger.error("Error fetching the patronyme country index", error);
+      throw error;
+    }
+
+    const page_ = (data ?? []) as Array<{
+      id: string;
+      name_main: string | null;
+      afrik_patronyme_countries: Array<{ country_id: string }> | null;
+    }>;
+
+    for (const row of page_) {
+      rows.push({
+        id: row.id,
+        nameMain: row.name_main ?? "",
+        countryIds: (row.afrik_patronyme_countries ?? []).map(
+          (link) => link.country_id
+        ),
+      });
+    }
+    if (page_.length < PATRONYME_FACET_WALK_SIZE) return rows;
+  }
+
+  logger.error(
+    `The patronyme country index exceeded ${PATRONYME_FACET_MAX_PAGES} pages — the list is truncated`
+  );
+  return rows;
 }
 
 // @req REQ-133

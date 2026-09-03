@@ -121,21 +121,35 @@ describe("PeopleNamesSection", () => {
     expect(ol).toHaveTextContent("Denka");
   });
 
-  // @req REQ-054 (UX-DR31)
-  it("omits itself entirely when data is null", () => {
-    const { container } = render(<PeopleNamesSection data={null} />);
-    expect(container).toBeEmptyDOMElement();
+  // `appellations` is the first chapter of `public/modele-peuple.json`, so
+  // charter §4 governs it: a chapter of the model is printed and marked, not
+  // hidden. UX-DR31's "no empty shell" rule still holds for blocks the model
+  // does not declare — which is what `not-modelled` is for — but it cannot
+  // cover this one. Hiding it is also what left the imposition context of
+  // 3 679 name records with nowhere to land.
+  // @req REQ-054
+  it("keeps the chapter and marks it when the corpus names nothing", () => {
+    render(<PeopleNamesSection data={null} />);
+
+    expect(
+      screen.getByRole("heading", { name: "Noms & appellations" })
+    ).toBeInTheDocument();
+    expect(screen.getByText("Donnée manquante")).toBeInTheDocument();
   });
 
-  // @req REQ-054 (UX-DR31)
-  it("omits itself entirely when there are no endonyms, exonyms or spelling history", () => {
+  // @req REQ-054
+  it("keeps the chapter when the dossier exists but holds no name", () => {
     const empty: PeopleNamesData = {
       autonym: null,
       endonyms: [],
       exonyms: [],
       spellingHistory: [],
     };
-    const { container } = render(<PeopleNamesSection data={empty} />);
-    expect(container).toBeEmptyDOMElement();
+    render(<PeopleNamesSection data={empty} />);
+
+    expect(
+      screen.getByRole("heading", { name: "Noms & appellations" })
+    ).toBeInTheDocument();
+    expect(screen.getByText("Donnée manquante")).toBeInTheDocument();
   });
 });

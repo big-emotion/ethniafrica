@@ -1,0 +1,100 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon docs/runbooks/anthroponym-fiche-research.md. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
+  },
+  "id": "PAT_GOPAUL",
+  "nameMain": "Gopaul",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Gopaul",
+      "attestations": [
+        {
+          "countryId": "MUS",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "mauritius-assembly-gopaul-directory"
+          ]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_INDO_MAURICIENS",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MUS",
+      "status": "attested",
+      "sourceRefs": [
+        "afrik-candidate-queue",
+        "mauritius-assembly-gopaul-directory"
+      ]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "mauritius-lrc-family-name-2025",
+      "title": "Key Publications of the Law Reform Commission on Women’s Rights — Issue Paper on ‘Nom de famille’",
+      "url": "https://lrc.govmu.org/lrc/wp-content/uploads/2025/09/LRC-Newsletter-International-Womens-Day.pdf",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Law Reform Commission of Mauritius, mars 2025, synthèse de l'Issue Paper LRC_R&P 61. Le texte décrit la transmission automatique du nom du père comme la règle à réformer et propose d'autoriser l'ajout du nom maternel. Utilisé pour la règle légale générale, non pour l'origine de chaque nom."
+    },
+    {
+      "sourceKey": "mauritius-assembly-gopaul-directory",
+      "title": "Mauritius National Assembly — Office of the Clerk directory",
+      "url": "https://mauritiusassembly.govmu.org/mauritiusassembly/index.php/office-of-the-clerk/",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "L'annuaire officiel nomme Dayanand Gopaul au Procurement and Supply Office. Utilisé uniquement comme attestation contemporaine de la graphie à Maurice."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "les résultats exacts « Gopaul », les Indian Immigration Archives du Mahatma Gandhi Institute, les publications de l'Aapravasi Ghat et les catalogues bibliographiques sur l'engagisme à Maurice ont été consultés. Ils attestent le nom ou décrivent le fonds disponible, mais n'ont livré ni étymologie publiée ni chronique attribuable à une lignée précise ; l'origine reste donc vide."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "les résultats exacts « Gopaul », les Indian Immigration Archives du Mahatma Gandhi Institute, les publications de l'Aapravasi Ghat et les catalogues bibliographiques sur l'engagisme à Maurice, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Gopaul à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "les résultats exacts « Gopaul », les Indian Immigration Archives du Mahatma Gandhi Institute, les publications de l'Aapravasi Ghat et les catalogues bibliographiques sur l'engagisme à Maurice, complétés par « caste », « statut héréditaire », « métier » et « social function », n'ont établi aucune fonction sociale héréditaire propre aux porteurs de Gopaul. Une étymologie professionnelle éventuelle n'est pas assimilée à un statut contemporain."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "les résultats exacts « Gopaul », les Indian Immigration Archives du Mahatma Gandhi Institute, les publications de l'Aapravasi Ghat et les catalogues bibliographiques sur l'engagisme à Maurice n'ont pas fourni, dans cette passe, un porteur à la fois décédé, clairement rattaché au patronyme étudié et documenté par une source distincte de la simple homonymie. Les personnes vivantes rencontrées dans les sources officielles ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "les résultats exacts « Gopaul », les Indian Immigration Archives du Mahatma Gandhi Institute, les publications de l'Aapravasi Ghat et les catalogues bibliographiques sur l'engagisme à Maurice n'ont pas permis d'isoler deux lignées homonymes dotées d'origines distinctes et documentées. Lorsque le dictionnaire propose plusieurs formations possibles, elles restent des hypothèses linguistiques et non des lignées séparées."
+    }
+  ]
+}

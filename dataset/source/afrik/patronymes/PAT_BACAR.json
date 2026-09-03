@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_BACAR",
+  "nameMain": "Bacar",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Bacar",
+      "attestations": [
+        {
+          "countryId": "COM",
+          "sourceRefs": ["forebears-bacar"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_COMORIEN",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COM",
+      "status": "attested",
+      "sourceRefs": ["forebears-bacar"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
+    },
+    {
+      "sourceKey": "forebears-bacar",
+      "title": "Bacar Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/bacar",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page dédiée consultée intégralement. Elle atteste Bacar aux Comores, sans fournir d'étymologie éditorialement attribuée. La distribution géographique ne permet pas d'établir à elle seule l'appartenance au peuple comorien."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "La recherche web combinant « Bacar », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », ainsi que la lecture de « Bacar Surname Origin, Meaning & Last Name History », n'ont livré aucune étymologie ni chronique attribuable au nom lui-même. Les rapprochements plausibles non sourcés ont été écartés."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "La recherche web combinant « Bacar », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Bacar Surname Origin, Meaning & Last Name History » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Bacar à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La recherche web combinant « Bacar », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Bacar Surname Origin, Meaning & Last Name History » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Bacar."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La recherche web combinant « Bacar », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », qui comprenait le terme « obituary », ainsi que « Bacar Surname Origin, Meaning & Last Name History » n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La recherche web combinant « Bacar », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », qui comprenait le terme « homonyme », et la lecture de « Bacar Surname Origin, Meaning & Last Name History » n'ont pas établi de lignée homonyme d'origine distincte."
+    }
+  ]
+}

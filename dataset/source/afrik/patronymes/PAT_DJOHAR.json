@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_DJOHAR",
+  "nameMain": "Djohar",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Djohar",
+      "attestations": [
+        {
+          "countryId": "COM",
+          "sourceRefs": ["le-monde-djohar-2006"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_COMORIEN",
+      "status": "attested",
+      "sourceRefs": ["le-monde-djohar-2006"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COM",
+      "status": "attested",
+      "sourceRefs": ["le-monde-djohar-2006"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Saïd Mohamed Djohar, ancien président des Comores (1918–2006)",
+      "sourceRefs": ["le-monde-djohar-2006"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "le-monde-djohar-2006",
+      "title": "Saïd Mohamed Djohar, ancien président des Comores",
+      "url": "https://www.lemonde.fr/disparitions/article/2006/02/28/said-mohamed-djohar-ancien-president-des-comores_746053_3382.html",
+      "tier": "referenced",
+      "source_kind": "unknown",
+      "notes": "Notice nécrologique du Monde, 28 février 2006, consultée intégralement. Elle atteste Djohar dans le nom de l'ancien président comorien Saïd Mohamed Djohar, mort le 22 février 2006 à Mitsamiouli. Elle ne traite ni de l'étymologie ni de la transmission de ce composant du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Djohar », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Saïd Mohamed Djohar, ancien président des Comores » n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine de Djohar. Les attestations géographiques ou individuelles trouvées ne sont pas transformées en étymologie."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Djohar », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Saïd Mohamed Djohar, ancien président des Comores » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Djohar à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Djohar », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Saïd Mohamed Djohar, ancien président des Comores » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Djohar."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Djohar », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « Saïd Mohamed Djohar, ancien président des Comores », n'ont pas établi de lignée homonyme d'origine distincte."
+    }
+  ]
+}

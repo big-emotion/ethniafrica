@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KASEREKA",
+  "nameMain": "Kasereka",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Kasereka",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["mrac-kinande-kasereka"]
+        }
+      ]
+    },
+    {
+      "spelling": "Kaseréka",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["mrac-kinande-kasereka"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le Dictionnaire kinande-français du Musée royal de l'Afrique centrale donne Kaseréka comme nom chronologique nande attribué au troisième enfant mâle et le rapproche de Kábúyahia, Máte et Kámatê. Il documente ainsi une règle de rang de naissance, sans faire de Kasereka un patronyme héréditaire.",
+        "claimStatus": "established",
+        "sourceRefs": ["mrac-kinande-kasereka"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_NANDE",
+      "status": "attested",
+      "sourceRefs": ["mrac-kinande-kasereka"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COD",
+      "status": "attested",
+      "sourceRefs": ["mrac-kinande-kasereka"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "mrac-kinande-kasereka",
+      "title": "Dictionnaire kinande-français avec index français-kinande",
+      "url": "https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/documents-social-sciences-humanities/dictionnaire-kinande-francais.pdf",
+      "tier": "official",
+      "source_kind": "linguistic_reference",
+      "notes": "Dictionnaire de Kambale Kavutirwaki et Ngessimo M. Mutaka publié par le Musée royal de l'Afrique centrale en 2012, consulté intégralement. L'entrée Kaseréka le définit explicitement comme nom chronologique nande du troisième enfant mâle."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kasereka », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le Dictionnaire kinande-français de Kambale Kavutirwaki et Ngessimo M. Mutaka, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kasereka », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le Dictionnaire kinande-français de Kambale Kavutirwaki et Ngessimo M. Mutaka, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kasereka », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le Dictionnaire kinande-français de Kambale Kavutirwaki et Ngessimo M. Mutaka, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kasereka », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le Dictionnaire kinande-français de Kambale Kavutirwaki et Ngessimo M. Mutaka, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    }
+  ]
+}

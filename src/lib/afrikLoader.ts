@@ -12,8 +12,9 @@ import type {
   PeopleDetail,
   CountrySummary,
   CountryDetail,
+  SearchLead,
   SearchResult,
-  SearchFilters,
+  SearchEntityType,
   PaginationMeta,
   PaginatedResponse,
   GlobalStats,
@@ -24,7 +25,12 @@ import type {
 import { CACHE_KEYS } from "@/lib/cache/clientCache";
 import {
   buildSearchParams,
+  EMPTY_SEARCH_LENS_COUNTS,
+  mapSearchCounts,
   mapSearchEnvelope,
+  mapSearchLeads,
+  type SearchLensCounts,
+  type SearchQueryOptions,
 } from "@/lib/search/searchEnvelope";
 import { logger } from "@/lib/api/logger";
 import { getFrenchCountryCommonName } from "@/lib/countryNames";
@@ -144,20 +150,33 @@ export async function getLanguageFamilies(
 // SEARCH
 // ==========================================
 
+export interface SearchOptions extends SearchQueryOptions {
+  /**
+   * Narrows the mixed envelope to one kind. It stays client-side because the
+   * route ranks every kind and takes no entity filter — unlike `familyId` and
+   * `countryId`, which the route resolves as relation scopes and which are
+   * therefore no longer re-applied here.
+   */
+  type?: SearchEntityType;
+}
+
 // @req REQ-108
 /**
- * Recherche multi-entités avec filtres
+ * The one browser path to `/api/v2/search` (ETNI-1415, AC2).
+ *
+ * Every module that searches the corpus calls this: the quick-search modal,
+ * the home hero, the /recherche page and the compare picker. They used to
+ * fetch the endpoint themselves and each re-derived the query shape, which is
+ * how the same input could rank differently on three surfaces.
  */
 export async function search(
   query: string,
-  filters: Omit<SearchFilters, "query"> = {}
+  options: SearchOptions = {}
 ): Promise<SearchResult[]> {
   try {
-    // The route matches on `q` alone and ignores entity/relation filters, so
-    // the narrowing the search modal's tabs ask for happens on the results.
-    const params = buildSearchParams(query);
-
-    const response = await fetch(`${API_BASE}/search?${params}`);
+    const response = await fetch(
+      `${API_BASE}/search?${buildSearchParams(query, options)}`
+    );
 
     if (!response.ok) {
       const error = await handleFetchError(response, "search");
@@ -165,26 +184,68 @@ export async function search(
       return [];
     }
 
-    let results = mapSearchEnvelope(await response.json());
+    const results = mapSearchEnvelope(await response.json());
 
-    if (filters.type) {
-      results = results.filter((result) => result.type === filters.type);
-    }
-    if (filters.languageFamilyId) {
-      results = results.filter(
-        (result) => result.languageFamilyId === filters.languageFamilyId
-      );
-    }
-    if (filters.countryId) {
-      results = results.filter((result) =>
-        result.countryIds?.includes(filters.countryId)
-      );
-    }
-
-    return results;
+    return options.type
+      ? results.filter((result) => result.type === options.type)
+      : results;
   } catch (error) {
     logger.error("[search] Exception", error);
     return [];
+  }
+}
+
+export interface SearchWithLeads {
+  results: SearchResult[];
+  /** Near-miss leads (REQ-125) — non-empty only when the API's own total is 0. */
+  leads: SearchLead[];
+  /** Per-type match counts (REQ-124) for the named-lens chips. */
+  counts: SearchLensCounts;
+}
+
+// @req REQ-125
+/**
+ * Same single browser path as `search` (ETNI-1415, AC2), additionally carrying
+ * the near-miss leads a zero-result search returns. A distinct function rather
+ * than an added parameter, so every existing `search()` caller keeps its
+ * `SearchResult[]` return type untouched; it takes the same `SearchOptions`, so
+ * a surface that needs both leads and the server-side scopes (the /recherche
+ * page) reaches the corpus through here instead of fetching the endpoint itself.
+ */
+export async function searchWithLeads(
+  query: string,
+  options: SearchOptions = {}
+): Promise<SearchWithLeads> {
+  try {
+    const response = await fetch(
+      `${API_BASE}/search?${buildSearchParams(query, options)}`
+    );
+
+    if (!response.ok) {
+      const error = await handleFetchError(response, "search");
+      logger.error("[searchWithLeads] Error", error);
+      return {
+        results: [],
+        leads: [],
+        counts: { ...EMPTY_SEARCH_LENS_COUNTS },
+      };
+    }
+
+    const envelope = await response.json();
+    const results = mapSearchEnvelope(envelope);
+    const leads = mapSearchLeads(envelope);
+    const counts = mapSearchCounts(envelope);
+
+    return {
+      results: options.type
+        ? results.filter((result) => result.type === options.type)
+        : results,
+      leads,
+      counts,
+    };
+  } catch (error) {
+    logger.error("[searchWithLeads] Exception", error);
+    return { results: [], leads: [], counts: { ...EMPTY_SEARCH_LENS_COUNTS } };
   }
 }
 
@@ -228,7 +289,6 @@ function transformMeta(
     perPage: (apiMeta.perPage as number) || perPage,
     totalPages: Math.ceil(total / perPage) || 0,
     unclassifiedPeoplesCount: apiMeta.unclassifiedPeoplesCount as
-      | number
-      | undefined,
+      number | undefined,
   };
 }

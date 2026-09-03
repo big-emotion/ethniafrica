@@ -1,0 +1,102 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. La forme oromo est attestée par une étude morphosémantique ; son sens n'est disponible que dans une ressource communautaire et reste qualifié."
+  },
+  "id": "PAT_GUDINA",
+  "nameMain": "Gudina",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Gudina",
+      "attestations": [
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue", "gudina-behindthename"]
+        }
+      ]
+    },
+    {
+      "spelling": "Gudinaa",
+      "attestations": [
+        { "countryId": "ETH", "sourceRefs": ["gudina-gerba-2014"] }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Gerba cite gudinaa parmi les noms personnels masculins oromo en -a/-aa ; une ressource onomastique communautaire glossant la forme Gudina propose « croissance, progrès ». Le sens reste une proposition faute de glose savante explicite dans l'article.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["gudina-gerba-2014", "gudina-behindthename"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_OROMO",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "gudina-gerba-2014"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ETH",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "gudina-gerba-2014",
+      "title": "Morphosemantic Analysis of Oromo Personal Names",
+      "url": "https://www.researchgate.net/publication/372676808_Morphosemantic_Analysis_of_Oromo_Personal_Names",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Tesfaye Gudeta Gerba, International Journal of Innovative Research & Development 3(13), 2014, p. 252-259. Le texte intégral a été vérifié ; gudinaa figure dans les exemples de noms masculins portant les finales -a/-aa, sans glose propre à ce nom."
+    },
+    {
+      "sourceKey": "gudina-behindthename",
+      "title": "Meaning, origin and history of the name Gudina",
+      "url": "https://www.behindthename.com/name/gudina",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Entrée communautaire vérifiée directement. Elle classe Gudina comme nom masculin oromo et donne la glose « growth, advancement », sans référence bibliographique affichée ; la glose reste donc non vérifiée."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "L'article de Gerba, ses exemples et les recherches « Gudina Oromo kinship/alliance » n'ont livré aucune alliance à plaisanterie avec un autre PAT_* existant."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "L'analyse morphosémantique et l'entrée communautaire décrivent un nom personnel masculin, sans caste ni fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les notices biographiques Gudina/Gudinaa ont été recherchées ; les personnes identifiées étaient vivantes ou leur identité oromo n'était pas établie par une source individuelle, donc aucun porteur n'est retenu."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les formes Gudina et Gudinaa ont été recherchées comme nom, lexème et toponyme ; aucun homonyme distinct satisfaisant les critères du corpus n'a été documenté."
+    }
+  ]
+}

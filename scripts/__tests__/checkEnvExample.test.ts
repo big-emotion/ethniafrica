@@ -61,7 +61,7 @@ describe("auditEnvExample", () => {
   // @req REQ-032
   it("does not ask for the platform's own variables to be documented", () => {
     const result = auditEnvExample({
-      referenced: new Set(["NODE_ENV", "CI", "VERCEL_URL"]),
+      referenced: new Set(["NODE_ENV", "CI", "VERCEL", "VERCEL_URL"]),
       documented: new Set(),
     });
 

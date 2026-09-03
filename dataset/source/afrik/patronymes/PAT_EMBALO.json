@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
+  },
+  "id": "PAT_EMBALO",
+  "nameMain": "Embaló",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Embaló",
+      "attestations": [
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["sadjo-2019-kaabu"]
+        }
+      ]
+    },
+    {
+      "spelling": "Embalo",
+      "attestations": [
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["sadjo-2019-kaabu"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Dans l’organisation fula du Gabú décrite par Sadjo, Embaló est un nom de famille noble associé à des lignages exerçant la fonction de régulo ; la même étude décrit la prééminence de la ligne paternelle.",
+        "claimStatus": "established",
+        "sourceRefs": ["sadjo-2019-kaabu"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FULA",
+      "status": "attested",
+      "sourceRefs": ["sadjo-2019-kaabu"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GNB",
+      "status": "attested",
+      "sourceRefs": ["sadjo-2019-kaabu"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": {
+    "value": "En Guinée-Bissau, Embaló est cité parmi les noms de familles nobles et de lignages exerçant la fonction de régulo ; cette association est située dans l’organisation politique fula du Gabú.",
+    "sourceRefs": ["sadjo-2019-kaabu"]
+  },
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "sadjo-2019-kaabu",
+      "title": "Fulas e Mandingas na luta pelo poder e conquista do Império de Kaabu: causas e consequências (século XVI-XIX)",
+      "url": "https://repositorio.unilab.edu.br/jspui/bitstream/123456789/3467/1/ibu%20djalo_tcc.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ibu Sadjo, mémoire de bacharelado, UNILAB, 2019. Aux p. 19-20, le mémoire cite Djaló (2013) sur la filiation paternelle et sur les familles Embaló et Baldé, décrites comme nobles et liées à la fonction de régulo au Gabú."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "Le mémoire de Sadjo a été recherché pour une alliance à plaisanterie nommant Embaló ; il traite des rapports fulas-mandingas sans fournir de paire de patronymes."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Sadjo cite Embaló au niveau des familles nobles et des lignages de régulo, sans identifier un porteur décédé dont l’appartenance lignagère serait vérifiable."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les graphies Embaló et Embalo ont été recherchées dans le mémoire de Sadjo ; aucune origine homonyme distincte n’y est décrite."
+    }
+  ]
+}

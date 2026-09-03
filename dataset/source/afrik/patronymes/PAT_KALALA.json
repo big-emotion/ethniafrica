@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KALALA",
+  "nameMain": "Kalala",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Kalala",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["encyclopaedia-africana-kalala"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "La notice de l'Encyclopaedia Africana rapporte que, dans les traditions luba, Ilunga Mbidi reçut le titre Kalala, « général des armées royales », et fut ensuite connu comme Kalala Ilunga. Elle établit l'usage historique et titulaire de Kalala dans cette tradition, sans démontrer que toutes les lignées contemporaines Kalala en dérivent.",
+        "claimStatus": "established",
+        "sourceRefs": ["encyclopaedia-africana-kalala"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_LUBA",
+      "status": "attested",
+      "sourceRefs": ["encyclopaedia-africana-kalala"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COD",
+      "status": "attested",
+      "sourceRefs": ["encyclopaedia-africana-kalala"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "encyclopaedia-africana-kalala",
+      "title": "Ilunga, Kalala",
+      "url": "https://encyclopaediaafricana.com/ilunga-kalala/",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Notice signée par l'historien Isidore Ndaywel è Nziem et republiée par l'Encyclopaedia Africana, projet phare de l'Union africaine, consultée intégralement. Elle présente Kalala Ilunga dans les traditions luba et explique Kalala comme titre militaire dans ce récit. Elle ne relie pas explicitement le patronyme moderne à une seule lignée royale."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kalala », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la notice « Ilunga, Kalala » de l'Encyclopaedia Africana n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kalala », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la notice « Ilunga, Kalala » de l'Encyclopaedia Africana n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kalala », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la notice « Ilunga, Kalala » de l'Encyclopaedia Africana n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kalala », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la notice « Ilunga, Kalala » de l'Encyclopaedia Africana n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Kalala », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la notice « Ilunga, Kalala » de l'Encyclopaedia Africana n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

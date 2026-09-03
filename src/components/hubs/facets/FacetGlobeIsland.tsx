@@ -290,5 +290,3 @@ export function FacetGlobeIsland({
     </>
   );
 }
-
-export default FacetGlobeIsland;

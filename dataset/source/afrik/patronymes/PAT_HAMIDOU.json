@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
+  },
+  "id": "PAT_HAMIDOU",
+  "nameMain": "Hamidou",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Hamidou",
+      "attestations": [
+        {
+          "countryId": "NER",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["gabana-bello-2025-cameroon-anthroponyms"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Pour le Nord-Cameroun, Gabana et Bello décrivent Hamidou comme une adaptation locale du nom arabo-islamique Hamid par ajout du suffixe « -ou ».",
+        "claimStatus": "established",
+        "sourceRefs": ["gabana-bello-2025-cameroon-anthroponyms"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FULA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NER",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "CMR",
+      "status": "attested",
+      "sourceRefs": ["gabana-bello-2025-cameroon-anthroponyms"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "gabana-bello-2025-cameroon-anthroponyms",
+      "title": "Anthroponymes et dynamique identitaire dans les sociétés camerounaises : des noms locaux aux appellations importées (XVIIIe–XXe siècles)",
+      "url": "https://www.researchgate.net/publication/393426204_Anthroponymes_et_dynamique_identitaire_dans_les_societes_camerounaises_Des_noms_locaux_aux_appellations_importees_XVllle-XXe_siecles",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jean Francis Gabana et Assana Bello, contribution publiée en 2025 dans Le patrimoine culturel des populations des sites défensifs du pourtour du lac Tchad à l’épreuve de la modernité, p. 301-321. Les p. 312-314 décrivent l’adoption de noms de califes comme patronymes et l’adaptation phonologique de noms arabo-islamiques au Nord-Cameroun. Le passage donne explicitement Hamid → Hamidou comme exemple d’ajout du suffixe local « -ou »."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "Le passage Hamid/Hamidou de Gabana et Bello a été recherché pour une alliance à plaisanterie ou une paire patronymique ; il n’en documente aucune."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Gabana et Bello décrivent une adaptation phonologique et religieuse du nom, sans caste, métier héréditaire ni fonction sociale propre à Hamidou."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "L’étude camerounaise cite Hamidou comme exemple linguistique et non comme lignée biographique ; aucun porteur décédé vérifiable n’y est fourni."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La recherche de Hamid et Hamidou chez Gabana et Bello n’a pas établi plusieurs origines homonymes distinctes."
+    }
+  ]
+}

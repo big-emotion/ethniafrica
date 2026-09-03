@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_BORICO",
+  "nameMain": "Boricó",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Boricó",
+      "attestations": [
+        {
+          "countryId": "GNQ",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    },
+    {
+      "spelling": "Borico",
+      "attestations": [
+        {
+          "countryId": "GNQ",
+          "sourceRefs": ["forebears-borico"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BUBI",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GNQ",
+      "status": "attested",
+      "sourceRefs": ["forebears-borico"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
+    },
+    {
+      "sourceKey": "forebears-borico",
+      "title": "Borico Orígen de Apellido, Significado e Historia de Apellido",
+      "url": "https://forebears.io/es/surnames/borico",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page dédiée en espagnol consultée intégralement. Elle classe Borico comme patronyme, recense 25 occurrences en Guinée équatoriale dans ses données 2014 et calcule séparément la graphie Boricó. Elle ne fournit aucune signification et avertit que la distribution géographique ne permet pas d'inférer une appartenance ethnique."
+    },
+    {
+      "sourceKey": "idescat-borico-2025",
+      "title": "Surnames of the population — Borico",
+      "url": "https://www.idescat.cat/cognoms/?id=123089&lang=en&res=d13",
+      "tier": "official",
+      "source_kind": "official_statistics",
+      "notes": "Page statistique officielle de l'Institut d'Estadística de Catalunya consultée intégralement. Elle atteste Borico comme nom de famille dans les données 2025 en Catalogne ; elle n'établit ni l'origine bubi ni un lien généalogique avec les occurrences équato-guinéennes."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Boricó », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Borico Orígen de Apellido, Significado e Historia de Apellido » et « Surnames of the population — Borico » n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine de Boricó. Les attestations géographiques ou individuelles trouvées ne sont pas transformées en étymologie."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Boricó », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Borico Orígen de Apellido, Significado e Historia de Apellido » et « Surnames of the population — Borico » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Boricó à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Boricó », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Borico Orígen de Apellido, Significado e Historia de Apellido » et « Surnames of the population — Borico » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Boricó."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Boricó », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « Borico Orígen de Apellido, Significado e Historia de Apellido » et « Surnames of the population — Borico », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Boricó », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « Borico Orígen de Apellido, Significado e Historia de Apellido » et « Surnames of the population — Borico », n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Boricó », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Borico Orígen de Apellido, Significado e Historia de Apellido » et « Surnames of the population — Borico » n'ont établi aucune règle propre à Boricó permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

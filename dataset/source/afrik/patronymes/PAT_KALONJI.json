@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KALONJI",
+  "nameMain": "Kalonji",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Kalonji",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["encyclopaedia-africana-lumumba-kalonji"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "L'Encyclopaedia Africana atteste Albert Kalonji comme porte-parole luba du Kasaï et rappelle qu'en 1959 une aile du Mouvement national congolais prit le nom MNC/Kalonji. Ce fait documente l'usage historique de Kalonji dans un contexte luba-kasaï, sans établir l'étymologie du nom ni une origine commune à toutes ses lignées.",
+        "claimStatus": "established",
+        "sourceRefs": ["encyclopaedia-africana-lumumba-kalonji"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_LUBA",
+      "status": "attested",
+      "sourceRefs": ["encyclopaedia-africana-lumumba-kalonji"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COD",
+      "status": "attested",
+      "sourceRefs": ["encyclopaedia-africana-lumumba-kalonji"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [
+    {
+      "label": "kalonji, nom non scientifique de Nigella sativa",
+      "entityType": "other",
+      "entityId": null,
+      "distinction": "Le service Medicinal Plant Names de Kew enregistre kalonji comme nom non scientifique de la plante Nigella sativa. Il s'agit d'un nom de plante distinct du nom de personne luba-kasaï ; aucune relation étymologique entre les deux n'est affirmée.",
+      "sourceRefs": ["kew-mpns-kalonji"]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "encyclopaedia-africana-lumumba-kalonji",
+      "title": "Lumumba, Patrice Emery",
+      "url": "https://encyclopaediaafricana.com/lumumba-p-e/",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Notice de l'Encyclopaedia Africana consultée intégralement. Elle nomme Albert Kalonji, le qualifie de porte-parole luba du Kasaï et explique la dénomination MNC/Kalonji. Elle ne donne aucune étymologie du nom."
+    },
+    {
+      "sourceKey": "kew-mpns-kalonji",
+      "title": "Non-scientific name details for kalonji",
+      "url": "https://mpns.science.kew.org/mpns-portal/drugDetail?drugName=kalonji&filter=&fuzzy=false&nameType=all&query=",
+      "tier": "official",
+      "source_kind": "linguistic_reference",
+      "notes": "Entrée du service Medicinal Plant Names de Kew Science consultée intégralement. Elle relie le nom non scientifique kalonji au nom botanique accepté Nigella sativa et ne traite pas du patronyme africain."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kalonji », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la notice « Lumumba, Patrice Emery » de l'Encyclopaedia Africana et l'entrée MPNS de Kew, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kalonji », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la notice « Lumumba, Patrice Emery » de l'Encyclopaedia Africana et l'entrée MPNS de Kew, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kalonji », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la notice « Lumumba, Patrice Emery » de l'Encyclopaedia Africana et l'entrée MPNS de Kew, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Kalonji », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la notice « Lumumba, Patrice Emery » de l'Encyclopaedia Africana et l'entrée MPNS de Kew, n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

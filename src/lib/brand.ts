@@ -56,6 +56,17 @@ export const PRODUCT_TAGLINE = "Atlas des Peuples d'Afrique";
 export const CANONICAL_DOMAIN =
   process.env.NEXT_PUBLIC_CANONICAL_DOMAIN || "ethniafrica.com";
 
+/**
+ * Where a reader writes to the publisher.
+ *
+ * Composed from {@link CANONICAL_DOMAIN} rather than written out, for the same
+ * reason §1 of the brand charter gives about the name: an address printed in a
+ * page and a different one used by the mailer is a contact channel that reads
+ * as open and is not. Rebranding the domain moves the mailbox with it.
+ */
+// @req REQ-019
+export const CONTACT_EMAIL = `contact@${CANONICAL_DOMAIN}`;
+
 /** Attribution string shown in footers and credits */
 // @req REQ-019
 export const ATTRIBUTION_STRING =
@@ -75,11 +86,18 @@ export const OG_TITLE =
   process.env.NEXT_PUBLIC_OG_TITLE ||
   "EthniAfrica — Atlas des Peuples d'Afrique";
 
-/** Open Graph description for social media previews */
+/**
+ * Open Graph description for social media previews.
+ *
+ * It names all six corpus classes, and `siteDescription.test.ts` holds it to
+ * the registry so a seventh cannot ship without this sentence saying so. The
+ * three sentences that describe the product to someone who has not arrived
+ * yet named four for as long as the atlas kept growing.
+ */
 // @req REQ-019
 export const OG_DESCRIPTION =
   process.env.NEXT_PUBLIC_OG_DESCRIPTION ||
-  "Encyclopédie des peuples, langues et familles linguistiques d'Afrique";
+  "Encyclopédie des peuples, langues, familles linguistiques, pays, appellations et noms d'Afrique";
 
 /** Default site locale for i18n */
 // @req REQ-019

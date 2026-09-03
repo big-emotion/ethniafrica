@@ -47,7 +47,7 @@ eight are retired** until the loop below is proven.
 
 | Surface                                            | Why it survives                                                                                                                                                   |
 | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **« Le quiz des parcours »** (`quiz`)              | The hub's one full loop: a bank of items, a scope, a ladder and a score card. It reads its own table and is the surface every rule below was written for.         |
+| **« Le quiz »** (`quiz`)                           | The hub's one full loop: a bank of items, a scope, a ladder and a score card. It reads its own table and is the surface every rule below was written for.         |
 | **« La taille qu'on vous a cachée »** (`mercator`) | One idea, cleanly: Mercator inflates the north and shrinks Africa. Cheap to finish, it carries a real claim, and the home already owns the figure that proves it. |
 
 **The second cut, 2026-08-29.** Three became two. « Eux, ou les autres ? »
@@ -93,6 +93,24 @@ question that retired the last two: **what does this teach that the quiz does
 not already ask?** `familles` remains the strongest candidate, because a
 language family has a naturally plausible distractor pool (the other families)
 and already supplies the context every other game needs.
+
+**A template retired, 2026-09-02.** The cut above removed whole games; this one
+removes a round from the surviving quiz. **T5** asked « Quel code ISO 639-3
+désigne la langue X ? ». A standards code is a registry identifier, not a name:
+there is nothing in it to reason from, so the round could only be recalled — the
+kill test — and the stem carried a term the fiche never glosses, which §8
+forbids outright. On `PPL_BANTU` it was also simply wrong, interpolating a
+family gloss behind « la langue » and answering `swh`, which is Swahili.
+
+Two things are recorded rather than left to be rediscovered. **Retiring a
+template does not retire its questions**: the serving side resolves a theme from
+`field_path` and never from `template_id`, so the 621 rows had to be revoked by
+migration, before the code reached each environment — see
+`docs/runbooks/quiz-bank-regeneration.md`. And **eight scope × theme pairs left
+the picker with it** — Eswatini, Comores, Somalie, Algérie, Égypte, and the Tuu,
+Kx'a and Nilo-saharienne families, all on « Langues ». They are not restored:
+they were playable only on the strength of a round that failed the kill test,
+and the floor of eight exists to refuse exactly that.
 
 ---
 
@@ -213,12 +231,36 @@ A session is drawn from a **scoped pool**, chosen before play:
 Two axes over 54 countries and 24 families would turn a scope-friendly game
 into hundreds of distinct sessions without a single new mechanic — moot for
 the hub's one surviving game, `mercator`, which plays over the whole continent
-and has nothing to narrow to (§1). `QuizSegmentPicker` already exists for the
-quiz surface and is the component to reuse rather than rebuild, should a
-scope-friendly game return.
+and has nothing to narrow to (§1).
 
 Scoping also _improves_ the items it feeds: inside a country run, every
 distractor is automatically a plausible one.
+
+### Amended, 2026-09-01 — the quiz crosses two axes on purpose
+
+Two sentences above are now history and are kept rather than deleted, because
+what replaced them is the argument.
+
+**`QuizSegmentPicker` no longer exists.** The component to reuse is
+`QuizScopePicker`, and its shape changed with it: the three `<select>`s are
+gone and the surface is a board of cards — the two whole-corpus runs, the nine
+themes, the 54 countries, the 23 families — each one a link to its own track.
+
+**And the quiz does cross two axes, deliberately.** A country card deploys the
+themes that country can fill, so « les croyances des peuples du Ghana » is one
+tap away. What makes that affordable is not a new mechanic but the shape of the
+answer: the crossing is 486 addressable pairs the picker already holds, and a
+pair the corpus cannot fill is **not offered** rather than offered and refused.
+No greying, no count — the same discipline §6 states for a round that cannot be
+filled.
+
+**And the threshold's worked example has expired.** « Khoïsan — one people,
+four questions », the case `isPlayableScope` was written against, holds eleven
+today. No family, country or theme is unplayable on its own any more: all 54,
+all 23 and all 9 fill a session. The dead ends live only in the crossings —
+123 of the 486 — which is why the picker stopped printing a count beside every
+option. It warned where nothing was at risk and said nothing where the risk was
+real.
 
 ---
 

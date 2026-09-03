@@ -15,14 +15,14 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": ["Kecherda"],
     "vitalityStatus": null,
     "sources": [
       {
-        "title": "Glottolog 5.3",
+        "title": "Glottolog 5.3 — Teda (teda1241)",
         "url": "https://glottolog.org/resource/languoid/id/teda1241",
         "tier": "official",
-        "notes": "Glottolog name: Tedaga; Teda is an attested name and the classification includes Saharan."
+        "notes": "Glottolog name: Tedaga; Teda is an attested name and the classification includes Saharan. Les dialectes listés sont les sous-languoids que Glottolog rattache à teda1241, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }

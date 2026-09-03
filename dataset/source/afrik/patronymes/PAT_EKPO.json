@@ -1,0 +1,98 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Le dictionnaire atteste Ekpo au Nigeria et déclare explicitement son étymologie inexpliquée."
+  },
+  "id": "PAT_EKPO",
+  "nameMain": "Ekpo",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Ekpo",
+      "attestations": [
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["dafn-2022-ekpo"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_IBIBIO",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["dafn-2022-ekpo"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "dafn-2022-ekpo",
+      "title": "Ekpo Surname Meaning — Dictionary of American Family Names, 2nd edition",
+      "url": "https://www.ancestry.com/last-name-meaning/ekpo",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Entrée Ekpo du Dictionary of American Family Names, 2e éd., Oxford University Press, 2022, diffusée par Ancestry et consultée directement. L'entrée localise le nom en Afrique de l'Ouest, au Nigeria, et le donne comme « unexplained » ; elle n'établit pas le rattachement ibibio."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Le Dictionary of American Family Names (2022) marque explicitement Ekpo comme inexpliqué. Les recherches complémentaires « Ekpo Ibibio anthroponymy », « Ekpo Efik surname etymology » et « Ekpo name meaning academic » n'ont livré aucune étymologie propre au patronyme suffisamment étayée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Le dictionnaire situe Ekpo au Nigeria sans préciser un peuple ; les recherches « Ekpo Ibibio surname » et « Ekpo Efik surname » donnent des associations concurrentes sans source académique propre au nom, donc le rattachement ibibio reste « supposed »."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Ekpo joking relationship », « Ekpo alliance patronyme » et « Ekpo sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Ekpo hereditary occupation caste title » et « Ekpo fonction sociale » n'ont associé ce nom à aucune fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches « Ekpo obituary biography deceased » et « Ekpo nécrologie » n'ont pas permis de retenir un porteur décédé sur une notice suffisamment fiable et propre au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Ekpo homonym etymology » et « Ekpo surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Le dictionnaire atteste un nom de famille, mais ne décrit pas sa règle de transmission ; les recherches « Ekpo surname inheritance Ibibio » n'en ont pas livré."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Les sources consultées ne permettent pas de déterminer si Ekpo désigne historiquement un lignage, un clan ou une autre unité sociale."
+    }
+  ]
+}

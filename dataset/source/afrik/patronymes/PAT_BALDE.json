@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
+  },
+  "id": "PAT_BALDE",
+  "nameMain": "Baldé",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Baldé",
+      "attestations": [
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["afrik-candidate-queue", "sadjo-2019-kaabu"]
+        }
+      ]
+    },
+    {
+      "spelling": "Balde",
+      "attestations": [
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["afrik-candidate-queue", "sadjo-2019-kaabu"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une étude sur les Fulas de Guinée-Bissau rattache Baldé aux principaux noms de groupe fulas et décrit une organisation privilégiant la ligne paternelle.",
+        "claimStatus": "established",
+        "sourceRefs": ["sadjo-2019-kaabu"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FULA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "sadjo-2019-kaabu"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GNB",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "sadjo-2019-kaabu"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": {
+    "value": "En Guinée-Bissau, Baldé est cité parmi les noms de familles nobles et de lignages exerçant la fonction de régulo ; cette association est située dans l’organisation politique fula décrite pour le Gabú.",
+    "sourceRefs": ["sadjo-2019-kaabu"]
+  },
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "sadjo-2019-kaabu",
+      "title": "Fulas e Mandingas na luta pelo poder e conquista do Império de Kaabu: causas e consequências (século XVI-XIX)",
+      "url": "https://repositorio.unilab.edu.br/jspui/bitstream/123456789/3467/1/ibu%20djalo_tcc.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ibu Sadjo, mémoire de bacharelado, UNILAB, 2019. Aux p. 19-20, le mémoire cite Djaló (2013) sur les noms des principaux groupes fulas, la priorité accordée à la ligne paternelle et les positions de régulo et de noblesse associées aux Baldé et Embaló en Guinée-Bissau."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "Le mémoire de Sadjo a été recherché pour des alliances à plaisanterie nommant Baldé ; il traite des rapports fulas-mandingas mais ne fournit aucune paire de patronymes enregistrable."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les passages consacrés à Baldé chez Sadjo décrivent un groupe et une fonction, sans identifier un porteur décédé dont l’appartenance pourrait être vérifiée."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La recherche de Baldé et Balde dans le mémoire de Sadjo n’a pas distingué de lignées homonymes ; l’absence d’accent est conservée comme variante graphique, non comme autre origine."
+    }
+  ]
+}

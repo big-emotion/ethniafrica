@@ -40,8 +40,7 @@ export interface AssembleComparisonFailure {
 }
 
 export type AssembleComparisonResult =
-  | AssembleComparisonSuccess
-  | AssembleComparisonFailure;
+  AssembleComparisonSuccess | AssembleComparisonFailure;
 
 interface EntityLookup {
   id: string;

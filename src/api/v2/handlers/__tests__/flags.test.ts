@@ -67,6 +67,8 @@ function makeDependencies() {
       createdAt: "2026-07-24T10:00:00.000Z",
       id: createdFlag.id,
     }),
+    createReporterContact: vi.fn().mockResolvedValue("verification-token"),
+    sendFlagVerificationEmail: vi.fn().mockResolvedValue(undefined),
   };
 }
 
@@ -98,6 +100,99 @@ describe("flag handlers", () => {
         null,
         expect.objectContaining({ target_id: "PPL_YORUBA" })
       );
+    });
+
+    /**
+     * The address is a way back to the reader, never a condition of being
+     * heard. Charter §2 keeps reporting at two actions and no e-mail; §6 asked
+     * for the notification and could not have it, because no address was ever
+     * collected. An optional field is what settles both.
+     */
+    // @req REQ-012
+    it("publishes the report without an address, and asks for none", async () => {
+      const dependencies = makeDependencies();
+
+      const result = await handleFlagCreate(
+        validInput(),
+        { accessToken: null },
+        dependencies
+      );
+
+      expect(result.status).toBe(201);
+      expect(dependencies.createReporterContact).not.toHaveBeenCalled();
+      expect(dependencies.sendFlagVerificationEmail).not.toHaveBeenCalled();
+    });
+
+    // @req REQ-012
+    it("sends a verification link when the reader leaves an address", async () => {
+      const dependencies = makeDependencies();
+
+      const result = await handleFlagCreate(
+        { ...validInput(), reporter_email: "  lectrice@example.org " },
+        { accessToken: null },
+        dependencies
+      );
+
+      expect(result.status).toBe(201);
+      expect(dependencies.createReporterContact).toHaveBeenCalledWith(
+        createdFlag.id,
+        "lectrice@example.org"
+      );
+      expect(dependencies.sendFlagVerificationEmail).toHaveBeenCalledWith({
+        email: "lectrice@example.org",
+        token: "verification-token",
+        publicSlug: createdFlag.public_slug,
+      });
+    });
+
+    // @req REQ-012
+    it("rejects a malformed address rather than silently dropping it", async () => {
+      const dependencies = makeDependencies();
+
+      const result = await handleFlagCreate(
+        { ...validInput(), reporter_email: "pas-une-adresse" },
+        { accessToken: null },
+        dependencies
+      );
+
+      expect(result.status).toBe(400);
+      expect(dependencies.createFlag).not.toHaveBeenCalled();
+    });
+
+    /**
+     * The report is committed by the time the contact is written. Losing the
+     * address must never lose the report — the reader would be told their
+     * report failed while it sits published in the queue.
+     */
+    // @req REQ-012
+    it("still reports success when the address could not be recorded", async () => {
+      const dependencies = makeDependencies();
+      dependencies.createReporterContact.mockResolvedValue(null);
+
+      const result = await handleFlagCreate(
+        { ...validInput(), reporter_email: "lectrice@example.org" },
+        { accessToken: null },
+        dependencies
+      );
+
+      expect(result.status).toBe(201);
+      expect(dependencies.sendFlagVerificationEmail).not.toHaveBeenCalled();
+    });
+
+    // @req REQ-012
+    it("still reports success when the verification e-mail cannot be sent", async () => {
+      const dependencies = makeDependencies();
+      dependencies.sendFlagVerificationEmail.mockRejectedValue(
+        new Error("Resend unavailable")
+      );
+
+      const result = await handleFlagCreate(
+        { ...validInput(), reporter_email: "lectrice@example.org" },
+        { accessToken: null },
+        dependencies
+      );
+
+      expect(result.status).toBe(201);
     });
 
     // @req REQ-012

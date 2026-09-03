@@ -19,10 +19,22 @@
     ]
   },
   "peoplesInvolved": [
-    { "id": "PPL_KONGO", "role": "origin" },
-    { "id": "PPL_HAYA", "role": "destination" },
-    { "id": "PPL_BAGANDA", "role": "destination" },
-    { "id": "PPL_NYAMWEZI", "role": "destination" }
+    {
+      "id": "PPL_KONGO",
+      "role": "origin"
+    },
+    {
+      "id": "PPL_HAYA",
+      "role": "destination"
+    },
+    {
+      "id": "PPL_BAGANDA",
+      "role": "destination"
+    },
+    {
+      "id": "PPL_NYAMWEZI",
+      "role": "destination"
+    }
   ],
   "content": {
     "summary": "Deuxième phase de l'expansion bantoue : depuis la région du confluent Kwa-Congo, une dispersion vers l'est le long de la lisière forêt-savane atteint le grand Rift occidental et la région des Grands Lacs, où l'archéologie situe l'apparition de la poterie Urewe, marqueur du Bantou oriental ancien.",
@@ -33,14 +45,14 @@
         "title": "Bantu expansion shows that habitat alters the route and pace of human dispersals",
         "url": "https://doi.org/10.1073/pnas.1503793112",
         "year": 2015,
-        "tier": 2,
+        "tier": "referenced",
         "notes": "Grollemund, Branford, Bostoen, Meade, Venditti & Pagel, Proceedings of the National Academy of Sciences 112(43). Référence confirmée dans la bibliographie de la page anglaise de Wikipédia « Bantu expansion »."
       },
       {
         "title": "The Bantu Expansion",
         "url": "https://doi.org/10.1093/acrefore/9780190277734.013.191",
         "year": 2018,
-        "tier": 2,
+        "tier": "referenced",
         "notes": "Bostoen, Oxford Research Encyclopedia of African History. Cité comme source académique primaire (synthèse de la chronologie de l'expansion) dans la page anglaise de Wikipédia « Bantu expansion »."
       }
     ]

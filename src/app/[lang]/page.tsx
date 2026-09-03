@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { HomeHero } from "@/components/home/HomeHero";
-import { HomeCorpusCounts } from "@/components/home/HomeCorpusCounts";
 import { DidYouKnow } from "@/components/home/DidYouKnow";
 import { pickDidYouKnowFacts } from "@/lib/home/didYouKnowFacts";
 import { getCorpusCounts } from "@/lib/home/corpusCounts";
 import { loadSeedWords } from "@/lib/home/seedWords";
 import { drawHomeHeroVisual } from "@/lib/home/homeHeroVisuals";
+import { drawDidYouKnowMotif } from "@/lib/home/didYouKnowMotifs";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import { OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
 
@@ -39,13 +39,22 @@ export const metadata: Metadata = {
   },
 };
 
+interface HomePageProps {
+  searchParams?: Promise<{ hero?: string | string[] }>;
+}
+
 // @req REQ-113
 // @req REQ-115
-export default async function Home() {
+export default async function Home({ searchParams }: HomePageProps = {}) {
   // Drawn on the server once per request: no hydration mismatch and no visual
   // swap after the first paint. The force-dynamic contract above prevents the
   // result from being frozen into a prerendered page.
-  const heroVisual = drawHomeHeroVisual();
+  const params = await searchParams;
+  const heroParam = params?.hero;
+  const heroVisual =
+    heroParam === "globe" || heroParam === "mercator"
+      ? ({ kind: "globe" } as const)
+      : drawHomeHeroVisual();
 
   const [counts, peopleCountsByCountry, seedWords] = await Promise.all([
     // A failed total read is not an empty corpus. The counter component says
@@ -62,16 +71,21 @@ export default async function Home() {
   // Drawn in the server component so it never re-runs during hydration and
   // cannot desynchronise the client tree.
   const didYouKnowFacts = pickDidYouKnowFacts(2);
+  const didYouKnowMotif = drawDidYouKnowMotif();
 
   return (
     <PageLayout language="fr" hideHeader flushTop flushBottom>
       <HomeHero
         seedWords={seedWords}
         peopleCountsByCountry={peopleCountsByCountry}
-        counts={<HomeCorpusCounts counts={counts} />}
+        counts={counts}
         visual={heroVisual}
       />
-      <DidYouKnow language="fr" facts={didYouKnowFacts} />
+      <DidYouKnow
+        language="fr"
+        facts={didYouKnowFacts}
+        motif={didYouKnowMotif}
+      />
     </PageLayout>
   );
 }

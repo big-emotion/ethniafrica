@@ -30,7 +30,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(ACCESS_MODE_LABELS).toEqual({
       atlas: "L'atlas",
       dossiers: "Les dossiers",
-      jeux: "Les jeux",
+      jeux: "Jouer",
     });
   });
 
@@ -68,14 +68,79 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   // @req REQ-114
   it("gives explorer the modules a reader reaches by name, country first", () => {
     const ids = getModulesForAccessMode("atlas").map((m) => m.id);
-    expect(ids).toEqual(["pays", "peuples", "familles", "noms", "recherche"]);
+    expect(ids).toEqual([
+      "pays",
+      "peuples",
+      "familles",
+      "langues",
+      "noms",
+      "patronymes",
+      "recherche",
+    ]);
   });
 
-  // Ordered from the most concrete question to the method that answers it.
+  // ETNI-1801: the 748-language and 30-patronyme corpus classes ship their
+  // own index pages (ETNI-1795); a reachable module with no way in is not
+  // browsable, so both are wired into the same nominal-entry-point axis as
+  // pays/peuples/familles/noms.
+  //
+  // Distinguishing "patronymes" from the pre-existing "noms" module matters:
+  // "noms" (name: Appellations) is a people's autonyms/exonyms, while
+  // "patronymes" is the naming system a *person* is named under — two
+  // different corpus entities that must not collapse into one id.
+  // @req REQ-139
+  it("adds languages and patronymes as distinct nominal entry points", () => {
+    const langues = MODULE_DEFINITIONS.find((m) => m.id === "langues");
+    const patronymes = MODULE_DEFINITIONS.find((m) => m.id === "patronymes");
+
+    expect(langues).toMatchObject({
+      accessMode: "atlas",
+      page: "languages",
+      availability: "data",
+      dataSource: "afrik_languages",
+      editorialReadiness: "ready",
+    });
+    expect(patronymes).toMatchObject({
+      accessMode: "atlas",
+      page: "patronymes",
+      availability: "data",
+      dataSource: "afrik_patronymes",
+      editorialReadiness: "ready",
+    });
+    expect(patronymes?.id).not.toBe("noms");
+    expect(patronymes?.name).not.toBe("Appellations");
+  });
+
+  // The trap this guards against: a module keyed "noms" with page "names"
+  // already exists for Appellations. Adding patronymes must not shadow it.
+  // @req REQ-139
+  it("leaves the pre-existing Appellations module unchanged", () => {
+    const noms = MODULE_DEFINITIONS.find((m) => m.id === "noms");
+
+    expect(noms).toMatchObject({
+      name: "Appellations",
+      accessMode: "atlas",
+      page: "names",
+      availability: "data",
+      dataSource: "name_records",
+      editorialReadiness: "ready",
+    });
+  });
+
+  // Ordered from the most concrete question to the method that answers it —
+  // with `nommer` ahead of all of them, because it is the question the other
+  // three presuppose. Declaration order is display order (`getModulesFor
+  // AccessMode` is a plain filter), so this is also the rubric's order in the
+  // menu, on the home panel and in the mobile drawer.
   // @req REQ-114
   it("gives comprendre only the questions asked of the corpus", () => {
     const ids = getModulesForAccessMode("dossiers").map((m) => m.id);
-    expect(ids).toEqual(["anecdotes", "frise", "regards-colonisation"]);
+    expect(ids).toEqual([
+      "nommer",
+      "anecdotes",
+      "frise",
+      "regards-colonisation",
+    ]);
   });
 
   // @req REQ-114 @req REQ-120
@@ -189,6 +254,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     );
     expect(staticModules.map((m) => m.id)).toEqual([
       "recherche",
+      "nommer",
       "anecdotes",
       "regards-colonisation",
     ]);
@@ -276,22 +342,34 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
   });
 
   // The accent is positional, so regrouping repaints. Pinning the whole map
-  // is what makes that repaint a decision rather than a side effect: moving
-  // Appellations up to fourth turns it perv and pushes recherche and
-  // anecdotes one step back round the cycle.
+  // is what makes that repaint a decision rather than a side effect: ETNI-1801
+  // inserted langues after familles and patronymes after noms, which pushes
+  // every module from recherche onward two steps further round the cycle.
+  //
+  // Putting `nommer` at the head of the dossiers block shifts every module
+  // after it by one more step, so the five below `recherche` all change hue.
+  // That is accepted rather than worked around: the charter says a positional
+  // accent carries no meaning and is read as decoration, so nothing a reader
+  // could have learnt is lost — and pinning an accent per module to avoid the
+  // shift would introduce the one thing the charter does forbid, a component
+  // choosing its own.
   // @req REQ-114
+  // @req REQ-139
   it("pins the accent every module wears after the regrouping", () => {
     const expectedAccents = Object.freeze({
       pays: "afh-accent-ocre",
       peuples: "afh-accent-teal",
       familles: "afh-accent-terre",
-      noms: "afh-accent-perv",
-      recherche: "afh-accent-ocre",
-      anecdotes: "afh-accent-teal",
-      frise: "afh-accent-terre",
-      "regards-colonisation": "afh-accent-perv",
-      quiz: "afh-accent-ocre",
-      mercator: "afh-accent-teal",
+      langues: "afh-accent-perv",
+      noms: "afh-accent-ocre",
+      patronymes: "afh-accent-teal",
+      recherche: "afh-accent-terre",
+      nommer: "afh-accent-perv",
+      anecdotes: "afh-accent-ocre",
+      frise: "afh-accent-teal",
+      "regards-colonisation": "afh-accent-terre",
+      quiz: "afh-accent-perv",
+      mercator: "afh-accent-ocre",
     } as const);
 
     for (const [id, accent] of Object.entries(expectedAccents)) {

@@ -35,6 +35,7 @@ export default meta;
 type Story = StoryObj<typeof QuizQuestionCard>;
 
 const QUESTION: QuizSessionQuestionView = {
+  id: "q-1",
   templateId: "T2",
   promptFr: "Quelle est l'auto-appellation de ce peuple ?",
   optionsFr: ["Alpha", "Beta", "Gamma", "Delta"],

@@ -34,13 +34,26 @@ import {
 } from "@/lib/ratelimit/flagRateLimit";
 import {
   sendFlagResolutionEmail,
-  type FlagResolutionContributor,
+  sendFlagVerificationEmail,
+  type FlagResolutionRecipient,
   type FlagResolutionStatus,
+  type FlagVerificationEmail,
 } from "@/lib/email/flagNotification";
+import {
+  createReporterContact,
+  getVerifiedReporterEmail,
+} from "@/lib/flags/reporterContact";
 import { logger } from "@/lib/api/logger";
 import * as Sentry from "@sentry/nextjs";
 
-const FLAG_KINDS = [
+/**
+ * The kinds that report on something the corpus already says.
+ *
+ * Every one of them anchors: a report names the claim it disputes. Kept apart
+ * from `FLAG_KINDS` because that property is what the create schema enforces,
+ * and `contribution` is the kind that cannot have it.
+ */
+const REPORT_KINDS = [
   "inaccurate",
   "missing-source",
   "broken-url",
@@ -48,6 +61,8 @@ const FLAG_KINDS = [
   "correction-proposal",
   "other",
 ] as const;
+
+const FLAG_KINDS = [...REPORT_KINDS, "contribution"] as const;
 
 const FLAG_STATUSES = [
   "open",
@@ -68,15 +83,18 @@ const trimmedRequiredString = z.string().trim().min(1);
  */
 const MIN_DWELL_MS = 3_000;
 
-const flagCreateSchema = z.object({
-  target_type: trimmedRequiredString,
-  target_id: trimmedRequiredString,
+const submissionShape = {
   target_field_path: trimmedRequiredString.optional(),
-  flag_kind: z.enum(FLAG_KINDS),
   reason_text: z.string().trim().min(10).max(2000),
-  counter_source_url: z.string().trim().url().optional(),
+  counter_source_url: z.string().trim().pipe(z.url()).optional(),
   counter_source_citation: z.string().trim().max(2000).optional(),
   proposed_rewrite: z.string().trim().max(5000).optional(),
+  /**
+   * Optional, and the only personal datum a report can carry. It buys the
+   * reader a decision in their inbox and nothing else — it is not attribution,
+   * not an account, and never appears on the public queue.
+   */
+  reporter_email: z.string().trim().pipe(z.email().max(320)).optional(),
   antibot: z.object({
     salt: trimmedRequiredString,
     nonce: trimmedRequiredString,
@@ -88,6 +106,27 @@ const flagCreateSchema = z.object({
   website: z.string().max(0).optional(),
   /** Milliseconds the form was open. Instant submissions are not readers. */
   elapsedMs: z.number().int().nonnegative().optional(),
+};
+
+const flagCreateSchema = z.object({
+  ...submissionShape,
+  target_type: trimmedRequiredString,
+  target_id: trimmedRequiredString,
+  flag_kind: z.enum(REPORT_KINDS),
+});
+
+/**
+ * A contribution proposes something the corpus does not hold yet, so it is the
+ * one submission that may name no entity. Its proposal is required instead:
+ * a contribution with nothing proposed is an empty form, not a contribution.
+ * The anchor stays mandatory everywhere else — see migration 081.
+ */
+const contributionCreateSchema = z.object({
+  ...submissionShape,
+  target_type: trimmedRequiredString.optional(),
+  target_id: trimmedRequiredString.optional(),
+  flag_kind: z.literal("contribution"),
+  contribution_payload: z.record(z.string(), z.unknown()),
 });
 
 const flagListSchema = z.object({
@@ -120,6 +159,13 @@ export interface FlagHandlerDependencies {
   decodeFlagCursor: (
     cursor: string
   ) => { createdAt: string; id: string } | null;
+  createReporterContact: (
+    flagId: string,
+    email: string
+  ) => Promise<string | null>;
+  sendFlagVerificationEmail: (
+    input: FlagVerificationEmail
+  ) => Promise<void | boolean>;
 }
 
 export interface FlagHandlerContext {
@@ -157,6 +203,8 @@ const defaultDependencies: FlagHandlerDependencies = {
   listFlags,
   getFlagByIdOrSlug,
   decodeFlagCursor,
+  createReporterContact,
+  sendFlagVerificationEmail,
 };
 
 function resolveDependencies(
@@ -211,7 +259,16 @@ export async function handleFlagCreate(
   const dependencies = resolveDependencies(injectedDependencies);
   const accessToken = context.accessToken?.trim();
 
-  const parsed = flagCreateSchema.safeParse(rawInput);
+  /**
+   * The kind decides which contract the body is held to, so it is read before
+   * validation rather than after. A body that does not say `contribution` is
+   * judged as a report — including an empty one, which still owes an anchor.
+   */
+  const declaredKind = (rawInput as { flag_kind?: unknown } | null)?.flag_kind;
+  const parsed =
+    declaredKind === "contribution"
+      ? contributionCreateSchema.safeParse(rawInput)
+      : flagCreateSchema.safeParse(rawInput);
   if (!parsed.success) {
     return {
       status: 400,
@@ -268,6 +325,10 @@ export async function handleFlagCreate(
     counter_source_url: parsed.data.counter_source_url,
     counter_source_citation: parsed.data.counter_source_citation,
     proposed_rewrite: parsed.data.proposed_rewrite,
+    contribution_payload:
+      "contribution_payload" in parsed.data
+        ? parsed.data.contribution_payload
+        : undefined,
   };
   // The cast is the price of `strictNullChecks: false`: zod infers every
   // property of a parsed object as optional, so a schema that guarantees these
@@ -319,6 +380,34 @@ export async function handleFlagCreate(
   }
 
   const flag = await dependencies.createFlag(attributedTo, flagInput);
+
+  /**
+   * Best-effort from here on. The report is committed, so nothing below may
+   * change the answer the reader gets: a lost address is a reader who hears
+   * nothing back, while a failed 201 is a reader who files the same report
+   * three times.
+   */
+  if (parsed.data.reporter_email) {
+    try {
+      const token = await dependencies.createReporterContact(
+        flag.id,
+        parsed.data.reporter_email
+      );
+      if (token) {
+        await dependencies.sendFlagVerificationEmail({
+          email: parsed.data.reporter_email,
+          token,
+          publicSlug: flag.public_slug,
+        });
+      }
+    } catch (error) {
+      logger.error("Failed to set up a reporter contact", error, {
+        flagId: flag.id,
+      });
+      Sentry.captureException(error);
+    }
+  }
+
   return {
     status: 201,
     body: createApiResponse(flag),
@@ -419,7 +508,7 @@ const flagTransitionSchema = z.object({
 export interface FlagTransitionDependencies {
   getModeratorByAccessToken: (
     accessToken: string
-  ) => Promise<{ id: string; role: string } | null>;
+  ) => Promise<{ id: string } | null>;
   transitionFlag: (
     identifier: string,
     next: { status: FlagStatus; moderatorId: string; moderatorNotes?: string }
@@ -429,6 +518,7 @@ export interface FlagTransitionDependencies {
   >;
   writeAuditLog: (input: AuditLogInput) => Promise<void>;
   getContributorEmail: (contributorId: string) => Promise<string | null>;
+  getVerifiedReporterEmail: (flagId: string) => Promise<string | null>;
   sendFlagResolutionEmail: (
     flag: {
       public_slug: string;
@@ -437,7 +527,7 @@ export interface FlagTransitionDependencies {
       target_type: string | null;
       target_id: string | null;
     },
-    contributor: FlagResolutionContributor | null
+    recipient: FlagResolutionRecipient | null
   ) => Promise<void>;
 }
 
@@ -446,6 +536,7 @@ const defaultTransitionDependencies: FlagTransitionDependencies = {
   transitionFlag,
   writeAuditLog: (input) => auditLog.write(input),
   getContributorEmail,
+  getVerifiedReporterEmail,
   sendFlagResolutionEmail,
 };
 
@@ -548,11 +639,22 @@ export async function handleFlagTransition(
   if (NOTIFIABLE_STATUSES.includes(result.flag.status)) {
     try {
       const contributorId = result.flag.contributor_id;
-      const email = contributorId
+      const contributorEmail = contributorId
         ? await dependencies.getContributorEmail(contributorId)
         : null;
-      const contributor: FlagResolutionContributor | null =
-        contributorId && email ? { id: contributorId, email } : null;
+
+      /**
+       * An accountless report can now be answered too. The reader may have
+       * left an address and proved it by following the link; an address left
+       * and never proved is deliberately not used, because it may belong to
+       * someone who never reported anything.
+       */
+      const email =
+        contributorEmail ??
+        (await dependencies.getVerifiedReporterEmail(result.flag.id));
+      const recipient: FlagResolutionRecipient | null = email
+        ? { email }
+        : null;
 
       await dependencies.sendFlagResolutionEmail(
         {
@@ -562,7 +664,7 @@ export async function handleFlagTransition(
           target_type: result.flag.target_type,
           target_id: result.flag.target_id,
         },
-        contributor
+        recipient
       );
     } catch (error) {
       logger.error("Flag resolution notification failed", error, {

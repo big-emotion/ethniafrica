@@ -142,7 +142,7 @@ describe("046_quiz_stimulus.sql schema contract", () => {
   });
 
   /**
-   * Nullable, and no default. T1-T5 and T12 name their subject in the stem and
+   * Nullable, and no default. T1-T4 and T12 name their subject in the stem and
    * set nothing up; a `not null default ''` would make every one of them carry
    * an empty stimulus the card would have to test for anyway.
    */

@@ -1,0 +1,100 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français limité aux formes nominales et au porteur que les sources dédiées permettent d'établir."
+  },
+  "id": "PAT_DOUMGOR",
+  "nameMain": "Doumgor",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Doumgor",
+      "attestations": [
+        {
+          "countryId": "TCD",
+          "sourceRefs": ["bnf-doumgor-authority", "ndjamena-hebdo-2020-doumgor"]
+        }
+      ]
+    },
+    {
+      "spelling": "Doumngor",
+      "attestations": [
+        { "countryId": "TCD", "sourceRefs": ["bnf-doumgor-authority"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [],
+  "countries": [
+    {
+      "countryId": "TCD",
+      "status": "attested",
+      "sourceRefs": ["bnf-doumgor-authority", "ndjamena-hebdo-2020-doumgor"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Hourmadji Moussa Doumgor",
+      "sourceRefs": ["ndjamena-hebdo-2020-doumgor"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "bnf-doumgor-authority",
+      "title": "Notice de personne « Doumgor, Hourmadji Moussa (1950-....) »",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb16205689s",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Notice d'autorité de la Bibliothèque nationale de France, FRBNF16205689. Elle atteste le rattachement au Tchad, la forme Doumgor et plusieurs formes rejetées comportant Doumngor ; elle rappelle aussi que prénom et nom peuvent permuter dans les noms tchadiens."
+    },
+    {
+      "sourceKey": "ndjamena-hebdo-2020-doumgor",
+      "title": "Hommage à l'écrivain et auteur Hourmadji Moussa Doumgor",
+      "url": "https://ndjamenahebdo.net/hommage-a-lecrivain-et-auteur-hourmadji-moussa-doumgor/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Article de presse locale signé Alex Nadjindo, 13 juillet 2020. Il rapporte le décès de Hourmadji Moussa Doumgor le 5 juillet 2020 et retrace sa carrière tchadienne. Source communautaire conservée à son niveau de preuve."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Doumgor », « Doumngor », « Doumgor onomastique », « Doumgor étymologie » dans la BnF, les catalogues universitaires, Persée, OpenEdition et les résultats tchadiens n'ont livré ni récit d'origine, ni chronique de première attestation, ni étude linguistique."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "La notice BnF et la presse tchadienne attestent le nom et le pays sans identifier le porteur comme Sara ; aucune source dédiée trouvée n'a confirmé les Sara, association issue de la file de candidats qui a donc été retirée."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "La BnF traite Doumgor comme élément du nom d'une personne, mais aucune source consultée ne le décrit comme nom de clan ; clan_name demeure la valeur technique héritée faute de catégorie indéterminée dans le modèle."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La notice d'autorité, les ouvrages catalogués et la presse consultée ne documentent pas la transmission familiale de Doumgor ; le mode reste donc other."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Doumgor alliance clan Tchad » et « Doumgor parenté à plaisanterie » n'ont livré aucune paire de patronymes documentée."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La fonction de journaliste et de ministre du porteur documenté est biographique, non héréditaire ; aucune caste ou charge du nom n'a été trouvée."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les variantes rejetées par la BnF sont des formes du même nom ; les catalogues et recherches exactes n'ont pas établi un homonyme d'origine distincte."
+    }
+  ]
+}

@@ -138,24 +138,26 @@ describe("facet band — a fixed band, never an aspect ratio", () => {
   });
 });
 
-describe("facet switcher — three anchors, not a widget", () => {
+describe("facet switcher — plain anchors, not a widget", () => {
   /**
-   * Pays reads first, on the switcher as on the Explorer hub above it.
-   *
    * The switcher and the hub's module list are two renderings of one running
    * order, and a reader crossing from one to the other reads them as the same
    * set. They drifted apart once already — the hub listed four modules in one
    * order while the switcher walked three facets in another — so the order is
    * asserted where the reader meets it rather than only in the table.
+   *
+   * Nom sits last because it is the axis that cuts across the other four: a
+   * name is carried by peoples, attested in countries, and belongs to no rung
+   * of famille → langue → peuple → pays.
    */
   // @req REQ-114
-  it("reads pays first, then peuples, then familles", () => {
+  it("runs the corpus hierarchy, then the axis that cuts across it", () => {
     render(<FacetSwitcher active="peoples" />);
 
     const labels = screen
       .getAllByRole("link")
       .map((link) => link.textContent?.trim());
-    expect(labels).toEqual(["Pays", "Peuples", "Familles"]);
+    expect(labels).toEqual(["Familles", "Langues", "Peuples", "Pays", "Noms"]);
   });
 
   // @req REQ-114

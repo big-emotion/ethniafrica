@@ -1,0 +1,104 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_TESFAYE",
+  "nameMain": "Tesfaye",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Tesfaye",
+      "attestations": [
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "L'entrée consultée présente Tesfaye, écrit ተስፋዬ, comme un nom personnel amharique signifiant « mon espoir ». La glose est conservée comme proposition communautaire, non comme récit d'origine familiale.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["btn-tesfaye"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_AMHARA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ETH",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "btn-tesfaye",
+      "title": "Meaning, origin and history of the name Tesfaye — Behind the Name",
+      "url": "https://www.behindthename.com/name/tesfaye",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Entrée communautaire consultée le 2 septembre 2026 : elle donne la graphie amharique ተስፋዬ et la glose « my hope ». Elle ne documente ni lignée ni transmission. Les versions anglaise, allemande et italienne de Wikipédia n'ont été contrôlées que comme pistes et ne sont pas citées."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Tesfaye anthroponymie », « Tesfaye onomastique », « Tesfaye etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche, ni aucune tradition orale attribuée à un griot ou informateur nommé avec transcription vérifiable."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Tesfaye anthroponymie », « Tesfaye onomastique », « Tesfaye etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche, ni chronique historique qui rattache ce nom à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches « Tesfaye anthroponymie », « Tesfaye onomastique », « Tesfaye etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué ; ce rattachement reste au niveau non vérifié."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Tesfaye alliance à plaisanterie », « Tesfaye joking relationship » et « Tesfaye parenté à plaisanterie » n'ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Tesfaye caste », « Tesfaye métier héréditaire » et « Tesfaye social function » n'ont livré aucune fonction sociale ou professionnelle héréditaire attribuable à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques sur « Tesfaye » dans les résultats de catalogues et répertoires consultés n'ont pas permis d'identifier un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes « Tesfaye homonym surname », « Tesfaye homonyme patronyme » et les variantes graphiques de la fiche n'ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "La source propre au nom n'a pas confirmé le pays où il est porté ; les recherches « Tesfaye » avec Ethiopia, Eritrea et les variantes de la fiche n'ont pas livré de registre officiel exploitable."
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français prudent : le rapprochement Zeroual/Azerwal est publié et lexicalement étayé, mais reste une proposition pour le patronyme exact."
+  },
+  "id": "PAT_ZEROUAL",
+  "nameMain": "Zeroual",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "Zeroual",
+      "attestations": [{ "countryId": "DZA", "sourceRefs": ["zeroual-mosta"] }]
+    },
+    {
+      "spelling": "Béni Zeroual",
+      "attestations": [{ "countryId": "DZA", "sourceRefs": ["zeroual-mosta"] }]
+    },
+    {
+      "spelling": "Azerwal",
+      "attestations": [{ "countryId": "MAR", "sourceRefs": ["azerwal-ircam"] }]
+    },
+    {
+      "spelling": "Ezzerwali",
+      "attestations": [{ "countryId": "MAR", "sourceRefs": ["azerwal-ircam"] }]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Une thèse de Mostaganem rapproche Béni Zeroual d’Azerwal et rapporte l’analyse « personne aux yeux bleus ou verts ». Une publication de l’IRCAM confirme indépendamment qu’Azarwal signifie « aux yeux bleus » et relève la forme Ezzerwali ; le passage phonétique jusqu’à Zeroual n’est toutefois pas démontré en détail.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["zeroual-mosta", "azerwal-ircam"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_CHAOUI",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "DZA",
+      "status": "attested",
+      "sourceRefs": ["zeroual-mosta"]
+    },
+    {
+      "countryId": "MAR",
+      "status": "attested",
+      "sourceRefs": ["azerwal-ircam"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "zeroual-mosta",
+      "title": "Étude diachronique des anthroponymes algériens : cas de la ville de Mostaganem",
+      "url": "https://e-biblio.univ-mosta.dz/bitstream/handle/123456789/2368/Th%C3%A8se%20de%20Magheraoui.pdf?sequence=1",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Yamina Taibi-Maghraoui, thèse de doctorat, Université Abdelhamid Ibn Badis de Mostaganem, 2016-2017. Le passage sur Béni Zeroual a été vérifié. La source mêle un groupe de la plaine du Chélif, un autre attribué à la Tunisie et une référence au Souss ; cette incohérence géographique est la raison du statut claimed et interdit tout rattachement ethnique automatique."
+    },
+    {
+      "sourceKey": "azerwal-ircam",
+      "title": "The Memory Imprint: Amazigh Landmarks in the National Culture",
+      "url": "https://biblio.ircam.ma/pmb/uploads/publications/71.pdf",
+      "tier": "official",
+      "source_kind": "linguistic_reference",
+      "notes": "Lhoussain Rachid, traduction de Mohamed Ouakrime, Institut Royal de la Culture Amazighe, série Traduction n° 6, 2005. Le texte intégral a été consulté ; l’entrée Ezzerwali donne Azarwal « blue-eyed » et le toponyme Tazerwalt. La publication concerne le Maroc et ne confirme pas l’association chaouie."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La thèse de Mostaganem rapporte des traditions hagiographiques collectives, mais sans griot nommé ni transcription conforme au schéma ; les recherches « Zeroual tradition orale », « Béni Zeroual généalogie » et « Azerwal oral tradition » n’ont pas comblé ce manque."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues de Mostaganem, du HCA, de l’IRCAM, Persée et OpenEdition n’ont pas livré de chronique ou d’archive ancienne expliquant la formation du patronyme Zeroual."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Les sources rapprochent le nom d’un qualificatif, d’un toponyme et de désignations collectives, mais ne permettent pas de décider si l’usage moderne Zeroual relève d’une nisba, d’un nom de clan ou d’un ancien sobriquet."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Ni la thèse de Mostaganem ni la publication de l’IRCAM ne décrivent la règle de transmission du patronyme Zeroual ; les recherches généalogiques dédiées n’ont pas fourni de résultat probant."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches combinant Zeroual ou Béni Zeroual avec « alliance », « pacte », « leff » et « parenté à plaisanterie » n’ont fourni aucune relation nominale avec une autre fiche PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les sources et les recherches sur un métier ou statut héréditaire lié à Zeroual ne signalent aucune fonction sociale transmise."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les catalogues d’autorité ont surtout fait apparaître Liamine Zeroual, vivant ; le protocole l’exclut et aucun porteur décédé suffisamment documenté n’a été trouvé."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La thèse signale plusieurs groupes Béni Zeroual mais son passage comporte une incohérence entre Tunisie et Souss ; sans source indépendante pour chaque groupe, il serait trompeur de créer des homonymes distincts."
+    }
+  ],
+  "nisbaSubtype": {
+    "value": "other",
+    "sourceRefs": ["zeroual-mosta", "azerwal-ircam"]
+  }
+}

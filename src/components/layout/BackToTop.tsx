@@ -86,5 +86,3 @@ export function BackToTop({ returnFocusTo }: BackToTopProps = {}) {
     </button>
   );
 }
-
-export default BackToTop;

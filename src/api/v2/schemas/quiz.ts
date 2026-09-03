@@ -96,6 +96,13 @@ export const quizScopeOptionSchema = z.object({
   activeQuestionCount: z.number().int().min(0),
   /** False when the track exists in the corpus but cannot fill a session. */
   playable: z.boolean(),
+  /**
+   * The content themes this track can fill a session of, in the picker's own
+   * order. A theme absent from the list is one the pair cannot pay for — the
+   * picker offers it nowhere rather than offering it greyed, which is the same
+   * discipline the round generators follow (FR65/FR66).
+   */
+  playableThemeIds: z.array(z.string()),
 });
 
 // @req REQ-103
@@ -167,7 +174,6 @@ export const quizSessionQuestionSchema = z.object({
     "T2",
     "T3",
     "T4",
-    "T5",
     "T6",
     "T7",
     "T8",

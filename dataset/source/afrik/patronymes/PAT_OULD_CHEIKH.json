@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+  },
+  "id": "PAT_OULD_CHEIKH",
+  "nameMain": "Ould Cheikh",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "Ould Cheikh",
+      "attestations": [
+        {
+          "countryId": "MRT",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [],
+  "countries": [
+    {
+      "countryId": "MRT",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "L'atlas ne documente pas encore ce point pour ce nom : aucune source dédiée n'a été consultée à ce jour."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La nisba ne détermine pas à elle seule le mode de transmission : l'atlas ne le documente pas encore pour ce nom."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "La nisba ne détermine pas à elle seule l'unité sociale désignée : l'atlas ne la documente pas encore pour ce nom."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "« Ould Cheikh » a été cherchée dans les fiches peuple de l'atlas — appellations, ethnicités, organisation clanique, prose historique et sources — sans y trouver aucune occurrence. Aucun des 13 peuples du corpus présents dans le pays de la fiche (Mauritanie) ne rattache ce nom à un groupe, et aucune source dédiée n'a encore été consultée pour ce nom. Aucune tribu hassanophone nommée ne figure parmi les peuples du corpus présents en Mauritanie, et la construction « Ould X » / « Ahl X » désigne d'abord une filiation ou une maison, ce qui demande d'établir la tribu avant le peuple."
+    }
+  ]
+}

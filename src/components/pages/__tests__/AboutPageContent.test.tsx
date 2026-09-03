@@ -2,7 +2,13 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import AboutPageContent from "../AboutPageContent";
-import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
+import {
+  ACCESS_MODE_LABELS,
+  ACCESS_MODES,
+  MODULE_DEFINITIONS,
+} from "@/lib/hubs/moduleRegistry";
+import { modulesNamedIn } from "@/test/axisModuleVocabulary";
+import { getLocalizedRoute, type PageType } from "@/lib/routing";
 
 const renderAbout = () => render(<AboutPageContent language="fr" />);
 
@@ -34,20 +40,35 @@ describe("AboutPageContent (REQ-132)", () => {
     );
   });
 
+  /**
+   * Derived from the registry rather than written out, which is the whole
+   * point: the hand-kept list said five for as long as the corpus had six.
+   * Langue shipped, then Nom shipped, and this page — the one that answers
+   * "what is in EthniAfrica" — went on naming the four it opened with plus
+   * Appellations.
+   *
+   * The criterion is a corpus class, not an atlas module: `recherche` is on
+   * the axis and is a way in, not a thing the corpus holds, and it is the one
+   * atlas module with no `dataSource`.
+   */
   // @req REQ-132
-  it("names the four distinct families of content in the corpus", () => {
+  it("gives every corpus class of the atlas a card", () => {
     renderAbout();
 
     const families = screen.getByTestId("about-content-families");
-    for (const family of [
-      "Peuples",
-      "Langues",
-      "Familles linguistiques",
-      "Pays",
-    ]) {
-      expect(
-        within(families).getByRole("heading", { level: 3, name: family })
-      ).toBeTruthy();
+    const corpusClasses = MODULE_DEFINITIONS.filter(
+      (module) => module.accessMode === "atlas" && module.dataSource
+    );
+
+    expect(corpusClasses.length).toBeGreaterThanOrEqual(6);
+
+    for (const corpusClass of corpusClasses) {
+      const href = getLocalizedRoute("fr", corpusClass.page as PageType);
+      const links = within(families)
+        .getAllByRole("link")
+        .filter((link) => link.getAttribute("href") === href);
+
+      expect(links.length, `no card links to ${href}`).toBeGreaterThan(0);
     }
   });
 
@@ -107,6 +128,25 @@ describe("AboutPageContent (REQ-132)", () => {
     ).not.toBeInTheDocument();
   });
 
+  // The About page describes the three axes to a reader who has not opened
+  // the header menu, so it owes the same answer the panel owes: what is
+  // actually behind each entry, not the frame of mind that leads there.
+  // @req REQ-132
+  it("describes each access mode by the modules it holds", () => {
+    renderAbout();
+
+    for (const mode of ACCESS_MODES) {
+      const card = screen.getByTestId(`about-access-mode-${mode}`);
+      const description = within(card).getByTestId(
+        `about-access-mode-description-${mode}`
+      ).textContent;
+
+      expect(
+        modulesNamedIn(mode, description ?? "").length
+      ).toBeGreaterThanOrEqual(2);
+    }
+  });
+
   // @req REQ-132
   it("keeps one valid H1 → H2 → H3 document outline", () => {
     const { container } = renderAbout();
@@ -123,7 +163,7 @@ describe("AboutPageContent (REQ-132)", () => {
     const families = screen.getByTestId("about-content-families");
     expect(families.className).toMatch(/grid-cols-1/);
     expect(families.className).toMatch(/min-\[720px\]:grid-cols-2/);
-    expect(families.className).toMatch(/min-\[1240px\]:grid-cols-4/);
+    expect(families.className).toMatch(/min-\[1240px\]:grid-cols-5/);
 
     const accessModes = screen.getByTestId("about-access-mode-list");
     expect(accessModes.className).toMatch(/grid-cols-1/);

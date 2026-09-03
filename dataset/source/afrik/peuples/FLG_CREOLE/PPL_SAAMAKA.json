@@ -1,0 +1,134 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les regles de redaction completes."
+  },
+  "id": "PPL_SAAMAKA",
+  "nameMain": "Saamaka",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["SUR"],
+  "content": {
+    "appellations": {
+      "mainName": "Saamaka",
+      "selfAppellation": "Saamaka",
+      "exonyms": ["Saramaka", "Saramacca", "Bush Negroes"],
+      "spellingAliases": ["Saramaccaner"],
+      "originOfExonyms": "« Saramaka » est la graphie coloniale neerlandaise puis academique historique du nom du peuple ; « Bush Negroes » (« Negres des bois ») est un exonyme collectif neerlandais et anglais applique a l'ensemble des six peuples marrons du Suriname.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Depuis le milieu de l'annee 2010, le peuple utilise officiellement la graphie « Saamaka » dans ses documents pour se conformer a sa propre prononciation ; « Saramaka » reste employe dans la litterature academique anterieure et dans des textes officiels tels que l'arret Saramaka People v. Suriname rendu par la Cour interamericaine des droits de l'homme (2007).",
+      "peopleGroupId": null,
+      "peopleGroupLabel": null
+    },
+    "ethnicities": [
+      "Saamaka : branche centrale des peuples marrons du Suriname, avec les Matawai et les Kwinti",
+      "Matawai : peuple issu d'une scission interne saamaka survenue dans les annees 1760, ayant signe son propre traite avec les autorites coloniales neerlandaises",
+      "Kwinti : le plus petit des peuples marrons du Suriname, apparente linguistiquement aux Saamaka"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Saamaka descendent d'Africains reduits en esclavage sur les plantations neerlandaises du bas fleuve Suriname et de ses affluents, qui se sont enfuis vers l'interieur forestier des la fin du 17e siecle. Leurs ancetres provenaient de plusieurs regions de traite ouest et centre-africaines exploitees par la Compagnie neerlandaise des Indes occidentales ; la region Loango/Kongo-Angola a constitue, sur l'ensemble de la periode de la traite vers le Suriname, l'une des principales zones d'origine des personnes deportees, aux cotes de la Cote-de-l'Or et de la Cote des Esclaves.",
+      "formationPeriod": "La societe saamaka se constitue par vagues de fuites individuelles et collectives entre la fin du 17e siecle et 1762, annee du traite de paix avec les autorites coloniales neerlandaises qui reconnait leur autonomie territoriale — un siecle avant l'abolition generale de l'esclavage au Suriname (1863).",
+      "migrationRoutes": [
+        "Plantations du bas Suriname et de la Commewijne vers le Haut-Suriname (fleuve Suriname et Gaanlio), 17e-18e siecles"
+      ],
+      "historicalSettlementZones": [
+        "Haut-Suriname et region de Brokopondo (Suriname)",
+        "Paramaribo et sa peripherie",
+        "Guyane francaise (communautes transfrontalieres du Haut-Maroni)"
+      ],
+      "unificationsOrDivisions": "Une scission interne survenue apres la mort du capitaine Abini a conduit un groupe mene par les capitaines Beku et Musinga a se separer des Saamaka dans les annees 1760 pour former le peuple matawai, qui signe son propre traite avec les Neerlandais.",
+      "externalInfluences": "Influence directe des cosmologies et pratiques ouest et centre-africaines (culte des ancetres, esprits de la nature) ; influence de la mission morave (Eglise morave), presente en pays saamaka depuis le milieu du 18e siecle et a l'origine d'une minorite chretienne.",
+      "majorHistoricalEvents": "1762 : traite de paix avec les autorites coloniales neerlandaises reconnaissant l'autonomie territoriale des Saamaka. 2007 : arret Saramaka People v. Suriname de la Cour interamericaine des droits de l'homme, reconnaissant les droits collectifs des Saamaka sur leurs terres et ressources traditionnelles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Autorite politique organisee autour d'un chef supreme (gaanman/gaama), assiste de capitaines (kapiteni) et d'assesseurs (basiya) a l'echelle des villages, la succession se transmettant en ligne matrilineaire.",
+      "clanOrganization": "Societe organisee en clans matrilineaires (lo), chacun regroupant les descendants d'un groupe originel de marrons evades d'une meme plantation ; chaque lo se subdivise en lignages (bee) de 50 a 150 personnes. Les lo detiennent collectivement des droits fonciers fondes sur les revendications territoriales etablies au debut du 18e siecle.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires (bee) structurent la residence villageoise, la transmission des droits fonciers et l'appartenance clanique ; l'autorite rituelle et politique se transmet egalement en ligne maternelle.",
+      "religiousAuthority": "Autorite religieuse partagee entre les chefs politiques (gaanman, kapiteni), qui jouent aussi un role rituel de communication avec les ancetres, et des specialistes religieux (devins, herboristes) consultes par voie oraculaire."
+    },
+    "languages": {
+      "mainLanguage": "Saamaka (creole a base lexicale anglaise et portugaise, srm)",
+      "isoCodes": ["srm"],
+      "dialects": [],
+      "vehicularRole": "Le saamaka n'a pas de role vehiculaire hors de la communaute ; il sert de langue de la vie quotidienne au sein du peuple, y compris dans la diaspora urbaine de Paramaribo et en Guyane francaise."
+    },
+    "historicalAffiliation": {
+      "description": "Les Saamaka sont un peuple marron forme par les Africains reduits en esclavage sur les plantations neerlandaises du bas fleuve Suriname qui se sont enfuis vers l'interieur forestier a partir de la fin du 17e siecle, pour y fonder une societe libre et autonome. Entre 1658 et le debut du 19e siecle, la Compagnie neerlandaise des Indes occidentales a deporte vers le Suriname des captifs originaires de plusieurs regions de la cote atlantique africaine — Senegambie, Cote-des-Windward, Cote-de-l'Or, Cote des Esclaves, Baie du Biafra, ainsi que Loango et Luanda en Afrique centrale — la region Loango/Kongo-Angola constituant, selon l'historiographie de la traite vers le Suriname, l'une des principales zones d'origine des personnes deportees sur l'ensemble de la periode. Cette pluralite d'origines ethniques et linguistiques africaines s'est recomposee, au sein des communautes marronnes, en une culture et une langue nouvelles, tout en conservant des elements identifiables de cosmologies, de pratiques rituelles et de savoirs techniques (agriculture sur brulis, pharmacopee forestiere) d'origine africaine. Apres plusieurs decennies de guerre de marronnage, les Saamaka obtiennent en 1762 un traite de paix avec les autorites coloniales neerlandaises qui leur reconnait une autonomie territoriale dans le Haut-Suriname — un siecle avant l'abolition generale de l'esclavage au Suriname en 1863 — faisant d'eux l'un des rares peuples d'ascendance africaine des Ameriques a avoir conquis par les armes sa liberte collective et la reconnaissance politique de son autonomie avant l'abolition. Le lien historique avec l'Afrique n'est pas seulement demographique : la tradition orale saamaka, etudiee en particulier par l'anthropologue Richard Price a partir de recits recueillis aupres des descendants des premiers marrons (le corpus dit « First-Time »), constitue une memoire historique consciente et transmise du marronnage et de l'origine africaine des fondateurs, tandis que les pratiques religieuses contemporaines (culte des ancetres, categories d'esprits) sont documentees comme des prolongements directs de cosmologies ouest et centre-africaines recomposees en contexte de marronnage.",
+      "sources": [
+        {
+          "title": "Richard Price, « First-Time: The Historical Vision of an African American People »",
+          "url": "https://www.richandsally.net/first_time__the_historical_vision_of_an_african_american_people_8366.htm",
+          "tier": "referenced",
+          "notes": "Monographie academique fondatrice sur la conscience historique orale des Saamaka et l'origine africaine de leurs fondateurs ; page bibliographique de l'auteur, ouvrage publie initialement par Johns Hopkins University Press (1983). Tier fonde sur la nature academique et identifiable de la publication."
+        },
+        {
+          "title": "IWGIA — The Indigenous World 2023: Suriname",
+          "url": "https://iwgia.org/en/suriname/5106-iw-2023-suriname.html",
+          "tier": "official",
+          "notes": "Tier resolu depuis le catalogue des sources autorisees (domaine iwgia.org) ; documente le statut politique et territorial des peuples marrons du Suriname, dont les Saamaka, issu des traites coloniaux du 18e siecle."
+        }
+      ]
+    },
+    "culture": {
+      "majorRites": null,
+      "symbols": null,
+      "artsAndMusic": null,
+      "spiritualities": "Religion traditionnelle centree sur le culte des ancetres et sur des categories d'esprits (esprits de la foret, esprits des eaux) documentees comme prolongement direct de cosmologies ouest et centre-africaines ; environ un quart des Saamaka se declare aujourd'hui chretien, principalement morave depuis le milieu du 18e siecle, et dans une moindre mesure catholique."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Saamaka n'ont pas forme de royaume mais une confederation de clans autonomes sous l'autorite d'un gaanman, reconnue comme entite politique distincte par le traite de paix de 1762 avec les Pays-Bas.",
+      "relationsWithNeighbors": "Relations historiquement tendues puis apaisees avec l'administration coloniale neerlandaise apres 1762 ; relations de bon voisinage et d'echanges avec les peuples autochtones de l'interieur du Suriname ; proximite culturelle et linguistique avec les Matawai et les Kwinti, issus de la meme souche.",
+      "conflictsOrAlliances": "Guerres de marronnage contre les colons neerlandais durant la premiere moitie du 18e siecle, achevees par le traite de 1762 ; contentieux contemporain avec l'Etat surinamais autour de l'exploitation forestiere et miniere sur les terres traditionnelles, porte devant la Cour interamericaine des droits de l'homme (2007).",
+      "diaspora": "Diaspora urbaine importante a Paramaribo et dans sa peripherie ; communautes transfrontalieres en Guyane francaise (Haut-Maroni) et diaspora aux Pays-Bas, ancienne puissance coloniale."
+    },
+    "demography": {
+      "totalPopulation": 90000,
+      "referenceYear": 2014,
+      "source": "Richard Price, « The Maroon Population Explosion: Suriname and Guyane », New West Indian Guide 87(3-4), 2013 — estimation fondee sur le recensement de 2012 du Suriname et de la Guyane, projetee a 2014 ; repartition par zone telle que synthetisee dans la notice Wikipedia « Saramaka », verifiee en remontant a la source primaire chez Brill.",
+      "distributionByCountry": [
+        {
+          "country": "SUR",
+          "population": 57500,
+          "note": "Zones tribales du Haut-Suriname et de Brokopondo (28 500) et agglomeration de Paramaribo (29 000)."
+        },
+        {
+          "country": "GUF",
+          "population": 25000,
+          "note": "Guyane francaise, communautes du Haut-Maroni et du Lawa."
+        },
+        {
+          "country": "NLD",
+          "population": 7500,
+          "note": "Diaspora aux Pays-Bas."
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "SIL Ethnologue — Saramaccan language (srm)",
+        "url": "https://www.ethnologue.com/language/srm/",
+        "tier": "official",
+        "notes": "Tier resolu depuis le catalogue des sources autorisees (entree « ethnologue »)."
+      },
+      {
+        "title": "ISO 639-3 Registration Authority — srm",
+        "url": "https://iso639-3.sil.org/code/srm",
+        "tier": "official",
+        "notes": "Tier resolu depuis le catalogue des sources autorisees (domaine sil.org) ; confirme le code ISO 639-3 du saamaka."
+      },
+      {
+        "title": "Minority Rights Group International — Maroons in Suriname",
+        "url": "https://minorityrights.org/communities/maroons/",
+        "tier": "referenced",
+        "notes": "Rapport identifiable et publie par une organisation de reference sur les droits des minorites ; distingue les Saamaka comme l'un des deux plus grands peuples marrons du Suriname et documente le traite de 1762."
+      },
+      {
+        "title": "Richard Price, « The Maroon Population Explosion: Suriname and Guyane »",
+        "url": "https://brill.com/view/journals/nwig/87/3-4/article-p323_3.xml?language=en",
+        "tier": "referenced",
+        "notes": "Article academique evalue par les pairs, revue New West Indian Guide (Brill, 2013) ; source des chiffres demographiques."
+      }
+    ]
+  }
+}

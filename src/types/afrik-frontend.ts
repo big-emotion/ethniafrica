@@ -19,6 +19,7 @@ import type {
   OriginsSection,
   OrganizationSection,
   LanguagesSection,
+  HistoricalAffiliationSection,
   DetailedCultureSection,
   HistoricalRoleSection,
   GlobalDemographySection,
@@ -30,7 +31,9 @@ import type {
   DemographicsSection,
   DecolonialHeader,
   PeopleReference,
+  ExternalIdentifiersSection,
 } from "./afrik";
+import type { PersonPeopleLink } from "./persons";
 
 // ==========================================
 // PAGINATION
@@ -180,6 +183,14 @@ export interface PeopleDetail {
   // Section 5: Langues et sous-familles
   languages?: LanguagesSection;
 
+  // Identifiants de registre externes (DEC-033) — jamais une URL stockée.
+  externalIdentifiers?: ExternalIdentifiersSection;
+
+  // Filiation historique — REQ-127. Distinct de languageFamilyId ; présent
+  // seulement pour les peuples sans filiation linguistique défendable vers
+  // une famille africaine (ex. créolophones). Voir DIRECTIVES-AFRIK.md §12.
+  historicalAffiliation?: HistoricalAffiliationSection;
+
   // Section 6: Culture, rites, traditions (A-F)
   culture?: DetailedCultureSection;
 
@@ -304,10 +315,7 @@ export interface CountryDetail {
 // ==========================================
 
 export type SearchEntityType =
-  | "country"
-  | "people"
-  | "language"
-  | "languageFamily";
+  "country" | "people" | "language" | "languageFamily" | "person" | "patronyme";
 
 /**
  * Filtres de recherche
@@ -354,6 +362,68 @@ export interface SearchResult {
   autonym?: string;
   /** Exonymes connus, dans l'ordre de la fiche. */
   exonyms?: string[];
+  /**
+   * Number of source entries the fiche declares. Set by the `people` branch
+   * (people fiche) and, since ETNI-1804, by the `patronyme` and `language`
+   * branches too (`mapSearchEnvelope`).
+   */
+  sourceCount?: number;
+  /** Clickable source links whose fiche entries provide a title and URL. */
+  externalLinks?: Array<{ title: string; url: string }>;
+  /**
+   * Identifiant partagé par les fiches d'un même peuple scindé en plusieurs
+   * fiches concurrentes (ETNI-1391) — présent uniquement sur un résultat
+   * `type: "people"` dont la fiche corpus déclare `peopleGroupId`.
+   */
+  peopleGroupId?: string;
+  /** Libellé d'affichage du groupe, ex. "Peul / Fulani". */
+  peopleGroupLabel?: string;
+  /**
+   * Catégorie de rôle d'une personne (REQ-126), p. ex. `ethnographer`,
+   * `head_of_state`. Toujours renseigné sur un résultat `type: "person"` —
+   * `mapSearchEnvelope` ne construit jamais un tel résultat sans elle,
+   * parce que le rôle doit rester visible sans action du lecteur.
+   */
+  roleCategory?: string;
+  /**
+   * Le lien typé d'une personne à chaque peuple qu'elle cite — `membership`
+   * (en est membre) ou `observation` (l'a étudié, ex. un·e ethnographe).
+   * Jamais déduit, jamais réduit à l'appartenance : c'est la valeur que la
+   * fiche déclare.
+   */
+  peopleLinks?: PersonPeopleLink[];
+  /**
+   * Naming system the fiche declares (`clan_name`, `nisba`, …) — set by the
+   * `patronyme` branch of `mapSearchEnvelope` (ETNI-1804).
+   */
+  nameSystem?: string;
+  /**
+   * Caste or social function the name carries, when the fiche declares one —
+   * set by the `patronyme` branch of `mapSearchEnvelope` (ETNI-1804).
+   */
+  casteOrSocialFunction?: string | null;
+  /**
+   * Ids of the peoples the fiche associates this name with — set by the
+   * `patronyme` branch of `mapSearchEnvelope` (ETNI-1804).
+   */
+  associatedPeopleIds?: string[];
+  /**
+   * Ids of the countries the fiche marks as an `attested` (not `supposed`)
+   * attestation of this name — set by the `patronyme` branch of
+   * `mapSearchEnvelope` (ETNI-1804).
+   */
+  attestedCountryIds?: string[];
+  /**
+   * ISO 639-3 code — identical to `id` on a `language` result, carried under
+   * its own name so a consumer never has to know that. Set by the
+   * `language` branch of `mapSearchEnvelope` (ETNI-1804).
+   */
+  isoCode639_3?: string;
+  /**
+   * Ids of the peoples the fiche lists as speakers, when resolved to a
+   * fiche — set by the `language` branch of `mapSearchEnvelope` (ETNI-1804).
+   */
+  speakerPeopleIds?: string[];
 }
 
 /**
@@ -363,6 +433,21 @@ export interface SearchResponse {
   data: SearchResult[];
   meta: PaginationMeta;
   filters: SearchFilters;
+}
+
+/**
+ * Near-miss lead (REQ-125): what the search engine almost understood, shown
+ * only when a search's `total` is 0. `type` reuses `SearchEntityType`'s
+ * naming (`languageFamily`, not the API's `family`) so a lead can share
+ * `SEARCH_ENTITY_ACCENT`'s accent and label with a real result of the same
+ * kind — languages and persons are not candidates for a lead any more than
+ * they are named in `SEARCH_LABEL`.
+ */
+export interface SearchLead {
+  type: Extract<SearchEntityType, "people" | "country" | "languageFamily">;
+  id: string;
+  name: string;
+  similarity: number;
 }
 
 // ==========================================
@@ -516,6 +601,7 @@ export type {
   OriginsSection,
   OrganizationSection,
   LanguagesSection,
+  HistoricalAffiliationSection,
   DetailedCultureSection,
   HistoricalRoleSection,
   GlobalDemographySection,
@@ -523,4 +609,5 @@ export type {
   Kingdom,
   DecolonialHeader,
   PeopleReference,
+  ExternalIdentifiersSection,
 } from "./afrik";

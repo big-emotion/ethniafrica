@@ -1,0 +1,76 @@
+/**
+ * « Qui a donné ce nom ? » — the dossier's own dress.
+ *
+ * A sheet rather than a run of arbitrary utilities, following `facet-hub.css`
+ * and `fiche-chapter-bar.css`: the wash below needs a gradient, a pseudo
+ * element and a height transition, which is six bracket utilities for one
+ * effect nobody could then find again.
+ *
+ * Nothing here writes a font-size (`afh/no-raw-font-size` is an error across
+ * `src/`, and the rule does not parse CSS — the absence is deliberate, not a
+ * loophole) and nothing writes a colour literal. Every value is a token, so
+ * `prefers-reduced-motion` is honoured for free: `motion.css` collapses the
+ * duration tokens to 0.01ms and flattens the spring to `linear`.
+ */
+
+.nommer-tile {
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--afh-duration-fast) var(--afh-ease-out);
+}
+
+/* The wash rises from the floor of the tile — the gesture `AccessAxes` uses
+   on the home's axis cards, so a reader meets one hover language on the site,
+   not two. `::after` on the Card is free: the stretched anchor owns its own. */
+.nommer-tile::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 0;
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--accent) 14%, transparent),
+    transparent
+  );
+  pointer-events: none;
+  transition: height var(--afh-duration-base) var(--afh-ease-out);
+}
+
+.nommer-tile:hover::after,
+.nommer-tile:focus-within::after {
+  height: 100%;
+}
+
+.nommer-tile:hover,
+.nommer-tile:focus-within {
+  border-color: var(--accent);
+}
+
+/**
+ * The tiles arrive in sequence on first paint.
+ *
+ * Wrapped in `no-preference` rather than relying on the duration tokens,
+ * because `animation-delay` is not a duration: `motion.css` collapses
+ * `--afh-duration-slow` to 0.01ms under `reduce` and leaves a hand-written
+ * 240ms delay standing. Un-guarded, the fifth tile would sit invisible for a
+ * quarter of a second and then snap in — worse than the animation it replaces.
+ * `AxisModulePanel` carries exactly that defect today; this does not.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes nommer-tile-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .nommer-tile-slot {
+    animation: nommer-tile-in var(--afh-duration-slow) var(--afh-ease-spring)
+      both;
+    animation-delay: calc(var(--nommer-index, 0) * 60ms);
+  }
+}

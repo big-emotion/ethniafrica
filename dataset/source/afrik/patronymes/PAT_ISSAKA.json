@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche ciblé sur Issaka ; l'origine proposée vient d'une contribution communautaire non vérifiée et l'association zarma n'est pas confirmée."
+  },
+  "id": "PAT_ISSAKA",
+  "nameMain": "Issaka",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Issaka",
+      "attestations": [
+        {
+          "countryId": "NER",
+          "sourceRefs": [
+            "behindthename-issaka-submitted",
+            "niger-mae-issaka-diamballa"
+          ]
+        }
+      ]
+    },
+    {
+      "spelling": "Issaca",
+      "attestations": [
+        { "countryId": "NER", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Issaka est présenté comme une forme d'Ishaq employée dans l'Afrique de l'Ouest francophone.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["behindthename-issaka-submitted"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ZARMA",
+      "status": "supposed",
+      "sourceRefs": ["niger-mae-issaka-diamballa"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NER",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "behindthename-issaka-submitted",
+      "title": "User-submitted name Issaka",
+      "url": "https://www.behindthename.com/name/issaka/submitted",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Contribution d'utilisateur consultée en anglais ; le site précise qu'elle n'a pas été vérifiée par son équipe éditoriale. Elle rapproche Issaka d'Ishaq dans l'Afrique de l'Ouest francophone ; cette proposition reste au statut claimed."
+    },
+    {
+      "sourceKey": "niger-mae-issaka-diamballa",
+      "title": "M. Issaka Diamballa",
+      "url": "https://diplomatie.gouv.ne/index.php/le-ministere/actualites/11-liste-ministres-ae/55-m-issaka-diamballa",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Notice du ministère nigérien des Affaires étrangères, consultée en français. Elle atteste Issaka Diamballa comme secrétaire d'État de 1989 à 1991 ; elle ne renseigne ni son peuple ni l'étymologie du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches sur « Issaka » dans les corpus et travaux songhay-zarma, avec les termes tradition orale, griot et jasare, n'ont livré aucun récit attribué et transcrit."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues bibliographiques, notices d'autorité et résultats sur Issaka/Ishaq ont été consultés ; aucun document historique ne retrace l'introduction d'Issaka chez les Zarma."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les travaux d'anthroponymie songhay-zarma et les recherches associant « Issaka » à Zarma, Djerma et Songhay n'ont fourni aucune attestation ethnique dédiée ; l'association initiale reste donc supposée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches associant « Issaka » à parenté à plaisanterie, alliance, cousinage et sanankuya n'ont identifié aucune paire documentée entre deux fiches PAT existantes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches associant « Issaka » aux termes caste, métier héréditaire, jasare et fonction sociale n'ont fourni aucune attribution sourcée applicable au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La notice ministérielle atteste un porteur sans indiquer son décès ; les catalogues d'autorité consultés n'ont pas fourni de porteur décédé vérifiable."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les formes Issaka, Issaca et Ishaq ont été distinguées dans les recherches onomastiques ; aucune origine indépendante n'a été établie pour constituer un homonyme."
+    }
+  ]
+}

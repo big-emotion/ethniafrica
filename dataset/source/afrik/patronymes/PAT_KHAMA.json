@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KHAMA",
+  "nameMain": "Khama",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Khama",
+      "attestations": [
+        {
+          "countryId": "BWA",
+          "sourceRefs": ["cambridge-tshekedi-khama"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "L'étude historique consacrée à Tshekedi Khama replace les Khama dans l'État tswana bangwato du protectorat du Bechuanaland et suit la succession de Seretse Khama à son fils Ian Khama à la chefferie en 1979. Elle établit une lignée historique portant ce nom au Botswana, mais ni l'étymologie de Khama ni une règle de transmission patronymique générale.",
+        "claimStatus": "established",
+        "sourceRefs": ["cambridge-tshekedi-khama"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_TSWANA",
+      "status": "attested",
+      "sourceRefs": ["cambridge-tshekedi-khama"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "BWA",
+      "status": "attested",
+      "sourceRefs": ["cambridge-tshekedi-khama"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "cambridge-tshekedi-khama",
+      "title": "Tshekedi Khama and Opposition to the British Administration of the Bechuanaland Protectorate, 1926–1936",
+      "url": "https://www.cambridge.org/core/journals/journal-of-african-history/article/abs/tshekedi-khama-and-opposition-to-the-british-administration-of-the-bechuanaland-protectorate-19261936/176771A4B1ACD451C70B1A903CCFDB81",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article du Journal of African History consulté sur Cambridge Core. Il documente Tshekedi, Seretse et Ian Khama dans l'histoire de la chefferie bangwato et précise le contexte tswana ; il ne propose aucune analyse linguistique du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web combinant « Khama », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article du Journal of African History sur Tshekedi Khama et la succession de la chefferie bangwato, n'ont pas établi que la catégorie provisoire « clan_name » décrive ce nom lui-même ; elle est conservée comme hypothèse de classement en attendant une étude anthroponymique dédiée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Khama », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article du Journal of African History sur Tshekedi Khama et la succession de la chefferie bangwato, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Khama », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article du Journal of African History sur Tshekedi Khama et la succession de la chefferie bangwato, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Khama », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article du Journal of African History sur Tshekedi Khama et la succession de la chefferie bangwato, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Khama », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article du Journal of African History sur Tshekedi Khama et la succession de la chefferie bangwato, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Khama », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article du Journal of African History sur Tshekedi Khama et la succession de la chefferie bangwato, n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

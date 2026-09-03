@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Balogun ; les lacunes consignent les recherches restées sans résultat."
+  },
+  "id": "PAT_BALOGUN",
+  "nameMain": "Balogun",
+  "nameSystem": "praise_name",
+  "spellings": [
+    {
+      "spelling": "Balogun",
+      "attestations": [
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["yorubanames-balogun", "afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "YorubaNames analyse Balógun comme ba(ba)-ní-ogun, « père dans la guerre » ou « le général ».",
+        "claimStatus": "claimed",
+        "sourceRefs": ["yorubanames-balogun"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_YORUBA",
+      "status": "attested",
+      "sourceRefs": ["yorubanames-balogun"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": {
+    "value": "Titre ou épithète associé au commandement militaire (« général »), sans preuve d'une fonction héréditaire.",
+    "sourceRefs": ["yorubanames-balogun"]
+  },
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "yorubanames-balogun",
+      "title": "Balógun — YorubaNames",
+      "url": "https://www.yorubaname.com/entries/Balogun",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page de la base collaborative YorubaNames consultée directement pour Balogun. Elle fournit la forme tonale, une glose et une segmentation morphologique ; son contenu communautaire est conservé au niveau « unverified »."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Balogun Yoruba oral tradition griot transcription » et « Balogun oriki oral history » ainsi que la page YorubaNames consultée n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Balogun Yoruba chronicle manuscript colonial register » et « Balogun archive Nigeria Benin » n'ont livré aucune chronique ni pièce d'archives établissant une histoire propre à cette forme."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Balogun Yoruba joking relationship », « Balogun joking kinship » et « Balogun sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la page YorubaNames consultée et les recherches « Balogun obituary biography deceased » n'ont pas permis d'établir un porteur décédé avec une notice suffisamment fiable sans recourir à Wikipédia."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Balogun homonym etymology » et « Balogun surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la page YorubaNames consultée décrit l'origine ou la fonction du nom, mais ne documente pas son mode de transmission contemporain ; les recherches « Balogun hereditary family name Yoruba » n'ont pas tranché."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "la page YorubaNames consultée ne permet pas de déterminer si l'emploi documenté désigne un individu, une charge, une maison ou un lignage ; les recherches ciblées sur Balogun n'ont pas livré de source décisive."
+    }
+  ]
+}

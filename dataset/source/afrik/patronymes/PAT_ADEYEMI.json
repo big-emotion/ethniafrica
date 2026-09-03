@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Adeyemi ; les lacunes consignent les recherches restées sans résultat."
+  },
+  "id": "PAT_ADEYEMI",
+  "nameMain": "Adeyemi",
+  "nameSystem": "praise_name",
+  "spellings": [
+    {
+      "spelling": "Adeyemi",
+      "attestations": [
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["yorubanames-adeyemi", "afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "YorubaNames donne deux analyses de Adéyẹmí : adé-yẹ-mí (« la couronne me sied ») et a-dé-yẹ-mí (« celui ou celle qui arrive pour me convenir »).",
+        "claimStatus": "claimed",
+        "sourceRefs": ["yorubanames-adeyemi"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_YORUBA",
+      "status": "attested",
+      "sourceRefs": ["yorubanames-adeyemi"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "yorubanames-adeyemi",
+      "title": "Adéyẹmí — YorubaNames",
+      "url": "https://www.yorubaname.com/entries/Ade%CD%81y%E1%BA%B9mi%CD%81",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page de la base collaborative YorubaNames consultée directement pour Adeyemi. Elle fournit la forme tonale, une glose et une segmentation morphologique ; son contenu communautaire est conservé au niveau « unverified »."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Adeyemi Yoruba oral tradition griot transcription » et « Adeyemi oriki oral history » ainsi que la page YorubaNames consultée n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Adeyemi Yoruba chronicle manuscript colonial register » et « Adeyemi archive Nigeria Benin » n'ont livré aucune chronique ni pièce d'archives établissant une histoire propre à cette forme."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Adeyemi Yoruba joking relationship », « Adeyemi joking kinship » et « Adeyemi sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la page YorubaNames consultée et les recherches « Adeyemi Yoruba hereditary occupation caste title » n'ont associé ce nom à aucune fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la page YorubaNames consultée et les recherches « Adeyemi obituary biography deceased » n'ont pas permis d'établir un porteur décédé avec une notice suffisamment fiable sans recourir à Wikipédia."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Adeyemi homonym etymology » et « Adeyemi surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
+    }
+  ]
+}

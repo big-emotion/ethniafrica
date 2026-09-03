@@ -50,6 +50,18 @@ export interface FicheSourceEntry {
   url: string | null;
   standing: SourceTier | "needs_review";
   notes?: string;
+  /**
+   * Its place in the fiche's bibliography, when the fiche has one.
+   *
+   * Optional because only a fiche carrying note callouts numbers its sources:
+   * country and family declare sources and cite none of them from the prose,
+   * and numbering a list nothing points at promises a link that does not
+   * exist. `ficheSourceEntries` never sets it — `buildFicheSourceRegister`
+   * does.
+   */
+  number?: number;
+  /** The `sources` row this entry was matched to, when one exists. */
+  sourceId?: string;
 }
 
 /**

@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français prudent : l’attestation marocaine est officielle, tandis que l’association chleuhe et l’origine restent non établies."
+  },
+  "id": "PAT_AKHANNOUCH",
+  "nameMain": "Akhannouch",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Akhannouch",
+      "attestations": [
+        { "countryId": "MAR", "sourceRefs": ["akhannouch-gov-ma"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_CHLEUH",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MAR",
+      "status": "attested",
+      "sourceRefs": ["akhannouch-gov-ma"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "akhannouch-gov-ma",
+      "title": "Sa Majesté le Roi nomme M. Aziz Akhannouch Chef du gouvernement",
+      "url": "https://www.cg.gov.ma/fr/node/10419",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Portail officiel du Chef du gouvernement du Royaume du Maroc, 10 septembre 2021. La page a été consultée pour confirmer la graphie et l’usage marocain ; la personne citée est vivante et n’est donc pas versée parmi les porteurs."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les catalogues de l’IRCAM, de l’UMMTO, Persée, OpenEdition et Google Scholar ont été interrogés avec « Akhannouch patronyme », « Akhannouch étymologie », « ⴰⵅⵏⵏⵓⵛ » et « أخنوش أصل اللقب » ; aucune étude anthroponymique ou tradition attribuée n’a été trouvée."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La page gouvernementale n’atteste qu’un usage contemporain du nom. Les recherches « Akhannouch filiation », « famille Akhannouch généalogie » et leurs équivalents arabes n’ont pas établi la règle de transmission."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches combinant Akhannouch avec « alliance tribale », « parenté à plaisanterie », « pacte » et « leff » n’ont livré aucune paire documentée avec une autre fiche PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La source gouvernementale et les recherches « Akhannouch métier héréditaire », « caste » et « fonction sociale » ne signalent aucune fonction héréditaire attachée au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques et catalogues d’autorité ont confirmé surtout des personnes vivantes, notamment Aziz Akhannouch ; le protocole exclut ces personnes et aucun porteur décédé suffisamment documenté n’a été trouvé."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les catalogues d’autorité, répertoires onomastiques et recherches multilingues consultés n’ont pas permis d’identifier deux origines distinctes sous la graphie Akhannouch."
+    }
+  ]
+}

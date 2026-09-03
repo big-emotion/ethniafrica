@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français limité à l'attestation centrafricaine publiée par le gouvernement."
+  },
+  "id": "PAT_SARANDJI",
+  "nameMain": "Sarandji",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Sarandji",
+      "attestations": [
+        { "countryId": "CAF", "sourceRefs": ["gouv-cf-sarandji"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [],
+  "countries": [
+    {
+      "countryId": "CAF",
+      "status": "attested",
+      "sourceRefs": ["gouv-cf-sarandji"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "gouv-cf-sarandji",
+      "title": "Le Premier ministre",
+      "url": "https://www.gouv.cf/article/17/le-premier-ministre",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Page institutionnelle du gouvernement de la République centrafricaine consacrée à Simplice Mathieu Sarandji. Elle atteste la graphie et le contexte national, mais ne documente ni l'origine, ni l'affiliation ethnique, ni le mode de transmission du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Sarandji », « Sarandji onomastique », « Sarandji anthroponymie » et « Sarandji étymologie » dans les catalogues universitaires, Persée, OpenEdition, Google Scholar et les publications centrafricaines n'ont livré ni récit d'origine, ni chronique ancienne, ni reconstruction linguistique."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "La page gouvernementale atteste un porteur centrafricain sans indiquer son appartenance ethnique ; aucune source dédiée trouvée n'a confirmé les Sara, association provenant uniquement de la file de candidats et donc retirée."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "La page gouvernementale emploie Sarandji dans un nom personnel sans le définir comme nom de clan ; clan_name demeure la valeur technique héritée faute de catégorie indéterminée dans le modèle."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La biographie gouvernementale et les recherches académiques ciblées ne décrivent aucun mode de transmission de Sarandji ; la valeur reste donc other."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Sarandji alliance clan » et « Sarandji parenté à plaisanterie » n'ont livré aucune alliance entre patronymes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La fonction de Premier ministre relève de la biographie du porteur cité ; aucune caste ni fonction sociale héréditaire associée au nom n'a été trouvée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La page institutionnelle présente Simplice Mathieu Sarandji comme une personne vivante et ne constitue pas une auto-identification conforme au schéma ; aucun porteur n'est enregistré."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes dans les catalogues et publications centrafricaines n'ont pas établi un homonyme de Sarandji doté d'une origine distincte."
+    }
+  ]
+}

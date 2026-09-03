@@ -4,7 +4,6 @@ import {
   buildT2AutonymTemplate,
   buildT3MainCountryTemplate,
   buildT4MainLanguageTemplate,
-  buildT5IsoCodeTemplate,
   buildT6RitesTemplate,
   buildT12ContestedExonymTemplate,
   buildT13EtymologyTemplate,
@@ -30,7 +29,6 @@ const fiche: QuizPeopleFixture = {
     { countryId: "TGO", countryNameFr: "Togo", population: 3_000_000 },
   ],
   mainLanguage: { autonym: "Èdè Yorùbá", exonym: "Yoruba" },
-  isoCode: "yor",
   totalPopulation: 50_000_000,
   exonyms: [],
   rubrics: { T6: null, T7: null, T8: null, T9: null, T10: null, T11: null },
@@ -195,28 +193,6 @@ describe("buildT4MainLanguageTemplate", () => {
     const candidate = buildT4MainLanguageTemplate(fiche, [
       { autonym: "Kiswahili" },
     ]);
-    expect(candidate).toBeNull();
-  });
-});
-
-describe("buildT5IsoCodeTemplate", () => {
-  const pool = ["swa", "run", "tsn", "hau"];
-
-  // @req REQ-080
-  it("returns the fiche's ISO 639-3 code as the correct option", () => {
-    const candidate = buildT5IsoCodeTemplate(fiche, pool);
-    expect(candidate).not.toBeNull();
-    expect(candidate!.templateId).toBe("T5");
-    expect(candidate!.fieldPath).toBe("content.languages.isoCodes");
-    expect(candidate!.baselineDifficulty).toBe(4);
-    expect(candidate!.optionsFr[candidate!.correctOption]).toBe("yor");
-    const distinct = new Set(candidate!.optionsFr as string[]);
-    expect(distinct.size).toBe(4);
-  });
-
-  // @req REQ-080
-  it("returns null when fewer than 3 valid distractors remain", () => {
-    const candidate = buildT5IsoCodeTemplate(fiche, ["swa", "yor"]);
     expect(candidate).toBeNull();
   });
 });
@@ -432,7 +408,7 @@ describe("the country templates", () => {
 
   /**
    * T16 is the one country round whose answer is an atom rather than the
-   * subject, so it names its country in the stem like T1-T5 do.
+   * subject, so it names its country in the stem like T1-T4 do.
    */
   // @req REQ-121
   it("asks which country a kingdom stood on, naming the country in the stem", () => {
@@ -491,7 +467,6 @@ describe("questionTemplateBuilders barrel", () => {
       [...QUIZ_TEMPLATE_IDS].sort()
     );
     expect(questionTemplateBuilders.T1).toBe(buildT1LanguageFamilyTemplate);
-    expect(questionTemplateBuilders.T5).toBe(buildT5IsoCodeTemplate);
     expect(questionTemplateBuilders.T12).toBe(buildT12ContestedExonymTemplate);
   });
 });

@@ -10,22 +10,32 @@ import {
 
 import { AnecdoteCard } from "@/components/anecdotes/AnecdoteCard";
 import { FlagTarget } from "@/components/flags/FlagTarget";
+import { shuffleAnecdoteOrder } from "@/lib/home/anecdoteDeck";
 import {
-  shuffleDidYouKnowDeck,
-  type DidYouKnowFact,
-} from "@/lib/home/didYouKnowFacts";
+  loadAnecdoteCards,
+  type AnecdoteCardData,
+} from "@/lib/home/anecdoteCards";
 import type { AnecdoteImageSide } from "@/lib/home/didYouKnowPresentation";
 import { accentForModule } from "@/lib/hubs/moduleRegistry";
 import type { Language } from "@/types/shared";
 
 export interface AnecdoteReaderProps {
   language: Language;
-  /** The bank, already drawn server-side so the first card is not a flash. */
-  deck: DidYouKnowFact[];
-  /** The fact a shared link names, when it names one still in the bank. */
-  initialFactId?: string | null;
+  /**
+   * The reading order, as identifiers. The prose stays behind
+   * `loadCards` so that opening the page costs one anecdote, not the bank.
+   */
+  deck: string[];
+  /**
+   * The card the page opens on, already resolved server-side so the first
+   * screen is complete without a fetch and without a flash. It is the first
+   * entry of `deck`; the page puts a shared link's anecdote there.
+   */
+  openingCard: AnecdoteCardData;
   /** Which side the first card's picture takes; the rest alternate from it. */
   openingImageSide?: AnecdoteImageSide;
+  /** Injected by the tests; production defers to the bank's own chunk. */
+  loadCards?: () => Promise<Map<string, AnecdoteCardData>>;
 }
 
 /**
@@ -116,14 +126,17 @@ function writeMarks(marks: string[]): void {
 export function AnecdoteReader({
   language,
   deck,
-  initialFactId = null,
+  openingCard,
   openingImageSide = "end",
+  loadCards = loadAnecdoteCards,
 }: AnecdoteReaderProps) {
-  const [order, setOrder] = useState<DidYouKnowFact[]>(deck);
-  const [position, setPosition] = useState(() => {
-    const named = deck.findIndex((fact) => fact.id === initialFactId);
-    return named >= 0 ? named : 0;
-  });
+  const [order, setOrder] = useState<string[]>(deck);
+  const [position, setPosition] = useState(0);
+  // Seeded with the one card the server rendered. The rest join it the first
+  // time the reader turns, in a single deferred chunk.
+  const [cards, setCards] = useState<Map<string, AnecdoteCardData>>(
+    () => new Map([[openingCard.fact.id, openingCard]])
+  );
   // Both panels are scoped to the fact that opened them, so turning the card
   // closes them without an effect reaching in to reset anything.
   const [shareOpenFor, setShareOpenFor] = useState<string | null>(null);
@@ -131,7 +144,8 @@ export function AnecdoteReader({
 
   const marked = useSyncExternalStore(subscribeToMarks, readMarks, noMarks);
 
-  const fact = order[position];
+  const card = cards.get(order[position]);
+  const fact = card?.fact;
 
   // The address follows the card so that sharing, reloading and going back
   // all name the anecdote on screen. replaceState rather than the router:
@@ -144,14 +158,30 @@ export function AnecdoteReader({
     window.history.replaceState(null, "", url.toString());
   }, [fact]);
 
-  const goNext = useCallback(() => {
-    if (position + 1 < order.length) {
-      setPosition(position + 1);
-      return;
+  // Turning is async only on the first press, and only because the prose of
+  // the other cards has not been fetched yet. A press that cannot be honoured
+  // — the chunk failed to load — leaves the reader on the card they had
+  // rather than blanking the page.
+  const goNext = useCallback(async () => {
+    const walked = position + 1 < order.length;
+    const nextOrder = walked
+      ? order
+      : shuffleAnecdoteOrder(order, Math.random, fact?.id ?? null);
+    const nextPosition = walked ? position + 1 : 0;
+    const nextId = nextOrder[nextPosition];
+
+    if (!cards.has(nextId)) {
+      try {
+        const bank = await loadCards();
+        setCards((known) => new Map([...known, ...bank]));
+      } catch {
+        return;
+      }
     }
-    setOrder(shuffleDidYouKnowDeck(Math.random, order, fact?.id ?? null));
-    setPosition(0);
-  }, [fact, order, position]);
+
+    if (!walked) setOrder(nextOrder);
+    setPosition(nextPosition);
+  }, [cards, fact, loadCards, order, position]);
 
   const toggleMark = useCallback(() => {
     if (!fact) return;
@@ -227,10 +257,15 @@ export function AnecdoteReader({
           without this the only thing announced is that focus is still where
           the reader left it. */}
       <p className="sr-only" aria-live="polite">
-        {`Anecdote ${position + 1} sur ${order.length} : ${fact.headline}`}
+        {`Anecdote suivante : ${fact.headline}`}
       </p>
 
-      <AnecdoteCard language={language} fact={fact} imageSide={imageSide} />
+      <AnecdoteCard
+        language={language}
+        fact={fact}
+        illustration={card?.illustration}
+        imageSide={imageSide}
+      />
 
       <div className="anecdote-controls">
         <button type="button" className="anecdote-next" onClick={goNext}>
@@ -332,11 +367,16 @@ export function AnecdoteReader({
           </ul>
         ) : null}
 
-        <p className="anecdote-progress">
-          {marked.length > 0
-            ? `${position + 1} / ${order.length} — ${marked.length} retenue${marked.length > 1 ? "s" : ""} sur cet appareil`
-            : `${position + 1} / ${order.length}`}
-        </p>
+        {/* No « 3 / 67 ». A tally under a card the reader did not choose is a
+            length to get through, and it turns an invitation into a chore —
+            the reader starts counting what is left instead of reading what is
+            there. What survives is the reader's own trail, which they built
+            and which says nothing about how much remains. */}
+        {marked.length > 0 ? (
+          <p className="anecdote-progress">
+            {`${marked.length} anecdote${marked.length > 1 ? "s" : ""} retenue${marked.length > 1 ? "s" : ""} sur cet appareil`}
+          </p>
+        ) : null}
       </div>
 
       <style>{`
@@ -452,5 +492,3 @@ export function AnecdoteReader({
     </div>
   );
 }
-
-export default AnecdoteReader;

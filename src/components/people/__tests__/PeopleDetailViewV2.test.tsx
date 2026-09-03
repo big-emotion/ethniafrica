@@ -221,4 +221,43 @@ describe("PeopleDetailViewV2", () => {
       within(flagTarget).getByRole("button", { name: "Signaler cette section" })
     ).toBeEnabled();
   });
+
+  // historicalAffiliation only applies to a people with no defensible
+  // linguistic-family affiliation to an African family (e.g. Creole-speaking
+  // groups); its absence is inapplicability for every other fiche, not a
+  // corpus gap, so it carries no missing marker — same doctrine as the
+  // globe's grammar section and colonial fragmentation above.
+  // @req REQ-127
+  it("prints the historical-affiliation section when the fiche carries one, and omits it otherwise", () => {
+    render(
+      <PeopleDetailViewV2
+        people={{
+          ...ewe,
+          historicalAffiliation: {
+            description:
+              "Peuple afro-descendant formé par la traite transatlantique.",
+            sources: [
+              {
+                title: "UNESCO — Mémoire du monde, route des esclaves",
+                url: "https://www.unesco.org/en/memory-world",
+                tier: "official",
+              },
+            ],
+          },
+        }}
+      />
+    );
+
+    expect(
+      screen.getByText(
+        /Peuple afro-descendant formé par la traite transatlantique/
+      )
+    ).toBeInTheDocument();
+
+    cleanup();
+    render(<PeopleDetailViewV2 people={ewe} />);
+    expect(
+      screen.queryByText(/formé par la traite transatlantique/)
+    ).not.toBeInTheDocument();
+  });
 });

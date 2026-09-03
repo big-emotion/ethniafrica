@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité à une attestation individuelle de Randriamampionona ; aucune origine ou transmission n'a été établie."
+  },
+  "id": "PAT_RANDRIAMAMPIONONA",
+  "nameMain": "Randriamampionona",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Randriamampionona",
+      "attestations": [
+        {
+          "countryId": "MDG",
+          "sourceRefs": ["academia-denis-randriamampionona"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MERINA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["academia-denis-randriamampionona"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "academia-denis-randriamampionona",
+      "title": "Denis Randriamampionona — University of Antananarivo College of Agronomics Sciences",
+      "url": "https://radisoncelestin.academia.edu/DenisRandriamampionona",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Profil individuel sur Academia.edu, non contrôlé par l'université. Il atteste la graphie et un rattachement professionnel à l'Université d'Antananarivo ; sa nature autoéditée impose le niveau non vérifié."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Randriamampionona etymology », « Randriamampionona onomastics », leurs équivalents français, Google Books et les résultats académiques n'ont livré ni récit attribué, ni chronique d'origine, ni reconstruction linguistique."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Le profil atteste un individu sans filiation. Les recherches Randriamampionona avec père, fils, famille et généalogie n'ont pas établi le mode de transmission ; « other » maintient l'indétermination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source consultée n'établit l'unité sociale historiquement désignée par Randriamampionona."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches Randriamampionona avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches exactes associant Randriamampionona à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; la fonction universitaire du porteur est individuelle."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Le profil consulté ne documente aucun décès et ne peut donc alimenter la liste des porteurs décédés. Les recherches n'ont livré aucun autre porteur décédé avec une source vérifiable."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes n'établissent pas de lignée Randriamampionona d'origine distincte."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KIWANUKA",
+  "nameMain": "Kiwanuka",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Kiwanuka",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["lugira-kiwanuka"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Aloysius M. Lugira traduit Kiwanuka par « quelque chose qui descend à grande vitesse » et présente Kiwanuka comme la divinité baganda du tonnerre, de la foudre et de la fécondité. Il précise que des parents ayant obtenu un enfant après l'avoir invoquée peuvent nommer un fils Kiwanuka ou une fille Nakiwanuka : il s'agit ici d'un nom individuel votif, non d'un nom de clan totémique.",
+        "claimStatus": "established",
+        "sourceRefs": ["lugira-kiwanuka"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BAGANDA",
+      "status": "attested",
+      "sourceRefs": ["lugira-kiwanuka"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["lugira-kiwanuka"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "lugira-kiwanuka",
+      "title": "World Religions: African Traditional Religion",
+      "url": "https://oldmis.kp.ac.rw/admin/admin_panel/kp_lms/files/digital/Core%20Books/Theology/African%20Traditional%20-%20Aloysius%20M.%20Lugira.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ouvrage d'Aloysius M. Lugira consulté dans le PDF intégral. Le chapitre sur le monde spirituel baganda donne le sens de Kiwanuka, ses fonctions divines et la pratique consistant à attribuer ce nom après une prière féconde."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kiwanuka », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'ouvrage d'Aloysius M. Lugira sur la religion traditionnelle africaine, notamment sa notice Kiwanuka consacrée au monde spirituel baganda, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kiwanuka », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'ouvrage d'Aloysius M. Lugira sur la religion traditionnelle africaine, notamment sa notice Kiwanuka consacrée au monde spirituel baganda, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kiwanuka », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'ouvrage d'Aloysius M. Lugira sur la religion traditionnelle africaine, notamment sa notice Kiwanuka consacrée au monde spirituel baganda, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kiwanuka », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'ouvrage d'Aloysius M. Lugira sur la religion traditionnelle africaine, notamment sa notice Kiwanuka consacrée au monde spirituel baganda, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    }
+  ]
+}

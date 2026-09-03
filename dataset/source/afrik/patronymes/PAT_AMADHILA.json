@@ -1,0 +1,111 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_AMADHILA",
+  "nameMain": "Amadhila",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Amadhila",
+      "attestations": [
+        {
+          "countryId": "NAM",
+          "sourceRefs": ["mbenzi-2024-amadhila"]
+        }
+      ]
+    },
+    {
+      "spelling": "Amathila",
+      "attestations": [
+        {
+          "countryId": "NAM",
+          "sourceRefs": ["mbenzi-2024-amadhila"]
+        }
+      ]
+    },
+    {
+      "spelling": "Amathila",
+      "attestations": [
+        {
+          "countryId": "NAM",
+          "sourceRefs": ["mbenzi-2024-amadhila"]
+        }
+      ]
+    },
+    {
+      "spelling": "Amathila",
+      "attestations": [
+        {
+          "countryId": "NAM",
+          "sourceRefs": ["mbenzi-2024-amadhila"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Dans son étude des anthroponymes oshiwambo, Petrus Mbenzi glose Amadhila par « oiseaux » et analyse Amathila comme une adaptation anglicisée où dh [ð] est remplacé par th [θ].",
+        "claimStatus": "established",
+        "sourceRefs": ["mbenzi-2024-amadhila"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_OVAMBO",
+      "status": "attested",
+      "sourceRefs": ["mbenzi-2024-amadhila"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NAM",
+      "status": "attested",
+      "sourceRefs": ["mbenzi-2024-amadhila"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "mbenzi-2024-amadhila",
+      "title": "The Anglicisation of Oshiwambo Names",
+      "url": "https://arushalinguistics.org/publications/Mbenzi_AWPAL_2024.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Petrus A. Mbenzi, Arusha Working Papers in African Linguistics 6(1), 2024, p. 80-96. Texte intégral consulté, notamment le tableau p. 87 : Amadhila y est un anthroponyme oshiwambo glosé « birds » et la graphie anglicisée Amathila est analysée comme le remplacement de dh [ð] par th [θ]. L'article étudie des noms personnels ; il ne démontre pas le statut clanique attribué par la file de candidats."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "La recherche web combinant « Amadhila », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « The Anglicisation of Oshiwambo Names » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Amadhila à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La recherche web combinant « Amadhila », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « The Anglicisation of Oshiwambo Names » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Amadhila."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La recherche web combinant « Amadhila », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », qui comprenait le terme « obituary », ainsi que « The Anglicisation of Oshiwambo Names » n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La recherche web combinant « Amadhila », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », qui comprenait le terme « homonyme », et la lecture de « The Anglicisation of Oshiwambo Names » n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La recherche web combinant « Amadhila », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », complétée par les mots-clés « transmission » et « inheritance », puis la lecture de « The Anglicisation of Oshiwambo Names », n'a pas établi de règle de transmission propre à ce nom ; la valeur « other » est donc conservée plutôt qu'une règle familiale supposée."
+    }
+  ]
+}

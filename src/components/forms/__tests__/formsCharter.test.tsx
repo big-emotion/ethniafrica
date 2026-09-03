@@ -20,30 +20,11 @@ vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({ children }: { children: ReactNode }) => <div>{children}</div>,
 }));
 
-const authClientMocks = vi.hoisted(() => ({
-  signInWithOtp: vi.fn().mockResolvedValue({ error: null }),
-  signInWithOAuth: vi.fn().mockResolvedValue({ data: {}, error: null }),
-}));
-vi.mock("@/lib/supabase/auth-client", () => ({
-  createBrowserSupabaseClient: vi.fn(() => ({
-    auth: {
-      signInWithOtp: authClientMocks.signInWithOtp,
-      signInWithOAuth: authClientMocks.signInWithOAuth,
-      getSession: vi.fn().mockResolvedValue({ data: { session: null } }),
-    },
-  })),
+vi.mock("@/app/[lang]/admin/connexion/actions", () => ({
+  requestAdminSignInLink: vi.fn(),
 }));
 
-vi.mock("../actions", () => ({
-  updateProfileAction: vi.fn(),
-  eraseAccountAction: vi.fn(),
-}));
-
-import ConnexionPage from "@/app/[lang]/compte/connexion/page";
-import InscriptionPage from "@/app/[lang]/compte/inscription/page";
-import { ProfileForm } from "@/app/[lang]/compte/profil/ProfileForm";
 import AdminConnexionPage from "@/app/[lang]/admin/connexion/page";
-import AdminLoginPage from "@/app/admin/login/page";
 import { ContributionForm } from "@/components/ContributionForm";
 import { ReferenceLibraryFlow } from "@/components/ReferenceLibraryFlow";
 
@@ -72,71 +53,11 @@ describe("FormFieldError — reserved --afh-error token carrier", () => {
   });
 });
 
-describe("ConnexionPage — charter", () => {
-  beforeEach(() => vi.clearAllMocks());
-
-  // @req REQ-045
-  it("wraps the field group in a 16px-radius card", () => {
-    const { container } = render(<ConnexionPage />);
-    expect(container.querySelector(".rounded-afh-xl")).toBeTruthy();
-  });
-
-  // @req REQ-045
-  it("keeps the primary action full-width below 768px and constrained above", () => {
-    render(<ConnexionPage />);
-    const submit = screen.getByRole("button", {
-      name: "Recevoir un lien magique",
-    });
-    expect(submit.className).toContain("w-full");
-    expect(submit.className).toContain("md:w-auto");
-  });
-
-  // @req REQ-045
-  it("signals the invalid email through the afh-error token only", async () => {
-    render(<ConnexionPage />);
-    fireEvent.click(
-      screen.getByRole("button", { name: "Recevoir un lien magique" })
-    );
-    const alert = await screen.findByRole("alert");
-    expect(alert.className).toContain("text-afh-error");
-    expect(alert.className).not.toContain("text-red-600");
-  });
-});
-
-describe("InscriptionPage — charter", () => {
-  beforeEach(() => vi.clearAllMocks());
-
-  // @req REQ-045
-  it("wraps the field group in a 16px-radius card", () => {
-    const { container } = render(<InscriptionPage />);
-    expect(container.querySelector(".rounded-afh-xl")).toBeTruthy();
-  });
-
-  // @req REQ-045
-  it("keeps the primary action full-width below 768px and constrained above", () => {
-    render(<InscriptionPage />);
-    const submit = screen.getByRole("button", {
-      name: "Recevoir un lien magique",
-    });
-    expect(submit.className).toContain("w-full");
-    expect(submit.className).toContain("md:w-auto");
-  });
-
-  // @req REQ-045
-  it("signals the missing consent through the afh-error token only", async () => {
-    render(<InscriptionPage />);
-    fireEvent.change(screen.getByLabelText("Adresse e-mail"), {
-      target: { value: "amina@example.com" },
-    });
-    fireEvent.click(
-      screen.getByRole("button", { name: "Recevoir un lien magique" })
-    );
-    const alert = await screen.findByRole("alert");
-    expect(alert.className).toContain("text-afh-error");
-    expect(alert.className).not.toContain("text-red-600");
-  });
-});
-
+/**
+ * The account family this suite used to cover — sign-in, registration, profile
+ * and a second admin login — is gone with the public accounts. One sign-in
+ * surface is left, and it has one field and one button.
+ */
 describe("AdminConnexionPage — charter", () => {
   beforeEach(() => vi.clearAllMocks());
 
@@ -147,83 +68,20 @@ describe("AdminConnexionPage — charter", () => {
   });
 
   // @req REQ-045
-  it("keeps the magic-link action full-width below 768px and constrained above", () => {
+  it("keeps the sign-in action full-width below 768px and constrained above", () => {
     render(<AdminConnexionPage />);
     const submit = screen.getByRole("button", {
-      name: "Envoyer le lien de connexion",
+      name: "Recevoir un lien de connexion",
     });
     expect(submit.className).toContain("w-full");
     expect(submit.className).toContain("md:w-auto");
   });
 
   // @req REQ-045
-  it("signals OAuth failure through the afh-error token only", async () => {
-    authClientMocks.signInWithOAuth.mockResolvedValueOnce({
-      data: null,
-      error: { message: "OAuth indisponible" },
-    });
+  it("offers no federated identity provider at all", () => {
     render(<AdminConnexionPage />);
-    fireEvent.click(
-      screen.getByRole("button", { name: /Continuer avec GitHub/ })
-    );
-    const alert = await screen.findByRole("alert");
-    expect(alert.className).toContain("text-afh-error");
-    expect(alert.className).not.toContain("text-red-700");
-  });
-});
-
-describe("AdminLoginPage — charter", () => {
-  beforeEach(() => vi.clearAllMocks());
-
-  // @req REQ-045
-  it("wraps the card on a 16px radius", () => {
-    const { container } = render(<AdminLoginPage />);
-    expect(container.querySelector(".rounded-afh-xl")).toBeTruthy();
-  });
-
-  // @req REQ-045
-  it("keeps the magic-link action full-width below 768px and constrained above", () => {
-    render(<AdminLoginPage />);
-    const submit = screen.getByRole("button", { name: "Send Magic Link" });
-    expect(submit.className).toContain("w-full");
-    expect(submit.className).toContain("md:w-auto");
-  });
-});
-
-describe("ProfileForm — charter", () => {
-  const baseProps = {
-    displayName: "Amina Diallo",
-    isPublic: true,
-    maskedEmail: "a***@example.com",
-    createdAt: "15 janvier 2026",
-    ageConfirmed: true,
-  };
-
-  // @req REQ-042
-  it("wraps field groups in 16px-radius cards", () => {
-    const { container } = render(<ProfileForm {...baseProps} />);
-    const cards = container.querySelectorAll(".rounded-afh-xl");
-    expect(cards.length).toBeGreaterThanOrEqual(2);
-  });
-
-  // @req REQ-042
-  it("keeps the destructive account-deletion confirmation intact", () => {
-    render(<ProfileForm {...baseProps} />);
-    fireEvent.click(
-      screen.getByRole("button", { name: "Supprimer mon compte" })
-    );
-    expect(
-      screen.getByRole("heading", { name: "Confirmer la suppression" })
-    ).toBeInTheDocument();
-    const confirmButton = screen.getByRole("button", {
-      name: "Supprimer définitivement",
-    });
-    expect(confirmButton).toBeDisabled();
-    fireEvent.change(
-      screen.getByLabelText("Saisissez SUPPRIMER pour confirmer"),
-      { target: { value: "SUPPRIMER" } }
-    );
-    expect(confirmButton).not.toBeDisabled();
+    expect(screen.queryByRole("button", { name: /GitHub/ })).toBeNull();
+    expect(screen.queryByRole("button", { name: /Google/ })).toBeNull();
   });
 });
 

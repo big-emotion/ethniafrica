@@ -1,6 +1,8 @@
 // @req REQ-002
 // @req REQ-050
 // @req REQ-091 — Charter V2 search overlay restyle (ETNI-802 · FR107)
+// @req REQ-124 — ETNI-1809: the modal becomes suggest-only, the canonical
+// SERP (/fr/atlas/recherche) is the one place results render (ETNI-1796).
 import { useState } from "react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import {
@@ -15,23 +17,39 @@ import userEvent from "@testing-library/user-event";
 import { SearchModalV2 } from "../search/SearchModalV2";
 import * as afrikLoader from "@/lib/afrikLoader";
 import type { SearchResult } from "@/types/afrik-frontend";
-import { getPeopleRoute } from "@/lib/routing";
+import { getPeopleRoute, getLocalizedRoute } from "@/lib/routing";
 
-// Mock afrikLoader
+const mockPush = vi.fn();
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({ push: mockPush }),
+}));
+
+// Mock afrikLoader — the modal now only ever needs plain results, the same
+// path HomeHeroSearch's suggestion panel uses (no leads, no lens counts).
 vi.mock("@/lib/afrikLoader", () => ({
   search: vi.fn(),
 }));
 
-// Mock next/link (used by the shared EmptyState no-results CTA)
+function mockSearch(results: SearchResult[]) {
+  vi.mocked(afrikLoader.search).mockResolvedValue(results);
+}
+
+// Mock next/link (used by the suggestion rows)
 vi.mock("next/link", () => ({
   __esModule: true,
   default: ({
     href,
     children,
+    onClick,
   }: {
     href: string;
     children: React.ReactNode;
-  }) => <a href={href}>{children}</a>,
+    onClick?: () => void;
+  }) => (
+    <a href={href} onClick={onClick}>
+      {children}
+    </a>
+  ),
 }));
 
 // Mock ResizeObserver for ScrollArea
@@ -106,15 +124,6 @@ describe("SearchModalV2", () => {
     ).toBeInTheDocument();
   });
 
-  it("should display tab filters", () => {
-    render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-
-    expect(screen.getByText("Tout")).toBeInTheDocument();
-    expect(screen.getByText("Familles")).toBeInTheDocument();
-    expect(screen.getByText("Peuples")).toBeInTheDocument();
-    expect(screen.getByRole("tab", { name: "Pays" })).toBeInTheDocument();
-  });
-
   it("should show instruction text when search query is empty", () => {
     render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
@@ -134,52 +143,36 @@ describe("SearchModalV2", () => {
     expect(searchInput).toHaveValue("test");
   });
 
-  it("should have working tab structure", () => {
-    render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-
-    // Verify the tab list structure exists
-    const tabList = screen.getByRole("tablist");
-    expect(tabList).toBeInTheDocument();
-
-    // Verify all tabs are rendered
-    const tabs = screen.getAllByRole("tab");
-    expect(tabs).toHaveLength(4); // Tout, Familles, Peuples, Pays
-  });
-
   it("should not render when closed", () => {
     render(<SearchModalV2 open={false} onClose={mockOnClose} language="fr" />);
 
     expect(screen.queryByText("Recherche")).not.toBeInTheDocument();
   });
 
-  // ── R3 — pill type-filters (44px) ──────────────────────────────────────────
+  // The modal reaches the corpus only through the shared client (ETNI-1415
+  // AC2); it never fetches /api/v2/search itself.
+  // @req REQ-108
+  // @req REQ-124
+  it("queries the corpus through afrikLoader.search as the reader types", async () => {
+    mockSearch(mockSearchResults);
+    render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
-  describe("type-filter pills", () => {
-    // @req REQ-091
-    it("each type filter is a rounded-full pill", () => {
-      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-      for (const name of ["Tout", "Familles", "Peuples", "Pays"]) {
-        expect(screen.getByRole("tab", { name }).className).toMatch(
-          /rounded-full/
-        );
-      }
+    await act(async () => {
+      fireEvent.change(screen.getByPlaceholderText(/Rechercher une famille/i), {
+        target: { value: "Shona" },
+      });
+      await new Promise((r) => setTimeout(r, 350));
     });
 
-    // @req REQ-091
-    it("each type filter exposes a >=44px hit area (charter §5)", () => {
-      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
-      for (const name of ["Tout", "Familles", "Peuples", "Pays"]) {
-        expect(screen.getByRole("tab", { name }).className).toMatch(/min-h-11/);
-      }
-    });
+    expect(afrikLoader.search).toHaveBeenCalledWith("Shona");
   });
 
-  // ── R3 — grouped result cards: cat-token mark + text label ─────────────────
+  // ── ETNI-1809 — suggest-only overlay ────────────────────────────────────
 
-  describe("entity-type marks", () => {
-    // @req REQ-091
-    it("pairs a color mark with a text label for every result type (never color alone)", async () => {
-      vi.mocked(afrikLoader.search).mockResolvedValue(mockMixedResults);
+  describe("suggestions dropdown", () => {
+    // @req REQ-124
+    it("shows a suggestion per matching entity once the search resolves", async () => {
+      mockSearch(mockMixedResults);
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
       const searchInput = screen.getByPlaceholderText(
@@ -190,29 +183,16 @@ describe("SearchModalV2", () => {
         await new Promise((r) => setTimeout(r, 350));
       });
 
-      await waitFor(() => {
-        expect(screen.getByText("Shona")).toBeInTheDocument();
-      });
-
-      const resultsList = screen.getByTestId("search-results-list");
-      const marks = within(resultsList).getAllByTestId("search-entity-mark");
-      expect(marks).toHaveLength(mockMixedResults.length);
-      // every mark is decorative — the meaning lives in the adjacent text label
-      for (const mark of marks) {
-        expect(mark).toHaveAttribute("aria-hidden", "true");
-      }
-      expect(within(resultsList).getByText("Peuple")).toBeInTheDocument();
-      // "Pays" also names a tab pill, so scope to the results list to avoid
-      // matching that unrelated element.
-      expect(within(resultsList).getByText("Pays")).toBeInTheDocument();
-      expect(
-        within(resultsList).getByText("Famille linguistique")
-      ).toBeInTheDocument();
+      const suggestions = await screen.findByTestId("search-suggestions-list");
+      expect(within(suggestions).getByText("Shona")).toBeInTheDocument();
+      expect(within(suggestions).getByText("Zimbabwe")).toBeInTheDocument();
+      expect(within(suggestions).getByText("Bantou")).toBeInTheDocument();
     });
 
     // @req REQ-002
-    it("reaches each result's fiche through a keyboard-accessible link", async () => {
-      vi.mocked(afrikLoader.search).mockResolvedValue(mockMixedResults);
+    // @req REQ-124
+    it("reaches each suggestion's fiche through a keyboard-accessible link", async () => {
+      mockSearch(mockMixedResults);
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
       const searchInput = screen.getByPlaceholderText(
@@ -227,17 +207,82 @@ describe("SearchModalV2", () => {
         expect(screen.getByText("Shona")).toBeInTheDocument();
       });
 
-      const resultsList = screen.getByTestId("search-results-list");
       // Previously the card navigated from an onClick on a div, which no
-      // keyboard user could reach.
-      expect(
-        within(resultsList).getByRole("link", { name: "Shona" })
-      ).toHaveAttribute("href", getPeopleRoute("fr", "PPL_SHONA"));
+      // keyboard user could reach — a suggestion is still a real link.
+      expect(screen.getByRole("link", { name: "Shona" })).toHaveAttribute(
+        "href",
+        getPeopleRoute("fr", "PPL_SHONA")
+      );
+    });
+
+    /**
+     * The overlay is reachable from the masthead of every page and by a
+     * keyboard shortcut, and it was the one search bar that answered no
+     * arrow key and declared no combobox — the most reachable of the four
+     * and the least finished.
+     */
+    // @req REQ-002
+    it("walks its suggestions with the arrow keys and opens the highlighted one on Enter", async () => {
+      mockSearch(mockMixedResults);
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      const searchInput = screen.getByRole("combobox");
+      await act(async () => {
+        fireEvent.change(searchInput, { target: { value: "Shona" } });
+        await new Promise((r) => setTimeout(r, 350));
+      });
+      await screen.findByRole("listbox");
+
+      await act(async () => {
+        fireEvent.keyDown(searchInput, { key: "ArrowDown" });
+        fireEvent.keyDown(searchInput, { key: "ArrowDown" });
+      });
+
+      const options = screen.getAllByRole("option");
+      expect(searchInput).toHaveAttribute(
+        "aria-activedescendant",
+        options[1].id
+      );
+
+      await act(async () => {
+        fireEvent.keyDown(searchInput, { key: "Enter" });
+      });
+
+      // The second suggestion is Zimbabwe, not the SERP the raw query would
+      // have resolved to.
+      expect(mockPush).toHaveBeenCalledWith(
+        expect.stringContaining("/pays/ZWE")
+      );
+      expect(mockOnClose).toHaveBeenCalled();
     });
 
     // @req REQ-002
-    it("closes itself when a result link is activated", async () => {
-      vi.mocked(afrikLoader.search).mockResolvedValue(mockMixedResults);
+    it("caps how many suggestions it renders", async () => {
+      mockSearch(
+        Array.from({ length: 20 }, (_, index) => ({
+          type: "people" as const,
+          id: `PPL_${index}`,
+          name: `Peuple ${index}`,
+          relevance: 1 - index / 100,
+        }))
+      );
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      await act(async () => {
+        fireEvent.change(screen.getByRole("combobox"), {
+          target: { value: "peuple" },
+        });
+        await new Promise((r) => setTimeout(r, 350));
+      });
+      await screen.findByRole("listbox");
+
+      expect(screen.getAllByRole("option")).toHaveLength(6);
+    });
+
+    // @req REQ-002
+    // @req REQ-124
+    it("closes itself when a suggestion link is activated", async () => {
+      mockSearch(mockMixedResults);
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
       const searchInput = screen.getByPlaceholderText(
@@ -256,28 +301,72 @@ describe("SearchModalV2", () => {
 
       expect(mockOnClose).toHaveBeenCalled();
     });
-  });
 
-  // ── R3 — no-result guidance ──────────────────────────────────────────────
-
-  describe("no-result guidance", () => {
-    // @req REQ-091
-    it("shows a guidance sentence and one CTA when a real search yields zero results", async () => {
-      vi.mocked(afrikLoader.search).mockResolvedValue([]);
+    // @req REQ-124
+    it("renders no result card and no lens bar, even once a search resolves", async () => {
+      mockSearch(mockSearchResults);
       render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
       const searchInput = screen.getByPlaceholderText(
         /Rechercher une famille/i
       );
       await act(async () => {
-        fireEvent.change(searchInput, { target: { value: "xyzzy" } });
+        fireEvent.change(searchInput, { target: { value: "Shona" } });
         await new Promise((r) => setTimeout(r, 350));
       });
 
       await waitFor(() => {
-        expect(screen.getByText(/aucun résultat pour/i)).toBeInTheDocument();
+        expect(screen.getByText("Shona")).toBeInTheDocument();
       });
-      expect(screen.getAllByRole("link")).toHaveLength(1);
+
+      expect(
+        screen.queryByTestId("search-result-card")
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole("group", { name: "Filtrer les résultats par type" })
+      ).not.toBeInTheDocument();
+      // The snippet and population line only ever rendered on the full card.
+      expect(
+        screen.queryByText("The Shona people of Zimbabwe")
+      ).not.toBeInTheDocument();
+    });
+  });
+
+  // ── ETNI-1809 — submitting goes to the canonical SERP ───────────────────
+
+  describe("submit to the canonical SERP", () => {
+    // @req REQ-124
+    it("navigates to the canonical SERP with the current query on Enter", async () => {
+      mockSearch(mockSearchResults);
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      const searchInput = screen.getByPlaceholderText(
+        /Rechercher une famille/i
+      );
+      await act(async () => {
+        fireEvent.change(searchInput, { target: { value: "Shona" } });
+        await new Promise((r) => setTimeout(r, 350));
+      });
+
+      fireEvent.submit(searchInput.closest("form")!);
+
+      expect(mockPush).toHaveBeenCalledWith(
+        `${getLocalizedRoute("fr", "search")}?q=Shona`
+      );
+      expect(mockOnClose).toHaveBeenCalled();
+    });
+
+    // @req REQ-124
+    it("does not navigate on Enter when the query is empty", async () => {
+      render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
+
+      const searchInput = screen.getByPlaceholderText(
+        /Rechercher une famille/i
+      );
+      fireEvent.submit(searchInput.closest("form")!);
+
+      expect(mockPush).not.toHaveBeenCalled();
+      expect(mockOnClose).not.toHaveBeenCalled();
     });
   });
 

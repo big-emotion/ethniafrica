@@ -1,0 +1,106 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité à l'adoption littéraire documentée du nom Rabearivelo et à son porteur historique."
+  },
+  "id": "PAT_RABEARIVELO",
+  "nameMain": "Rabearivelo",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Rabearivelo",
+      "attestations": [
+        {
+          "countryId": "MDG",
+          "sourceRefs": ["bnf-jean-joseph-rabearivelo", "aefe-saiky-nofy"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "elective",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une publication pédagogique de l'AEFE indique que Joseph Casimir Rabe choisit les initiales J.-J.R. et signa son œuvre sous le pseudonyme Jean Joseph Rabearivelo. Le nom est donc documenté ici comme adoption littéraire individuelle, non comme transmission familiale.",
+        "claimStatus": "established",
+        "sourceRefs": ["aefe-saiky-nofy"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MERINA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["bnf-jean-joseph-rabearivelo", "aefe-saiky-nofy"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Jean-Joseph Rabearivelo",
+      "sourceRefs": ["bnf-jean-joseph-rabearivelo"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "bnf-jean-joseph-rabearivelo",
+      "title": "Notice de personne « Rabearivelo, Jean-Joseph (1901-1937) »",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb12021877w",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Notice d'autorité de la Bibliothèque nationale de France : graphie, rattachement à Madagascar, dates et activité littéraire."
+    },
+    {
+      "sourceKey": "aefe-saiky-nofy",
+      "title": "Saiky-Nofy : poésie et identité malgache",
+      "url": "https://aefe.gouv.fr/sites/default/files/asset/file/livre-saiky-nofy.pdf",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Publication pédagogique du réseau de l'Agence pour l'enseignement français à l'étranger. Le texte liminaire explique le choix des initiales J.-J.R. par Joseph Casimir Rabe et l'usage du pseudonyme Jean Joseph Rabearivelo."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches sur Rabearivelo avec tradition familiale, razana et généalogie n'ont livré aucun récit attribué à un transmetteur nommé avec transcription."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches « Rabearivelo étymologie », « Rabearivelo onomastique » et « Rabearivelo nom malgache » ont retrouvé des études sur le pseudonyme ou les noms de personnages, mais aucune reconstruction de l'étymon historique ; les sites génériques de signification des noms ont été écartés faute de références."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches Rabearivelo avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches exactes associant Rabearivelo à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; la profession de poète de Jean-Joseph Rabearivelo est individuelle."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les catalogues d'autorité et études littéraires consultés n'établissent pas de lignée homonyme d'origine distincte."
+    }
+  ]
+}

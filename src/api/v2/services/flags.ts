@@ -1,4 +1,5 @@
 import { logger } from "@/lib/api/logger";
+import { isEmailAllowlisted } from "@/lib/auth/adminAllowlist";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 export type FlagKind =
@@ -7,25 +8,23 @@ export type FlagKind =
   | "broken-url"
   | "offensive"
   | "correction-proposal"
-  | "other";
+  | "other"
+  | "contribution";
 
 export type FlagStatus =
-  | "open"
-  | "under_review"
-  | "accepted"
-  | "rejected"
-  | "withdrawn"
-  | "duplicate";
+  "open" | "under_review" | "accepted" | "rejected" | "withdrawn" | "duplicate";
 
 export interface FlagCreateInput {
-  target_type: string;
-  target_id: string;
+  /** Absent only for a contribution, which may propose an entity that has none. */
+  target_type?: string;
+  target_id?: string;
   target_field_path?: string;
   flag_kind: FlagKind;
   reason_text: string;
   counter_source_url?: string;
   counter_source_citation?: string;
   proposed_rewrite?: string;
+  contribution_payload?: Record<string, unknown>;
 }
 
 export interface CreatedFlag {
@@ -88,10 +87,25 @@ interface FlagRow {
   created_at: string;
   updated_at: string | null;
   resolved_at: string | null;
+  contribution_payload?: Record<string, unknown> | null;
 }
 
 const PUBLIC_FLAG_COLUMNS =
   "id, public_slug, entity_type, entity_id, assertion_field_path, assertion_id, flag_kind, reason_text, counter_source_url, counter_source_citation, proposed_rewrite, contributor_id, severity, auto_generated, status, created_at, updated_at, resolved_at";
+
+/**
+ * What the moderator's console reads, and the public API deliberately does not.
+ *
+ * `contribution_payload` holds whatever the contributor typed, including the
+ * name and address they left to be reached at. Those were readable by anyone
+ * on the retired `contributions` table; they are not going to become readable
+ * on `/api/v2/flags`. The console runs server-side behind the address
+ * allowlist, so it is the one place the column is selected.
+ */
+// Spelled out rather than interpolated from PUBLIC_FLAG_COLUMNS: PostgREST's
+// typings read the select string literally, and a template kills the inference.
+const MODERATION_FLAG_COLUMNS =
+  "id, public_slug, entity_type, entity_id, assertion_field_path, assertion_id, flag_kind, reason_text, counter_source_url, counter_source_citation, proposed_rewrite, contributor_id, severity, auto_generated, status, created_at, updated_at, resolved_at, contribution_payload";
 
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -150,14 +164,15 @@ export async function createFlag(
   const { data, error } = await supabase
     .from("flags")
     .insert({
-      entity_type: input.target_type,
-      entity_id: input.target_id,
+      entity_type: input.target_type ?? null,
+      entity_id: input.target_id ?? null,
       assertion_field_path: input.target_field_path ?? null,
       flag_kind: input.flag_kind,
       reason_text: input.reason_text,
       counter_source_url: input.counter_source_url ?? null,
       counter_source_citation: input.counter_source_citation ?? null,
       proposed_rewrite: input.proposed_rewrite ?? null,
+      contribution_payload: input.contribution_payload ?? null,
       contributor_id: contributorId,
       status: "open",
       human_verified: true,
@@ -298,31 +313,25 @@ function mapFlagRow(row: FlagRow): PublicFlag {
   };
 }
 
-export type ModeratorRole = "editor" | "senior_editor" | "admin";
-
-const MODERATOR_ROLES: ReadonlyArray<ModeratorRole> = [
-  "editor",
-  "senior_editor",
-  "admin",
-];
-
 /**
  * The moderator behind a bearer token, or null.
  *
  * `getModeratorSession` in src/lib/supabase/moderator.ts answers the same
  * question for a Server Component and `redirect()`s when the answer is no —
  * which an API route must not do. This is its non-redirecting twin, and it
- * reads the same column, so the two cannot drift on who counts as a moderator.
+ * consults the same allowlist, so the two cannot drift on who counts as a
+ * moderator.
  *
- * Role membership lives in `contributor_profiles.moderator_role`. `user_roles`
- * has a moderator value too and opens no door; the moderation charter §4 takes
- * no position on unifying them, and this function deliberately reads only the
- * one the middleware already enforces.
+ * It used to read `contributor_profiles.moderator_role`, hedged across two
+ * columns (`.or(id.eq…, user_id.eq…)`) because the sign-in wrote one and every
+ * reader queried the other. That whole model is gone with the public accounts:
+ * authorization is the address, and the address is on the allowlist or it is
+ * not.
  */
 // @req REQ-042
 export async function getModeratorByAccessToken(
   accessToken: string
-): Promise<{ id: string; role: ModeratorRole } | null> {
+): Promise<{ id: string } | null> {
   const supabase = createAdminClient();
   const {
     data: { user },
@@ -334,21 +343,7 @@ export async function getModeratorByAccessToken(
     return null;
   }
 
-  const { data, error: profileError } = await supabase
-    .from("contributor_profiles")
-    .select("moderator_role")
-    .or(`id.eq.${user.id},user_id.eq.${user.id}`)
-    .maybeSingle();
-
-  if (profileError) {
-    logger.error("Failed to read moderator role", profileError);
-    return null;
-  }
-
-  const role = data?.moderator_role as ModeratorRole | "none" | undefined;
-  if (!role || !MODERATOR_ROLES.includes(role as ModeratorRole)) return null;
-
-  return { id: user.id, role: role as ModeratorRole };
+  return (await isEmailAllowlisted(user.email)) ? { id: user.id } : null;
 }
 
 /**
@@ -440,4 +435,82 @@ export async function getContributorEmail(
   }
 
   return data?.user?.email ?? null;
+}
+
+export interface ModerationQueueFilters {
+  /** Absent or empty means every status — the console hides nothing by default. */
+  statuses?: readonly FlagStatus[];
+  kind?: FlagKind;
+  entityType?: string;
+  sort: "recent" | "oldest";
+  /** 1-based, as it appears in the address. */
+  page: number;
+  pageSize: number;
+}
+
+/** A queued flag as the console sees it: the public shape plus the proposal. */
+export interface ModerationFlag extends PublicFlag {
+  contribution_payload: Record<string, unknown> | null;
+}
+
+export interface ModerationQueuePage {
+  items: ModerationFlag[];
+  /** Reports in the current selection, not in the table behind it. */
+  total: number;
+}
+
+/**
+ * The console's reading of the queue.
+ *
+ * Distinct from `listFlags`, which serves the public API and pages by opaque
+ * cursor. A moderator needs what a cursor cannot give: how many reports the
+ * selection holds, and the ability to jump to a page rather than walk to it.
+ * So this one pages by offset and asks for an exact count.
+ *
+ * It also defaults to *every* status. The queue used to serve `open` and
+ * `under_review` only, which meant a moderator who had just accepted a report
+ * could no longer find it, and nothing on screen said the other three states
+ * existed.
+ */
+// @req REQ-042
+export async function listFlagsForModeration(
+  filters: ModerationQueueFilters
+): Promise<ModerationQueuePage> {
+  const supabase = createAdminClient();
+  const page = Math.max(1, Math.trunc(filters.page) || 1);
+  const from = (page - 1) * filters.pageSize;
+
+  let query = supabase
+    .from("flags")
+    .select(MODERATION_FLAG_COLUMNS, { count: "exact" })
+    .order("created_at", { ascending: filters.sort === "oldest" });
+
+  if (filters.statuses?.length) {
+    query = query.in("status", filters.statuses);
+  }
+  if (filters.kind) {
+    query = query.eq("flag_kind", filters.kind);
+  }
+  if (filters.entityType) {
+    query = query.eq("entity_type", filters.entityType);
+  }
+
+  const { data, count, error } = await query.range(
+    from,
+    from + filters.pageSize - 1
+  );
+
+  if (error) {
+    // Never degrade to an empty page: a moderator would read "nothing to do".
+    logger.error("Failed to read the moderation queue", error);
+    throw new Error(`Failed to read the moderation queue: ${error.message}`);
+  }
+
+  return {
+    items: (data ?? []).map((row) => ({
+      ...mapFlagRow(row),
+      contribution_payload: row.contribution_payload ?? null,
+    })),
+    total: count ?? 0,
+  };
 }

@@ -62,6 +62,27 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
     ).toHaveAttribute("href", getLocalizedRoute("fr", "families"));
   });
 
+  // The languages and patronymes index pages (ETNI-1795) ship in the same
+  // rubric as pays/peuples/familles — a page nobody can navigate to is not
+  // browsable (ETNI-1801).
+  // @req REQ-139
+  it("adds the languages and patronymes index pages to the explorer rubric", () => {
+    render(<SiteFooter language="fr" />);
+
+    const explorer = screen.getByRole("navigation", {
+      name: footer.directory.explorerHeading,
+    });
+
+    expect(
+      within(explorer).getByRole("link", { name: footer.directory.languages })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "languages"));
+    expect(
+      within(explorer).getByRole("link", {
+        name: footer.directory.patronymes,
+      })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "patronymes"));
+  });
+
   /**
    * Doctrine, À propos and Sources describe the project, not the corpus, so
    * no access mode lists them. The footer is where a page about the project
@@ -108,11 +129,11 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
   });
 
   /**
-   * The three accounts are named before they exist. A network shown as a live
-   * link that leads nowhere is worse than one shown as a mark: the reader
-   * spends a click to learn the account is not open yet. So an entry with no
-   * URL renders as an image with its network's name, and becomes a link the
-   * day `SOCIAL_NETWORKS` carries one.
+   * An account is named before it exists. A network shown as a live link that
+   * leads nowhere is worse than one shown as a mark: the reader spends a click
+   * to learn the account is not open yet. So an entry with no URL renders as
+   * an image with its network's name, and becomes a link the day
+   * `SOCIAL_NETWORKS` carries one.
    */
   // @req REQ-046
   it("shows a network with no account yet as a mark, not a dead link", () => {
@@ -122,12 +143,38 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
 
     expect(
       within(follow).getByRole("img", {
-        name: `LinkedIn — ${footer.directory.followPending}`,
+        name: `Facebook — ${footer.directory.followPending}`,
       })
     ).toBeInTheDocument();
-    expect(within(follow).queryByRole("link", { name: /LinkedIn/ })).toBeNull();
+    expect(within(follow).queryByRole("link", { name: /Facebook/ })).toBeNull();
   });
 
+  /**
+   * LinkedIn is the account that is open, so it is the one entry that carries
+   * a URL. It opens in its own tab: the footer sits at the bottom of a fiche,
+   * and a reader sent off-site from there loses their place in the corpus.
+   */
+  // @req REQ-046
+  it("opens the LinkedIn mark on the project's page", () => {
+    render(<SiteFooter language="fr" />);
+
+    const linkedin = within(screen.getByTestId("footer-follow")).getByRole(
+      "link",
+      { name: "LinkedIn" }
+    );
+
+    expect(linkedin).toHaveAttribute(
+      "href",
+      "https://www.linkedin.com/company/dictionnaire-des-ethnies-d%E2%80%99afrique/"
+    );
+    expect(linkedin).toHaveAttribute("target", "_blank");
+    expect(linkedin).toHaveAttribute("rel", "noopener noreferrer");
+  });
+
+  /**
+   * Matched on the accessible name rather than the role: a network is named
+   * whether its account is open (a link) or still pending (a mark).
+   */
   // @req REQ-046
   it("names every network the project intends to be followed on", () => {
     render(<SiteFooter language="fr" />);
@@ -136,7 +183,7 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
 
     for (const network of ["Facebook", "LinkedIn", "Instagram"]) {
       expect(
-        within(follow).getByRole("img", { name: new RegExp(network) })
+        within(follow).getByLabelText(new RegExp(network))
       ).toBeInTheDocument();
     }
   });

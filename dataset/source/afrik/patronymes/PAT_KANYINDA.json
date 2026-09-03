@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KANYINDA",
+  "nameMain": "Kanyinda",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Kanyinda",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["afrik-candidate-queue", "ejab-kanyinda"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_LUBA",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COD",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "ejab-kanyinda",
+      "title": "Luba-Kasai: A Working Bibliography",
+      "url": "https://journals.library.columbia.edu/index.php/ejab/article/download/6983/3723/12682",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article de Valentine Kanyinda Muyumba dans l'Electronic Journal of Africana Bibliography (2004), consulté intégralement. Il atteste la graphie Kanyinda dans un nom d'auteur et recense deux travaux de Théodore Kanyinda-Lusanga sur les Luba du Kasaï. Ces occurrences ne prouvent ni l'ethnicité des auteurs ni l'étymologie ou la transmission du nom ; l'association luba du corpus reste donc « supposed »."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Kanyinda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article « Luba-Kasai: A Working Bibliography » et sa bibliographie détaillée, n'ont livré aucune étymologie, chronique d'origine ou tradition orale attribuable à un témoin pour ce nom. Les rapprochements seulement plausibles ont été écartés."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kanyinda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article « Luba-Kasai: A Working Bibliography » et sa bibliographie détaillée, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kanyinda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article « Luba-Kasai: A Working Bibliography » et sa bibliographie détaillée, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kanyinda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article « Luba-Kasai: A Working Bibliography » et sa bibliographie détaillée, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kanyinda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article « Luba-Kasai: A Working Bibliography » et sa bibliographie détaillée, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Kanyinda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article « Luba-Kasai: A Working Bibliography » et sa bibliographie détaillée, n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

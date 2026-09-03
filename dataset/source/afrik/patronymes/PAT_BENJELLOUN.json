@@ -1,0 +1,102 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_BENJELLOUN",
+  "nameMain": "Benjelloun",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "Benjelloun",
+      "attestations": [
+        {
+          "countryId": "MAR",
+          "sourceRefs": ["afrik-candidate-queue", "ircam-benjelloun"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ARABES_AFRIQUE",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MAR",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "ircam-benjelloun"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "ircam-benjelloun",
+      "title": "Tatouage de la Mémoire — Institut royal de la culture amazighe",
+      "url": "https://biblio.ircam.ma/pmb/uploads/publications/72.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Publication de l’IRCAM consultée le 2 septembre 2026. Elle cite Benjelloun parmi des patronymes urbains marocains transmis de génération en génération ; elle ne propose pas d’étymologie particulière à ce nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Benjelloun anthroponymie », « Benjelloun onomastique » et « Benjelloun surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. La source propre au nom n’établit qu’une graphie ou une distribution et ne permet d’énoncer ni étymologie ni origine de lignée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Benjelloun anthroponymie », « Benjelloun onomastique » et « Benjelloun surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué par la file d’attente ; ce rattachement reste au niveau non vérifié."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Benjelloun alliance à plaisanterie », « Benjelloun joking relationship » et « Benjelloun parenté à plaisanterie » n’ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Benjelloun caste », « Benjelloun métier héréditaire » et « Benjelloun social function » n’ont livré aucune fonction sociale ou professionnelle héréditaire propre à cette graphie."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques exactes sur « Benjelloun » dans les catalogues, notices institutionnelles et archives accessibles n’ont pas permis d’isoler un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes « Benjelloun homonym surname », « Benjelloun homonyme patronyme » et les variantes graphiques de la fiche n’ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Les sources consultées attestent la graphie « Benjelloun » sans établir assez précisément le système dénominatif ; la valeur nisba héritée de la vague 1 n’est donc pas étendue par inférence."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La publication de l’IRCAM indique que Benjelloun s’est transmis de génération en génération, mais les recherches « Benjelloun transmission patronyme », « Benjelloun filiation » et « Benjelloun hereditary surname » n’ont pas établi si cette transmission est patrilinéaire, matrilinéaire, bilatérale ou élective."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Les recherches « Benjelloun lignée », « Benjelloun clan », « Benjelloun tribe » et « Benjelloun place name » n’ont pas permis de déterminer si cette graphie désigne une lignée, un clan, une caste, une classe d’âge ou un établissement dans le contexte précis de la fiche."
+    }
+  ]
+}

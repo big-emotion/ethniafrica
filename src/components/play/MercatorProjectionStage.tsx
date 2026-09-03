@@ -225,5 +225,3 @@ export function MercatorProjectionStage() {
     </section>
   );
 }
-
-export default MercatorProjectionStage;

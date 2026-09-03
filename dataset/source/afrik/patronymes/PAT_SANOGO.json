@@ -1,0 +1,102 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier sénoufo documenté par fiche ; distinguer le nom mandé Sanogo de son emploi comme équivalent de Sékongo dans la société sénoufo."
+  },
+  "id": "PAT_SANOGO",
+  "nameMain": "Sanogo",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Sanogo",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["coulibaly-2023-missionnaires-senoufo"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Dans son étude de la société sénoufo de Côte d'Ivoire, Navigué Félicien Coulibaly décrit l'influence mandé sur les noms et donne Sanogo parmi les équivalents mandé du nom sénoufo Sékongo. La fiche documente donc un nom adopté ou mis en correspondance dans ce contexte, sans postuler que Sanogo serait lui-même d'origine linguistique sénoufo.",
+        "claimStatus": "established",
+        "sourceRefs": ["coulibaly-2023-missionnaires-senoufo"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le répertoire provisoire burkinabè propose pour Sanogo les sens « qui travaille l'or », « homme simple » ou « bijoutier ». Ces gloses hétérogènes ne sont accompagnées d'aucune analyse linguistique et restent contestées.",
+        "claimStatus": "contested",
+        "sourceRefs": ["burkina-provisional-patronyme-register"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SENUFO",
+      "status": "attested",
+      "sourceRefs": ["coulibaly-2023-missionnaires-senoufo"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["coulibaly-2023-missionnaires-senoufo"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "coulibaly-2023-missionnaires-senoufo",
+      "title": "Missionnaires catholiques et société sénoufo de Côte d'Ivoire, 1904-1977",
+      "url": "https://www.publication.codesria.org/index.php/pub/catalog/download/1440/3133/8534?inline=1",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Navigué Félicien Coulibaly, thèse publiée par le CODESRIA en 2023, DOI 10.57054/codesria.pub.1440.3133. Le tableau no 2, p. 55, a été consulté : il donne Sékongo comme nom sénoufo, l'écureuil comme éponyme et Kamara, Traoré et Sanogo comme équivalents mandé, dans un développement sur l'influence mandé."
+    },
+    {
+      "sourceKey": "burkina-provisional-patronyme-register",
+      "title": "Projet de répertoire des patronymes au Burkina Faso — version provisoire",
+      "url": "https://pdfcoffee.com/repertoire-des-patronymes-nationaux-du-burkina-pdf-free.html",
+      "tier": "unverified",
+      "source_kind": "government",
+      "notes": "Document de travail de la Direction du patrimoine culturel, sans date ni validation finale visibles, consulté sur une copie PDFCoffee non authentifiée. Seule la notice SANOGO, p. 179-180, a été utilisée pour ses gloses et l'indication de langues incluant le sénoufo ; ses listes d'alliances n'ont pas été généralisées."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La thèse de Coulibaly, la notice SANOGO et les recherches ciblées dans les catalogues CODESRIA, Persée, OpenEdition, Horizon IRD et Google Scholar n'ont livré aucun récit d'origine attribué à un griot nommé avec transcription."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Coulibaly établit Sanogo comme équivalent mandé de Sékongo dans un contexte sénoufo, mais le passage consulté ne précise pas si le nom Sanogo y suit le Tienne parental, une transmission mandé patrilinéaire ou une autre règle."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Le répertoire provisoire cite plusieurs patronymes comme alliés de Sanogo, mais la recherche n'a pas trouvé de source réciproque assez précise permettant de modifier aussi une fiche PAT_* partenaire hors de ce lot."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les gloses « qui travaille l'or » et « bijoutier » du répertoire ont été vérifiées, mais aucune étude consultée ne les confirme comme fonction héréditaire des Sanogo associés aux Sénoufo."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques exactes sur Sanogo ont livré de nombreux porteurs contemporains et des porteurs relevant d'autres ensembles sociaux ; aucun porteur décédé n'a été retenu sans source reliant sa biographie au contexte sénoufo documenté ici."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La thèse établit un équivalent mandé dans la société sénoufo, tandis que le répertoire décrit un nom plus largement ouest-africain ; les recherches n'ont pas fourni de critères suffisants pour séparer des lignées homonymes précises."
+    }
+  ]
+}

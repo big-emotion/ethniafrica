@@ -9,7 +9,8 @@
  * nothing filters by audience at all.
  *
  * Measured against the five templates that exist, the allowlist was excluding
- * exactly one thing from children: T5, the ISO 639-3 code of a language. Not a
+ * exactly one thing from children: T5, the ISO 639-3 code of a language — a
+ * template since retired under games charter §8. Not a
  * sensitive topic. The property it was meant to protect — that no template
  * reads colonisation or event content — was always a property of
  * `TEMPLATE_FIELD_PATHS`, and that is what is asserted here directly.
@@ -24,7 +25,11 @@ import { render } from "@testing-library/react";
 
 import { QuizScopePicker } from "@/components/quiz/QuizScopePicker";
 import type { QuizScopesData } from "@/api/v2/schemas/quiz";
-import { TEMPLATE_FIELD_PATHS } from "@/lib/quiz/segmentPolicy";
+import {
+  QUIZ_THEME_IDS,
+  QUIZ_THEME_LABELS_FR,
+  TEMPLATE_FIELD_PATHS,
+} from "@/lib/quiz/segmentPolicy";
 import { MIGRATION_EVENT_TYPES } from "@/lib/afrik/migrationEventTypes";
 import { getLocalizedRoute } from "@/lib/routing";
 
@@ -32,20 +37,37 @@ const EVENT_DERIVED_FIELD_PATH = "content.events.eventType";
 
 const SCOPES: QuizScopesData = {
   countries: [
-    { id: "GHA", labelFr: "Ghana", activeQuestionCount: 90, playable: true },
+    {
+      id: "GHA",
+      labelFr: "Ghana",
+      activeQuestionCount: 90,
+      playable: true,
+      playableThemeIds: ["noms", "croyances"],
+    },
   ],
   families: [],
+  // A question carries exactly one theme (`TEMPLATE_THEMES`), so the nine
+  // counts partition the 2504 the whole-continent track holds; split evenly
+  // because the picker renders labels and links, never these numbers.
+  themes: QUIZ_THEME_IDS.map((id) => ({
+    id,
+    labelFr: QUIZ_THEME_LABELS_FR[id],
+    activeQuestionCount: 278,
+    playable: true,
+  })),
   mixed: {
     id: "mixed",
     labelFr: "Tout le continent",
     activeQuestionCount: 2504,
     playable: true,
+    playableThemeIds: [...QUIZ_THEME_IDS],
   },
   random: {
     id: "random",
     labelFr: "Au hasard",
     activeQuestionCount: 2504,
     playable: true,
+    playableThemeIds: [...QUIZ_THEME_IDS],
   },
 };
 

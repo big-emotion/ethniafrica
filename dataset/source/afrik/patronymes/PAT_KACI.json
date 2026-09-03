@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français prudent fondé sur le dictionnaire anthroponymique du HCA ; aucune valeur lexicale concurrente n’est transformée en étymologie certaine."
+  },
+  "id": "PAT_KACI",
+  "nameMain": "Kaci",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Kaci",
+      "attestations": [
+        { "countryId": "DZA", "sourceRefs": ["kaci-hca-tidjet"] }
+      ]
+    },
+    {
+      "spelling": "Aït Kaci",
+      "attestations": [
+        { "countryId": "DZA", "sourceRefs": ["kaci-hca-tidjet"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le Dictionnaire des patronymes algériens analyse Aït Kaci comme « ceux de Kaci » ou « les gens de la famille Kaci ». Cette formation établit un collectif familial autour du nom Kaci, sans choisir une étymologie lexicale de Kaci lui-même.",
+        "claimStatus": "established",
+        "sourceRefs": ["kaci-hca-tidjet"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_KABYLE",
+      "status": "attested",
+      "sourceRefs": ["kaci-hca-tidjet"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "DZA",
+      "status": "attested",
+      "sourceRefs": ["kaci-hca-tidjet"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "kaci-hca-tidjet",
+      "title": "Dictionnaire des patronymes algériens, tome 2 : At Weɣlis",
+      "url": "https://www.hcamazighite.dz/docs/document/hca/lexiques/dictionnaireII%20Mustapha%20TIDJET%20%20tome%202.pdf",
+      "tier": "official",
+      "source_kind": "linguistic_reference",
+      "notes": "Mustapha Tidjet, Haut Commissariat à l’Amazighité. Le texte intégral de l’entrée Aït Kaci a été vérifié ; la fiche conserve sa glose familiale et ne retient pas comme étymon certain les sens lexicaux concurrents signalés autour de Kaci."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Le dictionnaire du HCA, les dépôts de l’UMMTO et les recherches « Kaci tradition orale », « Aït Kaci ancêtre » et « généalogie Kaci Kabylie » n’ont livré aucun récit avec transmetteur nommé et transcription."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues BnF, Persée, OpenEdition et les dépôts universitaires algériens ont été interrogés sans trouver de chronique ou d’archive ancienne consacrée à la formation du nom Kaci."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La formule Aït Kaci désigne un collectif familial, mais le dictionnaire ne décrit pas sa règle de transmission ; les recherches « Aït Kaci filiation » et « famille Kaci transmission » n’ont pas permis de choisir un mode."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches combinant Kaci ou Aït Kaci avec « alliance », « leff », « pacte » et « parenté à plaisanterie » n’ont pas fourni de paire attestée avec une autre fiche PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Le dictionnaire anthroponymique et les recherches sur un métier ou statut héréditaire des Kaci n’en signalent aucun."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les catalogues BnF, IdRef et les recherches biographiques ont été vérifiés sans trouver de porteur décédé dont la notice établisse clairement Kaci comme nom de famille lié au contexte de cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les dictionnaires et catalogues consultés montrent des valeurs lexicales et graphies voisines, mais aucune seconde lignée d’origine distincte sous l’orthographe exacte Kaci n’a pu être documentée."
+    }
+  ]
+}

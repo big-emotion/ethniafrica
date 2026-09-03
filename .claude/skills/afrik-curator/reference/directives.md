@@ -1,91 +1,106 @@
-# AFRIK directives — condensed
+# Editorial directives
 
-Source of truth: `public/DIRECTIVES-AFRIK.md`. Read that file if anything below is ambiguous.
+Condensed. `public/DIRECTIVES-AFRIK.md` is the source of truth; read it when anything here
+is ambiguous.
 
 ## Format
 
-- One JSON file per fiche, UTF-8, no comments.
-- Keys: camelCase English (matches TypeScript types).
+One JSON file per fiche, UTF-8, no comments. Keys are camelCase English, matching the
+TypeScript types. Content prose is French.
 
-## Identifiers (IMMUTABLE)
+## Identifiers — immutable
 
-| Entity   | Format             | Example                  |
-| -------- | ------------------ | ------------------------ |
-| People   | `PPL_` + uppercase | `PPL_YORUBA`, `PPL_ZULU` |
-| Family   | `FLG_` + uppercase | `FLG_BANTU`, `FLG_MANDE` |
-| Country  | ISO 3166-1 alpha-3 | `NGA`, `ZAF`, `BEN`      |
-| Language | ISO 639-3          | `yor`, `swa`, `fra`      |
+| Entity    | Form                 | Example      |
+| --------- | -------------------- | ------------ |
+| People    | `PPL_` + uppercase   | `PPL_YORUBA` |
+| Family    | `FLG_` + uppercase   | `FLG_BANTU`  |
+| Country   | ISO 3166-1 alpha-3   | `NGA`, `ZAF` |
+| Language  | ISO 639-3, lowercase | `yor`, `wol` |
+| Patronyme | `PAT_` + uppercase   | `PAT_KEITA`  |
+| Relation  | `REL_*` · Migration  | `MGR_*`      |
 
-Never change a stored ID. If a family does not exist yet, use `"FLG_UNKNOWN"` and flag it.
+Never change a stored ID — it is a primary key. A language fiche's `id` must equal its
+`isoCode639_3` and its filename. A patronyme's filename must equal its `id`.
 
-## Nulls and empty values
+If a family does not exist yet, use `FLG_UNKNOWN` and flag it.
 
-- Unknown / not applicable: `null` (never `"N/A"`, never `"À compléter"`).
-- Empty list: `[]` (never `["N/A"]`).
-- Unknown number: `null` (never `0`, unless truly zero).
+Adding a new country means two registrations beyond the fiche: the off-map list and the
+ledger. A fiche alone is not enough.
 
-## Numbers (population, speakers)
+## Empty values
 
-- Integers only. No string approximations.
-- `✅ "totalSpeakers": 350000000`
-- `❌ "totalSpeakers": "environ 350 millions"`
+- Unknown or not applicable: `null`. Never `"N/A"`, never `"À compléter"`, never `"Inconnu"`.
+- Empty list: `[]`. Never `["N/A"]`.
+- Unknown number: `null`. Never `0`, unless the value truly is zero.
 
-## `currentCountries`
+An empty field is information about the state of the corpus. It is not a blank to be filled
+with something plausible.
 
-Always an array of ISO 3166-1 alpha-3 codes.
+## Numbers
 
-- `✅ ["NGA", "BEN", "TGO"]`
-- `❌ ["Nigeria"]`, `❌ "NGA, BEN"`
+Integers, never prose approximations.
 
-## `languageFamilyId`
+- `"totalSpeakers": 350000000`
+- not `"totalSpeakers": "environ 350 millions"`
 
-Always a valid `FLG_*` ID. Never a human-readable name.
+## Prose
 
-## Geographic areas
+Plain French sentences. No markdown — no `**`, no `*`, no backticks — and none of `~`, `>`,
+`<`, `±`. Paragraph breaks are `\n\n`, and only where a break is genuinely needed.
 
-Comma-separated string, no leading dashes, no newlines.
+The prose fields follow a closed grammar; a field is a sentence, a list of sentences, or a
+short label, according to its rubric. Do not invent a new shape — no bullet characters, no
+leading dashes, no embedded headings.
 
-- `✅ "geographicArea": "Afrique centrale, Afrique orientale, Afrique australe"`
-- `❌ "- Afrique centrale\n- Afrique orientale"`
+Geographic areas are a comma-separated string:
 
-## `associatedPeoples` (families)
+- `"geographicArea": "Afrique centrale, Afrique orientale, Afrique australe"`
+- not `"- Afrique centrale\n- Afrique orientale"`
 
-5–10 representative entries. Each entry needs a valid `peopleId`. Never `null`.
+## Relations between entities
 
-## Sources
+`currentCountries` is always an array of ISO alpha-3 codes — `["NGA", "BEN", "TGO"]`, never
+`["Nigeria"]`, never `"NGA, BEN"`.
 
-Array of strings. Recommended format:
+`languageFamilyId` is always a valid `FLG_*`, never a human-readable name.
 
-```
-"Title – Author, Year (URL if available)"
-```
-
-- `✅ "Ethnologue – SIL International, 2025 (https://www.ethnologue.com)"`
-- `❌ "Ethnologue"` (insufficient)
-
-## Free-text fields (origins, culture, history)
-
-- Plain prose. No markdown (`**`, `*`, `` ` ``), no symbols (`~`, `>`, `<`, `±`).
-- Complete French sentences.
-- Paragraph breaks with `\n\n` only when necessary.
+`associatedPeoples` on a family: 5–10 representative entries, each with a valid `peopleId`,
+never `null`.
 
 ## Demographics
 
-- Reference year: **2025**.
-- Per-people: `distributionByCountry[].percentage` must total 100.00 (±0.01).
-- Per-country: `demographics.peoples[].percentageInCountry` must total 100.00 (±0.01).
-- Cite the demographic source (`"source": "UNFPA 2025 (estimation)"`).
+Reference year **2025**.
 
-## Culture (peoples)
+- A people's `distributionByCountry[].percentage` totals 100 %.
+- A country's `demographics.peoples[].percentageInCountry` totals 100 %.
 
-Two valid formats — choose by data richness:
+The validator enforces a hard band of [95, 105] and a strict band of [99, 101], and **both
+now fail the build** — the re-sourcing burn-down that made them advisory is finished, so a
+fiche cannot drift back out.
 
-- Simplified (96% of fiches): four nullable text fields (`majorRites`, `symbols`, `artsAndMusic`, `spiritualities`).
-- Extended (Bambara, Kabyle, Sawa, etc.): six subsections (`divinitiesAndSpirits`, `cosmology`, `personAndNature`, `ritesAndPractices`, `symbolsAndArts`, `contemporarySpirituality`).
+Cite the demographic source, and beware a stale vintage: a census a decade old is a
+different claim from a 2025 estimate, and saying so is part of the citation.
+
+## Sources
+
+Objects, not strings. Every entry carries an explicit tier. The keys differ by class — see
+`source-tiers.md`, which is the full doctrine.
 
 ## Decolonial framing
 
-- Keep colonial / problematic terms — do not silently rename.
-- Provide `selfAppellation` (endonym) for every people / family.
-- Fill `whyProblematic` when the historical term carries colonial baggage.
-- Document `contemporaryUsage` when usage has shifted.
+- Keep the colonial or contested term. Never silently rename it.
+- Explain why it is problematic, in `whyProblematic`.
+- Always surface the autonym — `selfAppellation` — with its language.
+- Record `contemporaryUsage` where usage has shifted.
+
+`checkEditorialRules.ts` enforces two of these: an autonym is required at
+`confidence >= medium`, and at least two sources when `classificationStatus` is `contested`
+or `colonial-legacy`.
+
+The posture is to publish the claim with its provenance, not to suppress the claim. That
+applies to the terms as much as to the sources.
+
+## A people is not a bounded territory
+
+The atlas never draws a closed line around a people, and the prose should not assert one
+either. Write where a people is attested, and by whom; not where it "ends".

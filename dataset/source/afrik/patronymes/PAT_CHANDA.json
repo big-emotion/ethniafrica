@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_CHANDA",
+  "nameMain": "Chanda",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Chanda",
+      "attestations": [
+        {
+          "countryId": "ZMB",
+          "sourceRefs": ["forebears-chanda"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Forebears reproduit trois formulations attribuées au même ouvrage zambien de 2019 : « esprit ancestral », personne dotée d'un esprit d'influence et de pouvoir, ou personne qui diffuse son influence. Faute d'accès à l'ouvrage primaire et face à ces formulations divergentes, la glose reste revendiquée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["forebears-chanda"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BEMBA",
+      "status": "attested",
+      "sourceRefs": ["forebears-chanda"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZMB",
+      "status": "attested",
+      "sourceRefs": ["forebears-chanda"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-chanda",
+      "title": "Chanda Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/chanda",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page dédiée consultée intégralement. Elle attribue à « The Names of Zambia » (Simboma Mubita Lukama, 2019) trois formulations voisines mais non identiques, qualifie Chanda de patronyme bemba et enregistre sa plus forte densité en Zambie. L'ouvrage cité n'a pas été consulté ; les contributions libres et toute inférence depuis la seule distribution ont été écartées."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Chanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Chanda Surname Origin, Meaning & Last Name History » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Chanda à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Chanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Chanda Surname Origin, Meaning & Last Name History » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Chanda."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Chanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « Chanda Surname Origin, Meaning & Last Name History », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Chanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « Chanda Surname Origin, Meaning & Last Name History », n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Chanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Chanda Surname Origin, Meaning & Last Name History » n'ont établi aucune règle propre à Chanda permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

@@ -54,6 +54,7 @@ vi.mock("@/components/quiz/QuizPlayHost", () => ({
 }));
 
 import { notFound } from "next/navigation";
+import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import QuizPage from "../page";
 
 function scopesEnvelope() {
@@ -183,6 +184,52 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
     );
   });
 
+  /**
+   * The theme reached the fetch and never the page. A reader crossing a country
+   * with a theme was told the country alone, so nothing on screen said which
+   * half of its questions they were being asked.
+   */
+  // @req REQ-121
+  it("names the theme beside the scope once a track crosses both", async () => {
+    mockDescribeScope.mockResolvedValue({
+      kind: "country",
+      entityId: "ZAF",
+      labelFr: "Afrique du Sud",
+    });
+
+    render(
+      await QuizPage({
+        searchParams: Promise.resolve({ pays: "ZAF", theme: "langues" }),
+      })
+    );
+
+    expect(screen.getByTestId("quiz-play-host")).toHaveAttribute(
+      "data-label",
+      "Afrique du Sud · Langues"
+    );
+  });
+
+  // « Tout le continent » is the absence of narrowing, so pairing it with a
+  // theme reads as two scopes rather than one track. A theme-only track is
+  // named by its theme.
+  // @req REQ-121
+  it("names a theme-only track by its theme alone", async () => {
+    mockDescribeScope.mockResolvedValue({
+      kind: "mixed",
+      entityId: null,
+      labelFr: "Tout le continent",
+    });
+
+    render(
+      await QuizPage({ searchParams: Promise.resolve({ theme: "croyances" }) })
+    );
+
+    expect(screen.getByTestId("quiz-play-host")).toHaveAttribute(
+      "data-label",
+      "Croyances"
+    );
+  });
+
   // @req REQ-103 FR66
   it("falls back to the picker when the URL names a country the corpus lacks", async () => {
     // A 404 would be wrong: the route exists, and the reader's next move is to
@@ -194,5 +241,38 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
 
     expect(screen.getByTestId("quiz-scope-picker")).toBeInTheDocument();
     expect(notFound).not.toHaveBeenCalled();
+  });
+
+  // Nothing else on this route binds `--accent`: a quiz page is not a hub, so
+  // the token fell through to the bare shadcn HSL triplet that shares the name
+  // and `variant="accent"` painted ochre on the Jouer axis. Same diagnosis, and
+  // same fix, as src/app/[lang]/jeux/[jeu]/page.tsx.
+  // @req REQ-103
+  it("paints both branches in the Jouer accent", async () => {
+    mockGetQuizScopesHandler.mockResolvedValue(scopesEnvelope());
+    const picker = render(
+      await QuizPage({ searchParams: Promise.resolve({}) })
+    );
+
+    expect(
+      picker.container.querySelector(
+        `.${ACCENT_BY_ACCESS_MODE.jeux} [data-testid="quiz-scope-picker"]`
+      )
+    ).not.toBeNull();
+
+    mockDescribeScope.mockResolvedValue({
+      kind: "country",
+      entityId: "GHA",
+      labelFr: "Ghana",
+    });
+    const session = render(
+      await QuizPage({ searchParams: Promise.resolve({ pays: "GHA" }) })
+    );
+
+    expect(
+      session.container.querySelector(
+        `.${ACCENT_BY_ACCESS_MODE.jeux} [data-testid="quiz-play-host"]`
+      )
+    ).not.toBeNull();
   });
 });

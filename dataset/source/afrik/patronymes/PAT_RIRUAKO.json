@@ -1,0 +1,92 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_RIRUAKO",
+  "nameMain": "Riruako",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Riruako",
+      "attestations": [
+        {
+          "countryId": "NAM",
+          "sourceRefs": ["brock-2019-riruako"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une étude universitaire de 2019 distingue, dans la politique mémorielle namibienne, un « groupe Riruako » lié à l'Ovaherero Traditional Authority et placé sous le Paramount Chief Riruako. Elle établit cet usage historique ovaherero du nom, mais pas son étymologie.",
+        "claimStatus": "established",
+        "sourceRefs": ["brock-2019-riruako"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_HERERO",
+      "status": "attested",
+      "sourceRefs": ["brock-2019-riruako"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NAM",
+      "status": "attested",
+      "sourceRefs": ["brock-2019-riruako"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "brock-2019-riruako",
+      "title": "Politics of reparations: unravelling the power relations in the Herero/Nama genocide reparations claims",
+      "url": "https://open.uct.ac.za/items/35f782fa-ea3a-430d-9701-89f2a7a5bf6a/full",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Mémoire de master de Penohole Brock (University of Cape Town, 2019), notice et résumé consultés directement. Le texte documente l'usage historique de Riruako au sein de l'autorité traditionnelle ovaherero, sans proposer d'étymologie du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "la recherche web et bibliographique combinant « Riruako », « Ovaherero », « Herero », « surname », « lineage », « etymology », « transmission » et « obituary », ainsi que la consultation directe de « Politics of reparations: unravelling the power relations in the Herero/Nama genocide reparations claims » ont établi une attestation historique de Riruako, mais aucune analyse linguistique attribuée permettant d'en reconstruire l'étymologie."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Riruako », « Ovaherero », « Herero », « surname », « lineage », « etymology », « transmission » et « obituary », ainsi que la consultation directe de « Politics of reparations: unravelling the power relations in the Herero/Nama genocide reparations claims » n'ont pas établi que la catégorie provisoire « clan_name » décrive Riruako lui-même ; elle reste un classement de travail et non une origine démontrée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Riruako », « Ovaherero », « Herero », « surname », « lineage », « etymology », « transmission » et « obituary », ainsi que la consultation directe de « Politics of reparations: unravelling the power relations in the Herero/Nama genocide reparations claims » n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Riruako à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Riruako », « Ovaherero », « Herero », « surname », « lineage », « etymology », « transmission » et « obituary », ainsi que la consultation directe de « Politics of reparations: unravelling the power relations in the Herero/Nama genocide reparations claims » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Riruako."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Riruako », « Ovaherero », « Herero », « surname », « lineage », « etymology », « transmission » et « obituary », ainsi que la consultation directe de « Politics of reparations: unravelling the power relations in the Herero/Nama genocide reparations claims » n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé de Riruako, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Riruako », « Ovaherero », « Herero », « surname », « lineage », « etymology », « transmission » et « obituary », ainsi que la consultation directe de « Politics of reparations: unravelling the power relations in the Herero/Nama genocide reparations claims » n'ont pas établi de lignée homonyme de Riruako dotée d'une origine distincte et documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Riruako », « Ovaherero », « Herero », « surname », « lineage », « etymology », « transmission » et « obituary », ainsi que la consultation directe de « Politics of reparations: unravelling the power relations in the Herero/Nama genocide reparations claims » n'ont établi aucune règle propre à Riruako permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

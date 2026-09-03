@@ -31,5 +31,3 @@ export function PeopleFicheTitle({ people }: { people: PeopleDetail }) {
     <PeopleFicheHead hero={hero} countries={countries} showConfidence={false} />
   );
 }
-
-export default PeopleFicheTitle;

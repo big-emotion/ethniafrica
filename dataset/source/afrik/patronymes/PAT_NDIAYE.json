@@ -1,0 +1,120 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
+  },
+  "id": "PAT_NDIAYE",
+  "nameMain": "Ndiaye",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Ndiaye",
+      "attestations": [
+        {
+          "countryId": "SEN",
+          "sourceRefs": [
+            "madubuike-1994-african-names",
+            "dafn-familysearch-ndiaye"
+          ]
+        }
+      ]
+    },
+    {
+      "spelling": "Njaay",
+      "attestations": [
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    },
+    {
+      "spelling": "N'Diaye",
+      "attestations": [
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["dafn-familysearch-ndiaye"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Madubuike rapporte une tradition faisant descendre les Ndiaye d’un ancêtre nommé N’Djadia ; le DAFN relie cette mémoire au Ndiadiane Ndiaye semi-légendaire, fondateur du royaume du Djolof, tout en qualifiant l’étymologie du nom d’inexpliquée.",
+        "claimStatus": "claimed",
+        "sourceRefs": [
+          "madubuike-1994-african-names",
+          "dafn-familysearch-ndiaye"
+        ]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_WOLOF",
+      "status": "attested",
+      "sourceRefs": ["madubuike-1994-african-names", "dafn-familysearch-ndiaye"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "SEN",
+      "status": "attested",
+      "sourceRefs": ["madubuike-1994-african-names", "dafn-familysearch-ndiaye"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "madubuike-1994-african-names",
+      "title": "A Handbook of African Names",
+      "url": "https://dokumen.pub/a-handbook-of-african-names-2-revnbsped-0894104381-9780894104381-0894104373.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ihechukwu Madubuike, 2e éd., Three Continents Press, 1994. La section consacrée aux Wolof indique que les enfants prennent le nom familial du père et cite Diop, Ndiaye, Fall et Gueye parmi les patronymes communs transmis par les hommes. La consultation a porté sur une transcription numérique miroir du volume imprimé."
+    },
+    {
+      "sourceKey": "dafn-familysearch-ndiaye",
+      "title": "Dictionary of American Family Names — Ndiaye entry",
+      "url": "https://www.familysearch.org/en/surname?surname=ndiaye",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Entrée FamilySearch reproduisant le Dictionary of American Family Names de Patrick Hanks. Elle décrit Ndiaye/N'Diaye comme nom de clan wolof principalement sénégalais, également porté chez les Sérères, et rapporte la tradition de Ndiadiane Ndiaye comme ancêtre des Wolof."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "L’article de Lamine Ndiaye sur la parenté à plaisanterie wolof et les notices Ndiaye de Madubuike et du DAFN ont été recherchés ; aucun partenaire patronymique explicite n’a été trouvé."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La tradition dynastique associée à Ndiadiane Ndiaye ne décrit ni caste ni fonction héréditaire applicable à l’ensemble des porteurs ; aucune autre attribution n’a été trouvée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Ndiadiane Ndiaye est présenté comme semi-légendaire et non comme un porteur historiquement vérifié ; aucun bearer n’est donc ajouté après consultation des deux références."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Le DAFN signale aussi Ndiaye chez les Sérères, mais ne démontre pas une origine distincte de l’usage wolof ; la pluralité des peuples ne suffit pas à créer un homonyme."
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KAMANGA",
+  "nameMain": "Kamanga",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Kamanga",
+      "attestations": [
+        {
+          "countryId": "MWI",
+          "sourceRefs": ["forebears-kamanga"]
+        }
+      ]
+    },
+    {
+      "spelling": "Nkhamanga",
+      "attestations": [
+        {
+          "countryId": "MWI",
+          "sourceRefs": ["ukzn-mapala-kamanga"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une thèse historique de l'Université du KwaZulu-Natal précise que Nkhamanga désigne les Tumbuka de Chikulamayembe dans l'actuel district de Rumphi et documente les formes historiques Tumbuka-Kamanga et Henga-Kamanga. Cette attestation éclaire l'ancrage collectif du nom, mais ne démontre ni la formation du patronyme moderne ni son mode de transmission.",
+        "claimStatus": "established",
+        "sourceRefs": ["ukzn-mapala-kamanga"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "La base communautaire Forebears, en citant The Names of Zambia de Simboma Mubita Lukama, attribue au patronyme tumbuka Kamanga le sens de « personne qui attache des fagots ». Faute d'accès dans cette recherche à l'ouvrage cité ou à une analyse morphologique tumbuka indépendante, cette interprétation reste une attribution revendiquée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["forebears-kamanga"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_TUMBUKA",
+      "status": "attested",
+      "sourceRefs": ["ukzn-mapala-kamanga", "forebears-kamanga"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MWI",
+      "status": "attested",
+      "sourceRefs": ["ukzn-mapala-kamanga", "forebears-kamanga"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "ukzn-mapala-kamanga",
+      "title": "A Historical Study of the Border Dispute Between the Livingstonia and Nkhoma Synods of the Church of Central Africa Presbyterian (1956–2015)",
+      "url": "https://researchspace.ukzn.ac.za/bitstreams/d0ef0b3b-2f6d-4368-8fb0-6ad402b2c062/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Thèse de doctorat de Cogitator Wilton Mapala, Université du KwaZulu-Natal, consultée intégralement. Elle définit Nkhamanga comme les Tumbuka de Chikulamayembe dans le district de Rumphi et discute les appellations Henga-Kamanga et Tumbuka-Kamanga. Elle ne donne pas l'étymologie du patronyme Kamanga."
+    },
+    {
+      "sourceKey": "forebears-kamanga",
+      "title": "Kamanga Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/kamanga",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Fiche communautaire consultée intégralement. Elle présente Kamanga comme patronyme tumbuka, le localise principalement au Malawi et attribue une signification à The Names of Zambia (2019). La source secondaire citée n'ayant pas été consultée, le sens est conservé au niveau « claimed »."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kamanga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la thèse historique de Cogitator Wilton Mapala et la fiche Forebears dédiée à Kamanga, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kamanga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la thèse historique de Cogitator Wilton Mapala et la fiche Forebears dédiée à Kamanga, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kamanga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la thèse historique de Cogitator Wilton Mapala et la fiche Forebears dédiée à Kamanga, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kamanga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la thèse historique de Cogitator Wilton Mapala et la fiche Forebears dédiée à Kamanga, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Kamanga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la thèse historique de Cogitator Wilton Mapala et la fiche Forebears dédiée à Kamanga, n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

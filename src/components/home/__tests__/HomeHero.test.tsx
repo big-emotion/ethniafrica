@@ -6,12 +6,23 @@ import { describe, expect, it, vi } from "vitest";
 
 import { HomeHero } from "@/components/home/HomeHero";
 import { PRODUCT_NAME } from "@/lib/brand";
+import { CORPUS_CLASSES } from "@/lib/home/corpusClasses";
 import { HOME_HERO_IMAGES } from "@/lib/home/homeHeroVisuals";
 
 // The band carries an interactive island since the search field landed in it,
 // and useRouter throws outside an app-router tree rather than degrading.
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
+}));
+
+vi.mock("@/components/atlas/ContinentGlobeStage", () => ({
+  ContinentGlobeStage: ({ autoRotate }: { autoRotate?: boolean }) => (
+    <div
+      className="home-globe-stage"
+      data-testid="home-globe-stage"
+      data-autoplay={String(Boolean(autoRotate))}
+    />
+  ),
 }));
 
 describe("HomeHero — the band the home opens on (REQ-115)", () => {
@@ -24,17 +35,43 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
     ).not.toBeInTheDocument();
   });
 
+  // The heading's accessible name is its text now. There is no reel to hide
+  // from assistive technology and so no separate aria-label to keep in step
+  // with it — a landmark whose name was a different sentence from what it
+  // displayed is exactly the arrangement this band spent a release in.
   // @req REQ-044
-  it("renders a single H1 with the exact verbatim headline and zero H3", () => {
+  it("renders a single H1 whose accessible name is the question it displays", () => {
     render(<HomeHero />);
     const headings = screen.getAllByRole("heading", { level: 1 });
     expect(headings).toHaveLength(1);
 
-    const h1 = headings[0];
-    expect(h1.textContent?.replace(/\s+/g, " ").trim()).toBe(
-      "Qui sont les peuples d'Afrique ?"
-    );
+    expect(headings[0]).not.toHaveAttribute("aria-label");
     expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
+  });
+
+  // The band no longer narrows to one class, and no longer hides four. The
+  // headline asks about the continent; the tile band under the search states
+  // the classes it counts. \s rather than a literal space: the no-break space
+  // before « ? » is deliberate and must not be asserted as an ordinary one.
+  //
+  // The words come from the registry rather than a literal list. They were
+  // written out once — peuples, langues, pays — and the day pays gave its tile
+  // to noms this assertion failed on a band that was correct, which is the
+  // shape of a test that pins the classes instead of the division of labour
+  // between the headline and the band.
+  // @req REQ-044
+  it("asks about the continent and leaves the totals to the tile band", () => {
+    render(<HomeHero />);
+
+    const h1 = screen.getByRole("heading", { level: 1 });
+    expect(h1.textContent).toMatch(/^Une question sur l'Afrique\s?\?$/);
+
+    const tiles = screen.getByTestId("home-corpus-counts");
+    for (const { tileLabel } of CORPUS_CLASSES) {
+      const className = tileLabel.split(" ")[0];
+      expect(h1.textContent).not.toContain(className);
+      expect(tiles.textContent).toContain(className);
+    }
   });
 
   // The headline is the question the reader arrives with, so it stays a
@@ -57,8 +94,15 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // One sentence, not three registers. The band used to ask the reader to
   // hold seven items before the first scroll — four in the lede's list,
   // three in the standfirst's — and a reader retains one.
+  //
+  // The sentence names what a reader can do before it names what the site is.
+  // The band's job on a first visit is to answer « what is there here for me »
+  // and it spent a release answering « how does this site work » instead, in a
+  // sentence about fiches and access that named neither the map, the dossiers
+  // nor the games. An edit that drops the verbs turns the proposition of value
+  // back into a description of a mechanism.
   // @req REQ-044
-  it("answers the headline in exactly one sentence", () => {
+  it("answers the headline in one sentence, and offers something to do", () => {
     render(<HomeHero />);
 
     const answer = screen.getByTestId("home-hero-answer");
@@ -67,20 +111,31 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
       .filter((part) => part.trim().length > 0);
 
     expect(sentences).toHaveLength(1);
-    expect(answer).toHaveTextContent(/y répond peuple par peuple/i);
-    expect(answer).toHaveTextContent(/la source de chaque réponse/i);
+    expect(answer).toHaveTextContent(/explorez/i);
+    expect(answer).toHaveTextContent(/dossiers/i);
+    expect(answer).toHaveTextContent(/atlas/i);
+    expect(answer).toHaveTextContent(/sources/i);
   });
 
-  // The band holds one paragraph. A second one is how the lede and the
-  // standfirst grew back the last time.
+  // The band holds exactly one paragraph of prose. A second is how the lede
+  // and the standfirst grew back the last time — so this asserts the exact
+  // list rather than a count, which a new block could quietly join by
+  // incrementing a number in a test. The figures are a definition list under
+  // the search, deliberately not a third register of prose.
   // @req REQ-044
-  it("holds one paragraph and no separating rule", () => {
+  it("holds one paragraph, one tile band, and no separating rule", () => {
     const { container } = render(<HomeHero />);
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
 
-    expect(container.querySelectorAll(".home-hero-copy p")).toHaveLength(1);
+    const paragraphs = Array.from(
+      container.querySelectorAll(".home-hero-copy p")
+    );
+    expect(
+      paragraphs.map((paragraph) => paragraph.getAttribute("data-testid"))
+    ).toEqual(["home-hero-answer"]);
+    expect(screen.getByTestId("home-corpus-counts").tagName).toBe("DL");
     expect(container.querySelector(".home-hero-lede")).toBeNull();
     expect(container.querySelector(".home-hero-standfirst")).toBeNull();
     expect(styles).not.toMatch(/\.home-hero-answer\s*\{[^}]*border-top/);
@@ -126,16 +181,25 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // runner's JSX transform keeps the space that Next's drops, so the page
   // said « EthniAfricapublie » while every assertion above stayed green.
   // What is guarded is therefore the shape that removes the question — the
-  // sentence is one string, and the name is interpolated into it.
+  // answer is string literals inside one expression, with no bare JSX text
+  // beside them. The prose no longer interpolates the product name, but the
+  // next edit reaching for it must not paste it in as adjacent JSX text.
   // @req REQ-044
-  it("carries the product name inside the sentence, not beside it", () => {
+  it("writes the answer as string literals, never as bare JSX text", () => {
     const source = readFileSync(
       join(process.cwd(), "src/components/home/HomeHero.tsx"),
       "utf8"
     );
 
-    expect(source).toMatch(/\$\{PRODUCT_NAME\} y répond/);
-    expect(source).not.toMatch(/(?<!\$)\{PRODUCT_NAME\} y répond/);
+    const answer = source.match(
+      /data-testid="home-hero-answer">([\s\S]*?)<\/p>/
+    )?.[1];
+
+    expect(answer).toBeDefined();
+    expect(answer!.trim().startsWith("{")).toBe(true);
+    // Nothing but whitespace between the closing brace and the closing tag:
+    // any character there is text SWC would butt against the expression.
+    expect(answer!.trimEnd().endsWith("}")).toBe(true);
   });
 
   // The answer is the band's only prose, so it takes the reading size and
@@ -251,5 +315,15 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
     render(<HomeHero visual={{ kind: "globe" }} />);
     expect(screen.getByTestId("home-hero-globe")).toBeInTheDocument();
     expect(screen.queryByRole("img")).not.toBeInTheDocument();
+  });
+
+  // @req REQ-115
+  it("opts the home globe into gentle autoplay", () => {
+    render(<HomeHero visual={{ kind: "globe" }} />);
+
+    expect(screen.getByTestId("home-globe-stage")).toHaveAttribute(
+      "data-autoplay",
+      "true"
+    );
   });
 });

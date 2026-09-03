@@ -1,0 +1,24 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "media",
+    "directives": "A media entry (image, video) is attached to a fiche only by manual editorial judgment, never by automated category matching — see ETNI-1412. A media entry with no licence is refused at persistence.",
+    "depictionTimingEnum": ["contemporary", "reconstitution"]
+  },
+  "id": "MED_XXXXX",
+  "links": {
+    "languageFamilyId": null,
+    "languageId": null,
+    "peopleId": "PPL_XXXXX",
+    "countryId": null
+  },
+  "author": "<Author or creator of the media, if known>",
+  "licence": {
+    "uri": "<Licence URI — mandatory, e.g. https://creativecommons.org/licenses/by-sa/4.0/>"
+  },
+  "sourcePage": {
+    "url": "<Page the media was found on>"
+  },
+  "period": "<Era or date the media depicts, if known>",
+  "depictionTiming": "contemporary"
+}

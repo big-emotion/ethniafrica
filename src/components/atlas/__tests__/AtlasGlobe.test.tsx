@@ -1040,6 +1040,35 @@ describe("AtlasGlobe", () => {
 
 describe("AtlasGlobe — the reader's own camera (REQ-117)", () => {
   // @req REQ-117
+  it("shows stop-oriented guidance and stops autoplay on pointer interaction", () => {
+    const getContextSpy = vi
+      .spyOn(HTMLCanvasElement.prototype, "getContext")
+      .mockReturnValue({} as unknown as RenderingContext);
+    const { container } = render(
+      <AtlasGlobe
+        overlay={countryOverlay}
+        presentation="editorial"
+        autoRotate
+        probedWebglSupport
+        missingMessage="absent"
+      />
+    );
+
+    expect(
+      screen.getByText("Interagissez avec le globe pour arrêter la rotation.")
+    ).toBeInTheDocument();
+
+    fireEvent.pointerDown(container.querySelector("[data-atlas-surface]"), {
+      pointerId: 1,
+      clientX: 10,
+      clientY: 10,
+    });
+
+    expect(screen.getByText("Glissez pour tourner.")).toBeInTheDocument();
+    getContextSpy.mockRestore();
+  });
+
+  // @req REQ-117
   it("offers a surface that carries the name and the keyboard, so the canvas can stay paint", () => {
     const { container } = render(
       <AtlasGlobe overlay={countryOverlay} missingMessage="absent" />

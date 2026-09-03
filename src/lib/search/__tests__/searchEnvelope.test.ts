@@ -3,7 +3,9 @@ import { describe, it, expect } from "vitest";
 import {
   buildSearchParams,
   compareByRelevance,
+  mapSearchCounts,
   mapSearchEnvelope,
+  mapSearchLeads,
 } from "@/lib/search/searchEnvelope";
 import type { SearchResult } from "@/types/afrik-frontend";
 
@@ -143,6 +145,337 @@ describe("mapSearchEnvelope", () => {
     expect(people.confidence).toBe(0.71);
   });
 
+  // @req REQ-124
+  it("counts every people fiche source, including entries without a URL", () => {
+    const [people] = mapSearchEnvelope({
+      data: {
+        peoples: [
+          {
+            id: "PPL_YORUBA",
+            nameMain: "Yoruba",
+            content: {
+              sources: [
+                {
+                  title: "UNESCO — Yoruba language",
+                  url: "https://www.unesco.org/languages-atlas/en/yoruba",
+                },
+                { title: "Printed reference", url: null },
+                {
+                  title: "Ethnologue — Yoruba",
+                  url: "https://www.ethnologue.com/language/yor/",
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    expect(people.sourceCount).toBe(3);
+  });
+
+  // @req REQ-124
+  it("keeps only real people source URLs as titled external links", () => {
+    const [people] = mapSearchEnvelope({
+      data: {
+        peoples: [
+          {
+            id: "PPL_YORUBA",
+            nameMain: "Yoruba",
+            content: {
+              sources: [
+                {
+                  title: "UNESCO — Yoruba language",
+                  url: "https://www.unesco.org/languages-atlas/en/yoruba",
+                },
+                { title: "Printed reference", url: null },
+                {
+                  title: "Ethnologue — Yoruba",
+                  url: "https://www.ethnologue.com/language/yor/",
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    expect(people.externalLinks).toEqual([
+      {
+        title: "UNESCO — Yoruba language",
+        url: "https://www.unesco.org/languages-atlas/en/yoruba",
+      },
+      {
+        title: "Ethnologue — Yoruba",
+        url: "https://www.ethnologue.com/language/yor/",
+      },
+    ]);
+  });
+
+  // @req REQ-002
+  it("carries the people-group id and label a split fiche declares (ETNI-1391)", () => {
+    const [fulani] = mapSearchEnvelope({
+      data: {
+        peoples: [
+          {
+            id: "PPL_FULANI_MASSINA",
+            nameMain: "Peul du Massina",
+            content: {
+              appellations: {
+                peopleGroupId: "PGRP_FULANI",
+                peopleGroupLabel: "Peul / Fulani",
+              },
+            },
+          },
+        ],
+      },
+    });
+
+    expect(fulani.peopleGroupId).toBe("PGRP_FULANI");
+    expect(fulani.peopleGroupLabel).toBe("Peul / Fulani");
+  });
+
+  // @req REQ-002
+  it("leaves the people-group fields undefined when a fiche is not split", () => {
+    const [bete] = mapSearchEnvelope(envelope);
+
+    expect(bete.peopleGroupId).toBeUndefined();
+    expect(bete.peopleGroupLabel).toBeUndefined();
+  });
+
+  // @req REQ-126
+  it("maps a person row, carrying roleCategory and peopleLinks untouched", () => {
+    const [person] = mapSearchEnvelope({
+      data: {
+        persons: [
+          {
+            id: "PER_DELAFOSSE",
+            fullName: "Maurice Delafosse",
+            roleCategory: "ethnographer",
+            peopleLinks: [
+              { peopleId: "PPL_BETE", relationLabel: "observation" },
+              { peopleId: "PPL_DIOULA", relationLabel: "membership" },
+            ],
+            snippet: "administrateur colonial et [[linguiste]]",
+            relevance: 0.65,
+            exactMatch: true,
+          },
+        ],
+      },
+    });
+
+    expect(person.type).toBe("person");
+    expect(person.id).toBe("PER_DELAFOSSE");
+    expect(person.name).toBe("Maurice Delafosse");
+    expect(person.roleCategory).toBe("ethnographer");
+    expect(person.peopleLinks).toEqual([
+      { peopleId: "PPL_BETE", relationLabel: "observation" },
+      { peopleId: "PPL_DIOULA", relationLabel: "membership" },
+    ]);
+    expect(person.snippet).toBe("administrateur colonial et [[linguiste]]");
+    expect(person.relevance).toBe(0.65);
+    expect(person.exactMatch).toBe(true);
+  });
+
+  // @req REQ-126
+  it("defaults a person's peopleLinks to an empty array when absent", () => {
+    const [person] = mapSearchEnvelope({
+      data: {
+        persons: [{ id: "PER_X", fullName: "X", roleCategory: "historian" }],
+      },
+    });
+
+    expect(person.peopleLinks).toEqual([]);
+  });
+
+  // REQ-136: a language reaches the unified surface as its own kind.
+  // @req REQ-136
+  it("maps a language row, carrying its family name and ISO id", () => {
+    const [language] = mapSearchEnvelope({
+      data: {
+        languages: [
+          {
+            id: "swa",
+            name: "Swahili",
+            familyId: "FLG_NIGER_CONGO",
+            familyName: "Niger-Congo",
+            snippet: "[[Swahili]]",
+            relevance: 0.9,
+            exactMatch: true,
+          },
+        ],
+      },
+    });
+
+    expect(language.type).toBe("language");
+    expect(language.id).toBe("swa");
+    expect(language.name).toBe("Swahili");
+    expect(language.languageFamilyId).toBe("FLG_NIGER_CONGO");
+    expect(language.languageFamilyName).toBe("Niger-Congo");
+    expect(language.snippet).toBe("[[Swahili]]");
+    expect(language.relevance).toBe(0.9);
+    expect(language.exactMatch).toBe(true);
+  });
+
+  // ETNI-1804: DominantAnswerPanel needs the language's ISO code, speaker
+  // peoples and source count, which the RPC already returns in `content` but
+  // the mapper used to drop.
+  // @req REQ-124
+  it("carries a language's ISO 639-3 code, speaker peoples and source count", () => {
+    const [language] = mapSearchEnvelope({
+      data: {
+        languages: [
+          {
+            id: "swa",
+            name: "Swahili",
+            familyId: "FLG_NIGER_CONGO",
+            familyName: "Niger-Congo",
+            content: {
+              peoples: [
+                { name: "Swahili (peuple)", peopleId: "PPL_SWAHILI" },
+                { name: "Comorien", peopleId: "PPL_COMORIEN" },
+                { name: "Locuteur non fiché" },
+              ],
+              sources: [
+                {
+                  title: "Glottolog — Swahili",
+                  url: "https://glottolog.org/resource/languoid/id/swah1253",
+                },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    expect(language.isoCode639_3).toBe("swa");
+    expect(language.speakerPeopleIds).toEqual(["PPL_SWAHILI", "PPL_COMORIEN"]);
+    expect(language.sourceCount).toBe(1);
+  });
+
+  // REQ-136 AC: "Given a language name and a people name that match a query
+  // equally well, when results are rendered, then both kinds are returned,
+  // grouped by kind, and neither is silently dropped."
+  // @req REQ-136
+  it("returns a language and a people that match equally well, neither dropped", () => {
+    const results = mapSearchEnvelope({
+      data: {
+        languages: [
+          {
+            id: "kon",
+            name: "Kongo",
+            familyId: "FLG_NIGER_CONGO",
+            familyName: "Niger-Congo",
+            relevance: 1,
+            exactMatch: true,
+          },
+        ],
+        peoples: [
+          {
+            id: "PPL_KONGO",
+            nameMain: "Kongo",
+            languageFamilyId: "FLG_NIGER_CONGO",
+            relevance: 1,
+            exactMatch: true,
+          },
+        ],
+      },
+    });
+
+    expect(results).toHaveLength(2);
+    expect(results.map((r) => r.type).sort()).toEqual(["language", "people"]);
+  });
+
+  // @req REQ-135
+  it("maps a patronyme row, carrying nameSystem and casteOrSocialFunction", () => {
+    const [patronyme] = mapSearchEnvelope({
+      data: {
+        patronymes: [
+          {
+            id: "PATR_KEITA",
+            nameMain: "Keïta",
+            nameSystem: "patronymic",
+            casteOrSocialFunction: "royal",
+            snippet: "lignage [[Keïta]]",
+            relevance: 0.65,
+            exactMatch: true,
+          },
+        ],
+      },
+    });
+
+    expect(patronyme.type).toBe("patronyme");
+    expect(patronyme.id).toBe("PATR_KEITA");
+    expect(patronyme.name).toBe("Keïta");
+    expect(patronyme.nameSystem).toBe("patronymic");
+    expect(patronyme.casteOrSocialFunction).toBe("royal");
+    expect(patronyme.snippet).toBe("lignage [[Keïta]]");
+    expect(patronyme.relevance).toBe(0.65);
+    expect(patronyme.exactMatch).toBe(true);
+  });
+
+  // ETNI-1804: DominantAnswerPanel needs the patronyme's associations and
+  // source count, which the RPC already returns in `content` but the mapper
+  // used to drop.
+  // @req REQ-124
+  it("carries a patronyme's associated peoples, attested countries and source count", () => {
+    const [patronyme] = mapSearchEnvelope({
+      data: {
+        patronymes: [
+          {
+            id: "PATR_KEITA",
+            nameMain: "Keïta",
+            nameSystem: "clan_name",
+            casteOrSocialFunction: "royal",
+            content: {
+              peoples: [
+                { peopleId: "PPL_MANDINGUE", status: "attested" },
+                { peopleId: "PPL_BAMBARA", status: "supposed" },
+              ],
+              countries: [
+                { countryId: "MLI", status: "attested" },
+                { countryId: "GIN", status: "supposed" },
+              ],
+              sources: [
+                {
+                  title: "Delafosse — Haut-Sénégal-Niger",
+                  url: "https://example.org/delafosse",
+                },
+                { title: "Griot oral, Ségou", url: null },
+              ],
+            },
+          },
+        ],
+      },
+    });
+
+    expect(patronyme.associatedPeopleIds).toEqual([
+      "PPL_MANDINGUE",
+      "PPL_BAMBARA",
+    ]);
+    expect(patronyme.attestedCountryIds).toEqual(["MLI"]);
+    expect(patronyme.sourceCount).toBe(2);
+  });
+
+  // ETNI-1463 AC2: a query with person hits but no name fiche must still
+  // return the persons — the absence is rendered, not silence, but the
+  // envelope itself must never drop a kind that legitimately came back
+  // empty.
+  // @req REQ-135
+  it("returns persons with an empty patronymes array, neither dropped nor faked", () => {
+    const results = mapSearchEnvelope({
+      data: {
+        persons: [
+          { id: "PER_X", fullName: "Someone", roleCategory: "historian" },
+        ],
+        patronymes: [],
+      },
+    });
+
+    expect(results).toHaveLength(1);
+    expect(results[0].type).toBe("person");
+  });
+
   // @req REQ-002
   it("prefers the match excerpt over the raw etymology for a country", () => {
     const [country] = mapSearchEnvelope({
@@ -211,5 +544,150 @@ describe("compareByRelevance", () => {
       "FIRST",
       "SECOND",
     ]);
+  });
+});
+
+describe("mapSearchLeads", () => {
+  // @req REQ-125
+  it("maps a people, country and family lead, renaming family to languageFamily", () => {
+    const leads = mapSearchLeads({
+      data: {
+        total: 0,
+        leads: [
+          {
+            kind: "people",
+            id: "PPL_BAMBARA",
+            name: "Bambara",
+            similarity: 0.4,
+          },
+          { kind: "country", id: "MLI", name: "Mali", similarity: 0.3 },
+          {
+            kind: "family",
+            id: "FLG_MANDE",
+            name: "Mandé",
+            similarity: 0.25,
+          },
+        ],
+      },
+    });
+
+    expect(leads).toEqual([
+      { type: "people", id: "PPL_BAMBARA", name: "Bambara", similarity: 0.4 },
+      { type: "country", id: "MLI", name: "Mali", similarity: 0.3 },
+      {
+        type: "languageFamily",
+        id: "FLG_MANDE",
+        name: "Mandé",
+        similarity: 0.25,
+      },
+    ]);
+  });
+
+  // @req REQ-125
+  it("drops a lead whose kind is not people, country or family", () => {
+    const leads = mapSearchLeads({
+      data: {
+        total: 0,
+        leads: [
+          { kind: "language", id: "swa", name: "Swahili", similarity: 0.5 },
+        ],
+      },
+    });
+
+    expect(leads).toEqual([]);
+  });
+
+  // ETNI-1463 AC3 (ETNI-1744): patronymes and persons are deliberately not
+  // lead candidates, the same way languages are not.
+  // @req REQ-125
+  it("drops a lead whose kind is patronyme or person", () => {
+    const leads = mapSearchLeads({
+      data: {
+        total: 0,
+        leads: [
+          { kind: "patronyme", id: "PATR_X", name: "X", similarity: 0.5 },
+          { kind: "person", id: "PER_X", name: "X", similarity: 0.5 },
+        ],
+      },
+    });
+
+    expect(leads).toEqual([]);
+  });
+
+  // @req REQ-125
+  it("returns an empty array when there is no leads field, an array data, or no data", () => {
+    expect(mapSearchLeads({ data: { total: 2 } })).toEqual([]);
+    expect(mapSearchLeads({ data: [{ id: "PPL_BETE" }] })).toEqual([]);
+    expect(mapSearchLeads({})).toEqual([]);
+    expect(mapSearchLeads(null)).toEqual([]);
+  });
+});
+
+describe("mapSearchCounts", () => {
+  // @req REQ-124
+  it("reads the per-type totals the handler already computes, keyed to the lens values", () => {
+    const counts = mapSearchCounts({
+      data: {
+        peoplesTotal: 12,
+        countriesTotal: 3,
+        familiesTotal: 2,
+        languagesTotal: 5,
+        personsTotal: 1,
+        total: 23,
+      },
+    });
+
+    expect(counts).toEqual({
+      all: 23,
+      people: 12,
+      country: 3,
+      languageFamily: 2,
+      language: 5,
+      person: 1,
+      patronyme: 0,
+    });
+  });
+
+  // @req REQ-124
+  // @req REQ-135
+  it("sums the displayed lenses for 'all' rather than reading data.total, and surfaces the patronyme lens (ETNI-1463)", () => {
+    const counts = mapSearchCounts({
+      data: {
+        peoplesTotal: 12,
+        countriesTotal: 3,
+        familiesTotal: 2,
+        languagesTotal: 5,
+        personsTotal: 1,
+        patronymesTotal: 7,
+        total: 30,
+      },
+    });
+
+    expect(counts).toEqual({
+      all: 30,
+      people: 12,
+      country: 3,
+      languageFamily: 2,
+      language: 5,
+      person: 1,
+      patronyme: 7,
+    });
+  });
+
+  // @req REQ-124
+  it("defaults every count to zero when a total is missing, an array data, or no data", () => {
+    const zero = {
+      all: 0,
+      people: 0,
+      country: 0,
+      languageFamily: 0,
+      language: 0,
+      person: 0,
+      patronyme: 0,
+    };
+    expect(mapSearchCounts({ data: {} })).toEqual(zero);
+    expect(mapSearchCounts({ data: [{ id: "PPL_BETE" }] })).toEqual(zero);
+    expect(mapSearchCounts({})).toEqual(zero);
+    expect(mapSearchCounts(null)).toEqual(zero);
   });
 });

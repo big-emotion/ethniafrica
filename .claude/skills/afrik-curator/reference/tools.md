@@ -1,82 +1,147 @@
-# AFRIK tools — available functions and invocation patterns
+# Tools
 
-The curator does not write any new query code. All reads go through existing project utilities. Use `tsx` from the project root so the `@/` path alias resolves.
+The curator writes no query code. Every read goes through a function that already exists.
+Run `tsx` from the repository root so the `@/` alias resolves.
 
-## Reading the source JSON (fastest path)
+Every function named here was checked against `src/` on 2026-09-02. The previous version of
+this file listed four search functions that had been deleted, which made the skill fail at
+its first step — so if you find a name here that does not resolve, fix this file rather than
+working around it.
 
-```bash
-# People
-cat dataset/source/afrik/peuples/<FLG_*>/<PPL_*>.json
+## Reading a fiche
 
-# Country
-cat dataset/source/afrik/pays/<ISO3>.json
+The fiche on disk is the source of truth. Prefer the `Read` tool.
 
-# Linguistic family
-cat dataset/source/afrik/famille_linguistique/<FLG_*>.json
+```
+peuples/<FLG_*>/<PPL_*>.json      famille_linguistique/<FLG_*>.json
+pays/<ISO3>.json                  langues/<iso639-3>.json
+patronymes/<PAT_*>.json           noms/<PPL_*>.json
+relations/<REL_*>.json            migrations/<MGR_*>.json
 ```
 
-Prefer the `Read` tool over `cat`.
+All under `dataset/source/afrik/`.
 
-## Live Supabase queries
-
-Functions exported from `src/lib/supabase/queries/afrik/`:
-
-| File                  | Functions                                                                                                                       |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `peoples.ts`          | `getAllAfrikPeoples`, `getAfrikPeopleById`, `getAfrikPeoplesByLanguageFamily`, `getAfrikPeoplesByCountry`, `searchAfrikPeoples` |
-| `countries.ts`        | `getAllAfrikCountries`, `getAfrikCountryById`, `searchAfrikCountries`                                                           |
-| `languageFamilies.ts` | `getAllAfrikLanguageFamilies`, `getAfrikLanguageFamilyById`, `searchAfrikLanguageFamilies`                                      |
-| `search.ts`           | `searchAfrikAll`                                                                                                                |
-| `flags.ts`            | `getActiveSourceFlags`                                                                                                          |
-
-These need server-side Supabase credentials (`SUPABASE_SERVICE_ROLE_KEY`) and the `NEXT_PUBLIC_SUPABASE_*` env vars loaded.
-
-### One-shot invocation from a Claude session
+## Resolving a name to an ID
 
 ```bash
-# Print a single people from the database
-tsx -e "import('./src/lib/supabase/queries/afrik/peoples.ts').then(async m => { const p = await m.getAfrikPeopleById('PPL_ZULU'); console.log(JSON.stringify(p, null, 2)); })"
-
-# Resolve a human name to candidate IDs
-tsx -e "import('./src/lib/supabase/queries/afrik/search.ts').then(async m => { console.log(JSON.stringify(await m.searchAfrikAll('zoulou'), null, 2)); })"
-
-# All peoples of a family (for cross-checks)
-tsx -e "import('./src/lib/supabase/queries/afrik/peoples.ts').then(async m => { const ps = await m.getAfrikPeoplesByLanguageFamily('FLG_BANTU'); console.log(ps.map(p => p.id).join('\n')); })"
+npx tsx scripts/resolveAfrikFiche.ts "Zoulou"
+# PPL_ZULU	people	exact	nameMain=Zoulou
 ```
 
-If `tsx -e` chokes on env loading, fall back to a tiny one-off script in `scripts/` (do not create a new long-lived script — clean it up after).
+Columns: `ID · kind · match type · matched name`. Match types rank `id` → `exact` →
+`contains` → `partial` (`partial` is the French plural falling back onto the singular the
+corpus declares — "Bantous" onto `FLG_BANTU`). Exit code 1 and a message on stderr when
+nothing matched.
 
-## Existing project scripts (reusable)
+It searches every declared name of the fiche classes: a people's `nameMain`, `mainName`,
+`selfAppellation`, `exonyms`, `historicalNames` and `spellingAliases`; a country's
+`nameFr`, `nameOfficial` and `historicalNames`; a family's `nameFr`/`nameEn`; a language's
+`nameFr`, `nameEn`, `alternateNames` and `spellingAliases`.
 
-| Script                              | Purpose                                                 |
-| ----------------------------------- | ------------------------------------------------------- |
-| `scripts/validateAfrikData.ts`      | Validate AFRIK data integrity against the strict models |
-| `scripts/checkSourceUrls.ts`        | Verify source URLs are reachable                        |
-| `scripts/recomputeConfidence.ts`    | Recompute classification confidence scores              |
-| `scripts/checkMigration.ts`         | Check that DB and source JSON are in sync               |
-| `scripts/migrateAfrikToDatabase.ts` | Load source JSON into Supabase (human runs after merge) |
-| `scripts/convertAfrikToJson.ts`     | Convert legacy formats to the JSON v2 format            |
+It reads `dataset/source/afrik/` — the corpus in git, which is the editorial truth and the
+same files the curator edits. No credentials, and no dependence on a database having been
+loaded, which matters because recette's had not been for the fiches merged on 31 August 2026. It never guesses by similarity: a near-miss that silently won would send the curator
+to edit the wrong fiche.
 
-Run with `tsx scripts/<name>.ts`. Use these before claiming an enrichment is consistent.
+> **Removed — do not call.** This replaces four functions that no longer exist in `src/`:
+> `searchAfrikAll`, `searchAfrikPeoples`, `searchAfrikCountries` and
+> `searchAfrikLanguageFamilies`. All four were deleted when ranking moved into Postgres
+> (migrations 043/044, then 069). Anything still naming them as a usable tool is stale.
 
-## Sanity checks the curator runs
+A failed lookup usually means a missing `spellingAliases` entry, not a missing fiche —
+they are filled on 12 fiches out of 800.
 
-Before emitting a proposal, run the relevant checks:
+### Searching the database instead
+
+`ftsSearchEntities` (`src/lib/supabase/queries/afrik/search.ts`) is the ranked search the
+site itself uses: one call, ranked in Postgres, covering all seven kinds including
+languages and patronymes. It needs credentials and a loaded database, so it answers "what
+would a reader find?" rather than "which file do I edit?" — use it to check that an
+enrichment is actually reachable through search, not to resolve an editing target.
+
+## Reading the database row
+
+| Module                | Functions                                                                                                                                                                                                                      |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `peoples.ts`          | `getAllAfrikPeoples`, `getAfrikPeopleById`, `getAfrikPeoplesByIds`, `getAfrikPeoplesByLanguageFamily`, `getAfrikPeoplesByCountry`, `getPaginatedAfrikPeoples`, `getAfrikPeopleCountryIndex`, `getPeopleCountsByLanguageFamily` |
+| `countries.ts`        | `getAllAfrikCountries`, `getAfrikCountryById`, `getAfrikCountriesByIds`, `getAfrikCountryIds`                                                                                                                                  |
+| `languageFamilies.ts` | `getAllAfrikLanguageFamilies`, `getAfrikLanguageFamilyById`, `getAfrikLanguageFamilyRoster`, `countAfrikLanguageFamilies`                                                                                                      |
+| `languages.ts`        | `getAfrikLanguageById`, `getAfrikLanguagesByFamily`, `listAfrikLanguages`, `getAfrikSpeakingPeoples`, `countAfrikLanguages`                                                                                                    |
+| `search.ts`           | `ftsSearchEntities`                                                                                                                                                                                                            |
+| `flags.ts`            | `getActiveSourceFlags`                                                                                                                                                                                                         |
+
+All under `src/lib/supabase/queries/afrik/`. Patronymes are served one level up, by
+`getPatronymeById` and `listPatronymes` in `src/api/v2/services/patronymes.ts`.
+
+These need `NEXT_PUBLIC_SUPABASE_*` and `SUPABASE_SERVICE_ROLE_KEY` in the environment.
 
 ```bash
-# Validate the entire AFRIK dataset (slow)
-tsx scripts/validateAfrikData.ts
+tsx -e "import('./src/lib/supabase/queries/afrik/peoples.ts').then(async m =>
+  console.log(JSON.stringify(await m.getAfrikPeopleById('PPL_ZULU'), null, 2)))"
 
-# Validate against a specific fiche (manual JSON.parse + schema check)
-tsx -e "const j = JSON.parse(require('fs').readFileSync('dataset/source/afrik/peuples/FLG_BANTU/PPL_ZULU.json', 'utf8')); console.log(Object.keys(j), Object.keys(j.content));"
+tsx -e "import('./src/lib/supabase/queries/afrik/languages.ts').then(async m =>
+  console.log(JSON.stringify(await m.getAfrikLanguageById('wol'), null, 2)))"
 ```
 
-## Search and discovery
+If `tsx -e` chokes on environment loading, write a throwaway script under `scripts/` and
+delete it afterwards. Do not leave a new long-lived script behind.
+
+**The row can be stale.** Nothing loads the corpus into recette automatically
+(ETNI-1818), so a difference between disk and database is expected there, and the disk wins.
+
+## Gates to run before emitting
 
 ```bash
-# Find all PPL_* matching a regex
-find dataset/source/afrik/peuples -name 'PPL_*.json' | xargs grep -l "Mandingue" 2>/dev/null
+npx tsx scripts/validateAfrikData.ts        # models + integrity, all classes
+npx tsx scripts/ci/checkEditorialRules.ts   # autonym, sourcing on contested fiches
+npx tsx scripts/checkSourceUrls.ts          # source URLs resolve
+```
 
-# Count fiches per family
-find dataset/source/afrik/peuples -mindepth 1 -maxdepth 1 -type d -exec sh -c 'echo "$(basename "$0"): $(ls "$0" | wc -l)"' {} \;
+`validateAfrikData.ts` runs per-class checks — `LNG-schema` for languages, `PAT-model` for
+patronymes, the FR-numbered demography and coverage checks for peoples and countries. Only
+`FR52-coverage` is advisory; everything else fails the build.
+
+Other scripts that exist and are occasionally useful: `recomputeConfidence.ts`,
+`checkMigration.ts`, `convertAfrikToJson.ts`.
+
+## Loading into a database
+
+```bash
+npx tsx scripts/migrateAfrikToDatabase.ts --target=recette
+```
+
+The target argument is mandatory. `--target=staging` is retired and throws. Production is
+loaded only deliberately, and its URL has no default — read
+`docs/runbooks/afrik-data-sync.md` before touching it.
+
+## Transcribing audio and video
+
+There is no `transcribe.sh`. The old script probed for three engines, none of which is
+installed on this machine, so it was removed rather than left to fail.
+
+Use the **ElevenLabs MCP** `speech_to_text`. A Plaud recording can also be read through the
+**Plaud MCP**, which additionally returns speakers, timestamps and any moments marked during
+the recording.
+
+For video, extract the audio first:
+
+```bash
+ffmpeg -i input.mp4 -vn -acodec copy audio.m4a
+```
+
+then transcribe, and sample frames separately if the images carry information.
+
+## Finding things on disk
+
+```bash
+# every fiche mentioning a term
+grep -rl "Mandingue" dataset/source/afrik/peuples/
+
+# fiches per family
+ls dataset/source/afrik/peuples/
+
+# which language fiches leave a field empty
+for f in dataset/source/afrik/langues/*.json; do
+  jq -r 'select((.content.dialects | length) == 0) | .id' "$f"
+done
 ```

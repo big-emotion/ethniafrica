@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon docs/runbooks/anthroponym-fiche-research.md. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
+  },
+  "id": "PAT_COKER",
+  "nameMain": "Coker",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Coker",
+      "attestations": [
+        {
+          "countryId": "SLE",
+          "sourceRefs": ["afrik-candidate-queue", "dupraz-simson-2024-krio"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Dupraz et Simson citent Coker parmi les patronymes krio courants qui correspondent aux noms de colons européens connus. Ils distinguent ce cas des noms européens adoptés ultérieurement par des Africains libérés ; l'article ne désigne toutefois pas un fondateur individuel de la lignée Coker.",
+        "claimStatus": "established",
+        "sourceRefs": ["dupraz-simson-2024-krio"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_KRIO",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "dupraz-simson-2024-krio"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "SLE",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "dupraz-simson-2024-krio"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "dupraz-simson-2024-krio",
+      "title": "Elite persistence in Sierra Leone: What can names tell us?",
+      "url": "https://www.history.ox.ac.uk/publication/1532813/ora-hyrax",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Yannick Dupraz et Rebecca Simson, Journal of Development Economics 171 (2024), DOI 10.1016/j.jdeveco.2024.103333. La section sur les pratiques de dénomination indique que les patronymes krio passent du père aux enfants et cite Cole et Coker parmi les noms de colons européens connus. La page Oxford et le texte de l'article ont été contrôlés."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "l'article de Dupraz et Simson, son appareil bibliographique et les recherches exactes « Coker » associées aux Krio, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Coker à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "l'article de Dupraz et Simson, son appareil bibliographique et les recherches exactes « Coker » associées aux Krio, complétés par « caste », « statut héréditaire », « métier » et « social function », n'ont établi aucune fonction sociale héréditaire propre aux porteurs de Coker. Une étymologie professionnelle éventuelle n'est pas assimilée à un statut contemporain."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "l'article de Dupraz et Simson, son appareil bibliographique et les recherches exactes « Coker » associées aux Krio n'ont pas fourni, dans cette passe, un porteur à la fois décédé, clairement rattaché au patronyme étudié et documenté par une source distincte de la simple homonymie. Les personnes vivantes rencontrées dans les sources officielles ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "l'article de Dupraz et Simson, son appareil bibliographique et les recherches exactes « Coker » associées aux Krio n'ont pas permis d'isoler deux lignées homonymes dotées d'origines distinctes et documentées. Lorsque le dictionnaire propose plusieurs formations possibles, elles restent des hypothèses linguistiques et non des lignées séparées."
+    }
+  ]
+}

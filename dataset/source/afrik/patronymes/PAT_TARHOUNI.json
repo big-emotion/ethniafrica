@@ -1,0 +1,108 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_TARHOUNI",
+  "nameMain": "Tarhouni",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "Tarhouni",
+      "attestations": [
+        {
+          "countryId": "LBY",
+          "sourceRefs": ["afrik-candidate-queue", "forebears-tarhouni"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Une contribution utilisateur relie Tarhouni à la tribu de Tarhun et à la ville de Tarhuna. L’alternative entre affiliation tribale et référence urbaine n’est pas résolue ; la proposition reste non vérifiée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["forebears-tarhouni"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ARABES_AFRIQUE",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "LBY",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "forebears-tarhouni"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "forebears-tarhouni",
+      "title": "Tarhouni Surname Origin, Meaning & Last Name History — Forebears",
+      "url": "https://forebears.io/surnames/tarhouni",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Répertoire communautaire consulté le 2 septembre 2026. Il recense Tarhouni en Libye et reproduit une contribution utilisateur évoquant à la fois une tribu et la ville de Tarhuna, sans bibliographie."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « Tarhouni anthroponymie », « Tarhouni onomastique » et « Tarhouni surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Aucun travail savant consacré à l’origine ou à l’histoire d’une lignée portant exactement cette graphie n’a été trouvé. Les requêtes « Tarhouni tradition orale », « Tarhouni griot » et « Tarhouni oral history » n’ont livré aucun griot ou informateur nommé avec transcription vérifiable."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches exactes « Tarhouni anthroponymie », « Tarhouni onomastique » et « Tarhouni surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Aucun travail savant consacré à l’origine ou à l’histoire d’une lignée portant exactement cette graphie n’a été trouvé. Les recherches dans les catalogues historiques et archivistiques n’ont livré aucune chronique rattachant cette graphie à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Tarhouni anthroponymie », « Tarhouni onomastique » et « Tarhouni surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Aucun travail savant consacré à l’origine ou à l’histoire d’une lignée portant exactement cette graphie n’a été trouvé. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué par la file d’attente ; ce rattachement reste au niveau non vérifié."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Tarhouni alliance à plaisanterie », « Tarhouni joking relationship » et « Tarhouni parenté à plaisanterie » n’ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Tarhouni caste », « Tarhouni métier héréditaire » et « Tarhouni social function » n’ont livré aucune fonction sociale ou professionnelle héréditaire propre à cette graphie."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques exactes sur « Tarhouni » dans les catalogues, notices institutionnelles et archives accessibles n’ont pas permis d’isoler un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes « Tarhouni homonym surname », « Tarhouni homonyme patronyme » et les variantes graphiques de la fiche n’ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Les recherches « Tarhouni transmission patronyme », « Tarhouni filiation » et « Tarhouni hereditary surname » n’ont pas établi si, ni comment, cette forme se transmet dans les communautés concernées."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Les recherches « Tarhouni lignée », « Tarhouni clan », « Tarhouni tribe » et « Tarhouni place name » n’ont pas permis de déterminer si cette graphie désigne une lignée, un clan, une caste, une classe d’âge ou un établissement dans le contexte précis de la fiche."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_NKOSI",
+  "nameMain": "Nkosi",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Nkosi",
+      "attestations": [
+        {
+          "countryId": "ZAF",
+          "sourceRefs": ["swazi-monograph-nkosi"]
+        },
+        {
+          "countryId": "SWZ",
+          "sourceRefs": ["swazi-monograph-nkosi"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "La monographie rapporte l'auto-présentation de membres de la maison royale swazi selon laquelle Nkosi est leur véritable sibongo, tandis que Dlamini est un nom subsidiaire ; elle précise que le clan Nkosi s'est divisé en plusieurs branches entre lesquelles le mariage est permis.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["swazi-monograph-nkosi"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ZULU",
+      "status": "supposed",
+      "sourceRefs": ["swazi-monograph-nkosi"]
+    },
+    {
+      "peopleId": "PPL_SWAZI",
+      "status": "attested",
+      "sourceRefs": ["swazi-monograph-nkosi"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZAF",
+      "status": "attested",
+      "sourceRefs": ["forebears-nkosi"]
+    },
+    {
+      "countryId": "SWZ",
+      "status": "attested",
+      "sourceRefs": ["forebears-nkosi"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "swazi-monograph-nkosi",
+      "title": "A MONOGRAM",
+      "url": "https://citeseerx.ist.psu.edu/document?doi=f079a87e260f6079187953b880c5806463f3ec1b&repid=rep1&type=pdf",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Copie indexée par CiteSeerX consultée dans le résultat intégral. La section consacrée aux clans rapporte que les membres de la maison royale swazi disent que leur véritable sibongo est Nkosi, Dlamini étant un nom subsidiaire, et note la division du clan Nkosi en plusieurs branches."
+    },
+    {
+      "sourceKey": "forebears-nkosi",
+      "title": "Nkosi Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/nkosi",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement. Elle atteste Nkosi principalement en Afrique du Sud et également en Eswatini, mais n'en donne pas la signification et précise que la géographie ne suffit pas à attribuer une appartenance ethnique."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Nkosi », « Zulu », « Swazi », « sibongo », « Dlamini », « clan », « surname », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que la monographie swazi et la page Forebears dédiée n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Nkosi », « Zulu », « Swazi », « sibongo », « Dlamini », « clan », « surname », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que la monographie swazi et la page Forebears dédiée n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Nkosi », « Zulu », « Swazi », « sibongo », « Dlamini », « clan », « surname », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que la monographie swazi et la page Forebears dédiée n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche ; les personnes vivantes ou de statut vital incertain ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Nkosi », « Zulu », « Swazi », « sibongo », « Dlamini », « clan », « surname », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que la monographie swazi et la page Forebears dédiée n'ont pas établi de lignée homonyme d'origine distincte documentable ; une diffusion dans plusieurs pays ou une graphie voisine ne suffit pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Nkosi », « Zulu », « Swazi », « sibongo », « Dlamini », « clan », « surname », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que la monographie swazi et la page Forebears dédiée n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

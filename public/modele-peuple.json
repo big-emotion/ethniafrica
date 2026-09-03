@@ -17,7 +17,9 @@
       "spellingAliases": ["<Orthographe alternative 1 (si applicable)>"],
       "originOfExonyms": null,
       "whyProblematic": null,
-      "contemporaryUsage": null
+      "contemporaryUsage": null,
+      "peopleGroupId": null,
+      "peopleGroupLabel": null
     },
     "ethnicities": ["<Ethnie 1>", "<Ethnie 2>"],
     "origins": {
@@ -41,6 +43,22 @@
       "isoCodes": ["xxx"],
       "dialects": [],
       "vehicularRole": null
+    },
+    "externalIdentifiers": {
+      "wikidataId": "<Identifiant Wikidata du peuple, format Q[1-9][0-9]* — ou omettre si aucune correspondance non ambiguë>",
+      "glottocode": "<Glottocode Glottolog, format [a-z]{4}[0-9]{4} — ou omettre>",
+      "iso639_3": "<Code ISO 639-3, format [a-z]{3} — ou omettre>"
+    },
+    "historicalAffiliation": {
+      "description": "<Lien historique, non linguistique, avec l'Afrique — obligatoire quand le peuple n'a pas de filiation linguistique défendable vers une famille africaine (ex. créolophones) ; omettre entièrement la section sinon>",
+      "sources": [
+        {
+          "title": "<Titre de la source, tel que cité>",
+          "url": "<URL résolvable, ou null pour une œuvre hors ligne>",
+          "tier": "official | referenced | unverified",
+          "notes": "<Provenance du tier>"
+        }
+      ]
     },
     "culture": {
       "majorRites": null,

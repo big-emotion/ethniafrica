@@ -56,9 +56,7 @@ function formatLongFrenchDate(iso: string): string {
 }
 
 type Variant =
-  | { kind: "none" }
-  | { kind: "never" }
-  | { kind: "stale"; dateLabel: string };
+  { kind: "none" } | { kind: "never" } | { kind: "stale"; dateLabel: string };
 
 function resolveVariant(lastHumanAuditAt: string | null): Variant {
   if (lastHumanAuditAt === null) {
@@ -136,5 +134,3 @@ export function UnauditedDisclaimer({
     </div>
   );
 }
-
-export default UnauditedDisclaimer;

@@ -1,0 +1,112 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. La forme isolée Quartey est attestée par sa distribution ; la tradition ga consultée ne documente que le composé Quartey-Papafio."
+  },
+  "id": "PAT_QUARTEY",
+  "nameMain": "Quartey",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Quartey",
+      "attestations": [
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["forebears-quartey"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Accra Architecture Archive rattache le composé « Quartey-Papafio » au même clan que « Kwate-Kpakpafio ». La source ne démontre pas que cette analyse s'applique au nom isolé Quartey ; ce rapprochement reste donc contesté pour la présente fiche.",
+        "claimStatus": "contested",
+        "sourceRefs": ["accra-archive-quartey"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_GA",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GHA",
+      "status": "attested",
+      "sourceRefs": ["forebears-quartey"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "forebears-quartey",
+      "title": "Quartey Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/quartey",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page Forebears propre à Quartey consultée directement. Elle atteste une forte distribution au Ghana mais ne fournit aucun sens ; elle ne sert ni à inférer une ethnie ni à établir une étymologie."
+    },
+    {
+      "sourceKey": "accra-archive-quartey",
+      "title": "What’s in a (Ga) Name?",
+      "url": "https://www.accraarchive.com/blog/whats-in-a-ga-name",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Article de Lawrencia Amartey pour Accra Architecture Archive, consulté directement. Il traite des noms ga et cite le composé Quartey-Papafio en relation avec Kwate-Kpakpafio ; la portée limitée au composé est explicitement conservée dans la claim."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches bibliographiques « Quartey Ga names », « Quartey Papafio etymology », la référence bibliographique de Quartey-Papafio (1914) et les sources communautaires accessibles n'ont fourni aucune analyse de la forme isolée Quartey ; seule la claim contestée sur le composé est conservée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "La source communautaire traite de Quartey-Papafio dans un contexte ga, mais ne suffit pas à attribuer la forme isolée Quartey ; le rattachement ga de la fiche reste au statut « supposed »."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Quartey joking relationship », « Quartey alliance patronyme » et « Quartey sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Quartey hereditary occupation caste title » et « Quartey fonction sociale » n'ont associé ce nom à aucune fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches « Quartey obituary biography deceased » et « Quartey nécrologie » n'ont pas permis de retenir un porteur décédé sur une notice suffisamment fiable et propre au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Quartey homonym etymology » et « Quartey surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Les sources consultées évoquent un clan pour le composé Quartey-Papafio, mais les recherches « Quartey surname inheritance Ga » n'établissent pas la règle de transmission de Quartey seul."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Le composé Quartey-Papafio est rapproché d'un clan, sans preuve que l'unité sociale du nom isolé Quartey soit identique."
+    }
+  ]
+}

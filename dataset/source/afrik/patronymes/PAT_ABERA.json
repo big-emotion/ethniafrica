@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Une source institutionnelle atteste Abera comme nom personnel éthiopien, sans établir son étymologie ni son attribution spécifique aux Oromo."
+  },
+  "id": "PAT_ABERA",
+  "nameMain": "Abera",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Abera",
+      "attestations": [
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue", "abera-amu-profile"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_OROMO",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ETH",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "abera-amu-profile",
+      "title": "Abera Uncha Utallo — Arba Minch University",
+      "url": "https://www.amu.edu.et/en/staff-dges/abera-uncha-utallo-phd",
+      "tier": "official",
+      "source_kind": "academic",
+      "notes": "Page institutionnelle d'Arba Minch University, vérifiée directement. Elle atteste Abera en première position dans le nom d'un universitaire éthiopien et son affiliation en Éthiopie ; elle ne fournit ni sens du nom ni identification ethnique."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches « Abera Oromo name/etymology », les études de morphosémantique des noms oromo et la page institutionnelle d'Arba Minch University ont été examinées ; aucune source savante consultable n'a analysé Abera comme nom oromo."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Abera Oromo alliance/kinship » n'ont livré aucune alliance de parenté à plaisanterie nommant Abera et un autre PAT_* existant."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les sources institutionnelles et onomastiques consultées n'attachent à Abera aucune caste ni fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les notices universitaires et les recherches biographiques ont été parcourues ; les porteurs identifiés sont vivants ou ne sont pas rattachés explicitement au peuple oromo, donc aucun porteur n'est retenu."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Abera a été recherché comme prénom, élément patronymique et lexème ; aucune entité homonyme distincte et suffisamment sourcée n'a été identifiée."
+    }
+  ]
+}

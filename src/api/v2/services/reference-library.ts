@@ -1,5 +1,6 @@
 import { logger } from "@/lib/api/logger";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { escapeSearchTerm } from "@/lib/supabase/searchTerm";
 import type { SourceTier } from "@/types/sources";
 
 const SOURCE_COLUMNS =
@@ -312,10 +313,6 @@ async function findReferenceByBibliography(
   }
 
   return data;
-}
-
-function escapeSearchTerm(value: string): string {
-  return value.replace(/[%,()]/g, " ").trim();
 }
 
 function sanitizeFilename(filename: string): string {

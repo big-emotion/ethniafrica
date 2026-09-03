@@ -1,0 +1,128 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les regles de redaction completes."
+  },
+  "id": "PPL_GULLAH",
+  "nameMain": "Gullah",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["USA"],
+  "content": {
+    "appellations": {
+      "mainName": "Gullah",
+      "selfAppellation": "Gullah (Caroline du Sud) ; Geechee (Géorgie)",
+      "exonyms": ["Sea Island Creole", "Gullah/Geechee"],
+      "spellingAliases": ["Gullah-Geechee"],
+      "originOfExonyms": "L'origine du terme « Gullah » reste débattue : hypothèse d'une déformation d'« Angola », ou référence au peuple Gola de Sierra Leone/Libéria. « Geechee » pourrait dériver de la rivière Ogeechee (Géorgie) ou désigner les Kissi/Gizi de la zone Sierra Leone-Guinée-Libéria.",
+      "whyProblematic": null,
+      "contemporaryUsage": "« Gullah » et « Geechee » sont aujourd'hui employés avec fierté par les communautés elles-mêmes ; le Congrès américain a reconnu le « Gullah Geechee Cultural Heritage Corridor » en 2006.",
+      "peopleGroupId": null,
+      "peopleGroupLabel": null
+    },
+    "ethnicities": [
+      "Gullah (identité régionale de Caroline du Sud)",
+      "Geechee (identité régionale de Géorgie)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Gullah ne constituent pas un peuple originaire d'Afrique mais un peuple ethnogénéré dans les basses terres (Lowcountry) côtières de Caroline du Sud et de Géorgie, à partir de plusieurs vagues d'Africains réduits en esclavage et déportés vers les plantations rizicoles du littoral atlantique.",
+      "formationPeriod": "Ethnogenèse entre la fondation de la colonie de Caroline du Sud (1670) et le XIXe siècle, dans un relatif isolement géographique (îles-barrières, « Sea Islands ») propice à la formation d'une culture et d'une langue créoles originales.",
+      "migrationRoutes": [
+        "Sénégambie, Sierra Leone et Libéria (« Rice Coast »/« Windward Coast ») vers le Lowcountry de Caroline du Sud et de Géorgie, XVIIe-XIXe siècle"
+      ],
+      "historicalSettlementZones": [
+        "Sea Islands et Lowcountry côtier de Caroline du Sud et de Géorgie, avec des enclaves dans le nord-est de la Floride et le sud-est de la Caroline du Nord"
+      ],
+      "unificationsOrDivisions": "Distinction régionale entre Gullah (Caroline du Sud) et Geechee (Géorgie), deux désignations d'un même ensemble culturel et linguistique.",
+      "externalInfluences": null,
+      "majorHistoricalEvents": "1670 : fondation de la colonie de Caroline du Sud. 1739 : première mention imprimée connue du terme « Gullah ». 1822 : « Gullah » Jack Pritchard participe à la révolte avortée de Denmark Vesey à Charleston. 1865 : le général unioniste Sherman signe le Field Order n° 15, redistribuant des terres côtières aux affranchis. 2006 : création par le Congrès américain du Gullah Geechee Cultural Heritage Corridor."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": null,
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": null,
+      "religiousAuthority": null
+    },
+    "languages": {
+      "mainLanguage": "Gullah (créole anglais du littoral atlantique, également appelé Sea Island Creole English) (gul)",
+      "isoCodes": ["gul"],
+      "dialects": ["Geechee (variante géorgienne)"],
+      "vehicularRole": null
+    },
+    "historicalAffiliation": {
+      "description": "Les Gullah descendent d'Africains réduits en esclavage et déportés, entre la fin du XVIIe siècle et le début du XIXe siècle, vers les plantations rizicoles du littoral atlantique de la Caroline du Sud et de la Géorgie. Les planteurs y recherchaient spécifiquement une main-d'œuvre expérimentée en riziculture, originaire de la « Rice Coast » (ou « Windward Coast »), la région côtière s'étendant du Sénégal au Libéria en passant par la Sierra Leone. L'isolement relatif des Sea Islands a permis la préservation, sur plusieurs générations, d'un fonds culturel et linguistique africain particulièrement dense : le linguiste afro-américain Lorenzo Dow Turner y a recensé, entre les années 1930 et 1940, des milliers de mots issus d'une quarantaine de langues d'Afrique subsaharienne, dont plusieurs parlées dans la zone du fleuve Mano (Sierra Leone, Libéria, Guinée). En 1933, Turner enregistre à Harris Neck (Géorgie) un chant funéraire transmis dans la famille d'Amelia Dawley sur plusieurs générations sans qu'on en comprenne le sens. En 1990, l'anthropologue Joseph Opala et l'ethnomusicologue Cynthia Schmidt identifient ce chant comme une élégie funéraire en langue mende, et en retrouvent une version quasi identique auprès de Baindu Jabati, dans le village de Senehun Ngola (Sierra Leone) — une filiation documentée par le film \"The Language You Cry In\" (1998) et par plusieurs voyages de retour (« homecomings ») organisés entre 1989 et 2005 entre communautés gullah et Sierra Leone. Le fort négrier de Bunce Island, au large de Freetown, par lequel transita une large part des captifs envoyés vers Charleston, est aujourd'hui identifié par les historiens du patrimoine comme l'un des sites les plus significatifs pour l'histoire afro-américaine sur le sol africain.",
+      "sources": [
+        {
+          "title": "Smithsonian Magazine - How the Memory of a Song Reunited Two Women Separated by the Trans-Atlantic Slave Trade",
+          "url": "https://www.smithsonianmag.com/history/how-the-memory-of-a-song-reunited-two-women-separated-by-the-trans-atlantic-slave-trade-180983864/",
+          "tier": "referenced",
+          "notes": "Tier resolved from the domain ruling for established press/magazine journalism; article names its historical sources (Joseph Opala, Cynthia Schmidt) and dates (1933, 1990)."
+        },
+        {
+          "title": "Turner, Lorenzo Dow (1949) - Africanisms in the Gullah Dialect",
+          "url": null,
+          "tier": "referenced",
+          "notes": "Offline academic monograph (University of Chicago Press, 1949 ; réédition University of South Carolina Press, 2002). Tier inferred from published-citation shape (named author, publisher, year) ; findings independently cross-checked via Smithsonian Magazine and New Georgia Encyclopedia rather than cited from Wikipedia."
+        }
+      ]
+    },
+    "culture": {
+      "majorRites": null,
+      "symbols": null,
+      "artsAndMusic": "Vannerie de sweetgrass, ring shouts (chants-danses processionnels chrétiens à forte empreinte africaine) et cuisine du riz (dont le riz « Carolina Gold »), présentés par les historiens du patrimoine comme des marqueurs de continuité culturelle avec l'Afrique de l'Ouest.",
+      "spiritualities": null
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": null,
+      "conflictsOrAlliances": null,
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 200000,
+      "referenceYear": 2016,
+      "source": "Los Angeles Times (N. Duara, 4 novembre 2016), figure recoupée via la bibliographie de l'article encyclopédique « Gullah ». Le Bureau du recensement des États-Unis ne dénombre pas les Gullah comme catégorie ethnique distincte (Klein, APiCS Online), d'où l'absence de source démographique officielle et le caractère approximatif de ce chiffre.",
+      "distributionByCountry": [
+        {
+          "country": "USA",
+          "population": 200000,
+          "percentage": 100,
+          "note": "Concentrés dans les Sea Islands et le Lowcountry côtier de Caroline du Sud et de Géorgie, avec des enclaves dans le nord-est de la Floride et le sud-est de la Caroline du Nord."
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "South Carolina Encyclopedia - Gullah",
+        "url": "https://www.scencyclopedia.org/sce/entries/gullah/",
+        "tier": "referenced",
+        "notes": "Encyclopédie académique adossée à l'Institute for Southern Studies (University of South Carolina). Non listée au catalogue de domaines officiels ; tier inféré de la forme éditoriale (entrée signée, adossement universitaire)."
+      },
+      {
+        "title": "New Georgia Encyclopedia - Geechee and Gullah Culture (Althea Sumpter, Georgia Institute of Technology)",
+        "url": "https://www.georgiaencyclopedia.org/articles/arts-culture/geechee-and-gullah-culture/",
+        "tier": "referenced",
+        "notes": "Encyclopédie académique à entrées signées ; auteure affiliée au Georgia Institute of Technology. Tier inféré de la forme de citation (auteure nommée, institution)."
+      },
+      {
+        "title": "APiCS Online - Survey chapter: Gullah (Thomas B. Klein)",
+        "url": "https://apics-online.info/surveys/13",
+        "tier": "referenced",
+        "notes": "Chapitre d'atlas linguistique académique à comité de relecture (Atlas of Pidgin and Creole Language Structures Online), auteur nommé. Non listé au catalogue de domaines officiels ; tier inféré de la forme de citation académique."
+      },
+      {
+        "title": "Los Angeles Times - The Gullah people have survived on the Carolina sea islands for centuries. Now development is taking a toll. (Nigel Duara, 4 novembre 2016)",
+        "url": "https://www.latimes.com/nation/la-na-hurricane-matthew-geechee-snap-story.html",
+        "tier": "referenced",
+        "notes": "Presse établie (Los Angeles Times), article signé et daté. Référence de la figure de population (~200 000), recoupée via la bibliographie de l'article encyclopédique « Gullah »."
+      },
+      {
+        "title": "World Monuments Fund / Google Arts & Culture - Bunce Island and the \"Gullah Connection\"",
+        "url": "https://artsandculture.google.com/story/bunce-island-and-the-quot-gullah-connection-quot-world-monuments-fund/GAXhbi_DSY0Yvg?hl=en",
+        "tier": "referenced",
+        "notes": "Publication d'une organisation patrimoniale identifiable (World Monuments Fund, avec Leeds Museums & Galleries). Non listée au catalogue de domaines officiels ; tier inféré de la forme éditoriale (institution nommée, contributeurs identifiés)."
+      }
+    ]
+  }
+}

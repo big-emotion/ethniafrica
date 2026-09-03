@@ -9,6 +9,7 @@
 
 import { z } from "zod";
 
+// @req REQ-057
 export const peopleNamesParamSchema = z.object({
   id: z.string().regex(/^PPL_[A-Z0-9_]+$/, {
     message: "Invalid people id format (expected PPL_*)",
@@ -17,6 +18,7 @@ export const peopleNamesParamSchema = z.object({
 
 export type PeopleNamesParam = z.infer<typeof peopleNamesParamSchema>;
 
+// @req REQ-057
 export const nameRecordTypeSchema = z.enum([
   "endonym",
   "exonym",
@@ -26,6 +28,7 @@ export const nameRecordTypeSchema = z.enum([
 
 export type NameRecordType = z.infer<typeof nameRecordTypeSchema>;
 
+// @req REQ-057
 export const nameRecordSourceSchema = z.object({
   id: z.string(),
   title: z.string(),
@@ -36,6 +39,7 @@ export const nameRecordSourceSchema = z.object({
 
 export type NameRecordSourceView = z.infer<typeof nameRecordSourceSchema>;
 
+// @req REQ-057
 export const nameRecordImpositionSchema = z.object({
   imposedBy: z.string().nullable(),
   impositionPeriod: z.string().nullable(),
@@ -45,6 +49,7 @@ export const nameRecordImpositionSchema = z.object({
 
 export type NameRecordImposition = z.infer<typeof nameRecordImpositionSchema>;
 
+// @req REQ-057
 export const nameRecordConfidenceSchema = z.object({
   score: z.number(),
   recomputedAt: z.string().nullable(),
@@ -61,6 +66,7 @@ export type NameRecordConfidenceView = z.infer<
  * illustrative dossier shape nests `contemporaryUsage` here even for
  * non-imposed endonyms, so gating on `imposedBy` alone would drop data).
  */
+// @req REQ-057
 export const peopleNameRecordSchema = z.object({
   id: z.string(),
   nameText: z.string(),
@@ -76,6 +82,7 @@ export const peopleNameRecordSchema = z.object({
 
 export type PeopleNameRecord = z.infer<typeof peopleNameRecordSchema>;
 
+// @req REQ-057
 export const peopleNamesDossierSchema = z.object({
   peopleId: z.string(),
   autonym: z.string().nullable(),
@@ -85,6 +92,7 @@ export const peopleNamesDossierSchema = z.object({
 export type PeopleNamesDossier = z.infer<typeof peopleNamesDossierSchema>;
 
 /** Lightweight people reference embedded in each name record. */
+// @req REQ-057
 export const peopleSummarySchema = z.object({
   id: z.string(),
   nameMain: z.string(),
@@ -94,8 +102,9 @@ export const peopleSummarySchema = z.object({
 
 export type PeopleSummary = z.infer<typeof peopleSummarySchema>;
 
+// @req REQ-057
 export const nameRecordSchema = z.object({
-  id: z.string().uuid(),
+  id: z.uuid(),
   peopleId: z.string(),
   nameText: z.string(),
   nameType: nameRecordTypeSchema,
@@ -118,6 +127,7 @@ export type NameRecord = z.infer<typeof nameRecordSchema>;
  * `imposedOnly` is accepted as the literal strings "true"/"false" (query
  * strings carry no boolean type) and normalised to a real boolean.
  */
+// @req REQ-057
 export const listNamesQuerySchema = z.object({
   q: z.string().trim().min(1).optional(),
   nameType: nameRecordTypeSchema.optional(),
@@ -142,3 +152,54 @@ export const listNamesQuerySchema = z.object({
 });
 
 export type ListNamesQuery = z.infer<typeof listNamesQuerySchema>;
+
+/** A people that bears a name form. */
+// @req REQ-054
+export const nameFormBearerSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+});
+
+export type NameFormBearer = z.infer<typeof nameFormBearerSchema>;
+
+/**
+ * One entry of the Appellations nomenclature: a name, and everyone who bears
+ * it.
+ *
+ * The unit is the *form*, not the record — `afrik_name_forms` (migration 071)
+ * folds accents and case so "Traoré" and "Traore" are one entry rather than
+ * two, and carries its bearers as an attribute instead of making each of them
+ * a separate line pointing at a people fiche.
+ */
+// @req REQ-054
+export const nameFormSchema = z.object({
+  formKey: z.string(),
+  displayName: z.string(),
+  spellings: z.array(z.string()),
+  nameTypes: z.array(nameRecordTypeSchema),
+  bearerCount: z.number().int(),
+  bearers: z.array(nameFormBearerSchema),
+  hasImposed: z.boolean(),
+  whyProblematic: z.string().nullable(),
+  languageOfOrigin: z.string().nullable(),
+});
+
+export type NameForm = z.infer<typeof nameFormSchema>;
+
+/**
+ * GET query for the nomenclature.
+ *
+ * `page` rather than `offset`: the surface pages over forms, and a reader who
+ * edits the URL should be able to say which page they want without knowing
+ * the page size. It is also what makes the pagination links plain anchors.
+ */
+// @req REQ-054
+export const listNameFormsQuerySchema = z.object({
+  q: z.string().trim().min(1).optional(),
+  nameType: nameRecordTypeSchema.optional(),
+  imposedOnly: z.coerce.boolean().optional().default(false),
+  page: z.coerce.number().int().min(1).default(1),
+  perPage: z.coerce.number().int().min(1).max(100).default(48),
+});
+
+export type ListNameFormsQuery = z.infer<typeof listNameFormsQuerySchema>;

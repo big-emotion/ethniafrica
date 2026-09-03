@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "This is the per-name PAT_* contract. Keep it separate from PPL_* ethnonym dossiers and ONS_* naming-system dossiers. Omit subtype-only fields unless the declared canonical nameSystem permits them. Fiche prose is written in French."
+  },
+  "id": "PAT_XXXXX",
+  "nameMain": "<Nom principal>",
+  "nameSystem": "clan_name | non_hereditary_patronymic | nisba | praise_name | totemic_clan",
+  "spellings": [
+    {
+      "spelling": "<Orthographe attestée>",
+      "attestations": [
+        {
+          "countryId": "ISO3",
+          "sourceRefs": ["source-key"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal | matrilineal | bilateral | elective | non_hereditary | other",
+  "designatedSocialUnit": "individual | lineage | clan | caste | age_set | settlement | other",
+  "origin": {
+    "oralTraditions": [
+      {
+        "claim": "<Tradition orale attribuée>",
+        "claimStatus": "claimed | contested | established",
+        "griot": "<Griot ou informateur cité>",
+        "transcription": "<Version transcrite et localisateur>",
+        "sourceRefs": ["source-key"]
+      }
+    ],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_XXXXX",
+      "status": "attested | supposed",
+      "sourceRefs": ["source-key"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ISO3",
+      "status": "attested | supposed",
+      "sourceRefs": ["source-key"]
+    }
+  ],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_YYYYY",
+      "allianceType": "<Terme attesté, par exemple sanankuya>",
+      "sourceRefs": ["source-key"]
+    }
+  ],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "personId": "PER_XXXXX",
+      "sourceRefs": ["source-key"]
+    }
+  ],
+  "homonyms": [
+    {
+      "label": "<Chaîne homonyme>",
+      "entityType": "patronyme | people | person | place | other",
+      "entityId": null,
+      "distinction": "<Ce qui distingue cette entité du patronyme documenté>",
+      "sourceRefs": ["source-key"]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "source-key",
+      "title": "<Titre de la source>",
+      "url": "<URL résolvable, ou null pour une œuvre hors ligne>",
+      "tier": "official | referenced | unverified",
+      "source_kind": "<Provenance facultative>",
+      "notes": "<Notes de provenance facultatives>"
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "<Chemin du champ non documenté>",
+      "reason": "<Ce qui n'a pas été trouvé et pourquoi>"
+    }
+  ]
+}

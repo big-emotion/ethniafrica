@@ -1,0 +1,128 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier mossi documenté par fiche ; ne pas généraliser à tous les Sawadogo la position sociale du lignage de l'informateur de Gourcy."
+  },
+  "id": "PAT_SAWADOGO",
+  "nameMain": "Sawadogo",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Sawadogo",
+      "attestations": [
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["bonnet-1982-proverbe-mossi"]
+        }
+      ]
+    },
+    {
+      "spelling": "Savadogo",
+      "attestations": [
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["burkina-provisional-patronyme-register"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Dans son étude menée à Gourcy, Doris Bonnet identifie Sawadogo comme le sôndré, ou nom de lignage, de Pierre Sawadogo et donne au nom le sens de « nuage ». Le répertoire provisoire reprend les formes Sawadogo/Savadogo et les interprétations « nuages », « détenteurs de la pluie » ou « faiseur de pluie » ; seules la catégorie de nom de lignage et la glose « nuage » sont directement attestées par la publication scientifique consultée.",
+        "claimStatus": "established",
+        "sourceRefs": [
+          "bonnet-1982-proverbe-mossi",
+          "burkina-provisional-patronyme-register"
+        ]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MOSSI",
+      "status": "attested",
+      "sourceRefs": ["bonnet-1982-proverbe-mossi", "niggli-2008-kasena-names"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": ["bonnet-1982-proverbe-mossi", "niggli-2008-kasena-names"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [
+    {
+      "label": "Sawadogo/Saoudougué kurumfe",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "Le répertoire distingue une entrée kurumfe Sawadogo/Saoudougué, traduite par « nous avons cessé », de l'entrée mossi Sawadogo/Savadogo liée au nuage et à la pluie. Aucune fiche PAT_* séparée n'existe actuellement pour cette lignée kurumfe.",
+      "sourceRefs": ["burkina-provisional-patronyme-register"]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "izard-1973-mossi-buudu",
+      "title": "La Lance et les guenilles",
+      "url": "https://www.persee.fr/doc/hom_0439-4216_1973_num_13_3_367368?pageId=T1_141",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Michel Izard, L'Homme, 13(3), 1973, p. 139-149. La p. 141 a été consultée : le buudu mossi y est défini comme groupe de descendance patrilinéaire et unité exogamique, identifié notamment par le nom collectif ou sondre. Cette source établit le cadre de transmission, non l'étymologie de Sawadogo."
+    },
+    {
+      "sourceKey": "bonnet-1982-proverbe-mossi",
+      "title": "Le proverbe chez les Mossi du Yatenga (Haute-Volta)",
+      "url": "https://horizon.documentation.ird.fr/exl-doc/pleins_textes/2023-06/010083740.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Doris Bonnet, SELAF/CNRS, 1982. La p. 14 a été consultée : elle présente Pierre Sawadogo, participant aux veillées de Gourcy, précise que Sawadogo est son sôndré ou nom de lignage, et traduit le nom par « le nuage ». Elle qualifie ce lignage particulier de têngbìisi ; le dossier ne généralise pas cette position à tous les porteurs."
+    },
+    {
+      "sourceKey": "niggli-2008-kasena-names",
+      "title": "Noms des Kasena",
+      "url": "https://sil-burkina.org/sites/default/files/Noms%20des%20Kassena.pdf",
+      "tier": "official",
+      "source_kind": "linguistic_reference",
+      "notes": "Urs et Idda Niggli, Société internationale de linguistique, Ouagadougou, 2008. La section 6.4, p. 42, a été consultée ; elle cite Sawadogo parmi les exemples de noms de famille mossi."
+    },
+    {
+      "sourceKey": "burkina-provisional-patronyme-register",
+      "title": "Projet de répertoire des patronymes au Burkina Faso — version provisoire",
+      "url": "https://pdfcoffee.com/repertoire-des-patronymes-nationaux-du-burkina-pdf-free.html",
+      "tier": "unverified",
+      "source_kind": "government",
+      "notes": "Document de travail de la Direction du patrimoine culturel, sans date ni validation finale visibles, consulté sur une copie PDFCoffee non authentifiée. Les deux notices successives SAVADOGO/SAOUDOUGUE et SAWADOGO/SAVADOGO, p. 180-181, ont seules été utilisées pour distinguer l'homonyme kurumfe et enregistrer la variante Savadogo."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Bonnet nomme les participants à ses veillées mais ne transcrit pas, pour l'origine du sôndré Sawadogo, un récit attribué à un griot ; le répertoire provisoire ne fournit ni griot nommé ni transcription."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "L'étude de Bonnet, la liste SIL, le répertoire provisoire et les recherches dans Persée et Horizon IRD n'ont pas livré de chronique historique propre au lignage Sawadogo."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Le répertoire énumère de nombreux groupes et localités partenaires à plaisanterie, mais la recherche n'a pas établi de paire Sawadogo/PAT_* précise, réciproque et vérifiable."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Bonnet qualifie de têngbìisi le lignage de son informateur Pierre Sawadogo à Gourcy ; les recherches n'établissent pas que ce statut soit une fonction héréditaire commune à tous les Sawadogo."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Pierre Sawadogo est documenté comme informateur âgé d'environ trente ans en 1975-1977, mais la source ne permet pas d'établir son décès ; les recherches biographiques n'ont pas livré de porteur décédé pertinent pour l'histoire du nom."
+    }
+  ]
+}

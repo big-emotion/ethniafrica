@@ -152,8 +152,13 @@ export function mapConfidenceRowToBaseEligibility(
 
 /**
  * Maps an `afrik_peoples` row to a QuizPeopleFixture. Returns null when a
- * field required by templates T1-T5 is missing — an incomplete fiche simply
- * yields no candidates rather than a fabricated fixture.
+ * field required by the atomic templates is missing — an incomplete fiche
+ * simply yields no candidates rather than a fabricated fixture.
+ *
+ * The guard used to hold an ISO code too, which dropped a fiche from the
+ * eleven templates that never asked for one because of the single template
+ * that did. T5 is retired, so the field is read by nothing and rejecting on it
+ * would be rejecting on a value no round can use.
  */
 export function mapPeopleRowToFiche(
   row: PeopleRow,
@@ -163,7 +168,6 @@ export function mapPeopleRowToFiche(
   const content = row.content ?? {};
   const selfAppellation = content.appellations?.selfAppellation;
   const mainLanguageName = content.languages?.mainLanguage;
-  const isoCode = content.languages?.isoCodes?.[0];
   const familyName = row.language_family_id
     ? familyNameById.get(row.language_family_id)
     : undefined;
@@ -171,7 +175,6 @@ export function mapPeopleRowToFiche(
   if (
     !selfAppellation ||
     !mainLanguageName ||
-    !isoCode ||
     !row.language_family_id ||
     !familyName
   ) {
@@ -210,7 +213,6 @@ export function mapPeopleRowToFiche(
     selfAppellation,
     distributionByCountry,
     mainLanguage,
-    isoCode,
     totalPopulation:
       typeof content.demography?.totalPopulation === "number"
         ? content.demography.totalPopulation

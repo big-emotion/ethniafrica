@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_ILUNGA",
+  "nameMain": "Ilunga",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Ilunga",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["historical-dictionary-drc-ilunga"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le dictionnaire historique de la République démocratique du Congo place Kalala Ilunga dans la tradition dynastique luba : il y est présenté comme le neveu et successeur de Nkongolo, puis comme un ancien roi luba. L'ouvrage atteste ainsi Ilunga dans les noms de la chronique royale, sans démontrer l'origine du patronyme contemporain ni isoler le sens du composant.",
+        "claimStatus": "established",
+        "sourceRefs": ["historical-dictionary-drc-ilunga"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_LUBA",
+      "status": "attested",
+      "sourceRefs": ["historical-dictionary-drc-ilunga"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COD",
+      "status": "attested",
+      "sourceRefs": ["historical-dictionary-drc-ilunga"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "historical-dictionary-drc-ilunga",
+      "title": "Historical Dictionary of the Democratic Republic of the Congo, Third Edition",
+      "url": "https://shcas.shnu.edu.cn/_upload/article/files/dc/3d/863da74f4f1dbe922dc9702d9de9/a6f95c07-9183-4c78-a7c4-ec5ea565507a.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ouvrage de référence de F. Scott Bobb, troisième édition, consulté en texte intégral. Les entrées sur l'histoire luba citent Kalala Ilunga et Kibinda Ilunga dans la tradition dynastique. Aucune définition lexicale d'Ilunga n'y est proposée ; l'explication populaire dite « intraduisible » trouvée sur des pages contributives n'a donc pas été retenue."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Ilunga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de le « Historical Dictionary of the Democratic Republic of the Congo » et la recherche de l'explication populaire dite « intraduisible », rejetée faute de source linguistique n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Ilunga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de le « Historical Dictionary of the Democratic Republic of the Congo » et la recherche de l'explication populaire dite « intraduisible », rejetée faute de source linguistique n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Ilunga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de le « Historical Dictionary of the Democratic Republic of the Congo » et la recherche de l'explication populaire dite « intraduisible », rejetée faute de source linguistique n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Ilunga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de le « Historical Dictionary of the Democratic Republic of the Congo » et la recherche de l'explication populaire dite « intraduisible », rejetée faute de source linguistique n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Ilunga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de le « Historical Dictionary of the Democratic Republic of the Congo » et la recherche de l'explication populaire dite « intraduisible », rejetée faute de source linguistique n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

@@ -40,7 +40,30 @@ import { basename, join } from "node:path";
  */
 export const QUIZ_BUNDLE_BUDGET_BYTES = 15 * 1024; // 15 KB gzipped (AC2)
 
-const ENTRY_SOURCE = `export { QuizPlayIsland } from "@/components/quiz/QuizPlayIsland";\n`;
+/**
+ * The picker's own island, budgeted separately from the play island.
+ *
+ * The quiz surface has two client entry points and this script measured one of
+ * them, so a regression on the *picker* branch of the route — the deck that
+ * deploys a country's themes — would have gone unmeasured entirely. An
+ * unmeasured island is one that grows, and the play island's own history is the
+ * argument for saying so out loud.
+ */
+export const QUIZ_PICKER_BUNDLE_BUDGET_BYTES = 4 * 1024;
+
+/** Every client entry the quiz surface ships, with the budget it answers to. */
+export const QUIZ_ISLANDS = [
+  {
+    name: "Quiz play-island",
+    budgetBytes: QUIZ_BUNDLE_BUDGET_BYTES,
+    entrySource: `export { QuizPlayIsland } from "@/components/quiz/QuizPlayIsland";\n`,
+  },
+  {
+    name: "Quiz scope-deck",
+    budgetBytes: QUIZ_PICKER_BUNDLE_BUDGET_BYTES,
+    entrySource: `export { QuizScopeDeck } from "@/components/quiz/QuizScopeDeck";\n`,
+  },
+] as const;
 
 export interface BundleBudgetResult {
   passed: boolean;
@@ -49,7 +72,10 @@ export interface BundleBudgetResult {
 
 export function evaluateBundleBudget(
   gzippedBytes: number,
-  budgetBytes: number
+  budgetBytes: number,
+  // Named, so a failure says which of the two islands blew rather than leaving
+  // the reader to infer it from a number.
+  islandName = "Quiz play-island"
 ): BundleBudgetResult {
   const gzippedKb = (gzippedBytes / 1024).toFixed(2);
   const budgetKb = (budgetBytes / 1024).toFixed(0);
@@ -58,20 +84,22 @@ export function evaluateBundleBudget(
     const overBy = ((gzippedBytes - budgetBytes) / 1024).toFixed(2);
     return {
       passed: false,
-      message: `Quiz play-island bundle is ${gzippedKb} KB gzipped, exceeding the ${budgetKb} KB budget by ${overBy} KB.`,
+      message: `${islandName} bundle is ${gzippedKb} KB gzipped, exceeding the ${budgetKb} KB budget by ${overBy} KB.`,
     };
   }
 
   return {
     passed: true,
-    message: `Quiz play-island bundle is ${gzippedKb} KB gzipped (budget: ${budgetKb} KB).`,
+    message: `${islandName} bundle is ${gzippedKb} KB gzipped (budget: ${budgetKb} KB).`,
   };
 }
 
-export async function measureQuizPlayIslandGzipBytes(): Promise<number> {
+export async function measureIslandGzipBytes(
+  entrySource: string
+): Promise<number> {
   const tmpDir = mkdtempSync(join(tmpdir(), "quiz-bundle-size-"));
   const entryPath = join(tmpDir, "entry.tsx");
-  writeFileSync(entryPath, ENTRY_SOURCE, "utf8");
+  writeFileSync(entryPath, entrySource, "utf8");
 
   try {
     const result = await esbuild.build({
@@ -100,9 +128,7 @@ export async function measureQuizPlayIslandGzipBytes(): Promise<number> {
         basename(file.path) === basename(entryChunkName)
     );
     if (!entryOutput) {
-      throw new Error(
-        "esbuild produced no entry chunk for the quiz play-island entry."
-      );
+      throw new Error("esbuild produced no entry chunk for the quiz entry.");
     }
 
     return gzipSync(Buffer.from(entryOutput.contents), { level: 9 }).length;
@@ -112,23 +138,32 @@ export async function measureQuizPlayIslandGzipBytes(): Promise<number> {
 }
 
 async function main(): Promise<void> {
-  const gzippedBytes = await measureQuizPlayIslandGzipBytes();
-  const { passed, message } = evaluateBundleBudget(
-    gzippedBytes,
-    QUIZ_BUNDLE_BUDGET_BYTES
-  );
+  let failed = false;
 
-  if (!passed) {
-    console.error(`❌ ${message}`);
-    process.exit(1);
+  for (const island of QUIZ_ISLANDS) {
+    const gzippedBytes = await measureIslandGzipBytes(island.entrySource);
+    const { passed, message } = evaluateBundleBudget(
+      gzippedBytes,
+      island.budgetBytes,
+      island.name
+    );
+
+    // Every island is measured even after one fails, so a single run names all
+    // of them rather than stopping at the first.
+    if (passed) {
+      console.log(`✅ ${message}`);
+    } else {
+      console.error(`❌ ${message}`);
+      failed = true;
+    }
   }
 
-  console.log(`✅ ${message}`);
+  if (failed) process.exit(1);
 }
 
 if (require.main === module) {
   main().catch((error) => {
-    console.error("Fatal error measuring quiz play-island bundle size:", error);
+    console.error("Fatal error measuring quiz bundle sizes:", error);
     process.exit(1);
   });
 }

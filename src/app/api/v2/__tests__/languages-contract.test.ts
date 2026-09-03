@@ -36,6 +36,7 @@ describe("Language public API contract", () => {
       id: "swa",
       name: "Swahili",
       family: { id: "FLG_BANTU", name: "Bantou" },
+      spellingAliases: [],
       content: { nameProvenance: "derived" },
     });
     vi.mocked(getAfrikSpeakingPeoples).mockResolvedValue(speakingPeoples);
@@ -84,6 +85,7 @@ describe("Language public API contract", () => {
       id: "yor",
       name: "Yoruba",
       family: { id: "FLG_BENOUECONGO", name: "Bénoué-Congo" },
+      spellingAliases: [],
       content: {
         nameProvenance: "sourced",
         vehicularRole: "regional_lingua_franca",
@@ -107,12 +109,14 @@ describe("Language public API contract", () => {
               title: "Glottolog — Yoruba",
               url: "https://glottolog.org/resource/languoid/id/yoru1245",
               tier: "official",
+              notes: null,
             },
             {
               id: "SRC_LEGACY_YORUBA",
               title: "Legacy catalogue",
               url: null,
               tier: null,
+              notes: null,
             },
           ],
         ],
@@ -130,6 +134,12 @@ describe("Language public API contract", () => {
       id: "yor",
       name: "Yoruba",
       nameProvenance: "sourced",
+      isoCode639_3: "yor",
+      glottocode: null,
+      nameEn: null,
+      alternateNames: [],
+      spellingAliases: [],
+      dialects: [],
       family: { id: "FLG_BENOUECONGO", name: "Bénoué-Congo" },
       speakingPeoples: [{ id: "PPL_YORUBA", name: "Yoruba" }],
       vehicularRole: "regional_lingua_franca",

@@ -1,0 +1,85 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité à l'attestation historique de Gabriel Ramanantsoa et à son appartenance merina explicitement publiée."
+  },
+  "id": "PAT_RAMANANTSOA",
+  "nameMain": "Ramanantsoa",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Ramanantsoa",
+      "attestations": [
+        { "countryId": "MDG", "sourceRefs": ["lemonde-ramanantsoa-1979"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MERINA",
+      "status": "attested",
+      "sourceRefs": ["lemonde-ramanantsoa-1979"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["lemonde-ramanantsoa-1979"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Gabriel Ramanantsoa",
+      "sourceRefs": ["lemonde-ramanantsoa-1979"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "lemonde-ramanantsoa-1979",
+      "title": "Le général Ramanantsoa est mort à Paris",
+      "url": "https://www.lemonde.fr/archives/article/1979/05/11/le-general-ramanantsoa-est-mort-a-paris_2780355_1819218.html",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Dépêche AFP archivée par Le Monde, publiée le 11 mai 1979. Elle documente Gabriel Ramanantsoa (1906-1979), né à Tananarive et issu d'une famille merina des Hauts-Plateaux."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Ramanantsoa etymology », « Ramanantsoa onomastics », leurs équivalents français et les catalogues académiques n'ont livré ni tradition attribuée, ni chronique d'origine du nom, ni reconstruction linguistique."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La notice nécrologique établit un porteur et son milieu familial merina, mais ne donne pas de généalogie nominale. Les recherches père-fils et généalogiques n'ont pas établi le mode de transmission ; « other » conserve cette indétermination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "La mention d'une famille merina ne démontre pas que Ramanantsoa désigne un lignage ou un clan ; aucune source consultée ne précise l'unité sociale du nom."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches Ramanantsoa avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches exactes associant Ramanantsoa à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; la carrière militaire et politique de Gabriel Ramanantsoa est individuelle."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La presse d'archive, les catalogues et les recherches exactes consultés n'établissent pas de lignée homonyme d'origine distincte."
+    }
+  ]
+}

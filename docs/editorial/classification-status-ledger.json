@@ -500,6 +500,11 @@
     "rationale": "Le terme « derive du portugais crioulo, designant originellement les esclaves africains nes dans les colonies portugaises » ; la fiche ajoute seulement qu'il est percu comme reducteur."
   },
   {
+    "id": "PPL_CREOLE_GUADELOUPE",
+    "status": "colonial-legacy",
+    "rationale": "Le terme « créole » « peut être perçu comme portant l'héritage de classifications coloniales fondées sur le lieu de naissance et l'ascendance, opposant historiquement Blancs créoles, libres de couleur et descendants d'esclaves »."
+  },
+  {
     "id": "PPL_CREOLE_MACRO",
     "status": "colonial-legacy",
     "rationale": "Le terme « vient du portugais crioulo », categorie designant qui nait dans la colonie, etendue aux peuples nes des contacts « dans les territoires coloniaux » ; la polysemie n'en est qu'un effet."
@@ -685,16 +690,6 @@
     "rationale": "« Peul vient du wolof Pel, adopte par les colonisateurs francais » : la fiche impute au colonisateur le nom dominant en francais, au-dela du grief de pejoration porte par Fellata."
   },
   {
-    "id": "PPL_FULA_NOMADES",
-    "status": "contested",
-    "rationale": "Mbororo, d'origine haoussa et fulfulde, est dit parfois pejoratif et vise des pasteurs marginalises dans les Etats contemporains, la distinction nomades/sedentaires etant elle-meme sensible."
-  },
-  {
-    "id": "PPL_FULA_SAHEL",
-    "status": "colonial-legacy",
-    "rationale": "La fiche parle d'appellations imposees par les colonisateurs : Peul adopte par les Francais au Senegal puis etendu a l'Afrique de l'Ouest francophone, Fulani adopte par les colonisateurs britanniques."
-  },
-  {
     "id": "PPL_FULANI",
     "status": "colonial-legacy",
     "rationale": "« Peul derive du wolof Pel, utilise par les colonisateurs francais » ; le reproche fait a Fulani (restreint aux pasteurs) vient ensuite, la mention coloniale etant la plus specifique."
@@ -705,9 +700,14 @@
     "rationale": "La fiche qualifie elle-meme le nom : « Peul (terme francais, exonyme colonial derive du wolof Pel) », « utilise par les colonisateurs francais »."
   },
   {
-    "id": "PPL_GA_DANGME",
+    "id": "PPL_FULA_NOMADES",
+    "status": "contested",
+    "rationale": "Mbororo, d'origine haoussa et fulfulde, est dit parfois pejoratif et vise des pasteurs marginalises dans les Etats contemporains, la distinction nomades/sedentaires etant elle-meme sensible."
+  },
+  {
+    "id": "PPL_FULA_SAHEL",
     "status": "colonial-legacy",
-    "rationale": "La fiche qualifie Ga-Dangme de compose artificiel cree par les colonisateurs britanniques pour grouper deux peuples apparentes mais historiquement distincts."
+    "rationale": "La fiche parle d'appellations imposees par les colonisateurs : Peul adopte par les Francais au Senegal puis etendu a l'Afrique de l'Ouest francophone, Fulani adopte par les colonisateurs britanniques."
   },
   {
     "id": "PPL_GABRA",
@@ -718,6 +718,16 @@
     "id": "PPL_GANDA",
     "status": "colonial-legacy",
     "rationale": "Le terme tribe impose par l'administration coloniale est rejete par les Baganda, Buganda tribe etant qualifie de terme colonial administratif reducteur et Uganda d'une adoption britannique de 1894."
+  },
+  {
+    "id": "PPL_GARIFUNA",
+    "status": "colonial-legacy",
+    "rationale": "L'exonyme « Black Caribs » « a servi, dans la bouche des administrateurs coloniaux britanniques, à minorer la légitimité des Garinagu en tant que peuple autochtone de Saint-Vincent en insistant sur leur ascendance africaine plutôt que sur leur enracinement insulaire »."
+  },
+  {
+    "id": "PPL_GA_DANGME",
+    "status": "colonial-legacy",
+    "rationale": "La fiche qualifie Ga-Dangme de compose artificiel cree par les colonisateurs britanniques pour grouper deux peuples apparentes mais historiquement distincts."
   },
   {
     "id": "PPL_GBAGYI",
@@ -790,14 +800,14 @@
     "rationale": "Shanqella est « péjoratif car il était employé par les peuples des hautes terres (Amhara, Agaw) qui asservissaient les Gumuz », et non par un acteur colonial."
   },
   {
-    "id": "PPL_GUR_MACRO",
-    "status": "reconstructive",
-    "rationale": "Gur est « une appellation academique forgee par les linguistes », « une categorie linguistique et non une identite ethnique partagee », sans auto-designation collective."
-  },
-  {
     "id": "PPL_GURAGE",
     "status": "contested",
     "rationale": "La fiche dit que les Silte ont rejete l'identite gurage par referendum en 2000 et que le terme est culturel plutot que linguistique, les langues n'etant pas toujours intelligibles."
+  },
+  {
+    "id": "PPL_GUR_MACRO",
+    "status": "reconstructive",
+    "rationale": "Gur est « une appellation academique forgee par les linguistes », « une categorie linguistique et non une identite ethnique partagee », sans auto-designation collective."
   },
   {
     "id": "PPL_GUWA",
@@ -908,6 +918,11 @@
     "id": "PPL_ITESO",
     "status": "contested",
     "rationale": "« Bakedi fut attribué par les Baganda au XIXe siècle et signifie peuple nu » ; ce terme « est aujourd'hui considéré péjoratif », sans auteur colonial."
+  },
+  {
+    "id": "PPL_JAMAICAN_MAROON",
+    "status": "colonial-legacy",
+    "rationale": "Le terme « renvoie à une catégorie forgée par les colonisateurs pour désigner des fugitifs », que les communautés ont ensuite « repris et revendiqué comme nom d'identité politique et culturelle » via les traités de 1739-1740."
   },
   {
     "id": "PPL_JARAWA",
@@ -1165,14 +1180,14 @@
     "rationale": "La fiche impute la scission a l'usage colonial des termes Eastern Krobo (Manya) et Western Krobo (Yilo), qui a cree des confusions administratives durables."
   },
   {
-    "id": "PPL_KROU_MACRO",
-    "status": "colonial-legacy",
-    "rationale": "La fiche attribue l'extension du nom aux Europeens : le terme a ete etendu par eux a l'ensemble du groupe linguistique et culturel, ce que Westermann (1952) constatait deja."
-  },
-  {
     "id": "PPL_KROUMEN",
     "status": "colonial-legacy",
     "rationale": "Le flottement ethnique / professionnel vient de l'usage europeen : Krumen est employe par les Europeens depuis le XVIIIe siecle pour les marins krou embarques sur leurs navires, jusqu'aux Kroomen de la Royal Navy."
+  },
+  {
+    "id": "PPL_KROU_MACRO",
+    "status": "colonial-legacy",
+    "rationale": "La fiche attribue l'extension du nom aux Europeens : le terme a ete etendu par eux a l'ensemble du groupe linguistique et culturel, ce que Westermann (1952) constatait deja."
   },
   {
     "id": "PPL_KRU",
@@ -1860,6 +1875,11 @@
     "rationale": "La fiche dit que « les Qemant ont ete suppresses de l'identite officielle lors du recensement de 2007 » et que « l'identite ethnique est contestee », avec conflits depuis 2015."
   },
   {
+    "id": "PPL_RAIZAL",
+    "status": "contested",
+    "rationale": "Le terme générique « isleño » « efface la spécificité ethnique, linguistique et religieuse » des Raizales en les assimilant à la population continentale installée depuis la politique de « colombianización » engagée en 1953 — un litige de politique nationale d'assimilation, non une imposition coloniale européenne."
+  },
+  {
     "id": "PPL_RONGA",
     "status": "contested",
     "rationale": "Le nom est « un ethnonyme endogène » : le problème posé est le débat des linguistes dialecte/langue et l'effacement sous les étiquettes Tsonga ou Shangaan, que « les Ronga affirment » refuser."
@@ -2210,6 +2230,11 @@
     "rationale": "Le nom est « partagé par plusieurs peuples sans lien de parenté » (Malawi, Tsonga, Zambie/Zimbabwe) et ces homonymies « causent des confusions fréquentes dans les sources »."
   },
   {
+    "id": "PPL_TONGAS",
+    "status": "colonial-legacy",
+    "rationale": "Tongas « est apparu comme categorie demographique officielle lors des recensements coloniaux portugais du XXe siecle », et Servicais couvrait un travail proche du travail force."
+  },
+  {
     "id": "PPL_TONGA_LAC",
     "status": "contested",
     "rationale": "Le nom Tonga est « partagé par plusieurs groupes ethniques d'Afrique australe sans parenté directe », et Lakeshore Tonga est un label de la littérature anthropologique pour lever la confusion."
@@ -2233,11 +2258,6 @@
     "id": "PPL_TONGA_ZIM",
     "status": "colonial-legacy",
     "rationale": "« Les colonisateurs britanniques employaient Tonga comme terme générique pour distinguer ce groupe des autres peuples de Rhodésie du Sud »."
-  },
-  {
-    "id": "PPL_TONGAS",
-    "status": "colonial-legacy",
-    "rationale": "Tongas « est apparu comme categorie demographique officielle lors des recensements coloniaux portugais du XXe siecle », et Servicais couvrait un travail proche du travail force."
   },
   {
     "id": "PPL_TOUBOU",
@@ -2280,6 +2300,11 @@
     "rationale": "Les Tswa sont « souvent considérés par les recenseurs mozambicains et par les peuples voisins comme un sous-dialecte des Tsonga plutôt que comme un peuple distinct »."
   },
   {
+    "id": "PPL_TSWANA",
+    "status": "colonial-legacy",
+    "rationale": "« Le terme Bechuana fut utilisé par les colonisateurs britanniques », donnant son nom au Bechuanaland, et les autres formes sont listées comme « variantes coloniales »."
+  },
+  {
     "id": "PPL_TSWA_CALANGA",
     "status": "contested",
     "rationale": "« La désignation Tswa Calanga est ambiguë » entre Hlengwe tswa et Kalanga zimbabwéens, et les recensements comptent les Tswa comme Tsonga ; aucun coinage colonial n'est nommé."
@@ -2288,11 +2313,6 @@
     "id": "PPL_TSWA_MOZ",
     "status": "colonial-legacy",
     "rationale": "L'amalgame systématique des Tswa avec les Tsonga « remonte à l'époque coloniale portugaise », et « la forme portugaise Tshwa fut utilisée dans les documents coloniaux »."
-  },
-  {
-    "id": "PPL_TSWANA",
-    "status": "colonial-legacy",
-    "rationale": "« Le terme Bechuana fut utilisé par les colonisateurs britanniques », donnant son nom au Bechuanaland, et les autres formes sont listées comme « variantes coloniales »."
   },
   {
     "id": "PPL_TUAREG",

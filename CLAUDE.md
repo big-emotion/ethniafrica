@@ -41,8 +41,10 @@ npm run storybook           # :6006
 npm run lint:req                    # @req annotation traceability (see below)
 npm run check:jira-template         # docs/templates/jira-ticket-template.md must exist and match
 npm run check:action-pins           # every third-party GitHub Action must be SHA-pinned
+npm run check:workflow-shell        # every workflow `run:` block must parse under `bash -n`
 npm run check:env-example           # .env.example and the code agree, both directions
 npm run check:migration-files       # no duplicate version or name, no hole in the sequence
+npm run check:dead                  # knip: unreferenced files, exports, dependencies (ratcheted ceilings)
 npm run test:charter-contracts      # aggregated design-charter contract suite
 npx tsx scripts/validateAfrikData.ts        # AFRIK data integrity (FR26–FR52)
 npx tsx scripts/ci/checkEditorialRules.ts   # decolonial editorial rules on fiches
@@ -89,13 +91,14 @@ Editorial work on fiches has a dedicated project skill: `.claude/skills/afrik-cu
 
 Loading the corpus is `scripts/migrateAfrikToDatabase.ts --target=recette|production` (`--target=staging` is retired and throws). `scripts/lib/afrikSyncTarget.ts` checks in the recette ref only; production comes from `AFRIK_PRODUCTION_SUPABASE_URL` with **no default**, because the default used to hold the recette ref and every production deploy loaded the corpus into recette. Runbook: `docs/runbooks/afrik-data-sync.md`.
 
-### Supabase: three clients, never interchangeable
+### Supabase: two data clients, never interchangeable
 
-- `src/lib/supabase/client.ts` — browser, anon key
 - `src/lib/supabase/server.ts` — SSR / server components
 - `src/lib/supabase/admin.ts` — service-role key, **server-only**
 
-Migrations are numbered and sequential in `supabase/migrations/` (049 at last count). A merge into `recette` applies the pending ones there automatically (`migrate-recette.yml`, needs the `RECETTE_SUPABASE_DB_URL` secret); production stays manual on purpose. `npm run migrations:diff` shows what a database is missing, `npm run check:migration-state` fails on anything pending, orphaned or edited-after-applying. Which of them are live on which project is tracked in `docs/runbooks/migration-state.md` — the ledger records some under timestamp versions rather than filenames, so a tool comparing version strings reports applied migrations as pending. **Both Supabase projects label their environment "production"** — a Supabase project has exactly one environment and Supabase names it "production", so the label describes the project, not the application it serves. `shmrjtnfbqzceovroqjj` serves **recette**; `jajggbeimfudpzcxytbb` serves **production** — invisible to this repo's Supabase token, so its ledger is read over a direct Postgres connection, never over the MCP. Every migration is a two-step rollout: recette first, prod second. Applying one and calling it done has already left a corpus loaded on one and missing on the other.
+**The browser never reads the corpus from Supabase.** There used to be a third client — `client.ts`, anon key, browser — and this file described it for months after its last caller went away. Every read now goes through `/api/v2`, which is the better architecture, but it was only ever true in the code. The dead chain (`client.ts` ← `flags-client.ts` ← nobody) was removed rather than documented. `src/lib/supabase/auth-client.ts` is a separate, living thing: the browser authenticates directly, it just does not query.
+
+Migrations are numbered and sequential in `supabase/migrations/` (081 at last count). A merge into `recette` applies the pending ones there automatically (`migrate-recette.yml`, needs the `RECETTE_SUPABASE_DB_URL` secret); production stays manual on purpose. `npm run migrations:diff` shows what a database is missing, `npm run check:migration-state` fails on anything pending, orphaned or edited-after-applying. Which of them are live on which project is tracked in `docs/runbooks/migration-state.md` — the ledger records some under timestamp versions rather than filenames, so a tool comparing version strings reports applied migrations as pending. **Both Supabase projects label their environment "production"** — a Supabase project has exactly one environment and Supabase names it "production", so the label describes the project, not the application it serves. `shmrjtnfbqzceovroqjj` serves **recette**; `jajggbeimfudpzcxytbb` serves **production** — invisible to this repo's Supabase token, so its ledger is read over a direct Postgres connection, never over the MCP. Every migration is a two-step rollout: recette first, prod second. Applying one and calling it done has already left a corpus loaded on one and missing on the other.
 
 ### Frontend
 
@@ -114,6 +117,29 @@ Migrations are numbered and sequential in `supabase/migrations/` (049 at last co
 Every `test()`/`it()` call needs `// @req REQ-NNN` within the 3 lines above it, and any exported symbol annotated `@req REQ-NNN` must have a test annotated with the same ID. IDs are validated against `docs/confluence-spec/req-catalog.json`. Pre-existing tests are grandfathered by diffing against the previous file content, so _new or renamed_ tests are the ones that fail.
 
 **Never delete `docs/confluence-spec/*.json` or `docs/templates/jira-ticket-template.md`.** With the catalog missing, `lintReqAnnotations.ts` returns early and reports OK while checking nothing — a silently disarmed gate, which is worse than a red one.
+
+### Dead code (`npm run check:dead`, CI-blocking)
+
+`knip` (config in `knip.json`) tallies unreferenced files, exports, types and
+dependencies; `scripts/ci/checkDeadCode.ts` compares each tally against a
+recorded ceiling. **The ceiling is a ratchet, not a budget** — a count above it
+fails, and so does a count _below_ it, with the line to change. A ceiling left
+standing above the real number is a licence to climb back to it.
+
+Six categories are held at zero (files, dependencies, devDependencies, unlisted,
+binaries, duplicates); `exports` and `types` sit where they were measured and
+can only go down. `ADVISORY_CATEGORIES` softens a category the way
+`SOFT_CHECK_NAMES` does in `validateAfrikData.ts` — a visible line in a source
+file, never a flag in a config. It is currently empty.
+
+A hand-run script or a config-loaded module is **declared in `knip.json`, not
+deleted**: `scripts/**`, `e2e/**`, the `src/lib/atlas/assets/generate-*.mjs`
+asset generators, `src/test/server-only-stub.ts` (a vitest alias) and the edge
+functions are all entry points nothing imports on purpose. Three dependencies
+are in `ignoreDependencies` because knip cannot see their use: `sharp` (Next's
+production image optimizer), `puppeteer` (`@lhci/utils` does not depend on it —
+`.lighthouserc.js`'s `puppeteerScript` resolves it from the project) and
+`@storybook/blocks` (imported by `.mdx` stories knip does not parse).
 
 ### Custom ESLint rules (`eslint/rules/`, plugin `afh`)
 
@@ -186,6 +212,14 @@ A fiche sourced only at `unverified` is published and visibly marked low-confide
 
 Keep colonial-era names but explain why they are problematic, and always surface the autonym. `checkEditorialRules.ts` enforces: an autonym is required at `confidence >= medium`, and ≥2 sources when `classification_status` is `contested` or `colonial-legacy`.
 
+### Reader-facing register
+
+Three fiche fields are published to the reader **verbatim**, with no sanitising layer: `gaps[].reason`, `sources[].title` and `sources[].notes` (nested under `names[].sources[]` on name fiches). Everything else, `_meta.directives` included, is authoring metadata nothing renders.
+
+So those three may carry no repository path, no JSON field path, no raw `PPL_`/`FLG_`/`PAT_` identifier, and none of the pipeline's own vocabulary — _file d'attente_, _la passe_, _protocole de recherche_, _revue claim-level_, _tier hérité_. That last class is the one that got through: it carries no path and no identifier, so it reads as ordinary French, and 774 name fiches told their visitors which queue they came from and which research protocol they awaited. **The reader is owed the silence itself, never the reason the workshop has not filled it yet.**
+
+`checkEditorialRules.ts` enforces this as `reader-facing-register` at error severity; the banned vocabulary is one exported constant, `INTERNAL_REGISTER_PATTERNS`. Doctrine, rewrite table and a paste-able prompt block for curation sessions: `docs/editorial/reader-facing-register.md`.
+
 ### TypeScript
 
 `strict: false`, `strictNullChecks: false`, `noImplicitAny: false`. The compiler will not catch nullability here — tests are the real gate. `@/` aliases `src/`.
@@ -230,3 +264,13 @@ TDD (failing test first) and KISS. Tests exercise the public interface — no re
 Copy `.env.example` → `.env.local`. Required to run: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` (server-only). Required for reporting to work at all: `ANTIBOT_HMAC_SECRET` (server-only, any long random string) — **not** inert when unset, `GET /api/v2/antibot/challenge` answers 503 and every report dialog dies on "la vérification n'a pas abouti" while the build stays green. It replaced `CLOUDFLARE_TURNSTILE_SECRET_KEY`, which no longer exists. Optional subsystems: `UPSTASH_REDIS_REST_*` (rate limiting), `SENTRY_DSN` / `NEXT_PUBLIC_SENTRY_DSN`, `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`, `ANTIBOT_DIFFICULTY_BITS`, `REVALIDATE_SECRET`, `SUPABASE_WEBHOOK_SECRET`, `NEXT_PUBLIC_FEATURE_QUIZ`. The CI build passes placeholder Supabase values so fork and Dependabot PRs still gate.
 
 Admin auth is Supabase Auth (magic-link, GitHub, Google OAuth); roles live in `user_roles` with values `reader`, `contributor`, `moderator`, `admin`, `advisor`. First admin: `ADMIN_EMAIL=… npx tsx scripts/seedAdmin.ts`.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

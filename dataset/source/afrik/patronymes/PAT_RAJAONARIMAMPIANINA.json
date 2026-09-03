@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité à l'attestation officielle du nom complet ; l'origine et le système de transmission n'ont pas été établis."
+  },
+  "id": "PAT_RAJAONARIMAMPIANINA",
+  "nameMain": "Rajaonarimampianina",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Rajaonarimampianina",
+      "attestations": [
+        { "countryId": "MDG", "sourceRefs": ["un-rajaonarimampianina-2017"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MERINA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["un-rajaonarimampianina-2017"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "un-rajaonarimampianina-2017",
+      "title": "A/72/PV.10 — Address by Hery Martial Rajaonarimampianina Rakotoarimanana",
+      "url": "https://digitallibrary.un.org/record/1308067/files/A_72_PV.10-EN.pdf",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "Compte rendu officiel de l'Assemblée générale des Nations Unies du 20 septembre 2017, p. 5-7. Il donne le nom complet et la fonction de président de Madagascar."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Rajaonarimampianina etymology », « Rajaonarimampianina onomastics », leurs équivalents français, les catalogues et les résultats académiques n'ont livré ni tradition attribuée, ni chronique d'origine, ni reconstruction linguistique dédiée."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Le compte rendu de l'ONU atteste un porteur, pas une généalogie. Les recherches Rajaonarimampianina avec père, fils, famille, héritage et généalogie n'ont pas établi un mode de transmission ; « other » signale cette indétermination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source consultée n'établit si Rajaonarimampianina désigne historiquement un individu, un lignage ou un clan ; la fonction présidentielle du porteur ne permet pas de le déduire."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches Rajaonarimampianina avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune paire patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches exactes associant Rajaonarimampianina à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; la fonction présidentielle est individuelle."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La notice officielle de l'ONU et les recherches exactes « Rajaonarimampianina obituary » et « Rajaonarimampianina décès » concernent Hery Martial Rajaonarimampianina Rakotoarimanana sans attester son décès ; aucun porteur décédé directement sourcé n'a été trouvé."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes et catalogues consultés n'établissent pas de lignée homonyme d'origine distincte."
+    }
+  ]
+}

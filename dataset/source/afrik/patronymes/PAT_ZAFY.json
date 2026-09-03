@@ -1,0 +1,114 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche distinguant le sens lexical de zafy de l'origine historique non établie du patronyme."
+  },
+  "id": "PAT_ZAFY",
+  "nameMain": "Zafy",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Zafy",
+      "attestations": [
+        {
+          "countryId": "MDG",
+          "sourceRefs": ["tribune-albert-zafy-2017", "malagasyword-zafy"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Les dictionnaires rassemblés par le Malagasy Dictionary and Encyclopedia donnent au nom commun zafy les sens « petit-enfant » et « descendant » et signalent son emploi dans la formation de noms propres. Aucune source consultée n'établit cependant que ce lexème est l'étymon historique du patronyme Zafy.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["malagasyword-zafy"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_TSIMIHETY",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["tribune-albert-zafy-2017", "malagasyword-zafy"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Albert Zafy",
+      "sourceRefs": ["tribune-albert-zafy-2017"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "tribune-albert-zafy-2017",
+      "title": "Le Président Albert Zafy n'est plus",
+      "url": "https://www.madagascar-tribune.com/Le-President-Albert-Zafy-n-est,23354.html",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Article signé Yvan Andriamanga, Madagascar-Tribune.com, 14 octobre 2017. Il documente le décès d'Albert Zafy le 13 octobre 2017 et sa qualité d'ancien président."
+    },
+    {
+      "sourceKey": "malagasyword-zafy",
+      "title": "Malagasy Dictionary and Encyclopedia — zafy",
+      "url": "https://malagasyword.org/bins/teny2/zafy",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Agrégateur de plusieurs dictionnaires malgaches : donne les sens « petit-enfant » et « descendant » et note l'emploi du lexème dans des noms propres. Il ne démontre pas l'histoire du patronyme ; le niveau non vérifié est conservé."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches Zafy avec tradition tsimihety, razana, ancêtre et généalogie n'ont livré aucun récit attribué à un transmetteur nommé avec transcription."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "La presse documente Albert Zafy mais pas la formation du nom ; les recherches historiques exactes n'ont livré aucune chronique d'origine du patronyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Le sens lexical de zafy et l'attestation d'Albert Zafy ne suffisent pas à établir une transmission. Les recherches familiales et généalogiques n'ont pas documenté le mode ; « other » maintient l'indétermination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "La ressource lexicographique et les recherches exactes « Zafy clan », « Zafy lineage » et « Zafy nom de groupe » n'ont livré aucune source précisant l'unité sociale désignée par le patronyme."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches Zafy avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance entre deux patronymes disposant de fiches."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches exactes associant Zafy à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; la carrière politique d'Albert Zafy est individuelle."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "L'emploi lexical de zafy ne constitue pas à lui seul un patronyme homonyme. Les recherches exactes n'ont pas établi de lignée d'origine distincte."
+    }
+  ]
+}

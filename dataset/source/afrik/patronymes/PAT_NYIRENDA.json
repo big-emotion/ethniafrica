@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_NYIRENDA",
+  "nameMain": "Nyirenda",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Nyirenda",
+      "attestations": [
+        {
+          "countryId": "MWI",
+          "sourceRefs": ["sekeleko-nyirenda"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "L'étude socio-sémantique des noms tumbuka indique qu'une personne nommée Nyirenda est rattachée, dans le système local décrit, au nord-ouest du Malawi et à la chefferie Mowa. Elle présente les noms familiaux comme des marqueurs de localité, sans reconstruire l'étymologie lexicale de Nyirenda.",
+        "claimStatus": "established",
+        "sourceRefs": ["sekeleko-nyirenda"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "La même étude décrit l'adjonction des préfixes nya- ou honorifique anya-, glosés « fille de », aux noms de famille lorsqu'une femme est interpellée ; elle ne présente toutefois pas Nyirenda lui-même comme une forme créée par ce procédé.",
+        "claimStatus": "established",
+        "sourceRefs": ["sekeleko-nyirenda"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_TUMBUKA",
+      "status": "attested",
+      "sourceRefs": ["sekeleko-nyirenda"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MWI",
+      "status": "attested",
+      "sourceRefs": ["sekeleko-nyirenda"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "sekeleko-nyirenda",
+      "title": "A socio-semantic analysis of selected Tumbuka surnames and clan names",
+      "url": "https://dspace.unza.zm/bitstreams/790df0df-ccbb-432d-bb1f-eba586202559/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Mémoire universitaire consulté par l'extrait intégral indexé du dépôt de l'Université de Zambie. Il traite Nyirenda comme nom familial tumbuka, le rattache au territoire de la chefferie Mowa dans le nord-ouest du Malawi et décrit les préfixes nya- et anya- employés pour les femmes."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Nyirenda », « Tumbuka », « Malawi », « surname », « clan name », « Mowa », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que le mémoire socio-sémantique du dépôt de l'Université de Zambie n'ont pas établi que la catégorie de système nominal portée par la fiche provisoire décrive ce nom lui-même ; elle reste une hypothèse de classement et n'est pas transformée en fait."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Nyirenda », « Tumbuka », « Malawi », « surname », « clan name », « Mowa », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que le mémoire socio-sémantique du dépôt de l'Université de Zambie n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Nyirenda », « Tumbuka », « Malawi », « surname », « clan name », « Mowa », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que le mémoire socio-sémantique du dépôt de l'Université de Zambie n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Nyirenda », « Tumbuka », « Malawi », « surname », « clan name », « Mowa », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que le mémoire socio-sémantique du dépôt de l'Université de Zambie n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche ; les personnes vivantes ou de statut vital incertain ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Nyirenda », « Tumbuka », « Malawi », « surname », « clan name », « Mowa », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que le mémoire socio-sémantique du dépôt de l'Université de Zambie n'ont pas établi de lignée homonyme d'origine distincte documentable ; une diffusion dans plusieurs pays ou une graphie voisine ne suffit pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Nyirenda », « Tumbuka », « Malawi », « surname », « clan name », « Mowa », « onomastics », « etymology », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que le mémoire socio-sémantique du dépôt de l'Université de Zambie n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

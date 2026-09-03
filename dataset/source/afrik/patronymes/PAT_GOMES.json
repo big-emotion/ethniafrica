@@ -1,0 +1,105 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon docs/runbooks/anthroponym-fiche-research.md. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
+  },
+  "id": "PAT_GOMES",
+  "nameMain": "Gomes",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Gomes",
+      "attestations": [
+        {
+          "countryId": "GNB",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "CPV",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "bilateral",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le Dictionary of American Family Names rattache Gomes au prénom médiéval Gomes et propose probablement une origine visigothique dans guma (« homme »). Le caractère probabiliste de cette proposition est conservé et aucune filiation capverdienne n'en est déduite.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["dafn-gomes-2022"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_CREOLE_CABOVERDIEN",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GNB",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "CPV",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "drotbohm-2009-cape-verde-names",
+      "title": "Horizons of long-distance intimacies: Reciprocity, contribution and disjuncture in Cape Verde",
+      "url": "https://doi.org/10.1016/j.hisfam.2009.02.002",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Heike Drotbohm, The History of the Family 14(2), 2009, p. 132-149. La note sur les noms précise qu'au Cap-Vert l'enfant porte les noms de famille du père et de la mère. Cette source établit la règle générale de transmission bilatérale, non l'origine d'un patronyme particulier."
+    },
+    {
+      "sourceKey": "dafn-gomes-2022",
+      "title": "Gomes Surname Meaning — Dictionary of American Family Names, 2nd edition",
+      "url": "https://www.ancestry.com/last-name-meaning/gomes?geo-lang=en",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Patrick Hanks et al., Dictionary of American Family Names, 2e éd., Oxford University Press, 2022, notice reproduite par Ancestry. La notice présente comme probable, et non certaine, la dérivation du prénom médiéval."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Gomes » associées au Cap-Vert, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Gomes à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Gomes » associées au Cap-Vert, complétés par « caste », « statut héréditaire », « métier » et « social function », n'ont établi aucune fonction sociale héréditaire propre aux porteurs de Gomes. Une étymologie professionnelle éventuelle n'est pas assimilée à un statut contemporain."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Gomes » associées au Cap-Vert n'ont pas fourni, dans cette passe, un porteur à la fois décédé, clairement rattaché au patronyme étudié et documenté par une source distincte de la simple homonymie. Les personnes vivantes rencontrées dans les sources officielles ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Gomes » associées au Cap-Vert n'ont pas permis d'isoler deux lignées homonymes dotées d'origines distinctes et documentées. Lorsque le dictionnaire propose plusieurs formations possibles, elles restent des hypothèses linguistiques et non des lignées séparées."
+    }
+  ]
+}

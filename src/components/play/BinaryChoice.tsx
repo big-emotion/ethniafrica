@@ -70,5 +70,3 @@ export const BinaryChoice = ({
     </section>
   );
 };
-
-export default BinaryChoice;

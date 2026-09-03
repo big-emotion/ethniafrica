@@ -111,5 +111,3 @@ export function TimeScrubber({
     </SliderPrimitive.Root>
   );
 }
-
-export default TimeScrubber;

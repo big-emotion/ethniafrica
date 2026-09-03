@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_LUBEGA",
+  "nameMain": "Lubega",
+  "nameSystem": "totemic_clan",
+  "spellings": [
+    {
+      "spelling": "Lubega",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["obutaka-lubega"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "La page mémorielle du clan Ngabi rapporte que le personnage tenu pour son fondateur portait d'abord le nom Lubega avant de recevoir le surnom Nsamba. Le récit relie donc Lubega à une histoire clanique baganda, mais il n'établit pas que Lubega soit lui-même un nom totémique ni ne permet de départager les généalogies concurrentes rapportées sur la page.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["obutaka-lubega"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BAGANDA",
+      "status": "attested",
+      "sourceRefs": ["obutaka-lubega"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["obutaka-lubega"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "obutaka-lubega",
+      "title": "Ngabi Nsamba History",
+      "url": "https://www.obutaka.com/clans/clan-history/ngabi-nsamba-history",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page mémorielle communautaire du clan Ngabi consultée directement. Elle rapporte plusieurs traditions incompatibles sur Nsamba, cite M. B. Nsimbi et présente Lubega comme un ancien nom du fondateur. Faute de témoin nommé et de transcription primaire, aucun élément n'est enregistré comme tradition orale au sens du schéma."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web combinant « Lubega », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page mémorielle du clan Ngabi-Nsamba, ses renvois à J. Roscoe et M. B. Nsimbi, et des recherches ciblées sur Lubega dans les travaux consacrés aux clans du Buganda, n'ont pas établi que la catégorie provisoire « totemic_clan » décrive ce nom lui-même ; elle reste une hypothèse de classement."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Lubega », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page mémorielle du clan Ngabi-Nsamba, ses renvois à J. Roscoe et M. B. Nsimbi, et des recherches ciblées sur Lubega dans les travaux consacrés aux clans du Buganda, n'ont identifié aucune parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Lubega », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page mémorielle du clan Ngabi-Nsamba, ses renvois à J. Roscoe et M. B. Nsimbi, et des recherches ciblées sur Lubega dans les travaux consacrés aux clans du Buganda, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Lubega », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page mémorielle du clan Ngabi-Nsamba, ses renvois à J. Roscoe et M. B. Nsimbi, et des recherches ciblées sur Lubega dans les travaux consacrés aux clans du Buganda, n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Lubega », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page mémorielle du clan Ngabi-Nsamba, ses renvois à J. Roscoe et M. B. Nsimbi, et des recherches ciblées sur Lubega dans les travaux consacrés aux clans du Buganda, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Lubega », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page mémorielle du clan Ngabi-Nsamba, ses renvois à J. Roscoe et M. B. Nsimbi, et des recherches ciblées sur Lubega dans les travaux consacrés aux clans du Buganda, n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

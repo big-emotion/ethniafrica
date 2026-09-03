@@ -1,0 +1,85 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité à la continuité dynastique bemazava-sakalava documentée dans une étude dédiée."
+  },
+  "id": "PAT_TSIARASO",
+  "nameMain": "Tsiaraso",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Tsiaraso",
+      "attestations": [
+        { "countryId": "MDG", "sourceRefs": ["sharp-tsiaraso-1997"] }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "L'étude de Lesley A. Sharp situe Tsiaraso Victor III et son fils Tsiaraso Rachidy IV dans la dynastie bemazava-sakalava et décrit leur reconstruction du palais royal sur les ruines du doany de Tsiaraso I. Elle établit la continuité patrilinéaire de l'élément Tsiaraso dans cette lignée royale, sans en donner l'étymologie.",
+        "claimStatus": "established",
+        "sourceRefs": ["sharp-tsiaraso-1997"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SAKALAVA",
+      "status": "attested",
+      "sourceRefs": ["sharp-tsiaraso-1997"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["sharp-tsiaraso-1997"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "sharp-tsiaraso-1997",
+      "title": "Royal Difficulties: A Question of Succession in an Urbanized Sakalava Kingdom",
+      "url": "https://www.africabib.org/rec.php?RID=163126607",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Lesley A. Sharp, Journal of Religion in Africa, vol. 27, no 3, 1997, p. 270-307. La notice bibliographique et son résumé nomment la dynastie bemazava-sakalava, Tsiaraso Victor III, son fils Tsiaraso Rachidy IV et Tsiaraso I."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L'article traite des traditions et de la succession royale, mais la notice accessible ne fournit ni transmetteur oral nommé ni transcription d'un récit d'origine du nom."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches exactes « Tsiaraso etymology », « Tsiaraso onomastics » et leurs équivalents français n'ont livré aucune étude de l'étymon ; l'article de Sharp établit la lignée, pas le sens du nom."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "La recherche sur Tsiaraso, la succession bemazava et les alliances sakalava n'a identifié aucune alliance entre deux patronymes disposant chacun d'une fiche PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "L'étude dynastique consultée et les recherches exactes associant Tsiaraso à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction professionnelle attachée au nom ; le statut royal décrit relève de la lignée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La notice nomme Tsiaraso I, Tsiaraso Victor III et Tsiaraso Rachidy IV, mais ne donne ni dates ni constat de décès. Le protocole interdisant d'inférer le statut vital, aucun n'est enregistré comme porteur décédé."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "L'étude dédiée et les recherches exactes n'établissent pas de lignée Tsiaraso d'origine distincte de la dynastie bemazava-sakalava."
+    }
+  ]
+}

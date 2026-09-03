@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_SSEMAKULA",
+  "nameMain": "Ssemakula",
+  "nameSystem": "totemic_clan",
+  "spellings": [
+    {
+      "spelling": "Ssemakula",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["forebears-ssemakula"]
+        }
+      ]
+    },
+    {
+      "spelling": "Semakula",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["forebears-ssemakula"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BAGANDA",
+      "status": "supposed",
+      "sourceRefs": ["forebears-ssemakula"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["forebears-ssemakula"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-ssemakula",
+      "title": "Ssemakula Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/ssemakula",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement : elle atteste Ssemakula très majoritairement en Ouganda et ne donne aucune signification. La distribution ne suffit pas à établir une origine baganda."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web et bibliographique combinant « Ssemakula », « Baganda », « Luganda », « Uganda », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Ssemakula Surname Origin, Meaning & Last Name History » n'ont livré aucune tradition attribuée, chronique ou étude linguistique établissant l'origine de Ssemakula. Les rapprochements fondés uniquement sur la géographie, une biographie ou une contribution non référencée ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Ssemakula », « Baganda », « Luganda », « Uganda », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Ssemakula Surname Origin, Meaning & Last Name History » n'ont pas établi que la catégorie provisoire « totemic_clan » décrive Ssemakula lui-même ; elle reste un classement de travail et non une origine démontrée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Ssemakula », « Baganda », « Luganda », « Uganda », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Ssemakula Surname Origin, Meaning & Last Name History » n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Ssemakula à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Ssemakula », « Baganda », « Luganda », « Uganda », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Ssemakula Surname Origin, Meaning & Last Name History » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Ssemakula."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Ssemakula », « Baganda », « Luganda », « Uganda », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Ssemakula Surname Origin, Meaning & Last Name History » n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé de Ssemakula, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Ssemakula », « Baganda », « Luganda », « Uganda », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Ssemakula Surname Origin, Meaning & Last Name History » n'ont pas établi de lignée homonyme de Ssemakula dotée d'une origine distincte et documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Ssemakula », « Baganda », « Luganda », « Uganda », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Ssemakula Surname Origin, Meaning & Last Name History » n'ont établi aucune règle propre à Ssemakula permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

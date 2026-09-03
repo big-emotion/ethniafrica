@@ -54,10 +54,7 @@ export type PeopleId = string;
  * - `reconstructive`: Classification being actively reconstructed / decolonized
  */
 export type ClassificationStatus =
-  | "consensual"
-  | "contested"
-  | "colonial-legacy"
-  | "reconstructive";
+  "consensual" | "contested" | "colonial-legacy" | "reconstructive";
 
 // ==========================================
 // CORE ENTITIES (with stable IDs)
@@ -309,6 +306,25 @@ export interface PeopleContent {
   // Section 4: Languages and sub-families
   languages?: LanguagesSection;
 
+  /**
+   * Structured registry identifiers used to build outbound links at render
+   * time (DEC-033). Never a stored URL — a registry can change its URL
+   * scheme, and a stored URL cannot be validated against the identifier
+   * format the way the identifier itself can.
+   */
+  externalIdentifiers?: ExternalIdentifiersSection;
+
+  /**
+   * The historical, non-linguistic link to Africa (REQ-127) — for a people
+   * such as a Creole-speaking group, where Glottolog classifies the language
+   * under the family of its lexifier and never under an African family.
+   * Distinct from `languageFamilyId`, which keeps reflecting Glottolog's
+   * classification unchanged; this field never substitutes for it, and is
+   * absent for the ordinary case of a fiche with a defensible linguistic
+   * affiliation. See `public/DIRECTIVES-AFRIK.md` §12.
+   */
+  historicalAffiliation?: HistoricalAffiliationSection;
+
   // Section 5: Culture, rites, traditions
   culture?: DetailedCultureSection;
 
@@ -448,6 +464,29 @@ export interface AppellationsSection {
   ethnoLinguisticGroup?: string;
   historicalRegion?: string;
   currentCountries?: CountryId[];
+  /**
+   * Shared identifier for a people split across several competing fiches
+   * (e.g. seven Fulani fiches, six Kongo fiches) — every fiche belonging to
+   * the same people carries the same `peopleGroupId` so a search surfacing
+   * several of them at once can present one named group instead of apparent
+   * duplicates (ETNI-1391). Absent when the fiche is not part of a split.
+   */
+  peopleGroupId?: string;
+  /** Display label for the group, e.g. "Peul / Fulani". Required alongside `peopleGroupId`. */
+  peopleGroupLabel?: string;
+}
+
+/**
+ * Registry identifiers per external source (DEC-033). Each field is the bare
+ * identifier — never a URL — validated against its registry's own format:
+ * Wikidata `^Q[1-9][0-9]*$`, Glottolog `^[a-z]{4}[0-9]{4}$`, ISO 639-3
+ * `^[a-z]{3}$`. All optional: absence means no automatic or editorial match
+ * has been made yet.
+ */
+export interface ExternalIdentifiersSection {
+  wikidataId?: string;
+  glottocode?: string;
+  iso639_3?: string;
 }
 
 export interface OriginsSection {
@@ -473,6 +512,18 @@ export interface LanguagesSection {
   isoCodes?: LanguageId[];
   dialects?: string[];
   vehicularRole?: string;
+}
+
+/**
+ * `content.historicalAffiliation` (REQ-127) — sourced and tiered
+ * independently of the fiche's other `sources`, so a Creole people fiche can
+ * carry a defensible historical link to Africa without fabricating the
+ * linguistic filiation Glottolog will not support. See
+ * `PeopleContent.historicalAffiliation` for the full editorial rationale.
+ */
+export interface HistoricalAffiliationSection {
+  description: string;
+  sources: FicheSource[];
 }
 
 /**
@@ -596,11 +647,7 @@ export interface NameRecord {
   entityType: "country" | "people" | "language" | "languageFamily";
   entityId: string; // CountryId | PeopleId | LanguageId | LanguageFamilyId
   nameType:
-    | "official"
-    | "self-appellation"
-    | "exonym"
-    | "historical"
-    | "colonial";
+    "official" | "self-appellation" | "exonym" | "historical" | "colonial";
   name: string;
   language?: string; // Language in which the name is used
   period?: string; // Historical period
@@ -650,6 +697,8 @@ export interface SearchResult {
 export interface FtsSearchParams {
   /** Optional only when a relation scope is given: a relation is a search. */
   q?: string;
+  /** Selects the dedicated quiz-question search stream. */
+  lens?: "quiz";
   limit: number;
   offset: number;
   classificationStatus?: ClassificationStatus;
@@ -666,14 +715,17 @@ export interface FtsSearchParams {
  *
  * `relevance` is comparable **within** an entity kind and not across kinds —
  * a people is scored `ts_rank × confidence`, a country by bare `ts_rank`, a
- * family by a match tier. `exactMatch` is the one signal that means the same
- * thing everywhere, which is why it sorts first.
+ * family by a match tier. `normalizedScore` is the one magnitude that is
+ * comparable everywhere: migration 069 maps each kind's raw relevance onto a
+ * band of [0,1] chosen by the match class. The main-stream kinds can therefore
+ * be merged, while the quiz kind uses the same score in its dedicated lens.
  */
 export interface RankedPeople extends People {
   languageFamilyName: string | null;
   confidence: number | null;
   relevance: number;
   exactMatch: boolean;
+  normalizedScore: number;
   /** Match excerpt; matched terms are wrapped in `[[` and `]]`. */
   snippet: string | null;
 }
@@ -681,12 +733,15 @@ export interface RankedPeople extends People {
 export interface RankedCountry extends Country {
   relevance: number;
   exactMatch: boolean;
+  normalizedScore: number;
   snippet: string | null;
 }
 
 export interface RankedLanguageFamily extends LanguageFamily {
   relevance: number;
   exactMatch: boolean;
+  normalizedScore: number;
+  snippet: string | null;
 }
 
 /**
@@ -701,8 +756,104 @@ export interface RankedPerson {
   roleCategory: string;
   relevance: number;
   exactMatch: boolean;
+  normalizedScore: number;
   snippet: string | null;
   peopleLinks: PersonPeopleLink[];
+}
+
+/**
+ * A name (patronyme) search hit (REQ-135). `nameMain` is the canonical
+ * spelling; `content` is forwarded opaquely, same posture as the dossier
+ * endpoint (`PublicPatronyme`) — DEC-039's per-subtype fields are not
+ * re-typed here ahead of ETNI-1460.
+ */
+export interface RankedPatronyme {
+  id: string;
+  nameMain: string;
+  nameSystem: string;
+  casteOrSocialFunction: string | null;
+  content: Record<string, unknown>;
+  relevance: number;
+  exactMatch: boolean;
+  normalizedScore: number;
+  snippet: string | null;
+}
+
+/**
+ * A quiz-bank search hit (REQ-121).
+ *
+ * The projection is deliberately narrow: `options_fr` and `correct_option`
+ * are the answer key and `explanation_fr` states the answer in prose, so
+ * migration 068 searches all three and returns none of them. A reader who
+ * finds a question through search must still have to answer it.
+ *
+ * `subjectName` is the people or country the question is about — the way a
+ * reader reaches the bank at all, since nobody searches for the wording of a
+ * question.
+ */
+export interface RankedQuizQuestion {
+  id: string;
+  /** The question stem, as asked. */
+  prompt: string;
+  entityType: string;
+  entityId: string;
+  subjectName: string | null;
+  relevance: number;
+  exactMatch: boolean;
+  normalizedScore: number;
+  snippet: string | null;
+}
+
+export type SearchHitKind =
+  "people" | "country" | "languageFamily" | "person" | "patronyme" | "quiz";
+
+/**
+ * One row of the canonical cross-kind ranking.
+ *
+ * The grouped arrays answer "what did this query find among peoples?"; this
+ * answers "what did it find, best first, whatever the kind" — the question a
+ * single result list actually asks. `normalizedScore` is what makes the merge
+ * legitimate (migration 068); ties break on the French collation of the name,
+ * then on the id, so the order is stable across requests.
+ */
+export interface RankedSearchHit {
+  kind: SearchHitKind;
+  id: string;
+  name: string;
+  normalizedScore: number;
+  snippet: string | null;
+}
+
+/**
+ * A language search hit (REQ-136). `familyName` is denormalised alongside
+ * `familyId` — same posture as `RankedPeople.languageFamilyName` — so a
+ * result card never has to issue a second fetch to render its family.
+ */
+export interface RankedLanguage {
+  id: LanguageId;
+  name: string;
+  familyId: LanguageFamilyId;
+  familyName: string | null;
+  content: LanguageContent;
+  relevance: number;
+  exactMatch: boolean;
+  snippet: string | null;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+/**
+ * A near-miss lead (REQ-125): what the search engine almost understood,
+ * shown only when the main search's `total` is 0. `kind` is scoped to the
+ * three entities the search surface names to the reader (`SEARCH_LABEL`) —
+ * languages, persons and patronymes are not candidates for a lead any more
+ * than they are named in that label.
+ */
+export interface SearchLead {
+  kind: "people" | "country" | "family";
+  id: string;
+  name: string;
+  similarity: number;
 }
 
 export interface FtsSearchResponse {
@@ -710,12 +861,22 @@ export interface FtsSearchResponse {
   countries: RankedCountry[];
   families: RankedLanguageFamily[];
   persons: RankedPerson[];
+  patronymes: RankedPatronyme[];
+  quizzes: RankedQuizQuestion[];
+  languages: RankedLanguage[];
+  /** Every hit in the selected main or quiz stream, ordered on `normalizedScore`. */
+  results: RankedSearchHit[];
   /** Corpus-wide match counts, not the size of the returned page. */
   peoplesTotal: number;
   countriesTotal: number;
   familiesTotal: number;
   personsTotal: number;
+  patronymesTotal: number;
+  quizzesTotal: number;
+  languagesTotal: number;
   total: number;
+  /** Populated only when `total` is 0 (REQ-125); empty otherwise. */
+  leads: SearchLead[];
 }
 
 // ==========================================

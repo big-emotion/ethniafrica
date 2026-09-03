@@ -1,0 +1,105 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_ALLY",
+  "nameMain": "Ally",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Ally",
+      "attestations": [
+        {
+          "countryId": "TZA",
+          "sourceRefs": ["tanzania-osg-ally-possi"]
+        }
+      ]
+    },
+    {
+      "spelling": "Ali",
+      "attestations": [
+        {
+          "countryId": "TZA",
+          "sourceRefs": ["tanzania-osg-ally-possi"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le Dictionary of American Family Names, reproduit par FamilySearch, décrit Ally comme une variante musulmane de Ali ; aucune filiation clanique swahilie n'est établie par cette notice.",
+        "claimStatus": "established",
+        "sourceRefs": ["familysearch-ally"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SWAHILI",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "TZA",
+      "status": "attested",
+      "sourceRefs": ["tanzania-osg-ally-possi"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
+    },
+    {
+      "sourceKey": "tanzania-osg-ally-possi",
+      "title": "Office of the Solicitor General — Dr. Ally Possi",
+      "url": "https://www.osg.go.tz/administration/members/solicitor-general",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Page officielle consultée intégralement. Elle atteste la graphie Ally dans l'identité publique du Solicitor General tanzanien, sans préciser si ce composant est héréditaire, clanique ou personnel."
+    },
+    {
+      "sourceKey": "familysearch-ally",
+      "title": "Ally Name Meaning and Ally Family History at FamilySearch",
+      "url": "https://www.familysearch.org/en/surname?surname=ally",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Notice consultée intégralement. FamilySearch reproduit le Dictionary of American Family Names, qui présente Ally comme une variante musulmane de Ali. Cette entrée lexicographique ne documente pas un clan swahili particulier."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "La recherche web combinant « Ally », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Office of the Solicitor General — Dr. Ally Possi » et « Ally Name Meaning and Ally Family History at FamilySearch » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Ally à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La recherche web combinant « Ally », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Office of the Solicitor General — Dr. Ally Possi » et « Ally Name Meaning and Ally Family History at FamilySearch » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Ally."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La recherche web combinant « Ally », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », qui comprenait le terme « obituary », ainsi que « Office of the Solicitor General — Dr. Ally Possi » et « Ally Name Meaning and Ally Family History at FamilySearch » n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La recherche web combinant « Ally », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme », qui comprenait le terme « homonyme », et la lecture de « Office of the Solicitor General — Dr. Ally Possi » et « Ally Name Meaning and Ally Family History at FamilySearch » n'ont pas établi de lignée homonyme d'origine distincte."
+    }
+  ]
+}

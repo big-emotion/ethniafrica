@@ -96,6 +96,53 @@ describe("GET /api/v2/search (route)", () => {
     );
   });
 
+  describe("quiz lens", () => {
+    // @req REQ-121
+    it("passes the quiz lens to the handler and retains CORS", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?q=Wolof&lens=quiz")
+      );
+
+      expect(res.status).toBe(200);
+      expect(res.headers.get("Access-Control-Allow-Origin")).toBe("*");
+      expect(ftsSearchHandler).toHaveBeenCalledWith(
+        expect.objectContaining({ q: "Wolof", lens: "quiz" })
+      );
+    });
+
+    // @req REQ-121
+    it("rejects an unsupported explicit lens without calling the handler", async () => {
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?q=Wolof&lens=all")
+      );
+      const body = await res.json();
+
+      expect(res.status).toBe(400);
+      expect(body.errors[0]).toMatchObject({
+        code: "INVALID_PARAM",
+        field: "lens",
+      });
+      expect(ftsSearchHandler).not.toHaveBeenCalled();
+    });
+
+    // @req REQ-121
+    it("omits the lens key when the query parameter is absent", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      await GET(new NextRequest("http://localhost/api/v2/search?q=Wolof"));
+
+      const params = (ftsSearchHandler as ReturnType<typeof vi.fn>).mock
+        .calls[0][0];
+      expect(params).not.toHaveProperty("lens");
+    });
+  });
+
   // ── query log (ETNI-1419 / REQ-002) ────────────────────────────────────
   // @req REQ-002
   it("logs the query and result count exactly once per executed search", async () => {
@@ -321,6 +368,107 @@ describe("GET /api/v2/search (route)", () => {
     expect(body.data.personsTotal).toBe(1);
   });
 
+  // REQ-135 AC4: a name published after human review appears in the unified
+  // search results, ranked alongside the other natures.
+  // @req REQ-135
+  it("returns names (patronymes) alongside the other natures in the response envelope", async () => {
+    (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ...mockEnvelope,
+      data: {
+        ...mockEnvelope.data,
+        patronymes: [
+          {
+            id: "PATR_KEITA",
+            nameMain: "Keïta",
+            nameSystem: "patronymic",
+            casteOrSocialFunction: null,
+            relevance: 1,
+            exactMatch: true,
+            snippet: null,
+            content: {},
+          },
+        ],
+        patronymesTotal: 1,
+      },
+    });
+
+    const req = new NextRequest("http://localhost/api/v2/search?q=Keita");
+    const res = await GET(req);
+    const body = await res.json();
+
+    expect(res.status).toBe(200);
+    expect(body.data.patronymes).toEqual([
+      expect.objectContaining({ id: "PATR_KEITA", nameMain: "Keïta" }),
+    ]);
+    expect(body.data.patronymesTotal).toBe(1);
+  });
+
+  // REQ-136: a language name — or its ISO 639-3 code — reaches the language
+  // fiche through the unified search surface, alongside the other natures.
+  // @req REQ-136
+  it("returns languages alongside the other natures in the response envelope", async () => {
+    (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ...mockEnvelope,
+      data: {
+        ...mockEnvelope.data,
+        languages: [
+          {
+            id: "swa",
+            name: "Swahili",
+            familyId: "FLG_NIGER_CONGO",
+            familyName: "Niger-Congo",
+            relevance: 1,
+            exactMatch: true,
+            snippet: null,
+            content: {},
+          },
+        ],
+        languagesTotal: 1,
+      },
+    });
+
+    const req = new NextRequest("http://localhost/api/v2/search?q=swa");
+    const res = await GET(req);
+    const body = await res.json();
+
+    expect(res.status).toBe(200);
+    expect(body.data.languages).toEqual([
+      expect.objectContaining({ id: "swa", name: "Swahili" }),
+    ]);
+    expect(body.data.languagesTotal).toBe(1);
+  });
+
+  // REQ-125: a zero-result search surfaces near-miss leads in the envelope.
+  // @req REQ-125
+  it("returns near-miss leads in the response envelope on a zero-result search", async () => {
+    (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ...mockEnvelope,
+      data: {
+        ...mockEnvelope.data,
+        peoples: [],
+        total: 0,
+        leads: [
+          {
+            kind: "people",
+            id: "PPL_BAMBARA",
+            name: "Bambara",
+            similarity: 0.4,
+          },
+        ],
+      },
+    });
+
+    const req = new NextRequest("http://localhost/api/v2/search?q=bamba");
+    const res = await GET(req);
+    const body = await res.json();
+
+    expect(res.status).toBe(200);
+    expect(body.data.total).toBe(0);
+    expect(body.data.leads).toEqual([
+      expect.objectContaining({ kind: "people", id: "PPL_BAMBARA" }),
+    ]);
+  });
+
   // ── client/route contract ───────────────────────────────────────────────
   // The site's own callers went unnoticed for two releases while every search
   // 400ed, because each side was only ever tested against its own idea of the
@@ -445,6 +593,157 @@ describe("GET /api/v2/search (route)", () => {
 
       expect(res.status).toBe(400);
       expect(body.errors[0].field).toBe("q");
+    });
+  });
+
+  // ── ETNI-1739: the unified list, as it crosses HTTP ──────────────────────
+  describe("unified result list", () => {
+    const quizHit = {
+      kind: "quiz",
+      id: "QZ_YORUBA_AUTONYM",
+      name: "Quel est l'autonyme des Yoruba ?",
+      normalizedScore: 0.71,
+      snippet: "[[Yoruba]] · Quel est l'autonyme",
+    };
+
+    // Interleaved kinds and a tied score: the order below is the ranking's,
+    // and nothing between the handler and the wire may reshape it.
+    const rankedHits = [
+      {
+        kind: "people",
+        id: "PPL_YORUBA",
+        name: "Yoruba",
+        normalizedScore: 1,
+        snippet: "[[Yoruba]]",
+      },
+      {
+        kind: "country",
+        id: "NGA",
+        name: "Nigéria",
+        normalizedScore: 0.71,
+        snippet: null,
+      },
+      {
+        kind: "patronyme",
+        id: "PAT_ADEBAYO",
+        name: "Adébayo",
+        normalizedScore: 0,
+        snippet: null,
+      },
+    ];
+
+    const unifiedEnvelope = {
+      ...mockEnvelope,
+      data: {
+        ...mockEnvelope.data,
+        quizzes: [],
+        results: rankedHits,
+        peoplesTotal: 1,
+        quizzesTotal: 0,
+        total: 1,
+      },
+    };
+
+    const quizOnlyEnvelope = {
+      ...mockEnvelope,
+      data: {
+        ...mockEnvelope.data,
+        peoples: [],
+        countries: [],
+        families: [],
+        persons: [],
+        patronymes: [],
+        quizzes: [
+          {
+            id: "QZ_YORUBA_AUTONYM",
+            prompt: "Quel est l'autonyme des Yoruba ?",
+            entityType: "people",
+            entityId: "PPL_YORUBA",
+            subjectName: "Yoruba",
+          },
+        ],
+        languages: [],
+        results: [quizHit],
+        peoplesTotal: 0,
+        countriesTotal: 0,
+        familiesTotal: 0,
+        personsTotal: 0,
+        patronymesTotal: 0,
+        quizzesTotal: 1,
+        languagesTotal: 0,
+        total: 1,
+      },
+    };
+
+    beforeEach(() => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        unifiedEnvelope
+      );
+    });
+
+    // @req REQ-002
+    it("serves the ranked hits in the handler's order", async () => {
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?q=Yoruba")
+      );
+      const body = await res.json();
+
+      expect(res.status).toBe(200);
+      expect(body.data.results).toEqual(rankedHits);
+      expect(
+        body.data.results.some((hit: { kind: string }) => hit.kind === "quiz")
+      ).toBe(false);
+    });
+
+    // @req REQ-121
+    it("serves the quiz-only result stream through the quiz lens", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        quizOnlyEnvelope
+      );
+
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?q=Yoruba&lens=quiz")
+      );
+      const body = await res.json();
+
+      expect(res.status).toBe(200);
+      expect(body.data.results).toEqual([quizHit]);
+      expect(body.data.quizzes).toEqual(quizOnlyEnvelope.data.quizzes);
+      expect(body.data).toMatchObject({ quizzesTotal: 1, total: 1 });
+    });
+
+    // @req REQ-129
+    it("serves normalized scores on [0,1]", async () => {
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?q=Yoruba")
+      );
+      const body = await res.json();
+
+      for (const hit of body.data.results) {
+        expect(hit.normalizedScore).toBeGreaterThanOrEqual(0);
+        expect(hit.normalizedScore).toBeLessThanOrEqual(1);
+      }
+    });
+
+    // @req REQ-126
+    it("still serves the per-kind arrays and totals beside the list", async () => {
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?q=Yoruba")
+      );
+      const body = await res.json();
+
+      expect(body.data.peoples).toEqual(unifiedEnvelope.data.peoples);
+      expect(body.data.countries).toEqual([]);
+      expect(body.data.quizzes).toEqual([]);
+      expect(body.data).toMatchObject({
+        peoplesTotal: 1,
+        quizzesTotal: 0,
+        total: 1,
+      });
+      expect(searchQueryLog.write).toHaveBeenCalledWith({
+        query: "Yoruba",
+        resultCount: 1,
+      });
     });
   });
 });

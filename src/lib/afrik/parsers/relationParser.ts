@@ -34,10 +34,8 @@ const relationPeriodSchema = z
   );
 
 const relationTypeSchema = z.enum(["migratory", "commercial", "religious"], {
-  errorMap: () => ({
-    message:
-      "relationType must be one of migratory, commercial, religious (linguistic is derived-only and never stored — FR73)",
-  }),
+  error:
+    "relationType must be one of migratory, commercial, religious (linguistic is derived-only and never stored — FR73)",
 });
 
 // @req REQ-032

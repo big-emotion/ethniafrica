@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité à l'attestation officielle et au porteur historique Didier Ratsiraka ; les récits étymologiques non sourcés sont exclus."
+  },
+  "id": "PAT_RATSIRAKA",
+  "nameMain": "Ratsiraka",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Ratsiraka",
+      "attestations": [
+        { "countryId": "MDG", "sourceRefs": ["diplomatie-mg-ratsiraka"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BETSIMISARAKA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["diplomatie-mg-ratsiraka"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Didier Ignace Ratsiraka",
+      "sourceRefs": ["diplomatie-mg-ratsiraka"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "diplomatie-mg-ratsiraka",
+      "title": "L'Amiral Didier Ignace Ratsiraka, 4 novembre 1936 - 28 mars 2021",
+      "url": "https://www.diplomatie.gov.mg/index.php/actualites1/124-l-amiral-didier-ignace-ratsiraka-4-novembre-1936-28-mars-2021",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Notice nécrologique du ministère malgache des Affaires étrangères : graphie, dates, fonctions ministérielle et présidentielle de Didier Ignace Ratsiraka."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Ratsiraka etymology », « Ratsiraka onomastics », « origine nom Ratsiraka » et les résultats académiques n'ont livré aucune source dédiée. Une interprétation journalistique animale et des sites génériques non référencés ont été rejetés."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La notice officielle atteste Didier Ratsiraka mais pas une filiation nominale. Les recherches familiales et généalogiques n'ont pas suffi à établir le mode de transmission ; « other » maintient l'indétermination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source consultée n'établit si Ratsiraka désigne historiquement un individu, un lignage ou un clan."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches Ratsiraka avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches exactes associant Ratsiraka à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; les fonctions d'amiral et de président de Didier Ratsiraka sont individuelles."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les sources officielles, catalogues et recherches exactes consultés n'établissent pas de lignée Ratsiraka d'origine distincte."
+    }
+  ]
+}

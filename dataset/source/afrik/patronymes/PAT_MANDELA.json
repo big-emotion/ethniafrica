@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_MANDELA",
+  "nameMain": "Mandela",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Mandela",
+      "attestations": [
+        {
+          "countryId": "ZAF",
+          "sourceRefs": ["south-africa-government-mandela-biography"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_XHOSA",
+      "status": "attested",
+      "sourceRefs": ["south-africa-government-mandela-biography"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZAF",
+      "status": "attested",
+      "sourceRefs": ["south-africa-government-mandela-biography"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Nelson Rolihlahla Mandela, président sud-africain (1918–2013)",
+      "sourceRefs": ["south-africa-government-mandela-biography"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "south-africa-government-mandela-biography",
+      "title": "Life and Times of Mandela",
+      "url": "https://www.gov.za/mandela100/biography",
+      "tier": "official",
+      "source_kind": "archive",
+      "notes": "Biographie du gouvernement sud-africain consultée directement. Elle atteste Nelson Mandela, ses dates, son père Gadla Henry Mandela, la maison royale thembu et son nom xhosa ; elle ne fournit pas l'étymologie du patronyme Mandela."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web et bibliographique combinant « Mandela », « Xhosa », « Thembu », « surname origin », « clan », « genealogy », « transmission » et « obituary », ainsi que la biographie officielle du gouvernement sud-africain n'ont livré aucune tradition attribuée, chronique ou étude linguistique établissant l'origine de Mandela. Les rapprochements portant sur un homonyme d'une autre langue ou sur la seule géographie ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Mandela », « Xhosa », « Thembu », « surname origin », « clan », « genealogy », « transmission » et « obituary », ainsi que la biographie officielle du gouvernement sud-africain n'ont pas établi que la catégorie provisoire « clan_name » décrive Mandela lui-même ; elle reste une hypothèse de classement, sans être transformée en affirmation."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Mandela », « Xhosa », « Thembu », « surname origin », « clan », « genealogy », « transmission » et « obituary », ainsi que la biographie officielle du gouvernement sud-africain n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Mandela à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Mandela », « Xhosa », « Thembu », « surname origin », « clan », « genealogy », « transmission » et « obituary », ainsi que la biographie officielle du gouvernement sud-africain n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Mandela."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Mandela », « Xhosa », « Thembu », « surname origin », « clan », « genealogy », « transmission » et « obituary », ainsi que la biographie officielle du gouvernement sud-africain n'ont pas établi de lignée homonyme d'origine distincte documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Mandela », « Xhosa », « Thembu », « surname origin », « clan », « genealogy », « transmission » et « obituary », ainsi que la biographie officielle du gouvernement sud-africain n'ont établi aucune règle propre à Mandela permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

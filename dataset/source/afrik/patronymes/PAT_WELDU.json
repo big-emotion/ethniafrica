@@ -1,0 +1,99 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_WELDU",
+  "nameMain": "Weldu",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Weldu",
+      "attestations": [
+        {
+          "countryId": "ERI",
+          "sourceRefs": ["afrik-candidate-queue", "iaaf-weldu-2021"]
+        }
+      ]
+    },
+    {
+      "spelling": "Woldu",
+      "attestations": [
+        {
+          "countryId": "ERI",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_TIGRAY",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ERI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "iaaf-weldu-2021"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "iaaf-weldu-2021",
+      "title": "Tokyo 2020 athletics entry list and biographies — WELDU Nazret",
+      "url": "https://media.aws.iaaf.org/competitioninfo/8b2c6d44-27b0-4b77-a7de-79211a26c079.pdf",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Document de compétition de World Athletics consulté le 2 septembre 2026, p. 7 du PDF : l'entrée érythréenne WELDU Nazret donne le nom complet Nazret Weldu Ghebrehiwet. Le document atteste la graphie et sa position patronymique, mais ne fournit aucune étymologie. La personne étant vivante, elle n'est pas ajoutée aux porteurs du dossier."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches « Weldu anthroponymie », « Weldu onomastique », « Weldu etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche. Les pages exactes consultées n'apportent qu'une attestation de forme ou de répartition ; aucune étymologie n'est donc ajoutée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches « Weldu anthroponymie », « Weldu onomastique », « Weldu etymology » et les résultats des catalogues Persée, OpenEdition, Oxford Academic et des dépôts universitaires éthiopiens n'ont livré aucun travail savant consacré à cette fiche. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué ; ce rattachement reste au niveau non vérifié."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Weldu alliance à plaisanterie », « Weldu joking relationship » et « Weldu parenté à plaisanterie » n'ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Weldu caste », « Weldu métier héréditaire » et « Weldu social function » n'ont livré aucune fonction sociale ou professionnelle héréditaire attribuable à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques sur « Weldu » dans les résultats de catalogues et répertoires consultés n'ont pas permis d'identifier un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes « Weldu homonym surname », « Weldu homonyme patronyme » et les variantes graphiques de la fiche n'ont pas établi deux origines distinctes et documentées pour la même forme."
+    }
+  ]
+}

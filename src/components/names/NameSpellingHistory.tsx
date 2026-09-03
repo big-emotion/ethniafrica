@@ -39,5 +39,3 @@ export function NameSpellingHistory({ spellings }: NameSpellingHistoryProps) {
     </ol>
   );
 }
-
-export default NameSpellingHistory;

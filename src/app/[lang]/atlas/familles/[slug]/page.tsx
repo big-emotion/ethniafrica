@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { notFound, redirect } from "next/navigation";
 
-import { loadLanguageFamilyFiche } from "@/lib/fiche/ficheExistence";
+import {
+  isFicheKnownAbsent,
+  loadLanguageFamilyFiche,
+} from "@/lib/fiche/ficheExistence";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import { ficheCanonical } from "@/lib/seo/ficheCanonical";
 import { getFamilyRoute } from "@/lib/routing";
@@ -10,10 +13,10 @@ import type { Language } from "@/types/shared";
 import {
   getLatestEntityRevisionVersion,
   getRevisionSnapshot,
-  type FrozenDoctrineReference,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
+import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
 import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { FamilyFicheTitle } from "@/components/family/FamilyFicheTitle";
@@ -32,12 +35,6 @@ import {
   declaredAssociatedPeopleIds,
   resolveFootprintProvenance,
 } from "@/lib/familyFootprintSource";
-import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
-import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
-import {
-  DoctrineLinkCard,
-  isDoctrineSlug,
-} from "@/components/source-transparency/DoctrineLinkCard";
 
 // @req REQ-019
 export const revalidate = 3600;
@@ -76,83 +73,11 @@ export async function generateMetadata({
   const parsedForExistence = parseVersionedSlug(decodeURIComponent(slug));
   if (
     parsedForExistence?.mode === "live" &&
-    !(await loadLanguageFamilyFiche(parsedForExistence.slug))
+    (await isFicheKnownAbsent(loadLanguageFamilyFiche, parsedForExistence.slug))
   ) {
-    {
-      notFound();
-    }
+    notFound();
   }
   return ficheCanonical("family", lang as Language, slug);
-}
-
-// ---------------------------------------------------------------------------
-// Snapshot view (pinned URLs — data is immutable, read from revisions only)
-// ---------------------------------------------------------------------------
-
-interface FamilySnapshotViewProps {
-  entityId: string;
-  version: number;
-  publishedAt: string | null;
-  confidence: number | null;
-  snapshotData: Record<string, unknown>;
-  doctrine: FrozenDoctrineReference | null;
-  lang: string;
-}
-
-function FamilySnapshotFicheView({
-  entityId,
-  version,
-  publishedAt,
-  confidence,
-  snapshotData,
-  doctrine,
-  lang,
-}: FamilySnapshotViewProps) {
-  const nameFr =
-    typeof snapshotData.name_fr === "string"
-      ? snapshotData.name_fr
-      : typeof snapshotData.nameFr === "string"
-        ? snapshotData.nameFr
-        : entityId;
-
-  return (
-    <div data-testid="family-snapshot-view" className="space-y-4">
-      <div className="space-y-2">
-        <h1 className="text-afh-h2 font-semibold">{nameFr}</h1>
-        <p className="text-afh-small text-muted-foreground font-mono">
-          {entityId}
-        </p>
-      </div>
-
-      <PinnedVersionBanner
-        pinnedAt={publishedAt}
-        versionTag={String(version)}
-        liveUrl={getFamilyRoute(lang as Language, entityId)}
-      />
-
-      {confidence !== null && (
-        <div className="px-1">
-          <ConfidenceChip
-            confidenceScore={confidence}
-            sourceCount={null}
-            lastHumanAuditAt={publishedAt}
-            variant="hero"
-          />
-        </div>
-      )}
-
-      <div className="prose prose-neutral max-w-none text-afh-small text-muted-foreground">
-        <p>
-          Ce contenu est une capture archivée&nbsp;(v{version}) et ne sera
-          jamais modifié.
-        </p>
-      </div>
-
-      {doctrine && isDoctrineSlug(doctrine.slug) && (
-        <DoctrineLinkCard slug={doctrine.slug} version={doctrine.version} />
-      )}
-    </div>
-  );
 }
 
 // ---------------------------------------------------------------------------
@@ -198,7 +123,8 @@ export default async function FamillesSlugPage({
     return (
       <PageLayout language="fr" sectionName="Familles linguistiques">
         <div className="container mx-auto max-w-4xl px-4 py-8">
-          <FamilySnapshotFicheView
+          <FicheSnapshotView
+            kind="languageFamily"
             entityId={parsed.slug}
             version={parsed.version}
             publishedAt={snapshot.published_at}

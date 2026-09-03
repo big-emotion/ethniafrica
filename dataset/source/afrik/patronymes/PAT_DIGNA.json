@@ -1,0 +1,112 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Les récits d'origine rapportés par une source coloniale restent qualifiés et ne valent pas démonstration linguistique."
+  },
+  "id": "PAT_DIGNA",
+  "nameMain": "Digna",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Digna",
+      "attestations": [
+        {
+          "countryId": "SDN",
+          "sourceRefs": ["afrik-candidate-queue", "digna-jackson-1926"]
+        }
+      ]
+    },
+    {
+      "spelling": "Dignai",
+      "attestations": [
+        { "countryId": "SDN", "sourceRefs": ["digna-jackson-1926"] }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Jackson décrit les Dignai comme une famille marchande de Suakin et reproduit une filiation masculine reliant Ali Digna, son fils Mohammed et les descendants de celui-ci, dont Osman Digna.",
+        "claimStatus": "established",
+        "sourceRefs": ["digna-jackson-1926"]
+      },
+      {
+        "claim": "Le même ouvrage rapporte une tradition locale faisant venir Ali Digna de Diyarbakır et attribuant aux Dignai une ascendance kurde mêlée aux Hadendoa et aux Arteiga ; cette généalogie est un récit revendiqué, non une filiation historiquement démontrée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["digna-jackson-1926"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Jackson consigne deux explications concurrentes de Digna — un rapprochement arabe avec la barbe et un rapprochement beja avec un qualificatif péjoratif — puis les rejette toutes deux ; l'étymologie reste donc indéterminée.",
+        "claimStatus": "contested",
+        "sourceRefs": ["digna-jackson-1926"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BEJA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "digna-jackson-1926"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "SDN",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "digna-jackson-1926"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Osman Digna",
+      "sourceRefs": ["digna-jackson-1926"]
+    },
+    {
+      "status": "deceased",
+      "displayName": "Ali Digna Fagi",
+      "sourceRefs": ["digna-jackson-1926"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "digna-jackson-1926",
+      "title": "Osman Digna",
+      "url": "https://archive.org/details/in.ernet.dli.2015.506204",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "H. C. Jackson, Methuen, 1926, p. 11-13 et 25-26 de l'édition numérisée. L'ouvrage nomme la famille Dignai de Suakin, donne une généalogie masculine, rapporte une tradition d'origine et discute deux étymologies qu'il écarte. Il s'agit d'un récit colonial du Sudan Political Service : ses catégories, jugements et transcriptions doivent être lus de manière critique."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "La monographie Osman Digna (1926) a été recherchée pour les mariages, pactes et relations de parenté nommées autour des Dignai ; elle ne documente aucune alliance de parentés à plaisanterie avec un autre PAT_* du corpus."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les passages consacrés à la famille marchande de Suakin et à ses fonctions politiques ont été vérifiés dans Osman Digna (1926), sans qu'une caste ou une fonction sociale héréditaire attachée au nom Digna soit établie."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les variantes Digna et Dignai ont été recherchées dans le texte intégral de Jackson et dans les catalogues bibliographiques associés ; aucun homonyme distinct, documenté et pertinent pour le corpus n'a été identifié."
+    }
+  ]
+}

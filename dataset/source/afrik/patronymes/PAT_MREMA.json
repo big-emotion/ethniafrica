@@ -1,0 +1,92 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_MREMA",
+  "nameMain": "Mrema",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Mrema",
+      "attestations": [
+        {
+          "countryId": "TZA",
+          "sourceRefs": ["forebears-mrema"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "L'étude onomastique de Rombo classe Mrema et Mremi parmi les noms claniques chagga et les rattache au verbe rema ou rima, associé à la culture et au travail des champs. Les auteurs qualifient eux-mêmes la déduction de plausible ; elle ne doit donc pas être généralisée sans réserve à chaque lignée Mrema.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["lusekelo-mtenga-2020-mrema"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_CHAGA",
+      "status": "attested",
+      "sourceRefs": ["lusekelo-mtenga-2020-mrema"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "TZA",
+      "status": "attested",
+      "sourceRefs": ["forebears-mrema"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-mrema",
+      "title": "Mrema Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/mrema",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement pour attester l'emploi moderne de Mrema comme nom de famille et sa présence dans les pays indiqués. La géographie ne prouve ni une appartenance ethnique exclusive ni une étymologie ; les définitions contributives éventuelles ne sont pas élevées au rang de faits."
+    },
+    {
+      "sourceKey": "lusekelo-mtenga-2020-mrema",
+      "title": "Historicity of personal names in Tanzania: the case of the names in the Rombo-Chagga community in Kilimanjaro",
+      "url": "https://www.researchgate.net/publication/342876767_Historicity_of_personal_names_in_Tanzania_the_case_of_the_names_in_the_Rombo-Chagga_community_in_Kilimanjaro",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article d'Amani Lusekelo et Vedasto Mtenga dans l'International Journal of Modern Anthropology, texte consulté directement. Il recense Mrema parmi les noms claniques rombo-chagga et rattache Mrema/Mremi au verbe rema/rima et au travail de culture des champs."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Mrema », « CHAGA », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Mrema à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Mrema », « CHAGA », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Mrema."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Mrema », « CHAGA », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement contextuel retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Mrema », « CHAGA », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont pas établi de lignée homonyme d'origine distincte documentable ; la diffusion dans plusieurs pays et les ressemblances graphiques ne suffisent pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Mrema », « CHAGA », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont établi aucune règle propre à l'ensemble des emplois de Mrema permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_IDRIS",
+  "nameMain": "Idris",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Idris",
+      "attestations": [
+        {
+          "countryId": "SDN",
+          "sourceRefs": ["afrik-candidate-queue"]
+        },
+        {
+          "countryId": "ERI",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Une entrée lexicale propose prudemment pour Idris un rapprochement avec la racine arabe درس, « étudier, apprendre ». L'existence d'un article savant consacré à l'origine coranique du nom confirme que l'étymologie est discutée ; aucune conclusion lignagère beja ou tigré n'est retenue.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["btn-idris", "erder-idris-1990"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BEJA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "peopleId": "PPL_TIGRE",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "SDN",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "ERI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "btn-idris",
+      "title": "Meaning, origin and history of the name Idris — Behind the Name",
+      "url": "https://www.behindthename.com/name/idris-1",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle propose avec réserve une relation avec la racine arabe درس, « étudier, apprendre », et cite Hans Wehr et Salahuddin Ahmed. Elle ne rattache pas la graphie à une lignée beja ou tigré."
+    },
+    {
+      "sourceKey": "erder-idris-1990",
+      "title": "The Origin of the Name Idrīs in the Qurʾān",
+      "url": "https://cris.tau.ac.il/en/publications/the-origin-of-the-name-idr%C4%ABs-in-the-qur%CA%BE%C4%81n-a-study-of-the-influen/",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Notice bibliographique institutionnelle consultée le 2 septembre 2026 : Yoram Erder, Journal of Near Eastern Studies 49(4), 1990, p. 339-350. La notice confirme l'existence d'un débat savant sur l'origine coranique du nom, mais ne livre pas le texte intégral ni une conclusion transposable aux lignages africains."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « Idris anthroponymie », « Idris onomastique », « Idris surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune tradition orale attribuée à un griot ou informateur nommé, accompagnée d'une transcription vérifiable, n'a été trouvée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches exactes « Idris anthroponymie », « Idris onomastique », « Idris surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune chronique historique consultée ne rattache la fiche à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Idris anthroponymie », « Idris onomastique », « Idris surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. La ou les sources propres au nom ne démontrent pas une association exclusive avec les peuples indiqués ; ces rattachements restent non vérifiés."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Idris alliance à plaisanterie », « Idris joking relationship » et « Idris parenté à plaisanterie » n'ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Idris caste », « Idris métier héréditaire » et « Idris social function » n'ont livré aucune fonction sociale héréditaire propre aux porteurs de cette graphie. Une étymologie professionnelle éventuelle ne prouve pas une caste."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques exactes sur « Idris » dans les catalogues et répertoires consultés n'ont pas permis d'isoler un porteur décédé dont ce segment soit explicitement documenté dans la position anthroponymique pertinente. Les personnes vivantes repérées ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes « Idris homonym surname », « Idris homonyme patronyme » et les variantes graphiques de la fiche n'ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "Les sources propres à « Idris » n'ont pas confirmé les pays où il est porté ; les recherches par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
+    }
+  ]
+}

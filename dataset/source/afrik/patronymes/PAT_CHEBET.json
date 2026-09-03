@@ -1,0 +1,105 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
+  },
+  "id": "PAT_CHEBET",
+  "nameMain": "Chebet",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Chebet",
+      "attestations": [
+        {
+          "countryId": "KEN",
+          "sourceRefs": ["bossi-kipsigis-2023"]
+        }
+      ]
+    },
+    {
+      "spelling": "Chebeet",
+      "attestations": [
+        {
+          "countryId": "KEN",
+          "sourceRefs": ["bossi-kipsigis-2023"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Bossi atteste Chebeet comme nom personnel kipsigis et le rapproche orthographiquement de Chebet. Le modèle tugen décrit Chee-/Jee(p)- comme marque féminine et beet comme « jour » ; appliquer cette segmentation à Chebet reste une reconstruction comparative, non une étymologie directement établie pour la forme kipsigis.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["bossi-kipsigis-2023", "jerono-tugen-names-2019"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_KALENJIN",
+      "status": "attested",
+      "sourceRefs": ["bossi-kipsigis-2023"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "KEN",
+      "status": "attested",
+      "sourceRefs": ["bossi-kipsigis-2023"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "bossi-kipsigis-2023",
+      "title": "Epistemic modality across syntactic categories in Kipsigis",
+      "url": "https://escholarship.org/uc/item/7d70r63x",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Thèse de Madeline Claire Bossi, University of California, Berkeley, 2023. Le texte atteste Chebeet comme nom personnel kipsigis et en donne la correspondance orthographique Chebet ; il n’en fournit pas l’étymologie."
+    },
+    {
+      "sourceKey": "jerono-tugen-names-2019",
+      "title": "Names and Naming System of Tugen",
+      "url": "https://www.researchgate.net/publication/333387134_Names_and_Naming_System_of_Tugen",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Prisca Jerono, International Journal of Linguistics and Communication 7(1), 2019. L’article décrit les noms tugen comme des noms individuels de naissance, analyse Chee-/Jee(p)- comme marque féminine et donne beet « jour » dans la forme Ki-beet. Il ne propose pas directement une étymologie de Chebet."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Chebet tradition orale », « Chebet griot » et « Chebet oral history », ainsi que la thèse kipsigis de Bossi (2023) et l’étude du système tugen de Jerono (2019), n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Chebet chronicle », « Chebet history » et « Chebet genealogy », complétées par la thèse kipsigis de Bossi (2023) et l’étude du système tugen de Jerono (2019), n’ont livré aucune chronique primaire qui explique l’origine du nom."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Chebet joking kinship », « Chebet name alliance » et « Chebet clan pact », ainsi que la thèse kipsigis de Bossi (2023) et l’étude du système tugen de Jerono (2019), n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Chebet caste », « Chebet occupational group » ainsi que les passages sociaux consultés dans la thèse kipsigis de Bossi (2023) et l’étude du système tugen de Jerono (2019), n’ont établi aucune fonction héréditaire propre à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques et nécrologiques sur « Chebet » dans les catalogues universitaires et institutionnels, complétées par la thèse kipsigis de Bossi (2023) et l’étude du système tugen de Jerono (2019), n’ont pas permis de vérifier un porteur décédé avec une identité suffisamment précise ; les personnes vivantes repérées ne sont pas ajoutées sans auto-identification."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches sur la graphie exacte « Chebet » dans les index onomastiques et la thèse kipsigis de Bossi (2023) et l’étude du système tugen de Jerono (2019) n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
+    }
+  ]
+}

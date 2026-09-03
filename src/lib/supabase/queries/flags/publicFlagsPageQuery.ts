@@ -98,7 +98,7 @@ interface PublicFlagsCursor {
 const PUBLIC_FLAGS_CURSOR_SCHEMA = z
   .object({
     createdAt: z.string().datetime({ offset: true }),
-    id: z.string().uuid(),
+    id: z.uuid(),
   })
   .required();
 

@@ -147,8 +147,8 @@
     "sources": [
       {
         "title": "CIA World Factbook – Senegal",
-        "url": null,
-        "tier": "needs_review",
+        "url": "https://www.cia.gov/the-world-factbook/countries/senegal/",
+        "tier": "official",
         "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
       },
       {
@@ -170,7 +170,7 @@
         "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
       },
       {
-        "title": "UNFPA – World Population Dashboard",
+        "title": "UNFPA – World Population Dashboard — Sénégal",
         "url": "https://www.unfpa.org/data/world-population/SN",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."

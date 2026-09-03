@@ -1,0 +1,155 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Youssouf est attesté officiellement à Djibouti et décrit comme forme francophone de Yusuf par une notice communautaire ; les usages tchadien et comorien restent à sourcer."
+  },
+  "id": "PAT_YOUSSOUF",
+  "nameMain": "Youssouf",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Youssouf",
+      "attestations": [
+        { "countryId": "TCD", "sourceRefs": ["afrik-candidate-queue"] },
+        {
+          "countryId": "DJI",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "youssouf-presidence-djibouti-2017"
+          ]
+        },
+        { "countryId": "COM", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    },
+    {
+      "spelling": "Yousouf",
+      "attestations": [
+        { "countryId": "TCD", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    },
+    {
+      "spelling": "Yusuf",
+      "attestations": [
+        { "countryId": "DJI", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "La Présidence de Djibouti atteste Youssouf comme dernier élément de la chaîne de noms du député Omar Ahmed Youssouf ; la notice ne qualifie pas la relation généalogique exprimée.",
+        "claimStatus": "established",
+        "sourceRefs": ["youssouf-presidence-djibouti-2017"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Une notice communautaire présente Youssouf comme une forme de Yusuf diffusée surtout dans des régions d'Afrique occidentale sous influence française ; elle ne démontre pas ses emplois somali ou comorien.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["youssouf-behindthename"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SOMALI",
+      "status": "attested",
+      "sourceRefs": [
+        "afrik-candidate-queue",
+        "youssouf-presidence-djibouti-2017"
+      ]
+    },
+    {
+      "peopleId": "PPL_COMORIEN",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "TCD",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "DJI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "COM",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Omar Ahmed Youssouf",
+      "sourceRefs": ["youssouf-presidence-djibouti-2017"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
+    },
+    {
+      "sourceKey": "youssouf-behindthename",
+      "title": "Meaning, origin and history of the name Youssouf",
+      "url": "https://www.behindthename.com/name/youssouf",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Behind the Name, notice consultée intégralement le 2 septembre 2026. Elle présente Youssouf comme forme de Yusuf dans des régions ouest-africaines francophones et distingue Yuusuf comme forme somalie. La page ne fournit pas de référence bibliographique dédiée."
+    },
+    {
+      "sourceKey": "youssouf-presidence-djibouti-2017",
+      "title": "Le Président de la République rend hommage à la mémoire de feu Omar Ahmed Youssouf dit Vincent",
+      "url": "https://www.presidence.dj/article/le-president-de-la-republique-rend-hommage-a-la-memoire-de-feu-omar-ahmed-youssouf-dit-vincent-324",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Présidence de la République de Djibouti, 22 janvier 2017. La page complète a été vérifiée : elle donne à plusieurs reprises Omar Ahmed Youssouf, le décrit comme ancien député et figure de la scène politique djiboutienne, et confirme son décès."
+    },
+    {
+      "sourceKey": "forebears-youssouf",
+      "title": "Youssouf Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/youssouf",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement : elle atteste Youssouf au Tchad, à Djibouti et aux Comores, avec sa densité la plus forte aux Comores. Elle n'établit ni une origine somalie ni une origine comorienne unique."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "peoples",
+      "reason": "La notice communautaire distingue Youssouf de la forme somalie Yuusuf et ne documente pas le comorien ; la notice officielle djiboutienne n'indique aucune auto-identification ethnique. Les deux associations de peuples restent donc non confirmées."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "L'attestation djiboutienne est établie par la notice officielle ; les catalogues tchadiens et comoriens ont été recherchés sans fournir de source primaire ou savante vérifiable pour Youssouf/Yousouf."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Youssouf/Yusuf joking relationship/alliance » dans les contextes djiboutien, tchadien et comorien n'ont livré aucune parenté à plaisanterie entre deux PAT_* existants."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La fonction politique du porteur est individuelle ; aucune caste ni fonction sociale héréditaire attachée à Youssouf n'est mentionnée dans les sources consultées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Youssouf, Yousouf, Yusuf et Yuusuf ont été recherchés comme anthroponymes et toponymes ; aucune entité homonyme distincte conforme au modèle du corpus n'a été isolée."
+    }
+  ]
+}

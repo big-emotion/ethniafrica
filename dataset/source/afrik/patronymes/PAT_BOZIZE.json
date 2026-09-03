@@ -1,0 +1,99 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_BOZIZE",
+  "nameMain": "Bozizé",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Bozizé",
+      "attestations": [
+        {
+          "countryId": "CAF",
+          "sourceRefs": ["le-temps-bozize-2003"]
+        }
+      ]
+    },
+    {
+      "spelling": "Bozize",
+      "attestations": [
+        {
+          "countryId": "CAF",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_GBAYA",
+      "status": "attested",
+      "sourceRefs": ["le-temps-bozize-2003"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "CAF",
+      "status": "attested",
+      "sourceRefs": ["le-temps-bozize-2003"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
+    },
+    {
+      "sourceKey": "le-temps-bozize-2003",
+      "title": "François Bozizé, le roublard de Bangui",
+      "url": "https://www.letemps.ch/monde/francois-bozize-roublard-bangui",
+      "tier": "referenced",
+      "source_kind": "unknown",
+      "notes": "Portrait de Christophe Châtelot publié par Le Temps le 17 mars 2003 et consulté intégralement. Il identifie François Bozizé comme Gbaya et comme président de la République centrafricaine. Il atteste ainsi l'association documentée d'un porteur et la graphie accentuée, sans traiter l'étymologie ni la transmission du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Bozizé », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « François Bozizé, le roublard de Bangui » n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine de Bozizé. Les attestations géographiques ou individuelles trouvées ne sont pas transformées en étymologie."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Bozizé », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « François Bozizé, le roublard de Bangui » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Bozizé à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Bozizé », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « François Bozizé, le roublard de Bangui » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Bozizé."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Bozizé », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « François Bozizé, le roublard de Bangui », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Bozizé », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « François Bozizé, le roublard de Bangui », n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Bozizé », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « François Bozizé, le roublard de Bangui » n'ont établi aucune règle propre à Bozizé permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

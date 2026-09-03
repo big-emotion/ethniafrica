@@ -91,5 +91,3 @@ export function CompareShareBar({ canonicalUrl, title }: CompareShareBarProps) {
     </div>
   );
 }
-
-export default CompareShareBar;

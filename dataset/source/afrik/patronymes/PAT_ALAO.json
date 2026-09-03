@@ -1,0 +1,106 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Alao ; les lacunes consignent les recherches restées sans résultat."
+  },
+  "id": "PAT_ALAO",
+  "nameMain": "Alao",
+  "nameSystem": "praise_name",
+  "spellings": [
+    {
+      "spelling": "Alao",
+      "attestations": [
+        {
+          "countryId": "BEN",
+          "sourceRefs": ["yorubanames-alao", "afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "YorubaNames classe Àlàó comme cognomen/oríkì et propose l'analyse à-là-wó, « personne destinée à diviser et vaincre ses ennemis ».",
+        "claimStatus": "claimed",
+        "sourceRefs": ["yorubanames-alao"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_YORUBA",
+      "status": "attested",
+      "sourceRefs": ["yorubanames-alao"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "BEN",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Arisekola Alao",
+      "sourceRefs": ["yorubanames-alao"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "yorubanames-alao",
+      "title": "Àlàó — YorubaNames",
+      "url": "https://www.yorubaname.com/entries/ALAO?lang=yo",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page de la base collaborative YorubaNames consultée directement pour Alao. Elle fournit la forme tonale, une glose et une segmentation morphologique ; son contenu communautaire est conservé au niveau « unverified »."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Alao Yoruba oral tradition griot transcription » et « Alao oriki oral history » ainsi que la page YorubaNames consultée n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Alao Yoruba chronicle manuscript colonial register » et « Alao archive Nigeria Benin » n'ont livré aucune chronique ni pièce d'archives établissant une histoire propre à cette forme."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Alao Yoruba joking relationship », « Alao joking kinship » et « Alao sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la page YorubaNames consultée et les recherches « Alao Yoruba hereditary occupation caste title » n'ont associé ce nom à aucune fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Alao homonym etymology » et « Alao surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la page YorubaNames consultée décrit l'origine ou la fonction du nom, mais ne documente pas son mode de transmission contemporain ; les recherches « Alao hereditary family name Yoruba » n'ont pas tranché."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "la page YorubaNames consultée ne permet pas de déterminer si l'emploi documenté désigne un individu, une charge, une maison ou un lignage ; les recherches ciblées sur Alao n'ont pas livré de source décisive."
+    }
+  ]
+}

@@ -1,3 +1,12 @@
+/**
+ * The tiles read the class list in `corpusClasses`, so the band cannot count
+ * one set of classes while the charter test names another.
+ *
+ * `countries`, `families`, `nameForms` and `migrations` are counted alongside
+ * these and are not in that list, so they are not shown — see `corpusClasses`
+ * for why three and what the three-of-six omission costs.
+ */
+import { CORPUS_CLASSES } from "@/lib/home/corpusClasses";
 import type { CorpusCounts } from "@/lib/home/corpusCounts";
 
 export interface HomeCorpusCountsProps {
@@ -5,30 +14,34 @@ export interface HomeCorpusCountsProps {
   counts: CorpusCounts | null;
 }
 
-type HomeCountKey = "peoples" | "countries" | "families";
-
-const HOME_COUNTS: ReadonlyArray<{ key: HomeCountKey; label: string }> = [
-  { key: "peoples", label: "Peuples" },
-  { key: "countries", label: "Pays" },
-  { key: "families", label: "Familles linguistiques" },
-];
-
 const formatCount = new Intl.NumberFormat("fr-FR", {
   maximumFractionDigits: 0,
 });
 
 /**
- * The three corpus totals shown beside the home search.
+ * What the atlas documents, in three figures, under the home search.
  *
  * This component receives data from the server page and never opens a second
  * data path in the browser. A failed read is explicitly unavailable: zero is
  * a valid total, so using it as a fallback would make a false corpus claim.
+ * Each figure fails on its own, so two numbers and one absence is a state the
+ * band has to render.
+ *
+ * The tiles are not links, and uniformly so. `routing.ts` declares
+ * `atlas/langues`, but no index page answers it, so a clickable Langues tile
+ * would send the reader to a 404 — and a band where one tile of three is inert
+ * is worse than a band where none is, because only the first teaches the
+ * reader the wrong rule.
  */
 // @req REQ-113
 export function HomeCorpusCounts({ counts }: HomeCorpusCountsProps) {
   return (
-    <dl className="home-corpus-counts" aria-label="Le corpus en chiffres">
-      {HOME_COUNTS.map(({ key, label }) => {
+    <dl
+      className="home-corpus-counts"
+      data-testid="home-corpus-counts"
+      aria-label="Ce que l'atlas documente"
+    >
+      {CORPUS_CLASSES.map(({ key, tileLabel }) => {
         const value = counts?.[key];
         const available = typeof value === "number" && Number.isFinite(value);
 
@@ -39,7 +52,7 @@ export function HomeCorpusCounts({ counts }: HomeCorpusCountsProps) {
             data-state={available ? "available" : "unavailable"}
             data-testid={`home-count-${key}`}
           >
-            <dt>{label}</dt>
+            <dt>{tileLabel}</dt>
             <dd className={available ? undefined : "is-unavailable"}>
               {available ? formatCount.format(value) : "Indisponible"}
             </dd>
@@ -48,6 +61,11 @@ export function HomeCorpusCounts({ counts }: HomeCorpusCountsProps) {
       })}
 
       <style>{`
+        /* Three columns, at every width. Five tiles needed a six-column grid
+           to fold into two full rows on a phone; three fit one row at 430px
+           with 130px each, which is room for « 3 134 » at --afh-text-h2 and
+           for a two-line label under it. One row is also what keeps the band
+           from pushing the globe below the fold (brand charter §8.3). */
         .home-corpus-counts {
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -62,18 +80,56 @@ export function HomeCorpusCounts({ counts }: HomeCorpusCountsProps) {
           align-items: center;
           justify-content: center;
           gap: 4px;
-          min-height: 82px;
-          padding: 10px 6px;
+          min-height: 92px;
+          padding: 12px 6px;
           border: 1px solid var(--afh-border);
           border-radius: var(--afh-radius-md);
           background: var(--afh-bg-warm);
           text-align: center;
         }
+        /* Two label lines, reserved at every width, so the three figures
+           share a line. A tile is 116px of text at 430px: « peuples
+           documentés » and « langues documentées » wrap there and a
+           15-character label does not, and a centred column then dropped the
+           odd figure below the two beside it — measured 538 · 538 · 547. A row
+           of three totals that do not sit on one line reads as a rendering
+           fault rather than as the comparison the band exists to offer.
+
+           It is the band's own defect and not the newest label's: « pays
+           documentés », the label this tile carried before, fits that same one
+           line at that same width.
+
+           Reserved unconditionally rather than under a breakpoint, because the
+           width at which a label stops wrapping is a property of the label and
+           not of the viewport — it falls between 430 and 720 for these three,
+           and any rewording moves it. A media query tuned to today's strings is
+           a gate that silently stops holding.
+
+           The cost is one empty line inside each tile wherever the labels fit
+           on one, and the tile's min-height very nearly absorbs it: measured
+           92px unchanged at 430, 92 → 93 at 720, 104 → 106 at 1440. */
         .home-corpus-count dt {
+          min-height: 2lh;
           font-size: var(--afh-text-caption);
           line-height: var(--afh-leading-caption);
           color: var(--afh-text-soft);
+          text-wrap: balance;
         }
+        /* One alignment per tile, declared rather than inherited (brand
+           charter §8.1). mobile-text.css left-aligns every dt and dd below
+           768px, and the .afh-phone-centred opt-in list this band sits inside
+           does not carry the pair — so the figure, a shrink-to-fit flex item,
+           centred itself while its two-line label went ragged-left. Measured
+           at 430px: « 790 » on the tile's centre line, « peuples / documentés »
+           starting 36px to its left, three times across the band. Nothing
+           declared two alignments; one declaration produced them. */
+        .home-corpus-count dt,
+        .home-corpus-count dd {
+          text-align: center;
+        }
+        /* order: -1 puts the figure above its label while the DOM keeps the
+           definition-list pair in its own order, which is what a screen reader
+           reads and what the term role resolves against. */
         .home-corpus-count dd {
           order: -1;
           margin: 0;
@@ -84,6 +140,9 @@ export function HomeCorpusCounts({ counts }: HomeCorpusCountsProps) {
           color: var(--afh-text);
           font-variant-numeric: tabular-nums;
         }
+        /* A total the server could not read drops to body type, book weight
+           and the soft ink, so it reads as visibly not a figure and can never
+           be mistaken for one. */
         .home-corpus-count dd.is-unavailable {
           font-family: var(--afh-font-body);
           font-size: var(--afh-text-caption);
@@ -92,19 +151,34 @@ export function HomeCorpusCounts({ counts }: HomeCorpusCountsProps) {
         }
 
         @media (min-width: 768px) {
-          .home-corpus-counts { gap: 12px; }
+          .home-corpus-counts {
+            gap: 12px;
+          }
           .home-corpus-count {
-            min-height: 94px;
-            padding: 14px 10px;
+            min-height: 104px;
+            padding: 16px 10px;
           }
         }
 
+        /* Flush left from the width at which the copy column goes flush left.
+           Alignment is a property of the block it sits in, not of the tile
+           (brand charter §8.1): tiles that stayed centred inside a ragged-right
+           column would put a second left edge in one block. */
         @media (min-width: 1200px) {
-          .home-corpus-count { align-items: flex-start; text-align: left; }
+          .home-corpus-count {
+            align-items: flex-start;
+            text-align: left;
+          }
+          /* The pair switches with the block. A direct declaration always
+             beats an inherited one, so the centre above would otherwise
+             survive into the ragged-right column and reinstate the same two
+             alignments the other way round. */
+          .home-corpus-count dt,
+          .home-corpus-count dd {
+            text-align: left;
+          }
         }
       `}</style>
     </dl>
   );
 }
-
-export default HomeCorpusCounts;

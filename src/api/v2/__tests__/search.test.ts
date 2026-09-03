@@ -33,6 +33,18 @@ const mockCountry = {
 
 const emptyResult = { peoples: [], countries: [], families: [], total: 0 };
 
+const mockQuiz = {
+  id: "QZ_1",
+  prompt: "Quel est l'autonyme des Yoruba ?",
+  entityType: "people",
+  entityId: "PPL_YORUBA",
+  subjectName: "Yoruba",
+  relevance: 0.5,
+  exactMatch: true,
+  normalizedScore: 0.95,
+  snippet: "[[Yoruba]] · Quel est l'autonyme",
+};
+
 // ── ftsSearch service ───────────────────────────────────────────────────────
 describe("ftsSearch (service)", () => {
   beforeEach(() => vi.clearAllMocks());
@@ -140,6 +152,94 @@ describe("ftsSearch (service)", () => {
       expect.objectContaining({ limit: 5, offset: 10 })
     );
   });
+
+  // @req REQ-121
+  it("returns matching quiz questions and their corpus-wide count", async () => {
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ...emptyResult,
+      quizzes: [mockQuiz],
+      quizzesTotal: 9,
+      total: 9,
+    });
+
+    const result = await ftsSearch({
+      q: "Yoruba",
+      limit: 20,
+      offset: 0,
+      lens: "quiz",
+    });
+
+    expect(result.quizzes).toEqual([mockQuiz]);
+    expect(result.quizzesTotal).toBe(9);
+    expect(ftsSearchEntities).toHaveBeenCalledWith(
+      expect.objectContaining({ lens: "quiz" })
+    );
+  });
+
+  // @req REQ-121
+  it("never returns a quiz question's options, correct answer or explanation", async () => {
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ...emptyResult,
+      quizzes: [mockQuiz],
+      quizzesTotal: 1,
+      total: 1,
+    });
+
+    const [quiz] = (
+      await ftsSearch({
+        q: "Yoruba",
+        limit: 20,
+        offset: 0,
+        lens: "quiz",
+      })
+    ).quizzes;
+
+    for (const leak of [
+      "options_fr",
+      "options",
+      "correct_option",
+      "correctOption",
+      "explanation_fr",
+      "explanation",
+    ]) {
+      expect(quiz).not.toHaveProperty(leak);
+    }
+  });
+
+  // @req REQ-002
+  it("returns the cross-kind ordered list alongside the grouped arrays", async () => {
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ...emptyResult,
+      peoples: [mockPeople],
+      countries: [mockCountry],
+      results: [
+        {
+          kind: "people",
+          id: "PPL_YORUBA",
+          name: "Yoruba",
+          normalizedScore: 0.97,
+          snippet: null,
+        },
+        {
+          kind: "country",
+          id: "NGA",
+          name: "Nigéria",
+          normalizedScore: 0.62,
+          snippet: null,
+        },
+      ],
+      total: 3,
+    });
+
+    const result = await ftsSearch({ q: "Yoruba", limit: 20, offset: 0 });
+
+    expect(result.results.map((hit) => hit.kind)).toEqual([
+      "people",
+      "country",
+    ]);
+    expect(result.peoples).toHaveLength(1);
+    expect(result.countries).toHaveLength(1);
+  });
 });
 
 // ── ftsSearchHandler ────────────────────────────────────────────────────────
@@ -181,6 +281,37 @@ describe("ftsSearchHandler (handler)", () => {
     expect(result.errors).toHaveLength(0);
   });
 
+  // @req REQ-121
+  it("publishes the quiz bank and the ordered list in the envelope", async () => {
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ...emptyResult,
+      quizzes: [mockQuiz],
+      quizzesTotal: 9,
+      results: [
+        {
+          kind: "quiz",
+          id: "QZ_1",
+          name: "Quel est l'autonyme des Yoruba ?",
+          normalizedScore: 0.95,
+          snippet: "[[Yoruba]] · Quel est l'autonyme",
+        },
+      ],
+      total: 9,
+    });
+
+    const result = await ftsSearchHandler({
+      q: "Yoruba",
+      limit: 20,
+      offset: 0,
+      lens: "quiz",
+    });
+
+    expect(result.data.quizzes).toEqual([mockQuiz]);
+    expect(result.data.quizzesTotal).toBe(9);
+    expect(result.data.results).toHaveLength(1);
+    expect(result.data.results[0]).toMatchObject({ kind: "quiz", id: "QZ_1" });
+  });
+
   it("error propagation — throws on service failure", async () => {
     (ftsSearchEntities as ReturnType<typeof vi.fn>).mockRejectedValue(
       new Error("DB error")
@@ -189,5 +320,43 @@ describe("ftsSearchHandler (handler)", () => {
     await expect(
       ftsSearchHandler({ q: "Yoruba", limit: 20, offset: 0 })
     ).rejects.toThrow("DB error");
+  });
+
+  // @req REQ-125
+  it("near-miss leads — passes leads through on a zero-total result", async () => {
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ...emptyResult,
+      leads: [
+        { kind: "people", id: "PPL_BAMBARA", name: "Bambara", similarity: 0.4 },
+      ],
+    });
+
+    const result = await ftsSearchHandler({
+      q: "bamba",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.data.total).toBe(0);
+    expect(result.data.leads).toEqual([
+      { kind: "people", id: "PPL_BAMBARA", name: "Bambara", similarity: 0.4 },
+    ]);
+  });
+
+  // @req REQ-125
+  it("near-miss leads — defaults to an empty array when the service omits leads", async () => {
+    (ftsSearchEntities as ReturnType<typeof vi.fn>).mockResolvedValue({
+      peoples: [mockPeople],
+      countries: [mockCountry],
+      total: 2,
+    });
+
+    const result = await ftsSearchHandler({
+      q: "Yoruba",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.data.leads).toEqual([]);
   });
 });

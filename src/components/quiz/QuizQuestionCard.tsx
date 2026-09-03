@@ -128,5 +128,3 @@ export const QuizQuestionCard = ({
     </form>
   );
 };
-
-export default QuizQuestionCard;

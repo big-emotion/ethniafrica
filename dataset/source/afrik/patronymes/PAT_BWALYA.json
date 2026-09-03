@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_BWALYA",
+  "nameMain": "Bwalya",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Bwalya",
+      "attestations": [
+        {
+          "countryId": "ZMB",
+          "sourceRefs": ["mwakasenga-bemba-2022"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une étude des masculinités bemba rapporte, dans le récit des origines royales, Bwalya Chabala comme fille de la reine Mumbi Mukasa. L'auteur avertit qu'il est difficile de savoir si ces formes sont des noms historiques ou des noms de louange ; le rapport avec le patronyme actuel reste donc contesté.",
+        "claimStatus": "contested",
+        "sourceRefs": ["mwakasenga-bemba-2022"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BEMBA",
+      "status": "attested",
+      "sourceRefs": ["mwakasenga-bemba-2022"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZMB",
+      "status": "attested",
+      "sourceRefs": ["mwakasenga-bemba-2022"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "mwakasenga-bemba-2022",
+      "title": "Being Impalume: A Religio-Cultural Perspective of Bemba Married Men's Construction of Masculinity in Northern Zambia",
+      "url": "https://researchspace.ukzn.ac.za/server/api/core/bitstreams/3f7361e5-a613-4770-a676-3e14179f4749/content",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Mémoire de maîtrise d'Upendo Mwakasenga, University of KwaZulu-Natal, juillet 2022, consulté en texte intégral. Il cite Bwalya Chabala dans les traditions d'origine bemba du nord de la Zambie, tout en signalant l'incertitude entre noms historiques et noms de louange. Il décrit ailleurs une transmission matrilinéaire générale des noms de clan bemba, sans établir que Bwalya est lui-même un nom de clan."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Bwalya », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Being Impalume: A Religio-Cultural Perspective of Bemba Married Men's Construction of Masculinity in Northern Zambia » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Bwalya à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Bwalya », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Being Impalume: A Religio-Cultural Perspective of Bemba Married Men's Construction of Masculinity in Northern Zambia » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Bwalya."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Bwalya », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « Being Impalume: A Religio-Cultural Perspective of Bemba Married Men's Construction of Masculinity in Northern Zambia », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Bwalya », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « Being Impalume: A Religio-Cultural Perspective of Bemba Married Men's Construction of Masculinity in Northern Zambia », n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La recherche « Bwalya Bemba surname transmission inheritance clan » et la lecture de « Being Impalume » établissent une transmission matrilinéaire générale des noms de clan bemba, mais le mémoire ne qualifie pas Bwalya lui-même de nom de clan ; le mode propre à cette fiche reste donc « other »."
+    }
+  ]
+}

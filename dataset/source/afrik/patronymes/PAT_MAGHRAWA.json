@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français prudent sur une désignation tribale zénète ; l’attestation historique est distinguée d’une étymologie lexicale non trouvée."
+  },
+  "id": "PAT_MAGHRAWA",
+  "nameMain": "Maghrawa",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "Maghrawa",
+      "attestations": [
+        {
+          "countryId": "DZA",
+          "sourceRefs": ["maghrawa-mcharek", "maghrawa-asjp"]
+        }
+      ]
+    },
+    {
+      "spelling": "Maġrāwa",
+      "attestations": [
+        { "countryId": "DZA", "sourceRefs": ["maghrawa-mcharek"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Ahmed M’Charek relève Maghrawa parmi les principales branches zénètes attestées dans les chapitres berbères du Kitāb al-ʿIbar d’Ibn Khaldûn.",
+        "claimStatus": "established",
+        "sourceRefs": ["maghrawa-mcharek"]
+      },
+      {
+        "claim": "Une étude historique consacrée au groupe situe son territoire d’origine dans le Maghreb central et documente son rôle politique et militaire du VIIe au XIe siècle.",
+        "claimStatus": "established",
+        "sourceRefs": ["maghrawa-asjp"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ZENATA",
+      "status": "attested",
+      "sourceRefs": ["maghrawa-mcharek", "maghrawa-asjp"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "DZA",
+      "status": "attested",
+      "sourceRefs": ["maghrawa-mcharek", "maghrawa-asjp"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "maghrawa-mcharek",
+      "title": "Ibn Khaldûn, une source historique majeure : l’apport du Kitâb al-‘Ibar à la connaissance de l’ethnonymie berbère",
+      "url": "https://www.researchgate.net/publication/382346129_Ibn_Khaldun_une_source_historique_majeure_l%27apport_du_Kitab_al-%27Ibar_a_la_connaissance_de_l%27ethnonymie_berbere",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ahmed M’Charek, Études et Documents Berbères 49(1), 2024, p. 223-244, DOI 10.3917/edb.049.0223. Le résumé éditorial intégral a été vérifié ; il nomme Maghrawa parmi les branches zénètes attestées par Ibn Khaldûn. La source n’est pas réutilisée dans une autre fiche de cette vague."
+    },
+    {
+      "sourceKey": "maghrawa-asjp",
+      "title": "قبيلة مغراوة وتحالفاتها العسكرية والسياسية في بلاد المغرب الأوسط، من الفتح إلى تأسيس الدولة المغراوية",
+      "url": "https://asjp.cerist.dz/en/article/244926",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Houssam Salahi, Revue des études historiques militaires 6(1), 2024, p. 33-47, Université d’Alger 2. La page et le résumé arabes ont été vérifiés pour l’ancrage au Maghreb central, la chronologie et le statut tribal."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les articles dédiés, ASJP, l’Encyclopédie berbère et les recherches « Maghrawa tradition orale », « مغراوة النسب » et « ancêtre Maghrawa » n’ont livré aucun récit avec transmetteur nommé et transcription."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "L’étude d’ethnonymie de M’Charek, l’article historique de Salahi et les dictionnaires berbères repérés ont été vérifiés sans trouver d’étymon propre à Maghrawa ; l’étymologie des Zénètes en général n’est pas transférée à cette branche."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Les sources traitent Maghrawa comme désignation tribale historique, mais ne décrivent pas sa règle d’affiliation nominale ; les recherches de filiation n’ont pas permis de retenir un mode de transmission."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "L’article de Salahi documente des alliances militaires et politiques entre groupes historiques, mais aucune ne constitue une alliance anthroponymique entre deux fiches PAT_* existantes ; aucune entrée n’est donc créée."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les deux études et les recherches sur une fonction héréditaire des Maghrawa ne signalent ni métier transmis ni statut de caste attaché au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les sources nomment des dirigeants du groupe, sans les présenter comme porteurs individuels du nom Maghrawa ; les enregistrer comme patronymes confondrait la tribu avec un nom de famille."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les graphies Maghrawa, Maġrāwa et Meghrawa repérées relèvent de translittérations ; les catalogues et travaux consultés n’ont pas établi une seconde origine sous une graphie identique."
+    }
+  ],
+  "nisbaSubtype": {
+    "value": "tribal",
+    "sourceRefs": ["maghrawa-mcharek", "maghrawa-asjp"]
+  }
+}

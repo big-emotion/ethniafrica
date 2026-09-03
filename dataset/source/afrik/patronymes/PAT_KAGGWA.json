@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KAGGWA",
+  "nameMain": "Kaggwa",
+  "nameSystem": "totemic_clan",
+  "spellings": [
+    {
+      "spelling": "Kaggwa",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["cambridge-maa-kaggwa"]
+        }
+      ]
+    },
+    {
+      "spelling": "Kagwa",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["dacb-kagwa-apolo"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BAGANDA",
+      "status": "attested",
+      "sourceRefs": ["cambridge-maa-kaggwa", "dacb-kagwa-apolo"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["cambridge-maa-kaggwa", "dacb-kagwa-apolo"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Sir Apolo Kagwa/Kaggwa, katikiro et historien du Buganda (vers 1869–1926)",
+      "sourceRefs": ["cambridge-maa-kaggwa", "dacb-kagwa-apolo"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "cambridge-maa-kaggwa",
+      "title": "Museum of Archaeology and Anthropology object E 1903.466",
+      "url": "https://collections.maa.cam.ac.uk/objects/524740/",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Notice de collection du Museum of Archaeology and Anthropology de l'University of Cambridge consultée intégralement. Elle attribue l'objet à Apolo Kaggwa, indique l'Uganda comme lieu et l'affiliation culturelle Ganda, et documente la graphie à deux g sans proposer d'étymologie."
+    },
+    {
+      "sourceKey": "dacb-kagwa-apolo",
+      "title": "Kagwa, Apolo",
+      "url": "https://dacb.org/stories/uganda/kagwa-apolo/",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Notice de Louise Pirouet issue de A Dictionary of Christianity in Uganda, Makerere University College, 1969, consultée intégralement. Elle documente la graphie Kagwa, la naissance vers 1869, la mort en 1926, le statut de chef muganda et l'appartenance au clan de la Sauterelle. Cette dernière précision empêche d'assimiler sans preuve le nom Kagwa/Kaggwa au totem lui-même."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Kaggwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la notice du musée de Cambridge et la notice biographique de Louise Pirouet sur Apolo Kagwa n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine du nom. Les attestations géographiques ou individuelles trouvées ne sont pas transformées en étymologie."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kaggwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la notice du musée de Cambridge et la notice biographique de Louise Pirouet sur Apolo Kagwa n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kaggwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la notice du musée de Cambridge et la notice biographique de Louise Pirouet sur Apolo Kagwa n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kaggwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la notice du musée de Cambridge et la notice biographique de Louise Pirouet sur Apolo Kagwa n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Kaggwa », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la notice du musée de Cambridge et la notice biographique de Louise Pirouet sur Apolo Kagwa n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

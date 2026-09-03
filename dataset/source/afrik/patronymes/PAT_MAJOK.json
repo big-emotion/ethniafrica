@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
+  },
+  "id": "PAT_MAJOK",
+  "nameMain": "Majok",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Majok",
+      "attestations": [
+        {
+          "countryId": "SSD",
+          "sourceRefs": ["impey-dinka-cassette-2013"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Majok est un nom personnel masculin dinka rattaché à une robe bovine : un bovin blanc portant du noir à la tête et aux épaules. Le motif est attribué selon le rang de la mère et la hiérarchie des robes ; l’article d’Impey et le livret Smithsonian documentent séparément ce rapport entre nom personnel et couleur bovine.",
+        "claimStatus": "established",
+        "sourceRefs": [
+          "impey-dinka-cassette-2013",
+          "smithsonian-dinka-song-notes"
+        ]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_DINKA",
+      "status": "attested",
+      "sourceRefs": ["impey-dinka-cassette-2013"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "SSD",
+      "status": "attested",
+      "sourceRefs": ["impey-dinka-cassette-2013"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "impey-dinka-cassette-2013",
+      "title": "Keeping in touch via cassette: tracing Dinka songs from cattle camp to transnational audio-letter",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/13696815.2013.775038",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Angela Impey, Journal of African Cultural Studies 25(2), 2013, p. 197-210. L’analyse d’un chant identifie Majok comme un nom personnel attribué suivant la préséance maternelle et une hiérarchie de robes bovines ; la note 19 décrit le bovin blanc à tête, cou et croupe noirs."
+    },
+    {
+      "sourceKey": "smithsonian-dinka-song-notes",
+      "title": "The Role of Song and Dance in Dinka Society",
+      "url": "https://folkways-media.si.edu/docs/folkways/artwork/FW04301.pdf",
+      "tier": "official",
+      "source_kind": "archive",
+      "notes": "Livret d’archive Smithsonian Folkways. Il décrit l’attribution aux fils d’un motif de robe bovine selon le rang de leur mère et donne Majok ou Miok pour l’aîné de la première épouse."
+    },
+    {
+      "sourceKey": "edinburgh-dinka-songs-readme",
+      "title": "A Collection of Dinka Songs — README",
+      "url": "https://datashare.ed.ac.uk/bitstream/handle/10283/184/ACollectionofDinkaSongs_readme.pdf",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Documentation du corpus sonore de Bert Remijsen et de l’équipe du projet Metre and Melody in Dinka Speech and Song, University of Edinburgh et SOAS, 2012. Elle précise que les Dinka n’ont pas de nom de famille fixe et que le nom individuel est suivi de ceux du père puis des ascendants."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Majok tradition orale », « Majok griot » et « Majok oral history », ainsi que l’article d’Impey, le livret d’archive Smithsonian Folkways et la documentation du corpus de chants dinka, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Majok chronicle », « Majok history » et « Majok genealogy », complétées par l’article d’Impey, le livret d’archive Smithsonian Folkways et la documentation du corpus de chants dinka, n’ont livré aucune chronique primaire qui explique l’origine du nom."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Majok joking kinship », « Majok name alliance » et « Majok clan pact », ainsi que l’article d’Impey, le livret d’archive Smithsonian Folkways et la documentation du corpus de chants dinka, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Majok caste », « Majok occupational group » ainsi que les passages sociaux consultés dans l’article d’Impey, le livret d’archive Smithsonian Folkways et la documentation du corpus de chants dinka, n’ont établi aucune fonction héréditaire propre à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques et nécrologiques sur « Majok » dans les catalogues universitaires et institutionnels, complétées par l’article d’Impey, le livret d’archive Smithsonian Folkways et la documentation du corpus de chants dinka, n’ont pas permis de vérifier un porteur décédé avec une identité suffisamment précise ; les personnes vivantes repérées ne sont pas ajoutées sans auto-identification."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches sur la graphie exacte « Majok » dans les index onomastiques et l’article d’Impey, le livret d’archive Smithsonian Folkways et la documentation du corpus de chants dinka n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
+    }
+  ]
+}

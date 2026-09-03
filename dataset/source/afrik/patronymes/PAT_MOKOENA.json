@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_MOKOENA",
+  "nameMain": "Mokoena",
+  "nameSystem": "totemic_clan",
+  "spellings": [
+    {
+      "spelling": "Mokoena",
+      "attestations": [
+        {
+          "countryId": "ZAF",
+          "sourceRefs": ["forebears-mokoena"]
+        },
+        {
+          "countryId": "LSO",
+          "sourceRefs": ["forebears-mokoena"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "L'étude des lithoko sesotho explique que koena signifie « crocodile » et que les préfixes personnels forment Mokoena au singulier et Bakoena au pluriel. Ces formes identifient l'appartenance au clan du crocodile dans les textes étudiés.",
+        "claimStatus": "established",
+        "sourceRefs": ["maimane-2016-mokoena"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SOTHO",
+      "status": "attested",
+      "sourceRefs": ["maimane-2016-mokoena"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZAF",
+      "status": "attested",
+      "sourceRefs": ["forebears-mokoena"]
+    },
+    {
+      "countryId": "LSO",
+      "status": "attested",
+      "sourceRefs": ["forebears-mokoena"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-mokoena",
+      "title": "Mokoena Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/mokoena",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement pour attester l'emploi moderne de Mokoena comme nom de famille et sa présence dans les pays indiqués. La géographie ne prouve ni une appartenance ethnique exclusive ni une étymologie ; les définitions contributives éventuelles ne sont pas élevées au rang de faits."
+    },
+    {
+      "sourceKey": "maimane-2016-mokoena",
+      "title": "Confluences of Lithoko, Religious and Traditional Beliefs and Western Poetry in Modern Sesotho Poetry: An Intertextual Perspective",
+      "url": "https://repository.tml.nul.ls/bitstream/handle/20.500.14155/1150/Maimane_Confluences_2016.pdf?sequence=1",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Thèse de doctorat de Ketlalemang Clement Maimane, University of KwaZulu-Natal, consultée directement. Aux p. 148-149, elle explique koena « crocodile », Mokoena au singulier et Bakoena au pluriel comme noms identifiant le clan du crocodile dans les lithoko."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Mokoena », « SOTHO », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Mokoena à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Mokoena », « SOTHO », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Mokoena."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Mokoena », « SOTHO », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement contextuel retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Mokoena », « SOTHO », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont pas établi de lignée homonyme d'origine distincte documentable ; la diffusion dans plusieurs pays et les ressemblances graphiques ne suffisent pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Mokoena », « SOTHO », « surname », « clan », « etymology », « transmission », « alliance » et « obituary », ainsi que la page Forebears dédiée et les travaux ou notices propres au nom cités dans la fiche n'ont établi aucune règle propre à l'ensemble des emplois de Mokoena permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

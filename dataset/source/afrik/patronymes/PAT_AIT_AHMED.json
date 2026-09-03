@@ -1,0 +1,137 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français prudent issu d’une recherche dédiée ; les chapitres non établis restent déclarés comme lacunes."
+  },
+  "id": "PAT_AIT_AHMED",
+  "nameMain": "Aït Ahmed",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Aït Ahmed",
+      "attestations": [
+        { "countryId": "MAR", "sourceRefs": ["afrik-candidate-queue"] },
+        {
+          "countryId": "DZA",
+          "sourceRefs": ["ait-ahmed-ummto", "ait-ahmed-bnf"]
+        }
+      ]
+    },
+    {
+      "spelling": "Ait Ahmed",
+      "attestations": [
+        { "countryId": "MAR", "sourceRefs": ["afrik-candidate-queue"] },
+        {
+          "countryId": "DZA",
+          "sourceRefs": ["ait-ahmed-ummto", "ait-ahmed-bnf"]
+        }
+      ]
+    },
+    {
+      "spelling": "At Ḥmed",
+      "attestations": [
+        { "countryId": "DZA", "sourceRefs": ["ait-ahmed-ummto"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le mémoire de l’UMMTO analyse At Ḥmed comme « les enfants d’Ahmed » et rattache Ahmed à la racine arabe ḤMD, avec le sens « louer, célébrer ».",
+        "claimStatus": "established",
+        "sourceRefs": ["ait-ahmed-ummto"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_CHLEUH",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "peopleId": "PPL_KABYLE",
+      "status": "attested",
+      "sourceRefs": ["ait-ahmed-ummto"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MAR",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "DZA",
+      "status": "attested",
+      "sourceRefs": ["ait-ahmed-ummto", "ait-ahmed-bnf"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Hocine Aït-Ahmed",
+      "sourceRefs": ["ait-ahmed-bnf"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "ait-ahmed-ummto",
+      "title": "Les noms des lieux et des villages de deux daïras, Iferhounene et Aïn El Hammam : étude sémantique et morphologique",
+      "url": "https://dspace.ummto.dz/bitstreams/7a6caabf-eff9-42d6-b9ff-50540cc1e417/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Aït Benali Azouaou et Ben Boussad Karima, mémoire de master, Université Mouloud Mammeri de Tizi-Ouzou, 2019-2020. L’entrée At Ḥmed est consultée dans le texte intégral ; elle donne la segmentation et la glose retenues ici."
+    },
+    {
+      "sourceKey": "ait-ahmed-bnf",
+      "title": "Notice de personne : Aït-Ahmed, Hocine (1926-2015)",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb12585044s",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Notice d’autorité de la Bibliothèque nationale de France, consultée pour la graphie, les dates et l’ancrage algérien du porteur."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les dépôts de l’UMMTO et de l’IRCAM ainsi que les recherches « Aït Ahmed tradition orale », « At Ḥmed ancêtre » et « Aït Ahmed généalogie » n’ont livré aucun récit attribué à un griot ou à un transmetteur nommé."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les catalogues BnF, Persée, OpenEdition et les dépôts universitaires algériens ont été interrogés sans trouver de chronique ou d’archive ancienne consacrée à la formation de ce nom."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "L’étude toponymique établit le sens collectif « enfants d’Ahmed », mais ni elle ni la notice BnF ne documentent la règle de transmission du nom ; les recherches « Aït Ahmed filiation » et « At Ḥmed clan » n’ont pas comblé ce point."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches combinant « Aït Ahmed » avec « alliance », « parenté à plaisanterie », « pacte » et « leff » n’ont pas fourni de paire attestée avec une autre fiche PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Le mémoire de l’UMMTO, la notice BnF et les recherches « Aït Ahmed métier héréditaire » ou « caste » ne signalent aucune fonction sociale héréditaire attachée au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les catalogues d’autorité et recherches onomastiques consultés n’ont pas révélé une seconde origine distincte sous la graphie Aït Ahmed ; la variation Aït/Ait/At relève de l’orthographe."
+    }
+  ]
+}

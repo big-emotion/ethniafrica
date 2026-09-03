@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_ELA",
+  "nameMain": "Ela",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Ela",
+      "attestations": [
+        {
+          "countryId": "GNQ",
+          "sourceRefs": ["catedra-fang-ela-2023"]
+        }
+      ]
+    },
+    {
+      "spelling": "Elá",
+      "attestations": [
+        {
+          "countryId": "GNQ",
+          "sourceRefs": ["catedra-fang-ela-2023"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "L'étude onomastique consultée classe Elá parmi les noms fang considérés comme originaux, pour lesquels elle ne trouve ni dérivation ni composition circonstancielle ; aucune glose plus précise n'est donc proposée.",
+        "claimStatus": "established",
+        "sourceRefs": ["catedra-fang-ela-2023"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FANG",
+      "status": "attested",
+      "sourceRefs": ["catedra-fang-ela-2023"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GNQ",
+      "status": "attested",
+      "sourceRefs": ["catedra-fang-ela-2023"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "catedra-fang-ela-2023",
+      "title": "Culture for the Recognition of Identity: The Case of the Fang Culture of Equatorial Guinea",
+      "url": "https://revistadigital.uce.edu.ec/index.php/CATEDRA/article/download/3868/5199/23782",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Version anglaise en PDF de l'article de Revista Cátedra 6(1), 2023, DOI 10.29166/catedra.v6i1.4282, consultée intégralement pour la fiche Ela. Les pages 8–9 citent explicitement Elá parmi les noms fang non décomposables et décrivent la répétition du patronyme paternel chez les enfants pour perpétuer la lignée. Cette source est utilisée ici uniquement pour ses énoncés explicites sur Elá et le système fang."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Ela », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Culture for the Recognition of Identity: The Case of the Fang Culture of Equatorial Guinea » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Ela à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Ela », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Culture for the Recognition of Identity: The Case of the Fang Culture of Equatorial Guinea » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Ela."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Ela », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « Culture for the Recognition of Identity: The Case of the Fang Culture of Equatorial Guinea », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Ela », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « Culture for the Recognition of Identity: The Case of the Fang Culture of Equatorial Guinea », n'ont pas établi de lignée homonyme d'origine distincte."
+    }
+  ]
+}

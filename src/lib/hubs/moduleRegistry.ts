@@ -38,7 +38,7 @@ export const ACCESS_MODES: AccessMode[] = ["atlas", "dossiers", "jeux"];
 export const ACCESS_MODE_LABELS = {
   atlas: "L'atlas",
   dossiers: "Les dossiers",
-  jeux: "Les jeux",
+  jeux: "Jouer",
 } satisfies Record<AccessMode, string>;
 
 // One categorical accent per mode, from the CVD-validated four (color.css
@@ -58,6 +58,8 @@ export type ModuleDataSource =
   | "afrik_peoples"
   | "afrik_countries"
   | "afrik_language_families"
+  | "afrik_languages"
+  | "afrik_patronymes"
   | "name_records"
   | "migration_events"
   | "afrik_people_relations"
@@ -154,6 +156,25 @@ export interface HubModuleDefinition {
    */
   editorialReadiness?: EditorialReadiness;
   dataSource?: ModuleDataSource;
+  /**
+   * The plural noun a sentence uses for this class, where `name` is the label
+   * a menu entry wears. "Les peuples d'Afrique" heads a nav item; prose says
+   * "des peuples".
+   *
+   * Declared by the six corpus classes — an atlas module with a `dataSource` —
+   * and by nothing else, because only a thing the corpus *holds* belongs in a
+   * sentence describing what the corpus holds. It exists because these six
+   * nouns were written out by hand on every surface that describes the
+   * product, and each copy fell behind the corpus at its own pace: the site's
+   * own meta description still named four of them.
+   *
+   * Not to be confused with `CORPUS_CLASSES` (corpusClasses.ts), which is
+   * deliberately five. That list prints *figures*, and a figure claims
+   * exhaustiveness — "30 patronymes" beside "3 134 appellations" understates
+   * the product and misstates its coverage. Naming a class costs no such
+   * claim, so prose names all six and the census counts five.
+   */
+  corpusNoun?: string;
   /** A game under the Jouer hub, addressed as /fr/jeux/<gameSlug> rather than by PageType. Keeps PageType a closed union instead of growing a variant per game. */
   gameSlug?: string;
   /** Which shelf the module sits on. Jouer only — see ModuleGroupId. */
@@ -193,18 +214,7 @@ export interface HubModuleDefinition {
  */
 // @req REQ-115
 export type HeroPreviewKind =
-  | "globe"
-  | "game"
-  | "migration-paths"
-  | "family-crown";
-
-// @req REQ-115
-export const HERO_PREVIEW_KINDS: HeroPreviewKind[] = [
-  "globe",
-  "game",
-  "migration-paths",
-  "family-crown",
-];
+  "globe" | "game" | "migration-paths" | "family-crown";
 
 // @req REQ-114
 export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
@@ -221,6 +231,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "data",
     editorialReadiness: "ready",
     dataSource: "afrik_countries",
+    corpusNoun: "Pays",
   },
   {
     id: "peuples",
@@ -230,6 +241,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "data",
     editorialReadiness: "ready",
     dataSource: "afrik_peoples",
+    corpusNoun: "Peuples",
   },
   {
     id: "familles",
@@ -239,7 +251,22 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "data",
     editorialReadiness: "ready",
     dataSource: "afrik_language_families",
+    corpusNoun: "Familles linguistiques",
     heroable: "family-crown",
+  },
+  // Filed directly after familles: a language is the next rung down the
+  // AFRIK hierarchy (famille → langue → peuple → pays), and a reader who
+  // arrives holding a language's name reaches it the same way as one holding
+  // a family's (ETNI-1801/ETNI-1795).
+  {
+    id: "langues",
+    name: "Les langues d'Afrique",
+    accessMode: "atlas",
+    page: "languages",
+    availability: "data",
+    editorialReadiness: "ready",
+    dataSource: "afrik_languages",
+    corpusNoun: "Langues",
   },
   // The fourth nominal entry point. A reader who arrives holding a name the
   // corpus files as an appellation — an exonym, a colonial-era spelling —
@@ -251,15 +278,42 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "atlas",
     page: "names",
     availability: "data",
-    // This read "ready", on the reasoning that an empty `name_records`
-    // already said everything there was to say. It does not: the corpus holds
-    // one fiche — `dataset/source/afrik/noms/PPL_YORUBA.json`, alone — for 803
-    // peoples, and the loader is wired. The row count would therefore stop
-    // speaking the moment that single fiche lands, and offer an atlas of names
-    // that names one people. Readiness is what withholds the invitation while
-    // the route stays built.
-    editorialReadiness: "draft",
+    // The published people fiches now feed the index directly: their autonyms,
+    // exonyms and attested variants give this route corpus-wide coverage, while
+    // ambiguous prose remains refused rather than guessed. The invitation can
+    // therefore follow the route that was already public.
+    editorialReadiness: "ready",
     dataSource: "name_records",
+    corpusNoun: "Appellations",
+  },
+  // Distinct from "noms"/Appellations: a patronyme is the naming *system* a
+  // person is named under, not a people's autonym/exonym. Filed beside it
+  // because both take a name and return a fiche, which is Explorer's rule,
+  // but kept a separate id so neither shadows the other (ETNI-1801).
+  //
+  // The id stays `patronymes` and the reader-facing word is `nom`, which is
+  // DEC-038's split rather than an inconsistency: the public label is the word
+  // a francophone types, and the internal word is what keeps this entity apart
+  // from the two other things the repository calls "nom" — the ethnonym
+  // dossier above and ARCH-018's person. This entry said "Patronymes" for the
+  // whole of ETNI-1803, so the menu named the axis one way while the trail,
+  // the footer and the URL named it another.
+  //
+  // Plural, like every module beside it. A menu entry names a destination
+  // holding many fiches, and « Nom » was the one singular in a row reading
+  // Familles · Langues · Peuples · Pays · Appellations — which made it read as
+  // a field on a form rather than as an index. The singular survives where it
+  // is right: above one fiche (`patronymes.eyebrow`) and on one search hit
+  // (`SEARCH_ENTITY_ACCENT.patronyme`).
+  {
+    id: "patronymes",
+    name: "Noms",
+    accessMode: "atlas",
+    page: "patronymes",
+    availability: "data",
+    editorialReadiness: "ready",
+    dataSource: "afrik_patronymes",
+    corpusNoun: "Noms",
   },
   // Recherche closes Explorer: it is where a reader goes once naming the
   // entity has not been enough.
@@ -279,6 +333,26 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   // answer. Readiness is "ready" because the surface is complete on the day
   // it ships — every fact it holds is written and cited, which is not
   // something the modules around it can say yet.
+  // First of the rubric, and not by seniority: it is the question the other
+  // three presuppose. The anecdotes bank is already onomastic by contract —
+  // "every fact here is about a *name*: who gave it, when, and what it was
+  // hiding" — and the colonial gaze is one answer to the same question. This
+  // dossier is where that question is put, so it opens the axis.
+  //
+  // `static` for the same reason the anecdotes are: the corpus behind it is
+  // the repository, not a table, so there is nothing for the availability
+  // probe to count and "static" is the honest answer.
+  {
+    id: "nommer",
+    name: "Qui a donné ce nom ?",
+    accessMode: "dossiers",
+    page: "nommer",
+    availability: "static",
+    // Written and sourced on the day it ships. What is still open is the
+    // walk-back from Wikipedia to the primary works, which the dossier's own
+    // suite tracks by name — see AWAITING_PRIMARY_SOURCE.
+    editorialReadiness: "ready",
+  },
   {
     id: "anecdotes",
     name: "Anecdotes",
@@ -324,7 +398,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   {
     id: "quiz",
     group: "jeux-quiz",
-    name: "Le quiz des parcours",
+    name: "Le quiz",
     accessMode: "jeux",
     page: "quiz",
     // Read from its own bank, like every other data module reads its table.

@@ -198,5 +198,3 @@ export function ConfidenceChip({
     </span>
   );
 }
-
-export default ConfidenceChip;

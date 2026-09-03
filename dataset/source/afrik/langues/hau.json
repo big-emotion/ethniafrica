@@ -15,14 +15,34 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": [
+      "Aderawa",
+      "Damagaram",
+      "Dawra",
+      "Hadejiya",
+      "Kano",
+      "Katagum",
+      "Eastern Hausa",
+      "Gaya",
+      "Kurfey",
+      "Arawa",
+      "Arewa",
+      "North Hausa",
+      "Adarawa",
+      "Gobirawa",
+      "Katsina",
+      "Kebbawa",
+      "Sokoto {Hausa}",
+      "Zamfarawa",
+      "Western Hausa"
+    ],
     "vitalityStatus": null,
     "sources": [
       {
-        "title": "Glottolog 5.3",
+        "title": "Glottolog 5.3 — Hausa (haus1257)",
         "url": "https://glottolog.org/resource/languoid/id/haus1257",
         "tier": "official",
-        "notes": "Glottolog name: Hausa; classification includes Chadic."
+        "notes": "Glottolog name: Hausa; classification includes Chadic. Les dialectes listés sont les sous-languoids que Glottolog rattache à haus1257, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }

@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   ),
   title: `${PRODUCT_NAME} | Dictionnaire des Ethnies d'Afrique`,
   description:
-    "Encyclopédie des peuples, langues et familles linguistiques dans les 55 pays africains. Explorez la diversité culturelle et linguistique du continent.",
+    "Encyclopédie des peuples, langues, familles linguistiques, pays, appellations et noms d'Afrique. Chaque fiche cite ses sources.",
   authors: [{ name: PRODUCT_NAME }],
   icons: {
     icon: "/favicon.ico",

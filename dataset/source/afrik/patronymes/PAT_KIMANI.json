@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KIMANI",
+  "nameMain": "Kimani",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Kimani",
+      "attestations": [
+        {
+          "countryId": "KEN",
+          "sourceRefs": ["cultural-atlas-kimani"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "La synthèse de Cultural Atlas donne l'exemple kikuyu « Kimani wa Mumbi », où wa (« de ») exprime « Kimani, fils de Mumbi ». Elle atteste Kimani comme nom personnel dans une construction patronymique ou matronymique traditionnelle non héréditaire, tout en signalant que l'adoption du nom de famille paternel est aujourd'hui devenue plus courante au Kenya. Elle ne fournit pas l'étymologie interne de Kimani.",
+        "claimStatus": "established",
+        "sourceRefs": ["cultural-atlas-kimani"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_KIKUYU",
+      "status": "attested",
+      "sourceRefs": ["cultural-atlas-kimani"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "KEN",
+      "status": "attested",
+      "sourceRefs": ["cultural-atlas-kimani"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "cultural-atlas-kimani",
+      "title": "Kenyan Culture — Naming",
+      "url": "https://culturalatlas.sbs.com.au/kenyan-culture/kenyan-culture-naming",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Synthèse culturelle de Chara Scroope (2018), consultée directement. Elle illustre le patronyme/matronyme kikuyu par « Kimani wa Mumbi » et distingue cette pratique de l'usage contemporain du nom de famille paternel. Faute de référence académique visible pour cet exemple précis, la source reste au niveau non vérifié."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kimani », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Cultural Atlas sur les pratiques de nomination au Kenya et les recherches ciblées sur « Kimani wa Mumbi » et l'onomastique kikuyu, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kimani », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Cultural Atlas sur les pratiques de nomination au Kenya et les recherches ciblées sur « Kimani wa Mumbi » et l'onomastique kikuyu, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kimani », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Cultural Atlas sur les pratiques de nomination au Kenya et les recherches ciblées sur « Kimani wa Mumbi » et l'onomastique kikuyu, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kimani », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Cultural Atlas sur les pratiques de nomination au Kenya et les recherches ciblées sur « Kimani wa Mumbi » et l'onomastique kikuyu, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_BEN_ALI",
+  "nameMain": "Ben Ali",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "Ben Ali",
+      "attestations": [
+        {
+          "countryId": "TUN",
+          "sourceRefs": ["afrik-candidate-queue", "insaniyat-ben-ali"]
+        }
+      ]
+    },
+    {
+      "spelling": "Benali",
+      "attestations": [
+        {
+          "countryId": "TUN",
+          "sourceRefs": ["afrik-candidate-queue", "insaniyat-ben-ali"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le compte rendu d’un ouvrage d’onomastique tunisienne rapporte qu’après l’indépendance la normalisation de l’état civil a parfois supprimé l’espace, transformant Ben Ali en Benali. Cette donnée éclaire l’histoire graphique, non l’origine d’une lignée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["insaniyat-ben-ali"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ARABES_AFRIQUE",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "TUN",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "insaniyat-ben-ali"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "insaniyat-ben-ali",
+      "title": "Ahmed Chabchoub, Voyage au pays des noms — Insaniyat / CRASC",
+      "url": "https://insaniyat.crasc.dz/fr/article/ahmed-chabchoub-2017-voyage-au-pays-des-noms-essai-donomastique-culturelle-appliquee-a-la-tunisie-tunis-la-maison-tunisienne-du-livre-222-p",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Compte rendu scientifique consulté le 2 septembre 2026. Il décrit la normalisation tunisienne ayant parfois soudé Ben Ali en Benali ; il ne retrace aucune généalogie."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « Ben Ali anthroponymie », « Ben Ali onomastique » et « Ben Ali surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. Les requêtes « Ben Ali tradition orale », « Ben Ali griot » et « Ben Ali oral history » n’ont livré aucun griot ou informateur nommé avec transcription vérifiable."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches exactes « Ben Ali anthroponymie », « Ben Ali onomastique » et « Ben Ali surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. Les recherches linguistiques comparatives n’ont livré aucune reconstruction indépendante permettant de généraliser l’origine lexicale à tous les porteurs."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Ben Ali anthroponymie », « Ben Ali onomastique » et « Ben Ali surname etymology » ont été menées dans Persée, ASJP, CRASC, OpenEdition, Google Scholar et des dépôts universitaires nord-africains. Les travaux trouvés sont limités aux affirmations positives sourcées dans cette fiche et n’établissent pas une histoire complète de l’ensemble des porteurs. La source propre au nom ne démontre pas une association exclusive avec le peuple indiqué par la file d’attente ; ce rattachement reste au niveau non vérifié."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Ben Ali alliance à plaisanterie », « Ben Ali joking relationship » et « Ben Ali parenté à plaisanterie » n’ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Ben Ali caste », « Ben Ali métier héréditaire » et « Ben Ali social function » n’ont livré aucune fonction sociale ou professionnelle héréditaire propre à cette graphie."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques exactes sur « Ben Ali » dans les catalogues, notices institutionnelles et archives accessibles n’ont pas permis d’isoler un porteur décédé dont ce segment soit explicitement documenté dans la position patronymique pertinente. Les personnes vivantes repérées ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes « Ben Ali homonym surname », « Ben Ali homonyme patronyme » et les variantes graphiques de la fiche n’ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Les recherches « Ben Ali transmission patronyme », « Ben Ali filiation » et « Ben Ali hereditary surname » n’ont pas établi si, ni comment, cette forme se transmet dans les communautés concernées."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Les recherches « Ben Ali lignée », « Ben Ali clan », « Ben Ali tribe » et « Ben Ali place name » n’ont pas permis de déterminer si cette graphie désigne une lignée, un clan, une caste, une classe d’âge ou un établissement dans le contexte précis de la fiche."
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Warsame est attesté par une source gouvernementale somalienne ; les analyses populaires de sa composition ne sont pas élevées au rang d'étymologie savante."
+  },
+  "id": "PAT_WARSAME",
+  "nameMain": "Warsame",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Warsame",
+      "attestations": [
+        {
+          "countryId": "SOM",
+          "sourceRefs": ["afrik-candidate-queue", "warsame-somalia-opm-2026"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le bureau du Premier ministre de Somalie atteste Warsame comme dernier élément de la chaîne de noms Abdullahi Bidhan Warsame ; la page ne précise pas la relation généalogique exprimée par cet élément.",
+        "claimStatus": "established",
+        "sourceRefs": ["warsame-somalia-opm-2026"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SOMALI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "warsame-somalia-opm-2026"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "SOM",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "warsame-somalia-opm-2026",
+      "title": "Abdullahi Bidhan Warsame — Minister of Energy and Water Resources",
+      "url": "https://cabinet.gov.so/en/cabinet/abdullahi-bidhan-warsame",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Bureau du Premier ministre de la République fédérale de Somalie, page consultée intégralement. Elle identifie Abdullahi Bidhan Warsame comme ministre en exercice. Le porteur vivant n'est pas ajouté à bearers en l'absence d'auto-identification admissible."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les dictionnaires somali-anglais de Zorc et Hashi, la grammaire somalie de Saeed et les requêtes « Warsame etymology war same » ont été examinés ; ils attestent le nom ou des lexèmes voisins, mais aucune analyse savante consultable n'établit la composition souvent répétée en ligne."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "La notice gouvernementale emploie « Somali » au sens national pour un responsable public et ne contient aucune auto-identification ethnique ; elle ne valide pas à elle seule les Somali."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "La notice ministérielle et les recherches « Warsame joking relationship/alliance » n'ont documenté aucune parenté à plaisanterie entre deux PAT_* existants."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La fonction ministérielle est individuelle et aucune source consultée n'attache à Warsame une caste ni une fonction héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Le porteur officiellement attesté est vivant ; les recherches biographiques n'ont pas fourni de porteur décédé avec une source dédiée suffisamment précise pour cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Warsame et Warsama ont été recherchés comme noms de personne, lexèmes et toponymes ; aucun homonyme distinct et sourcé n'a été établi."
+    }
+  ]
+}

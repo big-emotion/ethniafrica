@@ -2,6 +2,8 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
+import { FACETS } from "@/lib/hubs/facets";
+
 /**
  * The hub reading is the page, not a document embedded in it.
  *
@@ -21,10 +23,18 @@ import { describe, expect, it } from "vitest";
 const read = (path: string): string =>
   readFileSync(resolve(process.cwd(), path), "utf8");
 
+/**
+ * A literal rather than a derivation: there is no route→file-path helper to
+ * derive it from, and inventing one to serve a test would be the more
+ * expensive answer. The length assertion below is what keeps the list honest —
+ * a facet cannot be added without this file being opened.
+ */
 const FACET_PAGES = [
   "src/app/[lang]/atlas/peuples/page.tsx",
   "src/app/[lang]/atlas/familles/page.tsx",
   "src/app/[lang]/atlas/pays/page.tsx",
+  "src/app/[lang]/atlas/noms/page.tsx",
+  "src/app/[lang]/atlas/langues/page.tsx",
 ];
 
 describe("The facet hub reading is the page's own ground (REQ-114)", () => {
@@ -44,6 +54,13 @@ describe("The facet hub reading is the page's own ground (REQ-114)", () => {
     for (const page of FACET_PAGES) {
       expect(read(page)).not.toContain("afh-parchment");
     }
+  });
+
+  // The list above is hand-kept, so this is what stops the next facet shipping
+  // without anyone opening this file.
+  // @req REQ-114
+  it("covers every facet the registry declares", () => {
+    expect(FACET_PAGES).toHaveLength(FACETS.length);
   });
 
   /**

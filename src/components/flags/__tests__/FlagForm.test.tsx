@@ -320,13 +320,91 @@ describe("FlagForm submission and anti-bot lifecycle", () => {
 
     expect(
       await screen.findByText(
-        "Merci — vous recevrez un email quand la modération aura tranché."
+        "Merci — votre signalement est consultable ci-dessous, et son statut y sera mis à jour."
       )
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: "Consulter le signalement" })
     ).toHaveAttribute("href", "/fr/signalements/ABC123DEFG");
     expect(screen.queryByRole("button", { name: "Envoyer" })).toBeNull();
+  });
+
+  /**
+   * The address is the third optional panel. Charter §2 keeps reporting at two
+   * actions, so nothing about it may become a precondition of sending.
+   */
+  // @req REQ-012
+  it("sends a report with no address at all", async () => {
+    const { onSubmit, solve } = renderWithVerification();
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
+      target: { value: validReason() },
+    });
+    solve();
+
+    fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
+
+    await waitFor(() => expect(onSubmit).toHaveBeenCalledOnce());
+    expect(onSubmit).toHaveBeenCalledWith(
+      expect.not.objectContaining({ reporter_email: expect.anything() })
+    );
+  });
+
+  // @req REQ-012
+  it("carries the address the reader left, trimmed", async () => {
+    const { onSubmit, solve } = renderWithVerification();
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
+      target: { value: validReason() },
+    });
+    fireEvent.change(screen.getByLabelText("Votre adresse e-mail"), {
+      target: { value: "  lectrice@example.org  " },
+    });
+    solve();
+
+    fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
+
+    await waitFor(() => expect(onSubmit).toHaveBeenCalledOnce());
+    expect(vi.mocked(onSubmit).mock.calls[0][0].reporter_email).toBe(
+      "lectrice@example.org"
+    );
+  });
+
+  // @req REQ-012
+  it("refuses a malformed address rather than dropping it in silence", async () => {
+    const { onSubmit, solve } = renderWithVerification();
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
+      target: { value: validReason() },
+    });
+    fireEvent.change(screen.getByLabelText("Votre adresse e-mail"), {
+      target: { value: "pas-une-adresse" },
+    });
+    solve();
+
+    fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
+
+    expect(
+      await screen.findByText(
+        "Saisissez une adresse e-mail valide, ou laissez le champ vide."
+      )
+    ).toBeInTheDocument();
+    expect(onSubmit).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-012
+  it("promises a confirmation step only when an address was left", async () => {
+    const { solve } = renderWithVerification();
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
+      target: { value: validReason() },
+    });
+    fireEvent.change(screen.getByLabelText("Votre adresse e-mail"), {
+      target: { value: "lectrice@example.org" },
+    });
+    solve();
+
+    fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
+
+    expect(
+      await screen.findByText(/confirmez votre adresse depuis le message/i)
+    ).toBeInTheDocument();
   });
 
   // @req REQ-012

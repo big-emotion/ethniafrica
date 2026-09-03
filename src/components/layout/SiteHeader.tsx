@@ -12,6 +12,7 @@ import {
 } from "react";
 import {
   ArrowUpDown,
+  BookUser,
   ChevronDown,
   Circle,
   Crown,
@@ -21,6 +22,7 @@ import {
   HelpCircle,
   History,
   Landmark,
+  Languages,
   Link2,
   Maximize2,
   MapPin,
@@ -30,6 +32,8 @@ import {
   Scale,
   Scissors,
   Search,
+  Signature,
+  Sparkles,
   Tag,
   Tags,
   Users,
@@ -100,6 +104,15 @@ const MODULE_GLYPHS: Record<string, LucideIcon> = {
   familles: Network,
   recherche: Search,
   noms: Tag,
+  // Three modules had been reaching the fallback in silence — `anecdotes`
+  // since the bank shipped, `langues` and `patronymes` since ETNI-1801 added
+  // them. Each was wearing a blank disc beside twenty modules carrying a sign,
+  // which no test could see and no diff showed. The contract suite of the
+  // Nommer dossier now holds this map.
+  langues: Languages,
+  patronymes: BookUser,
+  nommer: Signature,
+  anecdotes: Sparkles,
   frise: History,
   "regards-colonisation": Eye,
   quiz: HelpCircle,
@@ -157,8 +170,9 @@ export function SiteHeader({
   // position, which moves for reasons the reader had no hand in, and every
   // one of those used to close the menu they had just opened — see the hook.
   // The ways out stay the ones the reader can aim at: the trigger again,
-  // Escape, or a destination in the panel.
+  // Escape, a destination in the panel, or a press on the page below.
   const barRef = useRef<HTMLElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const retracted = useHeaderReveal(barRef, openAxis !== null || trayOpen);
 
   // A panel left open would ride off the top of the screen with the bar and
@@ -193,6 +207,26 @@ export function SiteHeader({
     };
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
+  }, [openAxis]);
+
+  // Aiming at the page is the reader's own way of saying they are done with
+  // the menu. `pointerdown` rather than `click`, so the panel is out of the
+  // way before the press it covers resolves — on `click` the first press is
+  // spent dismissing and the reader has to aim twice. The focus is left
+  // where the press sends it: unlike Escape, they are not coming back to the
+  // trigger. The bar is excluded so its own trigger stays a toggle, and the
+  // panel so a destination inside it is still reachable.
+  useEffect(() => {
+    if (!openAxis) return;
+    const onPointerDown = (event: PointerEvent) => {
+      const target = event.target as Node | null;
+      if (!target) return;
+      if (barRef.current?.contains(target)) return;
+      if (panelRef.current?.contains(target)) return;
+      setOpenAxis(null);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
   }, [openAxis]);
 
   const moveAlongAxes = useCallback((from: AccessMode, step: number) => {
@@ -369,6 +403,7 @@ export function SiteHeader({
 
       {openAxis ? (
         <div
+          ref={panelRef}
           id="site-megapanel"
           data-testid="site-megapanel"
           aria-labelledby={`sh-axis-${openAxis}`}
@@ -918,5 +953,3 @@ export function SiteHeader({
     </header>
   );
 }
-
-export default SiteHeader;

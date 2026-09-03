@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_JUMA",
+  "nameMain": "Juma",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Juma",
+      "attestations": [
+        {
+          "countryId": "TZA",
+          "sourceRefs": ["tanzania-vpo-omar-juma"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Une ressource onomastique communautaire classe Juma comme prénom arabe et swahili signifiant « vendredi » ou « semaine » et relie le patronyme swahili au prénom. Faute de source académique accessible établissant cette dérivation pour les lignées tanzaniennes, l'analyse reste revendiquée et non établie.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["behind-name-juma"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SWAHILI",
+      "status": "attested",
+      "sourceRefs": ["behind-name-juma"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "TZA",
+      "status": "attested",
+      "sourceRefs": ["tanzania-vpo-omar-juma"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Omar Ali Juma, ancien vice-président de Tanzanie (1941–2001)",
+      "sourceRefs": ["tanzania-vpo-omar-juma"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "behind-name-juma",
+      "title": "Meaning, origin and history of the name Juma",
+      "url": "https://www.behindthename.com/name/juma",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Ressource onomastique communautaire consultée intégralement. Elle donne Juma comme nom arabe, pachto et swahili, le rattache à « vendredi » ou « semaine » et indique un patronyme descendant en swahili. Cette source faible est conservée à son niveau « unverified »."
+    },
+    {
+      "sourceKey": "tanzania-vpo-omar-juma",
+      "title": "Wasifu — Dkt. Omar Ali Juma",
+      "url": "https://www.vpo.go.tz/vpos/vice-president-2",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Biographie officielle de l'Office du vice-président de Tanzanie consultée intégralement. Elle donne les dates de naissance et de décès d'Omar Ali Juma ainsi que son mandat de vice-président de 1995 à 2001 ; elle ne traite pas de l'étymologie du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Juma », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la fiche communautaire Behind the Name et la biographie officielle d'Omar Ali Juma n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Juma », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la fiche communautaire Behind the Name et la biographie officielle d'Omar Ali Juma n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Juma », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la fiche communautaire Behind the Name et la biographie officielle d'Omar Ali Juma n'ont pas établi de lignée homonyme d'origine distincte."
+    }
+  ]
+}

@@ -15,10 +15,16 @@
  *    demographic notoriety, in deciles, *inside the scoped pool* — which is why
  *    `QuizPeopleFixture` now carries `totalPopulation`.
  *
- * No per-people scope. None of the 621 peoples reaches eight distinct
- * questions (five at most), and scoping to a people's near pool — "this people
- * and its neighbours" — would build the hardest session the corpus can produce
- * with no ladder at all, which is the opposite of a track.
+ * No per-people scope — and not for want of questions. This paragraph used to
+ * say that none of the 621 peoples reaches eight, "five at most". Measured
+ * 2026-09-01: 409 of them reach eight and the maximum is twelve. The corpus
+ * can pay for a per-people track, so that is not the reason to refuse one.
+ *
+ * The ladder is. `bandSubjectsByPopulation` bands relative to the *scoped
+ * pool*, so a pool of one subject has one band: eight rounds on one people, in
+ * no order, which is a pile rather than a track. The same objection retires the
+ * near-pool variant — "this people and its neighbours" would build the hardest
+ * session the corpus can produce and still have nothing to climb.
  */
 
 /**

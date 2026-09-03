@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. La filiation à un ancêtre nommé Darood est une tradition rapportée, non une étymologie linguistique démontrée."
+  },
+  "id": "PAT_DAROD",
+  "nameMain": "Darod",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Darod",
+      "attestations": [
+        {
+          "countryId": "SOM",
+          "sourceRefs": ["afrik-candidate-queue", "darod-irb-1993"]
+        }
+      ]
+    },
+    {
+      "spelling": "Daarood",
+      "attestations": [
+        {
+          "countryId": "SOM",
+          "sourceRefs": ["afrik-candidate-queue", "darod-irb-1993"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une synthèse de la Commission de l'immigration et du statut de réfugié du Canada rapporte que le clan Darod fait remonter sa filiation à un ancêtre arabe appelé Sheikh Darood, qui aurait épousé la fille d'un patriarche somali. Cette généalogie est présentée comme une tradition clanique alléguée, non comme un fait historique établi.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["darod-irb-1993"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SOMALI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "darod-irb-1993"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "SOM",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "darod-irb-1993"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "darod-irb-1993",
+      "title": "Information on the Darod clan, its founder and subclans including the Marehan, Majerteen and Ogadeni",
+      "url": "https://www.ecoi.net/de/dokument/1108313.html",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Commission de l'immigration et du statut de réfugié du Canada, réponse SOM14566, 1er juillet 1993, reproduite par ecoi.net. La réponse a été lue intégralement : elle rapporte, avec les précautions « traces descent » et « allegedly », la généalogie de Sheikh Darood et cite ses sources secondaires. Elle ne propose aucune analyse linguistique du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "La réponse SOM14566, ses références à Lewis et Laitin-Samatar, ainsi que les requêtes « Darod/Daarood name etymology » et « Sheikh Darood genealogy » ont été examinées ; aucune étymologie linguistique consacrée à Darod n'a été trouvée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "La réponse SOM14566 et les recherches « Darod joking relationship/alliance » ont été examinées ; elles décrivent des sous-clans et une généalogie, mais aucun couple de parenté à plaisanterie entre deux PAT_* existants."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La réponse SOM14566 et les études de structure clanique signalées dans sa bibliographie ont été recherchées ; aucune caste ni fonction sociale héréditaire n'est attachée au nom Darod."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques « Darod/Daarood person » ont surtout renvoyé à l'ancêtre revendiqué et à l'affiliation clanique ; aucun porteur décédé pour lequel Darod soit clairement un nom personnel n'a été trouvé."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les graphies Darod et Daarood ont été recherchées comme nom de clan, nom individuel et toponyme ; la documentation consultée n'a pas permis d'isoler un homonyme distinct répondant au modèle du corpus."
+    }
+  ]
+}

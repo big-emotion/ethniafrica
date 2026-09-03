@@ -176,5 +176,3 @@ export function EventTimelineMarkers({
     </div>
   );
 }
-
-export default EventTimelineMarkers;

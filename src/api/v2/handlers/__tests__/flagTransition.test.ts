@@ -41,6 +41,7 @@ function makeDependencies() {
     }),
     writeAuditLog: vi.fn().mockResolvedValue(undefined),
     getContributorEmail: vi.fn().mockResolvedValue(null),
+    getVerifiedReporterEmail: vi.fn().mockResolvedValue(null),
     sendFlagResolutionEmail: vi.fn().mockResolvedValue(undefined),
   };
 }
@@ -224,17 +225,51 @@ describe("handleFlagTransition", () => {
         target_type: "people",
         target_id: "PPL_YORUBA",
       },
-      { id: "user-1", email: "reader@example.org" }
+      { email: "reader@example.org" }
     );
   });
 
   /**
-   * No contributor_id means either an anonymous report or an erased account
-   * (Story 4.4) — either way there is no address to resolve, so the lookup
-   * is skipped rather than called with an empty id.
+   * An accountless reporter who left an address and followed the link is owed
+   * the same message. This is what §6 of the moderation charter asked for and
+   * could not have while no address was ever collected.
    */
   // @req REQ-015
-  it("skips the email lookup when the flag carries no contributor", async () => {
+  it("notifies an accountless reporter who verified their address", async () => {
+    const dependencies = makeDependencies();
+    dependencies.transitionFlag.mockResolvedValue({
+      ok: true,
+      flag: { ...acceptedFlag, contributor_id: null },
+      previousStatus: "under_review",
+    });
+    dependencies.getVerifiedReporterEmail.mockResolvedValue(
+      "lectrice@example.org"
+    );
+
+    await handleFlagTransition(
+      "flag-1",
+      { status: "accepted" },
+      { accessToken: "mod-token" },
+      dependencies
+    );
+
+    expect(dependencies.getContributorEmail).not.toHaveBeenCalled();
+    expect(dependencies.getVerifiedReporterEmail).toHaveBeenCalledWith(
+      "flag-1"
+    );
+    expect(dependencies.sendFlagResolutionEmail).toHaveBeenCalledWith(
+      expect.objectContaining({ status: "accepted" }),
+      { email: "lectrice@example.org" }
+    );
+  });
+
+  /**
+   * No contributor and no proven address: there is nobody to write to. An
+   * address left and never confirmed is deliberately not used — it may belong
+   * to someone who never reported anything.
+   */
+  // @req REQ-015
+  it("writes to nobody when the report carries no reachable address", async () => {
     const dependencies = makeDependencies();
     dependencies.transitionFlag.mockResolvedValue({
       ok: true,

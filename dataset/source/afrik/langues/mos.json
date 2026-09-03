@@ -15,14 +15,22 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": [
+      "Ouapadoupou",
+      "Saremdé",
+      "Taolendé",
+      "Yaadré",
+      "Yaande",
+      "Yana {Mossi}",
+      "Zaore"
+    ],
     "vitalityStatus": null,
     "sources": [
       {
-        "title": "Glottolog 5.3",
+        "title": "Glottolog 5.3 — Mossi (moss1236)",
         "url": "https://glottolog.org/resource/languoid/id/moss1236",
         "tier": "official",
-        "notes": "Glottolog name: Mossi; classification includes Gur."
+        "notes": "Glottolog name: Mossi; classification includes Gur. Les dialectes listés sont les sous-languoids que Glottolog rattache à moss1236, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }

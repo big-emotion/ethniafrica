@@ -63,7 +63,7 @@ const TEST_PATH = /(^|[\\/])(__tests__)[\\/]|\.(test|spec)\.[tj]sx?$/;
 const ENV_FILE = ".env.example";
 
 /** Supplied by the runtime, never by us. */
-const ALWAYS_DEFINED = new Set(["NODE_ENV", "CI", "VERCEL_URL"]);
+const ALWAYS_DEFINED = new Set(["NODE_ENV", "CI", "VERCEL", "VERCEL_URL"]);
 
 /**
  * Documented on purpose while nothing reads it. Each entry needs a reason,

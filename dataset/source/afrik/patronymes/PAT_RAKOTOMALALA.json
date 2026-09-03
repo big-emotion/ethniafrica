@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité à une attestation éditoriale savante de Rakotomalala ; aucune étymologie n'a été trouvée."
+  },
+  "id": "PAT_RAKOTOMALALA",
+  "nameMain": "Rakotomalala",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Rakotomalala",
+      "attestations": [
+        { "countryId": "MDG", "sourceRefs": ["harmattan-rakotomalala-2001"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MERINA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["harmattan-rakotomalala-2001"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "harmattan-rakotomalala-2001",
+      "title": "Madagascar : les ancêtres au quotidien",
+      "url": "https://www.editions-harmattan.fr/catalogue/livre/madagascar-les-ancetres-au-quotidien/63859",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ouvrage de sciences humaines de Sophie Blanchy, Malanjaona Rakotomalala et Françoise Raison-Jourde, L'Harmattan, 2001. La notice éditoriale atteste la graphie et le contexte malgache, non l'origine du nom."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Rakotomalala etymology », « Rakotomalala onomastics », « origine nom Rakotomalala » et les catalogues académiques n'ont livré aucune étude dédiée. Des sites commerciaux donnaient des gloses contradictoires de malala sans source et ont été rejetés."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La notice de l'ouvrage atteste un auteur, pas sa filiation. Les recherches avec famille, père, fils et généalogie n'ont pas établi le mode de transmission ; « other » conserve l'indétermination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source consultée n'établit si Rakotomalala désigne historiquement un individu, un lignage ou un clan."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches Rakotomalala avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches exactes associant Rakotomalala à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; la qualité d'auteur de Malanjaona Rakotomalala est individuelle."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La notice éditoriale ne donne aucune date de décès pour Malanjaona Rakotomalala. Aucun porteur décédé directement sourcé n'a été identifié lors de la passe."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les catalogues et recherches exactes consultés n'établissent pas de lignée Rakotomalala d'origine distincte."
+    }
+  ]
+}

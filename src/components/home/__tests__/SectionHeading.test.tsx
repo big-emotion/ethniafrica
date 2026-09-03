@@ -52,6 +52,17 @@ describe("SectionHeading — the one heading unit every home section uses", () =
     expect(container.querySelector(".afh-section-heading-eyebrow")).toBeNull();
   });
 
+  // The mirror of the case above: a section whose items are its own subjects
+  // takes no group title. Forcing one on the anecdote band produced a
+  // sentence about two facts drawn at random, true of neither.
+  // @req REQ-113
+  it("omits the title when the section's items carry the headings", () => {
+    render(<SectionHeading centred eyebrow="Saviez-vous que" />);
+
+    expect(screen.getByText("Saviez-vous que")).toBeInTheDocument();
+    expect(screen.queryByRole("heading")).toBeNull();
+  });
+
   // The whole point of the unit: a section title cannot be mistaken for
   // body copy. Fraunces against Nunito Sans is the difference, and it has
   // to be asserted on the token, not on a computed style happy-dom does
@@ -101,5 +112,63 @@ describe("SectionHeading — the one heading unit every home section uses", () =
 
     expect(rule).toMatch(/color:\s*var\(--accent-ink\)/);
     expect(rule).not.toMatch(/#[0-9a-f]{3,8}/i);
+  });
+
+  // Brand charter §8.5 leaves the anecdote band with an eyebrow and no title,
+  // so the kicker is the only heading text the band has. Dressed at the 12 px
+  // it wears above a title, it sat two and a half times smaller than the body
+  // copy it governed and read as a stray caption between two articles — the
+  // reader never registered the two facts as one section.
+  // @req REQ-113
+  it("marks a unit that files a section with no title", () => {
+    const { container } = render(<SectionHeading eyebrow="Saviez-vous que" />);
+
+    expect(
+      container.querySelector(".afh-section-heading.is-untitled")
+    ).not.toBeNull();
+  });
+
+  // @req REQ-113
+  it("leaves a unit that has a title to carry the section unmarked", () => {
+    const { container } = render(
+      <SectionHeading eyebrow="Le jeu du mois" title="Un jeu, mis en avant." />
+    );
+
+    expect(container.querySelector(".is-untitled")).toBeNull();
+  });
+
+  // @req REQ-113
+  it("raises the lone eyebrow to the small role so it carries the section", () => {
+    const rule = STYLESHEET.match(
+      /\.afh-section-heading\.is-untitled\s+\.afh-section-heading-eyebrow\s*{[^}]*}/
+    )?.[0];
+
+    expect(rule).toMatch(/font-size:\s*var\(--afh-text-small\)/);
+  });
+
+  // The guard on the rule above. §8.5 forbids the eyebrow inheriting the
+  // title's rank, and typography-charter §3 calls a kicker painted at a
+  // heading role a lie rather than a divergence — a later "make it bigger"
+  // must not walk this token up the scale until the band grows a title it
+  // is not allowed to have.
+  // @req REQ-113
+  it("never paints the lone eyebrow at a heading role", () => {
+    const rule = STYLESHEET.match(
+      /\.afh-section-heading\.is-untitled\s+\.afh-section-heading-eyebrow\s*{[^}]*}/
+    )?.[0];
+
+    expect(rule).not.toMatch(/--afh-text-(hero|h1|h2|h3|lead)/);
+  });
+
+  // The size moves; the dress does not. Overriding the size in a second rule
+  // is only safe while the base rule still supplies uppercase, weight and
+  // tracking — take those away and the caller has written a caption.
+  // @req REQ-113
+  it("keeps the lone eyebrow in the eyebrow dress it overrides the size of", () => {
+    const rule = STYLESHEET.match(
+      /\.afh-section-heading\.is-untitled\s+\.afh-section-heading-eyebrow\s*{[^}]*}/
+    )?.[0];
+
+    expect(rule).not.toMatch(/text-transform|letter-spacing|font-family/);
   });
 });

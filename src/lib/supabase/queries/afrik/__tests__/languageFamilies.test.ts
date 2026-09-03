@@ -8,8 +8,6 @@ import {
   getAllAfrikLanguageFamilies,
   getAfrikLanguageFamilyById,
   getAfrikLanguageFamilyRoster,
-  searchAfrikLanguageFamilies,
-  searchAfrikLanguageFamiliesByText,
   countAfrikLanguageFamilies,
 } from "../languageFamilies";
 import { createServerClient } from "../../../server";
@@ -180,59 +178,6 @@ describe("AFRIK Language Families Queries", () => {
       const result = await getAfrikLanguageFamilyById("FLG_NONEXISTENT");
 
       expect(result).toBeNull();
-    });
-  });
-
-  describe("searchAfrikLanguageFamilies", () => {
-    // @req REQ-019
-    it("fetches every language family, leaving the accent-insensitive filter to the caller", async () => {
-      const mockData = [
-        {
-          id: "FLG_BANTU",
-          name_fr: "Bantou",
-          name_en: "Bantu",
-          content: {},
-        },
-      ];
-
-      mockSupabase.order.mockResolvedValue({ data: mockData, error: null });
-
-      const result = await searchAfrikLanguageFamilies();
-
-      expect(result).toHaveLength(1);
-      expect(result[0].id).toBe("FLG_BANTU");
-    });
-  });
-
-  describe("searchAfrikLanguageFamiliesByText", () => {
-    // @req REQ-002
-    it("queries search_vector via websearch full-text search and returns ids", async () => {
-      mockSupabase.textSearch.mockResolvedValue({
-        data: [{ id: "FLG_KROU" }],
-        error: null,
-      });
-
-      const result = await searchAfrikLanguageFamiliesByText("administrateurs");
-
-      expect(mockSupabase.select).toHaveBeenCalledWith("id");
-      expect(mockSupabase.textSearch).toHaveBeenCalledWith(
-        "search_vector",
-        "administrateurs",
-        { type: "websearch", config: "french" }
-      );
-      expect(result).toEqual(["FLG_KROU"]);
-    });
-
-    // @req REQ-002
-    it("surfaces a query failure instead of answering with an empty list", async () => {
-      mockSupabase.textSearch.mockResolvedValue({
-        data: null,
-        error: { message: "boom" },
-      });
-
-      await expect(
-        searchAfrikLanguageFamiliesByText("administrateurs")
-      ).rejects.toMatchObject({ message: "boom" });
     });
   });
 });

@@ -25,6 +25,14 @@ allowed to claim.
 simplification, not "just for the hover state", not in the non-WebGL fallback.
 If a future feature needs a people-shaped polygon, it needs a source first.
 
+**And it is stated once, next to the mark.** The globe's legend — "Aucune
+frontière ici. Une présence, et sa densité." — is where the reader is told why
+the field has no edge, because that is where the field is. The people fiche's
+`h1` used to repeat it as a predicate, "X, un peuple sans bord", which held for
+all 924 fiches and so said nothing about any of them; a family fiche's
+predicate earns its place only because it falls away when that fiche declares
+its distribution. A rule true of every subject is a legend, not a title.
+
 **An encoding is owned by the entity it describes.** The three rows above bind
 a mark's shape to what the _data_ claims, and an encoding borrowed by a scene
 that describes something else stops being readable. The radial field is the
@@ -93,11 +101,25 @@ was rendered under.
 
 **Three surfaces carry three different mappings, all deliberate:**
 
-| Surface      | People | Country | Family   | Source of truth                        |
-| ------------ | ------ | ------- | -------- | -------------------------------------- |
-| Home modules | teal   | ocre    | terre    | `src/lib/hubs/moduleRegistry.ts`       |
-| Facet        | terre  | ocre    | teal     | `lib/hubs/directoryAccent.ts`          |
-| **Fiche**    | ocre   | teal    | **perv** | `FicheSequence.ACCENT_CLASS_BY_ENTITY` |
+| Surface      | People | Country | Family   | Language | Name | Source of truth                        |
+| ------------ | ------ | ------- | -------- | -------- | ---- | -------------------------------------- |
+| Home modules | teal   | ocre    | terre    | —        | —    | `src/lib/hubs/moduleRegistry.ts`       |
+| Facet        | terre  | ocre    | teal     | —        | —    | `lib/hubs/directoryAccent.ts`          |
+| **Fiche**    | ocre   | teal    | **perv** | perv     | ocre | `FicheSequence.ACCENT_CLASS_BY_ENTITY` |
+
+The last two columns were missing from this table for as long as the two
+classes had fiches, which is part of how they drifted out of the template
+without anyone noticing. Neither opens a fifth hue: the four categorical
+accents are CVD-validated as a set, and terre is off-limits for a fiche scope
+for the reason below. A **language** reads under its family's pervenche — it
+sits directly beneath a family in the hierarchy — and a **name** under ocre,
+because a patronyme is a naming fact about a people.
+
+Both still get their own selector, `.afh-accent-language` and
+`.afh-accent-name`, rather than being literal aliases of `.afh-accent-perv`
+and `.afh-accent-ocre`. Two entity types resolving to one selector make "no
+foreign accent on this page" unable to tell a fiche's own root from another
+entity's, since both match the identical class.
 
 The Home-modules row is **positional, not an entity mapping**: `accentForModule`
 walks `ACCENT_CYCLE` by declaration index, so a module's hue is where it sits in
@@ -213,6 +235,31 @@ generated from it, never hand-listed.
   viennent-ils ». _Regards : colonisation et résistances_ is `static`, so no
   row count could ever have spoken for it: its readiness was never measurable,
   only declarable, and that is precisely the gap this field closes.
+
+- **A source that does not answer is not an empty source.** The measured half
+  has three states, not two: the corpus holds something, it holds nothing, or
+  nothing came back. Only the second withholds the invitation — a query that
+  errored or timed out leaves the module offered.
+
+  The asymmetry is the argument. An empty list costs a reader one click; a
+  door that is not there costs them the page, and costs it silently, since
+  nothing on the surface says a database was ever consulted. Measured
+  2026-09-02: 790 published peoples sat behind **Bientôt** because the probe
+  asked PostgREST for an exact count over `afrik_peoples` — a whole-relation
+  question against 38 MB of TOASTed JSONB — which blew the three-second `anon`
+  statement timeout, and the resolver read `error` and `count: 0` as the same
+  answer. The corpus had been loaded the whole time.
+
+  So the question put to the database is now `exists`, not `count`: liveness
+  never needed a total, and asking for one made the answer time grow with the
+  corpus — the largest fiche set failing first, which is the opposite of what
+  a health probe should do. `hub_module_corpus_presence` (migration 080)
+  answers for every source in one round trip.
+
+  Fail-open is scoped to the measured half. A module declared `draft` stays
+  inert through any outage, or an unreachable database could publish work its
+  editor called unready — which would invert the rule above rather than
+  soften it.
 
 - **A page states one availability, not one per surface.** A navigation entry
   and any scene advertising it are two assertions about the same module; when

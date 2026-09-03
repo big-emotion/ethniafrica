@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon docs/runbooks/anthroponym-fiche-research.md. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
+  },
+  "id": "PAT_JULIE",
+  "nameMain": "Julie",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Julie",
+      "attestations": [
+        {
+          "countryId": "SYC",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "elective",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Emily O'Gorman, s'appuyant sur les recherches patrimoniales seychelloises et Benedict & Benedict, cite Julie parmi les patronymes seychellois courants qui proviennent de prénoms, souvent de prénoms féminins. La source établit le mécanisme onomastique, sans identifier une Julie fondatrice unique.",
+        "claimStatus": "established",
+        "sourceRefs": ["ogorman-2019-seychelles-surnames"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_CREOLE_SEYCHELLES",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "SYC",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "seychelles-civil-status-act-2022",
+      "title": "Civil Status Act, Chapter 34 — section 39B, Surname of child",
+      "url": "https://seylii.org/akn/sc/act/1883/4/eng@2022-11-01/source",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Version consolidée au 1er novembre 2022. La section 39B permet, lorsque les parents portent des noms différents et sont tous deux inscrits, de choisir le nom de la mère, celui du père ou les deux. Utilisé pour qualifier la transmission d'élective, non pour une étymologie."
+    },
+    {
+      "sourceKey": "ogorman-2019-seychelles-surnames",
+      "title": "Creole categories: Difference and diversity in contemporary Seychelles",
+      "url": "https://era.ed.ac.uk/bitstream/handle/1842/36098/O%27Gorman2019.pdf?sequence=1",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Emily O'Gorman, thèse de doctorat, University of Edinburgh, 2019, p. 126-127. L'autrice décrit le projet de recherche du National Heritage Division et cite Julie parmi les noms seychellois issus de prénoms féminins."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "les résultats exacts « Julie », le catalogue des Seychelles National Archives, le Family Tree Project et les recherches patrimoniales décrites par O'Gorman, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Julie à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "les résultats exacts « Julie », le catalogue des Seychelles National Archives, le Family Tree Project et les recherches patrimoniales décrites par O'Gorman, complétés par « caste », « statut héréditaire », « métier » et « social function », n'ont établi aucune fonction sociale héréditaire propre aux porteurs de Julie. Une étymologie professionnelle éventuelle n'est pas assimilée à un statut contemporain."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "les résultats exacts « Julie », le catalogue des Seychelles National Archives, le Family Tree Project et les recherches patrimoniales décrites par O'Gorman n'ont pas fourni, dans cette passe, un porteur à la fois décédé, clairement rattaché au patronyme étudié et documenté par une source distincte de la simple homonymie. Les personnes vivantes rencontrées dans les sources officielles ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "les résultats exacts « Julie », le catalogue des Seychelles National Archives, le Family Tree Project et les recherches patrimoniales décrites par O'Gorman n'ont pas permis d'isoler deux lignées homonymes dotées d'origines distinctes et documentées. Lorsque le dictionnaire propose plusieurs formations possibles, elles restent des hypothèses linguistiques et non des lignées séparées."
+    }
+  ]
+}

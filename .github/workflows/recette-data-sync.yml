@@ -1,0 +1,116 @@
+name: Recette AFRIK Data Sync
+
+# The corpus lives as JSON in git and the database is a projection of it, so a
+# merge is only half a publication: something has to load the fiches. For
+# production that something is production-data-sync.yml, chained to the deploy.
+# For recette there was nothing at all — of every workflow in this repository,
+# the only two calls to the loader targeted production — so merging a fiche into
+# `recette` left the recette database on its previous contents indefinitely.
+#
+# The symptom never looked like a missing workflow. It reached the contributor as
+# "I merged my fiche and the site does not show it", and the ten Afro-descendant
+# fiches merged on 31 August 2026 sat in git and absent from recette for days.
+#
+# Unlike migrate-recette.yml, which applies schema migrations and skips loudly
+# when its credential is missing, this job fails on an absent credential: a
+# skipped load is indistinguishable from a successful one on the board, and that
+# indistinguishability is the defect being closed.
+on:
+  push:
+    branches: [recette]
+    paths:
+      - "dataset/source/afrik/**"
+      - "scripts/migrateAfrikToDatabase.ts"
+      - "src/lib/afrik/loaders/**"
+      - ".github/workflows/recette-data-sync.yml"
+  workflow_dispatch:
+
+# Two merges landing close together would otherwise upsert the same rows from two
+# runners in an order neither controls. Queue them; never cancel a partial load.
+concurrency:
+  group: recette-afrik-data-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    # The apply step walks the whole corpus and has never once run to completion:
+    # 20 minutes killed it mid-patronymes, and 45 killed it again 45m42s in. The
+    # database is the only progress signal the step gives — it writes nothing to
+    # stdout until it returns — and it shows patronymes finishing ~15 minutes in,
+    # with the remaining half hour spent in loadPeopleAppellations,
+    # loadNameRecords and loadRelations. `name_records` in recette still carries
+    # a timestamp from a run that never reached it.
+    #
+    # 90 minutes is twice the longest measured run, not a measured figure itself:
+    # nothing has yet observed this step finish. The stages after patronymes are
+    # slow enough (~3700 name records against ~30 minutes) to suggest per-row
+    # round trips, which is the actual fix — this budget only stops a partial
+    # load from being published as a cancelled run.
+    timeout-minutes: 90
+    environment: recette
+    env:
+      # Recette's own credentials — the pair the rest of CI uses. The production
+      # project must not be reachable from this file: pointing a load at the wrong
+      # project is precisely the defect production-data-sync.yml was repaired for.
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+    steps:
+      - name: Check out the merged commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      # This workflow only ever runs on a push to `recette` or a manual dispatch,
+      # never from a fork, so secrets are always readable here. An empty value is
+      # a misconfigured repository and must stop the run.
+      # No apostrophe in either message: inside `${VAR:?word}` bash re-reads the
+      # quoting of `word` even within double quotes, so one would open a string
+      # that is never closed and kill the step with `exit 2`. `check:workflow-shell`
+      # now catches that, but the messages stay readable rather than escaped.
+      - name: Require the recette project credentials
+        run: |
+          : "${NEXT_PUBLIC_SUPABASE_URL:?NEXT_PUBLIC_SUPABASE_URL is not set — the AFRIK corpus cannot be loaded into recette. Set it to the Supabase project backing recette.}"
+          : "${SUPABASE_SERVICE_ROLE_KEY:?SUPABASE_SERVICE_ROLE_KEY is not set — it must be the service-role key of the recette Supabase project.}"
+
+      # A corpus that fails its own integrity gate must not reach any database.
+      # URL reachability is left off: it is a network check on ~5 000 sources and
+      # belongs to data-integrity.yml, not to a load.
+      - name: Validate canonical AFRIK sources
+        env:
+          CHECK_SOURCE_URLS: "false"
+        run: npx tsx scripts/validateAfrikData.ts
+
+      # Loading a corpus into a schema that is behind it writes the old shape and
+      # reports success — the same silent-green failure this workflow exists to
+      # close, one layer down. migrate-recette.yml fires on the same push, so a
+      # merge carrying both a migration and a fiche runs the two concurrently;
+      # this step makes the ordering explicit instead of a race.
+      - name: Refuse to load ahead of a pending migration
+        run: npm run check:migration-state
+
+      # `--conditions=react-server` is load-bearing rather than stylistic. The
+      # loader reaches src/lib/supabase/admin.ts, which imports `server-only`;
+      # that package resolves to an empty module under the react-server condition
+      # and to one that throws under any other. Without the flag the load dies on
+      # "This module cannot be imported from a Client Component module" before it
+      # reads a single fiche.
+      - name: Preview recette synchronization
+        run: npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=recette
+
+      # Never `--prune` here. Removing rows the corpus no longer declares is an
+      # opt-in a human takes after reading the preview above, not something a
+      # merge decides on its own.
+      - name: Apply and verify recette synchronization
+        run: npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=recette --apply

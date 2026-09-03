@@ -72,7 +72,66 @@ describe("getQuizScopesHandler", () => {
       labelFr: "Khoïsan",
       activeQuestionCount: 4,
       playable: false,
+      playableThemeIds: [],
     });
+  });
+
+  /**
+   * The picker offers a theme on a track only where the track can fill a
+   * session of it. Presence, not a number: a theme the country cannot pay for
+   * is absent rather than greyed.
+   */
+  // @req REQ-121
+  it("names the themes a track can fill and omits the ones it cannot", async () => {
+    getQuizScopeCatalogueMock.mockResolvedValue({
+      countries: [
+        {
+          id: "GHA",
+          labelFr: "Ghana",
+          activeQuestionCount: 120,
+          questionCountByTheme: { croyances: 9, noms: 3, migrations: 8 },
+        },
+      ],
+      families: [],
+      themes: [],
+      totalActiveQuestionCount: 2504,
+    });
+
+    const envelope = await getQuizScopesHandler();
+
+    // Ordered by QUIZ_THEME_IDS, not by count — the picker reads as a table of
+    // contents and must not reshuffle as the bank grows.
+    expect(envelope.data.countries[0].playableThemeIds).toEqual([
+      "croyances",
+      "migrations",
+    ]);
+  });
+
+  /**
+   * The picker stops rendering this field in the same lot that adds
+   * `playableThemeIds`, which is exactly when a later cleanup deletes it. It is
+   * on a public contract; `openapi:diff` would catch the removal, this catches
+   * the intent sooner.
+   */
+  // @req REQ-103
+  it("keeps activeQuestionCount on the wire", async () => {
+    getQuizScopeCatalogueMock.mockResolvedValue({
+      countries: [
+        {
+          id: "GHA",
+          labelFr: "Ghana",
+          activeQuestionCount: 120,
+          questionCountByTheme: {},
+        },
+      ],
+      families: [],
+      themes: [],
+      totalActiveQuestionCount: 2504,
+    });
+
+    const envelope = await getQuizScopesHandler();
+
+    expect(envelope.data.countries[0].activeQuestionCount).toBe(120);
   });
 
   // @req REQ-103
@@ -147,9 +206,59 @@ describe("composeQuizSessionHandler", () => {
     expect(composeQuizSessionMock).not.toHaveBeenCalled();
   });
 
+  /**
+   * The defect this refusal exists for: « Djibouti + Migrations » held three
+   * questions and dealt a three-round session with the ladder's top rung
+   * missing, announcing itself as a track the whole way.
+   */
+  // @req REQ-103
+  it("refuses a pair the bank can only half-fill", async () => {
+    composeQuizSessionMock.mockResolvedValue({
+      poolSize: 3,
+      questions: [{ id: "q-1" }, { id: "q-2" }, { id: "q-3" }],
+    });
+
+    const result = await composeQuizSessionHandler({
+      pays: "DJI",
+      theme: "migrations",
+      count: 8,
+    });
+
+    expect(result.ok).toBe(false);
+    if (result.ok === false) {
+      expect(result.code).toBe("SEMANTIC_ERROR");
+    }
+  });
+
+  // @req REQ-103
+  it("still answers a pool of exactly the session it was asked for", async () => {
+    composeQuizSessionMock.mockResolvedValue({ poolSize: 8, questions: [] });
+
+    const result = await composeQuizSessionHandler({ count: 8 });
+
+    expect(result.ok).toBe(true);
+  });
+
+  /**
+   * A pool the serve-time freshness gate emptied is not a pair the corpus never
+   * held, so it keeps its 200 and the client's calm empty state. Measuring the
+   * refusal against `poolSize` rather than against the dealt session is the
+   * whole point of carrying both numbers.
+   */
+  // @req REQ-103
+  it("does not refuse a fat pool the freshness gate emptied", async () => {
+    composeQuizSessionMock.mockResolvedValue({ poolSize: 40, questions: [] });
+
+    const result = await composeQuizSessionHandler({ count: 8 });
+
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    expect(result.envelope.data.questions).toEqual([]);
+  });
+
   // @req REQ-103
   it("names the whole-corpus tracks without asking the corpus for a label", async () => {
-    composeQuizSessionMock.mockResolvedValue([]);
+    composeQuizSessionMock.mockResolvedValue({ poolSize: 0, questions: [] });
 
     const result = await composeQuizSessionHandler({ count: 8 });
 
@@ -165,22 +274,25 @@ describe("composeQuizSessionHandler", () => {
 
   // @req REQ-103
   it("enriches questions with source refs and entity links", async () => {
-    composeQuizSessionMock.mockResolvedValue([
-      {
-        id: "q-1",
-        templateId: "T1",
-        difficulty: 1,
-        entityType: "people",
-        entityId: "PPL_A",
-        fieldPath: "languageFamilyId",
-        promptFr: "Quelle famille linguistique ?",
-        optionsFr: ["Bantu", "Nilotic", "Chadic", "Cushitic"],
-        correctOption: 0,
-        explanationFr: "Explication",
-        assertionId: "assertion-1",
-        sourceIds: ["source-1", "source-2"],
-      },
-    ]);
+    composeQuizSessionMock.mockResolvedValue({
+      poolSize: 8,
+      questions: [
+        {
+          id: "q-1",
+          templateId: "T1",
+          difficulty: 1,
+          entityType: "people",
+          entityId: "PPL_A",
+          fieldPath: "languageFamilyId",
+          promptFr: "Quelle famille linguistique ?",
+          optionsFr: ["Bantu", "Nilotic", "Chadic", "Cushitic"],
+          correctOption: 0,
+          explanationFr: "Explication",
+          assertionId: "assertion-1",
+          sourceIds: ["source-1", "source-2"],
+        },
+      ],
+    });
 
     const sourcesQuery = buildInQuery({
       data: [
@@ -252,7 +364,7 @@ describe("composeQuizSessionHandler", () => {
 
   // @req REQ-103
   it("returns an empty question list without querying sources or peoples", async () => {
-    composeQuizSessionMock.mockResolvedValue([]);
+    composeQuizSessionMock.mockResolvedValue({ poolSize: 0, questions: [] });
 
     const result = await composeQuizSessionHandler({
       pays: "GHA",
@@ -267,22 +379,25 @@ describe("composeQuizSessionHandler", () => {
 
   // @req REQ-103
   it("falls back to a null entity link when the people row cannot be resolved", async () => {
-    composeQuizSessionMock.mockResolvedValue([
-      {
-        id: "q-1",
-        templateId: "T1",
-        difficulty: 1,
-        entityType: "people",
-        entityId: "PPL_MISSING",
-        fieldPath: "languageFamilyId",
-        promptFr: "?",
-        optionsFr: ["a", "b", "c", "d"],
-        correctOption: 0,
-        explanationFr: "Explication",
-        assertionId: "assertion-1",
-        sourceIds: [],
-      },
-    ]);
+    composeQuizSessionMock.mockResolvedValue({
+      poolSize: 8,
+      questions: [
+        {
+          id: "q-1",
+          templateId: "T1",
+          difficulty: 1,
+          entityType: "people",
+          entityId: "PPL_MISSING",
+          fieldPath: "languageFamilyId",
+          promptFr: "?",
+          optionsFr: ["a", "b", "c", "d"],
+          correctOption: 0,
+          explanationFr: "Explication",
+          assertionId: "assertion-1",
+          sourceIds: [],
+        },
+      ],
+    });
 
     fromMock.mockImplementation(() => buildInQuery({ data: [], error: null }));
 

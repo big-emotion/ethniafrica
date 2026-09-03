@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur fondé sur les sources référencées ; chaque incertitude restante est déclarée dans gaps et ne doit pas être comblée sans source dédiée."
+  },
+  "id": "PAT_OCEN",
+  "nameMain": "Ocen",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Ocen",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["agea-eton-lango-naming-2026"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Ocen est documenté dans le système lango comme le nom masculin du second jumeau ; Acen est la forme féminine correspondante, non une simple variante graphique du même nom.",
+        "claimStatus": "established",
+        "sourceRefs": ["agea-eton-lango-naming-2026"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_LANGO",
+      "status": "attested",
+      "sourceRefs": ["agea-eton-lango-naming-2026"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["agea-eton-lango-naming-2026"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "agea-eton-lango-naming-2026",
+      "title": "Naming as Cultural Epistemology: Knowledge, Belief, and Identity in Lango Personal Naming",
+      "url": "https://www.researchgate.net/publication/405133463_Naming_as_Cultural_Epistemology_Knowledge_Belief_and_Identity_in_Lango_Personal_Naming",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jacob Godfrey Agea et Marus Eton, East African Journal of Traditions, Culture and Religion 9(1), 2026, DOI 10.37284/eajtcr.9.1.5010. L’étude de 131 noms recueillis auprès de 78 détenteurs de savoir donne Ocen/Acen pour le second jumeau et Opio/Apio pour le premier."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Ocen tradition orale », « Ocen griot » et « Ocen oral history », ainsi que l’enquête de terrain d’Agea et Eton sur 131 noms lango et les recherches par graphie exacte dans ses tableaux, n’ont livré ni détenteur nommé ni transcription attribuable ; aucune tradition orale n’est ajoutée."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les recherches « Ocen etymology » et « Ocen meaning », complétées par l’enquête de terrain d’Agea et Eton sur 131 noms lango et les recherches par graphie exacte dans ses tableaux, n’ont livré aucune analyse linguistique publiée qui permette une reconstruction prudente."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Ocen joking kinship », « Ocen name alliance » et « Ocen clan pact », ainsi que l’enquête de terrain d’Agea et Eton sur 131 noms lango et les recherches par graphie exacte dans ses tableaux, n’ont identifié aucun pacte nommé avec un autre PAT_* existant."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Ocen caste », « Ocen occupational group » ainsi que les passages sociaux consultés dans l’enquête de terrain d’Agea et Eton sur 131 noms lango et les recherches par graphie exacte dans ses tableaux, n’ont établi aucune fonction héréditaire propre à ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques et nécrologiques sur « Ocen » dans les catalogues universitaires et institutionnels, complétées par l’enquête de terrain d’Agea et Eton sur 131 noms lango et les recherches par graphie exacte dans ses tableaux, n’ont pas permis de vérifier un porteur décédé avec une identité suffisamment précise ; les personnes vivantes repérées ne sont pas ajoutées sans auto-identification."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches sur la graphie exacte « Ocen » dans les index onomastiques et l’enquête de terrain d’Agea et Eton sur 131 noms lango et les recherches par graphie exacte dans ses tableaux n’ont pas établi une seconde origine distincte disposant de sa propre provenance."
+    }
+  ]
+}

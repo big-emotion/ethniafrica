@@ -27,9 +27,7 @@ const publishedRevisionSchema = revisionSchema
   });
 
 type PublishRevisionFailureCode =
-  | "invalid_draft_id"
-  | "invalid_reason"
-  | "publication_failed";
+  "invalid_draft_id" | "invalid_reason" | "publication_failed";
 
 type PublicationRoutes = {
   liveUrl: string;

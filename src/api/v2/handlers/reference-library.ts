@@ -35,7 +35,7 @@ const sourceKinds = [
 const locatorTypes = ["page", "folio", "section", "timestamp"] as const;
 const assetKinds = ["scan", "ocr"] as const;
 const requiredString = z.string().trim().min(1);
-const uuid = z.string().uuid();
+const uuid = z.uuid();
 
 // @req REQ-012
 export const referenceSearchSchema = z.object({
@@ -51,9 +51,9 @@ export const referenceCreateSchema = z.object({
   publication_year: z.coerce.number().int().min(1000).max(9999),
   source_kind: z.enum(sourceKinds),
   tier: sourceTierSchema,
-  identifiers: z.record(requiredString.max(300)).default({}),
+  identifiers: z.record(z.string(), requiredString.max(300)).default({}),
   publisher: z.string().trim().max(500).nullable().optional().default(null),
-  url: z.string().trim().url().nullable().optional().default(null),
+  url: z.string().trim().pipe(z.url()).nullable().optional().default(null),
 });
 
 // @req REQ-012

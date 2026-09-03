@@ -229,5 +229,3 @@ export function MigrationDetailSheet({
     </Sheet>
   );
 }
-
-export default MigrationDetailSheet;

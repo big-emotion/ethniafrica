@@ -6,6 +6,8 @@ const fixtureCounts = {
   peoples: 4213,
   countries: 91,
   families: 37,
+  languages: 748,
+  nameForms: 3134,
   migrations: 5,
 };
 
@@ -53,9 +55,9 @@ const precedes = (first: Element, second: Element) =>
   );
 
 describe("home — what the reader meets, and in what order (REQ-113)", () => {
-  // The DOM is the phone composition: copy/search/seeds, globe, then the
-  // counters. Desktop reuses those nodes through grid areas rather than
-  // maintaining a second reading order.
+  // The DOM is the phone composition: copy/search/seeds, then the globe.
+  // Desktop reuses those nodes through grid areas rather than maintaining a
+  // second reading order.
   // @req REQ-113
   it("orders the search-first hero for mobile before enhancing it for desktop", async () => {
     const { container } = await renderHome();
@@ -66,13 +68,10 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
     // the second class. Reading order is the same whichever kind is drawn, so
     // the assertion belongs on the slot rather than on one of its outcomes.
     const visual = container.querySelector(".home-hero-visual");
-    const counts = container.querySelector(".home-hero-counts");
 
     expect(copy).not.toBeNull();
     expect(visual).not.toBeNull();
-    expect(counts).not.toBeNull();
     expect(precedes(copy!, visual!)).toBe(true);
-    expect(precedes(visual!, counts!)).toBe(true);
   });
 
   // @req REQ-113
@@ -112,34 +111,22 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
     expect(answer).toHaveTextContent(/sourc/i);
   });
 
-  // One page title, one section title, then the two fact titles. The corpus
-  // figures are values, not three headings competing with the page question.
+  // One page title, then one title per drawn fact. The corpus figures are
+  // values, not headings competing with the page question — and the band
+  // itself takes no group title, because it draws its two facts at random:
+  // any sentence written over them is true of every draw or of none.
   // @req REQ-113
-  it("keeps one h1 and gives the two facts a shared h2", async () => {
+  it("keeps one h1 and gives each drawn fact its own h2", async () => {
     await renderHome();
 
     expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
-    expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(1);
-    expect(screen.getAllByRole("heading", { level: 3 })).toHaveLength(2);
+    expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(2);
+    expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
   });
 
-  // Counts keep their definition-list semantics even when the display order
-  // puts each number above its label.
-  // @req REQ-113
-  it("presents the corpus scale as three labelled values", async () => {
-    await renderHome();
-
-    const counts = screen.getAllByRole("term")[0].closest("dl");
-    expect(counts).toHaveAttribute("aria-label", "Le corpus en chiffres");
-    expect(within(counts!).getAllByRole("term")).toHaveLength(3);
-    expect(within(counts!).getAllByRole("definition")).toHaveLength(3);
-    for (const label of ["Peuples", "Pays", "Familles linguistiques"]) {
-      expect(within(counts!).getByText(label).tagName).toBe("DT");
-    }
-  });
-
-  // The one action names the three entity types the corpus can resolve. No
-  // retired axis copy survives around it to compete for the first decision.
+  // The one action names the five entity types the corpus can resolve — the
+  // same five the headline reel turns through. No retired axis copy survives
+  // around it to compete for the first decision.
   // @req REQ-113
   it("names the searchable entity kinds without legacy entry-point rhetoric", async () => {
     const { container } = await renderHome();
@@ -149,7 +136,7 @@ describe("home — what the reader meets, and in what order (REQ-113)", () => {
     expect(container.textContent).not.toMatch(/il arrive sans rien/i);
     expect(
       screen.getByRole("combobox", {
-        name: /peuple, un pays ou une famille linguistique/i,
+        name: /peuple, une langue, un pays, une famille linguistique ou un nom/i,
       })
     ).toBeInTheDocument();
   });

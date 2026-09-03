@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_LYIMO",
+  "nameMain": "Lyimo",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Lyimo",
+      "attestations": [
+        {
+          "countryId": "TZA",
+          "sourceRefs": ["forebears-lyimo"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_CHAGA",
+      "status": "supposed",
+      "sourceRefs": ["forebears-lyimo"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "TZA",
+      "status": "attested",
+      "sourceRefs": ["forebears-lyimo"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-lyimo",
+      "title": "Lyimo Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/lyimo",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page consultée directement. Elle atteste la répartition du patronyme Lyimo, notamment en Tanzanie, et indique qu'aucune signification n'est renseignée. Forebears avertit que la fréquence géographique ne permet pas de déduire l'appartenance ethnique ; la fiche n'en tire donc aucune origine."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Lyimo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears Lyimo et les requêtes « Lyimo Chaga surname clan origin onomastics » dans les moteurs académiques et dépôts tanzaniens, n'ont livré aucune étymologie, chronique d'origine ou tradition orale attribuable à un témoin pour ce nom. Les rapprochements seulement plausibles ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web combinant « Lyimo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears Lyimo et les requêtes « Lyimo Chaga surname clan origin onomastics » dans les moteurs académiques et dépôts tanzaniens, n'ont pas établi que la catégorie provisoire « clan_name » décrive ce nom lui-même ; elle reste une hypothèse de classement."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Lyimo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears Lyimo et les requêtes « Lyimo Chaga surname clan origin onomastics » dans les moteurs académiques et dépôts tanzaniens, n'ont identifié aucune parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Lyimo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears Lyimo et les requêtes « Lyimo Chaga surname clan origin onomastics » dans les moteurs académiques et dépôts tanzaniens, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Lyimo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears Lyimo et les requêtes « Lyimo Chaga surname clan origin onomastics » dans les moteurs académiques et dépôts tanzaniens, n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Lyimo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears Lyimo et les requêtes « Lyimo Chaga surname clan origin onomastics » dans les moteurs académiques et dépôts tanzaniens, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Lyimo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Forebears Lyimo et les requêtes « Lyimo Chaga surname clan origin onomastics » dans les moteurs académiques et dépôts tanzaniens, n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

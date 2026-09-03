@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KIGOZI",
+  "nameMain": "Kigozi",
+  "nameSystem": "totemic_clan",
+  "spellings": [
+    {
+      "spelling": "Kigozi",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["ulii-nakitende-kigozi"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Un jugement de la Haute Cour de l'Ouganda nomme John Kigozi Ssebagala comme premier ministre du clan Ffumbe du royaume du Buganda. Cette pièce primaire atteste Kigozi dans un contexte institutionnel baganda, mais ne permet pas d'identifier Kigozi lui-même comme nom du clan Ffumbe ni d'en déduire une étymologie.",
+        "claimStatus": "established",
+        "sourceRefs": ["ulii-nakitende-kigozi"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BAGANDA",
+      "status": "attested",
+      "sourceRefs": ["ulii-nakitende-kigozi"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["ulii-nakitende-kigozi"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "ulii-nakitende-kigozi",
+      "title": "Nakitende & Another v Kigozi & 2 Others (2016) UGHCLD 6",
+      "url": "https://media.ulii.org/media/judgment/76991/source_file/nakitende-anor-v-kigozi-2-ors-2016-ughcld-6-25-november-2016.pdf",
+      "tier": "official",
+      "source_kind": "archive",
+      "notes": "Jugement officiel de la Haute Cour de l'Ouganda, consulté dans son PDF intégral via ULII. La qualité clanique appartient à la fonction de John Kigozi Ssebagala dans le clan Ffumbe ; elle ne prouve pas que Kigozi est un nom totémique."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web combinant « Kigozi », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le jugement de la Haute Cour ougandaise Nakitende v Kigozi et les recherches ciblées dans les répertoires de clans du Buganda, n'ont pas établi que la catégorie provisoire « totemic_clan » décrive ce nom lui-même ; elle est conservée comme hypothèse de classement en attendant une étude anthroponymique dédiée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kigozi », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le jugement de la Haute Cour ougandaise Nakitende v Kigozi et les recherches ciblées dans les répertoires de clans du Buganda, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kigozi », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le jugement de la Haute Cour ougandaise Nakitende v Kigozi et les recherches ciblées dans les répertoires de clans du Buganda, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kigozi », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le jugement de la Haute Cour ougandaise Nakitende v Kigozi et les recherches ciblées dans les répertoires de clans du Buganda, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kigozi », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le jugement de la Haute Cour ougandaise Nakitende v Kigozi et les recherches ciblées dans les répertoires de clans du Buganda, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Kigozi », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le jugement de la Haute Cour ougandaise Nakitende v Kigozi et les recherches ciblées dans les répertoires de clans du Buganda, n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

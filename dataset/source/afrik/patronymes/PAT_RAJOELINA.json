@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de recherche limité à l'attestation institutionnelle de Rajoelina ; les conclusions d'origine et de transmission restent ouvertes."
+  },
+  "id": "PAT_RAJOELINA",
+  "nameMain": "Rajoelina",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Rajoelina",
+      "attestations": [
+        { "countryId": "MDG", "sourceRefs": ["bnf-andry-rajoelina"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MERINA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MDG",
+      "status": "attested",
+      "sourceRefs": ["bnf-andry-rajoelina"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "bnf-andry-rajoelina",
+      "title": "Notice de personne « Rajoelina, Andry (1974-....) »",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb165026318",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Notice d'autorité de la Bibliothèque nationale de France : graphie, Madagascar, date de naissance et activité publique d'Andry Rajoelina."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Rajoelina etymology », « Rajoelina onomastics », « origine nom Rajoelina » et les résultats académiques n'ont livré aucune source dédiée ; les répertoires automatiques de noms sans bibliographie ont été rejetés."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La notice BnF atteste un individu, pas une filiation. Les recherches Rajoelina avec famille, père, fils et généalogie n'ont pas établi la transmission ; « other » conserve l'indétermination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source consultée ne permet de déterminer si le nom désigne historiquement un individu, un lignage ou un clan."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches Rajoelina avec alliance, fihavanana et parenté à plaisanterie n'ont identifié aucune alliance patronymique."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches exactes associant Rajoelina à caste, fonction sociale et métier héréditaire n'ont livré aucune fonction attachée au nom ; la fonction politique d'Andry Rajoelina est individuelle."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La notice BnF décrit Andry Rajoelina comme né en 1974 et ne constate aucun décès ; il est exclu conformément au protocole. Aucun porteur décédé sourcé n'a été trouvé."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les catalogues et recherches exactes consultés n'établissent pas de lignée Rajoelina d'origine distincte."
+    }
+  ]
+}

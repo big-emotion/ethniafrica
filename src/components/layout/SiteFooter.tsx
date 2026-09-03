@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -33,11 +34,17 @@ const FOOTER_LINK_CLASS =
  */
 const SOCIAL_NETWORKS: ReadonlyArray<{
   name: string;
-  Glyph: (props: { className?: string }) => JSX.Element;
+  Glyph: (props: { className?: string }) => ReactElement;
   href: string | null;
 }> = [
   { name: "Facebook", Glyph: FacebookGlyph, href: null },
-  { name: "LinkedIn", Glyph: LinkedinGlyph, href: null },
+  // The company slug carries a typographic apostrophe (U+2019), kept
+  // percent-encoded so the URL survives copy, log and redirect untouched.
+  {
+    name: "LinkedIn",
+    Glyph: LinkedinGlyph,
+    href: "https://www.linkedin.com/company/dictionnaire-des-ethnies-d%E2%80%99afrique/",
+  },
   { name: "Instagram", Glyph: InstagramGlyph, href: null },
 ];
 
@@ -64,6 +71,14 @@ export function SiteFooter({ language }: SiteFooterProps) {
         {
           label: directory.families,
           href: getLocalizedRoute(language, "families"),
+        },
+        {
+          label: directory.languages,
+          href: getLocalizedRoute(language, "languages"),
+        },
+        {
+          label: directory.patronymes,
+          href: getLocalizedRoute(language, "patronymes"),
         },
       ],
     },
@@ -95,6 +110,17 @@ export function SiteFooter({ language }: SiteFooterProps) {
           label: directory.sources,
           href: getLocalizedRoute(language, "sources"),
         },
+        // The glossary belongs to the project rather than to an axis: it
+        // serves the atlas, the dossiers and the games alike, so filing it
+        // under one of them would invent an ancestor the menu never offers.
+        {
+          label: directory.glossary,
+          href: getLocalizedRoute(language, "glossary"),
+        },
+        // Contact sits under the project rather than under Participer: the
+        // two rubrics beside it are ways of correcting the corpus, and this
+        // one is a way of reaching whoever publishes it.
+        { label: directory.contact, href: `/${language}/contact` },
       ],
     },
   ];

@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_MAHLANGU",
+  "nameMain": "Mahlangu",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Mahlangu",
+      "attestations": [
+        {
+          "countryId": "ZAF",
+          "sourceRefs": ["saho-ndebele-mahlangu"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "South African History Online rapporte qu'au XVIIIe siècle, après le règne de Sindeni, son fils Mahlangu lui succéda et que la famille régnante ndébélé, auparavant appelée Mdungwa, devint alors connue sous le nom de Mahlangu. La source indique que les raisons du changement dans la ligne de succession ne sont pas connues.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["saho-ndebele-mahlangu"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_NDEBELE",
+      "status": "attested",
+      "sourceRefs": ["saho-ndebele-mahlangu"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZAF",
+      "status": "attested",
+      "sourceRefs": ["saho-ndebele-mahlangu"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "saho-ndebele-mahlangu",
+      "title": "The Ndebele in History",
+      "url": "https://sahistory.org.za/article/ndebele-history",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Synthèse de South African History Online consultée directement. Elle suit la succession ndébélé et rapporte qu'après Sindeni, son fils Mahlangu donna son nom à la famille régnante auparavant appelée Mdungwa. La cause précise de la rupture successorale est dite inconnue."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Mahlangu », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la synthèse historique de South African History Online, une thèse sur les origines ndébélé et des requêtes ciblées sur le nom Mahlangu, n'ont identifié aucune parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Mahlangu », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la synthèse historique de South African History Online, une thèse sur les origines ndébélé et des requêtes ciblées sur le nom Mahlangu, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Mahlangu », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la synthèse historique de South African History Online, une thèse sur les origines ndébélé et des requêtes ciblées sur le nom Mahlangu, n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Mahlangu », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la synthèse historique de South African History Online, une thèse sur les origines ndébélé et des requêtes ciblées sur le nom Mahlangu, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Mahlangu », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la synthèse historique de South African History Online, une thèse sur les origines ndébélé et des requêtes ciblées sur le nom Mahlangu, n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

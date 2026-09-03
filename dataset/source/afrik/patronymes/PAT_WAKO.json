@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Une étude de terrain chez les Borana Oromo atteste Wako dans un nom d'auteur éthiopien, sans analyser son étymologie."
+  },
+  "id": "PAT_WAKO",
+  "nameMain": "Wako",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Wako",
+      "attestations": [
+        {
+          "countryId": "ETH",
+          "sourceRefs": ["afrik-candidate-queue", "wako-buusaa-2023"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_OROMO",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ETH",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "wako-buusaa-2023",
+      "title": "Indigenous Social Protection Mechanism: The Practices and Challenges of Buusaa-gonofaa in the Borana Oromo, Southern Ethiopia",
+      "url": "https://journals.brandonu.ca/jrcd/article/download/2292/627/7475",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Wario Wako et al., Journal of Rural and Community Development 18(4), 2023, p. 84-102. Le PDF a été vérifié : il atteste Wako dans le nom du premier auteur, affilié à Jimma University, et documente un terrain borana-oromo en Éthiopie ; il ne donne pas le sens de Wako."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "L'article de Wario Wako, les études de noms oromo et les requêtes « Wako/Waqo Oromo name etymology » ont été examinés ; aucune reconstruction linguistique dédiée et vérifiable n'a été trouvée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les sections de l'article sur les moitiés intermarieuses, les clans et l'entraide ont été recherchées ; elles ne nomment aucune alliance à plaisanterie entre Wako et un autre PAT_* existant."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Le système Buusaa-gonofaa et les rôles claniques décrits dans l'article ne constituent pas une caste ni une fonction héréditaire attachée au nom Wako."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques Wako/Waqo ont identifié des universitaires et acteurs publics vivants ; aucun porteur décédé répondant aux critères documentaires n'a été retenu."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les graphies Wako, Waqo et Waaqo ont été recherchées comme noms et comme rapprochements avec Waaqa ; aucune source savante ne permet d'enregistrer un homonyme distinct ou de valider ce rapprochement pour cette fiche."
+    }
+  ]
+}

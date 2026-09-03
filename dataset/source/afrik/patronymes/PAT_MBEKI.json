@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_MBEKI",
+  "nameMain": "Mbeki",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Mbeki",
+      "attestations": [
+        {
+          "countryId": "ZAF",
+          "sourceRefs": ["saho-govan-mbeki"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_XHOSA",
+      "status": "supposed",
+      "sourceRefs": ["forebears-mbeki"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZAF",
+      "status": "attested",
+      "sourceRefs": ["saho-govan-mbeki"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Govan Archibald Mvuyelwa Mbeki, militant et auteur (1910–2001)",
+      "sourceRefs": ["saho-govan-mbeki"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-mbeki",
+      "title": "Mbeki Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/mbeki",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement. Elle atteste Mbeki en Afrique du Sud, principalement dans l'Eastern Cape, sans fournir d'étymologie ni prouver une appartenance xhosa unique."
+    },
+    {
+      "sourceKey": "saho-govan-mbeki",
+      "title": "Govan Mbeki",
+      "url": "https://sahistory.org.za/people/govan-mbeki",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Notice de South African History Online consultée directement. Elle documente Govan Mbeki, né au Transkei en 1910 et mort en 2001, et ses activités politiques ; elle n'est pas utilisée comme preuve d'une étymologie du patronyme."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web et bibliographique combinant « Mbeki », « Xhosa », « amaZizi », « Mfengu », « surname origin », « clan », « transmission » et « obituary », ainsi que la notice historique de Govan Mbeki et la page Forebears dédiée n'ont livré aucune tradition attribuée, chronique ou étude linguistique établissant l'origine de Mbeki. Les rapprochements portant sur un homonyme d'une autre langue ou sur la seule géographie ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Mbeki », « Xhosa », « amaZizi », « Mfengu », « surname origin », « clan », « transmission » et « obituary », ainsi que la notice historique de Govan Mbeki et la page Forebears dédiée n'ont pas établi que la catégorie provisoire « clan_name » décrive Mbeki lui-même ; elle reste une hypothèse de classement, sans être transformée en affirmation."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Mbeki », « Xhosa », « amaZizi », « Mfengu », « surname origin », « clan », « transmission » et « obituary », ainsi que la notice historique de Govan Mbeki et la page Forebears dédiée n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Mbeki à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Mbeki », « Xhosa », « amaZizi », « Mfengu », « surname origin », « clan », « transmission » et « obituary », ainsi que la notice historique de Govan Mbeki et la page Forebears dédiée n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Mbeki."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Mbeki », « Xhosa », « amaZizi », « Mfengu », « surname origin », « clan », « transmission » et « obituary », ainsi que la notice historique de Govan Mbeki et la page Forebears dédiée n'ont pas établi de lignée homonyme d'origine distincte documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Mbeki », « Xhosa », « amaZizi », « Mfengu », « surname origin », « clan », « transmission » et « obituary », ainsi que la notice historique de Govan Mbeki et la page Forebears dédiée n'ont établi aucune règle propre à Mbeki permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

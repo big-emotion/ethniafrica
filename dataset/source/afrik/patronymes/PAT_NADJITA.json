@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français limité à l'attestation tchadienne et à la porteuse décédée établies par la presse publique nationale."
+  },
+  "id": "PAT_NADJITA",
+  "nameMain": "Nadjita",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Nadjita",
+      "attestations": [
+        { "countryId": "TCD", "sourceRefs": ["atpe-2026-nadjita"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [],
+  "countries": [
+    {
+      "countryId": "TCD",
+      "status": "attested",
+      "sourceRefs": ["atpe-2026-nadjita"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Danmadji Esther Nadjita",
+      "sourceRefs": ["atpe-2026-nadjita"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "atpe-2026-nadjita",
+      "title": "Nécrologie : derniers hommages à Danmadji Esther Nadjita",
+      "url": "https://atpe.td/necrologie-derniers-hommages-a-danmadji-esther-nadjita/",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Dépêche de l'Agence tchadienne de presse et d'édition. Elle donne le nom complet, la naissance le 2 mai 1963, le décès le 20 juin 2026 et les obsèques du 27 juin 2026 ; elle atteste une porteuse tchadienne sans documenter l'origine ni la transmission du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches exactes « Nadjita », « Nadjita onomastique », « Nadjita anthroponymie » et « Nadjita étymologie » dans les catalogues universitaires, Persée, OpenEdition, Google Scholar et la presse tchadienne n'ont livré ni récit d'origine, ni première attestation historique, ni analyse linguistique."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "La dépêche de l'ATPE atteste une porteuse tchadienne sans identification ethnique ; aucune source dédiée trouvée n'a confirmé l'association à les Sara, qui provenait uniquement de la file de candidats et a été retirée."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "La source traite Nadjita comme élément du nom d'une personne, sans le qualifier de nom de clan ; clan_name demeure la valeur technique héritée faute de catégorie indéterminée dans le modèle."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La notice biographique de l'ATPE et les recherches onomastiques effectuées ne décrivent aucun mode de transmission familiale de Nadjita ; la valeur reste donc other."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Nadjita alliance clan Tchad » et « Nadjita parenté à plaisanterie » n'ont livré aucune alliance entre patronymes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La profession de photographe de la porteuse est individuelle ; la dépêche et les recherches ciblées n'établissent aucune caste ni fonction sociale héréditaire attachée au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes du nom dans les catalogues et les résultats tchadiens n'ont pas établi un homonyme d'origine distincte."
+    }
+  ]
+}

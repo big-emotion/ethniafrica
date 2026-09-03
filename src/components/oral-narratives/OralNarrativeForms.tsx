@@ -11,11 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 export type NarrativeDisplayMode = "public_name" | "pseudonym" | "withheld";
 export type NarrativePlacePrecision =
-  | "exact"
-  | "locality"
-  | "region"
-  | "country"
-  | "withheld";
+  "exact" | "locality" | "region" | "country" | "withheld";
 export type NarrativeKind = "tradition" | "testimony" | "memory" | "story";
 export type NarrativeVisibility = "restricted" | "public";
 export type NarrativeReviewStatus = "pending" | "approved" | "rejected";

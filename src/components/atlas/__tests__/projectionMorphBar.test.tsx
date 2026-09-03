@@ -113,7 +113,9 @@ describe("the projection morph bar", () => {
     );
     expect(screen.getByRole("button", { name: "Dézoomer" })).toBeDisabled();
     expect(screen.getByRole("button", { name: "Zoomer" })).toBeEnabled();
-    expect(screen.queryByRole("button", { name: "Recentrer" })).toBeNull();
+    expect(
+      screen.getByRole("button", { name: "Recentrer sur l’Afrique" })
+    ).toBeInTheDocument();
   });
 
   // @req REQ-117

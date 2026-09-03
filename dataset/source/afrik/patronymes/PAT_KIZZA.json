@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KIZZA",
+  "nameMain": "Kizza",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Kizza",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["tangaza-ganda-kizza"]
+        }
+      ]
+    },
+    {
+      "spelling": "Kiza",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["tangaza-ganda-kizza"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "L'étude de Tangaza College sur la nomination chez les Ganda classe Kizza parmi les noms circonstanciels et indique qu'il est attribué à l'enfant, garçon ou fille, qui vient après des jumeaux. Le nom encode donc une circonstance individuelle de naissance et n'est pas transmis comme nom de clan dans la pratique décrite.",
+        "claimStatus": "established",
+        "sourceRefs": ["tangaza-ganda-kizza"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BAGANDA",
+      "status": "attested",
+      "sourceRefs": ["tangaza-ganda-kizza"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["tangaza-ganda-kizza"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "tangaza-ganda-kizza",
+      "title": "Naming among the Ganda",
+      "url": "https://repository.tangaza.ac.ke/server/api/core/bitstreams/5b87969e-a6ef-48b5-8544-73e1d45e750b/content",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Étude de Tangaza College consultée dans son PDF intégral. La section 3.3.2 sur les noms circonstanciels cite explicitement Kizza et renvoie à M. B. Nsimbi, Amannya Amaganda N'ennono Zaago (1980). Le document distingue ces noms des noms de clan dans une section séparée."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kizza », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'étude de Tangaza College sur la nomination chez les Ganda, sa section sur les noms circonstanciels et son renvoi à M. B. Nsimbi, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kizza », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'étude de Tangaza College sur la nomination chez les Ganda, sa section sur les noms circonstanciels et son renvoi à M. B. Nsimbi, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kizza », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'étude de Tangaza College sur la nomination chez les Ganda, sa section sur les noms circonstanciels et son renvoi à M. B. Nsimbi, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kizza », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'étude de Tangaza College sur la nomination chez les Ganda, sa section sur les noms circonstanciels et son renvoi à M. B. Nsimbi, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    }
+  ]
+}

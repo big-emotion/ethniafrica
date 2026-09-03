@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_GONDWE",
+  "nameMain": "Gondwe",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Gondwe",
+      "attestations": [
+        {
+          "countryId": "MWI",
+          "sourceRefs": ["vail-creation-tribalism-gondwe"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "L'étude historique de la formation de l'identité tumbuka situe une lignée Gondwe au cœur de la chefferie Chikulamayembe : la coutume réservait la charge à la lignée de Majuma Gondwe, mais les chefs de village choisirent en 1907 Chilongozi Gondwe, issu d'une branche collatérale instruite.",
+        "claimStatus": "established",
+        "sourceRefs": ["vail-creation-tribalism-gondwe"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_TUMBUKA",
+      "status": "attested",
+      "sourceRefs": ["vail-creation-tribalism-gondwe"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MWI",
+      "status": "attested",
+      "sourceRefs": ["vail-creation-tribalism-gondwe"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "vail-creation-tribalism-gondwe",
+      "title": "The Creation of Tribalism in Southern Africa",
+      "url": "https://sahistory.org.za/sites/default/files/archive-files/leroy_vail_the_creation_of_tribalism_in_southernbook4you-1.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ouvrage dirigé par Leroy Vail, version intégrale consultée. Le chapitre consacré au Malawi décrit la lignée de Majuma Gondwe, la branche collatérale de Chilongozi Gondwe et la reconnaissance coloniale de ce dernier comme Chikulamayembe IX en 1907, dans la construction historique d'une identité tumbuka. Il ne propose aucune étymologie lexicale du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Gondwe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « The Creation of Tribalism in Southern Africa » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Gondwe à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Gondwe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « The Creation of Tribalism in Southern Africa » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Gondwe."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Gondwe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « obituary », et la lecture de « The Creation of Tribalism in Southern Africa », n'a identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Gondwe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « The Creation of Tribalism in Southern Africa », n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Gondwe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « The Creation of Tribalism in Southern Africa » n'ont établi aucune règle propre à Gondwe permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

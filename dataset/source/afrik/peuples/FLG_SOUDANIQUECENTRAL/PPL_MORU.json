@@ -127,8 +127,8 @@
       },
       {
         "title": "CIA World Factbook — South Sudan",
-        "url": null,
-        "tier": "needs_review",
+        "url": "https://www.cia.gov/the-world-factbook/countries/south-sudan/",
+        "tier": "official",
         "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
       }
     ]

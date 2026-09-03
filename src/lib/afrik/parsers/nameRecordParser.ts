@@ -32,10 +32,8 @@ const nameRecordSourceSchema = z
 const nameRecordTypeSchema = z.enum(
   ["endonym", "exonym", "historical_spelling", "surname"],
   {
-    errorMap: () => ({
-      message:
-        "nameType must be one of endonym, exonym, historical_spelling, surname (name_record_type enum, migration 029)",
-    }),
+    error:
+      "nameType must be one of endonym, exonym, historical_spelling, surname (name_record_type enum, migration 029)",
   }
 );
 
@@ -84,9 +82,7 @@ export const nameRecordDossierSchema = z
       message: "id must match ^PPL_[A-Z0-9_]+$",
     }),
     entityType: z.literal("people", {
-      errorMap: () => ({
-        message: "entityType must be 'people' (v1 scope, migration 029)",
-      }),
+      error: "entityType must be 'people' (v1 scope, migration 029)",
     }),
     names: z.array(nameRecordEntrySchema).min(1),
   })

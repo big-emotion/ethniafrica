@@ -1,0 +1,122 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier français prudent : la nisba historique à Hawwara est documentée, sans présumer une continuité généalogique pour tous les porteurs égyptiens modernes."
+  },
+  "id": "PAT_EL_HAWARY",
+  "nameMain": "El Hawary",
+  "nameSystem": "nisba",
+  "spellings": [
+    {
+      "spelling": "El Hawary",
+      "attestations": [
+        { "countryId": "EGY", "sourceRefs": ["el-hawary-egypt-finearts"] }
+      ]
+    },
+    {
+      "spelling": "al Hawary",
+      "attestations": [
+        { "countryId": "EGY", "sourceRefs": ["el-hawary-egypt-finearts"] }
+      ]
+    },
+    {
+      "spelling": "al-Hawari",
+      "attestations": [
+        { "countryId": "DZA", "sourceRefs": ["al-hawari-local-sources"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une étude des sources locales consacrées au cheikh Muhammad ibn Umar al-Hawari rapporte des généalogies divergentes et cite une tradition savante qui le rattache à Hawwara ; cette divergence interdit d’en faire une généalogie certaine.",
+        "claimStatus": "contested",
+        "sourceRefs": ["al-hawari-local-sources"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Dans le cas historique étudié, al-Hawari est explicitement analysé comme une nisba à Hawwara, groupe berbère. Ce résultat morphologique ne prouve pas que chaque famille égyptienne moderne El Hawary descend de ce groupe.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["al-hawari-local-sources"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_AMAZIGH_MACRO",
+      "status": "supposed",
+      "sourceRefs": ["al-hawari-local-sources"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "EGY",
+      "status": "attested",
+      "sourceRefs": ["el-hawary-egypt-finearts"]
+    },
+    {
+      "countryId": "DZA",
+      "status": "attested",
+      "sourceRefs": ["al-hawari-local-sources"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Saleh Abdel Sabour Abdel Qader Mohamed Mahmoud al Hawary",
+      "sourceRefs": ["el-hawary-egypt-finearts"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "el-hawary-egypt-finearts",
+      "title": "Biography: Saleh Abdel Sabour Abdel Qader Mohamed Mahmoud al Hawary",
+      "url": "https://www.fineart.gov.eg/eng/cv/cv.asp?IDS=966",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Notice du Fine Arts Sector du ministère égyptien de la Culture. La page intégrale a été consultée ; elle donne le nom, le nom d’usage Saleh al Hawary, la naissance à Giza en 1976 et le décès en 2013."
+    },
+    {
+      "sourceKey": "al-hawari-local-sources",
+      "title": "الشيخ الهواري من خلال المصادر المحلية",
+      "url": "https://asjp.cerist.dz/en/downArticle/45/16/27/28166",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article universitaire publié sur ASJP, consulté dans son texte arabe. Il compare les sources locales sur Muhammad ibn Umar al-Hawari, explicite la nisba à Hawwara et souligne les divergences généalogiques ; il est utilisé pour le cas historique, pas pour rattacher automatiquement les porteurs égyptiens contemporains."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches dans ASJP, les catalogues égyptiens et les requêtes « El Hawary oral tradition », « الهواري رواية شفوية » et « Hawwara généalogie » n’ont livré aucun récit avec transmetteur nommé et transcription."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "L’article établit une nisba historique et la notice égyptienne un usage moderne, mais aucune des deux sources ne décrit la transmission familiale d’El Hawary ; les recherches généalogiques dédiées n’ont pas permis de la déterminer."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches combinant El Hawary ou al-Hawari avec « alliance », « Hawwara pacte » et « parenté à plaisanterie » n’ont pas fourni de relation nominale avec une autre fiche PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La notice gouvernementale et l’étude historique ne rattachent aucune fonction sociale héréditaire au nom ; les recherches « الهواري حرفة وراثية » et « El Hawary caste » sont restées sans résultat."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Le croisement des graphies El Hawary, al Hawary et al-Hawari a révélé des usages égyptiens et maghrébins, mais aucune étude ne démontre encore qu’ils constituent des homonymes d’origines distinctes plutôt que des transcriptions et histoires familiales différentes."
+    }
+  ],
+  "nisbaSubtype": {
+    "value": "tribal",
+    "sourceRefs": ["al-hawari-local-sources"]
+  }
+}

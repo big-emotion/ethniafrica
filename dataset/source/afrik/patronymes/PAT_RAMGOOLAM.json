@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon docs/runbooks/anthroponym-fiche-research.md. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
+  },
+  "id": "PAT_RAMGOOLAM",
+  "nameMain": "Ramgoolam",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Ramgoolam",
+      "attestations": [
+        {
+          "countryId": "MUS",
+          "sourceRefs": ["afrik-candidate-queue", "bates-carter-2017-ramgoolam"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Bates et Carter retracent Moheeth Ramgoolam, parti du district de Saran au Bihar en 1896 pour rejoindre son frère à Maurice, devenu sirdar à l'usine sucrière Queen Victoria, puis père de Seewoosagur Ramgoolam. Cette chronique documente cette lignée précise sans servir d'étymologie au nom.",
+        "claimStatus": "established",
+        "sourceRefs": ["bates-carter-2017-ramgoolam"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_INDO_MAURICIENS",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MUS",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "bates-carter-2017-ramgoolam"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Sir Seewoosagur Ramgoolam",
+      "sourceRefs": [
+        "bates-carter-2017-ramgoolam",
+        "mauritius-education-2025-ramgoolam"
+      ]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "mauritius-lrc-family-name-2025",
+      "title": "Key Publications of the Law Reform Commission on Women’s Rights — Issue Paper on ‘Nom de famille’",
+      "url": "https://lrc.govmu.org/lrc/wp-content/uploads/2025/09/LRC-Newsletter-International-Womens-Day.pdf",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Law Reform Commission of Mauritius, mars 2025, synthèse de l'Issue Paper LRC_R&P 61. Le texte décrit la transmission automatique du nom du père comme la règle à réformer et propose d'autoriser l'ajout du nom maternel. Utilisé pour la règle légale générale, non pour l'origine de chaque nom."
+    },
+    {
+      "sourceKey": "bates-carter-2017-ramgoolam",
+      "title": "Sirdars as intermediaries in nineteenth century Indian Ocean indentured labour migration",
+      "url": "https://www.pure.ed.ac.uk/ws/portalfiles/portal/25061873/crispin_bates_accepted.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Crispin Bates et Marina Carter, Modern Asian Studies 51(2), 2017, p. 462-484, DOI 10.1017/S0026749X16000238. Les p. 476-477 de la version acceptée retracent Moheeth Ramgoolam, migrant du district de Saran en 1896, puis son fils Seewoosagur."
+    },
+    {
+      "sourceKey": "mauritius-education-2025-ramgoolam",
+      "title": "Student Leadership Programme inaugurated to mark 125th Birth Anniversary of Sir Seewoosagur Ramgoolam",
+      "url": "https://education.govmu.org/News/SitePages/Student-Leadership-Programme-inaugurated-to-mark-125th-Birth-Anniversary-of-Sir-Seewoosagur-Ramgoolam.aspx",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Ministère mauricien de l'Éducation, 18 septembre 2025. La notice commémorative donne les dates de naissance et de décès de Sir Seewoosagur Ramgoolam ; elle étaye uniquement son statut de porteur décédé."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "les résultats exacts « Ramgoolam », les Indian Immigration Archives du Mahatma Gandhi Institute, les publications de l'Aapravasi Ghat et les catalogues bibliographiques sur l'engagisme à Maurice, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Ramgoolam à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "les résultats exacts « Ramgoolam », les Indian Immigration Archives du Mahatma Gandhi Institute, les publications de l'Aapravasi Ghat et les catalogues bibliographiques sur l'engagisme à Maurice, complétés par « caste », « statut héréditaire », « métier » et « social function », n'ont établi aucune fonction sociale héréditaire propre aux porteurs de Ramgoolam. Une étymologie professionnelle éventuelle n'est pas assimilée à un statut contemporain."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "les résultats exacts « Ramgoolam », les Indian Immigration Archives du Mahatma Gandhi Institute, les publications de l'Aapravasi Ghat et les catalogues bibliographiques sur l'engagisme à Maurice n'ont pas permis d'isoler deux lignées homonymes dotées d'origines distinctes et documentées. Lorsque le dictionnaire propose plusieurs formations possibles, elles restent des hypothèses linguistiques et non des lignées séparées."
+    }
+  ]
+}

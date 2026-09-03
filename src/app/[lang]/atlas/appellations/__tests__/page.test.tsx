@@ -2,8 +2,9 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const { mockListNames } = vi.hoisted(() => ({
-  mockListNames: vi.fn(),
+const { mockListNameForms, mockGetNameTypeCounts } = vi.hoisted(() => ({
+  mockListNameForms: vi.fn(),
+  mockGetNameTypeCounts: vi.fn(),
 }));
 
 vi.mock("@/api/v2/services/names", () => {
@@ -11,7 +12,8 @@ vi.mock("@/api/v2/services/names", () => {
 
   return {
     NamesSchemaUnavailableError,
-    listNames: (...args: unknown[]) => mockListNames(...args),
+    listNameForms: (...args: unknown[]) => mockListNameForms(...args),
+    getNameTypeCounts: (...args: unknown[]) => mockGetNameTypeCounts(...args),
   };
 });
 
@@ -21,34 +23,45 @@ vi.mock("@/components/layout/PageLayout", () => ({
   ),
 }));
 
-vi.mock("@/components/names/NamesAtlasView", () => ({
-  NamesAtlasView: ({ initialTotal }: { initialTotal: number }) => (
-    <div data-testid="names-atlas" data-total={initialTotal} />
+vi.mock("@/components/names/NameNomenclature", () => ({
+  NameNomenclature: ({
+    total,
+    page,
+    perPage,
+  }: {
+    total: number;
+    page: number;
+    perPage: number;
+  }) => (
+    <div
+      data-testid="nomenclature"
+      data-total={total}
+      data-page={page}
+      data-per-page={perPage}
+    />
   ),
 }));
 
-import {
-  NamesSchemaUnavailableError,
-  type ListNamesResult,
-} from "@/api/v2/services/names";
-import NomsPage from "../page";
+import { NamesSchemaUnavailableError } from "@/api/v2/services/names";
+import AppellationsPage from "../page";
 
-describe("/[lang]/noms page", () => {
+describe("the Appellations nomenclature page", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mockListNames.mockResolvedValue({ names: [], total: 0 });
+    mockListNameForms.mockResolvedValue({ forms: [], total: 0, pageCount: 1 });
+    mockGetNameTypeCounts.mockResolvedValue({ byType: {}, imposed: 0 });
   });
 
   // @req REQ-056
-  it("renders the atlas when the names schema has not been deployed yet", async () => {
-    mockListNames.mockRejectedValueOnce(
-      new NamesSchemaUnavailableError("name_records is unavailable")
+  it("renders an empty nomenclature when the name-forms view is not deployed yet", async () => {
+    mockListNameForms.mockRejectedValueOnce(
+      new NamesSchemaUnavailableError("afrik_name_forms is unavailable")
     );
 
-    const ui = await NomsPage({ searchParams: Promise.resolve({}) });
+    const ui = await AppellationsPage({ searchParams: Promise.resolve({}) });
     render(ui);
 
-    expect(screen.getByTestId("names-atlas")).toHaveAttribute(
+    expect(screen.getByTestId("nomenclature")).toHaveAttribute(
       "data-total",
       "0"
     );
@@ -56,52 +69,89 @@ describe("/[lang]/noms page", () => {
 
   // @req REQ-056
   it("does not hide unrelated database failures", async () => {
-    mockListNames.mockRejectedValueOnce(new Error("database unavailable"));
+    mockListNameForms.mockRejectedValueOnce(new Error("database unavailable"));
 
     await expect(
-      NomsPage({ searchParams: Promise.resolve({}) })
+      AppellationsPage({ searchParams: Promise.resolve({}) })
     ).rejects.toThrow("database unavailable");
   });
 
-  // @req REQ-056
-  it("passes successful results to the atlas", async () => {
-    mockListNames.mockResolvedValueOnce({
-      names: [],
-      total: 4,
-    } satisfies ListNamesResult);
+  // @req REQ-054
+  it("asks the service for the page the URL names", async () => {
+    mockListNameForms.mockResolvedValueOnce({
+      forms: [],
+      total: 3134,
+      pageCount: 66,
+    });
 
-    const ui = await NomsPage({ searchParams: Promise.resolve({}) });
+    const ui = await AppellationsPage({
+      searchParams: Promise.resolve({ page: "3", nameType: "exonym" }),
+    });
     render(ui);
 
-    expect(screen.getByTestId("names-atlas")).toHaveAttribute(
-      "data-total",
-      "4"
+    expect(mockListNameForms).toHaveBeenCalledWith(
+      expect.objectContaining({ page: 3, nameType: "exonym" })
     );
+    expect(screen.getByTestId("nomenclature")).toHaveAttribute(
+      "data-total",
+      "3134"
+    );
+  });
+
+  // A hand-edited URL is this page's state, so an unknown filter value must
+  // degrade to the default listing rather than 500 the route.
+  // @req REQ-054
+  it("falls back to the first page when the URL carries an unreadable filter", async () => {
+    const ui = await AppellationsPage({
+      searchParams: Promise.resolve({ nameType: "not-a-type", page: "0" }),
+    });
+    render(ui);
+
+    const [askedFor] = mockListNameForms.mock.calls[0];
+    expect(askedFor.page).toBe(1);
+    expect(askedFor.nameType).toBeUndefined();
   });
 
   // ETNI-1196/DEC-019: the lede must state which question the ethnonym
   // atlas answers, so a visitor is not left inferring it from the title.
+  // The deck said what the page contains; this says what a reader comes to
+  // do with it, which is the half that was missing.
   // @req REQ-022
-  it("renders a lede stating which question the module answers", async () => {
-    const ui = await NomsPage({ searchParams: Promise.resolve({}) });
+  it("says why the page exists, not only what it holds", async () => {
+    const ui = await AppellationsPage({ searchParams: Promise.resolve({}) });
     render(ui);
 
     expect(
-      screen.getByText(/Comment un peuple se nomme-t-il/)
+      screen.getByText(/Un peuple porte rarement un seul nom/)
     ).toBeInTheDocument();
   });
 
-  // ETNI-1196/DEC-019: a visitor looking for the origin of a family name
-  // must be told that personal-name genealogy is not (yet) covered.
-  // @req REQ-092
-  it("renders a note that personal-name genealogy is not yet covered", async () => {
-    const ui = await NomsPage({ searchParams: Promise.resolve({}) });
+  /**
+   * The deck used to be printed twice — once by `PageLayout`'s head band and
+   * again as the first paragraph under it. This suite mocks `PageLayout`, so
+   * it cannot see the band and cannot count the repetition; what it can hold
+   * is that the paragraph under the band is no longer the deck. The gloss on
+   * the filter chips belongs to `NameNomenclature`, which is mocked here too
+   * and asserts it in its own suite.
+   */
+  // @req REQ-022
+  it("gives the paragraph under the band to the purpose, not to the deck", async () => {
+    const ui = await AppellationsPage({ searchParams: Promise.resolve({}) });
     render(ui);
 
     expect(
-      screen.getByText(
-        /ne couvre pas encore la généalogie des noms de personnes/
-      )
-    ).toBeInTheDocument();
+      screen.queryByText(/Les noms sous lesquels chaque peuple/)
+    ).toBeNull();
+  });
+
+  // DEC-038 separates the two objects the corpus calls "name". A visitor
+  // looking for the origin of a family name must be sent to the Nom
+  // dimension, which now exists, rather than told it does not.
+  // @req REQ-092
+  it("sends a visitor after a family name to the Nom dimension", async () => {
+    const ui = await AppellationsPage({ searchParams: Promise.resolve({}) });
+    render(ui);
+
+    expect(screen.getByText(/C'est la dimension Nom/)).toBeInTheDocument();
   });
 });

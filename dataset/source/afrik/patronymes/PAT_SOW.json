@@ -1,0 +1,110 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
+  },
+  "id": "PAT_SOW",
+  "nameMain": "Sow",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Sow",
+      "attestations": [
+        {
+          "countryId": "SEN",
+          "sourceRefs": [
+            "corpus-ppl-wolof-organisation",
+            "familysearch-sow-dafn"
+          ]
+        },
+        {
+          "countryId": "GMB",
+          "sourceRefs": ["corpus-ppl-wolof-organisation"]
+        },
+        {
+          "countryId": "MRT",
+          "sourceRefs": [
+            "corpus-ppl-wolof-organisation",
+            "familysearch-sow-dafn"
+          ]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_WOLOF",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-wolof-organisation"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "SEN",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-wolof-organisation"]
+    },
+    {
+      "countryId": "GMB",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-wolof-organisation"]
+    },
+    {
+      "countryId": "MRT",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-wolof-organisation"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-wolof-organisation",
+      "title": "Fiche des Wolof de l'atlas — organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Reprise du chapitre « organisation clanique » de la fiche du peuple wolof. L’association wolof et les pays Sénégal, Gambie et Mauritanie restent au niveau non vérifié tant qu’aucune source dédiée à ce nom ne les confirme."
+    },
+    {
+      "sourceKey": "familysearch-sow-dafn",
+      "title": "Sow Name Meaning — Dictionary of American Family Names",
+      "url": "https://www.familysearch.org/en/surname?surname=sow",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Notice du Dictionary of American Family Names (Patrick Hanks, 2003/2006), consultée directement sur FamilySearch. Elle atteste Sow au Sénégal et en Mauritanie, mais le rattache aux groupes fulani et tukulor, non aux Wolof ; elle ne peut donc pas établir l'origine de l'association wolof conservée depuis le corpus."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "La notice FamilySearch/Dictionary of American Family Names et la référence bibliographique de M'Bodj, Becker et Martin, « Notes sur les patronymes wolof » (1980), ont été recherchées pour une origine wolof de Sow. La première rattache plutôt le nom aux Fulani et Toucouleurs, tandis que le texte intégral de la seconde n'a pas été retrouvé ; aucune origine propre à l'association wolof de cette fiche n'est donc affirmée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "La notice FamilySearch et la référence bibliographique de M'Bodj, Becker et Martin ont été recherchées pour une paire de parenté à plaisanterie nommant Sow ; aucune paire patronymique vérifiable n'a été trouvée."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La notice FamilySearch et la référence bibliographique de M'Bodj, Becker et Martin ont été recherchées pour une fonction sociale ou un métier héréditaire propre au Sow wolof ; aucune fonction vérifiable n'a été trouvée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La notice FamilySearch a été recherchée pour un porteur décédé dont l'identification au lignage wolof serait documentée ; elle ne fournit aucun porteur individuel répondant à ces critères."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "La notice FamilySearch rattache Sow aux Fulani et Toucouleurs, tandis que la source interne conserve une association wolof non vérifiée. Cette divergence a été recherchée comme homonymie possible, mais aucune source dédiée n'établit deux étymologies distinctes."
+    }
+  ]
+}

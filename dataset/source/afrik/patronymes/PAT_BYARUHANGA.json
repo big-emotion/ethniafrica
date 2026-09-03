@@ -1,0 +1,92 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_BYARUHANGA",
+  "nameMain": "Byaruhanga",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Byaruhanga",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["updf-byaruhanga-obituary-2026"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BANYANKOLE",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["updf-byaruhanga-obituary-2026"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Winston Byaruhanga, brigadier général des forces armées ougandaises",
+      "sourceRefs": ["updf-byaruhanga-obituary-2026"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
+    },
+    {
+      "sourceKey": "updf-byaruhanga-obituary-2026",
+      "title": "UPDF Bids Farewell To Brig Gen Winston Byaruhanga",
+      "url": "https://www.updf.go.ug/obituary/updf-bids-farewell-to-brig-gen-winston-byaruhanga/",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Avis funéraire des Forces de défense du peuple ougandais, 29 mai 2026, consulté intégralement. Il atteste la graphie Byaruhanga en Ouganda et le décès du brigadier général Winston Byaruhanga. Il ne donne ni appartenance nyankole, ni étymologie, ni règle de transmission du nom."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Byaruhanga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « UPDF Bids Farewell To Brig Gen Winston Byaruhanga » n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine de Byaruhanga. Les attestations géographiques ou individuelles trouvées ne sont pas transformées en étymologie."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Byaruhanga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « UPDF Bids Farewell To Brig Gen Winston Byaruhanga » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Byaruhanga à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Byaruhanga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « UPDF Bids Farewell To Brig Gen Winston Byaruhanga » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom Byaruhanga."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Byaruhanga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », qui comprenait le terme « homonyme », et la lecture de « UPDF Bids Farewell To Brig Gen Winston Byaruhanga », n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Byaruhanga », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « UPDF Bids Farewell To Brig Gen Winston Byaruhanga » n'ont établi aucune règle propre à Byaruhanga permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

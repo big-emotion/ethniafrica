@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import archiver from "archiver";
+import { ZipArchive } from "archiver";
 import ExcelJS from "exceljs";
 import { corsOptionsResponse } from "@/lib/api/cors";
 import { getAllAfrikCountries } from "@/lib/supabase/queries/afrik/countries";
@@ -29,14 +29,14 @@ function applyCorsHeaders(response: NextResponse): NextResponse {
   return response;
 }
 
-async function generateCSVZip(): Promise<Buffer> {
+async function generateCSVZip(): Promise<Buffer<ArrayBuffer>> {
   const [families, peoples, countries] = await Promise.all([
     getAllAfrikLanguageFamilies(),
     getAllAfrikPeoples(),
     getAllAfrikCountries(),
   ]);
 
-  const archive = archiver("zip", { zlib: { level: 9 } });
+  const archive = new ZipArchive({ zlib: { level: 9 } });
   const chunks: Buffer[] = [];
 
   archive.on("data", (chunk: Buffer) => chunks.push(chunk));
@@ -90,7 +90,7 @@ async function generateCSVZip(): Promise<Buffer> {
   return Buffer.concat(chunks);
 }
 
-async function generateExcel(): Promise<Buffer> {
+async function generateExcel(): Promise<Buffer<ArrayBuffer>> {
   const [families, peoples, countries] = await Promise.all([
     getAllAfrikLanguageFamilies(),
     getAllAfrikPeoples(),
@@ -143,9 +143,10 @@ async function generateExcel(): Promise<Buffer> {
   }
 
   const buffer = await workbook.xlsx.writeBuffer();
-  return Buffer.from(buffer);
+  return Buffer.from(buffer as ArrayBuffer);
 }
 
+/** @req REQ-005 */
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
@@ -195,6 +196,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
+/** @req REQ-005 */
 export async function OPTIONS() {
   return corsOptionsResponse();
 }

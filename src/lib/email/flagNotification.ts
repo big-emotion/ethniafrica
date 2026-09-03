@@ -1,5 +1,6 @@
 import * as Sentry from "@sentry/nextjs";
 import { logger } from "@/lib/api/logger";
+import { sendViaResend } from "@/lib/email/resend";
 import type { Language } from "@/types/shared";
 import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 
@@ -15,8 +16,15 @@ export interface FlagResolutionInput {
   target_id: string | null;
 }
 
-export interface FlagResolutionContributor {
-  id: string;
+/**
+ * Whoever the decision is owed to.
+ *
+ * It used to be a contributor, with an id, because an address could only come
+ * from an account. An accountless reporter who verified their address is owed
+ * the same message and has no id at all — so the recipient is the address, and
+ * nothing else.
+ */
+export interface FlagResolutionRecipient {
   email: string;
 }
 
@@ -103,46 +111,8 @@ function buildEmailContent(flag: FlagResolutionInput): EmailContent {
   };
 }
 
-async function sendViaResend(
-  apiKey: string,
-  to: string,
-  content: EmailContent
-): Promise<boolean> {
-  const domain = process.env.NEXT_PUBLIC_CANONICAL_DOMAIN ?? "ethniafrica.com";
-  try {
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: `EthniAfrica <notifications@${domain}>`,
-        to,
-        subject: content.subject,
-        text: content.text,
-      }),
-    });
-
-    if (!response.ok) {
-      const body = await response.text();
-      logger.error("Flag resolution email send failed", undefined, {
-        status: response.status,
-        body,
-      });
-      Sentry.captureException(
-        new Error(`Resend email send failed with status ${response.status}`)
-      );
-      return false;
-    }
-
-    return true;
-  } catch (error) {
-    logger.error("Flag resolution email send threw", error);
-    Sentry.captureException(error);
-    return false;
-  }
-}
+const sendNotification = (apiKey: string, to: string, content: EmailContent) =>
+  sendViaResend(apiKey, { to, subject: content.subject, text: content.text });
 
 /**
  * Notify a contributor that their flag reached a terminal decision.
@@ -160,11 +130,13 @@ async function sendViaResend(
 // @req REQ-015
 export async function sendFlagResolutionEmail(
   flag: FlagResolutionInput,
-  contributor: FlagResolutionContributor | null
+  recipient: FlagResolutionRecipient | null
 ): Promise<void> {
   try {
-    if (!contributor) {
-      // No contributor_id — never attributed, or erased since (Story 4.4).
+    if (!recipient) {
+      // Nobody to write to: the report was never attributed, the contributor
+      // was erased (Story 4.4), or the reader left no address — or left one
+      // and never proved it, which is the same thing as far as writing goes.
       return;
     }
 
@@ -178,7 +150,7 @@ export async function sendFlagResolutionEmail(
     }
 
     const content = buildEmailContent(flag);
-    const sent = await sendViaResend(apiKey, contributor.email, content);
+    const sent = await sendNotification(apiKey, recipient.email, content);
     if (sent) {
       logger.info("Flag resolution email sent", {
         flagSlug: flag.public_slug,
@@ -191,4 +163,53 @@ export async function sendFlagResolutionEmail(
     });
     Sentry.captureException(error);
   }
+}
+
+/** What the verification e-mail needs to say who it is about. */
+// @req REQ-012
+export interface FlagVerificationEmail {
+  email: string;
+  token: string;
+  publicSlug: string;
+}
+
+/**
+ * Ask a reader to confirm the address they left on a report.
+ *
+ * This is the one message the atlas will ever send to an unproven address, and
+ * it exists precisely so there is never a second: anyone can type someone
+ * else's address into the report form, and only the person holding the inbox
+ * can turn it into a channel.
+ *
+ * The report is already published by the time this is sent. The link decides
+ * whether a decision comes back, never whether the report counts.
+ */
+// @req REQ-012
+export async function sendFlagVerificationEmail({
+  email,
+  token,
+  publicSlug,
+}: FlagVerificationEmail): Promise<boolean> {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    logger.warn(
+      "Flag verification email not sent: no email transport configured",
+      { flagSlug: publicSlug }
+    );
+    return false;
+  }
+
+  const verificationLink = `${siteUrl()}/fr/signalements/verifier?token=${encodeURIComponent(token)}`;
+
+  return sendNotification(apiKey, email, {
+    subject: "Confirmez votre adresse pour suivre votre signalement",
+    text: [
+      "Votre signalement est bien enregistré et déjà consultable :",
+      flagPageUrl(publicSlug),
+      "Pour recevoir la décision de la modération par e-mail, confirmez cette adresse :",
+      verificationLink,
+      "Ce lien est valable 24 heures et ne fonctionne qu'une fois. Si vous n'avez rien signalé, ignorez ce message : sans confirmation, cette adresse ne sera plus utilisée.",
+      "EthniAfrica — Atlas des Peuples d'Afrique",
+    ].join("\n\n"),
+  });
 }

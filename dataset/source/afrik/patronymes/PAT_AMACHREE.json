@@ -1,0 +1,108 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. La tradition historique kalabari publiée par une source communautaire est conservée à son niveau de preuve."
+  },
+  "id": "PAT_AMACHREE",
+  "nameMain": "Amachree",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Amachree",
+      "attestations": [
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["kalabari-townhall-amachree", "afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le chapitre historique publié par Kalabari Townhall affirme que le futur Amachree Ier s'appelait d'abord Amakro, reçut ensuite le nom Amakiri à Kalabari, puis que ce nom prit la forme anglaise « Amachree » après sa mort afin de distinguer le roi des nombreux Amakiri.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["kalabari-townhall-amachree"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_KALAIBARI",
+      "status": "attested",
+      "sourceRefs": ["kalabari-townhall-amachree"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "kalabari-townhall-amachree",
+      "title": "The Period of Amachree I in Kalabari History",
+      "url": "https://kalabaritownhalls.wordpress.com/wp-content/uploads/2019/11/chapter-xi.pdf",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Chapitre PDF publié par Kalabari Townhall et consulté intégralement, pp. 3-5. Il présente une tradition historique communautaire sur Amachree Ier, les formes Amakro et Amakiri et l'anglicisation Amachree ; faute d'appareil critique et d'auteur indiqué dans le fichier, les affirmations restent au niveau « unverified »."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Amachree kalabari oral tradition griot transcription » et « Amachree oral history » n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Amachree kalabari chronicle manuscript archive » et « Amachree colonial register » n'ont livré aucune chronique ni pièce d'archives retraçant cette forme."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Amachree joking relationship », « Amachree alliance patronyme » et « Amachree sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Amachree hereditary occupation caste title » et « Amachree fonction sociale » n'ont associé ce nom à aucune fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches « Amachree obituary biography deceased » et « Amachree nécrologie » n'ont pas permis de retenir un porteur décédé sur une notice suffisamment fiable et propre au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Amachree homonym etymology » et « Amachree surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Le chapitre décrit un nom royal réutilisé pour plusieurs souverains, mais les recherches « Amachree surname inheritance Kalabari » et « Amachree family transmission » n'établissent pas une règle de transmission du patronyme."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "La source relie Amachree à un roi et à ses successeurs, sans déterminer si le patronyme contemporain désigne un clan, une dynastie, un lignage ou une autre unité sociale."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "Le chapitre communautaire établit le contexte kalabari mais ne formule pas une attestation d'état civil nigériane ; l'association au Nigeria reste issue de la file de candidats."
+    }
+  ]
+}

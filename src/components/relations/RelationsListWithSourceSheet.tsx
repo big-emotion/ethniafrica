@@ -121,5 +121,3 @@ export function RelationsListWithSourceSheet({
     </>
   );
 }
-
-export default RelationsListWithSourceSheet;

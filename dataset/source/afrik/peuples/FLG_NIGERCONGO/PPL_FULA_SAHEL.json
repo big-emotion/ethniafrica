@@ -18,6 +18,8 @@
       "originOfExonyms": "Le terme Peul est derive du wolof peul, adopte par les Francais au Senegal et etendu a toute l'Afrique de l'Ouest francophone. Fulani est un terme d'origine haoussa designe les Fula de l'espace haoussa et adopte par les colonisateurs britanniques. Les Fula eux-memes preferent le terme Fulbe (pluriel) ou Pullo (singulier). Torodbe designe specifiquement les clans clericaux et lettrés, auteurs des jihads islamiques des 18e-19e siecles.",
       "whyProblematic": "L'ethnonymie fula est complexifiee par la diversite interne du groupe (nomades vs sedentaires, clans pastoraux vs clans clericaux) et par les multiples appellations imposees par les colonisateurs et les voisins. La distinction entre Peul, Fulani, Toucouleur et Haalpulaar est socialement et politiquement sensible dans plusieurs pays du Sahel.",
       "contemporaryUsage": "Le terme Fula ou Peul est couramment utilise dans les contextes officiels et academiques. Au Sahel, les Fula sedentarises se designent selon leur pays et region d'appartenance (Torodbe du Senegal, Fulbe du Sahel central, Fulbe Jellgooji du Burkina Faso). L'identite fula est aujourd'hui fortement liee a l'islam et aux traditions savantes islamiques.",
+      "peopleGroupId": "PGRP_FULANI",
+      "peopleGroupLabel": "Fulbe (Peul / Fulani)",
       "linguisticFamily": "FLG_NIGERCONGO",
       "ethnoLinguisticGroup": "Atlantique-Congo (branche senegambienne, sous-groupe Fulbe sedentarises et semi-sedentarises du Sahel)",
       "historicalRegion": "Sahel occidental et central : du Senegal au Tchad, des rives du fleuve Senegal au lac Tchad",

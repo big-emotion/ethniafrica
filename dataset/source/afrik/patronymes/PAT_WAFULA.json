@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_WAFULA",
+  "nameMain": "Wafula",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Wafula",
+      "attestations": [
+        {
+          "countryId": "KEN",
+          "sourceRefs": ["lwangale-2016-wafula"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "L'étude du système de nomination abaluhyia classe Wafula comme nom masculin attribué à un enfant né pendant la saison des pluies dans dix sous-groupes et le dérive de efula/ifula, « pluie ». Elle établit un nom circonstanciel de naissance, pas une origine unique de toutes les lignées modernes Wafula.",
+        "claimStatus": "established",
+        "sourceRefs": ["lwangale-2016-wafula"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_LUHYA",
+      "status": "attested",
+      "sourceRefs": ["lwangale-2016-wafula"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "KEN",
+      "status": "attested",
+      "sourceRefs": ["lwangale-2016-wafula"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "lwangale-2016-wafula",
+      "title": "A Genealogical Linguistic Implication of the Abaluhyia Naming System",
+      "url": "https://ijrdosshr.com/article/download/99/88/",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article de David Wafula Lwangale, texte intégral et notice consultés. Le tableau de terrain indique Wafula pour un garçon né pendant la saison des pluies dans dix sous-groupes luhya et rattache le nom à efula/ifula « pluie »."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Wafula », « Luhya », « Luhyia », « rainy season », « personal name », « surname », « etymology » et « transmission », ainsi que la consultation directe de « A Genealogical Linguistic Implication of the Abaluhyia Naming System » n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Wafula à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Wafula », « Luhya », « Luhyia », « rainy season », « personal name », « surname », « etymology » et « transmission », ainsi que la consultation directe de « A Genealogical Linguistic Implication of the Abaluhyia Naming System » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Wafula."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Wafula », « Luhya », « Luhyia », « rainy season », « personal name », « surname », « etymology » et « transmission », ainsi que la consultation directe de « A Genealogical Linguistic Implication of the Abaluhyia Naming System » n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé de Wafula, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Wafula », « Luhya », « Luhyia », « rainy season », « personal name », « surname », « etymology » et « transmission », ainsi que la consultation directe de « A Genealogical Linguistic Implication of the Abaluhyia Naming System » n'ont pas établi de lignée homonyme de Wafula dotée d'une origine distincte et documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    }
+  ]
+}

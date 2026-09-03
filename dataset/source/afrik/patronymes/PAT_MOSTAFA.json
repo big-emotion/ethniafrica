@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier de profondeur : les affirmations positives restent limitées à la source propre à ce nom ; les champs non établis sont déclarés comme lacunes de recherche."
+  },
+  "id": "PAT_MOSTAFA",
+  "nameMain": "Mostafa",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Mostafa",
+      "attestations": [
+        {
+          "countryId": "EGY",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    },
+    {
+      "spelling": "Mustafa",
+      "attestations": [
+        {
+          "countryId": "EGY",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "La source classe Mostafa comme nom de famille arabe dérivé du nom personnel Mustafa et fournit la graphie مصطفى. Elle ne permet pas de reconstruire une généalogie ni une règle de transmission particulière.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["btn-surname-mostafa"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ARABES_AFRIQUE",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "EGY",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "btn-surname-mostafa",
+      "title": "Meaning, origin and history of the surname Mostafa — Behind the Name",
+      "url": "https://surnames.behindthename.com/name/mostafa",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Entrée communautaire consultée le 2 septembre 2026. Elle classe Mostafa comme nom de famille arabe formé sur le nom personnel Mustafa, avec la graphie مصطفى. Elle ne documente pas une lignée égyptienne particulière."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches exactes « Mostafa anthroponymie », « Mostafa onomastique », « Mostafa surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune tradition orale attribuée à un griot ou informateur nommé, accompagnée d'une transcription vérifiable, n'a été trouvée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches exactes « Mostafa anthroponymie », « Mostafa onomastique », « Mostafa surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. Aucune chronique historique consultée ne rattache la fiche à un ancêtre ou à une lignée déterminée."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches exactes « Mostafa anthroponymie », « Mostafa onomastique », « Mostafa surname etymology » et les résultats consultés dans Persée, ASJP, CRASC et les dépôts universitaires nord-africains n'ont pas livré de monographie établissant l'histoire d'une lignée africaine portant exactement cette graphie. La ou les sources propres au nom ne démontrent pas une association exclusive avec les peuples indiqués ; ces rattachements restent non vérifiés."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Mostafa alliance à plaisanterie », « Mostafa joking relationship » et « Mostafa parenté à plaisanterie » n'ont livré aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Mostafa caste », « Mostafa métier héréditaire » et « Mostafa social function » n'ont livré aucune fonction sociale héréditaire propre aux porteurs de cette graphie. Une étymologie professionnelle éventuelle ne prouve pas une caste."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches biographiques exactes sur « Mostafa » dans les catalogues et répertoires consultés n'ont pas permis d'isoler un porteur décédé dont ce segment soit explicitement documenté dans la position anthroponymique pertinente. Les personnes vivantes repérées ont été exclues."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches exactes « Mostafa homonym surname », « Mostafa homonyme patronyme » et les variantes graphiques de la fiche n'ont pas établi deux origines distinctes et documentées pour la même forme."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "Les sources propres à « Mostafa » n'ont pas confirmé les pays où il est porté ; les recherches par pays n'ont pas livré de registre officiel directement exploitable pour cette fiche."
+    }
+  ]
+}

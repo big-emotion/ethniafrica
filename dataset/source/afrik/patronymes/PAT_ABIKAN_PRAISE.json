@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les deux sources propres à Abikan ont été consultées directement ; les lacunes indiquent les recherches restées sans résultat."
+  },
+  "id": "PAT_ABIKAN_PRAISE",
+  "nameMain": "Abikan",
+  "nameSystem": "praise_name",
+  "spellings": [
+    {
+      "spelling": "Abikan",
+      "attestations": [{ "countryId": "NGA", "sourceRefs": ["ayeleru-oriki"] }]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "L'oríkì orílẹ̀ est la louange de lignage : distincte de l'oríkì personnel, elle nomme les fondateurs et la localité d'origine et se transmet, chaque enfant héritant du vers collectif de sa famille.",
+        "claimStatus": "established",
+        "sourceRefs": ["discoveryoruba-oriki"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_YORUBA",
+      "status": "attested",
+      "sourceRefs": ["ayeleru-oriki"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["ayeleru-oriki"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "ayeleru-oriki",
+      "title": "Linguistic Innovation in the New West African Europhone Novel: Between Interlanguage and Indigenization",
+      "url": "https://english.fullerton.edu/publications/clnArchives/pdf/Ayeleru%20NOVEL.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Babatunde Ayeleru, California Linguistic Notes, vol. XXXVI, no 1, 2011, PDF intégral consulté. Aux pp. 9-10 du PDF, l'article reproduit la séquence généalogique « Omo Abikan », la traduit et l'identifie explicitement comme un oríkì, nom de louange de lignée yoruba."
+    },
+    {
+      "sourceKey": "discoveryoruba-oriki",
+      "title": "The Power of Oríkì: How Praise Names Shape Identity",
+      "url": "https://discoveryoruba.com/power-of-oriki-how-praise-names-shape-identity/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Site culturel yoruba. Cité pour la distinction entre oríkì personnel et oríkì orílẹ̀ (louange de lignage, héritée), non pour un lignage particulier."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L'article d'Ayeleru reproduit un texte littéraire d'oríkì et DiscoverYorùbá décrit sa transmission orale, mais les recherches « Abikan oriki oral tradition griot transcription » et « Omo Abikan oral history » n'ont livré ni griot nommé ni transcription de terrain attribuable à cette lignée."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Abikan Yoruba chronicle manuscript archive », « Omo Abikan genealogy archive » et « Abikan colonial register Nigeria » n'ont livré aucune chronique ni pièce d'archives retraçant cette forme."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Abikan Yoruba joking relationship », « Omo Abikan alliance lineage » et « Abikan sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "L'article d'Ayeleru, DiscoverYorùbá et les recherches « Abikan Yoruba hereditary occupation caste title » n'associent ce lignage à aucune fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches « Abikan Yoruba obituary biography deceased », « Omo Abikan genealogy » et les deux sources consultées ne datent aucun fondateur et n'ont pas permis d'établir un porteur décédé sur une notice suffisamment fiable."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Abikan homonym etymology », « Abikan surname origin other language » et « Omo Abikan lineage » n'ont pas établi une graphie identique d'origine distincte."
+    }
+  ]
+}

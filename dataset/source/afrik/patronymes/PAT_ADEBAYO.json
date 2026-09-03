@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Adebayo ; les lacunes consignent les recherches restées sans résultat."
+  },
+  "id": "PAT_ADEBAYO",
+  "nameMain": "Adebayo",
+  "nameSystem": "praise_name",
+  "spellings": [
+    {
+      "spelling": "Adebayo",
+      "attestations": [
+        {
+          "countryId": "NGA",
+          "sourceRefs": [
+            "yorubanames-adebayo",
+            "merryfield-1989-yoruba",
+            "afrik-candidate-queue"
+          ]
+        }
+      ]
+    },
+    {
+      "spelling": "Adébayo",
+      "attestations": [
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["yorubanames-adebayo", "afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "YorubaNames analyse Adébáyọ̀ comme adé-bá-ayọ̀ (« la royauté rencontre la joie ») ou a-dé-bá-ayọ̀ (« nous sommes arrivés dans la joie »). Une source pédagogique universitaire l'atteste séparément comme nom choisi pour un garçon né pendant une période de joie familiale.",
+        "claimStatus": "established",
+        "sourceRefs": ["yorubanames-adebayo", "merryfield-1989-yoruba"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_YORUBA",
+      "status": "attested",
+      "sourceRefs": ["yorubanames-adebayo", "merryfield-1989-yoruba"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["merryfield-1989-yoruba"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "yorubanames-adebayo",
+      "title": "Adébáyọ̀ — YorubaNames",
+      "url": "https://www.yorubaname.com/entries/adebayo?lang=en",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page de la base collaborative YorubaNames consultée directement pour Adebayo. Elle fournit la forme tonale, une glose et une segmentation morphologique ; son contenu communautaire est conservé au niveau « unverified »."
+    },
+    {
+      "sourceKey": "merryfield-1989-yoruba",
+      "title": "Lessons from Africa: A Supplement to Middle School Courses in World Cultures, Global Studies, and World Geography",
+      "url": "https://files.eric.ed.gov/fulltext/ED304395.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Merry M. Merryfield (dir.), ERIC Clearinghouse et Social Studies Development Center, Indiana University, 1989, leçon 5, pp. 45-48 du document. Le PDF intégral a été consulté ; la liste des noms et significations est attribuée à E. B. Ogundimu."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Adebayo Yoruba oral tradition griot transcription » et « Adebayo oriki oral history » ainsi que le manuel universitaire de Merryfield (1989) et YorubaNames n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Adebayo Yoruba chronicle manuscript colonial register » et « Adebayo archive Nigeria Benin » n'ont livré aucune chronique ni pièce d'archives établissant une histoire propre à cette forme."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Adebayo Yoruba joking relationship », « Adebayo joking kinship » et « Adebayo sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "le manuel universitaire de Merryfield (1989) et YorubaNames et les recherches « Adebayo Yoruba hereditary occupation caste title » n'ont associé ce nom à aucune fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "le manuel universitaire de Merryfield (1989) et YorubaNames et les recherches « Adebayo obituary biography deceased » n'ont pas permis d'établir un porteur décédé avec une notice suffisamment fiable sans recourir à Wikipédia."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Adebayo homonym etymology » et « Adebayo surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. La claim sur Kossi repose uniquement sur le passage qui cite cette forme et son jour de naissance."
+  },
+  "id": "PAT_KOSSI",
+  "nameMain": "Kossi",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Kossi",
+      "attestations": [
+        {
+          "countryId": "TGO",
+          "sourceRefs": ["essizewa-2006-kossi"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Essizewa classe Kossi parmi les prénoms ewe attribués selon le jour de la semaine et l'associe aux garçons nés le dimanche.",
+        "claimStatus": "established",
+        "sourceRefs": ["essizewa-2006-kossi"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_EWE",
+      "status": "attested",
+      "sourceRefs": ["essizewa-2006-kossi"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "TGO",
+      "status": "attested",
+      "sourceRefs": ["essizewa-2006-kossi"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "essizewa-2006-kossi",
+      "title": "A Sociolinguistic Survey of Language Contact in Togo: A Case Study of Kabiye and Ewe",
+      "url": "https://journalofwestafricanlanguages.org/downloads?catid=92&id=448&m=0&task=download.send",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Komlan E. Essizewa, Journal of West African Languages XXXIII (2006), PDF intégral consulté, p. 41. Le passage cite explicitement Kossi parmi les noms ewe donnés selon le jour de naissance et l'associe au dimanche ; aucune claim concernant un autre nom n'est transférée ici."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Kossi ewe du Togo oral tradition griot transcription » et « Kossi oral history » n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Kossi ewe du Togo chronicle manuscript archive » et « Kossi colonial register » n'ont livré aucune chronique ni pièce d'archives retraçant cette forme."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Kossi joking relationship », « Kossi alliance patronyme » et « Kossi sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Kossi hereditary occupation caste title » et « Kossi fonction sociale » n'ont associé ce nom à aucune fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches « Kossi obituary biography deceased » et « Kossi nécrologie » n'ont pas permis de retenir un porteur décédé sur une notice suffisamment fiable et propre au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Kossi homonym etymology » et « Kossi surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
+    }
+  ]
+}

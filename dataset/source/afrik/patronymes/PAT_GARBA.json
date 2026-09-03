@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Garba ; l'étymologie incertaine demeure explicitement une proposition."
+  },
+  "id": "PAT_GARBA",
+  "nameMain": "Garba",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Garba",
+      "attestations": [
+        {
+          "countryId": "NER",
+          "sourceRefs": ["gouv-niger-ministres-2026-garba"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Ryan atteste Garba dans son inventaire de la nomenclature personnelle haoussa sans en fixer ici l'étymon. Une source communautaire consacrée au nom le relie à une épithète du calife Abu Bakr et avance, avec réserve, un rapprochement avec l'arabe gharb, « ouest » ; cette explication n'est pas établie par les travaux savants consultés.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["ryan-1981-garba", "btn-garba"]
+      },
+      {
+        "claim": "Dans le système haoussa décrit par Chamo, le nom personnel du père est couramment placé après le prénom de l'enfant, sans devenir un nom de famille héréditaire stable.",
+        "claimStatus": "established",
+        "sourceRefs": ["chamo-2018-garba"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_HAUSA",
+      "status": "attested",
+      "sourceRefs": ["ryan-1981-garba", "btn-garba"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NER",
+      "status": "attested",
+      "sourceRefs": ["gouv-niger-ministres-2026-garba"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "ryan-1981-garba",
+      "title": "An Introduction to Hausa Personal Nomenclature",
+      "url": "https://ans-names.pitt.edu/ans/article/download/942/941/1886",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Pauline M. Ryan, Names 29(2), 1981, pp. 139-164. Le PDF intégral atteste exactement Garba dans la nomenclature haoussa. La mise en page des renvois ne suffit pas à attribuer sans ambiguïté une étymologie précise à Garba, qui n'est donc pas extraite comme fait."
+    },
+    {
+      "sourceKey": "chamo-2018-garba",
+      "title": "Language and Identity in Africa: The Use of Place Names as Part of a Person’s Name in Hausa",
+      "url": "https://auadamu.com/phocadownload/Books/%5B2018%5D%20Festschrift%20in%20Honour%20of%20Abdalla%20Uba%20Adamu%20-%20Media%20-Knowledge%20Transfer%20and%20African%20Identity.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Isa Yusuf Chamo, 2018, pp. 251-252 du chapitre consulté dans le volume intégral. Établit le fonctionnement non héréditaire du patronyme haoussa ; ne traite pas l'étymologie de Garba."
+    },
+    {
+      "sourceKey": "btn-garba",
+      "title": "Garba — Behind the Name",
+      "url": "https://www.behindthename.com/name/garba",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page communautaire consultée directement. Elle rattache Garba à Abu Bakr et donne le rapprochement avec gharb comme seulement possible. Cette incertitude est conservée dans le statut de la revendication."
+    },
+    {
+      "sourceKey": "gouv-niger-ministres-2026-garba",
+      "title": "Les membres du Gouvernement — Portail officiel du Gouvernement du Niger",
+      "url": "https://www.gouv.ne/index.php/les-ministeres/liste-des-ministeres/96-13-ministere-de-l-",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Page officielle consultée directement le 2 septembre 2026. Elle atteste Garba au Niger dans le nom de Garba Hakimi ; elle n'établit ni origine linguistique ni appartenance ethnique."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "La requête « Garba Hausa oral tradition griot lineage », Ryan (1981), Chamo (2018) et Amoo, Ajayi et Sabo (2022) n'ont livré ni griot nommé ni transcription attribuable à Garba."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Garba Hausa Arabic chronicle manuscript » et « Garba Niger colonial record » n'ont livré aucune chronique ou archive dédiée établissant l'origine du nom."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Garba Hausa joking relationship », « Garba sanankuya », « Garba kal » et « Garba dandiraaɓe » n'ont établi aucune paire entre deux fiches PAT_* existantes."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Ryan (1981), Chamo (2018) et la recherche « Garba Hausa hereditary occupation caste » n'ont associé ce nom personnel à aucune fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "La page officielle nigérienne et les recherches « Garba Niger obituary biography » n'ont livré que des personnes vivantes ou des mentions insuffisantes ; aucun porteur décédé n'a été retenu."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Garba homonym etymology » et les sources consacrées à Garba n'ont pas établi une graphie identique possédant une origine distincte et documentée."
+    }
+  ]
+}

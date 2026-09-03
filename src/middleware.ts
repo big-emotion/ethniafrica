@@ -35,6 +35,8 @@ const isDeveloperPortalPage = (pathname: string) =>
 
 // Strict routes allow the two fixed Next.js 16 runtime <style> payloads by
 // exact hash because the framework does not propagate the request nonce.
+const SUPABASE_ORIGIN_FALLBACK = "https://supabase.ethniafrica.com";
+
 const NEXT_RUNTIME_STYLE_HASHES = [
   "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='",
   "'sha256-CIxDM5jnsGiKqXs2v7NKCY5MzdR9gu6TtiMJrDw29AY='",
@@ -55,6 +57,28 @@ const MEDIA_SRC_HOSTS = ["https://images.prismic.io"].join(" ");
 // directive still exists explicitly (not an implicit default-src fallback)
 // and stays a deliberate host-by-host allowlist once REQ-128 names a host.
 const FRAME_SRC_HOSTS: string[] = [];
+/**
+ * The self-hosted Supabase origin the browser is allowed to reach.
+ *
+ * `*.supabase.co` covers every hosted project, but production runs its own
+ * Supabase behind a custom domain, which that wildcard does not match. Baking
+ * one deployment's hostname into the policy meant any other deployment — a
+ * self-hosted staging, a branch database, a fork — had its Supabase calls
+ * blocked by the browser with no server-side error to find. Derived from
+ * NEXT_PUBLIC_SUPABASE_URL so it follows the database the app is actually
+ * pointed at, with the production host as the fallback.
+ */
+function selfHostedSupabaseOrigin(): string {
+  const configured = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+  if (!configured) return SUPABASE_ORIGIN_FALLBACK;
+  try {
+    const { origin } = new URL(configured);
+    return origin.endsWith(".supabase.co") ? "" : origin;
+  } catch {
+    return SUPABASE_ORIGIN_FALLBACK;
+  }
+}
+
 function applySecurityHeaders(
   response: NextResponse,
   nonce: string,
@@ -90,7 +114,7 @@ function applySecurityHeaders(
     // relaxation above is only for public pages, these two are for all of them.
     "base-uri 'self'",
     "form-action 'self'",
-    "connect-src 'self' https://*.supabase.co https://supabase.ethniafrica.com https://*.ingest.de.sentry.io https://plausible.io https://*.upstash.io",
+    `connect-src 'self' https://*.supabase.co ${selfHostedSupabaseOrigin()} https://*.ingest.de.sentry.io https://plausible.io https://*.upstash.io`,
   ].join("; ");
   response.headers.set("Content-Security-Policy", csp);
 }
@@ -158,6 +182,17 @@ export const RENAMED_MODULE_PATHS: Record<string, string> = {
   "dossiers/noms": "atlas/appellations",
   "dossiers/appellations": "atlas/appellations",
   "dossiers/doctrine": "doctrine",
+  // The two account pages with no successor. There is nothing to register for
+  // and no profile to hold, so both land on the one sign-in the atlas has left
+  // — the page that explains, in as many words, that reporting needs no
+  // account. A 404 would leave a reader to guess that.
+  //
+  // Keyed `admin/...` and not `compte/...` on purpose: RELOCATED_SEGMENTS has
+  // already rewritten `compte` to `admin` by the time this table is consulted,
+  // exactly as the `dossiers/` keys above are reached already half-rewritten
+  // from `comprendre/`.
+  "admin/inscription": "admin/connexion",
+  "admin/profil": "admin/connexion",
 };
 
 /**
@@ -226,6 +261,13 @@ export const RELOCATED_SEGMENTS: Record<string, string> = {
   migrations: "dossiers/migrations",
   regards: "dossiers/regards",
   quiz: "jeux/quiz",
+  // The account area, retired with the public accounts themselves. The subtree
+  // maps cleanly onto the admin one — `connexion` and `cles-api` both have a
+  // successor there — and the two pages that have none, `inscription` and
+  // `profil`, are caught by RENAMED_MODULE_PATHS below. This address is in
+  // moderators' history for a specific reason: until now the middleware sent
+  // them here to sign in.
+  compte: "admin",
   // English spellings, published by V1 and still linked from outside.
   countries: "atlas/pays",
   families: "atlas/familles",
@@ -412,7 +454,7 @@ export async function middleware(request: NextRequest) {
   //
   // Self-guarding on the pathname, so wrapping a return that also serves pages
   // costs nothing and cannot leak the public API's version onto /fr or
-  // /api/contributions.
+  // /api/entities.
   const versioned = <ResponseType extends Response>(response: ResponseType) =>
     applyVersioningHeaders(response, pathname);
   // The whole /api/v2/keys subtree sits outside api_keys Bearer auth: /issue
@@ -540,37 +582,23 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // /fr/admin/* is the moderator-gated admin area.
-  // /fr/admin/connexion is the public sign-in entry point and must be excluded.
+  // /fr/admin/* is the moderator area.
+  // /fr/admin/connexion is the sign-in entry point and must be excluded.
   const isAdminRoute =
     pathname.startsWith("/fr/admin") && pathname !== "/fr/admin/connexion";
-  const isContributorProfileRoute = pathname === "/fr/compte/profil";
 
-  if (isContributorProfileRoute && !user) {
-    const loginUrl = new URL("/fr/compte/connexion", request.url);
-    loginUrl.searchParams.set("redirect", pathname);
-    return NextResponse.redirect(loginUrl);
-  }
-
-  if (isAdminRoute) {
-    if (!user) {
-      const loginUrl = new URL("/fr/compte/connexion", request.url);
-      loginUrl.searchParams.set("redirect", pathname);
-      return NextResponse.redirect(loginUrl);
-    }
-
-    const { data: profileData, error } = await supabase
-      .from("contributor_profiles")
-      .select("moderator_role")
-      .eq("user_id", user.id);
-
-    const moderatorRole: string | undefined = profileData?.[0]?.moderator_role;
-
-    if (error || !profileData || !moderatorRole || moderatorRole === "none") {
-      const homeUrl = new URL("/fr", request.url);
-      homeUrl.searchParams.set("message", "acces_moderateurs_requis");
-      return NextResponse.redirect(homeUrl);
-    }
+  // Authentication here, authorization in the page.
+  //
+  // This used to read `contributor_profiles.moderator_role` on the visitor's
+  // own client. Authorization is now membership of `admin_allowlist`, a table
+  // with RLS and no policy — this client could not read it if it tried, and
+  // giving it one would publish the moderator roster. So the middleware
+  // establishes that somebody is signed in, and `getModeratorSession()` in the
+  // page decides whether that somebody may be here.
+  if (isAdminRoute && !user) {
+    const signInUrl = new URL("/fr/admin/connexion", request.url);
+    signInUrl.searchParams.set("redirect", pathname);
+    return NextResponse.redirect(signInUrl);
   }
 
   applySecurityHeaders(supabaseResponse, nonce, pathname);

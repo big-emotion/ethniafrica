@@ -57,7 +57,7 @@ test.describe("Search-first home — mobile source of truth (ETNI-1513)", () => 
     const fact = page.getByTestId("home-did-you-know");
 
     await expect(seeds.getByRole("button")).toHaveCount(3);
-    await expect(page.getByTestId(/^home-count-/)).toHaveCount(3);
+    await expect(page.getByTestId(/^home-count-/)).toHaveCount(5);
     await expect(fact).toHaveCount(1);
     await expect(
       page.locator('.home-hero + [data-testid="home-did-you-know"]')
@@ -161,7 +161,7 @@ test.describe("Search-first home — desktop widening pass (ETNI-1513)", () => {
     const fact = page.getByTestId("home-did-you-know");
 
     await expect(seeds.getByRole("button")).toHaveCount(4);
-    await expect(page.getByTestId(/^home-count-/)).toHaveCount(3);
+    await expect(page.getByTestId(/^home-count-/)).toHaveCount(5);
     await expect(fact).toHaveCount(1);
     await expect(
       page.locator('.home-hero + [data-testid="home-did-you-know"]')

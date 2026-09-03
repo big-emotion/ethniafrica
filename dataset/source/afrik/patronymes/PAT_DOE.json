@@ -1,0 +1,118 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier révisé par recherche dédiée. Chaque affirmation est limitée à ce que sa source établit ; les rubriques non documentées restent déclarées comme lacunes."
+  },
+  "id": "PAT_DOE",
+  "nameMain": "Doe",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Doe",
+      "attestations": [
+        {
+          "countryId": "LBR",
+          "sourceRefs": ["liberia-gac-mia-2017-2021"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_KRU",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "LBR",
+      "status": "attested",
+      "sourceRefs": ["liberia-gac-mia-2017-2021"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [
+    {
+      "label": "Doe anglais et anglo-normand",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "Le patronyme anglais Doe relève soit d'un surnom médiéval fondé sur le nom de la femelle du daim, soit d'un nom d'origine anglo-normande lié à Eu en Seine-Maritime. Cette histoire documentée ne doit pas être transférée au nom libérien homographe.",
+      "sourceRefs": ["dafn-2022-doe"]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "liberia-gac-mia-2017-2021",
+      "title": "Auditor General’s Report on the Compliance Audit of the Ministry of Internal Affairs (MIA) for the Fiscal Periods July 1, 2017 to December 31, 2021",
+      "url": "https://gac.gov.lr/wp-content/uploads/2024/09/Auditor-Generals-Report-on-the-Compliance-Audit-of-the-Ministry-of-Internal-Affairs-for-the-period-July-1-2017-to-December-31-2021.pdf",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Le tableau nominatif des agents du comté de Grand Kru, pages 72 à 75 du rapport, sépare prénom, second prénom et nom de famille. Doe figure dans la colonne LAST pour Putu Doe, Sarah W. Doe, Sunday Doe, Wiah T. Doe, Charlie Doe et Charlotte Doe. Le document établit la graphie et l'usage administratif au Liberia, mais ni l'appartenance ethnique de chaque personne ni l'étymologie du nom."
+    },
+    {
+      "sourceKey": "dafn-2022-doe",
+      "title": "Dictionary of American Family Names, 2nd edition — Doe",
+      "url": "https://www.ancestry.com/last-name-meaning/doe",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Entrée de la deuxième édition du Dictionary of American Family Names (2022), diffusée par Ancestry. Elle ne décrit que des origines anglaises, anglo-normandes et une américanisation du français Daoust ; elle est citée uniquement pour distinguer ces homonymes du nom libérien."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Le rapport du General Auditing Commission établit un nom de famille administratif, mais ni ce rapport, ni la monographie historique de Jeffrey Gunn sur les Kru, ni les recherches exactes « Doe + Kru + Liberia » n'établissent que Doe est un nom de clan ; la valeur exigée par le modèle reste donc non résolue."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "La littérature consultée sur l'organisation kru décrit des patrilignages en général, tandis que les recherches consacrées à Doe ne relient ce nom à aucun clan ou lignage précis ; l'unité sociale désignée reste à établir."
+    },
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches dans la littérature historique kru de Jeffrey Gunn et dans les résultats exacts « Doe Kru oral tradition » n'ont livré aucun récit attribué à un griot ou à un transmetteur identifiable pour ce nom."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Le rapport d'audit libérien, les dossiers biographiques sur Samuel K. Doe et l'histoire des travailleurs kru de Jeffrey Gunn ont été vérifiés ; ils attestent des personnes ou des institutions, sans fournir de chronique d'origine du patronyme kru Doe."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Le Dictionary of American Family Names ne donne que des étymologies européennes de l'homonyme. Les recherches « Doe Kru Liberia surname etymology » et « Doe Liberia onomastics » n'ont produit aucune analyse lexicale applicable au nom libérien."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Doe Kru joking relationship », « Doe Kru alliance » et la littérature historique kru consultée n'ont nommé aucune parenté à plaisanterie associant Doe à un autre PAT_* existant."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Le tableau du General Auditing Commission montre plusieurs métiers différents parmi les Doe et la littérature kru consultée ne rattache pas ce nom à une fonction héréditaire ; aucune fonction de caste ou fonction sociale propre au nom n'a été trouvée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les sources gouvernementales et biographiques consultées ont été contrôlées pour des porteurs historiques. Samuel K. Doe est documenté comme Krahn, et non comme Kru ; les Doe du rapport d'audit ne sont pas documentés comme décédés. Aucun porteur défunt rattachable au dossier kru n'a donc été retenu."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Ni le rapport administratif libérien, ni le Dictionary of American Family Names, ni la littérature historique kru consultée ne décrivent la transmission du nom libérien Doe ; le modèle impose une valeur, qui reste « other » faute de preuve."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_MANDA",
+  "nameMain": "Manda",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Manda",
+      "attestations": [
+        {
+          "countryId": "MWI",
+          "sourceRefs": ["forebears-manda"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_TUMBUKA",
+      "status": "supposed",
+      "sourceRefs": ["forebears-manda"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MWI",
+      "status": "attested",
+      "sourceRefs": ["forebears-manda"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-manda",
+      "title": "Manda Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/manda",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement. Elle atteste Manda au Malawi, mais présente aussi des foyers indépendants et une glose bemba qui ne peut pas être transférée à la fiche tumbuka ; cette glose a donc été écartée."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web et bibliographique combinant « Manda », « Tumbuka », « Malawi », « surname », « clan », « onomastics », « etymology », « transmission » et « obituary », ainsi que la consultation de la page Forebears dédiée n'ont livré aucune tradition attribuée, chronique ou étude linguistique établissant l'origine de Manda. Les rapprochements portant sur un homonyme d'une autre langue ou sur la seule géographie ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Manda », « Tumbuka », « Malawi », « surname », « clan », « onomastics », « etymology », « transmission » et « obituary », ainsi que la consultation de la page Forebears dédiée n'ont pas établi que la catégorie provisoire « clan_name » décrive Manda lui-même ; elle reste une hypothèse de classement, sans être transformée en affirmation."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Manda », « Tumbuka », « Malawi », « surname », « clan », « onomastics », « etymology », « transmission » et « obituary », ainsi que la consultation de la page Forebears dédiée n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Manda à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Manda », « Tumbuka », « Malawi », « surname », « clan », « onomastics », « etymology », « transmission » et « obituary », ainsi que la consultation de la page Forebears dédiée n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Manda."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Manda », « Tumbuka », « Malawi », « surname », « clan », « onomastics », « etymology », « transmission » et « obituary », ainsi que la consultation de la page Forebears dédiée n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Manda », « Tumbuka », « Malawi », « surname », « clan », « onomastics », « etymology », « transmission » et « obituary », ainsi que la consultation de la page Forebears dédiée n'ont pas établi de lignée homonyme d'origine distincte documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Manda », « Tumbuka », « Malawi », « surname », « clan », « onomastics », « etymology », « transmission » et « obituary », ainsi que la consultation de la page Forebears dédiée n'ont établi aucune règle propre à Manda permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

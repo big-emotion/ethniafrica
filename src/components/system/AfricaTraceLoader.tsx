@@ -125,5 +125,3 @@ export function AfricaTraceLoader({
     </div>
   );
 }
-
-export default AfricaTraceLoader;

@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_NCHAMA",
+  "nameMain": "Nchama",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Nchama",
+      "attestations": [
+        {
+          "countryId": "GNQ",
+          "sourceRefs": ["forebears-nchama"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Une étude de la culture fang cite Nchama parmi les noms féminins et reprend, en l’attribuant à Nsue-Mibui, la glose « femme destructrice ». Comme l’article relaie une source secondaire et ne décompose pas le terme, la glose reste une affirmation attribuée plutôt qu’une reconstruction établie.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["nguema-obiang-mikue-2023-nchama"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FANG",
+      "status": "attested",
+      "sourceRefs": ["nguema-obiang-mikue-2023-nchama"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GNQ",
+      "status": "attested",
+      "sourceRefs": ["forebears-nchama"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "nguema-obiang-mikue-2023-nchama",
+      "title": "La cultura para el reconocimiento de la identidad: caso de la cultura fang de Guinea Ecuatorial",
+      "url": "https://doi.org/10.29166/catedra.v6i1.4282",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article de Bonifacio Nguema Obiang-Mikue dans Revista Cátedra, consulté en texte intégral sur SciELO. Il classe Nchama parmi les noms féminins fang et reprend de Nsue-Mibui la glose « femme destructrice ». Le même passage décrit le passage du nom du père en patronyme commun, mais ne prouve pas le mode propre à chaque lignée Nchama."
+    },
+    {
+      "sourceKey": "forebears-nchama",
+      "title": "Nchama Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/nchama",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement. Elle atteste l’orthographe Nchama et sa présence dans la Guinée équatoriale, mais la distribution ne démontre ni l’appartenance Fang, ni une origine unique, ni un mode de transmission."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Nchama », « Fang », « la Guinée équatoriale », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « La cultura para el reconocimiento de la identidad: caso de la cultura fang de Guinea Ecuatorial » et la page Forebears propre au nom, consultées directement, n’a pas établi que la catégorie provisoire portée par la fiche décrive Nchama lui-même ; elle reste une hypothèse de classement technique, sans être transformée en affirmation historique."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Nchama », « Fang », « la Guinée équatoriale », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « La cultura para el reconocimiento de la identidad: caso de la cultura fang de Guinea Ecuatorial » et la page Forebears propre au nom, consultées directement, n’a identifié aucune alliance ni parenté à plaisanterie documentée reliant Nchama à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Nchama », « Fang », « la Guinée équatoriale », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « La cultura para el reconocimiento de la identidad: caso de la cultura fang de Guinea Ecuatorial » et la page Forebears propre au nom, consultées directement, n’a établi aucune fonction sociale ou professionnelle héréditaire propre à Nchama."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Nchama », « Fang », « la Guinée équatoriale », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « La cultura para el reconocimiento de la identidad: caso de la cultura fang de Guinea Ecuatorial » et la page Forebears propre au nom, consultées directement, n’a livré aucune notice réunissant sans ambiguïté un porteur décédé, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Nchama », « Fang », « la Guinée équatoriale », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « La cultura para el reconocimiento de la identidad: caso de la cultura fang de Guinea Ecuatorial » et la page Forebears propre au nom, consultées directement, n’a pas établi de lignée homonyme d’origine distincte documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Nchama », « Fang », « la Guinée équatoriale », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « La cultura para el reconocimiento de la identidad: caso de la cultura fang de Guinea Ecuatorial » et la page Forebears propre au nom, consultées directement, n’a établi aucune règle propre à Nchama permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

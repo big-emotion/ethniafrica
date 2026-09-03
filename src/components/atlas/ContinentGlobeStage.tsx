@@ -41,6 +41,8 @@ export interface ContinentGlobeStageProps {
    * band follows the visual instead of covering it.
    */
   presentation?: "standard" | "hero";
+  /** Enables the homepage's gentle arrival motion; disabled for shared scenes by default. */
+  autoRotate?: boolean;
 }
 
 /**
@@ -69,6 +71,7 @@ export function ContinentGlobeStage({
   pinnedProjection,
   pinnedProjectionNote,
   presentation = "standard",
+  autoRotate = false,
 }: ContinentGlobeStageProps) {
   const [webglSupported, setWebglSupported] = useState<boolean | null>(null);
 
@@ -110,6 +113,7 @@ export function ContinentGlobeStage({
           pinnedProjectionNote={pinnedProjectionNote}
           presentation={presentation === "hero" ? "editorial" : "standard"}
           viewScale={presentation === "hero" ? 0.84 : 1}
+          autoRotate={autoRotate}
           /* Tissot's indicatrices, as the engine deleted in ETNI-1360 drew
              them: on by default on the two surfaces that stand here. Both
              argue that a flat map lies about surface, and the discs are what
@@ -201,5 +205,3 @@ export function ContinentGlobeStage({
     </div>
   );
 }
-
-export default ContinentGlobeStage;

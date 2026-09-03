@@ -1,0 +1,98 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. La distribution de Zinsou est attestée séparément ; aucune étymologie n'est déduite de cette distribution."
+  },
+  "id": "PAT_ZINSOU",
+  "nameMain": "Zinsou",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Zinsou",
+      "attestations": [
+        {
+          "countryId": "BEN",
+          "sourceRefs": ["forebears-zinsou"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FON",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "BEN",
+      "status": "attested",
+      "sourceRefs": ["forebears-zinsou"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "forebears-zinsou",
+      "title": "Zinsou Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/zinsou",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Page Forebears propre à Zinsou, consultée directement. La base agrégée atteste la graphie et sa distribution dans BEN, mais ne donne aucun sens ; elle précise qu'une distribution géographique ne permet pas d'inférer une appartenance ethnique. Ces données sont donc conservées au niveau « unverified » et ne soutiennent aucune étymologie."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "Les recherches bibliographiques et web « Zinsou fon anthroponymie étymologie », « Zinsou onomastique » et « Zinsou surname meaning », ainsi que la page Forebears propre au nom, n'ont livré aucune étymologie ni histoire de formation vérifiable. La distribution observée n'est pas interprétée comme une origine."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Les recherches « Zinsou fon anthroponymie » et « Zinsou ethnic group » n'ont fourni aucune source propre au nom établissant son rattachement au peuple proposé par la file de candidats ; ce rattachement reste donc au statut « supposed »."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Zinsou joking relationship », « Zinsou alliance patronyme » et « Zinsou sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Les recherches « Zinsou hereditary occupation caste title » et « Zinsou fonction sociale » n'ont associé ce nom à aucune fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches « Zinsou obituary biography deceased » et « Zinsou nécrologie » n'ont pas permis de retenir un porteur décédé sur une notice suffisamment fiable et propre au nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Zinsou homonym etymology » et « Zinsou surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La page Forebears atteste une distribution du nom, mais ni elle ni les recherches « Zinsou family name inheritance » ne décrivent sa règle de transmission."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Les sources consultées ne permettent pas de déterminer si Zinsou désigne historiquement un lignage, un clan ou une autre unité sociale."
+    }
+  ]
+}

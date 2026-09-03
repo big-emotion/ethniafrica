@@ -157,5 +157,3 @@ export const QuizAnswerReveal = ({
     </div>
   );
 };
-
-export default QuizAnswerReveal;

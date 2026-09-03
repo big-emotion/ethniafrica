@@ -43,8 +43,7 @@ export const scoreCardParamsSchema = z
 export type ScoreCardParams = z.infer<typeof scoreCardParamsSchema>;
 
 type ScoreCardRawParams =
-  | URLSearchParams
-  | Record<string, string | string[] | undefined>;
+  URLSearchParams | Record<string, string | string[] | undefined>;
 
 function toPlainRecord(raw: ScoreCardRawParams): Record<string, unknown> {
   if (raw instanceof URLSearchParams) {

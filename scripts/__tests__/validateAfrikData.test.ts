@@ -5,12 +5,15 @@
 // @req REQ-030
 // @req REQ-031
 // @req REQ-032
+// @req REQ-130
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdirSync, writeFileSync, rmSync, existsSync } from "fs";
+import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from "fs";
 import { join, resolve } from "path";
 import {
   checkFlgFolderMatch,
   checkPplDuplicates,
+  checkExternalIdentifierFormats,
+  checkPeopleGroupConsistency,
   checkPopulationSums,
   checkIsoValidity,
   checkOrphanFiches,
@@ -20,6 +23,10 @@ import {
   checkCountryNameFrDistinctFromOfficial,
   checkFamilyStructuralCompleteness,
   checkCountryCodesResolve,
+  checkHistoricalAffiliationModel,
+  OFF_MAP_COUNTRIES,
+  checkSourceIdentity,
+  AFRICAN_REFERENCE_COUNTRY_CODES,
 } from "../validateAfrikData";
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
@@ -87,6 +94,53 @@ function writePPL(
   writeFileSync(
     join(dir, `${pplId}.json`),
     JSON.stringify({ ...base, ...overrides })
+  );
+}
+
+function writePplWithAppellations(
+  root: string,
+  flgFolder: string,
+  pplId: string,
+  appellations: { peopleGroupId?: string; peopleGroupLabel?: string }
+) {
+  const dir = join(root, "peuples", flgFolder);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(
+    join(dir, `${pplId}.json`),
+    JSON.stringify({
+      id: pplId,
+      content: {
+        appellations,
+        languages: { isoCodes: ["ful"] },
+        demography: { distributionByCountry: [] },
+        sources: [],
+      },
+    })
+  );
+}
+
+function writePplWithHistoricalAffiliation(
+  root: string,
+  flgFolder: string,
+  pplId: string,
+  historicalAffiliation: {
+    description?: string;
+    sources?: Array<{ title?: string; url?: string | null; tier?: string }>;
+  }
+) {
+  const dir = join(root, "peuples", flgFolder);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(
+    join(dir, `${pplId}.json`),
+    JSON.stringify({
+      id: pplId,
+      content: {
+        historicalAffiliation,
+        languages: { isoCodes: ["hat"] },
+        demography: { distributionByCountry: [] },
+        sources: [],
+      },
+    })
   );
 }
 
@@ -227,6 +281,334 @@ describe("validateAfrikData – new integrity checks", () => {
       const result = checkPplDuplicates(tmpDir);
       expect(result.ok).toBe(false);
       expect(result.errors.some((e) => e.includes("PPL_ZULU"))).toBe(true);
+    });
+  });
+
+  // ── ETNI-1414 : checkExternalIdentifierFormats ─────────────────────────────
+
+  describe("checkExternalIdentifierFormats (ETNI-1414)", () => {
+    // @req REQ-128
+    it("returns ok:true when all three identifiers are well-formed", () => {
+      writeFLG(tmpDir, "FLG_BENOUECONGO");
+      writePPL(tmpDir, "FLG_BENOUECONGO", "PPL_YORUBA", {
+        content: {
+          externalIdentifiers: {
+            wikidataId: "Q34636",
+            glottocode: "yoru1245",
+            iso639_3: "yor",
+          },
+          languages: { isoCodes: ["yor"] },
+          demography: { distributionByCountry: [] },
+          sources: [],
+        },
+      });
+
+      const result = checkExternalIdentifierFormats(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    // @req REQ-128
+    it("errors when wikidataId does not match the Q-id format", () => {
+      writeFLG(tmpDir, "FLG_BENOUECONGO");
+      writePPL(tmpDir, "FLG_BENOUECONGO", "PPL_YORUBA", {
+        content: {
+          externalIdentifiers: { wikidataId: "34636" },
+          languages: { isoCodes: ["yor"] },
+          demography: { distributionByCountry: [] },
+          sources: [],
+        },
+      });
+
+      const result = checkExternalIdentifierFormats(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some(
+          (e) =>
+            e.includes("PPL_YORUBA") &&
+            e.includes("wikidataId") &&
+            e.includes("34636")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-128
+    it("errors when glottocode does not match the 4-letter/4-digit format", () => {
+      writeFLG(tmpDir, "FLG_BENOUECONGO");
+      writePPL(tmpDir, "FLG_BENOUECONGO", "PPL_YORUBA", {
+        content: {
+          externalIdentifiers: { glottocode: "Yoru1245" },
+          languages: { isoCodes: ["yor"] },
+          demography: { distributionByCountry: [] },
+          sources: [],
+        },
+      });
+
+      const result = checkExternalIdentifierFormats(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some(
+          (e) =>
+            e.includes("PPL_YORUBA") &&
+            e.includes("glottocode") &&
+            e.includes("Yoru1245")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-128
+    it("errors when iso639_3 is not a 3-letter lowercase code", () => {
+      writeFLG(tmpDir, "FLG_BENOUECONGO");
+      writePPL(tmpDir, "FLG_BENOUECONGO", "PPL_YORUBA", {
+        content: {
+          externalIdentifiers: { iso639_3: "YOR" },
+          languages: { isoCodes: ["yor"] },
+          demography: { distributionByCountry: [] },
+          sources: [],
+        },
+      });
+
+      const result = checkExternalIdentifierFormats(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some(
+          (e) =>
+            e.includes("PPL_YORUBA") &&
+            e.includes("iso639_3") &&
+            e.includes("YOR")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-128
+    it("returns ok:true when a fiche has no externalIdentifiers section at all", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+
+      const result = checkExternalIdentifierFormats(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    // @req REQ-128
+    it("returns ok:true when externalIdentifiers is present but every field is absent", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU", {
+        content: {
+          externalIdentifiers: {},
+          languages: { isoCodes: ["zul"] },
+          demography: { distributionByCountry: [] },
+          sources: [],
+        },
+      });
+
+      const result = checkExternalIdentifierFormats(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+  });
+
+  // ── ETNI-1391 : checkPeopleGroupConsistency ────────────────────────────────
+
+  describe("checkPeopleGroupConsistency (ETNI-1391)", () => {
+    // @req REQ-002
+    it("returns ok:true when no fiche declares a people group", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+
+      const result = checkPeopleGroupConsistency(tmpDir);
+      expect(result.ok).toBe(true);
+    });
+
+    // @req REQ-002
+    it("returns ok:true when split fiches agree on id and label", () => {
+      writeFLG(tmpDir, "FLG_ATLANTIQUE");
+      writePplWithAppellations(tmpDir, "FLG_ATLANTIQUE", "PPL_FULANI", {
+        peopleGroupId: "PGRP_FULANI",
+        peopleGroupLabel: "Peul / Fulani",
+      });
+      writePplWithAppellations(tmpDir, "FLG_ATLANTIQUE", "PPL_FULANI_MASSINA", {
+        peopleGroupId: "PGRP_FULANI",
+        peopleGroupLabel: "Peul / Fulani",
+      });
+
+      const result = checkPeopleGroupConsistency(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.warnings).toHaveLength(0);
+    });
+
+    // @req REQ-002
+    it("errors when a peopleGroupId is set without a peopleGroupLabel", () => {
+      writeFLG(tmpDir, "FLG_ATLANTIQUE");
+      writePplWithAppellations(tmpDir, "FLG_ATLANTIQUE", "PPL_FULANI", {
+        peopleGroupId: "PGRP_FULANI",
+      });
+
+      const result = checkPeopleGroupConsistency(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some(
+          (e) => e.includes("PGRP_FULANI") && e.includes("peopleGroupLabel")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-002
+    it("errors when a peopleGroupLabel is set without a peopleGroupId", () => {
+      writeFLG(tmpDir, "FLG_ATLANTIQUE");
+      writePplWithAppellations(tmpDir, "FLG_ATLANTIQUE", "PPL_FULANI", {
+        peopleGroupLabel: "Peul / Fulani",
+      });
+
+      const result = checkPeopleGroupConsistency(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some(
+          (e) => e.includes("Peul / Fulani") && e.includes("peopleGroupId")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-002
+    it("errors when two fiches share a peopleGroupId but disagree on the label", () => {
+      writeFLG(tmpDir, "FLG_ATLANTIQUE");
+      writePplWithAppellations(tmpDir, "FLG_ATLANTIQUE", "PPL_FULANI", {
+        peopleGroupId: "PGRP_FULANI",
+        peopleGroupLabel: "Peul / Fulani",
+      });
+      writePplWithAppellations(tmpDir, "FLG_ATLANTIQUE", "PPL_FULANI_MASSINA", {
+        peopleGroupId: "PGRP_FULANI",
+        peopleGroupLabel: "Fulani (Massina)",
+      });
+
+      const result = checkPeopleGroupConsistency(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some(
+          (e) => e.includes("PGRP_FULANI") && e.includes("disagreeing")
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-002
+    it("warns, but does not error, when a peopleGroupId is declared by only one fiche", () => {
+      writeFLG(tmpDir, "FLG_ATLANTIQUE");
+      writePplWithAppellations(tmpDir, "FLG_ATLANTIQUE", "PPL_FULANI", {
+        peopleGroupId: "PGRP_FULANI",
+        peopleGroupLabel: "Peul / Fulani",
+      });
+
+      const result = checkPeopleGroupConsistency(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.warnings.some((w) => w.includes("single fiche"))).toBe(
+        true
+      );
+    });
+  });
+
+  // ── FR111 : checkHistoricalAffiliationModel (REQ-127) ──────────────────────
+
+  describe("checkHistoricalAffiliationModel (FR111, REQ-127)", () => {
+    // @req REQ-127
+    it("returns ok:true when no fiche declares a historical affiliation", () => {
+      writeFLG(tmpDir, "FLG_CREOLE");
+      writePPL(tmpDir, "FLG_CREOLE", "PPL_HAITIAN");
+
+      const result = checkHistoricalAffiliationModel(tmpDir);
+      expect(result.ok).toBe(true);
+    });
+
+    // @req REQ-127
+    it("returns ok:true for a well-formed historical affiliation, sourced and tiered", () => {
+      writeFLG(tmpDir, "FLG_CREOLE");
+      writePplWithHistoricalAffiliation(tmpDir, "FLG_CREOLE", "PPL_HAITIAN", {
+        description:
+          "Peuple afro-descendant formé par la traite transatlantique ; Glottolog classe le créole haïtien sous la famille de son lexifieur, jamais sous une famille africaine.",
+        sources: [
+          {
+            title: "UNESCO — Mémoire du monde, route des esclaves",
+            url: "https://www.unesco.org/en/memory-world",
+            tier: "official",
+          },
+        ],
+      });
+
+      const result = checkHistoricalAffiliationModel(tmpDir);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    // @req REQ-127
+    it("does not touch languageFamilyId when historicalAffiliation is present", () => {
+      writeFLG(tmpDir, "FLG_CREOLE");
+      writePplWithHistoricalAffiliation(tmpDir, "FLG_CREOLE", "PPL_HAITIAN", {
+        description: "Lien historique avec l'Afrique via la traite négrière.",
+        sources: [
+          {
+            title: "UNESCO — Mémoire du monde, route des esclaves",
+            url: "https://www.unesco.org/en/memory-world",
+            tier: "official",
+          },
+        ],
+      });
+
+      const dir = join(tmpDir, "peuples", "FLG_CREOLE");
+      const written = JSON.parse(
+        readFileSync(join(dir, "PPL_HAITIAN.json"), "utf-8")
+      );
+      expect(written.languageFamilyId).toBeUndefined();
+      expect(written.content.historicalAffiliation).toBeDefined();
+    });
+
+    // @req REQ-127
+    it("errors when historicalAffiliation has no description", () => {
+      writeFLG(tmpDir, "FLG_CREOLE");
+      writePplWithHistoricalAffiliation(tmpDir, "FLG_CREOLE", "PPL_HAITIAN", {
+        description: "",
+        sources: [
+          {
+            title: "UNESCO — Mémoire du monde, route des esclaves",
+            url: "https://www.unesco.org/en/memory-world",
+            tier: "official",
+          },
+        ],
+      });
+
+      const result = checkHistoricalAffiliationModel(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("description"))).toBe(true);
+    });
+
+    // @req REQ-127
+    it("errors when historicalAffiliation has no sources", () => {
+      writeFLG(tmpDir, "FLG_CREOLE");
+      writePplWithHistoricalAffiliation(tmpDir, "FLG_CREOLE", "PPL_HAITIAN", {
+        description: "Lien historique avec l'Afrique via la traite négrière.",
+        sources: [],
+      });
+
+      const result = checkHistoricalAffiliationModel(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("sources"))).toBe(true);
+    });
+
+    // @req REQ-127
+    it("errors when a historicalAffiliation source carries no valid tier", () => {
+      writeFLG(tmpDir, "FLG_CREOLE");
+      writePplWithHistoricalAffiliation(tmpDir, "FLG_CREOLE", "PPL_HAITIAN", {
+        description: "Lien historique avec l'Afrique via la traite négrière.",
+        sources: [
+          {
+            title: "Un blog non tierré",
+            url: "https://example.org/blog",
+            tier: "invented-tier",
+          },
+        ],
+      });
+
+      const result = checkHistoricalAffiliationModel(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("tier"))).toBe(true);
     });
   });
 
@@ -456,6 +838,50 @@ describe("validateAfrikData – new integrity checks", () => {
       writeDistribution([{ country: "JPN", population: 1200 }]);
       expect(checkCountryCodesResolve(tmpDir).ok).toBe(false);
     });
+
+    // DEC-030 attaches Afro-descendant peoples by history rather than
+    // filiation; their host countries — Brazil, Haiti — carry no admin-0
+    // geometry, so a fiche declaring them needs the same off-map path USA
+    // already uses.
+    // @req REQ-130
+    it("accepts Brazil and Haiti as declared off-map presences", () => {
+      writeDistribution([
+        { country: "BRA", population: 15000000 },
+        { country: "HTI", population: 9000000 },
+      ]);
+
+      expect(checkCountryCodesResolve(tmpDir).ok).toBe(true);
+    });
+
+    // Extending the off-map list must not change how a country already
+    // covered by admin-0 geometry resolves.
+    // @req REQ-130
+    it("still resolves an African country through admin-0 geometry, unaffected by the off-map list", () => {
+      writeDistribution([{ country: "ZAF", population: 10000000 }]);
+
+      const result = checkCountryCodesResolve(tmpDir);
+
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+  });
+
+  // ── OFF_MAP_COUNTRIES (REQ-130) ────────────────────────────────────────────
+
+  describe("OFF_MAP_COUNTRIES holds the non-African host codes (REQ-130)", () => {
+    // @req REQ-130
+    it("declares Brazil and Haiti alongside the pre-existing codes", () => {
+      expect(OFF_MAP_COUNTRIES.has("BRA")).toBe(true);
+      expect(OFF_MAP_COUNTRIES.has("HTI")).toBe(true);
+      expect(OFF_MAP_COUNTRIES.has("USA")).toBe(true);
+    });
+
+    // @req REQ-130
+    it("never holds a code from the African reference set", () => {
+      for (const code of OFF_MAP_COUNTRIES) {
+        expect(AFRICAN_REFERENCE_COUNTRY_CODES.has(code)).toBe(false);
+      }
+    });
   });
 
   // ── FR90 : checkFamilyStructuralCompleteness ───────────────────────────────
@@ -626,6 +1052,102 @@ describe("validateAfrikData – new integrity checks", () => {
   });
 
   // ── Source tiers ────────────────────────────────────────────────────────
+
+  describe("checkSourceIdentity", () => {
+    const cite = (source: Record<string, unknown>) => ({
+      content: {
+        languages: { isoCodes: ["zul"] },
+        demography: {
+          distributionByCountry: [{ country: "ZAF", population: 10000 }],
+        },
+        sources: [source],
+      },
+    });
+
+    // @req REQ-092
+    it("passes when one title always carries the same locator", () => {
+      const source = {
+        title: "Statistics South Africa — Census 2011",
+        url: "https://www.statssa.gov.za/census/census_2011/",
+        tier: "official",
+      };
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU", cite(source));
+      writePPL(tmpDir, "FLG_BANTU", "PPL_SOTHO", cite(source));
+
+      expect(checkSourceIdentity(tmpDir)).toMatchObject({
+        ok: true,
+        errors: [],
+      });
+    });
+
+    // @req REQ-092
+    it("fails when one title is cited with two different URLs", () => {
+      const title = "The Morphological Analysis of Zulu Clan Names";
+      writePPL(
+        tmpDir,
+        "FLG_BANTU",
+        "PPL_ZULU",
+        cite({
+          title,
+          url: "https://doi.org/10.5430/elr.v9n3p36",
+          tier: "referenced",
+        })
+      );
+      writePPL(
+        tmpDir,
+        "FLG_BANTU",
+        "PPL_SOTHO",
+        cite({
+          title,
+          url: "https://www.researchgate.net/publication/345494106",
+          tier: "referenced",
+        })
+      );
+
+      const result = checkSourceIdentity(tmpDir);
+
+      expect(result.ok).toBe(false);
+      expect(result.errors).toContainEqual(
+        expect.stringContaining("one title, one locator")
+      );
+    });
+
+    // @req REQ-092
+    it("rejects a standing left over from the retired numeric scale", () => {
+      writePPL(
+        tmpDir,
+        "FLG_BANTU",
+        "PPL_ZULU",
+        cite({
+          title: "General History of Africa",
+          url: "https://unesco.org",
+          tier: 1,
+        })
+      );
+
+      const result = checkSourceIdentity(tmpDir);
+
+      expect(result.ok).toBe(false);
+      expect(result.errors).toContainEqual(
+        expect.stringContaining('declares standing "1"')
+      );
+    });
+
+    // @req REQ-092
+    it("accepts needs_review, which marks an unadjudicated source rather than a weak one", () => {
+      writePPL(
+        tmpDir,
+        "FLG_BANTU",
+        "PPL_ZULU",
+        cite({ title: "Oral testimony, Ulundi", tier: "needs_review" })
+      );
+
+      expect(checkSourceIdentity(tmpDir)).toMatchObject({
+        ok: true,
+        errors: [],
+      });
+    });
+  });
 
   describe("checkAuthorizedSourceTiers", () => {
     // @req REQ-092

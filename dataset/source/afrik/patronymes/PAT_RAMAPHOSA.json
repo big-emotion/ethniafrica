@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_RAMAPHOSA",
+  "nameMain": "Ramaphosa",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Ramaphosa",
+      "attestations": [
+        {
+          "countryId": "ZAF",
+          "sourceRefs": ["forebears-ramaphosa"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_VENDA",
+      "status": "supposed",
+      "sourceRefs": ["forebears-ramaphosa"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZAF",
+      "status": "attested",
+      "sourceRefs": ["forebears-ramaphosa"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-ramaphosa",
+      "title": "Ramaphosa Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/ramaphosa",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement : elle atteste Ramaphosa en Afrique du Sud et indique explicitement qu'elle ne possède pas de signification pour ce nom. Les propositions étymologiques contributives trouvées ailleurs n'ont pas été retenues faute d'appui linguistique publié."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web et bibliographique combinant « Ramaphosa », « Venda », « surname », « clan name », « etymology », « transmission » et « obituary », ainsi que la consultation directe de « Ramaphosa Surname Origin, Meaning & Last Name History » n'ont livré aucune tradition attribuée, chronique ou étude linguistique établissant l'origine de Ramaphosa. Les rapprochements fondés uniquement sur la géographie, une biographie ou une contribution non référencée ont été écartés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Ramaphosa », « Venda », « surname », « clan name », « etymology », « transmission » et « obituary », ainsi que la consultation directe de « Ramaphosa Surname Origin, Meaning & Last Name History » n'ont pas établi que la catégorie provisoire « clan_name » décrive Ramaphosa lui-même ; elle reste un classement de travail et non une origine démontrée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Ramaphosa », « Venda », « surname », « clan name », « etymology », « transmission » et « obituary », ainsi que la consultation directe de « Ramaphosa Surname Origin, Meaning & Last Name History » n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Ramaphosa à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Ramaphosa », « Venda », « surname », « clan name », « etymology », « transmission » et « obituary », ainsi que la consultation directe de « Ramaphosa Surname Origin, Meaning & Last Name History » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Ramaphosa."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Ramaphosa », « Venda », « surname », « clan name », « etymology », « transmission » et « obituary », ainsi que la consultation directe de « Ramaphosa Surname Origin, Meaning & Last Name History » n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé de Ramaphosa, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Ramaphosa », « Venda », « surname », « clan name », « etymology », « transmission » et « obituary », ainsi que la consultation directe de « Ramaphosa Surname Origin, Meaning & Last Name History » n'ont pas établi de lignée homonyme de Ramaphosa dotée d'une origine distincte et documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Ramaphosa », « Venda », « surname », « clan name », « etymology », « transmission » et « obituary », ainsi que la consultation directe de « Ramaphosa Surname Origin, Meaning & Last Name History » n'ont établi aucune règle propre à Ramaphosa permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

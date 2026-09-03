@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KATO",
+  "nameMain": "Kato",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Kato",
+      "attestations": [
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["kyambogo-wadiko-kato"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Une enquête universitaire sur les pratiques de nomination en Ouganda rapporte que, chez les Baganda, Kato est attribué au garçon né en second dans une paire de jumeaux : après Waswa lorsque les deux enfants sont des garçons, ou après Babirye lorsque la fille naît la première. Cette règle documente un nom individuel de rang de naissance plutôt qu'un nom clanique totémique.",
+        "claimStatus": "established",
+        "sourceRefs": ["kyambogo-wadiko-kato"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BAGANDA",
+      "status": "attested",
+      "sourceRefs": ["kyambogo-wadiko-kato"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["kyambogo-wadiko-kato"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "kyambogo-wadiko-kato",
+      "title": "Contextual Study of 1 Samuel 1:1–20 in Relation to Naming Practices of the Lugbara",
+      "url": "https://kyuspace.kyu.ac.ug/server/api/core/bitstreams/a01f6712-047f-4e8b-a12b-0eb0c7d23cc6/content",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Mémoire de master de Wadiko Iren, Kyambogo University (2019), consulté intégralement. Dans sa comparaison avec les pratiques baganda, l'autrice attribue les séquences Waswa/Kato et Babirye/Nakato à une interlocutrice nommée Rose Nairuba. La fiche ne transforme pas ce témoignage cité en tradition orale du corpus, faute de transcription primaire séparée et de griot identifié."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kato », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le mémoire de Wadiko Iren sur les pratiques de nomination et sa section comparative consacrée aux noms de jumeaux baganda, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kato », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le mémoire de Wadiko Iren sur les pratiques de nomination et sa section comparative consacrée aux noms de jumeaux baganda, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kato », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le mémoire de Wadiko Iren sur les pratiques de nomination et sa section comparative consacrée aux noms de jumeaux baganda, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kato », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le mémoire de Wadiko Iren sur les pratiques de nomination et sa section comparative consacrée aux noms de jumeaux baganda, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    }
+  ]
+}

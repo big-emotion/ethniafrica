@@ -1,0 +1,107 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique. Robleh est attesté dans une chaîne de noms djiboutienne ; l'étymologie et le lien avec la variante Roble restent non établis."
+  },
+  "id": "PAT_ROBLEH",
+  "nameMain": "Robleh",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Robleh",
+      "attestations": [
+        {
+          "countryId": "DJI",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "robleh-presidence-djibouti-2020"
+          ]
+        }
+      ]
+    },
+    {
+      "spelling": "Roble",
+      "attestations": [
+        { "countryId": "DJI", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "La Présidence de Djibouti atteste Robleh comme dernier élément de la chaîne de noms Nima Moussa Robleh ; la notice ne documente ni son étymologie ni la relation généalogique exprimée.",
+        "claimStatus": "established",
+        "sourceRefs": ["robleh-presidence-djibouti-2020"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SOMALI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "robleh-presidence-djibouti-2020"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "DJI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Nima Moussa Robleh",
+      "sourceRefs": ["robleh-presidence-djibouti-2020"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "robleh-presidence-djibouti-2020",
+      "title": "Hommage du Président de la République à la mémoire de feu Nima Moussa Robleh",
+      "url": "https://www.presidence.dj/index.php/article/hommage-du-president-de-la-republique-a-la-memoire-de-feu-nima-moussa-robleh-850",
+      "tier": "official",
+      "source_kind": "government",
+      "notes": "Présidence de la République de Djibouti, 7 décembre 2020. La page complète a été vérifiée : elle donne à plusieurs reprises Nima Moussa Robleh, précise son origine régionale à Ali-Sabieh et confirme son décès."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Les requêtes « Robleh/Roble Somali name etymology », les dictionnaires somali-anglais accessibles et les catalogues onomastiques ont été examinés ; aucune analyse savante n'a établi le sens du nom ni l'équivalence des deux graphies."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "La notice présidentielle établit une identité civique djiboutienne et une origine régionale, mais pas une auto-identification somalie ; aucune source biographique consultée n'a confirmé ce rattachement."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "La notice de Nima Moussa Robleh et les recherches « Robleh/Roble alliance Djibouti » n'ont livré aucune parenté à plaisanterie entre deux PAT_* existants."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "La source décrit un engagement politique individuel, sans caste ni fonction sociale héréditaire attachée à Robleh."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Robleh et Roble ont été recherchés comme anthroponymes, ethnonymes et toponymes ; aucun homonyme distinct et suffisamment documenté n'a été trouvé."
+    }
+  ]
+}

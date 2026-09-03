@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KHUMALO",
+  "nameMain": "Khumalo",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Khumalo",
+      "attestations": [
+        {
+          "countryId": "ZAF",
+          "sourceRefs": ["zwane-2020-khumalo"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "L'analyse morphologique de Celani Lucky Zwane classe Khumalo parmi les noms de clan zoulous et rapporte deux explications concurrentes : une composition de khuma (« manger non cuit ») et lo (« celui-ci »), associée par les informateurs à la rapidité guerrière, ou une référence à une espèce d'arbre épineux présente dans l'ancien lieu d'établissement. Comme l'article transmet ces récits sans les départager, l'étymologie reste contestée.",
+        "claimStatus": "contested",
+        "sourceRefs": ["zwane-2020-khumalo"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_ZULU",
+      "status": "attested",
+      "sourceRefs": ["zwane-2020-khumalo"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZAF",
+      "status": "attested",
+      "sourceRefs": ["zwane-2020-khumalo"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "zwane-2020-khumalo",
+      "title": "The Morphological Analysis of Zulu Clan Names",
+      "url": "https://doi.org/10.5430/elr.v9n3p36",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article de Celani Lucky Zwane, English Linguistics Research 9(3), consulté avec son texte intégral. L'auteur combine analyse documentaire et entretiens ; la fiche conserve les deux explications de Khumalo comme récits contestés et ne choisit pas l'une d'elles."
+    },
+    {
+      "sourceKey": "ukzn-zulu-clan-transmission",
+      "title": "Evidence of Conflict and Criticism in Zulu Oral Clan History",
+      "url": "https://researchspace.ukzn.ac.za/bitstreams/377b75d5-cbf7-465a-b8a5-eb8a3aba147a/download",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Chapitre de thèse du dépôt de l'University of KwaZulu-Natal consulté intégralement. Il décrit l'isibongo comme nom clanique, donne l'exemple d'une femme du clan Khumalo et indique que, dans la famille zouloue patrilinéaire étudiée, les enfants prennent le nom de clan du père."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Khumalo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article morphologique de Celani Lucky Zwane et le chapitre de thèse UKZN sur les noms de clan et la filiation zouloue, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Khumalo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article morphologique de Celani Lucky Zwane et le chapitre de thèse UKZN sur les noms de clan et la filiation zouloue, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Khumalo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article morphologique de Celani Lucky Zwane et le chapitre de thèse UKZN sur les noms de clan et la filiation zouloue, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Khumalo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article morphologique de Celani Lucky Zwane et le chapitre de thèse UKZN sur les noms de clan et la filiation zouloue, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    }
+  ]
+}

@@ -15,14 +15,14 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": ["Gobabis-Tsumkwe Juǀ’hoan", "Nogau"],
     "vitalityStatus": null,
     "sources": [
       {
-        "title": "Glottolog 5.3",
+        "title": "Glottolog 5.3 — Ju|'hoan (juho1239)",
         "url": "https://glottolog.org/resource/languoid/id/juho1239",
         "tier": "official",
-        "notes": "Glottolog name: South-Eastern Ju; Ju|'hoan is an attested name and the classification includes Kxa."
+        "notes": "Glottolog name: South-Eastern Ju; Ju|'hoan is an attested name and the classification includes Kxa. Les dialectes listés sont les sous-languoids que Glottolog rattache à juho1239, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }

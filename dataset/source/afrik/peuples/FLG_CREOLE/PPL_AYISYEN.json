@@ -1,0 +1,129 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les regles de redaction completes."
+  },
+  "id": "PPL_AYISYEN",
+  "nameMain": "Ayisyen",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["HTI"],
+  "content": {
+    "appellations": {
+      "mainName": "Ayisyen",
+      "selfAppellation": "Ayisyen",
+      "exonyms": ["Haïtiens", "Haitians"],
+      "spellingAliases": ["Aysyen"],
+      "originOfExonyms": "Le nom du pays, Ayiti puis Haïti, dérive du taïno Ayiti (« terre de hautes montagnes »), nom que les Taïnos donnaient à l'île avant la colonisation espagnole sous le nom d'Hispaniola. En 1804, les chefs de la révolution restaurent ce nom autochtone à la place du nom colonial Saint-Domingue, comme acte fondateur de l'indépendance ; « Ayisyen » en dérive directement comme gentilé en créole haïtien.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Ayisyen est le terme courant, en créole haïtien comme en usage international, pour désigner les citoyens et la nation haïtienne ; il n'est pas contesté.",
+      "peopleGroupId": null,
+      "peopleGroupLabel": null
+    },
+    "ethnicities": [
+      "Population majoritairement d'ascendance ouest-africaine et centre-africaine, issue de la traite transatlantique vers la colonie française de Saint-Domingue",
+      "Minorité mulâtre (métissage euro-africain hérité de la période coloniale)"
+    ],
+    "origins": {
+      "ancientOrigins": "Le peuple ayisyen se forme dans la colonie française de Saint-Domingue (XVIIe-XVIIIe siècles) à partir de la déportation massive d'Africains réduits en esclavage, principalement issus de la région du golfe du Bénin (aires fon et éwé, royaume du Dahomey) et du bassin du Congo (aire kongo), ainsi que d'autres groupes yoruba et ibo. Ce mélange de peuples africains, contraint par la traite, constitue la base démographique et culturelle de la nation haïtienne moderne.",
+      "formationPeriod": "L'identité ayisyenne se cristallise pendant la révolution haïtienne (1791-1804), qui transforme la population servile de la colonie de Saint-Domingue en citoyenneté d'un État indépendant, le premier gouverné par d'anciens esclaves.",
+      "migrationRoutes": [
+        "Golfe du Bénin (aires fon, éwé) vers Saint-Domingue, XVIIe-XVIIIe siècles, via la traite transatlantique",
+        "Bassin du Congo (aire kongo) vers Saint-Domingue, XVIIe-XVIIIe siècles, via la traite transatlantique"
+      ],
+      "historicalSettlementZones": [
+        "Ancienne colonie française de Saint-Domingue (partie occidentale de l'île d'Hispaniola), actuel territoire de la République d'Haïti"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": "Colonisation française (XVIIe siècle-1804) ; occupation américaine (1915-1934).",
+      "majorHistoricalEvents": "14 août 1791 : cérémonie du Bois Caïman, rituel vodou qui scelle un pacte de résistance parmi les insurgés. 22-23 août 1791 : début de l'insurrection générale des esclaves du Nord. 1791-1804 : guerre d'indépendance haïtienne. 1er janvier 1804 : proclamation de l'indépendance d'Haïti, premier État moderne né d'une révolte d'esclaves et première république noire indépendante."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": null,
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": null,
+      "religiousAuthority": "Le vodou haïtien possède ses propres officiants (oungan pour les hommes, manbo pour les femmes) qui président les cérémonies et assurent la médiation avec les lwa (esprits)."
+    },
+    "languages": {
+      "mainLanguage": "Créole haïtien (hat)",
+      "isoCodes": ["hat"],
+      "dialects": [],
+      "vehicularRole": "Le créole haïtien est parlé par la quasi-totalité de la population haïtienne et constitue, avec le français, l'une des deux langues officielles du pays ; il est aussi la principale langue de la diaspora haïtienne."
+    },
+    "historicalAffiliation": {
+      "description": "Le lien entre le peuple ayisyen et l'Afrique n'est pas d'ordre linguistique — le créole haïtien est une langue à lexique majoritairement français — mais démographique, culturel et spirituel, issu de la traite négrière transatlantique. Aux XVIIe et XVIIIe siècles, plusieurs centaines de milliers d'Africains réduits en esclavage sont déportés vers la colonie française de Saint-Domingue, en majorité originaires du golfe du Bénin (peuples fon et éwé du royaume du Dahomey, actuel Bénin) et du bassin du Congo (aire kongo), ainsi que d'autres régions ouest-africaines. Ces populations transposent en terre coloniale leurs traditions religieuses : le vodou haïtien, religion nationale reconnue, tire directement son nom et sa structure théologique (les lwa, le culte des ancêtres) du vodun fon-éwé du Dahomey, tout en intégrant des apports kongo et yoruba. Cet héritage religieux joue un rôle politique direct dans la formation de la nation : la cérémonie du Bois Caïman, tenue le 14 août 1791 et animée par la manbo Cécile Fatiman et l'oungan Dutty Boukman, scelle selon la tradition historique un pacte de résistance entre insurgés à la veille du soulèvement général qui ouvre la révolution haïtienne (1791-1804). Cette révolution, menée par une population très majoritairement d'origine africaine, aboutit le 1er janvier 1804 à la première indépendance d'une colonie d'esclaves et à la fondation de la première république noire du monde moderne, faisant du lien à l'Afrique un fondement explicite de l'identité nationale ayisyenne plutôt qu'un héritage linguistique.",
+      "sources": [
+        {
+          "title": "Vodou | Definition, History, West African Vodun, & Facts",
+          "url": "https://www.britannica.com/topic/Vodou",
+          "tier": "referenced",
+          "notes": "Encyclopedic reference work with named editorial process ; confirme l'origine fon/dahoméenne du terme et de la théologie vodou et son transfert à Saint-Domingue via la traite."
+        },
+        {
+          "title": "The African Political Roots of Haitian Vodou: The Aja-Fon and Gedevi-Yoruba Kingdoms and the Slave Trade — A Transatlantic History of Haitian Vodou",
+          "url": "https://www.universitypressscholarship.com/view/10.14325/mississippi/9781496835604.001.0001/upso-9781496835604-chapter-002",
+          "tier": "referenced",
+          "notes": "Chapitre universitaire (University Press of Mississippi Scholarship Online) sur les racines politiques ouest-africaines du vodou haïtien."
+        },
+        {
+          "title": "Haitian Revolution | Causes, Summary, & Facts",
+          "url": "https://www.britannica.com/topic/Haitian-Revolution",
+          "tier": "referenced",
+          "notes": "Encyclopedic reference work avec auteurs identifiés ; utilisé pour la chronologie 1791-1804 et le rôle des Africains déportés dans le soulèvement."
+        }
+      ]
+    },
+    "culture": {
+      "majorRites": "Le vodou haïtien structure de nombreux rites majeurs : cérémonies d'invocation des lwa, rites funéraires, initiations.",
+      "symbols": "Les vèvè, dessins rituels tracés au sol lors des cérémonies vodou pour invoquer un lwa particulier.",
+      "artsAndMusic": null,
+      "spiritualities": "Le vodou haïtien, syncrétisme entre le vodun ouest-africain (fon, éwé), des apports kongo et yoruba, et le catholicisme colonial ; il coexiste avec le christianisme (catholique et protestant) largement pratiqué dans le pays."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Haïti occupe la partie occidentale de l'île d'Hispaniola, partagée avec la République dominicaine, avec laquelle les relations sont marquées par une histoire de tensions (dont le massacre de 1937) et une importante migration transfrontalière contemporaine.",
+      "conflictsOrAlliances": "Guerre d'indépendance contre la France (1791-1804), aboutissant à la première défaite d'une puissance coloniale européenne par une armée composée majoritairement d'anciens esclaves.",
+      "diaspora": "Diaspora importante, notamment aux États-Unis, en République dominicaine, au Canada, en France et aux Bahamas, formée par plusieurs vagues d'émigration depuis le XXe siècle."
+    },
+    "demography": {
+      "totalPopulation": 11900000,
+      "referenceYear": 2025,
+      "source": "UNFPA, World Population Dashboard – Haïti (projections World Population Prospects 2024, révision ONU).",
+      "distributionByCountry": [
+        {
+          "country": "HTI",
+          "population": 11900000,
+          "percentage": 100,
+          "note": "Population résidente en Haïti ; ne comprend pas la diaspora haïtienne établie hors du pays."
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "Haiti Population 2025 — World Population Dashboard",
+        "url": "https://www.unfpa.org/data/world-population/HT",
+        "tier": "official",
+        "notes": "Tier résolu par le domaine unfpa.org, agence onusienne (catalogue de sources autorisées)."
+      },
+      {
+        "title": "Institut Haïtien de Statistique et d'Informatique (IHSI) — AYITISTATS",
+        "url": "https://ayitistats.org/?lang=en",
+        "tier": "official",
+        "notes": "Institut national officiel de statistique d'Haïti ; tier « official » par doctrine (institut national de statistique), donnée croisée : 11,77 M en 2024."
+      },
+      {
+        "title": "Haitian Creole Language (HAT) — Ethnologue",
+        "url": "https://www.ethnologue.com/language/hat/",
+        "tier": "official",
+        "notes": "Tier résolu depuis le catalogue de sources autorisées (« ethnologue »)."
+      },
+      {
+        "title": "Vodou | Definition, History, West African Vodun, & Facts",
+        "url": "https://www.britannica.com/topic/Vodou",
+        "tier": "referenced",
+        "notes": "Encyclopedic reference work avec auteurs identifiés, utilisé pour le contexte religieux et culturel général."
+      }
+    ]
+  }
+}

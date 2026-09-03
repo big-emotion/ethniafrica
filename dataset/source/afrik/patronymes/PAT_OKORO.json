@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche recherchée selon le protocole anthroponymique. Les affirmations sont limitées aux sources propres à Okoro ; les lacunes consignent les recherches restées sans résultat."
+  },
+  "id": "PAT_OKORO",
+  "nameMain": "Okoro",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Okoro",
+      "attestations": [
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["hanks-okoro"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "other",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le Dictionary of American Family Names décrit Okoro comme un nom personnel igbo signifiant « garçon » ou « jeune homme ».",
+        "claimStatus": "established",
+        "sourceRefs": ["hanks-okoro"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_IGBO",
+      "status": "attested",
+      "sourceRefs": ["hanks-okoro"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["hanks-okoro"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "hanks-okoro",
+      "title": "Okoro Name Meaning and Okoro Family History at FamilySearch",
+      "url": "https://www.familysearch.org/en/surname?surname=okoro",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Entrée Okoro du Dictionary of American Family Names de Patrick Hanks (2003, 2006), hébergée par FamilySearch et consultée directement. La fiche du dictionnaire identifie explicitement la forme comme nom igbo du Nigeria."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Les recherches « Okoro Igbo oral tradition griot transcription » et « Okoro Igbo lineage oral history » ainsi que l'entrée du dictionnaire de Hanks consultée n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les recherches « Okoro Igbo chronicle manuscript archive » et « Okoro colonial register Nigeria » n'ont livré aucune chronique ni pièce d'archives établissant l'histoire de cette forme."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Les recherches « Okoro Igbo joking relationship », « Okoro joking kinship » et « Okoro sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "l'entrée du dictionnaire de Hanks consultée et les recherches « Okoro Igbo hereditary occupation title caste » n'ont associé ce nom à aucune fonction sociale héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "l'entrée du dictionnaire de Hanks consultée et les recherches « Okoro obituary biography deceased » n'ont pas permis de retenir un porteur décédé sur une notice propre au nom et suffisamment fiable."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les recherches « Okoro homonym etymology » et « Okoro surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "l'entrée du dictionnaire de Hanks consultée atteste l'emploi comme nom personnel ou nom de famille, mais ne décrit pas une règle de transmission stable ; les recherches « Okoro Igbo surname inheritance » n'ont pas tranché entre usages familiaux et individuels."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "l'entrée du dictionnaire de Hanks consultée ne permet pas de décider si chaque emploi contemporain désigne un individu, une famille, une charge ou un lignage ; aucune monographie propre à Okoro n'a été trouvée."
+    }
+  ]
+}

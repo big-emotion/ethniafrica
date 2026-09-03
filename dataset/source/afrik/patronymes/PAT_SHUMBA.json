@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_SHUMBA",
+  "nameMain": "Shumba",
+  "nameSystem": "totemic_clan",
+  "spellings": [
+    {
+      "spelling": "Shumba",
+      "attestations": [
+        {
+          "countryId": "ZWE",
+          "sourceRefs": ["forebears-shumba"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Une contribution non référencée reproduite par la base propose que Shumba signifie « lion » en shona. Faute d'analyse linguistique attribuée, cette lecture demeure une affirmation à vérifier.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["forebears-shumba"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SHONA",
+      "status": "supposed",
+      "sourceRefs": ["forebears-shumba"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "ZWE",
+      "status": "attested",
+      "sourceRefs": ["forebears-shumba"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-shumba",
+      "title": "Shumba Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/shumba",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Base de répartition patronymique consultée directement. Elle atteste Shumba surtout au Zimbabwe et reproduit une contribution non référencée donnant « lion » en shona ; cette proposition est conservée au rang claimed et non élevée au rang d'étymologie établie."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "nameSystem",
+      "reason": "la recherche web et bibliographique combinant « Shumba », « Shona », « lion », « totem », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Shumba Surname Origin, Meaning & Last Name History » n'ont pas établi que la catégorie provisoire « totemic_clan » décrive Shumba lui-même ; elle reste un classement de travail et non une origine démontrée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web et bibliographique combinant « Shumba », « Shona », « lion », « totem », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Shumba Surname Origin, Meaning & Last Name History » n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Shumba à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web et bibliographique combinant « Shumba », « Shona », « lion », « totem », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Shumba Surname Origin, Meaning & Last Name History » n'ont établi aucune fonction sociale ou professionnelle héréditaire propre à Shumba."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web et bibliographique combinant « Shumba », « Shona », « lion », « totem », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Shumba Surname Origin, Meaning & Last Name History » n'ont livré aucune notice réunissant sans ambiguïté un porteur décédé de Shumba, son statut vital et le rattachement ethnolinguistique retenu dans cette fiche."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web et bibliographique combinant « Shumba », « Shona », « lion », « totem », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Shumba Surname Origin, Meaning & Last Name History » n'ont pas établi de lignée homonyme de Shumba dotée d'une origine distincte et documentable ; la diffusion dans plusieurs pays ne suffit pas à créer un homonyme."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web et bibliographique combinant « Shumba », « Shona », « lion », « totem », « surname », « clan », « etymology » et « transmission », ainsi que la consultation directe de « Shumba Surname Origin, Meaning & Last Name History » n'ont établi aucune règle propre à Shumba permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

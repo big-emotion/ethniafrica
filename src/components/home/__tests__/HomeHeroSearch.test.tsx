@@ -12,9 +12,13 @@ import {
   HomeHeroSearch,
   DEBOUNCE_MS,
   PENDING_DELAY_MS,
-  SEARCH_LABEL,
 } from "../HomeHeroSearch";
+import {
+  SEARCH_LABEL,
+  SEARCH_RESULT_GROUPS,
+} from "@/lib/search/searchVocabulary";
 import { seedPools } from "../HomeHeroSeeds";
+import { SEARCH_ENTITY_ACCENT } from "@/components/search/searchEntityAccent";
 import { FALLBACK_SEED_WORDS } from "@/lib/home/seedWords";
 
 /** The pools the row renders when no words are injected. */
@@ -25,12 +29,18 @@ import {
   getLocalizedRoute,
   getPeopleRoute,
 } from "@/lib/routing";
-import type { SearchResult } from "@/types/afrik-frontend";
+import type { SearchLead, SearchResult } from "@/types/afrik-frontend";
+import { search as searchCorpus } from "@/lib/afrikLoader";
 
 const push = vi.fn();
 
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push, replace: vi.fn() }),
+}));
+
+vi.mock("@/lib/afrikLoader", () => ({
+  search: vi.fn(async () => []),
+  searchWithLeads: vi.fn(async () => ({ results: [], leads: [] })),
 }));
 
 const YORUBA: SearchResult = {
@@ -59,9 +69,12 @@ const ALL_KINDS = [YORUBA, NIGERIA, NIGER_CONGO];
 
 function renderSearch(
   fetchResults: (query: string) => Promise<SearchResult[]> = async () =>
-    ALL_KINDS
+    ALL_KINDS,
+  fetchLeads?: (query: string) => Promise<SearchLead[]>
 ) {
-  return render(<HomeHeroSearch fetchResults={fetchResults} />);
+  return render(
+    <HomeHeroSearch fetchResults={fetchResults} fetchLeads={fetchLeads} />
+  );
 }
 
 function field() {
@@ -77,6 +90,22 @@ beforeEach(() => {
 });
 
 describe("HomeHeroSearch", () => {
+  // Production renders this component without a fetcher, so the default is
+  // the only path the hero ever takes to the corpus (ETNI-1415 AC2).
+  // @req REQ-108
+  it("searches through the shared corpus client when no fetcher is injected", async () => {
+    render(<HomeHeroSearch />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("combobox"), {
+        target: { value: "Yoruba" },
+      });
+      await new Promise((r) => setTimeout(r, DEBOUNCE_MS + 50));
+    });
+
+    expect(searchCorpus).toHaveBeenCalledWith("Yoruba");
+  });
+
   // The accessible name has to survive a placeholder that the design may
   // animate later: a rotating placeholder would otherwise rename the control
   // under a screen-reader user mid-sentence.
@@ -99,12 +128,28 @@ describe("HomeHeroSearch", () => {
     expect(label?.className ?? "").not.toContain("sr-only");
   });
 
-  // /api/v2/search answers { peoples, countries, families }. Naming a fourth
-  // kind would promise a result the panel can never produce, on the surface
-  // whose whole argument is that a claim carries its provenance.
+  // The label may name a kind only if the panel below can group it. It once
+  // named three because the panel showed three; both now carry five, and the
+  // invariant is what is asserted rather than the number.
   // @req REQ-002
-  it("names only the kinds the search can return", () => {
-    expect(SEARCH_LABEL).not.toMatch(/langue/i);
+  it("names every kind the panel groups, and no other", () => {
+    for (const { type } of SEARCH_RESULT_GROUPS) {
+      // The singular of the same kind, from the one table that assigns a
+      // kind's label and accent product-wide.
+      const kind = SEARCH_ENTITY_ACCENT[type].label.toLowerCase();
+      expect(SEARCH_LABEL.toLowerCase()).toContain(kind);
+    }
+  });
+
+  // `persons` has no rows. Naming a kind the corpus cannot return is the one
+  // promise this surface may not break — the reason the label was held to
+  // three kinds in the first place.
+  // @req REQ-002
+  it("names no kind the corpus cannot answer with", () => {
+    expect(SEARCH_LABEL).not.toMatch(/personne/i);
+    expect(SEARCH_RESULT_GROUPS.map((group) => group.type)).not.toContain(
+      "person"
+    );
   });
 
   // Label and placeholder twenty pixels apart, saying the same sentence, is
@@ -116,8 +161,8 @@ describe("HomeHeroSearch", () => {
 
     const placeholder = field().getAttribute("placeholder") ?? "";
     expect(placeholder).not.toBe(SEARCH_LABEL);
-    expect(placeholder).not.toMatch(/peuple|pays|famille|langue/i);
-    expect(placeholder).toBe("Ex. Bafut, Namibie, Bantou");
+    expect(placeholder).not.toMatch(/peuple|pays|famille|langue|\bnom\b/i);
+    expect(placeholder).toBe("Ex. Bafut, Fulfulde, Namibie, Keïta");
   });
 
   // Opening the phone keyboard on load buries the page under it and steals
@@ -272,6 +317,39 @@ describe("HomeHeroSearch", () => {
     ).toHaveAttribute("href", getLocalizedRoute("fr", "families"));
   });
 
+  // @req REQ-125
+  it("shows near-miss leads once the corpus itself came back empty", async () => {
+    const fetchLeads = vi.fn(async () => [
+      {
+        type: "languageFamily" as const,
+        id: "FLG_MANDE",
+        name: "Mandé",
+        similarity: 0.5,
+      },
+    ]);
+    renderSearch(async () => [], fetchLeads);
+
+    await type("zzzz");
+
+    await screen.findByTestId("state-copy");
+    expect(fetchLeads).toHaveBeenCalledWith("zzzz");
+    expect(screen.getByRole("link", { name: /Mandé/ })).toHaveAttribute(
+      "href",
+      getFamilyRoute("fr", "FLG_MANDE")
+    );
+  });
+
+  // @req REQ-125
+  it("never asks for near-miss leads once the corpus already answered", async () => {
+    const fetchLeads = vi.fn(async () => []);
+    renderSearch(async () => ALL_KINDS, fetchLeads);
+
+    await type("yoruba");
+
+    await screen.findByRole("listbox");
+    expect(fetchLeads).not.toHaveBeenCalled();
+  });
+
   // A seed is a shortcut to the full result page, not a second search mode.
   // Its activation therefore follows the same GET path as typing that word
   // and submitting the form, rather than stopping in the suggestion panel.
@@ -357,6 +435,110 @@ describe("HomeHeroSearch", () => {
     expect(form).toHaveAttribute("method", "get");
     expect(form).toHaveAttribute("action", getLocalizedRoute("fr", "search"));
     expect(field()).toHaveAttribute("name", "q");
+  });
+
+  /**
+   * The panel sat in the flow, so opening it pushed the seed chips, the visual
+   * and everything below them down the page. The reason recorded for that was
+   * the band's own `overflow: hidden`; the reader's experience of it is the
+   * content jumping under a panel that should have covered it.
+   *
+   * happy-dom carries no layout engine and does not resolve the component's
+   * own <style>, so a measured assertion would pass against any value at all
+   * (siteBrandLockup.test.tsx says as much). The rule the component ships is
+   * read instead — the instrument singleSearchSurface.test.ts already uses.
+   * Measuring the result is the browser pass's job, not this one's.
+   */
+  describe("the suggestions panel covers the band", () => {
+    function shippedCss(container: HTMLElement): string {
+      return Array.from(container.querySelectorAll("style"))
+        .map((sheet) => sheet.textContent ?? "")
+        .join("\n");
+    }
+
+    // @req REQ-002
+    it("takes the panel out of the flow rather than pushing the content down", async () => {
+      const { container } = renderSearch();
+
+      await type("yoruba");
+      await screen.findByRole("listbox");
+
+      const css = shippedCss(container);
+      expect(css).toMatch(
+        /\.home-hero-search-panel\s*\{[^}]*position:\s*absolute/
+      );
+    });
+
+    // Anchored to the field, not to the whole block: hung off
+    // `.home-hero-search` the panel would open below the seed chips instead of
+    // directly under the field it belongs to.
+    // @req REQ-002
+    it("anchors the panel to the field it belongs to", async () => {
+      const { container } = renderSearch();
+
+      await type("yoruba");
+      const listbox = await screen.findByRole("listbox");
+
+      const anchor = listbox.parentElement as HTMLElement;
+      expect(anchor).toContainElement(screen.getByRole("search"));
+
+      const anchorClass = anchor.className.trim().split(/\s+/)[0];
+      expect(shippedCss(container)).toMatch(
+        new RegExp(`\\.${anchorClass}\\s*\\{[^}]*position:\\s*relative`)
+      );
+    });
+  });
+
+  /**
+   * The panel had no dismissal beyond Escape and emptying the field — no blur,
+   * no press outside it, nothing on the way to another page. It therefore
+   * stayed open over whatever came next, which is what a reader reports as the
+   * bar still being active once they have left for the results page.
+   */
+  describe("the panel gives way", () => {
+    // @req REQ-002
+    it("closes once the focus leaves the field", async () => {
+      renderSearch();
+
+      await type("yoruba");
+      await screen.findByRole("listbox");
+
+      fireEvent.blur(field());
+
+      await waitFor(() =>
+        expect(screen.queryByRole("listbox")).not.toBeInTheDocument()
+      );
+    });
+
+    // @req REQ-002
+    it("closes once a suggestion is followed", async () => {
+      renderSearch();
+
+      await type("yoruba");
+      await screen.findByRole("listbox");
+
+      fireEvent.click(screen.getByRole("option", { name: /Yoruba/ }));
+
+      await waitFor(() =>
+        expect(screen.queryByRole("listbox")).not.toBeInTheDocument()
+      );
+    });
+
+    // The one the reader described: the query goes to the results page and the
+    // panel has to be gone by the time that page is what they are looking at.
+    // @req REQ-002
+    it("closes once the query is handed to the results page", async () => {
+      renderSearch();
+
+      await type("yoruba");
+      await screen.findByRole("listbox");
+
+      fireEvent.submit(screen.getByRole("search"));
+
+      await waitFor(() =>
+        expect(screen.queryByRole("listbox")).not.toBeInTheDocument()
+      );
+    });
   });
 
   // The silence between the last keystroke and the panel is the debounce plus

@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KARANJA",
+  "nameMain": "Karanja",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Karanja",
+      "attestations": [
+        {
+          "countryId": "KEN",
+          "sourceRefs": ["afrik-candidate-queue", "cermesa-karanja"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_KIKUYU",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "KEN",
+      "status": "attested",
+      "sourceRefs": ["cermesa-karanja"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "cermesa-karanja",
+      "title": "Kikuyu Male Teachers' Constructions of Manhood in Nyandarua County, Kenya: Implications for HIV and AIDS Education",
+      "url": "https://cermesa.uol.de/wp-content/uploads/2018/05/ANN-WAITHERA-KARANJA.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Mémoire d'Ann Waithera Karanja à la Nelson Mandela University (2017), consulté intégralement. Le document atteste la graphie dans un nom d'autrice et situe la recherche au Kenya auprès d'enseignants kikuyu. Il ne dit pas que l'autrice est kikuyu et ne fournit aucune étymologie ; l'association au peuple n'est donc pas élevée au-dessus de « supposed »."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Karanja », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le mémoire « Kikuyu Male Teachers' Constructions of Manhood in Nyandarua County, Kenya » et ses références, n'ont livré aucune étymologie, chronique d'origine ou tradition orale attribuable à un témoin pour ce nom. Les rapprochements seulement plausibles ont été écartés."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Karanja », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le mémoire « Kikuyu Male Teachers' Constructions of Manhood in Nyandarua County, Kenya » et ses références, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Karanja », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le mémoire « Kikuyu Male Teachers' Constructions of Manhood in Nyandarua County, Kenya » et ses références, n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Karanja », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le mémoire « Kikuyu Male Teachers' Constructions of Manhood in Nyandarua County, Kenya » et ses références, n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes ou de statut vital inconnu seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Karanja », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le mémoire « Kikuyu Male Teachers' Constructions of Manhood in Nyandarua County, Kenya » et ses références, n'ont pas établi de lignée homonyme d'origine distincte ni d'autre homonyme documentable."
+    }
+  ]
+}

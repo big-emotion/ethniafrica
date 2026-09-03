@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon docs/runbooks/anthroponym-fiche-research.md. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
+  },
+  "id": "PAT_NEVES",
+  "nameMain": "Neves",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Neves",
+      "attestations": [
+        {
+          "countryId": "STP",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "bilateral",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Pour le portugais, le Dictionary of American Family Names décrit Neves comme une forme abrégée du titre marial Maria das Neves (« Marie des Neiges »). La notice mentionne aussi des formations habitatives galicienne et asturienne ; elle ne tranche pas l'histoire de la branche santoméenne.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["dafn-neves-2022"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FORROS",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "STP",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "ohchr-stp-crc-2003",
+      "title": "Initial reports of States parties due in 1993: São Tomé and Príncipe",
+      "url": "https://docstore.ohchr.org/SelfServices/FilesHandler.ashx?enc=wnlPh%2BG8eU62Pknyw5xbuLBEESyDSBKbuv8TN1AlTGExo3BaisIUwhHlRW4QkXzV78paKU%2BOKmKjEvn1ZMsywg%3D%3D",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "Nations Unies, Comité des droits de l'enfant, CRC/C/8/Add.49, 1er décembre 2003, par. 146. Le rapport de l'État indique que la loi no 2/77 impose à l'enfant de porter les noms de sa mère et de son père."
+    },
+    {
+      "sourceKey": "dafn-neves-2022",
+      "title": "Neves Surname Meaning — Dictionary of American Family Names, 2nd edition",
+      "url": "https://www.ancestry.com/last-name-meaning/neves?geo-lang=en",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Patrick Hanks et al., Dictionary of American Family Names, 2e éd., Oxford University Press, 2022, notice reproduite par Ancestry. La notice portugaise est distinguée de ses autres formations galicienne et asturienne."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "les résultats exacts « Neves », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Neves à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "les résultats exacts « Neves », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe, complétés par « caste », « statut héréditaire », « métier » et « social function », n'ont établi aucune fonction sociale héréditaire propre aux porteurs de Neves. Une étymologie professionnelle éventuelle n'est pas assimilée à un statut contemporain."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "les résultats exacts « Neves », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe n'ont pas fourni, dans cette passe, un porteur à la fois décédé, clairement rattaché au patronyme étudié et documenté par une source distincte de la simple homonymie. Les personnes vivantes rencontrées dans les sources officielles ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "les résultats exacts « Neves », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe n'ont pas permis d'isoler deux lignées homonymes dotées d'origines distinctes et documentées. Lorsque le dictionnaire propose plusieurs formations possibles, elles restent des hypothèses linguistiques et non des lignées séparées."
+    }
+  ]
+}

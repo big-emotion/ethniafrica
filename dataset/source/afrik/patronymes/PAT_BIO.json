@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier fondé sur l'onomastique baatombu ; Bio est ici un nom individuel de rang de naissance et non un nom de clan."
+  },
+  "id": "PAT_BIO",
+  "nameMain": "Bio",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Bio",
+      "attestations": [
+        {
+          "countryId": "BEN",
+          "sourceRefs": ["williams-2023-baatombu-names"]
+        },
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["williams-2023-baatombu-names"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "non_hereditary",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Dans le système baatombu documenté au Bénin et au Nigeria, Bio est le nom masculin ouvert du troisième enfant dans la série des noms de rang de naissance. Il peut être porté seul ou précéder un nom de maison ou de clan ; il ne constitue donc pas, en lui-même, un nom clanique héréditaire.",
+        "claimStatus": "established",
+        "sourceRefs": ["williams-2023-baatombu-names"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BARIBA",
+      "status": "attested",
+      "sourceRefs": ["williams-2023-baatombu-names"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "BEN",
+      "status": "attested",
+      "sourceRefs": ["williams-2023-baatombu-names"]
+    },
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["williams-2023-baatombu-names"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "williams-2023-baatombu-names",
+      "title": "Personal names and power: Binary personal naming system of the Baatombu people in Nigeria and Republic of Benin",
+      "url": "https://onomajournal.org/wp-content/uploads/2024/01/Onoma-58-3.03-Williams-final.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Azibaoguanasi Williams, Onoma 58, 2023, p. 305-324, DOI 10.34158/ONOMA.58/2023/17. Article évalué et fondé sur des entretiens et observations de terrain. Le tableau p. 321 donne explicitement Bio comme nom masculin du troisième enfant ; les p. 315-316 distinguent ces noms de rang des racines de maison ou de clan. L'autrice emploie l'auto-désignation Baatombu et signale que Bariba est un exonyme, tandis que l'identifiant historique du corpus reste les Bariba."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "L'article de Williams synthétise des entretiens mais ne fournit, pour Bio, ni griot nommé ni transcription d'un récit d'origine conforme au schéma."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les articles onomastiques de Williams et Schottman ainsi que les catalogues universitaires consultés décrivent une règle de nomination, sans chronique historique propre à Bio."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "La littérature baatombu consultée sur les noms de rang et les noms de maison ne signale aucune alliance anthroponymique impliquant Bio et une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Williams classe Bio parmi les noms ouverts de rang de naissance ; la distinction de statut décrite dans l'article ne lui assigne aucune profession ni fonction héréditaire."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les recherches bibliographiques et biographiques exactes sur Bio chez les Baatombu n'ont pas livré de porteur décédé dont le statut et le nom de rang soient établis par une source institutionnelle."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les usages de Bio comme nom simple ou élément de noms composés ont été recherchés dans Williams et Schottman ; aucune lignée homonyme distincte n'est démontrée."
+    }
+  ]
+}

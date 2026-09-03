@@ -15,14 +15,28 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": [
+      "Amu",
+      "Bajuni",
+      "Fundi",
+      "Matondoni",
+      "Mgao",
+      "Mrima",
+      "Mvita",
+      "Mwini",
+      "Pate",
+      "Pemba",
+      "Shamba",
+      "Siu",
+      "Unguja"
+    ],
     "vitalityStatus": null,
     "sources": [
       {
         "title": "Glottolog 5.3 - Swahili",
         "url": "https://glottolog.org/resource/languoid/id/swah1253",
         "tier": "official",
-        "notes": "Glottolog direct official languoid record; source of the name and glottocode."
+        "notes": "Glottolog direct official languoid record; source of the name and glottocode. Les dialectes listés sont les sous-languoids que Glottolog rattache à swah1253, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }

@@ -36,6 +36,21 @@ export const SEARCH_ENTITY_ACCENT: Record<
     markClassName: "bg-[var(--afh-cat-terre)]",
     accentScopeClassName: "afh-accent-terre",
   },
+  // REQ-126: a person is not a fifth corpus entity kind, so it does not take
+  // a fifth --afh-cat-* hue — see the .afh-accent-neutral comment in
+  // color.css for why that distinction is load-bearing here.
+  person: {
+    label: "Personne",
+    markClassName: "bg-afh-text-muted",
+    accentScopeClassName: "afh-accent-neutral",
+  },
+  // ETNI-1463: a name (patronyme) is not a fifth corpus entity kind either —
+  // it reuses person's neutral treatment for the same reason (see above).
+  patronyme: {
+    label: "Nom",
+    markClassName: "bg-afh-text-muted",
+    accentScopeClassName: "afh-accent-neutral",
+  },
 };
 
 // @req REQ-091

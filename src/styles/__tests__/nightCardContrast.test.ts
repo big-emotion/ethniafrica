@@ -15,10 +15,6 @@ const cultureGrid = readFileSync(
   resolve(process.cwd(), "src/components/country/CultureGrid.tsx"),
   "utf8"
 );
-const countrySynthesisCard = readFileSync(
-  resolve(process.cwd(), "src/components/home/CountrySynthesisCard.tsx"),
-  "utf8"
-);
 
 function tokenHex(name: string): string {
   const match = colorCss.match(new RegExp(`${name}:\\s*(#[0-9a-f]{6})`, "i"));
@@ -93,22 +89,6 @@ describe("night card contrast", () => {
         ).toBeGreaterThanOrEqual(AA_NORMAL_TEXT);
       }
     }
-  });
-
-  /**
-   * Unlike the categorical country cards, the home synthesis card is a plain
-   * theme surface. Its background must therefore use the semantic alias so
-   * the existing semantic text tokens switch as one pair in night mode.
-   */
-  // @req REQ-113
-  it("keeps the home country card on the theme-aware surface", () => {
-    const cardRule = countrySynthesisCard.match(
-      /\.home-syn-card\s*\{([^}]*)\}/
-    )?.[1];
-
-    expect(cardRule).toBeDefined();
-    expect(cardRule).toMatch(/background:\s*var\(--afh-surface\)/);
-    expect(cardRule).not.toMatch(/background:\s*var\(--afh-color-card\)/);
   });
 
   // @req REQ-113

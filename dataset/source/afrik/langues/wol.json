@@ -15,14 +15,23 @@
   "peoples": [],
   "content": {
     "vehicularRole": null,
-    "dialects": [],
+    "dialects": [
+      "Baol Wolof",
+      "Cayor",
+      "Jander",
+      "Central Wolof",
+      "Dyolof",
+      "Waalo",
+      "Northern Wolof",
+      "Saloum"
+    ],
     "vitalityStatus": null,
     "sources": [
       {
-        "title": "Glottolog 5.3",
+        "title": "Glottolog 5.3 — Wolof (nucl1347)",
         "url": "https://glottolog.org/resource/languoid/id/nucl1347",
         "tier": "official",
-        "notes": "Glottolog name: Wolof; classification includes North-Central Atlantic."
+        "notes": "Glottolog name: Wolof; classification includes North-Central Atlantic. Les dialectes listés sont les sous-languoids que Glottolog rattache à nucl1347, hors languoids portant leur propre code ISO 639-3."
       }
     ]
   }

@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche revue selon le protocole de recherche anthroponymique. Chaque affirmation est limitée à ce que dit sa source ; les champs non établis restent des lacunes explicites."
+  },
+  "id": "PAT_KAAPANDA",
+  "nameMain": "Kaapanda",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Kaapanda",
+      "attestations": [
+        {
+          "countryId": "NAM",
+          "sourceRefs": ["namibia-gazette-kaapanda"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_OVAMBO",
+      "status": "supposed",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "NAM",
+      "status": "attested",
+      "sourceRefs": ["namibia-gazette-kaapanda"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "namibia-gazette-kaapanda",
+      "title": "Government Gazette of the Republic of Namibia, 21 November 2013",
+      "url": "https://mict.gov.na/documents/869282/1009163/DTT%2BPolicy.pdf/cb29d77c-33d1-5aab-f781-180b583bda6d?t=1656589890556",
+      "tier": "official",
+      "source_kind": "archive",
+      "notes": "Document primaire de la Gazette officielle namibienne consulté intégralement. Il porte la signature de Joël N. Kaapanda, alors ministre de l'Information et des Technologies de la communication, et atteste la graphie en Namibie sans documenter son appartenance ovambo, son origine ou sa transmission."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce relevé de couverture est conservé uniquement pour les associations géographiques ou ethnolinguistiques que les sources dédiées n'ont pas confirmées. Ces associations ne soutiennent aucune étymologie."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "la recherche web combinant « Kaapanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la « Government Gazette of the Republic of Namibia » du 21 novembre 2013 n'ont livré ni tradition attribuable, ni chronique dédiée, ni reconstruction linguistique établissant l'origine du nom. Les attestations géographiques ou individuelles trouvées ne sont pas transformées en étymologie."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "la recherche web combinant « Kaapanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la « Government Gazette of the Republic of Namibia » du 21 novembre 2013 n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "la recherche web combinant « Kaapanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la « Government Gazette of the Republic of Namibia » du 21 novembre 2013 n'ont établi aucune fonction sociale ou professionnelle héréditaire propre au nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "la recherche web combinant « Kaapanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la « Government Gazette of the Republic of Namibia » du 21 novembre 2013 n'ont identifié aucun porteur décédé documentable sans ambiguïté. Les personnes vivantes seulement attestées par les sources ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "la recherche web combinant « Kaapanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la « Government Gazette of the Republic of Namibia » du 21 novembre 2013 n'ont pas établi de lignée homonyme d'origine distincte."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "la recherche web combinant « Kaapanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la « Government Gazette of the Republic of Namibia » du 21 novembre 2013 n'ont établi aucune règle propre à ce nom permettant de choisir entre transmission patrilinéaire, matrilinéaire, bilatérale, élective ou non héréditaire ; le mode reste donc « other »."
+    }
+  ]
+}

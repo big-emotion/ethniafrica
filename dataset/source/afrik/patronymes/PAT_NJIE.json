@@ -1,0 +1,105 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
+  },
+  "id": "PAT_NJIE",
+  "nameMain": "Njie",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Njie",
+      "attestations": [
+        {
+          "countryId": "GMB",
+          "sourceRefs": ["dafn-familysearch-njie"]
+        }
+      ]
+    },
+    {
+      "spelling": "Ndiaye",
+      "attestations": [
+        {
+          "countryId": "GMB",
+          "sourceRefs": ["afrik-candidate-queue"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "L’entrée DAFN présente Njie en Gambie comme une variante de Ndiaye ; elle distingue explicitement un autre Njie/N’Jie camerounais porté chez les Bakweri, dont l’étymologie reste inexpliquée.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["dafn-familysearch-njie"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_WOLOF",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GMB",
+      "status": "attested",
+      "sourceRefs": ["dafn-familysearch-njie"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [
+    {
+      "label": "Njie / N’Jie bakweri du Cameroun",
+      "entityType": "people",
+      "entityId": "PPL_BAKWERI",
+      "distinction": "Cette forme camerounaise est décrite comme un nom bakweri d’étymologie inexpliquée, distinct de Njie en Gambie présenté comme variante de Ndiaye.",
+      "sourceRefs": ["dafn-familysearch-njie"]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "dafn-familysearch-njie",
+      "title": "Dictionary of American Family Names — Njie entry",
+      "url": "https://www.familysearch.org/en/surname?surname=njie",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Entrée FamilySearch reproduisant le Dictionary of American Family Names. Elle distingue Njie en Gambie, variante de Ndiaye, et Njie/N’Jie au Cameroun chez les Bakweri, d’étymologie inexpliquée."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "alliances",
+      "reason": "L’entrée Njie du DAFN et l’article de Lamine Ndiaye sur la parenté à plaisanterie wolof ont été recherchés pour une paire patronymique ; aucune paire nommant Njie n’a été trouvée."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "L’entrée DAFN établit une relation graphique avec Ndiaye et un homonyme bakweri, mais n’attribue à Njie aucune caste, aucun métier héréditaire ni fonction sociale."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les profils généalogiques du portail n’ont pas été retenus : l’entrée lexicographique ne fournit aucun porteur décédé dont l’auto-identification lignagère soit vérifiée."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Le DAFN établit Njie comme variante gambienne de Ndiaye, mais ne décrit pas la règle de transmission de ce nom en Gambie ; la patrilinéarité wolof sénégalaise n’est pas extrapolée."
+    }
+  ]
+}

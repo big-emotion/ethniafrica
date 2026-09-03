@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon docs/runbooks/anthroponym-fiche-research.md. Les analyses de forme ne doivent pas être transformées en généalogie de lignée sans archive dédiée."
+  },
+  "id": "PAT_TROVOADA",
+  "nameMain": "Trovoada",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Trovoada",
+      "attestations": [
+        {
+          "countryId": "STP",
+          "sourceRefs": [
+            "afrik-candidate-queue",
+            "rtp-arquivos-miguel-trovoada"
+          ]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "bilateral",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FORROS",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "STP",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue", "rtp-arquivos-miguel-trovoada"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
+    },
+    {
+      "sourceKey": "ohchr-stp-crc-2003",
+      "title": "Initial reports of States parties due in 1993: São Tomé and Príncipe",
+      "url": "https://docstore.ohchr.org/SelfServices/FilesHandler.ashx?enc=wnlPh%2BG8eU62Pknyw5xbuLBEESyDSBKbuv8TN1AlTGExo3BaisIUwhHlRW4QkXzV78paKU%2BOKmKjEvn1ZMsywg%3D%3D",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "Nations Unies, Comité des droits de l'enfant, CRC/C/8/Add.49, 1er décembre 2003, par. 146. Le rapport de l'État indique que la loi no 2/77 impose à l'enfant de porter les noms de sa mère et de son père."
+    },
+    {
+      "sourceKey": "rtp-arquivos-miguel-trovoada",
+      "title": "Miguel Trovoada",
+      "url": "https://arquivos.rtp.pt/conteudos/miguel-trovoada/",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Notice audiovisuelle de RTP Arquivos consacrée à Miguel Trovoada et à São Tomé-et-Príncipe. Utilisée comme attestation documentaire du patronyme dans le pays ; elle ne donne pas son étymologie."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "les résultats exacts « Trovoada », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe ont été consultés. Ils attestent le nom ou décrivent le fonds disponible, mais n'ont livré ni étymologie publiée ni chronique attribuable à une lignée précise ; l'origine reste donc vide."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "les résultats exacts « Trovoada », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Trovoada à une autre fiche PAT_* existante."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "les résultats exacts « Trovoada », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe, complétés par « caste », « statut héréditaire », « métier » et « social function », n'ont établi aucune fonction sociale héréditaire propre aux porteurs de Trovoada. Une étymologie professionnelle éventuelle n'est pas assimilée à un statut contemporain."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "les résultats exacts « Trovoada », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe n'ont pas fourni, dans cette passe, un porteur à la fois décédé, clairement rattaché au patronyme étudié et documenté par une source distincte de la simple homonymie. Les personnes vivantes rencontrées dans les sources officielles ne sont pas ajoutées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "les résultats exacts « Trovoada », RTP Arquivos, Ciberdúvidas et les catalogues bibliographiques sur São Tomé-et-Príncipe n'ont pas permis d'isoler deux lignées homonymes dotées d'origines distinctes et documentées. Lorsque le dictionnaire propose plusieurs formations possibles, elles restent des hypothèses linguistiques et non des lignées séparées."
+    }
+  ]
+}

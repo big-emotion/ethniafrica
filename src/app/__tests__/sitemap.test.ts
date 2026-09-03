@@ -12,7 +12,9 @@ import { getSitemapEntityIds } from "@/lib/supabase/queries/afrik/sitemapEntries
 import {
   getCountryRoute,
   getFamilyRoute,
+  getLanguageRoute,
   getLocalizedRoute,
+  getPatronymeRoute,
   getPeopleLinksRoute,
   getPeopleRoute,
 } from "@/lib/routing";
@@ -25,6 +27,8 @@ const CORPUS = {
   peoples: ["PPL_BAMILEKE", "PPL_WOLOF"],
   countries: ["CMR", "SEN"],
   families: ["FLG_NIGER_CONGO"],
+  languages: ["bam", "wol"],
+  patronymes: ["PAT_BAMBA_CLAN"],
 };
 
 async function urls() {
@@ -60,6 +64,21 @@ describe("sitemap.xml", () => {
     expect(all).toContain(`${base}${getCountryRoute("fr", "CMR")}`);
   });
 
+  // Languages (748) and patronymes (30) have fiche routes but were absent
+  // from the sitemap, leaving them unreachable by crawlers (ETNI-1800).
+  // @req REQ-139
+  // @req REQ-110
+  it("carries one url per language and patronyme fiche", async () => {
+    const all = await urls();
+    const base = `https://${CANONICAL_DOMAIN}`;
+
+    expect(all).toContain(`${base}${getLanguageRoute("fr", "bam")}`);
+    expect(all).toContain(`${base}${getLanguageRoute("fr", "wol")}`);
+    expect(all).toContain(
+      `${base}${getPatronymeRoute("fr", "PAT_BAMBA_CLAN")}`
+    );
+  });
+
   // @req REQ-110
   it("lists the rubrics a reader enters by", async () => {
     const all = await urls();
@@ -71,6 +90,23 @@ describe("sitemap.xml", () => {
       getLocalizedRoute("fr", "countries"),
       getLocalizedRoute("fr", "families"),
       "/fr/plan-du-site",
+    ]) {
+      expect(all, path).toContain(`${base}${path}`);
+    }
+  });
+
+  // Same treatment as the other corpus rubrics and the already-shipped
+  // appellations index (ETNI-1453): the languages and patronymes hub routes
+  // are reachable pages, so they are crawlable ones too (ETNI-1795).
+  // @req REQ-139
+  // @req REQ-110
+  it("lists the languages and patronymes hub routes as rubrics", async () => {
+    const all = await urls();
+    const base = `https://${CANONICAL_DOMAIN}`;
+
+    for (const path of [
+      getLocalizedRoute("fr", "languages"),
+      getLocalizedRoute("fr", "patronymes"),
     ]) {
       expect(all, path).toContain(`${base}${path}`);
     }
@@ -102,11 +138,8 @@ describe("sitemap.xml", () => {
 
     for (const fragment of [
       "/fr/admin",
-      "/fr/compte",
       `${getLocalizedRoute("fr", "quiz")}/score`,
       "/fr/report-error",
-      "/fr/confidentialite",
-      "/fr/politique-confidentialite",
     ]) {
       expect(
         paths.filter((path) => path.startsWith(fragment)),
@@ -121,25 +154,22 @@ describe("sitemap.xml", () => {
     );
   });
 
-  // Languages are reachable only nested under a family; they have no route of
-  // their own, so there is nothing to list.
-  // @req REQ-110
-  it("lists no standalone language route", async () => {
-    const all = await urls();
-    expect(all.filter((url) => url.includes("/langues"))).toEqual([]);
-  });
-
+  // @req REQ-139
   // @req REQ-110
   it("still ships the rubrics when the corpus cannot be read", async () => {
     mockedEntityIds.mockResolvedValue({
       peoples: [],
       countries: [],
       families: [],
+      languages: [],
+      patronymes: [],
     });
 
     const all = await urls();
     expect(all).toContain(`https://${CANONICAL_DOMAIN}/fr`);
     expect(all.some((url) => url.includes("/peuples/PPL_"))).toBe(false);
+    expect(all.some((url) => url.includes("/atlas/langues/"))).toBe(false);
+    expect(all.some((url) => url.includes("/atlas/noms/"))).toBe(false);
   });
 
   // @req REQ-110
@@ -151,7 +181,26 @@ describe("sitemap.xml", () => {
   // @req REQ-110
   it("keeps UNLISTED_ROUTES documented alongside what it excludes", () => {
     expect(UNLISTED_ROUTES).toContain("admin");
-    expect(UNLISTED_ROUTES).toContain("politique-confidentialite");
+    expect(UNLISTED_ROUTES).toContain("report-error");
+    // The two duplicate privacy pages were retired rather than hidden, so
+    // they are no longer anything's business to exclude.
+    expect(UNLISTED_ROUTES).not.toContain("confidentialite");
+    expect(UNLISTED_ROUTES).not.toContain("politique-confidentialite");
+  });
+
+  // The registry no longer listing them is one half; this is the other — what
+  // the site actually emits. Hiding a second policy was never the same as not
+  // having one, and it is the emitted set a reader can reach.
+  // @req REQ-110
+  it("serves exactly one privacy policy", async () => {
+    const all = await urls();
+    const policies = all.filter((url) =>
+      /confidentialite|politique-de-donnees/.test(url)
+    );
+
+    expect(policies).toEqual([
+      `https://${CANONICAL_DOMAIN}/fr/politique-de-donnees`,
+    ]);
   });
 });
 
@@ -165,13 +214,28 @@ describe("robots.txt", () => {
     expect(rules.host).toBe(`https://${CANONICAL_DOMAIN}`);
   });
 
+  // The duplicate privacy pages used to be listed here too. Deleting a route
+  // is a stronger guarantee than asking a crawler not to index it, so the
+  // disallow list shrank back to what authentication alone hides.
   // @req REQ-110
-  it("bans the authenticated surfaces and the duplicate privacy pages", () => {
+  it("bans the authenticated surfaces", () => {
     const rule = robots().rules;
     const disallow = Array.isArray(rule) ? rule[0].disallow : rule.disallow;
 
     expect(disallow).toContain("/fr/admin/");
-    expect(disallow).toContain("/fr/compte/");
-    expect(disallow).toContain("/fr/politique-confidentialite");
+    expect(disallow).not.toContain("/fr/politique-confidentialite");
+    expect(disallow).not.toContain("/fr/confidentialite");
+  });
+
+  // Named routes are what a rewrite would drop; this holds the whole rule to
+  // the property instead — nothing about a privacy policy is hidden here.
+  // @req REQ-110
+  it("no longer hides a privacy policy from crawlers", () => {
+    const rule = robots().rules;
+    const disallow = Array.isArray(rule) ? rule[0].disallow : rule.disallow;
+
+    expect(
+      (disallow as string[]).filter((path) => /confidentialite/.test(path))
+    ).toEqual([]);
   });
 });
