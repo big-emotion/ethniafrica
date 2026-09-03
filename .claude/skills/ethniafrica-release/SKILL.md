@@ -84,10 +84,15 @@ Verify all of the following before any write. If any fail, **do not modify anyth
    does not.
 
    If the credentials are not available to you, say so and stop — an
-   unmeasured schema is not a green precondition. The same check now runs
-   automatically as the `schema` job of `deploy-production.yml`, which the
-   deploy `needs:`, so a Release published against a behind schema fails before
-   anything reaches the VPS.
+   unmeasured schema is not a green precondition.
+
+   **This precondition is now advisory rather than blocking**, because
+   `deploy-production.yml` applies the pending migrations itself. Its `migrate`
+   job — which the deploy `needs:` — measures production's ledger, refuses a
+   `db push` plan wider than that measurement, applies, and measures again.
+   Run the command anyway so the release report says what production will
+   receive; do not stop the release on a pending migration the deploy will
+   apply.
 
 ## Inputs
 
