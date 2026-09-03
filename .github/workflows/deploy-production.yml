@@ -53,37 +53,27 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      # recette's equivalent warns and skips when its secret is absent, which is
-      # right for an integration branch. Here it must fail: skipping would hand
-      # the deploy below a database that never got the schema, which is the
-      # exact outcome this job exists to prevent.
-      - name: Require a database URL that points at the tunnel
+      # There is deliberately no PRODUCTION_SUPABASE_DB_URL any more. Every one of
+      # the five deploys that failed on 2026-09-03 failed because that secret and
+      # the machine disagreed: it named the retired hosted project, then a port
+      # that is not published, then wanted TLS the server does not offer, then
+      # lacked a Supavisor tenant, then carried a password the pooler no longer
+      # held. A credential kept in two places drifts. The stack's own `.env` is
+      # the one place that cannot be wrong about itself, and this job already has
+      # the SSH access needed to read it.
+      - name: Require the SSH access that reaches the database
         env:
-          PRODUCTION_SUPABASE_DB_URL: ${{ secrets.PRODUCTION_SUPABASE_DB_URL }}
+          SSH_KEY: ${{ secrets.SUPABASE_OVH_SSH_KEY }}
+          SSH_HOST: ${{ secrets.SUPABASE_OVH_SSH_HOST }}
+          SSH_USER: ${{ secrets.SUPABASE_OVH_SSH_USER }}
+          SSH_PORT: ${{ secrets.SUPABASE_OVH_SSH_PORT }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SUPABASE_OVH_SSH_KNOWN_HOSTS }}
         run: |
-          if [ -z "$PRODUCTION_SUPABASE_DB_URL" ]; then
-            echo "::error::PRODUCTION_SUPABASE_DB_URL is not set, so migrations cannot be applied. It is a Postgres connection string (postgresql://…), not PRODUCTION_SUPABASE_URL — that one is the PostgREST endpoint and cannot execute DDL. See docs/runbooks/migration-state.md."
-            exit 1
-          fi
-
-          # The URL carries the postgres password, so it is never echoed. Only the
-          # host is extracted: strip the scheme, then the userinfo if present, then
-          # everything from the port, path or query onwards.
-          HOST=$(printf '%s' "$PRODUCTION_SUPABASE_DB_URL" | sed -E 's#^[a-zA-Z+]+://##; s#^[^@/]*@##; s#[:/?].*$##')
-          # A malformed URL can leave a fragment of the password in HOST, which is
-          # then not something to print. Anything outside hostname characters is
-          # reported as unparseable rather than shown.
-          case "$HOST" in
-            *[!a-zA-Z0-9.-]*) HOST="(unparseable)" ;;
-          esac
-
-          case "$HOST" in
-            localhost | 127.0.0.1) ;;
-            *)
-              echo "::error::PRODUCTION_SUPABASE_DB_URL must point at the tunnel — localhost or 127.0.0.1 — but names $HOST. Production's Postgres is self-hosted on the OVH VPS and its port is not published: measured 2026-09-03, that host answers on 443 and refuses 5432 and 6543, which is why the v4.1.1 deploy read the ledger over PostgREST and then failed with ECONNREFUSED. The SSH forward opened below is the only path to it. See docs/runbooks/migration-state.md."
-              exit 1
-              ;;
-          esac
+          : "${SSH_KEY:?SUPABASE_OVH_SSH_KEY is not set. See docs/runbooks/migration-state.md}"
+          : "${SSH_HOST:?SUPABASE_OVH_SSH_HOST is not set}"
+          : "${SSH_USER:?SUPABASE_OVH_SSH_USER is not set}"
+          : "${SSH_PORT:?SUPABASE_OVH_SSH_PORT is not set}"
+          : "${SSH_KNOWN_HOSTS:?SUPABASE_OVH_SSH_KNOWN_HOSTS is not set}"
 
       # What production holds, before anything is applied. `applied_migrations()`
       # (migration 042) makes this a measurement rather than a claim in a runbook.
@@ -113,9 +103,19 @@ jobs:
       # runner, where the CLI, the migration files and the ledger comparison
       # already are. Only the network path moves.
       #
-      # The forward targets 127.0.0.1 rather than localhost on the far side: the
-      # compose file publishes the port on IPv4, and `localhost` there can
-      # resolve to ::1 first, where nothing listens.
+      # The forward targets the `supabase-db` container, not the host loopback.
+      # Host port 5432 is Supavisor, the pooler — measured 2026-09-03, it
+      # published 127.0.0.1:5432 and 127.0.0.1:6543 while `supabase-db` exposed
+      # 5432 only inside the Docker network. Routing a migration through a pooler
+      # buys nothing: `db push` opens one connection, runs DDL and leaves. It
+      # costs two failure modes that both happened here — Supavisor demands a
+      # tenant identifier in the username (ENOIDENTIFIER), and it authenticates
+      # with a copy of the password seeded at first boot, which recreating the
+      # container does not refresh (28P01, while the same password was verified
+      # working against the database directly).
+      #
+      # The container IP is resolved at tunnel time rather than pinned: it is
+      # assigned by Docker and changes whenever the container is recreated.
       - name: Open an SSH tunnel to the self-hosted Postgres
         if: steps.before.outputs.pending != '0'
         env:
@@ -124,6 +124,8 @@ jobs:
           SSH_USER: ${{ secrets.SUPABASE_OVH_SSH_USER }}
           SSH_PORT: ${{ secrets.SUPABASE_OVH_SSH_PORT }}
           SSH_KNOWN_HOSTS: ${{ secrets.SUPABASE_OVH_SSH_KNOWN_HOSTS }}
+          SUPABASE_STACK_DIR: /home/ubuntu/supabase/docker
+          DB_CONTAINER: supabase-db
         run: |
           # No apostrophes in these messages: inside ${VAR:?word} bash reads a
           # single quote as opening a quote even within double quotes, and
@@ -140,30 +142,60 @@ jobs:
           printf '%s\n' "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
+          SSH_OPTS="-i $HOME/.ssh/supabase_tunnel_key -p $SSH_PORT -o BatchMode=yes"
+
+          # Docker assigns this, so it is asked for rather than remembered.
+          DB_IP=$(ssh $SSH_OPTS "$SSH_USER@$SSH_HOST" \
+            "docker inspect -f '{{range \$k, \$v := .NetworkSettings.Networks}}{{\$v.IPAddress}} {{end}}' $DB_CONTAINER" \
+            | tr ' ' '\n' | grep -E '^[0-9]+\.' | head -1)
+          if [ -z "$DB_IP" ]; then
+            echo "::error::could not resolve an IPv4 address for the $DB_CONTAINER container on the VPS. Check that it is running and named as expected."
+            exit 1
+          fi
+          echo "Forwarding to $DB_CONTAINER at $DB_IP inside the Docker network."
+
+          # The stack's .env is the single source of truth for this password.
+          # Masked before anything else can echo it.
+          PGPW=$(ssh $SSH_OPTS "$SSH_USER@$SSH_HOST" \
+            "grep '^POSTGRES_PASSWORD=' $SUPABASE_STACK_DIR/.env | cut -d= -f2- | tr -d '\r\n'")
+          if [ -z "$PGPW" ]; then
+            echo "::error::POSTGRES_PASSWORD is empty or absent in $SUPABASE_STACK_DIR/.env on the VPS."
+            exit 1
+          fi
+          echo "::add-mask::$PGPW"
+
           # -f backgrounds ssh only once the forward is established, and
           # ExitOnForwardFailure makes a refused forward a non-zero exit instead
           # of a tunnel that listens and accepts nothing.
-          ssh -f -N \
-            -i ~/.ssh/supabase_tunnel_key \
-            -p "$SSH_PORT" \
-            -o BatchMode=yes \
+          ssh -f -N $SSH_OPTS \
             -o ExitOnForwardFailure=yes \
             -o ServerAliveInterval=30 \
-            -L 5432:127.0.0.1:5432 \
+            -L "5432:$DB_IP:5432" \
             "$SSH_USER@$SSH_HOST"
 
           # ssh returning is not proof the far end accepts a connection, and a
           # refusal must not reach `db push`, which would report it as a schema
           # problem. The port is probed before the plan is allowed to run.
+          TUNNEL_UP=""
           for _ in $(seq 1 20); do
             if timeout 2 bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/5432' 2>/dev/null; then
-              echo "The tunnel is accepting connections on 127.0.0.1:5432."
-              exit 0
+              TUNNEL_UP=yes
+              break
             fi
             sleep 1
           done
-          echo "::error::the SSH tunnel never started listening on 127.0.0.1:5432. If ssh itself connected, the port is probably not published on the VPS loopback — check what the Supabase compose file binds for the db service, and forward that instead."
-          exit 1
+          if [ -z "$TUNNEL_UP" ]; then
+            echo "::error::the SSH tunnel never started listening on 127.0.0.1:5432, having forwarded to $DB_IP. Check that $DB_CONTAINER accepts connections on 5432 inside the Docker network."
+            exit 1
+          fi
+          echo "The tunnel is accepting connections on 127.0.0.1:5432."
+
+          # Written to a file rather than a step output: an output would persist
+          # the password in the run record. sslmode is disabled because the bytes
+          # are already inside SSH and the container serves no TLS.
+          umask 077
+          printf 'postgresql://postgres:%s@127.0.0.1:5432/postgres?sslmode=disable' "$PGPW" \
+            > "$RUNNER_TEMP/db-url"
 
       # The plan is asserted against the measurement before it runs. A `db push`
       # that intends to replay more than the pending set means the ledger and the
@@ -173,8 +205,6 @@ jobs:
       # discover mid-deploy.
       - name: Plan, and refuse a plan wider than the measurement
         if: steps.before.outputs.pending != '0'
-        env:
-          PRODUCTION_SUPABASE_DB_URL: ${{ secrets.PRODUCTION_SUPABASE_DB_URL }}
         run: |
           # Without pipefail the pipe below reports tee's status, not the one
           # from db push. At v4.2.0 the dry run failed to connect, grep matched
@@ -183,16 +213,7 @@ jobs:
           # database at all. It only ever caught a plan that was too wide.
           set -o pipefail
 
-          # The tunnel already carries these bytes inside SSH and terminates on
-          # the VPS loopback, so Postgres-level TLS adds nothing — and the
-          # self-hosted stack does not offer it, which is what "The server does
-          # not support SSL connections" meant. A URL that states an sslmode of
-          # its own is left alone rather than overridden.
-          case "$PRODUCTION_SUPABASE_DB_URL" in
-            *sslmode=*) DB_URL="$PRODUCTION_SUPABASE_DB_URL" ;;
-            *\?*) DB_URL="$PRODUCTION_SUPABASE_DB_URL&sslmode=disable" ;;
-            *) DB_URL="$PRODUCTION_SUPABASE_DB_URL?sslmode=disable" ;;
-          esac
+          DB_URL=$(cat "$RUNNER_TEMP/db-url")
           echo "::add-mask::$DB_URL"
 
           supabase db push --db-url "$DB_URL" --include-all --dry-run | tee plan.txt
@@ -214,17 +235,8 @@ jobs:
 
       - name: Apply the pending migrations
         if: steps.before.outputs.pending != '0'
-        env:
-          PRODUCTION_SUPABASE_DB_URL: ${{ secrets.PRODUCTION_SUPABASE_DB_URL }}
         run: |
-          # Same normalisation as the plan step. It is repeated rather than
-          # carried across in an output: a step output holding the URL would
-          # persist the postgres password in the run, mask or no mask.
-          case "$PRODUCTION_SUPABASE_DB_URL" in
-            *sslmode=*) DB_URL="$PRODUCTION_SUPABASE_DB_URL" ;;
-            *\?*) DB_URL="$PRODUCTION_SUPABASE_DB_URL&sslmode=disable" ;;
-            *) DB_URL="$PRODUCTION_SUPABASE_DB_URL?sslmode=disable" ;;
-          esac
+          DB_URL=$(cat "$RUNNER_TEMP/db-url")
           echo "::add-mask::$DB_URL"
 
           supabase db push --db-url "$DB_URL" --include-all

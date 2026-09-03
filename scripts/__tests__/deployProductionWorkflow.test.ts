@@ -26,26 +26,38 @@ describe("production deploy workflow", () => {
     expect(workflow).toContain("SUPABASE_OVH_SSH_KEY");
     expect(workflow).toContain("SUPABASE_OVH_SSH_KNOWN_HOSTS");
 
-    // The far end is written 127.0.0.1 rather than localhost on purpose: the
-    // compose file publishes the port on IPv4, and `localhost` on the remote
-    // host can resolve to ::1 first, where nothing is listening.
-    expect(workflow).toContain("-L 5432:127.0.0.1:5432");
-
     // Without this the forward can fail while ssh still exits 0, and `db push`
     // then connects to nothing on a port that looks open locally.
     expect(workflow).toContain("ExitOnForwardFailure=yes");
   });
 
-  // The tunnel only ever listens on the runner's loopback, so a URL naming the
-  // remote host bypasses it and reproduces the original failure. Asserting the
-  // shape turns a 30-second connect timeout into an immediate, named error.
+  // Host port 5432 on the VPS is Supavisor, not Postgres. Routing a migration
+  // through a pooler buys nothing — `db push` opens one connection, runs DDL and
+  // leaves — and it cost two failures: Supavisor demands a tenant identifier in
+  // the username, then authenticates with a password copy seeded at first boot
+  // that recreating the container does not refresh.
   // @req REQ-032
-  it("requires a loopback database URL, since the tunnel is the only path", () => {
+  it("forwards to the database container, not to the pooler on the host", () => {
     const workflow = readWorkflow();
 
-    // Both spellings are accepted, so both have to be in the case pattern.
-    expect(workflow).toContain("localhost | 127.0.0.1)");
-    expect(workflow).toContain("must point at the tunnel");
+    expect(workflow).toContain('-L "5432:$DB_IP:5432"');
+    expect(workflow).toContain("docker inspect");
+
+    // Docker assigns the address, so pinning one would break on the next
+    // recreation of the container.
+    expect(workflow).not.toContain("-L 5432:127.0.0.1:5432");
+  });
+
+  // Every deploy that failed on 2026-09-03 failed because a stored connection
+  // string and the machine disagreed. The stack's own .env cannot be wrong about
+  // itself, and the job already holds the SSH access needed to read it.
+  // @req REQ-032
+  it("builds the connection string from the stack's own env, holding no URL secret", () => {
+    const workflow = readWorkflow();
+
+    expect(workflow).toContain("POSTGRES_PASSWORD=");
+    expect(workflow).toContain("::add-mask::");
+    expect(workflow).not.toContain("secrets.PRODUCTION_SUPABASE_DB_URL");
   });
 
   // The self-hosted Postgres does not offer TLS, and the Supabase CLI asks for
@@ -57,11 +69,9 @@ describe("production deploy workflow", () => {
   it("disables Postgres TLS, which the tunnel has already replaced", () => {
     const workflow = readWorkflow();
 
-    expect(workflow).toContain("sslmode=disable");
-
-    // Appended rather than assumed: a URL that already carries an sslmode is
-    // left alone, so this cannot silently override a deliberate choice.
-    expect(workflow).toContain("*sslmode=*)");
+    // Stated once, where the URL is built, rather than patched onto a string
+    // someone else supplied.
+    expect(workflow).toContain("?sslmode=disable");
   });
 
   // The v4.2.0 plan step failed to connect and still passed: `db push | tee`

@@ -553,25 +553,34 @@ files and the ledger comparison already live. Only the network path moves.
 
 Consequences, both asserted by `scripts/__tests__/deployProductionWorkflow.test.ts`:
 
-- **`PRODUCTION_SUPABASE_DB_URL` must name `localhost` or `127.0.0.1`**, not the VPS. The tunnel
-  listens on the runner's loopback; a URL naming the host bypasses it and reproduces the original
-  failure. The job checks the shape and fails immediately rather than after a connect timeout —
-  it extracts only the host, never echoing the URL, which carries the password.
-- **The forward targets `127.0.0.1` on the far side, not `localhost`.** The compose file publishes
-  the port on IPv4, and `localhost` on the remote host can resolve to `::1` first, where nothing
-  listens.
+- **There is no `PRODUCTION_SUPABASE_DB_URL`.** It was removed, because every one of the five
+  deploys that failed on 2026-09-03 failed for the same underlying reason: a stored connection
+  string and the machine disagreed. In order, it named the retired hosted project, then a port
+  that is not published, then wanted TLS the server does not offer, then lacked a Supavisor
+  tenant, then carried a password the pooler no longer held. A credential kept in two places
+  drifts. The job now reads `POSTGRES_PASSWORD` from the stack's own `.env` over the SSH access it
+  already needs for the tunnel, masks it, and builds the URL itself. The `.env` cannot be wrong
+  about the stack it configures.
+- **The forward targets the `supabase-db` container, not the host loopback.** Host port `5432` is
+  **Supavisor**, the pooler: measured 2026-09-03 it published `127.0.0.1:5432` and
+  `127.0.0.1:6543`, while `supabase-db` exposed `5432` only inside the Docker network. A pooler
+  buys a migration nothing — `db push` opens one connection, runs DDL and leaves — and it cost two
+  failures. Supavisor demands a tenant identifier in the username (`ENOIDENTIFIER`; the tenant is
+  `POOLER_TENANT_ID`, still the shipped example value `your-tenant-id`), and it then authenticates
+  with a copy of the password seeded at first boot. Recreating the container does **not** refresh
+  that copy: the tenant row already exists and the seed does not overwrite it, so `28P01` survived
+  a `--force-recreate` while the same password was verified working against the database directly.
+- **The container address is resolved at tunnel time**, with `docker inspect` over the same SSH.
+  Docker assigns it, so a pinned address breaks the next time the container is recreated.
 - **`ExitOnForwardFailure=yes` is load-bearing.** Without it `ssh -f` exits 0 having established
   nothing, and the runner then has a local port that accepts no connection — which `db push`
   would report as a database problem.
 - **The host key is pinned** through `SUPABASE_OVH_SSH_KNOWN_HOSTS`, for the same reason the
   deploy job pins Gravelines: an unpinned tunnel forwards a database credential to whoever
   answers on that address.
-- **`sslmode=disable` is appended to the URL.** The self-hosted Postgres does not offer TLS, and
-  the Supabase CLI asks for it: v4.2.0 opened the tunnel, reached `host=localhost`, and died on
-  `tls error (The server does not support SSL connections)`. Disabling it is correct rather than
-  merely expedient — the bytes are already inside SSH and the far end is the VPS loopback. A URL
-  that states an `sslmode` of its own is left alone. The job appends this itself rather than
-  asking for it in the secret, so there is no manual step to forget.
+- **`sslmode=disable`.** The self-hosted Postgres offers no TLS and the Supabase CLI asks for it:
+  v4.2.0 reached the server and died on `tls error (The server does not support SSL connections)`.
+  Disabling it is correct rather than merely expedient — the bytes are already inside SSH.
 
 ### The plan gate was vacuous when the connection failed
 
