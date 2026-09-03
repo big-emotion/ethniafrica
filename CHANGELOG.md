@@ -10,6 +10,77 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [4.1.0] - 2026-09-03
+
+172 commits since `4.0.0`. The corpus grew a whole dimension — names — and the
+release also repairs four quality gates that had been reporting success without
+measuring anything.
+
+### Added
+
+- **The name dimension.** Patronyme fiches are authored, researched and served:
+  the `PAT_*` corpus reaches 780 fiches across every linguistic family, with a
+  dedicated route, a public `/api/v2` payload, and the anthroponym queue closed
+  at quota for all 54 countries (ETNI-1461, ETNI-1464, REQ-133).
+- **The language dimension.** A language fiche per family, a facet service, the
+  language axis on the atlas shell, and language as its own search-result kind
+  (ETNI-1507, ETNI-1508, REQ-136).
+- **One search surface.** Three competing search surfaces consolidate into a
+  single canonical SERP with named lens chips, typo tolerance through `pg_trgm`,
+  near-miss leads on a zero-result query, and person, name and language as
+  first-class result kinds (ETNI-1796, ETNI-1415, REQ-124 → REQ-126, REQ-135).
+- **« Nommer »** opens with _Qui a donné ce nom ?_, its founding dossier and a
+  glossary; the anecdotes page carries 43 notices drawn from the corpus.
+- Reporting without an account, with admin access on an allowlist.
+- A contact page, media credits on the people fiche (REQ-128), the corpus
+  bibliography as a searchable surface, and historical affiliation on the fiche
+  (REQ-127).
+
+### Changed
+
+- **Every source title now names the resource it points at.** `sources.title` is
+  globally UNIQUE and every loader upserts on it, so 54 country fiches sharing
+  one _UNFPA – World Population Dashboard_ title with 54 different URLs
+  collapsed onto a single row — a reader following Angola's citation reached
+  another country's dashboard. The same held for 17 fiches sharing
+  _Glottolog 5.3_.
+- The home opens on what a reader can do and states the corpus census, rather
+  than turning a headline reel.
+- 37 sources still carrying the retired numeric Tier 1/2 scale move onto the
+  three-standing vocabulary, and four validator checks that still asserted that
+  scale were translated with them.
+
+### Fixed
+
+- **The AFRIK corpus loads again.** The recette sync had failed repeatedly with
+  777 patronymes and 0 inserted while `validateAfrikData` reported no errors on
+  the same corpus. `checkSourceIdentity` and `check:afrik-loader` now model what
+  the loader enforces, so CI fails on this class instead of the sync discovering
+  it.
+- **Lighthouse measures again.** It died on a `networkidle0` wait a page
+  streaming RSC payloads never satisfies, and `lhci` aborts collection on the
+  first URL whose setup throws — so no route after the first was ever evaluated.
+  It now checks 19 URLs.
+- **The E2E suite can no longer report a success it has not earned.** It skipped
+  every step when its Supabase secrets were absent and concluded success; it now
+  runs against recette.
+- **The Saviez-vous band draws its illustrations.** Half the bank is a drawn
+  onomastic plate rather than a photograph and the home rendered nothing for
+  those — 33 of 67 facts showed prose beside an empty half.
+- The CSP no longer hard-codes production's Supabase host, which silently
+  blocked every other deployment's database calls in the browser.
+
+### Removed
+
+- The superseded axis-graph home: 2 600 lines across eighteen modules that
+  nothing had imported since the page became `HomeHero` + `DidYouKnow`, with
+  twelve of the thirteen `--home-text-*` tokens that had lost their reader.
+
+### Security
+
+- Flag-report quotas and the Supabase request deadline move into configuration
+  rather than living as literals a redeploy is needed to change.
+
 ## [4.0.0] - 2026-09-01
 
 A major because the public API changed shape, and an infrastructure release
@@ -302,7 +373,8 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.1.0...HEAD
+[4.1.0]: https://github.com/big-emotion/ethniafrica/compare/v4.0.0...v4.1.0
 [4.0.0]: https://github.com/big-emotion/ethniafrica/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/big-emotion/ethniafrica/compare/v2.1.0...v3.0.0
 [2.1.0]: https://github.com/big-emotion/ethniafrica/compare/v2.0.0...v2.1.0
