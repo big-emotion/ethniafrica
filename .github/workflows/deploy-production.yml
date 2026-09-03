@@ -57,7 +57,7 @@ jobs:
       # right for an integration branch. Here it must fail: skipping would hand
       # the deploy below a database that never got the schema, which is the
       # exact outcome this job exists to prevent.
-      - name: Require the production database URL
+      - name: Require a database URL that points at the tunnel
         env:
           PRODUCTION_SUPABASE_DB_URL: ${{ secrets.PRODUCTION_SUPABASE_DB_URL }}
         run: |
@@ -65,6 +65,25 @@ jobs:
             echo "::error::PRODUCTION_SUPABASE_DB_URL is not set, so migrations cannot be applied. It is a Postgres connection string (postgresql://…), not PRODUCTION_SUPABASE_URL — that one is the PostgREST endpoint and cannot execute DDL. See docs/runbooks/migration-state.md."
             exit 1
           fi
+
+          # The URL carries the postgres password, so it is never echoed. Only the
+          # host is extracted: strip the scheme, then the userinfo if present, then
+          # everything from the port, path or query onwards.
+          HOST=$(printf '%s' "$PRODUCTION_SUPABASE_DB_URL" | sed -E 's#^[a-zA-Z+]+://##; s#^[^@/]*@##; s#[:/?].*$##')
+          # A malformed URL can leave a fragment of the password in HOST, which is
+          # then not something to print. Anything outside hostname characters is
+          # reported as unparseable rather than shown.
+          case "$HOST" in
+            *[!a-zA-Z0-9.-]*) HOST="(unparseable)" ;;
+          esac
+
+          case "$HOST" in
+            localhost | 127.0.0.1) ;;
+            *)
+              echo "::error::PRODUCTION_SUPABASE_DB_URL must point at the tunnel — localhost or 127.0.0.1 — but names $HOST. Production's Postgres is self-hosted on the OVH VPS and its port is not published: measured 2026-09-03, that host answers on 443 and refuses 5432 and 6543, which is why the v4.1.1 deploy read the ledger over PostgREST and then failed with ECONNREFUSED. The SSH forward opened below is the only path to it. See docs/runbooks/migration-state.md."
+              exit 1
+              ;;
+          esac
 
       # What production holds, before anything is applied. `applied_migrations()`
       # (migration 042) makes this a measurement rather than a claim in a runbook.
@@ -85,6 +104,66 @@ jobs:
         uses: supabase/setup-cli@46f7f98c7f948ad727d22c1e67fab04c223a0520 # v3.0.0
         with:
           version: latest
+
+      # Production's Postgres is self-hosted on the OVH VPS and deliberately not
+      # on the internet. Publishing 5432 to let a runner in would put the
+      # production database in front of GitHub's entire address space — the
+      # runners have no stable range to restrict to. An SSH forward gives the
+      # same reachability to this job alone, and `db push` keeps running on the
+      # runner, where the CLI, the migration files and the ledger comparison
+      # already are. Only the network path moves.
+      #
+      # The forward targets 127.0.0.1 rather than localhost on the far side: the
+      # compose file publishes the port on IPv4, and `localhost` there can
+      # resolve to ::1 first, where nothing listens.
+      - name: Open an SSH tunnel to the self-hosted Postgres
+        if: steps.before.outputs.pending != '0'
+        env:
+          SSH_KEY: ${{ secrets.SUPABASE_OVH_SSH_KEY }}
+          SSH_HOST: ${{ secrets.SUPABASE_OVH_SSH_HOST }}
+          SSH_USER: ${{ secrets.SUPABASE_OVH_SSH_USER }}
+          SSH_PORT: ${{ secrets.SUPABASE_OVH_SSH_PORT }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SUPABASE_OVH_SSH_KNOWN_HOSTS }}
+        run: |
+          # No apostrophes in these messages: inside ${VAR:?word} bash reads a
+          # single quote as opening a quote even within double quotes, and
+          # check:workflow-shell fails the file on the unterminated string.
+          : "${SSH_KEY:?SUPABASE_OVH_SSH_KEY is not set — the migrate job cannot reach the production Postgres without it. See docs/runbooks/migration-state.md}"
+          : "${SSH_HOST:?SUPABASE_OVH_SSH_HOST is not set}"
+          : "${SSH_USER:?SUPABASE_OVH_SSH_USER is not set}"
+          : "${SSH_PORT:?SUPABASE_OVH_SSH_PORT is not set}"
+          : "${SSH_KNOWN_HOSTS:?SUPABASE_OVH_SSH_KNOWN_HOSTS is not set — pinning the host key is what stops this job from forwarding a database credential to whoever answers on that address}"
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/supabase_tunnel_key
+          chmod 600 ~/.ssh/supabase_tunnel_key
+          printf '%s\n' "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+          # -f backgrounds ssh only once the forward is established, and
+          # ExitOnForwardFailure makes a refused forward a non-zero exit instead
+          # of a tunnel that listens and accepts nothing.
+          ssh -f -N \
+            -i ~/.ssh/supabase_tunnel_key \
+            -p "$SSH_PORT" \
+            -o BatchMode=yes \
+            -o ExitOnForwardFailure=yes \
+            -o ServerAliveInterval=30 \
+            -L 5432:127.0.0.1:5432 \
+            "$SSH_USER@$SSH_HOST"
+
+          # ssh returning is not proof the far end accepts a connection, and a
+          # refusal must not reach `db push`, which would report it as a schema
+          # problem. The port is probed before the plan is allowed to run.
+          for _ in $(seq 1 20); do
+            if timeout 2 bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/5432' 2>/dev/null; then
+              echo "The tunnel is accepting connections on 127.0.0.1:5432."
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "::error::the SSH tunnel never started listening on 127.0.0.1:5432. If ssh itself connected, the port is probably not published on the VPS loopback — check what the Supabase compose file binds for the db service, and forward that instead."
+          exit 1
 
       # The plan is asserted against the measurement before it runs. A `db push`
       # that intends to replay more than the pending set means the ledger and the
