@@ -23,10 +23,107 @@ permissions:
   contents: read
 
 jobs:
+  # Production's schema state used to be a claim in a runbook rather than a
+  # measurement. At the 4.1.0 release that claim said production stood at `049`
+  # while thirty-two migrations had landed on recette — including the ones that
+  # create `afrik_patronymes`, `persons` and every unified-search RPC. Deploying
+  # onto that would have shipped a release whose headline features query tables
+  # the database does not have.
+  #
+  # `applied_migrations()` (migration 042) makes the ledger readable over
+  # PostgREST, so this is measurable rather than remembered. It runs as its own
+  # job so the deploy below keeps carrying an SSH key and nothing else.
+  migrate:
+    name: Bring production's schema up to the released tag
+    if: github.event.release.prerelease == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout the released tag
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.release.tag_name }}
+
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      # recette's equivalent warns and skips when its secret is absent, which is
+      # right for an integration branch. Here it must fail: skipping would hand
+      # the deploy below a database that never got the schema, which is the
+      # exact outcome this job exists to prevent.
+      - name: Require the production database URL
+        env:
+          PRODUCTION_SUPABASE_DB_URL: ${{ secrets.PRODUCTION_SUPABASE_DB_URL }}
+        run: |
+          if [ -z "$PRODUCTION_SUPABASE_DB_URL" ]; then
+            echo "::error::PRODUCTION_SUPABASE_DB_URL is not set, so migrations cannot be applied. It is a Postgres connection string (postgresql://…), not PRODUCTION_SUPABASE_URL — that one is the PostgREST endpoint and cannot execute DDL. See docs/runbooks/migration-state.md."
+            exit 1
+          fi
+
+      # What production holds, before anything is applied. `applied_migrations()`
+      # (migration 042) makes this a measurement rather than a claim in a runbook.
+      - name: Measure the production ledger
+        id: before
+        env:
+          PRODUCTION_SUPABASE_URL: ${{ secrets.PRODUCTION_SUPABASE_URL }}
+          PRODUCTION_SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.PRODUCTION_SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          npm run --silent check:migration-state:production -- --json > before.json || true
+          PENDING=$(node -e "const r=require('./before.json');console.log((r.pending||[]).length)")
+          echo "pending=$PENDING" >> "$GITHUB_OUTPUT"
+          echo "Production has $PENDING pending migration(s)."
+          node -e "const r=require('./before.json');for(const m of r.pending||[])console.log('  pending:',m.name||m)"
+
+      - name: Install the Supabase CLI
+        if: steps.before.outputs.pending != '0'
+        uses: supabase/setup-cli@46f7f98c7f948ad727d22c1e67fab04c223a0520 # v3.0.0
+        with:
+          version: latest
+
+      # The plan is asserted against the measurement before it runs. A `db push`
+      # that intends to replay more than the pending set means the ledger and the
+      # files disagree — and replaying from the start reaches
+      # `007_remove_v1_add_v2_contribution_types.sql`, which opens with
+      # `DROP TABLE IF EXISTS sources CASCADE`. That is not a migration to
+      # discover mid-deploy.
+      - name: Plan, and refuse a plan wider than the measurement
+        if: steps.before.outputs.pending != '0'
+        env:
+          PRODUCTION_SUPABASE_DB_URL: ${{ secrets.PRODUCTION_SUPABASE_DB_URL }}
+        run: |
+          supabase db push --db-url "$PRODUCTION_SUPABASE_DB_URL" --include-all --dry-run | tee plan.txt
+          PLANNED=$(grep -cE '^[[:space:]]*[0-9]{3}_[a-z0-9_]+\.sql' plan.txt || true)
+          echo "planned=$PLANNED measured=${{ steps.before.outputs.pending }}"
+          if [ "$PLANNED" -gt "${{ steps.before.outputs.pending }}" ]; then
+            echo "::error::db push plans $PLANNED migrations but only ${{ steps.before.outputs.pending }} are pending. The ledger and the files disagree; repair the ledger by hand before releasing (docs/runbooks/migration-state.md)."
+            exit 1
+          fi
+
+      - name: Apply the pending migrations
+        if: steps.before.outputs.pending != '0'
+        env:
+          PRODUCTION_SUPABASE_DB_URL: ${{ secrets.PRODUCTION_SUPABASE_DB_URL }}
+        run: supabase db push --db-url "$PRODUCTION_SUPABASE_DB_URL" --include-all
+
+      # Verify by measuring again, never by the tool's own report — the rule the
+      # runbook already draws from the 2026-08-31 repair.
+      - name: Measure again, and require a clean ledger
+        env:
+          PRODUCTION_SUPABASE_URL: ${{ secrets.PRODUCTION_SUPABASE_URL }}
+          PRODUCTION_SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.PRODUCTION_SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run check:migration-state:production
+
   deploy:
     # A pre-release is a release too as far as GitHub is concerned. Shipping `v1.2.0-rc.1`
     # to ethniafrica.com because someone ticked "pre-release" would be a surprise.
     if: github.event.release.prerelease == false
+    needs: migrate
     runs-on: ubuntu-latest
     timeout-minutes: 30
     environment:

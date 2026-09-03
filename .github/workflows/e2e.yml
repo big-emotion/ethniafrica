@@ -1,11 +1,26 @@
 name: E2E — Playwright
 
 on:
-  # Pre-merge only, matching ci.yml: every change reaches recette/main through a
-  # PR, so `push` on the same branches re-ran the whole suite a second time for
-  # each merge without gating anything — nothing reads the post-merge result.
+  # Not a required check on either branch: 27 of its last 33 runs were red, the
+  # most recent with 69 specs failing against 80 passing. A suite that fails
+  # four times out of five reports nothing about the change under review — the
+  # reader learns only that the suite is still broken — while costing every pull
+  # request into `recette` a further ~8 minutes.
+  #
+  # It runs where its result can still be acted on: nightly against the
+  # integration branch, on the promotion into `main`, and on demand. Restoring
+  # it to the pre-merge path is the right move once it is green again, and is a
+  # deliberate decision rather than a default.
   pull_request:
-    branches: [main, recette]
+    branches: [main]
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+# A push supersedes the suite still running for the previous commit.
+concurrency:
+  group: e2e-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -47,6 +62,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # A scheduled event always fires against the default branch, `main`.
+          # The nightly run exists to exercise the integration branch, so it
+          # names it explicitly — see the same note in lighthouse.yml.
+          ref: ${{ github.event_name == 'schedule' && 'recette' || '' }}
 
       - name: Setup Node
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -78,9 +98,14 @@ jobs:
             exit 1
           fi
 
+      # webkit as well as chromium: the `tablet-720` project is built on
+      # `devices["iPad Mini"]`, whose `defaultBrowserType` is webkit. Installing
+      # chromium alone left every spec in that project failing on
+      # `browserType.launch: Executable doesn't exist`, which reads as a suite
+      # of broken tests rather than as a missing browser.
       - name: Install Playwright browsers
         if: steps.secrets.outputs.present == 'true'
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install --with-deps chromium webkit
 
       - name: Build app
         if: steps.secrets.outputs.present == 'true'

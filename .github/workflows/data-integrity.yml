@@ -10,6 +10,12 @@ on:
     - cron: "0 2 * * *"
   workflow_dispatch:
 
+# Superseded runs of the same branch are cancelled. The nightly run is keyed on
+# its own ref, so a pull request push can never cancel the scheduled sweep.
+concurrency:
+  group: data-integrity-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest

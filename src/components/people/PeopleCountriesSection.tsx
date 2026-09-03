@@ -48,7 +48,11 @@ export function PeopleCountriesSection({
               <div className="flex items-center gap-[10px]">
                 <Link
                   href={countryHref(row.country)}
-                  className="text-afh-caption font-bold font-mono w-[40px] shrink-0 hover:underline"
+                  // The ISO code is the row's link to the country fiche, so it
+                  // owes the 44px target rather than the 40×20 box the code
+                  // itself occupies. The column keeps its 44px measure so the
+                  // share bars beside it stay aligned down the list.
+                  className="text-afh-caption font-bold font-mono w-11 min-h-11 inline-flex items-center shrink-0 hover:underline"
                   style={{ color: "var(--country-terracotta-ink)" }}
                 >
                   {row.country}

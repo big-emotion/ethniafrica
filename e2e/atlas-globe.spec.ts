@@ -84,23 +84,50 @@ async function openFicheGlobe(page: Page, width: number): Promise<Locator> {
 }
 
 /**
- * Chooses a target and returns its marker. Without `countryId` the first
- * marker on the stage is taken; pass one to re-choose the same subject after
- * a viewport change.
+ * Chooses a target and returns the mark the stage carries for it, plus the
+ * country that was chosen so a later widening pass can ask for the same one.
+ *
+ * Two shapes, because the fiche globes ship both. A scene that pins a marker
+ * per country is chosen by clicking one. A scene that offers the picker —
+ * every fiche globe since the list replaced the unnamed 22px pastille — is
+ * chosen from the list, and the stage then carries a single choice mark on the
+ * subject. What comes back is the same thing either way: the element standing
+ * for the subject, which is what the geometry below measures.
  */
 async function chooseTarget(
   stage: Locator,
   countryId?: string
-): Promise<Locator> {
-  const marker = countryId
-    ? stage.locator(`[data-atlas-target="${countryId}"]`)
-    : stage.locator("[data-atlas-target]").first();
+): Promise<{ subject: Locator; countryId: string }> {
+  const picker = stage.getByRole("button", { name: /^Choisir un pays/ });
 
-  await expect(marker).toBeVisible();
-  await marker.click();
-  await expect(marker).toHaveAttribute("data-atlas-target-chosen", "true");
-  await expect(marker).toHaveAttribute("aria-pressed", "true");
-  return marker;
+  if ((await picker.count()) === 0) {
+    const marker = countryId
+      ? stage.locator(`[data-atlas-target="${countryId}"]`)
+      : stage.locator("[data-atlas-target]").first();
+
+    await expect(marker).toBeVisible();
+    await marker.click();
+    await expect(marker).toHaveAttribute("data-atlas-target-chosen", "true");
+    await expect(marker).toHaveAttribute("aria-pressed", "true");
+    return {
+      subject: marker,
+      countryId: (await marker.getAttribute("data-atlas-target")) ?? "",
+    };
+  }
+
+  await picker.click();
+  const option = countryId
+    ? stage.locator(`[role="option"][data-atlas-target="${countryId}"]`)
+    : stage.locator("[role=option][data-atlas-target]").first();
+
+  await expect(option).toBeVisible();
+  const chosen = (await option.getAttribute("data-atlas-target")) ?? "";
+  await option.click();
+
+  const subject = stage.locator(`[data-atlas-choice="${chosen}"]`);
+  await expect(subject).toBeVisible();
+  await expect(subject).toHaveAttribute("data-atlas-choice-chosen", "true");
+  return { subject, countryId: chosen };
 }
 
 /**
@@ -161,9 +188,9 @@ test.describe("Fiche globe fly-to and facts panel (REQ-117)", () => {
       page,
     }) => {
       const stage = await openFicheGlobe(page, width);
-      const marker = await chooseTarget(stage);
+      const { subject } = await chooseTarget(stage);
 
-      await expectSubjectClearOfPanel(page, marker, width);
+      await expectSubjectClearOfPanel(page, subject, width);
     });
   }
 
@@ -187,8 +214,7 @@ test.describe("Fiche globe fly-to and facts panel (REQ-117)", () => {
     page,
   }) => {
     const bottomSheetStage = await openFicheGlobe(page, 430);
-    const firstMarker = await chooseTarget(bottomSheetStage);
-    const countryId = await firstMarker.getAttribute("data-atlas-target");
+    const { countryId } = await chooseTarget(bottomSheetStage);
     expect(countryId).toBeTruthy();
     await expect(factsPanel(page)).toHaveAttribute(
       "data-atlas-panel-anchor",
@@ -200,7 +226,7 @@ test.describe("Fiche globe fly-to and facts panel (REQ-117)", () => {
     // renders it from scratch, which is how a reader arriving at either width
     // actually receives it.
     const sidePanelStage = await openFicheGlobe(page, 1200);
-    await chooseTarget(sidePanelStage, countryId ?? undefined);
+    await chooseTarget(sidePanelStage, countryId);
     await expect(factsPanel(page)).toHaveAttribute(
       "data-atlas-panel-anchor",
       "side"
@@ -221,9 +247,9 @@ test.describe("Fiche globe fly-to and facts panel (REQ-117)", () => {
       await page.emulateMedia({ reducedMotion: "reduce" });
 
       const stage = await openFicheGlobe(page, width);
-      const marker = await chooseTarget(stage);
+      const { subject } = await chooseTarget(stage);
 
-      await expectSubjectClearOfPanel(page, marker, width);
+      await expectSubjectClearOfPanel(page, subject, width);
     });
   }
 
@@ -232,19 +258,33 @@ test.describe("Fiche globe fly-to and facts panel (REQ-117)", () => {
     page,
   }) => {
     const stage = await openFicheGlobe(page, 430);
-    const marker = stage.locator("[data-atlas-target]").first();
-    await expect(marker).toBeVisible();
 
-    // A marker pulled out of the tab order would be focusable by script and
+    // The picker is the keyboard path on a fiche globe — the choice marks are
+    // `aria-hidden` decoration, and a 7px dot was never the way in. Reaching
+    // the trigger, opening the listbox and committing an option must all be
+    // possible without a pointer.
+    const picker = stage.getByRole("button", { name: /^Choisir un pays/ });
+    await expect(picker).toBeVisible();
+
+    // A trigger pulled out of the tab order would be focusable by script and
     // unreachable by a reader, so the tab order is asserted, not just focus.
-    await expect(marker).not.toHaveAttribute("tabindex", "-1");
-    await marker.focus();
-    await expect(marker).toBeFocused();
+    await expect(picker).not.toHaveAttribute("tabindex", "-1");
+    await picker.focus();
+    await expect(picker).toBeFocused();
 
     await page.keyboard.press("Enter");
-    await expect(marker).toHaveAttribute("data-atlas-target-chosen", "true");
-    await expect(marker).toHaveAttribute("aria-pressed", "true");
+    await expect(picker).toHaveAttribute("aria-expanded", "true");
 
-    await expectSubjectClearOfPanel(page, marker, 430);
+    // Opening the list moves focus into it, so the first option is already the
+    // active element and Enter commits it.
+    const option = stage.locator("[role=option][data-atlas-target]").first();
+    await expect(option).toBeFocused();
+    const countryId = (await option.getAttribute("data-atlas-target")) ?? "";
+    await page.keyboard.press("Enter");
+
+    const subject = stage.locator(`[data-atlas-choice="${countryId}"]`);
+    await expect(subject).toHaveAttribute("data-atlas-choice-chosen", "true");
+
+    await expectSubjectClearOfPanel(page, subject, 430);
   });
 });

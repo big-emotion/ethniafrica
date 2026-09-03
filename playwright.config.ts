@@ -1,8 +1,43 @@
 import { defineConfig, devices } from "@playwright/test";
+import { CONSENT_STORAGE_KEY, DEFAULT_PREFERENCES } from "./src/lib/consent";
 
 const isCI = Boolean(process.env.CI);
 const baseURL = process.env.BASE_URL ?? "http://localhost:3000";
 const serverPort = new URL(baseURL).port || "3000";
+
+// The consent banner is a `role="dialog"` overlay shown to any visitor with no
+// stored decision. Unseeded, it is present on the first paint of every route:
+// it trips the emotion guardrail that forbids an interrupter on the reading
+// surface, it adds its own controls to the tap-target sweep, and it intercepts
+// pointer events aimed at the page underneath. None of that is the behaviour
+// these specs exist to measure — they describe a reader who is already past it.
+//
+// Seeding essential-only consent gives the suite the same returning-reader
+// posture `scripts/lighthouse-setup.cjs` gives Lighthouse, which is why the two
+// gates disagreed about whether a dialog was on screen. The date is computed at
+// load rather than hardcoded because `isConsentExpired` rejects anything older
+// than CONSENT_EXPIRY_MONTHS, which a frozen literal would eventually become.
+//
+// Specs that want to exercise the banner itself must clear the key first, so
+// they opt out of this baseline rather than inheriting it.
+const returningReaderConsent = {
+  cookies: [],
+  origins: [
+    {
+      origin: new URL(baseURL).origin,
+      localStorage: [
+        {
+          name: CONSENT_STORAGE_KEY,
+          value: JSON.stringify({
+            hasConsented: true,
+            preferences: DEFAULT_PREFERENCES,
+            consentDate: new Date().toISOString(),
+          }),
+        },
+      ],
+    },
+  ],
+};
 
 // Reference device profile per TEA Test Design ASR-7.
 // Africa History target audience: lycéenne in Dakar on entry-level Android, 4G, rationed data.
@@ -68,6 +103,7 @@ export default defineConfig({
     video: "retain-on-failure",
     locale: "fr-FR",
     timezoneId: "Africa/Dakar",
+    storageState: returningReaderConsent,
     extraHTTPHeaders: {
       // ASR-3: cache-bypass header honored only when NODE_ENV !== 'production'.
       "X-Test-Bypass-Cache": "1",

@@ -1,0 +1,6 @@
+# Gitignored files Claude Code copies into every worktree it creates.
+# A worktree without these renders an empty corpus and reads as a data bug.
+# node_modules is deliberately absent — it is a directory, and this mechanism
+# copies files; scripts/setup-worktree.sh clones it instead.
+.env.local
+.env

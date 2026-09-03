@@ -142,12 +142,22 @@ export function MigrationsAtlasView({
                 data-testid={`migration-list-item-${event.id}`}
                 onClick={() => selectEvent(event.id)}
                 className={cn(
-                  "flex w-full items-center justify-between gap-2 rounded-md border border-border px-3 py-2 text-left text-afh-small motion-safe:transition-colors",
+                  // Wraps, so the badge drops under the event's name rather
+                  // than being pushed past the edge: at 200% text zoom the
+                  // name and the status chip together outrun a 430px row, and
+                  // `justify-between` with no wrap spends the excess on
+                  // overflow — 461px of document inside a 430px viewport.
+                  "flex w-full flex-wrap items-center justify-between gap-2 rounded-md border border-border px-3 py-2 text-left text-afh-small motion-safe:transition-colors",
                   pressed && "border-afh-atlas-path-selected font-semibold"
                 )}
               >
                 <span>{event.nameMain}</span>
-                <ClassificationBadge status={event.classificationStatus} />
+                {/* The row is the control here, so the badge annotates it
+                    rather than offering a second destination inside it. */}
+                <ClassificationBadge
+                  status={event.classificationStatus}
+                  linksToDoctrine={false}
+                />
               </button>
             </li>
           );

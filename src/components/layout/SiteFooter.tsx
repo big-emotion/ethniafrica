@@ -22,8 +22,15 @@ interface SiteFooterProps {
  * Written once rather than seven times. The seven copies it replaces were
  * identical, which is exactly why the eighth would not have been.
  */
+// Every footer link is a row in a nav list, never a word inside a sentence, so
+// none of them takes WCAG 2.5.8's inline exception: at 22px they missed even
+// its 24px AA minimum, well under the 44px this project's own UX spec asks of a
+// control. `inline-flex` + `min-h-11` gives the row the target without
+// touching the type, which stays at the column's `small`.
+// `min-w-11` as well as `min-h-11`: a short label — « API », « Noms » — drew a
+// 26px-wide target however tall the row was, and the floor is a square.
 const FOOTER_LINK_CLASS =
-  "underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  "inline-flex min-h-11 min-w-11 items-center justify-center underline decoration-border underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 /**
  * Where the project is followed, and where it will be.
@@ -144,7 +151,13 @@ export function SiteFooter({ language }: SiteFooterProps) {
             space themselves across the shell. */}
         <div
           data-testid="footer-directory"
-          className="flex flex-col items-center gap-afh-6xl text-center md:flex-row md:items-start md:justify-between md:gap-afh-lg md:text-left"
+          // `md:flex-wrap`, because the row is entered on a media query and
+          // sized in rem: at 200% text zoom an 800px viewport still matches
+          // `md`, so the columns lined up in a row that no longer fitted and
+          // ran 253px past the edge of the document. Wrapping lets the last
+          // column drop instead — the same reflow WCAG 1.4.10 asks for, and
+          // the only one available to a row whose content cannot shrink.
+          className="flex flex-col items-center gap-afh-6xl text-center md:flex-row md:flex-wrap md:items-start md:justify-between md:gap-afh-lg md:text-left"
         >
           {/* The mark, the name and what the site is — none of them a link:
               the masthead already carries the way home, and a second one at
@@ -224,9 +237,16 @@ export function SiteFooter({ language }: SiteFooterProps) {
                   glyph sits on the heading's edge rather than a tap target's,
                   and given half the rubrics' top margin for the same reason:
                   the other 12px is already inside the target. */}
+            {/* Wraps, because the row is sized in rem and text zoom is what
+                  it has to survive: at 200% each 44px target measures 88px, and
+                  a single line of them ran 1199px wide inside an 800px
+                  viewport — horizontal scroll on the whole document, which
+                  WCAG 1.4.10 forbids and `migrations-atlas-zoom.spec.ts`
+                  measures. Wrapping is the reflow; capping the row would have
+                  cut the last networks off instead. */}
             <ul
               data-testid="footer-follow"
-              className="mt-afh-lg flex items-center justify-center gap-afh-sm sm:-ml-3 sm:justify-start"
+              className="mt-afh-lg flex flex-wrap items-center justify-center gap-afh-sm sm:-ml-3 sm:justify-start"
             >
               {SOCIAL_NETWORKS.map(({ name, Glyph, href }) => (
                 <li key={name}>
@@ -341,7 +361,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
               href="https://big-emotion.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="inline-flex min-h-11 items-center gap-2 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <span>{footer.attribution}</span>
               <Image

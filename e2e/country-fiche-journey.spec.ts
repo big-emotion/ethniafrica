@@ -65,35 +65,48 @@ test.describe("@phase-1 country fiche — the globe is operable", () => {
 
 test.describe("@phase-1 country fiche — moving to another country", () => {
   // @req REQ-117
-  test("the picker lists the corpus and navigates to the chosen fiche", async ({
+  test("the picker lists the corpus and re-aims the globe at the chosen country", async ({
     page,
   }) => {
     await page.setViewportSize(DESKTOP);
     await page.goto(COUNTRY_FICHE_URL);
 
-    await page.getByRole("button", { name: /Changer de pays/ }).click();
+    await page.getByRole("button", { name: /^Choisir un pays/ }).click();
 
     const options = page.getByRole("option");
     await expect(options.first()).toBeVisible();
 
-    // The six countries without geometry still have a fiche, so they are
-    // offered: the list is drawn from the corpus, not the admin-0 asset.
+    // The list is drawn from the corpus, so a country whose outline the
+    // admin-0 asset once lacked is offered like any other.
     await expect(page.getByRole("option", { name: /Comores/ })).toBeVisible();
 
     await page.getByRole("option", { name: /Kenya/ }).click();
 
-    // The unversioned form: a bare slug renders directly, so choosing a
-    // country costs no redirect.
-    await expect(page).toHaveURL(/\/fr\/pays\/KEN$/);
+    // The picker moved inside the globe, and that is what changed the contract
+    // it is under: the camera belongs to AtlasGlobe, so choosing re-aims it and
+    // opens the country's facts beside it. It no longer loads another fiche —
+    // a control outside the globe could only ever have navigated, and this one
+    // is not outside it. The address therefore stays put.
+    await expect(page).toHaveURL(new RegExp(`${COUNTRY_FICHE_URL}$`));
+    await expect(page.locator("[data-atlas-facts-panel]")).toContainText(
+      "Kenya"
+    );
   });
 
+  // Comores was the example of a country the admin-0 asset had no rings for,
+  // and it is not one any more: all 58 entries carry geometry, so no country
+  // in the corpus reaches the placeholder. The branch itself still has a
+  // guard — `AtlasGlobe.test.tsx` renders a null overlay and asserts the note
+  // — so what is asserted here is the state that replaced it: the fiche draws
+  // its country rather than apologising for it.
   // @req REQ-117
-  test("a country with no outline says so instead of showing an empty globe", async ({
+  test("a country whose outline the asset now carries draws it", async ({
     page,
   }) => {
     await page.setViewportSize(DESKTOP);
     await page.goto(getCountryRoute("fr", "COM"));
 
-    await expect(page.getByText(/Contour non disponible/)).toBeVisible();
+    await expect(page.locator("[data-atlas-stage]")).toBeVisible();
+    await expect(page.getByText(/Contour non disponible/)).toHaveCount(0);
   });
 });

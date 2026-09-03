@@ -1,8 +1,26 @@
 name: Lighthouse CI — Mobile Performance
 
 on:
+  # This audit is not a required check on either branch, and 32 of its last 32
+  # runs were red. On every pull request into `recette` it spent ~16 minutes
+  # measuring 21 URLs × 3 runs and blocked nothing — roughly 8 h of runner time
+  # a day whose only visible effect was a pull request page that could not turn
+  # green. A budget nobody can act on is not a gate, it is noise, and thirty-two
+  # consecutive reds is how a real regression would now go unnoticed.
+  #
+  # Mobile performance is a property of the integrated branch rather than of any
+  # single pull request, so it is measured where that statement is true: nightly
+  # against `recette`, on the (rare) promotion into `main`, and on demand.
   pull_request:
-    branches: [recette, main]
+    branches: [main]
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+# A push supersedes the audit still running for the previous commit.
+concurrency:
+  group: lighthouse-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -17,6 +35,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # A scheduled event always fires against the default branch, which is
+          # `main`. The nightly run is here to measure the integration branch,
+          # so it has to name it: without this the board would show a green
+          # nightly for `main` while `recette` went unmeasured.
+          ref: ${{ github.event_name == 'schedule' && 'recette' || '' }}
 
       - name: Setup Node
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
