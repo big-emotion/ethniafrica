@@ -100,6 +100,20 @@ jobs:
       - name: Apply and verify production synchronization
         run: npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=production --apply
 
+      # The loader writes its per-fiche failures to a JSON report and only logs
+      # the path. On a runner that path is unreachable, so a sync could fail
+      # with "completed with errors" and nothing anyone could read — which is
+      # exactly how an apply-phase failure stayed undiagnosed while the preview
+      # in front of it was clean.
+      - name: Upload the loader's error report
+        if: failure()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: afrik-migration-errors-production
+          path: dataset/source/afrik/logs/migration_errors_*.json
+          if-no-files-found: ignore
+          retention-days: 14
+
       - name: Invalidate production AFRIK caches
         if: env.PRODUCTION_REVALIDATE_SECRET != ''
         run: |
