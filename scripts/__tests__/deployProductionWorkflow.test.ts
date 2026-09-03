@@ -94,6 +94,13 @@ describe("production deploy workflow", () => {
     // a plan for being too wide either.
     expect(workflow).toContain("scripts/ci/countPlannedMigrations.ts");
     expect(workflow).not.toContain("grep -cE");
+
+    // The CLI prints the plan on stderr. Piping stdout alone left the capture
+    // empty while the list still appeared in the job log, which made every
+    // release count 0 planned migrations and made the cause look, twice, like
+    // a parsing problem.
+    expect(workflow).toContain("--dry-run 2>&1 | tee plan.txt");
+    expect(workflow).toContain("[ ! -s plan.txt ]");
   });
 
   // The host key is pinned for the same reason the deploy job pins Gravelines':
