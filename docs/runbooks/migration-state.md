@@ -521,9 +521,76 @@ password filled in). Without it the job **skips loudly** with a warning rather t
 a fork or Dependabot pull request does not read as broken. Nothing is applied while that secret
 is absent, which means the gap this workflow exists to close stays open until it is set.
 
-Production is deliberately **not** automated. The two-step rule is recette first, verify on the
-recette application, then production — and the second step is a decision, not a consequence of
-a merge.
+### On a published Release — `deploy-production.yml`, the `migrate` job
+
+Production used to be deliberately manual here, on the reasoning that the second step of the
+two-step rule is a decision rather than a consequence. It stopped being manual once the ledger
+became measurable, because **a step performed by hand before every deploy is a step that gets
+skipped** — at the 4.1.0 release the runbook claimed production stood at `049` while thirty-two
+migrations had landed on recette. The decision is still a decision; it is now expressed by
+publishing the Release, which is already the only thing that deploys.
+
+The job measures the ledger, refuses a `db push` plan wider than that measurement, applies, and
+measures again. The deploy `needs:` it, so a Release published against a behind schema fails
+before anything reaches the VPS.
+
+#### Why it goes through an SSH tunnel
+
+**The production Postgres is not on the internet, and no connection string changes that.**
+Measured 2026-09-03: `supabase.ethniafrica.com` (`145.239.76.125`) answers on `443` and refuses
+`5432` and `6543`. The v4.1.1 deploy read the ledger fine — that goes over PostgREST on 443 —
+and then died on `dial error (connect ECONNREFUSED …:5432)` because `db push` needs Postgres
+itself. The two production secrets had been pointing at **different machines**: the PostgREST
+URL at the self-hosted stack, the DB URL at the retired hosted project `jajggbeimfudpzcxytbb`.
+
+The symptom reads like a network problem — IPv6, a missing pooler, Network Restrictions — and is
+none of those. There is no Supavisor pooler in front of a self-hosted stack.
+
+Publishing 5432 so a runner could reach it would put the production database in front of
+GitHub's entire address space; the runners have no stable range to restrict to. So the job opens
+an SSH forward instead and `db push` keeps running on the runner, where the CLI, the migration
+files and the ledger comparison already live. Only the network path moves.
+
+Consequences, both asserted by `scripts/__tests__/deployProductionWorkflow.test.ts`:
+
+- **`PRODUCTION_SUPABASE_DB_URL` must name `localhost` or `127.0.0.1`**, not the VPS. The tunnel
+  listens on the runner's loopback; a URL naming the host bypasses it and reproduces the original
+  failure. The job checks the shape and fails immediately rather than after a connect timeout —
+  it extracts only the host, never echoing the URL, which carries the password.
+- **The forward targets `127.0.0.1` on the far side, not `localhost`.** The compose file publishes
+  the port on IPv4, and `localhost` on the remote host can resolve to `::1` first, where nothing
+  listens.
+- **`ExitOnForwardFailure=yes` is load-bearing.** Without it `ssh -f` exits 0 having established
+  nothing, and the runner then has a local port that accepts no connection — which `db push`
+  would report as a database problem.
+- **The host key is pinned** through `SUPABASE_OVH_SSH_KNOWN_HOSTS`, for the same reason the
+  deploy job pins Gravelines: an unpinned tunnel forwards a database credential to whoever
+  answers on that address.
+
+Five secrets, alongside the existing `PRODUCTION_OVH_SSH_*` set for the application host — these
+name the **Supabase** host (Francfort, `145.239.76.125:22`), which is a different machine from
+the one that runs the app (Gravelines, `51.195.82.98:49152`):
+
+| Secret                         | Value                                                     |
+| ------------------------------ | --------------------------------------------------------- |
+| `SUPABASE_OVH_SSH_KEY`         | private half of a CI-only keypair                         |
+| `SUPABASE_OVH_SSH_KNOWN_HOSTS` | `ssh-keyscan -H <host>` output                            |
+| `SUPABASE_OVH_SSH_HOST`        | the Supabase VPS address                                  |
+| `SUPABASE_OVH_SSH_USER`        | the account whose `authorized_keys` holds the public half |
+| `SUPABASE_OVH_SSH_PORT`        | `22` on that host                                         |
+
+The key is **created, not retrieved** — there is no dashboard for a self-hosted stack, and the
+Postgres password lives in the stack's own `.env` (`POSTGRES_PASSWORD`), not in a settings page:
+
+```bash
+ssh-keygen -t ed25519 -N "" -C "gha-migrate" -f ~/.ssh/gha_migrate
+ssh-copy-id -i ~/.ssh/gha_migrate.pub <user>@<supabase-host>
+gh secret set SUPABASE_OVH_SSH_KEY --repo big-emotion/ethniafrica < ~/.ssh/gha_migrate
+ssh-keyscan -H <supabase-host> | gh secret set SUPABASE_OVH_SSH_KNOWN_HOSTS --repo big-emotion/ethniafrica
+```
+
+Re-running a failed deploy does **not** pick up a fixed workflow: a re-run replays the workflow
+file as it was on the original run. After changing this job, a new Release is what exercises it.
 
 ### Nightly, and on demand — `check:migration-state`
 
