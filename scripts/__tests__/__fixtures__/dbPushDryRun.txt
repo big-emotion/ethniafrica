@@ -1,0 +1,23 @@
+DRY RUN: migrations will *not* be pushed to the database.
+Connecting to local database...
+Would push these migrations:
+ • 062_restore_038_rls_comments.sql
+ • 063_afrik_search_trigram.sql
+ • 064_patronyme_persons.sql
+ • 065_afrik_search_persons.sql
+ • 066_afrik_search_patronymes.sql
+ • 067_patronyme_name_record_source_tiers.sql
+ • 068_afrik_search_languages.sql
+ • 069_unified_search_surface.sql
+ • 070_afrik_search_leads.sql
+ • 071_afrik_name_forms.sql
+ • 072_people_historical_affiliation.sql
+ • 073_afrik_media.sql
+ • 074_admin_allowlist.sql
+ • 075_flag_reporter_contacts.sql
+ • 076_pin_function_search_path.sql
+ • 077_unexpose_privileged_functions.sql
+ • 078_revoke_iso_code_questions.sql
+ • 079_sources_directory_indexes.sql
+ • 080_hub_module_corpus_presence.sql
+ • 081_contributions_into_flags.sql
