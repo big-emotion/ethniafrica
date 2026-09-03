@@ -13,11 +13,11 @@ const STORYBOOK_STATIC_DIR = resolve(__dirname, "../storybook-static");
 const STORYBOOK_PORT = 6006;
 
 // Stories are audited concurrently because each one is independent: the sweep
-// used to walk 63 of them through a single page at ~9 s each, which was the
-// slowest step of the only workflow that gates a merge. Four matches the vCPU
-// count of a GitHub-hosted runner — axe's analysis is CPU-bound, so more lanes
-// than cores trades throughput for contention.
-const STORY_SWEEP_LANES = Number(process.env.A11Y_SWEEP_LANES ?? 4);
+// used to walk 367 of them through a single page, which was the slowest step of
+// the only workflow that gates a merge. Four matches the vCPU count of a
+// GitHub-hosted runner — axe's analysis is CPU-bound, so more lanes than cores
+// trades throughput for contention.
+const STORY_SWEEP_LANES = 4;
 
 // axe-core's built-in `valid-lang` allowlist covers ISO 639-1 plus only a
 // narrow subset of ISO 639-3, missing African-language codes this app
