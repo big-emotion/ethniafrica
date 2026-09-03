@@ -35,7 +35,10 @@ export function PeopleLanguageSection({
           <dd className="afh-prose-def">
             <Link
               href={getFamilyRoute("fr", data.languageFamilyId)}
-              className="people-section-body font-semibold hover:underline"
+              // The definition's whole value is this link, so it is a
+              // navigation target rather than a word in a sentence and owes
+              // the 44px floor — it measured 23px tall.
+              className="people-section-body inline-flex min-h-11 items-center font-semibold hover:underline"
               style={{ color: "var(--country-terracotta-ink)" }}
             >
               {data.languageFamilyName ?? data.languageFamilyId}

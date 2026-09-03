@@ -333,6 +333,51 @@ export interface RelocatedPath {
   keepQuery: boolean;
 }
 
+/**
+ * The directory paths at their *current* address that still answer a fiche
+ * deep link, keyed by the path between the locale and the query.
+ *
+ * `resolveRelocatedPath` already resolves `?country=` on the addresses the
+ * move retired, but a link made since carries the new address, and there the
+ * 308 has to be issued here too.
+ *
+ * The directory page cannot issue it. `atlas/pays` has a `loading.tsx`, so its
+ * shell streams with a 200 before the page body reaches `permanentRedirect`,
+ * and the trip degrades into a client-side hop: the reader still lands on the
+ * fiche, but the status is 200, the crawler spends its visit on the directory,
+ * and the document that finally renders carries a nonce the first response
+ * never authorised. Answering before the render starts is what keeps it one
+ * hop with one nonce.
+ */
+const CANONICAL_DEEP_LINK_DIRECTORIES: Record<
+  string,
+  (language: Language, query: DeepLinkQuery) => string | null
+> = {
+  "atlas/pays": resolveCountryDeepLink,
+  "atlas/peuples": resolvePeopleDeepLink,
+  "atlas/familles": resolveFamilyDeepLink,
+};
+
+/**
+ * The fiche a canonical directory URL is reaching for, or null when its query
+ * names none. A trailing slash is not a tail — `/fr/atlas/pays/` is the
+ * directory root, and `resolveRelocatedPath` drops it for the same reason.
+ */
+// @req REQ-091
+export function resolveCanonicalDeepLink(
+  pathname: string,
+  search: URLSearchParams
+): string | null {
+  const match = pathname.match(/^\/([a-z]{2})\/(.+?)\/?$/);
+  if (!match) return null;
+
+  const [, locale, directory] = match;
+  return (
+    CANONICAL_DEEP_LINK_DIRECTORIES[directory]?.(locale as Language, search) ??
+    null
+  );
+}
+
 // @req REQ-091
 export function resolveRelocatedPath(
   pathname: string,
@@ -434,6 +479,19 @@ export async function middleware(request: NextRequest) {
   const renamedModule = resolveRenamedModulePath(canonicalPath);
   if (renamedModule) {
     canonicalPath = renamedModule;
+    moved = true;
+  }
+
+  // Last, so it reads the address the rewrites above settled on rather than
+  // the one the request arrived with: a legacy path that just became
+  // `/fr/atlas/pays` still gets its `?country=` spent here, in the same 308.
+  const canonicalFiche = resolveCanonicalDeepLink(
+    canonicalPath,
+    request.nextUrl.searchParams
+  );
+  if (canonicalFiche) {
+    canonicalPath = canonicalFiche;
+    keepQuery = false;
     moved = true;
   }
 

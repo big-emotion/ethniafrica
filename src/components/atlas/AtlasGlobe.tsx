@@ -81,14 +81,19 @@ const LazyAtlasGlobeCanvas = dynamic(
 // swallowed every tap in that band, and the stage is now how a reader selects a
 // country. Carried on the shared class so a button added to the toolbar later
 // cannot forget it and land dead.
+// `min-h-11` is the 44px floor the UX spec asks of a control on the reading
+// surface (L62). `px-3 py-1` alone drew these pills 30px tall — comfortably
+// tappable for a mouse, and under the floor for the thumb this surface is
+// designed mobile-first for. Height is set rather than padding so the caption
+// stays optically centred instead of sinking to the bottom of a taller pill.
 const TOOLBAR_BUTTON_CLASS =
-  "pointer-events-auto rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current";
+  "pointer-events-auto inline-flex min-h-11 items-center rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current";
 
 /**
  * The zoom pair says its business with a glyph, so it is centred in a pill the
  * width of the shortest lettered one rather than being padded to fit a word.
  */
-const ZOOM_BUTTON_CLASS = `${TOOLBAR_BUTTON_CLASS} flex min-w-9 items-center justify-center disabled:cursor-not-allowed disabled:opacity-40`;
+const ZOOM_BUTTON_CLASS = `${TOOLBAR_BUTTON_CLASS} min-w-11 justify-center disabled:cursor-not-allowed disabled:opacity-40`;
 
 /**
  * The controls carry the stage's own ground rather than sitting on whatever
@@ -1522,33 +1527,60 @@ export function AtlasGlobe({
    * and Senegal lost it, while `buildContinentOverlay` resolved the very same
    * collision the other way for the field.
    */
-  const choiceMarks = !stageSelectsCountry
-    ? []
-    : spaceOutMarks(
-        choosableTargets
-          .filter(
-            (target) =>
-              !pinsAMarkerPerTarget ||
-              !targets.some((pinned) => pinned.countryId === target.countryId)
-          )
-          .slice()
-          .sort(
-            (first, second) =>
-              (second.documentedPeopleCount ?? 0) -
-              (first.documentedPeopleCount ?? 0)
-          )
-          .map((target) => ({
-            countryId: target.countryId,
-            placement: place(target),
-          })),
-        // Unmeasured, nothing is thinned: a guessed stage width would drop
-        // countries on arithmetic rather than on crowding, and the first
-        // measurement is one frame away.
-        measuredStage
-          ? (CHOICE_MARK_SEPARATION_PX / measuredStage.widthPx) * 100
-          : 0,
-        stageAspect ?? STAGE_ASPECT
-      );
+  /**
+   * Which countries take a mark.
+   *
+   * The continent scene marks every country it offers — that is the offer.
+   * A fiche scene offers its countries through the picker instead and marks
+   * none of them, which is right: a country fiche traces one outline, and
+   * pinning the fifty-four its picker reaches would say the page is about all
+   * of them.
+   *
+   * But it still owes a mark to the one the camera flew to. Charter §5: "the
+   * subject stays visible — a fly-to that lands the country under the sheet
+   * has done nothing". Since the list picker replaced the fiche globes'
+   * markers, choosing Tanzanie moved the camera and left nothing on the stage
+   * saying where it had gone, so the panel's facts named a place the globe did
+   * not point at. One mark, on the chosen target only, is the smallest thing
+   * that keeps that sentence true.
+   */
+  const markedTargets = stageSelectsCountry
+    ? choosableTargets.filter(
+        (target) =>
+          !pinsAMarkerPerTarget ||
+          !targets.some((pinned) => pinned.countryId === target.countryId)
+      )
+    : chosen &&
+        !(
+          pinsAMarkerPerTarget &&
+          targets.some((pinned) => pinned.countryId === chosen.countryId)
+        )
+      ? [chosen]
+      : [];
+
+  const choiceMarks =
+    markedTargets.length === 0
+      ? []
+      : spaceOutMarks(
+          markedTargets
+            .slice()
+            .sort(
+              (first, second) =>
+                (second.documentedPeopleCount ?? 0) -
+                (first.documentedPeopleCount ?? 0)
+            )
+            .map((target) => ({
+              countryId: target.countryId,
+              placement: place(target),
+            })),
+          // Unmeasured, nothing is thinned: a guessed stage width would drop
+          // countries on arithmetic rather than on crowding, and the first
+          // measurement is one frame away.
+          measuredStage
+            ? (CHOICE_MARK_SEPARATION_PX / measuredStage.widthPx) * 100
+            : 0,
+          stageAspect ?? STAGE_ASPECT
+        );
 
   /**
    * Whether anything on the stage is a country the reader can open. Read from

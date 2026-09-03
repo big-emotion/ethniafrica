@@ -57,7 +57,12 @@ export function AutonymExonymHeading({
   return (
     <Link
       href={href}
-      className="inline-flex items-baseline gap-[6px] flex-wrap hover:underline"
+      // The name pair is the row's only way into the people's fiche, so it is
+      // a navigation target and owes the 44px floor — it measured 23px, the
+      // height of the line the two names sit on. Centred rather than
+      // baseline-aligned now that the box is taller than its text: on a
+      // baseline the pair would hang at the top of its own target.
+      className="inline-flex min-h-11 items-center gap-[6px] flex-wrap hover:underline"
     >
       {names}
     </Link>

@@ -119,6 +119,10 @@ export function AtlasTargetPicker({
           display: "inline-flex",
           alignItems: "center",
           gap: 8,
+          // 44px is the tap-target floor the UX spec sets for the reading
+          // surface; `7px 14px` drew this trigger 40px tall, and it is the one
+          // control that opens the whole footprint.
+          minHeight: 44,
           padding: "7px 14px",
           borderRadius: "var(--afh-radius-full)",
           border: "1px solid var(--afh-night-line)",
@@ -161,6 +165,12 @@ export function AtlasTargetPicker({
                 key={target.countryId}
                 type="button"
                 role="option"
+                // Same attribute the pinned markers carry, for the same
+                // reason: it says which country this control chooses. The two
+                // ways into a country then describe themselves identically,
+                // rather than one being addressable and the other only
+                // nameable.
+                data-atlas-target={target.countryId}
                 aria-selected={target.countryId === chosenCountryId}
                 onClick={() => {
                   onChoose(target.countryId);

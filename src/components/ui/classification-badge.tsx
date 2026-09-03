@@ -44,6 +44,16 @@ interface ClassificationBadgeProps {
    * does not render the card itself — adjacency is the caller's job.
    */
   doctrineSlug?: string;
+  /**
+   * False when the badge sits inside a control the caller already owns — a
+   * migration list row is a `<button>`, and a link inside it is two nested
+   * interactive controls: axe reports `nested-interactive` at serious impact,
+   * and a screen reader may announce only one of them.
+   *
+   * The doctrine entry is not lost when this is false; it is reached from the
+   * row the badge annotates, which is what the reader was pointing at.
+   */
+  linksToDoctrine?: boolean;
 }
 
 /**
@@ -92,6 +102,7 @@ export function ClassificationBadge({
   status,
   className,
   doctrineSlug,
+  linksToDoctrine = true,
 }: ClassificationBadgeProps) {
   // `null` / `undefined` and `consensual` (the default editorial state) both
   // render nothing — no placeholder, no layout shift.
@@ -102,6 +113,40 @@ export function ClassificationBadge({
   const labels = classificationLabels[status];
   const config = STATUS_CONFIG[status];
   const Icon = config.Icon;
+
+  const mark = (
+    <Badge
+      variant="outline"
+      data-classification-status={status}
+      className="gap-1.5 border-transparent font-semibold"
+      style={{
+        backgroundColor: config.bg,
+        color: config.fg,
+      }}
+    >
+      <Icon
+        aria-hidden="true"
+        data-testid="classification-icon"
+        className="h-3.5 w-3.5 shrink-0"
+      />
+      <span>{labels.label}</span>
+    </Badge>
+  );
+
+  // The label is visible text either way, so the unlinked mark needs no
+  // `aria-label` of its own — inside a button it would override the row's own
+  // name rather than add to it.
+  if (!linksToDoctrine) {
+    return (
+      <span
+        title={labels.tooltip}
+        data-doctrine-slug={doctrineSlug}
+        className={cn("inline-flex", className)}
+      >
+        {mark}
+      </span>
+    );
+  }
 
   return (
     <Link
@@ -114,22 +159,7 @@ export function ClassificationBadge({
         className
       )}
     >
-      <Badge
-        variant="outline"
-        data-classification-status={status}
-        className="gap-1.5 border-transparent font-semibold"
-        style={{
-          backgroundColor: config.bg,
-          color: config.fg,
-        }}
-      >
-        <Icon
-          aria-hidden="true"
-          data-testid="classification-icon"
-          className="h-3.5 w-3.5 shrink-0"
-        />
-        <span>{labels.label}</span>
-      </Badge>
+      {mark}
     </Link>
   );
 }

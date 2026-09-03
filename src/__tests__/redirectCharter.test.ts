@@ -6,6 +6,7 @@ import {
   RELOCATED_SEGMENTS,
   RENAMED_HUB_SEGMENTS,
   RENAMED_MODULE_PATHS,
+  resolveCanonicalDeepLink,
   resolveRelocatedPath,
   resolveRenamedModulePath,
 } from "@/middleware";
@@ -320,6 +321,63 @@ describe("a deep link reaches its fiche in one hop", () => {
       new URLSearchParams("family=FLG_BANTU")
     );
     expect(family!.path).toBe(getFamilyRoute("fr", "FLG_BANTU"));
+  });
+
+  // A link made since the move carries the current address, and the fiche has
+  // to be reached from there too. The directory page cannot do it: it sits
+  // behind a `loading.tsx`, so its shell streams with a 200 and the redirect
+  // degrades into a client-side hop — a 200 for the crawler, and a document
+  // whose scripts carry a nonce the first response never authorised.
+  // @req REQ-091
+  it("resolves the query on the directory's current address too", () => {
+    expect(
+      resolveCanonicalDeepLink(
+        "/fr/atlas/pays",
+        new URLSearchParams("country=BEN")
+      )
+    ).toBe(getCountryRoute("fr", "BEN"));
+
+    expect(
+      resolveCanonicalDeepLink(
+        "/fr/atlas/peuples",
+        new URLSearchParams("people=PPL_YORUBA")
+      )
+    ).toBe(getPeopleRoute("fr", "PPL_YORUBA"));
+
+    expect(
+      resolveCanonicalDeepLink(
+        "/fr/atlas/familles/",
+        new URLSearchParams("family=FLG_BANTU")
+      )
+    ).toBe(getFamilyRoute("fr", "FLG_BANTU"));
+  });
+
+  // The encoding rule is the resolvers' own, so it holds on this path as well
+  // — two leading slashes are what turns a redirect into an open one.
+  // @req REQ-091
+  it("encodes a hostile identifier on the current address", () => {
+    expect(
+      resolveCanonicalDeepLink(
+        "/fr/atlas/pays",
+        new URLSearchParams("country=//evil.com")
+      )
+    ).toBe(getCountryRoute("fr", encodeURIComponent("//evil.com")));
+  });
+
+  // The fiche itself is not a directory: resolving there would send a reader
+  // who is already on the page back to it, which is the shape a loop takes.
+  // @req REQ-091
+  it("leaves a fiche and an unqueried directory alone", () => {
+    expect(
+      resolveCanonicalDeepLink(
+        "/fr/atlas/pays/BEN",
+        new URLSearchParams("country=COM")
+      )
+    ).toBeNull();
+
+    expect(
+      resolveCanonicalDeepLink("/fr/atlas/pays", new URLSearchParams())
+    ).toBeNull();
   });
 
   // The V1 vocabularies carried the same query shapes, so they get the same

@@ -55,7 +55,12 @@ export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
                 <Link
                   href={item.href}
                   prefetch={false}
-                  className="hover:underline hover:opacity-80 transition-opacity"
+                  // A crumb is a navigation control, not a word in a sentence,
+                  // so it owes the 44px target the reading surface asks for —
+                  // it measured 24px. The row keeps its height: the trail is
+                  // laid out `items-center`, so a taller hit area centres on the
+                  // same baseline the separators sit on.
+                  className="inline-flex min-h-11 min-w-11 items-center justify-center hover:underline hover:opacity-80 transition-opacity"
                 >
                   {item.label}
                 </Link>
