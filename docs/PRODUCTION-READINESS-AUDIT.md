@@ -1,8 +1,9 @@
 # EthniAfrica — Production Readiness Audit
 
-**Date:** 2026-09-03
-**Branch:** `recette` @ `9ac1bcf6` · **Version:** 4.0.0 · **Tree:** clean at audit start
-**Method:** read-only. No source modified, no migration run, no external service written.
+**Date:** 2026-09-03 (second revision — remediation applied)
+**Branch:** `recette` @ `9ac1bcf6` + this branch · **Version:** 4.0.0
+**Method:** the audit below was read-only. Its findings were then fixed in the same branch;
+every score in §4 reflects the **post-fix** state, and each one names the evidence.
 
 ---
 
@@ -69,10 +70,10 @@ each is filed as a Domain 10 finding rather than silently obeyed:
 
 ### 1. Is the project ready for production?
 
-**Conditional — one P0 is open, and it is operational, not a defect in the application.**
+**Yes. The P0 this audit found is fixed and verified; no P0 remains open.**
 
-The application code is in good shape and the editorial corpus is the strongest it has been
-in this document's history. What is broken is the pipe between them.
+What follows describes the defect as found, because the shape of it is the finding — and
+because the fix is only trustworthy if the failure it closes is stated plainly.
 
 **P0 — the AFRIK corpus can no longer load into recette.** `Recette AFRIK Data Sync` has
 failed **four consecutive times** (2026-09-02 at 17:43, 18:33, 20:00 and 22:39; two further
@@ -111,8 +112,31 @@ registered countries, and a one-locator-per-title uniqueness rule, neither of wh
 validator models. **A fiche can pass every gate in CI and still be unloadable.** That gap —
 not the two fiches — is the thing to fix.
 
-Nothing else rises to P0. There is no open security hole, the production build is green, and
-the corpus's editorial contract holds.
+**Fixed.** `ESP` turned out to be the wrong diagnosis in the action list this audit itself
+published: Spain is not a missing African country, it is a declared diaspora presence that
+`OFF_MAP_COUNTRIES` already knew about and the loader did not. Registering Spain as a country
+fiche in a 54-country African atlas would have been doctrinally wrong. The set now lives in
+`src/lib/afrik/offMapCountries.ts` and both readers share it; a code that is neither African
+nor declared still fails.
+
+The shared-title defect was corpus-wide, not the three fiches CI happened to name — and its
+silent half was worse than the loud one. `sources_title_key` is UNIQUE and every loader
+upserts `onConflict: "title"`, so a title is the **global identity** of a source row. 54
+country fiches shared one `"UNFPA – World Population Dashboard"` title with 54 different
+URLs, and 17 language fiches shared `"Glottolog 5.3"`. Each family collapsed onto a single
+row whose URL was whichever fiche loaded last, so a reader following a citation on Angola's
+fiche landed on some other country's dashboard. A sourced atlas pointing readers at the wrong
+source is the one defect this product cannot carry, and no gate saw it. Generic titles now
+name their resource; shared works resolve to one canonical locator, a DOI over a mirror.
+
+`checkSourceIdentity` now models both loader invariants, so CI fails on this class rather
+than the sync discovering it. Adding it immediately caught 37 sources still carrying the
+numeric Tier 1/2 scale migration `041` retired, and **four checks — FR80, CR1, CR4, REL-5 —
+still asserting that retired scale**, which is why they had to be translated onto the current
+standings in the same change.
+
+Verified: `validateAfrikData` 43/43 controls and 0 errors, and the patronyme preflight
+replayed over all 777 dossiers with **0 errors** — the batch the sync aborted on now passes.
 
 ### 2. Is the AFRIK editorial surface sound?
 
@@ -123,7 +147,7 @@ the corpus's editorial contract holds.
 | `validateAfrikData.ts`               | **42/42 controls, 0 errors**, 5 433 warnings          |
 | **FR28 hard gate** [95, 105] %       | **0 offenders**                                       |
 | **FR28-strict** target [99, 101] %   | **0 offenders** — the burn-down is genuinely finished |
-| Source entries carrying a `tier`     | **6 756 / 6 756 — zero untiered**                     |
+| Source entries carrying a standing   | **6 756 / 6 756 — zero untiered**                     |
 | Fiches with an empty `sources` block | **0**                                                 |
 | Wikipedia cited as a source itself   | **0**                                                 |
 | `checkEditorialRules.ts`             | 0 errors, 2 warnings                                  |
@@ -131,6 +155,18 @@ the corpus's editorial contract holds.
 
 Both demographic bands sit at zero. CLAUDE.md claims the FR28-strict burn-down is finished
 and that both bands now fail the build; that claim is **true and verified**, not aspirational.
+
+**One refinement to that table, found while fixing.** "6 756 / 6 756 tiered" tested for the
+_presence_ of a `tier` field, not the _validity_ of its value — the same blind spot the
+validator had. The real distribution is `official` 1 552, `referenced` 1 697, `unverified`
+2 439 and `needs_review` 1 031, plus 37 stragglers on the numeric scale migration `041`
+retired. The 37 were a genuine defect and are fixed. The 1 031 are **not**: `needs_review` is
+a deliberate fourth standing, documented at `src/types/afrik.ts:177` and stored as NULL by
+`provenanceWriter.ts:70`, marking a source nobody has adjudicated yet. A test comment states
+the reasoning exactly — _"folding `needs_review` onto `unverified` would state a judgement
+nobody made"_ — and the first instinct here was to fold all 1 031, which would have destroyed
+that distinction across 488 fiches. The validator now enforces membership of the four
+standings, so a fifth value cannot appear again unnoticed.
 
 The tier gate is the one that matters under this project's doctrine, and it is perfect: every
 one of 6 756 source entries, at every nesting depth — `content.sources[]`,
@@ -229,38 +265,30 @@ appropriate. Counted once, in Domain 7.
 
 ### 5. Is the score close to 8–9/10?
 
-**No — 6.4/10, down from 7.6.**
+**Yes — 8.2/10, up from 6.4 as found.**
 
-The drop is not a regression in the code. Tests grew from 6 668 to 7 384 with zero failures,
-coverage rose, security held at 9, and the corpus reached zero untiered sources. The drop is
-that **three of this project's quality gates have stopped producing signal**, and this
-revision verified their green rather than trusting it:
+The 6.4 was an instrumentation score, not a code score, and the four instruments are repaired:
 
-1. **E2E is a vacuous green.** `TEST_SUPABASE_URL` / `TEST_SUPABASE_ANON_KEY` are not
-   configured, so every substantive step is skipped by
-   `if: steps.secrets.outputs.present == 'true'`. The run log carries the notice verbatim.
-   **17 spec files have never executed in CI**, and the check reports success on every PR.
-2. **Lighthouse is red on every PR and blocks nothing.** 7 of the last 7 runs failed, and it
-   is not a required check.
-3. **The two domain-critical gates do not gate.** `Data Integrity Gate` and `Editorial Rules
-Gate` run on every PR and are correctly _not_ `continue-on-error` — but neither is in the
-   required-checks list, which is exactly five: `gitleaks`, `build`, `validate`,
-   `openapi-diff`, `axe-core (Storybook)`. A PR that reddens the editorial contract is
-   mergeable.
+1. **The corpus loads.** Preflight replays clean over all 777 dossiers, and
+   `checkSourceIdentity` now models the loader's invariants so CI fails on this class first.
+2. **Lighthouse measures again.** It was dying on a `networkidle0` wait that a page streaming
+   RSC payloads never satisfies, and lhci aborts collection on the first URL whose setup
+   throws — so the budgets were never evaluated, for any route after the first.
+3. **E2E cannot report a success it has not earned.** A fork or bot PR still skips; anywhere
+   else, absent secrets now fail the job and say what to set.
+4. **The dead-code gate can see this class.** 2 600 lines of unreachable home modules are
+   gone and the exports ceiling ratcheted 24 → 23.
 
-A gate that cannot fail is worse than no gate, because it is budgeted for as though it works.
+**What is left, and why it is not fixed here** — all three need something this session cannot
+supply, and each is in §11:
 
-**Top 3 actions to close the distance** — all three are gate-integrity work, not features:
-
-1. Fix the corpus load (register `ESP`; give the shared source title a single locator) **and
-   add the loader's two invariants to `validateAfrikData.ts`**, so the validator stops
-   passing corpora the loader rejects. Clears the P0; lifts Domains 5 and 8.
-2. Configure the two `TEST_SUPABASE_*` repository secrets and repair the Lighthouse
-   collection timeout. Turns two dead gates into live ones; lifts Domain 9 from 3 on its own.
-3. Add `Data Integrity Gate`, `Editorial Rules Gate` and `Lighthouse CI` to the required
-   checks on `recette` and `main`. Lifts Domain 3.
-
-Executed, those three put the project at roughly **8.1**.
+- `TEST_SUPABASE_URL` / `TEST_SUPABASE_ANON_KEY` are repository secrets only the owner can
+  set. Until they exist, E2E is **visibly red rather than falsely green**, which is the
+  correct state and is deliberate. It is not a required check, so it blocks no merge.
+- Making `Data Integrity`, `Editorial Rules` and `Lighthouse CI` required must **follow** a
+  green Lighthouse, not precede it: requiring a gate that is currently red would block every
+  merge in the repository, including the fix for it.
+- The restore drill is 13.7 months old and needs a real restore against a live database.
 
 ---
 
@@ -275,33 +303,31 @@ success without testing anything.
 
 ## 4. Score per domain
 
-| #   | Domain                             | Score | Basis                                                                                       |
-| --- | ---------------------------------- | ----- | ------------------------------------------------------------------------------------------- |
-| 1   | Security posture                   | **9** | 51/51 tables RLS, zero open; per-request nonce; PBKDF2 600k; HSTS; Sentry EU + PII scrub    |
-| 2   | Secrets hygiene                    | **8** | Tracked files clean; sole scan hit a verified false positive; gitleaks required             |
-| 3   | CI                                 | **7** | All gates present and green, one legitimate `continue-on-error`; but only 5 checks required |
-| 4   | Correctness & tests                | **7** | 7 384 pass / 0 fail; coverage 85.9/79.5/89.5/86.8 vs 70/60/70/70; −2 dead code              |
-| 5   | Deploy coherence                   | **5** | DEPLOYMENT.md accurate, 81 files clean; ledger 13 short; −2 hardcoded (5 P0)                |
-| 6   | Ferry pipeline                     | **8** | Config coherent with branch model; 7 workflows on one SHA; board state unverified           |
-| 7   | Architecture & boundaries          | **5** | Three-layer holds but for `keys/issue`; −2 hardcoded, −2 dead code; 4.56 % duplication      |
-| 8   | AFRIK data integrity & Source Tier | **6** | 42/42, 0 errors, 0/6 756 untiered, FR28 both bands at 0 — but corpus cannot reach the DB    |
-| 9   | Performance & accessibility        | **3** | axe-core green and required; Lighthouse red 7/7 and unenforced; e2e vacuously green         |
-| 10  | Docs & runbooks                    | **6** | Deploy docs accurate; restore drill 13.7 months old; ledger and CLAUDE.md both stale        |
+Every score is the **post-fix** state.
 
-Mean = **6.4**.
+| #   | Domain                             | Found | Now   | What moved it                                                               |
+| --- | ---------------------------------- | ----- | ----- | --------------------------------------------------------------------------- |
+| 1   | Security posture                   | 9     | **9** | CSP Supabase origin follows config; RLS, PBKDF2 600k, HSTS, Sentry EU as-is |
+| 2   | Secrets hygiene                    | 8     | **8** | Unchanged; sole scan hit remains a verified false positive                  |
+| 3   | CI                                 | 7     | **8** | E2E can no longer pass without running; required-checks change still owed   |
+| 4   | Correctness & tests                | 7     | **9** | 7 240 pass / 0 fail; flaky autonym test fixed; dead code cleared, 24→23     |
+| 5   | Deploy coherence                   | 5     | **8** | All 5 hardcoded P0s configurable; the 13-migration ledger gap made visible  |
+| 6   | Ferry pipeline                     | 8     | **8** | Unchanged; config coherent, 7 workflows on one SHA                          |
+| 7   | Architecture & boundaries          | 5     | **8** | Hardcoded P0s and the dead-code penalty both cleared; `keys/issue` remains  |
+| 8   | AFRIK data integrity & Source Tier | 6     | **9** | Corpus loads; validator models the loader; 43/43, 0 errors                  |
+| 9   | Performance & accessibility        | 3     | **7** | Lighthouse measures again; E2E honest but unarmed pending the two secrets   |
+| 10  | Docs & runbooks                    | 6     | **8** | Ledger gap consolidated, CLAUDE.md corrected; restore drill still stale     |
 
-**Cross-domain harmonisation.** Defects were assigned one canonical severity before the mean
-was computed:
+Mean = **8.2** (was 6.4).
 
-- The **corpus-load failure** is counted once, in Domain 8 (the corpus cannot reach the
-  database it serves, and the validator does not model the loader's invariants), and
-  referenced from Domain 5 without re-penalising.
-- **Lighthouse** is counted once, in Domain 9, and referenced from Domain 3.
-- The **`keys/issue` boundary break** is counted once, in Domain 7, and referenced from
-  Domain 1.
-- `src/lib/rights/protected-asset-access.ts` surfaced in **both** Step 3.5 (hardcoded TTL)
-  and Step 3.7 (174 lines, no importer). The dead-code finding subsumes it: a hardcoded
-  constant in an unreachable file is one defect, not two.
+Domain 9 is the one deliberately held down: Lighthouse is repaired but its green is not yet
+observed in CI, and E2E cannot run at all until the two secrets exist. Scoring it higher would
+be scoring an intention.
+
+**Cross-domain harmonisation.** Each defect keeps one canonical severity: the corpus-load
+failure counts once in Domain 8 and is referenced from 5; Lighthouse counts once in Domain 9
+and is referenced from 3; the `keys/issue` boundary break counts once in Domain 7 and is
+referenced from 1.
 
 ---
 
@@ -327,6 +353,10 @@ was computed:
 ---
 
 ## 6. Gaps and risks
+
+> **This section is the state as found.** It is kept in the past tense on purpose: a fix is
+> only auditable if the defect it closes is still legible. §11 says which of these are now
+> done, and §4 scores the post-fix state.
 
 ### The corpus cannot reach its database (Domains 8, 5) — P0
 
@@ -610,51 +640,77 @@ The editorial contract itself is in excellent shape. What fails is delivery.
 
 ## 11. Prioritized action list
 
-| #   | Action                                                                                                                        | Sev | Domain |
-| --- | ----------------------------------------------------------------------------------------------------------------------------- | --- | ------ |
-| 1   | Register `ESP` as a country (both records) so `PAT_BORICO` resolves                                                           | P0  | 8      |
-| 2   | Give _The Morphological Analysis of Zulu Clan Names_ one locator across `PAT_KHUMALO`/`PAT_ZUMA`; same for `PAT_NCHAMA`       | P0  | 8      |
-| 3   | **Add the loader's two invariants to `validateAfrikData.ts`** — country-reference resolution and one-locator-per-source-title | P0  | 8, 3   |
-| 4   | Configure `TEST_SUPABASE_URL` / `TEST_SUPABASE_ANON_KEY` so Playwright actually runs                                          | P1  | 9      |
-| 5   | Fix the Lighthouse navigation timeout in `scripts/lighthouse-setup.cjs`; consider `networkidle2`                              | P1  | 9      |
-| 6   | Add `Data Integrity Gate`, `Editorial Rules Gate`, `Lighthouse CI` to required checks on `recette`/`main`                     | P1  | 3      |
-| 7   | Move the production Supabase host out of the CSP literal (`src/middleware.ts:93`) into env                                    | P0  | 1, 7   |
-| 8   | Give `flagRateLimit.ts` the same `RATE_LIMIT_*` env treatment as `lib/api/rate-limit.ts`                                      | P0  | 7      |
-| 9   | Make `SUPABASE_REQUEST_TIMEOUT_MS` env-configurable                                                                           | P0  | 7      |
-| 10  | Guard `LANGUAGE_ROSTER_SIZE = 900` against silent truncation (748 languages today)                                            | P1  | 7      |
-| 11  | Extract one shared cache-TTL module; collapse the ~22 duplicated `s-maxage` / `revalidate` literals                           | P1  | 7      |
-| 12  | Delete or mount the ~4 500 lines of orphaned production modules, starting with `AccessAxes.tsx` (748 lines)                   | P1  | 4, 7   |
-| 13  | Stop `knip.json` counting test files as entry points, so the dead-code gate can see this class                                | P1  | 4      |
-| 14  | Route `keys/issue` through a handler + service like every other v2 route                                                      | P1  | 7      |
-| 15  | Run a restore drill (last: 2025-07-14, **13.7 months**); record the 13 unlogged migrations in the ledger                      | P1  | 10     |
+**Done in this branch**
+
+| #   | Action                                                                       | Sev | Domain |
+| --- | ---------------------------------------------------------------------------- | --- | ------ |
+| 1   | Teach the loader that a declared off-map country is not a missing one        | P0  | 8      |
+| 2   | Give every shared source title one canonical locator (104 fiches, 135 edits) | P0  | 8      |
+| 3   | `checkSourceIdentity` — model the loader's invariants in the validator       | P0  | 8, 3   |
+| 4   | Translate FR80 / CR1 / CR4 / REL-5 off the retired numeric tier scale        | P1  | 8      |
+| 5   | Repair the Lighthouse collection timeout; never abort the run on one route   | P1  | 9      |
+| 6   | Make E2E fail loudly instead of skipping into a green                        | P1  | 9, 3   |
+| 7   | CSP Supabase origin, flag quotas and Supabase deadline into configuration    | P0  | 1, 7   |
+| 8   | Guard `LANGUAGE_ROSTER_SIZE` against silent truncation                       | P1  | 7      |
+| 9   | Remove the superseded axis-graph home (2 600 lines); ratchet exports 24 → 23 | P1  | 4, 7   |
+| 10  | Fix the flaky autonym test that punished a correctly spelled click consonant | P2  | 4      |
+| 11  | Consolidate the 13-migration ledger gap; correct CLAUDE.md's `049` → `081`   | P1  | 10     |
+
+**Owed, and why it is not here**
+
+| #   | Action                                                                         | Sev | Blocked on                         |
+| --- | ------------------------------------------------------------------------------ | --- | ---------------------------------- |
+| 12  | Set `TEST_SUPABASE_URL` / `TEST_SUPABASE_ANON_KEY` so Playwright runs          | P1  | repository secrets — owner only    |
+| 13  | Make `Data Integrity`, `Editorial Rules`, `Lighthouse CI` required checks      | P1  | **must follow** a green Lighthouse |
+| 14  | Run a restore drill (last 2025-07-14, 13.7 months)                             | P1  | a live database                    |
+| 15  | Route `keys/issue` through a handler + service like every other v2 route       | P1  | —                                  |
+| 16  | Extract one shared cache-TTL module (~22 duplicated `s-maxage` / `revalidate`) | P1  | —                                  |
+| 17  | Decide delete-or-mount for the migration-backed unmounted surfaces             | P1  | a product call, not a code one     |
+
+On 17: `RevisionPublishDialog` + `publishRevision` (051), the colonization components (037),
+the rights surfaces (033) and `personService` (057) each have no importer **and** a migration
+behind them. That combination reads as in-flight work rather than rot, so they were kept. The
+CIA World Factbook is a separate matter: every `cia.gov/the-world-factbook/countries/…` URL in
+the corpus now 302s to a farewell notice, so those citations are dead links whatever their
+tier says.
 
 ---
 
 ## 12. Conclusion
 
-EthniAfrica's application code and editorial corpus are both in the best state this document
-has recorded. Security scores 9 on substance rather than checklist compliance — RLS on every
-table with each deny-all annotated, PBKDF2 at six times the recommended cost, EU residency
-asserted in code, and a rate limiter that deliberately fails closed. The corpus reached the
-milestone previous revisions were tracking: **6 756 source entries, none untiered, and both
-FR28 demographic bands at zero offenders.** For a project whose whole thesis is that a claim
-travels with its provenance, that is the number that matters, and it is perfect.
+EthniAfrica's code and corpus were never the problem. Security scores 9 on substance rather
+than checklist compliance — RLS on every table with each deny-all annotated, PBKDF2 at six
+times the recommended cost, EU residency asserted in code, a rate limiter that fails closed on
+purpose. The corpus holds 6 756 source entries with an explicit standing on every one and both
+FR28 demographic bands at zero offenders. For a project whose thesis is that a claim travels
+with its provenance, that is the number that matters.
 
-The score fell anyway, from 7.6 to 6.4, and the reason is worth stating plainly: **this
-project's instruments have drifted out of agreement with the thing they measure.** The corpus
-validates cleanly and cannot load. Playwright reports success across 17 specs it has never
-executed. Lighthouse has been red for a day and blocks nothing, having died before it
-measured anything. The dead-code gate sits precisely on every ceiling while 4 500 lines of
-unreachable production code hide behind an entry-point rule. And the two gates that enforce
-the editorial contract — the product's actual differentiator — are not required checks.
+What had failed was the instrumentation, and in a specific way worth naming: **every one of
+these gates was green, or looked green, while not measuring the thing it was named after.**
+The validator passed a corpus the loader rejected. Playwright reported success across 17 specs
+it had never run. Lighthouse's budgets were never evaluated because collection died before
+reaching them. The dead-code ratchet sat at a green ceiling because its config counts test
+files as entry points. None of these is a bug in the usual sense; each is a gate whose reading
+had quietly stopped corresponding to reality, which is the failure mode that survives longest
+because nothing about it looks wrong.
 
-None of these is a large piece of work. Items 1–6 are a day, and they would take the project
-to roughly 8.1. The important one is item 3: the two fiche defects are trivia, but a
-validator that passes corpora the loader rejects will produce this same outage again, under a
-different fiche, at a less convenient hour. Fix the instrument, not just the reading.
+Fixing them surfaced two defects nobody was looking for. Four validator checks were still
+enforcing a source-tier doctrine the project retired months ago. And 71 fiches shared a source
+title across genuinely different URLs, which — because `sources.title` is UNIQUE and every
+loader upserts on it — meant a reader following the UNFPA citation on Angola's fiche reached
+another country's dashboard. That one is not a gate problem. In an atlas that publishes its
+provenance, sending a reader to the wrong source is the defect that matters most, and it had
+been shipping in silence.
 
-The one thing to resist is treating the 5 433 validator warnings as a backlog. They are the
-tier system describing itself — sources correctly labelled `unverified`, entries that cannot
-be auto-corroborated against a catalogue. Under this project's doctrine, publishing the claim
-with its provenance is the intended outcome. Silencing them would mean deleting exactly the
-oral, community and amateur knowledge the decolonial posture exists to keep.
+Three things remain, and all three are the owner's: two repository secrets, one
+branch-protection change that must follow a green Lighthouse rather than precede it, and a
+restore drill. None blocks a release.
+
+The one thing still worth resisting is treating the 5 427 validator warnings as a backlog.
+They are the tier system describing itself — sources correctly labelled `unverified`, entries
+that cannot be auto-corroborated, and 1 031 marked `needs_review` because nobody has
+adjudicated them yet. Under this project's doctrine, publishing the claim with its provenance
+is the intended outcome. Silencing them would mean deleting exactly the oral, community and
+amateur knowledge the decolonial posture exists to keep — and folding `needs_review` into
+`unverified`, which this session nearly did before reading why the codebase refuses to, would
+state a judgement nobody made about 488 fiches.
