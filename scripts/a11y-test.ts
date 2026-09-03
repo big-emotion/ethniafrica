@@ -7,9 +7,17 @@ import { createReadStream, existsSync } from "fs";
 import { stat } from "fs/promises";
 import { join, extname, resolve } from "path";
 import { LIVE_ROUTES } from "./a11yRoutes";
+import { sweepInParallel } from "./lib/parallelSweep";
 
 const STORYBOOK_STATIC_DIR = resolve(__dirname, "../storybook-static");
 const STORYBOOK_PORT = 6006;
+
+// Stories are audited concurrently because each one is independent: the sweep
+// used to walk 63 of them through a single page at ~9 s each, which was the
+// slowest step of the only workflow that gates a merge. Four matches the vCPU
+// count of a GitHub-hosted runner — axe's analysis is CPU-bound, so more lanes
+// than cores trades throughput for contention.
+const STORY_SWEEP_LANES = Number(process.env.A11Y_SWEEP_LANES ?? 4);
 
 // axe-core's built-in `valid-lang` allowlist covers ISO 639-1 plus only a
 // narrow subset of ISO 639-3, missing African-language codes this app
@@ -142,70 +150,95 @@ async function runLiveRouteAudit(browser: Browser): Promise<boolean> {
   );
 
   const context = await browser.newContext();
-  const page = await context.newPage();
   let hasBlockingViolations = false;
 
   try {
-    for (const route of LIVE_ROUTES) {
-      const url = `${LIVE_ROUTES_BASE_URL}${route}`;
+    // Same lane budget as the story sweep: nineteen routes against a real Next
+    // server, each waiting on `networkidle`, is most of what is left of this
+    // job's wall clock once the stories run concurrently.
+    const audits = await sweepInParallel(
+      LIVE_ROUTES,
+      STORY_SWEEP_LANES,
+      async (route) => {
+        const page = await context.newPage();
+
+        try {
+          const response = await page.goto(`${LIVE_ROUTES_BASE_URL}${route}`, {
+            waitUntil: "networkidle",
+            timeout: 30000,
+          });
+
+          // A crashed route is not an accessible route. Next's 500 page is
+          // markup-clean, so axe happily returns zero violations on it and the
+          // gate goes green over a fiche that never rendered — which is exactly
+          // how the fiche routes stayed broken while this check passed. Fail on
+          // the status before believing the audit.
+          const status = response?.status() ?? 0;
+          if (status >= 400) {
+            return { status, violations: [] as AxeViolation[] };
+          }
+
+          const results = await new AxeBuilder({ page })
+            .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+            .options(AXE_RUN_OPTIONS)
+            .analyze();
+
+          // Live routes gate on both `serious` and `critical` — stricter than
+          // the Storybook check, which still tolerates the known Module #0
+          // color-token violations tracked separately.
+          return {
+            status,
+            violations: results.violations.filter(
+              (v) => v.impact === "serious" || v.impact === "critical"
+            ) as AxeViolation[],
+          };
+        } finally {
+          await page.close();
+        }
+      }
+    );
+
+    // Reported in route order once the lanes have finished, so the log reads the
+    // same way whatever order the routes happened to settle in.
+    LIVE_ROUTES.forEach((route, index) => {
+      const audit = audits[index];
       process.stdout.write(`🔍 Testing live route: ${route}... `);
 
-      try {
-        const response = await page.goto(url, {
-          waitUntil: "networkidle",
-          timeout: 30000,
-        });
-
-        // A crashed route is not an accessible route. Next's 500 page is
-        // markup-clean, so axe happily returns zero violations on it and the
-        // gate goes green over a fiche that never rendered — which is exactly
-        // how the fiche routes stayed broken while this check passed. Fail on
-        // the status before believing the audit.
-        const status = response?.status() ?? 0;
-        if (status >= 400) {
-          console.log(`❌ HTTP ${status} — route did not render`);
-          hasBlockingViolations = true;
-          continue;
-        }
-
-        const results = await new AxeBuilder({ page })
-          .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
-          .options(AXE_RUN_OPTIONS)
-          .analyze();
-
-        // Live routes gate on both `serious` and `critical` — stricter than
-        // the Storybook check, which still tolerates the known Module #0
-        // color-token violations tracked separately.
-        const reportable = results.violations.filter(
-          (v) => v.impact === "serious" || v.impact === "critical"
-        );
-
-        if (reportable.length > 0) {
-          console.log(`❌ ${reportable.length} violation(s)`);
-          hasBlockingViolations = true;
-
-          for (const violation of reportable as AxeViolation[]) {
-            console.log(
-              `\n  🚨 [${violation.impact?.toUpperCase()}] ${violation.id}`
-            );
-            console.log(`     ${violation.help}`);
-            console.log(`     📎 ${violation.helpUrl}`);
-            console.log(`     Affected elements:`);
-            for (const node of violation.nodes.slice(0, 3)) {
-              console.log(`       - ${node.target.join(" > ")}`);
-            }
-            if (violation.nodes.length > 3) {
-              console.log(`       ... and ${violation.nodes.length - 3} more`);
-            }
-          }
-        } else {
-          console.log("✅ Passed");
-        }
-      } catch (error) {
-        console.log(`❌ Error: ${(error as Error).message}`);
+      if (audit instanceof Error) {
+        console.log(`❌ Error: ${audit.message}`);
         hasBlockingViolations = true;
+        return;
       }
-    }
+
+      if (audit.status >= 400) {
+        console.log(`❌ HTTP ${audit.status} — route did not render`);
+        hasBlockingViolations = true;
+        return;
+      }
+
+      if (audit.violations.length === 0) {
+        console.log("✅ Passed");
+        return;
+      }
+
+      console.log(`❌ ${audit.violations.length} violation(s)`);
+      hasBlockingViolations = true;
+
+      for (const violation of audit.violations) {
+        console.log(
+          `\n  🚨 [${violation.impact?.toUpperCase()}] ${violation.id}`
+        );
+        console.log(`     ${violation.help}`);
+        console.log(`     📎 ${violation.helpUrl}`);
+        console.log(`     Affected elements:`);
+        for (const node of violation.nodes.slice(0, 3)) {
+          console.log(`       - ${node.target.join(" > ")}`);
+        }
+        if (violation.nodes.length > 3) {
+          console.log(`       ... and ${violation.nodes.length - 3} more`);
+        }
+      }
+    });
   } finally {
     await context.close();
   }
@@ -232,57 +265,79 @@ async function runA11yTests(): Promise<void> {
   try {
     browser = await chromium.launch();
     const context = await browser.newContext();
-    const page = await context.newPage();
+    const indexPage = await context.newPage();
 
     console.log("📚 Fetching story list...");
-    const stories = await getStoryIds(page);
-    console.log(`   Found ${stories.length} stories to test\n`);
+    const stories = await getStoryIds(indexPage);
+    console.log(
+      `   Found ${stories.length} stories to test (${STORY_SWEEP_LANES} at a time)\n`
+    );
+    await indexPage.close();
 
-    for (const story of stories) {
-      const storyUrl = `http://localhost:${STORYBOOK_PORT}/iframe.html?id=${story.id}&viewMode=story`;
+    const audits = await sweepInParallel(
+      stories,
+      STORY_SWEEP_LANES,
+      async (story) => {
+        const storyUrl = `http://localhost:${STORYBOOK_PORT}/iframe.html?id=${story.id}&viewMode=story`;
+        // A page per story rather than a pool: Playwright opens one in tens of
+        // milliseconds against the ~9 s an audit takes, and each lane then owns
+        // its navigation outright.
+        const page = await context.newPage();
 
-      process.stdout.write(`🔍 Testing: ${story.title} - ${story.name}... `);
+        try {
+          await page.goto(storyUrl, { waitUntil: "networkidle" });
 
-      try {
-        await page.goto(storyUrl, { waitUntil: "networkidle" });
+          await page
+            .waitForSelector("#storybook-root", { timeout: 10000 })
+            .catch(() => {
+              // Some stories might not have this selector, continue anyway
+            });
 
-        await page
-          .waitForSelector("#storybook-root", { timeout: 10000 })
-          .catch(() => {
-            // Some stories might not have this selector, continue anyway
-          });
+          const results = await new AxeBuilder({ page })
+            .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+            .options(AXE_RUN_OPTIONS)
+            .analyze();
 
-        const results = await new AxeBuilder({ page })
-          .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
-          .options(AXE_RUN_OPTIONS)
-          .analyze();
-
-        // CI gate fails only on `critical`. `serious` violations are still
-        // captured in the summary so they remain visible in the workflow log,
-        // but they don't block merging while the Module #0 transparency-fabric
-        // color tokens (PR #126) are being revised — see issue tracking
-        // 21 color-contrast violations on DoctrineLinkCard / SourceChainSheet /
-        // ClassificationBadge introduced by ETNI-26.
-        const reportable = results.violations.filter(
-          (v) => v.impact === "serious" || v.impact === "critical"
-        );
-        const blocking = reportable.filter((v) => v.impact === "critical");
-
-        if (reportable.length > 0) {
-          const tag = blocking.length > 0 ? "❌" : "⚠️";
-          console.log(`${tag} ${reportable.length} violation(s)`);
-          if (blocking.length > 0) hasViolations = true;
-          violationSummary.push({
-            storyId: story.id,
-            violations: reportable as AxeViolation[],
-          });
-        } else {
-          console.log("✅ Passed");
+          // CI gate fails only on `critical`. `serious` violations are still
+          // captured in the summary so they remain visible in the workflow log,
+          // but they don't block merging while the Module #0 transparency-fabric
+          // color tokens (PR #126) are being revised — see issue tracking
+          // 21 color-contrast violations on DoctrineLinkCard / SourceChainSheet /
+          // ClassificationBadge introduced by ETNI-26.
+          return results.violations.filter(
+            (v) => v.impact === "serious" || v.impact === "critical"
+          ) as AxeViolation[];
+        } finally {
+          await page.close();
         }
-      } catch (error) {
-        console.log(`⚠️  Error: ${(error as Error).message}`);
       }
-    }
+    );
+
+    // Reported after the sweep rather than streamed during it: concurrent lanes
+    // would interleave a half-written line with another story's verdict. Walking
+    // the results in input order also makes the log identical run to run, which
+    // a timing-ordered one would not be.
+    stories.forEach((story, index) => {
+      const audit = audits[index];
+      const label = `🔍 ${story.title} - ${story.name}:`;
+
+      if (audit instanceof Error) {
+        console.log(`${label} ⚠️  Error: ${audit.message}`);
+        return;
+      }
+
+      if (audit.length === 0) {
+        console.log(`${label} ✅ Passed`);
+        return;
+      }
+
+      const blocking = audit.filter((v) => v.impact === "critical");
+      console.log(
+        `${label} ${blocking.length > 0 ? "❌" : "⚠️"} ${audit.length} violation(s)`
+      );
+      if (blocking.length > 0) hasViolations = true;
+      violationSummary.push({ storyId: story.id, violations: audit });
+    });
 
     if (violationSummary.length > 0) {
       console.log("\n" + "=".repeat(80));

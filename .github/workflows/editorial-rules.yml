@@ -7,13 +7,15 @@ on:
       - "dataset/source/afrik/**"
       - "scripts/ci/checkEditorialRules.ts"
       - ".github/workflows/editorial-rules.yml"
-  push:
-    branches: [main, recette]
-    paths:
-      - "dataset/source/afrik/**"
-      - "scripts/ci/checkEditorialRules.ts"
-      - ".github/workflows/editorial-rules.yml"
   workflow_dispatch:
+
+# The `push` trigger on the same two branches re-ran this gate on merge over an
+# identical tree, for the reason ci.yml and data-integrity.yml already state:
+# every change reaches them through a pull request, so nothing read the second
+# result. Superseded runs are cancelled rather than left to finish.
+concurrency:
+  group: editorial-rules-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   editorial-rules:
