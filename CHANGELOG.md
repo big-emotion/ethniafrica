@@ -10,6 +10,84 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [4.1.1] - 2026-09-03
+
+The accessibility and routing defects the newly armed end-to-end suite found, and
+the release mechanics that let a deploy measure production's schema instead of
+trusting a hand-kept ledger. No change to the corpus.
+
+### Fixed
+
+- **A canonical deep link answers `308` instead of redirecting from the client.**
+  `/fr/atlas/pays?country=COM` answered `200` and then redirected in the browser:
+  only the page component handled the current address, behind a `loading.tsx`, so
+  the shell streamed a `200` before `permanentRedirect` ran. The reader still
+  landed on the fiche, but a crawler spent its visit on the directory and the
+  rendered document carried a nonce the first response never authorised. Answered
+  in the middleware now (#823).
+- **The fiche globe marks the country it flew to.** Since the list picker replaced
+  the pinned markers, choosing a country moved the camera and left nothing on the
+  stage — the panel named Tanzanie while the globe pointed at nothing, which is the
+  opposite of what the atlas charter §5 asks (#823).
+- **A `<Link>` no longer renders inside a `<button>`.** Every migration row is a
+  button and `ClassificationBadge` always rendered a link: nested interactive
+  controls, serious impact in axe (#823).
+- **113 interactive elements below the 44px floor** are resized — the globe toolbar
+  pills, the zoom pair, the footprint picker, the chapter rail's « Signaler », and
+  the footer, breadcrumb, source list, ISO-code column and family link (WCAG 2.5.8)
+  (#823).
+- **Two rows reflow at 200% text zoom.** The footer's columns and social marks are
+  sized in rem, so an 800px viewport still matched `md` and the row ran 253px past
+  the document edge; the migrations event rows spent the same excess on overflow at
+  430px (#823).
+
+### Changed
+
+- **Production's schema is measured and applied by the deploy itself, no longer by
+  hand.** `check:migration-state` takes `--target=production` and reads production's
+  own ledger through `applied_migrations()` (migration `042`) instead of a hand-kept
+  runbook. `deploy-production.yml` runs it as a `migrate` job the deploy `needs:`: it
+  measures, refuses a `db push` plan wider than that measurement, applies, and
+  measures again — so a Release published against a behind schema fails before
+  anything reaches the VPS. Credentials resolve through a module that refuses to fall
+  back from one environment to the other, because reporting recette's ledger under
+  production's name is the failure the gate exists to prevent (#826).
+- Both corpus syncs upload the loader's per-fiche error report as an artifact when
+  they fail. The loader logs only a path, and a path on a runner is unreadable — that
+  is how an apply-phase failure stayed undiagnosed behind a clean preview (#826).
+- `CLAUDE.md` records that production migrations stopped being manual, and separates
+  the two credentials the schema work needs: the PostgREST endpoint reads the ledger,
+  only DDL needs the direct Postgres connection (#828).
+- **The end-to-end suite now describes the page a reader actually gets.** Consent is
+  seeded at config level, so the banner is no longer a `role="dialog"` on the first
+  paint of every spec, padding the tap-target sweep with its own controls and
+  intercepting pointer events aimed at the page underneath; webkit is installed, so
+  the `tablet-720` project stops failing on a browser nobody downloaded. The
+  tap-target sweep also stops counting sentences: WCAG 2.5.8's inline exception now
+  requires the control to be inline-level _and_ its containing block to hold text the
+  control does not, which is why the footer, breadcrumb and source list were fixed at
+  source rather than excused (#823).
+- **Every worktree is provisioned, and branches off `recette`.** A fresh
+  `git worktree add` carries no `node_modules`, no `.env.local` and no
+  `core.hooksPath`, and none of the three fails loudly: `vitest`, `tsc` and `eslint`
+  resolve upward into the main checkout and pass, including against a dependency the
+  worktree never installed, which is how a local green ships a CI red.
+  `scripts/setup-worktree.sh` clones `node_modules` with `cp -Rc` — a clonefile on
+  APFS — copies the env files and restores husky, wired through a `PostToolUse` hook,
+  `.worktreeinclude` and `npm run worktree:setup` so no creation path is missed. It
+  also warns when the clone still resolves `origin/HEAD` to `main`, which is what had
+  every agent worktree starting behind the integration branch (#830).
+- **The pre-merge path stops waiting on audits that gate nothing.** Lighthouse and
+  Playwright are in neither branch's protection, yet over the 300 workflow runs of
+  2026-09-03 they concluded 32/32 and 27/33 red while adding a p90 of 20.2 min to a
+  blocking path of 13.6. Both move to a nightly run against `recette`, the promotion
+  into `main`, and `workflow_dispatch`. Nothing that gates a merge is removed or
+  weakened. The path gets faster instead: `concurrency` with `cancel-in-progress` on
+  the six workflows that lacked it — `recette-data-sync.yml` keeps it `false`, a
+  partial corpus load must never be cancelled — the a11y gate sweeping its 367
+  stories and 19 live routes four at a time, and the Next.js and Chromium caches
+  `ci.yml` already restored (#831).
+
 ## [4.1.0] - 2026-09-03
 
 172 commits since `4.0.0`. The corpus grew a whole dimension — names — and the
@@ -373,7 +451,8 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.1.0...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.1.1...HEAD
+[4.1.1]: https://github.com/big-emotion/ethniafrica/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/big-emotion/ethniafrica/compare/v4.0.0...v4.1.0
 [4.0.0]: https://github.com/big-emotion/ethniafrica/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/big-emotion/ethniafrica/compare/v2.1.0...v3.0.0
