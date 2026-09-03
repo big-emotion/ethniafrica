@@ -65,9 +65,14 @@ jobs:
             exit 1
           fi
 
+      # webkit as well as chromium: the `tablet-720` project is built on
+      # `devices["iPad Mini"]`, whose `defaultBrowserType` is webkit. Installing
+      # chromium alone left every spec in that project failing on
+      # `browserType.launch: Executable doesn't exist`, which reads as a suite
+      # of broken tests rather than as a missing browser.
       - name: Install Playwright browsers
         if: steps.secrets.outputs.present == 'true'
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install --with-deps chromium webkit
 
       - name: Build app
         if: steps.secrets.outputs.present == 'true'
