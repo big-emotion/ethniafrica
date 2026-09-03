@@ -1,14 +1,16 @@
 /**
- * Run an async audit over a list, a bounded number at a time.
+ * Run an async task over a list, a bounded number at a time.
  *
- * The a11y gate swept 63 Storybook stories through a single browser page in a
- * `for` loop — ~9 s each, 589 s total, on the one workflow that actually gates
- * a merge. The work is independent per story, so the loop was serialising for
- * no reason other than sharing one page.
+ * Two callers, the same shape of waste. The a11y gate swept 367 Storybook
+ * stories through a single browser page in a `for` loop; the AFRIK loader walks
+ * 800 people fiches through four sequential round trips each. Both were
+ * serialising work that is independent per item.
  *
- * A rejection is returned in place rather than thrown, because the sweep has to
- * report every violation it found: one story that fails to render must not
- * cancel the audit of the sixty-two others.
+ * A rejection is returned in place rather than thrown, because both callers
+ * have to report everything they found: one story that fails to render, or one
+ * fiche the database refuses, must not cancel the other 799.
+ *
+ * @req REQ-032
  */
 export async function sweepInParallel<Item, Outcome>(
   items: readonly Item[],

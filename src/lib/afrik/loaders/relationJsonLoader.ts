@@ -11,7 +11,23 @@ import { join } from "path";
 import { logger } from "@/lib/api/logger";
 import { parseRelationFile } from "@/lib/afrik/parsers/relationParser";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { sweepInParallel } from "@/lib/parallelSweep";
 import type { RelationRecord, RelationSource } from "@/types/relations";
+
+/**
+ * How many relations are written at once.
+ *
+ * Each relation costs one round trip per cited source plus a revision, an
+ * assertion, the relation row and a confidence recompute — 1 556 relations in a
+ * `for` loop was several thousand calls end to end.
+ *
+ * Unlike the appellation stage, this one needs no lock ordering: sources are
+ * upserted one row per statement, so a transaction never holds two source locks
+ * at once and two relations citing the same pair cannot deadlock.
+ *
+ * @req REQ-032
+ */
+export const RELATION_LANES = 8;
 
 const AFRIK_ROOT = join(process.cwd(), "dataset/source/afrik");
 
@@ -278,9 +294,21 @@ export async function loadRelations(
 ): Promise<RelationLoadReport> {
   const report = createReport();
 
-  for (const relation of relations) {
-    await upsertRelationRecord(supabase, relation, report);
-  }
+  const outcomes = await sweepInParallel(
+    relations,
+    RELATION_LANES,
+    (relation) => upsertRelationRecord(supabase, relation, report)
+  );
+
+  outcomes.forEach((outcome, index) => {
+    if (outcome instanceof Error) {
+      report.errors.push(`${relations[index].id}: ${outcome.message}`);
+    }
+  });
+
+  // Lanes settle in whatever order the database answers; the report is read and
+  // diffed by hand, so it is ordered by relation rather than by luck.
+  report.errors.sort();
 
   return report;
 }

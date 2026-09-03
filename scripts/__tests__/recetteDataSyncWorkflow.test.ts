@@ -12,6 +12,23 @@ function readWorkflow(): string {
 }
 
 describe("recette AFRIK data sync workflow", () => {
+  // Once a load stops failing over its editorial tail, `if: failure()` would
+  // stop uploading the very report that names the tail — the run goes green and
+  // the 88 unparseable segments and 51 untiered sources become unreadable. The
+  // report is the only place they are written down.
+  // @req REQ-032
+  it("uploads the loader report on a green run too, not only on failure", () => {
+    const workflow = readWorkflow();
+    const uploadStep = workflow.slice(
+      workflow.indexOf("- name: Upload the loader")
+    );
+
+    expect(uploadStep).toContain("if: always()");
+    expect(uploadStep).not.toContain("if: failure()");
+    expect(uploadStep).toContain("migration_errors_*.json");
+    expect(uploadStep).toContain("if-no-files-found: ignore");
+  });
+
   // The defect this workflow exists to close: of the repository's workflows, the
   // only two calls to the corpus loader both targeted production. Merging a fiche
   // into `recette` therefore changed nothing in the recette database, and the
