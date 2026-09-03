@@ -14,16 +14,20 @@
    named, at its CURRENT value, byte for byte, media queries and all.
    Nothing here moves a pixel.
 
-   What that buys: the sizes are now named, countable, greppable and
-   in one file instead of scattered through styled-jsx across eight
-   components — and the components stop tripping afh/no-raw-font-size,
-   because `font-size: var(--…)` is the form the rule sanctions.
+   What is still owed: reconciling the remaining values with the
+   scale — one table of `token -> current px -> proposed step` for a
+   designer to rule on. Until that is answered these are a documented
+   exception, tracked here, not debt hiding across components.
 
-   What is still owed: reconciling these 20 values with the scale.
-   That is one table of `token -> current px -> proposed step` for a
-   designer to rule on, which is a far smaller question than a diff.
-   Until it is answered these are a documented exception, tracked
-   here, not debt hiding in eight files.
+   Twelve of the thirteen tokens left the pen when the axis-graph home
+   was removed: AccessAxes, AxisModulePanel, AxisGraphScene,
+   AxisGraphCanvas, HeroModuleStage, HeroFamilyCrown,
+   HeroMigrationPaths, HeroProvenanceChip, TrustStrip, SynthesisRail,
+   CountrySynthesisCard and FeaturedModule were superseded by the
+   two-module home the page renders today, and nothing read their
+   sizes any more. `homeTokensCharter` is what surfaced them: a token
+   nothing reads is dead weight the next reader would have to prove
+   dead before removing, so the charter proves it instead.
 
    See docs/design/typography-charter.md §6, rule 3.
    ============================================================ */
@@ -35,49 +39,4 @@
      The band holds one paragraph now, and it reads at --afh-text-body — the
      canonical scale, which is where a bespoke 15.5px should have been all
      along. */
-
-  /* ── AccessAxes — the three entry cards ───────────────────── */
-  /* Four entries left the pen rather than being reconciled. The lead's
-     12.5px went with the paragraph it dressed, now a SectionHeading on
-     the canonical scale, and the card name's fixed 26px became
-     --afh-text-h2 so it stays under the section heading above it at
-     every width. The CTA's 14px and the mobile arrow's 19px went with
-     the actions charter, which files every control label under `small`
-     — and the arrow no longer has to carry the label's job alone,
-     because the label is no longer hidden below 860px. */
-  --home-text-axis-stake: 13.5px;
-  --home-text-axis-figure: 12px;
-
-  /* ── AxisModulePanel — the shelf that slides out of an axis ── */
-  --home-text-module-face: 15px;
-  --home-text-shelf-chevron: 20px;
-  --home-text-panel-trail: 13px;
-  --home-text-panel-back: 13px;
-  --home-text-module-chip: 11px;
-  --home-text-panel-close: 13px;
-
-  /* The three --home-text-globe-* sizes went with the point cloud
-     (ETNI-1360). The globe's own caption and controls are AtlasGlobe's now,
-     on text-afh-caption, so a home-scoped size for them would be a second
-     opinion about the same text. */
-
-  /* ── The hero previews and the trust strip ────────────────── */
-  --home-text-crown-readout: 11.5px;
-  --home-text-paths-readout: 11.5px;
-  --home-text-provenance-chip: 11.5px;
-  --home-text-trust-copy: 13px;
-}
-
-/* The home's own breakpoints, reproduced verbatim. They are not the
-   system's {768, 1200}: they are where this page's layout actually
-   changes, and moving them is part of the same deferred decision. */
-
-@media (max-width: 860px) {
-  :root {
-    /* --home-text-axis-name's 26px/21px pair left with the token: the card
-       title is --afh-text-h2 now, which is fluid, so the step this query
-       used to make by hand is in the clamp. */
-    --home-text-axis-stake: 12.5px;
-    --home-text-axis-figure: 11.5px;
-  }
 }

@@ -61,7 +61,12 @@ export const DEAD_CODE_CEILINGS: Readonly<Record<DeadCodeCategory, number>> = {
   // Lowered from 25/52 when contributions became flags: the legacy
   // /admin/contributions console, its API routes and `lib/auth/supabase-auth`
   // went with it, and the ratchet does not let the room they freed be reused.
-  exports: 24,
+  //
+  // 24 -> 23 when the axis-graph home was removed. AccessAxes and the fifteen
+  // modules that existed only to serve it took four exports with them —
+  // HERO_PREVIEW_KINDS, getFacetByPage, and the two country reads the
+  // synthesis rail needed — and the ratchet keeps that room freed too.
+  exports: 23,
   types: 50,
   duplicates: 0,
 };

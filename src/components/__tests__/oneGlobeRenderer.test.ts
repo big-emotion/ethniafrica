@@ -86,23 +86,6 @@ describe("exactly one globe renderer survives under src/components", () => {
     ]);
   });
 
-  /**
-   * The trap that made ETNI-1288's third criterion unusable, asserted rather
-   * than trusted: this file draws the home's axis graph on its own WebGL
-   * context, it is out of scope, and a guard that reported it would fail on a
-   * repository that is exactly right.
-   */
-  // @req REQ-112
-  it("leaves the axis graph alone, WebGL context and all", () => {
-    const axisGraph = readFileSync(
-      resolve(COMPONENTS_DIR, "home/AxisGraphScene.tsx"),
-      "utf8"
-    );
-
-    expect(KEEPS_A_WEBGL_CONTEXT.test(axisGraph)).toBe(true);
-    expect(isGlobeRenderer(axisGraph)).toBe(false);
-  });
-
   // @req REQ-112
   it("does not mistake the capability probe beside the globe for a second one", () => {
     const atlasGlobe = readFileSync(

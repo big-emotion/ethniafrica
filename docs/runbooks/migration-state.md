@@ -3,6 +3,26 @@
 **Last verified:** 2026-08-31 (live read of `supabase_migrations.schema_migrations` on **both** projects)
 **Applies to:** every file under `supabase/migrations/`
 
+> **13 of the 81 migration files are not in the table below.** They were added after the last
+> full read, so this runbook has never recorded whether either project carries them:
+>
+> `053_name_table`, `057_person_schema`, `064_patronyme_persons`, `065_afrik_search_persons`,
+> `067_patronyme_name_record_source_tiers`, `071_afrik_name_forms`, `074_admin_allowlist`,
+> `075_flag_reporter_contacts`, `076_pin_function_search_path`, `077_unexpose_privileged_functions`,
+> `079_sources_directory_indexes`, `080_hub_module_corpus_presence`, `081_contributions_into_flags`.
+>
+> Two of them — `076` and `077` — are security migrations, which is the worst class to be unsure
+> about: pinning a function's `search_path` and unexposing privileged functions are exactly the
+> changes whose absence on one project is invisible until it is exploited. Every migration is a
+> two-step rollout, recette then production, and this list is the part of that rollout nobody can
+> currently confirm. The next live read should cover all 13 and fold them into the table; until
+> then, treat their state on **both** projects as unknown rather than applied.
+>
+> The scattered per-entry notes further down ("omitted from this table, added after the last full
+> read") say the same thing one file at a time. This is the consolidated view, because a gap
+> spread across six footnotes reads as housekeeping rather than as thirteen unverified schema
+> changes.
+
 There are two Supabase projects, and both look like "production" for a structural reason: **a
 Supabase project has exactly one environment, and Supabase itself calls that environment
 "production".** There is no staging branch inside a project. So "production" in a Supabase
