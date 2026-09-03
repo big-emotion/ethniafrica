@@ -11,6 +11,17 @@
             "statusMessage": "Linting edited file..."
           }
         ]
+      },
+      {
+        "matcher": "EnterWorktree",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash scripts/setup-worktree.sh",
+            "timeout": 300,
+            "statusMessage": "Provisioning worktree (node_modules, env)..."
+          }
+        ]
       }
     ]
   }
