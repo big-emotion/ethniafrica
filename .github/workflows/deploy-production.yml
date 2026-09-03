@@ -216,7 +216,18 @@ jobs:
           DB_URL=$(cat "$RUNNER_TEMP/db-url")
           echo "::add-mask::$DB_URL"
 
-          supabase db push --db-url "$DB_URL" --include-all --dry-run | tee plan.txt
+          # 2>&1 is the whole gate. The CLI prints the plan on stderr, so piping
+          # stdout alone left plan.txt empty while the list showed up in the job
+          # log anyway — which is why every release counted 0 planned migrations
+          # and why this looked, twice, like a parsing problem.
+          supabase db push --db-url "$DB_URL" --include-all --dry-run 2>&1 | tee plan.txt
+
+          # An empty capture and a genuinely empty plan are different failures
+          # and get different messages.
+          if [ ! -s plan.txt ]; then
+            echo "::error::the dry run produced no output at all. Its stream is not being captured, so nothing downstream can measure the plan."
+            exit 1
+          fi
 
           # Counted by a tested script rather than an inline grep. The grep that
           # stood here looked for a line starting with three digits, and the CLI
