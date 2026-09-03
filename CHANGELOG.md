@@ -10,6 +10,49 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [4.2.0] - 2026-09-03
+
+Editorial work the corpus had already done and the reader never saw, and the two
+reasons the 4.1.1 release reached its Release page without reaching production.
+
+### Added
+
+- **The classification the corpus declares is now published.** `classification_status`
+  was NULL on 795 of 800 peoples and on all 24 language families, while the fiches
+  declared a status for 479 of them — 265 `contested`, 195 `colonial-legacy`, 18
+  `reconstructive`, 1 `consensual`. The loader was not at fault: `enforce_assertion_required`
+  (AR3) refuses an `UPDATE` to that column unless a row in `assertions` already covers
+  the field path, and the loader answered by never writing the column at all, which
+  after the first load means always — honouring the rule and losing the claim. It now
+  writes the assertion first, the way the trigger's own `HINT` asks. Nothing is
+  fabricated: every fiche declaring `contested` or `colonial-legacy` already carries at
+  least two sources, which `checkEditorialRules` gates (#834).
+
+### Fixed
+
+- **The deploy can reach the production database.** 4.1.1 measured production's ledger
+  and then failed to apply to it: the two production secrets described different
+  machines — the PostgREST URL the self-hosted stack, the database URL the retired
+  hosted project — and the self-hosted Postgres port is not published anyway (measured:
+  443 open, 5432 and 6543 filtered). The `migrate` job now forwards the port over SSH
+  and `db push` runs on the runner against the loopback, so the database stays off the
+  internet. The job refuses a URL that does not name `localhost`, since the tunnel is
+  the only path and a URL naming the host would silently reproduce the failure (#835).
+- **A 0.6% editorial tail no longer fails the corpus load like a total outage.** The
+  recette sync had failed 17 runs out of 17, which reads as "the sync does not work" —
+  it worked: 52 defective records out of ~9 200, because `hasErrors()` ORed every
+  stage's errors together. A red that never changes stops being read, which is how the
+  real signal was lost. Structural stages still fail the load outright; editorial
+  defects are counted against a **descending** ratchet measured at today's 52, so the
+  tail may shrink freely and can never grow back unnoticed. The 52 are two causes, not
+  52 problems: 51 appellation assertions citing no explicitly tiered source, and one
+  statement timeout on `PPL_KEREWE ↔ TZA` (#833).
+
+### Changed
+
+- The corpus load reads fiches and relations concurrently instead of one at a time,
+  which is what made it take 76 minutes (#833).
+
 ## [4.1.1] - 2026-09-03
 
 The accessibility and routing defects the newly armed end-to-end suite found, and
@@ -451,7 +494,8 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.1.1...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.2.0...HEAD
+[4.2.0]: https://github.com/big-emotion/ethniafrica/compare/v4.1.1...v4.2.0
 [4.1.1]: https://github.com/big-emotion/ethniafrica/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/big-emotion/ethniafrica/compare/v4.0.0...v4.1.0
 [4.0.0]: https://github.com/big-emotion/ethniafrica/compare/v3.0.0...v4.0.0
