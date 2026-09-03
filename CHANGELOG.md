@@ -10,6 +10,24 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [4.2.2] - 2026-09-03
+
+### Fixed
+
+- **Migrations run against the database container rather than the pooler, and the
+  deploy holds no connection string at all.** Five production deploys failed in one
+  afternoon, and each time a stored URL and the machine disagreed about something
+  different: the retired hosted project, then a port that is not published, then TLS
+  the server does not offer, then a missing Supavisor tenant, then a password the
+  pooler no longer held. Host port 5432 on the VPS is Supavisor, not Postgres — a
+  pooler a migration does not need, since `db push` opens one connection, runs DDL and
+  leaves. It wants a tenant identifier in the username, and authenticates with a copy
+  of the password seeded at its first boot that `--force-recreate` does not refresh.
+  The tunnel now forwards to the `supabase-db` container, whose address is resolved at
+  tunnel time because Docker assigns it, and the job reads `POSTGRES_PASSWORD` from the
+  stack's own `.env` — which cannot be wrong about the stack it configures — instead of
+  a secret that can drift from it (#842).
+
 ## [4.2.1] - 2026-09-03
 
 ### Fixed
@@ -515,7 +533,8 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.2.1...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.2.2...HEAD
+[4.2.2]: https://github.com/big-emotion/ethniafrica/compare/v4.2.1...v4.2.2
 [4.2.1]: https://github.com/big-emotion/ethniafrica/compare/v4.2.0...v4.2.1
 [4.2.0]: https://github.com/big-emotion/ethniafrica/compare/v4.1.1...v4.2.0
 [4.1.1]: https://github.com/big-emotion/ethniafrica/compare/v4.1.0...v4.1.1
