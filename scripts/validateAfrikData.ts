@@ -23,7 +23,6 @@ import type { SourceTier } from "../src/types/sources";
 // The same resolver the globe uses, so this gate and the rendering can never
 // disagree about which countries are drawable.
 import { getAdmin0Rings } from "../src/lib/atlas/overlays";
-import { OFF_MAP_COUNTRIES } from "../src/lib/afrik/offMapCountries";
 
 // ─── Exported ValidationResult (FR26-FR31) ───────────────────────────────────
 
@@ -1345,11 +1344,44 @@ export function checkIsoValidity(datasetRoot: string): ValidationResult {
 }
 
 /**
- * Re-exported so this script keeps its historical entry point for the set,
- * which now lives beside the loader that also has to honour it.
- * See `src/lib/afrik/offMapCountries.ts` for why it moved.
+ * Countries outside the atlas's Africa scope that the corpus legitimately
+ * cites, as declared diaspora presences. They are not drawn — the admin-0
+ * asset is Africa-only — but they are real, and the fiche counts them in its
+ * total population.
+ *
+ * The list is explicit so that adding one is a deliberate act. FR29 only ever
+ * checked that a code was three uppercase letters, which is how "GBN" stood in
+ * for Gabon on PPL_IGBO for as long as the fiche existed: well-formed,
+ * meaningless, and silently undrawable.
+ *
+ * This governs what a fiche may *declare*. It is deliberately not wired into
+ * the patronyme loader: `afrik_countries` holds the 54 African countries, so a
+ * structural link to an off-map code has no row to point at, and accepting one
+ * at preflight would only move the failure into the middle of the write.
  */
-export { OFF_MAP_COUNTRIES };
+export const OFF_MAP_COUNTRIES = new Set([
+  "AUS",
+  "BLZ",
+  "BRA",
+  "CAN",
+  "COL",
+  "ESP",
+  "FRA",
+  "GBR",
+  "GLP",
+  "GTM",
+  "GUF",
+  "HND",
+  "HTI",
+  "JAM",
+  "NIC",
+  "NLD",
+  "OMN",
+  "PRT",
+  "SUR",
+  "USA",
+  "YEM",
+]);
 
 /**
  * Every declared country either resolves to admin-0 geometry — through the
