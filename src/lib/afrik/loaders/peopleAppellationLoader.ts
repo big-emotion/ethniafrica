@@ -25,6 +25,7 @@
  */
 import { logger } from "@/lib/api/logger";
 import { normalizeToKey } from "@/lib/normalize";
+import { summarizeByCause } from "./defectSummary";
 import {
   deriveAppellations,
   type DerivedAppellation,
@@ -304,11 +305,21 @@ export async function loadPeopleAppellations(
     await loadOneFiche(supabase, people, report);
   }
 
+  // The whole list, not a ten-item sample. These are the fiches a curator has
+  // to open, and a sample of ten out of eighty-eight names the same handful of
+  // peoples on every run while the other seventy-eight stay invisible.
   if (report.rejected.length > 0) {
     logger.warn(
       "Appellation segments the grammar declined to read as a name — fix the fiche rather than widening the grammar",
-      { count: report.rejected.length, sample: report.rejected.slice(0, 10) }
+      { count: report.rejected.length, fiches: report.rejected }
     );
+  }
+
+  if (report.errors.length > 0) {
+    logger.warn("Appellations the database refused", {
+      count: report.errors.length,
+      byCause: summarizeByCause(report.errors),
+    });
   }
 
   return report;

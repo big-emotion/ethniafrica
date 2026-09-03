@@ -120,8 +120,13 @@ jobs:
       # with "completed with errors" and nothing anyone could read — which is
       # exactly how an apply-phase failure stayed undiagnosed while the preview
       # in front of it was clean.
+      # `always()`, not `failure()`. A load that delivers the whole corpus while
+      # 88 appellation segments stay unparseable and 51 assertions cite an
+      # untiered source is now a green run — and this artifact is the only place
+      # those 139 fiches are named. Gating it on failure would hide the backlog
+      # precisely once the pipeline stopped being broken.
       - name: Upload the loader's error report
-        if: failure()
+        if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: afrik-migration-errors-recette

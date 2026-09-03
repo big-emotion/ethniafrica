@@ -147,7 +147,7 @@ function emptyOrphanReport(): CorpusOrphanReport {
   return { orphans: [], refusal: null, deleted: 0 };
 }
 
-function createMigrationReport(): MigrationReport {
+export function emptyMigrationReport(): MigrationReport {
   return {
     languageFamilies: { total: 0, inserted: 0, errors: [] },
     languages: emptyLanguageLoadReport(),
@@ -686,26 +686,85 @@ function countRelations(peoples: People[]): number {
   );
 }
 
-function hasErrors(report: MigrationReport): boolean {
-  return (
-    report.languageFamilies.errors.length > 0 ||
-    report.languages.errors.length > 0 ||
-    report.peoples.errors.length > 0 ||
-    report.peopleLanguages.errors.length > 0 ||
-    report.countries.errors.length > 0 ||
-    report.relations.errors.length > 0 ||
-    report.peopleRelations.errors.length > 0 ||
-    report.migrations.errors.length > 0 ||
-    report.names.errors.length > 0 ||
-    report.appellations.errors.length > 0 ||
-    report.persons.errors.length > 0 ||
-    report.patronymes.errors.length > 0 ||
-    // A refusal is a red run on purpose: the database and the corpus disagree
-    // by more than the sync dares resolve on its own, and a green board would
-    // bury that.
-    Object.values(report.corpusOrphans).some((table) => table.refusal) ||
-    report.verification.errors.length > 0
+/**
+ * Stages whose failure means the load did not deliver the corpus: the entity
+ * backbone every other row references, plus the post-load drift check. One
+ * error here and the database is in a shape nothing downstream can trust.
+ */
+const STRUCTURAL_STAGES = [
+  "languageFamilies",
+  "languages",
+  "peoples",
+  "peopleLanguages",
+  "countries",
+  "patronymes",
+] as const;
+
+/**
+ * Stages that carry per-record editorial content. A malformed appellation or a
+ * relation naming a people that does not exist is a defect in one fiche, not a
+ * broken pipeline — the other ~9 200 records loaded regardless.
+ */
+const EDITORIAL_STAGES = [
+  "relations",
+  "peopleRelations",
+  "migrations",
+  "names",
+  "appellations",
+  "persons",
+] as const;
+
+/**
+ * How many per-record editorial defects the corpus may carry before a load goes
+ * red. Measured at 52 on 2026-09-03 (51 appellations + 1 relation).
+ *
+ * A **descending** ratchet, like `checkSourceTierCoverage.ts`: the tail may
+ * shrink freely, and lowering this line is the point. It may never grow back
+ * unnoticed, which is what an uncapped tolerance would allow.
+ */
+export const EDITORIAL_DEFECT_CEILING = 52;
+
+export interface SyncOutcome {
+  /** Structural stages that lost at least one record, in report order. */
+  structuralFailures: string[];
+  /** Per-record editorial defects across every editorial stage. */
+  editorialDefects: number;
+  failed: boolean;
+}
+
+/**
+ * Split a finished load into "the corpus did not land" and "some fiches need a
+ * curator", so seventeen consecutive reds stop meaning the same thing as one
+ * genuine outage.
+ */
+export function classifySyncOutcome(report: MigrationReport): SyncOutcome {
+  const structuralFailures = STRUCTURAL_STAGES.filter(
+    (stage) => report[stage].errors.length > 0
+  ) as string[];
+
+  // A refusal is a red run on purpose: the database and the corpus disagree by
+  // more than the sync dares resolve on its own, and a green board would bury
+  // that.
+  if (Object.values(report.corpusOrphans).some((table) => table.refusal)) {
+    structuralFailures.push("corpusOrphans");
+  }
+
+  if (report.verification.errors.length > 0) {
+    structuralFailures.push("verification");
+  }
+
+  const editorialDefects = EDITORIAL_STAGES.reduce(
+    (count, stage) => count + report[stage].errors.length,
+    0
   );
+
+  return {
+    structuralFailures,
+    editorialDefects,
+    failed:
+      structuralFailures.length > 0 ||
+      editorialDefects > EDITORIAL_DEFECT_CEILING,
+  };
 }
 
 function saveErrorReport(report: MigrationReport): string {
@@ -736,7 +795,7 @@ export async function migrateAfrikToDatabase(
   const supabase = createAdminClient({
     requestTimeoutMs: SUPABASE_BATCH_REQUEST_TIMEOUT_MS,
   });
-  const report = createMigrationReport();
+  const report = emptyMigrationReport();
 
   const languageFamilies = await loadAllLanguageFamilies();
   report.languageFamilies.total = languageFamilies.length;
@@ -905,10 +964,32 @@ export async function migrateAfrikToDatabase(
     );
   }
 
-  if (hasErrors(report) && writeErrorReport) {
-    logger.warn("AFRIK synchronization completed with errors", {
+  const outcome = classifySyncOutcome(report);
+
+  // The report is saved whenever anything went wrong, including a tail that is
+  // within the ceiling: a defect nobody can read is a defect nobody fixes. Only
+  // the severity of the message changes with `outcome.failed`.
+  if (
+    (outcome.structuralFailures.length > 0 || outcome.editorialDefects > 0) &&
+    writeErrorReport
+  ) {
+    const detail = {
+      structuralFailures: outcome.structuralFailures,
+      editorialDefects: outcome.editorialDefects,
+      editorialDefectCeiling: EDITORIAL_DEFECT_CEILING,
       errorReport: saveErrorReport(report),
-    });
+    };
+
+    if (outcome.failed) {
+      logger.warn("AFRIK synchronization failed", detail);
+    } else {
+      // Deliberately not an error: every structural stage landed. These are
+      // fiches for a curator, and the load itself is publishable.
+      logger.warn(
+        "AFRIK synchronization completed — the corpus landed, some fiches need a curator",
+        detail
+      );
+    }
   } else {
     logger.info("AFRIK synchronization completed", {
       target: syncTarget.environment,
@@ -960,7 +1041,7 @@ if (require.main === module) {
     },
   })
     .then((report) => {
-      process.exitCode = hasErrors(report) ? 1 : 0;
+      process.exitCode = classifySyncOutcome(report).failed ? 1 : 0;
     })
     .catch((error) => {
       logger.error("AFRIK synchronization failed", error);
