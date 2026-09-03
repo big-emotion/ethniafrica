@@ -1354,13 +1354,10 @@ export function checkIsoValidity(datasetRoot: string): ValidationResult {
  * for Gabon on PPL_IGBO for as long as the fiche existed: well-formed,
  * meaningless, and silently undrawable.
  *
- * BRA and HTI (REQ-130, supersedes REQ-001) were the first host countries the
- * Afro-descendant peoples of DEC-030 needed — attached to the corpus by
- * history rather than linguistic filiation. ETNI-1388 completes that corpus
- * extension: BLZ, COL, GLP, GTM, GUF, HND, JAM, NIC and SUR are the remaining
- * host countries for the ten Afro-descendant people fiches (Garinagu,
- * Palenqueros, Raizales, Saamaka, Okanisi, Guadeloupe Creoles, Jamaican
- * Maroons).
+ * This governs what a fiche may *declare*. It is deliberately not wired into
+ * the patronyme loader: `afrik_countries` holds the 54 African countries, so a
+ * structural link to an off-map code has no row to point at, and accepting one
+ * at preflight would only move the failure into the middle of the write.
  */
 export const OFF_MAP_COUNTRIES = new Set([
   "AUS",
@@ -1810,6 +1807,102 @@ export function checkAuthorizedSourceTiers(
 }
 
 /**
+ * The four standings a `sources[]` entry may declare. Three are tiers carrying
+ * authority; `needs_review` is the explicit "nobody has adjudicated this yet"
+ * marker, stored as NULL rather than folded onto `unverified` — folding it
+ * would state a judgement nobody made. Anything else is a straggler from a
+ * retired scale.
+ */
+export const SOURCE_STANDINGS: ReadonlySet<string> = new Set([
+  "official",
+  "referenced",
+  "unverified",
+  "needs_review",
+]);
+
+/**
+ * A source title is the global identity of a source row: `sources_title_key`
+ * is UNIQUE and every loader upserts `onConflict: "title"`. So one title must
+ * carry one locator, or the corpus silently disagrees with itself.
+ *
+ * This models what the loaders already enforce, and the validator did not. The
+ * patronyme loader rejects a conflicting title outright — that is how five
+ * fiches froze all 777 dossiers while this script reported 0 errors. The other
+ * loaders resolve the conflict by last-write-wins, which is worse: 54 country
+ * fiches citing one "UNFPA – World Population Dashboard" collapsed onto a
+ * single row whose URL was whichever country loaded last, so a reader
+ * following the citation landed on another country's page.
+ */
+export function checkSourceIdentity(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const locatorsByTitle = new Map<string, Map<string, string[]>>();
+
+  const visit = (node: unknown, fiche: string): void => {
+    if (Array.isArray(node)) {
+      node.forEach((item) => visit(item, fiche));
+      return;
+    }
+    if (typeof node !== "object" || node === null) return;
+
+    for (const [key, value] of Object.entries(node)) {
+      if (key === "sources" && Array.isArray(value)) {
+        for (const entry of value) {
+          if (typeof entry !== "object" || entry === null) continue;
+          const {
+            title,
+            tier,
+            url,
+            source_kind: kind,
+          } = entry as Record<string, unknown>;
+          if (typeof title !== "string" || title.length === 0) continue;
+
+          if (tier !== undefined && !SOURCE_STANDINGS.has(String(tier))) {
+            errors.push(
+              `${fiche}: source "${title}" declares standing "${String(tier)}", ` +
+                `which is not one of ${[...SOURCE_STANDINGS].join(", ")}`
+            );
+          }
+
+          const locator = JSON.stringify([
+            tier ?? null,
+            url ?? null,
+            kind ?? null,
+          ]);
+          const seen =
+            locatorsByTitle.get(title) ?? new Map<string, string[]>();
+          seen.set(locator, [...(seen.get(locator) ?? []), fiche]);
+          locatorsByTitle.set(title, seen);
+        }
+      }
+      visit(value, fiche);
+    }
+  };
+
+  for (const fullPath of collectJsonFiles(datasetRoot)) {
+    let data: unknown;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      continue;
+    }
+    visit(data, path.relative(datasetRoot, fullPath));
+  }
+
+  for (const [title, locators] of [...locatorsByTitle].sort(([a], [b]) =>
+    a.localeCompare(b)
+  )) {
+    if (locators.size < 2) continue;
+    const where = [...locators.values()].flat().sort().slice(0, 4).join(", ");
+    errors.push(
+      `source "${title}" is cited with ${locators.size} different ` +
+        `tier/URL/provenance combinations (${where}) — one title, one locator`
+    );
+  }
+
+  return { ok: errors.length === 0, errors, warnings: [] };
+}
+
+/**
  * FR30 + FR31 – Source URL resolvability (nightly only).
  * Skipped unless process.env.CHECK_SOURCE_URLS === "true".
  * Writes results to dataset/source-url-health.log (two levels above datasetRoot,
@@ -2220,14 +2313,17 @@ export function checkColonialBorderCr1(datasetRoot: string): ValidationResult {
         continue;
       }
 
-      if (tier !== 1 && tier !== 2) {
+      if (!isAuthoritativeTier(tier)) {
         errors.push(
-          `CR1: ${layerId}: source with invalid tier "${tier}" — only tier 1 or 2 is allowed`
+          `CR1: ${layerId}: source at standing "${String(tier)}" — a colonial border needs an official or referenced citation`
         );
         continue;
       }
 
-      if (tier === 2 && !/wikipedia/i.test(notes)) {
+      if (
+        normalizedNameRecordTier(tier) === "referenced" &&
+        !/wikipedia/i.test(notes)
+      ) {
         errors.push(
           `CR1: ${layerId}: tier 2 source missing the Wikipedia cross-check path in notes`
         );
@@ -2637,12 +2733,18 @@ export function validateMigrationEvents(
     }
 
     sources.forEach((source, i) => {
-      if (source.tier !== 1 && source.tier !== 2) {
+      // Migration 041 retired the numeric Tier 1/2 scale for the three
+      // standings. The old rule "Tier 2 requires notes" existed so a
+      // non-authoritative citation stayed auditable; its faithful translation
+      // is that anything short of `official` carries that provenance note.
+      if (!SOURCE_STANDINGS.has(String(source.tier))) {
         errors.push(
-          `${file}: content.sources[${i}] must record tier: 1 or tier: 2`
+          `${file}: content.sources[${i}] must record a tier — one of ${[
+            ...SOURCE_STANDINGS,
+          ].join(", ")}`
         );
       } else if (
-        source.tier === 2 &&
+        source.tier !== "official" &&
         (typeof source.notes !== "string" || !source.notes.trim())
       ) {
         errors.push(
@@ -2808,7 +2910,7 @@ export function checkColonialEventCr4(datasetRoot: string): ValidationResult {
         ? data.classificationStatus
         : undefined;
 
-    const validSources = sources.filter((s) => s.tier === 1 || s.tier === 2);
+    const validSources = sources.filter((s) => isAuthoritativeTier(s.tier));
     if (validSources.length === 0) {
       errors.push(
         `CR4: ${file}: no source with tier 1 or tier 2 — at least one Tier 1/2 source is required`
@@ -2823,14 +2925,16 @@ export function checkColonialEventCr4(datasetRoot: string): ValidationResult {
         );
         return;
       }
-      if (source.tier !== 1 && source.tier !== 2) {
+      if (!SOURCE_STANDINGS.has(String(source.tier))) {
         errors.push(
-          `CR4: ${file}: content.sources[${i}] must record tier: 1 or tier: 2`
+          `CR4: ${file}: content.sources[${i}] must record a tier — one of ${[
+            ...SOURCE_STANDINGS,
+          ].join(", ")}`
         );
         return;
       }
       const notes = typeof source.notes === "string" ? source.notes : "";
-      if (source.tier === 2 && !/wikipedia/i.test(notes)) {
+      if (source.tier === "referenced" && !/wikipedia/i.test(notes)) {
         errors.push(
           `CR4: ${file}: content.sources[${i}] is Tier 2 and requires the Wikipedia cross-check path in notes`
         );
@@ -3083,18 +3187,18 @@ export function checkRelationSources(datasetRoot: string): ValidationResult {
     }
 
     const sources = Array.isArray(data.sources) ? data.sources : [];
-    const hasValidTierSource = sources.some(
-      (s) => s?.tier === 1 || s?.tier === 2
+    const hasValidTierSource = sources.some((s) =>
+      isAuthoritativeTier(s?.tier)
     );
     if (!hasValidTierSource) {
       errors.push(
-        `REL-5: ${file}: no source with tier 1 or tier 2 — at least one Tier 1/2 source is required`
+        `REL-5: ${file}: no source at official or referenced standing — at least one authoritative citation is required`
       );
     }
 
     sources.forEach((source, i) => {
       if (
-        source?.tier === 2 &&
+        normalizedNameRecordTier(source?.tier) === "referenced" &&
         (typeof source.notes !== "string" || !source.notes.trim())
       ) {
         errors.push(
@@ -3292,6 +3396,17 @@ export function checkNameRecordModel(datasetRoot: string): ValidationResult {
   }
 
   return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * True when a source carries publishable authority — the current-vocabulary
+ * equivalent of the retired "Tier 1/2". `unverified` and the unadjudicated
+ * `needs_review` are deliberately excluded: both are legal standings that
+ * publish, neither can satisfy a gate asking for an authoritative citation.
+ */
+function isAuthoritativeTier(tier: unknown): boolean {
+  const normalized = normalizedNameRecordTier(tier);
+  return normalized === "official" || normalized === "referenced";
 }
 
 /**
@@ -4086,6 +4201,12 @@ async function main() {
   newChecks.push({
     name: "Source catalogue tiers",
     result: checkAuthorizedSourceTiers(datasetRoot),
+  });
+
+  console.log("Source identity – one title, one locator...");
+  newChecks.push({
+    name: "Source identity",
+    result: checkSourceIdentity(datasetRoot),
   });
 
   console.log("FR52 – Classification-tree integrity...");

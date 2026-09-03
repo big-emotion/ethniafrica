@@ -58,6 +58,15 @@ describe("ErrorPage ([lang]/error)", () => {
     const { container } = render(
       <ErrorPage error={mockError} reset={() => {}} />
     );
-    expect(container.textContent).not.toContain("!");
+
+    // The anecdote is drawn at random and is not "default copy": some autonyms
+    // carry a click consonant written "!" — ǃXóõ, !Xoon — and surfacing them
+    // exactly is the point of the corpus, not a tone slip. Asserting over the
+    // whole container made this test fail on whichever runs happened to draw
+    // one of those peoples.
+    const anecdote = screen.getByTestId("error-anecdote").textContent ?? "";
+    const defaultCopy = (container.textContent ?? "").replace(anecdote, "");
+
+    expect(defaultCopy).not.toContain("!");
   });
 });

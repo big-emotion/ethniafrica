@@ -19,10 +19,22 @@
     ]
   },
   "peoplesInvolved": [
-    { "id": "PPL_BAGANDA", "role": "origin" },
-    { "id": "PPL_SHONA", "role": "destination" },
-    { "id": "PPL_ZULU", "role": "destination" },
-    { "id": "PPL_XHOSA", "role": "destination" }
+    {
+      "id": "PPL_BAGANDA",
+      "role": "origin"
+    },
+    {
+      "id": "PPL_SHONA",
+      "role": "destination"
+    },
+    {
+      "id": "PPL_ZULU",
+      "role": "destination"
+    },
+    {
+      "id": "PPL_XHOSA",
+      "role": "destination"
+    }
   ],
   "content": {
     "summary": "Troisième phase de l'expansion bantoue : depuis la région des Grands Lacs, une dispersion vers le sud, à travers le plateau d'Afrique centrale et australe, atteint le KwaZulu-Natal (actuelle Afrique du Sud) vers 300 apr. J.-C., aux confins méridionaux de l'aire bantouphone.",
@@ -33,14 +45,14 @@
         "title": "The Bantu Expansion",
         "url": "https://doi.org/10.1093/acrefore/9780190277734.013.191",
         "year": 2018,
-        "tier": 2,
+        "tier": "referenced",
         "notes": "Bostoen, Oxford Research Encyclopedia of African History. Cité comme source académique primaire (synthèse de la chronologie de l'expansion, dont l'arrivée en Afrique australe) dans la page anglaise de Wikipédia « Bantu expansion »."
       },
       {
         "title": "Bantu expansion shows that habitat alters the route and pace of human dispersals",
         "url": "https://doi.org/10.1073/pnas.1503793112",
         "year": 2015,
-        "tier": 2,
+        "tier": "referenced",
         "notes": "Grollemund, Branford, Bostoen, Meade, Venditti & Pagel, Proceedings of the National Academy of Sciences 112(43). Référence confirmée dans la bibliographie de la page anglaise de Wikipédia « Bantu expansion »."
       }
     ]

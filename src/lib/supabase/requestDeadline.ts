@@ -1,3 +1,5 @@
+import { positiveIntFromEnv } from "@/lib/env";
+
 /**
  * A deadline on every request the server-side Supabase clients make.
  *
@@ -14,14 +16,21 @@
  * a slow database from taking the page down with it.
  */
 
+const DEFAULT_SUPABASE_REQUEST_TIMEOUT_MS = 10_000;
+
 /**
- * Ten seconds. A page of 500 ids comes back in tens of milliseconds and the
+ * Ten seconds by default, overridable with SUPABASE_REQUEST_TIMEOUT_MS —
+ * a deployment further from its database, or one behind a slower egress
+ * path, needs a different ceiling and should not need a rebuild to get one. A page of 500 ids comes back in tens of milliseconds and the
  * heaviest fiche query in hundreds, so this never fires against a healthy
  * database. It sits well under the two ceilings that matter downstream:
  * Next kills a static route at 60s, and the a11y run gives a navigation 30s.
  */
 // @req REQ-110
-export const SUPABASE_REQUEST_TIMEOUT_MS = 10_000;
+export const SUPABASE_REQUEST_TIMEOUT_MS = positiveIntFromEnv(
+  process.env.SUPABASE_REQUEST_TIMEOUT_MS,
+  DEFAULT_SUPABASE_REQUEST_TIMEOUT_MS
+);
 
 /**
  * Two minutes, for a batch run rather than a page.

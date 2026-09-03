@@ -18,8 +18,14 @@
     ]
   },
   "peoplesInvolved": [
-    { "id": "PPL_MATUMBI", "role": "resistance" },
-    { "id": "PPL_NGONI", "role": "resistance" }
+    {
+      "id": "PPL_MATUMBI",
+      "role": "resistance"
+    },
+    {
+      "id": "PPL_NGONI",
+      "role": "resistance"
+    }
   ],
   "content": {
     "summary": "Soulèvement armé de plusieurs peuples d'Afrique orientale allemande (1905-1907) contre la politique coloniale de culture forcée du coton, réprimé par une stratégie allemande de la terre brûlée.",
@@ -30,14 +36,14 @@
         "title": "General History of Africa, VII: Africa under Colonial Domination 1880-1935 (UNESCO, ed. A. Adu Boahen, 1985)",
         "url": "https://www.unesco.org/en/articles/general-history-africa-vii-africa-under-colonial-domination-1880-1935",
         "year": 1985,
-        "tier": 1,
+        "tier": "official",
         "notes": ""
       },
       {
         "title": "The Organization of the Maji Maji Rebellion (John Iliffe, Journal of African History, vol. 8, no. 3, 1967, pp. 495-512)",
         "url": "https://www.cambridge.org/core/journals/journal-of-african-history/article/organization-of-the-maji-maji-rebellion/7DD8298B261E754471EAD710BAEAFBF5",
         "year": 1967,
-        "tier": 2,
+        "tier": "referenced",
         "notes": "Vérifié via Wikipedia EN « Maji Maji Rebellion » et FR « Rébellion des Maji-Maji » ; source académique primaire (peer-reviewed) sur l'organisation du soulèvement."
       }
     ]

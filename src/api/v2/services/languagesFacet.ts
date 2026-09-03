@@ -1,6 +1,7 @@
 import { unstable_cache } from "next/cache";
 
 import { getCountryIndex } from "@/api/v2/services/countryService";
+import { logger } from "@/lib/api/logger";
 import { getLanguageRelations } from "@/lib/supabase/queries/afrik/languageFacet";
 import {
   listAfrikLanguages,
@@ -104,6 +105,17 @@ export const getLanguagePresence = unstable_cache(
         getLanguageRelations(),
         listAfrikLanguages({ page: 1, perPage: LANGUAGE_ROSTER_SIZE }),
       ]);
+
+    // A roster sized against the corpus is a guess with an expiry date. Say so
+    // when the corpus outgrows it, rather than dropping the overflow in the
+    // silence this constant exists to avoid in the first place.
+    if (roster.total > LANGUAGE_ROSTER_SIZE) {
+      logger.warn("Language roster truncated — raise LANGUAGE_ROSTER_SIZE", {
+        rosterSize: LANGUAGE_ROSTER_SIZE,
+        corpusTotal: roster.total,
+        dropped: roster.total - LANGUAGE_ROSTER_SIZE,
+      });
+    }
 
     return roster.languages.map((language) => ({
       id: language.id,

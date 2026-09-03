@@ -216,14 +216,6 @@ export interface HubModuleDefinition {
 export type HeroPreviewKind =
   "globe" | "game" | "migration-paths" | "family-crown";
 
-// @req REQ-115
-export const HERO_PREVIEW_KINDS: HeroPreviewKind[] = [
-  "globe",
-  "game",
-  "migration-paths",
-  "family-crown",
-];
-
 // @req REQ-114
 export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   // Pays opens Explorer. Of the four entry points it is the one a reader

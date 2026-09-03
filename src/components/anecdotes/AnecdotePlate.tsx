@@ -2,6 +2,12 @@ import type { DidYouKnowPlate } from "@/lib/home/didYouKnowIllustrations";
 
 export interface AnecdotePlateProps {
   plate: DidYouKnowPlate;
+  /**
+   * The host surface's own figure class, so the plate takes the same grid slot
+   * and the same side-alternation as a photographed card. Without it the home
+   * would lay every plate on the left while its photographs alternated.
+   */
+  className?: string;
 }
 
 /**
@@ -33,9 +39,12 @@ export interface AnecdotePlateProps {
  * card to a drawn one moves nothing on the page.
  */
 // @req REQ-113
-export function AnecdotePlate({ plate }: AnecdotePlateProps) {
+export function AnecdotePlate({ plate, className }: AnecdotePlateProps) {
   return (
-    <figure className="anecdote-plate" aria-label={plate.alt}>
+    <figure
+      className={className ? `anecdote-plate ${className}` : "anecdote-plate"}
+      aria-label={plate.alt}
+    >
       <div className="anecdote-plate-frame">
         <p className="anecdote-plate-given">{plate.given}</p>
 

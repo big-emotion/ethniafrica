@@ -20,9 +20,18 @@
     ]
   },
   "peoplesInvolved": [
-    { "id": "PPL_SWAHILI", "role": "origin" },
-    { "id": "PPL_SHIRAZI", "role": "origin" },
-    { "id": "PPL_COMORIEN", "role": "destination" }
+    {
+      "id": "PPL_SWAHILI",
+      "role": "origin"
+    },
+    {
+      "id": "PPL_SHIRAZI",
+      "role": "origin"
+    },
+    {
+      "id": "PPL_COMORIEN",
+      "role": "destination"
+    }
   ],
   "content": {
     "summary": "Réseau commercial reliant, du Ier au début du XVIe siècle, les cités-États swahilies de la côte est-africaine (Mombasa, Zanzibar, Kilwa, Sofala) aux réseaux d'échange de l'océan Indien (péninsule Arabique, Perse, Inde, Chine), avant la rupture provoquée par l'arrivée portugaise à partir de 1498.",
@@ -33,21 +42,21 @@
         "title": "Ruins of Kilwa Kisiwani and Ruins of Songo Mnara",
         "url": "https://whc.unesco.org/en/list/144/",
         "year": 1981,
-        "tier": 1,
+        "tier": "official",
         "notes": ""
       },
       {
         "title": "Kilwa Kisiwani and Songo Mnara",
         "url": "https://en.unesco.org/silkroad/silk-road-themes/underwater-heritage/kilwa-kisiwani-and-songo-mnara",
         "year": 2019,
-        "tier": 1,
+        "tier": "official",
         "notes": ""
       },
       {
         "title": "Africa, East: Swahili Coast",
         "url": "https://www.researchgate.net/publication/294121208_AFRICA_EAST_Swahili_Coast",
         "year": 2008,
-        "tier": 2,
+        "tier": "referenced",
         "notes": "LaViolette, in Encyclopedia of Archaeology (ed. D. M. Pearsall), Academic Press. Cité comme source archéologique primaire dans la page anglaise de Wikipédia « Swahili coast » ; le recours au Périple de la mer Érythrée et à Ibn Battuta comme textes fondateurs est corroboré par la page française « Côte swahilie »."
       }
     ]

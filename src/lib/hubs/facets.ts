@@ -188,10 +188,6 @@ export const getFacetFromRoute = (pathname: string): FacetKey | null => {
  * of the page above it, and the full title there reads as a fourth destination
  * again.
  */
-// @req REQ-114
-export const getFacetByPage = (page: PageType): FacetDefinition | null =>
-  FACETS.find((facet) => facet.page === page) ?? null;
-
 /**
  * A filter value the reader actually chose, or null.
  *

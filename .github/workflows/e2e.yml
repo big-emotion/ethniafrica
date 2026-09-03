@@ -44,17 +44,25 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      # Skip cleanly on forks / Dependabot PRs that cannot access the test
-      # Supabase secrets. When the secrets are set (i.e. on PRs from the same
-      # repo) the gate is enforced — no continue-on-error masks failures.
+      # A fork or bot PR genuinely cannot read repository secrets, so it skips.
+      # Anywhere else, absent secrets mean the suite cannot run — and a job that
+      # reports success without running 17 spec files is worse than a red one,
+      # because it is budgeted for as though it works. This step used to treat
+      # both cases alike and concluded success on every run in the repo's history.
       - name: Check required secrets are present
         id: secrets
+        env:
+          IS_FORK_PR: ${{ github.event.pull_request.head.repo.fork || false }}
+          IS_BOT: ${{ github.actor == 'dependabot[bot]' }}
         run: |
           if [ -n "${{ secrets.TEST_SUPABASE_URL }}" ] && [ -n "${{ secrets.TEST_SUPABASE_ANON_KEY }}" ]; then
             echo "present=true" >> "$GITHUB_OUTPUT"
-          else
+          elif [ "$IS_FORK_PR" = "true" ] || [ "$IS_BOT" = "true" ]; then
             echo "present=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::Skipping Playwright E2E — TEST_SUPABASE_URL / TEST_SUPABASE_ANON_KEY secrets not available (fork, Dependabot PR, or unconfigured repo). Configure these repo secrets to enable."
+            echo "::notice::Skipping Playwright E2E — a fork or bot PR cannot read repository secrets."
+          else
+            echo "::error::TEST_SUPABASE_URL / TEST_SUPABASE_ANON_KEY are not configured, so the Playwright suite cannot run. Set both repository secrets to arm this gate; until then it fails rather than reporting a success it has not earned."
+            exit 1
           fi
 
       - name: Install Playwright browsers

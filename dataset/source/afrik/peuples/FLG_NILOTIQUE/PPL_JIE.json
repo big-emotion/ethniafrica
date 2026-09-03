@@ -115,8 +115,8 @@
       },
       {
         "title": "Uganda Bureau of Statistics — National Population and Housing Census 2014",
-        "url": null,
-        "tier": "needs_review",
+        "url": "https://www.ubos.org/",
+        "tier": "official",
         "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
       }
     ]

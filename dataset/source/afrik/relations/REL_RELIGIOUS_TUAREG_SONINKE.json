@@ -21,7 +21,7 @@
       "author": "I. Hrbek et J. Devisse (chapitre) ; M. El Fasi et I. Hrbek (direction du volume) ; UNESCO",
       "year": 1988,
       "url": "https://archive.org/details/unesco_general_history_africa_iii",
-      "tier": 1,
+      "tier": "official",
       "notes": "Histoire générale de l'Afrique de l'UNESCO, vol. III. Le lien direct unesdoc.unesco.org renvoie une erreur 403 (blocage automatisé) dans cet environnement ; la copie Internet Archive de la même publication officielle de l'UNESCO a été utilisée et confirmée accessible. Le chapitre couvre la conquête/réforme almoravide et son effet islamisant sur l'empire du Ghana dirigé par les Soninké."
     },
     {
@@ -29,7 +29,7 @@
       "author": "Nehemia Levtzion",
       "year": 1973,
       "url": "https://sahistory.org.za/sites/default/files/archive-files3/nehemia_levtzion_ancient_ghana_and_malibook4you.pdf",
-      "tier": 2,
+      "tier": "referenced",
       "notes": "Vérifié via Wikipedia EN « Ghana Empire » et FR « Empire du Ghana ». Monographie académique (Methuen, 1973 ; réimpr. Africana Publishing, 1980) comportant des chapitres dédiés au « Royaume soninké » et à « L'islam dans les royaumes soudanais », couvrant l'islamisation de l'élite soninké par le contact commercial transsaharien avec les Berbères/Touaregs."
     }
   ]
