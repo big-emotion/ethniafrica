@@ -1,4 +1,4 @@
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import {
   existsSync,
   mkdirSync,
@@ -30,12 +30,27 @@ function git(cwd: string, ...args: string[]): string {
 function runSetup(
   cwd: string,
   options: { args?: string[]; stdin?: string } = {}
-): string {
-  return execFileSync("bash", [SCRIPT, ...(options.args ?? [])], {
+): { stdout: string; stderr: string } {
+  const run = spawnSync("bash", [SCRIPT, ...(options.args ?? [])], {
     cwd,
     encoding: "utf-8",
     input: options.stdin ?? "",
   });
+  if (run.status !== 0) {
+    throw new Error(`setup-worktree.sh exited ${run.status}: ${run.stderr}`);
+  }
+  return { stdout: run.stdout, stderr: run.stderr };
+}
+
+/** A bare repo wired up as `origin`, so `origin/HEAD` becomes meaningful. */
+function publishToOrigin(defaultBranch: string): void {
+  const bare = path.join(sandbox, "origin.git");
+  execFileSync("git", ["init", "--bare", "--initial-branch=main", bare]);
+  git(mainCheckout, "remote", "add", "origin", bare);
+  git(mainCheckout, "push", "-q", "origin", "main");
+  git(mainCheckout, "branch", "recette");
+  git(mainCheckout, "push", "-q", "origin", "recette");
+  git(mainCheckout, "remote", "set-head", "origin", defaultBranch);
 }
 
 function addWorktree(name: string): string {
@@ -112,9 +127,9 @@ describe("setup-worktree.sh", () => {
 
   // @req REQ-085
   it("does nothing in the main checkout, which owns the real node_modules", () => {
-    const output = runSetup(mainCheckout);
+    const { stdout } = runSetup(mainCheckout);
 
-    expect(output).toMatch(/not a linked worktree/i);
+    expect(stdout).toMatch(/not a linked worktree/i);
     expect(
       existsSync(path.join(mainCheckout, "node_modules", "sentinel"))
     ).toBe(false);
@@ -134,6 +149,27 @@ describe("setup-worktree.sh", () => {
     expect(
       existsSync(path.join(worktree, "node_modules", "next", "package.json"))
     ).toBe(true);
+  });
+
+  // @req REQ-085
+  it("warns when the clone still branches new worktrees off main", () => {
+    publishToOrigin("main");
+    const worktree = addWorktree("feature");
+
+    const { stderr } = runSetup(worktree);
+
+    expect(stderr).toMatch(/origin\/main/);
+    expect(stderr).toMatch(/remote set-head origin recette/);
+  });
+
+  // @req REQ-085
+  it("stays quiet once the clone points at the integration branch", () => {
+    publishToOrigin("recette");
+    const worktree = addWorktree("feature");
+
+    const { stderr } = runSetup(worktree);
+
+    expect(stderr).toBe("");
   });
 
   // @req REQ-085

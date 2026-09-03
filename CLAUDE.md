@@ -231,6 +231,14 @@ So those three may carry no repository path, no JSON field path, no raw `PPL_`/`
 - **One worktree per agent session.** Any agent task that writes to the repo — a background job, a Ferry run, `/ethniafrica-ticket`, a hand-launched sub-agent — must first isolate itself in its own git worktree (`EnterWorktree`, or `git worktree add .claude/worktrees/<name>`), never edit in the shared checkout. Parallel sessions sharing one working copy overwrite each other's edits and switch branches under each other. Read-only work — search, audit, answering a question — stays in place. Commit and push before the session ends: the worktree can be deleted with it.
 - **A fresh worktree is not a working environment until it is provisioned.** `npm run worktree:setup` (i.e. `scripts/setup-worktree.sh`) clones `node_modules` from the main checkout, copies `.env.local`, and points `core.hooksPath` back at husky. A `PostToolUse` hook on `EnterWorktree` runs it automatically and `.worktreeinclude` carries the env files, so a Claude-created worktree needs nothing; **a worktree created by hand with `git worktree add` must run it explicitly.** Skipping it does not fail loudly: `vitest`, `tsc` and `eslint` resolve upward into the main checkout and pass — including on a dependency the worktree never installs, which is how a local green ships a CI red. `next dev` and `next build` are the ones that refuse outright, because `turbopack.root` is the worktree and a symlinked `node_modules` still resolves outside it.
 - `recette` is the integration branch; `main` is the base. **`recette` is protected** — always branch and open a PR, never push directly.
+- **A new clone branches worktrees off `main`, which is the wrong base here.** `EnterWorktree` and agent isolation resolve their base from `refs/remotes/origin/HEAD`, which a fresh `git clone` sets to GitHub's default branch. Point it at the integration branch once per clone:
+
+  ```bash
+  git remote set-head origin recette
+  ```
+
+  It is local git state, so it cannot be committed and every new clone needs it again. Without it a worktree starts dozens of commits behind and its PR carries the whole `main → recette` delta. Verify with `git symbolic-ref --short refs/remotes/origin/HEAD`; the `worktree.baseRef` setting only chooses between that ref (`fresh`, the default) and the local HEAD (`head`) — it cannot name a branch.
+
 - `recette ↔ main` sync PRs must use a **merge commit**, not a squash; squashing has broken the ancestry before.
 - Conventional commits (commitlint on `commit-msg`). Pre-commit runs `type-check` + `lint-staged`.
 - Never add `Co-Authored-By` trailers.

@@ -37,6 +37,7 @@
 set -euo pipefail
 
 ENV_FILES=(".env.local" ".env")
+INTEGRATION_BRANCH="recette"
 
 target="${1:-}"
 
@@ -94,6 +95,17 @@ for env_file in "${ENV_FILES[@]}"; do
     echo "setup-worktree: copied $env_file"
   fi
 done
+
+# `EnterWorktree` resolves its base from refs/remotes/origin/HEAD, which a
+# fresh clone sets to GitHub's default branch — main, not the integration
+# branch. Local git state, so it cannot be committed and every clone drifts
+# back. Warn rather than fix: this runs from a hook, and silently rewriting a
+# shared ref out from under the developer is worse than saying so.
+default_head="$(git -C "$main_checkout" symbolic-ref -q --short refs/remotes/origin/HEAD || true)"
+if [[ -n "$default_head" && "$default_head" != "origin/$INTEGRATION_BRANCH" ]]; then
+  echo "setup-worktree: warning — new worktrees branch off $default_head, not origin/$INTEGRATION_BRANCH" >&2
+  echo "setup-worktree: fix it once per clone with: git -C $main_checkout remote set-head origin $INTEGRATION_BRANCH" >&2
+fi
 
 hooks_path="$(git -C "$main_checkout" config --get core.hooksPath || true)"
 if [[ -n "$hooks_path" ]]; then
