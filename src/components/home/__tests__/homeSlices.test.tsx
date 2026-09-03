@@ -41,6 +41,46 @@ const SECOND_FACT: DidYouKnowFact = {
 };
 
 describe("DidYouKnow — the anecdote that leads somewhere (REQ-113)", () => {
+  /**
+   * Half the bank illustrates with a drawn plate rather than a photograph, and
+   * the home rendered nothing at all for those: 34 of 67 facts left their image
+   * column empty next to a full column of prose. Asserted per kind, because the
+   * defect was invisible in any draw that happened to land on a photograph.
+   */
+  // @req REQ-113
+  it("illustrates a fact whichever register its picture comes from", () => {
+    const photographed = { ...FACT, id: "monrovia" };
+    const drawn = { ...FACT, id: "iteso-bakedi" };
+
+    const { container } = render(
+      <DidYouKnow language="fr" facts={[photographed, drawn]} />
+    );
+
+    const cards = container.querySelectorAll(".home-dyk-card");
+    expect(cards).toHaveLength(2);
+    for (const card of cards) {
+      expect(card.querySelector(".home-dyk-figure")).not.toBeNull();
+    }
+  });
+
+  // @req REQ-113
+  it("alternates which side the illustration takes", () => {
+    const { container } = render(
+      <DidYouKnow
+        language="fr"
+        facts={[
+          { ...FACT, id: "monrovia" },
+          { ...FACT, id: "iteso-bakedi" },
+        ]}
+      />
+    );
+
+    expect(
+      container.querySelector(".home-dyk-card--image-start")
+    ).not.toBeNull();
+    expect(container.querySelector(".home-dyk-card--image-end")).not.toBeNull();
+  });
+
   // @req REQ-113
   it("routes each chip to its own kind of fiche", () => {
     render(<DidYouKnow language="fr" facts={[FACT]} />);

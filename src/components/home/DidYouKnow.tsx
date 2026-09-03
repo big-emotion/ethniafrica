@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { AnecdotePlate } from "@/components/anecdotes/AnecdotePlate";
 import { DidYouKnowMotif } from "@/components/home/DidYouKnowMotif";
 import { SectionHeading } from "@/components/home/SectionHeading";
 import { ActionLink } from "@/components/ui/ActionLink";
@@ -81,6 +82,15 @@ function HomeFact({ fact, imageSide, language, priority }: HomeFactProps) {
             {illustration.credit}
           </figcaption>
         </figure>
+      ) : null}
+
+      {/* Half the bank is a drawn plate rather than a photograph, and the home
+          rendered nothing for those — 34 of 67 facts left their image column
+          empty, which is the one composition the brand charter §8.2 refuses.
+          The anecdotes page has always drawn them; this is the same figure, so
+          turning from a photographed card to a drawn one moves nothing. */}
+      {illustration?.kind === "plate" ? (
+        <AnecdotePlate plate={illustration} className="home-dyk-figure" />
       ) : null}
 
       <div className="home-dyk-text">
