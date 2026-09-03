@@ -7,7 +7,7 @@ import { createReadStream, existsSync } from "fs";
 import { stat } from "fs/promises";
 import { join, extname, resolve } from "path";
 import { LIVE_ROUTES } from "./a11yRoutes";
-import { sweepInParallel } from "./lib/parallelSweep";
+import { sweepInParallel } from "@/lib/parallelSweep";
 
 const STORYBOOK_STATIC_DIR = resolve(__dirname, "../storybook-static");
 const STORYBOOK_PORT = 6006;

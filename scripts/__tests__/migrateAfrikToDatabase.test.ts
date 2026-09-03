@@ -34,6 +34,11 @@ import {
   loadAllMigrationFiles,
   loadMigrations,
 } from "@/lib/afrik/loaders/migrationJsonLoader";
+import {
+  emptyProvenanceReport,
+  writeFicheProvenance,
+} from "@/lib/afrik/loaders/provenanceWriter";
+import { classificationLabels } from "@/lib/translations";
 import { AFRIK_RECETTE_SUPABASE_URL } from "../lib/afrikSyncTarget";
 import { migrateAfrikToDatabase } from "../migrateAfrikToDatabase";
 import type { LanguageFamily, People } from "@/types/afrik";
@@ -54,6 +59,12 @@ vi.mock("@/lib/afrik/loaders/personJsonLoader");
 vi.mock("@/lib/afrik/loaders/relationJsonLoader");
 vi.mock("@/lib/afrik/loaders/migrationJsonLoader");
 vi.mock("@/lib/supabase/admin");
+// Mocked at a real seam rather than faked: `writeFicheProvenance` owns the
+// sources → fiche_revisions → assertions fabric and carries its own tests for
+// the idempotence rules. What belongs to this file is the decision of *when* a
+// classification assertion is minted and whether the column is written after —
+// which a three-table PostgREST double would obscure rather than prove.
+vi.mock("@/lib/afrik/loaders/provenanceWriter");
 
 function emptyLanguageReport(): LanguageLoadReport {
   return {
@@ -223,6 +234,19 @@ describe("migrateAfrikToDatabase", () => {
         familyId: peopleFixture.languageFamilyId,
         nameProvenance: "derived" as const,
       }))
+    );
+    vi.mocked(emptyProvenanceReport).mockImplementation(() => ({
+      total: 0,
+      assertionsWritten: 0,
+      skippedWithoutSources: 0,
+      errors: [],
+    }));
+    // The writer succeeds by default; the tests that care about a refusal say so.
+    vi.mocked(writeFicheProvenance).mockImplementation(
+      async (_client, _fiche, report) => {
+        report.total += 1;
+        report.assertionsWritten += 1;
+      }
     );
     vi.mocked(emptyLanguageLoadReport).mockImplementation(emptyLanguageReport);
     vi.mocked(emptyAppellationLoadReport).mockImplementation(
@@ -625,10 +649,71 @@ describe("migrateAfrikToDatabase", () => {
     expect(report.verification.after?.hasDrift).toBe(false);
   });
 
+  // This replaces a test that asserted the opposite, and the reversal is the
+  // point of the change. Declining to overwrite a value a moderator set is
+  // right; declining to fill a column nobody has set is not — it left the
+  // corpus's own classification invisible on 795 of 800 peoples. The write is
+  // still gated on AR3, so the assertion has to be minted first.
   // @req REQ-032
-  it("synchronizes content while preserving and reporting protected classification drift", async () => {
-    const integrityError =
-      'Integrity check failed: UPDATE requires an assertion row for field_path "classification_status"';
+  it("mints a sourced assertion, then fills a classification the database left empty", async () => {
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          {
+            id: afroasiaticFamily.id,
+            classification_status: familyFixture.classificationStatus ?? null,
+            content: {},
+          },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [
+          { id: betePeople.id, classification_status: null, content: {} },
+        ],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    const [minted] = vi
+      .mocked(writeFicheProvenance)
+      .mock.calls.filter(([, fiche]) => fiche.entityId === betePeople.id);
+
+    expect(minted?.[1]).toMatchObject({
+      entityType: "people",
+      entityId: betePeople.id,
+      targets: [
+        {
+          fieldPath: "classification_status",
+          // The sentence the reader meets under the badge, not a column name.
+          statement:
+            classificationLabels[
+              peopleFixture.classificationStatus as "colonial-legacy"
+            ].tooltip,
+        },
+      ],
+    });
+
+    const peopleWrites = database.operations.filter(
+      ({ table }) => table === "afrik_peoples"
+    );
+    expect(peopleWrites).toHaveLength(1);
+    expect(peopleWrites[0].row.classification_status).toBe(
+      peopleFixture.classificationStatus
+    );
+    expect(report.peoples.errors).toEqual([]);
+    // Filled, so no longer drift the sync declined to resolve.
+    expect(report.protectedDrift.peoples).toEqual([]);
+  });
+
+  // The guarantee that survives the reversal: a value already in the database
+  // is a decision someone took, and the corpus does not get to overrule it.
+  // @req REQ-032
+  it("never overwrites a classification the database already carries, and reports the disagreement", async () => {
     const database = useSupabaseDouble({
       rows: {
         afrik_language_families: [
@@ -642,22 +727,11 @@ describe("migrateAfrikToDatabase", () => {
         afrik_peoples: [
           {
             id: betePeople.id,
-            classification_status: null,
+            classification_status: "consensual",
             content: {},
           },
         ],
         afrik_countries: [{ id: coteDIvoire.id, content: {} }],
-      },
-      writeError: (operation, existingRow) => {
-        if (
-          existingRow &&
-          Object.hasOwn(operation.row, "classification_status") &&
-          operation.row.classification_status !==
-            existingRow.classification_status
-        ) {
-          return { message: integrityError };
-        }
-        return null;
       },
     });
 
@@ -670,10 +744,115 @@ describe("migrateAfrikToDatabase", () => {
     const peopleWrites = database.operations.filter(
       ({ table }) => table === "afrik_peoples"
     );
-    expect(peopleWrites).toHaveLength(1);
     expect(peopleWrites[0].row).not.toHaveProperty("classification_status");
-    expect(report.peoples.inserted).toBe(1);
-    expect(report.peoples.errors).toEqual([]);
+    expect(report.protectedDrift.peoples).toEqual([
+      {
+        id: betePeople.id,
+        field: "classification_status",
+        databaseStatus: "consensual",
+        sourceStatus: peopleFixture.classificationStatus,
+      },
+    ]);
+    expect(
+      vi
+        .mocked(writeFicheProvenance)
+        .mock.calls.filter(([, fiche]) => fiche.entityId === betePeople.id)
+    ).toEqual([]);
+  });
+
+  // The drift list is pruned once, from a set the concurrent lanes only add to.
+  // Reassigning `protectedDrift.peoples` per entity after an await would let one
+  // lane's read-modify-write restore the entry another lane had just removed —
+  // so this drives two entities through at once, one fillable and one protected,
+  // and insists the outcome tells them apart.
+  // @req REQ-032
+  it("prunes only the entities it filled when several are written at once", async () => {
+    const filledPeople = {
+      ...peopleFixture,
+      id: "PPL_FILLABLE",
+    } as People;
+    vi.mocked(loadAllPeoples).mockResolvedValue([peopleFixture, filledPeople]);
+
+    useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          {
+            id: afroasiaticFamily.id,
+            classification_status: familyFixture.classificationStatus ?? null,
+            content: {},
+          },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [
+          // Already decided by a human: must survive the prune.
+          {
+            id: betePeople.id,
+            classification_status: "consensual",
+            content: {},
+          },
+          // Empty: must be filled and dropped from the list.
+          { id: "PPL_FILLABLE", classification_status: null, content: {} },
+        ],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    expect(report.protectedDrift.peoples).toEqual([
+      {
+        id: betePeople.id,
+        field: "classification_status",
+        databaseStatus: "consensual",
+        sourceStatus: peopleFixture.classificationStatus,
+      },
+    ]);
+  });
+
+  // A fiche citing nothing earns no assertion — the writer refuses, and rightly:
+  // an assertion with an empty source list would raise the subject's confidence
+  // for having claimed something. The column then stays empty rather than
+  // arriving unsourced, and the fiche is named so a curator can source it.
+  // @req REQ-032
+  it("leaves the classification empty when the fiche earns no assertion", async () => {
+    vi.mocked(writeFicheProvenance).mockImplementation(
+      async (_client, _fiche, report) => {
+        report.total += 1;
+        report.skippedWithoutSources += 1;
+      }
+    );
+
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          {
+            id: afroasiaticFamily.id,
+            classification_status: familyFixture.classificationStatus ?? null,
+            content: {},
+          },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [
+          { id: betePeople.id, classification_status: null, content: {} },
+        ],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    const peopleWrites = database.operations.filter(
+      ({ table }) => table === "afrik_peoples"
+    );
+    expect(peopleWrites[0].row).not.toHaveProperty("classification_status");
     expect(report.protectedDrift.peoples).toEqual([
       {
         id: betePeople.id,
@@ -682,7 +861,6 @@ describe("migrateAfrikToDatabase", () => {
         sourceStatus: peopleFixture.classificationStatus,
       },
     ]);
-    expect(report.verification.after?.peoples.stale).toEqual([]);
   });
 
   // @req REQ-032

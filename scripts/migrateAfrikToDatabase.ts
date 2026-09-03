@@ -62,6 +62,33 @@ import {
   type AfrikSyncTargetInput,
 } from "./lib/afrikSyncTarget";
 import { scanCorpusOrphans } from "./lib/afrikCorpusOrphans";
+import {
+  CLASSIFICATION_FIELD_PATH,
+  classificationStatement,
+} from "./lib/classificationAssertion";
+import {
+  emptyProvenanceReport,
+  writeFicheProvenance,
+} from "@/lib/afrik/loaders/provenanceWriter";
+import { sweepInParallel } from "@/lib/parallelSweep";
+
+/**
+ * How many entities are written at once by the two upsert loops.
+ *
+ * Filling `classification_status` costs each of the 479 affected entities a
+ * provenance write on top of its own row — sources, a revision, the assertion
+ * and a confidence recompute. Sequentially that is several thousand extra
+ * requests on the first load after this change, on a job already close to its
+ * ninety-minute ceiling.
+ *
+ * The writer upserts sources one row per statement, so a transaction never
+ * holds two source locks and concurrent entities cannot deadlock over a shared
+ * citation — the reason the appellation stage needed a sort here and this one
+ * does not.
+ *
+ * @req REQ-032
+ */
+const ENTITY_LANES = 8;
 import { chunk, fetchAllPages } from "./lib/supabasePaging";
 
 interface MigrationSectionReport {
@@ -147,7 +174,7 @@ function emptyOrphanReport(): CorpusOrphanReport {
   return { orphans: [], refusal: null, deleted: 0 };
 }
 
-function createMigrationReport(): MigrationReport {
+export function emptyMigrationReport(): MigrationReport {
   return {
     languageFamilies: { total: 0, inserted: 0, errors: [] },
     languages: emptyLanguageLoadReport(),
@@ -297,6 +324,71 @@ async function readClassificationStatuses(
   return statuses;
 }
 
+/**
+ * Mint the sourced assertion AR3 requires, and say whether the column may now
+ * be written.
+ *
+ * `enforce_assertion_required` refuses any UPDATE that changes
+ * `classification_status` unless `assertions` already covers that field path
+ * for the entity. The loader used to answer by never writing the column, which
+ * honoured the rule and lost the corpus's own classification on 795 of 800
+ * peoples. This answers it the way the trigger's own hint asks: insert the
+ * assertion first, citing the sources the fiche already carries — all 460
+ * fiches declaring `contested` or `colonial-legacy` carry at least two.
+ *
+ * A false return is not an error. The shared writer refuses a fiche citing
+ * nothing, because an assertion with an empty source list would raise the
+ * subject's confidence for the mere act of claiming something. The column then
+ * stays empty rather than arriving unsourced, and `protectedDrift` still names
+ * the fiche so a curator can source it.
+ */
+async function ensureClassificationAssertion(
+  supabase: AdminClient,
+  entityType: "people" | "language_family",
+  entityId: string,
+  status: unknown,
+  snapshot: unknown,
+  rawSources: unknown
+): Promise<boolean> {
+  const statement = classificationStatement(status);
+  if (!statement) {
+    return false;
+  }
+
+  const provenance = emptyProvenanceReport();
+  await writeFicheProvenance(
+    supabase,
+    {
+      entityType,
+      entityId,
+      snapshot,
+      rawSources,
+      targets: [{ fieldPath: CLASSIFICATION_FIELD_PATH, statement }],
+    },
+    provenance
+  );
+
+  return provenance.assertionsWritten > 0 && provenance.errors.length === 0;
+}
+
+/**
+ * Drop the entities the sync resolved from the protected-drift list.
+ *
+ * The list is computed before the writes so a preview can report it, and an
+ * entity the load then fills is no longer drift the sync declined.
+ *
+ * Pruned once, from a set the lanes only ever add to, rather than reassigned
+ * per entity. `drift = drift.filter(...)` after an `await` is a
+ * read-modify-write: two lanes would read the same array and the second write
+ * would silently restore the entry the first had removed.
+ */
+function forgetResolvedDrift(
+  drift: ProtectedClassificationDrift[],
+  resolved: Set<string>
+): ProtectedClassificationDrift[] {
+  return drift.filter((entry) => !resolved.has(entry.id));
+}
+
 function findProtectedClassificationDrift(
   records: Array<{ id: string; classificationStatus?: unknown }>,
   existingStatuses: Map<string, unknown>
@@ -329,16 +421,34 @@ async function upsertLanguageFamilies(
   existingStatuses: Map<string, unknown>,
   report: MigrationReport
 ): Promise<void> {
-  for (const family of languageFamilies) {
+  const resolved = new Set<string>();
+
+  await sweepInParallel(languageFamilies, ENTITY_LANES, async (family) => {
     const classificationStatus = family.classificationStatus ?? null;
-    const exists = existingStatuses.has(family.id);
+    const databaseStatus = existingStatuses.has(family.id)
+      ? (existingStatuses.get(family.id) ?? null)
+      : null;
+    const mayWriteClassification =
+      classificationStatus !== null &&
+      databaseStatus === null &&
+      (await ensureClassificationAssertion(
+        supabase,
+        "language_family",
+        family.id,
+        classificationStatus,
+        family.content,
+        family.content?.sources
+      ));
+
     try {
       const { error } = await supabase.from("afrik_language_families").upsert(
         {
           id: family.id,
           name_fr: family.nameFr,
           name_en: family.nameEn ?? null,
-          ...(exists ? {} : { classification_status: classificationStatus }),
+          ...(mayWriteClassification
+            ? { classification_status: classificationStatus }
+            : {}),
           content: family.content,
           updated_at: new Date().toISOString(),
         },
@@ -349,13 +459,22 @@ async function upsertLanguageFamilies(
         report.languageFamilies.errors.push(`${family.id}: ${error.message}`);
       } else {
         report.languageFamilies.inserted += 1;
+        if (mayWriteClassification) {
+          resolved.add(family.id);
+        }
       }
     } catch (error) {
       report.languageFamilies.errors.push(
         `${family.id}: ${errorMessage(error)}`
       );
     }
-  }
+  });
+
+  report.languageFamilies.errors.sort();
+  report.protectedDrift.languageFamilies = forgetResolvedDrift(
+    report.protectedDrift.languageFamilies,
+    resolved
+  );
 }
 
 async function upsertPeoples(
@@ -365,23 +484,44 @@ async function upsertPeoples(
   existingStatuses: Map<string, unknown>,
   report: MigrationReport
 ): Promise<void> {
-  for (const people of peoples) {
+  const resolved = new Set<string>();
+
+  await sweepInParallel(peoples, ENTITY_LANES, async (people) => {
     if (!validFamilyIds.has(people.languageFamilyId)) {
       report.peoples.errors.push(
         `${people.id}: Language family ${people.languageFamilyId} does not exist in database`
       );
-      continue;
+      return;
     }
 
     const classificationStatus = people.classificationStatus ?? null;
-    const exists = existingStatuses.has(people.id);
+    const databaseStatus = existingStatuses.has(people.id)
+      ? (existingStatuses.get(people.id) ?? null)
+      : null;
+    // One rule for both tables: a classification is written only when an
+    // assertion backs it, and never over a value the database already carries —
+    // that disagreement is a moderation call, and it stays in protectedDrift.
+    const mayWriteClassification =
+      classificationStatus !== null &&
+      databaseStatus === null &&
+      (await ensureClassificationAssertion(
+        supabase,
+        "people",
+        people.id,
+        classificationStatus,
+        people.content,
+        people.content?.sources
+      ));
+
     try {
       const { error } = await supabase.from("afrik_peoples").upsert(
         {
           id: people.id,
           name_main: people.nameMain,
           language_family_id: people.languageFamilyId,
-          ...(exists ? {} : { classification_status: classificationStatus }),
+          ...(mayWriteClassification
+            ? { classification_status: classificationStatus }
+            : {}),
           content: people.content,
           spelling_aliases: people.content.appellations?.spellingAliases ?? [],
           updated_at: new Date().toISOString(),
@@ -393,11 +533,20 @@ async function upsertPeoples(
         report.peoples.errors.push(`${people.id}: ${error.message}`);
       } else {
         report.peoples.inserted += 1;
+        if (mayWriteClassification) {
+          resolved.add(people.id);
+        }
       }
     } catch (error) {
       report.peoples.errors.push(`${people.id}: ${errorMessage(error)}`);
     }
-  }
+  });
+
+  report.peoples.errors.sort();
+  report.protectedDrift.peoples = forgetResolvedDrift(
+    report.protectedDrift.peoples,
+    resolved
+  );
 }
 
 async function upsertCountries(
@@ -686,26 +835,85 @@ function countRelations(peoples: People[]): number {
   );
 }
 
-function hasErrors(report: MigrationReport): boolean {
-  return (
-    report.languageFamilies.errors.length > 0 ||
-    report.languages.errors.length > 0 ||
-    report.peoples.errors.length > 0 ||
-    report.peopleLanguages.errors.length > 0 ||
-    report.countries.errors.length > 0 ||
-    report.relations.errors.length > 0 ||
-    report.peopleRelations.errors.length > 0 ||
-    report.migrations.errors.length > 0 ||
-    report.names.errors.length > 0 ||
-    report.appellations.errors.length > 0 ||
-    report.persons.errors.length > 0 ||
-    report.patronymes.errors.length > 0 ||
-    // A refusal is a red run on purpose: the database and the corpus disagree
-    // by more than the sync dares resolve on its own, and a green board would
-    // bury that.
-    Object.values(report.corpusOrphans).some((table) => table.refusal) ||
-    report.verification.errors.length > 0
+/**
+ * Stages whose failure means the load did not deliver the corpus: the entity
+ * backbone every other row references, plus the post-load drift check. One
+ * error here and the database is in a shape nothing downstream can trust.
+ */
+const STRUCTURAL_STAGES = [
+  "languageFamilies",
+  "languages",
+  "peoples",
+  "peopleLanguages",
+  "countries",
+  "patronymes",
+] as const;
+
+/**
+ * Stages that carry per-record editorial content. A malformed appellation or a
+ * relation naming a people that does not exist is a defect in one fiche, not a
+ * broken pipeline — the other ~9 200 records loaded regardless.
+ */
+const EDITORIAL_STAGES = [
+  "relations",
+  "peopleRelations",
+  "migrations",
+  "names",
+  "appellations",
+  "persons",
+] as const;
+
+/**
+ * How many per-record editorial defects the corpus may carry before a load goes
+ * red. Measured at 52 on 2026-09-03 (51 appellations + 1 relation).
+ *
+ * A **descending** ratchet, like `checkSourceTierCoverage.ts`: the tail may
+ * shrink freely, and lowering this line is the point. It may never grow back
+ * unnoticed, which is what an uncapped tolerance would allow.
+ */
+export const EDITORIAL_DEFECT_CEILING = 52;
+
+export interface SyncOutcome {
+  /** Structural stages that lost at least one record, in report order. */
+  structuralFailures: string[];
+  /** Per-record editorial defects across every editorial stage. */
+  editorialDefects: number;
+  failed: boolean;
+}
+
+/**
+ * Split a finished load into "the corpus did not land" and "some fiches need a
+ * curator", so seventeen consecutive reds stop meaning the same thing as one
+ * genuine outage.
+ */
+export function classifySyncOutcome(report: MigrationReport): SyncOutcome {
+  const structuralFailures = STRUCTURAL_STAGES.filter(
+    (stage) => report[stage].errors.length > 0
+  ) as string[];
+
+  // A refusal is a red run on purpose: the database and the corpus disagree by
+  // more than the sync dares resolve on its own, and a green board would bury
+  // that.
+  if (Object.values(report.corpusOrphans).some((table) => table.refusal)) {
+    structuralFailures.push("corpusOrphans");
+  }
+
+  if (report.verification.errors.length > 0) {
+    structuralFailures.push("verification");
+  }
+
+  const editorialDefects = EDITORIAL_STAGES.reduce(
+    (count, stage) => count + report[stage].errors.length,
+    0
   );
+
+  return {
+    structuralFailures,
+    editorialDefects,
+    failed:
+      structuralFailures.length > 0 ||
+      editorialDefects > EDITORIAL_DEFECT_CEILING,
+  };
 }
 
 function saveErrorReport(report: MigrationReport): string {
@@ -736,7 +944,7 @@ export async function migrateAfrikToDatabase(
   const supabase = createAdminClient({
     requestTimeoutMs: SUPABASE_BATCH_REQUEST_TIMEOUT_MS,
   });
-  const report = createMigrationReport();
+  const report = emptyMigrationReport();
 
   const languageFamilies = await loadAllLanguageFamilies();
   report.languageFamilies.total = languageFamilies.length;
@@ -905,10 +1113,32 @@ export async function migrateAfrikToDatabase(
     );
   }
 
-  if (hasErrors(report) && writeErrorReport) {
-    logger.warn("AFRIK synchronization completed with errors", {
+  const outcome = classifySyncOutcome(report);
+
+  // The report is saved whenever anything went wrong, including a tail that is
+  // within the ceiling: a defect nobody can read is a defect nobody fixes. Only
+  // the severity of the message changes with `outcome.failed`.
+  if (
+    (outcome.structuralFailures.length > 0 || outcome.editorialDefects > 0) &&
+    writeErrorReport
+  ) {
+    const detail = {
+      structuralFailures: outcome.structuralFailures,
+      editorialDefects: outcome.editorialDefects,
+      editorialDefectCeiling: EDITORIAL_DEFECT_CEILING,
       errorReport: saveErrorReport(report),
-    });
+    };
+
+    if (outcome.failed) {
+      logger.warn("AFRIK synchronization failed", detail);
+    } else {
+      // Deliberately not an error: every structural stage landed. These are
+      // fiches for a curator, and the load itself is publishable.
+      logger.warn(
+        "AFRIK synchronization completed — the corpus landed, some fiches need a curator",
+        detail
+      );
+    }
   } else {
     logger.info("AFRIK synchronization completed", {
       target: syncTarget.environment,
@@ -960,7 +1190,7 @@ if (require.main === module) {
     },
   })
     .then((report) => {
-      process.exitCode = hasErrors(report) ? 1 : 0;
+      process.exitCode = classifySyncOutcome(report).failed ? 1 : 0;
     })
     .catch((error) => {
       logger.error("AFRIK synchronization failed", error);
