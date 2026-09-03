@@ -217,7 +217,13 @@ jobs:
           echo "::add-mask::$DB_URL"
 
           supabase db push --db-url "$DB_URL" --include-all --dry-run | tee plan.txt
-          PLANNED=$(grep -cE '^[[:space:]]*[0-9]{3}_[a-z0-9_]+\.sql' plan.txt || true)
+
+          # Counted by a tested script rather than an inline grep. The grep that
+          # stood here looked for a line starting with three digits, and the CLI
+          # prefixes each entry with a bullet — so it returned 0 on every release
+          # and this gate could never refuse anything. The fixture in
+          # scripts/__tests__/__fixtures__/dbPushDryRun.txt is the real output.
+          PLANNED=$(npx tsx scripts/ci/countPlannedMigrations.ts plan.txt)
           echo "planned=$PLANNED measured=${{ steps.before.outputs.pending }}"
 
           # This step only runs when migrations are pending, so a plan of none

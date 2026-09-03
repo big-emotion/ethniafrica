@@ -87,6 +87,13 @@ describe("production deploy workflow", () => {
     // A step that only runs when migrations are pending cannot legitimately
     // plan none of them.
     expect(workflow).toContain('"$PLANNED" -eq 0');
+
+    // Counted by a tested script. The inline grep it replaces looked for a line
+    // starting with three digits while the CLI prefixes each entry with a
+    // bullet, so it returned 0 on every release — this gate could never refuse
+    // a plan for being too wide either.
+    expect(workflow).toContain("scripts/ci/countPlannedMigrations.ts");
+    expect(workflow).not.toContain("grep -cE");
   });
 
   // The host key is pinned for the same reason the deploy job pins Gravelines':
