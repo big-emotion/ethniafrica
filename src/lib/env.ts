@@ -12,6 +12,7 @@
  * A positive integer from `process.env`, or the fallback when the variable is
  * unset, unparseable, zero or negative.
  */
+// @req REQ-110
 export function positiveIntFromEnv(
   value: string | undefined,
   fallback: number
