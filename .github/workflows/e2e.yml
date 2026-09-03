@@ -29,11 +29,15 @@ jobs:
       # nothing. The seventeen specs navigate, measure a11y and search; the
       # single `.fill()` in the suite types into a search box. Nothing writes.
       #
-      # The service-role key deliberately has no fallback. A read-only suite
-      # does not need one, and handing CI a key that bypasses RLS to save
-      # configuring a secret is how least privilege stops meaning anything.
+      # The service-role key falls back too, because `e2e/global.setup.ts`
+      # asserts it before any test runs. No current spec uses it: the write
+      # factories (flag, fiche, key) exist, and Playwright fixtures are lazy,
+      # so `supabaseAdmin` is never constructed by the seventeen specs that
+      # ship today. Withholding it bought no isolation either — the same
+      # secret is already handed to `recette-data-sync.yml`. Worth narrowing
+      # the assertion to the specs that need it, which is its own change.
       NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.TEST_SUPABASE_URL || secrets.NEXT_PUBLIC_SUPABASE_URL }}
-      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.TEST_SUPABASE_SERVICE_ROLE_KEY }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.TEST_SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE_KEY }}
       NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.TEST_SUPABASE_ANON_KEY || secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
       CI: "true"
       # Epic 10, Story 10.11 (ETNI-500) — /fr/quiz 404s (isQuizFeatureEnabled)
