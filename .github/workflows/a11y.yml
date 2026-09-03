@@ -1,10 +1,20 @@
 name: A11y — axe-core
 
 on:
+  # A required check on both branches, and the one that sets how long a pull
+  # request takes to become mergeable — so it stays pre-merge. The `push` on
+  # main was dropped for the reason ci.yml and data-integrity.yml already give
+  # for themselves: every change reaches main through a pull request, so the
+  # post-merge run re-audited an identical tree and nothing read its result.
   pull_request:
     branches: [recette, main]
-  push:
-    branches: [main]
+
+# Superseded runs of the same branch are cancelled. Without this a branch pushed
+# three times kept three generations of a ~13 min audit competing for runners,
+# which is what turned a busy afternoon of parallel pull requests into a queue.
+concurrency:
+  group: a11y-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -31,6 +41,16 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
 
+      # Same Playwright version, same browser build, downloaded fresh on every
+      # run: 54 s of the job was re-fetching bytes it already had. Keyed on the
+      # lockfile so a version bump misses the cache and refetches, as it should.
+      - name: Restore Playwright browser cache
+        id: playwright-cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: ms-playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
       - name: Install Playwright (chromium)
         run: npx playwright install --with-deps chromium
 
@@ -46,6 +66,18 @@ jobs:
             echo "present=false" >> "$GITHUB_OUTPUT"
             echo "::notice::Skipping live-route a11y audit (/fr/noms, dossier fiche) — NEXT_PUBLIC_SUPABASE_URL secret not available (fork or Dependabot PR)."
           fi
+
+      # Same artefact ci.yml already builds for this commit: restoring it takes
+      # the build from ~45 s to ~11 s. .next/cache is content-hashed by Next, so
+      # a stale entry is ignored rather than mis-served.
+      - name: Restore Next.js build cache
+        if: steps.secrets.outputs.present == 'true'
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .next/cache
+          key: nextjs-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
+          restore-keys: |
+            nextjs-${{ hashFiles('package-lock.json') }}-
 
       - name: Build Next.js app
         if: steps.secrets.outputs.present == 'true'
