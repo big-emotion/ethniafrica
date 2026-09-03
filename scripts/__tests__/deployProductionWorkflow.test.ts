@@ -48,6 +48,37 @@ describe("production deploy workflow", () => {
     expect(workflow).toContain("must point at the tunnel");
   });
 
+  // The self-hosted Postgres does not offer TLS, and the Supabase CLI asks for
+  // it: v4.2.0 opened the tunnel, reached `host=localhost`, and died on
+  // "The server does not support SSL connections". Disabling it is right rather
+  // than merely expedient — the bytes are already inside SSH, and the far end
+  // is the VPS loopback.
+  // @req REQ-032
+  it("disables Postgres TLS, which the tunnel has already replaced", () => {
+    const workflow = readWorkflow();
+
+    expect(workflow).toContain("sslmode=disable");
+
+    // Appended rather than assumed: a URL that already carries an sslmode is
+    // left alone, so this cannot silently override a deliberate choice.
+    expect(workflow).toContain("*sslmode=*)");
+  });
+
+  // The v4.2.0 plan step failed to connect and still passed: `db push | tee`
+  // loses the exit code, `grep -c || true` then yields 0, and 0 is never
+  // greater than the measurement. The gate only ever caught a plan that was too
+  // wide — never one that never happened.
+  // @req REQ-032
+  it("fails the plan step when the dry run never reached the database", () => {
+    const workflow = readWorkflow();
+
+    expect(workflow).toContain("set -o pipefail");
+
+    // A step that only runs when migrations are pending cannot legitimately
+    // plan none of them.
+    expect(workflow).toContain('"$PLANNED" -eq 0');
+  });
+
   // The host key is pinned for the same reason the deploy job pins Gravelines':
   // an unpinned tunnel hands a database credential to whoever answers on that
   // address.

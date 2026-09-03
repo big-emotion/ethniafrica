@@ -566,6 +566,28 @@ Consequences, both asserted by `scripts/__tests__/deployProductionWorkflow.test.
 - **The host key is pinned** through `SUPABASE_OVH_SSH_KNOWN_HOSTS`, for the same reason the
   deploy job pins Gravelines: an unpinned tunnel forwards a database credential to whoever
   answers on that address.
+- **`sslmode=disable` is appended to the URL.** The self-hosted Postgres does not offer TLS, and
+  the Supabase CLI asks for it: v4.2.0 opened the tunnel, reached `host=localhost`, and died on
+  `tls error (The server does not support SSL connections)`. Disabling it is correct rather than
+  merely expedient — the bytes are already inside SSH and the far end is the VPS loopback. A URL
+  that states an `sslmode` of its own is left alone. The job appends this itself rather than
+  asking for it in the secret, so there is no manual step to forget.
+
+### The plan gate was vacuous when the connection failed
+
+Worth its own heading, because it is the failure mode this runbook exists to name. At v4.2.0 the
+dry run failed to connect and the step reported **`planned=0 measured=20` and passed green**:
+
+```
+supabase db push … --dry-run | tee plan.txt     # exit code lost to the pipe
+PLANNED=$(grep -cE … plan.txt || true)          # no match -> 0
+[ "$PLANNED" -gt "$MEASURED" ]                  # 0 is never greater
+```
+
+Three separate things had to be wrong together, and each looked reasonable alone. The step now
+sets `pipefail`, and **refuses a plan of zero** — it only runs when migrations are pending, so
+planning none of them is not a quiet success. A gate that can only catch "too wide" cannot catch
+"never happened".
 
 Five secrets, alongside the existing `PRODUCTION_OVH_SSH_*` set for the application host — these
 name the **Supabase** host (Francfort, `145.239.76.125:22`), which is a different machine from

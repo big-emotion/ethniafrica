@@ -10,6 +10,27 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [4.2.1] - 2026-09-03
+
+### Fixed
+
+- **The migrate job connects to a database that offers no TLS.** 4.2.0 proved the
+  SSH tunnel — the URL guard passed, the forward came up, `db push` reached
+  `host=localhost` — and then died on `tls error (The server does not support SSL
+connections)`: the Supabase CLI asks for TLS and the self-hosted Postgres does not
+  offer it. `sslmode=disable` is appended by the job rather than asked for in the
+  secret, so there is no manual step to forget, and a URL stating an `sslmode` of its
+  own is left alone. Disabling it is right rather than expedient — the bytes are
+  already inside SSH and the far end is the VPS loopback (#838).
+- **The plan gate no longer passes having reached no database.** The 4.2.0 dry run hit
+  that same TLS error and the step still went green, reporting `planned=0 measured=20`:
+  the pipe into `tee` loses the exit code of `db push`, `grep -c … || true` turns no
+  match into `0`, and `0` is never greater than the measurement. Three things wrong
+  together, each reasonable alone. The step now sets `pipefail` and refuses a plan of
+  zero — it only runs when migrations are pending, so planning none of them is not a
+  quiet success. A gate that can only catch a plan that is too wide cannot catch one
+  that never happened (#838).
+
 ## [4.2.0] - 2026-09-03
 
 Editorial work the corpus had already done and the reader never saw, and the two
@@ -494,7 +515,8 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.2.0...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.2.1...HEAD
+[4.2.1]: https://github.com/big-emotion/ethniafrica/compare/v4.2.0...v4.2.1
 [4.2.0]: https://github.com/big-emotion/ethniafrica/compare/v4.1.1...v4.2.0
 [4.1.1]: https://github.com/big-emotion/ethniafrica/compare/v4.1.0...v4.1.1
 [4.1.0]: https://github.com/big-emotion/ethniafrica/compare/v4.0.0...v4.1.0

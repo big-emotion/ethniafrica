@@ -176,9 +176,37 @@ jobs:
         env:
           PRODUCTION_SUPABASE_DB_URL: ${{ secrets.PRODUCTION_SUPABASE_DB_URL }}
         run: |
-          supabase db push --db-url "$PRODUCTION_SUPABASE_DB_URL" --include-all --dry-run | tee plan.txt
+          # Without pipefail the pipe below reports tee's status, not the one
+          # from db push. At v4.2.0 the dry run failed to connect, grep matched
+          # nothing, `|| true` turned that into 0, and 0 is never greater than
+          # the measurement — so this gate passed green having reached no
+          # database at all. It only ever caught a plan that was too wide.
+          set -o pipefail
+
+          # The tunnel already carries these bytes inside SSH and terminates on
+          # the VPS loopback, so Postgres-level TLS adds nothing — and the
+          # self-hosted stack does not offer it, which is what "The server does
+          # not support SSL connections" meant. A URL that states an sslmode of
+          # its own is left alone rather than overridden.
+          case "$PRODUCTION_SUPABASE_DB_URL" in
+            *sslmode=*) DB_URL="$PRODUCTION_SUPABASE_DB_URL" ;;
+            *\?*) DB_URL="$PRODUCTION_SUPABASE_DB_URL&sslmode=disable" ;;
+            *) DB_URL="$PRODUCTION_SUPABASE_DB_URL?sslmode=disable" ;;
+          esac
+          echo "::add-mask::$DB_URL"
+
+          supabase db push --db-url "$DB_URL" --include-all --dry-run | tee plan.txt
           PLANNED=$(grep -cE '^[[:space:]]*[0-9]{3}_[a-z0-9_]+\.sql' plan.txt || true)
           echo "planned=$PLANNED measured=${{ steps.before.outputs.pending }}"
+
+          # This step only runs when migrations are pending, so a plan of none
+          # is not a quiet success — it means the dry run did not do what it
+          # claimed.
+          if [ "$PLANNED" -eq 0 ]; then
+            echo "::error::the dry run planned no migrations while ${{ steps.before.outputs.pending }} are pending. It did not reach the database, or its output no longer names migration files the way this gate parses. Refusing to treat that as a clean plan."
+            exit 1
+          fi
+
           if [ "$PLANNED" -gt "${{ steps.before.outputs.pending }}" ]; then
             echo "::error::db push plans $PLANNED migrations but only ${{ steps.before.outputs.pending }} are pending. The ledger and the files disagree; repair the ledger by hand before releasing (docs/runbooks/migration-state.md)."
             exit 1
@@ -188,7 +216,18 @@ jobs:
         if: steps.before.outputs.pending != '0'
         env:
           PRODUCTION_SUPABASE_DB_URL: ${{ secrets.PRODUCTION_SUPABASE_DB_URL }}
-        run: supabase db push --db-url "$PRODUCTION_SUPABASE_DB_URL" --include-all
+        run: |
+          # Same normalisation as the plan step. It is repeated rather than
+          # carried across in an output: a step output holding the URL would
+          # persist the postgres password in the run, mask or no mask.
+          case "$PRODUCTION_SUPABASE_DB_URL" in
+            *sslmode=*) DB_URL="$PRODUCTION_SUPABASE_DB_URL" ;;
+            *\?*) DB_URL="$PRODUCTION_SUPABASE_DB_URL&sslmode=disable" ;;
+            *) DB_URL="$PRODUCTION_SUPABASE_DB_URL?sslmode=disable" ;;
+          esac
+          echo "::add-mask::$DB_URL"
+
+          supabase db push --db-url "$DB_URL" --include-all
 
       # Verify by measuring again, never by the tool's own report — the rule the
       # runbook already draws from the 2026-08-31 repair.

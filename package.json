@@ -1,7 +1,7 @@
 {
   "name": "ethniafrica",
   "private": true,
-  "version": "4.2.0",
+  "version": "4.2.1",
   "packageManager": "npm@10.8.2",
   "engines": {
     "node": "20.x"
