@@ -10,6 +10,20 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [4.2.3] - 2026-09-03
+
+### Fixed
+
+- **The migration gate counts the migrations the CLI actually lists.** The 4.2.2
+  deploy reached production, planned exactly the right twenty migrations — `062`
+  through `081`, matching the measured ledger — and was refused because the gate
+  counted none of them: it grepped for a line beginning with three digits, and
+  `supabase db push` prefixes each entry with a bullet. That pattern had never
+  matched this output, so the count was zero on every release and the accompanying
+  refusal of a plan wider than the measurement could never have fired either. The
+  parse moves into a script with the real production output kept verbatim as a
+  fixture, because a gate whose parser can be silently wrong is not a gate (#846).
+
 ## [4.2.2] - 2026-09-03
 
 ### Fixed
@@ -533,7 +547,8 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.2.2...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.2.3...HEAD
+[4.2.3]: https://github.com/big-emotion/ethniafrica/compare/v4.2.2...v4.2.3
 [4.2.2]: https://github.com/big-emotion/ethniafrica/compare/v4.2.1...v4.2.2
 [4.2.1]: https://github.com/big-emotion/ethniafrica/compare/v4.2.0...v4.2.1
 [4.2.0]: https://github.com/big-emotion/ethniafrica/compare/v4.1.1...v4.2.0
