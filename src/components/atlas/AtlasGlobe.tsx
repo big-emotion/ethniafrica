@@ -81,14 +81,19 @@ const LazyAtlasGlobeCanvas = dynamic(
 // swallowed every tap in that band, and the stage is now how a reader selects a
 // country. Carried on the shared class so a button added to the toolbar later
 // cannot forget it and land dead.
+// `min-h-11` is the 44px floor the UX spec asks of a control on the reading
+// surface (L62). `px-3 py-1` alone drew these pills 30px tall — comfortably
+// tappable for a mouse, and under the floor for the thumb this surface is
+// designed mobile-first for. Height is set rather than padding so the caption
+// stays optically centred instead of sinking to the bottom of a taller pill.
 const TOOLBAR_BUTTON_CLASS =
-  "pointer-events-auto rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current";
+  "pointer-events-auto inline-flex min-h-11 items-center rounded-full border px-3 py-1 text-afh-caption focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current";
 
 /**
  * The zoom pair says its business with a glyph, so it is centred in a pill the
  * width of the shortest lettered one rather than being padded to fit a word.
  */
-const ZOOM_BUTTON_CLASS = `${TOOLBAR_BUTTON_CLASS} flex min-w-9 items-center justify-center disabled:cursor-not-allowed disabled:opacity-40`;
+const ZOOM_BUTTON_CLASS = `${TOOLBAR_BUTTON_CLASS} min-w-11 justify-center disabled:cursor-not-allowed disabled:opacity-40`;
 
 /**
  * The controls carry the stage's own ground rather than sitting on whatever

@@ -36,6 +36,18 @@ export async function expectNoAutoplayMedia(page: Page): Promise<void> {
 // UX spec L62: minimum tap target on the reading surface.
 // We sweep all interactive elements visible on the page and assert each meets
 // the floor. Hidden elements are skipped (offscreen menus, drawers).
+//
+// Inline links in running text are exempt, which is WCAG 2.5.8's own
+// "Inline" exception: "the target is in a sentence, or its size is otherwise
+// constrained by the line-height of non-target text". A fiche naming twelve
+// patronyms inside a paragraph offers twelve targets 23px tall because that
+// is what a line of prose measures — padding them to 44px would set the
+// sentence double-spaced, and the sweep counted 113 of them on the Comoros
+// fiche alone, burying the handful of real offenders.
+//
+// The exception is read off the computed display rather than guessed from the
+// tag: an author who writes `inline-flex`, `inline-block` or `block` on a link
+// has given it a box of their own choosing, and that box owes the full target.
 export async function expectTapTargetsAtLeast44px(
   page: Page,
   threshold = 44
@@ -50,7 +62,20 @@ export async function expectTapTargetsAtLeast44px(
     const box = await handle.boundingBox();
     if (!box) continue;
     if (box.width < threshold || box.height < threshold) {
-      const tag = await handle.evaluate((n) => n.tagName.toLowerCase());
+      const { tag, constrainedByLineHeight } = await handle.evaluate((node) => {
+        const element = node as HTMLElement;
+        return {
+          tag: element.tagName.toLowerCase(),
+          // A sentence around the link is what makes it inline *text*; a run
+          // of links with nothing else in the block is a control strip that
+          // merely happens to be laid out inline, and it is not exempt.
+          constrainedByLineHeight:
+            getComputedStyle(element).display === "inline" &&
+            (element.parentElement?.textContent ?? "").trim() !==
+              (element.textContent ?? "").trim(),
+        };
+      });
+      if (constrainedByLineHeight) continue;
       const text = (await handle.textContent())?.trim().slice(0, 40) ?? "";
       violations.push({
         tag,

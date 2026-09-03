@@ -224,9 +224,16 @@ export function SiteFooter({ language }: SiteFooterProps) {
                   glyph sits on the heading's edge rather than a tap target's,
                   and given half the rubrics' top margin for the same reason:
                   the other 12px is already inside the target. */}
+            {/* Wraps, because the row is sized in rem and text zoom is what
+                  it has to survive: at 200% each 44px target measures 88px, and
+                  a single line of them ran 1199px wide inside an 800px
+                  viewport — horizontal scroll on the whole document, which
+                  WCAG 1.4.10 forbids and `migrations-atlas-zoom.spec.ts`
+                  measures. Wrapping is the reflow; capping the row would have
+                  cut the last networks off instead. */}
             <ul
               data-testid="footer-follow"
-              className="mt-afh-lg flex items-center justify-center gap-afh-sm sm:-ml-3 sm:justify-start"
+              className="mt-afh-lg flex flex-wrap items-center justify-center gap-afh-sm sm:-ml-3 sm:justify-start"
             >
               {SOCIAL_NETWORKS.map(({ name, Glyph, href }) => (
                 <li key={name}>

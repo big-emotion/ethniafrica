@@ -147,7 +147,12 @@ export function MigrationsAtlasView({
                 )}
               >
                 <span>{event.nameMain}</span>
-                <ClassificationBadge status={event.classificationStatus} />
+                {/* The row is the control here, so the badge annotates it
+                    rather than offering a second destination inside it. */}
+                <ClassificationBadge
+                  status={event.classificationStatus}
+                  linksToDoctrine={false}
+                />
               </button>
             </li>
           );

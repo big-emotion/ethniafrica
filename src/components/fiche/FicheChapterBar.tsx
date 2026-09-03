@@ -248,7 +248,10 @@ export function FicheChapterBar({
                 fieldLabel: current.title,
               }}
               triggerLabel="Signaler"
-              className="w-auto h-9 px-3 text-afh-caption"
+              // h-11, not h-9: 36px is under the 44px floor the reading
+              // surface owes a thumb, and the rail is 48px tall, so the
+              // taller control still sits inside it.
+              className="w-auto h-11 px-3 text-afh-caption"
             />
           </div>
         ) : null}
