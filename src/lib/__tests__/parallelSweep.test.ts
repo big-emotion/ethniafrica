@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { sweepInParallel } from "../lib/parallelSweep";
+import { sweepInParallel } from "../parallelSweep";
 
 describe("sweepInParallel", () => {
   // @req REQ-032

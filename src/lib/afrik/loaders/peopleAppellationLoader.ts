@@ -26,6 +26,20 @@
 import { logger } from "@/lib/api/logger";
 import { normalizeToKey } from "@/lib/normalize";
 import { summarizeByCause } from "./defectSummary";
+import { sweepInParallel } from "@/lib/parallelSweep";
+
+/**
+ * How many fiches are loaded at once.
+ *
+ * Each fiche costs four sequential round trips (sources, revision, assertions,
+ * name_records), so 800 of them in a `for` loop spent ~20 of the load's 76
+ * minutes waiting on the network. Eight is chosen against Supabase's pooler
+ * rather than against the CPU — this stage is entirely I/O — and stays well
+ * inside the connection budget the loader shares with the stages around it.
+ *
+ * @req REQ-057
+ */
+export const APPELLATION_FICHE_LANES = 8;
 import {
   deriveAppellations,
   type DerivedAppellation,
@@ -63,7 +77,12 @@ function distinctSources(sources: FicheSource[] | undefined): FicheSource[] {
       byTitle.set(source.title, source);
     }
   }
-  return [...byTitle.values()];
+  // Sorted by title, and load-bearing now that fiches are loaded concurrently.
+  // `sources` is the one table two fiches contend over — every other write here
+  // is keyed on the people's own id. Two fiches citing the same pair of sources
+  // in opposite order would take Postgres row locks in opposite order, which is
+  // a deadlock. One stable order for every fiche removes the cycle.
+  return [...byTitle.values()].sort((a, b) => a.title.localeCompare(b.title));
 }
 
 async function resolveSourceIds(
@@ -301,9 +320,26 @@ export async function loadPeopleAppellations(
 ): Promise<AppellationLoadReport> {
   const report = emptyAppellationLoadReport();
 
-  for (const people of peoples) {
-    await loadOneFiche(supabase, people, report);
-  }
+  const outcomes = await sweepInParallel(
+    peoples,
+    APPELLATION_FICHE_LANES,
+    (people) => loadOneFiche(supabase, people, report)
+  );
+
+  // `loadOneFiche` folds its own failures into the report; anything that escaped
+  // it is a fault the report would otherwise lose, and losing it would let a
+  // fiche vanish from the count with nothing said.
+  outcomes.forEach((outcome, index) => {
+    if (outcome instanceof Error) {
+      report.errors.push(`${peoples[index].id}: ${outcome.message}`);
+    }
+  });
+
+  // Lanes finish in whatever order the database answers, and this report is
+  // read by a curator and diffed between runs. Order it by fiche so two loads
+  // of the same corpus produce the same list.
+  report.rejected.sort();
+  report.errors.sort();
 
   // The whole list, not a ten-item sample. These are the fiches a curator has
   // to open, and a sample of ten out of eighty-eight names the same handful of
