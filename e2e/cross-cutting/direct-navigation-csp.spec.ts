@@ -203,7 +203,12 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
 
   // @req REQ-002
   test("hydrates search state from a directly opened URL", async ({ page }) => {
-    const searchbox = page.getByRole("searchbox");
+    // The site search is a typeahead: the input owns a listbox popup, so its
+    // role is `combobox`, not `searchbox`. Scoped to the search landmark the
+    // submit assertion below already uses, so both halves address one control.
+    const searchbox = page
+      .getByRole("search", { name: "Formulaire de recherche" })
+      .getByRole("combobox");
     await expectDirectNavigation(
       page,
       `${getLocalizedRoute("fr", "search")}?q=Yoruba`,
@@ -277,7 +282,7 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
       getLocalizedRoute("fr", "names"),
       async () => {
         await expect(
-          page.getByRole("heading", { level: 1, name: "Noms & appellations" })
+          page.getByRole("heading", { level: 1, name: "Appellations" })
         ).toBeVisible();
         await expect(page.getByRole("searchbox")).toBeVisible();
       }
