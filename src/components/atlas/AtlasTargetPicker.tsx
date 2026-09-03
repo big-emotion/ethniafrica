@@ -165,6 +165,12 @@ export function AtlasTargetPicker({
                 key={target.countryId}
                 type="button"
                 role="option"
+                // Same attribute the pinned markers carry, for the same
+                // reason: it says which country this control chooses. The two
+                // ways into a country then describe themselves identically,
+                // rather than one being addressable and the other only
+                // nameable.
+                data-atlas-target={target.countryId}
                 aria-selected={target.countryId === chosenCountryId}
                 onClick={() => {
                   onChoose(target.countryId);
