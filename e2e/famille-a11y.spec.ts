@@ -55,7 +55,10 @@ test.describe("@nfr-a11y family fiche at the globe — axe-core", () => {
   }) => {
     await page.getByRole("button", { name: /pays de l'empreinte/i }).click();
     await page.getByRole("option").first().click();
-    await expect(page.getByRole("complementary")).toBeVisible();
+    // The panel by its own handle, not by landmark role: the fiche already
+    // carries editorial asides — the endonym note and the exonym note — so
+    // `complementary` names three things here and resolves to none of them.
+    await expect(page.locator("[data-atlas-facts-panel]")).toBeVisible();
 
     const results = await new AxeBuilder({ page })
       .withTags(WCAG_TAGS)

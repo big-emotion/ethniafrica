@@ -151,7 +151,13 @@ export function SiteFooter({ language }: SiteFooterProps) {
             space themselves across the shell. */}
         <div
           data-testid="footer-directory"
-          className="flex flex-col items-center gap-afh-6xl text-center md:flex-row md:items-start md:justify-between md:gap-afh-lg md:text-left"
+          // `md:flex-wrap`, because the row is entered on a media query and
+          // sized in rem: at 200% text zoom an 800px viewport still matches
+          // `md`, so the columns lined up in a row that no longer fitted and
+          // ran 253px past the edge of the document. Wrapping lets the last
+          // column drop instead — the same reflow WCAG 1.4.10 asks for, and
+          // the only one available to a row whose content cannot shrink.
+          className="flex flex-col items-center gap-afh-6xl text-center md:flex-row md:flex-wrap md:items-start md:justify-between md:gap-afh-lg md:text-left"
         >
           {/* The mark, the name and what the site is — none of them a link:
               the masthead already carries the way home, and a second one at
