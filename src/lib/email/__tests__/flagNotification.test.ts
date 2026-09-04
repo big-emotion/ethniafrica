@@ -19,7 +19,32 @@ vi.mock("@sentry/nextjs", () => ({
   captureException: mocks.captureException,
 }));
 
+import { __resetGraphToken } from "../graph";
+
 import { sendFlagResolutionEmail } from "../flagNotification";
+
+/**
+ * Graph sends in two calls — the OAuth token, then the mail. These read the
+ * second one and describe the mail as a recipient would see it, so the
+ * assertions stay about the notification rather than about the wire format.
+ */
+function graphSendCall() {
+  const call = (global.fetch as ReturnType<typeof vi.fn>).mock.calls.find(
+    ([url]) => typeof url === "string" && url.includes("/sendMail")
+  );
+  if (!call) throw new Error("no sendMail call was made");
+  return call;
+}
+
+function sentMail() {
+  const [, init] = graphSendCall();
+  const { message } = JSON.parse(init.body);
+  return {
+    to: message.toRecipients[0]?.emailAddress?.address,
+    subject: message.subject,
+    text: message.body.content,
+  };
+}
 
 const contributor = { id: "user-1", email: "reader@example.org" };
 
@@ -35,12 +60,21 @@ describe("sendFlagResolutionEmail", () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
-    process.env.RESEND_API_KEY = "re_test_key";
+    __resetGraphToken();
+    process.env.GRAPH_TENANT_ID = "tenant-test";
+    process.env.GRAPH_CLIENT_ID = "client-test";
+    process.env.GRAPH_CLIENT_SECRET = "secret-test";
+    process.env.MAIL_SENDER = "contact@ethniafrica.com";
     process.env.NEXT_PUBLIC_SITE_URL = "https://ethniafrica.com";
     process.env.NEXT_PUBLIC_CANONICAL_DOMAIN = "ethniafrica.com";
+    // Graph is two calls: the token, then the send.
     global.fetch = vi.fn().mockResolvedValue({
       ok: true,
+      status: 202,
       text: vi.fn().mockResolvedValue(""),
+      json: vi
+        .fn()
+        .mockResolvedValue({ access_token: "tok-test", expires_in: 3600 }),
     });
   });
 
@@ -62,12 +96,12 @@ describe("sendFlagResolutionEmail", () => {
       contributor
     );
 
-    expect(global.fetch).toHaveBeenCalledTimes(1);
-    const [url, init] = (global.fetch as ReturnType<typeof vi.fn>).mock
-      .calls[0];
-    expect(url).toBe("https://api.resend.com/emails");
-    expect(init.headers.Authorization).toBe("Bearer re_test_key");
-    const body = JSON.parse(init.body);
+    const [url, init] = graphSendCall();
+    expect(url).toBe(
+      "https://graph.microsoft.com/v1.0/users/contact%40ethniafrica.com/sendMail"
+    );
+    expect(init.headers.Authorization).toBe("Bearer tok-test");
+    const body = sentMail();
     expect(body.to).toBe("reader@example.org");
     expect(body.subject).toBe("Votre signalement ABC123DEFG a été accepté");
     expect(body.text).toContain("Source ajoutée, merci.");
@@ -93,8 +127,7 @@ describe("sendFlagResolutionEmail", () => {
       contributor
     );
 
-    const [, init] = (global.fetch as ReturnType<typeof vi.fn>).mock.calls[0];
-    const body = JSON.parse(init.body);
+    const body = sentMail();
     expect(body.subject).toBe("Votre signalement XYZ987WVUT a été examiné");
     expect(body.text).toContain("Source insuffisante pour confirmer.");
     expect(body.text).toContain(
@@ -115,8 +148,7 @@ describe("sendFlagResolutionEmail", () => {
       contributor
     );
 
-    const [, init] = (global.fetch as ReturnType<typeof vi.fn>).mock.calls[0];
-    const body = JSON.parse(init.body);
+    const body = sentMail();
     expect(body.subject).toBe("Votre signalement DUP0000001 — doublon détecté");
     expect(body.text).toContain("Doublon du signalement 0123456789.");
   });
@@ -185,7 +217,7 @@ describe("sendFlagResolutionEmail", () => {
 
   // @req REQ-015
   it("skips sending and logs a warning when no email transport is configured", async () => {
-    delete process.env.RESEND_API_KEY;
+    delete process.env.MAIL_SENDER;
 
     await sendFlagResolutionEmail(
       {

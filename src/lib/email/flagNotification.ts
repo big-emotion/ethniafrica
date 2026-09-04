@@ -1,6 +1,6 @@
 import * as Sentry from "@sentry/nextjs";
 import { logger } from "@/lib/api/logger";
-import { sendViaResend } from "@/lib/email/resend";
+import { graphConfigured, sendViaGraph } from "@/lib/email/graph";
 import type { Language } from "@/types/shared";
 import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 
@@ -111,8 +111,8 @@ function buildEmailContent(flag: FlagResolutionInput): EmailContent {
   };
 }
 
-const sendNotification = (apiKey: string, to: string, content: EmailContent) =>
-  sendViaResend(apiKey, { to, subject: content.subject, text: content.text });
+const sendNotification = (to: string, content: EmailContent) =>
+  sendViaGraph({ to, subject: content.subject, text: content.text });
 
 /**
  * Notify a contributor that their flag reached a terminal decision.
@@ -121,10 +121,10 @@ const sendNotification = (apiKey: string, to: string, content: EmailContent) =>
  * committed by the time this runs, and nothing here may roll it back, so
  * every failure path logs and reports to Sentry rather than throwing.
  *
- * `RESEND_API_KEY` is the only transport this repo can actually drive today
- * — Supabase Auth's admin API sends its own fixed auth templates (magic
- * link, invite…), not arbitrary content, so there is no generic "Supabase
- * SMTP" call to fall back to. Unset, this logs and skips rather than
+ * Microsoft Graph is the only transport this repo can actually drive —
+ * Supabase Auth's admin API sends its own fixed auth templates (magic link,
+ * invite…), not arbitrary content, so there is no generic "Supabase SMTP"
+ * call to fall back to. Unconfigured, this logs and skips rather than
  * fabricating a send.
  */
 // @req REQ-015
@@ -140,8 +140,7 @@ export async function sendFlagResolutionEmail(
       return;
     }
 
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
+    if (!graphConfigured()) {
       logger.warn(
         "Flag resolution email not sent: no email transport configured",
         { flagSlug: flag.public_slug, status: flag.status }
@@ -150,7 +149,7 @@ export async function sendFlagResolutionEmail(
     }
 
     const content = buildEmailContent(flag);
-    const sent = await sendNotification(apiKey, recipient.email, content);
+    const sent = await sendNotification(recipient.email, content);
     if (sent) {
       logger.info("Flag resolution email sent", {
         flagSlug: flag.public_slug,
@@ -190,8 +189,7 @@ export async function sendFlagVerificationEmail({
   token,
   publicSlug,
 }: FlagVerificationEmail): Promise<boolean> {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
+  if (!graphConfigured()) {
     logger.warn(
       "Flag verification email not sent: no email transport configured",
       { flagSlug: publicSlug }
@@ -201,7 +199,7 @@ export async function sendFlagVerificationEmail({
 
   const verificationLink = `${siteUrl()}/fr/signalements/verifier?token=${encodeURIComponent(token)}`;
 
-  return sendNotification(apiKey, email, {
+  return sendNotification(email, {
     subject: "Confirmez votre adresse pour suivre votre signalement",
     text: [
       "Votre signalement est bien enregistré et déjà consultable :",
