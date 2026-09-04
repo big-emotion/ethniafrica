@@ -10,6 +10,23 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [4.3.0] - 2026-09-04
+
+### Added
+
+- **Self-hosted Plausible Analytics.** New `infra/plausible/` compose stack (Community
+  Edition v3.2.1, vendored from `plausible/hosting`) running on the OVH VPS at
+  `stats.ethniafrica.com`, alongside the app's existing consent banner and
+  `PlausibleScript` integration — cookie-less, GDPR-compliant visitor and pageview
+  analytics for the production site. See `docs/runbooks/plausible-self-hosted.md`.
+
+### Fixed
+
+- **The Plausible tracking script was being injected twice.** `ConsentEnforcer`
+  (providers.tsx) and `PlausibleScript` both rendered the script whenever analytics
+  consent was granted, which would have double-counted every pageview once analytics
+  went live in production. `PlausibleScript` now owns the responsibility exclusively.
+
 ## [4.2.3] - 2026-09-03
 
 ### Fixed
@@ -547,7 +564,8 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.2.3...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.3.0...HEAD
+[4.3.0]: https://github.com/big-emotion/ethniafrica/compare/v4.2.3...v4.3.0
 [4.2.3]: https://github.com/big-emotion/ethniafrica/compare/v4.2.2...v4.2.3
 [4.2.2]: https://github.com/big-emotion/ethniafrica/compare/v4.2.1...v4.2.2
 [4.2.1]: https://github.com/big-emotion/ethniafrica/compare/v4.2.0...v4.2.1
