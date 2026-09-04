@@ -1,0 +1,112 @@
+# Self-hosted Plausible Community Edition (analytics.ethniafrica.com's collector), on the
+# same OVH VPS as the ethniafrica app itself. Its own compose project, joined to Traefik's
+# external `proxy` network — the same convention docker-compose.yml (repo root) follows for
+# the app, so that this stays independently restartable and cannot take the app down with it.
+#
+# compose.yml and the clickhouse/ config files are vendored verbatim from
+# https://github.com/plausible/hosting (v3.2.1) — the ClickHouse tuning trims it to fit a
+# small VPS (see clickhouse/low-resources.xml). The only departures from upstream are the
+# Traefik wiring below: HTTP_PORT/HTTPS_PORT stay unset (default 8000) instead of 80/443,
+# because Plausible's own Let's Encrypt issuance would fight Traefik for those ports — TLS
+# termination belongs to Traefik here, the same as every other service on this host.
+#
+# Deployed from /srv/plausible by hand (see docs/runbooks/plausible-self-hosted.md) — there is
+# no GitHub Actions workflow for this yet, unlike the app's own release-triggered deploy.
+services:
+  plausible_db:
+    image: postgres:16-alpine
+    container_name: plausible_db
+    restart: always
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      start_period: 1m
+
+  plausible_events_db:
+    image: clickhouse/clickhouse-server:24.12-alpine
+    container_name: plausible_events_db
+    restart: always
+    volumes:
+      - event-data:/var/lib/clickhouse
+      - event-logs:/var/log/clickhouse-server
+      - ./clickhouse/logs.xml:/etc/clickhouse-server/config.d/logs.xml:ro
+      - ./clickhouse/ipv4-only.xml:/etc/clickhouse-server/config.d/ipv4-only.xml:ro
+      - ./clickhouse/low-resources.xml:/etc/clickhouse-server/config.d/low-resources.xml:ro
+      - ./clickhouse/default-profile-low-resources-overrides.xml:/etc/clickhouse-server/users.d/default-profile-low-resources-overrides.xml:ro
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    environment:
+      - CLICKHOUSE_SKIP_USER_SETUP=1
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "wget --no-verbose --tries=1 -O - http://127.0.0.1:8123/ping || exit 1",
+        ]
+      start_period: 1m
+
+  plausible:
+    image: ghcr.io/plausible/community-edition:v3.2.1
+    container_name: plausible
+    restart: always
+    command: sh -c "/entrypoint.sh db createdb && /entrypoint.sh db migrate && /entrypoint.sh run"
+    depends_on:
+      plausible_db:
+        condition: service_healthy
+      plausible_events_db:
+        condition: service_healthy
+    volumes:
+      - plausible-data:/var/lib/plausible
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+    environment:
+      - TMPDIR=/var/lib/plausible/tmp
+      # required — see infra/plausible/env.example
+      - BASE_URL=${BASE_URL}
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
+      # registration: default DISABLE_REGISTRATION=invite_only means only the very first
+      # account (created at $BASE_URL/register before any user exists) can self-register.
+      - TOTP_VAULT_KEY
+      - DISABLE_REGISTRATION
+    expose:
+      - "8000"
+    networks:
+      - default
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+
+      - "traefik.http.routers.plausible.rule=Host(`stats.ethniafrica.com`)"
+      - "traefik.http.routers.plausible.entrypoints=websecure"
+      - "traefik.http.routers.plausible.tls.certresolver=myresolver"
+      - "traefik.http.services.plausible.loadbalancer.server.port=8000"
+
+      - "traefik.http.routers.plausible-http.rule=Host(`stats.ethniafrica.com`)"
+      - "traefik.http.routers.plausible-http.entrypoints=web"
+      - "traefik.http.routers.plausible-http.middlewares=plausible-https"
+      - "traefik.http.middlewares.plausible-https.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.plausible-https.redirectscheme.permanent=true"
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  db-data:
+  event-data:
+  event-logs:
+  plausible-data:
+
+networks:
+  proxy:
+    external: true
