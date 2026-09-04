@@ -10,6 +10,20 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [4.3.1] - 2026-09-04
+
+### Fixed
+
+- **The Plausible tracker was blocked outright by the Content-Security-Policy.**
+  `script-src` carried no exception for any Plausible origin — not even
+  `plausible.io` — so the tracker script never loaded on either hosting option.
+  Confirmed live after the v4.3.0 deploy: the script loaded fine same-origin and
+  via curl, but was blocked specifically when `ethniafrica.com` tried to load it
+  cross-origin from `stats.ethniafrica.com`. `connect-src` also hardcoded
+  `plausible.io`, which the self-hosted collector never uses. Both directives now
+  derive the actual configured origin from `NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN`,
+  the same way the script tag itself already did.
+
 ## [4.3.0] - 2026-09-04
 
 ### Added
@@ -564,7 +578,8 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.3.0...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.3.1...HEAD
+[4.3.1]: https://github.com/big-emotion/ethniafrica/compare/v4.3.0...v4.3.1
 [4.3.0]: https://github.com/big-emotion/ethniafrica/compare/v4.2.3...v4.3.0
 [4.2.3]: https://github.com/big-emotion/ethniafrica/compare/v4.2.2...v4.2.3
 [4.2.2]: https://github.com/big-emotion/ethniafrica/compare/v4.2.1...v4.2.2
