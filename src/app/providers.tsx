@@ -5,23 +5,25 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "next-themes";
-import { useState, useEffect } from "react";
-import Script from "next/script";
+import { useEffect, useState } from "react";
 import * as Sentry from "@sentry/nextjs";
 import { ConsentProvider, useConsent } from "@/hooks/use-consent";
 import { ConsentBanner } from "@/components/consent";
 import { RouteTransitionLoader } from "@/components/system/RouteTransitionLoader";
 
 /**
- * Enforces consent preferences on third-party integrations:
- * - Plausible: analytics script is only rendered when analytics consent is given.
- * - Sentry user context: cleared when functional consent is revoked.
+ * Enforces consent preferences on third-party integrations that have no
+ * component of their own: Sentry user context is cleared when functional
+ * consent is revoked. Plausible injection lives solely in
+ * <PlausibleScript> (rendered in layout.tsx) — it used to be duplicated
+ * here too, which fired the script twice and double-counted every pageview
+ * whenever analytics consent was granted.
  *
  * Must be rendered inside <ConsentProvider>.
  */
 function ConsentEnforcer() {
   const { consentState } = useConsent();
-  const { analytics, functional } = consentState.preferences;
+  const { functional } = consentState.preferences;
 
   // Sentry user context: clear when functional consent is false or not yet given.
   useEffect(() => {
@@ -30,19 +32,7 @@ function ConsentEnforcer() {
     }
   }, [functional]);
 
-  // Plausible: only inject the script when analytics consent is true.
-  if (!analytics) {
-    return null;
-  }
-
-  return (
-    <Script
-      defer
-      data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
-      src="https://plausible.io/js/script.js"
-      strategy="afterInteractive"
-    />
-  );
+  return null;
 }
 
 // @req REQ-115

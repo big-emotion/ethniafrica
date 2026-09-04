@@ -6,25 +6,6 @@ import * as Sentry from "@sentry/nextjs";
 // Mocks
 // ---------------------------------------------------------------------------
 
-// Next.js Script component — simplified to a plain <script> so we can query it
-vi.mock("next/script", () => ({
-  default: vi.fn(
-    ({
-      src,
-      "data-domain": dataDomain,
-    }: {
-      src: string;
-      "data-domain"?: string;
-    }) => (
-      <script
-        data-testid="plausible-script"
-        src={src}
-        data-domain={dataDomain}
-      />
-    )
-  ),
-}));
-
 // @sentry/nextjs — spy on setUser
 vi.mock("@sentry/nextjs", () => ({
   setUser: vi.fn(),
@@ -127,26 +108,18 @@ describe("ConsentEnforcer", () => {
     return render(<Providers>child</Providers>);
   }
 
-  // -------------------------------------------------------------------------
-  // Plausible
-  // -------------------------------------------------------------------------
-
-  it("does NOT render the Plausible script when analytics consent is false", () => {
+  // Plausible injection is asserted in PlausibleScript.test.tsx — it lives
+  // solely in <PlausibleScript> now. ConsentEnforcer used to render it too,
+  // which double-injected the script (and double-counted every pageview)
+  // whenever analytics consent was granted.
+  // @req REQ-046
+  it("never renders a Plausible script itself, regardless of consent", () => {
     const { queryByTestId } = renderWithPreferences({
-      essential: true,
-      analytics: false,
-      functional: true,
-    });
-    expect(queryByTestId("plausible-script")).toBeNull();
-  });
-
-  it("renders the Plausible script when analytics consent is true", () => {
-    const { getByTestId } = renderWithPreferences({
       essential: true,
       analytics: true,
       functional: true,
     });
-    expect(getByTestId("plausible-script")).toBeTruthy();
+    expect(queryByTestId("plausible-script")).toBeNull();
   });
 
   // -------------------------------------------------------------------------
