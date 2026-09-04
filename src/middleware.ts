@@ -79,6 +79,24 @@ function selfHostedSupabaseOrigin(): string {
   }
 }
 
+/**
+ * The Plausible script/collector origin, or "" when analytics is off.
+ *
+ * Mirrors buildPlausibleSrc() in src/lib/plausible.ts: empty when
+ * NEXT_PUBLIC_PLAUSIBLE_DOMAIN is unset (PlausibleScript renders nothing in
+ * that case either, so there is nothing to allow), otherwise
+ * NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN for a self-hosted instance or
+ * https://plausible.io by default. Needed in both script-src (to load the
+ * tracker) and connect-src (for the beacon POST the tracker itself makes) —
+ * script-src 'self' alone blocked the script outright, on either hosting
+ * option, until this was added.
+ */
+function plausibleOrigin(): string {
+  if (!process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN?.trim()) return "";
+  const host = process.env.NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN?.trim();
+  return host ? host.replace(/\/$/, "") : "https://plausible.io";
+}
+
 function applySecurityHeaders(
   response: NextResponse,
   nonce: string,
@@ -94,11 +112,12 @@ function applySecurityHeaders(
   const publicLocalizedPage = isPublicLocalizedPage(pathname);
   const allowsInlineStyleElements =
     publicLocalizedPage || isDeveloperPortalPage(pathname);
+  const plausibleSrc = plausibleOrigin();
   const csp = [
     "default-src 'self'",
     `script-src 'self' 'nonce-${nonce}'${
       process.env.NODE_ENV === "production" ? "" : " 'unsafe-eval'"
-    }`,
+    }${plausibleSrc ? ` ${plausibleSrc}` : ""}`,
     allowsInlineStyleElements
       ? "style-src 'self' 'unsafe-inline'"
       : `style-src 'self' 'nonce-${nonce}' ${NEXT_RUNTIME_STYLE_HASHES}`,
@@ -114,7 +133,7 @@ function applySecurityHeaders(
     // relaxation above is only for public pages, these two are for all of them.
     "base-uri 'self'",
     "form-action 'self'",
-    `connect-src 'self' https://*.supabase.co ${selfHostedSupabaseOrigin()} https://*.ingest.de.sentry.io https://plausible.io https://*.upstash.io`,
+    `connect-src 'self' https://*.supabase.co ${selfHostedSupabaseOrigin()} https://*.ingest.de.sentry.io https://*.upstash.io${plausibleSrc ? ` ${plausibleSrc}` : ""}`,
   ].join("; ");
   response.headers.set("Content-Security-Policy", csp);
 }

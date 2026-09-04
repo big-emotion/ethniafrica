@@ -1,4 +1,12 @@
-import { describe, it, expect, vi, beforeEach, type Mock } from "vitest";
+import {
+  describe,
+  it,
+  expect,
+  vi,
+  beforeEach,
+  afterEach,
+  type Mock,
+} from "vitest";
 import { NextRequest } from "next/server";
 import { middleware, config } from "../middleware";
 import { createServerClient } from "@supabase/ssr";
@@ -532,6 +540,76 @@ describe("middleware", () => {
       expect(
         directives.find((directive) => directive.startsWith("style-src-attr"))
       ).toBeUndefined();
+    });
+
+    // The CSP blocked the Plausible tracker outright until this was added —
+    // script-src carried no exception for it on either hosting option.
+    describe("Plausible CSP allowances", () => {
+      const originalDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
+      const originalCustomDomain =
+        process.env.NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN;
+
+      afterEach(() => {
+        if (originalDomain !== undefined) {
+          process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN = originalDomain;
+        } else {
+          delete process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
+        }
+        if (originalCustomDomain !== undefined) {
+          process.env.NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN =
+            originalCustomDomain;
+        } else {
+          delete process.env.NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN;
+        }
+      });
+
+      // @req REQ-052
+      it("adds no Plausible host when NEXT_PUBLIC_PLAUSIBLE_DOMAIN is unset", async () => {
+        delete process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
+        delete process.env.NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN;
+
+        const response = await middleware(
+          new NextRequest("http://localhost:3000/fr")
+        );
+        const csp = response.headers.get("Content-Security-Policy")!;
+
+        expect(csp).not.toContain("plausible");
+      });
+
+      // @req REQ-052
+      it("allows the self-hosted collector in script-src and connect-src when configured", async () => {
+        process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN = "ethniafrica.com";
+        process.env.NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN =
+          "https://stats.ethniafrica.com";
+
+        const response = await middleware(
+          new NextRequest("http://localhost:3000/fr")
+        );
+        const csp = response.headers.get("Content-Security-Policy")!;
+        const directives = csp.split(";").map((d) => d.trim());
+        const scriptSrc = directives.find((d) => d.startsWith("script-src"));
+        const connectSrc = directives.find((d) => d.startsWith("connect-src"));
+
+        expect(scriptSrc).toContain("https://stats.ethniafrica.com");
+        expect(connectSrc).toContain("https://stats.ethniafrica.com");
+      });
+
+      // @req REQ-052
+      it("falls back to plausible.io when no custom domain is configured", async () => {
+        process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN = "ethniafrica.com";
+        delete process.env.NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN;
+
+        const response = await middleware(
+          new NextRequest("http://localhost:3000/fr")
+        );
+        const csp = response.headers.get("Content-Security-Policy")!;
+        const directives = csp.split(";").map((d) => d.trim());
+        const scriptSrc = directives.find((d) => d.startsWith("script-src"));
+        const connectSrc = directives.find((d) => d.startsWith("connect-src"));
+
+        expect(scriptSrc).toContain("https://plausible.io");
+        expect(connectSrc).toContain("https://plausible.io");
+      });
     });
 
     it("generates a different nonce for each request", async () => {
