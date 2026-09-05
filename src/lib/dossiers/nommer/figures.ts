@@ -60,7 +60,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "corpus-exonyms",
     label: "exonymes recensés",
-    value: 3207,
+    value: 3201,
     method:
       "somme de content.appellations.exonyms.length sur les fiches de peuple",
     countedOn: COUNTED_ON,

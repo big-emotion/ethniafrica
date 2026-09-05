@@ -19,7 +19,8 @@
       "linguisticFamily": "FLG_BANTU",
       "ethnoLinguisticGroup": "Bantous du littoral et du centre camerounais (groupe A, zone A40 selon la classification de Guthrie)",
       "historicalRegion": "Littoral et Centre du Cameroun (Sanaga-Maritime, Nkam, Nyong-et-Kelle, region d'Edea, Eseka, Yabassi)",
-      "currentCountries": ["CMR"]
+      "currentCountries": ["CMR"],
+      "spellingAliases": ["Basaá", "Basa'a"]
     },
     "ethnicities": [
       "Bassa de Nyong-et-Kelle — groupe central, region d'Eseka et Makak",
@@ -67,7 +68,12 @@
         "Yabasi — dialecte peripherique nord-ouest (commune de Yabassi)",
         "Log, Mpo — variantes dialectales mineures"
       ],
-      "vehicularRole": "Le Basaa est parle par environ 300 000 a 800 000 locuteurs dans les regions du Centre et du Littoral du Cameroun, principalement dans les departements du Nyong-et-Kelle, de la Sanaga-Maritime et du Nkam. Il est utilise dans les medias locaux (radio, television communautaire). Le Basaa est enseigne dans certaines ecoles primaires et fait l'objet d'une litterature ecrite (poesie, chants epiques, romans). Il coexiste avec le francais (langue officielle) comme langue vehiculaire regionale."
+      "vehicularRole": "Le Basaa est parle par environ 300 000 a 800 000 locuteurs dans les regions du Centre et du Littoral du Cameroun, principalement dans les departements du Nyong-et-Kelle, de la Sanaga-Maritime et du Nkam. Il est utilise dans les medias locaux (radio, television communautaire). Le Basaa est enseigne dans certaines ecoles primaires et fait l'objet d'une litterature ecrite (poesie, chants epiques, romans). Il coexiste avec le francais (langue officielle) comme langue vehiculaire regionale. Sur le plan classificatoire, le Basaa est rattache a la zone A40 (groupe Bassa) selon la classification de Guthrie, sous le code A.43a, au sein des langues bantoues (Niger-Congo)."
+    },
+    "externalIdentifiers": {
+      "wikidataId": "Q672268",
+      "glottocode": "basa1284",
+      "iso639_3": "bas"
     },
     "culture": {
       "majorRites": "Rites d'initiation (ceremonies de passage a l'age adulte, distinctes pour les garcons et les filles). Ceremonies funeraires elaborees avec utilisation de masques sculptes, de statues en bois et de rites de purification. Ceremonies agricoles et de benediction des recoltes. Rites du Nyambéisme : ceremonies de communication avec les ancetres, invocations des Jengu (esprits des eaux). Rites de mariage impliquant la negociation de la dot (nkap) et des ceremonies de benediction familiale.",
@@ -78,17 +84,18 @@
     "historicalRole": {
       "kingdomsOrChiefdoms": "Les Bassa n'ont pas developpe de royaume centralise. Leur organisation politique etait fondee sur des groupes de lignages autonomes (mvog) reunis par une origine et une culture communes. Pendant la colonisation allemande, un systeme de chefferies administratives a ete impose. Des chefs comme Mahop ma Mbom et Matip ma Matip ont negocie avec l'administration coloniale.",
       "relationsWithNeighbors": "Relations d'echange avec les Bakoko (voisins cotiers), les Bassa de Nkam et les peuples du plateau central. Contacts commerciaux avec les Duala, les Bakossi et les peuples de l'interieur. Les Portugais (1472) ont introduit de nouvelles cultures alimentaires. Les Bassa ont ete deplaces de leurs territoires cotiers par les Duala et les premiers commercants europeens.",
-      "conflictsOrAlliances": "Resistance anti-coloniale pendant la colonisation allemande (Bataille de Kan, 1885-1907). Role majeur dans l'UPC (Union des Populations du Cameroun), mouvement nationaliste le plus radical du Cameroun. Ruben Um Nyobe (Mpodol Ion, le porte-parole de la nation en Bassa) a mene une resistance pacifique avant d'etre assassine par l'armee francaise le 13 septembre 1958, pres de son village natal de Boumnyebel (Nyong-et-Kelle).",
+      "conflictsOrAlliances": "Resistance anti-coloniale pendant la colonisation allemande (Bataille de Kan, 1885-1907). Role majeur dans l'UPC (Union des Populations du Cameroun), mouvement nationaliste le plus radical du Cameroun, fondee par Ruben Um Nyobe a Douala en 1948. Ruben Um Nyobe (Mpodol Ion, le porte-parole de la nation en Bassa) a mene une resistance pacifique avant d'etre assassine par l'armee francaise le 13 septembre 1958, pres de son village natal de Boumnyebel (Nyong-et-Kelle). Un monument a sa memoire a ete erige a Eseka en 2007.",
       "diaspora": "Presence Bassa significative a Douala, Yaounde et autres grandes villes camerounaises. Migrations liees a l'exode rural vers les zones urbaines du littoral et du centre. Interactions historiques ayant donne lieu a des communautes Bassa en Afrique de l'Ouest et centrale (Benin, Senegal, DRC)."
     },
     "demography": {
-      "totalPopulation": 900000,
+      "totalPopulation": 800000,
       "referenceYear": 2025,
-      "source": "Estimations basees sur Ethnologue (SIL International 2024 : 230 000 a 300 000 locuteurs du Basaa comme langue maternelle), Wikipedia EN (environ 800 000 individus), et Joshua Project. La population totale d'identification ethnique Bassa depasse les chiffres de locuteurs stricts, estimee entre 800 000 et 1 million en 2025.",
+      "source": "Estimation composite : Joshua Project (profil actif, ~514 000, non verifie) mesure l'auto-identification declaree ; SIL Ethnologue (donnees 2005, 230 000 a 300 000 locuteurs de premiere langue, officielle) mesure les locuteurs et non l'ensemble du groupe ethnique ; les compilations secondaires convergent vers environ 800 000 pour l'identification ethnique large. Aucune source unique de rang cense/officiel ne denombre l'ensemble du peuple Bassa a ce jour ; la valeur retenue est le haut de la fourchette verifiable et non un chiffre cense.",
       "distributionByCountry": [
         {
           "country": "CMR",
-          "population": 900000,
+          "population": 800000,
+          "percentage": 100,
           "note": "Regions du Littoral (Edea, Douala, Yabassi) et du Centre (Eseka, Makak, Nyong-et-Kelle)"
         }
       ]
@@ -107,16 +114,28 @@
         "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
       },
       {
-        "title": "Joshua Project — Bassa Cameroon people group",
-        "url": "https://joshuaproject.net/people_groups/10367",
+        "title": "Joshua Project — Basaa, Cameroon people group profile",
+        "url": "https://joshuaproject.net/people_groups/19155/CM",
         "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net. Replaces a previous entry (people_groups/10367) which resolved to an unrelated South American people group rather than the Bassa of Cameroon."
       },
       {
-        "title": "UNESCO — Liste du patrimoine oral (traditions et expressions orales Bassa)",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "title": "Larry M. Hyman — Basaá (A.43), reference chapter",
+        "url": "https://linguistics.berkeley.edu/~hyman/Basaa_Chapter.pdf",
+        "tier": "referenced",
+        "notes": "Author is a linguistics faculty member at the University of California, Berkeley; hosted on his own academic page. Supports the Guthrie A.43/zone A40 classification and the \"Basaá\" spelling alias."
+      },
+      {
+        "title": "Emmanuel-Moselly Makasso — Illustrations of the IPA: Basa'a, Journal of the International Phonetic Association",
+        "url": "https://doi.org/10.1017/S0025100314000383",
+        "tier": "referenced",
+        "notes": "Peer-reviewed article, Cambridge University Press. Supports the \"Basa'a\" spelling alias and the language's phonological description."
+      },
+      {
+        "title": "JusticeInfo.net — Cameroon: Um Nyobè, a hero and symbol of French colonial crimes",
+        "url": "https://www.justiceinfo.net/en/82062-cameroon-um-nyobe-hero-symbol-french-colonial-crimes.html",
+        "tier": "referenced",
+        "notes": "Identifiable transitional-justice press outlet. Corroborates the 1948 founding of the UPC, the 13 September 1958 assassination, and the 2007 memorial at Eseka."
       }
     ]
   }

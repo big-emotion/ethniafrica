@@ -25,7 +25,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
     figureRefs: ["corpus-exonyms", "corpus-autonyms"],
   },
   measure: {
-    value: "3 207",
+    value: "3 201",
     unit: "exonymes recensés",
     sourceRefs: [],
     figureRefs: ["corpus-exonyms"],
@@ -37,7 +37,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
       heading: "La mesure, et ce qu'elle ne mesure pas",
       blocks: [
         {
-          text: "Les huit cents fiches de peuple de l'atlas recensent 3 207 noms donnés de l'extérieur, contre 798 noms que les intéressés revendiquent. Quatre pour un.",
+          text: "Les huit cents fiches de peuple de l'atlas recensent 3 201 noms donnés de l'extérieur, contre 798 noms que les intéressés revendiquent. Quatre pour un.",
           sourceRefs: [],
           figureRefs: ["corpus-peoples", "corpus-exonyms", "corpus-autonyms"],
         },
