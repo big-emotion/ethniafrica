@@ -10,6 +10,30 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [4.4.0] - 2026-09-05
+
+### Added
+
+- **The contact form reaches a mailbox that exists.** `contact@ethniafrica.com` could
+  not receive anything: the domain carried no MX record, and the implicit-MX fallback
+  landed on the apex A record where port 25 was closed. The form could not send either
+  — it went through Resend, which refuses to send from a domain it has not verified,
+  and nothing had been verified. Both ends are now real: the domain belongs to the
+  Microsoft 365 tenant that already serves big-emotion.com, its MX answers, and
+  `contact@ethniafrica.com` exists as a shared mailbox.
+
+### Changed
+
+- **Transactional mail goes through Microsoft Graph rather than Resend.** Keeping
+  Resend for outbound beside a Microsoft mailbox for inbound would have meant two
+  providers, two sets of DNS authentication records — a `send.` subdomain carrying
+  Resend's SPF and DKIM beside Microsoft's `selector1`/`selector2` — and two
+  independent ways for deliverability to break quietly. Graph reuses the tenant app
+  that already sends for the agency site and the B2B portal, so one set of server
+  secrets covers three sites and the domain authenticates once. A reader's address now
+  travels as `replyTo`, so an answer reaches the person who wrote rather than the
+  atlas (#861).
+
 ## [4.3.1] - 2026-09-04
 
 ### Fixed
@@ -578,7 +602,8 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.3.1...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.4.0...HEAD
+[4.4.0]: https://github.com/big-emotion/ethniafrica/compare/v4.3.1...v4.4.0
 [4.3.1]: https://github.com/big-emotion/ethniafrica/compare/v4.3.0...v4.3.1
 [4.3.0]: https://github.com/big-emotion/ethniafrica/compare/v4.2.3...v4.3.0
 [4.2.3]: https://github.com/big-emotion/ethniafrica/compare/v4.2.2...v4.2.3
