@@ -7,7 +7,14 @@
 // @req REQ-032
 // @req REQ-130
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from "fs";
+import {
+  mkdirSync,
+  writeFileSync,
+  rmSync,
+  existsSync,
+  readdirSync,
+  readFileSync,
+} from "fs";
 import { join, resolve } from "path";
 import {
   checkFlgFolderMatch,
@@ -24,6 +31,7 @@ import {
   checkFamilyStructuralCompleteness,
   checkCountryCodesResolve,
   checkHistoricalAffiliationModel,
+  checkTranslationClassCoverage,
   OFF_MAP_COUNTRIES,
   checkSourceIdentity,
   AFRICAN_REFERENCE_COUNTRY_CODES,
@@ -503,6 +511,75 @@ describe("validateAfrikData – new integrity checks", () => {
       expect(result.warnings.some((w) => w.includes("single fiche"))).toBe(
         true
       );
+    });
+  });
+
+  // ── REQ-143 : checkTranslationClassCoverage ────────────────────────────────
+
+  describe("checkTranslationClassCoverage (REQ-143)", () => {
+    const realPublicRoot = resolve(__dirname, "../../public");
+
+    function copyModels(into: string) {
+      mkdirSync(into, { recursive: true });
+      for (const name of readdirSync(realPublicRoot)) {
+        if (!/^modele-.*\.json$/.test(name)) continue;
+        writeFileSync(
+          join(into, name),
+          readFileSync(join(realPublicRoot, name), "utf-8")
+        );
+      }
+    }
+
+    // @req REQ-143
+    it("passes on the committed models", () => {
+      const result = checkTranslationClassCoverage(realPublicRoot);
+      expect(result.errors).toEqual([]);
+      expect(result.ok).toBe(true);
+    });
+
+    // @req REQ-143
+    it("names the model and the leaf when a model gains a field the declaration lacks", () => {
+      const publicRoot = join(tmpDir, "public");
+      copyModels(publicRoot);
+      const modelPath = join(publicRoot, "modele-peuple.json");
+      const model = JSON.parse(readFileSync(modelPath, "utf-8"));
+      model.content.appellations.nickname = "<prose>";
+      writeFileSync(modelPath, JSON.stringify(model));
+
+      const result = checkTranslationClassCoverage(publicRoot);
+      expect(result.ok).toBe(false);
+      expect(result.errors).toEqual([
+        "REQ-143: modele-peuple.json: leaf content.appellations.nickname has no translation class (declare it in src/lib/i18n/translationClasses.ts)",
+      ]);
+    });
+
+    // @req REQ-143
+    it("fails on a declaration whose leaf the model no longer has", () => {
+      const publicRoot = join(tmpDir, "public");
+      copyModels(publicRoot);
+      const modelPath = join(publicRoot, "modele-relation.json");
+      const model = JSON.parse(readFileSync(modelPath, "utf-8"));
+      delete model.description;
+      writeFileSync(modelPath, JSON.stringify(model));
+
+      const result = checkTranslationClassCoverage(publicRoot);
+      expect(result.errors).toEqual([
+        "REQ-143: modele-relation.json: declared leaf description is not in the model (dead declaration)",
+      ]);
+    });
+
+    // @req REQ-143
+    it("fails on a model file the declaration does not know, and on one it expects but cannot find", () => {
+      const publicRoot = join(tmpDir, "public");
+      copyModels(publicRoot);
+      writeFileSync(join(publicRoot, "modele-toponyme.json"), "{}");
+      rmSync(join(publicRoot, "modele-media.json"));
+
+      const result = checkTranslationClassCoverage(publicRoot);
+      expect(result.errors).toEqual([
+        "REQ-143: modele-media.json is declared but missing from public/",
+        "REQ-143: modele-toponyme.json has no translation class declaration (add it to STRICT_MODEL_FILES)",
+      ]);
     });
   });
 
