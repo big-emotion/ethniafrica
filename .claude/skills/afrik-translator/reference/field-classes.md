@@ -19,7 +19,7 @@ non-obvious ruling is in `docs/editorial/translation-classes.md`.
 | `invariant`       | Carried over verbatim; `sidecarViolations` refuses a changed value. Identifiers, autonyms, exonyms, spelling aliases, source titles and URLs, ISO codes, numbers, dates, enum values, image paths.  |
 | `translatable`    | Translated, by machine or by hand. Narrative prose: origins, organisation, culture, historical role, summaries, per-country notes, `sources[].notes`, `gaps[].reason`.                              |
 | `review_required` | Translated, then read by a named human before publication. Anything whose subject is a word: `whyProblematic`, `originOfExonyms`, `contemporaryUsage`, `names[].meaning`, etymologies, transcripts. |
-| `generated`       | Authored per locale in code — quiz stems, the locative preposition, the admin-0 country name, UI labels. Never stored as translated data; no model leaf carries it.                                 |
+| `generated`       | Authored per locale in code — quiz stems, the locative preposition, UI labels. Never stored as translated data; no model leaf carries it.                                                           |
 
 ## Reading the tables
 
@@ -35,11 +35,8 @@ non-obvious ruling is in `docs/editorial/translation-classes.md`.
   `[]`; its shape comes from `src/lib/afrik/parsers/patronymeParser.ts` and
   the leaf is classed there so that PAT_DIABY's nine hundred characters of
   `casteOrSocialFunction.value` do not slip through unclassed.
-- `nameFr` / `nameEn` on the family and language models are already a
-  bilingual pair: reuse `nameEn`, never re-translate `nameFr`. A country's
-  English name is class 4, read from `Admin0Country.name` through
-  `getAdmin0Name(id, "en")` in `src/lib/atlas/overlays.ts`; the French
-  `nameFr` is carried over, not translated.
+- `nameFr` / `nameEn` on the family, language and country models are already
+  a bilingual pair: reuse `nameEn`, never re-translate `nameFr`.
 
 ## Which model a record follows
 
@@ -385,6 +382,7 @@ contract test is what keeps them equal to it, row for row and model for model.
 | `_meta.*`                                            | `invariant`       |                   |
 | `id`                                                 | `invariant`       |                   |
 | `nameFr`                                             | `invariant`       |                   |
+| `nameEn`                                             | `invariant`       |                   |
 | `nameOfficial`                                       | `review_required` |                   |
 | `summary`                                            | `translatable`    |                   |
 | `etymology`                                          | `review_required` |                   |

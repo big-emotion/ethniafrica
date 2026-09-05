@@ -49,7 +49,7 @@ fiche exists to record.
 | `sources[].title`, `author`, `url`, `sourceKey`, `reference`               | A translated title is a citation nobody can find. The seven titles that carry "Hottentot" stay as cited.     |
 | Identifiers, ISO codes, glottocodes, Wikidata IDs, `_meta.*`               | Keys, not words.                                                                                             |
 | Numbers, years, percentages, enum values, tiers, statuses                  | Data; the label that renders an enum is class 4 and comes from the glossary's vocabularies.                  |
-| `nameFr` on countries, `nameFr` / `nameEn` on families and languages       | Already a bilingual pair, or a class-4 name held in `Admin0Country.name`. Reuse; never re-translate.         |
+| `nameFr` / `nameEn` on countries, families and languages                   | Already a bilingual pair. Reuse; never re-translate.                                                         |
 | Image paths, licence URIs, geometry, media locators                        | Files.                                                                                                       |
 
 ### The glossed-invariant sub-rule

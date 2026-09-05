@@ -89,8 +89,8 @@ prevents.
    none of the pipeline's vocabulary — _sidecar_, _class 3_, _research pass_,
    _coverage plan_ included. The French gate does not read English yet; you
    are the guard.
-10. **Bilingual pairs are reused, never re-translated.** `nameEn` on families
-    and languages, `Admin0Country.name` for countries.
+10. **Bilingual pairs are reused, never re-translated.** `nameEn` on families,
+    languages and countries.
 11. **No markdown in prose**, in either language.
 12. **Machine provenance says so.** A sidecar this skill drafts declares
     `kind: "machine"` in its `_translation` block. _DEC-048._
