@@ -14,6 +14,7 @@
     "lint:fix": "npm run lint -- --fix",
     "lint:req": "tsx scripts/lintReqAnnotations.ts",
     "lint:req:staged": "tsx scripts/lintReqAnnotations.ts --staged",
+    "check:copy-literals": "tsx scripts/ci/checkCopyLiterals.ts",
     "check:jira-template": "tsx scripts/checkJiraTemplate.ts",
     "check:action-pins": "tsx scripts/checkGithubActionPins.ts",
     "check:workflow-shell": "tsx scripts/checkWorkflowShellSyntax.ts",
