@@ -31,14 +31,13 @@ import {
   STRICT_MODEL_FILES,
   type StrictModelFile,
 } from "../src/lib/i18n/translationClasses";
-import { sidecarViolations } from "../src/lib/i18n/translationSidecarRules";
+import { translationViolations } from "../src/lib/afrik/translations/sidecarIntegrity";
 import { formatSegments, recordLeaves } from "../src/lib/i18n/modelLeafPaths";
 import {
   ENTITY_TYPE_BY_CORPUS_DIRECTORY,
   modelForEntity,
   stripTranslationBlock,
   translationBlockSchema,
-  type TranslationBlock,
 } from "../src/lib/afrik/translations/types";
 import { listTranslationSidecars } from "../src/lib/afrik/translations/sidecarPaths";
 
@@ -4498,10 +4497,10 @@ export function checkTranslationClassCoverage(
  * and drops nothing), class-1 leaves equal to the source's, and the name of
  * a glossed invariant kept before its translated gloss.
  *
- * What it does not ask: a review-required leaf at machine provenance is
- * stored on purpose — the overlay withholds it from the reader until a
- * human has reviewed it — so that one rule of `sidecarViolations` is not a
- * finding here.
+ * The class rules are the ones the translation command verifies before it
+ * writes (`translationViolations`), so a record the command produced is a
+ * record this gate accepts; a review-required leaf stored at machine
+ * provenance is deliberately not a finding in either.
  */
 // @req REQ-142
 // @req REQ-143
@@ -4567,7 +4566,6 @@ export function checkTranslationSidecars(
         );
         continue;
       }
-      const kind = (parsedBlock.data as TranslationBlock).kind;
 
       const sourceKeys = Object.keys(source).join(",");
       const sidecarKeys = Object.keys(content).join(",");
@@ -4593,13 +4591,11 @@ export function checkTranslationSidecars(
       }
 
       const model = modelForEntity(entityType, source);
-      for (const violation of sidecarViolations({
+      for (const violation of translationViolations({
         model,
         source,
         sidecar: content,
-        translationKind: kind,
       })) {
-        if (violation.rule === "review-required-at-machine") continue;
         errors.push(`TR-1: ${label}: ${violation.path} — ${violation.message}`);
       }
     }
