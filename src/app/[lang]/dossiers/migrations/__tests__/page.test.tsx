@@ -79,8 +79,11 @@ function makeDetail(
   };
 }
 
-function renderPage(searchParams: { peuple?: string } = {}) {
-  return MigrationsPage({ searchParams: Promise.resolve(searchParams) });
+function renderPage(searchParams: { peuple?: string } = {}, lang = "fr") {
+  return MigrationsPage({
+    params: Promise.resolve({ lang }),
+    searchParams: Promise.resolve(searchParams),
+  });
 }
 
 describe("/[lang]/migrations page", () => {

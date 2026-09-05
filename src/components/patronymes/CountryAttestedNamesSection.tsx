@@ -3,13 +3,13 @@ import { FicheFieldList, type FicheField } from "@/components/fiche/FicheProse";
 import { FicheSection } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { FicheNameList } from "@/components/patronymes/FicheNameList";
-import { translations } from "@/lib/translations";
-
-const copy = translations.fr.patronymes.onFiche;
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 export interface CountryAttestedNamesSectionProps {
   /** The country's two name lists, `null` when the read failed. */
   patronymes: CountryPatronymes | null;
+  language: Language;
 }
 
 /**
@@ -32,13 +32,17 @@ export interface CountryAttestedNamesSectionProps {
 // @req REQ-133
 export function CountryAttestedNamesSection({
   patronymes,
+  language,
 }: CountryAttestedNamesSectionProps) {
+  const copy = getTranslation(language).patronymes.onFiche;
+
   if (patronymes === null) {
     return (
       <FicheSection title={copy.countryTitle}>
         <FieldProvenanceMarker
           state="documented-gap"
           reason={copy.countryUnavailable}
+          language={language}
         />
       </FicheSection>
     );
@@ -52,6 +56,7 @@ export function CountryAttestedNamesSection({
         <FieldProvenanceMarker
           state="documented-gap"
           reason={copy.countryEmpty}
+          language={language}
         />
       </FicheSection>
     );
@@ -64,13 +69,13 @@ export function CountryAttestedNamesSection({
   if (attested.length > 0) {
     fields.push({
       label: copy.attestedLabel,
-      node: <FicheNameList names={attested} />,
+      node: <FicheNameList names={attested} language={language} />,
     });
   }
   if (borneByPeoples.length > 0) {
     fields.push({
       label: copy.reachLabel,
-      node: <FicheNameList names={borneByPeoples} />,
+      node: <FicheNameList names={borneByPeoples} language={language} />,
     });
   }
 

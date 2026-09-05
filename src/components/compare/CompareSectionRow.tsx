@@ -22,7 +22,7 @@ export interface CompareSectionRowProps {
   row: ComparisonRow;
   entities: ComparisonColumn[];
   entityType: CompareEntityType;
-  language?: Language;
+  language: Language;
 }
 
 // Editorial French row labels, one map per entity type (module spec
@@ -89,7 +89,7 @@ export function CompareSectionRow({
   row,
   entities,
   entityType,
-  language = "fr",
+  language,
 }: CompareSectionRowProps) {
   if (isRowEmpty(row)) return null;
 

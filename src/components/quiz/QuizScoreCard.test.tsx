@@ -19,6 +19,7 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
   it("shows the exact-count sentence, track, fiche links, rejouer and partager actions", () => {
     render(
       <QuizScoreCard
+        language="fr"
         scopeLabelFr="Ghana"
         correct={7}
         total={8}
@@ -53,6 +54,7 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
   it("never renders confetti, emoji or exclamation marks", () => {
     const { container } = render(
       <QuizScoreCard
+        language="fr"
         scopeLabelFr="Khoïsan"
         correct={2}
         total={5}
@@ -71,6 +73,7 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
   it("renders no fiche links when none are given", () => {
     render(
       <QuizScoreCard
+        language="fr"
         scopeLabelFr="Tout le continent"
         correct={4}
         total={6}
@@ -88,6 +91,7 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
     const user = userEvent.setup();
     render(
       <QuizScoreCard
+        language="fr"
         scopeLabelFr="Ghana"
         correct={7}
         total={8}
@@ -104,6 +108,7 @@ describe("QuizScoreCard (Epic 10, Story 10.10, ETNI-499, ETNI-1139, FR70, UX-DR2
   it("surfaces a polite share status message via an aria-live region", () => {
     render(
       <QuizScoreCard
+        language="fr"
         scopeLabelFr="Ghana"
         correct={7}
         total={8}

@@ -6,6 +6,7 @@ import "@/index.css";
 import { Providers } from "./providers";
 import { TypeformPreload } from "@/components/TypeformPreload";
 import { PRODUCT_NAME, OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
+import { LOCALE_HEADER, resolveLocale } from "@/lib/locale";
 import PlausibleScript from "@/components/PlausibleScript";
 
 const fraunces = Fraunces({
@@ -67,14 +68,20 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   await connection();
+  const requestHeaders = await headers();
   // Set by the CSP middleware on the request headers. Providers hands it to
   // next-themes, whose inline bootstrap script script-src would otherwise
   // reject.
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
+  const nonce = requestHeaders.get("x-nonce") ?? undefined;
+  // Also the middleware's: this layout sits above `[lang]` and cannot read
+  // the segment. Absent — a page outside the locale tree — the document is
+  // declared in the default locale. Resolved, not read raw, so a header the
+  // middleware did not set cannot name a language the site does not publish.
+  const lang = resolveLocale(requestHeaders.get(LOCALE_HEADER) ?? undefined);
 
   return (
     <html
-      lang="fr"
+      lang={lang}
       className={`${fraunces.variable} ${nunitoSans.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >

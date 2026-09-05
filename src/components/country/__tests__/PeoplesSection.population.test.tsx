@@ -24,13 +24,15 @@ describe("PeoplesSection — a population the fiche does not declare", () => {
 
   // @req REQ-092
   it("never prints a zero where the corpus states no population", () => {
-    const { container } = render(<PeoplesSection data={undeclared} />);
+    const { container } = render(
+      <PeoplesSection language="fr" data={undeclared} />
+    );
     expect(container.textContent).not.toMatch(/\b0\b(?!\s*%)/);
   });
 
   // @req REQ-092
   it("names the gap instead of the figure", () => {
-    render(<PeoplesSection data={undeclared} />);
+    render(<PeoplesSection language="fr" data={undeclared} />);
     expect(screen.getByText("Donnée manquante")).toBeTruthy();
   });
 
@@ -38,7 +40,7 @@ describe("PeoplesSection — a population the fiche does not declare", () => {
   // the percentages must survive the missing total.
   // @req REQ-092
   it("keeps the shares the fiche does declare", () => {
-    render(<PeoplesSection data={undeclared} />);
+    render(<PeoplesSection language="fr" data={undeclared} />);
     expect(screen.getByText("81.4%")).toBeTruthy();
     expect(screen.getByText("Africains noirs")).toBeTruthy();
   });
@@ -62,7 +64,7 @@ describe("PeoplesSection — a population the fiche does not declare", () => {
       ],
     };
 
-    render(<PeoplesSection data={partial} />);
+    render(<PeoplesSection language="fr" data={partial} />);
     expect(screen.getByText(/habitants documentés/)).toBeTruthy();
   });
 
@@ -81,7 +83,7 @@ describe("PeoplesSection — a population the fiche does not declare", () => {
       rows: [{ name: "Beti-Fang-Bulu", percentage: 22, colorIndex: 1 }],
     };
 
-    render(<PeoplesSection data={national} />);
+    render(<PeoplesSection language="fr" data={national} />);
     expect(screen.getByText(/^habitants · 2025$/)).toBeTruthy();
     expect(screen.getByText(/22\s*% de la population/)).toBeTruthy();
     expect(screen.queryByText(/habitants documentés/)).toBeNull();
@@ -113,7 +115,7 @@ describe("PeoplesSection — a population the fiche does not declare", () => {
       ],
     };
 
-    render(<PeoplesSection data={complete} />);
+    render(<PeoplesSection language="fr" data={complete} />);
     expect(screen.getByText(/^habitants · 2025$/)).toBeTruthy();
   });
 
@@ -138,7 +140,7 @@ describe("PeoplesSection — a population the fiche does not declare", () => {
       ],
     };
 
-    render(<PeoplesSection data={census2019} />);
+    render(<PeoplesSection language="fr" data={census2019} />);
     expect(screen.getByText(/^habitants · 2019$/)).toBeTruthy();
   });
 
@@ -167,7 +169,7 @@ describe("PeoplesSection — a population the fiche does not declare", () => {
       ],
     };
 
-    render(<PeoplesSection data={mixed} />);
+    render(<PeoplesSection language="fr" data={mixed} />);
     expect(screen.getByText(/^habitants$/)).toBeTruthy();
   });
 });

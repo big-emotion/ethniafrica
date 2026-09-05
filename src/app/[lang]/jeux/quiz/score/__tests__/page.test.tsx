@@ -34,6 +34,8 @@ vi.mock("../QuizScoreSharePage", () => ({
 import { notFound } from "next/navigation";
 import QuizScorePage, { generateMetadata } from "../page";
 
+const FR = Promise.resolve({ lang: "fr" });
+
 function searchParams(overrides: Record<string, string> = {}) {
   return Promise.resolve({
     pays: "GHA",
@@ -59,7 +61,7 @@ describe("/[lang]/quiz/score page (Epic 10, Story 10.10, ETNI-499, ETNI-1140, FR
   it("renders a shared score whatever the environment says", async () => {
     delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
 
-    render(await QuizScorePage({ searchParams: searchParams() }));
+    render(await QuizScorePage({ params: FR, searchParams: searchParams() }));
 
     expect(notFound).not.toHaveBeenCalled();
   });
@@ -68,6 +70,7 @@ describe("/[lang]/quiz/score page (Epic 10, Story 10.10, ETNI-499, ETNI-1140, FR
   it("404s on forged params (correct exceeds total)", async () => {
     await expect(
       QuizScorePage({
+        params: FR,
         searchParams: searchParams({ correct: "47", total: "8" }),
       })
     ).rejects.toThrow("NEXT_NOT_FOUND");
@@ -75,10 +78,11 @@ describe("/[lang]/quiz/score page (Epic 10, Story 10.10, ETNI-499, ETNI-1140, FR
 
   // @req REQ-103 FR70
   it("renders the score share page with the validated params", async () => {
-    render(await QuizScorePage({ searchParams: searchParams() }));
+    render(await QuizScorePage({ params: FR, searchParams: searchParams() }));
 
     const el = screen.getByTestId("quiz-score-share-page");
     expect(JSON.parse(el.getAttribute("data-props") ?? "{}")).toEqual({
+      language: "fr",
       scope: { kind: "country", entityId: "GHA" },
       scopeLabelFr: "Ghana",
       correct: 6,
@@ -86,9 +90,29 @@ describe("/[lang]/quiz/score page (Epic 10, Story 10.10, ETNI-499, ETNI-1140, FR
     });
   });
 
+  // The share card composes its own URLs, so it has to be told which locale
+  // the page was served in rather than assume the French one.
+  // @req REQ-140
+  it("hands the share card the route's locale", async () => {
+    render(
+      await QuizScorePage({
+        params: Promise.resolve({ lang: "en" }),
+        searchParams: searchParams(),
+      })
+    );
+
+    const el = screen.getByTestId("quiz-score-share-page");
+    expect(JSON.parse(el.getAttribute("data-props") ?? "{}")).toMatchObject({
+      language: "en",
+    });
+  });
+
   // @req REQ-103 FR70
   it("generateMetadata points og:image at /api/og/quiz-score with the same validated params", async () => {
-    const metadata = await generateMetadata({ searchParams: searchParams() });
+    const metadata = await generateMetadata({
+      params: FR,
+      searchParams: searchParams(),
+    });
 
     expect(metadata.openGraph?.images).toEqual([
       expect.objectContaining({
@@ -104,13 +128,14 @@ describe("/[lang]/quiz/score page (Epic 10, Story 10.10, ETNI-499, ETNI-1140, FR
     mockDescribeScope.mockResolvedValue(null);
 
     await expect(
-      QuizScorePage({ searchParams: searchParams({ pays: "ZZZ" }) })
+      QuizScorePage({ params: FR, searchParams: searchParams({ pays: "ZZZ" }) })
     ).rejects.toThrow("NEXT_NOT_FOUND");
   });
 
   // @req REQ-103 FR70
   it("generateMetadata returns an empty object for forged params", async () => {
     const metadata = await generateMetadata({
+      params: FR,
       searchParams: searchParams({ correct: "47", total: "8" }),
     });
 

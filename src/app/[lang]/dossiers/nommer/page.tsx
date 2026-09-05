@@ -6,15 +6,23 @@ import {
   NommerPillarPage,
 } from "@/components/dossiers/nommer/NommerPillarPage";
 import { getLocalizedRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
-const CANONICAL_PATH = getLocalizedRoute("fr", "nommer");
+interface PageProps {
+  params: Promise<{ lang: string }>;
+}
 
 // @req REQ-113
-export const metadata: Metadata = {
-  title: NOMMER_PAGE_TITLE,
-  description: NOMMER_PAGE_SUBTITLE,
-  alternates: { canonical: CANONICAL_PATH },
-};
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    title: NOMMER_PAGE_TITLE,
+    description: NOMMER_PAGE_SUBTITLE,
+    alternates: { canonical: getLocalizedRoute(lang as Language, "nommer") },
+  };
+}
 
 /**
  * The pillar of the founding dossier.
@@ -24,6 +32,7 @@ export const metadata: Metadata = {
  * the page cannot show a reader an empty dossier because a database was slow.
  */
 // @req REQ-113
-export default function NommerPage() {
-  return <NommerPillarPage />;
+export default async function NommerPage({ params }: PageProps) {
+  const { lang } = await params;
+  return <NommerPillarPage language={lang as Language} />;
 }

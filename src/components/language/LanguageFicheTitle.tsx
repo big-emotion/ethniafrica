@@ -1,5 +1,6 @@
 import type { LanguagePageData } from "@/lib/languageDataTransformer";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
+import type { Language } from "@/types/shared";
 
 /**
  * The band a language fiche opens on, above the parchment.
@@ -12,7 +13,13 @@ import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker"
  * this be visible on the fiche, not folded silently into the heading.
  */
 // @req REQ-136
-export function LanguageFicheTitle({ data }: { data: LanguagePageData }) {
+export function LanguageFicheTitle({
+  data,
+  language,
+}: {
+  data: LanguagePageData;
+  language: Language;
+}) {
   return (
     <header className="afh-parchment-head">
       <p className="afh-parchment-eyebrow">Langue</p>
@@ -21,6 +28,7 @@ export function LanguageFicheTitle({ data }: { data: LanguagePageData }) {
         <FieldProvenanceMarker
           state="derived"
           origin="vote majoritaire des sources"
+          language={language}
           className="mt-2"
         />
       )}

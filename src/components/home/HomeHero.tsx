@@ -5,6 +5,7 @@ import { PRODUCT_NAME } from "@/lib/brand";
 import type { CorpusCounts } from "@/lib/home/corpusCounts";
 import type { HomeHeroVisual } from "@/lib/home/homeHeroVisuals";
 import type { SeedWordsByKind } from "@/lib/home/seedWords";
+import type { Language } from "@/types/shared";
 
 import { HomeCorpusCounts } from "./HomeCorpusCounts";
 import { HomeHeroSearch } from "./HomeHeroSearch";
@@ -18,6 +19,7 @@ import { HomeHeroSearch } from "./HomeHeroSearch";
  * order.
  */
 export interface HomeHeroProps {
+  language: Language;
   /**
    * The seed chips' words, drawn from the corpus per request by the page.
    * Optional so Storybook can render the band with no database behind it —
@@ -39,11 +41,12 @@ export interface HomeHeroProps {
 // @req REQ-044
 // @req REQ-115
 export function HomeHero({
+  language,
   seedWords,
   peopleCountsByCountry,
   counts = null,
   visual = { kind: "globe" },
-}: HomeHeroProps = {}) {
+}: HomeHeroProps) {
   return (
     <section
       // Landmark label dropped during the light-parchment swap (ETNI-820,
@@ -101,7 +104,7 @@ export function HomeHero({
 
           {/* Search is the band's primary action; seed words keep its three
               corpus entry types visible before the reader starts typing. */}
-          <HomeHeroSearch seedWords={seedWords} />
+          <HomeHeroSearch language={language} seedWords={seedWords} />
 
           {/* What the atlas documents, counted per request by the server page,
               and placed under the field rather than over it: the figures

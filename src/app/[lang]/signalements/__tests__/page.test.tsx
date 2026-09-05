@@ -59,12 +59,14 @@ vi.mock("@/components/flags/PublicFlagsQueue", () => ({
   ),
 }));
 
-import SignalementsPage, { metadata } from "../page";
+import SignalementsPage, { generateMetadata } from "../page";
 
 const initialPage = {
   items: [],
   nextCursor: null,
 };
+
+const routeParams = (lang: string) => Promise.resolve({ lang });
 
 describe("/[lang]/signalements page", () => {
   beforeEach(() => {
@@ -75,7 +77,7 @@ describe("/[lang]/signalements page", () => {
 
   // @req REQ-014
   it("queries the unfiltered SSR page without using dynamic search params", async () => {
-    const ui = await SignalementsPage();
+    const ui = await SignalementsPage({ params: routeParams("fr") });
     render(ui);
 
     expect(mockGetPublicFlagsPage).toHaveBeenCalledWith({
@@ -96,7 +98,7 @@ describe("/[lang]/signalements page", () => {
 
   // @req REQ-014
   it("keeps one h1 above queue-row h2 headings", async () => {
-    const ui = await SignalementsPage();
+    const ui = await SignalementsPage({ params: routeParams("fr") });
     render(ui);
 
     expect(mockGetPublicFlagsPage).toHaveBeenCalledWith({
@@ -117,8 +119,19 @@ describe("/[lang]/signalements page", () => {
     ).toBeInTheDocument();
   });
 
+  // @req REQ-140
+  it("hands the shell the locale of the route", async () => {
+    render(await SignalementsPage({ params: routeParams("en") }));
+
+    expect(pageLayoutProps).toHaveBeenCalledWith(
+      expect.objectContaining({ language: "en" })
+    );
+  });
+
   // @req REQ-014
-  it("exports the public index metadata and caches its data for one minute", () => {
+  it("exports the public index metadata and caches its data for one minute", async () => {
+    const metadata = await generateMetadata({ params: routeParams("fr") });
+
     expect(metadata).toEqual({
       title: "Tous les signalements — EthniAfrica",
       description:

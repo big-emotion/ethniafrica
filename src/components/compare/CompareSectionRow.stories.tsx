@@ -52,12 +52,12 @@ type Story = StoryObj<typeof meta>;
 
 const filled: Story = {
   name: "Filled (both entities)",
-  args: { row: appellationsRow },
+  args: { language: "fr", row: appellationsRow },
 };
 
 const sparse: Story = {
   name: "Sparse (one entity non renseigné)",
-  args: { row: sparseRow },
+  args: { language: "fr", row: sparseRow },
 };
 
 // @req REQ-097

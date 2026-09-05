@@ -1,19 +1,32 @@
+import { headers } from "next/headers";
+
 import { PageLayout } from "@/components/layout/PageLayout";
 import { ACCENT_CLASS_BY_ENTITY } from "@/components/fiche/FicheSequence";
 import type { FicheEntityType } from "@/types/fiche";
+import type { Language } from "@/types/shared";
 import { DidYouKnowLoader } from "@/components/system/DidYouKnowLoader";
 import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
+import { LOCALE_HEADER, resolveLocale } from "@/lib/locale";
 
 /**
  * What a reader is told the wait is for. A screen reader gets this sentence
  * and nothing else, so it names the fiche rather than the act of loading.
  */
-const WAIT_LABEL: Record<FicheEntityType, string> = {
-  country: "Chargement de la fiche pays",
-  people: "Chargement de la fiche peuple",
-  "language-family": "Chargement de la fiche famille",
-  language: "Chargement de la fiche langue",
-  name: "Chargement de la fiche appellation",
+const WAIT_LABEL: Record<Language, Record<FicheEntityType, string>> = {
+  en: {
+    country: "Loading the country fiche",
+    people: "Loading the people fiche",
+    "language-family": "Loading the family fiche",
+    language: "Loading the language fiche",
+    name: "Loading the ethnonym fiche",
+  },
+  fr: {
+    country: "Chargement de la fiche pays",
+    people: "Chargement de la fiche peuple",
+    "language-family": "Chargement de la fiche famille",
+    language: "Chargement de la fiche langue",
+    name: "Chargement de la fiche appellation",
+  },
 };
 
 export interface FicheLoadingScreenProps {
@@ -29,6 +42,13 @@ export interface FicheLoadingScreenProps {
  * (REQ-098). A loading file that rendered bare content would blank the
  * navigation bar for the length of the wait and bring it back — the page
  * would appear to reload.
+ *
+ * ── Why the locale comes off a request header ─────────────────────────────
+ * A `loading.tsx` receives no params, so the segment's locale is out of
+ * reach here. The middleware stamps the resolved one on the request as
+ * `x-locale` for exactly this case — the root layout reads it the same way
+ * for `<html lang>`. Absent, a request outside the locale tree, the wait is
+ * dressed in the default locale rather than in a hardwired French.
  *
  * ── Why no band ───────────────────────────────────────────────────────────
  * This used to open on `FicheHeroBand`, the very night band the fiche opens
@@ -54,13 +74,20 @@ export interface FicheLoadingScreenProps {
  */
 // @req REQ-098
 // @req REQ-104
-export function FicheLoadingScreen({ entityType }: FicheLoadingScreenProps) {
+export async function FicheLoadingScreen({
+  entityType,
+}: FicheLoadingScreenProps) {
+  const requestHeaders = await headers();
+  const language = resolveLocale(
+    requestHeaders.get(LOCALE_HEADER) ?? undefined
+  );
+
   return (
-    <PageLayout language="fr" hideHeader hideTrail>
+    <PageLayout language={language} hideHeader hideTrail>
       <div className={ACCENT_CLASS_BY_ENTITY[entityType]}>
         <DidYouKnowLoader
           fact={pickDidYouKnowFact()}
-          label={WAIT_LABEL[entityType]}
+          label={WAIT_LABEL[language][entityType]}
         />
       </div>
     </PageLayout>

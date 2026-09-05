@@ -89,15 +89,13 @@ export interface RunResult {
 // ───── What is scanned ────────────────────────────────────────────────────
 
 /**
- * The UI dictionaries whose English side the gate reads. `translations` has
- * only an `fr` side on this branch; the bilingual foundation adds `en`, and
- * the cast below is what lets this file compile until it does. Remove it
- * when `translations.en` exists.
+ * The UI dictionaries whose English side the gate reads. `translations`
+ * carries both locales, so the gate scans its `en` side on every run.
  */
 export const UI_DICTIONARIES: readonly UiDictionary[] = [
   {
     name: "src/lib/translations.ts",
-    dictionary: translations as unknown as Record<string, unknown>,
+    dictionary: translations,
   },
 ];
 

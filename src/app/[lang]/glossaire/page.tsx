@@ -6,15 +6,23 @@ import {
   GlossaryPage,
 } from "@/components/glossaire/GlossaryPage";
 import { getLocalizedRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
-const CANONICAL_PATH = getLocalizedRoute("fr", "glossary");
+interface PageProps {
+  params: Promise<{ lang: string }>;
+}
 
 // @req REQ-144
-export const metadata: Metadata = {
-  title: GLOSSARY_PAGE_TITLE,
-  description: GLOSSARY_PAGE_SUBTITLE,
-  alternates: { canonical: CANONICAL_PATH },
-};
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    title: GLOSSARY_PAGE_TITLE,
+    description: GLOSSARY_PAGE_SUBTITLE,
+    alternates: { canonical: getLocalizedRoute(lang as Language, "glossary") },
+  };
+}
 
 /**
  * The glossary sits at the root, on no axis.
@@ -27,6 +35,7 @@ export const metadata: Metadata = {
  * rubric.
  */
 // @req REQ-144
-export default function GlossairePage() {
-  return <GlossaryPage />;
+export default async function GlossairePage({ params }: PageProps) {
+  const { lang } = await params;
+  return <GlossaryPage language={lang as Language} />;
 }

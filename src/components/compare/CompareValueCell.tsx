@@ -19,7 +19,7 @@ import type { Language } from "@/types/shared";
 export interface CompareValueCellProps {
   value: unknown;
   entity: ComparisonColumn;
-  language?: Language;
+  language: Language;
   /** Set by CompareSectionRow for demography-shaped rows only (FR61). */
   showReferenceYear?: boolean;
 }
@@ -130,7 +130,7 @@ function renderValue(value: unknown, language: Language): ReactNode {
 export function CompareValueCell({
   value,
   entity,
-  language = "fr",
+  language,
   showReferenceYear = false,
 }: CompareValueCellProps) {
   if (isEmptyValue(value)) {

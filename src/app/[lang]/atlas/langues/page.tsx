@@ -20,8 +20,9 @@ import { FacetPagination } from "@/components/hubs/facets/FacetPagination";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
 import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getLanguageRoute, getLocalizedRoute } from "@/lib/routing";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import type { CountryId } from "@/types/afrik";
+import type { Language } from "@/types/shared";
 
 /**
  * The language facet of the atlas hub.
@@ -56,17 +57,27 @@ const PARAM = {
   size: PAGE_SIZE_PARAM,
 } as const;
 
-const t = translations.fr.languages;
 const countFormat = new Intl.NumberFormat("fr-FR");
 
+interface PageProps {
+  params: Promise<{ lang: string }>;
+  searchParams?: Promise<PageSearchParams>;
+}
+
 // @req REQ-139
-export const metadata: Metadata = {
-  title: t.pageTitle,
-  description: t.pageSubtitle,
-  alternates: {
-    canonical: getLocalizedRoute("fr", "languages"),
-  },
-};
+export async function generateMetadata({
+  params,
+}: Pick<PageProps, "params">): Promise<Metadata> {
+  const { lang } = await params;
+  const t = getTranslation(lang as Language).languages;
+  return {
+    title: t.pageTitle,
+    description: t.pageSubtitle,
+    alternates: {
+      canonical: getLocalizedRoute(lang as Language, "languages"),
+    },
+  };
+}
 
 /**
  * An address for this facet under a given selection.
@@ -75,6 +86,7 @@ export const metadata: Metadata = {
  * the next time the module moves this call site moves with it.
  */
 function facetHref(
+  language: Language,
   filters: LanguagesFacetFilters,
   page: number | null,
   pageSize: number
@@ -92,16 +104,18 @@ function facetHref(
   }
 
   const search = query.toString();
-  const path = getFacetRoute("fr", "languages");
+  const path = getFacetRoute(language, "languages");
   return search ? `${path}?${search}` : path;
 }
 
 // @req REQ-139 @req REQ-136
 export default async function LanguesHubPage({
+  params,
   searchParams,
-}: {
-  searchParams?: Promise<PageSearchParams>;
-}) {
+}: PageProps) {
+  const { lang } = await params;
+  const language = lang as Language;
+  const t = getTranslation(language).languages;
   const query = (await searchParams) ?? {};
 
   const chosenSearch = definedFilter(query[PARAM.search]);
@@ -163,10 +177,15 @@ export default async function LanguesHubPage({
       rows.push({
         id: row.id,
         label: row.name,
-        href: getLanguageRoute("fr", row.id),
+        href: getLanguageRoute(language, row.id),
       });
       countryIndex[key] = rows;
-      narrowing[key] ??= facetHref({ ...filters, countryId }, null, pageSize);
+      narrowing[key] ??= facetHref(
+        language,
+        { ...filters, countryId },
+        null,
+        pageSize
+      );
     }
   }
 
@@ -182,18 +201,28 @@ export default async function LanguesHubPage({
   if (filters.familyId) {
     activeFilters.push({
       label: `Famille : ${familyLabels.get(filters.familyId) ?? filters.familyId}`,
-      removeHref: facetHref({ ...filters, familyId: null }, null, pageSize),
+      removeHref: facetHref(
+        language,
+        { ...filters, familyId: null },
+        null,
+        pageSize
+      ),
     });
   }
   if (filters.letter) {
     activeFilters.push({
       label: `Lettre : ${filters.letter}`,
-      removeHref: facetHref({ ...filters, letter: null }, null, pageSize),
+      removeHref: facetHref(
+        language,
+        { ...filters, letter: null },
+        null,
+        pageSize
+      ),
     });
   }
 
   const pagerHref = (page: number, size: number) =>
-    facetHref(filters, page, size);
+    facetHref(language, filters, page, size);
 
   const pagination = (position: "top" | "bottom") => (
     <FacetPagination
@@ -243,7 +272,7 @@ export default async function LanguesHubPage({
             a reader narrowing 748 languages reaches for the country they know
             before the linguistic family they are here to learn. */}
         <FacetFilterBar
-          action={getFacetRoute("fr", "languages")}
+          action={getFacetRoute(language, "languages")}
           className="mt-4"
           searchField={{
             name: PARAM.search,
@@ -278,7 +307,7 @@ export default async function LanguesHubPage({
               <FacetLetterRail
                 current={filters.letter}
                 hrefFor={(letter) =>
-                  facetHref({ ...filters, letter }, null, pageSize)
+                  facetHref(language, { ...filters, letter }, null, pageSize)
                 }
               />
             ),
@@ -299,6 +328,7 @@ export default async function LanguesHubPage({
             Aucune langue du corpus ne répond à cette sélection.{" "}
             <Link
               href={facetHref(
+                language,
                 {
                   familyId: null,
                   countryId: null,
@@ -319,21 +349,21 @@ export default async function LanguesHubPage({
               aria-label="Langues"
               className="mt-6 flex flex-col gap-2 p-0 md:grid md:grid-cols-2 xl:grid-cols-3"
             >
-              {reading.languages.map((language) => (
-                <li key={language.id} className="list-none">
+              {reading.languages.map((entry) => (
+                <li key={entry.id} className="list-none">
                   <Link
-                    href={getLanguageRoute("fr", language.id)}
+                    href={getLanguageRoute(language, entry.id)}
                     prefetch={false}
                     className="block h-full rounded-afh-xl border border-afh-border bg-afh-surface p-4 focus-visible:outline-none focus-visible:shadow-[var(--afh-ring-focus)]"
                   >
                     <span className="block text-afh-body font-semibold">
-                      {language.name}
+                      {entry.name}
                     </span>
                     {/* 748 languages for 532 distinct names — « Fulfulde »
                         names both fuf and fuv — so the family and the ISO code
                         are what tell two rows apart. */}
                     <span className="mt-2 block text-afh-small text-afh-text-soft">
-                      {language.family.name} · {language.id}
+                      {entry.family.name} · {entry.id}
                     </span>
                   </Link>
                 </li>

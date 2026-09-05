@@ -1,12 +1,13 @@
 import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
 import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
 import { readNameStanding, type NameStanding } from "@/lib/patronymes/content";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
-const t = translations.fr.patronymes;
+type PatronymeCopy = ReturnType<typeof getTranslation>["patronymes"];
 
 /** How many sources the fiche cites, and how many of those a machine wrote. */
-function standingSentence(standing: NameStanding): string {
+function standingSentence(standing: NameStanding, t: PatronymeCopy): string {
   const count =
     standing.sourceCount === 1
       ? t.sourceStanding.countOne
@@ -45,9 +46,12 @@ function standingSentence(standing: NameStanding): string {
 // @req REQ-147
 export function PatronymeFicheTitle({
   patronyme,
+  language,
 }: {
   patronyme: PublicPatronyme;
+  language: Language;
 }) {
+  const t = getTranslation(language).patronymes;
   const standing = readNameStanding(patronyme.content);
   const isAssembling = standing === null || standing.tier === "unverified";
 
@@ -61,11 +65,11 @@ export function PatronymeFicheTitle({
       {standing !== null && (
         <p className="afh-parchment-note">
           <span className="afh-chip" data-tier={standing.tier}>
-            {sourceStandingLabel(standing.tier, "fr")}
+            {sourceStandingLabel(standing.tier, language)}
           </span>
           {/* SWC drops JSX whitespace across a line break — without this the
               chip and the sentence run together. */}
-          {" " + standingSentence(standing)}
+          {" " + standingSentence(standing, t)}
         </p>
       )}
       {isAssembling && (

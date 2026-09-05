@@ -13,6 +13,7 @@ import { transformComparisonData } from "@/lib/comparisonDataTransformer";
 import { ComparisonView } from "@/components/compare/ComparisonView";
 import { SiteTrail } from "@/components/layout/SiteTrail";
 import type { CompareEntityPayload } from "@/types/compare";
+import type { Language } from "@/types/shared";
 import type { CompareEntityTypeParam } from "@/api/v2/schemas/compare";
 
 // @req REQ-091
@@ -122,7 +123,7 @@ export default async function ComparisonPage({
 }: {
   params: Promise<PageParams>;
 }) {
-  const { entityType, ids } = await params;
+  const { lang, entityType, ids } = await params;
   const data = await loadComparisonData(entityType, ids);
 
   const title = `Comparaison : ${data.columns.map((column) => column.label).join(" · ")}`;
@@ -138,7 +139,7 @@ export default async function ComparisonPage({
         <SiteTrail entityLabel={title} />
       </div>
       <h1>{title}</h1>
-      <ComparisonView data={data} />
+      <ComparisonView data={data} language={lang as Language} />
     </>
   );
 }

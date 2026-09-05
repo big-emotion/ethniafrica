@@ -49,7 +49,7 @@ describe("the country dossier with server-provided data", () => {
 
   // @req REQ-046
   it("renders a country immediately without a duplicate client fetch", () => {
-    render(<CountryRecordView country={senegal} />);
+    render(<CountryRecordView language="fr" country={senegal} />);
 
     // The h1 moved to the title band above the globe (CountryFicheTitle), so
     // what proves the record rendered from the server's data is the record
@@ -77,6 +77,7 @@ describe("the country dossier with server-provided data", () => {
   it("renders a live report control on the country Culture section", () => {
     render(
       <CountryRecordView
+        language="fr"
         country={{
           ...senegal,
           culture: { dominantReligions: "Islam, christianisme" },

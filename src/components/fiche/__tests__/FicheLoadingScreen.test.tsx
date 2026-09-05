@@ -1,10 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import type { ReactElement } from "react";
-import { describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { FicheLoadingScreen } from "@/components/fiche/FicheLoadingScreen";
+import {
+  FicheLoadingScreen,
+  type FicheLoadingScreenProps,
+} from "@/components/fiche/FicheLoadingScreen";
 import { ACCENT_CLASS_BY_ENTITY } from "@/components/fiche/FicheSequence";
 import { ConsentProvider } from "@/hooks/use-consent";
+import { LOCALE_HEADER } from "@/lib/locale";
 import { getPeopleRoute } from "@/lib/routing";
 
 /**
@@ -22,17 +26,37 @@ vi.mock("next/navigation", () => ({
   useSearchParams: () => new URLSearchParams(),
 }));
 
+// A `loading.tsx` receives no params, so the screen reads the locale the
+// middleware stamped on the request. Mutable per case; absent by default,
+// which is what a request outside the locale tree looks like.
+const requestHeaders = vi.hoisted(() => new Map<string, string>());
+
+vi.mock("next/headers", () => ({
+  headers: vi.fn(async () => ({
+    get: (name: string) => requestHeaders.get(name) ?? null,
+  })),
+}));
+
+// The screen is an async server component now, so it is awaited like one.
+const loadingScreen = async (props: FicheLoadingScreenProps) =>
+  renderInShell(await FicheLoadingScreen(props));
+
+beforeEach(() => {
+  requestHeaders.clear();
+  requestHeaders.set(LOCALE_HEADER, "fr");
+});
+
 describe("FicheLoadingScreen (REQ-104 — what a fiche shows while it is being fetched)", () => {
   // @req REQ-098
-  it("keeps the site header on screen, so orientation survives the navigation", () => {
-    renderInShell(<FicheLoadingScreen entityType="people" />);
+  it("keeps the site header on screen, so orientation survives the navigation", async () => {
+    await loadingScreen({ entityType: "people" });
 
     expect(screen.getByTestId("site-header")).toBeInTheDocument();
   });
 
   // @req REQ-104
-  it("names what is being loaded rather than reporting a bare wait", () => {
-    renderInShell(<FicheLoadingScreen entityType="country" />);
+  it("names what is being loaded rather than reporting a bare wait", async () => {
+    await loadingScreen({ entityType: "country" });
 
     expect(screen.getByRole("status")).toHaveTextContent(/fiche pays/i);
   });
@@ -44,10 +68,8 @@ describe("FicheLoadingScreen (REQ-104 — what a fiche shows while it is being f
    * — sat below the fold and was never read on the routes that wait longest.
    */
   // @req REQ-113
-  it("puts the fact on the fold, with no band above it to push it off", () => {
-    const { container } = renderInShell(
-      <FicheLoadingScreen entityType="people" />
-    );
+  it("puts the fact on the fold, with no band above it to push it off", async () => {
+    const { container } = await loadingScreen({ entityType: "people" });
 
     expect(
       container.querySelector("[data-testid='fiche-hero-band']")
@@ -61,8 +83,8 @@ describe("FicheLoadingScreen (REQ-104 — what a fiche shows while it is being f
    * would name a destination rather than a location.
    */
   // @req REQ-113
-  it("names no page it has not arrived at", () => {
-    renderInShell(<FicheLoadingScreen entityType="country" />);
+  it("names no page it has not arrived at", async () => {
+    await loadingScreen({ entityType: "country" });
 
     expect(screen.queryByTestId("page-hero")).toBeNull();
     expect(
@@ -71,10 +93,10 @@ describe("FicheLoadingScreen (REQ-104 — what a fiche shows while it is being f
   });
 
   // @req REQ-104
-  it("waits in the accent the arriving fiche will use, taken from the fiche's own map", () => {
-    const { container } = renderInShell(
-      <FicheLoadingScreen entityType="language-family" />
-    );
+  it("waits in the accent the arriving fiche will use, taken from the fiche's own map", async () => {
+    const { container } = await loadingScreen({
+      entityType: "language-family",
+    });
 
     // --accent carries two incompatible meanings in this codebase: shadcn's
     // bare HSL triplet in index.css, a hex on the .afh-accent-* wrappers in
@@ -86,5 +108,30 @@ describe("FicheLoadingScreen (REQ-104 — what a fiche shows while it is being f
         `.${ACCENT_CLASS_BY_ENTITY["language-family"]} svg.afh-atl-figure`
       )
     ).not.toBeNull();
+  });
+});
+
+/**
+ * The shell was hardwired to French, so an English fiche waited under a
+ * French masthead and a French announcement. The screen has no params to
+ * read; the request header the middleware sets is the only locale it can see.
+ */
+describe("FicheLoadingScreen — the wait is in the page's locale (REQ-140)", () => {
+  // @req REQ-140
+  it("dresses the shell and the announcement in the request's locale", async () => {
+    requestHeaders.set(LOCALE_HEADER, "en");
+    await loadingScreen({ entityType: "country" });
+
+    expect(screen.getByRole("status")).toHaveTextContent(/country fiche/i);
+    expect(screen.getByRole("status")).not.toHaveTextContent(/fiche pays/i);
+    expect(screen.getByTestId("site-brand")).toHaveAttribute("href", "/en");
+  });
+
+  // @req REQ-140
+  it("falls back to the default locale when the header is absent", async () => {
+    requestHeaders.clear();
+    await loadingScreen({ entityType: "people" });
+
+    expect(screen.getByTestId("site-brand")).toHaveAttribute("href", "/en");
   });
 });

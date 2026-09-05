@@ -6,11 +6,9 @@
  * the client boundary. Nothing here is server-rendered data: the picker fetches
  * its own suggestions from /api/v2/search.
  *
- * The result route owns the comparison; this page only builds its URL. The
- * French segment map is duplicated from
- * comparer/[entityType]/[...ids]/page.tsx on purpose — that route validates
- * untrusted segments, this one emits them, and coupling the two would make the
- * result route trust its caller.
+ * The result route owns the comparison; this page only builds its URL, from
+ * the same slug table the middleware and the switcher walk — the result route
+ * still validates the segments it receives, it does not trust this caller.
  */
 "use client";
 
@@ -18,26 +16,34 @@ import { useParams, useRouter } from "next/navigation";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { EntityComparePicker } from "@/components/compare/EntityComparePicker";
 import type { CompareEntityType } from "@/hooks/use-compare-selection";
+import { DEFAULT_LOCALE, isLocale } from "@/lib/locale";
+import {
+  COMPARE_ENTITY_SEGMENTS,
+  getLocalizedRoute,
+  type CompareEntityKey,
+} from "@/lib/routing";
 
-const RESULT_ROUTE_SEGMENT: Record<CompareEntityType, string> = {
-  peoples: "peuples",
-  countries: "pays",
-  "language-families": "familles",
+const ENTITY_KEY: Record<CompareEntityType, CompareEntityKey> = {
+  peoples: "peoples",
+  countries: "countries",
+  "language-families": "families",
 };
 
 // @req REQ-091
 export default function ComparerPickerPage() {
   const router = useRouter();
   const { lang } = useParams<{ lang: string }>();
+  const language = isLocale(lang) ? lang : DEFAULT_LOCALE;
 
   const goToComparison = (type: CompareEntityType, ids: string[]) => {
+    const segment = COMPARE_ENTITY_SEGMENTS[language][ENTITY_KEY[type]];
     router.push(
-      `/${lang}/comparer/${RESULT_ROUTE_SEGMENT[type]}/${ids.join("/")}`
+      `${getLocalizedRoute(language, "compare")}/${segment}/${ids.join("/")}`
     );
   };
 
   return (
-    <PageLayout language="fr" sectionName="Comparer" hideHeader>
+    <PageLayout language={language} sectionName="Comparer" hideHeader>
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-afh-h1 font-display font-semibold text-afh-text">
           Comparer
