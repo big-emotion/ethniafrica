@@ -10,6 +10,11 @@ The site is **French-only**: `Language = "fr"` in `src/types/shared.ts`, and `sr
 
 The public REST API is **v2 only** (`/api/v2/*`). V1 (regions/ethnicities) was removed; anything referring to `regions` or `ethnicities` as entities is stale, including most of `README.md`.
 
+For short social videos or the future `video-social-director-clipping` skill, read
+[`docs/editorial/social-video-production-memory.md`](docs/editorial/social-video-production-memory.md).
+It preserves the user-approved Bantu V5 format, natural voice pacing, animated brand
+ending, source/permission state, recovery assets and lessons for corpus-based production.
+
 ## Commands
 
 ```bash
