@@ -67,7 +67,10 @@ export const DEAD_CODE_CEILINGS: Readonly<Record<DeadCodeCategory, number>> = {
   // HERO_PREVIEW_KINDS, getFacetByPage, and the two country reads the
   // synthesis rail needed — and the ratchet keeps that room freed too.
   exports: 23,
-  types: 50,
+  // 50 -> 49 when the bilingual glossary's vocabulary file started keying
+  // the patronyme labels by `PatronymeNameSystem`, which the parsers file
+  // exported and nothing read.
+  types: 49,
   duplicates: 0,
 };
 

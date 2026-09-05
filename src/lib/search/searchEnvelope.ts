@@ -172,6 +172,22 @@ function patronymeAssociationsOf(content: unknown): {
 }
 
 /**
+ * The associated peoples the API resolved to a main name (ETNI-1859). An
+ * entry missing either string is dropped: a chip with no name, or one whose
+ * link would carry a non-string id, is worse than no chip.
+ */
+function resolvedPeoplesOf(value: unknown): SearchResult["associatedPeoples"] {
+  if (!Array.isArray(value)) return undefined;
+  return value.flatMap((entry) => {
+    if (!entry || typeof entry !== "object") return [];
+    const { id, name } = entry as Record<string, unknown>;
+    return typeof id === "string" && typeof name === "string"
+      ? [{ id, name }]
+      : [];
+  });
+}
+
+/**
  * The speaker peoples a language fiche declares (ETNI-1804), read off
  * `content.peoples` (`persistedContent` in `languageProvenanceLoader.ts`).
  * Only entries with a resolved `peopleId` count: the corpus also lists a
@@ -304,6 +320,7 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
       casteOrSocialFunction:
         row.casteOrSocialFunction as SearchResult["casteOrSocialFunction"],
       ...patronymeAssociationsOf(row.content),
+      associatedPeoples: resolvedPeoplesOf(row.associatedPeoples),
       ...sourceMetadataOf(row.content),
       snippet: (row.snippet as string) || undefined,
       relevance: numberOrUndefined(row.relevance),

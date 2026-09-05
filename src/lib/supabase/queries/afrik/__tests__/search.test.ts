@@ -12,8 +12,14 @@ vi.mock("../../../server", () => ({
   createServerClient: vi.fn(),
 }));
 
+vi.mock("../peoples", () => ({
+  getAfrikPeoplesByIds: vi.fn(),
+}));
+
 import { ftsSearchEntities } from "../search";
 import { createServerClient } from "../../../server";
+import { getAfrikPeoplesByIds } from "../peoples";
+import type { People } from "@/types/afrik";
 
 function peopleRow(
   id: string,
@@ -210,6 +216,7 @@ describe("ftsSearchEntities", () => {
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (createServerClient as any).mockReturnValue(mockSupabase);
+    vi.mocked(getAfrikPeoplesByIds).mockResolvedValue([]);
   });
 
   // @req REQ-002
@@ -884,6 +891,164 @@ describe("ftsSearchEntities", () => {
 
     expect(result.total).toBe(2);
   });
+
+  // ── associated peoples on a name hit (ETNI-1859) ──────────────────────────
+
+  function peopleFiche(id: string, nameMain: string): People {
+    return { id, nameMain } as People;
+  }
+
+  // @req REQ-124
+  it("resolves the peoples of every name hit in one de-duplicated lookup", async () => {
+    patronymesPayload = {
+      total: 2,
+      rows: [
+        patronymeRow("PATR_KEITA", "Keïta", {
+          content: {
+            peoples: [
+              { peopleId: "PPL_MANDINGUE", status: "attested" },
+              { peopleId: "PPL_BAMBARA", status: "supposed" },
+            ],
+          },
+        }),
+        patronymeRow("PATR_TRAORE", "Traoré", {
+          content: {
+            peoples: [
+              { peopleId: "PPL_BAMBARA", status: "attested" },
+              { peopleId: "PPL_SENOUFO", status: "attested" },
+            ],
+          },
+        }),
+      ],
+    };
+
+    await ftsSearchEntities({ q: "Keïta", limit: 20, offset: 0 });
+
+    expect(getAfrikPeoplesByIds).toHaveBeenCalledTimes(1);
+    expect(getAfrikPeoplesByIds).toHaveBeenCalledWith([
+      "PPL_MANDINGUE",
+      "PPL_BAMBARA",
+      "PPL_SENOUFO",
+    ]);
+  });
+
+  // @req REQ-124
+  it("lists each hit's peoples by main name, in the fiche's own order", async () => {
+    patronymesPayload = {
+      total: 2,
+      rows: [
+        patronymeRow("PATR_KEITA", "Keïta", {
+          content: {
+            peoples: [
+              { peopleId: "PPL_MANDINGUE" },
+              { peopleId: "PPL_BAMBARA" },
+            ],
+          },
+        }),
+        patronymeRow("PATR_TRAORE", "Traoré", {
+          content: {
+            peoples: [{ peopleId: "PPL_BAMBARA" }, { peopleId: "PPL_SENOUFO" }],
+          },
+        }),
+      ],
+    };
+    // The lookup orders by name_main, which is not the fiche's order — the
+    // hit must follow the fiche, not the database.
+    vi.mocked(getAfrikPeoplesByIds).mockResolvedValue([
+      peopleFiche("PPL_BAMBARA", "Bambara"),
+      peopleFiche("PPL_MANDINGUE", "Mandingue"),
+      peopleFiche("PPL_SENOUFO", "Sénoufo"),
+    ]);
+
+    const result = await ftsSearchEntities({
+      q: "Keïta",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.patronymes[0].associatedPeoples).toEqual([
+      { id: "PPL_MANDINGUE", name: "Mandingue" },
+      { id: "PPL_BAMBARA", name: "Bambara" },
+    ]);
+    expect(result.patronymes[1].associatedPeoples).toEqual([
+      { id: "PPL_BAMBARA", name: "Bambara" },
+      { id: "PPL_SENOUFO", name: "Sénoufo" },
+    ]);
+  });
+
+  // @req REQ-124
+  it("omits a declared people whose fiche the lookup does not return", async () => {
+    patronymesPayload = {
+      total: 1,
+      rows: [
+        patronymeRow("PATR_KEITA", "Keïta", {
+          content: {
+            peoples: [
+              { peopleId: "PPL_MANDINGUE" },
+              { peopleId: "PPL_NO_FICHE_YET" },
+            ],
+          },
+        }),
+      ],
+    };
+    vi.mocked(getAfrikPeoplesByIds).mockResolvedValue([
+      peopleFiche("PPL_MANDINGUE", "Mandingue"),
+    ]);
+
+    const [keita] = (
+      await ftsSearchEntities({ q: "Keïta", limit: 20, offset: 0 })
+    ).patronymes;
+
+    expect(keita.associatedPeoples).toEqual([
+      { id: "PPL_MANDINGUE", name: "Mandingue" },
+    ]);
+  });
+
+  // @req REQ-124
+  it("asks nothing of the peoples table when no name hit declares a people", async () => {
+    patronymesPayload = {
+      total: 2,
+      rows: [
+        patronymeRow("PATR_KEITA", "Keïta"),
+        patronymeRow("PATR_TRAORE", "Traoré", { content: { peoples: [] } }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Keïta",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(getAfrikPeoplesByIds).not.toHaveBeenCalled();
+    expect(result.patronymes[0].associatedPeoples).toBeUndefined();
+    expect(result.patronymes[1].associatedPeoples).toBeUndefined();
+  });
+
+  // @req REQ-124
+  it("keeps the name hits when the peoples lookup fails", async () => {
+    patronymesPayload = {
+      total: 1,
+      rows: [
+        patronymeRow("PATR_KEITA", "Keïta", {
+          content: { peoples: [{ peopleId: "PPL_MANDINGUE" }] },
+        }),
+      ],
+    };
+    vi.mocked(getAfrikPeoplesByIds).mockRejectedValue(
+      new Error("peoples boom")
+    );
+
+    const result = await ftsSearchEntities({
+      q: "Keïta",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.patronymes.map((p) => p.id)).toEqual(["PATR_KEITA"]);
+    expect(result.patronymes[0].associatedPeoples).toBeUndefined();
+  });
+
   // ── quiz (ETNI-1709) ──────────────────────────────────────────────────────
 
   // @req REQ-121

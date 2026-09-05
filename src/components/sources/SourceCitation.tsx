@@ -1,4 +1,5 @@
-import { type SourceTier, sourceStandingLabelFr } from "@/types/sources";
+import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
+import type { SourceTier } from "@/types/sources";
 
 /**
  * A citable work, reduced to what a citation actually needs.
@@ -14,7 +15,7 @@ export interface CitableSource {
   /**
    * `needs_review` is not a tier and must never be folded onto "Non vérifiée".
    * Keeping it in the type is what forces every caller through
-   * `sourceStandingLabelFr`.
+   * `sourceStandingLabel`.
    */
   standing: SourceTier | "needs_review";
 }
@@ -28,15 +29,15 @@ export interface CitableSource {
  * own, and the dossier and the bibliography page were about to make that four
  * and five.
  *
- * The standing goes through `sourceStandingLabelFr` and never through
- * `SOURCE_TIER_LABELS_FR` directly. `strictNullChecks` is off in this repo, so
+ * The standing goes through `sourceStandingLabel` and never through
+ * `SOURCE_TIER_LABELS` directly. `strictNullChecks` is off in this repo, so
  * indexing the label map with a value that turns out to be `needs_review`
  * yields an empty string — a source rendered with no visible provenance,
  * which is the one outcome the policy exists to prevent.
  */
 // @req REQ-092
 export function SourceCitation({ source }: { source: CitableSource }) {
-  const standingLabel = sourceStandingLabelFr(source.standing);
+  const standingLabel = sourceStandingLabel(source.standing, "fr");
 
   return (
     <span className="afh-source-citation" data-source-tier={source.standing}>

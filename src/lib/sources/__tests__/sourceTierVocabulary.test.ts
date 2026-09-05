@@ -27,11 +27,14 @@ import { describe, expect, it } from "vitest";
 import catalog from "../../../../config/sources/authorized-source-catalog.json";
 import { sourceSchema } from "@/api/v2/schemas/sources";
 import {
+  SOURCE_PENDING_REVIEW_LABEL,
+  SOURCE_TIER_LABELS,
+  sourceStandingLabel,
+} from "@/lib/glossaire/vocabularies";
+import {
   AI_PROVENANCE_WEIGHT,
   SOURCE_KINDS,
   SOURCE_TIERS,
-  SOURCE_TIER_LABELS_FR,
-  sourceStandingLabelFr,
   SOURCE_TIER_WEIGHTS,
 } from "@/types/sources";
 
@@ -53,6 +56,10 @@ const SELF = relative(ROOT, __filename).split(sep).join("/");
 /**
  * Retired identifiers, banned outright. `admission` is matched as a whole word
  * so unrelated prose ("admissible") stays legal.
+ *
+ * The three `_FR`-suffixed names encoded the French-only assumption in the
+ * identifier itself; the bilingual glossary (REQ-144) keys the same labels by
+ * locale, so the suffix is retired with the assumption.
  */
 const RETIRED_IDENTIFIERS = [
   /\bevidence_tier\b/,
@@ -60,6 +67,9 @@ const RETIRED_IDENTIFIERS = [
   /\bEvidenceTier\b/,
   /\bai-enriched\b/,
   /\badmissions?\b/i,
+  /\bSOURCE_TIER_LABELS_FR\b/,
+  /\bSOURCE_PENDING_REVIEW_LABEL_FR\b/,
+  /\bsourceStandingLabelFr\b/,
 ];
 
 /**
@@ -152,14 +162,21 @@ describe("source tier vocabulary contract", () => {
   });
 
   // @req REQ-092
-  it("gives every tier a French label and a confidence weight", () => {
-    expect(Object.keys(SOURCE_TIER_LABELS_FR).sort()).toEqual(
-      [...SOURCE_TIERS].sort()
-    );
-    expect(SOURCE_TIER_LABELS_FR).toEqual({
+  it("gives every tier a label in both locales and a confidence weight", () => {
+    for (const locale of ["fr", "en"] as const) {
+      expect(Object.keys(SOURCE_TIER_LABELS[locale]).sort(), locale).toEqual(
+        [...SOURCE_TIERS].sort()
+      );
+    }
+    expect(SOURCE_TIER_LABELS.fr).toEqual({
       official: "Officielle",
       referenced: "Référencée",
       unverified: "Non vérifiée",
+    });
+    expect(SOURCE_TIER_LABELS.en).toEqual({
+      official: "Official",
+      referenced: "Referenced",
+      unverified: "Unverified",
     });
     expect(SOURCE_TIER_WEIGHTS).toEqual({
       official: 1.0,
@@ -321,23 +338,34 @@ describe("source tier vocabulary contract — Supabase schema", () => {
   });
 });
 
-describe("sourceStandingLabelFr", () => {
+describe("sourceStandingLabel", () => {
   // A source nobody has judged is not a source judged weak. Folding
   // needs_review into "Non vérifiée" states a verdict no one reached, which
   // is the distinction the tier policy exists to keep visible.
   // @req REQ-092
-  it("gives a source awaiting review a label of its own", () => {
-    expect(sourceStandingLabelFr("needs_review")).toBe("En attente d'examen");
-    expect(sourceStandingLabelFr("needs_review")).not.toBe(
-      sourceStandingLabelFr("unverified")
+  it("gives a source awaiting review a label of its own, in both locales", () => {
+    expect(sourceStandingLabel("needs_review", "fr")).toBe(
+      "En attente d'examen"
     );
+    expect(sourceStandingLabel("needs_review", "en")).toBe("Awaiting review");
+    for (const locale of ["fr", "en"] as const) {
+      expect(sourceStandingLabel("needs_review", locale)).toBe(
+        SOURCE_PENDING_REVIEW_LABEL[locale]
+      );
+      expect(sourceStandingLabel("needs_review", locale)).not.toBe(
+        sourceStandingLabel("unverified", locale)
+      );
+    }
   });
 
   // @req REQ-092
   it("labels the three authority tiers as the policy names them", () => {
-    expect(sourceStandingLabelFr("official")).toBe("Officielle");
-    expect(sourceStandingLabelFr("referenced")).toBe("Référencée");
-    expect(sourceStandingLabelFr("unverified")).toBe("Non vérifiée");
+    expect(sourceStandingLabel("official", "fr")).toBe("Officielle");
+    expect(sourceStandingLabel("referenced", "fr")).toBe("Référencée");
+    expect(sourceStandingLabel("unverified", "fr")).toBe("Non vérifiée");
+    expect(sourceStandingLabel("official", "en")).toBe("Official");
+    expect(sourceStandingLabel("referenced", "en")).toBe("Referenced");
+    expect(sourceStandingLabel("unverified", "en")).toBe("Unverified");
   });
 
   // strictNullChecks is off here, so an uncovered value resolves to undefined
@@ -345,11 +373,14 @@ describe("sourceStandingLabelFr", () => {
   // all, which is the one outcome the policy forbids.
   // @req REQ-092
   it("never renders nothing for a standing it does not recognise", () => {
-    expect(sourceStandingLabelFr("tier-1" as never)).toBe(
+    expect(sourceStandingLabel("tier-1" as never, "fr")).toBe(
       "En attente d'examen"
     );
-    expect(sourceStandingLabelFr(undefined as never)).toBe(
+    expect(sourceStandingLabel(undefined as never, "fr")).toBe(
       "En attente d'examen"
+    );
+    expect(sourceStandingLabel(undefined as never, "en")).toBe(
+      "Awaiting review"
     );
   });
 });

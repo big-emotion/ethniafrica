@@ -57,7 +57,7 @@ describe("the Nommer dossier's sources", () => {
   });
 
   // `standing` is typed `SourceTier | "needs_review"` so it can only ever be
-  // handed to `sourceStandingLabelFr`. This asserts the values themselves,
+  // handed to `sourceStandingLabel`. This asserts the values themselves,
   // because `strictNullChecks` is off and a typo would type-check.
   // @req REQ-113
   it("gives every work a standing the tier vocabulary knows", () => {

@@ -1,5 +1,11 @@
 import { Language } from "@/types/shared";
 import { PRODUCT_NAME, ATTRIBUTION_STRING } from "@/lib/brand";
+import {
+  CLASSIFICATION_LABELS,
+  COLONIAL_EVENT_TYPE_LABELS,
+  NAME_TYPE_LABELS,
+  PATRONYME_VOCABULARY,
+} from "@/lib/glossaire/vocabularies";
 import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 import type { PageType } from "@/lib/routing";
 
@@ -187,27 +193,9 @@ export const translations = {
       retry: "Réessayer",
       loadMore: "Afficher plus de signalements",
     },
-    classification: {
-      consensual: {
-        label: "Consensuel",
-        tooltip:
-          "Classification largement consensuelle dans la littérature scientifique.",
-      },
-      contested: {
-        label: "Contesté",
-        tooltip: "Classification faisant l'objet de débats académiques.",
-      },
-      "colonial-legacy": {
-        label: "Héritage colonial",
-        tooltip:
-          "Catégorie héritée de la période coloniale, conservée et expliquée selon notre cadre éditorial.",
-      },
-      reconstructive: {
-        label: "Reconstructif",
-        tooltip:
-          "Classification reconstruite à partir de sources fragmentaires.",
-      },
-    },
+    // Controlled vocabularies are labelled once, in the glossary's owner file,
+    // and only pointed at from here (REQ-144).
+    classification: CLASSIFICATION_LABELS.fr,
     names: {
       pageTitle: "Appellations",
       // The deck says what the page is; `purpose` below says why it exists.
@@ -244,13 +232,16 @@ export const translations = {
         "Un endonyme est le nom qu'un peuple se donne ; un exonyme, celui que d'autres lui donnent ; une graphie historique, une forme fixée par écrit à une époque ; un nom imposé, une appellation attribuée de l'extérieur.",
       filters: {
         all: "tous",
-        endonym: "endonyme",
-        exonym: "exonyme",
-        historical_spelling: "graphie historique",
-        // Kept for `NameTypeBadge`, which labels a record of that type. The
-        // filter chip it once fed is now rendered only when the corpus holds
-        // such a record, and it holds none — see migration 071.
-        surname: "patronyme",
+        endonym: NAME_TYPE_LABELS.fr.endonym,
+        exonym: NAME_TYPE_LABELS.fr.exonym,
+        historical_spelling: NAME_TYPE_LABELS.fr.historical_spelling,
+        // The chip is rendered only when the corpus holds a record of that
+        // type, and it holds none — see migration 071.
+        surname: NAME_TYPE_LABELS.fr.surname,
+        // Plural on purpose: the chip narrows the list to a set ("noms
+        // imposés 12") where the badge names one record ("nom imposé"). The
+        // vocabulary value is the singular; this is its grammatical number,
+        // not a second wording.
         imposed: "noms imposés",
       },
       activeFiltersLabel: "Filtres actifs",
@@ -320,44 +311,18 @@ export const translations = {
       eyebrow: "Nom",
       nameSystemSectionTitle: "Le nom",
       nameSystemStatementPrefix: "Système de nommage :",
-      nameSystemLabels: {
-        clan_name: "Nom de clan",
-        non_hereditary_patronymic: "Patronyme non héréditaire",
-        nisba: "Nisba",
-        praise_name: "Nom d'éloge (jamu)",
-        totemic_clan: "Clan totémique",
-      },
+      nameSystemLabels: PATRONYME_VOCABULARY.fr.nameSystem,
       casteOrSocialFunctionLabel: "Caste ou fonction sociale",
       attestedFormsTitle: "Graphies attestées",
       spellingAttestedInPrefix: "attestée en",
       transmissionModeLabel: "Mode de transmission",
-      transmissionModeLabels: {
-        patrilineal: "Patrilinéaire",
-        matrilineal: "Matrilinéaire",
-        bilateral: "Bilatérale",
-        elective: "Élective",
-        non_hereditary: "Non héréditaire",
-        other: "Autre",
-      },
+      transmissionModeLabels: PATRONYME_VOCABULARY.fr.transmissionMode,
       designatedSocialUnitLabel: "Unité sociale désignée",
-      designatedSocialUnitLabels: {
-        individual: "Individu",
-        lineage: "Lignage",
-        clan: "Clan",
-        caste: "Caste",
-        age_set: "Classe d'âge",
-        settlement: "Établissement",
-        other: "Autre",
-      },
+      designatedSocialUnitLabels: PATRONYME_VOCABULARY.fr.designatedSocialUnit,
       totemicFoodProhibitionLabel: "Interdit alimentaire totémique",
       permittedGivenNamesLabel: "Prénoms autorisés",
       nisbaSubtypeLabel: "Type de nisba",
-      nisbaSubtypeLabels: {
-        geographic: "Géographique",
-        tribal: "Tribale",
-        occupational: "Occupationnelle",
-        other: "Autre",
-      },
+      nisbaSubtypeLabels: PATRONYME_VOCABULARY.fr.nisbaSubtype,
       originTitle: "Origine",
       // Three parallel lists, not one classification: the corpus can hold a
       // griot's account and a written chronicle for the same name without
@@ -365,11 +330,7 @@ export const translations = {
       originOralTraditionsLabel: "Tradition orale griotique",
       originWrittenChroniclesLabel: "Chronique écrite",
       originLinguisticReconstructionsLabel: "Reconstruction linguistique",
-      originClaimStatusLabels: {
-        claimed: "Revendiquée",
-        contested: "Contestée",
-        established: "Établie",
-      },
+      originClaimStatusLabels: PATRONYME_VOCABULARY.fr.originClaimStatus,
       // Attributed to the transcription and its griot rather than stated as
       // a bare fact: an oral chain of transmission is the source, and a
       // fiche that dropped that attribution would present a griot's telling
@@ -506,12 +467,7 @@ export const translations = {
       },
       timeline: {
         title: "Chronologie",
-        eventTypeLabels: {
-          fragmentation: "fragmentation",
-          displacement: "déplacement forcé",
-          imposed_name: "nom imposé",
-          resistance: "résistance",
-        },
+        eventTypeLabels: COLONIAL_EVENT_TYPE_LABELS.fr,
         filterLegend: "Filtrer par type d'événement",
         openEventSuffix: "Entrée pour ouvrir",
         closeEventCard: "Fermer",
