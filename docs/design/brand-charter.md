@@ -49,7 +49,7 @@ in `src/`.
 it makes the other four spellings wrong, which is the point.
 
 `Africa History` is retired, and with it `africahistory.org`. It was an English
-name on a product that exists only in French, and it survives today only in
+name on a product that then existed only in French, and it survives today only in
 places a reader reaches by accident: an API payload, a citation, a stylesheet
 header.
 
@@ -111,11 +111,21 @@ African media and publishers, and would conflict with that same media.
 
 ## 3. Voice
 
-French, `vouvoiement`, present tense. Declarative and specific — the surface
-states what the corpus holds and what it does not, and never advertises.
+Two languages, one voice. In French: `vouvoiement`, present tense. In English,
+which has no `vouvoiement`: present tense, declarative, British spelling, and
+**no contractions in editorial prose** — _does not_, never _doesn't_ — with the
+second person only where the French uses it. The French addresses the reader in
+error states, consent and the report dialogs, and nowhere in a fiche, so the
+English fiche never says _you_ either. Both registers are declarative and
+specific — the surface states what the corpus holds and what it does not, and
+never advertises. Ruled with ETNI-1831: a contraction reads as marketing copy
+on a page that must read as a record, and a second Voice section would be the
+place where the two registers drift apart, which is why there is one.
 
 Three habits carry the decolonial posture, and they are visual as much as
-editorial:
+editorial. They do not translate: an autonym is the same string in both
+locales and keeps its `lang`; the exonym's gloss is the one thing that changes
+language.
 
 - **The autonym leads, the exonym glosses it.** Enforced in components by
   `afh/no-bare-people-name`; enforced typographically by the rule that the
@@ -599,3 +609,8 @@ its own decision about sourcing and rights.
 - **Anything a surface charter already governs.** Where this file and a surface
   charter disagree, the surface charter is more specific and wins — and the
   disagreement is a bug in one of them, to be closed rather than lived with.
+- **Translation classes and review.** Which field is invariant, translatable,
+  review-required or generated is DEC-047's, declared in
+  `src/lib/i18n/translationClasses.ts` and held by the `afrik-translator`
+  skill and the parity gate. §3 settles how the English reads, not what may be
+  translated.

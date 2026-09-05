@@ -17,6 +17,8 @@ already says, and produces a source-cited proposal — it never publishes.
 - **Audit** one or several fiches against the model and the editorial rules
 
 Product or interface work is a different skill. For the look of a page, `/afrik-art-director`.
+Putting a fiche into the other locale is `/afrik-translator`: the curator writes the French
+record, the translator its sidecar.
 
 ## The eight corpus classes
 
