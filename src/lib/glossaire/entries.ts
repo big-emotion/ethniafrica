@@ -48,7 +48,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     en: "Endonym",
     family: "origine",
     definition:
-      "Le nom d'un groupe dans sa propre langue. Le corpus en déclare 798 pour 800 fiches — et 3 207 noms venus du dehors.",
+      "Le nom d'un groupe dans sa propre langue. Le corpus en déclare 798 pour 800 fiches — et 3 201 noms venus du dehors.",
     corpusExample: "Ovaherero, « les possesseurs de bétail » en otjiherero.",
     corpusPresence: "instantiated",
     seeAlso: ["autonyme", "exonyme"],
@@ -76,7 +76,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     definition:
       "Le nom donné à un groupe depuis le dehors — un voisin, un marchand, une administration. Ni forcément hostile, ni forcément colonial.",
     corpusExample:
-      "3 207 exonymes au corpus ; 120 fiches attribuent le leur à des voisins, 75 à l'arabe.",
+      "3 201 exonymes au corpus ; 120 fiches attribuent le leur à des voisins, 75 à l'arabe.",
     corpusPresence: "instantiated",
     seeAlso: ["endonyme", "exonyme-depreciatif"],
     chapterRef: "le-peuple",
@@ -331,7 +331,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     definition:
       "L'écart entre ce qui a été écrit sur un groupe et ce qu'il a écrit de lui-même. Elle mesure les archives, jamais les peuples.",
     corpusExample:
-      "3 207 exonymes pour 798 autonymes — et 321 fiches sur 800 qui ne déclarent aucun statut.",
+      "3 201 exonymes pour 798 autonymes — et 321 fiches sur 800 qui ne déclarent aucun statut.",
     corpusPresence: "instantiated",
     seeAlso: ["exonyme", "endonyme"],
     chapterRef: "le-peuple",

@@ -198,7 +198,7 @@
     "demographics": {
       "totalPopulation": 35100000,
       "referenceYear": 2025,
-      "source": "UNFPA – World Population Dashboard (population totale) ; Ghana Statistical Service – Recensement 2021 (répartition par groupe ethnique)",
+      "source": "UNFPA – World Population Dashboard",
       "peoples": [
         {
           "name": "Akan",
