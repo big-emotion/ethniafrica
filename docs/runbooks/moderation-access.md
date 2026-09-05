@@ -1,14 +1,17 @@
 # Moderation access
 
-How somebody gets into `/fr/admin`, and the one piece of configuration that is
+How somebody gets into the moderation console (`/en/admin`, or `/fr/admin` — the
+console is served under both locales and translated last), and the one piece of
+configuration that is
 not in this repository and will silently break the whole thing if it is wrong.
 
 ## The model, in one paragraph
 
 There are no public accounts. Reporting costs none (moderation charter §2), and
 the console authorizes an **e-mail address** against the `admin_allowlist` table
-— not a role, not a profile row. `/fr/admin/connexion` is the only sign-in
-surface in the product; it sends a magic link to an address on the list and
+— not a role, not a profile row. The sign-in page (`/en/admin/connexion`, or
+`/fr/admin/connexion`) is the only sign-in surface in the product; it sends a
+magic link to an address on the list and
 answers a stranger with the identical sentence, so the form cannot be used to
 enumerate moderators.
 

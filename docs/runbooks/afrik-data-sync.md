@@ -281,7 +281,8 @@ count near zero is a failure rather than the expected state:
 
 Note that the 31 `surname` rows sit in a partition the listing excludes: both
 `afrik_name_forms` and `afrik_name_type_counts` filter `where nr.entity_type = 'people'`, so
-they are present in the table and invisible in `/fr/atlas/appellations` (ETNI-1821).
+they are present in the table and invisible in the ethnonym index (`/fr/atlas/appellations`,
+`/en/atlas/ethnonyms`) (ETNI-1821).
 
 A `HEAD` request with `Prefer: count=exact` reads a count without fetching rows:
 
@@ -296,7 +297,8 @@ Then confirm idempotency: run the same `--apply` command a second time and read 
 again. They must be unchanged — the loaders upsert on the source id, and without `--prune`
 nothing is deleted.
 
-Finally, load `/fr/migrations` as an anonymous visitor. If it renders an empty state while the
+Finally, load the migrations atlas (`/fr/dossiers/migrations`, or `/en/dossiers/migrations`) as
+an anonymous visitor. If it renders an empty state while the
 counts above are non-zero, the rows are present and RLS is blocking the read — check migration
 `038`.
 

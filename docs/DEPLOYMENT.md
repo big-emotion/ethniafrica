@@ -312,9 +312,11 @@ exception.)
 
 ## First moderator
 
-Access to `/fr/admin` is an address on `admin_allowlist` — not a role, and not an
+Access to the moderation console (`/en/admin`, or `/fr/admin` — it is served under both
+locales, and translated last) is an address on `admin_allowlist` — not a role, and not an
 account, because the atlas has no public accounts. Put the address on the list, then
-have the person request a link at `/fr/admin/connexion`:
+have the person request a link at the sign-in page, `/en/admin/connexion` or
+`/fr/admin/connexion`:
 
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=… SUPABASE_SERVICE_ROLE_KEY=… \
@@ -333,7 +335,8 @@ Roles live in `user_roles` (migration `008`) with values `reader`, `contributor`
 when contributions became flags (migration `081`), and they open no door in the moderation
 console — access there is membership of `admin_allowlist`. Nothing reads `user_roles` today.
 
-1. The person signs in once at `/fr/admin/connexion` so their auth account exists.
+1. The person signs in once at `/en/admin/connexion` (or `/fr/admin/connexion`) so their
+   auth account exists.
 2. Grant the role:
 
    ```bash
@@ -350,7 +353,9 @@ console — access there is membership of `admin_allowlist`. Nothing reads `user
 
 - [ ] The `deploy-production.yml` run concluded `success` and the site loads. A published
       Release with a failed deploy is not a shipped release.
-- [ ] `/fr` renders — the middleware canonicalizes every locale segment to `fr`.
+- [ ] `/` answers 307 to `/en`, the default locale (or to `/fr` when the `ethni-locale`
+      cookie says so — REQ-140), and both `/en` and `/fr` render. A locale segment the site
+      does not publish (`/es/...`) is redirected to the default with its path preserved.
 - [ ] A fiche route renders for each entity type: a country, a people, a language family.
       _A green axe check has previously masked an HTTP 500 on every fiche route for two
       releases. Load one for real._
