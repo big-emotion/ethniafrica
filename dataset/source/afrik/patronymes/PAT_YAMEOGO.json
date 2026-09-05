@@ -110,7 +110,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "La notice cite les San comme partenaires à plaisanterie, mais aucune paire Yaméogo/PAT_* nominative, réciproque et vérifiable n'a été trouvée."
+      "reason": "La notice cite les San comme partenaires à plaisanterie, mais aucune paire Yaméogo/autre nom nominative, réciproque et vérifiable n'a été trouvée."
     },
     {
       "fieldPath": "casteOrSocialFunction",

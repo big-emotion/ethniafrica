@@ -14,11 +14,37 @@ function baseAggregate(
     associatedPeoples: [],
     associatedCountries: [],
     bearers: [],
+    alliances: [],
     ...overrides,
   };
 }
 
 describe("serializePatronyme", () => {
+  // @req REQ-133
+  it("keeps alliances in the dossier's order with the resolved name", () => {
+    const result = serializePatronyme(
+      baseAggregate({
+        alliances: [
+          {
+            targetId: "PAT_FOFANA",
+            targetNameMain: "Fofana",
+            allianceType: "sanankuya",
+          },
+          {
+            targetId: "PAT_COULIBALY",
+            targetNameMain: "Coulibaly",
+            allianceType: null,
+          },
+        ],
+      })
+    );
+
+    expect(result.alliances.map((a) => a.targetNameMain)).toEqual([
+      "Fofana",
+      "Coulibaly",
+    ]);
+  });
+
   // @req REQ-133
   it("carries the real columns through unchanged", () => {
     const result = serializePatronyme(baseAggregate());

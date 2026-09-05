@@ -74,7 +74,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "L'étude des noms éthiopiens et les recherches de parenté oromo ne nomment aucune alliance entre Lemma et un autre PAT_* existant."
+      "reason": "L'étude des noms éthiopiens et les recherches de parenté oromo ne nomment aucune alliance entre Lemma et un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

@@ -1300,6 +1300,27 @@ const options: swaggerJsdoc.Options = {
                 required: ["id", "fullName", "roleCategory"],
               },
             },
+            alliances: {
+              type: "array",
+              description:
+                "Names this name is allied with (joking-kinship pacts such as sanankuya), in the dossier's own order. The target is resolved to its name so a client never has to print a raw PAT_ id; allianceType is the attested term, or null when the dossier records the pact without naming it.",
+              items: {
+                type: "object",
+                properties: {
+                  targetId: {
+                    type: "string",
+                    pattern: "^PAT_[A-Z0-9_]+$",
+                    example: "PAT_COULIBALY",
+                  },
+                  targetNameMain: { type: "string", example: "Coulibaly" },
+                  allianceType: {
+                    type: ["string", "null"],
+                    example: "sanankuya",
+                  },
+                },
+                required: ["targetId", "targetNameMain", "allianceType"],
+              },
+            },
           },
           required: [
             "id",
@@ -1310,6 +1331,7 @@ const options: swaggerJsdoc.Options = {
             "associatedPeoples",
             "associatedCountries",
             "bearers",
+            "alliances",
           ],
         },
         Error: {

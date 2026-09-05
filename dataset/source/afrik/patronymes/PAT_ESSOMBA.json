@@ -70,7 +70,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Essomba », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Traditions et Cultures — Communauté urbaine de Yaoundé » et « Origines des Éwondo : récit de Ndougsa Vincent » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Essomba à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Essomba », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Traditions et Cultures — Communauté urbaine de Yaoundé » et « Origines des Éwondo : récit de Ndougsa Vincent » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Essomba à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

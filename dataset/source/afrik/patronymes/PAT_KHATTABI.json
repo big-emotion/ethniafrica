@@ -100,7 +100,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "Les alliances militaires du Rif rencontrées dans les sources concernent des tribus et des acteurs politiques, non une alliance nominale entre deux fiches PAT_* ; aucune paire documentée n’a été trouvée avec les requêtes Khattabi, pacte et alliance."
+      "reason": "Les alliances militaires du Rif rencontrées dans les sources concernent des tribus et des acteurs politiques, non une alliance nominale entre deux noms de l'atlas ; aucune paire documentée n’a été trouvée avec les requêtes Khattabi, pacte et alliance."
     },
     {
       "fieldPath": "casteOrSocialFunction",

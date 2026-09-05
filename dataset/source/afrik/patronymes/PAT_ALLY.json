@@ -87,7 +87,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "La recherche web combinant « Ally », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Office of the Solicitor General — Dr. Ally Possi » et « Ally Name Meaning and Ally Family History at FamilySearch » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Ally à une autre fiche PAT_* existante."
+      "reason": "La recherche web combinant « Ally », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Office of the Solicitor General — Dr. Ally Possi » et « Ally Name Meaning and Ally Family History at FamilySearch » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Ally à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

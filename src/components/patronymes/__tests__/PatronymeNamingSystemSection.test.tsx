@@ -13,6 +13,7 @@ const base: PublicPatronyme = {
   associatedPeoples: [],
   associatedCountries: [],
   bearers: [],
+  alliances: [],
 };
 
 describe("PatronymeNamingSystemSection (AC1, REQ-133)", () => {

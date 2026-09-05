@@ -68,7 +68,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web et bibliographique combinant « Seretse », « Setswana », « Tswana », « personal name », « surname », « meaning », « transmission » et « obituary », ainsi que la consultation directe de « President Seretse Khama » n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Seretse à une autre fiche PAT_* existante."
+      "reason": "la recherche web et bibliographique combinant « Seretse », « Setswana », « Tswana », « personal name », « surname », « meaning », « transmission » et « obituary », ainsi que la consultation directe de « President Seretse Khama » n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant Seretse à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

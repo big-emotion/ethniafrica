@@ -79,7 +79,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Biya », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Historical Dictionary of the Republic of Cameroon » et « Origine du nom Biya : l'histoire méconnue révélée par Jean Paul Ntsengue » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Biya à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Biya », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Historical Dictionary of the Republic of Cameroon » et « Origine du nom Biya : l'histoire méconnue révélée par Jean Paul Ntsengue » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Biya à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

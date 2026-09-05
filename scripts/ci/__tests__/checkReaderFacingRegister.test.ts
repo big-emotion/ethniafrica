@@ -78,6 +78,28 @@ describe("editorial rules — reader-facing register", () => {
     expect(findings[0].message).toContain("sources[0].title");
   });
 
+  // "fiche PAT_* existante" reached 468 readers because the identifier
+  // pattern wanted a letter after the underscore.
+  // @req REQ-133
+  it("refuses a wildcard corpus identifier in a gap reason", () => {
+    const findings = checkReaderFacingRegister(
+      {
+        id: "PAT_X",
+        gaps: [
+          {
+            fieldPath: "alliances",
+            reason:
+              "Aucune paire documentée dont les deux noms disposent de fiches PAT_* distinctes.",
+          },
+        ],
+      },
+      FICHE
+    );
+
+    expect(findings).toHaveLength(1);
+    expect(findings[0].message).toContain("PAT_*");
+  });
+
   // The vocabulary of the pipeline is the subtler leak: it carries no path and
   // no identifier, so it reads as prose — and tells the reader about a queue,
   // a research protocol and a review backlog that are none of their business.
