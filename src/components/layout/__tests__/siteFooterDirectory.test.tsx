@@ -84,10 +84,10 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
   });
 
   /**
-   * Doctrine, À propos and Sources describe the project, not the corpus, so
-   * no access mode lists them. The footer is where a page about the project
-   * belongs — and the only place a reader can now reach the doctrine or the
-   * source bibliography from the chrome.
+   * À propos and Sources describe the project, not the corpus, so no access
+   * mode lists them. The footer is where a page about the project belongs
+   * and the source bibliography is reachable from the chrome. Doctrine is
+   * not a link here any more — it lives inline on the À propos page.
    */
   // @req REQ-132
   it("gathers the pages about the project itself under one rubric", () => {
@@ -98,14 +98,14 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
     });
 
     expect(
-      within(project).getByRole("link", { name: footer.directory.doctrine })
-    ).toHaveAttribute("href", getLocalizedRoute("fr", "doctrine"));
-    expect(
       within(project).getByRole("link", { name: footer.directory.about })
     ).toHaveAttribute("href", getLocalizedRoute("fr", "about"));
     expect(
       within(project).getByRole("link", { name: footer.directory.sources })
     ).toHaveAttribute("href", getLocalizedRoute("fr", "sources"));
+    expect(
+      within(project).queryByRole("link", { name: /doctrine/i })
+    ).toBeNull();
   });
 
   // @req REQ-046
@@ -126,27 +126,6 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
         name: footer.directory.reportError,
       })
     ).toHaveAttribute("href", "/fr/report-error");
-  });
-
-  /**
-   * An account is named before it exists. A network shown as a live link that
-   * leads nowhere is worse than one shown as a mark: the reader spends a click
-   * to learn the account is not open yet. So an entry with no URL renders as
-   * an image with its network's name, and becomes a link the day
-   * `SOCIAL_NETWORKS` carries one.
-   */
-  // @req REQ-046
-  it("shows a network with no account yet as a mark, not a dead link", () => {
-    render(<SiteFooter language="fr" />);
-
-    const follow = screen.getByTestId("footer-follow");
-
-    expect(
-      within(follow).getByRole("img", {
-        name: `Facebook — ${footer.directory.followPending}`,
-      })
-    ).toBeInTheDocument();
-    expect(within(follow).queryByRole("link", { name: /Facebook/ })).toBeNull();
   });
 
   /**
@@ -195,15 +174,16 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
   });
 
   /**
-   * Instagram, TikTok and YouTube opened after LinkedIn — each becomes a live
-   * link the same way LinkedIn did, opening off-site rather than losing the
-   * reader's place in the corpus.
+   * Instagram, TikTok, YouTube and finally Facebook opened after LinkedIn —
+   * each becomes a live link the same way LinkedIn did, opening off-site
+   * rather than losing the reader's place in the corpus.
    */
   // @req REQ-046
   it.each([
     ["Instagram", "https://www.instagram.com/ethniafrica/"],
     ["TikTok", "https://www.tiktok.com/@ethniafrica"],
     ["YouTube", "https://www.youtube.com/channel/UCcJiwOQJ7-ajWnYFTDTOt0A"],
+    ["Facebook", "https://www.facebook.com/profile.php?id=61593966096643"],
   ])("opens the %s mark on the project's account", (name, href) => {
     render(<SiteFooter language="fr" />);
 
@@ -214,6 +194,21 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
     expect(link).toHaveAttribute("href", href);
     expect(link).toHaveAttribute("target", "_blank");
     expect(link).toHaveAttribute("rel", "noopener noreferrer");
+  });
+
+  /**
+   * Five marks in a row ran wider than three, so the row is capped to three
+   * marks' width and left to wrap — `flex-wrap` then justifies each of the
+   * two resulting rows on its own axis, centring both under the heading.
+   */
+  // @req REQ-046
+  it("caps the follow row at three marks so a fourth wraps onto a centred second row", () => {
+    render(<SiteFooter language="fr" />);
+
+    const follow = screen.getByTestId("footer-follow");
+
+    expect(follow).toHaveClass("flex-wrap", "justify-center", "max-w-[144px]");
+    expect(follow.parentElement).toHaveClass("text-center");
   });
 
   /**
