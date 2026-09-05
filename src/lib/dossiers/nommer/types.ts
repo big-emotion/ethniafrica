@@ -21,6 +21,8 @@
  * and refers to them by `sourceRefs` — so this follows the corpus.
  */
 
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
+import type { TranslationKind } from "@/lib/i18n/translationSidecarRules";
 import type { NommerChapterKey } from "@/lib/routing";
 import type { SourceTier, StructuredSourceKind } from "@/types/sources";
 
@@ -117,6 +119,12 @@ export type CorpusFigure =
  * enforces.
  */
 export interface ProseBlock {
+  /**
+   * Kebab-case, unique within the chapter. A translation keys on it: keyed
+   * by position, a sidecar would silently attach itself to the wrong
+   * paragraph the day an editor inserted one above it.
+   */
+  id: string;
   text: string;
   sourceRefs: SourceKey[];
   figureRefs: FigureKey[];
@@ -208,4 +216,63 @@ export interface DossierChapter {
   measure: ChapterMeasure;
   sections: ChapterSection[];
   entities: ChapterEntity[];
+}
+
+/** The translatable leaves of a chapter table: caption, columns, then one cell list per French row, in row order. */
+export interface ChapterTableTranslation {
+  caption: string;
+  columns: string[];
+  rows: string[][];
+}
+
+/**
+ * What translates on a name pair — the gloss and the vector. `endonym` and
+ * `exonym` are the words the pair exists to show and stay on the French
+ * record (REQ-143: an autonym translated is a renaming).
+ */
+export interface NamePairTranslation {
+  endonymGloss: string | null;
+  imposedBy: string;
+}
+
+export interface ChapterSectionTranslation {
+  stepLabel: string;
+  heading: string;
+  /** Block text by block id. */
+  blocks: Readonly<Record<string, string>>;
+  table?: ChapterTableTranslation;
+  /** Matched by position under the section, like table rows. */
+  pairs?: NamePairTranslation[];
+}
+
+/**
+ * A chapter's translatable leaves, in the chapter's own nesting, keyed by
+ * the ids the French record declares — section `id`, block `id`, entity
+ * `id`. Table rows and name pairs carry no id of their own and are matched
+ * by position; the parity suite holds the two arrays to the same length.
+ *
+ * Only what translates is carried. Source and figure references, people
+ * names, autonyms and exonyms stay on the French record, so a translation
+ * cannot cite a work the French does not or rename what the dossier is
+ * about. `provenance` is one value for the whole chapter (DEC-048): a
+ * sidecar is produced in one pass and reviewed in one pass, and a paragraph-
+ * level mix of machine and human output would leave the reader nothing to
+ * hold a marker against.
+ */
+export interface DossierChapterTranslation {
+  key: NommerChapterKey;
+  locale: TranslationLocale;
+  provenance: TranslationKind;
+  title: string;
+  question: string;
+  standfirst: string;
+  measure: { value: string; unit: string };
+  sections: Readonly<Record<string, ChapterSectionTranslation>>;
+  /**
+   * Entity labels by entity id. A people keeps the label the French shows,
+   * which is already the name (REQ-143). A country takes its English name,
+   * and so does a family: « Famille bantoue » is a French phrase around the
+   * corpus's own `nameEn`, not a name the glossary would hold verbatim.
+   */
+  entities: Readonly<Record<string, string>>;
 }

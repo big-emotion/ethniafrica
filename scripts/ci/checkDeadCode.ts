@@ -66,7 +66,12 @@ export const DEAD_CODE_CEILINGS: Readonly<Record<DeadCodeCategory, number>> = {
   // modules that existed only to serve it took four exports with them —
   // HERO_PREVIEW_KINDS, getFacetByPage, and the two country reads the
   // synthesis rail needed — and the ratchet keeps that room freed too.
-  exports: 23,
+  //
+  // 23 -> 22 when the English games bank gained a parity test over
+  // `RELATION_TYPE_LABEL_FR`, which the games corpus exported and nothing
+  // read; the test is now its only consumer, and the wiring PR should decide
+  // whether a label with no renderer is worth keeping in either language.
+  exports: 22,
   // 50 -> 49 when the bilingual glossary's vocabulary file started keying
   // the patronyme labels by `PatronymeNameSystem`, which the parsers file
   // exported and nothing read.
