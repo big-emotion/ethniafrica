@@ -6,6 +6,8 @@ import { getNommerChapterRoute } from "@/lib/routing";
 
 import NommerPage from "../page";
 
+const FR = Promise.resolve({ lang: "fr" });
+
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({
     children,
@@ -26,8 +28,8 @@ vi.mock("@/components/layout/PageLayout", () => ({
 
 describe("the Nommer pillar page", () => {
   // @req REQ-113
-  it("asks its question once, as the page's only h1", () => {
-    render(<NommerPage />);
+  it("asks its question once, as the page's only h1", async () => {
+    render(await NommerPage({ params: FR }));
     const headings = screen.getAllByRole("heading", { level: 1 });
     expect(headings).toHaveLength(1);
     expect(headings[0]).toHaveTextContent("Qui a donné ce nom ?");
@@ -37,8 +39,8 @@ describe("the Nommer pillar page", () => {
   // — a chapter declared in the array and missing from the pillar would be a
   // page nothing links to.
   // @req REQ-113
-  it("links every chapter, at the route the slug map composes", () => {
-    render(<NommerPage />);
+  it("links every chapter, at the route the slug map composes", async () => {
+    render(await NommerPage({ params: FR }));
 
     for (const chapter of NOMMER_CHAPTERS) {
       const link = screen.getByRole("link", { name: chapter.title });
@@ -52,8 +54,8 @@ describe("the Nommer pillar page", () => {
   // Three levels, and the third is the measure. Asserted through the rendered
   // tile rather than the constant, because the point is that a reader sees it.
   // @req REQ-113
-  it("prints each chapter's ordinal and measure on its tile", () => {
-    render(<NommerPage />);
+  it("prints each chapter's ordinal and measure on its tile", async () => {
+    render(await NommerPage({ params: FR }));
 
     for (const chapter of NOMMER_CHAPTERS) {
       const tile = screen.getByTestId(`nommer-chapter-${chapter.key}`);
@@ -66,8 +68,8 @@ describe("the Nommer pillar page", () => {
   // The three numbers that replace a percentage: the gap is published beside
   // the finding, which is the whole reason the band exists.
   // @req REQ-113
-  it("states the undeclared fiches beside the contested ones", () => {
-    render(<NommerPage />);
+  it("states the undeclared fiches beside the contested ones", async () => {
+    render(await NommerPage({ params: FR }));
 
     expect(screen.getByText(/445 sur 775/)).toBeInTheDocument();
     expect(
@@ -79,8 +81,8 @@ describe("the Nommer pillar page", () => {
   });
 
   // @req REQ-113
-  it("scopes the page to the Dossiers accent exactly once", () => {
-    const { container } = render(<NommerPage />);
+  it("scopes the page to the Dossiers accent exactly once", async () => {
+    const { container } = render(await NommerPage({ params: FR }));
     expect(container.querySelectorAll("[class*='afh-accent-']")).toHaveLength(
       1
     );

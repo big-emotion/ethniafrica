@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 
 import type { QuizScope } from "@/lib/quiz/quizScope";
+import type { Language } from "@/types/shared";
 
 // The play island is a below-the-fold enhancement only needed once a track is
 // chosen — never required to read/render the picker first.
@@ -20,6 +21,7 @@ interface QuizPlayHostProps {
   theme: string | null;
   scopeLabelFr: string;
   exitHref: string;
+  language: Language;
 }
 
 /**
@@ -38,11 +40,13 @@ export const QuizPlayHost = ({
   theme,
   scopeLabelFr,
   exitHref,
+  language,
 }: QuizPlayHostProps) => (
   <LazyQuizPlayIsland
     scope={scope}
     theme={theme}
     scopeLabelFr={scopeLabelFr}
     exitHref={exitHref}
+    language={language}
   />
 );

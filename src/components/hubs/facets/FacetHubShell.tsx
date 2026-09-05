@@ -9,6 +9,8 @@ import { FacetGlobeIsland } from "@/components/hubs/facets/FacetGlobeIsland";
 import { FacetSwitcher } from "@/components/hubs/facets/FacetSwitcher";
 import { DIRECTORY_ACCENT_CLASS } from "@/lib/hubs/directoryAccent";
 import { getFacet, getFacetFromRoute } from "@/lib/hubs/facets";
+import { DEFAULT_LOCALE } from "@/lib/locale";
+import { getLanguageFromRoute } from "@/lib/routing";
 
 export interface FacetHubShellProps {
   peopleCountsByCountry: Record<string, number> | undefined;
@@ -45,10 +47,13 @@ export function FacetHubShell({
   if (!active) return <>{children}</>;
 
   const facet = getFacet(active);
+  // A facet is only ever reached under a locale segment, so the fallback is
+  // for the type, not for a route the shell will meet.
+  const language = getLanguageFromRoute(pathname ?? "") ?? DEFAULT_LOCALE;
 
   return (
     <PageLayout
-      language="fr"
+      language={language}
       sectionName={facet.sectionName}
       flushTop
       heroHead={
@@ -86,7 +91,7 @@ export function FacetHubShell({
             missingMessage="Le corpus ne renseigne encore aucun peuple par pays."
           />
           <div className="mt-6 mb-4 flex flex-col gap-2">
-            <FacetSwitcher active={facet.key} />
+            <FacetSwitcher active={facet.key} language={language} />
             {/* Says what the switch above and the filters below each do,
                 because they collide in the reader's own language: "pays" is a
                 facet and also a filter, and nothing distinguished choosing a

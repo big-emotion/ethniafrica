@@ -19,7 +19,7 @@ const patronyme: PublicPatronyme = {
 describe("PatronymeFicheTitle (REQ-133)", () => {
   // @req REQ-133
   it("opens on the eyebrow and the name", () => {
-    render(<PatronymeFicheTitle patronyme={patronyme} />);
+    render(<PatronymeFicheTitle patronyme={patronyme} language="fr" />);
 
     // « Nom », not « Patronyme »: DEC-038 gives the reader the word a
     // francophone types and keeps `patronyme` for the code.
@@ -29,7 +29,7 @@ describe("PatronymeFicheTitle (REQ-133)", () => {
 
   // @req REQ-133
   it("states the naming system in the header (AC1)", () => {
-    render(<PatronymeFicheTitle patronyme={patronyme} />);
+    render(<PatronymeFicheTitle patronyme={patronyme} language="fr" />);
 
     expect(screen.getByText(/Nom de clan/)).toBeInTheDocument();
   });
@@ -39,10 +39,19 @@ describe("PatronymeFicheTitle (REQ-133)", () => {
     render(
       <PatronymeFicheTitle
         patronyme={{ ...patronyme, nameSystem: "non_hereditary_patronymic" }}
+        language="fr"
       />
     );
 
     expect(screen.getByText(/Patronyme non héréditaire/)).toBeInTheDocument();
+  });
+
+  // @req REQ-140
+  it("states the eyebrow and the naming system in the locale it is given", () => {
+    render(<PatronymeFicheTitle patronyme={patronyme} language="en" />);
+
+    expect(screen.getByText("Name")).toBeInTheDocument();
+    expect(screen.getByText(/Clan name/)).toBeInTheDocument();
   });
 });
 

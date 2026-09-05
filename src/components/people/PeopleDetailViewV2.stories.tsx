@@ -402,7 +402,7 @@ export const Related_Mobile: Story = {
   parameters: { viewport: { defaultViewport: "mobile430" } },
   render: () => (
     <Card>
-      <PeopleRelatedPeoplesSection data={relatedPeoples} />
+      <PeopleRelatedPeoplesSection language="fr" data={relatedPeoples} />
     </Card>
   ),
 };
@@ -431,7 +431,7 @@ export const Countries_Mobile: Story = {
   parameters: { viewport: { defaultViewport: "mobile430" } },
   render: () => (
     <Card>
-      <PeopleCountriesSection data={countries} />
+      <PeopleCountriesSection language="fr" data={countries} />
     </Card>
   ),
 };
@@ -597,7 +597,7 @@ function wholeFiche(people: PeopleDetail) {
   function WholeFicheStory() {
     return (
       <div style={{ background: "hsl(35,35%,97%)", minHeight: "100vh" }}>
-        <PeopleDetailViewV2 people={people} />
+        <PeopleDetailViewV2 language="fr" people={people} />
       </div>
     );
   }

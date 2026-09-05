@@ -83,7 +83,7 @@ export default async function PeopleLinksPage({
 
   return (
     <PageLayout
-      language="fr"
+      language={lang as Language}
       sectionName="Peuples"
       trailLabel={people.nameMain}
     >

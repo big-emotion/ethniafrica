@@ -70,7 +70,9 @@ afterEach(() => {
 describe("MigrationsAtlasView", () => {
   // @req REQ-101 FR81
   it("renders the calm empty state when there are no events", () => {
-    render(<MigrationsAtlasView events={[]} scrubberBounds={null} />);
+    render(
+      <MigrationsAtlasView language="fr" events={[]} scrubberBounds={null} />
+    );
     expect(
       screen.getByText("Aucune migration ne correspond à ce filtre.")
     ).toBeInTheDocument();
@@ -78,7 +80,13 @@ describe("MigrationsAtlasView", () => {
 
   // @req REQ-101 FR78 FR79
   it("renders the basemap, one path per event and one list button per event", () => {
-    render(<MigrationsAtlasView events={EVENTS} scrubberBounds={BOUNDS} />);
+    render(
+      <MigrationsAtlasView
+        language="fr"
+        events={EVENTS}
+        scrubberBounds={BOUNDS}
+      />
+    );
     expect(screen.getByTestId("migration-path-MGR_A")).toBeInTheDocument();
     expect(screen.getByTestId("migration-path-MGR_B")).toBeInTheDocument();
     expect(screen.getByTestId("migration-list-item-MGR_A")).toBeInTheDocument();
@@ -88,7 +96,13 @@ describe("MigrationsAtlasView", () => {
   // @req REQ-101 FR79
   it("initializes the scrubber and active-path styling from ?annee=", () => {
     mockSearchParams("annee=1100");
-    render(<MigrationsAtlasView events={EVENTS} scrubberBounds={BOUNDS} />);
+    render(
+      <MigrationsAtlasView
+        language="fr"
+        events={EVENTS}
+        scrubberBounds={BOUNDS}
+      />
+    );
     expect(screen.getByRole("slider")).toHaveAttribute("aria-valuenow", "1100");
     expect(screen.getByTestId("migration-path-MGR_A")).toHaveAttribute(
       "data-active",
@@ -104,7 +118,13 @@ describe("MigrationsAtlasView", () => {
   it("pushes ?annee= to the URL when the scrubber changes, preserving other params", async () => {
     const user = userEvent.setup();
     mockSearchParams("region=west&annee=1300");
-    render(<MigrationsAtlasView events={EVENTS} scrubberBounds={BOUNDS} />);
+    render(
+      <MigrationsAtlasView
+        language="fr"
+        events={EVENTS}
+        scrubberBounds={BOUNDS}
+      />
+    );
 
     screen.getByRole("slider").focus();
     await user.keyboard("{ArrowRight}");
@@ -121,7 +141,13 @@ describe("MigrationsAtlasView", () => {
 
   // @req REQ-101 ETNI-1101
   it("selects an event via its list button: aria-pressed flips and the URL updates", () => {
-    render(<MigrationsAtlasView events={EVENTS} scrubberBounds={BOUNDS} />);
+    render(
+      <MigrationsAtlasView
+        language="fr"
+        events={EVENTS}
+        scrubberBounds={BOUNDS}
+      />
+    );
 
     const button = screen.getByTestId("migration-list-item-MGR_B");
     expect(button).toHaveAttribute("aria-pressed", "false");
@@ -136,7 +162,13 @@ describe("MigrationsAtlasView", () => {
 
   // @req REQ-101 ETNI-1101
   it("selects an event via a path tap", () => {
-    render(<MigrationsAtlasView events={EVENTS} scrubberBounds={BOUNDS} />);
+    render(
+      <MigrationsAtlasView
+        language="fr"
+        events={EVENTS}
+        scrubberBounds={BOUNDS}
+      />
+    );
     fireEvent.click(screen.getByTestId("migration-path-MGR_A"));
     expect(push).toHaveBeenCalledWith(
       expect.stringContaining("migration=MGR_A"),
@@ -147,7 +179,13 @@ describe("MigrationsAtlasView", () => {
   // @req REQ-101 FR78 ETNI-1101 ETNI-1102
   it("opens the dynamically-imported MigrationDetailSheet when ?migration= names a known event", async () => {
     mockSearchParams("migration=MGR_B");
-    render(<MigrationsAtlasView events={EVENTS} scrubberBounds={BOUNDS} />);
+    render(
+      <MigrationsAtlasView
+        language="fr"
+        events={EVENTS}
+        scrubberBounds={BOUNDS}
+      />
+    );
 
     await waitFor(() => {
       expect(screen.getByRole("dialog")).toBeInTheDocument();
@@ -161,7 +199,13 @@ describe("MigrationsAtlasView", () => {
   // @req REQ-101 ETNI-1102
   it("ignores a ?migration= id that does not match any event", () => {
     mockSearchParams("migration=MGR_UNKNOWN");
-    render(<MigrationsAtlasView events={EVENTS} scrubberBounds={BOUNDS} />);
+    render(
+      <MigrationsAtlasView
+        language="fr"
+        events={EVENTS}
+        scrubberBounds={BOUNDS}
+      />
+    );
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
@@ -169,7 +213,11 @@ describe("MigrationsAtlasView", () => {
   it("closes the sheet by clearing ?migration= (browser Back restores prior state)", async () => {
     mockSearchParams("migration=MGR_B");
     const { rerender } = render(
-      <MigrationsAtlasView events={EVENTS} scrubberBounds={BOUNDS} />
+      <MigrationsAtlasView
+        language="fr"
+        events={EVENTS}
+        scrubberBounds={BOUNDS}
+      />
     );
     await waitFor(() => {
       expect(screen.getByRole("dialog")).toBeInTheDocument();
@@ -185,7 +233,13 @@ describe("MigrationsAtlasView", () => {
     // previous searchParams, which this component derives state from
     // directly rather than duplicating in local state.
     mockSearchParams("migration=MGR_B");
-    rerender(<MigrationsAtlasView events={EVENTS} scrubberBounds={BOUNDS} />);
+    rerender(
+      <MigrationsAtlasView
+        language="fr"
+        events={EVENTS}
+        scrubberBounds={BOUNDS}
+      />
+    );
     await waitFor(() => {
       expect(screen.getByRole("dialog")).toBeInTheDocument();
     });
@@ -195,7 +249,13 @@ describe("MigrationsAtlasView", () => {
   it("never advances the scrubber or changes selection on its own (no autoplay)", () => {
     vi.useFakeTimers();
     mockSearchParams("annee=1300");
-    render(<MigrationsAtlasView events={EVENTS} scrubberBounds={BOUNDS} />);
+    render(
+      <MigrationsAtlasView
+        language="fr"
+        events={EVENTS}
+        scrubberBounds={BOUNDS}
+      />
+    );
 
     vi.advanceTimersByTime(60_000);
 

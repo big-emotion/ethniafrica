@@ -19,14 +19,14 @@ import {
   type ScoreCardParams,
 } from "@/lib/quiz/scoreCardParams";
 import { describeScope } from "@/api/v2/handlers/quiz";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 import { QuizScoreSharePage } from "./QuizScoreSharePage";
-
-const t = translations.fr.quiz;
 
 type ScoreSearchParams = Record<string, string | string[] | undefined>;
 
 interface PageProps {
+  params: Promise<{ lang: string }>;
   searchParams: Promise<ScoreSearchParams>;
 }
 
@@ -41,6 +41,7 @@ function buildOgImageUrl(params: ScoreCardParams): string {
 
 // @req REQ-103 FR70
 export async function generateMetadata({
+  params: routeParams,
   searchParams,
 }: PageProps): Promise<Metadata> {
   const params = parseScoreCardParams(await searchParams);
@@ -53,6 +54,8 @@ export async function generateMetadata({
     return {};
   }
 
+  const { lang } = await routeParams;
+  const t = getTranslation(lang as Language).quiz;
   const title = t.scoreHeading;
   const description = `${params.correct} ${t.scoreCardExactAnswersSeparator} ${params.total} — ${scope.labelFr}`;
   const imageUrl = buildOgImageUrl(params);
@@ -77,7 +80,10 @@ export async function generateMetadata({
 }
 
 // @req REQ-103 FR70 AR39
-export default async function QuizScorePage({ searchParams }: PageProps) {
+export default async function QuizScorePage({
+  params: routeParams,
+  searchParams,
+}: PageProps) {
   const params = parseScoreCardParams(await searchParams);
   if (!params) {
     notFound();
@@ -89,9 +95,14 @@ export default async function QuizScorePage({ searchParams }: PageProps) {
     notFound();
   }
 
+  const { lang } = await routeParams;
+  const language = lang as Language;
+  const t = getTranslation(language).quiz;
+
   return (
-    <PageLayout language="fr" title={t.scoreHeading}>
+    <PageLayout language={language} title={t.scoreHeading}>
       <QuizScoreSharePage
+        language={language}
         scope={scope}
         scopeLabelFr={described.labelFr}
         correct={params.correct}

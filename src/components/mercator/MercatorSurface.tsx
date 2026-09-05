@@ -8,6 +8,7 @@ import type { GameSessionStatus } from "@/hooks/use-game-session";
 import type { GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import type { ScaleFact } from "@/lib/games/scaleFacts";
+import type { Language } from "@/types/shared";
 
 const COPY_FR = {
   flatLock: "Le globe se rouvre avec la réponse.",
@@ -16,6 +17,7 @@ const COPY_FR = {
 export interface MercatorSurfaceProps {
   game: GameDefinition;
   rounds: GameRound[];
+  language: Language;
   facts: ScaleFact[];
   corpusLimited: boolean;
   /**
@@ -58,6 +60,7 @@ export interface MercatorSurfaceProps {
 export const MercatorSurface = ({
   game,
   rounds,
+  language,
   facts,
   corpusLimited,
   peopleCountsByCountry,
@@ -86,6 +89,7 @@ export const MercatorSurface = ({
         <GamePlayIsland
           game={game}
           rounds={rounds}
+          language={language}
           facts={facts}
           corpusLimited={corpusLimited}
           onPhaseChange={handlePhaseChange}

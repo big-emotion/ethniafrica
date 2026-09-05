@@ -103,7 +103,7 @@ const CHAPTER_TITLES = [
 describe("name fiche charter — the chapter list is the model's", () => {
   // @req REQ-133
   it("keeps every chapter, including the four that had no section at all", () => {
-    render(<PatronymeFicheView patronyme={camara} />);
+    render(<PatronymeFicheView language="fr" patronyme={camara} />);
 
     for (const title of CHAPTER_TITLES) {
       expect(screen.getByRole("heading", { name: title })).toBeInTheDocument();
@@ -121,7 +121,9 @@ describe("name fiche charter — the chapter list is the model's", () => {
 
   // @req REQ-133
   it("publishes the sources anchor every citation chip points at", () => {
-    const { container } = render(<PatronymeFicheView patronyme={camara} />);
+    const { container } = render(
+      <PatronymeFicheView language="fr" patronyme={camara} />
+    );
 
     // Dead on every name fiche until now: the view had no Sources section.
     expect(container.querySelector("#sources")).not.toBeNull();
@@ -134,7 +136,7 @@ describe("name fiche charter — the chapter list is the model's", () => {
 describe("name fiche charter — the corpus explains its own silences", () => {
   // @req REQ-133
   it("prints the editor's wording rather than the generic badge", () => {
-    render(<PatronymeFicheView patronyme={camara} />);
+    render(<PatronymeFicheView language="fr" patronyme={camara} />);
 
     for (const reason of [
       "Le passage ne précise pas le mode de transmission du nom.",
@@ -148,7 +150,7 @@ describe("name fiche charter — the corpus explains its own silences", () => {
 
   // @req REQ-133
   it("renders the spellings, the richest field the name corpus has", () => {
-    render(<PatronymeFicheView patronyme={camara} />);
+    render(<PatronymeFicheView language="fr" patronyme={camara} />);
 
     // Present on 30 dossiers out of 30, rendered on none: the view read
     // `attestedForms`, a key no model and no dossier has ever carried.
@@ -160,6 +162,7 @@ describe("name fiche charter — the corpus explains its own silences", () => {
   it("falls back to the generic badge only where no reason was written", () => {
     render(
       <PatronymeFicheView
+        language="fr"
         patronyme={{ ...camara, content: { ...camara.content, gaps: [] } }}
       />
     );

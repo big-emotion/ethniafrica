@@ -10,6 +10,8 @@ import {
   type FlagStatus,
 } from "@/api/v2/services/flags";
 import { getModeratorSession } from "@/lib/supabase/moderator";
+import { getStaticPageRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 /**
  * The moderator's queue.
@@ -96,12 +98,17 @@ function pick<T extends string>(
 
 // @req REQ-042
 export default async function ModerationQueuePage({
+  params: routeParams,
   searchParams,
 }: {
+  params: Promise<{ lang: string }>;
   searchParams: Promise<SearchParams>;
 }) {
   await getModeratorSession();
 
+  const { lang } = await routeParams;
+  const language = lang as Language;
+  const queueRoute = getStaticPageRoute(language, "admin");
   const params = await searchParams;
   const status = pick<FlagStatus>(one(params, "statut"), STATUS_OPTIONS);
   const kind = pick<FlagKind>(one(params, "type"), KIND_OPTIONS);
@@ -136,11 +143,11 @@ export default async function ModerationQueuePage({
     if (nextSize !== PAGE_SIZES[0]) query.set("taille", String(nextSize));
     if (nextPage > 1) query.set("page", String(nextPage));
     const suffix = query.toString();
-    return suffix ? `/fr/admin?${suffix}` : "/fr/admin";
+    return suffix ? `${queueRoute}?${suffix}` : queueRoute;
   }
 
   return (
-    <PageLayout language="fr" title="Signalements">
+    <PageLayout language={language} title="Signalements">
       <div className="mx-auto w-full max-w-4xl space-y-afh-xl">
         <p className="max-w-3xl text-afh-small text-afh-text-soft">
           Statuer sur un signalement ne modifie pas la fiche&nbsp;: la décision
@@ -150,7 +157,7 @@ export default async function ModerationQueuePage({
         </p>
 
         <FacetFilterBar
-          action="/fr/admin"
+          action={queueRoute}
           primaryField={{
             name: "statut",
             label: "Statut",

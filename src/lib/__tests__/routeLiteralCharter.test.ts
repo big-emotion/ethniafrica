@@ -40,13 +40,15 @@ import { RELOCATED_SEGMENTS } from "@/middleware";
 const ROOT = resolve(__dirname, "../../..");
 
 /**
- * The retired segments, plus the three verbs the modules now nest under.
+ * The retired segments, plus the verbs the modules now nest under, in both
+ * locales.
  *
  * Read off the redirect table rather than restated: those are exactly the
  * first segments that used to address a module, so the table cannot grow an
  * entry this gate does not then police. The hubs are added because
  * `/fr/explorer/pays` is as hardcoded as `/fr/pays` was — writing out the
- * post-migration form is the same mistake, one migration later.
+ * post-migration form is the same mistake, one migration later; `games` is
+ * the English hub, the same mistake one locale later.
  */
 const AXIS_SEGMENTS = [
   "explorer",
@@ -55,8 +57,31 @@ const AXIS_SEGMENTS = [
   "atlas",
   "dossiers",
   "jeux",
+  "games",
 ];
-const FORBIDDEN = [...Object.keys(RELOCATED_SEGMENTS), ...AXIS_SEGMENTS];
+
+/**
+ * The redirect table's keys, whether it is keyed by retired segment or —
+ * once DEC-049 gives it a locale dimension — by locale and then by segment.
+ * A locale-keyed table read with `Object.keys` would yield `["en", "fr"]`
+ * and this gate would go on passing while matching nothing; reading one
+ * level down is what keeps it armed across that reshape, and the self-check
+ * below proves it did.
+ */
+function retiredSegments(table: Record<string, unknown>): string[] {
+  const perLocale = Object.values(table).every(
+    (value) => typeof value === "object" && value !== null
+  );
+  return perLocale
+    ? Object.values(table).flatMap((locale) =>
+        Object.keys(locale as Record<string, string>)
+      )
+    : Object.keys(table);
+}
+
+const FORBIDDEN = [
+  ...new Set([...retiredSegments(RELOCATED_SEGMENTS), ...AXIS_SEGMENTS]),
+];
 
 const EXEMPT = new Set([
   // The two owners.
@@ -75,9 +100,11 @@ const EXEMPT = new Set([
   "src/lib/__tests__/routeLiteralCharter.test.ts",
 ]);
 
-// `/fr/<segment>` where the segment ends — a longer word merely starting with
-// one of them (`/fr/paysages`) is a different route and none of our business.
-const LITERAL = new RegExp(`/fr/(${FORBIDDEN.join("|")})(?![\\w-])`);
+// `/<locale>/<segment>` where the segment ends — a longer word merely starting
+// with one of them (`/fr/paysages`) is a different route and none of our
+// business. Both locales, because `/en/atlas/countries` typed out is the same
+// hardcoded href as `/fr/atlas/pays`, and the English one is newer.
+const LITERAL = new RegExp(`/(fr|en)/(${FORBIDDEN.join("|")})(?![\\w-])`);
 
 /**
  * The line with its comments removed, or empty when the whole line is one.
@@ -90,6 +117,14 @@ function code(line: string): string {
   const trimmed = line.trim();
   if (trimmed.startsWith("*") || trimmed.startsWith("/*")) return "";
   return line.replace(/\/\/.*$/, "").replace(/\/\*.*?\*\//g, "");
+}
+
+/**
+ * Translation sidecars are repository paths, not public URLs. Remove only
+ * their locale prefix so another URL on the same line remains visible.
+ */
+function routeCode(line: string): string {
+  return code(line).replace(/dataset\/translations\/(?:en|fr)\//g, "");
 }
 
 function walk(directory: string, found: string[] = []): string[] {
@@ -121,7 +156,7 @@ describe("module URLs are composed, never written out", () => {
     for (const file of sourceFiles()) {
       const lines = readFileSync(resolve(ROOT, file), "utf8").split("\n");
       lines.forEach((line, index) => {
-        if (LITERAL.test(code(line))) {
+        if (LITERAL.test(routeCode(line))) {
           offenders.push(`${file}:${index + 1}  ${line.trim()}`);
         }
       });
@@ -147,6 +182,21 @@ describe("module URLs are composed, never written out", () => {
     expect(LITERAL.test(code('href="/fr/atlas/peuples/PPL_YORUBA"'))).toBe(
       true
     );
+    // DEC-049: the English vocabulary is as composable, and as forbidden.
+    expect(LITERAL.test(code('href="/en/atlas/countries/BEN"'))).toBe(true);
+    expect(LITERAL.test(code('href="/en/games/quiz"'))).toBe(true);
+  });
+
+  // The forbidden list is derived from the redirect table, and a table that
+  // changed shape under it would leave a list of locale codes. The retired
+  // words have to be in it, whatever the table looks like.
+  // @req REQ-141
+  it("derives the retired segments from the redirect table, not its locales", () => {
+    expect(FORBIDDEN).toContain("peuples");
+    expect(FORBIDDEN).toContain("pays");
+    expect(FORBIDDEN).toContain("explorer");
+    expect(FORBIDDEN).not.toContain("fr");
+    expect(FORBIDDEN).not.toContain("en");
   });
 
   // @req REQ-091
@@ -164,12 +214,32 @@ describe("module URLs are composed, never written out", () => {
     expect(LITERAL.test('"/fr/mentions-legales"')).toBe(false);
     expect(LITERAL.test('"/fr/admin/connexion"')).toBe(false);
     expect(LITERAL.test('"/fr"')).toBe(false);
+    expect(LITERAL.test('"/en/compare"')).toBe(false);
+    expect(LITERAL.test('"/en"')).toBe(false);
   });
 
   // @req REQ-091
   it("does not mistake a longer word for a module segment", () => {
     expect(LITERAL.test('"/fr/paysages"')).toBe(false);
     expect(LITERAL.test('"/fr/explorer-le-corpus"')).toBe(false);
+  });
+
+  // @req REQ-091
+  it("does not mistake translation sidecar paths for public URLs", () => {
+    expect(
+      LITERAL.test(
+        routeCode(
+          'file: "dataset/translations/en/peuples/FLG_KWA/PPL_YORUBA.json"'
+        )
+      )
+    ).toBe(false);
+    expect(
+      LITERAL.test(
+        routeCode(
+          'const file = "dataset/translations/en/peuples/PPL_X.json"; const href = "/en/atlas/peoples/PPL_X";'
+        )
+      )
+    ).toBe(true);
   });
 
   // A file list that silently emptied would make the sweep above vacuous.

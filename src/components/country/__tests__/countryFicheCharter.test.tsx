@@ -58,7 +58,11 @@ function countryFixture(overrides: Partial<CountryDetail> = {}): CountryDetail {
 
 function renderParchment(country: CountryDetail) {
   return render(
-    <CountryParchment data={transformCountryData(country)} country={country} />
+    <CountryParchment
+      language="fr"
+      data={transformCountryData(country)}
+      country={country}
+    />
   );
 }
 
@@ -71,7 +75,9 @@ function renderTitle(
   country: CountryDetail,
   provenance: { fromPeopleId?: string; fromPeopleName?: string } = {}
 ) {
-  return render(<CountryFicheTitle country={country} {...provenance} />);
+  return render(
+    <CountryFicheTitle language="fr" country={country} {...provenance} />
+  );
 }
 
 describe("country fiche charter", () => {
@@ -298,7 +304,11 @@ describe("country fiche parchment — head and closing", () => {
   it("keeps the sources last when the page adds chapters of its own", () => {
     const country = countryFixture();
     const { container } = render(
-      <CountryParchment data={transformCountryData(country)} country={country}>
+      <CountryParchment
+        language="fr"
+        data={transformCountryData(country)}
+        country={country}
+      >
         <section className="afh-parchment-section">
           <h2>Culture et société</h2>
         </section>
@@ -377,7 +387,7 @@ describe("country fiche — a note only where it adds something", () => {
  */
 describe("country record view — the chapters the page adds", () => {
   function renderRecord(country: CountryDetail) {
-    return render(<CountryRecordView country={country} />);
+    return render(<CountryRecordView language="fr" country={country} />);
   }
 
   /**
@@ -462,7 +472,7 @@ describe("country record view — the chapters the page adds", () => {
 
   // @req REQ-115
   it("offers no way back when the reader arrived from the hub", () => {
-    render(<CountryRecordView country={countryFixture()} />);
+    render(<CountryRecordView language="fr" country={countryFixture()} />);
 
     expect(screen.queryByTestId("country-back-to-people")).toBeNull();
   });

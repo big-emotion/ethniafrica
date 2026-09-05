@@ -40,11 +40,23 @@ const nextConfig: NextConfig = {
   // index it was never linked from (DEC-038 separates the two objects; the
   // routes did not). Permanent, because the old path was the canonical URL
   // `ficheCanonical` emitted, so it is what a crawler holds.
+  //
+  // One entry per locale rather than a `:lang` wildcard: the destination is
+  // each locale's own patronyme slug (DEC-049), and a wildcard sent `/en/…`
+  // to the French word. The destinations are written out because this file
+  // is loaded by Next before the `@/` alias exists; `nextConfigRedirects.test.ts`
+  // holds them to `getPatronymeRoute`, so the slug table cannot drift away
+  // from them unnoticed.
   async redirects() {
     return [
       {
-        source: "/:lang/atlas/appellations/:slug",
-        destination: "/:lang/atlas/noms/:slug",
+        source: "/fr/atlas/appellations/:slug",
+        destination: "/fr/atlas/noms/:slug",
+        permanent: true,
+      },
+      {
+        source: "/en/atlas/appellations/:slug",
+        destination: "/en/atlas/names/:slug",
         permanent: true,
       },
     ];

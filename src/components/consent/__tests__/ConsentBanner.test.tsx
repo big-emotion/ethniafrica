@@ -5,10 +5,21 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ConsentBanner } from "../ConsentBanner";
 import * as useConsentModule from "@/hooks/use-consent";
+import { DEFAULT_LOCALE } from "@/lib/locale";
+import { getStaticPageRoute } from "@/lib/routing";
 
 // Mock the useConsent hook
 vi.mock("@/hooks/use-consent", () => ({
   useConsent: vi.fn(),
+}));
+
+// The banner is mounted above the `[lang]` segment, so it reads the locale
+// off the route params rather than off a prop. Mutable so a case can put the
+// banner on an English page or outside the locale tree.
+const routeParams = vi.hoisted(() => ({ current: { lang: "fr" } as object }));
+
+vi.mock("next/navigation", () => ({
+  useParams: () => routeParams.current,
 }));
 
 // Mock ResizeObserver for any UI components that need it
@@ -41,6 +52,7 @@ describe("ConsentBanner", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     vi.mocked(useConsentModule.useConsent).mockReturnValue(defaultMockContext);
+    routeParams.current = { lang: "fr" };
   });
 
   it("renders when showBanner is true", () => {
@@ -164,7 +176,10 @@ describe("ConsentBanner", () => {
     expect(acceptButton).not.toBeDisabled();
     expect(rejectButton).not.toBeDisabled();
     expect(customizeButton).not.toBeDisabled();
-    expect(privacyLink).toHaveAttribute("href", "/fr/politique-de-donnees");
+    expect(privacyLink).toHaveAttribute(
+      "href",
+      getStaticPageRoute("fr", "dataPolicy")
+    );
   });
 
   // The banner used to point at `/fr/confidentialite`, one of two hand-written
@@ -176,7 +191,32 @@ describe("ConsentBanner", () => {
     const privacyLink = screen.getByRole("link", {
       name: /politique de données/i,
     });
-    expect(privacyLink).toHaveAttribute("href", "/fr/politique-de-donnees");
+    expect(privacyLink).toHaveAttribute(
+      "href",
+      getStaticPageRoute("fr", "dataPolicy")
+    );
+  });
+
+  // A global banner that always sent the reader to the French policy would
+  // cross locales from every English page.
+  // @req REQ-141
+  it("links the policy in the locale of the page it is shown on", () => {
+    routeParams.current = { lang: "en" };
+    render(<ConsentBanner />);
+
+    expect(
+      screen.getByRole("link", { name: /politique de données/i })
+    ).toHaveAttribute("href", getStaticPageRoute("en", "dataPolicy"));
+  });
+
+  // @req REQ-140
+  it("falls back to the default locale outside the locale tree", () => {
+    routeParams.current = {};
+    render(<ConsentBanner />);
+
+    expect(
+      screen.getByRole("link", { name: /politique de données/i })
+    ).toHaveAttribute("href", getStaticPageRoute(DEFAULT_LOCALE, "dataPolicy"));
   });
 
   it("saves custom preferences when save button is clicked", async () => {

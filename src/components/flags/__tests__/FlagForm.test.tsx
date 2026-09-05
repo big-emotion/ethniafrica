@@ -9,6 +9,15 @@ import axe from "axe-core";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { FlagForm } from "../FlagForm";
+import { getStaticPageRoute } from "@/lib/routing";
+
+// The form reads the locale off the route params: it is mounted in a dialog
+// on every fiche and on the report page, and receives no language of its own.
+const routeParams = vi.hoisted(() => ({ current: { lang: "fr" } as object }));
+
+vi.mock("next/navigation", () => ({
+  useParams: () => routeParams.current,
+}));
 
 const target = {
   type: "people",
@@ -325,8 +334,34 @@ describe("FlagForm submission and anti-bot lifecycle", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: "Consulter le signalement" })
-    ).toHaveAttribute("href", "/fr/signalements/ABC123DEFG");
+    ).toHaveAttribute(
+      "href",
+      `${getStaticPageRoute("fr", "reports")}/ABC123DEFG`
+    );
     expect(screen.queryByRole("button", { name: "Envoyer" })).toBeNull();
+  });
+
+  // A report filed from an English fiche must not send its author to the
+  // French queue: the permalink follows the locale of the page the dialog
+  // opened on.
+  // @req REQ-141
+  it("composes the permalink in the locale of the page the form is on", async () => {
+    routeParams.current = { lang: "en" };
+    const { solve } = renderWithVerification();
+    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
+      target: { value: validReason() },
+    });
+    solve();
+
+    fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
+
+    expect(
+      await screen.findByRole("link", { name: "Consulter le signalement" })
+    ).toHaveAttribute(
+      "href",
+      `${getStaticPageRoute("en", "reports")}/ABC123DEFG`
+    );
+    routeParams.current = { lang: "fr" };
   });
 
   /**

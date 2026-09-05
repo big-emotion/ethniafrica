@@ -11,6 +11,7 @@ import {
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import type { CountryPageData } from "@/lib/countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
+import type { Language } from "@/types/shared";
 
 /**
  * The country fiche's reading: a head and four sections on parchment, below
@@ -34,6 +35,7 @@ import type { CountryDetail } from "@/types/afrik-frontend";
 
 export interface CountryParchmentProps {
   data: CountryPageData;
+  language: Language;
   /**
    * The two fields §1 reads straight from the corpus. The transformer parses
    * them into an etymology shape built for the card layout; the mockup prints
@@ -53,6 +55,7 @@ export interface CountryParchmentProps {
 // @req REQ-115
 export function CountryParchment({
   data,
+  language,
   country,
   hasSourceFlag,
   children,
@@ -84,20 +87,20 @@ export function CountryParchment({
             )}
           </>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </Section>
 
       <Section title="Peuples du pays">
         {!hasPeoples ? (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         ) : (
           /* A shortfall in the declared shares is stated once, by
              PeoplesSection's own coverage note, in the reader's terms. The
              callout that stood here repeated that sentence and prefixed it
              with the identifier of the validation rule behind it — a number
              no visitor can act on. */
-          <PeoplesSection data={data.peoples} />
+          <PeoplesSection data={data.peoples} language={language} />
         )}
       </Section>
 
@@ -105,7 +108,7 @@ export function CountryParchment({
         {data.kingdoms.cards.length > 0 ? (
           <KingdomsTimeline cards={data.kingdoms.cards} />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </Section>
 
@@ -119,7 +122,7 @@ export function CountryParchment({
             variant="parchment"
           />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </Section>
     </div>

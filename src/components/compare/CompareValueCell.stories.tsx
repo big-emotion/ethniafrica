@@ -25,22 +25,22 @@ type Story = StoryObj<typeof meta>;
 
 const scalar: Story = {
   name: "Scalar text value",
-  args: { value: "Royaume du Jolof" },
+  args: { language: "fr", value: "Royaume du Jolof" },
 };
 
 const relationalId: Story = {
   name: "Relational AFRIK id (linked)",
-  args: { value: "PPL_SERER" },
+  args: { language: "fr", value: "PPL_SERER" },
 };
 
 const demography: Story = {
   name: "With reference year (demography row)",
-  args: { value: 47000000, showReferenceYear: true },
+  args: { language: "fr", value: 47000000, showReferenceYear: true },
 };
 
 const empty: Story = {
   name: "Empty (non renseigné)",
-  args: { value: null },
+  args: { language: "fr", value: null },
 };
 
 // @req REQ-097

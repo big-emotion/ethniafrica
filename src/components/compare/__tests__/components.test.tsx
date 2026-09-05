@@ -353,7 +353,7 @@ describe("CompareEntityHeader", () => {
   // when the lazy ConfidenceChip resolves: reserve its 44px tap target
   // height around both the Suspense fallback link and the loaded chip.
   it("reserves the confidence chip's minimum tap-target height so loading it in causes no layout shift", async () => {
-    render(<CompareEntityHeader column={highConfidenceColumn} />);
+    render(<CompareEntityHeader language="fr" column={highConfidenceColumn} />);
 
     const slotBeforeLoad = screen.getByTestId("compare-entity-confidence-slot");
     expect(slotBeforeLoad.className).toMatch(/min-h-\[44px\]/);
@@ -372,8 +372,8 @@ describe("CompareEntityHeader", () => {
   it("shows each entity's own confidence chip side by side with no comparative markup or copy", async () => {
     render(
       <>
-        <CompareEntityHeader column={highConfidenceColumn} />
-        <CompareEntityHeader column={lowConfidenceColumn} />
+        <CompareEntityHeader language="fr" column={highConfidenceColumn} />
+        <CompareEntityHeader language="fr" column={lowConfidenceColumn} />
       </>
     );
 
@@ -396,14 +396,14 @@ describe("CompareEntityHeader", () => {
 
   // @req REQ-097
   it("shows the Epic 1 unaudited treatment when there is no confidence_scores row — the slot is never empty", () => {
-    render(<CompareEntityHeader column={unauditedColumn} />);
+    render(<CompareEntityHeader language="fr" column={unauditedColumn} />);
     expect(screen.getByText(/fiche non auditée/i)).toBeInTheDocument();
   });
 
   // @req REQ-097
   it("opens the Epic 1 SourceChainSheet when the chip is activated", async () => {
     const user = userEvent.setup();
-    render(<CompareEntityHeader column={highConfidenceColumn} />);
+    render(<CompareEntityHeader language="fr" column={highConfidenceColumn} />);
 
     const button = await screen.findByRole("button", {
       name: /confiance 82 %/i,
@@ -424,7 +424,7 @@ describe("CompareEntityHeader", () => {
 
   // @req REQ-097
   it("passes the entity label through to the chip's aria-label (Epic 1 contract)", async () => {
-    render(<CompareEntityHeader column={highConfidenceColumn} />);
+    render(<CompareEntityHeader language="fr" column={highConfidenceColumn} />);
 
     await waitFor(() => {
       expect(
@@ -437,7 +437,7 @@ describe("CompareEntityHeader", () => {
 
   // @req REQ-097
   it("renders a tertiary caption link to the confidence explainer", () => {
-    render(<CompareEntityHeader column={highConfidenceColumn} />);
+    render(<CompareEntityHeader language="fr" column={highConfidenceColumn} />);
 
     const link = screen.getByRole("link", {
       name: /comment ce score est calculé/i,
@@ -450,6 +450,7 @@ describe("CompareEntityHeader", () => {
   it("shows the ClassificationBadge above the fold when a status is present", () => {
     render(
       <CompareEntityHeader
+        language="fr"
         column={{ ...highConfidenceColumn, classificationStatus: "contested" }}
       />
     );
@@ -458,7 +459,7 @@ describe("CompareEntityHeader", () => {
 
   // @req REQ-097
   it("renders no badge for the consensual/default classification status", () => {
-    render(<CompareEntityHeader column={highConfidenceColumn} />);
+    render(<CompareEntityHeader language="fr" column={highConfidenceColumn} />);
     expect(screen.queryByTestId("classification-icon")).not.toBeInTheDocument();
   });
 });
@@ -521,13 +522,17 @@ describe("Accessibility (axe)", () => {
 
   // @req REQ-097
   it("ComparisonView has no axe violations with audited columns", async () => {
-    const { container } = render(<ComparisonView data={auditedComparison} />);
+    const { container } = render(
+      <ComparisonView language="fr" data={auditedComparison} />
+    );
     await expectNoAxeViolations(container);
   });
 
   // @req REQ-097
   it("ComparisonView has no axe violations with multiple unaudited columns (landmark-unique regression)", async () => {
-    const { container } = render(<ComparisonView data={unauditedComparison} />);
+    const { container } = render(
+      <ComparisonView language="fr" data={unauditedComparison} />
+    );
     await expectNoAxeViolations(container);
   });
 

@@ -30,19 +30,29 @@ import {
   MigrationsDataAccessError,
 } from "@/api/v2/services/migrations";
 import { logger } from "@/lib/api/logger";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import { getLocalizedRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
-const t = translations.fr.migrations;
+interface MigrationsPageProps {
+  params: Promise<{ lang: string }>;
+  searchParams: Promise<{ peuple?: string }>;
+}
 
 // @req REQ-101 @req FR95
-export const metadata: Metadata = {
-  title: t.pageTitle,
-  description: t.pageSubtitle,
-  alternates: {
-    canonical: getLocalizedRoute("fr", "migrations"),
-  },
-};
+export async function generateMetadata({
+  params,
+}: Pick<MigrationsPageProps, "params">): Promise<Metadata> {
+  const { lang } = await params;
+  const t = getTranslation(lang as Language).migrations;
+  return {
+    title: t.pageTitle,
+    description: t.pageSubtitle,
+    alternates: {
+      canonical: getLocalizedRoute(lang as Language, "migrations"),
+    },
+  };
+}
 
 const MAX_MIGRATIONS = 500;
 
@@ -105,14 +115,15 @@ function filterByPeople(
   };
 }
 
-interface MigrationsPageProps {
-  searchParams: Promise<{ peuple?: string }>;
-}
-
 // @req REQ-101 @req FR78 @req FR81 @req FR82 @req FR83
 export default async function MigrationsPage({
+  params,
   searchParams,
 }: MigrationsPageProps) {
+  const { lang } = await params;
+  const language = lang as Language;
+  const t = getTranslation(language).migrations;
+  const migrationsRoute = getLocalizedRoute(language, "migrations");
   const sp = await searchParams;
   const peopleId = sp.peuple?.trim() || undefined;
 
@@ -125,11 +136,15 @@ export default async function MigrationsPage({
     }
     logger.error("migrations page: data-access failure", error);
     return (
-      <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
+      <PageLayout
+        language={language}
+        title={t.pageTitle}
+        subtitle={t.pageSubtitle}
+      >
         <EmptyState
           message={t.states.failure}
           variant="failure"
-          retryHref={getLocalizedRoute("fr", "migrations")}
+          retryHref={migrationsRoute}
           retryLabel={t.states.failureRetry}
         />
       </PageLayout>
@@ -145,7 +160,7 @@ export default async function MigrationsPage({
       <span className="flex items-center gap-1 rounded-full bg-muted px-3 py-1 text-afh-small">
         {`${t.filterChip.label} : ${peopleName ?? peopleId}`}
         <Link
-          href={getLocalizedRoute("fr", "migrations")}
+          href={migrationsRoute}
           aria-label={t.filterChip.clear}
           className="inline-flex min-h-6 min-w-6 items-center justify-center"
         >
@@ -157,7 +172,11 @@ export default async function MigrationsPage({
 
   if (peopleId && pageData.list.length === 0) {
     return (
-      <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
+      <PageLayout
+        language={language}
+        title={t.pageTitle}
+        subtitle={t.pageSubtitle}
+      >
         {filterChip}
         <EmptyState
           message={`${t.states.filteredEmpty} : ${peopleName ?? peopleId}`}
@@ -168,14 +187,22 @@ export default async function MigrationsPage({
 
   if (!peopleId && fullPageData.list.length === 0) {
     return (
-      <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
+      <PageLayout
+        language={language}
+        title={t.pageTitle}
+        subtitle={t.pageSubtitle}
+      >
         <EmptyState message={t.states.emptyUnpublished} />
       </PageLayout>
     );
   }
 
   return (
-    <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
+    <PageLayout
+      language={language}
+      title={t.pageTitle}
+      subtitle={t.pageSubtitle}
+    >
       {filterChip}
 
       <Tabs defaultValue="recit">
@@ -189,6 +216,7 @@ export default async function MigrationsPage({
           className="data-[state=inactive]:hidden"
         >
           <MigrationsAtlasView
+            language={language}
             events={pageData.atlas}
             scrubberBounds={pageData.scrubberBounds}
           />
@@ -198,7 +226,7 @@ export default async function MigrationsPage({
           forceMount
           className="data-[state=inactive]:hidden"
         >
-          <MigrationNarrative events={pageData.narrative} />
+          <MigrationNarrative language={language} events={pageData.narrative} />
         </TabsContent>
       </Tabs>
     </PageLayout>

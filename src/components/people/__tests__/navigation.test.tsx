@@ -25,14 +25,14 @@ describe("PeopleCountriesSection — navigation links", () => {
   };
 
   it("renders a link to the country fiche for each distribution row", () => {
-    render(<PeopleCountriesSection data={data} />);
+    render(<PeopleCountriesSection language="fr" data={data} />);
     const ngaLink = screen.getByRole("link", { name: /NGA/i });
     expect(ngaLink).toBeTruthy();
     expect(ngaLink.getAttribute("href")).toBe(getCountryRoute("fr", "NGA"));
   });
 
   it("renders links for all distribution countries", () => {
-    render(<PeopleCountriesSection data={data} />);
+    render(<PeopleCountriesSection language="fr" data={data} />);
     const links = screen.getAllByRole("link");
     const hrefs = links.map((l) => l.getAttribute("href"));
     expect(hrefs).toContain(getCountryRoute("fr", "NGA"));
@@ -45,7 +45,9 @@ describe("PeopleCountriesSection — navigation links", () => {
       totalPopulationFormatted: "0",
       distributions: [],
     };
-    const { container } = render(<PeopleCountriesSection data={empty} />);
+    const { container } = render(
+      <PeopleCountriesSection language="fr" data={empty} />
+    );
     expect(container.firstChild).toBeNull();
   });
 });
@@ -102,7 +104,9 @@ describe("PeopleLanguageSection — family fiche link", () => {
 describe("PeopleRelatedPeoplesSection — AutonymExonymHeading card style", () => {
   it("returns null when all fields empty", () => {
     const empty: PeopleRelatedData = { ethnicities: [] };
-    const { container } = render(<PeopleRelatedPeoplesSection data={empty} />);
+    const { container } = render(
+      <PeopleRelatedPeoplesSection language="fr" data={empty} />
+    );
     expect(container.firstChild).toBeNull();
   });
 
@@ -110,7 +114,7 @@ describe("PeopleRelatedPeoplesSection — AutonymExonymHeading card style", () =
     const data: PeopleRelatedData = {
       ethnicities: ["Ìjẹ̀bú", "Ẹ̀gbá"],
     };
-    render(<PeopleRelatedPeoplesSection data={data} />);
+    render(<PeopleRelatedPeoplesSection language="fr" data={data} />);
     expect(screen.getByText("Ìjẹ̀bú")).toBeTruthy();
     expect(screen.getByText("Ẹ̀gbá")).toBeTruthy();
   });
@@ -119,7 +123,9 @@ describe("PeopleRelatedPeoplesSection — AutonymExonymHeading card style", () =
     const data: PeopleRelatedData = {
       ethnicities: ["Ìjẹ̀bú"],
     };
-    const { container } = render(<PeopleRelatedPeoplesSection data={data} />);
+    const { container } = render(
+      <PeopleRelatedPeoplesSection language="fr" data={data} />
+    );
     const cards = container.querySelectorAll("[data-ethnicity-card]");
     expect(cards.length).toBe(1);
   });
@@ -130,7 +136,7 @@ describe("PeopleRelatedPeoplesSection — AutonymExonymHeading card style", () =
       politicalSystem: "Monarchie sous Oba",
       clanOrganization: "Clans patrilinéaires",
     };
-    render(<PeopleRelatedPeoplesSection data={data} />);
+    render(<PeopleRelatedPeoplesSection language="fr" data={data} />);
     expect(screen.getByText("Monarchie sous Oba")).toBeTruthy();
     expect(screen.getByText("Clans patrilinéaires")).toBeTruthy();
   });

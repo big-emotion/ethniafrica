@@ -10,13 +10,23 @@ import {
   resolveRelocatedPath,
   resolveRenamedModulePath,
 } from "@/middleware";
+import { LOCALES } from "@/lib/locale";
 import {
+  NOMMER_CHAPTER_KEYS,
   PAGE_TYPES,
+  STATIC_PAGE_SLUGS,
   getCountryRoute,
   getFamilyRoute,
   getLocalizedRoute,
+  getNommerChapterRoute,
+  getPeopleLinksRoute,
   getPeopleRoute,
+  getPersonRoute,
+  getStaticPageRoute,
+  localeSlugMismatch,
+  toRouteFilePath,
 } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 /**
  * What the redirect tables owe, stated where reading them cannot establish it.
@@ -36,7 +46,11 @@ import {
  *     so an identifier forwarded raw turns a redirect into an open one.
  *
  * The suite walks the tables rather than sampling them, so an entry added
- * later inherits the assertions instead of needing its own.
+ * later inherits the assertions instead of needing its own. Since DEC-049
+ * the tables carry one side per locale, derived from the French one, and
+ * every walk runs under both: a retired address requested under `/en` must
+ * land on the English successor, in the same one hop, and never cross into
+ * `/fr` on the way.
  */
 
 const path = (target: string) =>
@@ -44,83 +58,160 @@ const path = (target: string) =>
 
 const firstSegment = (target: string) => target.split("/").filter(Boolean)[1];
 
+const under = (language: Language, segment: string) =>
+  "/" + language + "/" + segment;
+
+/**
+ * The route file behind a public destination. English destinations are served
+ * off the French folders through the middleware rewrite, so the question
+ * "does anything answer at the other end" has to be asked of the folder the
+ * rewrite lands on, not of the English words.
+ */
+const routeFile = (language: Language, destination: string) => {
+  const publicPath = under(language, destination);
+  const folderPath = toRouteFilePath(publicPath) ?? publicPath;
+  return resolve(
+    __dirname,
+    "../app/[lang]",
+    folderPath.slice(`/${language}/`.length),
+    "page.tsx"
+  );
+};
+
 describe("the relocation table lands in one hop", () => {
   // @req REQ-091
   it("moves every legacy segment to a path that is not itself relocated", () => {
-    for (const segment of Object.keys(RELOCATED_SEGMENTS)) {
-      const once = path(`/fr/${segment}`);
-      expect(once, segment).not.toBeNull();
+    for (const language of LOCALES) {
+      for (const segment of Object.keys(RELOCATED_SEGMENTS[language])) {
+        const once = path(under(language, segment));
+        expect(once, `${language}/${segment}`).not.toBeNull();
 
-      // The defining property: feeding the answer back in must change
-      // nothing. A second answer here is a second round-trip in a browser.
-      expect(path(once!.path), `${segment} redirects twice`).toBeNull();
+        // The defining property: feeding the answer back in must change
+        // nothing. A second answer here is a second round-trip in a browser.
+        expect(
+          path(once!.path),
+          `${language}/${segment} redirects twice`
+        ).toBeNull();
+      }
+    }
+  });
+
+  // A retired address under one locale resolves within that locale. Crossing
+  // over would hand an English reader a French page, and the middleware would
+  // then owe a second redirect to bring them back.
+  // @req REQ-141
+  it("never crosses locales", () => {
+    for (const language of LOCALES) {
+      for (const segment of Object.keys(RELOCATED_SEGMENTS[language])) {
+        expect(path(under(language, segment))!.path).toMatch(
+          new RegExp(`^/${language}/`)
+        );
+      }
+      for (const oldPath of Object.keys(RENAMED_MODULE_PATHS[language])) {
+        expect(resolveRenamedModulePath(under(language, oldPath))).toMatch(
+          new RegExp(`^/${language}/`)
+        );
+      }
     }
   });
 
   // @req REQ-091
   it("carries the tail verbatim, however deep", () => {
-    expect(path("/fr/peuples/PPL_YORUBA/liens")!.path).toBe(
-      "/fr/atlas/peuples/PPL_YORUBA/liens"
-    );
-    // Percent-encoding survives: it was in the link the reader followed.
-    expect(path("/fr/peuples/PPL_%2FEVIL")!.path).toBe(
-      "/fr/atlas/peuples/PPL_%2FEVIL"
-    );
-    // A pinned revision is a tail like any other.
-    expect(path("/fr/pays/BEN@v3")!.path).toBe("/fr/atlas/pays/BEN@v3");
+    for (const language of LOCALES) {
+      const peoples = getLocalizedRoute(language, "peoples");
+      const countries = getLocalizedRoute(language, "countries");
+
+      expect(path(under(language, "peuples/PPL_YORUBA/liens"))!.path).toBe(
+        `${peoples}/PPL_YORUBA/liens`
+      );
+      // Percent-encoding survives: it was in the link the reader followed.
+      expect(path(under(language, "peuples/PPL_%2FEVIL"))!.path).toBe(
+        `${peoples}/PPL_%2FEVIL`
+      );
+      // A pinned revision is a tail like any other.
+      expect(path(under(language, "pays/BEN@v3"))!.path).toBe(
+        `${countries}/BEN@v3`
+      );
+    }
   });
 
   // @req REQ-091
   it("treats a trailing slash as no tail at all", () => {
-    expect(path("/fr/pays/")!.path).toBe("/fr/atlas/pays");
+    for (const language of LOCALES) {
+      expect(path(under(language, "pays/"))!.path).toBe(
+        getLocalizedRoute(language, "countries")
+      );
+    }
   });
 
   // ETNI-1615 (REQ-138): every currently-published address under the retired
   // verb prefix — hub, facet or fiche, at any depth — has to keep resolving,
   // in one hop, to its noun-prefixed successor. One row per axis carries all
-  // of it; this asserts the row actually does.
+  // of it; this asserts the row actually does. The tail is carried verbatim
+  // in both locales — the French word under `/en` is the cross-vocabulary
+  // step's to translate, inside the same 308 (middleware.test.ts).
   // @req REQ-091
   it("carries every depth of the retired axis prefix to its successor", () => {
-    expect(path("/fr/explorer")!.path).toBe("/fr/atlas");
-    expect(path("/fr/comprendre")!.path).toBe("/fr/dossiers");
-    expect(path("/fr/jouer")!.path).toBe("/fr/jeux");
-    expect(path("/fr/explorer/peuples")!.path).toBe("/fr/atlas/peuples");
-    expect(path("/fr/explorer/peuples/PPL_YORUBA")!.path).toBe(
-      "/fr/atlas/peuples/PPL_YORUBA"
-    );
-    expect(path("/fr/jouer/mercator")!.path).toBe("/fr/jeux/mercator");
+    for (const language of LOCALES) {
+      const atlas = getLocalizedRoute(language, "atlasHub");
+      const games = getLocalizedRoute(language, "jeuxHub");
+
+      expect(path(under(language, "explorer"))!.path).toBe(atlas);
+      expect(path(under(language, "comprendre"))!.path).toBe(
+        getLocalizedRoute(language, "dossiersHub")
+      );
+      expect(path(under(language, "jouer"))!.path).toBe(games);
+      expect(path(under(language, "explorer/peuples"))!.path).toBe(
+        `${atlas}/peuples`
+      );
+      expect(path(under(language, "explorer/peuples/PPL_YORUBA"))!.path).toBe(
+        `${atlas}/peuples/PPL_YORUBA`
+      );
+      expect(path(under(language, "jouer/mercator"))!.path).toBe(
+        `${games}/mercator`
+      );
+    }
   });
 });
 
 describe("the module-rename table lands in one hop (ETNI-1458)", () => {
   // @req REQ-091
   it("moves the old nested path to a path that is not itself relocated", () => {
-    for (const oldPath of Object.keys(RENAMED_MODULE_PATHS)) {
-      const once = resolveRenamedModulePath(`/fr/${oldPath}`);
-      expect(once, oldPath).not.toBeNull();
+    for (const language of LOCALES) {
+      for (const oldPath of Object.keys(RENAMED_MODULE_PATHS[language])) {
+        const once = resolveRenamedModulePath(under(language, oldPath));
+        expect(once, `${language}/${oldPath}`).not.toBeNull();
 
-      // The defining property, same as the flat table above: feeding the
-      // answer back in must change nothing.
-      expect(
-        resolveRenamedModulePath(once!),
-        `${oldPath} redirects twice`
-      ).toBeNull();
-      expect(path(once!), `${oldPath} re-enters the flat table too`).toBeNull();
+        // The defining property, same as the flat table above: feeding the
+        // answer back in must change nothing.
+        expect(
+          resolveRenamedModulePath(once!),
+          `${language}/${oldPath} redirects twice`
+        ).toBeNull();
+        expect(
+          path(once!),
+          `${language}/${oldPath} re-enters the flat table too`
+        ).toBeNull();
+      }
     }
   });
 
   // @req REQ-091
   it("carries the tail verbatim below the renamed module", () => {
-    expect(resolveRenamedModulePath("/fr/dossiers/noms/PPL_YORUBA")).toBe(
-      "/fr/atlas/appellations/PPL_YORUBA"
-    );
+    for (const language of LOCALES) {
+      expect(
+        resolveRenamedModulePath(under(language, "dossiers/noms/PPL_YORUBA"))
+      ).toBe(`${getLocalizedRoute(language, "names")}/PPL_YORUBA`);
+    }
   });
 
   // @req REQ-091
   it("treats a trailing slash as no tail at all", () => {
-    expect(resolveRenamedModulePath("/fr/dossiers/noms/")).toBe(
-      "/fr/atlas/appellations"
-    );
+    for (const language of LOCALES) {
+      expect(resolveRenamedModulePath(under(language, "dossiers/noms/"))).toBe(
+        getLocalizedRoute(language, "names")
+      );
+    }
   });
 
   // Appellations was published under Comprendre before ETNI-1453 made the
@@ -129,38 +220,45 @@ describe("the module-rename table lands in one hop (ETNI-1458)", () => {
   // through `dossiers/noms` would spend the 308 twice.
   // @req REQ-114
   it("sends both published appellations addresses to Atlas in one hop", () => {
-    expect(resolveRenamedModulePath("/fr/dossiers/appellations")).toBe(
-      "/fr/atlas/appellations"
-    );
-    expect(resolveRenamedModulePath("/fr/dossiers/noms")).toBe(
-      "/fr/atlas/appellations"
-    );
+    for (const language of LOCALES) {
+      const names = getLocalizedRoute(language, "names");
+      expect(
+        resolveRenamedModulePath(under(language, "dossiers/appellations"))
+      ).toBe(names);
+      expect(resolveRenamedModulePath(under(language, "dossiers/noms"))).toBe(
+        names
+      );
+    }
   });
 
   // Doctrine leaves the axes with About: a page no axis lists carries no
   // prefix, the rule `compare` already follows.
   // @req REQ-114
   it("lifts the doctrine subtree back to the top level", () => {
-    expect(resolveRenamedModulePath("/fr/dossiers/doctrine")).toBe(
-      "/fr/doctrine"
-    );
-    expect(
-      resolveRenamedModulePath("/fr/dossiers/doctrine/endonymes-vs-exonymes")
-    ).toBe("/fr/doctrine/endonymes-vs-exonymes");
-    // And the address it lands on is served, not relocated again.
-    expect(path("/fr/doctrine")).toBeNull();
+    for (const language of LOCALES) {
+      const doctrine = getLocalizedRoute(language, "doctrine");
+      expect(
+        resolveRenamedModulePath(under(language, "dossiers/doctrine"))
+      ).toBe(doctrine);
+      expect(
+        resolveRenamedModulePath(
+          under(language, "dossiers/doctrine/endonymes-vs-exonymes")
+        )
+      ).toBe(`${doctrine}/endonymes-vs-exonymes`);
+      // And the address it lands on is served, not relocated again.
+      expect(path(doctrine)).toBeNull();
+    }
   });
 
   // @req REQ-091
   it("has a page file behind the renamed module", () => {
-    for (const destination of Object.values(RENAMED_MODULE_PATHS)) {
-      const route = resolve(
-        __dirname,
-        "../app/[lang]",
-        destination,
-        "page.tsx"
-      );
-      expect(existsSync(route), `${destination} has no page.tsx`).toBe(true);
+    for (const language of LOCALES) {
+      for (const destination of Object.values(RENAMED_MODULE_PATHS[language])) {
+        expect(
+          existsSync(routeFile(language, destination)),
+          `${language}/${destination} has no page.tsx`
+        ).toBe(true);
+      }
     }
   });
 
@@ -169,35 +267,49 @@ describe("the module-rename table lands in one hop (ETNI-1458)", () => {
   // one lands somewhere different from the other.
   // @req REQ-091
   it("agrees with the flat legacy table on where the module now lives", () => {
-    expect(path("/fr/noms")!.path).toBe(
-      resolveRenamedModulePath("/fr/dossiers/noms")
-    );
+    for (const language of LOCALES) {
+      expect(path(under(language, "noms"))!.path).toBe(
+        resolveRenamedModulePath(under(language, "dossiers/noms"))
+      );
+    }
   });
 });
 
 describe("no target re-enters either table", () => {
-  // @req REQ-091
-  it("never opens a relocation target on a segment that is a key", () => {
-    const keys = new Set([
-      ...Object.keys(RELOCATED_SEGMENTS),
-      ...Object.keys(RENAMED_HUB_SEGMENTS),
+  const keysOf = (language: Language) =>
+    new Set([
+      ...Object.keys(RELOCATED_SEGMENTS[language]),
+      ...Object.keys(RENAMED_HUB_SEGMENTS[language]),
     ]);
 
-    for (const [segment, destination] of Object.entries(RELOCATED_SEGMENTS)) {
-      const opensOn = destination.split("/")[0];
-      expect(keys.has(opensOn), `${segment} -> ${destination}`).toBe(false);
+  // @req REQ-091
+  it("never opens a relocation target on a segment that is a key", () => {
+    for (const language of LOCALES) {
+      const keys = keysOf(language);
+      for (const [segment, destination] of Object.entries(
+        RELOCATED_SEGMENTS[language]
+      )) {
+        const opensOn = destination.split("/")[0];
+        expect(
+          keys.has(opensOn),
+          `${language}: ${segment} -> ${destination}`
+        ).toBe(false);
+      }
     }
   });
 
   // @req REQ-114
   it("never opens a hub-rename target on a segment that is a key", () => {
-    const keys = new Set([
-      ...Object.keys(RELOCATED_SEGMENTS),
-      ...Object.keys(RENAMED_HUB_SEGMENTS),
-    ]);
-
-    for (const [segment, destination] of Object.entries(RENAMED_HUB_SEGMENTS)) {
-      expect(keys.has(destination.split("/")[0]), segment).toBe(false);
+    for (const language of LOCALES) {
+      const keys = keysOf(language);
+      for (const [segment, destination] of Object.entries(
+        RENAMED_HUB_SEGMENTS[language]
+      )) {
+        expect(
+          keys.has(destination.split("/")[0]),
+          `${language}: ${segment}`
+        ).toBe(false);
+      }
     }
   });
 
@@ -210,14 +322,15 @@ describe("no target re-enters either table", () => {
    */
   // @req REQ-114
   it("has a page file behind every hub-rename target", () => {
-    for (const destination of new Set(Object.values(RENAMED_HUB_SEGMENTS))) {
-      const route = resolve(
-        __dirname,
-        "../app/[lang]",
-        destination,
-        "page.tsx"
-      );
-      expect(existsSync(route), `${destination} has no page.tsx`).toBe(true);
+    for (const language of LOCALES) {
+      for (const destination of new Set(
+        Object.values(RENAMED_HUB_SEGMENTS[language])
+      )) {
+        expect(
+          existsSync(routeFile(language, destination)),
+          `${language}/${destination} has no page.tsx`
+        ).toBe(true);
+      }
     }
   });
 
@@ -230,9 +343,36 @@ describe("no target re-enters either table", () => {
    */
   // @req REQ-091
   it("leaves every page the site actually serves alone", () => {
-    for (const page of PAGE_TYPES) {
-      const route = getLocalizedRoute("fr", page);
-      expect(path(route), route).toBeNull();
+    for (const language of LOCALES) {
+      for (const page of PAGE_TYPES) {
+        const route = getLocalizedRoute(language, page);
+        expect(path(route), route).toBeNull();
+        expect(resolveRenamedModulePath(route), route).toBeNull();
+        // Its own vocabulary, so the cross-vocabulary step has nothing to say.
+        expect(localeSlugMismatch(route), route).toBeNull();
+      }
+    }
+  });
+
+  // The cross-vocabulary answer is itself final: sending it back through the
+  // step must change nothing, or `/en/atlas/pays` would bounce between the
+  // two vocabularies.
+  // @req REQ-141
+  it("settles a foreign-vocabulary path in one step", () => {
+    for (const language of LOCALES) {
+      for (const other of LOCALES) {
+        if (other === language) continue;
+        for (const page of PAGE_TYPES) {
+          const foreign = under(
+            language,
+            getLocalizedRoute(other, page).slice(`/${other}/`.length)
+          );
+          const own = localeSlugMismatch(foreign);
+          if (own === null) continue;
+          expect(own, foreign).toBe(getLocalizedRoute(language, page));
+          expect(localeSlugMismatch(own), foreign).toBeNull();
+        }
+      }
     }
   });
 });
@@ -260,67 +400,120 @@ describe("every target is a route the app actually serves", () => {
    * rename or after. `explorer`/`comprendre`/`jouer` are single-segment keys
    * in `RELOCATED_SEGMENTS` precisely so every *tail* below them keeps
    * resolving in one hop; the bare root carries no tail and 404s either way.
+   *
+   * Named through the slug table so the set holds in both vocabularies.
    */
-  const CONTAINER_ONLY = new Set([
-    "dossiers/regards",
-    "atlas",
-    "dossiers",
-    "jeux",
-  ]);
+  const containerOnly = (language: Language) =>
+    new Set(
+      [
+        RELOCATED_SEGMENTS[language].regards,
+        ...(["atlasHub", "dossiersHub", "jeuxHub"] as const).map((hub) =>
+          getLocalizedRoute(language, hub).slice(`/${language}/`.length)
+        ),
+      ].filter(Boolean)
+    );
 
   // @req REQ-091
   it("has a page file behind every relocation target", () => {
-    for (const destination of new Set(Object.values(RELOCATED_SEGMENTS))) {
-      if (CONTAINER_ONLY.has(destination)) continue;
+    for (const language of LOCALES) {
+      const containers = containerOnly(language);
+      for (const destination of new Set(
+        Object.values(RELOCATED_SEGMENTS[language])
+      )) {
+        if (containers.has(destination)) continue;
 
-      const route = resolve(
-        __dirname,
-        "../app/[lang]",
-        destination,
-        "page.tsx"
-      );
-      expect(existsSync(route), `${destination} has no page.tsx`).toBe(true);
+        expect(
+          existsSync(routeFile(language, destination)),
+          `${language}/${destination} has no page.tsx`
+        ).toBe(true);
+      }
     }
   });
 
   // @req REQ-091
   it("still lands the article below the one container segment", () => {
-    expect(
-      existsSync(
-        resolve(
-          __dirname,
-          "../app/[lang]",
-          `${getLocalizedRoute("fr", "colonization").replace("/fr/", "")}`,
-          "page.tsx"
+    for (const language of LOCALES) {
+      expect(
+        existsSync(
+          routeFile(
+            language,
+            getLocalizedRoute(language, "colonization").slice(
+              `/${language}/`.length
+            )
+          )
         )
-      )
-    ).toBe(true);
+      ).toBe(true);
+    }
+  });
+
+  /**
+   * The rewrite is what makes an English address answer at all, so its
+   * coverage is a filesystem question: every path the English vocabulary can
+   * compose has to land on a folder Next actually has. A slug added to the
+   * English table with no French folder behind it is a 404 that no redirect
+   * test would ever see.
+   *
+   * `atlas/persons` is exempt by name: no person page exists in either locale
+   * today (REQ-126 composes the route ahead of the page), which predates the
+   * English vocabulary and is not its failure.
+   */
+  // @req REQ-141
+  it("rewrites every English path onto a folder that exists", () => {
+    const folder = (publicPath: string) =>
+      resolve(
+        __dirname,
+        "../app/[lang]",
+        (toRouteFilePath(publicPath) ?? publicPath).slice("/en/".length)
+      );
+
+    const englishPaths = [
+      ...PAGE_TYPES.map((page) => getLocalizedRoute("en", page)),
+      ...NOMMER_CHAPTER_KEYS.map((chapter) =>
+        getNommerChapterRoute("en", chapter)
+      ),
+      ...(
+        Object.keys(
+          STATIC_PAGE_SLUGS.en
+        ) as (keyof typeof STATIC_PAGE_SLUGS.en)[]
+      ).map((key) => getStaticPageRoute("en", key)),
+      // The dynamic segment is named as the folder names it, so the
+      // rewritten path is the folder path itself.
+      getPeopleLinksRoute("en", "[slug]"),
+    ];
+
+    for (const publicPath of englishPaths) {
+      expect(existsSync(folder(publicPath)), publicPath).toBe(true);
+    }
+
+    expect(existsSync(folder(getPersonRoute("en", "[slug]")))).toBe(false);
   });
 });
 
 describe("a deep link reaches its fiche in one hop", () => {
   // @req REQ-091
   it("resolves the retired directory query straight to the fiche", () => {
-    const country = resolveRelocatedPath(
-      "/fr/pays",
-      new URLSearchParams("country=BEN")
-    );
-    expect(country).toEqual({
-      path: getCountryRoute("fr", "BEN"),
-      keepQuery: false,
-    });
+    for (const language of LOCALES) {
+      const country = resolveRelocatedPath(
+        under(language, "pays"),
+        new URLSearchParams("country=BEN")
+      );
+      expect(country).toEqual({
+        path: getCountryRoute(language, "BEN"),
+        keepQuery: false,
+      });
 
-    const people = resolveRelocatedPath(
-      "/fr/peuples",
-      new URLSearchParams("people=PPL_YORUBA")
-    );
-    expect(people!.path).toBe(getPeopleRoute("fr", "PPL_YORUBA"));
+      const people = resolveRelocatedPath(
+        under(language, "peuples"),
+        new URLSearchParams("people=PPL_YORUBA")
+      );
+      expect(people!.path).toBe(getPeopleRoute(language, "PPL_YORUBA"));
 
-    const family = resolveRelocatedPath(
-      "/fr/familles",
-      new URLSearchParams("family=FLG_BANTU")
-    );
-    expect(family!.path).toBe(getFamilyRoute("fr", "FLG_BANTU"));
+      const family = resolveRelocatedPath(
+        under(language, "familles"),
+        new URLSearchParams("family=FLG_BANTU")
+      );
+      expect(family!.path).toBe(getFamilyRoute(language, "FLG_BANTU"));
+    }
   });
 
   // A link made since the move carries the current address, and the fiche has
@@ -330,114 +523,131 @@ describe("a deep link reaches its fiche in one hop", () => {
   // whose scripts carry a nonce the first response never authorised.
   // @req REQ-091
   it("resolves the query on the directory's current address too", () => {
-    expect(
-      resolveCanonicalDeepLink(
-        "/fr/atlas/pays",
-        new URLSearchParams("country=BEN")
-      )
-    ).toBe(getCountryRoute("fr", "BEN"));
+    for (const language of LOCALES) {
+      expect(
+        resolveCanonicalDeepLink(
+          getLocalizedRoute(language, "countries"),
+          new URLSearchParams("country=BEN")
+        )
+      ).toBe(getCountryRoute(language, "BEN"));
 
-    expect(
-      resolveCanonicalDeepLink(
-        "/fr/atlas/peuples",
-        new URLSearchParams("people=PPL_YORUBA")
-      )
-    ).toBe(getPeopleRoute("fr", "PPL_YORUBA"));
+      expect(
+        resolveCanonicalDeepLink(
+          getLocalizedRoute(language, "peoples"),
+          new URLSearchParams("people=PPL_YORUBA")
+        )
+      ).toBe(getPeopleRoute(language, "PPL_YORUBA"));
 
-    expect(
-      resolveCanonicalDeepLink(
-        "/fr/atlas/familles/",
-        new URLSearchParams("family=FLG_BANTU")
-      )
-    ).toBe(getFamilyRoute("fr", "FLG_BANTU"));
+      expect(
+        resolveCanonicalDeepLink(
+          `${getLocalizedRoute(language, "families")}/`,
+          new URLSearchParams("family=FLG_BANTU")
+        )
+      ).toBe(getFamilyRoute(language, "FLG_BANTU"));
+    }
   });
 
   // The encoding rule is the resolvers' own, so it holds on this path as well
   // — two leading slashes are what turns a redirect into an open one.
   // @req REQ-091
   it("encodes a hostile identifier on the current address", () => {
-    expect(
-      resolveCanonicalDeepLink(
-        "/fr/atlas/pays",
-        new URLSearchParams("country=//evil.com")
-      )
-    ).toBe(getCountryRoute("fr", encodeURIComponent("//evil.com")));
+    for (const language of LOCALES) {
+      expect(
+        resolveCanonicalDeepLink(
+          getLocalizedRoute(language, "countries"),
+          new URLSearchParams("country=//evil.com")
+        )
+      ).toBe(getCountryRoute(language, encodeURIComponent("//evil.com")));
+    }
   });
 
   // The fiche itself is not a directory: resolving there would send a reader
   // who is already on the page back to it, which is the shape a loop takes.
   // @req REQ-091
   it("leaves a fiche and an unqueried directory alone", () => {
-    expect(
-      resolveCanonicalDeepLink(
-        "/fr/atlas/pays/BEN",
-        new URLSearchParams("country=COM")
-      )
-    ).toBeNull();
+    for (const language of LOCALES) {
+      expect(
+        resolveCanonicalDeepLink(
+          getCountryRoute(language, "BEN"),
+          new URLSearchParams("country=COM")
+        )
+      ).toBeNull();
 
-    expect(
-      resolveCanonicalDeepLink("/fr/atlas/pays", new URLSearchParams())
-    ).toBeNull();
+      expect(
+        resolveCanonicalDeepLink(
+          getLocalizedRoute(language, "countries"),
+          new URLSearchParams()
+        )
+      ).toBeNull();
+    }
   });
 
   // The V1 vocabularies carried the same query shapes, so they get the same
   // single hop rather than one into the directory and one out of it.
   // @req REQ-091
   it("does the same for the retired V1 vocabularies", () => {
-    expect(
-      resolveRelocatedPath(
-        "/fr/ethnies",
-        new URLSearchParams("people=PPL_FON")
-      )!.path
-    ).toBe(getPeopleRoute("fr", "PPL_FON"));
-    expect(
-      resolveRelocatedPath(
-        "/fr/regions",
-        new URLSearchParams("family=FLG_MANDE")
-      )!.path
-    ).toBe(getFamilyRoute("fr", "FLG_MANDE"));
+    for (const language of LOCALES) {
+      expect(
+        resolveRelocatedPath(
+          under(language, "ethnies"),
+          new URLSearchParams("people=PPL_FON")
+        )!.path
+      ).toBe(getPeopleRoute(language, "PPL_FON"));
+      expect(
+        resolveRelocatedPath(
+          under(language, "regions"),
+          new URLSearchParams("family=FLG_MANDE")
+        )!.path
+      ).toBe(getFamilyRoute(language, "FLG_MANDE"));
+    }
   });
 
   // @req REQ-091
   it("encodes the identifier, so a crafted query cannot leave the site", () => {
-    const hostile = resolveRelocatedPath(
-      "/fr/pays",
-      new URLSearchParams("country=//evil.com")
-    );
+    for (const language of LOCALES) {
+      const hostile = resolveRelocatedPath(
+        under(language, "pays"),
+        new URLSearchParams("country=//evil.com")
+      );
 
-    expect(hostile!.path).toBe("/fr/atlas/pays/%2F%2Fevil.com");
-    // The property the encoding exists for: the second character is not a
-    // slash, so a browser reads a path rather than an authority.
-    expect(hostile!.path.startsWith("//")).toBe(false);
-    expect(firstSegment(hostile!.path)).toBe("atlas");
+      expect(hostile!.path).toBe(getCountryRoute(language, "%2F%2Fevil.com"));
+      // The property the encoding exists for: the second character is not a
+      // slash, so a browser reads a path rather than an authority.
+      expect(hostile!.path.startsWith("//")).toBe(false);
+      expect(firstSegment(hostile!.path)).toBe("atlas");
+    }
   });
 
   // A query naming nothing is left for the page to read.
   // @req REQ-091
   it("falls back to the plain relocation when the query names no fiche", () => {
-    const listing = resolveRelocatedPath(
-      "/fr/peuples",
-      new URLSearchParams("tri=population")
-    );
+    for (const language of LOCALES) {
+      const listing = resolveRelocatedPath(
+        under(language, "peuples"),
+        new URLSearchParams("tri=population")
+      );
 
-    expect(listing).toEqual({
-      path: getLocalizedRoute("fr", "peoples"),
-      keepQuery: true,
-    });
+      expect(listing).toEqual({
+        path: getLocalizedRoute(language, "peoples"),
+        keepQuery: true,
+      });
+    }
   });
 
   // Below the directory root the query belongs to the fiche, not to us.
   // @req REQ-091
   it("does not read a query hanging off a path deeper than the root", () => {
-    const deep = resolveRelocatedPath(
-      "/fr/peuples/PPL_YORUBA",
-      new URLSearchParams("people=PPL_ZULU")
-    );
+    for (const language of LOCALES) {
+      const deep = resolveRelocatedPath(
+        under(language, "peuples/PPL_YORUBA"),
+        new URLSearchParams("people=PPL_ZULU")
+      );
 
-    expect(deep).toEqual({
-      path: getPeopleRoute("fr", "PPL_YORUBA"),
-      keepQuery: true,
-    });
+      expect(deep).toEqual({
+        path: getPeopleRoute(language, "PPL_YORUBA"),
+        keepQuery: true,
+      });
+    }
   });
 });
 
@@ -447,25 +657,29 @@ describe("the V1 vocabularies the deleted [section] route used to answer", () =>
   // deletion must not produce for an address that used to resolve.
   // @req REQ-091
   it("still resolves, each to the entity its vocabulary became", () => {
-    for (const segment of ["regions", "regiones", "regioes"]) {
-      expect(path(`/fr/${segment}`)!.path, segment).toBe(
-        getLocalizedRoute("fr", "families")
-      );
-    }
-    for (const segment of ["ethnicities", "ethnies", "etnias"]) {
-      expect(path(`/fr/${segment}`)!.path, segment).toBe(
-        getLocalizedRoute("fr", "peoples")
-      );
+    for (const language of LOCALES) {
+      for (const segment of ["regions", "regiones", "regioes"]) {
+        expect(path(under(language, segment))!.path, segment).toBe(
+          getLocalizedRoute(language, "families")
+        );
+      }
+      for (const segment of ["ethnicities", "ethnies", "etnias"]) {
+        expect(path(under(language, segment))!.path, segment).toBe(
+          getLocalizedRoute(language, "peoples")
+        );
+      }
     }
   });
 
   // @req REQ-091
   it("keeps the identifier a V1 detail URL carried", () => {
-    expect(path("/fr/ethnies/PPL_YORUBA")!.path).toBe(
-      getPeopleRoute("fr", "PPL_YORUBA")
-    );
-    expect(path("/fr/regions/FLG_BANTU")!.path).toBe(
-      getFamilyRoute("fr", "FLG_BANTU")
-    );
+    for (const language of LOCALES) {
+      expect(path(under(language, "ethnies/PPL_YORUBA"))!.path).toBe(
+        getPeopleRoute(language, "PPL_YORUBA")
+      );
+      expect(path(under(language, "regions/FLG_BANTU"))!.path).toBe(
+        getFamilyRoute(language, "FLG_BANTU")
+      );
+    }
   });
 });

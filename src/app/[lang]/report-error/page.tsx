@@ -1,8 +1,5 @@
 "use client";
 
-import { useParams } from "next/navigation";
-import { useEffect } from "react";
-
 import { FlagForm } from "@/components/flags/FlagForm";
 import { ProofOfWorkGate } from "@/components/flags/ProofOfWorkGate";
 import { submitFlag } from "@/components/flags/submitFlag";
@@ -10,8 +7,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { useLanguage } from "@/hooks/use-language";
 import { ATTRIBUTION_STRING } from "@/lib/brand";
-import { getLocalizedRoute } from "@/lib/routing";
-import { Language } from "@/types/shared";
+import { getLocalizedRoute, getStaticPageRoute } from "@/lib/routing";
 
 /**
  * The general report form — the footer's "Signaler une erreur".
@@ -53,16 +49,9 @@ const GENERAL_TARGET = {
 
 // @req REQ-014
 export default function ReportErrorPage() {
-  const params = useParams();
-  const lang = params?.lang as string;
+  // The route's locale, read by the hook itself; nothing here writes it back,
+  // because only the switcher may remember a choice (REQ-140).
   const { language, setLanguage } = useLanguage();
-
-  // Sync language from URL param
-  useEffect(() => {
-    if (lang && ["fr"].includes(lang) && lang !== language) {
-      setLanguage(lang as Language);
-    }
-  }, [lang, language, setLanguage]);
 
   return (
     <PageLayout
@@ -120,7 +109,7 @@ export default function ReportErrorPage() {
             ont été tranchés, ainsi que le motif retenu à chaque fois.
           </p>
           <p>
-            <ActionLink href={`/${language}/signalements`}>
+            <ActionLink href={getStaticPageRoute(language, "reports")}>
               Voir le registre des signalements
             </ActionLink>
           </p>

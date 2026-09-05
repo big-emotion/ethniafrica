@@ -123,7 +123,10 @@ export default async function FamillesSlugPage({
     }
 
     return (
-      <PageLayout language="fr" sectionName="Familles linguistiques">
+      <PageLayout
+        language={lang as Language}
+        sectionName="Familles linguistiques"
+      >
         <div className="container mx-auto max-w-4xl px-4 py-8">
           <FicheSnapshotView
             kind="languageFamily"
@@ -202,6 +205,7 @@ export default async function FamillesSlugPage({
 
   const recordView = (
     <LanguageFamilyDetailViewV2
+      language={lang as Language}
       family={family}
       footprintCountries={familyOverlay?.countries ?? []}
       memberPeoples={memberPeoples}
@@ -213,7 +217,7 @@ export default async function FamillesSlugPage({
   // Live version (revalidate = 3600 at segment level)
   return (
     <PageLayout
-      language="fr"
+      language={lang as Language}
       sectionName="Familles linguistiques"
       flushTop
       trailLabel={family.nameFr}

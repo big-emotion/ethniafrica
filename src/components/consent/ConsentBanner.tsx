@@ -2,9 +2,12 @@
 
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { useConsent } from "@/hooks/use-consent";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
+import { DEFAULT_LOCALE, isLocale } from "@/lib/locale";
+import { getStaticPageRoute } from "@/lib/routing";
 import { cn } from "@/lib/utils";
 import type { ConsentPreferences } from "@/types/consent";
 
@@ -14,6 +17,11 @@ const BANNER_TITLE_ID = "consent-banner-title";
 export function ConsentBanner() {
   const { showBanner, acceptAll, rejectAll, updatePreferences, consentState } =
     useConsent();
+  // Mounted from the root providers, above the `[lang]` segment, so the
+  // locale comes off the route params rather than a prop; outside the locale
+  // tree there are none, and the policy is offered in the default locale.
+  const { lang } = useParams<{ lang?: string }>() ?? {};
+  const language = isLocale(lang) ? lang : DEFAULT_LOCALE;
   const [showCustomize, setShowCustomize] = useState(false);
   // Track local overrides for preferences - null means use consentState
   const [localAnalytics, setLocalAnalytics] = useState<boolean | null>(null);
@@ -139,7 +147,7 @@ export function ConsentBanner() {
                 hand-written page that restated it — so the banner sent the
                 reader to a copy nothing else maintained. */}
             <Link
-              href="/fr/politique-de-donnees"
+              href={getStaticPageRoute(language, "dataPolicy")}
               className="text-afh-small text-primary underline-offset-4 hover:underline w-fit"
             >
               Politique de données

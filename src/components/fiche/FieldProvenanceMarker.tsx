@@ -1,7 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import type { ChapterState } from "@/lib/fieldProvenance";
+import type { Language } from "@/types/shared";
 
 export interface FieldProvenanceMarkerProps {
   state: ChapterState;
@@ -12,10 +13,9 @@ export interface FieldProvenanceMarkerProps {
    * state is "documented-gap". Falls back to the generic badge without it.
    */
   reason?: string;
+  language: Language;
   className?: string;
 }
-
-const COPY = translations.fr.fieldProvenance;
 
 /**
  * Names a fiche field's provenance (REQ-119): visible when the corpus leaves
@@ -34,9 +34,12 @@ export function FieldProvenanceMarker({
   state,
   origin,
   reason,
+  language,
   className,
 }: FieldProvenanceMarkerProps) {
   if (state === "declared" || state === "not-modelled") return null;
+
+  const COPY = getTranslation(language).fieldProvenance;
 
   if (state === "documented-gap" && reason) {
     return (
