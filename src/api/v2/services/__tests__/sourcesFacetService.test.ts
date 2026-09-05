@@ -300,6 +300,8 @@ describe("sources facet service", () => {
 
       const choices = await getSourcesFacetChoices();
 
+      // French by contract: the endpoint has no locale parameter, so the
+      // glossary keying the labels by locale must not change this payload.
       expect(choices.standings).toEqual([
         { id: "official", label: "Officielle", count: 2 },
         { id: "needs_review", label: "En attente d'examen", count: 1 },

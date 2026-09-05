@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 import { bcp47LanguageTag } from "@/lib/languageTag";
-import { RELATION_TYPE_LABELS } from "@/components/relations/RelationTypeBadge";
+import { RELATION_TYPE_LABELS } from "@/lib/glossaire/vocabularies";
 import type {
   RelationBadgeType,
   RelationListItem,
@@ -55,7 +55,7 @@ function neighborPosition(index: number, total: number) {
 
 function edgeAnnouncement(item: RelationListItem): string {
   const parts = [
-    `Lien ${RELATION_TYPE_LABELS[item.type]} avec ${item.neighbor.nameMain}`,
+    `Lien ${RELATION_TYPE_LABELS.fr[item.type]} avec ${item.neighbor.nameMain}`,
   ];
   if (item.period?.label) parts.push(item.period.label);
   if (item.derived) {
@@ -319,7 +319,7 @@ export function EgoNetworkGraph({
                   dominantBaseline="middle"
                   className="fill-afh-text text-afh-eyebrow font-medium"
                 >
-                  {RELATION_TYPE_LABELS[item.type]}
+                  {RELATION_TYPE_LABELS.fr[item.type]}
                 </text>
               </g>
 
