@@ -1,3 +1,18 @@
+/**
+ * QUARANTINED, and for one reason only: no dossier fiche is published yet.
+ *
+ * Every assertion below reads dataset/source/afrik/dossiers/, which this branch
+ * has not written to — the research is collected but its `uncorroborated` lists
+ * have not been worked through, and publishing a chapter that rests on a single
+ * source would be the corpus contradicting its own doctrine to make a suite go
+ * green. See docs/editorial/dossiers-realites/README.md.
+ *
+ * **What un-quarantines it: the first DOS_*.json landing in that directory.**
+ * Move this file up one level then; nothing in it needs changing. It is
+ * deliberately not written to skip on an empty corpus, because a suite that
+ * passes when it checked nothing is the failure mode this repository has a
+ * whole class of scar tissue about.
+ */
 import { readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 
