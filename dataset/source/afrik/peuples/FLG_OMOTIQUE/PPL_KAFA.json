@@ -7,7 +7,15 @@
     "appellations": {
       "mainName": "Kafa",
       "selfAppellation": "Kafficho / Kaafi",
-      "exonyms": ["Kaffa", "Kaficco", "Caffino", "Keffa", "Kefa", "Kaficho"],
+      "exonyms": [
+        "Kaffa",
+        "Kaficco",
+        "Caffino",
+        "Keffa",
+        "Kefa",
+        "Kaficho",
+        "Kafficho"
+      ],
       "originOfExonyms": "Le nom Kaffa (ou Kefa, Keffa) est le terme geographique et ethnique le plus repandu dans la litterature internationale. L'appellation Kafficho designe a la fois le peuple et la langue dans les sources ethiopiennes. Le terme Kaafi est l'autonym le plus courant parmi les locuteurs. Le mot Kaffa est etymologiquement lie au terme cafe dans de nombreuses langues mondiales, en reference au fait que la region est le berceau du Coffea arabica.",
       "whyProblematic": null,
       "contemporaryUsage": "Les termes Kafa et Kafficho sont tous deux utilises dans les documents officiels ethiopiens. La zone administrative est officiellement appelee Keffa Zone (parfois orthographiee Kaffa). La langue est identifiee sous le code ISO kbr (Kafa) et aussi sous kbr dans Ethnologue et Glottolog.",
@@ -21,19 +29,23 @@
       "Manne — groupe de tanneurs-cordonniers de statut inferieur (submerged status)",
       "Qemmo — groupe de forgerons de statut inferieur",
       "Les quatre sous-groupes principaux du Royaume de Kaffa partageant la langue Kefficho",
-      "Les clans nobles — plus de 200 clans, chacun avec sa propre histoire et ses emblemes"
+      "Les clans nobles — plus de 200 clans, chacun avec sa propre histoire et ses emblemes",
+      "Kafficho"
     ],
     "origins": {
       "ancientOrigins": "Les Kafficho sont l'un des plus anciens peuples du sud-ouest de l'Ethiopie. Leur territoire, la region de Kaffa, est mondialement reconnu comme le berceau du cafe arabica (Coffea arabica), dont les varietes sauvages poussent encore dans les forets primaires de la region. La Reserve de biosphere de Kafa contient pres de 5 000 varietes sauvages de la plante. Les forets de montagne de la zone Keffa representent plus de 50% des forets de montagne residuelles de l'Ethiopie.",
       "formationPeriod": "Le Royaume de Kaffa fut fonde vers 1390 par Minjo, qui renversa la dynastie Mato (32 rois dont les noms ne sont plus memorises). Le royaume prospera pendant cinq siecles jusqu'en 1897. Il etait divise en quatre sous-groupes parlant tous le Kefficho. La capitale initiale etait Bonga ; Anderaccha fut la seconde capitale mais Bonga conserva son importance culturelle et administrative.",
       "migrationRoutes": [
         "Population autochtone des hauts plateaux du sud-ouest ethiopien, sans migration externe documentee",
-        "Extension territoriale par conquetes sous plusieurs rois : Gali Ginocho (1675-1710), Tato Shagi Sherocho (1775-1795), Hoti Gaocho (1798-1821)"
+        "Extension territoriale par conquetes sous plusieurs rois : Gali Ginocho (1675-1710), Tato Shagi Sherocho (1775-1795), Hoti Gaocho (1798-1821)",
+        "Etablissement ancestral dans les hauts plateaux boisés du sud-ouest éthiopien, au nord du Gojeb."
       ],
       "historicalSettlementZones": [
         "Zone Keffa (avec Bonga comme capitale), dans le South West Ethiopia Peoples' Region",
         "Anciennes zones d'expansion : territoires Gimira (She, Benesho, Majango), Welayta, Kambaata",
-        "La Gojeb River formait la frontiere nord du royaume"
+        "La Gojeb River formait la frontiere nord du royaume",
+        "Zone de Keffa (anciennement province de Kaffa), région des Nations, Nationalités et Peuples du Sud, puis région du Sud-Ouest Ethiopie (depuis 2021)",
+        "Bonga (première capitale), Anderaccha (capitale ultérieure)"
       ],
       "unificationsOrDivisions": "Le Royaume de Kaffa etait une monarchie centralisee dirigee par un roi appele Tato, figure sacree entouree de rituels complexes. Le systeme administratif sophistique comprenait des conseillers representant les clans majeurs et un systeme judiciaire pour resoudre les conflits. Apres la conquete par l'Empire ethiopien en 1897, la region fut reorganisee administrativement. En 1942, Haile Selassie elargit la Province de Kaffa en y integrant les royaumes Gibe.",
       "externalInfluences": "Au 16e siecle, l'Empereur Sarsa Dengel convainquit le royaume d'adopter le christianisme comme religion d'Etat (eglise Saint-Georges a Baha). Cette influence chretienne s'affaiblit avec le temps. Au 18e siecle, invasion des Oromos Mecha repoussee grace au terrain, mais perte de territoires au nord de la Gojeb. En 1897, annexion par les armees de Menelik II malgre une resistance farouche du dernier roi Gaki Sherocho.",
@@ -52,7 +64,12 @@
       "dialects": [
         "Kafa — dialecte principal",
         "Bosha (Garo) — dialecte potentiellement distinct selon certains linguistes",
-        "Manjo — argot base sur le kafa, parle par le groupe Manjo, avec des differences lexicales et grammaticales notables (certains speculer qu'il s'agissait d'une langue non-omotique anterieure)"
+        "Manjo — argot base sur le kafa, parle par le groupe Manjo, avec des differences lexicales et grammaticales notables (certains speculer qu'il s'agissait d'une langue non-omotique anterieure)",
+        "Kefficho",
+        "Bosha",
+        "Caffino",
+        "Garo",
+        "Manjo"
       ],
       "vehicularRole": "Le kafa (kbr) est parle par environ 830 000 personnes selon Ethnologue (2007). Il appartient a la branche Gonga (Kefoid) de l'omotique nord, au sein du phylum afro-asiatique. Il est ecrit en alphabet gueze (ethiopique) et parfois en caracteres latins. Dans la zone Keffa, le kafa est la langue maternelle de 82,49% de la population (recensement 2007). L'amharique est utilise pour l'administration et l'education superieure."
     },
@@ -116,6 +133,36 @@
         "url": "https://www.kafanaturetours.com/post/kaffa-the-birthplace-of-arabica",
         "tier": "needs_review",
         "notes": "No domain ruling covers kafanaturetours.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Kafa – Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/kafa1242",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Kafa in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/12408",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "XLIII Coffee – Kaffa Coffee and the Journey from the Ethiopian Rainforest, 2025",
+        "url": "https://xliiicoffee.com/en/journal/kaffa-coffee-ethiopian-forest-journey/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers xliiicoffee.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Bulatovich, A. (1900) – With the Armies of Menelik II, emperor of Ethiopia",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Pankhurst, R. – The Ethiopian Borderlands, 1997",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
       }
     ]
   }

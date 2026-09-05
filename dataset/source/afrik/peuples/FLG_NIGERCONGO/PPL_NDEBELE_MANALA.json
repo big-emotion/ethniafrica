@@ -1,5 +1,5 @@
 {
-  "id": "PPL_NDEBELE_SUD2",
+  "id": "PPL_NDEBELE_MANALA",
   "nameMain": "Ndebele du Sud (Manala)",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["ZAF"],
@@ -14,7 +14,7 @@
         "Ndebele (terme européen)"
       ],
       "originOfExonyms": "Le terme Manala désigne les descendants du prince Manala, fils aîné légitime du roi Musi. Northern Transvaal Ndebele fut un terme administratif de l'apartheid regroupant les Manala avec d'autres sous-groupes nordiques. Le terme Ndebele est un exonyme d'origine sotho.",
-      "whyProblematic": "Le fichier PPL_NDEBELE_SUD couvre les Ndzundza (branche culturellement la plus visible, célèbre pour les peintures murales). PPL_NDEBELE_SUD2 couvre les Manala, sous-groupe historiquement senior (maison royale reconnue par les tribunaux en 2017) mais moins connu du grand public. Les deux sous-groupes furent regroupés dans le bantoustan KwaNdebele sous l'apartheid, masquant leurs différences.",
+      "whyProblematic": "Les Ndzundza forment la branche culturellement la plus visible des Ndebele du Sud, célèbre pour les peintures murales, et font l'objet de leur propre fiche. Les Manala sont le sous-groupe historiquement senior (maison royale reconnue par les tribunaux en 2017) mais moins connu du grand public. Les deux sous-groupes furent regroupés dans le bantoustan KwaNdebele sous l'apartheid, masquant leurs différences.",
       "contemporaryUsage": "Les Manala se reconnaissent comme amaNdebele et revendiquent la séniorité royale sur l'ensemble du peuple Ndebele d'Afrique du Sud. En 2017, la Haute Cour a confirmé le roi Makhosoke II (Enoch Mabhena) comme roi Manala et chef suprême senior des Ndebele.",
       "linguisticFamily": "FLG_NIGERCONGO",
       "ethnoLinguisticGroup": "Bantou Nguni (Zone S)",

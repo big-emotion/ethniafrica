@@ -1,21 +1,21 @@
 {
   "id": "PPL_RWANDAIS_HUTU",
   "nameMain": "Rwandais (Hutu)",
-  "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["RWA", "COD", "UGA", "BDI"],
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["RWA", "COD", "UGA", "BDI", "TZA"],
   "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
       "mainName": "Rwandais (Hutu)",
       "selfAppellation": "Hutu / Abahutu",
-      "exonyms": ["Bahutu", "Wahutu"],
+      "exonyms": ["Bahutu", "Wahutu", "Hutu du Rwanda"],
       "originOfExonyms": "Le terme Hutu, d'origine bantoue, désigne historiquement ceux qui cultivaient la terre par opposition aux pasteurs (Tutsi). Sa signification exacte est débattue : certains linguistes le rattachent au terme désignant un vassal ou sujet dans la hiérarchie sociale rwandaise traditionnelle.",
       "whyProblematic": "Le terme Hutu a été cristallisé en catégorie ethnique rigide par l'administration coloniale belge dans les années 1930. Depuis le génocide de 1994, son usage en tant qu'identifiant ethnique est politiquement sensible au Rwanda, le gouvernement promouvant une identité nationale unifiée Banyarwanda.",
       "contemporaryUsage": "Le gouvernement rwandais post-génocide a supprimé la mention de l'appartenance ethnique sur les cartes d'identité et promeut le programme Ndi Umunyarwanda (Je suis Rwandais). La distinction Hutu reste en usage en Burundi et dans la diaspora, mais les autorités rwandaises découragent son emploi comme marqueur identitaire premier.",
-      "linguisticFamily": "FLG_NIGERCONGO",
+      "linguisticFamily": "FLG_BANTU",
       "ethnoLinguisticGroup": "Bantou (Zone J, sous-groupe Rwanda-Rundi)",
       "historicalRegion": "Région des Grands Lacs africains, principalement Rwanda et Burundi actuels",
-      "currentCountries": ["RWA", "COD", "UGA", "BDI"]
+      "currentCountries": ["RWA", "COD", "UGA", "BDI", "TZA"]
     },
     "ethnicities": [
       "Abahutu du Rwanda central (anciens agriculteurs des collines)",
@@ -23,20 +23,31 @@
       "Banyarwanda Hutu de RDC (provinces du Nord-Kivu et Sud-Kivu)",
       "Hutu d'Ouganda (Bafumbira, région de Kisoro)",
       "Hutu Kiga du nord-ouest (région historiquement à majorité hutu)",
-      "Hutu exilés post-1994 (camps FDLR en RDC)"
+      "Hutu exilés post-1994 (camps FDLR en RDC)",
+      "Abahutu du nord du Rwanda (préfectures historiques de Ruhengeri, Gisenyi)",
+      "Abahutu du centre et du sud (préfectures de Gitarama, Butare, Gikongoro)",
+      "Abahutu de l'est (préfectures de Kibungo, Byumba)",
+      "Banyarwanda Hutu de l'est de la RDC (Banyamulenge et Banyabwisha)",
+      "Barundi Hutu du Burundi (groupe démographiquement majoritaire)"
     ],
     "origins": {
       "ancientOrigins": "Les Hutu font partie du grand groupe bantou qui a peuplé la région des Grands Lacs lors des migrations bantoues entre 3000 et 1000 av. J.-C. environ. Les premiers Hutu documentés étaient des agriculteurs sédentaires organisés en clans (inzu) et en lignages (umuryango). Les distinctions entre Hutu et Tutsi n'étaient pas initialement des catégories ethniques biologiques mais des différences de statut socio-économique : les éleveurs de bétail (plus de dix vaches) tendaient à être classés Tutsi, les cultivateurs Hutu. La mobilité sociale était possible : un Hutu prospère pouvait accéder au statut Tutsi (kwihutura) et inversement (gucupira).",
       "formationPeriod": "La stratification Hutu-Tutsi s'est renforcée à partir du 15e siècle avec l'expansion du Royaume du Rwanda (Nyiginya). Les catégories sont devenues progressivement plus rigides sous la monarchie tutsi jusqu'au 19e siècle, puis ont été radicalement transformées par la colonisation belge.",
       "migrationRoutes": [
         "Migration bantoue depuis l'Afrique centrale (bassin du Congo) vers la région des Grands Lacs, environ 1000-500 av. J.-C.",
-        "Dispersion régionale au Rwanda, Burundi, Ouganda occidental et est du Congo lors de l'expansion du Royaume de Rwanda"
+        "Dispersion régionale au Rwanda, Burundi, Ouganda occidental et est du Congo lors de l'expansion du Royaume de Rwanda",
+        "Migration bantou ancienne depuis l'Afrique centrale vers la région des Grands Lacs",
+        "Expansion progressive au sein du territoire actuel du Rwanda et du Burundi"
       ],
       "historicalSettlementZones": [
         "Rwanda central et méridional (collines de culture vivrière)",
         "Burundi (nord et centre)",
         "Nord-Kivu et Sud-Kivu (RDC), surtout Masisi et Rutshuru",
-        "Ouganda occidental, district de Kisoro (Bafumbira)"
+        "Ouganda occidental, district de Kisoro (Bafumbira)",
+        "Plaines et collines du Rwanda central",
+        "Région volcanique du nord-ouest (Ruhengeri)",
+        "Plateau du Bugesera à l'est",
+        "Rift albertin à l'ouest"
       ],
       "unificationsOrDivisions": "La Révolution rwandaise de 1959-1962, soutenue par la Belgique, a renversé la monarchie tutsi et porté les Hutu au pouvoir au Rwanda. Des massacres de Tutsi ont suivi. Au Burundi, les Tutsi ont conservé le pouvoir militaire, conduisant au génocide de Hutu en 1972 (100 000 morts estimés). Ces trajectoires opposées ont entretenu des tensions régionales persistantes jusqu'au génocide de 1994.",
       "externalInfluences": "L'administration coloniale allemande (1897-1916) puis belge (1916-1962) a joué un rôle décisif : en 1933, la Belgique a introduit des cartes d'identité ethniques obligatoires (Tutsi, Hutu, Twa) et une classification basée sur le nombre de bétail possédé et les mensurations physiques, transformant des catégories sociales perméables en identités raciales figées. Cette rigidification a fourni la base administrative aux discriminations puis au génocide.",
@@ -56,7 +67,11 @@
         "Kinyarwanda du Rwanda central",
         "Kirundi (Burundi) — variété très proche, officiellement distinct",
         "Rufumbira (Ouganda, district de Kisoro) — dialecte kinyarwanda",
-        "Ikinyabwishya (nord-ouest Rwanda)"
+        "Ikinyabwishya (nord-ouest Rwanda)",
+        "Kinyarwanda du nord (légèrement différent phonologiquement)",
+        "Kinyarwanda du sud",
+        "Kirundi (proche, Burundi) — parfois considéré dialecte",
+        "Mufumbira (Uganda, dialecte frontalier)"
       ],
       "vehicularRole": "Le kinyarwanda (ISO 639-3 : kin) est la langue maternelle de la quasi-totalité des Hutu, Tutsi et Twa du Rwanda, démontrant que ces groupes forment une seule communauté linguistique (Banyarwanda). C'est l'une des quatre langues officielles du Rwanda avec le français, l'anglais et le swahili. Le kirundi, mutuellement intelligible, est la langue nationale du Burundi. Le français reste largement utilisé dans l'administration et l'éducation dans les pays francophones."
     },
@@ -96,6 +111,10 @@
           "country": "UGA",
           "population": 500000,
           "note": "Bafumbira et Banyarwanda hutu dans le sud-ouest ougandais, district de Kisoro"
+        },
+        {
+          "country": "TZA",
+          "population": 150000
         }
       ]
     },
@@ -135,6 +154,36 @@
         "url": "https://www.law.berkeley.edu/files/HRC/Rwanda_resource_book_for_teachers_version_10._rwandan_history_book.pdf",
         "tier": "needs_review",
         "notes": "No domain ruling covers law.berkeley.edu; the tier awaits editorial review."
+      },
+      {
+        "title": "United Nations — 1994 Genocide against the Tutsi in Rwanda",
+        "url": "https://www.un.org/en/preventgenocide/rwanda/historical-background.shtml",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\"."
+      },
+      {
+        "title": "US Holocaust Memorial Museum — Rwanda",
+        "url": "https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ushmm.org."
+      },
+      {
+        "title": "Musée de l'Holocauste Montréal — Le génocide contre les Tutsi au Rwanda",
+        "url": "https://museeholocauste.ca/en/resources-training/the-genocide-against-the-tutsi-in-rwanda/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for museeholocauste.ca."
+      },
+      {
+        "title": "Canadian Museum for Human Rights — What led to the genocide against the Tutsi in Rwanda",
+        "url": "https://humanrights.ca/story/what-led-genocide-against-tutsi-rwanda",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for humanrights.ca."
+      },
+      {
+        "title": "SIL Ethnologue — Kinyarwanda (kin)",
+        "url": "https://www.ethnologue.com/language/kin",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
       }
     ]
   }

@@ -8,7 +8,7 @@ import type { ComparisonColumn, ComparisonRow } from "@/types/compare";
 
 const entities: ComparisonColumn[] = [
   { id: "PPL_WOLOF", label: "Wolof", type: "peuple" },
-  { id: "PPL_SERERE", label: "Sérère", type: "peuple" },
+  { id: "PPL_SERER", label: "Sérère", type: "peuple" },
 ];
 
 const appellationsRow: ComparisonRow = {
@@ -20,7 +20,7 @@ const appellationsRow: ComparisonRow = {
       linguisticFamily: "FLG_ATLANTIQUE",
       currentCountries: ["SEN", "GMB", "MRT"],
     },
-    PPL_SERERE: {
+    PPL_SERER: {
       mainName: "Sérère",
       selfAppellation: "Sereer",
       linguisticFamily: "FLG_ATLANTIQUE",
@@ -35,7 +35,7 @@ const sparseRow: ComparisonRow = {
     PPL_WOLOF: {
       summary: "Royaume du Jolof, réseaux commerciaux atlantiques.",
     },
-    PPL_SERERE: null,
+    PPL_SERER: null,
   },
 };
 

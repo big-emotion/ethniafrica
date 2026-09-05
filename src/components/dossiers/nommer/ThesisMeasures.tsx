@@ -15,8 +15,8 @@ import { NOMMER_FIGURES } from "@/lib/dossiers/nommer/figures";
  * reads as decoration.
  *
  * The third measure is the one that matters most and is easiest to get wrong.
- * 460 of 800 is 57,5 %, and printing that percentage would let a reader infer
- * that the other 340 fiches were examined and found sound. 321 were never
+ * 445 of 775 is 57,4 %, and printing that percentage would let a reader infer
+ * that the other 330 fiches were examined and found sound. 311 were never
  * examined at all. So the band publishes the gap beside the finding, which is
  * what the atlas charter §4 asks of an absent value.
  */

@@ -1,18 +1,28 @@
 {
   "id": "PPL_SERER",
   "nameMain": "Sérère",
-  "languageFamilyId": "FLG_NIGERCONGO",
+  "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["SEN", "GMB", "MRT"],
   "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Sérère",
       "selfAppellation": "Seereer",
-      "exonyms": ["Sérère", "Serer", "Sereer", "Serere", "Serre"],
+      "exonyms": [
+        "Sérère",
+        "Serer",
+        "Sereer",
+        "Serere",
+        "Serre",
+        "Serrere",
+        "Sarer",
+        "Kegueme",
+        "Seereer"
+      ],
       "originOfExonyms": "L'exonyme Sérère (ou Serer) est utilisé en français depuis la période coloniale pour désigner ce groupe. Le terme endonymique est Seereer. Les variantes orthographiques (Sereer, Serere, Serre) sont des transcriptions différentes d'une même réalité ethnolinguistique. Chaque sous-groupe (Seereer-Sine, Ndut, Noon, Saafi, Palor, Laalaa) porte en outre son propre nom.",
       "whyProblematic": "Le terme Sérère recouvre une réalité linguistique et culturelle complexe : les différents sous-groupes serer parlent soit le sérère proprement dit (serer-sine), soit des langues cangin apparentées (Noon, Ndut, Saafi, Palor, Laalaa) qui ont une faible intelligibilité mutuelle avec le sérère-sine. La classification Niger-Congo est débattue, certains chercheurs plaçant les langues sérère-cangin dans un rameau autonome atlantique.",
       "contemporaryUsage": "Le terme Sérère est couramment utilisé au Sénégal et en Gambie pour désigner cet ensemble ethno-linguistique. Les Sérère constituent le troisième groupe ethnique du Sénégal. Leur identité ethno-religieuse reste fortement marquée, malgré la conversion majoritaire à l'islam au cours du XXe siècle.",
-      "linguisticFamily": "FLG_NIGERCONGO",
+      "linguisticFamily": "FLG_ATLANTIQUE",
       "ethnoLinguisticGroup": "Atlantique occidental (sous-groupe sérère-cangin, Niger-Congo)",
       "historicalRegion": "Sénégambie — Sine-Saloum, Fatick, Kaolack, Thiès (Sénégal), Gambie",
       "currentCountries": ["SEN", "GMB", "MRT"]
@@ -25,7 +35,14 @@
       "Seereer-Palor (Falor) — Thiès, centre-ouest du Sénégal",
       "Seereer-Laalaa (Lehar) — nord de Thiès, région de Tambacounda",
       "Seereer-Niominka — îles du Saloum, Sénégal",
-      "Seereer-Njeghen (Dyegueme) — ancien Baol, Sénégal"
+      "Seereer-Njeghen (Dyegueme) — ancien Baol, Sénégal",
+      "Seereer-Siin (Serere proprement dits, les plus nombreux), vallee du Sine et du Saloum, Kaolack, Diourbel, Dakar",
+      "Niominka (Sereres des deltas et des iles du Saloum, peche et navigation)",
+      "Serer-Ndut (N'doute), sud de Cayor et nord-ouest de l'ancien Thies, langue cangin ndut",
+      "Serer-Noon, ancienne region de Thies, langue cangin noon",
+      "Serer-Njeghen, ancien Baol, langue cangin saafi",
+      "Serer-Palor (Waro), ouest-central, sud-ouest de Thies, langue cangin palor",
+      "Serer-Laalaa (Lehar), ouest-central, nord de Thies, zone de Pambal, langue cangin laalaa"
     ],
     "origins": {
       "ancientOrigins": "Les Sérère sont parmi les plus anciens habitants de la Sénégambie. Selon le chercheur David Galvan et d'autres historiens, les Sérère ont migré vers le sud depuis la région du Fuuta Tooro (vallée du fleuve Sénégal) à partir du XIe siècle, lorsque l'islam franchit le Sahara via le mouvement almoravide. Des données anthropologiques physiques et des archives linguistiques attestent de leur présence ancienne dans la région du Sine-Saloum. L'ethnie sérère est en réalité une fusion de deux groupes distincts — l'un d'origine plus méridionale, l'autre venu du nord — ce qui explique son système de parenté bilinéaire complexe.",
@@ -34,14 +51,23 @@
         "Migration depuis la vallée du fleuve Sénégal (Fuuta Tooro) vers le sud, à partir du XIe siècle, sous la pression des Almoravides",
         "Dispersion vers la région du Sine-Saloum et de Thiès (Sénégal occidental)",
         "Expansion vers les îles du Saloum (Seereer-Niominka)",
-        "Présence en Gambie par continuité géographique avec le Saloum sénégalais"
+        "Présence en Gambie par continuité géographique avec le Saloum sénégalais",
+        "Migration initiale depuis la vallee du fleuve Senegal (Fuuta Tooro, frontier Senegal-Mauritanie) vers le sud, entre le XIe et le XIIIe siecle",
+        "Transit par les zones wolofs, avec influence mutuelle et partage de terminologies et structures politiques",
+        "Installation dans les vallees du Sine et du Saloum (Senegal central) vers le XIIIe siecle",
+        "Nouvelles migrations au XVe-XVIe siecle suite aux persecutions islamiques vers les forets de l'interieur et la cote"
       ],
       "historicalSettlementZones": [
         "Sine-Saloum : Fatick, Kaolack (coeur historique du peuplement sérère)",
         "Région de Thiès (Sénégal) — sous-groupes Noon, Ndut, Saafi, Palor",
         "Îles du Saloum (delta du Saloum, Sénégal) — Niominka",
         "Gambie septentrionale — extension du domaine du Saloum",
-        "Mauritanie du sud (très petite communauté)"
+        "Mauritanie du sud (très petite communauté)",
+        "Sine et Saloum (Senegal central et occidental, regions de Fatick, Kaolack, Diourbel)",
+        "Petite Cote (Mbour, Joal-Fadiouth) et archipel des Bolongs du Saloum",
+        "Ancien Baol (region de Diourbel)",
+        "Region de Thies (Cayor meridional)",
+        "Gambie du nord (Nuimi, Baddibu, Kombo gambien)"
       ],
       "unificationsOrDivisions": "Les Sérère n'ont pas formé un État unitaire. Les royaumes du Sine (Maad a Sinig) et du Saloum (Maad Saloum), dirigés par des dynasties Guelowar, ont été les structures politiques majeures. Le royaume de Baol a également été gouverné par des dynasties à composante sérère. Ces royaumes ont coexisté avec les royaumes wolof (Jolof, Cayor, Waalo) et les sultanats peuls du Fuuta Toro.",
       "externalInfluences": "Pression d'islamisation des Almoravides (XIe siècle). Expansion des royaumes wolof (Jolof, Cayor). Mouvement maraboutique du XIXe siècle (Lat Dior, Maba Diakhou Ba). Colonisation française (XIXe-XXe siècles). Islamisation massive au XXe siècle, notamment via les confréries Mourides et Tidjanes. Christianisation de certains sous-groupes (notamment autour de Thiès et Joal).",
@@ -56,14 +82,20 @@
     },
     "languages": {
       "mainLanguage": "Sérère-Sine (Seereer-Siin)",
-      "isoCodes": ["srr", "sfi", "snf", "fap", "laa"],
+      "isoCodes": ["srr", "sfi", "snf", "fap", "laa", "ndv", "pce"],
       "dialects": [
         "Seereer-Sine (srr) — langue principale, vallées du Sine et du Saloum, environ 1,2 million de locuteurs au Sénégal",
         "Saafi-Saafi (sfi) — sous-groupe cangin, région de Thiès, environ 114 000 locuteurs",
         "Noon (snf) — sous-groupe cangin, Thiès, environ 33 000 locuteurs",
         "Ndut (dtu) — sous-groupe cangin, ouest de Thiès, environ 39 000 locuteurs",
         "Palor (fap) — sous-groupe cangin, environ 11 000 locuteurs",
-        "Lehar-Laalaa (laa) — sous-groupe cangin, nord de Thiès, environ 12 000 locuteurs"
+        "Lehar-Laalaa (laa) — sous-groupe cangin, nord de Thiès, environ 12 000 locuteurs",
+        "Serere-Sine (srr) : dialecte principal, 1 154 760 locuteurs au Senegal (2006), 31 900 en Gambie, 3 500 en Mauritanie",
+        "Ndut (ndv) : langue cangin, environ 38 600 locuteurs (Senegal, 2007)",
+        "Noon (snf) : langue cangin, ancienne region de Thies",
+        "Palor (pce) : langue cangin (Waro), ouest-central de Thies",
+        "Laalaa (laa) : langue cangin, zone de Pambal, environ 12 000 locuteurs (2007)",
+        "Saafi-Saafi : langue cangin, ancien Baol"
       ],
       "vehicularRole": "Le sérère-sine est la langue maternelle de la grande majorité des Sérère et fait partie du curriculum national sénégalais. Le wolof est la langue véhiculaire du Sénégal, très utilisée par les Sérère en contexte urbain. Le français est la langue officielle du Sénégal. En Gambie, l'anglais est la langue officielle et le mandingue la principale langue véhiculaire."
     },
@@ -125,6 +157,36 @@
         "url": null,
         "tier": "referenced",
         "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Joshua Project, Serer-Sine in Gambia",
+        "url": "https://joshuaproject.net/people_groups/14866/GA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes, Serer people",
+        "url": "https://www.101lasttribes.com/tribes/serer.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Britannica, Serer",
+        "url": "https://www.britannica.com/topic/Serer",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "US Public Intelligence, Senegal Cultural Field Guide (Ethnic Groups)",
+        "url": "https://info.publicintelligence.net/MCIA-SenegalCultureGuide.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for info.publicintelligence.net."
+      },
+      {
+        "title": "Qiraat Africa, The Serer people of West Africa (2026)",
+        "url": "https://qiraatafrican.com/en/19893/the-serer-people-of-west-africa/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
       }
     ]
   }
