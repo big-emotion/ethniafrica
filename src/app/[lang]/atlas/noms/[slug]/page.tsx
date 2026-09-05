@@ -82,7 +82,7 @@ export default async function AppellationsSlugPage({
 }: {
   params: Promise<PageParams>;
 }) {
-  const { slug } = await params;
+  const { lang, slug } = await params;
 
   const patronyme = await loadPatronymeFiche(decodeURIComponent(slug));
   if (!patronyme) {
@@ -91,13 +91,16 @@ export default async function AppellationsSlugPage({
 
   return (
     <PageLayout
-      language="fr"
+      language={lang as Language}
       sectionName="Appellations"
       flushTop
       trailLabel={patronyme.nameMain}
       heroHead={
         <FicheHeroHead entityType="name">
-          <PatronymeFicheTitle patronyme={patronyme} />
+          <PatronymeFicheTitle
+            patronyme={patronyme}
+            language={lang as Language}
+          />
         </FicheHeroHead>
       }
     >
@@ -105,7 +108,12 @@ export default async function AppellationsSlugPage({
         entityType="name"
         entityId={patronyme.id}
         entityName={patronyme.nameMain}
-        record={<PatronymeFicheView patronyme={patronyme} />}
+        record={
+          <PatronymeFicheView
+            patronyme={patronyme}
+            language={lang as Language}
+          />
+        }
       />
     </PageLayout>
   );

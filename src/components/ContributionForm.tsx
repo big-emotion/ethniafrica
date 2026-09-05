@@ -62,10 +62,9 @@ const CONTRIBUTION_SUMMARIES: Record<string, string> = {
 
 // @req REQ-092
 export function ContributionForm({
-  language: _language,
+  language,
   renderVerification,
 }: ContributionFormProps) {
-  void _language;
   const [type, setType] = useState<string>("");
   const [inputMode, setInputMode] = useState<"json" | "form">("form");
   const [payload, setPayload] = useState<string>("");
@@ -313,7 +312,7 @@ export function ContributionForm({
           type && (
             <ContributionFormFields
               type={type}
-              language="fr"
+              language={language}
               onDataChange={setFormData}
             />
           )

@@ -1,16 +1,17 @@
 import { QuizScopeDeck } from "@/components/quiz/QuizScopeDeck";
 import { QuizTrackCard } from "@/components/quiz/QuizTrackCard";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import type { QuizScopesData } from "@/api/v2/schemas/quiz";
 import {
   QUIZ_THEME_SPECIMENS_FR,
   type QuizThemeId,
 } from "@/lib/quiz/segmentPolicy";
 import { cn } from "@/lib/utils";
-
-const t = translations.fr.quiz;
+import type { Language } from "@/types/shared";
 
 export interface QuizScopePickerProps {
+  /** The page's locale: the headings and the deck's close label follow it. */
+  language: Language;
   scopes: QuizScopesData;
   /** The quiz page's own path — every track is a query on it. */
   action: string;
@@ -40,10 +41,13 @@ export interface QuizScopePickerProps {
  */
 // @req REQ-103 REQ-121 FR66 FR43
 export const QuizScopePicker = ({
+  language,
   scopes,
   action,
   className,
 }: QuizScopePickerProps) => {
+  const dictionary = getTranslation(language);
+  const t = dictionary.quiz;
   const trackHref = (query: string) => `${action}?${query}`;
 
   // `QuizScopesData` comes from `z.infer`, and with `strictNullChecks: false`
@@ -119,7 +123,7 @@ export const QuizScopePicker = ({
           action={action}
           panelHintFr={t.scopeThemePanelHint}
           wholeTrackLabelFr={t.scopeThemePanelNoTheme}
-          closeLabelFr={translations.fr.close}
+          closeLabelFr={dictionary.close}
         />
       </section>
 

@@ -37,7 +37,11 @@ describe("search-first home charter (ETNI-1404 / ETNI-1509)", () => {
   // @req REQ-115
   it("opens on one band ordered copy and search, then the real globe", () => {
     const { container } = render(
-      <HomeHero seedWords={undefined} peopleCountsByCountry={{ NGA: 40 }} />
+      <HomeHero
+        language="fr"
+        seedWords={undefined}
+        peopleCountsByCountry={{ NGA: 40 }}
+      />
     );
 
     const band = container.querySelector(".home-hero-inner");
@@ -61,7 +65,7 @@ describe("search-first home charter (ETNI-1404 / ETNI-1509)", () => {
   // keyboard surface and reduced-motion path. The hero only places it.
   // @req REQ-115
   it("mounts the existing ContinentGlobeStage and retires the historical map", () => {
-    render(<HomeHero />);
+    render(<HomeHero language="fr" />);
 
     expect(screen.getByTestId("search-first-globe")).toBeInTheDocument();
     expect(screen.queryByRole("img")).not.toBeInTheDocument();

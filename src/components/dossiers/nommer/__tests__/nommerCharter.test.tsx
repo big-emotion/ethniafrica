@@ -52,7 +52,7 @@ describe("the Nommer dossier — charter contract", () => {
   // @req REQ-113
   it("scopes each of its pages to exactly one accent", () => {
     for (const Page of [NommerPillarPage, GlossaryPage]) {
-      const { container, unmount } = render(<Page />);
+      const { container, unmount } = render(<Page language="fr" />);
       expect(container.querySelectorAll("[class*='afh-accent-']")).toHaveLength(
         1
       );
@@ -65,7 +65,7 @@ describe("the Nommer dossier — charter contract", () => {
   // stretched anchor has already made.
   // @req REQ-113
   it("draws no arrow of its own on a chapter tile", () => {
-    render(<NommerPillarPage />);
+    render(<NommerPillarPage language="fr" />);
 
     for (const chapter of NOMMER_CHAPTERS) {
       expect(
@@ -78,7 +78,7 @@ describe("the Nommer dossier — charter contract", () => {
   // metadata — and "no fourth level. A card that needs one is a fiche."
   // @req REQ-113
   it("gives a chapter tile three levels and no fourth", () => {
-    render(<NommerPillarPage />);
+    render(<NommerPillarPage language="fr" />);
     const tile = screen.getByTestId("nommer-chapter-le-peuple");
     const chapter = NOMMER_CHAPTERS[0];
 
@@ -97,7 +97,7 @@ describe("the Nommer dossier — charter contract", () => {
   // declaration, three alignments" defect of brand charter §8.1.
   // @req REQ-113
   it("declares the alignment of every tile rather than inheriting it", () => {
-    render(<NommerPillarPage />);
+    render(<NommerPillarPage language="fr" />);
 
     for (const chapter of NOMMER_CHAPTERS) {
       expect(

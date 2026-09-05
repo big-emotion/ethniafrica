@@ -27,7 +27,7 @@ const base: PublicPatronyme = {
 describe("PatronymeAssociationsSection (AC4, REQ-133)", () => {
   // @req REQ-133
   it("links each associated people and country", () => {
-    render(<PatronymeAssociationsSection patronyme={base} />);
+    render(<PatronymeAssociationsSection language="fr" patronyme={base} />);
 
     expect(screen.getByRole("link", { name: /Mandingues/ })).toHaveAttribute(
       "href",
@@ -43,6 +43,7 @@ describe("PatronymeAssociationsSection (AC4, REQ-133)", () => {
   it("shows the non-hereditary guidance note only for that system", () => {
     render(
       <PatronymeAssociationsSection
+        language="fr"
         patronyme={{ ...base, nameSystem: "non_hereditary_patronymic" }}
       />
     );
@@ -54,7 +55,7 @@ describe("PatronymeAssociationsSection (AC4, REQ-133)", () => {
 
   // @req REQ-133
   it("omits the non-hereditary guidance note for other systems", () => {
-    render(<PatronymeAssociationsSection patronyme={base} />);
+    render(<PatronymeAssociationsSection language="fr" patronyme={base} />);
 
     expect(
       screen.queryByText(/n'est pas transmis de façon héréditaire/)
@@ -68,6 +69,7 @@ describe("PatronymeAssociationsSection (AC4, REQ-133)", () => {
   it("states explicitly when no association is documented", () => {
     render(
       <PatronymeAssociationsSection
+        language="fr"
         patronyme={{ ...base, associatedPeoples: [], associatedCountries: [] }}
       />
     );

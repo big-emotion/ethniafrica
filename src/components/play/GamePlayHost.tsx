@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 import type { GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
+import type { Language } from "@/types/shared";
 
 // The play loop is interactive by definition: nothing about it is worth
 // rendering on the server, and keeping it out of the SSR payload leaves the
@@ -19,6 +20,7 @@ const LazyGamePlayIsland = dynamic(
 export interface GamePlayHostProps {
   game: GameDefinition;
   rounds: GameRound[];
+  language: Language;
 }
 
 /**
@@ -28,6 +30,6 @@ export interface GamePlayHostProps {
  * of its own, unlike the quiz host and its segment picker.
  */
 // @req REQ-120
-export const GamePlayHost = ({ game, rounds }: GamePlayHostProps) => {
-  return <LazyGamePlayIsland game={game} rounds={rounds} />;
+export const GamePlayHost = ({ game, rounds, language }: GamePlayHostProps) => {
+  return <LazyGamePlayIsland game={game} rounds={rounds} language={language} />;
 };

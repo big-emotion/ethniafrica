@@ -12,7 +12,7 @@ import {
 } from "@/components/layout/SocialGlyphs";
 import { useConsent } from "@/hooks/use-consent";
 import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/brand";
-import { getLocalizedRoute } from "@/lib/routing";
+import { getLocalizedRoute, getStaticPageRoute } from "@/lib/routing";
 import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
 
@@ -113,8 +113,14 @@ export function SiteFooter({ language }: SiteFooterProps) {
       id: "participer",
       heading: directory.participateHeading,
       links: [
-        { label: directory.contribute, href: `/${language}/contribute` },
-        { label: directory.reportError, href: `/${language}/report-error` },
+        {
+          label: directory.contribute,
+          href: getStaticPageRoute(language, "contribute"),
+        },
+        {
+          label: directory.reportError,
+          href: getStaticPageRoute(language, "reportError"),
+        },
       ],
     },
     // À propos and Sources describe the project, not the corpus, so the
@@ -145,7 +151,10 @@ export function SiteFooter({ language }: SiteFooterProps) {
         // Contact sits under the project rather than under Participer: the
         // two rubrics beside it are ways of correcting the corpus, and this
         // one is a way of reaching whoever publishes it.
-        { label: directory.contact, href: `/${language}/contact` },
+        {
+          label: directory.contact,
+          href: getStaticPageRoute(language, "contact"),
+        },
       ],
     },
   ];
@@ -324,7 +333,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
             <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
               <li>
                 <Link
-                  href={`/${language}/mentions-legales`}
+                  href={getStaticPageRoute(language, "legalNotice")}
                   className={FOOTER_LINK_CLASS}
                 >
                   {footer.legalNotice}
@@ -332,7 +341,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${language}/politique-de-donnees`}
+                  href={getStaticPageRoute(language, "dataPolicy")}
                   className={FOOTER_LINK_CLASS}
                 >
                   {footer.dataPolicy}
@@ -349,7 +358,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${language}/accessibilite`}
+                  href={getStaticPageRoute(language, "accessibility")}
                   className={FOOTER_LINK_CLASS}
                 >
                   {footer.accessibility}
@@ -357,7 +366,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${language}/plan-du-site`}
+                  href={getStaticPageRoute(language, "sitemap")}
                   className={FOOTER_LINK_CLASS}
                 >
                   {footer.sitemap}

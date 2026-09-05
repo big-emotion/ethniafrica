@@ -94,6 +94,13 @@ describe("/[lang]/peuples/[slug]/liens page", () => {
     });
   });
 
+  // @req REQ-140
+  it("hands the shell the locale of the route", async () => {
+    await renderPage("PPL_YORUBA", "en");
+
+    expect(pageLayoutProps.current.language).toBe("en");
+  });
+
   // @req REQ-097 FR72
   it("404s when the people does not exist", async () => {
     mockGetPeopleById.mockResolvedValue(null);

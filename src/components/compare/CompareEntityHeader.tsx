@@ -63,13 +63,13 @@ function FallbackLink({ onOpen }: { onOpen: () => void }) {
 
 export interface CompareEntityHeaderProps {
   column: ComparisonColumn;
-  language?: Language;
+  language: Language;
 }
 
 // @req REQ-097
 export function CompareEntityHeader({
   column,
-  language = "fr",
+  language,
 }: CompareEntityHeaderProps) {
   const [sheetOpen, setSheetOpen] = useState(false);
 

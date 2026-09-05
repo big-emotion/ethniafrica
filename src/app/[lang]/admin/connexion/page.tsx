@@ -20,6 +20,10 @@ export const metadata: Metadata = {
 // @req REQ-042
 export default function AdminSignInPage() {
   return (
+    // Deliberately French whatever the route: the sign-in flow lands every
+    // moderator on `/fr/admin` (auth callback, `actions.ts`), so the
+    // moderation surface is French-only until the product owner says
+    // otherwise.
     <PageLayout language="fr" title="Accès à la modération">
       <div className="mx-auto w-full max-w-md space-y-afh-xl py-afh-2xl">
         <p className="text-afh-small text-afh-text-soft">

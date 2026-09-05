@@ -5,8 +5,11 @@ import React from "react";
 
 const push = vi.fn();
 
+// Mutable so one suite can render the picker under either locale.
+const route = vi.hoisted(() => ({ lang: "fr" }));
+
 vi.mock("next/navigation", () => ({
-  useParams: () => ({ lang: "fr" }),
+  useParams: () => ({ lang: route.lang }),
   useRouter: () => ({ push }),
 }));
 
@@ -25,6 +28,7 @@ vi.mock("@/components/layout/PageLayout", () => ({
 }));
 
 import ComparerPickerPage from "../page";
+import { COMPARE_ENTITY_SEGMENTS, getLocalizedRoute } from "@/lib/routing";
 
 const PEOPLES_ENVELOPE = {
   data: {
@@ -117,5 +121,31 @@ describe("/[lang]/comparer picker page", () => {
     expect(push).toHaveBeenCalledWith(
       "/fr/comparer/peuples/PPL_YORUBA/PPL_ZULU"
     );
+  });
+
+  // The result address is composed from the slug tables, so an English
+  // reader lands on the English route in one hop rather than through the
+  // middleware's slug redirect.
+  // @req REQ-140
+  it("composes the result route in the locale the picker is served in", async () => {
+    route.lang = "en";
+    try {
+      renderPage();
+
+      await pickEntity(/yoruba/i);
+      await pickEntity(/zulu/i);
+
+      const compareButton = screen.getByRole("button", {
+        name: /^comparer$/i,
+      });
+      await waitFor(() => expect(compareButton).toBeEnabled());
+      fireEvent.click(compareButton);
+
+      expect(push).toHaveBeenCalledWith(
+        `${getLocalizedRoute("en", "compare")}/${COMPARE_ENTITY_SEGMENTS.en.peoples}/PPL_YORUBA/PPL_ZULU`
+      );
+    } finally {
+      route.lang = "fr";
+    }
   });
 });

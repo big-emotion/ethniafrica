@@ -74,6 +74,7 @@ const countFormat = new Intl.NumberFormat("fr-FR");
  * the next time the module moves this call site moves with it.
  */
 function facetHref(
+  language: Language,
   filters: PeoplesFacetFilters,
   page: number | null,
   pageSize: number
@@ -91,7 +92,7 @@ function facetHref(
   }
 
   const search = query.toString();
-  const path = getFacetRoute("fr", "peoples");
+  const path = getFacetRoute(language, "peoples");
   return search ? `${path}?${search}` : path;
 }
 
@@ -109,9 +110,10 @@ export default async function PeuplesHubPage({
   searchParams?: Promise<PageSearchParams>;
 }) {
   const { lang } = await params;
+  const language = lang as Language;
   const query = (await searchParams) ?? {};
 
-  const fiche = resolvePeopleDeepLink(lang as Language, query);
+  const fiche = resolvePeopleDeepLink(language, query);
   if (fiche) {
     permanentRedirect(fiche);
   }
@@ -154,10 +156,15 @@ export default async function PeuplesHubPage({
       rows.push({
         id: row.id,
         label: row.nameMain,
-        href: getPeopleRoute("fr", row.id),
+        href: getPeopleRoute(language, row.id),
       });
       countryIndex[key] = rows;
-      narrowing[key] ??= facetHref({ ...filters, countryId }, null, pageSize);
+      narrowing[key] ??= facetHref(
+        language,
+        { ...filters, countryId },
+        null,
+        pageSize
+      );
     }
   }
 
@@ -174,19 +181,29 @@ export default async function PeuplesHubPage({
   if (filters.familyId) {
     activeFilters.push({
       label: `Famille : ${familyLabels.get(filters.familyId) ?? filters.familyId}`,
-      removeHref: facetHref({ ...filters, familyId: null }, null, pageSize),
+      removeHref: facetHref(
+        language,
+        { ...filters, familyId: null },
+        null,
+        pageSize
+      ),
     });
   }
   if (filters.letter) {
     activeFilters.push({
       label: `Lettre : ${filters.letter}`,
-      removeHref: facetHref({ ...filters, letter: null }, null, pageSize),
+      removeHref: facetHref(
+        language,
+        { ...filters, letter: null },
+        null,
+        pageSize
+      ),
     });
   }
 
   /** The pager's own address composer: same filters, only the page moves. */
   const pagerHref = (page: number, size: number) =>
-    facetHref(filters, page, size);
+    facetHref(language, filters, page, size);
 
   const pagination = (position: "top" | "bottom") => (
     <FacetPagination
@@ -233,7 +250,7 @@ export default async function PeuplesHubPage({
             submits, and the select still earns the line — aiming at a shape
             needs WebGL and a script, and this needs neither. */}
         <FacetFilterBar
-          action={getFacetRoute("fr", "peoples")}
+          action={getFacetRoute(language, "peoples")}
           className="mt-4"
           searchField={{
             name: PARAM.search,
@@ -268,7 +285,7 @@ export default async function PeuplesHubPage({
               <FacetLetterRail
                 current={filters.letter}
                 hrefFor={(letter) =>
-                  facetHref({ ...filters, letter }, null, pageSize)
+                  facetHref(language, { ...filters, letter }, null, pageSize)
                 }
               />
             ),
@@ -292,6 +309,7 @@ export default async function PeuplesHubPage({
             Aucun peuple du corpus ne répond à cette sélection.{" "}
             <Link
               href={facetHref(
+                language,
                 { familyId: null, countryId: null, letter: null },
                 null,
                 pageSize
@@ -313,7 +331,7 @@ export default async function PeuplesHubPage({
                     no keyboard and left the directory with zero followable
                     links to a fiche. */}
                   <Link
-                    href={getPeopleRoute("fr", people.id)}
+                    href={getPeopleRoute(language, people.id)}
                     prefetch={false}
                     className="block h-full rounded-afh-xl border border-afh-border bg-afh-surface p-4 focus-visible:outline-none focus-visible:shadow-[var(--afh-ring-focus)]"
                   >

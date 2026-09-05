@@ -89,9 +89,12 @@ const ewe = {
 };
 
 /** The route signature Next 16 hands a page: both bags arrive as promises. */
-function renderRoute(searchParams: Record<string, string | string[]> = {}) {
+function renderRoute(
+  searchParams: Record<string, string | string[]> = {},
+  lang = "fr"
+) {
   return PeuplesHubPage({
-    params: Promise.resolve({ lang: "fr" }),
+    params: Promise.resolve({ lang }),
     searchParams: Promise.resolve(searchParams),
   });
 }
@@ -180,6 +183,23 @@ describe("the peoples facet — what it reads", () => {
       getPeopleRoute("fr", "PPL_AKAN")
     );
     expect(within(list).queryAllByRole("button")).toEqual([]);
+  });
+
+  // The page read `lang` off its params and then composed every href for
+  // French anyway, so an English reader's list led back into `/fr`.
+  // @req REQ-140
+  it("composes the fiche links and the form action in the route's locale", async () => {
+    const { container } = render(await renderRoute({}, "en"));
+
+    const list = screen.getByRole("list", { name: /peuples/i });
+    expect(within(list).getAllByRole("link")[0]).toHaveAttribute(
+      "href",
+      getPeopleRoute("en", "PPL_AKAN")
+    );
+    expect(container.querySelector("form")).toHaveAttribute(
+      "action",
+      getFacetRoute("en", "peoples")
+    );
   });
 
   // @req REQ-091

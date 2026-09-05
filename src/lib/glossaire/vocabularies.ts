@@ -28,18 +28,15 @@ import { ACCESS_MODE_LABELS, type AccessMode } from "@/lib/hubs/moduleRegistry";
 import type { RelationBadgeType } from "@/lib/relationsDataTransformer";
 import type { ClassificationStatus } from "@/types/afrik";
 import type { NameRecordType } from "@/types/names";
+import type { Language } from "@/types/shared";
 import type { SourceTier } from "@/types/sources";
 
 /**
- * The two locales the glossary is written in.
- *
- * Declared here rather than read from `Language` in `src/types/shared.ts`
- * because that union still says `"fr"` on this branch: a `Record<Language,…>`
- * with an `en` key would not compile. The bilingual foundation widens
- * `Language` to `"en" | "fr"`; when it lands, this becomes
- * `export type GlossaryLocale = Language` and nothing else changes.
+ * The two locales the glossary is written in — an alias of `Language`, kept
+ * so the vocabulary records keep the import path they were written with
+ * while `Language` still said `"fr"`.
  */
-export type GlossaryLocale = "en" | "fr";
+export type GlossaryLocale = Language;
 
 type Labels<Key extends string> = Record<GlossaryLocale, Record<Key, string>>;
 

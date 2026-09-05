@@ -34,9 +34,11 @@ import type {
   PeopleNamesData,
   PeopleNameRecordViewData,
 } from "@/lib/peopleDataTransformer";
+import type { Language } from "@/types/shared";
 
 export interface PeopleNamesSectionProps {
   data: PeopleNamesData | null;
+  language: Language;
 }
 
 function chipFor(entry: {
@@ -60,7 +62,10 @@ function NameEntry({ entry }: { entry: PeopleNameRecordViewData }) {
 }
 
 // @req REQ-054 REQ-056
-export function PeopleNamesSection({ data }: PeopleNamesSectionProps) {
+export function PeopleNamesSection({
+  data,
+  language,
+}: PeopleNamesSectionProps) {
   const autonym = data?.autonym ?? null;
   const endonyms = data?.endonyms ?? [];
   const exonyms = data?.exonyms ?? [];
@@ -90,7 +95,7 @@ export function PeopleNamesSection({ data }: PeopleNamesSectionProps) {
         Noms &amp; appellations
       </h2>
 
-      {isEmpty && <FieldProvenanceMarker state="missing" />}
+      {isEmpty && <FieldProvenanceMarker state="missing" language={language} />}
 
       {autonym && <AutonymExonymHeading variant="card" autonym={autonym} />}
 

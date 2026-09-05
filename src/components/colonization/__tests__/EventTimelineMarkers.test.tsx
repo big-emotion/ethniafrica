@@ -60,6 +60,7 @@ describe("EventTimelineMarkers (Epic 13, Story 13.12, ETNI-536)", () => {
   it("renders one focusable marker per event, in DOM order", () => {
     render(
       <EventTimelineMarkers
+        language="fr"
         events={[imposedNameEntry, resistanceEntry]}
         bounds={bounds}
       />
@@ -77,7 +78,13 @@ describe("EventTimelineMarkers (Epic 13, Story 13.12, ETNI-536)", () => {
   // @req REQ-101 FR87
   it("opens the event card when a marker is activated via keyboard", async () => {
     const user = userEvent.setup();
-    render(<EventTimelineMarkers events={[resistanceEntry]} bounds={bounds} />);
+    render(
+      <EventTimelineMarkers
+        language="fr"
+        events={[resistanceEntry]}
+        bounds={bounds}
+      />
+    );
     const marker = screen.getByRole("button", { name: /résistance/ });
     marker.focus();
     await user.keyboard("{Enter}");
@@ -89,7 +96,13 @@ describe("EventTimelineMarkers (Epic 13, Story 13.12, ETNI-536)", () => {
   // @req REQ-101 FR87
   it("closes the event card via the close control", async () => {
     const user = userEvent.setup();
-    render(<EventTimelineMarkers events={[resistanceEntry]} bounds={bounds} />);
+    render(
+      <EventTimelineMarkers
+        language="fr"
+        events={[resistanceEntry]}
+        bounds={bounds}
+      />
+    );
     await user.click(screen.getByRole("button", { name: /résistance/ }));
     expect(
       screen.getByRole("heading", { name: "Rébellion Maji Maji" })
@@ -104,6 +117,7 @@ describe("EventTimelineMarkers (Epic 13, Story 13.12, ETNI-536)", () => {
   it("renders an accessible type-filter fieldset with a checkbox per colonial event type", () => {
     render(
       <EventTimelineMarkers
+        language="fr"
         events={[imposedNameEntry, resistanceEntry]}
         bounds={bounds}
       />
@@ -130,6 +144,7 @@ describe("EventTimelineMarkers (Epic 13, Story 13.12, ETNI-536)", () => {
     const user = userEvent.setup();
     render(
       <EventTimelineMarkers
+        language="fr"
         events={[imposedNameEntry, resistanceEntry]}
         bounds={bounds}
       />
@@ -143,7 +158,13 @@ describe("EventTimelineMarkers (Epic 13, Story 13.12, ETNI-536)", () => {
 
   // @req REQ-101 FR87
   it("renders the unmodified TimeScrubber slider contract", () => {
-    render(<EventTimelineMarkers events={[resistanceEntry]} bounds={bounds} />);
+    render(
+      <EventTimelineMarkers
+        language="fr"
+        events={[resistanceEntry]}
+        bounds={bounds}
+      />
+    );
     const slider = screen.getByRole("slider");
     expect(slider).toHaveAttribute("aria-valuemin", "1850");
     expect(slider).toHaveAttribute("aria-valuemax", "1907");
@@ -152,7 +173,7 @@ describe("EventTimelineMarkers (Epic 13, Story 13.12, ETNI-536)", () => {
   // @req REQ-091 FR90
   it("never throws when events is empty", () => {
     expect(() =>
-      render(<EventTimelineMarkers events={[]} bounds={bounds} />)
+      render(<EventTimelineMarkers language="fr" events={[]} bounds={bounds} />)
     ).not.toThrow();
   });
 
@@ -161,7 +182,7 @@ describe("EventTimelineMarkers (Epic 13, Story 13.12, ETNI-536)", () => {
   // axe-core failed the empty-timeline story on aria-prohibited-attr.
   // @req REQ-091 FR90
   it("exposes the marker strip as a named group, even with no events", () => {
-    render(<EventTimelineMarkers events={[]} bounds={bounds} />);
+    render(<EventTimelineMarkers language="fr" events={[]} bounds={bounds} />);
 
     expect(
       screen.getByRole("group", { name: "Chronologie" })

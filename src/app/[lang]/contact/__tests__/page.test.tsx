@@ -1,20 +1,34 @@
 import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-import ContactPage from "../page";
+import ContactPage, { generateMetadata } from "../page";
 import { CONTACT_EMAIL } from "@/lib/brand";
 import { DID_YOU_KNOW_FACTS } from "@/lib/home/didYouKnowFacts";
+import { getStaticPageRoute } from "@/lib/routing";
 
 vi.mock("@/components/layout/PageLayout", () => ({
-  PageLayout: ({ children }: { children: React.ReactNode }) => (
-    <div data-testid="page-layout">{children}</div>
+  PageLayout: ({
+    children,
+    language,
+  }: {
+    children: React.ReactNode;
+    language: string;
+  }) => (
+    <div data-testid="page-layout" data-language={language}>
+      {children}
+    </div>
   ),
 }));
 
+const routeParams = (lang: string) => Promise.resolve({ lang });
+
+const renderPage = async (lang = "fr") =>
+  render(await ContactPage({ params: routeParams(lang) }));
+
 describe("the contact page", () => {
   // @req REQ-045
-  it("names itself once, at the top of the outline", () => {
-    render(<ContactPage />);
+  it("names itself once, at the top of the outline", async () => {
+    await renderPage();
 
     expect(
       screen.getByRole("heading", { level: 1, name: "Contactez-nous" })
@@ -22,8 +36,8 @@ describe("the contact page", () => {
   });
 
   // @req REQ-045
-  it("carries the form the retired Typeform never rendered", () => {
-    render(<ContactPage />);
+  it("carries the form the retired Typeform never rendered", async () => {
+    await renderPage();
 
     expect(
       screen.getByRole("button", { name: /Envoyer le message/ })
@@ -32,8 +46,8 @@ describe("the contact page", () => {
   });
 
   // @req REQ-045
-  it("offers the direct address beside the form", () => {
-    render(<ContactPage />);
+  it("offers the direct address beside the form", async () => {
+    await renderPage();
 
     expect(screen.getByRole("link", { name: CONTACT_EMAIL })).toHaveAttribute(
       "href",
@@ -47,8 +61,8 @@ describe("the contact page", () => {
    * would creep in — a rubric label and a fact headline both want to be one.
    */
   // @req REQ-045
-  it("keeps a single section heading, so no two headings disagree on rank", () => {
-    render(<ContactPage />);
+  it("keeps a single section heading, so no two headings disagree on rank", async () => {
+    await renderPage();
 
     const sectionHeadings = screen.getAllByRole("heading", { level: 2 });
     expect(sectionHeadings).toHaveLength(1);
@@ -56,8 +70,8 @@ describe("the contact page", () => {
   });
 
   // @req REQ-113
-  it("spends the left column on a fact the bank actually holds", () => {
-    render(<ContactPage />);
+  it("spends the left column on a fact the bank actually holds", async () => {
+    await renderPage();
 
     const band = screen.getByTestId("contact-did-you-know");
     expect(within(band).getByText("Saviez-vous que")).toBeInTheDocument();
@@ -73,12 +87,31 @@ describe("the contact page", () => {
    * The tier is what licenses quoting the bank outside a fiche at all.
    */
   // @req REQ-113
-  it("states what backs the fact it shows", () => {
-    render(<ContactPage />);
+  it("states what backs the fact it shows", async () => {
+    await renderPage();
 
     const band = screen.getByTestId("contact-did-you-know");
     expect(band.textContent).toMatch(
       /Source (officielle|référencée|non vérifiée)/i
+    );
+  });
+
+  // @req REQ-140
+  it("declares its canonical in the locale the route was served in", async () => {
+    const metadata = await generateMetadata({ params: routeParams("en") });
+
+    expect(metadata.alternates?.canonical).toBe(
+      getStaticPageRoute("en", "contact")
+    );
+  });
+
+  // @req REQ-140
+  it("hands the shell the route's locale", async () => {
+    await renderPage("en");
+
+    expect(screen.getByTestId("page-layout")).toHaveAttribute(
+      "data-language",
+      "en"
     );
   });
 });

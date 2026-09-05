@@ -1,12 +1,12 @@
 import { cn } from "@/lib/utils";
-import { translations } from "@/lib/translations";
-
-const t = translations.fr.quiz;
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 interface QuizProgressDotsProps {
   /** 1-based index of the question currently in view. */
   current: number;
   total: number;
+  language: Language;
   className?: string;
 }
 
@@ -19,8 +19,10 @@ interface QuizProgressDotsProps {
 export const QuizProgressDots = ({
   current,
   total,
+  language,
   className,
 }: QuizProgressDotsProps) => {
+  const t = getTranslation(language).quiz;
   return (
     <div className={cn("flex flex-col items-center gap-2", className)}>
       <div

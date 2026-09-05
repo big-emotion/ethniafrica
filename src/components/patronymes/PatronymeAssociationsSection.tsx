@@ -8,9 +8,8 @@ import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker"
 import { resolveChapter } from "@/lib/fieldProvenance";
 import { readGaps } from "@/lib/patronymes/content";
 import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
-import { translations } from "@/lib/translations";
-
-const t = translations.fr.patronymes;
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * AC4 — a non-hereditary patronymic works differently by region, so the
@@ -31,9 +30,12 @@ const t = translations.fr.patronymes;
 // @req REQ-133
 export function PatronymeAssociationsSection({
   patronyme,
+  language,
 }: {
   patronyme: PublicPatronyme;
+  language: Language;
 }) {
+  const t = getTranslation(language).patronymes;
   const { associatedPeoples, associatedCountries, nameSystem, content } =
     patronyme;
   const isNonHereditary = nameSystem === "non_hereditary_patronymic";
@@ -43,7 +45,11 @@ export function PatronymeAssociationsSection({
   const gapNode = (fieldPath: string) => {
     const chapter = resolveChapter("name", fieldPath, null, gaps);
     return chapter.state === "documented-gap" ? (
-      <FieldProvenanceMarker state={chapter.state} reason={chapter.reason} />
+      <FieldProvenanceMarker
+        state={chapter.state}
+        reason={chapter.reason}
+        language={language}
+      />
     ) : undefined;
   };
 
@@ -65,7 +71,7 @@ export function PatronymeAssociationsSection({
           associatedPeoples.map((people) => ({
             id: people.id,
             label: people.nameMain,
-            href: getPeopleRoute("fr", people.id),
+            href: getPeopleRoute(language, people.id),
           }))
         )
       : gapNode("peoples");
@@ -76,7 +82,7 @@ export function PatronymeAssociationsSection({
           associatedCountries.map((country) => ({
             id: country.id,
             label: country.nameFr,
-            href: getCountryRoute("fr", country.id),
+            href: getCountryRoute(language, country.id),
           }))
         )
       : gapNode("countries");
@@ -94,7 +100,7 @@ export function PatronymeAssociationsSection({
       {peoplesNode || countriesNode ? (
         <FicheFieldList fields={fields} />
       ) : (
-        <FieldProvenanceMarker state="missing" />
+        <FieldProvenanceMarker state="missing" language={language} />
       )}
     </FicheSection>
   );

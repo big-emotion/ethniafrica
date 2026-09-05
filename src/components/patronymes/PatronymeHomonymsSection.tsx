@@ -3,9 +3,8 @@ import { FicheSection } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { readGaps, readHomonyms } from "@/lib/patronymes/content";
 import { resolveChapter } from "@/lib/fieldProvenance";
-import { translations } from "@/lib/translations";
-
-const t = translations.fr.patronymes;
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * Other things the same string names.
@@ -22,9 +21,12 @@ const t = translations.fr.patronymes;
 // @req REQ-133
 export function PatronymeHomonymsSection({
   patronyme,
+  language,
 }: {
   patronyme: PublicPatronyme;
+  language: Language;
 }) {
+  const t = getTranslation(language).patronymes;
   const homonyms = readHomonyms(patronyme.content);
   const chapter = resolveChapter(
     "name",
@@ -46,7 +48,11 @@ export function PatronymeHomonymsSection({
           ))}
         </ul>
       ) : (
-        <FieldProvenanceMarker state={chapter.state} reason={chapter.reason} />
+        <FieldProvenanceMarker
+          state={chapter.state}
+          reason={chapter.reason}
+          language={language}
+        />
       )}
     </FicheSection>
   );

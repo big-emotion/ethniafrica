@@ -80,9 +80,10 @@ export default async function FamillesHubPage({
   searchParams?: Promise<PageSearchParams>;
 }) {
   const { lang } = await params;
+  const language = lang as Language;
   const query = (await searchParams) ?? {};
 
-  const fiche = resolveFamilyDeepLink(lang as Language, query);
+  const fiche = resolveFamilyDeepLink(language, query);
   if (fiche) {
     permanentRedirect(fiche);
   }
@@ -131,7 +132,7 @@ export default async function FamillesHubPage({
         : {}
     );
 
-  const facetRoute = getFacetRoute("fr", "families");
+  const facetRoute = getFacetRoute(language, "families");
 
   const countryIndex: FacetCountryIndex = {};
   /**
@@ -144,7 +145,7 @@ export default async function FamillesHubPage({
     const row = {
       id: family.id,
       label: family.nameFr,
-      href: getFamilyRoute("fr", family.id),
+      href: getFamilyRoute(language, family.id),
     };
     for (const countryId of family.countryIds) {
       const key = countryId as CountryId;
@@ -264,7 +265,7 @@ export default async function FamillesHubPage({
               {families.map((family) => (
                 <li key={family.id}>
                   <Link
-                    href={getFamilyRoute("fr", family.id)}
+                    href={getFamilyRoute(language, family.id)}
                     className={cardClass}
                   >
                     <span className="font-afh-display text-afh-h3 font-bold text-afh-text">

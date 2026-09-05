@@ -43,7 +43,10 @@ vi.mock("@/components/names/NameNomenclature", () => ({
 }));
 
 import { NamesSchemaUnavailableError } from "@/api/v2/services/names";
-import AppellationsPage from "../page";
+import { getLocalizedRoute } from "@/lib/routing";
+import AppellationsPage, { generateMetadata } from "../page";
+
+const FR = Promise.resolve({ lang: "fr" });
 
 describe("the Appellations nomenclature page", () => {
   beforeEach(() => {
@@ -58,7 +61,10 @@ describe("the Appellations nomenclature page", () => {
       new NamesSchemaUnavailableError("afrik_name_forms is unavailable")
     );
 
-    const ui = await AppellationsPage({ searchParams: Promise.resolve({}) });
+    const ui = await AppellationsPage({
+      params: FR,
+      searchParams: Promise.resolve({}),
+    });
     render(ui);
 
     expect(screen.getByTestId("nomenclature")).toHaveAttribute(
@@ -72,7 +78,7 @@ describe("the Appellations nomenclature page", () => {
     mockListNameForms.mockRejectedValueOnce(new Error("database unavailable"));
 
     await expect(
-      AppellationsPage({ searchParams: Promise.resolve({}) })
+      AppellationsPage({ params: FR, searchParams: Promise.resolve({}) })
     ).rejects.toThrow("database unavailable");
   });
 
@@ -85,6 +91,7 @@ describe("the Appellations nomenclature page", () => {
     });
 
     const ui = await AppellationsPage({
+      params: FR,
       searchParams: Promise.resolve({ page: "3", nameType: "exonym" }),
     });
     render(ui);
@@ -103,6 +110,7 @@ describe("the Appellations nomenclature page", () => {
   // @req REQ-054
   it("falls back to the first page when the URL carries an unreadable filter", async () => {
     const ui = await AppellationsPage({
+      params: FR,
       searchParams: Promise.resolve({ nameType: "not-a-type", page: "0" }),
     });
     render(ui);
@@ -118,7 +126,10 @@ describe("the Appellations nomenclature page", () => {
   // do with it, which is the half that was missing.
   // @req REQ-022
   it("says why the page exists, not only what it holds", async () => {
-    const ui = await AppellationsPage({ searchParams: Promise.resolve({}) });
+    const ui = await AppellationsPage({
+      params: FR,
+      searchParams: Promise.resolve({}),
+    });
     render(ui);
 
     expect(
@@ -136,7 +147,10 @@ describe("the Appellations nomenclature page", () => {
    */
   // @req REQ-022
   it("gives the paragraph under the band to the purpose, not to the deck", async () => {
-    const ui = await AppellationsPage({ searchParams: Promise.resolve({}) });
+    const ui = await AppellationsPage({
+      params: FR,
+      searchParams: Promise.resolve({}),
+    });
     render(ui);
 
     expect(
@@ -147,9 +161,23 @@ describe("the Appellations nomenclature page", () => {
   // DEC-038 separates the two objects the corpus calls "name". A visitor
   // looking for the origin of a family name must be sent to the Nom
   // dimension, which now exists, rather than told it does not.
+  // @req REQ-140
+  it("declares its canonical in the locale the route was served in", async () => {
+    const metadata = await generateMetadata({
+      params: Promise.resolve({ lang: "en" }),
+    });
+
+    expect(metadata.alternates?.canonical).toBe(
+      getLocalizedRoute("en", "names")
+    );
+  });
+
   // @req REQ-092
   it("sends a visitor after a family name to the Nom dimension", async () => {
-    const ui = await AppellationsPage({ searchParams: Promise.resolve({}) });
+    const ui = await AppellationsPage({
+      params: FR,
+      searchParams: Promise.resolve({}),
+    });
     render(ui);
 
     expect(screen.getByText(/C'est la dimension Nom/)).toBeInTheDocument();
