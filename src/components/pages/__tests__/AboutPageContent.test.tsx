@@ -72,6 +72,21 @@ describe("AboutPageContent (REQ-132)", () => {
     }
   });
 
+  // Doctrine moved out of the footer's "Le projet" rubric and into this
+  // overview (2026-09-05): one place a reader meets the project description
+  // is one place they meet how it is governed, rather than a fifth footer
+  // link past four others describing the same project.
+  // @req REQ-132
+  it("links to the editorial doctrine from the overview", () => {
+    renderAbout();
+
+    const overview = screen.getByTestId("about-overview");
+
+    expect(
+      within(overview).getByRole("link", { name: "doctrine éditoriale" })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "doctrine"));
+  });
+
   // @req REQ-132
   it("renders the existing purpose argument after the overview", () => {
     const { container } = renderAbout();
