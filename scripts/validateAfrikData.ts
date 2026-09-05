@@ -23,6 +23,13 @@ import type { SourceTier } from "../src/types/sources";
 // The same resolver the globe uses, so this gate and the rendering can never
 // disagree about which countries are drawable.
 import { getAdmin0Rings } from "../src/lib/atlas/overlays";
+// The same declaration the translation command reads, so the gate and the
+// classes cannot drift apart.
+import {
+  coverageGaps,
+  STRICT_MODEL_FILES,
+  type StrictModelFile,
+} from "../src/lib/i18n/translationClasses";
 
 // ─── Exported ValidationResult (FR26-FR31) ───────────────────────────────────
 
@@ -3989,6 +3996,64 @@ export function checkLanguageStrictSchema(
   return { ok: errors.length === 0, errors, warnings };
 }
 
+/**
+ * REQ-143 — every leaf of every strict model carries a translation class.
+ *
+ * The class table is code, so a field added to a model with no class would
+ * otherwise be translated by whatever the command defaults to — and the
+ * default for a field nobody thought about is exactly what turned an
+ * exonym's gloss into a false statement. The gate walks the models on disk
+ * against the declaration both ways: an undeclared leaf fails, and so does a
+ * declaration for a leaf the model no longer has.
+ */
+// @req REQ-143
+export function checkTranslationClassCoverage(
+  publicRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const declared = new Set<string>(STRICT_MODEL_FILES);
+  const onDisk = fs.existsSync(publicRoot)
+    ? fs
+        .readdirSync(publicRoot)
+        .filter((name) => /^modele-.*\.json$/.test(name))
+    : [];
+
+  for (const model of STRICT_MODEL_FILES) {
+    const modelPath = path.join(publicRoot, model);
+    if (!fs.existsSync(modelPath)) {
+      errors.push(`REQ-143: ${model} is declared but missing from public/`);
+      continue;
+    }
+    let modelJson: unknown;
+    try {
+      modelJson = JSON.parse(fs.readFileSync(modelPath, "utf-8"));
+    } catch {
+      errors.push(`REQ-143: ${model}: could not parse JSON`);
+      continue;
+    }
+    const gaps = coverageGaps(model as StrictModelFile, modelJson);
+    for (const leaf of gaps.undeclared) {
+      errors.push(
+        `REQ-143: ${model}: leaf ${leaf} has no translation class (declare it in src/lib/i18n/translationClasses.ts)`
+      );
+    }
+    for (const leaf of gaps.dead) {
+      errors.push(
+        `REQ-143: ${model}: declared leaf ${leaf} is not in the model (dead declaration)`
+      );
+    }
+  }
+
+  for (const name of onDisk.sort()) {
+    if (declared.has(name)) continue;
+    errors.push(
+      `REQ-143: ${name} has no translation class declaration (add it to STRICT_MODEL_FILES)`
+    );
+  }
+
+  return { ok: errors.length === 0, errors, warnings: [] };
+}
+
 // ─── Run summary ─────────────────────────────────────────────────────────────
 
 /**
@@ -4389,6 +4454,14 @@ async function main() {
   newChecks.push({
     name: "FR111 Historical-affiliation model",
     result: checkHistoricalAffiliationModel(datasetRoot),
+  });
+
+  console.log(
+    "REQ-143 – Translation class coverage (every strict-model leaf classed)..."
+  );
+  newChecks.push({
+    name: "REQ-143 Translation class coverage",
+    result: checkTranslationClassCoverage(PUBLIC_ROOT),
   });
 
   if (process.env.CHECK_SOURCE_URLS === "true") {

@@ -30,37 +30,6 @@ export interface HeroData {
   nameOfficial?: string;
   iso: string;
   flag: string;
-  year?: string;
-  meaningQuote?: string;
-  meaningHighlight?: string;
-  meaningLangs?: string;
-  isUncertain: boolean;
-}
-
-export type EtymologyVariant = "split" | "single" | "uncertain";
-
-export interface EtymologyWord {
-  word: string;
-  lang: string;
-  definition: string;
-}
-
-export interface EtymologyData {
-  variant: EtymologyVariant;
-  words: EtymologyWord[];
-  hypotheses?: string[];
-  rawText?: string;
-}
-
-export type OriginTonality = "revolution" | "colonial" | "neutral";
-
-export interface OriginData {
-  personName: string;
-  initials: string;
-  date?: string;
-  description?: string;
-  oldName?: string;
-  tonality: OriginTonality;
 }
 
 export type TimelineItemType = "kingdom" | "colonial" | "sovereign";
@@ -184,8 +153,6 @@ export interface HistoricalFactsData {
 
 export interface CountryPageData {
   hero: HeroData;
-  etymology?: EtymologyData;
-  origin?: OriginData;
   timeline: TimelineData;
   peoples: PeoplesData;
   kingdoms: KingdomsData;
@@ -319,289 +286,12 @@ export function extractKeywords(text: string, maxKeywords = 5): string[] {
 
 // @req REQ-001
 export function transformHero(country: CountryDetail): HeroData {
-  const etymology = country.etymology || "";
   const iso = country.id;
-
-  // Extract year: "adopté en XXXX" or just a 4-digit year in context
-  const yearMatch = etymology.match(/adopt[ée]+ en (\d{4})/i);
-  const year = yearMatch ? yearMatch[1] : undefined;
-
-  // Extract meaning: phrase between guillemets
-  const meaningMatch =
-    etymology.match(/signifie\s*"([^"]+)"/i) ||
-    etymology.match(/signifie\s*«\s*([^»]+)\s*»/i);
-  const meaningRaw = meaningMatch ? meaningMatch[1].trim() : undefined;
-  // Split: last word is highlighted, rest is the quote
-  let meaningQuote: string | undefined;
-  let meaningHighlight: string | undefined;
-  if (meaningRaw) {
-    const lastSpaceIdx = meaningRaw.lastIndexOf(" ");
-    if (lastSpaceIdx > 0) {
-      meaningQuote = meaningRaw.slice(0, lastSpaceIdx);
-      meaningHighlight = meaningRaw.slice(lastSpaceIdx + 1);
-    } else {
-      meaningHighlight = meaningRaw;
-    }
-  }
-
-  // Extract languages mentioned, capturing family name in parentheses if present
-  // e.g. "du mooré (langue mossi)" → "Mooré (Mossi)"
-  const langWithFamilyPattern =
-    /(?:du|en)\s+([\wÀ-ÿ]+)\s*\((?:langue\s+)?([\wÀ-ÿ]+)\)/gi;
-  const langs: string[] = [];
-  let langFamMatch;
-  while ((langFamMatch = langWithFamilyPattern.exec(etymology)) !== null) {
-    const langName = langFamMatch[1];
-    const familyName = capitalize(langFamMatch[2]);
-    const entry = `${langName} (${familyName})`;
-    if (!langs.includes(entry)) langs.push(entry);
-  }
-  // Fallback: "en mooré ... et en dioula" without family
-  if (!langs.length) {
-    const langMatches2 = etymology.match(/en\s+([\wÀ-ÿ]+)/g);
-    if (langMatches2) {
-      for (const m of langMatches2) {
-        const lang = m.replace(/^en\s+/, "");
-        if (!langs.includes(lang) && lang.length > 2) langs.push(lang);
-      }
-    }
-  }
-  const meaningLangs = langs.length > 0 ? langs.join(" + ") : undefined;
-
-  // Check if uncertain
-  const isUncertain = /débattu|incertain|hypothèse/i.test(etymology);
-
   return {
     countryName: country.nameCommonFr.trim(),
     nameOfficial: country.nameOfficial,
     iso,
     flag: flagFromISO3(iso),
-    year,
-    meaningQuote,
-    meaningHighlight,
-    meaningLangs,
-    isUncertain,
-  };
-}
-
-// @req REQ-001
-export function transformEtymology(
-  etymology?: string
-): EtymologyData | undefined {
-  if (!etymology) return undefined;
-
-  // Check for uncertain
-  if (/débattu|incertain|hypothèse/i.test(etymology)) {
-    // Extract hypotheses
-    const hypotheses: string[] = [];
-    const hypoMatches = etymology.match(/[Hh]ypothèse\s*\d*\s*:?\s*([^.]+\.)/g);
-    if (hypoMatches) {
-      for (const h of hypoMatches) {
-        hypotheses.push(h.trim());
-      }
-    }
-
-    // Try to extract the word (country name before any explanation)
-    const wordMatch = etymology.match(/^(?:Le nom\s+)?["«]?(\w+)["»]?/);
-    const word = wordMatch ? wordMatch[1] : "";
-
-    return {
-      variant: "uncertain",
-      words: [{ word, lang: "Origine débattue", definition: "" }],
-      hypotheses: hypotheses.length > 0 ? hypotheses : undefined,
-      rawText: etymology,
-    };
-  }
-
-  // Build lang→family map from patterns like "en mooré (langue mossi)" or "du dioula (langue mandé)"
-  const langFamilyMap = new Map<string, string>();
-  const langFamPattern =
-    /(?:en|du)\s+([\wÀ-ÿ]+)\s*\((?:langue\s+)?([\wÀ-ÿ]+)\)/gi;
-  let lfMatch;
-  while ((lfMatch = langFamPattern.exec(etymology)) !== null) {
-    langFamilyMap.set(lfMatch[1].toLowerCase(), capitalize(lfMatch[2]));
-  }
-
-  // Helper to resolve lang name with optional family
-  const resolveLang = (rawLang: string, inlineFamily?: string): string => {
-    const langName = capitalize(rawLang);
-    const family = inlineFamily
-      ? capitalize(inlineFamily)
-      : langFamilyMap.get(rawLang.toLowerCase());
-    return family ? `${langName} (${family})` : langName;
-  };
-
-  // Check for split bilingue: 2+ patterns like '"Word" vient du LANGUAGE'
-  // Also capture optional family in parentheses: "du mooré (Mossi)"
-  // Supports straight quotes, curly quotes, and guillemets
-  const Q = '["«\u201C]'; // opening quote
-  const QC = '["»\u201D]'; // closing quote
-  const splitPattern = new RegExp(
-    `${Q}(\\w+)${QC}\\s+vient\\s+du\\s+([\\wÀ-ÿ]+)(?:\\s*\\((?:langue\\s+)?([\\wÀ-ÿ]+)\\))?\\s+et\\s+signifie\\s+${Q}([^"»\u201D]+)${QC}`,
-    "gi"
-  );
-  const words: EtymologyWord[] = [];
-  let match;
-
-  while ((match = splitPattern.exec(etymology)) !== null) {
-    const rawDef = match[4].split(/\s+ou\s+/)[0].trim();
-    words.push({
-      word: match[1],
-      lang: resolveLang(match[2], match[3]),
-      definition: capitalize(rawDef),
-    });
-  }
-
-  if (words.length >= 2) {
-    return { variant: "split", words };
-  }
-
-  // Single word pattern (supports straight, curly, guillemets)
-  const singlePattern =
-    /["«\u201C](\w+)["»\u201D]\s+(?:vient|est\s+d[ée]riv|signifie|est\s+un\s+mot)/i;
-  const singleMatch = etymology.match(singlePattern);
-
-  if (singleMatch || words.length === 1) {
-    const word = words.length === 1 ? words[0] : undefined;
-    if (word) {
-      return { variant: "single", words: [word] };
-    }
-
-    // Try alternative extraction for single (supports curly quotes + guillemets)
-    const nameMatch = etymology.match(/["«\u201C](\w+)["»\u201D]/);
-    const langMatch = etymology.match(/(?:du|en)\s+([\wÀ-ÿ]+)/);
-    const defMatch = etymology.match(
-      /signifie\s+["«\u201C]([^"»\u201D]+)["»\u201D]/i
-    );
-
-    return {
-      variant: "single",
-      words: [
-        {
-          word: nameMatch ? nameMatch[1] : "",
-          lang: langMatch ? capitalize(langMatch[1]) : "",
-          definition: defMatch ? defMatch[1].split(/\s+ou\s+/)[0].trim() : "",
-        },
-      ],
-      rawText: etymology,
-    };
-  }
-
-  // Fallback: try the full pattern from BFA format (supports all quote styles)
-  // "Burkina" vient du mooré (Mossi) et signifie "intègres"... "Faso" vient du dioula
-  const fullPattern = new RegExp(
-    `${Q}(\\w+)${QC}\\s+vient\\s+du\\s+(\\w+)(?:\\s*\\((?:langue\\s+)?(\\w+)\\))?\\s+et\\s+signifie\\s+${Q}([^"»\u201D]+)${QC}`,
-    "gi"
-  );
-  while ((match = fullPattern.exec(etymology)) !== null) {
-    const rawDef = match[4].split(/\s+ou\s+/)[0].trim();
-    words.push({
-      word: match[1],
-      lang: resolveLang(match[2], match[3]),
-      definition: capitalize(rawDef),
-    });
-  }
-
-  if (words.length >= 2) {
-    return { variant: "split", words };
-  }
-  if (words.length === 1) {
-    return { variant: "single", words };
-  }
-
-  // Fallback: return raw text as single block when no structured pattern matches
-  return {
-    variant: "single",
-    words: [{ word: "", lang: "", definition: "" }],
-    rawText: etymology,
-  };
-}
-
-// @req REQ-001
-export function transformOrigin(
-  nameOriginActor?: string,
-  etymology?: string,
-  historicalNames?: HistoricalNamesSection
-): OriginData | undefined {
-  if (!nameOriginActor) return undefined;
-
-  const text = nameOriginActor;
-
-  // Detect tonality
-  let tonality: OriginTonality = "neutral";
-  if (/révolution|indépendance|émancipation/i.test(text)) {
-    tonality = "revolution";
-  } else if (
-    /colonial|britannique|français|allemand|anglais/i.test(text) ||
-    /Flora Shaw|Lord|Sir|Governor/i.test(text)
-  ) {
-    tonality = "colonial";
-  }
-
-  // Extract person name - try specific patterns first (no /i flag to preserve case-sensitivity on [A-Z])
-  const presidentMatch = text.match(
-    /(?:[Pp]résident|[Ll]eader|[Rr]oi|[Cc]hef|[Jj]ournaliste)\s+([A-ZÀ-Ÿ][\wÀ-ÿ]+(?:\s+[A-ZÀ-Ÿ][\wÀ-ÿ]+)+)/
-  );
-  const personMatch =
-    presidentMatch ||
-    text.match(/(?:par\s+)?([A-ZÀ-Ÿ][\wÀ-ÿ]+(?:\s+[A-ZÀ-Ÿ][\wÀ-ÿ]+)+)/);
-  const personName = personMatch
-    ? personMatch[1]
-    : text.split(",")[0].split(".")[0].trim();
-
-  // Extract initials
-  const nameParts = personName.split(/\s+/);
-  const initials =
-    nameParts.length >= 2
-      ? nameParts[0][0] + nameParts[nameParts.length - 1][0]
-      : personName.substring(0, 2).toUpperCase();
-
-  // Extract date — prefer full date "4 août 1984" from historicalNames.contemporary or text
-  // BFA example: "changement de nom le 4 août 1984 par Thomas Sankara"
-  const fullDatePattern =
-    /(\d{1,2}\s+(?:janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)\s+\d{4})/i;
-  const fullDateMatch =
-    text.match(fullDatePattern) ||
-    (historicalNames?.contemporary
-      ? historicalNames.contemporary.match(fullDatePattern)
-      : null);
-  const yearOnlyMatch = text.match(/(\d{4})/);
-  const date = fullDateMatch
-    ? fullDateMatch[1]
-    : yearOnlyMatch
-      ? yearOnlyMatch[1]
-      : undefined;
-
-  // Extract old name from etymology
-  let oldName: string | undefined;
-  if (etymology) {
-    const oldNameMatch =
-      etymology.match(/remplacer?\s+["«]([^"»]+)["»]/i) ||
-      etymology.match(/(?:anciennement|ancien\s+nom|ex-)\s*["«]?([^"»,.]+)/i);
-    oldName = oldNameMatch ? oldNameMatch[1].trim() : undefined;
-  }
-
-  // Build description: clean prefix and truncate at ~120 chars at sentence boundary
-  let description = text.replace(/^.*?lors de la\s+/i, "");
-  // Capitalize first letter after cleaning
-  description = description.charAt(0).toUpperCase() + description.slice(1);
-  // Truncate at sentence boundary near 120 chars
-  if (description.length > 120) {
-    const sentenceEnd = description.indexOf(".", 60);
-    if (sentenceEnd !== -1 && sentenceEnd <= 140) {
-      description = description.substring(0, sentenceEnd + 1);
-    } else {
-      description = description.substring(0, 120).trim() + "...";
-    }
-  }
-
-  return {
-    personName,
-    initials: initials.toUpperCase(),
-    date,
-    description,
-    oldName,
-    tonality,
   };
 }
 
@@ -1060,12 +750,6 @@ export function transformHistoricalFacts(
 export function transformCountryData(country: CountryDetail): CountryPageData {
   return {
     hero: transformHero(country),
-    etymology: transformEtymology(country.etymology),
-    origin: transformOrigin(
-      country.nameOriginActor,
-      country.etymology,
-      country.historicalNames
-    ),
     timeline: transformTimeline(country.historicalNames),
     peoples: transformPeoples(country.demographics, country.majorPeoples),
     kingdoms: transformKingdoms(country.kingdoms),
@@ -1074,12 +758,4 @@ export function transformCountryData(country: CountryDetail): CountryPageData {
     culture: transformCulture(country.culture),
     sources: transformSources(country.sources),
   };
-}
-
-// ==========================================
-// HELPERS
-// ==========================================
-
-function capitalize(str: string): string {
-  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }

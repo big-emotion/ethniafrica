@@ -200,30 +200,6 @@ export function analyzeCountryDemographicsGap(
 }
 
 /**
- * Static gap: countryDataTransformer uses heavy regex patterns
- * to extract etymology words/languages/dates. If the text doesn't
- * match expected French patterns, transforms return empty.
- *
- * Always returns the gap.
- */
-export function analyzeEtymologyFragilityGap(): CrossLayerGap {
-  return {
-    layer: "component-source",
-    entityType: "country",
-    field: "etymology",
-    severity: "medium",
-    description:
-      "countryDataTransformer uses French-specific regex patterns " +
-      '(e.g., \'"Word" vient du LANGUAGE et signifie "meaning"\') to ' +
-      "extract structured etymology data. If the source text uses " +
-      "non-standard phrasing, different quote styles, or English text, " +
-      "transformEtymology() returns undefined and transformHero() " +
-      "returns empty meaning fields. This makes etymology display " +
-      "fragile and dependent on exact French sentence structure.",
-  };
-}
-
-/**
  * Static gap: language family parser returns distribution.distributionByCountry
  * as a raw string, but the frontend type in afrik-frontend.ts expects
  * Record<CountryId, number>.
@@ -353,13 +329,10 @@ export async function analyzeAllGaps(): Promise<CrossLayerGap[]> {
     if (demoGap) gaps.push(demoGap);
   }
 
-  // 5. Static: Etymology regex fragility (component-source, MEDIUM)
-  gaps.push(analyzeEtymologyFragilityGap());
-
-  // 6. Static: Distribution type mismatch (parser-component, MEDIUM)
+  // 5. Static: Distribution type mismatch (parser-component, MEDIUM)
   gaps.push(analyzeDistributionTypeGap());
 
-  // 7. Dynamic: People demography distribution not parsed (source-parser, MEDIUM)
+  // 6. Dynamic: People demography distribution not parsed (source-parser, MEDIUM)
   if (peopleContent) {
     const peopleDemoGap = analyzePeopleDemographyGap(peopleContent);
     if (peopleDemoGap) gaps.push(peopleDemoGap);

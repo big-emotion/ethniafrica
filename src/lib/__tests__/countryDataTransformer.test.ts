@@ -8,8 +8,6 @@ import {
   shortenFamily,
   extractKeywords,
   transformHero,
-  transformEtymology,
-  transformOrigin,
   transformTimeline,
   transformPeoples,
   transformKingdoms,
@@ -327,17 +325,6 @@ describe("transformHero", () => {
     expect(hero.countryName).toBe("Burkina Faso");
     expect(hero.iso).toBe("BFA");
     expect(hero.flag).toBe("🇧🇫");
-    expect(hero.year).toBe("1984");
-    expect(hero.meaningQuote).toBe("Pays des hommes");
-    expect(hero.meaningHighlight).toBe("intègres");
-    expect(hero.isUncertain).toBe(false);
-  });
-
-  it("uses + separator and captures lang+family for meaningLangs", () => {
-    const hero = transformHero(bfaCountry);
-    expect(hero.meaningLangs).toContain(" + ");
-    expect(hero.meaningLangs).toContain("(Mossi)");
-    expect(hero.meaningLangs).toContain("(Mandé)");
   });
 
   // @req REQ-001
@@ -356,107 +343,6 @@ describe("transformHero", () => {
     expect(hero.nameOfficial).toBe(
       "République d'Afrique du Sud (Republic of South Africa, iNingizimu Afrika)"
     );
-  });
-});
-
-describe("transformEtymology", () => {
-  it("detects split bilingue variant for BFA", () => {
-    const result = transformEtymology(bfaCountry.etymology);
-    expect(result).toBeDefined();
-    expect(result!.variant).toBe("split");
-    expect(result!.words).toHaveLength(2);
-    expect(result!.words[0].word).toBe("Burkina");
-    expect(result!.words[0].lang).toBe("Mooré (Mossi)");
-    expect(result!.words[0].definition).toBe("Intègres");
-    expect(result!.words[1].word).toBe("Faso");
-    expect(result!.words[1].lang).toBe("Dioula (Mandé)");
-    expect(result!.words[1].definition).toBe("Pays");
-  });
-
-  it("detects uncertain variant", () => {
-    const result = transformEtymology(
-      'L\'origine du nom "Djibouti" est débattue. Hypothèse 1: du mot afar "gabouti" (plateau).'
-    );
-    expect(result).toBeDefined();
-    expect(result!.variant).toBe("uncertain");
-  });
-
-  it("returns undefined for empty etymology", () => {
-    expect(transformEtymology(undefined)).toBeUndefined();
-  });
-
-  it("returns rawText fallback when no structured pattern matches", () => {
-    const raw =
-      "The country name derives from an ancient geographical term with no clear linguistic origin.";
-    const result = transformEtymology(raw);
-    expect(result).toBeDefined();
-    expect(result!.variant).toBe("single");
-    expect(result!.rawText).toBe(raw);
-    expect(result!.words).toHaveLength(1);
-  });
-
-  it("handles curly/smart quotes in split pattern", () => {
-    const text =
-      "\u201CBurkina\u201D vient du moor\u00E9 et signifie \u201Cint\u00E8gres\u201D, \u201CFaso\u201D vient du dioula et signifie \u201Cpays\u201D";
-    const result = transformEtymology(text);
-    expect(result).toBeDefined();
-    expect(result!.variant).toBe("split");
-    expect(result!.words).toHaveLength(2);
-    expect(result!.words[0].word).toBe("Burkina");
-    expect(result!.words[1].word).toBe("Faso");
-  });
-
-  it("handles guillemets in single pattern", () => {
-    const text =
-      "\u00ABZimbabwe\u00BB vient du shona et signifie \u00ABmaisons de pierre\u00BB";
-    const result = transformEtymology(text);
-    expect(result).toBeDefined();
-    expect(result!.words[0].word).toBe("Zimbabwe");
-  });
-
-  it("never returns undefined when etymology text exists", () => {
-    const oddTexts = [
-      "An unknown origin for this name.",
-      "Le nom provient de sources multiples non identifiées.",
-      "Combination of local words meaning river and mountain.",
-    ];
-    for (const text of oddTexts) {
-      const result = transformEtymology(text);
-      expect(result).toBeDefined();
-      expect(result!.rawText).toBe(text);
-    }
-  });
-});
-
-describe("transformOrigin", () => {
-  it("extracts revolution tonality for BFA", () => {
-    const result = transformOrigin(
-      bfaCountry.nameOriginActor,
-      bfaCountry.etymology
-    );
-    expect(result).toBeDefined();
-    expect(result!.tonality).toBe("revolution");
-    expect(result!.personName).toContain("Thomas Sankara");
-    expect(result!.initials).toBe("TS");
-    expect(result!.oldName).toBe("Haute-Volta");
-    // Date is just year (no full date in nameOriginActor)
-    expect(result!.date).toBe("1984");
-    // Description cleaned of "lors de la" prefix
-    expect(result!.description).toMatch(/^Révolution/i);
-    expect(result!.description!.length).toBeLessThanOrEqual(140);
-  });
-
-  it("detects colonial tonality", () => {
-    const result = transformOrigin(
-      "Flora Shaw, journaliste britannique coloniale, a nommé le territoire en 1897.",
-      undefined
-    );
-    expect(result).toBeDefined();
-    expect(result!.tonality).toBe("colonial");
-  });
-
-  it("returns undefined when no origin actor", () => {
-    expect(transformOrigin(undefined, undefined)).toBeUndefined();
   });
 });
 
@@ -969,8 +855,6 @@ describe("transformCountryData", () => {
   it("produces complete page data for BFA", () => {
     const result = transformCountryData(bfaCountry);
     expect(result.hero.countryName).toBe("Burkina Faso");
-    expect(result.etymology).toBeDefined();
-    expect(result.origin).toBeDefined();
     expect(result.timeline.items.length).toBeGreaterThan(0);
     expect(result.peoples.rows.length).toBeGreaterThan(0);
     expect(result.kingdoms.cards.length).toBeGreaterThan(0);

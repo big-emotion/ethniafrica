@@ -8,8 +8,6 @@ import { SourcesFooter } from "../SourcesFooter";
 import { HistoricalFactsSection } from "../HistoricalFactsSection";
 import type {
   HeroData,
-  EtymologyData,
-  OriginData,
   TimelineData,
   PeoplesData,
   KingdomsData,
