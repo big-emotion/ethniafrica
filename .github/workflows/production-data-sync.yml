@@ -7,10 +7,16 @@ name: Production AFRIK Data Sync
 #
 # workflow_run only fires for a workflow file that lives on the default branch, so this
 # file has to reach `main` for the chain to work at all; on `recette` alone it is inert.
+#
+# workflow_dispatch exists because the corpus and the quiz bank can fall behind production
+# without a deploy to carry them there — a bank left empty between two releases is a hub
+# entry that reads "Bientôt" for weeks. The same reason applies to the dispatch trigger as
+# to workflow_run: GitHub only offers it for a file on the default branch.
 on:
   workflow_run:
     workflows: ["Deploy Production (OVH)"]
     types: [completed]
+  workflow_dispatch:
 
 concurrency:
   group: production-afrik-data-sync
@@ -23,10 +29,14 @@ jobs:
   sync:
     # `types: [completed]` fires on failure and cancellation too. Loading the corpus into
     # production after a deploy that did not land would sync data to a version of the
-    # application that is not running.
-    if: github.event.workflow_run.conclusion == 'success'
+    # application that is not running. A hand-launched run carries no deploy to judge.
+    if: >-
+      github.event_name == 'workflow_dispatch'
+      || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # The quiz sweep evaluates every fiche against every template, so it is the longest
+    # step here by an order of magnitude on a bank it has to build from nothing.
+    timeout-minutes: 40
     env:
       # This job runs after a successful OVH production deploy and revalidates
       # ethniafrica.com, so every credential here must be the production project's.
@@ -49,13 +59,16 @@ jobs:
       - name: Check out the deployed commit
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ github.event.workflow_run.head_sha }}
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
           fetch-depth: 0
 
       # The deploy is keyed on a published Release, whose tag can in principle point at a
       # commit that never reached main. Syncing the corpus for such a commit would load a
-      # corpus state nobody integrated.
+      # corpus state nobody integrated. A dispatch has no deployed commit to vouch for;
+      # the ref it runs on is the operator's own choice, and GitHub only offers refs that
+      # exist.
       - name: Verify the deployed commit belongs to main
+        if: github.event_name == 'workflow_run'
         env:
           DEPLOYED_SHA: ${{ github.event.workflow_run.head_sha }}
         run: git merge-base --is-ancestor "$DEPLOYED_SHA" origin/main
@@ -99,6 +112,21 @@ jobs:
 
       - name: Apply and verify production synchronization
         run: npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=production --apply
+
+      # The corpus reaching production is not the quiz reaching production. A question a
+      # player sees is a row in `quiz_questions`, and this sweep is the only thing that
+      # writes one; the corpus loader above writes none. Nothing ran it here, so the
+      # production bank stayed at zero through every release while recette's filled up —
+      # and the hub, reading an empty table the way it reads any empty corpus, offered the
+      # reader an inert "Bientôt" on a module that was built, deployed and reachable.
+      #
+      # Idempotent by construction: `computeSweepPlan` skips any (fiche, template) pair
+      # that already carries an active question, so running it on every deploy adds what
+      # the corpus newly supports and revokes what it no longer does. That is also why it
+      # cannot replace an existing question — a change to how questions are *built* still
+      # needs the manual `--rebuild` in docs/runbooks/quiz-bank-regeneration.md.
+      - name: Generate the production quiz question bank
+        run: npx tsx --conditions=react-server scripts/generateQuizQuestions.ts
 
       # The loader writes its per-fiche failures to a JSON report and only logs
       # the path. On a runner that path is unreachable, so a sync could fail

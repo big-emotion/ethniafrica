@@ -21,6 +21,30 @@ audit trail.
 Run this when the generator's output changes — new or reordered distractor
 pools, a new template, a changed prompt. Not otherwise: it rewrites the bank.
 
+## What is automatic, and what this runbook is still for
+
+The **ordinary sweep** now runs on both environments without anyone asking:
+`recette-data-sync.yml` after a merge into `recette`, and
+`production-data-sync.yml` after a production deploy or a manual dispatch.
+
+Until then it ran on neither. Recette had a bank only because someone typed the
+command, and production never had one at all — which is the failure worth
+keeping, because every part of it was green. The corpus loader ran, the deploy
+succeeded, the route was built and reachable, and the bank stayed at **zero
+rows**, because loading fiches writes no question. The hub reads an empty
+`quiz_questions` the way it reads any empty corpus, so it offered the reader an
+inert **Bientôt**. Measured on 5 September 2026 through `/api/v2/quiz/scopes`:
+54 countries, 24 families and 9 themes, every one at `activeQuestionCount: 0`.
+
+The nightly `--check` could not have caught it. It reads
+`secrets.NEXT_PUBLIC_SUPABASE_URL`, which is **recette's**, so the only gate the
+bank has was pointed at the one environment that had a bank.
+
+The sweep is idempotent, so automating it can only add what the corpus newly
+supports and revoke what it no longer does. **It can never replace a question
+that already exists** — which is exactly the case this runbook remains for.
+`--rebuild` stays manual and stays per environment.
+
 ## The order that matters, and why it is not the obvious one
 
 **A rebuild alone regenerates nothing new.** `evaluateCandidate` refuses any
