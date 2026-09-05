@@ -12,6 +12,7 @@
 import type { CountryDistribution, CountryId } from "@/types/afrik";
 import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
 import { WORLD_COMPARE } from "@/lib/atlas/assets/worldCompare";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 import {
   BASEMAP_VIEWBOX,
   projectLonLat,
@@ -98,18 +99,33 @@ export function getAdmin0Rings(countryId: CountryId): Ring[] | undefined {
 }
 
 /**
- * The asset's own French name for a country, through the same alias as its
- * geometry.
+ * The asset's own name for a country in the reader's locale, through the same
+ * alias as its geometry.
  *
  * Reading `AFRICA_ADMIN0[countryId].nameFr` directly is what broke the moment
  * ISO codes started resolving: rings came back for SSD while the name did not,
  * so every fiche declaring a South Sudan presence read a property off
  * undefined. One resolver for both is the only arrangement where they cannot
  * disagree again.
+ *
+ * The English name is a class-4 string (REQ-143): Natural Earth ships it for
+ * all 58 entries and 35 of them differ from the French — Ivory Coast,
+ * Cameroon, Egypt — so it is read from the asset, never translated from
+ * `nameFr`.
  */
+// @req REQ-143
+export function getAdmin0Name(
+  countryId: CountryId,
+  locale: TranslationLocale
+): string | undefined {
+  const country = admin0Entry(countryId);
+  return locale === "fr" ? country?.nameFr : country?.name;
+}
+
+/** The French name, for the consumers that have no locale to hand yet. */
 // @req REQ-116
 export function getAdmin0NameFr(countryId: CountryId): string | undefined {
-  return admin0Entry(countryId)?.nameFr;
+  return getAdmin0Name(countryId, "fr");
 }
 
 /**

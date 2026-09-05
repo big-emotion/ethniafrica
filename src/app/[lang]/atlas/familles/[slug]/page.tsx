@@ -23,8 +23,10 @@ import { FamilyFicheTitle } from "@/components/family/FamilyFicheTitle";
 import { FamilyFootprintLegend } from "@/components/family/FamilyFootprintLegend";
 import { buildFamilyTargetFacts } from "@/components/family/familyTargetFacts";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
-import { buildFamilyFootprintOverlay } from "@/lib/atlas/overlays";
-import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
+import {
+  buildFamilyFootprintOverlay,
+  getAdmin0Name,
+} from "@/lib/atlas/overlays";
 import { mapLanguageFamilyDetail } from "@/lib/afrikDetailMapper";
 import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
 import {
@@ -193,7 +195,7 @@ export default async function FamillesSlugPage({
     countryNamesFr: Object.fromEntries(
       (familyOverlay?.countries ?? []).map((country) => [
         country.countryId,
-        AFRICA_ADMIN0[country.countryId]?.nameFr ?? country.countryId,
+        getAdmin0Name(country.countryId, "fr") ?? country.countryId,
       ])
     ),
   });
