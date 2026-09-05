@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { revalidateTag, revalidatePath } from "next/cache";
 import { logger } from "@/lib/api/logger";
+import { LOCALES } from "@/lib/locale";
 import { getLocalizedRoute } from "@/lib/routing";
 import { revalidatePayloadSchema } from "./schema";
 
@@ -21,10 +22,6 @@ const LIVE_CACHE_CONFIG: Record<
   language: { tag: "afrik-language-families", page: "families" },
   country: { tag: "afrik-countries", page: "countries" },
 };
-
-// The site is French-only (`Language = "fr"`), so the one locale whose cache
-// there is to invalidate.
-const LANGUAGE = "fr";
 
 // Stable-reference endpoint tags (AR18: s-maxage=86400) — always invalidated
 const STABLE_REF_TAGS = ["afrik-language-families", "afrik-countries"] as const;
@@ -66,9 +63,13 @@ export async function POST(request: NextRequest) {
   if (liveConfig) {
     revalidateTag(liveConfig.tag, "max");
     invalidatedTags.push(liveConfig.tag);
-    const path = getLocalizedRoute(LANGUAGE, liveConfig.page);
-    revalidatePath(path);
-    invalidatedPaths.push(path);
+    // Every locale serves the directory from the same corpus, so a change
+    // that stales one stales all of them (REQ-141).
+    for (const locale of LOCALES) {
+      const path = getLocalizedRoute(locale, liveConfig.page);
+      revalidatePath(path);
+      invalidatedPaths.push(path);
+    }
   }
 
   // Always invalidate stable-reference endpoint tags (AR18)

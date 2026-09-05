@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { CANONICAL_DOMAIN } from "@/lib/brand";
+import { LOCALES } from "@/lib/locale";
 import {
   getCountryRoute,
   getFamilyRoute,
@@ -9,17 +10,30 @@ import {
   getPeopleLinksRoute,
   getPeopleRoute,
 } from "@/lib/routing";
+import type { FicheKind } from "@/lib/seo/ficheCanonical";
+import {
+  ficheIndexedLocales,
+  surfaceForPath,
+  surfaceIndexedLocales,
+} from "@/lib/seo/localeIndexing";
 import { getSiteTreePaths } from "@/lib/siteTree";
 import { getSitemapEntityIds } from "@/lib/supabase/queries/afrik/sitemapEntries";
+import type { Language } from "@/types/shared";
 
 /**
  * `sitemap.xml`.
  *
- * Two things about this file that are not obvious:
+ * Three things about this file that are not obvious:
  *
  * The base URL comes from `CANONICAL_DOMAIN`, never from the root layout's
  * `metadataBase` — that one falls back to `localhost:3000`, which in a sitemap
  * would publish 890 unreachable URLs.
+ *
+ * It lists a URL under a locale only when the page is indexed there
+ * (REQ-141): a rubric when its surface is at parity, a fiche when a
+ * translation record exists for it. The English half therefore holds the
+ * rubrics at parity and no fiche until ETNI-1826 lands the records — a
+ * sitemap that listed a `noindex` page would contradict the page.
  *
  * And this is a Next special file, not a route segment: it sits outside the
  * root layout's tree, so the `await connection()` that makes every page
@@ -28,7 +42,6 @@ import { getSitemapEntityIds } from "@/lib/supabase/queries/afrik/sitemapEntries
  * `page|layout|route.tsx` only.
  */
 
-const LANGUAGE = "fr";
 const BASE_URL = `https://${CANONICAL_DOMAIN}`;
 
 // The emitted name set follows source tiers stored in the corpus projection.
@@ -49,25 +62,68 @@ function entry(
   return { url: `${BASE_URL}${path}`, changeFrequency, priority };
 }
 
-// @req REQ-110
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const { peoples, countries, families, languages, patronymes } =
-    await getSitemapEntityIds();
+/** The rubric paths of a locale the locale's index is invited to. */
+function indexedRubrics(locale: Language): string[] {
+  return getSiteTreePaths(locale).filter((path) => {
+    const surface = surfaceForPath(locale, path);
+    return surface !== null && surfaceIndexedLocales(surface).includes(locale);
+  });
+}
 
-  const rubrics = getSiteTreePaths(LANGUAGE).map((path) =>
-    entry(path, RUBRIC_CHANGE_FREQUENCY, path === `/${LANGUAGE}` ? 1 : 0.8)
+/** The identifiers of one fiche kind that are indexed in a locale. */
+async function indexedIds(
+  kind: FicheKind,
+  ids: string[],
+  locale: Language
+): Promise<string[]> {
+  const verdicts = await Promise.all(
+    ids.map(async (id) =>
+      (await ficheIndexedLocales(kind, id)).includes(locale)
+    )
   );
+  return ids.filter((_, index) => verdicts[index]);
+}
 
-  const fiches = [
-    ...families.map((id) => getFamilyRoute(LANGUAGE, id)),
+async function fichePaths(
+  locale: Language,
+  corpus: Awaited<ReturnType<typeof getSitemapEntityIds>>
+): Promise<string[]> {
+  const [families, peoples, countries, languages, patronymes] =
+    await Promise.all([
+      indexedIds("family", corpus.families, locale),
+      indexedIds("people", corpus.peoples, locale),
+      indexedIds("country", corpus.countries, locale),
+      indexedIds("language", corpus.languages, locale),
+      indexedIds("name", corpus.patronymes, locale),
+    ]);
+
+  return [
+    ...families.map((id) => getFamilyRoute(locale, id)),
     ...peoples.flatMap((id) => [
-      getPeopleRoute(LANGUAGE, id),
-      getPeopleLinksRoute(LANGUAGE, id),
+      getPeopleRoute(locale, id),
+      getPeopleLinksRoute(locale, id),
     ]),
-    ...countries.map((id) => getCountryRoute(LANGUAGE, id)),
-    ...languages.map((id) => getLanguageRoute(LANGUAGE, id)),
-    ...patronymes.map((id) => getPatronymeRoute(LANGUAGE, id)),
-  ].map((path) => entry(path, FICHE_CHANGE_FREQUENCY, 0.6));
+    ...countries.map((id) => getCountryRoute(locale, id)),
+    ...languages.map((id) => getLanguageRoute(locale, id)),
+    ...patronymes.map((id) => getPatronymeRoute(locale, id)),
+  ];
+}
 
-  return [...rubrics, ...fiches];
+// @req REQ-110
+// @req REQ-141
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const corpus = await getSitemapEntityIds();
+
+  const entries: MetadataRoute.Sitemap = [];
+  for (const locale of LOCALES) {
+    for (const path of indexedRubrics(locale)) {
+      entries.push(
+        entry(path, RUBRIC_CHANGE_FREQUENCY, path === `/${locale}` ? 1 : 0.8)
+      );
+    }
+    for (const path of await fichePaths(locale, corpus)) {
+      entries.push(entry(path, FICHE_CHANGE_FREQUENCY, 0.6));
+    }
+  }
+  return entries;
 }

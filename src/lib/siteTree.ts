@@ -9,6 +9,7 @@ import {
 import {
   getLocalizedRoute,
   getNommerChapterRoute,
+  getStaticPageRoute,
   type NommerChapterKey,
 } from "@/lib/routing";
 import type { Language } from "@/types/shared";
@@ -226,12 +227,12 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
         "Le corpus est ouvert et incomplet, et il le dit. Les deux portes par lesquelles on le corrige.",
       links: [
         {
-          href: `/${language}/contribute`,
+          href: getStaticPageRoute(language, "contribute"),
           label: "Contribuer",
           note: "Proposer une fiche, une source, une correction.",
         },
         {
-          href: `/${language}/signalements`,
+          href: getStaticPageRoute(language, "reports"),
           label: "Signalements",
           note: "Les erreurs signalées et leur traitement, en public.",
         },
@@ -259,17 +260,26 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
           note: "Le corpus en JSON, sous licence ouverte.",
         },
         {
-          href: `/${language}/contact`,
+          href: getStaticPageRoute(language, "contact"),
           label: "Contact",
           note: "Écrire à l'équipe qui publie l'atlas.",
         },
-        { href: `/${language}/accessibilite`, label: "Accessibilité" },
-        { href: `/${language}/mentions-legales`, label: "Mentions légales" },
         {
-          href: `/${language}/politique-de-donnees`,
+          href: getStaticPageRoute(language, "accessibility"),
+          label: "Accessibilité",
+        },
+        {
+          href: getStaticPageRoute(language, "legalNotice"),
+          label: "Mentions légales",
+        },
+        {
+          href: getStaticPageRoute(language, "dataPolicy"),
           label: "Politique de données",
         },
-        { href: `/${language}/plan-du-site`, label: "Plan du site" },
+        {
+          href: getStaticPageRoute(language, "sitemap"),
+          label: "Plan du site",
+        },
       ],
     },
   ];
