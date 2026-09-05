@@ -1,17 +1,9 @@
 /**
- * QUARANTINED, and for one reason only: no dossier fiche is published yet.
+ * Publication contract for every dossier fiche in the shipped corpus.
  *
- * Every assertion below reads dataset/source/afrik/dossiers/, which this branch
- * has not written to — the research is collected but its `uncorroborated` lists
- * have not been worked through, and publishing a chapter that rests on a single
- * source would be the corpus contradicting its own doctrine to make a suite go
- * green. See docs/editorial/dossiers-realites/README.md.
- *
- * **What un-quarantines it: the first DOS_*.json landing in that directory.**
- * Move this file up one level then; nothing in it needs changing. It is
- * deliberately not written to skip on an empty corpus, because a suite that
- * passes when it checked nothing is the failure mode this repository has a
- * whole class of scar tissue about.
+ * This suite deliberately fails on an empty corpus: a dossier route and a
+ * template with no published fiche would be an implementation that checked
+ * nothing while presenting itself as complete.
  */
 import { readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
@@ -228,5 +220,16 @@ describe("the dossier template — charter contract", () => {
     const withoutComments = sheet.replace(/\/\*[\s\S]*?\*\//g, "");
 
     expect(withoutComments).not.toMatch(/#[0-9a-fA-F]{3,8}\b/);
+  });
+
+  // The site-wide responsive contract starts tablet layout at 768 px. A
+  // dossier must remain in its single-column mobile reading order through
+  // 767 px, including the common 720 px viewport.
+  // @req REQ-113
+  it("keeps the mobile dossier layout below the 768 px tablet boundary", () => {
+    const sheet = readFileSync(STYLESHEET, "utf8");
+
+    expect(sheet).toContain("@media (min-width: 768px)");
+    expect(sheet).not.toContain("@media (min-width: 720px)");
   });
 });

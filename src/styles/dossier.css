@@ -342,9 +342,9 @@
   color: var(--afh-fg-muted);
 }
 
-/* ------------------------------------------------------------ 720px up */
+/* ------------------------------------------------------------ 768px up */
 
-@media (min-width: 720px) {
+@media (min-width: 768px) {
   .afh-dossier-thesis {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--afh-space-8xl);

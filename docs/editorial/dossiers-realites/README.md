@@ -1,11 +1,11 @@
-# Réalités — research in progress
+# Réalités — research record
 
-Working material for three dossiers of the Réalités vertical. **Not publishable
-as it stands**, and the reason is in the data: every collected chapter carries
-an `uncorroborated` list, and those lists are long — nine to sixteen entries
-each. That is the collection working as intended, not failing. A claim the
-collector could not corroborate from a second independent source is declared
-rather than quietly published, which is the same discipline the fiches obey.
+Working material behind the three published dossiers of the Réalités vertical.
+The collection is deliberately broader than the published fiches: every
+collected chapter carries an `uncorroborated` list, and those lists are long —
+nine to sixteen entries each. Claims that could not be supported at publication
+time were dropped or turned into explicit reader-facing limits; they were not
+silently promoted from research notes into the corpus.
 
 ## What this file holds
 
@@ -23,11 +23,11 @@ rather than quietly published, which is the same discipline the fiches obey.
 
 ## The three dossiers
 
-| slug          | title                  | chapters collected                                                                                                     |
-| ------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `proportions` | Les vraies proportions | `la-resolution`, `mercator`, `la-vraie-taille`, `les-distances`                                                        |
-| `populations` | Le poids réel          | `le-poids`, `la-jeunesse`, `les-concentrations`, `ce-quon-ne-compte-pas`                                               |
-| `ressources`  | Un scandale géologique | `les-noms-de-marchandise`, `scandale-geologique`, `les-parts-mondiales`, and `ou-va-la-valeur` — **not yet collected** |
+| slug          | title                       | chapters published                                                                        |
+| ------------- | --------------------------- | ----------------------------------------------------------------------------------------- |
+| `proportions` | Les vraies proportions      | `corriger-la-carte`, `mercator`, `surface`, `distances`                                   |
+| `populations` | Les populations             | `poids-demographique`, `jeunesse`, `concentrations`, `ce-que-le-compte-laisse-hors-champ` |
+| `ressources`  | Les ressources et la valeur | `noms-de-marchandise`, `scandale-geologique`, `parts-mondiales`, `ou-va-la-valeur`        |
 
 ## Two editorial findings worth keeping
 
@@ -42,20 +42,18 @@ data says.** Africa was 18.8 % of world population in 2025; the projection
 reaching roughly 38 % is for 2100. The `le-poids` chapter treats the confusion
 head-on rather than repeating it, and says where it probably comes from.
 
-## What has to happen before any of this is published
+## Publication record
 
-1. Work through each chapter's `uncorroborated` list. A claim that survives
-   gets a second source; a claim that does not is either dropped or published
-   at `unverified` with the standing visible.
-2. Fetch the chosen Commons images into `public/images/dossiers/`, with a
-   `CREDITS.md` in the format `public/images/home/CREDITS.md` uses, and check
-   each licence against the Commons API rather than against the collector's
-   report.
-3. Write the three fiches into `dataset/source/afrik/dossiers/DOS_*.json`
-   against `public/modele-dossier.json`. The parser refuses a chapter with one
-   reading, a reading citing nothing, and an attributed licence with no author
-   or no address, so a fiche that loads is a fiche that met the doctrine.
-4. Run `npx tsx scripts/validateAfrikData.ts` and
-   `npx tsx scripts/ci/checkEditorialRules.ts`. The second one matters here:
-   `sources[].title`, `sources[].notes` and `gaps[].reason` reach the reader
-   verbatim, so no workshop vocabulary may survive in them.
+- The three strict fiches live in `dataset/source/afrik/dossiers/` and contain
+  twelve chapters in total. Every chapter carries both readings and resolvable
+  source references.
+- Three Wikimedia Commons images live in `public/images/dossiers/`. Their
+  licences were checked against the Commons API and are recorded in
+  `CREDITS.md` as well as in the visible captions.
+- The missing `ou-va-la-valeur` chapter was written from International Energy
+  Agency and UN Trade and Development sources. It distinguishes extraction,
+  refining, component manufacture, and value capture.
+- The corpus model check and editorial-rule gate pass. The reader-facing
+  fields contain no repository paths, raw identifiers, or workshop language.
+- The dossier charter runs in the ordinary test suite rather than the
+  `known-failing` quarantine.

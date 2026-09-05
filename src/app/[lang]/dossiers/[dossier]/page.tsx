@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { DossierPage } from "@/components/dossiers/DossierPage";
-import { getDossierBySlug, listDossiers } from "@/lib/dossiers/corpus";
+import { getDossierBySlug } from "@/lib/dossiers/corpus";
 import type { Language } from "@/types/shared";
 
 interface DossierRouteProps {
@@ -27,11 +27,6 @@ interface DossierRouteProps {
  * that can — a loading boundary over a 404 renders the frame of a page that is
  * not going to exist, which search engines read as a soft 404.
  */
-// @req REQ-113
-export async function generateStaticParams() {
-  return listDossiers("realites").map((dossier) => ({ dossier: dossier.slug }));
-}
-
 // @req REQ-113
 export async function generateMetadata({
   params,

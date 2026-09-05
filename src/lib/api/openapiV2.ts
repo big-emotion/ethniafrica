@@ -1653,19 +1653,18 @@ const options: swaggerJsdoc.Options = {
               },
             },
             illustration: {
-              type: "object",
-              nullable: true,
+              type: ["object", "null"],
               description:
                 "Credits for the chapter's document. Where the licence requires attribution, author and licenceUrl are both present.",
               properties: {
                 src: { type: "string" },
                 alt: { type: "string" },
                 caption: { type: "string" },
-                author: { type: "string", nullable: true },
+                author: { type: ["string", "null"] },
                 licence: { type: "string" },
-                licenceUrl: { type: "string", nullable: true },
-                filePage: { type: "string", nullable: true },
-                year: { type: "string", nullable: true },
+                licenceUrl: { type: ["string", "null"] },
+                filePage: { type: ["string", "null"] },
+                year: { type: ["string", "null"] },
               },
               required: ["src", "alt", "caption", "licence"],
             },
@@ -1683,7 +1682,7 @@ const options: swaggerJsdoc.Options = {
                   label: { type: "string" },
                   value: { type: "string" },
                   year: { type: "integer" },
-                  note: { type: "string", nullable: true },
+                  note: { type: ["string", "null"] },
                   sourceRefs: { type: "array", items: { type: "string" } },
                 },
                 required: ["figureKey", "label", "value", "year", "sourceRefs"],
@@ -1753,7 +1752,7 @@ const options: swaggerJsdoc.Options = {
                 properties: {
                   sourceKey: { type: "string" },
                   title: { type: "string" },
-                  url: { type: "string", nullable: true },
+                  url: { type: ["string", "null"] },
                   tier: {
                     type: "string",
                     enum: ["official", "referenced", "unverified"],

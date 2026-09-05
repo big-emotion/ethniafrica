@@ -1,5 +1,5 @@
 /**
- * The four translation classes, declared leaf by leaf for the sixteen strict
+ * The four translation classes, declared leaf by leaf for the seventeen strict
  * models in public/modele-*.json (REQ-143, DEC-047).
  *
  * The corpus is 1.9M words whose subject is partly language itself, so one
@@ -658,6 +658,11 @@ export interface ClassException {
  */
 // @req REQ-143
 export const CLASS_EXCEPTIONS: readonly ClassException[] = [
+  {
+    leafName: "title",
+    reason:
+      "a dossier title is reader-facing prose (translatable); a source title is a citation (invariant)",
+  },
   {
     leafName: "nameMain",
     reason:
