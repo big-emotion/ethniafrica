@@ -2,7 +2,7 @@
   "id": "PPL_TONGA_ZAMBIA",
   "nameMain": "Batonga / Tonga",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["ZMB", "ZWE"],
+  "currentCountries": ["ZMB", "ZWE", "MOZ"],
   "classificationStatus": "colonial-legacy",
   "content": {
     "appellations": {
@@ -11,7 +11,17 @@
       "exonyms": [
         "Tonga (forme generique europeenne)",
         "BaTonga (pluriel bantou)",
-        "Chitonga (langue)"
+        "Chitonga (langue)",
+        "Zambezi Tonga",
+        "Plateau Tonga",
+        "Valley Tonga",
+        "Gwembe Tonga",
+        "Korekore (Zimbabwe)",
+        "Ba-Tonga",
+        "We (Tonga des vallees)",
+        "Tonga du Plateau",
+        "Tonga du Gwembe",
+        "Tonga du Zimbabwe"
       ],
       "originOfExonyms": "Le terme Tonga est attribue par les peuples voisins et les colonisateurs britanniques. L'autodesignation Basilwizi signifie litteralement gens du grand fleuve, en reference au Zambeze.",
       "whyProblematic": "A distinguer du peuple Tonga du Malawi, groupe distinct parlant un dialecte du Chitumbuka.",
@@ -19,7 +29,7 @@
       "linguisticFamily": "FLG_BANTU",
       "ethnoLinguisticGroup": "Bantous d'Afrique australe, zone de la vallee du Zambeze",
       "historicalRegion": "Vallee du Zambeze et ses berges nord (Zambie meridionale) et sud (Zimbabwe, district de Binga)",
-      "currentCountries": ["ZMB", "ZWE"]
+      "currentCountries": ["ZMB", "ZWE", "MOZ"]
     },
     "ethnicities": [
       "Tonga du Plateau (Southern Province, Zambie) — groupe le plus nombreux, agriculteurs du plateau",
@@ -27,7 +37,16 @@
       "BaTonga du Zimbabwe (district de Binga, Matabeleland Nord) — deplaces par le barrage de Kariba",
       "Korekore / BaTonga du district de Nyami Nyami (Zimbabwe)",
       "Tonga de Batoka (Tokaleya), groupe apparente de la meme zone du Plateau",
-      "Tonga de Gwembe (Gwembe Tonga), vallee du Gwembe en Zambie meridionale"
+      "Tonga de Gwembe (Gwembe Tonga), vallee du Gwembe en Zambie meridionale",
+      "Plateau Tonga (Batoka Tonga) : sous-groupe des hauts plateaux de la province du Sud; considérés par certains comme les Tonga originaux; concentrés autour de Monze et du plateau Batoka",
+      "Valley Tonga (Gwembe Tonga / Kweembe) : sous-groupe de la vallée de la Gwembe, au bord du Zambèze; chasseurs, pêcheurs et agriculteurs déplacés par le barrage de Kariba (1957-1958)",
+      "Tonga du Zimbabwe (Tonga du fleuve) : établis dans les districts de Binga, Hwange et Gokwe Nord après le déplacement de Kariba",
+      "Toka-Leya (Livingstone) : sous-groupe Tonga de la région de Livingstone et des chutes Victoria, lié au chiefdom de Mukuni",
+      "Iwe, Toka, Leya : peuples de la région des chutes Victoria parlant des variétés proches du Chitonga",
+      "Gwembe Tonga (We)",
+      "Toka (Tokaleya)",
+      "Tonga-Goba — sous-groupe pres de la frontiere zambienne",
+      "Sous-groupes clans principaux: Mudenda, Munkombwe, Muyuni, Mweetwa, Munsaka, Muloongo"
     ],
     "origins": {
       "ancientOrigins": "Les Batonga s'installerent dans la vallee du Zambeze avant l'arrivee des groupes nguni et de la colonisation europeenne. Selon les sources orales et archeologiques, ils occupent la region depuis au moins le 1er millenaire de notre ere. Ils font partie du groupe bantou d'Afrique australe et sont l'un des plus anciens peuples sedentaires de la region.",
@@ -35,13 +54,33 @@
       "migrationRoutes": [
         "Expansion depuis les hauts plateaux du centre-sud vers les rives du Zambeze",
         "Mobilite locale entre plateaux, escarpements et rives du fleuve",
-        "Apres le deplacement du barrage de Kariba (1957-1962), migration forcee vers les regions arides de Binga, Gokwe Nord, Hwange et Nyami Nyami au Zimbabwe, et vers le Southern Province en Zambie"
+        "Apres le deplacement du barrage de Kariba (1957-1962), migration forcee vers les regions arides de Binga, Gokwe Nord, Hwange et Nyami Nyami au Zimbabwe, et vers le Southern Province en Zambie",
+        "Entrée en Zambie depuis la rive est du lac Nyasa via la vallée du Zambèze, entre le 15e et le 16e siècle",
+        "Expansion sur le plateau Batoka (nord de la province du Sud actuelle)",
+        "Occupation de la vallée de la Gwembe le long du Zambèze",
+        "Déplacement forcé par le barrage de Kariba (1957-1958) : vers les collines au-dessus du lac Kariba ou vers les terres arides en dessous du barrage",
+        "Migration depuis les Grands Lacs (est) vers le plateau et la vallee du Zambeze (sud de la Zambie actuelle)",
+        "Migration desde le nord-est (Nubie, region des Grands Lacs) vers la vallee du Zambeze entre 300 et 400 apr. J.-C.",
+        "Traversee du Zambeze et etablissement le long des rives fertiles du fleuve",
+        "Deplacement force vers les plateaux arides de Binga lors de la construction du barrage de Kariba (1957-1962)"
       ],
       "historicalSettlementZones": [
         "Rives du Zambeze entre Chirundu et Victoria Falls",
         "Plateau de Kafue (Zambie meridionale)",
         "Vallee de Gwembe",
-        "District de Binga (Zimbabwe)"
+        "District de Binga (Zimbabwe)",
+        "Province du Sud de la Zambie : plateau Batoka (districts de Monze, Mazabuka, Choma, Kalomo)",
+        "Vallée de la Gwembe : zone inondée par le lac Kariba (districts de Siavonga et Gwembe, Zambie; Binga, Zimbabwe)",
+        "Province de Lusaka et province Centrale (Zambie) : expansions récentes",
+        "Districts zimbabwéens de Binga, Hwange, Gokwe Nord : Tonga du côté zimbabwéen du Zambèze",
+        "Province du Sud de la Zambie (plateau de Kalomo-Monze)",
+        "Vallee du Gwembe (le long du Zambeze)",
+        "District de Binga (nord-ouest du Zimbabwe)",
+        "Bandes le long du Chirundu, Kariba, Mola et Victoria Falls",
+        "Rives fertiles du Zambeze, entre Chirundu et Victoria Falls",
+        "District de Binga (Matabeleland Nord, Zimbabwe)",
+        "District de Kariba et region de Mola (Zimbabwe)",
+        "District de Gwembe (province du Sud, Zambie)"
       ],
       "unificationsOrDivisions": "Groupes culturellement et linguistiquement apparentes mais politiquement decentralises. Pas de chefferie unifiee avant la colonisation. Les Britanniques imposerent une structure de chefs hereditaires a partir du XIXe siecle, creant progressivement une hierarchie de chefs.",
       "externalInfluences": "Contacts historiques avec Shona, Lozi et Ila. Influence des colonisateurs britanniques qui nommerent des chefs villageois officiels. Le barrage de Kariba (1957-1962) est l'evenement le plus traumatisant de leur histoire recente.",
@@ -50,7 +89,7 @@
     "organization": {
       "traditionalPoliticalSystem": "Organisation en chefferies locales (chiefdoms) avec des chefs hereditaires (chiefs). Avant la colonisation britannique, les Tonga etaient organises en clans matrilineaires sans chefs ni fonctions politiques definies. Les Britanniques nommerent des chefs villageois qui formerent progressivement une structure hierarchique. Les chefs de pluie (Rain Chiefs ou Shine Chiefs) comme le Chef Monze tiennent une autorite spirituelle et politique particuliere.",
       "clanOrganization": "Organisation en clans matrilineaires totémiques. Parmi les clans historiques : Baanga, ainsi que de nombreux autres clans identifies par leur totem animal ou vegetal. Les lignages controlaient la propriete et arbitraient les conflits.",
-      "ageClassSystems": null,
+      "ageClassSystems": "Pas de système formel de classes d'âge structurant. Les cérémonies Lwiindi et les rassemblements saisonniers constituent des occasions collectives transcendant les frontières de village.",
       "roleOfLineages": "Heritage, acces aux terres et role ceremoniel determines par la lignee matrilineaire. Les lignages arbitraient les disputes au sein de la communaute.",
       "religiousAuthority": "Devins (ng'anga) et anciens jouent un role central dans les ceremonies. Les chefs de pluie (notamment le Chef Monze) ont une autorite spirituelle comme intercesseurs aupres des ancetres et garants des pluies. Syncrétisme avec le christianisme depuis le XIXe siecle."
     },
@@ -60,7 +99,16 @@
       "dialects": [
         "Tonga du Plateau (variante principale en Zambie meridionale)",
         "Tonga de la Vallee / Gwembe Tonga (variante fluviale)",
-        "Tchitonga (variante zimbabweenne, district de Binga)"
+        "Tchitonga (variante zimbabweenne, district de Binga)",
+        "Valley Tonga (Chitonga de la Gwembe) : dialecte de la vallée du Zambèze, parlé par les Gwembe Tonga (déplacés à Kariba)",
+        "Plateau Tonga : dialecte du plateau Batoka, autour de Monze; considéré par certains comme la variété la plus pure",
+        "Chitonga de Zimbabwe (Binga) : variété parlée dans les districts de Binga et Hwange (Zimbabwe)",
+        "Chitonga du Plateau (toi)",
+        "We (dialecte de la vallee du Gwembe)",
+        "Chitokaleya (dialecte Toka-Leya)",
+        "Tonga de la vallee (Valley Tonga, tchitonga) — principal dialecte du Zimbabwe",
+        "Tonga du plateau (Plateau Tonga) — parle dans les zones de reinstallation de Binga",
+        "Tonga de Gwembe — dialecte cote zambienne, tres proche du tonga zimbabween"
       ],
       "vehicularRole": "Langue majeure du sud de la Zambie (Southern Province). Parlee par environ 1,38 million de personnes en Zambie et 137 000 au Zimbabwe selon Ethnologue. Langue vehiculaire regionale dans les districts du sud zambien. A distinguer du Chitonga du Malawi qui est un dialecte du Chitumbuka."
     },
@@ -90,6 +138,11 @@
           "country": "ZWE",
           "population": 300000,
           "notes": "District de Binga, Kariba, zones de Matabeleland Nord"
+        },
+        {
+          "country": "MOZ",
+          "population": 100000,
+          "note": "Mozambique - minorite dans les provinces du nord-ouest"
         }
       ]
     },
@@ -129,6 +182,90 @@
         "url": "https://www.sciencedirect.com/science/article/pii/S146290112300028X",
         "tier": "referenced",
         "notes": "Tier resolved from the domain ruling for sciencedirect.com."
+      },
+      {
+        "title": "eHRAF World Cultures — Tonga (fq12)",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fq12/summary",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "The New Humanitarian — The Tonga: Left High and Dry (2007)",
+        "url": "https://www.thenewhumanitarian.org/report/74139/zambia-zimbabwe-tonga-left-high-and-dry",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for thenewhumanitarian.org."
+      },
+      {
+        "title": "Inclusive Human Learning — Zambia/Tonga/Forced Away",
+        "url": "https://inclusivehuman.org/zambia-tonga-forced-away/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers inclusivehuman.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Nkwazi Magazine — Lwiindi Gonde: A Harvest Ceremony of Gratitude",
+        "url": "https://nkwazimagazine.com/p-data-block-keylhrgplwiindi-gonde-a-harvest-ceremony-of-gratitudep/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for nkwazimagazine.com."
+      },
+      {
+        "title": "Encyclopedia.com — Leza",
+        "url": "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/leza",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for encyclopedia.com."
+      },
+      {
+        "title": "Facebook/Batonga — The Ancient Tonga Spiritual Hierarchy (Leza, Mizimo)",
+        "url": "https://www.facebook.com/groups/batonga/posts/10161294996454258/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "Tonga – Zambia's Traditional History",
+        "url": "https://traditionalzambia.home.blog/tribes-of-zambia/early-bantu-settlers/tonga/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for traditionalzambia.home.blog."
+      },
+      {
+        "title": "Tonga people – Chalo Chatu, Zambia Online Encyclopedia",
+        "url": "http://www.chalochatu.org/index.php?title=Tonga_people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for chalochatu.org."
+      },
+      {
+        "title": "Tonga (Batonga) Tribe – TribeGuess",
+        "url": "https://www.tribeguess.com/learn/tonga-zambia",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for tribeguess.com."
+      },
+      {
+        "title": "Mashingaidze T.M., The Zimbabwean Tonga in the aftermath of the Kariba Dam Induced Displacements – Journal of African Historical Studies, 2024",
+        "url": "https://www.jstage.jst.go.jp/article/jahss/9/1/9_21/_pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for jstage.jst.go.jp."
+      },
+      {
+        "title": "International Rivers Resource Hub (1995/2007) — Legacy of Dams on the Zambezi",
+        "url": "https://riverresourcehub.org/resources/legacy-of-dams-on-the-zambezi-group-works-to-right-wrongs-at-kariba-dam-1995/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers riverresourcehub.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Colson, Elizabeth (1971) — The Social Consequences of Resettlement. Manchester University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Zimtribes.com — Tonga Tribes, clans and political organization",
+        "url": "https://www.blog.zimtribes.com/tonga-groups/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers blog.zimtribes.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Smithsonian Folkways — Dance Songs with Drums from the Valley Tonga",
+        "url": "https://folkways.si.edu/dance-songs-with-drums-from-the-valley-tonga-people-of-zambia/world/music/album/smithsonian",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for folkways.si.edu."
       }
     ]
   }

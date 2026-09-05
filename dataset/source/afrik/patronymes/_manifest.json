@@ -5,8 +5,9 @@
   "reviewStatus": "selection_review_required",
   "familyCounts": {
     "FLG_MANDE": 10,
-    "FLG_NIGERCONGO": 12,
+    "FLG_NIGERCONGO": 8,
     "FLG_ATLANTIQUE": 1,
+    "FLG_BANTU": 4,
     "FLG_SEMITIQUE": 4,
     "FLG_BERBERE": 2,
     "FLG_BENOUECONGO": 1
@@ -522,20 +523,20 @@
       "id": "PAT_FFUMBE",
       "name": "Ffumbe",
       "nameSystem": "totemic_clan",
-      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "primaryLinguisticFamilyId": "FLG_BANTU",
       "selectionBasis": "corpus",
       "familyEvidence": {
-        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
-        "sourceFicheId": "PPL_GANDA",
-        "linguisticFamilyId": "FLG_NIGERCONGO"
+        "file": "dataset/source/afrik/peuples/FLG_BANTU/PPL_BAGANDA.json",
+        "sourceFicheId": "PPL_BAGANDA",
+        "linguisticFamilyId": "FLG_BANTU"
       },
       "corpusPassages": [
         {
-          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
-          "sourceFicheId": "PPL_GANDA",
-          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "file": "dataset/source/afrik/peuples/FLG_BANTU/PPL_BAGANDA.json",
+          "sourceFicheId": "PPL_BAGANDA",
+          "linguisticFamilyId": "FLG_BANTU",
           "fieldPath": "content.organization.clanOrganization",
-          "excerpt": "Plus de 52 clans (ebika) reconnus, chacun avec un totem principal (omuziro) et un totem secondaire (akabbiro). Les cinq clans originels (banansangwa) sont : Ffumbe (civette), Lugave (pangolin), Ngonge (otarie), Njaza (rat), Nnyonyi (oiseau). Parmi les clans importants : Mmamba (lungfish, dont le Gabunga amiral de la flotte royale), Ngabi (impala, dont la lignee du Kabaka), Mpologoma (lion). Chaque clan a un chef (owokasolya) et une hierarchie interne : ssiga, mutuba, lunyiriri, ennyumba (maison/famille nucleaire). Le mariage est exogame : un Muganda ne peut epouser quelqu'un de son propre clan.",
+          "excerpt": "Plus de 52 clans (ebika) reconnus, chacun avec un totem principal (omuziro) et un totem secondaire (akabbiro). Les cinq clans originels (banansangwa) sont : Ffumbe (civette), Lugave (pangolin), Ngonge (otarie), Njaza (rat), Nnyonyi (oiseau). Parmi les clans importants : Mmamba (lungfish, dont le Gabunga amiral de la flotte royale), Ngabi (impala, dont la lignee du Kabaka), Mpologoma (lion). Chaque clan a un chef (owokasolya) et une hierarchie interne : ssiga, mutuba, lunyiriri, ennyumba (maison/famille nucleaire). Le mariage est exogame : un Muganda ne peut epouser quelqu'un de son propre clan. Une lecture en six niveaux est aussi rapportée : Akasolya (faîte), Amasiga (piliers), Ennyiriri, Emituba, Enzigya (niveau du grand-père paternel), Ennyumba (maison-famille nucléaire) ; le Kabaka est le chef suprême des chefs de clan (Abataka).",
           "inheritedTier": null,
           "tierResolution": "review_required",
           "sourceReviewStatus": "unreviewed"
@@ -549,20 +550,20 @@
       "id": "PAT_LUGAVE",
       "name": "Lugave",
       "nameSystem": "totemic_clan",
-      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "primaryLinguisticFamilyId": "FLG_BANTU",
       "selectionBasis": "corpus",
       "familyEvidence": {
-        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
-        "sourceFicheId": "PPL_GANDA",
-        "linguisticFamilyId": "FLG_NIGERCONGO"
+        "file": "dataset/source/afrik/peuples/FLG_BANTU/PPL_BAGANDA.json",
+        "sourceFicheId": "PPL_BAGANDA",
+        "linguisticFamilyId": "FLG_BANTU"
       },
       "corpusPassages": [
         {
-          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
-          "sourceFicheId": "PPL_GANDA",
-          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "file": "dataset/source/afrik/peuples/FLG_BANTU/PPL_BAGANDA.json",
+          "sourceFicheId": "PPL_BAGANDA",
+          "linguisticFamilyId": "FLG_BANTU",
           "fieldPath": "content.organization.clanOrganization",
-          "excerpt": "Plus de 52 clans (ebika) reconnus, chacun avec un totem principal (omuziro) et un totem secondaire (akabbiro). Les cinq clans originels (banansangwa) sont : Ffumbe (civette), Lugave (pangolin), Ngonge (otarie), Njaza (rat), Nnyonyi (oiseau). Parmi les clans importants : Mmamba (lungfish, dont le Gabunga amiral de la flotte royale), Ngabi (impala, dont la lignee du Kabaka), Mpologoma (lion). Chaque clan a un chef (owokasolya) et une hierarchie interne : ssiga, mutuba, lunyiriri, ennyumba (maison/famille nucleaire). Le mariage est exogame : un Muganda ne peut epouser quelqu'un de son propre clan.",
+          "excerpt": "Plus de 52 clans (ebika) reconnus, chacun avec un totem principal (omuziro) et un totem secondaire (akabbiro). Les cinq clans originels (banansangwa) sont : Ffumbe (civette), Lugave (pangolin), Ngonge (otarie), Njaza (rat), Nnyonyi (oiseau). Parmi les clans importants : Mmamba (lungfish, dont le Gabunga amiral de la flotte royale), Ngabi (impala, dont la lignee du Kabaka), Mpologoma (lion). Chaque clan a un chef (owokasolya) et une hierarchie interne : ssiga, mutuba, lunyiriri, ennyumba (maison/famille nucleaire). Le mariage est exogame : un Muganda ne peut epouser quelqu'un de son propre clan. Une lecture en six niveaux est aussi rapportée : Akasolya (faîte), Amasiga (piliers), Ennyiriri, Emituba, Enzigya (niveau du grand-père paternel), Ennyumba (maison-famille nucléaire) ; le Kabaka est le chef suprême des chefs de clan (Abataka).",
           "inheritedTier": null,
           "tierResolution": "review_required",
           "sourceReviewStatus": "unreviewed"
@@ -576,20 +577,20 @@
       "id": "PAT_NGONGE",
       "name": "Ngonge",
       "nameSystem": "totemic_clan",
-      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "primaryLinguisticFamilyId": "FLG_BANTU",
       "selectionBasis": "corpus",
       "familyEvidence": {
-        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
-        "sourceFicheId": "PPL_GANDA",
-        "linguisticFamilyId": "FLG_NIGERCONGO"
+        "file": "dataset/source/afrik/peuples/FLG_BANTU/PPL_BAGANDA.json",
+        "sourceFicheId": "PPL_BAGANDA",
+        "linguisticFamilyId": "FLG_BANTU"
       },
       "corpusPassages": [
         {
-          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
-          "sourceFicheId": "PPL_GANDA",
-          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "file": "dataset/source/afrik/peuples/FLG_BANTU/PPL_BAGANDA.json",
+          "sourceFicheId": "PPL_BAGANDA",
+          "linguisticFamilyId": "FLG_BANTU",
           "fieldPath": "content.organization.clanOrganization",
-          "excerpt": "Plus de 52 clans (ebika) reconnus, chacun avec un totem principal (omuziro) et un totem secondaire (akabbiro). Les cinq clans originels (banansangwa) sont : Ffumbe (civette), Lugave (pangolin), Ngonge (otarie), Njaza (rat), Nnyonyi (oiseau). Parmi les clans importants : Mmamba (lungfish, dont le Gabunga amiral de la flotte royale), Ngabi (impala, dont la lignee du Kabaka), Mpologoma (lion). Chaque clan a un chef (owokasolya) et une hierarchie interne : ssiga, mutuba, lunyiriri, ennyumba (maison/famille nucleaire). Le mariage est exogame : un Muganda ne peut epouser quelqu'un de son propre clan.",
+          "excerpt": "Plus de 52 clans (ebika) reconnus, chacun avec un totem principal (omuziro) et un totem secondaire (akabbiro). Les cinq clans originels (banansangwa) sont : Ffumbe (civette), Lugave (pangolin), Ngonge (otarie), Njaza (rat), Nnyonyi (oiseau). Parmi les clans importants : Mmamba (lungfish, dont le Gabunga amiral de la flotte royale), Ngabi (impala, dont la lignee du Kabaka), Mpologoma (lion). Chaque clan a un chef (owokasolya) et une hierarchie interne : ssiga, mutuba, lunyiriri, ennyumba (maison/famille nucleaire). Le mariage est exogame : un Muganda ne peut epouser quelqu'un de son propre clan. Une lecture en six niveaux est aussi rapportée : Akasolya (faîte), Amasiga (piliers), Ennyiriri, Emituba, Enzigya (niveau du grand-père paternel), Ennyumba (maison-famille nucléaire) ; le Kabaka est le chef suprême des chefs de clan (Abataka).",
           "inheritedTier": null,
           "tierResolution": "review_required",
           "sourceReviewStatus": "unreviewed"
@@ -603,20 +604,20 @@
       "id": "PAT_NJAZA",
       "name": "Njaza",
       "nameSystem": "totemic_clan",
-      "primaryLinguisticFamilyId": "FLG_NIGERCONGO",
+      "primaryLinguisticFamilyId": "FLG_BANTU",
       "selectionBasis": "corpus",
       "familyEvidence": {
-        "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
-        "sourceFicheId": "PPL_GANDA",
-        "linguisticFamilyId": "FLG_NIGERCONGO"
+        "file": "dataset/source/afrik/peuples/FLG_BANTU/PPL_BAGANDA.json",
+        "sourceFicheId": "PPL_BAGANDA",
+        "linguisticFamilyId": "FLG_BANTU"
       },
       "corpusPassages": [
         {
-          "file": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_GANDA.json",
-          "sourceFicheId": "PPL_GANDA",
-          "linguisticFamilyId": "FLG_NIGERCONGO",
+          "file": "dataset/source/afrik/peuples/FLG_BANTU/PPL_BAGANDA.json",
+          "sourceFicheId": "PPL_BAGANDA",
+          "linguisticFamilyId": "FLG_BANTU",
           "fieldPath": "content.organization.clanOrganization",
-          "excerpt": "Plus de 52 clans (ebika) reconnus, chacun avec un totem principal (omuziro) et un totem secondaire (akabbiro). Les cinq clans originels (banansangwa) sont : Ffumbe (civette), Lugave (pangolin), Ngonge (otarie), Njaza (rat), Nnyonyi (oiseau). Parmi les clans importants : Mmamba (lungfish, dont le Gabunga amiral de la flotte royale), Ngabi (impala, dont la lignee du Kabaka), Mpologoma (lion). Chaque clan a un chef (owokasolya) et une hierarchie interne : ssiga, mutuba, lunyiriri, ennyumba (maison/famille nucleaire). Le mariage est exogame : un Muganda ne peut epouser quelqu'un de son propre clan.",
+          "excerpt": "Plus de 52 clans (ebika) reconnus, chacun avec un totem principal (omuziro) et un totem secondaire (akabbiro). Les cinq clans originels (banansangwa) sont : Ffumbe (civette), Lugave (pangolin), Ngonge (otarie), Njaza (rat), Nnyonyi (oiseau). Parmi les clans importants : Mmamba (lungfish, dont le Gabunga amiral de la flotte royale), Ngabi (impala, dont la lignee du Kabaka), Mpologoma (lion). Chaque clan a un chef (owokasolya) et une hierarchie interne : ssiga, mutuba, lunyiriri, ennyumba (maison/famille nucleaire). Le mariage est exogame : un Muganda ne peut epouser quelqu'un de son propre clan. Une lecture en six niveaux est aussi rapportée : Akasolya (faîte), Amasiga (piliers), Ennyiriri, Emituba, Enzigya (niveau du grand-père paternel), Ennyumba (maison-famille nucléaire) ; le Kabaka est le chef suprême des chefs de clan (Abataka).",
           "inheritedTier": null,
           "tierResolution": "review_required",
           "sourceReviewStatus": "unreviewed"

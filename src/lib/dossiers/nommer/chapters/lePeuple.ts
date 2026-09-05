@@ -25,7 +25,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
     figureRefs: ["corpus-exonyms", "corpus-autonyms"],
   },
   measure: {
-    value: "3 201",
+    value: "3 141",
     unit: "exonymes recensés",
     sourceRefs: [],
     figureRefs: ["corpus-exonyms"],
@@ -37,7 +37,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
       heading: "La mesure, et ce qu'elle ne mesure pas",
       blocks: [
         {
-          text: "Les huit cents fiches de peuple de l'atlas recensent 3 201 noms donnés de l'extérieur, contre 798 noms que les intéressés revendiquent. Quatre pour un.",
+          text: "Les 775 fiches de peuple de l'atlas recensent 3 141 noms donnés de l'extérieur, contre 773 noms que les intéressés revendiquent. Quatre pour un.",
           sourceRefs: [],
           figureRefs: ["corpus-peoples", "corpus-exonyms", "corpus-autonyms"],
         },
@@ -47,7 +47,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
           figureRefs: [],
         },
         {
-          text: "Sur la classification de leur propre nom, les fiches disent trois choses. 460 déclarent leur appellation contestée ou héritée de la colonisation. 19 déclarent autre chose. Et 321 ne déclarent rien du tout.",
+          text: "Sur la classification de leur propre nom, les fiches disent trois choses. 445 déclarent leur appellation contestée ou héritée de la colonisation. 19 déclarent autre chose. Et 311 ne déclarent rien du tout.",
           sourceRefs: [],
           figureRefs: [
             "status-contested-or-colonial",
@@ -75,13 +75,13 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
       ],
       table: {
         caption:
-          "Radicaux relevés dans les champs « origine des exonymes » et « pourquoi c'est problématique » des 800 fiches. Un sondage lexical, pas un codage : les mentions se recoupent.",
+          "Radicaux relevés dans les champs « origine des exonymes » et « pourquoi c'est problématique » des 775 fiches. Un sondage lexical, pas un codage : les mentions se recoupent.",
         columns: ["Radical relevé", "Fiches", "Ce qu'on y lit le plus souvent"],
         rows: [
           {
             cells: [
               "colonial",
-              "242",
+              "239",
               "Le nom est daté de la colonisation, ou officialisé par elle",
             ],
             sourceRefs: [],
@@ -90,21 +90,21 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
           {
             cells: [
               "administr-",
-              "184",
+              "179",
               "Le nom est un acte de recensement avant d'être un fait de langue",
             ],
             sourceRefs: [],
             figureRefs: ["probe-administration"],
           },
           {
-            cells: ["europ-", "124", "Navigateurs, explorateurs, cartographes"],
+            cells: ["europ-", "118", "Navigateurs, explorateurs, cartographes"],
             sourceRefs: [],
             figureRefs: ["probe-european"],
           },
           {
             cells: [
               "voisin",
-              "120",
+              "112",
               "Un exonyme africain, donné par un peuple voisin — souvent le plus ancien de tous",
             ],
             sourceRefs: [],
@@ -113,7 +113,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
           {
             cells: [
               "dépréciatif et voisins",
-              "87",
+              "85",
               "La fiche qualifie explicitement le mot de péjoratif, dépréciatif, moqueur ou dérisoire",
             ],
             sourceRefs: [],
@@ -122,7 +122,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
           {
             cells: [
               "portugais",
-              "84",
+              "83",
               "La strate la plus profonde de la côte atlantique, dès le XVe siècle",
             ],
             sourceRefs: [],
@@ -131,7 +131,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
           {
             cells: [
               "arab-",
-              "75",
+              "74",
               "Antérieur à l'Europe sur le Sahel et la côte orientale",
             ],
             sourceRefs: [],
@@ -140,7 +140,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
           {
             cells: [
               "swahili",
-              "73",
+              "68",
               "Une langue véhiculaire devenue instrument de désignation",
             ],
             sourceRefs: [],
@@ -283,7 +283,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
           figureRefs: ["exonyms-imposed-by-administration"],
         },
         {
-          text: "Et il reste les 321 fiches muettes. Elles ne disent pas que tout va bien : elles disent que personne n'a encore regardé. C'est la première dette de ce dossier envers son propre corpus.",
+          text: "Et il reste les 311 fiches muettes. Elles ne disent pas que tout va bien : elles disent que personne n'a encore regardé. C'est la première dette de ce dossier envers son propre corpus.",
           sourceRefs: [],
           figureRefs: ["status-undeclared"],
         },

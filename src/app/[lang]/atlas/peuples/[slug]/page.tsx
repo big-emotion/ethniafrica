@@ -9,6 +9,7 @@ import {
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import { ficheCanonical } from "@/lib/seo/ficheCanonical";
 import { getPeopleRoute } from "@/lib/routing";
+import { RETIRED_PEOPLE_IDS } from "@/lib/afrik/retiredPeopleIds";
 import type { Language } from "@/types/shared";
 import {
   getPeopleRevisionSnapshot,
@@ -57,6 +58,23 @@ interface PageParams {
   slug: string;
 }
 
+/**
+ * A merged or renamed people keeps its old URL alive by redirecting to the
+ * fiche that absorbed it. Decided from the ledger before any corpus read, and
+ * from `generateMetadata` as well as the body, because the old row may already
+ * have been pruned from the database — the existence check would otherwise
+ * answer a 404 to a URL the atlas still owes its readers.
+ *
+ * A pinned or @latest suffix is dropped: the successor carries its own
+ * revision history, and the retired one is not served any more.
+ */
+function redirectRetiredPeople(lang: Language, peopleId?: string): void {
+  const successorId = peopleId ? RETIRED_PEOPLE_IDS[peopleId] : undefined;
+  if (successorId) {
+    redirect(getPeopleRoute(lang, successorId));
+  }
+}
+
 // @req REQ-091
 export async function generateMetadata({
   params,
@@ -71,6 +89,7 @@ export async function generateMetadata({
   // late to change the status. `generateMetadata` runs before the flush, and
   // `loadPeopleFiche` is request-cached so the page reuses this load.
   const parsedForExistence = parseVersionedSlug(decodeURIComponent(slug));
+  redirectRetiredPeople(lang as Language, parsedForExistence?.slug);
   if (
     parsedForExistence?.mode === "live" &&
     (await isFicheKnownAbsent(loadPeopleFiche, parsedForExistence.slug))
@@ -96,6 +115,7 @@ export default async function PeoplesSlugPage({
   if (!parsed) {
     notFound();
   }
+  redirectRetiredPeople(lang as Language, parsed.slug);
 
   // @latest → resolve max version, then redirect
   if (parsed.mode === "latest") {

@@ -1,18 +1,18 @@
 {
-  "id": "PPL_LUBA_KASAI2",
-  "nameMain": "Luba (Kasai) — Variante Lulua",
+  "id": "PPL_LULUA",
+  "nameMain": "Lulua",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COD"],
   "content": {
     "appellations": {
-      "mainName": "Luba-Kasai (variante Lulua)",
+      "mainName": "Lulua",
       "selfAppellation": "Bena-Lulua / Luluwa",
       "exonyms": [
+        "Luba (Kasai) — variante Lulua",
         "Lulua (terme geographique tire de la riviere Lulua)",
         "Luluwa (variante orthographique)",
         "Bena-Lulua (litteralement 'gens de la Lulua')",
-        "Luba-Lulua (designation ISO 639)",
-        "Luba (Kasai 2) (designation de base de donnees EthniAfrica)"
+        "Luba-Lulua (designation ISO 639)"
       ],
       "originOfExonyms": "Le nom Bena-Lulua (ou Luluwa) fait reference a la riviere Lulua, affluent du Kasai, dans la vallee de laquelle vit principalement ce groupe. Le terme Lulua fut adopte par les administrateurs coloniaux belges pour distinguer ce sous-groupe luba occidental des Baluba orientaux du Kasai-Oriental. Dans la classification ISO 639, le terme officiel est Luba-Lulua (L31b), variant occidental du Tshiluba.",
       "contemporaryUsage": "Les membres de ce groupe se designent comme Bena-Lulua ou Luluwa, distincts des Baluba du Kasai-Oriental. Ils partagent la langue tshiluba mais avec un dialecte distinct (Cena-Luluwa/L31b). Dans le contexte politique congolais post-independence, les Lulua et les Luba formerent deux factions distinctes lors des violences de 1959-1960. Aujourd'hui, cette distinction est toujours reconnue socialement et politiquement.",

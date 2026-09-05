@@ -889,6 +889,318 @@ export function checkPplDuplicates(datasetRoot: string): ValidationResult {
   return { ok: errors.length === 0, errors, warnings };
 }
 
+/**
+ * The adjudication ledger of people identifiers that no longer exist as fiches.
+ *
+ * It sits at the corpus root, not under `peuples/`: every walker of that
+ * directory — `collectPplFiles`, the people loader, the classification-status
+ * contract suite — reads whatever `.json` it finds there and would parse the
+ * ledger as a fiche. The `_` prefix keeps it out of the editorial-rules gate
+ * the way the other curator worksheets are.
+ */
+export const RETIRED_IDENTIFIERS_LEDGER = "_retired-identifiers.json";
+
+const RETIREMENT_DECISIONS = new Set(["merged", "renamed", "kept-distinct"]);
+
+interface RetiredIdentifierEntry {
+  decision?: unknown;
+  retiredId?: unknown;
+  successorId?: unknown;
+  reason?: unknown;
+  decidedOn?: unknown;
+}
+
+function loadRetiredIdentifiers(datasetRoot: string): {
+  entries: RetiredIdentifierEntry[];
+  error: string | null;
+} {
+  const ledgerPath = path.join(datasetRoot, RETIRED_IDENTIFIERS_LEDGER);
+  if (!fs.existsSync(ledgerPath)) return { entries: [], error: null };
+  try {
+    const parsed = JSON.parse(fs.readFileSync(ledgerPath, "utf-8"));
+    if (!Array.isArray(parsed)) {
+      return {
+        entries: [],
+        error: `${RETIRED_IDENTIFIERS_LEDGER}: must be an array of decisions`,
+      };
+    }
+    return { entries: parsed as RetiredIdentifierEntry[], error: null };
+  } catch (err) {
+    return {
+      entries: [],
+      error: `${RETIRED_IDENTIFIERS_LEDGER}: could not parse JSON (${String(err)})`,
+    };
+  }
+}
+
+/** retired id → successor id, for the ledger's merged and renamed entries. */
+function retiredSuccessors(datasetRoot: string): Map<string, string> {
+  const successors = new Map<string, string>();
+  for (const entry of loadRetiredIdentifiers(datasetRoot).entries) {
+    if (
+      entry.decision !== "kept-distinct" &&
+      typeof entry.retiredId === "string" &&
+      typeof entry.successorId === "string"
+    ) {
+      successors.set(entry.retiredId, entry.successorId);
+    }
+  }
+  return successors;
+}
+
+function existingPeopleIds(datasetRoot: string): Set<string> {
+  return new Set(
+    collectPplFiles(datasetRoot).map(({ file }) => path.basename(file, ".json"))
+  );
+}
+
+interface PeopleReference {
+  file: string;
+  fieldPath: string;
+  peopleId: string;
+}
+
+/**
+ * Every place a class of the corpus names a people. Listed explicitly rather
+ * than found by scanning for `PPL_`-shaped strings: prose mentions and worksheet
+ * candidates are not references, and a scan would report them as broken links.
+ */
+function collectPeopleReferences(datasetRoot: string): PeopleReference[] {
+  const references: PeopleReference[] = [];
+
+  const readClass = (
+    dir: string,
+    visit: (data: Record<string, unknown>, file: string) => void
+  ) => {
+    const classDir = path.join(datasetRoot, dir);
+    if (!fs.existsSync(classDir)) return;
+    for (const file of fs.readdirSync(classDir).sort()) {
+      // `_`-prefixed files are curator worksheets and `*TEMPLATE*` files are
+      // blank models; neither declares a link the corpus relies on.
+      if (
+        !file.endsWith(".json") ||
+        file.startsWith("_") ||
+        file.includes("TEMPLATE")
+      ) {
+        continue;
+      }
+      let data: Record<string, unknown>;
+      try {
+        data = JSON.parse(
+          fs.readFileSync(path.join(classDir, file), "utf-8")
+        ) as Record<string, unknown>;
+      } catch {
+        continue;
+      }
+      visit(data, `${dir}/${file}`);
+    }
+  };
+
+  const push = (file: string, fieldPath: string, peopleId: unknown) => {
+    if (typeof peopleId === "string" && peopleId.length > 0) {
+      references.push({ file, fieldPath, peopleId });
+    }
+  };
+
+  const pushEach = (
+    file: string,
+    fieldPath: string,
+    list: unknown,
+    key: string
+  ) => {
+    if (!Array.isArray(list)) return;
+    list.forEach((item, index) => {
+      const value =
+        item && typeof item === "object"
+          ? (item as Record<string, unknown>)[key]
+          : item;
+      push(file, `${fieldPath}[${index}].${key}`, value);
+    });
+  };
+
+  readClass("pays", (data, file) => {
+    const content = (data.content ?? {}) as Record<string, unknown>;
+    pushEach(file, "content.majorPeoples", content.majorPeoples, "peopleId");
+    const demographics = (content.demographics ?? {}) as Record<
+      string,
+      unknown
+    >;
+    pushEach(
+      file,
+      "content.demographics.peoples",
+      demographics.peoples,
+      "peopleId"
+    );
+  });
+
+  readClass("famille_linguistique", (data, file) => {
+    const content = (data.content ?? {}) as Record<string, unknown>;
+    pushEach(
+      file,
+      "content.associatedPeoples",
+      content.associatedPeoples,
+      "peopleId"
+    );
+  });
+
+  readClass("relations", (data, file) => {
+    push(file, "peopleIdA", data.peopleIdA);
+    push(file, "peopleIdB", data.peopleIdB);
+  });
+
+  readClass("noms", (data, file) => {
+    push(file, "id", data.id);
+  });
+
+  readClass("migrations", (data, file) => {
+    pushEach(file, "peoplesInvolved", data.peoplesInvolved, "id");
+  });
+
+  readClass("patronymes", (data, file) => {
+    pushEach(file, "peoples", data.peoples, "peopleId");
+  });
+
+  readClass("systemes_onomastiques", (data, file) => {
+    const list = data.associatedPeoples;
+    if (!Array.isArray(list)) return;
+    list.forEach((item, index) => {
+      const value =
+        item && typeof item === "object"
+          ? (item as Record<string, unknown>).peopleId
+          : item;
+      push(file, `associatedPeoples[${index}]`, value);
+    });
+  });
+
+  return references;
+}
+
+/**
+ * FR27 – The retired-identifiers ledger is the only place a merge or rename of
+ * a people id is recorded, so it must describe the corpus as it is: a retired
+ * id has no fiche, its successor has one and is not itself retired (a redirect
+ * lands in one hop), and a kept-distinct pair still has both fiches, so the
+ * pair is not re-examined by the next duplicate scan.
+ */
+export function checkRetiredIdentifiers(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const { entries, error } = loadRetiredIdentifiers(datasetRoot);
+  if (error) return { ok: false, errors: [error], warnings };
+  if (entries.length === 0) return { ok: true, errors, warnings };
+
+  const fiches = existingPeopleIds(datasetRoot);
+  const retired = new Set<string>();
+
+  entries.forEach((entry, index) => {
+    const where = `${RETIRED_IDENTIFIERS_LEDGER}[${index}]`;
+    const { decision, retiredId, successorId, reason, decidedOn } = entry;
+
+    if (typeof retiredId !== "string" || !/^PPL_[A-Z0-9_]+$/.test(retiredId)) {
+      errors.push(`${where}: retiredId must be a PPL_ identifier`);
+      return;
+    }
+    if (typeof decision !== "string" || !RETIREMENT_DECISIONS.has(decision)) {
+      errors.push(
+        `${where} (${retiredId}): decision must be merged, renamed or kept-distinct`
+      );
+    }
+    if (typeof reason !== "string" || reason.trim().length < 20) {
+      errors.push(`${where} (${retiredId}): a decision needs a written reason`);
+    }
+    if (
+      typeof decidedOn !== "string" ||
+      !/^\d{4}-\d{2}-\d{2}$/.test(decidedOn)
+    ) {
+      errors.push(`${where} (${retiredId}): decidedOn must be an ISO date`);
+    }
+
+    if (decision === "kept-distinct") {
+      if (successorId !== null && successorId !== undefined) {
+        errors.push(
+          `${where} (${retiredId}): a kept-distinct decision has no successor`
+        );
+      }
+      if (!fiches.has(retiredId)) {
+        errors.push(
+          `${where}: ${retiredId} is kept distinct but has no fiche file`
+        );
+      }
+      return;
+    }
+
+    retired.add(retiredId);
+    if (fiches.has(retiredId)) {
+      errors.push(
+        `${where}: ${retiredId} is retired but still exists as a fiche file`
+      );
+    }
+    if (typeof successorId !== "string") {
+      errors.push(
+        `${where} (${retiredId}): a ${String(decision)} decision needs a successorId`
+      );
+      return;
+    }
+    if (!fiches.has(successorId)) {
+      errors.push(
+        `${where}: ${retiredId} → ${successorId}, but the successor has no fiche file`
+      );
+    }
+  });
+
+  const successors = retiredSuccessors(datasetRoot);
+  for (const [retiredId, successorId] of successors) {
+    if (successors.has(successorId)) {
+      errors.push(
+        `${RETIRED_IDENTIFIERS_LEDGER}: ${retiredId} → ${successorId}, but the successor is itself retired — a redirect must land in one hop`
+      );
+    }
+  }
+
+  for (const { file, fieldPath, peopleId } of collectPeopleReferences(
+    datasetRoot
+  )) {
+    if (successors.has(peopleId)) {
+      warnings.push(
+        `${file}: ${fieldPath} still names the retired id ${peopleId} — repoint it to ${successors.get(peopleId)}`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * FR27 – Every people reference the corpus declares resolves to a fiche, or to
+ * a retired id whose successor does. Countries, families, relations, name
+ * dossiers, migrations, patronyms and onomastic systems all name peoples, and
+ * until this check existed only three of those classes were resolved anywhere,
+ * so a country could point at a fiche that had been deleted for months.
+ */
+export function checkPeopleReferencesResolve(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const fiches = existingPeopleIds(datasetRoot);
+  const successors = retiredSuccessors(datasetRoot);
+
+  for (const { file, fieldPath, peopleId } of collectPeopleReferences(
+    datasetRoot
+  )) {
+    if (fiches.has(peopleId)) continue;
+    const successorId = successors.get(peopleId);
+    if (successorId && fiches.has(successorId)) continue;
+    errors.push(
+      `${file}: ${fieldPath} names ${peopleId}, which has no fiche and no successor`
+    );
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
 const WIKIDATA_ID_PATTERN = /^Q[1-9][0-9]*$/;
 const GLOTTOCODE_PATTERN = /^[a-z]{4}[0-9]{4}$/;
 // ISO_639_3_PATTERN is declared once, near the top of the file, and reused here.
@@ -4064,9 +4376,17 @@ export function checkTranslationClassCoverage(
  * once every country's percentageInCountry split landed inside [99, 101]:
  * softening a check is a deliberate, visible decision, not a flag buried in a
  * registration.
+ *
+ * FR27-references is advisory for the same reason FR28 once was: measured on
+ * 2026-09-05, the corpus already carried 43 references to ids that have no
+ * fiche — placeholders such as PPL_AUTRES_GROUPES that the percentage sums
+ * rely on, truncated ids such as PPL_MO, and family lists naming peoples never
+ * written. Retired ids are not in that tail: FR27 Retired identifiers stays a
+ * hard error, so a merge or rename cannot leave a link behind.
  */
 export const SOFT_CHECK_NAMES: ReadonlySet<string> = new Set([
   "FR52-coverage People-to-language coverage",
+  "FR27-references People references resolve",
 ]);
 
 export interface IntegrityCheck {
@@ -4216,6 +4536,18 @@ async function main() {
   newChecks.push({
     name: "FR27 PPL duplicates",
     result: checkPplDuplicates(datasetRoot),
+  });
+
+  console.log("FR27 – Retired identifiers ledger...");
+  newChecks.push({
+    name: "FR27 Retired identifiers",
+    result: checkRetiredIdentifiers(datasetRoot),
+  });
+
+  console.log("FR27 – People references resolve...");
+  newChecks.push({
+    name: "FR27-references People references resolve",
+    result: checkPeopleReferencesResolve(datasetRoot),
   });
 
   console.log("ETNI-1391 – People-group consistency...");
