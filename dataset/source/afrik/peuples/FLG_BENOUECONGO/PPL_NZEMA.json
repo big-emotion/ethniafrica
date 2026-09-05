@@ -3,6 +3,7 @@
   "nameMain": "Nzema",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["GHA", "CIV"],
+  "classificationStatus": "consensual",
   "content": {
     "appellations": {
       "mainName": "Nzema",
@@ -49,6 +50,11 @@
       ],
       "vehicularRole": "Langue vernaculaire des Nzema du Ghana et de Côte d'Ivoire. Environ 658 000 locuteurs (Peoplegroups.org, 2023). Appartient au groupe Kwa (sous-groupe Bia occidental) de la famille Niger-Congo. Code ISO 639-3 : nzi. La langue nzema figure parmi les langues locales d'enseignement au Ghana."
     },
+    "externalIdentifiers": {
+      "wikidataId": "Q1722812",
+      "glottocode": "nzim1238",
+      "iso639_3": "nzi"
+    },
     "culture": {
       "majorRites": "Festival Kundum : cérémonie annuelle d'actions de grâces pour la récolte, célébrée dans toute la zone Ahanta et Nzema (région occidentale du Ghana). Le festival commence à l'est du territoire Ahanta et progresse vers le sud-ouest en suivant la saison des récoltes locale. Il dure quatre semaines avec chants, danses et percussions rituelles. Origine : un chasseur nommé Akpoley découvrit des gnomes dansant en cercle dans la forêt, apprit leur danse et la rapporta à sa communauté. Cette danse devint le moyen de chasser les mauvais esprits. Célébré depuis au moins le XVIe siècle (première trace écrite par Bossman, XVIIe siècle).",
       "symbols": "Le Fort Apollonia de Beyin (inscrit au patrimoine mondial UNESCO en 1979) est devenu un symbole patrimonial. Il abrite le Musée de la Culture et de l'Histoire Nzema depuis 2010. Le nom Apollonia (Apolonia), donné par les Portugais, symbolise le contact entre monde nzema et monde européen.",
@@ -66,14 +72,8 @@
       "referenceYear": 2025,
       "source": "Peoplegroups.org (2023) : 658 000 Nzema dans le monde. Wikipedia Nzema people : environ 328 700 (estimation antérieure) dont 262 000 au Ghana et 66 700 en Côte d'Ivoire.",
       "distributionByCountry": [
-        {
-          "country": "GHA",
-          "population": 570000
-        },
-        {
-          "country": "CIV",
-          "population": 88000
-        }
+        { "country": "GHA", "population": 570000 },
+        { "country": "CIV", "population": 88000 }
       ]
     },
     "sources": [
@@ -106,6 +106,12 @@
         "url": "https://scholarlypublishingcollective.org/msup/jwah/article/10/2/140/399385/Shores-of-Slaves-Apollonia-in-the-Akan-World",
         "tier": "referenced",
         "notes": "Tier resolved from the domain ruling for scholarlypublishingcollective.org."
+      },
+      {
+        "title": "Glottolog 5.2 — Nzima [nzim1238]",
+        "url": "https://glottolog.org/resource/languoid/id/nzim1238",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\". Confirms glottocode nzim1238 and ISO 639-3 nzi, consistent with the fiche's existing isoCodes."
       }
     ]
   }

@@ -41,6 +41,11 @@
         "claim": "YorubaNames analyse Adébáyọ̀ comme adé-bá-ayọ̀ (« la royauté rencontre la joie ») ou a-dé-bá-ayọ̀ (« nous sommes arrivés dans la joie »). Une source pédagogique universitaire l'atteste séparément comme nom choisi pour un garçon né pendant une période de joie familiale.",
         "claimStatus": "established",
         "sourceRefs": ["yorubanames-adebayo", "merryfield-1989-yoruba"]
+      },
+      {
+        "claim": "Dans la typologie de l'onomastique yoruba, un nom comme Adébáyọ̀ — donné pour marquer la joie entourant une naissance — relève des orúkọ àmútọ̀runwá (noms dits « apportés du ciel », attribués selon les circonstances de la naissance), une catégorie que les chercheurs distinguent des oríkì proprement dits, qui sont des noms de louange célébrant une lignée ou des qualités. Cette classification précise le sens du prénom sans contredire son interprétation comme « la royauté rencontre la joie ».",
+        "claimStatus": "claimed",
+        "sourceRefs": ["fakuade-2020-yoruba-naming"]
       }
     ]
   },
@@ -86,32 +91,44 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Merry M. Merryfield (dir.), ERIC Clearinghouse et Social Studies Development Center, Indiana University, 1989, leçon 5, pp. 45-48 du document. Le PDF intégral a été consulté ; la liste des noms et significations est attribuée à E. B. Ogundimu."
+    },
+    {
+      "sourceKey": "fakuade-2020-yoruba-naming",
+      "title": "Yoruba personal naming system: Traditions, patterns and practices",
+      "url": "https://doi.org/10.1558/sols.37825",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article de Gbenga Fakuade, Joseph Friday-Otun et Hezekiah Adeosun paru dans la revue Sociolinguistic Studies (vol. 13, n° 2-4, 2020). Le résumé et des extraits indexés ont été consultés le 5 septembre 2026 ; le texte intégral n'était pas librement accessible. Cette étude distingue, dans la nomenclature des noms yoruba, les orúkọ àmútọ̀runwá (donnés selon les circonstances de la naissance) des oríkì, noms de louange proprement dits."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin.oralTraditions",
-      "reason": "Les recherches « Adebayo Yoruba oral tradition griot transcription » et « Adebayo oriki oral history » ainsi que le manuel universitaire de Merryfield (1989) et YorubaNames n'ont livré ni griot nommé ni transcription attribuable à cette forme."
+      "reason": "Aucune tradition orale ni parole de griot n'a pu être rattachée nommément à ce prénom."
     },
     {
       "fieldPath": "origin.writtenChronicles",
-      "reason": "Les recherches « Adebayo Yoruba chronicle manuscript colonial register » et « Adebayo archive Nigeria Benin » n'ont livré aucune chronique ni pièce d'archives établissant une histoire propre à cette forme."
+      "reason": "Aucune chronique manuscrite ni pièce d'archives propre à ce prénom n'a été retrouvée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Les recherches « Adebayo Yoruba joking relationship », « Adebayo joking kinship » et « Adebayo sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+      "reason": "Aucun lien de parenté à plaisanterie avec un autre nom n'a pu être établi pour ce prénom."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "le manuel universitaire de Merryfield (1989) et YorubaNames et les recherches « Adebayo Yoruba hereditary occupation caste title » n'ont associé ce nom à aucune fonction sociale héréditaire."
+      "reason": "Ce prénom n'est associé à aucune fonction sociale ou caste héréditaire dans les sources disponibles."
     },
     {
       "fieldPath": "bearers",
-      "reason": "le manuel universitaire de Merryfield (1989) et YorubaNames et les recherches « Adebayo obituary biography deceased » n'ont pas permis d'établir un porteur décédé avec une notice suffisamment fiable sans recourir à Wikipédia."
+      "reason": "Aucune personnalité décédée portant ce prénom n'a pu être associée à une source suffisamment fiable et indépendante de Wikipédia."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Les recherches « Adebayo homonym etymology » et « Adebayo surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
+      "reason": "Aucune graphie identique d'origine distincte n'a été relevée pour ce prénom."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "La présence de ce prénom en dehors du Nigeria — notamment au sein des communautés yoruba du Bénin ou du Togo — n'a pas pu être confirmée par une source propre à ce prénom."
     }
   ]
 }

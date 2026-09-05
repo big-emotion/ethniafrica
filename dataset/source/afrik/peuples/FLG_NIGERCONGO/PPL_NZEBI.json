@@ -40,7 +40,7 @@
     ],
     "origins": {
       "ancientOrigins": "Selon la tradition orale, les Nzebi sont originaires du village de Koto, situe dans la province de la Ngounié au Gabon. Leur ancetre eponyme Nzebi aurait donne naissance aux sept patriarches fondateurs des sept clans principaux. La tradition distingue deux grandes lignes : les Nzebi proprement dits (foret, heros Nzebi) et les Tsaangi (savane, heros Mbéli), qui ont fusionne en un seul groupe au cours d'une migration a une date indeterminee.",
-      "formationPeriod": "La consolidation du groupe Nzebi, incluant la fusion avec les Tsaangi, remonte probablement aux 17e-18e siecles. Les Nzebi etaient deja bien etablis dans le Gabon meridional lorsque les premiers explorateurs europeens penetrerent dans la region au 19e siecle. Ils furent decrits a cette epoque comme d'excellents commerçants a longue distance.",
+      "formationPeriod": "La consolidation du groupe Nzebi, incluant la fusion avec les Tsaangi, remonte probablement aux 17e-18e siecles. Les Nzebi etaient deja bien etablis dans le Gabon meridional lorsque les premiers explorateurs europeens penetrerent dans la region au 19e siecle. Ils furent decrits a cette epoque comme d'excellents commerçants a longue distance. Selon la these de Nestor Ide Righou (2005, Universite Paris 1), l'installation dans le Gabon actuel se situerait plutot vers le milieu du XVIIIe siecle, avec une premiere implantation pres de Moanda avant une dispersion vers le massif du Chaillu ; le groupe atteint la region du mont Makengi vers 1885.",
       "migrationRoutes": [
         "Migration depuis le village de Koto (Ngounié) vers les forets du Gabon meridional",
         "Expansion vers l'Ogooué-Lolo (est du Gabon)",
@@ -54,10 +54,10 @@
       ],
       "unificationsOrDivisions": "Fusion historique des Nzebi et Tsaangi en un groupe identitaire commun, malgre la preservation de deux recits d'origine distincts. Les douze clans actuels (sept issus de Nzebi, cinq issus de Mbéli) coexistent sans hierarchie territoriale fixe, leurs membres etant disperses sur l'ensemble du territoire. L'arrivee de l'economie monetaire coloniale a fragilise l'ordre clanique traditionnel en modifiant les circulations de richesses.",
       "externalInfluences": "Commerce avec les comptoirs europeens le long de l'Ogooué (19e siecle). Les Nzebi furent d'importants producteurs de caoutchouc naturel avant la colonisation francaise. La metalurgie du fer (Tsaangi) disparut apres l'intervention francaise vers 1920. Evangelisation par la Christian and Missionary Alliance a partir des annees 1930. Modernisation administrative, educative et economique sous la colonisation francaise et apres l'independance (1960).",
-      "majorHistoricalEvents": "Les Nzebi furent decrits par les explorateurs et missionnaires du 19e siecle comme un peuple industrieux et prospere participant activement au commerce a longue distance (caoutchouc, ivoire, arachides). La colonisation francaise a mis fin a la metallurgie traditionnelle des Tsaangi vers 1920. L'interdiction de la pratique de la circoncision-initiation au village (transferee en dispensaires dans les annees 1950) a entraine la disparition partielle de la transmission des savoirs claniques. Le Gabon independant (1960) a integre les Nzebi dans un Etat-nation sans modifier profondement leurs structures villageoises."
+      "majorHistoricalEvents": "Les Nzebi furent decrits par les explorateurs et missionnaires du 19e siecle comme un peuple industrieux et prospere participant activement au commerce a longue distance (caoutchouc, ivoire, arachides). La colonisation francaise a mis fin a la metallurgie traditionnelle des Tsaangi vers 1920. L'interdiction de la pratique de la circoncision-initiation au village (transferee en dispensaires dans les annees 1950) a entraine la disparition partielle de la transmission des savoirs claniques. Le Gabon independant (1960) a integre les Nzebi dans un Etat-nation sans modifier profondement leurs structures villageoises. L'administration coloniale francaise cree en 1915 le district des Bandjabis, une mesure que l'historien Nestor Ide Righou interprete comme une reponse a la resistance des populations locales a la soumission coloniale."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Societe fondamentalement egalitaire sans chefferie centralisee. L'organisation sociale repose sur les clans non territorialises et la solidarite villageoise. Les decisions sont prises collectivement lors de joutes oratoires (mikundukhu, mbomo) presidees par les muyambili (maitres de la parole). Les litiges sont resolus par la parole des muyambili selon des procedures codifiees.",
+      "traditionalPoliticalSystem": "Societe fondamentalement egalitaire sans chefferie centralisee. L'organisation sociale repose sur les clans non territorialises et la solidarite villageoise. Les decisions sont prises collectivement lors de joutes oratoires (mikundukhu, mbomo) presidees par les muyambili (maitres de la parole). Les litiges sont resolus par la parole des muyambili selon des procedures codifiees. Cette organisation, fondee sur une egalite de statut entre clans plutot que sur l'absence de toute autorite, a fait l'objet d'une etude monographique de reference par l'anthropologue Georges Dupre (2019).",
       "clanOrganization": "Douze clans patrilineaires non territorialises, disperses sur l'ensemble du territoire Nzebi. Sept clans sont issus du fondateur Nzebi, cinq du fondateur Mbéli (Tsaangi). L'appartenance clanique determine les droits matrimoniaux, les alliances et les obligations de solidarite. Chaque mariage est conclut par le versement d'une dot (mbwakha) qui lie les clans entre eux.",
       "ageClassSystems": null,
       "roleOfLineages": "Le muyambili (celui qui parle) est l'acteur essentiel detenteur de la memoire clanique. Distingue des l'enfance pour son attitude reservee, il reçoit une education approfondie de son oncle maternel ou d'un ancetre clanique, memorisant l'histoire, les devises et les formules de chaque clan. Son savoir sert lors des joutes oratoires (mikundukhu pour renouer les alliances, mbomo pour les conflits graves de divorce ou de meurtre).",
@@ -75,9 +75,14 @@
       ],
       "vehicularRole": "Le nzebi est parle par environ 140 000 personnes principalement dans le sud du Gabon et le sud-ouest du Congo. C'est une langue locale sans role vehiculaire etendu. Le francais est la langue officielle du Gabon et de la Republique du Congo, utilise dans l'administration, l'education et le commerce. Les Nzebi ont un taux d'alphabetisation en francais relativement eleve."
     },
+    "externalIdentifiers": {
+      "wikidataId": "Q2882351",
+      "glottocode": "njeb1242",
+      "iso639_3": "nzb"
+    },
     "culture": {
       "majorRites": "Rites de circoncision-initiation masculine (anciennement pratiques au village avec transmission des savoirs claniques par les muyambili ; depuis les annees 1950, pratique medicalisee en dispensaires, entrainant la disparition de la transmission initiatique). Ceremonies matrimoniales incluant echanges de dots (mbwakha) entre clans, acte fondateur des alliances inter-claniques. Ceremonies funebres avec partage collectif des denrees. Joutes oratoires ritualisees (mikundukhu et mbomo) pour le reglement des conflits et le renouvellement des alliances.",
-      "symbols": "Masque a face humaine (conserve au Musee du Quai Branly, Paris) aux couleurs bipartites — partie gauche bleue et partie droite blanche — symbolisant probablement la dualite Nzebi/Tsaangi ou les mondes des vivants et des morts. Bois padauk (Pterocarpus soyauxii) utilise pour la peinture corporelle rituelle. Instruments en fer forgé (Tsaangi) symboles de prestige.",
+      "symbols": "Masque a face humaine (conserve au Musee du Quai Branly, Paris) aux couleurs bipartites — partie gauche bleue et partie droite blanche — symbolisant probablement la dualite Nzebi/Tsaangi ou les mondes des vivants et des morts. Bois padauk (Pterocarpus soyauxii) utilise pour la peinture corporelle rituelle. Instruments en fer forgé (Tsaangi) symboles de prestige. Un masque nzebi bicolore (bleu et blanc), datable de la fin du XIXe ou du debut du XXe siecle, a rejoint les collections du Musee du quai Branly - Jacques Chirac en 2018, don de la Societe des Amis du musee finance lors d'un diner de gala ; il avait ete presente en 2017 dans l'exposition Les forets natales, arts de l'Afrique equatoriale atlantique.",
       "artsAndMusic": "Artisanat varie : vannerie, poterie (ceramique cuite sur feu ouvert), tissage sur metier vertical a une rangee de lisses (emprunte aux Teke), mobilier en bois (instruments de cuisine, peignes, tabourets). Metallurgie du fer chez les Tsaangi (minerai fondu dans des fours enterres, arrete vers 1920). Musique de chasse collective (organisation complexe de roles differencies). Litterature orale riche : proverbes, formules et recits historiques memorises par les muyambili. Cuisine aux nombreux legumes accompagnant viandes et poissons.",
       "spiritualities": "Religion traditionnelle Mbuti (animisme), centree sur les forces invisibles du monde naturel et la mediation des ancetres. Veneration des ancetres comme gardiens de la memoire et de l'ordre social. Croyance en des puissances spirituelles liees aux forets et aux eaux. Pratiques de divination et recours a des plantes medicinales. Syncrétisme prononce entre Mbuti et christianisme dans les villages contemporains. Majorite des Nzebi chretiens (congregations evangeliques et catholiques)."
     },
@@ -90,7 +95,7 @@
     "demography": {
       "totalPopulation": 227500,
       "referenceYear": 2025,
-      "source": "PeopleGroups.org (2024) : 198 000 au Gabon, 29 500 en Republique du Congo. Omniglot : ~140 000 locuteurs actifs. 101lasttribes.com : total global 227 500 en 2 pays.",
+      "source": "PeopleGroups.org (2024) : 198 000 au Gabon, 29 500 en Republique du Congo. Omniglot : ~140 000 locuteurs actifs. 101lasttribes.com : total global 227 500 en 2 pays. Le CIA World Factbook regroupe les Nzebi dans une categorie composite Nzabi-Duma, estimee a 11,2% de la population du Gabon (est. 2021) ; ce chiffre officiel confirme l'ordre de grandeur mais n'isole pas les Nzebi des Duma, contrairement aux estimations specifiques citees ci-dessus.",
       "distributionByCountry": [
         {
           "country": "GAB",
@@ -136,10 +141,46 @@
         "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
       },
       {
-        "title": "Musee du Quai Branly-Jacques Chirac — masque Nzebi (fin 19e-debut 20e siecle)",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "title": "Les Amis du musée du quai Branly – Jacques Chirac — \"Un rare masque nzebi offert au musée grâce au dîner de gala des Amis\" (3 juillet 2018)",
+        "url": "https://www.amisquaibranly.fr/un-rare-masque-nzebi-offert-au-musee-grace-au-diner-de-gala-des-amis/",
+        "tier": "referenced",
+        "notes": "Resolved from the prior needs_review standing (no URL) once the museum's own announcement was located. Tiered referenced, following the corpus precedent for museum sources (the Metropolitan Museum of Art is tiered referenced on PPL_FANG, not official)."
+      },
+      {
+        "title": "Georges Dupré — Koto, l'égalité nécessaire : savoir et pouvoir dans une société clanique : les Nzèbi du Congo et du Gabon (L'Harmattan, 2019)",
+        "url": "https://searchworks.stanford.edu/view/13386359",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for searchworks.stanford.edu (library catalogue record for an identifiable, verifiable academic monograph by a specialist of Central African lineage societies)."
+      },
+      {
+        "title": "Nestor Ide Righou — Les Nzèbi du Gabon, des origines à 1915 : essai d'étude historique (doctoral thesis, Université Paris 1, 2005, dir. Claude-Hélène Perrot)",
+        "url": "https://theses.fr/2005PA010542",
+        "tier": "referenced",
+        "notes": "Catalogued on the French national theses portal; tiered referenced as an identifiable, verifiable academic work, consistent with the searchworks.stanford.edu precedent for a library/thesis catalogue record."
+      },
+      {
+        "title": "Gérard Collomb — \"Les sept fils de Nzèbi. Un mythe cosmogonique des Banzèbi du Gabon\", Journal des africanistes, vol. 49, fasc. 2 (1979), p. 89-134",
+        "url": "https://www.persee.fr/doc/jafr_0399-0346_1979_num_49_2_1985",
+        "tier": "referenced",
+        "notes": "Peer-reviewed article in a scholarly journal, hosted on the Persée academic portal."
+      },
+      {
+        "title": "Glottolog 5.x — Njebi [njeb1242]",
+        "url": "https://glottolog.org/resource/languoid/id/njeb1242",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for glottolog.org. Confirms glottocode njeb1242 and ISO 639-3 nzb, consistent with the fiche's existing languages.isoCodes."
+      },
+      {
+        "title": "CIA World Factbook — Gabon, People and Society (ethnic groups)",
+        "url": "https://www.cia.gov/the-world-factbook/countries/gabon/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for cia.gov. Reports a composite \"Nzabi-Duma\" category at 11.2% of Gabon's population (2021 est.); cited only for order-of-magnitude corroboration, since it does not isolate Nzebi from the related Duma people."
+      },
+      {
+        "title": "Wikidata — Nzabi (Q2882351)",
+        "url": "https://www.wikidata.org/wiki/Q2882351",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wikidata.org (openly edited tertiary reference). Cited only to document the externalIdentifiers.wikidataId cross-reference — confirmed instance-of \"ethnic group\" with associated countries Gabon and Republic of the Congo — not as evidence for any narrative claim."
       }
     ]
   }

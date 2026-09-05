@@ -78,6 +78,11 @@
       ],
       "vehicularRole": "Le yoruba est une langue nationale au Nigeria, utilisee dans l'enseignement, les medias et l'administration des Etats du Sud-Ouest. Il fonctionne comme langue vehiculaire regionale au Benin occidental et dans certaines zones du Togo. La diaspora yoruba maintient la langue au Bresil (cultes Candomble), a Cuba (Lucumi / Lukumi) et en Sierra Leone."
     },
+    "externalIdentifiers": {
+      "wikidataId": "Q190168",
+      "glottocode": "yoru1245",
+      "iso639_3": "yor"
+    },
     "culture": {
       "majorRites": "Le culte des orisha (divinites) structure la vie rituelle : chaque orisha (Sango, Ogun, Yemoja, Osun, Obatala, Esu, Oya, etc.) dispose de fetes annuelles, de pratiques initiatiques et de codes de conduite specifiques. La divination Ifa (consultation du babalawo avec le chapelet d'Opele ou les noix d'Ikin) est au coeur des decisions individuelles et collectives ; Ifa est inscrit au patrimoine culturel immateriel de l'UNESCO (2005). Les masques Gelede celebrent la puissance des femmes agees (iyami) et sont inscrits au patrimoine UNESCO (2003). Les funerailles (iku) et les ceremonies d'accession au trone (installation de l'Oba) sont des evenements sociaux majeurs.",
       "symbols": "Les bronzes et sculptures de Ife et Benin (12e-15e siecles) representent le sommet de l'art classique yoruba. L'Opa Oranmiyan (stele rituelle d'Ile-Ife) symbolise l'heritage fondateur. Les tambours dundun (tambour d'aisselle parlant) sont l'instrument emblematique, capables de reproduire les tons de la langue yoruba. Les tissus aso-oke (brocart traditionnel tisse) et adire (batik a l'indigo) sont les symboles textiles de l'identite.",
@@ -95,26 +100,11 @@
       "referenceYear": 2025,
       "source": "Estimation basee sur peuple_demographie_globale.csv, recensements nationaux, SIL Ethnologue (2024 : environ 47 millions de locuteurs yoruba au Nigeria), Joshua Project, et etudes demographiques sur la diaspora yoruba. La population totale inclut Nigeria (environ 45 millions), Benin (environ 1,8 million), Togo (environ 450 000), Ghana (environ 150 000) et Sierra Leone (environ 7 300). Source secondaire : Yoruba Diaspora Studies, Encyclopedia Africana.",
       "distributionByCountry": [
-        {
-          "country": "NGA",
-          "population": 45500000
-        },
-        {
-          "country": "BEN",
-          "population": 1800000
-        },
-        {
-          "country": "TGO",
-          "population": 450000
-        },
-        {
-          "country": "GHA",
-          "population": 150000
-        },
-        {
-          "country": "SLE",
-          "population": 7300
-        }
+        { "country": "NGA", "population": 45500000 },
+        { "country": "BEN", "population": 1800000 },
+        { "country": "TGO", "population": 450000 },
+        { "country": "GHA", "population": 150000 },
+        { "country": "SLE", "population": 7300 }
       ]
     },
     "sources": [
@@ -165,6 +155,12 @@
         "url": "https://courses.lumenlearning.com/atd-herkimer-worldcivilization/chapter/the-yoruba-states/",
         "tier": "unverified",
         "notes": "Tier resolved from the domain ruling for courses.lumenlearning.com."
+      },
+      {
+        "title": "Wikidata — Yoruba people (Q190168)",
+        "url": "https://www.wikidata.org/wiki/Q190168",
+        "tier": "referenced",
+        "notes": "Structured identifier catalogue, used only for the wikidataId cross-reference; associated countries (Nigeria, Benin, Togo) match currentCountries."
       }
     ]
   }

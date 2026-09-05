@@ -2,7 +2,7 @@
   "id": "GHA",
   "nameFr": "Ghana",
   "nameOfficial": "République du Ghana (Republic of Ghana)",
-  "summary": "Le Ghana a choisi en 1957 le nom d'un empire qui ne se trouvait pas sur son territoire : le Wagadu, situé plus au nord-ouest. Son sol est celui des royaumes akan — Ashanti, Denkyira, Akwamu — et des peuples mole-dagbani, ewe et ga-dangme. Le kente et l'adinkra en sont les signatures visuelles.",
+  "summary": "Le Ghana a choisi en 1957 le nom d'un empire qui ne se trouvait pas sur son territoire : le Wagadu, situé plus au nord-ouest. Premier État d'Afrique subsaharienne à accéder à l'indépendance, il succède à la colonie britannique de la Côte-de-l'Or sur un sol qui fut celui des royaumes akan — Ashanti, Denkyira, Akwamu — et des peuples mole-dagbani, ewe et ga-dangme. Le kente et l'adinkra en sont les signatures visuelles.",
   "etymology": "Le nom \"Ghana\" a été choisi lors de l'indépendance en 1957 en référence à l'empire du Ghana (Wagadu), un ancien empire ouest-africain (IIIe-XIIIe siècles). Cependant, l'empire historique du Ghana était situé en Mauritanie et au Mali actuels, pas dans le territoire du Ghana moderne. Le nom est donc symbolique et ne correspond pas à l'ancienne localisation de l'empire.",
   "nameOriginActor": "Le nom \"Ghana\" a été choisi par Kwame Nkrumah et les nationalistes ghanéens lors de l'indépendance en 1957 pour honorer l'héritage historique de l'empire du Ghana, bien que l'empire historique ne se trouvait pas sur le territoire actuel.",
   "content": {
@@ -11,20 +11,14 @@
       "antiquity": "Le territoire était peuplé de royaumes Akan (Bono, Akwamu, Denkyira, Asante, Fante, Akuapem), peuples Ga-Dangme, Guan, Gur et Mandé sans nom unifié. L'empire du Ghana (Wagadu) était situé en Mauritanie/Mali, pas dans le Ghana actuel.",
       "middleAges": "Développement des royaumes Akan (XIIIe-XIXe siècles). Royaume Ashanti (Asante) devient le plus puissant. Commerce avec les Européens (or, esclaves).",
       "precolonial": "Royaumes Akan puissants (Ashanti, Denkyira, Akwamu), peuples Ga-Dangme sur la côte, royaumes gur au nord (Dagomba, Mamprusi). Commerce côtier avec les Européens. Pas de nom unifié pour l'ensemble du territoire.",
-      "colonization": "XVe-XIXe siècles : présence portugaise, néerlandaise puis britannique. Nom colonial : \"Côte-de-l'Or\" (Gold Coast). Le territoire est appelé \"Gold Coast\" par les colonisateurs européens.",
+      "colonization": "XVe-XIXe siècles : présence portugaise, néerlandaise puis britannique. Nom colonial : \"Côte-de-l'Or\" (Gold Coast), qui désigne le territoire par la ressource que les Européens y extraient plutôt que par les royaumes et les peuples qui l'habitent — une logique de nomination partagée avec les autres \"côtes\" du golfe de Guinée (Côte-des-Esclaves, Côte-d'Ivoire, Côte du Poivre), qui efface les entités politiques locales derrière le commerce colonial.",
       "contemporary": "Indépendance en 1957 sous le nom de \"Ghana\" (choisi en référence à l'empire historique). Le nom officiel en anglais est \"Republic of Ghana\"."
     },
     "kingdoms": [
       {
         "name": "Royaumes Akan",
         "period": "XIIIe - XIXe siècles",
-        "dominantPeoples": [
-          "Akan (Ashanti",
-          "Fante",
-          "Akyem",
-          "Akuapem",
-          "Denkyira)"
-        ],
+        "dominantPeoples": ["Akan (Ashanti, Fante, Akyem, Akuapem, Denkyira)"],
         "politicalCenters": [
           "Kumasi (capitale Ashanti)",
           "Cape Coast",
@@ -77,7 +71,7 @@
         "exonyms": ["Akan (terme utilisé par les Européens)"],
         "peopleId": "PPL_AKAN",
         "mainRegion": "Centre, Sud, Ouest",
-        "languages": ["Akan (Twi", "Fante)", "anglais"],
+        "languages": ["Akan (Twi, Fante)", "anglais"],
         "languageFamily": "FLG_NIGERCONGO",
         "appellationRemarks": "Le terme \"Akan\" est neutre et accepté."
       },
@@ -137,6 +131,18 @@
       }
     ],
     "culture": {
+      "mainLanguages": [
+        { "name": "Anglais", "isoCode": "eng", "isPrimary": true },
+        { "name": "Akan", "isoCode": "aka" },
+        { "name": "Ewe", "isoCode": "ewe" },
+        { "name": "Ga", "isoCode": "gaa" },
+        { "name": "Dagbani", "isoCode": "dag" },
+        { "name": "Dagaare", "isoCode": "dga" },
+        { "name": "Dangme", "isoCode": "ada" },
+        { "name": "Gonja", "isoCode": "gjn" },
+        { "name": "Nzema", "isoCode": "nzi" },
+        { "name": "Kasem", "isoCode": "xsm" }
+      ],
       "culturalTraditions": "Musique traditionnelle (highlife, hiplife), danse traditionnelle, poésie orale, artisanat (kente, adinkra), architecture traditionnelle, festivals (Homowo, Akwasidae)",
       "dominantReligions": "Christianisme (protestant majoritaire, catholique), islam (minorité, surtout au nord), croyances traditionnelles (syncrétisme)",
       "lifestyles": "Vie principalement rurale, agriculture (cacao, or, pétrole, manioc, igname, riz), élevage (bovins, caprins), pêche (côtes), exploitation minière (or, diamants), commerce, urbanisation croissante",
@@ -154,118 +160,123 @@
     "sources": [
       {
         "title": "CIA World Factbook – Ghana",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "url": "http://web.archive.org/web/20260118103813/https://www.cia.gov/the-world-factbook/countries/ghana/",
+        "tier": "official",
+        "notes": "Publication de référence de l'agence de renseignement américaine sur les pays du monde ; le site a cessé d'être mis à jour début 2026, la page consultée est une copie archivée de janvier 2026."
       },
       {
-        "title": "SIL Ethnologue – Languages of Ghana",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "title": "SIL Ethnologue – Ghana",
+        "url": "https://www.ethnologue.com/country/GH/",
+        "tier": "official",
+        "notes": "Catalogue de référence linguistique de SIL International, qui documente les langues vivantes du Ghana et leur statut."
       },
       {
-        "title": "Recensements nationaux ghanéens",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "title": "Ghana Statistical Service – Recensement général de la population et de l'habitat 2021, volume 3",
+        "url": "https://census2021.statsghana.gov.gh/gssmain/fileUpload/reportthemelist/Volume%203%20Highlights.pdf",
+        "tier": "official",
+        "notes": "Recensement conduit par le service statistique national du Ghana, qui publie la répartition de la population par groupe ethnique."
       },
       {
-        "title": "ONU – Données démographiques 2025",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "title": "UN DESA – World Population Prospects",
+        "url": "https://population.un.org/wpp/",
+        "tier": "official",
+        "notes": "Estimations et projections démographiques publiées par la division population des Nations unies."
       },
       {
         "title": "UNFPA – World Population Dashboard — Ghana",
         "url": "https://www.unfpa.org/data/world-population/GH",
         "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
+        "notes": "Tableau de bord démographique mondial du Fonds des Nations unies pour la population."
       },
       {
-        "title": "Études anthropologiques sur les peuples ghanéens",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "Études historiques sur le royaume Ashanti",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "CIA World Factbook – Ghana (ethnic groups, 2010 census)",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
-        "url": "https://unstats.un.org/unsd/methodology/m49/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+        "title": "Kimble, David — A Political History of Ghana: The Rise of Gold Coast Nationalism, 1850–1928",
+        "url": "https://archive.org/details/politicalhistory0000kimb",
+        "tier": "referenced",
+        "notes": "Étude historique de référence sur la politique coloniale de la Côte-de-l'Or entre 1850 et 1928, publiée par Oxford University Press en 1963."
       }
     ],
     "demographics": {
       "totalPopulation": 35100000,
       "referenceYear": 2025,
-      "source": "UNFPA – World Population Dashboard",
+      "source": "UNFPA – World Population Dashboard (population totale) ; Ghana Statistical Service – Recensement 2021 (répartition par groupe ethnique)",
       "peoples": [
         {
           "name": "Akan",
+          "peopleId": "PPL_AKAN",
+          "population": 16040700,
           "percentageInCountry": 45.7,
           "percentageInAfrica": 1.23,
-          "peopleId": "PPL_AKAN",
           "region": "Centre, Sud, Ouest",
           "languageFamily": "FLG_NIGERCONGO"
         },
         {
           "name": "Mole-Dagbani",
+          "peopleId": "PPL_DAGOMBA",
+          "population": 6493500,
           "percentageInCountry": 18.5,
           "percentageInAfrica": 0.43,
-          "peopleId": "PPL_DAGOMBA",
           "region": "Nord",
           "languageFamily": "FLG_NIGERCONGO"
         },
         {
           "name": "Ewe",
+          "peopleId": "PPL_EWE",
+          "population": 4492800,
           "percentageInCountry": 12.8,
           "percentageInAfrica": 0.36,
-          "peopleId": "PPL_EWE",
           "region": "Volta (Est)",
           "languageFamily": "FLG_NIGERCONGO"
         },
         {
           "name": "Ga-Dangme",
+          "peopleId": "PPL_GA_DANGME",
+          "population": 2492100,
           "percentageInCountry": 7.1,
           "percentageInAfrica": 0.19,
-          "peopleId": "PPL_GA_DANGME",
           "region": "Grande Accra",
           "languageFamily": "FLG_NIGERCONGO"
         },
         {
           "name": "Guan",
+          "peopleId": "PPL_GUAN",
+          "population": 1123200,
           "percentageInCountry": 3.2,
           "percentageInAfrica": 0.11,
-          "peopleId": "PPL_GUAN",
           "region": "Centre",
           "languageFamily": "FLG_NIGERCONGO"
         },
         {
           "name": "Gurma",
+          "peopleId": "PPL_GURMA",
+          "population": 2246400,
           "percentageInCountry": 6.4,
           "percentageInAfrica": 0.08,
-          "peopleId": "PPL_GURMA",
           "region": "Nord-Est",
           "languageFamily": "FLG_NIGERCONGO"
         },
         {
+          "name": "Grusi",
+          "peopleId": null,
+          "population": 947700,
+          "percentageInCountry": 2.7,
+          "region": null,
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Mande",
+          "peopleId": null,
+          "population": 702000,
+          "percentageInCountry": 2.0,
+          "region": null,
+          "languageFamily": "FLG_MANDE"
+        },
+        {
           "name": "Autres groupes ethniques",
           "peopleId": null,
+          "population": 561600,
+          "percentageInCountry": 1.6,
           "region": "Divers",
-          "languageFamily": null,
-          "percentageInCountry": 6
+          "languageFamily": null
         }
       ]
     }
