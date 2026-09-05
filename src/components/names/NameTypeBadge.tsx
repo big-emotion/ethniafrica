@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
+import { NAME_TYPE_LABELS } from "@/lib/glossaire/vocabularies";
 import { cn } from "@/lib/utils";
 import type { NameRecordType } from "@/types/names";
 
@@ -29,8 +30,9 @@ export interface NameTypeBadgeProps {
   className?: string;
 }
 
+// The label is not part of the config: it is read from the glossary's
+// vocabulary, so the badge and the filter chips cannot disagree again.
 type TypeConfig = {
-  label: string;
   fg: string;
   bg: string;
   Icon: LucideIcon;
@@ -38,25 +40,21 @@ type TypeConfig = {
 
 const TYPE_CONFIG: Record<NameRecordType, TypeConfig> = {
   endonym: {
-    label: "endonyme",
     fg: "var(--afh-earth)",
     bg: "var(--afh-color-earth-bg)",
     Icon: Fingerprint,
   },
   exonym: {
-    label: "exonyme",
     fg: "var(--afh-terracotta)",
     bg: "var(--afh-color-terracotta-bg)",
     Icon: Globe,
   },
   historical_spelling: {
-    label: "graphie historique",
     fg: "var(--afh-color-text-soft)",
     bg: "var(--afh-color-gold-bg)",
     Icon: BookOpenText,
   },
   surname: {
-    label: "patronyme",
     fg: "var(--afh-earth)",
     bg: "var(--afh-color-earth-bg)",
     Icon: Users,
@@ -64,7 +62,6 @@ const TYPE_CONFIG: Record<NameRecordType, TypeConfig> = {
 };
 
 const IMPOSED_CONFIG: TypeConfig = {
-  label: "nom imposé",
   fg: "var(--afh-color-colonial)",
   bg: "var(--afh-color-colonial-bg)",
   Icon: Landmark,
@@ -77,6 +74,7 @@ export function NameTypeBadge({
   className,
 }: NameTypeBadgeProps) {
   const config = imposed ? IMPOSED_CONFIG : TYPE_CONFIG[nameType];
+  const label = NAME_TYPE_LABELS.fr[imposed ? "imposed" : nameType];
   const Icon = config.Icon;
 
   return (
@@ -88,7 +86,7 @@ export function NameTypeBadge({
       style={{ backgroundColor: config.bg, color: config.fg }}
     >
       <Icon aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
-      <span>{config.label}</span>
+      <span>{label}</span>
     </Badge>
   );
 }

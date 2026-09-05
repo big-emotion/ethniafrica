@@ -408,6 +408,14 @@ export interface SearchResult {
    */
   associatedPeopleIds?: string[];
   /**
+   * The associated peoples whose fiche resolved to a name, in fiche order —
+   * set by the `patronyme` branch of `mapSearchEnvelope` (ETNI-1859). A
+   * people id with no fiche is absent here but still counted in
+   * `associatedPeopleIds`, so a panel can state the total without ever
+   * printing an identifier (REQ-124, amendment of 2026-09-05).
+   */
+  associatedPeoples?: Array<{ id: string; name: string }>;
+  /**
    * Ids of the countries the fiche marks as an `attested` (not `supposed`)
    * attestation of this name — set by the `patronyme` branch of
    * `mapSearchEnvelope` (ETNI-1804).

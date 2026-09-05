@@ -5,7 +5,7 @@ vi.mock("@/lib/supabase/queries/afrik/sitemapEntries", () => ({
 }));
 
 import robots from "../robots";
-import sitemap from "../sitemap";
+import sitemap, { revalidate } from "../sitemap";
 import { CANONICAL_DOMAIN } from "@/lib/brand";
 import { UNLISTED_ROUTES } from "@/lib/siteTree";
 import { getSitemapEntityIds } from "@/lib/supabase/queries/afrik/sitemapEntries";
@@ -40,6 +40,13 @@ describe("sitemap.xml", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockedEntityIds.mockResolvedValue(CORPUS);
+  });
+
+  // A curator raising a source above the unverified tier must move the name
+  // into the sitemap after the corpus reload, without waiting for a release.
+  // @req REQ-147
+  it("refreshes the tier-dependent name set between releases", () => {
+    expect(revalidate).toBe(3600);
   });
 
   // The root layout's metadataBase falls back to localhost:3000. Publishing

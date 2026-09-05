@@ -14,7 +14,7 @@ const auditedColumn: ComparisonColumn = {
 };
 
 const unauditedColumn: ComparisonColumn = {
-  id: "PPL_SERERE",
+  id: "PPL_SERER",
   label: "Sérère",
   type: "peuple",
 };

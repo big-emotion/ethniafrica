@@ -30,7 +30,10 @@
         "Wakore",
         "Toubakai",
         "Gadyaga",
-        "Dafing"
+        "Dafing",
+        "Serahule",
+        "Sarakolleh",
+        "Azer"
       ],
       "originOfExonyms": "Sarakolle/Sarakole est le terme utilise par les Wolofs du Senegal. Serakhulle et Sarahuli sont les termes utilises en Gambie. Wangara est l'appellation donnee par les Mandinka aux marchands soninke disperses en Afrique de l'Ouest. Marakas est le terme bambara. Wakore est le terme songhai. Toubakai designe les Soninke islamises. Gadyaga est le nom historique de leur region d'origine. Marka (Mali) et Dafing (Burkina Faso) designent des sous-groupes soninke.",
       "whyProblematic": "Le terme Soninke peut avoir des connotations negatives dans le Fouta-Djalon et en Senegambie, ou il a ete utilise pour designer des non-musulmans ou des adeptes des religions traditionnelles, bien que les Soninke soient en grande majorite musulmans depuis le 10e siecle.",
@@ -57,7 +60,11 @@
       "Wangara: marchands soninke disperses en Afrique de l'Ouest, constituant des confederations commerciales",
       "Sosso (ancetre du peuple Susu actuel): fraction soninke qui forma l'Empire du Sosso au 12e-13e siecle",
       "Jaara (noblesse de la region de Nioro du Sahel, Mali): sous-groupe noble dont l'aristocratie s'appelle Tunkanlenmu",
-      "Diawara: fraction soninke du Gadiaga, region entre Mali et Mauritanie"
+      "Diawara: fraction soninke du Gadiaga, region entre Mali et Mauritanie",
+      "Soninke",
+      "Marka",
+      "Diakhanke",
+      "Yarse"
     ],
     "origins": {
       "ancientOrigins": "Les Soninkes descendent des habitants prehistoriques des falaises de Tichit-Walata et du Tagant (Mauritanie meridionale), occupees entre 2500 et 600 av. J.-C. Cette societe agro-pastorale est probablement l'ancetre des Soninkes et des peuples mande. La tradition orale cite Dinga comme ancetre fondateur (origine parfois attribuee au Moyen-Orient dans les versions islamiques, mais consideree post-islamique par les chercheurs). Son fils Dyabe Sisse est considere comme le fondateur du royaume de Wagadu (Kumbi), embryon de l'Empire du Ghana.",
@@ -66,7 +73,11 @@
         "Migrations depuis les falaises de Tichit (Mauritanie actuelle) vers les plaines du Sahel (prehistoire, 2500-600 av. J.-C.)",
         "Expansion de Wagadu vers le Mali, la Mauritanie, le Senegal et la Gambie (8e-11e siecle)",
         "Grande dispersion post-Ghana vers Mali, Mauritanie, Senegal, Gambie, Burkina Faso, Cote d'Ivoire, Ghana, Guinee-Conakry, Nigeria (Kano), Guinee-Bissau via les reseaux Wangara (12e-14e siecle)",
-        "Migration vers la France et l'Europe depuis l'epoque coloniale (premiers immigrants d'Afrique occidentale en France)"
+        "Migration vers la France et l'Europe depuis l'epoque coloniale (premiers immigrants d'Afrique occidentale en France)",
+        "Vallees du fleuve Senegal et du Niger superieur (zone d'origine)",
+        "Dispersion vers le Mali, la Mauritanie, le Senegal, la Gambie apres la chute de Wagadou (11e-12e siecle)",
+        "Expansion marchande vers la Cote d'Ivoire, le Ghana actuel, le Nigeria (Kano) via les reseaux Wangara",
+        "Migration vers la France et l'Europe depuis les annees 1950 (principalement de la region de Kayes, Mali)"
       ],
       "historicalSettlementZones": [
         "Vallee haute du Senegal entre Nioro du Sahel et Nara (Mali-Mauritanie-Senegal: Gadyaga, berceau historique)",
@@ -74,7 +85,13 @@
         "Mauritanie meridionale (Assaba, Gorgol, Guidimaka)",
         "Senegal oriental (Kayes, Bakel, Matam)",
         "Gambie (vallee du fleuve Gambie)",
-        "France (pionniers de l'immigration africaine: Paris, villes du sud)"
+        "France (pionniers de l'immigration africaine: Paris, villes du sud)",
+        "Vallee du fleuve Senegal superieur et frontiere Mali-Senegal-Mauritanie (Nara a Nioro du Sahel)",
+        "Region de Kayes (Mali)",
+        "Gambie orientale",
+        "Guidimakha (Mauritanie)",
+        "Senegal oriental (Bakel, Diawara)",
+        "Nord du Burkina Faso (Dafina)"
       ],
       "unificationsOrDivisions": "L'Empire du Ghana (Wagadu) constitua le point d'unite maximal des Soninkes (8e-12e siecle). Apres sa destruction, les Soninkes se fragmenterent en de nombreux sous-groupes regionaux partageant langue et culture mais sans unite politique. Les reseaux commerciaux Wangara assurerent une cohesion culturelle et economique transfrontaliere. Au 13e siecle, la partie soninke du Sosso forma brievement un empire sous Soumaoro Kante avant d'etre ecrasee par l'Empire du Mali.",
       "externalInfluences": "Conquete almoravide (1076) et pression islamique sur Wagadu. Conversion a l'islam des le 10e siecle via le commerce transsaharien: les Soninkes furent l'un des premiers peuples d'Afrique de l'Ouest a adopter l'islam. Influence de l'Empire du Mali (13e-15e siecle) puis de l'Empire songhai. Domination bambara (17e-19e siecle). Colonisation francaise et integration dans l'economie coloniale.",
@@ -93,7 +110,10 @@
       "dialects": [
         "Azer: dialecte avec influence berbere, parle en Mauritanie",
         "Gadyaga (Gadiaga): variante historique de la region originelle entre Mali, Mauritanie et Senegal",
-        "Variantes regionales de Gambie (Serakhulle), du Senegal oriental et du Mali"
+        "Variantes regionales de Gambie (Serakhulle), du Senegal oriental et du Mali",
+        "Azer (Mauritanie)",
+        "Kinbakka (Gambie)",
+        "Imraguen (Mauritanie, influence)"
       ],
       "vehicularRole": "Le soninke est parle par environ 2,3 millions de locuteurs (Ethnologue/Wikipedia). Il jouit du statut de langue nationale en Mauritanie, au Mali, au Senegal et en Gambie. La diaspora soninke en France a fait de cette langue l'un des premiers vernaculaires africains parles dans les communautes musulmanes de France. Le soninke est language vehiculaire dans les zones marchandes de l'Afrique de l'Ouest sahelo-soudanienne."
     },
@@ -163,6 +183,10 @@
           "country": "CAN",
           "population": 5200,
           "note": "Canada, diaspora recente"
+        },
+        {
+          "country": "BFA",
+          "population": 120000
         }
       ]
     },
@@ -202,6 +226,30 @@
         "url": "https://rosettapanglossia.longnow.org/index.php?title=Soninke_Language_%28snk%29",
         "tier": "referenced",
         "notes": "Tier resolved from the domain ruling for rosettapanglossia.longnow.org."
+      },
+      {
+        "title": "Joshua Project – Soninke in Guinea, 2025",
+        "url": "https://joshuaproject.net/people_groups/14996/GV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes – Soninke people",
+        "url": "https://www.101lasttribes.com/tribes/soninke.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Soninkara.com – Association culturelle soninke",
+        "url": "https://www.soninkara.com",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers soninkara.com; the tier awaits editorial review."
+      },
+      {
+        "title": "COCOON/HUMA-NUM – Fiche langue Soninke ISO snk",
+        "url": "https://cocoon.huma-num.fr/exist/crdo/language/snk",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cocoon.huma-num.fr."
       }
     ]
   }

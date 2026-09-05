@@ -10,10 +10,13 @@
       "exonyms": [
         "Ganda (forme abrégée utilisée en linguistique)",
         "Buganda tribe (terme colonial administratif britannique)",
-        "Waganda (graphie swahili ancienne)"
+        "Waganda (graphie swahili ancienne)",
+        "Uganda people (confusion frequente entre le peuple et l'etat, le nom Uganda etant la form swahilie de Buganda)",
+        "Buganda (designe le territoire et le royaume, parfois utilise par extension pour le peuple)",
+        "Wanganda"
       ],
       "originOfExonyms": "Le terme Baganda vient de obuganda (solidarité, fraternité), souvent traduit par des fagots de tiges liées ensemble, image de l'unité. Le préfixe Ba- désigne les personnes (les gens du Buganda). En linguistique, Ganda est la racine utilisée pour nommer la langue (Luganda) et les habitants (Baganda). L'ethnonyme Waganda fut employé par les explorateurs arabes et swahilis avant d'être repris par les Européens.",
-      "whyProblematic": null,
+      "whyProblematic": "La confusion entre le Buganda (royaume banto) et l'Uganda (etat national) est source de tensions politiques persistantes, les Baganda revendiquant une autonomie et des droits speciaux au sein de l'Etat ougandais. Le terme tribe, impose par l'administration coloniale, est rejete par de nombreux Baganda qui preferent le terme nation ou peuple.",
       "contemporaryUsage": "Baganda reste l'appellation standard en ougandais et en anglais. Muganda est la forme singulière courante ; l'adjectif culturel est kiganda. Le terme Ganda est utilisé dans les contextes académiques et linguistiques.",
       "linguisticFamily": "FLG_BANTU",
       "ethnoLinguisticGroup": "Bantous des Grands Lacs (Zone J, sous-groupe Ganda-Soga)",
@@ -27,7 +30,29 @@
       "Clan Lugave (Pangolin) : l'un des sept clans fondateurs, lié aux fonctions rituelles royales",
       "Clan Ffumbe (Civette) : clan fondateur, associé aux fonctions judiciaires et à la médiation",
       "Clan Kasimba (Genette) : clan lié aux fonctions artisanales et militaires",
-      "Plus de 52 clans reconnus au total, chacun avec son totem animal ou végétal, son histoire propre et ses responsabilités spécifiques dans le royaume"
+      "Plus de 52 clans reconnus au total, chacun avec son totem animal ou végétal, son histoire propre et ses responsabilités spécifiques dans le royaume",
+      "Baganda des cinq clans originels Banansangwa (Ffumbe-civette, Lugave-pangolin, Ngonge-otarie, Njaza-rat, Nnyonyi-oiseau)",
+      "Lignages du Busiro (region autour des tombeaux royaux de Kasubi)",
+      "Lignages du Kyadondo (comté central autour de Kampala)",
+      "Lignages du Mawokota",
+      "Lignages du Kyaggwe (region a l'est du lac Victoria)",
+      "Lignages du Buddu (region au sud-ouest, historiquement acquis au 18e siecle)",
+      "Sous-groupes des 46 a 52 clans officiellement reconnus par le Royaume du Buganda",
+      "Baganda du centre (region de Kampala, Mengo, Masaka) — coeur historique du royaume",
+      "Baganda du nord (region de Luwero, Nakaseke) — zone d'expansion historique contre le Bunyoro",
+      "Baganda du sud (region de Masaka, Rakai, Kalangala — iles du lac Victoria)",
+      "Baganda du Ssese — communautes insulaires du lac Victoria, avec tradition maritime et de peche",
+      "Baganda naturalises — personnes non-baganda de naissance ayant choisi un clan baganda, integrees dans la structure clanique (notamment anciens esclaves ou captifs de guerre)",
+      "Ffumbe (clan du chat civette, l'un des 5 clans fondateurs originels)",
+      "Lugave (clan du pangolin, l'un des 5 clans fondateurs originels)",
+      "Mmamba Gabunga (clan du poisson-poumon, amiral royal, clan très influent)",
+      "Ngeye (clan du colobe noir et blanc)",
+      "Mpologoma (clan du lion)",
+      "Njaza (clan du reedbuck)",
+      "Ngonge (clan de la loutre)",
+      "Ffumbe, Lugave, Nggonge, Njaza, Nnyonyi (5 clans fondateurs, Banansangwa)",
+      "Abalangira (clan royal Babiito, lignées royales Babiito de Kooki, Kiziba, Kibulala)",
+      "52 clans au total, chacun avec son totem animal, végétal ou minéral"
     ],
     "origins": {
       "ancientOrigins": "Formation progressive autour des rives nord du lac Victoria (Ennyanja Nnalubaale) à partir de populations bantoues venues du nord-ouest des Grands Lacs, probablement dès le 13e-14e siècle. Le mythe fondateur évoque Kintu, premier homme et premier Kabaka (roi), qui épousa Nnambi, fille du dieu céleste Ggulu. Leurs descendants constituent les Baganda. Selon une tradition historique, Rukidi Mpuga (fondateur du Bunyoro) envoya son jumeau Kato vers le sud-est, qui établit indépendamment le Buganda. Les plus anciens clans (Nansangwa) tracent leur lignée jusqu'à Bakiranze Kivebulaya, souverain présumé de la région vers 400-1300 de notre ère.",
@@ -35,12 +60,32 @@
       "migrationRoutes": [
         "Mouvements bantu internes depuis le nord-ouest des Grands Lacs vers le bassin lacustre du lac Victoria",
         "Expansion progressive vers l'est et le sud à partir du noyau central de Buganda (région de Kampala actuelle)",
-        "Intégration de clans et groupes locaux absorbés lors de l'expansion du royaume aux 17e-19e siècles"
+        "Intégration de clans et groupes locaux absorbés lors de l'expansion du royaume aux 17e-19e siècles",
+        "Populations bantoues etablies dans la region des le 6e siecle (poterie Urewe documentee)",
+        "Migration fondatrice de Kato Kintu depuis la direction du Mont Elgon (tradition orale)",
+        "Clans supplementaires migrant de l'est vers l'ouest entre le 12e et le 16e siecle",
+        "Origines bantous depuis le Congo septentrional vers les Grands Lacs africains",
+        "Installation autour des rives nord-ouest du lac Victoria",
+        "Expansion vers le nord et l'ouest aux XVIIIe-XIXe siecles aux depens du Bunyoro",
+        "Migration bantoue originelle depuis le Cameroun-Nigeria vers les Grands Lacs (vers 1000 av. J.-C. - 500 ap. J.-C.)",
+        "Apport de clans venus de Busoga, des îles Sesse et d'autres régions bantoues (15e-17e siècles)",
+        "Tradition alternative : Kato Kimera arrivé depuis Bunyoro lors de l'effondrement de l'Empire Bunyoro-Kitara"
       ],
       "historicalSettlementZones": [
         "Rive nord du lac Victoria (districts de Kampala, Mukono, Wakiso)",
         "Régions centrales du Buganda : Kyaddondo, Kyadondo, Busiro, Mawokota, Buddu",
-        "Territoires conquis de l'ouest : Kooki, Bulingugwe, Sese Islands (archipel du lac Victoria)"
+        "Territoires conquis de l'ouest : Kooki, Bulingugwe, Sese Islands (archipel du lac Victoria)",
+        "Rive nord du lac Victoria (comtes de Busiro, Kyadondo, Mawokota)",
+        "Region de Kampala (site des capitales royales successives)",
+        "Kasubi (collines des tombeaux royaux, site UNESCO)",
+        "Buddu, Singo, Kyaggwe, Kyaddondo (comtes acquis par expansion)",
+        "Rives nord-ouest du lac Victoria (region de Mengo, Kampala)",
+        "Iles du lac Victoria (archipel de Ssese et iles de Kalangala)",
+        "Corridor terrestre entre la riviere Katonga (ouest) et le Nil Victoria (est)",
+        "Région centrale de l'Ouganda, autour du lac Victoria (Ennyanja Nnalubaale)",
+        "Rive nord du lac Victoria, îles de Sesse (Ssese)",
+        "Districts actuels de Kampala, Wakiso, Mukono, Mpigi, Masaka, Kalangala",
+        "Diaspora dans toutes les grandes villes ougandaises (Kampala notamment)"
       ],
       "unificationsOrDivisions": "Unification progressive de plus de 52 clans sous la monarchie du Kabaka, qui les intègre dans une structure politique centralisée. Le Lukiiko (parlement ou conseil de chefs) constitue l'organe consultatif du roi. L'intégration de chefferies et de groupes voisins par alliance ou conquête a renforcé la cohérence du royaume. Tensions internes lors des guerres de succession (bagoleza) entre prétendants au trône.",
       "externalInfluences": "Contacts commerciaux avec les marchands swahili et arabes à partir du 18e siècle (commerce de l'ivoire, des esclaves, introduction de l'islam). Visite de John Hanning Speke en 1862 et Henry Morton Stanley en 1875. Arrivée des missionnaires chrétiens en 1876. Protectorat britannique établi en 1894. Alliance stratégique avec la Grande-Bretagne contre le Bunyoro, qui valut aux Baganda des avantages administratifs et territoriaux sous le régime colonial.",
@@ -48,8 +93,8 @@
     },
     "organization": {
       "traditionalPoliticalSystem": "Monarchie héréditaire dirigée par le Kabaka (roi), chef suprême des chefs de clans (Ssaabataka). La cour royale (ekibuga) constitue le centre politique, administratif et symbolique du royaume. Le Lukiiko (parlement traditionnel) regroupe les représentants des clans et les chefs territoriaux nommés par le roi. Un réseau de chefs (Bakungu, Bataka, Abalangira) administre les territoires. Les positions sont attribuées au mérite et à la loyauté, offrant une mobilité sociale aux hommes capables.",
-      "clanOrganization": "Plus de 52 clans (ebika, sing. ekika) reconnus, chacun portant un totem animal ou végétal dont il est interdit de consommer ou de nuire. La structure hiérarchique interne des clans comprend six niveaux : Akasolya (faîte), Amasiga (piliers), Ennyiriri, Emituba, Enzigya (niveau du grand-père paternel), Ennyumba (maison-famille nucléaire). Le Kabaka est le chef suprême des chefs de clan (Abataka).",
-      "ageClassSystems": null,
+      "clanOrganization": "Plus de 52 clans (ebika) reconnus, chacun avec un totem principal (omuziro) et un totem secondaire (akabbiro). Les cinq clans originels (banansangwa) sont : Ffumbe (civette), Lugave (pangolin), Ngonge (otarie), Njaza (rat), Nnyonyi (oiseau). Parmi les clans importants : Mmamba (lungfish, dont le Gabunga amiral de la flotte royale), Ngabi (impala, dont la lignee du Kabaka), Mpologoma (lion). Chaque clan a un chef (owokasolya) et une hierarchie interne : ssiga, mutuba, lunyiriri, ennyumba (maison/famille nucleaire). Le mariage est exogame : un Muganda ne peut epouser quelqu'un de son propre clan. Une lecture en six niveaux est aussi rapportée : Akasolya (faîte), Amasiga (piliers), Ennyiriri, Emituba, Enzigya (niveau du grand-père paternel), Ennyumba (maison-famille nucléaire) ; le Kabaka est le chef suprême des chefs de clan (Abataka).",
+      "ageClassSystems": "Les Baganda ne disposent pas d'un systeme formel de classes d'age comme certains peuples nilotiques. Cependant, les etapes de la vie sont structurees socialement : enfance (okuweefunira), puberte (okula), mariage (okuwasa), parentalite (okuzaala) et vieillesse (obutaakulendejja). Chaque etape implique des obligations claniques et ceremoniales specifiques.",
       "roleOfLineages": "Les lignages (obusika) structurent la parenté, l'héritage, les alliances matrimoniales et la transmission des fonctions. L'exogamie clanique est obligatoire : il est interdit de se marier dans son propre clan. Les enfants appartiennent au clan paternel. Les veuves peuvent être héritées par le frère aîné du défunt. La nomination des enfants est codifiée selon le clan, les naissances gémellaires donnant lieu à des noms spécifiques (Wasswa/Babirye pour les aînés, Kato/Nnakato pour les cadets).",
       "religiousAuthority": "Tradition des lubaale (esprits ou dieux intermédiaires) : Kibuka (dieu de la guerre), Mukasa (dieu du lac Victoria), Musisi (dieu des tremblements de terre), Wamala, Ddungu. Des sanctuaires (emisambwa) gardés par des prêtres spécialisés structurent la vie religieuse traditionnelle. Depuis le 19e siècle, le christianisme (catholicisme et anglicanisme) et l'islam coexistent avec les pratiques traditionnelles ; le recensement de 2002 indiquait 42,7 % de catholiques, 27,4 % d'anglicans, 23 % de musulmans."
     },
@@ -59,7 +104,17 @@
       "dialects": [
         "Kibuga (langue de la cour royale, registre soutenu de Kampala)",
         "Variétés rurales des différentes régions du Buganda (dialectes des îles Sese, de Buddu, de Mawokota)",
-        "Lusoga (langue soeur, lexicale à 82-86 %, parlée en Busoga à l'est du Buganda)"
+        "Lusoga (langue soeur, lexicale à 82-86 %, parlée en Busoga à l'est du Buganda)",
+        "Luganda central (Kampala, Busiro, Kyadondo) - dialecte de prestige et de reference",
+        "Luganda de Buddu (Masaka) - variante meridionale avec quelques differences lexicales",
+        "Luganda de Kyaggwe (est du lac Victoria) - variante orientale",
+        "Soga, Nkore, Toro : langues soeurs dans le groupe interlacustre bantou, avec intelligibilite partielle",
+        "Luganda standard — variete de la region de Kampala et Mengo (base de la standardisation)",
+        "Variantes dialectales des iles du lac Victoria (archipel de Ssese)",
+        "Variantes des zones frontalieres avec le Lunyoro (ouest) et le Lusoga (est)",
+        "Luganda central (dialecte de Kampala, standard écrit)",
+        "Luganda des îles Sesse (variante insulaire légèrement distincte)",
+        "Variantes régionales de Masaka, Mukono et Mubende"
       ],
       "vehicularRole": "Langue majeure de communication en Ouganda central et dans les zones urbaines (Kampala, Jinja, Mbale, Mbarara). Seconde langue véhiculaire de l'Ouganda après l'anglais, devançant le swahili dans une grande partie du pays. Langue d'enseignement dans les écoles primaires du Buganda. Plus de 5,6 millions de locuteurs natifs et 5,4 millions de locuteurs secondaires selon Ethnologue (2024)."
     },
@@ -83,6 +138,16 @@
         {
           "country": "UGA",
           "population": 7000000
+        },
+        {
+          "country": "GBR",
+          "population": 50000,
+          "note": "Diaspora au Royaume-Uni, principalement à Londres"
+        },
+        {
+          "country": "USA",
+          "population": 30000,
+          "note": "Diaspora aux États-Unis"
         }
       ]
     },
@@ -110,7 +175,74 @@
         "url": "https://ich.unesco.org/en/RL/the-making-and-cultural-practices-of-the-kasubi-tombs-00027",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Buganda Kingdom official website - History",
+        "url": "https://buganda.or.ug/history-of-buganda/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for buganda.or.ug."
+      },
+      {
+        "title": "Uganda Bureau of Statistics (UBOS) - Population projections",
+        "url": "https://www.ubos.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ubos.org."
+      },
+      {
+        "title": "UNESCO - Barkcloth making in Uganda",
+        "url": "https://ich.unesco.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "EBSCO Research Starters - Rise of Buganda",
+        "url": "https://www.ebsco.com/research-starters/history/rise-buganda",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ebsco.com."
+      },
+      {
+        "title": "CIA World Factbook — Uganda",
+        "url": "https://www.cia.gov/the-world-factbook/countries/uganda/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Uganda Bureau of Statistics (UBOS) — Uganda Population and Housing Census 2024",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Baganda in Uganda",
+        "url": "https://joshuaproject.net/people_groups/10346/ug",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "UNESCO — Bark cloth making in Uganda (Buganda) — Patrimoine culturel immateriel inscrit 2008",
+        "url": "https://ich.unesco.org/en/RL/the-making-and-cultural-practices-of-the-kiganda-bark-cloth-in-uganda-00110",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Glottolog — Luganda (luganda1247)",
+        "url": "https://glottolog.org/resource/languoid/id/luga1252",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Uganda Bureau of Statistics (UBOS) — Population Projections 2025-2050",
+        "url": "https://www.ubos.org/wp-content/uploads/publications/Population-Projections-2025_2050.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ubos.org."
+      },
+      {
+        "title": "eHRAF World Cultures — Ganda summary",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fk07/summary",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
       }
     ]
-  }
+  },
+  "classificationStatus": "colonial-legacy"
 }

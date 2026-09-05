@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 
-import { getPatronymeById } from "@/api/v2/services/patronymes";
+import { loadPatronymeFiche } from "@/lib/fiche/ficheExistence";
 
 interface LayoutParams {
   lang: string;
@@ -23,7 +23,7 @@ export default async function AppellationSlugLayout({
   params: Promise<LayoutParams>;
 }) {
   const { slug } = await params;
-  const patronyme = await getPatronymeById(decodeURIComponent(slug));
+  const patronyme = await loadPatronymeFiche(decodeURIComponent(slug));
   if (!patronyme) {
     notFound();
   }

@@ -30,7 +30,7 @@ const scalar: Story = {
 
 const relationalId: Story = {
   name: "Relational AFRIK id (linked)",
-  args: { value: "PPL_SERERE" },
+  args: { value: "PPL_SERER" },
 };
 
 const demography: Story = {

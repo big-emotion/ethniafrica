@@ -25,7 +25,7 @@
 import type { CorpusFigure, FigureKey } from "./types";
 
 /** Every count below was taken against `recette` on this date. */
-const COUNTED_ON = "2026-09-03";
+const COUNTED_ON = "2026-09-05";
 
 const PEOPLE_GLOB = "dataset/source/afrik/peuples/*/*.json";
 
@@ -52,7 +52,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "corpus-peoples",
     label: "fiches de peuple",
-    value: 800,
+    value: 775,
     method: `nombre de fichiers ${PEOPLE_GLOB}`,
     countedOn: COUNTED_ON,
   },
@@ -60,7 +60,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "corpus-exonyms",
     label: "exonymes recensés",
-    value: 3201,
+    value: 3141,
     method:
       "somme de content.appellations.exonyms.length sur les fiches de peuple",
     countedOn: COUNTED_ON,
@@ -69,7 +69,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "corpus-autonyms",
     label: "autonymes déclarés",
-    value: 798,
+    value: 773,
     method:
       "fiches dont content.appellations.selfAppellation est renseigné et non vide",
     countedOn: COUNTED_ON,
@@ -84,7 +84,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     figureKey: "status-contested-or-colonial",
     label:
       "fiches déclarant leur appellation contestée ou héritée de la colonisation",
-    value: 460,
+    value: 445,
     method:
       "fiches dont classificationStatus vaut contested (265) ou colonial-legacy (195)",
     countedOn: COUNTED_ON,
@@ -102,7 +102,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "status-undeclared",
     label: "fiches ne déclarant aucun statut",
-    value: 321,
+    value: 311,
     method: "fiches sans classificationStatus",
     countedOn: COUNTED_ON,
   },
@@ -112,7 +112,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "probe-colonial",
     label: "fiches employant le radical « colonial »",
-    value: 242,
+    value: 239,
     method: "radical colonial dans originOfExonyms + whyProblematic",
     countedOn: COUNTED_ON,
   },
@@ -120,7 +120,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "probe-administration",
     label: "fiches employant le radical « administr- »",
-    value: 184,
+    value: 179,
     method: "radical administr dans originOfExonyms + whyProblematic",
     countedOn: COUNTED_ON,
   },
@@ -128,7 +128,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "probe-european",
     label: "fiches employant le radical « europ- »",
-    value: 124,
+    value: 118,
     method: "radical europ dans originOfExonyms + whyProblematic",
     countedOn: COUNTED_ON,
   },
@@ -136,7 +136,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "probe-neighbours",
     label: "fiches attribuant un exonyme à des voisins",
-    value: 120,
+    value: 112,
     method: "radical voisin dans originOfExonyms + whyProblematic",
     countedOn: COUNTED_ON,
   },
@@ -144,7 +144,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "probe-portuguese",
     label: "fiches employant « portugais »",
-    value: 84,
+    value: 83,
     method: "radical portugais dans originOfExonyms + whyProblematic",
     countedOn: COUNTED_ON,
   },
@@ -152,7 +152,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "probe-pejorative",
     label: "fiches qualifiant un exonyme de dépréciatif",
-    value: 87,
+    value: 85,
     method: `radicaux ${PEJORATIVE_STEMS.join(", ")} dans originOfExonyms + whyProblematic`,
     countedOn: COUNTED_ON,
   },
@@ -160,7 +160,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "probe-arabic",
     label: "fiches employant le radical « arab- »",
-    value: 75,
+    value: 74,
     method: "radical arab dans originOfExonyms + whyProblematic",
     countedOn: COUNTED_ON,
   },
@@ -168,7 +168,7 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "probe-swahili",
     label: "fiches employant « swahili »",
-    value: 73,
+    value: 68,
     method: "radical swahili dans originOfExonyms + whyProblematic",
     countedOn: COUNTED_ON,
   },

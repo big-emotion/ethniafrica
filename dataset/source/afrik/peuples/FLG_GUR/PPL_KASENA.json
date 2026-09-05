@@ -1,33 +1,76 @@
 {
   "id": "PPL_KASENA",
   "nameMain": "Kasena",
-  "languageFamilyId": "FLG_NIGERCONGO",
+  "languageFamilyId": "FLG_GUR",
   "currentCountries": ["GHA", "BFA"],
   "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Kasena",
       "selfAppellation": "Kasena",
-      "exonyms": ["Kassena", "Kassem", "Gurunsi", "Kasem"],
+      "exonyms": [
+        "Kassena",
+        "Kassem",
+        "Gurunsi",
+        "Kasem",
+        "Grunshi",
+        "Gourounsi",
+        "Kasenna"
+      ],
       "originOfExonyms": "Le terme Gurunsi est un exonyme pejoratif issu du djerma signifiant fer ne penetre pas, utilise par le chef jihadiste Babatu pour designer les soldats recrutes parmi differents groupes ethniques du nord Ghana et du sud Burkina Faso. Kassena et Kasem sont des variantes orthographiques utilisees par les administrations coloniales britannique et francaise.",
       "whyProblematic": "Le terme Gurunsi regroupe des peuples non necessairement proches; les Kasena s'en distinguent et preferent leur propre designation ethnique.",
       "contemporaryUsage": "Kasena et Kassena sont les formes les plus courantes dans la litterature scientifique et officielle contemporaine. Le nom Kasem designe specifiquement leur langue.",
-      "linguisticFamily": "FLG_NIGERCONGO",
+      "linguisticFamily": "FLG_GUR",
       "ethnoLinguisticGroup": "Gur (Voltaique)",
       "historicalRegion": "Nord Ghana et Sud Burkina Faso",
       "currentCountries": ["GHA", "BFA"]
     },
-    "ethnicities": ["Kasena", "Kassena-Nankana"],
+    "ethnicities": [
+      "Kasena",
+      "Kassena-Nankana",
+      "Chiefdom de Navrongo (Ghana, capitale administrative Kassena-Nankana)",
+      "Chiefdom de Paga (Ghana, frontiere burkina)",
+      "Chiefdom de Chiana (Ghana, Upper East)",
+      "Chiefdom de Kayoro (Ghana, Upper East)",
+      "Chiefdom de Katiu (Ghana, Upper East)",
+      "Chiefdom de Nakon (Ghana, Upper East)",
+      "Kassena de Tiebele (Burkina Faso, province du Nahouri, siege royal)",
+      "Kassena de Po (Burkina Faso, province du Nahouri)",
+      "Kassena de la province de Naouhri (Burkina Faso)",
+      "Kasena de Navrongo (Ghana) — communaute principale au Ghana, capitale du district Kassena-Nankana",
+      "Kasena de Paga (Ghana) — communaute notable, voisine de la frontiere burkinabe",
+      "Kasena de Chiana (Ghana) — chefferie etablie",
+      "Kasena de Kayoro (Ghana) — chefferie de la zone occidentale",
+      "Kasena de Katiu (Ghana) — chefferie reconnue",
+      "Kasena de Nakon (Ghana) — sixieme chefferie principale",
+      "Kasena de Tiébélé (Burkina Faso) — siege du roi supreme (Peh) du peuple kasena",
+      "Kasena de Po (Burkina Faso) — communaute de la zone frontiere",
+      "Kasena de Pô-Koukouldi (Burkina Faso) — communaute de la province de Po"
+    ],
     "origins": {
       "ancientOrigins": "Les Kasena sont un sous-groupe de la meta-ethnie Gurunsi habitant le nord Ghana et le sud Burkina Faso. Ils ont historiquement ete sujets de l'Empire Mossi avant la periode coloniale. Leur culture materielle, leurs rites et leur organisation politique sont distincts des autres groupes Gurunsi.",
       "formationPeriod": "La formation de l'identite kasena remonte au moins au XIVe siecle sous domination Mossi. Le district administratif Kassena-Nankana a ete cree en 1936 par l'administration coloniale britannique.",
       "migrationRoutes": [
         "Etablissement historique le long de la frontiere nord-Ghana et sud Burkina Faso",
-        "Dispersion au sein des zones de defense en arc entre Ouagadougou et le nord-est du Ghana"
+        "Dispersion au sein des zones de defense en arc entre Ouagadougou et le nord-est du Ghana",
+        "Peuple autochtone de la zone frontaliere Ghana-Burkina Faso sans migration fondatrice documentee vers des territoires lointains",
+        "Repli vers des positions defensives organisees en arc de cercle entre Ouagadougou et le nord-est du Ghana face aux raids djerma (fin XIXe siecle)",
+        "Etablissement ancestral dans la region de savane entre le nord du Ghana et le sud du Burkina Faso (origine Gur)",
+        "Organisation en arc de villes fortifiees de Ouagadougou au nord-est du Ghana comme strategie defensive"
       ],
       "historicalSettlementZones": [
         "Region Upper East du Ghana (Navrongo, Paga, Chiana, Kayoro)",
-        "Province du Nahouri au Burkina Faso (Tiebele, Po)"
+        "Province du Nahouri au Burkina Faso (Tiebele, Po)",
+        "Province du Nahouri (Burkina Faso) : Tiebele, Po et environs",
+        "Province de Naouhri (Burkina Faso)",
+        "District Kassena-Nankana Est et Ouest (Ghana, region Upper East)",
+        "Villes de Navrongo, Paga, Chiana (Ghana)",
+        "Zone frontaliere a environ 172 km au sud d'Ouagadougou",
+        "Navrongo — capitale du district Kassena-Nankana au Ghana, principal centre urbain kasena",
+        "Paga — ville frontiere au Ghana, connue pour ses crocodiles sacres",
+        "Chiana, Kayoro, Katiu, Nakon — chefferies kasena au Ghana",
+        "Tiébélé — siege royal au Burkina Faso, celebre pour ses maisons decorees",
+        "Po et ses environs — zone kasena au Burkina Faso"
       ],
       "unificationsOrDivisions": "La colonisation a divise les Kasena entre l'administration britannique au Ghana et l'administration francaise au Burkina Faso. En 1898, l'accord anglo-francais a fixe la frontiere, separant les communautes kasena en deux nations distinctes.",
       "externalInfluences": "Influence de l'Empire Mossi au nord. Au XIXe siecle, les invasions djerma menees par Babatu ont perturbe les populations kasena. La colonisation franco-britannique a impose un partage administratif du territoire kasena a partir de la fin des annees 1890.",
@@ -36,7 +79,7 @@
     "organization": {
       "traditionalPoliticalSystem": "Societe organisee en chefferies independantes. Le chef traditionnel d'une ville kasena se nomme Peh. Le Peh le plus puissant est celui de Tiebele, residence du roi kasena. Six chefferies principales : Navrongo, Paga, Chiana, Kayoro, Katiu et Nakon.",
       "clanOrganization": "Organisation clanique patrilineaire associee aux chefferies locales. Chaque ville kasena est administree par son propre Peh, responsable des affaires civiles et religieuses.",
-      "ageClassSystems": null,
+      "ageClassSystems": "Les differents types de maisons traditionnelles correspondent aux stades de vie : la maison en forme de 8 (Dinian) pour les anciens, veuves et femmes non mariees ; la maison rectangulaire (Mangolo) pour les jeunes maries ; la maison circulaire (Draa) pour les hommes celibataires et adolescents. Les jeunes femmes non mariees vivent avec les grands-parents dans la maison en 8 jusqu'au mariage.",
       "roleOfLineages": "Les lignages joue un role central dans la transmission de l'autorite et la gestion du territoire. Les fils des chefs heritent des titres et responsabilites au sein de la chefferie.",
       "religiousAuthority": "Religion animiste traditionnelle centree sur le culte du Dieu Createur We et la veneration des ancetres. Le nom We apparait dans de nombreux noms kasena : Webedouh, Wettelne, Wepouli. Les pratiques religieuses et les rituels sont integres a la vie politique locale."
     },
@@ -45,7 +88,12 @@
       "isoCodes": ["xsm"],
       "dialects": [
         "Kasem du Ghana (Upper East Region)",
-        "Kasem du Burkina Faso (province du Nahouri)"
+        "Kasem du Burkina Faso (province du Nahouri)",
+        "Kasem Est (East Kasem) : parle a l'est de la zone, notamment en Ghana",
+        "Kasem Ouest (West Kasem) : parle a l'ouest, notamment au Burkina Faso",
+        "Kasem du Ghana (Navrongo, Paga) — variete principale au Ghana",
+        "Kasem du Burkina Faso (Tiébélé, Po) — variete du cote burkinabe",
+        "Variante de Kassem — graphie alternative recensee dans les classifications linguistiques"
       ],
       "vehicularRole": "Le kasem est reconnu comme langue vernaculaire depuis 1951 (Laws of the Gold Coast, Vernacular Literature Board Ordinance). Il appartient a la famille Gur (voltaique) et partage des liens linguistiques avec le Nuni et le Lyele. Langue d'enseignement dans certaines ecoles primaires de la region Upper East au Ghana."
     },
@@ -106,6 +154,54 @@
         "url": null,
         "tier": "needs_review",
         "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNESCO World Heritage Centre — Royal Court of Tiebelé (inscrit 2024)",
+        "url": "https://whc.unesco.org/en/list/1713/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "Ethnologue — Kasem Language (XSM)",
+        "url": "https://www.ethnologue.com/language/xsm/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Right for Education Africa — The Kassena of Tiebelé Houses (2024)",
+        "url": "https://rightforeducation.org/2024/07/29/the-kassena-of-tiebele-houses/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for rightforeducation.org."
+      },
+      {
+        "title": "101 Last Tribes — Kassena people",
+        "url": "https://www.101lasttribes.com/tribes/kassena.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Mabia VP — Kasem language introduction",
+        "url": "http://mabia-vp.com/tiki-index.php?page=Kasem",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mabia-vp.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Kasem in Ghana",
+        "url": "https://joshuaproject.net/people_groups/print/12556/GH",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "PeopleGroups.org — Kasena of Ghana",
+        "url": "https://peoplegroups.org/people_groups/pg013342/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "WALS Online — Kasem language",
+        "url": "https://wals.info/languoid/lect/wals_code_ksm",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"wals\"."
       }
     ]
   }

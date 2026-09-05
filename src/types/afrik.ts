@@ -779,6 +779,12 @@ export interface RankedPatronyme {
   nameSystem: string;
   casteOrSocialFunction: string | null;
   content: Record<string, unknown>;
+  /**
+   * The peoples of `content.peoples[]` whose fiche exists, resolved to their
+   * main name in one batched lookup after ranking (ETNI-1859). Absent when
+   * the hit declares no people; an id with no fiche is simply not listed.
+   */
+  associatedPeoples?: Array<{ id: string; name: string }>;
   relevance: number;
   exactMatch: boolean;
   normalizedScore: number;

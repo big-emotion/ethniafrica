@@ -1065,7 +1065,7 @@ export const DID_YOU_KNOW_FACTS: DidYouKnowFact[] = [
       "Les colonisateurs européens l'ont repris comme nom d'ethnie. Les Kasena, qu'il englobe, n'ont de parenté proche ni linguistique ni culturelle avec tous ceux qu'il recouvre. Et le partage franco-britannique de 1898 les a coupés en deux communautés, l'une au Ghana, l'autre au Burkina Faso.",
     ],
     entities: [
-      { kind: "people", id: "PPL_KASEM", label: "Kasena" },
+      { kind: "people", id: "PPL_KASENA", label: "Kasena" },
       { kind: "country", id: "GHA", label: "Ghana" },
       { kind: "country", id: "BFA", label: "Burkina Faso" },
     ],
@@ -1751,7 +1751,7 @@ export const DID_YOU_KNOW_FACTS: DidYouKnowFact[] = [
       "Ce que Kaffa nomme réellement est déjà triple : un peuple — qui se dit Kafficho —, un royaume historique, et une zone administrative éthiopienne actuelle. Keffa en est la translittération amharique. Trois choses sous un mot suffisent ; la quatrième était de trop.",
     ],
     entities: [
-      { kind: "people", id: "PPL_KAFFA", label: "Kafficho" },
+      { kind: "people", id: "PPL_KAFA", label: "Kafficho" },
       { kind: "country", id: "ETH", label: "Éthiopie" },
     ],
     tier: "referenced",

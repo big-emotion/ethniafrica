@@ -19,6 +19,9 @@ import { join, resolve } from "path";
 import {
   checkFlgFolderMatch,
   checkPplDuplicates,
+  checkRetiredIdentifiers,
+  checkPeopleReferencesResolve,
+  RETIRED_IDENTIFIERS_LEDGER,
   checkExternalIdentifierFormats,
   checkPeopleGroupConsistency,
   checkPopulationSums,
@@ -289,6 +292,289 @@ describe("validateAfrikData – new integrity checks", () => {
       const result = checkPplDuplicates(tmpDir);
       expect(result.ok).toBe(false);
       expect(result.errors.some((e) => e.includes("PPL_ZULU"))).toBe(true);
+    });
+  });
+
+  // ── FR27 : checkRetiredIdentifiers ─────────────────────────────────────────
+
+  describe("checkRetiredIdentifiers (FR27)", () => {
+    const ledgerEntry = (
+      decision: "merged" | "renamed" | "kept-distinct",
+      retiredId: string,
+      successorId: string | null
+    ) => ({
+      decision,
+      retiredId,
+      successorId,
+      reason: "Adjudicated for the test fixture, with a reason long enough.",
+      decidedOn: "2026-09-05",
+    });
+
+    function writeLedger(root: string, entries: unknown[]) {
+      mkdirSync(root, { recursive: true });
+      writeFileSync(
+        join(root, RETIRED_IDENTIFIERS_LEDGER),
+        JSON.stringify(entries)
+      );
+    }
+
+    // @req REQ-027
+    it("returns ok:true when no ledger exists yet", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+
+      expect(checkRetiredIdentifiers(tmpDir).ok).toBe(true);
+    });
+
+    // @req REQ-027
+    it("accepts a ledger whose successors exist and whose retired ids have no fiche", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_SENGA");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_NSENGA");
+      writeLedger(tmpDir, [
+        ledgerEntry("merged", "PPL_ZOULOU", "PPL_ZULU"),
+        ledgerEntry("kept-distinct", "PPL_SENGA", null),
+      ]);
+
+      const result = checkRetiredIdentifiers(tmpDir);
+      expect(result.errors).toEqual([]);
+      expect(result.ok).toBe(true);
+    });
+
+    // @req REQ-027
+    it("fails when a retired id still exists as a fiche file", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZOULOU");
+      writeLedger(tmpDir, [ledgerEntry("merged", "PPL_ZOULOU", "PPL_ZULU")]);
+
+      const result = checkRetiredIdentifiers(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("PPL_ZOULOU"))).toBe(true);
+    });
+
+    // @req REQ-027
+    it("fails when a successor has no fiche or is itself retired", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+      writeLedger(tmpDir, [
+        ledgerEntry("merged", "PPL_ZOULOU", "PPL_AMAZULU"),
+        ledgerEntry("renamed", "PPL_AMAZULU", "PPL_ZULU"),
+      ]);
+
+      const result = checkRetiredIdentifiers(tmpDir);
+      expect(result.ok).toBe(false);
+      // PPL_ZOULOU points at a retired id: a redirect must land in one hop.
+      expect(result.errors.some((e) => e.includes("PPL_ZOULOU"))).toBe(true);
+    });
+
+    // @req REQ-027
+    it("fails when a kept-distinct id has no fiche, or a merge has no successor", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+      writeLedger(tmpDir, [
+        ledgerEntry("kept-distinct", "PPL_SENGA", null),
+        ledgerEntry("merged", "PPL_ZOULOU", null),
+      ]);
+
+      const result = checkRetiredIdentifiers(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("PPL_SENGA"))).toBe(true);
+      expect(result.errors.some((e) => e.includes("PPL_ZOULOU"))).toBe(true);
+    });
+
+    // @req REQ-027
+    it("warns when a country still names a retired id, and fails when nothing succeeds it", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+      writePaysWithPopulation(tmpDir, "ZAF", [
+        { name: "Zulu", population: 1, percentageInCountry: 100 },
+      ]);
+      writeFileSync(
+        join(tmpDir, "pays", "ZAF.json"),
+        JSON.stringify({
+          id: "ZAF",
+          content: {
+            majorPeoples: [{ peopleId: "PPL_ZOULOU" }],
+            demographics: { peoples: [{ peopleId: "PPL_XHOSA_OLD" }] },
+          },
+        })
+      );
+      writeLedger(tmpDir, [
+        ledgerEntry("merged", "PPL_ZOULOU", "PPL_ZULU"),
+        ledgerEntry("kept-distinct", "PPL_XHOSA_OLD", null),
+      ]);
+
+      const result = checkRetiredIdentifiers(tmpDir);
+      expect(
+        result.warnings.some(
+          (w) => w.includes("PPL_ZOULOU") && w.includes("PPL_ZULU")
+        )
+      ).toBe(true);
+      // A kept-distinct entry retires nothing, so its id must exist as a fiche.
+      expect(result.errors.some((e) => e.includes("PPL_XHOSA_OLD"))).toBe(true);
+    });
+  });
+
+  // ── FR27 : checkPeopleReferencesResolve ────────────────────────────────────
+
+  describe("checkPeopleReferencesResolve (FR27)", () => {
+    function writeReferencingCorpus(root: string) {
+      writeFLG(root, "FLG_BANTU");
+      writePPL(root, "FLG_BANTU", "PPL_ZULU");
+      writePPL(root, "FLG_BANTU", "PPL_XHOSA", { id: "PPL_XHOSA" });
+      writeFileSync(
+        join(root, "famille_linguistique", "FLG_BANTU.json"),
+        JSON.stringify({
+          id: "FLG_BANTU",
+          content: { associatedPeoples: [{ peopleId: "PPL_ZULU" }] },
+        })
+      );
+      mkdirSync(join(root, "pays"), { recursive: true });
+      writeFileSync(
+        join(root, "pays", "ZAF.json"),
+        JSON.stringify({
+          id: "ZAF",
+          content: {
+            majorPeoples: [{ peopleId: "PPL_ZULU" }],
+            demographics: { peoples: [{ peopleId: "PPL_XHOSA" }] },
+          },
+        })
+      );
+      mkdirSync(join(root, "relations"), { recursive: true });
+      writeFileSync(
+        join(root, "relations", "REL_TEST.json"),
+        JSON.stringify({
+          id: "REL_TEST",
+          peopleIdA: "PPL_ZULU",
+          peopleIdB: "PPL_XHOSA",
+        })
+      );
+      mkdirSync(join(root, "patronymes"), { recursive: true });
+      writeFileSync(
+        join(root, "patronymes", "PAT_TEST.json"),
+        JSON.stringify({
+          id: "PAT_TEST",
+          peoples: [{ peopleId: "PPL_ZULU", status: "attested" }],
+        })
+      );
+      mkdirSync(join(root, "migrations"), { recursive: true });
+      writeFileSync(
+        join(root, "migrations", "MGR_TEST.json"),
+        JSON.stringify({
+          id: "MGR_TEST",
+          peoplesInvolved: [{ id: "PPL_XHOSA", role: "origin" }],
+        })
+      );
+    }
+
+    // @req REQ-027
+    it("returns ok:true when every reference names an existing fiche", () => {
+      writeReferencingCorpus(tmpDir);
+
+      const result = checkPeopleReferencesResolve(tmpDir);
+      expect(result.errors).toEqual([]);
+      expect(result.ok).toBe(true);
+    });
+
+    // @req REQ-027
+    it("resolves a reference to a retired id through its successor", () => {
+      writeReferencingCorpus(tmpDir);
+      writeFileSync(
+        join(tmpDir, "pays", "ZAF.json"),
+        JSON.stringify({
+          id: "ZAF",
+          content: { majorPeoples: [{ peopleId: "PPL_ZOULOU" }] },
+        })
+      );
+      writeFileSync(
+        join(tmpDir, RETIRED_IDENTIFIERS_LEDGER),
+        JSON.stringify([
+          {
+            decision: "merged",
+            retiredId: "PPL_ZOULOU",
+            successorId: "PPL_ZULU",
+            reason: "Same people under two spellings, kept the endonym.",
+            decidedOn: "2026-09-05",
+          },
+        ])
+      );
+
+      expect(checkPeopleReferencesResolve(tmpDir).ok).toBe(true);
+    });
+
+    // @req REQ-027
+    it("fails on a country, family, relation, patronym or migration naming an unknown id", () => {
+      writeReferencingCorpus(tmpDir);
+      writeFileSync(
+        join(tmpDir, "pays", "ZAF.json"),
+        JSON.stringify({
+          id: "ZAF",
+          content: {
+            majorPeoples: [{ peopleId: "PPL_GHOST_MAJOR" }],
+            demographics: { peoples: [{ peopleId: "PPL_GHOST_DEMO" }] },
+          },
+        })
+      );
+      writeFileSync(
+        join(tmpDir, "famille_linguistique", "FLG_BANTU.json"),
+        JSON.stringify({
+          id: "FLG_BANTU",
+          content: { associatedPeoples: [{ peopleId: "PPL_GHOST_FAMILY" }] },
+        })
+      );
+      writeFileSync(
+        join(tmpDir, "relations", "REL_TEST.json"),
+        JSON.stringify({
+          id: "REL_TEST",
+          peopleIdA: "PPL_ZULU",
+          peopleIdB: "PPL_GHOST_REL",
+        })
+      );
+      writeFileSync(
+        join(tmpDir, "patronymes", "PAT_TEST.json"),
+        JSON.stringify({
+          id: "PAT_TEST",
+          peoples: [{ peopleId: "PPL_GHOST_PAT" }],
+        })
+      );
+      writeFileSync(
+        join(tmpDir, "migrations", "MGR_TEST.json"),
+        JSON.stringify({
+          id: "MGR_TEST",
+          peoplesInvolved: [{ id: "PPL_GHOST_MGR" }],
+        })
+      );
+
+      const result = checkPeopleReferencesResolve(tmpDir);
+      expect(result.ok).toBe(false);
+      for (const ghost of [
+        "PPL_GHOST_MAJOR",
+        "PPL_GHOST_DEMO",
+        "PPL_GHOST_FAMILY",
+        "PPL_GHOST_REL",
+        "PPL_GHOST_PAT",
+        "PPL_GHOST_MGR",
+      ]) {
+        expect(result.errors.some((e) => e.includes(ghost))).toBe(true);
+      }
+    });
+
+    // @req REQ-027
+    it("ignores curator worksheets and templates", () => {
+      writeReferencingCorpus(tmpDir);
+      writeFileSync(
+        join(tmpDir, "patronymes", "_candidates.json"),
+        JSON.stringify({ peopleIds: ["PPL_GHOST_WORKSHEET"] })
+      );
+      mkdirSync(join(tmpDir, "systemes_onomastiques"), { recursive: true });
+      writeFileSync(
+        join(tmpDir, "systemes_onomastiques", "ONS_TEMPLATE.json"),
+        JSON.stringify({ associatedPeoples: ["PPL_XXXXX"] })
+      );
+
+      expect(checkPeopleReferencesResolve(tmpDir).ok).toBe(true);
     });
   });
 

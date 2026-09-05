@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
-import { sourceStandingLabelFr, type SourceTier } from "@/types/sources";
+import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
+import type { SourceTier } from "@/types/sources";
 
 type Standing = SourceTier | "needs_review";
 
@@ -42,7 +43,7 @@ export function SourceStandingBadge({
         className
       )}
     >
-      {sourceStandingLabelFr(standing)}
+      {sourceStandingLabel(standing, "fr")}
     </span>
   );
 }

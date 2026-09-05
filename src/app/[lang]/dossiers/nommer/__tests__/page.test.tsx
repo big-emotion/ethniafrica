@@ -69,12 +69,12 @@ describe("the Nommer pillar page", () => {
   it("states the undeclared fiches beside the contested ones", () => {
     render(<NommerPage />);
 
-    expect(screen.getByText(/460 sur 800/)).toBeInTheDocument();
+    expect(screen.getByText(/445 sur 775/)).toBeInTheDocument();
     expect(
-      screen.getByText(/321 fiches ne déclarent rien/)
+      screen.getByText(/311 fiches ne déclarent rien/)
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/321 fiches de peuple sur 800 ne déclarent aucun statut/)
+      screen.getByText(/311 fiches de peuple sur 775 ne déclarent aucun statut/)
     ).toBeInTheDocument();
   });
 

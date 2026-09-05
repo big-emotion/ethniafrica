@@ -76,7 +76,9 @@ All three are applied by a human, never auto-applied. Their current state per pr
   recette project, and `NEXT_PUBLIC_SUPABASE_URL` must equal it. Pointing at recette while
   declaring production fails with an error that says so.
 - Preview is the default. Writes require the additional `--apply` flag.
-- Non-destructive: it upserts source records and relations, and never prunes database-only rows.
+- Upsert-only by default: it upserts source records and relations. Rows the corpus no longer
+  declares are reported on every run and deleted only with `--prune --apply`, and never above
+  5 % of a table (`ORPHAN_SHARE_CAP`) — see [Retiring a people identifier](#retiring-a-people-identifier).
 - Existing `created_at` values are preserved; successful upserts update `updated_at`.
 - Processed in AFRIK hierarchy order: language families, languages, peoples, countries, then
   people/country relations.
@@ -291,11 +293,105 @@ curl -sI "$NEXT_PUBLIC_SUPABASE_URL/rest/v1/migration_events?select=*" \
 ```
 
 Then confirm idempotency: run the same `--apply` command a second time and read the counts
-again. They must be unchanged — the loaders upsert on the source id and never prune.
+again. They must be unchanged — the loaders upsert on the source id, and without `--prune`
+nothing is deleted.
 
 Finally, load `/fr/migrations` as an anonymous visitor. If it renders an empty state while the
 counts above are non-zero, the rows are present and RLS is blocking the read — check migration
 `038`.
+
+---
+
+## Retiring a people identifier
+
+A merge or rename of a `PPL_*` id is decided in git, in
+`dataset/source/afrik/_retired-identifiers.json`: the retired fiche is deleted, its successor
+absorbs it, every inbound reference is repointed, and the fiche page redirects the old URL to
+the successor's. `validateAfrikData.ts` (FR27 Retired identifiers) refuses a ledger whose retired
+ids still have a fiche or whose successors do not. None of that touches a database, and the
+automated syncs never pass `--prune`, so after the merge lands each target still serves the
+retired rows until a human removes them — in two steps, recette first, then production.
+
+### 1. Recette, after the merge to `recette`
+
+`recette-data-sync.yml` has already upserted the keepers and any renamed ids as new rows.
+Preview the orphans first, and read the whole list: the share is measured against the rows in
+the database, and recette has carried orphans of its own before (14 for seven months), so the
+preview shows those too. Every row named must be one you expected to lose.
+
+```bash
+npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=recette --prune
+npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=recette --prune --apply
+```
+
+A refusal (`Corpus orphan prune refused`) is a red run on purpose: the orphan share exceeds
+`ORPHAN_SHARE_CAP` and the corpus load is likelier broken than the deletions real. Do not raise
+the cap; find out why the corpus came back short.
+
+The prune deletes from `afrik_peoples`, and the foreign keys cascade to
+`afrik_people_countries`, `afrik_people_languages`, `afrik_patronyme_peoples` and the
+person↔people link. `afrik_people_relations` and `migration_event_peoples` restrict instead:
+a retired id still named there fails the delete, which is the signal that a relation or a
+migration was not repointed in git.
+
+### 2. The rows no foreign key reaches
+
+Seven tables key a `TEXT entity_id` to a people with no constraint, so their rows outlive the
+prune: `assertions`, `fiche_revisions`, `name_records`, `quiz_questions`, `flags`, `afrik_media`
+and `oral_narratives`. The public readers join `afrik_peoples`, so nothing stale is served, but
+the rows are dead weight and their counts drift the audits. Build the id list from the ledger
+and run this against the same target, in the SQL editor for recette and through the SSH tunnel
+`deploy-production.yml` uses for production (see `docs/runbooks/ovh-production-deploy.md`):
+
+```bash
+jq -r '[.[] | select(.decision != "kept-distinct") | .retiredId] | map("('" + . + "')") | join(", ")' \
+  dataset/source/afrik/_retired-identifiers.json
+```
+
+```sql
+-- Paste the list the jq command printed in place of the VALUES rows.
+WITH retired(entity_id) AS (VALUES ('PPL_EXAMPLE_A'), ('PPL_EXAMPLE_B'))
+, revoked AS (
+  UPDATE quiz_questions q SET revoked_at = now(), revoked_reason = 'people id retired'
+  FROM retired r WHERE q.entity_type = 'people' AND q.entity_id = r.entity_id AND q.revoked_at IS NULL
+  RETURNING q.id
+)
+, d1 AS (DELETE FROM assertions a       USING retired r WHERE a.entity_type = 'people' AND a.entity_id = r.entity_id RETURNING 1)
+, d2 AS (DELETE FROM fiche_revisions f  USING retired r WHERE f.entity_type = 'people' AND f.entity_id = r.entity_id RETURNING 1)
+, d3 AS (DELETE FROM name_records n     USING retired r WHERE n.entity_type = 'people' AND n.entity_id = r.entity_id RETURNING 1)
+, d4 AS (DELETE FROM flags fl           USING retired r WHERE fl.entity_type = 'people' AND fl.entity_id = r.entity_id RETURNING 1)
+, d5 AS (DELETE FROM afrik_media m      USING retired r WHERE m.entity_type = 'people' AND m.entity_id = r.entity_id RETURNING 1)
+, d6 AS (DELETE FROM oral_narratives o  USING retired r WHERE o.entity_type = 'people' AND o.entity_id = r.entity_id RETURNING 1)
+SELECT (SELECT count(*) FROM revoked) AS quiz_revoked,
+       (SELECT count(*) FROM d1) AS assertions,
+       (SELECT count(*) FROM d2) AS fiche_revisions,
+       (SELECT count(*) FROM d3) AS name_records,
+       (SELECT count(*) FROM d4) AS flags,
+       (SELECT count(*) FROM d5) AS afrik_media,
+       (SELECT count(*) FROM d6) AS oral_narratives;
+```
+
+Quiz questions are revoked rather than deleted because the table is revocable by design and
+`quiz_stats` counts revocations; a flag raised against a retired fiche is closed with its fiche.
+
+### 3. Production, after the Release
+
+`production-data-sync.yml` chains off the deploy and upserts, never prunes. Once it has run,
+repeat both steps with `--target=production`. The loader reads the target from
+`AFRIK_PRODUCTION_SUPABASE_URL`, which has no default; export it and the matching service-role
+key from the self-hosted stack before running, and check the preview names the same ids you
+pruned from recette:
+
+```bash
+export AFRIK_PRODUCTION_SUPABASE_URL=https://supabase.ethniafrica.com
+export NEXT_PUBLIC_SUPABASE_URL="$AFRIK_PRODUCTION_SUPABASE_URL"
+export SUPABASE_SERVICE_ROLE_KEY=<production service-role key>
+npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=production --prune
+npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=production --prune --apply
+```
+
+Then the SQL above, through the tunnel. Forgetting this step leaves the retired rows served by
+`/api/v2/peoples/{id}` and listed in the sitemap while the pages redirect elsewhere.
 
 ---
 

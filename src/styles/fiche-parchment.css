@@ -54,6 +54,10 @@
   font-size: var(--afh-text-h1);
   line-height: 1.1;
   letter-spacing: -0.015em;
+  /* Patronymes are single corpus tokens. Long forms such as
+     Randriamampionona cannot benefit from ordinary word wrapping and would
+     otherwise widen a 320px document beyond its viewport. */
+  overflow-wrap: anywhere;
   /* A family title carries a predicate after the name and runs two lines at
      the widths that matter. `pretty`, not `balance`: balancing
      "Nilo-saharien, une aire à reconstruire" into two even lines ends the

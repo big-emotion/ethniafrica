@@ -7,7 +7,14 @@
     "appellations": {
       "mainName": "Rungwa",
       "selfAppellation": "Icilungwa",
-      "exonyms": ["Lungwa", "Runga", "Ichirungwa", "Kirungwa", "Nyalungwa"],
+      "exonyms": [
+        "Lungwa",
+        "Runga",
+        "Ichirungwa",
+        "Kirungwa",
+        "Nyalungwa",
+        "Warungu (variante orthographique)"
+      ],
       "originOfExonyms": "Les formes alternatives du nom renvoient toutes a la langue et au groupe ethnique; Icilungwa est l'autonym utilise par les locuteurs eux-memes.",
       "whyProblematic": null,
       "contemporaryUsage": "Le nom Rungwa est utilise dans les sources administratives tanzaniennes et les recensements officiels. Les locuteurs se designent eux-memes par Icilungwa.",
@@ -16,18 +23,22 @@
       "historicalRegion": "Region de Rukwa / Katavi, ouest de la Tanzanie",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Rungwa"],
+    "ethnicities": ["Rungwa", "Warungwa"],
     "origins": {
       "ancientOrigins": "Les Rungwa sont un groupe bantou dont les origines remontent aux grandes migrations bantoues a travers l'Afrique centrale et orientale. Leur territoire se situe dans la plaine de Rukwa, au pied du plateau de Fipa, dans l'ouest de la Tanzanie.",
       "formationPeriod": "Le groupe s'est constitue progressivement au cours du premier millenaire de l'ere commune, lors des migrations bantoues vers l'est de l'Afrique. Leur identite distincte s'est affermie dans la region de Rukwa.",
       "migrationRoutes": [
         "Afrique centrale vers l'ouest de la Tanzanie",
-        "Bassin du lac Rukwa"
+        "Bassin du lac Rukwa",
+        "Corridor Zambie-Tanganyika-Rukwa (origine probable partagee avec les Fipa et Pimbwe)"
       ],
       "historicalSettlementZones": [
         "District de Mpanda, region de Rukwa",
         "Region de Katavi, ouest de la Tanzanie",
-        "Plaines au nord du lac Rukwa"
+        "Plaines au nord du lac Rukwa",
+        "District de Mpanda, region de Katavi",
+        "Plaines nord du lac Rukwa",
+        "Rukwa Region (ancienne denomination administrative avant 2012)"
       ],
       "unificationsOrDivisions": "La region de Rukwa a connu au XIXe siecle des bouleversements importants dus aux raids ngoni, au commerce arabe en ivoire et esclaves, et a l'arrivee des colonisateurs allemands puis britanniques.",
       "externalInfluences": "Presence des traders arabes zanzibaris au XIXe siecle; domination coloniale allemande a partir des annees 1880, puis britannique. Raids ngoni dans la region de Rukwa dans les annees 1840-1850.",
@@ -43,7 +54,7 @@
     "languages": {
       "mainLanguage": "Rungwa (Icilungwa)",
       "isoCodes": ["rnw"],
-      "dialects": [],
+      "dialects": ["Ichirungwa", "Kirungwa", "Nyalungwa"],
       "vehicularRole": "Le swahili est la langue vehiculaire et nationale de Tanzanie, utilise dans l'enseignement et l'administration. La langue rungwa est consideree comme menacee par Ethnologue."
     },
     "culture": {
@@ -93,6 +104,36 @@
         "url": "https://www.canil.ca/wordpress/wp-content/uploads/2016/09/2012-Roth-Tim.pdf",
         "tier": "referenced",
         "notes": "Tier resolved from the domain ruling for canil.ca."
+      },
+      {
+        "title": "Rungwa in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/print/14594/TZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Rungwa of Tanzania – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg015029/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Rungwa – Language Info, Swordshare Map",
+        "url": "https://map.swordshare.com/rnw",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      },
+      {
+        "title": "Rungwa – ScriptSource",
+        "url": "https://www.scriptsource.org/cms/scripts/page.php?item_id=subtag_detail&uid=vl25fkvzt2",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scriptsource.org."
+      },
+      {
+        "title": "ISO 639-3 Language Codes – National Center for Education Statistics",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
       }
     ]
   }

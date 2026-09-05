@@ -142,7 +142,8 @@
     "REQ-143",
     "REQ-144",
     "REQ-145",
-    "REQ-146"
+    "REQ-146",
+    "REQ-147"
   ],
   "sourceMap": {
     "REQ-001": "FR1",
@@ -283,6 +284,7 @@
     "REQ-143": "Confluence REQ-143 (page 195461121) — a field is translated according to its declared class: invariants such as autonyms, exonyms and source titles are never translated, and a field whose subject is a word is never published at machine provenance",
     "REQ-144": "Confluence REQ-144 (page 195461121) — one bilingual glossary fixes the domain terms and translated content uses it; peuple renders as people, never tribe, never ethnic group",
     "REQ-145": "Confluence REQ-145 (page 195461121) — content added or modified in one locale blocks until its counterpart exists in the other or the absence is declared with a reason; the gate is symmetric, neither locale is privileged as the source",
-    "REQ-146": "Confluence REQ-146 (page 195461121) — any content record is translatable by a single command, without a content-management interface, and a later CMS projects onto the same translation records"
+    "REQ-146": "Confluence REQ-146 (page 195461121) — any content record is translatable by a single command, without a content-management interface, and a later CMS projects onto the same translation records",
+    "REQ-147": "Confluence REQ-147 (page 196935681) — a name fiche states the standing of the sources it rests on (best tier, count, AI provenance) and says when it is still being assembled; a name with no source above the unverified tier is kept out of the sitemap and declares noindex, while staying reachable, listed, searchable and counted"
   }
 }
