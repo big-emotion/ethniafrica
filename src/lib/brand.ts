@@ -16,7 +16,13 @@
  * | NEXT_PUBLIC_ATTRIBUTION_STRING    | ATTRIBUTION_STRING | "Fait avec émotion pour l'Afrique"                                    |
  * | NEXT_PUBLIC_OG_TITLE              | OG_TITLE           | "EthniAfrica — Atlas des Peuples d'Afrique"                            |
  * | NEXT_PUBLIC_OG_DESCRIPTION        | OG_DESCRIPTION     | "Encyclopédie des peuples, langues et familles linguistiques d'Afrique" |
- * | NEXT_PUBLIC_SITE_LOCALE           | SITE_LOCALE        | "fr"                                                                  |
+ *
+ * There is no site-locale variable. `NEXT_PUBLIC_SITE_LOCALE` used to name a
+ * single locale for the whole site — the model the bilingual site ends
+ * (ARCH-021) — and was read by nothing but its own test. The locales the site
+ * publishes, and the default, are `LOCALES` and `DEFAULT_LOCALE` in
+ * `src/lib/locale.ts`; the Open Graph form of each is
+ * `OG_LOCALE_BY_LANGUAGE` in `src/lib/seo/localeAlternates.ts`.
  *
  * All environment variables use the `NEXT_PUBLIC_` prefix to ensure they are
  * available in both server and client contexts in Next.js.
@@ -98,7 +104,3 @@ export const OG_TITLE =
 export const OG_DESCRIPTION =
   process.env.NEXT_PUBLIC_OG_DESCRIPTION ||
   "Encyclopédie des peuples, langues, familles linguistiques, pays, appellations et noms d'Afrique";
-
-/** Default site locale for i18n */
-// @req REQ-019
-export const SITE_LOCALE = process.env.NEXT_PUBLIC_SITE_LOCALE || "fr";
