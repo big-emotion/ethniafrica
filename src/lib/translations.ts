@@ -312,6 +312,25 @@ export const translations = {
       nameSystemSectionTitle: "Le nom",
       nameSystemStatementPrefix: "Système de nommage :",
       nameSystemLabels: PATRONYME_VOCABULARY.fr.nameSystem,
+      // What the fiche rests on, said in the head rather than left to the
+      // reader to count at the bottom of the dossier. The tier word itself is
+      // never written here: it comes from the shared glossary, so the three
+      // labels the atlas publishes cannot fork per surface.
+      //
+      // The machine-written share is its own clause because provenance is not
+      // authority (Source Tier Policy): a fiche can cite four works, three of
+      // them machine-written, and still rest on a referenced one.
+      sourceStanding: {
+        countOne: "1 source citée",
+        countMany: "{count} sources citées",
+        aiShareOne: ", dont une rédigée par une intelligence artificielle",
+        aiShareMany:
+          ", dont {count} rédigées par une intelligence artificielle",
+        // Says what the atlas has not established, never why the workshop has
+        // not established it yet.
+        assembling:
+          "Cette fiche est en cours de constitution : ce qu'elle avance reste à confirmer.",
+      },
       casteOrSocialFunctionLabel: "Caste ou fonction sociale",
       attestedFormsTitle: "Graphies attestées",
       spellingAttestedInPrefix: "attestée en",

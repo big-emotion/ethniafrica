@@ -1,6 +1,14 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { isFicheKnownAbsent } from "../ficheExistence";
+const { getPatronymeByIdMock } = vi.hoisted(() => ({
+  getPatronymeByIdMock: vi.fn(),
+}));
+
+vi.mock("@/api/v2/services/patronymes", () => ({
+  getPatronymeById: getPatronymeByIdMock,
+}));
+
+import { isFicheKnownAbsent, loadPatronymeFiche } from "../ficheExistence";
 
 /**
  * The three-state existence question, and why it may not be collapsed to two.
@@ -51,5 +59,18 @@ describe("isFicheKnownAbsent", () => {
     await isFicheKnownAbsent(load, "PPL_WOLOF");
 
     expect(load).toHaveBeenCalledWith("PPL_WOLOF");
+  });
+});
+
+describe("loadPatronymeFiche", () => {
+  // Metadata, layout and page all need the same dossier. This shared loader is
+  // the request-cache boundary that keeps those reads on one snapshot in RSC.
+  // @req REQ-147
+  it("loads the requested name dossier through the patronyme service", async () => {
+    const patronyme = { id: "PAT_KEITA", content: {} };
+    getPatronymeByIdMock.mockResolvedValue(patronyme);
+
+    await expect(loadPatronymeFiche("PAT_KEITA")).resolves.toBe(patronyme);
+    expect(getPatronymeByIdMock).toHaveBeenCalledWith("PAT_KEITA");
   });
 });

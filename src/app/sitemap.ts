@@ -31,6 +31,12 @@ import { getSitemapEntityIds } from "@/lib/supabase/queries/afrik/sitemapEntries
 const LANGUAGE = "fr";
 const BASE_URL = `https://${CANONICAL_DOMAIN}`;
 
+// The emitted name set follows source tiers stored in the corpus projection.
+// Revalidate between releases so a corpus reload can add or remove a name
+// without waiting for the next production build.
+// @req REQ-147
+export const revalidate = 3600;
+
 /** Rubrics move when the site is restructured; fiches move when re-sourced. */
 const RUBRIC_CHANGE_FREQUENCY = "monthly" as const;
 const FICHE_CHANGE_FREQUENCY = "weekly" as const;

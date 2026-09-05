@@ -42,6 +42,7 @@ vi.mock("@/api/v2/services/patronymes", () => ({
 }));
 
 import { getCorpusCounts } from "../corpusCounts";
+import type { ListPatronymesQuery } from "@/api/v2/services/patronymes";
 
 function everyReadSucceeds() {
   getPeoplesMock.mockResolvedValue({ data: [], total: 4213 });
@@ -119,6 +120,27 @@ describe("getCorpusCounts (ETNI-1327, REQ-113)", () => {
     expect(listPatronymesMock).toHaveBeenCalledWith({ page: 1, perPage: 1 });
     expect(counts.patronymes).toBe(33);
     expect(counts.patronymes).not.toBe(counts.nameForms);
+  });
+
+  // DEC-050 withholds a name resting only on unverified sources from the
+  // sitemap. That is a crawler policy: the tile still owes the reader every
+  // name the corpus documents, and would understate the dimension if the
+  // indexing predicate were ever reused to narrow this read.
+  // @req REQ-147
+  it("counts every name, not only the ones the sitemap indexes", async () => {
+    everyReadSucceeds();
+    const NAMES_IN_CORPUS = 793;
+    const NAMES_THE_SITEMAP_INDEXES = 397;
+    listPatronymesMock.mockImplementation(
+      async (query: ListPatronymesQuery) => ({
+        data: [],
+        total: query.filters ? NAMES_THE_SITEMAP_INDEXES : NAMES_IN_CORPUS,
+      })
+    );
+
+    const counts = await getCorpusCounts();
+
+    expect(counts.patronymes).toBe(NAMES_IN_CORPUS);
   });
 
   // The home used to promise "3 000 ans" of history the corpus never held
