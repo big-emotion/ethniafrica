@@ -137,6 +137,10 @@
       "reason": "Un seul document trouvé range ce nom parmi les lignages du peuple kongo, et aucune autre source ne confirme ce rattachement de façon indépendante. Le lien avec ce peuple est donc à prendre comme une piste plutôt que comme un fait établi."
     },
     {
+      "fieldPath": "transmissionMode",
+      "reason": "La règle de transmission matrilinéaire retenue ici est celle du système clanique kongo en général, bien établie par ailleurs ; mais comme le rattachement de ce nom précis à un lignage kongo n'est lui-même qu'une piste, cette règle ne vaut que si ce rattachement se confirme, et non comme un fait démontré pour ce nom en particulier."
+    },
+    {
       "fieldPath": "countries",
       "reason": "Aucun document n'a permis de confirmer que ce nom est porté en République du Congo ; seule sa présence en République démocratique du Congo a pu être documentée."
     },

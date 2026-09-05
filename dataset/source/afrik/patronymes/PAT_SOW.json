@@ -63,7 +63,13 @@
       "sourceRefs": ["corpus-ppl-wolof-organisation"]
     }
   ],
-  "alliances": [],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_SANGARE",
+      "allianceType": "sanankuya",
+      "sourceRefs": ["bamadaba-jamuw"]
+    }
+  ],
   "casteOrSocialFunction": null,
   "bearers": [],
   "homonyms": [],
@@ -83,16 +89,20 @@
       "tier": "referenced",
       "source_kind": "repository",
       "notes": "Notice du Dictionary of American Family Names (Patrick Hanks, 2003/2006), consultée directement sur FamilySearch. Elle atteste Sow au Sénégal et en Mauritanie, mais le rattache aux groupes fulani et tukulor, non aux Wolof ; elle ne peut donc pas établir l'origine de l'association wolof conservée depuis le corpus."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms claniques est signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. L'entrée So, orthographe voisine de Sow retenue ici, y porte un marqueur de partenaire à plaisanterie (senankun) vers Sangaré ; les liens de ce type ne sont pas systématiquement réciproques d'une entrée à l'autre, mais celui-ci est porté par l'entrée So elle-même."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
       "reason": "La notice FamilySearch/Dictionary of American Family Names et la référence bibliographique de M'Bodj, Becker et Martin, « Notes sur les patronymes wolof » (1980), ont été recherchées pour une origine wolof de Sow. La première rattache plutôt le nom aux Fulani et Toucouleurs, tandis que le texte intégral de la seconde n'a pas été retrouvé ; aucune origine propre à l'association wolof de cette fiche n'est donc affirmée."
-    },
-    {
-      "fieldPath": "alliances",
-      "reason": "La notice FamilySearch et la référence bibliographique de M'Bodj, Becker et Martin ont été recherchées pour une paire de parenté à plaisanterie nommant Sow ; aucune paire patronymique vérifiable n'a été trouvée."
     },
     {
       "fieldPath": "casteOrSocialFunction",
