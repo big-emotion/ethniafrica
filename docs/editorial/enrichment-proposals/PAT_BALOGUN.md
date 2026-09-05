@@ -32,18 +32,31 @@ Enrich (proposal only — no source file edited, nothing committed).
    Journal of History, 2016), was found directly via search but its full text sat behind an
    access wall on every platform tried (academia.edu, ResearchGate) — only its bibliographic
    identity could be verified, not its argument.
-4. **The hereditary question is genuinely contested, not just unresolved.** Two
-   specific, on-topic descriptions of the title's succession directly contradict each
-   other: at Ibadan, the Balogun line of the Olubadan chieftaincy is explicitly
-   non-hereditary — succession runs on seniority and merit, "the Ibadan chieftaincy
-   system does not pass titles from father to son" (verified by direct fetch). In the
-   Ijebu area (Itele specifically), a Refworld country-of-origin research response states
-   the opposite: "the title of balogun is hereditary and permanent... it is usually the
-   first son of the balogun who succeeds his father." Both are on-topic, both are
-   specific, and they disagree. Rather than force one value into `transmissionMode` /
-   `designatedSocialUnit` (which the current fiche already declines to do, using `other` +
-   a gap), this proposal keeps that discipline and folds the new, sharper evidence into the
-   gap reasons instead of picking a side.
+4. **The hereditary question resolves to a documented general rule plus one
+   well-explained exception — it is not an irreducible contradiction.** The two
+   descriptions found (Ibadan: non-hereditary, merit/seniority; Ijebu/Itele: hereditary,
+   first-son) are not equally-weighted alternatives once the wider literature on Yoruba
+   chieftaincy is checked:
+   - P.C. Lloyd's classic study of Yoruba lineage organisation (_The Yoruba Lineage_,
+     _Africa_, vol. 25, no. 3, 1955, pp. 235-251, DOI 10.2307/1157104) documents
+     chieftaincy titles (`oye`) in general as vested in a lineage and rotating among its
+     constituent "chieftaincy houses" — i.e. patrilineal transmission within a lineage is
+     the documented general Yoruba pattern for titles of this kind, not a local quirk.
+   - The Ijebu-Itele Balogun case (Refworld) matches that general pattern exactly:
+     hereditary, first-son, within one family line.
+   - Ibadan's meritocratic, non-hereditary succession is independently and repeatedly
+     documented — by name, as an acknowledged exception — across multiple sources
+     (Premium Times, 24 September 2025; olubadan.com; TVC News), each attributing it to
+     Ibadan's distinct 19th-century founding as a multi-ethnic warrior camp with no
+     pre-existing royal lineage to inherit a title from. It is the exception whose cause
+     is on record, not a second, equally-valid default.
+
+   `transmissionMode` is therefore set to `patrilineal` and `designatedSocialUnit` to
+   `lineage`, matching the general rule and the Ijebu-Itele evidence. Ibadan's documented
+   departure from that rule is folded into `casteOrSocialFunction` as a named, explained
+   exception, rather than left as a second unresolved value or forcing the fiche's two
+   scalar fields to `other`.
+
 5. **Etymology is also contested, not singular.** Beyond YorubaNames' `ba(ba)-ní-ogun`
    reading, a genealogy aggregator (Forebears) offers two more segmentations — `ba
 (rencontrer) + logun (guerre)` and, for the Francophone spelling "Balogoun" used in
@@ -103,8 +116,8 @@ Enrich (proposal only — no source file edited, nothing committed).
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "other",
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
@@ -152,13 +165,15 @@ Enrich (proposal only — no source file edited, nothing committed).
   ],
   "alliances": [],
   "casteOrSocialFunction": {
-    "value": "Titre de chef de guerre (« général », proche de « père/chef dans la guerre ») conféré au sein des cours royales yoruba, avec rang de ministre de la guerre siégeant au conseil du souverain. Sa nature héréditaire diffère selon les royaumes documentés : à Ibadan, la charge s'acquiert par un système de mérite et d'ancienneté au sein d'une lignée de titres militaires, sans transmission automatique de père en fils ; dans la région d'Ijebu (dont Itele), des sources décrivent au contraire une charge héréditaire et permanente, revenant le plus souvent au fils aîné du titulaire précédent. Les deux logiques sont attestées séparément et n'ont pas été réconciliées par les recherches menées ici.",
+    "value": "Titre de chef de guerre (« général », proche de « père/chef dans la guerre ») conféré au sein des cours royales yoruba, avec rang de ministre de la guerre siégeant au conseil du souverain. Conformément au modèle général des titres de chefferie yoruba (oye), qui restent vestis dans un lignage et tournent entre ses branches (« maisons de chefferie »), la charge de Balogun se transmet en règle générale de manière patrilinéaire au sein d'une même lignée, revenant le plus souvent au fils aîné du précédent titulaire — c'est ce que décrivent en détail les sources concernant la région d'Ijebu (dont Itele). Ibadan constitue une exception documentée et nommée à cette règle : faute de lignage royal préexistant, la ville ayant été fondée au XIXe siècle comme camp de guerriers venus de plusieurs horizons, la charge de Balogun y est attribuée au mérite et à l'ancienneté au sein d'une hiérarchie de titres militaires, sans transmission automatique de père en fils.",
     "sourceRefs": [
       "yorubanames-balogun",
       "falola-oguntomisin-1984",
       "taiwo-olatunde-2016",
+      "lloyd-1955-yoruba-lineage",
+      "refworld-balogun-itele",
       "olubadan-ibadan-succession",
-      "refworld-balogun-itele"
+      "premiumtimes-olubadan-2025"
     ]
   },
   "bearers": [],
@@ -237,6 +252,22 @@ Enrich (proposal only — no source file edited, nothing committed).
       "notes": "Réponse documentaire hébergée par Refworld (UNHCR), du type habituellement produit par un organisme national de recherche sur les pays d'origine (p. ex. Commission de l'immigration et du statut de réfugié du Canada). Décrit le titre balogun comme héréditaire et transmis le plus souvent au fils aîné dans la région d'Ijebu. L'accès direct à la page a été refusé lors de la consultation ; seul le résumé indexé a pu être lu, ce qui limite la vérification de la date exacte et du texte intégral."
     },
     {
+      "sourceKey": "lloyd-1955-yoruba-lineage",
+      "title": "The Yoruba Lineage",
+      "url": "https://doi.org/10.2307/1157104",
+      "tier": "referenced",
+      "source_kind": "academic_journal_article",
+      "notes": "P. C. Lloyd, Africa, vol. 25, n° 3, juillet 1955, p. 235-251. Étude classique de l'organisation lignagère yoruba : établit que les titres de chefferie (oye) restent vestis dans un lignage et tournent entre ses branches (« maisons de chefferie »), documentant ainsi la règle générale de transmission patrilinéaire au sein d'un lignage dont la charge de Balogun à Ijebu-Itele est une instance, et dont Ibadan est une exception nommée."
+    },
+    {
+      "sourceKey": "premiumtimes-olubadan-2025",
+      "title": "Olubadan stool and Ibadan's unique succession system",
+      "url": "https://www.premiumtimesng.com/regional/ssouth-west/823413-olubadan-stool-and-ibadans-unique-succession-system.html",
+      "tier": "referenced",
+      "source_kind": "press_article",
+      "notes": "Folashade Ogunrinde, Premium Times (Nigeria), 24 septembre 2025. Article de presse signé, média professionnel identifiable, expliquant pourquoi la succession non héréditaire d'Ibadan (dont la ligne Balogun) est une exception documentée liée à la fondation de la ville au XIXe siècle comme camp de guerriers sans lignage royal préexistant, à la différence des autres royaumes yoruba."
+    },
+    {
       "sourceKey": "naturenex-balogun-market",
       "title": "Balogun Market Lagos Island – Nigeria's Largest Open-Air Market",
       "url": "https://naturenex.net/balogun-market-lagos-island/",
@@ -261,14 +292,6 @@ Enrich (proposal only — no source file edited, nothing committed).
     {
       "fieldPath": "bearers",
       "reason": "Le nom est porté par de nombreuses personnalités publiques nigérianes, mais aucune ayant revendiqué publiquement, en ses propres mots, une identité yoruba n'a été retrouvée ; en l'absence d'une telle déclaration, aucun porteur ne peut être cité ici."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Le titre est décrit tantôt comme acquis au mérite, sans transmission automatique d'un titulaire à ses descendants, tantôt comme une charge héréditaire revenant le plus souvent au fils aîné, selon la région étudiée. Ces deux descriptions n'ont pas pu être conciliées, et aucune ne permet à elle seule d'établir un mode de transmission unique."
-    },
-    {
-      "fieldPath": "designatedSocialUnit",
-      "reason": "Selon les sources consultées, le titre correspond tantôt à une charge occupée par un individu au sein d'une hiérarchie de cour, tantôt à une position qui reste dans une même famille sur plusieurs générations. Cette différence n'a pas pu être tranchée par les recherches menées."
     }
   ]
 }
@@ -294,24 +317,35 @@ Enrich (proposal only — no source file edited, nothing committed).
   (Nsukka Journal of History, 2016). Bibliographically identified; full text was behind an
   access wall on every platform tried, so its content could not be used beyond confirming
   it exists and is on-topic.
-- `olubadan-ibadan-succession` — **unverified** (community): fetched directly, describes
-  Ibadan's Balogun chieftaincy line as non-hereditary and seniority-based.
 - `refworld-balogun-itele` — **referenced** (government research response): a Refworld
   (UNHCR) country-of-origin information document on the Balogun title in the Ijebu area,
-  describing it as hereditary, first-son succession. Directly contradicts the Ibadan
-  description above — both are kept, deliberately, rather than silently choosing one.
+  describing it as hereditary, first-son succession — matches the documented general
+  Yoruba pattern (see `lloyd-1955-yoruba-lineage` below).
+- `lloyd-1955-yoruba-lineage` — **referenced** (peer-reviewed academic journal article):
+  P. C. Lloyd, "The Yoruba Lineage," _Africa_, vol. 25, no. 3 (1955). Establishes that
+  Yoruba chieftaincy titles in general are vested in a lineage and rotate among its
+  branches — the basis for setting `transmissionMode: patrilineal` and
+  `designatedSocialUnit: lineage` as the documented general rule, rather than leaving
+  both fields at `other`.
+- `olubadan-ibadan-succession` — **unverified** (community): fetched directly, describes
+  Ibadan's Balogun chieftaincy line as non-hereditary and seniority-based — now understood
+  as a named, explained exception to the general rule above, not a competing default.
+- `premiumtimes-olubadan-2025` — **referenced** (signed press article): Folashade
+  Ogunrinde, Premium Times (Nigeria), 24 September 2025. Independently corroborates and
+  explains Ibadan's exception: no pre-existing royal lineage to inherit a title from,
+  given the city's 19th-century founding as a multi-ethnic warrior camp.
 - `naturenex-balogun-market` — **unverified** (blog): sole basis for the new homonym
   entry (Balogun Market, Lagos).
 
 ## Still missing
 
-- `transmissionMode` and `designatedSocialUnit` remain `other` on purpose: the evidence is
-  genuinely split between two Yoruba polities (Ibadan: non-hereditary/merit; Ijebu/Itele:
-  hereditary/first-son), and forcing either value into a single field would misrepresent
-  one polity's practice as the whole title's rule. A polity-by-polity extension of the
-  model (or a `claimStatus`-bearing structure for these two fields, which the strict model
-  does not currently provide) would be the honest way to resolve this, not a single
-  enum pick.
+- `transmissionMode: patrilineal` and `designatedSocialUnit: lineage` reflect the
+  documented general Yoruba rule (Lloyd 1955) and the Ijebu/Itele evidence, with Ibadan's
+  exception explained in prose rather than in a scalar field — the strict model has no
+  `claimStatus`-bearing structure for these two fields to record a polity-by-polity split
+  natively, so the exception has to live in `casteOrSocialFunction` instead of its own
+  field. If the model is ever extended with per-polity sourcing for these fields, Ibadan
+  should get its own entry rather than being folded into prose.
 - `taiwo-olatunde-2016`'s actual argument is still unread — only its bibliographic
   identity was confirmed. If reachable through a library or institutional accesss, it is
   the single most promising item to chase next: a dedicated academic study of the Balogun
