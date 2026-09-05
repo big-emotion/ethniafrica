@@ -511,6 +511,103 @@ describe("ftsSearchEntities", () => {
     });
   });
 
+  // ETNI-1857: the four functions whose rows carry a locale-bound name take
+  // p_lang (migration 082). It is sent only when the request names a
+  // locale: against a database still on 069 a named parameter the function
+  // does not know answers PGRST202, while a call without it is served by the
+  // default on both definitions — so a French request survives the rollout
+  // window in either order.
+  // @req REQ-141
+  it("passes the locale as p_lang to every name-bearing ranking function", async () => {
+    await ftsSearchEntities({ q: "chad", limit: 20, offset: 0, lang: "en" });
+
+    for (const fn of [
+      "afrik_search_peoples",
+      "afrik_search_countries",
+      "afrik_search_language_families",
+      "afrik_search_languages",
+    ]) {
+      expect(rpc).toHaveBeenCalledWith(
+        fn,
+        expect.objectContaining({ p_q: "chad", p_lang: "en" })
+      );
+    }
+    for (const fn of ["afrik_search_persons", "afrik_search_patronymes"]) {
+      expect(rpc).toHaveBeenCalledWith(
+        fn,
+        expect.not.objectContaining({ p_lang: expect.anything() })
+      );
+    }
+  });
+
+  // @req REQ-141
+  it("sends no p_lang at all when the request names no locale", async () => {
+    await ftsSearchEntities({ q: "tchad", limit: 20, offset: 0 });
+
+    for (const call of rpc.mock.calls) {
+      expect(call[1]).not.toHaveProperty("p_lang");
+    }
+  });
+
+  // @req REQ-141
+  it("carries the family's English name on every people row", async () => {
+    peoplesPayload = {
+      total: 1,
+      rows: [
+        peopleRow("PPL_BETE", "Bété", {
+          languageFamilyName: "Krou",
+          languageFamilyNameEn: "Kru",
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({ q: "bété", limit: 20, offset: 0 });
+
+    expect(result.peoples[0].languageFamilyName).toBe("Krou");
+    expect(result.peoples[0].languageFamilyNameEn).toBe("Kru");
+  });
+
+  // @req REQ-141
+  it("reads a null family English name as null, never as the string 'null'", async () => {
+    peoplesPayload = {
+      total: 1,
+      rows: [peopleRow("PPL_BETE", "Bété", { languageFamilyNameEn: null })],
+    };
+
+    const result = await ftsSearchEntities({ q: "bété", limit: 20, offset: 0 });
+
+    expect(result.peoples[0].languageFamilyNameEn).toBeNull();
+  });
+
+  // @req REQ-143
+  it("carries the country's English name beside the French one", async () => {
+    countriesPayload = {
+      total: 1,
+      rows: [countryRow("TCD", "Tchad", { nameEn: "Chad" })],
+    };
+
+    const result = await ftsSearchEntities({ q: "chad", limit: 20, offset: 0 });
+
+    expect(result.countries[0].nameFr).toBe("Tchad");
+    expect(result.countries[0].nameEn).toBe("Chad");
+  });
+
+  // @req REQ-143
+  it("leaves a country's nameEn undefined until the corpus reload fills the column", async () => {
+    countriesPayload = {
+      total: 1,
+      rows: [countryRow("TCD", "Tchad", { nameEn: null })],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "tchad",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.countries[0].nameEn).toBeUndefined();
+  });
+
   // @req REQ-002
   it("keeps the database's ranking of language families instead of re-sorting them", async () => {
     // The tier ladder now lives in afrik_search_language_families (migration
@@ -1272,6 +1369,47 @@ describe("ftsSearchEntities", () => {
     );
   });
 
+  // @req REQ-141
+  it("carries the language's English name and its family's beside the French ones", async () => {
+    languagesPayload = {
+      total: 1,
+      rows: [
+        languageRow("arb", "Arabe standard moderne", {
+          nameEn: "Standard Arabic",
+          familyName: "Afro-asiatique",
+          familyNameEn: "Afroasiatic",
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "arabic",
+      limit: 20,
+      offset: 0,
+      lang: "en",
+    });
+
+    expect(result.languages[0].name).toBe("Arabe standard moderne");
+    expect(result.languages[0].nameEn).toBe("Standard Arabic");
+    expect(result.languages[0].familyName).toBe("Afro-asiatique");
+    expect(result.languages[0].familyNameEn).toBe("Afroasiatic");
+  });
+
+  // @req REQ-141
+  it("leaves a language's English names null when the fiche carries none", async () => {
+    languagesPayload = {
+      total: 1,
+      rows: [
+        languageRow("swa", "Swahili", { nameEn: null, familyNameEn: null }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({ q: "swa", limit: 20, offset: 0 });
+
+    expect(result.languages[0].nameEn).toBeNull();
+    expect(result.languages[0].familyNameEn).toBeNull();
+  });
+
   // @req REQ-136
   it("reports zero languages and an empty array when nothing matches", async () => {
     const result = await ftsSearchEntities({
@@ -1502,6 +1640,40 @@ describe("ftsSearchEntities", () => {
     };
 
     const result = await ftsSearchEntities({ q: "e", limit: 20, offset: 0 });
+
+    expect(result.results.map((hit) => hit.id)).toEqual([
+      "ELE",
+      "PPL_ELE_B",
+      "PPL_EPE",
+    ]);
+  });
+
+  // The tie-break collates in the locale the request was served in. ICU's
+  // English and French tailorings agree on every name in the corpus, so the
+  // observable contract under `lang: "en"` is the same deterministic order
+  // — what this guards is that the English path sorts at all, rather than
+  // falling back to a byte comparison that would put every accented name
+  // after "Z".
+  // @req REQ-141
+  it("keeps the tie-break deterministic and accent-aware under the English locale", async () => {
+    peoplesPayload = {
+      total: 2,
+      rows: [
+        peopleRow("PPL_EPE", "Epe", { normalizedScore: 0.7 }),
+        peopleRow("PPL_ELE_B", "Élé", { normalizedScore: 0.7 }),
+      ],
+    };
+    countriesPayload = {
+      total: 1,
+      rows: [countryRow("ELE", "Élé", { normalizedScore: 0.7 })],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "e",
+      limit: 20,
+      offset: 0,
+      lang: "en",
+    });
 
     expect(result.results.map((hit) => hit.id)).toEqual([
       "ELE",
