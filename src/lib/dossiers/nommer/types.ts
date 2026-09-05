@@ -269,8 +269,10 @@ export interface DossierChapterTranslation {
   measure: { value: string; unit: string };
   sections: Readonly<Record<string, ChapterSectionTranslation>>;
   /**
-   * Entity labels by entity id. A country takes its English name; a people
-   * or a family keeps the label the French shows, which is already the name.
+   * Entity labels by entity id. A people keeps the label the French shows,
+   * which is already the name (REQ-143). A country takes its English name,
+   * and so does a family: « Famille bantoue » is a French phrase around the
+   * corpus's own `nameEn`, not a name the glossary would hold verbatim.
    */
   entities: Readonly<Record<string, string>>;
 }
