@@ -40,6 +40,13 @@ const YORUBA = {
   ],
 };
 
+const MACHINE_PROVENANCE = {
+  kind: "machine" as const,
+  translatedAt: "2026-09-05T10:00:00.000Z",
+  reviewedBy: null,
+  stale: false,
+};
+
 describe("Language Handler", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -51,7 +58,7 @@ describe("Language Handler", () => {
 
     const result = await getLanguageHandler("yor");
 
-    expect(getLanguageById).toHaveBeenCalledWith("yor");
+    expect(getLanguageById).toHaveBeenCalledWith("yor", "fr");
     expect(result).toEqual({
       ok: true,
       envelope: {
@@ -69,6 +76,23 @@ describe("Language Handler", () => {
         errors: [],
       },
     });
+  });
+
+  // @req REQ-142
+  it("forwards the locale and carries the provenance on meta, outside the validated body", async () => {
+    vi.mocked(getLanguageById).mockResolvedValue({
+      ...YORUBA,
+      translation: MACHINE_PROVENANCE,
+    });
+
+    const result = await getLanguageHandler("yor", "en");
+
+    expect(getLanguageById).toHaveBeenCalledWith("yor", "en");
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.envelope.meta.translation).toEqual(MACHINE_PROVENANCE);
+      expect(result.envelope.data).not.toHaveProperty("translation");
+    }
   });
 
   // @req REQ-136

@@ -23,6 +23,13 @@ const SHONA: People = {
   content: {},
 };
 
+const MACHINE_PROVENANCE = {
+  kind: "machine" as const,
+  translatedAt: "2026-09-05T10:00:00.000Z",
+  reviewedBy: null,
+  stale: false,
+};
+
 describe("Peoples Handler", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -80,7 +87,7 @@ describe("Peoples Handler", () => {
 
       const response = await getPeopleHandler("PPL_SHONA");
 
-      expect(getPeopleById).toHaveBeenCalledWith("PPL_SHONA");
+      expect(getPeopleById).toHaveBeenCalledWith("PPL_SHONA", "fr");
       expect(response).toEqual({
         data: { ...SHONA, patronymes: [] },
         meta: {
@@ -125,6 +132,32 @@ describe("Peoples Handler", () => {
       // and only one of them is what the corpus says: 13 peoples out of some
       // 800 carry a name, so "none yet" is the answer, not an omission.
       expect(response?.data.patronymes).toEqual([]);
+    });
+
+    // @req REQ-142
+    it("forwards the locale and lifts the provenance out of the record onto meta", async () => {
+      vi.mocked(getPeopleById).mockResolvedValue({
+        ...SHONA,
+        translation: MACHINE_PROVENANCE,
+      });
+
+      const response = await getPeopleHandler("PPL_SHONA", "en");
+
+      expect(getPeopleById).toHaveBeenCalledWith("PPL_SHONA", "en");
+      expect(response?.meta.translation).toEqual(MACHINE_PROVENANCE);
+      expect(response?.data).not.toHaveProperty("translation");
+    });
+
+    // @req REQ-142
+    it("reports a null provenance when the locale has no record", async () => {
+      vi.mocked(getPeopleById).mockResolvedValue({
+        ...SHONA,
+        translation: null,
+      });
+
+      const response = await getPeopleHandler("PPL_SHONA", "en");
+
+      expect(response?.meta).toHaveProperty("translation", null);
     });
 
     // @req REQ-133

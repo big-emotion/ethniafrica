@@ -9,8 +9,10 @@ import {
   getPaginatedAfrikPeoples,
 } from "@/lib/supabase/queries/afrik/peoples";
 import type { PeopleQueryFilters } from "@/lib/supabase/queries/afrik/peoples";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 import type { People } from "@/types/afrik";
 import type { PaginatedResult } from "./countryService";
+import { attachTranslation, type TranslatedEntity } from "./translations";
 
 /**
  * Get paginated list of peoples
@@ -27,10 +29,17 @@ export async function getPeoples(
 /**
  * Get a single people by PPL_ ID
  * Note: Individual items use direct query for now (less critical than lists)
+ *
+ * `lang` other than the authored `fr` overlays the translation record and
+ * carries its provenance on the entity (REQ-142).
  */
 // @req REQ-019
-export async function getPeopleById(id: string): Promise<People | null> {
-  return await getAfrikPeopleById(id);
+// @req REQ-142
+export async function getPeopleById(
+  id: string,
+  lang: TranslationLocale = "fr"
+): Promise<TranslatedEntity<People> | null> {
+  return attachTranslation("people", id, lang, await getAfrikPeopleById(id));
 }
 
 /**

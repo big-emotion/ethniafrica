@@ -2,6 +2,7 @@
  * Response utilities for API v2
  */
 
+import type { TranslationProvenance } from "@/lib/afrik/translations/types";
 import type { PaginationMeta } from "@/types/afrik";
 import { PRODUCT_NAME, CANONICAL_DOMAIN } from "@/lib/brand";
 
@@ -37,6 +38,12 @@ export interface ApiResponseMeta {
   confidence?: number | null;
   pinned_url?: string | null;
   pagination?: PaginationMeta;
+  /**
+   * How the served record was translated (REQ-142). Present once a locale
+   * other than the authored one was asked for; null when that locale has no
+   * record and the authored text is what the reader gets.
+   */
+  translation?: TranslationProvenance | null;
 }
 
 export interface ApiEnvelope<T> {
@@ -72,6 +79,7 @@ interface CreateApiResponseOptions {
   pagination?: PaginationMeta;
   confidence?: number | null;
   pinnedUrl?: string | null;
+  translation?: TranslationProvenance | null;
 }
 
 /**
@@ -98,6 +106,9 @@ export function createApiResponse<T>(
   }
   if (options.pinnedUrl !== undefined) {
     meta.pinned_url = options.pinnedUrl;
+  }
+  if (options.translation !== undefined) {
+    meta.translation = options.translation;
   }
 
   return { data, meta, errors: [] };

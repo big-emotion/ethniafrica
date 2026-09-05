@@ -5,6 +5,10 @@ import {
   getPeoplesByLanguageFamily,
 } from "../peopleService";
 
+vi.mock("@/lib/supabase/queries/afrik/translations", () => ({
+  getAfrikTranslation: vi.fn(),
+}));
+
 vi.mock("@/lib/supabase/queries/afrik/peoples", () => ({
   getPaginatedAfrikPeoples: vi.fn(),
   getAfrikPeopleById: vi.fn(),
@@ -16,6 +20,7 @@ import {
   getAfrikPeopleById,
   getAfrikPeoplesByLanguageFamily,
 } from "@/lib/supabase/queries/afrik/peoples";
+import { getAfrikTranslation } from "@/lib/supabase/queries/afrik/translations";
 
 describe("People Service", () => {
   beforeEach(() => {
@@ -79,6 +84,54 @@ describe("People Service", () => {
       const people = await getPeopleById("PPL_NONEXISTENT");
 
       expect(people).toBeNull();
+    });
+
+    // @req REQ-142
+    it("overlays the English record and carries its provenance when asked for en", async () => {
+      vi.mocked(getAfrikPeopleById).mockResolvedValue({
+        id: "PPL_SHONA",
+        nameMain: "Shona",
+        languageFamilyId: "FLG_BANTU",
+        currentCountries: ["ZWE"],
+        content: { origins: { ancientOrigins: "Les Shona…" } },
+      });
+      vi.mocked(getAfrikTranslation).mockResolvedValue({
+        entityType: "people",
+        entityId: "PPL_SHONA",
+        lang: "en",
+        content: { content: { origins: { ancientOrigins: "The Shona…" } } },
+        translationKind: "machine",
+        translatedAt: "2026-09-05T10:00:00.000Z",
+        sourceHash: "d".repeat(64),
+        fieldHashes: {},
+        reviewRequired: [],
+      });
+
+      const people = await getPeopleById("PPL_SHONA", "en");
+
+      expect(getAfrikTranslation).toHaveBeenCalledWith(
+        "people",
+        "PPL_SHONA",
+        "en"
+      );
+      expect(people?.content.origins?.ancientOrigins).toBe("The Shona…");
+      expect(people?.nameMain).toBe("Shona");
+      expect(people?.translation).toMatchObject({ kind: "machine" });
+    });
+
+    // @req REQ-142
+    it("never queries a translation for the authored locale", async () => {
+      vi.mocked(getAfrikPeopleById).mockResolvedValue({
+        id: "PPL_SHONA",
+        nameMain: "Shona",
+        languageFamilyId: "FLG_BANTU",
+        currentCountries: ["ZWE"],
+        content: {},
+      });
+
+      await getPeopleById("PPL_SHONA");
+
+      expect(getAfrikTranslation).not.toHaveBeenCalled();
     });
   });
 

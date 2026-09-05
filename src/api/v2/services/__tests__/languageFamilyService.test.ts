@@ -4,6 +4,10 @@ import {
   getLanguageFamilyById,
 } from "../languageFamilyService";
 
+vi.mock("@/lib/supabase/queries/afrik/translations", () => ({
+  getAfrikTranslation: vi.fn(),
+}));
+
 vi.mock("@/lib/supabase/queries/afrik/languageFamilies", () => ({
   getAllAfrikLanguageFamilies: vi.fn(),
   getAfrikLanguageFamilyById: vi.fn(),
@@ -28,6 +32,8 @@ import {
   getAfrikLanguageFamilyRoster,
 } from "@/lib/supabase/queries/afrik/languageFamilies";
 import { countUnclassifiedPeoples } from "@/lib/supabase/queries/afrik/languageFamilyFacet";
+import { getAfrikTranslation } from "@/lib/supabase/queries/afrik/translations";
+
 import {
   getAfrikPeoplesByLanguageFamily,
   getPeopleCountsByLanguageFamily,
@@ -274,6 +280,51 @@ describe("Language Family Service", () => {
   });
 
   describe("getLanguageFamilyById", () => {
+    // @req REQ-142
+    it("overlays the English prose after deriving the peoples, and carries the provenance", async () => {
+      vi.mocked(getAfrikLanguageFamilyById).mockResolvedValue({
+        id: "FLG_BANTU",
+        nameFr: "Bantou",
+        content: {
+          historyAndOrigins: { probableOrigin: "Origine probable." },
+        },
+      });
+      vi.mocked(getAfrikPeoplesByLanguageFamily).mockResolvedValue([
+        {
+          id: "PPL_ZULU",
+          nameMain: "Zulu",
+          languageFamilyId: "FLG_BANTU",
+          currentCountries: ["ZAF"],
+          content: {},
+        },
+      ]);
+      vi.mocked(getAfrikTranslation).mockResolvedValue({
+        entityType: "language_family",
+        entityId: "FLG_BANTU",
+        lang: "en",
+        content: {
+          content: {
+            historyAndOrigins: { probableOrigin: "Probable origin." },
+          },
+        },
+        translationKind: "machine",
+        translatedAt: "2026-09-05T10:00:00.000Z",
+        sourceHash: "d".repeat(64),
+        fieldHashes: {},
+        reviewRequired: [],
+      });
+
+      const family = await getLanguageFamilyById("FLG_BANTU", "en");
+
+      expect(family?.content.historyAndOrigins?.probableOrigin).toBe(
+        "Probable origin."
+      );
+      expect(family?.associatedPeoples).toEqual([
+        { name: "Zulu", peopleId: "PPL_ZULU" },
+      ]);
+      expect(family?.translation).toMatchObject({ kind: "machine" });
+    });
+
     // @req REQ-033
     it("should derive associated peoples from canonical people relationships", async () => {
       const mockFamily = {

@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { classifierFor } from "../leafClassifier";
 import {
   canonicalize,
+  driftedPaths,
   fieldHashes,
   sha256,
   sourceHash,
@@ -111,5 +112,18 @@ describe("translation hashing (REQ-146)", () => {
     expect(sourceHash(edited, classify)).not.toBe(
       sourceHash(ASANTE_SHAPED, classify)
     );
+  });
+
+  // @req REQ-146
+  it("names the drifted paths against earlier field hashes, and only those", () => {
+    const previous = fieldHashes(ASANTE_SHAPED, classify);
+    const edited = structuredClone(ASANTE_SHAPED);
+    edited.content.origins.ancientOrigins = "Texte révisé.";
+    edited.content.origins.migrationRoutes.push("Nouvelle route");
+
+    expect(driftedPaths(edited, previous, classify)).toEqual([
+      "content.origins.ancientOrigins",
+    ]);
+    expect(driftedPaths(ASANTE_SHAPED, previous, classify)).toEqual([]);
   });
 });

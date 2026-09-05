@@ -110,3 +110,22 @@ export function fieldHashes(
 export function sourceHash(record: unknown, classify: LeafClassifier): string {
   return sha256(canonicalize(fieldHashes(record, classify)));
 }
+
+/**
+ * The concrete paths whose source text changed since `previous` was taken,
+ * judged only on the leaves `record` carries: a leaf the served shape drops
+ * (the language aggregate flattens its content) is not evidence either way.
+ * Drift is named field by field so a translation is repaired, not redone
+ * (REQ-146 AC2).
+ */
+// @req REQ-146
+export function driftedPaths(
+  record: unknown,
+  previous: Record<string, string>,
+  classify: LeafClassifier
+): string[] {
+  const current = fieldHashes(record, classify);
+  return Object.keys(current)
+    .filter((path) => path in previous && previous[path] !== current[path])
+    .sort();
+}

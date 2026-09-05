@@ -92,6 +92,47 @@ describe("API v2 - Single Language Family Route", () => {
       ]);
     });
 
+    describe("?lang (REQ-142)", () => {
+      // @req REQ-142
+      it("forwards a supported locale to the handler", async () => {
+        vi.mocked(getLanguageFamilyHandler).mockResolvedValue({
+          data: { id: "FLG_BANTU", nameFr: "Bantou", content: {} },
+          meta: { license: "CC-BY-SA-4.0", attribution: API_ATTRIBUTION },
+          errors: [],
+        } as never);
+
+        const response = await GET(
+          new NextRequest(
+            "http://localhost/api/v2/language-families/FLG_BANTU?lang=en"
+          ),
+          { params: Promise.resolve({ id: "FLG_BANTU" }) }
+        );
+
+        expect(response.status).toBe(200);
+        expect(getLanguageFamilyHandler).toHaveBeenCalledWith(
+          "FLG_BANTU",
+          "en"
+        );
+      });
+
+      // @req REQ-142
+      it("refuses an unsupported locale with a 400 naming the field", async () => {
+        const response = await GET(
+          new NextRequest(
+            "http://localhost/api/v2/language-families/FLG_BANTU?lang=de"
+          ),
+          { params: Promise.resolve({ id: "FLG_BANTU" }) }
+        );
+
+        expect(response.status).toBe(400);
+        expect(await response.json()).toMatchObject({
+          data: null,
+          errors: [{ code: "VALIDATION_ERROR", field: "lang" }],
+        });
+        expect(getLanguageFamilyHandler).not.toHaveBeenCalled();
+      });
+    });
+
     // @req REQ-084
     it("should return 400 for invalid ID format", async () => {
       const request = new NextRequest(

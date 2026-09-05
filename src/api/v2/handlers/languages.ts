@@ -5,6 +5,7 @@ import {
 import { serializeLanguage } from "@/api/v2/serializers/languages";
 import { getLanguageById } from "@/api/v2/services/languageService";
 import { createApiResponse, type ApiEnvelope } from "@/api/v2/utils/response";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 
 // @req REQ-136
 export type LanguageHandlerResult =
@@ -12,10 +13,12 @@ export type LanguageHandlerResult =
   | { ok: false; code: "NOT_FOUND"; message: string };
 
 // @req REQ-136
+// @req REQ-142
 export async function getLanguageHandler(
-  id: string
+  id: string,
+  lang: TranslationLocale = "fr"
 ): Promise<LanguageHandlerResult> {
-  const language = await getLanguageById(id);
+  const language = await getLanguageById(id, lang);
 
   if (!language) {
     return {
@@ -25,12 +28,11 @@ export async function getLanguageHandler(
     };
   }
 
-  const publicLanguage = publicLanguageSchema.parse(
-    serializeLanguage(language)
-  );
+  const { translation, ...detail } = language;
+  const publicLanguage = publicLanguageSchema.parse(serializeLanguage(detail));
 
   return {
     ok: true,
-    envelope: createApiResponse(publicLanguage),
+    envelope: createApiResponse(publicLanguage, { translation }),
   };
 }

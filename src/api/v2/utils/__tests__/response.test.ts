@@ -47,6 +47,27 @@ describe("createApiResponse", () => {
       "https://example.org/peuples/shona@v4"
     );
   });
+
+  // @req REQ-142
+  it("carries the translation provenance on meta, null included, and omits it when unasked", () => {
+    const provenance = {
+      kind: "machine" as const,
+      translatedAt: "2026-09-05T10:00:00.000Z",
+      reviewedBy: null,
+      stale: false,
+    };
+
+    expect(
+      createApiResponse({ id: "PPL_SHONA" }, { translation: provenance }).meta
+        .translation
+    ).toEqual(provenance);
+    expect(
+      createApiResponse({ id: "PPL_SHONA" }, { translation: null }).meta
+    ).toHaveProperty("translation", null);
+    expect(createApiResponse({ id: "PPL_SHONA" }).meta).not.toHaveProperty(
+      "translation"
+    );
+  });
 });
 
 describe("createApiError", () => {

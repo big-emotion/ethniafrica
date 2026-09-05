@@ -140,6 +140,15 @@ export interface TranslationRecord {
   reviewRequired: string[];
 }
 
+/** What the reader is told about a served translation (REQ-142 AC1, AC2). */
+export interface TranslationProvenance {
+  kind: TranslationKind;
+  translatedAt: string;
+  reviewedBy: string | null;
+  /** The French moved on a leaf the reader is shown since this was translated. */
+  stale: boolean;
+}
+
 /**
  * Separates a sidecar into the translated fiche and its block, keeping the
  * fiche's key order — the key-set comparison against the source relies on it.

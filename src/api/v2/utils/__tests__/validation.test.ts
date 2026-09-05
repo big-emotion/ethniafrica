@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { validatePage, validatePerPage } from "../validation";
+import { validateLang, validatePage, validatePerPage } from "../validation";
 
 describe("validatePerPage", () => {
   // @req REQ-110
@@ -46,5 +46,27 @@ describe("validatePage", () => {
     expect(validatePage(null)).toBe(1);
     expect(validatePage("0")).toBe(1);
     expect(validatePage("not-a-number")).toBe(1);
+  });
+
+  describe("validateLang", () => {
+    // @req REQ-142
+    it("defaults to the authored French when the parameter is absent", () => {
+      expect(validateLang(undefined)).toBe("fr");
+      expect(validateLang(null)).toBe("fr");
+      expect(validateLang("")).toBe("fr");
+    });
+
+    // @req REQ-142
+    it("accepts the two published locales", () => {
+      expect(validateLang("en")).toBe("en");
+      expect(validateLang("fr")).toBe("fr");
+    });
+
+    // @req REQ-142
+    it("refuses any other locale rather than falling back silently", () => {
+      expect(validateLang("de")).toBeNull();
+      expect(validateLang("EN")).toBeNull();
+      expect(validateLang("en-GB")).toBeNull();
+    });
   });
 });

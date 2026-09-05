@@ -1,5 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
+vi.mock("@/lib/supabase/queries/afrik/translations", () => ({
+  getAfrikTranslation: vi.fn(),
+}));
+
 vi.mock("@/lib/supabase/queries/afrik/languages", () => ({
   getAfrikLanguageById: vi.fn(),
   getAfrikSpeakingPeoples: vi.fn(),
@@ -14,6 +18,7 @@ import {
   getAfrikSpeakingPeoples,
 } from "@/lib/supabase/queries/afrik/languages";
 import { getSourcesMap } from "@/lib/supabase/queries/afrik/module-zero-batch";
+import { getAfrikTranslation } from "@/lib/supabase/queries/afrik/translations";
 import { getLanguageById } from "../languageService";
 
 describe("Language Service", () => {
@@ -170,5 +175,37 @@ describe("Language Service", () => {
       vehicularRole: null,
       vitalityStatus: null,
     });
+  });
+
+  // The langue model classes only its source notes as prose, and those come
+  // from the sources fabric rather than the row, so an English language read
+  // carries its provenance and otherwise looks like the French one.
+  // @req REQ-142
+  it("carries the translation provenance on an English read without touching the aggregate", async () => {
+    vi.mocked(getAfrikLanguageById).mockResolvedValue({
+      id: "nyn",
+      name: "Nyankore",
+      family: { id: "FLG_BANTU", name: "Bantou" },
+      spellingAliases: [],
+      content: { dialects: ["Hima"] },
+    });
+    vi.mocked(getAfrikTranslation).mockResolvedValue({
+      entityType: "language",
+      entityId: "nyn",
+      lang: "en",
+      content: { content: { dialects: ["Translated dialect"] } },
+      translationKind: "machine",
+      translatedAt: "2026-09-05T10:00:00.000Z",
+      sourceHash: "d".repeat(64),
+      fieldHashes: {},
+      reviewRequired: [],
+    });
+
+    const result = await getLanguageById("nyn", "en");
+
+    expect(getAfrikTranslation).toHaveBeenCalledWith("language", "nyn", "en");
+    // Dialects are invariant: the record cannot change them.
+    expect(result?.dialects).toEqual(["Hima"]);
+    expect(result?.translation).toMatchObject({ kind: "machine" });
   });
 });

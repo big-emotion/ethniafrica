@@ -13,6 +13,11 @@ vi.mock("@/lib/api/logger", () => ({
   logger: { info: vi.fn(), error: vi.fn(), warn: vi.fn(), debug: vi.fn() },
 }));
 
+vi.mock("@/lib/supabase/queries/afrik/translations", () => ({
+  getAfrikTranslation: vi.fn(),
+}));
+
+import { getAfrikTranslation } from "@/lib/supabase/queries/afrik/translations";
 import { getPatronymeById, listPatronymes } from "../patronymes";
 
 type FakeQuery = Record<string, ReturnType<typeof vi.fn>>;
@@ -238,6 +243,44 @@ describe("patronymes service — getPatronymeById", () => {
     const result = await getPatronymeById("PAT_KEITA");
 
     expect(result?.alliances).toEqual([]);
+  });
+
+  // @req REQ-142
+  it("overlays the English dossier prose and carries the provenance when asked for en", async () => {
+    mockTables({
+      patronyme: {
+        ...patronymeRow,
+        content: {
+          nameMain: "Keita",
+          gaps: [{ fieldPath: "origin", reason: "Non documenté." }],
+        },
+      },
+    });
+    vi.mocked(getAfrikTranslation).mockResolvedValue({
+      entityType: "patronyme",
+      entityId: "PAT_KEITA",
+      lang: "en",
+      content: { nameMain: "Keïta", gaps: [{ reason: "Not documented." }] },
+      translationKind: "machine",
+      translatedAt: "2026-09-05T10:00:00.000Z",
+      sourceHash: "d".repeat(64),
+      fieldHashes: {},
+      reviewRequired: [],
+    });
+
+    const result = await getPatronymeById("PAT_KEITA", "en");
+
+    expect(getAfrikTranslation).toHaveBeenCalledWith(
+      "patronyme",
+      "PAT_KEITA",
+      "en"
+    );
+    expect(result?.content.gaps).toEqual([
+      { fieldPath: "origin", reason: "Not documented." },
+    ]);
+    // nameMain is invariant: the record cannot rename the dossier.
+    expect(result?.nameMain).toBe("Keita");
+    expect(result?.translation).toMatchObject({ kind: "machine" });
   });
 
   // @req REQ-133
