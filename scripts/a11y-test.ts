@@ -153,9 +153,9 @@ async function runLiveRouteAudit(browser: Browser): Promise<boolean> {
   let hasBlockingViolations = false;
 
   try {
-    // Same lane budget as the story sweep: nineteen routes against a real Next
-    // server, each waiting on `networkidle`, is most of what is left of this
-    // job's wall clock once the stories run concurrently.
+    // Same lane budget as the story sweep: nineteen routes per locale against
+    // a real Next server, each waiting on `networkidle`, is most of what is
+    // left of this job's wall clock once the stories run concurrently.
     const audits = await sweepInParallel(
       LIVE_ROUTES,
       STORY_SWEEP_LANES,

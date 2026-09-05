@@ -1,3 +1,26 @@
+// Two locales, one budget each way.
+//
+// The root URL is measured through the middleware's redirect, so its budget
+// is the configured default locale's home under REQ-140. It stays in the
+// list because it is the address a reader types; the locale it lands on is
+// controlled by `SITE_LOCALE_MODE`, and this file does not repeat that choice.
+//
+// French is measured in full: every route family, every fiche type, the
+// tighter comparator and migrations budgets. English is measured on a
+// representative subset at the end of the list — the home, the three fiches,
+// one facet, the quiz, the migrations atlas, the doctrine index, the
+// comparator picker and the glossary. Bundles are locale-independent, so a
+// full twin would double a ~16 min nightly job to measure budgets that cannot
+// differ; what can differ is the a11y category (labels, `lang`, hreflang), and
+// the axe gate audits the English surface in full for that
+// (scripts/a11yRoutes.ts). The subset sits last because `collect` aborts the
+// whole run on the first URL that fails to load, and an unserved English
+// address must not cost the French measurements after it.
+//
+// This file cannot import the slug table (CommonJS, loaded by the lhci CLI),
+// so every English address below is spelled out and
+// scripts/__tests__/qualityGateRoutes.test.ts checks each one against the
+// helper that composes it.
 module.exports = {
   ci: {
     collect: {
@@ -79,6 +102,23 @@ module.exports = {
         // URL that fails to load.
         "http://localhost:3000/fr/doctrine",
         "http://localhost:3000/fr/doctrine/classifications-contestees",
+        // The glossary is the one page the footer's "Le projet" rubric leads
+        // to that nothing measured: it joins the list so the English subset
+        // below is a subset of the French measurement, not a superset.
+        "http://localhost:3000/fr/glossaire",
+        // The English subset (see the header). Same identifiers as the French
+        // routes above, so a difference between the two measurements is the
+        // locale and nothing else.
+        "http://localhost:3000/en",
+        "http://localhost:3000/en/atlas/countries/SEN",
+        "http://localhost:3000/en/atlas/peoples/PPL_WOLOF",
+        "http://localhost:3000/en/atlas/families/FLG_BANTU",
+        "http://localhost:3000/en/atlas/peoples",
+        "http://localhost:3000/en/games/quiz",
+        "http://localhost:3000/en/dossiers/migrations",
+        "http://localhost:3000/en/doctrine",
+        "http://localhost:3000/en/compare",
+        "http://localhost:3000/en/glossary",
       ],
       numberOfRuns: 3,
       // Audit returning-user performance with essential-only consent. The
@@ -137,9 +177,11 @@ module.exports = {
         // of the base gates above. Scoped by URL pattern so the looser
         // site-wide LCP budget and the (currently ungated) CLS on fiche
         // routes are left untouched — only the comparator picker and
-        // comparison routes tighten.
+        // comparison routes tighten. Both locales' slugs, or the English
+        // comparator would fall to the looser catch-all in silence.
         {
-          matchingUrlPattern: "^http://localhost:3000/fr/comparer(/.*)?$",
+          matchingUrlPattern:
+            "^http://localhost:3000/(fr/comparer|en/compare)(/.*)?$",
           assertions: {
             "largest-contentful-paint": ["error", { maxNumericValue: 2500 }],
             "cumulative-layout-shift": ["error", { maxNumericValue: 0.1 }],
@@ -151,7 +193,7 @@ module.exports = {
         // on top of the base Performance ≥ 85 gate above.
         {
           matchingUrlPattern:
-            "^http://localhost:3000/fr/dossiers/migrations(/.*)?$",
+            "^http://localhost:3000/(fr|en)/dossiers/migrations(/.*)?$",
           assertions: {
             "cumulative-layout-shift": ["error", { maxNumericValue: 0.1 }],
             "max-potential-fid": ["error", { maxNumericValue: 200 }],

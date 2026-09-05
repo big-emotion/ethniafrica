@@ -2,47 +2,84 @@ import { createRequire } from "node:module";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
+import type { Language } from "@/types/shared";
 import {
   getCountryRoute,
   getFamilyRoute,
+  getLanguageFromRoute,
   getLocalizedRoute,
   getPeopleRoute,
+  getStaticPageRoute,
+  localeSlugMismatch,
+  PUBLISHED_LOCALES,
 } from "@/lib/routing";
+import { getDefaultLocale } from "@/lib/locale";
 import { resolveRelocatedPath, resolveRenamedModulePath } from "@/middleware";
 import { LIVE_ROUTES } from "../a11yRoutes";
 
 const require = createRequire(import.meta.url);
 const lighthouseConfig = require("../../.lighthouserc.js");
 
+const LIGHTHOUSE_ORIGIN = "http://localhost:3000";
+const lighthouseUrls = lighthouseConfig.ci.collect.url as string[];
+const lighthouseUrl = (route: string) => `${LIGHTHOUSE_ORIGIN}${route}`;
+
 /**
- * One representative assembled fiche per AFRIK entity type (FR102). Both
- * browser gates must audit all three: a regression that only reaches, say,
- * the country fiche would otherwise pass while two thirds of the fiche
- * surface goes unmeasured.
+ * One representative assembled fiche per AFRIK entity type (FR102), in the
+ * locale asked for. Both browser gates must audit all three in every
+ * published locale: a regression that only reaches, say, the country fiche
+ * would otherwise pass while two thirds of the fiche surface goes unmeasured,
+ * and a regression that only reaches the English rewrite would pass while
+ * half the addresses go unmeasured.
  */
-const REPRESENTATIVE_FICHE_ROUTES = {
-  "language-family": getFamilyRoute("fr", "FLG_BANTU"),
-  people: getPeopleRoute("fr", "PPL_WOLOF"),
-  country: getCountryRoute("fr", "SEN"),
-} as const;
+const representativeFicheRoutes = (locale: Language) => ({
+  "language-family": getFamilyRoute(locale, "FLG_BANTU"),
+  people: getPeopleRoute(locale, "PPL_WOLOF"),
+  country: getCountryRoute(locale, "SEN"),
+});
 
 /**
  * One representative route per charter route-family rolled out in 16.4–16.9
- * (ETNI-807 · FR110). Both browser gates must audit all five in addition to
- * the three fiche entity-type routes above, or a regression in a whole
- * family (e.g. the search overlay) can ship while the gate stays green.
- * `moderation` uses the public, unauthenticated `/fr/admin/connexion` entry
- * point rather than the auth-gated `/fr/admin` surface: an unauthenticated
- * live audit against a redirect-on-mount page would measure the redirect,
- * not the admin/moderation charter surface.
+ * (ETNI-807 · FR110). The axe gate must audit all five in every locale;
+ * Lighthouse audits all five in the locale it measures in full (see the
+ * English subset below). `moderation` uses the public, unauthenticated
+ * sign-in entry point rather than the auth-gated admin surface: an
+ * unauthenticated live audit against a redirect-on-mount page would measure
+ * the redirect, not the admin/moderation charter surface. The sign-in page
+ * is the one admin address that is served in both locales.
  */
-const REPRESENTATIVE_FAMILY_ROUTES = {
-  homepage: "/fr",
-  directories: getLocalizedRoute("fr", "peoples"),
-  search: getLocalizedRoute("fr", "search"),
-  "editorial-legal": "/fr/mentions-legales",
-  moderation: "/fr/admin/connexion",
-} as const;
+const representativeFamilyRoutes = (locale: Language) => ({
+  homepage: `/${locale}`,
+  directories: getLocalizedRoute(locale, "peoples"),
+  search: getLocalizedRoute(locale, "search"),
+  "editorial-legal": getStaticPageRoute(locale, "legalNotice"),
+  moderation: `${getStaticPageRoute(locale, "admin")}/connexion`,
+});
+
+/**
+ * The locale Lighthouse measures in full. Bundles are locale-independent, so
+ * the second locale is measured on a representative subset rather than a
+ * twin of the whole list — a twin doubles a ~16 min nightly for budgets that
+ * cannot differ. The full locale is the one whose copy shipped first.
+ */
+const FULLY_MEASURED_LOCALE: Language = "fr";
+
+/**
+ * What the second locale is held to: the home, the three fiches, one facet,
+ * the quiz, the migrations atlas, the doctrine index, the comparator picker
+ * and the glossary. Composed from the slug table here and spelled out in
+ * `.lighthouserc.js`, which is what pins the spelled-out copy.
+ */
+const representativeSubset = (locale: Language) => [
+  `/${locale}`,
+  ...Object.values(representativeFicheRoutes(locale)),
+  getLocalizedRoute(locale, "peoples"),
+  getLocalizedRoute(locale, "quiz"),
+  getLocalizedRoute(locale, "migrations"),
+  getLocalizedRoute(locale, "doctrine"),
+  getLocalizedRoute(locale, "compare"),
+  getLocalizedRoute(locale, "glossary"),
+];
 
 /**
  * The axe gate's route list, read as data rather than as text.
@@ -55,14 +92,22 @@ const REPRESENTATIVE_FAMILY_ROUTES = {
  */
 const axeRoutes = LIVE_ROUTES;
 
+const tighterBudgetPatterns = (
+  lighthouseConfig.ci.assert.assertMatrix as {
+    matchingUrlPattern: string;
+  }[]
+)
+  .slice(1)
+  .map((entry) => new RegExp(entry.matchingUrlPattern));
+
 describe("browser quality-gate routes", () => {
   // @req REQ-019
   it("audits canonical AFRIK identifiers instead of display-name slugs", () => {
-    expect(lighthouseConfig.ci.collect.url).toContain(
-      `http://localhost:3000${getCountryRoute("fr", "SEN")}`
+    expect(lighthouseUrls).toContain(
+      lighthouseUrl(getCountryRoute("fr", "SEN"))
     );
-    expect(lighthouseConfig.ci.collect.url).toContain(
-      `http://localhost:3000${getPeopleRoute("fr", "PPL_WOLOF")}`
+    expect(lighthouseUrls).toContain(
+      lighthouseUrl(getPeopleRoute("fr", "PPL_WOLOF"))
     );
     expect(lighthouseConfig.ci.collect.puppeteerScript).toBe(
       "./scripts/lighthouse-setup.cjs"
@@ -75,18 +120,21 @@ describe("browser quality-gate routes", () => {
     expect(axeRoutes).not.toContain(getPeopleRoute("fr", "wolof"));
   });
 
-  // @req REQ-091
-  it("audits one representative fiche route per entity type in both browser gates", () => {
-    for (const [entityType, route] of Object.entries(
-      REPRESENTATIVE_FICHE_ROUTES
-    )) {
-      expect(
-        lighthouseConfig.ci.collect.url,
-        `Lighthouse must audit the ${entityType} fiche`
-      ).toContain(`http://localhost:3000${route}`);
-      expect(axeRoutes, `axe must audit the ${entityType} fiche`).toContain(
-        route
-      );
+  // @req REQ-141
+  it("audits one representative fiche route per entity type, in every locale, in both browser gates", () => {
+    for (const locale of PUBLISHED_LOCALES) {
+      for (const [entityType, route] of Object.entries(
+        representativeFicheRoutes(locale)
+      )) {
+        expect(
+          lighthouseUrls,
+          `Lighthouse must audit the ${locale} ${entityType} fiche`
+        ).toContain(lighthouseUrl(route));
+        expect(
+          axeRoutes,
+          `axe must audit the ${locale} ${entityType} fiche`
+        ).toContain(route);
+      }
     }
   });
 
@@ -97,14 +145,14 @@ describe("browser quality-gate routes", () => {
    * while `/fr/atlas` was still first in the list.
    */
   // @req REQ-114
-  it("audits no retired axis landing page in either browser gate", () => {
-    for (const page of ["atlasHub", "dossiersHub", "jeuxHub"] as const) {
-      const route = getLocalizedRoute("fr", page);
+  it("audits no retired axis landing page in either browser gate, in any locale", () => {
+    for (const locale of PUBLISHED_LOCALES) {
+      for (const page of ["atlasHub", "dossiersHub", "jeuxHub"] as const) {
+        const route = getLocalizedRoute(locale, page);
 
-      expect(lighthouseConfig.ci.collect.url, route).not.toContain(
-        `http://localhost:3000${route}`
-      );
-      expect(axeRoutes, route).not.toContain(route);
+        expect(lighthouseUrls, route).not.toContain(lighthouseUrl(route));
+        expect(axeRoutes, route).not.toContain(route);
+      }
     }
   });
 
@@ -128,6 +176,27 @@ describe("browser quality-gate routes", () => {
     expect(workflow).toContain("CHROME_PATH");
   });
 
+  /**
+   * The PR comment used to carry its own hand-typed route list, which listed
+   * four retired addresses and called a route "not audited" that the config
+   * had measured for months. A list that is read off the config cannot say
+   * something the config does not.
+   */
+  // @req REQ-046
+  it("derives the PR comment's route list from the Lighthouse config", () => {
+    const workflow = readFileSync(
+      resolve(process.cwd(), ".github/workflows/lighthouse.yml"),
+      "utf8"
+    );
+
+    expect(workflow).toContain("require('./.lighthouserc.js')");
+    const handTypedRoutes = workflow
+      .split("\n")
+      .filter((line) => /- `\/fr/.test(line));
+    expect(handTypedRoutes).toEqual([]);
+    expect(workflow).not.toContain("Not audited");
+  });
+
   // @req REQ-046
   it("enforces stable mobile performance and responsiveness budgets", () => {
     const assertions = lighthouseConfig.ci.assert.assertMatrix[0].assertions;
@@ -146,19 +215,65 @@ describe("browser quality-gate routes", () => {
     ]);
   });
 
+  // @req REQ-141
+  it("audits one representative route per charter route-family in every locale with axe", () => {
+    for (const locale of PUBLISHED_LOCALES) {
+      for (const [family, route] of Object.entries(
+        representativeFamilyRoutes(locale)
+      )) {
+        expect(
+          axeRoutes,
+          `axe must audit the ${locale} ${family} route-family`
+        ).toContain(route);
+      }
+    }
+  });
+
   // @req REQ-091
-  it("audits one representative route per charter route-family in both browser gates", () => {
+  it("audits one representative route per charter route-family with Lighthouse in the fully measured locale", () => {
     for (const [family, route] of Object.entries(
-      REPRESENTATIVE_FAMILY_ROUTES
+      representativeFamilyRoutes(FULLY_MEASURED_LOCALE)
     )) {
       expect(
-        lighthouseConfig.ci.collect.url,
+        lighthouseUrls,
         `Lighthouse must audit the ${family} route-family`
-      ).toContain(`http://localhost:3000${route}`);
-      expect(axeRoutes, `axe must audit the ${family} route-family`).toContain(
-        route
-      );
+      ).toContain(lighthouseUrl(route));
     }
+  });
+
+  /**
+   * `.lighthouserc.js` cannot import the slug table (CommonJS, loaded by the
+   * lhci CLI), so its English addresses are spelled out. This is what keeps
+   * them honest: every one of them must equal what the helpers compose, and
+   * every locale must be held to at least the subset.
+   */
+  // @req REQ-141
+  it("measures every published locale on at least the representative subset", () => {
+    for (const locale of PUBLISHED_LOCALES) {
+      for (const route of representativeSubset(locale)) {
+        expect(lighthouseUrls, `Lighthouse must audit ${route}`).toContain(
+          lighthouseUrl(route)
+        );
+      }
+    }
+  });
+
+  /**
+   * The root URL is measured through the middleware's redirect, so its budget
+   * is attributed to whichever locale is the default (REQ-140). The config
+   * must say so where the inclusion decisions are written, or the day the
+   * default changes the budget silently moves and nobody reads it as a move.
+   */
+  // @req REQ-140
+  it("measures the root and records which locale it lands on", () => {
+    expect(lighthouseUrls).toContain(`${LIGHTHOUSE_ORIGIN}/`);
+    expect(lighthouseUrls).toContain(lighthouseUrl(`/${getDefaultLocale()}`));
+
+    const config = readFileSync(
+      resolve(process.cwd(), ".lighthouserc.js"),
+      "utf8"
+    );
+    expect(config).toContain("REQ-140");
   });
 
   /**
@@ -177,11 +292,12 @@ describe("browser quality-gate routes", () => {
    * answer with a 308 is by definition an address that has moved. Lighthouse
    * would still measure it -- it follows the redirect -- so the budget is
    * silently attributed to a route the config no longer names, and `lhci`
-   * has one more hop to abort on.
+   * has one more hop to abort on. The locale check is the same question one
+   * locale later: `/en/atlas/pays` is served, at `/en/atlas/countries`.
    */
   // @req REQ-091
   it("audits no address the middleware would redirect", () => {
-    for (const url of lighthouseConfig.ci.collect.url as string[]) {
+    for (const url of lighthouseUrls) {
       const { pathname, searchParams } = new URL(url);
 
       expect(
@@ -192,18 +308,76 @@ describe("browser quality-gate routes", () => {
         resolveRenamedModulePath(pathname),
         `${url} has moved (renamed module path)`
       ).toBeNull();
+      expect(
+        localeSlugMismatch(pathname),
+        `${url} is written in the other locale's vocabulary`
+      ).toBeNull();
+      if (pathname !== "/") {
+        expect(
+          getLanguageFromRoute(pathname),
+          `${url} opens on a locale the site does not publish`
+        ).not.toBeNull();
+      }
     }
+  });
+
+  /**
+   * The assertMatrix scopes its tighter budgets by URL pattern. A pattern
+   * that names one locale's slug holds the other locale's comparator to the
+   * looser site-wide budget in silence — which is how the English subset
+   * could ship with the comparator's field-metric gate unarmed.
+   */
+  // @req REQ-141
+  it("gives every locale's comparator and migrations route the tighter assertMatrix budgets", () => {
+    for (const locale of PUBLISHED_LOCALES) {
+      for (const page of ["compare", "migrations"] as const) {
+        const route = getLocalizedRoute(locale, page);
+        const matched = tighterBudgetPatterns.filter(
+          (pattern) =>
+            pattern.test(lighthouseUrl(route)) &&
+            pattern.test(lighthouseUrl(`${route}/peuples/PPL_A/PPL_B`))
+        );
+
+        expect(
+          matched,
+          `${route} and its sub-routes must fall under a tighter budget`
+        ).toHaveLength(1);
+      }
+    }
+  });
+
+  /**
+   * The parity the bilingual doctrine asks of the corpus (REQ-145), asked of
+   * the gate: what axe audits in one locale it audits in the other, route for
+   * route. A locale that is only spot-checked would pass this suite's named
+   * lists and still leave most of its surface unmeasured.
+   */
+  // @req REQ-145
+  it("audits the same routes in every locale with axe, each under its own prefix", () => {
+    const perLocale = PUBLISHED_LOCALES.map((locale) =>
+      axeRoutes.filter(
+        (route) => route === `/${locale}` || route.startsWith(`/${locale}/`)
+      )
+    );
+
+    expect(perLocale.flat()).toHaveLength(axeRoutes.length);
+    for (const routes of perLocale) {
+      expect(routes).toHaveLength(perLocale[0].length);
+    }
+    // Nineteen per locale: the wall clock of the one required check.
+    expect(axeRoutes.length).toBe(19 * PUBLISHED_LOCALES.length);
   });
 
   // @req REQ-103 FR71 (Epic 10, Story 10.11 · ETNI-500)
   it("audits the quiz journey in both browser gates with a blocking mobile Performance gate", () => {
-    const quiz = getLocalizedRoute("fr", "quiz");
+    for (const locale of PUBLISHED_LOCALES) {
+      const quiz = getLocalizedRoute(locale, "quiz");
 
-    expect(
-      lighthouseConfig.ci.collect.url,
-      `Lighthouse must audit ${quiz}`
-    ).toContain(`http://localhost:3000${quiz}`);
-    expect(axeRoutes, `axe must audit ${quiz}`).toContain(quiz);
+      expect(lighthouseUrls, `Lighthouse must audit ${quiz}`).toContain(
+        lighthouseUrl(quiz)
+      );
+      expect(axeRoutes, `axe must audit ${quiz}`).toContain(quiz);
+    }
 
     for (const [audit, assertion] of Object.entries(
       lighthouseConfig.ci.assert.assertMatrix[0].assertions
