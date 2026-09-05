@@ -139,17 +139,12 @@ describe("production AFRIK data sync workflow", () => {
   // Loading fiches writes no question. Nothing here ran the sweep, so the
   // production bank stayed at zero rows through every release and the hub
   // offered the reader an inert "Bientôt" on a route that was deployed and
-  // reachable. The sweep needs the corpus it questions, so it runs after the
-  // apply, not before it.
+  // reachable.
   // @req REQ-032
-  it("generates the quiz question bank once the corpus has landed", () => {
+  it("sweeps the quiz question bank on its own, never with --rebuild", () => {
     const workflow = readWorkflow();
-    const applyIndex = workflow.indexOf(
-      "scripts/migrateAfrikToDatabase.ts --target=production --apply"
-    );
-    const sweepIndex = workflow.indexOf("scripts/generateQuizQuestions.ts");
 
-    expect(sweepIndex).toBeGreaterThan(applyIndex);
+    expect(workflow).toMatch(/^\s{2}quiz-bank:/m);
 
     // `--conditions=react-server` is load-bearing: the script reaches
     // `src/lib/supabase/admin.ts`, which imports `server-only`.
@@ -157,8 +152,31 @@ describe("production AFRIK data sync workflow", () => {
       "npx tsx --conditions=react-server scripts/generateQuizQuestions.ts"
     );
 
-    // Never `--rebuild` on a deploy. It revokes every healthy question in the
-    // bank, which is a human's decision after reading a preview.
+    // `--rebuild` revokes every healthy question in the bank. That is a human's
+    // decision after reading a preview, never a deploy's.
     expect(workflow).not.toContain("generateQuizQuestions.ts --rebuild");
+  });
+
+  // The apply step has never once run to completion on production, so a sweep
+  // chained behind it would never run either. `needs: sync` is the shape of
+  // that mistake and must not reappear.
+  // @req REQ-032
+  it("does not chain the quiz bank behind the corpus load", () => {
+    const workflow = readWorkflow();
+    const quizJobIndex = workflow.search(/^\s{2}quiz-bank:/m);
+
+    expect(quizJobIndex).toBeGreaterThan(-1);
+    expect(workflow.slice(quizJobIndex)).not.toContain("needs:");
+  });
+
+  // 20 minutes killed the apply on five consecutive deploys, each reported as a
+  // bare `cancelled` under a green release. Recette runs the same loader over
+  // the same corpus and needs 90.
+  // @req REQ-032
+  it("gives the corpus load the budget recette measured", () => {
+    const workflow = readWorkflow();
+
+    expect(workflow).toContain("timeout-minutes: 90");
+    expect(workflow).not.toContain("timeout-minutes: 20");
   });
 });

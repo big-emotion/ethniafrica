@@ -34,9 +34,13 @@ jobs:
       github.event_name == 'workflow_dispatch'
       || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    # The quiz sweep evaluates every fiche against every template, so it is the longest
-    # step here by an order of magnitude on a bank it has to build from nothing.
-    timeout-minutes: 40
+    # 20 minutes killed the apply step on five consecutive deploys — v4.2.3 through
+    # v4.5.0, every one of them reported as a bare `cancelled` under a green release.
+    # Recette runs the identical loader over the identical corpus and needs 90; it is
+    # the same measurement, and production had a budget a quarter of the size purely
+    # because nobody had watched it fail. The real fix is the loader's per-row round
+    # trips, which this budget only stops from publishing a half-loaded corpus.
+    timeout-minutes: 90
     env:
       # This job runs after a successful OVH production deploy and revalidates
       # ethniafrica.com, so every credential here must be the production project's.
@@ -113,21 +117,6 @@ jobs:
       - name: Apply and verify production synchronization
         run: npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=production --apply
 
-      # The corpus reaching production is not the quiz reaching production. A question a
-      # player sees is a row in `quiz_questions`, and this sweep is the only thing that
-      # writes one; the corpus loader above writes none. Nothing ran it here, so the
-      # production bank stayed at zero through every release while recette's filled up —
-      # and the hub, reading an empty table the way it reads any empty corpus, offered the
-      # reader an inert "Bientôt" on a module that was built, deployed and reachable.
-      #
-      # Idempotent by construction: `computeSweepPlan` skips any (fiche, template) pair
-      # that already carries an active question, so running it on every deploy adds what
-      # the corpus newly supports and revokes what it no longer does. That is also why it
-      # cannot replace an existing question — a change to how questions are *built* still
-      # needs the manual `--rebuild` in docs/runbooks/quiz-bank-regeneration.md.
-      - name: Generate the production quiz question bank
-        run: npx tsx --conditions=react-server scripts/generateQuizQuestions.ts
-
       # The loader writes its per-fiche failures to a JSON report and only logs
       # the path. On a runner that path is unreachable, so a sync could fail
       # with "completed with errors" and nothing anyone could read — which is
@@ -151,3 +140,56 @@ jobs:
             --header "Content-Type: application/json" \
             --data '{"tags":["afrik-language-families","afrik-peoples","afrik-countries"]}' \
             https://ethniafrica.com/api/admin/revalidate
+
+  # A question a player sees is a row in `quiz_questions`, and this sweep is the only
+  # thing that writes one — the corpus loader writes none. Nothing ran it here, so the
+  # production bank stayed at zero through every release while recette's filled up, and
+  # the hub, reading an empty table the way it reads any empty corpus, offered the reader
+  # an inert "Bientôt" on a module that was built, deployed and reachable.
+  #
+  # Deliberately a job of its own, with no `needs: sync`. The apply step above has never
+  # once run to completion on production — five consecutive deploys killed it — and a
+  # bank chained behind it is a bank that stays empty however carefully the step is
+  # written. The two are independent in the database as well: the loader writes the
+  # corpus tables, the sweep writes the quiz ones. It reads the corpus rather than
+  # loading it, and the loader only ever upserts, so a load running alongside can leave
+  # a fiche briefly stale but can never make one disappear — which is the only thing
+  # that would cause a wrong revocation.
+  quiz-bank:
+    if: >-
+      github.event_name == 'workflow_dispatch'
+      || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.PRODUCTION_SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.PRODUCTION_SUPABASE_SERVICE_ROLE_KEY }}
+
+    steps:
+      - name: Check out the deployed commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # The script exits 0 on missing credentials, logging DRY RUN. A green run that
+      # swept nothing is exactly the silence that let the empty bank live, so the
+      # credentials are required here rather than left to the script to shrug at.
+      - name: Require the production project's credentials
+        run: |
+          : "${NEXT_PUBLIC_SUPABASE_URL:?PRODUCTION_SUPABASE_URL is not set — the quiz bank cannot be swept. Set it to the Supabase project backing the production application (not recette).}"
+          : "${SUPABASE_SERVICE_ROLE_KEY:?PRODUCTION_SUPABASE_SERVICE_ROLE_KEY is not set — this must be the production project service-role key, not recette one.}"
+
+      # Never `--rebuild`: that revokes every healthy question in the bank and is a
+      # decision a human takes after reading a preview. See
+      # docs/runbooks/quiz-bank-regeneration.md.
+      - name: Generate the production quiz question bank
+        run: npx tsx --conditions=react-server scripts/generateQuizQuestions.ts

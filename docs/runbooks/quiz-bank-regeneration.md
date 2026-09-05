@@ -27,6 +27,14 @@ The **ordinary sweep** now runs on both environments without anyone asking:
 `recette-data-sync.yml` after a merge into `recette`, and
 `production-data-sync.yml` after a production deploy or a manual dispatch.
 
+On production it is a **job of its own**, not a step after the corpus load, and
+that is not tidiness. The apply step there has never once run to completion —
+v4.2.3 through v4.5.0, five consecutive deploys, each killed at a 20-minute
+budget against the 90 minutes recette needs for the identical loader, and each
+reported as a bare `cancelled` under a green release. A bank chained behind
+that step is a bank that stays empty however carefully the step is written. The
+budget is fixed too, but the decoupling is what makes the sweep dependable.
+
 Until then it ran on neither. Recette had a bank only because someone typed the
 command, and production never had one at all — which is the failure worth
 keeping, because every part of it was green. The corpus loader ran, the deploy
