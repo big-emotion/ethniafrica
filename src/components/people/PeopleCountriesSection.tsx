@@ -2,9 +2,11 @@ import Link from "next/link";
 import type { PeopleCountriesData } from "@/lib/peopleDataTransformer";
 import { getAdmin0NameFr } from "@/lib/atlas/overlays";
 import { getCountryRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 interface PeopleCountriesSectionProps {
   data: PeopleCountriesData;
+  language: Language;
   /** When provided, appended to country links so the country breadcrumb can show context. */
   fromPeopleId?: string;
   fromPeopleName?: string;
@@ -13,13 +15,14 @@ interface PeopleCountriesSectionProps {
 // @req REQ-115
 export function PeopleCountriesSection({
   data,
+  language,
   fromPeopleId,
   fromPeopleName,
 }: PeopleCountriesSectionProps) {
   if (data.distributions.length === 0) return null;
 
   function countryHref(countryId: string): string {
-    const base = getCountryRoute("fr", countryId);
+    const base = getCountryRoute(language, countryId);
     if (!fromPeopleId) return base;
     const params = new URLSearchParams({ fromPeopleId });
     if (fromPeopleName) params.set("fromPeopleName", fromPeopleName);

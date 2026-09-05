@@ -18,6 +18,7 @@ import { SourceRow } from "@/components/sources/SourceRow";
 import { definedFilter } from "@/lib/hubs/facets";
 import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getLocalizedRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 import { SOURCE_KINDS, type SourceKind } from "@/types/sources";
 
 /**
@@ -80,6 +81,7 @@ function isKind(value: string | null): value is SourceKind {
  * the next time the page moves this call site moves with it.
  */
 function directoryHref(
+  language: Language,
   filters: SourcesFacetFilters,
   page: number | null,
   pageSize: number
@@ -100,17 +102,20 @@ function directoryHref(
   }
 
   const search = query.toString();
-  const path = getLocalizedRoute("fr", "sources");
+  const path = getLocalizedRoute(language, "sources");
   return search ? `${path}?${search}` : path;
 }
 
 // @req REQ-114
 export default async function SourcesPage({
+  params,
   searchParams,
 }: {
   params: Promise<PageParams>;
   searchParams?: Promise<PageSearchParams>;
 }) {
+  const { lang } = await params;
+  const language = lang as Language;
   const query = (await searchParams) ?? {};
 
   const decade = definedFilter(query[PARAM.decade]);
@@ -145,6 +150,7 @@ export default async function SourcesPage({
     activeFilters.push({
       label: `Provenance : ${filters.sourceKind}`,
       removeHref: directoryHref(
+        language,
         { ...filters, sourceKind: null },
         null,
         pageSize
@@ -154,13 +160,23 @@ export default async function SourcesPage({
   if (filters.decade) {
     activeFilters.push({
       label: `Décennie : ${filters.decade}`,
-      removeHref: directoryHref({ ...filters, decade: null }, null, pageSize),
+      removeHref: directoryHref(
+        language,
+        { ...filters, decade: null },
+        null,
+        pageSize
+      ),
     });
   }
   if (filters.sort && filters.sort !== "titre") {
     activeFilters.push({
       label: `Tri : ${SORTS.find((s) => s.value === filters.sort)?.label}`,
-      removeHref: directoryHref({ ...filters, sort: null }, null, pageSize),
+      removeHref: directoryHref(
+        language,
+        { ...filters, sort: null },
+        null,
+        pageSize
+      ),
     });
   }
 
@@ -172,7 +188,7 @@ export default async function SourcesPage({
       total={reading.total}
       pageSize={pageSize}
       pageSizes={SOURCES_FACET_PAGE_SIZES}
-      buildHref={(page, size) => directoryHref(filters, page, size)}
+      buildHref={(page, size) => directoryHref(language, filters, page, size)}
       unitLabel="sources"
     />
   );
@@ -191,7 +207,7 @@ export default async function SourcesPage({
     `l'état du corpus, seulement ce qui a déjà été qualifié.`;
 
   return (
-    <PageLayout language="fr" title="Sources">
+    <PageLayout language={language} title="Sources">
       <div className="mx-auto w-full max-w-4xl">
         <header>
           <p
@@ -203,7 +219,7 @@ export default async function SourcesPage({
         </header>
 
         <FacetFilterBar
-          action={getLocalizedRoute("fr", "sources")}
+          action={getLocalizedRoute(language, "sources")}
           className="mt-4"
           searchField={{
             name: PARAM.search,
@@ -277,7 +293,7 @@ export default async function SourcesPage({
         {reading.sources.length === 0 ? (
           <p data-testid="sources-facet-empty" className="mt-6">
             Aucune source du corpus ne répond à cette sélection.{" "}
-            <Link href={getLocalizedRoute("fr", "sources")}>
+            <Link href={getLocalizedRoute(language, "sources")}>
               Revenir à toutes les sources
             </Link>
           </p>

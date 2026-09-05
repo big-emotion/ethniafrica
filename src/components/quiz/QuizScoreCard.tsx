@@ -4,10 +4,9 @@ import * as React from "react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import { Button } from "@/components/ui/button";
-
-const t = translations.fr.quiz;
+import type { Language } from "@/types/shared";
 
 export interface QuizScoreCardFicheLink {
   id: string;
@@ -24,6 +23,7 @@ export interface QuizScoreCardProps {
   playAgainHref: string;
   onShare: () => void;
   shareStatusMessage?: string | null;
+  language: Language;
   className?: string;
 }
 
@@ -42,8 +42,11 @@ export const QuizScoreCard = ({
   playAgainHref,
   onShare,
   shareStatusMessage = null,
+  language,
   className,
 }: QuizScoreCardProps) => {
+  const t = getTranslation(language).quiz;
+
   return (
     <div
       data-testid="quiz-score-card"

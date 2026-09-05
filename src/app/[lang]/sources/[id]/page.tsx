@@ -8,6 +8,7 @@ import { getSourceById } from "@/api/v2/services/sources";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SourceStandingBadge } from "@/components/sources/SourceStandingBadge";
 import { getLocalizedRoute, getSourceRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 import { isSourceTier } from "@/types/sources";
 
 /**
@@ -39,14 +40,14 @@ export async function generateMetadata({
 }: {
   params: Promise<PageParams>;
 }): Promise<Metadata> {
-  const { id } = await params;
+  const { lang, id } = await params;
   const parsed = sourceIdParamSchema.safeParse({ id });
   const source = parsed.success ? await getSourceById(id) : null;
 
   return {
     title: source ? `${source.title} — Source` : "Source",
     robots: { index: false, follow: true },
-    alternates: { canonical: getSourceRoute("fr", id) },
+    alternates: { canonical: getSourceRoute(lang as Language, id) },
   };
 }
 
@@ -56,7 +57,8 @@ export default async function SourcePage({
 }: {
   params: Promise<PageParams>;
 }) {
-  const { id } = await params;
+  const { lang, id } = await params;
+  const language = lang as Language;
 
   // A malformed segment is not a missing source: it is not an identifier at
   // all, and asking the database about it spends a round trip to learn what
@@ -73,7 +75,7 @@ export default async function SourcePage({
     .join(" · ");
 
   return (
-    <PageLayout language="fr" title={source.title}>
+    <PageLayout language={language} title={source.title}>
       <div className="mx-auto w-full max-w-3xl">
         <div className="flex flex-wrap items-baseline gap-2">
           <SourceStandingBadge standing={standing} />
@@ -157,7 +159,7 @@ export default async function SourcePage({
         </section>
 
         <p className="mt-8">
-          <Link href={getLocalizedRoute("fr", "sources")}>
+          <Link href={getLocalizedRoute(language, "sources")}>
             Retour à la bibliographie
           </Link>
         </p>

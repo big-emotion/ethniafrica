@@ -4,6 +4,8 @@ import { ContactAside } from "@/components/contact/ContactAside";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
+import { getStaticPageRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 /**
  * The contact page.
@@ -12,28 +14,39 @@ import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
  * « ci-dessous » and rendered nothing — a third-party script the page's own
  * CSP had no reason to admit, under a sentence that promised it worked.
  *
- * Following the legal-page idiom: no `params`, French in the clear, and no
+ * Following the legal-page idiom: French copy in the clear, and no
  * `generateStaticParams` — the root layout awaits `connection()` for the CSP
  * nonce, so a route marked static answers 500 at request time. That also
  * makes the draw below a per-request one, which is what it has to be.
  */
 
-// @req REQ-045
-export const metadata: Metadata = {
-  title: "Contactez-nous",
-  description:
-    "Écrire à l'atlas : signaler une erreur, proposer une source, demander une réutilisation des données.",
-  alternates: {
-    canonical: "/fr/contact",
-  },
-};
+interface ContactPageProps {
+  params: Promise<{ lang: string }>;
+}
 
 // @req REQ-045
-export default function ContactPage() {
+// @req REQ-140
+export async function generateMetadata({
+  params,
+}: ContactPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    title: "Contactez-nous",
+    description:
+      "Écrire à l'atlas : signaler une erreur, proposer une source, demander une réutilisation des données.",
+    alternates: {
+      canonical: getStaticPageRoute(lang as Language, "contact"),
+    },
+  };
+}
+
+// @req REQ-045
+export default async function ContactPage({ params }: ContactPageProps) {
+  const { lang } = await params;
   const fact = pickDidYouKnowFact();
 
   return (
-    <PageLayout language="fr" hideHeader>
+    <PageLayout language={lang as Language} hideHeader>
       <article className="mx-auto max-w-5xl pb-16 pt-4 md:pb-24 md:pt-8">
         <header className="border-b border-afh-border pb-10 md:pb-14">
           <p className="text-afh-eyebrow font-semibold uppercase tracking-[0.16em] text-afh-terracotta">

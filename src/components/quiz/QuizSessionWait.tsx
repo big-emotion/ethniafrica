@@ -5,9 +5,8 @@ import * as React from "react";
 import { DidYouKnowLoader } from "@/components/system/DidYouKnowLoader";
 import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
-import { translations } from "@/lib/translations";
-
-const t = translations.fr.quiz;
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * The wait of a quiz session (REQ-104, REQ-113).
@@ -33,7 +32,8 @@ const t = translations.fr.quiz;
 // @req REQ-103
 // @req REQ-104
 // @req REQ-113
-export function QuizSessionWait() {
+export function QuizSessionWait({ language }: { language: Language }) {
+  const t = getTranslation(language).quiz;
   const [fact] = React.useState(() => pickDidYouKnowFact());
 
   return (

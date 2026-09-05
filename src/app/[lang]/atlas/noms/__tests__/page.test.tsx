@@ -57,7 +57,9 @@ vi.mock("@/api/v2/services/patronymesFacet", () => ({
   getPatronymesFacetChoices: (...args: unknown[]) => mockGetChoices(...args),
 }));
 
-import NomsHubPage, { metadata } from "../page";
+import NomsHubPage, { generateMetadata } from "../page";
+
+const FR = Promise.resolve({ lang: "fr" });
 import { getLocalizedRoute, getPatronymeRoute } from "@/lib/routing";
 import type { PatronymesFacetFilters } from "@/api/v2/services/patronymesFacet";
 import type { PatronymeListItem } from "@/api/v2/services/patronymes";
@@ -96,7 +98,9 @@ beforeEach(() => {
 describe("the name facet page", () => {
   // @req REQ-139 @req REQ-133
   it("lists the names of the selection and links each to its fiche", async () => {
-    render(await NomsHubPage({ searchParams: Promise.resolve({}) }));
+    render(
+      await NomsHubPage({ params: FR, searchParams: Promise.resolve({}) })
+    );
 
     expect(screen.getByRole("link", { name: /^Keïta\s/ })).toHaveAttribute(
       "href",
@@ -108,6 +112,7 @@ describe("the name facet page", () => {
   it("carries the reader's narrowing to the service, not to the rendered page", async () => {
     render(
       await NomsHubPage({
+        params: FR,
         searchParams: Promise.resolve({ peuple: "PPL_BAMANA", pays: "MLI" }),
       })
     );
@@ -129,7 +134,9 @@ describe("the name facet page", () => {
    */
   // @req REQ-117
   it("publishes the selection's names to the shared globe", async () => {
-    render(await NomsHubPage({ searchParams: Promise.resolve({}) }));
+    render(
+      await NomsHubPage({ params: FR, searchParams: Promise.resolve({}) })
+    );
 
     const published = screen.getByTestId("published-country-index");
     const index = JSON.parse(published.getAttribute("data-index") ?? "{}");
@@ -155,7 +162,7 @@ describe("the name facet page", () => {
   // @req REQ-138
   it("counts noms, never the internal word", async () => {
     const { container } = render(
-      await NomsHubPage({ searchParams: Promise.resolve({}) })
+      await NomsHubPage({ params: FR, searchParams: Promise.resolve({}) })
     );
     const lede = container.querySelector(".afh-facet-reading-lede");
 
@@ -184,7 +191,10 @@ describe("the name facet page", () => {
     mockGetPage.mockResolvedValue(readingOf(selection));
 
     const { container } = render(
-      await NomsHubPage({ searchParams: Promise.resolve({}) })
+      await NomsHubPage({
+        params: Promise.resolve({ lang: "fr" }),
+        searchParams: Promise.resolve({}),
+      })
     );
 
     const listed = within(
@@ -203,7 +213,12 @@ describe("the name facet page", () => {
   // the name dimension to its sourced quarter for everyone, not for crawlers.
   // @req REQ-147
   it("reads the whole selection when the reader has narrowed nothing", async () => {
-    render(await NomsHubPage({ searchParams: Promise.resolve({}) }));
+    render(
+      await NomsHubPage({
+        params: Promise.resolve({ lang: "fr" }),
+        searchParams: Promise.resolve({}),
+      })
+    );
 
     const [, filters] = mockGetPage.mock.calls[0] as [
       number,
@@ -217,7 +232,12 @@ describe("the name facet page", () => {
 
   // @req REQ-139
   it("asks the service for the page the URL names", async () => {
-    render(await NomsHubPage({ searchParams: Promise.resolve({ page: "2" }) }));
+    render(
+      await NomsHubPage({
+        params: FR,
+        searchParams: Promise.resolve({ page: "2" }),
+      })
+    );
 
     expect(mockGetPage).toHaveBeenCalledWith(2, expect.anything(), 24);
   });
@@ -228,7 +248,9 @@ describe("the name facet page", () => {
   it("states unavailability on a read failure rather than an empty corpus", async () => {
     mockGetPage.mockRejectedValueOnce(new Error("database unavailable"));
 
-    render(await NomsHubPage({ searchParams: Promise.resolve({}) }));
+    render(
+      await NomsHubPage({ params: FR, searchParams: Promise.resolve({}) })
+    );
 
     const alert = screen.getByRole("alert");
     expect(alert.textContent).not.toMatch(/aucun/i);
@@ -237,9 +259,32 @@ describe("the name facet page", () => {
   });
 
   // @req REQ-091
-  it("declares the canonical URL for the noms index", () => {
+  it("declares the canonical URL for the noms index", async () => {
+    const metadata = await generateMetadata({ params: FR });
+
     expect(metadata.alternates?.canonical).toBe(
       getLocalizedRoute("fr", "patronymes")
+    );
+  });
+
+  // @req REQ-140
+  it("composes the canonical and the fiche links in the route's locale", async () => {
+    const metadata = await generateMetadata({
+      params: Promise.resolve({ lang: "en" }),
+    });
+    expect(metadata.alternates?.canonical).toBe(
+      getLocalizedRoute("en", "patronymes")
+    );
+
+    render(
+      await NomsHubPage({
+        params: Promise.resolve({ lang: "en" }),
+        searchParams: Promise.resolve({}),
+      })
+    );
+    expect(screen.getByRole("link", { name: /^Keïta\s/ })).toHaveAttribute(
+      "href",
+      getPatronymeRoute("en", "PAT_KEITA")
     );
   });
 });

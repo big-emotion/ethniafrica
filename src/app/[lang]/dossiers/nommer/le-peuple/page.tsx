@@ -3,15 +3,27 @@ import type { Metadata } from "next";
 import { NommerChapterPage } from "@/components/dossiers/nommer/NommerChapterPage";
 import { getNommerChapter } from "@/lib/dossiers/nommer/chapters";
 import { getNommerChapterRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 const CHAPTER = getNommerChapter("le-peuple");
 
+interface PageProps {
+  params: Promise<{ lang: string }>;
+}
+
 // @req REQ-113
-export const metadata: Metadata = {
-  title: CHAPTER.title,
-  description: CHAPTER.standfirst.text,
-  alternates: { canonical: getNommerChapterRoute("fr", "le-peuple") },
-};
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    title: CHAPTER.title,
+    description: CHAPTER.standfirst.text,
+    alternates: {
+      canonical: getNommerChapterRoute(lang as Language, "le-peuple"),
+    },
+  };
+}
 
 /**
  * A static directory rather than a slug of a `[chapitre]` route.
@@ -27,6 +39,7 @@ export const metadata: Metadata = {
  * have made the guard flag a route that never calls it.
  */
 // @req REQ-113
-export default function NommerLePeuplePage() {
-  return <NommerChapterPage chapter={CHAPTER} />;
+export default async function NommerLePeuplePage({ params }: PageProps) {
+  const { lang } = await params;
+  return <NommerChapterPage chapter={CHAPTER} language={lang as Language} />;
 }

@@ -21,7 +21,7 @@ import { AfricaBasemap } from "@/components/system/AfricaBasemap";
 import { TimeScrubber } from "@/components/system/TimeScrubber";
 import { MigrationPathLayer } from "@/components/migrations/MigrationPathLayer";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import { cn } from "@/lib/utils";
 import type {
   MigrationAtlasEntry,
@@ -39,12 +39,10 @@ const LazyMigrationDetailSheet = dynamic(
   { ssr: false }
 );
 
-const t = translations.fr.migrations;
-
 export interface MigrationsAtlasViewProps {
   events: MigrationAtlasEntry[];
   scrubberBounds: MigrationScrubberBounds | null;
-  language?: Language;
+  language: Language;
   className?: string;
 }
 
@@ -63,9 +61,10 @@ function clampYear(
 export function MigrationsAtlasView({
   events,
   scrubberBounds,
-  language = "fr",
+  language,
   className,
 }: MigrationsAtlasViewProps) {
+  const t = getTranslation(language).migrations;
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();

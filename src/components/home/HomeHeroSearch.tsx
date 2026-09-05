@@ -133,7 +133,7 @@ function ficheHref(result: SearchResult, language: Language): string {
 }
 
 export interface HomeHeroSearchProps {
-  language?: Language;
+  language: Language;
   /** Injected by tests; defaults to the corpus search every other surface uses. */
   fetchResults?: (query: string) => Promise<SearchResult[]>;
   /** Injected by tests; defaults to the corpus's near-miss leads (REQ-125). */
@@ -144,11 +144,11 @@ export interface HomeHeroSearchProps {
 
 // @req REQ-002
 export function HomeHeroSearch({
-  language = "fr",
+  language,
   fetchResults = fetchFromCorpus,
   fetchLeads = fetchLeadsFromCorpus,
   seedWords,
-}: HomeHeroSearchProps = {}) {
+}: HomeHeroSearchProps) {
   const router = useRouter();
   const [leads, setLeads] = useState<SearchLead[]>([]);
   const [showPending, setShowPending] = useState(false);

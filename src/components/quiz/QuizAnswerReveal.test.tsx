@@ -32,6 +32,7 @@ describe("QuizAnswerReveal (Epic 10, Story 10.9, ETNI-1134, FR68/FR71)", () => {
   it("shows the verdict, correct answer, explanation and source line", () => {
     render(
       <QuizAnswerReveal
+        language="fr"
         question={QUESTION}
         isCorrect={false}
         isLastQuestion={false}
@@ -54,6 +55,7 @@ describe("QuizAnswerReveal (Epic 10, Story 10.9, ETNI-1134, FR68/FR71)", () => {
   it("uses --afh-terracotta and never --afh-error for an incorrect verdict", () => {
     render(
       <QuizAnswerReveal
+        language="fr"
         question={QUESTION}
         isCorrect={false}
         isLastQuestion={false}
@@ -70,6 +72,7 @@ describe("QuizAnswerReveal (Epic 10, Story 10.9, ETNI-1134, FR68/FR71)", () => {
   it("shows a positive verdict heading for a correct answer", () => {
     render(
       <QuizAnswerReveal
+        language="fr"
         question={QUESTION}
         isCorrect
         isLastQuestion={false}
@@ -85,6 +88,7 @@ describe("QuizAnswerReveal (Epic 10, Story 10.9, ETNI-1134, FR68/FR71)", () => {
     const user = userEvent.setup();
     render(
       <QuizAnswerReveal
+        language="fr"
         question={QUESTION}
         isCorrect={false}
         isLastQuestion={false}
@@ -107,6 +111,7 @@ describe("QuizAnswerReveal (Epic 10, Story 10.9, ETNI-1134, FR68/FR71)", () => {
   it("announces the verdict and explanation via aria-live=polite", () => {
     render(
       <QuizAnswerReveal
+        language="fr"
         question={QUESTION}
         isCorrect={false}
         isLastQuestion={false}
@@ -126,6 +131,7 @@ describe("QuizAnswerReveal (Epic 10, Story 10.9, ETNI-1134, FR68/FR71)", () => {
   it("moves focus to the verdict heading on mount, with « question suivante » next in tab order", () => {
     render(
       <QuizAnswerReveal
+        language="fr"
         question={QUESTION}
         isCorrect={false}
         isLastQuestion={false}
@@ -147,6 +153,7 @@ describe("QuizAnswerReveal (Epic 10, Story 10.9, ETNI-1134, FR68/FR71)", () => {
   it("shows « voir le score » instead of « question suivante » on the last question", () => {
     render(
       <QuizAnswerReveal
+        language="fr"
         question={QUESTION}
         isCorrect={false}
         isLastQuestion
@@ -165,6 +172,7 @@ describe("QuizAnswerReveal (Epic 10, Story 10.9, ETNI-1134, FR68/FR71)", () => {
     const user = userEvent.setup();
     render(
       <QuizAnswerReveal
+        language="fr"
         question={QUESTION}
         isCorrect={false}
         isLastQuestion={false}
@@ -190,6 +198,7 @@ describe("QuizAnswerReveal (Epic 10, Story 10.9, ETNI-1134, FR68/FR71)", () => {
 
     render(
       <QuizAnswerReveal
+        language="fr"
         question={QUESTION}
         isCorrect={false}
         isLastQuestion={false}
@@ -206,6 +215,7 @@ describe("QuizAnswerReveal (Epic 10, Story 10.9, ETNI-1134, FR68/FR71)", () => {
   it("reserves a min-height on the reveal panel", () => {
     render(
       <QuizAnswerReveal
+        language="fr"
         question={QUESTION}
         isCorrect={false}
         isLastQuestion={false}

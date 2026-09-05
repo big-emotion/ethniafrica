@@ -6,31 +6,18 @@ import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker"
 import { readGaps } from "@/lib/patronymes/content";
 import { resolveChapter } from "@/lib/fieldProvenance";
 import { getPatronymeRoute } from "@/lib/routing";
-import { translations } from "@/lib/translations";
-
-const t = translations.fr.patronymes;
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * The attested alliance terms the corpus writes, and what each means in
- * French. The term stays on the page — it is what the sources say — and the
+ * in the reader's locale. The term stays on the page — it is what the sources say — and the
  * gloss sits beside it, because "sanankuya" alone told a reader nothing.
  *
  * Only terms the corpus actually uses are listed; a term not found here is
  * printed as attested, which is what the corpus already does for the Senufo
  * pact it names in French.
  */
-const ALLIANCE_TERM_GLOSSES: Record<string, string> = {
-  sanankuya: t.allianceTermGlosses.sanankuya,
-  senankuya: t.allianceTermGlosses.sanankuya,
-  sinankunya: t.allianceTermGlosses.sanankuya,
-};
-
-function glossAllianceType(allianceType: string | null): string {
-  if (!allianceType) return t.allianceTypeFallback;
-  const gloss = ALLIANCE_TERM_GLOSSES[allianceType.trim().toLowerCase()];
-  return gloss ? `${allianceType}, ${gloss}` : allianceType;
-}
-
 /**
  * Alliances between names — the joking-kinship pairs (sanankuya and its
  * regional equivalents) the corpus records by attested term rather than by a
@@ -48,10 +35,23 @@ function glossAllianceType(allianceType: string | null): string {
 // @req REQ-133
 export function PatronymeAlliancesSection({
   patronyme,
+  language,
 }: {
   patronyme: PublicPatronyme;
+  language: Language;
 }) {
+  const t = getTranslation(language).patronymes;
   const { alliances } = patronyme;
+  const allianceTermGlosses: Record<string, string> = {
+    sanankuya: t.allianceTermGlosses.sanankuya,
+    senankuya: t.allianceTermGlosses.sanankuya,
+    sinankunya: t.allianceTermGlosses.sanankuya,
+  };
+  const glossAllianceType = (allianceType: string | null): string => {
+    if (!allianceType) return t.allianceTypeFallback;
+    const gloss = allianceTermGlosses[allianceType.trim().toLowerCase()];
+    return gloss ? `${allianceType}, ${gloss}` : allianceType;
+  };
   const chapter = resolveChapter(
     "name",
     "alliances",
@@ -65,7 +65,7 @@ export function PatronymeAlliancesSection({
         <ul className="afh-prose-list">
           {alliances.map((alliance) => (
             <li key={alliance.targetId}>
-              <Link href={getPatronymeRoute("fr", alliance.targetId)}>
+              <Link href={getPatronymeRoute(language, alliance.targetId)}>
                 {alliance.targetNameMain}
               </Link>
               {" — "}
@@ -74,7 +74,11 @@ export function PatronymeAlliancesSection({
           ))}
         </ul>
       ) : (
-        <FieldProvenanceMarker state={chapter.state} reason={chapter.reason} />
+        <FieldProvenanceMarker
+          state={chapter.state}
+          reason={chapter.reason}
+          language={language}
+        />
       )}
     </FicheSection>
   );

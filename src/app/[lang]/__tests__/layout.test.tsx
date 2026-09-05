@@ -42,9 +42,20 @@ describe("[lang] layout", () => {
     await expect(renderLayout("quiz")).rejects.toThrow("NEXT_NOT_FOUND");
   });
 
-  // @req REQ-052
-  it("404s on a locale the middleware would have redirected", async () => {
-    await expect(renderLayout("en")).rejects.toThrow("NEXT_NOT_FOUND");
+  // English is a published locale (REQ-140): the segment renders, and the
+  // French folder it was rewritten onto is no concern of this guard.
+  // @req REQ-140
+  it("renders the page under the English segment", async () => {
+    const { container } = render(await renderLayout("en"));
+    expect(container.textContent).toContain("corpus");
+  });
+
+  // A two-letter segment that is not a published locale never reaches this
+  // layout — the middleware sends it to the default — but the guard must not
+  // rely on that: rendered directly, it is not a locale and 404s.
+  // @req REQ-140
+  it("404s on a two-letter segment that is not a published locale", async () => {
+    await expect(renderLayout("es")).rejects.toThrow("NEXT_NOT_FOUND");
   });
 
   /**

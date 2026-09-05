@@ -1,7 +1,7 @@
 /**
- * `/fr/regards/colonisation-et-resistances` — Epic 13, Story 13.9 (ETNI-533).
- * French-only doctrine-bound module page (FR90): no locale alternates, and
- * no children-facing surface links here (asserted in
+ * Bilingual doctrine-bound module page — Epic 13, Story 13.9 (ETNI-533).
+ * Each locale keeps its canonical route, and no children-facing surface
+ * links appear here (asserted in
  * `src/lib/__tests__/colonizationChildrenExclusion.test.tsx`).
  *
  * `listPeopleFragmentations` reuses the Story 13.7 per-people service over a
@@ -29,22 +29,30 @@ import { listPeopleFragmentations } from "@/api/v2/services/peopleFragmentation"
 import { listMigrations, getMigrationById } from "@/api/v2/services/migrations";
 import { getPeopleNamesDossier } from "@/api/v2/services/names";
 import { COLONIAL_EVENT_TYPES } from "@/lib/afrik/migrationEventTypes";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import { getLocalizedRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
-const t = translations.fr.colonization;
-
-const CANONICAL_PATH = getLocalizedRoute("fr", "colonization");
 const TIMELINE_LIST_LIMIT = 200;
 
-// @req FR90
-export const metadata: Metadata = {
-  title: t.pageTitle,
-  description: t.pageSubtitle,
-  alternates: {
-    canonical: CANONICAL_PATH,
-  },
-};
+interface PageProps {
+  params: Promise<{ lang: string }>;
+}
+
+// @req REQ-141 FR90
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { lang } = await params;
+  const t = getTranslation(lang as Language).colonization;
+  return {
+    title: t.pageTitle,
+    description: t.pageSubtitle,
+    alternates: {
+      canonical: getLocalizedRoute(lang as Language, "colonization"),
+    },
+  };
+}
 
 async function loadColonialTimelineEvents(): Promise<
   RawColonizationTimelineEvent[]
@@ -119,8 +127,11 @@ async function loadColonizationPageData() {
   });
 }
 
-// @req FR90
-export default async function ColonizationPage() {
+// @req REQ-141 FR90
+export default async function ColonizationPage({ params }: PageProps) {
+  const { lang } = await params;
+  const language = lang as Language;
+  const t = getTranslation(language).colonization;
   const data = await loadColonizationPageData();
 
   const jsonLd = {
@@ -128,8 +139,8 @@ export default async function ColonizationPage() {
     "@type": "Article",
     headline: t.pageTitle,
     description: t.pageSubtitle,
-    inLanguage: "fr",
-    url: CANONICAL_PATH,
+    inLanguage: language,
+    url: getLocalizedRoute(language, "colonization"),
   };
 
   return (
@@ -139,7 +150,7 @@ export default async function ColonizationPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ColonizationModulePage data={data} />
+      <ColonizationModulePage data={data} language={language} />
     </>
   );
 }

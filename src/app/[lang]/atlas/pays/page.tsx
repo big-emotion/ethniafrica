@@ -62,11 +62,17 @@ const SORT_PARAM = "tri";
  * surface back between the reader and the fiche, which is the failure this
  * route was split out to end.
  */
-function CountryRow({ row }: { row: CountryFacetRow }) {
+function CountryRow({
+  row,
+  language,
+}: {
+  row: CountryFacetRow;
+  language: Language;
+}) {
   return (
     <li>
       <Link
-        href={getCountryRoute("fr", row.id)}
+        href={getCountryRoute(language, row.id)}
         className="flex min-h-11 items-baseline justify-between gap-3 rounded-afh-lg border border-afh-border bg-afh-surface px-4 py-3 text-afh-body text-afh-text"
       >
         <span>{row.label}</span>
@@ -88,9 +94,10 @@ export default async function PaysHubPage({
   searchParams?: Promise<PageSearchParams>;
 }) {
   const { lang } = await params;
+  const language = lang as Language;
   const query = (await searchParams) ?? {};
 
-  const fiche = resolveCountryDeepLink(lang as Language, query);
+  const fiche = resolveCountryDeepLink(language, query);
   if (fiche) {
     permanentRedirect(fiche);
   }
@@ -109,7 +116,7 @@ export default async function PaysHubPage({
   const withoutSortQuery = new URLSearchParams();
   if (chosenSearch) withoutSortQuery.set(SEARCH_PARAM, chosenSearch);
   if (chosenFamily) withoutSortQuery.set(FAMILY_PARAM, chosenFamily);
-  const countryFacetRoute = getFacetRoute("fr", "countries");
+  const countryFacetRoute = getFacetRoute(language, "countries");
   const withoutSortSearch = withoutSortQuery.toString();
   const withoutSort = withoutSortSearch
     ? `${countryFacetRoute}?${withoutSortSearch}`
@@ -125,7 +132,7 @@ export default async function PaysHubPage({
         {
           id: row.id,
           label: row.label,
-          href: getCountryRoute("fr", row.id),
+          href: getCountryRoute(language, row.id),
         },
       ],
     ])
@@ -211,7 +218,7 @@ export default async function PaysHubPage({
               className="mt-4 grid list-none grid-cols-1 gap-2 p-0 md:grid-cols-2 xl:grid-cols-3"
             >
               {selection.rows.map((row) => (
-                <CountryRow key={row.id} row={row} />
+                <CountryRow key={row.id} row={row} language={language} />
               ))}
             </ul>
           )}
