@@ -65,7 +65,7 @@
       "label": "Sawadogo/Saoudougué kurumfe",
       "entityType": "patronyme",
       "entityId": null,
-      "distinction": "Le répertoire distingue une entrée kurumfe Sawadogo/Saoudougué, traduite par « nous avons cessé », de l'entrée mossi Sawadogo/Savadogo liée au nuage et à la pluie. Aucune fiche PAT_* séparée n'existe actuellement pour cette lignée kurumfe.",
+      "distinction": "Le répertoire distingue une entrée kurumfe Sawadogo/Saoudougué, traduite par « nous avons cessé », de l'entrée mossi Sawadogo/Savadogo liée au nuage et à la pluie. Aucune fiche séparée n'existe actuellement dans l'atlas pour cette lignée kurumfe.",
       "sourceRefs": ["burkina-provisional-patronyme-register"]
     }
   ],
@@ -114,7 +114,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "Le répertoire énumère de nombreux groupes et localités partenaires à plaisanterie, mais la recherche n'a pas établi de paire Sawadogo/PAT_* précise, réciproque et vérifiable."
+      "reason": "Le répertoire énumère de nombreux groupes et localités partenaires à plaisanterie, mais la recherche n'a pas établi de paire Sawadogo/autre nom précise, réciproque et vérifiable."
     },
     {
       "fieldPath": "casteOrSocialFunction",

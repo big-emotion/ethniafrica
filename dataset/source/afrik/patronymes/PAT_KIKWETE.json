@@ -66,7 +66,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Kikwete », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la biographie officielle en swahili de Jakaya Mrisho Kikwete et les recherches ciblées « Kikwete Zaramo clan surname origin », n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Kikwete », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la biographie officielle en swahili de Jakaya Mrisho Kikwete et les recherches ciblées « Kikwete Zaramo clan surname origin », n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

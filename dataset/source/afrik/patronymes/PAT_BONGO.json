@@ -68,7 +68,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Bongo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Une sociogenèse de la structure du pouvoir d'Omar Bongo » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Bongo à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Bongo », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Une sociogenèse de la structure du pouvoir d'Omar Bongo » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Bongo à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

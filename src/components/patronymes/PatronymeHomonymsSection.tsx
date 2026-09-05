@@ -34,7 +34,7 @@ export function PatronymeHomonymsSection({
   );
 
   return (
-    <FicheSection title={t.homonymsTitle}>
+    <FicheSection title={t.homonymsTitle} note={t.homonymsNote}>
       {homonyms.length > 0 ? (
         <ul className="afh-prose-list">
           {homonyms.map((homonym) => (

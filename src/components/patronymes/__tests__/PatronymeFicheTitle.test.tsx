@@ -13,6 +13,7 @@ const patronyme: PublicPatronyme = {
   associatedPeoples: [],
   associatedCountries: [],
   bearers: [],
+  alliances: [],
 };
 
 describe("PatronymeFicheTitle (REQ-133)", () => {

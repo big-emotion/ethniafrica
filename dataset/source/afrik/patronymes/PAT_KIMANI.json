@@ -62,7 +62,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Kimani », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Cultural Atlas sur les pratiques de nomination au Kenya et les recherches ciblées sur « Kimani wa Mumbi » et l'onomastique kikuyu, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Kimani », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la page Cultural Atlas sur les pratiques de nomination au Kenya et les recherches ciblées sur « Kimani wa Mumbi » et l'onomastique kikuyu, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

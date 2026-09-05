@@ -68,7 +68,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "La recherche web combinant « Assoumani », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Assoumani Surname Origin, Meaning & Last Name History » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Assoumani à une autre fiche PAT_* existante."
+      "reason": "La recherche web combinant « Assoumani », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Assoumani Surname Origin, Meaning & Last Name History » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Assoumani à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",
