@@ -115,6 +115,21 @@ jobs:
       - name: Apply and verify recette synchronization
         run: npx tsx --conditions=react-server scripts/migrateAfrikToDatabase.ts --target=recette --apply
 
+      # Loading fiches writes no question. A question a player sees is a row in
+      # `quiz_questions`, and this sweep is the only thing that writes one — so a
+      # bank left to a hand-run command drifts behind the corpus that feeds it.
+      # Measured on 5 September 2026, recette carried 377 active questions failing
+      # QZ-1: entities the corpus no longer declares, and assertions that no longer
+      # pass the FR65 gate. The sweep revokes exactly those, with their reason kept
+      # as the audit trail.
+      #
+      # Idempotent: `computeSweepPlan` skips any (fiche, template) pair that already
+      # has an active question, so it can only add and revoke, never replace. A
+      # change to how questions are *built* still needs the manual `--rebuild` in
+      # docs/runbooks/quiz-bank-regeneration.md.
+      - name: Generate the recette quiz question bank
+        run: npx tsx --conditions=react-server scripts/generateQuizQuestions.ts
+
       # The loader writes its per-fiche failures to a JSON report and only logs
       # the path. On a runner that path is unreachable, so a sync could fail
       # with "completed with errors" and nothing anyone could read — which is

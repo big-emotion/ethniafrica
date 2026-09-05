@@ -40,6 +40,7 @@ import {
   type SourceRow as AdapterSourceRow,
 } from "./lib/quizFicheAdapter";
 import {
+  assertPlayableQuestionCount,
   auditActiveBank,
   computeSweepPlan,
   type ActiveQuestionRow,
@@ -450,23 +451,33 @@ async function runGenerationSweep(
 
   await insertQuestions(supabase, plan.toInsert, generationRunId);
 
+  // A successful insert is not the outcome the workflow promises. The bank
+  // must contain enough active questions to serve one complete session, or a
+  // green run would leave the hub greyed out or expose an unusable quiz.
+  const finalActiveQuestions = await fetchActiveQuestions(supabase);
+  assertPlayableQuestionCount(finalActiveQuestions.length);
+
   logger.info("Quiz generation sweep completed", {
     script: "generateQuizQuestions",
     generation_run_id: generationRunId,
     questions_generated: plan.generatedCount,
     questions_revoked: plan.revokedCount,
     candidates_rejected: plan.rejectedCount,
+    active_question_count: finalActiveQuestions.length,
   });
 }
 
 async function runCheckMode(supabase: SupabaseClient): Promise<void> {
-  const { entries } = await buildFicheEntries(supabase);
+  const { entries, countryEntries } = await buildFicheEntries(supabase);
   const activeQuestions = await fetchActiveQuestionsForAudit(supabase);
   const knownGenerationRunIds = await fetchGenerationRunIds(supabase);
+
+  assertPlayableQuestionCount(activeQuestions.length);
 
   const violations = auditActiveBank({
     activeQuestions,
     entries,
+    countryEntries,
     knownGenerationRunIds,
   });
 
