@@ -1,0 +1,126 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court : la seule étymologie trouvée rattache ce nom aux Mbunda et à une rivière angolaise du même nom ; aucune étude dédiée n'a pu être identifiée au-delà d'un répertoire de fréquence patronymique."
+  },
+  "id": "PAT_LUMBALA",
+  "nameMain": "Lumbala",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Lumbala",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["forebears-lumbala"]
+        },
+        {
+          "countryId": "ZMB",
+          "sourceRefs": ["forebears-lumbala"]
+        },
+        {
+          "countryId": "AGO",
+          "sourceRefs": ["forebears-lumbala"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Un répertoire de fréquence patronymique rattache ce nom au peuple mbunda et lui donne le sens « rivière », d'après le nom d'une rivière angolaise dans une région où les Mbunda sont implantés de longue date.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["forebears-lumbala"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_MBUNDA",
+      "status": "supposed",
+      "sourceRefs": ["forebears-lumbala"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COD",
+      "status": "attested",
+      "sourceRefs": ["forebears-lumbala"]
+    },
+    {
+      "countryId": "ZMB",
+      "status": "attested",
+      "sourceRefs": ["forebears-lumbala"]
+    },
+    {
+      "countryId": "AGO",
+      "status": "supposed",
+      "sourceRefs": ["forebears-lumbala"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [
+    {
+      "label": "Lumbala N'guimbo (Angola)",
+      "entityType": "place",
+      "entityId": null,
+      "distinction": "Lumbala N'guimbo est une ville et une municipalité de la province de Moxico, en Angola, dans une région historiquement mbunda. Le répertoire consulté rattache le sens de ce patronyme à une rivière portant le même nom dans cette même région, sans toutefois établir de lien direct et vérifiable entre le toponyme précis et le patronyme.",
+      "sourceRefs": ["forebears-lumbala"]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "forebears-lumbala",
+      "title": "Lumbala Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/lumbala",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Répertoire de fréquence patronymique consulté directement. Il recense environ 28 053 porteurs dans le monde, très majoritairement en République démocratique du Congo (25 961, 93 pour cent) et, dans une moindre mesure, en Zambie (1 925, 7 pour cent) ; de très petits effectifs sont recensés au Canada, en Afrique du Sud et en Angola. Il rattache le nom au peuple mbunda et au sens « rivière », par référence à un cours d'eau angolais du même nom, sans citer de source académique propre à cette étymologie."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "peoples",
+      "reason": "La seule source consultée pour l'origine et le sens de ce nom est un répertoire de fréquence patronymique sans méthode ni bibliographie publiées ; le rattachement au peuple mbunda est donc retenu comme supposé plutôt qu'attesté."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Aucune source ne précise si ce nom relève d'un nom de clan, d'un nom personnel ou d'un autre système chez les Mbunda ; la valeur retenue est un choix par défaut, non une donnée vérifiée."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source ne rattache ce nom à un clan, une lignée ou une autre unité sociale précise."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La règle de transmission de ce nom n'est documentée par aucune source consultée."
+    },
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Aucun récit d'origine transmis par un informateur nommé n'a été trouvé pour ce nom."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Aucune chronique historique dédiée à ce nom n'a été trouvée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune relation à plaisanterie ni aucune autre alliance nommée avec un autre patronyme n'a été trouvée pour ce nom."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale ou professionnelle héréditaire propre à ce nom n'a été trouvée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Une personnalité politique congolaise vivante porte ce nom, mais aucune source consultée ne documente son origine ethnique dans ses propres mots ; aucun porteur décédé rattaché de façon spécifique à ce nom n'a pu être identifié avec une source assez solide pour être cité ici."
+    }
+  ]
+}

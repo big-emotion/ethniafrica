@@ -250,13 +250,13 @@ export const NOMMER_FIGURES: Record<FigureKey, CorpusFigure> = {
     kind: "counted",
     figureKey: "patronyme-fiches",
     label: "fiches de nom",
-    value: 570,
+    value: 587,
     method:
       "fiches dataset/source/afrik/patronymes/PAT_*.json portant un nameSystem et " +
       "au moins une source autre que la file d'attente des candidats — les fiches " +
       "générées depuis cette file couvrent un nom sans rien en documenter, et le " +
       "dossier dit « documente »",
-    countedOn: COUNTED_ON,
+    countedOn: "2026-09-05",
   },
   "patronyme-non-hereditary": {
     kind: "counted",

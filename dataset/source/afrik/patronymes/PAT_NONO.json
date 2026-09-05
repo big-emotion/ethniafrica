@@ -1,0 +1,92 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court : ce nom est dispersé dans le monde sans foyer dominant net ; sa présence en République démocratique du Congo, signalée par un répertoire de fréquence patronymique, n'est ici retenue qu'à titre d'hypothèse faible."
+  },
+  "id": "PAT_NONO",
+  "nameMain": "Nono",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Nono",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["forebears-nono"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [],
+  "countries": [
+    {
+      "countryId": "COD",
+      "status": "supposed",
+      "sourceRefs": ["forebears-nono"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-nono",
+      "title": "Nono Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/nono",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Répertoire de fréquence patronymique consulté directement. Il recense environ 31 854 porteurs dans le monde, sans foyer dominant net : le premier pays est le Cameroun (11 471), suivi par l'Indonésie, les Philippines, puis la République démocratique du Congo (1 573) et l'Égypte. Cette dispersion sur plusieurs continents et familles de langues très différentes rend peu probable une origine ethnique unique, et le répertoire ne propose d'ailleurs aucune signification."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "peoples",
+      "reason": "Ce nom se rencontre dans plusieurs pays sans lien linguistique ou culturel apparent entre eux, ce qui rend peu probable une origine ethnique unique ; aucune source ne permet de le rattacher à un peuple précis en République démocratique du Congo ni ailleurs."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "La présence de ce nom en République démocratique du Congo n'est mesurée que par un répertoire de fréquence patronymique, où ce pays vient loin derrière le Cameroun, l'Indonésie et les Philippines ; elle est donc retenue à titre d'hypothèse faible plutôt que comme une attestation assurée."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Aucune source ne précise si ce nom relève d'un nom de clan, d'un nom personnel ou d'un autre système ; la valeur retenue est un choix par défaut, non une donnée vérifiée."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source ne précise l'unité sociale que ce nom désignait à l'origine."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La règle de transmission de ce nom n'est documentée par aucune source consultée."
+    },
+    {
+      "fieldPath": "origin",
+      "reason": "Aucun récit d'origine, aucune chronique écrite et aucune reconstruction linguistique propres à ce nom n'ont été trouvés."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune relation à plaisanterie ni aucun pacte nommé entre ce nom et un autre n'a été trouvé."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale ou caste particulière n'a été associée à ce nom dans les sources consultées."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur décédé de ce nom n'a pu être identifié à partir d'une source vérifiable."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucune entité distincte portant ce nom n'a été trouvée."
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_NKALA",
+  "nameMain": "Nkala",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Nkala",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["forebears-nkala", "congovirtuel-mai-ndombe"]
+        }
+      ]
+    },
+    {
+      "spelling": "Ki-Nkala",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["ne-bitumba-mvila-2004"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "matrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le kanda kongo est une unité de filiation matrilinéaire : l'appartenance clanique s'y transmet par la mère, et chaque kanda est associé à une devise (mvila) et à un récit de ses migrations.",
+        "claimStatus": "established",
+        "sourceRefs": [
+          "corpus-ppl-kongo-organisation",
+          "fromont-2014-art-of-conversion"
+        ]
+      },
+      {
+        "claim": "En kikongo, le mot nkala désigne selon le contexte un crabe, un tertre funéraire ou une plate-bande de culture ; ce n'est pas un sens unique et figé.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["ksludotique-kikongo"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_KONGO",
+      "status": "supposed",
+      "sourceRefs": ["ne-bitumba-mvila-2004"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COD",
+      "status": "attested",
+      "sourceRefs": ["forebears-nkala", "congovirtuel-mai-ndombe"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [
+    {
+      "label": "Nkala (groupement de Baboma-sud, territoire de Kwamouth, Mai-Ndombe, RDC)",
+      "entityType": "place",
+      "entityId": null,
+      "distinction": "Désigne une localité au sein d'un groupement administratif du Mai-Ndombe, dans une zone peuplée notamment par les Teke du sud ; aucune source ne relie cette localité au lignage kongo du même nom.",
+      "sourceRefs": ["congovirtuel-mai-ndombe"]
+    },
+    {
+      "label": "Nkala (Afrique australe)",
+      "entityType": "patronyme",
+      "entityId": null,
+      "distinction": "Patronyme nguni porté par des familles hlubi, zouloues et swaties, principalement au Zimbabwe et en Afrique du Sud, où il désigne un crabe en ndébélé ; les répertoires généalogiques ne lui donnent aucune origine kongo ni congolaise.",
+      "sourceRefs": ["forebears-nkala"]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-kongo-organisation",
+      "title": "EthniAfrica — fiche du peuple Kongo, organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Reprise du chapitre consacré à l'organisation clanique de la fiche du peuple Kongo, qui décrit le kanda comme unité de filiation matrilinéaire transmise par la mère, assortie de sous-groupes semi-autonomes (Beembe, Vili, Yombe, Sundi, etc.)."
+    },
+    {
+      "sourceKey": "fromont-2014-art-of-conversion",
+      "title": "The Art of Conversion: Christian Visual Culture in the Kingdom of Kongo",
+      "url": "https://uncpress.org/book/9781469618715/the-art-of-conversion/",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Fromont, Cécile, University of North Carolina Press, 2014. Ouvrage consulté par l'intermédiaire de l'article Wikipédia en anglais consacré au kanda kongo, qui lui attribue la description de ce système de filiation matrilinéaire assorti d'une devise clanique (mvila) et d'un récit de migration (kinkulu) ; la page précise de l'ouvrage n'a pas été vérifiée directement."
+    },
+    {
+      "sourceKey": "ne-bitumba-mvila-2004",
+      "title": "Les mvila, une catégorie philosophique ?",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Ne Bitumba, texte diffusé par le mouvement politico-religieux Bundu Dia Kongo, Kinshasa, 2004. Propose une liste de lignages (mvila) rattachés aux trois grandes filiations du peuple kongo et y range un lignage « ki-nkala » parmi les descendants de la filiation Nsaku. Consulté par l'intermédiaire de l'article Wikipédia en français consacré aux clans du peuple kongo, qui reproduit cette liste ; le texte original n'a pas pu être consulté directement, et aucune autre source n'a confirmé ce rattachement de façon indépendante."
+    },
+    {
+      "sourceKey": "forebears-nkala",
+      "title": "Nkala — répartition et origine du patronyme",
+      "url": "https://forebears.io/surnames/nkala",
+      "tier": "unverified",
+      "source_kind": "unknown",
+      "notes": "Site d'agrégation généalogique. Donne une origine nguni au nom, portée par des familles hlubi, zouloues et swaties d'Afrique australe, avec un sens de « crabe » en ndébélé, et une répartition mondiale où le nom est le plus fréquent au Zimbabwe et en Afrique du Sud tout en étant également porté par plusieurs milliers de personnes en République démocratique du Congo. Cette entrée documente la présence du nom dans le pays, pas un rattachement à un lignage congolais précis."
+    },
+    {
+      "sourceKey": "congovirtuel-mai-ndombe",
+      "title": "Province du Mai-Ndombe — territoires, tribus et groupements",
+      "url": "https://congovirtuel.com/page_province_mai-ndombe.php",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Site communautaire de généalogie et d'histoire congolaise. Range Nkala parmi les localités du groupement de Baboma-sud, dans le territoire de Kwamouth, province du Mai-Ndombe, République démocratique du Congo, une zone peuplée notamment par les Teke du sud."
+    },
+    {
+      "sourceKey": "ksludotique-kikongo",
+      "title": "Nkala — lexique kikongo",
+      "url": "https://www.ksludotique.com/espace-kikongo/kikongo-mots-divers/mots-divers-partie-8-sur-10-ng-nk/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Site personnel consacré à l'apprentissage du kikongo, sans auteur identifié ni méthode lexicographique vérifiable. Donne pour nkala plusieurs sens possibles selon le contexte, dont crabe et tertre funéraire."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "peoples",
+      "reason": "Un seul document trouvé range ce nom parmi les lignages du peuple kongo, et aucune autre source ne confirme ce rattachement de façon indépendante. Le lien avec ce peuple est donc à prendre comme une piste plutôt que comme un fait établi."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La règle de transmission matrilinéaire retenue ici est celle du système clanique kongo en général, bien établie par ailleurs ; mais comme le rattachement de ce nom précis à un lignage kongo n'est lui-même qu'une piste, cette règle ne vaut que si ce rattachement se confirme, et non comme un fait démontré pour ce nom en particulier."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "Aucun document n'a permis de confirmer que ce nom est porté en République du Congo ; seule sa présence en République démocratique du Congo a pu être documentée."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale ou aucun statut particulier attaché à ce nom n'a été trouvé dans les sources consultées."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucune personne décédée et clairement identifiée n'a pu être rattachée avec certitude à ce nom dans son usage congolais. Un patronyme identique existe par ailleurs en Afrique australe, mais il désigne une tout autre lignée et n'a donc pas sa place ici."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune relation d'alliance entre noms n'a été retrouvée pour ce patronyme."
+    },
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Aucun récit oral ni geste transmise par un griot n'a été retrouvé pour ce nom, au-delà de sa simple mention dans un répertoire de lignages."
+    }
+  ]
+}

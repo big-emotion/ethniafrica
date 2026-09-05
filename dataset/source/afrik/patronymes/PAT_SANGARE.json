@@ -13,7 +13,25 @@
       "attestations": [
         {
           "countryId": "MLI",
-          "sourceRefs": ["afrik-candidate-queue"]
+          "sourceRefs": [
+            "bensignor-1997-oumou-sangare",
+            "iffono-wassoulou-tradition"
+          ]
+        },
+        {
+          "countryId": "GIN",
+          "sourceRefs": [
+            "rainer-trebbi-2012-political-power",
+            "iffono-wassoulou-tradition"
+          ]
+        },
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["bensignor-1997-oumou-sangare", "forebears-sangare"]
+        },
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["diallo-2006-plaisanterie-peuls"]
         }
       ]
     },
@@ -22,12 +40,16 @@
       "attestations": [
         {
           "countryId": "MLI",
-          "sourceRefs": ["afrik-candidate-queue"]
+          "sourceRefs": ["forebears-sangare"]
+        },
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["forebears-sangare"]
         }
       ]
     }
   ],
-  "transmissionMode": "other",
+  "transmissionMode": "patrilineal",
   "designatedSocialUnit": "clan",
   "origin": {
     "oralTraditions": [],
@@ -36,17 +58,54 @@
         "claim": "Dans leur étude des élites gouvernementales guinéennes, Rainer et Trebbi décrivent les porteurs de Sangaré comme originaires du Wassoulou : leur consultant les classe comme Peuls intégrés linguistiquement et culturellement aux Malinkés, tandis que les sources divergent entre les deux appartenances.",
         "claimStatus": "contested",
         "sourceRefs": ["rainer-trebbi-2012-political-power"]
+      },
+      {
+        "claim": "L'historien guinéen Aly Gilbert Iffono rapporte une tradition sur la fondation du Wassoulou, région à cheval sur le Mali, la Guinée et la Côte d'Ivoire : des migrants peuls venus du Fouta-Djalon, conduits par les frères Kali et Pathé Diallo, s'y seraient installés sous la protection d'un chef mandingue puis auraient perdu l'usage du peul, notamment après son interdiction par le conquérant Samori Touré. Selon ce même récit, Sangaré compte, avec Diallo, Sidibé et Diakité, parmi les quatre patronymes peuls emblématiques du Wassoulou, et des lignages mandingues auraient à leur tour adopté ces noms peuls au contact de leurs voisins ou de leurs anciens maîtres. La source elle-même présente cette dernière hypothèse comme l'une de plusieurs explications concurrentes à la disparition du peul dans la région, aux côtés d'un métissage par alliances matrimoniales.",
+        "claimStatus": "contested",
+        "sourceRefs": ["iffono-wassoulou-tradition"]
+      },
+      {
+        "claim": "Le Wassoulou peul a rejeté le système de castes propre aux sociétés mandingues : la société wassoulounkée traditionnelle ne compte pas de griots, à la différence de ses voisins malinké et bambara.",
+        "claimStatus": "established",
+        "sourceRefs": ["bensignor-1997-oumou-sangare"]
+      },
+      {
+        "claim": "Une étude sur les Peuls de l'ouest du Burkina Faso range Sangaré parmi les quatre clans peuls principaux, aux côtés de Diallo, Diakité et Sidibé, et décrit le couple Sidibé/Sangaré comme l'un des deux couples fondateurs de l'identité peule, unis par une relation à plaisanterie du fait de cette parenté mythique.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["diallo-2006-plaisanterie-peuls"]
       }
     ],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le jamu est un nom de clan patrilinéaire : il désigne l'appartenance à un groupe de descendance, et non une filiation individuelle au père.",
+        "claimStatus": "established",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      },
+      {
+        "claim": "Le dictionnaire électronique des noms claniques bambara ne recense pas Sangaré comme une entrée à part entière : le nom n'apparaît que cité comme partenaire à plaisanterie par cinq autres noms claniques (Bagayogo, Dansoko, Janka, Sidibé, So) et, une fois, comme variante peule équivalente sous l'entrée Bari.",
+        "claimStatus": "established",
+        "sourceRefs": ["bamadaba-jamuw"]
+      }
+    ]
   },
   "peoples": [
     {
       "peopleId": "PPL_FULA",
       "status": "attested",
       "sourceRefs": [
-        "afrik-candidate-queue",
-        "rainer-trebbi-2012-political-power"
+        "rainer-trebbi-2012-political-power",
+        "bensignor-1997-oumou-sangare",
+        "iffono-wassoulou-tradition",
+        "diallo-2006-plaisanterie-peuls"
+      ]
+    },
+    {
+      "peopleId": "PPL_MALINKE",
+      "status": "attested",
+      "sourceRefs": [
+        "rainer-trebbi-2012-political-power",
+        "bensignor-1997-oumou-sangare",
+        "iffono-wassoulou-tradition"
       ]
     }
   ],
@@ -54,51 +113,125 @@
     {
       "countryId": "MLI",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": [
+        "bensignor-1997-oumou-sangare",
+        "iffono-wassoulou-tradition"
+      ]
+    },
+    {
+      "countryId": "GIN",
+      "status": "attested",
+      "sourceRefs": [
+        "rainer-trebbi-2012-political-power",
+        "iffono-wassoulou-tradition"
+      ]
+    },
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["bensignor-1997-oumou-sangare", "forebears-sangare"]
+    },
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": ["diallo-2006-plaisanterie-peuls"]
+    },
+    {
+      "countryId": "SEN",
+      "status": "supposed",
+      "sourceRefs": ["forebears-sangare"]
     }
   ],
-  "alliances": [],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_SIDIBE",
+      "allianceType": "sanankuya",
+      "sourceRefs": ["bamadaba-jamuw", "diallo-2006-plaisanterie-peuls"]
+    },
+    {
+      "targetPatronymeId": "PAT_BAGAYOKO",
+      "allianceType": "sanankuya",
+      "sourceRefs": ["bamadaba-jamuw"]
+    },
+    {
+      "targetPatronymeId": "PAT_SOW",
+      "allianceType": "sanankuya",
+      "sourceRefs": ["bamadaba-jamuw"]
+    }
+  ],
   "casteOrSocialFunction": null,
   "bearers": [],
   "homonyms": [],
   "sources": [
-    {
-      "sourceKey": "afrik-candidate-queue",
-      "title": "Relevé de couverture anthroponymique EthniAfrica",
-      "url": null,
-      "tier": "unverified",
-      "source_kind": "ai_generated",
-      "notes": "Ce nom figure au relevé de couverture de l'atlas : il a été retenu comme nom à documenter, mais aucune source dédiée n'a encore été consultée. La fiche existe donc pour signaler le nom, non pour ce qu'elle en affirme. Les vérifications à venir passeront par les registres électoraux, les instituts statistiques nationaux et les travaux d'onomastique du pays concerné."
-    },
     {
       "sourceKey": "rainer-trebbi-2012-political-power",
       "title": "New Tools for the Analysis of Political Power in Africa",
       "url": "https://www.nber.org/papers/w18424.pdf",
       "tier": "referenced",
       "source_kind": "academic",
-      "notes": "Ilia Rainer et Francesco Trebbi, NBER Working Paper 18424, septembre 2012. L’annexe sur la Guinée, p. 43, explique séparément la classification de Diakite, Sidibe et Sangare : originaires du Wassoulou, décrits comme Peuls intégrés aux populations malinké, ils sont codés par les auteurs à parts égales peuls et malinké. Le document précise qu’il n’a pas été évalué par les pairs."
+      "notes": "Ilia Rainer et Francesco Trebbi, NBER Working Paper 18424, septembre 2012. L'annexe sur la Guinée, p. 43, explique séparément la classification de Diakite, Sidibe et Sangare : originaires du Wassoulou, décrits comme Peuls intégrés aux populations malinké, ils sont codés par les auteurs à parts égales peuls et malinké. Le document précise qu'il n'a pas été évalué par les pairs."
+    },
+    {
+      "sourceKey": "iffono-wassoulou-tradition",
+      "title": "Histoire du Wassoulou : ce qu'il faut retenir",
+      "url": "https://guineeconakry.online/2024/05/07/histoire-du-wassoulou-ce-quil-faut-retenir/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Article d'actualité guinéen en ligne, non revu par les pairs, qui rapporte un récit attribué à l'historien Aly Gilbert Iffono (Lexique historique de la Guinée-Conakry, L'Harmattan, 1992) sur la fondation du Wassoulou et l'adoption de patronymes peuls par des lignages mandingues. L'ouvrage d'Iffono lui-même n'a pas été consulté directement ; la fiche s'appuie donc sur ce compte rendu de seconde main, non sur le texte original."
+    },
+    {
+      "sourceKey": "bensignor-1997-oumou-sangare",
+      "title": "Oumou Sangaré : malienne, femme et artiste",
+      "url": "https://www.persee.fr/doc/homig_1142-852x_1997_num_1206_1_2939",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "François Bensignor, Hommes & Migrations, n°1206, mars-avril 1997, p. 137-139 (Persée). Décrit le Wassoulou comme un territoire à dominante peule au sud-est du Mali, aux confins de la Guinée, de la Côte d'Ivoire et du Burkina Faso, dont la société a rejeté le système de castes mandingue (absence de griots)."
+    },
+    {
+      "sourceKey": "forebears-sangare",
+      "title": "Sangare — origine, signification et répartition du nom",
+      "url": "https://forebears.io/fr/surnames/sangare",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Site agrégateur de statistiques patronymiques, sans revue éditoriale indépendante vérifiable. Cité uniquement pour la répartition déclarée du nom par pays (Mali, Côte d'Ivoire, Guinée, Sénégal), à titre indicatif et non comme preuve d'origine ethnique."
+    },
+    {
+      "sourceKey": "diallo-2006-plaisanterie-peuls",
+      "title": "Identités et relations de plaisanterie chez les Peuls de l'ouest du Burkina Faso",
+      "url": "https://journals.openedition.org/etudesafricaines/15399",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Youssouf Diallo, Cahiers d'études africaines, vol. 46, n° 184, 2006, p. 779-794 (DOI 10.4000/etudesafricaines.15399). Revue à comité de lecture ; l'auteur était alors rattaché au Max-Planck-Institut für ethnologische Forschung. L'article situe Sangaré parmi les quatre clans peuls principaux (Diallo, Diakité, Sidibé, Sangaré) et décrit le couple Sidibé/Sangaré comme homologue au sein du noyau mythique de l'identité peule, entretenant à ce titre des relations de plaisanterie (dendiraagu) ; l'enquête de terrain porte sur les Peuls de l'ouest du Burkina Faso, ce qui atteste le nom dans ce pays."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms claniques est signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. 375 entrées au format MDF, consultées sur le fichier complet. Sangaré n'y a pas d'entrée propre : le nom est seulement cité en tant que partenaire à plaisanterie (marqueur \\sn, lu senankun) par les entrées Bagayogo, Dansoko, Janka, Sidibe et So, et une fois comme variante équivalente (marqueur \\eq) sous l'entrée Bari, elle-même marquée d'une diffusion peule. Les liens \\sn ne sont pas systématiquement réciproques d'une entrée à l'autre : chaque paire est donc citée d'après l'entrée qui la porte."
+    },
+    {
+      "sourceKey": "jansen-sunjata-paradigm",
+      "title": "Beyond the Mali Empire — A New Paradigm for the Sunjata Epic",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jansen, Jan, Universiteit Leiden. Travail critique sur la transmission de l'épopée mandingue et sur le jamu comme institution sociale ; utilisé ici pour la nature patrilinéaire du jamu en tant que catégorie de descendance, une institution à laquelle les patronymes wassoulounkés d'origine peule se rattachent d'après les autres sources citées dans cette fiche."
     }
   ],
   "gaps": [
     {
-      "fieldPath": "alliances",
-      "reason": "L’annexe guinéenne de Rainer et Trebbi a été recherchée pour une alliance à plaisanterie propre à Sangaré ; elle ne documente aucune paire patronymique."
-    },
-    {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Rainer et Trebbi documentent une classification ethnique disputée pour Sangaré, mais aucune caste ni fonction héréditaire ; les recherches ciblées n’ont pas fourni d’autre étude dédiée."
+      "reason": "Le Wassoulou peul, dont Sangaré est l'un des patronymes emblématiques, est décrit comme une société sans caste héréditaire de type griot, à la différence de ses voisins mandingues. Aucune fonction sociale ou artisanale héréditaire propre à ce nom n'a par ailleurs été documentée."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Rainer et Trebbi citent des ministres pour établir leur codage ethnique, mais la recherche n’a pas vérifié un porteur décédé et son rattachement lignager ; aucun bearer n’est ajouté."
+      "reason": "Une porteuse contemporaine largement connue de ce nom est bien documentée par la presse et la recherche, mais aucune déclaration de son cru sur son origine lignagère n'a été retrouvée ; en l'absence d'une telle parole propre, aucun porteur vivant n'est nommé ici."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Les variantes accentuées et non accentuées de Sangaré ont été recherchées dans l’annexe de Rainer et Trebbi ; la source ne distingue pas deux origines homonymes."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "Rainer et Trebbi expliquent l’identification peule/malinké de Sangaré sans décrire la règle de transmission du nom ; aucun travail onomastique dédié établissant une filiation patrilinéaire, matrilinéaire ou élective n’a été trouvé."
+      "reason": "Aucune entité homonyme d'origine distincte n'a été trouvée pour ce nom au terme des recherches menées."
     }
   ]
 }
