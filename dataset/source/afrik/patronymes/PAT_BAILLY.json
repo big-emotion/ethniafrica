@@ -1,0 +1,156 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier fondé sur deux publications grand public consacrées aux noms bété, corroborées par le chapitre organisation sociale de la fiche du peuple bété déjà présente dans ce corpus. Un homonyme européen sans rapport est signalé pour éviter toute confusion."
+  },
+  "id": "PAT_BAILLY",
+  "nameMain": "Bailly",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Bailly",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": [
+            "civ-tourisme-fb-2021-bailly",
+            "afriksoir-2021-bailly",
+            "forebears-bailly"
+          ]
+        }
+      ]
+    },
+    {
+      "spelling": "Bagnon",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": [
+            "civ-tourisme-fb-2021-bailly",
+            "corpus-ppl-bete-bagnon"
+          ]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le nom est présenté comme signifiant « le beau ». La fiche du peuple bété de ce même atlas documente par ailleurs, indépendamment de cette liste, le bagnon comme une distinction villageoise décernée selon des critères physiques et moraux, et non un titre hérité : les deux descriptions se recoupent sur la nature personnelle et non héréditaire de cette qualité.",
+        "claimStatus": "claimed",
+        "sourceRefs": [
+          "civ-tourisme-fb-2021-bailly",
+          "afriksoir-2021-bailly",
+          "corpus-ppl-bete-bagnon"
+        ]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BETE",
+      "status": "attested",
+      "sourceRefs": [
+        "civ-tourisme-fb-2021-bailly",
+        "afriksoir-2021-bailly",
+        "corpus-ppl-bete-bagnon"
+      ]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": [
+        "civ-tourisme-fb-2021-bailly",
+        "afriksoir-2021-bailly",
+        "forebears-bailly"
+      ]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [
+    {
+      "label": "Bailly (patronyme français)",
+      "entityType": "other",
+      "entityId": null,
+      "distinction": "Bailly est aussi un patronyme français courant, dérivé de l'ancien titre médiéval de bailli, un officier chargé de rendre la justice et d'administrer un territoire pour le compte d'un seigneur ou de la Couronne. C'est la forme la plus répandue de ce nom dans le monde, très majoritairement en France ; elle est sans rapport avec l'usage ivoirien documenté dans cette fiche.",
+      "sourceRefs": ["forebears-bailly"]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "civ-tourisme-fb-2021-bailly",
+      "title": "Découverte : signification des noms bété (partie 1)",
+      "url": "https://www.facebook.com/tourismecotedivoire.ci/posts/d%C3%A9couverte-signification-des-noms-b%C3%A9t%C3%A9-partie-1-drogba-la-clameur-une-d%C3%A9couverte/3574963495937695/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Publication de la page officielle Côte d'Ivoire Tourisme sur Facebook, datée du 21 juin 2021, qui donne une liste de noms bété avec leur signification supposée, dont Bailly et Bagnon, réunis sous une même entrée, pour le sens « le beau ». La publication indique elle-même reprendre un ouvrage intitulé « Les ethnies de la Côte d'Ivoire et d'Afrique », qui n'a pas pu être identifié comme une publication précise et vérifiable."
+    },
+    {
+      "sourceKey": "afriksoir-2021-bailly",
+      "title": "Côte d'Ivoire : voici la signification des noms Bété que vous connaissez",
+      "url": "https://afriksoir.net/cote-divoire-voici-la-signification-des-noms-bete-que-vous-connaissez/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Site d'actualité ivoirien daté du 14 février 2021, reprenant la même liste de noms bété et le même sens pour Bailly et Bagnon. L'article attribue l'ensemble de la liste à un traditionaliste nommé, Zahui Ouraga Aimé, sans détailler pour autant la source ou la méthode propre à chaque nom."
+    },
+    {
+      "sourceKey": "corpus-ppl-bete-bagnon",
+      "title": "EthniAfrica — fiche du peuple bété, organisation sociale",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Reprise du chapitre consacré à l'organisation traditionnelle de la fiche du peuple bété de ce même atlas, qui décrit le bagnon comme une personne désignée dans chaque village selon des critères physiques et moraux, consultée et respectée, sans qu'il s'agisse d'une charge héréditaire."
+    },
+    {
+      "sourceKey": "forebears-bailly",
+      "title": "Bailly Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/bailly",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Répertoire de fréquence patronymique consulté directement. Il recense environ 36 414 porteurs dans le monde, très majoritairement en France (29 140), avec un second foyer notable en Côte d'Ivoire (2 600) ; il rattache la forme française à l'ancien titre de bailli, un officier médiéval chargé de justice et d'administration pour le compte d'un seigneur."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Les sources décrivent l'origine de ce nom comme une distinction personnelle décernée de son vivant à une personne, non comme une charge héréditaire ; aucune ne documente en revanche comment cette distinction s'est ensuite fixée comme nom de famille transmis aux descendants."
+    },
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Aucun récit d'origine transmis par un informateur nommé n'a été trouvé pour ce nom en particulier."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Aucune étude linguistique dédiée à ce nom n'a été trouvée au-delà des deux publications grand public déjà citées."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Le sens rapporté désigne une qualité reconnue à une personne, ce qui oriente vers un nom individuel plutôt qu'un nom de clan, mais aucune source ne précise l'unité sociale exacte visée à l'origine."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune relation à plaisanterie ni aucun pacte nommé entre ce nom et un autre n'a été trouvé."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Le bagnon est décrit comme une distinction reconnue à une personne selon ses qualités, non comme une fonction ou une caste héréditaire ; aucune source ne documente de fonction sociale transmise sous ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Plusieurs personnalités ivoiriennes, vivantes ou récemment décédées, portent ce nom, mais aucune source consultée ne documente leur rattachement bété dans leurs propres mots ni ne permet de l'établir de façon indépendante ; aucune n'est donc citée ici."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Seul l'homonyme français, sans rapport, a pu être documenté ; aucune autre origine homonyme distincte n'a été trouvée."
+    }
+  ]
+}

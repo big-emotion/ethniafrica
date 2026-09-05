@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court : aucune source dédiée ne confirme ce nom comme un nom bété en particulier, à distinguer du sous-groupe bété Guébié et du peuple voisin guéré (wè), déjà documentés ailleurs dans ce corpus sous des identifiants distincts."
+  },
+  "id": "PAT_GUEDE",
+  "nameMain": "Guédé",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Guédé",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["forebears-guede"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [],
+  "countries": [
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["forebears-guede"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-guede",
+      "title": "Guede Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/guede",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Répertoire de fréquence patronymique consulté directement. Il recense environ 22 402 porteurs dans le monde, très majoritairement en Côte d'Ivoire (16 083), avec des effectifs plus modestes au Togo, au Bénin, en France, en Espagne, au Niger et au Ghana. Il ne propose aucune signification établie et n'associe le nom à aucun peuple précis."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "peoples",
+      "reason": "Ce nom est parfois évoqué comme un nom bété, mais aucune publication ou liste consacrée aux noms bété consultée pour cet atlas ne le mentionne réellement ; le seul répertoire trouvé situe simplement la majorité de ses porteurs en Côte d'Ivoire, sans l'associer à un peuple précis, ce qui ne suffit pas à établir un rattachement ethnique. Ce nom doit par ailleurs être distingué de Guébié, un sous-groupe bété déjà documenté par ailleurs dans cet atlas, et de Guéré, un peuple voisin mais distinct : aucune source consultée ne relie ces trois formes entre elles."
+    },
+    {
+      "fieldPath": "origin",
+      "reason": "Aucun récit d'origine, aucune chronique écrite et aucune reconstruction linguistique propres à ce nom n'ont été trouvés."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Aucune source ne précise si ce nom relève d'un nom de clan, d'un nom personnel donné selon les circonstances ou d'un autre système ; la valeur retenue est un choix par défaut, non une donnée vérifiée."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source ne précise l'unité sociale que ce nom désignait à l'origine."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La règle de transmission de ce nom n'est documentée par aucune source consultée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune relation à plaisanterie ni aucun pacte nommé entre ce nom et un autre n'a été trouvé."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale ou caste particulière n'a été associée à ce nom dans les sources consultées."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Des personnes vivantes portent ce nom, notamment dans le sport, mais aucune ne s'est exprimée publiquement sur son origine ethnique dans ses propres mots ; aucun porteur décédé rattaché de façon spécifique à ce nom n'a pu être identifié avec une source assez solide pour être cité ici."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucune entité distincte, en dehors des noms voisins déjà écartés ci-dessus, n'a été trouvée sous cette orthographe exacte."
+    }
+  ]
+}
