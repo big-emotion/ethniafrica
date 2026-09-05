@@ -67,12 +67,9 @@
         "sourceRefs": ["bamadaba-jamuw"]
       },
       {
-        "claim": "Des sources communautaires diakhanké rapportent une généalogie faisant descendre les Diaby du calife Omar Ibn al-Khattab, compagnon du prophète Mahomet, rattachant ainsi la lignée à une origine arabo-islamique distincte de la tradition soninké du Wagadu.",
+        "claim": "Une source communautaire diakhanké rapporte une généalogie faisant descendre les Diaby du calife Omar Ibn al-Khattab, compagnon du prophète Mahomet, rattachant ainsi la lignée à une origine arabo-islamique distincte de la tradition soninké du Wagadu ; elle présente elle-même cette généalogie comme plausible mais non prouvée, faute de preuve historique tranchant entre une origine arabo-berbère et une origine plus ancienne.",
         "claimStatus": "claimed",
-        "sourceRefs": [
-          "djakodico-diakhanke-history",
-          "sunugox-diakhanke-history"
-        ]
+        "sourceRefs": ["sunugox-diakhanke-history"]
       }
     ]
   },

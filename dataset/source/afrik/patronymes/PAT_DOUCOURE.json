@@ -127,7 +127,10 @@
     }
   ],
   "alliances": [],
-  "casteOrSocialFunction": null,
+  "casteOrSocialFunction": {
+    "value": "Un dictionnaire spécialisé des noms claniques mandé donne à ce nom, dans sa propre entrée, le statut social hɔrɔn, celui des lignées libres et non artisanes de la société soninké ; il l'associe aussi à deux localités du Mali, Yélimané et le Diafounou, et à un terme signifiant approximativement maître de la terre ou exploitant agricole.",
+    "sourceRefs": ["bamadaba-jamuw"]
+  },
   "bearers": [
     {
       "status": "deceased",
@@ -199,14 +202,10 @@
       "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
       "tier": "referenced",
       "source_kind": "linguistic_reference",
-      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA), signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. L'entrée consacrée au regroupement traditionnel dit Kusa énumère trois noms qui en font partie, Jaruma, Tounkara et Dukure, avec l'interdit vestimentaire et les deux lignées de griots attitrées, et la relie par une relation à plaisanterie au regroupement dit Wago, dont l'entrée donne le Wagadou pour berceau et énumère une trentaine d'autres noms membres. Aucune des deux entrées, ni celle propre à un troisième regroupement nommé Karo, ne porte de statut social distinct ; seuls les noms qui ont leur propre entrée dans le dictionnaire portent une telle mention, et Dukure n'en a pas."
+      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA), signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. L'entrée consacrée au regroupement traditionnel dit Kusa énumère trois noms qui en font partie, Jaruma, Tounkara et Dukure, avec l'interdit vestimentaire et les deux lignées de griots attitrées, et la relie par une relation à plaisanterie au regroupement dit Wago, dont l'entrée donne le Wagadou pour berceau et énumère une trentaine d'autres noms membres. Dukure porte par ailleurs sa propre entrée dans le dictionnaire, avec le statut social hɔrɔn, deux localités maliennes (Yélimané, Diafounou) et un terme rendu par maître de la terre ou exploitant agricole ; aucune relation à plaisanterie propre à ce nom précis n'y figure, seule celle, plus large, entre les regroupements Kusa et Wago."
     }
   ],
   "gaps": [
-    {
-      "fieldPath": "casteOrSocialFunction",
-      "reason": "Un récit oral situe cette famille dans un rôle de préséance coutumière locale et des pages généalogiques grand public évoquent une ascendance de rang guerrier ou dirigeant, mais aucune étude spécialisée n'a pu être consultée pour confirmer un statut social ou une fonction héréditaire précise attachée à ce nom. Un dictionnaire spécialisé des noms claniques mandé, qui donne un statut social à la plupart des noms soninké qu'il recense chacun sous sa propre entrée, ne consacre à ce nom aucune entrée propre : il n'apparaît que dans l'énumération des membres d'un regroupement plus large, sans indication de statut qui lui soit spécifique."
-    },
     {
       "fieldPath": "origin",
       "reason": "Une page consacrée à l'ancien royaume du Diafounou attribue à ce patronyme une origine datée et un titre militaire précis, en s'appuyant apparemment sur des ouvrages universitaires. Cette page indique cependant elle-même qu'elle peut contenir des éléments non sourcés, et ces ouvrages n'ont pas pu être consultés directement pour vérifier qu'ils traitent bien de ce patronyme. Ce récit détaillé n'a donc pas été retenu."
