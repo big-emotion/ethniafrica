@@ -40,6 +40,7 @@ import {
   mainCountryOf,
   questionTemplateBuilders,
 } from "@/lib/quiz/questionTemplates";
+import { QUIZ_SESSION_SIZE } from "@/lib/quiz/quizScope";
 
 /** A country fiche plus the assertions backing what its templates would claim. */
 export interface CountryFicheEntry {
@@ -189,6 +190,15 @@ export interface AuditInput {
    */
   countryEntries: CountryFicheEntry[];
   knownGenerationRunIds: ReadonlySet<string>;
+}
+
+/** Refuse a green sweep or audit when the bank cannot fill one session. */
+export function assertPlayableQuestionCount(activeQuestionCount: number): void {
+  if (activeQuestionCount < QUIZ_SESSION_SIZE) {
+    throw new Error(
+      `Quiz bank is not playable: expected at least ${QUIZ_SESSION_SIZE} active questions, found ${activeQuestionCount}`
+    );
+  }
 }
 
 /** The "current fiche value" for a template's answer field — used by the QZ-2 staleness check. */

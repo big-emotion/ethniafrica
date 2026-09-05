@@ -10,6 +10,7 @@ import type { QuizCountryFixture, QuizPeopleFixture } from "@/types/quiz";
 import type { QuizEligibilityInput } from "@/lib/quiz/eligibility";
 import { QUIZ_TEMPLATE_IDS, templatesFor } from "@/lib/quiz/segmentPolicy";
 import {
+  assertPlayableQuestionCount,
   auditActiveBank,
   computeSweepPlan,
   decideRevocation,
@@ -23,6 +24,23 @@ import {
   type FicheEntry,
   type QuizCandidatePools,
 } from "../lib/quizGeneration";
+
+describe("assertPlayableQuestionCount", () => {
+  // @req REQ-103
+  it.each([0, 7])(
+    "refuses a bank with %i active questions",
+    (activeQuestionCount) => {
+      expect(() => assertPlayableQuestionCount(activeQuestionCount)).toThrow(
+        `Quiz bank is not playable: expected at least 8 active questions, found ${activeQuestionCount}`
+      );
+    }
+  );
+
+  // @req REQ-103
+  it("accepts a bank that can fill one complete session", () => {
+    expect(() => assertPlayableQuestionCount(8)).not.toThrow();
+  });
+});
 
 const yoruba: QuizPeopleFixture = {
   id: "PPL_YORUBA",
