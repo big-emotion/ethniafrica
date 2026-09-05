@@ -519,6 +519,7 @@ describe("auditActiveBank (QZ-1..QZ-3, QZ-5, --check mode)", () => {
     const violations = auditActiveBank({
       activeQuestions: [baseQuestion()],
       entries,
+      countryEntries: [],
       knownGenerationRunIds: new Set([runId]),
     });
     expect(violations).toEqual([]);
@@ -538,6 +539,7 @@ describe("auditActiveBank (QZ-1..QZ-3, QZ-5, --check mode)", () => {
     const violations = auditActiveBank({
       activeQuestions: [baseQuestion()],
       entries,
+      countryEntries: [],
       knownGenerationRunIds: new Set([runId]),
     });
     expect(violations.some((v) => v.code === "QZ-1")).toBe(true);
@@ -556,6 +558,7 @@ describe("auditActiveBank (QZ-1..QZ-3, QZ-5, --check mode)", () => {
     const violations = auditActiveBank({
       activeQuestions: [baseQuestion()],
       entries,
+      countryEntries: [],
       knownGenerationRunIds: new Set([runId]),
     });
     expect(violations.some((v) => v.code === "QZ-2")).toBe(true);
@@ -575,6 +578,7 @@ describe("auditActiveBank (QZ-1..QZ-3, QZ-5, --check mode)", () => {
     const violations = auditActiveBank({
       activeQuestions: [dupQuestion],
       entries,
+      countryEntries: [],
       knownGenerationRunIds: new Set([runId]),
     });
     expect(violations.some((v) => v.code === "QZ-3")).toBe(true);
@@ -589,6 +593,7 @@ describe("auditActiveBank (QZ-1..QZ-3, QZ-5, --check mode)", () => {
     const violations = auditActiveBank({
       activeQuestions: [baseQuestion()],
       entries,
+      countryEntries: [],
       knownGenerationRunIds: new Set(["some-other-run"]),
     });
     expect(violations.some((v) => v.code === "QZ-5")).toBe(true);
@@ -836,5 +841,37 @@ describe("computeSweepPlan over the country corpus", () => {
     });
 
     expect(plan.toInsert).toEqual([]);
+  });
+
+  // The audit inherited the omission the sweep was repaired for: it indexed
+  // the people corpus alone, so a country question found no entry and was
+  // reported as an entity the corpus no longer declares. Every country
+  // question in the bank failed QZ-1 on a country that was right there — 265
+  // of them on recette, measured 5 September 2026, which is what kept the
+  // nightly gate red and unreadable.
+  // @req REQ-121
+  it("does not report a country question as an entity that no longer exists", () => {
+    const question: AuditableQuestion = {
+      id: "q-gha",
+      templateId: "T13",
+      entityId: "GHA",
+      fieldPath: "etymology",
+      correctOption: 0,
+      optionsFr: ["Ghana", "Mali", "Songhaï", "Kanem"],
+      stimulusFr:
+        "Le nom reprend celui d'un empire médiéval du Sahel occidental.",
+      generationRunId: "run-1",
+    };
+
+    const violations = auditActiveBank({
+      activeQuestions: [question],
+      entries: [],
+      countryEntries,
+      knownGenerationRunIds: new Set(["run-1"]),
+    });
+
+    expect(violations.filter((violation) => violation.code === "QZ-1")).toEqual(
+      []
+    );
   });
 });

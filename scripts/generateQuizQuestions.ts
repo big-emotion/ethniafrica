@@ -460,13 +460,14 @@ async function runGenerationSweep(
 }
 
 async function runCheckMode(supabase: SupabaseClient): Promise<void> {
-  const { entries } = await buildFicheEntries(supabase);
+  const { entries, countryEntries } = await buildFicheEntries(supabase);
   const activeQuestions = await fetchActiveQuestionsForAudit(supabase);
   const knownGenerationRunIds = await fetchGenerationRunIds(supabase);
 
   const violations = auditActiveBank({
     activeQuestions,
     entries,
+    countryEntries,
     knownGenerationRunIds,
   });
 

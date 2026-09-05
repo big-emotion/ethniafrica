@@ -182,6 +182,12 @@ export interface QzViolation {
 export interface AuditInput {
   activeQuestions: AuditableQuestion[];
   entries: FicheEntry[];
+  /**
+   * Required, not optional, and for the reason `computeSweepPlan`'s own field
+   * is: an optional country corpus is a country corpus the caller forgets, and
+   * an audit that never sees one calls every country in the bank missing.
+   */
+  countryEntries: CountryFicheEntry[];
   knownGenerationRunIds: ReadonlySet<string>;
 }
 
@@ -666,9 +672,20 @@ export function computeSweepPlan(input: SweepInput): SweepPlan {
  * A question can accumulate more than one violation.
  */
 export function auditActiveBank(input: AuditInput): QzViolation[] {
-  const entryById = new Map(
-    input.entries.map((entry) => [entry.fiche.id, entry])
-  );
+  // Both corpora in one map, keyed the way `computeSweepPlan` keys its own: a
+  // people id is `PPL_*` and a country id an ISO 3166-1 alpha-3, so a question
+  // finds its subject without the audit having to know which kind it asked
+  // about.
+  const entryById = new Map<string, FicheEntry | CountryFicheEntry>([
+    ...input.entries.map(
+      (entry) =>
+        [entry.fiche.id, entry] as [string, FicheEntry | CountryFicheEntry]
+    ),
+    ...input.countryEntries.map(
+      (entry) =>
+        [entry.fiche.id, entry] as [string, FicheEntry | CountryFicheEntry]
+    ),
+  ]);
   const violations: QzViolation[] = [];
 
   for (const question of input.activeQuestions) {
