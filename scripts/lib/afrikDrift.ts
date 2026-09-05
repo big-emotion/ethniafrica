@@ -1,3 +1,5 @@
+import { canonicalize } from "@/lib/afrik/translations/hashing";
+
 export interface AfrikContentRecord {
   id: string;
   content: unknown;
@@ -19,26 +21,6 @@ export interface AfrikDriftReport {
   peoples: AfrikEntityDrift;
   countries: AfrikEntityDrift;
   hasDrift: boolean;
-}
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === "object" && value !== null && !Array.isArray(value);
-}
-
-function canonicalize(value: unknown): unknown {
-  if (Array.isArray(value)) {
-    return value.map(canonicalize);
-  }
-
-  if (!isRecord(value)) {
-    return value;
-  }
-
-  const canonical: Record<string, unknown> = {};
-  for (const key of Object.keys(value).sort()) {
-    canonical[key] = canonicalize(value[key]);
-  }
-  return canonical;
 }
 
 function hasSameContent(left: unknown, right: unknown): boolean {
