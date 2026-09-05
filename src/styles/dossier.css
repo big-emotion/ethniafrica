@@ -1,0 +1,379 @@
+/**
+ * The one dossier template — EthniAfrica.
+ *
+ * A sheet rather than utilities, for the reason dossier-nommer.css already
+ * gives: these rules describe an editorial document with a cadence, and a
+ * cadence written as forty utility strings across five components is a cadence
+ * nobody can read or change in one place.
+ *
+ * Three things here are decisions, not styling:
+ *
+ * 1. **Prose declares its alignment.** src/styles/mobile-text.css centres text
+ *    site-wide below 768 px. Brand charter §8.1 forbids centring running prose
+ *    of more than two lines, and a dossier is nothing but running prose, so
+ *    every prose block states `text-align: left` rather than inheriting the
+ *    body default. The measured damage that rule was written against is 29
+ *    centred paragraphs on a single fiche.
+ *
+ * 2. **The two readings stack, at every width.** Side by side they would read
+ *    as a symmetric opposition — official on the left, rebuttal on the right —
+ *    which is precisely the framing the entity refuses. The counter-reading
+ *    widens the official one; it does not answer it across a gutter. Stacked
+ *    at 430 and at 1440 also means the block has no breakpoint to get wrong.
+ *
+ * 3. **The bands are separated by --afh-section-gap and nothing else**
+ *    (brand charter §7). A band's own padding sets its internal breathing.
+ */
+
+.afh-dossier {
+  display: flex;
+  flex-direction: column;
+  gap: var(--afh-section-gap);
+}
+
+/* ---------------------------------------------------------------- thesis */
+
+.afh-dossier-thesis {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--afh-space-5xl);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.afh-dossier-thesis-figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--afh-space-md);
+  text-align: left;
+}
+
+.afh-dossier-thesis-value {
+  margin: 0;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: var(--afh-text-h1);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--accent-ink);
+}
+
+.afh-dossier-thesis-claim {
+  margin: 0;
+  font-size: var(--afh-text-body);
+  line-height: 1.55;
+  color: var(--afh-text);
+}
+
+.afh-dossier-thesis-provenance {
+  margin: 0;
+  font-size: var(--afh-text-caption);
+  line-height: 1.5;
+  color: var(--afh-fg-muted);
+}
+
+/* -------------------------------------------------------------- chapters */
+
+.afh-dossier-chapters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--afh-space-10xl);
+}
+
+.afh-dossier-chapter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--afh-space-5xl);
+}
+
+/* The figure leads on a phone whatever the desktop order, so the reader meets
+   the document before the argument about it. The alternation below only ever
+   moves the figure across the grid, never above or below the prose. */
+.afh-dossier-chapter-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--afh-space-5xl);
+}
+
+.afh-dossier-fig {
+  margin: 0;
+  background: var(--afh-color-card);
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-sm, 6px);
+  overflow: hidden;
+}
+
+.afh-dossier-fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* --afh-fg-muted, not --afh-text-muted: the caption is the quietest type on
+   the page and the one line that is not editorial discretion. Brand charter §9
+   rules that a licence is published, not named, so this line carries the
+   author, the licence's address and a way back to the file. */
+.afh-dossier-fig figcaption {
+  padding: var(--afh-space-base) var(--afh-space-lg);
+  border-top: 1px solid var(--afh-border);
+  background: var(--afh-bg);
+  font-size: var(--afh-text-caption);
+  line-height: 1.5;
+  text-align: left;
+  color: var(--afh-fg-muted);
+}
+
+.afh-dossier-fig figcaption a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.afh-dossier-chapter-kicker {
+  display: flex;
+  align-items: center;
+  gap: var(--afh-space-sm);
+  margin: 0 0 var(--afh-space-lg);
+  font-size: var(--afh-text-eyebrow);
+  font-weight: var(--afh-eyebrow-weight, 600);
+  letter-spacing: var(--afh-eyebrow-tracking, 0.16em);
+  text-transform: var(--afh-eyebrow-transform, uppercase);
+  text-align: left;
+  color: var(--accent-ink);
+}
+
+.afh-dossier-chapter-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex: none;
+}
+
+.afh-dossier-chapter-body h2 {
+  margin: 0 0 var(--afh-space-lg);
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: var(--afh-text-h2);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.012em;
+  text-align: left;
+  color: var(--afh-text);
+  text-wrap: balance;
+}
+
+.afh-dossier-standfirst {
+  margin: 0 0 var(--afh-space-2xl);
+  font-size: var(--afh-text-lead);
+  line-height: 1.55;
+  text-align: left;
+  color: var(--afh-text);
+}
+
+.afh-dossier-prose p {
+  margin: 0 0 var(--afh-space-2xl);
+  font-size: var(--afh-text-body);
+  line-height: 1.62;
+  text-align: left;
+  color: var(--afh-text-soft);
+}
+
+.afh-dossier-prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------- key figures */
+
+.afh-dossier-figures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--afh-space-5xl);
+  margin: 0;
+  padding: var(--afh-space-5xl) 0 0;
+  border-top: 1px solid var(--afh-border);
+  list-style: none;
+}
+
+.afh-dossier-figure {
+  flex: 1 1 190px;
+  text-align: left;
+}
+
+.afh-dossier-figure-value {
+  display: block;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: var(--afh-text-h3);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--accent-ink);
+}
+
+.afh-dossier-figure-label {
+  display: block;
+  margin-top: var(--afh-space-xs);
+  font-size: var(--afh-text-small);
+  line-height: 1.45;
+  color: var(--afh-text);
+}
+
+.afh-dossier-figure-note {
+  display: block;
+  margin-top: var(--afh-space-xs);
+  font-size: var(--afh-text-caption);
+  line-height: 1.45;
+  color: var(--afh-fg-muted);
+}
+
+/* ------------------------------------------------------------- readings */
+
+.afh-dossier-readings {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-sm, 6px);
+  background: var(--afh-color-card);
+  list-style: none;
+  overflow: hidden;
+}
+
+.afh-dossier-reading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--afh-space-md);
+  padding: var(--afh-space-5xl);
+  border-left: 3px solid transparent;
+  text-align: left;
+}
+
+.afh-dossier-reading + .afh-dossier-reading {
+  border-top: 1px solid var(--afh-border);
+}
+
+/* The counter-reading is the half a reader is least likely to have met
+   elsewhere, so it is the half that carries the accent. The official reading
+   takes the neutral rule: it is not the adversary, and colouring it as one
+   would state the opposite of the doctrine this component exists for. */
+.afh-dossier-reading.is-counter {
+  border-left-color: var(--accent);
+  background: var(--afh-bg-warm);
+}
+
+.afh-dossier-reading.is-official {
+  border-left-color: var(--afh-border);
+}
+
+.afh-dossier-reading-stance {
+  margin: 0;
+  font-size: var(--afh-text-eyebrow);
+  font-weight: var(--afh-eyebrow-weight, 600);
+  letter-spacing: var(--afh-eyebrow-tracking, 0.16em);
+  text-transform: var(--afh-eyebrow-transform, uppercase);
+  color: var(--afh-fg-muted);
+}
+
+.afh-dossier-reading.is-counter .afh-dossier-reading-stance {
+  color: var(--accent-ink);
+}
+
+.afh-dossier-reading-label {
+  margin: 0;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: var(--afh-text-h3);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--afh-text);
+}
+
+.afh-dossier-reading-body {
+  margin: 0;
+  font-size: var(--afh-text-body);
+  line-height: 1.62;
+  color: var(--afh-text-soft);
+}
+
+/* -------------------------------------------------------------- sources */
+
+.afh-dossier-sources {
+  display: flex;
+  flex-direction: column;
+  gap: var(--afh-space-5xl);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.afh-dossier-source {
+  display: flex;
+  flex-direction: column;
+  gap: var(--afh-space-xs);
+  padding-bottom: var(--afh-space-5xl);
+  border-bottom: 1px solid var(--afh-border);
+  text-align: left;
+}
+
+.afh-dossier-source:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.afh-dossier-source-title {
+  margin: 0;
+  font-size: var(--afh-text-body);
+  line-height: 1.45;
+  color: var(--afh-text);
+}
+
+.afh-dossier-source-title a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.afh-dossier-source-notes {
+  margin: 0;
+  font-size: var(--afh-text-caption);
+  line-height: 1.5;
+  color: var(--afh-fg-muted);
+}
+
+/* ------------------------------------------------------------ 720px up */
+
+@media (min-width: 720px) {
+  .afh-dossier-thesis {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--afh-space-8xl);
+  }
+
+  .afh-dossier-chapter-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--afh-space-8xl);
+    align-items: center;
+  }
+
+  /* The only thing the alternation moves. An odd chapter puts its document on
+     the right; the prose keeps its left edge either way, so the page has one
+     reading column and not two. */
+  .afh-dossier-chapter.is-reversed .afh-dossier-fig {
+    order: 2;
+  }
+
+  .afh-dossier-readings {
+    margin-top: var(--afh-space-md);
+  }
+
+  .afh-dossier-sources {
+    columns: 2;
+    column-gap: var(--afh-space-8xl);
+  }
+
+  .afh-dossier-source {
+    break-inside: avoid;
+  }
+}

@@ -31,6 +31,7 @@ export type TranslationClass =
 
 // @req REQ-143
 export const STRICT_MODEL_FILES = [
+  "modele-dossier.json",
   "modele-frontiere-coloniale.json",
   "modele-langue.json",
   "modele-linguistique.json",
@@ -86,6 +87,74 @@ const NAMING_SYSTEM_CORE: ClassTable = {
 export const TRANSLATION_CLASSES: Readonly<
   Record<StrictModelFile, ClassTable>
 > = {
+  /**
+   * The dossier is the only model whose prose is the point, so it declares
+   * more `translatable` leaves than any other. Two decisions worth stating:
+   *
+   * `figures[].value` is `review_required` where every other numeric leaf in
+   * this table is `invariant`. Those hold numbers; this holds a number already
+   * formatted for a reader — « 30,37 M km² », « 76,6 % ». It has to change
+   * between locales (the decimal separator, the unit) and a machine gets that
+   * wrong often enough that it must not publish at machine provenance. The
+   * unformatted figure lives beside it in `year` and in the source.
+   *
+   * `illustration.licence` is `invariant`: "CC BY-SA 4.0" is the licence's
+   * name, and a translated licence name is a notice that identifies nothing.
+   * Brand charter §9 asks for the address anyway, which is the line that
+   * actually carries the obligation.
+   */
+  "modele-dossier.json": {
+    "_meta.*": "invariant",
+    id: "invariant",
+    vertical: "invariant",
+    slug: "invariant",
+    title: "translatable",
+    question: "translatable",
+    standfirst: "translatable",
+    publishedOn: "invariant",
+    "thesis.stepLabel": "translatable",
+    "thesis.heading": "translatable",
+    "thesis.figures[].figureKey": "invariant",
+    "thesis.figures[].value": "review_required",
+    "thesis.figures[].claim": "translatable",
+    "thesis.figures[].provenance": "translatable",
+    "thesis.figures[].year": "invariant",
+    "thesis.figures[].sourceRefs[]": "invariant",
+    "chapters[].chapterKey": "invariant",
+    "chapters[].ordinal": "invariant",
+    "chapters[].title": "translatable",
+    "chapters[].question": "translatable",
+    "chapters[].standfirst": "translatable",
+    "chapters[].body[].text": "translatable",
+    "chapters[].body[].sourceRefs[]": "invariant",
+    "chapters[].illustration.src": "invariant",
+    "chapters[].illustration.alt": "translatable",
+    "chapters[].illustration.caption": "translatable",
+    "chapters[].illustration.author": "invariant",
+    "chapters[].illustration.licence": "invariant",
+    "chapters[].illustration.licenceUrl": "invariant",
+    "chapters[].illustration.filePage": "invariant",
+    "chapters[].illustration.year": "invariant",
+    "chapters[].readings[].stance": "invariant",
+    "chapters[].readings[].label": "translatable",
+    "chapters[].readings[].body": "translatable",
+    "chapters[].readings[].sourceRefs[]": "invariant",
+    "chapters[].figures[].figureKey": "invariant",
+    "chapters[].figures[].label": "translatable",
+    "chapters[].figures[].value": "review_required",
+    "chapters[].figures[].year": "invariant",
+    "chapters[].figures[].note": "translatable",
+    "chapters[].figures[].sourceRefs[]": "invariant",
+    "sources[].sourceKey": "invariant",
+    "sources[].title": "invariant",
+    "sources[].url": "invariant",
+    "sources[].tier": "invariant",
+    "sources[].source_kind": "invariant",
+    "sources[].publicationYear": "invariant",
+    "sources[].notes": "translatable",
+    "gaps[].fieldPath": "invariant",
+    "gaps[].reason": "translatable",
+  },
   "modele-frontiere-coloniale.json": {
     "_meta.*": "invariant",
     id: "invariant",

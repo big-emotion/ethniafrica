@@ -39,6 +39,9 @@ const TRAIL_PAGE_LABELS: Record<Language, Record<PageType, string>> = {
     // British spelling, and the same one the URL carries.
     colonization: "Colonisation & resistances",
     nommer: "Naming",
+    dossierProportions: "True proportions",
+    dossierPopulations: "Real weight",
+    dossierRessources: "Resources",
     glossary: "Glossary",
     // The English hub labels live in the dictionary below rather than on
     // `ACCESS_MODE_LABELS`, which is French and read by ninety-odd callers
@@ -71,6 +74,11 @@ const TRAIL_PAGE_LABELS: Record<Language, Record<PageType, string>> = {
     // question and would wrap the crumb on a phone. The trail names the
     // destination; the menu asks the question.
     nommer: "Nommer",
+    // The trail names the destination in as few words as a phone can hold;
+    // the menu carries the dossier's full title, which is a sentence.
+    dossierProportions: "Proportions",
+    dossierPopulations: "Populations",
+    dossierRessources: "Ressources",
     glossary: "Glossaire",
     atlasHub: ACCESS_MODE_LABELS.atlas,
     dossiersHub: ACCESS_MODE_LABELS.dossiers,

@@ -160,6 +160,21 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
           label: `${chapter.ordinal} · ${chapter.title}`,
         })),
         {
+          href: route("dossierProportions"),
+          label: "Les vraies proportions",
+          note: "Ce que Mercator déforme, et ce que la résolution onusienne demande.",
+        },
+        {
+          href: route("dossierPopulations"),
+          label: "Le poids réel",
+          note: "Une part du monde, un âge médian, et ce que les recensements ne comptent pas.",
+        },
+        {
+          href: route("dossierRessources"),
+          label: "Un scandale géologique",
+          note: "Des côtes nommées par leur marchandise, et où va la valeur aujourd'hui.",
+        },
+        {
           href: route("names"),
           label: "Appellations",
           note: "Autonymes, exonymes, et ce que l'écart raconte.",

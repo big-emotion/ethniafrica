@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "dossier",
+    "directives": "Un dossier est un article long, sourcé, qui confronte une lecture officielle à une contre-lecture. Il ne décrit pas une entité du corpus : il argumente sur elle. Trois règles le distinguent des autres fiches. (1) Chaque chapitre porte DEUX lectures — une « official » et au moins une « counter » — et chacune cite au moins une source. Un chapitre à une seule lecture n'est pas un dossier, c'est une notice. (2) La contre-lecture n'est pas un démenti : elle nomme ce que le cadrage officiel ne mesure pas, ou pour quel usage il a été produit. Un chapitre qui conclut « l'officiel a tort » a raté sa cible. (3) Chaque chapitre porte une illustration dont la licence est publiée, pas nommée — auteur, URI de licence et page du fichier, conformément à la charte de marque §9. Les champs publiés au lecteur mot pour mot sont gaps[].reason, sources[].title et sources[].notes : ils ne portent ni chemin de fichier, ni identifiant, ni vocabulaire d'atelier.",
+    "readerFacing": ["gaps[].reason", "sources[].title", "sources[].notes"]
+  },
+  "id": "DOS_EXEMPLE",
+  "vertical": "realites",
+  "slug": "exemple",
+  "title": "<Titre du dossier, nominal et spécifique>",
+  "question": "<La question à laquelle le dossier entier répond, une phrase>",
+  "standfirst": "<Chapeau, deux ou trois phrases, ce que le dossier établit>",
+  "publishedOn": "2026-09-05",
+  "thesis": {
+    "stepLabel": "La thèse",
+    "heading": "<Ce que les chiffres d'ouverture disent ensemble>",
+    "figures": [
+      {
+        "figureKey": "exemple-part-mondiale",
+        "value": "<Le chiffre formaté pour la lecture, ex. « 18,8 % »>",
+        "claim": "<Ce que le chiffre affirme, une phrase>",
+        "provenance": "<Le dénominateur et la méthode, une ligne>",
+        "year": 2025,
+        "sourceRefs": ["exemple-source"]
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "chapterKey": "exemple-chapitre",
+      "ordinal": 1,
+      "title": "<Titre du chapitre>",
+      "question": "<La question du chapitre>",
+      "standfirst": "<Ce que le chapitre établit, une ou deux phrases>",
+      "body": [
+        {
+          "text": "<Un paragraphe de prose. Français, vouvoiement, présent.>",
+          "sourceRefs": ["exemple-source"]
+        }
+      ],
+      "illustration": {
+        "src": "/images/dossiers/exemple.jpg",
+        "alt": "<Description de l'image pour qui ne la voit pas>",
+        "caption": "<Ce que l'image est, et de quand elle date>",
+        "author": "<Auteur, ou null pour une œuvre anonyme du domaine public>",
+        "licence": "Domaine public",
+        "licenceUrl": null,
+        "filePage": "https://commons.wikimedia.org/wiki/File:Exemple.jpg",
+        "year": "1569"
+      },
+      "readings": [
+        {
+          "stance": "official",
+          "label": "<Titre de la lecture officielle, spécifique au chapitre>",
+          "body": "<Ce que dit la source qui fait autorité, restitué sans ironie>",
+          "sourceRefs": ["exemple-source"]
+        },
+        {
+          "stance": "counter",
+          "label": "<Titre de la contre-lecture, spécifique au chapitre>",
+          "body": "<Ce que ce cadrage laisse dans l'ombre, sourcé avec la même rigueur>",
+          "sourceRefs": ["exemple-contre-source"]
+        }
+      ],
+      "figures": [
+        {
+          "figureKey": "exemple-chiffre",
+          "label": "<Ce que le chiffre mesure>",
+          "value": "<Le chiffre formaté>",
+          "year": 2024,
+          "note": "<Une ligne de précision, ou null>",
+          "sourceRefs": ["exemple-source"]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "exemple-source",
+      "title": "<Titre de la source, publié au lecteur tel quel>",
+      "url": "<URL résolvable, ou null pour une œuvre hors ligne>",
+      "tier": "official | referenced | unverified",
+      "source_kind": "intergovernmental | government | official_statistics | linguistic_reference | academic | community | repository | archive",
+      "publicationYear": 2025,
+      "notes": "<Notes de provenance facultatives, publiées au lecteur tel quel>"
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "chapters[0].figures[1]",
+      "reason": "<Ce qui manque, dit au lecteur sans lui expliquer l'atelier>"
+    }
+  ]
+}

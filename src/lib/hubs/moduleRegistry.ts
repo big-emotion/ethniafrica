@@ -361,6 +361,41 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "static",
     editorialReadiness: "ready",
   },
+  // Réalités — three dossiers on what is measured about Africa and what the
+  // measurement leaves out. They sit above the two modules still in
+  // preparation because a menu that lists what is ready after what is not
+  // tells a reader the corpus is thinner than it is (brand charter §3).
+  //
+  // `static` for the same reason as `nommer` and `anecdotes`: the fiches are
+  // files in the repository, read at build. They are also loaded into
+  // afrik_dossiers by the AFRIK pipeline and served at /api/v2/dossiers, but
+  // the availability probe counts rows to decide whether a trip is worth a
+  // reader's time, and a dossier is worth it whether or not a migration has
+  // reached an environment yet.
+  {
+    id: "dossier-proportions",
+    name: "Les vraies proportions",
+    accessMode: "dossiers",
+    page: "dossierProportions",
+    availability: "static",
+    editorialReadiness: "ready",
+  },
+  {
+    id: "dossier-populations",
+    name: "Le poids réel",
+    accessMode: "dossiers",
+    page: "dossierPopulations",
+    availability: "static",
+    editorialReadiness: "ready",
+  },
+  {
+    id: "dossier-ressources",
+    name: "Un scandale géologique",
+    accessMode: "dossiers",
+    page: "dossierRessources",
+    availability: "static",
+    editorialReadiness: "ready",
+  },
   {
     // Named for what the corpus actually holds — six sourced events, not a
     // three-millennia timeline (ETNI-1198).
