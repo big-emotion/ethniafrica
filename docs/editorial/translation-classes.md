@@ -131,8 +131,11 @@ things ruled that out (ETNI-1857):
   `afrik_countries`; a name that lives only in a TypeScript asset cannot enter
   the exact-match tier or the prefix ladder, so an English reader typing "Chad"
   reached nothing while "Tchad" was an exact hit. Migration `082` gives the
-  name a column and a folded vector, and the sync script loads it from the
-  fiche like every other identity field.
+  name a column (`afrik_countries.name_en`) and, under `?lang=en`, runs the
+  families' accent-folded ladder over it — exact, prefix, substring — rather
+  than a second tsvector: the name is a proper noun that must not go through
+  the French stemmer, and fifty-four rows need no index. The sync script
+  loads it from the fiche like every other identity field.
 - **The cartographic asset uses the cartographer's wording, not the state's.**
   Natural Earth says "Ivory Coast", "Cape Verde", "eSwatini", "Gambia". The
   state itself says otherwise in English, and the atlas — which exists to let
