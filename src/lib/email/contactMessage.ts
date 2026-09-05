@@ -1,5 +1,5 @@
 import { CONTACT_EMAIL, PRODUCT_NAME } from "@/lib/brand";
-import { resendApiKey, sendViaResend } from "@/lib/email/resend";
+import { graphConfigured, sendViaGraph } from "@/lib/email/graph";
 import {
   CONTACT_CIVILITY_LABEL,
   subjectLabel,
@@ -58,10 +58,9 @@ function mailBody(message: ContactMessageInput): string {
 export async function sendContactMessage(
   message: ContactMessageInput
 ): Promise<ContactSendOutcome> {
-  const apiKey = resendApiKey();
-  if (!apiKey) return "no-transport";
+  if (!graphConfigured()) return "no-transport";
 
-  const sent = await sendViaResend(apiKey, {
+  const sent = await sendViaGraph({
     to: CONTACT_EMAIL,
     replyTo: message.email,
     subject: mailSubject(message),
