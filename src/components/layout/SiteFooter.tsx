@@ -7,6 +7,8 @@ import {
   FacebookGlyph,
   InstagramGlyph,
   LinkedinGlyph,
+  TiktokGlyph,
+  YoutubeGlyph,
 } from "@/components/layout/SocialGlyphs";
 import { useConsent } from "@/hooks/use-consent";
 import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/brand";
@@ -52,7 +54,21 @@ const SOCIAL_NETWORKS: ReadonlyArray<{
     Glyph: LinkedinGlyph,
     href: "https://www.linkedin.com/company/dictionnaire-des-ethnies-d%E2%80%99afrique/",
   },
-  { name: "Instagram", Glyph: InstagramGlyph, href: null },
+  {
+    name: "Instagram",
+    Glyph: InstagramGlyph,
+    href: "https://www.instagram.com/ethniafrica/",
+  },
+  {
+    name: "TikTok",
+    Glyph: TiktokGlyph,
+    href: "https://www.tiktok.com/@ethniafrica",
+  },
+  {
+    name: "YouTube",
+    Glyph: YoutubeGlyph,
+    href: "https://www.youtube.com/channel/UCcJiwOQJ7-ajWnYFTDTOt0A",
+  },
 ];
 
 // @req REQ-046
