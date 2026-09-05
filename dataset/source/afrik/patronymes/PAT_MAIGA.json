@@ -118,7 +118,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "Massing, Guillaud, le catalogue INSTAT/RAVEC et les recherches « Maïga alliance patronymique » n'ont livré aucune parenté à plaisanterie ou pacte nommé avec un autre patronyme disposant d'une fiche PAT_*. L'alliance matrimoniale mossi-songhay décrite par Guillaud n'est pas une alliance patronymique."
+      "reason": "Massing, Guillaud, le catalogue INSTAT/RAVEC et les recherches « Maïga alliance patronymique » n'ont livré aucune parenté à plaisanterie ou pacte nommé avec un autre patronyme figurant dans l'atlas. L'alliance matrimoniale mossi-songhay décrite par Guillaud n'est pas une alliance patronymique."
     },
     {
       "fieldPath": "bearers",

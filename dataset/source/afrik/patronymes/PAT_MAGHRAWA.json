@@ -93,7 +93,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "L’article de Salahi documente des alliances militaires et politiques entre groupes historiques, mais aucune ne constitue une alliance anthroponymique entre deux fiches PAT_* existantes ; aucune entrée n’est donc créée."
+      "reason": "L’article de Salahi documente des alliances militaires et politiques entre groupes historiques, mais aucune ne constitue une alliance anthroponymique entre deux noms de l'atlas ; aucune entrée n’est donc créée."
     },
     {
       "fieldPath": "casteOrSocialFunction",

@@ -74,7 +74,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "Le répertoire cite des relations avec des groupes et des localités, mais aucune paire suffisamment précise entre Ouoba et une autre fiche PAT_* existante n'a été établie."
+      "reason": "Le répertoire cite des relations avec des groupes et des localités, mais aucune paire suffisamment précise entre Ouoba et un autre nom de l'atlas existante n'a été établie."
     },
     {
       "fieldPath": "casteOrSocialFunction",

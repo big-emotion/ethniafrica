@@ -25,6 +25,16 @@ function buildMaybeSingleQuery(row: Record<string, unknown> | null): FakeQuery {
   return query;
 }
 
+/** `afrik_patronymes` answers both the fiche row and the allied names lookup. */
+function buildPatronymeQuery(
+  row: Record<string, unknown> | null,
+  alliedRows: Array<Record<string, unknown>>
+): FakeQuery {
+  const query = buildMaybeSingleQuery(row);
+  query.in = vi.fn(() => Promise.resolve({ data: alliedRows, error: null }));
+  return query;
+}
+
 function buildInQuery(
   rows: Array<Record<string, unknown>>,
   error: { message: string } | null = null
@@ -67,8 +77,10 @@ function mockTables({
   countries = [{ id: "MLI", name_fr: "Mali" }],
   patronymePersons = [{ patronyme_id: "PAT_KEITA", person_id: "PER_BEARER_1" }],
   persons = [makeBearerRow(1)],
+  alliedPatronymes = [],
 }: {
   patronyme?: Record<string, unknown> | null;
+  alliedPatronymes?: Array<Record<string, unknown>>;
   patronymePeoples?: Array<Record<string, unknown>>;
   peoples?: Array<Record<string, unknown>>;
   patronymeCountries?: Array<Record<string, unknown>>;
@@ -77,7 +89,8 @@ function mockTables({
   persons?: Array<Record<string, unknown>>;
 } = {}) {
   fromMock.mockImplementation((table: string) => {
-    if (table === "afrik_patronymes") return buildMaybeSingleQuery(patronyme);
+    if (table === "afrik_patronymes")
+      return buildPatronymeQuery(patronyme, alliedPatronymes);
     if (table === "afrik_patronyme_peoples")
       return buildInQuery(patronymePeoples);
     if (table === "afrik_peoples") return buildInQuery(peoples);
@@ -163,6 +176,68 @@ describe("patronymes service — getPatronymeById", () => {
       "id",
       "roleCategory",
     ]);
+  });
+
+  // @req REQ-133
+  it("resolves each declared alliance to the allied name, in the dossier's order", async () => {
+    mockTables({
+      patronyme: {
+        ...patronymeRow,
+        content: {
+          nameMain: "Keita",
+          alliances: [
+            { targetPatronymeId: "PAT_COULIBALY", allianceType: "sanankuya" },
+            { targetPatronymeId: "PAT_FOFANA", allianceType: null },
+          ],
+        },
+      },
+      alliedPatronymes: [
+        { id: "PAT_FOFANA", name_main: "Fofana" },
+        { id: "PAT_COULIBALY", name_main: "Coulibaly" },
+      ],
+    });
+
+    const result = await getPatronymeById("PAT_KEITA");
+
+    expect(result?.alliances).toEqual([
+      {
+        targetId: "PAT_COULIBALY",
+        targetNameMain: "Coulibaly",
+        allianceType: "sanankuya",
+      },
+      { targetId: "PAT_FOFANA", targetNameMain: "Fofana", allianceType: null },
+    ]);
+  });
+
+  // A dossier can cite a name whose row has not been loaded yet; the fiche
+  // must then show nothing for it rather than the raw identifier.
+  // @req REQ-133
+  it("drops an alliance whose target the database does not hold", async () => {
+    mockTables({
+      patronyme: {
+        ...patronymeRow,
+        content: {
+          nameMain: "Keita",
+          alliances: [
+            { targetPatronymeId: "PAT_NOT_LOADED", allianceType: "sanankuya" },
+          ],
+        },
+      },
+      alliedPatronymes: [],
+    });
+
+    const result = await getPatronymeById("PAT_KEITA");
+
+    expect(result?.alliances).toEqual([]);
+  });
+
+  // @req REQ-133
+  it("returns an empty alliances list without a lookup when the dossier declares none", async () => {
+    mockTables();
+
+    const result = await getPatronymeById("PAT_KEITA");
+
+    expect(result?.alliances).toEqual([]);
   });
 
   // @req REQ-133

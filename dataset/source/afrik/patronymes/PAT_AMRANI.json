@@ -110,7 +110,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "Les recherches combinant Amrani avec « alliance », « parenté à plaisanterie », « pacte » et « leff » n’ont établi aucune relation entre noms compatible avec une autre fiche PAT_*."
+      "reason": "Les recherches combinant Amrani avec « alliance », « parenté à plaisanterie », « pacte » et « leff » n’ont établi aucune relation entre noms compatible avec un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

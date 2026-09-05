@@ -29,6 +29,13 @@ import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
 
 /** A dossier with every chapter filled, so each list branch actually renders. */
 const filled: PublicPatronyme = {
+  alliances: [
+    {
+      targetId: "PAT_COULIBALY",
+      targetNameMain: "Coulibaly",
+      allianceType: "sanankuya",
+    },
+  ],
   id: "PAT_KEITA",
   nameMain: "Keïta",
   nameSystem: "clan_name",
@@ -101,6 +108,7 @@ const filled: PublicPatronyme = {
 /** The same dossier with nothing documented and no editor's wording either. */
 const bare: PublicPatronyme = {
   ...filled,
+  alliances: [],
   casteOrSocialFunction: null,
   associatedPeoples: [],
   associatedCountries: [],

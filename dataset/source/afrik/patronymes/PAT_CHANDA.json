@@ -62,7 +62,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Chanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Chanda Surname Origin, Meaning & Last Name History » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Chanda à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Chanda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Chanda Surname Origin, Meaning & Last Name History » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Chanda à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

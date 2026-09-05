@@ -114,6 +114,19 @@ export interface PatronymeHomonym {
   distinction: string | null;
 }
 
+/**
+ * A bearer the dossier names itself.
+ *
+ * The strict model offers two shapes: a `personId` pointing at a person
+ * record, or a `displayName` written in the dossier. The corpus has chosen
+ * the second every time — 89 bearers on 75 dossiers, not one `personId` —
+ * and the loader only links the first, so Soundiata Keïta was written on the
+ * Keïta dossier and never reached the reader. The fiche now reads both.
+ */
+export interface CorpusBearer {
+  displayName: string;
+}
+
 /** One `gaps[]` entry: a field path, and why the corpus leaves it empty. */
 export interface PatronymeGap {
   fieldPath: string;
@@ -202,6 +215,18 @@ export function readGaps(content: ContentBag): PatronymeGap[] {
       fieldPath: entry.fieldPath as string,
       reason: entry.reason as string,
     }));
+}
+
+// @req REQ-133
+export function readCorpusBearers(content: ContentBag): CorpusBearer[] {
+  const value = content.bearers;
+  if (!Array.isArray(value)) return [];
+  return value
+    .filter(
+      (entry): entry is ContentBag =>
+        isPlainObject(entry) && readStringField(entry.displayName) !== null
+    )
+    .map((entry) => ({ displayName: (entry.displayName as string).trim() }));
 }
 
 // @req REQ-133

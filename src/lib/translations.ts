@@ -340,8 +340,22 @@ export const translations = {
       griotAttributionPrefix: "Transmis par",
       sourcesTitle: "Sources",
       alliancesTitle: "Alliances",
+      // Says what the chapter is for. Fourteen dossiers out of some 790
+      // record a pact, so a reader almost always meets this chapter empty,
+      // and an empty chapter titled "Alliances" explained nothing.
+      alliancesNote:
+        "Les pactes qui lient ce nom à d'autres noms : une parenté à plaisanterie, où les porteurs des deux noms se doivent moquerie rituelle et assistance, et qui interdit le conflit entre eux. Chaque pacte est désigné par le terme que les sources emploient.",
+      // The gloss that follows an attested term, keyed by the term. The term
+      // itself stays on the page: it is what the sources say.
+      allianceTermGlosses: {
+        sanankuya: "parenté à plaisanterie mandingue",
+      },
       allianceTypeFallback: "Alliance documentée",
       homonymsTitle: "Homonymes",
+      // Same reason as the alliances note: the chapter is empty on nearly
+      // every dossier, and its title alone reads as a dictionary rubric.
+      homonymsNote:
+        "Ce que la même chaîne de lettres désigne d'autre — un peuple, un lieu, un autre nom — sans lien démontré avec celui-ci. La liste évite qu'une ressemblance de forme se lise comme une filiation.",
       associationsTitle: "Peuples et pays concernés",
       associatedPeoplesLabel: "Peuples",
       associatedCountriesLabel: "Pays",

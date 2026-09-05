@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   readAlliances,
+  readCorpusBearers,
   readDesignatedSocialUnit,
   readGaps,
   readHomonyms,
@@ -63,6 +64,24 @@ describe("patronyme content readers (REQ-133)", () => {
     expect(readTransmissionMode({ transmissionMode: "non_hereditary" })).toBe(
       "non_hereditary"
     );
+  });
+
+  // @req REQ-133
+  it("reads the bearers a dossier names by displayName, and skips the rest", () => {
+    expect(
+      readCorpusBearers({
+        bearers: [
+          {
+            status: "deceased",
+            displayName: "Soundiata Keïta",
+            sourceRefs: [],
+          },
+          { status: "deceased", personId: "PER_1", sourceRefs: [] },
+          { displayName: "   " },
+          "not an object",
+        ],
+      })
+    ).toEqual([{ displayName: "Soundiata Keïta" }]);
   });
 
   // @req REQ-133

@@ -40,6 +40,7 @@ const validEnvelope = {
     associatedPeoples: [],
     associatedCountries: [],
     bearers: [],
+    alliances: [],
   },
   meta: {
     license: API_LICENSE,

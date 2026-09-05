@@ -68,7 +68,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Kanyinda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article « Luba-Kasai: A Working Bibliography » et sa bibliographie détaillée, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Kanyinda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de l'article « Luba-Kasai: A Working Bibliography » et sa bibliographie détaillée, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",
