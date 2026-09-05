@@ -191,7 +191,10 @@ describe("the name facet page", () => {
     mockGetPage.mockResolvedValue(readingOf(selection));
 
     const { container } = render(
-      await NomsHubPage({ searchParams: Promise.resolve({}) })
+      await NomsHubPage({
+        params: Promise.resolve({ lang: "fr" }),
+        searchParams: Promise.resolve({}),
+      })
     );
 
     const listed = within(
@@ -210,7 +213,12 @@ describe("the name facet page", () => {
   // the name dimension to its sourced quarter for everyone, not for crawlers.
   // @req REQ-147
   it("reads the whole selection when the reader has narrowed nothing", async () => {
-    render(await NomsHubPage({ searchParams: Promise.resolve({}) }));
+    render(
+      await NomsHubPage({
+        params: Promise.resolve({ lang: "fr" }),
+        searchParams: Promise.resolve({}),
+      })
+    );
 
     const [, filters] = mockGetPage.mock.calls[0] as [
       number,

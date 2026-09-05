@@ -71,6 +71,7 @@ describe("PatronymeFicheTitle standing (REQ-147)", () => {
   it("states the best tier cited and how many sources back the fiche", () => {
     render(
       <PatronymeFicheTitle
+        language="fr"
         patronyme={citing([
           { title: "Ethnologue", tier: "official" },
           { title: "Camara 1976", tier: "referenced" },
@@ -95,6 +96,7 @@ describe("PatronymeFicheTitle standing (REQ-147)", () => {
   it("marks a lone machine-written source and says the fiche is being assembled", () => {
     render(
       <PatronymeFicheTitle
+        language="fr"
         patronyme={citing([
           {
             title: "Synthèse",
@@ -121,6 +123,7 @@ describe("PatronymeFicheTitle standing (REQ-147)", () => {
   it("counts the machine-written share without lowering the tier", () => {
     render(
       <PatronymeFicheTitle
+        language="fr"
         patronyme={citing([
           { title: "Camara 1976", tier: "referenced" },
           { title: "Note A", tier: "unverified", source_kind: "ai_generated" },
@@ -140,7 +143,7 @@ describe("PatronymeFicheTitle standing (REQ-147)", () => {
 
   // @req REQ-147
   it("asserts no tier when the dossier cites nothing readable", () => {
-    render(<PatronymeFicheTitle patronyme={patronyme} />);
+    render(<PatronymeFicheTitle patronyme={patronyme} language="fr" />);
 
     expect(screen.getByText(/en cours de constitution/)).toBeInTheDocument();
     expect(screen.queryByText("Officielle")).toBeNull();
