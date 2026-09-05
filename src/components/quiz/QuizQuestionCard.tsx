@@ -2,7 +2,7 @@
 
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { cn } from "@/lib/utils";
-import { getTranslation } from "@/lib/translations";
+import { quizCopy } from "@/lib/i18n/copy/quiz";
 import type {
   QuizSessionQuestionView,
   QuizOptionValue,
@@ -53,7 +53,7 @@ export const QuizQuestionCard = ({
   language,
   className,
 }: QuizQuestionCardProps) => {
-  const t = getTranslation(language).quiz;
+  const t = quizCopy[language];
 
   return (
     <form

@@ -5,7 +5,7 @@ import * as React from "react";
 import { DidYouKnowLoader } from "@/components/system/DidYouKnowLoader";
 import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
-import { getTranslation } from "@/lib/translations";
+import { quizCopy } from "@/lib/i18n/copy/quiz";
 import type { Language } from "@/types/shared";
 
 /**
@@ -33,7 +33,7 @@ import type { Language } from "@/types/shared";
 // @req REQ-104
 // @req REQ-113
 export function QuizSessionWait({ language }: { language: Language }) {
-  const t = getTranslation(language).quiz;
+  const t = quizCopy[language];
   const [fact] = React.useState(() => pickDidYouKnowFact());
 
   return (

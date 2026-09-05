@@ -1,0 +1,111 @@
+import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
+import { TRAIL_PAGE_LABELS } from "@/lib/i18n/copy/trail";
+import type { Language } from "@/types/shared";
+
+const en = {
+  atlas: {
+    title: TRAIL_PAGE_LABELS.en.atlasHub,
+    pageTitle: "Explore the peoples of Africa",
+    blurb:
+      "The fiche axis: language families, languages, peoples, countries, ethnonyms and names, each under its own.",
+    menuBlurb:
+      "The fiches of families, languages, peoples, countries, ethnonyms and names, plus the search.",
+    hubEntryName: "The exploration hub",
+  },
+  dossiers: {
+    title: TRAIL_PAGE_LABELS.en.dossiersHub,
+    pageTitle: "Understand the peoples of Africa",
+    blurb:
+      "The relations axis: where a name comes from, where the peoples passed, and which sources the atlas rests on.",
+    menuBlurb:
+      "Who gave these names, sourced anecdotes, the migrations and colonisation.",
+    hubEntryName: "The reading hub",
+  },
+  jeux: {
+    title: TRAIL_PAGE_LABELS.en.jeuxHub,
+    pageTitle: "Play with the peoples of Africa",
+    blurb:
+      "The testing axis: games and quizzes drawn from the fiches, each answer leading back to its own.",
+    menuBlurb:
+      "A quiz drawn from the fiches, and a game on the true size of countries.",
+    hubEntryName: "The games hub",
+  },
+  unavailableLabel: "Coming soon",
+  menuLabel: "Three paths",
+  facetsLabel: "Its facets",
+};
+
+type HubsCopy = typeof en;
+
+// `blurb` opens the hub page — it says what the axis holds, in the
+// register of the page it opens. `menuBlurb` opens the header panel,
+// directly above the tiles of that axis, and lists what those tiles are.
+// Two surfaces, so two sentences; both copied from docs/design/mockups,
+// which is the reference when code and mockup disagree
+// (docs/design/README.md).
+//
+// The panel sentence used to name the occasion instead of the contents —
+// « Quand on sait ce qu'on cherche », « Quand on veut se tester » — which
+// asks a reader looking straight at five unexplained tiles to work out
+// for themselves what those tiles hold. It now names the modules, and
+// `modulesNamedIn` keeps it honest as the registry changes.
+//
+// Each blurb used to open on the reader's own trajectory — « Il arrive
+// avec un nom, il repart avec une fiche » — before naming the contents.
+// It read as a figure of speech where a hub page owes a description,
+// and it was the first sentence of three pages and their three meta
+// descriptions. The clause is gone; what the axis actually holds, which
+// was already the back half of every one of these, is now the whole of
+// it. The home's cards (AccessAxes) carry the same change.
+const fr: HubsCopy = {
+  atlas: {
+    title: ACCESS_MODE_LABELS.atlas,
+    // `title` keeps the short reader-facing label available to legacy
+    // translation consumers. The band has a different job: it names the
+    // page and what it leads into, so `pageTitle` remains descriptive.
+    pageTitle: "Explorer les peuples d'Afrique",
+    // « Le corpus » and « une entité » are the team's words for the
+    // collection and for what it holds. Both name the thing from the
+    // inside, and neither is glossed anywhere a reader passes through
+    // (ETNI-857) — so the menu that is supposed to say where a click
+    // lands was written in the vocabulary of the people who built it.
+    // Ordered by the corpus's own hierarchy — famille → langue → peuple →
+    // pays — then the two axes that name rather than place. Both sentences
+    // listed four of six classes, each omitting a different pair, so a
+    // reader met a different atlas depending on whether they read the menu
+    // or the page under it.
+    blurb:
+      "L'axe des fiches : familles linguistiques, langues, peuples, pays, appellations et noms, chacun sous la sienne.",
+    menuBlurb:
+      "Les fiches de familles, langues, peuples, pays, appellations et noms, plus la recherche.",
+    hubEntryName: "Le hub d'exploration",
+  },
+  dossiers: {
+    title: ACCESS_MODE_LABELS.dossiers,
+    pageTitle: "Comprendre les peuples d'Afrique",
+    blurb:
+      "L'axe des relations : d'où vient un nom, par où sont passés les peuples, et sur quelles sources l'atlas s'appuie.",
+    menuBlurb:
+      "Qui a donné ces noms, des anecdotes sourcées, les migrations et la colonisation.",
+    hubEntryName: "Le hub de lecture",
+  },
+  jeux: {
+    title: ACCESS_MODE_LABELS.jeux,
+    pageTitle: "Jouer avec les peuples d'Afrique",
+    blurb:
+      "L'axe de la mise à l'épreuve : des jeux et des quiz tirés des fiches, dont chaque réponse renvoie à la sienne.",
+    menuBlurb:
+      "Un quiz tiré des fiches, et un jeu sur la taille réelle des pays.",
+    hubEntryName: "Le hub des jeux",
+  },
+  unavailableLabel: "Bientôt",
+  menuLabel: "Trois chemins",
+  // Names the row of facet links under the hub entry. The facets are
+  // states of one page, so the menu says so rather than listing them
+  // beside the hub as if they were three more destinations — which is
+  // exactly how the three directories read before they were merged.
+  facetsLabel: "Ses facettes",
+};
+
+// @req REQ-145
+export const hubsCopy: Record<Language, HubsCopy> = { en, fr };

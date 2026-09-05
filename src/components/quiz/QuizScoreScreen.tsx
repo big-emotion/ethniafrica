@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import { getTranslation } from "@/lib/translations";
+import { quizCopy } from "@/lib/i18n/copy/quiz";
 import { scoreCardSearchParams } from "@/lib/quiz/scoreCardParams";
 import { QuizSessionExit } from "@/components/quiz/QuizSessionExit";
 import type { QuizScope } from "@/lib/quiz/quizScope";
@@ -42,7 +42,7 @@ export const QuizScoreScreen = ({
   language,
   className,
 }: QuizScoreScreenProps) => {
-  const t = getTranslation(language).quiz;
+  const t = quizCopy[language];
   const shareHref = `${getLocalizedRoute(language, "quiz")}/score?${scoreCardSearchParams(
     scope,
     correctCount,

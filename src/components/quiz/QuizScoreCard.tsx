@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import { getTranslation } from "@/lib/translations";
+import { quizCopy } from "@/lib/i18n/copy/quiz";
 import { Button } from "@/components/ui/button";
 import type { Language } from "@/types/shared";
 
@@ -45,7 +45,7 @@ export const QuizScoreCard = ({
   language,
   className,
 }: QuizScoreCardProps) => {
-  const t = getTranslation(language).quiz;
+  const t = quizCopy[language];
 
   return (
     <div
