@@ -266,6 +266,34 @@ Important implementation lessons:
 - Earlier outputs failed editorially through silent hooks, omitted approved lines,
   a missing tagline, a static ending, and rushed punctuation. Treat these as
   explicit regression cases for the future skill.
+- **"EthniAfrica" mispronunciation is systemic, not a one-off.** Confirmed on
+  3 of 3 productions (Bantu, Afrique, Nigeria): the `seed_audio`/Inès voice reads
+  the brand name as two French words ("Etnie, Afrique") rather than one blended
+  name. Do not keep re-testing this on every new script. It is a known, accepted,
+  non-blocking limitation: burned captions are aligned to the **authored** script
+  text, not the raw ASR transcript, so the on-screen brand name still reads
+  correctly even when the spoken audio does not land cleanly. Revisit only if the
+  provider or voice changes, or if the user asks for a phonetic-spelling fix.
+- **Typographic term cards are the workaround for a term the voice cannot say
+  distinctly**, not just a stylistic choice. The Afrique production originally
+  scripted the voice to contrast "Africa" (Latin/Roman) against "Ifrīqiya"
+  (Arabic-era) against "Afrique" (modern French) — the TTS voice rendered all
+  three as "Afrique," silently erasing the argument the script existed to make.
+  Verified independently with an isolated short-prompt re-generation, which ruled
+  out a Whisper mishearing. The fix was editorial, not technical: remove the
+  requirement that the voice pronounce the foreign/technical term at all, and
+  instead show it as a generated text card (same technique as Bantu's five-name
+  sequence) timed to the narration beat that describes it. Apply this pattern
+  proactively for any script that hinges on an audible contrast between
+  near-homophonic or foreign terms, rather than discovering it after generating audio.
+- **A sub-0.90 alignment similarity does not automatically mean broken captions.**
+  The Afrique production scored 0.82 (below the workflow's own ≥0.90 target) with
+  102/102 words still timed, because captions are built by aligning Whisper's
+  _timing_ to the _authored_ script text, not by displaying Whisper's raw guess.
+  The score dropped from minor ASR mishearings ("Carthage" heard as "cartage",
+  "l'est" heard as "l'aide") that never reach the viewer. Read this score as a
+  timing-confidence signal, and separately check that captions display the
+  authored words, before treating a low score as a rendering defect.
 
 ### Tool environment observed in this session
 
@@ -289,6 +317,110 @@ and read the relevant skill before reuse; these provider details may change.
 - The seed voice job that supplied V4/V5 speech was
   `10eae649-1912-4b92-af9d-92bc173bc529`; V5 edited its performance. Do not assume
   credit balance, voice availability or generation choices carry to a new session.
+
+## Second wave: Afrique and Nigeria (2026-09-05)
+
+Two further shorts were produced the same day, applying this memory's method to
+new corpus topics rather than replaying Bantu. Both started from the site's live
+anecdote pages (`/fr/dossiers/anecdotes?a=<slug>`) and were chosen over two other
+candidates (lingala, Amazigh) specifically because their source pages carry a
+**referenced**-tier citation, unlike the other two, which are marked
+"Provenance à documenter" on the site itself. Topic selection followed the source
+tier, not narrative appeal alone.
+
+### Approved French narration
+
+> Afrique. Cinquante-quatre pays, trente millions de kilomètres carrés. Vous savez d’où vient ce nom ?
+>
+> À l’origine, ce nom ne désignait presque rien.
+>
+> Les Romains appelaient « Afri » les habitants de la région de Carthage.
+>
+> Leur mot ne nommait qu’une seule province — la Tunisie et l’est de l’Algérie actuels.
+>
+> Les Arabes ont repris ce territoire sous un autre nom, avec la même portée limitée.
+>
+> Puis, au Moyen Âge, le mot s’est étendu à toutes les terres au sud de la Méditerranée.
+>
+> Un peuple d’une province a fini par nommer trente millions de kilomètres carrés et cinquante-quatre États.
+>
+> Retrouve l’histoire de chaque pays sur EthniAfrica.
+
+This is the **second, corrected** version. The first version had the voice speak
+"Africa" and "Ifrīqiya" as distinct foreign terms to contrast against modern
+"Afrique" — the TTS voice collapsed all three into "Afrique," silently erasing the
+etymological argument. The user chose to rewrite the script rather than chase a
+phonetic-spelling fix (see the lessons above). "AFRICA" and "IFRIQIYA" (no macron;
+the sandbox font's glyph coverage for the macron was not verified, so it was
+dropped rather than risk an unrendered glyph) appear only as generated text cards,
+timed to the Roman-province and Arab-era beats respectively — never spoken.
+
+> Le pays le plus peuplé d’Afrique porte un nom trouvé par une journaliste, pour éviter une phrase trop longue.
+>
+> Le 8 janvier 1897, Flora Shaw publie un article dans le Times.
+>
+> Elle propose un nom simple pour les territoires administrés par la Royal Niger Company.
+>
+> Elle suggère : « Nigeria ».
+>
+> En 1914, Frederick Lugard officialise ce nom lors de la fusion des protectorats du nord et du sud.
+>
+> Cet homme, elle l’épousera en 1902.
+>
+> Retrouve l’histoire de chaque pays sur EthniAfrica.
+
+The closing line was generalized to "chaque pays" (country) rather than
+"chaque peuple" (people) for both scripts, since these two shorts are about
+toponyms/country names, not ethnonyms — reuse "chaque peuple" only when the
+episode is actually about a people's name.
+
+### Production assets
+
+| Asset                     | Reference                                                                                                                                |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Afrique — final video     | [MP4, 41.68 s](https://d2ol7oe51mr4n9.cloudfront.net/user_3Fz2yiCXaIOXzyrKzxVypdq5WdN/033a1d77-c2f9-4dd1-8028-f8ffc3f8cf6c.mp4)          |
+| Afrique — narration audio | [WAV](https://d8j0ntlcm91z4.cloudfront.net/user_3Fz2yiCXaIOXzyrKzxVypdq5WdN/hf_20260905_030402_51368d25-012a-4597-b059-4a83002c479f.wav) |
+| Nigeria — final video     | [MP4, 35.12 s](https://d2ol7oe51mr4n9.cloudfront.net/user_3Fz2yiCXaIOXzyrKzxVypdq5WdN/ce612454-7e7f-464c-90fe-c0a37d88fbdd.mp4)          |
+
+No recovery ZIP was packaged for either short (unlike the Bantu V5 package) —
+these two are prototypes pending a durable storage decision. Both reused the V5
+project's `outro.mp4` unmodified rather than re-animating the brand ending; both
+generated narration with the same `seed_audio`/Inès pairing documented above.
+Combined cost: 9.0 credits (Afrique, including one isolated pronunciation-check
+generation) + 3.3 credits (Nigeria) = 12.3 credits.
+
+### Visual sourcing, license-verified per item
+
+| Video   | Visual                                            | Source                                    | License                           |
+| ------- | ------------------------------------------------- | ----------------------------------------- | --------------------------------- |
+| Afrique | Carthage ruins photograph                         | Wikimedia Commons                         | CC BY 3.0 / GFDL                  |
+| Afrique | Ortelius 1608 "Roman Africa" map                  | Wikimedia Commons                         | Public domain (CC BY-SA 4.0 scan) |
+| Nigeria | Flora Shaw portrait, 1908                         | National Portrait Gallery (via Wikimedia) | CC BY-SA 4.0                      |
+| Nigeria | Royal Niger Company ensign                        | Wikimedia Commons                         | CC0                               |
+| Nigeria | Frederick Lugard, solo portrait, c. 1880s         | Elliott & Fry, via Wikimedia              | Public domain                     |
+| Nigeria | Lugard and Shaw together, 1908                    | Wikimedia Commons                         | Public domain                     |
+| Nigeria | "Map of Northern Nigeria", 1911, English-language | Stanford's Geographical Establishment     | Public domain                     |
+
+The first map sourced for Nigeria ("Protectorat Nigeria 1909") was caught and
+rejected during a visual proof-sheet check: its labels were in Russian, not a
+usable primary document for this claim. Always inspect a sourced map/document
+image directly before locking it into the timeline — a promising filename or
+description is not a substitute for looking at the actual pixels.
+
+### Known deviations from the V5 reference spec
+
+- Nigeria's source-note plate used Montserrat, not "TikTok Sans" (not present in
+  that sandbox instance). Font availability is sandbox-specific; verify before
+  assuming a font from an earlier session's environment is still there.
+- Nigeria's caption grouping used simple word-count/character-limit grouping
+  rather than the bundled `group_captions` helper referenced in the Bantu
+  reproduction appendix — visually correct on inspection, not confirmed
+  byte-identical to that helper's output.
+- Neither production's actual spoken pronunciation of proper nouns ("Flora Shaw,"
+  "Lugard," "protectorats," "Carthage") was independently verifiable by the
+  agents that produced them — they can check transcription coverage and
+  alignment, not listen. Human review before publication should include an
+  actual listen-through, not just the coverage/alignment metrics.
 
 ## Foundation for the future skill
 
