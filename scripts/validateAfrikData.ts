@@ -31,6 +31,16 @@ import {
   STRICT_MODEL_FILES,
   type StrictModelFile,
 } from "../src/lib/i18n/translationClasses";
+import { sidecarViolations } from "../src/lib/i18n/translationSidecarRules";
+import { formatSegments, recordLeaves } from "../src/lib/i18n/modelLeafPaths";
+import {
+  ENTITY_TYPE_BY_CORPUS_DIRECTORY,
+  modelForEntity,
+  stripTranslationBlock,
+  translationBlockSchema,
+  type TranslationBlock,
+} from "../src/lib/afrik/translations/types";
+import { listTranslationSidecars } from "../src/lib/afrik/translations/sidecarPaths";
 
 // ─── Exported ValidationResult (FR26-FR31) ───────────────────────────────────
 
@@ -4477,6 +4487,127 @@ export function checkTranslationClassCoverage(
   return { ok: errors.length === 0, errors, warnings: [] };
 }
 
+/**
+ * TR-1 — every translated record is a faithful sidecar of a fiche that exists
+ * (REQ-142 AC3, REQ-143 AC1).
+ *
+ * A sidecar lives outside the source tree, so no other check sees it. This
+ * one asks five things of each file under dataset/translations/<lang>/: a
+ * source fiche at the mirrored path, a `_translation` block whose kind is one
+ * of the three, the source's key set and leaf paths (the translation adds
+ * and drops nothing), class-1 leaves equal to the source's, and the name of
+ * a glossed invariant kept before its translated gloss.
+ *
+ * What it does not ask: a review-required leaf at machine provenance is
+ * stored on purpose — the overlay withholds it from the reader until a
+ * human has reviewed it — so that one rule of `sidecarViolations` is not a
+ * finding here.
+ */
+// @req REQ-142
+// @req REQ-143
+export function checkTranslationSidecars(
+  datasetRoot: string,
+  translationsRoot: string = path.join(datasetRoot, "..", "..", "translations")
+): ValidationResult {
+  const errors: string[] = [];
+  const locales = fs.existsSync(translationsRoot)
+    ? fs
+        .readdirSync(translationsRoot, { withFileTypes: true })
+        .filter((entry) => entry.isDirectory() && entry.name === "en")
+        .map((entry) => entry.name as "en")
+    : [];
+
+  for (const lang of locales) {
+    for (const relativePath of listTranslationSidecars(
+      translationsRoot,
+      lang
+    )) {
+      const label = `${lang}/${relativePath}`;
+      const entityType =
+        ENTITY_TYPE_BY_CORPUS_DIRECTORY[relativePath.split("/")[0]];
+      if (!entityType) {
+        errors.push(`TR-1: ${label}: not under a corpus directory`);
+        continue;
+      }
+
+      const sourceFile = path.join(datasetRoot, relativePath);
+      if (!fs.existsSync(sourceFile)) {
+        errors.push(`TR-1: ${label}: no source fiche at ${relativePath}`);
+        continue;
+      }
+
+      let source: Record<string, unknown>;
+      let sidecar: Record<string, unknown>;
+      try {
+        source = JSON.parse(fs.readFileSync(sourceFile, "utf-8"));
+        sidecar = JSON.parse(
+          fs.readFileSync(
+            path.join(translationsRoot, lang, relativePath),
+            "utf-8"
+          )
+        );
+      } catch (error) {
+        errors.push(
+          `TR-1: ${label}: could not parse JSON (${error instanceof Error ? error.message : String(error)})`
+        );
+        continue;
+      }
+
+      const { block, content } = stripTranslationBlock(sidecar);
+      const parsedBlock = translationBlockSchema.safeParse(block);
+      if (!parsedBlock.success) {
+        const detail = parsedBlock.error.issues
+          .map(
+            (issue) =>
+              `${issue.path.join(".") || "_translation"}: ${issue.message}`
+          )
+          .join("; ");
+        errors.push(
+          `TR-1: ${label}: declares no valid translation kind — ${detail}`
+        );
+        continue;
+      }
+      const kind = (parsedBlock.data as TranslationBlock).kind;
+
+      const sourceKeys = Object.keys(source).join(",");
+      const sidecarKeys = Object.keys(content).join(",");
+      if (sourceKeys !== sidecarKeys) {
+        errors.push(
+          `TR-1: ${label}: top-level keys differ from the source (source: ${sourceKeys}; sidecar: ${sidecarKeys})`
+        );
+        continue;
+      }
+      const sourcePaths = new Set(
+        recordLeaves(source).map((leaf) => formatSegments(leaf.segments))
+      );
+      const sidecarPaths = new Set(
+        recordLeaves(content).map((leaf) => formatSegments(leaf.segments))
+      );
+      const missing = [...sourcePaths].filter((p) => !sidecarPaths.has(p));
+      const added = [...sidecarPaths].filter((p) => !sourcePaths.has(p));
+      if (missing.length > 0 || added.length > 0) {
+        errors.push(
+          `TR-1: ${label}: leaf paths differ from the source (missing: ${missing.slice(0, 5).join(", ") || "none"}; added: ${added.slice(0, 5).join(", ") || "none"})`
+        );
+        continue;
+      }
+
+      const model = modelForEntity(entityType, source);
+      for (const violation of sidecarViolations({
+        model,
+        source,
+        sidecar: content,
+        translationKind: kind,
+      })) {
+        if (violation.rule === "review-required-at-machine") continue;
+        errors.push(`TR-1: ${label}: ${violation.path} — ${violation.message}`);
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings: [] };
+}
+
 // ─── Run summary ─────────────────────────────────────────────────────────────
 
 /**
@@ -4924,6 +5055,14 @@ async function main() {
   newChecks.push({
     name: "REQ-143 Translation class coverage",
     result: checkTranslationClassCoverage(PUBLIC_ROOT),
+  });
+
+  console.log(
+    "TR-1 – Translation sidecars (source counterpart, declared kind, invariants kept)..."
+  );
+  newChecks.push({
+    name: "TR-1 Translation sidecars",
+    result: checkTranslationSidecars(datasetRoot),
   });
 
   if (process.env.CHECK_SOURCE_URLS === "true") {

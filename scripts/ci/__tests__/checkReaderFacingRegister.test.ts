@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   checkReaderFacingRegister,
+  INTERNAL_REGISTER_PATTERNS_EN,
   readerFacingProseFields,
 } from "../checkEditorialRules";
 
@@ -214,5 +215,73 @@ describe("editorial rules — reader-facing register", () => {
       "sources[0].notes",
       "names[0].sources[0].title",
     ]);
+  });
+
+  // A translated sidecar publishes the same fields, in English, and a
+  // machine translation of the workshop's vocabulary is still the workshop's
+  // vocabulary.
+  // @req REQ-146
+  it("refuses the English rendering of curation vocabulary in a translated record", () => {
+    const findings = checkReaderFacingRegister(
+      {
+        id: "PAT_X",
+        gaps: [
+          {
+            fieldPath: "origin",
+            reason:
+              "Generated from the candidate queue: the field awaits the per-record research protocol.",
+          },
+        ],
+      },
+      "dataset/translations/en/patronymes/PAT_X.json",
+      INTERNAL_REGISTER_PATTERNS_EN
+    );
+
+    expect(findings).toHaveLength(1);
+    expect(findings[0].message).toContain("gaps[0].reason");
+  });
+
+  // @req REQ-146
+  it("keeps the language-neutral leaks — paths and identifiers — in the English list", () => {
+    const findings = checkReaderFacingRegister(
+      {
+        id: "PAT_X",
+        sources: [
+          {
+            sourceKey: "k",
+            title: "Corpus AFRIK — PPL_DIOULA",
+            notes:
+              "Taken from dataset/source/afrik/peuples/FLG_MANDE/PPL_DIOULA.json.",
+          },
+        ],
+      },
+      "dataset/translations/en/patronymes/PAT_X.json",
+      INTERNAL_REGISTER_PATTERNS_EN
+    );
+
+    expect(findings.map((f) => f.message)).toEqual([
+      expect.stringContaining("sources[0].title"),
+      expect.stringContaining("sources[0].notes"),
+    ]);
+  });
+
+  // @req REQ-146
+  it("accepts an English gap reason written for the reader", () => {
+    expect(
+      checkReaderFacingRegister(
+        {
+          id: "PAT_X",
+          gaps: [
+            {
+              fieldPath: "origin",
+              reason:
+                "The atlas does not yet document the origin of this name: no dedicated source has been consulted.",
+            },
+          ],
+        },
+        "dataset/translations/en/patronymes/PAT_X.json",
+        INTERNAL_REGISTER_PATTERNS_EN
+      )
+    ).toEqual([]);
   });
 });

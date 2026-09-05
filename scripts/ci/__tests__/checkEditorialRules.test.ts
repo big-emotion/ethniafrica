@@ -441,6 +441,57 @@ describe("runEditorialRules — end-to-end", () => {
     ).toBe(true);
   });
 
+  // @req REQ-146
+  it("walks the English translations tree with the English register list", () => {
+    writeFiche("peuples/FLG_BANTU/PPL_CLEAN.json", {
+      id: "PPL_CLEAN",
+      content: {
+        appellations: { selfAppellation: "Test endonym" },
+        sources: ["one", "two"],
+      },
+    });
+    const sidecar = path.join(
+      tmpRoot,
+      "dataset",
+      "translations",
+      "en",
+      "patronymes",
+      "PAT_LEAK.json"
+    );
+    fs.mkdirSync(path.dirname(sidecar), { recursive: true });
+    fs.writeFileSync(
+      sidecar,
+      JSON.stringify({
+        id: "PAT_LEAK",
+        gaps: [
+          {
+            fieldPath: "origin",
+            reason:
+              "Generated from the candidate queue; awaits the research protocol.",
+          },
+        ],
+        _translation: { kind: "machine" },
+      })
+    );
+
+    const r = runEditorialRules({ repoRoot: tmpRoot });
+
+    expect(r.exitCode).toBe(1);
+    expect(r.findings).toEqual([
+      expect.objectContaining({
+        rule: "reader-facing-register",
+        severity: "error",
+        file: path.join(
+          "dataset",
+          "translations",
+          "en",
+          "patronymes",
+          "PAT_LEAK.json"
+        ),
+      }),
+    ]);
+  });
+
   it("handles malformed JSON gracefully without crashing", () => {
     fs.writeFileSync(
       path.join(datasetDir, "peuples", "FLG_BANTU", "PPL_BROKEN.json"),

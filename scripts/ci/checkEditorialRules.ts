@@ -467,10 +467,13 @@ export function readerFacingProseFields(fiche: Fiche): ProseField[] {
  * The reader is owed the silence itself ("l'atlas ne documente pas encore ce
  * point"), never the reason the workshop has not filled it yet.
  */
-export const INTERNAL_REGISTER_PATTERNS: ReadonlyArray<{
+export interface RegisterPattern {
   label: string;
   pattern: RegExp;
-}> = [
+}
+
+/** The leaks that are the same in any language: paths, filenames, identifiers. */
+const LANGUAGE_NEUTRAL_REGISTER_PATTERNS: ReadonlyArray<RegisterPattern> = [
   {
     label: "repository path",
     pattern: /\b(?:dataset|docs|scripts|src|public)\/[\w./-]+/,
@@ -488,12 +491,30 @@ export const INTERNAL_REGISTER_PATTERNS: ReadonlyArray<{
     label: "raw corpus identifier",
     pattern: /\b(?:PPL|FLG|PAT)_(?:[A-Z0-9_]+|\*)/,
   },
+  { label: "internal corpus label", pattern: /Corpus AFRIK\s*—/i },
+];
+
+export const INTERNAL_REGISTER_PATTERNS: ReadonlyArray<RegisterPattern> = [
+  ...LANGUAGE_NEUTRAL_REGISTER_PATTERNS,
   {
     label: "curation vocabulary",
     pattern:
       /file d'attente|passe de recherche|passe anthroponymique|protocole de recherche|claim-level|tier hérité|hors corpus|plan de couverture|vague \d+ du plan/i,
   },
-  { label: "internal corpus label", pattern: /Corpus AFRIK\s*—/i },
+];
+
+/**
+ * The same leak, translated. A machine translation of "attend le protocole de
+ * recherche par fiche" is "awaits the per-record research protocol", which
+ * reads as ordinary English and passes the French list unseen.
+ */
+export const INTERNAL_REGISTER_PATTERNS_EN: ReadonlyArray<RegisterPattern> = [
+  ...LANGUAGE_NEUTRAL_REGISTER_PATTERNS,
+  {
+    label: "curation vocabulary",
+    pattern:
+      /(?:candidate|work|research) queue|research (?:pass|protocol)|anthroponym pass|claim-level|inherited tier|out(?:side)? (?:of )?(?:the )?corpus|coverage plan|wave \d+ of the plan/i,
+  },
 ];
 
 /**
@@ -507,7 +528,8 @@ export function isCuratorWorksheet(relPath: string): boolean {
 
 export function checkReaderFacingRegister(
   fiche: Fiche,
-  file: string
+  file: string,
+  patterns: ReadonlyArray<RegisterPattern> = INTERNAL_REGISTER_PATTERNS
 ): RuleResult[] {
   if (isCuratorWorksheet(file)) return [];
 
@@ -515,7 +537,7 @@ export function checkReaderFacingRegister(
   const findings: RuleResult[] = [];
 
   for (const field of readerFacingProseFields(fiche)) {
-    for (const { label, pattern } of INTERNAL_REGISTER_PATTERNS) {
+    for (const { label, pattern } of patterns) {
       const hit = field.text.match(pattern);
       if (hit === null) continue;
       findings.push({
@@ -619,6 +641,8 @@ export function formatAnnotation(r: RuleResult): string {
 export interface RunOptions {
   repoRoot: string;
   afrikRoot?: string;
+  /** Defaults to `<repoRoot>/dataset/translations/en`. */
+  translationsRoot?: string;
 }
 
 export function runEditorialRules(opts: RunOptions): RunResult {
@@ -671,6 +695,33 @@ export function runEditorialRules(opts: RunOptions): RunResult {
     findings.push(...checkPatronymeSourceRefs(fiche, relPath));
 
     findings.push(...checkReaderFacingRegister(fiche, relPath));
+  }
+
+  // A translated record publishes the same three fields verbatim, in English.
+  // Only the register rule applies: invariants and sources are the source
+  // fiche's, and TR-1 in validateAfrikData holds the sidecar to them.
+  const translationsRoot =
+    opts.translationsRoot ??
+    path.join(repoRoot, "dataset", "translations", "en");
+  for (const fullPath of listFicheFiles(translationsRoot)) {
+    const { fiche, relPath, parseError } = loadFiche(fullPath, repoRoot);
+    if (parseError !== null || fiche === null) {
+      findings.push({
+        rule: "json-parse",
+        severity: "error",
+        file: relPath,
+        slug: path.basename(relPath, ".json"),
+        message: `Invalid JSON in ${relPath}: ${parseError}`,
+      });
+      continue;
+    }
+    findings.push(
+      ...checkReaderFacingRegister(
+        fiche,
+        relPath,
+        INTERNAL_REGISTER_PATTERNS_EN
+      )
+    );
   }
 
   const annotations = findings.map(formatAnnotation);
