@@ -1,0 +1,227 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier fondé sur la liste savante des patronymes soninké de Makhtar Diouf (1998), sur la notice biographique officielle du sénateur Amadou Doucouré, sur un épisode d'une série d'histoire orale communautaire consacrée aux Doucouré de Gory (Diafounou), sur des relevés statistiques d'un agrégateur généalogique, et sur des sites généalogiques grand public donnant des lectures contradictoires de l'étymologie. Une page francophone consacrée au royaume du Diafounou attribue à ce patronyme une généalogie princière détaillée (fondation vers 758, titre militaire, clan dominant) ; cette page se signale elle-même comme potentiellement non sourcée et les ouvrages universitaires qu'elle cite n'ont pas pu être consultés pour confirmer qu'ils traitent bien de ce patronyme, aussi ce récit n'a pas été retenu. Ne pas étendre les affirmations sans source dédiée vérifiée."
+  },
+  "id": "PAT_DOUCOURE",
+  "nameMain": "Doucouré",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Doucouré",
+      "attestations": [
+        {
+          "countryId": "MLI",
+          "sourceRefs": ["senat-doucoure", "forebears-doucoure-accent"]
+        },
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["diouf-1998"]
+        },
+        {
+          "countryId": "MRT",
+          "sourceRefs": ["forebears-doucoure-accent"]
+        }
+      ]
+    },
+    {
+      "spelling": "Doucoure",
+      "attestations": [
+        {
+          "countryId": "MLI",
+          "sourceRefs": ["forebears-doucoure-plain"]
+        },
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["forebears-doucoure-plain"]
+        },
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["forebears-doucoure-plain"]
+        },
+        {
+          "countryId": "BFA",
+          "sourceRefs": ["forebears-doucoure-plain"]
+        }
+      ]
+    },
+    {
+      "spelling": "Doukouré",
+      "attestations": [
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["diouf-1998"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [
+      {
+        "claim": "Un récit oral publié en 2013 sur un portail communautaire soninké et consacré aux Doucouré du village de Gory, dans le Diafounou, raconte un différend coutumier entre le Diafounou et le Guidimakha au sujet d'un usage réservé par tradition à la famille Doucouré lors d'un mariage, et rattache la branche concernée à un ancêtre nommé Hamédi Mariya.",
+        "claimStatus": "claimed",
+        "griot": "Récit transcrit en soninké et traduit par Doudou Sakho",
+        "transcription": "Épisode d'une série intitulée « Histoire des Doucouré de Gory », publiée en soninké avec traduction française sur le portail communautaire Soninkara.",
+        "sourceRefs": ["soninkara-doucoure-gory"]
+      }
+    ],
+    "writtenChronicles": [
+      {
+        "claim": "Doukouré, ou Doucouré, figure parmi les patronymes identifiés comme soninké aux côtés de Cissé, Diawara, Sylla, Touré ou Bathily.",
+        "claimStatus": "established",
+        "sourceRefs": ["diouf-1998"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "Des sites généalogiques grand public proposent des traductions incompatibles de ce nom, tantôt un terme militaire, tantôt une désignation de sage ou de détenteur d'un savoir, tantôt un rattachement générique à une culture manding sans terme précis. Aucune de ces lectures ne s'appuie sur une méthode ou une source linguistique identifiable.",
+        "claimStatus": "contested",
+        "sourceRefs": ["geneanet-doucoure", "wisdomlib-doukoure"]
+      },
+      {
+        "claim": "Un dictionnaire spécialisé des noms claniques mandé range Dukure, à côté de Jaruma et Tounkara, parmi les noms rattachés à l'un des trois grands regroupements traditionnels de la société soninké. Par tradition, les familles de ce regroupement ne portaient ni vêtement teint à l'indigo ni sandales, et deux lignées de griots leur étaient attitrées. Ce même regroupement entretenait par ailleurs une relation à plaisanterie avec un second grand regroupement soninké, celui dont le Wagadou est donné comme berceau. Le dictionnaire ne mentionne Dukure que comme membre de ce regroupement plus large, sans lui consacrer d'entrée propre ni lui attribuer de statut social distinct.",
+        "claimStatus": "established",
+        "sourceRefs": ["bamadaba-jamuw"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SONINKE",
+      "status": "attested",
+      "sourceRefs": ["diouf-1998", "bamadaba-jamuw"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": [
+        "senat-doucoure",
+        "forebears-doucoure-accent",
+        "forebears-doucoure-plain"
+      ]
+    },
+    {
+      "countryId": "SEN",
+      "status": "attested",
+      "sourceRefs": ["diouf-1998", "forebears-doucoure-plain"]
+    },
+    {
+      "countryId": "MRT",
+      "status": "attested",
+      "sourceRefs": ["forebears-doucoure-accent"]
+    },
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["forebears-doucoure-plain"]
+    },
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": ["forebears-doucoure-plain"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Amadou Doucouré",
+      "sourceRefs": ["senat-doucoure"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "diouf-1998",
+      "title": "Sénégal, les ethnies et la nation",
+      "url": null,
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Makhtar Diouf, Dakar, Nouvelles Éditions Africaines du Sénégal (NEAS), 1998, p. 70-71. La page exacte n'a pas été consultée directement : la liste de patronymes qu'elle contient a été retrouvée en croisant l'article francophone de Wikipédia consacré aux Soninké, qui la reprend en citant cet ouvrage, avec Doukouré ou Doucouré parmi les noms cités."
+    },
+    {
+      "sourceKey": "senat-doucoure",
+      "title": "DOUCOURE Amadou — notice biographique",
+      "url": "https://www.senat.fr/senateur-4eme-republique/doucoure_amadou0122r4.html",
+      "tier": "official",
+      "source_kind": "archive",
+      "notes": "Notice publiée par le Sénat français dans les archives biographiques de ses anciens membres : né en 1919 à Goumbou (Soudan français), conseiller puis sénateur du Soudan français de 1947 à 1959. La date de décès a fait l'objet d'une correction publique par le service des archives du Sénat lui-même, qui retient le 5 septembre 1969 à Bamako."
+    },
+    {
+      "sourceKey": "soninkara-doucoure-gory",
+      "title": "Histoire des Doucouré de Gory : l'origine des familles Tandja du Diafounou",
+      "url": "http://www.soninkara.org/histoire-soninke/histoire-de-gory/histoire-des-doucoure-de-gory-lorigine-des-familles-tandja-du-diafounou-partie-20-4424.html",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Portail communautaire soninké publiant une série d'histoire orale locale consacrée à un village précis du Diafounou. Le récit est présenté comme un témoignage transmis et traduit, sans méthode de vérification externe ; il documente une tradition vivante plutôt qu'un fait établi."
+    },
+    {
+      "sourceKey": "geneanet-doucoure",
+      "title": "Nom de famille DOUCOURE : origine et signification",
+      "url": "https://www.geneanet.org/nom-de-famille/DOUCOURE",
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Page de généalogie grand public au contenu généré automatiquement, sans auteur ni source citée, rattachant le nom de façon générique à une culture manding sans étymologie précise vérifiable."
+    },
+    {
+      "sourceKey": "wisdomlib-doukoure",
+      "title": "Meaning of the name Doukoure",
+      "url": "https://www.wisdomlib.org/names/doukoure",
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "Page de généalogie grand public en anglais donnant plusieurs traductions incompatibles entre elles (chef, ou composé de deux racines signifiant cœur et tambour), sans méthode ni source indiquée."
+    },
+    {
+      "sourceKey": "forebears-doucoure-accent",
+      "title": "Doucouré — répartition du patronyme",
+      "url": "https://forebears.io/surnames/doucour%C3%A9",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Agrégateur statistique de registres publics pour la graphie avec accent : 1 549 personnes recensées au Mali et 321 en Mauritanie, les deux pays où ce patronyme est le plus concentré."
+    },
+    {
+      "sourceKey": "forebears-doucoure-plain",
+      "title": "Doucoure — répartition du patronyme (graphie sans accent)",
+      "url": "https://forebears.io/surnames/doucoure",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Même agrégateur, pour la graphie sans accent utilisée dans de nombreux registres d'état civil : 73 118 personnes recensées au Mali, 6 883 au Sénégal, 1 074 en Côte d'Ivoire et 66 au Burkina Faso, en tête des pays de résidence."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA), signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. L'entrée consacrée au regroupement traditionnel dit Kusa énumère trois noms qui en font partie, Jaruma, Tounkara et Dukure, avec l'interdit vestimentaire et les deux lignées de griots attitrées, et la relie par une relation à plaisanterie au regroupement dit Wago, dont l'entrée donne le Wagadou pour berceau et énumère une trentaine d'autres noms membres. Aucune des deux entrées, ni celle propre à un troisième regroupement nommé Karo, ne porte de statut social distinct ; seuls les noms qui ont leur propre entrée dans le dictionnaire portent une telle mention, et Dukure n'en a pas."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Un récit oral situe cette famille dans un rôle de préséance coutumière locale et des pages généalogiques grand public évoquent une ascendance de rang guerrier ou dirigeant, mais aucune étude spécialisée n'a pu être consultée pour confirmer un statut social ou une fonction héréditaire précise attachée à ce nom. Un dictionnaire spécialisé des noms claniques mandé, qui donne un statut social à la plupart des noms soninké qu'il recense chacun sous sa propre entrée, ne consacre à ce nom aucune entrée propre : il n'apparaît que dans l'énumération des membres d'un regroupement plus large, sans indication de statut qui lui soit spécifique."
+    },
+    {
+      "fieldPath": "origin",
+      "reason": "Une page consacrée à l'ancien royaume du Diafounou attribue à ce patronyme une origine datée et un titre militaire précis, en s'appuyant apparemment sur des ouvrages universitaires. Cette page indique cependant elle-même qu'elle peut contenir des éléments non sourcés, et ces ouvrages n'ont pas pu être consultés directement pour vérifier qu'ils traitent bien de ce patronyme. Ce récit détaillé n'a donc pas été retenu."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Une pratique de parenté à plaisanterie entre certaines familles ouest-africaines est bien documentée de façon générale. Un dictionnaire spécialisé des noms claniques mandé documente une telle relation, mais entre deux grands regroupements traditionnels soninké qui comptent chacun plusieurs dizaines de noms de famille membres, dont celui-ci pour l'un d'eux : aucun nom de famille précis, à l'intérieur de l'autre regroupement, n'y est désigné comme le partenaire attitré de ce patronyme en particulier."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucune lignée homonyme d'origine distincte n'a été identifiée dans les sources consultées."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "Ce patronyme est également mentionné pour la Guinée et la Gambie, mais aucune source chiffrée ou documentée propre au nom n'a été trouvée pour ces deux pays."
+    }
+  ]
+}
