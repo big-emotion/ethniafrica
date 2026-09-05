@@ -1616,6 +1616,235 @@ const options: swaggerJsdoc.Options = {
           },
           required: ["data", "meta", "errors"],
         },
+        DossierReadingV2: {
+          type: "object",
+          description:
+            "One reading of the chapter's subject. A chapter always publishes both stances.",
+          properties: {
+            stance: { type: "string", enum: ["official", "counter"] },
+            label: { type: "string" },
+            body: { type: "string" },
+            sourceRefs: {
+              type: "array",
+              items: { type: "string" },
+              minItems: 1,
+              description: "Keys into the dossier's own sources array.",
+            },
+          },
+          required: ["stance", "label", "body", "sourceRefs"],
+        },
+        DossierChapterV2: {
+          type: "object",
+          properties: {
+            chapterKey: { type: "string" },
+            ordinal: { type: "integer" },
+            title: { type: "string" },
+            question: { type: "string" },
+            standfirst: { type: "string" },
+            body: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  text: { type: "string" },
+                  sourceRefs: { type: "array", items: { type: "string" } },
+                },
+                required: ["text", "sourceRefs"],
+              },
+            },
+            illustration: {
+              type: "object",
+              nullable: true,
+              description:
+                "Credits for the chapter's document. Where the licence requires attribution, author and licenceUrl are both present.",
+              properties: {
+                src: { type: "string" },
+                alt: { type: "string" },
+                caption: { type: "string" },
+                author: { type: "string", nullable: true },
+                licence: { type: "string" },
+                licenceUrl: { type: "string", nullable: true },
+                filePage: { type: "string", nullable: true },
+                year: { type: "string", nullable: true },
+              },
+              required: ["src", "alt", "caption", "licence"],
+            },
+            readings: {
+              type: "array",
+              items: { $ref: "#/components/schemas/DossierReadingV2" },
+              minItems: 2,
+            },
+            figures: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  figureKey: { type: "string" },
+                  label: { type: "string" },
+                  value: { type: "string" },
+                  year: { type: "integer" },
+                  note: { type: "string", nullable: true },
+                  sourceRefs: { type: "array", items: { type: "string" } },
+                },
+                required: ["figureKey", "label", "value", "year", "sourceRefs"],
+              },
+            },
+          },
+          required: [
+            "chapterKey",
+            "ordinal",
+            "title",
+            "question",
+            "standfirst",
+            "body",
+            "illustration",
+            "readings",
+            "figures",
+          ],
+        },
+        DossierV2: {
+          type: "object",
+          properties: {
+            id: { type: "string", example: "DOS_PROPORTIONS" },
+            vertical: { type: "string", enum: ["realites", "nommer"] },
+            slug: { type: "string", example: "proportions" },
+            publishedOn: { type: "string", format: "date" },
+            title: { type: "string" },
+            question: { type: "string" },
+            standfirst: { type: "string" },
+            thesis: {
+              type: "object",
+              properties: {
+                stepLabel: { type: "string" },
+                heading: { type: "string" },
+                figures: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    properties: {
+                      figureKey: { type: "string" },
+                      value: { type: "string" },
+                      claim: { type: "string" },
+                      provenance: { type: "string" },
+                      year: { type: "integer" },
+                      sourceRefs: { type: "array", items: { type: "string" } },
+                    },
+                    required: [
+                      "figureKey",
+                      "value",
+                      "claim",
+                      "provenance",
+                      "year",
+                      "sourceRefs",
+                    ],
+                  },
+                },
+              },
+              required: ["stepLabel", "heading", "figures"],
+            },
+            chapters: {
+              type: "array",
+              items: { $ref: "#/components/schemas/DossierChapterV2" },
+            },
+            sources: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  sourceKey: { type: "string" },
+                  title: { type: "string" },
+                  url: { type: "string", nullable: true },
+                  tier: {
+                    type: "string",
+                    enum: ["official", "referenced", "unverified"],
+                  },
+                  source_kind: { type: "string" },
+                  publicationYear: { type: "integer" },
+                  notes: { type: "string" },
+                },
+                required: ["sourceKey", "title", "url", "tier"],
+              },
+            },
+            gaps: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  fieldPath: { type: "string" },
+                  reason: { type: "string" },
+                },
+                required: ["fieldPath", "reason"],
+              },
+            },
+          },
+          required: [
+            "id",
+            "vertical",
+            "slug",
+            "publishedOn",
+            "title",
+            "question",
+            "standfirst",
+            "thesis",
+            "chapters",
+            "sources",
+            "gaps",
+          ],
+        },
+        DossierSummaryV2: {
+          type: "object",
+          properties: {
+            id: { type: "string" },
+            vertical: { type: "string", enum: ["realites", "nommer"] },
+            slug: { type: "string" },
+            publishedOn: { type: "string", format: "date" },
+            title: { type: "string" },
+            question: { type: "string" },
+            standfirst: { type: "string" },
+            chapterCount: { type: "integer" },
+            sourceCount: { type: "integer" },
+          },
+          required: [
+            "id",
+            "vertical",
+            "slug",
+            "publishedOn",
+            "title",
+            "question",
+            "standfirst",
+            "chapterCount",
+            "sourceCount",
+          ],
+        },
+        DossierDetailEnvelope: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/DossierV2" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        DossierIndexEnvelope: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/DossierSummaryV2" },
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
         LanguageFamilyDetailEnvelope: {
           type: "object",
           properties: {
