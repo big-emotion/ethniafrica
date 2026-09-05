@@ -55,6 +55,7 @@ function baseSession(overrides: Record<string, unknown> = {}) {
 function renderIsland(scope: QuizScope = GHANA, label = "Ghana") {
   return render(
     <QuizPlayIsland
+      language="fr"
       scope={scope}
       scopeLabelFr={label}
       exitHref={getLocalizedRoute("fr", "quiz")}

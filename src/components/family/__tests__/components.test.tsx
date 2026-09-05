@@ -60,7 +60,7 @@ describe("LanguageFamilyDetailViewV2", () => {
   // @req REQ-047
   it("closes on its sources footer, with no chapter after it", () => {
     const { container } = render(
-      <LanguageFamilyDetailViewV2 family={completeFamily} />
+      <LanguageFamilyDetailViewV2 language="fr" family={completeFamily} />
     );
 
     const chapters = Array.from(
@@ -72,7 +72,9 @@ describe("LanguageFamilyDetailViewV2", () => {
 
   // @req REQ-047
   it("renders every non-empty transformed section through SSR", () => {
-    render(<LanguageFamilyDetailViewV2 family={completeFamily} />);
+    render(
+      <LanguageFamilyDetailViewV2 language="fr" family={completeFamily} />
+    );
 
     // The h1 moved to the title band above the globe (FamilyFicheTitle).
     expect(
@@ -93,6 +95,7 @@ describe("LanguageFamilyDetailViewV2", () => {
   it("omits empty sections instead of rendering empty shells", () => {
     render(
       <LanguageFamilyDetailViewV2
+        language="fr"
         family={{ id: "FLG_EMPTY", nameFr: "Sans contenu", content: {} }}
       />
     );
@@ -119,6 +122,7 @@ describe("LanguageFamilyDetailViewV2", () => {
   it("shows structurally-expected but empty fields as missing rather than hiding their section", () => {
     render(
       <LanguageFamilyDetailViewV2
+        language="fr"
         family={{ id: "FLG_EMPTY", nameFr: "Sans contenu", content: {} }}
       />
     );
@@ -141,6 +145,7 @@ describe("LanguageFamilyDetailViewV2", () => {
   it("names the origin of a derived footprint instead of presenting it as declared", () => {
     render(
       <LanguageFamilyDetailViewV2
+        language="fr"
         family={{
           id: "FLG_BANTU",
           nameFr: "Bantou",
@@ -160,6 +165,7 @@ describe("LanguageFamilyDetailViewV2", () => {
   it("shows the declared distribution as missing alongside the derived footprint instead of the footprint hiding the gap", () => {
     render(
       <LanguageFamilyDetailViewV2
+        language="fr"
         family={{
           id: "FLG_BANTU",
           nameFr: "Bantou",
@@ -189,7 +195,7 @@ describe("LanguageFamilyDetailViewV2", () => {
       },
     };
 
-    render(<LanguageFamilyDetailViewV2 family={family} />);
+    render(<LanguageFamilyDetailViewV2 language="fr" family={family} />);
 
     // Both branches and distributionByCountry are structurally expected yet
     // empty in this fixture, so each is marked missing. Asserted on the two
@@ -341,7 +347,9 @@ describe("LanguageFamilyDetailViewV2", () => {
   });
   // @req REQ-050
   it("anchors source affordances and deep-links each country distribution", () => {
-    render(<LanguageFamilyDetailViewV2 family={completeFamily} />);
+    render(
+      <LanguageFamilyDetailViewV2 language="fr" family={completeFamily} />
+    );
 
     expect(screen.getByRole("contentinfo")).toHaveAttribute("id", "sources");
     // Each country of the footprint still steps across to its own fiche; the
@@ -354,7 +362,9 @@ describe("LanguageFamilyDetailViewV2", () => {
 
   // @req REQ-012 (AC5)
   it("renders a live report control on the History section", () => {
-    render(<LanguageFamilyDetailViewV2 family={completeFamily} />);
+    render(
+      <LanguageFamilyDetailViewV2 language="fr" family={completeFamily} />
+    );
 
     const flagTarget = screen.getByTestId("section-flag-target-history");
     expect(

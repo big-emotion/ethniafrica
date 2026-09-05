@@ -106,7 +106,7 @@ describe("people fiche parity with the mockup", () => {
     // @req REQ-115
     it(`renders the mockup's sections, in order, on ${regime.label}`, () => {
       const { container } = render(
-        <PeopleDetailViewV2 people={regime.people} />
+        <PeopleDetailViewV2 language="fr" people={regime.people} />
       );
 
       const sections = [
@@ -142,7 +142,7 @@ describe("people fiche parity with the mockup", () => {
     // @req REQ-116
     it(`draws no closed outline anywhere on ${regime.label}`, () => {
       const { container } = render(
-        <PeopleDetailViewV2 people={regime.people} />
+        <PeopleDetailViewV2 language="fr" people={regime.people} />
       );
 
       expect(container.querySelector("polygon")).toBeNull();
@@ -157,6 +157,7 @@ describe("people fiche parity with the mockup", () => {
     const bare = peopleWith([{ country: "NGA", population: 1000 }]);
     render(
       <PeopleDetailViewV2
+        language="fr"
         people={{
           ...bare,
           appellations: {
@@ -200,7 +201,9 @@ describe("people fiche — what the corpus does not fill", () => {
 
   // @req REQ-119
   it("keeps every chapter of the model, filled or not", () => {
-    const { container } = render(<PeopleDetailViewV2 people={bareFiche()} />);
+    const { container } = render(
+      <PeopleDetailViewV2 language="fr" people={bareFiche()} />
+    );
 
     const chapters = [
       ...container.querySelectorAll("[data-fiche-section]"),
@@ -214,7 +217,9 @@ describe("people fiche — what the corpus does not fill", () => {
 
   // @req REQ-119
   it("marks each unfilled chapter as a gap in the corpus", () => {
-    const { container } = render(<PeopleDetailViewV2 people={bareFiche()} />);
+    const { container } = render(
+      <PeopleDetailViewV2 language="fr" people={bareFiche()} />
+    );
 
     const textOf = (title: string) =>
       container.querySelector(`[data-fiche-section="${title}"]`)?.textContent ??
@@ -231,6 +236,7 @@ describe("people fiche — what the corpus does not fill", () => {
   it("marks nothing on a chapter the fiche does fill", () => {
     const { container } = render(
       <PeopleDetailViewV2
+        language="fr"
         people={peopleWith([{ country: "NGA", population: 1000 }])}
       />
     );
@@ -245,7 +251,9 @@ describe("people fiche — what the corpus does not fill", () => {
   // missing, and marking it would invent a gap.
   // @req REQ-119
   it("prints no chapter for what the model never asked for", () => {
-    const { container } = render(<PeopleDetailViewV2 people={bareFiche()} />);
+    const { container } = render(
+      <PeopleDetailViewV2 language="fr" people={bareFiche()} />
+    );
 
     const chapters = [
       ...container.querySelectorAll("[data-fiche-section]"),
@@ -256,7 +264,9 @@ describe("people fiche — what the corpus does not fill", () => {
 
   // @req REQ-119
   it("prints no field path in its provenance notes", () => {
-    const { container } = render(<PeopleDetailViewV2 people={bareFiche()} />);
+    const { container } = render(
+      <PeopleDetailViewV2 language="fr" people={bareFiche()} />
+    );
 
     const notes = Array.from(
       container.querySelectorAll(".afh-parchment-note")

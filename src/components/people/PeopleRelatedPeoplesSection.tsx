@@ -10,9 +10,11 @@ import {
 } from "@/lib/peopleDataTransformer";
 import { RelationTypeBadge } from "@/components/relations/RelationTypeBadge";
 import { getPeopleLinksRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 interface PeopleRelatedPeoplesSectionProps {
   data: PeopleRelatedData;
+  language: Language;
   peopleId?: string;
   relationsPreview?: PeopleRelationPreviewItem[];
 }
@@ -21,6 +23,7 @@ interface PeopleRelatedPeoplesSectionProps {
 // @req REQ-097 FR75
 export function PeopleRelatedPeoplesSection({
   data,
+  language,
   peopleId,
   relationsPreview = [],
 }: PeopleRelatedPeoplesSectionProps) {
@@ -56,7 +59,7 @@ export function PeopleRelatedPeoplesSection({
               inherited the surrounding ink. ActionLink reads --accent-ink
               directly. */}
             <ActionLink
-              href={getPeopleLinksRoute("fr", peopleId)}
+              href={getPeopleLinksRoute(language, peopleId)}
               className="mt-[4px]"
             >
               Voir tous les liens

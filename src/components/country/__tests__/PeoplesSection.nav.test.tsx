@@ -32,7 +32,7 @@ describe("PeoplesSection — navigation links to people fiches", () => {
   };
 
   it("renders a link to the people fiche when peopleId is present", () => {
-    render(<PeoplesSection data={baseData} />);
+    render(<PeoplesSection language="fr" data={baseData} />);
     const link = screen.getByRole("link", { name: /Yoruba/i });
     expect(link).toBeTruthy();
     expect(link.getAttribute("href")).toBe(getPeopleRoute("fr", "PPL_YORUBA"));
@@ -41,7 +41,7 @@ describe("PeoplesSection — navigation links to people fiches", () => {
   // ETNI-42 × ETNI-382: navigation and endonym primacy land on the same row.
   // The link must cover the whole name pair so the endonym keeps leading it.
   it("keeps endonym primacy inside the link to the fiche", () => {
-    render(<PeoplesSection data={baseData} />);
+    render(<PeoplesSection language="fr" data={baseData} />);
     const link = screen.getByRole("link", { name: /Ọmọ Oòduà/i });
 
     expect(link.getAttribute("href")).toBe(getPeopleRoute("fr", "PPL_YORUBA"));
@@ -56,7 +56,7 @@ describe("PeoplesSection — navigation links to people fiches", () => {
   });
 
   it("renders links for all rows that have peopleId", () => {
-    render(<PeoplesSection data={baseData} />);
+    render(<PeoplesSection language="fr" data={baseData} />);
     const links = screen.getAllByRole("link");
     const hrefs = links.map((l) => l.getAttribute("href"));
     expect(hrefs).toContain(getPeopleRoute("fr", "PPL_YORUBA"));
@@ -77,7 +77,7 @@ describe("PeoplesSection — navigation links to people fiches", () => {
         },
       ],
     };
-    render(<PeoplesSection data={dataWithoutId} />);
+    render(<PeoplesSection language="fr" data={dataWithoutId} />);
     const links = screen.queryAllByRole("link");
     expect(links).toHaveLength(0);
   });
@@ -90,7 +90,7 @@ describe("PeoplesSection — navigation links to people fiches", () => {
       peopleCount: 0,
       rows: [],
     };
-    const { container } = render(<PeoplesSection data={empty} />);
+    const { container } = render(<PeoplesSection language="fr" data={empty} />);
     expect(container.firstChild).toBeNull();
   });
 });

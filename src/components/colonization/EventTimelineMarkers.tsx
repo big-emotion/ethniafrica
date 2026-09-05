@@ -23,27 +23,40 @@ import type {
   ColonizationTimelineBounds,
   ColonizationTimelineEntry,
 } from "@/lib/colonizationDataTransformer";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
-const t = translations.fr.colonization.timeline;
+/** The timeline's own copy, handed to the label helpers by the component. */
+type TimelineCopy = ReturnType<
+  typeof getTranslation
+>["colonization"]["timeline"];
 
 export interface EventTimelineMarkersProps {
   events: ColonizationTimelineEntry[];
   bounds: ColonizationTimelineBounds;
+  language: Language;
   className?: string;
 }
 
-function peopleLabel(event: ColonizationTimelineEntry): string {
+function peopleLabel(
+  event: ColonizationTimelineEntry,
+  t: TimelineCopy
+): string {
   return event.peoples
     .map((people) => people.endonym ?? people.nameMain)
     .join(` ${t.peoplesJoiner} `);
 }
 
-function markerLabel(event: ColonizationTimelineEntry): string {
+function markerLabel(
+  event: ColonizationTimelineEntry,
+  t: TimelineCopy
+): string {
   const parts = [
+    // The noun has no dictionary key yet (the dictionary is not this
+    // change's to extend); the type label beside it does follow the locale.
     `événement ${t.eventTypeLabels[event.eventType]}`,
     formatYearFr(event.timeRange.startYear),
-    peopleLabel(event),
+    peopleLabel(event, t),
   ].filter(Boolean);
   return `${parts.join(", ")} — ${t.openEventSuffix}`;
 }
@@ -62,8 +75,10 @@ function markerPosition(
 export function EventTimelineMarkers({
   events,
   bounds,
+  language,
   className,
 }: EventTimelineMarkersProps) {
+  const t = getTranslation(language).colonization.timeline;
   const [activeTypes, setActiveTypes] = React.useState<Set<ColonialEventType>>(
     () => new Set(COLONIAL_EVENT_TYPES)
   );
@@ -117,7 +132,7 @@ export function EventTimelineMarkers({
             <button
               key={event.id}
               type="button"
-              aria-label={markerLabel(event)}
+              aria-label={markerLabel(event, t)}
               aria-expanded={openEventId === event.id}
               onClick={() =>
                 setOpenEventId(openEventId === event.id ? null : event.id)
@@ -152,7 +167,7 @@ export function EventTimelineMarkers({
               ` – ${formatYearFr(openEvent.timeRange.endYear)}`}
           </p>
           {openEvent.peoples.length > 0 && (
-            <p className="text-afh-small">{peopleLabel(openEvent)}</p>
+            <p className="text-afh-small">{peopleLabel(openEvent, t)}</p>
           )}
           {openEvent.primarySource && (
             <a

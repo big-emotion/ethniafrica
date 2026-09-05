@@ -104,7 +104,7 @@ describe("PeoplesSection", () => {
       peopleCount: 0,
       rows: [],
     };
-    const { container } = render(<PeoplesSection data={data} />);
+    const { container } = render(<PeoplesSection language="fr" data={data} />);
     expect(container.firstChild).toBeNull();
   });
 
@@ -131,7 +131,7 @@ describe("PeoplesSection", () => {
         },
       ],
     };
-    render(<PeoplesSection data={data} />);
+    render(<PeoplesSection language="fr" data={data} />);
     expect(screen.getByText("Mossi")).toBeTruthy();
     expect(screen.getByText("52%")).toBeTruthy();
     expect(screen.getByText("Fulani")).toBeTruthy();
@@ -160,7 +160,7 @@ describe("PeoplesSection", () => {
       ],
     };
 
-    const { container } = render(<PeoplesSection data={data} />);
+    const { container } = render(<PeoplesSection language="fr" data={data} />);
 
     const exonym = screen.getByText("Fellata");
     expect(exonym.className).not.toMatch(/line-through/);
@@ -190,7 +190,7 @@ describe("PeoplesSection", () => {
         },
       ],
     };
-    const { container } = render(<PeoplesSection data={data} />);
+    const { container } = render(<PeoplesSection language="fr" data={data} />);
     // The DemoBar renders one div per row with a title attribute
     const barSegments = container.querySelectorAll("[title]");
     expect(barSegments.length).toBe(2);
@@ -212,7 +212,7 @@ describe("PeoplesSection", () => {
         },
       ],
     };
-    render(<PeoplesSection data={data} />);
+    render(<PeoplesSection language="fr" data={data} />);
     expect(screen.getByText("22M")).toBeTruthy();
   });
 
@@ -237,7 +237,7 @@ describe("PeoplesSection", () => {
         },
       ],
     };
-    render(<PeoplesSection data={data} />);
+    render(<PeoplesSection language="fr" data={data} />);
 
     const endonymEl = screen.getByText("Yorùbá");
     const exonymEl = screen.getByText("Yoruba");
@@ -274,7 +274,7 @@ describe("PeoplesSection", () => {
         },
       ],
     };
-    render(<PeoplesSection data={data} />);
+    render(<PeoplesSection language="fr" data={data} />);
 
     const endonymEl = screen.getByText("Yorùbá");
     expect(endonymEl).not.toHaveAttribute("lang");
@@ -548,7 +548,7 @@ describe("PeoplesSection — what the bar admits (FR28)", () => {
   // @req REQ-092
   it("sizes each segment as a share of the country, not of the rendered rows", () => {
     const { container } = render(
-      <PeoplesSection data={peoples([30, 20]) as never} />
+      <PeoplesSection language="fr" data={peoples([30, 20]) as never} />
     );
 
     const segments = Array.from(
@@ -564,7 +564,7 @@ describe("PeoplesSection — what the bar admits (FR28)", () => {
   // @req REQ-092
   it("says how much of the country is accounted for when the splits fall short", () => {
     const { container } = render(
-      <PeoplesSection data={peoples([30, 20]) as never} />
+      <PeoplesSection language="fr" data={peoples([30, 20]) as never} />
     );
 
     const note = container.querySelector("[data-demo-coverage-note]");
@@ -575,7 +575,7 @@ describe("PeoplesSection — what the bar admits (FR28)", () => {
   // @req REQ-092
   it("stays quiet when the splits do account for the whole country", () => {
     const { container } = render(
-      <PeoplesSection data={peoples([60, 40]) as never} />
+      <PeoplesSection language="fr" data={peoples([60, 40]) as never} />
     );
 
     expect(container.querySelector("[data-demo-coverage-note]")).toBeNull();

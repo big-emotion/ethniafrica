@@ -10,10 +10,9 @@ import type { DossierChapter } from "@/lib/dossiers/nommer/types";
 import { getLocalizedRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
-const LANGUAGE: Language = "fr";
-
 interface NommerChapterPageProps {
   chapter: DossierChapter;
+  language: Language;
 }
 
 /**
@@ -39,13 +38,16 @@ interface NommerChapterPageProps {
  * tiles navigate rather than deploy: the same component serves both surfaces.
  */
 // @req REQ-113
-export const NommerChapterPage = ({ chapter }: NommerChapterPageProps) => {
+export const NommerChapterPage = ({
+  chapter,
+  language,
+}: NommerChapterPageProps) => {
   const others = NOMMER_CHAPTERS.filter((entry) => entry.key !== chapter.key);
-  const pillarHref = getLocalizedRoute(LANGUAGE, "nommer");
+  const pillarHref = getLocalizedRoute(language, "nommer");
 
   return (
     <PageLayout
-      language={LANGUAGE}
+      language={language}
       title={chapter.title}
       subtitle={chapter.standfirst.text}
     >
@@ -80,7 +82,7 @@ export const NommerChapterPage = ({ chapter }: NommerChapterPageProps) => {
             {others.map((entry, index) => (
               <ChapterTile
                 key={entry.key}
-                language={LANGUAGE}
+                language={language}
                 chapter={entry}
                 index={index}
               />

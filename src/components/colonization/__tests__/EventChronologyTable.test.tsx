@@ -56,7 +56,10 @@ describe("EventChronologyTable (Epic 13, Story 13.12, ETNI-536)", () => {
   // @req REQ-101 FR87
   it("renders a semantic table with one row per event", () => {
     render(
-      <EventChronologyTable events={[imposedNameEntry, resistanceEntry]} />
+      <EventChronologyTable
+        language="fr"
+        events={[imposedNameEntry, resistanceEntry]}
+      />
     );
     const table = screen.getByRole("table", {
       name: "Chronologie des événements coloniaux",
@@ -68,7 +71,7 @@ describe("EventChronologyTable (Epic 13, Story 13.12, ETNI-536)", () => {
 
   // @req REQ-101 FR87
   it("renders date, type, endonym-first people, place and source per row", () => {
-    render(<EventChronologyTable events={[resistanceEntry]} />);
+    render(<EventChronologyTable language="fr" events={[resistanceEntry]} />);
     const row = screen.getByRole("row", { name: /Matumbi/ });
     expect(within(row).getByText("1905")).toBeInTheDocument();
     expect(within(row).getByText("résistance")).toBeInTheDocument();
@@ -84,7 +87,7 @@ describe("EventChronologyTable (Epic 13, Story 13.12, ETNI-536)", () => {
 
   // @req REQ-101 FR87
   it("renders 'Non documenté' place and 'Aucune source citée' when neither is present", () => {
-    render(<EventChronologyTable events={[imposedNameEntry]} />);
+    render(<EventChronologyTable language="fr" events={[imposedNameEntry]} />);
     const row = screen.getByRole("row", { name: /Yoruba/ });
     expect(within(row).getByText("Non documenté")).toBeInTheDocument();
     expect(within(row).getByText("Aucune source citée")).toBeInTheDocument();
@@ -92,7 +95,9 @@ describe("EventChronologyTable (Epic 13, Story 13.12, ETNI-536)", () => {
 
   // @req REQ-091 FR90
   it("renders no rows when events is empty, without throwing", () => {
-    expect(() => render(<EventChronologyTable events={[]} />)).not.toThrow();
+    expect(() =>
+      render(<EventChronologyTable language="fr" events={[]} />)
+    ).not.toThrow();
     const table = screen.getByRole("table", {
       name: "Chronologie des événements coloniaux",
     });

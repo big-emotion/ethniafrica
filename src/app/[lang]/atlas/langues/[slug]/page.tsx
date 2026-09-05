@@ -57,7 +57,7 @@ export default async function LanguesSlugPage({
 }: {
   params: Promise<PageParams>;
 }) {
-  const { slug } = await params;
+  const { lang, slug } = await params;
 
   const parsed = parseVersionedSlug(decodeURIComponent(slug));
   if (!parsed || parsed.mode !== "live") {
@@ -77,13 +77,13 @@ export default async function LanguesSlugPage({
   // Live version (revalidate = 3600 at segment level)
   return (
     <PageLayout
-      language="fr"
+      language={lang as Language}
       sectionName="Langues"
       flushTop
       trailLabel={data.name}
       heroHead={
         <FicheHeroHead entityType="language">
-          <LanguageFicheTitle data={data} />
+          <LanguageFicheTitle data={data} language={lang as Language} />
         </FicheHeroHead>
       }
     >
@@ -93,6 +93,7 @@ export default async function LanguesSlugPage({
         entityName={data.name}
         record={
           <LanguageDetailViewV2
+            language={lang as Language}
             data={data}
             hasSourceFlag={sourceFlags.length > 0}
           />

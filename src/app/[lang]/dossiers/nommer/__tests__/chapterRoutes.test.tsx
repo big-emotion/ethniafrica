@@ -13,6 +13,8 @@ import LaPersonnePage from "../la-personne/page";
 import LePaysPage from "../le-pays/page";
 import LePeuplePage from "../le-peuple/page";
 
+const FR = Promise.resolve({ lang: "fr" });
+
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({
     children,
@@ -73,7 +75,7 @@ describe("the Nommer chapter routes", () => {
   });
 
   // @req REQ-113
-  it("renders each chapter under its own title", () => {
+  it("renders each chapter under its own title", async () => {
     const pages = [
       [LePeuplePage, "le-peuple"],
       [LePaysPage, "le-pays"],
@@ -84,7 +86,7 @@ describe("the Nommer chapter routes", () => {
 
     for (const [Page, key] of pages) {
       const chapter = NOMMER_CHAPTERS.find((entry) => entry.key === key);
-      const { unmount } = render(<Page />);
+      const { unmount } = render(await Page({ params: FR }));
       expect(
         screen.getByRole("heading", { level: 1, name: chapter.title })
       ).toBeInTheDocument();
@@ -95,8 +97,8 @@ describe("the Nommer chapter routes", () => {
   // The reader leaves through the other chapters rather than back through the
   // pillar — which is the whole reason the tiles navigate.
   // @req REQ-113
-  it("offers the four other chapters at the foot of a chapter", () => {
-    render(<LaLanguePage />);
+  it("offers the four other chapters at the foot of a chapter", async () => {
+    render(await LaLanguePage({ params: FR }));
     const others = screen.getByRole("navigation", {
       name: "Les autres chapitres",
     });

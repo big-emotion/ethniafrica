@@ -1,11 +1,17 @@
 import { LegalDocument } from "@/components/layout/LegalDocument";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { legalPages } from "@/lib/legal-pages";
+import type { Language } from "@/types/shared";
 
 // @req REQ-088
-export default function LegalNoticePage() {
+export default async function LegalNoticePage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
   return (
-    <PageLayout language="fr" hideHeader>
+    <PageLayout language={lang as Language} hideHeader>
       <LegalDocument document={legalPages.legalNotice} />
     </PageLayout>
   );

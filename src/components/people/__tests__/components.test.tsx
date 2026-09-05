@@ -252,7 +252,9 @@ describe("PeopleRelatedPeoplesSection", () => {
     const empty: PeopleRelatedData = {
       ethnicities: [],
     };
-    const { container } = render(<PeopleRelatedPeoplesSection data={empty} />);
+    const { container } = render(
+      <PeopleRelatedPeoplesSection language="fr" data={empty} />
+    );
     expect(container.firstChild).toBeNull();
   });
 
@@ -260,7 +262,7 @@ describe("PeopleRelatedPeoplesSection", () => {
     const data: PeopleRelatedData = {
       ethnicities: ["Ìjẹ̀bú", "Ẹ̀gbá", "Ọ̀yọ́"],
     };
-    render(<PeopleRelatedPeoplesSection data={data} />);
+    render(<PeopleRelatedPeoplesSection language="fr" data={data} />);
     expect(screen.getByText("Ìjẹ̀bú")).toBeTruthy();
     expect(screen.getByText("Ẹ̀gbá")).toBeTruthy();
     expect(screen.getByText("Ọ̀yọ́")).toBeTruthy();
@@ -271,7 +273,7 @@ describe("PeopleRelatedPeoplesSection", () => {
       ethnicities: [],
       politicalSystem: "Monarchie constitutionnelle sous un Oba",
     };
-    render(<PeopleRelatedPeoplesSection data={data} />);
+    render(<PeopleRelatedPeoplesSection language="fr" data={data} />);
     expect(
       screen.getByText("Monarchie constitutionnelle sous un Oba")
     ).toBeTruthy();
@@ -282,7 +284,7 @@ describe("PeopleRelatedPeoplesSection", () => {
       ethnicities: [],
       clanOrganization: "Clans patrilinéaires (idile)",
     };
-    render(<PeopleRelatedPeoplesSection data={data} />);
+    render(<PeopleRelatedPeoplesSection language="fr" data={data} />);
     expect(screen.getByText("Clans patrilinéaires (idile)")).toBeTruthy();
   });
 
@@ -291,7 +293,7 @@ describe("PeopleRelatedPeoplesSection", () => {
       ethnicities: [],
       ageClassSystems: "Système des grades d'âge (ẹgbẹ)",
     };
-    render(<PeopleRelatedPeoplesSection data={data} />);
+    render(<PeopleRelatedPeoplesSection language="fr" data={data} />);
     expect(screen.getByText("Système des grades d'âge (ẹgbẹ)")).toBeTruthy();
   });
 });
@@ -307,7 +309,9 @@ describe("PeopleCountriesSection", () => {
       totalPopulationFormatted: "0",
       distributions: [],
     };
-    const { container } = render(<PeopleCountriesSection data={empty} />);
+    const { container } = render(
+      <PeopleCountriesSection language="fr" data={empty} />
+    );
     expect(container.firstChild).toBeNull();
   });
 
@@ -331,7 +335,7 @@ describe("PeopleCountriesSection", () => {
         },
       ],
     };
-    render(<PeopleCountriesSection data={data} />);
+    render(<PeopleCountriesSection language="fr" data={data} />);
     expect(screen.queryByText("45M")).toBeNull();
     expect(screen.queryByText(/habitants/)).toBeNull();
   });
@@ -355,7 +359,7 @@ describe("PeopleCountriesSection", () => {
         },
       ],
     };
-    render(<PeopleCountriesSection data={data} />);
+    render(<PeopleCountriesSection language="fr" data={data} />);
     expect(screen.getByText("NGA")).toBeTruthy();
     expect(screen.getByText("BEN")).toBeTruthy();
     expect(screen.getByText("89%")).toBeTruthy();
@@ -378,7 +382,9 @@ describe("PeopleCountriesSection", () => {
         { country: "USA", percentage: 3 },
       ],
     };
-    const { container } = render(<PeopleCountriesSection data={data} />);
+    const { container } = render(
+      <PeopleCountriesSection language="fr" data={data} />
+    );
 
     expect(screen.getByText("Nigeria")).toBeTruthy();
 
@@ -397,7 +403,7 @@ describe("PeopleCountriesSection", () => {
       source: "UNFPA",
       distributions: [{ country: "NGA", percentage: 89 }],
     };
-    render(<PeopleCountriesSection data={data} />);
+    render(<PeopleCountriesSection language="fr" data={data} />);
     expect(screen.getByText(/UNFPA/)).toBeTruthy();
     expect(screen.getByText(/2025/)).toBeTruthy();
   });

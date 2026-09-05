@@ -58,14 +58,26 @@ describe("MigrationDetailSheet", () => {
   // @req REQ-101 FR78 FR79 FR82
   it("renders nothing when there is no selected event", () => {
     const { container } = render(
-      <MigrationDetailSheet open={false} onOpenChange={vi.fn()} event={null} />
+      <MigrationDetailSheet
+        language="fr"
+        open={false}
+        onOpenChange={vi.fn()}
+        event={null}
+      />
     );
     expect(container.querySelector('[role="dialog"]')).toBeNull();
   });
 
   // @req REQ-101 FR78 FR79 FR82
   it("renders period, classification badge, confidence chip and linked peoples", () => {
-    render(<MigrationDetailSheet open onOpenChange={vi.fn()} event={EVENT} />);
+    render(
+      <MigrationDetailSheet
+        language="fr"
+        open
+        onOpenChange={vi.fn()}
+        event={EVENT}
+      />
+    );
 
     expect(screen.getByRole("dialog")).toBeInTheDocument();
     expect(screen.getByText(/1000 av\. J\.-C\./)).toBeInTheDocument();
@@ -84,7 +96,12 @@ describe("MigrationDetailSheet", () => {
   it("renders as a bottom sheet under 720px and a side sheet at/above 720px", () => {
     setViewportWidth(500);
     const { rerender } = render(
-      <MigrationDetailSheet open onOpenChange={vi.fn()} event={EVENT} />
+      <MigrationDetailSheet
+        language="fr"
+        open
+        onOpenChange={vi.fn()}
+        event={EVENT}
+      />
     );
     expect(screen.getByRole("dialog")).toHaveAttribute(
       "data-variant",
@@ -93,14 +110,26 @@ describe("MigrationDetailSheet", () => {
 
     setViewportWidth(1024);
     rerender(
-      <MigrationDetailSheet open onOpenChange={vi.fn()} event={EVENT} />
+      <MigrationDetailSheet
+        language="fr"
+        open
+        onOpenChange={vi.fn()}
+        event={EVENT}
+      />
     );
     expect(screen.getByRole("dialog")).toHaveAttribute("data-variant", "side");
   });
 
   // @req REQ-101 FR78
   it("opens the lazy SourceChainSheet when a source chip is activated", async () => {
-    render(<MigrationDetailSheet open onOpenChange={vi.fn()} event={EVENT} />);
+    render(
+      <MigrationDetailSheet
+        language="fr"
+        open
+        onOpenChange={vi.fn()}
+        event={EVENT}
+      />
+    );
 
     fireEvent.click(screen.getByTestId("migration-source-chip-src-1"));
 
@@ -113,7 +142,12 @@ describe("MigrationDetailSheet", () => {
   it("calls onOpenChange(false) when Escape is pressed", () => {
     const onOpenChange = vi.fn();
     render(
-      <MigrationDetailSheet open onOpenChange={onOpenChange} event={EVENT} />
+      <MigrationDetailSheet
+        language="fr"
+        open
+        onOpenChange={onOpenChange}
+        event={EVENT}
+      />
     );
     fireEvent.keyDown(document.body, { key: "Escape" });
     expect(onOpenChange).toHaveBeenCalledWith(false);
@@ -124,7 +158,12 @@ describe("MigrationDetailSheet", () => {
     setViewportWidth(500);
     const onOpenChange = vi.fn();
     render(
-      <MigrationDetailSheet open onOpenChange={onOpenChange} event={EVENT} />
+      <MigrationDetailSheet
+        language="fr"
+        open
+        onOpenChange={onOpenChange}
+        event={EVENT}
+      />
     );
     const dialog = screen.getByRole("dialog");
     fireEvent.touchStart(dialog, {
@@ -145,7 +184,12 @@ describe("MigrationDetailSheet", () => {
   it("closes when the Android hardware back button fires (popstate)", () => {
     const onOpenChange = vi.fn();
     render(
-      <MigrationDetailSheet open onOpenChange={onOpenChange} event={EVENT} />
+      <MigrationDetailSheet
+        language="fr"
+        open
+        onOpenChange={onOpenChange}
+        event={EVENT}
+      />
     );
     window.dispatchEvent(new PopStateEvent("popstate"));
     expect(onOpenChange).toHaveBeenCalledWith(false);
@@ -154,7 +198,14 @@ describe("MigrationDetailSheet", () => {
   // @req REQ-101 ETNI-1103
   it("collapses the open/close animation to 0.01ms when reduced motion is preferred", () => {
     setViewportWidth(1280, true);
-    render(<MigrationDetailSheet open onOpenChange={vi.fn()} event={EVENT} />);
+    render(
+      <MigrationDetailSheet
+        language="fr"
+        open
+        onOpenChange={vi.fn()}
+        event={EVENT}
+      />
+    );
 
     const dialog = screen.getByRole("dialog");
     expect(dialog).toHaveAttribute("data-reduced-motion", "true");
@@ -163,7 +214,14 @@ describe("MigrationDetailSheet", () => {
 
   // @req REQ-101 ETNI-1103
   it("does not force an animation duration by default", () => {
-    render(<MigrationDetailSheet open onOpenChange={vi.fn()} event={EVENT} />);
+    render(
+      <MigrationDetailSheet
+        language="fr"
+        open
+        onOpenChange={vi.fn()}
+        event={EVENT}
+      />
+    );
 
     const dialog = screen.getByRole("dialog");
     expect(dialog).toHaveAttribute("data-reduced-motion", "false");

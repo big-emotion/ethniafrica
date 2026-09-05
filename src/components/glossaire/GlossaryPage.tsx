@@ -6,8 +6,6 @@ import type { GlossaryFamily } from "@/lib/glossaire/types";
 import { getNommerChapterRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
-const LANGUAGE: Language = "fr";
-
 // @req REQ-144
 export const GLOSSARY_PAGE_TITLE = "Glossaire";
 /**
@@ -70,9 +68,9 @@ const CHAPTER_LABELS: Record<string, string> = {
  * glossary whose entries lift on hover is not one of them.
  */
 // @req REQ-144
-export const GlossaryPage = () => (
+export const GlossaryPage = ({ language }: { language: Language }) => (
   <PageLayout
-    language={LANGUAGE}
+    language={language}
     title={GLOSSARY_PAGE_TITLE}
     subtitle={GLOSSARY_PAGE_SUBTITLE}
   >
@@ -124,7 +122,7 @@ export const GlossaryPage = () => (
                   </p>
                   {entry.chapterRef ? (
                     <ActionLink
-                      href={getNommerChapterRoute(LANGUAGE, entry.chapterRef)}
+                      href={getNommerChapterRoute(language, entry.chapterRef)}
                     >
                       {`Vu dans : ${CHAPTER_LABELS[entry.chapterRef]}`}
                     </ActionLink>

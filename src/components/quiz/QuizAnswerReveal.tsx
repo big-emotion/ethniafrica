@@ -7,14 +7,13 @@ import { LazySourceChainSheet } from "@/components/source-transparency/SourceCha
 import { SOURCE_TIER_LABELS } from "@/lib/glossaire/vocabularies";
 import { toSourceTier } from "@/types/sources";
 import { cn } from "@/lib/utils";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import type {
   QuizSessionQuestionView,
   QuizOptionValue,
 } from "@/api/v2/schemas/quiz";
 import { Button } from "@/components/ui/button";
-
-const t = translations.fr.quiz;
+import type { Language } from "@/types/shared";
 
 // @req REQ-103
 export const QUIZ_REVEAL_MIN_HEIGHT_CLASS = "min-h-[22rem]";
@@ -45,6 +44,7 @@ interface QuizAnswerRevealProps {
   isCorrect: boolean;
   isLastQuestion: boolean;
   onNext: () => void;
+  language: Language;
   className?: string;
 }
 
@@ -62,8 +62,10 @@ export const QuizAnswerReveal = ({
   isCorrect,
   isLastQuestion,
   onNext,
+  language,
   className,
 }: QuizAnswerRevealProps) => {
+  const t = getTranslation(language).quiz;
   const reducedMotion = usePrefersReducedMotion();
   const headingRef = React.useRef<HTMLHeadingElement>(null);
   const [sheetOpen, setSheetOpen] = React.useState(false);

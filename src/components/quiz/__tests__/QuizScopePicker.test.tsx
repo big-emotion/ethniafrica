@@ -9,6 +9,7 @@ import {
 } from "@/lib/quiz/segmentPolicy";
 import type { QuizScopesData } from "@/api/v2/schemas/quiz";
 import { getLocalizedRoute } from "@/lib/routing";
+import { getTranslation } from "@/lib/translations";
 
 // Composed, never written out: `routeLiteralCharter` forbids the literal, and
 // this is also the value the page hands the component in production.
@@ -77,7 +78,7 @@ describe("QuizScopePicker", () => {
   // @req REQ-103
   it("prints no question count anywhere", () => {
     const { container } = render(
-      <QuizScopePicker scopes={scopes()} action={ACTION} />
+      <QuizScopePicker language="fr" scopes={scopes()} action={ACTION} />
     );
 
     expect(container.textContent).not.toMatch(/\d+\s*questions?/);
@@ -87,7 +88,7 @@ describe("QuizScopePicker", () => {
   // @req REQ-103
   it("renders no form and no select", () => {
     const { container } = render(
-      <QuizScopePicker scopes={scopes()} action={ACTION} />
+      <QuizScopePicker language="fr" scopes={scopes()} action={ACTION} />
     );
 
     expect(container.querySelector("form")).toBeNull();
@@ -103,7 +104,7 @@ describe("QuizScopePicker", () => {
    */
   // @req REQ-103
   it("offers the whole continent as a track of its own, beside the random one", () => {
-    render(<QuizScopePicker scopes={scopes()} action={ACTION} />);
+    render(<QuizScopePicker language="fr" scopes={scopes()} action={ACTION} />);
 
     expect(
       screen.getByTestId("quiz-scope-mixed").querySelector("a")
@@ -115,7 +116,7 @@ describe("QuizScopePicker", () => {
 
   // @req REQ-103
   it("offers every country, family and theme as a link to its own track", () => {
-    render(<QuizScopePicker scopes={scopes()} action={ACTION} />);
+    render(<QuizScopePicker language="fr" scopes={scopes()} action={ACTION} />);
 
     expect(screen.getByRole("link", { name: "Ghana" })).toHaveAttribute(
       "href",
@@ -137,7 +138,7 @@ describe("QuizScopePicker", () => {
    */
   // @req REQ-121
   it("shows each theme's question rather than its size", () => {
-    render(<QuizScopePicker scopes={scopes()} action={ACTION} />);
+    render(<QuizScopePicker language="fr" scopes={scopes()} action={ACTION} />);
 
     for (const id of QUIZ_THEME_IDS) {
       expect(screen.getByText(QUIZ_THEME_SPECIMENS_FR[id])).toBeInTheDocument();
@@ -147,7 +148,7 @@ describe("QuizScopePicker", () => {
   // @req REQ-103
   it("gives every tappable a 44px target", () => {
     const { container } = render(
-      <QuizScopePicker scopes={scopes()} action={ACTION} />
+      <QuizScopePicker language="fr" scopes={scopes()} action={ACTION} />
     );
 
     const cards = container.querySelectorAll("[class*='min-h-11']");
@@ -163,7 +164,7 @@ describe("QuizScopePicker", () => {
    */
   // @req REQ-103
   it("lists the countries in the order the catalogue hands them", () => {
-    render(<QuizScopePicker scopes={scopes()} action={ACTION} />);
+    render(<QuizScopePicker language="fr" scopes={scopes()} action={ACTION} />);
 
     const links = screen
       .getAllByRole("link")
@@ -185,12 +186,36 @@ describe("QuizScopePicker", () => {
     delete (withoutThemes as { themes?: unknown }).themes;
 
     const { container } = render(
-      <QuizScopePicker scopes={withoutThemes} action={ACTION} />
+      <QuizScopePicker language="fr" scopes={withoutThemes} action={ACTION} />
     );
 
     expect(screen.getByRole("link", { name: "Ghana" })).toBeInTheDocument();
     for (const link of Array.from(container.querySelectorAll("a"))) {
       expect(link.getAttribute("href")).toMatch(/^\/fr\/jeux\/quiz/);
     }
+  });
+
+  // The headings and the deck's close label were read off the French
+  // dictionary at module load, so the English quiz page would have carried
+  // French chrome around English tracks.
+  // @req REQ-141
+  it("reads its copy in the language it is rendered in", () => {
+    const en = getTranslation("en");
+    render(
+      <QuizScopePicker
+        language="en"
+        scopes={scopes()}
+        action={getLocalizedRoute("en", "quiz")}
+      />
+    );
+
+    expect(
+      screen.getByRole("heading", { name: en.quiz.scopeCountryHeading })
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", {
+        name: getTranslation("fr").quiz.scopeCountryHeading,
+      })
+    ).toBeNull();
   });
 });
