@@ -477,7 +477,7 @@ export function RecherchePageContent() {
                 data-testid="dominant-answer-panel-wrapper"
                 className="border-t border-afh-border pt-afh-lg min-[760px]:border-t-0 min-[760px]:pt-0 min-[760px]:self-start"
               >
-                <DominantAnswerPanel result={pivot} />
+                <DominantAnswerPanel result={pivot} language={language} />
               </div>
             </div>
           ) : (
