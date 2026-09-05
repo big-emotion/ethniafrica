@@ -58,7 +58,7 @@ module.exports = {
         // /fr/atlas/peuples/PPL_WOLOF fiche above). Tighter CWV budgets for both
         // are scoped in assert.assertMatrix below.
         "http://localhost:3000/fr/comparer",
-        "http://localhost:3000/fr/comparer/peuples/PPL_WOLOF/PPL_SERERE",
+        "http://localhost:3000/fr/comparer/peuples/PPL_WOLOF/PPL_SERER",
         // Epic 13, Story 13.12 (ETNI-536) — the colonization module's
         // timeline (EventTimelineMarkers + EventChronologyTable) must not
         // regress the base mobile Performance ≥ 85 / Accessibility = 100

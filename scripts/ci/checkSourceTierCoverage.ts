@@ -20,7 +20,7 @@ const DEFAULT_DATASET_ROOT = "dataset/source/afrik";
  * raise it. Raising it would let a regression in and turn the gate into a
  * record of the drift instead of a brake on it.
  */
-export const NEEDS_REVIEW_RATCHET = 1063;
+export const NEEDS_REVIEW_RATCHET = 1010;
 
 /** The doctrine's three tiers, plus the numeric tiers the name/relation/migration fiches still carry. */
 const TIERS_WITH_AUTHORITY = new Set<unknown>([

@@ -284,8 +284,11 @@ describe("name facet — what the reader may narrow to", () => {
 
     expect(choices.peoples).toEqual([{ id: "PPL_BAMANA", label: "Bamana" }]);
     expect(choices.countries).toEqual([{ id: "MLI", label: "Mali" }]);
-    expect(choices.nameSystems.map((option) => option.id)).toEqual([
-      "clan_name",
+    // The label is French by contract: the endpoint has no locale parameter,
+    // and the glossary keying the vocabulary by locale must not change what
+    // this payload says.
+    expect(choices.nameSystems).toEqual([
+      { id: "clan_name", label: "Nom de clan" },
     ]);
   });
 

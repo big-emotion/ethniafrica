@@ -40,7 +40,7 @@ export const CHAPITRE_LA_LANGUE: DossierChapter = {
       blocks: [
         {
           id: "un-nom-sans-locuteurs",
-          text: "L'atlas range ses huit cents peuples sous vingt-quatre familles linguistiques. La plus vaste porte un nom qui n'a pas de locuteurs : personne ne s'est jamais dit « bantou » avant qu'un linguiste ne l'écrive.",
+          text: "L'atlas range ses 775 peuples sous vingt-quatre familles linguistiques. La plus vaste porte un nom qui n'a pas de locuteurs : personne ne s'est jamais dit « bantou » avant qu'un linguiste ne l'écrive.",
           sourceRefs: [],
           figureRefs: ["corpus-language-families", "corpus-peoples"],
         },

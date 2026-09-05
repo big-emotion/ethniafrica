@@ -8,10 +8,8 @@ import { cn } from "@/lib/utils";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
-import {
-  RelationTypeBadge,
-  RELATION_TYPE_LABELS,
-} from "@/components/relations/RelationTypeBadge";
+import { RelationTypeBadge } from "@/components/relations/RelationTypeBadge";
+import { RELATION_TYPE_LABELS } from "@/lib/glossaire/vocabularies";
 import type {
   RelationBadgeType,
   RelationListItem,
@@ -58,7 +56,7 @@ function syncUrl(activeTypes: RelationBadgeType[]) {
 }
 
 function rowAriaLabel(item: RelationListItem): string {
-  const parts = [RELATION_TYPE_LABELS[item.type], item.neighbor.nameMain];
+  const parts = [RELATION_TYPE_LABELS.fr[item.type], item.neighbor.nameMain];
   if (item.period?.label) parts.push(item.period.label);
   if (item.derived) {
     parts.push(
@@ -134,7 +132,7 @@ export function RelationsList({
                   : "border-afh-border bg-afh-surface text-afh-text-soft"
               )}
             >
-              {RELATION_TYPE_LABELS[type]}
+              {RELATION_TYPE_LABELS.fr[type]}
             </button>
           );
         })}
@@ -147,10 +145,10 @@ export function RelationsList({
               key={type}
               className="inline-flex items-center gap-1 rounded-full bg-afh-bg-warm px-2 py-0.5 text-afh-text-soft"
             >
-              {RELATION_TYPE_LABELS[type]}
+              {RELATION_TYPE_LABELS.fr[type]}
               <button
                 type="button"
-                aria-label={`retirer le filtre ${RELATION_TYPE_LABELS[type]}`}
+                aria-label={`retirer le filtre ${RELATION_TYPE_LABELS.fr[type]}`}
                 onClick={() => toggleType(type)}
               >
                 <X className="h-3 w-3" aria-hidden />

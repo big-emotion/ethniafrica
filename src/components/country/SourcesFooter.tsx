@@ -1,6 +1,6 @@
 import { SourceVerifyBadge } from "@/components/ui/source-verify-badge";
 import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
-import { sourceStandingLabelFr } from "@/types/sources";
+import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
 
 interface SourcesFooterProps {
   sources: FicheSourceEntry[];
@@ -102,7 +102,7 @@ export function SourcesFooter({
                     }
               }
             >
-              {sourceStandingLabelFr(source.standing)}
+              {sourceStandingLabel(source.standing, "fr")}
             </span>
             {source.url ? (
               <a

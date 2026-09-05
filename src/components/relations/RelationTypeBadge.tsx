@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { RELATION_TYPE_LABELS } from "@/lib/glossaire/vocabularies";
 import type { RelationBadgeType } from "@/lib/relationsDataTransformer";
 
 export interface RelationTypeBadgeProps {
@@ -17,14 +18,6 @@ export interface RelationTypeBadgeProps {
   size?: "inline" | "card";
   className?: string;
 }
-
-// @req REQ-097
-export const RELATION_TYPE_LABELS: Record<RelationBadgeType, string> = {
-  linguistic: "Linguistique",
-  migratory: "Migratoire",
-  commercial: "Commerciale",
-  religious: "Religieuse",
-};
 
 const RELATION_TYPE_ICONS: Record<RelationBadgeType, LucideIcon> = {
   linguistic: Languages,
@@ -54,7 +47,7 @@ export function RelationTypeBadge({
   className,
 }: RelationTypeBadgeProps) {
   const Icon = RELATION_TYPE_ICONS[type];
-  const label = RELATION_TYPE_LABELS[type];
+  const label = RELATION_TYPE_LABELS.fr[type];
 
   return (
     <span

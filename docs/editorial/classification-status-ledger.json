@@ -550,11 +550,6 @@
     "rationale": "La fiche dit Shangilla « considere pejoratif » et « applique de maniere depreciative aux peuples du Rift », Geleb et Marille étant des exonymes éthiopiens et kenyans."
   },
   {
-    "id": "PPL_DASSANECH",
-    "status": "contested",
-    "rationale": "La fiche dit Galeb « considéré péjoratif et retiré des usages officiels », Marille étant « le nom donné aux Dassanech par les Turkana du Kenya voisin »."
-  },
-  {
     "id": "PPL_DATOGA",
     "status": "contested",
     "rationale": "« Le terme Mang'ati est offensant » — exonyme négatif des Maasai et de Bantous voisins signifiant ennemi — et Barabaig pour l'ensemble est « inexact et réducteur »."
@@ -715,7 +710,7 @@
     "rationale": "La fiche dit le nom « derive du mot oromo gabaro signifiant vassal ou tributaire », exonyme voisin à connotation subordonnée, et relève une « identite duelle » Malbe/Miigo."
   },
   {
-    "id": "PPL_GANDA",
+    "id": "PPL_BAGANDA",
     "status": "colonial-legacy",
     "rationale": "Le terme tribe impose par l'administration coloniale est rejete par les Baganda, Buganda tribe etant qualifie de terme colonial administratif reducteur et Uganda d'une adoption britannique de 1894."
   },
@@ -1000,16 +995,6 @@
     "rationale": "La fiche dit que « la denomination Kara peut preter a confusion avec d'autres peuples d'Afrique », les variantes venant de transcriptions de voyageurs et ethnologues étrangers."
   },
   {
-    "id": "PPL_KASEENA",
-    "status": "contested",
-    "rationale": "Gurunsi est « un exonyme impose par des envahisseurs exterieurs », issu du djerma de Babatu, et les Kassena « ne se reconnaissent pas necessairement » dans cette appellation."
-  },
-  {
-    "id": "PPL_KASEM",
-    "status": "contested",
-    "rationale": "Gurunsi est dit exonyme impose par les envahisseurs djerma (soldats de Babatu), seulement repris ensuite par les colonisateurs ; l'apport colonial se limite a la graphie Kassena."
-  },
-  {
     "id": "PPL_KASENA",
     "status": "contested",
     "rationale": "La fiche vise Gurunsi, exonyme pejoratif issu du djerma employe par le chef Babatu, dont les Kasena se distinguent et auquel ils preferent leur propre designation."
@@ -1048,11 +1033,6 @@
     "id": "PPL_KIKONGO",
     "status": "colonial-legacy",
     "rationale": "La confusion langue/peuple est dite frequente dans la litterature coloniale, et Kongo est la forme abregee utilisee par les explorateurs portugais depuis 1483."
-  },
-  {
-    "id": "PPL_KIMBUNDU",
-    "status": "contested",
-    "rationale": "La fiche indique que Mbundu fut d'abord employe par les Bakongo, voisins du nord, et pointe la confusion avec les Ovimbundu, sans invoquer d'acteur colonial."
   },
   {
     "id": "PPL_KINYARWANDA",
@@ -1395,11 +1375,6 @@
     "rationale": "La fiche impute le probleme au classement dans la categorie generique Ganguela utilisee par les Portugais, qui masque l'identite propre des Lwimbi."
   },
   {
-    "id": "PPL_MAATS",
-    "status": "contested",
-    "rationale": "La fiche argue d'un probleme de desambiguisation savante : Male ou Maale est a la fois endonyme et exonyme, a ne pas confondre avec les Malle voisins ni avec d'autres ethnonymes africains homonymes."
-  },
-  {
     "id": "PPL_MAFA",
     "status": "colonial-legacy",
     "rationale": "« Le terme Matakam a ete utilise par l'administration coloniale francaise pour designer plusieurs peuples des montagnes Mandara », creant des confusions avec les groupes voisins."
@@ -1433,11 +1408,6 @@
     "id": "PPL_MALINKE",
     "status": "colonial-legacy",
     "rationale": "La fiche pose Mandingo comme la version anglaise coloniale encore utilisee en Gambie et en Sierra Leone, et rattache les variantes aux influences linguistiques coloniales francaises et anglaises."
-  },
-  {
-    "id": "PPL_MALLE",
-    "status": "contested",
-    "rationale": "La fiche pointe une classification disputee : la similitude Malle / Maale genere des confusions frequentes et les Malle sont parfois regroupes sous le code mdy alors qu'ils ont des traits culturels distincts."
   },
   {
     "id": "PPL_MANDARA",
@@ -1670,12 +1640,12 @@
     "rationale": "La fiche argue la confusion avec les Ndebele du Zimbabwe, 'branches distinctes du tronc nguni, separees depuis le XVIe siecle au moins', et non une denomination forgee par un acteur colonial."
   },
   {
-    "id": "PPL_NDEBELE_SUD",
+    "id": "PPL_NDEBELE_NDZUNDZA",
     "status": "colonial-legacy",
     "rationale": "« Sous l'apartheid, les deux groupes furent regroupés dans le bantoustan KwaNdebele (1977-1994), ce qui masqua leurs différences », et Ndebele est listé comme « terme européen »."
   },
   {
-    "id": "PPL_NDEBELE_SUD2",
+    "id": "PPL_NDEBELE_MANALA",
     "status": "colonial-legacy",
     "rationale": "« Northern Transvaal Ndebele fut un terme administratif de l'apartheid » et les Manala furent regroupés dans le bantoustan KwaNdebele ; Ndebele est listé comme « terme européen »."
   },
@@ -1905,16 +1875,6 @@
     "rationale": "« L'identité tutsi a été radicalement transformée par la théorie hamitique coloniale », qui présentait les Tutsi comme une race supérieure aux Hutu."
   },
   {
-    "id": "PPL_RWENDAIS_HUTU",
-    "status": "colonial-legacy",
-    "rationale": "La fiche dit que 'durant la colonisation belge, les termes Hutu et Tutsi furent instrumentalises selon la theorie hamitique', les Belges les figeant en categorie raciale par cartes d'identite en 1933."
-  },
-  {
-    "id": "PPL_RWENDAIS_TUTSI",
-    "status": "colonial-legacy",
-    "rationale": "La fiche impute la catégorie à « la théorie hamitique coloniale » et à la colonisation belge, qui rigidifia en catégorie raciale une distinction socio-économique précoloniale."
-  },
-  {
     "id": "PPL_SAGALA",
     "status": "contested",
     "rationale": "Aucun acteur colonial n'est cité : le problème est « la confusion orthographique entre Sagala et Sagara » dans les sources et le risque d'amalgame avec les Sagalla du Kenya."
@@ -1970,11 +1930,6 @@
     "rationale": "Le nom « aurait été donné par les Tumbuka » lors de la migration — exonyme d'un voisin africain — et il est « souvent confondu avec Nsenga » : aucun auteur colonial n'est nommé."
   },
   {
-    "id": "PPL_SERAHULE_SONINKE",
-    "status": "contested",
-    "rationale": "Soninke porte selon la fiche des connotations pejoratives dans le Fouta-Djallon et en Senegambie, ou il designe les non-musulmans, d'ou la preference regionale pour Serakhulle."
-  },
-  {
     "id": "PPL_SERER",
     "status": "contested",
     "rationale": "Le problème posé est savant : « la classification Niger-Congo est débattue » et les langues cangin ont « une faible intelligibilité mutuelle » avec le sérère-sine ; aucun auteur colonial n'est nommé."
@@ -2023,11 +1978,6 @@
     "id": "PPL_SILTE",
     "status": "contested",
     "rationale": "La fiche dit que l'etiquette Gurage leur etait imposee malgre leur rejet de cette appartenance, rejet officialise par le referendum de 2001."
-  },
-  {
-    "id": "PPL_SILTIE",
-    "status": "contested",
-    "rationale": "La fiche dit l'ethnonyme Gurage « considéré comme une imposition politique », rejeté par les Siltie qui « ont voté à l'unanimité en 2000 pour s'en dissocier »."
   },
   {
     "id": "PPL_SINO_MAURICIENS",
@@ -2185,11 +2135,6 @@
     "rationale": "Aucun acteur colonial n'est nommé : le grief est la confusion classificatoire avec les Teke génériques, tranchée par la désignation linguistique Teke-Tege de SIL Ethnologue."
   },
   {
-    "id": "PPL_TEKKE",
-    "status": "colonial-legacy",
-    "rationale": "« Le nom Bateke fut systématisé par les colonisateurs européens », agrégeant « plus de 12 sous-groupes linguistiques distincts »."
-  },
-  {
     "id": "PPL_TEMBO",
     "status": "contested",
     "rationale": "Deux langues distinctes portent le nom Tembo dans la nomenclature Ethnologue (tbt du Kivu et tmv de la Mongala) : le litige est classificatoire, sans dénomination coloniale alléguée."
@@ -2225,11 +2170,6 @@
     "rationale": "Toma est le nom donne par les voisins Mandinka, Koniaka et Kissi, et la fiche argue surtout du decoupage conteste entre deux codes Ethnologue pour un seul peuple."
   },
   {
-    "id": "PPL_TONGA",
-    "status": "contested",
-    "rationale": "Le nom est « partagé par plusieurs peuples sans lien de parenté » (Malawi, Tsonga, Zambie/Zimbabwe) et ces homonymies « causent des confusions fréquentes dans les sources »."
-  },
-  {
     "id": "PPL_TONGAS",
     "status": "colonial-legacy",
     "rationale": "Tongas « est apparu comme categorie demographique officielle lors des recensements coloniaux portugais du XXe siecle », et Servicais couvrait un travail proche du travail force."
@@ -2245,19 +2185,9 @@
     "rationale": "Nyasa Tonga est « utilisé en particulier dans les travaux de l'époque coloniale et du protectorat du Nyasaland » pour distinguer ce peuple des Tonga de Zambie."
   },
   {
-    "id": "PPL_TONGA_ZAMB",
-    "status": "contested",
-    "rationale": "La fiche argue une confusion entre peuples homonymes de branches bantoues différentes et mutuellement inintelligibles, plus un Munchi « péjoratif fula », sans auteur colonial."
-  },
-  {
     "id": "PPL_TONGA_ZAMBIA",
     "status": "colonial-legacy",
     "rationale": "« Le terme Tonga est attribué par les peuples voisins et les colonisateurs britanniques », face à l'autodésignation Basilwizi, « gens du grand fleuve »."
-  },
-  {
-    "id": "PPL_TONGA_ZIM",
-    "status": "colonial-legacy",
-    "rationale": "« Les colonisateurs britanniques employaient Tonga comme terme générique pour distinguer ce groupe des autres peuples de Rhodésie du Sud »."
   },
   {
     "id": "PPL_TOUBOU",
@@ -2393,11 +2323,6 @@
     "id": "PPL_WOLAYTA",
     "status": "colonial-legacy",
     "rationale": "La fiche dit que l'exonyme Wolamo a ete impose par les conquerants du nord lors de l'annexion de 1896 et le classe parmi les appellations coloniales desuetes."
-  },
-  {
-    "id": "PPL_WOLOF_BANTU",
-    "status": "contested",
-    "rationale": "La fiche conteste un rattachement, non un nom : « ERREUR DE CLASSIFICATION », les Wolof relevant de la branche atlantique et non du groupe bantou ; le nom est dit « universellement accepté »."
   },
   {
     "id": "PPL_WONNIN",

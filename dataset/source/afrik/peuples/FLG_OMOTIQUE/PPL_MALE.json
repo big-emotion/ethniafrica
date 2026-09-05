@@ -1,45 +1,71 @@
 {
   "id": "PPL_MALE",
   "nameMain": "Male",
-  "languageFamilyId": "FLG_COUCHITIQUE",
+  "languageFamilyId": "FLG_OMOTIQUE",
   "currentCountries": ["ETH"],
   "classificationStatus": "contested",
   "content": {
     "appellations": {
       "mainName": "Male",
       "selfAppellation": "Maale",
-      "exonyms": ["Maale", "Malie"],
+      "exonyms": ["Maale", "Malie", "Male", "Malle", "Malo"],
       "originOfExonyms": "Male est la transcription simplifiee utilisee dans la litterature ethnologique et administrative, notamment dans les publications de l'ISO 639-3. Maale est la forme phonetiquement plus proche de l'auto-designation du peuple (le pluriel de leur nom propre etant mallo, et leur langue etant appelee mallo mucci). Malie est une variante orthographique mineure.",
       "whyProblematic": "La graphie Male peut preter a confusion avec le mot commun francais ou anglais designant le sexe masculin. La forme Maale est preferee dans la litterature anthropologique internationale (notamment dans les travaux de Donald Donham).",
       "contemporaryUsage": "Les deux formes Male et Maale coexistent dans la litterature. Le groupe se designe lui-meme en utilisant la racine mallo (pluriel) et maale (singulier). L'administration ethiopienne utilise generalement la forme Male pour le woreda et le peuple.",
-      "linguisticFamily": "FLG_COUCHITIQUE",
+      "linguisticFamily": "FLG_OMOTIQUE",
       "ethnoLinguisticGroup": "Omotic septentrional, cluster Ometo",
       "historicalRegion": "Zone de l'Omo meridional, frontiere entre les regions nord-omo et sud-omo, sud de l'Ethiopie",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Maale"],
+    "ethnicities": [
+      "Maale",
+      "Maale de la zone montagneuse (altitude, horticulture prédominante)",
+      "Maale des basses terres (élevage et apiculture prédominants)",
+      "Lignages nobles et roturiers organisés selon la hiérarchie du roi sacré",
+      "Ashtime (catégorie de genre distincte, rôle rituel lié au roi)",
+      "Malle des hautes terres (agriculteurs, horticulture dominante)",
+      "Malle des basses terres (agriculture mixte, élevage complémentaire)",
+      "Sous-groupes territoriaux organisés autour des chefferies Kati",
+      "Nobles (Kati, Goda) et roturiers (Geto et population commune)"
+    ],
     "origins": {
       "ancientOrigins": "Les Maale sont un peuple omotique ancien dont l'occupation du territoire de la zone d'Omo meridional est attestee de longue date. Leur langue, le male (mallo mucci), appartient au groupe Ometo septentrional, apparente au wolayita, au gamo, au gofa et au koorete. La tradition orale maale fait reference a une organisation politique monarchique ancienne centree sur la figure du roi rituel.",
-      "formationPeriod": null,
-      "migrationRoutes": [],
-      "historicalSettlementZones": [
-        "Woreda de Maale, Zone de l'Omo meridional (South Omo Zone), Region des Nations, Nationalites et Peuples du Sud (SNNPR), sud de l'Ethiopie"
+      "formationPeriod": "L'identité maale s'est consolidée autour de l'institution du roi sacré (le roi maale exerce une fonction rituelle centrale liée à la fertilité de la terre et à la protection contre les influences féminines lors des rituels). Cette organisation politique et religieuse est documentée depuis au moins le 19e siècle par les voyageurs et ethnographes, et en profondeur par Donham à partir des années 1970.",
+      "migrationRoutes": [
+        "Population autochtone de la zone Omo, sans migration fondatrice bien documentée",
+        "Contacts historiques avec les Ari à l'ouest, les Kamba au nord-est, les Tsamako au sud-est et les Banna au sud-ouest",
+        "Population autochtone de la zone Malle Awaki, sans migration fondatrice bien documentée",
+        "Relations historiques avec les Maale au nord, les Ari à l'ouest, et les Banna au sud"
       ],
-      "unificationsOrDivisions": null,
+      "historicalSettlementZones": [
+        "Woreda de Maale, Zone de l'Omo meridional (South Omo Zone), Region des Nations, Nationalites et Peuples du Sud (SNNPR), sud de l'Ethiopie",
+        "Woreda Maale, zone Debub Omo (Lemogento comme siège administratif)",
+        "Zone frontalière nord-Omo et sud-Omo, bordée au nord par les zones Gamo et Gofa",
+        "Hautes terres (horticulture) et basses terres (pastoralisme)",
+        "Zone Malle Awaki, zone Debub Omo, Ethiopie méridionale",
+        "Hautes terres : agriculture (teff, maïs, sorgho, ensète, légumineuses)",
+        "Basses terres : agriculture mixte et chasse (antilopes, sangliers sauvages)"
+      ],
+      "unificationsOrDivisions": "Les Maale sont organisés autour d'une royauté sacrée à fonctions rituelles (le roi est protégé de la sexualité féminine lors des moments clés du calendrier rituel par l'intermédiaire des ashtime). La société distingue des lignages nobles et roturiers. La séparation du woreda Maale d'avec le woreda Bako Gazer est une division administrative récente.",
       "externalInfluences": "Les Maale ont maintenu leur langue et leurs traditions de facon remarquable malgre les pressions exterieures. L'expansion de l'Empire ethiopien sous Menelik II a la fin du XIXe siecle, puis les regimes succeessifs (imperial, Derg, EPRDF), ont progressivement influence les structures politiques et economiques de la communaute. Les missions protestantes (a partir des annees 1970-1980) ont introduit le christianisme evangelique.",
       "majorHistoricalEvents": "L'etude anthropologique de Donald Donham, qui a vecu plusieurs annees chez les Maale dans les annees 1970-1980 (periode pre- et post-revolution), constitue le principal travail de reference sur ce peuple. La Revolution ethiopienne de 1974 a profondement modifie les structures sociales et politiques traditionnelles, notamment l'institution royale."
     },
     "organization": {
       "traditionalPoliticalSystem": "Monarchie rituelle centree sur un roi dont le role est essentiellement ceremoniel et propitiatoire. Le roi (dont la designation n'est pas specifiee dans les sources disponibles) occupe une place centrale dans les rituels de fertilite et de bien-etre collectif. L'institution royale a ete documentee par Donald Donham comme une structure politique et rituelle complexe.",
       "clanOrganization": "Organisation clanique patrilineaire structurant les droits fonciers, les regles de mariage et les obligations cerimoniales.",
-      "ageClassSystems": null,
+      "ageClassSystems": "Système de classes d'âge moins formalisé que chez les peuples nilotiques voisins, mais les rites de passage (naissance, puberté, mariage, mort) structurent l'accès aux rôles sociaux.",
       "roleOfLineages": "Les lignages patrilineaires organisent l'heritage, le mariage et la participation aux rituels collectifs. L'exogamie clanique est la norme.",
       "religiousAuthority": "Le roi occupe une fonction rituelle centrale dans la vie religieuse traditionnelle maale. Le concept d'ashtime (categorie de genre specifique dont le devoir etait de permettre au roi d'accomplir ses fonctions rituelles a l'ecart de la sexualite feminine lors des moments cles du calendrier rituel) atteste de l'imbrication etroite entre organisation politique et autorite religieuse traditionnelle."
     },
     "languages": {
       "mainLanguage": "Male (Maale, Mallo mucci)",
       "isoCodes": ["mdy"],
-      "dialects": [],
+      "dialects": [
+        "Maale des hautes terres (zone montagneuse, usage horticulture)",
+        "Maale des basses terres (zone de pâturages, élevage)",
+        "Malle des hautes terres (zone agricole)",
+        "Malle des basses terres (zone de chasse et d'agriculture mixte)"
+      ],
       "vehicularRole": "La langue male (ISO 639-3: mdy) est maintenue avec vigueur par la communaute malgre les pressions exterieures. C'est une langue omotique du groupe Ometo septentrional (Afro-Asiatique), apparentee au wolayita, au gamo et au gofa. L'amharique sert de langue administrative et de communication interethnique. La proximite des langues ari (a l'ouest) et kamba (au nord-est) implique des contacts multilinguistiques."
     },
     "culture": {
@@ -51,8 +77,8 @@
     "historicalRole": {
       "kingdomsOrChiefdoms": "Monarchie rituelle traditionnelle dont le roi occupait une fonction a la fois politique et cerimoniellement centrale dans la vie de la communaute. L'institution royale a ete profondement affectee par la Revolution ethiopienne de 1974 et les reformes foncières du regime Derg.",
       "relationsWithNeighbors": "Les Maale sont borde au nord par les zones Gamo et Gofa, au sud par le woreda de BennaTsemay (zone de l'Omo meridional), a l'est par la zone d'Aleze et a l'ouest par la zone Ari. Des contacts et echanges existent avec les Ari, les Kamba, les Tsamako (au sud-est) et les Banna (au sud-ouest).",
-      "conflictsOrAlliances": null,
-      "diaspora": null
+      "conflictsOrAlliances": "Incorporation forcée dans l'empire éthiopien sous Menelik II (fin 19e siècle). Les Maale ont subi les transformations imposées par le système du gobbar (tribut). Pendant la période du Derg (1974-1991), la collectivisation et les réformes agraires ont profondément modifié la structure sociale traditionnelle.",
+      "diaspora": "Présence de Maale dans les villes éthiopiennes (Addis-Abeba, Jimma, Arba Minch) suite aux migrations économiques internes. Diaspora internationale limitée, principalement vers des pays occidentaux (Etats-Unis, Europe) pour des raisons d'études ou d'asile politique."
     },
     "demography": {
       "totalPopulation": 168000,
@@ -97,10 +123,40 @@
         "notes": "Tier resolved from the domain ruling for localtourethiopia.com."
       },
       {
-        "title": "Donham, Donald L. – Revolution and modernity in Maale: Ethiopia, 1974 to 1987 – Comparative Studies in Society and History, 1992",
+        "title": "Donham, Donald L. Work and Power in Maale, Ethiopia. Columbia University Press, 1994",
         "url": null,
         "tier": "referenced",
         "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Donham, Donald L. From ritual kings to Ethiopian landlords in Maale. In The Southern Marches of Imperial Ethiopia, 1986",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Donham, Donald L. Revolution and modernity in Maale: Ethiopia, 1974 to 1987. Comparative Studies in Society and History, 34(1), 1992",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Omo Region Tours — Malle Tribe",
+        "url": "https://omoregiontours.com/malle-tribe/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers omoregiontours.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Donham, Donald L. Divine Kingship in Malle, Southwest Ethiopia. Cambridge Journal of Anthropology, vol. 6, 1980",
+        "url": "https://www.africabib.org/rec.php?RID=P00016096",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for africabib.org."
+      },
+      {
+        "title": "Recensement éthiopien 2007 — List of ethnic groups in Ethiopia (Male : 98 114 individus)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
       }
     ]
   }

@@ -1,4 +1,9 @@
-import { type SourceTier, isSourceTier } from "@/types/sources";
+import {
+  SOURCE_KINDS,
+  type SourceKind,
+  type SourceTier,
+  isSourceTier,
+} from "@/types/sources";
 
 /**
  * Readers for `PublicPatronyme.content` (REQ-133).
@@ -26,6 +31,29 @@ export interface PatronymeSource {
   url: string | null;
   tier: SourceTier;
   notes?: string | null;
+  /**
+   * What kind of thing the citation is — the corpus writes it `source_kind`.
+   * Orthogonal to the tier: `ai_generated` is unverified content whose origin
+   * matters, not a level of authority, so it is read as its own axis and
+   * never folded into the tier.
+   */
+  sourceKind?: SourceKind;
+}
+
+/**
+ * What a name fiche rests on, in the two terms the reader is owed.
+ *
+ * There is no percentage here, and DEC-050 is why: `afrik_patronymes` has no
+ * row in `confidence_scores`, and `recompute_confidence()` aggregates
+ * assertions, open flags and a human-audit date — a name carries none of the
+ * three, so two of that formula's four terms are zero by construction.
+ */
+export interface NameStanding {
+  /** The highest tier the dossier cites. */
+  tier: SourceTier;
+  sourceCount: number;
+  /** How many of those sources are machine-written. */
+  aiGeneratedCount: number;
 }
 
 /**
@@ -146,6 +174,12 @@ function isPlainObject(value: unknown): value is ContentBag {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
+function isSourceKind(value: unknown): value is SourceKind {
+  return (
+    typeof value === "string" && SOURCE_KINDS.includes(value as SourceKind)
+  );
+}
+
 function readSource(value: unknown): PatronymeSource | null {
   if (!isPlainObject(value)) return null;
   if (typeof value.title !== "string") return null;
@@ -154,6 +188,13 @@ function readSource(value: unknown): PatronymeSource | null {
     url: typeof value.url === "string" ? value.url : null,
     tier: isSourceTier(value.tier) ? value.tier : "unverified",
     ...(typeof value.notes === "string" ? { notes: value.notes } : {}),
+    // Absent rather than guessed when the vocabulary does not carry it. An
+    // unrecognised tier can floor at `unverified` because that claims the
+    // least; a provenance marker has no such floor, and inventing one would
+    // mark a fiche the corpus never marked.
+    ...(isSourceKind(value.source_kind)
+      ? { sourceKind: value.source_kind }
+      : {}),
   };
 }
 
@@ -198,6 +239,45 @@ export function readSpellings(content: ContentBag): AttestedSpelling[] {
 // @req REQ-133
 export function readPatronymeSources(content: ContentBag): PatronymeSource[] {
   return readSources(content.sources);
+}
+
+/**
+ * Ranks the three tiers so a dossier's best citation can be found. The order
+ * is the Source Tier Policy's own, and the weights it publishes (1.0 / 0.7 /
+ * 0.4) are deliberately not reused: those are for multiplying a confidence
+ * score, and comparing them here would tie authority to a number the name
+ * corpus does not compute.
+ */
+const TIER_RANK: Record<SourceTier, number> = {
+  unverified: 0,
+  referenced: 1,
+  official: 2,
+};
+
+/**
+ * What the fiche rests on: its best tier, how many sources it cites, and how
+ * many of those were machine-written.
+ *
+ * `null` when the dossier cites nothing readable. A caller treats that as
+ * unverified for the indexing threshold — the corpus has no such fiche today,
+ * so it is a floor, not a live case.
+ */
+// @req REQ-147
+export function readNameStanding(content: ContentBag): NameStanding | null {
+  const sources = readPatronymeSources(content);
+  if (sources.length === 0) return null;
+
+  return {
+    tier: sources.reduce<SourceTier>(
+      (best, source) =>
+        TIER_RANK[source.tier] > TIER_RANK[best] ? source.tier : best,
+      "unverified"
+    ),
+    sourceCount: sources.length,
+    aiGeneratedCount: sources.filter(
+      (source) => source.sourceKind === "ai_generated"
+    ).length,
+  };
 }
 
 // @req REQ-133

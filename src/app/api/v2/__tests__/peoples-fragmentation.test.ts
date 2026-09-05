@@ -83,23 +83,21 @@ describe("GET /api/v2/peoples/[id]/fragmentation", () => {
   });
 
   // @req REQ-091
-  it("accepts digit-bearing PPL ids (e.g. PPL_NDEBELE_SUD2, PPL_LUBA_KASAI2)", async () => {
+  it("accepts digit-bearing PPL ids", async () => {
     vi.mocked(getPeopleFragmentationHandler).mockResolvedValue({
       ok: true,
       envelope: validEnvelope,
     });
 
     const request = new NextRequest(
-      "http://localhost/api/v2/peoples/PPL_NDEBELE_SUD2/fragmentation"
+      "http://localhost/api/v2/peoples/PPL_DIGIT2/fragmentation"
     );
     const response = await GET(request, {
-      params: Promise.resolve({ id: "PPL_NDEBELE_SUD2" }),
+      params: Promise.resolve({ id: "PPL_DIGIT2" }),
     });
 
     expect(response.status).toBe(200);
-    expect(getPeopleFragmentationHandler).toHaveBeenCalledWith(
-      "PPL_NDEBELE_SUD2"
-    );
+    expect(getPeopleFragmentationHandler).toHaveBeenCalledWith("PPL_DIGIT2");
   });
 
   // @req REQ-091

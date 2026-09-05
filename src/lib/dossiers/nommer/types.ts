@@ -36,9 +36,9 @@ export type FigureKey = string;
  * One work the dossier cites.
  *
  * The authority field is named `standing`, not `tier`, and typed to include
- * `needs_review`. That is exactly the signature of `sourceStandingLabelFr`,
+ * `needs_review`. That is exactly the signature of `sourceStandingLabel`,
  * which is the only thing allowed to turn it into words: `strictNullChecks`
- * is off in this repo, so indexing `SOURCE_TIER_LABELS_FR` with a value that
+ * is off in this repo, so indexing `SOURCE_TIER_LABELS` with a value that
  * turns out to be `needs_review` yields an empty string — a source rendered
  * with no visible provenance, the one outcome the tier policy forbids.
  */

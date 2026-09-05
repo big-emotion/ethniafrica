@@ -8,7 +8,17 @@
     "appellations": {
       "mainName": "Teke",
       "selfAppellation": "Bateke",
-      "exonyms": ["Bateke", "Tyo", "Tio", "Teke", "Bateke", "Anziku"],
+      "exonyms": [
+        "Bateke",
+        "Tyo",
+        "Tio",
+        "Teke",
+        "Bateke",
+        "Anziku",
+        "Tekke",
+        "Tio ou Tyo (terme utilise dans la litterature ethnographique francaise)",
+        "Boko (designation utilisee dans certaines zones de la RDC)"
+      ],
       "originOfExonyms": "Le mot teke signifie vendre ou acheter dans leur langue, referant a leur identite historique de commercants. Tyo et Tio sont des variantes regionales. Anziku etait le nom donne au royaume Teke par les Portugais et les premiers Europeens. Les Europeens ont adopte la forme Teke ou Bateke.",
       "whyProblematic": "Le terme Bateke recouvre plusieurs sous-groupes distincts (Teke de l'Est ou Tio, Teke du Nord en Gabon, Teke de l'Ouest) qui ont des dialectes et des histoires differentes.",
       "contemporaryUsage": "Bateke est l'appellation usuelle au Congo-Brazzaville, en RDC et au Gabon. Le groupe est reconnu officiellement dans les trois pays. Omar Bongo, ancien president du Gabon (1967-2009), etait Teke.",
@@ -23,19 +33,35 @@
       "Teke de l'Ouest",
       "Tsaye",
       "Laali",
-      "Yaa"
+      "Yaa",
+      "Tio (Teke de Brazzaville) — sous-groupe riverain du Pool Malebo, historiquement dominant politiquement",
+      "Ngungwel — sous-groupe du nord-est, region de Ngabe, Congo-Brazzaville",
+      "Kukuya — sous-groupe du sud (Teke du Sud), plateau de Kukuya",
+      "Fuumu — sous-groupe du sud, dans la vallee du Niari",
+      "Tsaayi — sous-groupe du Gabon occidental, region de l'Ogooue-Ngounie",
+      "Teghe (Teke du Nord) — sous-groupe du nord, Congo-Brazzaville",
+      "Boma — plusieurs variantes (Boma Nkuu, Boma Yumu) a cheval sur COG et COD",
+      "Teke-Laali — sous-groupe dans la zone de transition Congo-Gabon"
     ],
     "origins": {
       "ancientOrigins": "Dans le cadre de l'expansion bantoue, les Teke se sont etablis dans le Bassin du Congo au premier millenaire de notre ere. La tradition orale tio affirme qu'ils ont toujours habite les plaines de savane du Plateau Bateke. Les sources voisines confirment leur presence certaine des le XIIIe siecle au moins. L'historien Didier Gongola date la fondation du royaume du XIVe siecle par la fusion de royaumes plus petits.",
       "formationPeriod": "XIIe-XIVe siecles: florissant royaume Tio (Anziku) etabli autour du Pool Malebo et du Plateau Bateke",
       "migrationRoutes": [
-        "Expansion depuis la region du Pool Malebo vers le nord sur le Plateau Bateke sous la pression des raids kongolais aux XVe-XVIe siecles"
+        "Expansion depuis la region du Pool Malebo vers le nord sur le Plateau Bateke sous la pression des raids kongolais aux XVe-XVIe siecles",
+        "Mouvement initial depuis les zones de foret dense vers les savanes du plateau des Bateke",
+        "Expansion vers le nord et l'ouest sous la pression des conflits lies a la traite esclavagiste atlantique (15e-18e siecle)",
+        "Dispersion vers le Gabon (bassin de l'Ogooue-Ngounie) et l'est de la RDC (zones du Kasai)"
       ],
       "historicalSettlementZones": [
         "Plateau Bateke (COG)",
         "Pool Malebo et ses environs (COG/COD)",
         "Rives du Congo entre Manyanga et le Pool Malebo",
-        "Sud-Est du Gabon (region de l'Ogooue)"
+        "Sud-Est du Gabon (region de l'Ogooue)",
+        "Plateau des Bateke — zone nucleaire, savane herbeuse entre Congo-Brazzaville et RDC",
+        "Pool Malebo (Stanley Pool) — carrefour commercial fluvial sur le fleuve Congo, pres de Brazzaville",
+        "Vallee du Niari et de la Lekoumou — Congo-Brazzaville",
+        "Bassin de l'Ogooue-Ngounie — Gabon occidental",
+        "Province du Kwilu et du Kasai — est de la RDC (sous-groupes Boma, Mfinu, Mpuono)"
       ],
       "unificationsOrDivisions": "Le Royaume Tio (Anziku) fut fonde au XIVe siecle et rivalisa avec le Royaume Kongo. Au XVe siecle il devint vassal du Kongo. Les Jaga (Yaka) envahirent les Teke de l'Ouest au XVIIe siecle. Des tensions internes entre le roi (Okoo) et les seigneurs locaux a partir du XVIIIe siecle affaiblirent le pouvoir royal. En 1880, le traite avec Brazza signa la fin de la souverainete Teke.",
       "externalInfluences": "Vassalite au Royaume Kongo (XVe-XVIe siecles). Pression des Bobangi (rivaux commerciaux). Traite avec l'explorateur Pierre Savorgnan de Brazza le 10 septembre 1880: le roi Iloo I ceda la souverainete teke a la France. Brazzaville fut fondee en mai 1884 sur le territoire teke. Exploitation coloniale francaise severe sous l'Afrique Equatoriale Francaise.",
@@ -44,7 +70,7 @@
     "organization": {
       "traditionalPoliticalSystem": "Monarchie sacree dirigee par le Makoko (ou Okoo), roi divin considere comme a la fois humain et divin, garant de la fertilite et de l'ordre cosmique. Le roi tire son autorite du controle sur l'esprit national Nkwe Mbali (la cour du lion). Il est assiste de douze seigneurs de la couronne. Le rituel d'intronisation (lisee) durait deux ans. Le forgeron (mfumu) etait souvent choisi comme chef de village, son titre etant hereditaire.",
       "clanOrganization": "Organisation lignagere patrilineaire. Le mfumu est le chef de famille; son prestige grandissait avec le nombre de membres de sa famille. Les forgerons constituaient une elite hereditaire.",
-      "ageClassSystems": null,
+      "ageClassSystems": "Societe Mungala : association masculine regroupant chefs de clan et Nganga pour l'education des initiates. Les ceremonies d'initiation masculine marquent le passage a l'age adulte et l'integration aux responsabilites communautaires.",
       "roleOfLineages": "Les lignages patrilineaires structurent l'acces aux terres et aux fonctions rituelles. La transmission du metier de forgeron est strictement patrilineaire.",
       "religiousAuthority": "Le chef du village est le leader religieux (Mpugu), gardien des potions et os spirituels. Son pouvoir est marque par la figure Tara-Mantsie (pere de la terre). Le Nganga (devin-guerisseur) est payeur pour animer les statues protectrices et officie lors des deces ou maladies. Le Lipie est le grand pretre de l'Etat, gardien du culte de Nkwe Mbali aux cascades de la Lefini."
     },
@@ -56,7 +82,16 @@
         "Teke de l'Est / Ibali (tek)",
         "Tsaayi (tyi)",
         "Laali (lli)",
-        "Yaa (iyx)"
+        "Yaa (iyx)",
+        "Teke-Tio (Bali) — dialecte du Pool Malebo, base du dialecte de prestige",
+        "Ngungwel (Ngungulu) — Teke du Nord-Est, Congo-Brazzaville",
+        "Tsege (Teke du Nord) — sous-groupe nordique",
+        "Kukuya — Teke du Sud, plateau de Kukuya",
+        "Fuumu — Teke du Sud, vallee du Niari",
+        "Tsaayi — Gabon occidental (Ogooue-Ngounie)",
+        "Boma — zone de transition COG-COD, plusieurs variantes",
+        "Mfinu — RDC occidentale",
+        "Tiene — zone B80"
       ],
       "vehicularRole": "Les langues teke sont parlees par environ 2 millions de personnes entre le Congo-Brazzaville, la RDC et le Gabon. Les Teke parlent aussi le lingala et le francais comme langues vehiculaires nationales. Au Congo-Brazzaville, les Teke representent le deuxieme groupe ethnique (16,9% de la population)."
     },
@@ -124,6 +159,30 @@
         "url": null,
         "tier": "referenced",
         "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "101 Last Tribes — Teke people",
+        "url": "https://www.101lasttribes.com/tribes/teke.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "SIL International — Linton (2008), cote par 101lasttribes.com : 12 sous-groupes linguistiques, 390 000 locuteurs",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook — Republic of Congo",
+        "url": "https://www.cia.gov/the-world-factbook/countries/congo-republic-of-the/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "CIA World Factbook — Democratic Republic of the Congo",
+        "url": "https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
       }
     ]
   }

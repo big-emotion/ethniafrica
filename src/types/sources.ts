@@ -48,35 +48,9 @@ export const SOURCE_TIERS = ["official", "referenced", "unverified"] as const;
 
 export type SourceTier = (typeof SOURCE_TIERS)[number];
 
-// @req REQ-092
-export const SOURCE_TIER_LABELS_FR: Record<SourceTier, string> = {
-  official: "Officielle",
-  referenced: "Référencée",
-  unverified: "Non vérifiée",
-};
-
-/**
- * `needs_review` is not a tier and must not be shown as one. Folding it
- * onto "Non vérifiée" — which is what an unlabelled fallback does — states
- * a judgement nobody has made: the doctrine is that every source carries a
- * label, not that every source has been ruled on. It gets its own wording
- * for that reason, and the UI keeps it visually distinct from the three.
- */
-// @req REQ-092
-export const SOURCE_PENDING_REVIEW_LABEL_FR = "En attente d'examen";
-
-/** The label for anything a fiche's `sources[]` can carry, tier or not. */
-// @req REQ-092
-export function sourceStandingLabelFr(
-  standing: SourceTier | "needs_review"
-): string {
-  // Anything the vocabulary does not recognise reads as awaiting review, not
-  // as blank. strictNullChecks is off in this repo, so an uncovered value
-  // resolves to `undefined` and renders as literally nothing — a source with
-  // no visible provenance at all, the one outcome the tier policy forbids.
-  // Falling back here claims the least rather than the most.
-  return SOURCE_TIER_LABELS_FR[standing] ?? SOURCE_PENDING_REVIEW_LABEL_FR;
-}
+// The reader-facing labels of the tiers, and of `needs_review` beside them,
+// are locale-keyed in `src/lib/glossaire/vocabularies.ts` — the bilingual
+// glossary's one owner file — and read through `sourceStandingLabel()`.
 
 /**
  * Confidence weight per tier, mirrored by `recompute_confidence()` in

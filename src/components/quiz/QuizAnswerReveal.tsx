@@ -4,7 +4,8 @@ import * as React from "react";
 import { CheckCircle2, XCircle } from "lucide-react";
 
 import { LazySourceChainSheet } from "@/components/source-transparency/SourceChainSheet.lazy";
-import { SOURCE_TIER_LABELS_FR, toSourceTier } from "@/types/sources";
+import { SOURCE_TIER_LABELS } from "@/lib/glossaire/vocabularies";
+import { toSourceTier } from "@/types/sources";
 import { cn } from "@/lib/utils";
 import { translations } from "@/lib/translations";
 import type {
@@ -18,7 +19,7 @@ const t = translations.fr.quiz;
 // @req REQ-103
 export const QUIZ_REVEAL_MIN_HEIGHT_CLASS = "min-h-[22rem]";
 
-const TIER_BADGE_LABELS = SOURCE_TIER_LABELS_FR;
+const TIER_BADGE_LABELS = SOURCE_TIER_LABELS.fr;
 
 function optionLabel(option: QuizOptionValue): string {
   return typeof option === "string" ? option : option.autonym;

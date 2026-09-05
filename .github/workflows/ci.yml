@@ -120,6 +120,12 @@ jobs:
       # only go down.
       - run: npm run check:dead
 
+      # Translated content uses the one bilingual glossary (REQ-144): a people
+      # is never rendered as a tribe, a French term never survives in English.
+      # Here rather than in editorial-rules.yml because the UI dictionary is
+      # code, and that workflow only wakes on dataset paths.
+      - run: npm run check:glossary
+
       # Pre-merge, only what is knowable without a database: no two files
       # claiming the same version or name, no hole in the sequence. Whether a
       # migration is *applied* is meaningless here — the one this PR adds is

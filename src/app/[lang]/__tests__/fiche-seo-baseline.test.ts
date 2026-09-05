@@ -43,8 +43,9 @@ vi.mock("next/font/google", () => {
 // because `loading.tsx` makes the segment a Suspense boundary and the page
 // body's own `notFound()` arrives after the 200 is already on the wire. That
 // check is a database read, so this baseline has to answer it — without these
-// mocks the three canonical assertions hang until the 5s timeout rather than
-// failing on anything meaningful.
+// mocks the four canonical assertions hang until the 5s timeout rather than
+// failing on anything meaningful. The name route joined them under REQ-147,
+// which reads the dossier a second time to decide whether to declare noindex.
 vi.mock("@/api/v2/services/countryService", async (importOriginal) => ({
   ...(await importOriginal<object>()),
   getCountryById: async (id: string) => ({ id, nameFr: id }),
@@ -58,6 +59,24 @@ vi.mock("@/api/v2/services/peopleService", async (importOriginal) => ({
 vi.mock("@/api/v2/services/languageFamilyService", async (importOriginal) => ({
   ...(await importOriginal<object>()),
   getLanguageFamilyById: async (id: string) => ({ id, nameFr: id }),
+}));
+
+// Cites a referenced source so the fiche is one the sitemap keeps: this
+// baseline asserts canonicals, and a dossier left unsourced would drag the
+// noindex branch of REQ-147 into a test that is not about it.
+vi.mock("@/api/v2/services/patronymes", async (importOriginal) => ({
+  ...(await importOriginal<object>()),
+  getPatronymeById: async (id: string) => ({
+    id,
+    nameMain: id,
+    nameSystem: "clan_name",
+    casteOrSocialFunction: null,
+    content: { sources: [{ title: "Bamadaba", tier: "referenced" }] },
+    associatedPeoples: [],
+    associatedCountries: [],
+    bearers: [],
+    alliances: [],
+  }),
 }));
 
 import { metadata as rootLayoutMetadata } from "@/app/layout";

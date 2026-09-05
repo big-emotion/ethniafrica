@@ -86,7 +86,7 @@
         "name": "Sérère",
         "selfAppellation": "Sérère",
         "exonyms": ["Sérère (terme utilisé par les Européens)"],
-        "peopleId": "PPL_SERERE",
+        "peopleId": "PPL_SERER",
         "mainRegion": "Centre-Ouest (Fatick, Kaolack)",
         "languages": ["Sérère", "français"],
         "languageFamily": "FLG_ATLANTIQUE",
@@ -225,7 +225,7 @@
           "name": "Sérère",
           "percentageInCountry": 16,
           "percentageInAfrica": 0.19,
-          "peopleId": "PPL_SERERE",
+          "peopleId": "PPL_SERER",
           "region": "Centre-Ouest (Fatick, Kaolack)",
           "languageFamily": "FLG_ATLANTIQUE"
         },

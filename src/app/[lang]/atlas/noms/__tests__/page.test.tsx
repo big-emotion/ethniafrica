@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import React from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -59,6 +59,8 @@ vi.mock("@/api/v2/services/patronymesFacet", () => ({
 
 import NomsHubPage, { metadata } from "../page";
 import { getLocalizedRoute, getPatronymeRoute } from "@/lib/routing";
+import type { PatronymesFacetFilters } from "@/api/v2/services/patronymesFacet";
+import type { PatronymeListItem } from "@/api/v2/services/patronymes";
 
 const KEITA = {
   id: "PAT_KEITA",
@@ -66,7 +68,10 @@ const KEITA = {
   nameSystem: "clan_name" as const,
 };
 
-function readingOf(patronymes = [KEITA]) {
+// Annotated rather than inferred from the default: inference pins the naming
+// system to KEITA's own literal, so a selection mixing two systems — which is
+// the ordinary case the axis serves — no longer type-checks.
+function readingOf(patronymes: PatronymeListItem[] = [KEITA]) {
   return {
     patronymes,
     page: 1,
@@ -156,6 +161,58 @@ describe("the name facet page", () => {
 
     expect(lede?.textContent).toMatch(/1 nom dans cette sélection/);
     expect(lede?.textContent).not.toMatch(/patronyme/i);
+  });
+
+  /**
+   * DEC-050 withholds a name resting only on unverified sources from the
+   * sitemap. That threshold is a crawler policy and nothing more: applying it
+   * to the hub would hide every unverified-only dossier from readers. The count
+   * above the list comes from the service's own total, so rows dropped after the
+   * read would leave the two disagreeing.
+   */
+  // @req REQ-147
+  it("lists every name of the selection, whatever its sources carry", async () => {
+    const selection = [
+      KEITA,
+      { id: "PAT_DIABY", nameMain: "Diaby", nameSystem: "clan_name" as const },
+      {
+        id: "PAT_NKALA",
+        nameMain: "Nkala",
+        nameSystem: "totemic_clan" as const,
+      },
+    ];
+    mockGetPage.mockResolvedValue(readingOf(selection));
+
+    const { container } = render(
+      await NomsHubPage({ searchParams: Promise.resolve({}) })
+    );
+
+    const listed = within(
+      screen.getByRole("list", { name: "Noms" })
+    ).getAllByRole("link");
+    expect(listed.map((link) => link.getAttribute("href"))).toEqual(
+      selection.map((patronyme) => getPatronymeRoute("fr", patronyme.id))
+    );
+    expect(
+      container.querySelector(".afh-facet-reading-lede")?.textContent
+    ).toMatch(/3 noms dans cette sélection/);
+  });
+
+  // The narrowings this axis offers are the reader's own — peuple, pays,
+  // système, lettre. A standing threshold slipped in among them would shrink
+  // the name dimension to its sourced quarter for everyone, not for crawlers.
+  // @req REQ-147
+  it("reads the whole selection when the reader has narrowed nothing", async () => {
+    render(await NomsHubPage({ searchParams: Promise.resolve({}) }));
+
+    const [, filters] = mockGetPage.mock.calls[0] as [
+      number,
+      PatronymesFacetFilters,
+      number,
+    ];
+    expect(
+      Object.entries(filters).filter(([, value]) => value !== null)
+    ).toEqual([]);
   });
 
   // @req REQ-139
