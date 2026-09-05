@@ -20,6 +20,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
   question:
     "Presque tous les peuples de l'atlas portent un nom venu du dehors. Qui le leur a donné ?",
   standfirst: {
+    id: "standfirst",
     text: "Le corpus tient plus de noms donnés de l'extérieur que de noms revendiqués de l'intérieur. L'écart ne mesure pas d'abord la colonisation : il mesure qui a écrit.",
     sourceRefs: [],
     figureRefs: ["corpus-exonyms", "corpus-autonyms"],
@@ -37,16 +38,19 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
       heading: "La mesure, et ce qu'elle ne mesure pas",
       blocks: [
         {
+          id: "quatre-pour-un",
           text: "Les huit cents fiches de peuple de l'atlas recensent 3 201 noms donnés de l'extérieur, contre 798 noms que les intéressés revendiquent. Quatre pour un.",
           sourceRefs: [],
           figureRefs: ["corpus-peoples", "corpus-exonyms", "corpus-autonyms"],
         },
         {
+          id: "une-asymetrie-darchive",
           text: "L'écart est spectaculaire et il est facile de lui faire dire ce qu'il ne dit pas. Il ne mesure pas combien de peuples ont été renommés de force. Il mesure d'abord une asymétrie d'archive : on a beaucoup plus écrit sur ces peuples qu'ils n'ont écrit d'eux-mêmes, et un atlas qui compile des sources compile ce déséquilibre avec elles.",
           sourceRefs: [],
           figureRefs: [],
         },
         {
+          id: "trois-declarations",
           text: "Sur la classification de leur propre nom, les fiches disent trois choses. 460 déclarent leur appellation contestée ou héritée de la colonisation. 19 déclarent autre chose. Et 321 ne déclarent rien du tout.",
           sourceRefs: [],
           figureRefs: [
@@ -56,6 +60,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
           ],
         },
         {
+          id: "le-troisieme-nombre",
           text: "Ce troisième nombre est le sujet de la phrase, pas sa note de bas de page. Écrire « 57 % des peuples de l'atlas contestent leur nom » laisserait entendre que les autres ont été examinés et jugés sans problème. Ils n'ont pas été examinés. Le chantier est ouvert, et un pourcentage le comptabiliserait comme un résultat.",
           sourceRefs: [],
           figureRefs: ["status-undeclared"],
@@ -68,6 +73,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
       heading: "Qui a donné ces noms, d'après les fiches elles-mêmes",
       blocks: [
         {
+          id: "de-la-prose-pas-une-donnee",
           text: "Chaque fiche raconte en toutes lettres d'où vient son exonyme. Ce récit n'est pas une donnée : c'est de la prose. On peut donc y compter des mots, et c'est tout ce que le tableau ci-dessous fait — une fiche qui écrit « ce nom n'est pas d'origine européenne » est comptée dans « europ- » comme les autres.",
           sourceRefs: [],
           figureRefs: [],
@@ -169,16 +175,19 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
       heading: "L'exonyme n'est pas une invention européenne",
       blocks: [
         {
+          id: "voisins-arabe-swahili",
           text: "Cent vingt fiches attribuent leur exonyme à des voisins, soixante-quinze à l'arabe, soixante-treize au swahili. Nommer l'autre depuis le dehors n'est pas une importation : c'est ce que font les gens qui se rencontrent, partout, depuis toujours. Un dossier qui ne dirait que « l'Europe a mal nommé » raterait sa propre matière.",
           sourceRefs: [],
           figureRefs: ["probe-neighbours", "probe-arabic", "probe-swahili"],
         },
         {
+          id: "le-registre",
           text: "Ce que la colonisation apporte de neuf n'est donc pas l'exonyme. C'est le registre. Un nom cesse d'être une manière de parler pour devenir une case d'état : recensable, imposable, opposable. Il ne circule plus, il est inscrit — et ce qui est inscrit ne se renégocie plus au contact suivant.",
           sourceRefs: [],
           figureRefs: ["probe-administration"],
         },
         {
+          id: "les-jieng",
           text: "Les Jieng du Soudan du Sud en sont l'exemple le plus net. « Dinka » est un exonyme arabe, venu des marchands du nord, que l'administration anglo-égyptienne a repris et fixé. Il est aujourd'hui universellement accepté, y compris par les intéressés dans les contextes officiels — et « Jieng » monte dans les revendications identitaires depuis l'indépendance de 2011. Un exonyme peut être adopté sans cesser d'être un exonyme.",
           sourceRefs: ["afrik-ppl-dinka"],
           figureRefs: [],
@@ -191,6 +200,7 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
       heading: "Quand le nom est une moquerie",
       blocks: [
         {
+          id: "quatre-vingt-sept-fiches",
           text: "Quatre-vingt-sept fiches qualifient leur exonyme de péjoratif, dépréciatif, moqueur ou dérisoire. Deux cas montrent ce que le mot fait, et ce que le remplacer ne répare pas.",
           sourceRefs: [],
           figureRefs: ["probe-pejorative"],
@@ -239,11 +249,13 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
       heading: "Remplacer un exonyme par un exonyme ne répare rien",
       blocks: [
         {
+          id: "hottentot-bushmen-san",
           text: "« Hottentot » a été retiré de l'usage savant, puis de la loi. « Bushmen » a été remplacé par « San » dans l'anthropologie de langue anglaise à partir des années 1970. Le second remplacement pose un problème que le premier n'avait pas : « San » est lui-même un mot khoekhoe déprécié, qui désignait les chasseurs-cueilleurs sans bétail.",
           sourceRefs: ["saho-khoisan"],
           figureRefs: [],
         },
         {
+          id: "le-nom-de-la-nation",
           text: "Les intéressés ont tranché autrement. En 2003, leurs représentants ont demandé à être désignés par le nom de leur nation — ǂKhomani, Ju|'hoansi, !Xun — plutôt que par un terme de couverture, quel qu'il soit. La demande porte moins sur le mot que sur l'échelle : un seul nom pour des peuples distincts est déjà une décision prise à leur place.",
           sourceRefs: ["san-council-2003", "saho-khoisan"],
           figureRefs: [],
@@ -256,16 +268,19 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
       heading: "Le contre-exemple, sans lequel le reste ne vaut rien",
       blocks: [
         {
+          id: "herero-sans-connotation",
           text: "Le dossier d'appellation des Ovaherero prend soin d'écrire l'inverse de ce qu'on attendrait. « Herero » est l'exonyme international, né du contact colonial — et, à la différence d'autres exonymes coloniaux du corpus, aucune source ne documente de connotation péjorative attachée au mot lui-même.",
           sourceRefs: ["afrik-ppl-herero", "ethnologue-her"],
           figureRefs: [],
         },
         {
+          id: "le-genocide-et-le-mot",
           text: "La fiche va plus loin et dit pourquoi cela compte : la violence coloniale que ce peuple a subie — le génocide herero et nama — porte sur d'autres registres que la dénomination. Confondre les deux serait consoler d'un crime en corrigeant un mot.",
           sourceRefs: ["afrik-ppl-herero"],
           figureRefs: [],
         },
         {
+          id: "la-regle-du-chapitre",
           text: "D'où la règle que ce chapitre défend : un exonyme n'est pas coupable par sa position. Il l'est par ce qu'il dit, par qui l'a imposé, et par ce que les intéressés en disent aujourd'hui. Un dossier qui condamnerait en bloc perdrait le droit d'être cru sur « Hottentot ».",
           sourceRefs: [],
           figureRefs: [],
@@ -278,11 +293,13 @@ export const CHAPITRE_LE_PEUPLE: DossierChapter = {
       heading: "Ce que la source ne dit pas",
       blocks: [
         {
+          id: "compter-le-mot-administration",
           text: "Le corpus enregistre d'où vient un exonyme. Il n'enregistre pas ce qui l'a fait tenir. On peut compter les fiches qui emploient le mot « administration » ; on ne peut pas compter les noms qu'une administration a réellement imposés, et ce chapitre ne le fait pas.",
           sourceRefs: [],
           figureRefs: ["exonyms-imposed-by-administration"],
         },
         {
+          id: "les-fiches-muettes",
           text: "Et il reste les 321 fiches muettes. Elles ne disent pas que tout va bien : elles disent que personne n'a encore regardé. C'est la première dette de ce dossier envers son propre corpus.",
           sourceRefs: [],
           figureRefs: ["status-undeclared"],
