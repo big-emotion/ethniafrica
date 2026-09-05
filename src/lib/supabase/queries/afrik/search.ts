@@ -11,6 +11,7 @@
 
 import { createServerClient } from "../../server";
 import { logger } from "@/lib/api/logger";
+import { getAfrikPeoplesByIds } from "./peoples";
 import type {
   FtsSearchParams,
   FtsSearchResponse,
@@ -193,7 +194,9 @@ export async function ftsSearchEntities(
   const persons = personPayload.rows.map((row) =>
     toRankedPerson(row, personPeopleLinksById.get(row.id as string) ?? [])
   );
-  const patronymes = patronymePayload.rows.map(toRankedPatronyme);
+  const patronymes = await withAssociatedPeoples(
+    patronymePayload.rows.map(toRankedPatronyme)
+  );
   const languages = languagePayload.rows.map(toRankedLanguage);
 
   const total =
@@ -385,6 +388,52 @@ function toRankedPatronyme(row: Record<string, unknown>): RankedPatronyme {
     normalizedScore: toScore(row.normalizedScore),
     snippet: (row.snippet as string) ?? null,
   };
+}
+
+/** The `content.peoples[].peopleId` a name fiche declares, in fiche order. */
+function declaredPeopleIdsOf(patronyme: RankedPatronyme): string[] {
+  const peoples = patronyme.content.peoples;
+  if (!Array.isArray(peoples)) return [];
+  return peoples
+    .map((entry) =>
+      entry && typeof entry === "object"
+        ? (entry as Record<string, unknown>).peopleId
+        : undefined
+    )
+    .filter((id): id is string => typeof id === "string");
+}
+
+/**
+ * Resolves the peoples each name hit declares to their main name, in one
+ * batched lookup for the page (ETNI-1859), so the results surface can name a
+ * people instead of printing its `PPL_*` id. The names are a decoration on
+ * the hit, not the hit itself: a failing lookup is logged and the names are
+ * left unresolved rather than turning a found name into a failed search.
+ */
+async function withAssociatedPeoples(
+  patronymes: RankedPatronyme[]
+): Promise<RankedPatronyme[]> {
+  const declaredIds = patronymes.map(declaredPeopleIdsOf);
+  const uniqueIds = [...new Set(declaredIds.flat())];
+  if (uniqueIds.length === 0) return patronymes;
+
+  let nameById: Map<string, string>;
+  try {
+    const peoples = await getAfrikPeoplesByIds(uniqueIds);
+    nameById = new Map(peoples.map((people) => [people.id, people.nameMain]));
+  } catch (error) {
+    logger.error("Error resolving associated peoples of name hits", error);
+    return patronymes;
+  }
+
+  return patronymes.map((patronyme, index) => {
+    if (declaredIds[index].length === 0) return patronyme;
+    const associatedPeoples = declaredIds[index].flatMap((id) => {
+      const name = nameById.get(id);
+      return name ? [{ id, name }] : [];
+    });
+    return { ...patronyme, associatedPeoples };
+  });
 }
 
 function toRankedLanguageFamily(

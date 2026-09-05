@@ -457,6 +457,95 @@ describe("mapSearchEnvelope", () => {
     expect(patronyme.sourceCount).toBe(2);
   });
 
+  // ETNI-1859: the API resolves the associated peoples to their main name
+  // so the panel can render a chip per people without printing an id.
+  // @req REQ-124
+  it("carries a patronyme's resolved associated peoples verbatim", () => {
+    const [patronyme] = mapSearchEnvelope({
+      data: {
+        patronymes: [
+          {
+            id: "PATR_KEITA",
+            nameMain: "Keïta",
+            associatedPeoples: [{ id: "PPL_DIOULA", name: "Dioula" }],
+          },
+        ],
+      },
+    });
+
+    expect(patronyme.associatedPeoples).toEqual([
+      { id: "PPL_DIOULA", name: "Dioula" },
+    ]);
+  });
+
+  // @req REQ-124
+  it("leaves associatedPeoples undefined when the API sends none", () => {
+    const [patronyme] = mapSearchEnvelope({
+      data: {
+        patronymes: [{ id: "PATR_KEITA", nameMain: "Keïta" }],
+      },
+    });
+
+    expect(patronyme.associatedPeoples).toBeUndefined();
+  });
+
+  // @req REQ-124
+  it("drops a malformed associated-people entry rather than rendering a nameless chip", () => {
+    const [patronyme] = mapSearchEnvelope({
+      data: {
+        patronymes: [
+          {
+            id: "PATR_KEITA",
+            nameMain: "Keïta",
+            associatedPeoples: [
+              { id: "PPL_DIOULA", name: "Dioula" },
+              { id: "PPL_NAMELESS" },
+              { id: 42, name: "Nombre" },
+              "PPL_STRING",
+              null,
+            ],
+          },
+        ],
+      },
+    });
+
+    expect(patronyme.associatedPeoples).toEqual([
+      { id: "PPL_DIOULA", name: "Dioula" },
+    ]);
+  });
+
+  // The panel states "N peuples" from the fiche's own count, and only the
+  // resolved ones become chips — a people without a fiche is counted, never
+  // named by its identifier.
+  // @req REQ-124
+  it("still counts every declared people id when fewer resolved to a name", () => {
+    const [patronyme] = mapSearchEnvelope({
+      data: {
+        patronymes: [
+          {
+            id: "PATR_KEITA",
+            nameMain: "Keïta",
+            content: {
+              peoples: [
+                { peopleId: "PPL_DIOULA" },
+                { peopleId: "PPL_NO_FICHE_YET" },
+              ],
+            },
+            associatedPeoples: [{ id: "PPL_DIOULA", name: "Dioula" }],
+          },
+        ],
+      },
+    });
+
+    expect(patronyme.associatedPeopleIds).toEqual([
+      "PPL_DIOULA",
+      "PPL_NO_FICHE_YET",
+    ]);
+    expect(patronyme.associatedPeoples).toEqual([
+      { id: "PPL_DIOULA", name: "Dioula" },
+    ]);
+  });
+
   // ETNI-1463 AC2: a query with person hits but no name fiche must still
   // return the persons — the absence is rendered, not silence, but the
   // envelope itself must never drop a kind that legitimately came back

@@ -1000,6 +1000,19 @@ const options: swaggerJsdoc.Options = {
               type: "object",
               description: "Evolutionary JSONB content, forwarded opaquely.",
             },
+            associatedPeoples: {
+              type: "array",
+              description:
+                "Associated peoples whose fiche exists, resolved to their main name in fiche order — ETNI-1859. Absent when the name declares no people.",
+              items: {
+                type: "object",
+                properties: {
+                  id: { type: "string", example: "PPL_MANDINGUE" },
+                  name: { type: "string", example: "Mandingue" },
+                },
+                required: ["id", "name"],
+              },
+            },
             relevance: {
               type: "number",
               example: 0.82,
