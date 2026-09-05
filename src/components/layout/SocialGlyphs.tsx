@@ -56,3 +56,23 @@ export function InstagramGlyph({ className }: SocialGlyphProps) {
     </svg>
   );
 }
+
+// @req REQ-046
+export function TiktokGlyph({ className }: SocialGlyphProps) {
+  return (
+    <svg {...GLYPH_PROPS} className={className}>
+      <circle cx="9" cy="18" r="3" />
+      <path d="M12 18V4a4 4 0 0 0 4 4" />
+    </svg>
+  );
+}
+
+// @req REQ-046
+export function YoutubeGlyph({ className }: SocialGlyphProps) {
+  return (
+    <svg {...GLYPH_PROPS} className={className}>
+      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+      <path d="m10 15 5-3-5-3z" />
+    </svg>
+  );
+}
