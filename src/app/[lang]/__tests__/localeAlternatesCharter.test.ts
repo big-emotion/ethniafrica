@@ -22,7 +22,8 @@
 
 import { readdirSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
-import { describe, expect, it, vi } from "vitest";
+import type { Metadata } from "next";
+import { beforeAll, describe, expect, it, vi } from "vitest";
 
 import { CANONICAL_DOMAIN } from "@/lib/brand";
 import { LOCALES } from "@/lib/locale";
@@ -214,11 +215,32 @@ const ROUTES = pageRoutes().filter(
 
 const BASE = `https://${CANONICAL_DOMAIN}`;
 
+type RouteModule = {
+  generateMetadata?: (props: {
+    params: Promise<Record<string, string | string[]>>;
+    searchParams: Promise<Record<string, string>>;
+  }) => Promise<Metadata>;
+};
+
+// Loaded once, up front: the first import of a fiche route pulls its whole
+// component tree through the transform, which under a loaded machine costs
+// more than a single case's timeout. The cases then only render heads.
+const ROUTE_MODULES = new Map<string, RouteModule>();
+
+beforeAll(async () => {
+  for (const route of ROUTES) {
+    ROUTE_MODULES.set(
+      route,
+      await import(join(ROUTES_ROOT, route, "page.tsx"))
+    );
+  }
+}, 120_000);
+
 async function headOf(route: string, lang: Language) {
   const fixture = FIXTURES[route];
-  const routeModule = await import(join(ROUTES_ROOT, route, "page.tsx"));
+  const routeModule = ROUTE_MODULES.get(route);
   expect(
-    typeof routeModule.generateMetadata,
+    typeof routeModule?.generateMetadata,
     `${route} exports no generateMetadata`
   ).toBe("function");
 
