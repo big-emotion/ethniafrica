@@ -37,6 +37,7 @@ describe("country target facts", () => {
   // @req REQ-117
   it("names the country and counts the peoples its own fiche declares", () => {
     const facts = buildCountryTargetFacts(
+      "fr",
       countryWith([{ name: "Yoruba" }, { name: "Igbo" }, { name: "Haoussa" }])
     );
 
@@ -51,6 +52,7 @@ describe("country target facts", () => {
   // @req REQ-117
   it("lists the first entries, and says it is showing only the first", () => {
     const facts = buildCountryTargetFacts(
+      "fr",
       countryWith(
         Array.from({ length: 9 }, (_, index) => ({ name: `Peuple ${index}` }))
       )
@@ -67,7 +69,7 @@ describe("country target facts", () => {
   // corpus, and the panel has to say which.
   // @req REQ-117
   it("says the corpus is empty rather than showing a bare zero", () => {
-    const facts = buildCountryTargetFacts(countryWith(undefined));
+    const facts = buildCountryTargetFacts("fr", countryWith(undefined));
 
     render(<>{facts.NGA?.body}</>);
     expect(
@@ -84,7 +86,7 @@ describe("country target facts", () => {
     const country = countryWith([]);
     country.majorPeoples = [{ name: "Yoruba" }, { name: "Igbo" }];
 
-    const facts = buildCountryTargetFacts(country);
+    const facts = buildCountryTargetFacts("fr", country);
 
     render(<>{facts.NGA?.body}</>);
     expect(screen.getByText("2")).toBeInTheDocument();
@@ -96,7 +98,10 @@ describe("country target facts", () => {
   // is what put every family route on HTTP 500 once already.
   // @req REQ-117
   it("returns data, never a resolver", () => {
-    const facts = buildCountryTargetFacts(countryWith([{ name: "Yoruba" }]));
+    const facts = buildCountryTargetFacts(
+      "fr",
+      countryWith([{ name: "Yoruba" }])
+    );
 
     expect(typeof facts).toBe("object");
     expect(typeof facts.NGA).toBe("object");
@@ -118,6 +123,7 @@ describe("buildCountryAtlasFacts (REQ-117)", () => {
     countryBriefs = {}
   ) {
     return buildCountryAtlasFacts({
+      language: "fr",
       country: countryWith([{ name: "Zoulou" }]),
       targets,
       peopleCounts,
@@ -318,6 +324,7 @@ describe("what the panel's subtitle states", () => {
   // @req REQ-117
   it("locates the fiche's own country rather than restating the charter", () => {
     const facts = buildCountryAtlasFacts({
+      language: "fr",
       country: countryWith([{ name: "Yoruba" }]),
       targets,
       peopleCounts: { NGA: 3 },
@@ -343,6 +350,7 @@ describe("what the panel shows it is", () => {
 
   function facts() {
     return buildCountryAtlasFacts({
+      language: "fr",
       country: countryWith([{ name: "Yoruba" }]),
       targets,
       peopleCounts: { NGA: 3, KEN: 12 },

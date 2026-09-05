@@ -36,7 +36,7 @@ const FULL_CORPUS = {
 describe("home charter — what the band claims the corpus is", () => {
   // @req REQ-113
   it("prints exactly the classes the tile band declares, in the same order", () => {
-    render(<HomeCorpusCounts counts={FULL_CORPUS} />);
+    render(<HomeCorpusCounts language="fr" counts={FULL_CORPUS} />);
 
     const tiles = screen.getAllByTestId(/^home-count-/);
     expect(tiles).toHaveLength(CORPUS_CLASSES.length);
@@ -62,7 +62,7 @@ describe("home charter — what the band claims the corpus is", () => {
   // armed and the home named a single class for good.
   // @req REQ-113
   it("states every class it declares, on the band itself", () => {
-    render(<HomeCorpusCounts counts={FULL_CORPUS} />);
+    render(<HomeCorpusCounts language="fr" counts={FULL_CORPUS} />);
 
     const band = screen.getByTestId("home-corpus-counts");
     for (const { tileLabel } of CORPUS_CLASSES) {
@@ -77,7 +77,7 @@ describe("home charter — what the band claims the corpus is", () => {
   // word and the band silently reasserts the claim it gave up making.
   // @req REQ-113
   it("never lets three totals read as the whole corpus", () => {
-    render(<HomeCorpusCounts counts={FULL_CORPUS} />);
+    render(<HomeCorpusCounts language="fr" counts={FULL_CORPUS} />);
 
     expect(screen.getByTestId("home-corpus-counts")).toHaveAccessibleName(
       /ce que l'atlas documente/i

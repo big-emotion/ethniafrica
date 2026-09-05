@@ -77,7 +77,7 @@ export const NommerPillarPage = ({ language }: { language: Language }) => {
             heading="Trois nombres, avant tout le reste"
             id="nommer-these"
           />
-          <ThesisMeasures />
+          <ThesisMeasures language={language} />
         </section>
 
         <section aria-labelledby="nommer-chapitres">

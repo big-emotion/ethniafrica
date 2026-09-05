@@ -4,12 +4,13 @@ import { inCountry } from "@/lib/atlas/countryPreposition";
 import { getAdmin0NameFr } from "@/lib/atlas/overlays";
 import type { CountryId, GlobalDemographySection } from "@/types/afrik";
 import { ActionLink } from "@/components/ui/ActionLink";
+import { formatNumber } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
 
-const populationFr = new Intl.NumberFormat("fr-FR");
-const shareFr = new Intl.NumberFormat("fr-FR", {
+const ONE_DECIMAL: Intl.NumberFormatOptions = {
   minimumFractionDigits: 1,
   maximumFractionDigits: 1,
-});
+};
 
 /**
  * What the fiche puts in the globe's panel for each country of presence.
@@ -25,9 +26,11 @@ const shareFr = new Intl.NumberFormat("fr-FR", {
  */
 // @req REQ-117
 export function buildPeoplePresenceFacts({
+  language,
   peopleName,
   demography,
 }: {
+  language: Language;
   peopleName: string;
   peopleId: string;
   demography: GlobalDemographySection | undefined;
@@ -54,7 +57,7 @@ export function buildPeoplePresenceFacts({
       // The declared population, as the mockup's own list carries it. A
       // country the fiche declares without a figure gets no line rather than
       // a zero, which would read as an absence the corpus never stated.
-      subtitle: population > 0 ? populationFr.format(population) : undefined,
+      subtitle: population > 0 ? formatNumber(language, population) : undefined,
       body: (
         <div className="flex flex-col gap-afh-sm text-afh-small">
           <div>
@@ -62,7 +65,7 @@ export function buildPeoplePresenceFacts({
               Population déclarée
             </dt>
             <dd className="font-[family-name:var(--afh-font-mono)] text-afh-h3 tabular-nums">
-              {populationFr.format(population)}
+              {formatNumber(language, population)}
             </dd>
           </div>
 
@@ -77,7 +80,7 @@ export function buildPeoplePresenceFacts({
               </dt>
               <dd className="flex items-center gap-afh-xs">
                 <span className="font-[family-name:var(--afh-font-mono)] tabular-nums">
-                  {shareFr.format(share)}&nbsp;%
+                  {formatNumber(language, share, ONE_DECIMAL)}&nbsp;%
                 </span>
                 <span
                   aria-hidden="true"

@@ -9,6 +9,7 @@ import {
 import { PRODUCT_NAME } from "@/lib/brand";
 import { getStaticPageRoute } from "@/lib/routing";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
+import { formatDate } from "@/lib/languageTag";
 import type { Language } from "@/types/shared";
 
 /**
@@ -50,16 +51,20 @@ export async function generateMetadata({
   };
 }
 
-function formatFrenchDate(iso: string | null): string {
+// UTC, because the stamp is shown to whoever opens the public record and a
+// moderation timeline must read the same from every time zone.
+const FLAG_TIMESTAMP: Intl.DateTimeFormatOptions = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+  timeZone: "UTC",
+};
+
+function formatFlagTimestamp(language: Language, iso: string | null): string {
   if (!iso) return "—";
-  return new Intl.DateTimeFormat("fr-FR", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    timeZone: "UTC",
-  }).format(new Date(iso));
+  return formatDate(language, new Date(iso), FLAG_TIMESTAMP);
 }
 
 const FLAG_KIND_LABELS: Record<string, string> = {
@@ -203,14 +208,14 @@ export default async function SignalementsSlugPage({
           <p>
             <span>Signalé le </span>
             <time dateTime={flag.created_at} data-testid="created-at">
-              {formatFrenchDate(flag.created_at)}
+              {formatFlagTimestamp(lang as Language, flag.created_at)}
             </time>
           </p>
           {flag.resolved_at && (
             <p>
               <span>Résolu le </span>
               <time dateTime={flag.resolved_at} data-testid="resolved-at">
-                {formatFrenchDate(flag.resolved_at)}
+                {formatFlagTimestamp(lang as Language, flag.resolved_at)}
               </time>
             </p>
           )}

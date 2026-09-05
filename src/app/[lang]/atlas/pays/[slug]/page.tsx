@@ -244,6 +244,7 @@ export default async function PaysSlugPage({
               // l'empreinte", which a country fiche does not have.
               wholeAreaLabel={`Revenir à ${countryDetail.nameCommonFr || countryDetail.nameFr}`}
               facts={buildCountryAtlasFacts({
+                language: lang as Language,
                 country: countryDetail,
                 targets: pickerTargets,
                 peopleCounts,

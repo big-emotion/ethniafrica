@@ -8,6 +8,8 @@ import type { CountryDetail } from "@/types/afrik-frontend";
 import { getCountryRoute } from "@/lib/routing";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { deriveCountrySynthesisFromDetail } from "@/lib/home/countrySynthesis";
+import { formatNumber } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
 
 /**
  * What the globe's panel says when the reader picks the country the fiche is
@@ -97,8 +99,6 @@ function ProvenanceChip({ declared }: { declared: boolean }) {
   );
 }
 
-const countFr = new Intl.NumberFormat("fr-FR");
-
 export interface CountryAtlasBrief {
   population?: number;
   referenceYear?: number;
@@ -120,7 +120,13 @@ function principalLanguages(languages: string[] | undefined): string[] {
     .slice(0, BRIEF_LANGUAGES_SHOWN);
 }
 
-function CountryBriefFacts({ brief }: { brief?: CountryAtlasBrief }) {
+function CountryBriefFacts({
+  language,
+  brief,
+}: {
+  language: Language;
+  brief?: CountryAtlasBrief;
+}) {
   const population =
     typeof brief?.population === "number" &&
     Number.isFinite(brief.population) &&
@@ -147,7 +153,7 @@ function CountryBriefFacts({ brief }: { brief?: CountryAtlasBrief }) {
           <dd
             style={{ ...BRIEF_VALUE_STYLE, fontVariantNumeric: "tabular-nums" }}
           >
-            {countFr.format(population)}
+            {formatNumber(language, population)}
           </dd>
         </div>
       )}
@@ -164,6 +170,7 @@ function CountryBriefFacts({ brief }: { brief?: CountryAtlasBrief }) {
 
 // @req REQ-117
 export function buildCountryTargetFacts(
+  language: Language,
   country: CountryDetail
 ): Partial<Record<CountryId, AtlasTargetFacts>> {
   const demographicPeoples = country.demographics?.peoples;
@@ -183,7 +190,9 @@ export function buildCountryTargetFacts(
         <div style={{ display: "grid", gap: 14 }}>
           <div>
             <span style={LABEL_STYLE}>Peuples déclarés par la fiche</span>
-            <span style={NUMBER_STYLE}>{countFr.format(names.length)}</span>
+            <span style={NUMBER_STYLE}>
+              {formatNumber(language, names.length)}
+            </span>
           </div>
 
           {names.length > 0 ? (
@@ -232,6 +241,7 @@ function ReadTheFiche({ href }: { href: string }) {
 }
 
 export interface CountryAtlasFactsInput {
+  language: Language;
   /** The fiche's own country, which gets the full panel. */
   country: CountryDetail;
   /** Everything the picker offers, named as the picker names it. */
@@ -273,12 +283,13 @@ function placeOf(target: AtlasTarget): string {
 
 // @req REQ-117
 export function buildCountryAtlasFacts({
+  language,
   country,
   targets,
   peopleCounts,
   countryBriefs,
 }: CountryAtlasFactsInput): Partial<Record<CountryId, AtlasTargetFacts>> {
-  const own = buildCountryTargetFacts(country);
+  const own = buildCountryTargetFacts(language, country);
   const ownBrief = countryBriefs[country.id] ?? {
     population: country.demographics?.totalPopulation,
     referenceYear: country.demographics?.referenceYear,
@@ -300,7 +311,7 @@ export function buildCountryAtlasFacts({
             icon: flagFromISO3(target.countryId),
             body: (
               <div style={{ display: "grid", gap: 14 }}>
-                <CountryBriefFacts brief={ownBrief} />
+                <CountryBriefFacts language={language} brief={ownBrief} />
                 {ownFacts?.body}
                 <ProvenanceChip declared />
                 <ReadTheFiche href="#fiche" />
@@ -328,10 +339,13 @@ export function buildCountryAtlasFacts({
               ? placeOf(target)
               : documented === 1
                 ? "1 peuple documenté"
-                : `${countFr.format(documented)} peuples documentés`,
+                : `${formatNumber(language, documented)} peuples documentés`,
           body: (
             <div style={{ display: "grid", gap: 14 }}>
-              <CountryBriefFacts brief={countryBriefs[target.countryId]} />
+              <CountryBriefFacts
+                language={language}
+                brief={countryBriefs[target.countryId]}
+              />
               {documented === null && (
                 <span
                   style={{

@@ -42,7 +42,7 @@ describe("ApiKeysManager", () => {
 
   // @req REQ-056
   it("tells the reader they have no keys yet", () => {
-    render(<ApiKeysManager initialKeys={[]} />);
+    render(<ApiKeysManager language="fr" initialKeys={[]} />);
 
     expect(
       screen.getByText(/vous n.avez pas encore de clé api/i)
@@ -51,7 +51,7 @@ describe("ApiKeysManager", () => {
 
   // @req REQ-056
   it("lists the caller's existing keys by prefix, never the raw key", () => {
-    render(<ApiKeysManager initialKeys={[existingKey]} />);
+    render(<ApiKeysManager language="fr" initialKeys={[existingKey]} />);
 
     expect(screen.getByText("CI pipeline")).toBeInTheDocument();
     expect(screen.getByText(/usr_abcd1234/)).toBeInTheDocument();
@@ -77,7 +77,7 @@ describe("ApiKeysManager", () => {
       },
     });
 
-    render(<ApiKeysManager initialKeys={[]} />);
+    render(<ApiKeysManager language="fr" initialKeys={[]} />);
 
     fireEvent.change(screen.getByLabelText(/nom de la clé/i), {
       target: { value: "Local dev" },
@@ -104,7 +104,7 @@ describe("ApiKeysManager", () => {
       body: { errors: [{ code: "VALIDATION_ERROR", message: "trop court" }] },
     });
 
-    render(<ApiKeysManager initialKeys={[]} />);
+    render(<ApiKeysManager language="fr" initialKeys={[]} />);
 
     fireEvent.change(screen.getByLabelText(/nom de la clé/i), {
       target: { value: "x" },
@@ -134,7 +134,7 @@ describe("ApiKeysManager", () => {
       },
     });
 
-    render(<ApiKeysManager initialKeys={[]} />);
+    render(<ApiKeysManager language="fr" initialKeys={[]} />);
 
     fireEvent.change(screen.getByLabelText(/nom de la clé/i), {
       target: { value: "Local dev" },
@@ -158,7 +158,7 @@ describe("ApiKeysManager", () => {
       body: { data: null },
     });
 
-    render(<ApiKeysManager initialKeys={[existingKey]} />);
+    render(<ApiKeysManager language="fr" initialKeys={[existingKey]} />);
 
     fireEvent.click(screen.getByRole("button", { name: /révoquer/i }));
     fireEvent.click(
@@ -184,7 +184,7 @@ describe("ApiKeysManager", () => {
       body: { errors: [{ code: "NOT_FOUND", message: "clé introuvable" }] },
     });
 
-    render(<ApiKeysManager initialKeys={[existingKey]} />);
+    render(<ApiKeysManager language="fr" initialKeys={[existingKey]} />);
 
     fireEvent.click(screen.getByRole("button", { name: /révoquer/i }));
     fireEvent.click(

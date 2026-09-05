@@ -2,9 +2,13 @@
 
 import { useEffect, useState } from "react";
 
+import { formatDate } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
+
 const COLLAPSED_KEY_PREFIX = "pinned-version-banner:collapsed:";
 
 export type PinnedVersionBannerProps = {
+  language: Language;
   pinnedAt: string | null;
   versionTag: string;
   liveUrl: string;
@@ -45,29 +49,37 @@ function normalizeVersionTag(versionTag: string): string {
   return `@v${versionNumber}`;
 }
 
-function formatLongFrenchDate(pinnedAt: string | null): string | null {
+// Pinned to UTC: `pinnedAt` is a date-only publication stamp, and a reader
+// west of Greenwich would otherwise see the day before.
+const PINNED_DATE: Intl.DateTimeFormatOptions = {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+};
+
+function formatPinnedDate(
+  language: Language,
+  pinnedAt: string | null
+): string | null {
   if (!pinnedAt) return null;
 
   const date = new Date(pinnedAt);
   if (Number.isNaN(date.getTime())) return null;
 
-  return new Intl.DateTimeFormat("fr-FR", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(date);
+  return formatDate(language, date, PINNED_DATE);
 }
 
 // @req REQ-019
 export function PinnedVersionBanner({
+  language,
   pinnedAt,
   versionTag,
   liveUrl,
   resolvedFlagsCount = 0,
 }: PinnedVersionBannerProps) {
   const normalizedVersionTag = normalizeVersionTag(versionTag);
-  const dateLabel = formatLongFrenchDate(pinnedAt);
+  const dateLabel = formatPinnedDate(language, pinnedAt);
   const hasResolvedFlags = resolvedFlagsCount > 0;
   const [collapsed, setCollapsed] = useState(false);
 

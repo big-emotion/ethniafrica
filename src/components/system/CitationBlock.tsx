@@ -20,6 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import type { Language } from "@/types/shared";
 
 export type CitationFormat = "text" | "bibtex" | "markdown";
 export type CitationVariant = "live" | "pinned";
@@ -30,6 +31,7 @@ export interface CitationPinnedVersion {
 }
 
 export interface CitationBlockProps {
+  language: Language;
   title: string;
   liveUrl: string;
   pinned?: CitationPinnedVersion;
@@ -64,6 +66,7 @@ function isCitationVariant(value: string): value is CitationVariant {
 
 // @req REQ-021
 export function CitationBlock({
+  language,
   title,
   liveUrl,
   pinned,
@@ -86,6 +89,7 @@ export function CitationBlock({
     selectedVariant === "pinned" && pinned ? "pinned" : "live";
   const activeUrl = activeVariant === "pinned" && pinned ? pinned.url : liveUrl;
   const citation = formatCitation(format, {
+    language,
     title,
     productName,
     url: activeUrl,

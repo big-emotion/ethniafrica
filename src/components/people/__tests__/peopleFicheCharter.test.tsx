@@ -129,7 +129,7 @@ describe("people fiche parity with the mockup", () => {
     // state it, and this asserts the page still does.
     // @req REQ-115
     it(`counts the presence countries the globe draws on ${regime.label}`, () => {
-      render(<PeopleFicheTitle people={regime.people} />);
+      render(<PeopleFicheTitle language="fr" people={regime.people} />);
 
       expect(
         screen.getByText(`${regime.presenceCount} pays de présence`)

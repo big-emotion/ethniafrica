@@ -25,7 +25,7 @@ import { getModeratorSession } from "@/lib/supabase/moderator";
 import ApiKeysPage from "../page";
 
 async function renderPage() {
-  const ui = await ApiKeysPage();
+  const ui = await ApiKeysPage({ params: Promise.resolve({ lang: "fr" }) });
   return render(ui);
 }
 
@@ -41,9 +41,9 @@ describe("ApiKeysPage", () => {
       return Promise.reject(new Error("unreachable"));
     });
 
-    await expect(ApiKeysPage()).rejects.toThrow(
-      "NEXT_REDIRECT:/fr/admin/connexion"
-    );
+    await expect(
+      ApiKeysPage({ params: Promise.resolve({ lang: "fr" }) })
+    ).rejects.toThrow("NEXT_REDIRECT:/fr/admin/connexion");
     expect(listUserApiKeys).not.toHaveBeenCalled();
   });
 

@@ -1,6 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
+// Tier labels follow the route's locale; the assertions are French, so the
+// suite stands on a French route.
+const navigation = await vi.hoisted(async () => {
+  const { mockRouteLanguage } = await import("@/test/mockRouteLanguage");
+  return mockRouteLanguage("fr");
+});
+vi.mock("next/navigation", () => navigation);
+
 import SourceChainSheet from "@/components/source-transparency/SourceChainSheet";
 
 /**

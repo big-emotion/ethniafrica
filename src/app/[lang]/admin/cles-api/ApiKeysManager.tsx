@@ -18,7 +18,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FormFieldError } from "@/components/forms/FormFieldError";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { formatDate } from "@/lib/languageTag";
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
+import type { Language } from "@/types/shared";
 import { ApiKeyRevealCard } from "./ApiKeyRevealCard";
 
 export interface ApiKeySummaryView {
@@ -38,16 +40,19 @@ interface CreatedApiKeyView extends ApiKeySummaryView {
 }
 
 export interface ApiKeysManagerProps {
+  language: Language;
   initialKeys: ApiKeySummaryView[];
 }
 
-function formatDate(value: string | null): string {
+const KEY_DATE: Intl.DateTimeFormatOptions = {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+};
+
+function formatKeyDate(language: Language, value: string | null): string {
   if (!value) return "—";
-  return new Intl.DateTimeFormat("fr-FR", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(value));
+  return formatDate(language, new Date(value), KEY_DATE);
 }
 
 async function sessionToken(): Promise<string> {
@@ -58,7 +63,7 @@ async function sessionToken(): Promise<string> {
 }
 
 // @req REQ-056
-export function ApiKeysManager({ initialKeys }: ApiKeysManagerProps) {
+export function ApiKeysManager({ language, initialKeys }: ApiKeysManagerProps) {
   const [keys, setKeys] = React.useState(initialKeys);
   const [label, setLabel] = React.useState("");
   const [creating, setCreating] = React.useState(false);
@@ -252,12 +257,12 @@ export function ApiKeysManager({ initialKeys }: ApiKeysManagerProps) {
                       </AlertDialog>
                     ) : (
                       <span className="text-afh-caption text-muted-foreground">
-                        Révoquée le {formatDate(key.revoked_at)}
+                        Révoquée le {formatKeyDate(language, key.revoked_at)}
                       </span>
                     )}
                   </div>
                   <p className="mt-2 text-afh-caption text-muted-foreground">
-                    Créée le {formatDate(key.created_at)}
+                    Créée le {formatKeyDate(language, key.created_at)}
                   </p>
                   {revokeError[key.id] ? (
                     <div className="mt-2">

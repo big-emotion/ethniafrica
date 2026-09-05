@@ -24,6 +24,7 @@ import type { FamilyPageData } from "@/lib/familyDataTransformer";
 import { ficheSourceLabel } from "@/lib/afrik/ficheSourceLabel";
 import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
 import { isSourceTier } from "@/types/sources";
+import { formatNumber } from "@/lib/languageTag";
 import type { Language } from "@/types/shared";
 
 /**
@@ -41,8 +42,6 @@ import type { Language } from "@/types/shared";
  * pas" — a title about the atlas's editorial method, above four figures about
  * a linguistic family.
  */
-
-const numberFr = new Intl.NumberFormat("fr-FR");
 
 export interface FamilyParchmentProps {
   data: FamilyPageData;
@@ -106,11 +105,11 @@ function StatCard({
   const shown = missing
     ? (emptyValue ?? "vide")
     : Array.isArray(value)
-      ? numberFr.format(value.length)
+      ? formatNumber(language, value.length)
       : typeof value === "object" && value !== null
-        ? numberFr.format(Object.keys(value).length)
+        ? formatNumber(language, Object.keys(value).length)
         : typeof value === "number"
-          ? numberFr.format(value)
+          ? formatNumber(language, value)
           : String(value);
 
   return (

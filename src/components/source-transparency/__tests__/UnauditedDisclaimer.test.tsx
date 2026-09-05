@@ -21,14 +21,26 @@ describe("UnauditedDisclaimer", () => {
 
   describe("when lastHumanAuditAt is null", () => {
     it('renders the "fiche non auditée" banner', () => {
-      render(<UnauditedDisclaimer lastHumanAuditAt={null} fiche={FICHE} />);
+      render(
+        <UnauditedDisclaimer
+          language="fr"
+          lastHumanAuditAt={null}
+          fiche={FICHE}
+        />
+      );
       expect(
         screen.getByText(/fiche non auditée — lire avec précaution/i)
       ).toBeTruthy();
     });
 
     it("uses role=region with the expected aria-label", () => {
-      render(<UnauditedDisclaimer lastHumanAuditAt={null} fiche={FICHE} />);
+      render(
+        <UnauditedDisclaimer
+          language="fr"
+          lastHumanAuditAt={null}
+          fiche={FICHE}
+        />
+      );
       const region = screen.getByRole("region", {
         name: /avertissement vérification/i,
       });
@@ -41,6 +53,7 @@ describe("UnauditedDisclaimer", () => {
       // 2024-05-01 is > 18 months before 2026-05-14
       render(
         <UnauditedDisclaimer
+          language="fr"
           lastHumanAuditAt="2024-05-01T00:00:00.000Z"
           fiche={FICHE}
         />
@@ -58,6 +71,7 @@ describe("UnauditedDisclaimer", () => {
       // 2025-06-01 is ~11 months before 2026-05-14 → fresh
       const { container } = render(
         <UnauditedDisclaimer
+          language="fr"
           lastHumanAuditAt="2025-06-01T00:00:00.000Z"
           fiche={FICHE}
         />
@@ -68,7 +82,13 @@ describe("UnauditedDisclaimer", () => {
 
   describe("dismissal", () => {
     it("writes the dismiss flag to localStorage and unmounts the banner", () => {
-      render(<UnauditedDisclaimer lastHumanAuditAt={null} fiche={FICHE} />);
+      render(
+        <UnauditedDisclaimer
+          language="fr"
+          lastHumanAuditAt={null}
+          fiche={FICHE}
+        />
+      );
       const closeBtn = screen.getByRole("button", {
         name: /fermer l'avertissement/i,
       });
@@ -83,14 +103,24 @@ describe("UnauditedDisclaimer", () => {
     it("renders nothing on remount when dismissal is already in localStorage", () => {
       window.localStorage.setItem(DISMISS_KEY, "1");
       const { container } = render(
-        <UnauditedDisclaimer lastHumanAuditAt={null} fiche={FICHE} />
+        <UnauditedDisclaimer
+          language="fr"
+          lastHumanAuditAt={null}
+          fiche={FICHE}
+        />
       );
       expect(container.firstChild).toBeNull();
     });
 
     it("scopes dismissal per fiche", () => {
       window.localStorage.setItem("unaudited-disclaimer:dismissed:OTHER", "1");
-      render(<UnauditedDisclaimer lastHumanAuditAt={null} fiche={FICHE} />);
+      render(
+        <UnauditedDisclaimer
+          language="fr"
+          lastHumanAuditAt={null}
+          fiche={FICHE}
+        />
+      );
       expect(
         screen.getByText(/fiche non auditée — lire avec précaution/i)
       ).toBeTruthy();

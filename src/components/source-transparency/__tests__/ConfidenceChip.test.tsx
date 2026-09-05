@@ -1,6 +1,14 @@
 // @req REQ-006
 // @req REQ-011
 import { describe, it, expect, vi, beforeEach } from "vitest";
+
+// The chip formats its audit date in the route's locale; these assertions
+// are French, so the suite stands on a French route.
+const navigation = await vi.hoisted(async () => {
+  const { mockRouteLanguage } = await import("@/test/mockRouteLanguage");
+  return mockRouteLanguage("fr");
+});
+vi.mock("next/navigation", () => navigation);
 import { render, screen, fireEvent } from "@testing-library/react";
 import { ConfidenceChip } from "../ConfidenceChip";
 

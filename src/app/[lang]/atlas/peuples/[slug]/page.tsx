@@ -231,7 +231,7 @@ export default async function PeoplesSlugPage({
       trailLabel={peopleDetail.nameMain}
       heroHead={
         <FicheHeroHead entityType="people" translation={people.translation}>
-          <PeopleFicheTitle people={peopleDetail} />
+          <PeopleFicheTitle language={lang as Language} people={peopleDetail} />
         </FicheHeroHead>
       }
     >
@@ -245,6 +245,7 @@ export default async function PeoplesSlugPage({
               overlay={peopleFieldOverlay}
               missingMessage={`Répartition par pays non renseignée pour ${peopleDetail.nameMain}`}
               facts={buildPeoplePresenceFacts({
+                language: lang as Language,
                 peopleName: peopleDetail.nameMain,
                 peopleId: parsed.slug,
                 demography: peopleDetail.demography,

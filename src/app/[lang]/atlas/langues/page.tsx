@@ -23,6 +23,7 @@ import { getLanguageRoute, getLocalizedRoute } from "@/lib/routing";
 import { getTranslation } from "@/lib/translations";
 import type { CountryId } from "@/types/afrik";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
+import { formatNumber } from "@/lib/languageTag";
 import type { Language } from "@/types/shared";
 
 /**
@@ -57,8 +58,6 @@ const PARAM = {
   page: "page",
   size: PAGE_SIZE_PARAM,
 } as const;
-
-const countFormat = new Intl.NumberFormat("fr-FR");
 
 interface PageProps {
   params: Promise<{ lang: string }>;
@@ -120,6 +119,7 @@ export default async function LanguesHubPage({
 }: PageProps) {
   const { lang } = await params;
   const language = lang as Language;
+  const count = (value: number) => formatNumber(language, value);
   const t = getTranslation(language).languages;
   const query = (await searchParams) ?? {};
 
@@ -231,6 +231,7 @@ export default async function LanguesHubPage({
 
   const pagination = (position: "top" | "bottom") => (
     <FacetPagination
+      language={language}
       position={position}
       page={reading.page}
       pageCount={reading.totalPages}
@@ -243,7 +244,7 @@ export default async function LanguesHubPage({
   );
 
   const lede =
-    `${countFormat.format(reading.total)} ` +
+    `${count(reading.total)} ` +
     `${reading.total === 1 ? t.range.languagesSingular : t.range.languagesPlural} ` +
     `dans cette sélection. Choisissez un pays sur le globe pour voir celles qu'on y parle.`;
 

@@ -8,7 +8,10 @@ import {
   SheetTitle,
   SheetDescription,
 } from "@/components/ui/sheet";
+import { useRouteLanguage } from "@/hooks/use-language";
+import { formatDate } from "@/lib/languageTag";
 import { cn } from "@/lib/utils";
+import type { Language } from "@/types/shared";
 
 /* -------------------------------------------------------------------------- */
 /*  Types                                                                      */
@@ -98,14 +101,12 @@ function usePrefersReducedMotion(): boolean {
 /*  Helpers                                                                    */
 /* -------------------------------------------------------------------------- */
 
-const FR_LONG_DATE = new Intl.DateTimeFormat("fr-FR", { dateStyle: "long" });
-
-function formatLongFrenchDate(iso: string | null): string {
+function formatPublicationDate(language: Language, iso: string | null): string {
   if (!iso) return "—";
   try {
     const d = new Date(iso);
     if (isNaN(d.getTime())) return iso;
-    return FR_LONG_DATE.format(d);
+    return formatDate(language, d);
   } catch {
     return iso;
   }
@@ -132,6 +133,7 @@ async function fetchRevisionPage(
 /* -------------------------------------------------------------------------- */
 
 function RevisionRow({ item }: { item: RevisionItem }) {
+  const language = useRouteLanguage();
   const [expanded, setExpanded] = React.useState(false);
   const needsTrunc = Boolean(
     item.reason && item.reason.length > REASON_TRUNCATE_LEN
@@ -155,7 +157,7 @@ function RevisionRow({ item }: { item: RevisionItem }) {
           dateTime={item.published_at ?? undefined}
           className="text-[var(--afh-fg-muted,#6b7280)] font-normal"
         >
-          {formatLongFrenchDate(item.published_at)}
+          {formatPublicationDate(language, item.published_at)}
         </time>
         {item.moderator_pseudonym && (
           <span className="text-[var(--afh-fg-muted,#6b7280)] font-normal">

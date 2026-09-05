@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import type { Proof as AntibotProof } from "@/lib/antibot/proofOfWork";
 import { FALLBACK_LOCALE, isLocale } from "@/lib/locale";
+import { formatNumber } from "@/lib/languageTag";
 import { getStaticPageRoute } from "@/lib/routing";
 
 export type FlagKind =
@@ -383,7 +384,7 @@ export function FlagForm({
           className="text-right text-afh-caption text-afh-fg-muted"
           id={reasonCounterId}
         >
-          {reason.length.toLocaleString("fr-FR")} / 2 000
+          {formatNumber(language, reason.length)} / 2 000
         </p>
         {errors.reason && (
           <p
@@ -424,7 +425,7 @@ export function FlagForm({
               className="text-right text-afh-caption text-afh-fg-muted"
               id={proposedRewriteCounterId}
             >
-              {proposedRewrite.length.toLocaleString("fr-FR")} / 5 000
+              {formatNumber(language, proposedRewrite.length)} / 5 000
             </p>
             {errors.proposedRewrite && (
               <p

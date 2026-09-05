@@ -44,6 +44,7 @@ const meta = {
     },
   },
   args: {
+    language: "fr",
     title: "Entrée de référence (Autonyme / Exonyme)",
     liveUrl: "https://example.org/fr/fiches/entree-de-reference",
     accessedAt: new Date("2026-07-14T12:00:00.000Z"),
@@ -53,6 +54,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// @req REQ-021
 export const LiveMobile430: Story = {
   name: "Live version — 430 px",
   parameters: {
@@ -60,6 +62,7 @@ export const LiveMobile430: Story = {
   },
 };
 
+// @req REQ-021
 export const PinnedTablet720: Story = {
   name: "Pinned version — 720 px",
   args: {
@@ -75,6 +78,7 @@ export const PinnedTablet720: Story = {
   },
 };
 
+// @req REQ-021
 export const PinnedDesktop1200: Story = {
   name: "Pinned version — 1200 px",
   args: {

@@ -110,7 +110,7 @@ export function HomeHero({
               and placed under the field rather than over it: the figures
               qualify the promise the sentence just made, and a reader who came
               to search reaches the field before the corpus's size. */}
-          <HomeCorpusCounts counts={counts} />
+          <HomeCorpusCounts language={language} counts={counts} />
         </header>
 
         <div

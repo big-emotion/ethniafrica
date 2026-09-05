@@ -1,6 +1,14 @@
 // @req REQ-009
 // @req REQ-020
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+
+// Publication dates are formatted in the route's locale; the assertions are
+// French, so the suite stands on a French route.
+const navigation = await vi.hoisted(async () => {
+  const { mockRouteLanguage } = await import("@/test/mockRouteLanguage");
+  return mockRouteLanguage("fr");
+});
+vi.mock("next/navigation", () => navigation);
 import {
   render,
   screen,

@@ -131,6 +131,7 @@ export function CompareEntityHeader({
         </>
       ) : (
         <UnauditedDisclaimer
+          language={language}
           lastHumanAuditAt={null}
           fiche={column.id}
           entityLabel={column.label}

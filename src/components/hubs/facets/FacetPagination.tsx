@@ -2,9 +2,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 import { buildPageWindow } from "@/lib/hubs/pagination";
+import { formatNumber } from "@/lib/languageTag";
 import { cn } from "@/lib/utils";
+import type { Language } from "@/types/shared";
 
 export interface FacetPaginationProps {
+  language: Language;
   /**
    * Where on the page this pager sits. The head carries the reading's extent
    * and how much of it is shown at a time; the foot carries the pages alone,
@@ -51,6 +54,7 @@ export interface FacetPaginationProps {
  */
 // @req REQ-108
 export function FacetPagination({
+  language,
   position,
   page,
   pageCount,
@@ -68,7 +72,7 @@ export function FacetPagination({
   // said how large the selection is.
   if (lastPage <= 1) return null;
 
-  const format = new Intl.NumberFormat("fr-FR");
+  const count = (value: number) => formatNumber(language, value);
   /**
    * The site pager's own dress — `.afh-pager-page` in `styles/pager.css`, the
    * same class the anecdotes feed renders. Two idioms for one control is what
@@ -83,9 +87,9 @@ export function FacetPagination({
 
   // Position, not quantity. The header owns the count.
   const extent =
-    `${format.format((current - 1) * pageSize + 1)} à ` +
-    `${format.format(Math.min(current * pageSize, total))} sur ` +
-    `${format.format(total)}`;
+    `${count((current - 1) * pageSize + 1)} à ` +
+    `${count(Math.min(current * pageSize, total))} sur ` +
+    `${count(total)}`;
 
   const pages = (
     <ul className="flex flex-wrap items-center justify-center gap-1 p-0">
@@ -119,7 +123,7 @@ export function FacetPagination({
               aria-label={`Page ${slot}`}
               className={controlClass}
             >
-              {format.format(slot)}
+              {count(slot)}
             </Link>
           </li>
         )

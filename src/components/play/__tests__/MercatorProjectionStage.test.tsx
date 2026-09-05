@@ -1,5 +1,13 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+
+// The inflation figure is formatted in the route's locale — « 4,0 » under
+// /fr, "4.0" under /en — so the suite stands on a French route.
+const navigation = await vi.hoisted(async () => {
+  const { mockRouteLanguage } = await import("@/test/mockRouteLanguage");
+  return mockRouteLanguage("fr");
+});
+vi.mock("next/navigation", () => navigation);
 
 import { MercatorProjectionStage } from "@/components/play/MercatorProjectionStage";
 

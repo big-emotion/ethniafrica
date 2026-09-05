@@ -23,6 +23,7 @@ function href(page: number, size: number): string {
 function renderPager(overrides: Record<string, unknown> = {}) {
   return render(
     <FacetPagination
+      language="fr"
       position="top"
       page={1}
       pageCount={41}

@@ -192,6 +192,7 @@ export default async function FamillesSlugPage({
   // Precomputed here, on the server, and handed over as data. AtlasGlobe is a
   // client component: a resolver function cannot cross that boundary.
   const familyTargetFacts = buildFamilyTargetFacts({
+    language: lang as Language,
     familyNameFr: familyDetail.nameFr,
     memberPeopleCount: memberPeoples.length,
     peopleNamesByCountry,

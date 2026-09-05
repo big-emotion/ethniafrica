@@ -29,6 +29,7 @@ import {
 } from "@/lib/supabase/queries/flags/publicFlagsPageQuery";
 import { getTranslation } from "@/lib/translations";
 import { FALLBACK_LOCALE } from "@/lib/locale";
+import { formatDate } from "@/lib/languageTag";
 import { getLanguageFromRoute, getStaticPageRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
@@ -271,10 +272,10 @@ function PublicFlagRow({
               <time
                 dateTime={item.createdAt}
                 suppressHydrationWarning
-                title={new Intl.DateTimeFormat("fr-FR", {
+                title={formatDate(language, new Date(item.createdAt), {
                   dateStyle: "long",
                   timeStyle: "short",
-                }).format(new Date(item.createdAt))}
+                })}
               >
                 {formatDistanceToNowStrict(new Date(item.createdAt), {
                   addSuffix: true,

@@ -12,8 +12,11 @@ import Link from "next/link";
 
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import { cn } from "@/lib/utils";
+import { useRouteLanguage } from "@/hooks/use-language";
+import { formatDate } from "@/lib/languageTag";
 import { getSourceRoute } from "@/lib/routing";
 import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
+import type { Language } from "@/types/shared";
 import { SOURCE_TIERS, toSourceTier, type SourceTier } from "@/types/sources";
 
 /* -------------------------------------------------------------------------- */
@@ -260,17 +263,13 @@ export function safeUrl(raw: string | undefined | null): string | null {
   }
 }
 
-const FR_DATE_FORMATTER = new Intl.DateTimeFormat("fr-FR", {
-  dateStyle: "long",
-});
-
 /**
- * Formats an ISO date (YYYY-MM-DD) as a long French date. Uses a TZ-stable
- * parser to avoid off-by-one errors on date-only inputs. Returns the raw
- * input on parse failure.
+ * Formats an ISO date (YYYY-MM-DD) as a long date in the reader's locale.
+ * Uses a TZ-stable parser to avoid off-by-one errors on date-only inputs.
+ * Returns the raw input on parse failure.
  */
 // @req REQ-008
-export function formatBrokenDate(iso: string): string {
+export function formatBrokenDate(language: Language, iso: string): string {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
   if (!match) return iso;
   const [, yearStr, monthStr, dayStr] = match;
@@ -279,14 +278,20 @@ export function formatBrokenDate(iso: string): string {
   const day = Number(dayStr);
   const date = new Date(year, month - 1, day);
   if (Number.isNaN(date.getTime())) return iso;
-  return FR_DATE_FORMATTER.format(date);
+  return formatDate(language, date);
 }
 
 /* -------------------------------------------------------------------------- */
 /*  Sub-components                                                             */
 /* -------------------------------------------------------------------------- */
 
-function SourceItem({ source }: { source: Source }) {
+function SourceItem({
+  language,
+  source,
+}: {
+  language: Language;
+  source: Source;
+}) {
   const isBroken = Boolean(source.brokenAt);
   const sanitizedUrl = safeUrl(source.url);
   const renderAsLink = !isBroken && sanitizedUrl !== null;
@@ -364,7 +369,8 @@ function SourceItem({ source }: { source: Source }) {
           data-testid={`source-broken-badge-${source.id}`}
           className="inline-flex items-center rounded-full bg-[var(--afh-warn-bg,#fef3c7)] px-2 py-0.5 text-afh-caption font-medium text-[var(--afh-warn-fg,#92400e)]"
         >
-          lien non résolu — signalé le {formatBrokenDate(source.brokenAt)}
+          lien non résolu — signalé le{" "}
+          {formatBrokenDate(language, source.brokenAt)}
         </span>
       ) : null}
       <div data-testid={`source-flag-target-${source.id}`} className="pt-1">
@@ -383,9 +389,11 @@ function SourceItem({ source }: { source: Source }) {
 }
 
 function TierGroup({
+  language,
   tier,
   sources,
 }: {
+  language: Language;
   tier: SourceStanding;
   sources: Source[];
 }) {
@@ -393,23 +401,34 @@ function TierGroup({
   return (
     <div data-testid={`tier-group-${tier}`} className="space-y-2">
       <h4 className="text-afh-eyebrow font-semibold uppercase tracking-wide text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
-        {sourceStandingLabel(tier, "fr")}
+        {sourceStandingLabel(tier, language)}
       </h4>
       <ul className="space-y-2">
         {sources.map((s) => (
-          <SourceItem key={s.id} source={s} />
+          <SourceItem key={s.id} language={language} source={s} />
         ))}
       </ul>
     </div>
   );
 }
 
-function SourceList({ sources }: { sources: Source[] }) {
+function SourceList({
+  language,
+  sources,
+}: {
+  language: Language;
+  sources: Source[];
+}) {
   const grouped = groupByTier(sources);
   return (
     <div className="space-y-4">
       {TIER_ORDER.map((tier) => (
-        <TierGroup key={tier} tier={tier} sources={grouped[tier]} />
+        <TierGroup
+          key={tier}
+          language={language}
+          tier={tier}
+          sources={grouped[tier]}
+        />
       ))}
     </div>
   );
@@ -431,6 +450,9 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
 }) => {
   const variant = useSheetVariant();
   const reducedMotion = usePrefersReducedMotion();
+  // The sheet opens from a chip on any fiche surface, from the quiz and from
+  // the relations list; none of those hand it a locale, so it reads the route.
+  const language = useRouteLanguage();
   useUrlAnchorSync(open, anchorId, onOpenChange);
 
   // "Cite this assertion" appears after a 4 s dwell.
@@ -546,12 +568,12 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
                   <p className="text-afh-caption font-semibold text-[var(--afh-accent,var(--country-accent,#1d4ed8))]">
                     {pg.position}
                   </p>
-                  <SourceList sources={pg.sources} />
+                  <SourceList language={language} sources={pg.sources} />
                 </div>
               ))}
             </div>
           ) : (
-            <SourceList sources={sources} />
+            <SourceList language={language} sources={sources} />
           )}
         </section>
 

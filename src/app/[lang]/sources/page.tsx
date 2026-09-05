@@ -19,6 +19,7 @@ import { definedFilter } from "@/lib/hubs/facets";
 import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getLocalizedRoute } from "@/lib/routing";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
+import { formatNumber } from "@/lib/languageTag";
 import type { Language } from "@/types/shared";
 import { SOURCE_KINDS, type SourceKind } from "@/types/sources";
 
@@ -51,8 +52,6 @@ const PARAM = {
   page: "page",
   size: PAGE_SIZE_PARAM,
 } as const;
-
-const countFormat = new Intl.NumberFormat("fr-FR");
 
 const SORTS: ReadonlyArray<{ value: SourcesFacetSort; label: string }> = [
   { value: "titre", label: "Titre" },
@@ -134,6 +133,7 @@ export default async function SourcesPage({
 }) {
   const { lang } = await params;
   const language = lang as Language;
+  const count = (value: number) => formatNumber(language, value);
   const query = (await searchParams) ?? {};
 
   const decade = definedFilter(query[PARAM.decade]);
@@ -200,6 +200,7 @@ export default async function SourcesPage({
 
   const pagination = (position: "top" | "bottom") => (
     <FacetPagination
+      language={language}
       position={position}
       page={reading.page}
       pageCount={reading.totalPages}
@@ -214,14 +215,14 @@ export default async function SourcesPage({
   // One string rather than text around expressions: JSX drops the whitespace
   // between an expression and the text that follows on the next line.
   const lede =
-    `${countFormat.format(reading.total)} ` +
+    `${count(reading.total)} ` +
     `${reading.total === 1 ? "source" : "sources"} dans cette sélection. ` +
     `Chacune porte son degré d'autorité, et la raison de ce degré.`;
 
   const provenanceNote =
     `La provenance n'est renseignée que pour ` +
-    `${countFormat.format(choices.withSourceKind)} sources sur ` +
-    `${countFormat.format(choices.total)} : filtrer dessus ne montre pas ` +
+    `${count(choices.withSourceKind)} sources sur ` +
+    `${count(choices.total)} : filtrer dessus ne montre pas ` +
     `l'état du corpus, seulement ce qui a déjà été qualifié.`;
 
   return (
@@ -254,7 +255,7 @@ export default async function SourcesPage({
               // The count rides in the label: a shelf that hides how much it
               // holds asserts an absence nobody checked, and the filter bar
               // has no slot of its own for a per-option figure.
-              label: `${standing.label} (${countFormat.format(standing.count)})`,
+              label: `${standing.label} (${count(standing.count)})`,
             })),
             value: filters.standing,
           }}
@@ -265,7 +266,7 @@ export default async function SourcesPage({
               anyLabel: "Toutes les provenances",
               options: choices.sourceKinds.map((kind) => ({
                 value: kind.id,
-                label: `${kind.label} (${countFormat.format(kind.count)})`,
+                label: `${kind.label} (${count(kind.count)})`,
               })),
               value: filters.sourceKind,
             },
@@ -275,7 +276,7 @@ export default async function SourcesPage({
               anyLabel: "Toutes les décennies",
               options: choices.decades.map((decade) => ({
                 value: decade.id,
-                label: `${decade.label} (${countFormat.format(decade.count)})`,
+                label: `${decade.label} (${count(decade.count)})`,
               })),
               value: filters.decade ? String(filters.decade) : null,
             },

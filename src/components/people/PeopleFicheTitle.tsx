@@ -4,6 +4,7 @@ import {
   transformPeopleHero,
 } from "@/lib/peopleDataTransformer";
 import { PeopleFicheHead } from "@/components/people/PeopleFicheHead";
+import type { Language } from "@/types/shared";
 
 /**
  * The band a people fiche opens on, above the globe.
@@ -21,13 +22,24 @@ import { PeopleFicheHead } from "@/components/people/PeopleFicheHead";
  * no use for either.
  */
 // @req REQ-091
-export function PeopleFicheTitle({ people }: { people: PeopleDetail }) {
+export function PeopleFicheTitle({
+  language,
+  people,
+}: {
+  language: Language;
+  people: PeopleDetail;
+}) {
   const hero = transformPeopleHero(people);
   const countries = transformPeopleCountries(people.demography);
 
   // The trail is the shell's now (`PageLayout` → `SiteTrail`); the route
   // passes the name it should print through `trailLabel`.
   return (
-    <PeopleFicheHead hero={hero} countries={countries} showConfidence={false} />
+    <PeopleFicheHead
+      language={language}
+      hero={hero}
+      countries={countries}
+      showConfidence={false}
+    />
   );
 }

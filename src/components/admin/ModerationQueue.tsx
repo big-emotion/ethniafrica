@@ -5,7 +5,9 @@ import { useId, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { formatDate } from "@/lib/languageTag";
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
+import type { Language } from "@/types/shared";
 
 export interface QueuedReport {
   id: string;
@@ -21,6 +23,7 @@ export interface QueuedReport {
 }
 
 export interface ModerationQueueProps {
+  language: Language;
   reports: readonly QueuedReport[];
 }
 
@@ -69,26 +72,30 @@ const STATUS_LABELS: Record<string, string> = {
   withdrawn: "Retiré",
 };
 
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("fr-FR", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
+const REPORT_DATE: Intl.DateTimeFormatOptions = {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+};
 
 // @req REQ-042
-export function ModerationQueue({ reports }: ModerationQueueProps) {
+export function ModerationQueue({ language, reports }: ModerationQueueProps) {
   return (
     <ul className="flex flex-col gap-afh-lg" data-testid="moderation-queue">
       {reports.map((report) => (
-        <QueueRow key={report.id} report={report} />
+        <QueueRow key={report.id} language={language} report={report} />
       ))}
     </ul>
   );
 }
 
-function QueueRow({ report }: { report: QueuedReport }) {
+function QueueRow({
+  language,
+  report,
+}: {
+  language: Language;
+  report: QueuedReport;
+}) {
   const noteId = useId();
   const [status, setStatus] = useState(report.status);
   const [note, setNote] = useState("");
@@ -150,7 +157,9 @@ function QueueRow({ report }: { report: QueuedReport }) {
           {isContribution ? "Contribution" : "Signalement"}
         </span>
         <span>{STATUS_LABELS[status] ?? status}</span>
-        <span>{formatDate(report.created_at)}</span>
+        <span>
+          {formatDate(language, new Date(report.created_at), REPORT_DATE)}
+        </span>
         {report.target_id && <span>{report.target_id}</span>}
       </div>
 
