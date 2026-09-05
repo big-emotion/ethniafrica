@@ -10,6 +10,43 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [4.5.0] - 2026-09-05
+
+### Added
+
+- **The footer's follow row is fully live.** Instagram, TikTok and YouTube now
+  open the site's real accounts, linked the same way LinkedIn already was —
+  off-site, so a reader doesn't lose their place in the corpus. Hand-drawn
+  TikTok and YouTube marks match the existing glyph set, since `lucide-react`
+  ships no brand icons (#868). Facebook followed once its own page went live;
+  with five networks now live the row wraps a fifth mark past three, so it is
+  capped to three marks' width per row, each centred on its own axis (#874).
+
+### Changed
+
+- **"Doctrine éditoriale" moves onto À propos.** It duplicated a
+  project-description page one column over under "Le projet"; it now sits
+  inline on the À propos overview, next to the project description it
+  actually qualifies (#874).
+- **AFRIK corpus — 17 patronym fiches added or re-sourced.** Diaby, Doucouré,
+  Kollo, Lohourignon and Nkala are new sourced dossiers; Sangaré's unsourced
+  placeholder is replaced with Mandé/Wassoulou onomastics research and its
+  sanankuya alliances made bidirectional with Sidibé, Bagayoko and Sow. Eleven
+  more join them: Bailly, Gnahoré, Bikadal, Koum, Motassi, Guédé, Demba,
+  Katende, Lumbala, Lutula and Nono. Every claim carries a tiered source; no
+  living individual is listed as a bearer (DEC-040) (#871).
+- **AFRIK corpus — sourced enrichment for ten low-scroll-depth fiches.**
+  PAT_ADEBAYO, PAT_BALOGUN, PAT_AGBO, GHA, PPL_BASSA, PPL_BASSA_CAM, PPL_NGALA,
+  PPL_NZEBI, PPL_NZEMA and PPL_YORUBA were flagged by Plausible analytics for
+  sub-100% scroll depth; each was run through the afrik-curator workflow.
+  Real defects surfaced beyond the original premise: an invalid
+  `needs_review` source tier on several fiches (not a valid
+  official/referenced/unverified value), PPL_NGALA's ISO 639-3 code corrected
+  from `lol` (Mongo) to `bxg` (Bangala), PPL_BASSA's population figure updated
+  against the 2022 LISGIS census, and GHA's corrupted `ethnicities` array
+  repaired and re-sourced from Ghana Statistical Service 2021, SIL Ethnologue
+  and UN DESA (#870).
+
 ## [4.4.0] - 2026-09-05
 
 ### Added
@@ -602,7 +639,8 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.4.0...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.5.0...HEAD
+[4.5.0]: https://github.com/big-emotion/ethniafrica/compare/v4.4.0...v4.5.0
 [4.4.0]: https://github.com/big-emotion/ethniafrica/compare/v4.3.1...v4.4.0
 [4.3.1]: https://github.com/big-emotion/ethniafrica/compare/v4.3.0...v4.3.1
 [4.3.0]: https://github.com/big-emotion/ethniafrica/compare/v4.2.3...v4.3.0
