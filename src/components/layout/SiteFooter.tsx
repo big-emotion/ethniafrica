@@ -46,7 +46,11 @@ const SOCIAL_NETWORKS: ReadonlyArray<{
   Glyph: (props: { className?: string }) => ReactElement;
   href: string | null;
 }> = [
-  { name: "Facebook", Glyph: FacebookGlyph, href: null },
+  {
+    name: "Facebook",
+    Glyph: FacebookGlyph,
+    href: "https://www.facebook.com/profile.php?id=61593966096643",
+  },
   // The company slug carries a typographic apostrophe (U+2019), kept
   // percent-encoded so the URL survives copy, log and redirect untouched.
   {
@@ -113,18 +117,16 @@ export function SiteFooter({ language }: SiteFooterProps) {
         { label: directory.reportError, href: `/${language}/report-error` },
       ],
     },
-    // Doctrine, À propos and Sources describe the project, not the corpus,
-    // so the three access modes stopped listing them. A rubric here is where
-    // they land: the footer is the one part of the chrome that is allowed to
-    // name the site itself rather than a way into it.
+    // À propos and Sources describe the project, not the corpus, so the
+    // three access modes stopped listing them. A rubric here is where they
+    // land: the footer is the one part of the chrome that is allowed to name
+    // the site itself rather than a way into it. Doctrine used to be a
+    // fourth entry here, but that duplicated the link now carried inline on
+    // the À propos page itself — one rubric away rather than one column away.
     {
       id: "projet",
       heading: directory.projectHeading,
       links: [
-        {
-          label: directory.doctrine,
-          href: getLocalizedRoute(language, "doctrine"),
-        },
         {
           label: directory.about,
           href: getLocalizedRoute(language, "about"),
@@ -244,25 +246,28 @@ export function SiteFooter({ language }: SiteFooterProps) {
             </nav>
           ))}
 
-          <div>
+          {/* `text-center` here rather than inheriting the column's own
+              alignment: every other rubric in this row runs left-aligned from
+              `md:text-left` up, but a heading left-aligned over icons
+              centred under it is two alignments in one block (brand charter
+              §8.1). Centring the heading with the marks keeps it one. */}
+          <div className="text-center">
             <p className="font-afh-display text-afh-body font-bold text-afh-text">
               {directory.followHeading}
             </p>
-            {/* Each mark keeps a 44px hit area, which insets the glyph by
-                  12px inside it. Pulled back by the same 12px so the first
-                  glyph sits on the heading's edge rather than a tap target's,
-                  and given half the rubrics' top margin for the same reason:
-                  the other 12px is already inside the target. */}
-            {/* Wraps, because the row is sized in rem and text zoom is what
-                  it has to survive: at 200% each 44px target measures 88px, and
-                  a single line of them ran 1199px wide inside an 800px
-                  viewport — horizontal scroll on the whole document, which
-                  WCAG 1.4.10 forbids and `migrations-atlas-zoom.spec.ts`
-                  measures. Wrapping is the reflow; capping the row would have
-                  cut the last networks off instead. */}
+            {/* Capped at three marks' width — 3 × 44px hit areas plus the two
+                  gaps between them — so a fourth and fifth mark wrap onto a
+                  second row instead of stretching the line. `flex-wrap` then
+                  justifies each row on its own axis, so both the row of three
+                  and the row of two centre independently under the heading. */}
+            {/* Wraps for the same reason it did before: at 200% text zoom
+                  each 44px target measures 88px, and an uncapped row would
+                  still overrun the viewport. WCAG 1.4.10 forbids the
+                  horizontal scroll that would follow, and
+                  `migrations-atlas-zoom.spec.ts` measures it. */}
             <ul
               data-testid="footer-follow"
-              className="mt-afh-lg flex flex-wrap items-center justify-center gap-afh-sm sm:-ml-3 sm:justify-start"
+              className="mx-auto mt-afh-lg flex max-w-[144px] flex-wrap items-center justify-center gap-afh-sm"
             >
               {SOCIAL_NETWORKS.map(({ name, Glyph, href }) => (
                 <li key={name}>

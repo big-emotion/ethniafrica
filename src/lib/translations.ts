@@ -113,13 +113,12 @@ export const translations = {
         participateHeading: "Participer",
         contribute: "Contribuer",
         reportError: "Signaler une erreur",
-        // The three pages that describe the project rather than the corpus.
+        // The two pages that describe the project rather than the corpus.
         // No access mode lists them — an axis is a way into the corpus — so
-        // the footer is where a reader now finds them, and the only place
-        // the doctrine and the source bibliography are reachable from the
-        // chrome at all.
+        // the footer is where a reader now finds them. Doctrine is reached
+        // from here at one remove, through the link on the À propos page
+        // itself, rather than as a fourth entry in this rubric.
         projectHeading: "Le projet",
-        doctrine: "Doctrine éditoriale",
         about: "À propos",
         sources: "Sources",
         glossary: "Glossaire",

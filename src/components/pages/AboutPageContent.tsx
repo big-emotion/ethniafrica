@@ -25,9 +25,12 @@ interface AboutPageContentProps {
  * (2026-09-01): the three example-country cards restated "01 · Le corpus",
  * the interactive access cards restated "Trois manières d'entrer dans
  * l'atlas", and the About/Doctrine distinction restated the doctrine link
- * already offered from the footer's "Le projet" rubric. The source
+ * then offered from the footer's "Le projet" rubric. The source
  * bibliography moved to its own page, `/[lang]/sources`, reachable from the
- * same footer rubric — a reading list is not part of the project pitch.
+ * footer's "Le projet" rubric — a reading list is not part of the project
+ * pitch. The doctrine link itself moved the other way (2026-09-05): out of
+ * that footer column and in here, inline, as the one place the chrome names
+ * it at all.
  */
 /**
  * The heading a corpus-class card wears, from the registry that declares the
@@ -52,6 +55,8 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         eyebrow: "Le projet",
         lead: "EthniAfrica est un atlas éditorial en français consacré aux peuples d’Afrique et aux pays, langues, familles linguistiques, appellations et noms documentés par le corpus.",
         body: "Le corpus relie ces six types de fiches pour permettre de les situer sans les confondre. Il se construit progressivement, à partir d’informations documentées et rendues accessibles dans un même espace de consultation.",
+        doctrineNote: "Les choix qui le gouvernent sont énoncés dans la",
+        doctrineLinkLabel: "doctrine éditoriale",
       },
       contentFamilies: {
         title: "Ce que contient EthniAfrica",
@@ -168,7 +173,14 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
           </p>
         </div>
         <p className="border-l-2 border-afh-gold pl-afh-md text-afh-small leading-relaxed text-afh-text-soft">
-          {t.overview.body}
+          {t.overview.body} {t.overview.doctrineNote}{" "}
+          <Link
+            href={getLocalizedRoute(language, "doctrine")}
+            className="font-bold text-[var(--accent-ink)] underline decoration-[var(--accent)] underline-offset-4"
+          >
+            {t.overview.doctrineLinkLabel}
+          </Link>
+          .
         </p>
       </header>
 
