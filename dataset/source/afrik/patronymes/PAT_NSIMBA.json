@@ -62,7 +62,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web et bibliographique combinant « Nsimba », « Kongo », « Congo », « twin name », « personal names », « etymology », « clan », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que l'article intégral de Ndoma sur les noms personnels kongo n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
+      "reason": "la recherche web et bibliographique combinant « Nsimba », « Kongo », « Congo », « twin name », « personal names », « etymology », « clan », « transmission », « alliance », « caste », « homonym » et « obituary », ainsi que l'article intégral de Ndoma sur les noms personnels kongo n'ont identifié aucune alliance ni parenté à plaisanterie documentée reliant ce nom à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

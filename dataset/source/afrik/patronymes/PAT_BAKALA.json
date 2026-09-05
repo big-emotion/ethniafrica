@@ -68,7 +68,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Bakala », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Bakala Surname Origin, Meaning & Last Name History » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Bakala à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Bakala », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Bakala Surname Origin, Meaning & Last Name History » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Bakala à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

@@ -482,8 +482,11 @@ export const INTERNAL_REGISTER_PATTERNS: ReadonlyArray<{
       /\b(?:content|_meta)\.\w+|\bfieldPath\b|\bsourceRefs\b|\bsourceKey\b|\bverificationLead\b|\btargetPatronymeId\b|\bclassificationStatus\b/,
   },
   {
+    // The wildcard form matters as much as a full id: 468 alliance gap
+    // reasons told the reader no pact was found "avec une autre fiche
+    // PAT_* existante", and `PAT_*` is not a word any reader has.
     label: "raw corpus identifier",
-    pattern: /\b(?:PPL|FLG|PAT)_[A-Z0-9_]+/,
+    pattern: /\b(?:PPL|FLG|PAT)_(?:[A-Z0-9_]+|\*)/,
   },
   {
     label: "curation vocabulary",

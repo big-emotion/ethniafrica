@@ -13,6 +13,7 @@ const base: PublicPatronyme = {
   associatedPeoples: [],
   associatedCountries: [],
   bearers: [],
+  alliances: [],
 };
 
 describe("PatronymeBearersSection (AC3, DEC-040, REQ-133)", () => {
@@ -67,6 +68,47 @@ describe("PatronymeBearersSection (AC3, DEC-040, REQ-133)", () => {
     render(<PatronymeBearersSection patronyme={base} />);
 
     expect(screen.getByRole("status")).toBeInTheDocument();
+  });
+
+  // The corpus names its bearers in the dossier (displayName) rather than
+  // through person records, and the fiche said "Donnée manquante" over a
+  // dossier that named Soundiata Keïta.
+  // @req REQ-133
+  it("lists a bearer the dossier names itself when no person record exists", () => {
+    render(
+      <PatronymeBearersSection
+        patronyme={{
+          ...base,
+          content: {
+            bearers: [{ status: "deceased", displayName: "Soundiata Keïta" }],
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByText("Soundiata Keïta")).toBeInTheDocument();
+    expect(screen.queryByRole("status")).not.toBeInTheDocument();
+  });
+
+  // @req REQ-133
+  it("does not print a bearer twice when the record and the dossier both name them", () => {
+    render(
+      <PatronymeBearersSection
+        patronyme={{
+          ...base,
+          bearers: [
+            {
+              id: "PER_1",
+              fullName: "Modibo Keïta",
+              roleCategory: "chef d'État",
+            },
+          ],
+          content: { bearers: [{ displayName: "Modibo Keïta" }] },
+        }}
+      />
+    );
+
+    expect(screen.getAllByText("Modibo Keïta")).toHaveLength(1);
   });
 
   // @req REQ-133

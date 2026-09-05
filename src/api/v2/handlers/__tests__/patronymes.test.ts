@@ -26,6 +26,13 @@ const KEITA = {
     { id: "PER_B", fullName: "Bearer", roleCategory: "author" },
     { id: "PER_A", fullName: "Aearer", roleCategory: "author" },
   ],
+  alliances: [
+    {
+      targetId: "PAT_COULIBALY",
+      targetNameMain: "Coulibaly",
+      allianceType: "sanankuya",
+    },
+  ],
 };
 
 describe("Patronyme Handler", () => {
