@@ -81,5 +81,35 @@ describe("Country Loader", () => {
       // The two Congos must stay distinguishable without extra display logic.
       expect(byId.COD?.nameFr).not.toBe(byId.COG?.nameFr);
     });
+
+    // ETNI-1857: an English reader typing "Chad" reached nothing, because the
+    // corpus held only "Tchad". `nameEn` is corpus data (class 1, REQ-143),
+    // not a display-time lookup.
+    // @req REQ-143
+    it("should carry an English name of ordinary use on every country", async () => {
+      const countries = await loadAllCountries();
+
+      expect(countries).toHaveLength(54);
+      for (const country of countries) {
+        expect(country.nameEn, country.id).toMatch(/\S/);
+      }
+    });
+
+    // The convention (docs/editorial/translation-classes.md): the state's own
+    // English usage, not the Natural Earth wording the atlas asset carries.
+    // @req REQ-143
+    it("should follow the state's own English usage where it differs from the cartographic asset", async () => {
+      const countries = await loadAllCountries();
+      const byId = Object.fromEntries(countries.map((c) => [c.id, c]));
+
+      expect(byId.TCD?.nameEn).toBe("Chad");
+      expect(byId.CIV?.nameEn).toBe("Côte d'Ivoire");
+      expect(byId.CPV?.nameEn).toBe("Cabo Verde");
+      expect(byId.SWZ?.nameEn).toBe("Eswatini");
+      expect(byId.GMB?.nameEn).toBe("The Gambia");
+      expect(byId.COD?.nameEn).toBe("Democratic Republic of the Congo");
+      expect(byId.COG?.nameEn).toBe("Republic of the Congo");
+      expect(byId.ZAF?.nameEn).toBe("South Africa");
+    });
   });
 });

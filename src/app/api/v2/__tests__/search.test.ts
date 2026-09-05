@@ -143,6 +143,68 @@ describe("GET /api/v2/search (route)", () => {
     });
   });
 
+  // ── locale (ETNI-1857 / REQ-141) ────────────────────────────────────────
+  describe("lang", () => {
+    // @req REQ-141
+    it("forwards the locale to the handler", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?q=Chad&lang=en")
+      );
+
+      expect(res.status).toBe(200);
+      expect(ftsSearchHandler).toHaveBeenCalledWith(
+        expect.objectContaining({ q: "Chad", lang: "en" })
+      );
+    });
+
+    // @req REQ-141
+    it("rejects a locale the atlas does not publish without calling the handler", async () => {
+      const res = await GET(
+        new NextRequest("http://localhost/api/v2/search?q=Chad&lang=de")
+      );
+      const body = await res.json();
+
+      expect(res.status).toBe(400);
+      expect(body.errors[0]).toMatchObject({
+        code: "INVALID_PARAM",
+        field: "lang",
+      });
+      expect(ftsSearchHandler).not.toHaveBeenCalled();
+    });
+
+    // @req REQ-141
+    it("omits the lang key when the query parameter is absent", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      await GET(new NextRequest("http://localhost/api/v2/search?q=Chad"));
+
+      const params = (ftsSearchHandler as ReturnType<typeof vi.fn>).mock
+        .calls[0][0];
+      expect(params).not.toHaveProperty("lang");
+    });
+
+    // @req REQ-141
+    it("records the locale a search was served in", async () => {
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockEnvelope
+      );
+
+      await GET(
+        new NextRequest("http://localhost/api/v2/search?q=Chad&lang=en")
+      );
+
+      expect(searchQueryLog.write).toHaveBeenCalledWith(
+        expect.objectContaining({ lang: "en" })
+      );
+    });
+  });
+
   // ── query log (ETNI-1419 / REQ-002) ────────────────────────────────────
   // @req REQ-002
   it("logs the query and result count exactly once per executed search", async () => {
@@ -154,9 +216,13 @@ describe("GET /api/v2/search (route)", () => {
     await GET(req);
 
     expect(searchQueryLog.write).toHaveBeenCalledTimes(1);
+    // A request with no locale was served in French, the default the
+    // surface answered in before it had a second locale — and the log column
+    // has no default of its own, so the route has to say so.
     expect(searchQueryLog.write).toHaveBeenCalledWith({
       query: "Yoruba",
       resultCount: mockEnvelope.data.total,
+      lang: "fr",
     });
   });
 
@@ -743,6 +809,7 @@ describe("GET /api/v2/search (route)", () => {
       expect(searchQueryLog.write).toHaveBeenCalledWith({
         query: "Yoruba",
         resultCount: 1,
+        lang: "fr",
       });
     });
   });

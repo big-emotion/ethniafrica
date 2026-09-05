@@ -44,8 +44,14 @@
  *       families — a trigram similarity scan (migration 069) below the main
  *       search's own fuzzy floor, so the reader sees what the engine almost
  *       understood instead of a bare empty result; `leads` is always empty
- *       when `total` is greater than 0. Rate-limited per AR11 (IP: 60 RPM,
- *       public key: 600 RPM, partner key: 6 000 RPM).
+ *       when `total` is greater than 0. With `lang=en` (migration 082,
+ *       REQ-141) countries, language families and languages also match on
+ *       their English name — exact, then prefix, then substring, folded the
+ *       same way — and rows carry `nameEn` / `languageFamilyNameEn` beside
+ *       the French name; a people's name is invariant and ranks the same in
+ *       both locales. Without `lang` the search is served in French, exactly
+ *       as before. Rate-limited per AR11 (IP: 60 RPM, public key: 600 RPM,
+ *       partner key: 6 000 RPM).
  *     tags: [API v2 - Search]
  *     security:
  *       - BearerAuth: []
@@ -74,6 +80,20 @@
  *           `lens=quiz`, only quiz questions are queried and returned. Without
  *           this parameter, quiz questions are not queried and remain excluded
  *           from the main search stream.
+ *       - in: query
+ *         name: lang
+ *         required: false
+ *         schema:
+ *           type: string
+ *           enum: [en, fr]
+ *         description: >
+ *           Locale the search is served in (ETNI-1857, REQ-141). With `en`,
+ *           countries, language families and languages also match on their
+ *           English name and every result carries it beside the French one;
+ *           the cross-kind tie-break collates in English. Absent means
+ *           French, the surface's behaviour before it had a second locale.
+ *           Any other value is rejected with 400 rather than defaulted.
+ *         example: "en"
  *       - in: query
  *         name: familyId
  *         schema:
@@ -169,6 +189,7 @@ import { applyRateLimit } from "@/lib/api/rate-limit";
 import { createApiError } from "@/api/v2/utils/response";
 import { logger } from "@/lib/api/logger";
 import { searchQueryLog } from "@/lib/search/searchQueryLog";
+import { isTranslationLocale } from "@/lib/i18n/translationLocale";
 import type { FtsSearchParams } from "@/types/afrik";
 
 const VALID_CLASSIFICATION_STATUSES = new Set([
@@ -215,6 +236,19 @@ function parseParams(
       };
     }
     lens = lensRaw;
+  }
+
+  // lang — optional, one of the two published locales. An unknown value is
+  // refused rather than read as French: a caller that says `de` is asking
+  // for something the atlas does not publish, and silently answering in
+  // another language would hide that from it.
+  const langRaw = searchParams.get("lang");
+  let lang: FtsSearchParams["lang"];
+  if (langRaw !== null) {
+    if (!isTranslationLocale(langRaw)) {
+      return { error: "lang must be en or fr", field: "lang" };
+    }
+    lang = langRaw;
   }
 
   // q — required only when no relation scope is given. A relation on its own
@@ -296,6 +330,7 @@ function parseParams(
     ...(familyId !== null && { familyId }),
     ...(countryId !== null && { countryId }),
     ...(lens !== undefined && { lens }),
+    ...(lang !== undefined && { lang }),
   };
 
   return { params };
@@ -329,9 +364,12 @@ export async function GET(request: NextRequest) {
 
     const envelope = await ftsSearchHandler(params);
 
+    // The log column has no default (migration 082): a search with no
+    // `lang` was served in French, and the route is the one that knows.
     await searchQueryLog.write({
       query: params.q,
       resultCount: envelope.data.total,
+      lang: params.lang ?? "fr",
     });
 
     const duration = Date.now() - startTime;

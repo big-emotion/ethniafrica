@@ -168,74 +168,75 @@ ledger was rewritten during the 2026-08-31 repair: `001` → `019` were re-recor
 file versions after their legacy timestamp rows were cleared, and `020` → `049` were written by
 `db push`. All 49 are present, and the two schemas are column-for-column identical.
 
-| File                                          | Recette (`shmrjtnfbqzceovroqjj`)                              | Production (`jajggbeimfudpzcxytbb`)                    |
-| --------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------ |
-| `001_initial_schema.sql`                      | applied (`001`)                                               | applied                                                |
-| `002_add_enriched_fields.sql`                 | applied (`002`)                                               | applied                                                |
-| `003_add_unique_constraint_sources_title.sql` | applied (`003`) — but see the caveat below                    | applied                                                |
-| `004_change_ancient_names_to_jsonb.sql`       | applied (`004`)                                               | applied                                                |
-| `005_add_country_sections_4_and_6.sql`        | applied (`005`)                                               | applied                                                |
-| `006_afrik_schema.sql`                        | applied (`006`)                                               | applied                                                |
-| `007_remove_v1_add_v2_contribution_types.sql` | applied (`007`)                                               | applied                                                |
-| `008_user_roles.sql`                          | applied (`008`)                                               | applied                                                |
-| `009_module_zero_fabric.sql`                  | applied (`009`)                                               | applied                                                |
-| `010_classification_status_enum.sql`          | applied (`010`)                                               | applied                                                |
-| `011_assertions_triggers.sql`                 | applied (`011`)                                               | applied                                                |
-| `012_api_keys.sql`                            | applied (`012`)                                               | applied                                                |
-| `013_api_keys_tier.sql`                       | applied (`013`)                                               | applied                                                |
-| `014_flags_severity_auto.sql`                 | applied (`014`)                                               | applied                                                |
-| `015_module_zero_fabric_align.sql`            | applied (`015`)                                               | applied                                                |
-| `016_module_zero_triggers.sql`                | applied (`016`)                                               | applied                                                |
-| `017_editorial_doctrine_rls_lockdown.sql`     | applied (`017`)                                               | applied                                                |
-| `018_editorial_doctrine_seed.sql`             | applied (`018`)                                               | applied                                                |
-| `019_afrik_rls.sql`                           | applied (`019`)                                               | applied                                                |
-| `020_per_assertion_fiche_revisions.sql`       | applied (`020`)                                               | applied                                                |
-| `021_revisions_ddl.sql`                       | applied (`021`)                                               | applied                                                |
-| `022_flags_full_ddl.sql`                      | applied (`022`)                                               | applied                                                |
-| `023_moderator_schema.sql`                    | applied (`023`)                                               | applied                                                |
-| `024_pg_notify_cache_invalidation.sql`        | applied (`024`)                                               | applied                                                |
-| `025_search_vectors.sql`                      | applied (`025`)                                               | applied                                                |
-| `026_contributor_profiles.sql`                | applied (`026`)                                               | applied                                                |
-| `027_contributor_erasure.sql`                 | applied (`027`)                                               | applied                                                |
-| `028_language_tree_support.sql`               | applied (`028`)                                               | applied                                                |
-| `029_names_atlas.sql`                         | applied (`029`)                                               | applied                                                |
-| `030_people_relations.sql`                    | applied (`030`)                                               | applied                                                |
-| `031_normalized_sources.sql`                  | applied (`031`)                                               | applied                                                |
-| `032_oral_narratives.sql`                     | applied (`032`)                                               | applied                                                |
-| `033_rights_consent_access_controls.sql`      | applied (`033`)                                               | applied                                                |
-| `034_source_working_assets.sql`               | applied (`034`)                                               | applied                                                |
-| `035_migration_events.sql`                    | applied (`035`)                                               | applied                                                |
-| `036_quiz_engine.sql`                         | applied (`036`)                                               | applied                                                |
-| `037_colonization_event_types.sql`            | applied — ledger version `20260825211643`                     | applied                                                |
-| `038_user_roles_rls_recursion_fix.sql`        | applied — ledger version `20260825211702`                     | applied                                                |
-| `039_restore_sources_title_unique.sql`        | applied — ledger version `20260825211737`                     | applied                                                |
-| `040_assertion_references_rls.sql`            | applied (`040`)                                               | applied                                                |
-| `041_one_source_tier_vocabulary.sql`          | applied (`041`)                                               | applied                                                |
-| `042_migration_ledger_introspection.sql`      | applied (`042`)                                               | applied                                                |
-| `043_afrik_search_vector_weights.sql`         | applied (`043`) — see the repair note below                   | applied                                                |
-| `044_afrik_ranked_search.sql`                 | applied (`044`)                                               | applied                                                |
-| `045_afrik_countries_summary.sql`             | applied (`045`)                                               | applied                                                |
-| `046_quiz_stimulus.sql`                       | applied (`046`)                                               | applied                                                |
-| `047_quiz_bank_indexes.sql`                   | applied (`047`)                                               | applied                                                |
-| `048_antibot.sql`                             | applied (`048`)                                               | applied                                                |
-| `049_afrik_countries_name_official.sql`       | applied (`049`)                                               | applied                                                |
-| `050_search_query_log.sql`                    | not measured after `049`                                      | not measured after `049`                               |
-| `051_revision_publication.sql`                | pending — not applied by ETNI-70                              | pending — not applied by ETNI-70                       |
-| `052_afrik_search_prefix_unaccent.sql`        | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
-| `054_afrik_people_languages.sql`              | pending — human-applied via `supabase db push`, recette first | pending — human-applied via `supabase db push`, second |
-| `056_afrik_language_family_search_vector.sql` | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
-| `058_afrik_people_prose_search_vector.sql`    | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
-| `060_afrik_spelling_aliases.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
-| `061_name_alliances.sql`                      | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
-| `062_restore_038_rls_comments.sql`            | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
-| `063_afrik_search_trigram.sql`                | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
-| `066_afrik_search_patronymes.sql`             | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
-| `068_afrik_search_languages.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
-| `069_unified_search_surface.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
-| `070_afrik_search_leads.sql`                  | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
-| `072_people_historical_affiliation.sql`       | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
-| `073_afrik_media.sql`                         | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                |
-| `078_revoke_iso_code_questions.sql`           | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand, **before** the code deploys   |
+| File                                          | Recette (`shmrjtnfbqzceovroqjj`)                              | Production (`jajggbeimfudpzcxytbb`)                              |
+| --------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `001_initial_schema.sql`                      | applied (`001`)                                               | applied                                                          |
+| `002_add_enriched_fields.sql`                 | applied (`002`)                                               | applied                                                          |
+| `003_add_unique_constraint_sources_title.sql` | applied (`003`) — but see the caveat below                    | applied                                                          |
+| `004_change_ancient_names_to_jsonb.sql`       | applied (`004`)                                               | applied                                                          |
+| `005_add_country_sections_4_and_6.sql`        | applied (`005`)                                               | applied                                                          |
+| `006_afrik_schema.sql`                        | applied (`006`)                                               | applied                                                          |
+| `007_remove_v1_add_v2_contribution_types.sql` | applied (`007`)                                               | applied                                                          |
+| `008_user_roles.sql`                          | applied (`008`)                                               | applied                                                          |
+| `009_module_zero_fabric.sql`                  | applied (`009`)                                               | applied                                                          |
+| `010_classification_status_enum.sql`          | applied (`010`)                                               | applied                                                          |
+| `011_assertions_triggers.sql`                 | applied (`011`)                                               | applied                                                          |
+| `012_api_keys.sql`                            | applied (`012`)                                               | applied                                                          |
+| `013_api_keys_tier.sql`                       | applied (`013`)                                               | applied                                                          |
+| `014_flags_severity_auto.sql`                 | applied (`014`)                                               | applied                                                          |
+| `015_module_zero_fabric_align.sql`            | applied (`015`)                                               | applied                                                          |
+| `016_module_zero_triggers.sql`                | applied (`016`)                                               | applied                                                          |
+| `017_editorial_doctrine_rls_lockdown.sql`     | applied (`017`)                                               | applied                                                          |
+| `018_editorial_doctrine_seed.sql`             | applied (`018`)                                               | applied                                                          |
+| `019_afrik_rls.sql`                           | applied (`019`)                                               | applied                                                          |
+| `020_per_assertion_fiche_revisions.sql`       | applied (`020`)                                               | applied                                                          |
+| `021_revisions_ddl.sql`                       | applied (`021`)                                               | applied                                                          |
+| `022_flags_full_ddl.sql`                      | applied (`022`)                                               | applied                                                          |
+| `023_moderator_schema.sql`                    | applied (`023`)                                               | applied                                                          |
+| `024_pg_notify_cache_invalidation.sql`        | applied (`024`)                                               | applied                                                          |
+| `025_search_vectors.sql`                      | applied (`025`)                                               | applied                                                          |
+| `026_contributor_profiles.sql`                | applied (`026`)                                               | applied                                                          |
+| `027_contributor_erasure.sql`                 | applied (`027`)                                               | applied                                                          |
+| `028_language_tree_support.sql`               | applied (`028`)                                               | applied                                                          |
+| `029_names_atlas.sql`                         | applied (`029`)                                               | applied                                                          |
+| `030_people_relations.sql`                    | applied (`030`)                                               | applied                                                          |
+| `031_normalized_sources.sql`                  | applied (`031`)                                               | applied                                                          |
+| `032_oral_narratives.sql`                     | applied (`032`)                                               | applied                                                          |
+| `033_rights_consent_access_controls.sql`      | applied (`033`)                                               | applied                                                          |
+| `034_source_working_assets.sql`               | applied (`034`)                                               | applied                                                          |
+| `035_migration_events.sql`                    | applied (`035`)                                               | applied                                                          |
+| `036_quiz_engine.sql`                         | applied (`036`)                                               | applied                                                          |
+| `037_colonization_event_types.sql`            | applied — ledger version `20260825211643`                     | applied                                                          |
+| `038_user_roles_rls_recursion_fix.sql`        | applied — ledger version `20260825211702`                     | applied                                                          |
+| `039_restore_sources_title_unique.sql`        | applied — ledger version `20260825211737`                     | applied                                                          |
+| `040_assertion_references_rls.sql`            | applied (`040`)                                               | applied                                                          |
+| `041_one_source_tier_vocabulary.sql`          | applied (`041`)                                               | applied                                                          |
+| `042_migration_ledger_introspection.sql`      | applied (`042`)                                               | applied                                                          |
+| `043_afrik_search_vector_weights.sql`         | applied (`043`) — see the repair note below                   | applied                                                          |
+| `044_afrik_ranked_search.sql`                 | applied (`044`)                                               | applied                                                          |
+| `045_afrik_countries_summary.sql`             | applied (`045`)                                               | applied                                                          |
+| `046_quiz_stimulus.sql`                       | applied (`046`)                                               | applied                                                          |
+| `047_quiz_bank_indexes.sql`                   | applied (`047`)                                               | applied                                                          |
+| `048_antibot.sql`                             | applied (`048`)                                               | applied                                                          |
+| `049_afrik_countries_name_official.sql`       | applied (`049`)                                               | applied                                                          |
+| `050_search_query_log.sql`                    | not measured after `049`                                      | not measured after `049`                                         |
+| `051_revision_publication.sql`                | pending — not applied by ETNI-70                              | pending — not applied by ETNI-70                                 |
+| `052_afrik_search_prefix_unaccent.sql`        | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
+| `054_afrik_people_languages.sql`              | pending — human-applied via `supabase db push`, recette first | pending — human-applied via `supabase db push`, second           |
+| `056_afrik_language_family_search_vector.sql` | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
+| `058_afrik_people_prose_search_vector.sql`    | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
+| `060_afrik_spelling_aliases.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
+| `061_name_alliances.sql`                      | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
+| `062_restore_038_rls_comments.sql`            | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
+| `063_afrik_search_trigram.sql`                | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
+| `066_afrik_search_patronymes.sql`             | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
+| `068_afrik_search_languages.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
+| `069_unified_search_surface.sql`              | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
+| `070_afrik_search_leads.sql`                  | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
+| `072_people_historical_affiliation.sql`       | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
+| `073_afrik_media.sql`                         | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
+| `078_revoke_iso_code_questions.sql`           | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand, **before** the code deploys             |
+| `082_afrik_search_english_names.sql`          | pending — applies on merge via `migrate-recette.yml`          | pending — the Release `migrate` job, **before** the code deploys |
 
 > **REQ-127 (ETNI-1384).** `072` adds a `CHECK` constraint on `afrik_peoples.content` enforcing
 > the same shape `checkHistoricalAffiliationModel` (FR111) already enforces on the JSON corpus:
@@ -270,6 +271,19 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 > as `050`); `069` is the next free version after `068_afrik_search_languages`. Until production
 > carries `069`, quiz questions and the family ladder rank on recette and not there, and a merged
 > result list on production keeps ordering by kind.
+
+> **REQ-141 / REQ-143 (ETNI-1857).** `082` is the per-locale half of search. It adds
+> `afrik_countries.name_en` (filled by the corpus reload from the fiches' `nameEn`) and
+> `search_query_log.lang` (`NOT NULL`, `en | fr`, **no default** — existing rows are backfilled to
+> `fr` in the same statement block), and re-issues `afrik_search_peoples`, `_countries`,
+> `_language_families` and `_languages` with a trailing `p_lang TEXT DEFAULT 'fr'`. Each old
+> signature is **dropped before** the new one is created: a second parameter list beside the
+> first is an overload, and PostgREST answers an overloaded name with `PGRST203`. The default
+> keeps every existing caller valid, so the order between this migration and the code deploy only
+> matters for English requests — the query layer sends `p_lang` only when the request carries a
+> locale, and a French request is served identically by either definition. Verify with
+> `SELECT proname, count(*) FROM pg_proc WHERE proname LIKE 'afrik_search_%' GROUP BY 1` — every
+> count must be 1 — and with an insert into `search_query_log` that omits `lang`, which must fail.
 
 > **REQ-136 (ETNI-1506).** `068` gives the language entity (`afrik_languages`) the search
 > apparatus every other atlas entity already has: a `name_unaccent_vector` column (mirroring

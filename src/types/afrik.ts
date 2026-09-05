@@ -9,6 +9,7 @@
 
 import type { SourceTier } from "@/types/sources";
 import type { PersonId, PersonPeopleLink } from "@/types/persons";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 
 // ==========================================
 // STABLE IDENTIFIERS (IMMUTABLE)
@@ -68,6 +69,12 @@ export type ClassificationStatus =
 export interface Country {
   id: CountryId; // ISO 3166-1 alpha-3 (IMMUTABLE)
   nameFr: string;
+  /**
+   * English name of ordinary use in the state's own English form ("Chad",
+   * "Côte d'Ivoire", "The Gambia") — docs/editorial/translation-classes.md.
+   * Optional only because the column is empty until the corpus is reloaded.
+   */
+  nameEn?: string;
   nameOfficial?: string;
   /**
    * The chapeau: what a reader takes away if they read nothing else.
@@ -708,6 +715,13 @@ export interface FtsSearchParams {
   familyId?: string;
   /** Scope to the peoples present in one country (ISO 3166-1 alpha-3). */
   countryId?: string;
+  /**
+   * Locale the search is served in (ETNI-1857). Under `en` the ranking
+   * functions read the English names too (migration 082) and the cross-kind
+   * tie-break collates in English. Absent means French — the only locale
+   * the surface answered in before it had a second one.
+   */
+  lang?: TranslationLocale;
 }
 
 /**
@@ -722,6 +736,12 @@ export interface FtsSearchParams {
  */
 export interface RankedPeople extends People {
   languageFamilyName: string | null;
+  /**
+   * The family's English name (migration 082), so a card served in English
+   * can label the family chip without a second request. Null when the
+   * family has none or the people has no family.
+   */
+  languageFamilyNameEn: string | null;
   confidence: number | null;
   relevance: number;
   exactMatch: boolean;
@@ -838,8 +858,11 @@ export interface RankedSearchHit {
 export interface RankedLanguage {
   id: LanguageId;
   name: string;
+  /** The fiche's `content.nameEn`, projected by migration 082; null when absent. */
+  nameEn: string | null;
   familyId: LanguageFamilyId;
   familyName: string | null;
+  familyNameEn: string | null;
   content: LanguageContent;
   relevance: number;
   exactMatch: boolean;

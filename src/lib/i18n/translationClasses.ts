@@ -284,9 +284,12 @@ export const TRANSLATION_CLASSES: Readonly<
   "modele-pays.json": {
     "_meta.*": "invariant",
     id: "invariant",
-    // Locale-bound by its key; the English display name is class 4, read
-    // from Admin0Country.name through getAdmin0Name(id, "en").
+    // Both locale-bound by their key. nameEn is corpus data, not a
+    // display-time lookup: the search ladder reads it in SQL (migration 082),
+    // and it follows the state's own English usage, which Admin0Country.name
+    // (Natural Earth: "Ivory Coast", "Cape Verde") does not.
     nameFr: "invariant",
+    nameEn: "invariant",
     // A protocol name whose English form is a convention of the state, not a
     // translation of the French one.
     nameOfficial: "review_required",

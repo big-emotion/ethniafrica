@@ -30,6 +30,7 @@ import type {
   PersonPeopleLink,
   PersonPeopleRelationLabel,
 } from "@/types/persons";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 
 /**
  * Ranked search across the main atlas stream or the dedicated quiz lens.
@@ -72,11 +73,19 @@ export async function ftsSearchEntities(
     sinceVerifiedAfter,
     familyId,
     countryId,
+    lang,
   } = params;
 
   const supabase = createServerClient();
   const text = q?.trim() ?? "";
   const quizOnly = lens === "quiz";
+  // Sent only when the request names a locale. The four name-bearing
+  // functions take `p_lang` since migration 082, with a default, so a call
+  // without it is served identically by the old and the new definition —
+  // whereas a named parameter the old definition does not know answers
+  // PGRST202. A French request therefore survives the rollout window in
+  // either order; only an English one needs the migration live first.
+  const locale = lang !== undefined ? { p_lang: lang } : {};
 
   const [
     peopleResult,
@@ -97,6 +106,7 @@ export async function ftsSearchEntities(
           p_since_verified_after: sinceVerifiedAfter ?? null,
           p_family_id: familyId ?? null,
           p_country_id: countryId ?? null,
+          ...locale,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
     !quizOnly && text
@@ -104,6 +114,7 @@ export async function ftsSearchEntities(
           p_q: text,
           p_limit: limit,
           p_offset: offset,
+          ...locale,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
     !quizOnly && text
@@ -125,6 +136,7 @@ export async function ftsSearchEntities(
           p_q: text,
           p_limit: limit,
           p_offset: offset,
+          ...locale,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
     quizOnly && text
@@ -139,6 +151,7 @@ export async function ftsSearchEntities(
           p_q: text,
           p_limit: limit,
           p_offset: offset,
+          ...locale,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
   ]);
@@ -224,14 +237,17 @@ export async function ftsSearchEntities(
     patronymes,
     quizzes,
     languages,
-    results: mergeIntoOneRanking({
-      peoples,
-      countries,
-      families,
-      persons,
-      patronymes,
-      quizzes,
-    }),
+    results: mergeIntoOneRanking(
+      {
+        peoples,
+        countries,
+        families,
+        persons,
+        patronymes,
+        quizzes,
+      },
+      lang ?? "fr"
+    ),
     peoplesTotal: peoplePayload.total,
     countriesTotal: countryPayload.total,
     familiesTotal: familyPayload.total,
@@ -294,6 +310,7 @@ function toRankedPeople(row: Record<string, unknown>): RankedPeople {
     nameMain: row.nameMain as string,
     languageFamilyId: row.languageFamilyId as string,
     languageFamilyName: (row.languageFamilyName as string) ?? null,
+    languageFamilyNameEn: (row.languageFamilyNameEn as string) ?? null,
     currentCountries: (row.currentCountries as string[]) ?? [],
     classificationStatus:
       (row.classificationStatus as RankedPeople["classificationStatus"]) ??
@@ -313,6 +330,9 @@ function toRankedCountry(row: Record<string, unknown>): RankedCountry {
   return {
     id: row.id as string,
     nameFr: row.nameFr as string,
+    // Same idiom as the country query mappers: the column is NULL until the
+    // corpus reload, and a missing English name is an absence, not a label.
+    nameEn: (row.nameEn as string) || undefined,
     etymology: (row.etymology as string) || undefined,
     nameOriginActor: (row.nameOriginActor as string) || undefined,
     content: (row.content as Record<string, unknown>) || {},
@@ -460,8 +480,10 @@ function toRankedLanguage(row: Record<string, unknown>): RankedLanguage {
   return {
     id: row.id as string,
     name: row.name as string,
+    nameEn: (row.nameEn as string) ?? null,
     familyId: row.familyId as string,
     familyName: (row.familyName as string) ?? null,
+    familyNameEn: (row.familyNameEn as string) ?? null,
     content: (row.content as RankedLanguage["content"]) || {},
     relevance: typeof row.relevance === "number" ? row.relevance : 0,
     exactMatch: row.exactMatch === true,
@@ -512,10 +534,15 @@ interface RankedGroups {
  * Ties are frequent by design — the score bands a match class, so two exact
  * hits of different kinds routinely land on the same value — and an unstable
  * tie-break would reshuffle a result page between two identical requests.
- * Name in French collation, then id, gives one deterministic order; "fr"
- * matters because a byte comparison sorts every accented name after "Z".
+ * Name in the served locale's collation, then id, gives one deterministic
+ * order; a locale matters at all because a byte comparison sorts every
+ * accented name after "Z". The name compared stays the French one every
+ * consumer keys on — the locale only chooses how it collates.
  */
-function mergeIntoOneRanking(groups: RankedGroups): RankedSearchHit[] {
+function mergeIntoOneRanking(
+  groups: RankedGroups,
+  collation: TranslationLocale
+): RankedSearchHit[] {
   const hits: RankedSearchHit[] = [
     ...groups.peoples.map((hit) =>
       toSearchHit("people", hit.id, hit.nameMain, hit)
@@ -540,7 +567,7 @@ function mergeIntoOneRanking(groups: RankedGroups): RankedSearchHit[] {
   return hits.sort(
     (a, b) =>
       b.normalizedScore - a.normalizedScore ||
-      a.name.localeCompare(b.name, "fr") ||
+      a.name.localeCompare(b.name, collation) ||
       a.id.localeCompare(b.id)
   );
 }

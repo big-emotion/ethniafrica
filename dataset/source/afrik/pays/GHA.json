@@ -1,6 +1,7 @@
 {
   "id": "GHA",
   "nameFr": "Ghana",
+  "nameEn": "Ghana",
   "nameOfficial": "République du Ghana (Republic of Ghana)",
   "summary": "Le Ghana a choisi en 1957 le nom d'un empire qui ne se trouvait pas sur son territoire : le Wagadu, situé plus au nord-ouest. Premier État d'Afrique subsaharienne à accéder à l'indépendance, il succède à la colonie britannique de la Côte-de-l'Or sur un sol qui fut celui des royaumes akan — Ashanti, Denkyira, Akwamu — et des peuples mole-dagbani, ewe et ga-dangme. Le kente et l'adinkra en sont les signatures visuelles.",
   "etymology": "Le nom \"Ghana\" a été choisi lors de l'indépendance en 1957 en référence à l'empire du Ghana (Wagadu), un ancien empire ouest-africain (IIIe-XIIIe siècles). Cependant, l'empire historique du Ghana était situé en Mauritanie et au Mali actuels, pas dans le territoire du Ghana moderne. Le nom est donc symbolique et ne correspond pas à l'ancienne localisation de l'empire.",
@@ -132,16 +133,47 @@
     ],
     "culture": {
       "mainLanguages": [
-        { "name": "Anglais", "isoCode": "eng", "isPrimary": true },
-        { "name": "Akan", "isoCode": "aka" },
-        { "name": "Ewe", "isoCode": "ewe" },
-        { "name": "Ga", "isoCode": "gaa" },
-        { "name": "Dagbani", "isoCode": "dag" },
-        { "name": "Dagaare", "isoCode": "dga" },
-        { "name": "Dangme", "isoCode": "ada" },
-        { "name": "Gonja", "isoCode": "gjn" },
-        { "name": "Nzema", "isoCode": "nzi" },
-        { "name": "Kasem", "isoCode": "xsm" }
+        {
+          "name": "Anglais",
+          "isoCode": "eng",
+          "isPrimary": true
+        },
+        {
+          "name": "Akan",
+          "isoCode": "aka"
+        },
+        {
+          "name": "Ewe",
+          "isoCode": "ewe"
+        },
+        {
+          "name": "Ga",
+          "isoCode": "gaa"
+        },
+        {
+          "name": "Dagbani",
+          "isoCode": "dag"
+        },
+        {
+          "name": "Dagaare",
+          "isoCode": "dga"
+        },
+        {
+          "name": "Dangme",
+          "isoCode": "ada"
+        },
+        {
+          "name": "Gonja",
+          "isoCode": "gjn"
+        },
+        {
+          "name": "Nzema",
+          "isoCode": "nzi"
+        },
+        {
+          "name": "Kasem",
+          "isoCode": "xsm"
+        }
       ],
       "culturalTraditions": "Musique traditionnelle (highlife, hiplife), danse traditionnelle, poésie orale, artisanat (kente, adinkra), architecture traditionnelle, festivals (Homowo, Akwasidae)",
       "dominantReligions": "Christianisme (protestant majoritaire, catholique), islam (minorité, surtout au nord), croyances traditionnelles (syncrétisme)",

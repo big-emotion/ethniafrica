@@ -1,3 +1,4 @@
+import { isLocale } from "@/lib/locale";
 import type { Language } from "@/types/shared";
 
 /**
@@ -9,3 +10,13 @@ import type { Language } from "@/types/shared";
  * the union is never maintained in two places.
  */
 export type TranslationLocale = Language;
+
+/**
+ * Whether a request value names a locale the atlas publishes. Delegates to
+ * the one allow-list in src/lib/locale.ts so the API cannot accept a locale
+ * the site does not serve.
+ */
+// @req REQ-141
+export function isTranslationLocale(value: string): value is TranslationLocale {
+  return isLocale(value);
+}

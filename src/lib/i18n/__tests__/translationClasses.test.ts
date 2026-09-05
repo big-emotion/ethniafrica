@@ -78,6 +78,7 @@ describe("class doctrine", () => {
       ["modele-peuple.json", "content.languages.isoCodes[]"],
       ["modele-peuple.json", "content.demography.totalPopulation"],
       ["modele-pays.json", "nameFr"],
+      ["modele-pays.json", "nameEn"],
       ["modele-pays.json", "content.majorPeoples[].exonyms[]"],
       ["modele-linguistique.json", "nameEn"],
       ["modele-linguistique.json", "content.decolonialHeader.selfAppellation"],

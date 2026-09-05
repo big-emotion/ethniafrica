@@ -32,6 +32,7 @@ export async function getAllAfrikCountries(
   return (data || []).map((row) => ({
     id: row.id,
     nameFr: row.name_fr,
+    nameEn: row.name_en || undefined,
     nameOfficial: row.name_official || undefined,
     summary: row.summary || undefined,
     etymology: row.etymology || undefined,
@@ -108,6 +109,7 @@ export async function getAfrikCountryById(
   return {
     id: data.id,
     nameFr: data.name_fr,
+    nameEn: data.name_en || undefined,
     nameOfficial: data.name_official || undefined,
     summary: data.summary || undefined,
     etymology: data.etymology || undefined,

@@ -523,6 +523,10 @@ describe("migrateAfrikToDatabase", () => {
       ({ table }) => table === "afrik_countries"
     )!;
     expect(countryOperation.row.content).toEqual(coteDIvoire.content);
+    // An unmapped field never errors, it simply never arrives (049); the
+    // English name has to be asserted here or it can vanish the same way.
+    expect(countryOperation.row.name_en).toBe(coteDIvoire.nameEn);
+    expect(countryOperation.row.name_en).toBe("Côte d'Ivoire");
     expect(database.operations[0].row).not.toHaveProperty("created_at");
     expect(database.operations[1].row).not.toHaveProperty("created_at");
     expect(countryOperation.row).not.toHaveProperty("created_at");

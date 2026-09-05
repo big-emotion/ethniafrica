@@ -8,7 +8,7 @@ const options: swaggerJsdoc.Options = {
     openapi: "3.1.0",
     info: {
       title: `${PRODUCT_NAME} API v2 - AFRIK`,
-      version: "2.2.0",
+      version: "2.3.0",
       description:
         "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.\n\n" +
         "## Response envelope\n\n" +
@@ -457,19 +457,19 @@ const options: swaggerJsdoc.Options = {
               type: "array",
               items: { $ref: "#/components/schemas/PeopleV2" },
               description:
-                "Matching peoples, ranked. Each carries relevance, exactMatch, normalizedScore, confidence, languageFamilyName and a snippet whose matched terms are wrapped in [[ ]].",
+                "Matching peoples, ranked. Each carries relevance, exactMatch, normalizedScore, confidence, languageFamilyName, languageFamilyNameEn (migration 082; null when the family has no English name) and a snippet whose matched terms are wrapped in [[ ]].",
             },
             countries: {
               type: "array",
               items: { $ref: "#/components/schemas/CountryV2" },
               description:
-                "Matching countries, ranked by ts_rank with name_fr outranking etymology. Each carries relevance, exactMatch, normalizedScore and a snippet. Empty when the request carries only a relation scope.",
+                "Matching countries, ranked by ts_rank with name_fr outranking etymology; with `lang=en` the accent-folded English name also matches (exact 1.0 > prefix 0.6 > substring 0.3, migration 082). Each carries nameEn beside nameFr, relevance, exactMatch, normalizedScore and a snippet. Empty when the request carries only a relation scope.",
             },
             families: {
               type: "array",
               items: { $ref: "#/components/schemas/LanguageFamilyV2" },
               description:
-                "Matching language families, ranked by afrik_search_language_families (migration 069): accent-insensitive exact (1.0) > prefix (0.6) > substring (0.3) on the French name, then a prose tier (0.1) through search_vector for a term that appears only in the decolonial text (DEC-028). Each carries relevance, exactMatch, normalizedScore and a snippet.",
+                "Matching language families, ranked by afrik_search_language_families (migration 069): accent-insensitive exact (1.0) > prefix (0.6) > substring (0.3) on the locale's name — name_fr, or name_en with `lang=en` (migration 082) — then a prose tier (0.1) through search_vector for a term that appears only in the decolonial text (DEC-028). Each carries nameEn beside nameFr, relevance, exactMatch, normalizedScore and a snippet.",
             },
             persons: {
               type: "array",
@@ -493,13 +493,13 @@ const options: swaggerJsdoc.Options = {
               type: "array",
               items: { $ref: "#/components/schemas/SearchHitV2" },
               description:
-                "Canonical page for the selected mode, ordered on normalizedScore descending, ties broken on the French collation of the name then on the id. Without `lens`, it merges the main stream and excludes quiz questions; with `lens=quiz`, it contains only quiz questions.",
+                "Canonical page for the selected mode, ordered on normalizedScore descending, ties broken on the name collated in the served locale (`lang`, French when absent) then on the id. Without `lens`, it merges the main stream and excludes quiz questions; with `lens=quiz`, it contains only quiz questions.",
             },
             languages: {
               type: "array",
               items: { $ref: "#/components/schemas/LanguageSearchResultV2" },
               description:
-                "Matching languages (REQ-136), ranked by afrik_search_languages (migration 068): exact match on the ISO 639-3 id or the name, then a prefix/accent-insensitive lexical match. Each carries relevance, exactMatch, familyName and a snippet.",
+                "Matching languages (REQ-136), ranked by afrik_search_languages (migration 068): exact match on the ISO 639-3 id or the name, then a prefix/accent-insensitive lexical match; with `lang=en` the fiche's English name also matches (migration 082). Each carries nameEn, familyName, familyNameEn, relevance, exactMatch and a snippet.",
             },
             peoplesTotal: {
               type: "integer",
@@ -856,6 +856,12 @@ const options: swaggerJsdoc.Options = {
               type: "string",
               example: "Zimbabwe",
             },
+            nameEn: {
+              type: "string",
+              description:
+                "English name of ordinary use, in the state's own English form (Chad, Côte d'Ivoire, Cabo Verde, The Gambia). Absent until the corpus reload fills migration 082's column.",
+              example: "Zimbabwe",
+            },
             nameOfficial: {
               type: "string",
               example: "Republic of Zimbabwe",
@@ -1061,12 +1067,22 @@ const options: swaggerJsdoc.Options = {
               type: "string",
               example: "Swahili",
             },
+            nameEn: {
+              type: ["string", "null"],
+              description:
+                "The fiche's English name (content.nameEn), matched under `lang=en` (migration 082); null when the fiche carries none.",
+              example: "Swahili",
+            },
             familyId: {
               type: "string",
               description: "Identifiant FLG_*",
               example: "FLG_NIGER_CONGO",
             },
             familyName: {
+              type: ["string", "null"],
+              example: "Niger-Congo",
+            },
+            familyNameEn: {
               type: ["string", "null"],
               example: "Niger-Congo",
             },
