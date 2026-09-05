@@ -1,0 +1,240 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier fondé sur des sources externes académiques, archivistiques et communautaires ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_DIABY",
+  "nameMain": "Diaby",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Diaby",
+      "attestations": [
+        { "countryId": "GIN", "sourceRefs": ["forebears-diaby"] },
+        { "countryId": "MLI", "sourceRefs": ["forebears-diaby"] },
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["forebears-diaby", "djakodico-diakhanke-history"]
+        },
+        { "countryId": "CIV", "sourceRefs": ["forebears-diaby"] },
+        { "countryId": "GMB", "sourceRefs": ["ncac-jaabi-faraba-banta"] }
+      ]
+    },
+    {
+      "spelling": "Diabi",
+      "attestations": [
+        { "countryId": "GIN", "sourceRefs": ["originenom-diaby"] },
+        { "countryId": "MLI", "sourceRefs": ["originenom-diaby"] },
+        { "countryId": "SEN", "sourceRefs": ["originenom-diaby"] },
+        { "countryId": "CIV", "sourceRefs": ["originenom-diaby"] }
+      ]
+    },
+    {
+      "spelling": "Jabbi",
+      "attestations": [
+        { "countryId": "GMB", "sourceRefs": ["ncac-jaabi-faraba-banta"] }
+      ]
+    },
+    {
+      "spelling": "Diakhaby",
+      "attestations": [
+        {
+          "countryId": "SEN",
+          "sourceRefs": [
+            "djakodico-diakhanke-history",
+            "sunugox-diakhanke-history"
+          ]
+        },
+        { "countryId": "GIN", "sourceRefs": ["djakodico-diakhanke-history"] }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Le jamu est un nom de clan patrilinéaire : il désigne l'appartenance à un groupe de descendance, et non une filiation individuelle au père.",
+        "claimStatus": "established",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      },
+      {
+        "claim": "Le dictionnaire des jamuw range Jaabi parmi les clans de la subdivision Wago, l'une des trois grandes divisions de la société soninké dont l'origine est rapportée au Wagadu, l'ancien empire du Ghana, et rattache le jamu par la généalogie à un fils de Dinga, l'ancêtre fondateur du Wagadu.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["bamadaba-jamuw"]
+      },
+      {
+        "claim": "Une source communautaire diakhanké rapporte une généalogie faisant descendre les Diaby du calife Omar Ibn al-Khattab, compagnon du prophète Mahomet, rattachant ainsi la lignée à une origine arabo-islamique distincte de la tradition soninké du Wagadu ; elle présente elle-même cette généalogie comme plausible mais non prouvée, faute de preuve historique tranchant entre une origine arabo-berbère et une origine plus ancienne.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["sunugox-diakhanke-history"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SONINKE",
+      "status": "attested",
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "soninkara-noms-soninke",
+        "forebears-diaby"
+      ]
+    },
+    {
+      "peopleId": "PPL_JAHANKA",
+      "status": "supposed",
+      "sourceRefs": [
+        "djakodico-diakhanke-history",
+        "sunugox-diakhanke-history",
+        "forebears-diaby"
+      ]
+    },
+    {
+      "peopleId": "PPL_MALINKE",
+      "status": "supposed",
+      "sourceRefs": ["bamadaba-jamuw", "originenom-diaby"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "GIN",
+      "status": "attested",
+      "sourceRefs": ["forebears-diaby", "djakodico-diakhanke-history"]
+    },
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": ["forebears-diaby", "bamadaba-jamuw"]
+    },
+    {
+      "countryId": "SEN",
+      "status": "attested",
+      "sourceRefs": [
+        "forebears-diaby",
+        "djakodico-diakhanke-history",
+        "sunugox-diakhanke-history"
+      ]
+    },
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["forebears-diaby"]
+    },
+    {
+      "countryId": "GMB",
+      "status": "attested",
+      "sourceRefs": ["ncac-jaabi-faraba-banta"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": {
+    "value": "Dans le dictionnaire des jamuw du Bamadaba, l'entrée correspondant à Diaby (transcrite Jaabi) porte deux marqueurs de statut, mòri et wage. Le premier désigne, dans les sociétés manding, une lignée tenue par hérédité à une piété musulmane rigoureuse et, dans son acception la plus stricte, un lettré dont le savoir religieux fonde l'autorité ; le second est un marqueur de statut distinct que le dictionnaire ne glose pas. Cette indication converge avec une tradition rapportée par des sources communautaires diakhanké, selon laquelle les Diaby, parfois sous la forme composée Diaby-Gassama ou Diakhaby, comptent parmi les lignées intégrées à la confédération cléricale diakhanké, un groupe de lettrés musulmans héréditaires ; le même dictionnaire ne porte cependant pas, pour cette entrée, le marqueur qu'il réserve par ailleurs à d'autres clans diakhanké bien attestés, ce qui laisse ce rapprochement au milieu d'une convergence plutôt que d'une attestation unique et concordante.",
+    "sourceRefs": [
+      "bamadaba-jamuw",
+      "launay-miran-2000-mory",
+      "djakodico-diakhanke-history",
+      "sunugox-diakhanke-history"
+    ]
+  },
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms claniques est signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. 375 entrées au format MDF, consultées sur le fichier complet. Le fichier ne livre aucune légende de ses marqueurs. L'entrée Jaabi porte deux marqueurs de statut (mòri, wage) et trois marqueurs de groupe non légendés (son, xas, m) ; le marqueur son est confirmé par la notice de l'entrée Wago, qui énumère nommément Jaabi parmi les jamuw d'une des trois grandes subdivisions soninké issues du Wagadu, et le marqueur m est retenu comme indice malinké par comparaison avec l'entrée Kéyità, qui porte le même marqueur et qu'une autre fiche de cet atlas documente comme jamu malinké ; le marqueur xas n'a pu être recoupé et n'est donc pas exploité ici. L'entrée Jaabi ne porte aucun marqueur d'alliance de senankuya, et aucune autre entrée du fichier ne la cite en retour."
+    },
+    {
+      "sourceKey": "jansen-sunjata-paradigm",
+      "title": "Beyond the Mali Empire — A New Paradigm for the Sunjata Epic",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jansen, Jan, Universiteit Leiden. Travail critique sur la transmission de l'épopée et sur le jamu comme institution sociale plutôt que comme mémoire historique ; utilisé ici pour la nature du jamu, non pour dater un ancêtre."
+    },
+    {
+      "sourceKey": "launay-miran-2000-mory",
+      "title": "Beyond Mande Mory: Islam and Ethnicity in Côte d'Ivoire",
+      "url": "https://shs.hal.science/halshs-01062678",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Launay, Robert et Miran, Marie, Paideuma 46, 2000, p. 63-84 (citation à la p. 66) ; dépôt ouvert HAL-SHS. Définit le terme manding mòri (bambara mórí) comme désignant, au sens restreint, un lettré musulman habilité par son savoir religieux et, plus largement, toute personne appartenant par hérédité à une lignée tenue à une piété sunnite rigoureuse. Utilisé ici pour gloser le marqueur mòri du dictionnaire des jamuw, non pour rattacher un clan nommé à cette fonction : cette attribution-là vient d'une autre source."
+    },
+    {
+      "sourceKey": "djakodico-diakhanke-history",
+      "title": "Histoire des Diakhankhé",
+      "url": "https://www.djakodico.com/history.php",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Site communautaire consacré au patrimoine diakhanké, sans auteur individuel identifié. Rapporte que la confédération diakhanké, fondée autour de quatre clans soninké (Souaré, Dramé, Fofana, Fadiga), s'est élargie à d'autres lignées dont les Diakhité-Kaba, les Sylla, les Diaby-Gassama, les Dansokho, les Diakhaby, les Badio et les Sakho ; situe les Diaby à Didé, au Sénégal, et rapporte une généalogie légendaire qui les fait descendre du calife Omar Ibn al-Khattab. Contenu de mémoire communautaire, non adossé à une bibliographie académique consultable."
+    },
+    {
+      "sourceKey": "sunugox-diakhanke-history",
+      "title": "Un regard sur les Diakhankés",
+      "url": "https://sunugox.info/histoire/histoire-regard-diakhankes",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Portail d'actualités sénégalais (direction de publication Y. Cissokho, rédaction en chef Mame Anta Diamé), article de mémoire sans auteur signé ni bibliographie académique. Reprend la même liste de clans ajoutés à la confédération diakhanké que la source précédente (Diakhité-Kaba, Sylla, Gassama-Diaby, Dansokho, Diakhaby, Badio, Sakho) et la même généalogie légendaire remontant à Omar Ibn al-Khattab ; le même texte est aussi publié sur un site miroir."
+    },
+    {
+      "sourceKey": "forebears-diaby",
+      "title": "Diaby — origine, signification et incidence du nom de famille",
+      "url": "https://forebears.io/fr/surnames/diaby",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Agrégateur généalogique mondial. Donne une incidence mondiale d'environ 181 976 porteurs et un classement par pays fondé sur des registres publics : Guinée (61 318 porteurs, 1 personne sur 193), Mali (55 564, 1 sur 305), Côte d'Ivoire (36 332, 1 sur 635), Sénégal (16 882, 1 sur 864), France (4 430, 1 sur 14 994, diaspora). Indique qu'en majorité les porteurs du nom sont d'ethnies diakhanké et soninké, sans citer la source de cette affirmation."
+    },
+    {
+      "sourceKey": "soninkara-noms-soninke",
+      "title": "Les noms de famille avec leur jammu kare",
+      "url": "http://www.soninkara.com/societe/organisation-sociale/les-noms-de-famille-avec-leur-jammu-kare.html",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Portail communautaire soninké, page d'organisation sociale sans auteur académique identifié. Range Diaby parmi les noms de famille soninké aux côtés de Cissé, Sylla, Diawara, Traoré, Dembélé, Sakho et d'autres, dans une liste associant chaque patronyme à un second nom (jammu kare)."
+    },
+    {
+      "sourceKey": "originenom-diaby",
+      "title": "Nom de famille Diaby : signification et origine",
+      "url": "https://originenom.com/en/origine-du-nom/diaby/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Site généraliste de signification des noms de famille, contenu non signé et non sourcé académiquement. Rattache Diaby aux Mandingues, aux Malinké et aux Bambara sans preuve documentaire, propose plusieurs significations concurrentes non tranchées, et situe la répartition actuelle au Mali, en Guinée, en Côte d'Ivoire, au Sénégal et au Burkina Faso, avec les variantes orthographiques Diabé, Diabi, Jabi et Djabi selon les régions."
+    },
+    {
+      "sourceKey": "ncac-jaabi-faraba-banta",
+      "title": "An Interview About The History of Faraba Banta And The Jaabi Clan (NCAC_RDD_TAPE_1103A)",
+      "url": "https://www.fdr.uni-hamburg.de/record/16085",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "notes": "Bande d'archives orales du 20 avril 1981, Faraba Banta (Gambie), tenue par les archives numériques nationales de Gambie et déposée dans le dépôt numérique de l'Université de Hambourg (Asia-Africa-Institut), avec le soutien de la fondation Gerda Henkel. La notice documente l'histoire et la généalogie du clan Jaabi et son islamisation à Faraba Banta, et donne Jabi, Diaby, Diabi et Jabbi comme graphies apparentées du même nom en Gambie."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "peoples",
+      "reason": "Plusieurs sources communautaires diakhanké rattachent Diaby, sous les formes Diaby-Gassama ou Diakhaby, aux lignées intégrées à la confédération diakhanké. Mais le dictionnaire des jamuw, qui porte un marqueur ethnique dédié pour d'autres clans bien attestés comme diakhanké, ne porte pas ce marqueur pour l'entrée correspondant à Diaby. Ce rattachement aux Jahanka (Diakhanké) est donc retenu comme supposé plutôt qu'attesté."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Le dictionnaire des jamuw ne porte aucun marqueur d'alliance de plaisanterie pour l'entrée correspondant à Diaby, et aucune autre entrée du dictionnaire ne le cite en retour. Aucun partenaire de ce type n'a donc été trouvé pour ce nom."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Le patronyme est aujourd'hui porté par de nombreuses personnalités vivantes, notamment dans le sport et la vie publique, qui ne peuvent figurer ici. Aucune figure historique clairement décédée et rattachée de façon spécifique à l'origine ou à la transmission de ce nom n'a été trouvée avec une source assez solide pour être citée."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Le dictionnaire des jamuw documente, sous une entrée distincte, un nom soninké voisin par la graphie mais sans lien de parenté établi avec Diaby ; les deux lignées y sont tenues pour séparées, et aucune autre origine homonyme n'a été trouvée."
+    },
+    {
+      "fieldPath": "countries",
+      "reason": "Les Jahanka (Diakhanké), auxquels Diaby est parfois rattaché, sont aussi présents en Guinée-Bissau, mais aucune source consultée n'atteste spécifiquement le nom Diaby dans ce pays ; il n'a donc pas été retenu ici."
+    }
+  ]
+}

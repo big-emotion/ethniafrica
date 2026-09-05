@@ -181,11 +181,39 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
 
     const follow = screen.getByTestId("footer-follow");
 
-    for (const network of ["Facebook", "LinkedIn", "Instagram"]) {
+    for (const network of [
+      "Facebook",
+      "LinkedIn",
+      "Instagram",
+      "TikTok",
+      "YouTube",
+    ]) {
       expect(
         within(follow).getByLabelText(new RegExp(network))
       ).toBeInTheDocument();
     }
+  });
+
+  /**
+   * Instagram, TikTok and YouTube opened after LinkedIn — each becomes a live
+   * link the same way LinkedIn did, opening off-site rather than losing the
+   * reader's place in the corpus.
+   */
+  // @req REQ-046
+  it.each([
+    ["Instagram", "https://www.instagram.com/ethniafrica/"],
+    ["TikTok", "https://www.tiktok.com/@ethniafrica"],
+    ["YouTube", "https://www.youtube.com/channel/UCcJiwOQJ7-ajWnYFTDTOt0A"],
+  ])("opens the %s mark on the project's account", (name, href) => {
+    render(<SiteFooter language="fr" />);
+
+    const link = within(screen.getByTestId("footer-follow")).getByRole("link", {
+      name,
+    });
+
+    expect(link).toHaveAttribute("href", href);
+    expect(link).toHaveAttribute("target", "_blank");
+    expect(link).toHaveAttribute("rel", "noopener noreferrer");
   });
 
   /**

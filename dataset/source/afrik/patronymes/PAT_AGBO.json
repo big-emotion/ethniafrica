@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "patronyme",
-    "directives": "Fiche recherchée selon le protocole anthroponymique. Les collections généalogiques attestent Agbo au Togo, sans fournir d'étymologie ni de rattachement ethnique."
+    "directives": "Fiche recherchée selon le protocole anthroponymique. La distribution est désormais attestée dans six pays d'Afrique de l'Ouest et centrale via un agrégateur généalogique (Forebears) et FamilySearch (Togo). Un parallèle lexical yorouba (« agbo ») est consigné dans linguisticReconstructions sans rattachement ethnique établi. Étymologie propre au patronyme, peuple rattaché, mode de transmission et unité sociale désignée restent incertains."
   },
   "id": "PAT_AGBO",
   "nameMain": "Agbo",
@@ -13,7 +13,27 @@
       "attestations": [
         {
           "countryId": "TGO",
-          "sourceRefs": ["familysearch-agbo"]
+          "sourceRefs": ["familysearch-agbo", "forebears-agbo"]
+        },
+        {
+          "countryId": "NGA",
+          "sourceRefs": ["forebears-agbo"]
+        },
+        {
+          "countryId": "BEN",
+          "sourceRefs": ["forebears-agbo"]
+        },
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["forebears-agbo"]
+        },
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["forebears-agbo"]
+        },
+        {
+          "countryId": "GAB",
+          "sourceRefs": ["forebears-agbo"]
         }
       ]
     }
@@ -23,7 +43,13 @@
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
-    "linguisticReconstructions": []
+    "linguisticReconstructions": [
+      {
+        "claim": "Le mot yorouba « agbo » est polysémique : il désigne un bélier, une foule ou un troupeau, un remède à base de plantes obtenu par pression, et un type de tambour. Cette polysémie lexicale d'un mot voisin n'établit ni laquelle de ces significations aurait motivé l'usage du nom Agbo comme patronyme, ni un rattachement à un peuple déterminé.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["wiktionary-yo-agbo"]
+      }
+    ]
   },
   "peoples": [
     {
@@ -36,7 +62,32 @@
     {
       "countryId": "TGO",
       "status": "attested",
-      "sourceRefs": ["familysearch-agbo"]
+      "sourceRefs": ["familysearch-agbo", "forebears-agbo"]
+    },
+    {
+      "countryId": "NGA",
+      "status": "attested",
+      "sourceRefs": ["forebears-agbo"]
+    },
+    {
+      "countryId": "BEN",
+      "status": "attested",
+      "sourceRefs": ["forebears-agbo"]
+    },
+    {
+      "countryId": "GHA",
+      "status": "attested",
+      "sourceRefs": ["forebears-agbo"]
+    },
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["forebears-agbo"]
+    },
+    {
+      "countryId": "GAB",
+      "status": "attested",
+      "sourceRefs": ["forebears-agbo"]
     }
   ],
   "alliances": [],
@@ -59,40 +110,56 @@
       "tier": "unverified",
       "source_kind": "repository",
       "notes": "Page FamilySearch propre à Agbo consultée directement. Elle indexe 15 675 actes sous ce nom et propose le Togo parmi les lieux de recherche, mais ne livre ni sens ni appartenance ewe ; elle est donc utilisée uniquement comme attestation généalogique au niveau « unverified »."
+    },
+    {
+      "sourceKey": "forebears-agbo",
+      "title": "Agbo Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/agbo",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Base agrégée de patronymes consultée directement pour son tableau d'incidence par pays. Elle chiffre une présence du nom au Nigeria, au Bénin, au Ghana, au Togo, en Côte d'Ivoire et au Gabon, mais ne documente ni étymologie ni rattachement ethnique propre au nom ; une soumission d'utilisateur non vérifiée y avance par ailleurs une origine à Enugu (Nigeria) et un sens lié au rang d'ancien, non retenue faute de corroboration."
+    },
+    {
+      "sourceKey": "wiktionary-yo-agbo",
+      "title": "agbo — Wiktionary, the free dictionary",
+      "url": "https://en.wiktionary.org/wiki/agbo",
+      "tier": "unverified",
+      "source_kind": "linguistic_reference",
+      "notes": "Entrée communautaire consultée directement pour ses quatre sens yorouba homophones du mot « agbo » (bélier ; foule ou troupeau ; remède à base de plantes ; tambour). Aucune entrée éwé ou fon n'y figure ; le rapprochement reste un parallèle lexical, non une attestation patronymique."
     }
   ],
   "gaps": [
     {
       "fieldPath": "origin",
-      "reason": "Les recherches bibliographiques et web « Agbo ewe Togo anthroponymie étymologie », « Agbo onomastique » et « Agbo surname meaning », ainsi que la page FamilySearch propre au nom, n'ont livré aucune étymologie vérifiable propre à Agbo."
+      "reason": "Aucune source ne documente une étymologie propre au patronyme Agbo. Un mot yorouba homophone existe, mais ce simple rapprochement lexical ne permet pas d'établir le sens réellement porté par ce nom de famille ni l'histoire qui lui a donné naissance."
     },
     {
       "fieldPath": "peoples",
-      "reason": "Les recherches « Agbo ewe anthroponymie » et « Agbo Ewe name » n'ont fourni aucune source propre au nom établissant le rattachement ewe proposé par la file de candidats ; il reste au statut « supposed »."
+      "reason": "Le nom est attesté dans plusieurs pays d'Afrique de l'Ouest et centrale, mais aucune source propre au patronyme ne permet d'établir avec certitude à quel peuple il se rattache ; l'hypothèse d'un rattachement éwé reste non confirmée."
     },
     {
       "fieldPath": "alliances",
-      "reason": "Les recherches « Agbo joking relationship », « Agbo alliance patronyme » et « Agbo sanankuya » n'ont établi aucune paire documentée dont les deux noms disposent de fiches PAT_*."
+      "reason": "Aucune parenté à plaisanterie ni alliance patronymique documentée n'a été trouvée pour ce nom."
     },
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Les recherches « Agbo hereditary occupation caste title » et « Agbo fonction sociale » n'ont associé ce nom à aucune fonction sociale héréditaire."
+      "reason": "Aucune fonction sociale héréditaire ni titre de caste n'a été associé à ce nom dans les sources consultées."
     },
     {
       "fieldPath": "bearers",
-      "reason": "Les recherches « Agbo obituary biography deceased » et « Agbo nécrologie » n'ont pas permis de retenir un porteur décédé sur une notice suffisamment fiable et propre au nom."
+      "reason": "Aucun porteur décédé n'a pu être retenu sur la base d'une notice biographique à la fois suffisamment fiable et propre à ce nom."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Les recherches « Agbo homonym etymology » et « Agbo surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
+      "reason": "Aucune graphie strictement identique portée par une entité d'origine distincte n'a été relevée pour ce nom."
     },
     {
       "fieldPath": "transmissionMode",
-      "reason": "FamilySearch atteste des actes portant Agbo, mais ni cette base ni les recherches « Agbo family name inheritance Togo » ne décrivent la règle de transmission."
+      "reason": "Les sources attestent l'usage du nom mais ne décrivent pas la règle selon laquelle il se transmet au sein des familles qui le portent."
     },
     {
       "fieldPath": "designatedSocialUnit",
-      "reason": "Les sources consultées ne permettent pas de déterminer si Agbo désigne historiquement un lignage, un clan ou une autre unité sociale."
+      "reason": "Les sources consultées ne permettent pas de confirmer si ce nom désigne historiquement un lignage, un clan ou une autre unité sociale."
     }
   ]
 }

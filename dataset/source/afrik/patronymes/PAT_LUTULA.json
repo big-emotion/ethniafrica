@@ -1,0 +1,123 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur un unique porteur historique bien documenté ; les ouvrages académiques cités ont été repérés en croisant l'article en anglais qui lui est consacré, sans que leur texte intégral ait pu être consulté directement."
+  },
+  "id": "PAT_LUTULA",
+  "nameMain": "Lutula",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Lutula",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": [
+            "turner-1973-sankuru",
+            "omasombo-verhaegen-2005-lumumba"
+          ]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "lineage",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_TETELA",
+      "status": "supposed",
+      "sourceRefs": ["turner-1973-sankuru"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COD",
+      "status": "attested",
+      "sourceRefs": ["turner-1973-sankuru", "omasombo-verhaegen-2005-lumumba"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Joseph Bonaventure Lutula La Puku Pene Omasumbu (1927-2008)",
+      "sourceRefs": [
+        "turner-1973-sankuru",
+        "kanza-1994-lumumba",
+        "omasombo-verhaegen-2005-lumumba"
+      ]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "turner-1973-sankuru",
+      "title": "A Century of Conflict in Sankuru (Congo-Zaire)",
+      "url": null,
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Thomas Edwin Turner, thèse, University of Wisconsin, 1973. Repérée en croisant l'article en anglais consacré à Joseph Lutula, qui la cite pour son origine familiale tetela, née à Wembo-Nyama dans le territoire de Katako-Kombe (Congo belge), et pour son rôle politique dans le district du Sankuru ; le texte intégral de la thèse n'a pas été consulté directement."
+    },
+    {
+      "sourceKey": "kanza-1994-lumumba",
+      "title": "The Rise and Fall of Patrice Lumumba: Conflict in the Congo",
+      "url": null,
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Thomas R. Kanza, Schenkman Books, 1994. Repérée en croisant l'article en anglais consacré à Joseph Lutula, qui la cite pour son parcours politique aux côtés de Patrice Lumumba puis d'Antoine Gizenga ; le texte intégral n'a pas été consulté directement."
+    },
+    {
+      "sourceKey": "omasombo-verhaegen-2005-lumumba",
+      "title": "Patrice Lumumba, acteur politique",
+      "url": null,
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jean Omasombo et Benoît Verhaegen, L'Harmattan, 2005. Repérée en croisant l'article en anglais consacré à Joseph Lutula, qui la cite pour sa carrière ministérielle (agriculture en 1960 sous Patrice Lumumba, puis à nouveau de 1961 à 1963 sous Cyrille Adoula) et pour sa mort à Kinshasa en 2008 ; le texte intégral n'a pas été consulté directement."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "peoples",
+      "reason": "Le seul porteur historique documenté de ce nom est décrit comme issu d'une famille tetela, mais cette information provient d'un unique ouvrage biographique, sans confirmation indépendante ; le rattachement est donc retenu comme supposé plutôt qu'attesté."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Aucune source consultée ne précise si ce nom relève d'un nom de clan, d'un nom personnel ou d'un autre système chez les Tetela ; la valeur retenue est un choix par défaut, non une donnée vérifiée."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La règle de transmission de ce nom n'est documentée par aucune source consultée."
+    },
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Aucun récit d'origine transmis par un informateur nommé n'a été trouvé pour ce nom."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Les ouvrages consultés documentent la carrière politique du seul porteur retenu, non une origine ou une histoire propre au nom lui-même."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Aucune étude linguistique dédiée à ce nom n'a été trouvée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune relation à plaisanterie ni aucun pacte nommé entre ce nom et un autre n'a été trouvé."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale ou caste héréditaire propre à ce nom n'a été trouvée."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucune entité distincte portant ce nom n'a été trouvée."
+    }
+  ]
+}

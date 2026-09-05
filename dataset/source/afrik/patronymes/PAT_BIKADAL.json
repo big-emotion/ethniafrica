@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court : un seul répertoire de fréquence patronymique a pu être consulté pour ce nom ; aucune étude linguistique ou ethnographique dédiée n'a été trouvée."
+  },
+  "id": "PAT_BIKADAL",
+  "nameMain": "Bikadal",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Bikadal",
+      "attestations": [
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["forebears-bikadal"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [],
+  "countries": [
+    {
+      "countryId": "CMR",
+      "status": "attested",
+      "sourceRefs": ["forebears-bikadal"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-bikadal",
+      "title": "Bikadal Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/bikadal",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Répertoire de fréquence patronymique consulté directement. Il recense environ 91 porteurs de ce nom dans le monde, dont 90 au Cameroun, essentiellement dans la région du Littoral (73 pour cent) et, dans une moindre mesure, la région du Centre (27 pour cent) ; un seul porteur est recensé en France. Il ne propose aucune signification et précise lui-même qu'une simple répartition géographique ne permet pas d'établir une appartenance ethnique."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "peoples",
+      "reason": "Le seul répertoire consulté situe ce nom presque entièrement dans deux régions du Cameroun, mais sans l'associer à un peuple précis ; une simple concentration régionale ne suffit pas à établir un rattachement ethnique."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Aucune source ne précise si ce nom relève d'un nom de clan, d'un nom personnel ou d'un autre système ; la valeur retenue est un choix par défaut, non une donnée vérifiée."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source ne rattache ce nom à un clan, une lignée ou une autre unité sociale précise ; la valeur retenue est un choix par défaut, non une donnée vérifiée."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La règle de transmission de ce nom n'est documentée par aucune source consultée."
+    },
+    {
+      "fieldPath": "origin",
+      "reason": "Aucun récit d'origine, aucune chronique écrite et aucune reconstruction linguistique propres à ce nom n'ont été trouvés."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune relation à plaisanterie ni aucune autre alliance nommée avec un autre patronyme n'a été trouvée pour ce nom."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale ou professionnelle héréditaire propre à ce nom n'a été trouvée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur décédé de ce nom n'a pu être identifié à partir d'une source vérifiable."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucune entité distincte portant ce nom n'a été trouvée."
+    }
+  ]
+}

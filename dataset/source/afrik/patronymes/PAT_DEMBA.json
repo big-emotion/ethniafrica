@@ -1,0 +1,128 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court : Demba se rencontre d'abord comme prénom masculin traditionnel peul, mandingue et wolof, avant d'être porté comme nom de famille fixe ; la tension entre les deux usages est documentée dans les lacunes plutôt que tranchée."
+  },
+  "id": "PAT_DEMBA",
+  "nameMain": "Demba",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Demba",
+      "attestations": [
+        {
+          "countryId": "MRT",
+          "sourceRefs": ["forebears-demba"]
+        },
+        {
+          "countryId": "SEN",
+          "sourceRefs": ["forebears-demba"]
+        },
+        {
+          "countryId": "GMB",
+          "sourceRefs": ["forebears-demba"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Une notice en ligne, alimentée par des contributions non signées, présente Demba comme un prénom traditionnel ouest-africain d'origine peule, mandingue et wolof, désignant un aîné ou un pilier de la famille, devenu ensuite un nom de famille fixe. Aucune méthode ni aucun auteur n'appuie cette notice, qui reste à ce stade une hypothèse non vérifiée plutôt qu'un résultat établi.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["forebears-demba"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FULA",
+      "status": "supposed",
+      "sourceRefs": ["forebears-demba"]
+    },
+    {
+      "peopleId": "PPL_MALINKE",
+      "status": "supposed",
+      "sourceRefs": ["forebears-demba"]
+    },
+    {
+      "peopleId": "PPL_WOLOF",
+      "status": "supposed",
+      "sourceRefs": ["forebears-demba"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MRT",
+      "status": "attested",
+      "sourceRefs": ["forebears-demba"]
+    },
+    {
+      "countryId": "SEN",
+      "status": "attested",
+      "sourceRefs": ["forebears-demba"]
+    },
+    {
+      "countryId": "GMB",
+      "status": "attested",
+      "sourceRefs": ["forebears-demba"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-demba",
+      "title": "Demba Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/demba",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Répertoire de fréquence patronymique complété par des notices explicatives ouvertes aux contributions du public, sans auteur ni méthode identifiés. Il recense environ 36 000 porteurs dans le monde, très majoritairement en Mauritanie, au Sénégal et en Gambie, avec 95 pour cent des porteurs en Afrique. Il présente Demba comme un prénom traditionnel peul, mandingue et wolof, désignant un aîné ou un pilier de famille, devenu un nom de famille fixe sous l'administration coloniale française ; cette dernière affirmation n'est étayée par aucune référence propre et n'a pas pu être recoupée."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Ce nom se rencontre d'abord comme prénom masculin traditionnel, ce qui explique le choix retenu ici plutôt qu'un nom de clan ; mais aucune source dédiée ne documente précisément comment ni quand il s'est fixé comme nom de famille."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Un même répertoire l'associe à la fois aux Peuls, aux Mandingues et aux Wolof, sans trancher entre ces appartenances ni indiquer laquelle est première ; aucune étude dédiée n'a été trouvée pour départager ces pistes."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La règle de transmission de ce nom comme nom de famille, une fois fixé, n'est documentée par aucune source vérifiable."
+    },
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Aucun récit d'origine transmis par un informateur nommé n'a été trouvé pour ce nom."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Aucune chronique historique dédiée à ce nom n'a été trouvée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune relation à plaisanterie ni aucune autre alliance nommée avec un autre patronyme n'a été trouvée pour ce nom."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale ou professionnelle héréditaire propre à ce nom n'a été trouvée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur décédé de ce nom n'a pu être identifié à partir d'une source vérifiable. Les personnes vivantes ne sont pas nommées ici : le patronyme d'une personne vivante ne permet pas d'en déduire son origine ethnique."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucune entité distincte portant ce nom n'a été recherchée de façon suffisamment poussée pour conclure ; ce point reste ouvert."
+    }
+  ]
+}

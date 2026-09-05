@@ -53,10 +53,17 @@
       "mainLanguage": "Bassa (bsq)",
       "isoCodes": ["bsq"],
       "dialects": [
-        "Bassa cotier (zones de Grand Bassa et Montserrado, influence anglophone)",
-        "Bassa forestier (zones de Rivercess et Margibi, plus conservateur)"
+        "Bassa occidental : Mambahn, Gibi",
+        "Bassa central : Kokoyah, Mehnwein, Hwengbarkon, Kor, Gbor, Neekreen, Gbehzohn, Gba Sor",
+        "Bassa de Rivercess : Nibuehnxwiniin",
+        "Bassa oriental : Kplor, Dorbor, Gbii, Doru, Beleto"
       ],
-      "vehicularRole": "Le bassa est la langue premiere d'environ 1 million de personnes au Liberia, ou il est la langue majoritaire de Monrovia. L'anglais liberien est la langue officielle et d'enseignement. Le bassa possede un systeme d'ecriture propre revitalise, le Vah (Ehni Ka Se Fa), reactualise au debut du XXe siecle par Thomas Flo Lewis, bien que peu utilise aujourd'hui."
+      "vehicularRole": "Le bassa est la langue premiere d'environ 800 000 a 900 000 personnes au Liberia selon SIL Ethnologue (18e edition, 2015, sur la base de donnees de 2006), ou il est la langue majoritaire de Monrovia. L'anglais liberien est la langue officielle et d'enseignement. Le bassa possede un systeme d'ecriture propre revitalise, le Vah (Ehni Ka Se Fa), reactualise au debut du XXe siecle par Thomas Flo Lewis, bien que peu utilise aujourd'hui."
+    },
+    "externalIdentifiers": {
+      "wikidataId": "Q810462",
+      "glottocode": "nucl1418",
+      "iso639_3": "bsq"
     },
     "culture": {
       "majorRites": "Ecoles de brousse Gree-Gree (initiation masculine) : seclusion en foret, enseignement des valeurs guerrieres et communautaires, scarification, musique rituelle. Societe feminine Sande (Bondo) : initiation feminine, port du masque-casque sowei representant l'esprit ancestral feminin des eaux, enseignement des savoirs feminins. Ceremonies funeraires : dances masquees et inhumation en terres ancestrales, invocation des ancetres via les finials en laiton. Mariage par dot (bride-wealth) : echanges de tissu, outils et biens entre familles. Ceremonies saisonnieres agricoles : ceremonies de semailles et de recolte, sacrifices.",
@@ -71,24 +78,27 @@
       "diaspora": "Presence de descendants bassa parmi les descendants africains au Bresil et aux Antilles (trace de la redecouverte de l'ecriture Vah dans les annees 1890). Communautes bassa dans les grandes villes du Liberia (Monrovia notamment). Refugies en Sierra Leone et en Cote d'Ivoire lors des guerres civiles."
     },
     "demography": {
-      "totalPopulation": 1050000,
-      "referenceYear": 2025,
-      "source": "Wikipedia — Bassa people (Liberia) : environ 1,05 million, 18 % de la population liberienne, deuxieme groupe apres les Kpelle. Liberia Census 2022, Ethnologue (bsq), Joshua Project.",
+      "totalPopulation": 841000,
+      "referenceYear": 2006,
+      "source": "SIL Ethnologue, Bassa (bsq), 18e edition (2015), fourchettes de locuteurs datees de 2006 : Liberia 783 000 a 865 000, Cote d'Ivoire 2 000 a 14 000, Sierra Leone 7 300 a 11 000 (milieux de fourchette retenus ici). Le total national de la population liberienne (5 248 621 habitants) est confirme par le recensement general de la population et de l'habitat du Liberia de 2022 (LISGIS / ONU Liberia) ; la part specifique des Bassa dans ce recensement, citee par endroits a environ 13,6 %, n'a pas pu etre verifiee dans le rapport primaire durant cette recherche.",
       "distributionByCountry": [
         {
           "country": "LBR",
-          "population": 1020000,
-          "note": "Grand Bassa, Rivercess, Margibi, Montserrado (Monrovia)"
+          "population": 824000,
+          "percentage": 98.0,
+          "note": "Grand Bassa, Rivercess, Margibi, Montserrado (Monrovia) ; milieu de la fourchette SIL Ethnologue 783 000-865 000 (donnees 2006)"
         },
         {
           "country": "CIV",
-          "population": 20000,
-          "note": "Communautes dans l'ouest de la Cote d'Ivoire"
+          "population": 8000,
+          "percentage": 0.95,
+          "note": "Communautes de l'ouest de la Cote d'Ivoire ; milieu de la fourchette SIL Ethnologue 2 000-14 000 (donnees 2006)"
         },
         {
           "country": "SLE",
-          "population": 10000,
-          "note": "Freetown et zones frontalieres"
+          "population": 9000,
+          "percentage": 1.05,
+          "note": "Freetown et zones frontalieres ; milieu de la fourchette SIL Ethnologue 7 300-11 000 (donnees 2006)"
         }
       ]
     },
@@ -103,13 +113,13 @@
         "title": "SIL Ethnologue — Bassa (bsq)",
         "url": "https://www.ethnologue.com/language/bsq/",
         "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\". ethnologue.com returns HTTP 403 to automated fetches, so the 18th-edition (2015) speaker figures and dialect-cluster names used in this proposal (demography, languages.dialects) were read from its data as relayed in the infobox of the English Wikipedia article \"Bassa language\", crossed on 2026-09-05."
       },
       {
         "title": "West Africa Democracy Radio — The Bassa Tribe of Liberia (2023)",
         "url": "https://wadr.org/the-bassa-tribe-of-liberia/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers wadr.org; the tier awaits editorial review."
+        "tier": "referenced",
+        "notes": "Resolved from \"needs_review\": WADR is a named, editorially staffed West African regional public radio outlet; a byline article on its own site is press coverage, which the corpus's tier table places at referenced."
       },
       {
         "title": "Minority Rights Group — Liberia",
@@ -124,16 +134,46 @@
         "notes": "Tier resolved from the domain ruling for sk.sagepub.com."
       },
       {
-        "title": "Liberia Census 2022 (General Population and Housing Census, Liberia Institute of Statistics)",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "title": "Liberia Institute of Statistics and Geo-Information Services (LISGIS) — 2022 Population and Housing Census, Final Results Report",
+        "url": "https://www.lisgis.gov.lr/document/LiberiaCensus2022Report.pdf",
+        "tier": "official",
+        "notes": "Resolved from the URL-less \"needs_review\" entry: national statistics office, official tier. The document itself could not be fetched (connection reset) during this research pass, so only the national total population is used here (corroborated independently below); its ethnic-group breakdown table was not verified."
+      },
+      {
+        "title": "UN Liberia — Liberia announces provisional results of its 5th National Population and Housing Census (2022)",
+        "url": "https://liberia.un.org/en/220493-liberia-announces-provisional-results-its-5th-national-population-and-housing-census",
+        "tier": "official",
+        "notes": "UN country office press release; independently corroborates LISGIS's national total of 5,248,621 (census night 10-11 November 2022) cited in the demography source note."
       },
       {
         "title": "StudyGuides.com — Bassa (People)",
         "url": "https://studyguides.com/study-methods/study-guide/cmfwvocp53ouk016qheb0w9jc",
         "tier": "unverified",
         "notes": "Tier resolved from the domain ruling for studyguides.com."
+      },
+      {
+        "title": "Everson, Michael & Riley, Charles (2010) — Final proposal for encoding the Bassa Vah script in the SMP of the UCS",
+        "url": "https://escholarship.org/uc/item/9kf9x726",
+        "tier": "referenced",
+        "notes": "Unicode Technical Committee encoding proposal, published via UC eScholarship. Newly added to source the Vah/Ehni Ka Se Fa script history already in languages.vehicularRole (revival by Thomas Flo Lewis, 1959 promotional association, standardized in Unicode 7.0/2014 at U+16AD0-U+16AFF, 23 consonants/7 vowels/5 tone diacritics), which previously carried no citation at all. Found via the bibliography of the English Wikipedia article \"Bassa Vah alphabet\", crossed on 2026-09-05."
+      },
+      {
+        "title": "Coulmas, Florian, ed. (1999) — \"Bassa alphabet\", in The Blackwell Encyclopedia of Writing Systems",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Offline book chapter (Wiley/Blackwell); identified via the bibliography of the English Wikipedia article \"Bassa Vah alphabet\", crossed on 2026-09-05, as a second academic source for the Vah script history. Content not independently re-verified."
+      },
+      {
+        "title": "Unseth, Peter (2011) — \"Invention of Scripts in West Africa for Ethnic Revitalization\", in Handbook of Language and Ethnic Identity, Oxford University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Offline book chapter; identified via the bibliography of the English Wikipedia article \"Bassa Vah alphabet\", crossed on 2026-09-05, supporting the script's framing as an ethnic-revitalization project. Content not independently re-verified."
+      },
+      {
+        "title": "\"The Egyptian Origins of the Bassa of Liberia\", Everything Liberia blog (2013)",
+        "url": "https://othnieldf.wordpress.com/2013/09/18/the-egyptian-origins-of-the-bassa-of-liberia/",
+        "tier": "unverified",
+        "notes": "Blog reproducing oral tradition; newly added to source origins.ancientOrigins's Nile-valley/\"Adbassa Empire\" narrative, which previously carried no citation. Cited to establish that the narrative is a genuinely documented oral tradition (consistent with the fiche's own \"la tradition orale... suggere\" framing), not to assert its historicity."
       }
     ]
   }

@@ -57,7 +57,13 @@
       "sourceRefs": ["afrik-candidate-queue"]
     }
   ],
-  "alliances": [],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_SANGARE",
+      "allianceType": "sanankuya",
+      "sourceRefs": ["bamadaba-jamuw", "diallo-2006-plaisanterie-peuls"]
+    }
+  ],
   "casteOrSocialFunction": null,
   "bearers": [],
   "homonyms": [],
@@ -77,13 +83,25 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Ilia Rainer et Francesco Trebbi, NBER Working Paper 18424, septembre 2012. L’annexe sur la Guinée, p. 43, explique séparément la classification de Diakite, Sidibe et Sangare : originaires du Wassoulou, décrits comme Peuls intégrés aux populations malinké, ils sont codés par les auteurs à parts égales peuls et malinké. Le document précise qu’il n’a pas été évalué par les pairs."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms claniques est signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. L'entrée Sidibe y porte un marqueur de partenaire à plaisanterie (senankun) vers Sangaré ; les liens de ce type ne sont pas systématiquement réciproques d'une entrée à l'autre, mais celui-ci est porté par l'entrée Sidibe elle-même."
+    },
+    {
+      "sourceKey": "diallo-2006-plaisanterie-peuls",
+      "title": "Identités et relations de plaisanterie chez les Peuls de l'ouest du Burkina Faso",
+      "url": "https://journals.openedition.org/etudesafricaines/15399",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Youssouf Diallo, Cahiers d'études africaines, vol. 46, n° 184, 2006, p. 779-794 (DOI 10.4000/etudesafricaines.15399). Revue à comité de lecture ; l'auteur était alors rattaché au Max-Planck-Institut für ethnologische Forschung. L'article situe Sidibé parmi les quatre clans peuls principaux (Diallo, Diakité, Sidibé, Sangaré) et décrit le couple Sidibé/Sangaré comme homologue au sein du noyau mythique de l'identité peule, entretenant à ce titre des relations de plaisanterie (dendiraagu, terme peul pour cette relation) ; l'enquête de terrain porte sur les Peuls de l'ouest du Burkina Faso."
     }
   ],
   "gaps": [
-    {
-      "fieldPath": "alliances",
-      "reason": "L’annexe guinéenne de Rainer et Trebbi a été recherchée pour une alliance à plaisanterie propre à Sidibé ; elle ne documente aucune paire patronymique."
-    },
     {
       "fieldPath": "casteOrSocialFunction",
       "reason": "Rainer et Trebbi documentent une classification ethnique disputée pour Sidibé, mais aucune caste ni fonction héréditaire ; les recherches ciblées n’ont pas fourni d’autre étude dédiée."

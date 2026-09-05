@@ -1,0 +1,189 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier ouvert à partir d'une orthographe soumise par un lecteur. L'identité avec les formes Loroungnon/Lorougnon est traitée comme une hypothèse, pas comme un fait établi, faute de source qui les recoupe directement."
+  },
+  "id": "PAT_LOHOURIGNON",
+  "nameMain": "Lohourignon",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Lohourignon",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["forebears-lohourignon", "allafrica-2006-lohourignon"]
+        }
+      ]
+    },
+    {
+      "spelling": "Loroungnon",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["tourisme-ci-2021-loroungnon"]
+        }
+      ]
+    },
+    {
+      "spelling": "Lorougnon",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["afriksoir-2021-noms-bete", "ujlog-lorougnon-guede"]
+        }
+      ]
+    },
+    {
+      "spelling": "Lohourougnon",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["wiktionnaire-liste-prenoms-bete"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Une publication du 21 juin 2021 sur la page de l'organisme ivoirien de tourisme donne à la graphie Loroungnon le sens « l'étranger, celui qui est de passage ». Le même sens, sous la graphie très proche Lorougnon, circule dès février 2021 dans un article distinct ; mais ce même article attribue ailleurs Lorougnon à un tout autre sens, partagé avec quatre autres noms : « l'enfant qui survient après plusieurs naissances suivies de décès ». Cette contradiction, portée par la même publication, empêche de retenir un sens unique et assuré pour ce nom.",
+        "claimStatus": "contested",
+        "sourceRefs": [
+          "tourisme-ci-2021-loroungnon",
+          "afriksoir-2021-noms-bete"
+        ]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BETE",
+      "status": "supposed",
+      "sourceRefs": [
+        "tourisme-ci-2021-loroungnon",
+        "afriksoir-2021-noms-bete",
+        "wiktionnaire-liste-prenoms-bete",
+        "forebears-lohourignon"
+      ]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": [
+        "forebears-lohourignon",
+        "allafrica-2006-lohourignon",
+        "ujlog-lorougnon-guede"
+      ]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Jean Lorougnon Guédé (1935-1998)",
+      "sourceRefs": ["ujlog-lorougnon-guede"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "tourisme-ci-2021-loroungnon",
+      "title": "Découverte : signification des noms bété (Partie 1)",
+      "url": "https://www.facebook.com/tourismecotedivoire.ci/posts/d%C3%A9couverte-signification-des-noms-b%C3%A9t%C3%A9-partie-1-drogba-la-clameur-une-d%C3%A9couverte/3574963495937695/",
+      "tier": "unverified",
+      "source_kind": "government",
+      "notes": "Publication du 21 juin 2021 sur la page Facebook vérifiée de l'organisme ivoirien de tourisme. Elle attribue à la graphie Loroungnon le sens « l'étranger, celui qui est de passage » et indique elle-même s'appuyer uniquement sur un ouvrage intitulé « Les ethnies de la Côte d'Ivoire et d'Afrique », sans en donner l'auteur, l'éditeur ni l'année ; cette référence reste donc introuvable et impossible à vérifier de façon indépendante."
+    },
+    {
+      "sourceKey": "afriksoir-2021-noms-bete",
+      "title": "Côte d'Ivoire : voici la signification des noms Bété que vous connaissez",
+      "url": "https://afriksoir.net/cote-divoire-voici-la-signification-des-noms-bete-que-vous-connaissez/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Article daté du 14 février 2021, sans auteur identifié ni méthode explicitée. Il attribue à la graphie Lorougnon le sens « l'étranger, qui est de passage », proche de celui donné ailleurs à Loroungnon, mais le même article regroupe aussi Lorougnon avec quatre autres noms sous un sens différent, « l'enfant qui survient après plusieurs naissances suivies de décès ». Cette contradiction interne réduit la fiabilité du sens rapporté pour ce nom."
+    },
+    {
+      "sourceKey": "wiktionnaire-liste-prenoms-bete",
+      "title": "Liste de prénoms bété",
+      "url": "https://fr.wiktionary.org/wiki/Annexe:Liste_de_pr%C3%A9noms_b%C3%A9t%C3%A9",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Liste communautaire réunissant environ deux cents prénoms présentés comme bété, dont Lorougnon et, comme entrée séparée, Lohourougnon — une graphie proche mais non identique à celle documentée ici. Aucune signification ni source propre n'est donnée pour ces deux entrées ; la liste montre seulement que des noms de cette famille de sons circulent parmi les prénoms bété, sans établir qu'ils désignent le même nom."
+    },
+    {
+      "sourceKey": "forebears-lohourignon",
+      "title": "Lohourignon Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/lohourignon",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Site qui agrège des données d'état civil et de recensement pour estimer la fréquence et la répartition des noms de famille. Il situe la quasi-totalité des porteurs de Lohourignon en Côte d'Ivoire, dont plus de la moitié dans la région de Gôh-Djiboua et une partie dans celle de Sassandra-Marahoué, deux régions historiquement associées au peuplement bété. Le site avertit lui-même que la répartition géographique ne permet pas d'établir une origine ethnique, et ne propose aucune étymologie."
+    },
+    {
+      "sourceKey": "allafrica-2006-lohourignon",
+      "title": "Côte d'Ivoire : le domicile de Maurice Lohourignon cambriolé",
+      "url": "https://fr.allafrica.com/stories/200607190630.html",
+      "tier": "referenced",
+      "source_kind": "unknown",
+      "notes": "Article de presse daté du 19 juillet 2006. Il identifie Maurice Lohourignon comme directeur régional de la construction et de l'urbanisme, dont le domicile a été cambriolé, et atteste ainsi l'usage du nom comme nom de famille en Côte d'Ivoire, sans indiquer d'origine ethnique."
+    },
+    {
+      "sourceKey": "ujlog-lorougnon-guede",
+      "title": "Qui est Jean Lorougnon Guédé ?",
+      "url": "https://ujlog.edu.ci/a-propos/qui-est-jean-lorougnon-g/",
+      "tier": "referenced",
+      "source_kind": "government",
+      "notes": "Biographie publiée par l'université publique ivoirienne qui porte son nom. Elle documente Jean Lorougnon Guédé (1935-1998), professeur de biologie végétale, ministre de l'Éducation nationale à partir de 1970 puis premier ministre de la Recherche scientifique de Côte d'Ivoire de 1971 à 1981. Elle ne mentionne aucune origine ethnique ou régionale."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "spellings",
+      "reason": "Rien ne confirme de façon indépendante que la graphie Lohourignon désigne le même nom que les formes Loroungnon et Lorougnon : les sources disponibles pour chacune de ces graphies ne se recoupent pas entre elles. Une liste de prénoms bété distincte range par ailleurs une forme proche, Lohourougnon, comme une entrée séparée de Lorougnon, ce qui montre que des noms de cette famille de sons peuvent rester distincts les uns des autres. Le rapprochement retenu ici entre Lohourignon et les formes en Lorougnon repose donc sur une ressemblance de prononciation plausible, non sur une preuve directe."
+    },
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Aucune étude linguistique dédiée à ce nom n'a été trouvée. Le seul sens rapporté provient de publications grand public, et ces publications se contredisent elles-mêmes sur ce sens."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Aucune source ne précise si ce nom relève d'un nom de clan, d'un nom personnel donné selon les circonstances de la naissance ou d'un autre système. Le sens rapporté, qui décrit la situation d'une personne à sa naissance, oriente vers un nom personnel plutôt que vers un nom de clan, mais ce choix reste une hypothèse prudente et non une conclusion établie."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Aucune source ne documente la règle de transmission traditionnelle de ce nom. Sa présence actuelle comme nom de famille porté par plusieurs personnes en Côte d'Ivoire suggère une transmission au sein d'une même lignée, sans qu'aucune règle précise n'ait pu être vérifiée."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source ne précise si ce nom désignait à l'origine une personne, une lignée ou un autre groupe. Le sens rapporté renvoie à la situation d'une personne à sa naissance, ce qui oriente vers un nom individuel, mais cela reste une déduction et non une donnée établie."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Le rattachement de ce nom au peuple bété s'appuie sur des publications grand public qui présentent les formes voisines comme des noms bété, ainsi que sur la concentration actuelle des porteurs du nom dans des régions historiquement associées aux Bété. Aucune étude ethnographique ou linguistique dédiée ne l'établit de façon certaine."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune alliance de ce nom avec un autre nom de famille n'a été trouvée dans les sources consultées."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale ou caste particulière n'a été associée à ce nom dans les sources consultées."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Les personnes portant la graphie exacte Lohourignon trouvées dans la presse et les réseaux professionnels sont vivantes et n'ont pas rendu publique leur origine ethnique dans leurs propres mots, ce qui exclut leur mention ici. Le seul porteur décédé retenu porte une graphie voisine, Lorougnon, et sa biographie ne mentionne pas non plus d'origine ethnique ; il est cité seulement pour attester l'existence du nom."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Les statistiques disponibles situent une minorité des porteurs hors d'Afrique de l'Ouest, mais aucune source ne documente pour ces occurrences une origine distincte et vérifiable ; aucun homonyme avéré n'a donc été retenu."
+    }
+  ]
+}

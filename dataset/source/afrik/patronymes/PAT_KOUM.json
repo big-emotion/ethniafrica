@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court : un seul répertoire de fréquence patronymique a pu être consulté pour ce nom ; aucune étude linguistique ou ethnographique dédiée n'a été trouvée."
+  },
+  "id": "PAT_KOUM",
+  "nameMain": "Koum",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Koum",
+      "attestations": [
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["forebears-koum"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [],
+  "countries": [
+    {
+      "countryId": "CMR",
+      "status": "attested",
+      "sourceRefs": ["forebears-koum"]
+    },
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["forebears-koum"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-koum",
+      "title": "Koum Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/koum",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Répertoire de fréquence patronymique consulté directement. Il recense environ 2 413 porteurs dans le monde, très majoritairement au Cameroun (1 547 porteurs, surtout dans la région du Littoral), avec un second foyer plus modeste en Côte d'Ivoire (326 porteurs) ; le reste se répartit en petit nombre entre la Papouasie-Nouvelle-Guinée, la France et la Mauritanie. Il ne propose aucune signification et n'associe le nom à aucun peuple précis."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "peoples",
+      "reason": "Le seul répertoire consulté situe ce nom majoritairement dans une région du Cameroun, mais sans l'associer à un peuple précis ; une simple concentration géographique ne suffit pas à établir un rattachement ethnique."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Aucune source ne précise si ce nom relève d'un nom de clan, d'un nom personnel ou d'un autre système ; la valeur retenue est un choix par défaut, non une donnée vérifiée."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source ne rattache ce nom à un clan, une lignée ou une autre unité sociale précise ; la valeur retenue est un choix par défaut, non une donnée vérifiée."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La règle de transmission de ce nom n'est documentée par aucune source consultée."
+    },
+    {
+      "fieldPath": "origin",
+      "reason": "Aucun récit d'origine, aucune chronique écrite et aucune reconstruction linguistique propres à ce nom n'ont été trouvés."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune relation à plaisanterie ni aucune autre alliance nommée avec un autre patronyme n'a été trouvée pour ce nom."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale ou professionnelle héréditaire propre à ce nom n'a été trouvée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur décédé de ce nom n'a pu être identifié à partir d'une source vérifiable."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucune entité distincte portant ce nom n'a été trouvée."
+    }
+  ]
+}

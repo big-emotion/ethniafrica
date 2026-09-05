@@ -1,0 +1,142 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier fondé sur deux publications grand public consacrées aux noms bété, corroborées par le témoignage public d'une porteuse du nom sur son propre rattachement. Ne pas étendre les affirmations au-delà de ces sources."
+  },
+  "id": "PAT_GNAHORE",
+  "nameMain": "Gnahoré",
+  "nameSystem": "non_hereditary_patronymic",
+  "spellings": [
+    {
+      "spelling": "Gnahoré",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": [
+            "civ-tourisme-fb-2021-gnahore",
+            "afriksoir-2021-gnahore",
+            "jeuneafrique-dobet-gnahore"
+          ]
+        }
+      ]
+    },
+    {
+      "spelling": "Gnaore",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["forebears-gnaore"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "individual",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "Le nom est présenté comme signifiant « latex pur, la pureté ». Les deux publications qui rapportent ce sens le font dans les mêmes termes, sans le faire remonter à un travail linguistique ou ethnographique publié.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["civ-tourisme-fb-2021-gnahore", "afriksoir-2021-gnahore"]
+      }
+    ],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BETE",
+      "status": "attested",
+      "sourceRefs": [
+        "civ-tourisme-fb-2021-gnahore",
+        "afriksoir-2021-gnahore",
+        "jeuneafrique-dobet-gnahore"
+      ]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": [
+        "civ-tourisme-fb-2021-gnahore",
+        "afriksoir-2021-gnahore",
+        "forebears-gnaore",
+        "jeuneafrique-dobet-gnahore"
+      ]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "civ-tourisme-fb-2021-gnahore",
+      "title": "Découverte : signification des noms bété (partie 1)",
+      "url": "https://www.facebook.com/tourismecotedivoire.ci/posts/d%C3%A9couverte-signification-des-noms-b%C3%A9t%C3%A9-partie-1-drogba-la-clameur-une-d%C3%A9couverte/3574963495937695/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Publication de la page officielle Côte d'Ivoire Tourisme sur Facebook, datée du 21 juin 2021, qui donne une liste de noms bété avec leur signification supposée, dont Gnahoré pour le sens « latex pur, la pureté ». La publication indique elle-même reprendre un ouvrage intitulé « Les ethnies de la Côte d'Ivoire et d'Afrique », qui n'a pas pu être identifié comme une publication précise et vérifiable."
+    },
+    {
+      "sourceKey": "afriksoir-2021-gnahore",
+      "title": "Côte d'Ivoire : voici la signification des noms Bété que vous connaissez",
+      "url": "https://afriksoir.net/cote-divoire-voici-la-signification-des-noms-bete-que-vous-connaissez/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Site d'actualité ivoirien daté du 14 février 2021, reprenant la même liste de noms bété et donnant le même sens pour Gnahoré. L'article attribue l'ensemble de la liste à un traditionaliste nommé, Zahui Ouraga Aimé, sans détailler pour autant la source ou la méthode propre à chaque nom."
+    },
+    {
+      "sourceKey": "forebears-gnaore",
+      "title": "Gnaore Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/gnaore",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Site qui agrège des données d'état civil et de recensement pour estimer la fréquence et la répartition des noms de famille. Il situe la quasi-totalité des porteurs de cette graphie en Côte d'Ivoire et plus largement en Afrique de l'Ouest, sans proposer de signification."
+    },
+    {
+      "sourceKey": "jeuneafrique-dobet-gnahore",
+      "title": "Musique : Dobet Gnahoré, la guerrière ivoirienne retourne aux sources",
+      "url": "https://www.jeuneafrique.com/mag/480012/culture/cote-divoire-musique-dobet-gnahore-la-guerriere-retourne-aux-sources/",
+      "tier": "referenced",
+      "source_kind": "community",
+      "notes": "Portrait publié par un magazine panafricain. La chanteuse ivoirienne Dobet Gnahoré y relie directement sa pratique artistique à la langue de son père, qu'elle décrit dans ses propres mots comme bété : « c'est la langue dans laquelle je chante, c'est la langue de mon père, c'est la langue que je suis ». Cité ici uniquement pour ce rattachement personnel, exprimé par elle-même, et pour attester l'usage du nom en Côte d'Ivoire."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin.linguisticReconstructions",
+      "reason": "Aucune étude linguistique dédiée à ce nom n'a été trouvée ; le seul sens rapporté provient de publications grand public qui se recoupent sans se vérifier l'une l'autre."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Le sens rapporté, une qualité personnelle plutôt qu'une appartenance à un groupe, oriente vers un nom individuel donné selon les circonstances plutôt que vers un nom de clan, mais aucune source ne le confirme explicitement pour ce nom précis."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source ne précise si ce nom désignait à l'origine une personne, une lignée ou un autre groupe ; le sens rapporté oriente vers un nom individuel, ce qui reste une déduction et non une donnée établie."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "Aucune source ne documente la règle de transmission traditionnelle de ce nom. Son usage actuel comme nom de famille suggère une transmission au sein d'une même lignée, sans qu'aucune règle précise n'ait pu être vérifiée."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune relation à plaisanterie ni aucun pacte nommé entre ce nom et un autre n'a été trouvé."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale ou caste particulière n'a été associée à ce nom dans les sources consultées."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucune entité distincte portant une orthographe identique n'a été trouvée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Une chanteuse ivoirienne connue sous ce nom s'est exprimée publiquement sur son rattachement à la langue et à la culture bété par son père ; cette voix soutient l'attestation du peuple documentée plus haut, mais l'atlas ne tient pas ici de registre des personnes permettant de la citer nommément comme porteuse dans cette liste précise."
+    }
+  ]
+}

@@ -13,21 +13,48 @@
       "attestations": [
         {
           "countryId": "NGA",
-          "sourceRefs": ["yorubanames-balogun", "afrik-candidate-queue"]
+          "sourceRefs": [
+            "yorubanames-balogun",
+            "afrik-candidate-queue",
+            "forebears-balogun"
+          ]
+        },
+        {
+          "countryId": "GHA",
+          "sourceRefs": ["forebears-balogun"]
+        }
+      ]
+    },
+    {
+      "spelling": "Balogoun",
+      "attestations": [
+        {
+          "countryId": "BEN",
+          "sourceRefs": ["forebears-balogun"]
         }
       ]
     }
   ],
-  "transmissionMode": "other",
-  "designatedSocialUnit": "other",
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "lineage",
   "origin": {
     "oralTraditions": [],
     "writtenChronicles": [],
     "linguisticReconstructions": [
       {
         "claim": "YorubaNames analyse Balógun comme ba(ba)-ní-ogun, « père dans la guerre » ou « le général ».",
-        "claimStatus": "claimed",
+        "claimStatus": "contested",
         "sourceRefs": ["yorubanames-balogun"]
+      },
+      {
+        "claim": "Une autre décomposition, relevée sur un site généalogique agrégateur, lit Balogun comme ba (rencontrer/rejoindre) + logun (la guerre/l'armée), soit « chef de guerre ».",
+        "claimStatus": "contested",
+        "sourceRefs": ["forebears-balogun"]
+      },
+      {
+        "claim": "Une troisième lecture, attachée à la variante orthographique francophone « Balogoun » utilisée au Bénin et au Togo, décompose le nom en oba (roi) + ogun (guerre), soit « roi de guerre ».",
+        "claimStatus": "contested",
+        "sourceRefs": ["forebears-balogun"]
       }
     ]
   },
@@ -42,16 +69,42 @@
     {
       "countryId": "NGA",
       "status": "attested",
-      "sourceRefs": ["afrik-candidate-queue"]
+      "sourceRefs": ["afrik-candidate-queue", "forebears-balogun"]
+    },
+    {
+      "countryId": "GHA",
+      "status": "supposed",
+      "sourceRefs": ["forebears-balogun"]
+    },
+    {
+      "countryId": "BEN",
+      "status": "supposed",
+      "sourceRefs": ["forebears-balogun"]
     }
   ],
   "alliances": [],
   "casteOrSocialFunction": {
-    "value": "Titre ou épithète associé au commandement militaire (« général »), sans preuve d'une fonction héréditaire.",
-    "sourceRefs": ["yorubanames-balogun"]
+    "value": "Titre de chef de guerre (« général », proche de « père/chef dans la guerre ») conféré au sein des cours royales yoruba, avec rang de ministre de la guerre siégeant au conseil du souverain. Conformément au modèle général des titres de chefferie yoruba (oye), qui restent vestis dans un lignage et tournent entre ses branches (« maisons de chefferie »), la charge de Balogun se transmet en règle générale de manière patrilinéaire au sein d'une même lignée, revenant le plus souvent au fils aîné du précédent titulaire — c'est ce que décrivent en détail les sources concernant la région d'Ijebu (dont Itele). Ibadan constitue une exception documentée et nommée à cette règle : faute de lignage royal préexistant, la ville ayant été fondée au XIXe siècle comme camp de guerriers venus de plusieurs horizons, la charge de Balogun y est attribuée au mérite et à l'ancienneté au sein d'une hiérarchie de titres militaires, sans transmission automatique de père en fils.",
+    "sourceRefs": [
+      "yorubanames-balogun",
+      "falola-oguntomisin-1984",
+      "taiwo-olatunde-2016",
+      "lloyd-1955-yoruba-lineage",
+      "refworld-balogun-itele",
+      "olubadan-ibadan-succession",
+      "premiumtimes-olubadan-2025"
+    ]
   },
   "bearers": [],
-  "homonyms": [],
+  "homonyms": [
+    {
+      "label": "Balogun (marché de Lagos)",
+      "entityType": "place",
+      "entityId": null,
+      "distinction": "Grand marché textile de l'île de Lagos, dont le nom proviendrait d'un porteur historique du titre ou du patronyme ayant marqué le quartier, et non d'une lignée ou d'un peuple ; les récits consultés sur l'origine exacte du nom du marché ne s'accordent pas entre eux.",
+      "sourceRefs": ["naturenex-balogun-market"]
+    }
+  ],
   "sources": [
     {
       "sourceKey": "afrik-candidate-queue",
@@ -68,6 +121,76 @@
       "tier": "unverified",
       "source_kind": "community",
       "notes": "Page de la base collaborative YorubaNames consultée directement pour Balogun. Elle fournit la forme tonale, une glose et une segmentation morphologique ; son contenu communautaire est conservé au niveau « unverified »."
+    },
+    {
+      "sourceKey": "forebears-balogun",
+      "title": "Balogun Surname Origin, Meaning & Last Name History — Forebears",
+      "url": "https://forebears.io/surnames/balogun",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Base généalogique agrégeant des données de recensement et des étymologies soumises par des utilisateurs. Fournit une incidence chiffrée du patronyme par pays (environ 215 000 porteurs au Nigeria, populations notables au Ghana, en Angleterre et aux États-Unis) et plusieurs décompositions étymologiques concurrentes, dont celle expliquant la variante « Balogoun » utilisée au Bénin et au Togo. Contenu non arbitré par un travail publié indépendant ; conservé au niveau « unverified »."
+    },
+    {
+      "sourceKey": "falola-oguntomisin-1984",
+      "title": "The Military in Nineteenth Century Yoruba Politics",
+      "url": null,
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ouvrage de Toyin Falola et Dare Oguntomisin (University of Ife Press / University of Virginia, 1984, p. 51). Retrouvé par l'intermédiaire de la version anglaise de Wikipédia (article « Balogun (name) »), qui le cite comme source de la définition du titre — Wikipédia elle-même n'est pas retenue comme source, seule l'attestation croisée jusqu'à cet ouvrage l'est. Aucune URL stable et vérifiée n'a été retrouvée pour cette édition ; conservé sans URL plutôt que d'en inventer une."
+    },
+    {
+      "sourceKey": "omoniyi-fishman-2006",
+      "title": "Explorations in the Sociology of Language and Religion, Volume 20",
+      "url": null,
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Volume dirigé par Tope Omoniyi et Joshua A. Fishman (John Benjamins Publishing, 2006, p. 108). Retrouvé par l'intermédiaire de la version anglaise de Wikipédia (article « Balogun (name) »), qui le cite comme source de la définition du titre ; même réserve que ci-dessus concernant Wikipédia et l'absence d'URL vérifiée."
+    },
+    {
+      "sourceKey": "taiwo-olatunde-2016",
+      "title": "Knights of a Global Countryside: The Balogun Institution of Ijebuland, Nigeria",
+      "url": "https://www.researchgate.net/publication/327231824_Knights_of_a_Global_Countryside_The_Balogun_Institution_of_Ijebuland_Nigeria",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Article d'Olaseni Olatunde Taiwo (Nsukka Journal of History, 2016), identifié par son titre et sa revue de publication. Le texte intégral n'a pas pu être consulté (accès refusé sur toutes les plateformes disponibles) ; seule son identification bibliographique a été vérifiée, et son contenu n'a donc servi à étayer aucune affirmation précise au-delà de son existence."
+    },
+    {
+      "sourceKey": "olubadan-ibadan-succession",
+      "title": "Ibadan's Unique System — The Olubadan",
+      "url": "https://olubadan.com/ibadans-unique-system/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Site consacré à l'institution traditionnelle de l'Olubadan d'Ibadan, décrivant la ligne de titres Balogun et son système de succession fondé sur l'ancienneté plutôt que sur la filiation directe (« the Ibadan chieftaincy system does not pass titles from father to son »). Présentation institutionnelle non académique, conservée au niveau « unverified » faute de recoupement indépendant."
+    },
+    {
+      "sourceKey": "refworld-balogun-itele",
+      "title": "Nigeria: Information on the chieftaincy title balogun of Itele and on whether two families with a claim to that title alternate the chieftaincy",
+      "url": "https://www.refworld.org/docid/3ae6ab6c38.html",
+      "tier": "referenced",
+      "source_kind": "intergovernmental",
+      "notes": "Réponse documentaire hébergée par Refworld (UNHCR), du type habituellement produit par un organisme national de recherche sur les pays d'origine (p. ex. Commission de l'immigration et du statut de réfugié du Canada). Décrit le titre balogun comme héréditaire et transmis le plus souvent au fils aîné dans la région d'Ijebu. L'accès direct à la page a été refusé lors de la consultation ; seul le résumé indexé a pu être lu, ce qui limite la vérification de la date exacte et du texte intégral."
+    },
+    {
+      "sourceKey": "lloyd-1955-yoruba-lineage",
+      "title": "The Yoruba Lineage",
+      "url": "https://doi.org/10.2307/1157104",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "P. C. Lloyd, Africa, vol. 25, n° 3, juillet 1955, p. 235-251. Étude classique de l'organisation lignagère yoruba : établit que les titres de chefferie (oye) restent vestis dans un lignage et tournent entre ses branches (« maisons de chefferie »), documentant ainsi la règle générale de transmission patrilinéaire au sein d'un lignage dont la charge de Balogun à Ijebu-Itele est une instance, et dont Ibadan est une exception nommée."
+    },
+    {
+      "sourceKey": "premiumtimes-olubadan-2025",
+      "title": "Olubadan stool and Ibadan's unique succession system",
+      "url": "https://www.premiumtimesng.com/regional/ssouth-west/823413-olubadan-stool-and-ibadans-unique-succession-system.html",
+      "tier": "referenced",
+      "notes": "Folashade Ogunrinde, Premium Times (Nigeria), 24 septembre 2025. Article de presse signé, média professionnel identifiable, expliquant pourquoi la succession non héréditaire d'Ibadan (dont la ligne Balogun) est une exception documentée liée à la fondation de la ville au XIXe siècle comme camp de guerriers sans lignage royal préexistant, à la différence des autres royaumes yoruba."
+    },
+    {
+      "sourceKey": "naturenex-balogun-market",
+      "title": "Balogun Market Lagos Island – Nigeria's Largest Open-Air Market",
+      "url": "https://naturenex.net/balogun-market-lagos-island/",
+      "tier": "unverified",
+      "notes": "Article de blog touristique consulté pour l'histoire du marché Balogun de Lagos, cité uniquement pour signaler une entité homonyme distincte du patronyme documenté. Contenu non académique, conservé au niveau « unverified »."
     }
   ],
   "gaps": [
@@ -77,7 +200,7 @@
     },
     {
       "fieldPath": "origin.writtenChronicles",
-      "reason": "Les recherches « Balogun Yoruba chronicle manuscript colonial register » et « Balogun archive Nigeria Benin » n'ont livré aucune chronique ni pièce d'archives établissant une histoire propre à cette forme."
+      "reason": "Les recherches « Balogun Yoruba chronicle manuscript colonial register » et « Balogun archive Nigeria Benin » n'ont livré aucune chronique ni pièce d'archives établissant une histoire propre à cette forme. Des présentations institutionnelles de la charge elle-même ont été retrouvées à Ibadan et dans la région d'Ijebu, mais aucune ne constitue une chronique de l'origine du nom lui-même."
     },
     {
       "fieldPath": "alliances",
@@ -85,19 +208,7 @@
     },
     {
       "fieldPath": "bearers",
-      "reason": "la page YorubaNames consultée et les recherches « Balogun obituary biography deceased » n'ont pas permis d'établir un porteur décédé avec une notice suffisamment fiable sans recourir à Wikipédia."
-    },
-    {
-      "fieldPath": "homonyms",
-      "reason": "Les recherches « Balogun homonym etymology » et « Balogun surname origin other language » n'ont pas établi une graphie identique d'origine distincte."
-    },
-    {
-      "fieldPath": "transmissionMode",
-      "reason": "la page YorubaNames consultée décrit l'origine ou la fonction du nom, mais ne documente pas son mode de transmission contemporain ; les recherches « Balogun hereditary family name Yoruba » n'ont pas tranché."
-    },
-    {
-      "fieldPath": "designatedSocialUnit",
-      "reason": "la page YorubaNames consultée ne permet pas de déterminer si l'emploi documenté désigne un individu, une charge, une maison ou un lignage ; les recherches ciblées sur Balogun n'ont pas livré de source décisive."
+      "reason": "Le nom est porté par de nombreuses personnalités publiques nigérianes, mais aucune ayant revendiqué publiquement, en ses propres mots, une identité yoruba n'a été retrouvée ; en l'absence d'une telle déclaration, aucun porteur ne peut être cité ici."
     }
   ]
 }

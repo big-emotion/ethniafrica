@@ -1,0 +1,139 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court : la seule étymologie trouvée rattache ce nom aux Senga de Zambie, alors que sa répartition actuelle est la plus forte en Ouganda et en RDC ; cet écart géographique est déclaré comme tel plutôt que résolu par hypothèse."
+  },
+  "id": "PAT_KATENDE",
+  "nameMain": "Katende",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Katende",
+      "attestations": [
+        {
+          "countryId": "COD",
+          "sourceRefs": ["forebears-katende"]
+        },
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["forebears-katende"]
+        },
+        {
+          "countryId": "ZMB",
+          "sourceRefs": ["forebears-katende", "lukama-2019-names-zambia"]
+        },
+        {
+          "countryId": "MWI",
+          "sourceRefs": ["forebears-katende"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "Un ouvrage consacré aux noms de famille zambiens rattache ce nom au peuple senga et lui donne le sens « talon ».",
+        "claimStatus": "claimed",
+        "sourceRefs": ["lukama-2019-names-zambia"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_SENGA",
+      "status": "supposed",
+      "sourceRefs": ["lukama-2019-names-zambia"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "COD",
+      "status": "attested",
+      "sourceRefs": ["forebears-katende"]
+    },
+    {
+      "countryId": "UGA",
+      "status": "attested",
+      "sourceRefs": ["forebears-katende"]
+    },
+    {
+      "countryId": "ZMB",
+      "status": "attested",
+      "sourceRefs": ["forebears-katende"]
+    },
+    {
+      "countryId": "MWI",
+      "status": "attested",
+      "sourceRefs": ["forebears-katende"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "forebears-katende",
+      "title": "Katende Surname Origin, Meaning & Last Name History",
+      "url": "https://forebears.io/surnames/katende",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Répertoire de fréquence patronymique consulté directement. Il recense environ 44 644 porteurs dans le monde, presque également répartis entre l'Ouganda (21 913, 49 pour cent) et la République démocratique du Congo (21 090, 47 pour cent), avec des effectifs bien plus modestes en Tanzanie, en Zambie et au Malawi. C'est ce même répertoire qui cite l'ouvrage sur les noms zambiens pour la signification du nom."
+    },
+    {
+      "sourceKey": "lukama-2019-names-zambia",
+      "title": "The Names of Zambia",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "unknown",
+      "notes": "Simboma Mubita Lukama, 2019. Cité par un répertoire de fréquence patronymique pour l'attribution de ce nom au peuple senga et le sens « talon » ; l'ouvrage lui-même n'a pas été consulté directement, et cette attribution n'a pas pu être recoupée par une autre source. La zone actuelle de plus forte présence du nom, l'Ouganda et la République démocratique du Congo, ne recoupe pas la zone senga, principalement zambienne et malawite, ce qui affaiblit la force de ce rapprochement sans le réfuter."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "peoples",
+      "reason": "La seule signification retrouvée rattache ce nom aux Senga, un peuple présent surtout en Zambie et au Malawi, alors que la répartition actuelle des porteurs est la plus forte en Ouganda et en République démocratique du Congo, deux pays où les Senga ne sont pas spécialement présents. Cet écart n'a pas pu être résolu ; le rattachement est donc retenu comme supposé plutôt qu'attesté."
+    },
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Aucune source ne précise si ce nom relève d'un nom de clan, d'un nom personnel ou d'un autre système chez les Senga ou ailleurs ; la valeur retenue est un choix par défaut, non une donnée vérifiée."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "Aucune source ne rattache ce nom à un clan, une lignée ou une autre unité sociale précise."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La règle de transmission de ce nom n'est documentée par aucune source consultée."
+    },
+    {
+      "fieldPath": "origin.oralTraditions",
+      "reason": "Aucun récit d'origine transmis par un informateur nommé n'a été trouvé pour ce nom."
+    },
+    {
+      "fieldPath": "origin.writtenChronicles",
+      "reason": "Aucune chronique historique dédiée à ce nom n'a été trouvée au-delà de la notice de l'ouvrage sur les noms zambiens, déjà citée pour son étymologie."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune relation à plaisanterie ni aucune autre alliance nommée avec un autre patronyme n'a été trouvée pour ce nom."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale ou professionnelle héréditaire propre à ce nom n'a été trouvée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Plusieurs personnalités vivantes portent ce nom, notamment dans le sport et la vie publique, mais aucune ne s'est exprimée publiquement sur son origine ethnique dans ses propres mots ; aucun porteur décédé rattaché de façon spécifique à ce nom n'a pu être identifié avec une source assez solide pour être cité ici."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "Aucune entité distincte portant ce nom n'a pu être retrouvée avec une source suffisamment fiable pour être citée ici."
+    }
+  ]
+}

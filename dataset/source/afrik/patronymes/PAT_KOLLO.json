@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court : les affirmations positives se limitent aux sources propres à ce nom ; tout ce qui n'est pas établi par une source est déclaré comme lacune. Une origine bété a été explorée à la demande d'un porteur du nom mais n'a pas pu être confirmée ; elle n'est pas retenue faute de preuve, et cette absence de confirmation est ce que la fiche publie."
+  },
+  "id": "PAT_KOLLO",
+  "nameMain": "Kollo",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Kollo",
+      "attestations": [
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["forebears-kollo"]
+        }
+      ]
+    },
+    {
+      "spelling": "Ngo Kollo",
+      "attestations": [
+        {
+          "countryId": "CMR",
+          "sourceRefs": ["temoignage-familial-ngo-kollo-2026"]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [
+      {
+        "claim": "Selon un témoignage familial, ce nom est aussi porté au Cameroun sous la forme composée Ngo Kollo, où le premier élément marque l'appartenance à une lignée. Le témoignage ne précise ni la communauté ni la région camerounaise concernées, et aucune source publiée n'a été retrouvée pour le confirmer.",
+        "claimStatus": "claimed",
+        "griot": "Témoignage familial, non identifié publiquement",
+        "transcription": "Aucune transcription écrite ou enregistrée n'a été conservée : il s'agit d'un témoignage rapporté directement, sans support documentaire joint.",
+        "sourceRefs": ["temoignage-familial-ngo-kollo-2026"]
+      }
+    ],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [],
+  "countries": [
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["forebears-kollo"]
+    },
+    {
+      "countryId": "CMR",
+      "status": "supposed",
+      "sourceRefs": ["temoignage-familial-ngo-kollo-2026"]
+    }
+  ],
+  "alliances": [],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [
+    {
+      "label": "Kollo (Niger)",
+      "entityType": "place",
+      "entityId": null,
+      "distinction": "Kollo désigne aussi un département du Niger et son chef-lieu, sur la rive gauche du fleuve Niger à une trentaine de kilomètres de Niamey, dans la région de Tillabéri. C'est le département le plus peuplé de cette région, en pays majoritairement zarma et songhaï. Rien ne relie ce toponyme nigérien au patronyme ivoirien documenté dans cette fiche : la ressemblance des deux noms est une coïncidence de forme, pas une parenté attestée.",
+      "sourceRefs": ["ins-niger-tillaberi-2012", "mrg-niger"]
+    },
+    {
+      "label": "Kolo-Mandouka (Cameroun)",
+      "entityType": "place",
+      "entityId": null,
+      "distinction": "Il existe aussi, dans le département du Mungo au Cameroun, un village nommé Kolo-Mandouka, peuplé en majorité par les Bankon (Abo). Rien ne relie ce toponyme à la forme composée Ngo Kollo signalée par ailleurs dans cette fiche ni au patronyme ivoirien documenté ici : la ressemblance des noms est une coïncidence de forme, pas une parenté attestée.",
+      "sourceRefs": ["orstom-dictionnaire-villages-mungo-1971"]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "forebears-kollo",
+      "title": "Kollo Surname Origin, Meaning & Last Name History — Forebears",
+      "url": "https://forebears.io/surnames/kollo",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Répertoire de fréquence patronymique consulté directement. Il recense 25 porteurs du nom Kollo en Côte d'Ivoire, soit environ 1 habitant sur 923 000 — un nom très rare dans le pays. À l'échelle mondiale, il situe la plus forte concentration au Mali, loin devant la Côte d'Ivoire, et plus largement dans l'aire mandée. Il ne donne aucune signification au nom et ne permet, par lui-même, d'en déduire aucune appartenance ethnique : une simple mesure de fréquence par pays ne vaut pas attribution."
+    },
+    {
+      "sourceKey": "ins-niger-tillaberi-2012",
+      "title": "Monographie de la région de Tillabéri — Recensement général de la population et de l'habitat 2012",
+      "url": "https://stat-niger.org/wp-content/uploads/2020/05/Monographie_region_Tillabery.pdf",
+      "tier": "official",
+      "source_kind": "official_statistics",
+      "notes": "Institut National de la Statistique du Niger, avec l'appui du Fonds des Nations Unies pour la population, octobre 2016. Au recensement du 17 décembre 2012, le département de Kollo est donné comme le plus peuplé de la région de Tillabéri, avec 465 399 habitants, soit 17 % de la population régionale."
+    },
+    {
+      "sourceKey": "mrg-niger",
+      "title": "Niger",
+      "url": "https://minorityrights.org/country/niger/",
+      "tier": "referenced",
+      "source_kind": "community",
+      "notes": "Profil pays de Minority Rights Group International. Situe les Zarma (Djerma), sous-groupe songhaï, le long du fleuve Niger entre Niamey et le pays haoussa, une zone qui recouvre le département de Kollo. Cité seulement pour situer ce toponyme nigérien, sans lien avec le patronyme ivoirien de cette fiche."
+    },
+    {
+      "sourceKey": "temoignage-familial-ngo-kollo-2026",
+      "title": "Témoignage familial rapportant l'usage camerounais du nom",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Témoignage familial indiquant que ce nom est porté au Cameroun sous la forme composée Ngo Kollo. Aucune publication, aucun répertoire patronymique ni aucun travail d'onomastique consulté ne mentionne cette forme composée : elle est conservée comme un témoignage isolé, sans confirmation extérieure à ce jour."
+    },
+    {
+      "sourceKey": "orstom-dictionnaire-villages-mungo-1971",
+      "title": "Dictionnaire des villages du Mungo",
+      "url": "https://horizon.documentation.ird.fr/exl-doc/pleins_textes/divers15-04/02882.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Franqueville, André, avec Champaud, Jacques et Elingui, H., ORSTOM, Yaoundé, 1971. Répertoire administratif des villages du département du Mungo ; consulté pour la seule fin de localiser le village de Kolo-Mandouka, dans le regroupement Abo-Nord de l'arrondissement de Dibombari, en pays bankon (abo)."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "nameSystem",
+      "reason": "Le classement retenu ici, un nom transmis au sein d'une lignée ou d'un clan, correspond au fonctionnement le plus courant d'un nom de famille ouest-africain, mais aucune source propre à ce nom ne confirme qu'il s'agisse précisément d'un nom de clan plutôt que d'un autre système de dénomination."
+    },
+    {
+      "fieldPath": "designatedSocialUnit",
+      "reason": "L'unité sociale exacte que ce nom désigne, lignée, clan ou autre, n'est établie par aucune source."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "La manière dont ce nom se transmet, par le père, par la mère ou autrement, n'est établie par aucune source."
+    },
+    {
+      "fieldPath": "origin",
+      "reason": "Aucun récit d'origine, aucune chronique écrite et aucune reconstruction linguistique propres à ce nom n'ont été trouvés."
+    },
+    {
+      "fieldPath": "peoples",
+      "reason": "Aucune source ne permet de rattacher ce nom à un peuple précis. Il est très rare en Côte d'Ivoire, où un répertoire patronymique n'en recense qu'une poignée de porteurs, et rien dans les sources consultées ne l'associe aux Bété ni à un autre peuple ivoirien en particulier. À l'échelle du monde, ce même répertoire situe sa plus forte concentration au Mali et plus largement dans l'aire mandée plutôt qu'en zone krou, mais une simple répartition géographique ne suffit pas non plus à établir une origine mandée pour la forme portée en Côte d'Ivoire. En l'état des sources disponibles, l'atlas ne peut confirmer aucune origine ethnique pour ce nom, ni chez les Bété ni ailleurs."
+    },
+    {
+      "fieldPath": "alliances",
+      "reason": "Aucune relation à plaisanterie ni aucune autre alliance nommée avec un autre patronyme n'a été trouvée pour ce nom."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "Aucune fonction sociale ou professionnelle héréditaire propre à ce nom n'a été trouvée."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "Aucun porteur décédé de ce nom n'a pu être identifié à partir d'une source vérifiable. Les personnes vivantes ne sont pas nommées ici : le patronyme d'une personne vivante ne permet pas d'en déduire son origine ethnique."
+    }
+  ]
+}
