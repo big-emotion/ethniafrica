@@ -8,7 +8,7 @@ import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { isEstimateRound, type GameRound } from "@/lib/games/gameKinds";
 import { frenchNumber } from "@/lib/games/format";
 import { revealProvenanceFr } from "@/lib/games/revealProvenance";
-import { sourceStandingLabelFr } from "@/types/sources";
+import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -150,7 +150,7 @@ export const GameAnswerReveal = ({
               >
                 <span>{source.label}</span>
                 <span className="rounded-full bg-afh-bg-warm px-2 py-0.5 text-afh-caption font-medium">
-                  {sourceStandingLabelFr(source.standing)}
+                  {sourceStandingLabel(source.standing, "fr")}
                 </span>
               </li>
             ))}

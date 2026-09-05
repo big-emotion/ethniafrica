@@ -21,7 +21,8 @@ import {
 } from "@/lib/familyFootprintSource";
 import type { FamilyPageData } from "@/lib/familyDataTransformer";
 import { ficheSourceLabel } from "@/lib/afrik/ficheSourceLabel";
-import { isSourceTier, SOURCE_TIER_LABELS_FR } from "@/types/sources";
+import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
+import { isSourceTier } from "@/types/sources";
 
 /**
  * The family fiche's reading: an opening and five sections on parchment, below
@@ -420,9 +421,10 @@ export function FamilyParchment({
               return (
                 <li key={`${label}-${index}`} className="afh-source-row">
                   <span className="afh-chip" data-tier={tier ?? "unknown"}>
-                    {isSourceTier(tier)
-                      ? SOURCE_TIER_LABELS_FR[tier]
-                      : "Palier à revoir"}
+                    {sourceStandingLabel(
+                      isSourceTier(tier) ? tier : "needs_review",
+                      "fr"
+                    )}
                   </span>
                   <span>{renderSourceText(label)}</span>
                 </li>

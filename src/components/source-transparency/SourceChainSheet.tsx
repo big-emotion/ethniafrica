@@ -13,13 +13,8 @@ import Link from "next/link";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import { cn } from "@/lib/utils";
 import { getSourceRoute } from "@/lib/routing";
-import {
-  SOURCE_TIERS,
-  SOURCE_TIER_LABELS_FR,
-  sourceStandingLabelFr,
-  toSourceTier,
-  type SourceTier,
-} from "@/types/sources";
+import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
+import { SOURCE_TIERS, toSourceTier, type SourceTier } from "@/types/sources";
 
 /* -------------------------------------------------------------------------- */
 /*  Types                                                                      */
@@ -93,8 +88,6 @@ export type SourceChainSheetProps = {
 /* -------------------------------------------------------------------------- */
 /*  Constants                                                                  */
 /* -------------------------------------------------------------------------- */
-
-const TIER_LABELS = SOURCE_TIER_LABELS_FR;
 
 /**
  * Most authoritative first — the reading order of the groups.
@@ -323,7 +316,7 @@ function SourceItem({ source }: { source: Source }) {
           data-testid={`source-tier-${source.id}`}
           className="shrink-0 rounded-full bg-[var(--afh-muted,var(--country-muted,#f3f4f6))] px-2 py-0.5 text-afh-caption font-medium text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]"
         >
-          {sourceStandingLabelFr(source.tier)}
+          {sourceStandingLabel(source.tier, "fr")}
         </span>
       </div>
       <p className="text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
@@ -400,7 +393,7 @@ function TierGroup({
   return (
     <div data-testid={`tier-group-${tier}`} className="space-y-2">
       <h4 className="text-afh-eyebrow font-semibold uppercase tracking-wide text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
-        {sourceStandingLabelFr(tier)}
+        {sourceStandingLabel(tier, "fr")}
       </h4>
       <ul className="space-y-2">
         {sources.map((s) => (
