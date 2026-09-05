@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { PageLayout } from "@/components/layout/PageLayout";
+import { RETIRED_PEOPLE_IDS } from "@/lib/afrik/retiredPeopleIds";
+import { getPeopleLinksRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 import { RelationsListWithSourceSheet } from "@/components/relations/RelationsListWithSourceSheet";
 import { getPeopleById } from "@/api/v2/services/peopleService";
 import { getEgoNetwork } from "@/api/v2/services/relations";
@@ -55,7 +58,14 @@ export default async function PeopleLinksPage({
 }: {
   params: Promise<PageParams>;
 }) {
-  const { slug } = await params;
+  const { lang, slug } = await params;
+
+  // The fiche page redirects a retired id to its successor; its links page
+  // must follow it there rather than 404 once the old row is pruned.
+  const successorId = RETIRED_PEOPLE_IDS[slug];
+  if (successorId) {
+    redirect(getPeopleLinksRoute(lang as Language, successorId));
+  }
 
   const [people, egoNetwork] = await Promise.all([
     getPeopleById(slug),

@@ -12,6 +12,9 @@ vi.mock("next/navigation", () => ({
   notFound: vi.fn(() => {
     throw new Error("NEXT_NOT_FOUND");
   }),
+  redirect: vi.fn((url: string) => {
+    throw new Error(`NEXT_REDIRECT:${url}`);
+  }),
   useRouter: () => ({ push: mockPush }),
 }));
 
@@ -55,7 +58,7 @@ vi.mock("@/components/layout/PageLayout", () => ({
 // ---------------------------------------------------------------------------
 // Import page AFTER mocks
 // ---------------------------------------------------------------------------
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import PeopleLinksPage, { generateMetadata } from "../page";
 import { RELATIONS } from "@/components/fiche/__tests__/ficheContextFixtures";
 import { getPeopleLinksRoute, getPeopleRoute } from "@/lib/routing";
@@ -96,6 +99,17 @@ describe("/[lang]/peuples/[slug]/liens page", () => {
     mockGetPeopleById.mockResolvedValue(null);
     await expect(callPage("PPL_UNKNOWN")).rejects.toThrow("NEXT_NOT_FOUND");
     expect(notFound).toHaveBeenCalled();
+  });
+
+  // @req REQ-027
+  it("redirects a retired id to the successor's links page", async () => {
+    await expect(callPage("PPL_SERERE")).rejects.toThrow(
+      `NEXT_REDIRECT:${getPeopleLinksRoute("fr", "PPL_SERER")}`
+    );
+    expect(redirect).toHaveBeenCalledWith(
+      getPeopleLinksRoute("fr", "PPL_SERER")
+    );
+    expect(mockGetPeopleById).not.toHaveBeenCalled();
   });
 
   /**
