@@ -15,10 +15,7 @@ import { readdirSync, readFileSync } from "fs";
 import { join } from "path";
 
 import { parseDossierFile } from "@/lib/afrik/parsers/dossierParser";
-import type {
-  Dossier,
-  DossierVertical,
-} from "@/lib/afrik/parsers/dossierTypes";
+import type { Dossier } from "@/lib/afrik/parsers/dossierTypes";
 
 const DOSSIER_ROOT = join(process.cwd(), "dataset/source/afrik/dossiers");
 
@@ -69,20 +66,6 @@ export function readDossierCorpus(): DossierCorpus {
   }
 
   return { dossiers, errors };
-}
-
-/**
- * Publication order, newest first — the order the Dossiers menu lists them in.
- * A dossier that fails the parser is not listed rather than listed broken.
- */
-// @req REQ-114
-export function listDossiers(vertical?: DossierVertical): Dossier[] {
-  const { dossiers } = readDossierCorpus();
-  const scoped = vertical
-    ? dossiers.filter((dossier) => dossier.vertical === vertical)
-    : dossiers;
-
-  return [...scoped].sort((a, b) => b.publishedOn.localeCompare(a.publishedOn));
 }
 
 // @req REQ-114
