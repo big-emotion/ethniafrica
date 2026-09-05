@@ -110,4 +110,26 @@ describe("recette AFRIK data sync workflow", () => {
 
     expect(workflow).toContain('node-version: "22"');
   });
+
+  // Loading fiches writes no question — a bank left to a hand-run command
+  // drifts behind the corpus that feeds it, and recette's had 377 active
+  // questions whose entities the corpus no longer declared. The sweep needs
+  // the corpus it questions, so it runs after the apply.
+  // @req REQ-032
+  it("generates the quiz question bank once the corpus has landed", () => {
+    const workflow = readWorkflow();
+    const applyIndex = workflow.indexOf(
+      "scripts/migrateAfrikToDatabase.ts --target=recette --apply"
+    );
+    const sweepIndex = workflow.indexOf("scripts/generateQuizQuestions.ts");
+
+    expect(sweepIndex).toBeGreaterThan(applyIndex);
+    expect(workflow).toContain(
+      "npx tsx --conditions=react-server scripts/generateQuizQuestions.ts"
+    );
+
+    // Never `--rebuild` on a merge. It revokes every healthy question in the
+    // bank, which is a human's decision after reading a preview.
+    expect(workflow).not.toContain("generateQuizQuestions.ts --rebuild");
+  });
 });
