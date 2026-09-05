@@ -9,6 +9,7 @@ import { drawHomeHeroVisual } from "@/lib/home/homeHeroVisuals";
 import { drawDidYouKnowMotif } from "@/lib/home/didYouKnowMotifs";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import { OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
+import type { Language } from "@/types/shared";
 
 /**
  * The home draws two sourced facts on every request (REQ-115), so it must not
@@ -24,33 +25,49 @@ import { OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
 // @req REQ-115
 export const dynamic = "force-dynamic";
 
+interface HomePageProps {
+  params: Promise<{ lang: string }>;
+  searchParams?: Promise<{ hero?: string | string[] }>;
+}
+
+// The canonical follows the locale the home was served in: the English home
+// declaring `/fr` would be a duplicate-content signal against itself. The
+// hreflang alternates are REQ-141's and are not composed here.
 // @req REQ-044 FR95
-export const metadata: Metadata = {
-  title: OG_TITLE,
-  description: OG_DESCRIPTION,
-  alternates: {
-    canonical: "/fr",
-  },
-  openGraph: {
+// @req REQ-140
+export async function generateMetadata({
+  params,
+}: Pick<HomePageProps, "params">): Promise<Metadata> {
+  const { lang } = await params;
+  const home = `/${lang}`;
+  return {
     title: OG_TITLE,
     description: OG_DESCRIPTION,
-    type: "website",
-    url: "/fr",
-  },
-};
-
-interface HomePageProps {
-  searchParams?: Promise<{ hero?: string | string[] }>;
+    alternates: {
+      canonical: home,
+    },
+    openGraph: {
+      title: OG_TITLE,
+      description: OG_DESCRIPTION,
+      type: "website",
+      url: home,
+    },
+  };
 }
 
 // @req REQ-113
 // @req REQ-115
-export default async function Home({ searchParams }: HomePageProps = {}) {
+export default async function Home({ params, searchParams }: HomePageProps) {
+  // Safe to narrow: the [lang] layout has already 404ed anything that is not
+  // a published locale.
+  const { lang } = await params;
+  const language = lang as Language;
+
   // Drawn on the server once per request: no hydration mismatch and no visual
   // swap after the first paint. The force-dynamic contract above prevents the
   // result from being frozen into a prerendered page.
-  const params = await searchParams;
-  const heroParam = params?.hero;
+  const query = await searchParams;
+  const heroParam = query?.hero;
   const heroVisual =
     heroParam === "globe" || heroParam === "mercator"
       ? ({ kind: "globe" } as const)
@@ -74,15 +91,16 @@ export default async function Home({ searchParams }: HomePageProps = {}) {
   const didYouKnowMotif = drawDidYouKnowMotif();
 
   return (
-    <PageLayout language="fr" hideHeader flushTop flushBottom>
+    <PageLayout language={language} hideHeader flushTop flushBottom>
       <HomeHero
+        language={language}
         seedWords={seedWords}
         peopleCountsByCountry={peopleCountsByCountry}
         counts={counts}
         visual={heroVisual}
       />
       <DidYouKnow
-        language="fr"
+        language={language}
         facts={didYouKnowFacts}
         motif={didYouKnowMotif}
       />

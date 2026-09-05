@@ -1,21 +1,22 @@
+import { isLocale } from "@/lib/locale";
+import type { Language } from "@/types/shared";
+
 /**
  * The two locales the bilingual programme publishes, English first.
  *
- * Declared here rather than read from `Language` in src/types/shared.ts
- * because that type still says `"fr"` while the foundation PR widens it on
- * its own branch. When that PR lands, this becomes `export type
- * TranslationLocale = Language` — the union must never be maintained in two
- * places, and this is the one place the i18n modules import it from.
+ * An alias of `Language` rather than a second union: the i18n modules were
+ * written while `Language` still said `"fr"`, and the alias is what let them
+ * land first. It stays so the translation records keep one import path and
+ * the union is never maintained in two places.
  */
-export type TranslationLocale = "en" | "fr";
+export type TranslationLocale = Language;
 
-const PUBLISHED_LOCALES: ReadonlySet<string> = new Set<TranslationLocale>([
-  "en",
-  "fr",
-]);
-
-/** Whether a request value names a locale the atlas publishes. */
+/**
+ * Whether a request value names a locale the atlas publishes. Delegates to
+ * the one allow-list in src/lib/locale.ts so the API cannot accept a locale
+ * the site does not serve.
+ */
 // @req REQ-141
 export function isTranslationLocale(value: string): value is TranslationLocale {
-  return PUBLISHED_LOCALES.has(value);
+  return isLocale(value);
 }

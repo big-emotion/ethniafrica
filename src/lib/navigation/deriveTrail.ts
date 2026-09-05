@@ -5,6 +5,7 @@ import {
 } from "@/lib/routing";
 import { AXIS_HUB_PAGE, getAxisForPage } from "@/lib/hubs/axisRoutes";
 import { translations } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * One crumb. Structurally the `BreadcrumbItem` `AfrikBreadcrumbs` renders,
@@ -154,6 +155,6 @@ export function deriveTrail(
  * is offered as a return link, beside the trail rather than inside it.
  */
 // @req REQ-091
-export function backLinkLabel(entityLabel: string): string {
-  return `${translations.fr.trail.backTo} ${entityLabel}`;
+export function backLinkLabel(language: Language, entityLabel: string): string {
+  return `${translations[language].trail.backTo} ${entityLabel}`;
 }

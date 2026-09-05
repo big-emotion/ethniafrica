@@ -10,22 +10,27 @@ import {
 import { illustrationFor } from "@/lib/home/didYouKnowIllustrations";
 import { drawAnecdoteImageSide } from "@/lib/home/didYouKnowPresentation";
 import { getLocalizedRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 const PAGE_TITLE = "Anecdotes";
 const PAGE_SUBTITLE =
   "Des noms d'Afrique pris un par un : qui les a donnés, quand, et ce qu'ils recouvraient.";
 
-const BASE_PATH = getLocalizedRoute("fr", "anecdotes");
+interface AnecdotesPageProps {
+  params: Promise<{ lang: string }>;
+  searchParams: Promise<{ a?: string }>;
+}
 
 // @req REQ-113
-export const metadata: Metadata = {
-  title: PAGE_TITLE,
-  description: PAGE_SUBTITLE,
-  alternates: { canonical: BASE_PATH },
-};
-
-interface AnecdotesPageProps {
-  searchParams: Promise<{ a?: string }>;
+export async function generateMetadata({
+  params,
+}: Pick<AnecdotesPageProps, "params">): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    title: PAGE_TITLE,
+    description: PAGE_SUBTITLE,
+    alternates: { canonical: getLocalizedRoute(lang as Language, "anecdotes") },
+  };
 }
 
 /**
@@ -49,8 +54,11 @@ interface AnecdotesPageProps {
  */
 // @req REQ-113
 export default async function AnecdotesPage({
+  params,
   searchParams,
 }: AnecdotesPageProps) {
+  const { lang } = await params;
+  const language = lang as Language;
   const requested = (await searchParams).a ?? null;
   // A link naming a retired fact opens on a fresh draw rather than a 404:
   // the address still points at a page that has something to say.
@@ -68,7 +76,7 @@ export default async function AnecdotesPage({
   const openingImageSide = drawAnecdoteImageSide();
 
   return (
-    <PageLayout language="fr" title={PAGE_TITLE} subtitle={PAGE_SUBTITLE}>
+    <PageLayout language={language} title={PAGE_TITLE} subtitle={PAGE_SUBTITLE}>
       <div className="anecdotes-page">
         {/* Not a count, and not reading instructions either. « 67 anecdotes »
             turns the page into an inventory to get through; « une à la fois,
@@ -82,7 +90,7 @@ export default async function AnecdotesPage({
 
         {opening ? (
           <AnecdoteReader
-            language="fr"
+            language={language}
             deck={deck}
             openingCard={{
               fact: opening,

@@ -5,6 +5,7 @@ import {
 } from "@/lib/countryDataTransformer";
 import { backLinkLabel } from "@/lib/navigation/deriveTrail";
 import { getPeopleRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 /**
  * The band a country fiche opens on, above the globe.
@@ -17,10 +18,12 @@ import { getPeopleRoute } from "@/lib/routing";
 // @req REQ-091
 export function CountryFicheTitle({
   country,
+  language,
   fromPeopleId,
   fromPeopleName,
 }: {
   country: CountryDetail;
+  language: Language;
   /** The people fiche a reader arrived from. Provenance, never ancestry. */
   fromPeopleId?: string;
   fromPeopleName?: string;
@@ -43,11 +46,11 @@ export function CountryFicheTitle({
       {fromPeopleId && (
         <p className="px-3 md:px-4 xl:px-5 text-afh-caption">
           <a
-            href={getPeopleRoute("fr", fromPeopleId)}
+            href={getPeopleRoute(language, fromPeopleId)}
             data-testid="country-back-to-people"
             className="hover:underline"
           >
-            ‹ {backLinkLabel(fromPeopleName ?? fromPeopleId)}
+            ‹ {backLinkLabel(language, fromPeopleName ?? fromPeopleId)}
           </a>
         </p>
       )}

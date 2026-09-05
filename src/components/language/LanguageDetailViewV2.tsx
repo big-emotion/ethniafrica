@@ -8,9 +8,11 @@ import {
 } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
+import type { Language } from "@/types/shared";
 
 export interface LanguageDetailViewV2Props {
   data: LanguagePageData;
+  language: Language;
   /** An open flag on this fiche's sourcing, resolved by the route. */
   hasSourceFlag?: boolean;
 }
@@ -33,6 +35,7 @@ export interface LanguageDetailViewV2Props {
 // @req REQ-136
 export function LanguageDetailViewV2({
   data,
+  language,
   hasSourceFlag = false,
 }: LanguageDetailViewV2Props) {
   // Defensive against a payload cached before these fields existed: the
@@ -52,7 +55,9 @@ export function LanguageDetailViewV2({
           <dd>{data.isoCode639_3}</dd>
           <dt>Glottocode</dt>
           <dd>
-            {data.glottocode ?? <FieldProvenanceMarker state="missing" />}
+            {data.glottocode ?? (
+              <FieldProvenanceMarker state="missing" language={language} />
+            )}
           </dd>
         </dl>
       </FicheSection>
@@ -65,13 +70,13 @@ export function LanguageDetailViewV2({
             ))}
           </ul>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
       <FicheSection title="Famille linguistique">
         <Link
-          href={getFamilyRoute("fr", data.family.id)}
+          href={getFamilyRoute(language, data.family.id)}
           className="font-semibold hover:underline"
         >
           {data.family.name}
@@ -84,7 +89,7 @@ export function LanguageDetailViewV2({
             {data.speakingPeoples.map((people) => (
               <li key={people.id}>
                 <Link
-                  href={getPeopleRoute("fr", people.id)}
+                  href={getPeopleRoute(language, people.id)}
                   className="hover:underline"
                 >
                   {people.name}
@@ -93,7 +98,7 @@ export function LanguageDetailViewV2({
             ))}
           </ul>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
@@ -105,7 +110,7 @@ export function LanguageDetailViewV2({
             ))}
           </ul>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
@@ -113,7 +118,7 @@ export function LanguageDetailViewV2({
         {data.vehicularRole ? (
           <p>{data.vehicularRole}</p>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
@@ -124,7 +129,7 @@ export function LanguageDetailViewV2({
             {data.vitalityStatus.asOf})
           </p>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
@@ -141,7 +146,7 @@ export function LanguageDetailViewV2({
             variant="parchment"
           />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
     </div>

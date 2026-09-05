@@ -86,6 +86,7 @@ describe("colonization quiz-surface exclusion (Epic 13, Story 13.9, ETNI-533)", 
       <QuizScopePicker
         scopes={SCOPES}
         action={getLocalizedRoute("fr", "quiz")}
+        language="fr"
       />
     );
 

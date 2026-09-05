@@ -47,7 +47,7 @@ const peopleComparison: ComparisonPageData = {
 describe("ComparisonView", () => {
   // @req REQ-097
   it("renders a table caption naming the compared entities", () => {
-    render(<ComparisonView data={peopleComparison} />);
+    render(<ComparisonView language="fr" data={peopleComparison} />);
 
     expect(screen.getByRole("table")).toBeInTheDocument();
     expect(
@@ -57,7 +57,7 @@ describe("ComparisonView", () => {
 
   // @req REQ-097
   it("renders one column header per entity", () => {
-    render(<ComparisonView data={peopleComparison} />);
+    render(<ComparisonView language="fr" data={peopleComparison} />);
 
     expect(
       screen.getAllByRole("columnheader", { name: "Yoruba" })
@@ -69,7 +69,7 @@ describe("ComparisonView", () => {
 
   // @req REQ-097
   it("renders one row header per comparable attribute", () => {
-    render(<ComparisonView data={peopleComparison} />);
+    render(<ComparisonView language="fr" data={peopleComparison} />);
 
     expect(
       screen.getAllByRole("rowheader", { name: "Noms & appellations" })
@@ -81,7 +81,7 @@ describe("ComparisonView", () => {
 
   // @req REQ-097
   it("stacks each section as a definition list whose dt reads '{row label} — {autonym}'", () => {
-    render(<ComparisonView data={peopleComparison} />);
+    render(<ComparisonView language="fr" data={peopleComparison} />);
 
     expect(
       screen.getByText("Noms & appellations — Yoruba")
@@ -92,7 +92,7 @@ describe("ComparisonView", () => {
 
   // @req REQ-097
   it("links relational values to their fiches", () => {
-    render(<ComparisonView data={peopleComparison} />);
+    render(<ComparisonView language="fr" data={peopleComparison} />);
 
     expect(
       screen.getAllByRole("link", { name: "FLG_NIGER_CONGO" })[0]
@@ -105,7 +105,7 @@ describe("ComparisonView", () => {
 
   // @req REQ-098
   it("shows non renseigné with sr-only entity context for an absent section", () => {
-    render(<ComparisonView data={peopleComparison} />);
+    render(<ComparisonView language="fr" data={peopleComparison} />);
 
     const missing = screen.getAllByText("non renseigné")[0];
     expect(missing).toBeInTheDocument();
@@ -116,7 +116,7 @@ describe("ComparisonView", () => {
 
   // @req REQ-098
   it("shows a réf. 2025 caption on demography rows without reformatting the figures", () => {
-    render(<ComparisonView data={peopleComparison} />);
+    render(<ComparisonView language="fr" data={peopleComparison} />);
 
     expect(screen.getAllByText("réf. 2025").length).toBeGreaterThan(0);
     expect(screen.getAllByText("47000000").length).toBeGreaterThan(0);
@@ -131,7 +131,7 @@ describe("ComparisonView", () => {
         { key: "culture", values: { PPL_YORUBA: null, PPL_IGBO: null } },
       ],
     };
-    render(<ComparisonView data={data} />);
+    render(<ComparisonView language="fr" data={data} />);
 
     expect(
       screen.queryByRole("rowheader", { name: "Culture & spiritualité" })
@@ -147,6 +147,7 @@ describe("CompareSectionRow", () => {
   it("renders nothing when every entity value is null", () => {
     const { container } = render(
       <CompareSectionRow
+        language="fr"
         row={{ key: "culture", values: { PPL_YORUBA: null, PPL_IGBO: null } }}
         entities={peopleComparison.columns}
         entityType="peuple"
@@ -160,6 +161,7 @@ describe("CompareSectionRow", () => {
   it("renders a section heading and one dt/dd pair per entity", () => {
     render(
       <CompareSectionRow
+        language="fr"
         row={peopleComparison.rows[0]}
         entities={peopleComparison.columns}
         entityType="peuple"
@@ -182,6 +184,7 @@ describe("CompareValueCell", () => {
   it("renders 'non renseigné' with sr-only entity context when the value is missing", () => {
     render(
       <CompareValueCell
+        language="fr"
         value={null}
         entity={{ id: "PPL_IGBO", label: "Igbo", type: "peuple" }}
       />
@@ -195,6 +198,7 @@ describe("CompareValueCell", () => {
   it("renders a scalar value verbatim", () => {
     render(
       <CompareValueCell
+        language="fr"
         value={47000000}
         entity={{ id: "PPL_YORUBA", label: "Yoruba", type: "peuple" }}
       />
@@ -207,6 +211,7 @@ describe("CompareValueCell", () => {
   it("renders a relational id string as a link to its fiche", () => {
     render(
       <CompareValueCell
+        language="fr"
         value="FLG_NIGER_CONGO"
         entity={{ id: "PPL_YORUBA", label: "Yoruba", type: "peuple" }}
       />
@@ -221,6 +226,7 @@ describe("CompareValueCell", () => {
   it("appends a réf. 2025 caption only when showReferenceYear is set", () => {
     render(
       <CompareValueCell
+        language="fr"
         value={{ totalPopulation: 1000 }}
         entity={{ id: "PPL_YORUBA", label: "Yoruba", type: "peuple" }}
         showReferenceYear

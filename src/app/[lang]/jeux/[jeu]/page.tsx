@@ -10,9 +10,10 @@ import { buildScaleFacts, pickScaleFacts } from "@/lib/games/scaleFacts";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { OG_TITLE } from "@/lib/brand";
+import type { Language } from "@/types/shared";
 
 interface GamePageProps {
-  params: Promise<{ jeu: string }>;
+  params: Promise<{ lang: string; jeu: string }>;
 }
 
 /**
@@ -30,20 +31,22 @@ interface GamePageProps {
 export async function generateMetadata({
   params,
 }: GamePageProps): Promise<Metadata> {
-  const { jeu } = await params;
+  const { lang, jeu } = await params;
   const game = getGameBySlug(jeu);
   if (!game) return {};
 
   return {
     title: `${game.nameFr} — ${OG_TITLE}`,
     description: game.promptFr,
-    alternates: { canonical: `${getAxisHubRoute("fr", "jeux")}/${game.slug}` },
+    alternates: {
+      canonical: `${getAxisHubRoute(lang as Language, "jeux")}/${game.slug}`,
+    },
   };
 }
 
 // @req REQ-120
 export default async function GamePage({ params }: GamePageProps) {
-  const { jeu } = await params;
+  const { lang, jeu } = await params;
   const game = getGameBySlug(jeu);
   if (!game) notFound();
 
@@ -75,7 +78,7 @@ export default async function GamePage({ params }: GamePageProps) {
 
   return (
     <PageLayout
-      language="fr"
+      language={lang as Language}
       title={game.nameFr}
       subtitle={game.promptFr}
       trailLabel={game.nameFr}
@@ -110,6 +113,7 @@ export default async function GamePage({ params }: GamePageProps) {
           black-or-nothing rather than pervenche (atlas-charter §2). */}
       <div className={ACCENT_BY_ACCESS_MODE.jeux}>
         <MercatorSurface
+          language={lang as Language}
           game={game}
           rounds={envelope.data.rounds}
           facts={facts}

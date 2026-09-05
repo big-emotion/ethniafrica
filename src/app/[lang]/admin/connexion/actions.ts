@@ -62,6 +62,8 @@ export async function requestAdminSignInLink(
   if (!(await isEmailAllowlisted(email))) return NEUTRAL_ANSWER;
 
   const supabase = await createServerSupabaseClient();
+  // Fixed on `/fr/admin`, like the auth callback it hands over to: the
+  // moderation surface is French-only until the product owner says otherwise.
   const destination = `${await requestOrigin()}/api/auth/callback?redirect=${encodeURIComponent("/fr/admin")}`;
 
   // A refusal from Supabase — a rate limit, an outage — is not reported back

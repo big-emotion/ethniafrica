@@ -18,10 +18,12 @@ import type { ScaleFact } from "@/lib/games/scaleFacts";
 import { takeSession } from "@/lib/games/session";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { cn } from "@/lib/utils";
+import type { Language } from "@/types/shared";
 
 export interface GamePlayIslandProps {
   game: GameDefinition;
   rounds: GameRound[];
+  language: Language;
   /**
    * The measured scale facts. One is stated on every other reveal, and the
    * whole bank is laid out on the score card — see `ScaleFactCard` for why
@@ -55,6 +57,7 @@ const FACT_EVERY = 2;
 export const GamePlayIsland = ({
   game,
   rounds,
+  language,
   facts = [],
   corpusLimited = false,
   onPhaseChange,
@@ -114,6 +117,7 @@ export const GamePlayIsland = ({
           <QuizProgressDots
             current={session.currentIndex + 1}
             total={session.totalRounds}
+            language={language}
           />
           {status === "answering" ? (
             isEstimateRound(currentRound) ? (

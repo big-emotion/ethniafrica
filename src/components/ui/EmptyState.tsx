@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { StateMedallion } from "@/components/ui/StateMedallion";
+import { DEFAULT_LOCALE } from "@/lib/locale";
+import { getLocalizedRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 // The way out of a fruitless search, worded once. The home's hero panel offers
 // the same escape in a space too small for this component's medallion, and two
@@ -11,7 +14,8 @@ export const SEARCH_EMPTY_LINK_LABEL = "Parcourir les familles linguistiques";
 interface EmptyStateProps {
   message: string;
   variant?: "default" | "search" | "failure";
-  lang?: string;
+  /** Only the search variant links out; a caller without a locale gets the site default. */
+  lang?: Language;
   retryHref?: string;
   retryLabel?: string;
   children?: React.ReactNode;
@@ -21,7 +25,7 @@ interface EmptyStateProps {
 export function EmptyState({
   message,
   variant,
-  lang = "fr",
+  lang = DEFAULT_LOCALE,
   retryHref,
   retryLabel,
   children,
@@ -40,7 +44,7 @@ export function EmptyState({
             Vérifiez l&apos;orthographe ou parcourez par famille linguistique.
           </p>
           <Link
-            href={`/${lang}/familles`}
+            href={getLocalizedRoute(lang, "families")}
             data-cta="primary"
             className="underline underline-offset-2 hover:text-afh-text transition-colors"
           >

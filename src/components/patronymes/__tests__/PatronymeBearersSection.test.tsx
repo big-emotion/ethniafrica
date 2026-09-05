@@ -21,6 +21,7 @@ describe("PatronymeBearersSection (AC3, DEC-040, REQ-133)", () => {
   it("lists a bearer by id, fullName and roleCategory only", () => {
     render(
       <PatronymeBearersSection
+        language="fr"
         patronyme={{
           ...base,
           bearers: [
@@ -42,6 +43,7 @@ describe("PatronymeBearersSection (AC3, DEC-040, REQ-133)", () => {
   it("always states the DEC-040 editorial policy alongside the list", () => {
     render(
       <PatronymeBearersSection
+        language="fr"
         patronyme={{
           ...base,
           bearers: [
@@ -65,7 +67,7 @@ describe("PatronymeBearersSection (AC3, DEC-040, REQ-133)", () => {
   // a sentence the corpus wrote.
   // @req REQ-119
   it("states explicitly when no bearer is documented (atlas charter §4)", () => {
-    render(<PatronymeBearersSection patronyme={base} />);
+    render(<PatronymeBearersSection language="fr" patronyme={base} />);
 
     expect(screen.getByRole("status")).toBeInTheDocument();
   });
@@ -77,6 +79,7 @@ describe("PatronymeBearersSection (AC3, DEC-040, REQ-133)", () => {
   it("lists a bearer the dossier names itself when no person record exists", () => {
     render(
       <PatronymeBearersSection
+        language="fr"
         patronyme={{
           ...base,
           content: {
@@ -94,6 +97,7 @@ describe("PatronymeBearersSection (AC3, DEC-040, REQ-133)", () => {
   it("does not print a bearer twice when the record and the dossier both name them", () => {
     render(
       <PatronymeBearersSection
+        language="fr"
         patronyme={{
           ...base,
           bearers: [
@@ -115,6 +119,7 @@ describe("PatronymeBearersSection (AC3, DEC-040, REQ-133)", () => {
   it("falls back to a stated label when roleCategory is empty", () => {
     render(
       <PatronymeBearersSection
+        language="fr"
         patronyme={{
           ...base,
           bearers: [

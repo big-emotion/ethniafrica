@@ -40,9 +40,11 @@ import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
 import type { PeopleNamesDossier } from "@/api/v2/schemas/names";
 import type { PeopleFicheNotes } from "@/components/people/peopleFicheNotes";
 import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
+import type { Language } from "@/types/shared";
 
 export interface PeopleDetailViewV2Props {
   people: PeopleDetail;
+  language: Language;
   namesDossier?: PeopleNamesDossier | null;
   fragmentation?: PeopleFragmentation | null;
   /** An open flag on this fiche's sourcing, resolved by the route. */
@@ -111,6 +113,7 @@ export interface PeopleDetailViewV2Props {
 // @req REQ-091
 export function PeopleDetailViewV2({
   people,
+  language,
   namesDossier = null,
   fragmentation = null,
   hasSourceFlag = false,
@@ -177,7 +180,7 @@ export function PeopleDetailViewV2({
         {hasOriginContent(data.origin) ? (
           <PeopleOriginBlock data={data.origin} notes={notes?.origin} />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
@@ -188,7 +191,7 @@ export function PeopleDetailViewV2({
         data.language.vehicularRole ? (
           <PeopleLanguageSection data={data.language} notes={notes?.language} />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
@@ -214,7 +217,7 @@ export function PeopleDetailViewV2({
         data.history.diaspora ? (
           <PeopleHistoryTimeline data={data.history} notes={notes?.history} />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
@@ -225,20 +228,20 @@ export function PeopleDetailViewV2({
       <ExternalRegistryLinksSection identifiers={people.externalIdentifiers} />
 
       {/* Noms & appellations (below the fold; chips hydrate second-wave, UX-DR18) */}
-      <PeopleNamesSection data={data.names} />
+      <PeopleNamesSection data={data.names} language={language} />
 
       {/* The second naming register, next to the first: the chapter above
           holds what this people is *called* — its ethnonyms, and the exonyms
           imposed on it — and this one what its members *bear*. Reading them
           apart is how "nom" came to mean two unrelated things in this
           codebase; on the page they answer each other. */}
-      <PeopleBorneNamesSection patronymes={borneNames} />
+      <PeopleBorneNamesSection patronymes={borneNames} language={language} />
 
       <FicheSection title="Culture & spiritualité">
         {hasCultureContent(data.culture) ? (
           <PeopleCultureGrid data={data.culture} notes={notes?.culture} />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
         {/* The same report control the country fiche's culture section
             carries. It used to live only on the legacy tabbed people view;
@@ -264,11 +267,12 @@ export function PeopleDetailViewV2({
         relationsPreview.length > 0 ? (
           <PeopleRelatedPeoplesSection
             data={data.relatedPeoples}
+            language={language}
             peopleId={data.hero.peopleId}
             relationsPreview={relationsPreview}
           />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
@@ -279,11 +283,12 @@ export function PeopleDetailViewV2({
         {data.countries.distributions.length > 0 ? (
           <PeopleCountriesSection
             data={data.countries}
+            language={language}
             fromPeopleId={data.hero.peopleId}
             fromPeopleName={data.hero.nameMain}
           />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
@@ -319,7 +324,7 @@ export function PeopleDetailViewV2({
             variant="parchment"
           />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
     </div>

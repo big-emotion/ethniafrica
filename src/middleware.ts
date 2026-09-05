@@ -4,11 +4,22 @@ import { validateApiKey } from "@/lib/api/auth";
 import { applyIpRateLimit, applyRateLimit } from "@/lib/api/rate-limit";
 import { applyVersioningHeaders } from "@/lib/api/versioning";
 import {
+  localeSlugMismatch,
   resolveCountryDeepLink,
   resolveFamilyDeepLink,
   resolvePeopleDeepLink,
+  toRouteFilePath,
+  translatePath,
   type DeepLinkQuery,
 } from "@/lib/routing";
+import {
+  DEFAULT_LOCALE,
+  LOCALES,
+  LOCALE_COOKIE,
+  LOCALE_HEADER,
+  isLocale,
+  resolveLocale,
+} from "@/lib/locale";
 import type { Language } from "@/types/shared";
 
 // Public localized pages still contain data-driven React style attributes.
@@ -25,7 +36,9 @@ import type { Language } from "@/types/shared";
 // Follow-up: once the fiche components use nonce-aware alternatives instead of
 // data-driven inline styles, both exceptions can be dropped entirely.
 const isPublicLocalizedPage = (pathname: string) =>
-  pathname === "/fr" || pathname.startsWith("/fr/");
+  LOCALES.some(
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
+  );
 
 // The public developer portal sits outside the localized tree but mounts the
 // same global header. That header carries static CSS in a client-injected
@@ -138,15 +151,67 @@ function applySecurityHeaders(
   response.headers.set("Content-Security-Policy", csp);
 }
 
-// Canonical site locale. Any other 2-letter language segment is redirected
-// here to keep a single source of truth for crawlers and avoid duplicate
-// content under URLs like /en/* that render French anyway.
-const CANONICAL_LOCALE = "fr";
+// Whatever sits in the locale slot. Two letters is the shape of a locale, not
+// proof of one: the allow-list in `@/lib/locale` decides, and anything else
+// of this shape is sent to the default (REQ-140). Longer first segments —
+// /docs, /admin, /monitoring — are not locales and are left alone.
 const LOCALE_SEGMENT = /^\/([a-z]{2})(?=\/|$)/;
+
+// The console, in either locale. The sign-in page below it is the one address
+// a signed-out visitor is meant to reach.
+const LOCALIZED_ADMIN = new RegExp(`^/(${LOCALES.join("|")})/admin(?=/|$)`);
 
 // Locale, the first segment below it, and whatever follows. The third group
 // is the tail this rewrite must not interpret.
 const RELOCATED_SEGMENT = /^\/([a-z]{2})\/([a-z-]+)(\/.*)?$/;
+
+/**
+ * A slug as the given locale spells it — `atlas/pays` under `en` is
+ * `atlas/countries` — read off the slug tables in `routing.ts`, which own the
+ * vocabulary. A word the tables have no entry for (a retired segment, an
+ * identifier) comes back unchanged.
+ */
+const localiseSlug = (locale: Language, slug: string) =>
+  translatePath("fr", locale, `/fr/${slug}`).slice(`/${locale}/`.length);
+
+type Localiser<Value> = (locale: Language, value: Value) => Value;
+
+const verbatim = <Value>(_: Language, value: Value) => value;
+
+/**
+ * One side per locale of a table written once, in French.
+ *
+ * DEC-049 gives the redirect tables a locale dimension so a retired address
+ * requested under `/en` resolves to the English successor and never crosses
+ * into `/fr` on the way. Deriving the English side rather than typing it
+ * keeps a rename to what it was before: one row here, and the slug table does
+ * the rest — a hand-kept English column would be a second place for the same
+ * row to go stale.
+ *
+ * Each caller says which side of the row is vocabulary. A redirect table's
+ * keys are retired addresses, published once and the same bytes under any
+ * locale, so they stay verbatim — translated, `peuples` would become
+ * `peoples` through the comparer's entity words and `/en/peuples` would stop
+ * matching. Its values are live slugs and take the locale's words. The
+ * deep-link table is the other way round: keyed by live slugs, valued by
+ * resolvers.
+ */
+function perLocale<Value>(
+  frenchTable: Record<string, Value>,
+  localiseKey: Localiser<string>,
+  localiseValue: Localiser<Value>
+): Record<Language, Record<string, Value>> {
+  const sides = LOCALES.map((locale) => [
+    locale,
+    Object.fromEntries(
+      Object.entries(frenchTable).map(([key, value]) => [
+        localiseKey(locale, key),
+        localiseValue(locale, value),
+      ])
+    ),
+  ]);
+  return Object.fromEntries(sides) as Record<Language, Record<string, Value>>;
+}
 
 // REQ-114 renamed the hubs from the resources they group to the verb the
 // reader arrives with. All three were published, so the old URLs are
@@ -161,11 +226,18 @@ const RELOCATED_SEGMENT = /^\/([a-z]{2})\/([a-z-]+)(\/.*)?$/;
 // which is also the closest thing the site still serves to what the reader
 // bookmarked. `redirectCharter.test.ts` asserts a page file behind each.
 // @req REQ-114
-export const RENAMED_HUB_SEGMENTS: Record<string, string> = {
-  "peuples-hub": "atlas/peuples",
-  "pays-hub": "atlas/pays",
-  "familles-hub": "atlas/familles",
-};
+export const RENAMED_HUB_SEGMENTS: Record<
+  Language,
+  Record<string, string>
+> = perLocale(
+  {
+    "peuples-hub": "atlas/peuples",
+    "pays-hub": "atlas/pays",
+    "familles-hub": "atlas/familles",
+  },
+  verbatim,
+  localiseSlug
+);
 
 // ETNI-1458 renamed the ethnonym module from Noms to Appellations, freeing
 // the word "Nom" for the person-name entity (ARCH-018). The published,
@@ -197,22 +269,29 @@ export const RENAMED_HUB_SEGMENTS: Record<string, string> = {
 // would silently stop firing. The historical address is still honoured — it
 // just reaches this table already half-rewritten.
 // @req REQ-091
-export const RENAMED_MODULE_PATHS: Record<string, string> = {
-  "dossiers/noms": "atlas/appellations",
-  "dossiers/appellations": "atlas/appellations",
-  "dossiers/doctrine": "doctrine",
-  // The two account pages with no successor. There is nothing to register for
-  // and no profile to hold, so both land on the one sign-in the atlas has left
-  // — the page that explains, in as many words, that reporting needs no
-  // account. A 404 would leave a reader to guess that.
-  //
-  // Keyed `admin/...` and not `compte/...` on purpose: RELOCATED_SEGMENTS has
-  // already rewritten `compte` to `admin` by the time this table is consulted,
-  // exactly as the `dossiers/` keys above are reached already half-rewritten
-  // from `comprendre/`.
-  "admin/inscription": "admin/connexion",
-  "admin/profil": "admin/connexion",
-};
+export const RENAMED_MODULE_PATHS: Record<
+  Language,
+  Record<string, string>
+> = perLocale(
+  {
+    "dossiers/noms": "atlas/appellations",
+    "dossiers/appellations": "atlas/appellations",
+    "dossiers/doctrine": "doctrine",
+    // The two account pages with no successor. There is nothing to register
+    // for and no profile to hold, so both land on the one sign-in the atlas
+    // has left — the page that explains, in as many words, that reporting
+    // needs no account. A 404 would leave a reader to guess that.
+    //
+    // Keyed `admin/...` and not `compte/...` on purpose: RELOCATED_SEGMENTS
+    // has already rewritten `compte` to `admin` by the time this table is
+    // consulted, exactly as the `dossiers/` keys above are reached already
+    // half-rewritten from `comprendre/`.
+    "admin/inscription": "admin/connexion",
+    "admin/profil": "admin/connexion",
+  },
+  verbatim,
+  localiseSlug
+);
 
 /**
  * Where a renamed module's old nested path leads now, tail (and trailing
@@ -228,9 +307,12 @@ export function resolveRenamedModulePath(pathname: string): string | null {
   if (!match) return null;
 
   const [, locale, rawRest] = match;
+  if (!isLocale(locale)) return null;
   const rest = rawRest.replace(/\/+$/, "");
 
-  for (const [oldPath, newPath] of Object.entries(RENAMED_MODULE_PATHS)) {
+  for (const [oldPath, newPath] of Object.entries(
+    RENAMED_MODULE_PATHS[locale]
+  )) {
     if (rest === oldPath || rest.startsWith(`${oldPath}/`)) {
       const tail = rest.slice(oldPath.length);
       return `/${locale}/${newPath}${tail}`;
@@ -268,43 +350,55 @@ export function resolveRenamedModulePath(pathname: string): string | null {
 // the new `explorer` entry itself now relocates, and a second request would
 // pay for a second 308 this table exists to rule out.
 // @req REQ-091
-export const RELOCATED_SEGMENTS: Record<string, string> = {
-  pays: "atlas/pays",
-  peuples: "atlas/peuples",
-  familles: "atlas/familles",
-  recherche: "atlas/recherche",
-  // `doctrine` was a key here while the page lived under Comprendre. It is
-  // served at the top level again, so an entry would send a live route to
-  // itself — the loop the charter suite walks this table to rule out.
-  noms: "atlas/appellations",
-  migrations: "dossiers/migrations",
-  regards: "dossiers/regards",
-  quiz: "jeux/quiz",
-  // The account area, retired with the public accounts themselves. The subtree
-  // maps cleanly onto the admin one — `connexion` and `cles-api` both have a
-  // successor there — and the two pages that have none, `inscription` and
-  // `profil`, are caught by RENAMED_MODULE_PATHS below. This address is in
-  // moderators' history for a specific reason: until now the middleware sent
-  // them here to sign in.
-  compte: "admin",
-  // English spellings, published by V1 and still linked from outside.
-  countries: "atlas/pays",
-  families: "atlas/familles",
-  peoples: "atlas/peuples",
-  // Regions became linguistic families; ethnicities became peoples.
-  regions: "atlas/familles",
-  regiones: "atlas/familles",
-  regioes: "atlas/familles",
-  ethnicities: "atlas/peuples",
-  ethnies: "atlas/peuples",
-  etnias: "atlas/peuples",
-  // The three retired axis prefixes, ETNI-1615 (REQ-138): every module moved
-  // from the verb the reader arrived with to the noun the label already
-  // named. See the block comment above.
-  explorer: "atlas",
-  comprendre: "dossiers",
-  jouer: "jeux",
-};
+export const RELOCATED_SEGMENTS: Record<
+  Language,
+  Record<string, string>
+> = perLocale(
+  {
+    pays: "atlas/pays",
+    peuples: "atlas/peuples",
+    familles: "atlas/familles",
+    recherche: "atlas/recherche",
+    // `doctrine` was a key here while the page lived under Comprendre. It
+    // is served at the top level again, so an entry would send a live route
+    // to itself — the loop the charter suite walks this table to rule out.
+    noms: "atlas/appellations",
+    migrations: "dossiers/migrations",
+    // The container keeps its French name under `/en` too: `regards` is
+    // only a word of the colonization slug, and the cross-vocabulary step
+    // finishes the job on the article below it within the same 308.
+    regards: "dossiers/regards",
+    quiz: "jeux/quiz",
+    // The account area, retired with the public accounts themselves. The
+    // subtree maps cleanly onto the admin one — `connexion` and `cles-api`
+    // both have a successor there — and the two pages that have none,
+    // `inscription` and `profil`, are caught by RENAMED_MODULE_PATHS below.
+    // This address is in moderators' history for a specific reason: until
+    // now the middleware sent them here to sign in.
+    compte: "admin",
+    // English spellings, published by V1 and still linked from outside.
+    // They are retired addresses in both locales: `/en/countries` is not
+    // an English URL the site ever served, only V1's flat vocabulary.
+    countries: "atlas/pays",
+    families: "atlas/familles",
+    peoples: "atlas/peuples",
+    // Regions became linguistic families; ethnicities became peoples.
+    regions: "atlas/familles",
+    regiones: "atlas/familles",
+    regioes: "atlas/familles",
+    ethnicities: "atlas/peuples",
+    ethnies: "atlas/peuples",
+    etnias: "atlas/peuples",
+    // The three retired axis prefixes, ETNI-1615 (REQ-138): every module
+    // moved from the verb the reader arrived with to the noun the label
+    // already named. See the block comment above.
+    explorer: "atlas",
+    comprendre: "dossiers",
+    jouer: "jeux",
+  },
+  verbatim,
+  localiseSlug
+);
 
 // Which directory a relocated segment was, for the deep links that named a
 // fiche in the query string. Without this a `/fr/pays?country=BEN` costs two
@@ -315,6 +409,9 @@ export const RELOCATED_SEGMENTS: Record<string, string> = {
 // The resolvers are `routing.ts`'s, not a copy: they hold the encoding rule
 // that keeps `?country=//evil.com` from becoming an off-origin redirect, and
 // a rule with two implementations is a rule with one enforced version.
+//
+// Not per locale: every key is a retired flat segment no slug table spells
+// differently, and the resolver takes the locale as an argument.
 const DEEP_LINK_RESOLVERS: Record<
   string,
   (language: Language, query: DeepLinkQuery) => string | null
@@ -368,14 +465,19 @@ export interface RelocatedPath {
  * never authorised. Answering before the render starts is what keeps it one
  * hop with one nonce.
  */
-const CANONICAL_DEEP_LINK_DIRECTORIES: Record<
-  string,
+// Keyed per locale because the key is a live slug, and a live slug is spelled
+// in the locale's own words: `atlas/countries` under `/en`.
+const CANONICAL_DEEP_LINK_DIRECTORIES = perLocale<
   (language: Language, query: DeepLinkQuery) => string | null
-> = {
-  "atlas/pays": resolveCountryDeepLink,
-  "atlas/peuples": resolvePeopleDeepLink,
-  "atlas/familles": resolveFamilyDeepLink,
-};
+>(
+  {
+    "atlas/pays": resolveCountryDeepLink,
+    "atlas/peuples": resolvePeopleDeepLink,
+    "atlas/familles": resolveFamilyDeepLink,
+  },
+  localiseSlug,
+  verbatim
+);
 
 /**
  * The fiche a canonical directory URL is reaching for, or null when its query
@@ -391,9 +493,9 @@ export function resolveCanonicalDeepLink(
   if (!match) return null;
 
   const [, locale, directory] = match;
+  if (!isLocale(locale)) return null;
   return (
-    CANONICAL_DEEP_LINK_DIRECTORIES[directory]?.(locale as Language, search) ??
-    null
+    CANONICAL_DEEP_LINK_DIRECTORIES[locale][directory]?.(locale, search) ?? null
   );
 }
 
@@ -406,16 +508,17 @@ export function resolveRelocatedPath(
   if (!match) return null;
 
   const [, locale, segment] = match;
+  if (!isLocale(locale)) return null;
   // A trailing slash is not a tail. Left in, it would send `/fr/pays/` to
   // `/fr/atlas/pays/` and skip the deep-link resolution below.
   const tail = (match[3] ?? "").replace(/\/+$/, "");
-  const destination = RELOCATED_SEGMENTS[segment];
+  const destination = RELOCATED_SEGMENTS[locale][segment];
   if (!destination) return null;
 
   // A directory root carrying a fiche identifier goes to the fiche itself.
   // Below the root the query is the page's own business, so it is left alone.
   if (!tail) {
-    const fiche = DEEP_LINK_RESOLVERS[segment]?.(locale as Language, search);
+    const fiche = DEEP_LINK_RESOLVERS[segment]?.(locale, search);
     if (fiche) return { path: fiche, keepQuery: false };
   }
 
@@ -443,34 +546,57 @@ function isSameOriginRequest(request: NextRequest): boolean {
 
 // @req REQ-052
 export async function middleware(request: NextRequest) {
-  // Four rewrites, one redirect.
+  const { pathname } = request.nextUrl;
+
+  // The root is the one address whose answer depends on the reader: English
+  // unless the switcher recorded French (REQ-140). A 307, never a 308 — a
+  // permanent redirect is cached by the browser without asking again, and it
+  // would pin a reader to the locale of their first visit no matter what
+  // they chose since. `Vary: Cookie` tells every cache between us and them
+  // the same thing. The cookie is only ever written by the switcher: landing
+  // on `/fr` is not a choice, clicking « Français » is.
+  if (pathname === "/") {
+    const locale = resolveLocale(request.cookies.get(LOCALE_COOKIE)?.value);
+    const home = NextResponse.redirect(
+      new URL(`/${locale}${request.nextUrl.search}`, request.nextUrl.origin),
+      307
+    );
+    home.headers.set("Vary", "Cookie");
+    return home;
+  }
+
+  // Six rewrites, one redirect.
   //
-  // They compose rather than each returning: `/en/peuples` is both a
-  // non-canonical locale and a relocated module, and answering it with
-  // `/fr/peuples` would send the reader to an address this same middleware
+  // They compose rather than each returning: `/es/peuples` is both an
+  // unpublished locale and a relocated module, and answering it with
+  // `/en/peuples` would send the reader to an address this same middleware
   // redirects again. Two 308s is what the one-hop rule forbids, and the
   // second one would be entirely of our own making.
   //
-  // All four are 308: none of them is a page moving temporarily, so a
+  // All six are 308: none of them is a page moving temporarily, so a
   // crawler should transfer the old URL's standing rather than keep
-  // revisiting it.
-  const { pathname } = request.nextUrl;
+  // revisiting it. The cookie plays no part here — the answer must be the
+  // same for everyone, or the 308 could not be cached at all.
   let canonicalPath = pathname;
   let moved = false;
 
-  // FR-only: any /[2-letter-lang]/* segment that isn't /fr becomes its /fr
-  // equivalent, subpath and query preserved.
+  // A two-letter segment the site does not publish becomes the default,
+  // subpath and query preserved. `/fr/*` is never touched (REQ-140).
   const localeMatch = canonicalPath.match(LOCALE_SEGMENT);
-  if (localeMatch && localeMatch[1] !== CANONICAL_LOCALE) {
+  if (localeMatch && !isLocale(localeMatch[1])) {
     const rest = canonicalPath.slice(localeMatch[0].length).replace(/\/+$/, "");
-    canonicalPath = `/${CANONICAL_LOCALE}${rest}`;
+    canonicalPath = `/${DEFAULT_LOCALE}${rest}`;
     moved = true;
   }
 
   // REQ-114's hub rename. Keyed on exactly one segment — see the table.
   const renamedHub = canonicalPath.match(/^\/([a-z]{2})\/([a-z-]+)\/?$/);
-  if (renamedHub && RENAMED_HUB_SEGMENTS[renamedHub[2]]) {
-    canonicalPath = `/${renamedHub[1]}/${RENAMED_HUB_SEGMENTS[renamedHub[2]]}`;
+  if (
+    renamedHub &&
+    isLocale(renamedHub[1]) &&
+    RENAMED_HUB_SEGMENTS[renamedHub[1]][renamedHub[2]]
+  ) {
+    canonicalPath = `/${renamedHub[1]}/${RENAMED_HUB_SEGMENTS[renamedHub[1]][renamedHub[2]]}`;
     moved = true;
   }
 
@@ -498,6 +624,20 @@ export async function middleware(request: NextRequest) {
   const renamedModule = resolveRenamedModulePath(canonicalPath);
   if (renamedModule) {
     canonicalPath = renamedModule;
+    moved = true;
+  }
+
+  // DEC-049: a path spelled in the other locale's words goes to its own —
+  // `/en/atlas/pays` to `/en/atlas/countries` — or the French folders would
+  // serve one document at two English addresses. After the three tables
+  // above, whose answers are French words carried verbatim under `/en`
+  // (`/en/peuples/PPL_X/liens` → `…/peoples/PPL_X/liens`), and before the
+  // deep-link step, whose table is keyed by each locale's own slug: a
+  // `/en/atlas/pays?country=BEN` has to be `/en/atlas/countries` by the time
+  // that table is consulted, or the query survives into a second 308.
+  const ownVocabulary = localeSlugMismatch(canonicalPath);
+  if (ownVocabulary) {
+    canonicalPath = ownVocabulary;
     moved = true;
   }
 
@@ -554,6 +694,32 @@ export async function middleware(request: NextRequest) {
   const nonce = btoa(crypto.randomUUID());
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-nonce", nonce);
+
+  // The resolved locale, for the root layout's `<html lang>`, which sits
+  // above `[lang]` and cannot read the segment. Deleted first: the header is
+  // this middleware's word, and a browser can send one too.
+  requestHeaders.delete(LOCALE_HEADER);
+  const requestLocale = localeMatch?.[1];
+  if (isLocale(requestLocale)) {
+    requestHeaders.set(LOCALE_HEADER, requestLocale);
+  }
+
+  // The route folders under `src/app/[lang]` are French; an English address
+  // is served by rewriting it onto the French folder with the `/en` prefix
+  // kept, so the page still reads `lang = "en"`. Built here rather than
+  // returned early so the session refresh and the security headers below
+  // run on the rewritten response exactly as on a pass-through.
+  const routeFilePath = toRouteFilePath(pathname);
+  const forward = () =>
+    routeFilePath
+      ? NextResponse.rewrite(
+          new URL(
+            `${routeFilePath}${request.nextUrl.search}`,
+            request.nextUrl.origin
+          ),
+          { request: { headers: requestHeaders } }
+        )
+      : NextResponse.next({ request: { headers: requestHeaders } });
 
   // --- API v2 authentication ---
   if (requiresApiKeyAuth) {
@@ -628,9 +794,7 @@ export async function middleware(request: NextRequest) {
   }
 
   // --- Admin route protection ---
-  let supabaseResponse = NextResponse.next({
-    request: { headers: requestHeaders },
-  });
+  let supabaseResponse = forward();
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -644,9 +808,7 @@ export async function middleware(request: NextRequest) {
           cookiesToSet.forEach(({ name, value }) =>
             request.cookies.set(name, value)
           );
-          supabaseResponse = NextResponse.next({
-            request: { headers: requestHeaders },
-          });
+          supabaseResponse = forward();
           cookiesToSet.forEach(({ name, value, options }) =>
             supabaseResponse.cookies.set(name, value, options)
           );
@@ -659,10 +821,11 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // /fr/admin/* is the moderator area.
-  // /fr/admin/connexion is the sign-in entry point and must be excluded.
-  const isAdminRoute =
-    pathname.startsWith("/fr/admin") && pathname !== "/fr/admin/connexion";
+  // `/{locale}/admin/*` is the moderator area, in whichever locale the
+  // moderator reads; the sign-in below it is the entry point and is excluded.
+  const adminArea = pathname.match(LOCALIZED_ADMIN);
+  const signInPath = adminArea ? `/${adminArea[1]}/admin/connexion` : null;
+  const isAdminRoute = adminArea !== null && pathname !== signInPath;
 
   // Authentication here, authorization in the page.
   //
@@ -673,7 +836,7 @@ export async function middleware(request: NextRequest) {
   // establishes that somebody is signed in, and `getModeratorSession()` in the
   // page decides whether that somebody may be here.
   if (isAdminRoute && !user) {
-    const signInUrl = new URL("/fr/admin/connexion", request.url);
+    const signInUrl = new URL(signInPath!, request.url);
     signInUrl.searchParams.set("redirect", pathname);
     return NextResponse.redirect(signInUrl);
   }

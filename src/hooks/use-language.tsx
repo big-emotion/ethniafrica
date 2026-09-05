@@ -3,81 +3,67 @@
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { Language } from "@/types/shared";
+import { getLanguageFromRoute, translatePath } from "@/lib/routing";
 import {
-  getLanguageFromRoute,
-  getLocalizedRoute,
-  getPageFromRoute,
-} from "@/lib/routing";
+  LOCALE_COOKIE,
+  isLocale,
+  localeCookieAttributes,
+  resolveLocale,
+} from "@/lib/locale";
 
-const LANGUAGE_STORAGE_KEY = "ethniafrique-language";
+/**
+ * The remembered choice, read the way the middleware reads it — off the
+ * cookie, never localStorage. A choice that does not travel with the request
+ * is one the server cannot honour on the root (REQ-140).
+ */
+const rememberedLocale = (): string | undefined => {
+  if (typeof document === "undefined") return undefined;
+  return document.cookie
+    .split("; ")
+    .find((entry) => entry.startsWith(`${LOCALE_COOKIE}=`))
+    ?.slice(LOCALE_COOKIE.length + 1);
+};
+
+// `localeCookieAttributes()` is shared with the middleware, which hands it to
+// `response.cookies.set`; the browser has only the string form.
+const rememberLocale = (locale: Language) => {
+  const { path, sameSite, maxAge, secure } = localeCookieAttributes();
+  document.cookie = [
+    `${LOCALE_COOKIE}=${locale}`,
+    `path=${path}`,
+    `SameSite=${sameSite.charAt(0).toUpperCase()}${sameSite.slice(1)}`,
+    `max-age=${maxAge}`,
+    ...(secure ? ["Secure"] : []),
+  ].join("; ");
+};
 
 // @req REQ-091
 export const useLanguage = () => {
   const pathname = usePathname();
   const router = useRouter();
-  const [language, setLanguageState] = useState<Language>(() => {
-    // Try to get language from route first
-    const routeLang = getLanguageFromRoute(pathname);
-    if (routeLang) {
-      return routeLang;
-    }
-
-    // Try localStorage (for SSR compatibility)
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem(
-        LANGUAGE_STORAGE_KEY
-      ) as Language | null;
-      if (stored && ["fr"].includes(stored)) {
-        return stored;
-      }
-    }
-
-    return "fr";
-  });
+  const routeLanguage = getLanguageFromRoute(pathname);
+  const [language, setLanguageState] = useState<Language>(
+    () => routeLanguage ?? resolveLocale(rememberedLocale())
+  );
 
   useEffect(() => {
-    // Try to get language from route and update if different
-    const routeLang = getLanguageFromRoute(pathname);
-    if (routeLang && routeLang !== language) {
+    if (routeLanguage && routeLanguage !== language) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
-      setLanguageState(routeLang);
+      setLanguageState(routeLanguage);
     }
-  }, [pathname, language]);
-
-  useEffect(() => {
-    // Save to localStorage when language changes
-    if (typeof window !== "undefined") {
-      localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
-    }
-  }, [language]);
+  }, [routeLanguage, language]);
 
   const setLanguage = (lang: Language) => {
+    if (!isLocale(lang)) return;
     setLanguageState(lang);
+    rememberLocale(lang);
 
-    // Update route if we're on a localized page
-    const currentPage = pathname;
-    const pageType = getPageFromRoute(currentPage);
-
-    if (pageType) {
-      // Preserve query params if any
-      const searchParams = new URLSearchParams(window.location.search);
-      const queryString = searchParams.toString();
-      const newRoute =
-        getLocalizedRoute(lang, pageType) +
-        (queryString ? `?${queryString}` : "");
-      router.push(newRoute);
-    } else if (
-      currentPage === "/" ||
-      currentPage === "" ||
-      currentPage === `/${language}` ||
-      currentPage.match(/^\/fr$/)
-    ) {
-      // If on homepage, redirect to /{lang}
-      router.push(`/${lang}`);
-    } else if (currentPage.startsWith("/about")) {
-      // If on about page, redirect to /{lang}/about
-      router.push(`/${lang}/about`);
-    }
+    // The same page in the other locale, query kept; a page outside the
+    // locale tree has no counterpart, so the switch lands on the home.
+    const destination = routeLanguage
+      ? `${translatePath(routeLanguage, lang, pathname)}${window.location.search}`
+      : `/${lang}`;
+    router.push(destination);
   };
 
   return { language, setLanguage };

@@ -26,6 +26,7 @@ vi.mock("next/navigation", () => ({
 }));
 
 import ModerationQueuePage from "../page";
+import { getStaticPageRoute } from "@/lib/routing";
 
 function report(overrides: Record<string, unknown> = {}) {
   return {
@@ -41,8 +42,9 @@ function report(overrides: Record<string, unknown> = {}) {
   };
 }
 
-async function renderQueue(params: Record<string, string> = {}) {
+async function renderQueue(params: Record<string, string> = {}, lang = "fr") {
   const ui = await ModerationQueuePage({
+    params: Promise.resolve({ lang }),
     searchParams: Promise.resolve(params),
   });
   return render(ui);
@@ -162,5 +164,28 @@ describe("ModerationQueuePage", () => {
     await renderQueue();
 
     expect(screen.getByText(/ne modifie pas la fiche/)).toBeTruthy();
+  });
+
+  // The filter form and the pager used to post to a fixed `/fr/admin`, which
+  // pulled a moderator working under `/en` back into the French tree.
+  // @req REQ-140
+  it("keeps the filters and the pager on the queue of the route's locale", async () => {
+    mocks.listFlagsForModeration.mockResolvedValue({
+      items: [report()],
+      total: 60,
+    });
+
+    const { container } = await renderQueue({}, "en");
+
+    expect(container.querySelector("form")).toHaveAttribute(
+      "action",
+      getStaticPageRoute("en", "admin")
+    );
+    const pageTwo = screen
+      .getAllByRole("link")
+      .find((link) => link.getAttribute("href")?.includes("page=2"));
+    expect(pageTwo?.getAttribute("href")).toBe(
+      `${getStaticPageRoute("en", "admin")}?page=2`
+    );
   });
 });

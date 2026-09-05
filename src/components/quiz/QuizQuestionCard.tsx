@@ -2,20 +2,20 @@
 
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { cn } from "@/lib/utils";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import type {
   QuizSessionQuestionView,
   QuizOptionValue,
 } from "@/api/v2/schemas/quiz";
 import { Button } from "@/components/ui/button";
-
-const t = translations.fr.quiz;
+import type { Language } from "@/types/shared";
 
 interface QuizQuestionCardProps {
   question: QuizSessionQuestionView;
   selectedOption: number | null;
   onSelectOption: (optionIndex: number) => void;
   onValidate: () => void;
+  language: Language;
   className?: string;
 }
 
@@ -50,8 +50,11 @@ export const QuizQuestionCard = ({
   selectedOption,
   onSelectOption,
   onValidate,
+  language,
   className,
 }: QuizQuestionCardProps) => {
+  const t = getTranslation(language).quiz;
+
   return (
     <form
       className={cn("space-y-4", className)}

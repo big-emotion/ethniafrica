@@ -28,7 +28,7 @@ import type { Language } from "@/types/shared";
 
 export interface ComparisonViewProps {
   data: ComparisonPageData;
-  language?: Language;
+  language: Language;
 }
 
 function entityRoute(
@@ -48,7 +48,7 @@ function joinLabels(labels: string[]): string {
 }
 
 // @req REQ-097 REQ-098
-export function ComparisonView({ data, language = "fr" }: ComparisonViewProps) {
+export function ComparisonView({ data, language }: ComparisonViewProps) {
   const visibleRows = data.rows.filter((row) => !isRowEmpty(row));
   const caption = `Comparaison de ${joinLabels(data.columns.map((column) => column.label))}`;
 

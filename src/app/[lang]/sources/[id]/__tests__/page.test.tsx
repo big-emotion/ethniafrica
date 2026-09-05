@@ -4,7 +4,7 @@ import { render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { Source } from "@/api/v2/schemas/sources";
-import { getPeopleRoute } from "@/lib/routing";
+import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 
 const { getSourceByIdMock, getSourceCitationsMock, notFoundMock } = vi.hoisted(
   () => ({
@@ -72,8 +72,8 @@ const source: Source = {
   },
 };
 
-function renderRoute(id: string) {
-  return SourcePage({ params: Promise.resolve({ lang: "fr", id }) });
+function renderRoute(id: string, lang = "fr") {
+  return SourcePage({ params: Promise.resolve({ lang, id }) });
 }
 
 describe("source page", () => {
@@ -95,6 +95,15 @@ describe("source page", () => {
     await expect(renderRoute("pas-un-uuid")).rejects.toThrow("NEXT_NOT_FOUND");
 
     expect(getSourceByIdMock).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-140
+  it("sends the reader back to the bibliography of the route's locale", async () => {
+    render(await renderRoute(ID, "en"));
+
+    expect(
+      screen.getByRole("link", { name: "Retour à la bibliographie" })
+    ).toHaveAttribute("href", getLocalizedRoute("en", "sources"));
   });
 
   // @req REQ-092

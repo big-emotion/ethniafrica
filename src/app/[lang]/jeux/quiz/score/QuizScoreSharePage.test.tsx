@@ -4,8 +4,10 @@ import { describe, expect, it, vi } from "vitest";
 
 import { QuizScoreSharePage } from "./QuizScoreSharePage";
 import { getLocalizedRoute } from "@/lib/routing";
+import { getTranslation } from "@/lib/translations";
 
 const props = {
+  language: "fr" as const,
   scope: { kind: "country" as const, entityId: "GHA" },
   scopeLabelFr: "Ghana",
   correct: 6,
@@ -42,6 +44,15 @@ describe("QuizScoreSharePage (Epic 10, Story 10.10, ETNI-499, ETNI-1140, FR70)",
       "href",
       `${getLocalizedRoute("fr", "quiz")}?pays=GHA`
     );
+  });
+
+  // @req REQ-140
+  it("sends « rejouer » to the quiz of the locale the card was served in", () => {
+    render(<QuizScoreSharePage {...props} language="en" />);
+
+    expect(
+      screen.getByRole("link", { name: getTranslation("en").quiz.playAgain })
+    ).toHaveAttribute("href", `${getLocalizedRoute("en", "quiz")}?pays=GHA`);
   });
 
   // @req REQ-103 FR70
