@@ -8,6 +8,7 @@ import { getSourceById } from "@/api/v2/services/sources";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { SourceStandingBadge } from "@/components/sources/SourceStandingBadge";
 import { getLocalizedRoute, getSourceRoute } from "@/lib/routing";
+import { localeHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 import { isSourceTier } from "@/types/sources";
 
@@ -35,6 +36,7 @@ function displayUrl(url: string): string {
 }
 
 // @req REQ-092
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: {
@@ -44,10 +46,17 @@ export async function generateMetadata({
   const parsed = sourceIdParamSchema.safeParse({ id });
   const source = parsed.success ? await getSourceById(id) : null;
 
+  const title = source ? `${source.title} — Source` : "Source";
+  // Indexed in no locale — see the doc comment above — so the head carries
+  // a canonical and the noindex directive, and no hreflang cluster.
   return {
-    title: source ? `${source.title} — Source` : "Source",
-    robots: { index: false, follow: true },
-    alternates: { canonical: getSourceRoute(lang as Language, id) },
+    title,
+    ...localeHead(
+      lang as Language,
+      (locale) => getSourceRoute(locale, id),
+      [],
+      { title }
+    ),
   };
 }
 

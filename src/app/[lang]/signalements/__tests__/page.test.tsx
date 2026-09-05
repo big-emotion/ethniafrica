@@ -132,7 +132,7 @@ describe("/[lang]/signalements page", () => {
   it("exports the public index metadata and caches its data for one minute", async () => {
     const metadata = await generateMetadata({ params: routeParams("fr") });
 
-    expect(metadata).toEqual({
+    expect(metadata).toMatchObject({
       title: "Tous les signalements — EthniAfrica",
       description:
         "Transparence éditoriale — explorez les signalements de la communauté",

@@ -10,6 +10,7 @@ import {
 import { listNameFormsQuerySchema } from "@/api/v2/schemas/names";
 import { getTranslation } from "@/lib/translations";
 import { getLocalizedRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 
 const PER_PAGE = 48;
@@ -25,17 +26,21 @@ interface AppellationsPageProps {
 }
 
 // @req REQ-054 @req FR95
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: Pick<AppellationsPageProps, "params">): Promise<Metadata> {
   const { lang } = await params;
   const t = getTranslation(lang as Language).names;
+  const copy = { title: t.pageTitle, description: t.pageSubtitle };
   return {
-    title: t.pageTitle,
-    description: t.pageSubtitle,
-    alternates: {
-      canonical: getLocalizedRoute(lang as Language, "names"),
-    },
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "names",
+      (locale) => getLocalizedRoute(locale, "names"),
+      copy
+    ),
   };
 }
 

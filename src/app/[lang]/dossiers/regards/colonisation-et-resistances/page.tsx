@@ -31,6 +31,7 @@ import { getPeopleNamesDossier } from "@/api/v2/services/names";
 import { COLONIAL_EVENT_TYPES } from "@/lib/afrik/migrationEventTypes";
 import { getTranslation } from "@/lib/translations";
 import { getLocalizedRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 
 const TIMELINE_LIST_LIMIT = 200;
@@ -45,12 +46,15 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { lang } = await params;
   const t = getTranslation(lang as Language).colonization;
+  const copy = { title: t.pageTitle, description: t.pageSubtitle };
   return {
-    title: t.pageTitle,
-    description: t.pageSubtitle,
-    alternates: {
-      canonical: getLocalizedRoute(lang as Language, "colonization"),
-    },
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "colonization",
+      (locale) => getLocalizedRoute(locale, "colonization"),
+      copy
+    ),
   };
 }
 

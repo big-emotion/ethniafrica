@@ -3,6 +3,8 @@ import { unstable_cache } from "next/cache";
 
 import { PublicFlagsQueue } from "@/components/flags/PublicFlagsQueue";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { getStaticPageRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import { getPublicFlagsPage } from "@/lib/supabase/queries/flags/getPublicFlagsPage";
 import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
@@ -12,6 +14,7 @@ interface PageProps {
 }
 
 // @req REQ-014
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
@@ -20,6 +23,12 @@ export async function generateMetadata({
   return {
     title: copy.metadataTitle,
     description: copy.metadataDescription,
+    ...surfaceHead(
+      lang as Language,
+      "reports",
+      (locale) => getStaticPageRoute(locale, "reports"),
+      { title: copy.metadataTitle, description: copy.metadataDescription }
+    ),
   };
 }
 

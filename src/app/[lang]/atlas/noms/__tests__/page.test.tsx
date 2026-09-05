@@ -60,6 +60,7 @@ vi.mock("@/api/v2/services/patronymesFacet", () => ({
 import NomsHubPage, { generateMetadata } from "../page";
 
 const FR = Promise.resolve({ lang: "fr" });
+import { CANONICAL_DOMAIN } from "@/lib/brand";
 import { getLocalizedRoute, getPatronymeRoute } from "@/lib/routing";
 import type { PatronymesFacetFilters } from "@/api/v2/services/patronymesFacet";
 import type { PatronymeListItem } from "@/api/v2/services/patronymes";
@@ -263,7 +264,7 @@ describe("the name facet page", () => {
     const metadata = await generateMetadata({ params: FR });
 
     expect(metadata.alternates?.canonical).toBe(
-      getLocalizedRoute("fr", "patronymes")
+      `https://${CANONICAL_DOMAIN}${getLocalizedRoute("fr", "patronymes")}`
     );
   });
 
@@ -273,7 +274,7 @@ describe("the name facet page", () => {
       params: Promise.resolve({ lang: "en" }),
     });
     expect(metadata.alternates?.canonical).toBe(
-      getLocalizedRoute("en", "patronymes")
+      `https://${CANONICAL_DOMAIN}${getLocalizedRoute("en", "patronymes")}`
     );
 
     render(

@@ -11,6 +11,7 @@
  *   - Supabase RLS on editorial_doctrine denies INSERT/UPDATE to anon
  *     (only service_role bypasses RLS).
  */
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
@@ -18,6 +19,8 @@ import rehypeSanitize from "rehype-sanitize";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { fetchDoctrineEntry } from "@/lib/doctrine/fetchDoctrineEntry";
 import { formatVersionLabel } from "@/lib/doctrine/formatVersionLabel";
+import { getLocalizedRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import type { Language } from "@/types/shared";
 
@@ -35,6 +38,33 @@ const MDX_COMPONENTS = {};
 interface PageParams {
   lang: string;
   slug: string;
+}
+
+/**
+ * The head of a doctrine article: its canonical, on the live article, and
+ * the locale it is indexed in. The title stays the root layout's — the
+ * entry is read once, by the body, and a second read for a title is not
+ * worth a database round trip on every request.
+ */
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { lang, slug } = await params;
+  const parsed = parseVersionedSlug(decodeURIComponent(slug));
+  // A 404 that claims a canonical is a 404 asking to be indexed.
+  if (!parsed || parsed.mode === "latest") return {};
+
+  // A pinned revision is an archived copy of the same article: its canonical
+  // is the live article, as it is for a fiche.
+  const article = encodeURIComponent(parsed.slug);
+  return surfaceHead(
+    lang as Language,
+    "doctrine",
+    (locale) => `${getLocalizedRoute(locale, "doctrine")}/${article}`
+  );
 }
 
 // @req REQ-091

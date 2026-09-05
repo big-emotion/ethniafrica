@@ -7,6 +7,8 @@ import {
   getFlagBySlug,
 } from "@/lib/supabase/queries/flags/getFlagBySlug";
 import { PRODUCT_NAME } from "@/lib/brand";
+import { getStaticPageRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 
 /**
@@ -24,20 +26,27 @@ interface PageParams {
 }
 
 // @req REQ-042
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: {
   params: Promise<PageParams>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  return {
+  const { lang, slug } = await params;
+  const copy = {
     title: `Signalement ${slug} — ${PRODUCT_NAME}`,
-    robots: { index: true, follow: true },
-    openGraph: {
-      title: `Signalement ${slug} — ${PRODUCT_NAME}`,
-      description: `Consultation d'un signalement éditorial sur la plateforme ${PRODUCT_NAME}.`,
-      type: "article",
-    },
+    description: `Consultation d'un signalement éditorial sur la plateforme ${PRODUCT_NAME}.`,
+  };
+  // A report is moderated in French and stays canonical-French: indexed
+  // under `/fr` only, like the register it belongs to.
+  return {
+    title: copy.title,
+    ...surfaceHead(
+      lang as Language,
+      "reports",
+      (locale) => `${getStaticPageRoute(locale, "reports")}/${slug}`,
+      copy
+    ),
   };
 }
 

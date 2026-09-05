@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { permanentRedirect } from "next/navigation";
 
@@ -16,6 +17,8 @@ import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { normalizeString } from "@/lib/normalize";
 import { getFamilyRoute, resolveFamilyDeepLink } from "@/lib/routing";
 import type { CountryId } from "@/types/afrik";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
+import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
 
 /**
@@ -70,6 +73,25 @@ function requestedPage(raw: string | string[] | undefined): number {
 
 const formatCount = (value: number): string =>
   new Intl.NumberFormat("fr-FR").format(value);
+
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const title = getTranslation(lang as Language).languageFamilies;
+  return {
+    title,
+    ...surfaceHead(
+      lang as Language,
+      "families",
+      (locale) => getFacetRoute(locale, "families"),
+      { title }
+    ),
+  };
+}
 
 // @req REQ-114
 export default async function FamillesHubPage({

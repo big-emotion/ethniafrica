@@ -9,6 +9,7 @@ import { drawHomeHeroVisual } from "@/lib/home/homeHeroVisuals";
 import { drawDidYouKnowMotif } from "@/lib/home/didYouKnowMotifs";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import { OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 
 /**
@@ -31,27 +32,18 @@ interface HomePageProps {
 }
 
 // The canonical follows the locale the home was served in: the English home
-// declaring `/fr` would be a duplicate-content signal against itself. The
-// hreflang alternates are REQ-141's and are not composed here.
+// declaring `/fr` would be a duplicate-content signal against itself.
 // @req REQ-044 FR95
 // @req REQ-140
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: Pick<HomePageProps, "params">): Promise<Metadata> {
   const { lang } = await params;
-  const home = `/${lang}`;
   return {
     title: OG_TITLE,
     description: OG_DESCRIPTION,
-    alternates: {
-      canonical: home,
-    },
-    openGraph: {
-      title: OG_TITLE,
-      description: OG_DESCRIPTION,
-      type: "website",
-      url: home,
-    },
+    ...surfaceHead(lang as Language, "home", (locale) => `/${locale}`),
   };
 }
 

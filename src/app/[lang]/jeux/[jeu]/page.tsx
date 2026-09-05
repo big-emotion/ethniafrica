@@ -14,6 +14,7 @@ import {
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { OG_TITLE } from "@/lib/brand";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 
 interface GamePageProps {
@@ -32,6 +33,7 @@ interface GamePageProps {
  * bought. See src/app/__tests__/staticParamsBan.test.ts.
  */
 // @req REQ-120
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: GamePageProps): Promise<Metadata> {
@@ -39,12 +41,18 @@ export async function generateMetadata({
   const game = getGameBySlug(jeu);
   if (!game) return {};
 
-  return {
+  const copy = {
     title: `${game.nameFr} — ${OG_TITLE}`,
     description: game.promptFr,
-    alternates: {
-      canonical: `${getAxisHubRoute(lang as Language, "jeux")}/${game.slug}`,
-    },
+  };
+  return {
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "games",
+      (locale) => `${getAxisHubRoute(locale, "jeux")}/${game.slug}`,
+      copy
+    ),
   };
 }
 

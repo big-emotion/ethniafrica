@@ -22,6 +22,7 @@ import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getLocalizedRoute, getPatronymeRoute } from "@/lib/routing";
 import { getTranslation } from "@/lib/translations";
 import type { CountryId } from "@/types/afrik";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 import type { PatronymeNameSystem } from "@/api/v2/schemas/patronymes";
 
@@ -77,17 +78,21 @@ interface PageProps {
 }
 
 // @req REQ-139
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: Pick<PageProps, "params">): Promise<Metadata> {
   const { lang } = await params;
   const t = getTranslation(lang as Language).patronymes;
+  const copy = { title: t.index.pageTitle, description: t.index.pageSubtitle };
   return {
-    title: t.index.pageTitle,
-    description: t.index.pageSubtitle,
-    alternates: {
-      canonical: getLocalizedRoute(lang as Language, "patronymes"),
-    },
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "patronymes",
+      (locale) => getLocalizedRoute(locale, "patronymes"),
+      copy
+    ),
   };
 }
 

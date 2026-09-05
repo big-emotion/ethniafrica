@@ -19,6 +19,11 @@ import {
   type ScoreCardParams,
 } from "@/lib/quiz/scoreCardParams";
 import { describeScope } from "@/api/v2/handlers/quiz";
+import { getLocalizedRoute } from "@/lib/routing";
+import {
+  OG_LOCALE_BY_LANGUAGE,
+  pageAlternates,
+} from "@/lib/seo/localeAlternates";
 import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
 import { QuizScoreSharePage } from "./QuizScoreSharePage";
@@ -40,6 +45,7 @@ function buildOgImageUrl(params: ScoreCardParams): string {
 }
 
 // @req REQ-103 FR70
+// @req REQ-141
 export async function generateMetadata({
   params: routeParams,
   searchParams,
@@ -59,15 +65,30 @@ export async function generateMetadata({
   const title = t.scoreHeading;
   const description = `${params.correct} ${t.scoreCardExactAnswersSeparator} ${params.total} — ${scope.labelFr}`;
   const imageUrl = buildOgImageUrl(params);
+  // Each card is its own shareable address, indexed nowhere: a canonical
+  // that keeps the query, and no hreflang cluster.
+  const cardSearch = scoreCardSearchParams(
+    scoreCardScope(params),
+    params.correct,
+    params.total
+  ).toString();
+  const alternates = pageAlternates(
+    lang as Language,
+    (locale) => `${getLocalizedRoute(locale, "quiz")}/score?${cardSearch}`,
+    []
+  );
 
   return {
     title,
     description,
     robots: { index: false, follow: true },
+    alternates,
     openGraph: {
       title,
       description,
       type: "website",
+      url: String(alternates.canonical),
+      locale: OG_LOCALE_BY_LANGUAGE[lang as Language],
       images: [{ url: imageUrl, width: 1200, height: 630, alt: title }],
     },
     twitter: {
