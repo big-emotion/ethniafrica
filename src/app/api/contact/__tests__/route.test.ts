@@ -9,6 +9,8 @@ vi.mock("@sentry/nextjs", () => ({
   captureException: vi.fn(),
 }));
 
+import { __resetGraphToken } from "@/lib/email/graph";
+
 import { POST } from "../route";
 
 const validBody = {
@@ -28,14 +30,33 @@ function postRequest(body: unknown) {
   });
 }
 
-/** The one call the route makes to the world, and the only thing stubbed. */
-function resendCall() {
-  return (global.fetch as ReturnType<typeof vi.fn>).mock.calls[0];
+/**
+ * Graph is two calls: the OAuth token, then the send. Selecting by URL rather
+ * than by index means the assertions keep describing the mail even if the
+ * transport ever mints a token it did not need.
+ */
+function graphSendCall() {
+  return (global.fetch as ReturnType<typeof vi.fn>).mock.calls.find(
+    ([url]) => typeof url === "string" && url.includes("/sendMail")
+  );
 }
 
+/**
+ * The mail as a reader would describe it, lifted out of Graph's nesting. The
+ * assertions below are about what was sent, not about the wire format, and
+ * should not have to change again if the transport does.
+ */
 function sentPayload() {
-  const [, init] = resendCall();
-  return JSON.parse((init as RequestInit).body as string);
+  const call = graphSendCall();
+  if (!call) throw new Error("no sendMail call was made");
+  const [, init] = call;
+  const { message } = JSON.parse((init as RequestInit).body as string);
+  return {
+    to: message.toRecipients[0]?.emailAddress?.address,
+    replyTo: message.replyTo?.[0]?.emailAddress?.address,
+    subject: message.subject,
+    text: message.body.content,
+  };
 }
 
 describe("POST /api/contact", () => {
@@ -43,17 +64,27 @@ describe("POST /api/contact", () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
-    process.env.RESEND_API_KEY = "re_test_key";
+    __resetGraphToken();
+    process.env.GRAPH_TENANT_ID = "tenant-test";
+    process.env.GRAPH_CLIENT_ID = "client-test";
+    process.env.GRAPH_CLIENT_SECRET = "secret-test";
+    process.env.MAIL_SENDER = "contact@ethniafrica.com";
+    // Graph is two calls, not one: the token, then the send. Both are answered
+    // here so the route sees a transport that works end to end.
     global.fetch = vi.fn().mockResolvedValue({
       ok: true,
-      status: 200,
+      status: 202,
       text: async () => "",
+      json: async () => ({ access_token: "tok-test", expires_in: 3600 }),
     });
   });
 
   afterEach(() => {
     global.fetch = originalFetch;
-    delete process.env.RESEND_API_KEY;
+    delete process.env.GRAPH_TENANT_ID;
+    delete process.env.GRAPH_CLIENT_ID;
+    delete process.env.GRAPH_CLIENT_SECRET;
+    delete process.env.MAIL_SENDER;
   });
 
   // @req REQ-045
@@ -79,7 +110,7 @@ describe("POST /api/contact", () => {
   it("addresses the reply to the reader who wrote", async () => {
     await POST(postRequest(validBody));
 
-    expect(sentPayload().reply_to).toBe("aminata@example.org");
+    expect(sentPayload().replyTo).toBe("aminata@example.org");
   });
 
   // @req REQ-045
@@ -145,7 +176,7 @@ describe("POST /api/contact", () => {
    */
   // @req REQ-045
   it("says the message did not leave when no transport is configured", async () => {
-    delete process.env.RESEND_API_KEY;
+    delete process.env.MAIL_SENDER;
 
     const response = await POST(postRequest(validBody));
 
