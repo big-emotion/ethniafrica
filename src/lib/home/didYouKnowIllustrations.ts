@@ -565,6 +565,16 @@ export const DID_YOU_KNOW_ILLUSTRATIONS: Record<
     givenBy: "de l'administration coloniale française",
     alt: "Planche onomastique : « Toura », le nom reçu, au-dessus du nom « Wenmebo » que ce peuple se donne.",
   },
+  "bantu-knots": {
+    kind: "picture",
+    src: "/images/anecdotes/bantu-knots.jpg",
+    alt: "Coiffure en petits nœuds sur le mannequin Gwyneth Ellis.",
+    credit:
+      "Bantu Knots hairstyle, mannequin Gwyneth Ellis — Stephencdickson, Wikimedia Commons, CC BY-SA 4.0",
+    licenceUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    filePage:
+      "https://commons.wikimedia.org/wiki/File:Bantu_Knots_hairstyle_-_model_Gwyneth_Ellis.jpg",
+  },
 };
 
 // @req REQ-113

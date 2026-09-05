@@ -95,6 +95,7 @@ screen shows.
 | `bambara-refus`       | `bambara-refus.jpg`       | Chi Wara Headdress, Bamana people, Mali, 20th century, wood - Huntington Museum of Art - DSC05130.JPG                                                                                | Daderot                    | CC0           | commons   |
 | `guere-wobe`          | `guere-wobe.jpg`          | Ritual mask, Gere people, Ivory Coast 01.jpg                                                                                                                                         | Mickey Mystique            | CC BY-SA 4.0  | commons   |
 | `dioula-metier`       | `dioula-metier.jpg`       | ASC Leiden - van Achterberg Collection - 5 - 005 - La Grande Mosquée de Bobo-Dioulasso, avec 21 niveaux de protubérances en bois - Bobo-Dioulasso, Burkina Faso, 19-26 août 2001.tif | Angeline A. van Achterberg | CC BY-SA 4.0  | commons   |
+| `bantu-knots`         | `bantu-knots.jpg`         | Bantu Knots hairstyle - model Gwyneth Ellis.jpg                                                                                                                                      | Stephencdickson            | CC BY-SA 4.0  | commons   |
 
 Three pictures were deliberately **not** taken, and the reason is
 editorial rather than legal:
@@ -107,7 +108,7 @@ editorial rather than legal:
   against them. A plate showing the two names says the same thing without
   putting a face under the insult.
 
-The ten pictures here carry `licenceUrl` and `filePage`, so the caption
+The eleven pictures here carry `licenceUrl` and `filePage`, so the caption
 publishes the licence rather than naming it (brand charter §9, and §4(a) of
 CC BY-SA itself). **The twenty-four pictures of the first batch still only
 name their licence** — a gap this batch did not close.

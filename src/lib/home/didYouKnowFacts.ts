@@ -1825,6 +1825,53 @@ export const DID_YOU_KNOW_FACTS: DidYouKnowFact[] = [
       },
     ],
   },
+  {
+    id: "bantu-knots",
+    headline:
+      "L'origine zouloue des « Bantu knots » est répétée partout, mais aucune source ne l'établit.",
+    body: [
+      "En zoulou, « abantu » veut simplement dire « les gens ». En 1862, le linguiste Wilhelm Bleek en fait une catégorie savante pour classer des langues apparentées — cette classification n'a aucun rapport avec la coiffure.",
+      "Qui a nommé cette coiffure « Bantu knots », et quand ? Aucune source consultée ne l'établit. L'attribution à un « royaume zoulou », largement reprise, remonte à une chaîne de citations qui se referme sur elle-même sans attestation historique indépendante. Ce qui est documenté, en revanche, c'est une pratique familiale bien réelle : celle que raconte l'artiste sud-africaine Zizipho Poswa, transmise par sa tante.",
+    ],
+    entities: [
+      { kind: "family", id: "FLG_BANTU", label: "Langues bantoues" },
+      { kind: "people", id: "PPL_ZULU", label: "Zoulou" },
+      { kind: "people", id: "PPL_XHOSA", label: "Xhosa" },
+      { kind: "country", id: "ZAF", label: "Afrique du Sud" },
+    ],
+    tier: "referenced",
+    sources: [
+      {
+        title: "South African History Online — « Defining the term Bantu »",
+        url: "https://sahistory.org.za/article/defining-term-bantu",
+        tier: "referenced",
+        notes:
+          "Histoire du mot « Bantu » et de sa racine linguistique — pas de la coiffure.",
+      },
+      {
+        title:
+          "Herbert & Bailey — The Bantu languages: sociohistorical perspectives, 2002",
+        url: "https://www.cambridge.org/core/books/abs/language-in-south-africa/bantu-languages-sociohistorical-perspectives/02CCE08E10611E69474FC93EDCC574B9",
+        tier: "referenced",
+        notes: "Classification de Bleek, 1857/1858 puis 1862.",
+      },
+      {
+        title:
+          "The Metropolitan Museum of Art — interview de l'artiste Zizipho Poswa, 2022",
+        url: "https://www.metmuseum.org/perspectives/afpr-zizipho-poswa-interview",
+        tier: "referenced",
+        notes:
+          "Pratique familiale contemporaine documentée — pas une preuve d'invention première ni de date d'origine.",
+      },
+      {
+        title: "Mifetu & Trippeer — Bantu Knots, ITAA 2024 proceedings",
+        url: "https://www.iastatedigitalpress.com/itaa/article/18849/galley/16728/view/",
+        tier: "unverified",
+        notes:
+          "Attribue l'origine zouloue à Simeon (2022) sans fournir d'attestation historique indépendante — la chaîne de citation remonte à une source sur le mot « Bantu », pas sur la coiffure.",
+      },
+    ],
+  },
 ];
 
 function hasOfficialSource(fact: DidYouKnowFact): boolean {
