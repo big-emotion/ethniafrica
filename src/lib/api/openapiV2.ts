@@ -856,6 +856,12 @@ const options: swaggerJsdoc.Options = {
               type: "string",
               example: "Zimbabwe",
             },
+            nameEn: {
+              type: "string",
+              description:
+                "English name of ordinary use, in the state's own English form (Chad, Côte d'Ivoire, Cabo Verde, The Gambia). Absent until the corpus reload fills migration 082's column.",
+              example: "Zimbabwe",
+            },
             nameOfficial: {
               type: "string",
               example: "Republic of Zimbabwe",

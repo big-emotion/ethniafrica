@@ -68,6 +68,12 @@ export type ClassificationStatus =
 export interface Country {
   id: CountryId; // ISO 3166-1 alpha-3 (IMMUTABLE)
   nameFr: string;
+  /**
+   * English name of ordinary use in the state's own English form ("Chad",
+   * "Côte d'Ivoire", "The Gambia") — docs/editorial/translation-classes.md.
+   * Optional only because the column is empty until the corpus is reloaded.
+   */
+  nameEn?: string;
   nameOfficial?: string;
   /**
    * The chapeau: what a reader takes away if they read nothing else.

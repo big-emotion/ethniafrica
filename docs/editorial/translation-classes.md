@@ -120,13 +120,47 @@ classes in different places, recorded with its reason in `CLASS_EXCEPTIONS`
 consistency test refuses any other divergence, so a new one has to be argued
 there rather than slipped into a table.
 
+## The country's English name is corpus data, not a lookup
+
+`modele-pays.json` carries `nameEn` beside `nameFr`, both class 1. The first
+draft of this document made the English country name class 4, read at display
+time from `Admin0Country.name` in `src/lib/atlas/assets/africaAdmin0.ts`. Two
+things ruled that out (ETNI-1857):
+
+- **Search runs in SQL.** `afrik_search_countries` ranks on columns of
+  `afrik_countries`; a name that lives only in a TypeScript asset cannot enter
+  the exact-match tier or the prefix ladder, so an English reader typing "Chad"
+  reached nothing while "Tchad" was an exact hit. Migration `082` gives the
+  name a column and a folded vector, and the sync script loads it from the
+  fiche like every other identity field.
+- **The cartographic asset uses the cartographer's wording, not the state's.**
+  Natural Earth says "Ivory Coast", "Cape Verde", "eSwatini", "Gambia". The
+  state itself says otherwise in English, and the atlas — which exists to let
+  a people and a country be named as they name themselves — takes the state's
+  form.
+
+**The convention:** `nameEn` is the English name of ordinary use, in the form
+the state itself employs in English — the ISO 3166-1 / UN short name, with the
+state's preferred spelling where the two lists differ. Concretely: Chad,
+Morocco, Sudan, South Sudan, Eritrea, Uganda, South Africa; Cabo Verde, Côte
+d'Ivoire, Eswatini, The Gambia; Democratic Republic of the Congo and Republic
+of the Congo (the two stay distinguishable without display logic, as `nameFr`
+already requires); São Tomé and Príncipe and Côte d'Ivoire keep the diacritics
+the state keeps — search folds accents, so nothing is lost for a reader who
+types "Sao Tome". Like `nameFr` (ADR-0008) it is the name of ordinary use, never
+the protocol name: Tanzania, not United Republic of Tanzania. Each fiche's
+sources keep their tier; the name adds no claim that needs one.
+
+`Admin0Country.name` stays what it is — the label the globe engine draws — and
+is not a source for `nameEn`.
+
 ## Class-4 inventory
 
 Strings authored per locale in code, and where each lives:
 
 | String                      | Where                                                                             | State                                                                                                               |
 | --------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| Admin-0 country name        | `getAdmin0Name(countryId, locale)` in `src/lib/atlas/overlays.ts`                 | Both locales, from the Natural Earth asset (58 entries, 35 English names differ from the French)                    |
+| Admin-0 country name        | `getAdmin0Name(countryId, locale)` in `src/lib/atlas/overlays.ts`                 | Both locales, from the Natural Earth asset — the globe's label only; the corpus name is `pays.nameEn` (class 1)     |
 | Locative preposition        | `inCountry(countryId, name, locale)` in `src/lib/atlas/countryPreposition.ts`     | Both locales; English is "in", or "in the" for the Gambia, the Comoros, the Seychelles and the four named republics |
 | Quiz stems and explanations | The 17 builders in `src/lib/quiz/questionTemplates.ts`                            | French only; English builders, `*_en` columns and bank regeneration wait on the translated corpus (content story)   |
 | Game strings                | `src/lib/games/rounds/*.ts`, `landmarks.ts`, `gameRegistry.ts`                    | French only                                                                                                         |

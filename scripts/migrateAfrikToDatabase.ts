@@ -564,6 +564,7 @@ async function upsertCountries(
           // which is how the chapeau could have stayed in git forever, and
           // how the protocol name went missing for as long again (049).
           name_official: country.nameOfficial ?? null,
+          name_en: country.nameEn ?? null,
           summary: country.summary ?? null,
           etymology: country.etymology ?? null,
           name_origin_actor: country.nameOriginActor ?? null,

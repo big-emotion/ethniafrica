@@ -54,6 +54,24 @@ describe("AFRIK Countries Queries", () => {
       expect(result[0].nameFr).toBe("Zimbabwe");
     });
 
+    // @req REQ-143
+    it("maps name_en onto nameEn for every listed country", async () => {
+      mockSupabase.order.mockResolvedValue({
+        data: [
+          { id: "MAR", name_fr: "Maroc", name_en: "Morocco", content: {} },
+          { id: "SDN", name_fr: "Soudan", name_en: "Sudan", content: {} },
+        ],
+        error: null,
+      });
+
+      const result = await getAllAfrikCountries();
+
+      expect(result.map((country) => country.nameEn)).toEqual([
+        "Morocco",
+        "Sudan",
+      ]);
+    });
+
     it("should support pagination", async () => {
       mockSupabase.range.mockResolvedValue({ data: [], error: null });
 
@@ -101,6 +119,38 @@ describe("AFRIK Countries Queries", () => {
       expect(result?.nameOfficial).toBe(
         "République d'Afrique du Sud (Republic of South Africa)"
       );
+    });
+
+    // ETNI-1857: the English name is a column of its own (migration 082),
+    // mirrored the way language families already expose theirs.
+    // @req REQ-143
+    it("surfaces the English name of ordinary use beside the French one", async () => {
+      mockSupabase.single.mockResolvedValue({
+        data: {
+          id: "TCD",
+          name_fr: "Tchad",
+          name_en: "Chad",
+          content: {},
+        },
+        error: null,
+      });
+
+      const result = await getAfrikCountryById("TCD");
+
+      expect(result?.nameFr).toBe("Tchad");
+      expect(result?.nameEn).toBe("Chad");
+    });
+
+    // @req REQ-143
+    it("leaves nameEn undefined until the corpus reload fills the column", async () => {
+      mockSupabase.single.mockResolvedValue({
+        data: { id: "TCD", name_fr: "Tchad", name_en: null, content: {} },
+        error: null,
+      });
+
+      const result = await getAfrikCountryById("TCD");
+
+      expect(result?.nameEn).toBeUndefined();
     });
 
     it("should return null if not found", async () => {
