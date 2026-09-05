@@ -9,6 +9,7 @@ vi.mock("next/navigation", () => navigation);
 
 import { useRouteLanguage } from "@/hooks/use-language";
 import { getDefaultLocale } from "@/lib/locale";
+import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 
 /**
  * The locale a client component formats in is the locale of the page it is
@@ -19,10 +20,10 @@ import { getDefaultLocale } from "@/lib/locale";
 describe("useRouteLanguage (REQ-140)", () => {
   // @req REQ-140
   it("answers the locale of the route the component is rendered on", () => {
-    navigation.route.pathname = "/fr/atlas/peuples/PPL_YORUBA";
+    navigation.route.pathname = getPeopleRoute("fr", "PPL_YORUBA");
     expect(renderHook(() => useRouteLanguage()).result.current).toBe("fr");
 
-    navigation.route.pathname = "/en/atlas/peoples/PPL_YORUBA";
+    navigation.route.pathname = getPeopleRoute("en", "PPL_YORUBA");
     expect(renderHook(() => useRouteLanguage()).result.current).toBe("en");
   });
 
@@ -44,7 +45,7 @@ describe("useRouteLanguage (REQ-140)", () => {
 
   // @req REQ-140
   it("derives the mocked params from the mocked pathname", () => {
-    navigation.route.pathname = "/en/sources";
+    navigation.route.pathname = getLocalizedRoute("en", "sources");
     expect(navigation.useParams()).toEqual({ lang: "en" });
     navigation.route.pathname = null;
     expect(navigation.useParams()).toBeNull();
