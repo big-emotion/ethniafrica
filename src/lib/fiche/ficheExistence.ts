@@ -3,6 +3,7 @@ import * as React from "react";
 import { logger } from "@/lib/api/logger";
 import { getCountryById } from "@/api/v2/services/countryService";
 import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
+import { getPatronymeById } from "@/api/v2/services/patronymes";
 import { getPeopleById } from "@/api/v2/services/peopleService";
 
 /**
@@ -53,6 +54,11 @@ export const loadPeopleFiche = perRequest(async (id: string) =>
 /** @req REQ-019 */
 export const loadLanguageFamilyFiche = perRequest(async (id: string) =>
   getLanguageFamilyById(id)
+);
+
+/** @req REQ-147 */
+export const loadPatronymeFiche = perRequest(async (id: string) =>
+  getPatronymeById(id)
 );
 
 /**
