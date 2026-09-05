@@ -28,6 +28,9 @@ import {
   type PublicFlagTargetType,
 } from "@/lib/supabase/queries/flags/publicFlagsPageQuery";
 import { getTranslation } from "@/lib/translations";
+import { DEFAULT_LOCALE } from "@/lib/locale";
+import { getLanguageFromRoute, getStaticPageRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 interface PublicFlagsQueueProps {
   initialPage: PublicFlagsPage;
@@ -211,14 +214,20 @@ function FilterMenu<T extends string>({
   );
 }
 
-function PublicFlagRow({ item }: { item: PublicFlagListItem }) {
+function PublicFlagRow({
+  item,
+  language,
+}: {
+  item: PublicFlagListItem;
+  language: Language;
+}) {
   const targetName = getTargetName(item);
   const reason = item.reasonText?.trim();
 
   return (
     <article className="group border-b border-afh-border bg-afh-surface first:border-t">
       <Link
-        href={`/fr/signalements/${item.publicSlug}`}
+        href={`${getStaticPageRoute(language, "reports")}/${item.publicSlug}`}
         className="block min-w-0 outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-afh-earth md:grid md:grid-cols-[minmax(0,1fr)_13rem] xl:grid-cols-[minmax(0,1fr)_15rem] motion-reduce:transition-none"
       >
         <div className="flex min-w-0 items-start gap-3 px-4 py-5 md:px-6 md:py-6 xl:px-8">
@@ -291,6 +300,8 @@ export function PublicFlagsQueue({
 }: PublicFlagsQueueProps) {
   const router = useRouter();
   const pathname = usePathname();
+  // The queue's own address says which locale its permalinks belong to.
+  const language = getLanguageFromRoute(pathname) ?? DEFAULT_LOCALE;
   const sentinelRef = useRef<HTMLDivElement>(null);
   const latestSearchParamsRef = useRef(new URLSearchParams());
   const [filters, setFilters] = useState<PublicFlagFilters>(() =>
@@ -437,7 +448,7 @@ export function PublicFlagsQueue({
       ) : items.length > 0 ? (
         <div aria-live="polite">
           {items.map((item) => (
-            <PublicFlagRow key={item.id} item={item} />
+            <PublicFlagRow key={item.id} item={item} language={language} />
           ))}
         </div>
       ) : (

@@ -3,6 +3,8 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { ATTRIBUTION_STRING } from "@/lib/brand";
 import * as consentModule from "@/hooks/use-consent";
+import { getStaticPageRoute } from "@/lib/routing";
+import { getTranslation } from "@/lib/translations";
 
 vi.mock("@/hooks/use-consent", () => ({
   useConsent: vi.fn(),
@@ -103,6 +105,32 @@ describe("SiteFooter", () => {
       "href",
       "/fr/accessibilite"
     );
+  });
+
+  // The legal row composed `/${language}/mentions-legales`, which under `/en`
+  // is a French slug the middleware has to redirect: one hop on every legal
+  // click from an English page.
+  // @req REQ-141
+  it("composes the legal destinations in the English vocabulary under /en", () => {
+    const { footer } = getTranslation("en");
+    render(<SiteFooter language="en" />);
+
+    expect(
+      screen.getByRole("link", { name: footer.legalNotice })
+    ).toHaveAttribute("href", getStaticPageRoute("en", "legalNotice"));
+    expect(
+      screen.getByRole("link", { name: footer.dataPolicy })
+    ).toHaveAttribute("href", getStaticPageRoute("en", "dataPolicy"));
+    expect(
+      screen.getByRole("link", { name: footer.accessibility })
+    ).toHaveAttribute("href", getStaticPageRoute("en", "accessibility"));
+    expect(screen.getByRole("link", { name: footer.sitemap })).toHaveAttribute(
+      "href",
+      getStaticPageRoute("en", "sitemap")
+    );
+    expect(
+      screen.getByRole("link", { name: footer.directory.contribute })
+    ).toHaveAttribute("href", getStaticPageRoute("en", "contribute"));
   });
 
   // Once, and from the « Le projet » rubric — not once there and once again

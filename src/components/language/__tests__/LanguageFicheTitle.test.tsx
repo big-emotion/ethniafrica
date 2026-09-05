@@ -23,7 +23,7 @@ const baseData: LanguagePageData = {
 describe("LanguageFicheTitle", () => {
   // @req REQ-136
   it("prints the name with no provenance marker when it is sourced", () => {
-    render(<LanguageFicheTitle data={baseData} />);
+    render(<LanguageFicheTitle language="fr" data={baseData} />);
 
     expect(screen.getByRole("heading", { name: "Yoruba" })).toBeInTheDocument();
     expect(screen.queryByRole("status")).not.toBeInTheDocument();
@@ -34,7 +34,10 @@ describe("LanguageFicheTitle", () => {
   // @req REQ-136
   it("shows the name is derived by majority vote rather than presenting it as attested (AC1)", () => {
     render(
-      <LanguageFicheTitle data={{ ...baseData, nameProvenance: "derived" }} />
+      <LanguageFicheTitle
+        language="fr"
+        data={{ ...baseData, nameProvenance: "derived" }}
+      />
     );
 
     expect(screen.getByRole("heading", { name: "Yoruba" })).toBeInTheDocument();

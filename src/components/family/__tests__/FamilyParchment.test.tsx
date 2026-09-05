@@ -90,6 +90,7 @@ function undeclaredFamily(): FamilyPageData {
 function renderParchment(data: FamilyPageData = undeclaredFamily()) {
   return render(
     <FamilyParchment
+      language="fr"
       data={data}
       footprintCountries={overlay!.countries}
       memberPeoples={memberPeoples}
@@ -263,6 +264,7 @@ describe("FamilyParchment — the footprint", () => {
   it("names the fiche's own declaration when that is where it looked instead", () => {
     const { container } = render(
       <FamilyParchment
+        language="fr"
         data={undeclaredFamily()}
         footprintCountries={overlay!.countries}
         memberPeoples={memberPeoples}

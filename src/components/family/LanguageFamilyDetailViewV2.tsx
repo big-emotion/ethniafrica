@@ -7,6 +7,7 @@ import { FamilyParchment } from "@/components/family/FamilyParchment";
 import { FamilyHistorySection } from "@/components/family/FamilyHistorySection";
 import { FamilyDecolonialHeader } from "@/components/family/FamilyDecolonialHeader";
 import { FamilyLinguisticTraits } from "@/components/family/FamilyLinguisticTraits";
+import type { Language } from "@/types/shared";
 
 /**
  * The Record of a family fiche: the reading the globe band opens onto.
@@ -54,6 +55,7 @@ import { FamilyLinguisticTraits } from "@/components/family/FamilyLinguisticTrai
  */
 export interface LanguageFamilyDetailViewV2Props {
   family: LanguageFamily;
+  language: Language;
   /** Enables the live section FlagTarget on the history section (REQ-012 AC5). */
   /** The same countries, in the same order, the globe drew — so the ranking and the map cannot disagree. */
   footprintCountries?: readonly FamilyFootprintCountry[];
@@ -66,6 +68,7 @@ export interface LanguageFamilyDetailViewV2Props {
 // @req REQ-047
 export function LanguageFamilyDetailViewV2({
   family,
+  language,
   footprintCountries = [],
   memberPeoples = [],
   memberPeopleCount = 0,
@@ -77,6 +80,7 @@ export function LanguageFamilyDetailViewV2({
   // sources footer, which made the fiche read as ending one chapter early.
   return (
     <FamilyParchment
+      language={language}
       data={data}
       footprintCountries={footprintCountries}
       memberPeoples={memberPeoples}

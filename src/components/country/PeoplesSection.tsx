@@ -3,13 +3,15 @@ import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker"
 import type { PeoplesData, PeopleRow } from "@/lib/countryDataTransformer";
 import { AutonymExonymHeading } from "./AutonymExonymHeading";
 import { getPeopleRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 interface PeoplesSectionProps {
   data: PeoplesData;
+  language: Language;
 }
 
 // @req REQ-092
-export function PeoplesSection({ data }: PeoplesSectionProps) {
+export function PeoplesSection({ data, language }: PeoplesSectionProps) {
   if (data.rows.length === 0 && !data.totalPopulationFormatted) return null;
 
   return (
@@ -36,7 +38,7 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
               </div>
             </>
           ) : (
-            <FieldProvenanceMarker state="missing" />
+            <FieldProvenanceMarker state="missing" language={language} />
           )}
         </div>
         {data.rows.length > 0 ? (
@@ -50,7 +52,7 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
             {data.peopleCount}+ peuples
           </div>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </div>
 
@@ -64,6 +66,7 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
           <div className="mt-3 md:mt-4">
             {data.rows.map((row, i) => (
               <PeopleRowItem
+                language={language}
                 key={i}
                 row={row}
                 isLast={i === data.rows.length - 1}
@@ -166,7 +169,15 @@ function CoverageNote({ rows }: { rows: PeopleRow[] }) {
 // PeopleRowItem
 // ==========================================
 
-function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
+function PeopleRowItem({
+  row,
+  isLast,
+  language,
+}: {
+  row: PeopleRow;
+  isLast: boolean;
+  language: Language;
+}) {
   const dotColor = getDemoColor(row.colorIndex);
 
   return (
@@ -192,12 +203,14 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
               exonym={row.name}
               lang={row.endonymLang}
               href={
-                row.peopleId ? getPeopleRoute("fr", row.peopleId) : undefined
+                row.peopleId
+                  ? getPeopleRoute(language, row.peopleId)
+                  : undefined
               }
             />
           ) : row.peopleId && !row.groupedNames ? (
             <Link
-              href={getPeopleRoute("fr", row.peopleId)}
+              href={getPeopleRoute(language, row.peopleId)}
               className="text-afh-small font-bold leading-snug hover:underline"
               style={{ fontFamily: "var(--country-font-body)" }}
             >

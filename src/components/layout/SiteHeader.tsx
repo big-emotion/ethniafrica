@@ -41,6 +41,7 @@ import {
 } from "lucide-react";
 
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { useHeaderReveal } from "@/hooks/use-header-reveal";
 import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/brand";
@@ -386,6 +387,12 @@ export function SiteHeader({
               is the one control the mockup's bar does not draw. */}
           <ThemeToggle />
 
+          {/* REQ-140 — the other locale. In the bar only above the
+              breakpoint: at 430px a fourth 44px control leaves the lockup
+              155px, which cuts the tagline, so the phone gets it as the
+              tray's first row instead (see the tray below). */}
+          <LanguageSwitcher language={language} />
+
           <button
             type="button"
             onClick={() => setTrayOpen(true)}
@@ -422,6 +429,7 @@ export function SiteHeader({
       <Sheet open={trayOpen} onOpenChange={setTrayOpen}>
         <SheetContent side="right" className="sh-tray">
           <SheetTitle className="sh-tray-title">{t.hubs.menuLabel}</SheetTitle>
+          <LanguageSwitcher language={language} appearance="row" />
           {ACCESS_MODES.map((axis) => {
             const modules = getNavModules(axis);
             const expanded = openTrayAxis === axis;
@@ -699,6 +707,15 @@ export function SiteHeader({
           outline: 2px solid var(--afh-cat-ocre);
           outline-offset: 2px;
         }
+        /* The locale code inside the third disc, dressed like the chip
+           below: caption size, 700. It takes the disc's own ink — this is
+           chrome, not the page speaking, so it never reads --accent. */
+        .sh-lang-code {
+          font-size: var(--afh-text-caption);
+          font-weight: 700;
+          letter-spacing: 0.04em;
+          text-decoration: none;
+        }
 
         /* ── The panel behind the click ─────────────────────────────── */
         /* Hung off the bar, not inserted into it. The masthead is pinned, so
@@ -868,6 +885,26 @@ export function SiteHeader({
           padding: 15px 18px;
           border-bottom: 1px solid var(--afh-border);
         }
+        /* The switch as a tray row: the same box as a fold trigger, so the
+           four rows of the tray share one left edge and one height. */
+        .sh-lang-row {
+          display: flex;
+          align-items: center;
+          padding: 15px 18px;
+          border-bottom: 1px solid var(--afh-border);
+          font-size: var(--afh-text-small);
+          font-weight: 700;
+          color: var(--sh-ink);
+          text-decoration: none;
+        }
+        .sh-lang-row:hover {
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
+        .sh-lang-row:focus-visible {
+          outline: 2px solid var(--afh-cat-ocre);
+          outline-offset: -2px;
+        }
         .sh-fold {
           border-bottom: 1px solid var(--afh-border);
         }
@@ -918,7 +955,8 @@ export function SiteHeader({
            One component, one switch, so the two branches cannot disagree
            about which viewport they are on. */
         .sh-axes,
-        .sh-panel {
+        .sh-panel,
+        .sh-lang {
           display: none;
         }
         .sh-burger {
@@ -933,6 +971,12 @@ export function SiteHeader({
           }
           .sh-panel {
             display: block;
+          }
+          /* The switch and the burger trade places: the bar has room for
+             a third disc once the burger is gone, and the tray row that
+             carried the switch on the phone can no longer be opened. */
+          .sh-lang {
+            display: inline-grid;
           }
           /* Only the burger is withdrawn. The tray needs no rule of its
              own: nothing but the burger opens it, and the burger is gone. */

@@ -14,6 +14,7 @@ describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)
   it("renders up to 3 relation rows with a link to the full links page", () => {
     render(
       <PeopleRelatedPeoplesSection
+        language="fr"
         data={EMPTY_DATA}
         peopleId="PPL_YORUBA"
         relationsPreview={[
@@ -61,6 +62,7 @@ describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)
   it("renders no relations block and no dead link when there are zero relations", () => {
     render(
       <PeopleRelatedPeoplesSection
+        language="fr"
         data={EMPTY_DATA}
         peopleId="PPL_YORUBA"
         relationsPreview={[]}
@@ -76,6 +78,7 @@ describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)
   it("still renders the existing ethnicities block unchanged when there are no relations", () => {
     render(
       <PeopleRelatedPeoplesSection
+        language="fr"
         data={{ ethnicities: ["Oyo"] }}
         peopleId="PPL_YORUBA"
         relationsPreview={[]}
@@ -91,7 +94,11 @@ describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)
   // @req REQ-097 FR75
   it("returns null when there is no content at all, relations included", () => {
     const { container } = render(
-      <PeopleRelatedPeoplesSection data={EMPTY_DATA} relationsPreview={[]} />
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={EMPTY_DATA}
+        relationsPreview={[]}
+      />
     );
     expect(container).toBeEmptyDOMElement();
   });
@@ -103,6 +110,7 @@ describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)
   it("renders the role of lineages and the religious authority", () => {
     render(
       <PeopleRelatedPeoplesSection
+        language="fr"
         data={{
           ethnicities: [],
           roleOfLineages: "Rôle central des lignages dans la vie sociale.",

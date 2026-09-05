@@ -39,17 +39,17 @@ type Story = StoryObj<typeof meta>;
 
 const audited: Story = {
   name: "Audited (confidence chip)",
-  args: { column: auditedColumn },
+  args: { language: "fr", column: auditedColumn },
 };
 
 const unaudited: Story = {
   name: "Unaudited (no confidence_scores row)",
-  args: { column: unauditedColumn },
+  args: { language: "fr", column: unauditedColumn },
 };
 
 const contested: Story = {
   name: "Contested classification",
-  args: { column: contestedColumn },
+  args: { language: "fr", column: contestedColumn },
 };
 
 // @req REQ-097

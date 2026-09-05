@@ -1,5 +1,6 @@
 import AboutPageShell from "@/components/pages/AboutPageShell";
 import AboutPageContent from "@/components/pages/AboutPageContent";
+import type { Language } from "@/types/shared";
 
 /**
  * No longer fetches corpus counts, hub modules or country syntheses: those
@@ -10,10 +11,15 @@ import AboutPageContent from "@/components/pages/AboutPageContent";
  */
 // @req REQ-091
 // @req REQ-132
-export default function AboutPage() {
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
   return (
     <AboutPageShell>
-      <AboutPageContent language="fr" />
+      <AboutPageContent language={lang as Language} />
     </AboutPageShell>
   );
 }

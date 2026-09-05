@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **EthniAfrica** is a Next.js 16 App Router app publishing an open, sourced atlas of African peoples, languages, linguistic families and countries, organised by the **AFRIK methodology** in a decolonial editorial posture.
 
-The site is **French-only**: `Language = "fr"` in `src/types/shared.ts`, and `src/middleware.ts` redirects any other two-letter locale segment to `/fr`. The `[lang]` route segment survives from the multilingual V1 but only ever resolves to `fr` — do not reintroduce `en`/`es`/`pt` branches.
+The site is **bilingual — English and French, English by default** (ARCH-021, REQ-140). `Language = "en" | "fr"` is derived from `LOCALES` in `src/lib/locale.ts`, and `[lang]` resolves to either. A request that names no locale answers in English unless the reader's explicit choice, remembered in the `ethni-locale` cookie, says French; only the language switcher writes that cookie — landing on `/fr` is not a choice. `/fr/*` resolves unchanged. English URLs carry **English slugs** (`/en/atlas/peoples/...`) that `src/middleware.ts` rewrites onto the French route folders under `src/app/[lang]/` (DEC-049), so a route rename is two slug entries in `src/lib/routing.ts`, never a second folder tree. There is no third locale: `es`/`pt` and any other two-letter segment 308 to the English default. An `en` branch is expected wherever a locale is switched on; a `["fr"].includes(lang)` guard is the retired shape.
 
 The public REST API is **v2 only** (`/api/v2/*`). V1 (regions/ethnicities) was removed; anything referring to `regions` or `ethnicities` as entities is stale, including most of `README.md`.
 
@@ -65,7 +65,7 @@ src/lib/api/openapiV2.ts             # OpenAPI spec (openapi:diff gates breaking
 
 Shared: `src/api/v2/utils/{validation,response}.ts`, `src/api/v2/schemas/` (zod), `src/api/v2/serializers/`, `src/lib/api/cors.ts`.
 
-`src/middleware.ts` is load-bearing and does four unrelated jobs: CSP/security headers with a per-request nonce, locale canonicalization to `/fr`, API-key validation for `/api/v2/*` (PBKDF2-hashed keys in `api_keys`; same-origin requests are exempt so the frontend needs no embedded key), and Upstash rate limiting.
+`src/middleware.ts` is load-bearing and does four unrelated jobs: CSP/security headers with a per-request nonce, locale resolution (English default, the `ethni-locale` cookie for an explicit choice, English slugs rewritten onto the French route folders, the resolved locale passed down as the `x-locale` request header so the root layout can declare `<html lang>`), API-key validation for `/api/v2/*` (PBKDF2-hashed keys in `api_keys`; same-origin requests are exempt so the frontend needs no embedded key), and Upstash rate limiting.
 
 ### AFRIK data pipeline
 
@@ -83,7 +83,7 @@ Supabase tables: afrik_language_families, afrik_languages, afrik_peoples,
         ↓ src/api/v2/services/*
 ```
 
-Fiche shape is fixed by the strict models in `public/modele-*.json` (peuple, pays, linguistique, nom, relation, source, migration, récit-oral, frontière-coloniale). Never skip, rename, or invent a section.
+Fiche shape is fixed by the 16 strict models in `public/modele-*.json`: peuple, pays, linguistique, langue, media, relation, source, migration, recit-oral, frontiere-coloniale, and the six name models — nom and its five sub-models nom-jamu, nom-nisba, nom-patronyme, nom-patronymique, nom-totemique. Count the directory before quoting the number: this sentence listed nine while sixteen were on disk, and `src/__tests__/agentInstructionsBilingual.test.ts` now holds it to the directory. Never skip, rename, or invent a section.
 
 Hierarchy: **linguistic family → language → people → country.** IDs: families `FLG_*`, languages ISO 639-3, peoples `PPL_*`, countries ISO 3166-1 alpha-3.
 
@@ -219,6 +219,16 @@ Three fiche fields are published to the reader **verbatim**, with no sanitising 
 So those three may carry no repository path, no JSON field path, no raw `PPL_`/`FLG_`/`PAT_` identifier, and none of the pipeline's own vocabulary — _file d'attente_, _la passe_, _protocole de recherche_, _revue claim-level_, _tier hérité_. That last class is the one that got through: it carries no path and no identifier, so it reads as ordinary French, and 774 name fiches told their visitors which queue they came from and which research protocol they awaited. **The reader is owed the silence itself, never the reason the workshop has not filled it yet.**
 
 `checkEditorialRules.ts` enforces this as `reader-facing-register` at error severity; the banned vocabulary is one exported constant, `INTERNAL_REGISTER_PATTERNS`. Doctrine, rewrite table and a paste-able prompt block for curation sessions: `docs/editorial/reader-facing-register.md`.
+
+### Bilingual content (`npm run check:translation-parity`, CI-blocking)
+
+Content added or changed in either language must carry its counterpart in the other, or an explicit deferral with a reason — a fiche field, a home fact, a UI string, a quiz template. The gate is symmetric: French without English fails exactly as English without French does, and a source field edited after its translation was produced is reported as drifted, not accepted (REQ-145).
+
+Two kinds of content, two homes. **UI copy** lives in locale-keyed dictionaries — `src/lib/translations.ts` today, the `src/lib/i18n` modules as they land — and a keys-parity test holds `en` and `fr` to the same key set, so a string added under one locale fails the suite until the other has it. **Corpus translations** never edit the French fiche: they are records under `dataset/translations/<lang>/`, produced by `npm run translate:record`, and carry their own provenance.
+
+The rules themselves — which fields are never translated, the glossary, the English register — live in `.claude/skills/afrik-translator/` and are enforced by `scripts/ci/checkTranslationParity.ts`. This file does not restate them, because three copies of one doctrine are how it drifts: invoke the skill before translating anything and let the gate name what is missing.
+
+**Both enforcing surfaces are pending at the time of writing.** The gate lands with ETNI-1829 and the skill with ETNI-1831; until then there is no `check:translation-parity` script in `package.json` and no `afrik-translator` directory under `.claude/skills/`, so do not go looking for them. The instruction stands alone in the meantime, which this repository has already shown is a state that decays — their absence is not licence. Delete this paragraph in the PR that lands the second of the two.
 
 ### TypeScript
 

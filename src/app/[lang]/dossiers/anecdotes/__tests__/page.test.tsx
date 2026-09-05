@@ -21,7 +21,12 @@ import AnecdotesPage from "@/app/[lang]/dossiers/anecdotes/page";
 
 async function renderPage(a?: string) {
   readerProps.mockClear();
-  render(await AnecdotesPage({ searchParams: Promise.resolve({ a }) }));
+  render(
+    await AnecdotesPage({
+      params: Promise.resolve({ lang: "fr" }),
+      searchParams: Promise.resolve({ a }),
+    })
+  );
   return readerProps.mock.calls.at(-1)?.[0] as {
     deck: string[];
     openingCard: { fact: { id: string } };

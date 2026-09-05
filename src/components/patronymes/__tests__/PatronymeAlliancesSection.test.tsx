@@ -34,6 +34,7 @@ describe("PatronymeAlliancesSection (REQ-133)", () => {
   it("links an allied name by its name, never by its identifier", () => {
     render(
       <PatronymeAlliancesSection
+        language="fr"
         patronyme={{ ...base, alliances: [sanankuya] }}
       />
     );
@@ -50,6 +51,7 @@ describe("PatronymeAlliancesSection (REQ-133)", () => {
   it("glosses a known alliance term in French beside the attested word", () => {
     render(
       <PatronymeAlliancesSection
+        language="fr"
         patronyme={{ ...base, alliances: [sanankuya] }}
       />
     );
@@ -63,6 +65,7 @@ describe("PatronymeAlliancesSection (REQ-133)", () => {
   it("prints an unglossed term as the corpus attests it", () => {
     render(
       <PatronymeAlliancesSection
+        language="fr"
         patronyme={{
           ...base,
           alliances: [
@@ -86,7 +89,7 @@ describe("PatronymeAlliancesSection (REQ-133)", () => {
   // it whether or not the corpus fills the chapter.
   // @req REQ-133
   it("explains what an alliance between names is, even when none is documented", () => {
-    render(<PatronymeAlliancesSection patronyme={base} />);
+    render(<PatronymeAlliancesSection language="fr" patronyme={base} />);
 
     expect(screen.getByText(t.alliancesNote)).toBeInTheDocument();
     expect(screen.getByRole("status")).toBeInTheDocument();
@@ -96,6 +99,7 @@ describe("PatronymeAlliancesSection (REQ-133)", () => {
   it("prints the curator's gap wording when the corpus explains its silence", () => {
     render(
       <PatronymeAlliancesSection
+        language="fr"
         patronyme={{
           ...base,
           content: {

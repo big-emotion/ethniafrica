@@ -25,7 +25,7 @@ import {
   type ModuleAvailabilityMap,
 } from "@/lib/hubs/moduleOffer";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
-import { getLocalizedRoute } from "@/lib/routing";
+import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
 
 let mockPathname = "/fr";
 
@@ -590,6 +590,76 @@ describe("SiteHeader — the controls that stay in the bar", () => {
     for (const label of [...Object.values(ACCESS_MODE_LABELS), "Rechercher"]) {
       expect(trigger(label)).toHaveClass("min-h-11");
     }
+    expect(screen.getByRole("link", { name: "English" })).toHaveClass(
+      "min-h-11"
+    );
+  });
+});
+
+/**
+ * The fourth control. Measured at 430px against the bar's own stylesheet:
+ * 406px of content after the page padding, 16px of gap, 53px for the mark
+ * and its gap, and 44px per control at 2px apart. Three controls leave the
+ * lockup 201px, which « Atlas des Peuples d'Afrique » at the caption size
+ * fills to within a few pixels; a fourth would leave it 155px and cut the
+ * tagline on every phone page. So the bar carries the switch only above the
+ * breakpoint, and below it the tray does — as its first row, above the
+ * three axes, where the phone's navigation already is.
+ */
+describe("SiteHeader — the language switch (REQ-140)", () => {
+  // @req REQ-140
+  it("offers the other locale from the bar, composed for the same page", () => {
+    mockPathname = getPeopleRoute("fr", "PPL_YORUBA");
+    renderHeader();
+
+    const switcher = screen.getByRole("link", { name: "English" });
+    expect(switcher).toHaveAttribute(
+      "href",
+      getPeopleRoute("en", "PPL_YORUBA")
+    );
+    expect(switcher).toHaveAttribute("lang", "en");
+  });
+
+  // @req REQ-140
+  it("withdraws the bar switch below the breakpoint and paints it above", () => {
+    renderHeader();
+
+    expect(declarationsFor("\\.sh-lang")).toMatch(/display:\s*none/);
+    expect(declarationsFor("\\.sh-lang")).toMatch(/display:\s*inline-grid/);
+  });
+
+  // @req REQ-140
+  it("offers the switch as the first row of the tray", () => {
+    renderHeader();
+
+    fireEvent.click(screen.getByTestId(BURGER));
+    const tray = screen.getByRole("dialog");
+
+    const switcher = within(tray).getByRole("link", { name: "English" });
+    expect(switcher).toHaveClass("min-h-11");
+    expect(switcher).toHaveTextContent("English");
+    // Above the axes, not below them: the reader meets it before the first
+    // fold.
+    const firstFold = within(tray).getByRole("button", {
+      name: new RegExp(ACCESS_MODE_LABELS.atlas),
+    });
+    expect(
+      switcher.compareDocumentPosition(firstFold) &
+        Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+  });
+
+  // The switch is chrome, like the search and the surface toggle beside it,
+  // and takes their ink — never the page's accent (brand charter §5.2).
+  // @req REQ-140
+  it("draws the bar switch as the third disc, in the chrome's ink", () => {
+    renderHeader();
+
+    const switcher = screen.getByRole("link", { name: "English" });
+    expect(switcher).toHaveClass("sh-icon");
+    expect(switcher.querySelector(".sh-icon-circle")).toHaveTextContent("EN");
+    expect(declarationsFor("\\.sh-lang-code")).not.toMatch(/#[0-9a-f]{3,8}/i);
+    expect(declarationsFor("\\.sh-lang-code")).not.toMatch(/--accent/);
   });
 });
 

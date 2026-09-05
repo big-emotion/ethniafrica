@@ -34,7 +34,7 @@ export interface MigrationDetailSheetProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   event: MigrationAtlasEntry | null;
-  language?: Language;
+  language: Language;
   className?: string;
 }
 
@@ -89,7 +89,7 @@ export function MigrationDetailSheet({
   open,
   onOpenChange,
   event,
-  language = "fr",
+  language,
   className,
 }: MigrationDetailSheetProps) {
   const variant = useSheetVariant();

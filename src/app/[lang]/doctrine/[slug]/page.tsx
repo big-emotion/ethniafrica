@@ -19,6 +19,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { fetchDoctrineEntry } from "@/lib/doctrine/fetchDoctrineEntry";
 import { formatVersionLabel } from "@/lib/doctrine/formatVersionLabel";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
+import type { Language } from "@/types/shared";
 
 const DEFAULT_CHANGELOG_URL =
   "https://github.com/big-emotion/ethniafrica/commits/HEAD/supabase/migrations/018_editorial_doctrine_seed.sql";
@@ -42,7 +43,7 @@ export default async function DoctrineSlugPage({
 }: {
   params: Promise<PageParams>;
 }) {
-  const { slug } = await params;
+  const { lang, slug } = await params;
 
   const parsed = parseVersionedSlug(decodeURIComponent(slug));
 
@@ -63,7 +64,7 @@ export default async function DoctrineSlugPage({
 
   return (
     <PageLayout
-      language="fr"
+      language={lang as Language}
       title={entry.title}
       sectionName="Doctrine éditoriale"
       hideHeader

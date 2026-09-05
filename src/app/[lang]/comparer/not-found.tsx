@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { StateMedallion } from "@/components/ui/StateMedallion";
+import { DEFAULT_LOCALE, isLocale } from "@/lib/locale";
+import { getLocalizedRoute } from "@/lib/routing";
 
 /**
  * Calm 404 for /[lang]/comparer/[entityType]/[...ids] (UX-DR31, FR62).
@@ -13,7 +15,8 @@ import { StateMedallion } from "@/components/ui/StateMedallion";
 // @req REQ-099
 export default function ComparerNotFound() {
   const params = useParams();
-  const lang = (params?.lang as string) || "fr";
+  const lang = isLocale(params?.lang) ? params.lang : DEFAULT_LOCALE;
+  const pickerRoute = getLocalizedRoute(lang, "compare");
 
   return (
     <div className="min-h-[60vh] flex flex-col items-center justify-center bg-afh-bg-warm px-4 py-12">
@@ -28,7 +31,7 @@ export default function ComparerNotFound() {
           Cette comparaison n&apos;existe pas. Les URLs de comparaison suivent
           le format{" "}
           <span className="font-mono text-afh-small bg-afh-bg px-1 rounded">
-            /{lang}/comparer/{"{type}"}/{"{id1}"}/{"{id2}"}
+            {pickerRoute}/{"{type}"}/{"{id1}"}/{"{id2}"}
           </span>{" "}
           (2 à 3 identifiants du même type : peuples, pays ou familles
           linguistiques, sans doublon).
@@ -36,7 +39,7 @@ export default function ComparerNotFound() {
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
           <Link
-            href={`/${lang}/comparer`}
+            href={pickerRoute}
             data-cta="primary"
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-afh-text text-afh-bg-warm text-afh-small font-medium hover:opacity-90 transition-opacity"
           >

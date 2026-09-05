@@ -33,13 +33,23 @@ describe("AboutPage server boundary (REQ-091)", () => {
   });
 
   // @req REQ-132
-  it("renders About content in French inside the shell, with no data to fetch", () => {
-    render(<AboutPage />);
+  it("renders About content in French inside the shell, with no data to fetch", async () => {
+    render(await AboutPage({ params: Promise.resolve({ lang: "fr" }) }));
 
     expect(screen.getByTestId("about-page-shell")).toBeInTheDocument();
     expect(screen.getByTestId("about-page-content")).toHaveAttribute(
       "data-language",
       "fr"
+    );
+  });
+
+  // @req REQ-140
+  it("renders the content in the locale of the route", async () => {
+    render(await AboutPage({ params: Promise.resolve({ lang: "en" }) }));
+
+    expect(screen.getByTestId("about-page-content")).toHaveAttribute(
+      "data-language",
+      "en"
     );
   });
 });

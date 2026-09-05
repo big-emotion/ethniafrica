@@ -142,7 +142,7 @@ export default async function PeoplesSlugPage({
     }
 
     return (
-      <PageLayout language="fr" sectionName="Peuples">
+      <PageLayout language={lang as Language} sectionName="Peuples">
         <div className="container mx-auto max-w-4xl px-4 py-8">
           <FicheSnapshotView
             kind="people"
@@ -225,7 +225,7 @@ export default async function PeoplesSlugPage({
   // rather than below a strip of page background.
   return (
     <PageLayout
-      language="fr"
+      language={lang as Language}
       sectionName="Peuples"
       flushTop
       trailLabel={peopleDetail.nameMain}
@@ -285,6 +285,7 @@ export default async function PeoplesSlugPage({
           // rendering — and with it the axe audit and the Lighthouse score.
           <PeopleDetailViewV2
             people={peopleDetail}
+            language={lang as Language}
             namesDossier={namesDossier}
             fragmentation={fragmentation}
             hasSourceFlag={sourceFlags.length > 0}
