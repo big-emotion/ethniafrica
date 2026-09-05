@@ -21,6 +21,7 @@ export const CHAPITRE_LA_LANGUE: DossierChapter = {
   question:
     "Le mot « bantou » range des centaines de peuples. Qui l'a forgé, et pour quoi faire ?",
   standfirst: {
+    id: "standfirst",
     text: "Une étiquette née dans un bureau colonial classe aujourd'hui la plus grande famille linguistique du continent. Elle est scientifiquement utile et politiquement toxique, et l'atlas continue de l'employer.",
     sourceRefs: ["bleek-1862", "britannica-bleek"],
     figureRefs: ["corpus-language-families"],
@@ -38,16 +39,19 @@ export const CHAPITRE_LA_LANGUE: DossierChapter = {
       heading: "Un mot forgé dans un bureau, en 1862",
       blocks: [
         {
+          id: "un-nom-sans-locuteurs",
           text: "L'atlas range ses 775 peuples sous vingt-quatre familles linguistiques. La plus vaste porte un nom qui n'a pas de locuteurs : personne ne s'est jamais dit « bantou » avant qu'un linguiste ne l'écrive.",
           sourceRefs: [],
           figureRefs: ["corpus-language-families", "corpus-peoples"],
         },
         {
+          id: "bleek-et-abantu",
           text: "Le mot est forgé en 1862 par Wilhelm Bleek, dans sa Comparative Grammar of South African Languages. Il prend au zoulou abantu, « les gens » — ba-, préfixe de pluriel humain, et -ntu, la personne — et en fait une étiquette de classification. Le geste est ordinaire en philologie comparée du XIXe siècle ; ce qui l'est moins, c'est le lieu.",
           sourceRefs: ["bleek-1862", "britannica-bleek"],
           figureRefs: [],
         },
         {
+          id: "bleek-dans-ladministration",
           text: "Bleek était interprète, puis bibliothécaire de l'administration du Cap. Il ne travaillait pas à côté du pouvoir colonial : il travaillait dedans, et lui fournissait des catégories. Cela ne rend pas sa grammaire fausse — l'unité généalogique des langues qu'il regroupe est admise aujourd'hui encore. Cela dit seulement d'où vient le mot, et à qui il a d'abord servi.",
           sourceRefs: ["britannica-bleek", "saho-bantu"],
           figureRefs: [],
@@ -60,6 +64,7 @@ export const CHAPITRE_LA_LANGUE: DossierChapter = {
       heading: "Trois glissements, et un seul est contesté",
       blocks: [
         {
+          id: "le-trajet-du-mot",
           text: "Ce que la critique vise n'est pas la classification : c'est le trajet qu'un mot a fait depuis elle. Il descend d'une famille de langues à une population, puis d'une population à une catégorie administrative — et chaque descente est un pas que la précédente ne justifiait pas.",
           sourceRefs: ["saho-bantu"],
           figureRefs: [],
@@ -106,16 +111,19 @@ export const CHAPITRE_LA_LANGUE: DossierChapter = {
       heading: "Ce que le préfixe portait, et que l'usage a coupé",
       blocks: [
         {
+          id: "le-prefixe-est-grammaire",
           text: "Les langues de cette famille marquent par un préfixe ce dont elles parlent : la langue, la personne, le peuple, le pays. Ce préfixe n'est pas un ornement — c'est la grammaire qui distingue une langue de ceux qui la parlent, précisément la distinction que le chapitre défend.",
           sourceRefs: ["bantu-class-prefixes"],
           figureRefs: [],
         },
         {
+          id: "le-tswana-en-quatre-mots",
           text: "Le tswana le montre en quatre mots sur une seule racine : Botswana le pays, Batswana le peuple, Motswana une personne, Setswana la langue. Là où le français et l'anglais disent « tswana » pour les quatre, la langue distinguait.",
           sourceRefs: ["bantu-class-prefixes"],
           figureRefs: [],
         },
         {
+          id: "le-prefixe-coupe",
           text: "L'usage européen a coupé le préfixe. Ce qui reste est un radical nu qui sert indifféremment de nom de langue, de nom de peuple et d'adjectif — et l'ambiguïté que l'atlas passe son temps à défaire est en partie née là.",
           sourceRefs: ["bantu-class-prefixes"],
           figureRefs: [],
@@ -164,16 +172,19 @@ export const CHAPITRE_LA_LANGUE: DossierChapter = {
       heading: "Un cas qui ne se résout pas",
       blocks: [
         {
+          id: "une-insulte-en-afrique-du-sud",
           text: "En Afrique du Sud, « bantou » est une insulte. Le mot a nommé un ministère, un type d'école et une catégorie de citoyens de seconde classe, et cette mémoire ne se dissout pas parce que la linguistique, elle, l'emploie sans arrière-pensée.",
           sourceRefs: ["saho-bantu", "bantu-education-act-1953"],
           figureRefs: [],
         },
         {
+          id: "aucun-substitut",
           text: "Partout ailleurs, il reste le terme technique standard, et aucun substitut ne recouvre la même famille. « Niger-congo » désigne un ensemble bien plus large ; les périphrases régionales laissent dehors la moitié des langues concernées. Renoncer au mot, ce serait renoncer à dire une parenté réelle.",
           sourceRefs: ["saho-bantu"],
           figureRefs: [],
         },
         {
+          id: "garder-et-expliquer",
           text: "L'atlas tranche donc dans un seul sens : il garde le mot et il l'explique. C'est l'application la plus nette de sa propre doctrine — rien n'est interdit, tout est étiqueté — et c'est aussi la position la moins confortable, parce qu'elle n'offre à personne le soulagement d'un mot neuf.",
           sourceRefs: [],
           figureRefs: [],
@@ -186,11 +197,13 @@ export const CHAPITRE_LA_LANGUE: DossierChapter = {
       heading: "Ce que la source ne dit pas",
       blocks: [
         {
+          id: "glossonyme-nest-pas-ethnonyme",
           text: "Un glossonyme n'est pas un ethnonyme, et une famille linguistique ne décrit pas une population — encore moins une ascendance. Que deux peuples parlent des langues apparentées dit qu'un mot a voyagé, pas que des gens l'ont porté.",
           sourceRefs: [],
           figureRefs: [],
         },
         {
+          id: "le-classement-est-un-outil",
           text: "Le corpus range pourtant chaque peuple sous une famille, et cette page en est la meilleure critique disponible : le classement est un outil de lecture, jamais une origine. Là où l'atlas emploie une étiquette forgée ailleurs, il le dit sur la fiche plutôt qu'ici.",
           sourceRefs: [],
           figureRefs: [],
