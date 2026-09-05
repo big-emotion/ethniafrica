@@ -1,6 +1,16 @@
 import { test, expect } from "./support/fixtures";
 import type { Locator, Page } from "@playwright/test";
 import { getFamilyRoute } from "@/lib/routing";
+import { LOCALE } from "./support/locale";
+
+// English UI copy lands per translation wave (REQ-142 to REQ-146). Until it
+// does, the labels this spec reads are French, so the English matrix leg
+// skips it rather than fail on copy it was never asked to check — and the
+// leg's report says so, instead of counting the journey as covered.
+test.skip(
+  LOCALE !== "fr",
+  "English copy lands per wave — this spec reads French UI copy"
+);
 
 // ETNI-1285 (REQ-117) — the contract anchor ARCH-015 names for the fiche
 // globe: choosing a target flies the camera to it AND opens the facts panel
@@ -11,7 +21,7 @@ import { getFamilyRoute } from "@/lib/routing";
 // family footprint is the union of its member peoples' current countries, so
 // this fiche carries many choosable targets — a country fiche would only ever
 // carry one, which would let the geometry pass by accident.
-const FICHE_GLOBE_URL = getFamilyRoute("fr", "FLG_BANTU");
+const FICHE_GLOBE_URL = getFamilyRoute(LOCALE, "FLG_BANTU");
 
 // The panel is a bottom sheet below 760 px and a side panel at 760 px and
 // above, so the three reference widths cover both anchorings. There is no

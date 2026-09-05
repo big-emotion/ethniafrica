@@ -12,6 +12,7 @@ import {
   getLocalizedRoute,
   getPeopleRoute,
 } from "@/lib/routing";
+import { LOCALE } from "../support/locale";
 
 // TEA Test Design R-10 — "Emotions to avoid" silently regress.
 // One spec that sweeps every reading-surface URL pattern and asserts the
@@ -21,12 +22,12 @@ import {
 // Reading-surface URLs that already exist or are coming soon in Phase 1.
 // Comment-out the lines that 404 today; uncomment as primitives ship.
 const READING_SURFACE_URLS = [
-  getCountryRoute("fr", "COM"),
+  getCountryRoute(LOCALE, "COM"),
   // The people fiche renders server-side now, so the guardrails can hold it
   // to the same five checks as every other reading surface.
-  getPeopleRoute("fr", "PPL_YORUBA"),
-  // getFamilyRoute("fr", "FLG_NIGER_CONGO"), // Phase 1 — Family page
-  // getLocalizedRoute("fr", "search"),                // Search page (existing in some form)
+  getPeopleRoute(LOCALE, "PPL_YORUBA"),
+  // getFamilyRoute(LOCALE, "FLG_NIGER_CONGO"), // Phase 1 — Family page
+  // getLocalizedRoute(LOCALE, "search"),                // Search page (existing in some form)
 ] as const;
 
 for (const url of READING_SURFACE_URLS) {

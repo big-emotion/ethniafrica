@@ -1,7 +1,17 @@
 import { expect, test } from "@playwright/test";
 import type { Locator } from "@playwright/test";
+import { LOCALE } from "./support/locale";
 
-const HOME_URL = "/fr?hero=mercator";
+// English UI copy lands per translation wave (REQ-142 to REQ-146). Until it
+// does, the labels this spec reads are French, so the English matrix leg
+// skips it rather than fail on copy it was never asked to check — and the
+// leg's report says so, instead of counting the journey as covered.
+test.skip(
+  LOCALE !== "fr",
+  "English copy lands per wave — this spec reads French UI copy"
+);
+
+const HOME_URL = `/${LOCALE}?hero=mercator`;
 const MOBILE_VIEWPORT = { width: 430, height: 812 } as const;
 const DESKTOP_VIEWPORT = { width: 1240, height: 900 } as const;
 const FIRST_FOLD_GLOBE_PX = 120;

@@ -1,5 +1,14 @@
 import { expect, test } from "@playwright/test";
 import { PRODUCT_NAME } from "@/lib/brand";
+import { LOCALE } from "./support/locale";
+
+// The reference renders were captured in French. Under another locale the
+// diff measures the translation, not the layout, so the English matrix leg
+// skips this spec until it has references of its own.
+test.skip(
+  LOCALE !== "fr",
+  "English copy lands per wave — the reference renders are French"
+);
 
 // The full-page prototype captures include the prototype's own module tab
 // bar and next-module preview, which the live app intentionally replaces
@@ -92,7 +101,7 @@ test.describe("Home visual parity", () => {
       // be drawn when the reference was taken. mercator is the band this
       // suite has always photographed — the globe — and the only module
       // that renders without the corpus behind it.
-      await page.goto("/fr?hero=mercator");
+      await page.goto(`/${LOCALE}?hero=mercator`);
 
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 

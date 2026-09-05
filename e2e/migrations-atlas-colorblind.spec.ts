@@ -1,5 +1,15 @@
 import { test, expect } from "./support/fixtures";
 import { getLocalizedRoute } from "@/lib/routing";
+import { LOCALE } from "./support/locale";
+
+// English UI copy lands per translation wave (REQ-142 to REQ-146). Until it
+// does, the labels this spec reads are French, so the English matrix leg
+// skips it rather than fail on copy it was never asked to check — and the
+// leg's report says so, instead of counting the journey as covered.
+test.skip(
+  LOCALE !== "fr",
+  "English copy lands per wave — this spec reads French UI copy"
+);
 
 // ETNI-523 (12.10) AC5 — under deuteranopia/protanopia/tritanopia
 // simulation, active vs. dimmed vs. selected migration paths on the map
@@ -10,7 +20,7 @@ import { getLocalizedRoute } from "@/lib/routing";
 // Brettel-derived color-blindness filter matrices as a CSS filter over the
 // map and re-asserts that same non-color signal survives the simulation,
 // plus attaches a screenshot per type for the reviewer to eyeball.
-const MIGRATIONS_URL = getLocalizedRoute("fr", "migrations");
+const MIGRATIONS_URL = getLocalizedRoute(LOCALE, "migrations");
 
 const COLORBLIND_FILTERS: Record<string, string> = {
   protanopia:

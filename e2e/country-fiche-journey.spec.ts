@@ -1,5 +1,15 @@
 import { test, expect } from "./support/fixtures";
 import { getCountryRoute } from "@/lib/routing";
+import { LOCALE } from "./support/locale";
+
+// English UI copy lands per translation wave (REQ-142 to REQ-146). Until it
+// does, the labels this spec reads are French, so the English matrix leg
+// skips it rather than fail on copy it was never asked to check — and the
+// leg's report says so, instead of counting the journey as covered.
+test.skip(
+  LOCALE !== "fr",
+  "English copy lands per wave — this spec reads French UI copy"
+);
 
 // Epic 19 LOT 8 — the reading journey the country fiche now supports:
 // arrive on a fiche, operate the globe, and move to another country.
@@ -8,7 +18,7 @@ import { getCountryRoute } from "@/lib/routing";
 // admin-0 outline, so its fiche renders the "contour non disponible"
 // placeholder and never mounts a globe. A journey test anchored there would
 // pass without any of this having shipped.
-const COUNTRY_FICHE_URL = getCountryRoute("fr", "NGA");
+const COUNTRY_FICHE_URL = getCountryRoute(LOCALE, "NGA");
 
 /** Above the panel breakpoint, where the toolbar and legend are shown. */
 const DESKTOP = { width: 1200, height: 900 };
@@ -104,7 +114,7 @@ test.describe("@phase-1 country fiche — moving to another country", () => {
     page,
   }) => {
     await page.setViewportSize(DESKTOP);
-    await page.goto(getCountryRoute("fr", "COM"));
+    await page.goto(getCountryRoute(LOCALE, "COM"));
 
     await expect(page.locator("[data-atlas-stage]")).toBeVisible();
     await expect(page.getByText(/Contour non disponible/)).toHaveCount(0);

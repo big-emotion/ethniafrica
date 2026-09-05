@@ -1,5 +1,15 @@
 import { expect, test } from "@playwright/test";
 import { getLocalizedRoute } from "@/lib/routing";
+import { LOCALE } from "./support/locale";
+
+// English UI copy lands per translation wave (REQ-142 to REQ-146). Until it
+// does, the labels this spec reads are French, so the English matrix leg
+// skips it rather than fail on copy it was never asked to check — and the
+// leg's report says so, instead of counting the journey as covered.
+test.skip(
+  LOCALE !== "fr",
+  "English copy lands per wave — this spec reads French UI copy"
+);
 
 /**
  * The two SERP rules ETNI-1796 (search results consolidation) calls out as
@@ -10,7 +20,7 @@ import { getLocalizedRoute } from "@/lib/routing";
  * spec only re-checks the two rendered-page facts on top of a live corpus.
  */
 
-const SERP_URL = getLocalizedRoute("fr", "search");
+const SERP_URL = getLocalizedRoute(LOCALE, "search");
 
 // "Yoruba" is an exact-name match in the AFRIK corpus (dataset/source/afrik/
 // peuples/FLG_BENOUECONGO/PPL_YORUBA.json) whose autonym string

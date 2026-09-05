@@ -1,6 +1,16 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 import type { Page } from "@playwright/test";
+import { LOCALE } from "./support/locale";
+
+// English UI copy lands per translation wave (REQ-142 to REQ-146). Until it
+// does, the labels this spec reads are French, so the English matrix leg
+// skips it rather than fail on copy it was never asked to check — and the
+// leg's report says so, instead of counting the journey as covered.
+test.skip(
+  LOCALE !== "fr",
+  "English copy lands per wave — this spec reads French UI copy"
+);
 
 // REQ-112 — the home's interactive globe, its non-WebGL fallback, and
 // reduced-motion behaviour, at the three breakpoints named by the ticket's
@@ -13,7 +23,7 @@ import type { Page } from "@playwright/test";
 // Pinned: the hero is randomized per request (REQ-115), and this suite is
 // about the globe specifically. The query pin keeps browser assertions
 // deterministic without changing ordinary visitors' draws.
-const HOME_URL = "/fr?hero=mercator";
+const HOME_URL = `/${LOCALE}?hero=mercator`;
 const BREAKPOINTS = [430, 720, 1200] as const;
 // The surface renames itself with what a drag will do: a sphere turns, a flat
 // map pans, and there is no third state. Matching either keeps the locator
