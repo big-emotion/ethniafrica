@@ -3,8 +3,10 @@ import Link from "next/link";
 
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { getStaticPageRoute } from "@/lib/routing";
 import { getSiteTree } from "@/lib/siteTree";
 import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * The site plan.
@@ -13,28 +15,40 @@ import { getTranslation } from "@/lib/translations";
  * sitemap's job, and a page enumerating them would be unreadable by the only
  * audience a site plan has, which is a person who is lost.
  *
- * Following the legal-page idiom: no `params`, `getTranslation("fr")` in the
- * clear, and no `generateStaticParams` — the root layout awaits `connection()`
- * for the CSP nonce, so a route marked static answers 500 at request time.
+ * Following the legal-page idiom: no `generateStaticParams` — the root layout
+ * awaits `connection()` for the CSP nonce, so a route marked static answers
+ * 500 at request time.
  */
 
-const copy = getTranslation("fr").sitemapPage;
+interface SitemapPageProps {
+  params: Promise<{ lang: string }>;
+}
 
 // @req REQ-088
-export const metadata: Metadata = {
-  title: copy.title,
-  description: copy.introduction,
-  alternates: {
-    canonical: "/fr/plan-du-site",
-  },
-};
+// @req REQ-140
+export async function generateMetadata({
+  params,
+}: SitemapPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  const copy = getTranslation(lang as Language).sitemapPage;
+  return {
+    title: copy.title,
+    description: copy.introduction,
+    alternates: {
+      canonical: getStaticPageRoute(lang as Language, "sitemap"),
+    },
+  };
+}
 
 // @req REQ-088
-export default function SitemapPage() {
-  const sections = getSiteTree("fr");
+export default async function SitemapPage({ params }: SitemapPageProps) {
+  const { lang } = await params;
+  const language = lang as Language;
+  const copy = getTranslation(language).sitemapPage;
+  const sections = getSiteTree(language);
 
   return (
-    <PageLayout language="fr" hideHeader>
+    <PageLayout language={language} hideHeader>
       <article className="mx-auto max-w-5xl pb-16 pt-4 md:pb-24 md:pt-8">
         <header className="border-b border-afh-border pb-10 md:pb-14">
           <p className="text-afh-eyebrow font-semibold uppercase tracking-[0.16em] text-afh-terracotta">

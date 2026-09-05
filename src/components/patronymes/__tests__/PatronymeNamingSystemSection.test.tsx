@@ -21,6 +21,7 @@ describe("PatronymeNamingSystemSection (AC1, REQ-133)", () => {
   it("renders the shared fields when present", () => {
     render(
       <PatronymeNamingSystemSection
+        language="fr"
         patronyme={{
           ...base,
           content: {
@@ -47,6 +48,7 @@ describe("PatronymeNamingSystemSection (AC1, REQ-133)", () => {
   it("names a non-hereditary transmission instead of blanking it", () => {
     render(
       <PatronymeNamingSystemSection
+        language="fr"
         patronyme={{
           ...base,
           nameSystem: "non_hereditary_patronymic",
@@ -63,6 +65,7 @@ describe("PatronymeNamingSystemSection (AC1, REQ-133)", () => {
   it("prints the editor's reason for a field the dossier leaves empty", () => {
     render(
       <PatronymeNamingSystemSection
+        language="fr"
         patronyme={{
           ...base,
           content: {
@@ -89,6 +92,7 @@ describe("PatronymeNamingSystemSection (AC1, REQ-133)", () => {
   it("renders the totemic-clan subtype fields for a totemic_clan fiche", () => {
     render(
       <PatronymeNamingSystemSection
+        language="fr"
         patronyme={{
           ...base,
           nameSystem: "totemic_clan",
@@ -108,6 +112,7 @@ describe("PatronymeNamingSystemSection (AC1, REQ-133)", () => {
   it("does not render totemic-clan fields for a nisba fiche (AC1)", () => {
     render(
       <PatronymeNamingSystemSection
+        language="fr"
         patronyme={{
           ...base,
           nameSystem: "nisba",
@@ -127,6 +132,7 @@ describe("PatronymeNamingSystemSection (AC1, REQ-133)", () => {
   it("does not render the nisba subtype for a totemic_clan fiche (AC1)", () => {
     render(
       <PatronymeNamingSystemSection
+        language="fr"
         patronyme={{
           ...base,
           nameSystem: "totemic_clan",
@@ -142,6 +148,7 @@ describe("PatronymeNamingSystemSection (AC1, REQ-133)", () => {
   it("renders casteOrSocialFunction when present, regardless of system", () => {
     render(
       <PatronymeNamingSystemSection
+        language="fr"
         patronyme={{ ...base, casteOrSocialFunction: "Nyamakala" }}
       />
     );
@@ -152,7 +159,7 @@ describe("PatronymeNamingSystemSection (AC1, REQ-133)", () => {
   // @req REQ-133
   it("renders no field list when content carries nothing", () => {
     const { container } = render(
-      <PatronymeNamingSystemSection patronyme={base} />
+      <PatronymeNamingSystemSection language="fr" patronyme={base} />
     );
 
     expect(container.querySelector("dl")).not.toBeInTheDocument();

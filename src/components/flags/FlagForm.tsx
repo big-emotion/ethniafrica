@@ -1,12 +1,15 @@
 "use client";
 
 import { useId, useState, type ReactNode } from "react";
+import { useParams } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import type { Proof as AntibotProof } from "@/lib/antibot/proofOfWork";
+import { DEFAULT_LOCALE, isLocale } from "@/lib/locale";
+import { getStaticPageRoute } from "@/lib/routing";
 
 export type FlagKind =
   | "inaccurate"
@@ -193,6 +196,11 @@ export function FlagForm({
   renderVerification,
 }: FlagFormProps) {
   const idPrefix = useId();
+  // Mounted in a dialog on every fiche and on the report page, with no
+  // language of its own: the permalink follows the route the form is on, and
+  // outside the locale tree it is offered in the default locale.
+  const { lang } = useParams<{ lang?: string }>() ?? {};
+  const language = isLocale(lang) ? lang : DEFAULT_LOCALE;
   const [counterSourceUrl, setCounterSourceUrl] = useState("");
   const [counterSourceCitation, setCounterSourceCitation] = useState("");
   const [proposedRewrite, setProposedRewrite] = useState("");
@@ -320,7 +328,7 @@ export function FlagForm({
         </p>
         <a
           className="inline-flex min-h-11 items-center font-semibold text-afh-terracotta underline underline-offset-4"
-          href={`/fr/signalements/${publicSlug}`}
+          href={`${getStaticPageRoute(language, "reports")}/${publicSlug}`}
         >
           Consulter le signalement
         </a>

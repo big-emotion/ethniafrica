@@ -7,6 +7,7 @@ import {
   getFlagBySlug,
 } from "@/lib/supabase/queries/flags/getFlagBySlug";
 import { PRODUCT_NAME } from "@/lib/brand";
+import type { Language } from "@/types/shared";
 
 /**
  * ISR: revalidate on every request in dev; in production the pg_notify →
@@ -67,7 +68,7 @@ export default async function SignalementsSlugPage({
 }: {
   params: Promise<PageParams>;
 }) {
-  const { slug } = await params;
+  const { lang, slug } = await params;
   const record = await getFlagBySlug(slug);
 
   if (!record) {
@@ -83,7 +84,7 @@ export default async function SignalementsSlugPage({
 
   return (
     <PageLayout
-      language="fr"
+      language={lang as Language}
       title={`Signalement ${slug}`}
       sectionName="Signalements"
       trailLabel={`Signalement ${slug}`}

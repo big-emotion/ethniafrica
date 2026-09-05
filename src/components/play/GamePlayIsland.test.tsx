@@ -37,7 +37,7 @@ function binaryRound(subjectId: string): BinaryRound {
 }
 
 function renderIsland(rounds: GameRound[]) {
-  return render(<GamePlayIsland game={GAME} rounds={rounds} />);
+  return render(<GamePlayIsland language="fr" game={GAME} rounds={rounds} />);
 }
 
 describe("GamePlayIsland (Jouer hub engine, REQ-120)", () => {
@@ -145,7 +145,7 @@ describe("GamePlayIsland — a replay is a different session (REQ-120)", () => {
 
   // @req REQ-120
   it("cuts the first session from the head of the pool", () => {
-    render(<GamePlayIsland game={shortGame} rounds={pool} />);
+    render(<GamePlayIsland language="fr" game={shortGame} rounds={pool} />);
 
     expect(screen.getByTestId("binary-choice")).toHaveTextContent("DZA");
   });
@@ -153,7 +153,7 @@ describe("GamePlayIsland — a replay is a different session (REQ-120)", () => {
   // @req REQ-120
   it("opens the next replay on rounds the reader has not just played", async () => {
     const user = userEvent.setup();
-    render(<GamePlayIsland game={shortGame} rounds={pool} />);
+    render(<GamePlayIsland language="fr" game={shortGame} rounds={pool} />);
 
     await user.click(screen.getByRole("button", { name: "Alpha" }));
     await user.click(screen.getByRole("button", { name: /Tour suivant/ }));

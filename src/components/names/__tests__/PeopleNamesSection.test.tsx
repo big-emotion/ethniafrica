@@ -68,13 +68,17 @@ const populatedData: PeopleNamesData = {
 describe("PeopleNamesSection", () => {
   // @req REQ-054 REQ-056
   it("renders the section at anchor id=noms", () => {
-    const { container } = render(<PeopleNamesSection data={populatedData} />);
+    const { container } = render(
+      <PeopleNamesSection language="fr" data={populatedData} />
+    );
     expect(container.querySelector("#noms")).not.toBeNull();
   });
 
   // @req REQ-054
   it("renders the people's autonym via AutonymExonymHeading semantics", () => {
-    const { container } = render(<PeopleNamesSection data={populatedData} />);
+    const { container } = render(
+      <PeopleNamesSection language="fr" data={populatedData} />
+    );
     expect(container.querySelector(".AutonymExonymHeading")).toHaveTextContent(
       "Jieng"
     );
@@ -82,7 +86,9 @@ describe("PeopleNamesSection", () => {
 
   // @req REQ-054 REQ-056
   it("renders endonym records before exonym records, closing with the spelling history", () => {
-    const { container } = render(<PeopleNamesSection data={populatedData} />);
+    const { container } = render(
+      <PeopleNamesSection language="fr" data={populatedData} />
+    );
     const html = container.innerHTML;
     const endonymIndex = html.indexOf("peuple");
     const exonymIndex = html.indexOf("Dinka");
@@ -94,7 +100,7 @@ describe("PeopleNamesSection", () => {
 
   // @req REQ-056
   it("renders the badge and full imposition context for an imposed exonym", () => {
-    render(<PeopleNamesSection data={populatedData} />);
+    render(<PeopleNamesSection language="fr" data={populatedData} />);
     expect(screen.getByText("nom imposé")).toBeInTheDocument();
     expect(
       screen.getByText(/administration coloniale britannique/)
@@ -107,7 +113,7 @@ describe("PeopleNamesSection", () => {
 
   // @req REQ-056
   it("renders a DoctrineLinkCard for an imposed exonym", () => {
-    render(<PeopleNamesSection data={populatedData} />);
+    render(<PeopleNamesSection language="fr" data={populatedData} />);
     expect(
       screen.getByRole("link", { name: /lire la doctrine/i })
     ).toBeInTheDocument();
@@ -115,7 +121,9 @@ describe("PeopleNamesSection", () => {
 
   // @req REQ-056
   it("closes the section with NameSpellingHistory as a semantic ol", () => {
-    const { container } = render(<PeopleNamesSection data={populatedData} />);
+    const { container } = render(
+      <PeopleNamesSection language="fr" data={populatedData} />
+    );
     const ol = container.querySelector("ol");
     expect(ol).not.toBeNull();
     expect(ol).toHaveTextContent("Denka");
@@ -129,7 +137,7 @@ describe("PeopleNamesSection", () => {
   // 3 679 name records with nowhere to land.
   // @req REQ-054
   it("keeps the chapter and marks it when the corpus names nothing", () => {
-    render(<PeopleNamesSection data={null} />);
+    render(<PeopleNamesSection language="fr" data={null} />);
 
     expect(
       screen.getByRole("heading", { name: "Noms & appellations" })
@@ -145,7 +153,7 @@ describe("PeopleNamesSection", () => {
       exonyms: [],
       spellingHistory: [],
     };
-    render(<PeopleNamesSection data={empty} />);
+    render(<PeopleNamesSection language="fr" data={empty} />);
 
     expect(
       screen.getByRole("heading", { name: "Noms & appellations" })

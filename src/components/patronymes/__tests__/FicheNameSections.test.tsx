@@ -31,7 +31,7 @@ function chapter(title: string): HTMLElement {
 describe("PeopleBorneNamesSection", () => {
   // @req REQ-133
   it("links each name it lists to the name's own fiche", () => {
-    render(<PeopleBorneNamesSection patronymes={[KEITA]} />);
+    render(<PeopleBorneNamesSection language="fr" patronymes={[KEITA]} />);
 
     const link = screen.getByRole("link", { name: /Keïta/ });
     expect(link).toHaveAttribute("href", getPatronymeRoute("fr", "PAT_KEITA"));
@@ -39,14 +39,14 @@ describe("PeopleBorneNamesSection", () => {
 
   // @req REQ-133
   it("glosses a name with the naming system it belongs to", () => {
-    render(<PeopleBorneNamesSection patronymes={[KEITA]} />);
+    render(<PeopleBorneNamesSection language="fr" patronymes={[KEITA]} />);
 
     expect(screen.getByText(/Nom de clan/)).toBeInTheDocument();
   });
 
   // @req REQ-133
   it("states the gap instead of dropping the chapter when no name is attached", () => {
-    render(<PeopleBorneNamesSection patronymes={[]} />);
+    render(<PeopleBorneNamesSection language="fr" patronymes={[]} />);
 
     // The chapter has to survive: 13 peoples out of some 800 carry a name,
     // so a chapter that vanished would make the ordinary state of the corpus
@@ -57,7 +57,7 @@ describe("PeopleBorneNamesSection", () => {
 
   // @req REQ-133
   it("separates a failed read from a corpus that holds nothing", () => {
-    render(<PeopleBorneNamesSection patronymes={null} />);
+    render(<PeopleBorneNamesSection language="fr" patronymes={null} />);
 
     expect(screen.getByText(copy.peopleUnavailable)).toBeInTheDocument();
     expect(screen.queryByText(copy.peopleEmpty)).not.toBeInTheDocument();
@@ -69,6 +69,7 @@ describe("CountryAttestedNamesSection", () => {
   it("heads the attested names and the reach as two separate lists", () => {
     render(
       <CountryAttestedNamesSection
+        language="fr"
         patronymes={{ attested: [KEITA], borneByPeoples: [MAGHRAWA] }}
       />
     );
@@ -96,6 +97,7 @@ describe("CountryAttestedNamesSection", () => {
   it("names the peoples a reach entry travels through", () => {
     render(
       <CountryAttestedNamesSection
+        language="fr"
         patronymes={{ attested: [], borneByPeoples: [MAGHRAWA] }}
       />
     );
@@ -109,6 +111,7 @@ describe("CountryAttestedNamesSection", () => {
   it("renders the attested list alone when the people route adds nothing", () => {
     render(
       <CountryAttestedNamesSection
+        language="fr"
         patronymes={{ attested: [KEITA], borneByPeoples: [] }}
       />
     );
@@ -121,6 +124,7 @@ describe("CountryAttestedNamesSection", () => {
   it("states the gap when neither route reaches a name", () => {
     render(
       <CountryAttestedNamesSection
+        language="fr"
         patronymes={{ attested: [], borneByPeoples: [] }}
       />
     );
@@ -131,7 +135,7 @@ describe("CountryAttestedNamesSection", () => {
 
   // @req REQ-133
   it("separates a failed read from a corpus that holds nothing", () => {
-    render(<CountryAttestedNamesSection patronymes={null} />);
+    render(<CountryAttestedNamesSection language="fr" patronymes={null} />);
 
     expect(screen.getByText(copy.countryUnavailable)).toBeInTheDocument();
     expect(screen.queryByText(copy.countryEmpty)).not.toBeInTheDocument();

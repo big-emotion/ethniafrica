@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import { PageLayout } from "@/components/layout/PageLayout";
 import { verifyReporterContact } from "@/lib/flags/reporterContact";
+import { getStaticPageRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 // @req REQ-012
 export const metadata: Metadata = {
@@ -15,6 +17,7 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 interface VerifyPageProps {
+  params: Promise<{ lang: string }>;
   searchParams: Promise<{ token?: string }>;
 }
 
@@ -29,8 +32,12 @@ interface VerifyPageProps {
  */
 // @req REQ-012
 export default async function VerifyReporterEmailPage({
+  params,
   searchParams,
 }: VerifyPageProps) {
+  const { lang } = await params;
+  const language = lang as Language;
+  const registerRoute = getStaticPageRoute(language, "reports");
   const outcome = await verifyReporterContact((await searchParams).token);
 
   const copy = {
@@ -55,15 +62,13 @@ export default async function VerifyReporterEmailPage({
   const publicSlug = "publicSlug" in outcome ? outcome.publicSlug : null;
 
   return (
-    <PageLayout language="fr" title={copy.title}>
+    <PageLayout language={language} title={copy.title}>
       <div className="mx-auto w-full max-w-2xl space-y-afh-xl py-afh-2xl">
         <p className="text-afh-body text-afh-text">{copy.body}</p>
 
         <Link
           className="inline-flex min-h-11 items-center font-semibold text-afh-terracotta underline underline-offset-4"
-          href={
-            publicSlug ? `/fr/signalements/${publicSlug}` : "/fr/signalements"
-          }
+          href={publicSlug ? `${registerRoute}/${publicSlug}` : registerRoute}
         >
           {publicSlug
             ? "Consulter votre signalement"

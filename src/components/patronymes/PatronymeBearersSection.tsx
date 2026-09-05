@@ -3,9 +3,8 @@ import { FicheSection } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { readCorpusBearers, readGaps } from "@/lib/patronymes/content";
 import { resolveChapter } from "@/lib/fieldProvenance";
-import { translations } from "@/lib/translations";
-
-const t = translations.fr.patronymes;
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * AC3 / DEC-040 — a bearer entry is rendered exactly as the API already
@@ -29,9 +28,12 @@ const t = translations.fr.patronymes;
 // @req REQ-133
 export function PatronymeBearersSection({
   patronyme,
+  language,
 }: {
   patronyme: PublicPatronyme;
+  language: Language;
 }) {
+  const t = getTranslation(language).patronymes;
   const { bearers } = patronyme;
   const namedInRecords = new Set(bearers.map((bearer) => bearer.fullName));
   const corpusBearers = readCorpusBearers(patronyme.content).filter(
@@ -53,7 +55,11 @@ export function PatronymeBearersSection({
   return (
     <FicheSection title={t.bearersTitle} note={t.bearersEditorialNote}>
       {!documented ? (
-        <FieldProvenanceMarker state={chapter.state} reason={chapter.reason} />
+        <FieldProvenanceMarker
+          state={chapter.state}
+          reason={chapter.reason}
+          language={language}
+        />
       ) : (
         <ul className="afh-prose-list">
           {bearers.map((bearer) => (

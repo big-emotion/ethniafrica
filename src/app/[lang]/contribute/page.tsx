@@ -1,10 +1,7 @@
 "use client";
 
-import { useParams } from "next/navigation";
 import { useLanguage } from "@/hooks/use-language";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { useEffect } from "react";
-import { Language } from "@/types/shared";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ActionLink } from "@/components/ui/ActionLink";
@@ -16,91 +13,81 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { ContributionForm } from "@/components/ContributionForm";
-import { getLocalizedRoute } from "@/lib/routing";
+import { getLocalizedRoute, getStaticPageRoute } from "@/lib/routing";
 
 // @req REQ-045
 export default function ContributePage() {
-  const params = useParams();
-  const lang = params?.lang as string;
+  // The route's locale, read by the hook itself; nothing here writes it back,
+  // because only the switcher may remember a choice (REQ-140).
   const { language, setLanguage } = useLanguage();
 
-  // Sync language from URL param
-  useEffect(() => {
-    if (lang && ["fr"].includes(lang) && lang !== language) {
-      setLanguage(lang as Language);
-    }
-  }, [lang, language, setLanguage]);
-
-  const content = {
-    fr: {
-      title: "Contribuer",
-      intro: {
-        title: "Contribution et participation",
-        // Deliberately not a list of what the corpus holds. This sentence
-        // named three of its classes for as long as the corpus had six, and
-        // any list kept here is a second copy of one that already exists.
-        // À propos owns that enumeration; this page owns how to contribute.
-        text1: (
-          <>
-            Le site est alimenté par une{" "}
-            <strong>base de données structurée</strong>, organisée selon la
-            méthodologie AFRIK. La page{" "}
-            <Link
-              href={getLocalizedRoute(language, "about")}
-              className="underline underline-offset-4"
-            >
-              À propos
-            </Link>{" "}
-            détaille ce que contient le corpus.
-          </>
-        ),
-        text2: (
-          <>
-            Je suis{" "}
-            <strong>ouvert à toutes les propositions ou contributions</strong>,
-            qu&apos;il s&apos;agisse de partager des sources, des corrections,
-            ou simplement des idées d&apos;amélioration. Si vous souhaitez
-            aider, n&apos;hésitez pas à me contacter ou à proposer directement
-            sur le{" "}
-            <a
-              href="https://github.com/big-emotion/ethniafrica"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4"
-            >
-              dépôt GitHub du projet
-            </a>
-            .
-          </>
-        ),
-      },
-      apiDocs: {
-        title: "Documentation API",
-        // Same rule as `intro.text1`: the second sentence used to name three
-        // resources out of eighteen. /docs/api lists them from the spec.
-        text: "Consultez la documentation complète de l'API pour comprendre comment récupérer les données de manière programmatique. Elle liste chaque famille de ressources et ses endpoints.",
-        button: "Voir la documentation API",
-      },
-      download: {
-        title: "Télécharger les données",
-        text: "Téléchargez toutes les données au format CSV ou Excel pour votre propre usage, analyse ou contributions.",
-        csvButton: "Télécharger CSV (ZIP)",
-        excelButton: "Télécharger Excel",
-      },
-      contact: {
-        title: "Contact",
-        text: "Vous souhaitez nous écrire — une erreur à signaler, une source à proposer, une réutilisation des données à discuter ?",
-        link: "Aller au formulaire de contact",
-      },
-      github: {
-        title: "Contribuer via GitHub",
-        text: "Le projet est open source et hébergé sur GitHub. Vous pouvez contribuer en soumettant des issues, des pull requests, ou en améliorant le code source.",
-        button: "Participer sur GitHub",
-      },
+  // French copy under either locale until the English text is written; the
+  // links around it already follow the route.
+  const t = {
+    title: "Contribuer",
+    intro: {
+      title: "Contribution et participation",
+      // Deliberately not a list of what the corpus holds. This sentence
+      // named three of its classes for as long as the corpus had six, and
+      // any list kept here is a second copy of one that already exists.
+      // À propos owns that enumeration; this page owns how to contribute.
+      text1: (
+        <>
+          Le site est alimenté par une{" "}
+          <strong>base de données structurée</strong>, organisée selon la
+          méthodologie AFRIK. La page{" "}
+          <Link
+            href={getLocalizedRoute(language, "about")}
+            className="underline underline-offset-4"
+          >
+            À propos
+          </Link>{" "}
+          détaille ce que contient le corpus.
+        </>
+      ),
+      text2: (
+        <>
+          Je suis{" "}
+          <strong>ouvert à toutes les propositions ou contributions</strong>,
+          qu&apos;il s&apos;agisse de partager des sources, des corrections, ou
+          simplement des idées d&apos;amélioration. Si vous souhaitez aider,
+          n&apos;hésitez pas à me contacter ou à proposer directement sur le{" "}
+          <a
+            href="https://github.com/big-emotion/ethniafrica"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4"
+          >
+            dépôt GitHub du projet
+          </a>
+          .
+        </>
+      ),
+    },
+    apiDocs: {
+      title: "Documentation API",
+      // Same rule as `intro.text1`: the second sentence used to name three
+      // resources out of eighteen. /docs/api lists them from the spec.
+      text: "Consultez la documentation complète de l'API pour comprendre comment récupérer les données de manière programmatique. Elle liste chaque famille de ressources et ses endpoints.",
+      button: "Voir la documentation API",
+    },
+    download: {
+      title: "Télécharger les données",
+      text: "Téléchargez toutes les données au format CSV ou Excel pour votre propre usage, analyse ou contributions.",
+      csvButton: "Télécharger CSV (ZIP)",
+      excelButton: "Télécharger Excel",
+    },
+    contact: {
+      title: "Contact",
+      text: "Vous souhaitez nous écrire — une erreur à signaler, une source à proposer, une réutilisation des données à discuter ?",
+      link: "Aller au formulaire de contact",
+    },
+    github: {
+      title: "Contribuer via GitHub",
+      text: "Le projet est open source et hébergé sur GitHub. Vous pouvez contribuer en soumettant des issues, des pull requests, ou en améliorant le code source.",
+      button: "Participer sur GitHub",
     },
   };
-
-  const t = content[language];
 
   const handleDownload = (format: "csv" | "excel") => {
     window.open(`/api/download?format=${format}`, "_blank");
@@ -202,7 +189,7 @@ export default function ContributePage() {
           </h3>
           <p className="text-muted-foreground">{t.contact.text}</p>
           <div className="pt-2">
-            <ActionLink href={`/${language}/contact`}>
+            <ActionLink href={getStaticPageRoute(language, "contact")}>
               {t.contact.link}
             </ActionLink>
           </div>

@@ -132,7 +132,7 @@ export default async function PaysSlugPage({
     }
 
     return (
-      <PageLayout language="fr" sectionName="Pays">
+      <PageLayout language={lang as Language} sectionName="Pays">
         <div className="container mx-auto max-w-4xl px-4 py-8">
           <FicheSnapshotView
             kind="country"
@@ -208,7 +208,7 @@ export default async function PaysSlugPage({
   // 15.3–15.8. That narrowness is the FR98 invariant, not a gap to fill here.
   return (
     <PageLayout
-      language="fr"
+      language={lang as Language}
       sectionName="Pays"
       flushTop
       trailLabel={countryDetail.nameFr}
@@ -216,6 +216,7 @@ export default async function PaysSlugPage({
         <FicheHeroHead entityType="country">
           <CountryFicheTitle
             country={countryDetail}
+            language={lang as Language}
             fromPeopleId={navigationContext.fromPeopleId}
             fromPeopleName={navigationContext.fromPeopleName}
           />
@@ -260,6 +261,7 @@ export default async function PaysSlugPage({
             <CountrySynthesisBrief synthesis={currentSynthesis} />
             <CountryRecordView
               country={countryDetail}
+              language={lang as Language}
               hasSourceFlag={sourceFlags.length > 0}
               fromPeopleName={navigationContext.fromPeopleName}
               fromPeopleId={navigationContext.fromPeopleId}

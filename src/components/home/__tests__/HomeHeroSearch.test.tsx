@@ -73,7 +73,11 @@ function renderSearch(
   fetchLeads?: (query: string) => Promise<SearchLead[]>
 ) {
   return render(
-    <HomeHeroSearch fetchResults={fetchResults} fetchLeads={fetchLeads} />
+    <HomeHeroSearch
+      language="fr"
+      fetchResults={fetchResults}
+      fetchLeads={fetchLeads}
+    />
   );
 }
 
@@ -94,7 +98,7 @@ describe("HomeHeroSearch", () => {
   // the only path the hero ever takes to the corpus (ETNI-1415 AC2).
   // @req REQ-108
   it("searches through the shared corpus client when no fetcher is injected", async () => {
-    render(<HomeHeroSearch />);
+    render(<HomeHeroSearch language="fr" />);
 
     await act(async () => {
       fireEvent.change(screen.getByRole("combobox"), {

@@ -23,6 +23,7 @@ import type { FamilyPageData } from "@/lib/familyDataTransformer";
 import { ficheSourceLabel } from "@/lib/afrik/ficheSourceLabel";
 import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
 import { isSourceTier } from "@/types/sources";
+import type { Language } from "@/types/shared";
 
 /**
  * The family fiche's reading: an opening and five sections on parchment, below
@@ -44,6 +45,7 @@ const numberFr = new Intl.NumberFormat("fr-FR");
 
 export interface FamilyParchmentProps {
   data: FamilyPageData;
+  language: Language;
   /**
    * The same countries, in the same order, the globe drew. Optional: absent it,
    * the ranking is derived from the fiche's own footprint map by the same rule,
@@ -90,11 +92,13 @@ function StatCard({
   label,
   value,
   emptyValue,
+  language,
 }: {
   id: string;
   label: string;
   value: unknown;
   emptyValue?: string;
+  language: Language;
 }) {
   const provenance = classifyFieldProvenance(value).state;
   const missing = provenance === "missing";
@@ -120,7 +124,11 @@ function StatCard({
       {/* The app has one wording for an absent field, and it lives in
           FieldProvenanceMarker. Writing a second one here would let the two
           drift and leave readers with two vocabularies for one idea. */}
-      <FieldProvenanceMarker state={provenance} className="mt-2" />
+      <FieldProvenanceMarker
+        state={provenance}
+        language={language}
+        className="mt-2"
+      />
     </div>
   );
 }
@@ -163,6 +171,7 @@ function renderSourceText(raw: string): ReactNode[] {
 // @req REQ-116
 export function FamilyParchment({
   data,
+  language,
   footprintCountries,
   memberPeoples,
   memberPeopleCount,
@@ -231,11 +240,13 @@ export function FamilyParchment({
       <Section title="La famille en chiffres">
         <div className="afh-stat-cards">
           <StatCard
+            language={language}
             id="langues"
             label="Langues"
             value={generalInfo.numberOfLanguages}
           />
           <StatCard
+            language={language}
             id="locuteurs"
             label="Locuteurs"
             value={
@@ -245,11 +256,13 @@ export function FamilyParchment({
             }
           />
           <StatCard
+            language={language}
             id="branches"
             label="Branches"
             value={generalInfo.branches}
           />
           <StatCard
+            language={language}
             id="distribution"
             label="Distribution"
             value={distribution.distributionByCountry}
@@ -324,6 +337,7 @@ export function FamilyParchment({
           <FieldProvenanceMarker
             state="derived"
             origin={wording.origin}
+            language={language}
             className="mb-3"
           />
         )}
@@ -336,7 +350,7 @@ export function FamilyParchment({
                   is the natural place to step across to it. */}
               <a
                 className="afh-rank-name"
-                href={getCountryRoute("fr", row.countryId)}
+                href={getCountryRoute(language, row.countryId)}
               >
                 {row.nameFr}
               </a>
@@ -371,7 +385,7 @@ export function FamilyParchment({
                   fiche whose associatedPeoples entry declares no id keeps the
                   plain name rather than linking nowhere. */}
               {people.id ? (
-                <a href={getPeopleRoute("fr", people.id)}>
+                <a href={getPeopleRoute(language, people.id)}>
                   <b>{people.nameMain}</b>
                 </a>
               ) : (
@@ -423,7 +437,7 @@ export function FamilyParchment({
                   <span className="afh-chip" data-tier={tier ?? "unknown"}>
                     {sourceStandingLabel(
                       isSourceTier(tier) ? tier : "needs_review",
-                      "fr"
+                      language
                     )}
                   </span>
                   <span>{renderSourceText(label)}</span>
@@ -432,7 +446,7 @@ export function FamilyParchment({
             })}
           </ul>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </Section>
     </div>

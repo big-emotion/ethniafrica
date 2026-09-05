@@ -58,6 +58,7 @@ const ROUNDS = [round("DZA"), round("TCD")];
 function renderSurface(corpusLimited = false) {
   return render(
     <MercatorSurface
+      language="fr"
       game={GAME}
       rounds={ROUNDS}
       facts={buildScaleFacts()}
