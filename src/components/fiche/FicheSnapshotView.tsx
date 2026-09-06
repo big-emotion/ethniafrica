@@ -7,6 +7,7 @@ import {
   DoctrineLinkCard,
   isDoctrineSlug,
 } from "@/components/source-transparency/DoctrineLinkCard";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
 
 /**
  * What a pinned URL renders: an archived capture of a fiche, read from the
@@ -74,6 +75,7 @@ export function FicheSnapshotView({
   doctrine,
   lang,
 }: FicheSnapshotViewProps) {
+  const language = lang as Language;
   const { testId, liveRoute, nameKeys } = SNAPSHOT_SHAPE[kind];
 
   const displayName =
@@ -91,10 +93,10 @@ export function FicheSnapshotView({
       </div>
 
       <PinnedVersionBanner
-        language={lang as Language}
+        language={language}
         pinnedAt={publishedAt}
         versionTag={String(version)}
-        liveUrl={liveRoute(lang as Language, entityId)}
+        liveUrl={liveRoute(language, entityId)}
       />
 
       {confidence !== null && (
@@ -109,10 +111,7 @@ export function FicheSnapshotView({
       )}
 
       <div className="prose prose-neutral max-w-none text-afh-small text-muted-foreground">
-        <p>
-          Ce contenu est une capture archivée&nbsp;(v{version}) et ne sera
-          jamais modifié.
-        </p>
+        <p>{ficheCopy[language].archivedCapture(version)}</p>
       </div>
 
       {doctrine && isDoctrineSlug(doctrine.slug) && (

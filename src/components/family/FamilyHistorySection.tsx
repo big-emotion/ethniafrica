@@ -1,42 +1,46 @@
 import type { FamilyHistoryData } from "@/lib/familyDataTransformer";
 import { FicheFieldList } from "@/components/fiche/FicheProse";
 import { FlagTarget } from "@/components/flags/FlagTarget";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { familyCopy } from "@/lib/i18n/copy/family";
+import type { Language } from "@/types/shared";
 
 import { chapterAnchorId } from "@/lib/ficheChapters";
 
 /** The chapter this section is, in the fiche's reading rail. */
-const CHAPTER_TITLE = "Histoire et origines";
-
 export interface FamilyHistorySectionProps {
   data: FamilyHistoryData;
   familyId: string;
+  language?: Language;
   /** Cloudflare Turnstile public site key, required to enable the live FlagTarget wiring on this heading (AC5). */
 }
-
-const historyFields = [
-  ["Origine probable", "probableOrigin"],
-  ["Période d'émergence", "emergencePeriod"],
-  ["Diffusion", "diffusion"],
-  ["Ruptures historiques", "historicalBreaks"],
-  ["Zones de contact", "contactZones"],
-  ["Événements majeurs", "majorEvents"],
-] as const;
 
 // @req REQ-047
 export function FamilyHistorySection({
   data,
   familyId,
+  language = FALLBACK_LOCALE,
 }: FamilyHistorySectionProps) {
+  const copy = familyCopy[language].history;
+  const historyFields = [
+    [copy.probableOrigin, "probableOrigin"],
+    [copy.emergencePeriod, "emergencePeriod"],
+    [copy.diffusion, "diffusion"],
+    [copy.historicalBreaks, "historicalBreaks"],
+    [copy.contactZones, "contactZones"],
+    [copy.majorEvents, "majorEvents"],
+  ] as const;
   if (!historyFields.some(([, field]) => Boolean(data[field]))) return null;
 
   return (
     <section
       aria-labelledby="family-history-heading"
-      id={chapterAnchorId(CHAPTER_TITLE)}
-      data-fiche-section={CHAPTER_TITLE}
+      id={chapterAnchorId(copy.title)}
+      data-fiche-section={copy.title}
     >
-      <h2 id="family-history-heading">{CHAPTER_TITLE}</h2>
+      <h2 id="family-history-heading">{copy.title}</h2>
       <FicheFieldList
+        language={language}
         fields={historyFields.flatMap(([label, field]) =>
           data[field] ? [{ label, prose: data[field] }] : []
         )}
@@ -47,9 +51,9 @@ export function FamilyHistorySection({
             type: "fiche_section",
             id: familyId,
             fieldPath: "history",
-            fieldLabel: "Histoire et origines",
+            fieldLabel: copy.title,
           }}
-          triggerLabel="Signaler cette section"
+          triggerLabel={copy.report}
           className="w-auto text-afh-caption"
         />
       </div>

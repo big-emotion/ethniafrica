@@ -3,13 +3,12 @@ import Link from "next/link";
 
 import type { LanguagePageData } from "@/lib/languageDataTransformer";
 import { getFamilyRoute, getPeopleRoute } from "@/lib/routing";
-import {
-  FicheSection,
-  SOURCE_TIER_NOTE,
-} from "@/components/fiche/FicheSection";
+import { FicheSection } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
 import type { Language } from "@/types/shared";
+import { languageFicheCopy } from "@/lib/i18n/copy/languageFiche";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
 
 export interface LanguageDetailViewV2Props {
   data: LanguagePageData;
@@ -39,6 +38,7 @@ export function LanguageDetailViewV2({
   language,
   hasSourceFlag = false,
 }: LanguageDetailViewV2Props) {
+  const copy = languageFicheCopy[language];
   // Defensive against a payload cached before these fields existed: the
   // segment revalidates hourly, so a stale ISR body outlives a deploy.
   const attestedNames = [
@@ -50,7 +50,7 @@ export function LanguageDetailViewV2({
 
   return (
     <div className="afh-parchment" id="fiche">
-      <FicheSection title="Identifiants">
+      <FicheSection title={copy.identifiers}>
         <dl className="afh-pairs">
           <dt>ISO 639-3</dt>
           <dd>{data.isoCode639_3}</dd>
@@ -63,7 +63,7 @@ export function LanguageDetailViewV2({
         </dl>
       </FicheSection>
 
-      <FicheSection title="Autres noms attestés">
+      <FicheSection title={copy.otherAttestedNames}>
         {attestedNames.length > 0 ? (
           <ul className="afh-rank">
             {attestedNames.map((form) => (
@@ -81,7 +81,7 @@ export function LanguageDetailViewV2({
         />
       </FicheSection>
 
-      <FicheSection title="Famille linguistique">
+      <FicheSection title={copy.languageFamily}>
         <Link
           href={getFamilyRoute(language, data.family.id)}
           className="font-semibold hover:underline"
@@ -90,7 +90,7 @@ export function LanguageDetailViewV2({
         </Link>
       </FicheSection>
 
-      <FicheSection title="Locuteurs">
+      <FicheSection title={copy.speakers}>
         {data.speakingPeoples.length > 0 ? (
           <ul className="afh-rank">
             {data.speakingPeoples.map((people) => (
@@ -109,7 +109,7 @@ export function LanguageDetailViewV2({
         )}
       </FicheSection>
 
-      <FicheSection title="Dialectes">
+      <FicheSection title={copy.dialects}>
         {dialects.length > 0 ? (
           <ul className="afh-rank">
             {dialects.map((dialect) => (
@@ -121,7 +121,7 @@ export function LanguageDetailViewV2({
         )}
       </FicheSection>
 
-      <FicheSection title="Rôle véhiculaire">
+      <FicheSection title={copy.vehicularRole}>
         {data.vehicularRole ? (
           <p>{data.vehicularRole}</p>
         ) : (
@@ -129,7 +129,7 @@ export function LanguageDetailViewV2({
         )}
       </FicheSection>
 
-      <FicheSection title="Vitalité">
+      <FicheSection title={copy.vitality}>
         {data.vitalityStatus ? (
           <p>
             {data.vitalityStatus.status} ({data.vitalityStatus.scale},{" "}
@@ -141,8 +141,8 @@ export function LanguageDetailViewV2({
       </FicheSection>
 
       <FicheSection
-        title="Sources"
-        note={SOURCE_TIER_NOTE}
+        title={copy.sources}
+        note={ficheCopy[language].sourceTierNote}
         as="footer"
         id="sources"
       >
@@ -151,6 +151,7 @@ export function LanguageDetailViewV2({
             sources={data.sources}
             hasSourceFlag={hasSourceFlag}
             variant="parchment"
+            language={language}
           />
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />

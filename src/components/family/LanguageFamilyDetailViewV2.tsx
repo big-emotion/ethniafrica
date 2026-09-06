@@ -88,13 +88,23 @@ export function LanguageFamilyDetailViewV2({
       footprintProvenance={footprintProvenance}
     >
       <div className="afh-parchment-section">
-        <FamilyDecolonialHeader data={data.decolonialHeader} />
+        <FamilyDecolonialHeader
+          data={data.decolonialHeader}
+          language={language}
+        />
       </div>
       <div className="afh-parchment-section">
-        <FamilyLinguisticTraits data={data.linguisticTraits} />
+        <FamilyLinguisticTraits
+          data={data.linguisticTraits}
+          language={language}
+        />
       </div>
       <div className="afh-parchment-section">
-        <FamilyHistorySection data={data.history} familyId={data.hero.id} />
+        <FamilyHistorySection
+          data={data.history}
+          familyId={data.hero.id}
+          language={language}
+        />
       </div>
     </FamilyParchment>
   );

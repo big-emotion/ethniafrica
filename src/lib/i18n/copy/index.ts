@@ -3,14 +3,19 @@ import { colonizationCopy } from "@/lib/i18n/copy/colonization";
 import { chromeCopy } from "@/lib/i18n/copy/chrome";
 import { commonCopy } from "@/lib/i18n/copy/common";
 import { consentCopy } from "@/lib/i18n/copy/consent";
+import { countryCopy } from "@/lib/i18n/copy/country";
 import { facetsCopy } from "@/lib/i18n/copy/facets";
 import { fieldProvenanceCopy } from "@/lib/i18n/copy/fieldProvenance";
+import { familyCopy } from "@/lib/i18n/copy/family";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
 import { footerCopy } from "@/lib/i18n/copy/footer";
 import { hubsCopy } from "@/lib/i18n/copy/hubs";
 import { languagesCopy } from "@/lib/i18n/copy/languages";
+import { languageFicheCopy } from "@/lib/i18n/copy/languageFiche";
 import { migrationsCopy } from "@/lib/i18n/copy/migrations";
 import { namesCopy } from "@/lib/i18n/copy/names";
 import { patronymesCopy } from "@/lib/i18n/copy/patronymes";
+import { peopleCopy } from "@/lib/i18n/copy/people";
 import { publicFlagsCopy } from "@/lib/i18n/copy/publicFlags";
 import { quizCopy } from "@/lib/i18n/copy/quiz";
 import { sitemapPageCopy } from "@/lib/i18n/copy/sitemapPage";
@@ -32,6 +37,7 @@ export const COPY_MODULES = {
   common: commonCopy,
   chrome: chromeCopy,
   consent: consentCopy,
+  countryFiche: countryCopy,
   facets: facetsCopy,
   footer: footerCopy,
   sitemapPage: sitemapPageCopy,
@@ -44,6 +50,10 @@ export const COPY_MODULES = {
   colonization: colonizationCopy,
   quiz: quizCopy,
   fieldProvenance: fieldProvenanceCopy,
+  family: familyCopy,
+  fiche: ficheCopy,
+  languageFiche: languageFicheCopy,
+  peopleFiche: peopleCopy,
   hubs: hubsCopy,
   trail: trailCopy,
   system: systemCopy,

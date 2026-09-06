@@ -66,6 +66,18 @@ const populatedData: PeopleNamesData = {
 };
 
 describe("PeopleNamesSection", () => {
+  // @req REQ-145
+  it("localises the section and imposed-name chrome in English", () => {
+    render(<PeopleNamesSection language="en" data={populatedData} />);
+    expect(
+      screen.getByRole("heading", { name: "Names and designations" })
+    ).toBeVisible();
+    expect(screen.getByText("imposed name")).toBeVisible();
+    expect(screen.getByText("Imposed by:")).toBeVisible();
+    expect(
+      screen.getByRole("link", { name: "Read the doctrine" })
+    ).toBeVisible();
+  });
   // @req REQ-054 REQ-056
   it("renders the section at anchor id=noms", () => {
     const { container } = render(

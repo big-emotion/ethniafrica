@@ -1,5 +1,8 @@
 import { PeopleFieldLegend } from "@/components/people/PeopleFieldLegend";
 import type { CountryDistribution } from "@/types/afrik";
+import { peopleCopy } from "@/lib/i18n/copy/people";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 /**
  * "Pourquoi la carte ne trace pas de frontière".
@@ -23,29 +26,20 @@ import type { CountryDistribution } from "@/types/afrik";
 // @req REQ-116
 export function PeopleFieldExplainer({
   distribution,
+  language = FALLBACK_LOCALE,
 }: {
   distribution: CountryDistribution[] | undefined;
+  language?: Language;
 }) {
   if (!distribution || distribution.length === 0) return null;
 
   return (
     <div className="flex flex-col gap-afh-sm">
       <p className="text-afh-small">
-        Sur la fiche d&apos;un pays, le trait se referme parce qu&apos;une
-        frontière administrative est publiée et datée. Ici, rien de tel
-        n&apos;existe :{" "}
-        <strong>
-          aucune source du corpus ne dit où la présence de ce peuple
-          s&apos;arrête
-        </strong>
-        . Ce que le corpus déclare, ce sont {distribution.length} populations
-        par pays. La carte s&apos;en tient exactement à cela — un halo par pays,
-        dont l&apos;aire suit la population et dont le bord vaut zéro. Un tracé
-        fermé aurait affirmé un dedans et un dehors que personne ne peut
-        sourcer.
+        {peopleCopy[language].field.explanation(distribution.length)}
       </p>
 
-      <PeopleFieldLegend distribution={distribution} />
+      <PeopleFieldLegend distribution={distribution} language={language} />
     </div>
   );
 }

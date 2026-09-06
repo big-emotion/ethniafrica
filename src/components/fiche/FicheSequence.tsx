@@ -23,6 +23,8 @@ import { FicheChapterBar } from "@/components/fiche/FicheChapterBar";
 import { FICHE_RECORD_ANCHOR } from "@/lib/ficheChapters";
 import type { FicheEntityType } from "@/types/fiche";
 import { cn } from "@/lib/utils";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 /**
  * Accent scope per entity type (src/styles/tokens/color.css) — one class on
@@ -77,6 +79,7 @@ export interface FicheSequenceProps {
   /** The REQ-116 atlas globe (AtlasGlobe), on the DEC-022 Night surface. Omitted entirely when a route has not built one. */
   globe?: ReactNode;
   className?: string;
+  language?: Language;
 }
 
 // @req REQ-091
@@ -87,6 +90,7 @@ export function FicheSequence({
   record,
   globe,
   className,
+  language = FALLBACK_LOCALE,
 }: FicheSequenceProps) {
   return (
     <div
@@ -105,7 +109,11 @@ export function FicheSequence({
       {/* The rail opens the reading, not the map: pinned here it starts
           following the reader exactly where the parchment starts, and the globe
           keeps the screen to itself while it is the subject. */}
-      <FicheChapterBar entityId={entityId} entityName={entityName} />
+      <FicheChapterBar
+        entityId={entityId}
+        entityName={entityName}
+        language={language}
+      />
       {/* Neither the globe nor the parchment is boxed in a measured column.
           The globe runs edge to edge; the parchment carries its own reading
           measure, and a column here would apply a second, wider one on top of

@@ -17,17 +17,37 @@ import type { ReactNode } from "react";
 import { NameTypeBadge } from "@/components/names/NameTypeBadge";
 import type { NameRecordView } from "@/types/names";
 import { bcp47LanguageTag } from "@/lib/languageTag";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 export interface NameOriginCardProps {
   record: NameRecordView;
   confidenceChip: ReactNode;
+  language?: Language;
 }
 
 // @req REQ-056
 export function NameOriginCard({
   record,
   confidenceChip,
+  language = FALLBACK_LOCALE,
 }: NameOriginCardProps) {
+  const labels =
+    language === "en"
+      ? {
+          meaning: "Meaning:",
+          imposedBy: "Imposed by:",
+          period: "Period:",
+          problematic: "Why problematic:",
+          contemporary: "Contemporary usage:",
+        }
+      : {
+          meaning: "Signification :",
+          imposedBy: "Imposé par :",
+          period: "Période :",
+          problematic: "Pourquoi problématique :",
+          contemporary: "Usage contemporain :",
+        };
   const {
     nameText,
     nameType,
@@ -54,12 +74,16 @@ export function NameOriginCard({
         >
           {nameText}
         </span>
-        <NameTypeBadge nameType={nameType} imposed={Boolean(imposedBy)} />
+        <NameTypeBadge
+          nameType={nameType}
+          imposed={Boolean(imposedBy)}
+          language={language}
+        />
       </div>
 
       {meaning ? (
         <p className="mt-afh-sm font-afh text-afh-body text-afh-text-soft">
-          Signification : {meaning}
+          <strong>{labels.meaning}</strong> {meaning}
         </p>
       ) : null}
 
@@ -67,27 +91,25 @@ export function NameOriginCard({
         <dl className="mt-afh-sm font-afh text-afh-body text-afh-text-soft">
           {imposedBy ? (
             <div>
-              <dt className="inline font-semibold">Imposé par : </dt>
+              <dt className="inline font-semibold">{labels.imposedBy} </dt>
               <dd className="inline">{imposedBy}</dd>
             </div>
           ) : null}
           {impositionPeriod ? (
             <div>
-              <dt className="inline font-semibold">Période : </dt>
+              <dt className="inline font-semibold">{labels.period} </dt>
               <dd className="inline">{impositionPeriod}</dd>
             </div>
           ) : null}
           {whyProblematic ? (
             <div>
-              <dt className="inline font-semibold">
-                Pourquoi problématique :{" "}
-              </dt>
+              <dt className="inline font-semibold">{labels.problematic} </dt>
               <dd className="inline">{whyProblematic}</dd>
             </div>
           ) : null}
           {contemporaryUsage ? (
             <div>
-              <dt className="inline font-semibold">Usage contemporain : </dt>
+              <dt className="inline font-semibold">{labels.contemporary} </dt>
               <dd className="inline">{contemporaryUsage}</dd>
             </div>
           ) : null}

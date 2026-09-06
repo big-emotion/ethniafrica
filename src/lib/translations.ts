@@ -3,14 +3,19 @@ import { colonizationCopy } from "@/lib/i18n/copy/colonization";
 import { chromeCopy } from "@/lib/i18n/copy/chrome";
 import { commonCopy } from "@/lib/i18n/copy/common";
 import { consentCopy } from "@/lib/i18n/copy/consent";
+import { countryCopy } from "@/lib/i18n/copy/country";
 import { facetsCopy } from "@/lib/i18n/copy/facets";
 import { fieldProvenanceCopy } from "@/lib/i18n/copy/fieldProvenance";
+import { familyCopy } from "@/lib/i18n/copy/family";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
 import { footerCopy } from "@/lib/i18n/copy/footer";
 import { hubsCopy } from "@/lib/i18n/copy/hubs";
 import { languagesCopy } from "@/lib/i18n/copy/languages";
+import { languageFicheCopy } from "@/lib/i18n/copy/languageFiche";
 import { migrationsCopy } from "@/lib/i18n/copy/migrations";
 import { namesCopy } from "@/lib/i18n/copy/names";
 import { patronymesCopy } from "@/lib/i18n/copy/patronymes";
+import { peopleCopy } from "@/lib/i18n/copy/people";
 import { publicFlagsCopy } from "@/lib/i18n/copy/publicFlags";
 import { quizCopy } from "@/lib/i18n/copy/quiz";
 import { sitemapPageCopy } from "@/lib/i18n/copy/sitemapPage";
@@ -35,6 +40,7 @@ const en = {
   ...commonCopy.en,
   chrome: chromeCopy.en,
   consent: consentCopy.en,
+  countryFiche: countryCopy.en,
   facets: facetsCopy.en,
   footer: footerCopy.en,
   sitemapPage: sitemapPageCopy.en,
@@ -47,6 +53,10 @@ const en = {
   colonization: colonizationCopy.en,
   quiz: quizCopy.en,
   fieldProvenance: fieldProvenanceCopy.en,
+  family: familyCopy.en,
+  fiche: ficheCopy.en,
+  languageFiche: languageFicheCopy.en,
+  peopleFiche: peopleCopy.en,
   hubs: hubsCopy.en,
   trail: trailCopy.en,
   system: systemCopy.en,
@@ -62,6 +72,7 @@ const fr: UiDictionary = {
   ...commonCopy.fr,
   chrome: chromeCopy.fr,
   consent: consentCopy.fr,
+  countryFiche: countryCopy.fr,
   facets: facetsCopy.fr,
   footer: footerCopy.fr,
   sitemapPage: sitemapPageCopy.fr,
@@ -74,6 +85,10 @@ const fr: UiDictionary = {
   colonization: colonizationCopy.fr,
   quiz: quizCopy.fr,
   fieldProvenance: fieldProvenanceCopy.fr,
+  family: familyCopy.fr,
+  fiche: ficheCopy.fr,
+  languageFiche: languageFicheCopy.fr,
+  peopleFiche: peopleCopy.fr,
   hubs: hubsCopy.fr,
   trail: trailCopy.fr,
   system: systemCopy.fr,

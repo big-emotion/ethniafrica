@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { FicheProse } from "@/components/fiche/FicheProse";
 import { ActionLink } from "@/components/ui/ActionLink";
 
@@ -11,6 +9,7 @@ import {
 import { RelationTypeBadge } from "@/components/relations/RelationTypeBadge";
 import { getPeopleLinksRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
+import { peopleCopy } from "@/lib/i18n/copy/people";
 
 interface PeopleRelatedPeoplesSectionProps {
   data: PeopleRelatedData;
@@ -27,6 +26,7 @@ export function PeopleRelatedPeoplesSection({
   peopleId,
   relationsPreview = [],
 }: PeopleRelatedPeoplesSectionProps) {
+  const copy = peopleCopy[language].relatedFields;
   const hasContent = hasRelatedContent(data) || relationsPreview.length > 0;
 
   if (!hasContent) return null;
@@ -35,7 +35,7 @@ export function PeopleRelatedPeoplesSection({
     <dl className="afh-prose-fields space-y-[14px]">
       {relationsPreview.length > 0 && peopleId && (
         <div>
-          <dt className="people-section-label">Liens</dt>
+          <dt className="people-section-label">{copy.links}</dt>
           <dd className="afh-prose-def">
             <div className="flex flex-col gap-[8px] mt-[8px]">
               {relationsPreview.slice(0, 3).map((relation) => (
@@ -62,7 +62,7 @@ export function PeopleRelatedPeoplesSection({
               href={getPeopleLinksRoute(language, peopleId)}
               className="mt-[4px]"
             >
-              Voir tous les liens
+              {copy.seeAll}
             </ActionLink>
           </dd>
         </div>
@@ -70,7 +70,7 @@ export function PeopleRelatedPeoplesSection({
 
       {data.ethnicities.length > 0 && (
         <div>
-          <dt className="people-section-label">Groupes associés</dt>
+          <dt className="people-section-label">{copy.associatedGroups}</dt>
           <dd className="afh-prose-def">
             <div className="flex flex-wrap gap-[8px] mt-[8px]">
               {data.ethnicities.map((e, i) => (
@@ -101,11 +101,10 @@ export function PeopleRelatedPeoplesSection({
 
       {data.politicalSystem && (
         <div>
-          <dt className="people-section-label">
-            Système politique traditionnel
-          </dt>
+          <dt className="people-section-label">{copy.politicalSystem}</dt>
           <dd className="afh-prose-def">
             <FicheProse
+              language={language}
               text={data.politicalSystem}
               paragraphClassName="people-section-body"
             />
@@ -115,9 +114,10 @@ export function PeopleRelatedPeoplesSection({
 
       {data.clanOrganization && (
         <div>
-          <dt className="people-section-label">Organisation clanique</dt>
+          <dt className="people-section-label">{copy.clanOrganisation}</dt>
           <dd className="afh-prose-def">
             <FicheProse
+              language={language}
               text={data.clanOrganization}
               paragraphClassName="people-section-body"
             />
@@ -127,9 +127,10 @@ export function PeopleRelatedPeoplesSection({
 
       {data.ageClassSystems && (
         <div>
-          <dt className="people-section-label">Grades d&apos;âge</dt>
+          <dt className="people-section-label">{copy.ageGrades}</dt>
           <dd className="afh-prose-def">
             <FicheProse
+              language={language}
               text={data.ageClassSystems}
               paragraphClassName="people-section-body"
             />
@@ -142,9 +143,10 @@ export function PeopleRelatedPeoplesSection({
           three of its five. */}
       {data.roleOfLineages && (
         <div>
-          <dt className="people-section-label">Rôle des lignages</dt>
+          <dt className="people-section-label">{copy.lineages}</dt>
           <dd className="afh-prose-def">
             <FicheProse
+              language={language}
               text={data.roleOfLineages}
               paragraphClassName="people-section-body"
             />
@@ -154,9 +156,10 @@ export function PeopleRelatedPeoplesSection({
 
       {data.religiousAuthority && (
         <div>
-          <dt className="people-section-label">Autorité religieuse</dt>
+          <dt className="people-section-label">{copy.religiousAuthority}</dt>
           <dd className="afh-prose-def">
             <FicheProse
+              language={language}
               text={data.religiousAuthority}
               paragraphClassName="people-section-body"
             />

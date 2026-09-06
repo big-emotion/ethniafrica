@@ -1,11 +1,12 @@
 import type { AtlasTargetFacts } from "@/components/atlas/AtlasGlobe";
 import { FICHE_RECORD_ANCHOR } from "@/lib/ficheChapters";
 import { inCountry } from "@/lib/atlas/countryPreposition";
-import { getAdmin0NameFr } from "@/lib/atlas/overlays";
+import { getAdmin0Name } from "@/lib/atlas/overlays";
 import type { CountryId, GlobalDemographySection } from "@/types/afrik";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { formatNumber } from "@/lib/languageTag";
 import type { Language } from "@/types/shared";
+import { peopleCopy } from "@/lib/i18n/copy/people";
 
 const ONE_DECIMAL: Intl.NumberFormatOptions = {
   minimumFractionDigits: 1,
@@ -35,6 +36,7 @@ export function buildPeoplePresenceFacts({
   peopleId: string;
   demography: GlobalDemographySection | undefined;
 }): Partial<Record<CountryId, AtlasTargetFacts>> {
+  const copy = peopleCopy[language].presenceFacts;
   const distribution = demography?.distributionByCountry ?? [];
   if (distribution.length === 0) return {};
 
@@ -47,13 +49,13 @@ export function buildPeoplePresenceFacts({
   const facts: Partial<Record<CountryId, AtlasTargetFacts>> = {};
 
   for (const entry of distribution) {
-    const nameFr = getAdmin0NameFr(entry.country) ?? entry.country;
+    const countryName = getAdmin0Name(entry.country, language) ?? entry.country;
     const population = entry.population ?? 0;
     const share = total > 0 ? (population / total) * 100 : 0;
 
     facts[entry.country] = {
-      title: `${peopleName} ${inCountry(entry.country, nameFr)}`,
-      description: `${entry.country} · présence déclarée, sans tracé de limite`,
+      title: `${peopleName} ${inCountry(entry.country, countryName, language)}`,
+      description: copy.description(entry.country),
       // The declared population, as the mockup's own list carries it. A
       // country the fiche declares without a figure gets no line rather than
       // a zero, which would read as an absence the corpus never stated.
@@ -62,7 +64,7 @@ export function buildPeoplePresenceFacts({
         <div className="flex flex-col gap-afh-sm text-afh-small">
           <div>
             <dt className="text-afh-caption uppercase tracking-wide">
-              Population déclarée
+              {copy.declaredPopulation}
             </dt>
             <dd className="font-[family-name:var(--afh-font-mono)] text-afh-h3 tabular-nums">
               {formatNumber(language, population)}
@@ -76,7 +78,7 @@ export function buildPeoplePresenceFacts({
                   forbids for good reason: an exonym must never appear without
                   the autonym AutonymExonymHeading carries. */}
               <dt className="text-afh-caption uppercase tracking-wide">
-                Part de l&apos;ensemble du peuple
+                {copy.share}
               </dt>
               <dd className="flex items-center gap-afh-xs">
                 <span className="font-[family-name:var(--afh-font-mono)] tabular-nums">
@@ -103,24 +105,22 @@ export function buildPeoplePresenceFacts({
               one thing the encoding exists to avoid claiming. */}
           <div>
             <dt className="text-afh-caption uppercase tracking-wide">
-              Ce que le halo dit
+              {copy.haloTitle}
             </dt>
-            <dd>
-              Le rayon suit la racine de la population, donc l&apos;aire suit la
-              population. Le bord vaut zéro : il n&apos;y a pas de limite à
-              lire.
-            </dd>
+            <dd>{copy.haloBody}</dd>
           </div>
 
           {demography?.referenceYear && (
-            <p className="text-afh-caption">Réf. {demography.referenceYear}</p>
+            <p className="text-afh-caption">
+              {copy.reference} {demography.referenceYear}
+            </p>
           )}
 
           {/* Anchored on the record section rather than the top of the page:
               a reader who came for this country should land on the prose, not
               back on the globe they just left. */}
           <ActionLink href={`#${FICHE_RECORD_ANCHOR}`}>
-            Lire la fiche complète
+            {copy.readFull}
           </ActionLink>
         </div>
       ),

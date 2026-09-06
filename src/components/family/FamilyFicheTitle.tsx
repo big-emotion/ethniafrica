@@ -2,6 +2,9 @@ import type { LanguageFamily } from "@/types/afrik";
 import { transformFamilyData } from "@/lib/familyDataTransformer";
 import { classifyFieldProvenance } from "@/lib/fieldProvenance";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
+import { familyCopy } from "@/lib/i18n/copy/family";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 /**
  * The second half of the fiche's title — what a family fiche says a family is.
@@ -18,8 +21,6 @@ import { ClassificationBadge } from "@/components/ui/classification-badge";
  * A head and a chip disagreeing about the same fact is worse than either
  * verdict alone, so both now read the one provenance check.
  */
-const FAMILY_TITLE_PREDICATE = "une aire à reconstruire";
-
 /**
  * The band a family fiche opens on, above the globe.
  *
@@ -29,7 +30,14 @@ const FAMILY_TITLE_PREDICATE = "une aire à reconstruire";
  * chapters below immediately qualify.
  */
 // @req REQ-091
-export function FamilyFicheTitle({ family }: { family: LanguageFamily }) {
+export function FamilyFicheTitle({
+  family,
+  language = FALLBACK_LOCALE,
+}: {
+  family: LanguageFamily;
+  language?: Language;
+}) {
+  const copy = familyCopy[language].title;
   const { hero, decolonialHeader, distribution } = transformFamilyData(family);
   const selfAppellation = decolonialHeader.selfAppellation;
   const nameEn = hero.nameEn ?? decolonialHeader.nameEn;
@@ -44,12 +52,15 @@ export function FamilyFicheTitle({ family }: { family: LanguageFamily }) {
         {/* The eyebrow says what kind of thing the reader has opened. It used
             to lead with the corpus identifier — FLG_ATLANTIQUE — which names
             the row in the database, not the family in the world. */}
-        <p className="afh-parchment-eyebrow">Famille linguistique</p>
+        <p className="afh-parchment-eyebrow">{copy.eyebrow}</p>
         <h1>
           {rebuildsItsArea ? (
             <>
-              {hero.nameFr}, <em>{FAMILY_TITLE_PREDICATE}</em>
+              {language === "en" ? (nameEn ?? hero.nameFr) : hero.nameFr},{" "}
+              <em>{copy.reconstructedArea}</em>
             </>
+          ) : language === "en" ? (
+            (nameEn ?? hero.nameFr)
           ) : (
             hero.nameFr
           )}
@@ -65,8 +76,11 @@ export function FamilyFicheTitle({ family }: { family: LanguageFamily }) {
           {/* Naming both when they are the same word would present one fact as
               two, and quietly overstate how much the fiche knows. */}
           {selfAppellation && nameEn && selfAppellation === nameEn
-            ? `Auto-appellation et nom anglais : ${selfAppellation}. Le français seul francise.`
-            : `Auto-appellation : ${selfAppellation ?? "non renseignée"}. Nom anglais : ${nameEn ?? "non renseigné"}.`}
+            ? copy.sharedSelfAndEnglish(selfAppellation)
+            : copy.distinctNames(
+                selfAppellation ?? copy.notRecorded,
+                nameEn ?? copy.notRecorded
+              )}
         </p>
       </header>
     </>

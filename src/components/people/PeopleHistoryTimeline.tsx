@@ -2,12 +2,16 @@ import type { PeopleHistoryData } from "@/lib/peopleDataTransformer";
 import type { ParagraphNoteData } from "@/components/people/peopleFicheNotes";
 import { ProseWithChip } from "./ProseWithChip";
 import type { HistoryChips } from "./ProseWithChip";
+import { peopleCopy } from "@/lib/i18n/copy/people";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 interface PeopleHistoryTimelineProps {
   data: PeopleHistoryData;
   chips?: HistoryChips;
   /** One note callout per sourced field, keyed as `chips` is. */
   notes?: Partial<Record<string, ParagraphNoteData>>;
+  language?: Language;
 }
 
 // @req REQ-003
@@ -15,7 +19,9 @@ export function PeopleHistoryTimeline({
   data,
   chips,
   notes,
+  language = FALLBACK_LOCALE,
 }: PeopleHistoryTimelineProps) {
+  const copy = peopleCopy[language].historyFields;
   const hasContent =
     data.kingdomsOrChiefdoms ||
     data.relationsWithNeighbors ||
@@ -28,9 +34,10 @@ export function PeopleHistoryTimeline({
     <dl className="afh-prose-fields space-y-[14px]">
       {data.kingdomsOrChiefdoms && (
         <div>
-          <dt className="people-section-label">Royaumes &amp; chefferies</dt>
+          <dt className="people-section-label">{copy.kingdoms}</dt>
           <dd className="afh-prose-def">
             <ProseWithChip
+              language={language}
               text={data.kingdomsOrChiefdoms}
               chip={chips?.kingdomsOrChiefdoms}
               note={notes?.kingdomsOrChiefdoms}
@@ -41,9 +48,10 @@ export function PeopleHistoryTimeline({
 
       {data.relationsWithNeighbors && (
         <div>
-          <dt className="people-section-label">Relations avec les voisins</dt>
+          <dt className="people-section-label">{copy.neighbours}</dt>
           <dd className="afh-prose-def">
             <ProseWithChip
+              language={language}
               text={data.relationsWithNeighbors}
               chip={chips?.relationsWithNeighbors}
               note={notes?.relationsWithNeighbors}
@@ -54,9 +62,10 @@ export function PeopleHistoryTimeline({
 
       {data.conflictsOrAlliances && (
         <div>
-          <dt className="people-section-label">Conflits &amp; alliances</dt>
+          <dt className="people-section-label">{copy.conflicts}</dt>
           <dd className="afh-prose-def">
             <ProseWithChip
+              language={language}
               text={data.conflictsOrAlliances}
               chip={chips?.conflictsOrAlliances}
               note={notes?.conflictsOrAlliances}
@@ -67,9 +76,10 @@ export function PeopleHistoryTimeline({
 
       {data.diaspora && (
         <div>
-          <dt className="people-section-label">Diaspora</dt>
+          <dt className="people-section-label">{copy.diaspora}</dt>
           <dd className="afh-prose-def">
             <ProseWithChip
+              language={language}
               text={data.diaspora}
               chip={chips?.diaspora}
               note={notes?.diaspora}

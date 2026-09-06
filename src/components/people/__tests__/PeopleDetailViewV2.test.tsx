@@ -67,6 +67,34 @@ const fragmentation: PeopleFragmentation = {
 describe("PeopleDetailViewV2", () => {
   afterEach(cleanup);
 
+  // @req REQ-145
+  it("renders the fiche's authored chrome in English", () => {
+    render(
+      <PeopleDetailViewV2
+        language="en"
+        people={ewe}
+        fragmentation={fragmentation}
+      />
+    );
+
+    expect(
+      screen.getByRole("heading", { name: "The name borne, the names imposed" })
+    ).toBeVisible();
+    expect(
+      screen.getByRole("heading", { name: "Origins and formation" })
+    ).toBeVisible();
+    expect(
+      screen.getByRole("heading", { name: "Culture and spirituality" })
+    ).toBeVisible();
+    expect(
+      screen.getByRole("heading", { name: "Geographic distribution" })
+    ).toBeVisible();
+    expect(screen.getByText("Self-designation")).toBeVisible();
+    expect(screen.getByText("Ancient origins")).toBeVisible();
+    expect(screen.getByText("Main language")).toBeVisible();
+    expect(screen.getByText(/Migrations depuis Notsé/)).toBeVisible();
+  });
+
   // Lighthouse scored the fiche 0.98 on accessibility for exactly one reason:
   // the parchment went from h1 straight to the h3 inside the naming block,
   // because a section's label was a <div>. It had been invisible while the

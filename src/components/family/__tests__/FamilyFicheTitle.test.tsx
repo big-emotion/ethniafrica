@@ -24,6 +24,17 @@ const family: LanguageFamily = {
 };
 
 describe("FamilyFicheTitle (REQ-091)", () => {
+  // @req REQ-145
+  it("renders its editorial title copy in English", () => {
+    render(<FamilyFicheTitle family={family} language="en" />);
+
+    expect(screen.getByText("Language family")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Bantu/ })).toHaveTextContent(
+      "an area to reconstruct"
+    );
+    expect(screen.getByText(/Self-designation and English name/)).toBeVisible();
+  });
+
   // @req REQ-091
   it("opens on the eyebrow, the name and its predicate", () => {
     render(<FamilyFicheTitle family={family} />);

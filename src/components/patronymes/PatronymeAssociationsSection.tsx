@@ -98,7 +98,7 @@ export function PatronymeAssociationsSection({
         <p className="afh-parchment-note">{t.nonHereditaryGuidance}</p>
       ) : null}
       {peoplesNode || countriesNode ? (
-        <FicheFieldList fields={fields} />
+        <FicheFieldList fields={fields} language={language} />
       ) : (
         <FieldProvenanceMarker state="missing" language={language} />
       )}

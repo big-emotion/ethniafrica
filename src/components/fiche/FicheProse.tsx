@@ -5,6 +5,9 @@ import {
   type ProseBlock,
   type ProseInline,
 } from "@/lib/prose/ficheProse";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 /**
  * The reader for the corpus's prose grammar, shared by the three fiches.
@@ -18,10 +21,6 @@ import {
  * There is no `dangerouslySetInnerHTML` here and there must never be one.
  * Rendering the corpus as markup would turn a fiche into an injection vector.
  */
-
-/** What a defect says to a reader who has no way to know it is a defect. */
-const DEFECT_NOTICE =
-  "Ce champ n'est pas lisible : la fiche l'a enregistré sous une forme que l'affichage ne sait pas rendre.";
 
 function renderInline(inline: ProseInline[]): ReactNode[] {
   return inline.map((run, index) => {
@@ -48,6 +47,7 @@ export interface FicheProseProps {
   paragraphClassName?: string;
   /** Placed at the end of the last paragraph — the field's confidence chip. */
   trailing?: ReactNode;
+  language?: Language;
 }
 
 // @req REQ-122
@@ -55,13 +55,14 @@ export function FicheProse({
   text,
   paragraphClassName,
   trailing,
+  language = FALLBACK_LOCALE,
 }: FicheProseProps) {
   const { blocks, defect } = parseFicheProse(text);
 
   if (defect === "serialised-json") {
     return (
       <p className="afh-prose-defect" data-prose-defect="serialised-json">
-        {DEFECT_NOTICE}
+        {ficheCopy[language].unreadableField}
       </p>
     );
   }
@@ -129,6 +130,7 @@ export interface FicheFieldListProps {
   className?: string;
   /** Carried by the paragraphs inside each definition. */
   paragraphClassName?: string;
+  language?: Language;
 }
 
 /**
@@ -146,6 +148,7 @@ export function FicheFieldList({
   fields,
   className,
   paragraphClassName,
+  language = FALLBACK_LOCALE,
 }: FicheFieldListProps) {
   const filled = fields.filter(
     (field) => (field.prose && field.prose.trim() !== "") || field.node
@@ -167,6 +170,7 @@ export function FicheFieldList({
                 text={field.prose as string}
                 paragraphClassName={paragraphClassName}
                 trailing={field.trailing}
+                language={language}
               />
             )}
           </dd>

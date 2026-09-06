@@ -52,6 +52,28 @@ const completeFamily: LanguageFamily = {
 };
 
 describe("LanguageFamilyDetailViewV2", () => {
+  // @req REQ-145
+  it("renders the family fiche's authored fields in English", () => {
+    render(
+      <LanguageFamilyDetailViewV2 language="en" family={completeFamily} />
+    );
+    expect(
+      screen.getByRole("heading", { name: "Designations and decolonisation" })
+    ).toBeVisible();
+    expect(screen.getByText("Self-designation")).toBeVisible();
+    expect(
+      screen.getByRole("heading", { name: "Linguistic characteristics" })
+    ).toBeVisible();
+    expect(screen.getByText("Typology")).toBeVisible();
+    expect(
+      screen.getByRole("heading", { name: "History and origins" })
+    ).toBeVisible();
+    expect(screen.getByText("Probable origin")).toBeVisible();
+    expect(
+      screen.getByText("Désignation linguistique contemporaine.")
+    ).toBeVisible();
+  });
+
   // The reading rail lists chapters in document order, so the sources footer
   // closing the fiche is no longer only a visual convention — a rail that ends
   // on "Classification" tells a reader the fiche ends there. The family fiche

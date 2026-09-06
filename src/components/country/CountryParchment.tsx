@@ -5,14 +5,13 @@ import type { ReactNode } from "react";
 import { KingdomsTimeline } from "@/components/country/KingdomsTimeline";
 import { PeoplesSection } from "@/components/country/PeoplesSection";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
-import {
-  FicheSection as Section,
-  SOURCE_TIER_NOTE,
-} from "@/components/fiche/FicheSection";
+import { FicheSection as Section } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import type { CountryPageData } from "@/lib/countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import type { Language } from "@/types/shared";
+import { countryCopy } from "@/lib/i18n/copy/country";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
 
 /**
  * The country fiche's reading: a head and four sections on parchment, below
@@ -61,6 +60,7 @@ export function CountryParchment({
   hasSourceFlag,
   children,
 }: CountryParchmentProps) {
+  const copy = countryCopy[language];
   const etymology = country.etymology?.trim();
   const nameOriginActor = country.nameOriginActor?.trim();
   const hasPeoples =
@@ -73,7 +73,7 @@ export function CountryParchment({
           reader is told which country they opened before the band fills the
           screen. The parchment opens on its first chapter. */}
 
-      <Section title="Étymologie du nom">
+      <Section title={copy.sections.etymology}>
         {etymology || nameOriginActor ? (
           <>
             {etymology && <p>{etymology}</p>}
@@ -98,7 +98,7 @@ export function CountryParchment({
         />
       </Section>
 
-      <Section title="Peuples du pays">
+      <Section title={copy.sections.peoples}>
         {!hasPeoples ? (
           <FieldProvenanceMarker state="missing" language={language} />
         ) : (
@@ -111,7 +111,7 @@ export function CountryParchment({
         )}
       </Section>
 
-      <Section title="Royaumes et formations politiques">
+      <Section title={copy.sections.kingdoms}>
         {data.kingdoms.cards.length > 0 ? (
           <KingdomsTimeline
             cards={data.kingdoms.cards}
@@ -125,12 +125,18 @@ export function CountryParchment({
 
       {children}
 
-      <Section title="Sources" note={SOURCE_TIER_NOTE} as="footer" id="sources">
+      <Section
+        title={copy.sections.sources}
+        note={ficheCopy[language].sourceTierNote}
+        as="footer"
+        id="sources"
+      >
         {data.sources.length > 0 ? (
           <SourcesFooter
             sources={data.sources}
             hasSourceFlag={hasSourceFlag}
             variant="parchment"
+            language={language}
           />
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />

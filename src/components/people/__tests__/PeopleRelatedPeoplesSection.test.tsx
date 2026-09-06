@@ -10,6 +10,19 @@ const EMPTY_DATA: PeopleRelatedData = {
 };
 
 describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)", () => {
+  // @req REQ-145
+  it("renders its organisation labels in English", () => {
+    render(
+      <PeopleRelatedPeoplesSection
+        language="en"
+        data={{ ethnicities: ["Oyo"], roleOfLineages: "Texte du corpus" }}
+      />
+    );
+    expect(screen.getByText("Associated groups")).toBeVisible();
+    expect(screen.getByText("Role of lineages")).toBeVisible();
+    expect(screen.getByText("Texte du corpus")).toBeVisible();
+  });
+
   // @req REQ-097 FR72
   it("renders up to 3 relation rows with a link to the full links page", () => {
     render(

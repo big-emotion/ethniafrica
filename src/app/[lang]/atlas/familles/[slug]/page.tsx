@@ -227,11 +227,12 @@ export default async function FamillesSlugPage({
           entityType="language-family"
           translation={family.translation}
         >
-          <FamilyFicheTitle family={family} />
+          <FamilyFicheTitle family={family} language={lang as Language} />
         </FicheHeroHead>
       }
     >
       <FicheSequence
+        language={lang as Language}
         entityType="language-family"
         entityId={parsed.slug}
         entityName={familyDetail.nameFr}
@@ -242,7 +243,10 @@ export default async function FamillesSlugPage({
               targetPicker="list"
               facts={familyTargetFacts}
               legend={
-                <FamilyFootprintLegend provenance={footprintProvenance} />
+                <FamilyFootprintLegend
+                  provenance={footprintProvenance}
+                  language={lang as Language}
+                />
               }
               missingMessage={`Empreinte géographique non disponible pour ${familyDetail.nameFr}`}
             />

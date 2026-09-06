@@ -6,6 +6,7 @@ import {
 import { backLinkLabel } from "@/lib/navigation/deriveTrail";
 import { getPeopleRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
+import { countryCopy } from "@/lib/i18n/copy/country";
 
 /**
  * The band a country fiche opens on, above the globe.
@@ -28,6 +29,7 @@ export function CountryFicheTitle({
   fromPeopleId?: string;
   fromPeopleName?: string;
 }) {
+  const copy = countryCopy[language].title;
   const { hero } = transformCountryData(country);
   const hasPeoples = (country.demographics?.peoples?.length ?? 0) > 0;
   // The head names the country twice on purpose — the name of ordinary use,
@@ -57,8 +59,8 @@ export function CountryFicheTitle({
 
       <header className="afh-parchment-head">
         <p className="afh-parchment-eyebrow">
-          {hero.iso} · fiche pays
-          {hasPeoples && ` · réf. ${DEMOGRAPHIC_REFERENCE_YEAR}`}
+          {hero.iso} · {copy.ficheCountry}
+          {hasPeoples && ` · ${copy.reference} ${DEMOGRAPHIC_REFERENCE_YEAR}`}
         </p>
         <h1>{hero.countryName}</h1>
         {statesTwoNames && (

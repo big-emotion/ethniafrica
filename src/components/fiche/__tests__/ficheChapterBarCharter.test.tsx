@@ -69,10 +69,10 @@ function chapter(title: string, id: string) {
 }
 
 /** A fiche as FicheSequence renders one: the rail, then the chapters. */
-function renderFiche(chapters: string[]) {
+function renderFiche(chapters: string[], language: "fr" | "en" = "fr") {
   return render(
     <div data-fiche-sequence="">
-      <FicheChapterBar />
+      <FicheChapterBar language={language} />
       <div
         data-testid="parchment"
         dangerouslySetInnerHTML={{ __html: chapters.join("") }}
@@ -92,6 +92,17 @@ function openSummary() {
 }
 
 describe("FicheChapterBar", () => {
+  // @req REQ-145
+  it("localises its navigation chrome in English", () => {
+    renderFiche(THREE_CHAPTERS, "en");
+    expect(
+      screen.getByRole("navigation", { name: "Fiche chapters" })
+    ).toBeVisible();
+    expect(
+      screen.getByRole("button", { name: /Fiche contents — chapter 1 of 3/ })
+    ).toBeVisible();
+    expect(screen.getByText("Contents")).toBeVisible();
+  });
   // @req REQ-091
   it("lists every chapter the fiche declares, in reading order", () => {
     renderFiche(THREE_CHAPTERS);

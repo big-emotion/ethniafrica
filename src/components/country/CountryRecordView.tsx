@@ -15,6 +15,7 @@ import { transformCountryData } from "@/lib/countryDataTransformer";
 import type { CountryPatronymes } from "@/api/v2/services/patronymeFicheLinks";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import type { Language } from "@/types/shared";
+import { countryCopy } from "@/lib/i18n/copy/country";
 
 /**
  * The country fiche's dossier, server-rendered.
@@ -67,6 +68,7 @@ export function CountryRecordView({
   fromPeopleId,
   patronymes = null,
 }: CountryRecordViewProps) {
+  const copy = countryCopy[language];
   const data = transformCountryData(country);
 
   return (
@@ -77,7 +79,7 @@ export function CountryRecordView({
         language={language}
         hasSourceFlag={hasSourceFlag}
       >
-        <Section title="Noms à travers l'histoire">
+        <Section title={copy.sections.namesHistory}>
           {data.timeline.items.length > 0 ? (
             <HistoryTimeline data={data.timeline} />
           ) : (
@@ -85,7 +87,7 @@ export function CountryRecordView({
           )}
         </Section>
 
-        <Section title="Faits historiques majeurs">
+        <Section title={copy.sections.historicalFacts}>
           {data.historicalFacts ? (
             <HistoricalFactsSection data={data.historicalFacts} />
           ) : (
@@ -93,9 +95,9 @@ export function CountryRecordView({
           )}
         </Section>
 
-        <Section title="Langues">
+        <Section title={copy.sections.languages}>
           {data.languages.bubbles.length > 0 ? (
-            <LanguagesSection data={data.languages} />
+            <LanguagesSection data={data.languages} language={language} />
           ) : (
             <FieldProvenanceMarker state="missing" language={language} />
           )}
@@ -112,7 +114,7 @@ export function CountryRecordView({
           language={language}
         />
 
-        <Section title="Culture et société">
+        <Section title={copy.sections.culture}>
           <CultureGrid data={data.culture} />
           <DossierLinks
             kind="country"
@@ -127,7 +129,7 @@ export function CountryRecordView({
                 id: country.id,
                 fieldPath: "culture",
               }}
-              triggerLabel="Signaler cette section"
+              triggerLabel={copy.reportSection}
               className="w-auto text-afh-caption"
             />
           </div>

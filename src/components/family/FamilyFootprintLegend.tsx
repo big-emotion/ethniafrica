@@ -2,9 +2,11 @@ import type { CSSProperties } from "react";
 
 import { FICHE_BAND_BREAKPOINT_PX } from "@/components/fiche/FicheHeroBand";
 import {
-  FOOTPRINT_WORDING,
+  footprintWording,
   type FamilyFootprintProvenance,
 } from "@/lib/familyFootprintSource";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 /**
  * The sentence that justifies the dashed edge.
@@ -37,11 +39,13 @@ const LEGEND_STYLE: CSSProperties = {
 // @req REQ-116
 export function FamilyFootprintLegend({
   provenance = "member-peoples",
+  language = FALLBACK_LOCALE,
 }: {
   /** Which rule built the area. The caption names it, so it cannot claim a rule the page did not apply. */
   provenance?: FamilyFootprintProvenance;
+  language?: Language;
 }) {
-  const [firstLine, secondLine] = FOOTPRINT_WORDING[provenance].legend;
+  const [firstLine, secondLine] = footprintWording(provenance, language).legend;
 
   return (
     <>

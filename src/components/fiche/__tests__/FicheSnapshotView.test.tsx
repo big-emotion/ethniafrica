@@ -4,6 +4,26 @@ import { getPeopleRoute } from "@/lib/routing";
 import { FicheSnapshotView } from "../FicheSnapshotView";
 
 describe("FicheSnapshotView", () => {
+  // @req REQ-145
+  it("renders the immutable-snapshot notice in English", () => {
+    render(
+      <FicheSnapshotView
+        kind="country"
+        entityId="SEN"
+        version={7}
+        publishedAt={null}
+        confidence={null}
+        snapshotData={{ name_fr: "Senegal", name_en: "Senegal" }}
+        doctrine={null}
+        lang="en"
+      />
+    );
+
+    expect(
+      screen.getByText(/archived capture \(v7\) and will never be changed/i)
+    ).toBeInTheDocument();
+  });
+
   // @req REQ-019
   it("names a country from the snapshot's own French name field", () => {
     render(

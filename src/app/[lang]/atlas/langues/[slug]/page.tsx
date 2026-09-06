@@ -88,6 +88,7 @@ export default async function LanguesSlugPage({
       }
     >
       <FicheSequence
+        language={lang as Language}
         entityType="language"
         entityId={parsed.slug}
         entityName={data.name}

@@ -28,6 +28,28 @@ const baseRecord: NameRecordView = {
 };
 
 describe("NameOriginCard", () => {
+  // @req REQ-145
+  it("localises its field labels in English without translating corpus values", () => {
+    render(
+      <NameOriginCard
+        language="en"
+        record={{
+          ...baseRecord,
+          imposedBy: "administration coloniale",
+          impositionPeriod: "1908-1960",
+          whyProblematic: "efface l'auto-appellation",
+          contemporaryUsage: "encore utilisé administrativement",
+        }}
+        confidenceChip={<span>chip</span>}
+      />
+    );
+    expect(screen.getByText("Meaning:")).toBeVisible();
+    expect(screen.getByText("Imposed by:")).toBeVisible();
+    expect(screen.getByText("Period:")).toBeVisible();
+    expect(screen.getByText("Why problematic:")).toBeVisible();
+    expect(screen.getByText("Contemporary usage:")).toBeVisible();
+    expect(screen.getByText("administration coloniale")).toBeVisible();
+  });
   // @req REQ-056
   it("renders the name text with the lang attribute when languageOfOrigin is present", () => {
     render(

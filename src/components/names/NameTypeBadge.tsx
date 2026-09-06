@@ -23,11 +23,14 @@ import { Badge } from "@/components/ui/badge";
 import { NAME_TYPE_LABELS } from "@/lib/glossaire/vocabularies";
 import { cn } from "@/lib/utils";
 import type { NameRecordType } from "@/types/names";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 export interface NameTypeBadgeProps {
   nameType: NameRecordType;
   imposed?: boolean;
   className?: string;
+  language?: Language;
 }
 
 // The label is not part of the config: it is read from the glossary's
@@ -72,9 +75,10 @@ export function NameTypeBadge({
   nameType,
   imposed = false,
   className,
+  language = FALLBACK_LOCALE,
 }: NameTypeBadgeProps) {
   const config = imposed ? IMPOSED_CONFIG : TYPE_CONFIG[nameType];
-  const label = NAME_TYPE_LABELS.fr[imposed ? "imposed" : nameType];
+  const label = NAME_TYPE_LABELS[language][imposed ? "imposed" : nameType];
   const Icon = config.Icon;
 
   return (

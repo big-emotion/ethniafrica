@@ -5,6 +5,8 @@ import { FicheProse } from "@/components/fiche/FicheProse";
 import { SourceNoteCall } from "@/components/source-transparency/SourceNoteCall";
 import type { ParagraphNoteData } from "@/components/people/peopleFicheNotes";
 import type { Source } from "@/components/source-transparency/SourceChainSheet";
+import type { Language } from "@/types/shared";
+import { FALLBACK_LOCALE } from "@/lib/locale";
 
 // Wave-2 imports — excluded from the initial bundle.
 // The Suspense fallback renders the prose immediately (Wave 1), protecting LCP.
@@ -66,7 +68,13 @@ export interface LanguageChips {
 // Internal helpers
 // ---------------------------------------------------------------------------
 
-function FallbackLink({ onOpen }: { onOpen: () => void }) {
+function FallbackLink({
+  onOpen,
+  language,
+}: {
+  onOpen: () => void;
+  language: Language;
+}) {
   return (
     <span className="inline-flex items-center p-1">
       <a
@@ -77,7 +85,7 @@ function FallbackLink({ onOpen }: { onOpen: () => void }) {
         }}
         className="text-afh-small underline underline-offset-2 text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))] hover:text-[color:var(--afh-text,var(--country-text,#2C2018))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[color:var(--afh-focus,var(--country-text,#2C2018))]"
       >
-        voir les sources
+        {language === "en" ? "view sources" : "voir les sources"}
       </a>
     </span>
   );
@@ -100,6 +108,7 @@ function ProseWithNote({
   paragraphClassName,
   open,
   onOpenChange,
+  language,
 }: {
   text: string;
   note: ParagraphNoteData;
@@ -107,11 +116,13 @@ function ProseWithNote({
   paragraphClassName: string;
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  language: Language;
 }) {
   return (
     <>
       <FicheProse
         text={text}
+        language={language}
         paragraphClassName={paragraphClassName}
         trailing={
           <SourceNoteCall
@@ -174,6 +185,7 @@ interface ProseWithChipProps {
   /** Content-addressed anchor for the note, so a shared link survives an edit. */
   noteAnchorId?: string;
   className?: string;
+  language?: Language;
 }
 
 /**
@@ -194,6 +206,7 @@ export function ProseWithChip({
   note,
   noteAnchorId,
   className,
+  language = FALLBACK_LOCALE,
 }: ProseWithChipProps) {
   const [sheetOpen, setSheetOpen] = useState(false);
 
@@ -208,12 +221,19 @@ export function ProseWithChip({
         paragraphClassName={paraClass}
         open={sheetOpen}
         onOpenChange={setSheetOpen}
+        language={language}
       />
     );
   }
 
   if (!chip) {
-    return <FicheProse text={text} paragraphClassName={paraClass} />;
+    return (
+      <FicheProse
+        text={text}
+        paragraphClassName={paraClass}
+        language={language}
+      />
+    );
   }
 
   const anchorId = `chip-${chip.chipId}`;
@@ -222,10 +242,16 @@ export function ProseWithChip({
     <>
       <FicheProse
         text={text}
+        language={language}
         paragraphClassName={paraClass}
         trailing={
           <Suspense
-            fallback={<FallbackLink onOpen={() => setSheetOpen(true)} />}
+            fallback={
+              <FallbackLink
+                onOpen={() => setSheetOpen(true)}
+                language={language}
+              />
+            }
           >
             <LazyConfidenceChip
               id={anchorId}
@@ -234,6 +260,7 @@ export function ProseWithChip({
               lastHumanAuditAt={chip.lastHumanAuditAt}
               variant={chip.contested ? "contested" : "inline"}
               onOpen={() => setSheetOpen(true)}
+              language={language}
             />
           </Suspense>
         }
