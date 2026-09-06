@@ -234,6 +234,11 @@
       "path": "docs/editorial/country-enrichment/COD-names.json",
       "refreshCommand": "npx tsx scripts/afrik/updateCountryPatronymLedger.ts COD --write",
       "statusAndDepthRemainSeparate": true
+    },
+    "sourceReviewProposal": {
+      "path": "docs/editorial/country-enrichment/COD-source-review.json",
+      "reviewScope": "all eight country-source rows currently marked needs_review, their exact replacements, and field-level coverage gaps",
+      "productionWriteRequiresApproval": true
     }
   },
   "workstreams": [
@@ -542,12 +547,24 @@
     {
       "id": "COD-SOURCES",
       "priority": "P0",
-      "status": "upgrade_required",
+      "status": "review_complete_proposal_ready_approval_required",
       "goal": "Replace vague and review-pending citations with traceable accepted sources.",
+      "findings": [
+        "The country fiche currently contains 10 source rows: 2 accepted exact sources and 8 generic needs_review rows.",
+        "All 8 needs_review rows have been reviewed and are proposed for removal; exact field-level replacements are documented where available.",
+        "The two CIA placeholders cannot be repaired as live current-country citations because The World Factbook was retired on 2026-02-04 and the former country URL redirects to the retirement notice.",
+        "The vague Ethnologue row is not reproducible without an edition and license basis; the pinned Glottolog 5.3 inventory is proposed for language reconciliation instead.",
+        "Official census-status documentation identifies 1984 as the latest completed national census, while the 2013–2014 DHS is a sample survey; neither validates a current exhaustive people denominator.",
+        "Detailed people percentages, country-name etymology, and broad cultural fields remain unsupported and must not be marked validated."
+      ],
       "remaining": [
-        "Replace every country-fiche needs_review source with a resolvable official or referenced citation, or remove unsupported claims.",
-        "Add field-level provenance for population, people inventory, languages, historical names, archaeology, and political entities.",
-        "Run URL and AFRIK data validators before editorial review."
+        "Approve or reject the proposed removal of the 8 generic source rows and the exact replacement registry.",
+        "Select an enumerated scholarly people inventory as the canonical record-linkage baseline, or expose multiple non-additive scopes.",
+        "Attach accepted sources to detailed people percentages or remove those percentages from validated display.",
+        "Research the country-name etymology and add scoped sources for culture, religion, lifestyles, social organization, and regional relations.",
+        "Add field-level provenance to the country model or generate an equivalent auditable mapping.",
+        "Apply the approved cleanup to dataset/source/afrik/pays/COD.json only after explicit editorial approval.",
+        "Run the repository URL validator after its pre-existing server-only runtime failure is repaired, then run the AFRIK data validators before publication."
       ]
     }
   ],
@@ -558,6 +575,7 @@
     "Is the current Supabase row stale relative to dataset/source/afrik/pays/COD.json?",
     "Should Sango remain represented as a people fiche, or should the two current records be consolidated into a language dossier and excluded from the people inventory?",
     "Should the Hutu and Tutsi duplicate clusters reuse one qualified legacy ID each, or receive neutral canonical IDs with redirects from every existing record?",
-    "Should country people metrics count only leaf-level peoples, only umbrella identities, or expose both without summing them?"
+    "Should country people metrics count only leaf-level peoples, only umbrella identities, or expose both without summing them?",
+    "Should country fiches gain field-level sourceRefs instead of relying on one flat content.sources list?"
   ]
 }
