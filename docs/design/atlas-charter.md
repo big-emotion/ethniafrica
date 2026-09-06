@@ -165,12 +165,25 @@ thing. **L'atlas** carries the identifier `atlas` and routes under
 redirected rather than reachable: every address published under them reaches
 its successor in one hop (`src/middleware.ts`, `RELOCATED_SEGMENTS`).
 
-The access-mode label is a non-navigating heading or disclosure; direct module
-links sit beneath it. A live module is exactly one click away from the global
-navigation: the reader selects that module, never an intermediate axis landing
-page first. The register uses a panel on desktop and a drawer on mobile
-(< 760 px). Both are driven by `src/lib/hubs/moduleRegistry.ts` — the menu is
-generated from it, never hand-listed.
+The access-mode labels remain disclosures in the header. Atlas and games offer
+individual modules directly. Dossiers instead offers published themes from
+`src/lib/dossiers/themes.ts` and an index at `/fr/dossiers`, restored by the
+user-approved architecture of 6 September 2026. A dossier keeps one canonical
+address across themes and fiche links; the primary theme determines its trail.
+
+There are at most eight editorial themes. Below 768 px the header uses a drawer;
+from 768 px it uses a panel. Theme selection remains compact below 1200 px,
+with a native select, and becomes a four-column grid from 1200 px, capped at
+two rows by the bounded vocabulary. Search and theme selection occupy two
+control rows on the dossier index at mobile and tablet sizes. Enlarged text
+must remain readable; labels are not clipped to enforce density.
+
+Only themes containing published dossiers are offered. Draft dossiers retain
+their editorial state and routes but do not create empty theme invitations.
+Anecdotes are a reading format, reached from the directory, not a ninth theme.
+This clause supersedes the former ban on a dossier landing page and the
+requirement to list every dossier module in global navigation. Atlas and game
+module availability behavior stays governed by the rules below.
 
 - A module with **no resolvable route** renders as **Bientôt** and is not
   focusable. The menu never offers a route that does not resolve. Unavailable

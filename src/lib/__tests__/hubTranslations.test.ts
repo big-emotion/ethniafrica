@@ -77,11 +77,15 @@ describe("header panel blurbs", () => {
   const MENU_BLURB_MAX_LENGTH = 2 * 52;
 
   // @req REQ-113
-  it("names at least two of the modules the panel lists underneath", () => {
+  it("describes themes for dossiers and names modules for the other panels", () => {
     for (const axis of axes) {
-      expect(
-        modulesNamedIn(axis, hubs[axis].menuBlurb).length
-      ).toBeGreaterThanOrEqual(2);
+      if (axis === "dossiers") {
+        expect(hubs[axis].menuBlurb).toMatch(/thème/);
+      } else {
+        expect(
+          modulesNamedIn(axis, hubs[axis].menuBlurb).length
+        ).toBeGreaterThanOrEqual(2);
+      }
     }
   });
 

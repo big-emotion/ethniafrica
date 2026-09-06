@@ -6,6 +6,8 @@ import {
 import { AXIS_HUB_PAGE, getAxisForPage } from "@/lib/hubs/axisRoutes";
 import { translations } from "@/lib/translations";
 import type { Language } from "@/types/shared";
+import { getDossierThemes, getDossierThemeHref } from "@/lib/dossiers/themes";
+import { getDossiers } from "@/lib/dossiers/catalog";
 
 /**
  * One crumb. Structurally the `BreadcrumbItem` `AfrikBreadcrumbs` renders,
@@ -52,6 +54,20 @@ export function deriveTrail(
 
   const t = translations[language].trail;
   const page = getPageFromRoute(pathname);
+  const themePrefix = `${getLocalizedRoute(language, "dossiersHub")}/themes/`;
+  if (pathname.startsWith(themePrefix)) {
+    const theme = getDossierThemes(language).find(
+      (candidate) => candidate.id === pathname.slice(themePrefix.length)
+    );
+    return [
+      { label: t.home, href: `/${language}` },
+      {
+        label: t.pages.dossiersHub,
+        href: getLocalizedRoute(language, "dossiersHub"),
+      },
+      ...(theme || entityLabel ? [{ label: theme?.label ?? entityLabel }] : []),
+    ];
+  }
 
   /**
    * The trail opens on the home and, where there is one, on the axis that
@@ -92,7 +108,32 @@ export function deriveTrail(
     const isAxisHub = axis !== null && AXIS_HUB_PAGE[axis] === page;
 
     if (axis && !isAxisHub) {
-      crumbs.push({ label: t.pages[AXIS_HUB_PAGE[axis]] });
+      crumbs.push(
+        axis === "dossiers"
+          ? {
+              label: t.pages.dossiersHub,
+              href: getLocalizedRoute(language, "dossiersHub"),
+            }
+          : { label: t.pages[AXIS_HUB_PAGE[axis]] }
+      );
+      if (axis === "dossiers") {
+        const dossier = [
+          ...getDossiers({ language }),
+          ...getDossiers({ format: "anecdote", language }),
+        ].find(
+          (candidate) =>
+            pathname === candidate.href ||
+            pathname.startsWith(`${candidate.href}/`)
+        );
+        const theme = getDossierThemes(language).find(
+          (candidate) => candidate.id === dossier?.primaryTheme
+        );
+        if (theme)
+          crumbs.push({
+            label: theme.label,
+            href: getDossierThemeHref(theme.id, language),
+          });
+      }
     }
 
     base = getLocalizedRoute(language, page);

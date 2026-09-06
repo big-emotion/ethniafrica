@@ -1,3 +1,4 @@
+import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 import {
@@ -163,6 +164,12 @@ export function PeopleDetailViewV2({
           whyProblematic={people.appellations?.whyProblematic}
           contemporaryUsage={data.hero.contemporaryUsage}
           isoCode={people.languages?.isoCodes?.[0]}
+        />
+        <DossierLinks
+          language={language}
+          kind="people"
+          id={people.id}
+          section="appellations"
         />
       </FicheSection>
 

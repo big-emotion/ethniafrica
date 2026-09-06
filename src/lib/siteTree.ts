@@ -1,4 +1,6 @@
 import { NOMMER_CHAPTERS } from "@/lib/dossiers/nommer/chapters";
+import { getPublishedThemes } from "@/lib/dossiers/catalog";
+import { getDossierThemeHref } from "@/lib/dossiers/themes";
 import { GAME_DEFINITIONS } from "@/lib/games/gameRegistry";
 import {
   ACCESS_MODE_LABELS,
@@ -145,6 +147,14 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
       blurb:
         "D'où vient ce nom, d'où vient ce peuple, et qui l'affirme. Les trois questions dans cet ordre.",
       links: [
+        {
+          href: route("dossiersHub"),
+          label: language === "en" ? "All dossiers" : "Tous les dossiers",
+        },
+        ...getPublishedThemes(undefined, language).map((theme) => ({
+          href: getDossierThemeHref(theme.id, language),
+          label: theme.label,
+        })),
         {
           href: route("nommer"),
           label: "Qui a donné ce nom ?",

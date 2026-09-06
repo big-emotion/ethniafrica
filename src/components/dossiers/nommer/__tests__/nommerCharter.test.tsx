@@ -19,6 +19,7 @@ import { NOMMER_CHAPTER_KEYS, NOMMER_CHAPTER_SLUGS } from "@/lib/routing";
 
 vi.mock("next/navigation", () => ({
   usePathname: () => "/fr",
+  useRouter: () => ({ push: vi.fn() }),
 }));
 
 vi.mock("@/components/layout/PageLayout", () => ({
@@ -181,7 +182,7 @@ describe("the Nommer dossier — charter contract", () => {
       );
 
       expect(glyphs.length, mode).toBeGreaterThanOrEqual(
-        getModulesForAccessMode(mode).length
+        mode === "dossiers" ? 0 : getModulesForAccessMode(mode).length
       );
       expect(
         blanks.map((icon) => icon.getAttribute("class")),

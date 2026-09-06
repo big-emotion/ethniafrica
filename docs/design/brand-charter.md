@@ -218,9 +218,10 @@ masthead's own axis buttons — a legend in the chrome, not the page speaking:
 | **`/fr`**                                    | **13**   | 3        | **10**         |
 
 The second row is kept as measured and no longer describes a live surface: the
-three axis landing pages were removed by ETNI-1555, so `/fr/atlas`,
-`/fr/dossiers` and `/fr/jeux` answer 404. Only their `/fr/<axis>/*` children
-remain, and the count above is what an axis page did while it existed.
+three axis landing pages were removed by ETNI-1555. The dossier index was
+restored by the user-approved architecture of 6 September 2026 to provide
+theme discovery and search; `/fr/atlas` and `/fr/jeux` remain retired. The
+count above records the earlier surfaces, not a measurement of the new index.
 
 So the rule holds on every surface but the home, and the home's ten are not
 arbitrary either: the purpose rows carry the entity mapping (pays → teal,
