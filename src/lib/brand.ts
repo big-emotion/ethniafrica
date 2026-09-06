@@ -20,8 +20,8 @@
  * There is no site-locale variable. `NEXT_PUBLIC_SITE_LOCALE` used to name a
  * single locale for the whole site — the model the bilingual site ends
  * (ARCH-021) — and was read by nothing but its own test. The locales the site
- * publishes, and the default, are `LOCALES` and `DEFAULT_LOCALE` in
- * `src/lib/locale.ts`; the Open Graph form of each is
+ * publishes, and the default, come from `getPublishedLocales()` and
+ * `getDefaultLocale()` in `src/lib/locale.ts`; the Open Graph form of each is
  * `OG_LOCALE_BY_LANGUAGE` in `src/lib/seo/localeAlternates.ts`.
  *
  * All environment variables use the `NEXT_PUBLIC_` prefix to ensure they are

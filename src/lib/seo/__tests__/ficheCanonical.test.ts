@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const { ficheHasTranslationMock } = vi.hoisted(() => ({
   ficheHasTranslationMock: vi.fn(),
@@ -45,6 +45,10 @@ beforeEach(() => {
   );
 });
 
+afterEach(() => {
+  vi.unstubAllEnvs();
+});
+
 describe("ficheCanonical", () => {
   for (const [kind, [id, route]] of Object.entries(ROUTES) as [
     FicheKind,
@@ -89,11 +93,13 @@ describe("ficheCanonical", () => {
 
   // @req REQ-141
   it("clusters only the French address while the fiche has no English record", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
     const french = await ficheCanonical("people", "fr", "PPL_YORUBA");
     const english = await ficheCanonical("people", "en", "PPL_YORUBA");
 
     expect(french.alternates?.languages).toEqual({
       fr: `${BASE}${getPeopleRoute("fr", "PPL_YORUBA")}`,
+      "x-default": `${BASE}${getPeopleRoute("fr", "PPL_YORUBA")}`,
     });
     expect(french).not.toHaveProperty("robots");
     expect(english.alternates?.canonical).toBe(
@@ -104,6 +110,7 @@ describe("ficheCanonical", () => {
 
   // @req REQ-141
   it("clusters both locales, x-default on English, once a record exists", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-en-default");
     ficheHasTranslationMock.mockResolvedValue(true);
 
     const metadata = await ficheCanonical("country", "en", "BEN");
@@ -120,6 +127,7 @@ describe("ficheCanonical", () => {
   // slug: a pinned revision has the translation its live fiche has.
   // @req REQ-141
   it("reads the parity of the live fiche, whatever the slug's version", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-fr-default");
     await ficheCanonical("family", "en", "FLG_BANTU@v2");
 
     expect(ficheHasTranslationMock).toHaveBeenCalledWith(

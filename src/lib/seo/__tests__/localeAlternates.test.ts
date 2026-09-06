@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { CANONICAL_DOMAIN } from "@/lib/brand";
 import { LOCALES } from "@/lib/locale";
@@ -25,9 +25,14 @@ import type { Language } from "@/types/shared";
 const BASE = `https://${CANONICAL_DOMAIN}`;
 const peoplesFacet = (lang: Language) => getLocalizedRoute(lang, "peoples");
 
+afterEach(() => {
+  vi.unstubAllEnvs();
+});
+
 describe("pageAlternates", () => {
   // @req REQ-141
   it("declares both locales and x-default on the English URL when both are indexed", () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-en-default");
     const alternates = pageAlternates("fr", peoplesFacet, LOCALES);
 
     expect(alternates).toEqual({
@@ -37,6 +42,32 @@ describe("pageAlternates", () => {
         fr: `${BASE}${peoplesFacet("fr")}`,
         "x-default": `${BASE}${peoplesFacet("en")}`,
       },
+    });
+  });
+
+  // The launch gate owns the default. Preparing English must not change the
+  // unprefixed French destination or advertise English as the default early.
+  // @req REQ-140
+  // @req REQ-141
+  it("keeps x-default on French in French-default publication modes", () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-fr-default");
+
+    expect(pageAlternates("fr", peoplesFacet, LOCALES).languages).toEqual({
+      en: `${BASE}${peoplesFacet("en")}`,
+      fr: `${BASE}${peoplesFacet("fr")}`,
+      "x-default": `${BASE}${peoplesFacet("fr")}`,
+    });
+  });
+
+  // Callers may know content parity but publication remains the final gate.
+  // @req REQ-140
+  // @req REQ-141
+  it("drops English even when a caller offers it while fr-only", () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
+
+    expect(pageAlternates("fr", peoplesFacet, LOCALES).languages).toEqual({
+      fr: `${BASE}${peoplesFacet("fr")}`,
+      "x-default": `${BASE}${peoplesFacet("fr")}`,
     });
   });
 
@@ -67,13 +98,15 @@ describe("pageAlternates", () => {
   });
 
   // @req REQ-141
-  it("drops a locale that is not indexed from the cluster, x-default with it", () => {
+  it("drops an unpublished locale and keeps x-default on the published French page", () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
     const alternates = pageAlternates("fr", peoplesFacet, ["fr"]);
 
     expect(alternates.languages).toEqual({
       fr: `${BASE}${peoplesFacet("fr")}`,
+      "x-default": `${BASE}${peoplesFacet("fr")}`,
     });
-    expect(alternates.languages).not.toHaveProperty("x-default");
+    expect(alternates.languages).not.toHaveProperty("en");
   });
 
   // A page kept out of the index everywhere — a source, a comparison, a
@@ -112,6 +145,7 @@ describe("localeOpenGraph", () => {
   // root layout gave it. The helper therefore returns the whole object.
   // @req REQ-141
   it("carries the site card, the page's url and the locale pair", () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-fr-default");
     const alternates = pageAlternates("fr", peoplesFacet, LOCALES);
     const openGraph = localeOpenGraph("fr", alternates, {
       title: "Peuples",
@@ -145,6 +179,17 @@ describe("localeHead", () => {
 
     expect(indexed).not.toHaveProperty("robots");
     expect(withheld.robots).toEqual({ index: false, follow: true });
+  });
+
+  // @req REQ-140
+  // @req REQ-141
+  it("withholds English when publication is closed even if parity is offered", () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
+
+    expect(localeHead("en", peoplesFacet, LOCALES).robots).toEqual({
+      index: false,
+      follow: true,
+    });
   });
 
   // @req REQ-141

@@ -29,6 +29,58 @@ interface TranslationRow {
   review_required: string[] | null;
 }
 
+/** Below PostgREST's default 1,000-row response ceiling. */
+// @req REQ-142
+export const TRANSLATION_ID_PAGE_SIZE = 500;
+const TRANSLATION_ID_MAX_PAGES = 40;
+
+/**
+ * Translation ids for sitemap parity, read in bounded pages.
+ *
+ * This is intentionally separate from `getAfrikTranslation`: the sitemap
+ * needs presence for a whole fiche class and must not fetch every translated
+ * payload or open one request per fiche.
+ */
+// @req REQ-141
+// @req REQ-142
+export async function getAfrikTranslationIds(
+  entityType: TranslationEntityType,
+  lang: TranslationLocale
+): Promise<string[]> {
+  const supabase = createServerClient();
+  const ids: string[] = [];
+
+  for (let page = 0; page < TRANSLATION_ID_MAX_PAGES; page++) {
+    const start = page * TRANSLATION_ID_PAGE_SIZE;
+    const { data, error } = (await supabase
+      .from("afrik_translations")
+      .select("entity_id")
+      .eq("entity_type", entityType)
+      .eq("lang", lang)
+      .order("entity_id")
+      .range(start, start + TRANSLATION_ID_PAGE_SIZE - 1)) as unknown as {
+      data: { entity_id: string }[] | null;
+      error: unknown;
+    };
+
+    if (error) {
+      logger.error(
+        `Error fetching AFRIK translation ids ${entityType}/${lang}`,
+        error
+      );
+      throw error;
+    }
+
+    const rows = data ?? [];
+    ids.push(...rows.map((row) => row.entity_id));
+    if (rows.length < TRANSLATION_ID_PAGE_SIZE) return ids;
+  }
+
+  throw new Error(
+    `AFRIK translation ids ${entityType}/${lang} exceeded ${TRANSLATION_ID_MAX_PAGES} pages`
+  );
+}
+
 // @req REQ-142
 export async function getAfrikTranslation(
   entityType: TranslationEntityType,

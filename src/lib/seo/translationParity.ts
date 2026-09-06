@@ -1,4 +1,9 @@
 import type { FicheKind } from "@/lib/seo/ficheCanonical";
+import type { TranslationEntityType } from "@/lib/afrik/translations/types";
+import {
+  getAfrikTranslation,
+  getAfrikTranslationIds,
+} from "@/lib/supabase/queries/afrik/translations";
 import type { Language } from "@/types/shared";
 
 /**
@@ -9,22 +14,42 @@ import type { Language } from "@/types/shared";
 // @req REQ-141
 export const CORPUS_LOCALE: Language = "fr";
 
-/**
- * Whether a fiche has a translation in a locale.
- *
- * A seam rather than a service: there is no table to read yet. ETNI-1826
- * lands the translation records (`afrik_translations`, keyed by entity kind,
- * entity id and locale) and is the PR that replaces the body below with the
- * read — signature unchanged, so the fiche routes, the sitemap and the
- * hreflang clusters follow without being touched. Until then the honest
- * answer is that a fiche exists only in the locale the corpus is written in,
- * which keeps every `/en` fiche `noindex` and out of the English sitemap.
- */
+const TRANSLATION_ENTITY_BY_FICHE: Record<FicheKind, TranslationEntityType> = {
+  country: "country",
+  people: "people",
+  family: "language_family",
+  language: "language",
+  name: "patronyme",
+  peopleLinks: "people",
+};
+
+/** Whether a fiche has authored content in a locale. */
 // @req REQ-141
 export async function ficheHasTranslation(
-  _kind: FicheKind,
-  _id: string,
+  kind: FicheKind,
+  id: string,
   lang: Language
 ): Promise<boolean> {
-  return lang === CORPUS_LOCALE;
+  if (lang === CORPUS_LOCALE) return true;
+
+  return (
+    (await getAfrikTranslation(TRANSLATION_ENTITY_BY_FICHE[kind], id, lang)) !==
+    null
+  );
+}
+
+/** Filter a fiche class with one store read, for the sitemap. */
+// @req REQ-141
+// @req REQ-142
+export async function ficheIdsWithTranslation(
+  kind: FicheKind,
+  ids: readonly string[],
+  lang: Language
+): Promise<string[]> {
+  if (lang === CORPUS_LOCALE) return [...ids];
+
+  const translated = new Set(
+    await getAfrikTranslationIds(TRANSLATION_ENTITY_BY_FICHE[kind], lang)
+  );
+  return ids.filter((id) => translated.has(id));
 }

@@ -34,6 +34,10 @@ import {
 } from "@/lib/seo/localeIndexing";
 import type { Language } from "@/types/shared";
 
+// Exercise the final two-locale launch state. Silent fr-only behaviour is
+// covered independently in localeAlternates, localeIndexing and sitemap.
+vi.stubEnv("SITE_LOCALE_MODE", "bilingual-en-default");
+
 // Each fiche's `generateMetadata` also decides whether the entity exists,
 // which is a database read. The stubs answer it so the walk never touches
 // Supabase; what they answer with is what the fiche-seo baseline uses.
@@ -70,6 +74,11 @@ vi.mock("@/api/v2/services/patronymes", async (importOriginal) => ({
 vi.mock("@/api/v2/services/sources", async (importOriginal) => ({
   ...(await importOriginal<object>()),
   getSourceById: async () => null,
+}));
+
+vi.mock("@/lib/supabase/queries/afrik/translations", () => ({
+  getAfrikTranslation: async () => null,
+  getAfrikTranslationIds: async () => [],
 }));
 
 vi.mock("@/api/v2/handlers/compare", () => ({
@@ -160,6 +169,11 @@ const FIXTURES: Record<string, RouteFixture> = {
     params: { slug: "classifications-contestees" },
     expectation: { surface: "doctrine" },
   },
+  dossiers: { expectation: { surface: "dossiersHub" } },
+  "dossiers/[dossier]": {
+    params: { dossier: "royaume-kongo" },
+    expectation: { surface: "dossierKongo" },
+  },
   "dossiers/anecdotes": { expectation: { surface: "anecdotes" } },
   "dossiers/migrations": { expectation: { surface: "migrations" } },
   "dossiers/nommer": { expectation: { surface: "nommer" } },
@@ -170,6 +184,10 @@ const FIXTURES: Record<string, RouteFixture> = {
   "dossiers/nommer/le-peuple": { expectation: { surface: "nommer" } },
   "dossiers/regards/colonisation-et-resistances": {
     expectation: { surface: "colonization" },
+  },
+  "dossiers/themes/[theme]": {
+    params: { theme: "pouvoirs" },
+    expectation: { surface: "dossierThemes" as IndexedSurface },
   },
   glossaire: { expectation: { surface: "glossary" } },
   "jeux/[jeu]": {
@@ -262,6 +280,29 @@ describe("locale alternates — every public page", () => {
   it("knows every page under [lang], so a new route cannot ship without a head", () => {
     expect(ROUTES).toEqual(Object.keys(FIXTURES).sort());
   });
+
+  // Translation artifacts can be deployed before launch, but none of the 46
+  // public routes may announce an English alternate while the gate is closed.
+  // @req REQ-140
+  // @req REQ-141
+  it("announces no English alternate anywhere in fr-only mode", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
+    try {
+      for (const route of ROUTES) {
+        for (const lang of LOCALES) {
+          const languages = (await headOf(route, lang)).alternates?.languages;
+          expect(languages?.en, route).toBeUndefined();
+          if (languages?.fr) {
+            expect(languages["x-default"], route).toBe(languages.fr);
+          } else {
+            expect(languages?.["x-default"], route).toBeUndefined();
+          }
+        }
+      }
+    } finally {
+      vi.stubEnv("SITE_LOCALE_MODE", "bilingual-en-default");
+    }
+  }, 15_000);
 
   for (const route of ROUTES) {
     const fixture = FIXTURES[route];

@@ -44,31 +44,29 @@ contract (`src/app/[lang]/__tests__/localeAlternatesCharter.test.ts`) then
 holds the page to a two-locale cluster with `x-default`. The sitemap follows
 the same constant, so the English rubric appears there in the same commit.
 
-Measured on 2026-09-05 against the bilingual foundation, one surface qualifies:
-the ethnonym index (`names`), whose copy is `translations.names` and whose rows
-are the names peoples are called by. Everything else — the home hero, the
-facets' ledes and filters, the search results, the doctrine, the dossiers, the
-legal pages, the reports, the quiz tracks — still carries French prose under
-`/en`. Consequence worth stating plainly: until the home is translated, `/en`
-(the default locale's front door) declares `noindex`, and `/fr` is the home a
-search engine is invited to.
+The list currently contains the ethnonym index (`names`), the bilingual dossier
+directory and themes, plus the Kongo, Luba, Lunda and Kongo-spiritualities
+dossiers whose English sidecars are present. Everything else stays out while
+its body still carries French prose under `/en`. Until the home is translated,
+`/en` declares `noindex`, and `/fr` is the home a search engine is invited to.
 
-For fiches there is nothing to lift by hand: the seam in `translationParity.ts`
-answers `fr` only until ETNI-1826 lands the translation records, and that PR
-replaces its body with the read. Every `/en` fiche is `noindex` and absent from
-the English sitemap until then, which is the correct state, not a defect.
+For fiches there is nothing to lift by hand: `translationParity.ts` reads the
+records landed by ETNI-1826. Every `/en` fiche stays `noindex` and absent from
+the English sitemap until its record exists. The sitemap reads record ids in
+bounded batches rather than issuing one query per fiche.
+
+Parity never overrides publication. In `fr-only`, English remains absent from
+the sitemap and every hreflang cluster even when translations are already in
+the store. This lets translations reach recette and production silently before
+the product owner opens the locale.
 
 ## The `x-default` choice
 
-`x-default` is **the English URL**, as REQ-141 is catalogued: English is the
-default locale (DEC-046), so a reader whose language matches neither cluster
-member lands where an unprefixed request lands.
-
-It is declared only when the English page is indexed. While a surface is
-French-only, the cluster carries the French address alone and no `x-default`
-— pointing it at a `noindex` page would poison the cluster, and pointing it at
-the French page would contradict the requirement. The day the surface reaches
-parity, `x-default` appears with the English entry, from the same constant.
+`x-default` follows `SITE_LOCALE_MODE`, exactly like the unprefixed route. It
+points to French in `fr-only` and `bilingual-fr-default`, and to English only
+in `bilingual-en-default` (the final DEC-046 launch state). It is emitted only
+when that default locale is indexed; an alternate never points at a `noindex`
+page.
 
 ## Where it is enforced
 

@@ -4,6 +4,11 @@ vi.mock("@/lib/supabase/queries/afrik/sitemapEntries", () => ({
   getSitemapEntityIds: vi.fn(),
 }));
 
+vi.mock("@/lib/supabase/queries/afrik/translations", () => ({
+  getAfrikTranslation: vi.fn(),
+  getAfrikTranslationIds: vi.fn(),
+}));
+
 import robots from "../robots";
 import sitemap, { revalidate } from "../sitemap";
 import { CANONICAL_DOMAIN } from "@/lib/brand";
@@ -11,6 +16,7 @@ import { LOCALES } from "@/lib/locale";
 import { SURFACES_AT_PARITY } from "@/lib/seo/localeIndexing";
 import { UNLISTED_ROUTES } from "@/lib/siteTree";
 import { getSitemapEntityIds } from "@/lib/supabase/queries/afrik/sitemapEntries";
+import { getAfrikTranslationIds } from "@/lib/supabase/queries/afrik/translations";
 import {
   getCountryRoute,
   getFamilyRoute,
@@ -23,6 +29,9 @@ import {
 } from "@/lib/routing";
 
 const mockedEntityIds = getSitemapEntityIds as unknown as ReturnType<
+  typeof vi.fn
+>;
+const mockedTranslationIds = getAfrikTranslationIds as unknown as ReturnType<
   typeof vi.fn
 >;
 
@@ -42,7 +51,9 @@ async function urls() {
 describe("sitemap.xml", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
     mockedEntityIds.mockResolvedValue(CORPUS);
+    mockedTranslationIds.mockResolvedValue([]);
   });
 
   afterEach(() => {
@@ -193,6 +204,7 @@ describe("sitemap.xml", () => {
   // the page.
   // @req REQ-141
   it("lists the English rubric of every surface at parity, and no other", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-fr-default");
     const all = await urls();
     const base = `https://${CANONICAL_DOMAIN}`;
 
@@ -205,17 +217,31 @@ describe("sitemap.xml", () => {
     expect(all).not.toContain(`${base}${getStaticPageRoute("en", "sitemap")}`);
   });
 
-  // Until ETNI-1826 lands the translation records no fiche has an English
-  // counterpart to index, so the English half of the sitemap holds rubrics
-  // alone. The day the seam reads a record, this assertion flips with it.
+  // With no translation record, the English half holds rubrics alone.
   // @req REQ-141
   it("lists no fiche under /en while no fiche has a translation record", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-fr-default");
     const all = await urls();
     const base = `https://${CANONICAL_DOMAIN}`;
 
     expect(all).toContain(`${base}${getPeopleRoute("fr", "PPL_WOLOF")}`);
     expect(all).not.toContain(`${base}${getPeopleRoute("en", "PPL_WOLOF")}`);
     expect(all.filter((url) => url.startsWith(`${base}/en/`))).not.toEqual([]);
+  });
+
+  // @req REQ-141
+  // @req REQ-142
+  it("lists an English fiche once its translation record exists", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-fr-default");
+    mockedTranslationIds.mockImplementation(async (kind: string) =>
+      kind === "people" ? ["PPL_WOLOF"] : []
+    );
+
+    const all = await urls();
+    const base = `https://${CANONICAL_DOMAIN}`;
+    expect(all).toContain(`${base}${getPeopleRoute("en", "PPL_WOLOF")}`);
+    expect(all).toContain(`${base}${getPeopleLinksRoute("en", "PPL_WOLOF")}`);
+    expect(mockedTranslationIds).toHaveBeenCalledTimes(5);
   });
 
   // The static pages used to be composed from the French folder names under
@@ -291,6 +317,7 @@ describe("robots.txt", () => {
   // disallow list shrank back to what authentication alone hides.
   // @req REQ-110
   it("bans the authenticated surfaces", () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-fr-default");
     const rule = robots().rules;
     const disallow = Array.isArray(rule) ? rule[0].disallow : rule.disallow;
 

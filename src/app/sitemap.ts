@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { CANONICAL_DOMAIN } from "@/lib/brand";
-import { LOCALES } from "@/lib/locale";
+import { getPublishedLocales } from "@/lib/locale";
 import {
   getCountryRoute,
   getFamilyRoute,
@@ -12,10 +12,10 @@ import {
 } from "@/lib/routing";
 import type { FicheKind } from "@/lib/seo/ficheCanonical";
 import {
-  ficheIndexedLocales,
   surfaceForPath,
   surfaceIndexedLocales,
 } from "@/lib/seo/localeIndexing";
+import { ficheIdsWithTranslation } from "@/lib/seo/translationParity";
 import { getSiteTreePaths } from "@/lib/siteTree";
 import { getSitemapEntityIds } from "@/lib/supabase/queries/afrik/sitemapEntries";
 import type { Language } from "@/types/shared";
@@ -31,9 +31,9 @@ import type { Language } from "@/types/shared";
  *
  * It lists a URL under a locale only when the page is indexed there
  * (REQ-141): a rubric when its surface is at parity, a fiche when a
- * translation record exists for it. The English half therefore holds the
- * rubrics at parity and no fiche until ETNI-1826 lands the records — a
- * sitemap that listed a `noindex` page would contradict the page.
+ * translation record exists for it. The English half therefore holds only
+ * parity-ready rubrics and fiches backed by ETNI-1826 translation records —
+ * a sitemap that listed a `noindex` page would contradict the page.
  *
  * And this is a Next special file, not a route segment: it sits outside the
  * root layout's tree, so the `await connection()` that makes every page
@@ -76,12 +76,12 @@ async function indexedIds(
   ids: string[],
   locale: Language
 ): Promise<string[]> {
-  const verdicts = await Promise.all(
-    ids.map(async (id) =>
-      (await ficheIndexedLocales(kind, id)).includes(locale)
-    )
-  );
-  return ids.filter((_, index) => verdicts[index]);
+  try {
+    return await ficheIdsWithTranslation(kind, ids, locale);
+  } catch {
+    // A parity read may withhold translated URLs, never the authored corpus.
+    return locale === "fr" ? ids : [];
+  }
 }
 
 async function fichePaths(
@@ -115,7 +115,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const corpus = await getSitemapEntityIds();
 
   const entries: MetadataRoute.Sitemap = [];
-  for (const locale of LOCALES) {
+  for (const locale of getPublishedLocales()) {
     for (const path of indexedRubrics(locale)) {
       entries.push(
         entry(path, RUBRIC_CHANGE_FREQUENCY, path === `/${locale}` ? 1 : 0.8)

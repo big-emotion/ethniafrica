@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { LOCALES } from "@/lib/locale";
+import { getPublishedLocales } from "@/lib/locale";
 import {
   STATIC_PAGE_SLUGS,
   getLocalizedRoute,
@@ -42,33 +42,45 @@ import type { Language } from "@/types/shared";
  * landing page, never indexed).
  */
 // @req REQ-141
-export type IndexedSurface = PageType | StaticPageKey | "home" | "games";
+export type IndexedSurface =
+  PageType | StaticPageKey | "home" | "games" | "dossierThemes";
 
 /**
  * The surfaces whose chrome and content read in every published locale.
  *
  * Measured, not aspirational, the way `SOFT_CHECK_NAMES` is in
  * validateAfrikData.ts: a surface enters this list when its page copy comes
- * from the locale dictionary (`src/lib/translations.ts`) and what it lists
- * needs no translating, and the wave that translates a surface is the commit
- * that adds it here. Measured on 2026-09-05 against the foundation branch:
+ * from localized copy and what it lists needs no translating, and the wave
+ * that translates a surface is the commit that adds it here.
  *
  *   · `names` — the ethnonym index. Its copy is `translations.names`, the
  *     nomenclature component reads the dictionary, and its rows are the
  *     names peoples are called by, which are proper nouns in either locale.
+ *   · the dossiers directory and themes — their copy comes from the bilingual
+ *     catalog.
+ *   · Kongo, Luba, Lunda and Kongo spiritualities — each has an English
+ *     dossier sidecar read by the route.
  *
- * Everything else still carries French prose under `/en`: the home hero and
- * its facts, the facets' ledes and filter labels, the search results, the
- * legal pages (machine-translated with a French-prevails notice, ETNI-1830),
- * the doctrine, the dossiers, the glossary, the reports, the quiz tracks. A
- * dictionary existing for a page is not parity while its body is French.
+ * Every other surface stays outside the list while its body carries French
+ * prose under `/en`. A dictionary existing for a page is not parity while its
+ * body is French.
  */
 // @req REQ-141
-export const SURFACES_AT_PARITY: readonly IndexedSurface[] = ["names"];
+export const SURFACES_AT_PARITY: readonly IndexedSurface[] = [
+  "names",
+  "dossiersHub",
+  "dossierThemes",
+  "dossierKongo",
+  "dossierLuba",
+  "dossierLunda",
+  "dossierSpiritualitesKongo",
+];
 
 // @req REQ-141
 export const surfaceIndexedLocales = (surface: IndexedSurface): Language[] =>
-  SURFACES_AT_PARITY.includes(surface) ? [...LOCALES] : [CORPUS_LOCALE];
+  SURFACES_AT_PARITY.includes(surface)
+    ? [...getPublishedLocales()]
+    : [CORPUS_LOCALE];
 
 /**
  * The locales a fiche is indexed in: the corpus locale, plus each locale a
@@ -80,14 +92,15 @@ export async function ficheIndexedLocales(
   kind: FicheKind,
   id: string
 ): Promise<Language[]> {
+  const publishedLocales = getPublishedLocales();
   const verdicts = await Promise.all(
-    LOCALES.map((locale) =>
+    publishedLocales.map((locale) =>
       ficheHasTranslation(kind, id, locale).catch(
         () => locale === CORPUS_LOCALE
       )
     )
   );
-  return LOCALES.filter((_, index) => verdicts[index]);
+  return publishedLocales.filter((_, index) => verdicts[index]);
 }
 
 /**
@@ -116,6 +129,8 @@ export function surfaceForPath(
   path: string
 ): IndexedSurface | null {
   if (path === `/${locale}`) return "home";
+  if (path.startsWith(`${getLocalizedRoute(locale, "dossiersHub")}/themes/`))
+    return "dossierThemes";
 
   const page = getPageFromRoute(path);
   if (page) {

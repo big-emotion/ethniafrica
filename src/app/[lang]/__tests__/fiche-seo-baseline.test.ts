@@ -147,9 +147,9 @@ describe("fiche routes — the crawler-facing surface", () => {
         );
       });
 
-      // No translation record exists for any fiche yet, so the cluster holds
-      // the French address alone and the English address is served but
-      // withheld from the index (REQ-141).
+      // In the fail-closed publication mode, the cluster holds the French
+      // address as both `fr` and `x-default`; English is withheld regardless
+      // of any translation records already prepared (REQ-140, REQ-141).
       // @req REQ-141
       it("clusters French alone and withholds its English address from the index", async () => {
         const french = await routeModule.generateMetadata({
@@ -159,7 +159,10 @@ describe("fiche routes — the crawler-facing surface", () => {
           params: Promise.resolve({ lang: "en", slug }),
         });
 
-        expect(Object.keys(french.alternates?.languages ?? {})).toEqual(["fr"]);
+        expect(Object.keys(french.alternates?.languages ?? {})).toEqual([
+          "fr",
+          "x-default",
+        ]);
         expect(french.robots).toBeUndefined();
         expect(english.robots).toEqual({ index: false, follow: true });
         expect(english.alternates?.languages).not.toHaveProperty("en");

@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 
 import { CANONICAL_DOMAIN, OG_DESCRIPTION, OG_TITLE } from "@/lib/brand";
-import { DEFAULT_LOCALE, LOCALES, isLocale } from "@/lib/locale";
+import {
+  LOCALES,
+  getDefaultLocale,
+  getPublishedLocales,
+  isLocale,
+} from "@/lib/locale";
 import {
   robotsForLocale,
   surfaceIndexedLocales,
@@ -20,9 +25,9 @@ import type { Language } from "@/types/shared";
  * canonical pointing at localhost whenever `NEXT_PUBLIC_SITE_URL` was unset.
  * `ficheCanonical` refused that for the fiches; the rubrics now refuse it too.
  *
- * **`x-default` is the English URL**, as REQ-141 is catalogued: English is
- * the default locale (DEC-046), so a reader whose language matches neither
- * cluster member lands where an unprefixed request lands.
+ * **`x-default` follows the publication mode.** It names the URL an
+ * unprefixed request reaches: French while the rollout is silent or
+ * French-default, English only after that explicit launch choice.
  *
  * **The cluster follows the index, not the file tree.** A locale in which
  * the page declares `noindex` is left out of every locale's cluster, and
@@ -44,6 +49,15 @@ interface OpenGraphCopy {
 
 const absoluteUrl = (path: string) => `https://${CANONICAL_DOMAIN}${path}`;
 
+const publishedIndexedLocales = (
+  indexedLocales: readonly Language[]
+): Language[] => {
+  const published = getPublishedLocales();
+  return LOCALES.filter(
+    (locale) => published.includes(locale) && indexedLocales.includes(locale)
+  );
+};
+
 // @req REQ-141
 export function pageAlternates(
   current: Language,
@@ -54,15 +68,16 @@ export function pageAlternates(
     canonical: absoluteUrl(buildPath(current)),
   };
 
-  const indexed = LOCALES.filter((locale) => indexedLocales.includes(locale));
+  const indexed = publishedIndexedLocales(indexedLocales);
   if (indexed.length === 0) return alternates;
 
   const languages: Record<string, string> = {};
   for (const locale of indexed) {
     languages[locale] = absoluteUrl(buildPath(locale));
   }
-  if (indexed.includes(DEFAULT_LOCALE)) {
-    languages["x-default"] = languages[DEFAULT_LOCALE];
+  const defaultLocale = getDefaultLocale();
+  if (indexed.includes(defaultLocale)) {
+    languages["x-default"] = languages[defaultLocale];
   }
   alternates.languages = languages;
   return alternates;
@@ -122,8 +137,9 @@ export function localeHead(
   indexedLocales: readonly Language[],
   copy: OpenGraphCopy = {}
 ): Pick<Metadata, "alternates" | "robots" | "openGraph"> {
-  const alternates = pageAlternates(current, buildPath, indexedLocales);
-  const robots = robotsForLocale(current, indexedLocales);
+  const indexed = publishedIndexedLocales(indexedLocales);
+  const alternates = pageAlternates(current, buildPath, indexed);
+  const robots = robotsForLocale(current, indexed);
   return {
     alternates,
     ...(robots ? { robots } : {}),

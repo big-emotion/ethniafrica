@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const { ficheHasTranslationMock } = vi.hoisted(() => ({
   ficheHasTranslationMock: vi.fn(),
@@ -38,11 +38,26 @@ beforeEach(() => {
   );
 });
 
+afterEach(() => {
+  vi.unstubAllEnvs();
+});
+
 describe("surfaceIndexedLocales", () => {
   // @req REQ-141
   it("indexes a surface at parity in every published locale", () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-fr-default");
     for (const surface of SURFACES_AT_PARITY) {
       expect(surfaceIndexedLocales(surface)).toEqual([...LOCALES]);
+    }
+  });
+
+  // @req REQ-140
+  // @req REQ-141
+  it("does not index English while publication is French-only", () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
+
+    for (const surface of SURFACES_AT_PARITY) {
+      expect(surfaceIndexedLocales(surface)).toEqual(["fr"]);
     }
   });
 
@@ -83,12 +98,29 @@ describe("robotsForLocale", () => {
 describe("ficheIndexedLocales", () => {
   // @req REQ-141
   it("indexes a fiche wherever a translation record exists for it", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-fr-default");
     ficheHasTranslationMock.mockResolvedValue(true);
 
     expect(await ficheIndexedLocales("people", "PPL_YORUBA")).toEqual([
       ...LOCALES,
     ]);
     expect(ficheHasTranslationMock).toHaveBeenCalledWith(
+      "people",
+      "PPL_YORUBA",
+      "en"
+    );
+  });
+
+  // Translation records may be prepared in recette and production before
+  // launch. The publication gate, not record presence, decides visibility.
+  // @req REQ-140
+  // @req REQ-141
+  it("keeps a translated fiche French-only while English is unpublished", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
+    ficheHasTranslationMock.mockResolvedValue(true);
+
+    expect(await ficheIndexedLocales("people", "PPL_YORUBA")).toEqual(["fr"]);
+    expect(ficheHasTranslationMock).not.toHaveBeenCalledWith(
       "people",
       "PPL_YORUBA",
       "en"
@@ -123,6 +155,12 @@ describe("surfaceForPath", () => {
     expect(surfaceForPath("en", getStaticPageRoute("en", "sitemap"))).toBe(
       "sitemap"
     );
+    expect(
+      surfaceForPath(
+        "en",
+        `${getLocalizedRoute("en", "dossiersHub")}/themes/power`
+      )
+    ).toBe("dossierThemes");
     expect(surfaceForPath("fr", getNommerChapterRoute("fr", "le-peuple"))).toBe(
       "nommer"
     );

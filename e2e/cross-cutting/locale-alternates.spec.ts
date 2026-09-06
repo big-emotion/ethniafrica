@@ -1,7 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 
 import { CANONICAL_DOMAIN } from "@/lib/brand";
-import { LOCALES } from "@/lib/locale";
+import { LOCALES, getDefaultLocale, getPublishedLocales } from "@/lib/locale";
 import { getPeopleRoute } from "@/lib/routing";
 import { OG_LOCALE_BY_LANGUAGE } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
@@ -17,6 +17,11 @@ import type { Language } from "@/types/shared";
  */
 
 const BASE = `https://${CANONICAL_DOMAIN}`;
+
+test.skip(
+  getPublishedLocales().length < 2,
+  "run with SITE_LOCALE_MODE=bilingual-fr-default or bilingual-en-default"
+);
 
 async function hreflangCluster(page: Page): Promise<Record<string, string>> {
   const links = await page
@@ -49,14 +54,19 @@ for (const locale of LOCALES) {
   });
 }
 
-// The home is not at parity yet: French alone in the cluster, no x-default.
+// The home is not at parity yet: French alone in the cluster. x-default is
+// present only when the deployment default is that indexed French page.
 // @req REQ-141
 test("the French home clusters only the indexed locales", async ({ page }) => {
   await page.goto("/fr");
 
   const cluster = await hreflangCluster(page);
   expect(cluster.fr).toBe(`${BASE}/fr`);
-  expect(cluster).not.toHaveProperty("x-default");
+  if (getDefaultLocale() === "fr") {
+    expect(cluster["x-default"]).toBe(`${BASE}/fr`);
+  } else {
+    expect(cluster).not.toHaveProperty("x-default");
+  }
 });
 
 const YORUBA: Record<Language, string> = {

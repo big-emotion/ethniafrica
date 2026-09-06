@@ -10,7 +10,11 @@ vi.mock("@/lib/api/logger", () => ({
 
 import { logger } from "@/lib/api/logger";
 import { createServerClient } from "../../../server";
-import { getAfrikTranslation } from "../translations";
+import {
+  TRANSLATION_ID_PAGE_SIZE,
+  getAfrikTranslation,
+  getAfrikTranslationIds,
+} from "../translations";
 
 const ROW = {
   entity_type: "people",
@@ -36,11 +40,61 @@ describe("getAfrikTranslation (REQ-142)", () => {
       from: vi.fn(() => mockSupabase),
       select: vi.fn(() => mockSupabase),
       eq: vi.fn(() => mockSupabase),
+      order: vi.fn(() => mockSupabase),
       single: vi.fn(),
+      range: vi.fn(),
     };
     vi.clearAllMocks();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (createServerClient as any).mockReturnValue(mockSupabase);
+  });
+
+  // The sitemap reads record presence in batches rather than opening one
+  // database request per corpus fiche.
+  // @req REQ-141
+  // @req REQ-142
+  it("pages through translation ids for one entity type and locale", async () => {
+    const firstPage = Array.from(
+      { length: TRANSLATION_ID_PAGE_SIZE },
+      (_, index) => ({ entity_id: `PPL_${index}` })
+    );
+    mockSupabase.range
+      .mockResolvedValueOnce({ data: firstPage, error: null })
+      .mockResolvedValueOnce({
+        data: [{ entity_id: "PPL_LAST" }],
+        error: null,
+      });
+
+    const ids = await getAfrikTranslationIds("people", "en");
+
+    expect(mockSupabase.select).toHaveBeenCalledWith("entity_id");
+    expect(mockSupabase.eq).toHaveBeenCalledWith("entity_type", "people");
+    expect(mockSupabase.eq).toHaveBeenCalledWith("lang", "en");
+    expect(mockSupabase.order).toHaveBeenCalledWith("entity_id");
+    expect(mockSupabase.range).toHaveBeenNthCalledWith(
+      1,
+      0,
+      TRANSLATION_ID_PAGE_SIZE - 1
+    );
+    expect(mockSupabase.range).toHaveBeenNthCalledWith(
+      2,
+      TRANSLATION_ID_PAGE_SIZE,
+      TRANSLATION_ID_PAGE_SIZE * 2 - 1
+    );
+    expect(ids).toHaveLength(TRANSLATION_ID_PAGE_SIZE + 1);
+    expect(ids.at(-1)).toBe("PPL_LAST");
+  });
+
+  // @req REQ-141
+  it("fails the batch read closed when the translation store cannot be read", async () => {
+    const failure = { code: "42P01", message: "missing translation table" };
+    mockSupabase.range.mockResolvedValue({ data: null, error: failure });
+
+    await expect(getAfrikTranslationIds("country", "en")).rejects.toBe(failure);
+    expect(logger.error).toHaveBeenCalledWith(
+      "Error fetching AFRIK translation ids country/en",
+      failure
+    );
   });
 
   // @req REQ-142
