@@ -68,7 +68,10 @@ describe("locale formatters (REQ-140)", () => {
   it("passes explicit date options through", () => {
     const date = new Date(Date.UTC(2026, 3, 10));
     const options = {
-      day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
     } as const;
     expect(formatDate("fr", date, options)).toBe("10 avril 2026");
     expect(formatDate("en", date, options)).toBe("10 April 2026");

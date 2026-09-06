@@ -17,8 +17,7 @@ const en = {
     pageTitle: "Understand the peoples of Africa",
     blurb:
       "The relations axis: where a name comes from, where the peoples passed, and which sources the atlas rests on.",
-    menuBlurb:
-      "Who gave these names, sourced anecdotes, the migrations and colonisation.",
+    menuBlurb: "Read by theme, across peoples, territories and eras.",
     hubEntryName: "The reading hub",
   },
   jeux: {
@@ -86,7 +85,7 @@ const fr: HubsCopy = {
     blurb:
       "L'axe des relations : d'où vient un nom, par où sont passés les peuples, et sur quelles sources l'atlas s'appuie.",
     menuBlurb:
-      "Qui a donné ces noms, des anecdotes sourcées, les migrations et la colonisation.",
+      "Des lectures par thème, à travers les peuples, les territoires et les époques.",
     hubEntryName: "Le hub de lecture",
   },
   jeux: {
