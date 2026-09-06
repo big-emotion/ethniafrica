@@ -10,6 +10,8 @@ import type {
   RelationListItem,
 } from "@/lib/relationsDataTransformer";
 import type { PeopleId } from "@/types/afrik";
+import type { Language } from "@/types/shared";
+import { relationsCopy } from "@/lib/i18n/copy/relations";
 
 export interface EgoNetworkGraphCenter {
   id: PeopleId;
@@ -30,6 +32,7 @@ export interface EgoNetworkGraphProps {
   /** Enter on a focused neighbor node: navigate to that people's own links page. */
   onNodeActivate: (peopleId: PeopleId) => void;
   className?: string;
+  language?: Language;
 }
 
 const MAX_NEIGHBORS = 24;
@@ -53,26 +56,26 @@ function neighborPosition(index: number, total: number) {
   };
 }
 
-function edgeAnnouncement(item: RelationListItem): string {
+function edgeAnnouncement(item: RelationListItem, language: Language): string {
+  const copy = relationsCopy[language].graph;
   const parts = [
-    `Lien ${RELATION_TYPE_LABELS.fr[item.type]} avec ${item.neighbor.nameMain}`,
+    copy.edge(
+      RELATION_TYPE_LABELS[language][item.type],
+      item.neighbor.nameMain
+    ),
   ];
   if (item.period?.label) parts.push(item.period.label);
   if (item.derived) {
-    parts.push(
-      "lien dérivé de la hiérarchie AFRIK, non sourcé individuellement"
-    );
+    parts.push(copy.derived);
   } else if (item.confidence?.sourceCount != null) {
-    parts.push(`${item.confidence.sourceCount} sources`);
+    parts.push(copy.sources(item.confidence.sourceCount));
   }
-  const callToAction = item.derived
-    ? "Entrée pour en savoir plus sur ce lien dérivé."
-    : "Entrée pour ouvrir le détail.";
+  const callToAction = item.derived ? copy.derivedAction : copy.edgeAction;
   return `${parts.join(", ")}. ${callToAction}`;
 }
 
-function nodeAnnouncement(item: RelationListItem): string {
-  return `Nœud ${item.neighbor.nameMain}. Entrée pour naviguer vers cette fiche.`;
+function nodeAnnouncement(item: RelationListItem, language: Language): string {
+  return relationsCopy[language].graph.node(item.neighbor.nameMain);
 }
 
 type FocusStop =
@@ -83,17 +86,19 @@ type FocusStop =
 
 function announcementFor(
   stop: FocusStop,
-  center: EgoNetworkGraphCenter
+  center: EgoNetworkGraphCenter,
+  language: Language
 ): string {
+  const copy = relationsCopy[language].graph;
   switch (stop.kind) {
     case "center":
-      return `Centre : ${center.nameMain}.`;
+      return copy.centre(center.nameMain);
     case "edge":
-      return edgeAnnouncement(stop.item);
+      return edgeAnnouncement(stop.item, language);
     case "node":
-      return nodeAnnouncement(stop.item);
+      return nodeAnnouncement(stop.item, language);
     case "overflow":
-      return `+${stop.count} autres liens, voir la liste complète.`;
+      return copy.overflow(stop.count);
     default:
       return "";
   }
@@ -120,7 +125,9 @@ export function EgoNetworkGraph({
   onEdgeActivate,
   onNodeActivate,
   className,
+  language = "fr",
 }: EgoNetworkGraphProps) {
+  const copy = relationsCopy[language].graph;
   const visibleEdges = edges.slice(0, MAX_NEIGHBORS);
   const overflowCount = Math.max(0, edges.length - MAX_NEIGHBORS);
 
@@ -142,9 +149,8 @@ export function EgoNetworkGraph({
   }, [visibleEdges.length, overflowCount]);
 
   const [activeIndex, setActiveIndex] = React.useState(0);
-  const [liveMessage, setLiveMessage] = React.useState(
-    () =>
-      `Graphe de relations centré sur ${center.nameMain} : ${visibleEdges.length} liens. Flèches pour parcourir les liens, Échap pour quitter.`
+  const [liveMessage, setLiveMessage] = React.useState(() =>
+    copy.intro(center.nameMain, visibleEdges.length)
   );
   const stopRefs = React.useRef<Map<string, SVGElement>>(new Map());
 
@@ -159,7 +165,7 @@ export function EgoNetworkGraph({
     const stop = stops[index];
     if (!stop) return;
     setActiveIndex(index);
-    setLiveMessage(announcementFor(stop, center));
+    setLiveMessage(announcementFor(stop, center, language));
     stopRefs.current.get(stop.key)?.focus();
   }
 
@@ -201,8 +207,8 @@ export function EgoNetworkGraph({
       <svg
         viewBox={`0 0 ${VIEWBOX} ${VIEWBOX}`}
         role="application"
-        aria-roledescription="graphe de relations"
-        aria-label={`Graphe de relations centré sur ${center.nameMain}`}
+        aria-roledescription={copy.role}
+        aria-label={copy.label(center.nameMain)}
         onKeyDown={handleKeyDown}
         className="h-auto w-full"
         style={{
@@ -237,7 +243,7 @@ export function EgoNetworkGraph({
             <g
               ref={registerRef("center")}
               role="button"
-              aria-label={announcementFor(stop, center)}
+              aria-label={announcementFor(stop, center, language)}
               tabIndex={isActive ? 0 : -1}
               onFocus={() => setActiveIndex(0)}
               data-testid="center"
@@ -288,7 +294,7 @@ export function EgoNetworkGraph({
               <g
                 ref={registerRef(edgeStop.key)}
                 role="button"
-                aria-label={announcementFor(edgeStop, center)}
+                aria-label={announcementFor(edgeStop, center, language)}
                 tabIndex={isEdgeActive ? 0 : -1}
                 onFocus={() => setActiveIndex(edgeStopIndex)}
                 data-testid={edgeStop.key}
@@ -319,14 +325,14 @@ export function EgoNetworkGraph({
                   dominantBaseline="middle"
                   className="fill-afh-text text-afh-eyebrow font-medium"
                 >
-                  {RELATION_TYPE_LABELS.fr[item.type]}
+                  {RELATION_TYPE_LABELS[language][item.type]}
                 </text>
               </g>
 
               <g
                 ref={registerRef(nodeStop.key)}
                 role="button"
-                aria-label={announcementFor(nodeStop, center)}
+                aria-label={announcementFor(nodeStop, center, language)}
                 tabIndex={isNodeActive ? 0 : -1}
                 onFocus={() => setActiveIndex(nodeStopIndex)}
                 data-testid={nodeStop.key}
@@ -369,7 +375,7 @@ export function EgoNetworkGraph({
               <g
                 ref={registerRef("overflow")}
                 role="button"
-                aria-label={announcementFor(stop, center)}
+                aria-label={announcementFor(stop, center, language)}
                 tabIndex={isActive ? 0 : -1}
                 onFocus={() => setActiveIndex(stops.length - 1)}
                 data-testid="overflow"
@@ -391,7 +397,9 @@ export function EgoNetworkGraph({
                     isActive && "fill-afh-gold"
                   )}
                 >
-                  +{overflowCount} autres
+                  {language === "en"
+                    ? `+${overflowCount} more`
+                    : `+${overflowCount} autres`}
                 </text>
               </g>
             );

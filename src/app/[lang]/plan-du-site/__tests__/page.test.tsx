@@ -53,4 +53,12 @@ describe("the site plan", () => {
       "en"
     );
   });
+
+  // @req REQ-145
+  it("labels each English section in English", async () => {
+    render(await SitemapPage({ params: routeParams("en") }));
+
+    expect(screen.getByText("01 · Section")).toBeInTheDocument();
+    expect(screen.queryByText(/Rubrique/)).not.toBeInTheDocument();
+  });
 });

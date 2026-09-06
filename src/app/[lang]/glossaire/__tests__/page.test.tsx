@@ -7,6 +7,7 @@ import { getLocalizedRoute, getNommerChapterRoute } from "@/lib/routing";
 import GlossairePage from "../page";
 
 const FR = Promise.resolve({ lang: "fr" });
+const EN = Promise.resolve({ lang: "en" });
 
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({
@@ -108,5 +109,32 @@ describe("the glossary page", () => {
       1
     );
     expect(getLocalizedRoute("fr", "glossary")).toBe("/fr/glossaire");
+  });
+
+  // Class-three glossary definitions cannot be published from their machine
+  // sidecar. The English route still owes the reader English navigation and a
+  // plain statement that the French originals follow.
+  // @req REQ-143
+  // @req REQ-145
+  it("labels its reviewed-language fallback on the English route", async () => {
+    const { container } = render(await GlossairePage({ params: EN }));
+    const first = GLOSSARY_ENTRIES[0];
+    const article = container.querySelector(`#terme-${first.id}`);
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Glossary" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("status", {
+        name: "English definitions are awaiting editorial review. The French originals follow.",
+      })
+    ).toBeInTheDocument();
+    expect(article).toHaveTextContent(first.en);
+    expect(article?.querySelector('[lang="fr"]')).toHaveTextContent(
+      first.definition
+    );
+    expect(
+      screen.getByRole("navigation", { name: "The three families" })
+    ).toBeInTheDocument();
   });
 });

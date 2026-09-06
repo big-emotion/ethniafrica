@@ -37,6 +37,24 @@ describe("SourcesPageContent (REQ-091)", () => {
     expect(screen.queryByText("Afrique du Nord")).not.toBeInTheDocument();
   });
 
+  // The source annotations carry editorial claims and cannot silently use an
+  // unreviewed machine translation. Until their English review is complete,
+  // the English route must identify the French originals honestly.
+  // @req REQ-143
+  // @req REQ-145
+  it("labels the reviewed-language fallback for dossier source notes", () => {
+    const { container } = render(<SourcesPageContent language="en" />);
+
+    expect(
+      screen.getByRole("status", {
+        name: "Editorial notes for these works are awaiting English review. The French originals follow.",
+      })
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector('[data-dossier-source-note][lang="fr"]')
+    ).toBeInTheDocument();
+  });
+
   // @req REQ-091
   it("keeps the source bibliography available through accessible links", () => {
     render(<SourcesPageContent />);

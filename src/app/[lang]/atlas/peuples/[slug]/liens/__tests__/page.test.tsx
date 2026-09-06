@@ -101,6 +101,9 @@ describe("/[lang]/peuples/[slug]/liens page", () => {
     await renderPage("PPL_YORUBA", "en");
 
     expect(pageLayoutProps.current.language).toBe("en");
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Links for Yoruba" })
+    ).toBeInTheDocument();
   });
 
   // @req REQ-097 FR72
@@ -171,6 +174,18 @@ describe("/[lang]/peuples/[slug]/liens page", () => {
     });
     expect(metadata.title).toContain("Yoruba");
     expect(typeof metadata.description).toBe("string");
+  });
+
+  // @req REQ-145
+  it("builds English metadata for the people's links page", async () => {
+    const metadata = await generateMetadata({
+      params: Promise.resolve({ lang: "en", slug: "PPL_YORUBA" }),
+    });
+
+    expect(metadata.title).toBe("Links for Yoruba — EthniAfrica");
+    expect(metadata.description).toMatch(
+      /documented migratory, commercial and religious links/i
+    );
   });
 
   // The sitemap published every links page while the page itself declared

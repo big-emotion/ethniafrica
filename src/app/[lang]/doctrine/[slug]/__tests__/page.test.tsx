@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import React from "react";
 
 // ---------------------------------------------------------------------------
@@ -48,6 +48,7 @@ vi.mock("@/lib/doctrine/fetchDoctrineEntry", () => ({
 // ---------------------------------------------------------------------------
 import DoctrineSlugPage from "../page";
 import { notFound } from "next/navigation";
+import { DOCTRINE_ENTRIES_EN } from "@/lib/doctrine/doctrineContent.en";
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -83,6 +84,40 @@ describe("/[lang]/doctrine/[slug] page", () => {
     expect(mockFetch).toHaveBeenCalledWith("classifications-contestees");
     expect(getByTestId("mdx-remote").textContent).toContain(
       "Classifications contestées"
+    );
+  });
+
+  // @req REQ-142
+  // @req REQ-145
+  it("serves the English doctrine sidecar with visible machine provenance", async () => {
+    mockFetch.mockResolvedValueOnce({
+      id: "uuid-en",
+      slug: "classifications-contestees",
+      title: "Classifications contestées",
+      mdxSource: "# Classifications contestées\n\nDébat actif.",
+      version: 1,
+      publishedAt: "2026-05-14T00:00:00Z",
+    });
+
+    const { getByTestId } = await renderPage(
+      "classifications-contestees",
+      "en"
+    );
+
+    expect(getByTestId("page-layout")).toHaveAttribute(
+      "data-title",
+      DOCTRINE_ENTRIES_EN["classifications-contestees"].title
+    );
+    expect(getByTestId("mdx-remote").textContent).toBe(
+      DOCTRINE_ENTRIES_EN["classifications-contestees"].mdxSource
+    );
+    expect(
+      screen.getByRole("status", {
+        name: "Machine translation, not yet reviewed",
+      })
+    ).toBeInTheDocument();
+    expect(getByTestId("version-label")).toHaveTextContent(
+      "v1 · published 14 May 2026"
     );
   });
 

@@ -73,7 +73,9 @@ export default async function SitemapPage({ params }: SitemapPageProps) {
           {sections.map((section, index) => (
             <section key={section.id} className="py-9 md:py-12">
               <ChapterHeading
-                stepLabel={`${String(index + 1).padStart(2, "0")} · Rubrique`}
+                stepLabel={`${String(index + 1).padStart(2, "0")} · ${
+                  language === "en" ? "Section" : "Rubrique"
+                }`}
                 heading={section.title}
               />
               <div className="mt-5">

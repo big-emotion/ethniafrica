@@ -10,6 +10,8 @@ import type { EgoNetworkGraphCenter } from "@/components/relations/EgoNetworkGra
 import type { RelationListItem } from "@/lib/relationsDataTransformer";
 import { getPeopleLinksRoute } from "@/lib/routing";
 import type { PeopleId } from "@/types/afrik";
+import type { Language } from "@/types/shared";
+import { relationsCopy } from "@/lib/i18n/copy/relations";
 
 // Deferred off the initial list bundle (Epic 11, Story 11.11, FR75/NFR1):
 // the graph is a below-the-fold enhancement, never required to read the
@@ -29,6 +31,7 @@ export interface RelationsListWithSourceSheetProps {
   neighborLangById?: Partial<Record<PeopleId, string>>;
   initialActiveTypes?: RelationsListProps["initialActiveTypes"];
   className?: string;
+  language?: Language;
 }
 
 /**
@@ -45,7 +48,9 @@ export function RelationsListWithSourceSheet({
   neighborLangById,
   initialActiveTypes,
   className,
+  language = "fr",
 }: RelationsListWithSourceSheetProps) {
+  const copy = relationsCopy[language];
   const router = useRouter();
   const [openRelationId, setOpenRelationId] = useState<string | null>(null);
   const activeItem = items.find((item) => item.id === openRelationId) ?? null;
@@ -68,7 +73,7 @@ export function RelationsListWithSourceSheet({
   }
 
   function handleNodeActivate(peopleId: PeopleId) {
-    router.push(getPeopleLinksRoute("fr", peopleId));
+    router.push(getPeopleLinksRoute(language, peopleId));
   }
 
   useEffect(() => {
@@ -85,6 +90,7 @@ export function RelationsListWithSourceSheet({
         onOpenRelation={setOpenRelationId}
         initialActiveTypes={initialActiveTypes}
         className={className}
+        language={language}
       />
       {items.length > 0 && (
         <div
@@ -95,6 +101,7 @@ export function RelationsListWithSourceSheet({
             center={center}
             edges={items}
             neighborLangById={neighborLangById}
+            language={language}
             onEdgeActivate={handleEdgeActivate}
             onNodeActivate={handleNodeActivate}
           />
@@ -102,6 +109,7 @@ export function RelationsListWithSourceSheet({
       )}
       {activeItem && (
         <SourceChainSheet
+          language={language}
           open={openRelationId !== null}
           onOpenChange={(open) => {
             if (!open) setOpenRelationId(null);
@@ -109,7 +117,7 @@ export function RelationsListWithSourceSheet({
           assertion={{
             statement:
               activeItem.description ??
-              `Lien avec ${activeItem.neighbor.nameMain}`,
+              copy.list.linkWith(activeItem.neighbor.nameMain),
             confidenceScore: activeItem.confidence?.score ?? 0,
             sourceCount: activeItem.confidence?.sourceCount ?? 0,
             lastHumanAuditAt: null,

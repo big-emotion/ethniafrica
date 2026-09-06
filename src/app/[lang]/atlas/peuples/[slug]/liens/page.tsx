@@ -11,6 +11,7 @@ import { getPeopleById } from "@/api/v2/services/peopleService";
 import { getEgoNetwork } from "@/api/v2/services/relations";
 import { transformRelationsToListItems } from "@/lib/relationsDataTransformer";
 import { logger } from "@/lib/api/logger";
+import { relationsCopy } from "@/lib/i18n/copy/relations";
 
 // @req REQ-097 FR72
 export const revalidate = 3600;
@@ -27,9 +28,11 @@ export async function generateMetadata({
   params: Promise<PageParams>;
 }): Promise<Metadata> {
   const { lang, slug } = await params;
+  const language = lang as Language;
+  const copy = relationsCopy[language].page;
   // The links page is a chapter of its people's fiche and shares its
   // canonical treatment: it was in the sitemap with no canonical at all.
-  const head = await ficheCanonical("peopleLinks", lang as Language, slug);
+  const head = await ficheCanonical("peopleLinks", language, slug);
 
   // A read that fails must still leave the document a title. Metadata settles
   // after this segment's Suspense shell — and its `200` — has been flushed, so
@@ -43,17 +46,17 @@ export async function generateMetadata({
     people = await getPeopleById(slug);
   } catch (error) {
     logger.error(`Links metadata read failed for ${slug}`, error);
-    return { ...head, title: "Liens — EthniAfrica" };
+    return { ...head, title: copy.fallbackTitle };
   }
 
   if (!people) {
-    return { title: "Liens introuvables — EthniAfrica" };
+    return { title: copy.missingTitle };
   }
 
   return {
     ...head,
-    title: `Liens de ${people.nameMain} — EthniAfrica`,
-    description: `Liens migratoires, commerciaux et religieux documentés entre ${people.nameMain} et les peuples voisins, avec leurs sources.`,
+    title: copy.metadataTitle(people.nameMain),
+    description: copy.description(people.nameMain),
   };
 }
 
@@ -64,12 +67,14 @@ export default async function PeopleLinksPage({
   params: Promise<PageParams>;
 }) {
   const { lang, slug } = await params;
+  const language = lang as Language;
+  const copy = relationsCopy[language].page;
 
   // The fiche page redirects a retired id to its successor; its links page
   // must follow it there rather than 404 once the old row is pruned.
   const successorId = RETIRED_PEOPLE_IDS[slug];
   if (successorId) {
-    redirect(getPeopleLinksRoute(lang as Language, successorId));
+    redirect(getPeopleLinksRoute(language, successorId));
   }
 
   const [people, egoNetwork] = await Promise.all([
@@ -88,17 +93,18 @@ export default async function PeopleLinksPage({
 
   return (
     <PageLayout
-      language={lang as Language}
-      sectionName="Peuples"
+      language={language}
+      sectionName={copy.section}
       trailLabel={people.nameMain}
     >
       <div className="container mx-auto max-w-4xl px-4 py-8">
         <h1 className="text-afh-h2 font-semibold mt-4 mb-6 text-afh-text">
-          Liens de {people.nameMain}
+          {copy.title(people.nameMain)}
         </h1>
         <RelationsListWithSourceSheet
           items={items}
           center={{ id: people.id, nameMain: people.nameMain }}
+          language={language}
         />
       </div>
     </PageLayout>

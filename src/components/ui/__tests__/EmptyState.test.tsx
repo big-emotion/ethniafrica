@@ -47,6 +47,18 @@ describe("EmptyState", () => {
     expect(link.getAttribute("href")).toContain("familles");
   });
 
+  // @req REQ-145
+  it("renders the English search recovery copy", () => {
+    render(<EmptyState message="No results" variant="search" lang="en" />);
+
+    expect(
+      screen.getByText("Check the spelling or browse by language family.")
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Browse language families" })
+    ).toHaveAttribute("href", getLocalizedRoute("en", "families"));
+  });
+
   it("renders children slot when provided", () => {
     render(
       <EmptyState message="Rien">

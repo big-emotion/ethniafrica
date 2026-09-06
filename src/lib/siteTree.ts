@@ -1,11 +1,9 @@
-import { NOMMER_CHAPTERS } from "@/lib/dossiers/nommer/chapters";
+import { getLocalizedNommerChapters } from "@/lib/dossiers/nommer/localizeChapter";
 import { getDossiers, getPublishedThemes } from "@/lib/dossiers/catalog";
 import { getDossierThemeHref } from "@/lib/dossiers/themes";
 import { GAME_DEFINITIONS } from "@/lib/games/gameRegistry";
-import {
-  ACCESS_MODE_LABELS,
-  getModulesForAccessMode,
-} from "@/lib/hubs/moduleRegistry";
+import { GAME_DEFINITIONS_EN } from "@/lib/games/gameRegistry.en";
+import { siteTreeCopy } from "@/lib/i18n/copy/siteTree";
 import {
   getLocalizedRoute,
   getNommerChapterRoute,
@@ -77,6 +75,8 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
     getLocalizedRoute(language, page);
   const nommerChapterRoute = (chapter: NommerChapterKey) =>
     getNommerChapterRoute(language, chapter);
+  const copy = siteTreeCopy[language];
+  const nommerChapters = getLocalizedNommerChapters(language);
 
   return [
     /**
@@ -88,69 +88,66 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
      */
     {
       id: "accueil",
-      title: "L'accueil",
-      blurb:
-        "L'atlas s'ouvre par l'intention, pas par le sommaire : chercher, comprendre ou jouer déplie ses modules sur l'accueil même, et le clic suivant est le module.",
+      title: copy.home.title,
+      blurb: copy.home.blurb,
       links: [
         {
           href: `/${language}`,
-          label: "Accueil",
-          note: "Le globe et les trois axes.",
+          label: copy.home.label,
+          note: copy.home.note,
         },
       ],
     },
     {
       id: "corpus",
-      title: "Le corpus, dans l'ordre AFRIK",
-      blurb:
-        "Famille linguistique → langue → peuple → pays. C'est la hiérarchie du corpus lui-même, et chaque fiche se lit depuis celle du dessus. Les appellations et les noms la traversent : ils nomment, ils ne situent pas.",
+      title: copy.corpus.title,
+      blurb: copy.corpus.blurb,
       links: [
         {
           href: route("families"),
-          label: "Familles linguistiques",
-          note: "Le premier niveau : 24 familles, chacune avec ses langues.",
+          label: copy.corpus.families[0],
+          note: copy.corpus.families[1],
         },
         {
           href: route("languages"),
-          label: "Langues",
-          note: "748 langues, chacune rattachée à sa famille linguistique.",
+          label: copy.corpus.languages[0],
+          note: copy.corpus.languages[1],
         },
         {
           href: route("peoples"),
-          label: "Peuples",
-          note: "789 fiches, rattachées à leur famille et à leurs pays.",
+          label: copy.corpus.peoples[0],
+          note: copy.corpus.peoples[1],
         },
         {
           href: route("countries"),
-          label: "Pays",
-          note: "54 fiches, chacune listant les peuples qui l'habitent.",
+          label: copy.corpus.countries[0],
+          note: copy.corpus.countries[1],
         },
         {
           href: route("patronymes"),
-          label: "Noms",
-          note: "30 systèmes de nommage des personnes, distincts des appellations d'un peuple.",
+          label: copy.corpus.names[0],
+          note: copy.corpus.names[1],
         },
         {
           href: route("search"),
-          label: "Recherche libre",
-          note: "Quand on sait ce qu'on cherche et pas où le trouver.",
+          label: copy.corpus.search[0],
+          note: copy.corpus.search[1],
         },
         {
           href: route("compare"),
-          label: "Comparer",
-          note: "Mettre deux entités du même type côte à côte.",
+          label: copy.corpus.compare[0],
+          note: copy.corpus.compare[1],
         },
       ],
     },
     {
       id: "dossiers",
-      title: ACCESS_MODE_LABELS.dossiers,
-      blurb:
-        "D'où vient ce nom, d'où vient ce peuple, et qui l'affirme. Les trois questions dans cet ordre.",
+      title: copy.dossiers.title,
+      blurb: copy.dossiers.blurb,
       links: [
         {
           href: route("dossiersHub"),
-          label: language === "en" ? "All dossiers" : "Tous les dossiers",
+          label: copy.dossiers.all,
         },
         ...getPublishedThemes(undefined, language).map((theme) => ({
           href: getDossierThemeHref(theme.id, language),
@@ -158,15 +155,15 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
         })),
         {
           href: route("nommer"),
-          label: "Qui a donné ce nom ?",
-          note: "Le dossier fondateur, et ses cinq chapitres.",
+          label: copy.dossiers.nommerTitle,
+          note: copy.dossiers.nommerNote,
         },
         // The five chapters are listed, against this file's own rule that the
         // map offers doorways rather than every page. A chapter is a whole
         // reading, not one of 890 fiches, and `getSiteTreePaths` is the sole
         // feed of the sitemap: leaving them out would publish an editorial
         // page no crawler is told about.
-        ...NOMMER_CHAPTERS.map((chapter) => ({
+        ...nommerChapters.map((chapter) => ({
           href: nommerChapterRoute(chapter.key),
           label: `${chapter.ordinal} · ${chapter.title}`,
         })),
@@ -179,106 +176,108 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
           })),
         {
           href: route("names"),
-          label: "Appellations",
-          note: "Autonymes, exonymes, et ce que l'écart raconte.",
+          label: copy.dossiers.names[0],
+          note: copy.dossiers.names[1],
         },
         {
           href: route("migrations"),
-          label: "Premiers repères de migrations",
-          note: "Six événements sourcés, pas une frise de trois millénaires.",
+          label: copy.dossiers.migrations[0],
+          note: copy.dossiers.migrations[1],
         },
         {
           href: route("colonization"),
-          label: "Regards : colonisation et résistances",
+          label: copy.dossiers.colonization,
         },
         {
           href: route("doctrine"),
-          label: "La doctrine éditoriale",
-          note: "Comment une source est pesée et une fiche publiée.",
+          label: copy.dossiers.doctrine[0],
+          note: copy.dossiers.doctrine[1],
         },
       ],
     },
     {
       id: "jeux",
-      title: ACCESS_MODE_LABELS.jeux,
-      blurb:
-        "Chaque partie est tirée du corpus : gagner suppose d'avoir lu quelque chose, jamais d'avoir deviné.",
+      title: copy.play.title,
+      blurb: copy.play.blurb,
       links: [
         {
           href: route("quiz"),
           // Read off the registry rather than transcribed: the line below
           // already derives the games from theirs, and a hand-copied name is
           // one the registry can rename out from under.
-          label: getModulesForAccessMode("jeux").find(
-            (hubModule) => hubModule.page === "quiz"
-          ).name,
+          label: copy.play.quiz,
         },
         ...GAME_DEFINITIONS.map((game) => ({
           href: `${route("jeuxHub")}/${game.slug}`,
-          label: game.nameFr,
-          note: game.promptFr,
+          label:
+            language === "en"
+              ? GAME_DEFINITIONS_EN[game.id].nameEn
+              : game.nameFr,
+          note:
+            language === "en"
+              ? GAME_DEFINITIONS_EN[game.id].promptEn
+              : game.promptFr,
         })),
       ],
     },
     {
       id: "participer",
-      title: "Participer",
-      blurb:
-        "Le corpus est ouvert et incomplet, et il le dit. Les deux portes par lesquelles on le corrige.",
+      title: copy.contribute.title,
+      blurb: copy.contribute.blurb,
       links: [
         {
           href: getStaticPageRoute(language, "contribute"),
-          label: "Contribuer",
-          note: "Proposer une fiche, une source, une correction.",
+          label: copy.contribute.contribution[0],
+          note: copy.contribute.contribution[1],
         },
         {
           href: getStaticPageRoute(language, "reports"),
-          label: "Signalements",
-          note: "Les erreurs signalées et leur traitement, en public.",
+          label: copy.contribute.reports[0],
+          note: copy.contribute.reports[1],
         },
       ],
     },
     {
       id: "le-site",
-      title: "Le site",
-      blurb: "Qui publie, sous quelles règles, et comment lire les données.",
+      title: copy.site.title,
+      blurb: copy.site.blurb,
       links: [
-        { href: `/${language}/about`, label: "À propos" },
+        { href: `/${language}/about`, label: copy.site.about },
         {
           href: route("glossary"),
-          label: "Glossaire",
-          note: "Les mots avec lesquels l'atlas nomme, définis une fois.",
+          label: copy.site.glossary[0],
+          note: copy.site.glossary[1],
         },
         {
           href: route("sources"),
-          label: "Sources",
-          note: "La bibliographie qui documente le corpus.",
+          label: copy.site.sources[0],
+          note: copy.site.sources[1],
         },
         {
           href: "/docs/api/v2",
-          label: "API publique v2",
-          note: "Le corpus en JSON, sous licence ouverte.",
+          label: copy.site.api[0],
+          note: copy.site.api[1],
         },
         {
           href: getStaticPageRoute(language, "contact"),
-          label: "Contact",
-          note: "Écrire à l'équipe qui publie l'atlas.",
+          label: copy.site.contact[0],
+          note: copy.site.contact[1],
         },
         {
           href: getStaticPageRoute(language, "accessibility"),
-          label: "Accessibilité",
+          label: copy.site.accessibility,
         },
         {
           href: getStaticPageRoute(language, "legalNotice"),
-          label: "Mentions légales",
+          label: copy.site.legal,
         },
         {
           href: getStaticPageRoute(language, "dataPolicy"),
-          label: "Politique de données",
+          label: copy.site.data,
         },
         {
           href: getStaticPageRoute(language, "sitemap"),
-          label: "Plan du site",
+          label: copy.site.sitemap,
         },
       ],
     },
