@@ -47,6 +47,7 @@ export function FamilyHistorySection({
       />
       <div data-testid="section-flag-target-history">
         <FlagTarget
+          language={language}
           target={{
             type: "fiche_section",
             id: familyId,

@@ -2,18 +2,16 @@
 
 import { useState } from "react";
 
-import { frenchNumber } from "@/lib/games/format";
 import type { EstimateRound } from "@/lib/games/gameKinds";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-
-const COPY_FR = {
-  commit: "Valider mon estimation",
-  hint: "Faites glisser, puis validez.",
-} as const;
+import { gamesCopy } from "@/lib/i18n/copy/games";
+import { formatNumber } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
 
 export interface EstimateSliderProps {
   round: EstimateRound;
+  language?: Language;
   onAnswer: (value: number) => void;
   disabled?: boolean;
   className?: string;
@@ -36,13 +34,19 @@ export interface EstimateSliderProps {
 // @req REQ-120
 export const EstimateSlider = ({
   round,
+  language = "fr",
   onAnswer,
   disabled = false,
   className,
 }: EstimateSliderProps) => {
   const [estimate, setEstimate] = useState(round.min);
+  const copy = gamesCopy[language];
+  const prompt =
+    language === "en" ? (round.promptEn ?? round.promptFr) : round.promptFr;
+  const unit =
+    language === "en" ? (round.unitEn ?? round.unitFr) : round.unitFr;
 
-  const valueFr = `${frenchNumber.format(estimate)} ${round.unitFr}`;
+  const value = `${formatNumber(language, estimate)} ${unit}`;
   const trackId = `estimate-track-${round.subjectId}`;
 
   return (
@@ -55,7 +59,7 @@ export const EstimateSlider = ({
         id={`estimate-prompt-${round.subjectId}`}
         className="font-afh-display text-afh-h3 font-bold text-afh-text"
       >
-        {round.promptFr}
+        {prompt}
       </h2>
 
       {/*
@@ -68,11 +72,11 @@ export const EstimateSlider = ({
         aria-live="polite"
         className="font-afh-display text-afh-h2 font-black tabular-nums text-afh-text"
       >
-        {valueFr}
+        {value}
       </p>
 
       <label htmlFor={trackId} className="sr-only">
-        {round.promptFr}
+        {prompt}
       </label>
       <input
         id={trackId}
@@ -82,12 +86,12 @@ export const EstimateSlider = ({
         step={round.step}
         value={estimate}
         disabled={disabled}
-        aria-valuetext={valueFr}
+        aria-valuetext={value}
         onChange={(event) => setEstimate(Number(event.target.value))}
         className="min-h-11 w-full cursor-pointer accent-afh-cat-ocre disabled:cursor-not-allowed disabled:opacity-50"
       />
 
-      <p className="text-afh-small text-afh-text-soft">{COPY_FR.hint}</p>
+      <p className="text-afh-small text-afh-text-soft">{copy.estimateHint}</p>
 
       <Button
         type="button"
@@ -98,7 +102,7 @@ export const EstimateSlider = ({
         // label that wraps, where a fixed height clips it.
         className="min-h-11 w-full"
       >
-        {COPY_FR.commit}
+        {copy.estimateCommit}
       </Button>
     </section>
   );

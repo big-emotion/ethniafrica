@@ -18,6 +18,7 @@ import { getSourceRoute } from "@/lib/routing";
 import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
 import type { Language } from "@/types/shared";
 import { SOURCE_TIERS, toSourceTier, type SourceTier } from "@/types/sources";
+import { sourceTransparencyCopy } from "@/lib/i18n/copy/sourceTransparency";
 
 /* -------------------------------------------------------------------------- */
 /*  Types                                                                      */
@@ -70,6 +71,7 @@ export type PositionGroup = {
 };
 
 export type SourceChainSheetProps = {
+  language?: Language;
   open: boolean;
   onOpenChange: (open: boolean) => void;
   assertion: Assertion;
@@ -292,6 +294,7 @@ function SourceItem({
   language: Language;
   source: Source;
 }) {
+  const copy = sourceTransparencyCopy[language].sourceChain;
   const isBroken = Boolean(source.brokenAt);
   const sanitizedUrl = safeUrl(source.url);
   const renderAsLink = !isBroken && sanitizedUrl !== null;
@@ -321,7 +324,7 @@ function SourceItem({
           data-testid={`source-tier-${source.id}`}
           className="shrink-0 rounded-full bg-[var(--afh-muted,var(--country-muted,#f3f4f6))] px-2 py-0.5 text-afh-caption font-medium text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]"
         >
-          {sourceStandingLabel(source.tier, "fr")}
+          {sourceStandingLabel(source.tier, language)}
         </span>
       </div>
       <p className="text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
@@ -332,12 +335,12 @@ function SourceItem({
           one goes to what the corpus knows about it. */}
       <p>
         <Link
-          href={getSourceRoute("fr", source.id)}
+          href={getSourceRoute(language, source.id)}
           prefetch={false}
           data-testid={`source-directory-${source.id}`}
           className="inline-block text-afh-caption underline underline-offset-2"
         >
-          Voir dans la bibliographie
+          {copy.viewInBibliography}
         </Link>
       </p>
       {source.url ? (
@@ -369,18 +372,18 @@ function SourceItem({
           data-testid={`source-broken-badge-${source.id}`}
           className="inline-flex items-center rounded-full bg-[var(--afh-warn-bg,#fef3c7)] px-2 py-0.5 text-afh-caption font-medium text-[var(--afh-warn-fg,#92400e)]"
         >
-          lien non résolu — signalé le{" "}
-          {formatBrokenDate(language, source.brokenAt)}
+          {copy.brokenLink(formatBrokenDate(language, source.brokenAt))}
         </span>
       ) : null}
       <div data-testid={`source-flag-target-${source.id}`} className="pt-1">
         <FlagTarget
+          language={language}
           target={{
             type: "source",
             id: source.id,
             snapshotQuote: source.citation,
           }}
-          triggerLabel="Signaler cette source"
+          triggerLabel={copy.reportSource}
           className="w-auto text-afh-caption"
         />
       </div>
@@ -439,6 +442,7 @@ function SourceList({
 /* -------------------------------------------------------------------------- */
 
 const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
+  language: languageOverride,
   open,
   onOpenChange,
   assertion,
@@ -452,7 +456,9 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
   const reducedMotion = usePrefersReducedMotion();
   // The sheet opens from a chip on any fiche surface, from the quiz and from
   // the relations list; none of those hand it a locale, so it reads the route.
-  const language = useRouteLanguage();
+  const routeLanguage = useRouteLanguage();
+  const language = languageOverride ?? routeLanguage;
+  const copy = sourceTransparencyCopy[language].sourceChain;
   useUrlAnchorSync(open, anchorId, onOpenChange);
 
   // "Cite this assertion" appears after a 4 s dwell.
@@ -493,10 +499,9 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
         data-variant={variant}
       >
         {/* Visually hidden title/description for radix a11y */}
-        <SheetTitle className="sr-only">Chaîne des sources</SheetTitle>
+        <SheetTitle className="sr-only">{copy.title}</SheetTitle>
         <SheetDescription className="sr-only">
-          Détails de l&apos;assertion, niveau de confiance et sources
-          vérifiables.
+          {copy.description}
         </SheetDescription>
 
         {/* 1. Assertion */}
@@ -512,7 +517,7 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
           </h3>
           {assertion.position ? (
             <p className="mt-1 text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
-              Position : {assertion.position}
+              {copy.position} : {assertion.position}
             </p>
           ) : null}
         </section>
@@ -524,19 +529,17 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
         >
           <div className="flex items-baseline justify-between">
             <span className="text-afh-eyebrow font-semibold uppercase tracking-wide text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
-              Niveau de confiance
+              {copy.confidence}
             </span>
             <span className="text-afh-h3 font-semibold text-[var(--afh-fg,var(--country-fg,#111827))]">
               {Math.round(assertion.confidenceScore * 100)}%
             </span>
           </div>
           <p className="mt-1 text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
-            Calculé à partir de {assertion.sourceCount} source
-            {assertion.sourceCount > 1 ? "s" : ""}
-            {assertion.lastHumanAuditAt
-              ? ` · dernier audit humain le ${assertion.lastHumanAuditAt}`
-              : " · jamais audité par un humain"}
-            .
+            {copy.confidenceSummary(
+              assertion.sourceCount,
+              assertion.lastHumanAuditAt
+            )}
           </p>
         </section>
 
@@ -547,15 +550,14 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
             role="status"
             className="rounded-md border border-[var(--afh-warn-fg,#92400e)]/30 bg-[var(--afh-warn-bg,#fef3c7)] p-3 text-afh-small text-[var(--afh-warn-fg,#92400e)]"
           >
-            {openFlagCount} signalement{openFlagCount > 1 ? "s" : ""} ouvert
-            {openFlagCount > 1 ? "s" : ""} sur cette assertion.
+            {copy.openReports(openFlagCount)}
           </section>
         ) : null}
 
         {/* 4. Sources */}
         <section data-testid="section-sources" className="space-y-4">
           <h3 className="text-afh-small font-semibold text-[var(--afh-fg,var(--country-fg,#111827))]">
-            Sources
+            {copy.sources}
           </h3>
           {positions && positions.length > 0 ? (
             <div className="space-y-4">
@@ -586,7 +588,7 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
               rel="noopener noreferrer"
               className="text-afh-caption underline underline-offset-2 text-[var(--afh-accent,var(--country-accent,#1d4ed8))]"
             >
-              Voir l&apos;historique des révisions
+              {copy.revisionHistory}
             </a>
           </section>
         ) : null}
@@ -597,13 +599,14 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
               target to report. Only the Turnstile half of the condition goes. */}
           {assertion.id ? (
             <FlagTarget
+              language={language}
               target={{
                 type: "assertion",
                 id: assertion.id,
                 fieldPath: assertion.fieldPath,
                 snapshotQuote: assertion.statement,
               }}
-              triggerLabel="Signaler un problème"
+              triggerLabel={copy.reportProblem}
             />
           ) : null}
         </section>
@@ -620,7 +623,7 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
               showCite ? "opacity-100" : "pointer-events-none opacity-0"
             )}
           >
-            Citer cette assertion
+            {copy.citeAssertion}
           </button>
         </section>
       </SheetContent>

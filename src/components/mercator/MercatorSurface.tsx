@@ -6,6 +6,7 @@ import type { GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import type { ScaleFact } from "@/lib/games/scaleFacts";
 import type { Language } from "@/types/shared";
+import { gamesCopy } from "@/lib/i18n/copy/games";
 
 /**
  * The vote of 4 September 2026, as the reader can go and check it.
@@ -18,16 +19,6 @@ import type { Language } from "@/types/shared";
 const UN_RESOLUTION_SOURCE = {
   href: "https://news.un.org/fr/story/2026/09/1159416",
   label: "ONU Info, 4 septembre 2026",
-} as const;
-
-const COPY_FR = {
-  trueSizeHeading: "La taille réelle de l'Afrique",
-  unResolution:
-    "Le 4 septembre 2026, l'Assemblée générale des Nations unies a adopté par " +
-    "164 voix contre une, portée par le Togo au nom du groupe africain et " +
-    "soutenue par l'Union africaine, une résolution appelant à corriger cette " +
-    "« minimisation symbolique » du continent et à préférer les projections " +
-    "qui respectent les surfaces, comme Equal Earth.",
 } as const;
 
 export interface MercatorSurfaceProps {
@@ -43,6 +34,7 @@ export interface MercatorSurfaceProps {
    * island's bundle.
    */
   trueSizeClaimFr: string;
+  trueSizeClaimEn?: string;
   /**
    * Documented peoples per country, for the continent the stage draws.
    * Resolved by the page; absent, the globe names what is missing.
@@ -93,8 +85,12 @@ export const MercatorSurface = ({
   facts,
   corpusLimited,
   trueSizeClaimFr,
+  trueSizeClaimEn,
   peopleCountsByCountry,
 }: MercatorSurfaceProps) => {
+  const copy = gamesCopy[language];
+  const trueSizeClaim =
+    language === "en" ? (trueSizeClaimEn ?? trueSizeClaimFr) : trueSizeClaimFr;
   return (
     <div className="mercator-surface">
       {/*
@@ -120,24 +116,23 @@ export const MercatorSurface = ({
             same way on both surfaces. Unpinned, so the morph bar is the
             reader's throughout — moving it *is* the demonstration. */}
         <ContinentGlobeStage
+          language={language}
           peopleCountsByCountry={peopleCountsByCountry}
           presentation="hero"
           autoRotate
         />
 
         <aside className="mercator-true-size" data-testid="mercator-true-size">
-          <h2 className="mercator-true-size-heading">
-            {COPY_FR.trueSizeHeading}
-          </h2>
-          <p className="mercator-true-size-claim">{trueSizeClaimFr}</p>
+          <h2 className="mercator-true-size-heading">{copy.trueSizeHeading}</h2>
+          <p className="mercator-true-size-claim">{trueSizeClaim}</p>
           <p className="mercator-true-size-resolution">
-            {COPY_FR.unResolution}{" "}
+            {copy.unResolution}{" "}
             <a
               href={UN_RESOLUTION_SOURCE.href}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {UN_RESOLUTION_SOURCE.label}
+              {copy.unSourceLabel}
             </a>
           </p>
         </aside>

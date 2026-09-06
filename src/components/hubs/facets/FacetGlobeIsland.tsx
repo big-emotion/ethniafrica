@@ -272,6 +272,7 @@ export function FacetGlobeIsland({
       >
         {visible ? (
           <AtlasGlobe
+            language={language}
             overlay={overlay}
             missingMessage={missingMessage}
             targetFacts={facetFacts}

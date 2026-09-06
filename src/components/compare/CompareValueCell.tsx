@@ -15,6 +15,7 @@ import type { ReactNode } from "react";
 import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 import type { ComparisonColumn } from "@/types/compare";
 import type { Language } from "@/types/shared";
+import { compareCopy } from "@/lib/i18n/copy/compare";
 
 export interface CompareValueCellProps {
   value: unknown;
@@ -133,11 +134,12 @@ export function CompareValueCell({
   language,
   showReferenceYear = false,
 }: CompareValueCellProps) {
+  const copy = compareCopy[language];
   if (isEmptyValue(value)) {
     return (
       <span className="bg-afh-bg-warm px-1 text-afh-text-soft">
-        non renseigné
-        <span className="sr-only"> pour {entity.label}</span>
+        {copy.missing}
+        <span className="sr-only">{copy.missingFor(entity.label)}</span>
       </span>
     );
   }
@@ -146,7 +148,9 @@ export function CompareValueCell({
     <>
       {renderValue(value, language)}
       {showReferenceYear && (
-        <p className="mt-1 text-afh-caption text-afh-text-soft">réf. 2025</p>
+        <p className="mt-1 text-afh-caption text-afh-text-soft">
+          {copy.referenceYear}
+        </p>
       )}
     </>
   );

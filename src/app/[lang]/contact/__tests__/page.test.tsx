@@ -114,4 +114,18 @@ describe("the contact page", () => {
       "en"
     );
   });
+
+  // @req REQ-145
+  it("renders the English contact surface without French fallback copy", async () => {
+    await renderPage("en");
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Contact us" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { level: 2, name: "Send a message" })
+    ).toBeInTheDocument();
+    expect(screen.getByText("Did you know?")).toBeInTheDocument();
+    expect(screen.queryByText("Contactez-nous")).not.toBeInTheDocument();
+  });
 });

@@ -79,6 +79,32 @@ afterEach(() => {
  * here reads the morph off the surface rather than off the control beside it.
  */
 describe("the projection morph bar", () => {
+  // @req REQ-145
+  it("renders its controls and explanation in English when requested", () => {
+    render(
+      <AtlasGlobe
+        language="en"
+        overlay={countryOverlay}
+        projectionControl="morph"
+        probedWebglSupport
+        showTissot
+        missingMessage="absent"
+      />
+    );
+
+    expect(
+      screen.getByRole("slider", { name: "Morph from flat map to globe" })
+    ).toHaveAttribute("aria-valuetext", "Globe");
+    expect(screen.getByText("Flat map")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Zoom out" })).toBeDisabled();
+    expect(
+      screen.getByRole("button", { name: "Indicatrices" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/each indicatrix returns to its true area/i)
+    ).toBeInTheDocument();
+  });
+
   // The homepage keeps the projection argument but gives the globe the whole
   // visual field: the range follows the figure in normal reading order. The
   // two controls that act directly on that figure stay available — zoom and

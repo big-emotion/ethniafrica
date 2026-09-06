@@ -36,6 +36,7 @@ import { getPeopleFragmentation } from "@/api/v2/services/peopleFragmentation";
 import { getEgoNetwork } from "@/api/v2/services/relations";
 import { mapPeopleDetail } from "@/lib/afrikDetailMapper";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
+import { peopleCopy } from "@/lib/i18n/copy/people";
 
 // @req REQ-019
 export const revalidate = 3600;
@@ -216,6 +217,7 @@ export default async function PeoplesSlugPage({
   const peopleFieldOverlay = buildPeopleFieldOverlay(
     peopleDetail.demography?.distributionByCountry
   );
+  const copy = peopleCopy[lang as Language];
 
   // Live version (revalidate = 3600 at segment level)
   //
@@ -243,8 +245,11 @@ export default async function PeoplesSlugPage({
         globe={
           <FicheHeroBand>
             <AtlasGlobe
+              language={lang as Language}
               overlay={peopleFieldOverlay}
-              missingMessage={`Répartition par pays non renseignée pour ${peopleDetail.nameMain}`}
+              missingMessage={copy.atlas.missingDistribution(
+                peopleDetail.nameMain
+              )}
               facts={buildPeoplePresenceFacts({
                 language: lang as Language,
                 peopleName: peopleDetail.nameMain,
@@ -253,14 +258,15 @@ export default async function PeoplesSlugPage({
               })}
               fallbackNote={peopleFallbackNote(
                 peopleDetail.nameMain,
-                peopleFieldOverlay
+                peopleFieldOverlay,
+                lang as Language
               )}
               // Markers sit on the sphere, so a country that has rotated
               // behind it has no button to click. The list names every
               // presence country instead, at any count.
               targetPicker="list"
-              wholeAreaLabel="Toute l'aire"
-              areaNoun="présence"
+              wholeAreaLabel={copy.atlas.wholeArea}
+              areaNoun={copy.atlas.areaNoun}
               // The mockup's own caption. The default states what the globe
               // is; a people fiche has to state what it is *not* — the one
               // fiche of the three whose subject has no line to close.
@@ -270,9 +276,9 @@ export default async function PeoplesSlugPage({
                   className="pointer-events-none absolute inset-x-0 top-0 hidden max-w-[22ch] p-3 text-afh-caption min-[760px]:block"
                   style={{ color: "var(--afh-night-ink-3)" }}
                 >
-                  Aucune frontière ici.
+                  {copy.atlas.noBoundary}
                   <br />
-                  Une présence, et sa densité.
+                  {copy.atlas.presenceAndDensity}
                 </p>
               }
             />

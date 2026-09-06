@@ -22,6 +22,14 @@ const en = {
     withdrawn: "Withdrawn",
     duplicate: "Duplicate",
   },
+  statusDescriptions: {
+    open: "in progress — editorial review",
+    under_review: "in progress — editorial review",
+    accepted: "accepted · fiche updated",
+    rejected: "rejected",
+    duplicate: "duplicate",
+    withdrawn: "withdrawn",
+  },
   kinds: {
     inaccurate: "Inaccurate information",
     "missing-source": "Missing source",
@@ -78,6 +86,14 @@ const fr: PublicFlagsCopy = {
     rejected: "Rejeté",
     withdrawn: "Retiré",
     duplicate: "Doublon",
+  },
+  statusDescriptions: {
+    open: "en cours — examen par l'équipe éditoriale",
+    under_review: "en cours — examen par l'équipe éditoriale",
+    accepted: "acceptée · fiche mise à jour",
+    rejected: "rejetée",
+    duplicate: "doublon",
+    withdrawn: "retirée",
   },
   kinds: {
     inaccurate: "Information inexacte",

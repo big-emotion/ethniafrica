@@ -10,7 +10,9 @@ import { Textarea } from "@/components/ui/textarea";
 import type { Proof as AntibotProof } from "@/lib/antibot/proofOfWork";
 import { FALLBACK_LOCALE, isLocale } from "@/lib/locale";
 import { formatNumber } from "@/lib/languageTag";
+import { reportsCopy } from "@/lib/i18n/copy/reports";
 import { getStaticPageRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 export type FlagKind =
   | "inaccurate"
@@ -93,20 +95,6 @@ interface FormErrors {
   reporterEmail?: string;
 }
 
-// Every target type the triggers mount, so the fallback below never has to
-// print the raw enum value — `fiche_section` on a dialog is the database's
-// vocabulary, not the reader's.
-const TARGET_LABELS: Record<string, string> = {
-  people: "Peuple",
-  country: "Pays",
-  language: "Langue",
-  language_family: "Famille linguistique",
-  fiche_section: "Section de fiche",
-  assertion: "Affirmation",
-  source: "Source",
-  general: "Signalement général",
-};
-
 function isValidHttpUrl(value: string) {
   try {
     const url = new URL(value);
@@ -149,32 +137,33 @@ function validateForm({
   counterSourceCitation,
   reason,
   reporterEmail,
+  language,
 }: {
   counterSourceUrl: string;
   counterSourceCitation: string;
   proposedRewrite: string;
   reason: string;
   reporterEmail: string;
+  language: Language;
 }): FormErrors {
   const errors: FormErrors = {};
+  const copy = reportsCopy[language].form;
 
   // Only what the reader actually opened can be wrong. A collapsed panel they
   // never touched cannot hold an error.
   if (counterSourceUrl.trim() && !isValidHttpUrl(counterSourceUrl.trim())) {
-    errors.counterSourceUrl = "Saisissez une adresse HTTP ou HTTPS valide.";
+    errors.counterSourceUrl = copy.invalidUrl;
   }
 
   if (counterSourceCitation.length > 2000) {
-    errors.counterSourceCitation =
-      "La citation ne peut pas dépasser 2 000 caractères.";
+    errors.counterSourceCitation = copy.citationTooLong;
   }
 
   // Ten, not fifty. The API has always accepted ten (`reason_text` min(10)),
   // and the form asked for five times that without saying why — enough to
   // turn "l'orthographe de Bété est fausse" into a validation error.
   if (reason.trim().length < 10 || reason.length > 2000) {
-    errors.reason =
-      "La description doit contenir entre 10 et 2 000 caractères.";
+    errors.reason = copy.invalidReason;
   }
 
   // An address left blank is the expected case, not an omission.
@@ -182,8 +171,7 @@ function validateForm({
     reporterEmail.trim() &&
     !LOOKS_LIKE_AN_ADDRESS.test(reporterEmail.trim())
   ) {
-    errors.reporterEmail =
-      "Saisissez une adresse e-mail valide, ou laissez le champ vide.";
+    errors.reporterEmail = copy.invalidEmail;
   }
 
   return errors;
@@ -202,6 +190,7 @@ export function FlagForm({
   // outside the locale tree it is offered in the default locale.
   const { lang } = useParams<{ lang?: string }>() ?? {};
   const language = isLocale(lang) ? lang : FALLBACK_LOCALE;
+  const copy = reportsCopy[language].form;
   const [counterSourceUrl, setCounterSourceUrl] = useState("");
   const [counterSourceCitation, setCounterSourceCitation] = useState("");
   const [proposedRewrite, setProposedRewrite] = useState("");
@@ -242,14 +231,12 @@ export function FlagForm({
       proposedRewrite,
       reason,
       reporterEmail,
+      language,
     });
     setErrors(nextErrors);
 
     if (!proof) {
-      setVerificationError(
-        verificationError ||
-          "La vérification anti-robot n'est pas terminée. Patientez un instant."
-      );
+      setVerificationError(verificationError || copy.verificationIncomplete);
     }
 
     if (Object.keys(nextErrors).length > 0 || !proof) {
@@ -300,7 +287,7 @@ export function FlagForm({
       // a second click cannot silently resubmit against a burnt challenge —
       // the reader is told to reload, and reloading is what actually works.
       setProof(null);
-      setSubmissionError("L’envoi du signalement a échoué. Réessayez.");
+      setSubmissionError(copy.submissionFailed);
     } finally {
       setIsSubmitting(false);
     }
@@ -317,21 +304,19 @@ export function FlagForm({
           className="font-afh-display text-afh-h3 font-semibold text-afh-conf-high"
           id={`${idPrefix}-success-heading`}
         >
-          Signalement enregistré
+          {copy.successTitle}
         </h2>
         {/* This used to promise an e-mail unconditionally, while the form
             collected no address and an anonymous report had no recipient. The
             sentence now depends on what the reader actually left. */}
         <p className="text-afh-body">
-          {reporterEmail.trim()
-            ? "Merci — confirmez votre adresse depuis le message que nous venons de vous envoyer, et vous recevrez la décision de la modération."
-            : "Merci — votre signalement est consultable ci-dessous, et son statut y sera mis à jour."}
+          {reporterEmail.trim() ? copy.successWithEmail : copy.successAnonymous}
         </p>
         <a
           className="inline-flex min-h-11 items-center font-semibold text-afh-terracotta underline underline-offset-4"
           href={`${getStaticPageRoute(language, "reports")}/${publicSlug}`}
         >
-          Consulter le signalement
+          {copy.viewReport}
         </a>
       </section>
     );
@@ -348,10 +333,10 @@ export function FlagForm({
           className="font-afh-display text-afh-h3 font-semibold"
           id={`${idPrefix}-target-heading`}
         >
-          Élément signalé
+          {copy.targetTitle}
         </h2>
         <p className="mt-afh-md text-afh-small text-afh-text-soft">
-          {TARGET_LABELS[target.type] ?? target.type}
+          {copy.targetLabels[target.type] ?? target.type}
           {target.name ? ` · ${target.name}` : ""}
         </p>
         {target.fieldLabel && (
@@ -367,7 +352,7 @@ export function FlagForm({
       </section>
 
       <div className="space-y-afh-md">
-        <Label htmlFor={reasonId}>Qu&apos;est-ce qui ne va pas&nbsp;?</Label>
+        <Label htmlFor={reasonId}>{copy.reason}</Label>
         <Textarea
           aria-describedby={`${reasonCounterId}${
             errors.reason ? ` ${reasonErrorId}` : ""
@@ -404,12 +389,11 @@ export function FlagForm({
           (moderation charter §1). */}
       <details className="afh-report-disclosure rounded-afh-md border border-afh-border px-afh-lg py-afh-md">
         <summary className="min-h-11 cursor-pointer list-none text-afh-body font-semibold marker:content-['']">
-          Vous connaissez la bonne réponse&nbsp;?{" "}
-          <span aria-hidden="true">▸</span>
+          {copy.correctionDisclosure} <span aria-hidden="true">▸</span>
         </summary>
         <div className="pt-afh-md">
           <div className="space-y-afh-md">
-            <Label htmlFor={proposedRewriteId}>Proposition de correction</Label>
+            <Label htmlFor={proposedRewriteId}>{copy.proposedRewrite}</Label>
             <Textarea
               aria-describedby={`${proposedRewriteCounterId}${
                 errors.proposedRewrite ? ` ${proposedRewriteErrorId}` : ""
@@ -446,11 +430,10 @@ export function FlagForm({
           address is a way back, never a toll. */}
       <details className="afh-report-disclosure rounded-afh-md border border-afh-border px-afh-lg py-afh-md">
         <summary className="min-h-11 cursor-pointer list-none text-afh-body font-semibold marker:content-['']">
-          Vous voulez connaître la décision&nbsp;?{" "}
-          <span aria-hidden="true">▸</span>
+          {copy.decisionDisclosure} <span aria-hidden="true">▸</span>
         </summary>
         <div className="space-y-afh-md pt-afh-md">
-          <Label htmlFor={reporterEmailId}>Votre adresse e-mail</Label>
+          <Label htmlFor={reporterEmailId}>{copy.reporterEmail}</Label>
           <Input
             aria-describedby={
               errors.reporterEmail ? reporterEmailErrorId : undefined
@@ -462,11 +445,7 @@ export function FlagForm({
             type="email"
             value={reporterEmail}
           />
-          <p className="text-afh-caption text-afh-fg-muted">
-            Nous vous enverrons un lien pour confirmer cette adresse, puis la
-            décision de la modération. Elle n&apos;apparaît jamais publiquement
-            et ne sert à rien d&apos;autre.
-          </p>
+          <p className="text-afh-caption text-afh-fg-muted">{copy.emailHelp}</p>
           {errors.reporterEmail && (
             <p
               className="text-afh-small text-afh-flag-open"
@@ -481,7 +460,7 @@ export function FlagForm({
 
       <details className="afh-report-disclosure rounded-afh-md border border-afh-border px-afh-lg py-afh-md">
         <summary className="min-h-11 cursor-pointer list-none text-afh-body font-semibold marker:content-['']">
-          Vous avez une source&nbsp;? <span aria-hidden="true">▸</span>
+          {copy.sourceDisclosure} <span aria-hidden="true">▸</span>
         </summary>
         <div className="pt-afh-md">
           <fieldset
@@ -494,19 +473,17 @@ export function FlagForm({
             className="space-y-afh-lg"
           >
             <legend className="text-afh-body font-semibold">
-              Sources à l’appui
+              {copy.sourcesLegend}
             </legend>
             <p
               className="text-afh-small text-afh-text-soft"
               id={sourceRequirementId}
             >
-              {false
-                ? "Ajoutez au moins un lien ou une citation."
-                : "Ajoutez un lien ou une citation si vous en disposez."}
+              {false ? copy.sourceRequired : copy.sourceHelp}
             </p>
             <div className="space-y-afh-md">
               <Label htmlFor={counterSourceUrlId}>
-                Lien de la contre-source
+                {copy.counterSourceUrl}
               </Label>
               <Input
                 aria-describedby={[
@@ -541,7 +518,7 @@ export function FlagForm({
             </div>
             <div className="space-y-afh-md">
               <Label htmlFor={counterSourceCitationId}>
-                Citation de la contre-source
+                {copy.counterSourceCitation}
               </Label>
               <Textarea
                 aria-describedby={[
@@ -598,18 +575,16 @@ export function FlagForm({
             type="button"
             variant="outline"
           >
-            Annuler
+            {copy.cancel}
           </Button>
         )}
         <Button className="min-h-11" disabled={isSubmitting} type="submit">
-          {isSubmitting ? "Envoi en cours…" : "Envoyer"}
+          {isSubmitting ? copy.sending : copy.send}
         </Button>
       </div>
 
       <div aria-hidden="true" hidden>
-        <label htmlFor={`${idPrefix}-website`}>
-          Ne remplissez pas ce champ
-        </label>
+        <label htmlFor={`${idPrefix}-website`}>{copy.honeypot}</label>
         <input
           autoComplete="off"
           id={`${idPrefix}-website`}
@@ -625,7 +600,7 @@ export function FlagForm({
         className="space-y-afh-md"
       >
         <h3 className="text-afh-body font-semibold" id={turnstileHeadingId}>
-          Vérification anti-robot
+          {copy.verification}
         </h3>
         {/* Nothing is asked of the reader: the browser pays a small
             computational cost and reports when it is done. */}
@@ -637,14 +612,12 @@ export function FlagForm({
             },
             onFailed: () => {
               setProof(null);
-              setVerificationError(
-                "La vérification anti-robot n'a pas abouti. Rechargez la page pour réessayer."
-              );
+              setVerificationError(copy.verificationFailed);
             },
           })
         ) : (
           <p className="text-afh-small text-afh-text-soft">
-            La vérification anti-robot sera chargée ici.
+            {copy.verificationPlaceholder}
           </p>
         )}
         {verificationError && (

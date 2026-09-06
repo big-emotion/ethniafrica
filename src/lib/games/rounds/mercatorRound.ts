@@ -4,6 +4,10 @@ import { getGameBySlug } from "@/lib/games/gameRegistry";
 import { getAdmin0Rings } from "@/lib/atlas/overlays";
 import { mercatorInflation, ringArea } from "@/lib/games/sphericalArea";
 import { getCountryRoute } from "@/lib/routing";
+import {
+  MERCATOR_ROUND_EN,
+  mercatorRevealEn,
+} from "@/lib/games/rounds/mercatorRound.en";
 
 /**
  * « La taille qu'on vous a cachée » — which of two countries truly covers
@@ -131,10 +135,28 @@ export function buildMercatorRound(
     gameId: GAME.id,
     subjectId: a.id,
     promptFr: GAME.promptFr,
-    options: [{ labelFr: a.nameFr }, { labelFr: b.nameFr }],
+    promptEn: MERCATOR_ROUND_EN.prompt,
+    options: [
+      { labelFr: a.nameFr, labelEn: a.nameEn ?? a.nameFr },
+      { labelFr: b.nameFr, labelEn: b.nameEn ?? b.nameFr },
+    ],
     correctIndex,
     reveal: {
       textFr: `${areaSentence(a, footprintA)} ${areaSentence(b, footprintB)}`,
+      textEn: mercatorRevealEn(
+        {
+          id: a.id,
+          nameEn: a.nameEn ?? a.nameFr,
+          trueAreaKm2: footprintA.trueAreaKm2,
+          inflation: footprintA.inflation,
+        },
+        {
+          id: b.id,
+          nameEn: b.nameEn ?? b.nameFr,
+          trueAreaKm2: footprintB.trueAreaKm2,
+          inflation: footprintB.inflation,
+        }
+      ),
       fieldPath: MERCATOR_PROVENANCE_PATH,
       // Both figures are measured off the committed outlines, not read from a
       // fiche. Listing the countries' own sources would credit this claim to
@@ -144,6 +166,7 @@ export function buildMercatorRound(
       sources: [],
       confidence: null,
       ficheHref: getCountryRoute("fr", a.id),
+      ficheHrefEn: getCountryRoute("en", a.id),
     },
   };
 }

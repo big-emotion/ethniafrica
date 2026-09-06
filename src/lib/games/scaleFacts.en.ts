@@ -125,3 +125,14 @@ export function buildScaleFactsEn(): Record<string, ScaleFactEn> {
 
   return bank;
 }
+
+// @req REQ-145
+export function buildTrueSizeClaimEn(): string {
+  const { africa, greenland } = measureScaleFigures();
+  return (
+    `What is turning here is Africa at its true proportions: ` +
+    `${ratioEn(africa / greenland)} times Greenland. Move the slider towards the ` +
+    `flat map and watch the north swell — the geography has not moved; the ` +
+    `projection has.`
+  );
+}

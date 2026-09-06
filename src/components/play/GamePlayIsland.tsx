@@ -105,6 +105,7 @@ export const GamePlayIsland = ({
     >
       {status === "finished" || !currentRound ? (
         <GameScoreCard
+          language={language}
           game={game}
           correct={session.correctCount}
           total={session.totalRounds}
@@ -125,23 +126,31 @@ export const GamePlayIsland = ({
               // slider holds the reader's value in state, and a reused
               // instance would open the next round already answered.
               <EstimateSlider
+                language={language}
                 key={currentRound.subjectId}
                 round={currentRound}
                 onAnswer={session.answer}
               />
             ) : (
-              <BinaryChoice round={currentRound} onAnswer={session.answer} />
+              <BinaryChoice
+                language={language}
+                round={currentRound}
+                onAnswer={session.answer}
+              />
             )
           ) : (
             <>
               <GameAnswerReveal
+                language={language}
                 round={currentRound}
                 isCorrect={session.verdict ?? false}
                 isLastRound={session.currentIndex + 1 >= session.totalRounds}
                 answer={session.selectedAnswer}
                 onNext={session.next}
               />
-              {factForReveal ? <ScaleFactCard fact={factForReveal} /> : null}
+              {factForReveal ? (
+                <ScaleFactCard language={language} fact={factForReveal} />
+              ) : null}
             </>
           )}
         </>

@@ -91,6 +91,43 @@ afterEach(() => {
 });
 
 describe("SourceChainSheet", () => {
+  // @req REQ-145
+  it("renders the complete source chain in English when requested", () => {
+    renderSheet({
+      language: "en",
+      openFlagCount: 1,
+      revisionUrl: "https://example.org/revision",
+      assertion: {
+        statement: "A sourced statement.",
+        confidenceScore: 0.82,
+        sourceCount: 1,
+        lastHumanAuditAt: null,
+        id: "assertion-42",
+      },
+    });
+
+    expect(screen.getByText("Source chain")).toBeInTheDocument();
+    expect(screen.getByText("Confidence level")).toBeInTheDocument();
+    expect(
+      screen.getByText(/1 source.*never audited by a person/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/1 open report on this assertion/i)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "View in the bibliography" })
+    ).toHaveAttribute("href", "/en/sources/src-1");
+    expect(
+      screen.getByRole("button", { name: "Report this source" })
+    ).toBeEnabled();
+    expect(
+      screen.getByRole("link", { name: "View revision history" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Report a problem" })
+    ).toBeEnabled();
+  });
+
   it("renders a dialog with role and aria-modal", () => {
     renderSheet();
     const dialog = screen.getByRole("dialog");

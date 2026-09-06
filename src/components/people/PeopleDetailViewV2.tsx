@@ -298,6 +298,7 @@ export function PeopleDetailViewV2({
             a reader has something to say about. */}
         <div data-testid="section-flag-target-culture" className="mt-3">
           <FlagTarget
+            language={language}
             target={{
               type: "fiche_section",
               id: people.id,

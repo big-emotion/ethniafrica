@@ -74,4 +74,13 @@ describe("FlagPublicStatus", () => {
     const badge = screen.getByTestId("flag-status-badge");
     expect(badge).toHaveAttribute("data-status", "withdrawn");
   });
+
+  // @req REQ-145
+  it("renders the public status in English when requested", () => {
+    render(<FlagPublicStatus status="accepted" language="en" />);
+
+    expect(screen.getByTestId("flag-status-badge")).toHaveTextContent(
+      "accepted · fiche updated"
+    );
+  });
 });

@@ -27,13 +27,17 @@ import {
   deriveCountrySynthesisFromDetail,
 } from "@/lib/home/countrySynthesis";
 import { buildCountryAtlasFacts } from "@/components/country/countryTargetFacts";
-import { buildCountryOutlineOverlay } from "@/lib/atlas/overlays";
+import {
+  buildCountryOutlineOverlay,
+  getAdmin0Name,
+} from "@/lib/atlas/overlays";
 import { buildCountryPickerTargets } from "@/lib/atlas/targets";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import { getCountryAtlasIndex } from "@/api/v2/services/countryService";
 import { getCountryPatronymes } from "@/api/v2/services/patronymeFicheLinks";
 import { mapCountryDetail } from "@/lib/afrikDetailMapper";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
+import { countryCopy } from "@/lib/i18n/copy/country";
 
 // @req REQ-019
 export const revalidate = 3600;
@@ -206,6 +210,12 @@ export default async function PaysSlugPage({
   // other chapters resolve to nothing too — country counterparts of the
   // identity, territory, fragmentation and voices panels belong to stories
   // 15.3–15.8. That narrowness is the FR98 invariant, not a gap to fill here.
+  const copy = countryCopy[lang as Language];
+  const atlasCountryName =
+    getAdmin0Name(countryDetail.id, lang as Language) ??
+    countryDetail.nameCommonFr ??
+    countryDetail.nameFr;
+
   return (
     <PageLayout
       language={lang as Language}
@@ -236,14 +246,15 @@ export default async function PaysSlugPage({
           // reaches both edges of the viewport.
           <FicheHeroBand>
             <AtlasGlobe
+              language={lang as Language}
               overlay={buildCountryOutlineOverlay(countryDetail.id)}
               targetPicker="list"
               pickerTargets={pickerTargets}
-              areaNoun="l'atlas"
+              areaNoun={copy.atlas.areaNoun}
               // Clearing the choice puts the fiche's own country back under
               // the line, so the button says that rather than "toute
               // l'empreinte", which a country fiche does not have.
-              wholeAreaLabel={`Revenir à ${countryDetail.nameCommonFr || countryDetail.nameFr}`}
+              wholeAreaLabel={copy.atlas.returnTo(atlasCountryName)}
               facts={buildCountryAtlasFacts({
                 language: lang as Language,
                 country: countryDetail,
@@ -251,7 +262,7 @@ export default async function PaysSlugPage({
                 peopleCounts,
                 countryBriefs,
               })}
-              missingMessage={`Contour non disponible pour ${countryDetail.nameFr}`}
+              missingMessage={copy.atlas.missingOutline(atlasCountryName)}
             />
           </FicheHeroBand>
         }

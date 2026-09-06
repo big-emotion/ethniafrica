@@ -4,6 +4,7 @@ import { getStaticPageRoute } from "@/lib/routing";
 import { localeHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 import ReportErrorPageClient from "@/app/[lang]/report-error/ReportErrorPageClient";
+import { reportsCopy } from "@/lib/i18n/copy/reports";
 
 /**
  * The route is a server component so it can declare its head; the form
@@ -20,13 +21,14 @@ export async function generateMetadata({
   params,
 }: ReportErrorPageProps): Promise<Metadata> {
   const { lang } = await params;
-  const title = "Signalez une erreur";
+  const language = lang as Language;
+  const title = reportsCopy[language].page.metadataTitle;
   // The far end of a flow, meaningless entered cold from a search result
   // (`UNLISTED_ROUTES`): indexed in no locale, canonical declared all the same.
   return {
     title,
     ...localeHead(
-      lang as Language,
+      language,
       (locale) => getStaticPageRoute(locale, "reportError"),
       [],
       { title }

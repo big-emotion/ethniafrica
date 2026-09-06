@@ -137,7 +137,7 @@ describe("/[lang]/comparer picker page", () => {
       await pickEntity(/zulu/i);
 
       const compareButton = screen.getByRole("button", {
-        name: /^comparer$/i,
+        name: /^compare$/i,
       });
       await waitFor(() => expect(compareButton).toBeEnabled());
       fireEvent.click(compareButton);

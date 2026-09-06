@@ -22,6 +22,7 @@ import {
   getLocalizedRoute,
   type CompareEntityKey,
 } from "@/lib/routing";
+import { compareCopy } from "@/lib/i18n/copy/compare";
 
 const ENTITY_KEY: Record<CompareEntityType, CompareEntityKey> = {
   peoples: "peoples",
@@ -34,6 +35,7 @@ export default function ComparerPickerPageClient() {
   const router = useRouter();
   const { lang } = useParams<{ lang: string }>();
   const language = isLocale(lang) ? lang : FALLBACK_LOCALE;
+  const copy = compareCopy[language];
 
   const goToComparison = (type: CompareEntityType, ids: string[]) => {
     const segment = COMPARE_ENTITY_SEGMENTS[language][ENTITY_KEY[type]];
@@ -43,16 +45,15 @@ export default function ComparerPickerPageClient() {
   };
 
   return (
-    <PageLayout language={language} sectionName="Comparer" hideHeader>
+    <PageLayout language={language} sectionName={copy.title} hideHeader>
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-afh-h1 font-display font-semibold text-afh-text">
-          Comparer
+          {copy.title}
         </h1>
         {/* The two-entry minimum is otherwise discoverable only by finding
             the compare button disabled, which reads as a broken control. */}
         <p className="mt-2 max-w-[58ch] text-afh-fg-muted">
-          Choisissez deux ou trois fiches du même type, puis lancez la
-          comparaison.
+          {copy.pickerIntroduction}
         </p>
         <EntityComparePicker
           language={language}

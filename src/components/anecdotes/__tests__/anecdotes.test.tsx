@@ -157,6 +157,20 @@ describe("AnecdoteReader — one anecdote at a time (REQ-113)", () => {
     window.localStorage.clear();
   });
 
+  // @req REQ-145
+  it("renders its reader actions in English", () => {
+    render(<AnecdoteReader language="en" {...readerProps()} />);
+
+    expect(screen.getByRole("button", { name: "Next" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "This anecdote is interesting" })
+    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Share" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "I dispute this anecdote" })
+    ).toBeInTheDocument();
+  });
+
   // @req REQ-113
   it("shows a single anecdote and keeps the rest of the deck out of sight", () => {
     render(<AnecdoteReader language="fr" {...readerProps()} />);

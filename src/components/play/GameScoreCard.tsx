@@ -5,23 +5,13 @@ import type { GameDefinition } from "@/lib/games/gameRegistry";
 import type { ScaleFact } from "@/lib/games/scaleFacts";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-
-const COPY_FR = {
-  heading: "Partie terminée",
-  scoreSeparator: "sur",
-  scoreCaption: "réponses exactes",
-  playAgain: "Rejouer",
-  factsHeading: "Tout ce que la carte cachait",
-  corpusLimited:
-    "Cette partie a été plus courte que prévu : les tracés ne fournissent pas encore assez de comparaisons trompeuses pour huit manches.",
-  emptyCorpus:
-    "Le corpus ne contient pas encore assez de fiches pour composer un tour de ce jeu.",
-  emptyCorpusHint:
-    "Ce jeu s'ouvrira quand les fiches correspondantes auront été publiées.",
-} as const;
+import { gamesCopy } from "@/lib/i18n/copy/games";
+import { GAME_DEFINITIONS_EN } from "@/lib/games/gameRegistry.en";
+import type { Language } from "@/types/shared";
 
 export interface GameScoreCardProps {
   game: GameDefinition;
+  language?: Language;
   correct: number;
   total: number;
   /**
@@ -56,6 +46,7 @@ export interface GameScoreCardProps {
 // @req REQ-120
 export const GameScoreCard = ({
   game,
+  language = "fr",
   correct,
   total,
   facts = [],
@@ -64,6 +55,11 @@ export const GameScoreCard = ({
   className,
 }: GameScoreCardProps) => {
   const hasRounds = total > 0;
+  const copy = gamesCopy[language];
+  const gameName =
+    language === "en"
+      ? (GAME_DEFINITIONS_EN[game.id]?.nameEn ?? game.nameFr)
+      : game.nameFr;
 
   return (
     <div
@@ -74,7 +70,7 @@ export const GameScoreCard = ({
       )}
     >
       <h2 className="font-afh-display text-afh-h2 font-black text-afh-text">
-        {hasRounds ? COPY_FR.heading : game.nameFr}
+        {hasRounds ? copy.scoreHeading : gameName}
       </h2>
 
       {hasRounds ? (
@@ -83,18 +79,18 @@ export const GameScoreCard = ({
             data-testid="game-score-value"
             className="font-afh-display text-afh-h3 font-black text-afh-text"
           >
-            {correct} {COPY_FR.scoreSeparator} {total}
+            {correct} {copy.scoreSeparator} {total}
           </p>
           <p className="text-afh-body text-afh-text-soft">
-            {COPY_FR.scoreCaption}
+            {copy.scoreCaption}
           </p>
-          <p className="text-afh-body text-afh-text-soft">{game.nameFr}</p>
+          <p className="text-afh-body text-afh-text-soft">{gameName}</p>
           {corpusLimited ? (
             <p
               data-testid="game-score-corpus-limited"
               className="text-afh-small text-afh-text-soft"
             >
-              {COPY_FR.corpusLimited}
+              {copy.corpusLimited}
             </p>
           ) : null}
           <Button
@@ -105,14 +101,14 @@ export const GameScoreCard = ({
             // label that wraps, where a fixed height clips it.
             className="min-h-11 w-full"
           >
-            {COPY_FR.playAgain}
+            {copy.playAgain}
           </Button>
         </>
       ) : (
         <div data-testid="game-score-empty" className="flex flex-col gap-2">
-          <p className="text-afh-body text-afh-text">{COPY_FR.emptyCorpus}</p>
+          <p className="text-afh-body text-afh-text">{copy.emptyCorpus}</p>
           <p className="text-afh-small text-afh-text-soft">
-            {COPY_FR.emptyCorpusHint}
+            {copy.emptyCorpusHint}
           </p>
         </div>
       )}
@@ -130,10 +126,10 @@ export const GameScoreCard = ({
           className="flex w-full flex-col gap-3 border-t border-afh-border pt-4 text-center md:text-left"
         >
           <h3 className="font-afh-display text-afh-h3 font-bold text-afh-text">
-            {COPY_FR.factsHeading}
+            {copy.factsHeading}
           </h3>
           {facts.map((fact) => (
-            <ScaleFactCard key={fact.id} fact={fact} />
+            <ScaleFactCard key={fact.id} fact={fact} language={language} />
           ))}
         </section>
       ) : null}

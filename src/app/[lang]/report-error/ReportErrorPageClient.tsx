@@ -7,6 +7,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { useLanguage } from "@/hooks/use-language";
 import { ATTRIBUTION_STRING } from "@/lib/brand";
+import { reportsCopy } from "@/lib/i18n/copy/reports";
 import { getLocalizedRoute, getStaticPageRoute } from "@/lib/routing";
 
 /**
@@ -52,6 +53,7 @@ export default function ReportErrorPageClient() {
   // The route's locale, read by the hook itself; nothing here writes it back,
   // because only the switcher may remember a choice (REQ-140).
   const { language, setLanguage } = useLanguage();
+  const copy = reportsCopy[language].page;
 
   return (
     <PageLayout
@@ -60,33 +62,19 @@ export default function ReportErrorPageClient() {
       hideHeader={true}
     >
       <div className="max-w-3xl mx-auto space-y-8">
-        <h1 className="text-afh-h1 font-display font-bold">
-          Signalez une erreur
-        </h1>
+        <h1 className="text-afh-h1 font-display font-bold">{copy.title}</h1>
 
         <section className="space-y-4">
           <h2 className="text-afh-h2 font-display font-bold">
-            Contribuez à l&apos;exactitude des données
+            {copy.accuracyTitle}
           </h2>
+          <p>{copy.accuracyIntroduction}</p>
+          <p>{copy.formIntroduction}</p>
           <p>
-            Les informations présentées sur ce site proviennent de différentes
-            sources, publiques ou collaboratives. Bien que nous fassions de
-            notre mieux pour vérifier et consolider ces données, certaines
-            peuvent être incomplètes, approximatives ou contenir des erreurs.
-          </p>
-          <p>
-            Décrivez ci-dessous ce qui ne va pas. Aucun compte n&apos;est
-            nécessaire, et la correction proposée comme la source sont
-            facultatives : nous préférons un signalement incomplet à un
-            signalement que vous renoncez à écrire.
-          </p>
-          <p>
-            Si l&apos;erreur se trouve sur une fiche précise, le bouton{" "}
-            <strong>Signaler</strong> de la barre de lecture de cette fiche vise
-            directement le chapitre concerné — c&apos;est plus rapide pour vous
-            et plus précis pour la modération.{" "}
+            {copy.ficheGuidanceBefore} <strong>{copy.reportButton}</strong>{" "}
+            {copy.ficheGuidanceAfter}{" "}
             <ActionLink href={getLocalizedRoute(language, "peoples")}>
-              Ouvrir l&apos;atlas des peuples
+              {copy.openAtlas}
             </ActionLink>
           </p>
         </section>
@@ -95,22 +83,22 @@ export default function ReportErrorPageClient() {
           target={GENERAL_TARGET}
           onSubmit={submitFlag}
           renderVerification={({ onSolved, onFailed }) => (
-            <ProofOfWorkGate onSolved={onSolved} onFailed={onFailed} />
+            <ProofOfWorkGate
+              language={language}
+              onSolved={onSolved}
+              onFailed={onFailed}
+            />
           )}
         />
 
         <section className="space-y-4">
           <h2 className="text-afh-h2 font-display font-bold">
-            Ce que deviennent les signalements
+            {copy.followUpTitle}
           </h2>
-          <p>
-            Tous les signalements sont publics, du dépôt à la décision. Vous
-            pouvez consulter ceux qui sont en cours d&apos;examen et ceux qui
-            ont été tranchés, ainsi que le motif retenu à chaque fois.
-          </p>
+          <p>{copy.followUp}</p>
           <p>
             <ActionLink href={getStaticPageRoute(language, "reports")}>
-              Voir le registre des signalements
+              {copy.viewRegister}
             </ActionLink>
           </p>
         </section>

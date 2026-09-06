@@ -4,6 +4,7 @@ import { getLocalizedRoute } from "@/lib/routing";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 import ComparerPickerPageClient from "@/app/[lang]/comparer/ComparerPickerPageClient";
+import { compareCopy } from "@/lib/i18n/copy/compare";
 
 /**
  * The route is a server component so it can declare its head; the picker
@@ -20,11 +21,12 @@ export async function generateMetadata({
   params,
 }: ComparerPickerPageProps): Promise<Metadata> {
   const { lang } = await params;
-  const title = "Comparer";
+  const language = lang as Language;
+  const title = compareCopy[language].title;
   return {
     title,
     ...surfaceHead(
-      lang as Language,
+      language,
       "compare",
       (locale) => getLocalizedRoute(locale, "compare"),
       { title }

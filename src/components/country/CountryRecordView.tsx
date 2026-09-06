@@ -124,6 +124,7 @@ export function CountryRecordView({
           />
           <div data-testid="section-flag-target-culture" className="mt-3">
             <FlagTarget
+              language={language}
               target={{
                 type: "fiche_section",
                 id: country.id,

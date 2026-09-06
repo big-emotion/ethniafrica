@@ -1,14 +1,20 @@
 import { classificationCopy } from "@/lib/i18n/copy/classification";
+import { atlasCopy } from "@/lib/i18n/copy/atlas";
+import { anecdotesCopy } from "@/lib/i18n/copy/anecdotes";
 import { colonizationCopy } from "@/lib/i18n/copy/colonization";
 import { chromeCopy } from "@/lib/i18n/copy/chrome";
 import { commonCopy } from "@/lib/i18n/copy/common";
 import { consentCopy } from "@/lib/i18n/copy/consent";
+import { compareCopy } from "@/lib/i18n/copy/compare";
+import { contactCopy } from "@/lib/i18n/copy/contact";
+import { contributeCopy } from "@/lib/i18n/copy/contribute";
 import { countryCopy } from "@/lib/i18n/copy/country";
 import { facetsCopy } from "@/lib/i18n/copy/facets";
 import { fieldProvenanceCopy } from "@/lib/i18n/copy/fieldProvenance";
 import { familyCopy } from "@/lib/i18n/copy/family";
 import { ficheCopy } from "@/lib/i18n/copy/fiche";
 import { footerCopy } from "@/lib/i18n/copy/footer";
+import { gamesCopy } from "@/lib/i18n/copy/games";
 import { hubsCopy } from "@/lib/i18n/copy/hubs";
 import { languagesCopy } from "@/lib/i18n/copy/languages";
 import { languageFicheCopy } from "@/lib/i18n/copy/languageFiche";
@@ -18,6 +24,8 @@ import { patronymesCopy } from "@/lib/i18n/copy/patronymes";
 import { peopleCopy } from "@/lib/i18n/copy/people";
 import { publicFlagsCopy } from "@/lib/i18n/copy/publicFlags";
 import { quizCopy } from "@/lib/i18n/copy/quiz";
+import { reportsCopy } from "@/lib/i18n/copy/reports";
+import { sourceTransparencyCopy } from "@/lib/i18n/copy/sourceTransparency";
 import { sitemapPageCopy } from "@/lib/i18n/copy/sitemapPage";
 import { systemCopy } from "@/lib/i18n/copy/system";
 import { trailCopy } from "@/lib/i18n/copy/trail";
@@ -34,12 +42,18 @@ import { trailCopy } from "@/lib/i18n/copy/trail";
  */
 // @req REQ-145
 export const COPY_MODULES = {
+  anecdotes: anecdotesCopy,
+  atlas: atlasCopy,
   common: commonCopy,
   chrome: chromeCopy,
   consent: consentCopy,
+  compare: compareCopy,
+  contact: contactCopy,
+  contribute: contributeCopy,
   countryFiche: countryCopy,
   facets: facetsCopy,
   footer: footerCopy,
+  games: gamesCopy,
   sitemapPage: sitemapPageCopy,
   publicFlags: publicFlagsCopy,
   classification: classificationCopy,
@@ -49,6 +63,8 @@ export const COPY_MODULES = {
   migrations: migrationsCopy,
   colonization: colonizationCopy,
   quiz: quizCopy,
+  reports: reportsCopy,
+  sourceTransparency: sourceTransparencyCopy,
   fieldProvenance: fieldProvenanceCopy,
   family: familyCopy,
   fiche: ficheCopy,

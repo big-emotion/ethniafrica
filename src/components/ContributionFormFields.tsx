@@ -11,6 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Language } from "@/types/shared";
+import { contributeCopy } from "@/lib/i18n/copy/contribute";
 
 interface ContributionFormFieldsProps {
   type: string;
@@ -37,8 +38,10 @@ function getEntityCategory(type: string): EntityCategory | null {
 // @req REQ-092
 export function ContributionFormFields({
   type,
+  language,
   onDataChange,
 }: ContributionFormFieldsProps) {
+  const t = contributeCopy[language].fields;
   const [entities, setEntities] = useState<EntityItem[]>([]);
   const [families, setFamilies] = useState<EntityItem[]>([]);
   const [loading, setLoading] = useState(false);
@@ -117,18 +120,6 @@ export function ContributionFormFields({
     const newData = { ...formData, [field]: value };
     setFormData(newData);
     onDataChange(newData);
-  };
-
-  const t = {
-    selectEntity: "Sélectionner l'entité à modifier",
-    id: "ID",
-    nameMain: "Nom principal",
-    nameFr: "Nom (FR)",
-    etymology: "Étymologie",
-    nameOriginActor: "Acteur à l'origine du nom",
-    languageFamily: "Famille linguistique",
-    currentCountries: "Pays (codes ISO séparés par des virgules)",
-    loading: "Chargement...",
   };
 
   if (loading && Object.keys(formData).length === 0) {

@@ -1,14 +1,13 @@
 import type { ScaleFact } from "@/lib/games/scaleFacts";
 import { revealProvenanceFr } from "@/lib/games/revealProvenance";
+import { revealProvenanceEn } from "@/lib/games/revealProvenance.en";
 import { cn } from "@/lib/utils";
-
-const COPY_FR = {
-  eyebrow: "Ce que la carte cachait",
-  provenanceLabel: "D'après",
-} as const;
+import { gamesCopy } from "@/lib/i18n/copy/games";
+import type { Language } from "@/types/shared";
 
 export interface ScaleFactCardProps {
   fact: ScaleFact;
+  language?: Language;
   className?: string;
 }
 
@@ -27,8 +26,19 @@ export interface ScaleFactCardProps {
  * was measured.
  */
 // @req REQ-120
-export const ScaleFactCard = ({ fact, className }: ScaleFactCardProps) => {
-  const provenanceFr = revealProvenanceFr(fact.fieldPath);
+export const ScaleFactCard = ({
+  fact,
+  language = "fr",
+  className,
+}: ScaleFactCardProps) => {
+  const copy = gamesCopy[language];
+  const provenance =
+    language === "en"
+      ? revealProvenanceEn(fact.fieldPath)
+      : revealProvenanceFr(fact.fieldPath);
+  const headline =
+    language === "en" ? (fact.headlineEn ?? fact.headlineFr) : fact.headlineFr;
+  const body = language === "en" ? (fact.bodyEn ?? fact.bodyFr) : fact.bodyFr;
 
   return (
     <aside
@@ -39,15 +49,15 @@ export const ScaleFactCard = ({ fact, className }: ScaleFactCardProps) => {
       )}
     >
       <p className="font-afh-mono text-afh-caption uppercase tracking-wide text-afh-text-soft">
-        {COPY_FR.eyebrow}
+        {copy.factEyebrow}
       </p>
       <p className="font-afh-display text-afh-h3 font-bold text-afh-text">
-        {fact.headlineFr}
+        {headline}
       </p>
-      <p className="text-afh-body text-afh-text-soft">{fact.bodyFr}</p>
-      {provenanceFr ? (
+      <p className="text-afh-body text-afh-text-soft">{body}</p>
+      {provenance ? (
         <p className="text-afh-small text-afh-text-soft">
-          {COPY_FR.provenanceLabel} {provenanceFr}.
+          {copy.provenanceLabel} {provenance}.
         </p>
       ) : null}
     </aside>

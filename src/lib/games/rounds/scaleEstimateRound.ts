@@ -8,6 +8,12 @@ import {
   shapeInflation,
 } from "@/lib/games/shapeMeasure";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
+import {
+  ESTIMATE_SUBJECT_EN,
+  SCALE_ESTIMATE_ROUND_EN,
+  scaleEstimatePromptEn,
+  scaleEstimateRevealEn,
+} from "@/lib/games/rounds/scaleEstimateRound.en";
 
 /**
  * « De combien vous êtes-vous trompé ? » — how many times a familiar
@@ -113,14 +119,25 @@ export function buildScaleEstimateRound(shapeId: string): EstimateRound | null {
   if (ratio < SLIDER_MIN || ratio > SLIDER_MAX) return null;
 
   const inflation = shapeInflation(shape.rings);
+  const promptEn = scaleEstimatePromptEn(shapeId);
+  const revealEn = scaleEstimateRevealEn({
+    shapeId,
+    ratio,
+    shapeAreaKm2: shapeArea,
+    africaAreaKm2: africa,
+    inflation,
+  });
 
   return {
     kind: "estimate",
     gameId: GAME.id,
     subjectId: shapeId,
     promptFr: `Combien de fois ${subject.subjectFr} ${subject.fitsFr} dans l'Afrique ?`,
+    promptEn: promptEn ?? undefined,
     subjectFr: subject.subjectFr,
+    subjectEn: ESTIMATE_SUBJECT_EN[shapeId]?.subjectEn,
     unitFr: "fois",
+    unitEn: SCALE_ESTIMATE_ROUND_EN.unitEn,
     min: SLIDER_MIN,
     max: SLIDER_MAX,
     step: SLIDER_STEP,
@@ -128,6 +145,7 @@ export function buildScaleEstimateRound(shapeId: string): EstimateRound | null {
     toleranceRatio: TOLERANCE_RATIO,
     reveal: {
       textFr: `${ratioFr(ratio)} fois. ${shape.nameFr} couvre ${millionsKm2Fr(shapeArea)}, l'Afrique ${millionsKm2Fr(africa)}. Sur une carte plate la projection l'agrandit ${inflationFr(inflation)} fois — c'est de là que vient l'écart avec votre estimation.`,
+      textEn: revealEn ?? undefined,
       fieldPath: WORLD_COMPARE_PROVENANCE_PATH,
       // Measured off the committed outlines, like every Mercator round. No
       // fiche is credited because none was read: the corpus holds no area
@@ -139,6 +157,7 @@ export function buildScaleEstimateRound(shapeId: string): EstimateRound | null {
       // the honest destination, the round being about the continent rather
       // than about the shape it is measured against.
       ficheHref: getAxisHubRoute("fr", "atlas"),
+      ficheHrefEn: getAxisHubRoute("en", "atlas"),
     },
   };
 }

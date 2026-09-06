@@ -4,6 +4,8 @@ import { ContactAside } from "@/components/contact/ContactAside";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
+import { DID_YOU_KNOW_FACTS_EN } from "@/lib/home/didYouKnowFacts.en";
+import { contactCopy } from "@/lib/i18n/copy/contact";
 import { getStaticPageRoute } from "@/lib/routing";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
@@ -32,15 +34,16 @@ export async function generateMetadata({
   params,
 }: ContactPageProps): Promise<Metadata> {
   const { lang } = await params;
+  const language = lang as Language;
+  const localized = contactCopy[language];
   const copy = {
-    title: "Contactez-nous",
-    description:
-      "Écrire à l'atlas : signaler une erreur, proposer une source, demander une réutilisation des données.",
+    title: localized.metadataTitle,
+    description: localized.metadataDescription,
   };
   return {
     ...copy,
     ...surfaceHead(
-      lang as Language,
+      language,
       "contact",
       (locale) => getStaticPageRoute(locale, "contact"),
       copy
@@ -51,23 +54,26 @@ export async function generateMetadata({
 // @req REQ-045
 export default async function ContactPage({ params }: ContactPageProps) {
   const { lang } = await params;
-  const fact = pickDidYouKnowFact();
+  const language = lang as Language;
+  const copy = contactCopy[language];
+  const selectedFact = pickDidYouKnowFact();
+  const fact =
+    language === "en" && selectedFact
+      ? { id: selectedFact.id, ...DID_YOU_KNOW_FACTS_EN[selectedFact.id] }
+      : selectedFact;
 
   return (
-    <PageLayout language={lang as Language} hideHeader>
+    <PageLayout language={language} hideHeader>
       <article className="mx-auto max-w-5xl pb-16 pt-4 md:pb-24 md:pt-8">
         <header className="border-b border-afh-border pb-10 md:pb-14">
           <p className="text-afh-eyebrow font-semibold uppercase tracking-[0.16em] text-afh-terracotta">
-            Écrire à l&apos;atlas
+            {copy.eyebrow}
           </p>
           <h1 className="mt-4 max-w-[18ch] text-afh-h1 font-display font-bold leading-[1.05] text-afh-text">
-            Contactez-nous
+            {copy.title}
           </h1>
           <p className="mt-8 text-afh-lead leading-[1.45] text-afh-text-soft">
-            Une erreur sur une fiche, une source à verser au corpus, une
-            réutilisation des données à discuter : écrivez-nous. Chaque message
-            arrive dans la même boîte, et l&apos;objet que vous choisissez est
-            ce qui la trie.
+            {copy.introduction}
           </p>
         </header>
 
@@ -78,15 +84,15 @@ export default async function ContactPage({ params }: ContactPageProps) {
         <div className="grid gap-10 pt-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)] lg:gap-14 lg:pt-14">
           <section className="lg:order-last">
             <h2 className="text-afh-h2 font-display font-bold text-afh-text">
-              Envoyer un message
+              {copy.formTitle}
             </h2>
             <div className="mt-6">
-              <ContactForm />
+              <ContactForm language={language} />
             </div>
           </section>
 
           <div className="lg:order-first">
-            <ContactAside fact={fact} />
+            <ContactAside fact={fact} language={language} />
           </div>
         </div>
       </article>
