@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { NommerChapterPage } from "@/components/dossiers/nommer/NommerChapterPage";
 import { getNommerChapter } from "@/lib/dossiers/nommer/chapters";
+import { localizeNommerChapter } from "@/lib/dossiers/nommer/localizeChapter";
 import { getNommerChapterRoute } from "@/lib/routing";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
@@ -18,7 +19,8 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { lang } = await params;
-  const copy = { title: CHAPTER.title, description: CHAPTER.standfirst.text };
+  const chapter = localizeNommerChapter(CHAPTER, lang as Language);
+  const copy = { title: chapter.title, description: chapter.standfirst.text };
   return {
     ...copy,
     ...surfaceHead(

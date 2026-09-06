@@ -43,6 +43,29 @@ const measures = (language: Language): Measure[] => {
   const africanChoice = countedValue("countries-african-choice");
   const countries = countedValue("corpus-countries");
 
+  if (language === "en") {
+    return [
+      {
+        value: `${Math.round(exonyms / autonyms)} to 1`,
+        claim:
+          "The corpus holds four names from outside for every name from within.",
+        provenance: `${formatNumber(language, exonyms)} exonyms against ${formatNumber(language, autonyms)} autonyms, counted in the records`,
+      },
+      {
+        value: `${contested} out of ${peoples}`,
+        claim:
+          "That many peoples declare their own name contested or inherited from colonisation.",
+        provenance: `and ${undeclared} records declare nothing at all — the figure a percentage would erase`,
+      },
+      {
+        value: `${africanChoice} out of ${countries}`,
+        claim: "That many countries bear a name chosen by Africans.",
+        provenance:
+          "a manual reading of the 54 etymologies, none of which the corpus yet supports with a source",
+      },
+    ];
+  }
+
   return [
     {
       value: `${Math.round(exonyms / autonyms)} pour 1`,

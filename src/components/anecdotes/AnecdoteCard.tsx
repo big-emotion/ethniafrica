@@ -2,11 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { AnecdotePlate } from "@/components/anecdotes/AnecdotePlate";
-import type {
-  DidYouKnowEntity,
-  DidYouKnowFact,
-} from "@/lib/home/didYouKnowFacts";
+import { TranslationProvenanceMarker } from "@/components/fiche/TranslationProvenanceMarker";
+import type { DidYouKnowEntity } from "@/lib/home/didYouKnowFacts";
 import type { DidYouKnowIllustration } from "@/lib/home/didYouKnowIllustrations";
+import type { LocalizedDidYouKnowFact } from "@/lib/home/didYouKnowLocalization";
 import {
   DID_YOU_KNOW_ENTITY_ACCENT,
   type AnecdoteImageSide,
@@ -17,7 +16,7 @@ import type { Language } from "@/types/shared";
 
 export interface AnecdoteCardProps {
   language: Language;
-  fact: DidYouKnowFact;
+  fact: LocalizedDidYouKnowFact;
   /**
    * Resolved by the caller rather than looked up here, so that rendering a
    * card does not oblige the surface to carry the whole illustration table.
@@ -129,6 +128,14 @@ export function AnecdoteCard({
 
         <div className="anecdote-text">
           <h2 className="anecdote-headline">{fact.headline}</h2>
+
+          <TranslationProvenanceMarker
+            translation={
+              fact.translationKind
+                ? { kind: fact.translationKind, stale: false }
+                : null
+            }
+          />
 
           {fact.body.map((paragraph, index) => (
             <p

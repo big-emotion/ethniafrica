@@ -5,6 +5,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import { NOMMER_CHAPTERS } from "@/lib/dossiers/nommer/chapters";
+import { NOMMER_CHAPTERS_EN } from "@/lib/dossiers/nommer/chapters/index.en";
 import { NOMMER_CHAPTER_KEYS, NOMMER_CHAPTER_SLUGS } from "@/lib/routing";
 
 import LaChosePage from "../la-chose/page";
@@ -14,17 +15,21 @@ import LePaysPage from "../le-pays/page";
 import LePeuplePage from "../le-peuple/page";
 
 const FR = Promise.resolve({ lang: "fr" });
+const EN = Promise.resolve({ lang: "en" });
 
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({
     children,
     title,
+    subtitle,
   }: {
     children: React.ReactNode;
     title?: string;
+    subtitle?: string;
   }) => (
     <div>
       <h1>{title}</h1>
+      <p>{subtitle}</p>
       {children}
     </div>
   ),
@@ -108,5 +113,24 @@ describe("the Nommer chapter routes", () => {
       expect(others).toHaveTextContent(chapter.title);
     }
     expect(others).not.toHaveTextContent("La langue");
+  });
+
+  // @req REQ-145
+  it("renders the English sidecar throughout an English chapter route", async () => {
+    const translation = NOMMER_CHAPTERS_EN["le-peuple"];
+    render(await LePeuplePage({ params: EN }));
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: translation.title })
+    ).toBeInTheDocument();
+    expect(screen.getByText(translation.standfirst)).toBeInTheDocument();
+    expect(
+      screen.getByRole("navigation", { name: "Other chapters" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("status", {
+        name: "Machine translation, not yet reviewed",
+      })
+    ).toBeInTheDocument();
   });
 });

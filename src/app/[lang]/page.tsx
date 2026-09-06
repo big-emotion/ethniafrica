@@ -3,6 +3,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { HomeHero } from "@/components/home/HomeHero";
 import { DidYouKnow } from "@/components/home/DidYouKnow";
 import { pickDidYouKnowFacts } from "@/lib/home/didYouKnowFacts";
+import { localizeDidYouKnowFact } from "@/lib/home/didYouKnowLocalization";
 import { getCorpusCounts } from "@/lib/home/corpusCounts";
 import { loadSeedWords } from "@/lib/home/seedWords";
 import { drawHomeHeroVisual } from "@/lib/home/homeHeroVisuals";
@@ -79,7 +80,9 @@ export default async function Home({ params, searchParams }: HomePageProps) {
 
   // Drawn in the server component so it never re-runs during hydration and
   // cannot desynchronise the client tree.
-  const didYouKnowFacts = pickDidYouKnowFacts(2);
+  const didYouKnowFacts = pickDidYouKnowFacts(2).map((fact) =>
+    localizeDidYouKnowFact(fact, language)
+  );
   const didYouKnowMotif = drawDidYouKnowMotif();
 
   return (

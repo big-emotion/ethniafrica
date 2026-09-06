@@ -2,11 +2,13 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import { NOMMER_CHAPTERS } from "@/lib/dossiers/nommer/chapters";
+import { NOMMER_CHAPTERS_EN } from "@/lib/dossiers/nommer/chapters/index.en";
 import { getNommerChapterRoute } from "@/lib/routing";
 
 import NommerPage from "../page";
 
 const FR = Promise.resolve({ lang: "fr" });
+const EN = Promise.resolve({ lang: "en" });
 
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({
@@ -87,5 +89,20 @@ describe("the Nommer pillar page", () => {
       1
     );
     expect(container.querySelector(".afh-accent-teal")).not.toBeNull();
+  });
+
+  // @req REQ-145
+  it("renders the English pillar and English chapter doorways on /en", async () => {
+    render(await NommerPage({ params: EN }));
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Who gave this name?" })
+    ).toBeInTheDocument();
+    for (const translation of Object.values(NOMMER_CHAPTERS_EN)) {
+      expect(
+        screen.getByRole("link", { name: translation.title })
+      ).toHaveAttribute("href", getNommerChapterRoute("en", translation.key));
+    }
+    expect(screen.queryByText("Qui a donné ce nom ?")).not.toBeInTheDocument();
   });
 });
