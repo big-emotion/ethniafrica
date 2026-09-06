@@ -67,7 +67,11 @@ export async function PageLoadingScreen({ label }: PageLoadingScreenProps) {
           to nothing and the continent renders black. Ocre is the atlas's own
           ink, the same the eyebrow above it uses. */}
       <div data-testid="page-loading-band" className="afh-accent-ocre">
-        <DidYouKnowLoader fact={pickDidYouKnowFact()} label={label} />
+        <DidYouKnowLoader
+          language={language}
+          fact={pickDidYouKnowFact()}
+          label={label}
+        />
       </div>
     </PageLayout>
   );

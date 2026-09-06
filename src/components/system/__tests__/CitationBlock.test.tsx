@@ -33,6 +33,24 @@ describe("CitationBlock", () => {
     vi.restoreAllMocks();
   });
 
+  // @req REQ-145
+  it("renders the citation controls and access wording in English", () => {
+    renderCitationBlock({
+      language: "en",
+      title: "Reference fiche",
+      liveUrl: "https://example.org/en/fiche/reference",
+    });
+
+    expect(
+      screen.getByRole("heading", { name: "Cite this fiche" })
+    ).toBeVisible();
+    expect(screen.getByRole("button", { name: "Copy citation" })).toBeVisible();
+    expect(
+      screen.getByRole<HTMLTextAreaElement>("textbox", { name: "Citation" })
+        .value
+    ).toContain("Accessed 14 July 2026");
+  });
+
   // @req REQ-021
   it("renders the exact default plain-text citation and permanent license", () => {
     renderCitationBlock();

@@ -128,4 +128,11 @@ describe("BackToTop", () => {
 
     expect(window.scrollTo).toHaveBeenCalledWith({ top: 0, behavior: "auto" });
   });
+
+  // @req REQ-145
+  it("has an English accessible name on the English surface", () => {
+    render(<BackToTop language="en" />);
+
+    expect(screen.getByRole("button", { name: "Back to top" })).toBeVisible();
+  });
 });

@@ -1,15 +1,27 @@
 import { ClassificationBadge } from "@/components/ui/classification-badge";
 import type { HierarchyNode } from "@/components/system/hierarchy-types";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 export interface HierarchyTextIndexProps {
+  language?: Language;
   nodes: HierarchyNode[];
 }
 
-function peopleCountLabel(count: number): string {
-  return count === 1 ? "1 peuple" : `${count} peuples`;
+function peopleCountLabel(count: number, language: Language): string {
+  const copy = getTranslation(language).system;
+  return count === 1 ? copy.peopleOne : `${count} ${copy.peopleMany}`;
 }
 
-function HierarchyNodeItem({ node }: { node: HierarchyNode }) {
+function HierarchyNodeItem({
+  node,
+  language,
+}: {
+  node: HierarchyNode;
+  language: Language;
+}) {
+  const copy = getTranslation(language).system;
   if (node.type === "unlinked-group") {
     // The group is worth stating on its count alone: the family fiche knows
     // how many peoples reference no language long before it has fetched which
@@ -17,11 +29,17 @@ function HierarchyNodeItem({ node }: { node: HierarchyNode }) {
     if (!node.children?.length && node.peopleCount === 0) return null;
     return (
       <li>
-        <span>peuples sans langue référencée ({node.peopleCount})</span>
+        <span>
+          {copy.unlinkedPeople} ({node.peopleCount})
+        </span>
         {node.children?.length ? (
           <ol>
             {node.children.map((child) => (
-              <HierarchyNodeItem key={child.id} node={child} />
+              <HierarchyNodeItem
+                key={child.id}
+                node={child}
+                language={language}
+              />
             ))}
           </ol>
         ) : null}
@@ -46,13 +64,17 @@ function HierarchyNodeItem({ node }: { node: HierarchyNode }) {
       ) : null}
       {" — "}
       <span className="afh-text-index-count">
-        {peopleCountLabel(node.peopleCount)}
+        {peopleCountLabel(node.peopleCount, language)}
       </span>
       <ClassificationBadge status={node.classificationStatus} />
       {node.children?.length ? (
         <ol>
           {node.children.map((child) => (
-            <HierarchyNodeItem key={child.id} node={child} />
+            <HierarchyNodeItem
+              key={child.id}
+              node={child}
+              language={language}
+            />
           ))}
         </ol>
       ) : null}
@@ -61,11 +83,15 @@ function HierarchyNodeItem({ node }: { node: HierarchyNode }) {
 }
 
 // @req REQ-047
-export function HierarchyTextIndex({ nodes }: HierarchyTextIndexProps) {
+export function HierarchyTextIndex({
+  language = FALLBACK_LOCALE,
+  nodes,
+}: HierarchyTextIndexProps) {
+  const copy = getTranslation(language).system;
   return (
-    <ol aria-label="Classification" className="afh-text-index">
+    <ol aria-label={copy.classification} className="afh-text-index">
       {nodes.map((node) => (
-        <HierarchyNodeItem key={node.id} node={node} />
+        <HierarchyNodeItem key={node.id} node={node} language={language} />
       ))}
     </ol>
   );

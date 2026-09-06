@@ -4,6 +4,8 @@ import { usePathname } from "next/navigation";
 
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { deriveTrail } from "@/lib/navigation/deriveTrail";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getLanguageFromRoute } from "@/lib/routing";
 
 export interface SiteTrailProps {
   /**
@@ -31,6 +33,12 @@ export interface SiteTrailProps {
 // @req REQ-115
 export function SiteTrail({ entityLabel }: SiteTrailProps) {
   const pathname = usePathname();
+  const language = getLanguageFromRoute(pathname ?? "") ?? FALLBACK_LOCALE;
 
-  return <AfrikBreadcrumbs items={deriveTrail(pathname ?? "", entityLabel)} />;
+  return (
+    <AfrikBreadcrumbs
+      language={language}
+      items={deriveTrail(pathname ?? "", entityLabel)}
+    />
+  );
 }

@@ -71,4 +71,14 @@ describe("the facet letter rail", () => {
       "page"
     );
   });
+
+  // @req REQ-145
+  it("names the complete alphabet in English", () => {
+    render(<FacetLetterRail language="en" current={null} hrefFor={href} />);
+
+    expect(
+      screen.getByRole("navigation", { name: "First letter" })
+    ).toBeVisible();
+    expect(screen.getByRole("link", { name: "All" })).toBeVisible();
+  });
 });

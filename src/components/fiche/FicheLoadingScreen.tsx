@@ -86,6 +86,7 @@ export async function FicheLoadingScreen({
     <PageLayout language={language} hideHeader hideTrail>
       <div className={ACCENT_CLASS_BY_ENTITY[entityType]}>
         <DidYouKnowLoader
+          language={language}
           fact={pickDidYouKnowFact()}
           label={WAIT_LABEL[language][entityType]}
         />

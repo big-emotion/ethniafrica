@@ -32,6 +32,28 @@ const en = {
   unavailableLabel: "Coming soon",
   menuLabel: "Three paths",
   facetsLabel: "Its facets",
+  moduleNames: {
+    pays: "The countries of Africa",
+    peuples: "The peoples of Africa",
+    familles: "The family tree",
+    langues: "The languages of Africa",
+    noms: "Ethnonyms",
+    patronymes: "Names",
+    recherche: "Free search",
+    nommer: "Who gave this name?",
+    anecdotes: "Anecdotes",
+    "dossier-proportions": "True proportions",
+    "dossier-populations": "Real weight",
+    "dossier-ressources": "A geological scandal",
+    "dossier-kongo": "The Kongo kingdom",
+    "dossier-luba": "Luba: power and memory",
+    "dossier-lunda": "Lunda: alliances and connections",
+    "dossier-spiritualites-kongo": "Kongo spiritualities: objects and change",
+    frise: "First migration landmarks",
+    "regards-colonisation": "Colonial gaze: colonisation and resistance",
+    quiz: "The quiz",
+    mercator: "The size they hid from you",
+  } as Record<string, string>,
 };
 
 type HubsCopy = typeof en;
@@ -104,6 +126,29 @@ const fr: HubsCopy = {
   // beside the hub as if they were three more destinations — which is
   // exactly how the three directories read before they were merged.
   facetsLabel: "Ses facettes",
+  moduleNames: {
+    pays: "Les pays d'Afrique",
+    peuples: "Les peuples d'Afrique",
+    familles: "L'arbre des familles",
+    langues: "Les langues d'Afrique",
+    noms: "Appellations",
+    patronymes: "Noms",
+    recherche: "Recherche libre",
+    nommer: "Qui a donné ce nom ?",
+    anecdotes: "Anecdotes",
+    "dossier-proportions": "Les vraies proportions",
+    "dossier-populations": "Le poids réel",
+    "dossier-ressources": "Un scandale géologique",
+    "dossier-kongo": "Le royaume Kongo",
+    "dossier-luba": "Luba : pouvoir et mémoire",
+    "dossier-lunda": "Lunda : alliances et circulations",
+    "dossier-spiritualites-kongo":
+      "Spiritualités kongo : objets et transformations",
+    frise: "Premiers repères de migrations",
+    "regards-colonisation": "Regards : colonisation et résistances",
+    quiz: "Le quiz",
+    mercator: "La taille qu'on vous a cachée",
+  },
 };
 
 // @req REQ-145

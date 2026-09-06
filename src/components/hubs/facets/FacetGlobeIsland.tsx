@@ -14,6 +14,9 @@ import {
 import type { AtlasTarget } from "@/lib/atlas/targets";
 import type { CountryId } from "@/types/afrik";
 import { cn } from "@/lib/utils";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * Mounted by the Explorer layout, once, for all three facets.
@@ -53,6 +56,7 @@ const FOLD_CONTROL_CLASS = "min-[760px]:hidden";
 const FOLDED_STAGE_CLASS = "max-[759px]:data-[globe-folded=true]:hidden";
 
 export interface FacetGlobeIslandProps {
+  language?: Language;
   /** ISO 3166-1 alpha-3 → documented peoples, the field the continent is shaded by. */
   peopleCountsByCountry: Record<string, number> | undefined;
   /**
@@ -71,10 +75,12 @@ export interface FacetGlobeIslandProps {
 
 // @req REQ-116
 export function FacetGlobeIsland({
+  language = FALLBACK_LOCALE,
   peopleCountsByCountry,
   countryIds,
   missingMessage,
 }: FacetGlobeIslandProps) {
+  const copy = getTranslation(language).facets;
   const stage = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [unfolded, setUnfolded] = useState(false);
@@ -160,9 +166,7 @@ export function FacetGlobeIsland({
         return {
           ...base,
           body: (
-            <p data-testid="facet-panel-empty">
-              Cette sélection ne documente rien dans ce pays.
-            </p>
+            <p data-testid="facet-panel-empty">{copy.selectionEmptyCountry}</p>
           ),
         };
       }
@@ -175,9 +179,7 @@ export function FacetGlobeIsland({
                 Ghana opens with eighty-six peoples, and a control to take
                 them all into the list is no use under eighty-six names. */}
             {alreadyNarrowed ? (
-              <p data-testid="facet-panel-narrowed">
-                La liste est déjà réduite à ce pays.
-              </p>
+              <p data-testid="facet-panel-narrowed">{copy.alreadyNarrowed}</p>
             ) : (
               narrowHref && (
                 <Link
@@ -192,7 +194,7 @@ export function FacetGlobeIsland({
                       titled with the country, so the deixis resolves on
                       screen; the colon carries the name to a reader hearing
                       this link out of its context, and needs no article. */}
-                  Réduire la liste à ce pays
+                  {copy.narrowToCountry}
                   <span className="sr-only"> : {base.title}</span>
                 </Link>
               )
@@ -208,7 +210,12 @@ export function FacetGlobeIsland({
         ),
       };
     },
-    [reading]
+    [
+      copy.alreadyNarrowed,
+      copy.narrowToCountry,
+      copy.selectionEmptyCountry,
+      reading,
+    ]
   );
 
   return (
@@ -232,7 +239,7 @@ export function FacetGlobeIsland({
           FOLD_CONTROL_CLASS
         )}
       >
-        {unfolded ? "Masquer la carte" : "Afficher la carte"}
+        {unfolded ? copy.hideMap : copy.showMap}
       </button>
 
       <div
@@ -274,7 +281,7 @@ export function FacetGlobeIsland({
             // on the stage, small and inert, so the map shows what it offers.
             targetPicker="list"
             pickerTargets={pickerTargets}
-            areaNoun="l'atlas"
+            areaNoun={copy.areaNoun}
           />
         ) : (
           // Server-rendered and painted first, so the hub reads cartographic

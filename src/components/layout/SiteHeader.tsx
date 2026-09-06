@@ -52,12 +52,11 @@ import { DossierNavigation } from "@/components/dossiers/DossierNavigation";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { getPublishedThemes } from "@/lib/dossiers/catalog";
 import { useHeaderReveal } from "@/hooks/use-header-reveal";
-import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/brand";
+import { PRODUCT_NAME } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 import { getTranslation } from "@/lib/translations";
 import {
   ACCENT_BY_ACCESS_MODE,
-  ACCESS_MODE_LABELS,
   ACCESS_MODES,
   accentForModule,
   getNavModules,
@@ -163,6 +162,7 @@ export function SiteHeader({
 }: SiteHeaderProps) {
   const pathname = usePathname();
   const t = getTranslation(language);
+  const axisLabel = (axis: AccessMode) => t.hubs[axis].title;
   // Resolved once per request by the `[lang]` layout; `null` on any surface
   // rendered without it, which `isModuleOffered` reads as "declared half only".
   const moduleAvailability = useModuleAvailability();
@@ -269,7 +269,9 @@ export function SiteHeader({
           <Glyph size={15} strokeWidth={1.9} />
         </span>
         <span className="sh-entry-text">
-          <span className="sh-entry-name">{definition.name}</span>
+          <span className="sh-entry-name">
+            {t.hubs.moduleNames[definition.id] ?? definition.name}
+          </span>
           {offered ? null : (
             <span className="sh-chip">
               <span className="sh-chip-dot" aria-hidden="true" />
@@ -323,7 +325,7 @@ export function SiteHeader({
       data-testid="site-header"
       className="sh-header"
     >
-      <nav ref={barRef} className="sh-bar" aria-label="Navigation principale">
+      <nav ref={barRef} className="sh-bar" aria-label={t.chrome.mainNavigation}>
         {/* One link, two lines: the name, and what the site is. The mark is
             decorative because the wordmark beside it already says the name —
             an alt here makes a screen reader announce it twice. */}
@@ -342,11 +344,11 @@ export function SiteHeader({
           />
           <span className="sh-brand-text">
             <span className="sh-brand-name">{PRODUCT_NAME}</span>
-            <span className="sh-brand-tagline">{PRODUCT_TAGLINE}</span>
+            <span className="sh-brand-tagline">{t.chrome.headerTagline}</span>
           </span>
         </Link>
 
-        <div className="sh-axes" role="group" aria-label="Points d'entrée">
+        <div className="sh-axes" role="group" aria-label={t.chrome.entryPoints}>
           {ACCESS_MODES.map((axis) => (
             <button
               key={axis}
@@ -371,7 +373,7 @@ export function SiteHeader({
             >
               <span className="sh-axis-pill">
                 <span className="sh-seed" aria-hidden="true" />
-                {ACCESS_MODE_LABELS[axis]}
+                {axisLabel(axis)}
                 <ChevronDown
                   className="sh-caret"
                   size={11}
@@ -386,7 +388,7 @@ export function SiteHeader({
           <button
             type="button"
             onClick={onSearchClick}
-            aria-label="Rechercher"
+            aria-label={t.chrome.search}
             className="sh-icon min-h-11"
           >
             <span className="sh-icon-circle">
@@ -396,7 +398,7 @@ export function SiteHeader({
 
           {/* REQ-115 — the surface switch is reachable from every route. It
               is the one control the mockup's bar does not draw. */}
-          <ThemeToggle />
+          <ThemeToggle language={language} />
 
           {/* REQ-140 — the other locale. In the bar only above the
               breakpoint: at 430px a fourth 44px control leaves the lockup
@@ -408,7 +410,7 @@ export function SiteHeader({
             type="button"
             onClick={() => setTrayOpen(true)}
             data-testid="site-nav-burger"
-            aria-label="Ouvrir le menu"
+            aria-label={t.chrome.openMenu}
             aria-expanded={trayOpen}
             className="sh-icon sh-burger min-h-11"
           >
@@ -431,10 +433,10 @@ export function SiteHeader({
             <h2 className="sh-panel-title">
               {openAxis === "dossiers" ? (
                 <ActionLink href={getLocalizedRoute(language, "dossiersHub")}>
-                  {ACCESS_MODE_LABELS[openAxis]}
+                  {axisLabel(openAxis)}
                 </ActionLink>
               ) : (
-                ACCESS_MODE_LABELS[openAxis]
+                axisLabel(openAxis)
               )}
             </h2>
             <p className="sh-panel-blurb">{t.hubs[openAxis].menuBlurb}</p>
@@ -465,10 +467,7 @@ export function SiteHeader({
                 key={axis}
                 className={cn("sh-fold", ACCENT_BY_ACCESS_MODE[axis])}
               >
-                <h3
-                  aria-label={ACCESS_MODE_LABELS[axis]}
-                  className="sh-fold-heading"
-                >
+                <h3 aria-label={axisLabel(axis)} className="sh-fold-heading">
                   <button
                     type="button"
                     aria-expanded={expanded}
@@ -477,7 +476,7 @@ export function SiteHeader({
                     className="sh-fold-trigger min-h-11"
                   >
                     <span className="sh-seed" aria-hidden="true" />
-                    {ACCESS_MODE_LABELS[axis]}
+                    {axisLabel(axis)}
                     <span className="sh-fold-count">
                       {axis === "dossiers"
                         ? getPublishedThemes(moduleAvailability).length
@@ -498,9 +497,7 @@ export function SiteHeader({
                           href={getLocalizedRoute(language, "dossiersHub")}
                           onClick={() => setTrayOpen(false)}
                         >
-                          {language === "en"
-                            ? "All dossiers"
-                            : "Tous les dossiers"}
+                          {t.chrome.allDossiers}
                         </ActionLink>
                         <DossierNavigation
                           language={language}

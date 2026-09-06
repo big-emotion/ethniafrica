@@ -51,7 +51,7 @@ const t = getTranslation("fr");
 // Storybook and any tree without the server layout are in: the header falls
 // back to the declared half. The cases that care pass a map.
 const renderHeader = (
-  props: { onSearchClick?: () => void } = {},
+  props: Partial<React.ComponentProps<typeof SiteHeader>> = {},
   availability: ModuleAvailabilityMap | null = null,
   localeMode: LocalePublicationMode = "bilingual-en-default"
 ) =>
@@ -555,6 +555,26 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
 });
 
 describe("SiteHeader — the controls that stay in the bar", () => {
+  // @req REQ-145
+  it("renders the complete chrome vocabulary in English", () => {
+    mockPathname = "/en";
+    renderHeader({ language: "en" });
+
+    expect(
+      screen.getByRole("navigation", { name: "Main navigation" })
+    ).toBeVisible();
+    expect(screen.getByRole("group", { name: "Entry points" })).toBeVisible();
+    expect(screen.getByRole("button", { name: "Search" })).toBeVisible();
+    expect(screen.getByTestId(BURGER)).toHaveAttribute(
+      "aria-label",
+      "Open menu"
+    );
+    expect(screen.getByText("Atlas of the Peoples of Africa")).toBeVisible();
+    for (const label of ["The atlas", "The dossiers", "Play"]) {
+      expect(screen.getByRole("button", { name: label })).toBeVisible();
+    }
+  });
+
   // @req REQ-114
   it("opens the search from the bar", () => {
     const onSearchClick = vi.fn();

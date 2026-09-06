@@ -1,8 +1,12 @@
 import Link from "next/link";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 export interface FacetLetterRailProps {
+  language?: Language;
   /** The letter the reading is on, or null for the whole alphabet. */
   current: string | null;
   /** The facet's address under a given letter — null means "every letter". */
@@ -25,10 +29,12 @@ export interface FacetLetterRailProps {
  */
 // @req REQ-114
 export function FacetLetterRail({
+  language = FALLBACK_LOCALE,
   current,
   hrefFor,
   className,
 }: FacetLetterRailProps) {
+  const copy = getTranslation(language).facets;
   const pillClass =
     "inline-flex h-11 min-w-11 items-center justify-center rounded-full px-3 text-afh-caption";
   const pillStyle = (selected: boolean) =>
@@ -40,7 +46,7 @@ export function FacetLetterRail({
       : { backgroundColor: "var(--accent-tint)" };
 
   return (
-    <nav aria-label="Première lettre" className={className}>
+    <nav aria-label={copy.firstLetter} className={className}>
       <ul className="flex flex-wrap gap-1">
         <li>
           <Link
@@ -49,7 +55,7 @@ export function FacetLetterRail({
             className={pillClass}
             style={pillStyle(!current)}
           >
-            Tous
+            {copy.allLetters}
           </Link>
         </li>
         {ALPHABET.map((letter) => (

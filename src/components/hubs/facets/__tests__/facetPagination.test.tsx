@@ -194,4 +194,16 @@ describe("facet pagination", () => {
       expect(control.className).toContain("afh-pager-page");
     }
   });
+
+  // @req REQ-145
+  it("renders its navigation and extent in English", () => {
+    renderPager({ language: "en", page: 3, unitLabel: "peoples" });
+
+    expect(screen.getByTestId("facet-pagination-count")).toHaveTextContent(
+      "41 to 60 of 803"
+    );
+    expect(screen.getByRole("link", { name: "Previous page" })).toBeVisible();
+    expect(screen.getByRole("link", { name: "Next page" })).toBeVisible();
+    expect(screen.getByText("Per page")).toBeVisible();
+  });
 });

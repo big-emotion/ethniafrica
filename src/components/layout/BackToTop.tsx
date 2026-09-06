@@ -2,6 +2,9 @@
 
 import { ArrowUp } from "lucide-react";
 import { useEffect, useState, type RefObject } from "react";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * The way back out of a long document.
@@ -22,6 +25,7 @@ import { useEffect, useState, type RefObject } from "react";
 export const OFFER_AFTER_SCREENS = 1;
 
 export interface BackToTopProps {
+  language?: Language;
   /**
    * Where the reader's focus goes when the page does — the masthead of the
    * shell this control belongs to. Scrolling alone would leave a keyboard
@@ -36,7 +40,10 @@ export interface BackToTopProps {
 }
 
 // @req REQ-114
-export function BackToTop({ returnFocusTo }: BackToTopProps = {}) {
+export function BackToTop({
+  language = FALLBACK_LOCALE,
+  returnFocusTo,
+}: BackToTopProps = {}) {
   const [offered, setOffered] = useState(false);
 
   useEffect(() => {
@@ -79,7 +86,7 @@ export function BackToTop({ returnFocusTo }: BackToTopProps = {}) {
       className="afh-back-to-top"
       data-testid="back-to-top"
       data-offered={offered ? "" : undefined}
-      aria-label="Revenir en haut de la page"
+      aria-label={getTranslation(language).chrome.backToTop}
       onClick={returnToTop}
     >
       <ArrowUp aria-hidden="true" />

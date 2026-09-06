@@ -204,9 +204,10 @@ describe("ConsentBanner", () => {
     routeParams.current = { lang: "en" };
     render(<ConsentBanner />);
 
-    expect(
-      screen.getByRole("link", { name: /politique de données/i })
-    ).toHaveAttribute("href", getStaticPageRoute("en", "dataPolicy"));
+    expect(screen.getByRole("link", { name: /data policy/i })).toHaveAttribute(
+      "href",
+      getStaticPageRoute("en", "dataPolicy")
+    );
   });
 
   // @req REQ-140
@@ -249,5 +250,28 @@ describe("ConsentBanner", () => {
       analytics: true,
       functional: false,
     });
+  });
+
+  // @req REQ-145
+  it("renders the complete consent surface in English on an English route", async () => {
+    routeParams.current = { lang: "en" };
+    const user = userEvent.setup();
+    render(<ConsentBanner />);
+
+    expect(screen.getByText("Cookie settings")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Data policy" })).toHaveAttribute(
+      "href",
+      getStaticPageRoute("en", "dataPolicy")
+    );
+    expect(screen.getByRole("button", { name: "Accept all" })).toBeVisible();
+    expect(screen.getByRole("button", { name: "Reject" })).toBeVisible();
+
+    await user.click(screen.getByRole("button", { name: "Customise" }));
+    expect(screen.getByText("Essential cookies")).toBeVisible();
+    expect(screen.getByText("Analytics cookies")).toBeVisible();
+    expect(screen.getByText("Functional cookies")).toBeVisible();
+    expect(
+      screen.getByRole("button", { name: "Save preferences" })
+    ).toBeVisible();
   });
 });

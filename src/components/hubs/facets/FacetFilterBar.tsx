@@ -3,6 +3,9 @@ import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getLanguageFromRoute } from "@/lib/routing";
+import { getTranslation } from "@/lib/translations";
 
 export interface FacetFilterOption {
   value: string;
@@ -111,9 +114,11 @@ export function FacetFilterBar({
   advancedSlot,
   preservedParams,
   activeFilters = [],
-  submitLabel = "Filtrer",
+  submitLabel,
   className,
 }: FacetFilterBarProps) {
+  const language = getLanguageFromRoute(action) ?? FALLBACK_LOCALE;
+  const copy = getTranslation(language).facets;
   const foldedCount =
     advancedFields.filter((field) => field.value).length +
     (advancedSlot?.activeCount ?? 0);
@@ -179,7 +184,7 @@ export function FacetFilterBar({
               {/* The space is explicit: JSX drops the whitespace between text
                   and an expression on the next line, and the summary would be
                   announced as "Filtres2". */}
-              Filtres{" "}
+              {copy.filters}{" "}
               {foldedCount > 0 && (
                 <span
                   className="inline-flex h-6 min-w-6 items-center justify-center rounded-full px-1 text-afh-caption"
@@ -211,7 +216,7 @@ export function FacetFilterBar({
         )}
 
         <Button type="submit" variant="accent" className="shrink-0">
-          {submitLabel}
+          {submitLabel ?? copy.filter}
         </Button>
       </div>
 
@@ -224,7 +229,7 @@ export function FacetFilterBar({
             <li key={filter.label} className="list-none">
               <Link
                 href={filter.removeHref}
-                aria-label={`Retirer le filtre ${filter.label}`}
+                aria-label={`${copy.removeFilter} ${filter.label}`}
                 className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 py-1 text-afh-caption"
                 style={{ backgroundColor: "var(--accent-tint)" }}
               >
