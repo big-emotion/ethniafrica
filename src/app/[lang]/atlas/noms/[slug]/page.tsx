@@ -44,7 +44,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, slug } = await params;
 
-  const canonical = ficheCanonical("name", lang as Language, slug);
+  const canonical = await ficheCanonical("name", lang as Language, slug);
   // An unparseable slug gets no metadata from `ficheCanonical`, and a robots
   // directive on a 404 would be the same mistake in another field.
   if (!canonical.alternates) return canonical;

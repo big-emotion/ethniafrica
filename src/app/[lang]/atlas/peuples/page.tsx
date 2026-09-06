@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { permanentRedirect } from "next/navigation";
 
@@ -23,6 +24,8 @@ import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
 import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getPeopleRoute, resolvePeopleDeepLink } from "@/lib/routing";
 import type { CountryId, People } from "@/types/afrik";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
+import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
 
 /**
@@ -99,6 +102,25 @@ function facetHref(
 /** The autonym the fiche opens on, when the corpus records one. */
 function selfAppellationOf(people: People): string | undefined {
   return people.content?.appellations?.selfAppellation || undefined;
+}
+
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const title = getTranslation(lang as Language).peoples;
+  return {
+    title,
+    ...surfaceHead(
+      lang as Language,
+      "peoples",
+      (locale) => getFacetRoute(locale, "peoples"),
+      { title }
+    ),
+  };
 }
 
 // @req REQ-091

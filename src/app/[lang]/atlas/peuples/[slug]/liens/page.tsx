@@ -4,6 +4,7 @@ import { notFound, redirect } from "next/navigation";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { RETIRED_PEOPLE_IDS } from "@/lib/afrik/retiredPeopleIds";
 import { getPeopleLinksRoute } from "@/lib/routing";
+import { ficheCanonical } from "@/lib/seo/ficheCanonical";
 import type { Language } from "@/types/shared";
 import { RelationsListWithSourceSheet } from "@/components/relations/RelationsListWithSourceSheet";
 import { getPeopleById } from "@/api/v2/services/peopleService";
@@ -25,7 +26,10 @@ export async function generateMetadata({
 }: {
   params: Promise<PageParams>;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { lang, slug } = await params;
+  // The links page is a chapter of its people's fiche and shares its
+  // canonical treatment: it was in the sitemap with no canonical at all.
+  const head = await ficheCanonical("peopleLinks", lang as Language, slug);
 
   // A read that fails must still leave the document a title. Metadata settles
   // after this segment's Suspense shell — and its `200` — has been flushed, so
@@ -39,7 +43,7 @@ export async function generateMetadata({
     people = await getPeopleById(slug);
   } catch (error) {
     logger.error(`Links metadata read failed for ${slug}`, error);
-    return { title: "Liens — EthniAfrica" };
+    return { ...head, title: "Liens — EthniAfrica" };
   }
 
   if (!people) {
@@ -47,6 +51,7 @@ export async function generateMetadata({
   }
 
   return {
+    ...head,
     title: `Liens de ${people.nameMain} — EthniAfrica`,
     description: `Liens migratoires, commerciaux et religieux documentés entre ${people.nameMain} et les peuples voisins, avec leurs sources.`,
   };

@@ -6,6 +6,7 @@ import {
   GlossaryPage,
 } from "@/components/glossaire/GlossaryPage";
 import { getLocalizedRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 
 interface PageProps {
@@ -13,14 +14,23 @@ interface PageProps {
 }
 
 // @req REQ-144
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { lang } = await params;
-  return {
+  const copy = {
     title: GLOSSARY_PAGE_TITLE,
     description: GLOSSARY_PAGE_SUBTITLE,
-    alternates: { canonical: getLocalizedRoute(lang as Language, "glossary") },
+  };
+  return {
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "glossary",
+      (locale) => getLocalizedRoute(locale, "glossary"),
+      copy
+    ),
   };
 }
 

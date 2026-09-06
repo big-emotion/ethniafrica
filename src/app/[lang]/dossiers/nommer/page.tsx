@@ -6,6 +6,7 @@ import {
   NommerPillarPage,
 } from "@/components/dossiers/nommer/NommerPillarPage";
 import { getLocalizedRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 
 interface PageProps {
@@ -13,14 +14,20 @@ interface PageProps {
 }
 
 // @req REQ-113
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { lang } = await params;
+  const copy = { title: NOMMER_PAGE_TITLE, description: NOMMER_PAGE_SUBTITLE };
   return {
-    title: NOMMER_PAGE_TITLE,
-    description: NOMMER_PAGE_SUBTITLE,
-    alternates: { canonical: getLocalizedRoute(lang as Language, "nommer") },
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "nommer",
+      (locale) => getLocalizedRoute(locale, "nommer"),
+      copy
+    ),
   };
 }
 

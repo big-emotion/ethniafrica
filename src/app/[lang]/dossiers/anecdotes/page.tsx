@@ -10,6 +10,7 @@ import {
 import { illustrationFor } from "@/lib/home/didYouKnowIllustrations";
 import { drawAnecdoteImageSide } from "@/lib/home/didYouKnowPresentation";
 import { getLocalizedRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 
 const PAGE_TITLE = "Anecdotes";
@@ -22,14 +23,20 @@ interface AnecdotesPageProps {
 }
 
 // @req REQ-113
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: Pick<AnecdotesPageProps, "params">): Promise<Metadata> {
   const { lang } = await params;
+  const copy = { title: PAGE_TITLE, description: PAGE_SUBTITLE };
   return {
-    title: PAGE_TITLE,
-    description: PAGE_SUBTITLE,
-    alternates: { canonical: getLocalizedRoute(lang as Language, "anecdotes") },
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "anecdotes",
+      (locale) => getLocalizedRoute(locale, "anecdotes"),
+      copy
+    ),
   };
 }
 

@@ -1,4 +1,5 @@
 import { getLocalizedRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { DossierDirectory } from "@/components/dossiers/DossierDirectory";
@@ -28,7 +29,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: page.title,
     description: page.subtitle,
-    alternates: { canonical: getLocalizedRoute(page.language, "dossiersHub") },
+    ...surfaceHead(
+      page.language,
+      "dossiersHub",
+      (language) => getLocalizedRoute(language, "dossiersHub"),
+      { title: page.title, description: page.subtitle }
+    ),
   };
 }
 

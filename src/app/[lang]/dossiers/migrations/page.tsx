@@ -32,6 +32,7 @@ import {
 import { logger } from "@/lib/api/logger";
 import { getTranslation } from "@/lib/translations";
 import { getLocalizedRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 
 interface MigrationsPageProps {
@@ -40,6 +41,7 @@ interface MigrationsPageProps {
 }
 
 // @req REQ-101 @req FR95
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: Pick<MigrationsPageProps, "params">): Promise<Metadata> {
@@ -48,9 +50,12 @@ export async function generateMetadata({
   return {
     title: t.pageTitle,
     description: t.pageSubtitle,
-    alternates: {
-      canonical: getLocalizedRoute(lang as Language, "migrations"),
-    },
+    ...surfaceHead(
+      lang as Language,
+      "migrations",
+      (locale) => getLocalizedRoute(locale, "migrations"),
+      { title: t.pageTitle, description: t.pageSubtitle }
+    ),
   };
 }
 

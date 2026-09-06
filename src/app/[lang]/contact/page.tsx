@@ -5,6 +5,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
 import { getStaticPageRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 
 /**
@@ -26,17 +27,24 @@ interface ContactPageProps {
 
 // @req REQ-045
 // @req REQ-140
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: ContactPageProps): Promise<Metadata> {
   const { lang } = await params;
-  return {
+  const copy = {
     title: "Contactez-nous",
     description:
       "Écrire à l'atlas : signaler une erreur, proposer une source, demander une réutilisation des données.",
-    alternates: {
-      canonical: getStaticPageRoute(lang as Language, "contact"),
-    },
+  };
+  return {
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "contact",
+      (locale) => getStaticPageRoute(locale, "contact"),
+      copy
+    ),
   };
 }
 

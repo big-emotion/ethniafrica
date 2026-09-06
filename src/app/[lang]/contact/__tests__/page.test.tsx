@@ -2,7 +2,7 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import ContactPage, { generateMetadata } from "../page";
-import { CONTACT_EMAIL } from "@/lib/brand";
+import { CANONICAL_DOMAIN, CONTACT_EMAIL } from "@/lib/brand";
 import { DID_YOU_KNOW_FACTS } from "@/lib/home/didYouKnowFacts";
 import { getStaticPageRoute } from "@/lib/routing";
 
@@ -101,7 +101,7 @@ describe("the contact page", () => {
     const metadata = await generateMetadata({ params: routeParams("en") });
 
     expect(metadata.alternates?.canonical).toBe(
-      getStaticPageRoute("en", "contact")
+      `https://${CANONICAL_DOMAIN}${getStaticPageRoute("en", "contact")}`
     );
   });
 

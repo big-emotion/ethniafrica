@@ -5,6 +5,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { DossierDirectory } from "@/components/dossiers/DossierDirectory";
 import { getPublishedThemes } from "@/lib/dossiers/catalog";
 import { getDossierThemeHref } from "@/lib/dossiers/themes";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 
 interface Props {
   params: Promise<{ lang: string; theme: string }>;
@@ -26,7 +27,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: theme.label,
     description: theme.description,
-    alternates: { canonical: getDossierThemeHref(theme.id, theme.language) },
+    ...surfaceHead(
+      theme.language,
+      "dossierThemes",
+      (language) => getDossierThemeHref(theme.id, language),
+      { title: theme.label, description: theme.description }
+    ),
   };
 }
 

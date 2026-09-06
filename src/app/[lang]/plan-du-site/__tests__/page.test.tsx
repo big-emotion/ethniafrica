@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import SitemapPage, { generateMetadata } from "../page";
+import { CANONICAL_DOMAIN } from "@/lib/brand";
 import { getStaticPageRoute } from "@/lib/routing";
 import { getTranslation } from "@/lib/translations";
 
@@ -39,7 +40,7 @@ describe("the site plan", () => {
     const metadata = await generateMetadata({ params: routeParams("en") });
 
     expect(metadata.alternates?.canonical).toBe(
-      getStaticPageRoute("en", "sitemap")
+      `https://${CANONICAL_DOMAIN}${getStaticPageRoute("en", "sitemap")}`
     );
   });
 

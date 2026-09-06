@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 
 import { DossierPage } from "@/components/dossiers/DossierPage";
 import { getDossierBySlug, getDossierTranslation } from "@/lib/dossiers/corpus";
+import { getPublishedLocales, isLocale } from "@/lib/locale";
+import { localeHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 
 interface DossierRouteProps {
@@ -33,21 +35,24 @@ export async function generateMetadata({
   params,
 }: DossierRouteProps): Promise<Metadata> {
   const { lang, dossier: slug } = await params;
-  const translated = lang === "en" ? getDossierTranslation(slug) : null;
-  const dossier = translated?.dossier ?? getDossierBySlug(slug);
+  if (!isLocale(lang)) return {};
+  const source = getDossierBySlug(slug);
+  const translated = getDossierTranslation(slug);
+  const dossier = lang === "en" ? (translated?.dossier ?? source) : source;
 
   if (!dossier) return {};
+
+  const sourcePath = `${getLocalizedRoute("fr", "dossiersHub")}/${source?.slug ?? slug}`;
 
   return {
     title: dossier.title,
     description: dossier.standfirst,
-    alternates: {
-      canonical: translatePath(
-        "fr",
-        lang as Language,
-        `${getLocalizedRoute("fr", "dossiersHub")}/${dossier.slug}`
-      ),
-    },
+    ...localeHead(
+      lang,
+      (language) => translatePath("fr", language, sourcePath),
+      translated ? getPublishedLocales() : ["fr"],
+      { title: dossier.title, description: dossier.standfirst }
+    ),
   };
 }
 

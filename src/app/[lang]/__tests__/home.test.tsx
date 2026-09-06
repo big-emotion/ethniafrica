@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { OG_DESCRIPTION, OG_TITLE } from "@/lib/brand";
+import { CANONICAL_DOMAIN, OG_DESCRIPTION, OG_TITLE } from "@/lib/brand";
 import { CORPUS_CLASSES } from "@/lib/home/corpusClasses";
 
 const {
@@ -304,12 +304,14 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
   it("declares the canonical and OpenGraph metadata", async () => {
     const metadata = await generateMetadata({ params: routeParams("fr") });
 
-    expect(metadata.alternates?.canonical).toBe("/fr");
+    expect(metadata.alternates?.canonical).toBe(
+      `https://${CANONICAL_DOMAIN}/fr`
+    );
     expect(metadata.title).toBe(OG_TITLE);
     expect(metadata.description).toBe(OG_DESCRIPTION);
     expect(metadata.openGraph?.title).toBe(OG_TITLE);
     expect(metadata.openGraph?.description).toBe(OG_DESCRIPTION);
-    expect(metadata.openGraph?.url).toBe("/fr");
+    expect(metadata.openGraph?.url).toBe(`https://${CANONICAL_DOMAIN}/fr`);
   });
 
   // An English home declaring `/fr` canonical would tell every crawler the
@@ -318,8 +320,10 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
   it("points the canonical at the locale the route was served in", async () => {
     const metadata = await generateMetadata({ params: routeParams("en") });
 
-    expect(metadata.alternates?.canonical).toBe("/en");
-    expect(metadata.openGraph?.url).toBe("/en");
+    expect(metadata.alternates?.canonical).toBe(
+      `https://${CANONICAL_DOMAIN}/en`
+    );
+    expect(metadata.openGraph?.url).toBe(`https://${CANONICAL_DOMAIN}/en`);
   });
 
   // @req REQ-140

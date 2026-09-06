@@ -18,6 +18,7 @@ import { SourceRow } from "@/components/sources/SourceRow";
 import { definedFilter } from "@/lib/hubs/facets";
 import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getLocalizedRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 import { SOURCE_KINDS, type SourceKind } from "@/types/sources";
 
@@ -60,11 +61,28 @@ const SORTS: ReadonlyArray<{ value: SourcesFacetSort; label: string }> = [
 ];
 
 // @req REQ-114
-export const metadata: Metadata = {
-  title: "Sources",
-  description:
-    "La bibliographie du corpus : chaque source sur laquelle reposent les fiches, avec son degré d'autorité et ce qui la cite.",
-};
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const copy = {
+    title: "Sources",
+    description:
+      "La bibliographie du corpus : chaque source sur laquelle reposent les fiches, avec son degré d'autorité et ce qui la cite.",
+  };
+  return {
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "sources",
+      (locale) => getLocalizedRoute(locale, "sources"),
+      copy
+    ),
+  };
+}
 
 function isSort(value: string | null): value is SourcesFacetSort {
   return SORTS.some((sort) => sort.value === value);

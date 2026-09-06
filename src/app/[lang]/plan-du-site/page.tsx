@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { getStaticPageRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import { getSiteTree } from "@/lib/siteTree";
 import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
@@ -26,6 +27,7 @@ interface SitemapPageProps {
 
 // @req REQ-088
 // @req REQ-140
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: SitemapPageProps): Promise<Metadata> {
@@ -34,9 +36,12 @@ export async function generateMetadata({
   return {
     title: copy.title,
     description: copy.introduction,
-    alternates: {
-      canonical: getStaticPageRoute(lang as Language, "sitemap"),
-    },
+    ...surfaceHead(
+      lang as Language,
+      "sitemap",
+      (locale) => getStaticPageRoute(locale, "sitemap"),
+      { title: copy.title, description: copy.introduction }
+    ),
   };
 }
 

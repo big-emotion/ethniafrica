@@ -8,6 +8,7 @@ import { quizTrackLabelFr } from "@/lib/quiz/segmentPolicy";
 import { getLocalizedRoute } from "@/lib/routing";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { getTranslation } from "@/lib/translations";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
 
 interface QuizPageProps {
@@ -26,17 +27,21 @@ interface QuizPageProps {
 }
 
 // @req REQ-103 FR66
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: Pick<QuizPageProps, "params">): Promise<Metadata> {
   const { lang } = await params;
   const t = getTranslation(lang as Language).quiz;
+  const copy = { title: t.pageTitle, description: t.pageSubtitle };
   return {
-    title: t.pageTitle,
-    description: t.pageSubtitle,
-    alternates: {
-      canonical: getLocalizedRoute(lang as Language, "quiz"),
-    },
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "quiz",
+      (locale) => getLocalizedRoute(locale, "quiz"),
+      copy
+    ),
   };
 }
 

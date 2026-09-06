@@ -12,6 +12,15 @@ import { assembleComparison } from "@/api/v2/handlers/compare";
 import { transformComparisonData } from "@/lib/comparisonDataTransformer";
 import { ComparisonView } from "@/components/compare/ComparisonView";
 import { SiteTrail } from "@/components/layout/SiteTrail";
+import {
+  COMPARE_ENTITY_SEGMENTS,
+  getLocalizedRoute,
+  type CompareEntityKey,
+} from "@/lib/routing";
+import {
+  OG_LOCALE_BY_LANGUAGE,
+  pageAlternates,
+} from "@/lib/seo/localeAlternates";
 import type { CompareEntityPayload } from "@/types/compare";
 import type { Language } from "@/types/shared";
 import type { CompareEntityTypeParam } from "@/api/v2/schemas/compare";
@@ -34,6 +43,13 @@ const SLUG_TO_API_TYPE: Record<ComparerEntityTypeSlug, CompareEntityTypeParam> =
     pays: "countries",
     familles: "language-families",
   };
+
+/** The slug table's key for each French folder segment, to compose the canonical. */
+const COMPARE_KEY_BY_SLUG: Record<ComparerEntityTypeSlug, CompareEntityKey> = {
+  peuples: "peoples",
+  pays: "countries",
+  familles: "families",
+};
 
 function isComparerEntityTypeSlug(
   value: string
@@ -84,7 +100,17 @@ export async function generateMetadata({
   const labels = data.columns.map((column) => column.label);
   const title = `Comparaison : ${labels.join(" · ")}`;
   const description = `Comparaison de fiches AFRIK : ${labels.join(", ")}. Identité, langues, démographie et confiance éditoriale côte à côte.`;
-  const canonical = `/${lang}/comparer/${entityType}/${ids.join("/")}`;
+  // The route folder is French under either locale; the address a crawler
+  // is told about is composed in the locale's own vocabulary. Combinatorial
+  // and indexed nowhere, so the head carries a canonical and no cluster.
+  const alternates = pageAlternates(
+    lang as Language,
+    (locale) =>
+      `${getLocalizedRoute(locale, "compare")}/${
+        COMPARE_ENTITY_SEGMENTS[locale][COMPARE_KEY_BY_SLUG[entityType]]
+      }/${ids.join("/")}`,
+    []
+  );
   const imageSearchParams = new URLSearchParams();
   ids.forEach((id) => imageSearchParams.append("id", id));
   const imageUrl = `/${lang}/comparer/${entityType}/opengraph-image?${imageSearchParams.toString()}`;
@@ -93,11 +119,12 @@ export async function generateMetadata({
     title,
     description,
     robots: { index: false, follow: true },
-    alternates: { canonical },
+    alternates,
     openGraph: {
       title,
       description,
-      url: canonical,
+      url: String(alternates.canonical),
+      locale: OG_LOCALE_BY_LANGUAGE[lang as Language],
       type: "website",
       images: [
         {

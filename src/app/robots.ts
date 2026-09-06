@@ -19,6 +19,7 @@ import { getLocalePublicationMode } from "@/lib/locale";
  */
 
 // @req REQ-110
+// @req REQ-141
 export default function robots(): MetadataRoute.Robots {
   const localeMode = getLocalePublicationMode();
   const disallow = ["/fr/admin/"];

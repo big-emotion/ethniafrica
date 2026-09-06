@@ -1,0 +1,200 @@
+"use client";
+
+import { useLanguage } from "@/hooks/use-language";
+import { PageLayout } from "@/components/layout/PageLayout";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ActionLink } from "@/components/ui/ActionLink";
+import {
+  ExternalLink,
+  Download,
+  FileText,
+  Code,
+  MessageSquare,
+} from "lucide-react";
+import { ContributionForm } from "@/components/ContributionForm";
+import { getLocalizedRoute, getStaticPageRoute } from "@/lib/routing";
+
+// @req REQ-045
+export default function ContributePageClient() {
+  // The route's locale, read by the hook itself; nothing here writes it back,
+  // because only the switcher may remember a choice (REQ-140).
+  const { language, setLanguage } = useLanguage();
+
+  // French copy under either locale until the English text is written; the
+  // links around it already follow the route.
+  const t = {
+    title: "Contribuer",
+    intro: {
+      title: "Contribution et participation",
+      // Deliberately not a list of what the corpus holds. This sentence
+      // named three of its classes for as long as the corpus had six, and
+      // any list kept here is a second copy of one that already exists.
+      // À propos owns that enumeration; this page owns how to contribute.
+      text1: (
+        <>
+          Le site est alimenté par une{" "}
+          <strong>base de données structurée</strong>, organisée selon la
+          méthodologie AFRIK. La page{" "}
+          <Link
+            href={getLocalizedRoute(language, "about")}
+            className="underline underline-offset-4"
+          >
+            À propos
+          </Link>{" "}
+          détaille ce que contient le corpus.
+        </>
+      ),
+      text2: (
+        <>
+          Je suis{" "}
+          <strong>ouvert à toutes les propositions ou contributions</strong>,
+          qu&apos;il s&apos;agisse de partager des sources, des corrections, ou
+          simplement des idées d&apos;amélioration. Si vous souhaitez aider,
+          n&apos;hésitez pas à me contacter ou à proposer directement sur le{" "}
+          <a
+            href="https://github.com/big-emotion/ethniafrica"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4"
+          >
+            dépôt GitHub du projet
+          </a>
+          .
+        </>
+      ),
+    },
+    apiDocs: {
+      title: "Documentation API",
+      // Same rule as `intro.text1`: the second sentence used to name three
+      // resources out of eighteen. /docs/api lists them from the spec.
+      text: "Consultez la documentation complète de l'API pour comprendre comment récupérer les données de manière programmatique. Elle liste chaque famille de ressources et ses endpoints.",
+      button: "Voir la documentation API",
+    },
+    download: {
+      title: "Télécharger les données",
+      text: "Téléchargez toutes les données au format CSV ou Excel pour votre propre usage, analyse ou contributions.",
+      csvButton: "Télécharger CSV (ZIP)",
+      excelButton: "Télécharger Excel",
+    },
+    contact: {
+      title: "Contact",
+      text: "Vous souhaitez nous écrire — une erreur à signaler, une source à proposer, une réutilisation des données à discuter ?",
+      link: "Aller au formulaire de contact",
+    },
+    github: {
+      title: "Contribuer via GitHub",
+      text: "Le projet est open source et hébergé sur GitHub. Vous pouvez contribuer en soumettant des issues, des pull requests, ou en améliorant le code source.",
+      button: "Participer sur GitHub",
+    },
+  };
+
+  const handleDownload = (format: "csv" | "excel") => {
+    window.open(`/api/download?format=${format}`, "_blank");
+  };
+
+  return (
+    <PageLayout
+      language={language}
+      onLanguageChange={setLanguage}
+      hideHeader={true}
+    >
+      <div className="max-w-3xl mx-auto space-y-8">
+        <h1 className="text-afh-h1 font-display font-bold">{t.title}</h1>
+
+        {/* Section Intro */}
+        <section className="space-y-4">
+          <h2 className="text-afh-h2 font-display font-bold">
+            {t.intro.title}
+          </h2>
+          <p>{t.intro.text1}</p>
+          <p>{t.intro.text2}</p>
+        </section>
+
+        {/* Section Contribution Form */}
+        <section className="space-y-4">
+          <ContributionForm language={language} />
+        </section>
+
+        {/* Section API Documentation */}
+        <section className="space-y-4">
+          <h3 className="text-afh-h2 font-semibold flex items-center gap-2">
+            <FileText className="h-5 w-5" />
+            {t.apiDocs.title}
+          </h3>
+          <p className="text-muted-foreground">{t.apiDocs.text}</p>
+          <div className="pt-2">
+            <Link href="/docs/api" target="_blank" rel="noopener noreferrer">
+              <Button variant="default" className="gap-2">
+                <ExternalLink className="h-4 w-4" />
+                {t.apiDocs.button}
+              </Button>
+            </Link>
+          </div>
+        </section>
+
+        {/* Section Download */}
+        <section className="space-y-4">
+          <h3 className="text-afh-h2 font-semibold flex items-center gap-2">
+            <Download className="h-5 w-5" />
+            {t.download.title}
+          </h3>
+          <p className="text-muted-foreground">{t.download.text}</p>
+          <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            <Button
+              variant="default"
+              onClick={() => handleDownload("csv")}
+              className="gap-2"
+            >
+              <Download className="h-4 w-4" />
+              {t.download.csvButton}
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => handleDownload("excel")}
+              className="gap-2"
+            >
+              <Download className="h-4 w-4" />
+              {t.download.excelButton}
+            </Button>
+          </div>
+        </section>
+
+        {/* Section GitHub */}
+        <section className="space-y-4">
+          <h3 className="text-afh-h2 font-semibold flex items-center gap-2">
+            <Code className="h-5 w-5" />
+            {t.github.title}
+          </h3>
+          <p className="text-muted-foreground">{t.github.text}</p>
+          <div className="pt-2">
+            <Link
+              href="https://github.com/big-emotion/ethniafrica"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="default" className="gap-2">
+                <ExternalLink className="h-4 w-4" />
+                {t.github.button}
+              </Button>
+            </Link>
+          </div>
+        </section>
+
+        {/* Section Contact */}
+        <section className="space-y-4">
+          <h3 className="text-afh-h2 font-semibold flex items-center gap-2">
+            <MessageSquare className="h-5 w-5" />
+            {t.contact.title}
+          </h3>
+          <p className="text-muted-foreground">{t.contact.text}</p>
+          <div className="pt-2">
+            <ActionLink href={getStaticPageRoute(language, "contact")}>
+              {t.contact.link}
+            </ActionLink>
+          </div>
+        </section>
+      </div>
+    </PageLayout>
+  );
+}

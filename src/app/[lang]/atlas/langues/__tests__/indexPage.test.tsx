@@ -60,6 +60,7 @@ vi.mock("@/api/v2/services/languagesFacet", () => ({
 import LanguesHubPage, { generateMetadata } from "../page";
 
 const FR = Promise.resolve({ lang: "fr" });
+import { CANONICAL_DOMAIN } from "@/lib/brand";
 import { getLanguageRoute, getLocalizedRoute } from "@/lib/routing";
 
 /** Two languages sharing one name — the corpus holds 748 for 532 names. */
@@ -182,7 +183,7 @@ describe("the language facet page", () => {
     const metadata = await generateMetadata({ params: FR });
 
     expect(metadata.alternates?.canonical).toBe(
-      getLocalizedRoute("fr", "languages")
+      `https://${CANONICAL_DOMAIN}${getLocalizedRoute("fr", "languages")}`
     );
   });
 
@@ -192,7 +193,7 @@ describe("the language facet page", () => {
       params: Promise.resolve({ lang: "en" }),
     });
     expect(metadata.alternates?.canonical).toBe(
-      getLocalizedRoute("en", "languages")
+      `https://${CANONICAL_DOMAIN}${getLocalizedRoute("en", "languages")}`
     );
 
     render(

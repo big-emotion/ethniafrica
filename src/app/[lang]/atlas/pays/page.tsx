@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { permanentRedirect } from "next/navigation";
 
@@ -10,7 +11,13 @@ import {
 } from "@/api/v2/services/countryFacet";
 import type { CountryFacetRow } from "@/api/v2/services/countryFacet";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
-import { getCountryRoute, resolveCountryDeepLink } from "@/lib/routing";
+import {
+  getCountryRoute,
+  getLocalizedRoute,
+  resolveCountryDeepLink,
+} from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
+import { getTranslation } from "@/lib/translations";
 import type { CountryId } from "@/types/afrik";
 import type { Language } from "@/types/shared";
 
@@ -48,6 +55,25 @@ interface PageParams {
 }
 
 type PageSearchParams = Record<string, string | string[] | undefined>;
+
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const title = getTranslation(lang as Language).countries;
+  return {
+    title,
+    ...surfaceHead(
+      lang as Language,
+      "countries",
+      (locale) => getLocalizedRoute(locale, "countries"),
+      { title }
+    ),
+  };
+}
 
 /** The query parameters the facet's filters travel under, in the reader's own language. */
 const FAMILY_PARAM = "famille";

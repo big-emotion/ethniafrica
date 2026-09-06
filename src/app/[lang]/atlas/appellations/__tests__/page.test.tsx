@@ -43,6 +43,7 @@ vi.mock("@/components/names/NameNomenclature", () => ({
 }));
 
 import { NamesSchemaUnavailableError } from "@/api/v2/services/names";
+import { CANONICAL_DOMAIN } from "@/lib/brand";
 import { getLocalizedRoute } from "@/lib/routing";
 import AppellationsPage, { generateMetadata } from "../page";
 
@@ -168,7 +169,7 @@ describe("the Appellations nomenclature page", () => {
     });
 
     expect(metadata.alternates?.canonical).toBe(
-      getLocalizedRoute("en", "names")
+      `https://${CANONICAL_DOMAIN}${getLocalizedRoute("en", "names")}`
     );
   });
 
