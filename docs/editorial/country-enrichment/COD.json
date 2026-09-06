@@ -1,0 +1,439 @@
+{
+  "schemaVersion": 1,
+  "countryId": "COD",
+  "countryName": "Democratic Republic of the Congo",
+  "status": "in_progress",
+  "updatedAt": "2026-09-06",
+  "scorePolicy": "vector_only_no_global_score",
+  "databaseSync": {
+    "status": "not_verified",
+    "reason": "Local Supabase environment variables were unavailable during the baseline audit."
+  },
+  "references": {
+    "peopleGroups": {
+      "count": 250,
+      "denominatorKind": "approximate",
+      "scope": "Approximate number of ethnic groups in the DRC; not an enumerated matching table.",
+      "source": "Country Technical Note on Indigenous Peoples' Issues: Democratic Republic of the Congo — IFAD and IWGIA, 2012",
+      "url": "https://iwgia.org/en/documents-and-publications/documents/publications-pdfs/english-publications/341-ifad-iwgia-country-technical-note-on-indigenous-peopels-issues-democratic-republic-of-congo-2012-eng/file.html",
+      "accessedAt": "2026-09-06",
+      "caveat": "Suitable for a raw upper bound only. It does not provide a directly reconciled list of 250 identifiers."
+    },
+    "peopleInventoryBaselines": [
+      {
+        "count": 595,
+        "occurrenceCount": 648,
+        "denominatorKind": "enumerated_historical_inventory",
+        "scope": "Alphabetical nomenclatures of ethnic and language names used in the Belgian Congo, including preferred forms, variants, and geographic classification.",
+        "source": "Orthographie des noms ethniques au Congo belge, suivie de la nomenclature des principales tribus et langues du Congo belge — G. van Bulck, 1954",
+        "url": "https://www.kaowarsom.be/fr/memoir_81",
+        "accessedAt": "2026-09-06",
+        "status": "extracted_for_exact_name_comparison",
+        "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+        "caveat": "This is a colonial-era inventory of peoples, tribes, and subtribes, not a contemporary or self-identification authority. Its 595 simplified labels are not a valid denominator for present-day people coverage."
+      },
+      {
+        "count": 9,
+        "denominatorKind": "official_survey_broad_categories",
+        "scope": "Nine broad coded Congolese tribe/region categories used by the 2013–2014 DRC Demographic and Health Survey, plus other and missing categories.",
+        "source": "DRC Demographic and Health Survey 2013–14 — Ministry of Planning, Ministry of Public Health, ICF; IPUMS distribution",
+        "url": "https://microdata.worldbank.org/catalog/3086/variable/C/C_ETHNICITYCD?name=C_ETHNICITYCD",
+        "accessedAt": "2026-09-06",
+        "status": "context_only",
+        "caveat": "The survey records a tribe name but publishes nine aggregated analytical categories. It is not an exhaustive people inventory and cannot be used as the recall denominator."
+      },
+      {
+        "count": 3,
+        "denominatorKind": "enumerated_thematic_inventory",
+        "scope": "Contemporary IWGIA names for Indigenous Pygmy peoples in the DRC: Mbuti, Baka, and Batwa.",
+        "source": "The Indigenous World 2024: Democratic Republic of the Congo — IWGIA",
+        "url": "https://www.iwgia.org/en/news/iw-2024-drc",
+        "accessedAt": "2026-09-06",
+        "status": "candidate_for_reconciliation",
+        "caveat": "This is an authoritative thematic subset, not a national inventory of all peoples. Earlier policy documents also use Cwa and Aka terminology, which must be reconciled rather than silently merged."
+      }
+    ],
+    "languages": {
+      "count": 252,
+      "denominatorKind": "enumerated_reference_inventory",
+      "scope": "Language entries returned by the Glottolog 5.3 country map for CD.",
+      "source": "Languages of Congo, The Democratic Republic of the — Glottolog 5.3",
+      "url": "https://glottolog.org/glottolog/language.map.html?country=CD",
+      "accessedAt": "2026-09-06",
+      "caveat": "The inventory includes sign, contact, cross-border, and other language categories. ISO and Glottocode reconciliation is required before computing recall."
+    },
+    "languagePolicy": {
+      "officialLanguages": ["French"],
+      "nationalLanguages": ["Kikongo", "Lingala", "Swahili", "Tshiluba"],
+      "denominatorKind": "constitutional_language_roles",
+      "scope": "Language roles declared by Article 1 of the Constitution, distinct from the complete inventory of languages used in the country.",
+      "source": "Constitution of the Democratic Republic of the Congo, consolidated through the constitutional amendment of 20 January 2011 — Article 1",
+      "url": "https://www.presidence.cd/uploads/files/Constitution%20de%20la%20RDC%20%202011.pdf",
+      "accessedAt": "2026-09-06",
+      "caveat": "The constitutional label Kikongo does not by itself resolve whether the site should link the Kongo cluster, Kikongo ya Leta/Kituba, or both. That mapping requires linguistic sources."
+    },
+    "patronyms": {
+      "count": 30,
+      "denominatorKind": "editorial_quota",
+      "scope": "Minimum breadth quota for countries with at least 100 million inhabitants.",
+      "source": "EthniAfrica anthroponym coverage plan",
+      "url": "docs/runbooks/anthroponym-coverage-plan.md",
+      "accessedAt": "2026-09-06",
+      "caveat": "Meeting the quota measures breadth only; it does not imply that each name is deeply documented."
+    },
+    "population": {
+      "count": 112800000,
+      "referenceYear": 2025,
+      "denominatorKind": "official_estimate",
+      "source": "World Population Dashboard — UNFPA, 2025",
+      "url": "https://www.unfpa.org/data/world-population/CD",
+      "accessedAt": "2026-09-06",
+      "caveat": "National mid-year estimate; it is not a denominator for ethnic-group percentages without compatible group estimates."
+    },
+    "censusStatus": {
+      "status": "second_census_preparation_announced_for_2026",
+      "lastCompletedCensusYear": 1984,
+      "denominatorKind": "official_process_status",
+      "source": "DRC Ministry of Planning — RGPH-2 stakeholder mobilization announcement, 2026",
+      "url": "https://plan.gouv.cd/conference-des-gouverneurs-discours-de-son-excellence-monsieur-le-ministre-detat-ministre-du-plan-et-de-la-coordination-de-laide-au-developpement/",
+      "accessedAt": "2026-09-06",
+      "caveat": "This describes the census process, not published RGPH-2 results. Current ethnic-population shares cannot be treated as recent census measurements."
+    }
+  },
+  "snapshot": {
+    "countryId": "COD",
+    "identity": {
+      "nameFr": "République démocratique du Congo",
+      "nameOfficial": "République démocratique du Congo (RDC)"
+    },
+    "structural": {
+      "filledSections": 8,
+      "totalSections": 8,
+      "filledSectionsPercent": 100
+    },
+    "peoples": {
+      "linkedFiches": 72,
+      "macroLikeLinkedFiches": 4,
+      "featuredEntries": 12,
+      "demographicNamedEntries": 12,
+      "featuredVsLinkedPercent": 16.7,
+      "referenceCount": 250,
+      "rawReferenceUpperBoundPercent": 28.8,
+      "namedDemographicSharePercent": 66,
+      "catchAllDemographicSharePercent": 34,
+      "demographicPercentageSum": 100,
+      "demographicRowsWithPopulation": 8,
+      "featuredFamilyMismatches": 8,
+      "featuredFamilyMismatchIds": [
+        "PPL_LUBA",
+        "PPL_KONGO",
+        "PPL_MONGO",
+        "PPL_LUNDA",
+        "PPL_NANDE",
+        "PPL_HUNDE",
+        "PPL_RWANDAIS_TUTSI",
+        "PPL_BEMBA"
+      ],
+      "editorialReview": {
+        "totalRelations": 72,
+        "reviewedRelations": 39,
+        "pendingRelations": 33,
+        "reviewCompletionPercent": 54.2,
+        "reviewedByEntityType": {
+          "duplicate": 13,
+          "macro_category": 5,
+          "people": 8,
+          "subgroup": 9,
+          "language_label": 3,
+          "rejected_link": 1
+        }
+      }
+    },
+    "languages": {
+      "declaredMainLanguages": 0,
+      "featuredLanguageLabels": 13,
+      "candidateIsoCodes": 75,
+      "candidateIsoCodesWithDossiers": 3,
+      "dossierCoverageOfCandidateCodesPercent": 4,
+      "referenceCount": 252,
+      "rawReferenceUpperBoundPercent": 29.8
+    },
+    "history": {
+      "historicalNameEntries": 3,
+      "historicalNamePeriodsFilled": 5,
+      "historicalNamePeriodsTotal": 5,
+      "historicalFactPeriodsFilled": 6,
+      "historicalFactPeriodsTotal": 6,
+      "declaredPoliticalEntities": 9
+    },
+    "patronyms": {
+      "directCountryFiches": 35,
+      "attested": 33,
+      "supposed": 2,
+      "quota": 30,
+      "quotaCompletionPercent": 100,
+      "queueOnly": 4,
+      "unsourcedOrigin": 14,
+      "undeclaredTransmission": 9,
+      "documented": 8,
+      "documentedPercent": 22.9
+    },
+    "sources": {
+      "countryFiche": {
+        "total": 10,
+        "accepted": 2,
+        "acceptedPercent": 20,
+        "withUrl": 2,
+        "withUrlPercent": 20,
+        "needsReview": 8
+      },
+      "linkedPeopleFiches": {
+        "total": 424,
+        "accepted": 217,
+        "acceptedPercent": 51.2,
+        "withUrl": 384,
+        "withUrlPercent": 90.6,
+        "needsReview": 49
+      }
+    },
+    "population": {
+      "total": 112800000,
+      "referenceYear": 2025,
+      "source": "UNFPA – World Population Dashboard"
+    }
+  },
+  "artifacts": {
+    "peopleReconciliationLedger": {
+      "path": "docs/editorial/country-enrichment/COD-peoples.json",
+      "refreshCommand": "npx tsx scripts/afrik/updateCountryPeopleLedger.ts COD --write",
+      "reviewFieldsPreservedOnRefresh": true
+    },
+    "historicalPeopleNomenclature": {
+      "path": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+      "extractCommand": "npx tsx scripts/afrik/extractVanBulckCodInventory.ts <pdf-path> --write",
+      "matchingPolicy": "exact_names_and_declared_aliases_only"
+    }
+  },
+  "workstreams": [
+    {
+      "id": "COD-IDENTITY",
+      "priority": "P0",
+      "status": "implemented_locally",
+      "goal": "Use République démocratique du Congo consistently as the reader-facing country name.",
+      "findings": [
+        "The source JSON already uses the requested name.",
+        "The shared CLDR resolver replaced it with Congo-Kinshasa in the UI.",
+        "A shared editorial override and regression tests now preserve the requested name."
+      ],
+      "remaining": [
+        "Verify the database row when Supabase credentials are available.",
+        "Verify every reader-facing surface after database synchronization."
+      ]
+    },
+    {
+      "id": "COD-PEOPLES",
+      "priority": "P0",
+      "status": "reconciliation_in_progress",
+      "goal": "Build a reconciled, individually navigable inventory of peoples present in the DRC.",
+      "findings": [
+        "Local people-country links include macro-categories and probable duplicate or legacy classifications.",
+        "The country fiche features only a subset of the locally linked people fiches.",
+        "The approximate IWGIA count cannot serve as exact recall until a record-level reference inventory is obtained.",
+        "The generated ledger contains 72 local fiches: 67 have all three country-link signals, 5 have incomplete link declarations, 4 are mechanically macro-like, and 4 have no accepted source.",
+        "Seventeen ISO 639-3 codes are shared by multiple local fiches; each cluster requires a people/subgroup/alias review and does not establish duplication by itself.",
+        "The 1954 van Bulck nomenclature provides a historical alias baseline, but its colonial framing prevents its use as a contemporary authority.",
+        "List IV of the van Bulck nomenclature has been extracted into 648 source occurrences representing 595 unique simplified labels.",
+        "Exact matching found 34 uniquely matched source occurrences and 14 ambiguous occurrences, touching 51 of the 72 local COD fiches. This is a naming crosswalk, not a historical coverage percentage.",
+        "The remaining 600 source occurrences mix unmatched historical names, subtribes, homonyms, spelling variants, and possible OCR noise; none can be promoted automatically to a missing people fiche.",
+        "The first ambiguous cluster review found that PPL_CHOKWE and PPL_TSHOKWE represent the same Chokwe identity: both use ISO 639-3 cjk and contemporary controlled sources list Tshokwe as an alternative name of Chokwe. The ledger now proposes PPL_CHOKWE as canonical without deleting either immutable ID.",
+        "PPL_LUNDA_CHOKWE is not included in the Chokwe/Tshokwe duplicate proposal because its composite scope requires a separate people-versus-subgroup review.",
+        "The Teke review found that PPL_TEKE and PPL_TEKKE cover the same Teke/Bateke identity and share ISO 639-3 tek. The ledger proposes PPL_TEKE as canonical and preserves Tekke as a searchable legacy spelling pending an immutable-ID redirect mechanism.",
+        "The four mechanically detected macro records are now classified as macro-category proposals in the ledger: PPL_BANTU, PPL_BENOUECONGO_MACRO, PPL_NILOTIQUE_MACRO, and PPL_SCT_MACRO. They must not count as individual selectable peoples.",
+        "The Azande/Zande review proposes PPL_ZANDE as the canonical transborder identity and PPL_AZANDE_SUD as an unsupported regional duplicate; both records share ISO 639-3 zne and the same three-country scope.",
+        "The two Sango fiches describe the same label and language context, but current evidence does not support counting either as a validated individual people. PPL_SANGO is provisionally classified as a language label and PPL_SANGO_SCT as its duplicate; both current linguistic-family placements require correction.",
+        "The Hutu review identifies four overlapping records and the Tutsi review identifies three, including two misspelled RWENDAIS legacy IDs. Each cluster represents one transborder identity for counting purposes, but canonical-ID selection is deferred because every current ID encodes an overly narrow country or language qualifier.",
+        "The Banyarwanda review retains the label as a DRC-relevant ethnolinguistic umbrella for Kinyarwanda-speaking Hutu, Tutsi, and Batwa, but excludes it from additive people counts. PPL_RUNDI remains a Barundi people record distinct from the Kirundi language, while its DRC population estimate still requires a direct source.",
+        "The Luba review retains PPL_LUBA as an umbrella identity, classifies Luba-Kasai and Luba-Katanga as child groups, and provisionally keeps Lulua/Bena-Lulua below Luba-Kasai. Parent and child populations must never be summed.",
+        "The Kongo review retains PPL_KONGO as the umbrella identity, proposes PPL_KIKONGO as its duplicate, keeps Kongo (Sud), Yombe, Manianga, and Solongo as children, and proposes PPL_KONGO_MAYOMBE as a duplicate of PPL_YOMBE.",
+        "The Lunda review retains PPL_LUNDA as the umbrella identity, keeps Ndembu and provisionally Kazembe as children, classifies Lunda-Chokwe as a composite category rather than one people, and keeps Bemba distinct despite its shared bem code with the Kazembe record.",
+        "The Ngala review excludes PPL_LINGALA and PPL_NGALA from the people count as linguistic or historical-colonial labels, and rejects only the unsupported DRC link on PPL_MBOCHI while preserving that fiche for the Republic of the Congo.",
+        "If the current duplicate reductions, language-label exclusions, rejected link, and six macro or composite classifications are approved, the 72 linked fiches reduce provisionally to 51 non-macro candidate records. This remains a record count, not a completeness percentage or an additive count of identities, because umbrella and subgroup records overlap.",
+        "All 14 ambiguous exact-name occurrences in the historical source now have a documented cluster review. These decisions resolve local-record ambiguity only; they do not validate the historical labels as contemporary identities.",
+        "The 2013–2014 official demographic survey collapses responses into nine broad analytical categories and therefore cannot measure detailed recall.",
+        "The Ministry of Planning states that the second population census process is being launched in 2026, 42 years after the 1984 census; no new census results are available for validating detailed ethnic-population shares.",
+        "IWGIA's 2024 DRC inventory explicitly names Mbuti, Baka, and Batwa; the local COD ledger contains Twa but no dedicated Mbuti or Baka fiche.",
+        "The Twa review retains PPL_TWA for the eastern Great Lakes Twa/Batwa identity but explicitly prevents using it as an umbrella for all DRC forest peoples.",
+        "An older policy framework names Mbuti, Twa, Cwa, and Aka and distinguishes Mbuti subgroups such as Asua, Efe, and Basua. The corpus has PPL_AKA, but that fiche currently links only CAF and COG, so a COD link is a review candidate rather than an automatic correction.",
+        "The historical nomenclature contains unmatched Aka, Baka, and Mbuti labels. Contemporary evidence confirms Mbuti as a high-confidence missing DRC umbrella record, but Baka/Bacwa and Aka/Cwa require geographic and naming disambiguation before any country link or fiche is proposed."
+      ],
+      "remaining": [
+        "Review every local COD relation and classify it as individual people, subgroup, language label, macro-category, duplicate, or rejected link.",
+        "Create an alias table for endonyms, exonyms, alternate spellings, and parent-child group relations.",
+        "Prioritize the 600 unmatched historical occurrences by contemporary corroboration; do not process them as a flat creation queue.",
+        "Define whether country metrics expose leaf-level peoples, umbrella identities, or both as separate non-additive measures before turning the 51 candidate-record figure into a people count.",
+        "Define and test an immutable-ID redirect or retirement mechanism before implementing the proposed PPL_TSHOKWE to PPL_CHOKWE, PPL_TEKKE to PPL_TEKE, PPL_AZANDE_SUD to PPL_ZANDE, and PPL_SANGO_SCT to PPL_SANGO consolidations.",
+        "Extend the redirect plan to PPL_KIKONGO to PPL_KONGO and PPL_KONGO_MAYOMBE to PPL_YOMBE, then implement the reviewed Luba and Kongo parent relations after schema validation.",
+        "Choose neutral canonical identifiers for the four-record Hutu and three-record Tutsi clusters before implementing redirects from their current country-, language-, and misspelling-qualified IDs.",
+        "Define an immutable-ID redirect from PPL_KINYARWANDA to a neutral Banyarwanda umbrella identifier without collapsing its Hutu, Tutsi, and Batwa constituents.",
+        "Resolve the contested Sango people-versus-language question and its correct linguistic taxonomy before modifying either source fiche.",
+        "Supplement the historical nomenclature with contemporary community and scholarly sources before publishing an exact coverage percentage.",
+        "Expose verified linked peoples as individually selectable entries on mobile, tablet, and desktop."
+      ],
+      "researchLeads": [
+        {
+          "title": "Orthographie des noms ethniques au Congo belge, suivie de la nomenclature des principales tribus et langues du Congo belge",
+          "publisher": "Royal Academy for Overseas Sciences archive",
+          "url": "https://www.kaowarsom.be/fr/memoir_81",
+          "why": "Provides explicit alphabetical nomenclatures, preferred forms, spelling variants, and historical geographic classifications for record linkage."
+        },
+        {
+          "title": "DRC Demographic and Health Survey 2013–14 ethnicity variable",
+          "publisher": "DRC ministries, ICF, and IPUMS/World Bank Microdata Library",
+          "url": "https://microdata.worldbank.org/catalog/3086/variable/C/C_ETHNICITYCD?name=C_ETHNICITYCD",
+          "why": "Documents the official survey aggregation scheme and proves that its nine published categories are too broad for detailed inventory recall."
+        },
+        {
+          "title": "The Indigenous World 2024: Democratic Republic of the Congo",
+          "publisher": "IWGIA",
+          "url": "https://www.iwgia.org/en/news/iw-2024-drc",
+          "why": "Provides a current named thematic inventory of Mbuti, Baka, and Batwa for direct reconciliation against the local corpus."
+        }
+      ],
+      "candidateGaps": [
+        {
+          "label": "Mbuti",
+          "localStatus": "No dedicated PPL_MBUTI fiche found.",
+          "evidenceStatus": "confirmed_gap",
+          "candidateAction": "Prepare a PPL_MBUTI umbrella-fiche proposal for Ituri, with Efe, Asua/Sua, and Basua handled as sourced child groups rather than aliases or a single language community.",
+          "sourceUrl": "https://www.iwgia.org/en/news/iw-2024-drc",
+          "corroboratingUrl": "https://www.refworld.org/reference/countryrep/mrgi/2018/en/121730",
+          "historicalSourceId": "VB1954-P134-061",
+          "caveat": "Mbuti is an ethnographic umbrella whose constituent groups speak different neighboring languages; no single ISO code should be inferred."
+        },
+        {
+          "label": "Baka / Bacwa",
+          "localStatus": "No dedicated PPL_BAKA fiche found; the existing macro fiche PPL_PYGMEES_AUTOCHTONES is not linked to COD.",
+          "evidenceStatus": "name_confirmed_geography_disputed",
+          "candidateAction": "Do not reuse the Cameroon-centered macro fiche. Resolve whether recent DRC sources use Baka for Bacwa/Cwa or for a distinct community before proposing a dedicated record.",
+          "sourceUrl": "https://www.iwgia.org/en/news/iw-2024-drc",
+          "corroboratingUrl": "https://iwgia.org/en/documents-and-publications/documents/publications-pdfs/english-publications/48-iwgia-book-the-indigenous-world-2012-eng/file.html",
+          "historicalSourceId": "VB1954-P131-077",
+          "caveat": "Specialist sources usually locate the western Baka in Cameroon, Gabon, the Republic of the Congo, and the Central African Republic, while DRC inventories also use Bacwa/Baka terminology."
+        },
+        {
+          "label": "Aka",
+          "localStatus": "PPL_AKA exists for CAF and COG, and the historical DRC nomenclature contains an unmatched Aka label.",
+          "evidenceStatus": "historical_attestation_current_link_unresolved",
+          "candidateAction": "Do not add COD to PPL_AKA until a contemporary source distinguishes DRC Aka from the western BaAka record and from Ituri Asua groups historically called Aka by neighbors.",
+          "sourceUrl": "https://www.forestpeoples.org/fileadmin/uploads/fpp/migration/publication/2010/08/drcachprsupprepapr08eng.pdf",
+          "historicalSourceId": "VB1954-P131-008",
+          "caveat": "Aka can denote distinct western BaAka communities or an exonym applied to eastern forest groups; exact-name matching is insufficient."
+        },
+        {
+          "label": "Cwa / Bacwa",
+          "localStatus": "No PPL_CWA or PPL_BACWA fiche found.",
+          "evidenceStatus": "confirmed_gap_scope_review_required",
+          "candidateAction": "Prepare a separate southern/western DRC Cwa/Bacwa proposal only after regional endonyms, variants, and the relationship to western Batwa are reconciled.",
+          "sourceUrl": "https://www.forestpeoples.org/fileadmin/uploads/fpp/migration/publication/2010/08/drcachprsupprepapr08eng.pdf",
+          "corroboratingUrl": "https://iwgia.org/en/documents-and-publications/documents/publications-pdfs/english-publications/48-iwgia-book-the-indigenous-world-2012-eng/file.html",
+          "caveat": "Older national inventories distinguish Bacwa/Cwa from Bambuti and eastern and western Batwa, but terminology and boundaries vary by source."
+        }
+      ]
+    },
+    {
+      "id": "COD-LANGUAGES",
+      "priority": "P0",
+      "status": "legal_roles_verified_inventory_reconciliation_required",
+      "goal": "Expose verified DRC languages with stable ISO 639-3 and Glottocode links.",
+      "findings": [
+        "The country culture section has no mainLanguages entries, so the country fiche language bubbles are empty.",
+        "Language names and codes can be inferred from people fiches, but the raw set contains contamination from macro-fiches.",
+        "The dedicated language corpus is much smaller than the Glottolog country inventory.",
+        "Article 1 of the Constitution establishes French as the official language and Kikongo, Lingala, Swahili, and Tshiluba as national languages, while protecting the country's other languages as cultural heritage.",
+        "The local language corpus contains Lingala (lin) and Swahili (swh) dossiers, but no dedicated French, Kikongo/Kituba, or Tshiluba dossier. The people-derived Swahili record uses swa while the language dossier uses swh, so naive exact-code matching is unsafe."
+      ],
+      "remaining": [
+        "Export and pin the Glottolog 5.3 CD inventory.",
+        "Reconcile local codes and aliases against Glottolog records.",
+        "Resolve the constitutional Kikongo label against Kikongo varieties and Kikongo ya Leta/Kituba before selecting dossier targets.",
+        "Resolve the swa versus swh Swahili identifier mismatch and distinguish macrolanguage, standardized variety, and local DRC varieties.",
+        "Prepare a country mainLanguages proposal with explicit official, national, vehicular, and community roles.",
+        "Create missing language dossiers in evidence-prioritized waves."
+      ],
+      "researchLeads": [
+        {
+          "title": "Constitution of the Democratic Republic of the Congo — Article 1",
+          "publisher": "Presidency of the Democratic Republic of the Congo / Official Journal",
+          "url": "https://www.presidence.cd/uploads/files/Constitution%20de%20la%20RDC%20%202011.pdf",
+          "why": "Provides the primary legal basis for the official and national language roles."
+        },
+        {
+          "title": "Languages of Congo, The Democratic Republic of the",
+          "publisher": "Glottolog 5.3",
+          "url": "https://glottolog.org/glottolog/language.map.html?country=CD",
+          "why": "Provides the pinned reference inventory for record-level ISO and Glottocode reconciliation."
+        }
+      ]
+    },
+    {
+      "id": "COD-HISTORY",
+      "priority": "P1",
+      "status": "source_upgrade_required",
+      "goal": "Extend the timeline before the best-known kingdoms and represent historical entities accurately.",
+      "findings": [
+        "The kingdoms array currently mixes precolonial polities, colonial administrations, and the modern republic.",
+        "The earliest narrative is broad and does not yet use the documented Upemba archaeological sequence.",
+        "Most historical claims rely on sources whose tier still needs review."
+      ],
+      "remaining": [
+        "Add an archaeology track beginning with the Upemba sequence documented by UNESCO.",
+        "Audit the geographic fit and periodization of Kongo, Luba, Lunda, Kuba, Kazembe, Yeke/Garanganze, Chokwe, Mangbetu, Zande, and other relevant polities.",
+        "Separate polities from colonial administrations and modern state periods in both data and presentation.",
+        "Attach accepted sources to every retained historical claim."
+      ],
+      "researchLeads": [
+        {
+          "title": "Upemba Depression",
+          "publisher": "UNESCO World Heritage Centre",
+          "url": "https://whc.unesco.org/fr/listesindicatives/963/",
+          "why": "Documents more than two millennia of occupation and a dated sequence from the Later Stone Age through recent Luba periods."
+        }
+      ]
+    },
+    {
+      "id": "COD-PATRONYMS",
+      "priority": "P1",
+      "status": "breadth_met_depth_incomplete",
+      "goal": "Show every directly attested DRC patronym while distinguishing breadth from research depth.",
+      "findings": [
+        "The direct-country corpus exceeds the editorial breadth quota.",
+        "Only a minority of those fiches currently meet the project's documented-depth definition."
+      ],
+      "remaining": [
+        "Complete source, origin, and transmission research for each non-documented fiche.",
+        "Keep direct country attestations separate from country reach inferred through peoples.",
+        "Verify that all direct attestations appear on the country surface after database synchronization."
+      ]
+    },
+    {
+      "id": "COD-SOURCES",
+      "priority": "P0",
+      "status": "upgrade_required",
+      "goal": "Replace vague and review-pending citations with traceable accepted sources.",
+      "remaining": [
+        "Replace every country-fiche needs_review source with a resolvable official or referenced citation, or remove unsupported claims.",
+        "Add field-level provenance for population, people inventory, languages, historical names, archaeology, and political entities.",
+        "Run URL and AFRIK data validators before editorial review."
+      ]
+    }
+  ],
+  "openQuestions": [
+    "Which enumerated scholarly people inventory should be the canonical record-linkage baseline for the DRC?",
+    "Which language scope should the reader-facing count use: all Glottolog entries, living indigenous languages, or all languages currently used in the country?",
+    "Should the country model gain typed historical entities instead of continuing to place colonial and modern states in kingdoms?",
+    "Is the current Supabase row stale relative to dataset/source/afrik/pays/COD.json?",
+    "Should Sango remain represented as a people fiche, or should the two current records be consolidated into a language dossier and excluded from the people inventory?",
+    "Should the Hutu and Tutsi duplicate clusters reuse one qualified legacy ID each, or receive neutral canonical IDs with redirects from every existing record?",
+    "Should country people metrics count only leaf-level peoples, only umbrella identities, or expose both without summing them?"
+  ]
+}
