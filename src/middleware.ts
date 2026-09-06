@@ -13,11 +13,13 @@ import {
   type DeepLinkQuery,
 } from "@/lib/routing";
 import {
-  DEFAULT_LOCALE,
   LOCALES,
   LOCALE_COOKIE,
   LOCALE_HEADER,
+  getDefaultLocale,
+  getLocalePublicationMode,
   isLocale,
+  isPublishedLocale,
   resolveLocale,
 } from "@/lib/locale";
 import type { Language } from "@/types/shared";
@@ -547,16 +549,17 @@ function isSameOriginRequest(request: NextRequest): boolean {
 // @req REQ-052
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const localeMode = getLocalePublicationMode();
+  const defaultLocale = getDefaultLocale(localeMode);
 
-  // The root is the one address whose answer depends on the reader: English
-  // unless the switcher recorded French (REQ-140). A 307, never a 308 — a
-  // permanent redirect is cached by the browser without asking again, and it
-  // would pin a reader to the locale of their first visit no matter what
-  // they chose since. `Vary: Cookie` tells every cache between us and them
-  // the same thing. The cookie is only ever written by the switcher: landing
-  // on `/fr` is not a choice, clicking « Français » is.
+  // The root follows the deployment's publication mode, then a remembered
+  // choice only when that locale is currently published. A 307, never a 308:
+  // neither a later choice nor a later launch may be pinned by browser cache.
   if (pathname === "/") {
-    const locale = resolveLocale(request.cookies.get(LOCALE_COOKIE)?.value);
+    const locale = resolveLocale(
+      request.cookies.get(LOCALE_COOKIE)?.value,
+      localeMode
+    );
     const home = NextResponse.redirect(
       new URL(`/${locale}${request.nextUrl.search}`, request.nextUrl.origin),
       307
@@ -579,14 +582,33 @@ export async function middleware(request: NextRequest) {
   // same for everyone, or the 308 could not be cached at all.
   let canonicalPath = pathname;
   let moved = false;
+  let temporaryLocaleContainment = false;
 
-  // A two-letter segment the site does not publish becomes the default,
-  // subpath and query preserved. `/fr/*` is never touched (REQ-140).
+  // A supported-but-unpublished locale is temporarily translated onto the
+  // deployed default. The remaining canonicalisation below still runs, so a
+  // retired English address reaches the current French one in a single hop.
+  // A completely unsupported locale remains a permanent move to the default.
   const localeMatch = canonicalPath.match(LOCALE_SEGMENT);
-  if (localeMatch && !isLocale(localeMatch[1])) {
-    const rest = canonicalPath.slice(localeMatch[0].length).replace(/\/+$/, "");
-    canonicalPath = `/${DEFAULT_LOCALE}${rest}`;
-    moved = true;
+  if (localeMatch) {
+    const requestedLocale = localeMatch[1];
+    if (
+      isLocale(requestedLocale) &&
+      !isPublishedLocale(requestedLocale, localeMode)
+    ) {
+      canonicalPath = translatePath(
+        requestedLocale,
+        defaultLocale,
+        canonicalPath
+      );
+      moved = true;
+      temporaryLocaleContainment = true;
+    } else if (!isLocale(requestedLocale)) {
+      const rest = canonicalPath
+        .slice(localeMatch[0].length)
+        .replace(/\/+$/, "");
+      canonicalPath = `/${defaultLocale}${rest}`;
+      moved = true;
+    }
   }
 
   // REQ-114's hub rename. Keyed on exactly one segment — see the table.
@@ -658,7 +680,7 @@ export async function middleware(request: NextRequest) {
     const search = keepQuery ? request.nextUrl.search : "";
     return NextResponse.redirect(
       new URL(`${canonicalPath}${search}`, request.nextUrl.origin),
-      308
+      temporaryLocaleContainment ? 307 : 308
     );
   }
 

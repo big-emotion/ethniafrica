@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import type { Proof as AntibotProof } from "@/lib/antibot/proofOfWork";
-import { DEFAULT_LOCALE, isLocale } from "@/lib/locale";
+import { FALLBACK_LOCALE, isLocale } from "@/lib/locale";
 import { getStaticPageRoute } from "@/lib/routing";
 
 export type FlagKind =
@@ -200,7 +200,7 @@ export function FlagForm({
   // language of its own: the permalink follows the route the form is on, and
   // outside the locale tree it is offered in the default locale.
   const { lang } = useParams<{ lang?: string }>() ?? {};
-  const language = isLocale(lang) ? lang : DEFAULT_LOCALE;
+  const language = isLocale(lang) ? lang : FALLBACK_LOCALE;
   const [counterSourceUrl, setCounterSourceUrl] = useState("");
   const [counterSourceCitation, setCounterSourceCitation] = useState("");
   const [proposedRewrite, setProposedRewrite] = useState("");

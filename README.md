@@ -27,10 +27,11 @@ cp .env.example .env.local     # then fill in the three required values below
 npm run dev                    # http://localhost:3000
 ```
 
-The app answers `/` in English by default and in French when the reader's choice, remembered in
-the `ethni-locale` cookie, says so. Without Supabase credentials the pages render but data-backed
-routes fail — the modules validate their configuration at import time and throw when it is
-missing.
+The app fails closed to French-only publication. `SITE_LOCALE_MODE` can explicitly publish both
+languages with either French or English as the default; a remembered `ethni-locale` choice is
+honoured only when that locale is published. Without Supabase credentials the pages render but
+data-backed routes fail — the modules validate their configuration at import time and throw when
+it is missing.
 
 Three variables are required to run:
 
@@ -104,11 +105,13 @@ Requests from another origin need an API key; same-origin requests are exempt, s
 embeds no key. Rate limits apply per key tier. Bulk exports: `/api/download?format=csv` or
 `format=excel`.
 
-The site itself is **bilingual — English and French, English by default**. `[lang]` resolves to
-either locale; English URLs carry English slugs that `src/middleware.ts` rewrites onto the
-French route folders, and `es` / `pt` stay closed. Content added in either language must carry
-its counterpart in the other, or an explicit deferral — see `CLAUDE.md`, section "Bilingual
-content".
+The codebase supports **English and French**, while `SITE_LOCALE_MODE` controls what a deployment
+publishes. Its safe default, `fr-only`, keeps English URLs and controls silent;
+`bilingual-fr-default` publishes both without moving `/` away from French, and
+`bilingual-en-default` completes the planned English-default launch. English URLs carry English
+slugs that `src/middleware.ts` rewrites onto the French route folders, and `es` / `pt` stay
+closed. Content added in either language must carry its counterpart in the other, or an explicit
+deferral — see `CLAUDE.md`, section "Bilingual content".
 
 ---
 

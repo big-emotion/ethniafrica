@@ -12,6 +12,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ThemeProvider } from "next-themes";
 
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { LocalePublicationProvider } from "@/components/layout/LocalePublicationProvider";
 import { HEADER_RETRACTED_ATTRIBUTE } from "@/hooks/use-header-reveal";
 import { ModuleAvailabilityProvider } from "@/components/hubs/ModuleAvailabilityProvider";
 import { PRODUCT_NAME } from "@/lib/brand";
@@ -27,6 +28,7 @@ import {
 } from "@/lib/hubs/moduleOffer";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { getLocalizedRoute, getPeopleRoute } from "@/lib/routing";
+import type { LocalePublicationMode } from "@/lib/locale";
 
 let mockPathname = "/fr";
 
@@ -50,13 +52,16 @@ const t = getTranslation("fr");
 // back to the declared half. The cases that care pass a map.
 const renderHeader = (
   props: { onSearchClick?: () => void } = {},
-  availability: ModuleAvailabilityMap | null = null
+  availability: ModuleAvailabilityMap | null = null,
+  localeMode: LocalePublicationMode = "bilingual-en-default"
 ) =>
   render(
     <ThemeProvider attribute="class">
-      <ModuleAvailabilityProvider value={availability}>
-        <SiteHeader language="fr" {...props} />
-      </ModuleAvailabilityProvider>
+      <LocalePublicationProvider value={localeMode}>
+        <ModuleAvailabilityProvider value={availability}>
+          <SiteHeader language="fr" {...props} />
+        </ModuleAvailabilityProvider>
+      </LocalePublicationProvider>
     </ThemeProvider>
   );
 
@@ -617,6 +622,21 @@ describe("SiteHeader — the controls that stay in the bar", () => {
  * three axes, where the phone's navigation already is.
  */
 describe("SiteHeader — the language switch (REQ-140)", () => {
+  // Mobile is the first containment boundary: the row must not survive in the
+  // tray merely because the wider bar control disappeared.
+  // @req REQ-140
+  it("offers no language control at any viewport while English is unpublished", () => {
+    renderHeader({}, null, "fr-only");
+
+    expect(screen.queryByRole("link", { name: "English" })).toBeNull();
+    fireEvent.click(screen.getByTestId(BURGER));
+    expect(
+      within(screen.getByRole("dialog")).queryByRole("link", {
+        name: "English",
+      })
+    ).toBeNull();
+  });
+
   // @req REQ-140
   it("offers the other locale from the bar, composed for the same page", () => {
     mockPathname = getPeopleRoute("fr", "PPL_YORUBA");

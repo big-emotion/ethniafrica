@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import { ModuleAvailabilityProvider } from "@/components/hubs/ModuleAvailabilityProvider";
+import { LocalePublicationProvider } from "@/components/layout/LocalePublicationProvider";
 import { getModuleAvailabilityMap } from "@/lib/hubs/moduleAvailability";
-import { isLocale } from "@/lib/locale";
+import { getLocalePublicationMode, isPublishedLocale } from "@/lib/locale";
 
 /**
  * `[lang]` is a dynamic segment with nothing below it that constrains what it
@@ -32,13 +33,16 @@ export default async function LangLayout({
   children: React.ReactNode;
 }) {
   const { lang } = await params;
-  if (!isLocale(lang)) {
+  const localeMode = getLocalePublicationMode();
+  if (!isPublishedLocale(lang, localeMode)) {
     notFound();
   }
 
   return (
-    <ModuleAvailabilityProvider value={await getModuleAvailabilityMap()}>
-      {children}
-    </ModuleAvailabilityProvider>
+    <LocalePublicationProvider value={localeMode}>
+      <ModuleAvailabilityProvider value={await getModuleAvailabilityMap()}>
+        {children}
+      </ModuleAvailabilityProvider>
+    </LocalePublicationProvider>
   );
 }

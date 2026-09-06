@@ -16,7 +16,7 @@ import { useParams, useRouter } from "next/navigation";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { EntityComparePicker } from "@/components/compare/EntityComparePicker";
 import type { CompareEntityType } from "@/hooks/use-compare-selection";
-import { DEFAULT_LOCALE, isLocale } from "@/lib/locale";
+import { FALLBACK_LOCALE, isLocale } from "@/lib/locale";
 import {
   COMPARE_ENTITY_SEGMENTS,
   getLocalizedRoute,
@@ -33,7 +33,7 @@ const ENTITY_KEY: Record<CompareEntityType, CompareEntityKey> = {
 export default function ComparerPickerPage() {
   const router = useRouter();
   const { lang } = useParams<{ lang: string }>();
-  const language = isLocale(lang) ? lang : DEFAULT_LOCALE;
+  const language = isLocale(lang) ? lang : FALLBACK_LOCALE;
 
   const goToComparison = (type: CompareEntityType, ids: string[]) => {
     const segment = COMPARE_ENTITY_SEGMENTS[language][ENTITY_KEY[type]];

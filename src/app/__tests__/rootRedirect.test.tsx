@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 const { redirect } = vi.hoisted(() => ({
   redirect: vi.fn((destination: string) => {
@@ -8,7 +8,6 @@ const { redirect } = vi.hoisted(() => ({
 vi.mock("next/navigation", () => ({ redirect }));
 
 import Home from "@/app/page";
-import { DEFAULT_LOCALE } from "@/lib/locale";
 
 /**
  * The middleware answers `/` before this page ever renders, reading the
@@ -17,9 +16,21 @@ import { DEFAULT_LOCALE } from "@/lib/locale";
  * it can only send the reader to the default.
  */
 describe("root page", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+    redirect.mockClear();
+  });
+
   // @req REQ-140
-  it("falls back to the default locale when rendered without the middleware", () => {
-    expect(() => Home()).toThrow(`NEXT_REDIRECT:/${DEFAULT_LOCALE}`);
-    expect(redirect).toHaveBeenCalledWith(`/${DEFAULT_LOCALE}`);
+  it.each([
+    [undefined, "/fr"],
+    ["fr-only", "/fr"],
+    ["bilingual-fr-default", "/fr"],
+    ["bilingual-en-default", "/en"],
+  ])("uses %s mode to redirect to %s", (mode, destination) => {
+    vi.stubEnv("SITE_LOCALE_MODE", mode);
+
+    expect(() => Home()).toThrow(`NEXT_REDIRECT:${destination}`);
+    expect(redirect).toHaveBeenCalledWith(destination);
   });
 });

@@ -23,6 +23,7 @@ describe("middleware", () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-en-default");
 
     mockEq.mockResolvedValue({ data: [], error: null });
     mockSelect.mockReturnValue({ eq: mockEq });
@@ -36,6 +37,10 @@ describe("middleware", () => {
     });
 
     mockGetUser.mockResolvedValue({ data: { user: null }, error: null });
+  });
+
+  afterEach(() => {
+    vi.unstubAllEnvs();
   });
 
   describe("admin auth", () => {
@@ -253,6 +258,76 @@ describe("middleware", () => {
       request.cookies.set("ethni-locale", value);
       return request;
     };
+
+    describe("French-only containment", () => {
+      beforeEach(() => {
+        vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
+      });
+
+      // @req REQ-140
+      it.each([undefined, "en", "fr"])(
+        "sends the root to French when the cookie is %s",
+        async (cookie) => {
+          const request = cookie
+            ? withCookie("http://localhost:3000/?from=release", cookie)
+            : new NextRequest("http://localhost:3000/?from=release");
+          const response = await middleware(request);
+
+          expect(response.status).toBe(307);
+          expect(response.headers.get("location")).toBe(
+            "http://localhost:3000/fr?from=release"
+          );
+        }
+      );
+
+      // The redirect is temporary because English is deliberately coming
+      // later; browsers must not cache the containment as the final address.
+      // @req REQ-140
+      it.each([
+        ["/en", "/fr"],
+        ["/en/atlas/countries/BEN?tab=noms", "/fr/atlas/pays/BEN?tab=noms"],
+        ["/en/peuples?people=PPL_YORUBA", "/fr/atlas/peuples/PPL_YORUBA"],
+        ["/en/admin/dashboard", "/fr/admin/dashboard"],
+      ])("temporarily contains %s at %s in one hop", async (source, target) => {
+        const response = await middleware(
+          new NextRequest(`http://localhost:3000${source}`)
+        );
+
+        expect(response.status).toBe(307);
+        expect(response.headers.get("location")).toBe(
+          `http://localhost:3000${target}`
+        );
+      });
+
+      // @req REQ-140
+      it("leaves French routes available", async () => {
+        const response = await middleware(
+          withCookie("http://localhost:3000/fr/atlas/peuples", "en")
+        );
+
+        expect(response.status).toBe(200);
+        expect(response.headers.get("location")).toBeNull();
+      });
+    });
+
+    // @req REQ-140
+    it("keeps English available while French remains the bilingual default", async () => {
+      vi.stubEnv("SITE_LOCALE_MODE", "bilingual-fr-default");
+
+      const root = await middleware(new NextRequest("http://localhost:3000/"));
+      const rememberedEnglish = await middleware(
+        withCookie("http://localhost:3000/", "en")
+      );
+      const englishPage = await middleware(
+        new NextRequest("http://localhost:3000/en")
+      );
+
+      expect(root.headers.get("location")).toBe("http://localhost:3000/fr");
+      expect(rememberedEnglish.headers.get("location")).toBe(
+        "http://localhost:3000/en"
+      );
+      expect(englishPage.status).toBe(200);
+    });
 
     // @req REQ-140
     it("answers the root with a 307 to the English default when nothing was chosen", async () => {

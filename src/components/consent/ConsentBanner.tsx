@@ -6,7 +6,7 @@ import { useParams } from "next/navigation";
 import { useConsent } from "@/hooks/use-consent";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { DEFAULT_LOCALE, isLocale } from "@/lib/locale";
+import { FALLBACK_LOCALE, isLocale } from "@/lib/locale";
 import { getStaticPageRoute } from "@/lib/routing";
 import { cn } from "@/lib/utils";
 import type { ConsentPreferences } from "@/types/consent";
@@ -21,7 +21,7 @@ export function ConsentBanner() {
   // locale comes off the route params rather than a prop; outside the locale
   // tree there are none, and the policy is offered in the default locale.
   const { lang } = useParams<{ lang?: string }>() ?? {};
-  const language = isLocale(lang) ? lang : DEFAULT_LOCALE;
+  const language = isLocale(lang) ? lang : FALLBACK_LOCALE;
   const [showCustomize, setShowCustomize] = useState(false);
   // Track local overrides for preferences - null means use consentState
   const [localAnalytics, setLocalAnalytics] = useState<boolean | null>(null);

@@ -12,7 +12,9 @@ vi.mock("next/navigation", () => ({
 }));
 
 import { useLanguage } from "../use-language";
+import { LocalePublicationProvider } from "@/components/layout/LocalePublicationProvider";
 import { LOCALE_COOKIE } from "@/lib/locale";
+import type { LocalePublicationMode } from "@/lib/locale";
 import {
   getLocalizedRoute,
   getPeopleLinksRoute,
@@ -38,6 +40,17 @@ const cookieSetterOwner = () => {
   return prototype;
 };
 
+const renderLanguageHook = (
+  mode: LocalePublicationMode = "bilingual-en-default"
+) =>
+  renderHook(() => useLanguage(), {
+    wrapper: ({ children }) => (
+      <LocalePublicationProvider value={mode}>
+        {children}
+      </LocalePublicationProvider>
+    ),
+  });
+
 /**
  * The hook answers one question — which locale is this page in — and does
  * one thing on a switch: remember the choice where the middleware can read
@@ -57,7 +70,7 @@ describe("useLanguage", () => {
     navigation.pathname = getLocalizedRoute("fr", "peoples");
     document.cookie = `${LOCALE_COOKIE}=en; path=/`;
 
-    const { result } = renderHook(() => useLanguage());
+    const { result } = renderLanguageHook();
 
     expect(result.current.language).toBe("fr");
   });
@@ -66,14 +79,14 @@ describe("useLanguage", () => {
   it("falls back to the remembered cookie off the locale tree", () => {
     document.cookie = `${LOCALE_COOKIE}=fr; path=/`;
 
-    const { result } = renderHook(() => useLanguage());
+    const { result } = renderLanguageHook();
 
     expect(result.current.language).toBe("fr");
   });
 
   // @req REQ-140
   it("defaults to English with neither route nor cookie", () => {
-    const { result } = renderHook(() => useLanguage());
+    const { result } = renderLanguageHook();
 
     expect(result.current.language).toBe("en");
   });
@@ -85,7 +98,7 @@ describe("useLanguage", () => {
   it("never reads a choice from localStorage", () => {
     localStorage.setItem("ethniafrique-language", "fr");
 
-    const { result } = renderHook(() => useLanguage());
+    const { result } = renderLanguageHook();
 
     expect(result.current.language).toBe("en");
   });
@@ -100,7 +113,7 @@ describe("useLanguage", () => {
         written.push(value);
       });
 
-    const { result } = renderHook(() => useLanguage());
+    const { result } = renderLanguageHook();
     act(() => result.current.setLanguage("fr"));
 
     cookieSetter.mockRestore();
@@ -114,7 +127,7 @@ describe("useLanguage", () => {
     navigation.pathname = getPeopleLinksRoute("fr", "PPL_YORUBA");
     window.history.replaceState({}, "", `${navigation.pathname}?tri=nom`);
 
-    const { result } = renderHook(() => useLanguage());
+    const { result } = renderLanguageHook();
     act(() => result.current.setLanguage("en"));
 
     // The route is what the hook answers from, so the switch shows once the
@@ -127,14 +140,14 @@ describe("useLanguage", () => {
   // @req REQ-141
   it("translates a static page and the home as well", () => {
     navigation.pathname = getStaticPageRoute("fr", "legalNotice");
-    const { result: legal } = renderHook(() => useLanguage());
+    const { result: legal } = renderLanguageHook();
     act(() => legal.current.setLanguage("en"));
     expect(navigation.push).toHaveBeenCalledWith(
       getStaticPageRoute("en", "legalNotice")
     );
 
     navigation.pathname = "/en";
-    const { result: home } = renderHook(() => useLanguage());
+    const { result: home } = renderLanguageHook();
     act(() => home.current.setLanguage("fr"));
     expect(navigation.push).toHaveBeenCalledWith("/fr");
   });
@@ -143,7 +156,7 @@ describe("useLanguage", () => {
   it("lands on the locale home when the page is outside the locale tree", () => {
     navigation.pathname = "/docs/api";
 
-    const { result } = renderHook(() => useLanguage());
+    const { result } = renderLanguageHook();
     act(() => result.current.setLanguage("fr"));
 
     expect(navigation.push).toHaveBeenCalledWith("/fr");
@@ -151,11 +164,22 @@ describe("useLanguage", () => {
 
   // @req REQ-140
   it("refuses a value that is not a published locale", () => {
-    const { result } = renderHook(() => useLanguage());
+    const { result } = renderLanguageHook();
     act(() => result.current.setLanguage("es" as never));
 
     expect(navigation.push).not.toHaveBeenCalled();
     expect(document.cookie).not.toContain(`${LOCALE_COOKIE}=`);
     expect(result.current.language).toBe("en");
+  });
+
+  // @req REQ-140
+  it("ignores an English cookie and refuses an English switch in French-only mode", () => {
+    document.cookie = `${LOCALE_COOKIE}=en; path=/`;
+    const { result } = renderLanguageHook("fr-only");
+
+    expect(result.current.language).toBe("fr");
+    act(() => result.current.setLanguage("en"));
+    expect(result.current.language).toBe("fr");
+    expect(navigation.push).not.toHaveBeenCalled();
   });
 });
