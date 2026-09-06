@@ -555,13 +555,14 @@
         "The two CIA placeholders cannot be repaired as live current-country citations because The World Factbook was retired on 2026-02-04 and the former country URL redirects to the retirement notice.",
         "The vague Ethnologue row is not reproducible without an edition and license basis; the pinned Glottolog 5.3 inventory is proposed for language reconciliation instead.",
         "Official census-status documentation identifies 1984 as the latest completed national census, while the 2013–2014 DHS is a sample survey; neither validates a current exhaustive people denominator.",
-        "Detailed people percentages, country-name etymology, and broad cultural fields remain unsupported and must not be marked validated."
+        "The country-name origin can be stated conservatively: the country is named after the Congo River, whose Congo/Kongo name is historically connected to the Kongo kingdom; the deeper lexical derivation remains uncertain.",
+        "Detailed people percentages and broad cultural fields remain unsupported and must not be marked validated."
       ],
       "remaining": [
         "Approve or reject the proposed removal of the 8 generic source rows and the exact replacement registry.",
         "Select an enumerated scholarly people inventory as the canonical record-linkage baseline, or expose multiple non-additive scopes.",
         "Attach accepted sources to detailed people percentages or remove those percentages from validated display.",
-        "Research the country-name etymology and add scoped sources for culture, religion, lifestyles, social organization, and regional relations.",
+        "Add scoped sources for culture, religion, lifestyles, social organization, and regional relations.",
         "Add field-level provenance to the country model or generate an equivalent auditable mapping.",
         "Apply the approved cleanup to dataset/source/afrik/pays/COD.json only after explicit editorial approval.",
         "Run the repository URL validator after its pre-existing server-only runtime failure is repaired, then run the AFRIK data validators before publication."
