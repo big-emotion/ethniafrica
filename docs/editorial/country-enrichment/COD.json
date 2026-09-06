@@ -244,6 +244,11 @@
       "path": "docs/editorial/country-enrichment/COD-culture-review.json",
       "reviewScope": "cultural traditions, religious demography, livelihoods, social organization, regional relations, and diaspora claims",
       "productionWriteRequiresApproval": true
+    },
+    "mbutiGapProposal": {
+      "path": "docs/editorial/country-enrichment/COD-people-gap-Mbuti.json",
+      "reviewScope": "Mbuti umbrella record, child-community review queue, language-model constraints, and non-additive country metrics",
+      "productionWriteRequiresApproval": true
     }
   },
   "workstreams": [
@@ -302,7 +307,8 @@
         "IWGIA's 2024 DRC inventory explicitly names Mbuti, Baka, and Batwa; the local COD ledger contains Twa but no dedicated Mbuti or Baka fiche.",
         "The Twa review retains PPL_TWA for the eastern Great Lakes Twa/Batwa identity but explicitly prevents using it as an umbrella for all DRC forest peoples.",
         "An older policy framework names Mbuti, Twa, Cwa, and Aka and distinguishes Mbuti subgroups such as Asua, Efe, and Basua. The corpus has PPL_AKA, but that fiche currently links only CAF and COG, so a COD link is a review candidate rather than an automatic correction.",
-        "The historical nomenclature contains unmatched Aka, Baka, and Mbuti labels. Contemporary evidence confirms Mbuti as a high-confidence missing DRC umbrella record, but Baka/Bacwa and Aka/Cwa require geographic and naming disambiguation before any country link or fiche is proposed."
+        "The historical nomenclature contains unmatched Aka, Baka, and Mbuti labels. Contemporary evidence confirms Mbuti as a high-confidence missing DRC umbrella record, but Baka/Bacwa and Aka/Cwa require geographic and naming disambiguation before any country link or fiche is proposed.",
+        "A dedicated Mbuti proposal is now ready for editorial review. It deliberately leaves population, ISO codes, and a single language family unset and keeps Efe, Asua, and Sua or Basua as separate child-community review items."
       ],
       "remaining": [
         "Approve, amend, or reject the 72 completed relation-review proposals before modifying production data; review completion is not editorial approval or national inventory completeness.",
@@ -316,6 +322,7 @@
         "Define an immutable-ID redirect from PPL_LALA_LAMBA to a neutral Bantu Lamba identifier without colliding with the unrelated Gur-family PPL_LAMBA record.",
         "Define an immutable-ID redirect from PPL_NGBANDE to the preferred Ngbandi spelling while preserving Ngbande and other controlled variants as searchable aliases.",
         "Resolve the contested Sango people-versus-language question and its correct linguistic taxonomy before modifying either source fiche.",
+        "Approve, amend, or reject the Mbuti umbrella proposal and its model prerequisites before creating PPL_MBUTI or any child record.",
         "Supplement the historical nomenclature with contemporary community and scholarly sources before publishing an exact coverage percentage.",
         "Expose verified linked peoples as individually selectable entries on mobile, tablet, and desktop."
       ],
@@ -343,8 +350,9 @@
         {
           "label": "Mbuti",
           "localStatus": "No dedicated PPL_MBUTI fiche found.",
-          "evidenceStatus": "confirmed_gap",
-          "candidateAction": "Prepare a PPL_MBUTI umbrella-fiche proposal for Ituri, with Efe, Asua/Sua, and Basua handled as sourced child groups rather than aliases or a single language community.",
+          "evidenceStatus": "confirmed_gap_proposal_ready",
+          "candidateAction": "Review COD-people-gap-Mbuti.json before creating a PPL_MBUTI umbrella fiche or any Efe, Asua, or Sua or Basua child record.",
+          "proposalArtifact": "docs/editorial/country-enrichment/COD-people-gap-Mbuti.json",
           "sourceUrl": "https://www.iwgia.org/en/news/iw-2024-drc",
           "corroboratingUrl": "https://www.refworld.org/reference/countryrep/mrgi/2018/en/121730",
           "historicalSourceId": "VB1954-P134-061",
