@@ -116,6 +116,10 @@ npx tsx scripts/afrik/updateCountryEnrichmentTracker.ts <ISO3> --write
 # Regenerate the people ledger, preserving every entries[].review decision
 npx tsx scripts/afrik/updateCountryPeopleLedger.ts <ISO3>                 # preview
 npx tsx scripts/afrik/updateCountryPeopleLedger.ts <ISO3> --write
+
+# Pin a Glottolog 5.3 country inventory, then reconcile exact local signals
+npx tsx scripts/afrik/exportGlottologCountryInventory.ts <ISO3> <ISO2> --write
+npx tsx scripts/afrik/updateCountryLanguageReconciliation.ts <ISO3> --write
 ```
 
 Without `--write` each command prints what it would produce and changes nothing. The
