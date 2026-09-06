@@ -287,5 +287,10 @@ describe("the name facet page", () => {
       "href",
       getPatronymeRoute("en", "PAT_KEITA")
     );
+    expect(screen.getByText(/1 name in this selection/)).toBeInTheDocument();
+    expect(
+      screen.getByRole("searchbox", { name: "Search names" })
+    ).toHaveAttribute("placeholder", "Name or attested spelling");
+    expect(screen.getByRole("list", { name: "Names" })).toBeInTheDocument();
   });
 });

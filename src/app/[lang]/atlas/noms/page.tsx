@@ -24,6 +24,7 @@ import { getTranslation } from "@/lib/translations";
 import type { CountryId } from "@/types/afrik";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import { formatNumber } from "@/lib/languageTag";
+import { facetDirectoriesCopy } from "@/lib/i18n/copy/facetDirectories";
 import type { Language } from "@/types/shared";
 import type { PatronymeNameSystem } from "@/api/v2/schemas/patronymes";
 
@@ -58,18 +59,6 @@ const PARAM = {
   page: "page",
   size: PAGE_SIZE_PARAM,
 } as const;
-
-/**
- * What the reading counts, in the reader's word.
- *
- * Written here rather than read from `t.index`, which the facet inherits from
- * the index this page replaces: those two keys still hold « patronyme » — the
- * internal identifier DEC-038 keeps out of the interface — and a facet is a
- * new surface to print it on. `peuples/page.tsx` states its own unit the same
- * way, for the same reason: the unit belongs to the facet, not to the copy of
- * whatever the facet grew out of.
- */
-const UNIT = { singular: "nom", plural: "noms" } as const;
 
 interface PageProps {
   params: Promise<PageParams>;
@@ -131,6 +120,7 @@ export default async function NomsHubPage({ params, searchParams }: PageProps) {
   const language = lang as Language;
   const count = (value: number) => formatNumber(language, value);
   const t = getTranslation(language).patronymes;
+  const copy = facetDirectoriesCopy[language].names;
   const query = (await searchParams) ?? {};
 
   const chosenSearch = definedFilter(query[PARAM.search]);
@@ -213,7 +203,7 @@ export default async function NomsHubPage({ params, searchParams }: PageProps) {
   const activeFilters: FacetActiveFilter[] = [];
   if (filters.countryId) {
     activeFilters.push({
-      label: `Pays : ${filters.countryId}`,
+      label: `${copy.countryFilter}: ${filters.countryId}`,
       removeHref: facetHref(
         language,
         { ...filters, countryId: null },
@@ -224,7 +214,7 @@ export default async function NomsHubPage({ params, searchParams }: PageProps) {
   }
   if (filters.nameSystem) {
     activeFilters.push({
-      label: `Système : ${t.nameSystemLabels[filters.nameSystem]}`,
+      label: `${copy.systemFilter}: ${t.nameSystemLabels[filters.nameSystem]}`,
       removeHref: facetHref(
         language,
         { ...filters, nameSystem: null },
@@ -235,7 +225,7 @@ export default async function NomsHubPage({ params, searchParams }: PageProps) {
   }
   if (filters.letter) {
     activeFilters.push({
-      label: `Lettre : ${filters.letter}`,
+      label: `${copy.letterFilter}: ${filters.letter}`,
       removeHref: facetHref(
         language,
         { ...filters, letter: null },
@@ -258,14 +248,11 @@ export default async function NomsHubPage({ params, searchParams }: PageProps) {
       pageSize={pageSize}
       pageSizes={PATRONYMES_FACET_PAGE_SIZES}
       buildHref={pagerHref}
-      unitLabel={UNIT.plural}
+      unitLabel={copy.plural}
     />
   );
 
-  const lede =
-    `${count(reading.total)} ` +
-    `${reading.total === 1 ? UNIT.singular : UNIT.plural} ` +
-    `dans cette sélection. Choisissez un pays sur le globe pour voir ceux qu'il atteste.`;
+  const lede = copy.lede(count(reading.total), reading.total === 1);
 
   if (unavailable) {
     return (
@@ -302,14 +289,14 @@ export default async function NomsHubPage({ params, searchParams }: PageProps) {
           className="mt-4"
           searchField={{
             name: PARAM.search,
-            label: "Rechercher un nom",
-            placeholder: "Nom, graphie attestée",
+            label: copy.searchLabel,
+            placeholder: copy.searchPlaceholder,
             value: filters.search ?? null,
           }}
           primaryField={{
             name: PARAM.people,
-            label: "Peuple",
-            anyLabel: "Tous les peuples",
+            label: copy.people,
+            anyLabel: copy.allPeoples,
             options: choices.peoples.map((people) => ({
               value: people.id,
               label: people.label,
@@ -319,8 +306,8 @@ export default async function NomsHubPage({ params, searchParams }: PageProps) {
           advancedFields={[
             {
               name: PARAM.country,
-              label: "Pays",
-              anyLabel: "Tous les pays",
+              label: copy.country,
+              anyLabel: copy.allCountries,
               options: choices.countries.map((country) => ({
                 value: country.id,
                 label: country.label,
@@ -329,8 +316,8 @@ export default async function NomsHubPage({ params, searchParams }: PageProps) {
             },
             {
               name: PARAM.system,
-              label: "Système de nommage",
-              anyLabel: "Tous les systèmes",
+              label: copy.system,
+              anyLabel: copy.allSystems,
               options: choices.nameSystems.map((system) => ({
                 value: system.id,
                 label: system.label,
@@ -341,6 +328,7 @@ export default async function NomsHubPage({ params, searchParams }: PageProps) {
           advancedSlot={{
             content: (
               <FacetLetterRail
+                language={language}
                 current={filters.letter}
                 hrefFor={(letter) =>
                   facetHref(language, { ...filters, letter }, null, pageSize)
@@ -365,7 +353,7 @@ export default async function NomsHubPage({ params, searchParams }: PageProps) {
                 name at all. Under a filter that is a different statement and a
                 false one: thirty are published, and this selection reaches
                 none of them. */}
-            Aucun nom du corpus ne répond à cette sélection.{" "}
+            {copy.empty}{" "}
             <Link
               href={facetHref(
                 language,
@@ -379,14 +367,14 @@ export default async function NomsHubPage({ params, searchParams }: PageProps) {
                 pageSize
               )}
             >
-              Revenir à tous les noms
+              {copy.reset}
             </Link>
           </p>
         ) : (
           <>
             {pagination("top")}
             <ul
-              aria-label="Noms"
+              aria-label={copy.listLabel}
               className="mt-6 flex flex-col gap-2 p-0 md:grid md:grid-cols-2 xl:grid-cols-3"
             >
               {reading.patronymes.map((patronyme) => (

@@ -27,6 +27,7 @@ import type { CountryId, People } from "@/types/afrik";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import { getTranslation } from "@/lib/translations";
 import { formatNumber } from "@/lib/languageTag";
+import { facetDirectoriesCopy } from "@/lib/i18n/copy/facetDirectories";
 import type { Language } from "@/types/shared";
 
 /**
@@ -132,6 +133,7 @@ export default async function PeuplesHubPage({
 }) {
   const { lang } = await params;
   const language = lang as Language;
+  const copy = facetDirectoriesCopy[language].peoples;
   const count = (value: number) => formatNumber(language, value);
   const query = (await searchParams) ?? {};
 
@@ -202,7 +204,7 @@ export default async function PeuplesHubPage({
   const activeFilters: FacetActiveFilter[] = [];
   if (filters.familyId) {
     activeFilters.push({
-      label: `Famille : ${familyLabels.get(filters.familyId) ?? filters.familyId}`,
+      label: `${copy.familyFilter}: ${familyLabels.get(filters.familyId) ?? filters.familyId}`,
       removeHref: facetHref(
         language,
         { ...filters, familyId: null },
@@ -213,7 +215,7 @@ export default async function PeuplesHubPage({
   }
   if (filters.letter) {
     activeFilters.push({
-      label: `Lettre : ${filters.letter}`,
+      label: `${copy.letterFilter}: ${filters.letter}`,
       removeHref: facetHref(
         language,
         { ...filters, letter: null },
@@ -237,14 +239,11 @@ export default async function PeuplesHubPage({
       pageSize={pageSize}
       pageSizes={PEOPLES_FACET_PAGE_SIZES}
       buildHref={pagerHref}
-      unitLabel="peuples"
+      unitLabel={copy.plural}
     />
   );
 
-  const lede =
-    `${count(reading.total)} ` +
-    `${reading.total === 1 ? "peuple" : "peuples"} dans cette sélection. ` +
-    `Choisissez un pays sur le globe pour voir ceux qu'il documente.`;
+  const lede = copy.lede(count(reading.total), reading.total === 1);
 
   return (
     <>
@@ -277,14 +276,14 @@ export default async function PeuplesHubPage({
           className="mt-4"
           searchField={{
             name: PARAM.search,
-            label: "Rechercher un peuple",
-            placeholder: "Nom du peuple",
+            label: copy.searchLabel,
+            placeholder: copy.searchPlaceholder,
             value: filters.search ?? null,
           }}
           primaryField={{
             name: PARAM.country,
-            label: "Pays",
-            anyLabel: "Tous les pays",
+            label: copy.country,
+            anyLabel: copy.allCountries,
             options: choices.countries.map((country) => ({
               value: country.id,
               label: country.label,
@@ -294,8 +293,8 @@ export default async function PeuplesHubPage({
           advancedFields={[
             {
               name: PARAM.family,
-              label: "Famille linguistique",
-              anyLabel: "Toutes les familles",
+              label: copy.family,
+              anyLabel: copy.allFamilies,
               options: choices.families.map((family) => ({
                 value: family.id,
                 label: family.label,
@@ -306,6 +305,7 @@ export default async function PeuplesHubPage({
           advancedSlot={{
             content: (
               <FacetLetterRail
+                language={language}
                 current={filters.letter}
                 hrefFor={(letter) =>
                   facetHref(language, { ...filters, letter }, null, pageSize)
@@ -329,7 +329,7 @@ export default async function PeuplesHubPage({
 
         {reading.peoples.length === 0 ? (
           <p data-testid="peoples-facet-empty" className="mt-6">
-            Aucun peuple du corpus ne répond à cette sélection.{" "}
+            {copy.empty}{" "}
             <Link
               href={facetHref(
                 language,
@@ -338,14 +338,14 @@ export default async function PeuplesHubPage({
                 pageSize
               )}
             >
-              Revenir à tous les peuples
+              {copy.reset}
             </Link>
           </p>
         ) : (
           <>
             {pagination("top")}
             <ul
-              aria-label="Peuples"
+              aria-label={copy.listLabel}
               className="mt-6 flex flex-col gap-2 p-0 md:grid md:grid-cols-2 xl:grid-cols-3"
             >
               {reading.peoples.map((people) => (
@@ -367,6 +367,7 @@ export default async function PeuplesHubPage({
                       {people.classificationStatus && (
                         <ClassificationBadge
                           status={people.classificationStatus}
+                          language={language}
                         />
                       )}
                       {familyLabels.get(people.languageFamilyId) && (

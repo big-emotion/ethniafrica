@@ -204,5 +204,12 @@ describe("the language facet page", () => {
     );
     const links = screen.getAllByRole("link", { name: /Fulfulde/ });
     expect(links[0]).toHaveAttribute("href", getLanguageRoute("en", "fuf"));
+    expect(
+      screen.getByText(/2 languages in this selection/)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("searchbox", { name: "Search languages" })
+    ).toHaveAttribute("placeholder", "Language name or ISO 639-3 code");
+    expect(screen.getByRole("list", { name: "Languages" })).toBeInTheDocument();
   });
 });

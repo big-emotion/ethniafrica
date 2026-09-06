@@ -93,9 +93,12 @@ const PRESENCE = [
   ...WIDESPREAD,
 ];
 
-function renderRoute(searchParams: Record<string, string | string[]>) {
+function renderRoute(
+  searchParams: Record<string, string | string[]>,
+  lang = "fr"
+) {
   return FamillesHubPage({
-    params: Promise.resolve({ lang: "fr" }),
+    params: Promise.resolve({ lang }),
     searchParams: Promise.resolve(searchParams),
   });
 }
@@ -178,6 +181,17 @@ describe("the families facet", () => {
 
     expect(screen.queryAllByRole("heading", { level: 1 })).toHaveLength(0);
     expect(screen.getByText(/16 familles/)).toBeInTheDocument();
+  });
+
+  // @req REQ-141
+  it("renders its reading and controls in English", async () => {
+    render(await renderRoute({}, "en"));
+
+    expect(screen.getByText(/16 families in the corpus/)).toBeInTheDocument();
+    expect(
+      screen.getByRole("searchbox", { name: "Search language families" })
+    ).toHaveAttribute("placeholder", "Family name or identifier");
+    expect(screen.getByText(/320 peoples in the corpus/)).toBeInTheDocument();
   });
 
   // @req REQ-117

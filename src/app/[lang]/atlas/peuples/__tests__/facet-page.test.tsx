@@ -191,7 +191,7 @@ describe("the peoples facet — what it reads", () => {
   it("composes the fiche links and the form action in the route's locale", async () => {
     const { container } = render(await renderRoute({}, "en"));
 
-    const list = screen.getByRole("list", { name: /peuples/i });
+    const list = screen.getByRole("list", { name: "Peoples" });
     expect(within(list).getAllByRole("link")[0]).toHaveAttribute(
       "href",
       getPeopleRoute("en", "PPL_AKAN")
@@ -200,6 +200,11 @@ describe("the peoples facet — what it reads", () => {
       "action",
       getFacetRoute("en", "peoples")
     );
+    expect(screen.getByText(/2 peoples in this selection/)).toBeInTheDocument();
+    expect(
+      screen.getByRole("searchbox", { name: "Search peoples" })
+    ).toHaveAttribute("placeholder", "People name");
+    expect(screen.getByRole("list", { name: "Peoples" })).toBeInTheDocument();
   });
 
   // @req REQ-091

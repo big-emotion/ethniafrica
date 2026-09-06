@@ -20,6 +20,7 @@ import type { CountryId } from "@/types/afrik";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import { getTranslation } from "@/lib/translations";
 import { formatNumber } from "@/lib/languageTag";
+import { facetDirectoriesCopy } from "@/lib/i18n/copy/facetDirectories";
 import type { Language } from "@/types/shared";
 
 /**
@@ -101,6 +102,7 @@ export default async function FamillesHubPage({
 }) {
   const { lang } = await params;
   const language = lang as Language;
+  const copy = facetDirectoriesCopy[language].families;
   const query = (await searchParams) ?? {};
   const formatCount = (value: number): string => formatNumber(language, value);
 
@@ -185,7 +187,7 @@ export default async function FamillesHubPage({
   const countryOptions = countries
     .filter((country) => documentedCountries.has(country.id))
     .map((country) => ({ value: country.id, label: country.nameFr }))
-    .sort((left, right) => left.label.localeCompare(right.label, "fr"));
+    .sort((left, right) => left.label.localeCompare(right.label, language));
 
   const pageHref = (target: number, size: number): string => {
     const address = new URLSearchParams();
@@ -209,13 +211,14 @@ export default async function FamillesHubPage({
       pageSize={pageSize}
       pageSizes={FAMILIES_PAGE_SIZES}
       buildHref={pageHref}
-      unitLabel="familles"
+      unitLabel={copy.plural}
     />
   );
 
   const chosenCountryName = countryOptions.find(
     (option) => option.value === chosenCountry
   )?.label;
+  const lede = copy.lede(formatCount(selection.length), chosenCountryName);
 
   const cardClass =
     "flex min-h-11 flex-col gap-1 rounded-afh-lg border border-afh-border bg-afh-surface p-4 hover:border-[color:var(--accent)]";
@@ -234,14 +237,7 @@ export default async function FamillesHubPage({
             the count, because it answers the filters directly below it and
             changes with them. */}
         <header className="afh-facet-reading-head">
-          <p className="afh-facet-reading-lede">
-            {formatCount(selection.length)} familles{" "}
-            {chosenCountryName
-              ? `documentées en ${chosenCountryName}`
-              : "au corpus"}
-            . Choisissez un pays sur le globe pour voir lesquelles s&apos;y
-            parlent.
-          </p>
+          <p className="afh-facet-reading-lede">{lede}</p>
         </header>
 
         <FacetFilterBar
@@ -249,8 +245,8 @@ export default async function FamillesHubPage({
           className="mt-6"
           searchField={{
             name: SEARCH_PARAM,
-            label: "Rechercher une famille linguistique",
-            placeholder: "Nom ou identifiant de la famille",
+            label: copy.searchLabel,
+            placeholder: copy.searchPlaceholder,
             value: chosenSearch,
           }}
           // A GET form submits its own controls only, so the size chosen above
@@ -263,8 +259,8 @@ export default async function FamillesHubPage({
           }}
           primaryField={{
             name: COUNTRY_PARAM,
-            label: "Pays",
-            anyLabel: "Tous les pays",
+            label: copy.country,
+            anyLabel: copy.allCountries,
             options: countryOptions,
             value: chosenCountry,
           }}
@@ -275,12 +271,13 @@ export default async function FamillesHubPage({
             data-testid="family-facet-empty"
             className="mt-6 text-afh-body text-afh-text-soft"
           >
-            Aucune famille linguistique ne répond à cette sélection.
+            {copy.empty}
           </p>
         ) : (
           <>
             {pagination("top")}
             <ul
+              aria-label={copy.listLabel}
               data-testid="family-facet-list"
               className="mt-6 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3"
             >
@@ -294,7 +291,10 @@ export default async function FamillesHubPage({
                       {family.nameFr}
                     </span>
                     <span className="text-afh-small text-afh-text-soft">
-                      {formatCount(family.peopleCount ?? 0)} peuples au corpus
+                      {copy.peopleCount(
+                        formatCount(family.peopleCount ?? 0),
+                        family.peopleCount === 1
+                      )}
                     </span>
                   </Link>
                 </li>
@@ -307,8 +307,7 @@ export default async function FamillesHubPage({
 
         {unclassifiedPeoplesCount > 0 && (
           <p className="mt-6 text-afh-caption text-afh-text-soft">
-            {formatCount(unclassifiedPeoplesCount)} peuples non classés dans une
-            famille linguistique publiée.
+            {copy.unclassified(formatCount(unclassifiedPeoplesCount))}
           </p>
         )}
       </div>
