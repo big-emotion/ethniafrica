@@ -224,6 +224,11 @@
       "path": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
       "extractCommand": "npx tsx scripts/afrik/extractVanBulckCodInventory.ts <pdf-path> --write",
       "matchingPolicy": "exact_names_and_declared_aliases_only"
+    },
+    "historyProposal": {
+      "path": "docs/editorial/country-enrichment/COD-history.json",
+      "reviewScope": "archaeology, political formations, colonial administrations, and independent state names",
+      "productionWriteRequiresApproval": true
     }
   },
   "workstreams": [
@@ -457,18 +462,25 @@
     {
       "id": "COD-HISTORY",
       "priority": "P1",
-      "status": "source_upgrade_required",
+      "status": "surface_proposal_ready_editorial_approval_required",
       "goal": "Extend the timeline before the best-known kingdoms and represent historical entities accurately.",
       "findings": [
         "The kingdoms array currently mixes precolonial polities, colonial administrations, and the modern republic.",
-        "The earliest narrative is broad and does not yet use the documented Upemba archaeological sequence.",
-        "Most historical claims rely on sources whose tier still needs review."
+        "Several current list values are malformed because commas inside parenthetical phrases were split into separate array entries.",
+        "The Upemba Depression now provides a sourced regional archaeological sequence spanning more than two millennia, but it must not be generalized into a national origin narrative.",
+        "Ten named political formations have been reviewed by type and geographic fit: seven are ready for a structured first-wave timeline, Kazembe is transborder context, Mangbetu has partial period evidence, and Mongo must be removed from the polity list pending dedicated research.",
+        "Kongo, Lunda, Kazembe, Chokwe, and Zande require explicit transborder framing; Mbanza Kongo is in present-day Angola and Kazembe was centered in present-day Zambia.",
+        "Zande should be represented as plural connected kingdoms rather than one sultanate, and Chokwe as plural chiefdoms and trade networks rather than one empire.",
+        "Six colonial and independent-state periods now have a separate sourced name chronology from the Congo Free State through the current Democratic Republic of the Congo.",
+        "The proposal defines four distinct presentation sections and deliberately does not compute a global history-completeness percentage."
       ],
       "remaining": [
-        "Add an archaeology track beginning with the Upemba sequence documented by UNESCO.",
-        "Audit the geographic fit and periodization of Kongo, Luba, Lunda, Kuba, Kazembe, Yeke/Garanganze, Chokwe, Mangbetu, Zande, and other relevant polities.",
-        "Separate polities from colonial administrations and modern state periods in both data and presentation.",
-        "Attach accepted sources to every retained historical claim."
+        "Approve or amend the taxonomy, geographic-fit decisions, and first-wave entries in COD-history.json before modifying production country data.",
+        "Design and test a mobile-first country-history presentation that separates archaeology, political formations, colonial administrations, and independent-state periods.",
+        "Replace the production kingdoms array and compressed prose only after editorial approval, preserving field-level source links.",
+        "Obtain a dedicated scholarly source for the broader Mangbetu chronology and a source for regional variation in Mongo political organization.",
+        "Review additional regional formations in evidence-prioritized waves; the ten-row audit is a controlled first scope, not an exhaustive national inventory.",
+        "Build a separately sourced modern event timeline for independence, the Congo Crisis, Mobutu's regime, the Congo wars, and later constitutional periods."
       ],
       "researchLeads": [
         {
@@ -476,6 +488,24 @@
           "publisher": "UNESCO World Heritage Centre",
           "url": "https://whc.unesco.org/fr/listesindicatives/963/",
           "why": "Documents more than two millennia of occupation and a dated sequence from the Later Stone Age through recent Luba periods."
+        },
+        {
+          "title": "Central Africa, 1600–1800 A.D. and Central Africa, 1800–1900 A.D.",
+          "publisher": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History",
+          "url": "https://82nd-and-fifth.metmuseum.org/toah/ht/09/afc.html",
+          "why": "Provides a comparative chronology for Kongo, Luba, Lunda, Kuba, Kazembe, Chokwe, Yeke, and Mangbetu formations."
+        },
+        {
+          "title": "The Yeke and the Congo Free State, from confrontation to collaboration",
+          "publisher": "Royal Museum for Central Africa",
+          "url": "https://www.africamuseum.be/en/discover/history_articles/the_yeke_and_the_congo_free_state",
+          "why": "Documents the Yeke migration, Msiri's Bunkeya-centered polity, and its violent incorporation into the Congo Free State in 1891."
+        },
+        {
+          "title": "Zaire — United Nations authority record",
+          "publisher": "United Nations Digital Library",
+          "url": "https://digitallibrary.un.org/record/878251",
+          "why": "Provides exact dates for the 1964, 1971, and 1997 official country-name changes."
         }
       ]
     },
