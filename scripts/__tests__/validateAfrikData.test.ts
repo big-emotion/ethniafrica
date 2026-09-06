@@ -36,6 +36,7 @@ import {
   checkCountryCodesResolve,
   checkHistoricalAffiliationModel,
   checkTranslationClassCoverage,
+  checkTranslationSidecars,
   OFF_MAP_COUNTRIES,
   checkSourceIdentity,
   AFRICAN_REFERENCE_COUNTRY_CODES,
@@ -867,6 +868,223 @@ describe("validateAfrikData – new integrity checks", () => {
         "REQ-143: modele-media.json is declared but missing from public/",
         "REQ-143: modele-toponyme.json has no translation class declaration (add it to STRICT_MODEL_FILES)",
       ]);
+    });
+  });
+
+  // ── TR-1 : checkTranslationSidecars (REQ-142, REQ-143) ─────────────────────
+
+  describe("checkTranslationSidecars (TR-1)", () => {
+    const asante = {
+      id: "PPL_ASANTE",
+      nameMain: "Asante",
+      languageFamilyId: "FLG_NIGERCONGO",
+      currentCountries: ["GHA"],
+      content: {
+        appellations: {
+          selfAppellation: "Asante / Asantefo",
+          exonyms: ["Ashanti (variante orthographique anglaise)"],
+          originOfExonyms: "Le terme Ashanti est une variante anglophone.",
+        },
+        origins: { ancientOrigins: "Les Asante font partie du groupe Akan." },
+        sources: [
+          {
+            title: "Un titre",
+            url: "https://x",
+            tier: "official",
+            notes: "N.",
+          },
+        ],
+      },
+    };
+    const block = {
+      kind: "machine",
+      translatedAt: "2026-09-05T10:00:00.000Z",
+      sourceHash: "a".repeat(64),
+      fieldHashes: {},
+      reviewRequired: ["content.appellations.originOfExonyms"],
+    };
+    const englishAsante = {
+      ...asante,
+      content: {
+        ...asante.content,
+        appellations: {
+          selfAppellation: "Asante / Asantefo",
+          exonyms: ["Ashanti (English spelling variant)"],
+          originOfExonyms: "The term Ashanti is an anglophone variant.",
+        },
+        origins: { ancientOrigins: "The Asante belong to the Akan group." },
+        sources: [
+          {
+            title: "Un titre",
+            url: "https://x",
+            tier: "official",
+            notes: "N.",
+          },
+        ],
+      },
+    };
+
+    function writeSource(root: string) {
+      const dir = join(root, "peuples", "FLG_NIGERCONGO");
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(join(dir, "PPL_ASANTE.json"), JSON.stringify(asante));
+    }
+
+    function writeSidecar(
+      root: string,
+      relPath: string,
+      sidecar: Record<string, unknown>
+    ): string {
+      const translations = join(root, "translations");
+      const file = join(translations, "en", relPath);
+      mkdirSync(join(file, ".."), { recursive: true });
+      writeFileSync(file, JSON.stringify(sidecar));
+      return translations;
+    }
+
+    // @req REQ-142
+    it("passes a faithful machine sidecar, class-3 translation included", () => {
+      writeSource(tmpDir);
+      const translations = writeSidecar(
+        tmpDir,
+        "peuples/FLG_NIGERCONGO/PPL_ASANTE.json",
+        { ...englishAsante, _translation: block }
+      );
+
+      const result = checkTranslationSidecars(tmpDir, translations);
+      expect(result.errors).toEqual([]);
+      expect(result.ok).toBe(true);
+    });
+
+    // Dossier translations predate the database-backed store and are sparse
+    // overlays validated by the dossier reader. TR-1 must validate that
+    // contract too, without pretending they are full stored records.
+    // @req REQ-143
+    it("accepts a valid file-served dossier translation", () => {
+      const source = readFileSync(
+        resolve("dataset/source/afrik/dossiers/DOS_KONGO.json"),
+        "utf8"
+      );
+      const translated = readFileSync(
+        resolve("dataset/translations/en/dossiers/DOS_KONGO.json"),
+        "utf8"
+      );
+      const sourceFile = join(tmpDir, "dossiers", "DOS_KONGO.json");
+      const translatedFile = join(
+        tmpDir,
+        "translations",
+        "en",
+        "dossiers",
+        "DOS_KONGO.json"
+      );
+      mkdirSync(join(sourceFile, ".."), { recursive: true });
+      mkdirSync(join(translatedFile, ".."), { recursive: true });
+      writeFileSync(sourceFile, source);
+      writeFileSync(translatedFile, translated);
+
+      const result = checkTranslationSidecars(
+        tmpDir,
+        join(tmpDir, "translations")
+      );
+
+      expect(result).toEqual({ ok: true, errors: [], warnings: [] });
+    });
+
+    // @req REQ-142
+    it("fails a sidecar whose translation kind is outside the three-value set, naming it", () => {
+      writeSource(tmpDir);
+      const translations = writeSidecar(
+        tmpDir,
+        "peuples/FLG_NIGERCONGO/PPL_ASANTE.json",
+        { ...englishAsante, _translation: { ...block, kind: "auto" } }
+      );
+
+      const result = checkTranslationSidecars(tmpDir, translations);
+      expect(result.ok).toBe(false);
+      expect(result.errors).toEqual([
+        expect.stringMatching(
+          /TR-1: en\/peuples\/FLG_NIGERCONGO\/PPL_ASANTE\.json: declares no valid translation kind/
+        ),
+      ]);
+    });
+
+    // @req REQ-146
+    it("fails an orphan sidecar with no source fiche at the mirrored path", () => {
+      writeSource(tmpDir);
+      const translations = writeSidecar(tmpDir, "pays/GHA.json", {
+        id: "GHA",
+        _translation: block,
+      });
+
+      const result = checkTranslationSidecars(tmpDir, translations);
+      expect(result.errors).toEqual([
+        "TR-1: en/pays/GHA.json: no source fiche at pays/GHA.json",
+      ]);
+    });
+
+    // @req REQ-143
+    it("fails when a class-1 leaf differs from the source", () => {
+      writeSource(tmpDir);
+      const renamed = structuredClone(englishAsante);
+      renamed.content.appellations.selfAppellation = "Ashantee";
+      const translations = writeSidecar(
+        tmpDir,
+        "peuples/FLG_NIGERCONGO/PPL_ASANTE.json",
+        { ...renamed, _translation: block }
+      );
+
+      const result = checkTranslationSidecars(tmpDir, translations);
+      expect(result.errors).toEqual([
+        expect.stringMatching(
+          /content\.appellations\.selfAppellation — .*carried over verbatim/
+        ),
+      ]);
+    });
+
+    // @req REQ-143
+    it("fails when a glossed invariant loses its name, and passes when only the gloss moved", () => {
+      writeSource(tmpDir);
+      const renamed = structuredClone(englishAsante);
+      renamed.content.appellations.exonyms = [
+        "Ashantee (English spelling variant)",
+      ];
+      const translations = writeSidecar(
+        tmpDir,
+        "peuples/FLG_NIGERCONGO/PPL_ASANTE.json",
+        { ...renamed, _translation: block }
+      );
+
+      const result = checkTranslationSidecars(tmpDir, translations);
+      expect(result.errors).toEqual([
+        expect.stringMatching(/content\.appellations\.exonyms\[0\]/),
+      ]);
+    });
+
+    // @req REQ-142
+    it("fails when the sidecar adds or drops a leaf the source has", () => {
+      writeSource(tmpDir);
+      const pruned = structuredClone(englishAsante) as Record<string, unknown>;
+      delete (pruned.content as { origins?: unknown }).origins;
+      const translations = writeSidecar(
+        tmpDir,
+        "peuples/FLG_NIGERCONGO/PPL_ASANTE.json",
+        { ...pruned, _translation: block }
+      );
+
+      const result = checkTranslationSidecars(tmpDir, translations);
+      expect(result.errors).toEqual([
+        expect.stringMatching(
+          /leaf paths differ.*missing: content\.origins\.ancientOrigins/
+        ),
+      ]);
+    });
+
+    // @req REQ-142
+    it("passes on an absent translations tree — no record is not a bad record", () => {
+      writeSource(tmpDir);
+      expect(
+        checkTranslationSidecars(tmpDir, join(tmpDir, "translations"))
+      ).toEqual({ ok: true, errors: [], warnings: [] });
     });
   });
 

@@ -65,7 +65,7 @@ export default async function LanguesSlugPage({
   }
 
   const [language, sourceFlags] = await Promise.all([
-    getLanguageById(parsed.slug),
+    getLanguageById(parsed.slug, lang as Language),
     getActiveSourceFlags("language", parsed.slug),
   ]);
   if (!language) {
@@ -82,7 +82,7 @@ export default async function LanguesSlugPage({
       flushTop
       trailLabel={data.name}
       heroHead={
-        <FicheHeroHead entityType="language">
+        <FicheHeroHead entityType="language" translation={language.translation}>
           <LanguageFicheTitle data={data} language={lang as Language} />
         </FicheHeroHead>
       }

@@ -3,7 +3,7 @@
   "info": {
     "title": "EthniAfrica API v2 - AFRIK",
     "version": "2.3.0",
-    "description": "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.\n\n## Response envelope\n\nEvery `/api/v2/*` response uses the Module #0 envelope: `{ data, meta: { license, attribution, pagination?, confidence?, pinned_url? }, errors }`. License and attribution are always present (AR8); `errors` is empty on success and populated on non-2xx responses. List endpoints place their pagination values under `meta.pagination`.\n\n## 2.1.0 — one source-tier vocabulary (breaking)\n\nSource authority is now one three-value scale — `official` | `referenced` | `unverified` — spoken identically by the database, the payloads and the UI. Provenance stays on the separate `source_kind` axis, so AI-generated text is `tier: \"unverified\"` + `source_kind: \"ai_generated\"` rather than a tier of its own.\n\nRemoved, all superseded by `tier`:\n\n- the numeric evidence-tier property on `Source`, `ReferenceSource` and `ReferenceCreateInput` (a `1 | 2 | null` scale that could not express an unverified source);\n- the legacy `Source.type` enum, which read a column dropped in migration 015 and was therefore always `null`;\n- the two catalogue gating properties on `Source.policy`, which decided whether a citation could be published at all. Under the source doctrine no citation is refused, so `Source.policy.tier` carries the signal instead.",
+    "description": "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.\n\n## Response envelope\n\nEvery `/api/v2/*` response uses the Module #0 envelope: `{ data, meta: { license, attribution, pagination?, confidence?, pinned_url?, translation? }, errors }`. License and attribution are always present (AR8); `errors` is empty on success and populated on non-2xx responses. List endpoints place their pagination values under `meta.pagination`.\n\n## 2.3.0 — translated records (additive)\n\nThe five single-entity endpoints accept `?lang=fr|en`. `fr` is the authored language and the default; `en` overlays the translation record when one exists and declares how it was produced in `meta.translation` — `human`, `machine_reviewed` or `machine` — with `stale: true` when the French moved on a field the reader is shown since it was translated. Fields whose subject is a word are withheld at `machine` provenance and served in French until a human has reviewed them (REQ-142, REQ-143). Lists, facets and search stay authored-French.\n\n## 2.1.0 — one source-tier vocabulary (breaking)\n\nSource authority is now one three-value scale — `official` | `referenced` | `unverified` — spoken identically by the database, the payloads and the UI. Provenance stays on the separate `source_kind` axis, so AI-generated text is `tier: \"unverified\"` + `source_kind: \"ai_generated\"` rather than a tier of its own.\n\nRemoved, all superseded by `tier`:\n\n- the numeric evidence-tier property on `Source`, `ReferenceSource` and `ReferenceCreateInput` (a `1 | 2 | null` scale that could not express an unverified source);\n- the legacy `Source.type` enum, which read a column dropped in migration 015 and was therefore always `null`;\n- the two catalogue gating properties on `Source.policy`, which decided whether a citation could be published at all. Under the source doctrine no citation is refused, so `Source.policy.tier` carries the signal instead.",
     "contact": {
       "name": "EthniAfrica",
       "url": "https://github.com/big-emotion/ethniafrica"
@@ -1339,6 +1339,18 @@
             },
             "description": "Identifiant du peuple (format PPL_*)",
             "example": "PPL_SHONA"
+          },
+          {
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["fr", "en"],
+              "default": "fr"
+            },
+            "description": "Locale du contenu servi. `fr` est la langue d'auteur ; `en` superpose l'enregistrement de traduction quand il existe et déclare sa provenance dans `meta.translation` (REQ-142).\n",
+            "example": "en"
           }
         ],
         "responses": {
@@ -1801,6 +1813,18 @@
             },
             "description": "Patronyme identifier",
             "example": "PAT_KEITA"
+          },
+          {
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["fr", "en"],
+              "default": "fr"
+            },
+            "description": "Locale of the served content. `fr` is the authored language; `en` overlays the translation record when one exists and declares its provenance in `meta.translation` (REQ-142).\n",
+            "example": "en"
           }
         ],
         "responses": {
@@ -2369,6 +2393,18 @@
             },
             "description": "Lowercase ISO 639-3 language identifier",
             "example": "yor"
+          },
+          {
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["fr", "en"],
+              "default": "fr"
+            },
+            "description": "Locale of the served content. `fr` is the authored language; `en` overlays the translation record when one exists and declares its provenance in `meta.translation` (REQ-142).\n",
+            "example": "en"
           }
         ],
         "responses": {
@@ -2494,6 +2530,18 @@
             },
             "description": "Identifiant de la famille linguistique (format FLG_*)",
             "example": "FLG_BANTU"
+          },
+          {
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["fr", "en"],
+              "default": "fr"
+            },
+            "description": "Locale du contenu servi. `fr` est la langue d'auteur ; `en` superpose l'enregistrement de traduction quand il existe et déclare sa provenance dans `meta.translation` (REQ-142).\n",
+            "example": "en"
           }
         ],
         "responses": {
@@ -3897,6 +3945,18 @@
             },
             "description": "Code ISO 3166-1 alpha-3 du pays",
             "example": "ZWE"
+          },
+          {
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["fr", "en"],
+              "default": "fr"
+            },
+            "description": "Locale du contenu servi. `fr` est la langue d'auteur ; `en` superpose l'enregistrement de traduction quand il existe et déclare sa provenance dans `meta.translation` (REQ-142).\n",
+            "example": "en"
           }
         ],
         "responses": {
@@ -5347,9 +5407,42 @@
           },
           "pagination": {
             "$ref": "#/components/schemas/PaginationMeta"
+          },
+          "translation": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/TranslationProvenance"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Present once a locale other than the authored one was asked for; null when that locale has no record and the authored text is served."
           }
         },
         "required": ["license", "attribution"]
+      },
+      "TranslationProvenance": {
+        "type": "object",
+        "description": "How the served record was translated (REQ-142). A separate axis from source tier and source_kind; never alters the confidence score.",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": ["human", "machine_reviewed", "machine"]
+          },
+          "translatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reviewedBy": {
+            "type": ["string", "null"]
+          },
+          "stale": {
+            "type": "boolean",
+            "description": "The authored text changed on a served field since the translation was produced."
+          }
+        },
+        "required": ["kind", "translatedAt", "reviewedBy", "stale"]
       },
       "ApiErrorEntry": {
         "type": "object",

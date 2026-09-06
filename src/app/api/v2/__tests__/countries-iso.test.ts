@@ -77,6 +77,40 @@ describe("API v2 - Single Country Route", () => {
       });
     });
 
+    describe("?lang (REQ-142)", () => {
+      // @req REQ-142
+      it("forwards a supported locale to the handler", async () => {
+        vi.mocked(getCountryHandler).mockResolvedValue({
+          data: { id: "ZWE", patronymes: { attested: [], borneByPeoples: [] } },
+          meta: ENVELOPE_META,
+          errors: [],
+        } as never);
+
+        const response = await GET(
+          new NextRequest("http://localhost/api/v2/countries/ZWE?lang=en"),
+          { params: Promise.resolve({ iso: "ZWE" }) }
+        );
+
+        expect(response.status).toBe(200);
+        expect(getCountryHandler).toHaveBeenCalledWith("ZWE", "en");
+      });
+
+      // @req REQ-142
+      it("refuses an unsupported locale with a 400 naming the field", async () => {
+        const response = await GET(
+          new NextRequest("http://localhost/api/v2/countries/ZWE?lang=de"),
+          { params: Promise.resolve({ iso: "ZWE" }) }
+        );
+
+        expect(response.status).toBe(400);
+        expect(await response.json()).toMatchObject({
+          data: null,
+          errors: [{ code: "VALIDATION_ERROR", field: "lang" }],
+        });
+        expect(getCountryHandler).not.toHaveBeenCalled();
+      });
+    });
+
     // @req REQ-084
     it("returns a 404 NOT_FOUND envelope for a non-existent country", async () => {
       vi.mocked(getCountryHandler).mockResolvedValue(null);

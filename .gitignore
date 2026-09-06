@@ -99,6 +99,7 @@ Thumbs.db
 dataset/*
 !dataset/source/
 !dataset/source/**/*
+# Translated records mirror the source tree per locale (REQ-146)
 !dataset/translations/
 !dataset/translations/**/*
 # Ignorer les fichiers système dans dataset

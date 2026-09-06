@@ -22,6 +22,13 @@ const BANTU = {
   content: {},
 } satisfies LanguageFamily;
 
+const MACHINE_PROVENANCE = {
+  kind: "machine" as const,
+  translatedAt: "2026-09-05T10:00:00.000Z",
+  reviewedBy: null,
+  stale: false,
+};
+
 describe("Language Families Handler", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -79,7 +86,7 @@ describe("Language Families Handler", () => {
 
       const response = await getLanguageFamilyHandler("FLG_BANTU");
 
-      expect(getLanguageFamilyById).toHaveBeenCalledWith("FLG_BANTU");
+      expect(getLanguageFamilyById).toHaveBeenCalledWith("FLG_BANTU", "fr");
       expect(response).toEqual({
         data: BANTU,
         meta: {
@@ -88,6 +95,20 @@ describe("Language Families Handler", () => {
         },
         errors: [],
       });
+    });
+
+    // @req REQ-142
+    it("forwards the locale and lifts the provenance out of the record onto meta", async () => {
+      vi.mocked(getLanguageFamilyById).mockResolvedValue({
+        ...BANTU,
+        translation: MACHINE_PROVENANCE,
+      });
+
+      const response = await getLanguageFamilyHandler("FLG_BANTU", "en");
+
+      expect(getLanguageFamilyById).toHaveBeenCalledWith("FLG_BANTU", "en");
+      expect(response?.meta.translation).toEqual(MACHINE_PROVENANCE);
+      expect(response?.data).not.toHaveProperty("translation");
     });
 
     it("should return null for non-existent language family", async () => {

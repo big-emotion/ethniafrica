@@ -182,7 +182,7 @@ export default async function PeoplesSlugPage({
     fieldNotes,
     borneNames,
   ] = await Promise.all([
-    loadPeopleFiche(parsed.slug),
+    loadPeopleFiche(parsed.slug, lang as Language),
     getActiveSourceFlags("people", parsed.slug),
     getPeopleNamesDossier(parsed.slug).catch(() => null),
     getPeopleFragmentation(parsed.slug).catch(() => null),
@@ -230,7 +230,7 @@ export default async function PeoplesSlugPage({
       flushTop
       trailLabel={peopleDetail.nameMain}
       heroHead={
-        <FicheHeroHead entityType="people">
+        <FicheHeroHead entityType="people" translation={people.translation}>
           <PeopleFicheTitle people={peopleDetail} />
         </FicheHeroHead>
       }

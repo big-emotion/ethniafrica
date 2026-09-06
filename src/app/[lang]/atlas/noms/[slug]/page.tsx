@@ -84,7 +84,10 @@ export default async function AppellationsSlugPage({
 }) {
   const { lang, slug } = await params;
 
-  const patronyme = await loadPatronymeFiche(decodeURIComponent(slug));
+  const patronyme = await loadPatronymeFiche(
+    decodeURIComponent(slug),
+    lang as Language
+  );
   if (!patronyme) {
     notFound();
   }
@@ -96,7 +99,7 @@ export default async function AppellationsSlugPage({
       flushTop
       trailLabel={patronyme.nameMain}
       heroHead={
-        <FicheHeroHead entityType="name">
+        <FicheHeroHead entityType="name" translation={patronyme.translation}>
           <PatronymeFicheTitle
             patronyme={patronyme}
             language={lang as Language}

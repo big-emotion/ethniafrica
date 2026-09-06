@@ -237,6 +237,17 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `073_afrik_media.sql`                         | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
 | `078_revoke_iso_code_questions.sql`           | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand, **before** the code deploys             |
 | `084_afrik_search_english_names.sql`          | pending — applies on merge via `migrate-recette.yml`          | pending — the Release `migrate` job, **before** the code deploys |
+| `085_afrik_translations.sql`                  | pending — applies on merge via `migrate-recette.yml`          | pending — applies on the next published Release                  |
+
+> **REQ-142 (ETNI-1826).** `085` creates `afrik_translations`, the translation record keyed
+> `(entity_type, entity_id, lang)` with a checked three-value `translation_kind`. It is loaded
+> from the sidecars under `dataset/translations/<lang>/` by the `translations` stage of
+> `scripts/migrateAfrikToDatabase.ts`, which skips with a warning naming this migration when the
+> table is absent — the recette sync fires on the same push as `migrate-recette.yml` and can race
+> it. `recompute_confidence()` is deliberately untouched: translation provenance is a third axis
+> beside `tier` and `source_kind`. Verify on recette after merge: the table exists and the anon
+> key answers a `SELECT` on it; then `?lang=en` on `/api/v2/peoples/{id}` carries
+> `meta.translation`.
 
 > **REQ-127 (ETNI-1384).** `072` adds a `CHECK` constraint on `afrik_peoples.content` enforcing
 > the same shape `checkHistoricalAffiliationModel` (FR111) already enforces on the JSON corpus:

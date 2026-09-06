@@ -13,8 +13,10 @@ import {
   getAfrikPeoplesByLanguageFamily,
   getPeopleCountsByLanguageFamily,
 } from "@/lib/supabase/queries/afrik/peoples";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 import type { LanguageFamily } from "@/types/afrik";
 import type { PaginatedResult } from "./countryService";
+import { attachTranslation, type TranslatedEntity } from "./translations";
 
 export interface LanguageFamiliesResult extends PaginatedResult<LanguageFamily> {
   /**
@@ -108,9 +110,11 @@ function computeFootprintByCountry(
  */
 // @req REQ-033
 // @req REQ-119
+// @req REQ-142
 export async function getLanguageFamilyById(
-  id: string
-): Promise<LanguageFamily | null> {
+  id: string,
+  lang: TranslationLocale = "fr"
+): Promise<TranslatedEntity<LanguageFamily> | null> {
   const family = await getAfrikLanguageFamilyById(id);
 
   if (!family) {
@@ -143,7 +147,9 @@ export async function getLanguageFamilyById(
   const associatedPeoples =
     derived.length > 0 ? derived : (family.content?.associatedPeoples ?? []);
 
-  return {
+  // Overlaid after the derivation, so the derived fields stay derived and
+  // the translation reaches the content the reader is shown.
+  return attachTranslation("language_family", id, lang, {
     ...family,
     associatedPeoples,
     footprintByCountry: computeFootprintByCountry(peoples),
@@ -151,5 +157,5 @@ export async function getLanguageFamilyById(
       ...family.content,
       associatedPeoples,
     },
-  };
+  });
 }

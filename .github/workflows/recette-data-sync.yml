@@ -20,6 +20,7 @@ on:
     branches: [recette]
     paths:
       - "dataset/source/afrik/**"
+      - "dataset/translations/**"
       - "scripts/migrateAfrikToDatabase.ts"
       - "src/lib/afrik/loaders/**"
       - ".github/workflows/recette-data-sync.yml"

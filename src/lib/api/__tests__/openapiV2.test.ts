@@ -86,4 +86,33 @@ describe("OpenAPI v2 contract", () => {
       [...QUIZ_TEMPLATE_IDS].sort()
     );
   });
+
+  // @req REQ-142
+  it("documents the lang parameter on the five single-entity reads and the provenance on meta", () => {
+    const paths = swaggerSpecV2.paths as Record<
+      string,
+      { get?: { parameters?: Array<{ in: string; name: string }> } }
+    >;
+    for (const path of [
+      "/api/v2/peoples/{id}",
+      "/api/v2/countries/{iso}",
+      "/api/v2/language-families/{id}",
+      "/api/v2/languages/{id}",
+      "/api/v2/patronymes/{id}",
+    ]) {
+      expect(paths[path]?.get?.parameters).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({ in: "query", name: "lang" }),
+        ])
+      );
+    }
+
+    const meta = swaggerSpecV2.components?.schemas?.ApiResponseMeta as {
+      properties?: Record<string, unknown>;
+    };
+    expect(meta.properties).toHaveProperty("translation");
+    expect(swaggerSpecV2.components?.schemas).toHaveProperty(
+      "TranslationProvenance"
+    );
+  });
 });

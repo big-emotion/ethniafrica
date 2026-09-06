@@ -3,6 +3,7 @@
  */
 
 import { mediaSchema, type MediaInput } from "@/api/v2/schemas/media";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 
 /**
  * Validate and parse page parameter
@@ -50,6 +51,17 @@ export function validateLanguageFamilyId(id: string): boolean {
 // @req REQ-084
 export function validatePeopleId(id: string): boolean {
   return /^PPL_[A-Z_]+$/.test(id);
+}
+
+/**
+ * The locale a single-entity read is asked for. Absent means the authored
+ * French; anything outside the two published locales is a 400, not a
+ * silent fallback — a client asking for `de` must learn it does not exist.
+ */
+// @req REQ-142
+export function validateLang(raw?: string | null): TranslationLocale | null {
+  if (raw === undefined || raw === null || raw === "") return "fr";
+  return raw === "en" || raw === "fr" ? raw : null;
 }
 
 /**

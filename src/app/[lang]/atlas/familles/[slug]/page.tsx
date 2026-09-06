@@ -143,7 +143,7 @@ export default async function FamillesSlugPage({
     );
   }
 
-  const family = await loadLanguageFamilyFiche(parsed.slug);
+  const family = await loadLanguageFamilyFiche(parsed.slug, lang as Language);
   if (!family) {
     notFound();
   }
@@ -222,7 +222,10 @@ export default async function FamillesSlugPage({
       flushTop
       trailLabel={family.nameFr}
       heroHead={
-        <FicheHeroHead entityType="language-family">
+        <FicheHeroHead
+          entityType="language-family"
+          translation={family.translation}
+        >
           <FamilyFicheTitle family={family} />
         </FicheHeroHead>
       }

@@ -6,6 +6,10 @@ import {
   getCountryIndex,
 } from "../countryService";
 
+vi.mock("@/lib/supabase/queries/afrik/translations", () => ({
+  getAfrikTranslation: vi.fn(),
+}));
+
 vi.mock("@/lib/supabase/queries/afrik/countries", () => ({
   getAllAfrikCountries: vi.fn(),
   getAfrikCountryById: vi.fn(),
@@ -17,6 +21,7 @@ import {
   getAfrikCountryById,
   getAfrikCountryIndexRows,
 } from "@/lib/supabase/queries/afrik/countries";
+import { getAfrikTranslation } from "@/lib/supabase/queries/afrik/translations";
 
 describe("Country Service", () => {
   beforeEach(() => {
@@ -99,6 +104,34 @@ describe("Country Service", () => {
       const country = await getCountryById("XXX");
 
       expect(country).toBeNull();
+    });
+
+    // @req REQ-142
+    it("overlays the English summary and carries its provenance when asked for en", async () => {
+      vi.mocked(getAfrikCountryById).mockResolvedValue({
+        id: "ZWE",
+        nameFr: "Zimbabwe",
+        summary: "Résumé en français.",
+        content: {},
+      });
+      vi.mocked(getAfrikTranslation).mockResolvedValue({
+        entityType: "country",
+        entityId: "ZWE",
+        lang: "en",
+        content: { summary: "Summary in English." },
+        translationKind: "machine",
+        translatedAt: "2026-09-05T10:00:00.000Z",
+        sourceHash: "d".repeat(64),
+        fieldHashes: {},
+        reviewRequired: [],
+      });
+
+      const country = await getCountryById("ZWE", "en");
+
+      expect(getAfrikTranslation).toHaveBeenCalledWith("country", "ZWE", "en");
+      expect(country?.summary).toBe("Summary in English.");
+      expect(country?.nameFr).toBe("Zimbabwe");
+      expect(country?.translation).toMatchObject({ kind: "machine" });
     });
   });
 

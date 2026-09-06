@@ -151,7 +151,7 @@ export default async function PaysSlugPage({
 
   const [country, sourceFlags, countryAtlasIndex, peopleCounts, patronymes] =
     await Promise.all([
-      loadCountryFiche(parsed.slug),
+      loadCountryFiche(parsed.slug, lang as Language),
       getActiveSourceFlags("country", parsed.slug),
       getCountryAtlasIndex(),
       // The globe can now be aimed at any country, so the panel has to answer
@@ -213,7 +213,7 @@ export default async function PaysSlugPage({
       flushTop
       trailLabel={countryDetail.nameFr}
       heroHead={
-        <FicheHeroHead entityType="country">
+        <FicheHeroHead entityType="country" translation={country.translation}>
           <CountryFicheTitle
             country={countryDetail}
             language={lang as Language}

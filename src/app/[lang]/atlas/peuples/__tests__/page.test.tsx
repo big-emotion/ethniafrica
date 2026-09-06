@@ -237,7 +237,7 @@ describe("/[lang]/peuples/[slug] page", () => {
     const detail = getByTestId("people-detail-live");
     expect(detail.getAttribute("data-people-id")).toBe("PPL_BAKONGO");
     expect(detail.getAttribute("data-people-name")).toBe("Bakongo");
-    expect(mockGetPeopleById).toHaveBeenCalledWith("PPL_BAKONGO");
+    expect(mockGetPeopleById).toHaveBeenCalledWith("PPL_BAKONGO", "fr");
     expect(mockGetActiveSourceFlags).toHaveBeenCalledWith(
       "people",
       "PPL_BAKONGO"

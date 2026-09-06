@@ -21,6 +21,18 @@
  *           pattern: '^[A-Z]{3}$'
  *         description: Code ISO 3166-1 alpha-3 du pays
  *         example: "ZWE"
+ *       - in: query
+ *         name: lang
+ *         required: false
+ *         schema:
+ *           type: string
+ *           enum: [fr, en]
+ *           default: fr
+ *         description: >
+ *           Locale du contenu servi. `fr` est la langue d'auteur ; `en`
+ *           superpose l'enregistrement de traduction quand il existe et
+ *           déclare sa provenance dans `meta.translation` (REQ-142).
+ *         example: en
  *     responses:
  *       200:
  *         description: Détails du pays
@@ -51,13 +63,13 @@
 import { NextRequest } from "next/server";
 import { getCountryHandler } from "@/api/v2/handlers/countries";
 import { createApiError } from "@/api/v2/utils/response";
-import { validateCountryId } from "@/api/v2/utils/validation";
+import { validateCountryId, validateLang } from "@/api/v2/utils/validation";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
 // @req REQ-084
 export async function GET(
-  _request: NextRequest,
+  request: NextRequest,
   { params }: { params: Promise<{ iso: string }> }
 ) {
   const startTime = Date.now();
@@ -79,7 +91,23 @@ export async function GET(
       );
     }
 
-    const envelope = await getCountryHandler(iso);
+    const lang = validateLang(request.nextUrl.searchParams.get("lang"));
+    if (lang === null) {
+      logger.warn("Unsupported lang requested", {
+        iso,
+        lang: request.nextUrl.searchParams.get("lang"),
+      });
+      return jsonWithCors(
+        createApiError({
+          code: "VALIDATION_ERROR",
+          message: "Unsupported lang: expected fr or en",
+          field: "lang",
+        }),
+        { status: 400 }
+      );
+    }
+
+    const envelope = await getCountryHandler(iso, lang);
 
     if (!envelope) {
       logger.warn("Country not found", { iso });

@@ -5,6 +5,7 @@ import {
 import { serializePatronyme } from "@/api/v2/serializers/patronymes";
 import { getPatronymeById } from "@/api/v2/services/patronymes";
 import { createApiResponse, type ApiEnvelope } from "@/api/v2/utils/response";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 
 // @req REQ-133
 export type PatronymeHandlerResult =
@@ -12,10 +13,12 @@ export type PatronymeHandlerResult =
   | { ok: false; code: "NOT_FOUND"; message: string };
 
 // @req REQ-133
+// @req REQ-142
 export async function getPatronymeHandler(
-  id: string
+  id: string,
+  lang: TranslationLocale = "fr"
 ): Promise<PatronymeHandlerResult> {
-  const patronyme = await getPatronymeById(id);
+  const patronyme = await getPatronymeById(id, lang);
 
   if (!patronyme) {
     return {
@@ -25,12 +28,13 @@ export async function getPatronymeHandler(
     };
   }
 
+  const { translation, ...aggregate } = patronyme;
   const publicPatronyme = publicPatronymeSchema.parse(
-    serializePatronyme(patronyme)
+    serializePatronyme(aggregate)
   );
 
   return {
     ok: true,
-    envelope: createApiResponse(publicPatronyme),
+    envelope: createApiResponse(publicPatronyme, { translation }),
   };
 }

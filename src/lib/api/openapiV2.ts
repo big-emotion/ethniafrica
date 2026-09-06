@@ -13,7 +13,9 @@ const options: swaggerJsdoc.Options = {
       description:
         "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.\n\n" +
         "## Response envelope\n\n" +
-        "Every `/api/v2/*` response uses the Module #0 envelope: `{ data, meta: { license, attribution, pagination?, confidence?, pinned_url? }, errors }`. License and attribution are always present (AR8); `errors` is empty on success and populated on non-2xx responses. List endpoints place their pagination values under `meta.pagination`.\n\n" +
+        "Every `/api/v2/*` response uses the Module #0 envelope: `{ data, meta: { license, attribution, pagination?, confidence?, pinned_url?, translation? }, errors }`. License and attribution are always present (AR8); `errors` is empty on success and populated on non-2xx responses. List endpoints place their pagination values under `meta.pagination`.\n\n" +
+        "## 2.3.0 — translated records (additive)\n\n" +
+        "The five single-entity endpoints accept `?lang=fr|en`. `fr` is the authored language and the default; `en` overlays the translation record when one exists and declares how it was produced in `meta.translation` — `human`, `machine_reviewed` or `machine` — with `stale: true` when the French moved on a field the reader is shown since it was translated. Fields whose subject is a word are withheld at `machine` provenance and served in French until a human has reviewed them (REQ-142, REQ-143). Lists, facets and search stay authored-French.\n\n" +
         "## 2.1.0 — one source-tier vocabulary (breaking)\n\n" +
         'Source authority is now one three-value scale — `official` | `referenced` | `unverified` — spoken identically by the database, the payloads and the UI. Provenance stays on the separate `source_kind` axis, so AI-generated text is `tier: "unverified"` + `source_kind: "ai_generated"` rather than a tier of its own.\n\n' +
         "Removed, all superseded by `tier`:\n\n" +
@@ -1398,8 +1400,35 @@ const options: swaggerJsdoc.Options = {
             pagination: {
               $ref: "#/components/schemas/PaginationMeta",
             },
+            translation: {
+              oneOf: [
+                { $ref: "#/components/schemas/TranslationProvenance" },
+                { type: "null" },
+              ],
+              description:
+                "Present once a locale other than the authored one was asked for; null when that locale has no record and the authored text is served.",
+            },
           },
           required: ["license", "attribution"],
+        },
+        TranslationProvenance: {
+          type: "object",
+          description:
+            "How the served record was translated (REQ-142). A separate axis from source tier and source_kind; never alters the confidence score.",
+          properties: {
+            kind: {
+              type: "string",
+              enum: ["human", "machine_reviewed", "machine"],
+            },
+            translatedAt: { type: "string", format: "date-time" },
+            reviewedBy: { type: ["string", "null"] },
+            stale: {
+              type: "boolean",
+              description:
+                "The authored text changed on a served field since the translation was produced.",
+            },
+          },
+          required: ["kind", "translatedAt", "reviewedBy", "stale"],
         },
         ApiErrorEntry: {
           type: "object",
