@@ -113,7 +113,11 @@ export function CountryParchment({
 
       <Section title="Royaumes et formations politiques">
         {data.kingdoms.cards.length > 0 ? (
-          <KingdomsTimeline cards={data.kingdoms.cards} />
+          <KingdomsTimeline
+            cards={data.kingdoms.cards}
+            countryId={country.id}
+            language={language}
+          />
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
         )}

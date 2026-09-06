@@ -16,6 +16,13 @@ const nextConfig: NextConfig = {
   // later, which is what took the atlas surface down. `VERCEL` is set by the
   // platform itself, so nothing has to be configured for this to hold.
   output: process.env.VERCEL ? undefined : "standalone",
+  // Runtime filesystem reads must survive both standalone and preview packaging.
+  outputFileTracingIncludes: {
+    "/*/dossiers/*": [
+      "./dataset/source/afrik/dossiers/*.json",
+      "./dataset/translations/en/dossiers/*.json",
+    ],
+  },
   experimental: {
     authInterrupts: true,
   },

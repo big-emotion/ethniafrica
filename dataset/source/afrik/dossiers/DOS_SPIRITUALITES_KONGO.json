@@ -1,0 +1,156 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "dossier",
+    "directives": "Source-cited editorial synthesis drafted with AI assistance. Origin traditions are distinguished from dated events. Country links are present-day discovery contexts, not reconstructed borders.",
+    "readerFacing": ["gaps[].reason", "sources[].title", "sources[].notes"]
+  },
+  "id": "DOS_SPIRITUALITES_KONGO",
+  "vertical": "spiritualites",
+  "slug": "spiritualites-kongo",
+  "title": "Spiritualités kongo : objets et transformations",
+  "question": "Comment étudier des pratiques spirituelles sans les réduire à une seule religion ?",
+  "standfirst": "Minkisi, spécialistes rituels et christianismes kongo éclairent des rapports au pouvoir, à la protection et au monde spirituel. Les objets conservés ne résument pas toutes les pratiques.",
+  "publishedOn": "2026-09-06",
+  "thesis": {
+    "stepLabel": "Un repère",
+    "heading": "Un tournant, pas un remplacement uniforme",
+    "figures": [
+      {
+        "figureKey": "spiritualites-kongo-repere",
+        "value": "1491",
+        "claim": "Nzinga Nkuwu reçoit le baptême et prend le nom de João.",
+        "provenance": "Un événement royal ; il ne décrit pas la croyance de chaque habitant.",
+        "year": 1491,
+        "sourceRefs": ["almeida"]
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "chapterKey": "minkisi-et-communaute",
+      "ordinal": 1,
+      "title": "Minkisi et communauté",
+      "question": "Que fait un objet rituel ?",
+      "standfirst": "Le sens d’une figure dépend aussi de ses usages.",
+      "body": [
+        {
+          "text": "Un nkisi, au pluriel minkisi, associe une forme matérielle à une puissance rituelle. La notice du Mangaaka décrit une création commune du sculpteur et du nganga, spécialiste qui intervient dans son activation.",
+          "sourceRefs": ["met-mangaaka"]
+        },
+        {
+          "text": "Le Mangaaka présenté, daté vers 1880–1900, participe à la protection de la communauté et au règlement d’engagements. Les pièces métalliques témoignent d’interventions : elles ne sont pas seulement un effet décoratif.",
+          "sourceRefs": ["met-mangaaka"]
+        }
+      ],
+      "illustration": {
+        "src": "/images/dossiers/kongo-mangaaka.jpg",
+        "alt": "Figure Mangaaka debout, mains sur les hanches, au torse couvert de pièces métalliques.",
+        "caption": "Mangaaka, vers 1880–1900, région du Chiloango. Une figure rituelle liée à la protection de la communauté.",
+        "author": "Yombe-Kongo artist and nganga · The Metropolitan Museum of Art",
+        "year": "1880–1900",
+        "filePage": "https://www.metmuseum.org/art/collection/search/320053",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Un rôle social documenté",
+          "body": "La notice relie cette figure à des serments et des accords. Le spirituel et la régulation des relations sociales se rencontrent dans cet usage.",
+          "sourceRefs": ["met-mangaaka"]
+        },
+        {
+          "stance": "counter",
+          "label": "Une figure ne résume pas un monde",
+          "body": "Le corpus étudié par Almeida distingue plusieurs forces, pratiques et médiateurs. Lire un seul objet comme le résumé de toutes les croyances serait une généralisation.",
+          "sourceRefs": ["almeida"]
+        }
+      ],
+      "figures": []
+    },
+    {
+      "chapterKey": "christianismes-kongo",
+      "ordinal": 2,
+      "title": "Des christianismes kongo",
+      "question": "Que devient une religion dans sa circulation ?",
+      "standfirst": "Les formes et les significations se transforment ensemble.",
+      "body": [
+        {
+          "text": "Almeida décrit une diffusion inégale des rites chrétiens selon les lieux et les positions sociales. Le baptême royal ne permet donc pas d’affirmer un abandon collectif et immédiat des pratiques antérieures.",
+          "sourceRefs": ["almeida"]
+        },
+        {
+          "text": "Pour Fromont, les échanges passent aussi par des acteurs kongo plurilingues qui apprennent, traduisent et discutent la doctrine. L’histoire religieuse implique leur travail intellectuel et leurs ambitions politiques.",
+          "sourceRefs": ["fromont"]
+        }
+      ],
+      "illustration": {
+        "src": "/images/dossiers/kongo-crucifix.jpg",
+        "alt": "Crucifix en laiton avec un Christ central et plusieurs petites figures.",
+        "caption": "Crucifix kongo, XVIe–XVIIe siècle. Une œuvre de réinterprétation locale, pas un portrait royal.",
+        "author": "Kongo artist · The Metropolitan Museum of Art",
+        "year": "1500–1700",
+        "filePage": "https://www.metmuseum.org/art/collection/search/318323",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Le document matériel",
+          "body": "Le crucifix du Met réorganise un modèle chrétien dans un langage plastique kongo. Ses formes témoignent d’une production locale de sens.",
+          "sourceRefs": ["met-cross"]
+        },
+        {
+          "stance": "counter",
+          "label": "Des circulations atlantiques",
+          "body": "Fromont suit la portée de ces références au-delà de l’Afrique centrale. Ce lien historique ne permet pas d’attribuer une religion à une personne d’après son origine.",
+          "sourceRefs": ["fromont"]
+        }
+      ],
+      "figures": []
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "met-cross",
+      "title": "Crucifix",
+      "url": "https://www.metmuseum.org/art/collection/search/318323",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "The Metropolitan Museum of Art, collection 1999.295.7 ; consultée le 6 septembre 2026."
+    },
+    {
+      "sourceKey": "met-mangaaka",
+      "title": "Mangaaka Power Figure (Nkisi N’Kondi)",
+      "url": "https://www.metmuseum.org/art/collection/search/320053",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "The Metropolitan Museum of Art, collection 2008.30 ; consultée le 6 septembre 2026."
+    },
+    {
+      "sourceKey": "almeida",
+      "title": "Christianity and Kongo Visual Culture",
+      "url": "https://www.metmuseum.org/ja/essays/christianity-kongo-visual-culture",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Carlos Almeida, The Metropolitan Museum of Art, 30 juin 2026 ; consulté le 6 septembre 2026.",
+      "publicationYear": 2026
+    },
+    {
+      "sourceKey": "fromont",
+      "title": "Kongo Christianity: The Intersection of Two Worlds",
+      "url": "https://www.metmuseum.org/perspectives/kongo-christianity-intersection-two-worlds",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Entretien avec Cécile Fromont, The Metropolitan Museum of Art ; consulté le 6 septembre 2026."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "chapters",
+      "reason": "Ce dossier porte sur des pratiques historiques documentées. Il ne donne ni un panthéon complet, ni une mesure des croyances actuelles, ni une équivalence générale avec le vodun."
+    }
+  ]
+}

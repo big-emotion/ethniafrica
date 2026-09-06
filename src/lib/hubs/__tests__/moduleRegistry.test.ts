@@ -141,6 +141,10 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
       "dossier-proportions",
       "dossier-populations",
       "dossier-ressources",
+      "dossier-kongo",
+      "dossier-luba",
+      "dossier-lunda",
+      "dossier-spiritualites-kongo",
       "frise",
       "regards-colonisation",
     ]);
@@ -262,6 +266,10 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
       "dossier-proportions",
       "dossier-populations",
       "dossier-ressources",
+      "dossier-kongo",
+      "dossier-luba",
+      "dossier-lunda",
+      "dossier-spiritualites-kongo",
       "regards-colonisation",
     ]);
     for (const def of staticModules) {

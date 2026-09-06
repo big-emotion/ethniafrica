@@ -39,3 +39,10 @@ edit was applied.
 - **Licence**: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/).
 - **Why this one**: it shows the extraction site at the first stage of the
   value chain that the chapter follows through refining and manufacturing.
+
+## Kongo, Luba and Lunda dossiers
+
+- `kongo-crucifix.jpg`: [Crucifix](https://www.metmuseum.org/art/collection/search/318323), The Metropolitan Museum of Art. [CC0](https://creativecommons.org/publicdomain/zero/1.0/). [Image](https://images.metmuseum.org/CRDImages/ao/original/DP326205.jpg). Public-domain status verified through the museum API on 2026-09-06.
+- `luba-lupona.jpg`: [Lupona (royal seat)](https://www.metmuseum.org/art/collection/search/310760), The Metropolitan Museum of Art. [CC0](https://creativecommons.org/publicdomain/zero/1.0/). [Image](https://images.metmuseum.org/CRDImages/ao/original/DP368610.jpg). Public-domain status verified through the museum API on 2026-09-06.
+- `chokwe-mwanangana.jpg`: [Mwanangana (lord of the land) playing a sanza](https://www.metmuseum.org/art/collection/search/316173), The Metropolitan Museum of Art. [CC0](https://creativecommons.org/publicdomain/zero/1.0/). [Image](https://images.metmuseum.org/CRDImages/ao/original/DP-40016-001.jpg). Public-domain status verified through the museum API on 2026-09-06.
+- `kongo-mangaaka.jpg`: [Mangaaka Power Figure (Nkisi N’Kondi)](https://www.metmuseum.org/art/collection/search/320053), The Metropolitan Museum of Art. [CC0](https://creativecommons.org/publicdomain/zero/1.0/). [Image](https://images.metmuseum.org/CRDImages/ao/original/DP351868.jpg). Public-domain status verified through the museum API on 2026-09-06.

@@ -463,6 +463,10 @@ describe("every target is a route the app actually serves", () => {
       getLocalizedRoute("en", "dossierProportions"),
       getLocalizedRoute("en", "dossierPopulations"),
       getLocalizedRoute("en", "dossierRessources"),
+      getLocalizedRoute("en", "dossierKongo"),
+      getLocalizedRoute("en", "dossierLuba"),
+      getLocalizedRoute("en", "dossierLunda"),
+      getLocalizedRoute("en", "dossierSpiritualitesKongo"),
     ]);
     const folder = (publicPath: string) => {
       if (dossierPaths.has(publicPath)) {

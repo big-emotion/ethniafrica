@@ -18,7 +18,7 @@
  *         required: false
  *         schema:
  *           type: string
- *           enum: [realites, nommer]
+ *           enum: [realites, nommer, histoires, spiritualites]
  *         description: Restrict the listing to one editorial vertical
  *     responses:
  *       200:

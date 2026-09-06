@@ -83,23 +83,26 @@ describe("the dossier template — charter contract", () => {
     }
   });
 
-  // The rule the entity exists for. A chapter that renders one reading is a
-  // chapter that publishes an authoritative account with nothing beside it.
+  // Narrative chapters may omit comparisons. Authored comparisons retain both perspectives.
   // @req REQ-114
-  it("renders both readings of every chapter of every dossier", () => {
+  it("renders both perspectives when a chapter contains comparative readings", () => {
     for (const dossier of dossiers) {
-      render(<DossierPage dossier={dossier} language="fr" />);
-
+      const { container } = render(
+        <DossierPage dossier={dossier} language="fr" />
+      );
       for (const chapter of dossier.chapters) {
-        const readings = screen.getByTestId(
+        const readings = within(container).queryByTestId(
           `dossier-readings-${chapter.chapterKey}`
         );
-
+        if (chapter.readings.length === 0) {
+          expect(readings).toBeNull();
+          continue;
+        }
         expect(
-          readings.querySelectorAll('[data-stance="official"]')
+          readings?.querySelectorAll('[data-stance="official"]')
         ).toHaveLength(1);
         expect(
-          readings.querySelectorAll('[data-stance="counter"]').length
+          readings?.querySelectorAll('[data-stance="counter"]').length
         ).toBeGreaterThanOrEqual(1);
       }
     }
@@ -110,7 +113,7 @@ describe("the dossier template — charter contract", () => {
   // argument nobody made.
   // @req REQ-114
   it("states the authoritative reading before the counter-reading", () => {
-    const dossier = dossiers[0];
+    const dossier = dossiers.find((entry) => entry.vertical === "realites")!;
     render(<DossierPage dossier={dossier} language="fr" />);
 
     const readings = screen.getByTestId(
@@ -130,7 +133,7 @@ describe("the dossier template — charter contract", () => {
   // chapter titles that govern it.
   // @req REQ-113
   it("keeps every reading one rung below the chapter that carries it", () => {
-    const dossier = dossiers[0];
+    const dossier = dossiers.find((entry) => entry.vertical === "realites")!;
     render(<DossierPage dossier={dossier} language="fr" />);
 
     for (const chapter of dossier.chapters) {

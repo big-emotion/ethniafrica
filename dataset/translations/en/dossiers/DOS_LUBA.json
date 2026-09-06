@@ -1,0 +1,137 @@
+{
+  "title": "Luba: power and memory",
+  "question": "How do institutions and memories sustain a political formation?",
+  "standfirst": "Luba power can be read through institutions, insignia and practices that transmit history. An origin narrative and a royal object offer different kinds of evidence.",
+  "thesis": {
+    "stepLabel": "A landmark",
+    "heading": "An established presence, a debated origin",
+    "figures": [
+      {
+        "claim": "Luba state systems are established by this period at the latest.",
+        "provenance": "A latest bound used by Giacomo Macola, not a foundation year."
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "title": "Governing and forming alliances",
+      "question": "How does power extend beyond one court?",
+      "standfirst": "Kingship alone does not describe every institution.",
+      "body": [
+        {
+          "text": "Bortolot describes sacred kingship alongside government by council. Alliances and the incorporation of neighbouring leaders help extend this political organisation."
+        },
+        {
+          "text": "The lupona at the Met expresses legitimacy connected to royal ancestors. Despite its shape, it is sacred insignia rather than ordinary furniture."
+        }
+      ],
+      "readings": [
+        {
+          "label": "A royal symbol",
+          "body": "Female figures on some seats refer to the spiritual role attributed to women in legitimising power."
+        },
+        {
+          "label": "The object has its own date",
+          "body": "This lupona dates from the late nineteenth or early twentieth century. It is not a contemporary image of the earliest political formations."
+        }
+      ],
+      "illustration": {
+        "alt": "Carved seat supported by a female figure decorated with beads.",
+        "caption": "Luba lupona, late nineteenth–early twentieth century. An insignia of power preserved in a museum."
+      }
+    },
+    {
+      "title": "Transmitting history",
+      "question": "How is political history preserved?",
+      "standfirst": "Material supports accompany practices of memory.",
+      "body": [
+        {
+          "text": "Lukasa are memory aids. The Smithsonian associates them with royal histories, king lists and significant events: their function extends beyond decoration."
+        },
+        {
+          "text": "The Genesis catalogue describes beads and signs interpreted through people, places and relationships. Reading them requires knowledge; a photograph alone does not deliver the narrative."
+        }
+      ],
+      "readings": [
+        {
+          "label": "Organised memory",
+          "body": "The lukasa connects history to a handheld support. It invites us to consider oral transmission as a practice of knowledge."
+        },
+        {
+          "label": "A chronology to refine",
+          "body": "Macola places imperial expansion in the eighteenth century and describes destabilised Luba and Lunda networks in the late nineteenth. These stages do not date a legendary founder."
+        }
+      ],
+      "illustration": {
+        "alt": "Carved seat supported by a female figure decorated with beads.",
+        "caption": "Luba lupona, late nineteenth–early twentieth century. An insignia of power preserved in a museum."
+      }
+    }
+  ],
+  "gaps": [
+    {
+      "reason": "The narratives of Kalala Ilunga do not establish a single foundation date here. This dossier does not describe every population bearing a Luba name today."
+    }
+  ],
+  "sources": [
+    {
+      "notes": "Alexander Ives Bortolot, The Metropolitan Museum of Art; accessed 6 September 2026."
+    },
+    {
+      "notes": "Giacomo Macola, The Encyclopedia of Empire. Abstract and article overview; accessed 6 September 2026."
+    },
+    {
+      "notes": "The Metropolitan Museum of Art, collection 1978.412.317; accessed 6 September 2026."
+    },
+    {
+      "notes": "Smithsonian Institution, National Museum of Natural History. Collection entry; accessed 6 September 2026."
+    },
+    {
+      "notes": "Alisa LaGamma, The Metropolitan Museum of Art. Catalogue, passages on Luba memory and origin figures; accessed 6 September 2026."
+    }
+  ],
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-06",
+    "model": "GPT-6",
+    "sourceHash": "ddb2381f8a73d06f67118aea60e46b5ec4f1a1194ba1db00faf1e160c0d5e9df",
+    "fieldHashes": {
+      "title": "ce53b93b2921fd4a94b5a7e6f3bbb89e79511fd653fda19f799e28a1e27a6760",
+      "question": "bde7e254f26e9db72741adae48a9f01e45fd31cdcd561cbcd8405af47ef27ddf",
+      "standfirst": "0f64d982e5db7fbfe061a85cd0239fa8dbb2211b0554478936dd49516707e80e",
+      "thesis.stepLabel": "7a8bb60aeef2f867eccc15096190b35374f3fe34e84a7b729e83ca8c3b7d9b05",
+      "thesis.heading": "1e0681fcd8c457b8744f23dde43144d6417881d5d73d0e96999e7dac2f479c10",
+      "thesis.figures[0].claim": "2399bb22e7e9b900f72eb97a8ae676ebbe1d6d1f83aa4ae0556f56b5089d9742",
+      "thesis.figures[0].provenance": "0fe4e47dde674b8f7f1f1d956823b486524401e16c97c95e5e8946b3c02c4fd1",
+      "chapters[0].title": "168c601808f6ac353760de911b79f7a1d28affafcdd84e39a942aaeb6fb108bb",
+      "chapters[0].question": "c55261f5ca5a13d52b3807f605e46bc98976782daba62c61ce8aea283d1053da",
+      "chapters[0].standfirst": "097a7614458a8beada5da29cd5d03ab1872d31cf9506e74ab173f1897da5bacc",
+      "chapters[0].body[0].text": "82103dbfa6cb8814aacc7597218fe5f2acbe4773b30b7a4f18efd3f18db131e2",
+      "chapters[0].body[1].text": "5dd1859849e47def7a19a58246086e78e8ef04ba00f397127103f4dad3ee8bfc",
+      "chapters[0].readings[0].label": "887c82bcbe7fee445e58ba8c6c119c8de9fa92728f3522d8f5133dc7a7b8e648",
+      "chapters[0].readings[0].body": "9b3462dcbbaa15ed0c79f8ff5dea6bc1ee1450478405dc9e71363b96a19f1b63",
+      "chapters[0].readings[1].label": "50f07bd4f04c26f1b5bb8febd8883d6a44b0a0a8d8bb72bcb28569c113ec0840",
+      "chapters[0].readings[1].body": "019ecbcbe3e832f7e66c4fe2fd0d63ca73285d125ec34b2ceb131914d6c662b4",
+      "chapters[0].illustration.alt": "45dff9b7027c747ab03e9690a967aa2fbe8338b2ef31c1ddeb2bf4979d81fd59",
+      "chapters[0].illustration.caption": "9b9b6bb2397c10988033e755b9c3adca49568d9caf173f1c58f801165c561889",
+      "chapters[1].title": "231397c2dbe1282afe742ff177a78dd87fa6e9aa1b1652afd84bb6a6f925ddf3",
+      "chapters[1].question": "2b68dfda9e9e61a0e5b7de1bfb34244f27da849aec1cd2110970f7603b01dbb9",
+      "chapters[1].standfirst": "cd6a9c5d9c3c147fc7d5c8c8aa8204fab2d9c3780f6d843600ceb96d39f67bd0",
+      "chapters[1].body[0].text": "761c3ea64cf5321a0f6806f9d115407b236cc2213d2397009192cec91fde201c",
+      "chapters[1].body[1].text": "eba9f94f4f6df0d2c80cf2f03beb772400fbedb9135c6d8e8d6f44a4c66d0458",
+      "chapters[1].readings[0].label": "60f7c0ec5e8abb78efb59a74945393295eb07b493d9c00b282b83ab620ac2423",
+      "chapters[1].readings[0].body": "a1e28ea8f0314734a6d3800eef4ace9e1f59a4d49ad6fe7a65330dba372f2db0",
+      "chapters[1].readings[1].label": "fc38fdb78f46ef0904a7a6a31828142b0fe4515496856da2e75aad16d5124b98",
+      "chapters[1].readings[1].body": "e54245adbb6373c895ceeffd120cc872f478b2867f6ebbb2af2debfbafcfd953",
+      "chapters[1].illustration.alt": "45dff9b7027c747ab03e9690a967aa2fbe8338b2ef31c1ddeb2bf4979d81fd59",
+      "chapters[1].illustration.caption": "9b9b6bb2397c10988033e755b9c3adca49568d9caf173f1c58f801165c561889",
+      "gaps[0].reason": "832433f3c411a50ff18e3a5ffc1cc9d1abbbdaa315f2bf23b9af0bbf79c081a3",
+      "sources[0].notes": "5e140a7957c53b30daaac6d161944d70c446a57585c2f341b96e5833adbe12af",
+      "sources[1].notes": "63ed798ff842821ed91496b715583a3bed8f31d16755d66d8ebea1854d37aad8",
+      "sources[2].notes": "aa7e971e5f9070a42e872d8bfe708a028f568c3771dfde7704bc43ea6c76378e",
+      "sources[3].notes": "f4ef7e9491cbaaee4722568aeb835de9b5bffc2ad0b413048d723e3abc6ba3c5",
+      "sources[4].notes": "5b850c987525bd8f54ebff611bd7e244920fea5a28dbf67ba6b7b888f64879c5"
+    },
+    "reviewRequired": []
+  }
+}

@@ -112,7 +112,7 @@ const dossierThesisSchema = z
   .object({
     stepLabel: z.string().min(1),
     heading: z.string().min(1),
-    figures: z.array(dossierThesisFigureSchema).min(1).max(3),
+    figures: z.array(dossierThesisFigureSchema).max(3),
   })
   .strict();
 
@@ -237,7 +237,7 @@ function collectSemanticErrors(candidate: unknown): string[] {
     const readings = Array.isArray(chapter.readings) ? chapter.readings : [];
     for (const stance of DOSSIER_READING_STANCES) {
       const carried = readings.filter((reading) => reading?.stance === stance);
-      if (carried.length === 0) {
+      if (readings.length > 0 && carried.length === 0) {
         errors.push(
           `${where}: no "${stance}" reading — a chapter states the authoritative account and what it leaves out, never one alone`
         );

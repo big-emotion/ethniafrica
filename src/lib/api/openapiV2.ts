@@ -1,3 +1,4 @@
+import { DOSSIER_VERTICALS } from "@/lib/afrik/parsers/dossierTypes";
 import swaggerJsdoc from "swagger-jsdoc";
 
 import { OPENAPI_V2_TAGS } from "@/lib/api/openapiV2Tags";
@@ -1619,7 +1620,7 @@ const options: swaggerJsdoc.Options = {
         DossierReadingV2: {
           type: "object",
           description:
-            "One reading of the chapter's subject. A chapter always publishes both stances.",
+            "One reading of the chapter's subject. Comparative readings are optional; when present, both stances are published.",
           properties: {
             stance: { type: "string", enum: ["official", "counter"] },
             label: { type: "string" },
@@ -1671,7 +1672,7 @@ const options: swaggerJsdoc.Options = {
             readings: {
               type: "array",
               items: { $ref: "#/components/schemas/DossierReadingV2" },
-              minItems: 2,
+              minItems: 0,
             },
             figures: {
               type: "array",
@@ -1705,7 +1706,7 @@ const options: swaggerJsdoc.Options = {
           type: "object",
           properties: {
             id: { type: "string", example: "DOS_PROPORTIONS" },
-            vertical: { type: "string", enum: ["realites", "nommer"] },
+            vertical: { type: "string", enum: [...DOSSIER_VERTICALS] },
             slug: { type: "string", example: "proportions" },
             publishedOn: { type: "string", format: "date" },
             title: { type: "string" },
@@ -1794,7 +1795,7 @@ const options: swaggerJsdoc.Options = {
           type: "object",
           properties: {
             id: { type: "string" },
-            vertical: { type: "string", enum: ["realites", "nommer"] },
+            vertical: { type: "string", enum: [...DOSSIER_VERTICALS] },
             slug: { type: "string" },
             publishedOn: { type: "string", format: "date" },
             title: { type: "string" },

@@ -1,8 +1,9 @@
+import { getLocalizedRoute, translatePath } from "@/lib/routing";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { DossierPage } from "@/components/dossiers/DossierPage";
-import { getDossierBySlug } from "@/lib/dossiers/corpus";
+import { getDossierBySlug, getDossierTranslation } from "@/lib/dossiers/corpus";
 import type { Language } from "@/types/shared";
 
 interface DossierRouteProps {
@@ -32,23 +33,39 @@ export async function generateMetadata({
   params,
 }: DossierRouteProps): Promise<Metadata> {
   const { lang, dossier: slug } = await params;
-  const dossier = getDossierBySlug(slug);
+  const translated = lang === "en" ? getDossierTranslation(slug) : null;
+  const dossier = translated?.dossier ?? getDossierBySlug(slug);
 
   if (!dossier) return {};
 
   return {
     title: dossier.title,
     description: dossier.standfirst,
-    alternates: { canonical: `/${lang}/dossiers/${dossier.slug}` },
+    alternates: {
+      canonical: translatePath(
+        "fr",
+        lang as Language,
+        `${getLocalizedRoute("fr", "dossiersHub")}/${dossier.slug}`
+      ),
+    },
   };
 }
 
 // @req REQ-113
 export default async function DossierRoute({ params }: DossierRouteProps) {
   const { lang, dossier: slug } = await params;
-  const dossier = getDossierBySlug(slug);
+  const translated = lang === "en" ? getDossierTranslation(slug) : null;
+  const dossier = translated?.dossier ?? getDossierBySlug(slug);
 
   if (!dossier) notFound();
 
-  return <DossierPage dossier={dossier} language={lang as Language} />;
+  return (
+    <DossierPage
+      dossier={dossier}
+      language={lang as Language}
+      translationState={
+        lang === "en" ? (translated ? translated.kind : "missing") : undefined
+      }
+    />
+  );
 }

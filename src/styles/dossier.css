@@ -109,7 +109,7 @@
   width: 100%;
   height: auto;
   aspect-ratio: 3 / 2;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* --afh-fg-muted, not --afh-text-muted: the caption is the quietest type on
@@ -376,4 +376,29 @@
   .afh-dossier-source {
     break-inside: avoid;
   }
+}
+
+/* Citations stay attached to the claim and expose its declared evidence. */
+.afh-dossier-citations {
+  display: inline-flex;
+  gap: var(--afh-space-sm);
+  margin-inline-start: var(--afh-space-sm);
+  font-size: var(--afh-text-caption);
+}
+.afh-dossier-citations a {
+  color: var(--accent-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding-block: var(--afh-space-sm);
+}
+.afh-dossier-source {
+  scroll-margin-top: 10rem;
+}
+.afh-dossier-translation {
+  text-align: left;
+  color: var(--afh-fg-muted);
+  font-size: var(--afh-text-caption);
+}
+.afh-dossier-chapter-head.is-text-only {
+  display: block;
 }

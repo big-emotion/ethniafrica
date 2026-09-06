@@ -71,11 +71,10 @@ const publicChapterSchema = z
       })
     ),
   })
-  // The doctrine, restated where a reuser can see it fail. A consumer of this
-  // API is entitled to assume both readings are present, because that is the
-  // one promise the entity makes that its fields alone do not.
+  // A narrative may omit the comparison; when present, both readings remain.
   .refine(
     (chapter) =>
+      chapter.readings.length === 0 ||
       DOSSIER_READING_STANCES.every((stance) =>
         chapter.readings.some((reading) => reading.stance === stance)
       ),

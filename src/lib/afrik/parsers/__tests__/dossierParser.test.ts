@@ -108,6 +108,15 @@ function validDossier() {
 
 describe("the dossier fiche parser", () => {
   // @req REQ-114
+  it("accepts a sourced narrative without numerical thesis figures or paired readings", () => {
+    const fiche = validDossier();
+    fiche.thesis.figures = [];
+    fiche.chapters[0].readings = [];
+    fiche.chapters[0].illustration = null;
+    expect(parseDossierFile(fiche).success).toBe(true);
+  });
+
+  // @req REQ-114
   it("accepts a dossier whose chapter carries both readings", () => {
     const result = parseDossierFile(validDossier());
 
@@ -216,7 +225,7 @@ describe("the dossier fiche parser", () => {
   it("reports every violation at once rather than the first", () => {
     const fiche = validDossier();
     fiche.id = "PPL_YORUBA";
-    fiche.chapters[0].readings = [];
+    fiche.chapters[0].ordinal = 7;
 
     const result = parseDossierFile(fiche);
 
