@@ -1,0 +1,399 @@
+{
+  "schemaVersion": "1.0",
+  "countryId": "COD",
+  "updatedAt": "2026-09-06",
+  "status": "proposal_ready_for_editorial_approval",
+  "scopePolicy": {
+    "proposalOnly": true,
+    "noProductionWrite": true,
+    "fieldLevelProvenanceRequired": true,
+    "genericSourceTitlesDoNotSupportClaims": true
+  },
+  "reviewMetrics": {
+    "currentCountrySourceRows": 10,
+    "acceptedCurrentRows": 2,
+    "needsReviewRows": 8,
+    "needsReviewRowsReviewed": 8,
+    "genericRowsProposedForRemoval": 8,
+    "metricCaveat": "This is a source-register cleanup metric, not a completeness score for the country fiche. A field is complete only when each material claim has traceable evidence at an appropriate level of specificity."
+  },
+  "currentRows": [
+    {
+      "title": "CIA World Factbook – Democratic Republic of the Congo",
+      "decision": "remove",
+      "reason": "The row has no URL or dated edition. The CIA retired The World Factbook on 2026-02-04, and the former country URL now redirects to the retirement notice. It cannot act as a live current-country citation.",
+      "replacementSourceIds": [],
+      "replacementPolicy": "Replace only the specific claims previously attributed to this row, using field-level sources."
+    },
+    {
+      "title": "SIL Ethnologue – Languages of DRC",
+      "decision": "remove_and_replace_for_inventory",
+      "reason": "The row has no URL, edition, access date, or licensed extract. The current country product is licensed and cannot be treated as a reproducible open inventory without a precise edition and reuse basis.",
+      "replacementSourceIds": ["SRC-GLOTTOLOG-COD-5.3"],
+      "replacementPolicy": "Use the pinned Glottolog inventory for reconciliation. Cite Ethnologue only if a licensed, versioned citation is later supplied and its reuse terms are respected."
+    },
+    {
+      "title": "Recensements nationaux congolais",
+      "decision": "remove_and_replace_for_census_context",
+      "reason": "The row does not identify a census, publication, institution, or URL. Official planning documentation states that the latest completed national census dates from 1984; it cannot support a current people denominator.",
+      "replacementSourceIds": [
+        "SRC-DRC-MINPLAN-RGPH2",
+        "SRC-WB-DHS-COD-2013-14"
+      ],
+      "replacementPolicy": "Use the Ministry source for census status and the DHS catalogue for sample-survey context only. Neither is an exhaustive contemporary people inventory."
+    },
+    {
+      "title": "ONU – Données démographiques 2025",
+      "decision": "remove_as_duplicate",
+      "reason": "The row is vague and duplicates the existing exact UNFPA 2025 country-dashboard citation.",
+      "replacementSourceIds": ["SRC-UNFPA-COD-2025"],
+      "replacementPolicy": "Retain the exact UNFPA source already present in the country fiche."
+    },
+    {
+      "title": "Études anthropologiques sur les peuples congolais",
+      "decision": "remove_without_single_replacement",
+      "reason": "A generic body of studies cannot validate an inventory, identity, population share, or cultural statement.",
+      "replacementSourceIds": [
+        "SRC-IFAD-IWGIA-COD-2012",
+        "SRC-IWGIA-COD-2024",
+        "SRC-VAN-BULCK-1954"
+      ],
+      "replacementPolicy": "Use these sources only for their declared scope, and add fiche-specific scholarly sources for each people record."
+    },
+    {
+      "title": "Études historiques sur les royaumes précoloniaux",
+      "decision": "remove_and_replace_with_history_registry",
+      "reason": "The row is not a resolvable citation. The dedicated history proposal contains a reviewed registry of exact institutional and scholarly sources.",
+      "replacementSourceIds": [
+        "SRC-UNESCO-UPEMBA",
+        "SRC-MET-LUBA-LUNDA",
+        "SRC-RMCA-YEKE",
+        "SRC-HAU-ZANDE"
+      ],
+      "replacementPolicy": "Use the complete source registry in COD-history.json when individual historical claims are approved."
+    },
+    {
+      "title": "Ethnologie du Congo",
+      "decision": "remove_without_single_replacement",
+      "reason": "The title has no author, edition, publisher, date, page, or URL and is too broad to support any individual field.",
+      "replacementSourceIds": [],
+      "replacementPolicy": "Add exact field-level sources during people-fiche review instead of introducing another umbrella citation."
+    },
+    {
+      "title": "CIA World Factbook – Democratic Republic of the Congo (ethnic groups)",
+      "decision": "remove",
+      "reason": "The row has no dated edition or URL, and the source has been retired. Broad ethnic-group summaries would not validate the detailed percentages currently stored in the country fiche.",
+      "replacementSourceIds": [],
+      "replacementPolicy": "Do not publish detailed people percentages as validated until a traceable denominator and compatible classification are documented."
+    }
+  ],
+  "proposedSources": [
+    {
+      "id": "SRC-UNFPA-COD-2025",
+      "title": "Democratic Republic of the Congo Population 2025",
+      "publisher": "United Nations Population Fund",
+      "url": "https://www.unfpa.org/data/world-population/CD",
+      "tier": "official",
+      "accessedAt": "2026-09-06",
+      "scope": "2025 population estimate",
+      "caveat": "Supports the national population estimate, not population counts or percentages for individual peoples."
+    },
+    {
+      "id": "SRC-UNSD-M49",
+      "title": "Standard country or area codes for statistical use (M49)",
+      "publisher": "United Nations Statistics Division",
+      "url": "https://unstats.un.org/unsd/methodology/m49/",
+      "tier": "official",
+      "accessedAt": "2026-09-06",
+      "scope": "country name and statistical identity"
+    },
+    {
+      "id": "SRC-UK-PCGN-COD-2023",
+      "title": "Toponymic Factfile: Congo (Democratic Republic)",
+      "publisher": "Permanent Committee on Geographical Names for British Official Use",
+      "url": "https://assets.publishing.service.gov.uk/media/65a66847867cd8000d5ae933/Democratic_Republic_of_Congo_Toponymic_Factfile.pdf",
+      "tier": "official_toponymic_reference",
+      "accessedAt": "2026-09-06",
+      "scope": "country-name origin and official geographical-name usage",
+      "caveat": "Supports the statement that the country takes its name from the Congo River. It does not establish the internal lexical derivation of Kongo."
+    },
+    {
+      "id": "SRC-BENTLEY-KONGO-1886",
+      "title": "Dictionary and Grammar of the Kongo Language",
+      "publisher": "Baptist Missionary Society",
+      "url": "https://tile.loc.gov/storage-services/service/gdc/gdclccn/44/01/76/16/44017616/44017616.pdf",
+      "tier": "historical_primary_reference",
+      "accessedAt": "2026-09-06",
+      "scope": "historical attestation connecting the river name to the Kongo kingdom",
+      "caveat": "This 1886 missionary dictionary explicitly says that the deeper derivation of Kongo cannot be stated with certainty. Its proposed lexical comparisons must not be presented as settled modern etymology."
+    },
+    {
+      "id": "SRC-GLOTTOLOG-COD-5.3",
+      "title": "Glottolog 5.3 — Languages by country: CD",
+      "publisher": "Max Planck Institute for Evolutionary Anthropology",
+      "url": "https://glottolog.org/glottolog/language.map.html?country=CD",
+      "tier": "reference_inventory",
+      "accessedAt": "2026-09-06",
+      "scope": "language reconciliation inventory",
+      "caveat": "The inventory includes language entries associated with the country. It does not by itself determine official status, current vitality, speaker population, or which scope the public count should expose."
+    },
+    {
+      "id": "SRC-DRC-CONSTITUTION-2011",
+      "title": "Constitution of the Democratic Republic of the Congo, as revised in 2011",
+      "publisher": "Presidency of the Democratic Republic of the Congo",
+      "url": "https://presidence.cd/detail-texte-fondateur/1",
+      "tier": "official",
+      "accessedAt": "2026-09-06",
+      "scope": "constitutional country name and language roles",
+      "caveat": "Article 1 distinguishes French as the official language and Kikongo, Lingala, Swahili, and Tshiluba as national languages."
+    },
+    {
+      "id": "SRC-DRC-MINPLAN-RGPH2",
+      "title": "Second General Population and Housing Census (RGPH2)",
+      "publisher": "Ministry of Planning and Strategic Development Coordination, Democratic Republic of the Congo",
+      "url": "https://plan.gouv.cd/projet_programmes/recensement-general-de-la-population-et-de-lhabitat/",
+      "tier": "official",
+      "accessedAt": "2026-09-06",
+      "scope": "national census status",
+      "caveat": "The page describes the planned second census and identifies 1984 as the first census. It is not a current ethnic or people census result."
+    },
+    {
+      "id": "SRC-WB-DHS-COD-2013-14",
+      "title": "Democratic Republic of Congo — Demographic and Health Survey 2013–2014",
+      "publisher": "World Bank Microdata Library",
+      "url": "https://microdata.worldbank.org/catalog/2173",
+      "tier": "official_microdata_catalogue",
+      "accessedAt": "2026-09-06",
+      "scope": "sample-survey methodology and demographic context",
+      "caveat": "This is a sample survey, not an exhaustive census or canonical people inventory."
+    },
+    {
+      "id": "SRC-IFAD-IWGIA-COD-2012",
+      "title": "Country Technical Note on Indigenous Peoples' Issues: Democratic Republic of the Congo",
+      "publisher": "International Fund for Agricultural Development and International Work Group for Indigenous Affairs",
+      "url": "https://iwgia.org/en/documents-and-publications/documents/publications-pdfs/english-publications/341-ifad-iwgia-country-technical-note-on-indigenous-peopels-issues-democratic-republic-of-congo-2012-eng/file.html",
+      "tier": "institutional_technical_note",
+      "accessedAt": "2026-09-06",
+      "scope": "Indigenous peoples terminology and approximate contextual counts",
+      "caveat": "The source addresses Indigenous peoples issues and must not be generalized into an exhaustive inventory of every people in the country."
+    },
+    {
+      "id": "SRC-IWGIA-COD-2024",
+      "title": "The Indigenous World 2024: Democratic Republic of the Congo",
+      "publisher": "International Work Group for Indigenous Affairs",
+      "url": "https://www.iwgia.org/en/news/iw-2024-drc",
+      "tier": "specialist_institutional",
+      "accessedAt": "2026-09-06",
+      "scope": "current thematic context on Indigenous peoples",
+      "caveat": "This is a thematic subset and not a national ethnolinguistic census."
+    },
+    {
+      "id": "SRC-VAN-BULCK-1954",
+      "title": "Les recherches linguistiques au Congo belge",
+      "publisher": "Royal Academy for Overseas Sciences",
+      "url": "https://www.kaowarsom.be/fr/memoir_81",
+      "tier": "historical_scholarly",
+      "accessedAt": "2026-09-06",
+      "scope": "historical nomenclature and language-group reconciliation",
+      "caveat": "The 1954 colonial-era classification is historical evidence only. It must not be treated as a contemporary identity inventory or copied without critical reconciliation."
+    },
+    {
+      "id": "SRC-UNESCO-UPEMBA",
+      "title": "Upemba Depression",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/fr/listesindicatives/963/",
+      "tier": "official_state_submission",
+      "accessedAt": "2026-09-06",
+      "scope": "regional archaeology",
+      "caveat": "Tentative-list content is submitted by the State Party and does not establish archaeological coverage for the entire modern country."
+    },
+    {
+      "id": "SRC-MET-LUBA-LUNDA",
+      "title": "Kingdoms of the Savanna: The Luba and Lunda Empires",
+      "publisher": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History",
+      "url": "https://www.metmuseum.org/essays/kingdoms-of-the-savanna-the-luba-and-lunda-empires",
+      "tier": "institutional_curatorial",
+      "accessedAt": "2026-09-06",
+      "scope": "Luba and Lunda political formations"
+    },
+    {
+      "id": "SRC-RMCA-YEKE",
+      "title": "The Yeke and the Congo Free State",
+      "publisher": "Royal Museum for Central Africa",
+      "url": "https://www.africamuseum.be/en/discover/history_articles/the_yeke_and_the_congo_free_state",
+      "tier": "institutional_curatorial",
+      "accessedAt": "2026-09-06",
+      "scope": "Yeke polity and Congo Free State encounter"
+    },
+    {
+      "id": "SRC-HAU-ZANDE",
+      "title": "The Zande Kingdom and the colonial state",
+      "publisher": "HAU: Journal of Ethnographic Theory",
+      "url": "https://www.journals.uchicago.edu/doi/full/10.1086/732344",
+      "tier": "peer_reviewed",
+      "accessedAt": "2026-09-06",
+      "scope": "Zande political history"
+    },
+    {
+      "id": "SRC-UN-ZAIRE-AUTHORITY",
+      "title": "Zaire — UN authority record",
+      "publisher": "United Nations Digital Library",
+      "url": "https://digitallibrary.un.org/record/878251",
+      "tier": "official",
+      "accessedAt": "2026-09-06",
+      "scope": "historical state-name authority"
+    },
+    {
+      "id": "SRC-UN-TERMINOLOGY-1997",
+      "title": "Terminology Bulletin No. 347: Democratic Republic of the Congo",
+      "publisher": "United Nations",
+      "url": "https://digitallibrary.un.org/record/198733/files/ST_CS_SER-F_347-EN.pdf?ln=en",
+      "tier": "official",
+      "accessedAt": "2026-09-06",
+      "scope": "1997 restoration of the state name"
+    }
+  ],
+  "auditEvidence": [
+    {
+      "id": "AUDIT-CIA-FACTBOOK-RETIREMENT-2026",
+      "title": "Spotlighting The World Factbook as We Bid a Fond Farewell",
+      "publisher": "Central Intelligence Agency",
+      "url": "https://www.cia.gov/stories/story/spotlighting-the-world-factbook-as-we-bid-a-fond-farewell/",
+      "accessedAt": "2026-09-06",
+      "purpose": "Documents the retirement of The World Factbook on 2026-02-04. This is audit evidence, not a source for DRC facts."
+    },
+    {
+      "id": "AUDIT-ETHNOLOGUE-COD-LICENSE",
+      "title": "Languages of Democratic Republic of the Congo",
+      "publisher": "Ethnologue Store",
+      "url": "https://shop.ethnologue.com/products/languages-of-democratic-republic-of-the-congo",
+      "accessedAt": "2026-09-06",
+      "purpose": "Documents that the current country report is a licensed product. This page is not used as evidence for language claims."
+    }
+  ],
+  "fieldCoverage": [
+    {
+      "fieldGroup": "country identity",
+      "status": "ready",
+      "sourceIds": ["SRC-UNSD-M49", "SRC-DRC-CONSTITUTION-2011"],
+      "limitations": "Database parity still requires a read-only production check."
+    },
+    {
+      "fieldGroup": "national population",
+      "status": "ready_for_2025_estimate",
+      "sourceIds": ["SRC-UNFPA-COD-2025"],
+      "limitations": "The estimate does not provide people-level denominators."
+    },
+    {
+      "fieldGroup": "language inventory",
+      "status": "ready_as_reference_inventory",
+      "sourceIds": ["SRC-GLOTTOLOG-COD-5.3"],
+      "limitations": "A product decision is still required for the reader-facing scope and count."
+    },
+    {
+      "fieldGroup": "language policy",
+      "status": "ready",
+      "sourceIds": ["SRC-DRC-CONSTITUTION-2011"],
+      "limitations": "Legal status does not establish speaker counts or vitality."
+    },
+    {
+      "fieldGroup": "census status",
+      "status": "ready_for_context_only",
+      "sourceIds": ["SRC-DRC-MINPLAN-RGPH2", "SRC-WB-DHS-COD-2013-14"],
+      "limitations": "No current exhaustive national people denominator is established."
+    },
+    {
+      "fieldGroup": "people inventory",
+      "status": "partial_context_only",
+      "sourceIds": [
+        "SRC-IFAD-IWGIA-COD-2012",
+        "SRC-IWGIA-COD-2024",
+        "SRC-VAN-BULCK-1954"
+      ],
+      "limitations": "These sources have different scopes and dates. None is a canonical exhaustive contemporary record-linkage baseline."
+    },
+    {
+      "fieldGroup": "detailed people population percentages",
+      "status": "unsupported_do_not_mark_validated",
+      "sourceIds": [],
+      "limitations": "A traceable denominator, compatible classification, observation date, and uncertainty statement are missing."
+    },
+    {
+      "fieldGroup": "historical state names",
+      "status": "ready",
+      "sourceIds": ["SRC-UN-ZAIRE-AUTHORITY", "SRC-UN-TERMINOLOGY-1997"],
+      "limitations": "The full chronology remains governed by COD-history.json."
+    },
+    {
+      "fieldGroup": "archaeology",
+      "status": "ready_for_regional_claims",
+      "sourceIds": ["SRC-UNESCO-UPEMBA"],
+      "limitations": "Upemba is one regional sequence and must not be presented as the sole prehistory of the modern national territory."
+    },
+    {
+      "fieldGroup": "political formations",
+      "status": "proposal_ready",
+      "sourceIds": ["SRC-MET-LUBA-LUNDA", "SRC-RMCA-YEKE", "SRC-HAU-ZANDE"],
+      "limitations": "Use the complete curated registry and typed-entity proposal in COD-history.json."
+    },
+    {
+      "fieldGroup": "country-name etymology",
+      "status": "ready_conservative_claim",
+      "sourceIds": ["SRC-UK-PCGN-COD-2023", "SRC-BENTLEY-KONGO-1886"],
+      "proposedClaim": "The Democratic Republic of the Congo takes its name from the Congo River. The river's Congo/Kongo name was historically connected to the Kongo kingdom. The deeper lexical origin of Kongo remains uncertain and should not be reduced to a single asserted meaning.",
+      "limitations": "The country-to-river relationship is supported by a modern official toponymic reference. The river-to-kingdom relationship and explicit uncertainty are historically attested, but any proposed Kikongo root requires additional modern historical-linguistic review."
+    },
+    {
+      "fieldGroup": "culture, religion, lifestyles, social organization, and regional relations",
+      "status": "unsupported_requires_field_research",
+      "sourceIds": [],
+      "limitations": "These broad fields require scoped claims and people- or region-specific references."
+    }
+  ],
+  "productionProposal": {
+    "removeTitlesAfterApproval": [
+      "CIA World Factbook – Democratic Republic of the Congo",
+      "SIL Ethnologue – Languages of DRC",
+      "Recensements nationaux congolais",
+      "ONU – Données démographiques 2025",
+      "Études anthropologiques sur les peuples congolais",
+      "Études historiques sur les royaumes précoloniaux",
+      "Ethnologie du Congo",
+      "CIA World Factbook – Democratic Republic of the Congo (ethnic groups)"
+    ],
+    "retainCurrentExactSourceIds": ["SRC-UNFPA-COD-2025", "SRC-UNSD-M49"],
+    "doNotInfer": [
+      "Do not convert a language inventory count into an ethnic-group count.",
+      "Do not convert an Indigenous-peoples thematic count into a count of every people in the country.",
+      "Do not validate detailed people percentages from a national population estimate.",
+      "Do not treat a sample survey or the planned RGPH2 as a completed contemporary census.",
+      "Do not attach the complete country source list to every claim without field-level provenance."
+    ]
+  },
+  "remainingResearch": [
+    "Select an enumerated scholarly people inventory as the canonical record-linkage baseline, or explicitly publish multiple non-additive scopes.",
+    "Attach accepted sources to every detailed people percentage or remove the unsupported percentages from validated display.",
+    "Replace broad culture, religion, lifestyles, social-organization, and regional-relations prose with scoped claims and exact sources.",
+    "Add a field-level source-reference mechanism to the country data model or generate an equivalent auditable mapping.",
+    "Apply the approved cleanup to dataset/source/afrik/pays/COD.json only after explicit editorial approval.",
+    "Run the repository URL validator after its pre-existing server-only runtime failure is repaired."
+  ],
+  "artifactReferences": [
+    {
+      "path": "docs/editorial/country-enrichment/COD-history.json",
+      "purpose": "Complete history proposal and exact source registry"
+    },
+    {
+      "path": "docs/editorial/country-enrichment/COD-languages.json",
+      "purpose": "Pinned Glottolog reconciliation inventory and reader-surface proposal"
+    },
+    {
+      "path": "docs/editorial/country-enrichment/COD-peoples.json",
+      "purpose": "People record-linkage ledger"
+    },
+    {
+      "path": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+      "purpose": "Historical nomenclature extraction"
+    }
+  ]
+}
