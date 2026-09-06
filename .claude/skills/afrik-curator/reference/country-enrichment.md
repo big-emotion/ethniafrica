@@ -117,6 +117,10 @@ npx tsx scripts/afrik/updateCountryEnrichmentTracker.ts <ISO3> --write
 npx tsx scripts/afrik/updateCountryPeopleLedger.ts <ISO3>                 # preview
 npx tsx scripts/afrik/updateCountryPeopleLedger.ts <ISO3> --write
 
+# Regenerate the direct-country patronym ledger; status and depth remain separate
+npx tsx scripts/afrik/updateCountryPatronymLedger.ts <ISO3>               # preview
+npx tsx scripts/afrik/updateCountryPatronymLedger.ts <ISO3> --write
+
 # Pin a Glottolog 5.3 country inventory, then reconcile exact local signals
 npx tsx scripts/afrik/exportGlottologCountryInventory.ts <ISO3> <ISO2> --write
 npx tsx scripts/afrik/updateCountryLanguageReconciliation.ts <ISO3> --write
@@ -125,6 +129,12 @@ npx tsx scripts/afrik/updateCountryLanguageReconciliation.ts <ISO3> --write
 Without `--write` each command prints what it would produce and changes nothing. The
 calculation is deterministic for a given corpus; only `updatedAt` moves. Any change to a
 calculator is test-first.
+
+The patronym ledger inventories every direct relation declared in the source dossiers.
+It reports `attested` and `supposed` country statuses separately from documentation-depth
+stages. It does not infer that a relation stored in the database preserves that status;
+when the reader surface collapses the distinction, record the defect in workstream 10
+and leave its implementation to the frontend workflow.
 
 Initialization writes no country-specific fact. It creates the ten workstreams at
 `not_started`, the reference slots empty, `databaseSync.status` at `not_verified`, and the

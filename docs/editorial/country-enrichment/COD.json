@@ -229,6 +229,11 @@
       "path": "docs/editorial/country-enrichment/COD-history.json",
       "reviewScope": "archaeology, political formations, colonial administrations, and independent state names",
       "productionWriteRequiresApproval": true
+    },
+    "patronymLedger": {
+      "path": "docs/editorial/country-enrichment/COD-names.json",
+      "refreshCommand": "npx tsx scripts/afrik/updateCountryPatronymLedger.ts COD --write",
+      "statusAndDepthRemainSeparate": true
     }
   },
   "workstreams": [
@@ -512,16 +517,22 @@
     {
       "id": "COD-PATRONYMS",
       "priority": "P1",
-      "status": "breadth_met_depth_incomplete",
+      "status": "inventory_complete_depth_and_surface_review_required",
       "goal": "Show every directly attested DRC patronym while distinguishing breadth from research depth.",
       "findings": [
-        "The direct-country corpus exceeds the editorial breadth quota.",
-        "Only a minority of those fiches currently meet the project's documented-depth definition."
+        "All 35 direct-country patronym fiches are inventoried: 33 relations are attested and 2 are supposed (Kanyinda and Nono).",
+        "Documentation depth remains independent from country status: 8 fiches are documented, 9 have undeclared transmission, 14 have an unsourced origin, and 4 are queue-only; documented depth is 22.9%.",
+        "The country-page service paginates direct relations and applies no display-count cap, so all synchronized direct relations can be retrieved.",
+        "The afrik_patronyme_countries join table stores only patronym and country identifiers. It discards the source dossier's attested or supposed status, so the current reader surface can present Kanyinda and Nono as attested.",
+        "Names reachable through a country's peoples are already kept separate from direct country relations."
       ],
       "remaining": [
-        "Complete source, origin, and transmission research for each non-documented fiche.",
-        "Keep direct country attestations separate from country reach inferred through peoples.",
-        "Verify that all direct attestations appear on the country surface after database synchronization."
+        "Replace candidate-queue material with accepted sources for the 4 queue-only fiches.",
+        "Document the origin claim for the 14 unsourced-origin fiches.",
+        "Resolve transmission mode for the 9 undeclared-transmission fiches.",
+        "Approve, amend, or reject the supposed country status of Kanyinda and Nono before any production-data change.",
+        "Create a mobile-first frontend task to preserve and display direct relation status without labelling supposed relations as attested, then verify tablet and desktop surfaces.",
+        "After an authorized database synchronization, verify the join state and confirm that all 35 direct relations are reachable from the country page."
       ]
     },
     {
