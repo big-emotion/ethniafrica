@@ -136,16 +136,16 @@
       ],
       "editorialReview": {
         "totalRelations": 72,
-        "reviewedRelations": 39,
-        "pendingRelations": 33,
-        "reviewCompletionPercent": 54.2,
+        "reviewedRelations": 72,
+        "pendingRelations": 0,
+        "reviewCompletionPercent": 100,
         "reviewedByEntityType": {
+          "people": 35,
           "duplicate": 13,
-          "macro_category": 5,
-          "people": 8,
+          "macro_category": 6,
           "subgroup": 9,
           "language_label": 3,
-          "rejected_link": 1
+          "rejected_link": 6
         }
       }
     },
@@ -253,11 +253,17 @@
         "The two Sango fiches describe the same label and language context, but current evidence does not support counting either as a validated individual people. PPL_SANGO is provisionally classified as a language label and PPL_SANGO_SCT as its duplicate; both current linguistic-family placements require correction.",
         "The Hutu review identifies four overlapping records and the Tutsi review identifies three, including two misspelled RWENDAIS legacy IDs. Each cluster represents one transborder identity for counting purposes, but canonical-ID selection is deferred because every current ID encodes an overly narrow country or language qualifier.",
         "The Banyarwanda review retains the label as a DRC-relevant ethnolinguistic umbrella for Kinyarwanda-speaking Hutu, Tutsi, and Batwa, but excludes it from additive people counts. PPL_RUNDI remains a Barundi people record distinct from the Kirundi language, while its DRC population estimate still requires a direct source.",
+        "The incomplete-link review retains Ambundu/Loanda Mbundu and Ushi/Aushi as DRC people records with corroborated country presence, but flags their local population values for replacement or alignment. It rejects the Mbete DRC relation as a probable Congo-Brazzaville versus Congo-Kinshasa ambiguity while preserving the fiche for Gabon and the Republic of the Congo.",
+        "The southeastern review retains Kaonde, Lala-Bisa, Lamba, Waswahili, and Tabwa as DRC-relevant people records, with explicit warnings against treating language-speaker totals as ethnic-population totals. It rejects the Wandya DRC relation because the available sources place that community in Zambia and the Malawi–Tanzania corridor rather than the DRC.",
+        "The Great Lakes and western Nilotic review retains Alur, Havu, Hunde, Kakwa, Lugbara, Nande/Bayira, and Tembo as DRC-relevant people records. Their country presence is corroborated, but several population fields mix old speaker counts, cross-border branches, and modeled growth; these figures require decomposition before publication.",
+        "The north and center review retains Banda, Furu, Gbaya, Lengola, Mangbetu, and Ngbandi as people identities, while leaving the Gbaya DRC relation explicitly unapproved pending a direct local source. It rejects the unsupported Tsao/Batsao DRC link, whose current fiche has no specific source or language identifier.",
+        "The final local-relation review retains eastern Bembe, Kuba, Minungu/Nyinungu, Mongo/Anamongo, Tetela, and Yaka as DRC-relevant records. Kuba and Mongo are non-additive umbrella identities, Tetela is modeled as a child of Mongo, and eastern Bembe remains distinct from the Beembe of the Republic of the Congo.",
+        "The final review rejects only the DRC links on Mbunda and Vili: contemporary language inventories place Mbunda in Angola and Zambia, and Vili in Angola, the Republic of the Congo, and Gabon. Both global fiches remain valid outside the DRC.",
         "The Luba review retains PPL_LUBA as an umbrella identity, classifies Luba-Kasai and Luba-Katanga as child groups, and provisionally keeps Lulua/Bena-Lulua below Luba-Kasai. Parent and child populations must never be summed.",
         "The Kongo review retains PPL_KONGO as the umbrella identity, proposes PPL_KIKONGO as its duplicate, keeps Kongo (Sud), Yombe, Manianga, and Solongo as children, and proposes PPL_KONGO_MAYOMBE as a duplicate of PPL_YOMBE.",
         "The Lunda review retains PPL_LUNDA as the umbrella identity, keeps Ndembu and provisionally Kazembe as children, classifies Lunda-Chokwe as a composite category rather than one people, and keeps Bemba distinct despite its shared bem code with the Kazembe record.",
         "The Ngala review excludes PPL_LINGALA and PPL_NGALA from the people count as linguistic or historical-colonial labels, and rejects only the unsupported DRC link on PPL_MBOCHI while preserving that fiche for the Republic of the Congo.",
-        "If the current duplicate reductions, language-label exclusions, rejected link, and six macro or composite classifications are approved, the 72 linked fiches reduce provisionally to 51 non-macro candidate records. This remains a record count, not a completeness percentage or an additive count of identities, because umbrella and subgroup records overlap.",
+        "If the current duplicate reductions, language-label exclusions, six rejected links, and six macro or composite classifications are approved, the 72 linked fiches reduce provisionally to 46 non-macro candidate records. This remains a record count, not a completeness percentage or an additive count of identities, because umbrella and subgroup records overlap.",
         "All 14 ambiguous exact-name occurrences in the historical source now have a documented cluster review. These decisions resolve local-record ambiguity only; they do not validate the historical labels as contemporary identities.",
         "The 2013–2014 official demographic survey collapses responses into nine broad analytical categories and therefore cannot measure detailed recall.",
         "The Ministry of Planning states that the second population census process is being launched in 2026, 42 years after the 1984 census; no new census results are available for validating detailed ethnic-population shares.",
@@ -267,14 +273,16 @@
         "The historical nomenclature contains unmatched Aka, Baka, and Mbuti labels. Contemporary evidence confirms Mbuti as a high-confidence missing DRC umbrella record, but Baka/Bacwa and Aka/Cwa require geographic and naming disambiguation before any country link or fiche is proposed."
       ],
       "remaining": [
-        "Review every local COD relation and classify it as individual people, subgroup, language label, macro-category, duplicate, or rejected link.",
+        "Approve, amend, or reject the 72 completed relation-review proposals before modifying production data; review completion is not editorial approval or national inventory completeness.",
         "Create an alias table for endonyms, exonyms, alternate spellings, and parent-child group relations.",
         "Prioritize the 600 unmatched historical occurrences by contemporary corroboration; do not process them as a flat creation queue.",
-        "Define whether country metrics expose leaf-level peoples, umbrella identities, or both as separate non-additive measures before turning the 51 candidate-record figure into a people count.",
+        "Define whether country metrics expose leaf-level peoples, umbrella identities, or both as separate non-additive measures before turning the 46 candidate-record figure into a people count.",
         "Define and test an immutable-ID redirect or retirement mechanism before implementing the proposed PPL_TSHOKWE to PPL_CHOKWE, PPL_TEKKE to PPL_TEKE, PPL_AZANDE_SUD to PPL_ZANDE, and PPL_SANGO_SCT to PPL_SANGO consolidations.",
         "Extend the redirect plan to PPL_KIKONGO to PPL_KONGO and PPL_KONGO_MAYOMBE to PPL_YOMBE, then implement the reviewed Luba and Kongo parent relations after schema validation.",
         "Choose neutral canonical identifiers for the four-record Hutu and three-record Tutsi clusters before implementing redirects from their current country-, language-, and misspelling-qualified IDs.",
         "Define an immutable-ID redirect from PPL_KINYARWANDA to a neutral Banyarwanda umbrella identifier without collapsing its Hutu, Tutsi, and Batwa constituents.",
+        "Define an immutable-ID redirect from PPL_LALA_LAMBA to a neutral Bantu Lamba identifier without colliding with the unrelated Gur-family PPL_LAMBA record.",
+        "Define an immutable-ID redirect from PPL_NGBANDE to the preferred Ngbandi spelling while preserving Ngbande and other controlled variants as searchable aliases.",
         "Resolve the contested Sango people-versus-language question and its correct linguistic taxonomy before modifying either source fiche.",
         "Supplement the historical nomenclature with contemporary community and scholarly sources before publishing an exact coverage percentage.",
         "Expose verified linked peoples as individually selectable entries on mobile, tablet, and desktop."

@@ -32,16 +32,16 @@
     "entriesRequiringReview": 69,
     "editorialReview": {
       "totalRelations": 72,
-      "reviewedRelations": 39,
-      "pendingRelations": 33,
-      "reviewCompletionPercent": 54.2,
+      "reviewedRelations": 72,
+      "pendingRelations": 0,
+      "reviewCompletionPercent": 100,
       "reviewedByEntityType": {
+        "people": 35,
         "duplicate": 13,
-        "macro_category": 5,
-        "people": 8,
+        "macro_category": 6,
         "subgroup": 9,
         "language_label": 3,
-        "rejected_link": 1
+        "rejected_link": 6
       }
     }
   },
@@ -169,13 +169,24 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_ALUR",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Alur as a DRC–Uganda cross-border people record.",
+        "notes": "Ethnographic and contemporary governance research identifies Alur as a distinct people with a major presence in Mahagi and wider Ituri. The fiche's 2025 totals are modeled estimates rather than census counts and require source-specific uncertainty before publication.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Alur",
+            "url": "https://glottolog.org/resource/languoid/id/alur1250",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Wageningen University — Public Private Cooperation in Fragile States: Ituri field research",
+            "url": "https://edepot.wur.nl/247871",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -258,13 +269,24 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_BANDA",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Banda as a broad transborder people identity represented in the DRC, while treating its named language communities as non-additive subgroups.",
+        "notes": "Controlled vocabulary and current specialist directories attest Banda communities in the DRC. The fiche spans several Banda language varieties and cannot support an exact 70,000 DRC total from its present citations; population and subgroup boundaries require a record-level source inventory.",
+        "sources": [
+          {
+            "title": "Library of Congress Subject Headings — Banda (African people)",
+            "url": "https://www.loc.gov/aba/publications/Archived-LCSH37/B.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "PeopleGroups.org — Banda of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg043068/",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -435,13 +457,24 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_BEMBE",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep as the eastern Bembe/Babembe people of Fizi and the Lake Tanganyika corridor.",
+        "notes": "The ISO 639-3 bmb and direct geographic sources support the DRC relation. This identity must remain distinct from the Beembe/Bembe people of the Republic of the Congo in the Kongo cultural sphere, and the modeled DRC population requires a compatible demographic source.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Bembe",
+            "url": "https://glottolog.org/resource/languoid/id/bemb1255",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Smithsonian Institution — Bembe art",
+            "url": "https://www.si.edu/object/siris_sil_557444",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -571,13 +604,29 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_FURU",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Furu/Fulu as a DRC–Central African Republic cross-border people record.",
+        "notes": "Recent Ghent University fieldwork and linguistic catalogues directly attest Furu in Nord-Ubangi. The fiche's 12,000 DRC value is substantially below the current PeopleGroups.org estimate of about 44,000 and must be replaced or dated rather than presented as current precision.",
+        "sources": [
+          {
+            "title": "Ghent University CongUbangi — Linguistic and genetic fieldwork on Furu in Nord-Ubangi",
+            "url": "https://www.congubangi.ugent.be/2024/06/05/linguistic-and-genetic-fieldwork-on-furu-fuu-in-the-province-of-nord-ubangi-drc/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog 5.3 — Furu",
+            "url": "https://glottolog.org/resource/languoid/id/furu1242",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "PeopleGroups.org — Furu of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg014551/",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -605,13 +654,24 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_GBAYA",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Gbaya provisionally as a broad people identity, but leave the DRC country relation unapproved until a direct contemporary source identifies the local community.",
+        "notes": "Ethnographic literature supports Gbaya as a people with multiple regional and linguistic branches, but the strongest sources reviewed focus on the Central African Republic and Cameroon. The local 20,000-person DRC estimate has no direct support, and Congo-Brazzaville references create an ambiguity risk. Do not publish or count the DRC relation as verified yet.",
+        "sources": [
+          {
+            "title": "ERIC — The Gbaya Language, Grammar, Texts, and Vocabularies",
+            "url": "https://eric.ed.gov/?id=ED012895",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Journal des Africanistes — La conception gbaya du corps humain",
+            "url": "https://www.persee.fr/doc/jafr_0399-0346_1980_num_50_1_1994",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -639,13 +699,24 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_HAVU",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Havu/Bahavu as a DRC people record centered on Idjwi and Kalehe.",
+        "notes": "Historical scholarship distinguishes Havu people and their political communities in the Lake Kivu region. The local population field extrapolates a 2002 language figure and later territorial totals; it must be labeled as an estimate and not as a current ethnic census.",
+        "sources": [
+          {
+            "title": "David S. Newbury — Kings and Clans: Ijwi Island and the Lake Kivu Rift, 1780–1840",
+            "url": "https://archive.org/details/kingsclansijwiis0000newb",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Journal des Africanistes — Lake Kivu Regional Trade in the Nineteenth Century",
+            "url": "https://www.persee.fr/doc/jafr_0399-0346_1980_num_50_2_2001",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -676,13 +747,24 @@
         "name_matches_language_label"
       ],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_HUNDE",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Hunde/Bahunde as a DRC people record centered on North Kivu.",
+        "notes": "Controlled vocabulary and historical scholarship explicitly identify Hunde as a people of the DRC and distinguish the ethnonym from Kihunde, its language. Correct the featured-family mismatch before surfacing the record, and treat the 950,000 population as an estimate pending a traceable demographic source.",
+        "sources": [
+          {
+            "title": "Bibliothèque nationale de France — Hunde (peuple d'Afrique)",
+            "url": "https://catalogue.bnf.fr/ark:/12148/cb15020443n",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Journal des Africanistes — Lake Kivu Regional Trade in the Nineteenth Century",
+            "url": "https://www.persee.fr/doc/jafr_0399-0346_1980_num_50_2_2001",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -771,13 +853,19 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_KAKWA",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Kakwa as a transborder DRC–Uganda–South Sudan people record.",
+        "notes": "The cited conflict-research source supports the Kakwa as a border-straddling community, while the local 200,000 total ultimately relies on community and non-census estimates. Preserve the identity relation but require a direct country-level demographic source before publishing the 30,000 DRC figure.",
+        "sources": [
+          {
+            "title": "ACCORD — The Hidden Population: Kakwa across borders",
+            "url": "https://www.accord.org.za/conflict-trends/the-hidden-population/",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -805,13 +893,24 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_KAONDE",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Kaonde as a DRC–Zambia cross-border people record.",
+        "notes": "Current specialist directories independently retain a Kaonde community in the DRC. The fiche's 50,000-person DRC value is older than the current PeopleGroups.org estimate of about 93,000 and should be redated or replaced before publication; it must not be presented as census precision.",
+        "sources": [
+          {
+            "title": "PeopleGroups.org — Kaonde of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg014580/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "University of Amsterdam — A general survey of the historical migration of the Kaonde clans from southern Congo into Zambia",
+            "url": "https://pure.uva.nl/ws/files/1687596/168316_ARTICLE_A_general_survey_of_the_historical_migration_of_the_Kaonde_clans_from_southern_Congo_into_Zambia_2_.pdf",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -903,13 +1002,29 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["incomplete_country_link"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_KIMBUNDU",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep the Ambundu/Loanda Mbundu link to the DRC, but treat the current population value as an estimate requiring source alignment.",
+        "notes": "Glottolog records Kimbundu in both Angola and the DRC, while PeopleGroups.org and Joshua Project independently list a small DRC diaspora population near 32,000–34,000. The fiche's 30,000 value is plausible but its top-level and appellation country fields remain inconsistent with its demography; reconcile those fields only after selecting and dating one population source.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Kimbundu",
+            "url": "https://glottolog.org/resource/languoid/id/kimb1241",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "PeopleGroups.org — Loanda Mbundu of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg014619/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Joshua Project — Kimbundu in the Democratic Republic of the Congo",
+            "url": "https://joshuaproject.net/pray/cards/single/13154/CG",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -1321,13 +1436,24 @@
       "sharedIsoCodes": [],
       "automatedFlags": [],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_KUBA",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Kuba as a DRC umbrella people identity composed of historically distinct constituent groups.",
+        "notes": "Kuba is directly documented in the Kasai region, but it is a political and ethnocultural ensemble including Bushoong, Ngeende, Ngongo, Pyaang, Shoowa, and other groups. Its population must not be added to constituent populations, and ISO 639-3 buf identifies the Bushoong language rather than the entire Kuba ensemble.",
+        "sources": [
+          {
+            "title": "Metropolitan Museum of Art — Ceremonial Overskirt, Kuba peoples, Bushoong group",
+            "url": "https://www.metmuseum.org/art/collection/search/319473",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "National Museum of Colombia — Some peoples of the Democratic Republic of the Congo",
+            "url": "https://www.museonacional.gov.co/Publicaciones/exposiciones-temporales/Documents/Col_Bertrand_1era_1_14.pdf",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -1355,13 +1481,29 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_LALA_BISA",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Lala-Bisa provisionally as the source-backed DRC people-group label, without collapsing it into PPL_BISA or PPL_LALA.",
+        "notes": "Glottolog confirms Lala-Bisa language presence in the DRC, and two current specialist inventories independently report a DRC Lala-Bisa population around 113,000–115,000. The local record also states that the label spans several dialect communities, so its boundary against the separate PPL_BISA and PPL_LALA records requires dedicated identity research before any merge or additive count.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Lala-Bisa",
+            "url": "https://glottolog.org/resource/languoid/id/lala1264",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "PeopleGroups.org — Lala-Bisa of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg014603/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Joshua Project — Lala-Bisa in the Democratic Republic of the Congo",
+            "url": "https://joshuaproject.net/people_groups/19057/CG",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -1389,13 +1531,24 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_LALA_LAMBA",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep the DRC relation as a Lamba people record, but replace the relational label Lala-Lamba through an immutable-ID redirect.",
+        "notes": "The scholarly source distinguishes Lala and Lamba while confirming that both straddle the Congolese and Zambian sides of the Shaba Pedicle; Glottolog also places Lamba in both countries. PPL_LALA_LAMBA therefore represents Lamba rather than a combined Lala-Lamba people. A future neutral identifier must avoid collision with the existing, unrelated Gur-family PPL_LAMBA record.",
+        "sources": [
+          {
+            "title": "History in Africa — Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory",
+            "url": "https://www.cambridge.org/core/journals/history-in-africa/article/abs/chipimpi-vulgar-clans-and-lalalamba-ethnohistory1/F2703E5825CAADDF2D7CE92E2F96ED38",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog 5.3 — Lamba",
+            "url": "https://glottolog.org/resource/languoid/id/lamb1271",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -1423,13 +1576,24 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_LENGO",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Lengo/Lengola as a DRC people record, with Lengola retained as the preferred identity and language label for search.",
+        "notes": "The country presence is supported by linguistic and regional-history sources. The fiche's 241,000 value is a directory estimate projected from older speaker data, not a current ethnic census, and should retain its methodological caveat.",
+        "sources": [
+          {
+            "title": "OpenEdition — Paths in the eastern Congo rainforest: Vernacular histories",
+            "url": "https://journals.openedition.org/afriques/4465",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "PeopleGroups.org — Lengola of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg014611/",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -1725,13 +1889,29 @@
       ],
       "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_LUGBARA",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Lugbara as a DRC–Uganda cross-border people record.",
+        "notes": "Ethnographic and linguistic catalogues support Lugbara as a distinct people and language across the West Nile–Ituri border. The lgg code shared with the Central Sudanic macro fiche reflects contamination in that macro record, not a duplicate Lugbara people. The fiche's DRC population still needs a directly traceable estimate.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Lugbara",
+            "url": "https://glottolog.org/resource/languoid/id/lugb1240",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "John Middleton — The Lugbara of Uganda",
+            "url": "https://archive.org/details/lugbaraofuganda00midd",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Wageningen University — Public Private Cooperation in Fragile States: Ituri field research",
+            "url": "https://edepot.wur.nl/247871",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -1962,13 +2142,29 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_MANGBETU",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Mangbetu as a DRC umbrella people identity, without summing it with constituent or historically incorporated communities.",
+        "notes": "Museum, historical, and linguistic sources directly attest Mangbetu peoples and the nineteenth-century Mangbetu polity in northeastern DRC. Scholarship also describes Mangbetu as an amalgam of related peoples, so the local 600,000 estimate and dialect list must not be treated as a leaf-level count.",
+        "sources": [
+          {
+            "title": "Metropolitan Museum of Art — Figurative Vessel, Mangbetu peoples",
+            "url": "https://www.metmuseum.org/art/collection/search/310063",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Smithsonian Libraries — Le pays des Mangbettus",
+            "url": "https://library.si.edu/digital-library/book/lepaysdesmangbet00chri",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "GIALens — Mangbetu Tales of Leopard and Azapane",
+            "url": "https://www.diu.edu/documents/gialens/Vol4-3/McKee-MangbetuTales.pdf",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -2059,13 +2255,29 @@
         "name_matches_language_label"
       ],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
+        "status": "in_review",
+        "entityType": "rejected_link",
         "canonicalPeopleId": null,
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Reject the PPL_MBETE country link to the DRC while retaining the fiche for Gabon and the Republic of the Congo.",
+        "notes": "The strongest controlled and linguistic references place the Mbete/Mbede/Mbere people and language in Gabon and Congo-Brazzaville, not Congo-Kinshasa. The current COD value appears to come from ambiguity in the word Congo. Remove only the DRC relation after editorial approval; do not delete or merge the people fiche.",
+        "sources": [
+          {
+            "title": "Library of Congress Subject Headings — Mbete (African people)",
+            "url": "https://www.loc.gov/aba/publications/Archived-LCSH39/M.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog 5.3 — Mbere",
+            "url": "https://glottolog.org/resource/languoid/id/mber1257",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "IRD — Ancestral art of Gabon from the collections of the Barbier-Mueller museum",
+            "url": "https://horizon.documentation.ird.fr/exl-doc/pleins_textes/divers18-08/23103.pdf",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -2138,13 +2350,24 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["no_accepted_source", "name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
+        "status": "in_review",
+        "entityType": "rejected_link",
         "canonicalPeopleId": null,
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Reject only the DRC country relation while preserving the Mbunda/Vambunda fiche for Angola and Zambia.",
+        "notes": "Glottolog and Joshua Project both restrict Mbunda (mck) to Angola and Zambia. DRC references to Bunda, Ambuun, or Mbuun concern a different Idiofa-area people and are a likely source of name confusion; no direct contemporary source corroborates the current 5,000-person DRC entry.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Mbunda",
+            "url": "https://glottolog.org/resource/languoid/id/mbun1249",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Joshua Project — Mbunda language resources",
+            "url": "https://joshuaproject.net/languages/mck",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -2172,13 +2395,24 @@
       "sharedIsoCodes": [],
       "automatedFlags": [],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_MINUNGU",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep as the Minungu/Nyinungu people linked to the cross-border Kakumbi–Dilolo language area.",
+        "notes": "Linguistic research directly documents the Nyinungu of Dilolo in the DRC and the related Minungu variety of Kakumbi in Angola. The country relation is supported, but the fiche lacks an ISO identifier and its population estimate remains unsupported.",
+        "sources": [
+          {
+            "title": "Royal Museum for Central Africa — 2011 Annual Report",
+            "url": "https://www.africamuseum.be/sites/default/files/media/about-us/annual-reports/doc/annualreport2011fr.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Jacky Maniacky — Minungu of Kakumbi and Nyinungu of Dilolo",
+            "url": "https://www.uni-koeln.de/phil-fak/afrikanistik/wocal/schedule/abstracts/6-4-2%20Jacky%20Maniacky.pdf",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -2209,13 +2443,24 @@
         "name_matches_language_label"
       ],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_MONGO",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Mongo/Anamongo as a broad DRC umbrella people identity.",
+        "notes": "Controlled ethnographic sources place the Mongo in the central Congo Basin and describe a diverse collection of constituent communities. The umbrella population must not be added to Tetela, Nkutshu, Ekonda, Nkundo, or other related records, and the featured-family mismatch requires taxonomy normalization.",
+        "sources": [
+          {
+            "title": "eHRAF World Cultures — Mongo culture summary",
+            "url": "https://ehrafworldcultures.yale.edu/cultures/fo32/documents/000",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Royal Museum for Central Africa — Mongo political history",
+            "url": "https://www.africamuseum.be/research/discover/publications/search/pubdetail?pubid=1756",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -2246,13 +2491,24 @@
         "name_matches_language_label"
       ],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_NANDE",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Nande/Bayira as a DRC people record and treat Bakonzo as the related Ugandan naming branch rather than a simple demographic extension.",
+        "notes": "Current scholarship identifies Bayira on both sides of the DRC–Uganda border, commonly named Banande in the DRC and Bakonzo in Uganda. The fiche's four-million total mixes Nande, language-speaker, diaspora, and Bakonzo estimates and must be decomposed before publication. Correct the featured-family mismatch independently.",
+        "sources": [
+          {
+            "title": "Rüdiger Köppe Verlag — The People of the Rwenzoris: The Bayira (Bakonzo/Banande) and Their Culture",
+            "url": "https://www.koeppe.de/titel_print_the-people-of-the-rwenzoris",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Global Press Journal — A Tribe Watches Its Language Languish",
+            "url": "https://globalpressjournal.com/africa/democratic-republic-of-congo/tribe-watches-language-languish/",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -2340,13 +2596,29 @@
       ],
       "automatedFlags": ["shared_iso_code"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_NGBANDE",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep the record as the Ngbandi people identity and plan an immutable-ID redirect from the nonstandard PPL_NGBANDE identifier.",
+        "notes": "Controlled vocabulary and scholarship use Ngbandi as the preferred label and list related spellings such as Gbande or Gbandi. The ngb code shared with PPL_SANGO reflects the latter record's language-label contamination and does not make Ngbandi a Sango duplicate. Population estimates remain broad and non-census-based.",
+        "sources": [
+          {
+            "title": "Bibliothèque nationale de France — Ngbandi (peuple d'Afrique)",
+            "url": "https://catalogue.bnf.fr/ark:/12148/cb11981438j",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Journal des Africanistes — Aspects de l'organisation du monde des Ngbandi",
+            "url": "https://www.persee.fr/doc/jafr_0037-9166_1971_num_41_1_1685",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "United States Department of Justice — Democratic Republic of the Congo: Ngbandi",
+            "url": "https://www.justice.gov/eoir/page/file/1026971/dl",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -2981,13 +3253,29 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_SWAHILI",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep PPL_SWAHILI as a Waswahili people record in the DRC, strictly separated from the much larger Kiswahili-speaking population.",
+        "notes": "The scholarly source supports Waswahili as an ethnic category, while current people-group directories report a comparatively small Muslim Swahili community in the DRC around 64,000–68,000. The fiche's 30,000 value should be updated or redated. Never use this record to represent all Congolese Kiswahili speakers; language coverage belongs in the language inventory, using the swh individual-language code rather than the swa macrolanguage where appropriate.",
+        "sources": [
+          {
+            "title": "Africa — The Waswahili: The social history of an ethnic group",
+            "url": "https://www.cambridge.org/core/journals/africa/article/abs/waswahili-the-social-history-of-an-ethnic-group1/F2EDB57962908E8A2F81B10F0CA1BCB8",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "PeopleGroups.org — Central Swahili of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg014535-12/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Joshua Project — Swahili in the Democratic Republic of the Congo",
+            "url": "https://joshuaproject.net/people_groups/print/15145/CG",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -3015,13 +3303,29 @@
       "sharedIsoCodes": [],
       "automatedFlags": [],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_TABWA",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Tabwa/Taabwa as a DRC–Zambia cross-border people record.",
+        "notes": "Smithsonian sources explicitly place the Tabwa in southeastern DRC and northeastern Zambia, and Glottolog corroborates the same two-country distribution for Taabwa. The local 2025 population is an estimate assembled from heterogeneous secondary sources and requires source-specific dating before publication.",
+        "sources": [
+          {
+            "title": "Smithsonian Institution — Female figure with bowl, Tabwa",
+            "url": "https://www.si.edu/object/female-figure-bowl%3Anmafa_2015-16-3",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Smithsonian Libraries — Les arts du corps chez les Tabwa",
+            "url": "https://www.si.edu/object/siris_sil_519925",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog 5.3 — Taabwa",
+            "url": "https://glottolog.org/resource/languoid/id/taab1238",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -3169,13 +3473,24 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_TEMBO",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep Tembo/Batembo as a DRC people record in North and South Kivu.",
+        "notes": "Conflict and linguistic sources distinguish Batembo as a people and Chitembo/Kitembo as their language. The fiche combines population estimates ranging from 150,000 speakers to 700,000 people; retain the relation but do not publish the selected 400,000 value without a dated methodology.",
+        "sources": [
+          {
+            "title": "The Conversation — How DRC's colonial legacy forged a nexus between ethnicity, territory and conflict",
+            "url": "https://theconversation.com/how-drcs-colonial-legacy-forged-a-nexus-between-ethnicity-territory-and-conflict-153469",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Ethnologue — Tembo",
+            "url": "https://www.ethnologue.com/language/tbt/",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -3203,13 +3518,24 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
-        "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_TETELA",
+        "parentPeopleId": "PPL_MONGO",
+        "decision": "Keep as the Tetela/Batetela people and model it as a non-additive child of the broad Mongo identity.",
+        "notes": "The DRC identity is directly attested and has a distinct modern political identity, while controlled vocabularies and scholarship place Tetela within the wider Mongo/Nkutshu family. Parent and child population figures must not be summed, and the current modeled total requires a directly compatible source.",
+        "sources": [
+          {
+            "title": "Bibliothèque nationale de France — Tetela (African people)",
+            "url": "https://catalogue.bnf.fr/ark:/12148/cb11993727d",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Thomas Turner — Batetela, Baluba, Basonge: Ethnogenesis in Zaire",
+            "url": "https://doi.org/10.3406/cea.1993.1494",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -3237,12 +3563,12 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
+        "status": "in_review",
+        "entityType": "rejected_link",
         "canonicalPeopleId": null,
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
+        "decision": "Reject the PPL_TSAO country link to the DRC until a source directly attests the claimed Batsao community.",
+        "notes": "The fiche has no language code, gives only approximate regional placement, and cites broad country or language-family pages that do not mention Tsao or Batsao. Focused searches found no corroborating DRC or Angolan ethnographic record. Preserve the fiche for investigation, but do not surface it as a verified DRC people relation or publish its 150,000 estimate.",
         "sources": []
       }
     },
@@ -3403,13 +3729,29 @@
         "name_matches_language_label"
       ],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_USHI",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep the Ushi/Aushi link to the DRC and classify it as a people identity with a cross-border Zambia–Haut-Katanga presence.",
+        "notes": "A peer-reviewed linguistic study identifies the Aushi as a matrilineal ethnolinguistic group in Zambia's Luapula Province and the DRC's Haut-Katanga Province, and Glottolog independently lists both countries. The fiche's 5,000-person DRC estimate conflicts sharply with current specialist directories and has no accepted source; replace it before publication rather than treating it as validated.",
+        "sources": [
+          {
+            "title": "Studies in African Languages and Cultures 56 — A Descriptive Grammar of Ikyaushi",
+            "url": "https://wuw.pl/data/include/cms/Studies_in_African_2022_56.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog 5.3 — Aushi",
+            "url": "https://glottolog.org/resource/languoid/id/aush1241",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P131-050"
+          }
+        ]
       }
     },
     {
@@ -3437,13 +3779,24 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
+        "status": "in_review",
+        "entityType": "rejected_link",
         "canonicalPeopleId": null,
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Reject only the DRC country relation while preserving the Vili fiche for Angola, the Republic of the Congo, and Gabon.",
+        "notes": "Glottolog lists Vili (vif) in Angola, the Republic of the Congo, and Gabon, and Joshua Project reports Vili people groups only in the Republic of the Congo and Gabon. The current 1,000-person DRC entry has no direct corroborating source and may conflate historical Kongo/Loango reach with contemporary country presence.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Vili",
+            "url": "https://glottolog.org/resource/languoid/id/vili1238",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Joshua Project — Vili language resources",
+            "url": "https://joshuaproject.net/languages/vif",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -3471,13 +3824,29 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
+        "status": "in_review",
+        "entityType": "rejected_link",
         "canonicalPeopleId": null,
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Reject the PPL_WANDYA country link to the DRC pending any direct evidence of a current Congolese community.",
+        "notes": "The local fiche places Wandya in the DRC and Uganda without a language code or a direct source. The sources found instead document Wandya in Zambia and in the Malawi–Tanzania language corridor, often within a Lambya/Nyiha cluster. Historical migration through or claimed origin in the Congo does not establish current DRC presence. Preserve the fiche for later geographic repair, but remove only the DRC relation after approval.",
+        "sources": [
+          {
+            "title": "World Bank Microdata Library — Zambia DHS ethnicity classification",
+            "url": "https://microdata.worldbank.org/index.php/catalog/3139/variable/W/W_ETHNICITYZM?name=W_ETHNICITYZM",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Bantu Languages in the Corridor — The Senga Survey Report",
+            "url": "https://www.bilta.org/storage/135/The-Senga-Survey-Report.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog 5.3 — Johnston 1897 linguistic and ethnographic survey",
+            "url": "https://glottolog.org/resource/reference/id/50191",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
@@ -3505,13 +3874,29 @@
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
       "review": {
-        "status": "pending",
-        "entityType": "unknown",
-        "canonicalPeopleId": null,
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_YAKA",
         "parentPeopleId": null,
-        "decision": null,
-        "notes": null,
-        "sources": []
+        "decision": "Keep as the Yaka people of southwestern DRC and neighboring Angola.",
+        "notes": "The DRC country relation is directly corroborated by linguistic and museum sources. Yaka remains distinct from Suku despite strong historical and cultural interaction; language-speaker counts and older art-historical population estimates must not be treated as a current ethnic census.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Yaka-Pelende-Lonzo",
+            "url": "https://glottolog.org/resource/languoid/id/yaka1269",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Metropolitan Museum of Art — Yikeki male figure, Yaka peoples",
+            "url": "https://www.metmuseum.org/art/collection/search/311113",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Queensborough Community College Art Gallery — The Art of the Yaka and Suku",
+            "url": "https://artgallery.qcc.cuny.edu/exhibits/the-dr-arthur-p-bourgeois-collection-2/",
+            "accessedAt": "2026-09-06"
+          }
+        ]
       }
     },
     {
