@@ -10,7 +10,8 @@ on:
     branches: [recette, main]
 
 # Superseded runs of the same branch are cancelled. Without this a branch pushed
-# three times kept three generations of a ~13 min audit competing for runners,
+# three times kept three generations of a ~15 min audit (both locales, since
+# ETNI-1858) competing for runners,
 # which is what turned a busy afternoon of parallel pull requests into a queue.
 concurrency:
   group: a11y-${{ github.ref }}
@@ -24,6 +25,9 @@ jobs:
     name: axe-core (Storybook)
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      # Test-only publication: production remains fail-closed to fr-only.
+      SITE_LOCALE_MODE: bilingual-fr-default
 
     steps:
       - name: Checkout
@@ -64,7 +68,7 @@ jobs:
             echo "present=true" >> "$GITHUB_OUTPUT"
           else
             echo "present=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::Skipping live-route a11y audit (/fr/noms, dossier fiche) — NEXT_PUBLIC_SUPABASE_URL secret not available (fork or Dependabot PR)."
+            echo "::notice::Skipping live-route a11y audit (scripts/a11yRoutes.ts, both locales) — NEXT_PUBLIC_SUPABASE_URL secret not available (fork or Dependabot PR)."
           fi
 
       # Same artefact ci.yml already builds for this commit: restoring it takes
@@ -87,7 +91,7 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          # Epic 10, Story 10.11 (ETNI-500) — /fr/quiz 404s (isQuizFeatureEnabled)
+          # Epic 10, Story 10.11 (ETNI-500) — the quiz route 404s (isQuizFeatureEnabled)
           # unless this is set, which would silently audit nothing.
           NEXT_PUBLIC_FEATURE_QUIZ: "true"
 

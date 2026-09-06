@@ -198,14 +198,15 @@ select revoked_reason, count(*) from quiz_questions
 ```
 
 The active count should be at or near what step 1 recorded — with the one
-documented exception above. Then play a full session at `/fr/quiz` and read
-four or five questions. Three things to look at:
+documented exception above. Then play a full session at `/fr/jeux/quiz` (the
+questions are French; `/en/games/quiz` serves the same bank) and read four or
+five questions. Three things to look at:
 
 - the distractors are peoples of the subject's own family _and_ of a country it
   shares, not the same three names on every question;
 - a session opens on a people you have heard of and ends on one you have not —
   that is the ladder, and it is computed from population inside the track;
-- a country track — `/fr/quiz?pays=GHA` — never answers « Ghana » to « dans
+- a country track — `/fr/jeux/quiz?pays=GHA` — never answers « Ghana » to « dans
   quel pays ce peuple est-il principalement présent ? ».
 
 ### 5. Only then, production

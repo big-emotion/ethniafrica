@@ -30,9 +30,18 @@ permissions:
 # CPU + network throttle encoded in playwright.config.ts.
 jobs:
   e2e:
-    name: Playwright
+    name: Playwright (${{ matrix.locale }})
     runs-on: ubuntu-latest
     timeout-minutes: 25
+
+    # One leg per published locale (REQ-141). The English leg is thinner than
+    # it looks: the specs that read UI copy skip themselves until that copy is
+    # translated (see e2e/support/locale.ts), so it exercises the route, CSP
+    # and axe specs and reports the rest as skipped, not as covered.
+    strategy:
+      fail-fast: false
+      matrix:
+        locale: [fr, en]
 
     env:
       # NEVER production credentials.
@@ -55,9 +64,13 @@ jobs:
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.TEST_SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE_KEY }}
       NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.TEST_SUPABASE_ANON_KEY || secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
       CI: "true"
-      # Epic 10, Story 10.11 (ETNI-500) — /fr/quiz 404s (isQuizFeatureEnabled)
-      # unless this is set, which would silently skip the quiz e2e specs.
+      # Test-only publication: production remains fail-closed to fr-only.
+      SITE_LOCALE_MODE: bilingual-fr-default
+      # Epic 10, Story 10.11 (ETNI-500) — the quiz route 404s
+      # (isQuizFeatureEnabled) unless this is set, which would silently skip
+      # the quiz e2e specs.
       NEXT_PUBLIC_FEATURE_QUIZ: "true"
+      E2E_LOCALE: ${{ matrix.locale }}
 
     steps:
       - name: Checkout
@@ -120,8 +133,11 @@ jobs:
       - name: Wait for app
         if: steps.secrets.outputs.present == 'true'
         run: |
+          # The root answers 307 to the default locale (REQ-140), and `-f`
+          # without `-L` fails on that redirect — the loop would wait its
+          # full minute and report an app that was up the whole time.
           for i in 1 2 3 4 5 6 7 8 9 10 11 12; do
-            if curl -fsS http://localhost:3000/fr > /dev/null; then
+            if curl -fsSL http://localhost:3000/ > /dev/null; then
               echo "App ready"; exit 0
             fi
             echo "Waiting for app... ($i/12)"; sleep 5
@@ -139,6 +155,6 @@ jobs:
         if: always() && steps.secrets.outputs.present == 'true'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: playwright-report
+          name: playwright-report-${{ matrix.locale }}
           path: playwright-report/
           retention-days: 7

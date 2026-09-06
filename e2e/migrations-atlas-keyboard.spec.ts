@@ -1,5 +1,15 @@
 import { test, expect } from "./support/fixtures";
 import { getLocalizedRoute } from "@/lib/routing";
+import { LOCALE } from "./support/locale";
+
+// English UI copy lands per translation wave (REQ-142 to REQ-146). Until it
+// does, the labels this spec reads are French, so the English matrix leg
+// skips it rather than fail on copy it was never asked to check — and the
+// leg's report says so, instead of counting the journey as covered.
+test.skip(
+  LOCALE !== "fr",
+  "English copy lands per wave — this spec reads French UI copy"
+);
 
 // ETNI-523 (12.10) AC2 — keyboard-only journey on the Carte tab: Tab to the
 // scrubber, arrow-scrub the year, Tab to the event list, Enter opens the
@@ -8,7 +18,7 @@ import { getLocalizedRoute } from "@/lib/routing";
 // opened the sheet. No mouse/pointer input is used anywhere in this test.
 // Every stop must have visible focus (focus-visible ring classes already on
 // the interactive elements) and there must be no keyboard trap.
-const MIGRATIONS_URL = getLocalizedRoute("fr", "migrations");
+const MIGRATIONS_URL = getLocalizedRoute(LOCALE, "migrations");
 
 // @req REQ-101 FR84 UX-DR29 UX-DR30
 test.describe("@nfr-a11y migrations atlas — keyboard-only journey", () => {

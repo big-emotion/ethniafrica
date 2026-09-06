@@ -1,5 +1,15 @@
 import { expect, test } from "./support/fixtures";
 import { getFacetRoute, type FacetKey } from "@/lib/hubs/facets";
+import { LOCALE } from "./support/locale";
+
+// English UI copy lands per translation wave (REQ-142 to REQ-146). Until it
+// does, the labels this spec reads are French, so the English matrix leg
+// skips it rather than fail on copy it was never asked to check — and the
+// leg's report says so, instead of counting the journey as covered.
+test.skip(
+  LOCALE !== "fr",
+  "English copy lands per wave — this spec reads French UI copy"
+);
 
 const FACETS: ReadonlyArray<{
   key: FacetKey;
@@ -20,7 +30,7 @@ for (const facet of FACETS) {
   test(`@cross-viewport exposes a native GET search on the ${facet.key} facet`, async ({
     page,
   }) => {
-    await page.goto(getFacetRoute("fr", facet.key), {
+    await page.goto(getFacetRoute(LOCALE, facet.key), {
       waitUntil: "domcontentloaded",
     });
 
@@ -32,7 +42,7 @@ for (const facet of FACETS) {
     await expect(form).toHaveAttribute("method", "get");
     await expect(form).toHaveAttribute(
       "action",
-      getFacetRoute("fr", facet.key)
+      getFacetRoute(LOCALE, facet.key)
     );
     await expect(search).toHaveAttribute("name", "q");
     await expect(search).toHaveAttribute("type", "search");

@@ -1,6 +1,24 @@
 import { expect, test, type Page, type Response } from "@playwright/test";
-import { getCountryRoute, getLocalizedRoute } from "@/lib/routing";
+import {
+  getCountryRoute,
+  getLocalizedRoute,
+  getStaticPageRoute,
+} from "@/lib/routing";
 import { FACETS } from "@/lib/hubs/facets";
+import { LOCALE } from "../support/locale";
+
+// English UI copy lands per translation wave (REQ-142 to REQ-146). Until it
+// does, the labels this spec reads are French, so the English matrix leg
+// skips it rather than fail on copy it was never asked to check — and the
+// leg's report says so, instead of counting the journey as covered.
+test.skip(
+  LOCALE !== "fr",
+  "English copy lands per wave — this spec reads French UI copy"
+);
+
+// The admin console's sub-pages have no slug-table entry: `admin` is the one
+// static page, and what follows it is the same word in both locales.
+const ADMIN_ROUTE = getStaticPageRoute(LOCALE, "admin");
 
 type RuntimeFailures = {
   scriptCsp: string[];
@@ -160,7 +178,7 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
   // "Peuples" were pinned exactly, and both broke the day the facets started
   // naming themselves "Les pays d'Afrique".
   const facets = FACETS.map((facet) => ({
-    path: getLocalizedRoute("fr", facet.page),
+    path: getLocalizedRoute(LOCALE, facet.page),
     heading: new RegExp(facet.label, "i"),
   }));
 
@@ -190,12 +208,14 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
   }) => {
     await expectDirectNavigation(
       page,
-      `${getLocalizedRoute("fr", "countries")}?country=COM`,
+      `${getLocalizedRoute(LOCALE, "countries")}?country=COM`,
       async () => {
         await expect(
           page.getByRole("heading", { level: 1, name: /Comores/i })
         ).toBeVisible();
-        expect(new URL(page.url()).pathname).toBe(getCountryRoute("fr", "COM"));
+        expect(new URL(page.url()).pathname).toBe(
+          getCountryRoute(LOCALE, "COM")
+        );
         expect(new URL(page.url()).searchParams.get("country")).toBeNull();
       }
     );
@@ -211,7 +231,7 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
       .getByRole("combobox");
     await expectDirectNavigation(
       page,
-      `${getLocalizedRoute("fr", "search")}?q=Yoruba`,
+      `${getLocalizedRoute(LOCALE, "search")}?q=Yoruba`,
       async () => {
         await expect(searchbox).toHaveValue("Yoruba");
       },
@@ -232,7 +252,7 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
   test("hydrates a directly opened static-content page", async ({ page }) => {
     await expectDirectNavigation(
       page,
-      "/fr/mentions-legales",
+      getStaticPageRoute(LOCALE, "legalNotice"),
       async () => {
         await expect(
           page.getByRole("heading", { level: 1, name: "Mentions légales" })
@@ -258,7 +278,9 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
         await expect(
           page.getByRole("heading", { level: 1, name: "Politique de données" })
         ).toBeVisible();
-        expect(new URL(page.url()).pathname).toBe("/fr/politique-de-donnees");
+        expect(new URL(page.url()).pathname).toBe(
+          getStaticPageRoute(LOCALE, "dataPolicy")
+        );
         expect(
           await page.evaluate(
             () =>
@@ -279,7 +301,7 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
   }) => {
     await expectDirectNavigation(
       page,
-      getLocalizedRoute("fr", "names"),
+      getLocalizedRoute(LOCALE, "names"),
       async () => {
         await expect(
           page.getByRole("heading", { level: 1, name: "Appellations" })
@@ -291,14 +313,18 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
 
   // @req REQ-014
   test("hydrates public reports after direct navigation", async ({ page }) => {
-    await expectDirectNavigation(page, "/fr/signalements", async () => {
-      await expect(
-        page.getByRole("heading", { level: 1, name: "Tous les signalements" })
-      ).toBeVisible();
-      await expect(
-        page.getByRole("region", { name: "File publique des signalements" })
-      ).toBeVisible();
-    });
+    await expectDirectNavigation(
+      page,
+      getStaticPageRoute(LOCALE, "reports"),
+      async () => {
+        await expect(
+          page.getByRole("heading", { level: 1, name: "Tous les signalements" })
+        ).toBeVisible();
+        await expect(
+          page.getByRole("region", { name: "File publique des signalements" })
+        ).toBeVisible();
+      }
+    );
   });
 
   // @req REQ-001
@@ -307,7 +333,7 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
   }) => {
     await expectDirectNavigation(
       page,
-      getCountryRoute("fr", "COM"),
+      getCountryRoute(LOCALE, "COM"),
       async () => {
         await expect(
           page.getByRole("heading", { level: 1, name: /Comores/i })
@@ -318,10 +344,10 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
 
   // @req REQ-042
   test("keeps the anonymous protected-route redirect", async ({ page }) => {
-    await expectDirectNavigation(page, "/fr/admin/cles-api", async () => {
+    await expectDirectNavigation(page, `${ADMIN_ROUTE}/cles-api`, async () => {
       const url = new URL(page.url());
-      expect(url.pathname).toBe("/fr/admin/connexion");
-      expect(url.searchParams.get("redirect")).toBe("/fr/admin/cles-api");
+      expect(url.pathname).toBe(`${ADMIN_ROUTE}/connexion`);
+      expect(url.searchParams.get("redirect")).toBe(`${ADMIN_ROUTE}/cles-api`);
       await expect(
         page.getByRole("heading", { level: 1, name: "Accès à la modération" })
       ).toBeVisible();

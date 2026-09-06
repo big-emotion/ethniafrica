@@ -1,6 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "./support/fixtures";
 import { getLocalizedRoute } from "@/lib/routing";
+import { LOCALE } from "./support/locale";
 
 // REQ-114 AC4 — axe-core zero serious/critical on the entry point of each of
 // the three access modes, at the three reference widths (430, 720, 1200 px).
@@ -13,9 +14,9 @@ import { getLocalizedRoute } from "@/lib/routing";
 // is one of its modules. `scripts/a11yRoutes.ts` audits these same three
 // addresses at one width; the cross-viewport sweep is what this file adds.
 const ENTRY_ROUTES = [
-  { mode: "atlas", url: getLocalizedRoute("fr", "peoples") },
-  { mode: "dossiers", url: getLocalizedRoute("fr", "names") },
-  { mode: "jeux", url: getLocalizedRoute("fr", "quiz") },
+  { mode: "atlas", url: getLocalizedRoute(LOCALE, "peoples") },
+  { mode: "dossiers", url: getLocalizedRoute(LOCALE, "names") },
+  { mode: "jeux", url: getLocalizedRoute(LOCALE, "quiz") },
 ];
 
 // @req REQ-114

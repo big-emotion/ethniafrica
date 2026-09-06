@@ -1,38 +1,41 @@
 import { getDossierThemeHref } from "@/lib/dossiers/themes";
 import { getLocalizedRoute, getNommerChapterRoute } from "@/lib/routing";
 import { expect, test } from "@playwright/test";
+import { LOCALE } from "./support/locale";
 
 test.describe("Dossier themes @cross-viewport", () => {
   // @req REQ-140
   test("preserves English across the directory, theme and canonical dossier", async ({
     page,
   }) => {
+    test.skip(LOCALE !== "en", "English copy assertion");
     await page.setViewportSize({ width: 430, height: 900 });
-    await page.goto(getLocalizedRoute("en", "dossiersHub"));
+    await page.goto(getLocalizedRoute(LOCALE, "dossiersHub"));
     await expect(
       page.getByRole("heading", { name: "The dossiers", exact: true })
     ).toBeVisible();
     await page
       .getByRole("combobox", { name: "Choose a theme" })
       .selectOption("noms");
-    await expect(page).toHaveURL(getDossierThemeHref("noms", "en"));
+    await expect(page).toHaveURL(getDossierThemeHref("noms", LOCALE));
     const link = page
       .getByRole("region", { name: "Dossiers to read" })
       .getByRole("link", { name: "Who gave this name?" });
     await expect(link).toHaveAttribute(
       "href",
-      getLocalizedRoute("en", "nommer")
+      getLocalizedRoute(LOCALE, "nommer")
     );
     await link.click();
-    await expect(page).toHaveURL(getLocalizedRoute("en", "nommer"));
+    await expect(page).toHaveURL(getLocalizedRoute(LOCALE, "nommer"));
   });
   for (const width of [320, 375, 430, 768, 1199, 1200, 1440]) {
     // @req REQ-114
     test(`keeps discovery compact and readable at ${width}px`, async ({
       page,
     }) => {
+      test.skip(LOCALE !== "fr", "French copy assertion");
       await page.setViewportSize({ width, height: 900 });
-      await page.goto(getLocalizedRoute("fr", "dossiersHub"));
+      await page.goto(getLocalizedRoute(LOCALE, "dossiersHub"));
       await expect(
         page.getByRole("heading", { name: "Les dossiers", exact: true })
       ).toBeVisible();
@@ -80,8 +83,9 @@ test.describe("Dossier themes @cross-viewport", () => {
   test("opens a theme from mobile navigation and follows its canonical dossier", async ({
     page,
   }) => {
+    test.skip(LOCALE !== "fr", "French copy assertion");
     await page.setViewportSize({ width: 430, height: 900 });
-    await page.goto(getLocalizedRoute("fr", "dossiersHub"));
+    await page.goto(getLocalizedRoute(LOCALE, "dossiersHub"));
     await page.getByRole("button", { name: "Ouvrir le menu" }).click();
     const tray = page.getByRole("dialog");
     await tray.getByRole("button", { name: /Les dossiers/ }).click();
@@ -102,9 +106,10 @@ test.describe("Dossier themes @cross-viewport", () => {
   test("keeps existing chapter and anecdote deep links reachable", async ({
     page,
   }) => {
+    test.skip(LOCALE !== "fr", "French copy assertion");
     for (const route of [
-      getNommerChapterRoute("fr", "la-personne"),
-      `${getLocalizedRoute("fr", "anecdotes")}?a=monrovia`,
+      getNommerChapterRoute(LOCALE, "la-personne"),
+      `${getLocalizedRoute(LOCALE, "anecdotes")}?a=monrovia`,
     ]) {
       const response = await page.goto(route);
       expect(response?.status()).toBe(200);

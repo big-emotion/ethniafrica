@@ -1,5 +1,14 @@
 import { expect, test } from "@playwright/test";
 import { getFamilyRoute } from "@/lib/routing";
+import { LOCALE } from "./support/locale";
+
+// The reference renders were captured in French. Under another locale the
+// diff measures the translation, not the layout, so the English matrix leg
+// skips this spec until it has references of its own.
+test.skip(
+  LOCALE !== "fr",
+  "English copy lands per wave — the reference renders are French"
+);
 
 /**
  * Parity of the family fiche against the committed mockup
@@ -31,7 +40,7 @@ import { getFamilyRoute } from "@/lib/routing";
  * raise maxDiffPixelRatio to silence them.
  */
 
-const FAMILY_URL = getFamilyRoute("fr", "FLG_BENOUECONGO");
+const FAMILY_URL = getFamilyRoute(LOCALE, "FLG_BENOUECONGO");
 
 const referenceWidths = [
   // Mobile first: this is the width the design is settled at, and the only one

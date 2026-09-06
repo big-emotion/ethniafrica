@@ -2,15 +2,25 @@ import AxeBuilder from "@axe-core/playwright";
 import type { Page, Locator } from "@playwright/test";
 import { test, expect } from "./support/fixtures";
 import { getLocalizedRoute } from "@/lib/routing";
+import { LOCALE } from "./support/locale";
+
+// English UI copy lands per translation wave (REQ-142 to REQ-146). Until it
+// does, the labels this spec reads are French, so the English matrix leg
+// skips it rather than fail on copy it was never asked to check — and the
+// leg's report says so, instead of counting the journey as covered.
+test.skip(
+  LOCALE !== "fr",
+  "English copy lands per wave — this spec reads French UI copy"
+);
 
 // ETNI-500 (10.11) AC1 — axe-core zero serious/critical across the quiz
-// session states that the static /fr/quiz audit cannot reach (picker is
+// session states that the static quiz-route audit cannot reach (picker is
 // covered by scripts/a11y-test.ts; the segment-picked question/reveal and
 // score states only exist client-side, per session, per FR67/FR68/FR71).
 // Runs on the mobile-430 project (source-of-truth viewport per
 // playwright.config.ts) with no continue-on-error in e2e.yml, so a
 // violation here fails the required CI check.
-const QUIZ_URL = getLocalizedRoute("fr", "quiz");
+const QUIZ_URL = getLocalizedRoute(LOCALE, "quiz");
 const QUESTIONS_PER_SESSION = 8;
 
 async function expectNoSeriousOrCriticalViolations(page: Page) {
@@ -87,7 +97,7 @@ test.describe("@nfr-a11y quiz session — axe-core", () => {
 
   /**
    * The deployed theme panel exists only after a click, so the static
-   * `/fr/quiz` audit in `scripts/a11y-test.ts` cannot see it — it covers the 88
+   * quiz-route audit in `scripts/a11y-test.ts` cannot see it — it covers the 88
    * cards in their closed state and nothing more. This is the only gate that
    * reads the open panel, which is also the only part of the picker a server
    * render cannot prove.

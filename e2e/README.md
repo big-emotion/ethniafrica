@@ -51,7 +51,16 @@ Copy `.env.example` to `.env.local` (or set in CI) and provide:
 | `SUPABASE_SERVICE_ROLE_KEY`     | Test project service-role key — NEVER use prod                     |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Test project anon key                                              |
 | `SKIP_WEB_SERVER`               | Set to skip the local `npm run dev` boot (when BASE_URL is remote) |
+| `E2E_LOCALE`                    | `en` or `fr` — the locale the specs compose their routes in        |
+| `SITE_LOCALE_MODE`              | Use `bilingual-fr-default` only when exercising the English leg    |
 | `CI`                            | Auto-set on GitHub Actions; tunes parallelism + reporter           |
+
+`E2E_LOCALE` defaults to the site's configured default locale; CI runs a matrix over both and
+sets `SITE_LOCALE_MODE=bilingual-fr-default` inside that test environment (`e2e.yml`). Set the
+same publication mode for a local English run; production remains fail-closed to `fr-only`. A
+spec that reads UI copy skips itself outside `fr` until that copy is translated, so the English
+leg covers the route, CSP and axe specs and reports the rest as skipped — see
+`e2e/support/locale.ts`.
 
 The recommended local backend is **Supabase CLI** (`supabase start`) so the
 gate runs against a clean database every PR. Staging Supabase is reserved for
@@ -62,7 +71,7 @@ nightly smoke + perf only.
 Mobile-first non-negotiable. The default `mobile-430` project encodes:
 
 - Viewport 430 × 812 px, deviceScaleFactor 2.625, isMobile, hasTouch
-- Locale `fr-FR`, timezone `Africa/Dakar`
+- Browser locale following `E2E_LOCALE` (`fr-FR` or `en-GB`), timezone `Africa/Dakar`
 - `X-Test-Bypass-Cache` header to skip `s-maxage` edge cache (ASR-3)
 
 Persona thresholds (Amina 10 s, Ngozi 30 s) are SLOs against this profile.

@@ -1,8 +1,18 @@
 import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "./support/fixtures";
 import { getLocalizedRoute } from "@/lib/routing";
+import { LOCALE } from "./support/locale";
 
-// ETNI-523 (12.10) AC1 — axe-core zero serious/critical on /fr/migrations
+// English UI copy lands per translation wave (REQ-142 to REQ-146). Until it
+// does, the labels this spec reads are French, so the English matrix leg
+// skips it rather than fail on copy it was never asked to check — and the
+// leg's report says so, instead of counting the journey as covered.
+test.skip(
+  LOCALE !== "fr",
+  "English copy lands per wave — this spec reads French UI copy"
+);
+
+// ETNI-523 (12.10) AC1 — axe-core zero serious/critical on the migrations atlas route
 // across its three distinct states: the default Récit tab, the Carte tab
 // (map + scrubber + list), and the sheet-open state (MigrationDetailSheet).
 // Runs on the mobile-430 project (source-of-truth viewport per
@@ -10,7 +20,7 @@ import { getLocalizedRoute } from "@/lib/routing";
 // violation here fails the required CI check — the static Storybook/live
 // audit in a11y.yml only covers the server-rendered Récit-default markup
 // (scripts/a11y-test.ts), not these interactive states.
-const MIGRATIONS_URL = getLocalizedRoute("fr", "migrations");
+const MIGRATIONS_URL = getLocalizedRoute(LOCALE, "migrations");
 
 async function expectNoSeriousOrCriticalViolations(
   page: import("@playwright/test").Page

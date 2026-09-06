@@ -161,7 +161,9 @@ Requirements, decisions and architecture live on **Confluence**, not in this rep
 `ETNI`.
 
 Data corrections are welcome as pull requests against the fiches in `dataset/source/afrik/`, or
-through the site: `/fr/contribute` to propose a change, `/fr/report-error` to flag one.
+through the published site: `/fr/contribute` to propose a change and `/fr/report-error` to flag
+one. Their `/en` counterparts become reachable when a bilingual `SITE_LOCALE_MODE` is explicitly
+enabled.
 
 ---
 
