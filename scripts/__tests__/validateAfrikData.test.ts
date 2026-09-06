@@ -25,6 +25,7 @@ import {
   checkExternalIdentifierFormats,
   checkPeopleGroupConsistency,
   checkPopulationSums,
+  checkPopulationSplitDeclared,
   checkIsoValidity,
   checkOrphanFiches,
   checkSourceUrls,
@@ -1071,6 +1072,57 @@ describe("validateAfrikData – new integrity checks", () => {
       );
 
       const result = checkPopulationSums(tmpDir);
+      expect(result.ok).toBe(true);
+    });
+  });
+
+  // ── FR28-declared : checkPopulationSplitDeclared ───────────────────────────
+
+  describe("checkPopulationSplitDeclared (FR28-declared)", () => {
+    // @req REQ-131
+    it("returns ok:false when a reference country declares an empty peoples list", () => {
+      writePays(tmpDir, "MDG", []);
+
+      const result = checkPopulationSplitDeclared(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("MDG"))).toBe(true);
+    });
+
+    // @req REQ-131
+    it("returns ok:false when a reference country carries no demographics block", () => {
+      const dir = join(tmpDir, "pays");
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(
+        join(dir, "MDG.json"),
+        JSON.stringify({ id: "MDG", content: {} })
+      );
+
+      const result = checkPopulationSplitDeclared(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("MDG"))).toBe(true);
+    });
+
+    // @req REQ-131
+    it("returns ok:true when a reference country declares at least one people", () => {
+      writePays(tmpDir, "MDG", [
+        {
+          peopleId: "PPL_MERINA",
+          languageFamily: "FLG_AUSTRONESIENNE",
+          percentageInCountry: 100,
+        },
+      ]);
+
+      const result = checkPopulationSplitDeclared(tmpDir);
+      expect(result.ok).toBe(true);
+    });
+
+    // REQ-131 scopes completeness to the 54-country reference set, so a fiche
+    // outside it owes no split at all.
+    // @req REQ-131
+    it("returns ok:true for a country outside the African reference set", () => {
+      writePays(tmpDir, "FRA", []);
+
+      const result = checkPopulationSplitDeclared(tmpDir);
       expect(result.ok).toBe(true);
     });
   });
