@@ -3,7 +3,12 @@
 import { usePathname } from "next/navigation";
 import { useSyncExternalStore } from "react";
 
-import { LOCALES, LOCALE_COOKIE, localeCookieAttributes } from "@/lib/locale";
+import { useLocalePublicationMode } from "@/components/layout/LocalePublicationProvider";
+import {
+  getPublishedLocales,
+  LOCALE_COOKIE,
+  localeCookieAttributes,
+} from "@/lib/locale";
 import { getLanguageFromRoute, translatePath } from "@/lib/routing";
 import { cn } from "@/lib/utils";
 import type { Language } from "@/types/shared";
@@ -72,6 +77,7 @@ export function LanguageSwitcher({
   appearance = "disc",
   className,
 }: LanguageSwitcherProps) {
+  const publicationMode = useLocalePublicationMode();
   const pathname = usePathname();
   const search = useSyncExternalStore(
     subscribeToLocation,
@@ -82,39 +88,44 @@ export function LanguageSwitcher({
 
   return (
     <>
-      {LOCALES.filter((locale) => locale !== language).map((locale) => {
-        // A page outside the locale tree has no counterpart, so the switch
-        // lands on the home — the same rule `useLanguage` applies.
-        const href = routeLanguage
-          ? `${translatePath(routeLanguage, locale, pathname)}${search}`
-          : `/${locale}`;
-        const autonym = LOCALE_AUTONYMS[locale];
+      {getPublishedLocales(publicationMode)
+        .filter((locale) => locale !== language)
+        .map((locale) => {
+          // A page outside the locale tree has no counterpart, so the switch
+          // lands on the home — the same rule `useLanguage` applies.
+          const href = routeLanguage
+            ? `${translatePath(routeLanguage, locale, pathname)}${search}`
+            : `/${locale}`;
+          const autonym = LOCALE_AUTONYMS[locale];
 
-        return (
-          <a
-            key={locale}
-            href={href}
-            hrefLang={locale}
-            lang={locale}
-            aria-label={autonym}
-            onClick={() => rememberLocale(locale)}
-            className={cn(
-              appearance === "disc"
-                ? "sh-icon sh-lang min-h-11"
-                : "sh-lang-row min-h-11",
-              className
-            )}
-          >
-            {appearance === "disc" ? (
-              <span className="sh-icon-circle sh-lang-code" aria-hidden="true">
-                {locale.toUpperCase()}
-              </span>
-            ) : (
-              autonym
-            )}
-          </a>
-        );
-      })}
+          return (
+            <a
+              key={locale}
+              href={href}
+              hrefLang={locale}
+              lang={locale}
+              aria-label={autonym}
+              onClick={() => rememberLocale(locale)}
+              className={cn(
+                appearance === "disc"
+                  ? "sh-icon sh-lang min-h-11"
+                  : "sh-lang-row min-h-11",
+                className
+              )}
+            >
+              {appearance === "disc" ? (
+                <span
+                  className="sh-icon-circle sh-lang-code"
+                  aria-hidden="true"
+                >
+                  {locale.toUpperCase()}
+                </span>
+              ) : (
+                autonym
+              )}
+            </a>
+          );
+        })}
     </>
   );
 }

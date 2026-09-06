@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const requestHeaders = new Map<string, string>();
 
@@ -41,6 +41,11 @@ const htmlElement = async () =>
 describe("root layout document language", () => {
   beforeEach(() => {
     requestHeaders.clear();
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-en-default");
+  });
+
+  afterEach(() => {
+    vi.unstubAllEnvs();
   });
 
   // @req REQ-140
@@ -63,5 +68,13 @@ describe("root layout document language", () => {
   it("ignores a header value that names no published locale", async () => {
     requestHeaders.set(LOCALE_HEADER, "es");
     expect((await htmlElement()).props.lang).toBe("en");
+  });
+
+  // @req REQ-140
+  it("ignores an English header while English is unpublished", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
+    requestHeaders.set(LOCALE_HEADER, "en");
+
+    expect((await htmlElement()).props.lang).toBe("fr");
   });
 });
