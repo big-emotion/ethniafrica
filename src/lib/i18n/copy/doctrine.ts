@@ -16,6 +16,12 @@ const en = {
     reconstructive:
       "A reconstructive classification is established from fragmentary evidence, such as oral traditions, archaeology, genetics or glottochronology. It remains provisional, is revised as new evidence emerges, and is explicitly presented as a reconstruction.",
   } satisfies Record<ClassificationStatus, string>,
+  article: {
+    sectionName: "Editorial doctrine",
+    changelog: "View change history",
+    fallback:
+      "This archived version has no matching English translation. The French original follows.",
+  },
 };
 
 type DoctrineCopy = typeof en;
@@ -34,6 +40,11 @@ const fr: DoctrineCopy = {
       "Une classification d'héritage colonial est une catégorie produite (ou figée) durant la période coloniale, généralement par des administrateurs, des missionnaires ou des linguistes au service de l'administration. Nous conservons ces catégories pour respecter la traçabilité historique, mais nous expliquons pourquoi elles sont problématiques et privilégions les auto-appellations.",
     reconstructive:
       "Une classification reconstructive est une catégorisation établie à partir de sources fragmentaires (traditions orales, archéologie, génétique, glottochronologie). Elle reste provisoire, sujette à révision à mesure que de nouvelles données émergent, et explicitement présentée comme une reconstruction.",
+  },
+  article: {
+    sectionName: "Doctrine éditoriale",
+    changelog: "Voir l'historique des modifications",
+    fallback: "",
   },
 };
 

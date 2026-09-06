@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 
-import {
-  GLOSSARY_PAGE_SUBTITLE,
-  GLOSSARY_PAGE_TITLE,
-  GlossaryPage,
-} from "@/components/glossaire/GlossaryPage";
+import { GlossaryPage } from "@/components/glossaire/GlossaryPage";
+import { GLOSSARY_ENTRIES } from "@/lib/glossaire/entries";
+import { glossaryPageCopy } from "@/lib/i18n/copy/glossaryPage";
 import { getLocalizedRoute } from "@/lib/routing";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
@@ -19,9 +17,11 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { lang } = await params;
+  const language = lang as Language;
+  const pageCopy = glossaryPageCopy[language];
   const copy = {
-    title: GLOSSARY_PAGE_TITLE,
-    description: GLOSSARY_PAGE_SUBTITLE,
+    title: pageCopy.title,
+    description: pageCopy.subtitle(GLOSSARY_ENTRIES.length),
   };
   return {
     ...copy,

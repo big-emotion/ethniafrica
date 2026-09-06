@@ -3,12 +3,16 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { StateMedallion } from "@/components/ui/StateMedallion";
-import type { DidYouKnowFact } from "@/lib/home/didYouKnowFacts";
+import { TranslationProvenanceMarker } from "@/components/fiche/TranslationProvenanceMarker";
+import type { LocalizedDidYouKnowFact } from "@/lib/home/didYouKnowLocalization";
+import { systemStatesCopy } from "@/lib/i18n/copy/systemStates";
+import type { Language } from "@/types/shared";
 
 interface ErrorStateProps {
   errorRef: string;
   onRetry: () => void;
-  anecdote?: DidYouKnowFact | null;
+  anecdote?: LocalizedDidYouKnowFact | null;
+  language?: Language;
 }
 
 // @req REQ-099
@@ -16,8 +20,10 @@ export function ErrorState({
   errorRef,
   onRetry,
   anecdote = null,
+  language = "fr",
 }: ErrorStateProps) {
   const [copied, setCopied] = useState(false);
+  const copy = systemStatesCopy[language].error;
 
   const handleCopy = async () => {
     try {
@@ -35,12 +41,11 @@ export function ErrorState({
         <StateMedallion />
 
         <h2 className="text-afh-h2 font-display font-semibold text-afh-text">
-          Une erreur est survenue
+          {copy.title}
         </h2>
 
         <p data-testid="state-copy" className="max-w-md text-afh-text-soft">
-          Une erreur inattendue s&apos;est produite. Vous pouvez réessayer ou
-          contacter le support avec la référence ci-dessous.
+          {copy.body}
         </p>
 
         <div
@@ -55,24 +60,24 @@ export function ErrorState({
             variant="outline"
             size="sm"
             onClick={handleCopy}
-            aria-label="Copier la référence"
+            aria-label={copy.copy}
           >
-            {copied ? "Copié" : "Copier la référence"}
+            {copied ? copy.copied : copy.copy}
           </Button>
         </div>
 
         <Button onClick={onRetry} data-cta="primary">
-          Réessayer
+          {copy.retry}
         </Button>
 
         {anecdote ? (
           <aside
-            aria-label="Le saviez-vous"
+            aria-label={copy.anecdote}
             data-testid="error-anecdote"
             className="mt-2 w-full border-t border-afh-border pt-5 text-left md:mt-4 md:pt-6"
           >
             <p className="text-afh-caption font-semibold uppercase tracking-[0.14em] text-afh-text-soft">
-              Le saviez-vous ?
+              {copy.anecdote}
             </p>
             <p className="mt-2 font-display text-afh-h3 font-semibold leading-snug text-afh-text">
               {anecdote.headline}
@@ -82,6 +87,14 @@ export function ErrorState({
                 {anecdote.body[0]}
               </p>
             ) : null}
+            <TranslationProvenanceMarker
+              translation={
+                anecdote.translationKind
+                  ? { kind: anecdote.translationKind, stale: false }
+                  : null
+              }
+              className="mt-3"
+            />
           </aside>
         ) : null}
       </div>

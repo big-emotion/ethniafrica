@@ -23,6 +23,7 @@ vi.mock("@/components/layout/PageLayout", () => ({
 
 vi.mock("next/navigation", () => ({
   useParams: () => ({ lang: "fr" }),
+  usePathname: () => "/fr",
 }));
 
 vi.mock("next/link", () => ({

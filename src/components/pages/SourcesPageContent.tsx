@@ -553,6 +553,7 @@ const pageCopy = {
     joshuaDescription:
       "Pour diversité ethnolinguistique (à utiliser avec prudence car orientation religieuse)",
     dossierTitle: "Qui a donné ce nom ?",
+    dossierNotesFallback: "",
   },
   en: {
     intro: "Complete bibliography — African Peoples and Populations",
@@ -586,6 +587,8 @@ const pageCopy = {
     joshuaDescription:
       "For ethnolinguistic diversity; use with care because of its religious orientation",
     dossierTitle: "Who gave this name?",
+    dossierNotesFallback:
+      "Editorial notes for these works are awaiting English review. The French originals follow.",
   },
 } as const satisfies Record<Language, object>;
 
@@ -856,6 +859,11 @@ export default function SourcesPageContent({
 
         <div className="ml-4 space-y-3">
           <p className="font-semibold">{copy.dossierTitle}</p>
+          {copy.dossierNotesFallback ? (
+            <p role="status" aria-label={copy.dossierNotesFallback}>
+              {copy.dossierNotesFallback}
+            </p>
+          ) : null}
           <ul className="list-disc space-y-2">
             {[...DOSSIER_SOURCES]
               .sort((left, right) =>
@@ -871,7 +879,11 @@ export default function SourcesPageContent({
                       standing: source.standing,
                     }}
                   />
-                  <span className="block text-afh-caption text-afh-text-soft">
+                  <span
+                    className="block text-afh-caption text-afh-text-soft"
+                    data-dossier-source-note
+                    lang={language === "en" ? "fr" : undefined}
+                  >
                     {source.notes}
                   </span>
                 </li>

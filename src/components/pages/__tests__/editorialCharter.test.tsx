@@ -237,7 +237,12 @@ describe("DoctrinePageContent", () => {
     ).toBeInTheDocument();
     expect(screen.getAllByText(/Editorial status$/)).toHaveLength(4);
     expect(
-      screen.getByText(/A classification is consensual when/)
+      screen.getByText(/A classification is .*consensual when/)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("status", {
+        name: "Machine translation, not yet reviewed",
+      })
     ).toBeInTheDocument();
     expect(screen.queryByText("Doctrine éditoriale")).not.toBeInTheDocument();
   });

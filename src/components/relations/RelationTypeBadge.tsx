@@ -10,12 +10,15 @@ import {
 import { cn } from "@/lib/utils";
 import { RELATION_TYPE_LABELS } from "@/lib/glossaire/vocabularies";
 import type { RelationBadgeType } from "@/lib/relationsDataTransformer";
+import type { Language } from "@/types/shared";
+import { relationsCopy } from "@/lib/i18n/copy/relations";
 
 export interface RelationTypeBadgeProps {
   type: RelationBadgeType;
   /** Renders a "· dérivé" suffix and a dashed border (AFRIK-derived, never sourced individually). */
   derived?: boolean;
   size?: "inline" | "card";
+  language?: Language;
   className?: string;
 }
 
@@ -44,10 +47,11 @@ export function RelationTypeBadge({
   type,
   derived = false,
   size = "inline",
+  language = "fr",
   className,
 }: RelationTypeBadgeProps) {
   const Icon = RELATION_TYPE_ICONS[type];
-  const label = RELATION_TYPE_LABELS.fr[type];
+  const label = RELATION_TYPE_LABELS[language][type];
 
   return (
     <span
@@ -66,7 +70,7 @@ export function RelationTypeBadge({
       <Icon className={size === "card" ? "h-4 w-4" : "h-3 w-3"} aria-hidden />
       <span>
         {label}
-        {derived ? " · dérivé" : ""}
+        {derived ? ` · ${relationsCopy[language].derivedBadge}` : ""}
       </span>
     </span>
   );

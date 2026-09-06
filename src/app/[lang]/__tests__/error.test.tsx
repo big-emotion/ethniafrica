@@ -1,11 +1,18 @@
-import { describe, it, expect, vi } from "vitest";
+import { beforeEach, describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import ErrorPage from "@/app/[lang]/error";
 import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
 
+const mockUsePathname = vi.fn(() => "/fr");
+vi.mock("next/navigation", () => ({
+  usePathname: () => mockUsePathname(),
+}));
+
 describe("ErrorPage ([lang]/error)", () => {
   const mockError = new Error("test error") as Error & { digest?: string };
   mockError.digest = "abc123";
+
+  beforeEach(() => mockUsePathname.mockReturnValue("/fr"));
 
   it("renders calm French heading Une erreur est survenue", () => {
     render(<ErrorPage error={mockError} reset={() => {}} />);
@@ -68,5 +75,25 @@ describe("ErrorPage ([lang]/error)", () => {
     const defaultCopy = (container.textContent ?? "").replace(anecdote, "");
 
     expect(defaultCopy).not.toContain("!");
+  });
+
+  // @req REQ-145
+  it("renders English recovery copy and an English anecdote below /en", () => {
+    mockUsePathname.mockReturnValue("/en");
+    const random = vi.spyOn(Math, "random").mockReturnValue(0);
+
+    render(<ErrorPage error={mockError} reset={() => {}} />);
+
+    expect(
+      screen.getByRole("heading", { name: "An error occurred" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Try again" })
+    ).toBeInTheDocument();
+    expect(screen.getByTestId("error-anecdote")).toHaveTextContent(
+      "Did you know?"
+    );
+
+    random.mockRestore();
   });
 });

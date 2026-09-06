@@ -4,6 +4,8 @@ import Link from "next/link";
 import { StateMedallion } from "@/components/ui/StateMedallion";
 import type { Language } from "@/types/shared";
 import { getLocalizedRoute } from "@/lib/routing";
+import { useRouteLanguage } from "@/hooks/use-language";
+import { systemStatesCopy } from "@/lib/i18n/copy/systemStates";
 
 /**
  * The locale is fixed rather than read from the route. This page is also the
@@ -12,17 +14,18 @@ import { getLocalizedRoute } from "@/lib/routing";
  * `lang = "quiz"`, so the page taught the reader a URL pattern that does not
  * exist and offered a search link to `/quiz/recherche`.
  */
-const lang: Language = "fr";
-
 // @req REQ-099
 export default function NotFound() {
+  const lang: Language = useRouteLanguage();
+  const copy = systemStatesCopy[lang].notFound;
+
   return (
     <div className="min-h-[60vh] flex flex-col items-center justify-center bg-afh-bg-warm px-4 py-12">
       <div className="max-w-xl w-full space-y-6 text-center">
         <StateMedallion className="mx-auto" />
 
         <h1 className="text-afh-h1 font-display font-semibold text-afh-text">
-          Fiche introuvable
+          {copy.title}
         </h1>
 
         {/* The page used to spell out the three route patterns, corpus key
@@ -31,8 +34,7 @@ export default function NotFound() {
             followed a dead link never typed anything. The search below is the
             answer to both. */}
         <p data-testid="state-copy" className="text-afh-text-soft">
-          Cette adresse ne mène à rien. La fiche a peut-être changé de nom, ou
-          n&apos;est pas encore publiée.
+          {copy.body}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
@@ -41,15 +43,15 @@ export default function NotFound() {
             data-cta="primary"
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-afh-text text-afh-bg-warm text-afh-small font-medium hover:opacity-90 transition-opacity"
           >
-            Rechercher une fiche
+            {copy.search}
           </Link>
 
           {/* TODO: replace mailto with contribution form once available (ETNI-247) */}
           <a
-            href="mailto:contact@ethniafrica.org?subject=URL+cassée"
+            href={`mailto:contact@ethniafrica.org?subject=${encodeURIComponent(copy.reportSubject)}`}
             className="inline-flex items-center justify-center px-5 py-2.5 text-afh-small text-afh-text-soft underline underline-offset-2 hover:text-afh-text transition-colors"
           >
-            Signaler une URL cassée
+            {copy.report}
           </a>
         </div>
       </div>
