@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "entries": [
     {
       "key": "un-desa-wpp",
@@ -112,6 +112,13 @@
       "tier": "referenced",
       "sourceKind": "academic",
       "matchDomains": ["jstor.org"]
+    },
+    {
+      "key": "epr-growup",
+      "name": "EPR Atlas / GROWup — ETH Zürich",
+      "tier": "referenced",
+      "sourceKind": "academic",
+      "matchDomains": ["growup.ethz.ch", "icr.ethz.ch"]
     },
     {
       "key": "ajol",

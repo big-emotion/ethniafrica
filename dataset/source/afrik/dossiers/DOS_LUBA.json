@@ -1,0 +1,166 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "dossier",
+    "directives": "Source-cited editorial synthesis drafted with AI assistance. Origin traditions are distinguished from dated events. Country links are present-day discovery contexts, not reconstructed borders.",
+    "readerFacing": ["gaps[].reason", "sources[].title", "sources[].notes"]
+  },
+  "id": "DOS_LUBA",
+  "vertical": "histoires",
+  "slug": "empire-luba",
+  "title": "Luba : pouvoir et mémoire",
+  "question": "Comment des institutions et des mémoires font-elles tenir un ensemble politique ?",
+  "standfirst": "Le pouvoir luba se lit dans ses institutions, ses insignes et les pratiques qui transmettent l’histoire. Un récit de fondation et un objet royal apportent des témoignages différents.",
+  "publishedOn": "2026-09-06",
+  "thesis": {
+    "stepLabel": "Un repère",
+    "heading": "Une présence attestée, une origine discutée",
+    "figures": [
+      {
+        "figureKey": "empire-luba-repere",
+        "value": "1700",
+        "claim": "Des systèmes étatiques luba sont établis au plus tard à cette période.",
+        "provenance": "Repère minimal retenu par Giacomo Macola, pas année de fondation.",
+        "year": 1700,
+        "sourceRefs": ["macola"]
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "chapterKey": "institutions-et-alliance",
+      "ordinal": 1,
+      "title": "Gouverner et nouer des alliances",
+      "question": "Comment le pouvoir dépasse-t-il une seule cour ?",
+      "standfirst": "La royauté ne suffit pas à décrire toutes les institutions.",
+      "body": [
+        {
+          "text": "La synthèse de Bortolot décrit une royauté sacrée associée au gouvernement par conseil. Les alliances et l’intégration de dirigeants voisins contribuent à étendre cette organisation politique.",
+          "sourceRefs": ["met-savanna"]
+        },
+        {
+          "text": "Le siège lupona conservé au Met exprime une légitimité liée à des ancêtres royaux. Sa forme de siège ne doit pas tromper : il s’agit d’un insigne sacré, plutôt que d’un meuble ordinaire.",
+          "sourceRefs": ["met-lupona"]
+        }
+      ],
+      "illustration": {
+        "src": "/images/dossiers/luba-lupona.jpg",
+        "alt": "Siège sculpté porté par une figure féminine ornée de perles.",
+        "caption": "Lupona luba, fin du XIXe–début du XXe siècle. Un insigne de pouvoir conservé au musée.",
+        "author": "Luba artist · The Metropolitan Museum of Art",
+        "year": "1870–1930",
+        "filePage": "https://www.metmuseum.org/art/collection/search/310760",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Le symbole royal",
+          "body": "Les figures féminines de certains sièges renvoient au rôle spirituel attribué aux femmes dans la légitimité du pouvoir.",
+          "sourceRefs": ["met-lupona"]
+        },
+        {
+          "stance": "counter",
+          "label": "L’objet a sa propre date",
+          "body": "Ce lupona est daté de la fin du XIXe ou du début du XXe siècle. Il ne constitue pas une image contemporaine des premières formations politiques.",
+          "sourceRefs": ["met-lupona"]
+        }
+      ],
+      "figures": []
+    },
+    {
+      "chapterKey": "transmettre-histoire",
+      "ordinal": 2,
+      "title": "Transmettre l’histoire",
+      "question": "Comment une histoire politique se conserve-t-elle ?",
+      "standfirst": "Les supports matériels accompagnent des pratiques de mémoire.",
+      "body": [
+        {
+          "text": "Les lukasa sont des supports de mémoire. La notice du Smithsonian les associe aux histoires royales, aux listes de rois et aux événements importants : leur fonction dépasse la seule décoration.",
+          "sourceRefs": ["si-lukasa"]
+        },
+        {
+          "text": "Le catalogue Genesis décrit des perles et des signes dont l’interprétation renvoie à des personnages, des lieux et des relations. Leur lecture suppose un savoir ; une photographie ne livre pas à elle seule le récit.",
+          "sourceRefs": ["met-genesis"]
+        }
+      ],
+      "illustration": {
+        "src": "/images/dossiers/luba-lupona.jpg",
+        "alt": "Siège sculpté porté par une figure féminine ornée de perles.",
+        "caption": "Lupona luba, fin du XIXe–début du XXe siècle. Un insigne de pouvoir conservé au musée.",
+        "author": "Luba artist · The Metropolitan Museum of Art",
+        "year": "1870–1930",
+        "filePage": "https://www.metmuseum.org/art/collection/search/310760",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Une mémoire organisée",
+          "body": "Le lukasa associe une histoire à un support manipulable. Cela invite à considérer la transmission orale comme une pratique de connaissance.",
+          "sourceRefs": ["si-lukasa"]
+        },
+        {
+          "stance": "counter",
+          "label": "Une chronologie à préciser",
+          "body": "Macola situe l’expansion impériale au XVIIIe siècle et décrit la déstabilisation des réseaux luba et lunda à la fin du XIXe siècle. Ces étapes ne datent pas un fondateur légendaire.",
+          "sourceRefs": ["macola"]
+        }
+      ],
+      "figures": []
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "met-savanna",
+      "title": "Kingdoms of the Savanna: The Luba and Lunda Empires",
+      "url": "https://www.metmuseum.org/essays/kingdoms-of-the-savanna-the-luba-and-lunda-empires",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Alexander Ives Bortolot, The Metropolitan Museum of Art ; consulté le 6 septembre 2026.",
+      "publicationYear": 2003
+    },
+    {
+      "sourceKey": "macola",
+      "title": "Luba–Lunda states",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118455074.wbeoe060",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Giacomo Macola, The Encyclopedia of Empire. Résumé et présentation de l’article ; consultés le 6 septembre 2026.",
+      "publicationYear": 2015
+    },
+    {
+      "sourceKey": "met-lupona",
+      "title": "Lupona (royal seat)",
+      "url": "https://www.metmuseum.org/art/collection/search/310760",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "The Metropolitan Museum of Art, collection 1978.412.317 ; consultée le 6 septembre 2026."
+    },
+    {
+      "sourceKey": "si-lukasa",
+      "title": "Memory Board, \"Lukasa\"",
+      "url": "https://www.si.edu/object/memory-board-lukasa%3Anmnhanthropology_8393259",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Smithsonian Institution, National Museum of Natural History. Notice de collection ; consultée le 6 septembre 2026."
+    },
+    {
+      "sourceKey": "met-genesis",
+      "title": "Genesis: Ideas of Origin in African Sculpture",
+      "url": "https://resources.metmuseum.org/resources/metpublications/pdf/Genesis_Ideas_of_Origin_in_African_Sculpture.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Alisa LaGamma, The Metropolitan Museum of Art. Catalogue, passages consacrés à la mémoire luba et aux figures d’origine ; consulté le 6 septembre 2026.",
+      "publicationYear": 2002
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "chapters",
+      "reason": "Les récits de Kalala Ilunga ne permettent pas ici de fixer une date unique de fondation. Ce dossier ne décrit pas l’ensemble des populations qui portent aujourd’hui un nom luba."
+    }
+  ]
+}

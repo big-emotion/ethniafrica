@@ -1,4 +1,6 @@
 import { NOMMER_CHAPTERS } from "@/lib/dossiers/nommer/chapters";
+import { getDossiers, getPublishedThemes } from "@/lib/dossiers/catalog";
+import { getDossierThemeHref } from "@/lib/dossiers/themes";
 import { GAME_DEFINITIONS } from "@/lib/games/gameRegistry";
 import {
   ACCESS_MODE_LABELS,
@@ -146,6 +148,14 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
         "D'où vient ce nom, d'où vient ce peuple, et qui l'affirme. Les trois questions dans cet ordre.",
       links: [
         {
+          href: route("dossiersHub"),
+          label: language === "en" ? "All dossiers" : "Tous les dossiers",
+        },
+        ...getPublishedThemes(undefined, language).map((theme) => ({
+          href: getDossierThemeHref(theme.id, language),
+          label: theme.label,
+        })),
+        {
           href: route("nommer"),
           label: "Qui a donné ce nom ?",
           note: "Le dossier fondateur, et ses cinq chapitres.",
@@ -159,6 +169,13 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
           href: nommerChapterRoute(chapter.key),
           label: `${chapter.ordinal} · ${chapter.title}`,
         })),
+        ...getDossiers({ language })
+          .filter((dossier) => dossier.id !== "nommer")
+          .map((dossier) => ({
+            href: dossier.href,
+            label: dossier.title,
+            note: dossier.summary,
+          })),
         {
           href: route("names"),
           label: "Appellations",

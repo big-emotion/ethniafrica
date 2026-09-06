@@ -9,20 +9,23 @@ import { buildScaleFacts } from "@/lib/games/scaleFacts";
 import { getCountryRoute } from "@/lib/routing";
 
 // The stage mounts WebGL, which happy-dom has none of. Standing in for it
-// with a element that prints the props under test keeps this a test about
-// the binding between the round and the globe, not about the renderer.
+// with an element that prints the props under test keeps this a test about
+// how the page mounts the globe, not about the renderer.
 vi.mock("@/components/atlas/ContinentGlobeStage", () => ({
   ContinentGlobeStage: ({
     pinnedProjection,
-    pinnedProjectionNote,
+    presentation,
+    autoRotate,
   }: {
     pinnedProjection?: "flat" | "sphere";
-    pinnedProjectionNote?: string;
+    presentation?: "standard" | "hero";
+    autoRotate?: boolean;
   }) => (
     <div
       data-testid="globe-stage"
       data-projection={pinnedProjection ?? ""}
-      data-note={pinnedProjectionNote ?? ""}
+      data-presentation={presentation ?? ""}
+      data-autorotate={autoRotate ? "true" : "false"}
     />
   ),
 }));
@@ -55,6 +58,8 @@ const round = (subjectId: string): GameRound => ({
 
 const ROUNDS = [round("DZA"), round("TCD")];
 
+const TRUE_SIZE_CLAIM = "L'Afrique fait 14 fois le Groenland.";
+
 function renderSurface(corpusLimited = false) {
   return render(
     <MercatorSurface
@@ -63,30 +68,40 @@ function renderSurface(corpusLimited = false) {
       rounds={ROUNDS}
       facts={buildScaleFacts()}
       corpusLimited={corpusLimited}
+      trueSizeClaimFr={TRUE_SIZE_CLAIM}
     />
   );
 }
 
-describe("MercatorSurface — the globe answers the round (REQ-120)", () => {
+describe("MercatorSurface — the home's globe, and the size it states (REQ-120)", () => {
   /**
-   * Charter §1 forbids a manipulable globe beside a live round because an
-   * area-true sphere lets the reader answer by eye. Holding the map flat
-   * turns that inside out: what stands beside the question is the lie the
-   * question is asked against, so reading it gives the wrong answer.
+   * Charter §11, amended 2026-09-06: the page shows the same sphere the home
+   * shows, on the same terms. The pin that used to hold it flat while a
+   * question stood is gone — it captioned a Mercator map « Afrique à sa
+   * surface réelle » and withdrew the very slider the demonstration is made
+   * of.
    */
   // @req REQ-120
-  it("holds the map flat while a question stands", () => {
+  it("mounts the globe unpinned, so the reader owns the projection", () => {
     renderSurface();
 
-    const stage = screen.getByTestId("globe-stage");
-    expect(stage).toHaveAttribute("data-projection", "flat");
-    expect(stage.getAttribute("data-note")).toMatch(
-      /se rouvre avec la réponse/
+    expect(screen.getByTestId("globe-stage")).toHaveAttribute(
+      "data-projection",
+      ""
     );
   });
 
   // @req REQ-120
-  it("closes the map into a sphere on the reveal", async () => {
+  it("mounts it on the home's own terms: editorial figure, arriving in motion", () => {
+    renderSurface();
+
+    const stage = screen.getByTestId("globe-stage");
+    expect(stage).toHaveAttribute("data-presentation", "hero");
+    expect(stage).toHaveAttribute("data-autorotate", "true");
+  });
+
+  // @req REQ-120
+  it("keeps the projection the reader's to move once the answer is in", async () => {
     const user = userEvent.setup();
     renderSurface();
 
@@ -94,26 +109,48 @@ describe("MercatorSurface — the globe answers the round (REQ-120)", () => {
 
     expect(screen.getByTestId("globe-stage")).toHaveAttribute(
       "data-projection",
-      "sphere"
+      ""
     );
   });
 
+  /**
+   * The globe draws the continent; it does not say how much ground that is.
+   * The claim is measured off the same outlines the sphere is drawn from and
+   * handed down by the server page, so the figure and the picture cannot
+   * disagree.
+   */
   // @req REQ-120
-  it("says nothing about a lock once the sphere is open", async () => {
-    const user = userEvent.setup();
+  it("states Africa's measured true size beside the globe", () => {
     renderSurface();
 
-    await user.click(screen.getByRole("button", { name: "DZA-A" }));
+    expect(screen.getByText(TRUE_SIZE_CLAIM)).toBeInTheDocument();
+  });
 
-    expect(screen.getByTestId("globe-stage")).toHaveAttribute("data-note", "");
+  /**
+   * The demonstration stopped being only ours on 4 September 2026. Naming the
+   * vote turns « une projection déforme » into a thing states argued about,
+   * and the reader can go and check it.
+   */
+  // @req REQ-120
+  it("credits the UN resolution and links the reader to it", () => {
+    renderSurface();
+
+    const link = screen.getByRole("link", { name: /ONU Info/ });
+    expect(link).toHaveAttribute(
+      "href",
+      "https://news.un.org/fr/story/2026/09/1159416"
+    );
+    expect(screen.getByTestId("mercator-true-size")).toHaveTextContent(
+      /Equal Earth/
+    );
   });
 
   /**
    * Charter §9.1: the stem and every option clear the fold at 430 px, and it
    * is the stage that gives way, never the options. The stage floor is 560 px
    * on a phone, so the round sits *before* the globe in the document — which
-   * is also the order the tab sequence and a screen reader want. Only the
-   * reveal repaints them the other way round, from CSS keyed on the phase.
+   * is also the order the tab sequence and a screen reader want, and it now
+   * holds in every phase rather than being repainted on the reveal.
    */
   // @req REQ-120
   it("puts the round before the globe in the document, not below it", () => {
@@ -128,24 +165,6 @@ describe("MercatorSurface — the globe answers the round (REQ-120)", () => {
 
     expect(children[0].classList.contains("mercator-round")).toBe(true);
     expect(children[1].classList.contains("mercator-stage")).toBe(true);
-  });
-
-  // @req REQ-120
-  it("declares the phase so the layout can answer it", async () => {
-    const user = userEvent.setup();
-    const { container } = renderSurface();
-
-    expect(container.querySelector(".mercator-surface")).toHaveAttribute(
-      "data-phase",
-      "answering"
-    );
-
-    await user.click(screen.getByRole("button", { name: "DZA-A" }));
-
-    expect(container.querySelector(".mercator-surface")).toHaveAttribute(
-      "data-phase",
-      "revealed"
-    );
   });
 
   /**

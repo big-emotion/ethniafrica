@@ -42,6 +42,7 @@ non-obvious ruling is in `docs/editorial/translation-classes.md`.
 
 | Corpus directory         | ID form            | Model                                                                                                  |
 | ------------------------ | ------------------ | ------------------------------------------------------------------------------------------------------ |
+| `dossiers/`              | `DOS_*`            | `modele-dossier.json`                                                                                  |
 | `peuples/<FLG_*>/`       | `PPL_*`            | `modele-peuple.json`                                                                                   |
 | `pays/`                  | ISO 3166-1 alpha-3 | `modele-pays.json`                                                                                     |
 | `famille_linguistique/`  | `FLG_*`            | `modele-linguistique.json`                                                                             |
@@ -65,6 +66,61 @@ the output and stop; do not borrow the nearest model's table.
 
 Written out from the declaration by hand; there is no generator, the charter
 contract test is what keeps them equal to it, row for row and model for model.
+
+### modele-dossier.json
+
+| Leaf                                 | Class             | Note |
+| ------------------------------------ | ----------------- | ---- |
+| `_meta.*`                            | `invariant`       |      |
+| `id`                                 | `invariant`       |      |
+| `vertical`                           | `invariant`       |      |
+| `slug`                               | `invariant`       |      |
+| `title`                              | `translatable`    |      |
+| `question`                           | `translatable`    |      |
+| `standfirst`                         | `translatable`    |      |
+| `publishedOn`                        | `invariant`       |      |
+| `thesis.stepLabel`                   | `translatable`    |      |
+| `thesis.heading`                     | `translatable`    |      |
+| `thesis.figures[].figureKey`         | `invariant`       |      |
+| `thesis.figures[].value`             | `review_required` |      |
+| `thesis.figures[].claim`             | `translatable`    |      |
+| `thesis.figures[].provenance`        | `translatable`    |      |
+| `thesis.figures[].year`              | `invariant`       |      |
+| `thesis.figures[].sourceRefs[]`      | `invariant`       |      |
+| `chapters[].chapterKey`              | `invariant`       |      |
+| `chapters[].ordinal`                 | `invariant`       |      |
+| `chapters[].title`                   | `translatable`    |      |
+| `chapters[].question`                | `translatable`    |      |
+| `chapters[].standfirst`              | `translatable`    |      |
+| `chapters[].body[].text`             | `translatable`    |      |
+| `chapters[].body[].sourceRefs[]`     | `invariant`       |      |
+| `chapters[].illustration.src`        | `invariant`       |      |
+| `chapters[].illustration.alt`        | `translatable`    |      |
+| `chapters[].illustration.caption`    | `translatable`    |      |
+| `chapters[].illustration.author`     | `invariant`       |      |
+| `chapters[].illustration.licence`    | `invariant`       |      |
+| `chapters[].illustration.licenceUrl` | `invariant`       |      |
+| `chapters[].illustration.filePage`   | `invariant`       |      |
+| `chapters[].illustration.year`       | `invariant`       |      |
+| `chapters[].readings[].stance`       | `invariant`       |      |
+| `chapters[].readings[].label`        | `translatable`    |      |
+| `chapters[].readings[].body`         | `translatable`    |      |
+| `chapters[].readings[].sourceRefs[]` | `invariant`       |      |
+| `chapters[].figures[].figureKey`     | `invariant`       |      |
+| `chapters[].figures[].label`         | `translatable`    |      |
+| `chapters[].figures[].value`         | `review_required` |      |
+| `chapters[].figures[].year`          | `invariant`       |      |
+| `chapters[].figures[].note`          | `translatable`    |      |
+| `chapters[].figures[].sourceRefs[]`  | `invariant`       |      |
+| `sources[].sourceKey`                | `invariant`       |      |
+| `sources[].title`                    | `invariant`       |      |
+| `sources[].url`                      | `invariant`       |      |
+| `sources[].tier`                     | `invariant`       |      |
+| `sources[].source_kind`              | `invariant`       |      |
+| `sources[].publicationYear`          | `invariant`       |      |
+| `sources[].notes`                    | `translatable`    |      |
+| `gaps[].fieldPath`                   | `invariant`       |      |
+| `gaps[].reason`                      | `translatable`    |      |
 
 ### modele-frontiere-coloniale.json
 

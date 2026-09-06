@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { Language } from "@/types/shared";
+import { useLocalePublicationMode } from "@/components/layout/LocalePublicationProvider";
 import { getLanguageFromRoute, translatePath } from "@/lib/routing";
 import {
   LOCALE_COOKIE,
-  isLocale,
+  isPublishedLocale,
   localeCookieAttributes,
   resolveLocale,
 } from "@/lib/locale";
@@ -39,11 +40,18 @@ const rememberLocale = (locale: Language) => {
 
 // @req REQ-091
 export const useLanguage = () => {
+  const publicationMode = useLocalePublicationMode();
   const pathname = usePathname();
   const router = useRouter();
-  const routeLanguage = getLanguageFromRoute(pathname);
+  const candidateRouteLanguage = getLanguageFromRoute(pathname);
+  const routeLanguage = isPublishedLocale(
+    candidateRouteLanguage,
+    publicationMode
+  )
+    ? candidateRouteLanguage
+    : null;
   const [language, setLanguageState] = useState<Language>(
-    () => routeLanguage ?? resolveLocale(rememberedLocale())
+    () => routeLanguage ?? resolveLocale(rememberedLocale(), publicationMode)
   );
 
   useEffect(() => {
@@ -54,7 +62,7 @@ export const useLanguage = () => {
   }, [routeLanguage, language]);
 
   const setLanguage = (lang: Language) => {
-    if (!isLocale(lang)) return;
+    if (!isPublishedLocale(lang, publicationMode)) return;
     setLanguageState(lang);
     rememberLocale(lang);
 

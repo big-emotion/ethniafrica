@@ -1,3 +1,4 @@
+import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import type { ReactNode } from "react";
 
 import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
@@ -369,6 +370,12 @@ export function FamilyParchment({
       {decolonialHeader.originOfHistoricalTerm && (
         <Section title="D'où vient le nom de la famille">
           <p>{decolonialHeader.originOfHistoricalTerm}</p>
+          <DossierLinks
+            language={language}
+            kind="family"
+            id={hero.id}
+            section="terminology"
+          />
         </Section>
       )}
 

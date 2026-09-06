@@ -18,6 +18,16 @@ export type PageType =
   | "quiz"
   | "colonization"
   | "nommer"
+  // The Réalités vertical. One PageType per dossier, the way `nommer` has
+  // one: the corpus holds what a dossier says, and this table holds where it
+  // lives — a menu cannot resolve an address out of a JSON body.
+  | "dossierProportions"
+  | "dossierPopulations"
+  | "dossierRessources"
+  | "dossierKongo"
+  | "dossierLuba"
+  | "dossierLunda"
+  | "dossierSpiritualitesKongo"
   | "glossary"
   | "atlasHub"
   | "dossiersHub"
@@ -72,6 +82,13 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     quiz: "games/quiz",
     colonization: "dossiers/perspectives/colonisation-and-resistances",
     nommer: "dossiers/naming",
+    dossierProportions: "dossiers/proportions",
+    dossierPopulations: "dossiers/populations",
+    dossierRessources: "dossiers/resources",
+    dossierKongo: "dossiers/kongo-kingdom",
+    dossierLuba: "dossiers/luba-empire",
+    dossierLunda: "dossiers/lunda-empire",
+    dossierSpiritualitesKongo: "dossiers/kongo-spiritualities",
     glossary: "glossary",
     // `dossiers` is kept as an English word on purpose: the retired module
     // paths keyed `dossiers/…` in `middleware.ts` then work in both locales.
@@ -115,6 +132,17 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     // there requires a trailing slash, so `dossiers/nommer` misses it. Do not
     // "simplify" that guard.
     nommer: "dossiers/nommer",
+    // The Réalités vertical, served by one dynamic segment rather than three
+    // directories — src/app/[lang]/dossiers/[dossier]/page.tsx. The slug here
+    // must equal the `slug` the fiche declares, which is what the corpus test
+    // asserts rather than trusting to memory.
+    dossierProportions: "dossiers/proportions",
+    dossierPopulations: "dossiers/populations",
+    dossierRessources: "dossiers/ressources",
+    dossierKongo: "dossiers/royaume-kongo",
+    dossierLuba: "dossiers/empire-luba",
+    dossierLunda: "dossiers/empire-lunda",
+    dossierSpiritualitesKongo: "dossiers/spiritualites-kongo",
     // No axis lists the glossary, so it carries no prefix — the same reason
     // `about`, `doctrine` and `sources` carry none. It serves the atlas and
     // the games as much as the dossiers, and it is reached from the footer's

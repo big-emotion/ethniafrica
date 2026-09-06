@@ -131,6 +131,19 @@ Required for the app to run at all:
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY` — **server-only**, never expose it to the browser bundle
 
+Publication safety:
+
+- `SITE_LOCALE_MODE` — **server-only** and optional. Missing, empty, or invalid values fail
+  closed to `fr-only`: `/` and stale English cookies resolve to `/fr`, English URLs temporarily
+  redirect to their French counterpart, and the language switch is absent. Set
+  `bilingual-fr-default` to publish both languages while keeping `/fr` as the default, or
+  `bilingual-en-default` only for the final English-default launch.
+
+  Change it in the target environment and rebuild. The OVH release workflow verifies `/`,
+  `/fr`, `/en`, and the remembered-English-cookie path inside the new container before declaring
+  the deploy healthy. A misspelled non-empty value deliberately fails that deploy even though
+  the application itself remains safely French-only.
+
 Required for a reader to report an error:
 
 - `ANTIBOT_HMAC_SECRET` — **server-only**, any long random string. It signs the proof-of-work

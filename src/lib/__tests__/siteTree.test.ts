@@ -21,7 +21,7 @@ describe("getSiteTree — access modes are sections, not destinations", () => {
       section.links.map((link) => link.href)
     );
 
-    for (const page of ["atlasHub", "dossiersHub", "jeuxHub"] as const) {
+    for (const page of ["atlasHub", "jeuxHub"] as const) {
       expect(hrefs, page).not.toContain(getLocalizedRoute("fr", page));
     }
   });
@@ -90,12 +90,14 @@ describe("getSiteTree — the corpus section lists languages and patronymes", ()
 // ever told about.
 describe("getSiteTree — the Nommer dossier and its chapters", () => {
   // @req REQ-110
-  it("opens the dossiers rubric on the founding dossier", () => {
+  it("opens the dossiers rubric on its theme directory", () => {
     const dossiers = getSiteTree("fr").find(
       (section) => section.id === "dossiers"
     );
 
-    expect(dossiers?.links[0]?.href).toBe(getLocalizedRoute("fr", "nommer"));
+    expect(dossiers?.links[0]?.href).toBe(
+      getLocalizedRoute("fr", "dossiersHub")
+    );
   });
 
   // @req REQ-110
@@ -109,7 +111,10 @@ describe("getSiteTree — the Nommer dossier and its chapters", () => {
       getNommerChapterRoute("fr", key)
     );
 
-    expect(hrefs.slice(1, 1 + chapterHrefs.length)).toEqual(chapterHrefs);
+    const start = hrefs.indexOf(getLocalizedRoute("fr", "nommer")) + 1;
+    expect(hrefs.slice(start, start + chapterHrefs.length)).toEqual(
+      chapterHrefs
+    );
   });
 
   // @req REQ-110

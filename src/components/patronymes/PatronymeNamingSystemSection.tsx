@@ -1,3 +1,4 @@
+import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
 import { FicheFieldList, type FicheField } from "@/components/fiche/FicheProse";
 import { FicheSection } from "@/components/fiche/FicheSection";
@@ -132,6 +133,12 @@ export function PatronymeNamingSystemSection({
   return (
     <FicheSection title={t.nameSystemSectionTitle}>
       <FicheFieldList fields={fields} />
+      <DossierLinks
+        language={language}
+        kind="name"
+        id={patronyme.id}
+        section="naming-system"
+      />
     </FicheSection>
   );
 }

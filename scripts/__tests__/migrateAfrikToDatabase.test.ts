@@ -6,6 +6,10 @@ import coteDIvoire from "../../dataset/source/afrik/pays/CIV.json";
 import { createAdminClient } from "@/lib/supabase/admin";
 import type { Country } from "@/types/afrik";
 import { loadAllCountries } from "@/lib/afrik/loaders/countryLoader";
+import {
+  loadAllDossiers,
+  loadDossiers,
+} from "@/lib/afrik/loaders/dossierJsonLoader";
 import { loadAllLanguageFamilies } from "@/lib/afrik/loaders/languageFamilyLoader";
 import { loadAllLanguages } from "@/lib/afrik/loaders/languageCsvLoader";
 import {
@@ -52,6 +56,7 @@ vi.mock("@/lib/afrik/loaders/languageCsvLoader");
 vi.mock("@/lib/afrik/loaders/languageProvenanceLoader");
 vi.mock("@/lib/afrik/loaders/peopleLoader");
 vi.mock("@/lib/afrik/loaders/countryLoader");
+vi.mock("@/lib/afrik/loaders/dossierJsonLoader");
 vi.mock("@/lib/afrik/loaders/nameRecordJsonLoader");
 vi.mock("@/lib/afrik/loaders/peopleAppellationLoader");
 vi.mock("@/lib/afrik/loaders/patronymeJsonLoader");
@@ -96,7 +101,8 @@ type TableName =
   | "afrik_peoples"
   | "afrik_countries"
   | "afrik_people_countries"
-  | "afrik_people_relations";
+  | "afrik_people_relations"
+  | "afrik_dossiers";
 
 interface DatabaseRow {
   id?: string;
@@ -135,6 +141,7 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
     afrik_countries: [...(options.rows?.afrik_countries ?? [])],
     afrik_people_countries: [...(options.rows?.afrik_people_countries ?? [])],
     afrik_people_relations: [...(options.rows?.afrik_people_relations ?? [])],
+    afrik_dossiers: [...(options.rows?.afrik_dossiers ?? [])],
   };
   const operations: UpsertOperation[] = [];
   const upsertCalls: UpsertCall[] = [];
@@ -260,6 +267,13 @@ describe("migrateAfrikToDatabase", () => {
     // A JSON import widens every string to `string`, so the fiche's
     // `sources[].tier` loses its literal type against FicheSource.
     vi.mocked(loadAllCountries).mockResolvedValue([coteDIvoire as Country]);
+    vi.mocked(loadAllDossiers).mockReturnValue({ dossiers: [], errors: [] });
+    vi.mocked(loadDossiers).mockResolvedValue({
+      total: 0,
+      inserted: 0,
+      chapters: 0,
+      errors: [],
+    });
     vi.mocked(loadAllRelationFiles).mockReturnValue([]);
     vi.mocked(loadRelations).mockResolvedValue({
       total: 0,

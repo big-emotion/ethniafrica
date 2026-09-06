@@ -25,14 +25,14 @@ function readModel(file: StrictModelFile): unknown {
   return JSON.parse(readFileSync(join(PUBLIC_ROOT, file), "utf-8"));
 }
 
-describe("the sixteen strict models", () => {
+describe("the seventeen strict models", () => {
   // @req REQ-143
   it("are exactly the files public/modele-*.json holds", () => {
     const onDisk = readdirSync(PUBLIC_ROOT)
       .filter((name) => /^modele-.*\.json$/.test(name))
       .sort();
     expect(onDisk).toEqual([...STRICT_MODEL_FILES].sort());
-    expect(STRICT_MODEL_FILES).toHaveLength(16);
+    expect(STRICT_MODEL_FILES).toHaveLength(17);
   });
 
   // @req REQ-143

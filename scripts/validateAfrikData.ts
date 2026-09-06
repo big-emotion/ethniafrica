@@ -17,6 +17,7 @@ import { pathToFileURL } from "url";
 import { parse } from "csv-parse/sync";
 import { evaluateSourceUrl } from "@/lib/sources/authorized-source-catalog";
 import { parseRelationFile } from "../src/lib/afrik/parsers/relationParser";
+import { parseDossierFile } from "../src/lib/afrik/parsers/dossierParser";
 import { parseNameRecordFile } from "../src/lib/afrik/parsers/nameRecordParser";
 import { parsePatronymeFile } from "../src/lib/afrik/parsers/patronymeParser";
 import type { SourceTier } from "../src/types/sources";
@@ -1603,6 +1604,60 @@ export function checkPopulationSumsStrict(
     if (sum < 99 || sum > 101) {
       errors.push(
         `${countryId}: population percentages sum to ${sum.toFixed(2)}% (strict target 99–101%)`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings: [] };
+}
+
+/**
+ * FR28-declared – Every country of the African reference set must declare an
+ * ethnic split at all.
+ *
+ * FR28 and FR28-strict weigh the *sum* of the declared shares, so they have
+ * nothing to weigh when a fiche declares none, and both skip an empty list.
+ * A fiche stating no split therefore had no wrong sum and passed in silence —
+ * which is how MDG reached the reader showing its national total above an
+ * empty chapter. The absence is the finding; this check is what states it.
+ *
+ * Scope (REQ-131): same African reference set as checkPopulationSums.
+ */
+export function checkPopulationSplitDeclared(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+
+  const paysDir = path.join(datasetRoot, "pays");
+  if (!fs.existsSync(paysDir)) {
+    return { ok: true, errors: [], warnings: [] };
+  }
+
+  const jsonFiles = fs.readdirSync(paysDir).filter((f) => f.endsWith(".json"));
+  for (const file of jsonFiles) {
+    const fullPath = path.join(paysDir, file);
+    let data: {
+      id?: string;
+      content?: {
+        demographics?: {
+          peoples?: unknown[];
+        };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      // FR28 already reports parse failures; stay silent here to avoid duplicates.
+      continue;
+    }
+
+    const countryId = data.id ?? path.basename(file, ".json");
+    if (!AFRICAN_REFERENCE_COUNTRY_CODES.has(countryId)) continue;
+
+    const peoples = data?.content?.demographics?.peoples;
+    if (!peoples || peoples.length === 0) {
+      errors.push(
+        `${countryId}: content.demographics.peoples declares no people — the fiche publishes its national total above an empty chapter; state the split, or record why it is unavailable`
       );
     }
   }
@@ -3718,6 +3773,62 @@ export function checkNameRecordModel(datasetRoot: string): ValidationResult {
 }
 
 /**
+ * DOS_* dossier fiches — strict shape plus the contradictoire rule.
+ *
+ * The parser holds the rules; this check is what makes CI run them over the
+ * dataset. Two things it adds on top: a slug must be unique across the corpus,
+ * because it is the URL segment the one dossier route resolves on, and a fiche
+ * whose filename disagrees with its identifier is refused rather than loaded
+ * under a name nothing can find it by.
+ */
+export function checkDossierFicheModel(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const dossierDir = path.join(datasetRoot, "dossiers");
+
+  if (!fs.existsSync(dossierDir)) return { ok: true, errors, warnings };
+
+  const seenSlugs = new Map<string, string>();
+
+  for (const file of fs
+    .readdirSync(dossierDir)
+    .filter((f) => f.endsWith(".json"))) {
+    const fullPath = path.join(dossierDir, file);
+    let raw: unknown;
+    try {
+      raw = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      errors.push(`REQ-114: ${file}: could not parse JSON`);
+      continue;
+    }
+
+    const parsed = parseDossierFile(raw);
+    if (!parsed.success || !parsed.data) {
+      for (const message of parsed.errors) {
+        errors.push(`REQ-114: ${file}: ${message}`);
+      }
+      continue;
+    }
+
+    const dossier = parsed.data;
+
+    if (file !== `${dossier.id}.json`) {
+      errors.push(`REQ-114: ${file}: file should be named ${dossier.id}.json`);
+    }
+
+    const claimedBy = seenSlugs.get(dossier.slug);
+    if (claimedBy) {
+      errors.push(
+        `REQ-114: ${file}: slug "${dossier.slug}" is already used by ${claimedBy} — a slug is the address the dossier route resolves on`
+      );
+    }
+    seenSlugs.set(dossier.slug, file);
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
  * True when a source carries publishable authority — the current-vocabulary
  * equivalent of the retired "Tier 1/2". `unverified` and the unadjudicated
  * `needs_review` are deliberately excluded: both are legal standings that
@@ -4383,6 +4494,11 @@ export function checkTranslationClassCoverage(
  * rely on, truncated ids such as PPL_MO, and family lists naming peoples never
  * written. Retired ids are not in that tail: FR27 Retired identifiers stays a
  * hard error, so a merge or rename cannot leave a link behind.
+
+ *
+ * FR28-declared was advisory for exactly one fiche — MDG, the only country of
+ * the 54 that had never declared an ethnic split. It left this set with that
+ * fiche, as announced, and is a hard error since.
  */
 export const SOFT_CHECK_NAMES: ReadonlySet<string> = new Set([
   "FR52-coverage People-to-language coverage",
@@ -4574,6 +4690,12 @@ async function main() {
     result: checkPopulationSumsStrict(datasetRoot),
   });
 
+  console.log("FR28-declared – Population split declared...");
+  newChecks.push({
+    name: "FR28-declared Population split declared",
+    result: checkPopulationSplitDeclared(datasetRoot),
+  });
+
   console.log("FR29 – ISO validity...");
   newChecks.push({
     name: "FR29 ISO validity",
@@ -4751,6 +4873,14 @@ async function main() {
   newChecks.push({
     name: "REQ-133/REQ-134 Patronyme fiche model",
     result: checkPatronymeFicheModel(datasetRoot),
+  });
+
+  console.log(
+    "REQ-114 - Dossier fiche model (strict shape + both readings per chapter)..."
+  );
+  newChecks.push({
+    name: "REQ-114 Dossier fiche model",
+    result: checkDossierFicheModel(datasetRoot),
   });
 
   console.log(

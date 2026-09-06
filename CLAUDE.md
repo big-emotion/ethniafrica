@@ -83,7 +83,7 @@ Supabase tables: afrik_language_families, afrik_languages, afrik_peoples,
         ↓ src/api/v2/services/*
 ```
 
-Fiche shape is fixed by the 16 strict models in `public/modele-*.json`: peuple, pays, linguistique, langue, media, relation, source, migration, recit-oral, frontiere-coloniale, and the six name models — nom and its five sub-models nom-jamu, nom-nisba, nom-patronyme, nom-patronymique, nom-totemique. Count the directory before quoting the number: this sentence listed nine while sixteen were on disk, and `src/__tests__/agentInstructionsBilingual.test.ts` now holds it to the directory. Never skip, rename, or invent a section.
+Fiche shape is fixed by the 17 strict models in `public/modele-*.json`: dossier, peuple, pays, linguistique, langue, media, relation, source, migration, recit-oral, frontiere-coloniale, and the six name models — nom and its five sub-models nom-jamu, nom-nisba, nom-patronyme, nom-patronymique, nom-totemique. Count the directory before quoting the number: this sentence once listed nine while sixteen were on disk, and `src/__tests__/agentInstructionsBilingual.test.ts` now holds it to the directory. Never skip, rename, or invent a section.
 
 Hierarchy: **linguistic family → language → people → country.** IDs: families `FLG_*`, languages ISO 639-3, peoples `PPL_*`, countries ISO 3166-1 alpha-3.
 

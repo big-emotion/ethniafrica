@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { StateMedallion } from "@/components/ui/StateMedallion";
-import { DEFAULT_LOCALE } from "@/lib/locale";
+import { FALLBACK_LOCALE } from "@/lib/locale";
 import { getLocalizedRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
@@ -25,7 +25,7 @@ interface EmptyStateProps {
 export function EmptyState({
   message,
   variant,
-  lang = DEFAULT_LOCALE,
+  lang = FALLBACK_LOCALE,
   retryHref,
   retryLabel,
   children,

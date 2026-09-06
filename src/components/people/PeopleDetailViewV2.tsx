@@ -1,3 +1,4 @@
+import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 import {
@@ -164,6 +165,12 @@ export function PeopleDetailViewV2({
           contemporaryUsage={data.hero.contemporaryUsage}
           isoCode={people.languages?.isoCodes?.[0]}
         />
+        <DossierLinks
+          language={language}
+          kind="people"
+          id={people.id}
+          section="appellations"
+        />
       </FicheSection>
 
       {/* 2. Why the map draws no border — the globe's grammar, in prose. */}
@@ -219,6 +226,12 @@ export function PeopleDetailViewV2({
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
         )}
+        <DossierLinks
+          kind="people"
+          id={people.id}
+          section="history"
+          language={language}
+        />
       </FicheSection>
 
       <OralNarrativesSection peopleId={data.hero.peopleId} />
@@ -243,6 +256,12 @@ export function PeopleDetailViewV2({
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
         )}
+        <DossierLinks
+          kind="people"
+          id={people.id}
+          section="culture"
+          language={language}
+        />
         {/* The same report control the country fiche's culture section
             carries. It used to live only on the legacy tabbed people view;
             retiring that view without moving it here would have taken the

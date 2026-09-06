@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("@/lib/supabase/queries/afrik/sitemapEntries", () => ({
   getSitemapEntityIds: vi.fn(),
@@ -40,6 +40,10 @@ describe("sitemap.xml", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     mockedEntityIds.mockResolvedValue(CORPUS);
+  });
+
+  afterEach(() => {
+    vi.unstubAllEnvs();
   });
 
   // A curator raising a source above the unverified tier must move the name
@@ -129,7 +133,7 @@ describe("sitemap.xml", () => {
     const all = await urls();
     const base = `https://${CANONICAL_DOMAIN}`;
 
-    for (const page of ["atlasHub", "dossiersHub", "jeuxHub"] as const) {
+    for (const page of ["atlasHub", "jeuxHub"] as const) {
       expect(all, page).not.toContain(
         `${base}${getLocalizedRoute("fr", page)}`
       );
@@ -185,6 +189,15 @@ describe("sitemap.xml", () => {
     expect(new Set(all).size).toBe(all.length);
   });
 
+  // English content may exist in the repository without being announced to
+  // crawlers before the editorial launch gate is opened.
+  // @req REQ-110
+  it("emits no English URL while the site is French-only", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
+
+    expect((await urls()).some((url) => url.includes("/en"))).toBe(false);
+  });
+
   // @req REQ-110
   it("keeps UNLISTED_ROUTES documented alongside what it excludes", () => {
     expect(UNLISTED_ROUTES).toContain("admin");
@@ -212,6 +225,10 @@ describe("sitemap.xml", () => {
 });
 
 describe("robots.txt", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
+
   // public/robots.txt carried no Sitemap line, and a hard-coded one would have
   // been the first thing to go stale on a domain change.
   // @req REQ-110
@@ -232,6 +249,26 @@ describe("robots.txt", () => {
     expect(disallow).toContain("/fr/admin/");
     expect(disallow).not.toContain("/fr/politique-confidentialite");
     expect(disallow).not.toContain("/fr/confidentialite");
+  });
+
+  // @req REQ-110
+  it("keeps every English route out of crawlers while English is unpublished", () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
+    const rule = robots().rules;
+    const disallow = Array.isArray(rule) ? rule[0].disallow : rule.disallow;
+
+    expect(disallow).toContain("/en/");
+  });
+
+  // @req REQ-110
+  it("allows public English routes but not either admin tree in bilingual mode", () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-fr-default");
+    const rule = robots().rules;
+    const disallow = Array.isArray(rule) ? rule[0].disallow : rule.disallow;
+
+    expect(disallow).not.toContain("/en/");
+    expect(disallow).toContain("/en/admin/");
+    expect(disallow).toContain("/fr/admin/");
   });
 
   // Named routes are what a rewrite would drop; this holds the whole rule to

@@ -1,3 +1,4 @@
+import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import { CountryParchment } from "@/components/country/CountryParchment";
@@ -113,6 +114,12 @@ export function CountryRecordView({
 
         <Section title="Culture et société">
           <CultureGrid data={data.culture} />
+          <DossierLinks
+            kind="country"
+            id={country.id}
+            section="culture"
+            language={language}
+          />
           <div data-testid="section-flag-target-culture" className="mt-3">
             <FlagTarget
               target={{

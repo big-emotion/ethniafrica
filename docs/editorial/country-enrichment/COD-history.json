@@ -1,0 +1,631 @@
+{
+  "schemaVersion": "1.0",
+  "countryId": "COD",
+  "countryName": "Democratic Republic of the Congo",
+  "updatedAt": "2026-09-06",
+  "status": "proposal_ready_for_editorial_approval",
+  "scopePolicy": {
+    "territorialFrame": "Use the present-day DRC only as a geographic overlay. Do not imply that its borders, name, or political unity existed before colonization.",
+    "chronology": [
+      "archaeological_sequence",
+      "precolonial_and_nineteenth_century_polities",
+      "colonial_administrations",
+      "independent_state_periods",
+      "modern_event_timeline"
+    ],
+    "terminology": "Describe kingdoms, empires, states, chiefdoms, courts, and decentralized political organization according to the evidence. Do not normalize every formation to kingdom.",
+    "sourceRule": "Every publishable claim must cite at least one accepted source. Transborder formations must state where their political center and present-day overlap were located."
+  },
+  "reviewMetrics": {
+    "formationRowsReviewed": 10,
+    "readyForStructuredCountryTimeline": 7,
+    "contextOnly": 1,
+    "partialEvidence": 1,
+    "reclassifyOutsidePolityList": 1,
+    "administrativePeriodsReviewed": 6,
+    "modernEventRowsReviewed": 9,
+    "modernEventRowsReadyForEditorialReview": 9,
+    "metricCaveat": "These figures measure review decisions in this proposal. They are not a completeness score for DRC history."
+  },
+  "currentDataAudit": {
+    "status": "replacement_required_after_approval",
+    "issues": [
+      {
+        "field": "content.kingdoms",
+        "issue": "The array mixes precolonial polities, colonial administrations, and the modern republic."
+      },
+      {
+        "field": "content.kingdoms[].politicalCenters and content.kingdoms[].dominantPeoples",
+        "issue": "Several values were split at commas inside parenthetical phrases, producing malformed list items such as Katanga (Haut-Lomami / Lualaba) and Mongo (Nkundo / Ntomba / Ekonda)."
+      },
+      {
+        "field": "content.historicalNames.antiquity and content.historicalFacts.ancientPeriods",
+        "issue": "The current text begins with an unsourced broad migration claim and omits the dated Upemba archaeological sequence."
+      },
+      {
+        "field": "content.historicalNames.middleAges",
+        "issue": "A European period label is applied to formations whose chronology and evidence should be stated directly."
+      },
+      {
+        "field": "content.historicalFacts.precolonial",
+        "issue": "Mongo political organization, Mangbetu courts, Zande kingdoms, and long-distance trade are compressed into unsourced generalizations."
+      }
+    ]
+  },
+  "archaeologicalSequences": [
+    {
+      "id": "COD-HIST-UPemba",
+      "label": "Upemba Depression archaeological sequence",
+      "location": "Former Katanga Province, southern DRC",
+      "decision": "add_as_earliest_sourced_track",
+      "summary": "The DRC tentative-list submission records more than 40 archaeological sites, six partially excavated sites, and a sequence spanning more than two millennia, supported by more than 55 radiocarbon and thermoluminescence dates.",
+      "phases": [
+        {
+          "label": "Later Stone Age",
+          "sourceDating": "2,340–145 BP",
+          "caveat": "Retain the source's BP notation until a specialist verifies the calibration and interpretation of both endpoints."
+        },
+        {
+          "label": "Kamibambian",
+          "sourceDating": "7th century CE"
+        },
+        {
+          "label": "Early Kisalian",
+          "sourceDating": "8th–10th centuries CE"
+        },
+        {
+          "label": "Classical Kisalian",
+          "sourceDating": "10th–12th centuries CE"
+        },
+        {
+          "label": "Kabambian A",
+          "sourceDating": "13th–15th centuries CE"
+        },
+        {
+          "label": "Kabambian B",
+          "sourceDating": "16th–17th centuries CE"
+        },
+        {
+          "label": "Recent Luba",
+          "sourceDating": "18th–20th centuries CE"
+        }
+      ],
+      "sourceIds": ["SRC-UNESCO-UPEMBA"],
+      "caveats": [
+        "The page is a State Party tentative-list submission hosted by UNESCO, not an inscription or endorsement by the World Heritage Committee.",
+        "The sequence concerns the Upemba region and must not be generalized to the entire territory of the present-day DRC."
+      ]
+    }
+  ],
+  "politicalFormations": [
+    {
+      "id": "COD-HIST-KONGO",
+      "label": "Kingdom of Kongo",
+      "formationType": "centralized_transborder_kingdom",
+      "period": "founded ca. 1350–1400; centralized kingdom fractured in the 17th–18th centuries",
+      "geographicFit": "Relevant to the Lower Congo and Kongo Central region, but the capital Mbanza Kongo is in present-day Angola and the wider Kongo region spans Angola, the Republic of the Congo, and the DRC.",
+      "decision": "retain_with_transborder_caveat",
+      "sourceIds": ["SRC-MET-KONGO-GALLERIES", "SRC-MET-KONGO-NKISI"],
+      "caveat": "Do not describe Mbanza Kongo as a political center located inside the present-day DRC. Avoid a single hard end date that erases successor polities."
+    },
+    {
+      "id": "COD-HIST-LUBA",
+      "label": "Luba state / empire",
+      "formationType": "multiethnic_state_and_sphere_of_influence",
+      "period": "late 16th or 17th century–mid to late 19th century",
+      "geographicFit": "Core relevance to the southern and south-central DRC, especially the Upemba and Lualaba-Haut-Lomami region; political and artistic influence extended beyond a single fixed border.",
+      "decision": "retain_with_precise_geography",
+      "sourceIds": [
+        "SRC-UNESCO-UPEMBA",
+        "SRC-MET-CENTRAL-AFRICA-1600",
+        "SRC-MET-LUBA-LUNDA"
+      ],
+      "caveat": "Keep the archaeological sequence distinct from later dynastic and imperial narratives; neither automatically proves the other."
+    },
+    {
+      "id": "COD-HIST-LUNDA",
+      "label": "Lunda state / empire",
+      "formationType": "transborder_empire_and_network",
+      "period": "ca. 1600–mid to late 19th century",
+      "geographicFit": "Relevant to southern DRC, while the wider Lunda political and commercial network also covered present-day Angola and Zambia.",
+      "decision": "retain_with_transborder_caveat",
+      "sourceIds": [
+        "SRC-MET-CENTRAL-AFRICA-1600",
+        "SRC-MET-LUBA-LUNDA",
+        "SRC-MET-CENTRAL-AFRICA-1800"
+      ],
+      "caveat": "Do not present Lunda as a polity contained by modern DRC borders or merge its client and successor states into one undifferentiated record."
+    },
+    {
+      "id": "COD-HIST-KUBA",
+      "label": "Kuba kingdom",
+      "formationType": "multiethnic_kingdom",
+      "period": "ca. 1625–late 19th century in the reviewed chronology",
+      "geographicFit": "Direct relevance to the south-central DRC in the Kasai region.",
+      "decision": "add_to_country_timeline",
+      "sourceIds": [
+        "SRC-MET-CENTRAL-AFRICA-1600",
+        "SRC-MET-CENTRAL-AFRICA-1800"
+      ],
+      "caveat": "The reviewed sources support formation around Shyaam aMbul aNgoong and an economic apogee around 1870–1890; a dedicated source is still desirable for institutional continuity after the 19th century."
+    },
+    {
+      "id": "COD-HIST-KAZEMBE",
+      "label": "Lunda state of Kazembe",
+      "formationType": "lunda_successor_state",
+      "period": "established through an eastward migration ca. 1740–1760",
+      "geographicFit": "The cited state was centered in present-day northeastern Zambia and connected the Lake Mweru and southeastern DRC region to wider trade networks.",
+      "decision": "retain_as_transborder_context_not_core_drc_polity",
+      "sourceIds": ["SRC-MET-CENTRAL-AFRICA-1600"],
+      "caveat": "Do not list Kazembe as a DRC-centered kingdom without a source that identifies a political center or governed territory inside present-day DRC."
+    },
+    {
+      "id": "COD-HIST-YEKE",
+      "label": "Yeke / Garanganze polity under Msiri",
+      "formationType": "nineteenth_century_conquest_state",
+      "period": "ca. 1850–1891",
+      "geographicFit": "Direct relevance to southeastern DRC, with Bunkeya in present-day Katanga as its capital and influence between the upper Lualaba and Luapula rivers.",
+      "decision": "add_to_country_timeline",
+      "sourceIds": ["SRC-MET-CENTRAL-AFRICA-1800", "SRC-RMCA-YEKE"],
+      "caveat": "Describe the polity as heterogeneous and historically specific to Msiri's rule; do not project its maximum claimed extent onto a stable modern border."
+    },
+    {
+      "id": "COD-HIST-CHOKWE",
+      "label": "Chokwe chiefdoms",
+      "formationType": "expanding_chiefdoms_and_trade_networks",
+      "period": "ca. 1830–1900",
+      "geographicFit": "Relevant to the savanna regions of present-day Angola and southern DRC.",
+      "decision": "add_as_plural_formations",
+      "sourceIds": ["SRC-MET-CENTRAL-AFRICA-1800", "SRC-MET-CHOKWE-CHIEF"],
+      "caveat": "Do not turn several Chokwe chiefdoms and commercial networks into a single Chokwe empire without stronger evidence."
+    },
+    {
+      "id": "COD-HIST-MANGBETU",
+      "label": "Mangbetu courts and states",
+      "formationType": "northeastern_court_polities",
+      "period": "18th–19th centuries provisionally; King Mbunza's court is directly attested for 1870",
+      "geographicFit": "Direct relevance to northeastern DRC.",
+      "decision": "retain_with_partial_evidence",
+      "sourceIds": ["SRC-MET-CENTRAL-AFRICA-1800"],
+      "caveat": "The reviewed online source directly supports the 1870 court but not the full proposed 18th–19th-century range. Obtain a dedicated scholarly history before publishing the broader period."
+    },
+    {
+      "id": "COD-HIST-ZANDE",
+      "label": "Zande kingdoms",
+      "formationType": "connected_crossborder_kingdoms",
+      "period": "mid-18th–19th centuries",
+      "geographicFit": "Relevant to northeastern DRC and adjacent parts of the Central African Republic and South Sudan; colonial borders divided the earlier political landscape.",
+      "decision": "retain_but_replace_sultanates_label",
+      "sourceIds": ["SRC-HAU-ZANDE-KINGDOMS"],
+      "caveat": "Use the plural. The evidence describes connected but substantially autonomous kingdoms under Avongara rulers, not one unified sultanate."
+    },
+    {
+      "id": "COD-HIST-MONGO",
+      "label": "Mongo political organization",
+      "formationType": "decentralized_and_local_political_organization",
+      "period": "requires a dedicated source",
+      "geographicFit": "Relevant to the central Congo Basin and present-day Equateur and Tshuapa regions.",
+      "decision": "remove_from_kingdom_list_and_research_separately",
+      "sourceIds": [],
+      "caveat": "The current label 'Mongo chiefdoms' treats a large umbrella identity as one polity. Retain Mongo in people and regional-history contexts, but do not publish a polity entry until its varied institutions are documented."
+    }
+  ],
+  "administrationsAndStates": [
+    {
+      "label": "Congo Free State",
+      "period": "1885–1908",
+      "category": "colonial_regime",
+      "decision": "move_out_of_polity_list",
+      "sourceIds": ["SRC-MET-CENTRAL-AFRICA-1800", "SRC-RMCA-MUSEUM-HISTORY"]
+    },
+    {
+      "label": "Belgian Congo",
+      "period": "1908–1960",
+      "category": "colonial_administration",
+      "decision": "move_out_of_polity_list",
+      "sourceIds": ["SRC-RMCA-MUSEUM-HISTORY", "SRC-LOC-ZAIRE-STUDY"]
+    },
+    {
+      "label": "Republic of the Congo (Léopoldville)",
+      "period": "30 June 1960–31 July 1964",
+      "category": "independent_state",
+      "decision": "add_to_state_name_timeline",
+      "sourceIds": ["SRC-UN-ZAIRE-AUTHORITY", "SRC-LOC-ZAIRE-STUDY"]
+    },
+    {
+      "label": "Democratic Republic of the Congo",
+      "period": "1 August 1964–26 October 1971",
+      "category": "independent_state",
+      "decision": "add_to_state_name_timeline",
+      "sourceIds": ["SRC-UN-ZAIRE-AUTHORITY"]
+    },
+    {
+      "label": "Republic of Zaire",
+      "period": "27 October 1971–16 May 1997",
+      "category": "independent_state",
+      "decision": "retain_in_state_name_timeline",
+      "sourceIds": ["SRC-UN-ZAIRE-AUTHORITY", "SRC-UN-TERMINOLOGY-1997"]
+    },
+    {
+      "label": "Democratic Republic of the Congo",
+      "period": "since 17 May 1997",
+      "category": "independent_state",
+      "decision": "retain_in_state_name_timeline",
+      "sourceIds": ["SRC-UN-TERMINOLOGY-1997"]
+    }
+  ],
+  "modernEvents": [
+    {
+      "id": "COD-HIST-MODERN-INDEPENDENCE-1960",
+      "label": "Independence from Belgium",
+      "period": "30 June 1960",
+      "category": "decolonization_and_state_foundation",
+      "summary": "The former Belgian Congo became the independent Republic of the Congo, with Léopoldville as its capital.",
+      "decision": "add_to_modern_timeline",
+      "sourceIds": ["SRC-UN-ONUC-HISTORY", "SRC-US-OH-CONGO-1960-1965"],
+      "caveat": "Keep the independence event distinct from the crises that began immediately afterward; do not compress both into one celebratory or catastrophic sentence."
+    },
+    {
+      "id": "COD-HIST-MODERN-CONGO-CRISIS",
+      "label": "Congo Crisis and ONUC",
+      "period": "July 1960–June 1964",
+      "category": "constitutional_crisis_secessions_and_international_intervention",
+      "summary": "The new state faced rival authorities, the secessions of Katanga and South Kasai, foreign intervention, the killing of former Prime Minister Patrice Lumumba in 1961, and a major United Nations operation. Katanga was reintegrated in 1963, and ONUC withdrew by 30 June 1964.",
+      "decision": "add_with_cold_war_and_internal_plurality",
+      "sourceIds": ["SRC-UN-ONUC-HISTORY", "SRC-US-OH-CONGO-1960-1965"],
+      "caveat": "The crisis had internal, regional, Belgian, United Nations, and Cold War dimensions. Do not attribute it to a single actor or reduce it to the Katanga secession alone."
+    },
+    {
+      "id": "COD-HIST-MODERN-MOBUTU-COUP",
+      "label": "Mobutu's second coup and consolidation of rule",
+      "period": "25 November 1965–1997",
+      "category": "military_coup_and_authoritarian_regime",
+      "summary": "Army commander Joseph-Désiré Mobutu removed President Joseph Kasa-Vubu and Prime Minister Évariste Kimba on 25 November 1965 and established the regime that governed the country until 1997.",
+      "decision": "add_to_modern_timeline",
+      "sourceIds": ["SRC-US-OH-CONGO-1960-1965"],
+      "caveat": "A dedicated follow-up should document the regime's institutions, repression, political economy, foreign support, and domestic opposition rather than treating three decades as one uniform period."
+    },
+    {
+      "id": "COD-HIST-MODERN-ZAIRE-AUTHENTICITY",
+      "label": "Zaire and the authenticity policy",
+      "period": "from 1971; official country name 27 October 1971–16 May 1997",
+      "category": "state_renaming_and_political_cultural_programme",
+      "summary": "Mobutu's government renamed the country, river, and currency Zaire in 1971 as part of a wider state-led authenticity programme; the United Nations records the official country-name change on 27 October 1971.",
+      "decision": "cross_link_event_and_state_name_timeline",
+      "sourceIds": ["SRC-DRC-PRESIDENCY-MOBUTU", "SRC-UN-ZAIRE-AUTHORITY"],
+      "caveat": "Present authenticity as a political programme with contested consequences, not as an uncomplicated recovery of a single precolonial culture."
+    },
+    {
+      "id": "COD-HIST-MODERN-FIRST-CONGO-WAR",
+      "label": "First Congo War, fall of Mobutu, and restoration of the DRC name",
+      "period": "1996–17 May 1997",
+      "category": "regional_war_and_regime_change",
+      "summary": "A rebellion that began in eastern Zaire in 1996 expanded with regional military support. AFDL forces led by Laurent-Désiré Kabila entered Kinshasa in May 1997, Mobutu's regime ended, and the country resumed the name Democratic Republic of the Congo on 17 May.",
+      "decision": "add_with_regional_context",
+      "sourceIds": [
+        "SRC-UN-MONUC-BACKGROUND",
+        "SRC-UN-YEARBOOK-1997",
+        "SRC-UN-TERMINOLOGY-1997"
+      ],
+      "caveat": "Do not frame the change as a purely domestic transfer of power; the war, regional interventions, refugee crisis, and allegations of mass violence require explicit treatment."
+    },
+    {
+      "id": "COD-HIST-MODERN-SECOND-CONGO-WAR",
+      "label": "Second Congo War, Lusaka ceasefire, and creation of MONUC",
+      "period": "1998–1999 peace framework; conflict and implementation continued afterward",
+      "category": "regional_war_and_peace_process",
+      "summary": "A new rebellion began in the Kivu provinces in 1998 and drew in several regional states and Congolese armed movements. The Lusaka Ceasefire Agreement was signed in July 1999, and the Security Council established MONUC on 30 November 1999 to support ceasefire observation and disengagement.",
+      "decision": "add_as_regionalized_conflict_and_process",
+      "sourceIds": ["SRC-UN-MONUC-BACKGROUND"],
+      "caveat": "The ceasefire and creation of MONUC did not end violence throughout the country. Avoid giving 1999 as a clean endpoint to the war or its humanitarian consequences."
+    },
+    {
+      "id": "COD-HIST-MODERN-INTER-CONGOLESE-TRANSITION",
+      "label": "Global and Inclusive Agreement and transitional institutions",
+      "period": "17 December 2002–2003",
+      "category": "negotiated_transition",
+      "summary": "Congolese parties signed the Global and Inclusive Agreement in Pretoria on 17 December 2002. The Inter-Congolese Dialogue endorsed it at Sun City in April 2003 together with the transitional constitutional and security framework, opening a power-sharing transition.",
+      "decision": "add_to_modern_timeline",
+      "sourceIds": ["SRC-UN-PEACEMAKER-SUN-CITY", "SRC-UN-PRESS-SUN-CITY"],
+      "caveat": "Treat the agreement as a negotiated transition framework, not as proof that conflict, armed-group activity, or territorial fragmentation ended immediately."
+    },
+    {
+      "id": "COD-HIST-MODERN-CONSTITUTION-ELECTIONS-2006",
+      "label": "Constitution of the Third Republic and 2006 elections",
+      "period": "December 2005–6 December 2006",
+      "category": "constitutional_and_electoral_transition",
+      "summary": "Voters approved a new constitution in December 2005, and it entered into force on 18 February 2006. Legislative and presidential elections followed in July and October; Joseph Kabila's inauguration on 6 December concluded the transition established by the 2002 agreement.",
+      "decision": "add_to_modern_timeline",
+      "sourceIds": ["SRC-DRC-CONSTITUTION-2006", "SRC-UN-MONUC-BACKGROUND"],
+      "caveat": "Describe the institutional transition separately from continuing insecurity and armed-group activity, especially in the east."
+    },
+    {
+      "id": "COD-HIST-MODERN-PEACEFUL-TRANSFER-2019",
+      "label": "First peaceful transfer of presidential power",
+      "period": "30 December 2018–24 January 2019",
+      "category": "electoral_transition_and_transfer_of_power",
+      "summary": "Following elections held on 30 December 2018, Félix Tshisekedi was sworn in on 24 January 2019. The United Nations described the transition as the first peaceful transfer of power between heads of state in the country's history.",
+      "decision": "add_with_electoral_caveat",
+      "sourceIds": ["SRC-UN-SG-REPORT-2019"],
+      "caveat": "The cited United Nations report also notes flaws in implementing the 2016 political agreement. The peaceful transfer label must not be presented as an endorsement of every aspect of the electoral process."
+    }
+  ],
+  "publicationProposal": {
+    "recommendedSections": [
+      {
+        "id": "archaeology",
+        "label": "Archaeological sequences",
+        "firstEntry": "Upemba Depression",
+        "warning": "Regional sequence, not a national origin story."
+      },
+      {
+        "id": "political_formations",
+        "label": "Precolonial and nineteenth-century political formations",
+        "firstWave": [
+          "Kingdom of Kongo",
+          "Luba state / empire",
+          "Lunda state / empire",
+          "Kuba kingdom",
+          "Yeke / Garanganze polity",
+          "Chokwe chiefdoms",
+          "Zande kingdoms"
+        ]
+      },
+      {
+        "id": "colonial_administrations",
+        "label": "Colonial regimes and administrations",
+        "firstWave": ["Congo Free State", "Belgian Congo"]
+      },
+      {
+        "id": "independent_state",
+        "label": "Independent state and official names",
+        "firstWave": [
+          "Republic of the Congo (Léopoldville)",
+          "Democratic Republic of the Congo",
+          "Republic of Zaire",
+          "Democratic Republic of the Congo"
+        ]
+      },
+      {
+        "id": "modern_events",
+        "label": "Modern political and constitutional milestones",
+        "firstWave": [
+          "Independence from Belgium",
+          "Congo Crisis and ONUC",
+          "Mobutu's second coup and consolidation of rule",
+          "Zaire and the authenticity policy",
+          "First Congo War, fall of Mobutu, and restoration of the DRC name",
+          "Second Congo War, Lusaka ceasefire, and creation of MONUC",
+          "Global and Inclusive Agreement and transitional institutions",
+          "Constitution of the Third Republic and 2006 elections",
+          "First peaceful transfer of presidential power"
+        ],
+        "warning": "Selected milestones with explicit scope and caveats, not an exhaustive national political history."
+      }
+    ],
+    "doNotPublishYet": [
+      "A national history-completeness percentage.",
+      "The current generic first-millennium Bantu migration sentence without a dedicated archaeological and linguistic source review.",
+      "A broad 18th–19th-century Mangbetu period until a dedicated scholarly source is accepted.",
+      "Mongo as one kingdom or one uniform system of chiefdoms.",
+      "Kazembe as a DRC-centered polity.",
+      "Any claim that the present-day DRC existed as a unified precolonial territory.",
+      "A clean end date for conflicts whose armed violence and consequences continued after a peace agreement.",
+      "The 2019 peaceful transfer as an unqualified endorsement of the 2018 electoral process."
+    ]
+  },
+  "remainingResearch": [
+    {
+      "priority": "P0",
+      "topic": "Editorial approval",
+      "action": "Approve or amend the taxonomy, geographic-fit decisions, and first-wave entries before editing the production country fiche."
+    },
+    {
+      "priority": "P0",
+      "topic": "Production schema and presentation",
+      "action": "Design separate fields or sections for archaeology, political formations, colonial administrations, and independent state periods; test mobile first before migrating content."
+    },
+    {
+      "priority": "P1",
+      "topic": "Mangbetu",
+      "action": "Add a directly accessible scholarly source covering the formation, chronology, and plurality of Mangbetu states."
+    },
+    {
+      "priority": "P1",
+      "topic": "Mongo",
+      "action": "Document regional variation in Mongo political organization instead of searching for a single kingdom label."
+    },
+    {
+      "priority": "P1",
+      "topic": "Additional formations",
+      "action": "Review further regional polities in evidence-prioritized waves. This ten-row audit is a controlled first scope, not an exhaustive inventory."
+    },
+    {
+      "priority": "P2",
+      "topic": "Post-2019 contemporary history",
+      "action": "Review post-2019 political, security, electoral, and MONUSCO developments as a separately versioned contemporary-history pass; do not append changing events without a cutoff date and source review."
+    }
+  ],
+  "sources": [
+    {
+      "id": "SRC-UNESCO-UPEMBA",
+      "title": "Upemba Depression",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/fr/listesindicatives/963/",
+      "tier": "official_state_submission",
+      "accessedAt": "2026-09-06",
+      "caveat": "Tentative-list content is the responsibility of the submitting State Party and is not a World Heritage Committee endorsement."
+    },
+    {
+      "id": "SRC-MET-CENTRAL-AFRICA-1600",
+      "title": "Central Africa, 1600–1800 A.D.",
+      "publisher": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History",
+      "url": "https://82nd-and-fifth.metmuseum.org/toah/ht/09/afc.html",
+      "tier": "institutional_curatorial",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-MET-CENTRAL-AFRICA-1800",
+      "title": "Central Africa, 1800–1900 A.D.",
+      "publisher": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History",
+      "url": "https://82nd-and-fifth.metmuseum.org/toah/ht/10/afc.html",
+      "tier": "institutional_curatorial",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-MET-LUBA-LUNDA",
+      "title": "Kingdoms of the Savanna: The Luba and Lunda Empires",
+      "publisher": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History",
+      "url": "https://www.metmuseum.org/essays/kingdoms-of-the-savanna-the-luba-and-lunda-empires",
+      "tier": "institutional_curatorial",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-MET-KONGO-GALLERIES",
+      "title": "Kongo: Power and Majesty — Exhibition Galleries",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/exhibitions/listings/2015/kongo/exhibition-galleries",
+      "tier": "institutional_curatorial",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-MET-KONGO-NKISI",
+      "title": "Kneeling nkisi (power figure) — collection record",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/310982",
+      "tier": "institutional_curatorial",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-MET-CHOKWE-CHIEF",
+      "title": "Mwanangana (lord of the land) playing a sanza — collection record",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/316173",
+      "tier": "institutional_curatorial",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-RMCA-YEKE",
+      "title": "The Yeke and the Congo Free State, from confrontation to collaboration",
+      "publisher": "Royal Museum for Central Africa",
+      "url": "https://www.africamuseum.be/en/discover/history_articles/the_yeke_and_the_congo_free_state",
+      "tier": "institutional_research",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-HAU-ZANDE-KINGDOMS",
+      "title": "This kingdom will not be like the kingdom(s) in the era of Gbudue: On the rebirth of the Azande Kingdom",
+      "publisher": "HAU: Journal of Ethnographic Theory",
+      "url": "https://www.journals.uchicago.edu/doi/full/10.1086/732344",
+      "tier": "peer_reviewed",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-UN-ZAIRE-AUTHORITY",
+      "title": "Zaire — United Nations authority record",
+      "publisher": "United Nations Digital Library",
+      "url": "https://digitallibrary.un.org/record/878251",
+      "tier": "official_intergovernmental",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-UN-TERMINOLOGY-1997",
+      "title": "Terminology Bulletin No. 347, Corrigendum 5",
+      "publisher": "United Nations Secretariat",
+      "url": "https://digitallibrary.un.org/record/198733/files/ST_CS_SER-F_347-EN.pdf?ln=en",
+      "tier": "official_intergovernmental",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-LOC-ZAIRE-STUDY",
+      "title": "Zaire: A Country Study",
+      "publisher": "Federal Research Division, Library of Congress",
+      "url": "https://tile.loc.gov/storage-services/master/frd/frdcstdy/za/zairecountrystud00medi_0/zairecountrystud00medi_0.pdf",
+      "tier": "government_reference",
+      "accessedAt": "2026-09-06",
+      "caveat": "Published in 1994 and therefore suitable for historical background, not current political conditions."
+    },
+    {
+      "id": "SRC-RMCA-MUSEUM-HISTORY",
+      "title": "Museum history",
+      "publisher": "Royal Museum for Central Africa",
+      "url": "https://www.africamuseum.be/en/discover/history",
+      "tier": "institutional_reference",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-UN-ONUC-HISTORY",
+      "title": "United Nations Operation in the Congo — history and mandate",
+      "publisher": "United Nations Peacekeeping",
+      "url": "https://peacekeeping.un.org/sites/default/files/past/onucB.htm",
+      "tier": "official_intergovernmental",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-US-OH-CONGO-1960-1965",
+      "title": "The Congo, Decolonization, and the Cold War, 1960–1965",
+      "publisher": "Office of the Historian, United States Department of State",
+      "url": "https://history.state.gov/milestones/1961-1968/congo-decolonization",
+      "tier": "official_government_history",
+      "accessedAt": "2026-09-06",
+      "caveat": "Use alongside Congolese and United Nations sources. This is a United States institutional history that explicitly documents U.S. policy interests and intervention."
+    },
+    {
+      "id": "SRC-DRC-PRESIDENCY-MOBUTU",
+      "title": "Mobutu Sese Seko — former president biography",
+      "publisher": "Presidency of the Democratic Republic of the Congo",
+      "url": "https://www.presidence.cd/ancien-president-infos/5",
+      "tier": "official_national",
+      "accessedAt": "2026-09-06",
+      "caveat": "Official biographical summary; use for the government's stated chronology, not as the sole source for evaluating the regime."
+    },
+    {
+      "id": "SRC-UN-YEARBOOK-1997",
+      "title": "1997 United Nations Yearbook — Democratic Republic of the Congo",
+      "publisher": "United Nations",
+      "url": "https://digitallibrary.un.org/record/422574/files/626082-EN.pdf",
+      "tier": "official_intergovernmental",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-UN-MONUC-BACKGROUND",
+      "title": "MONUC background",
+      "publisher": "United Nations Peacekeeping",
+      "url": "https://peacekeeping.un.org/sites/default/files/past/monuc/background.shtml",
+      "tier": "official_intergovernmental",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-UN-PEACEMAKER-SUN-CITY",
+      "title": "Inter-Congolese Negotiations: The Final Act (Sun City Agreement)",
+      "publisher": "United Nations Peacemaker",
+      "url": "https://peacemaker.un.org/sites/default/files/document/files/2024/05/cd030402suncityagreement.pdf",
+      "tier": "primary_agreement",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-UN-PRESS-SUN-CITY",
+      "title": "Secretary-General commends endorsement of DRC transition agreements at Sun City",
+      "publisher": "United Nations Meetings Coverage and Press Releases",
+      "url": "https://press.un.org/en/2003/sgsm8654.doc.htm",
+      "tier": "official_intergovernmental",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-DRC-CONSTITUTION-2006",
+      "title": "Constitution of the Democratic Republic of the Congo",
+      "publisher": "Presidency of the Democratic Republic of the Congo",
+      "url": "https://presidence.cd/detail-texte-fondateur/1",
+      "tier": "official_national",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-UN-SG-REPORT-2019",
+      "title": "Update of the Secretary-General on progress in the electoral process and implementation of the 31 December 2016 political agreement",
+      "publisher": "United Nations Security Council",
+      "url": "https://digitallibrary.un.org/record/3792221/files/S_2019_159-EN.pdf",
+      "tier": "official_intergovernmental",
+      "accessedAt": "2026-09-06"
+    }
+  ]
+}

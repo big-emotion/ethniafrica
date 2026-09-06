@@ -8,6 +8,7 @@ vi.mock("next/navigation", () => ({
 }));
 
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { LocalePublicationProvider } from "@/components/layout/LocalePublicationProvider";
 import { LOCALE_COOKIE } from "@/lib/locale";
 import {
   getLocalizedRoute,
@@ -27,6 +28,19 @@ const cookieSetterOwner = () => {
 };
 
 const otherLocaleLink = (name: string) => screen.getByRole("link", { name });
+const renderSwitcher = (
+  language: "en" | "fr",
+  appearance: "disc" | "row" = "disc",
+  mode:
+    | "fr-only"
+    | "bilingual-fr-default"
+    | "bilingual-en-default" = "bilingual-en-default"
+) =>
+  render(
+    <LocalePublicationProvider value={mode}>
+      <LanguageSwitcher language={language} appearance={appearance} />
+    </LocalePublicationProvider>
+  );
 
 beforeEach(() => {
   navigation.pathname = "/";
@@ -43,7 +57,7 @@ describe("LanguageSwitcher — the other locale, named in itself", () => {
   // @req REQ-140
   it("offers the other locale and only the other locale", () => {
     navigation.pathname = getLocalizedRoute("en", "peoples");
-    render(<LanguageSwitcher language="en" />);
+    renderSwitcher("en");
 
     expect(otherLocaleLink("Français")).toBeInTheDocument();
     expect(screen.queryByRole("link", { name: "English" })).toBeNull();
@@ -55,7 +69,7 @@ describe("LanguageSwitcher — the other locale, named in itself", () => {
   // @req REQ-140
   it("declares the label's language and the destination's", () => {
     navigation.pathname = getLocalizedRoute("fr", "peoples");
-    render(<LanguageSwitcher language="fr" />);
+    renderSwitcher("fr");
 
     const link = otherLocaleLink("English");
     expect(link).toHaveAttribute("lang", "en");
@@ -65,11 +79,11 @@ describe("LanguageSwitcher — the other locale, named in itself", () => {
   // @req REQ-140
   it("gives the control a 44px hit area in both dresses", () => {
     navigation.pathname = getLocalizedRoute("en", "peoples");
-    render(<LanguageSwitcher language="en" />);
+    renderSwitcher("en");
     expect(otherLocaleLink("Français")).toHaveClass("min-h-11");
     cleanup();
 
-    render(<LanguageSwitcher language="en" appearance="row" />);
+    renderSwitcher("en", "row");
     expect(otherLocaleLink("Français")).toHaveClass("min-h-11");
     expect(otherLocaleLink("Français")).toHaveTextContent("Français");
   });
@@ -79,7 +93,7 @@ describe("LanguageSwitcher — the same page in the other locale (REQ-141)", () 
   // @req REQ-141
   it("targets the translated path, tail words included", () => {
     navigation.pathname = getPeopleLinksRoute("fr", "PPL_YORUBA");
-    render(<LanguageSwitcher language="fr" />);
+    renderSwitcher("fr");
 
     expect(otherLocaleLink("English")).toHaveAttribute(
       "href",
@@ -91,7 +105,7 @@ describe("LanguageSwitcher — the same page in the other locale (REQ-141)", () 
   it("keeps the query string the reader is holding", () => {
     navigation.pathname = getStaticPageRoute("en", "reports");
     window.history.replaceState({}, "", `${navigation.pathname}?status=open`);
-    render(<LanguageSwitcher language="en" />);
+    renderSwitcher("en");
 
     expect(otherLocaleLink("Français")).toHaveAttribute(
       "href",
@@ -102,7 +116,7 @@ describe("LanguageSwitcher — the same page in the other locale (REQ-141)", () 
   // @req REQ-140
   it("lands on the locale home from a page outside the locale tree", () => {
     navigation.pathname = "/docs/api";
-    render(<LanguageSwitcher language="en" />);
+    renderSwitcher("en");
 
     expect(otherLocaleLink("Français")).toHaveAttribute("href", "/fr");
   });
@@ -119,7 +133,7 @@ describe("LanguageSwitcher — the choice is remembered (REQ-140)", () => {
         written.push(value);
       });
 
-    render(<LanguageSwitcher language="en" />);
+    renderSwitcher("en");
     fireEvent.click(otherLocaleLink("Français"));
 
     cookieSetter.mockRestore();
@@ -133,8 +147,23 @@ describe("LanguageSwitcher — the choice is remembered (REQ-140)", () => {
   // @req REQ-140
   it("writes nothing until the reader clicks", () => {
     navigation.pathname = getLocalizedRoute("en", "countries");
-    render(<LanguageSwitcher language="en" />);
+    renderSwitcher("en");
 
     expect(document.cookie).not.toContain(`${LOCALE_COOKIE}=`);
   });
+});
+
+describe("LanguageSwitcher — unpublished English containment", () => {
+  // Both appearances are the complete viewport contract: the disc is the
+  // tablet/desktop control, while the row is the 320–430px tray control.
+  // @req REQ-140
+  it.each(["disc", "row"] as const)(
+    "renders no %s control while the site is French-only",
+    (appearance) => {
+      renderSwitcher("fr", appearance, "fr-only");
+
+      expect(screen.queryByRole("link", { name: "English" })).toBeNull();
+      expect(screen.queryByRole("link", { name: "Français" })).toBeNull();
+    }
+  );
 });

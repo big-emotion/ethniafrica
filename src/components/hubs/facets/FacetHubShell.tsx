@@ -9,7 +9,7 @@ import { FacetGlobeIsland } from "@/components/hubs/facets/FacetGlobeIsland";
 import { FacetSwitcher } from "@/components/hubs/facets/FacetSwitcher";
 import { DIRECTORY_ACCENT_CLASS } from "@/lib/hubs/directoryAccent";
 import { getFacet, getFacetFromRoute } from "@/lib/hubs/facets";
-import { DEFAULT_LOCALE } from "@/lib/locale";
+import { FALLBACK_LOCALE } from "@/lib/locale";
 import { getLanguageFromRoute } from "@/lib/routing";
 
 export interface FacetHubShellProps {
@@ -49,7 +49,7 @@ export function FacetHubShell({
   const facet = getFacet(active);
   // A facet is only ever reached under a locale segment, so the fallback is
   // for the type, not for a route the shell will meet.
-  const language = getLanguageFromRoute(pathname ?? "") ?? DEFAULT_LOCALE;
+  const language = getLanguageFromRoute(pathname ?? "") ?? FALLBACK_LOCALE;
 
   return (
     <PageLayout

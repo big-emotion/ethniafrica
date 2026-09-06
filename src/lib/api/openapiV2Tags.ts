@@ -79,6 +79,11 @@ export const OPENAPI_V2_TAGS: { name: string; description: string }[] = [
       "Family names (patronymes) — a name's naming system, caste or social function, associated peoples and countries, and bearers. Distinct from API v2 - Names (the ethnonym dossier); bearer entries are a narrow allow-listed summary and never carry ethnic-origin data for a named living person (DEC-040, REQ-133).",
   },
   {
+    name: "API v2 - Dossiers",
+    description:
+      "Long-form sourced dossiers — the one corpus entity that argues rather than describes. Every chapter carries an authoritative reading of a fact and a counter-reading of the same fact, each cited, and the schema refuses to serve a chapter holding only one of the two.",
+  },
+  {
     name: "API v2 - Compare",
     description:
       "Comparison of 2–3 entities of the same type (peoples, countries, or language families), reusing the same assembly path as the SSR comparison page (FR64, AR8, AR9, NFR38).",

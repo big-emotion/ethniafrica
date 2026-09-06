@@ -184,7 +184,7 @@ absorb.
 ## Reference
 
 - `reference/field-classes.md` — the four classes with every leaf of the
-  sixteen models, equal to the declaration by test
+  seventeen models, equal to the declaration by test
 - `reference/review-rules.md` — R1–R6 and the worked examples: PPL_ASANTE,
   PPL_KHOE_MACRO, PPL_TWA, and PPL_ITESO as the counter-example
 - `reference/register.md` — the English register, the invariants as a

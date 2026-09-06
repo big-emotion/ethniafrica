@@ -1,0 +1,694 @@
+{
+  "schemaVersion": 1,
+  "countryId": "COD",
+  "referenceArtifact": "docs/editorial/country-enrichment/sources/COD-glottolog-5.3.json",
+  "methodology": {
+    "scope": "Exact ISO 639-3 and Glottocode reconciliation only; names and aliases are not promoted automatically.",
+    "reviewedPeopleScope": "Only people and subgroup proposals are included. Duplicate, macro-category, language-label, and rejected country-link records are excluded.",
+    "caveats": [
+      "A language dossier outside this country reference may still be globally valid.",
+      "A people-language code does not prove that every member uses that language or that the people and language have identical boundaries.",
+      "Macrolanguage, standardized-language, and regional-variety identifiers require editorial review even when their names are similar."
+    ]
+  },
+  "summary": {
+    "referenceEntries": 252,
+    "localLanguageDossiers": 24,
+    "referenceEntriesWithExactDossier": 1,
+    "referenceEntriesWithReviewedPeopleCode": 33,
+    "referenceEntriesWithAnyLocalSignal": 34,
+    "reviewedPeopleIsoCodes": 45,
+    "reviewedPeopleIsoCodesMatchedToReference": 33,
+    "reviewedPeopleIsoCodesUnmatchedToReference": 12
+  },
+  "localLanguageDossiers": [
+    {
+      "id": "arb",
+      "nameFr": "Arabe standard moderne",
+      "iso639P3Code": "arb",
+      "glottocode": "stan1318",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "bam",
+      "nameFr": "Bambara",
+      "iso639P3Code": "bam",
+      "glottocode": "bamb1269",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "bmi",
+      "nameFr": "Bagirmi",
+      "iso639P3Code": "bmi",
+      "glottocode": "bagi1246",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "din",
+      "nameFr": "Dinka",
+      "iso639P3Code": "din",
+      "glottocode": "dink1262",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "dje",
+      "nameFr": "Zarma",
+      "iso639P3Code": "dje",
+      "glottocode": "zarm1239",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "egy",
+      "nameFr": "Égyptien ancien",
+      "iso639P3Code": "egy",
+      "glottocode": "egyp1246",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "grb",
+      "nameFr": "Grebo",
+      "iso639P3Code": "grb",
+      "glottocode": "greb1256",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "hau",
+      "nameFr": "Hausa",
+      "iso639P3Code": "hau",
+      "glottocode": "haus1257",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "hts",
+      "nameFr": "Hadza",
+      "iso639P3Code": "hts",
+      "glottocode": "hadz1240",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "kab",
+      "nameFr": "Kabyle",
+      "iso639P3Code": "kab",
+      "glottocode": "kaby1243",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "kea",
+      "nameFr": "Créole cap-verdien",
+      "iso639P3Code": "kea",
+      "glottocode": "kabu1256",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "ktz",
+      "nameFr": "Ju|'hoan",
+      "iso639P3Code": "ktz",
+      "glottocode": "juho1239",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "lin",
+      "nameFr": "Lingala",
+      "iso639P3Code": "lin",
+      "glottocode": "ling1263",
+      "matchStatus": "exact_reference",
+      "matchedReferenceGlottocodes": ["ling1263"]
+    },
+    {
+      "id": "mos",
+      "nameFr": "Mossi",
+      "iso639P3Code": "mos",
+      "glottocode": "moss1236",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "naq",
+      "nameFr": "Nama",
+      "iso639P3Code": "naq",
+      "glottocode": "nama1264",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "ngh",
+      "nameFr": "Nǁng",
+      "iso639P3Code": "ngh",
+      "glottocode": "nngg1234",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "plt",
+      "nameFr": "Malagasy (Merina)",
+      "iso639P3Code": "plt",
+      "glottocode": "plat1254",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "som",
+      "nameFr": "Somali",
+      "iso639P3Code": "som",
+      "glottocode": "soma1255",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "swh",
+      "nameFr": "Swahili",
+      "iso639P3Code": "swh",
+      "glottocode": "swah1253",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "tuq",
+      "nameFr": "Teda",
+      "iso639P3Code": "tuq",
+      "glottocode": "teda1241",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "wal",
+      "nameFr": "Wolaytta",
+      "iso639P3Code": "wal",
+      "glottocode": "wola1242",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "wol",
+      "nameFr": "Wolof",
+      "iso639P3Code": "wol",
+      "glottocode": "nucl1347",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "wti",
+      "nameFr": "Berta",
+      "iso639P3Code": "wti",
+      "glottocode": "bert1248",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "yor",
+      "nameFr": "Yoruba",
+      "iso639P3Code": "yor",
+      "glottocode": "yoru1245",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    }
+  ],
+  "reviewedPeopleIsoCodes": [
+    {
+      "iso639P3Code": "alz",
+      "peopleIds": ["PPL_ALUR"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "alur1250",
+          "name": "Alur",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "auh",
+      "peopleIds": ["PPL_USHI"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "aush1241",
+          "name": "Aushi",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "bem",
+      "peopleIds": ["PPL_BEMBA", "PPL_LUNDA_KAZEMBE"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "bemb1257",
+          "name": "Bemba (Zambia)",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "bfl",
+      "peopleIds": ["PPL_BANDA"],
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceEntries": []
+    },
+    {
+      "iso639P3Code": "bmb",
+      "peopleIds": ["PPL_BEMBE"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "bemb1255",
+          "name": "Bembe",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "bqk",
+      "peopleIds": ["PPL_BANDA"],
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceEntries": []
+    },
+    {
+      "iso639P3Code": "buf",
+      "peopleIds": ["PPL_KUBA"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "bush1247",
+          "name": "Bushoong",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "cjk",
+      "peopleIds": ["PPL_CHOKWE"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "chok1245",
+          "name": "Chokwe",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "fuu",
+      "peopleIds": ["PPL_FURU"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "furu1242",
+          "name": "Furu",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "gba",
+      "peopleIds": ["PPL_GBAYA"],
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceEntries": []
+    },
+    {
+      "iso639P3Code": "gbp",
+      "peopleIds": ["PPL_GBAYA"],
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceEntries": []
+    },
+    {
+      "iso639P3Code": "hav",
+      "peopleIds": ["PPL_HAVU"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "havu1238",
+          "name": "Havu",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "hke",
+      "peopleIds": ["PPL_HUNDE"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "hund1239",
+          "name": "Hunde",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "iyx",
+      "peopleIds": ["PPL_TEKE"],
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceEntries": []
+    },
+    {
+      "iso639P3Code": "keo",
+      "peopleIds": ["PPL_KAKWA"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "kakw1240",
+          "name": "Kakwa",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "kin",
+      "peopleIds": ["PPL_TWA"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "kiny1244",
+          "name": "Kinyarwanda",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "kmb",
+      "peopleIds": ["PPL_KIMBUNDU"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "kimb1241",
+          "name": "Kimbundu",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "kng",
+      "peopleIds": ["PPL_KONGO_SUD", "PPL_MANIANGA", "PPL_SOLONGO"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "koon1244",
+          "name": "South-Central Koongo",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "kon",
+      "peopleIds": [
+        "PPL_KONGO",
+        "PPL_KONGO_SUD",
+        "PPL_MANIANGA",
+        "PPL_SOLONGO"
+      ],
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceEntries": []
+    },
+    {
+      "iso639P3Code": "kqn",
+      "peopleIds": ["PPL_KAONDE"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "kaon1241",
+          "name": "Kaonde",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "lam",
+      "peopleIds": ["PPL_LALA_LAMBA"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "lamb1271",
+          "name": "Lamba",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "leb",
+      "peopleIds": ["PPL_LALA_BISA"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "lala1264",
+          "name": "Lala-Bisa",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "lej",
+      "peopleIds": ["PPL_LENGO"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "leng1258",
+          "name": "Lengola",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "lgg",
+      "peopleIds": ["PPL_LUGBARA"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "lugb1240",
+          "name": "Lugbara",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "liy",
+      "peopleIds": ["PPL_BANDA"],
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceEntries": []
+    },
+    {
+      "iso639P3Code": "lli",
+      "peopleIds": ["PPL_TEKE"],
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceEntries": []
+    },
+    {
+      "iso639P3Code": "lol",
+      "peopleIds": ["PPL_MONGO"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "mong1338",
+          "name": "Mongo",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "lua",
+      "peopleIds": ["PPL_LUBA", "PPL_LUBA_KASAI", "PPL_LUBA_KASAI2"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "luba1249",
+          "name": "Luba-Lulua",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "lub",
+      "peopleIds": ["PPL_LUBA", "PPL_LUBA_KATANGA"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "luba1250",
+          "name": "Luba-Katanga",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "lun",
+      "peopleIds": ["PPL_LUNDA", "PPL_LUNDA_NDEMBU"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "lund1266",
+          "name": "Lunda",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "mdj",
+      "peopleIds": ["PPL_MANGBETU"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "mang1394",
+          "name": "Mangbetu",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "nbw",
+      "peopleIds": ["PPL_NGBANDE"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "sout2784",
+          "name": "Southern Ngbandi",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "ngb",
+      "peopleIds": ["PPL_NGBANDE"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "nort2774",
+          "name": "Northern Ngbandi",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "nnb",
+      "peopleIds": ["PPL_NANDE"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "nand1264",
+          "name": "Nande",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "run",
+      "peopleIds": ["PPL_RUNDI", "PPL_TWA"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "rund1242",
+          "name": "Rundi",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "swa",
+      "peopleIds": ["PPL_SWAHILI"],
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceEntries": []
+    },
+    {
+      "iso639P3Code": "tap",
+      "peopleIds": ["PPL_TABWA"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "taab1238",
+          "name": "Taabwa",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "tbt",
+      "peopleIds": ["PPL_TEMBO"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "temb1270",
+          "name": "Tembo (Kitembo)",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "teg",
+      "peopleIds": ["PPL_TEKE"],
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceEntries": []
+    },
+    {
+      "iso639P3Code": "tek",
+      "peopleIds": ["PPL_TEKE"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "ibal1241",
+          "name": "Kwa South",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "tet",
+      "peopleIds": ["PPL_TETELA"],
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceEntries": []
+    },
+    {
+      "iso639P3Code": "tyi",
+      "peopleIds": ["PPL_TEKE"],
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceEntries": []
+    },
+    {
+      "iso639P3Code": "yaf",
+      "peopleIds": ["PPL_YAKA"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "yaka1269",
+          "name": "Yaka-Pelende-Lonzo",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "yom",
+      "peopleIds": ["PPL_YOMBE"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "yomb1244",
+          "name": "Yombe",
+          "level": "language"
+        }
+      ]
+    },
+    {
+      "iso639P3Code": "zne",
+      "peopleIds": ["PPL_ZANDE"],
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "zand1248",
+          "name": "Zande",
+          "level": "language"
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-09-06"
+}

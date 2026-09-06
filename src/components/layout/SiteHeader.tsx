@@ -1,5 +1,7 @@
 "use client";
 
+import { getLocalizedRoute } from "@/lib/routing";
+
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -18,6 +20,7 @@ import {
   Crown,
   Eye,
   FolderTree,
+  Gem,
   Globe,
   HelpCircle,
   History,
@@ -29,11 +32,13 @@ import {
   Menu,
   Network,
   Route,
+  Ruler,
   Scale,
   Scissors,
   Search,
   Signature,
   Sparkles,
+  ChartNoAxesColumnIncreasing,
   Tag,
   Tags,
   Users,
@@ -43,6 +48,9 @@ import {
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { DossierNavigation } from "@/components/dossiers/DossierNavigation";
+import { ActionLink } from "@/components/ui/ActionLink";
+import { getPublishedThemes } from "@/lib/dossiers/catalog";
 import { useHeaderReveal } from "@/hooks/use-header-reveal";
 import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/brand";
 import { cn } from "@/lib/utils";
@@ -66,7 +74,7 @@ import type { Language } from "@/types/shared";
  * Explorer when the reader knows what they are looking for, Comprendre when
  * they want to know where what they are reading comes from, Jouer when they
  * want the corpus to answer. The modules live behind the click — a panel on
- * a wide viewport, a tray below 760px — and both are generated from
+ * a wide viewport, a tray below 768px — and both are generated from
  * `moduleRegistry.ts`, never hand-listed.
  *
  * This replaces the flat nine-link bar that was written twice, once per
@@ -87,7 +95,7 @@ import type { Language } from "@/types/shared";
 
 // The charter's own figure, and the width `FicheHeroBand` already switches
 // its band at, so the header and the band below it change shape together.
-const NAV_BREAKPOINT_PX = 760;
+const NAV_BREAKPOINT_PX = 768;
 
 /**
  * One glyph per module, from the library rather than the mockup's hand-drawn
@@ -114,6 +122,9 @@ const MODULE_GLYPHS: Record<string, LucideIcon> = {
   patronymes: BookUser,
   nommer: Signature,
   anecdotes: Sparkles,
+  "dossier-proportions": Ruler,
+  "dossier-populations": ChartNoAxesColumnIncreasing,
+  "dossier-ressources": Gem,
   frise: History,
   "regards-colonisation": Eye,
   quiz: HelpCircle,
@@ -417,12 +428,27 @@ export function SiteHeader({
           className={cn("sh-panel", ACCENT_BY_ACCESS_MODE[openAxis])}
         >
           <div className="sh-panel-head">
-            <h2 className="sh-panel-title">{ACCESS_MODE_LABELS[openAxis]}</h2>
+            <h2 className="sh-panel-title">
+              {openAxis === "dossiers" ? (
+                <ActionLink href={getLocalizedRoute(language, "dossiersHub")}>
+                  {ACCESS_MODE_LABELS[openAxis]}
+                </ActionLink>
+              ) : (
+                ACCESS_MODE_LABELS[openAxis]
+              )}
+            </h2>
             <p className="sh-panel-blurb">{t.hubs[openAxis].menuBlurb}</p>
           </div>
-          <div className="sh-grid">
-            {getNavModules(openAxis).map(moduleEntry)}
-          </div>
+          {openAxis === "dossiers" ? (
+            <DossierNavigation
+              language={language}
+              onNavigate={() => setOpenAxis(null)}
+            />
+          ) : (
+            <div className="sh-grid">
+              {getNavModules(openAxis).map(moduleEntry)}
+            </div>
+          )}
         </div>
       ) : null}
 
@@ -452,7 +478,11 @@ export function SiteHeader({
                   >
                     <span className="sh-seed" aria-hidden="true" />
                     {ACCESS_MODE_LABELS[axis]}
-                    <span className="sh-fold-count">{modules.length}</span>
+                    <span className="sh-fold-count">
+                      {axis === "dossiers"
+                        ? getPublishedThemes(moduleAvailability).length
+                        : modules.length}
+                    </span>
                     <ChevronDown
                       className="sh-caret"
                       size={13}
@@ -462,7 +492,24 @@ export function SiteHeader({
                 </h3>
                 {expanded ? (
                   <div id={`sh-fold-${axis}`} className="sh-fold-body">
-                    {modules.map(moduleEntry)}
+                    {axis === "dossiers" ? (
+                      <>
+                        <ActionLink
+                          href={getLocalizedRoute(language, "dossiersHub")}
+                          onClick={() => setTrayOpen(false)}
+                        >
+                          {language === "en"
+                            ? "All dossiers"
+                            : "Tous les dossiers"}
+                        </ActionLink>
+                        <DossierNavigation
+                          language={language}
+                          onNavigate={() => setTrayOpen(false)}
+                        />
+                      </>
+                    ) : (
+                      modules.map(moduleEntry)
+                    )}
                   </div>
                 ) : null}
               </div>
@@ -962,7 +1009,7 @@ export function SiteHeader({
         .sh-burger {
           display: inline-grid;
         }
-        @media (min-width: ${NAV_BREAKPOINT_PX + 1}px) {
+        @media (min-width: ${NAV_BREAKPOINT_PX}px) {
           .sh-axes {
             display: flex;
           }

@@ -39,6 +39,13 @@ const TRAIL_PAGE_LABELS: Record<Language, Record<PageType, string>> = {
     // British spelling, and the same one the URL carries.
     colonization: "Colonisation & resistances",
     nommer: "Naming",
+    dossierProportions: "True proportions",
+    dossierPopulations: "Real weight",
+    dossierRessources: "Resources",
+    dossierKongo: "The Kongo kingdom",
+    dossierLuba: "Luba: power and memory",
+    dossierLunda: "Lunda: alliances and connections",
+    dossierSpiritualitesKongo: "Kongo spiritualities: objects and change",
     glossary: "Glossary",
     // The English hub labels live in the dictionary below rather than on
     // `ACCESS_MODE_LABELS`, which is French and read by ninety-odd callers
@@ -71,6 +78,16 @@ const TRAIL_PAGE_LABELS: Record<Language, Record<PageType, string>> = {
     // question and would wrap the crumb on a phone. The trail names the
     // destination; the menu asks the question.
     nommer: "Nommer",
+    // The trail names the destination in as few words as a phone can hold;
+    // the menu carries the dossier's full title, which is a sentence.
+    dossierProportions: "Proportions",
+    dossierPopulations: "Populations",
+    dossierRessources: "Ressources",
+    dossierKongo: "Le royaume Kongo",
+    dossierLuba: "Luba : pouvoir et mémoire",
+    dossierLunda: "Lunda : alliances et circulations",
+    dossierSpiritualitesKongo:
+      "Spiritualités kongo : objets et transformations",
     glossary: "Glossaire",
     atlasHub: ACCESS_MODE_LABELS.atlas,
     dossiersHub: ACCESS_MODE_LABELS.dossiers,
@@ -505,8 +522,7 @@ const en = {
       pageTitle: "Understand the peoples of Africa",
       blurb:
         "The relations axis: where a name comes from, where the peoples passed, and which sources the atlas rests on.",
-      menuBlurb:
-        "Who gave these names, sourced anecdotes, the migrations and colonisation.",
+      menuBlurb: "Read by theme, across peoples, territories and eras.",
       hubEntryName: "The reading hub",
     },
     jeux: {
@@ -1094,7 +1110,7 @@ const fr: UiDictionary = {
       blurb:
         "L'axe des relations : d'où vient un nom, par où sont passés les peuples, et sur quelles sources l'atlas s'appuie.",
       menuBlurb:
-        "Qui a donné ces noms, des anecdotes sourcées, les migrations et la colonisation.",
+        "Des lectures par thème, à travers les peuples, les territoires et les époques.",
       hubEntryName: "Le hub de lecture",
     },
     jeux: {

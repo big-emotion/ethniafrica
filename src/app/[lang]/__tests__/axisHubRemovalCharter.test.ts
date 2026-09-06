@@ -7,7 +7,6 @@ const fromRoot = (relativePath: string) => resolve(process.cwd(), relativePath);
 
 const AXIS_HUB_PAGES = [
   "src/app/[lang]/atlas/page.tsx",
-  "src/app/[lang]/dossiers/page.tsx",
   "src/app/[lang]/jeux/page.tsx",
 ] as const;
 
@@ -26,7 +25,8 @@ const HUB_ONLY_RENDERERS = [
 
 describe("axis hub removal charter", () => {
   // @req REQ-114
-  it("removes only the three axis landing pages", () => {
+  it("keeps atlas and games without hubs while dossiers has a theme directory", () => {
+    expect(existsSync(fromRoot("src/app/[lang]/dossiers/page.tsx"))).toBe(true);
     for (const hubPage of AXIS_HUB_PAGES) {
       expect(existsSync(fromRoot(hubPage)), hubPage).toBe(false);
     }
