@@ -1612,6 +1612,60 @@ export function checkPopulationSumsStrict(
 }
 
 /**
+ * FR28-declared – Every country of the African reference set must declare an
+ * ethnic split at all.
+ *
+ * FR28 and FR28-strict weigh the *sum* of the declared shares, so they have
+ * nothing to weigh when a fiche declares none, and both skip an empty list.
+ * A fiche stating no split therefore had no wrong sum and passed in silence —
+ * which is how MDG reached the reader showing its national total above an
+ * empty chapter. The absence is the finding; this check is what states it.
+ *
+ * Scope (REQ-131): same African reference set as checkPopulationSums.
+ */
+export function checkPopulationSplitDeclared(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+
+  const paysDir = path.join(datasetRoot, "pays");
+  if (!fs.existsSync(paysDir)) {
+    return { ok: true, errors: [], warnings: [] };
+  }
+
+  const jsonFiles = fs.readdirSync(paysDir).filter((f) => f.endsWith(".json"));
+  for (const file of jsonFiles) {
+    const fullPath = path.join(paysDir, file);
+    let data: {
+      id?: string;
+      content?: {
+        demographics?: {
+          peoples?: unknown[];
+        };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      // FR28 already reports parse failures; stay silent here to avoid duplicates.
+      continue;
+    }
+
+    const countryId = data.id ?? path.basename(file, ".json");
+    if (!AFRICAN_REFERENCE_COUNTRY_CODES.has(countryId)) continue;
+
+    const peoples = data?.content?.demographics?.peoples;
+    if (!peoples || peoples.length === 0) {
+      errors.push(
+        `${countryId}: content.demographics.peoples declares no people — the fiche publishes its national total above an empty chapter; state the split, or record why it is unavailable`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings: [] };
+}
+
+/**
  * FR29 – ISO code validity:
  *   - content.languages.isoCodes entries must match /^[a-z]{3}$/ (ISO 639-3)
  *   - content.demography.distributionByCountry[].country must match /^[A-Z]{3}$/ (ISO 3166-1 α-3)
@@ -4440,6 +4494,11 @@ export function checkTranslationClassCoverage(
  * rely on, truncated ids such as PPL_MO, and family lists naming peoples never
  * written. Retired ids are not in that tail: FR27 Retired identifiers stays a
  * hard error, so a merge or rename cannot leave a link behind.
+
+ *
+ * FR28-declared was advisory for exactly one fiche — MDG, the only country of
+ * the 54 that had never declared an ethnic split. It left this set with that
+ * fiche, as announced, and is a hard error since.
  */
 export const SOFT_CHECK_NAMES: ReadonlySet<string> = new Set([
   "FR52-coverage People-to-language coverage",
@@ -4629,6 +4688,12 @@ async function main() {
   newChecks.push({
     name: "FR28-strict Population sums (target 99–101%)",
     result: checkPopulationSumsStrict(datasetRoot),
+  });
+
+  console.log("FR28-declared – Population split declared...");
+  newChecks.push({
+    name: "FR28-declared Population split declared",
+    result: checkPopulationSplitDeclared(datasetRoot),
   });
 
   console.log("FR29 – ISO validity...");
