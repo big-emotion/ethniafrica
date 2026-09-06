@@ -136,12 +136,54 @@ export function measureScaleFigures(): ScaleFigures {
 }
 
 /**
- * The bank, measured once per process.
+ * The measurements, taken once per process.
  *
  * The assets are static and the arithmetic runs over some twenty thousand
- * points, so recomputing it per request would be waste with no upside. It is
- * not memoised for correctness: calling `buildScaleFacts` twice must and does
- * yield the same sentences.
+ * points, so recomputing it per request would be waste with no upside. Two
+ * callers now — the bank and the globe's claim — and a sweep each would double
+ * that for nothing. Memoising is safe rather than merely cheap: the figures
+ * are a pure function of committed assets.
+ */
+let figures: ScaleFigures | null = null;
+function measuredFigures(): ScaleFigures {
+  figures ??= measureScaleFigures();
+  return figures;
+}
+
+/**
+ * The claim the globe stage carries, stated under the sphere itself.
+ *
+ * Deliberately **not** one of the facts below. The bank lands between rounds,
+ * one card at a time; this stands under the globe for the whole session, and
+ * the same sentence in both places would read as a caption stuck on the page.
+ * It obeys the module's one rule all the same: both figures are measured off
+ * the outlines the sphere beside it is drawn from.
+ *
+ * Built on the server and handed down as a prop, because the surface it lands
+ * on is a client island and `WORLD_COMPARE` has no business in its bundle.
+ *
+ * It states the **ratio** and not the area, deliberately: the globe's own
+ * projection readout prints Africa's area a few pixels above, and two figures
+ * for one continent on one screen is worse than either alone. The ratio is
+ * also the form the claim travels in — it is how the UN resolution states it.
+ */
+// @req REQ-120
+export function buildTrueSizeClaim(): string {
+  const { africa, greenland } = measuredFigures();
+
+  return (
+    `Ce que vous faites tourner est l'Afrique à ses vraies proportions : ` +
+    `${ratioFr(africa / greenland)} fois le Groenland. Poussez le curseur vers la ` +
+    `carte plate et regardez le nord enfler — la géographie n'a pas bougé, la ` +
+    `projection si.`
+  );
+}
+
+/**
+ * The bank, worded once per process.
+ *
+ * It is not memoised for correctness: calling `buildScaleFacts` twice must and
+ * does yield the same sentences.
  */
 let bank: ScaleFact[] | null = null;
 
@@ -167,7 +209,7 @@ export function buildScaleFacts(): ScaleFact[] {
     kinshasaGoma,
     parisWarsaw,
     cairoCapeTown,
-  } = measureScaleFigures();
+  } = measuredFigures();
 
   bank = [
     {

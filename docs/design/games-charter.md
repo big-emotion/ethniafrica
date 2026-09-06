@@ -74,10 +74,12 @@ the remedy. Standing the globe above the rounds cost the page its game: the
 stage floor is 560 px on a phone and 720 px on a desktop, so the rounds began
 below the fold and, at 1200 px and up, nothing of the game was visible at
 all — a straight breach of §9.1, which says the stage gives way and the
-options never do. The globe is now **bound to the round** and held at the
+options never do. ~~The globe is now **bound to the round** and held at the
 flat map while a question stands. A globe beside a live round only hands over
 the answer when it tells the truth; the flat map is the lie the round is asked
-against, so reading it gives the wrong answer.
+against, so reading it gives the wrong answer.~~ **Amended again,
+2026-09-06 — see §12.** The globe is the home's, unpinned, with the reader
+holding the slider throughout.
 
 ### Retired
 
@@ -480,3 +482,74 @@ not already ask?
 - **Shrinking the globe to obey §9.1.** It would have satisfied the rule by
   degrading the one thing the page is named after. Putting the round first in
   the document obeys it without touching the globe.
+
+---
+
+## 12. The pin is withdrawn (2026-09-06)
+
+§11 bound the projection to the round: flat while a question stood, closing
+into a sphere on the reveal. **That pin is removed.** `mercator` mounts the
+home's globe stage prop for prop — editorial presentation, arriving in motion,
+and the morph bar in the reader's hands from the first round to the last.
+
+### What the pin actually cost
+
+**It withdrew the demonstration.** A pinned projection hides the morph bar
+rather than disabling it — correctly, since a control that refuses to move
+reads as a broken page. But the bar _is_ the argument: the page exists so that
+a reader can push a sphere into a Mercator map and watch the north swell. Pinned,
+that gesture was available on one screen in eight, the reveal, and never while
+the reader had a reason to care.
+
+**It labelled the lie as the truth.** The globe's legend is written for the
+sphere — « Afrique à sa surface réelle » — and the pin did not change it. So
+the flat Mercator map, the thing the whole page is an argument against, carried
+a caption certifying it as area-true. That is worse than either end of the
+slider on its own, and it was on screen for seven eighths of every session.
+
+### Why the cheat it guarded against is narrower than it looked
+
+§11 feared a reader answering « Libye ou Soudan ? » by looking left. The scene
+this page mounts sets `targetPicker="none"` (atlas charter §1): no country is
+marked, none is named, and none opens. Reading the answer off the sphere
+therefore means recognising both outlines unaided — which is knowledge, and the
+kill test is about **eyesight**. A reader who can pick Sudan out of an unlabelled
+Africa has earned the point.
+
+The residue is real and accepted: on a widely-spaced pair the sphere does help.
+It is the price of the page having a working demonstration, and it is stated
+here rather than smuggled.
+
+### What stands in its place
+
+**The round still comes first in the document, in every phase.** §9.1 is met
+the way §11 met it — by source order, never by shrinking the globe. What goes
+is the reveal's painted reordering: it existed so the closing sphere could be
+watched, and there is no closing left to watch once the reader owns the slider.
+Reordering a page under someone mid-session was its cost, and nothing now buys
+it.
+
+**The globe gains a caption that measures it.** A sphere is a picture of a
+continent, not a measurement of one, so `buildTrueSizeClaim` states the ratio —
+Africa against Greenland, computed off the outlines the sphere is drawn from,
+never typed. It states the **ratio and not the area** because the globe's own
+projection readout prints the area a few pixels above; two figures for one
+continent on one screen reads as a mistake whichever is right.
+
+**And it names the vote.** On 4 September 2026 the UN General Assembly adopted,
+164 to 1, a resolution led by Togo for the African group and backed by the
+African Union, calling for the « minimisation symbolique » of the continent to
+be corrected and naming Equal Earth. The page has argued this on its own
+authority since it shipped; it can now cite states arguing it, and link the
+reader to the record. This is the one place a game may carry an outside source:
+it is the game's own thesis, not a fiche claim, and it earns the exception §11
+already granted this page.
+
+### Known, not fixed
+
+`AtlasGlobe`'s projection readout types Africa's area — « 30,4 M km² » — while
+the outlines it draws measure 30,1. Unpinning the bar puts that figure on this
+page for the first time. It is a typed figure in a repository whose scale
+module exists to forbid them, it is wrong on the home too, and it is left for
+its own change: the measurement lives under `lib/games/` and an atlas component
+reaching into it would invert the layering to fix a one-line defect.

@@ -7,8 +7,11 @@ import { LANDMARKS } from "@/lib/games/landmarks";
 import {
   SCALE_FACT_PROVENANCE_PATHS,
   buildScaleFacts,
+  buildTrueSizeClaim,
+  measureScaleFigures,
   pickScaleFacts,
 } from "@/lib/games/scaleFacts";
+import { millionsKm2Fr, ratioFr } from "@/lib/games/format";
 import { revealProvenanceFr } from "@/lib/games/revealProvenance";
 
 const facts = buildScaleFacts();
@@ -158,5 +161,41 @@ describe("the assets the facts are measured from", () => {
     for (const id of ["COD", "TUN"]) {
       expect(AFRICA_ADMIN0[id]).toBeDefined();
     }
+  });
+});
+
+describe("buildTrueSizeClaim", () => {
+  /**
+   * The claim stands under the globe for the whole session; the bank lands
+   * between rounds, one card at a time. The same wording in both places would
+   * read as a caption stuck on the page, which is why this is written once
+   * rather than borrowed from the Greenland fact.
+   */
+  // @req REQ-120
+  it("says something the bank does not already say word for word", () => {
+    const bodies = facts.flatMap((fact) => [fact.headlineFr, fact.bodyFr]);
+    expect(bodies).not.toContain(buildTrueSizeClaim());
+  });
+
+  // The module's one rule: a figure copied off a web page drifts away from
+  // the outlines the sphere beside it is drawn from.
+  // @req REQ-120
+  it("states a measured ratio rather than a typed one", () => {
+    const { africa, greenland } = measureScaleFigures();
+
+    expect(buildTrueSizeClaim()).toContain(ratioFr(africa / greenland));
+  });
+
+  /**
+   * The globe's own projection readout prints Africa's area a few pixels
+   * above this claim. A second area here — measured off the outlines rather
+   * than typed into that readout — would put two figures for one continent on
+   * one screen, which reads as a mistake whichever of them is right.
+   */
+  // @req REQ-120
+  it("leaves the area to the globe's own readout", () => {
+    const { africa } = measureScaleFigures();
+
+    expect(buildTrueSizeClaim()).not.toContain(millionsKm2Fr(africa));
   });
 });
