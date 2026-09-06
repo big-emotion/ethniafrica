@@ -24,6 +24,10 @@ export type PageType =
   | "dossierProportions"
   | "dossierPopulations"
   | "dossierRessources"
+  | "dossierKongo"
+  | "dossierLuba"
+  | "dossierLunda"
+  | "dossierSpiritualitesKongo"
   | "glossary"
   | "atlasHub"
   | "dossiersHub"
@@ -81,6 +85,10 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     dossierProportions: "dossiers/proportions",
     dossierPopulations: "dossiers/populations",
     dossierRessources: "dossiers/resources",
+    dossierKongo: "dossiers/kongo-kingdom",
+    dossierLuba: "dossiers/luba-empire",
+    dossierLunda: "dossiers/lunda-empire",
+    dossierSpiritualitesKongo: "dossiers/kongo-spiritualities",
     glossary: "glossary",
     // `dossiers` is kept as an English word on purpose: the retired module
     // paths keyed `dossiers/…` in `middleware.ts` then work in both locales.
@@ -131,6 +139,10 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     dossierProportions: "dossiers/proportions",
     dossierPopulations: "dossiers/populations",
     dossierRessources: "dossiers/ressources",
+    dossierKongo: "dossiers/royaume-kongo",
+    dossierLuba: "dossiers/empire-luba",
+    dossierLunda: "dossiers/empire-lunda",
+    dossierSpiritualitesKongo: "dossiers/spiritualites-kongo",
     // No axis lists the glossary, so it carries no prefix — the same reason
     // `about`, `doctrine` and `sources` carry none. It serves the atlas and
     // the games as much as the dossiers, and it is reached from the footer's

@@ -1,0 +1,157 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "dossier",
+    "directives": "Source-cited editorial synthesis drafted with AI assistance. Origin traditions are distinguished from dated events. Country links are present-day discovery contexts, not reconstructed borders.",
+    "readerFacing": ["gaps[].reason", "sources[].title", "sources[].notes"]
+  },
+  "id": "DOS_LUNDA",
+  "vertical": "histoires",
+  "slug": "empire-lunda",
+  "title": "Lunda : alliances et circulations",
+  "question": "Comment un pouvoir se déploie-t-il à travers des alliances et des réseaux ?",
+  "standfirst": "L’histoire lunda croise celle des Luba et des Chokwe, sans s’y confondre. Les traditions d’origine, les relations entre cours et les échanges demandent des lectures distinctes.",
+  "publishedOn": "2026-09-06",
+  "thesis": {
+    "stepLabel": "Un repère",
+    "heading": "Le commerce comme repère",
+    "figures": [
+      {
+        "figureKey": "empire-lunda-repere",
+        "value": "1650",
+        "claim": "Bortolot situe vers cette période les liaisons de Mwaant Yaav Naweej avec la côte atlantique.",
+        "provenance": "Datation indicative dans une synthèse historique.",
+        "year": 1650,
+        "sourceRefs": ["met-savanna"]
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "chapterKey": "origines-et-legitimite",
+      "ordinal": 1,
+      "title": "Origines et légitimité",
+      "question": "Que raconte une tradition d’origine ?",
+      "standfirst": "Une généalogie politique n’est pas un calendrier.",
+      "body": [
+        {
+          "text": "Les traditions rapportées par Bortolot associent Chibinda Ilunga, un chasseur venu du monde luba, à une alliance matrimoniale lunda. L’auteur présente ce récit comme une tradition d’origine ; il ne fournit pas un acte daté de fondation.",
+          "sourceRefs": ["met-savanna"]
+        },
+        {
+          "text": "Cette sculpture chokwe évoque Chibinda Ilunga, sans constituer un portrait vérifiable.",
+          "sourceRefs": ["met-chief"]
+        }
+      ],
+      "illustration": {
+        "src": "/images/dossiers/chokwe-mwanangana.jpg",
+        "alt": "Figure debout tenant une sanza, avec une large coiffe sculptée.",
+        "caption": "Mwanangana chokwe jouant de la sanza, avant 1869. Évocation de Chibinda Ilunga.",
+        "author": "Chokwe artist · The Metropolitan Museum of Art",
+        "year": "1869",
+        "filePage": "https://www.metmuseum.org/art/collection/search/316173",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Une mémoire de pouvoir",
+          "body": "La sanza accompagne des récitations historiques et des louanges.",
+          "sourceRefs": ["met-chief"]
+        },
+        {
+          "stance": "counter",
+          "label": "Des sociétés distinctes",
+          "body": "Une référence partagée ne confond pas les sociétés chokwe et lunda.",
+          "sourceRefs": ["met-chief"]
+        }
+      ],
+      "figures": []
+    },
+    {
+      "chapterKey": "expansion-et-recompositions",
+      "ordinal": 2,
+      "title": "Expansion et recompositions",
+      "question": "Faut-il imaginer un État aux frontières fixes ?",
+      "standfirst": "Les routes et les relations changent avec les centres de pouvoir.",
+      "body": [
+        {
+          "text": "La chronologie du Met décrit l’émergence du Kazembe au XVIIIe siècle dans l’actuelle Zambie du Nord-Est. Ce prolongement oriental constitue un autre centre politique, relié aux échanges entre côte orientale et intérieur.",
+          "sourceRefs": ["met-chronology"]
+        },
+        {
+          "text": "Macola emploie aussi la notion de Commonwealth pour décrire des États indépendants mais reliés entre eux. Cette lecture précise ce que le mot empire peut masquer : l’existence de plusieurs centres et d’autonomies politiques.",
+          "sourceRefs": ["macola"]
+        }
+      ],
+      "illustration": {
+        "src": "/images/dossiers/chokwe-mwanangana.jpg",
+        "alt": "Figure debout tenant une sanza, avec une large coiffe sculptée.",
+        "caption": "Mwanangana chokwe jouant de la sanza, avant 1869. Évocation de Chibinda Ilunga.",
+        "author": "Chokwe artist · The Metropolitan Museum of Art",
+        "year": "1869",
+        "filePage": "https://www.metmuseum.org/art/collection/search/316173",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Suivre les réseaux",
+          "body": "Des connexions politiques et commerciales relient plusieurs territoires. Elles n’impliquent pas une administration identique dans chaque lieu.",
+          "sourceRefs": ["macola"]
+        },
+        {
+          "stance": "counter",
+          "label": "Les échanges comportent des violences",
+          "body": "La notice rappelle aussi le commerce régional d’ivoire et de personnes mises en esclavage.",
+          "sourceRefs": ["met-chief"]
+        }
+      ],
+      "figures": []
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "met-chronology",
+      "title": "Central Africa, 1600–1800 A.D.",
+      "url": "https://82nd-and-fifth.metmuseum.org/toah/ht/09/afc.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "The Metropolitan Museum of Art. Chronologie ; consultée le 6 septembre 2026."
+    },
+    {
+      "sourceKey": "met-savanna",
+      "title": "Kingdoms of the Savanna: The Luba and Lunda Empires",
+      "url": "https://www.metmuseum.org/essays/kingdoms-of-the-savanna-the-luba-and-lunda-empires",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Alexander Ives Bortolot, The Metropolitan Museum of Art ; consulté le 6 septembre 2026.",
+      "publicationYear": 2003
+    },
+    {
+      "sourceKey": "macola",
+      "title": "Luba–Lunda states",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118455074.wbeoe060",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Giacomo Macola, The Encyclopedia of Empire. Résumé et présentation de l’article ; consultés le 6 septembre 2026.",
+      "publicationYear": 2015
+    },
+    {
+      "sourceKey": "met-chief",
+      "title": "Mwanangana (lord of the land) playing a sanza",
+      "url": "https://www.metmuseum.org/art/collection/search/316173",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "The Metropolitan Museum of Art, collection 1988.157 ; consultée le 6 septembre 2026."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "chapters",
+      "reason": "Les dates des traditions d’origine restent discutées. Les pays actuels servent à situer des lieux ; ils ne délimitent pas un empire resté identique au fil des siècles."
+    }
+  ]
+}

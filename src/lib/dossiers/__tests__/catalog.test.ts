@@ -39,7 +39,9 @@ describe("shared dossier catalog", () => {
   // @req REQ-114
   it("keeps one canonical dossier address across primary and secondary themes", () => {
     const names = getDossiers({ theme: "noms" });
-    const languages = getDossiers({ theme: "langues" });
+    const languages = getDossiers({ theme: "langues" }).filter(
+      (entry) => entry.id === "nommer"
+    );
     expect(names[0].href).toBe(getLocalizedRoute("fr", "nommer"));
     expect(languages[0].href).toBe(names[0].href);
     expect(new Set(getDossiers().map((dossier) => dossier.id)).size).toBe(
@@ -59,6 +61,10 @@ describe("shared dossier catalog", () => {
           "dossier-proportions": false,
           "dossier-populations": false,
           "dossier-ressources": false,
+          "dossier-kongo": false,
+          "dossier-luba": false,
+          "dossier-lunda": false,
+          "dossier-spiritualites-kongo": false,
         }
       )
     ).toEqual([]);
@@ -69,9 +75,13 @@ describe("shared dossier catalog", () => {
         "dossier-proportions": false,
         "dossier-populations": false,
         "dossier-ressources": false,
+        "dossier-kongo": false,
+        "dossier-luba": false,
+        "dossier-lunda": false,
+        "dossier-spiritualites-kongo": false,
       })
     ).toEqual([]);
-    expect(getPublishedThemes().map((theme) => theme.id)).not.toContain(
+    expect(getPublishedThemes().map((theme) => theme.id)).toContain(
       "spiritualites"
     );
   });

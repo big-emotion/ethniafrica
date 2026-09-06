@@ -1,3 +1,6 @@
+import type { Language } from "@/types/shared";
+import type { DossierSource } from "@/lib/afrik/parsers/dossierTypes";
+import { DossierCitations } from "./DossierCitations";
 import Image from "next/image";
 
 import { DossierReadings } from "@/components/dossiers/DossierReadings";
@@ -26,8 +29,10 @@ import type {
  */
 function IllustrationCredit({
   illustration,
+  language,
 }: {
   illustration: DossierIllustration;
+  language: Language;
 }) {
   return (
     <figcaption>
@@ -49,7 +54,7 @@ function IllustrationCredit({
         <>
           {" · "}
           <a href={illustration.filePage} rel="noreferrer" target="_blank">
-            Fichier d’origine
+            {language === "en" ? "Original file" : "Fichier d’origine"}
           </a>
         </>
       ) : null}
@@ -60,12 +65,18 @@ function IllustrationCredit({
 export interface DossierChapterBlockProps {
   chapter: DossierChapter;
   index: number;
+  language: Language;
+  sources: DossierSource[];
+  sourcePrefix: string;
 }
 
 // @req REQ-114
 export function DossierChapterBlock({
   chapter,
   index,
+  language,
+  sources,
+  sourcePrefix,
 }: DossierChapterBlockProps) {
   const reversed = index % 2 === 1;
 
@@ -75,7 +86,9 @@ export function DossierChapterBlock({
       data-testid={`dossier-chapter-${chapter.chapterKey}`}
       id={chapter.chapterKey}
     >
-      <div className="afh-dossier-chapter-head">
+      <div
+        className={`afh-dossier-chapter-head ${chapter.illustration ? "" : "is-text-only"}`}
+      >
         {chapter.illustration ? (
           <figure className="afh-dossier-fig">
             <Image
@@ -85,14 +98,17 @@ export function DossierChapterBlock({
               src={chapter.illustration.src}
               width={900}
             />
-            <IllustrationCredit illustration={chapter.illustration} />
+            <IllustrationCredit
+              illustration={chapter.illustration}
+              language={language}
+            />
           </figure>
         ) : null}
 
         <div className="afh-dossier-chapter-body">
           <p className="afh-dossier-chapter-kicker">
             <span aria-hidden="true" className="afh-dossier-chapter-dot" />
-            {`Chapitre ${String(chapter.ordinal).padStart(2, "0")}`}
+            {`${language === "en" ? "Chapter" : "Chapitre"} ${String(chapter.ordinal).padStart(2, "0")}`}
           </p>
           <h2>{chapter.title}</h2>
           <p className="afh-dossier-standfirst">{chapter.standfirst}</p>
@@ -101,7 +117,14 @@ export function DossierChapterBlock({
 
       <div className="afh-dossier-prose">
         {chapter.body.map((block, blockIndex) => (
-          <p key={blockIndex}>{block.text}</p>
+          <p key={blockIndex}>
+            {block.text}
+            <DossierCitations
+              refs={block.sourceRefs}
+              sources={sources}
+              prefix={sourcePrefix}
+            />
+          </p>
         ))}
       </div>
 
@@ -119,6 +142,11 @@ export function DossierChapterBlock({
                   ? `${figure.note} · ${figure.year}`
                   : `${figure.year}`}
               </span>
+              <DossierCitations
+                refs={figure.sourceRefs}
+                sources={sources}
+                prefix={sourcePrefix}
+              />
             </li>
           ))}
         </ul>
@@ -127,6 +155,9 @@ export function DossierChapterBlock({
       <DossierReadings
         chapterKey={chapter.chapterKey}
         readings={chapter.readings}
+        language={language}
+        sources={sources}
+        sourcePrefix={sourcePrefix}
       />
     </article>
   );

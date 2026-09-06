@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "dossier",
-    "directives": "Un dossier est un article long, sourcé, qui confronte une lecture officielle à une contre-lecture. Il ne décrit pas une entité du corpus : il argumente sur elle. Trois règles le distinguent des autres fiches. (1) Chaque chapitre porte DEUX lectures — une « official » et au moins une « counter » — et chacune cite au moins une source. Un chapitre à une seule lecture n'est pas un dossier, c'est une notice. (2) La contre-lecture n'est pas un démenti : elle nomme ce que le cadrage officiel ne mesure pas, ou pour quel usage il a été produit. Un chapitre qui conclut « l'officiel a tort » a raté sa cible. (3) Chaque chapitre porte une illustration dont la licence est publiée, pas nommée — auteur, URI de licence et page du fichier, conformément à la charte de marque §9. Les champs publiés au lecteur mot pour mot sont gaps[].reason, sources[].title et sources[].notes : ils ne portent ni chemin de fichier, ni identifiant, ni vocabulaire d'atelier.",
+    "directives": "A dossier is shared across relevant atlas fiches and discovered through editorial themes. Cite every prose block, reading and figure. Numerical thesis figures are optional (zero to three). A chapter may omit paired readings; if a comparison is included, publish both sourced perspectives. Illustrations may be null; otherwise retain attribution, licence and original file links. Distinguish political formations, peoples and present-day countries. Record uncertainty in gaps. Keep stable identifiers and URLs.",
     "readerFacing": ["gaps[].reason", "sources[].title", "sources[].notes"]
   },
   "id": "DOS_EXEMPLE",

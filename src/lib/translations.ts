@@ -42,6 +42,10 @@ const TRAIL_PAGE_LABELS: Record<Language, Record<PageType, string>> = {
     dossierProportions: "True proportions",
     dossierPopulations: "Real weight",
     dossierRessources: "Resources",
+    dossierKongo: "The Kongo kingdom",
+    dossierLuba: "Luba: power and memory",
+    dossierLunda: "Lunda: alliances and connections",
+    dossierSpiritualitesKongo: "Kongo spiritualities: objects and change",
     glossary: "Glossary",
     // The English hub labels live in the dictionary below rather than on
     // `ACCESS_MODE_LABELS`, which is French and read by ninety-odd callers
@@ -79,6 +83,11 @@ const TRAIL_PAGE_LABELS: Record<Language, Record<PageType, string>> = {
     dossierProportions: "Proportions",
     dossierPopulations: "Populations",
     dossierRessources: "Ressources",
+    dossierKongo: "Le royaume Kongo",
+    dossierLuba: "Luba : pouvoir et mémoire",
+    dossierLunda: "Lunda : alliances et circulations",
+    dossierSpiritualitesKongo:
+      "Spiritualités kongo : objets et transformations",
     glossary: "Glossaire",
     atlasHub: ACCESS_MODE_LABELS.atlas,
     dossiersHub: ACCESS_MODE_LABELS.dossiers,

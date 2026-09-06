@@ -99,6 +99,8 @@ Thumbs.db
 dataset/*
 !dataset/source/
 !dataset/source/**/*
+!dataset/translations/
+!dataset/translations/**/*
 # Ignorer les fichiers système dans dataset
 dataset/**/.DS_Store
 dataset/**/*.DS_Store

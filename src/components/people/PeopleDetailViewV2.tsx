@@ -226,6 +226,12 @@ export function PeopleDetailViewV2({
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
         )}
+        <DossierLinks
+          kind="people"
+          id={people.id}
+          section="history"
+          language={language}
+        />
       </FicheSection>
 
       <OralNarrativesSection peopleId={data.hero.peopleId} />
@@ -250,6 +256,12 @@ export function PeopleDetailViewV2({
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
         )}
+        <DossierLinks
+          kind="people"
+          id={people.id}
+          section="culture"
+          language={language}
+        />
         {/* The same report control the country fiche's culture section
             carries. It used to live only on the legacy tabbed people view;
             retiring that view without moving it here would have taken the

@@ -18,6 +18,37 @@ interface Classification {
 // Publication readiness and canonical routes remain owned by moduleRegistry.
 const CLASSIFICATIONS: Classification[] = [
   {
+    id: "dossier-kongo",
+    primaryTheme: "pouvoirs",
+    secondaryThemes: ["spiritualites"],
+    format: "dossier",
+    summary:
+      "Une capitale, des réseaux politiques et des transformations historiques.",
+  },
+  {
+    id: "dossier-luba",
+    primaryTheme: "pouvoirs",
+    secondaryThemes: ["arts", "langues"],
+    format: "dossier",
+    summary: "Institutions, alliances et transmission de la mémoire politique.",
+  },
+  {
+    id: "dossier-lunda",
+    primaryTheme: "pouvoirs",
+    secondaryThemes: ["parentes", "economies"],
+    format: "dossier",
+    summary:
+      "Récits d’origine, alliances et recompositions des réseaux de pouvoir.",
+  },
+  {
+    id: "dossier-spiritualites-kongo",
+    primaryTheme: "spiritualites",
+    secondaryThemes: ["arts"],
+    format: "dossier",
+    summary: "Minkisi, christianismes kongo et transformations des pratiques.",
+  },
+
+  {
     id: "dossier-proportions",
     primaryTheme: "pouvoirs",
     secondaryThemes: [],
@@ -72,6 +103,24 @@ const CLASSIFICATIONS: Classification[] = [
 ];
 
 const ENGLISH_COPY: Record<string, { title: string; summary: string }> = {
+  "dossier-kongo": {
+    title: "The Kongo kingdom",
+    summary: "A capital, political networks and historical change.",
+  },
+  "dossier-luba": {
+    title: "Luba: power and memory",
+    summary:
+      "Institutions, alliances and the transmission of political memory.",
+  },
+  "dossier-lunda": {
+    title: "Lunda: alliances and connections",
+    summary: "Origin narratives, alliances and changing networks of power.",
+  },
+  "dossier-spiritualites-kongo": {
+    title: "Kongo spiritualities: objects and change",
+    summary: "Minkisi, Kongo Christianities and changing practices.",
+  },
+
   nommer: {
     title: "Who gave this name?",
     summary:
@@ -168,6 +217,84 @@ const FICHE_ASSOCIATIONS: Array<
     dossierId: string;
   }
 > = [
+  {
+    kind: "country",
+    id: "COG",
+    section: "kingdom:Royaume Kongo",
+    dossierId: "dossier-kongo",
+  },
+  {
+    kind: "country",
+    id: "AGO",
+    section: "kingdom:Empire Lunda",
+    dossierId: "dossier-lunda",
+  },
+  {
+    kind: "country",
+    id: "ZMB",
+    section: "kingdom:Empire Lunda",
+    dossierId: "dossier-lunda",
+  },
+  {
+    kind: "country",
+    id: "COD",
+    section: "kingdom:Royaume Kongo",
+    dossierId: "dossier-kongo",
+  },
+  {
+    kind: "country",
+    id: "AGO",
+    section: "kingdom:Royaume Kongo",
+    dossierId: "dossier-kongo",
+  },
+  {
+    kind: "country",
+    id: "COD",
+    section: "kingdom:Empire Luba",
+    dossierId: "dossier-luba",
+  },
+  {
+    kind: "country",
+    id: "COD",
+    section: "kingdom:Empire Lunda",
+    dossierId: "dossier-lunda",
+  },
+  {
+    kind: "people",
+    id: "PPL_KONGO",
+    section: "history",
+    dossierId: "dossier-kongo",
+  },
+  {
+    kind: "people",
+    id: "PPL_LUBA",
+    section: "history",
+    dossierId: "dossier-luba",
+  },
+  {
+    kind: "people",
+    id: "PPL_LUNDA",
+    section: "history",
+    dossierId: "dossier-lunda",
+  },
+  {
+    kind: "people",
+    id: "PPL_KONGO",
+    section: "culture",
+    dossierId: "dossier-spiritualites-kongo",
+  },
+  {
+    kind: "country",
+    id: "COD",
+    section: "culture",
+    dossierId: "dossier-spiritualites-kongo",
+  },
+  {
+    kind: "country",
+    id: "COD",
+    section: "culture",
+    dossierId: "dossier-ressources",
+  },
   { kind: "country", section: "etymology", dossierId: "nommer" },
   { kind: "people", section: "appellations", dossierId: "nommer" },
   { kind: "family", section: "terminology", dossierId: "nommer" },

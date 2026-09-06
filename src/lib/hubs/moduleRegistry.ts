@@ -397,6 +397,38 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     editorialReadiness: "ready",
   },
   {
+    id: "dossier-kongo",
+    name: "Le royaume Kongo",
+    accessMode: "dossiers",
+    page: "dossierKongo",
+    availability: "static",
+    editorialReadiness: "ready",
+  },
+  {
+    id: "dossier-luba",
+    name: "Luba : pouvoir et mémoire",
+    accessMode: "dossiers",
+    page: "dossierLuba",
+    availability: "static",
+    editorialReadiness: "ready",
+  },
+  {
+    id: "dossier-lunda",
+    name: "Lunda : alliances et circulations",
+    accessMode: "dossiers",
+    page: "dossierLunda",
+    availability: "static",
+    editorialReadiness: "ready",
+  },
+  {
+    id: "dossier-spiritualites-kongo",
+    name: "Spiritualités kongo : objets et transformations",
+    accessMode: "dossiers",
+    page: "dossierSpiritualitesKongo",
+    availability: "static",
+    editorialReadiness: "ready",
+  },
+  {
     // Named for what the corpus actually holds — six sourced events, not a
     // three-millennia timeline (ETNI-1198).
     id: "frise",

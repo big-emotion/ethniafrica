@@ -1,5 +1,5 @@
 import { NOMMER_CHAPTERS } from "@/lib/dossiers/nommer/chapters";
-import { getPublishedThemes } from "@/lib/dossiers/catalog";
+import { getDossiers, getPublishedThemes } from "@/lib/dossiers/catalog";
 import { getDossierThemeHref } from "@/lib/dossiers/themes";
 import { GAME_DEFINITIONS } from "@/lib/games/gameRegistry";
 import {
@@ -169,21 +169,13 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
           href: nommerChapterRoute(chapter.key),
           label: `${chapter.ordinal} · ${chapter.title}`,
         })),
-        {
-          href: route("dossierProportions"),
-          label: "Les vraies proportions",
-          note: "Ce que Mercator déforme, et ce que la résolution onusienne demande.",
-        },
-        {
-          href: route("dossierPopulations"),
-          label: "Le poids réel",
-          note: "Une part du monde, un âge médian, et ce que les recensements ne comptent pas.",
-        },
-        {
-          href: route("dossierRessources"),
-          label: "Un scandale géologique",
-          note: "Des côtes nommées par leur marchandise, et où va la valeur aujourd'hui.",
-        },
+        ...getDossiers({ language })
+          .filter((dossier) => dossier.id !== "nommer")
+          .map((dossier) => ({
+            href: dossier.href,
+            label: dossier.title,
+            note: dossier.summary,
+          })),
         {
           href: route("names"),
           label: "Appellations",

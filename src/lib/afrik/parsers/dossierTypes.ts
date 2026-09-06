@@ -1,35 +1,18 @@
 import type { SourceKind, SourceTier } from "@/types/sources";
 
-/**
- * A dossier is the one AFRIK entity that argues rather than describes.
- *
- * Every other fiche states what the corpus holds about a thing. A dossier
- * states what a body of published measurement says about a subject, and what
- * that measurement leaves out — so its atomic unit is not a field but a pair
- * of readings of the same fact. `DossierReading` is where that lives, and
- * `DOSSIER_READING_STANCES` is why the pair cannot silently become a single.
- */
-
-/**
- * The two voices a chapter must carry.
- *
- * `official` restitutes the source that holds authority — the population
- * division, the geological survey, the resolution text — without irony. It is
- * not the adversary; a dossier that treats it as one has swapped one
- * unexamined authority for another.
- *
- * `counter` widens rather than denies. It names what the official framing does
- * not measure, who produced the figure and for what use, or what a second
- * established source measures of the same object. "Actually, it's wrong" is
- * out of register; so is "it's complicated" with nothing cited under it.
- */
+/** Optional paired perspectives supplement a sourced narrative. */
 // @req REQ-114
 export const DOSSIER_READING_STANCES = ["official", "counter"] as const;
 export type DossierReadingStance = (typeof DOSSIER_READING_STANCES)[number];
 
-/** The editorial verticals the Dossiers axis is divided into. */
+/** Internal corpus compatibility; public discovery uses dossier themes. */
 // @req REQ-114
-export const DOSSIER_VERTICALS = ["realites", "nommer"] as const;
+export const DOSSIER_VERTICALS = [
+  "realites",
+  "nommer",
+  "histoires",
+  "spiritualites",
+] as const;
 export type DossierVertical = (typeof DOSSIER_VERTICALS)[number];
 
 export type DossierId = `DOS_${string}`;
