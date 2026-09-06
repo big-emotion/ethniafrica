@@ -7,6 +7,33 @@ afterEach(() => {
 });
 
 describe("OralNarrativesSection", () => {
+  // @req REQ-145
+  it("renders oral narrative chrome in English", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          data: [
+            {
+              id: "en",
+              narratorDisplayName: null,
+              community: "Community",
+              languageCode: "eng",
+              narrativeKind: "testimony",
+              summary: "Corpus value",
+              variantOf: "other",
+            },
+          ],
+        }),
+      })
+    );
+    render(<OralNarrativesSection peopleId="PPL_TEST" language="en" />);
+    expect(await screen.findByText("Voices and accounts")).toBeVisible();
+    expect(screen.getByText(/chose to remain anonymous/)).toBeVisible();
+    expect(screen.getByText(/Linked variant/)).toBeVisible();
+  });
+
   // @req REQ-095
   it("renders an attributed account as a narrative rather than a historical fact", async () => {
     vi.stubGlobal(

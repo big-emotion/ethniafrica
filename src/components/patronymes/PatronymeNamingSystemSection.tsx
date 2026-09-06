@@ -132,7 +132,7 @@ export function PatronymeNamingSystemSection({
 
   return (
     <FicheSection title={t.nameSystemSectionTitle}>
-      <FicheFieldList fields={fields} />
+      <FicheFieldList fields={fields} language={language} />
       <DossierLinks
         language={language}
         kind="name"

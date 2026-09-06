@@ -21,6 +21,21 @@ const baseData: LanguagePageData = {
 };
 
 describe("LanguageFicheTitle", () => {
+  // @req REQ-145
+  it("renders its authored labels in English", () => {
+    render(
+      <LanguageFicheTitle
+        language="en"
+        data={{ ...baseData, nameProvenance: "derived" }}
+      />
+    );
+
+    expect(screen.getByText("Language")).toBeVisible();
+    expect(
+      screen.getByText("Derived from: majority vote of the sources")
+    ).toBeVisible();
+  });
+
   // @req REQ-136
   it("prints the name with no provenance marker when it is sourced", () => {
     render(<LanguageFicheTitle language="fr" data={baseData} />);

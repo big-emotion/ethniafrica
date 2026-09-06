@@ -4,6 +4,7 @@ import type { PeoplesData, PeopleRow } from "@/lib/countryDataTransformer";
 import { AutonymExonymHeading } from "./AutonymExonymHeading";
 import { getPeopleRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
+import { countryCopy } from "@/lib/i18n/copy/country";
 
 interface PeoplesSectionProps {
   data: PeoplesData;
@@ -34,7 +35,7 @@ export function PeoplesSection({ data, language }: PeoplesSectionProps) {
                 className="text-afh-caption mt-0.5"
                 style={{ color: "var(--country-text-soft)" }}
               >
-                {populationCaption(data)}
+                {populationCaption(data, language)}
               </div>
             </>
           ) : (
@@ -49,7 +50,7 @@ export function PeoplesSection({ data, language }: PeoplesSectionProps) {
               color: "var(--country-text)",
             }}
           >
-            {data.peopleCount}+ peuples
+            {countryCopy[language].peoples.count(data.peopleCount)}
           </div>
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
@@ -60,7 +61,7 @@ export function PeoplesSection({ data, language }: PeoplesSectionProps) {
         <>
           {/* Visual demographic bar */}
           <DemoBar rows={data.rows} />
-          <CoverageNote rows={data.rows} />
+          <CoverageNote rows={data.rows} language={language} />
 
           {/* People rows */}
           <div className="mt-3 md:mt-4">
@@ -88,11 +89,12 @@ export function PeoplesSection({ data, language }: PeoplesSectionProps) {
  * floor rather than the country's population. The year always follows the
  * figure itself; mixed-year row totals name no single snapshot.
  */
-function populationCaption(data: PeoplesData): string {
+function populationCaption(data: PeoplesData, language: Language): string {
+  const copy = countryCopy[language].peoples;
   const noun =
     data.totalPopulationIsNational || data.everyPeopleDeclaresPopulation
-      ? "habitants"
-      : "habitants documentés";
+      ? copy.inhabitants
+      : copy.documentedInhabitants;
 
   return data.populationReferenceYear
     ? `${noun} · ${data.populationReferenceYear}`
@@ -149,7 +151,13 @@ export function declaredShare(rows: PeopleRow[]): number {
  * splits are being re-sourced, so where the total falls short the page
  * says so rather than letting the bar imply full coverage.
  */
-function CoverageNote({ rows }: { rows: PeopleRow[] }) {
+function CoverageNote({
+  rows,
+  language,
+}: {
+  rows: PeopleRow[];
+  language: Language;
+}) {
   const declared = declaredShare(rows);
   if (declared >= 99) return null;
 
@@ -159,8 +167,7 @@ function CoverageNote({ rows }: { rows: PeopleRow[] }) {
       className="mt-[6px] text-afh-eyebrow"
       style={{ color: "var(--country-text-soft)" }}
     >
-      Les peuples documentés ici représentent {declared}&nbsp;% de la population
-      du pays. Le reste n&apos;est pas encore réparti dans le corpus.
+      {countryCopy[language].peoples.coverage(declared)}
     </p>
   );
 }
@@ -234,7 +241,9 @@ function PeopleRowItem({
           >
             {row.groupedNames ? (
               <>
-                {row.groupedNames.length} peuples
+                {countryCopy[language].peoples.groupedCount(
+                  row.groupedNames.length
+                )}
                 {row.populationFormatted ? ` · ${row.populationFormatted}` : ""}
               </>
             ) : (
@@ -246,8 +255,8 @@ function PeopleRowItem({
             className="text-afh-eyebrow mt-0.5"
             style={{ color: "var(--country-text-soft)" }}
           >
-            Diversité ethnolinguistique
-            <em> · non détaillée individuellement</em>
+            {countryCopy[language].peoples.diversity}
+            <em> · {countryCopy[language].peoples.notDetailed}</em>
           </div>
         )}
 

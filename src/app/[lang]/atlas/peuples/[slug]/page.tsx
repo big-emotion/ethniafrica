@@ -236,6 +236,7 @@ export default async function PeoplesSlugPage({
       }
     >
       <FicheSequence
+        language={lang as Language}
         entityType="people"
         entityId={parsed.slug}
         entityName={peopleDetail.nameMain}

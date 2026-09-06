@@ -20,6 +20,24 @@ const single: GlobalDemographySection = {
 };
 
 describe("buildPeoplePresenceFacts (REQ-117)", () => {
+  // @req REQ-145
+  it("renders the panel chrome and route in English", () => {
+    const facts = buildPeoplePresenceFacts({
+      language: "en",
+      peopleName: "Yoruba",
+      peopleId: "PPL_YORUBA",
+      demography: yoruba,
+    });
+    render(<>{facts.NGA?.body}</>);
+
+    expect(facts.NGA?.title).toBe("Yoruba in Nigeria");
+    expect(screen.getByText("Declared population")).toBeVisible();
+    expect(screen.getByText("What the halo means")).toBeVisible();
+    expect(
+      screen.getByRole("link", { name: "Read the full fiche" })
+    ).toBeVisible();
+  });
+
   // @req REQ-117
   it("titles the panel with the people and the country, not an ISO code", () => {
     const facts = buildPeoplePresenceFacts({

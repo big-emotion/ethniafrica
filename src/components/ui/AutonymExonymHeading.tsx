@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { bcp47LanguageTag } from "@/lib/languageTag";
+import { peopleCopy } from "@/lib/i18n/copy/people";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 export type AutonymExonymHeadingVariant =
   | "hero"
@@ -37,6 +40,7 @@ export interface AutonymExonymHeadingProps {
   exonyms?: string[];
   className?: string;
   variant?: AutonymExonymHeadingVariant;
+  language?: Language;
 }
 
 const headingVariantConfig = {
@@ -108,7 +112,9 @@ export function AutonymExonymHeading({
   exonyms,
   className,
   variant = "hero",
+  language = FALLBACK_LOCALE,
 }: AutonymExonymHeadingProps) {
+  const namingCopy = peopleCopy[language].naming;
   const [expanded, setExpanded] = useState(false);
 
   // The corpus writes ISO 639-3 and `lang` wants the shortest tag the language
@@ -138,7 +144,7 @@ export function AutonymExonymHeading({
     return (
       <div className={cn("afh-naming", className)}>
         <div className="afh-naming-field" data-role="borne">
-          <h3 className="afh-naming-label">Auto-appellation</h3>
+          <h3 className="afh-naming-label">{namingCopy.selfDesignation}</h3>
           <p
             data-autonym="true"
             lang={autonymLang}
@@ -153,7 +159,7 @@ export function AutonymExonymHeading({
             corpus only has an absence. */}
         {imposedNames.length > 0 && (
           <div className="afh-naming-field" data-role="imposed">
-            <h3 className="afh-naming-label">Exonymes</h3>
+            <h3 className="afh-naming-label">{namingCopy.exonyms}</h3>
             <ul data-exonyms="true" className="afh-naming-list">
               {imposedNames.map((imposed) => (
                 <li key={imposed}>{imposed}</li>
@@ -252,9 +258,7 @@ export function AutonymExonymHeading({
             <span aria-hidden="true" className="font-afh text-afh-small ml-1">
               [{ipa}]
             </span>
-            <span className="sr-only">
-              {`Prononciation phonétique : ${ipa}`}
-            </span>
+            <span className="sr-only">{namingCopy.pronunciation(ipa)}</span>
           </>
         )}
         {/* Two names need a space between them. Without it the heading's own
@@ -290,7 +294,7 @@ export function AutonymExonymHeading({
                 type="button"
                 onClick={() => setExpanded((prev) => !prev)}
               >
-                {expanded ? "Réduire" : `+${extraCount} autres`}
+                {expanded ? namingCopy.collapse : namingCopy.more(extraCount)}
               </button>
               {expanded &&
                 alternateNames!

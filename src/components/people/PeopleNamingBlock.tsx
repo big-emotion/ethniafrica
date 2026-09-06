@@ -1,4 +1,7 @@
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
+import { peopleCopy } from "@/lib/i18n/copy/people";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 /**
  * "Le nom porté, les noms subis" — the fiche's opening section.
@@ -22,6 +25,7 @@ export function PeopleNamingBlock({
   whyProblematic,
   contemporaryUsage,
   isoCode,
+  language = FALLBACK_LOCALE,
 }: {
   nameMain: string;
   selfAppellation?: string | null;
@@ -30,7 +34,9 @@ export function PeopleNamingBlock({
   whyProblematic?: string | null;
   contemporaryUsage?: string | null;
   isoCode?: string;
+  language?: Language;
 }) {
+  const copy = peopleCopy[language].naming;
   return (
     <div className="flex flex-col gap-afh-sm">
       <AutonymExonymHeading
@@ -39,6 +45,7 @@ export function PeopleNamingBlock({
         autonym={selfAppellation ?? nameMain}
         autonymIso639_3={isoCode}
         exonyms={exonyms ?? []}
+        language={language}
       />
 
       {/* Who did the naming, and from where. 786 of 789 fiches answer it, and
@@ -47,7 +54,7 @@ export function PeopleNamingBlock({
           is to what it describes. */}
       {originOfExonyms && (
         <p className="text-afh-small">
-          <strong>D&apos;où viennent ces noms.</strong> {originOfExonyms}
+          <strong>{copy.origin}</strong> {originOfExonyms}
         </p>
       )}
 
@@ -56,7 +63,7 @@ export function PeopleNamingBlock({
           none, on 40 % of the corpus. */}
       {whyProblematic && (
         <p className="text-afh-small">
-          <strong>Pourquoi ces noms posent problème.</strong> {whyProblematic}
+          <strong>{copy.problematic}</strong> {whyProblematic}
         </p>
       )}
 
@@ -66,7 +73,7 @@ export function PeopleNamingBlock({
           would otherwise be left without knowing which one to use. */}
       {contemporaryUsage && (
         <p className="text-afh-small">
-          <strong>L&apos;usage aujourd&apos;hui.</strong> {contemporaryUsage}
+          <strong>{copy.contemporary}</strong> {contemporaryUsage}
         </p>
       )}
     </div>

@@ -4,6 +4,12 @@ import { describe, expect, it } from "vitest";
 import { FamilyFootprintLegend } from "@/components/family/FamilyFootprintLegend";
 
 describe("FamilyFootprintLegend", () => {
+  // @req REQ-145
+  it("states the reconstruction in English", () => {
+    render(<FamilyFootprintLegend language="en" />);
+    expect(screen.getByText(/Reconstructed footprint/)).toBeVisible();
+    expect(screen.getByText(/from peoples, not declared/)).toBeVisible();
+  });
   // @req REQ-116
   it("says the area was reconstructed, never that the fiche declared it", () => {
     render(<FamilyFootprintLegend />);

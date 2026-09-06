@@ -108,6 +108,7 @@ export default async function AppellationsSlugPage({
       }
     >
       <FicheSequence
+        language={lang as Language}
         entityType="name"
         entityId={patronyme.id}
         entityName={patronyme.nameMain}

@@ -1,14 +1,14 @@
 import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import type { ReactNode } from "react";
 
-import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
+import {
+  getAdmin0Name,
+  type FamilyFootprintCountry,
+} from "@/lib/atlas/overlays";
 import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 import { classifyFieldProvenance } from "@/lib/fieldProvenance";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
-import {
-  FicheSection as Section,
-  SOURCE_TIER_NOTE,
-} from "@/components/fiche/FicheSection";
+import { FicheSection as Section } from "@/components/fiche/FicheSection";
 import {
   MEMBER_PEOPLES_SHOWN,
   rankFootprint,
@@ -17,7 +17,7 @@ import {
   type MemberPeopleLike,
 } from "@/lib/familyFootprintRanking";
 import {
-  FOOTPRINT_WORDING,
+  footprintWording,
   type FamilyFootprintProvenance,
 } from "@/lib/familyFootprintSource";
 import type { FamilyPageData } from "@/lib/familyDataTransformer";
@@ -26,6 +26,8 @@ import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
 import { isSourceTier } from "@/types/sources";
 import { formatNumber } from "@/lib/languageTag";
 import type { Language } from "@/types/shared";
+import { familyCopy } from "@/lib/i18n/copy/family";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
 
 /**
  * The family fiche's reading: an opening and five sections on parchment, below
@@ -103,7 +105,7 @@ function StatCard({
   const provenance = classifyFieldProvenance(value).state;
   const missing = provenance === "missing";
   const shown = missing
-    ? (emptyValue ?? "vide")
+    ? (emptyValue ?? familyCopy[language].parchment.empty)
     : Array.isArray(value)
       ? formatNumber(language, value.length)
       : typeof value === "object" && value !== null
@@ -178,8 +180,9 @@ export function FamilyParchment({
   footprintProvenance = "member-peoples",
   children,
 }: FamilyParchmentProps) {
+  const copy = familyCopy[language].parchment;
   const { hero, decolonialHeader, generalInfo, distribution } = data;
-  const wording = FOOTPRINT_WORDING[footprintProvenance];
+  const wording = footprintWording(footprintProvenance, language);
   // Two states, like the cards above. Normally the family declares no
   // distribution and this section shows the footprint reconstructed from its
   // peoples, marked as derived. Should a fiche declare one, that is a stronger
@@ -231,24 +234,24 @@ export function FamilyParchment({
         <div className="afh-parchment-head">
           <div className="afh-chips">
             <span className="afh-chip" data-tone="missing">
-              Distribution non déclarée
+              {copy.undeclaredDistribution}
             </span>
           </div>
         </div>
       )}
 
-      <Section title="La famille en chiffres">
+      <Section title={copy.figures}>
         <div className="afh-stat-cards">
           <StatCard
             language={language}
             id="langues"
-            label="Langues"
+            label={copy.languages}
             value={generalInfo.numberOfLanguages}
           />
           <StatCard
             language={language}
             id="locuteurs"
-            label="Locuteurs"
+            label={copy.speakers}
             value={
               generalInfo.totalSpeakers !== null
                 ? `${Math.round(generalInfo.totalSpeakers / 1e6)} M`
@@ -258,13 +261,13 @@ export function FamilyParchment({
           <StatCard
             language={language}
             id="branches"
-            label="Branches"
+            label={copy.branches}
             value={generalInfo.branches}
           />
           <StatCard
             language={language}
             id="distribution"
-            label="Distribution"
+            label={copy.distribution}
             value={distribution.distributionByCountry}
           />
         </div>
@@ -278,48 +281,20 @@ export function FamilyParchment({
              ("plutôt que de masquer la section ou d'inventer une aire…"),
              which is a decision they were never asked to weigh. */
           <div className="afh-parchment-gap">
-            <p>
-              Cette fiche ne déclare ni ses branches ni sa répartition par pays.
-              L&apos;aire dessinée plus haut est donc reconstruite depuis les
-              peuples rattachés à la famille, et signalée comme telle.
-            </p>
+            <p>{copy.missingDistribution}</p>
           </div>
         )}
       </Section>
 
-      <Section
-        title="L'empreinte, et d'où elle vient"
-        note={wording.sectionNote}
-      >
+      <Section title={copy.footprint} note={wording.sectionNote}>
         <p>
-          L&apos;aire dessinée plus haut n&apos;est pas lue dans la fiche
-          famille : elle est <strong>calculée</strong>.{" "}
-          {footprintProvenance === "declared-associated-peoples" ? (
-            <>
-              Aucun peuple n&apos;est rattaché directement à cette
-              famille&nbsp;: ils relèvent de ses <strong>sous-familles</strong>.
-              Plutôt que d&apos;additionner celles-ci — ce qui ferait affirmer à
-              la carte une unité que la fiche elle-même conteste — l&apos;aire
-              suit la seule liste que la fiche assume, les{" "}
-              <strong>peuples que la fiche nomme</strong>
-              &nbsp;: l&apos;union des pays où ces{" "}
-              <strong>{memberPeopleCount} peuples</strong> se trouvent
-              aujourd&apos;hui donne les{" "}
-              <strong>{footprint.length} pays</strong> teintés. La carte ne dit
-              donc rien de plus que le texte.
-            </>
-          ) : (
-            <>
-              Chaque fiche peuple déclare sa famille linguistique et les pays où
-              ce peuple se trouve aujourd&apos;hui&nbsp;; l&apos;union de ces
-              pays sur les <strong>{memberPeopleCount} peuples</strong>{" "}
-              rattachés à cette famille donne les{" "}
-              <strong>{footprint.length} pays</strong> teintés, l&apos;intensité
-              suivant le nombre de peuples présents.
-            </>
-          )}{" "}
-          Le bord reste tireté partout : une famille linguistique n&apos;a pas
-          de frontière, et cet agrégat encore moins que le reste.
+          {footprintProvenance === "declared-associated-peoples"
+            ? copy.footprintDeclaredPeoples(memberPeopleCount, footprint.length)
+            : copy.footprintMemberPeoples(
+                memberPeopleCount,
+                footprint.length
+              )}{" "}
+          {copy.borderNote}
         </p>
 
         {/* The one thing about its geography the fiche does state, in words.
@@ -328,8 +303,7 @@ export function FamilyParchment({
             statements about the same subject. */}
         {generalInfo.geographicArea && (
           <p>
-            <strong>Aire déclarée par la fiche&nbsp;:</strong>{" "}
-            {generalInfo.geographicArea}
+            <strong>{copy.declaredArea}</strong> {generalInfo.geographicArea}
           </p>
         )}
 
@@ -352,7 +326,7 @@ export function FamilyParchment({
                 className="afh-rank-name"
                 href={getCountryRoute(language, row.countryId)}
               >
-                {row.nameFr}
+                {getAdmin0Name(row.countryId, language) ?? row.nameFr}
               </a>
               <span className="afh-rank-n">{row.memberCount}</span>
               <span className="afh-rank-track">
@@ -367,7 +341,7 @@ export function FamilyParchment({
       </Section>
 
       {decolonialHeader.originOfHistoricalTerm && (
-        <Section title="D'où vient le nom de la famille">
+        <Section title={copy.nameOrigin}>
           <p>{decolonialHeader.originOfHistoricalTerm}</p>
           <DossierLinks
             language={language}
@@ -379,8 +353,8 @@ export function FamilyParchment({
       )}
 
       <Section
-        title="Peuples rattachés"
-        note={`${ranked.length} des ${memberPeopleCount} peuples rattachés, classés par étendue`}
+        title={copy.attachedPeoples}
+        note={copy.attachedNote(ranked.length, memberPeopleCount)}
       >
         <ul className="afh-members" data-testid="member-peoples">
           {ranked.map((people) => (
@@ -399,7 +373,7 @@ export function FamilyParchment({
               )}
               {people.countryIds.length > 0 && (
                 <span className="afh-member-spread">
-                  {people.countryIds.length} pays ·{" "}
+                  {copy.countryCount(people.countryIds.length)} ·{" "}
                   {people.countryIds.join(" ")}
                 </span>
               )}
@@ -408,8 +382,7 @@ export function FamilyParchment({
         </ul>
         {memberPeopleCount > MEMBER_PEOPLES_SHOWN && (
           <p className="afh-parchment-note">
-            {memberPeopleCount - ranked.length} autres peuples rattachés ne sont
-            pas listés ici.
+            {copy.omitted(memberPeopleCount - ranked.length)}
           </p>
         )}
       </Section>
@@ -423,8 +396,8 @@ export function FamilyParchment({
           most want to check. The people and country parchments have always
           shown the gap instead, which is charter §4. */}
       <Section
-        title="Sources"
-        note={SOURCE_TIER_NOTE}
+        title={copy.sources}
+        note={ficheCopy[language].sourceTierNote}
         testId="family-sources"
         /* Deep links across the app point at #sources, and the sources are
            the fiche's own footer landmark. Both predate this layout. */

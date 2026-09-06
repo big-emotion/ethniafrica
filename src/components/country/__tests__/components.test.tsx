@@ -96,6 +96,39 @@ describe("HistoryTimeline", () => {
 // ==========================================
 
 describe("PeoplesSection", () => {
+  // @req REQ-145
+  it("renders demographic chrome in English", () => {
+    const data: PeoplesData = {
+      totalPopulation: 100,
+      totalPopulationFormatted: "100",
+      everyPeopleDeclaresPopulation: true,
+      peopleCount: 2,
+      rows: [
+        {
+          name: "A",
+          percentage: 40,
+          population: 40,
+          populationFormatted: "40",
+          colorIndex: 1,
+        },
+        {
+          name: "B",
+          percentage: 40,
+          population: 40,
+          populationFormatted: "40",
+          colorIndex: 2,
+        },
+      ],
+    };
+    render(<PeoplesSection language="en" data={data} />);
+
+    expect(screen.getByText("inhabitants")).toBeVisible();
+    expect(screen.getByText("2+ peoples")).toBeVisible();
+    expect(
+      screen.getByText(/represent 80% of the country's population/)
+    ).toBeVisible();
+  });
+
   it("returns null when rows list is empty", () => {
     const data: PeoplesData = {
       totalPopulation: 0,
@@ -330,6 +363,17 @@ describe("LanguagesSection", () => {
     };
     render(<LanguagesSection data={data} />);
     expect(screen.getByText(/\+ 4 autres langues/)).toBeTruthy();
+  });
+
+  // @req REQ-145
+  it("shows the overflow count in English", () => {
+    const data: LanguagesData = {
+      bubbles: [{ name: "French", isOfficial: true, size: "big" }],
+      totalCount: 16,
+      overflowCount: 4,
+    };
+    render(<LanguagesSection data={data} language="en" />);
+    expect(screen.getByText(/\+ 4 other languages/)).toBeVisible();
   });
 
   it("renders ISO code badge when code is provided", () => {

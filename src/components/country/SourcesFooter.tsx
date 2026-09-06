@@ -1,6 +1,9 @@
 import { SourceVerifyBadge } from "@/components/ui/source-verify-badge";
 import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
 import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
+import { countryCopy } from "@/lib/i18n/copy/country";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 interface SourcesFooterProps {
   sources: FicheSourceEntry[];
@@ -13,6 +16,7 @@ interface SourcesFooterProps {
    * reading of a source's authority, two skins.
    */
   variant?: "card" | "parchment";
+  language?: Language;
 }
 
 /**
@@ -26,6 +30,7 @@ export function SourcesFooter({
   sources,
   hasSourceFlag,
   variant = "card",
+  language = FALLBACK_LOCALE,
 }: SourcesFooterProps) {
   if (!sources || sources.length === 0) return null;
 
@@ -67,7 +72,7 @@ export function SourcesFooter({
             color: "var(--country-earth)",
           }}
         >
-          <span>Sources &amp; Références</span>
+          <span>{countryCopy[language].sourcesReferences}</span>
           {hasSourceFlag && <SourceVerifyBadge />}
         </p>
       )}
@@ -102,7 +107,7 @@ export function SourcesFooter({
                     }
               }
             >
-              {sourceStandingLabel(source.standing, "fr")}
+              {sourceStandingLabel(source.standing, language)}
             </span>
             {source.url ? (
               <a

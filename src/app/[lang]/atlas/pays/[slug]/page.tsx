@@ -224,6 +224,7 @@ export default async function PaysSlugPage({
       }
     >
       <FicheSequence
+        language={lang as Language}
         entityType="country"
         entityId={countryDetail.id}
         entityName={countryDetail.nameCommonFr || countryDetail.nameFr}
@@ -259,7 +260,10 @@ export default async function PaysSlugPage({
             {/* The chapô goes in through `record` rather than through a new
                 FicheSequence slot: it is part of what the record says, and
                 the sequence already knows where the record belongs. */}
-            <CountrySynthesisBrief synthesis={currentSynthesis} />
+            <CountrySynthesisBrief
+              synthesis={currentSynthesis}
+              language={lang as Language}
+            />
             <CountryRecordView
               country={countryDetail}
               language={lang as Language}

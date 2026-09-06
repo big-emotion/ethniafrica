@@ -7,6 +7,7 @@ import type {
 } from "@/lib/peopleDataTransformer";
 import { formatNumber } from "@/lib/languageTag";
 import type { Language } from "@/types/shared";
+import { peopleCopy } from "@/lib/i18n/copy/people";
 
 /**
  * The head of the people fiche: overline, title, lede, and two chips.
@@ -52,6 +53,7 @@ export function PeopleFicheHead({
    */
   showConfidence?: boolean;
 }) {
+  const copy = peopleCopy[language].ficheHead;
   const group = hero.ethnoLinguisticGroup ?? hero.languageFamilyName;
   const corpusKeys = [hero.peopleId, hero.languageFamilyId]
     .filter(Boolean)
@@ -88,13 +90,15 @@ export function PeopleFicheHead({
             <span className="font-[family-name:var(--afh-font-mono)] tabular-nums">
               {formatNumber(language, countries.totalPopulation)}
             </span>{" "}
-            personnes
+            {copy.people}
             {countries.referenceYear
-              ? ` · réf. ${countries.referenceYear}`
+              ? ` · ${copy.reference} ${countries.referenceYear}`
               : ""}
           </span>
         )}
-        <span className="afh-chip">{presenceCount} pays de présence</span>
+        <span className="afh-chip">
+          {copy.presenceCountries(presenceCount)}
+        </span>
 
         {/* 473 fiches argue in `whyProblematic` that their name was imposed;
             this is where that argument becomes something a reader can act on.
@@ -110,12 +114,13 @@ export function PeopleFicheHead({
       {showConfidence && (
         <div className="mt-afh-sm">
           <ConfidenceChip
+            language={language}
             confidenceScore={confidenceScore}
             sourceCount={sourceCount}
             lastHumanAuditAt={lastHumanAuditAt}
             variant="hero"
             id={hero.peopleId}
-            ariaSuffix={`pour la fiche ${hero.nameMain}`}
+            ariaSuffix={copy.sourceAria(hero.nameMain)}
           />
         </div>
       )}

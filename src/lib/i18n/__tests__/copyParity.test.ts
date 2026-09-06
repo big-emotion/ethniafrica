@@ -57,12 +57,16 @@ describe("the per-surface copy dictionaries (REQ-145)", () => {
   });
 
   // @req REQ-145
-  it("leaves no empty string in any module or locale", () => {
+  it("leaves no empty string or empty interpolation in any module or locale", () => {
     for (const [name, dictionary] of modules) {
       for (const locale of LOCALES) {
         for (const [path, value] of leaves(dictionary[locale], name)) {
-          expect(typeof value, path).toBe("string");
-          expect((value as string).trim().length, path).toBeGreaterThan(0);
+          const rendered =
+            typeof value === "function"
+              ? value(...Array(value.length).fill("value"))
+              : value;
+          expect(typeof rendered, path).toBe("string");
+          expect((rendered as string).trim().length, path).toBeGreaterThan(0);
         }
       }
     }

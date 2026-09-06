@@ -81,6 +81,28 @@ function renderTitle(
 }
 
 describe("country fiche charter", () => {
+  // @req REQ-145
+  it("renders country fiche chrome in English while preserving corpus values", () => {
+    const country = countryFixture();
+    const { rerender } = render(
+      <CountryFicheTitle language="en" country={country} />
+    );
+    expect(screen.getByText(/country fiche/)).toBeVisible();
+    expect(screen.getByRole("heading", { name: "Nigéria" })).toBeVisible();
+
+    rerender(<CountryRecordView language="en" country={country} />);
+    expect(
+      screen.getByRole("heading", { name: "Etymology of the name" })
+    ).toBeVisible();
+    expect(
+      screen.getByRole("heading", { name: "Names through history" })
+    ).toBeVisible();
+    expect(
+      screen.getByRole("heading", { name: "Culture and society" })
+    ).toBeVisible();
+    expect(screen.getByText(/Du fleuve Niger/)).toBeVisible();
+  });
+
   // A missing people breakdown does not erase the independently sourced
   // national population. Madagascar is the corpus case for this distinction.
   // @req REQ-115

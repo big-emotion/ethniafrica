@@ -1,6 +1,7 @@
 import type { LanguagePageData } from "@/lib/languageDataTransformer";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import type { Language } from "@/types/shared";
+import { languageFicheCopy } from "@/lib/i18n/copy/languageFiche";
 
 /**
  * The band a language fiche opens on, above the parchment.
@@ -20,14 +21,15 @@ export function LanguageFicheTitle({
   data: LanguagePageData;
   language: Language;
 }) {
+  const copy = languageFicheCopy[language];
   return (
     <header className="afh-parchment-head">
-      <p className="afh-parchment-eyebrow">Langue</p>
+      <p className="afh-parchment-eyebrow">{copy.eyebrow}</p>
       <h1>{data.name}</h1>
       {data.nameProvenance === "derived" && (
         <FieldProvenanceMarker
           state="derived"
-          origin="vote majoritaire des sources"
+          origin={copy.majorityVote}
           language={language}
           className="mt-2"
         />

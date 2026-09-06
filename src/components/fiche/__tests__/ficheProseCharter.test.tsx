@@ -106,6 +106,12 @@ describe("FicheProse — a corpus defect is said, never mimed", () => {
   const serialised =
     '{"initiationRites": {"maleInitiation": "L\'initiation masculine est le rite de passage."}}';
 
+  // @req REQ-145
+  it("explains an unreadable field in English on an English fiche", () => {
+    render(<FicheProse text={serialised} language="en" />);
+    expect(screen.getByText(/This field cannot be read/)).toBeVisible();
+  });
+
   // @req REQ-122
   it("never prints the braces of a serialised JSON field", () => {
     const { container } = render(<FicheProse text={serialised} />);

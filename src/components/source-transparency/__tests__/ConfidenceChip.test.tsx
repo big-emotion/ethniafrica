@@ -20,6 +20,24 @@ describe("ConfidenceChip", () => {
     document.getElementById("afh-chip-keyframes")?.remove();
   });
 
+  // @req REQ-145
+  it("renders its source wording in English when requested", () => {
+    render(
+      <ConfidenceChip
+        language="en"
+        confidenceScore={87}
+        sourceCount={4}
+        lastHumanAuditAt="2025-09-21"
+      />
+    );
+    expect(
+      screen.getByText(/87 % · 4 sources · verified 2025-09-21/)
+    ).toBeVisible();
+    expect(
+      screen.getByRole("button", { name: /open the source chain/ })
+    ).toBeVisible();
+  });
+
   describe("rendering with complete data", () => {
     it("renders the typographic pill with confidence score, source count and audit date", () => {
       render(

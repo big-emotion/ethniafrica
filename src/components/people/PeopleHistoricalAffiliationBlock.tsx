@@ -3,9 +3,12 @@ import { ficheSourceEntries } from "@/lib/afrik/ficheSourceLabel";
 // One sources footer for the three fiches; it lives under country/ for
 // historical reasons only and knows nothing about countries.
 import { SourcesFooter } from "@/components/country/SourcesFooter";
+import type { Language } from "@/types/shared";
+import { FALLBACK_LOCALE } from "@/lib/locale";
 
 interface PeopleHistoricalAffiliationBlockProps {
   data?: HistoricalAffiliationSection;
+  language?: Language;
 }
 
 /**
@@ -19,6 +22,7 @@ interface PeopleHistoricalAffiliationBlockProps {
 // @req REQ-127
 export function PeopleHistoricalAffiliationBlock({
   data,
+  language = FALLBACK_LOCALE,
 }: PeopleHistoricalAffiliationBlockProps) {
   if (!data) return null;
 
@@ -28,7 +32,11 @@ export function PeopleHistoricalAffiliationBlock({
     <div className="afh-prose-fields space-y-[14px]">
       <p className="people-section-body">{data.description}</p>
       {sources.length > 0 && (
-        <SourcesFooter sources={sources} variant="parchment" />
+        <SourcesFooter
+          sources={sources}
+          variant="parchment"
+          language={language}
+        />
       )}
     </div>
   );

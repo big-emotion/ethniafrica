@@ -100,6 +100,36 @@ function renderParchment(data: FamilyPageData = undeclaredFamily()) {
 }
 
 describe("FamilyParchment — what the fiche declares", () => {
+  // @req REQ-145
+  it("renders the family fiche frame in English", () => {
+    render(
+      <FamilyParchment
+        language="en"
+        data={undeclaredFamily()}
+        footprintCountries={overlay!.countries}
+        memberPeoples={memberPeoples}
+        memberPeopleCount={memberPeoples.length}
+      />
+    );
+
+    expect(
+      screen.getByRole("heading", { name: "The family in figures" })
+    ).toBeVisible();
+    expect(
+      screen.getByRole("heading", {
+        name: "The footprint and where it comes from",
+      })
+    ).toBeVisible();
+    expect(
+      screen.getByRole("heading", { name: "Attached peoples" })
+    ).toBeVisible();
+    expect(
+      screen.getByText(/This fiche declares neither its branches/)
+    ).toBeVisible();
+    expect(screen.getByText(/The area drawn above is not read/)).toBeVisible();
+    expect(screen.getByRole("link", { name: /Nigeria/ })).toBeVisible();
+  });
+
   // The head opened on "N peuples · M pays dérivés" — the same two figures
   // the empreinte section states a screen below, in a sentence that also says
   // what they were derived from and by which rule. Bare in a chip they were

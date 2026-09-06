@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 
 import { chapterAnchorId } from "@/lib/ficheChapters";
+import { peopleCopy } from "@/lib/i18n/copy/people";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 /** The chapter this section is, in the fiche's reading rail. */
-const CHAPTER_TITLE = "Crédits médias";
-
 interface PublicMedia {
   id: string;
   author: string | null;
@@ -18,10 +19,15 @@ interface PublicMedia {
 
 interface MediaCreditSectionProps {
   peopleId: string;
+  language?: Language;
 }
 
 // @req REQ-128
-export function MediaCreditSection({ peopleId }: MediaCreditSectionProps) {
+export function MediaCreditSection({
+  peopleId,
+  language = FALLBACK_LOCALE,
+}: MediaCreditSectionProps) {
+  const copy = peopleCopy[language].media;
   const [media, setMedia] = useState<PublicMedia[]>([]);
 
   useEffect(() => {
@@ -51,8 +57,8 @@ export function MediaCreditSection({ peopleId }: MediaCreditSectionProps) {
 
   return (
     <section
-      id={chapterAnchorId(CHAPTER_TITLE)}
-      data-fiche-section={CHAPTER_TITLE}
+      id={chapterAnchorId(copy.title)}
+      data-fiche-section={copy.title}
       aria-labelledby="media-credit-title"
       className="people-fade-in space-y-3 overflow-hidden rounded-[var(--country-radius-xl)] p-[18px] md:rounded-[20px] md:p-6 xl:rounded-[22px] xl:p-7"
       style={{
@@ -65,11 +71,10 @@ export function MediaCreditSection({ peopleId }: MediaCreditSectionProps) {
           id="media-credit-title"
           className="text-afh-small font-bold text-[var(--country-text)]"
         >
-          {CHAPTER_TITLE}
+          {copy.title}
         </h2>
         <p className="mt-1 text-afh-small text-[var(--country-text-soft)]">
-          Auteur, licence et page d&apos;origine de chaque image ou vidéo
-          attachée à cette fiche.
+          {copy.description}
         </p>
       </div>
       <ul className="space-y-3">
@@ -79,7 +84,7 @@ export function MediaCreditSection({ peopleId }: MediaCreditSectionProps) {
             className="rounded-[var(--country-radius-md)] border border-[var(--country-border)] p-3 md:p-4"
           >
             <p className="text-afh-small font-semibold text-[var(--country-text)]">
-              {entry.author ?? "Auteur inconnu"}
+              {entry.author ?? copy.unknownAuthor}
             </p>
             <p className="mt-1 flex flex-wrap gap-x-2 text-afh-caption text-[var(--country-text-soft)]">
               <a
@@ -88,7 +93,7 @@ export function MediaCreditSection({ peopleId }: MediaCreditSectionProps) {
                 rel="noopener noreferrer"
                 className="underline"
               >
-                Licence
+                {copy.licence}
               </a>
               {entry.sourcePageUrl && (
                 <a
@@ -97,7 +102,7 @@ export function MediaCreditSection({ peopleId }: MediaCreditSectionProps) {
                   rel="noopener noreferrer"
                   className="underline"
                 >
-                  Page source
+                  {copy.sourcePage}
                 </a>
               )}
               {entry.period && <span>{entry.period}</span>}

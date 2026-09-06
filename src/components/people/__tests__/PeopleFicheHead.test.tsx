@@ -30,6 +30,15 @@ const countries: PeopleCountriesData = {
 };
 
 describe("PeopleFicheHead (REQ-115)", () => {
+  // @req REQ-145
+  it("renders population and presence labels in English", () => {
+    render(<PeopleFicheHead language="en" hero={hero} countries={countries} />);
+
+    expect(screen.getByText(/people/)).toBeInTheDocument();
+    expect(screen.getByText(/2 countries of presence/)).toBeInTheDocument();
+    expect(screen.getByText(/ref\. 2025/)).toBeInTheDocument();
+  });
+
   // @req REQ-115
   it("carries the fiche's own identifiers in its overline", () => {
     render(<PeopleFicheHead language="fr" hero={hero} countries={countries} />);

@@ -22,6 +22,20 @@ const briefFor = (synthesis: CountrySynthesis) =>
   render(<CountrySynthesisBrief synthesis={synthesis} />);
 
 describe("CountrySynthesisBrief", () => {
+  // @req REQ-145
+  it("renders its authored frame in English and preserves corpus prose", () => {
+    render(<CountrySynthesisBrief synthesis={NIGERIA} language="en" />);
+
+    expect(screen.getByText("In brief")).toBeVisible();
+    expect(
+      screen.getByRole("heading", {
+        name: /Nigeria — cultural and historical overview/,
+      })
+    ).toBeVisible();
+    expect(screen.getByText("Former names and designations")).toBeVisible();
+    expect(screen.getByText(/Le pays le plus peuplé/)).toBeVisible();
+  });
+
   // @req REQ-113
   it("opens the fiche on the chapeau the corpus wrote", () => {
     briefFor(NIGERIA);

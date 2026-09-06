@@ -87,7 +87,7 @@ export function CountryAttestedNamesSection({
       // reader cannot see.
       note={fields.length > 1 ? copy.countryNote : undefined}
     >
-      <FicheFieldList fields={fields} />
+      <FicheFieldList fields={fields} language={language} />
     </FicheSection>
   );
 }
