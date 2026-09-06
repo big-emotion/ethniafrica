@@ -37,6 +37,10 @@ regexes = [
   # uppercase, underscores or symbols and would still be caught. Exempting the
   # corpus by path instead would have blinded the scanner to ~890 files.
   '''"sourceKey"\s*:\s*"[a-z0-9]+(?:-[a-z0-9]+)*"''',
+  # Dossier figures use the same non-secret kebab-case handle convention.
+  # Restrict the exemption to the exact JSON field and value shape so tokens
+  # containing uppercase characters, underscores or symbols remain visible.
+  '''"figureKey"\s*:\s*"[a-z0-9]+(?:-[a-z0-9]+)*"''',
 ]
 
 paths = [

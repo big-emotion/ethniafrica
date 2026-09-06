@@ -459,12 +459,22 @@ describe("every target is a route the app actually serves", () => {
    */
   // @req REQ-141
   it("rewrites every English path onto a folder that exists", () => {
-    const folder = (publicPath: string) =>
-      resolve(
+    const dossierPaths = new Set([
+      getLocalizedRoute("en", "dossierProportions"),
+      getLocalizedRoute("en", "dossierPopulations"),
+      getLocalizedRoute("en", "dossierRessources"),
+    ]);
+    const folder = (publicPath: string) => {
+      if (dossierPaths.has(publicPath)) {
+        return resolve(__dirname, "../app/[lang]/dossiers/[dossier]");
+      }
+
+      return resolve(
         __dirname,
         "../app/[lang]",
         (toRouteFilePath(publicPath) ?? publicPath).slice("/en/".length)
       );
+    };
 
     const englishPaths = [
       ...PAGE_TYPES.map((page) => getLocalizedRoute("en", page)),

@@ -17,6 +17,7 @@ import { pathToFileURL } from "url";
 import { parse } from "csv-parse/sync";
 import { evaluateSourceUrl } from "@/lib/sources/authorized-source-catalog";
 import { parseRelationFile } from "../src/lib/afrik/parsers/relationParser";
+import { parseDossierFile } from "../src/lib/afrik/parsers/dossierParser";
 import { parseNameRecordFile } from "../src/lib/afrik/parsers/nameRecordParser";
 import { parsePatronymeFile } from "../src/lib/afrik/parsers/patronymeParser";
 import type { SourceTier } from "../src/types/sources";
@@ -3718,6 +3719,62 @@ export function checkNameRecordModel(datasetRoot: string): ValidationResult {
 }
 
 /**
+ * DOS_* dossier fiches — strict shape plus the contradictoire rule.
+ *
+ * The parser holds the rules; this check is what makes CI run them over the
+ * dataset. Two things it adds on top: a slug must be unique across the corpus,
+ * because it is the URL segment the one dossier route resolves on, and a fiche
+ * whose filename disagrees with its identifier is refused rather than loaded
+ * under a name nothing can find it by.
+ */
+export function checkDossierFicheModel(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const dossierDir = path.join(datasetRoot, "dossiers");
+
+  if (!fs.existsSync(dossierDir)) return { ok: true, errors, warnings };
+
+  const seenSlugs = new Map<string, string>();
+
+  for (const file of fs
+    .readdirSync(dossierDir)
+    .filter((f) => f.endsWith(".json"))) {
+    const fullPath = path.join(dossierDir, file);
+    let raw: unknown;
+    try {
+      raw = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      errors.push(`REQ-114: ${file}: could not parse JSON`);
+      continue;
+    }
+
+    const parsed = parseDossierFile(raw);
+    if (!parsed.success || !parsed.data) {
+      for (const message of parsed.errors) {
+        errors.push(`REQ-114: ${file}: ${message}`);
+      }
+      continue;
+    }
+
+    const dossier = parsed.data;
+
+    if (file !== `${dossier.id}.json`) {
+      errors.push(`REQ-114: ${file}: file should be named ${dossier.id}.json`);
+    }
+
+    const claimedBy = seenSlugs.get(dossier.slug);
+    if (claimedBy) {
+      errors.push(
+        `REQ-114: ${file}: slug "${dossier.slug}" is already used by ${claimedBy} — a slug is the address the dossier route resolves on`
+      );
+    }
+    seenSlugs.set(dossier.slug, file);
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
  * True when a source carries publishable authority — the current-vocabulary
  * equivalent of the retired "Tier 1/2". `unverified` and the unadjudicated
  * `needs_review` are deliberately excluded: both are legal standings that
@@ -4751,6 +4808,14 @@ async function main() {
   newChecks.push({
     name: "REQ-133/REQ-134 Patronyme fiche model",
     result: checkPatronymeFicheModel(datasetRoot),
+  });
+
+  console.log(
+    "REQ-114 - Dossier fiche model (strict shape + both readings per chapter)..."
+  );
+  newChecks.push({
+    name: "REQ-114 Dossier fiche model",
+    result: checkDossierFicheModel(datasetRoot),
   });
 
   console.log(

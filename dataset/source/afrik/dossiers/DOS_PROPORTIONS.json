@@ -1,0 +1,336 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "dossier",
+    "directives": "Reader-facing dossier. Preserve the distinction between measured values, estimates, and projections. Every chapter must keep its official reading beside a sourced counter-reading.",
+    "readerFacing": [
+      "Les superficies dépendent du périmètre statistique annoncé.",
+      "Une distance géométrique ne décrit pas à elle seule un trajet possible."
+    ]
+  },
+  "id": "DOS_PROPORTIONS",
+  "vertical": "realites",
+  "slug": "proportions",
+  "title": "Les vraies proportions",
+  "question": "Que devient l'Afrique quand on distingue la carte, la mesure et le trajet ?",
+  "standfirst": "Une carte plane déforme toujours quelque chose. Ce dossier mesure ce que Mercator agrandit, ce que les totaux de superficie comptent et ce qu'un kilomètre à vol d'oiseau ne dit pas d'un déplacement réel.",
+  "publishedOn": "2026-09-06",
+  "thesis": {
+    "stepLabel": "Trois mesures",
+    "heading": "Même continent, trois façons de fausser l'échelle",
+    "figures": [
+      {
+        "figureKey": "afrique-surface",
+        "value": "30,38 M km²",
+        "claim": "Superficie des 54 États africains, du Sahara occidental et des eaux intérieures, d'après les séries de la Banque mondiale.",
+        "provenance": "Banque mondiale, addition documentée",
+        "year": 2022,
+        "sourceRefs": ["world-bank-area", "un-yearbook-area"]
+      },
+      {
+        "figureKey": "mercator-72",
+        "value": "× 10,5",
+        "claim": "Agrandissement des surfaces par Mercator à 72° de latitude nord.",
+        "provenance": "U.S. Geological Survey",
+        "year": 1987,
+        "sourceRefs": ["usgs-projections"]
+      },
+      {
+        "figureKey": "capitales-reliees",
+        "value": "4 sur 26",
+        "claim": "Chefs-lieux provinciaux de RDC reliés à Kinshasa par la route dans le diagnostic publié en 2018.",
+        "provenance": "Banque mondiale",
+        "year": 2018,
+        "sourceRefs": ["world-bank-drc", "wfp-drc-roads"]
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "chapterKey": "corriger-la-carte",
+      "ordinal": 1,
+      "title": "« Corriger la carte » : une recommandation, pas une interdiction",
+      "question": "Qu'a adopté l'Assemblée générale des Nations unies le 4 septembre 2026 ?",
+      "standfirst": "Le texte a été adopté par 164 voix contre une, avec six abstentions. Il encourage les projections équivalentes, dont Equal Earth, lorsque les superficies comptent.",
+      "body": [
+        {
+          "text": "Le projet A/80/L.104 reconnaît qu'aucune projection plane ne peut tout préserver. Il recommande une représentation plus fidèle des superficies dans l'éducation, les médias et les usages publics, tout en réservant les besoins propres à la navigation.",
+          "sourceRefs": ["un-resolution", "un-vote", "usgs-projections"]
+        }
+      ],
+      "illustration": {
+        "src": "/images/dossiers/equal-earth-projection.jpg",
+        "alt": "Planisphère en projection Equal Earth centré sur l'Afrique et l'Europe",
+        "caption": "Projection Equal Earth sur une image Blue Marble de la NASA, avec un graticule de 15 degrés.",
+        "author": "Strebe",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "filePage": "https://commons.wikimedia.org/wiki/File:Equal_Earth_projection_SW.jpg",
+        "year": "2018"
+      },
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Ce que le vote établit",
+          "body": "L'Assemblée générale a adopté une recommandation politique : elle encourage Equal Earth et d'autres projections équivalentes, sans bannir Mercator ni créer d'obligation juridique pour les États, les écoles ou les plateformes.",
+          "sourceRefs": ["un-resolution", "un-vote"]
+        },
+        {
+          "stance": "counter",
+          "label": "Ce que le vote ne change pas seul",
+          "body": "Les fonds de carte scolaires, administratifs et numériques dépendent d'éditeurs, de programmes nationaux et d'infrastructures techniques. Une résolution peut déplacer la norme publique ; elle ne remplace pas automatiquement ces systèmes.",
+          "sourceRefs": [
+            "un-resolution",
+            "epsg-web-mercator",
+            "equal-earth-paper"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "figureKey": "vote-onu",
+          "label": "Vote enregistré",
+          "value": "164 – 1 – 6",
+          "year": 2026,
+          "note": "Pour, contre, abstentions ; les États-Unis ont été le seul vote contre.",
+          "sourceRefs": ["un-vote"]
+        }
+      ]
+    },
+    {
+      "chapterKey": "mercator",
+      "ordinal": 2,
+      "title": "Mercator conserve un cap, pas une superficie",
+      "question": "Pourquoi l'Afrique paraît-elle plus petite sur tant de cartes ?",
+      "standfirst": "Conçue pour la navigation, la projection de Mercator conserve localement les angles. Son échelle augmente avec la latitude et exagère donc fortement les hautes latitudes.",
+      "body": [
+        {
+          "text": "L'U.S. Geological Survey rappelle qu'aucune carte plane ne peut être à la fois conforme et équivalente. Mercator rend les directions utiles aux navigateurs, tandis qu'Equal Earth conserve les rapports de surface à l'échelle du monde.",
+          "sourceRefs": [
+            "usgs-projections",
+            "equal-earth-paper",
+            "epsg-equal-earth"
+          ]
+        }
+      ],
+      "illustration": null,
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Une projection adaptée à son usage",
+          "body": "Mercator n'est pas une erreur de calcul : c'est une projection conforme. Les petites formes et les angles y sont localement préservés, ce qui permet de représenter un cap constant par une ligne droite.",
+          "sourceRefs": ["usgs-projections"]
+        },
+        {
+          "stance": "counter",
+          "label": "Un mauvais étalon des tailles",
+          "body": "Cette qualité se paie par une inflation des surfaces loin de l'équateur. Le registre EPSG décrit en outre le Web Mercator comme un système destiné à la cartographie web, avec des erreurs d'échelle connues : sa commodité technique ne lui donne pas valeur de mesure.",
+          "sourceRefs": ["usgs-projections", "epsg-web-mercator"]
+        }
+      ],
+      "figures": [
+        {
+          "figureKey": "facteur-mercator",
+          "label": "Facteur d'aire à 72° nord",
+          "value": "× 10,5",
+          "year": 1987,
+          "note": "Le facteur vaut environ 4 à 60° nord et augmente rapidement vers les pôles.",
+          "sourceRefs": ["usgs-projections"]
+        }
+      ]
+    },
+    {
+      "chapterKey": "surface",
+      "ordinal": 3,
+      "title": "Trente millions de kilomètres carrés, selon le périmètre",
+      "question": "Quelle est la superficie de l'Afrique ?",
+      "standfirst": "Les totaux publiés varient d'environ 29,65 à 30,38 millions de kilomètres carrés parce qu'ils ne comptent pas tous les mêmes eaux, territoires et catégories de surface.",
+      "body": [
+        {
+          "text": "Un chiffre de superficie doit annoncer son périmètre. Les séries de la Banque mondiale distinguent superficie totale et terres émergées ; les tableaux des Nations unies peuvent publier un total continental selon une convention différente de celle de leurs lignes nationales.",
+          "sourceRefs": ["world-bank-area", "un-yearbook-area"]
+        }
+      ],
+      "illustration": null,
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Un total statistique reproductible",
+          "body": "L'addition des superficies nationales de la Banque mondiale, augmentée du Sahara occidental, donne 30,38 millions de kilomètres carrés. Le calcul inclut les eaux intérieures déclarées dans ces séries.",
+          "sourceRefs": ["world-bank-area", "un-western-sahara"]
+        },
+        {
+          "stance": "counter",
+          "label": "La différence est dans la définition",
+          "body": "L'Annuaire statistique des Nations unies publie 29,65 millions de kilomètres carrés pour les terres émergées. Cet écart n'est pas une preuve que le continent change de taille : il montre que deux agrégats portant le même nom peuvent avoir des périmètres différents.",
+          "sourceRefs": ["un-yearbook-area", "world-bank-area"]
+        }
+      ],
+      "figures": [
+        {
+          "figureKey": "surface-large",
+          "label": "Superficie avec eaux intérieures et Sahara occidental",
+          "value": "30,38 M km²",
+          "year": 2022,
+          "note": "Addition des séries nationales de la Banque mondiale et du Sahara occidental.",
+          "sourceRefs": ["world-bank-area", "un-western-sahara"]
+        },
+        {
+          "figureKey": "surface-terres",
+          "label": "Total continental des terres émergées",
+          "value": "29,65 M km²",
+          "year": 2023,
+          "note": "Total publié dans l'Annuaire statistique des Nations unies.",
+          "sourceRefs": ["un-yearbook-area"]
+        }
+      ]
+    },
+    {
+      "chapterKey": "distances",
+      "ordinal": 4,
+      "title": "Le kilomètre et le trajet",
+      "question": "Une distance entre deux villes décrit-elle leur accessibilité ?",
+      "standfirst": "En République démocratique du Congo, le réseau disponible, son état et les ruptures entre route, fleuve et rail comptent davantage qu'une ligne tracée entre deux points.",
+      "body": [
+        {
+          "text": "Le diagnostic de la Banque mondiale ne comptait en 2018 que quatre chefs-lieux provinciaux sur vingt-six reliés par la route à Kinshasa. L'évaluation logistique du Programme alimentaire mondial décrit un réseau immense mais souvent impraticable, sans continuité nationale fiable.",
+          "sourceRefs": ["world-bank-drc", "wfp-drc-roads"]
+        }
+      ],
+      "illustration": null,
+      "readings": [
+        {
+          "stance": "official",
+          "label": "La distance géométrique reste utile",
+          "body": "Une distance à vol d'oiseau permet de comparer l'éloignement physique sans dépendre d'un itinéraire temporaire. Une matrice routière ajoute la longueur d'un chemin connu sur le réseau.",
+          "sourceRefs": ["wfp-drc-roads"]
+        },
+        {
+          "stance": "counter",
+          "label": "Un tracé n'est pas une liaison praticable",
+          "body": "La présence d'une route sur une carte ne garantit ni sa continuité ni son état. Saisons, ponts, bacs, conflits et ruptures de charge transforment une distance théorique en temps, en coût et parfois en impossibilité de voyager.",
+          "sourceRefs": ["world-bank-drc", "wfp-drc-roads"]
+        }
+      ],
+      "figures": [
+        {
+          "figureKey": "drc-road-capitals",
+          "label": "Chefs-lieux reliés à Kinshasa par la route",
+          "value": "4 sur 26",
+          "year": 2018,
+          "note": "Le diagnostic ne nomme pas les quatre chefs-lieux concernés.",
+          "sourceRefs": ["world-bank-drc"]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "un-resolution",
+      "title": "United Nations General Assembly, draft resolution A/80/L.104, Correct the map",
+      "url": "https://docs.un.org/fr/A/80/L.104",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2026,
+      "notes": "Texte soumis à l'Assemblée générale ; le dispositif encourage les projections équivalentes et réserve la navigation."
+    },
+    {
+      "sourceKey": "un-vote",
+      "title": "United Nations, General Assembly Adopts Text to 'Correct the Map' (GA/12779)",
+      "url": "https://press.un.org/en/2026/ga12779.doc.htm",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2026,
+      "notes": "Compte rendu officiel du vote du 4 septembre 2026."
+    },
+    {
+      "sourceKey": "usgs-projections",
+      "title": "John P. Snyder, Map Projections — A Working Manual, USGS Professional Paper 1395",
+      "url": "https://pubs.usgs.gov/pp/1395/report.pdf",
+      "tier": "official",
+      "source_kind": "government",
+      "publicationYear": 1987,
+      "notes": "Manuel de référence sur les propriétés et distorsions des projections."
+    },
+    {
+      "sourceKey": "epsg-web-mercator",
+      "title": "EPSG Geodetic Parameter Dataset, WGS 84 / Pseudo-Mercator (EPSG:3857)",
+      "url": "https://epsg.org/crs_3857/WGS-84-Pseudo-Mercator.html",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Portée, méthode et limites du système utilisé pour la cartographie web."
+    },
+    {
+      "sourceKey": "epsg-equal-earth",
+      "title": "EPSG Geodetic Parameter Dataset, WGS 84 / Equal Earth Greenwich (EPSG:8857)",
+      "url": "https://epsg.org/crs_8857/WGS-84-Equal-Earth-Greenwich.html",
+      "tier": "official",
+      "source_kind": "repository",
+      "notes": "Projection mondiale équivalente centrée sur l'Europe et l'Afrique."
+    },
+    {
+      "sourceKey": "equal-earth-paper",
+      "title": "Bojan Šavrič, Tom Patterson and Bernhard Jenny, The Equal Earth map projection",
+      "url": "https://doi.org/10.1080/13658816.2018.1504949",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "publicationYear": 2019,
+      "notes": "Article décrivant la conception et les propriétés de la projection Equal Earth."
+    },
+    {
+      "sourceKey": "world-bank-area",
+      "title": "World Bank Open Data, Surface area and Land area indicators",
+      "url": "https://data.worldbank.org/indicator/AG.SRF.TOTL.K2",
+      "tier": "official",
+      "source_kind": "official_statistics",
+      "publicationYear": 2026,
+      "notes": "Séries nationales utilisées pour distinguer superficie totale et terres émergées."
+    },
+    {
+      "sourceKey": "un-yearbook-area",
+      "title": "United Nations Statistical Yearbook, 68th issue, table 2: Population, surface area and density",
+      "url": "https://data.un.org/_Docs/SYB/PDFs/SYB68_1_202511_Population,%20Surface%20Area%20and%20Density.pdf",
+      "tier": "official",
+      "source_kind": "official_statistics",
+      "publicationYear": 2025,
+      "notes": "Tableau officiel des superficies et note de total continental."
+    },
+    {
+      "sourceKey": "un-western-sahara",
+      "title": "United Nations, Western Sahara — Non-Self-Governing Territories",
+      "url": "https://www.un.org/dppa/decolonization/en/nsgt/western-sahara",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2026,
+      "notes": "Statut et superficie du territoire dans le cadre des Nations unies."
+    },
+    {
+      "sourceKey": "world-bank-drc",
+      "title": "World Bank, Democratic Republic of Congo — Systematic Country Diagnostic",
+      "url": "https://documents1.worldbank.org/curated/en/171101529346675751/pdf/DRC-SCD-FINAL-ENGLISH-06132018.pdf",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2018,
+      "notes": "Diagnostic national comprenant l'indicateur de connexion routière des chefs-lieux."
+    },
+    {
+      "sourceKey": "wfp-drc-roads",
+      "title": "World Food Programme Logistics Cluster, Democratic Republic of Congo road network",
+      "url": "https://lca.logcluster.org/democratic-republic-congo-23-democratic-republic-congo-road-network",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2016,
+      "notes": "Évaluation logistique du réseau, de son état et de ses ruptures."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "chapters.distances.travelTime",
+      "reason": "Les sources disponibles décrivent le réseau et sa praticabilité, mais ne permettent pas de publier un temps de trajet Kinshasa–Goma stable et reproductible."
+    },
+    {
+      "fieldPath": "chapters.surface.singleTotal",
+      "reason": "Il n'existe pas de total unique sans convention : eaux intérieures, territoires et terres émergées doivent rester explicités."
+    }
+  ]
+}

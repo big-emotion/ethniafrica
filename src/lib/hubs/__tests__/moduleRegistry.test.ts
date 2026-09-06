@@ -138,6 +138,9 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(ids).toEqual([
       "nommer",
       "anecdotes",
+      "dossier-proportions",
+      "dossier-populations",
+      "dossier-ressources",
       "frise",
       "regards-colonisation",
     ]);
@@ -256,6 +259,9 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
       "recherche",
       "nommer",
       "anecdotes",
+      "dossier-proportions",
+      "dossier-populations",
+      "dossier-ressources",
       "regards-colonisation",
     ]);
     for (const def of staticModules) {
@@ -366,10 +372,13 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
       recherche: "afh-accent-terre",
       nommer: "afh-accent-perv",
       anecdotes: "afh-accent-ocre",
-      frise: "afh-accent-teal",
-      "regards-colonisation": "afh-accent-terre",
-      quiz: "afh-accent-perv",
-      mercator: "afh-accent-ocre",
+      "dossier-proportions": "afh-accent-teal",
+      "dossier-populations": "afh-accent-terre",
+      "dossier-ressources": "afh-accent-perv",
+      frise: "afh-accent-ocre",
+      "regards-colonisation": "afh-accent-teal",
+      quiz: "afh-accent-terre",
+      mercator: "afh-accent-perv",
     } as const);
 
     for (const [id, accent] of Object.entries(expectedAccents)) {
