@@ -28,7 +28,7 @@ const en = {
     `${name} removed from the comparison, ${count} of ${maximum}`,
   rowTitles: {
     peuple: {
-      appellations: "Names and appellations",
+      appellations: "Names",
       origins: "Origins and formation",
       organization: "Neighbouring peoples and organisation",
       languages: "Language",

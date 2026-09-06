@@ -49,9 +49,7 @@ describe("the English comparison surface", () => {
     render(<ComparisonView language="en" data={DATA} />);
 
     expect(screen.getByText("Comparison of Yoruba and Igbo")).toBeVisible();
-    expect(
-      screen.getAllByRole("rowheader", { name: "Names and appellations" })
-    ).toHaveLength(1);
+    expect(screen.getAllByRole("rowheader", { name: "Names" })).toHaveLength(1);
     expect(screen.getAllByText("not provided").length).toBeGreaterThan(0);
     expect(
       screen.getByRole("region", { name: "Comparison table" })
