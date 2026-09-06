@@ -14,12 +14,27 @@ function headingLevels(container: HTMLElement): number[] {
 describe("SourcesPageContent (REQ-091)", () => {
   // @req REQ-091
   it("opens with the bibliography title and intro", () => {
-    render(<SourcesPageContent />);
+    render(<SourcesPageContent language="fr" />);
 
     expect(
       screen.getByRole("heading", { level: 1, name: "Sources" })
     ).toBeInTheDocument();
     expect(screen.getByText(/Bibliographie complète/i)).toBeInTheDocument();
+  });
+
+  // @req REQ-141
+  it("renders the bibliography structure and editorial note in English", () => {
+    render(<SourcesPageContent language="en" />);
+
+    expect(
+      screen.getByRole("heading", {
+        level: 2,
+        name: "Sources by region (official African institutes)",
+      })
+    ).toBeInTheDocument();
+    expect(screen.getByText("North Africa")).toBeInTheDocument();
+    expect(screen.getByText(/Wikipedia is not a source/)).toBeInTheDocument();
+    expect(screen.queryByText("Afrique du Nord")).not.toBeInTheDocument();
   });
 
   // @req REQ-091

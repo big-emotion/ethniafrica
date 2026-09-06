@@ -1,11 +1,13 @@
 import { cn } from "@/lib/utils";
 import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
 import type { SourceTier } from "@/types/sources";
+import type { Language } from "@/types/shared";
 
 type Standing = SourceTier | "needs_review";
 
 interface SourceStandingBadgeProps {
   standing: Standing;
+  language?: Language;
   className?: string;
 }
 
@@ -28,6 +30,7 @@ interface SourceStandingBadgeProps {
 // @req REQ-092
 export function SourceStandingBadge({
   standing,
+  language = "fr",
   className,
 }: SourceStandingBadgeProps) {
   const awaitingReview = standing === "needs_review";
@@ -43,7 +46,7 @@ export function SourceStandingBadge({
         className
       )}
     >
-      {sourceStandingLabel(standing, "fr")}
+      {sourceStandingLabel(standing, language)}
     </span>
   );
 }

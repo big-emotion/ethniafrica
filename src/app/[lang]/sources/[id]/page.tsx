@@ -29,6 +29,31 @@ import { isSourceTier } from "@/types/sources";
 
 type PageParams = { lang: string; id: string };
 
+const SOURCE_PAGE_COPY = {
+  fr: {
+    reliesOn: "Ce qui repose sur cette source",
+    empty: "Aucune fiche du corpus ne cite cette source pour l'instant.",
+    ficheOne: "fiche",
+    ficheMany: "fiches",
+    assertionOne: "affirmation",
+    assertionMany: "affirmations",
+    truncated:
+      "Les fiches les plus liées à cette source, et non la liste entière.",
+    back: "Retour à la bibliographie",
+  },
+  en: {
+    reliesOn: "What relies on this source",
+    empty: "No corpus fiche cites this source yet.",
+    ficheOne: "fiche",
+    ficheMany: "fiches",
+    assertionOne: "statement",
+    assertionMany: "statements",
+    truncated:
+      "The fiches most closely linked to this source, rather than the full list.",
+    back: "Back to the bibliography",
+  },
+} as const;
+
 /** "www.ethnologue.com/..." — the host first, which is what a reader recognises. */
 function displayUrl(url: string): string {
   return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
@@ -67,6 +92,7 @@ export default async function SourcePage({
 }) {
   const { lang, id } = await params;
   const language = lang as Language;
+  const copy = SOURCE_PAGE_COPY[language];
   const count = (value: number) => formatNumber(language, value);
 
   // A malformed segment is not a missing source: it is not an identifier at
@@ -77,7 +103,7 @@ export default async function SourcePage({
   const source = await getSourceById(id);
   if (!source) notFound();
 
-  const citations = await getSourceCitations(source.id);
+  const citations = await getSourceCitations(source.id, undefined, language);
   const standing = isSourceTier(source.tier) ? source.tier : "needs_review";
   const attribution = [source.author, source.year ? String(source.year) : null]
     .filter(Boolean)
@@ -87,7 +113,7 @@ export default async function SourcePage({
     <PageLayout language={language} title={source.title}>
       <div className="mx-auto w-full max-w-3xl">
         <div className="flex flex-wrap items-baseline gap-2">
-          <SourceStandingBadge standing={standing} />
+          <SourceStandingBadge standing={standing} language={language} />
           {attribution && (
             <span className="text-afh-small text-afh-text-soft">
               {attribution}
@@ -120,24 +146,22 @@ export default async function SourcePage({
         )}
 
         <section className="mt-10 border-t border-afh-border pt-6">
-          <h2 className="text-afh-h3 text-afh-text">
-            Ce qui repose sur cette source
-          </h2>
+          <h2 className="text-afh-h3 text-afh-text">{copy.reliesOn}</h2>
 
           {citations.entities.length === 0 ? (
             <p
               data-testid="source-citations-empty"
               className="mt-2 text-afh-body text-afh-text-soft"
             >
-              Aucune fiche du corpus ne cite cette source pour l&apos;instant.
+              {copy.empty}
             </p>
           ) : (
             <>
               <p className="mt-2 text-afh-small text-afh-text-soft">
                 {`${count(citations.entities.length)} ` +
-                  `${citations.entities.length === 1 ? "fiche" : "fiches"}, ` +
+                  `${citations.entities.length === 1 ? copy.ficheOne : copy.ficheMany}, ` +
                   `${count(citations.total)} ` +
-                  `${citations.total === 1 ? "affirmation" : "affirmations"}.`}
+                  `${citations.total === 1 ? copy.assertionOne : copy.assertionMany}.`}
               </p>
               <ul className="mt-4 flex flex-col p-0">
                 {citations.entities.map((entity) => (
@@ -159,8 +183,7 @@ export default async function SourcePage({
               </ul>
               {citations.truncated && (
                 <p className="mt-2 text-afh-caption text-afh-text-soft">
-                  Les fiches les plus liées à cette source, et non la liste
-                  entière.
+                  {copy.truncated}
                 </p>
               )}
             </>
@@ -168,9 +191,7 @@ export default async function SourcePage({
         </section>
 
         <p className="mt-8">
-          <Link href={getLocalizedRoute(language, "sources")}>
-            Retour à la bibliographie
-          </Link>
+          <Link href={getLocalizedRoute(language, "sources")}>{copy.back}</Link>
         </p>
       </div>
     </PageLayout>

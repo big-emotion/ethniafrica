@@ -1,11 +1,7 @@
 import Link from "next/link";
 
 import { PurposeBlocks } from "@/components/home/PurposeBlocks";
-import {
-  ACCESS_MODE_LABELS,
-  MODULE_DEFINITIONS,
-  type AccessMode,
-} from "@/lib/hubs/moduleRegistry";
+import { MODULE_DEFINITIONS, type AccessMode } from "@/lib/hubs/moduleRegistry";
 import { getLocalizedRoute, type PageType } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
@@ -49,6 +45,101 @@ const corpusNoun = (page: PageType): string =>
 // @req REQ-091 @req REQ-132
 export default function AboutPageContent({ language }: AboutPageContentProps) {
   const content = {
+    en: {
+      title: "About",
+      overview: {
+        eyebrow: "The project",
+        lead: "EthniAfrica is an editorial atlas dedicated to the peoples of Africa and to the countries, languages, language families, names and designations documented by the corpus.",
+        body: "The corpus connects these six fiche types so readers can locate them without confusing them. It is built progressively from documented information made accessible in one place.",
+        doctrineNote: "The choices that govern it are set out in the",
+        doctrineLinkLabel: "editorial doctrine",
+      },
+      contentFamilies: {
+        stepLabel: "01 · The corpus",
+        title: "What EthniAfrica contains",
+        intro:
+          "Six distinct subjects structure the corpus. Each fiche can link to the others when the relationship is documented.",
+        items: [
+          {
+            title: "Peoples",
+            description:
+              "Fiches dedicated to peoples, their names and the relationships documented in the corpus.",
+            accentClass: "afh-accent-ocre",
+            page: "peoples" as PageType,
+            linkLabel: "Browse peoples",
+          },
+          {
+            title: "Languages",
+            description:
+              "Languages are presented as subjects in their own right and connected to the relevant peoples and families.",
+            accentClass: "afh-accent-language",
+            page: "languages" as PageType,
+            linkLabel: "Browse languages",
+          },
+          {
+            title: "Language families",
+            description:
+              "Language groupings have their own fiches and are not treated as peoples.",
+            accentClass: "afh-accent-terre",
+            page: "families" as PageType,
+            linkLabel: "Browse families",
+          },
+          {
+            title: "Countries",
+            description:
+              "Country fiches provide the territorial framework in which the corpus locates its other entries.",
+            accentClass: "afh-accent-teal",
+            page: "countries" as PageType,
+            linkLabel: "Browse countries",
+          },
+          {
+            title: "Designations",
+            description:
+              "Self-designations, exonyms and other documented names are presented with their context and provenance.",
+            accentClass: "afh-accent-neutral",
+            page: "names" as PageType,
+            linkLabel: "Browse designations",
+          },
+          {
+            title: "Personal names",
+            description:
+              "Personal naming systems — clan names, nisbas and praise names — which cannot all be read as European-style surnames.",
+            accentClass: "afh-accent-name",
+            page: "patronymes" as PageType,
+            linkLabel: "Browse names",
+          },
+        ],
+      },
+      accessModes: {
+        stepLabel: "02 · Ways in",
+        title: "Three ways into the atlas",
+        intro:
+          "The same corpus can be explored according to the reader's intent: find a fiche, investigate a question or test their bearings.",
+        items: [
+          {
+            id: "atlas" as AccessMode,
+            label: "The atlas",
+            description:
+              "The site's fiches: families, languages, peoples, countries, designations and names, plus free search.",
+            accentClass: "afh-accent-ocre",
+          },
+          {
+            id: "dossiers" as AccessMode,
+            label: "Dossiers",
+            description:
+              "Sourced anecdotes, initial migration landmarks and a dossier on colonisation.",
+            accentClass: "afh-accent-teal",
+          },
+          {
+            id: "jeux" as AccessMode,
+            label: "Play",
+            description:
+              "A quiz drawn from the fiches, and a game that restores countries to their true size.",
+            accentClass: "afh-accent-perv",
+          },
+        ],
+      },
+    },
     fr: {
       title: "À propos",
       overview: {
@@ -59,6 +150,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         doctrineLinkLabel: "doctrine éditoriale",
       },
       contentFamilies: {
+        stepLabel: "01 · Le corpus",
         title: "Ce que contient EthniAfrica",
         intro:
           "Six objets distincts structurent le corpus. Chaque fiche peut renvoyer vers les autres lorsque la relation est documentée.",
@@ -121,6 +213,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         ],
       },
       accessModes: {
+        stepLabel: "02 · Les accès",
         title: "Trois manières d’entrer dans l’atlas",
         intro:
           "Le même corpus se parcourt selon l’intention du moment : chercher une fiche, approfondir une question ou mettre ses repères à l’épreuve.",
@@ -132,18 +225,21 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         items: [
           {
             id: "atlas" as AccessMode,
+            label: "L'atlas",
             description:
               "Les fiches du site : familles, langues, peuples, pays, appellations et noms, plus la recherche libre.",
             accentClass: "afh-accent-ocre",
           },
           {
             id: "dossiers" as AccessMode,
+            label: "Les dossiers",
             description:
               "Des anecdotes sourcées, les premiers repères de migrations et un dossier sur la colonisation.",
             accentClass: "afh-accent-teal",
           },
           {
             id: "jeux" as AccessMode,
+            label: "Jouer",
             description:
               "Un quiz tiré des fiches, et un jeu qui rend aux pays leur taille réelle.",
             accentClass: "afh-accent-perv",
@@ -190,7 +286,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         <div className="space-y-afh-md">
           <ChapterHeading
             id="about-content-title"
-            stepLabel="01 · Le corpus"
+            stepLabel={t.contentFamilies.stepLabel}
             heading={t.contentFamilies.title}
           />
           <p className="text-afh-text-soft">{t.contentFamilies.intro}</p>
@@ -232,7 +328,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
           <div className="space-y-afh-md">
             <ChapterHeading
               id="about-access-title"
-              stepLabel="02 · Les accès"
+              stepLabel={t.accessModes.stepLabel}
               heading={t.accessModes.title}
             />
             <p className="text-afh-text-soft">{t.accessModes.intro}</p>
@@ -248,9 +344,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
                 data-testid={`about-access-mode-${mode.id}`}
                 className={`${mode.accentClass} border-l-2 border-[var(--accent)] pl-afh-md text-afh-small leading-relaxed text-afh-text-soft`}
               >
-                <p className="font-bold text-afh-text">
-                  {ACCESS_MODE_LABELS[mode.id]}
-                </p>
+                <p className="font-bold text-afh-text">{mode.label}</p>
                 <p
                   data-testid={`about-access-mode-description-${mode.id}`}
                   className="mt-afh-xs"

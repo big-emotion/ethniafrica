@@ -1,5 +1,6 @@
 import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
 import type { SourceTier } from "@/types/sources";
+import type { Language } from "@/types/shared";
 
 /**
  * A citable work, reduced to what a citation actually needs.
@@ -36,8 +37,14 @@ export interface CitableSource {
  * which is the one outcome the policy exists to prevent.
  */
 // @req REQ-092
-export function SourceCitation({ source }: { source: CitableSource }) {
-  const standingLabel = sourceStandingLabel(source.standing, "fr");
+export function SourceCitation({
+  source,
+  language = "fr",
+}: {
+  source: CitableSource;
+  language?: Language;
+}) {
+  const standingLabel = sourceStandingLabel(source.standing, language);
 
   return (
     <span className="afh-source-citation" data-source-tier={source.standing}>

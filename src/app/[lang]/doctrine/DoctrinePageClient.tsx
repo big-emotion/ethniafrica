@@ -21,7 +21,7 @@ export default function DoctrinePageClient() {
 
   return (
     <PageLayout language={language} onLanguageChange={setLanguage} hideHeader>
-      <DoctrinePageContent />
+      <DoctrinePageContent language={language} />
     </PageLayout>
   );
 }

@@ -49,7 +49,9 @@ vi.mock("@/components/layout/PageLayout", () => ({
 }));
 
 vi.mock("@/components/pages/SourcesPageContent", () => ({
-  default: () => <div data-testid="legacy-bibliography" />,
+  default: ({ language }: { language: string }) => (
+    <div data-testid="legacy-bibliography" data-language={language} />
+  ),
 }));
 
 import SourcesPage from "../page";
@@ -77,9 +79,12 @@ function makeSource(overrides: Partial<Source> = {}): Source {
   };
 }
 
-function renderRoute(query: Record<string, string> = {}) {
+function renderRoute(
+  query: Record<string, string> = {},
+  language: "fr" | "en" = "fr"
+) {
   return SourcesPage({
-    params: Promise.resolve({ lang: "fr" }),
+    params: Promise.resolve({ lang: language }),
     searchParams: Promise.resolve(query),
   });
 }
@@ -225,5 +230,36 @@ describe("sources directory", () => {
     render(await renderRoute());
 
     expect(screen.getByTestId("legacy-bibliography")).toBeInTheDocument();
+  });
+
+  // @req REQ-141
+  it("renders the English directory without French interface copy", async () => {
+    getSourcesFacetPageMock.mockResolvedValue({
+      sources: [makeSource({ tier: null })],
+      page: 1,
+      total: 1,
+      totalPages: 1,
+    });
+
+    render(await renderRoute({}, "en"));
+
+    expect(screen.getByTestId("sources-lede")).toHaveTextContent(
+      "1 source in this selection"
+    );
+    expect(
+      screen.getByRole("searchbox", { name: "Search sources" })
+    ).toHaveAttribute("placeholder", "Title or author");
+    expect(screen.getByText("Awaiting review")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Ethnologue/ })).toHaveAttribute(
+      "href",
+      "/en/sources/11111111-1111-1111-1111-111111111111"
+    );
+    expect(screen.getByTestId("legacy-bibliography")).toHaveAttribute(
+      "data-language",
+      "en"
+    );
+    expect(
+      screen.getByText("The project's reference bibliography")
+    ).toBeInTheDocument();
   });
 });

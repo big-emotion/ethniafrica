@@ -102,8 +102,15 @@ describe("source page", () => {
     render(await renderRoute(ID, "en"));
 
     expect(
-      screen.getByRole("link", { name: "Retour à la bibliographie" })
+      screen.getByRole("link", { name: "Back to the bibliography" })
     ).toHaveAttribute("href", getLocalizedRoute("en", "sources"));
+    expect(screen.getByText("Official")).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", {
+        level: 2,
+        name: "What relies on this source",
+      })
+    ).toBeInTheDocument();
   });
 
   // @req REQ-092
