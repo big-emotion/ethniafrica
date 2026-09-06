@@ -33,6 +33,7 @@ function GlobeStage(props: Omit<AtlasFactsPanelProps, "container">) {
 function renderPanel(overrides: Partial<AtlasFactsPanelProps> = {}) {
   const onClose = overrides.onClose ?? vi.fn();
   const stageProps: Omit<AtlasFactsPanelProps, "container"> = {
+    language: overrides.language,
     open: overrides.open ?? true,
     anchor: overrides.anchor ?? "bottom",
     title: overrides.title ?? "Yoruba",
@@ -57,6 +58,13 @@ async function flushDismissableLayerSetup() {
 describe("AtlasFactsPanel", () => {
   afterEach(() => {
     vi.restoreAllMocks();
+  });
+
+  // @req REQ-145
+  it("localizes the close control", () => {
+    renderPanel({ language: "en" });
+
+    expect(screen.getByRole("button", { name: "Close" })).toBeInTheDocument();
   });
 
   // @req REQ-117

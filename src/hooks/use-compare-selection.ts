@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import { compareCopy } from "@/lib/i18n/copy/compare";
+import type { Language } from "@/types/shared";
 
 export type CompareEntityType = "peoples" | "countries" | "language-families";
 
@@ -43,16 +45,19 @@ const displayName = (candidate: CompareCandidate) =>
   candidate.autonym ?? candidate.exonym;
 
 // @req REQ-097
-export function useCompareSelection(): UseCompareSelectionResult {
+export function useCompareSelection(
+  language: Language = "fr"
+): UseCompareSelectionResult {
   const [selected, setSelected] = useState<CompareCandidate[]>([]);
   const [announcement, setAnnouncement] = useState("");
+  const copy = compareCopy[language];
 
   const lockedType = selected[0]?.type ?? null;
 
   const add = useCallback(
     (candidate: CompareCandidate): CompareAddResult => {
       if (selected.length >= COMPARE_MAX_SELECTION) {
-        setAnnouncement(`${COMPARE_MAX_SELECTION} maximum`);
+        setAnnouncement(copy.maximum(COMPARE_MAX_SELECTION));
         return { ok: false, reason: "max-reached" };
       }
       if (lockedType && candidate.type !== lockedType) {
@@ -65,11 +70,15 @@ export function useCompareSelection(): UseCompareSelectionResult {
       const next = [...selected, candidate];
       setSelected(next);
       setAnnouncement(
-        `${displayName(candidate)} ajouté à la comparaison, ${next.length} sur ${COMPARE_MAX_SELECTION}`
+        copy.addedAnnouncement(
+          displayName(candidate),
+          next.length,
+          COMPARE_MAX_SELECTION
+        )
       );
       return { ok: true };
     },
-    [selected, lockedType]
+    [selected, lockedType, copy]
   );
 
   const remove = useCallback(
@@ -80,10 +89,14 @@ export function useCompareSelection(): UseCompareSelectionResult {
       const next = selected.filter((entity) => entity.id !== id);
       setSelected(next);
       setAnnouncement(
-        `${displayName(target)} retiré de la comparaison, ${next.length} sur ${COMPARE_MAX_SELECTION}`
+        copy.removedAnnouncement(
+          displayName(target),
+          next.length,
+          COMPARE_MAX_SELECTION
+        )
       );
     },
-    [selected]
+    [selected, copy]
   );
 
   const clear = useCallback(() => {

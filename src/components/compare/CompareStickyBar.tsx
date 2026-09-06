@@ -6,9 +6,12 @@ import {
   COMPARE_MAX_SELECTION,
   COMPARE_MIN_TO_COMPARE,
 } from "@/hooks/use-compare-selection";
+import { compareCopy } from "@/lib/i18n/copy/compare";
+import type { Language } from "@/types/shared";
 
 export interface CompareStickyBarProps {
   count: number;
+  language?: Language;
   max?: number;
   onCompare: () => void;
   className?: string;
@@ -23,26 +26,28 @@ export interface CompareStickyBarProps {
  */
 export function CompareStickyBar({
   count,
+  language = "fr",
   max = COMPARE_MAX_SELECTION,
   onCompare,
   className,
 }: CompareStickyBarProps) {
   const canCompare = count >= COMPARE_MIN_TO_COMPARE;
+  const copy = compareCopy[language];
 
   return (
     <div
       role="region"
-      aria-label="Sélection de comparaison"
+      aria-label={copy.selectionRegion}
       className={cn(
         "sticky bottom-0 z-40 flex w-full items-center justify-between gap-3 border-t border-afh-border bg-afh-surface px-4 py-3",
         className
       )}
     >
       <span className="text-afh-small font-medium text-afh-text">
-        {count}/{max} sélectionnés
+        {copy.selectedCount(count, max)}
       </span>
       <Button type="button" onClick={onCompare} disabled={!canCompare}>
-        comparer
+        {copy.compare}
       </Button>
     </div>
   );

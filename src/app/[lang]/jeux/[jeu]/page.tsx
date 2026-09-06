@@ -16,6 +16,11 @@ import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { OG_TITLE } from "@/lib/brand";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
+import { GAME_DEFINITIONS_EN } from "@/lib/games/gameRegistry.en";
+import {
+  buildScaleFactsEn,
+  buildTrueSizeClaimEn,
+} from "@/lib/games/scaleFacts.en";
 
 interface GamePageProps {
   params: Promise<{ lang: string; jeu: string }>;
@@ -40,15 +45,19 @@ export async function generateMetadata({
   const { lang, jeu } = await params;
   const game = getGameBySlug(jeu);
   if (!game) return {};
+  const language = lang as Language;
+  const gameWording = GAME_DEFINITIONS_EN[game.id];
+  const name = language === "en" ? gameWording.nameEn : game.nameFr;
+  const prompt = language === "en" ? gameWording.promptEn : game.promptFr;
 
   const copy = {
-    title: `${game.nameFr} — ${OG_TITLE}`,
-    description: game.promptFr,
+    title: `${name} — ${OG_TITLE}`,
+    description: prompt,
   };
   return {
     ...copy,
     ...surfaceHead(
-      lang as Language,
+      language,
       "games",
       (locale) => `${getAxisHubRoute(locale, "jeux")}/${game.slug}`,
       copy
@@ -61,6 +70,10 @@ export default async function GamePage({ params }: GamePageProps) {
   const { lang, jeu } = await params;
   const game = getGameBySlug(jeu);
   if (!game) notFound();
+  const language = lang as Language;
+  const gameWording = GAME_DEFINITIONS_EN[game.id];
+  const gameName = language === "en" ? gameWording.nameEn : game.nameFr;
+  const gamePrompt = language === "en" ? gameWording.promptEn : game.promptFr;
 
   // The rounds are built here, in the server component, and handed to the
   // island as props — there is no public games endpoint to fetch from.
@@ -86,14 +99,19 @@ export default async function GamePage({ params }: GamePageProps) {
   // there is no reason to spend them in the reader's browser. The whole bank
   // travels — the session states one fact every other reveal, and the score
   // card lays out all of them.
-  const facts = pickScaleFacts(buildScaleFacts().length, seed);
+  const englishFacts = buildScaleFactsEn();
+  const facts = pickScaleFacts(buildScaleFacts().length, seed).map((fact) => ({
+    ...fact,
+    headlineEn: englishFacts[fact.id]?.headlineEn,
+    bodyEn: englishFacts[fact.id]?.bodyEn,
+  }));
 
   return (
     <PageLayout
-      language={lang as Language}
-      title={game.nameFr}
-      subtitle={game.promptFr}
-      trailLabel={game.nameFr}
+      language={language}
+      title={gameName}
+      subtitle={gamePrompt}
+      trailLabel={gameName}
     >
       {/* The page is named after a projection, so it shows the projection —
           on the home's own globe, mounted here prop for prop, with the morph
@@ -121,6 +139,7 @@ export default async function GamePage({ params }: GamePageProps) {
           /* Measured here rather than in the island: the sweep reads the world
              comparison outlines, which have no business in a browser bundle. */
           trueSizeClaimFr={buildTrueSizeClaim()}
+          trueSizeClaimEn={buildTrueSizeClaimEn()}
           peopleCountsByCountry={peopleCountsByCountry}
         />
       </div>

@@ -38,8 +38,10 @@ export interface ScaleFact {
   id: string;
   /** The claim, as one sentence the reader can carry away. */
   headlineFr: string;
+  headlineEn?: string;
   /** What the projection did to their intuition, in two or three sentences. */
   bodyFr: string;
+  bodyEn?: string;
   /** Where the figures were measured — worded for the reader by `revealProvenance`. */
   fieldPath: string;
 }

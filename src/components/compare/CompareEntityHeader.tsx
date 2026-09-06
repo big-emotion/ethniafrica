@@ -26,6 +26,7 @@ import type { Source } from "@/components/source-transparency/SourceChainSheet";
 import { getLocalizedRoute } from "@/lib/routing";
 import type { ComparisonColumn } from "@/types/compare";
 import type { Language } from "@/types/shared";
+import { compareCopy } from "@/lib/i18n/copy/compare";
 
 const LazyConfidenceChip = lazy(async () => {
   const { ConfidenceChip } =
@@ -44,7 +45,13 @@ const LazySourceChainSheet = lazy(
 
 const EMPTY_SOURCES: Source[] = [];
 
-function FallbackLink({ onOpen }: { onOpen: () => void }) {
+function FallbackLink({
+  onOpen,
+  label,
+}: {
+  onOpen: () => void;
+  label: string;
+}) {
   return (
     <span className="inline-flex items-center p-1">
       <a
@@ -55,7 +62,7 @@ function FallbackLink({ onOpen }: { onOpen: () => void }) {
         }}
         className="text-afh-small underline underline-offset-2 text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))] hover:text-[color:var(--afh-text,var(--country-text,#2C2018))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[color:var(--afh-focus,var(--country-text,#2C2018))]"
       >
-        voir les sources
+        {label}
       </a>
     </span>
   );
@@ -72,6 +79,7 @@ export function CompareEntityHeader({
   language,
 }: CompareEntityHeaderProps) {
   const [sheetOpen, setSheetOpen] = useState(false);
+  const copy = compareCopy[language];
 
   const confidence = column.confidence ?? null;
   const confidenceScore =
@@ -90,7 +98,10 @@ export function CompareEntityHeader({
       aria-label={column.label}
       className="flex flex-col items-start gap-afh-xs"
     >
-      <ClassificationBadge status={column.classificationStatus} />
+      <ClassificationBadge
+        status={column.classificationStatus}
+        language={language}
+      />
 
       {confidence ? (
         <>
@@ -101,7 +112,12 @@ export function CompareEntityHeader({
             className="flex min-h-[44px] items-center"
           >
             <Suspense
-              fallback={<FallbackLink onOpen={() => setSheetOpen(true)} />}
+              fallback={
+                <FallbackLink
+                  onOpen={() => setSheetOpen(true)}
+                  label={copy.viewSources}
+                />
+              }
             >
               <LazyConfidenceChip
                 id={anchorId}
@@ -109,6 +125,7 @@ export function CompareEntityHeader({
                 sourceCount={sourceCount}
                 lastHumanAuditAt={lastHumanAuditAt}
                 variant="hero"
+                language={language}
                 ariaSuffix={column.label}
                 onOpen={() => setSheetOpen(true)}
               />
@@ -119,7 +136,7 @@ export function CompareEntityHeader({
               open={sheetOpen}
               onOpenChange={setSheetOpen}
               assertion={{
-                statement: `Confiance éditoriale — ${column.label}`,
+                statement: copy.editorialConfidence(column.label),
                 confidenceScore: confidenceScore ?? 0,
                 sourceCount: sourceCount ?? 0,
                 lastHumanAuditAt,
@@ -142,7 +159,7 @@ export function CompareEntityHeader({
         href={explainerHref}
         className="text-afh-caption underline underline-offset-2 text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))] hover:text-[color:var(--afh-text,var(--country-text,#2C2018))]"
       >
-        comment ce score est calculé
+        {copy.scoreExplainer}
       </Link>
     </div>
   );

@@ -37,6 +37,7 @@ import {
   declaredAssociatedPeopleIds,
   resolveFootprintProvenance,
 } from "@/lib/familyFootprintSource";
+import { familyCopy } from "@/lib/i18n/copy/family";
 
 // @req REQ-019
 export const revalidate = 3600;
@@ -216,6 +217,12 @@ export default async function FamillesSlugPage({
   );
 
   // Live version (revalidate = 3600 at segment level)
+  const copy = familyCopy[lang as Language];
+  const atlasFamilyName =
+    lang === "en"
+      ? familyDetail.nameEn || familyDetail.nameFr
+      : familyDetail.nameFr;
+
   return (
     <PageLayout
       language={lang as Language}
@@ -239,6 +246,7 @@ export default async function FamillesSlugPage({
         globe={
           <FicheHeroBand>
             <AtlasGlobe
+              language={lang as Language}
               overlay={familyOverlay}
               targetPicker="list"
               facts={familyTargetFacts}
@@ -248,7 +256,7 @@ export default async function FamillesSlugPage({
                   language={lang as Language}
                 />
               }
-              missingMessage={`Empreinte géographique non disponible pour ${familyDetail.nameFr}`}
+              missingMessage={copy.atlas.missingFootprint(atlasFamilyName)}
             />
           </FicheHeroBand>
         }

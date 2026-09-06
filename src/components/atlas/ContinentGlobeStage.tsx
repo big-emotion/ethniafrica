@@ -7,6 +7,8 @@ import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import type { GlobeSurface } from "@/lib/atlas/globePalette";
 import { buildContinentOverlay } from "@/lib/atlas/overlays";
 import { canCreateWebglContext } from "@/lib/home/webglSupport";
+import { gamesCopy } from "@/lib/i18n/copy/games";
+import type { Language } from "@/types/shared";
 
 /**
  * The continent, on the one globe the repository has (ETNI-1360).
@@ -21,6 +23,7 @@ import { canCreateWebglContext } from "@/lib/home/webglSupport";
  * What it adds over mounting AtlasGlobe directly is the box and the gate.
  */
 export interface ContinentGlobeStageProps {
+  language?: Language;
   /**
    * Documented peoples per country, the continent scene's own signal (REQ-116).
    *
@@ -67,6 +70,7 @@ export interface ContinentGlobeStageProps {
 // @req REQ-116
 // @req REQ-120
 export function ContinentGlobeStage({
+  language = "fr",
   peopleCountsByCountry,
   pinnedProjection,
   pinnedProjectionNote,
@@ -97,6 +101,7 @@ export function ContinentGlobeStage({
   }, []);
 
   const overlay = buildContinentOverlay(peopleCountsByCountry);
+  const copy = gamesCopy[language].continentGlobe;
 
   return (
     <div
@@ -106,6 +111,7 @@ export function ContinentGlobeStage({
     >
       {webglSupported !== null && (
         <AtlasGlobe
+          language={language}
           overlay={overlay}
           surface={surface}
           probedWebglSupport={webglSupported}
@@ -122,10 +128,10 @@ export function ContinentGlobeStage({
              the reader gets « Ce que la carte plate en fait » and a map that
              changes shape with nothing to compare. */
           showTissot
-          missingMessage="Le corpus ne renseigne encore aucun peuple par pays."
-          fallbackNote="Carte de l'Afrique, à plat : ce navigateur ne peut pas afficher le globe."
-          wholeAreaLabel="Tout le continent"
-          areaNoun="le continent"
+          missingMessage={copy.missing}
+          fallbackNote={copy.fallback}
+          wholeAreaLabel={copy.wholeArea}
+          areaNoun={copy.areaNoun}
           /*
            * This scene opens no country (atlas-charter §1).
            *

@@ -13,6 +13,9 @@ import {
 import { useOptionalConsent } from "@/hooks/use-consent";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
+import { reportsCopy } from "@/lib/i18n/copy/reports";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 import {
   FlagForm,
   type FlagFormTarget,
@@ -31,6 +34,7 @@ declare global {
 }
 
 export interface FlagTargetProps {
+  language?: Language;
   target: FlagFormTarget;
   triggerLabel?: string;
   className?: string;
@@ -51,11 +55,14 @@ export interface FlagTargetProps {
 
 // @req REQ-012
 export function FlagTarget({
+  language = FALLBACK_LOCALE,
   target,
-  triggerLabel = "Signaler",
+  triggerLabel,
   className,
   renderTrigger,
 }: FlagTargetProps) {
+  const copy = reportsCopy[language].dialog;
+  const resolvedTriggerLabel = triggerLabel ?? copy.trigger;
   const titleId = useId();
   const [open, setOpen] = useState(false);
   const { toast } = useToast();
@@ -73,7 +80,7 @@ export function FlagTarget({
         props: { target_type: target.type },
       });
     }
-    toast({ description: "signalement enregistré" });
+    toast({ description: copy.saved });
     setOpen(false);
 
     return { public_slug: publicSlug };
@@ -95,15 +102,15 @@ export function FlagTarget({
           className={cn("w-full", className)}
           onClick={() => handleOpenChange(true)}
         >
-          {triggerLabel}
+          {resolvedTriggerLabel}
         </Button>
       )}
       <Dialog open={open} onOpenChange={handleOpenChange}>
         <DialogContent aria-labelledby={titleId} className="max-w-lg">
           <DialogHeader>
-            <DialogTitle id={titleId}>Signaler un problème</DialogTitle>
+            <DialogTitle id={titleId}>{copy.title}</DialogTitle>
             <DialogDescription className="sr-only">
-              Formulaire de signalement pour cet élément.
+              {copy.description}
             </DialogDescription>
           </DialogHeader>
 
@@ -118,7 +125,11 @@ export function FlagTarget({
             onSubmit={handleSubmit}
             onCancel={() => setOpen(false)}
             renderVerification={({ onSolved, onFailed }) => (
-              <ProofOfWorkGate onSolved={onSolved} onFailed={onFailed} />
+              <ProofOfWorkGate
+                language={language}
+                onSolved={onSolved}
+                onFailed={onFailed}
+              />
             )}
           />
         </DialogContent>

@@ -46,6 +46,19 @@ describe("ContactForm", () => {
     vi.unstubAllGlobals();
   });
 
+  // @req REQ-145
+  it("renders the reader-facing controls in English on the English route", () => {
+    render(<ContactForm language="en" />);
+
+    expect(screen.getByLabelText(/First name/)).toBeRequired();
+    expect(screen.getByLabelText(/Email address/)).toBeRequired();
+    expect(screen.getByLabelText(/Subject/)).toBeRequired();
+    expect(
+      screen.getByRole("button", { name: "Send message" })
+    ).toBeInTheDocument();
+    expect(screen.queryByText("Envoyer le message")).not.toBeInTheDocument();
+  });
+
   // @req REQ-045
   it("marks the fields a reader must fill, and only those", () => {
     render(<ContactForm />);

@@ -74,6 +74,10 @@ const en = {
     majorEvents: "Major events",
     report: "Report this section",
   },
+  atlas: {
+    missingFootprint: (name: string) =>
+      `Geographic footprint unavailable for ${name}`,
+  },
 };
 
 type FamilyCopy = typeof en;
@@ -149,6 +153,10 @@ const fr: FamilyCopy = {
     contactZones: "Zones de contact",
     majorEvents: "Événements majeurs",
     report: "Signaler cette section",
+  },
+  atlas: {
+    missingFootprint: (name) =>
+      `Empreinte géographique non disponible pour ${name}`,
   },
 };
 

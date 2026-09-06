@@ -48,6 +48,11 @@ const en = {
     documentedOne: "1 documented people",
     documentedMany: (count: string) => `${count} documented peoples`,
   },
+  atlas: {
+    areaNoun: "the atlas",
+    returnTo: (name: string) => `Return to ${name}`,
+    missingOutline: (name: string) => `Outline unavailable for ${name}`,
+  },
 };
 
 type CountryCopy = typeof en;
@@ -96,6 +101,11 @@ const fr: CountryCopy = {
     readFull: "Lire la fiche complète",
     documentedOne: "1 peuple documenté",
     documentedMany: (count) => `${count} peuples documentés`,
+  },
+  atlas: {
+    areaNoun: "l'atlas",
+    returnTo: (name) => `Revenir à ${name}`,
+    missingOutline: (name) => `Contour non disponible pour ${name}`,
   },
 };
 

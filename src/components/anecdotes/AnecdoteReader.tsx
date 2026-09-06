@@ -17,6 +17,7 @@ import {
 } from "@/lib/home/anecdoteCards";
 import type { AnecdoteImageSide } from "@/lib/home/didYouKnowPresentation";
 import { accentForModule } from "@/lib/hubs/moduleRegistry";
+import { anecdotesCopy } from "@/lib/i18n/copy/anecdotes";
 import type { Language } from "@/types/shared";
 
 export interface AnecdoteReaderProps {
@@ -130,6 +131,7 @@ export function AnecdoteReader({
   openingImageSide = "end",
   loadCards = loadAnecdoteCards,
 }: AnecdoteReaderProps) {
+  const copy = anecdotesCopy[language];
   const [order, setOrder] = useState<string[]>(deck);
   const [position, setPosition] = useState(0);
   // Seeded with the one card the server rendered. The rest join it the first
@@ -257,7 +259,7 @@ export function AnecdoteReader({
           without this the only thing announced is that focus is still where
           the reader left it. */}
       <p className="sr-only" aria-live="polite">
-        {`Anecdote suivante : ${fact.headline}`}
+        {copy.nextAnnouncement(fact.headline)}
       </p>
 
       <AnecdoteCard
@@ -269,7 +271,7 @@ export function AnecdoteReader({
 
       <div className="anecdote-controls">
         <button type="button" className="anecdote-next" onClick={goNext}>
-          Suivant
+          {copy.next}
         </button>
 
         <div className="anecdote-reactions">
@@ -279,7 +281,7 @@ export function AnecdoteReader({
             aria-pressed={isMarked}
             onClick={toggleMark}
           >
-            {isMarked ? "Anecdote retenue" : "Cette anecdote est intéressante"}
+            {isMarked ? copy.marked : copy.mark}
           </button>
 
           <button
@@ -288,7 +290,7 @@ export function AnecdoteReader({
             aria-expanded={isSharing}
             onClick={share}
           >
-            Partager
+            {copy.share}
           </button>
 
           {/* The objection is taken here, not somewhere else. It used to be a
@@ -300,6 +302,7 @@ export function AnecdoteReader({
               the page never did: it read the id out of a query string and
               handed it to a third party that had never heard of it. */}
           <FlagTarget
+            language={language}
             target={{
               type: "assertion",
               id: fact.id,
@@ -307,7 +310,7 @@ export function AnecdoteReader({
             }}
             renderTrigger={(open) => (
               <button type="button" className="anecdote-action" onClick={open}>
-                Je conteste cette anecdote
+                {copy.dispute}
               </button>
             )}
           />
@@ -321,7 +324,7 @@ export function AnecdoteReader({
                 className="anecdote-share-link"
                 onClick={copyLink}
               >
-                {isCopied ? "Lien copié" : "Copier le lien"}
+                {isCopied ? copy.linkCopied : copy.copyLink}
               </button>
             </li>
             <li>

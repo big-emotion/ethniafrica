@@ -80,6 +80,7 @@ export interface GameHistoricalNames {
 export interface GameCountryFixture {
   id: CountryId;
   nameFr: string;
+  nameEn?: string;
   /** Top-level column `etymology` — NOT `content.etymology`, which does not exist. */
   etymology: string | null;
   /** Top-level column `name_origin_actor`; set on all 54 country fiches. */

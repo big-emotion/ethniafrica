@@ -116,6 +116,20 @@ function renderWithVerification(
 describe("FlagForm contract and validation", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    routeParams.current = { lang: "fr" };
+  });
+
+  // @req REQ-145
+  it("renders the report controls in English on an English route", () => {
+    routeParams.current = { lang: "en" };
+    renderForm();
+    routeParams.current = { lang: "fr" };
+
+    expect(screen.getByText("Reported item")).toBeInTheDocument();
+    expect(screen.getByText("People · Yoruba")).toBeInTheDocument();
+    expect(screen.getByLabelText("What is wrong?")).toBeRequired();
+    expect(screen.getByRole("button", { name: "Send" })).toBeInTheDocument();
+    expect(screen.queryByText("Élément signalé")).not.toBeInTheDocument();
   });
 
   // @req REQ-012
@@ -348,15 +362,15 @@ describe("FlagForm submission and anti-bot lifecycle", () => {
   it("composes the permalink in the locale of the page the form is on", async () => {
     routeParams.current = { lang: "en" };
     const { solve } = renderWithVerification();
-    fireEvent.change(screen.getByLabelText(REASON_LABEL), {
+    fireEvent.change(screen.getByLabelText("What is wrong?"), {
       target: { value: validReason() },
     });
     solve();
 
-    fireEvent.click(screen.getByRole("button", { name: "Envoyer" }));
+    fireEvent.click(screen.getByRole("button", { name: "Send" }));
 
     expect(
-      await screen.findByRole("link", { name: "Consulter le signalement" })
+      await screen.findByRole("link", { name: "View the report" })
     ).toHaveAttribute(
       "href",
       `${getStaticPageRoute("en", "reports")}/ABC123DEFG`

@@ -2,23 +2,19 @@
 
 import { useEffect, useRef, useState } from "react";
 
+import { contributeCopy } from "@/lib/i18n/copy/contribute";
 import type { Challenge, Proof } from "@/lib/antibot/proofOfWork";
+import type { Language } from "@/types/shared";
 
 export interface ProofOfWorkGateProps {
   /** Called with the solved challenge, ready to travel in the payload. */
   onSolved: (proof: Proof) => void;
   /** Called when no proof can be produced, so the form can say so. */
   onFailed: () => void;
+  language?: Language;
 }
 
 type Phase = "working" | "solved" | "failed";
-
-const MESSAGES: Record<Phase, string> = {
-  working: "Vérification en cours…",
-  solved: "Vérification terminée.",
-  failed:
-    "La vérification n'a pas abouti. Rechargez la page pour réessayer, ou écrivez-nous.",
-};
 
 /**
  * The anti-bot control, seen by the reader.
@@ -38,8 +34,13 @@ const MESSAGES: Record<Phase, string> = {
  * the page rather than leaving a reader with a form that never completes.
  */
 // @req REQ-012
-export function ProofOfWorkGate({ onSolved, onFailed }: ProofOfWorkGateProps) {
+export function ProofOfWorkGate({
+  onSolved,
+  onFailed,
+  language = "fr",
+}: ProofOfWorkGateProps) {
   const [phase, setPhase] = useState<Phase>("working");
+  const messages = contributeCopy[language].antibot;
 
   // The callbacks are read through a ref so a parent that re-creates them on
   // every render cannot restart the search — a solve is expensive, and running
@@ -111,7 +112,7 @@ export function ProofOfWorkGate({ onSolved, onFailed }: ProofOfWorkGateProps) {
       data-phase={phase}
       role="status"
     >
-      {MESSAGES[phase]}
+      {messages[phase]}
     </p>
   );
 }

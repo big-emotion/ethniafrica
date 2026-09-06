@@ -1,14 +1,13 @@
 import { CONTACT_EMAIL } from "@/lib/brand";
 import type { DidYouKnowFact } from "@/lib/home/didYouKnowFacts";
-import {
-  DID_YOU_KNOW_ENTITY_ACCENT,
-  DID_YOU_KNOW_ENTITY_LABEL,
-  DID_YOU_KNOW_TIER_LABEL,
-} from "@/lib/home/didYouKnowPresentation";
+import { DID_YOU_KNOW_ENTITY_ACCENT } from "@/lib/home/didYouKnowPresentation";
+import { contactCopy } from "@/lib/i18n/copy/contact";
+import type { Language } from "@/types/shared";
 
 interface ContactAsideProps {
   /** The fact drawn for this request, or null when the bank has none to give. */
   fact: DidYouKnowFact | null;
+  language?: Language;
 }
 
 /**
@@ -33,12 +32,14 @@ interface ContactAsideProps {
  */
 // @req REQ-045
 // @req REQ-113
-export function ContactAside({ fact }: ContactAsideProps) {
+export function ContactAside({ fact, language = "fr" }: ContactAsideProps) {
+  const copy = contactCopy[language];
+
   return (
     <aside className="space-y-8">
       <section className="space-y-2">
         <p className="text-afh-eyebrow font-semibold uppercase tracking-[0.16em] text-afh-text-soft">
-          Adresse électronique
+          {copy.emailEyebrow}
         </p>
         <p className="text-afh-body">
           <a
@@ -48,10 +49,7 @@ export function ContactAside({ fact }: ContactAsideProps) {
             {CONTACT_EMAIL}
           </a>
         </p>
-        <p className="text-afh-caption text-afh-text-soft">
-          Le formulaire écrit à cette adresse. Nous répondons à celle que vous
-          indiquez.
-        </p>
+        <p className="text-afh-caption text-afh-text-soft">{copy.emailHelp}</p>
       </section>
 
       {fact && (
@@ -60,7 +58,7 @@ export function ContactAside({ fact }: ContactAsideProps) {
           className="rounded-afh-lg border border-afh-border bg-afh-bg-warm p-5"
         >
           <p className="text-afh-small font-semibold uppercase tracking-[0.16em] text-afh-gold">
-            Saviez-vous que
+            {copy.didYouKnow}
           </p>
 
           <p className="mt-3 font-display text-afh-h3 font-bold leading-tight text-afh-text">
@@ -88,7 +86,7 @@ export function ContactAside({ fact }: ContactAsideProps) {
                     className="size-1.5 rounded-afh-full bg-[color:var(--accent)]"
                   />
                   <span className="text-afh-eyebrow uppercase tracking-[0.07em] opacity-70">
-                    {DID_YOU_KNOW_ENTITY_LABEL[entity.kind]}
+                    {copy.entityLabels[entity.kind]}
                   </span>
                   {entity.label}
                 </li>
@@ -100,7 +98,7 @@ export function ContactAside({ fact }: ContactAsideProps) {
               same rule the fiches obey, and the reason this column may quote
               the bank at all. */}
           <p className="mt-4 border-t border-afh-border pt-3 text-afh-eyebrow uppercase tracking-[0.06em] text-afh-fg-muted">
-            {DID_YOU_KNOW_TIER_LABEL[fact.tier]}
+            {copy.tierLabels[fact.tier]}
           </p>
         </section>
       )}

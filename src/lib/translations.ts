@@ -1,14 +1,20 @@
 import { classificationCopy } from "@/lib/i18n/copy/classification";
+import { atlasCopy } from "@/lib/i18n/copy/atlas";
+import { anecdotesCopy } from "@/lib/i18n/copy/anecdotes";
 import { colonizationCopy } from "@/lib/i18n/copy/colonization";
 import { chromeCopy } from "@/lib/i18n/copy/chrome";
 import { commonCopy } from "@/lib/i18n/copy/common";
 import { consentCopy } from "@/lib/i18n/copy/consent";
+import { compareCopy } from "@/lib/i18n/copy/compare";
+import { contactCopy } from "@/lib/i18n/copy/contact";
+import { contributeCopy } from "@/lib/i18n/copy/contribute";
 import { countryCopy } from "@/lib/i18n/copy/country";
 import { facetsCopy } from "@/lib/i18n/copy/facets";
 import { fieldProvenanceCopy } from "@/lib/i18n/copy/fieldProvenance";
 import { familyCopy } from "@/lib/i18n/copy/family";
 import { ficheCopy } from "@/lib/i18n/copy/fiche";
 import { footerCopy } from "@/lib/i18n/copy/footer";
+import { gamesCopy } from "@/lib/i18n/copy/games";
 import { hubsCopy } from "@/lib/i18n/copy/hubs";
 import { languagesCopy } from "@/lib/i18n/copy/languages";
 import { languageFicheCopy } from "@/lib/i18n/copy/languageFiche";
@@ -18,6 +24,8 @@ import { patronymesCopy } from "@/lib/i18n/copy/patronymes";
 import { peopleCopy } from "@/lib/i18n/copy/people";
 import { publicFlagsCopy } from "@/lib/i18n/copy/publicFlags";
 import { quizCopy } from "@/lib/i18n/copy/quiz";
+import { reportsCopy } from "@/lib/i18n/copy/reports";
+import { sourceTransparencyCopy } from "@/lib/i18n/copy/sourceTransparency";
 import { sitemapPageCopy } from "@/lib/i18n/copy/sitemapPage";
 import { systemCopy } from "@/lib/i18n/copy/system";
 import { trailCopy } from "@/lib/i18n/copy/trail";
@@ -37,12 +45,18 @@ import type { Language } from "@/types/shared";
  * (`copyParity.test.ts`), not the compiler's to miss.
  */
 const en = {
+  anecdotes: anecdotesCopy.en,
+  atlas: atlasCopy.en,
   ...commonCopy.en,
   chrome: chromeCopy.en,
   consent: consentCopy.en,
+  compare: compareCopy.en,
+  contact: contactCopy.en,
+  contribute: contributeCopy.en,
   countryFiche: countryCopy.en,
   facets: facetsCopy.en,
   footer: footerCopy.en,
+  games: gamesCopy.en,
   sitemapPage: sitemapPageCopy.en,
   publicFlags: publicFlagsCopy.en,
   classification: classificationCopy.en,
@@ -52,6 +66,8 @@ const en = {
   migrations: migrationsCopy.en,
   colonization: colonizationCopy.en,
   quiz: quizCopy.en,
+  reports: reportsCopy.en,
+  sourceTransparency: sourceTransparencyCopy.en,
   fieldProvenance: fieldProvenanceCopy.en,
   family: familyCopy.en,
   fiche: ficheCopy.en,
@@ -69,12 +85,18 @@ const en = {
 type UiDictionary = typeof en;
 
 const fr: UiDictionary = {
+  anecdotes: anecdotesCopy.fr,
+  atlas: atlasCopy.fr,
   ...commonCopy.fr,
   chrome: chromeCopy.fr,
   consent: consentCopy.fr,
+  compare: compareCopy.fr,
+  contact: contactCopy.fr,
+  contribute: contributeCopy.fr,
   countryFiche: countryCopy.fr,
   facets: facetsCopy.fr,
   footer: footerCopy.fr,
+  games: gamesCopy.fr,
   sitemapPage: sitemapPageCopy.fr,
   publicFlags: publicFlagsCopy.fr,
   classification: classificationCopy.fr,
@@ -84,6 +106,8 @@ const fr: UiDictionary = {
   migrations: migrationsCopy.fr,
   colonization: colonizationCopy.fr,
   quiz: quizCopy.fr,
+  reports: reportsCopy.fr,
+  sourceTransparency: sourceTransparencyCopy.fr,
   fieldProvenance: fieldProvenanceCopy.fr,
   family: familyCopy.fr,
   fiche: ficheCopy.fr,

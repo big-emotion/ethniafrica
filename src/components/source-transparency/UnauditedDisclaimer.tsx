@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { formatDate } from "@/lib/languageTag";
 import type { Language } from "@/types/shared";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
 
 const STALE_THRESHOLD_MONTHS = 18;
 const DISMISS_KEY_PREFIX = "unaudited-disclaimer:dismissed:";
@@ -105,11 +106,10 @@ export function UnauditedDisclaimer({
 
   if (variant.kind === "none") return null;
   if (dismissed) return null;
+  const copy = ficheCopy[language].auditDisclaimer;
 
   const message =
-    variant.kind === "never"
-      ? "fiche non auditée — lire avec précaution"
-      : `dernière vérification : ${variant.dateLabel} · à re-vérifier`;
+    variant.kind === "never" ? copy.never : copy.stale(variant.dateLabel);
 
   const handleDismiss = () => {
     writeDismissed(fiche);
@@ -117,8 +117,8 @@ export function UnauditedDisclaimer({
   };
 
   const regionLabel = entityLabel
-    ? `avertissement vérification — ${entityLabel}`
-    : "avertissement vérification";
+    ? `${copy.region} — ${entityLabel}`
+    : copy.region;
 
   return (
     <div
@@ -135,7 +135,7 @@ export function UnauditedDisclaimer({
       <button
         type="button"
         onClick={handleDismiss}
-        aria-label="fermer l'avertissement"
+        aria-label={copy.close}
         className="shrink-0 rounded p-1 text-afh-small leading-none hover:opacity-70 focus:outline-none focus-visible:ring-2"
         style={{ color: "var(--country-text-soft, #7A6B5D)" }}
       >

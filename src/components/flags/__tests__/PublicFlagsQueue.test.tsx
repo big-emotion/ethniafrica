@@ -224,4 +224,22 @@ describe("PublicFlagsQueue", () => {
       `${getStaticPageRoute("en", "reports")}/sig-2026-0001`
     );
   });
+
+  // @req REQ-145
+  it("renders filters, rows and relative dates in English on the English route", () => {
+    navigation.pathname = getStaticPageRoute("en", "reports");
+    window.history.replaceState({}, "", navigation.pathname);
+    renderQueue();
+
+    expect(
+      screen.getByRole("button", { name: "Statuses" })
+    ).toBeInTheDocument();
+    expect(screen.getByText("People")).toBeInTheDocument();
+    expect(screen.getByText("Missing source")).toBeInTheDocument();
+    expect(screen.getByText("anonymous")).toBeInTheDocument();
+    expect(screen.getByText("2 days ago")).toBeInTheDocument();
+    expect(
+      screen.getByText("in progress — editorial review")
+    ).toBeInTheDocument();
+  });
 });

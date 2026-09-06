@@ -24,6 +24,7 @@ import {
 import type { CompareEntityPayload } from "@/types/compare";
 import type { Language } from "@/types/shared";
 import type { CompareEntityTypeParam } from "@/api/v2/schemas/compare";
+import { compareCopy } from "@/lib/i18n/copy/compare";
 
 // @req REQ-091
 export const revalidate = 3600;
@@ -96,15 +97,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, entityType, ids } = await params;
   const data = await loadComparisonData(entityType, ids);
+  const language = lang as Language;
+  const copy = compareCopy[language];
 
   const labels = data.columns.map((column) => column.label);
-  const title = `Comparaison : ${labels.join(" · ")}`;
-  const description = `Comparaison de fiches AFRIK : ${labels.join(", ")}. Identité, langues, démographie et confiance éditoriale côte à côte.`;
+  const title = copy.metadataTitle(labels.join(" · "));
+  const description = copy.metadataDescription(labels.join(", "));
   // The route folder is French under either locale; the address a crawler
   // is told about is composed in the locale's own vocabulary. Combinatorial
   // and indexed nowhere, so the head carries a canonical and no cluster.
   const alternates = pageAlternates(
-    lang as Language,
+    language,
     (locale) =>
       `${getLocalizedRoute(locale, "compare")}/${
         COMPARE_ENTITY_SEGMENTS[locale][COMPARE_KEY_BY_SLUG[entityType]]
@@ -131,7 +134,7 @@ export async function generateMetadata({
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: "Comparaison AFRIK",
+          alt: copy.metadataImageAlt,
         },
       ],
     },
@@ -152,8 +155,12 @@ export default async function ComparisonPage({
 }) {
   const { lang, entityType, ids } = await params;
   const data = await loadComparisonData(entityType, ids);
+  const language = lang as Language;
+  const copy = compareCopy[language];
 
-  const title = `Comparaison : ${data.columns.map((column) => column.label).join(" · ")}`;
+  const title = copy.metadataTitle(
+    data.columns.map((column) => column.label).join(" · ")
+  );
 
   // This route mounts no `PageLayout`, so it mounts the trail itself. The
   // label names the pair being compared, which is the one segment of
@@ -166,7 +173,7 @@ export default async function ComparisonPage({
         <SiteTrail entityLabel={title} />
       </div>
       <h1>{title}</h1>
-      <ComparisonView data={data} language={lang as Language} />
+      <ComparisonView data={data} language={language} />
     </>
   );
 }

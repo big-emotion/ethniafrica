@@ -3,8 +3,11 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 import { flagFromISO3 } from "@/lib/countryFlag";
+import { getAdmin0Name } from "@/lib/atlas/overlays";
 import type { AtlasTarget } from "@/lib/atlas/targets";
+import { atlasCopy } from "@/lib/i18n/copy/atlas";
 import type { CountryId } from "@/types/afrik";
+import type { Language } from "@/types/shared";
 
 /**
  * Choosing a country from a list instead of from the globe.
@@ -19,6 +22,7 @@ import type { CountryId } from "@/types/afrik";
  */
 
 export interface AtlasTargetPickerProps {
+  language?: Language;
   /** In the footprint's own order: densest first. */
   targets: AtlasTarget[];
   /**
@@ -61,13 +65,15 @@ const LIST_STYLE: CSSProperties = {
 
 // @req REQ-117
 export function AtlasTargetPicker({
+  language = "fr",
   targets,
   subtitleByCountry,
   chosenCountryId,
   onChoose,
   areaNoun = "l'empreinte",
 }: AtlasTargetPickerProps) {
-  const chooseLabel = `Choisir un pays de ${areaNoun}`;
+  const copy = atlasCopy[language];
+  const chooseLabel = copy.chooseCountry(areaNoun);
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
@@ -133,7 +139,9 @@ export function AtlasTargetPicker({
           cursor: "pointer",
         }}
       >
-        {chosen ? chosen.nameFr : chooseLabel}
+        {chosen
+          ? (getAdmin0Name(chosen.countryId, language) ?? chosen.nameFr)
+          : chooseLabel}
         <span aria-hidden="true">▾</span>
       </button>
 
@@ -141,7 +149,7 @@ export function AtlasTargetPicker({
         <div
           ref={listRef}
           role="listbox"
-          aria-label={`Pays de ${areaNoun}`}
+          aria-label={copy.countries(areaNoun)}
           style={LIST_STYLE}
           onKeyDown={(event) => {
             if (event.key === "Escape") {
@@ -193,7 +201,7 @@ export function AtlasTargetPicker({
                 }}
               >
                 <span aria-hidden="true">{flagFromISO3(target.countryId)}</span>
-                {target.nameFr}
+                {getAdmin0Name(target.countryId, language) ?? target.nameFr}
                 {subtitle && (
                   <span
                     style={{

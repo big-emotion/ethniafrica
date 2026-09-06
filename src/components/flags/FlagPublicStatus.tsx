@@ -1,41 +1,35 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import { publicFlagsCopy } from "@/lib/i18n/copy/publicFlags";
 import type { FlagRow } from "@/types/module-zero";
+import type { Language } from "@/types/shared";
 
 type FlagStatus = FlagRow["status"];
 
 interface FlagPublicStatusProps {
   status: FlagStatus;
   moderatorNotes?: string | null;
+  language?: Language;
 }
 
-const STATUS_CONFIG: Record<
-  FlagStatus,
-  { label: string; style: React.CSSProperties }
-> = {
+const STATUS_CONFIG: Record<FlagStatus, { style: React.CSSProperties }> = {
   open: {
-    label: "en cours — examen par l'équipe éditoriale",
     style: { backgroundColor: "#FEF3C7", color: "#92400E" },
   },
   under_review: {
-    label: "en cours — examen par l'équipe éditoriale",
     style: { backgroundColor: "#FEF3C7", color: "#92400E" },
   },
   accepted: {
-    label: "acceptée · fiche mise à jour",
     style: { backgroundColor: "#D1FAE5", color: "#065F46" },
   },
   rejected: {
-    label: "rejetée",
     style: { backgroundColor: "#F3F4F6", color: "#374151" },
   },
   duplicate: {
-    label: "doublon",
     style: { backgroundColor: "#F3F4F6", color: "#374151" },
   },
   withdrawn: {
-    label: "retirée",
     style: { backgroundColor: "#F3F4F6", color: "#6B7280" },
   },
 };
@@ -51,8 +45,10 @@ const STATUS_CONFIG: Record<
 export function FlagPublicStatus({
   status,
   moderatorNotes,
+  language = "fr",
 }: FlagPublicStatusProps) {
   const config = STATUS_CONFIG[status];
+  const label = publicFlagsCopy[language].statusDescriptions[status];
   const showRationale =
     (status === "rejected" || status === "duplicate") && moderatorNotes;
 
@@ -65,7 +61,7 @@ export function FlagPublicStatus({
         className="border-transparent font-medium text-afh-small px-3 py-1"
         style={config.style}
       >
-        {config.label}
+        {label}
       </Badge>
       {showRationale && (
         <blockquote

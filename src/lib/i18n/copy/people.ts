@@ -122,6 +122,14 @@ const en = {
     reference: "Ref.",
     readFull: "Read the full fiche",
   },
+  atlas: {
+    missingDistribution: (name: string) =>
+      `Country distribution is not recorded for ${name}`,
+    wholeArea: "Whole area",
+    areaNoun: "this people's presence",
+    noBoundary: "No boundary here.",
+    presenceAndDensity: "A presence, and its density.",
+  },
 };
 
 type PeopleCopy = typeof en;
@@ -244,6 +252,14 @@ const fr: PeopleCopy = {
       "Le rayon suit la racine de la population, donc l'aire suit la population. Le bord vaut zéro : il n'y a pas de limite à lire.",
     reference: "Réf.",
     readFull: "Lire la fiche complète",
+  },
+  atlas: {
+    missingDistribution: (name) =>
+      `Répartition par pays non renseignée pour ${name}`,
+    wholeArea: "Toute l'aire",
+    areaNoun: "présence",
+    noBoundary: "Aucune frontière ici.",
+    presenceAndDensity: "Une présence, et sa densité.",
   },
 };
 

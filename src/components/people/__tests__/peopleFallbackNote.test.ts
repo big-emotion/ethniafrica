@@ -4,6 +4,22 @@ import { peopleFallbackNote } from "@/components/people/peopleFallbackNote";
 import { buildPeopleFieldOverlay } from "@/lib/atlas/overlays";
 
 describe("peopleFallbackNote (REQ-116)", () => {
+  // @req REQ-145
+  it("describes the non-WebGL field in English when requested", () => {
+    const note = peopleFallbackNote(
+      "Yoruba",
+      buildPeopleFieldOverlay([
+        { country: "NGA", population: 20_000_000 },
+        { country: "BRA", population: 1_000_000 },
+      ]),
+      "en"
+    );
+
+    expect(note).toContain("1 country where Yoruba is present");
+    expect(note).toContain("densities, not a territory");
+    expect(note).toContain("1 declared presence is outside the map");
+  });
+
   // AfricaBasemap is aria-hidden, so on the non-WebGL path this sentence is
   // the entirety of what a screen reader is told about the map.
   // @req REQ-116

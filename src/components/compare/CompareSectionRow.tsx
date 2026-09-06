@@ -17,6 +17,7 @@ import type {
   ComparisonRow,
 } from "@/types/compare";
 import type { Language } from "@/types/shared";
+import { compareCopy } from "@/lib/i18n/copy/compare";
 
 export interface CompareSectionRowProps {
   row: ComparisonRow;
@@ -29,40 +30,13 @@ export interface CompareSectionRowProps {
 // epic-09-comparator.md notes the display order/labels are pending a
 // content-owner pass before 9.6 freezes them — these reuse the section
 // titles already shipped on the people/country/family detail pages).
-const SECTION_TITLES: Record<CompareEntityType, Record<string, string>> = {
-  peuple: {
-    appellations: "Noms & appellations",
-    origins: "Origines & formation",
-    organization: "Peuples voisins & organisation",
-    languages: "Langue",
-    culture: "Culture & spiritualité",
-    historicalRole: "Rôle historique",
-    demography: "Répartition géographique",
-  },
-  pays: {
-    historicalNames: "Noms à travers l'histoire",
-    kingdoms: "Royaumes & Civilisations",
-    majorPeoples: "Peuples & Démographie",
-    culture: "Culture & Société",
-    historicalFacts: "Faits historiques majeurs",
-    demographics: "Peuples & Démographie",
-  },
-  famille: {
-    decolonialHeader: "Appellations et décolonisation",
-    generalInfo: "Informations générales",
-    associatedPeoples: "Peuples associés",
-    linguisticCharacteristics: "Caractéristiques linguistiques",
-    historyAndOrigins: "Histoire et origines",
-    distribution: "Répartition géographique",
-  },
-};
-
 // @req REQ-098
 export function getRowLabel(
   entityType: CompareEntityType,
-  key: string
+  key: string,
+  language: Language = "fr"
 ): string {
-  return SECTION_TITLES[entityType]?.[key] ?? key;
+  return compareCopy[language].rowTitles[entityType]?.[key] ?? key;
 }
 
 // The demography rows carry a fixed "réf. 2025" caption (CLAUDE.md: 2025
@@ -93,7 +67,7 @@ export function CompareSectionRow({
 }: CompareSectionRowProps) {
   if (isRowEmpty(row)) return null;
 
-  const label = getRowLabel(entityType, row.key);
+  const label = getRowLabel(entityType, row.key, language);
   const headingId = `compare-row-${row.key}`;
   const showReferenceYear = DEMOGRAPHY_ROW_KEYS.has(row.key);
 

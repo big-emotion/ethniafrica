@@ -94,6 +94,22 @@ describe("ContributionForm", () => {
     expect(container.firstElementChild?.className).toContain("sm:p-6");
   });
 
+  // @req REQ-145
+  it("renders the contribution controls in English when requested", () => {
+    const { container } = renderContributionForm({ language: "en" });
+
+    expect(
+      screen.getByRole("heading", { name: "Submit a contribution" })
+    ).toBeInTheDocument();
+    expect(screen.getByText("Contribution type")).toBeInTheDocument();
+    expect(
+      screen.queryByText("Soumettre une contribution")
+    ).not.toBeInTheDocument();
+
+    selectType(container, "new_language_family");
+    expect(screen.getByText("Add a reference")).toBeInTheDocument();
+  });
+
   // An off-catalogue citation used to disable the submit button outright.
   // It is now accepted and labelled, and the notice explains the consequence.
   // @req REQ-092
@@ -204,5 +220,22 @@ describe("ContributionForm", () => {
 
     expect(await screen.findByLabelText(/nom \(FR\)/i)).toBeInTheDocument();
     expect(screen.queryByLabelText(/nom \(EN\)/i)).not.toBeInTheDocument();
+  });
+
+  // @req REQ-145
+  it("labels structured contribution fields in English without changing their keys", async () => {
+    render(
+      <ContributionFormFields
+        type="new_language_family"
+        language="en"
+        onDataChange={() => {}}
+      />
+    );
+
+    expect(await screen.findByLabelText(/Name \(FR\)/i)).toHaveAttribute(
+      "id",
+      "name_fr"
+    );
+    expect(screen.queryByLabelText(/Nom \(FR\)/i)).not.toBeInTheDocument();
   });
 });

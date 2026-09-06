@@ -243,6 +243,7 @@ export function FicheChapterBar({
         {entityId ? (
           <div className="afh-chapter-bar-report">
             <FlagTarget
+              language={language}
               target={{
                 type: "fiche_section",
                 id: entityId,

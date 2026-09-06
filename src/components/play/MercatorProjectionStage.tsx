@@ -14,6 +14,7 @@ import {
 import { getAfricaAdmin0Rings } from "@/lib/atlas/overlays";
 import { useRouteLanguage } from "@/hooks/use-language";
 import { formatNumber } from "@/lib/languageTag";
+import { gamesCopy } from "@/lib/i18n/copy/games";
 
 /**
  * The projection the game is named after, made draggable (REQ-120).
@@ -54,11 +55,13 @@ export function MercatorProjectionStage() {
 
   const inflation = areaInflationAt(REFERENCE_LATITUDE, blend);
   const isTrueSize = blend <= EQUAL_AREA_BLEND;
+  const copy = gamesCopy[language].projection;
+  const formattedInflation = formatNumber(language, inflation, ONE_DECIMAL);
 
   return (
     <section className="mercator-stage" aria-labelledby={`${sliderId}-title`}>
       <h2 id={`${sliderId}-title`} className="mercator-stage-title">
-        La carte, et ce qu&apos;elle vous cache
+        {copy.heading}
       </h2>
 
       <svg
@@ -67,8 +70,8 @@ export function MercatorProjectionStage() {
         role="img"
         aria-label={
           isTrueSize
-            ? "Planisphère à surfaces vraies : les cercles témoins couvrent tous la même surface sur le globe et en occupent autant à l'écran."
-            : `Planisphère de Mercator : les cercles témoins couvrent tous la même surface sur le globe, mais celui de 60 degrés de latitude est dessiné ${formatNumber(language, inflation, ONE_DECIMAL)} fois plus grand que celui de l'équateur.`
+            ? copy.equalAreaAria
+            : copy.mercatorAria(formattedInflation)
         }
       >
         {world.map((ring, index) => (
@@ -96,10 +99,10 @@ export function MercatorProjectionStage() {
 
       <div className="mercator-stage-controls">
         <label className="mercator-stage-label" htmlFor={sliderId}>
-          Projection
+          {copy.label}
         </label>
         <div className="mercator-stage-track">
-          <span aria-hidden="true">Surfaces vraies</span>
+          <span aria-hidden="true">{copy.equalArea}</span>
           <input
             id={sliderId}
             className="mercator-stage-slider"
@@ -120,15 +123,11 @@ export function MercatorProjectionStage() {
             "same size" would invite the reader to see a contradiction in what
             is actually the second half of the lesson. */}
         {isTrueSize
-          ? "Tous occupent la même surface à l'écran. Leur forme change, pas leur surface."
-          : `À 60° de latitude, une surface est dessinée ${formatNumber(language, inflation, ONE_DECIMAL)} fois trop grande.`}
+          ? copy.equalAreaNote
+          : copy.mercatorNote(formattedInflation)}
       </p>
 
-      <p className="mercator-stage-note">
-        Les vingt-cinq cercles couvrent tous exactement la même surface sur le
-        globe. Toute différence que vous voyez entre eux a été ajoutée par la
-        projection.
-      </p>
+      <p className="mercator-stage-note">{copy.explanation}</p>
 
       <style>{`
         /* Mobile first: the map is bounded in height so the slider and its
