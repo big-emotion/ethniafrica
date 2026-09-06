@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { StateMedallion } from "@/components/ui/StateMedallion";
-import { DEFAULT_LOCALE, isLocale } from "@/lib/locale";
+import { FALLBACK_LOCALE, isLocale } from "@/lib/locale";
 import { getLocalizedRoute } from "@/lib/routing";
 
 /**
@@ -15,7 +15,7 @@ import { getLocalizedRoute } from "@/lib/routing";
 // @req REQ-099
 export default function ComparerNotFound() {
   const params = useParams();
-  const lang = isLocale(params?.lang) ? params.lang : DEFAULT_LOCALE;
+  const lang = isLocale(params?.lang) ? params.lang : FALLBACK_LOCALE;
   const pickerRoute = getLocalizedRoute(lang, "compare");
 
   return (

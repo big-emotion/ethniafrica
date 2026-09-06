@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import type { ReactElement } from "react";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
   PageLoadingScreen,
@@ -43,6 +43,11 @@ const loadingScreen = async (props: PageLoadingScreenProps) =>
 beforeEach(() => {
   requestHeaders.clear();
   requestHeaders.set(LOCALE_HEADER, "fr");
+  vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
+});
+
+afterEach(() => {
+  vi.unstubAllEnvs();
 });
 
 describe("PageLoadingScreen", () => {
@@ -132,6 +137,7 @@ describe("PageLoadingScreen", () => {
 describe("PageLoadingScreen — the wait is in the page's locale (REQ-140)", () => {
   // @req REQ-140
   it("dresses the shell in the request's locale", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-en-default");
     requestHeaders.set(LOCALE_HEADER, "en");
     await loadingScreen({ label: "Loading" });
 
@@ -143,6 +149,6 @@ describe("PageLoadingScreen — the wait is in the page's locale (REQ-140)", () 
     requestHeaders.clear();
     await loadingScreen({ label: "Chargement" });
 
-    expect(screen.getByTestId("site-brand")).toHaveAttribute("href", "/en");
+    expect(screen.getByTestId("site-brand")).toHaveAttribute("href", "/fr");
   });
 });

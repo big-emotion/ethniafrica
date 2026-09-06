@@ -28,7 +28,7 @@ import {
   type PublicFlagTargetType,
 } from "@/lib/supabase/queries/flags/publicFlagsPageQuery";
 import { getTranslation } from "@/lib/translations";
-import { DEFAULT_LOCALE } from "@/lib/locale";
+import { FALLBACK_LOCALE } from "@/lib/locale";
 import { getLanguageFromRoute, getStaticPageRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
@@ -301,7 +301,7 @@ export function PublicFlagsQueue({
   const router = useRouter();
   const pathname = usePathname();
   // The queue's own address says which locale its permalinks belong to.
-  const language = getLanguageFromRoute(pathname) ?? DEFAULT_LOCALE;
+  const language = getLanguageFromRoute(pathname) ?? FALLBACK_LOCALE;
   const sentinelRef = useRef<HTMLDivElement>(null);
   const latestSearchParamsRef = useRef(new URLSearchParams());
   const [filters, setFilters] = useState<PublicFlagFilters>(() =>
