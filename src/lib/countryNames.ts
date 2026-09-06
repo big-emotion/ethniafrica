@@ -55,34 +55,23 @@ const ISO_ALPHA_3_TO_ALPHA_2: Record<string, string> = {
   ZWE: "ZW",
 };
 
-function createFrenchRegionNames(): Intl.DisplayNames | null {
-  if (typeof Intl.DisplayNames !== "function") {
-    return null;
-  }
-
-  try {
-    return new Intl.DisplayNames(["fr"], { type: "region" });
-  } catch {
-    return null;
-  }
+// @req REQ-140
+export function getCountryCommonName(
+  language: Language,
+  isoAlpha3: string,
+  declaredName: string
+): string {
+  const isoAlpha2 = ISO_ALPHA_3_TO_ALPHA_2[isoAlpha3.trim().toUpperCase()];
+  if (!isoAlpha2) return declaredName;
+  return displayCountryName(language, isoAlpha2) ?? declaredName;
 }
-
-const frenchRegionNames = createFrenchRegionNames();
 
 // @req REQ-001
 export function getFrenchCountryCommonName(
   isoAlpha3: string,
   officialName: string
 ): string {
-  const isoAlpha2 = ISO_ALPHA_3_TO_ALPHA_2[isoAlpha3.trim().toUpperCase()];
-
-  if (!isoAlpha2 || !frenchRegionNames) {
-    return officialName;
-  }
-
-  try {
-    return frenchRegionNames.of(isoAlpha2) ?? officialName;
-  } catch {
-    return officialName;
-  }
+  return getCountryCommonName("fr", isoAlpha3, officialName);
 }
+import { displayCountryName } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";

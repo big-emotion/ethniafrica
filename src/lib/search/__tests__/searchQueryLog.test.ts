@@ -47,26 +47,40 @@ describe("searchQueryLog.write", () => {
 
   // @req REQ-002
   it("inserts a row into search_query_log with the mapped columns", async () => {
-    await searchQueryLog.write({ query: "yoruba", resultCount: 3 });
+    await searchQueryLog.write({ query: "yoruba", resultCount: 3, lang: "fr" });
 
     expect(fromMock).toHaveBeenCalledWith("search_query_log");
     expect(insertMock).toHaveBeenCalledTimes(1);
 
     const row = insertMock.mock.calls[0][0];
-    expect(row).toEqual({ query: "yoruba", result_count: 3 });
+    expect(row).toEqual({ query: "yoruba", result_count: 3, lang: "fr" });
+  });
+
+  // ETNI-1857: a failed English search is a different gap from a failed
+  // French one — the aliases it asks for live in another locale's names.
+  // @req REQ-141
+  it("records the locale the search was served in", async () => {
+    await searchQueryLog.write({ query: "chad", resultCount: 0, lang: "en" });
+
+    const row = insertMock.mock.calls[0][0];
+    expect(row.lang).toBe("en");
   });
 
   // @req REQ-002
   it("carries no reader identifier, IP or user-agent field", async () => {
-    await searchQueryLog.write({ query: "bété", resultCount: 0 });
+    await searchQueryLog.write({ query: "bété", resultCount: 0, lang: "fr" });
 
     const row = insertMock.mock.calls[0][0];
-    expect(Object.keys(row).sort()).toEqual(["query", "result_count"]);
+    expect(Object.keys(row).sort()).toEqual(["lang", "query", "result_count"]);
   });
 
   // @req REQ-002
   it("logs a zero-result query the same way as any other", async () => {
-    await searchQueryLog.write({ query: "unmatched-spelling", resultCount: 0 });
+    await searchQueryLog.write({
+      query: "unmatched-spelling",
+      resultCount: 0,
+      lang: "fr",
+    });
 
     const row = insertMock.mock.calls[0][0];
     expect(row.result_count).toBe(0);
@@ -80,7 +94,7 @@ describe("searchQueryLog.write", () => {
     });
 
     await expect(
-      searchQueryLog.write({ query: "yoruba", resultCount: 1 })
+      searchQueryLog.write({ query: "yoruba", resultCount: 1, lang: "fr" })
     ).resolves.toBeUndefined();
 
     expect(loggerError).toHaveBeenCalled();
@@ -91,7 +105,7 @@ describe("searchQueryLog.write", () => {
     insertMock.mockRejectedValueOnce(new Error("network exploded"));
 
     await expect(
-      searchQueryLog.write({ query: "yoruba", resultCount: 1 })
+      searchQueryLog.write({ query: "yoruba", resultCount: 1, lang: "fr" })
     ).resolves.toBeUndefined();
 
     expect(loggerError).toHaveBeenCalled();
@@ -104,7 +118,7 @@ describe("searchQueryLog.write", () => {
     });
 
     await expect(
-      searchQueryLog.write({ query: "yoruba", resultCount: 1 })
+      searchQueryLog.write({ query: "yoruba", resultCount: 1, lang: "fr" })
     ).resolves.toBeUndefined();
 
     expect(loggerError).toHaveBeenCalled();

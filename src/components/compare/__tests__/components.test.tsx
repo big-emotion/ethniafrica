@@ -110,6 +110,7 @@ describe("EntityComparePicker", () => {
   function renderPicker(onCompare = vi.fn()) {
     return render(
       <EntityComparePicker
+        language="fr"
         onCompare={onCompare}
         fetchSuggestions={fetchSuggestions}
       />,
@@ -277,7 +278,9 @@ describe("EntityComparePicker default fetchSuggestions (DEC-027 canonical path)"
       }),
     });
 
-    render(<EntityComparePicker />, { wrapper: createWrapper() });
+    render(<EntityComparePicker language="fr" />, {
+      wrapper: createWrapper(),
+    });
     fireEvent.click(
       screen.getByRole("radio", { name: /familles linguistiques/i })
     );
@@ -312,7 +315,9 @@ describe("EntityComparePicker default fetchSuggestions (DEC-027 canonical path)"
       }),
     });
 
-    render(<EntityComparePicker />, { wrapper: createWrapper() });
+    render(<EntityComparePicker language="fr" />, {
+      wrapper: createWrapper(),
+    });
     fireEvent.click(
       screen.getByRole("radio", { name: /familles linguistiques/i })
     );
@@ -539,7 +544,7 @@ describe("Accessibility (axe)", () => {
   // @req REQ-097
   it("EntityComparePicker has no axe violations", async () => {
     const { container } = render(
-      <EntityComparePicker fetchSuggestions={async () => []} />,
+      <EntityComparePicker language="fr" fetchSuggestions={async () => []} />,
       { wrapper: createWrapper() }
     );
     await expectNoAxeViolations(container);

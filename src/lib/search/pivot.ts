@@ -17,7 +17,9 @@
  */
 
 import { normalizeString } from "@/lib/normalize";
+import { getLocalizedSearchResultName } from "@/lib/search/localizedResult";
 import type { SearchResult } from "@/types/afrik-frontend";
+import type { Language } from "@/types/shared";
 
 /** How far ahead of the runner-up a head must be to stand alone. */
 const DOMINANCE_RATIO = 2;
@@ -26,13 +28,16 @@ const DOMINANCE_RATIO = 2;
 // @req REQ-002
 export function selectPivot(
   results: SearchResult[],
-  query: string
+  query: string,
+  language: Language = "fr"
 ): SearchResult | null {
   const wanted = normalizeString(query.trim());
   if (!wanted || results.length === 0) return null;
 
   const [head, runnerUp] = results;
-  const headName = normalizeString(head.name);
+  const headName = normalizeString(
+    getLocalizedSearchResultName(head, language)
+  );
 
   // A people and the language it speaks are routinely spelled the same
   // (e.g. "Bambara"); that's one referent seen from two axes, not an
@@ -42,7 +47,9 @@ export function selectPivot(
     .slice(1)
     .some(
       (result) =>
-        result.type === head.type && normalizeString(result.name) === headName
+        result.type === head.type &&
+        normalizeString(getLocalizedSearchResultName(result, language)) ===
+          headName
     );
   if (isAmbiguous) return null;
 

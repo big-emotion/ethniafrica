@@ -51,6 +51,7 @@ const meta = {
     },
   ],
   args: {
+    language: "fr",
     fetchSuggestions: storySuggestions,
   },
 } satisfies Meta<typeof EntityComparePicker>;

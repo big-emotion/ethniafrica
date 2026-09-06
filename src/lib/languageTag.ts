@@ -38,3 +38,61 @@ export function bcp47LanguageTag(code?: string | null): string | undefined {
     return undefined;
   }
 }
+
+export type LocaleTag = "en-GB" | "fr-FR";
+
+// @req REQ-140
+export function localeTag(language: Language): LocaleTag {
+  return language === "en" ? "en-GB" : "fr-FR";
+}
+
+const numberFormatters = new Map<string, Intl.NumberFormat>();
+
+// @req REQ-140
+export function formatNumber(
+  language: Language,
+  value: number,
+  options?: Intl.NumberFormatOptions
+): string {
+  const key = `${language}:${JSON.stringify(options ?? {})}`;
+  let formatter = numberFormatters.get(key);
+  if (!formatter) {
+    formatter = new Intl.NumberFormat(localeTag(language), options);
+    numberFormatters.set(key, formatter);
+  }
+  return formatter.format(value);
+}
+
+const regionNames = new Map<Language, Intl.DisplayNames | null>();
+
+function regionNamesFor(language: Language): Intl.DisplayNames | null {
+  if (regionNames.has(language)) return regionNames.get(language) ?? null;
+
+  let names: Intl.DisplayNames | null = null;
+  if (typeof Intl.DisplayNames === "function") {
+    try {
+      names = new Intl.DisplayNames([localeTag(language)], { type: "region" });
+    } catch {
+      names = null;
+    }
+  }
+  regionNames.set(language, names);
+  return names;
+}
+
+// @req REQ-140
+export function displayCountryName(
+  language: Language,
+  isoAlpha2: string
+): string | undefined {
+  const code = isoAlpha2.trim();
+  const names = regionNamesFor(language);
+  if (!code || !names) return undefined;
+
+  try {
+    return names.of(code) || undefined;
+  } catch {
+    return undefined;
+  }
+}
+import type { Language } from "@/types/shared";

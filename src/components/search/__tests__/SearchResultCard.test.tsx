@@ -43,9 +43,17 @@ const bete: SearchResult = {
   population: 994_000,
 };
 
-function renderCard(result: SearchResult, onNavigate?: () => void) {
+function renderCard(
+  result: SearchResult,
+  onNavigate?: () => void,
+  language: "fr" | "en" = "fr"
+) {
   return render(
-    <SearchResultCard result={result} language="fr" onNavigate={onNavigate} />
+    <SearchResultCard
+      result={result}
+      language={language}
+      onNavigate={onNavigate}
+    />
   );
 }
 
@@ -68,6 +76,37 @@ describe("SearchResultCard", () => {
       "href",
       getCountryRoute("fr", "CIV")
     );
+  });
+
+  // @req REQ-140
+  it("renders English names, labels, relations, routes and number formatting", () => {
+    renderCard(
+      {
+        ...bete,
+        nameEn: "Bete",
+        languageFamilyNameEn: "Kru",
+        countryIds: ["SDN"],
+      },
+      undefined,
+      "en"
+    );
+
+    expect(screen.getByRole("link", { name: "Bete" })).toHaveAttribute(
+      "href",
+      getPeopleRoute("en", "PPL_BETE")
+    );
+    expect(screen.getByText("People")).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /linguistic family Kru/i })
+    ).toHaveAttribute(
+      "href",
+      `${getLocalizedRoute("en", "search")}?family=FLG_KROU`
+    );
+    expect(screen.getByRole("link", { name: /Sudan/ })).toHaveAttribute(
+      "href",
+      `${getLocalizedRoute("en", "search")}?country=SDN`
+    );
+    expect(screen.getByText("Population: 994,000")).toBeInTheDocument();
   });
 
   // @req REQ-002

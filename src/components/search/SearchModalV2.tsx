@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Search, Loader2 } from "lucide-react";
@@ -20,6 +20,8 @@ import {
   getSearchEntityLabel,
 } from "@/components/search/searchEntityAccent";
 import { getLocalizedRoute } from "@/lib/routing";
+import { getSearchLabel } from "@/lib/search/searchVocabulary";
+import { getLocalizedSearchResultName } from "@/lib/search/localizedResult";
 import { useAutocomplete } from "@/hooks/use-autocomplete";
 import { cn } from "@/lib/utils";
 import type { SearchResult } from "@/types/afrik-frontend";
@@ -44,9 +46,6 @@ interface SearchModalV2Props {
  */
 const SUGGESTIONS_PER_KEYSTROKE = 6;
 
-const fetchSuggestionsFromCorpus = (query: string): Promise<SearchResult[]> =>
-  search(query);
-
 // @req REQ-091
 export const SearchModalV2 = ({
   open,
@@ -54,6 +53,11 @@ export const SearchModalV2 = ({
   language,
 }: SearchModalV2Props) => {
   const router = useRouter();
+  const fetchSuggestionsFromCorpus = useCallback(
+    (query: string): Promise<SearchResult[]> =>
+      search(query, { lang: language }),
+    [language]
+  );
 
   const goToFiche = (result: SearchResult) => {
     router.push(ficheHrefFor(result, language));
@@ -74,12 +78,16 @@ export const SearchModalV2 = ({
   const getNoResultsText = () => {
     const trimmed = suggest.query.trim();
     if (!trimmed) {
-      return "Commencez à taper pour rechercher...";
+      return language === "en"
+        ? "Start typing to search..."
+        : "Commencez à taper pour rechercher...";
     }
     if (suggest.query.length < 2) {
-      return "Tapez au moins 2 caractères...";
+      return language === "en"
+        ? "Type at least 2 characters..."
+        : "Tapez au moins 2 caractères...";
     }
-    return "Aucun résultat trouvé";
+    return language === "en" ? "No results found" : "Aucun résultat trouvé";
   };
 
   const hasResults = suggest.options.length > 0;
@@ -100,7 +108,9 @@ export const SearchModalV2 = ({
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl h-[80vh] p-0 flex flex-col">
         <DialogHeader className="px-6 pt-6 pb-4 border-b border-afh-border">
-          <DialogTitle>Recherche</DialogTitle>
+          <DialogTitle>
+            {language === "en" ? "Search" : "Recherche"}
+          </DialogTitle>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="px-6 pt-4 pb-2">
@@ -112,7 +122,12 @@ export const SearchModalV2 = ({
             <Input
               type="text"
               {...suggest.comboboxProps}
-              placeholder="Rechercher une famille, un peuple ou un pays..."
+              aria-label={getSearchLabel(language)}
+              placeholder={
+                language === "en"
+                  ? "Search for a people, family or country..."
+                  : "Rechercher une famille, un peuple ou un pays..."
+              }
               value={suggest.query}
               onChange={(e) => suggest.setQuery(e.target.value)}
               onKeyDown={suggest.handleKeyDown}
@@ -127,14 +142,20 @@ export const SearchModalV2 = ({
             <div className="flex items-center justify-center h-64">
               <Loader2
                 className="h-6 w-6 animate-spin text-afh-text-muted"
-                aria-label="Chargement en cours"
+                aria-label={
+                  language === "en" ? "Loading search" : "Chargement en cours"
+                }
               />
             </div>
           ) : hasResults ? (
             <ul
               id={suggest.listboxId}
               role="listbox"
-              aria-label="Suggestions de recherche"
+              aria-label={
+                language === "en"
+                  ? "Search suggestions"
+                  : "Suggestions de recherche"
+              }
               className="space-y-1"
               data-testid="search-suggestions-list"
             >
@@ -154,13 +175,13 @@ export const SearchModalV2 = ({
                     className="flex-1 truncate text-afh-text"
                     tabIndex={-1}
                   >
-                    {result.name}
+                    {getLocalizedSearchResultName(result, language)}
                   </Link>
                   <span
                     aria-hidden="true"
                     className="shrink-0 text-afh-caption text-afh-text-soft"
                   >
-                    {getSearchEntityLabel(result.type)}
+                    {getSearchEntityLabel(result.type, language)}
                   </span>
                 </li>
               ))}

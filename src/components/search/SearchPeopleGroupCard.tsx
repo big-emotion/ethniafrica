@@ -5,6 +5,7 @@ import Link from "next/link";
 import {
   SEARCH_ENTITY_ACCENT,
   SearchEntityMark,
+  getSearchEntityLabel,
 } from "@/components/search/searchEntityAccent";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -13,6 +14,8 @@ import {
   CHARTER_HOVER_LIFT,
 } from "@/components/ui/charter-motion";
 import { getPeopleRoute } from "@/lib/routing";
+import { formatNumber } from "@/lib/languageTag";
+import { getLocalizedSearchResultName } from "@/lib/search/localizedResult";
 import { cn } from "@/lib/utils";
 import type { PeopleGroup } from "@/lib/search/groupPeopleResults";
 import type { Language } from "@/types/shared";
@@ -61,17 +64,20 @@ export function SearchPeopleGroupCard({
         <span className="flex items-center gap-1.5">
           <SearchEntityMark type="people" />
           <Badge variant="secondary" className="text-afh-caption">
-            {accent.label}
+            {getSearchEntityLabel("people", language)}
           </Badge>
         </span>
         <span className="text-afh-caption text-afh-fg-muted">
-          {group.members.length} fiches
+          {formatNumber(language, group.members.length)}{" "}
+          {language === "en"
+            ? `record${group.members.length === 1 ? "" : "s"}`
+            : `fiche${group.members.length === 1 ? "" : "s"}`}
         </span>
       </div>
 
       <ul
         className="mt-2 flex flex-wrap items-center gap-2"
-        aria-label="Fiches du groupe"
+        aria-label={language === "en" ? "Group records" : "Fiches du groupe"}
       >
         {group.members.map((member) => (
           <li key={member.id}>
@@ -81,7 +87,7 @@ export function SearchPeopleGroupCard({
               className={cn("rounded-full", CHARTER_FOCUS_RING)}
             >
               <Badge variant="outline" className="text-afh-caption">
-                {member.name}
+                {getLocalizedSearchResultName(member, language)}
               </Badge>
             </Link>
           </li>

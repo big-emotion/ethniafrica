@@ -80,6 +80,26 @@ describe("selectPivot", () => {
     expect(selectPivot([people("A", "Bété", 0.9)], "Bété")?.id).toBe("A");
   });
 
+  // @req REQ-140
+  it("matches the localized English name when selecting an English pivot", () => {
+    const results = [
+      {
+        type: "country" as const,
+        id: "TCD",
+        name: "Tchad",
+        nameEn: "Chad",
+        relevance: 1,
+      },
+    ];
+
+    expect(selectPivot(results, "Chad", "en")?.id).toBe("TCD");
+  });
+
+  // @req REQ-140
+  it("falls back to the French name when an English name is absent", () => {
+    expect(selectPivot([people("A", "Bété", 0.9)], "Bété", "en")?.id).toBe("A");
+  });
+
   // @req REQ-002
   it("selects nothing when the sole result neither matches nor stands out", () => {
     expect(selectPivot([people("A", "Amhara", 0.05)], "bété")).toBeNull();

@@ -17,7 +17,11 @@ import userEvent from "@testing-library/user-event";
 import { SearchModalV2 } from "../search/SearchModalV2";
 import * as afrikLoader from "@/lib/afrikLoader";
 import type { SearchResult } from "@/types/afrik-frontend";
-import { getPeopleRoute, getLocalizedRoute } from "@/lib/routing";
+import {
+  getCountryRoute,
+  getPeopleRoute,
+  getLocalizedRoute,
+} from "@/lib/routing";
 
 const mockPush = vi.fn();
 vi.mock("next/navigation", () => ({
@@ -132,6 +136,39 @@ describe("SearchModalV2", () => {
     ).toBeInTheDocument();
   });
 
+  // @req REQ-140
+  it("renders its search copy, localized result name and kind in English", async () => {
+    mockSearch([
+      {
+        type: "country",
+        id: "TCD",
+        name: "Tchad",
+        nameEn: "Chad",
+        relevance: 1,
+      },
+    ]);
+    render(<SearchModalV2 open={true} onClose={mockOnClose} language="en" />);
+
+    expect(screen.getByText("Search")).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText(/Search for a people/i)
+    ).toBeInTheDocument();
+    expect(screen.getByText("Start typing to search...")).toBeInTheDocument();
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("combobox"), {
+        target: { value: "Chad" },
+      });
+      await new Promise((r) => setTimeout(r, 350));
+    });
+
+    expect(screen.getByRole("link", { name: "Chad" })).toHaveAttribute(
+      "href",
+      expect.stringContaining(getCountryRoute("en", "TCD"))
+    );
+    expect(screen.getByText("Country")).toBeInTheDocument();
+  });
+
   it("should update search input value when typing", async () => {
     render(<SearchModalV2 open={true} onClose={mockOnClose} language="fr" />);
 
@@ -164,7 +201,22 @@ describe("SearchModalV2", () => {
       await new Promise((r) => setTimeout(r, 350));
     });
 
-    expect(afrikLoader.search).toHaveBeenCalledWith("Shona");
+    expect(afrikLoader.search).toHaveBeenCalledWith("Shona", { lang: "fr" });
+  });
+
+  // @req REQ-140
+  it("asks the corpus for suggestions in the reader's locale", async () => {
+    mockSearch(mockSearchResults);
+    render(<SearchModalV2 open={true} onClose={mockOnClose} language="en" />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("combobox"), {
+        target: { value: "Shona" },
+      });
+      await new Promise((r) => setTimeout(r, 350));
+    });
+
+    expect(afrikLoader.search).toHaveBeenCalledWith("Shona", { lang: "en" });
   });
 
   // ── ETNI-1809 — suggest-only overlay ────────────────────────────────────

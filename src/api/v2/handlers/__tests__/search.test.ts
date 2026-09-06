@@ -86,6 +86,7 @@ const OVER_BROAD_GROUPS = {
       nameMain: "Yoruba",
       languageFamilyId: "FLG_NIGER_CONGO",
       languageFamilyName: "Niger-Congo",
+      languageFamilyNameEn: "Niger-Congo",
       currentCountries: ["NGA"],
       classificationStatus: null,
       content: {},
@@ -148,8 +149,10 @@ const OVER_BROAD_GROUPS = {
     {
       id: "yor",
       name: "Yoruba",
+      nameEn: "Yoruba",
       familyId: "FLG_NIGER_CONGO",
       familyName: "Niger-Congo",
+      familyNameEn: "Niger-Congo",
       content: {},
       relevance: 0.7,
       exactMatch: true,
@@ -198,6 +201,17 @@ describe("ftsSearchHandler — unified results", () => {
 
     expect(envelope.data.results).toEqual(
       RANKED_HITS.filter((hit) => hit.kind !== "quiz")
+    );
+  });
+
+  // @req REQ-141
+  it("forwards the locale untouched to the service", async () => {
+    vi.mocked(ftsSearch).mockResolvedValue(serviceResponse());
+
+    await ftsSearchHandler({ ...QUERY, lang: "en" });
+
+    expect(ftsSearch).toHaveBeenCalledWith(
+      expect.objectContaining({ q: "yoruba", lang: "en" })
     );
   });
 

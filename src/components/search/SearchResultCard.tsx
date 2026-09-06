@@ -15,7 +15,8 @@ import {
   CHARTER_FOCUS_RING,
   CHARTER_HOVER_LIFT,
 } from "@/components/ui/charter-motion";
-import { getFrenchCountryCommonName } from "@/lib/countryNames";
+import { getCountryCommonName } from "@/lib/countryNames";
+import { formatNumber } from "@/lib/languageTag";
 import {
   getCountryRoute,
   getFamilyRoute,
@@ -29,6 +30,10 @@ import {
   getPersonRelationLabel,
   getPersonRoleLabel,
 } from "@/lib/search/personResultLabels";
+import {
+  getLocalizedSearchResultFamilyName,
+  getLocalizedSearchResultName,
+} from "@/lib/search/localizedResult";
 import { cn } from "@/lib/utils";
 import type { SearchEntityType, SearchResult } from "@/types/afrik-frontend";
 import type { Language } from "@/types/shared";
@@ -49,8 +54,6 @@ import type { Language } from "@/types/shared";
  */
 
 const MAX_COUNTRY_CHIPS = 3;
-
-const numberFr = new Intl.NumberFormat("fr-FR");
 
 // @req REQ-002
 export function ficheHrefFor(result: SearchResult, language: Language): string {
@@ -81,6 +84,26 @@ export function SearchResultCard({
 }: SearchResultCardProps) {
   const type = result.type as SearchEntityType;
   const countries = result.countryIds ?? [];
+  const name = getLocalizedSearchResultName(result, language);
+  const familyName = getLocalizedSearchResultFamilyName(result, language);
+  const copy =
+    language === "en"
+      ? {
+          familyAria: (value: string) =>
+            `Peoples in the linguistic family ${value}`,
+          peopleList: "Referenced peoples",
+          countryList: "Countries of presence",
+          countryAria: (value: string) => `Peoples in ${value}`,
+          population: "Population:",
+        }
+      : {
+          familyAria: (value: string) =>
+            `Peuples de la famille linguistique ${value}`,
+          peopleList: "Peuples cités",
+          countryList: "Pays de présence",
+          countryAria: (value: string) => `Peuples du pays ${value}`,
+          population: "Population :",
+        };
   const shownCountries = countries.slice(0, MAX_COUNTRY_CHIPS);
   const hiddenCountryCount = countries.length - shownCountries.length;
 
@@ -107,7 +130,7 @@ export function SearchResultCard({
             CHARTER_FOCUS_RING
           )}
         >
-          {result.name}
+          {name}
         </Link>
       </h3>
 
@@ -115,26 +138,29 @@ export function SearchResultCard({
         <span className="flex items-center gap-1.5">
           <SearchEntityMark type={type} />
           <Badge variant="secondary" className="text-afh-caption">
-            {getSearchEntityLabel(type)}
+            {getSearchEntityLabel(type, language)}
           </Badge>
         </span>
 
-        {result.languageFamilyId && result.languageFamilyName && (
+        {result.languageFamilyId && familyName && (
           <Link
             href={buildRelationSearchHref(language, {
               kind: "family",
               id: result.languageFamilyId,
             })}
-            aria-label={`Peuples de la famille linguistique ${result.languageFamilyName}`}
+            aria-label={copy.familyAria(familyName)}
             className={cn("rounded-full", CHARTER_FOCUS_RING)}
           >
             <Badge variant="outline" className="text-afh-caption">
-              {result.languageFamilyName}
+              {familyName}
             </Badge>
           </Link>
         )}
 
-        <ClassificationBadge status={result.classificationStatus} />
+        <ClassificationBadge
+          status={result.classificationStatus}
+          language={language}
+        />
 
         {/* REQ-126: rendered unconditionally whenever the card carries a
             roleCategory — no tooltip, no hover, no "show more". A person
@@ -142,7 +168,7 @@ export function SearchResultCard({
             editorial failure this ticket exists to close. */}
         {result.type === "person" && result.roleCategory && (
           <Badge variant="outline" className="text-afh-caption">
-            {getPersonRoleLabel(result.roleCategory)}
+            {getPersonRoleLabel(result.roleCategory, language)}
           </Badge>
         )}
       </div>
@@ -154,7 +180,7 @@ export function SearchResultCard({
       {result.type === "person" && (result.peopleLinks?.length ?? 0) > 0 && (
         <ul
           className="relative z-10 mt-2 flex flex-wrap items-center gap-2"
-          aria-label="Peuples cités"
+          aria-label={copy.peopleList}
         >
           {result.peopleLinks?.map((link) => (
             <li key={link.peopleId}>
@@ -173,7 +199,8 @@ export function SearchResultCard({
                   }
                   className="text-afh-caption"
                 >
-                  {getPersonRelationLabel(link.relationLabel)} {link.peopleId}
+                  {getPersonRelationLabel(link.relationLabel, language)}{" "}
+                  {link.peopleId}
                 </Badge>
               </Link>
             </li>
@@ -184,7 +211,7 @@ export function SearchResultCard({
       {shownCountries.length > 0 && (
         <ul
           className="relative z-10 mt-2 flex flex-wrap items-center gap-2"
-          aria-label="Pays de présence"
+          aria-label={copy.countryList}
         >
           {shownCountries.map((iso3) => (
             <li key={iso3}>
@@ -193,11 +220,13 @@ export function SearchResultCard({
                   kind: "country",
                   id: iso3,
                 })}
-                aria-label={`Peuples du pays ${getFrenchCountryCommonName(iso3, iso3)}`}
+                aria-label={copy.countryAria(
+                  getCountryCommonName(language, iso3, iso3)
+                )}
                 className={cn("rounded-full", CHARTER_FOCUS_RING)}
               >
                 <Badge variant="outline" className="text-afh-caption">
-                  {getFrenchCountryCommonName(iso3, iso3)}
+                  {getCountryCommonName(language, iso3, iso3)}
                 </Badge>
               </Link>
             </li>
@@ -212,7 +241,8 @@ export function SearchResultCard({
 
       {result.population !== undefined && (
         <p className="mt-1 text-afh-small text-afh-text-soft">
-          Population : {numberFr.format(Math.round(result.population))}
+          {copy.population}{" "}
+          {formatNumber(language, Math.round(result.population))}
         </p>
       )}
     </Card>

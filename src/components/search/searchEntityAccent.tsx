@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import type { SearchEntityType } from "@/types/afrik-frontend";
+import type { Language } from "@/types/shared";
 
 // Charter V2 §4 (ETNI-798 accent scope) — search result cards mark their
 // entity type with one of the four --afh-cat-* accents. The mark is always
@@ -53,8 +54,21 @@ export const SEARCH_ENTITY_ACCENT: Record<
   },
 };
 
+const SEARCH_ENTITY_LABELS_EN: Record<SearchEntityType, string> = {
+  people: "People",
+  country: "Country",
+  languageFamily: "Linguistic family",
+  language: "Language",
+  person: "Person",
+  patronyme: "Surname",
+};
+
 // @req REQ-091
-export function getSearchEntityLabel(type: SearchEntityType): string {
+export function getSearchEntityLabel(
+  type: SearchEntityType,
+  language: Language = "fr"
+): string {
+  if (language === "en") return SEARCH_ENTITY_LABELS_EN[type] ?? type;
   return SEARCH_ENTITY_ACCENT[type]?.label ?? type;
 }
 

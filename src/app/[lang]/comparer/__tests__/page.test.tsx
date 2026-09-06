@@ -59,6 +59,7 @@ async function pickEntity(label: RegExp) {
 
 describe("/[lang]/comparer picker page", () => {
   beforeEach(() => {
+    route.lang = "fr";
     push.mockClear();
     vi.stubGlobal(
       "fetch",
@@ -147,5 +148,20 @@ describe("/[lang]/comparer picker page", () => {
     } finally {
       route.lang = "fr";
     }
+  });
+
+  // @req REQ-140
+  it("sends the page locale with English picker suggestions", async () => {
+    route.lang = "en";
+    renderPage();
+
+    fireEvent.change(screen.getByRole("combobox"), {
+      target: { value: "yo" },
+    });
+
+    await waitFor(() => expect(fetch).toHaveBeenCalled());
+    expect(fetch).toHaveBeenCalledWith(
+      expect.stringMatching(/\/api\/v2\/search\?.*lang=en/)
+    );
   });
 });

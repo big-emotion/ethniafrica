@@ -93,6 +93,47 @@ describe("DominantAnswerPanel", () => {
     ).toHaveTextContent(/3\s+sources?/i);
   });
 
+  // @req REQ-140
+  it("renders English names, fact labels, plurals and number formatting", () => {
+    render(
+      <DominantAnswerPanel
+        result={{ ...completeResult, nameEn: "Yoruba people" }}
+        language="en"
+      />
+    );
+
+    const panel = screen.getByRole("complementary", {
+      name: "Dominant answer",
+    });
+    expect(within(panel).getByText("At a glance")).toBeInTheDocument();
+    expect(
+      within(panel).getByRole("heading", { name: "Yoruba people" })
+    ).toBeInTheDocument();
+    expect(
+      within(panel).getByTestId("dominant-answer-population")
+    ).toHaveTextContent("47,000,000");
+    expect(
+      within(panel).getByTestId("dominant-answer-countries")
+    ).toHaveTextContent("3 countries");
+    expect(
+      within(panel).getByTestId("dominant-answer-exonyms")
+    ).toHaveTextContent("2 exonyms");
+    expect(
+      within(panel).getByTestId("dominant-answer-sources")
+    ).toHaveTextContent("3 sources");
+  });
+
+  // @req REQ-140
+  it("renders an English name-system label without exposing the raw key", () => {
+    render(<DominantAnswerPanel result={baillyResult} language="en" />);
+
+    expect(screen.getByText("At a glance")).toBeInTheDocument();
+    expect(screen.getByText("Naming system")).toBeInTheDocument();
+    expect(screen.getByTestId("dominant-answer-name-system")).toHaveTextContent(
+      "Non-hereditary patronymic"
+    );
+  });
+
   // @req REQ-124
   it("renders only cited source URLs as safely opened external links", () => {
     render(<DominantAnswerPanel result={completeResult} language="fr" />);

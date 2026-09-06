@@ -12,4 +12,13 @@ describe("NoNameFicheNote", () => {
     expect(note).toHaveAttribute("role", "status");
     expect(note).toHaveTextContent(/nom/i);
   });
+
+  // @req REQ-140
+  it("renders the absence marker in English", () => {
+    render(<NoNameFicheNote language="en" />);
+
+    expect(screen.getByTestId("no-name-fiche-note")).toHaveTextContent(
+      "The corpus does not yet document a surname record for this search."
+    );
+  });
 });

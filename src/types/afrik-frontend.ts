@@ -350,9 +350,18 @@ export interface SearchResult {
   relevance?: number;
   /** Le nom de l'entité est exactement la requête, accents et casse ignorés. */
   exactMatch?: boolean;
+  /**
+   * English name of ordinary use — set on `country`, `languageFamily` and
+   * `language` results when the corpus carries one (ETNI-1857). `name` stays
+   * the French name every consumer already keys on; a card served in
+   * English prefers this when present.
+   */
+  nameEn?: string;
   // Données supplémentaires selon le type
   languageFamilyId?: LanguageFamilyId;
   languageFamilyName?: string;
+  /** The family's English name, when the corpus carries one (ETNI-1857). */
+  languageFamilyNameEn?: string;
   countryIds?: CountryId[];
   population?: number;
   classificationStatus?: ClassificationStatus | null;

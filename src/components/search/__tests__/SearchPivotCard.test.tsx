@@ -36,8 +36,8 @@ const bete: SearchResult = {
   confidence: 0.87,
 };
 
-function renderCard(result: SearchResult) {
-  return render(<SearchPivotCard result={result} language="fr" />);
+function renderCard(result: SearchResult, language: "fr" | "en" = "fr") {
+  return render(<SearchPivotCard result={result} language={language} />);
 }
 
 describe("SearchPivotCard", () => {
@@ -120,5 +120,35 @@ describe("SearchPivotCard", () => {
     expect(
       screen.getByRole("link", { name: /ouvrir la fiche/i })
     ).toHaveAttribute("href", getPeopleRoute("fr", "PPL_BETE"));
+  });
+
+  // @req REQ-140
+  it("renders its complete answer in English", () => {
+    renderCard(
+      {
+        ...bete,
+        nameEn: "Bete",
+        autonym: undefined,
+        languageFamilyNameEn: "Kru",
+        countryIds: ["SDN"],
+      },
+      "en"
+    );
+
+    expect(screen.getByText("Primary result")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Bete" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Open record" })).toHaveAttribute(
+      "href",
+      getPeopleRoute("en", "PPL_BETE")
+    );
+    expect(
+      screen.getByRole("link", { name: /linguistic family Kru/i })
+    ).toHaveAttribute("href", getFamilyRoute("en", "FLG_KROU"));
+    expect(screen.getByRole("link", { name: "Sudan" })).toHaveAttribute(
+      "href",
+      getCountryRoute("en", "SDN")
+    );
+    expect(screen.getByText("994,321")).toBeInTheDocument();
+    expect(screen.getByText("Confidence")).toBeInTheDocument();
   });
 });

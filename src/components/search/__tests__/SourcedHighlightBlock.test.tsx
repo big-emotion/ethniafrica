@@ -49,4 +49,19 @@ describe("SourcedHighlightBlock", () => {
 
     expect(container).toBeEmptyDOMElement();
   });
+
+  // @req REQ-140
+  it("renders the matching English bank entry and source tier", () => {
+    render(
+      <SourcedHighlightBlock result={zuluResult} facts={facts} language="en" />
+    );
+
+    expect(screen.getByText("Did you know?")).toBeInTheDocument();
+    expect(screen.getByTestId("sourced-highlight-block")).toHaveTextContent(
+      /category coined by a philologist in 1862/
+    );
+    expect(screen.getByTestId("sourced-highlight-tier")).toHaveTextContent(
+      "Referenced source"
+    );
+  });
 });
