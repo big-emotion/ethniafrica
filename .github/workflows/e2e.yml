@@ -64,6 +64,8 @@ jobs:
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.TEST_SUPABASE_SERVICE_ROLE_KEY || secrets.SUPABASE_SERVICE_ROLE_KEY }}
       NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.TEST_SUPABASE_ANON_KEY || secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
       CI: "true"
+      # Test-only publication: production remains fail-closed to fr-only.
+      SITE_LOCALE_MODE: bilingual-fr-default
       # Epic 10, Story 10.11 (ETNI-500) — the quiz route 404s
       # (isQuizFeatureEnabled) unless this is set, which would silently skip
       # the quiz e2e specs.

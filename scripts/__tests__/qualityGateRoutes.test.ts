@@ -387,4 +387,24 @@ describe("browser quality-gate routes", () => {
       }
     }
   });
+
+  // The public deployment deliberately defaults to fr-only during rollout.
+  // Browser gates must opt into both locales themselves or every English URL
+  // is only measuring the French redirect target.
+  // @req REQ-141
+  it("publishes both locales inside every bilingual browser gate", () => {
+    for (const workflowPath of [
+      ".github/workflows/a11y.yml",
+      ".github/workflows/e2e.yml",
+      ".github/workflows/lighthouse.yml",
+    ]) {
+      const workflow = readFileSync(
+        resolve(process.cwd(), workflowPath),
+        "utf8"
+      );
+      expect(workflow, workflowPath).toContain(
+        "SITE_LOCALE_MODE: bilingual-fr-default"
+      );
+    }
+  });
 });

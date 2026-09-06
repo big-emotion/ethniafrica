@@ -16,6 +16,8 @@
 // (scripts/a11yRoutes.ts). The subset sits last because `collect` aborts the
 // whole run on the first URL that fails to load, and an unserved English
 // address must not cost the French measurements after it.
+// The workflow opts its test server into `bilingual-fr-default`; production
+// stays fail-closed to `fr-only` until an explicit launch configuration.
 //
 // This file cannot import the slug table (CommonJS, loaded by the lhci CLI),
 // so every English address below is spelled out and

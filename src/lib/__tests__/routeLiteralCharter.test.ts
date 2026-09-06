@@ -100,6 +100,11 @@ const EXEMPT = new Set([
   "src/lib/__tests__/routeLiteralCharter.test.ts",
 ]);
 
+/** Specs that deliberately compare more than one locale in the same test. */
+const CROSS_LOCALE_SPECS = new Set([
+  "e2e/cross-cutting/locale-alternates.spec.ts",
+]);
+
 // `/<locale>/<segment>` where the segment ends — a longer word merely starting
 // with one of them (`/fr/paysages`) is a different route and none of our
 // business. Both locales, because `/en/atlas/countries` typed out is the same
@@ -149,6 +154,26 @@ function sourceFiles(): string[] {
 }
 
 describe("module URLs are composed, never written out", () => {
+  // @req REQ-141
+  it("parameterises every single-locale Playwright spec", () => {
+    const offenders = sourceFiles()
+      .filter(
+        (file) =>
+          file.startsWith("e2e/") &&
+          file.endsWith(".spec.ts") &&
+          !CROSS_LOCALE_SPECS.has(file)
+      )
+      .filter(
+        (file) =>
+          !readFileSync(resolve(ROOT, file), "utf8").includes("support/locale")
+      );
+
+    expect(
+      offenders,
+      "Import LOCALE from e2e/support/locale and compose every navigation from it"
+    ).toEqual([]);
+  });
+
   // @req REQ-091
   it("finds no hardcoded module path outside the files that own one", () => {
     const offenders: string[] = [];

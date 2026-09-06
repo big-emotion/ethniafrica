@@ -25,6 +25,9 @@ jobs:
     name: axe-core (Storybook)
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      # Test-only publication: production remains fail-closed to fr-only.
+      SITE_LOCALE_MODE: bilingual-fr-default
 
     steps:
       - name: Checkout

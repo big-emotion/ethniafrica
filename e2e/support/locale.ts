@@ -1,7 +1,7 @@
 // Relative rather than `@/`: playwright.config.ts imports this module, and
 // knip loads that config at run time without the tsconfig path aliases — the
 // same reason the config reaches `src/lib/consent` by a relative path.
-import { DEFAULT_LOCALE, isLocale } from "../../src/lib/locale";
+import { getDefaultLocale, isLocale } from "../../src/lib/locale";
 import type { Language } from "../../src/types/shared";
 
 /**
@@ -20,10 +20,11 @@ import type { Language } from "../../src/types/shared";
  */
 const resolveSuiteLocale = (): Language => {
   const requested = process.env.E2E_LOCALE;
-  if (requested === undefined || requested === "") return DEFAULT_LOCALE;
+  const defaultLocale = getDefaultLocale();
+  if (requested === undefined || requested === "") return defaultLocale;
   if (!isLocale(requested)) {
     throw new Error(
-      `E2E_LOCALE=${requested} is not a published locale (${DEFAULT_LOCALE} is the default)`
+      `E2E_LOCALE=${requested} is not a supported locale (${defaultLocale} is the default)`
     );
   }
   return requested;
