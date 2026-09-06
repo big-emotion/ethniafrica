@@ -10,7 +10,8 @@
       "archaeological_sequence",
       "precolonial_and_nineteenth_century_polities",
       "colonial_administrations",
-      "independent_state_periods"
+      "independent_state_periods",
+      "modern_event_timeline"
     ],
     "terminology": "Describe kingdoms, empires, states, chiefdoms, courts, and decentralized political organization according to the evidence. Do not normalize every formation to kingdom.",
     "sourceRule": "Every publishable claim must cite at least one accepted source. Transborder formations must state where their political center and present-day overlap were located."
@@ -22,6 +23,8 @@
     "partialEvidence": 1,
     "reclassifyOutsidePolityList": 1,
     "administrativePeriodsReviewed": 6,
+    "modernEventRowsReviewed": 9,
+    "modernEventRowsReadyForEditorialReview": 9,
     "metricCaveat": "These figures measure review decisions in this proposal. They are not a completeness score for DRC history."
   },
   "currentDataAudit": {
@@ -251,6 +254,102 @@
       "sourceIds": ["SRC-UN-TERMINOLOGY-1997"]
     }
   ],
+  "modernEvents": [
+    {
+      "id": "COD-HIST-MODERN-INDEPENDENCE-1960",
+      "label": "Independence from Belgium",
+      "period": "30 June 1960",
+      "category": "decolonization_and_state_foundation",
+      "summary": "The former Belgian Congo became the independent Republic of the Congo, with Léopoldville as its capital.",
+      "decision": "add_to_modern_timeline",
+      "sourceIds": ["SRC-UN-ONUC-HISTORY", "SRC-US-OH-CONGO-1960-1965"],
+      "caveat": "Keep the independence event distinct from the crises that began immediately afterward; do not compress both into one celebratory or catastrophic sentence."
+    },
+    {
+      "id": "COD-HIST-MODERN-CONGO-CRISIS",
+      "label": "Congo Crisis and ONUC",
+      "period": "July 1960–June 1964",
+      "category": "constitutional_crisis_secessions_and_international_intervention",
+      "summary": "The new state faced rival authorities, the secessions of Katanga and South Kasai, foreign intervention, the killing of former Prime Minister Patrice Lumumba in 1961, and a major United Nations operation. Katanga was reintegrated in 1963, and ONUC withdrew by 30 June 1964.",
+      "decision": "add_with_cold_war_and_internal_plurality",
+      "sourceIds": ["SRC-UN-ONUC-HISTORY", "SRC-US-OH-CONGO-1960-1965"],
+      "caveat": "The crisis had internal, regional, Belgian, United Nations, and Cold War dimensions. Do not attribute it to a single actor or reduce it to the Katanga secession alone."
+    },
+    {
+      "id": "COD-HIST-MODERN-MOBUTU-COUP",
+      "label": "Mobutu's second coup and consolidation of rule",
+      "period": "25 November 1965–1997",
+      "category": "military_coup_and_authoritarian_regime",
+      "summary": "Army commander Joseph-Désiré Mobutu removed President Joseph Kasa-Vubu and Prime Minister Évariste Kimba on 25 November 1965 and established the regime that governed the country until 1997.",
+      "decision": "add_to_modern_timeline",
+      "sourceIds": ["SRC-US-OH-CONGO-1960-1965"],
+      "caveat": "A dedicated follow-up should document the regime's institutions, repression, political economy, foreign support, and domestic opposition rather than treating three decades as one uniform period."
+    },
+    {
+      "id": "COD-HIST-MODERN-ZAIRE-AUTHENTICITY",
+      "label": "Zaire and the authenticity policy",
+      "period": "from 1971; official country name 27 October 1971–16 May 1997",
+      "category": "state_renaming_and_political_cultural_programme",
+      "summary": "Mobutu's government renamed the country, river, and currency Zaire in 1971 as part of a wider state-led authenticity programme; the United Nations records the official country-name change on 27 October 1971.",
+      "decision": "cross_link_event_and_state_name_timeline",
+      "sourceIds": ["SRC-DRC-PRESIDENCY-MOBUTU", "SRC-UN-ZAIRE-AUTHORITY"],
+      "caveat": "Present authenticity as a political programme with contested consequences, not as an uncomplicated recovery of a single precolonial culture."
+    },
+    {
+      "id": "COD-HIST-MODERN-FIRST-CONGO-WAR",
+      "label": "First Congo War, fall of Mobutu, and restoration of the DRC name",
+      "period": "1996–17 May 1997",
+      "category": "regional_war_and_regime_change",
+      "summary": "A rebellion that began in eastern Zaire in 1996 expanded with regional military support. AFDL forces led by Laurent-Désiré Kabila entered Kinshasa in May 1997, Mobutu's regime ended, and the country resumed the name Democratic Republic of the Congo on 17 May.",
+      "decision": "add_with_regional_context",
+      "sourceIds": [
+        "SRC-UN-MONUC-BACKGROUND",
+        "SRC-UN-YEARBOOK-1997",
+        "SRC-UN-TERMINOLOGY-1997"
+      ],
+      "caveat": "Do not frame the change as a purely domestic transfer of power; the war, regional interventions, refugee crisis, and allegations of mass violence require explicit treatment."
+    },
+    {
+      "id": "COD-HIST-MODERN-SECOND-CONGO-WAR",
+      "label": "Second Congo War, Lusaka ceasefire, and creation of MONUC",
+      "period": "1998–1999 peace framework; conflict and implementation continued afterward",
+      "category": "regional_war_and_peace_process",
+      "summary": "A new rebellion began in the Kivu provinces in 1998 and drew in several regional states and Congolese armed movements. The Lusaka Ceasefire Agreement was signed in July 1999, and the Security Council established MONUC on 30 November 1999 to support ceasefire observation and disengagement.",
+      "decision": "add_as_regionalized_conflict_and_process",
+      "sourceIds": ["SRC-UN-MONUC-BACKGROUND"],
+      "caveat": "The ceasefire and creation of MONUC did not end violence throughout the country. Avoid giving 1999 as a clean endpoint to the war or its humanitarian consequences."
+    },
+    {
+      "id": "COD-HIST-MODERN-INTER-CONGOLESE-TRANSITION",
+      "label": "Global and Inclusive Agreement and transitional institutions",
+      "period": "17 December 2002–2003",
+      "category": "negotiated_transition",
+      "summary": "Congolese parties signed the Global and Inclusive Agreement in Pretoria on 17 December 2002. The Inter-Congolese Dialogue endorsed it at Sun City in April 2003 together with the transitional constitutional and security framework, opening a power-sharing transition.",
+      "decision": "add_to_modern_timeline",
+      "sourceIds": ["SRC-UN-PEACEMAKER-SUN-CITY", "SRC-UN-PRESS-SUN-CITY"],
+      "caveat": "Treat the agreement as a negotiated transition framework, not as proof that conflict, armed-group activity, or territorial fragmentation ended immediately."
+    },
+    {
+      "id": "COD-HIST-MODERN-CONSTITUTION-ELECTIONS-2006",
+      "label": "Constitution of the Third Republic and 2006 elections",
+      "period": "December 2005–6 December 2006",
+      "category": "constitutional_and_electoral_transition",
+      "summary": "Voters approved a new constitution in December 2005, and it entered into force on 18 February 2006. Legislative and presidential elections followed in July and October; Joseph Kabila's inauguration on 6 December concluded the transition established by the 2002 agreement.",
+      "decision": "add_to_modern_timeline",
+      "sourceIds": ["SRC-DRC-CONSTITUTION-2006", "SRC-UN-MONUC-BACKGROUND"],
+      "caveat": "Describe the institutional transition separately from continuing insecurity and armed-group activity, especially in the east."
+    },
+    {
+      "id": "COD-HIST-MODERN-PEACEFUL-TRANSFER-2019",
+      "label": "First peaceful transfer of presidential power",
+      "period": "30 December 2018–24 January 2019",
+      "category": "electoral_transition_and_transfer_of_power",
+      "summary": "Following elections held on 30 December 2018, Félix Tshisekedi was sworn in on 24 January 2019. The United Nations described the transition as the first peaceful transfer of power between heads of state in the country's history.",
+      "decision": "add_with_electoral_caveat",
+      "sourceIds": ["SRC-UN-SG-REPORT-2019"],
+      "caveat": "The cited United Nations report also notes flaws in implementing the 2016 political agreement. The peaceful transfer label must not be presented as an endorsement of every aspect of the electoral process."
+    }
+  ],
   "publicationProposal": {
     "recommendedSections": [
       {
@@ -286,6 +385,22 @@
           "Republic of Zaire",
           "Democratic Republic of the Congo"
         ]
+      },
+      {
+        "id": "modern_events",
+        "label": "Modern political and constitutional milestones",
+        "firstWave": [
+          "Independence from Belgium",
+          "Congo Crisis and ONUC",
+          "Mobutu's second coup and consolidation of rule",
+          "Zaire and the authenticity policy",
+          "First Congo War, fall of Mobutu, and restoration of the DRC name",
+          "Second Congo War, Lusaka ceasefire, and creation of MONUC",
+          "Global and Inclusive Agreement and transitional institutions",
+          "Constitution of the Third Republic and 2006 elections",
+          "First peaceful transfer of presidential power"
+        ],
+        "warning": "Selected milestones with explicit scope and caveats, not an exhaustive national political history."
       }
     ],
     "doNotPublishYet": [
@@ -294,7 +409,9 @@
       "A broad 18th–19th-century Mangbetu period until a dedicated scholarly source is accepted.",
       "Mongo as one kingdom or one uniform system of chiefdoms.",
       "Kazembe as a DRC-centered polity.",
-      "Any claim that the present-day DRC existed as a unified precolonial territory."
+      "Any claim that the present-day DRC existed as a unified precolonial territory.",
+      "A clean end date for conflicts whose armed violence and consequences continued after a peace agreement.",
+      "The 2019 peaceful transfer as an unqualified endorsement of the 2018 electoral process."
     ]
   },
   "remainingResearch": [
@@ -324,9 +441,9 @@
       "action": "Review further regional polities in evidence-prioritized waves. This ten-row audit is a controlled first scope, not an exhaustive inventory."
     },
     {
-      "priority": "P1",
-      "topic": "Modern history",
-      "action": "Build a separately sourced event timeline for independence, the Congo Crisis, Mobutu's regime, the Congo wars, and later constitutional periods; do not reuse the current compressed paragraph as-is."
+      "priority": "P2",
+      "topic": "Post-2019 contemporary history",
+      "action": "Review post-2019 political, security, electoral, and MONUSCO developments as a separately versioned contemporary-history pass; do not append changing events without a cutoff date and source review."
     }
   ],
   "sources": [
@@ -434,6 +551,80 @@
       "publisher": "Royal Museum for Central Africa",
       "url": "https://www.africamuseum.be/en/discover/history",
       "tier": "institutional_reference",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-UN-ONUC-HISTORY",
+      "title": "United Nations Operation in the Congo — history and mandate",
+      "publisher": "United Nations Peacekeeping",
+      "url": "https://peacekeeping.un.org/sites/default/files/past/onucB.htm",
+      "tier": "official_intergovernmental",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-US-OH-CONGO-1960-1965",
+      "title": "The Congo, Decolonization, and the Cold War, 1960–1965",
+      "publisher": "Office of the Historian, United States Department of State",
+      "url": "https://history.state.gov/milestones/1961-1968/congo-decolonization",
+      "tier": "official_government_history",
+      "accessedAt": "2026-09-06",
+      "caveat": "Use alongside Congolese and United Nations sources. This is a United States institutional history that explicitly documents U.S. policy interests and intervention."
+    },
+    {
+      "id": "SRC-DRC-PRESIDENCY-MOBUTU",
+      "title": "Mobutu Sese Seko — former president biography",
+      "publisher": "Presidency of the Democratic Republic of the Congo",
+      "url": "https://www.presidence.cd/ancien-president-infos/5",
+      "tier": "official_national",
+      "accessedAt": "2026-09-06",
+      "caveat": "Official biographical summary; use for the government's stated chronology, not as the sole source for evaluating the regime."
+    },
+    {
+      "id": "SRC-UN-YEARBOOK-1997",
+      "title": "1997 United Nations Yearbook — Democratic Republic of the Congo",
+      "publisher": "United Nations",
+      "url": "https://digitallibrary.un.org/record/422574/files/626082-EN.pdf",
+      "tier": "official_intergovernmental",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-UN-MONUC-BACKGROUND",
+      "title": "MONUC background",
+      "publisher": "United Nations Peacekeeping",
+      "url": "https://peacekeeping.un.org/sites/default/files/past/monuc/background.shtml",
+      "tier": "official_intergovernmental",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-UN-PEACEMAKER-SUN-CITY",
+      "title": "Inter-Congolese Negotiations: The Final Act (Sun City Agreement)",
+      "publisher": "United Nations Peacemaker",
+      "url": "https://peacemaker.un.org/sites/default/files/document/files/2024/05/cd030402suncityagreement.pdf",
+      "tier": "primary_agreement",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-UN-PRESS-SUN-CITY",
+      "title": "Secretary-General commends endorsement of DRC transition agreements at Sun City",
+      "publisher": "United Nations Meetings Coverage and Press Releases",
+      "url": "https://press.un.org/en/2003/sgsm8654.doc.htm",
+      "tier": "official_intergovernmental",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-DRC-CONSTITUTION-2006",
+      "title": "Constitution of the Democratic Republic of the Congo",
+      "publisher": "Presidency of the Democratic Republic of the Congo",
+      "url": "https://presidence.cd/detail-texte-fondateur/1",
+      "tier": "official_national",
+      "accessedAt": "2026-09-06"
+    },
+    {
+      "id": "SRC-UN-SG-REPORT-2019",
+      "title": "Update of the Secretary-General on progress in the electoral process and implementation of the 31 December 2016 political agreement",
+      "publisher": "United Nations Security Council",
+      "url": "https://digitallibrary.un.org/record/3792221/files/S_2019_159-EN.pdf",
+      "tier": "official_intergovernmental",
       "accessedAt": "2026-09-06"
     }
   ]
