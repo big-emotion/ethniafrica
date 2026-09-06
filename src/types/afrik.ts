@@ -717,7 +717,7 @@ export interface FtsSearchParams {
   countryId?: string;
   /**
    * Locale the search is served in (ETNI-1857). Under `en` the ranking
-   * functions read the English names too (migration 082) and the cross-kind
+   * functions read the English names too (migration 084) and the cross-kind
    * tie-break collates in English. Absent means French — the only locale
    * the surface answered in before it had a second one.
    */
@@ -737,7 +737,7 @@ export interface FtsSearchParams {
 export interface RankedPeople extends People {
   languageFamilyName: string | null;
   /**
-   * The family's English name (migration 082), so a card served in English
+   * The family's English name (migration 084), so a card served in English
    * can label the family chip without a second request. Null when the
    * family has none or the people has no family.
    */
@@ -858,7 +858,7 @@ export interface RankedSearchHit {
 export interface RankedLanguage {
   id: LanguageId;
   name: string;
-  /** The fiche's `content.nameEn`, projected by migration 082; null when absent. */
+  /** The fiche's `content.nameEn`, projected by migration 084; null when absent. */
   nameEn: string | null;
   familyId: LanguageFamilyId;
   familyName: string | null;

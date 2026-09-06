@@ -2,14 +2,14 @@ import Link from "next/link";
 
 import { Card } from "@/components/ui/card";
 import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
-import { getFrenchCountryCommonName } from "@/lib/countryNames";
+import { getCountryCommonName } from "@/lib/countryNames";
+import { formatNumber } from "@/lib/languageTag";
+import { getLocalizedSearchResultName } from "@/lib/search/localizedResult";
 import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 import { translations } from "@/lib/translations";
 import { cn } from "@/lib/utils";
 import type { SearchResult } from "@/types/afrik-frontend";
 import type { Language } from "@/types/shared";
-
-const numberFr = new Intl.NumberFormat("fr-FR");
 
 // The corpus enumerates five naming systems today; a sixth would reach the
 // reader as its raw key unless the fallback catches it, and a raw key is the
@@ -17,6 +17,13 @@ const numberFr = new Intl.NumberFormat("fr-FR");
 const NAME_SYSTEM_LABELS: Record<string, string> =
   translations.fr.patronymes.nameSystemLabels;
 const UNKNOWN_NAME_SYSTEM_LABEL = "Non déterminé";
+const NAME_SYSTEM_LABELS_EN: Record<string, string> = {
+  clan_name: "Clan name",
+  non_hereditary_patronymic: "Non-hereditary patronymic",
+  nisba: "Nisba",
+  praise_name: "Praise name (jamu)",
+  totemic_clan: "Totemic clan",
+};
 
 // The panel is an 18–20 rem side column above 760 px; a name attested in
 // fifteen countries would push the sources below the fold, so the chips stop
@@ -28,8 +35,13 @@ export interface DominantAnswerPanelProps {
   language: Language;
 }
 
-function countLabel(count: number, singular: string, plural: string): string {
-  return `${numberFr.format(count)} ${count > 1 ? plural : singular}`;
+function countLabel(
+  language: Language,
+  count: number,
+  singular: string,
+  plural: string
+): string {
+  return `${formatNumber(language, count)} ${count === 1 ? singular : plural}`;
 }
 
 interface FactRow {
@@ -48,7 +60,8 @@ interface FactRow {
  * (`mapSearchEnvelope`), so their row list stays empty rather than
  * fabricating a field; the panel then renders nothing for them (see below).
  */
-function factRowsFor(result: SearchResult): FactRow[] {
+function factRowsFor(result: SearchResult, language: Language): FactRow[] {
+  const en = language === "en";
   switch (result.type) {
     case "people":
       return [
@@ -56,35 +69,50 @@ function factRowsFor(result: SearchResult): FactRow[] {
           ? {
               testId: "dominant-answer-population",
               label: "Population",
-              value: numberFr.format(Math.round(result.population)),
+              value: formatNumber(language, Math.round(result.population)),
             }
           : null,
         result.confidence != null
           ? {
               testId: "dominant-answer-confidence",
-              label: "Confiance",
-              value: `${numberFr.format(Math.round(result.confidence * 100))} %`,
+              label: en ? "Confidence" : "Confiance",
+              value: `${formatNumber(language, Math.round(result.confidence * 100))} %`,
             }
           : null,
         (result.countryIds?.length ?? 0) > 0
           ? {
               testId: "dominant-answer-countries",
-              label: "Pays",
-              value: countLabel(result.countryIds!.length, "pays", "pays"),
+              label: en ? "Countries" : "Pays",
+              value: countLabel(
+                language,
+                result.countryIds!.length,
+                en ? "country" : "pays",
+                en ? "countries" : "pays"
+              ),
             }
           : null,
         (result.exonyms?.length ?? 0) > 0
           ? {
               testId: "dominant-answer-exonyms",
-              label: "Exonymes",
-              value: countLabel(result.exonyms!.length, "exonyme", "exonymes"),
+              label: en ? "Exonyms" : "Exonymes",
+              value: countLabel(
+                language,
+                result.exonyms!.length,
+                en ? "exonym" : "exonyme",
+                en ? "exonyms" : "exonymes"
+              ),
             }
           : null,
         result.sourceCount != null
           ? {
               testId: "dominant-answer-sources",
               label: "Sources",
-              value: countLabel(result.sourceCount, "source", "sources"),
+              value: countLabel(
+                language,
+                result.sourceCount,
+                "source",
+                "sources"
+              ),
             }
           : null,
       ].filter((row): row is FactRow => row !== null);
@@ -94,31 +122,35 @@ function factRowsFor(result: SearchResult): FactRow[] {
         result.nameSystem
           ? {
               testId: "dominant-answer-name-system",
-              label: "Système de nom",
+              label: en ? "Naming system" : "Système de nom",
               value:
-                NAME_SYSTEM_LABELS[result.nameSystem] ??
-                UNKNOWN_NAME_SYSTEM_LABEL,
+                (en
+                  ? NAME_SYSTEM_LABELS_EN[result.nameSystem]
+                  : NAME_SYSTEM_LABELS[result.nameSystem]) ??
+                (en ? "Undetermined" : UNKNOWN_NAME_SYSTEM_LABEL),
             }
           : null,
         (result.associatedPeopleIds?.length ?? 0) > 0
           ? {
               testId: "dominant-answer-associated-peoples",
-              label: "Peuples associés",
+              label: en ? "Associated peoples" : "Peuples associés",
               value: countLabel(
+                language,
                 result.associatedPeopleIds!.length,
-                "peuple",
-                "peuples"
+                en ? "people" : "peuple",
+                en ? "peoples" : "peuples"
               ),
             }
           : null,
         (result.attestedCountryIds?.length ?? 0) > 0
           ? {
               testId: "dominant-answer-attested-countries",
-              label: "Pays attestés",
+              label: en ? "Attested countries" : "Pays attestés",
               value: countLabel(
+                language,
                 result.attestedCountryIds!.length,
-                "pays",
-                "pays"
+                en ? "country" : "pays",
+                en ? "countries" : "pays"
               ),
             }
           : null,
@@ -126,7 +158,12 @@ function factRowsFor(result: SearchResult): FactRow[] {
           ? {
               testId: "dominant-answer-sources",
               label: "Sources",
-              value: countLabel(result.sourceCount, "source", "sources"),
+              value: countLabel(
+                language,
+                result.sourceCount,
+                "source",
+                "sources"
+              ),
             }
           : null,
       ].filter((row): row is FactRow => row !== null);
@@ -136,8 +173,11 @@ function factRowsFor(result: SearchResult): FactRow[] {
         result.languageFamilyName
           ? {
               testId: "dominant-answer-family",
-              label: "Famille",
-              value: result.languageFamilyName,
+              label: en ? "Family" : "Famille",
+              value:
+                en && result.languageFamilyNameEn
+                  ? result.languageFamilyNameEn
+                  : result.languageFamilyName,
             }
           : null,
         result.isoCode639_3
@@ -150,11 +190,12 @@ function factRowsFor(result: SearchResult): FactRow[] {
         (result.speakerPeopleIds?.length ?? 0) > 0
           ? {
               testId: "dominant-answer-speaker-peoples",
-              label: "Peuples locuteurs",
+              label: en ? "Speaker peoples" : "Peuples locuteurs",
               value: countLabel(
+                language,
                 result.speakerPeopleIds!.length,
-                "peuple",
-                "peuples"
+                en ? "people" : "peuple",
+                en ? "peoples" : "peuples"
               ),
             }
           : null,
@@ -162,7 +203,12 @@ function factRowsFor(result: SearchResult): FactRow[] {
           ? {
               testId: "dominant-answer-sources",
               label: "Sources",
-              value: countLabel(result.sourceCount, "source", "sources"),
+              value: countLabel(
+                language,
+                result.sourceCount,
+                "source",
+                "sources"
+              ),
             }
           : null,
       ].filter((row): row is FactRow => row !== null);
@@ -195,12 +241,21 @@ function FicheChip({ href, label }: FicheChipProps) {
   );
 }
 
-function remainderMention(hidden: number): string {
-  return hidden === 1 ? "et 1 autre" : `et ${numberFr.format(hidden)} autres`;
+function remainderMention(language: Language, hidden: number): string {
+  if (language === "en") {
+    return `and ${formatNumber(language, hidden)} other${hidden === 1 ? "" : "s"}`;
+  }
+  return hidden === 1
+    ? "et 1 autre"
+    : `et ${formatNumber(language, hidden)} autres`;
 }
 
-function sectionHeading(title: string, count: number): string {
-  return `${title} (${numberFr.format(count)})`;
+function sectionHeading(
+  language: Language,
+  title: string,
+  count: number
+): string {
+  return `${title} (${formatNumber(language, count)})`;
 }
 
 const SECTION_CLASS = "mt-afh-lg border-t border-afh-border pt-afh-md";
@@ -208,6 +263,7 @@ const SECTION_HEADING_CLASS =
   "font-afh-display text-afh-small font-semibold text-afh-text";
 
 interface ChipSectionProps {
+  language: Language;
   title: string;
   /** The corpus total, which the chips may not reach (see below). */
   total: number;
@@ -220,7 +276,7 @@ interface ChipSectionProps {
  * but never listed (its id must not surface). The remainder mention covers
  * both.
  */
-function ChipSection({ title, total, chips }: ChipSectionProps) {
+function ChipSection({ language, title, total, chips }: ChipSectionProps) {
   if (chips.length === 0) {
     return null;
   }
@@ -229,7 +285,9 @@ function ChipSection({ title, total, chips }: ChipSectionProps) {
 
   return (
     <section className={SECTION_CLASS}>
-      <h3 className={SECTION_HEADING_CLASS}>{sectionHeading(title, total)}</h3>
+      <h3 className={SECTION_HEADING_CLASS}>
+        {sectionHeading(language, title, total)}
+      </h3>
       <ul className="mt-afh-sm flex flex-wrap gap-afh-xs">
         {shown.map((chip) => (
           <FicheChip key={chip.href} {...chip} />
@@ -237,7 +295,7 @@ function ChipSection({ title, total, chips }: ChipSectionProps) {
       </ul>
       {hidden > 0 && (
         <p className="mt-afh-xs text-afh-caption text-afh-fg-muted">
-          {remainderMention(hidden)}
+          {remainderMention(language, hidden)}
         </p>
       )}
     </section>
@@ -249,7 +307,7 @@ export function DominantAnswerPanel({
   result,
   language,
 }: DominantAnswerPanelProps) {
-  const factRows = factRowsFor(result);
+  const factRows = factRowsFor(result, language);
   const externalLinks = (result.externalLinks ?? []).filter(
     ({ title, url }) => title.trim().length > 0 && url.trim().length > 0
   );
@@ -265,13 +323,16 @@ export function DominantAnswerPanel({
   const associatedPeoples = result.associatedPeoples ?? [];
 
   return (
-    <aside aria-label="Réponse dominante" className="h-fit">
+    <aside
+      aria-label={language === "en" ? "Dominant answer" : "Réponse dominante"}
+      className="h-fit"
+    >
       <Card className="border-l-4 border-l-[var(--accent)] p-afh-md">
         <p className="text-afh-eyebrow font-bold uppercase tracking-[0.11em] text-afh-fg-muted">
-          En bref
+          {language === "en" ? "At a glance" : "En bref"}
         </p>
         <h2 className="mt-afh-xs font-afh-display text-afh-h3 font-semibold text-afh-text">
-          {result.name}
+          {getLocalizedSearchResultName(result, language)}
         </h2>
 
         <dl className="mt-afh-md grid grid-cols-2 gap-afh-sm">
@@ -294,16 +355,18 @@ export function DominantAnswerPanel({
         </dl>
 
         <ChipSection
-          title="Pays attestés"
+          language={language}
+          title={language === "en" ? "Attested countries" : "Pays attestés"}
           total={attestedCountryIds.length}
           chips={attestedCountryIds.map((iso3) => ({
             href: getCountryRoute(language, iso3),
-            label: getFrenchCountryCommonName(iso3, iso3),
+            label: getCountryCommonName(language, iso3, iso3),
           }))}
         />
 
         <ChipSection
-          title="Peuples associés"
+          language={language}
+          title={language === "en" ? "Associated peoples" : "Peuples associés"}
           total={result.associatedPeopleIds?.length ?? 0}
           chips={associatedPeoples.map(({ id, name }) => ({
             href: getPeopleRoute(language, id),
@@ -315,6 +378,7 @@ export function DominantAnswerPanel({
           <section className={SECTION_CLASS}>
             <h3 className={SECTION_HEADING_CLASS}>
               {sectionHeading(
+                language,
                 "Sources",
                 result.sourceCount ?? externalLinks.length
               )}

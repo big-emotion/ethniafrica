@@ -236,7 +236,7 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 | `072_people_historical_affiliation.sql`       | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
 | `073_afrik_media.sql`                         | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand                                          |
 | `078_revoke_iso_code_questions.sql`           | pending — applies on merge via `migrate-recette.yml`          | pending — apply by hand, **before** the code deploys             |
-| `082_afrik_search_english_names.sql`          | pending — applies on merge via `migrate-recette.yml`          | pending — the Release `migrate` job, **before** the code deploys |
+| `084_afrik_search_english_names.sql`          | pending — applies on merge via `migrate-recette.yml`          | pending — the Release `migrate` job, **before** the code deploys |
 
 > **REQ-127 (ETNI-1384).** `072` adds a `CHECK` constraint on `afrik_peoples.content` enforcing
 > the same shape `checkHistoricalAffiliationModel` (FR111) already enforces on the JSON corpus:
@@ -272,7 +272,7 @@ file versions after their legacy timestamp rows were cleared, and `020` → `049
 > carries `069`, quiz questions and the family ladder rank on recette and not there, and a merged
 > result list on production keeps ordering by kind.
 
-> **REQ-141 / REQ-143 (ETNI-1857).** `082` is the per-locale half of search. It adds
+> **REQ-141 / REQ-143 (ETNI-1857).** `084` is the per-locale half of search. It adds
 > `afrik_countries.name_en` (filled by the corpus reload from the fiches' `nameEn`) and
 > `search_query_log.lang` (`NOT NULL`, `en | fr`, **no default** — existing rows are backfilled to
 > `fr` in the same statement block), and re-issues `afrik_search_peoples`, `_countries`,

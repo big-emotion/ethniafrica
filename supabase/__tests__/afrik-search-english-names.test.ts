@@ -3,8 +3,8 @@
  *
  * Unit tests do not connect to a live Supabase instance, so these assertions
  * pin what the migration a human will apply has to say: the English name
- * column, the locale column on the query log, and the four ranking functions
- * re-issued with `p_lang` — through DROP then CREATE, never CREATE OR
+ * column, the locale column on the query log, four ranking functions and the
+ * near-miss function re-issued with `p_lang` — through DROP then CREATE, never CREATE OR
  * REPLACE alone, because a new parameter list beside the old one is an
  * overload PostgREST refuses as ambiguous (PGRST203).
  */
@@ -15,7 +15,7 @@ import { describe, expect, it } from "vitest";
 
 const migrationPath = path.resolve(
   process.cwd(),
-  "supabase/migrations/082_afrik_search_english_names.sql"
+  "supabase/migrations/084_afrik_search_english_names.sql"
 );
 
 function migrationSql(): string {
@@ -41,6 +41,7 @@ const RE_ISSUED = {
   afrik_search_countries: "TEXT, INT, INT",
   afrik_search_language_families: "TEXT, INT, INT",
   afrik_search_languages: "TEXT, INT, INT",
+  afrik_search_leads: "TEXT, INT",
 } as const;
 
 describe("AFRIK per-locale search migration (ETNI-1857)", () => {
@@ -161,6 +162,31 @@ describe("AFRIK per-locale search migration (ETNI-1857)", () => {
 
     expect(block).toMatch(/lf\.name_fr\s+AS "languageFamilyName"/);
     expect(block).toMatch(/lf\.name_en\s+AS "languageFamilyNameEn"/);
+  });
+
+  // @req REQ-125
+  // @req REQ-141
+  it("re-issues near-miss leads with locale-bound country and family names", () => {
+    const block = functionBlock(migrationSql(), "afrik_search_leads");
+
+    expect(block).toContain(
+      "DROP FUNCTION IF EXISTS public.afrik_search_leads(TEXT, INT);"
+    );
+    expect(block).toMatch(
+      /CREATE OR REPLACE FUNCTION public\.afrik_search_leads\([^)]*p_lang\s+TEXT\s+DEFAULT 'fr'\s*\)/
+    );
+    expect(block).toMatch(
+      /CASE WHEN p_lang = 'en'\s+THEN COALESCE\(NULLIF\(c\.name_en, ''\), c\.name_fr\)\s+ELSE c\.name_fr END/
+    );
+    expect(block).toMatch(
+      /CASE WHEN p_lang = 'en'\s+THEN COALESCE\(NULLIF\(lf\.name_en, ''\), lf\.name_fr\)\s+ELSE lf\.name_fr END/
+    );
+    expect(block).toContain(
+      "REVOKE ALL ON FUNCTION public.afrik_search_leads(TEXT, INT, TEXT) FROM PUBLIC;"
+    );
+    expect(block).toMatch(
+      /GRANT EXECUTE ON FUNCTION public\.afrik_search_leads\(TEXT, INT, TEXT\)\s+TO anon, authenticated, service_role;/
+    );
   });
 
   // @req REQ-002

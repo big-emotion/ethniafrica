@@ -39,6 +39,34 @@ describe("SearchLensBar", () => {
     }
   });
 
+  // @req REQ-140
+  it("renders English lenses and an English accessible group label", () => {
+    render(
+      <SearchLensBar
+        language="en"
+        active="all"
+        counts={FULL_COUNTS}
+        showCounts={false}
+        onChange={vi.fn()}
+      />
+    );
+
+    expect(
+      screen.getByRole("group", { name: "Filter results by type" })
+    ).toBeInTheDocument();
+    for (const name of [
+      "All",
+      "Peoples",
+      "Languages",
+      "Families",
+      "Countries",
+      "Names",
+      "People",
+    ]) {
+      expect(screen.getByRole("button", { name })).toBeInTheDocument();
+    }
+  });
+
   // @req REQ-124
   it("hides counts until showCounts is true", () => {
     render(

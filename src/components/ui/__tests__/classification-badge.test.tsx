@@ -16,7 +16,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
-import { classificationLabels } from "@/lib/translations";
+import { classificationLabels, translations } from "@/lib/translations";
 import { getLocalizedRoute } from "@/lib/routing";
 
 // Mock next/link so the component can be rendered without a Next runtime.
@@ -45,6 +45,19 @@ const VISIBLE_STATUSES = [
 ] as const;
 
 describe("ClassificationBadge", () => {
+  // @req REQ-140
+  it("renders the English label and doctrine route when requested", () => {
+    render(<ClassificationBadge status="contested" language="en" />);
+
+    expect(
+      screen.getByText(translations.en.classification.contested.label)
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link")).toHaveAttribute(
+      "href",
+      `${getLocalizedRoute("en", "doctrine")}#contested`
+    );
+  });
+
   it.each(VISIBLE_STATUSES.map((s) => [s, classificationLabels[s].label]))(
     "renders the FR label for status=%s",
     (status, expectedLabel) => {

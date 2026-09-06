@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import { getFrenchCountryCommonName } from "@/lib/countryNames";
+import {
+  getCountryCommonName,
+  getFrenchCountryCommonName,
+} from "@/lib/countryNames";
 
 describe("getFrenchCountryCommonName", () => {
   // @req REQ-001
@@ -24,6 +27,17 @@ describe("getFrenchCountryCommonName", () => {
   it("returns the official name when the ISO alpha-3 code is unknown", () => {
     expect(getFrenchCountryCommonName("XXX", "République de Test")).toBe(
       "République de Test"
+    );
+  });
+});
+
+describe("getCountryCommonName", () => {
+  // @req REQ-140
+  it("uses the reader's locale and preserves unknown declared names", () => {
+    expect(getCountryCommonName("fr", "SDN", "Sudan")).toBe("Soudan");
+    expect(getCountryCommonName("en", "SDN", "Soudan")).toBe("Sudan");
+    expect(getCountryCommonName("en", "XXX", "Republic of Test")).toBe(
+      "Republic of Test"
     );
   });
 });

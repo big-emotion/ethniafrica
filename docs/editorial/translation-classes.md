@@ -130,7 +130,7 @@ things ruled that out (ETNI-1857):
 - **Search runs in SQL.** `afrik_search_countries` ranks on columns of
   `afrik_countries`; a name that lives only in a TypeScript asset cannot enter
   the exact-match tier or the prefix ladder, so an English reader typing "Chad"
-  reached nothing while "Tchad" was an exact hit. Migration `082` gives the
+  reached nothing while "Tchad" was an exact hit. Migration `084` gives the
   name a column (`afrik_countries.name_en`) and, under `?lang=en`, runs the
   families' accent-folded ladder over it — exact, prefix, substring — rather
   than a second tsvector: the name is a proper noun that must not go through

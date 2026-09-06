@@ -31,12 +31,14 @@ import { AlertTriangle, Landmark, Wrench, type LucideIcon } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { classificationLabels } from "@/lib/translations";
+import { translations } from "@/lib/translations";
 import type { ClassificationStatus } from "@/types/afrik";
+import type { Language } from "@/types/shared";
 import { getLocalizedRoute } from "@/lib/routing";
 
 interface ClassificationBadgeProps {
   status: ClassificationStatus | null | undefined;
+  language?: Language;
   className?: string;
   /**
    * Slug of an adjacent doctrine entry, exposed via `data-doctrine-slug` for
@@ -100,6 +102,7 @@ const STATUS_CONFIG: Record<
 // @req REQ-023
 export function ClassificationBadge({
   status,
+  language = "fr",
   className,
   doctrineSlug,
   linksToDoctrine = true,
@@ -110,7 +113,7 @@ export function ClassificationBadge({
     return null;
   }
 
-  const labels = classificationLabels[status];
+  const labels = translations[language].classification[status];
   const config = STATUS_CONFIG[status];
   const Icon = config.Icon;
 
@@ -150,7 +153,7 @@ export function ClassificationBadge({
 
   return (
     <Link
-      href={`${getLocalizedRoute("fr", "doctrine")}#${status}`}
+      href={`${getLocalizedRoute(language, "doctrine")}#${status}`}
       title={labels.tooltip}
       aria-label={`${labels.label} — ${labels.tooltip}`}
       data-doctrine-slug={doctrineSlug}

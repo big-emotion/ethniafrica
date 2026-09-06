@@ -76,6 +76,25 @@ describe("NoResultsLeads", () => {
     );
   });
 
+  // @req REQ-140
+  it("renders English guidance and entity labels", () => {
+    render(<NoResultsLeads leads={leads} language="en" />);
+
+    expect(screen.getByText("Did you mean:")).toBeInTheDocument();
+    expect(
+      screen.getByRole("list", { name: "Nearby suggestions" })
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Bambara/ })).toHaveTextContent(
+      "People"
+    );
+    expect(screen.getByRole("link", { name: /Mali/ })).toHaveTextContent(
+      "Country"
+    );
+    expect(screen.getByRole("link", { name: /Mandé/ })).toHaveTextContent(
+      "Linguistic family"
+    );
+  });
+
   // @req REQ-125
   it("fires onNavigate when a lead is activated", () => {
     const onNavigate = vi.fn();

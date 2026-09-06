@@ -73,6 +73,10 @@
       "description": "Family names (patronymes) — a name's naming system, caste or social function, associated peoples and countries, and bearers. Distinct from API v2 - Names (the ethnonym dossier); bearer entries are a narrow allow-listed summary and never carry ethnic-origin data for a named living person (DEC-040, REQ-133)."
     },
     {
+      "name": "API v2 - Dossiers",
+      "description": "Long-form sourced dossiers — the one corpus entity that argues rather than describes. Every chapter carries an authoritative reading of a fact and a counter-reading of the same fact, each cited, and the schema refuses to serve a chapter holding only one of the two."
+    },
+    {
       "name": "API v2 - Compare",
       "description": "Comparison of 2–3 entities of the same type (peoples, countries, or language families), reusing the same assembly path as the SSR comparison page (FR64, AR8, AR9, NFR38)."
     },
@@ -679,7 +683,7 @@
     "/api/v2/search": {
       "get": {
         "summary": "Search the main corpus or the dedicated quiz lens",
-        "description": "Full-text search, ranked in Postgres by `afrik_search_peoples` / `afrik_search_countries` (migration 052): an accent-insensitive exact name match first, then `ts_rank` over the weighted `search_vector` (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the accent-insensitive `name_unaccent_vector`, both queried with the `:*` prefix operator on the last word of `q` — so a partial trailing word (\"bamba\") matches a longer indexed name (\"Bambara\"), and an unaccented query (\"mande\") matches an accented name (\"Mandé\") by construction, not by stemmer coincidence (REQ-129). Relevance is multiplied for peoples by a 0.5–1.0 confidence factor. Language families rank in SQL too (migration 068): exact > prefix > substring on the folded name, then a tier for a match found only in their decolonial prose. `q` no longer accepts websearch syntax — quoted phrases, `OR` and `-` exclusions are not recognised (DEC-034); each word except the last must now match as a complete word. Each result carries `relevance`, `exactMatch` and a `snippet` whose matched terms are wrapped in `[[` and `]]` — deliberately not HTML, because `ts_headline` does not escape the source document. `relevance` is comparable within an array and not between arrays. Each entity kind is returned in its own array, and `results` carries the same hits merged into one cross-kind ranking on `normalizedScore` (migration 068) — the magnitude that, unlike `relevance`, is comparable between kinds. Without `lens`, quiz questions are not queried or returned in the main search stream; with `lens=quiz`, only quiz questions are queried and returned (REQ-121). The dedicated quiz projection contains the stem only: options, the correct answer and the explanation are never returned. Named persons (migration 065, REQ-126) and names (patronymes — migration 066, REQ-135) rank the same way, with patronymes additionally folding in a dmetaphone phonetic match so a misspelling like \"Keyta\" still reaches the canonical \"Keïta\". Both fall back to pg_trgm typo tolerance ahead of a no-match. Languages (migration 068, REQ-136) rank the same prefix/accent-insensitive way, with an exact-match bonus that also fires on the ISO 639-3 id — a reader who types \"swa\" reaches Swahili exactly as precisely as one who types its name. When `total` is 0, `leads` (REQ-125) carries up to 3 near-miss suggestions across peoples, countries and language families — a trigram similarity scan (migration 069) below the main search's own fuzzy floor, so the reader sees what the engine almost understood instead of a bare empty result; `leads` is always empty when `total` is greater than 0. With `lang=en` (migration 082, REQ-141) countries, language families and languages also match on their English name — exact, then prefix, then substring, folded the same way — and rows carry `nameEn` / `languageFamilyNameEn` beside the French name; a people's name is invariant and ranks the same in both locales. Without `lang` the search is served in French, exactly as before. Rate-limited per AR11 (IP: 60 RPM, public key: 600 RPM, partner key: 6 000 RPM).\n",
+        "description": "Full-text search, ranked in Postgres by `afrik_search_peoples` / `afrik_search_countries` (migration 052): an accent-insensitive exact name match first, then `ts_rank` over the weighted `search_vector` (migration 043: A = name and autonym, B = exonyms, C/D = prose) OR the accent-insensitive `name_unaccent_vector`, both queried with the `:*` prefix operator on the last word of `q` — so a partial trailing word (\"bamba\") matches a longer indexed name (\"Bambara\"), and an unaccented query (\"mande\") matches an accented name (\"Mandé\") by construction, not by stemmer coincidence (REQ-129). Relevance is multiplied for peoples by a 0.5–1.0 confidence factor. Language families rank in SQL too (migration 068): exact > prefix > substring on the folded name, then a tier for a match found only in their decolonial prose. `q` no longer accepts websearch syntax — quoted phrases, `OR` and `-` exclusions are not recognised (DEC-034); each word except the last must now match as a complete word. Each result carries `relevance`, `exactMatch` and a `snippet` whose matched terms are wrapped in `[[` and `]]` — deliberately not HTML, because `ts_headline` does not escape the source document. `relevance` is comparable within an array and not between arrays. Each entity kind is returned in its own array, and `results` carries the same hits merged into one cross-kind ranking on `normalizedScore` (migration 068) — the magnitude that, unlike `relevance`, is comparable between kinds. Without `lens`, quiz questions are not queried or returned in the main search stream; with `lens=quiz`, only quiz questions are queried and returned (REQ-121). The dedicated quiz projection contains the stem only: options, the correct answer and the explanation are never returned. Named persons (migration 065, REQ-126) and names (patronymes — migration 066, REQ-135) rank the same way, with patronymes additionally folding in a dmetaphone phonetic match so a misspelling like \"Keyta\" still reaches the canonical \"Keïta\". Both fall back to pg_trgm typo tolerance ahead of a no-match. Languages (migration 068, REQ-136) rank the same prefix/accent-insensitive way, with an exact-match bonus that also fires on the ISO 639-3 id — a reader who types \"swa\" reaches Swahili exactly as precisely as one who types its name. When `total` is 0, `leads` (REQ-125) carries up to 3 near-miss suggestions across peoples, countries and language families — a trigram similarity scan (migration 069) below the main search's own fuzzy floor, so the reader sees what the engine almost understood instead of a bare empty result; `leads` is always empty when `total` is greater than 0. With `lang=en` (migration 084, REQ-141) countries, language families and languages also match on their English name — exact, then prefix, then substring, folded the same way — and rows carry `nameEn` / `languageFamilyNameEn` beside the French name; a people's name is invariant and ranks the same in both locales. Without `lang` the search is served in French, exactly as before. Rate-limited per AR11 (IP: 60 RPM, public key: 600 RPM, partner key: 6 000 RPM).\n",
         "tags": ["API v2 - Search"],
         "security": [
           {
@@ -3663,6 +3667,137 @@
         }
       }
     },
+    "/api/v2/dossiers": {
+      "get": {
+        "summary": "List the published dossiers",
+        "description": "Returns one summary per dossier, newest first. A dossier is the long-form editorial entity of the corpus: each of its chapters carries an authoritative reading of a fact and a counter-reading of the same fact, both cited. Fetch a single dossier for the chapters themselves.\n",
+        "tags": ["API v2 - Dossiers"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "vertical",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["realites", "nommer", "histoires", "spiritualites"]
+            },
+            "description": "Restrict the listing to one editorial vertical"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dossier index envelope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DossierIndexEnvelope"
+                }
+              }
+            },
+            "headers": {
+              "Cache-Control": {
+                "description": "Shared cache duration",
+                "schema": {
+                  "type": "string",
+                  "example": "s-maxage=3600"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unknown vertical",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/dossiers/{id}": {
+      "get": {
+        "summary": "Get one dossier by identifier",
+        "description": "Returns the whole dossier — thesis, chapters, the two readings each chapter carries, its illustration credits, its sources and the gaps it declares. Every chapter published here holds both an authoritative and a counter reading; the schema refuses to serve one that does not.\n",
+        "tags": ["API v2 - Dossiers"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^DOS_[A-Z0-9_]+$"
+            },
+            "description": "Dossier identifier",
+            "example": "DOS_PROPORTIONS"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dossier detail envelope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DossierDetailEnvelope"
+                }
+              }
+            },
+            "headers": {
+              "Cache-Control": {
+                "description": "Shared cache duration",
+                "schema": {
+                  "type": "string",
+                  "example": "s-maxage=3600"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid dossier identifier format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Dossier not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v2/doctrine": {
       "get": {
         "summary": "List current editorial doctrine",
@@ -4134,21 +4269,21 @@
             "items": {
               "$ref": "#/components/schemas/PeopleV2"
             },
-            "description": "Matching peoples, ranked. Each carries relevance, exactMatch, normalizedScore, confidence, languageFamilyName, languageFamilyNameEn (migration 082; null when the family has no English name) and a snippet whose matched terms are wrapped in [[ ]]."
+            "description": "Matching peoples, ranked. Each carries relevance, exactMatch, normalizedScore, confidence, languageFamilyName, languageFamilyNameEn (migration 084; null when the family has no English name) and a snippet whose matched terms are wrapped in [[ ]]."
           },
           "countries": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CountryV2"
             },
-            "description": "Matching countries, ranked by ts_rank with name_fr outranking etymology; with `lang=en` the accent-folded English name also matches (exact 1.0 > prefix 0.6 > substring 0.3, migration 082). Each carries nameEn beside nameFr, relevance, exactMatch, normalizedScore and a snippet. Empty when the request carries only a relation scope."
+            "description": "Matching countries, ranked by ts_rank with name_fr outranking etymology; with `lang=en` the accent-folded English name also matches (exact 1.0 > prefix 0.6 > substring 0.3, migration 084). Each carries nameEn beside nameFr, relevance, exactMatch, normalizedScore and a snippet. Empty when the request carries only a relation scope."
           },
           "families": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/LanguageFamilyV2"
             },
-            "description": "Matching language families, ranked by afrik_search_language_families (migration 069): accent-insensitive exact (1.0) > prefix (0.6) > substring (0.3) on the locale's name — name_fr, or name_en with `lang=en` (migration 082) — then a prose tier (0.1) through search_vector for a term that appears only in the decolonial text (DEC-028). Each carries nameEn beside nameFr, relevance, exactMatch, normalizedScore and a snippet."
+            "description": "Matching language families, ranked by afrik_search_language_families (migration 069): accent-insensitive exact (1.0) > prefix (0.6) > substring (0.3) on the locale's name — name_fr, or name_en with `lang=en` (migration 084) — then a prose tier (0.1) through search_vector for a term that appears only in the decolonial text (DEC-028). Each carries nameEn beside nameFr, relevance, exactMatch, normalizedScore and a snippet."
           },
           "persons": {
             "type": "array",
@@ -4183,7 +4318,7 @@
             "items": {
               "$ref": "#/components/schemas/LanguageSearchResultV2"
             },
-            "description": "Matching languages (REQ-136), ranked by afrik_search_languages (migration 068): exact match on the ISO 639-3 id or the name, then a prefix/accent-insensitive lexical match; with `lang=en` the fiche's English name also matches (migration 082). Each carries nameEn, familyName, familyNameEn, relevance, exactMatch and a snippet."
+            "description": "Matching languages (REQ-136), ranked by afrik_search_languages (migration 068): exact match on the ISO 639-3 id or the name, then a prefix/accent-insensitive lexical match; with `lang=en` the fiche's English name also matches (migration 084). Each carries nameEn, familyName, familyNameEn, relevance, exactMatch and a snippet."
           },
           "peoplesTotal": {
             "type": "integer",
@@ -4359,7 +4494,7 @@
           },
           "name": {
             "type": "string",
-            "description": "The hit's French display name — the question stem for a quiz row.",
+            "description": "The hit's display name in the requested locale, with French fallback — the question stem for a quiz row.",
             "example": "Wolof"
           },
           "normalizedScore": {
@@ -4601,7 +4736,7 @@
           },
           "nameEn": {
             "type": "string",
-            "description": "English name of ordinary use, in the state's own English form (Chad, Côte d'Ivoire, Cabo Verde, The Gambia). Absent until the corpus reload fills migration 082's column.",
+            "description": "English name of ordinary use, in the state's own English form (Chad, Côte d'Ivoire, Cabo Verde, The Gambia). Absent until the corpus reload fills migration 084's column.",
             "example": "Zimbabwe"
           },
           "nameOfficial": {
@@ -4809,7 +4944,7 @@
           },
           "nameEn": {
             "type": ["string", "null"],
-            "description": "The fiche's English name (content.nameEn), matched under `lang=en` (migration 082); null when the fiche carries none.",
+            "description": "The fiche's English name (content.nameEn), matched under `lang=en` (migration 084); null when the fiche carries none.",
             "example": "Swahili"
           },
           "familyId": {
@@ -5495,6 +5630,378 @@
                 "required": ["pagination"]
               }
             ]
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorEntry"
+            },
+            "maxItems": 0
+          }
+        },
+        "required": ["data", "meta", "errors"]
+      },
+      "DossierReadingV2": {
+        "type": "object",
+        "description": "One reading of the chapter's subject. Comparative readings are optional; when present, both stances are published.",
+        "properties": {
+          "stance": {
+            "type": "string",
+            "enum": ["official", "counter"]
+          },
+          "label": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "sourceRefs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "description": "Keys into the dossier's own sources array."
+          }
+        },
+        "required": ["stance", "label", "body", "sourceRefs"]
+      },
+      "DossierChapterV2": {
+        "type": "object",
+        "properties": {
+          "chapterKey": {
+            "type": "string"
+          },
+          "ordinal": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "question": {
+            "type": "string"
+          },
+          "standfirst": {
+            "type": "string"
+          },
+          "body": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string"
+                },
+                "sourceRefs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": ["text", "sourceRefs"]
+            }
+          },
+          "illustration": {
+            "type": ["object", "null"],
+            "description": "Credits for the chapter's document. Where the licence requires attribution, author and licenceUrl are both present.",
+            "properties": {
+              "src": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "author": {
+                "type": ["string", "null"]
+              },
+              "licence": {
+                "type": "string"
+              },
+              "licenceUrl": {
+                "type": ["string", "null"]
+              },
+              "filePage": {
+                "type": ["string", "null"]
+              },
+              "year": {
+                "type": ["string", "null"]
+              }
+            },
+            "required": ["src", "alt", "caption", "licence"]
+          },
+          "readings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DossierReadingV2"
+            },
+            "minItems": 0
+          },
+          "figures": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "figureKey": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "year": {
+                  "type": "integer"
+                },
+                "note": {
+                  "type": ["string", "null"]
+                },
+                "sourceRefs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": ["figureKey", "label", "value", "year", "sourceRefs"]
+            }
+          }
+        },
+        "required": [
+          "chapterKey",
+          "ordinal",
+          "title",
+          "question",
+          "standfirst",
+          "body",
+          "illustration",
+          "readings",
+          "figures"
+        ]
+      },
+      "DossierV2": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "DOS_PROPORTIONS"
+          },
+          "vertical": {
+            "type": "string",
+            "enum": ["realites", "nommer", "histoires", "spiritualites"]
+          },
+          "slug": {
+            "type": "string",
+            "example": "proportions"
+          },
+          "publishedOn": {
+            "type": "string",
+            "format": "date"
+          },
+          "title": {
+            "type": "string"
+          },
+          "question": {
+            "type": "string"
+          },
+          "standfirst": {
+            "type": "string"
+          },
+          "thesis": {
+            "type": "object",
+            "properties": {
+              "stepLabel": {
+                "type": "string"
+              },
+              "heading": {
+                "type": "string"
+              },
+              "figures": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "figureKey": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "claim": {
+                      "type": "string"
+                    },
+                    "provenance": {
+                      "type": "string"
+                    },
+                    "year": {
+                      "type": "integer"
+                    },
+                    "sourceRefs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "figureKey",
+                    "value",
+                    "claim",
+                    "provenance",
+                    "year",
+                    "sourceRefs"
+                  ]
+                }
+              }
+            },
+            "required": ["stepLabel", "heading", "figures"]
+          },
+          "chapters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DossierChapterV2"
+            }
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "sourceKey": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": ["string", "null"]
+                },
+                "tier": {
+                  "type": "string",
+                  "enum": ["official", "referenced", "unverified"]
+                },
+                "source_kind": {
+                  "type": "string"
+                },
+                "publicationYear": {
+                  "type": "integer"
+                },
+                "notes": {
+                  "type": "string"
+                }
+              },
+              "required": ["sourceKey", "title", "url", "tier"]
+            }
+          },
+          "gaps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "fieldPath": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": ["fieldPath", "reason"]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "vertical",
+          "slug",
+          "publishedOn",
+          "title",
+          "question",
+          "standfirst",
+          "thesis",
+          "chapters",
+          "sources",
+          "gaps"
+        ]
+      },
+      "DossierSummaryV2": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "vertical": {
+            "type": "string",
+            "enum": ["realites", "nommer", "histoires", "spiritualites"]
+          },
+          "slug": {
+            "type": "string"
+          },
+          "publishedOn": {
+            "type": "string",
+            "format": "date"
+          },
+          "title": {
+            "type": "string"
+          },
+          "question": {
+            "type": "string"
+          },
+          "standfirst": {
+            "type": "string"
+          },
+          "chapterCount": {
+            "type": "integer"
+          },
+          "sourceCount": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "vertical",
+          "slug",
+          "publishedOn",
+          "title",
+          "question",
+          "standfirst",
+          "chapterCount",
+          "sourceCount"
+        ]
+      },
+      "DossierDetailEnvelope": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/DossierV2"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiResponseMeta"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorEntry"
+            },
+            "maxItems": 0
+          }
+        },
+        "required": ["data", "meta", "errors"]
+      },
+      "DossierIndexEnvelope": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DossierSummaryV2"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiResponseMeta"
           },
           "errors": {
             "type": "array",

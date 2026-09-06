@@ -512,7 +512,7 @@ describe("ftsSearchEntities", () => {
   });
 
   // ETNI-1857: the four functions whose rows carry a locale-bound name take
-  // p_lang (migration 082). It is sent only when the request names a
+  // p_lang (migration 084). It is sent only when the request names a
   // locale: against a database still on 069 a named parameter the function
   // does not know answers PGRST202, while a call without it is served by the
   // default on both definitions — so a French request survives the rollout
@@ -590,6 +590,37 @@ describe("ftsSearchEntities", () => {
 
     expect(result.countries[0].nameFr).toBe("Tchad");
     expect(result.countries[0].nameEn).toBe("Chad");
+  });
+
+  // @req REQ-143
+  it("uses localized country and family names in the canonical English ranking", async () => {
+    countriesPayload = {
+      total: 1,
+      rows: [
+        countryRow("TCD", "Tchad", {
+          nameEn: "Chad",
+          normalizedScore: 1,
+        }),
+      ],
+    };
+    familiesPayload = {
+      total: 1,
+      rows: [
+        familyRow("FLG_CUSHITIC", "Couchitique", {
+          nameEn: "Cushitic",
+          normalizedScore: 0.9,
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "chad",
+      lang: "en",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.results.map((hit) => hit.name)).toEqual(["Chad", "Cushitic"]);
   });
 
   // @req REQ-143
@@ -1506,6 +1537,29 @@ describe("ftsSearchEntities", () => {
     expect(rpc).toHaveBeenCalledWith("afrik_search_leads", {
       p_q: "bamba",
       p_limit: 3,
+    });
+  });
+
+  // @req REQ-141
+  it("asks near-miss leads for names in the requested locale", async () => {
+    leadsPayload = {
+      rows: [{ kind: "country", id: "TCD", name: "Chad", similarity: 0.4 }],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Chadd",
+      limit: 20,
+      offset: 0,
+      lang: "en",
+    });
+
+    expect(result.leads).toEqual([
+      { kind: "country", id: "TCD", name: "Chad", similarity: 0.4 },
+    ]);
+    expect(rpc).toHaveBeenCalledWith("afrik_search_leads", {
+      p_q: "Chadd",
+      p_limit: 3,
+      p_lang: "en",
     });
   });
 

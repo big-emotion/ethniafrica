@@ -20,7 +20,7 @@ import { NoNameFicheNote } from "@/components/search/NoNameFicheNote";
 import { NoResultsLeads } from "@/components/search/NoResultsLeads";
 import { useLanguage } from "@/hooks/use-language";
 import { useAutocomplete } from "@/hooks/use-autocomplete";
-import { getLocalizedRoute } from "@/lib/routing";
+import { getLocalizedRoute, getStaticPageRoute } from "@/lib/routing";
 import { cn } from "@/lib/utils";
 import {
   compareByRelevance,
@@ -35,11 +35,16 @@ import {
 } from "@/lib/search/relationSearch";
 import { selectPivot } from "@/lib/search/pivot";
 import {
-  SEARCH_LABEL,
-  SEARCH_PLACEHOLDER,
+  getSearchLabel,
+  getSearchPlaceholder,
 } from "@/lib/search/searchVocabulary";
 import { groupPeopleResults } from "@/lib/search/groupPeopleResults";
-import { getFrenchCountryCommonName } from "@/lib/countryNames";
+import { getCountryCommonName } from "@/lib/countryNames";
+import { formatNumber } from "@/lib/languageTag";
+import {
+  getLocalizedSearchResultFamilyName,
+  getLocalizedSearchResultName,
+} from "@/lib/search/localizedResult";
 import type {
   SearchEntityType,
   SearchLead,
@@ -57,13 +62,6 @@ const SUGGESTIONS_PER_KEYSTROKE = 6;
 // The page renders exactly what the shared envelope adapter emits; it used to
 // declare a parallel hit shape, which is how its reader drifted off-contract.
 type SearchHit = SearchResult;
-
-/**
- * Hoisted out of the component so its identity is stable: the hook re-arms
- * its debounce whenever the fetcher changes.
- */
-const fetchSuggestionsFromCorpus = (query: string): Promise<SearchHit[]> =>
-  searchCorpus(query, { limit: SUGGESTIONS_PER_KEYSTROKE });
 
 /**
  * `idle` — nothing committed yet, the page shows its default head.
@@ -107,6 +105,15 @@ export function RecherchePageContent() {
     initialQuery || initialRelation ? "loading" : "idle"
   );
 
+  const fetchSuggestionsFromCorpus = useCallback(
+    (query: string): Promise<SearchHit[]> =>
+      searchCorpus(query, {
+        limit: SUGGESTIONS_PER_KEYSTROKE,
+        lang: language,
+      }),
+    [language]
+  );
+
   // ── URL sync ────────────────────────────────────────────────────────────────
 
   const syncURL = useCallback(
@@ -143,6 +150,7 @@ export function RecherchePageContent() {
           counts: lensCounts,
         } = await searchWithLeads(q, {
           limit: RESULTS_PER_SEARCH,
+          lang: language,
           ...relationSearchParams(rel),
         });
         setResults(hits);
@@ -156,7 +164,7 @@ export function RecherchePageContent() {
         setStatus("loaded");
       }
     },
-    []
+    [language]
   );
 
   // On mount: if the URL carries a query or a relation, search immediately.
@@ -175,7 +183,7 @@ export function RecherchePageContent() {
     }
     isFirstRelationRun.current = false;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [relation]);
+  }, [language, relation]);
 
   // ── auto-suggest ────────────────────────────────────────────────────────────
 
@@ -222,10 +230,11 @@ export function RecherchePageContent() {
   function handleSuggestionClick(hit: SearchHit) {
     // `commit`, not `setQuery`: the name goes into the field as a resolved
     // query, so the panel does not reopen over the results it just asked for.
-    suggest.commit(hit.name);
-    setCommittedQuery(hit.name);
-    syncURL(hit.name, relation);
-    performSearch(hit.name, relation);
+    const name = getLocalizedSearchResultName(hit, language);
+    suggest.commit(name);
+    setCommittedQuery(name);
+    syncURL(name, relation);
+    performSearch(name, relation);
   }
 
   // ── derived state ───────────────────────────────────────────────────────────
@@ -244,15 +253,20 @@ export function RecherchePageContent() {
 
   // A relation-scoped list ("the peoples of the Krou family") has no single
   // answer, so it never gets a pivot.
-  const pivot = relation ? null : selectPivot(sortedResults, committedQuery);
+  const pivot = relation
+    ? null
+    : selectPivot(sortedResults, committedQuery, language);
   const listResults = pivot
     ? sortedResults.filter((r) => r !== pivot)
     : sortedResults;
 
   // A name imposed from outside never stands alone where the self-appellation
   // exists — the same rule `SearchPivotCard` applies to its own heading.
+  const pivotName = pivot
+    ? getLocalizedSearchResultName(pivot, language)
+    : undefined;
   const pivotHasAutonym = Boolean(
-    pivot?.autonym && pivot.autonym !== pivot.name
+    pivot?.autonym && pivot.autonym !== pivotName
   );
 
   // A relation-scoped list ("the peoples of the Krou family") has no single
@@ -260,15 +274,26 @@ export function RecherchePageContent() {
   const relationLabel = !relation
     ? ""
     : relation.kind === "country"
-      ? `Peuples du pays ${getFrenchCountryCommonName(relation.id, relation.id)}`
-      : `Peuples de la famille ${
-          results.find((r) => r.languageFamilyId === relation.id)
-            ?.languageFamilyName ?? relation.id
+      ? `${language === "en" ? "Peoples in" : "Peuples du pays"} ${getCountryCommonName(language, relation.id, relation.id)}`
+      : `${language === "en" ? "Peoples in the family" : "Peuples de la famille"} ${
+          getLocalizedSearchResultFamilyName(
+            results.find((r) => r.languageFamilyId === relation.id) ?? {
+              type: "languageFamily",
+              id: relation.id,
+              name: relation.id,
+            },
+            language
+          ) ?? relation.id
         }`;
 
-  const resultCountLabel = `${sortedResults.length} résultat${
-    sortedResults.length > 1 ? "s" : ""
-  }${committedQuery ? ` pour « ${committedQuery} »` : ""}`;
+  const resultCountLabel =
+    language === "en"
+      ? `${formatNumber(language, sortedResults.length)} result${
+          sortedResults.length === 1 ? "" : "s"
+        }${committedQuery ? ` for “${committedQuery}”` : ""}`
+      : `${formatNumber(language, sortedResults.length)} résultat${
+          sortedResults.length > 1 ? "s" : ""
+        }${committedQuery ? ` pour « ${committedQuery} »` : ""}`;
 
   // Only once the fetch has resolved does the page know whether it is
   // answering with a pivot or a count — showing either ahead of that would
@@ -278,8 +303,8 @@ export function RecherchePageContent() {
   const heroHead = !showQueryHead ? undefined : pivot ? (
     <AutonymExonymHeading
       variant="hero"
-      autonym={pivotHasAutonym ? pivot.autonym : pivot.name}
-      exonym={pivotHasAutonym ? pivot.name : undefined}
+      autonym={pivotHasAutonym ? pivot.autonym : pivotName}
+      exonym={pivotHasAutonym ? pivotName : undefined}
     />
   ) : (
     // The brand gradient is scoped to the literal word "Recherche"
@@ -300,7 +325,9 @@ export function RecherchePageContent() {
     <ul
       data-testid="search-results-list"
       className="grid grid-cols-1 gap-afh-lg min-[760px]:grid-cols-2"
-      aria-label="Résultats de recherche"
+      aria-label={
+        language === "en" ? "Search results" : "Résultats de recherche"
+      }
     >
       {groupPeopleResults(listResults).map((entry, i) =>
         entry.type === "peopleGroup" ? (
@@ -320,13 +347,14 @@ export function RecherchePageContent() {
     <>
       {showLensBar && (
         <SearchLensBar
+          language={language}
           active={activeLens}
           counts={counts}
           showCounts
           onChange={setActiveLens}
         />
       )}
-      {showNoNameFicheNote && <NoNameFicheNote />}
+      {showNoNameFicheNote && <NoNameFicheNote language={language} />}
     </>
   );
 
@@ -336,8 +364,10 @@ export function RecherchePageContent() {
     <PageLayout
       language={language}
       onLanguageChange={setLanguage}
-      title={showQueryHead ? undefined : "Recherche"}
-      subtitle={showQueryHead ? undefined : SEARCH_LABEL}
+      title={
+        showQueryHead ? undefined : language === "en" ? "Search" : "Recherche"
+      }
+      subtitle={showQueryHead ? undefined : getSearchLabel(language)}
       heroHead={heroHead}
     >
       {/* The SERP's one page-level accent (brand charter §2): everything on
@@ -350,7 +380,9 @@ export function RecherchePageContent() {
         <form
           onSubmit={handleSubmit}
           role="search"
-          aria-label="Formulaire de recherche"
+          aria-label={
+            language === "en" ? "Search form" : "Formulaire de recherche"
+          }
           className="flex flex-col md:flex-row gap-afh-md"
         >
           <div className="relative flex-1">
@@ -362,8 +394,8 @@ export function RecherchePageContent() {
               ref={inputRef}
               type="search"
               {...suggest.comboboxProps}
-              aria-label={SEARCH_LABEL}
-              placeholder={SEARCH_PLACEHOLDER}
+              aria-label={getSearchLabel(language)}
+              placeholder={getSearchPlaceholder(language)}
               value={inputValue}
               onChange={(e) => suggest.setQuery(e.target.value)}
               onKeyDown={suggest.handleKeyDown}
@@ -379,7 +411,11 @@ export function RecherchePageContent() {
               <ul
                 id={suggest.listboxId}
                 role="listbox"
-                aria-label="Suggestions de recherche"
+                aria-label={
+                  language === "en"
+                    ? "Search suggestions"
+                    : "Suggestions de recherche"
+                }
                 className="absolute z-50 w-full bg-afh-surface border border-afh-border rounded-afh-lg shadow-afh-2 mt-afh-xs overflow-hidden"
               >
                 {suggest.options.map((hit, index) => (
@@ -392,14 +428,14 @@ export function RecherchePageContent() {
                     )}
                     onMouseDown={() => handleSuggestionClick(hit)}
                   >
-                    {hit.name}
+                    {getLocalizedSearchResultName(hit, language)}
                   </li>
                 ))}
               </ul>
             )}
           </div>
           <Button type="submit" className="h-12 px-6 shrink-0">
-            Rechercher
+            {language === "en" ? "Search" : "Rechercher"}
           </Button>
         </form>
 
@@ -408,7 +444,7 @@ export function RecherchePageContent() {
           data-testid="filter-chip-row"
           role="group"
           className="flex flex-wrap items-center gap-afh-md min-h-[2rem]"
-          aria-label="Filtres actifs"
+          aria-label={language === "en" ? "Active filters" : "Filtres actifs"}
         >
           {relation && (
             <Badge
@@ -418,7 +454,7 @@ export function RecherchePageContent() {
               {relationLabel}
               <button
                 type="button"
-                aria-label={`Supprimer le filtre ${relationLabel}`}
+                aria-label={`${language === "en" ? "Remove filter" : "Supprimer le filtre"} ${relationLabel}`}
                 onClick={() => setRelation(null)}
                 className={cn("ml-afh-xs rounded-full", CHARTER_FOCUS_RING)}
               >
@@ -432,7 +468,7 @@ export function RecherchePageContent() {
               onClick={() => setRelation(null)}
               className="text-afh-small text-afh-fg-muted hover:text-afh-text underline underline-offset-2 ml-auto"
             >
-              Tout effacer
+              {language === "en" ? "Clear all" : "Tout effacer"}
             </button>
           )}
         </div>
@@ -446,7 +482,9 @@ export function RecherchePageContent() {
           >
             <Loader2
               className="h-6 w-6 animate-spin text-afh-text-muted"
-              aria-label="Chargement en cours"
+              aria-label={
+                language === "en" ? "Loading search" : "Chargement en cours"
+              }
             />
           </div>
         )}
@@ -465,7 +503,7 @@ export function RecherchePageContent() {
                 className="min-w-0 space-y-afh-5xl"
               >
                 <SearchPivotCard result={pivot} language={language} />
-                <SourcedHighlightBlock result={pivot} />
+                <SourcedHighlightBlock result={pivot} language={language} />
                 {refinements}
                 {resultsList}
               </div>
@@ -491,10 +529,13 @@ export function RecherchePageContent() {
         {status === "loaded" && results.length === 0 && (
           <div className="flex flex-col items-center justify-center min-h-[16rem] gap-afh-2xl px-afh-5xl py-afh-7xl bg-afh-bg-warm rounded-afh-lg text-center">
             <p className="text-afh-small text-afh-text-soft max-w-sm">
-              Aucun résultat pour « {committedQuery} ».
+              {language === "en" ? "No results for" : "Aucun résultat pour"} «{" "}
+              {committedQuery} ».
             </p>
             <p className="text-afh-small text-afh-text-soft">
-              Vérifiez l&apos;orthographe ou essayez un autre terme.
+              {language === "en"
+                ? "Check the spelling or try another term."
+                : "Vérifiez l’orthographe ou essayez un autre terme."}
             </p>
             <NoResultsLeads leads={leads} language={language} />
             <div className="flex flex-col gap-afh-md text-afh-small">
@@ -502,13 +543,17 @@ export function RecherchePageContent() {
                 href={getLocalizedRoute(language, "families")}
                 className="underline underline-offset-2 hover:text-afh-text transition-colors"
               >
-                Parcourir par famille
+                {language === "en"
+                  ? "Browse by family"
+                  : "Parcourir par famille"}
               </Link>
               <Link
-                href={`/${language}/contribute?q=${encodeURIComponent(committedQuery)}`}
+                href={`${getStaticPageRoute(language, "contribute")}?q=${encodeURIComponent(committedQuery)}`}
                 className="underline underline-offset-2 hover:text-afh-text transition-colors"
               >
-                Signaler donnée manquante
+                {language === "en"
+                  ? "Report missing data"
+                  : "Signaler donnée manquante"}
               </Link>
             </div>
           </div>

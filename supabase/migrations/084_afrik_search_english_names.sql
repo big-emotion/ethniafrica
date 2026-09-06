@@ -1,4 +1,4 @@
--- Migration 082 — search reaches a country, a family and a language by its
+-- Migration 084 — search reaches a country, a family and a language by its
 -- English name (ETNI-1857, REQ-141, REQ-143)
 --
 -- Context: the bilingual programme publishes the atlas under two locales, and
@@ -22,7 +22,8 @@
 --      does not say which locale it served is a bug to surface, not a French
 --      query to assume. Existing rows are backfilled to 'fr' first, because
 --      until now the surface only ever answered in French.
---   3. The four ranking functions whose rows carry a locale-bound name are
+--   3. The four ranking functions whose rows carry a locale-bound name, plus
+--      the near-miss function that suggests those names after a zero result,
 --      re-issued with a trailing `p_lang TEXT DEFAULT 'fr'`, so every
 --      existing caller stays valid. When p_lang = 'en', the exact-match test
 --      and the ladder read the English name; the French vectors and queries
@@ -74,7 +75,7 @@ ALTER TABLE public.search_query_log
   ADD CONSTRAINT search_query_log_lang_check CHECK (lang IN ('en', 'fr'));
 
 COMMENT ON COLUMN public.search_query_log.lang IS
-  'Locale the search was served in (en | fr). No default on purpose: a row that does not say which locale it served is a bug, not a French query. Rows older than migration 082 were backfilled to fr, the only locale the surface answered in until then. ETNI-1857, REQ-141.';
+  'Locale the search was served in (en | fr). No default on purpose: a row that does not say which locale it served is a bug, not a French query. Rows older than migration 084 were backfilled to fr, the only locale the surface answered in until then. ETNI-1857, REQ-141.';
 
 -- ────────────────────────────────────────────────────────────────────────────
 -- 3. afrik_search_peoples — migration 069's body, plus p_lang and the
@@ -241,7 +242,7 @@ $$;
 
 COMMENT ON FUNCTION public.afrik_search_peoples(
   TEXT, INT, INT, TEXT, NUMERIC, TIMESTAMPTZ, TEXT, TEXT, TEXT) IS
-  'Ranked, paginated peoples search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Ranked by exact name_main match, then a lexical match on the weighted search_vector (ts_rank times a confidence multiplier), then a pg_trgm similarity fallback (>= 0.4) for a query that finds no lexical match at all — DEC-034''s typo-tolerance mechanism, migration 063. Each row also carries normalizedScore, the same ranking expressed on the cross-kind [0,1] scale of migration 069, and languageFamilyNameEn beside languageFamilyName (migration 082) so the family chip can be labelled in the locale served. p_lang (en | fr, default fr) is accepted for the shared calling convention; a people''s name is invariant, so the ranking is the same in both locales. A null or blank p_q switches the text predicate off, which is how "peoples of family X" and "peoples of country Y" are served here. Runs as the calling role, so it reads only what migrations 015 and 019 already publish to anon.';
+  'Ranked, paginated peoples search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Ranked by exact name_main match, then a lexical match on the weighted search_vector (ts_rank times a confidence multiplier), then a pg_trgm similarity fallback (>= 0.4) for a query that finds no lexical match at all — DEC-034''s typo-tolerance mechanism, migration 063. Each row also carries normalizedScore, the same ranking expressed on the cross-kind [0,1] scale of migration 069, and languageFamilyNameEn beside languageFamilyName (migration 084) so the family chip can be labelled in the locale served. p_lang (en | fr, default fr) is accepted for the shared calling convention; a people''s name is invariant, so the ranking is the same in both locales. A null or blank p_q switches the text predicate off, which is how "peoples of family X" and "peoples of country Y" are served here. Runs as the calling role, so it reads only what migrations 015 and 019 already publish to anon.';
 
 REVOKE ALL ON FUNCTION public.afrik_search_peoples(TEXT, INT, INT, TEXT, NUMERIC, TIMESTAMPTZ, TEXT, TEXT, TEXT) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.afrik_search_peoples(TEXT, INT, INT, TEXT, NUMERIC, TIMESTAMPTZ, TEXT, TEXT, TEXT)
@@ -379,7 +380,7 @@ SELECT jsonb_build_object(
 $$;
 
 COMMENT ON FUNCTION public.afrik_search_countries(TEXT, INT, INT, TEXT) IS
-  'Ranked, paginated countries search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Matches on the weighted search_vector (migration 043) OR the accent-insensitive name_unaccent_vector (migration 052), both queried with a last-word prefix operator (public.afrik_prefix_tsquery) — REQ-129. With p_lang = ''en'' (migration 082) the accent-folded name_en also matches through the families'' ladder — exact (1.0) > prefix (0.6) > substring (0.3) — and exactMatch fires on either name. Each row carries nameEn beside nameFr and normalizedScore, the cross-kind [0,1] scale of migration 069. No confidence filters: confidence_scores covers entity_type=''people'' only (migration 014).';
+  'Ranked, paginated countries search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Matches on the weighted search_vector (migration 043) OR the accent-insensitive name_unaccent_vector (migration 052), both queried with a last-word prefix operator (public.afrik_prefix_tsquery) — REQ-129. With p_lang = ''en'' (migration 084) the accent-folded name_en also matches through the families'' ladder — exact (1.0) > prefix (0.6) > substring (0.3) — and exactMatch fires on either name. Each row carries nameEn beside nameFr and normalizedScore, the cross-kind [0,1] scale of migration 069. No confidence filters: confidence_scores covers entity_type=''people'' only (migration 014).';
 
 REVOKE ALL ON FUNCTION public.afrik_search_countries(TEXT, INT, INT, TEXT) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.afrik_search_countries(TEXT, INT, INT, TEXT)
@@ -489,7 +490,7 @@ SELECT jsonb_build_object(
 $$;
 
 COMMENT ON FUNCTION public.afrik_search_language_families(TEXT, INT, INT, TEXT) IS
-  'Ranked, paginated linguistic-family search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Accent-insensitive exact (1.0) > prefix (0.6) > substring (0.3) on the locale''s name — name_fr, or name_en with p_lang = ''en'' (migration 082, falling back to name_fr where the English name is missing) — then a prose tier (0.1) through the migration 056 search_vector (DEC-028). Each row also carries normalizedScore, the cross-kind [0,1] scale of migration 069. A blank p_q matches nothing — browsing the roster is the facet''s job, not search''s. Runs as the calling role, so it reads only what migration 015 already publishes to anon. REQ-002, REQ-129, REQ-141.';
+  'Ranked, paginated linguistic-family search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Accent-insensitive exact (1.0) > prefix (0.6) > substring (0.3) on the locale''s name — name_fr, or name_en with p_lang = ''en'' (migration 084, falling back to name_fr where the English name is missing) — then a prose tier (0.1) through the migration 056 search_vector (DEC-028). Each row also carries normalizedScore, the cross-kind [0,1] scale of migration 069. A blank p_q matches nothing — browsing the roster is the facet''s job, not search''s. Runs as the calling role, so it reads only what migration 015 already publishes to anon. REQ-002, REQ-129, REQ-141.';
 
 REVOKE ALL ON FUNCTION public.afrik_search_language_families(TEXT, INT, INT, TEXT) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.afrik_search_language_families(TEXT, INT, INT, TEXT)
@@ -614,10 +615,95 @@ SELECT jsonb_build_object(
 $$;
 
 COMMENT ON FUNCTION public.afrik_search_languages(TEXT, INT, INT, TEXT) IS
-  'Ranked, paginated language search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Matches on the weighted search_vector (migration 055: A = ISO 639-3 id and sourced name, B = alternate names, C = derived name) OR the accent-insensitive name_unaccent_vector (migration 068), both queried with a last-word prefix operator (public.afrik_prefix_tsquery) — REQ-136. With p_lang = ''en'' (migration 082) the accent-folded content.nameEn also matches through the families'' ladder — exact (1.0) > prefix (0.6) > substring (0.3). The exact-match bonus fires on the ISO 639-3 id as well as either name. Each row carries nameEn and familyNameEn beside name and familyName. No confidence/classification filters: afrik_languages carries neither. SECURITY INVOKER: reads only afrik_languages and afrik_language_families, already published to anon by migration 006.';
+  'Ranked, paginated language search. Returns {"total": <corpus-wide match count>, "rows": [...]}. Matches on the weighted search_vector (migration 055: A = ISO 639-3 id and sourced name, B = alternate names, C = derived name) OR the accent-insensitive name_unaccent_vector (migration 068), both queried with a last-word prefix operator (public.afrik_prefix_tsquery) — REQ-136. With p_lang = ''en'' (migration 084) the accent-folded content.nameEn also matches through the families'' ladder — exact (1.0) > prefix (0.6) > substring (0.3). The exact-match bonus fires on the ISO 639-3 id as well as either name. Each row carries nameEn and familyNameEn beside name and familyName. No confidence/classification filters: afrik_languages carries neither. SECURITY INVOKER: reads only afrik_languages and afrik_language_families, already published to anon by migration 006.';
 
 REVOKE ALL ON FUNCTION public.afrik_search_languages(TEXT, INT, INT, TEXT) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.afrik_search_languages(TEXT, INT, INT, TEXT)
+  TO anon, authenticated, service_role;
+
+-- ────────────────────────────────────────────────────────────────────────────
+-- 7. afrik_search_leads — migration 070's near-misses in the served locale
+--
+-- A people's name is invariant. Country and family suggestions use their
+-- English name when requested, falling back to French while a translation is
+-- missing. The emitted name and the name scored by pg_trgm are deliberately
+-- the same value, so a reader never sees a suggestion justified by a hidden
+-- label from another locale.
+-- ────────────────────────────────────────────────────────────────────────────
+DROP FUNCTION IF EXISTS public.afrik_search_leads(TEXT, INT);
+
+CREATE OR REPLACE FUNCTION public.afrik_search_leads(
+  p_q     TEXT DEFAULT NULL,
+  p_limit INT  DEFAULT 3,
+  p_lang  TEXT DEFAULT 'fr'
+)
+RETURNS JSONB
+LANGUAGE sql
+STABLE
+SECURITY INVOKER
+SET search_path = public, extensions, pg_temp
+AS $$
+WITH q AS (
+  SELECT public.afrik_unaccent(lower(btrim(p_q))) AS exact_key
+),
+candidates AS (
+  SELECT 'people'::text AS kind, p.id::text AS id, p.name_main AS name,
+         extensions.similarity(
+           public.afrik_unaccent(lower(p.name_main)), q.exact_key) AS similarity
+  FROM public.afrik_peoples p
+  CROSS JOIN q
+  WHERE length(q.exact_key) >= 3
+
+  UNION ALL
+
+  SELECT 'country'::text AS kind, c.id::text AS id, localized.name,
+         extensions.similarity(
+           public.afrik_unaccent(lower(localized.name)), q.exact_key) AS similarity
+  FROM public.afrik_countries c
+  CROSS JOIN q
+  CROSS JOIN LATERAL (
+    SELECT CASE WHEN p_lang = 'en'
+                THEN COALESCE(NULLIF(c.name_en, ''), c.name_fr)
+                ELSE c.name_fr END AS name
+  ) localized
+  WHERE length(q.exact_key) >= 3
+
+  UNION ALL
+
+  SELECT 'family'::text AS kind, lf.id::text AS id, localized.name,
+         extensions.similarity(
+           public.afrik_unaccent(lower(localized.name)), q.exact_key) AS similarity
+  FROM public.afrik_language_families lf
+  CROSS JOIN q
+  CROSS JOIN LATERAL (
+    SELECT CASE WHEN p_lang = 'en'
+                THEN COALESCE(NULLIF(lf.name_en, ''), lf.name_fr)
+                ELSE lf.name_fr END AS name
+  ) localized
+  WHERE length(q.exact_key) >= 3
+),
+matched AS (
+  SELECT * FROM candidates WHERE similarity >= 0.2
+),
+page AS (
+  SELECT * FROM matched
+  ORDER BY similarity DESC, name ASC, id ASC
+  LIMIT COALESCE(p_limit, 3)
+)
+SELECT jsonb_build_object(
+  'rows', COALESCE(
+    (SELECT jsonb_agg(to_jsonb(page) ORDER BY page.similarity DESC,
+                       page.name ASC, page.id ASC)
+       FROM page),
+    '[]'::jsonb)
+);
+$$;
+
+COMMENT ON FUNCTION public.afrik_search_leads(TEXT, INT, TEXT) IS
+  'Near-miss leads for a zero-result search (REQ-125). A trigram similarity scan (>= 0.2) across peoples.name_main and the country/family name for p_lang (en | fr, default fr), with English names falling back to French when missing. The emitted name is the same localized value that was scored. Returns {"rows": [{"kind", "id", "name", "similarity"}, ...]}, at most p_limit rows. A folded query shorter than 3 characters returns no rows. SECURITY INVOKER: reads only tables already published to anon. ETNI-1857, REQ-141.';
+
+REVOKE ALL ON FUNCTION public.afrik_search_leads(TEXT, INT, TEXT) FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.afrik_search_leads(TEXT, INT, TEXT)
   TO anon, authenticated, service_role;
 
 -- ────────────────────────────────────────────────────────────────────────────

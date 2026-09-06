@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest";
 
-import { bcp47LanguageTag } from "@/lib/languageTag";
+import {
+  bcp47LanguageTag,
+  displayCountryName,
+  formatNumber,
+  localeTag,
+} from "@/lib/languageTag";
 
 describe("bcp47LanguageTag", () => {
   // The exact codes axe-core rejects: a 639-3 form whose language also has a
@@ -41,5 +46,21 @@ describe("bcp47LanguageTag", () => {
   // @req REQ-115
   it("tolerates the whitespace a hand-edited fiche can carry", () => {
     expect(bcp47LanguageTag("  yor  ")).toBe("yo");
+  });
+});
+
+describe("locale formatters", () => {
+  // @req REQ-140
+  it("maps each language to its regional formatting tag", () => {
+    expect(localeTag("fr")).toBe("fr-FR");
+    expect(localeTag("en")).toBe("en-GB");
+  });
+
+  // @req REQ-140
+  it("formats numbers and country names in the reader's locale", () => {
+    expect(formatNumber("fr", 1_234_567)).toBe("1 234 567");
+    expect(formatNumber("en", 1_234_567)).toBe("1,234,567");
+    expect(displayCountryName("fr", "SD")).toBe("Soudan");
+    expect(displayCountryName("en", "SD")).toBe("Sudan");
   });
 });

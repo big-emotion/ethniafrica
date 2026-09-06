@@ -79,8 +79,8 @@ export async function ftsSearchEntities(
   const supabase = createServerClient();
   const text = q?.trim() ?? "";
   const quizOnly = lens === "quiz";
-  // Sent only when the request names a locale. The four name-bearing
-  // functions take `p_lang` since migration 082, with a default, so a call
+  // Sent only when the request names a locale. The locale-aware ranking and
+  // near-miss functions take `p_lang` since migration 084, with a default, so a call
   // without it is served identically by the old and the new definition —
   // whereas a named parameter the old definition does not know answers
   // PGRST202. A French request therefore survives the rollout window in
@@ -226,7 +226,7 @@ export async function ftsSearchEntities(
   // needs a near-miss.
   const leads =
     !quizOnly && text && total === 0
-      ? await fetchSearchLeads(supabase, text)
+      ? await fetchSearchLeads(supabase, text, lang)
       : [];
 
   return {
@@ -262,11 +262,13 @@ export async function ftsSearchEntities(
 
 async function fetchSearchLeads(
   supabase: ReturnType<typeof createServerClient>,
-  text: string
+  text: string,
+  lang?: FtsSearchParams["lang"]
 ): Promise<SearchLead[]> {
   const { data, error } = await supabase.rpc("afrik_search_leads", {
     p_q: text,
     p_limit: 3,
+    ...(lang !== undefined && { p_lang: lang }),
   });
 
   if (error) {
@@ -534,10 +536,9 @@ interface RankedGroups {
  * Ties are frequent by design — the score bands a match class, so two exact
  * hits of different kinds routinely land on the same value — and an unstable
  * tie-break would reshuffle a result page between two identical requests.
- * Name in the served locale's collation, then id, gives one deterministic
- * order; a locale matters at all because a byte comparison sorts every
- * accented name after "Z". The name compared stays the French one every
- * consumer keys on — the locale only chooses how it collates.
+ * Name in the served locale, then id, gives one deterministic order. Country
+ * and family rows expose an English display name; when it is absent the
+ * canonical list keeps the French value rather than emitting an empty label.
  */
 function mergeIntoOneRanking(
   groups: RankedGroups,
@@ -548,10 +549,20 @@ function mergeIntoOneRanking(
       toSearchHit("people", hit.id, hit.nameMain, hit)
     ),
     ...groups.countries.map((hit) =>
-      toSearchHit("country", hit.id, hit.nameFr, hit)
+      toSearchHit(
+        "country",
+        hit.id,
+        collation === "en" && hit.nameEn?.trim() ? hit.nameEn : hit.nameFr,
+        hit
+      )
     ),
     ...groups.families.map((hit) =>
-      toSearchHit("languageFamily", hit.id, hit.nameFr, hit)
+      toSearchHit(
+        "languageFamily",
+        hit.id,
+        collation === "en" && hit.nameEn?.trim() ? hit.nameEn : hit.nameFr,
+        hit
+      )
     ),
     ...groups.persons.map((hit) =>
       toSearchHit("person", hit.id, hit.fullName, hit)

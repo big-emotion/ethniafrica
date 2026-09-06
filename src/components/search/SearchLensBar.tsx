@@ -3,6 +3,8 @@
 import { cn } from "@/lib/utils";
 import type { SearchLensCounts } from "@/lib/search/searchEnvelope";
 import type { SearchEntityType } from "@/types/afrik-frontend";
+import type { Language } from "@/types/shared";
+import { formatNumber } from "@/lib/languageTag";
 
 interface SearchLensDef {
   value: SearchEntityType | "all";
@@ -25,7 +27,18 @@ const SEARCH_LENSES: SearchLensDef[] = [
   { value: "person", label: "Personnes" },
 ];
 
+const SEARCH_LENSES_EN: SearchLensDef[] = [
+  { value: "all", label: "All" },
+  { value: "people", label: "Peoples" },
+  { value: "language", label: "Languages" },
+  { value: "languageFamily", label: "Families" },
+  { value: "country", label: "Countries" },
+  { value: "patronyme", label: "Names" },
+  { value: "person", label: "People" },
+];
+
 interface SearchLensBarProps {
+  language?: Language;
   active: SearchEntityType | "all";
   counts: SearchLensCounts;
   /** Counts are only meaningful once a search has resolved at least once. */
@@ -42,41 +55,49 @@ interface SearchLensBarProps {
  */
 // @req REQ-124
 export function SearchLensBar({
+  language = "fr",
   active,
   counts,
   showCounts,
   onChange,
 }: SearchLensBarProps) {
+  const lenses = language === "en" ? SEARCH_LENSES_EN : SEARCH_LENSES;
   return (
     <div
       role="group"
-      aria-label="Filtrer les résultats par type"
+      aria-label={
+        language === "en"
+          ? "Filter results by type"
+          : "Filtrer les résultats par type"
+      }
       className="flex flex-wrap gap-2"
     >
-      {SEARCH_LENSES.filter(
-        (lens) => lens.value === "all" || (counts[lens.value] ?? 0) > 0
-      ).map((lens) => {
-        const count = counts[lens.value];
-        const isActive = active === lens.value;
-        const label = showCounts ? `${lens.label} (${count})` : lens.label;
+      {lenses
+        .filter((lens) => lens.value === "all" || (counts[lens.value] ?? 0) > 0)
+        .map((lens) => {
+          const count = counts[lens.value];
+          const isActive = active === lens.value;
+          const label = showCounts
+            ? `${lens.label} (${formatNumber(language, count)})`
+            : lens.label;
 
-        return (
-          <button
-            key={lens.value}
-            type="button"
-            aria-pressed={isActive}
-            onClick={() => onChange(lens.value)}
-            className={cn(
-              "rounded-full border border-afh-border px-4 min-h-11 text-sm font-medium transition-colors",
-              isActive
-                ? "border-transparent bg-[var(--accent-tint)]"
-                : "bg-transparent"
-            )}
-          >
-            {label}
-          </button>
-        );
-      })}
+          return (
+            <button
+              key={lens.value}
+              type="button"
+              aria-pressed={isActive}
+              onClick={() => onChange(lens.value)}
+              className={cn(
+                "rounded-full border border-afh-border px-4 min-h-11 text-sm font-medium transition-colors",
+                isActive
+                  ? "border-transparent bg-[var(--accent-tint)]"
+                  : "bg-transparent"
+              )}
+            >
+              {label}
+            </button>
+          );
+        })}
     </div>
   );
 }

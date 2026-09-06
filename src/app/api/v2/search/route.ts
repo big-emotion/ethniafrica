@@ -44,7 +44,7 @@
  *       families — a trigram similarity scan (migration 069) below the main
  *       search's own fuzzy floor, so the reader sees what the engine almost
  *       understood instead of a bare empty result; `leads` is always empty
- *       when `total` is greater than 0. With `lang=en` (migration 082,
+ *       when `total` is greater than 0. With `lang=en` (migration 084,
  *       REQ-141) countries, language families and languages also match on
  *       their English name — exact, then prefix, then substring, folded the
  *       same way — and rows carry `nameEn` / `languageFamilyNameEn` beside
@@ -349,7 +349,7 @@ export async function GET(request: NextRequest) {
   if ("error" in parsed) {
     return jsonWithCors(
       createApiError({
-        code: "INVALID_PARAM",
+        code: parsed.field === "lang" ? "VALIDATION_ERROR" : "INVALID_PARAM",
         message: parsed.error,
         field: parsed.field,
       }),
@@ -364,7 +364,7 @@ export async function GET(request: NextRequest) {
 
     const envelope = await ftsSearchHandler(params);
 
-    // The log column has no default (migration 082): a search with no
+    // The log column has no default (migration 084): a search with no
     // `lang` was served in French, and the route is the one that knows.
     await searchQueryLog.write({
       query: params.q,

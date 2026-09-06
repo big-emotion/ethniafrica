@@ -9,6 +9,7 @@ import { Card } from "@/components/ui/card";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { cn } from "@/lib/utils";
 import { search as searchCorpus } from "@/lib/afrikLoader";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 import type { SearchEntityType } from "@/types/afrik-frontend";
 import { useAutocomplete } from "@/hooks/use-autocomplete";
 import {
@@ -49,17 +50,20 @@ const SEARCH_KIND_BY_TYPE: Record<CompareEntityType, SearchEntityType> = {
  */
 async function defaultFetchSuggestions(
   type: CompareEntityType,
-  query: string
+  query: string,
+  language: TranslationLocale
 ): Promise<CompareCandidate[]> {
   const hits = await searchCorpus(query, {
     limit: MAX_SUGGESTIONS,
     type: SEARCH_KIND_BY_TYPE[type],
+    lang: language,
   });
 
   return hits.map((hit) => ({ id: hit.id, type, exonym: hit.name }));
 }
 
 export interface EntityComparePickerProps {
+  language: TranslationLocale;
   className?: string;
   onCompare?: (type: CompareEntityType, ids: string[]) => void;
   fetchSuggestions?: (
@@ -74,9 +78,10 @@ export interface EntityComparePickerProps {
  * UX-DR29, UX-DR32). Stacked cards, never a wide table.
  */
 export function EntityComparePicker({
+  language,
   className,
   onCompare,
-  fetchSuggestions = defaultFetchSuggestions,
+  fetchSuggestions,
 }: EntityComparePickerProps) {
   const selection = useCompareSelection();
   const [type, setType] = useState<CompareEntityType>("peoples");
@@ -85,9 +90,9 @@ export function EntityComparePicker({
 
   // Read through a ref so the fetcher's identity stays stable while still
   // seeing the current type and the current selection.
-  const context = useRef({ type, selection, fetchSuggestions });
+  const context = useRef({ type, selection, fetchSuggestions, language });
   useEffect(() => {
-    context.current = { type, selection, fetchSuggestions };
+    context.current = { type, selection, fetchSuggestions, language };
   });
 
   /**
@@ -100,9 +105,12 @@ export function EntityComparePicker({
       type: kind,
       selection: current,
       fetchSuggestions: fetch,
+      language: currentLanguage,
     } = context.current;
     const picked = new Set(current.selected.map((entity) => entity.id));
-    const candidates = await fetch(kind, query);
+    const candidates = await (fetch
+      ? fetch(kind, query)
+      : defaultFetchSuggestions(kind, query, currentLanguage));
     return candidates.filter((candidate) => !picked.has(candidate.id));
   }, []);
 

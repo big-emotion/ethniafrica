@@ -54,7 +54,11 @@ export default function ComparerPickerPage() {
           Choisissez deux ou trois fiches du même type, puis lancez la
           comparaison.
         </p>
-        <EntityComparePicker className="mt-6" onCompare={goToComparison} />
+        <EntityComparePicker
+          language={language}
+          className="mt-6"
+          onCompare={goToComparison}
+        />
       </div>
     </PageLayout>
   );

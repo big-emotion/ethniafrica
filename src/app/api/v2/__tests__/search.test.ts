@@ -170,7 +170,7 @@ describe("GET /api/v2/search (route)", () => {
 
       expect(res.status).toBe(400);
       expect(body.errors[0]).toMatchObject({
-        code: "INVALID_PARAM",
+        code: "VALIDATION_ERROR",
         field: "lang",
       });
       expect(ftsSearchHandler).not.toHaveBeenCalled();

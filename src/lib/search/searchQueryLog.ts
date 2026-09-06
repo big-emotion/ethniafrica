@@ -2,7 +2,7 @@
  * Search query log emission helper.
  *
  * Writes a row to the `search_query_log` table (migration `050`) — the query
- * text, its result count, the locale it was served in (migration `082`) and
+ * text, its result count, the locale it was served in (migration `084`) and
  * a timestamp (default `NOW()`). Failed searches are the spec for the
  * aliases "Alternate spellings are not found" (REQ-002) needs to close, but
  * only if they are recorded — and a miss in English asks for an alias in

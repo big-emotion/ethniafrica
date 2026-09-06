@@ -225,6 +225,7 @@ describe("afrikLoader", () => {
 
       await search("shona", {
         limit: 20,
+        lang: "en",
         classificationStatus: "consensual",
         minConfidence: "0.7",
         familyId: "FLG_BANTU",
@@ -234,6 +235,7 @@ describe("afrikLoader", () => {
       expect(searchParamsOf(mockFetch)).toEqual({
         q: "shona",
         limit: "20",
+        lang: "en",
         classificationStatus: "consensual",
         minConfidence: "0.7",
         familyId: "FLG_BANTU",

@@ -354,7 +354,7 @@ export const TRANSLATION_CLASSES: Readonly<
     "_meta.*": "invariant",
     id: "invariant",
     // Both locale-bound by their key. nameEn is corpus data, not a
-    // display-time lookup: the search ladder reads it in SQL (migration 082),
+    // display-time lookup: the search ladder reads it in SQL (migration 084),
     // and it follows the state's own English usage, which Admin0Country.name
     // (Natural Earth: "Ivory Coast", "Cape Verde") does not.
     nameFr: "invariant",

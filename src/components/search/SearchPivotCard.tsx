@@ -10,7 +10,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
-import { getFrenchCountryCommonName } from "@/lib/countryNames";
+import { getCountryCommonName } from "@/lib/countryNames";
+import { formatNumber } from "@/lib/languageTag";
+import {
+  getLocalizedSearchResultFamilyName,
+  getLocalizedSearchResultName,
+} from "@/lib/search/localizedResult";
 import { getCountryRoute, getFamilyRoute } from "@/lib/routing";
 import { cn } from "@/lib/utils";
 import type { SearchEntityType, SearchResult } from "@/types/afrik-frontend";
@@ -34,8 +39,6 @@ import type { Language } from "@/types/shared";
  * would be a trap. The fiche gets an explicit link instead.
  */
 
-const numberFr = new Intl.NumberFormat("fr-FR");
-
 export interface SearchPivotCardProps {
   result: SearchResult;
   language: Language;
@@ -51,7 +54,27 @@ export function SearchPivotCard({
 }: SearchPivotCardProps) {
   const type = result.type as SearchEntityType;
   const countries = result.countryIds ?? [];
-  const hasAutonym = Boolean(result.autonym && result.autonym !== result.name);
+  const name = getLocalizedSearchResultName(result, language);
+  const familyName = getLocalizedSearchResultFamilyName(result, language);
+  const hasAutonym = Boolean(result.autonym && result.autonym !== name);
+  const copy =
+    language === "en"
+      ? {
+          primary: "Primary result",
+          open: "Open record",
+          population: "Population",
+          confidence: "Confidence",
+          hierarchy: "Position in the AFRIK hierarchy",
+          family: (value: string) => `Linguistic family ${value}`,
+        }
+      : {
+          primary: "Résultat principal",
+          open: "Ouvrir la fiche",
+          population: "Population",
+          confidence: "Confiance",
+          hierarchy: "Position dans la hiérarchie AFRIK",
+          family: (value: string) => `Famille linguistique ${value}`,
+        };
 
   return (
     <Card
@@ -65,7 +88,7 @@ export function SearchPivotCard({
       )}
     >
       <p className="text-afh-eyebrow font-bold uppercase tracking-[0.11em] text-afh-fg-muted">
-        Résultat principal
+        {copy.primary}
       </p>
 
       {/* Mobile first: one column, names then figures. From md the figures
@@ -74,8 +97,8 @@ export function SearchPivotCard({
         <div className="min-w-0">
           <AutonymExonymHeading
             variant="inline"
-            autonym={hasAutonym ? result.autonym : result.name}
-            exonym={hasAutonym ? result.name : undefined}
+            autonym={hasAutonym ? result.autonym : name}
+            exonym={hasAutonym ? name : undefined}
             alternateNames={result.exonyms}
           />
           <Link
@@ -85,22 +108,26 @@ export function SearchPivotCard({
               CHARTER_FOCUS_RING
             )}
           >
-            Ouvrir la fiche
+            {copy.open}
           </Link>
         </div>
 
         <dl className="flex shrink-0 flex-col gap-1 md:text-right">
           {result.population !== undefined && (
             <>
-              <dt className="text-afh-caption text-afh-fg-muted">Population</dt>
+              <dt className="text-afh-caption text-afh-fg-muted">
+                {copy.population}
+              </dt>
               <dd className="text-afh-small font-semibold text-afh-text">
-                {numberFr.format(Math.round(result.population))}
+                {formatNumber(language, Math.round(result.population))}
               </dd>
             </>
           )}
           {result.confidence !== undefined && (
             <>
-              <dt className="text-afh-caption text-afh-fg-muted">Confiance</dt>
+              <dt className="text-afh-caption text-afh-fg-muted">
+                {copy.confidence}
+              </dt>
               {/* The database stores this on [0,1]; every chip in the product
                   reads 0-100. Converting here, once, is what keeps the two
                   scales from being confused downstream. */}
@@ -117,20 +144,20 @@ export function SearchPivotCard({
       )}
 
       <nav
-        aria-label="Position dans la hiérarchie AFRIK"
+        aria-label={copy.hierarchy}
         className="mt-4 flex flex-wrap items-center gap-2"
       >
-        {result.languageFamilyId && result.languageFamilyName && (
+        {result.languageFamilyId && familyName && (
           <Link
             href={getFamilyRoute(language, result.languageFamilyId)}
             // Linguistic attachment, not identity: several peoples grouped
             // under a family name reject it as a shared identity, and the
             // label must not quietly restate a colonial grouping.
-            aria-label={`Famille linguistique ${result.languageFamilyName}`}
+            aria-label={copy.family(familyName)}
             className={cn("rounded-full", CHARTER_FOCUS_RING)}
           >
             <Badge variant="outline" className="text-afh-caption">
-              {result.languageFamilyName}
+              {familyName}
             </Badge>
           </Link>
         )}
@@ -141,11 +168,14 @@ export function SearchPivotCard({
             className={cn("rounded-full", CHARTER_FOCUS_RING)}
           >
             <Badge variant="outline" className="text-afh-caption">
-              {getFrenchCountryCommonName(iso3, iso3)}
+              {getCountryCommonName(language, iso3, iso3)}
             </Badge>
           </Link>
         ))}
-        <ClassificationBadge status={result.classificationStatus} />
+        <ClassificationBadge
+          status={result.classificationStatus}
+          language={language}
+        />
       </nav>
     </Card>
   );

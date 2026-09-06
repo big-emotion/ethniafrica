@@ -121,7 +121,7 @@ describe("AFRIK Countries Queries", () => {
       );
     });
 
-    // ETNI-1857: the English name is a column of its own (migration 082),
+    // ETNI-1857: the English name is a column of its own (migration 084),
     // mirrored the way language families already expose theirs.
     // @req REQ-143
     it("surfaces the English name of ordinary use beside the French one", async () => {
