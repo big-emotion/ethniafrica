@@ -49,7 +49,7 @@ function chunk<T>(items: T[]): T[][] {
   return pages;
 }
 
-/** One afrik_translations row, in the column vocabulary of migration 082. */
+/** One afrik_translations row, in the column vocabulary of migration 085. */
 export interface TranslationRow {
   entity_type: TranslationEntityType;
   entity_id: string;
@@ -83,7 +83,7 @@ export interface TranslationLoadReport {
 
 // @req REQ-146
 export const MISSING_TRANSLATIONS_TABLE_HINT =
-  "afrik_translations is absent on this project — apply supabase/migrations/082_afrik_translations.sql, then rerun the sync; the stage was skipped";
+  "afrik_translations is absent on this project — apply supabase/migrations/085_afrik_translations.sql, then rerun the sync; the stage was skipped";
 
 // @req REQ-146
 export function emptyTranslationLoadReport(): TranslationLoadReport {

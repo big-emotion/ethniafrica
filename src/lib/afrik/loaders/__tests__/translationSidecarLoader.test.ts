@@ -227,7 +227,7 @@ describe("loadTranslationSidecars (REQ-146)", () => {
     expect(report.errors).toEqual([]);
     expect(report.inserted).toBe(0);
     expect(report.skipped).toBe(MISSING_TRANSLATIONS_TABLE_HINT);
-    expect(report.skipped).toContain("082_afrik_translations.sql");
+    expect(report.skipped).toContain("085_afrik_translations.sql");
     expect(logger.warn).toHaveBeenCalledTimes(1);
   });
 

@@ -288,7 +288,7 @@ describe("/[lang]/pays/[slug] page", () => {
       "data-country-name",
       "Nigéria"
     );
-    expect(mockGetCountryById).toHaveBeenCalledWith("NGA");
+    expect(mockGetCountryById).toHaveBeenCalledWith("NGA", "fr");
     expect(mockGetCountryAtlasIndex).toHaveBeenCalledOnce();
     expect(mockGetActiveSourceFlags).toHaveBeenCalledWith("country", "NGA");
     expect(screen.queryByTestId("pinned-version-banner")).toBeNull();

@@ -274,7 +274,7 @@ describe("/[lang]/familles/[slug] page", () => {
       const { getByTestId, queryByTestId } =
         await renderFamillesPage("FLG_BANTU");
 
-      expect(mockGetLanguageFamilyById).toHaveBeenCalledWith("FLG_BANTU");
+      expect(mockGetLanguageFamilyById).toHaveBeenCalledWith("FLG_BANTU", "fr");
       expect(getByTestId("family-record-view")).toHaveAttribute(
         "data-family-id",
         "FLG_BANTU"

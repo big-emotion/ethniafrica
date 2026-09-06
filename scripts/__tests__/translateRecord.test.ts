@@ -182,6 +182,20 @@ describe("translateRecord — resolution (REQ-146)", () => {
       "langues/lin.json",
     ]);
   });
+
+  // @req REQ-146
+  it("refuses record paths and batch roots outside the corpus", () => {
+    const root = createRoot();
+    const { corpusRoot } = corpus(root);
+    writeJson(join(root, "outside.json"), LINGALA);
+
+    expect(() => resolveRecordPath("../../outside", corpusRoot)).toThrow(
+      /outside the corpus/
+    );
+    expect(() => listBatchRecords(corpusRoot, root)).toThrow(
+      /outside the corpus/
+    );
+  });
 });
 
 describe("translateRecord — skeleton and prompt (REQ-143, REQ-146)", () => {

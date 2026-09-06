@@ -54,4 +54,31 @@ describe("the fiche head on its way into the plate (REQ-115)", () => {
     expect(html).not.toMatch(/#[0-9a-fA-F]{3,8}\b/);
     expect(html).not.toMatch(/rgba?\(|hsl\(/);
   });
+
+  // @req REQ-142
+  it("surfaces translation provenance beside a translated fiche title", () => {
+    render(
+      <FicheHeroHead
+        entityType="language"
+        translation={{ kind: "machine", stale: false }}
+      >
+        <h1>Nǁng</h1>
+      </FicheHeroHead>
+    );
+
+    expect(screen.getByRole("status")).toHaveTextContent(
+      "Machine translation, not yet reviewed"
+    );
+  });
+
+  // @req REQ-142
+  it("adds no provenance marker to an authored fiche", () => {
+    render(
+      <FicheHeroHead entityType="language" translation={null}>
+        <h1>Nǁng</h1>
+      </FicheHeroHead>
+    );
+
+    expect(screen.queryByRole("status")).not.toBeInTheDocument();
+  });
 });

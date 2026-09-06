@@ -16,7 +16,7 @@
  */
 
 import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { join, relative, sep } from "node:path";
+import { isAbsolute, join, relative, resolve, sep } from "node:path";
 
 import { GLOSSARY_TERMS } from "@/lib/glossaire/terms";
 import {
@@ -73,6 +73,20 @@ function toPosix(path: string): string {
   return path.split(sep).join("/");
 }
 
+function pathInside(root: string, candidate: string, label: string): string {
+  const absoluteRoot = resolve(root);
+  const absoluteCandidate = resolve(candidate);
+  const fromRoot = relative(absoluteRoot, absoluteCandidate);
+  if (
+    fromRoot === ".." ||
+    fromRoot.startsWith(`..${sep}`) ||
+    isAbsolute(fromRoot)
+  ) {
+    throw new Error(`${label}: path is outside the corpus`);
+  }
+  return absoluteCandidate;
+}
+
 /**
  * What a human types — `PPL_ASANTE`, `GHA`, `lin`, `noms/PPL_DOGON` — to a
  * path relative to the corpus root. A people is found through its family
@@ -86,7 +100,8 @@ export function resolveRecordPath(
 ): string {
   const candidate = idOrPath.endsWith(".json") ? idOrPath : `${idOrPath}.json`;
   if (candidate.includes("/")) {
-    if (existsSync(join(corpusRoot, candidate))) return toPosix(candidate);
+    const file = pathInside(corpusRoot, join(corpusRoot, candidate), idOrPath);
+    if (existsSync(file)) return toPosix(relative(corpusRoot, file));
     throw new Error(
       `${idOrPath}: no fiche at ${candidate} under ${corpusRoot}`
     );
@@ -139,6 +154,7 @@ export function listBatchRecords(
   corpusRoot: string,
   batchDir: string
 ): string[] {
+  const safeBatchDir = pathInside(corpusRoot, batchDir, batchDir);
   const found: string[] = [];
   const walk = (directory: string) => {
     for (const entry of readdirSync(directory, { withFileTypes: true })) {
@@ -153,7 +169,7 @@ export function listBatchRecords(
       found.push(toPosix(relative(corpusRoot, file)));
     }
   };
-  walk(batchDir);
+  walk(safeBatchDir);
   return found.sort();
 }
 
@@ -445,14 +461,20 @@ export async function translateRecord(
   options: TranslateOptions,
   provider: TranslationProvider
 ): Promise<RecordOutcome> {
-  const source = readRecord(join(options.corpusRoot, relativePath));
+  const sourceFile = pathInside(
+    options.corpusRoot,
+    join(options.corpusRoot, relativePath),
+    relativePath
+  );
+  const source = readRecord(sourceFile);
   const entityType = entityTypeOf(relativePath);
   const model = modelForEntity(entityType, source);
   const classify = classifierFor(model);
   const recordId = typeof source.id === "string" ? source.id : relativePath;
-  const sidecarFile = join(
-    options.translationsRoot,
-    options.lang,
+  const localeRoot = join(options.translationsRoot, options.lang);
+  const sidecarFile = pathInside(
+    localeRoot,
+    join(localeRoot, relativePath),
     relativePath
   );
   const currentHash = sourceHash(source, classify);

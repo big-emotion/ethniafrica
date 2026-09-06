@@ -424,7 +424,7 @@ describe("migrateAfrikToDatabase", () => {
       total: 1,
       inserted: 0,
       skipped:
-        "afrik_translations is absent — apply 082_afrik_translations.sql",
+        "afrik_translations is absent — apply 085_afrik_translations.sql",
       stale: [],
       errors: [],
     });
@@ -444,7 +444,7 @@ describe("migrateAfrikToDatabase", () => {
       target: recetteTarget,
     });
 
-    expect(report.translations.skipped).toContain("082_afrik_translations");
+    expect(report.translations.skipped).toContain("085_afrik_translations");
     expect(report.translations.errors).toEqual([]);
     const outcome = classifySyncOutcome(report);
     expect(outcome.structuralFailures).not.toContain("translations");
