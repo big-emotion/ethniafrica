@@ -41,6 +41,7 @@ describe("authorized source catalogue", () => {
     ["https://www.un.org/development/desa/pd/", "official"],
     ["https://glottolog.org/", "official"],
     ["https://www.jstor.org/stable/123", "referenced"],
+    ["https://growup.ethz.ch/atlas/pdf/Madagascar.pdf", "referenced"],
     ["https://en.wikipedia.org/wiki/Yoruba_people", "unverified"],
     ["https://www.worldcat.org/title/example", "unverified"],
     ["https://chat.openai.com/", "unverified"],

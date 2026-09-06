@@ -206,13 +206,67 @@
         "url": "https://unstats.un.org/unsd/methodology/m49/",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "EPR Atlas — Ethnicity in Madagascar (GROWup, ETH Zurich)",
+        "url": "https://growup.ethz.ch/atlas/pdf/Madagascar.pdf",
+        "tier": "referenced",
+        "notes": "Donne la part des cinq groupes les plus nombreux : Merina 27 %, Betsimisaraka 15 %, Betsileo 13 %, Antandroy 8 %, Sakalava 5 %. Les recensements malgaches ne relèvent pas l'appartenance ethnique — celui de 2018 a dénombré 25,7 millions d'habitants sans poser la question —, si bien qu'aucune répartition officielle n'existe et que ces parts restent des estimations. L'atlas rappelle que les dix-huit groupes dits officiels ont été figés par l'administration coloniale française plus que par des frontières culturelles nettes, et que les Bara et les Sihanaka relèvent des deux grands ensembles à la fois, raison pour laquelle ils ne reçoivent pas de part propre."
       }
     ],
     "demographics": {
       "totalPopulation": 32700000,
       "referenceYear": 2025,
       "source": "UNFPA – World Population Dashboard",
-      "peoples": []
+      "peoples": [
+        {
+          "name": "Merina",
+          "peopleId": "PPL_MERINA",
+          "region": "Hautes terres centrales (Imerina, Antananarivo)",
+          "languageFamily": "FLG_AUSTRONESIENNE",
+          "mainLanguageCode": "plt",
+          "percentageInCountry": 27
+        },
+        {
+          "name": "Betsimisaraka",
+          "peopleId": "PPL_BETSIMISARAKA",
+          "region": "Côte est (Toamasina)",
+          "languageFamily": "FLG_AUSTRONESIENNE",
+          "mainLanguageCode": "bmm",
+          "percentageInCountry": 15
+        },
+        {
+          "name": "Betsileo",
+          "peopleId": "PPL_BETSILEO",
+          "region": "Hautes terres du Sud (Fianarantsoa)",
+          "languageFamily": "FLG_AUSTRONESIENNE",
+          "mainLanguageCode": "plt",
+          "percentageInCountry": 13
+        },
+        {
+          "name": "Antandroy",
+          "peopleId": "PPL_ANTANDROY",
+          "region": "Extrême Sud (Androy)",
+          "languageFamily": "FLG_AUSTRONESIENNE",
+          "mainLanguageCode": "tdx",
+          "percentageInCountry": 8
+        },
+        {
+          "name": "Sakalava",
+          "peopleId": "PPL_SAKALAVA",
+          "region": "Côte ouest (Menabe, Boina)",
+          "languageFamily": "FLG_AUSTRONESIENNE",
+          "mainLanguageCode": "skg",
+          "percentageInCountry": 5
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 32
+        }
+      ]
     }
   }
 }

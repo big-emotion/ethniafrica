@@ -4494,16 +4494,15 @@ export function checkTranslationClassCoverage(
  * rely on, truncated ids such as PPL_MO, and family lists naming peoples never
  * written. Retired ids are not in that tail: FR27 Retired identifiers stays a
  * hard error, so a merge or rename cannot leave a link behind.
+
  *
- * FR28-declared is advisory for exactly one fiche: MDG, the only country of the
- * 54 that has never declared an ethnic split. It leaves this set with that
- * fiche and on nothing else — a second country falling silent is a regression,
- * not a reason to keep the check soft.
+ * FR28-declared was advisory for exactly one fiche — MDG, the only country of
+ * the 54 that had never declared an ethnic split. It left this set with that
+ * fiche, as announced, and is a hard error since.
  */
 export const SOFT_CHECK_NAMES: ReadonlySet<string> = new Set([
   "FR52-coverage People-to-language coverage",
   "FR27-references People references resolve",
-  "FR28-declared Population split declared",
 ]);
 
 export interface IntegrityCheck {
