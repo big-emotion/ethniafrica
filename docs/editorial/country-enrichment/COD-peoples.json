@@ -274,7 +274,7 @@
         "canonicalPeopleId": "PPL_BANDA",
         "parentPeopleId": null,
         "decision": "Keep Banda as a broad transborder people identity represented in the DRC, while treating its named language communities as non-additive subgroups.",
-        "notes": "Controlled vocabulary and current specialist directories attest Banda communities in the DRC. The fiche spans several Banda language varieties and cannot support an exact 70,000 DRC total from its present citations; population and subgroup boundaries require a record-level source inventory.",
+        "notes": "Controlled vocabulary and current specialist directories attest Banda communities in the DRC. The fiche spans several Banda language varieties and cannot support an exact 70,000 DRC total from its present citations; population and subgroup boundaries require a record-level source inventory. Its current bfl, bqk, and liy codes identify varieties that Glottolog places outside the DRC, while the pinned CD inventory instead includes Banda-Banda (bpd), Mid-Southern Banda (bjo), South Central Banda (lnl), and Togbo-Vara Banda (tor). Do not publish the current code list as DRC language coverage.",
         "sources": [
           {
             "title": "Library of Congress Subject Headings — Banda (African people)",
@@ -659,7 +659,7 @@
         "canonicalPeopleId": "PPL_GBAYA",
         "parentPeopleId": null,
         "decision": "Keep Gbaya provisionally as a broad people identity, but leave the DRC country relation unapproved until a direct contemporary source identifies the local community.",
-        "notes": "Ethnographic literature supports Gbaya as a people with multiple regional and linguistic branches, but the strongest sources reviewed focus on the Central African Republic and Cameroon. The local 20,000-person DRC estimate has no direct support, and Congo-Brazzaville references create an ambiguity risk. Do not publish or count the DRC relation as verified yet.",
+        "notes": "Ethnographic literature supports Gbaya as a people with multiple regional and linguistic branches, but the strongest sources reviewed focus on the Central African Republic and Cameroon. The local 20,000-person DRC estimate has no direct support, and Congo-Brazzaville references create an ambiguity risk. The broad gba code has no individual Glottolog CD row and Gbaya-Bossangoa (gbp) is placed in the Central African Republic only. Do not publish or count the DRC relation or its current codes as verified yet.",
         "sources": [
           {
             "title": "ERIC — The Gbaya Language, Grammar, Texts, and Vocabularies",
@@ -1276,7 +1276,7 @@
         "canonicalPeopleId": "PPL_KONGO",
         "parentPeopleId": null,
         "decision": "Keep PPL_KONGO as the canonical umbrella record for the Kongo/Bakongo identity.",
-        "notes": "Use this record as the parent of regional and named Kongo subgroups. Do not sum its population with Kongo (Sud), Yombe, Manianga, Solongo, or other child records. The FLG_BANTU versus FLG_NIGERCONGO assignments within the cluster require separate normalization.",
+        "notes": "Use this record as the parent of regional and named Kongo subgroups. Do not sum its population with Kongo (Sud), Yombe, Manianga, Solongo, or other child records. The FLG_BANTU versus FLG_NIGERCONGO assignments within the cluster require separate normalization. ISO 639-3 kon is a macrolanguage and is not itself a Glottolog CD inventory row; reader-facing DRC language coverage must instead resolve Eastern Kikongo and the relevant kng, kwy, and ktu records without treating them as interchangeable.",
         "sources": [
           {
             "title": "British Museum — Bakongo",
@@ -3258,7 +3258,7 @@
         "canonicalPeopleId": "PPL_SWAHILI",
         "parentPeopleId": null,
         "decision": "Keep PPL_SWAHILI as a Waswahili people record in the DRC, strictly separated from the much larger Kiswahili-speaking population.",
-        "notes": "The scholarly source supports Waswahili as an ethnic category, while current people-group directories report a comparatively small Muslim Swahili community in the DRC around 64,000–68,000. The fiche's 30,000 value should be updated or redated. Never use this record to represent all Congolese Kiswahili speakers; language coverage belongs in the language inventory, using the swh individual-language code rather than the swa macrolanguage where appropriate.",
+        "notes": "The scholarly source supports Waswahili as an ethnic category, while current people-group directories report a comparatively small Muslim Swahili community in the DRC around 64,000–68,000. The fiche's 30,000 value should be updated or redated. Never use this record to represent all Congolese Kiswahili speakers. The swa macrolanguage is not a Glottolog CD row; the pinned inventory identifies Congo Swahili (swc), while the existing swh dossier represents standardized Swahili outside that country inventory. The constitutional Kiswahili label requires an explicit editorial mapping across these related levels.",
         "sources": [
           {
             "title": "Africa — The Waswahili: The social history of an ethnic group",
@@ -3363,7 +3363,7 @@
         "canonicalPeopleId": "PPL_TEKE",
         "parentPeopleId": null,
         "decision": "Proposed canonical record for the Teke/Bateke identity. Reconcile useful content from PPL_TEKKE before any retirement operation.",
-        "notes": "The two local fiches cover the same three countries and share ISO 639-3 tek. Contemporary museum terminology uses Bateke with Teke as an alternative name, while the scholarly reference uses Teke. The broader Teke language cluster still requires language-level reconciliation and must not be mistaken for multiple people records.",
+        "notes": "The two local fiches cover the same three countries and share ISO 639-3 tek. Contemporary museum terminology uses Bateke with Teke as an alternative name, while the scholarly reference uses Teke. The broader Teke language cluster still requires language-level reconciliation and must not be mistaken for multiple people records. Glottolog places tek in the DRC and the Republic of the Congo, but the fiche's iyx, lli, teg, and tyi records are outside the DRC; the CD inventory also includes Teke-Eboo-Nzikou (ebo) and Teke-Fuumu (ifm). Country language exposure must not inherit the entire five-code people list.",
         "sources": [
           {
             "title": "British Museum — Bateke",
@@ -3523,7 +3523,7 @@
         "canonicalPeopleId": "PPL_TETELA",
         "parentPeopleId": "PPL_MONGO",
         "decision": "Keep as the Tetela/Batetela people and model it as a non-additive child of the broad Mongo identity.",
-        "notes": "The DRC identity is directly attested and has a distinct modern political identity, while controlled vocabularies and scholarship place Tetela within the wider Mongo/Nkutshu family. Parent and child population figures must not be summed, and the current modeled total requires a directly compatible source.",
+        "notes": "The DRC identity is directly attested and has a distinct modern political identity, while controlled vocabularies and scholarship place Tetela within the wider Mongo/Nkutshu family. Parent and child population figures must not be summed, and the current modeled total requires a directly compatible source. The fiche's tet code is erroneous: ISO 639-3 tet is Tetum in Indonesia and Timor-Leste, while Glottolog identifies the DRC Tetela language as tll (tete1250). Replace the code before publication.",
         "sources": [
           {
             "title": "Bibliothèque nationale de France — Tetela (African people)",
