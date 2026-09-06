@@ -108,6 +108,15 @@ Two of them decide whether the site works at all:
   check stays green.
 - `ETHNIAFRICA_TRAEFIK_RULE` — the Traefik host rule, below.
 
+One controls which language is public:
+
+- `SITE_LOCALE_MODE=fr-only` keeps the bilingual work silent and preserves the current French
+  product. This is also the fail-closed behaviour when the key is missing or invalid. Later,
+  `bilingual-fr-default` can publish English without moving the homepage away from French;
+  `bilingual-en-default` is the final English-default state. Treat a mode change as a release:
+  rebuild the image rather than restarting an image built under another mode. The deploy smoke
+  gate checks the root, both locale roots, and a remembered English choice before succeeding.
+
 ### The host rule, in three stages
 
 Setting this to a hostname whose DNS does not point here yet makes Traefik retry a

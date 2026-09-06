@@ -358,19 +358,77 @@ jobs:
 
           # Polls the container directly rather than the public hostname: this has to
           # report on the deploy, not on DNS, Traefik or a CDN in front of them.
+          CONTAINER_READY=""
           for attempt in $(seq 1 30); do
             if docker compose exec -T ethniafrica node -e \
                  "fetch('http://127.0.0.1:3000/fr').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"; then
               echo "container answered on attempt $attempt"
-              exit 0
+              CONTAINER_READY=yes
+              break
             fi
             sleep 5
           done
 
-          echo "the new container never answered on /fr — rolling back is a host-side"
-          echo "operation, see docs/runbooks/ovh-production-deploy.md"
-          docker compose logs --tail=100 ethniafrica
-          exit 1
+          if [ -z "$CONTAINER_READY" ]; then
+            echo "the new container never answered on /fr — rolling back is a host-side"
+            echo "operation, see docs/runbooks/ovh-production-deploy.md"
+            docker compose logs --tail=100 ethniafrica
+            exit 1
+          fi
+
+          # /fr being healthy says nothing about which language the root publishes.
+          # Probe the three boundaries without following redirects, using the same
+          # environment the application reads. A typo is safe in code but still a
+          # deployment error: silent fallback must not hide operator intent.
+          docker compose exec -T ethniafrica node --input-type=module <<'NODE'
+          const configured = process.env.SITE_LOCALE_MODE;
+          const allowedModes = new Set([
+            "fr-only",
+            "bilingual-fr-default",
+            "bilingual-en-default",
+          ]);
+          if (configured && !allowedModes.has(configured)) {
+            throw new Error(`invalid SITE_LOCALE_MODE: ${configured}`);
+          }
+
+          const mode = configured || "fr-only";
+          const bilingual = mode !== "fr-only";
+          const defaultPath = mode === "bilingual-en-default" ? "/en" : "/fr";
+          const rememberedEnglishPath = bilingual ? "/en" : "/fr";
+          const checks = [
+            { path: "/", status: 307, location: defaultPath },
+            {
+              path: "/",
+              status: 307,
+              location: rememberedEnglishPath,
+              cookie: "ethni-locale=en",
+            },
+            { path: "/fr", status: 200 },
+            bilingual
+              ? { path: "/en", status: 200 }
+              : { path: "/en", status: 307, location: "/fr" },
+          ];
+
+          for (const check of checks) {
+            const response = await fetch(`http://127.0.0.1:3000${check.path}`, {
+              redirect: "manual",
+              headers: check.cookie ? { cookie: check.cookie } : undefined,
+            });
+            const actualLocation = response.headers.get("location");
+            const actualPath = actualLocation
+              ? new URL(actualLocation, "http://127.0.0.1:3000").pathname
+              : null;
+            if (
+              response.status !== check.status ||
+              (check.location && actualPath !== check.location)
+            ) {
+              throw new Error(
+                `${check.path} expected ${check.status} ${check.location || ""}, got ${response.status} ${actualPath || ""}`
+              );
+            }
+          }
+          console.log(`locale publication smoke passed in ${mode}`);
+          NODE
           REMOTE
 
       - name: Revoke the deploy key from the runner

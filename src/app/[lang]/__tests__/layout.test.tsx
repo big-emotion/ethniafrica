@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("next/navigation", () => ({
   notFound: vi.fn(() => {
@@ -19,6 +19,7 @@ vi.mock("@/lib/hubs/moduleAvailability", () => ({
 
 import LangLayout from "../layout";
 import { useModuleAvailability } from "@/components/hubs/ModuleAvailabilityProvider";
+import { useLocalePublicationMode } from "@/components/layout/LocalePublicationProvider";
 
 function renderLayout(lang: string, children: React.ReactNode = <p>corpus</p>) {
   return LangLayout({
@@ -28,6 +29,10 @@ function renderLayout(lang: string, children: React.ReactNode = <p>corpus</p>) {
 }
 
 describe("[lang] layout", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
+
   // @req REQ-052
   it("renders the page under the canonical fr segment", async () => {
     const { container } = render(await renderLayout("fr"));
@@ -42,10 +47,19 @@ describe("[lang] layout", () => {
     await expect(renderLayout("quiz")).rejects.toThrow("NEXT_NOT_FOUND");
   });
 
-  // English is a published locale (REQ-140): the segment renders, and the
-  // French folder it was rewritten onto is no concern of this guard.
+  // Supported is not the same as published. The middleware normally contains
+  // this address, but the layout is the defence if that layer is bypassed.
   // @req REQ-140
-  it("renders the page under the English segment", async () => {
+  it("404s on the English segment while the site is French-only", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
+
+    await expect(renderLayout("en")).rejects.toThrow("NEXT_NOT_FOUND");
+  });
+
+  // @req REQ-140
+  it("renders the page under the English segment in a bilingual mode", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-fr-default");
+
     const { container } = render(await renderLayout("en"));
     expect(container.textContent).toContain("corpus");
   });
@@ -74,5 +88,18 @@ describe("[lang] layout", () => {
     render(await renderLayout("fr", <Reader />));
 
     expect(screen.getByText(JSON.stringify(availability))).toBeInTheDocument();
+  });
+
+  // @req REQ-140
+  it("hands the server-resolved publication mode to the client tree", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-fr-default");
+
+    function Reader() {
+      return <span>{useLocalePublicationMode()}</span>;
+    }
+
+    render(await renderLayout("fr", <Reader />));
+
+    expect(screen.getByText("bilingual-fr-default")).toBeInTheDocument();
   });
 });

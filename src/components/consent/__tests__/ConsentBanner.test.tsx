@@ -5,7 +5,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ConsentBanner } from "../ConsentBanner";
 import * as useConsentModule from "@/hooks/use-consent";
-import { DEFAULT_LOCALE } from "@/lib/locale";
+import { FALLBACK_LOCALE } from "@/lib/locale";
 import { getStaticPageRoute } from "@/lib/routing";
 
 // Mock the useConsent hook
@@ -216,7 +216,10 @@ describe("ConsentBanner", () => {
 
     expect(
       screen.getByRole("link", { name: /politique de données/i })
-    ).toHaveAttribute("href", getStaticPageRoute(DEFAULT_LOCALE, "dataPolicy"));
+    ).toHaveAttribute(
+      "href",
+      getStaticPageRoute(FALLBACK_LOCALE, "dataPolicy")
+    );
   });
 
   it("saves custom preferences when save button is clicked", async () => {

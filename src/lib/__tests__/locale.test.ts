@@ -1,24 +1,29 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import {
-  DEFAULT_LOCALE,
+  FALLBACK_LOCALE,
   LOCALES,
+  LOCALE_MODES,
   LOCALE_COOKIE,
   LOCALE_HEADER,
+  getDefaultLocale,
+  getLocalePublicationMode,
+  getPublishedLocales,
   isLocale,
+  isPublishedLocale,
   localeCookieAttributes,
   resolveLocale,
 } from "@/lib/locale";
 
 describe("the published locales (REQ-140)", () => {
   // @req REQ-140
-  it("publishes exactly English and French, English first", () => {
+  it("supports exactly English and French in the bilingual codebase", () => {
     expect(LOCALES).toEqual(["en", "fr"]);
   });
 
   // @req REQ-140
-  it("answers English when nothing says otherwise", () => {
-    expect(DEFAULT_LOCALE).toBe("en");
+  it("keeps French as the fail-closed fallback", () => {
+    expect(FALLBACK_LOCALE).toBe("fr");
   });
 
   // @req REQ-140
@@ -32,20 +37,73 @@ describe("the published locales (REQ-140)", () => {
   });
 });
 
+describe("locale publication modes (REQ-140)", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
+
+  // @req REQ-140
+  it("accepts the three deliberate publication states", () => {
+    expect(LOCALE_MODES).toEqual([
+      "fr-only",
+      "bilingual-fr-default",
+      "bilingual-en-default",
+    ]);
+  });
+
+  // Missing or misspelled configuration must not publish unfinished English.
+  // @req REQ-140
+  it.each([undefined, "", "true", "bilingual", "EN"])(
+    "fails closed to French-only for %s",
+    (value) => {
+      if (value === undefined) vi.stubEnv("SITE_LOCALE_MODE", undefined);
+      else vi.stubEnv("SITE_LOCALE_MODE", value);
+
+      expect(getLocalePublicationMode()).toBe("fr-only");
+      expect(getPublishedLocales()).toEqual(["fr"]);
+      expect(getDefaultLocale()).toBe("fr");
+      expect(isPublishedLocale("fr")).toBe(true);
+      expect(isPublishedLocale("en")).toBe(false);
+    }
+  );
+
+  // @req REQ-140
+  it.each([
+    ["fr-only", ["fr"], "fr"],
+    ["bilingual-fr-default", ["en", "fr"], "fr"],
+    ["bilingual-en-default", ["en", "fr"], "en"],
+  ] as const)(
+    "resolves %s to its published locales and default",
+    (mode, locales, defaultLocale) => {
+      vi.stubEnv("SITE_LOCALE_MODE", mode);
+
+      expect(getLocalePublicationMode()).toBe(mode);
+      expect(getPublishedLocales()).toEqual(locales);
+      expect(getDefaultLocale()).toBe(defaultLocale);
+    }
+  );
+});
+
 describe("resolving the reader's choice from the cookie (REQ-140)", () => {
   // @req REQ-140
-  it("honours an explicit choice", () => {
-    expect(resolveLocale("fr")).toBe("fr");
-    expect(resolveLocale("en")).toBe("en");
+  it("ignores an English cookie while English is unpublished", () => {
+    expect(resolveLocale("fr", "fr-only")).toBe("fr");
+    expect(resolveLocale("en", "fr-only")).toBe("fr");
+  });
+
+  // @req REQ-140
+  it("honours either explicit choice in a bilingual mode", () => {
+    expect(resolveLocale("fr", "bilingual-en-default")).toBe("fr");
+    expect(resolveLocale("en", "bilingual-fr-default")).toBe("en");
   });
 
   // A tampered or stale cookie is not a choice: it falls back to the default
   // rather than to a locale the site does not publish.
   // @req REQ-140
   it("falls back to the default for an absent or unknown value", () => {
-    expect(resolveLocale(undefined)).toBe(DEFAULT_LOCALE);
-    expect(resolveLocale("")).toBe(DEFAULT_LOCALE);
-    expect(resolveLocale("xx")).toBe(DEFAULT_LOCALE);
+    expect(resolveLocale(undefined, "bilingual-en-default")).toBe("en");
+    expect(resolveLocale("", "bilingual-fr-default")).toBe("fr");
+    expect(resolveLocale("xx", "fr-only")).toBe("fr");
   });
 });
 

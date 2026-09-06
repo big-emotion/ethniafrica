@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import type { ReactElement } from "react";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
   FicheLoadingScreen,
@@ -44,6 +44,11 @@ const loadingScreen = async (props: FicheLoadingScreenProps) =>
 beforeEach(() => {
   requestHeaders.clear();
   requestHeaders.set(LOCALE_HEADER, "fr");
+  vi.stubEnv("SITE_LOCALE_MODE", "fr-only");
+});
+
+afterEach(() => {
+  vi.unstubAllEnvs();
 });
 
 describe("FicheLoadingScreen (REQ-104 — what a fiche shows while it is being fetched)", () => {
@@ -119,6 +124,7 @@ describe("FicheLoadingScreen (REQ-104 — what a fiche shows while it is being f
 describe("FicheLoadingScreen — the wait is in the page's locale (REQ-140)", () => {
   // @req REQ-140
   it("dresses the shell and the announcement in the request's locale", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-en-default");
     requestHeaders.set(LOCALE_HEADER, "en");
     await loadingScreen({ entityType: "country" });
 
@@ -132,6 +138,6 @@ describe("FicheLoadingScreen — the wait is in the page's locale (REQ-140)", ()
     requestHeaders.clear();
     await loadingScreen({ entityType: "people" });
 
-    expect(screen.getByTestId("site-brand")).toHaveAttribute("href", "/en");
+    expect(screen.getByTestId("site-brand")).toHaveAttribute("href", "/fr");
   });
 });
