@@ -24,6 +24,7 @@ import { getTranslation } from "@/lib/translations";
 import type { CountryId } from "@/types/afrik";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import { formatNumber } from "@/lib/languageTag";
+import { facetDirectoriesCopy } from "@/lib/i18n/copy/facetDirectories";
 import type { Language } from "@/types/shared";
 
 /**
@@ -121,6 +122,7 @@ export default async function LanguesHubPage({
   const language = lang as Language;
   const count = (value: number) => formatNumber(language, value);
   const t = getTranslation(language).languages;
+  const copy = facetDirectoriesCopy[language].languages;
   const query = (await searchParams) ?? {};
 
   const chosenSearch = definedFilter(query[PARAM.search]);
@@ -205,7 +207,7 @@ export default async function LanguesHubPage({
   const activeFilters: FacetActiveFilter[] = [];
   if (filters.familyId) {
     activeFilters.push({
-      label: `Famille : ${familyLabels.get(filters.familyId) ?? filters.familyId}`,
+      label: `${copy.familyFilter}: ${familyLabels.get(filters.familyId) ?? filters.familyId}`,
       removeHref: facetHref(
         language,
         { ...filters, familyId: null },
@@ -216,7 +218,7 @@ export default async function LanguesHubPage({
   }
   if (filters.letter) {
     activeFilters.push({
-      label: `Lettre : ${filters.letter}`,
+      label: `${copy.letterFilter}: ${filters.letter}`,
       removeHref: facetHref(
         language,
         { ...filters, letter: null },
@@ -243,10 +245,7 @@ export default async function LanguesHubPage({
     />
   );
 
-  const lede =
-    `${count(reading.total)} ` +
-    `${reading.total === 1 ? t.range.languagesSingular : t.range.languagesPlural} ` +
-    `dans cette sélection. Choisissez un pays sur le globe pour voir celles qu'on y parle.`;
+  const lede = copy.lede(count(reading.total), reading.total === 1);
 
   if (unavailable) {
     return (
@@ -282,14 +281,14 @@ export default async function LanguesHubPage({
           className="mt-4"
           searchField={{
             name: PARAM.search,
-            label: "Rechercher une langue",
-            placeholder: "Nom de la langue, code ISO 639-3",
+            label: copy.searchLabel,
+            placeholder: copy.searchPlaceholder,
             value: filters.search ?? null,
           }}
           primaryField={{
             name: PARAM.country,
-            label: "Pays",
-            anyLabel: "Tous les pays",
+            label: copy.country,
+            anyLabel: copy.allCountries,
             options: choices.countries.map((country) => ({
               value: country.id,
               label: country.label,
@@ -299,8 +298,8 @@ export default async function LanguesHubPage({
           advancedFields={[
             {
               name: PARAM.family,
-              label: "Famille linguistique",
-              anyLabel: "Toutes les familles",
+              label: copy.family,
+              anyLabel: copy.allFamilies,
               options: choices.families.map((family) => ({
                 value: family.id,
                 label: family.label,
@@ -311,6 +310,7 @@ export default async function LanguesHubPage({
           advancedSlot={{
             content: (
               <FacetLetterRail
+                language={language}
                 current={filters.letter}
                 hrefFor={(letter) =>
                   facetHref(language, { ...filters, letter }, null, pageSize)
@@ -331,7 +331,7 @@ export default async function LanguesHubPage({
 
         {reading.languages.length === 0 ? (
           <p data-testid="langues-facet-empty" className="mt-6">
-            Aucune langue du corpus ne répond à cette sélection.{" "}
+            {copy.empty}{" "}
             <Link
               href={facetHref(
                 language,
@@ -345,14 +345,14 @@ export default async function LanguesHubPage({
                 pageSize
               )}
             >
-              Revenir à toutes les langues
+              {copy.reset}
             </Link>
           </p>
         ) : (
           <>
             {pagination("top")}
             <ul
-              aria-label="Langues"
+              aria-label={copy.listLabel}
               className="mt-6 flex flex-col gap-2 p-0 md:grid md:grid-cols-2 xl:grid-cols-3"
             >
               {reading.languages.map((entry) => (

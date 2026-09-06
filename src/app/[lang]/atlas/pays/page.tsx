@@ -18,6 +18,7 @@ import {
 } from "@/lib/routing";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import { getTranslation } from "@/lib/translations";
+import { facetDirectoriesCopy } from "@/lib/i18n/copy/facetDirectories";
 import type { CountryId } from "@/types/afrik";
 import type { Language } from "@/types/shared";
 
@@ -91,9 +92,11 @@ const SORT_PARAM = "tri";
 function CountryRow({
   row,
   language,
+  documentedPeoples,
 }: {
   row: CountryFacetRow;
   language: Language;
+  documentedPeoples: string;
 }) {
   return (
     <li>
@@ -104,7 +107,7 @@ function CountryRow({
         <span>{row.label}</span>
         <span className="text-afh-caption text-afh-text-soft font-mono tabular-nums">
           {row.documentedPeopleCount}
-          <span className="sr-only"> peuples documentés</span>
+          <span className="sr-only"> {documentedPeoples}</span>
         </span>
       </Link>
     </li>
@@ -121,6 +124,7 @@ export default async function PaysHubPage({
 }) {
   const { lang } = await params;
   const language = lang as Language;
+  const copy = facetDirectoriesCopy[language].countries;
   const query = (await searchParams) ?? {};
 
   const fiche = resolveCountryDeepLink(language, query);
@@ -177,26 +181,28 @@ export default async function PaysHubPage({
             changes with them. */}
         <header className="afh-facet-reading-head">
           <p className="afh-facet-reading-lede">
-            {selection.totalCountries} pays au corpus
-            {filtered && ` · ${selection.rows.length} dans cette sélection`}.
-            Choisissez-en un sur le globe ou dans la liste pour ouvrir sa fiche.
+            {copy.lede(
+              String(selection.totalCountries),
+              String(selection.rows.length),
+              filtered
+            )}
           </p>
         </header>
 
         <section className="afh-facet-reading-section">
           <FacetFilterBar
             action={countryFacetRoute}
-            submitLabel="Appliquer"
+            submitLabel={copy.submit}
             searchField={{
               name: SEARCH_PARAM,
-              label: "Rechercher un pays",
-              placeholder: "Nom ou identifiant du pays",
+              label: copy.searchLabel,
+              placeholder: copy.searchPlaceholder,
               value: chosenSearch,
             }}
             primaryField={{
               name: FAMILY_PARAM,
-              label: "Famille linguistique",
-              anyLabel: "Toutes les familles",
+              label: copy.family,
+              anyLabel: copy.allFamilies,
               options: selection.familyOptions,
               value: chosenFamily,
             }}
@@ -206,12 +212,12 @@ export default async function PaysHubPage({
                 // absent one: a list always has some order, so "no sort" would
                 // name a state the page cannot be in.
                 name: SORT_PARAM,
-                label: "Tri",
-                anyLabel: "Nom (A → Z)",
+                label: copy.sort,
+                anyLabel: copy.alphabetical,
                 options: [
                   {
                     value: "peuples",
-                    label: "Peuples documentés (décroissant)",
+                    label: copy.documentedPeoplesDescending,
                   },
                 ],
                 value: chosenSort === "peuples" ? "peuples" : null,
@@ -221,7 +227,7 @@ export default async function PaysHubPage({
               chosenSort === "peuples"
                 ? [
                     {
-                      label: "Tri : peuples documentés",
+                      label: copy.documentedPeoplesSort,
                       removeHref: withoutSort,
                     },
                   ]
@@ -231,7 +237,7 @@ export default async function PaysHubPage({
 
           {selection.rows.length === 0 ? (
             <p data-testid="country-facet-empty" className="mt-4">
-              Aucun pays du corpus ne répond à cette sélection.
+              {copy.empty}
             </p>
           ) : (
             // No pagination, and that is a decision rather than an omission:
@@ -240,11 +246,17 @@ export default async function PaysHubPage({
             // above honest — the page never holds a slice of a larger set, so
             // sorting the selection is sorting all of it.
             <ul
+              aria-label={copy.listLabel}
               data-testid="country-facet-list"
               className="mt-4 grid list-none grid-cols-1 gap-2 p-0 md:grid-cols-2 xl:grid-cols-3"
             >
               {selection.rows.map((row) => (
-                <CountryRow key={row.id} row={row} language={language} />
+                <CountryRow
+                  key={row.id}
+                  row={row}
+                  language={language}
+                  documentedPeoples={copy.documentedPeoples}
+                />
               ))}
             </ul>
           )}
