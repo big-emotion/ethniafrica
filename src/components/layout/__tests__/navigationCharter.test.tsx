@@ -11,7 +11,6 @@ import {
 } from "@/lib/hubs/moduleRegistry";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
-import { FICHE_BAND_BREAKPOINT_PX } from "@/components/fiche/FicheHeroBand";
 
 /**
  * The atlas charter §3 describes the header as three intentions with the
@@ -108,14 +107,15 @@ describe("atlas charter §3 — three intentions, not ten modules", () => {
   });
 
   // @req REQ-114
-  it("makes each access mode a non-navigating group of direct module links", () => {
+  it("keeps axis disclosures while dossiers offers published themes", () => {
     const text = charter();
 
-    expect(text).toMatch(/access-mode label is a non-navigating heading/i);
-    expect(text).toMatch(/direct module\s+links sit beneath it/i);
+    expect(text).toMatch(/access-mode labels remain disclosures/i);
     expect(text).toMatch(
-      /live module is exactly one click away from the global\s+navigation/i
+      /Atlas and games offer\s+individual modules directly/i
     );
+    expect(text).toMatch(/Dossiers instead offers published themes/i);
+    expect(text).toMatch(/at most eight editorial themes/i);
     expect(text).toMatch(/unavailable\s+entries stay inert/i);
     for (const mode of ACCESS_MODES) {
       expect(text).toContain(`${getAxisHubRoute("fr", mode)}/`);
@@ -204,16 +204,11 @@ describe("atlas charter §3 — the menu never offers an unresolved route", () =
   });
 });
 
-describe("atlas charter §3 — one breakpoint for the header and the band", () => {
-  // The charter names 760px, and the band that opens directly under the
-  // header switches at the same figure. Two numbers here would show as a
-  // seam between the bar and the globe below it.
+describe("atlas charter §3 — mobile navigation breakpoint", () => {
   // @req REQ-116
-  it("switches to the tray at the width the charter and the band both use", () => {
-    expect(charter()).toContain("760");
-    expect(source()).toContain(
-      `NAV_BREAKPOINT_PX = ${FICHE_BAND_BREAKPOINT_PX}`
-    );
+  it("switches navigation at the approved 768px breakpoint", () => {
+    expect(charter()).toContain("768 px");
+    expect(source()).toContain("NAV_BREAKPOINT_PX = 768");
   });
 });
 

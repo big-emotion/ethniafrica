@@ -1,3 +1,4 @@
+import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import Link from "next/link";
 
 import type { LanguagePageData } from "@/lib/languageDataTransformer";
@@ -72,6 +73,12 @@ export function LanguageDetailViewV2({
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
         )}
+        <DossierLinks
+          language={language}
+          kind="language"
+          id={data.id}
+          section="appellations"
+        />
       </FicheSection>
 
       <FicheSection title="Famille linguistique">

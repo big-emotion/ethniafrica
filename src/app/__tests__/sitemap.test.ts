@@ -133,7 +133,7 @@ describe("sitemap.xml", () => {
     const all = await urls();
     const base = `https://${CANONICAL_DOMAIN}`;
 
-    for (const page of ["atlasHub", "dossiersHub", "jeuxHub"] as const) {
+    for (const page of ["atlasHub", "jeuxHub"] as const) {
       expect(all, page).not.toContain(
         `${base}${getLocalizedRoute("fr", page)}`
       );

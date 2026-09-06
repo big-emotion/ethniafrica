@@ -1,4 +1,5 @@
 import { Info } from "lucide-react";
+import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import type { ReactNode } from "react";
 
 import { KingdomsTimeline } from "@/components/country/KingdomsTimeline";
@@ -89,6 +90,12 @@ export function CountryParchment({
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />
         )}
+        <DossierLinks
+          language={language}
+          kind="country"
+          id={country.id}
+          section="etymology"
+        />
       </Section>
 
       <Section title="Peuples du pays">

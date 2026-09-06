@@ -1,3 +1,4 @@
+import { getDossierThemeHref } from "@/lib/dossiers/themes";
 import {
   act,
   cleanup,
@@ -33,6 +34,7 @@ let mockPathname = "/fr";
 
 vi.mock("next/navigation", () => ({
   usePathname: () => mockPathname,
+  useRouter: () => ({ push: vi.fn() }),
 }));
 
 // jsdom evaluates the header's media queries against its own 1024px window,
@@ -326,7 +328,7 @@ describe("SiteHeader — the panel behind the click (REQ-114)", () => {
 
     expect(
       within(panel())
-        .getAllByTestId(/^site-nav-module-/)
+        .queryAllByTestId(/^site-nav-module-/)
         .map((entry) => entry.dataset.testid)
     ).toEqual(
       getNavModules("atlas").map(
@@ -494,8 +496,16 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
 
     fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
     for (const navModule of drafts) {
-      expectInert(entryFor(navModule.id));
+      expect(
+        screen.queryByTestId(`site-nav-module-${navModule.id}`)
+      ).not.toBeInTheDocument();
     }
+    expect(
+      within(panel()).getByRole("link", { name: "Noms et identités" })
+    ).toHaveAttribute("href", getDossierThemeHref("noms"));
+    expect(
+      within(panel()).getByRole("link", { name: "Les dossiers" })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "dossiersHub"));
   });
 
   /**
@@ -737,7 +747,7 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
 
     const contractsFor = (scope: HTMLElement) =>
       within(scope)
-        .getAllByTestId(/^site-nav-module-/)
+        .queryAllByTestId(/^site-nav-module-/)
         .map((entry) => ({
           testId: entry.dataset.testid,
           href: entry.getAttribute("href"),
@@ -754,9 +764,11 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
       ).not.toHaveAttribute("href");
       const contracts = contractsFor(panel());
       expect(contracts.map(({ testId }) => testId)).toEqual(
-        getNavModules(axis).map(
-          (navModule) => `site-nav-module-${navModule.id}`
-        )
+        axis === "dossiers"
+          ? []
+          : getNavModules(axis).map(
+              (navModule) => `site-nav-module-${navModule.id}`
+            )
       );
       panelContracts.set(axis, contracts);
     }
