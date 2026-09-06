@@ -69,7 +69,8 @@ const ROUTE_BY_ENTITY_TYPE: Record<
 // @req REQ-093
 export async function getSourceCitations(
   sourceId: string,
-  entityLimit: number = DEFAULT_ENTITY_LIMIT
+  entityLimit: number = DEFAULT_ENTITY_LIMIT,
+  language: Language = "fr"
 ): Promise<SourceCitations> {
   const supabase = createServerClient();
 
@@ -107,7 +108,8 @@ export async function getSourceCitations(
       entityId: row.entity_id,
       label: row.entity_id,
       href:
-        ROUTE_BY_ENTITY_TYPE[row.entity_type]?.("fr", row.entity_id) ?? null,
+        ROUTE_BY_ENTITY_TYPE[row.entity_type]?.(language, row.entity_id) ??
+        null,
       assertionCount: 1,
     });
   }

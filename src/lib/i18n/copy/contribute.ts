@@ -1,6 +1,37 @@
 import type { Language } from "@/types/shared";
 
 const en = {
+  page: {
+    title: "Contribute",
+    introTitle: "Contributing and taking part",
+    introBeforeStrong: "The site is powered by a ",
+    introStrong: "structured database",
+    introBeforeAbout: ", organised according to the AFRIK methodology. The ",
+    aboutLink: "About page",
+    introAfterAbout: "describes what the corpus contains.",
+    invitationBeforeStrong: "I welcome ",
+    invitationStrong: "all suggestions and contributions",
+    invitationBeforeGithub:
+      ", whether you wish to share sources, corrections or ideas for improvement. You can contact me or contribute directly through the ",
+    githubRepository: "project's GitHub repository",
+    apiDocsTitle: "API documentation",
+    apiDocsText:
+      "Read the full API documentation to learn how to retrieve data programmatically. It lists every resource family and its endpoints.",
+    apiDocsButton: "View the API documentation",
+    downloadTitle: "Download the data",
+    downloadText:
+      "Download all data in CSV or Excel format for your own use, analysis or contributions.",
+    csvButton: "Download CSV (ZIP)",
+    excelButton: "Download Excel",
+    contactTitle: "Contact",
+    contactText:
+      "Would you like to report an error, suggest a source or discuss reusing the data?",
+    contactLink: "Go to the contact form",
+    githubTitle: "Contribute on GitHub",
+    githubText:
+      "The project is open source and hosted on GitHub. You can contribute by submitting issues or pull requests, or by improving the source code.",
+    githubButton: "Take part on GitHub",
+  },
   title: "Submit a contribution",
   type: "Contribution type",
   inputMode: "Input mode",
@@ -120,6 +151,37 @@ const en = {
 type ContributeCopy = typeof en;
 
 const fr: ContributeCopy = {
+  page: {
+    title: "Contribuer",
+    introTitle: "Contribution et participation",
+    introBeforeStrong: "Le site est alimenté par une ",
+    introStrong: "base de données structurée",
+    introBeforeAbout: ", organisée selon la méthodologie AFRIK. La page ",
+    aboutLink: "À propos",
+    introAfterAbout: "détaille ce que contient le corpus.",
+    invitationBeforeStrong: "Je suis ",
+    invitationStrong: "ouvert à toutes les propositions ou contributions",
+    invitationBeforeGithub:
+      ", qu'il s'agisse de partager des sources, des corrections, ou simplement des idées d'amélioration. Si vous souhaitez aider, n'hésitez pas à me contacter ou à proposer directement sur le ",
+    githubRepository: "dépôt GitHub du projet",
+    apiDocsTitle: "Documentation API",
+    apiDocsText:
+      "Consultez la documentation complète de l'API pour comprendre comment récupérer les données de manière programmatique. Elle liste chaque famille de ressources et ses endpoints.",
+    apiDocsButton: "Voir la documentation API",
+    downloadTitle: "Télécharger les données",
+    downloadText:
+      "Téléchargez toutes les données au format CSV ou Excel pour votre propre usage, analyse ou contributions.",
+    csvButton: "Télécharger CSV (ZIP)",
+    excelButton: "Télécharger Excel",
+    contactTitle: "Contact",
+    contactText:
+      "Vous souhaitez nous écrire — une erreur à signaler, une source à proposer, une réutilisation des données à discuter ?",
+    contactLink: "Aller au formulaire de contact",
+    githubTitle: "Contribuer via GitHub",
+    githubText:
+      "Le projet est open source et hébergé sur GitHub. Vous pouvez contribuer en soumettant des issues, des pull requests, ou en améliorant le code source.",
+    githubButton: "Participer sur GitHub",
+  },
   title: "Soumettre une contribution",
   type: "Type de contribution",
   inputMode: "Mode de saisie",

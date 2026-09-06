@@ -4,9 +4,11 @@ import type { Source } from "@/api/v2/schemas/sources";
 import { SourceStandingBadge } from "@/components/sources/SourceStandingBadge";
 import { getSourceRoute } from "@/lib/routing";
 import { isSourceTier } from "@/types/sources";
+import type { Language } from "@/types/shared";
 
 interface SourceRowProps {
   source: Source;
+  language?: Language;
 }
 
 /** "SIL International · 2024", with whichever half the citation carries. */
@@ -31,18 +33,18 @@ function attributionOf(source: Source): string | null {
  * the outward link belongs on the source's page, beside what cites it.
  */
 // @req REQ-092
-export function SourceRow({ source }: SourceRowProps) {
+export function SourceRow({ source, language = "fr" }: SourceRowProps) {
   const attribution = attributionOf(source);
   const standing = isSourceTier(source.tier) ? source.tier : "needs_review";
 
   return (
     <Link
-      href={getSourceRoute("fr", source.id)}
+      href={getSourceRoute(language, source.id)}
       prefetch={false}
       className="block border-b border-afh-border px-1 py-4 focus-visible:outline-none focus-visible:shadow-[var(--afh-ring-focus)]"
     >
       <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-        <SourceStandingBadge standing={standing} />
+        <SourceStandingBadge standing={standing} language={language} />
         <span className="font-afh text-afh-body text-afh-text">
           {source.title}
         </span>

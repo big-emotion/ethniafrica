@@ -169,6 +169,21 @@ describe("DidYouKnow — the anecdote that leads somewhere (REQ-113)", () => {
 });
 
 describe("PurposeBlocks — arguing by example (REQ-113)", () => {
+  // @req REQ-145
+  it("tells the naming argument in English", () => {
+    render(<PurposeBlocks language="en" />);
+
+    expect(screen.getByText("A country")).toBeInTheDocument();
+    expect(screen.getByText("A people")).toBeInTheDocument();
+    expect(screen.getByText("A language family")).toBeInTheDocument();
+    expect(screen.getByTestId("home-purpose-heading")).toHaveTextContent(
+      /a country, a people, a language/i
+    );
+    expect(
+      screen.getByRole("link", { name: "Read the Ivory Coast fiche" })
+    ).toHaveAttribute("href", getCountryRoute("en", "CIV"));
+  });
+
   // @req REQ-113
   it("walks the reader through country, people and language family", () => {
     render(<PurposeBlocks language="fr" />);

@@ -227,6 +227,20 @@ describe("DoctrinePageContent", () => {
     expect(container.querySelector("#colonial-legacy")).not.toBeNull();
     expect(container.querySelector("#reconstructive")).not.toBeNull();
   });
+
+  // @req REQ-141
+  it("explains every classification status in English", () => {
+    render(<DoctrinePageContent language="en" />);
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Editorial doctrine" })
+    ).toBeInTheDocument();
+    expect(screen.getAllByText(/Editorial status$/)).toHaveLength(4);
+    expect(
+      screen.getByText(/A classification is consensual when/)
+    ).toBeInTheDocument();
+    expect(screen.queryByText("Doctrine éditoriale")).not.toBeInTheDocument();
+  });
 });
 
 // ---------------------------------------------------------------------------

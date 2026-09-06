@@ -20,7 +20,7 @@ export async function generateMetadata({
   params,
 }: ContributePageProps): Promise<Metadata> {
   const { lang } = await params;
-  const title = "Contribuer";
+  const title = lang === "en" ? "Contribute" : "Contribuer";
   return {
     title,
     ...surfaceHead(

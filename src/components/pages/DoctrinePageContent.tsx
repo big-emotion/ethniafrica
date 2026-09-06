@@ -1,5 +1,7 @@
-import { classificationLabels } from "@/lib/translations";
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
+import { CLASSIFICATION_LABELS } from "@/lib/glossaire/vocabularies";
+import { doctrineCopy } from "@/lib/i18n/copy/doctrine";
+import type { Language } from "@/types/shared";
 
 /**
  * /[lang]/doctrine content — editorial family (charter §4/§7, FR107).
@@ -16,46 +18,30 @@ import { ChapterHeading } from "@/components/pages/ChapterHeading";
  *   - #reconstructive
  */
 const SECTIONS: Array<{
-  id: keyof typeof classificationLabels;
-  description: string;
+  id: keyof (typeof CLASSIFICATION_LABELS)["fr"];
 }> = [
-  {
-    id: "consensual",
-    description:
-      "Une classification est dite consensuelle lorsqu'elle fait l'objet d'un large accord dans la littérature scientifique contemporaine (linguistique historique, anthropologie, archéologie). Les sources primaires et secondaires convergent et le débat académique sur le rattachement est clos ou marginal.",
-  },
-  {
-    id: "contested",
-    description:
-      "Une classification est contestée lorsqu'elle fait l'objet de débats actifs entre chercheurs : sous-classification interne discutée, frontières floues avec une famille voisine, hypothèses concurrentes documentées. Nous conservons la classification courante tout en signalant la controverse.",
-  },
-  {
-    id: "colonial-legacy",
-    description:
-      "Une classification d'héritage colonial est une catégorie produite (ou figée) durant la période coloniale, généralement par des administrateurs, des missionnaires ou des linguistes au service de l'administration. Nous conservons ces catégories pour respecter la traçabilité historique, mais nous expliquons pourquoi elles sont problématiques et privilégions les auto-appellations.",
-  },
-  {
-    id: "reconstructive",
-    description:
-      "Une classification reconstructive est une catégorisation établie à partir de sources fragmentaires (traditions orales, archéologie, génétique, glottochronologie). Elle reste provisoire, sujette à révision à mesure que de nouvelles données émergent, et explicitement présentée comme une reconstruction.",
-  },
+  { id: "consensual" },
+  { id: "contested" },
+  { id: "colonial-legacy" },
+  { id: "reconstructive" },
 ];
 
 // @req REQ-091
-export default function DoctrinePageContent() {
+export default function DoctrinePageContent({
+  language = "fr",
+}: {
+  language?: Language;
+}) {
+  const copy = doctrineCopy[language];
   return (
     <div className="mx-auto space-y-8 px-4 py-8">
       <header className="space-y-2">
-        <h1 className="text-afh-h1 font-bold">Doctrine éditoriale</h1>
-        <p className="text-muted-foreground">
-          Cette page définit le statut épistémique attribué à chaque
-          classification de peuple et de famille linguistique. Le badge affiché
-          sur les fiches renvoie vers la définition correspondante ci-dessous.
-        </p>
+        <h1 className="text-afh-h1 font-bold">{copy.title}</h1>
+        <p className="text-muted-foreground">{copy.intro}</p>
       </header>
 
       {SECTIONS.map((section, index) => {
-        const labels = classificationLabels[section.id];
+        const labels = CLASSIFICATION_LABELS[language][section.id];
         return (
           <section
             key={section.id}
@@ -63,13 +49,13 @@ export default function DoctrinePageContent() {
             className="space-y-2 scroll-mt-24"
           >
             <ChapterHeading
-              stepLabel={`${String(index + 1).padStart(2, "0")} · Statut éditorial`}
+              stepLabel={`${String(index + 1).padStart(2, "0")} · ${copy.stepLabel}`}
               heading={labels.label}
             />
             <p className="text-afh-small italic text-muted-foreground">
               {labels.tooltip}
             </p>
-            <p className="leading-relaxed">{section.description}</p>
+            <p className="leading-relaxed">{copy.descriptions[section.id]}</p>
           </section>
         );
       })}

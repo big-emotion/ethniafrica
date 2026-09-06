@@ -20,6 +20,8 @@ import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getLocalizedRoute } from "@/lib/routing";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import { formatNumber } from "@/lib/languageTag";
+import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
+import { sourcesDirectoryCopy } from "@/lib/i18n/copy/sourcesDirectory";
 import type { Language } from "@/types/shared";
 import { SOURCE_KINDS, type SourceKind } from "@/types/sources";
 
@@ -53,11 +55,13 @@ const PARAM = {
   size: PAGE_SIZE_PARAM,
 } as const;
 
-const SORTS: ReadonlyArray<{ value: SourcesFacetSort; label: string }> = [
-  { value: "titre", label: "Titre" },
-  { value: "annee", label: "Année, la plus récente d'abord" },
-  { value: "ajout", label: "Ajout au corpus, le plus récent d'abord" },
-];
+function sortsFor(language: Language) {
+  const copy = sourcesDirectoryCopy[language].sorts;
+  return (Object.keys(copy) as SourcesFacetSort[]).map((value) => ({
+    value,
+    label: copy[value],
+  }));
+}
 
 // @req REQ-114
 // @req REQ-141
@@ -67,24 +71,25 @@ export async function generateMetadata({
   params: Promise<PageParams>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const copy = {
+  const language = lang as Language;
+  const directoryCopy = sourcesDirectoryCopy[language];
+  const metadata = {
     title: "Sources",
-    description:
-      "La bibliographie du corpus : chaque source sur laquelle reposent les fiches, avec son degré d'autorité et ce qui la cite.",
+    description: directoryCopy.description,
   };
   return {
-    ...copy,
+    ...metadata,
     ...surfaceHead(
-      lang as Language,
+      language,
       "sources",
       (locale) => getLocalizedRoute(locale, "sources"),
-      copy
+      metadata
     ),
   };
 }
 
 function isSort(value: string | null): value is SourcesFacetSort {
-  return SORTS.some((sort) => sort.value === value);
+  return ["titre", "annee", "ajout"].includes(value ?? "");
 }
 
 function isKind(value: string | null): value is SourceKind {
@@ -133,6 +138,8 @@ export default async function SourcesPage({
 }) {
   const { lang } = await params;
   const language = lang as Language;
+  const copy = sourcesDirectoryCopy[language];
+  const sorts = sortsFor(language);
   const count = (value: number) => formatNumber(language, value);
   const query = (await searchParams) ?? {};
 
@@ -166,7 +173,7 @@ export default async function SourcesPage({
   const activeFilters: FacetActiveFilter[] = [];
   if (filters.sourceKind) {
     activeFilters.push({
-      label: `Provenance : ${filters.sourceKind}`,
+      label: `${copy.labels.provenance} : ${filters.sourceKind}`,
       removeHref: directoryHref(
         language,
         { ...filters, sourceKind: null },
@@ -177,7 +184,7 @@ export default async function SourcesPage({
   }
   if (filters.decade) {
     activeFilters.push({
-      label: `Décennie : ${filters.decade}`,
+      label: `${copy.labels.decade} : ${filters.decade}`,
       removeHref: directoryHref(
         language,
         { ...filters, decade: null },
@@ -188,7 +195,7 @@ export default async function SourcesPage({
   }
   if (filters.sort && filters.sort !== "titre") {
     activeFilters.push({
-      label: `Tri : ${SORTS.find((s) => s.value === filters.sort)?.label}`,
+      label: `${copy.labels.activeSort} : ${sorts.find((s) => s.value === filters.sort)?.label}`,
       removeHref: directoryHref(
         language,
         { ...filters, sort: null },
@@ -214,16 +221,12 @@ export default async function SourcesPage({
 
   // One string rather than text around expressions: JSX drops the whitespace
   // between an expression and the text that follows on the next line.
-  const lede =
-    `${count(reading.total)} ` +
-    `${reading.total === 1 ? "source" : "sources"} dans cette sélection. ` +
-    `Chacune porte son degré d'autorité, et la raison de ce degré.`;
+  const lede = copy.selection(count(reading.total), reading.total === 1);
 
-  const provenanceNote =
-    `La provenance n'est renseignée que pour ` +
-    `${count(choices.withSourceKind)} sources sur ` +
-    `${count(choices.total)} : filtrer dessus ne montre pas ` +
-    `l'état du corpus, seulement ce qui a déjà été qualifié.`;
+  const provenanceNote = copy.provenanceNote(
+    count(choices.withSourceKind),
+    count(choices.total)
+  );
 
   return (
     <PageLayout language={language} title="Sources">
@@ -242,28 +245,31 @@ export default async function SourcesPage({
           className="mt-4"
           searchField={{
             name: PARAM.search,
-            label: "Rechercher une source",
-            placeholder: "Titre ou auteur",
+            label: copy.labels.search,
+            placeholder: copy.labels.searchPlaceholder,
             value: filters.search,
           }}
           primaryField={{
             name: PARAM.standing,
-            label: "Autorité",
-            anyLabel: "Toutes les autorités",
+            label: copy.labels.standing,
+            anyLabel: copy.labels.anyStanding,
             options: choices.standings.map((standing) => ({
               value: standing.id,
               // The count rides in the label: a shelf that hides how much it
               // holds asserts an absence nobody checked, and the filter bar
               // has no slot of its own for a per-option figure.
-              label: `${standing.label} (${count(standing.count)})`,
+              label: `${sourceStandingLabel(
+                standing.id as SourceStanding,
+                language
+              )} (${count(standing.count)})`,
             })),
             value: filters.standing,
           }}
           advancedFields={[
             {
               name: PARAM.provenance,
-              label: "Provenance",
-              anyLabel: "Toutes les provenances",
+              label: copy.labels.provenance,
+              anyLabel: copy.labels.anyProvenance,
               options: choices.sourceKinds.map((kind) => ({
                 value: kind.id,
                 label: `${kind.label} (${count(kind.count)})`,
@@ -272,8 +278,8 @@ export default async function SourcesPage({
             },
             {
               name: PARAM.decade,
-              label: "Décennie",
-              anyLabel: "Toutes les décennies",
+              label: copy.labels.decade,
+              anyLabel: copy.labels.anyDecade,
               options: choices.decades.map((decade) => ({
                 value: decade.id,
                 label: `${decade.label} (${count(decade.count)})`,
@@ -282,11 +288,11 @@ export default async function SourcesPage({
             },
             {
               name: PARAM.sort,
-              label: "Trier par",
-              anyLabel: "Titre",
-              options: SORTS.filter((sort) => sort.value !== "titre").map(
-                (sort) => ({ value: sort.value, label: sort.label })
-              ),
+              label: copy.labels.sort,
+              anyLabel: copy.sorts.titre,
+              options: sorts
+                .filter((sort) => sort.value !== "titre")
+                .map((sort) => ({ value: sort.value, label: sort.label })),
               value: filters.sort === "titre" ? null : filters.sort,
             },
           ]}
@@ -311,9 +317,9 @@ export default async function SourcesPage({
 
         {reading.sources.length === 0 ? (
           <p data-testid="sources-facet-empty" className="mt-6">
-            Aucune source du corpus ne répond à cette sélection.{" "}
+            {copy.empty}{" "}
             <Link href={getLocalizedRoute(language, "sources")}>
-              Revenir à toutes les sources
+              {copy.reset}
             </Link>
           </p>
         ) : (
@@ -322,7 +328,7 @@ export default async function SourcesPage({
             <ul aria-label="Sources" className="mt-4 flex flex-col p-0">
               {reading.sources.map((source) => (
                 <li key={source.id} className="list-none">
-                  <SourceRow source={source} />
+                  <SourceRow source={source} language={language} />
                 </li>
               ))}
             </ul>
@@ -338,10 +344,10 @@ export default async function SourcesPage({
             above is the answer to the question the page is asked. */}
         <details className="mt-10 border-t border-afh-border pt-6">
           <summary className="cursor-pointer text-afh-body text-afh-text">
-            La bibliographie de référence du projet
+            {copy.referenceBibliography}
           </summary>
           <div className="mt-4">
-            <SourcesPageContent />
+            <SourcesPageContent language={language} />
           </div>
         </details>
       </div>
