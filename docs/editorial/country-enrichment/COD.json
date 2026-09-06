@@ -227,7 +227,7 @@
     },
     "historyProposal": {
       "path": "docs/editorial/country-enrichment/COD-history.json",
-      "reviewScope": "archaeology, political formations, colonial administrations, and independent state names",
+      "reviewScope": "archaeology, political formations, colonial administrations, independent state names, and modern political and constitutional milestones",
       "productionWriteRequiresApproval": true
     },
     "patronymLedger": {
@@ -477,7 +477,10 @@
         "Kongo, Lunda, Kazembe, Chokwe, and Zande require explicit transborder framing; Mbanza Kongo is in present-day Angola and Kazembe was centered in present-day Zambia.",
         "Zande should be represented as plural connected kingdoms rather than one sultanate, and Chokwe as plural chiefdoms and trade networks rather than one empire.",
         "Six colonial and independent-state periods now have a separate sourced name chronology from the Congo Free State through the current Democratic Republic of the Congo.",
-        "The proposal defines four distinct presentation sections and deliberately does not compute a global history-completeness percentage."
+        "Nine modern events now provide a sourced first-wave chronology from independence on 30 June 1960 through the first peaceful transfer of presidential power on 24 January 2019.",
+        "The modern chronology separates independence, the Congo Crisis, Mobutu's regime and state-renaming programme, the two Congo wars, the 2002–2003 negotiated transition, the 2006 constitutional-electoral transition, and the 2019 transfer of power.",
+        "Conflict ceasefires and political agreements are not treated as clean endpoints, and the 2019 peaceful-transfer label carries an explicit electoral-process caveat.",
+        "The proposal defines five distinct presentation sections and deliberately does not compute a global history-completeness percentage."
       ],
       "remaining": [
         "Approve or amend the taxonomy, geographic-fit decisions, and first-wave entries in COD-history.json before modifying production country data.",
@@ -485,7 +488,8 @@
         "Replace the production kingdoms array and compressed prose only after editorial approval, preserving field-level source links.",
         "Obtain a dedicated scholarly source for the broader Mangbetu chronology and a source for regional variation in Mongo political organization.",
         "Review additional regional formations in evidence-prioritized waves; the ten-row audit is a controlled first scope, not an exhaustive national inventory.",
-        "Build a separately sourced modern event timeline for independence, the Congo Crisis, Mobutu's regime, the Congo wars, and later constitutional periods."
+        "Approve or amend the nine modern-event rows and their caveats before modifying production country data.",
+        "Review post-2019 developments as a separately versioned contemporary-history pass with an explicit cutoff date."
       ],
       "researchLeads": [
         {
