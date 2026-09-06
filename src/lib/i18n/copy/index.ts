@@ -1,6 +1,9 @@
 import { classificationCopy } from "@/lib/i18n/copy/classification";
 import { colonizationCopy } from "@/lib/i18n/copy/colonization";
+import { chromeCopy } from "@/lib/i18n/copy/chrome";
 import { commonCopy } from "@/lib/i18n/copy/common";
+import { consentCopy } from "@/lib/i18n/copy/consent";
+import { facetsCopy } from "@/lib/i18n/copy/facets";
 import { fieldProvenanceCopy } from "@/lib/i18n/copy/fieldProvenance";
 import { footerCopy } from "@/lib/i18n/copy/footer";
 import { hubsCopy } from "@/lib/i18n/copy/hubs";
@@ -11,6 +14,7 @@ import { patronymesCopy } from "@/lib/i18n/copy/patronymes";
 import { publicFlagsCopy } from "@/lib/i18n/copy/publicFlags";
 import { quizCopy } from "@/lib/i18n/copy/quiz";
 import { sitemapPageCopy } from "@/lib/i18n/copy/sitemapPage";
+import { systemCopy } from "@/lib/i18n/copy/system";
 import { trailCopy } from "@/lib/i18n/copy/trail";
 
 /**
@@ -26,6 +30,9 @@ import { trailCopy } from "@/lib/i18n/copy/trail";
 // @req REQ-145
 export const COPY_MODULES = {
   common: commonCopy,
+  chrome: chromeCopy,
+  consent: consentCopy,
+  facets: facetsCopy,
   footer: footerCopy,
   sitemapPage: sitemapPageCopy,
   publicFlags: publicFlagsCopy,
@@ -39,4 +46,5 @@ export const COPY_MODULES = {
   fieldProvenance: fieldProvenanceCopy,
   hubs: hubsCopy,
   trail: trailCopy,
+  system: systemCopy,
 } as const;

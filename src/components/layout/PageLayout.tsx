@@ -150,6 +150,7 @@ export const PageLayout = ({
 
       {/* Keyboard shortcuts cheatsheet */}
       <KeyboardShortcutsModal
+        language={language}
         open={isShortcutsOpen}
         onClose={() => setIsShortcutsOpen(false)}
       />
@@ -206,7 +207,7 @@ export const PageLayout = ({
       {/* Last in the document, because it is the only thing on the page that
           answers "take me out of it" — and a reader who has tabbed to the
           footer is exactly who needs it. */}
-      <BackToTop returnFocusTo={mastheadRef} />
+      <BackToTop language={language} returnFocusTo={mastheadRef} />
     </div>
   );
 };

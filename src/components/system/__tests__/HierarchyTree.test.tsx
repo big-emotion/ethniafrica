@@ -282,6 +282,26 @@ describe("HierarchyTree — APG keyboard navigation", () => {
 });
 
 describe("HierarchyTree — lazy loadChildren", () => {
+  // @req REQ-145
+  it("localizes lazy-loading feedback and recovery in English", async () => {
+    const loadChildren = vi.fn().mockRejectedValue(new Error("network"));
+    const user = userEvent.setup();
+    renderTree({
+      language: "en",
+      loadChildren,
+      defaultExpandedIds: ["FLG_BANTU"],
+    });
+
+    const lingala = screen.getByRole("treeitem", { name: /Lingala/ });
+    lingala.focus();
+    await user.keyboard("{Enter}");
+
+    expect(
+      await screen.findByText("This branch could not be loaded.")
+    ).toBeVisible();
+    expect(screen.getByRole("button", { name: "try again" })).toBeVisible();
+  });
+
   // @req REQ-047
   it("fetches children automatically for a branch pre-expanded via defaultExpandedIds (deep link)", async () => {
     const loadChildren = vi.fn().mockResolvedValue([

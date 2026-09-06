@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 export interface BreadcrumbItem {
   label: string;
@@ -6,11 +9,15 @@ export interface BreadcrumbItem {
 }
 
 interface AfrikBreadcrumbsProps {
+  language?: Language;
   items: BreadcrumbItem[];
 }
 
 // @req REQ-115
-export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
+export function AfrikBreadcrumbs({
+  language = FALLBACK_LOCALE,
+  items,
+}: AfrikBreadcrumbsProps) {
   // A trail that leads nowhere but here is not a trail. The home derives a
   // single crumb — itself, marked `aria-current` — so the shell used to print
   // a lone "Accueil" above the accueil. The test is the href rather than the
@@ -22,7 +29,10 @@ export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
     // Vertical rhythm only: the horizontal gutter belongs to whatever mounts
     // the trail, so it lines up with that surface's title and body instead of
     // stacking a second indent on top of the container's.
-    <nav aria-label="Fil d'ariane" className="mt-2 mb-1">
+    <nav
+      aria-label={getTranslation(language).chrome.breadcrumb}
+      className="mt-2 mb-1"
+    >
       {/* The interface step, not the caption one. On the three facets the
           trail is the only thing naming the reader's position above a
           full-bleed globe, and 13px is the size reserved for an annotation

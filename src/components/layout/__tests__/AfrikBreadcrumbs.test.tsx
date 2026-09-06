@@ -49,6 +49,15 @@ describe("AfrikBreadcrumbs", () => {
     ).toBeDefined();
   });
 
+  // @req REQ-145
+  it("names the navigation landmark in English", () => {
+    render(<AfrikBreadcrumbs language="en" items={items} />);
+
+    expect(
+      screen.getByRole("navigation", { name: "Breadcrumb" })
+    ).toBeVisible();
+  });
+
   it("renders nothing when items array is empty", () => {
     const { container } = render(<AfrikBreadcrumbs items={[]} />);
     expect(container.firstChild).toBeNull();

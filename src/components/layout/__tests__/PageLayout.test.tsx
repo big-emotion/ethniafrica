@@ -44,19 +44,6 @@ vi.mock("next/navigation", () => ({
 // and a stub that restated it as a literal is what made this suite assert the
 // header pointed at an address the site had stopped serving.
 
-// Only `getTranslation` is stubbed, and the rest of the module is kept: the
-// shell now renders the trail, which reads its labels from the real
-// `translations`. A stub that dropped them left `deriveTrail` naming nothing
-// and took the whole suite down with it — the same argument as the note above
-// about not stubbing `@/lib/routing`.
-vi.mock("@/lib/translations", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@/lib/translations")>()),
-  getTranslation: () => ({
-    title: "EthniAfrica",
-    madeWithEmotion: "Créé avec émotion",
-  }),
-}));
-
 // The band renders no image any more, so this stub has nothing left to stand
 // in for — it is kept as the tripwire for the assertion below: anything put
 // back into the band through `next/image` reappears as a `role="img"`, and

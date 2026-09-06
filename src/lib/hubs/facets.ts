@@ -1,4 +1,5 @@
 import { getLocalizedRoute, type PageType } from "@/lib/routing";
+import { facetsCopy } from "@/lib/i18n/copy/facets";
 import type { DirectoryEntityType } from "@/lib/hubs/directoryAccent";
 import type { Language } from "@/types/shared";
 
@@ -137,13 +138,16 @@ export const FACETS: readonly FacetDefinition[] = [
 ] as const;
 
 // @req REQ-114
-export const getFacet = (key: FacetKey): FacetDefinition => {
+export const getFacet = (
+  key: FacetKey,
+  language: Language = "fr"
+): FacetDefinition => {
   const facet = FACETS.find((candidate) => candidate.key === key);
   if (!facet) {
     // Unreachable through the type, reachable through a cast at a boundary.
     throw new Error(`Unknown facet: ${key}`);
   }
-  return facet;
+  return { ...facet, ...facetsCopy[language].definitions[key] };
 };
 
 // @req REQ-114

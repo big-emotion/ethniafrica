@@ -303,4 +303,27 @@ describe("the facet filter bar — one line, and a fold", () => {
     expect(form).toHaveAttribute("method", "get");
     expect(form).toHaveAttribute("action", PEUPLES);
   });
+
+  // @req REQ-145
+  it("localizes its own filter controls from the action locale", () => {
+    render(
+      <FacetFilterBar
+        action={getFacetRoute("en", "peoples")}
+        primaryField={FAMILY}
+        advancedFields={[COUNTRY]}
+        activeFilters={[
+          {
+            label: "Country: Burundi",
+            removeHref: getFacetRoute("en", "peoples"),
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByText("Filters")).toBeVisible();
+    expect(screen.getByRole("button", { name: "Filter" })).toBeVisible();
+    expect(
+      screen.getByRole("link", { name: "Remove filter Country: Burundi" })
+    ).toBeVisible();
+  });
 });

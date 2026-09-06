@@ -112,10 +112,12 @@ function renderIsland({
   index = PEOPLES_IN_BENIN,
   narrowing,
   focused = null,
+  language = "fr",
 }: {
   index?: FacetCountryIndex;
   narrowing?: FacetCountryNarrowing;
   focused?: string | null;
+  language?: "en" | "fr";
 } = {}) {
   return render(
     <FacetCountryIndexProvider>
@@ -125,6 +127,7 @@ function renderIsland({
         focused={focused as never}
       />
       <FacetGlobeIsland
+        language={language}
         peopleCountsByCountry={{ BEN: 12, GHA: 40 }}
         countryIds={["BEN", "GHA"]}
         missingMessage="rien à dessiner"
@@ -275,6 +278,21 @@ describe("list → map — the map answers to the address", () => {
 });
 
 describe("the fold — on a phone the list is the page", () => {
+  // @req REQ-145
+  it("names the map controls and panel actions in English", async () => {
+    await mountIslandGlobe({
+      language: "en",
+      narrowing: NARROW_TO_BENIN,
+    });
+
+    expect(screen.getByTestId("facet-globe-fold")).toHaveTextContent(
+      "Show map"
+    );
+    expect(screen.getByTestId("facet-panel-narrow")).toHaveTextContent(
+      "Narrow the list to this country"
+    );
+  });
+
   // @req REQ-116
   it("starts folded, and says what the control will do", () => {
     renderIsland();

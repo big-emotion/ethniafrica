@@ -5,7 +5,10 @@ import * as React from "react";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getTranslation } from "@/lib/translations";
 import type { ClassificationStatus } from "@/types/afrik";
+import type { Language } from "@/types/shared";
 
 export interface HierarchyNode {
   id: string;
@@ -23,6 +26,7 @@ export interface HierarchyChildrenPage {
 }
 
 export interface HierarchyTreeProps {
+  language?: Language;
   root: HierarchyNode;
   loadChildren?: (
     node: HierarchyNode,
@@ -107,12 +111,14 @@ function usePrefersReducedMotion(): boolean {
 
 // @req REQ-044
 export function HierarchyTree({
+  language = FALLBACK_LOCALE,
   root,
   loadChildren,
   defaultExpandedIds,
   onExpandedChange,
   labelledById,
 }: HierarchyTreeProps) {
+  const copy = getTranslation(language).system;
   const reducedMotion = usePrefersReducedMotion();
   const [expandedIds, setExpandedIds] = React.useState<Set<string>>(
     () => new Set(defaultExpandedIds ?? [])
@@ -189,7 +195,9 @@ export function HierarchyTree({
       if (typeof page.total === "number") {
         setChildTotals((prev) => new Map(prev).set(node.id, page.total));
       }
-      setLiveMessage(`branche chargée — ${page.nodes.length} peuples`);
+      setLiveMessage(
+        `${copy.branchLoaded} — ${page.nodes.length} ${copy.peopleMany}`
+      );
     } catch {
       setErrorIds((prev) => new Set(prev).add(node.id));
     } finally {
@@ -413,13 +421,13 @@ export function HierarchyTree({
               <Skeleton className="min-h-[var(--afh-tree-node-min-h)] w-full" />
             ) : errored ? (
               <div className="flex items-center gap-2 py-1 text-afh-small text-afh-text-soft">
-                <span>Le chargement de cette branche a échoué.</span>
+                <span>{copy.loadFailed}</span>
                 <button
                   type="button"
                   onClick={() => void loadChildrenFor(node)}
                   className="font-semibold text-afh-terracotta underline underline-offset-2"
                 >
-                  réessayer
+                  {copy.retry}
                 </button>
               </div>
             ) : (
@@ -441,7 +449,7 @@ export function HierarchyTree({
                     }
                     className="font-semibold text-afh-terracotta underline underline-offset-2"
                   >
-                    charger la suite ({remaining} restants)
+                    {copy.loadMore} ({remaining} {copy.remaining})
                   </button>
                 ) : null}
               </>

@@ -38,7 +38,11 @@ export function QuizSessionWait({ language }: { language: Language }) {
 
   return (
     <div className={ACCENT_BY_ACCESS_MODE.jeux}>
-      <DidYouKnowLoader fact={fact} label={t.loadingSession} />
+      <DidYouKnowLoader
+        language={language}
+        fact={fact}
+        label={t.loadingSession}
+      />
     </div>
   );
 }

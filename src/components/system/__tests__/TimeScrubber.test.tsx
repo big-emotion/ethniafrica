@@ -277,3 +277,20 @@ describe("TimeScrubber — accessibility (axe)", () => {
     await expectNoAxeViolations(container);
   });
 });
+
+describe("TimeScrubber — locale", () => {
+  // @req REQ-145
+  it("names the slider in English", () => {
+    render(
+      <TimeScrubber
+        language="en"
+        min={-3000}
+        max={2025}
+        value={1200}
+        onChange={() => {}}
+      />
+    );
+
+    expect(screen.getByRole("slider", { name: "Year" })).toBeVisible();
+  });
+});

@@ -91,4 +91,13 @@ describe("ThemeToggle — parchment/night switch (REQ-115)", () => {
     expect(button.className).toContain("min-h-11");
     expect(button.className).toContain("min-w-11");
   });
+
+  // @req REQ-145
+  it("names the destination in English on the English surface", async () => {
+    render(<ThemeToggle language="en" />);
+
+    expect(
+      await screen.findByRole("button", { name: "Switch to night mode" })
+    ).toHaveAttribute("title", "Night mode");
+  });
 });

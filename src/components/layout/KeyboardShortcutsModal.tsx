@@ -7,8 +7,12 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 interface KeyboardShortcutsModalProps {
+  language?: Language;
   open: boolean;
   onClose: () => void;
 }
@@ -18,23 +22,21 @@ interface ShortcutRow {
   description: string;
 }
 
-const SHORTCUTS: ShortcutRow[] = [
-  { keys: ["/"], description: "Ouvrir la recherche" },
-  {
-    keys: ["Ctrl", "K"],
-    description: "Aller à la page recherche (⌘K sur Mac)",
-  },
-  { keys: ["g", "p"], description: "Aller aux peuples" },
-  { keys: ["g", "f"], description: "Aller aux familles linguistiques" },
-  { keys: ["?"], description: "Afficher les raccourcis clavier" },
-  { keys: ["Esc"], description: "Fermer le panneau ouvert" },
-];
-
 // @req REQ-065
 export function KeyboardShortcutsModal({
+  language = FALLBACK_LOCALE,
   open,
   onClose,
 }: KeyboardShortcutsModalProps) {
+  const copy = getTranslation(language).chrome.shortcuts;
+  const shortcuts: ShortcutRow[] = [
+    { keys: ["/"], description: copy.openSearch },
+    { keys: ["Ctrl", "K"], description: copy.searchPage },
+    { keys: ["g", "p"], description: copy.peoples },
+    { keys: ["g", "f"], description: copy.families },
+    { keys: ["?"], description: copy.show },
+    { keys: ["Esc"], description: copy.closePanel },
+  ];
   useEffect(() => {
     if (!open) return;
     const handler = (e: KeyboardEvent) => {
@@ -55,10 +57,10 @@ export function KeyboardShortcutsModal({
     >
       <DialogContent className="max-w-sm">
         <DialogHeader>
-          <DialogTitle>Raccourcis clavier</DialogTitle>
+          <DialogTitle>{copy.title}</DialogTitle>
         </DialogHeader>
         <ul className="flex flex-col gap-3 mt-2">
-          {SHORTCUTS.map(({ keys, description }) => (
+          {shortcuts.map(({ keys, description }) => (
             <li
               key={keys.join("+")}
               className="flex items-center justify-between gap-4"

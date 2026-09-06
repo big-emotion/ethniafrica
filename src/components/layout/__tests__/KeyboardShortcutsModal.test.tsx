@@ -42,4 +42,17 @@ describe("KeyboardShortcutsModal", () => {
     render(<KeyboardShortcutsModal open={true} onClose={vi.fn()} />);
     expect(screen.getByRole("heading", { name: /raccourcis/i })).toBeDefined();
   });
+
+  // @req REQ-145
+  it("renders its title and actions in English", () => {
+    render(
+      <KeyboardShortcutsModal language="en" open={true} onClose={vi.fn()} />
+    );
+
+    expect(
+      screen.getByRole("heading", { name: "Keyboard shortcuts" })
+    ).toBeDefined();
+    expect(screen.getByText("Open search")).toBeDefined();
+    expect(screen.getByText("Go to peoples")).toBeDefined();
+  });
 });
