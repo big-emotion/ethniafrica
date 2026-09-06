@@ -108,6 +108,26 @@
       "scope": "country name and statistical identity"
     },
     {
+      "id": "SRC-UK-PCGN-COD-2023",
+      "title": "Toponymic Factfile: Congo (Democratic Republic)",
+      "publisher": "Permanent Committee on Geographical Names for British Official Use",
+      "url": "https://assets.publishing.service.gov.uk/media/65a66847867cd8000d5ae933/Democratic_Republic_of_Congo_Toponymic_Factfile.pdf",
+      "tier": "official_toponymic_reference",
+      "accessedAt": "2026-09-06",
+      "scope": "country-name origin and official geographical-name usage",
+      "caveat": "Supports the statement that the country takes its name from the Congo River. It does not establish the internal lexical derivation of Kongo."
+    },
+    {
+      "id": "SRC-BENTLEY-KONGO-1886",
+      "title": "Dictionary and Grammar of the Kongo Language",
+      "publisher": "Baptist Missionary Society",
+      "url": "https://tile.loc.gov/storage-services/service/gdc/gdclccn/44/01/76/16/44017616/44017616.pdf",
+      "tier": "historical_primary_reference",
+      "accessedAt": "2026-09-06",
+      "scope": "historical attestation connecting the river name to the Kongo kingdom",
+      "caveat": "This 1886 missionary dictionary explicitly says that the deeper derivation of Kongo cannot be stated with certainty. Its proposed lexical comparisons must not be presented as settled modern etymology."
+    },
+    {
       "id": "SRC-GLOTTOLOG-COD-5.3",
       "title": "Glottolog 5.3 — Languages by country: CD",
       "publisher": "Max Planck Institute for Evolutionary Anthropology",
@@ -318,9 +338,10 @@
     },
     {
       "fieldGroup": "country-name etymology",
-      "status": "unsupported_requires_research",
-      "sourceIds": [],
-      "limitations": "No accepted source has yet been attached to the etymology claim."
+      "status": "ready_conservative_claim",
+      "sourceIds": ["SRC-UK-PCGN-COD-2023", "SRC-BENTLEY-KONGO-1886"],
+      "proposedClaim": "The Democratic Republic of the Congo takes its name from the Congo River. The river's Congo/Kongo name was historically connected to the Kongo kingdom. The deeper lexical origin of Kongo remains uncertain and should not be reduced to a single asserted meaning.",
+      "limitations": "The country-to-river relationship is supported by a modern official toponymic reference. The river-to-kingdom relationship and explicit uncertainty are historically attested, but any proposed Kikongo root requires additional modern historical-linguistic review."
     },
     {
       "fieldGroup": "culture, religion, lifestyles, social organization, and regional relations",
@@ -352,7 +373,6 @@
   "remainingResearch": [
     "Select an enumerated scholarly people inventory as the canonical record-linkage baseline, or explicitly publish multiple non-additive scopes.",
     "Attach accepted sources to every detailed people percentage or remove the unsupported percentages from validated display.",
-    "Research and source the country-name etymology field.",
     "Replace broad culture, religion, lifestyles, social-organization, and regional-relations prose with scoped claims and exact sources.",
     "Add a field-level source-reference mechanism to the country data model or generate an equivalent auditable mapping.",
     "Apply the approved cleanup to dataset/source/afrik/pays/COD.json only after explicit editorial approval.",
