@@ -7,10 +7,30 @@ import { useLocalePublicationMode } from "@/components/layout/LocalePublicationP
 import { getLanguageFromRoute, translatePath } from "@/lib/routing";
 import {
   LOCALE_COOKIE,
+  getDefaultLocale,
   isPublishedLocale,
   localeCookieAttributes,
   resolveLocale,
 } from "@/lib/locale";
+
+/**
+ * The locale of the page a client component is rendered on, and only that.
+ *
+ * For the components that format a figure or a date deep inside a fiche —
+ * the confidence chip, the source sheet — where threading the locale through
+ * every caller would move dozens of files for one argument. It reads the
+ * route rather than the cookie, because the route is what the server
+ * rendered in: a component that formatted in the remembered locale on a page
+ * served in the other would hydrate with a mismatch. Outside the App Router
+ * (a story, a test that mocked no route) `usePathname` answers null, and the
+ * default locale is the honest answer there (REQ-140).
+ *
+ * No router and no state, unlike `useLanguage` below: `useRouter` throws
+ * outside the App Router, and a formatter needs no way to navigate.
+ */
+// @req REQ-140
+export const useRouteLanguage = (): Language =>
+  getLanguageFromRoute(usePathname() ?? "") ?? getDefaultLocale();
 
 /**
  * The remembered choice, read the way the middleware reads it — off the

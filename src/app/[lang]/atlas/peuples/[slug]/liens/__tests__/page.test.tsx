@@ -9,6 +9,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 const mockPush = vi.fn();
 
 vi.mock("next/navigation", () => ({
+  usePathname: () => "/fr",
   notFound: vi.fn(() => {
     throw new Error("NEXT_NOT_FOUND");
   }),

@@ -268,6 +268,7 @@ describe("/[lang]/peuples/[slug] page", () => {
     expect(queryByTestId("people-detail-live")).toBeNull();
 
     expect(mockPinnedVersionBanner).toHaveBeenCalledWith({
+      language: "fr",
       pinnedAt: "2025-01-15T00:00:00Z",
       versionTag: "34",
       liveUrl: getPeopleRoute("fr", "PPL_BAKONGO"),

@@ -9,6 +9,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { SourceStandingBadge } from "@/components/sources/SourceStandingBadge";
 import { getLocalizedRoute, getSourceRoute } from "@/lib/routing";
 import { localeHead } from "@/lib/seo/localeAlternates";
+import { formatNumber } from "@/lib/languageTag";
 import type { Language } from "@/types/shared";
 import { isSourceTier } from "@/types/sources";
 
@@ -27,8 +28,6 @@ import { isSourceTier } from "@/types/sources";
  */
 
 type PageParams = { lang: string; id: string };
-
-const countFormat = new Intl.NumberFormat("fr-FR");
 
 /** "www.ethnologue.com/..." — the host first, which is what a reader recognises. */
 function displayUrl(url: string): string {
@@ -68,6 +67,7 @@ export default async function SourcePage({
 }) {
   const { lang, id } = await params;
   const language = lang as Language;
+  const count = (value: number) => formatNumber(language, value);
 
   // A malformed segment is not a missing source: it is not an identifier at
   // all, and asking the database about it spends a round trip to learn what
@@ -134,9 +134,9 @@ export default async function SourcePage({
           ) : (
             <>
               <p className="mt-2 text-afh-small text-afh-text-soft">
-                {`${countFormat.format(citations.entities.length)} ` +
+                {`${count(citations.entities.length)} ` +
                   `${citations.entities.length === 1 ? "fiche" : "fiches"}, ` +
-                  `${countFormat.format(citations.total)} ` +
+                  `${count(citations.total)} ` +
                   `${citations.total === 1 ? "affirmation" : "affirmations"}.`}
               </p>
               <ul className="mt-4 flex flex-col p-0">

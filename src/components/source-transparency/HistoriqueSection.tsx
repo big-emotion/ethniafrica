@@ -1,6 +1,9 @@
 "use client";
 
 import * as React from "react";
+import { useRouteLanguage } from "@/hooks/use-language";
+import { formatDate } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
 import type { RevisionItem } from "./RevisionDrawer";
 
 /* -------------------------------------------------------------------------- */
@@ -20,14 +23,12 @@ type SectionState =
 /*  Helpers                                                                    */
 /* -------------------------------------------------------------------------- */
 
-const FR_LONG_DATE = new Intl.DateTimeFormat("fr-FR", { dateStyle: "long" });
-
-function formatLongFrenchDate(iso: string | null): string {
+function formatPublicationDate(language: Language, iso: string | null): string {
   if (!iso) return "—";
   try {
     const d = new Date(iso);
     if (isNaN(d.getTime())) return iso;
-    return FR_LONG_DATE.format(d);
+    return formatDate(language, d);
   } catch {
     return iso;
   }
@@ -46,6 +47,7 @@ async function fetchAllRevisions(peopleId: string): Promise<RevisionItem[]> {
 
 // @req REQ-019
 export function HistoriqueSection({ peopleId }: HistoriqueSectionProps) {
+  const language = useRouteLanguage();
   const [state, setState] = React.useState<SectionState>({ phase: "loading" });
   const fetchRef = React.useRef(0);
 
@@ -129,7 +131,7 @@ export function HistoriqueSection({ peopleId }: HistoriqueSectionProps) {
                 dateTime={rev.published_at ?? undefined}
                 className="text-[var(--afh-fg-muted,#6b7280)]"
               >
-                {formatLongFrenchDate(rev.published_at)}
+                {formatPublicationDate(language, rev.published_at)}
               </time>
               {rev.moderator_pseudonym && (
                 <span className="text-[var(--afh-fg-muted,#6b7280)]">

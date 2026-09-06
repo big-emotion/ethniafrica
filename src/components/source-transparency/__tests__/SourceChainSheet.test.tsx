@@ -1,6 +1,14 @@
 // @req REQ-007
 // @req REQ-008
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+
+// Tier labels and the broken-link date follow the route's locale; the
+// assertions are French, so the suite stands on a French route.
+const navigation = await vi.hoisted(async () => {
+  const { mockRouteLanguage } = await import("@/test/mockRouteLanguage");
+  return mockRouteLanguage("fr");
+});
+vi.mock("next/navigation", () => navigation);
 import {
   render,
   screen,

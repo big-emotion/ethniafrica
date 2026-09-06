@@ -66,6 +66,7 @@ const {
 }));
 
 vi.mock("next/navigation", () => ({
+  usePathname: () => "/fr",
   useRouter: () => ({ push: vi.fn() }),
   notFound: vi.fn(() => {
     throw new Error("NEXT_NOT_FOUND");

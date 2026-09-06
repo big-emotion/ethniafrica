@@ -1,7 +1,10 @@
 "use client";
 
 import * as React from "react";
+import { useRouteLanguage } from "@/hooks/use-language";
+import { formatDate } from "@/lib/languageTag";
 import { cn } from "@/lib/utils";
+import type { Language } from "@/types/shared";
 
 /**
  * ConfidenceChip — L3 component (ETNI-25)
@@ -38,7 +41,7 @@ function toIsoShortDate(value: string): string {
   return value.slice(0, 10);
 }
 
-function toLongFrenchDate(value: string): string {
+function toLongDate(language: Language, value: string): string {
   const isoDate = value.slice(0, 10);
   const parts = isoDate.split("-").map(Number);
   if (parts.length !== 3 || parts.some((n) => Number.isNaN(n))) {
@@ -49,7 +52,7 @@ function toLongFrenchDate(value: string): string {
   if (Number.isNaN(date.getTime())) {
     return value;
   }
-  return new Intl.DateTimeFormat("fr-FR", { dateStyle: "long" }).format(date);
+  return formatDate(language, date);
 }
 
 function readPulsedIds(): Set<string> {
@@ -110,6 +113,10 @@ export function ConfidenceChip({
   ariaSuffix,
   id,
 }: ConfidenceChipProps) {
+  // Read off the route rather than threaded: the chip sits at the end of an
+  // assertion on every fiche surface, and its dozen callers have no locale
+  // to hand it.
+  const language = useRouteLanguage();
   const hasAllData =
     confidenceScore !== null &&
     confidenceScore !== undefined &&
@@ -156,10 +163,10 @@ export function ConfidenceChip({
   }
 
   const shortDate = toIsoShortDate(lastHumanAuditAt!);
-  const longFrDate = toLongFrenchDate(lastHumanAuditAt!);
+  const longDate = toLongDate(language, lastHumanAuditAt!);
   const pillText = `${confidenceScore} % · ${sourceCount} sources · vérifié ${shortDate}`;
 
-  const baseAriaLabel = `ouvrir la chaîne de sources pour cette assertion (confiance ${confidenceScore} %, ${sourceCount} sources, vérifiée le ${longFrDate})`;
+  const baseAriaLabel = `ouvrir la chaîne de sources pour cette assertion (confiance ${confidenceScore} %, ${sourceCount} sources, vérifiée le ${longDate})`;
   const ariaLabel = ariaSuffix
     ? `${baseAriaLabel} ${ariaSuffix}`
     : baseAriaLabel;

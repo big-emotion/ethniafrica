@@ -6,6 +6,10 @@ export default {
     "eslint --fix",
     "prettier --write",
     "tsx scripts/lintReqAnnotations.ts --staged",
+    // PROJECT-SPECIFIC: new reader-facing French belongs in a dictionary
+    // (REQ-145). Staged-scoped and grandfathered, so it blocks only the
+    // literals this commit adds.
+    "tsx scripts/ci/checkCopyLiterals.ts --staged",
   ],
   "*.{css,md,json,mjs}": ["prettier --write"],
 

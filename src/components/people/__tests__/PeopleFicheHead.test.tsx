@@ -32,7 +32,7 @@ const countries: PeopleCountriesData = {
 describe("PeopleFicheHead (REQ-115)", () => {
   // @req REQ-115
   it("carries the fiche's own identifiers in its overline", () => {
-    render(<PeopleFicheHead hero={hero} countries={countries} />);
+    render(<PeopleFicheHead language="fr" hero={hero} countries={countries} />);
 
     const eyebrow = screen.getByTestId("fiche-head-eyebrow");
     expect(eyebrow).toHaveTextContent("PPL_YORUBA");
@@ -47,6 +47,7 @@ describe("PeopleFicheHead (REQ-115)", () => {
   it("falls back to the linguistic family when no ethnolinguistic group is declared", () => {
     render(
       <PeopleFicheHead
+        language="fr"
         hero={{ ...hero, ethnoLinguisticGroup: undefined }}
         countries={countries}
       />
@@ -60,7 +61,7 @@ describe("PeopleFicheHead (REQ-115)", () => {
 
   // @req REQ-115
   it("states the population with the year it was declared for", () => {
-    render(<PeopleFicheHead hero={hero} countries={countries} />);
+    render(<PeopleFicheHead language="fr" hero={hero} countries={countries} />);
 
     expect(screen.getByText(/48\s*482\s*000/)).toBeInTheDocument();
     expect(screen.getByText(/2025/)).toBeInTheDocument();
@@ -70,6 +71,7 @@ describe("PeopleFicheHead (REQ-115)", () => {
   it("counts the countries of presence, not the fiche's currentCountries", () => {
     render(
       <PeopleFicheHead
+        language="fr"
         hero={{ ...hero, currentCountries: ["NGA"] }}
         countries={countries}
       />
@@ -82,7 +84,7 @@ describe("PeopleFicheHead (REQ-115)", () => {
 
   // @req REQ-115
   it("leads with the historical region the fiche declares", () => {
-    render(<PeopleFicheHead hero={hero} countries={countries} />);
+    render(<PeopleFicheHead language="fr" hero={hero} countries={countries} />);
 
     expect(
       screen.getByText(/Sud-Ouest du Nigeria, Yorubaland/)
@@ -93,6 +95,7 @@ describe("PeopleFicheHead (REQ-115)", () => {
   it("says nothing about a population the fiche never declared", () => {
     render(
       <PeopleFicheHead
+        language="fr"
         hero={hero}
         countries={{
           ...countries,
@@ -116,6 +119,7 @@ describe("PeopleFicheHead (REQ-115)", () => {
     it("states a colonial-legacy classification and links it to the doctrine", () => {
       render(
         <PeopleFicheHead
+          language="fr"
           hero={{ ...hero, classificationStatus: "colonial-legacy" }}
           countries={countries}
         />
@@ -135,6 +139,7 @@ describe("PeopleFicheHead (REQ-115)", () => {
     it("states a contested classification", () => {
       const { container } = render(
         <PeopleFicheHead
+          language="fr"
           hero={{ ...hero, classificationStatus: "contested" }}
           countries={countries}
         />
@@ -153,6 +158,7 @@ describe("PeopleFicheHead (REQ-115)", () => {
       it(`shows no badge and no placeholder when the status is ${status ?? "null"}`, () => {
         const { container } = render(
           <PeopleFicheHead
+            language="fr"
             hero={{ ...hero, classificationStatus: status }}
             countries={countries}
           />
@@ -172,7 +178,7 @@ describe("PeopleFicheHead (REQ-115)", () => {
   // sentence in place of saying anything about its own subject.
   // @req REQ-115
   it("titles the fiche with the people's name and nothing appended to it", () => {
-    render(<PeopleFicheHead hero={hero} countries={countries} />);
+    render(<PeopleFicheHead language="fr" hero={hero} countries={countries} />);
 
     const title = screen.getByRole("heading", { level: 1 });
     expect(title.textContent?.trim()).toBe("Yoruba");

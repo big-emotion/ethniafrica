@@ -10,7 +10,7 @@ import { QuizProgressDots } from "@/components/quiz/QuizProgressDots";
 import { QuizScoreScreen } from "@/components/quiz/QuizScoreScreen";
 import { QuizSessionExit } from "@/components/quiz/QuizSessionExit";
 import type { QuizScope } from "@/lib/quiz/quizScope";
-import { getTranslation } from "@/lib/translations";
+import { quizCopy } from "@/lib/i18n/copy/quiz";
 import { cn } from "@/lib/utils";
 import type { Language } from "@/types/shared";
 
@@ -56,7 +56,7 @@ export const QuizPlayIsland = ({
   language,
   className,
 }: QuizPlayIslandProps) => {
-  const t = getTranslation(language).quiz;
+  const t = quizCopy[language];
   const session = useQuizSession({ scope, theme });
 
   if (session.status === "loading") {

@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { getTranslation } from "@/lib/translations";
+import { quizCopy } from "@/lib/i18n/copy/quiz";
 import type { Language } from "@/types/shared";
 
 interface QuizProgressDotsProps {
@@ -22,7 +22,7 @@ export const QuizProgressDots = ({
   language,
   className,
 }: QuizProgressDotsProps) => {
-  const t = getTranslation(language).quiz;
+  const t = quizCopy[language];
   return (
     <div className={cn("flex flex-col items-center gap-2", className)}>
       <div

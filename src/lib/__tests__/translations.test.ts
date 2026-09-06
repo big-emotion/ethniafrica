@@ -17,57 +17,16 @@ import {
 } from "@/lib/translations";
 
 /**
- * `trail.segments` is keyed by URL segment, and the URL segments differ by
- * locale on purpose (DEC-049) — so it is the one branch where the two
- * dictionaries are not expected to share keys. It is held to the routing
- * tables instead, below.
+ * Key parity, empty strings and untranslated values are the per-surface
+ * modules' contract, held by `src/lib/i18n/__tests__/copyParity.test.ts`;
+ * this suite covers what only the composed façade can answer.
  */
-const URL_KEYED_BRANCH = "trail.segments";
-
-/**
- * Every dotted leaf path of a dictionary, so two locales can be compared by
- * shape rather than by content.
- */
-function leafPaths(value: unknown, prefix = ""): string[] {
-  if (typeof value !== "object" || value === null) return [prefix];
-  if (prefix === URL_KEYED_BRANCH) return [prefix];
-  return Object.entries(value).flatMap(([key, child]) =>
-    leafPaths(child, prefix ? `${prefix}.${key}` : key)
-  );
-}
-
-function leafValues(value: unknown, prefix = ""): [string, unknown][] {
-  if (typeof value !== "object" || value === null) return [[prefix, value]];
-  return Object.entries(value).flatMap(([key, child]) =>
-    leafValues(child, prefix ? `${prefix}.${key}` : key)
-  );
-}
-
 describe("the UI dictionary in both locales (REQ-145)", () => {
   // @req REQ-145
   it("publishes a dictionary for every locale", () => {
     for (const locale of LOCALES) {
       expect(getTranslation(locale)).toBeDefined();
       expect(getTranslation(locale)).toBe(translations[locale]);
-    }
-  });
-
-  // A key present in one locale and absent in the other is a label that
-  // renders as `undefined` on one side of the site with a green build.
-  // @req REQ-145
-  it("gives the English and French dictionaries the same nested keys", () => {
-    expect(leafPaths(translations.en).sort()).toEqual(
-      leafPaths(translations.fr).sort()
-    );
-  });
-
-  // @req REQ-145
-  it("leaves no empty string in either locale", () => {
-    for (const locale of LOCALES) {
-      for (const [path, value] of leafValues(translations[locale])) {
-        expect(typeof value, path).toBe("string");
-        expect((value as string).trim().length, path).toBeGreaterThan(0);
-      }
     }
   });
 

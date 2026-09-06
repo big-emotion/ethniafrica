@@ -2,6 +2,8 @@ import type { CSSProperties } from "react";
 
 import type { AtlasTargetFacts } from "@/components/atlas/AtlasGlobe";
 import { ActionLink } from "@/components/ui/ActionLink";
+import { formatNumber } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
 
 /**
  * What the globe's panel says when a reader picks one country of a family's
@@ -22,6 +24,7 @@ import { ActionLink } from "@/components/ui/ActionLink";
  */
 
 export interface FamilyTargetFactsInput {
+  language: Language;
   familyNameFr: string;
   /** The family's own member count — never the sum of the per-country counts. */
   memberPeopleCount: number;
@@ -70,13 +73,14 @@ const CHIP_STYLE: CSSProperties = {
   color: "var(--afh-text-soft)",
 };
 
-const percentFr = new Intl.NumberFormat("fr-FR", {
+const ONE_DECIMAL: Intl.NumberFormatOptions = {
   minimumFractionDigits: 1,
   maximumFractionDigits: 1,
-});
+};
 
 // @req REQ-117
 export function buildFamilyTargetFacts({
+  language,
   familyNameFr,
   memberPeopleCount,
   peopleNamesByCountry,
@@ -112,7 +116,7 @@ export function buildFamilyTargetFacts({
                 fontVariantNumeric: "tabular-nums",
               }}
             >
-              {percentFr.format(share)} %
+              {formatNumber(language, share, ONE_DECIMAL)} %
             </span>
             <span style={TRACK_STYLE}>
               <span

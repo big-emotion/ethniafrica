@@ -12,6 +12,8 @@ import {
   worldLandmassRings,
 } from "@/lib/atlas/projectionMorph";
 import { getAfricaAdmin0Rings } from "@/lib/atlas/overlays";
+import { useRouteLanguage } from "@/hooks/use-language";
+import { formatNumber } from "@/lib/languageTag";
 
 /**
  * The projection the game is named after, made draggable (REQ-120).
@@ -35,13 +37,14 @@ import { getAfricaAdmin0Rings } from "@/lib/atlas/overlays";
 
 const REFERENCE_LATITUDE = 60;
 
-const inflationFormat = new Intl.NumberFormat("fr-FR", {
+const ONE_DECIMAL: Intl.NumberFormatOptions = {
   minimumFractionDigits: 1,
   maximumFractionDigits: 1,
-});
+};
 
 // @req REQ-120
 export function MercatorProjectionStage() {
+  const language = useRouteLanguage();
   const [blend, setBlend] = useState(MERCATOR_BLEND);
   const sliderId = useId();
 
@@ -65,7 +68,7 @@ export function MercatorProjectionStage() {
         aria-label={
           isTrueSize
             ? "Planisphère à surfaces vraies : les cercles témoins couvrent tous la même surface sur le globe et en occupent autant à l'écran."
-            : `Planisphère de Mercator : les cercles témoins couvrent tous la même surface sur le globe, mais celui de 60 degrés de latitude est dessiné ${inflationFormat.format(inflation)} fois plus grand que celui de l'équateur.`
+            : `Planisphère de Mercator : les cercles témoins couvrent tous la même surface sur le globe, mais celui de 60 degrés de latitude est dessiné ${formatNumber(language, inflation, ONE_DECIMAL)} fois plus grand que celui de l'équateur.`
         }
       >
         {world.map((ring, index) => (
@@ -118,7 +121,7 @@ export function MercatorProjectionStage() {
             is actually the second half of the lesson. */}
         {isTrueSize
           ? "Tous occupent la même surface à l'écran. Leur forme change, pas leur surface."
-          : `À 60° de latitude, une surface est dessinée ${inflationFormat.format(inflation)} fois trop grande.`}
+          : `À 60° de latitude, une surface est dessinée ${formatNumber(language, inflation, ONE_DECIMAL)} fois trop grande.`}
       </p>
 
       <p className="mercator-stage-note">

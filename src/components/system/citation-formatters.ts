@@ -1,4 +1,9 @@
+import { formatDate } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
+
 export interface CitationFormatterInput {
+  /** The locale the citation is read in: it sets the access date's form. */
+  language: Language;
   title: string;
   productName: string;
   url: string;
@@ -7,12 +12,13 @@ export interface CitationFormatterInput {
 
 const LICENSE = "CC-BY-SA 4.0.";
 
-const frenchDateFormatter = new Intl.DateTimeFormat("fr-FR", {
+// UTC so the access date a reader copies does not depend on where they sit.
+const ACCESS_DATE: Intl.DateTimeFormatOptions = {
   day: "numeric",
   month: "long",
   year: "numeric",
   timeZone: "UTC",
-});
+};
 
 const bibTeXCharacters: Record<string, string> = {
   "\\": "\\textbackslash{}",
@@ -27,8 +33,8 @@ const bibTeXCharacters: Record<string, string> = {
   "~": "\\textasciitilde{}",
 };
 
-function formatAccessDate(date: Date): string {
-  return frenchDateFormatter.format(date);
+function formatAccessDate(language: Language, date: Date): string {
+  return formatDate(language, date, ACCESS_DATE);
 }
 
 function formatAccessDateIso(date: Date): string {
@@ -59,7 +65,7 @@ export function createPrintableUrl(url: string): string {
 
 // @req REQ-021
 export function formatPlainTextCitation(input: CitationFormatterInput): string {
-  const accessDate = formatAccessDate(input.accessedAt);
+  const accessDate = formatAccessDate(input.language, input.accessedAt);
 
   return `${input.title}. ${input.productName}. ${input.url}. Consulté le ${accessDate}. ${LICENSE}`;
 }
@@ -69,7 +75,7 @@ export function formatBibTeXCitation(input: CitationFormatterInput): string {
   const title = escapeBibTeX(input.title);
   const productName = escapeBibTeX(input.productName);
   const url = escapeBibTeX(input.url);
-  const accessDate = formatAccessDate(input.accessedAt);
+  const accessDate = formatAccessDate(input.language, input.accessedAt);
   const accessDateIso = formatAccessDateIso(input.accessedAt);
   const citationKey =
     `${input.productName}-${input.accessedAt.getUTCFullYear()}`
@@ -92,7 +98,7 @@ export function formatBibTeXCitation(input: CitationFormatterInput): string {
 export function formatMarkdownCitation(input: CitationFormatterInput): string {
   const title = escapeMarkdown(input.title);
   const productName = escapeMarkdown(input.productName);
-  const accessDate = formatAccessDate(input.accessedAt);
+  const accessDate = formatAccessDate(input.language, input.accessedAt);
 
   return `[${title}](<${input.url}>). ${productName}. Consulté le ${accessDate}. ${LICENSE}`;
 }

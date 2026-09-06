@@ -26,6 +26,7 @@ import { getPeopleRoute, resolvePeopleDeepLink } from "@/lib/routing";
 import type { CountryId, People } from "@/types/afrik";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import { getTranslation } from "@/lib/translations";
+import { formatNumber } from "@/lib/languageTag";
 import type { Language } from "@/types/shared";
 
 /**
@@ -67,8 +68,6 @@ const PARAM = {
   page: "page",
   size: PAGE_SIZE_PARAM,
 } as const;
-
-const countFormat = new Intl.NumberFormat("fr-FR");
 
 /**
  * An address for this facet under a given selection.
@@ -133,6 +132,7 @@ export default async function PeuplesHubPage({
 }) {
   const { lang } = await params;
   const language = lang as Language;
+  const count = (value: number) => formatNumber(language, value);
   const query = (await searchParams) ?? {};
 
   const fiche = resolvePeopleDeepLink(language, query);
@@ -229,6 +229,7 @@ export default async function PeuplesHubPage({
 
   const pagination = (position: "top" | "bottom") => (
     <FacetPagination
+      language={language}
       position={position}
       page={reading.page}
       pageCount={reading.totalPages}
@@ -241,7 +242,7 @@ export default async function PeuplesHubPage({
   );
 
   const lede =
-    `${countFormat.format(reading.total)} ` +
+    `${count(reading.total)} ` +
     `${reading.total === 1 ? "peuple" : "peuples"} dans cette sélection. ` +
     `Choisissez un pays sur le globe pour voir ceux qu'il documente.`;
 

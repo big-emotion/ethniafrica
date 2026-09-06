@@ -101,6 +101,14 @@ jobs:
         env:
           REQ_BASE: ${{ github.head_ref == 'recette' && 'recette' || github.base_ref }}
 
+      # New reader-facing French must land in a src/lib/i18n/copy dictionary
+      # (REQ-145). Same base as lint:req, for the same reason: the gate reads
+      # what the PR adds, and only a diff against the branch it lands on says
+      # what that is.
+      - run: npm run check:copy-literals -- --base "origin/$REQ_BASE"
+        env:
+          REQ_BASE: ${{ github.head_ref == 'recette' && 'recette' || github.base_ref }}
+
       - run: npm run check:jira-template
 
       - run: npm run check:action-pins

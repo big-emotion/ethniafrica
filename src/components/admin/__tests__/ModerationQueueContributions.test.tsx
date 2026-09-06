@@ -58,7 +58,7 @@ function rowFor(slug: string): HTMLElement {
 describe("ModerationQueue — reports and contributions side by side", () => {
   // @req REQ-091
   it("labels each row with what it is", () => {
-    render(<ModerationQueue reports={[report, contribution]} />);
+    render(<ModerationQueue language="fr" reports={[report, contribution]} />);
 
     expect(
       within(rowFor("ABC123DEFG")).getByText("Signalement")
@@ -75,7 +75,7 @@ describe("ModerationQueue — reports and contributions side by side", () => {
    */
   // @req REQ-091
   it("offers no action on a contribution — it can only be read", () => {
-    render(<ModerationQueue reports={[contribution]} />);
+    render(<ModerationQueue language="fr" reports={[contribution]} />);
 
     const row = rowFor("HJK456MNPQ");
     expect(within(row).queryByRole("button")).toBeNull();
@@ -84,7 +84,7 @@ describe("ModerationQueue — reports and contributions side by side", () => {
 
   // @req REQ-091
   it("keeps the report's own moves untouched", () => {
-    render(<ModerationQueue reports={[report]} />);
+    render(<ModerationQueue language="fr" reports={[report]} />);
 
     expect(
       within(rowFor("ABC123DEFG")).getByRole("button", { name: "Examiner" })
@@ -97,7 +97,7 @@ describe("ModerationQueue — reports and contributions side by side", () => {
    */
   // @req REQ-091
   it("shows the proposal a contribution carries", () => {
-    render(<ModerationQueue reports={[contribution]} />);
+    render(<ModerationQueue language="fr" reports={[contribution]} />);
 
     const proposal = within(rowFor("HJK456MNPQ")).getByText(/new_people/);
     expect(proposal).toHaveTextContent("Bassari");

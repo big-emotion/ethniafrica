@@ -5,8 +5,8 @@ import type {
   PeopleCountriesData,
   PeopleHeroData,
 } from "@/lib/peopleDataTransformer";
-
-const populationFr = new Intl.NumberFormat("fr-FR");
+import { formatNumber } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
 
 /**
  * The head of the people fiche: overline, title, lede, and two chips.
@@ -30,6 +30,7 @@ const populationFr = new Intl.NumberFormat("fr-FR");
  */
 // @req REQ-115
 export function PeopleFicheHead({
+  language,
   hero,
   countries,
   confidenceScore = null,
@@ -37,6 +38,7 @@ export function PeopleFicheHead({
   lastHumanAuditAt = null,
   showConfidence = true,
 }: {
+  language: Language;
   hero: PeopleHeroData;
   countries: PeopleCountriesData;
   confidenceScore?: number | null;
@@ -84,7 +86,7 @@ export function PeopleFicheHead({
         {countries.totalPopulation > 0 && (
           <span className="afh-chip">
             <span className="font-[family-name:var(--afh-font-mono)] tabular-nums">
-              {populationFr.format(countries.totalPopulation)}
+              {formatNumber(language, countries.totalPopulation)}
             </span>{" "}
             personnes
             {countries.referenceYear

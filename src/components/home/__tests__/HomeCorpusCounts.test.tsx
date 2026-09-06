@@ -16,7 +16,7 @@ const FULL_CORPUS = {
 describe("HomeCorpusCounts — what the atlas documents, in three figures", () => {
   // @req REQ-113
   it("renders the three totals supplied by the server", () => {
-    render(<HomeCorpusCounts counts={FULL_CORPUS} />);
+    render(<HomeCorpusCounts language="fr" counts={FULL_CORPUS} />);
 
     expect(screen.getByTestId("home-count-peoples")).toHaveTextContent(
       /4\s?213/
@@ -31,7 +31,7 @@ describe("HomeCorpusCounts — what the atlas documents, in three figures", () =
   // that ladder when pays gave up its figure, and a nom sits on no rung of it.
   // @req REQ-113
   it("orders the figures the way the reader arrives at them", () => {
-    render(<HomeCorpusCounts counts={FULL_CORPUS} />);
+    render(<HomeCorpusCounts language="fr" counts={FULL_CORPUS} />);
 
     const labels = screen
       .getAllByRole("term")
@@ -53,7 +53,7 @@ describe("HomeCorpusCounts — what the atlas documents, in three figures", () =
   // has documented 33, never that Africa holds 33.
   // @req REQ-113
   it("scopes every figure to what the atlas documents", () => {
-    render(<HomeCorpusCounts counts={FULL_CORPUS} />);
+    render(<HomeCorpusCounts language="fr" counts={FULL_CORPUS} />);
 
     expect(screen.getByTestId("home-corpus-counts")).toHaveAccessibleName(
       /ce que l'atlas documente/i
@@ -67,7 +67,7 @@ describe("HomeCorpusCounts — what the atlas documents, in three figures", () =
   // operational failure into a false claim on the site's most visible page.
   // @req REQ-113
   it("states that totals are unavailable instead of replacing them with zero", () => {
-    render(<HomeCorpusCounts counts={null} />);
+    render(<HomeCorpusCounts language="fr" counts={null} />);
 
     expect(screen.getAllByText("Indisponible")).toHaveLength(3);
     expect(screen.queryByText("0")).not.toBeInTheDocument();
@@ -81,7 +81,12 @@ describe("HomeCorpusCounts — what the atlas documents, in three figures", () =
   // going dark whole.
   // @req REQ-113
   it("marks a single missing figure unavailable and keeps the rest", () => {
-    render(<HomeCorpusCounts counts={{ ...FULL_CORPUS, languages: null }} />);
+    render(
+      <HomeCorpusCounts
+        language="fr"
+        counts={{ ...FULL_CORPUS, languages: null }}
+      />
+    );
 
     expect(screen.getByTestId("home-count-languages")).toHaveAttribute(
       "data-state",
@@ -103,7 +108,9 @@ describe("HomeCorpusCounts — what the atlas documents, in three figures", () =
   // own <style>, so a render here cannot see the defect.
   // @req REQ-113
   it("declares one alignment for the figure and its label, at each width", () => {
-    const { container } = render(<HomeCorpusCounts counts={FULL_CORPUS} />);
+    const { container } = render(
+      <HomeCorpusCounts language="fr" counts={FULL_CORPUS} />
+    );
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
@@ -134,7 +141,9 @@ describe("HomeCorpusCounts — what the atlas documents, in three figures", () =
   // the component's own <style>: a render here cannot see the defect.
   // @req REQ-113
   it("reserves a label height that keeps the three figures on one line", () => {
-    const { container } = render(<HomeCorpusCounts counts={FULL_CORPUS} />);
+    const { container } = render(
+      <HomeCorpusCounts language="fr" counts={FULL_CORPUS} />
+    );
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
@@ -156,7 +165,9 @@ describe("HomeCorpusCounts — what the atlas documents, in three figures", () =
   // for nobody on `prefers-reduced-motion`.
   // @req REQ-113
   it("prints all three tiles at once, with no rotation", () => {
-    const { container } = render(<HomeCorpusCounts counts={FULL_CORPUS} />);
+    const { container } = render(
+      <HomeCorpusCounts language="fr" counts={FULL_CORPUS} />
+    );
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");

@@ -1,3 +1,6 @@
+import { displayCountryName } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
+
 const ISO_ALPHA_3_TO_ALPHA_2: Record<string, string> = {
   AGO: "AO",
   BDI: "BI",
@@ -55,17 +58,19 @@ const ISO_ALPHA_3_TO_ALPHA_2: Record<string, string> = {
   ZWE: "ZW",
 };
 
+/** The country's common name in the reader's locale, with corpus fallback. */
 // @req REQ-140
 export function getCountryCommonName(
-  language: Language,
+  lang: Language,
   isoAlpha3: string,
-  declaredName: string
+  officialName: string
 ): string {
   const isoAlpha2 = ISO_ALPHA_3_TO_ALPHA_2[isoAlpha3.trim().toUpperCase()];
-  if (!isoAlpha2) return declaredName;
-  return displayCountryName(language, isoAlpha2) ?? declaredName;
+  if (!isoAlpha2) return officialName;
+  return displayCountryName(lang, isoAlpha2) ?? officialName;
 }
 
+/** French-only compatibility accessor for corpus-side callers. */
 // @req REQ-001
 export function getFrenchCountryCommonName(
   isoAlpha3: string,
@@ -73,5 +78,3 @@ export function getFrenchCountryCommonName(
 ): string {
   return getCountryCommonName("fr", isoAlpha3, officialName);
 }
-import { displayCountryName } from "@/lib/languageTag";
-import type { Language } from "@/types/shared";

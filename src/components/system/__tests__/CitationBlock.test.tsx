@@ -15,6 +15,7 @@ function renderCitationBlock(
 ) {
   return render(
     <CitationBlock
+      language="fr"
       title="Fiche de référence (Nom autonome / Nom usuel)"
       liveUrl={LIVE_URL}
       accessedAt={ACCESSED_AT}
@@ -191,6 +192,7 @@ describe("CitationBlock", () => {
 
     rerender(
       <CitationBlock
+        language="fr"
         title="Fiche de référence (Nom autonome / Nom usuel)"
         liveUrl={LIVE_URL}
         accessedAt={ACCESSED_AT}

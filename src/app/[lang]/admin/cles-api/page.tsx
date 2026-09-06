@@ -1,6 +1,7 @@
 import { listUserApiKeys } from "@/api/v2/services/keyService";
 import { SiteTrail } from "@/components/layout/SiteTrail";
 import { getModeratorSession } from "@/lib/supabase/moderator";
+import type { Language } from "@/types/shared";
 import { ApiKeysManager } from "./ApiKeysManager";
 
 /**
@@ -14,7 +15,12 @@ import { ApiKeysManager } from "./ApiKeysManager";
  * which is a change of policy and is recorded as one.
  */
 // @req REQ-056
-export default async function ApiKeysPage() {
+export default async function ApiKeysPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
   const { user } = await getModeratorSession();
 
   const keys = await listUserApiKeys(user.id);
@@ -31,7 +37,7 @@ export default async function ApiKeysPage() {
         </p>
       </header>
 
-      <ApiKeysManager initialKeys={keys} />
+      <ApiKeysManager language={lang as Language} initialKeys={keys} />
     </main>
   );
 }

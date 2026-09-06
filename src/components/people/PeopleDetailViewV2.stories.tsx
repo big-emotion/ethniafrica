@@ -240,6 +240,7 @@ export const Hero_Mobile: Story = {
   render: () => (
     <div style={{ background: "hsl(35,35%,97%)", minHeight: "100vh" }}>
       <PeopleFicheHead
+        language="fr"
         hero={yorubaHero}
         countries={countries}
         confidenceScore={null}

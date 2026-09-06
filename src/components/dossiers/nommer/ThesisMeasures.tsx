@@ -1,4 +1,6 @@
 import { NOMMER_FIGURES } from "@/lib/dossiers/nommer/figures";
+import { formatNumber } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
 
 /**
  * The three numbers the dossier rests on, stated as composition rather than
@@ -32,7 +34,7 @@ interface Measure {
   provenance: string;
 }
 
-const measures = (): Measure[] => {
+const measures = (language: Language): Measure[] => {
   const exonyms = countedValue("corpus-exonyms");
   const autonyms = countedValue("corpus-autonyms");
   const contested = countedValue("status-contested-or-colonial");
@@ -46,7 +48,7 @@ const measures = (): Measure[] => {
       value: `${Math.round(exonyms / autonyms)} pour 1`,
       claim:
         "Le corpus tient quatre noms venus du dehors pour un nom venu du dedans.",
-      provenance: `${exonyms.toLocaleString("fr-FR")} exonymes contre ${autonyms.toLocaleString("fr-FR")} autonymes, comptés sur les fiches`,
+      provenance: `${formatNumber(language, exonyms)} exonymes contre ${formatNumber(language, autonyms)} autonymes, comptés sur les fiches`,
     },
     {
       value: `${contested} sur ${peoples}`,
@@ -64,9 +66,9 @@ const measures = (): Measure[] => {
 };
 
 // @req REQ-113
-export const ThesisMeasures = () => (
+export const ThesisMeasures = ({ language }: { language: Language }) => (
   <ul className="grid list-none grid-cols-1 gap-afh-xl p-0 sm:grid-cols-3">
-    {measures().map((measure) => (
+    {measures(language).map((measure) => (
       <li key={measure.value} className="text-left">
         <p className="font-afh-display text-afh-h1 font-black leading-none text-[color:var(--accent-ink)]">
           {measure.value}

@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { buildFamilyTargetFacts } from "@/components/family/familyTargetFacts";
 
 const facts = buildFamilyTargetFacts({
+  language: "fr",
   familyNameFr: "Bénoué-Congo",
   memberPeopleCount: 60,
   peopleNamesByCountry: {

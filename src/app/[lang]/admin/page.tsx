@@ -200,6 +200,7 @@ export default async function ModerationQueuePage({
         ) : (
           <>
             <FacetPagination
+              language={language}
               position="top"
               page={page}
               pageCount={pageCount}
@@ -210,9 +211,10 @@ export default async function ModerationQueuePage({
               unitLabel="signalements"
             />
 
-            <ModerationQueue reports={items} />
+            <ModerationQueue language={language} reports={items} />
 
             <FacetPagination
+              language={language}
               position="bottom"
               page={page}
               pageCount={pageCount}

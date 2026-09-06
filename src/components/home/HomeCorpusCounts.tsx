@@ -8,15 +8,16 @@
  */
 import { CORPUS_CLASSES } from "@/lib/home/corpusClasses";
 import type { CorpusCounts } from "@/lib/home/corpusCounts";
+import { formatNumber } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
 
 export interface HomeCorpusCountsProps {
+  language: Language;
   /** Live server totals, or null when the corpus could not be read. */
   counts: CorpusCounts | null;
 }
 
-const formatCount = new Intl.NumberFormat("fr-FR", {
-  maximumFractionDigits: 0,
-});
+const WHOLE_NUMBER: Intl.NumberFormatOptions = { maximumFractionDigits: 0 };
 
 /**
  * What the atlas documents, in three figures, under the home search.
@@ -34,7 +35,7 @@ const formatCount = new Intl.NumberFormat("fr-FR", {
  * reader the wrong rule.
  */
 // @req REQ-113
-export function HomeCorpusCounts({ counts }: HomeCorpusCountsProps) {
+export function HomeCorpusCounts({ language, counts }: HomeCorpusCountsProps) {
   return (
     <dl
       className="home-corpus-counts"
@@ -54,7 +55,9 @@ export function HomeCorpusCounts({ counts }: HomeCorpusCountsProps) {
           >
             <dt>{tileLabel}</dt>
             <dd className={available ? undefined : "is-unavailable"}>
-              {available ? formatCount.format(value) : "Indisponible"}
+              {available
+                ? formatNumber(language, value, WHOLE_NUMBER)
+                : "Indisponible"}
             </dd>
           </div>
         );

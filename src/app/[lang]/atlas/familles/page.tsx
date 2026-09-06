@@ -19,6 +19,7 @@ import { getFamilyRoute, resolveFamilyDeepLink } from "@/lib/routing";
 import type { CountryId } from "@/types/afrik";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import { getTranslation } from "@/lib/translations";
+import { formatNumber } from "@/lib/languageTag";
 import type { Language } from "@/types/shared";
 
 /**
@@ -71,9 +72,6 @@ function requestedPage(raw: string | string[] | undefined): number {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
 }
 
-const formatCount = (value: number): string =>
-  new Intl.NumberFormat("fr-FR").format(value);
-
 // @req REQ-141
 export async function generateMetadata({
   params,
@@ -104,6 +102,7 @@ export default async function FamillesHubPage({
   const { lang } = await params;
   const language = lang as Language;
   const query = (await searchParams) ?? {};
+  const formatCount = (value: number): string => formatNumber(language, value);
 
   const fiche = resolveFamilyDeepLink(language, query);
   if (fiche) {
@@ -202,6 +201,7 @@ export default async function FamillesHubPage({
 
   const pagination = (position: "top" | "bottom") => (
     <FacetPagination
+      language={language}
       position={position}
       page={page}
       pageCount={pageCount}

@@ -91,6 +91,7 @@ export function FicheSnapshotView({
       </div>
 
       <PinnedVersionBanner
+        language={lang as Language}
         pinnedAt={publishedAt}
         versionTag={String(version)}
         liveUrl={liveRoute(lang as Language, entityId)}

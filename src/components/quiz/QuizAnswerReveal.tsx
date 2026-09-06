@@ -7,7 +7,7 @@ import { LazySourceChainSheet } from "@/components/source-transparency/SourceCha
 import { SOURCE_TIER_LABELS } from "@/lib/glossaire/vocabularies";
 import { toSourceTier } from "@/types/sources";
 import { cn } from "@/lib/utils";
-import { getTranslation } from "@/lib/translations";
+import { quizCopy } from "@/lib/i18n/copy/quiz";
 import type {
   QuizSessionQuestionView,
   QuizOptionValue,
@@ -65,7 +65,7 @@ export const QuizAnswerReveal = ({
   language,
   className,
 }: QuizAnswerRevealProps) => {
-  const t = getTranslation(language).quiz;
+  const t = quizCopy[language];
   const reducedMotion = usePrefersReducedMotion();
   const headingRef = React.useRef<HTMLHeadingElement>(null);
   const [sheetOpen, setSheetOpen] = React.useState(false);
