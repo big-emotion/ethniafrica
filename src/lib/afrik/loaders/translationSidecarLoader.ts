@@ -136,6 +136,9 @@ export function loadAllTranslationSidecars(
   for (const relativePath of listTranslationSidecars(translationsRoot, lang)) {
     const sidecarFile = join(translationsRoot, lang, relativePath);
     const [directory] = relativePath.split("/");
+    // Dossiers are sparse overlays served from git by lib/dossiers/corpus;
+    // they predate this table and have their own validator and reader.
+    if (directory === "dossiers") continue;
     const entityType = ENTITY_TYPE_BY_CORPUS_DIRECTORY[directory];
     if (!entityType) {
       batch.errors.push(

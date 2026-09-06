@@ -18,6 +18,7 @@ import { parse } from "csv-parse/sync";
 import { evaluateSourceUrl } from "@/lib/sources/authorized-source-catalog";
 import { parseRelationFile } from "../src/lib/afrik/parsers/relationParser";
 import { parseDossierFile } from "../src/lib/afrik/parsers/dossierParser";
+import { applyDossierTranslation } from "../src/lib/dossiers/translation";
 import { parseNameRecordFile } from "../src/lib/afrik/parsers/nameRecordParser";
 import { parsePatronymeFile } from "../src/lib/afrik/parsers/patronymeParser";
 import type { SourceTier } from "../src/types/sources";
@@ -4522,9 +4523,9 @@ export function checkTranslationSidecars(
       lang
     )) {
       const label = `${lang}/${relativePath}`;
-      const entityType =
-        ENTITY_TYPE_BY_CORPUS_DIRECTORY[relativePath.split("/")[0]];
-      if (!entityType) {
+      const [directory] = relativePath.split("/");
+      const entityType = ENTITY_TYPE_BY_CORPUS_DIRECTORY[directory];
+      if (!entityType && directory !== "dossiers") {
         errors.push(`TR-1: ${label}: not under a corpus directory`);
         continue;
       }
@@ -4551,6 +4552,26 @@ export function checkTranslationSidecars(
         );
         continue;
       }
+
+      // Dossiers were already shipped as sparse, file-served overlays before
+      // afrik_translations existed. Their reader owns that contract; asking
+      // the full-record store validator to reinterpret it would reject valid
+      // translations and make the recette loader try to persist partial rows.
+      if (directory === "dossiers") {
+        const parsedSource = parseDossierFile(source);
+        if (
+          !parsedSource.success ||
+          !parsedSource.data ||
+          !applyDossierTranslation(parsedSource.data, sidecar)
+        ) {
+          errors.push(`TR-1: ${label}: invalid dossier translation overlay`);
+        }
+        continue;
+      }
+
+      // The unsupported-directory branch above continued already. This guard
+      // keeps the narrowing explicit for TypeScript and future directories.
+      if (!entityType) continue;
 
       const { block, content } = stripTranslationBlock(sidecar);
       const parsedBlock = translationBlockSchema.safeParse(block);

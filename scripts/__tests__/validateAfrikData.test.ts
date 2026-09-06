@@ -956,6 +956,40 @@ describe("validateAfrikData – new integrity checks", () => {
       expect(result.ok).toBe(true);
     });
 
+    // Dossier translations predate the database-backed store and are sparse
+    // overlays validated by the dossier reader. TR-1 must validate that
+    // contract too, without pretending they are full stored records.
+    // @req REQ-143
+    it("accepts a valid file-served dossier translation", () => {
+      const source = readFileSync(
+        resolve("dataset/source/afrik/dossiers/DOS_KONGO.json"),
+        "utf8"
+      );
+      const translated = readFileSync(
+        resolve("dataset/translations/en/dossiers/DOS_KONGO.json"),
+        "utf8"
+      );
+      const sourceFile = join(tmpDir, "dossiers", "DOS_KONGO.json");
+      const translatedFile = join(
+        tmpDir,
+        "translations",
+        "en",
+        "dossiers",
+        "DOS_KONGO.json"
+      );
+      mkdirSync(join(sourceFile, ".."), { recursive: true });
+      mkdirSync(join(translatedFile, ".."), { recursive: true });
+      writeFileSync(sourceFile, source);
+      writeFileSync(translatedFile, translated);
+
+      const result = checkTranslationSidecars(
+        tmpDir,
+        join(tmpDir, "translations")
+      );
+
+      expect(result).toEqual({ ok: true, errors: [], warnings: [] });
+    });
+
     // @req REQ-142
     it("fails a sidecar whose translation kind is outside the three-value set, naming it", () => {
       writeSource(tmpDir);

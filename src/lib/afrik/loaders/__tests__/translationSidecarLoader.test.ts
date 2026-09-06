@@ -166,6 +166,24 @@ describe("loadAllTranslationSidecars (REQ-146)", () => {
       stale: [],
     });
   });
+
+  // Dossiers have their own file-served sparse-overlay reader and do not map
+  // to rows in afrik_translations.
+  // @req REQ-146
+  it("leaves file-served dossier translations to their dedicated loader", () => {
+    const root = createFixtureRoot();
+    const { corpus, translations } = writeCorpus(root);
+    writeJson(join(translations, "en", "dossiers", "DOS_KONGO.json"), {
+      title: "The Kongo kingdom",
+      _translation: { kind: "machine" },
+    });
+
+    expect(loadAllTranslationSidecars("en", translations, corpus)).toEqual({
+      rows: [],
+      errors: [],
+      stale: [],
+    });
+  });
 });
 
 function row(entityId: string): TranslationRow {
