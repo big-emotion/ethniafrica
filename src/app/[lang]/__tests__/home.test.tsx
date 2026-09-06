@@ -4,6 +4,8 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { CANONICAL_DOMAIN, OG_DESCRIPTION, OG_TITLE } from "@/lib/brand";
 import { CORPUS_CLASSES } from "@/lib/home/corpusClasses";
+import { DID_YOU_KNOW_FACTS } from "@/lib/home/didYouKnowFacts";
+import { DID_YOU_KNOW_FACTS_EN } from "@/lib/home/didYouKnowFacts.en";
 
 const {
   getCorpusCountsMock,
@@ -114,6 +116,9 @@ const routeParams = (lang: string) => Promise.resolve({ lang });
 const renderHome = async () =>
   render(await Home({ params: routeParams("fr") }));
 
+const renderEnglishHome = async () =>
+  render(await Home({ params: routeParams("en") }));
+
 describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -154,6 +159,29 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
         .querySelectorAll('[data-testid="home-dyk-official-source"]')
     ).toHaveLength(2);
     expect(screen.getAllByTestId("home-dyk-fact")).toHaveLength(2);
+  });
+
+  // @req REQ-145
+  it("reads the drawn facts from the English sidecar on the English home", async () => {
+    vi.spyOn(Math, "random").mockReturnValue(0);
+
+    await renderEnglishHome();
+
+    const cards = screen.getAllByTestId("home-dyk-fact");
+    expect(cards).toHaveLength(2);
+    for (const card of cards) {
+      const heading = card.querySelector("h2")?.textContent;
+      expect(heading).toBeTruthy();
+      expect(
+        Object.values(DID_YOU_KNOW_FACTS_EN).some(
+          (translation) => translation.headline === heading
+        )
+      ).toBe(true);
+      expect(DID_YOU_KNOW_FACTS.some((fact) => fact.headline === heading)).toBe(
+        false
+      );
+    }
+    expect(screen.getByText("Did you know")).toBeInTheDocument();
   });
 
   // The illustrated section is full bleed and is the final child of main, so

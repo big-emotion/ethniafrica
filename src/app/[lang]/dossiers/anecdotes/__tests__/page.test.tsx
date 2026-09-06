@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { describe, expect, it, vi } from "vitest";
 
 import { DID_YOU_KNOW_FACTS } from "@/lib/home/didYouKnowFacts";
+import { DID_YOU_KNOW_FACTS_EN } from "@/lib/home/didYouKnowFacts.en";
 
 const readerProps = vi.fn();
 
@@ -19,17 +20,17 @@ vi.mock("@/components/layout/PageLayout", () => ({
 
 import AnecdotesPage from "@/app/[lang]/dossiers/anecdotes/page";
 
-async function renderPage(a?: string) {
+async function renderPage(a?: string, lang = "fr") {
   readerProps.mockClear();
   render(
     await AnecdotesPage({
-      params: Promise.resolve({ lang: "fr" }),
+      params: Promise.resolve({ lang }),
       searchParams: Promise.resolve({ a }),
     })
   );
   return readerProps.mock.calls.at(-1)?.[0] as {
     deck: string[];
-    openingCard: { fact: { id: string } };
+    openingCard: { fact: { id: string; headline: string } };
   };
 }
 
@@ -72,5 +73,19 @@ describe("The anecdotes page's payload (REQ-113)", () => {
     expect(props.deck[0]).toBe(named);
     expect(props.openingCard.fact.id).toBe(named);
     expect(new Set(props.deck).size).toBe(DID_YOU_KNOW_FACTS.length);
+  });
+
+  // @req REQ-145
+  it("hydrates the English version of a named anecdote on /en", async () => {
+    const named = DID_YOU_KNOW_FACTS[0].id;
+    const props = await renderPage(named, "en");
+
+    expect(props.openingCard.fact).toMatchObject({
+      id: named,
+      headline: DID_YOU_KNOW_FACTS_EN[named].headline,
+    });
+    expect(props.openingCard.fact.headline).not.toBe(
+      DID_YOU_KNOW_FACTS[0].headline
+    );
   });
 });

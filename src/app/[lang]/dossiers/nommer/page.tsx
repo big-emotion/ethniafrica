@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 
-import {
-  NOMMER_PAGE_SUBTITLE,
-  NOMMER_PAGE_TITLE,
-  NommerPillarPage,
-} from "@/components/dossiers/nommer/NommerPillarPage";
+import { NommerPillarPage } from "@/components/dossiers/nommer/NommerPillarPage";
+import { nommerCopy } from "@/lib/i18n/copy/nommer";
 import { getLocalizedRoute } from "@/lib/routing";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
@@ -19,7 +16,9 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { lang } = await params;
-  const copy = { title: NOMMER_PAGE_TITLE, description: NOMMER_PAGE_SUBTITLE };
+  const language = lang as Language;
+  const pageCopy = nommerCopy[language];
+  const copy = { title: pageCopy.title, description: pageCopy.subtitle };
   return {
     ...copy,
     ...surfaceHead(

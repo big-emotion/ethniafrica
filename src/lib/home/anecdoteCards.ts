@@ -1,5 +1,6 @@
-import type { DidYouKnowFact } from "@/lib/home/didYouKnowFacts";
 import type { DidYouKnowIllustration } from "@/lib/home/didYouKnowIllustrations";
+import type { LocalizedDidYouKnowFact } from "@/lib/home/didYouKnowLocalization";
+import type { Language } from "@/types/shared";
 
 /**
  * One anecdote as a reading surface needs it: the claim and the picture.
@@ -11,7 +12,7 @@ import type { DidYouKnowIllustration } from "@/lib/home/didYouKnowIllustrations"
  * chunk for the rest.
  */
 export interface AnecdoteCardData {
-  fact: DidYouKnowFact;
+  fact: LocalizedDidYouKnowFact;
   illustration?: DidYouKnowIllustration;
 }
 
@@ -25,22 +26,36 @@ export interface AnecdoteCardData {
  * The result is cached for the life of the page. Turning a card is a press,
  * and a press must not wait on a network round-trip it has already made.
  */
-let pending: Promise<Map<string, AnecdoteCardData>> | null = null;
+const pending = new Map<Language, Promise<Map<string, AnecdoteCardData>>>();
 
 // @req REQ-113
-export function loadAnecdoteCards(): Promise<Map<string, AnecdoteCardData>> {
-  pending ??= Promise.all([
+export function loadAnecdoteCards(
+  language: Language = "fr"
+): Promise<Map<string, AnecdoteCardData>> {
+  const cached = pending.get(language);
+  if (cached) return cached;
+
+  const request = Promise.all([
     import("@/lib/home/didYouKnowFacts"),
     import("@/lib/home/didYouKnowIllustrations"),
+    import("@/lib/home/didYouKnowLocalization"),
   ]).then(
-    ([{ DID_YOU_KNOW_FACTS }, { illustrationFor }]) =>
+    ([{ DID_YOU_KNOW_FACTS }, { illustrationFor }, localization]) =>
       new Map(
         DID_YOU_KNOW_FACTS.map((fact) => [
           fact.id,
-          { fact, illustration: illustrationFor(fact.id) },
+          {
+            fact: localization.localizeDidYouKnowFact(fact, language),
+            illustration: localization.localizeDidYouKnowIllustration(
+              fact.id,
+              illustrationFor(fact.id),
+              language
+            ),
+          },
         ])
       )
   );
 
-  return pending;
+  pending.set(language, request);
+  return request;
 }

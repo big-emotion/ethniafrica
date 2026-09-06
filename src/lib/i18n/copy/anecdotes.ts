@@ -5,6 +5,15 @@ import type {
 import type { Language } from "@/types/shared";
 
 const en = {
+  homeEyebrow: "Did you know",
+  homeMore: "Read more anecdotes",
+  pageTitle: "Anecdotes",
+  pageSubtitle:
+    "African names, one by one: who gave them, when, and what they covered.",
+  pageKicker: "Every name was given by someone",
+  empty: "No anecdotes are published at the moment.",
+  savedCount: (count: number) =>
+    `${count} anecdote${count === 1 ? "" : "s"} saved on this device`,
   entityLabels: {
     people: "People",
     country: "Country",
@@ -33,6 +42,15 @@ const en = {
 type AnecdotesCopy = typeof en;
 
 const fr: AnecdotesCopy = {
+  homeEyebrow: "Saviez-vous que",
+  homeMore: "Lire d'autres anecdotes",
+  pageTitle: "Anecdotes",
+  pageSubtitle:
+    "Des noms d'Afrique pris un par un : qui les a donnés, quand, et ce qu'ils recouvraient.",
+  pageKicker: "Chaque nom a été donné par quelqu'un",
+  empty: "Aucune anecdote n'est publiée pour le moment.",
+  savedCount: (count) =>
+    `${count} anecdote${count > 1 ? "s" : ""} retenue${count > 1 ? "s" : ""} sur cet appareil`,
   entityLabels: {
     people: "Peuple",
     country: "Pays",

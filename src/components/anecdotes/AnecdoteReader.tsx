@@ -129,7 +129,7 @@ export function AnecdoteReader({
   deck,
   openingCard,
   openingImageSide = "end",
-  loadCards = loadAnecdoteCards,
+  loadCards,
 }: AnecdoteReaderProps) {
   const copy = anecdotesCopy[language];
   const [order, setOrder] = useState<string[]>(deck);
@@ -174,7 +174,9 @@ export function AnecdoteReader({
 
     if (!cards.has(nextId)) {
       try {
-        const bank = await loadCards();
+        const bank = await (loadCards
+          ? loadCards()
+          : loadAnecdoteCards(language));
         setCards((known) => new Map([...known, ...bank]));
       } catch {
         return;
@@ -183,7 +185,7 @@ export function AnecdoteReader({
 
     if (!walked) setOrder(nextOrder);
     setPosition(nextPosition);
-  }, [cards, fact, loadCards, order, position]);
+  }, [cards, fact, language, loadCards, order, position]);
 
   const toggleMark = useCallback(() => {
     if (!fact) return;
@@ -222,11 +224,7 @@ export function AnecdoteReader({
   // An empty bank is not an error state to dress; it is a page with nothing
   // to say, and saying so beats framing an empty card.
   if (!fact) {
-    return (
-      <p className="anecdote-empty">
-        Aucune anecdote n&apos;est publiée pour le moment.
-      </p>
-    );
+    return <p className="anecdote-empty">{copy.empty}</p>;
   }
 
   const isMarked = marked.includes(fact.id);
@@ -376,9 +374,7 @@ export function AnecdoteReader({
             there. What survives is the reader's own trail, which they built
             and which says nothing about how much remains. */}
         {marked.length > 0 ? (
-          <p className="anecdote-progress">
-            {`${marked.length} anecdote${marked.length > 1 ? "s" : ""} retenue${marked.length > 1 ? "s" : ""} sur cet appareil`}
-          </p>
+          <p className="anecdote-progress">{copy.savedCount(marked.length)}</p>
         ) : null}
       </div>
 

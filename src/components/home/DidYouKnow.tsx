@@ -4,16 +4,16 @@ import Link from "next/link";
 import { AnecdotePlate } from "@/components/anecdotes/AnecdotePlate";
 import { DidYouKnowMotif } from "@/components/home/DidYouKnowMotif";
 import { SectionHeading } from "@/components/home/SectionHeading";
+import { TranslationProvenanceMarker } from "@/components/fiche/TranslationProvenanceMarker";
 import { ActionLink } from "@/components/ui/ActionLink";
-import type {
-  DidYouKnowEntity,
-  DidYouKnowFact,
-} from "@/lib/home/didYouKnowFacts";
+import type { DidYouKnowEntity } from "@/lib/home/didYouKnowFacts";
 import { illustrationFor } from "@/lib/home/didYouKnowIllustrations";
 import {
+  localizeDidYouKnowIllustration,
+  type LocalizedDidYouKnowFact,
+} from "@/lib/home/didYouKnowLocalization";
+import {
   DID_YOU_KNOW_ENTITY_ACCENT,
-  DID_YOU_KNOW_ENTITY_LABEL,
-  DID_YOU_KNOW_TIER_LABEL,
   type AnecdoteImageSide,
 } from "@/lib/home/didYouKnowPresentation";
 import {
@@ -24,11 +24,12 @@ import {
 } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 import type { DidYouKnowMotif as DidYouKnowMotifName } from "@/lib/home/didYouKnowMotifs";
+import { anecdotesCopy } from "@/lib/i18n/copy/anecdotes";
 
 export interface DidYouKnowProps {
   language: Language;
   /** The two distinct facts drawn for this request, or an empty list. */
-  facts: DidYouKnowFact[];
+  facts: LocalizedDidYouKnowFact[];
   /** The cultural line motif drawn once for this page request. */
   motif?: DidYouKnowMotifName;
 }
@@ -40,7 +41,7 @@ function entityHref(language: Language, entity: DidYouKnowEntity): string {
 }
 
 interface HomeFactProps {
-  fact: DidYouKnowFact;
+  fact: LocalizedDidYouKnowFact;
   imageSide: AnecdoteImageSide;
   language: Language;
   priority: boolean;
@@ -56,7 +57,12 @@ interface HomeFactProps {
  * section of the page in its own right.
  */
 function HomeFact({ fact, imageSide, language, priority }: HomeFactProps) {
-  const illustration = illustrationFor(fact.id);
+  const illustration = localizeDidYouKnowIllustration(
+    fact.id,
+    illustrationFor(fact.id),
+    language
+  );
+  const copy = anecdotesCopy[language];
   const officialSource = fact.sources?.find(
     (source) => source.tier === "official"
   );
@@ -116,7 +122,7 @@ function HomeFact({ fact, imageSide, language, priority }: HomeFactProps) {
               >
                 <span aria-hidden="true" className="home-dyk-dot" />
                 <span className="home-dyk-chip-kind">
-                  {DID_YOU_KNOW_ENTITY_LABEL[entity.kind]}
+                  {copy.entityLabels[entity.kind]}
                 </span>
                 {entity.label}
               </Link>
@@ -138,9 +144,16 @@ function HomeFact({ fact, imageSide, language, priority }: HomeFactProps) {
               </a>
             </>
           ) : (
-            DID_YOU_KNOW_TIER_LABEL[fact.tier]
+            copy.tierLabels[fact.tier]
           )}
         </p>
+        <TranslationProvenanceMarker
+          translation={
+            fact.translationKind
+              ? { kind: fact.translationKind, stale: false }
+              : null
+          }
+        />
       </div>
     </article>
   );
@@ -167,6 +180,7 @@ export function DidYouKnow({
 }: DidYouKnowProps) {
   const visibleFacts = facts.slice(0, 2);
   if (visibleFacts.length === 0) return null;
+  const copy = anecdotesCopy[language];
 
   return (
     <section
@@ -179,7 +193,7 @@ export function DidYouKnow({
       <div className="home-dyk-inner">
         <SectionHeading
           centred
-          eyebrow="Saviez-vous que"
+          eyebrow={copy.homeEyebrow}
           className="home-dyk-heading"
         />
 
@@ -197,7 +211,7 @@ export function DidYouKnow({
 
         <p className="home-dyk-all">
           <ActionLink href={getLocalizedRoute(language, "anecdotes")}>
-            Lire d&apos;autres anecdotes
+            {copy.homeMore}
           </ActionLink>
         </p>
       </div>
