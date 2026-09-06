@@ -16,11 +16,11 @@ Illustrations were obtained from the Metropolitan Museum's public collection API
 
 The [classification table](congo-dossier-translation-classification.md) was produced before translation. Identifiers, source titles, names, URLs, dates and licences come from the French source. Date values classified as review-required are omitted from the overlay and remain unchanged in the source; no class-3 translation is published.
 
-The four overlays contain translated prose only and declare machine provenance. Every translated leaf has a hash; the source hash is SHA-256 of the JSON representation returned by the strict dossier parser. The reader refuses stale, incomplete or rule-breaking overlays and explicitly labels a French fallback. English translations of the three pre-existing Réalités records remain deferred because this lot preserves their editorial content; their English routes now state that they display the French original.
+The four overlays contain translated prose only and declare machine provenance. Every translated leaf has a hash; the source hash is SHA-256 of the JSON representation returned by the strict dossier parser. The reader refuses stale, incomplete or rule-breaking overlays and explicitly labels a French fallback. English translations of the three pre-existing Réalités records remain deferred because this lot preserves their editorial content; when bilingual publication is enabled, their English routes state that they display the French original.
 
 ## Integration
 
-This branch builds on PR #892. Merge the architecture first, then this follow-up. Migration 083 extends the existing internal vertical enum for the loader and public API; it does not add navigation categories. It must run before loading the new records into Supabase. Public dossier pages read the source corpus in git and work independently of that database load. No database migration or deployment was performed from this task.
+This branch builds on PR #892. Both branches also incorporate recette PR #893: French-only remains the default publication mode; the new translations do not enable English site-wide. Merge the architecture first, then this follow-up. Migration 083 extends the existing internal vertical enum for the loader and public API; it does not add navigation categories. It must run before loading the new records into Supabase. Public dossier pages read the source corpus in git and work independently of that database load. No database migration or deployment was performed from this task.
 
 ## Validation
 
