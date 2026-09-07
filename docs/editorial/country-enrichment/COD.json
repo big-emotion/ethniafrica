@@ -193,10 +193,10 @@
     },
     "sources": {
       "countryFiche": {
-        "total": 21,
-        "accepted": 21,
+        "total": 27,
+        "accepted": 27,
         "acceptedPercent": 100,
-        "withUrl": 21,
+        "withUrl": 27,
         "withUrlPercent": 100,
         "needsReview": 0
       },
@@ -561,7 +561,7 @@
     {
       "id": "COD-CULTURE",
       "priority": "P1",
-      "status": "claim_review_complete_editorial_approval_required",
+      "status": "source_json_scoped_replacements_applied_additional_research_pending",
       "goal": "Replace national cultural generalizations with scoped, sourced claims and route people-specific knowledge to the correct records.",
       "findings": [
         "None of the five current country-level culture fields is ready as written.",
@@ -569,16 +569,14 @@
         "The current Catholic-majority wording is not supported by the 2013–2014 DHS respondent distribution and should be replaced with dated, population-specific survey context.",
         "The lifestyles field conflates regionally variable livelihoods with national economic sectors.",
         "The social-organization sentence should move to people fiches because no single descent, authority, or kinship system describes the country.",
-        "Regional relations and diaspora claims require typed relation records and dated bilateral migration data."
+        "Regional relations and diaspora claims require typed relation records and dated bilateral migration data.",
+        "The reviewed scoped culture replacements were applied to the country source JSON on 2026-09-07 without claiming national cultural completeness or database synchronization."
       ],
       "remaining": [
-        "Approve the proposed field actions in COD-culture-review.json.",
         "Select representative people- and region-specific cultural dossiers.",
-        "Decide how dated religious survey context should appear on the public country surface.",
         "Build region- or livelihood-specific modules only where accepted sources exist.",
         "Extract the UN DESA 2024 DRC origin-destination matrix before naming leading diaspora destinations.",
-        "Create typed cross-border relation records for named peoples and political entities.",
-        "Apply approved changes to the country source file only after explicit editorial approval."
+        "Create typed cross-border relation records for named peoples and political entities."
       ]
     },
     {
@@ -590,18 +588,19 @@
         "The country fiche previously contained 10 source rows: 2 accepted exact sources and 8 generic needs_review rows.",
         "All 8 generic rows were reviewed, approved for removal, and removed from the source JSON on 2026-09-07; the 2 retained rows have exact URLs and accepted tiers.",
         "Two exact name-origin references were added on 2026-09-07, bringing the pre-history-application country source register to 4 accepted rows with resolvable URLs.",
-        "Seventeen accepted history references were added with the reviewed first-wave chronology on 2026-09-07, bringing the country source register to 21 rows with explicit tiers and URLs; this does not supply the unsupported people percentages or broad culture fields.",
+        "Seventeen accepted history references were added with the reviewed first-wave chronology on 2026-09-07, bringing the post-history country source register to 21 rows with explicit tiers and URLs.",
+        "Six accepted culture references were added with the scoped culture replacements on 2026-09-07, bringing the country source register to 27 rows; the UN DESA migration dataset remains in the review artifact until a bilateral matrix claim is extracted.",
         "The two CIA placeholders cannot be repaired as live current-country citations because The World Factbook was retired on 2026-02-04 and the former country URL redirects to the retirement notice.",
         "The vague Ethnologue row is not reproducible without an edition and license basis; the pinned Glottolog 5.3 inventory is proposed for language reconciliation instead.",
         "Official census-status documentation identifies 1984 as the latest completed national census, while the 2013–2014 DHS is a sample survey; neither validates a current exhaustive people denominator.",
         "The country-name origin can be stated conservatively: the country is named after the Congo River, whose Congo/Kongo name is historically connected to the Kongo kingdom; the deeper lexical derivation remains uncertain.",
-        "Detailed people percentages and broad cultural fields remain unsupported and must not be marked validated.",
-        "All 21 country source JSON URLs returned an HTTP response below 500 on 2026-09-07; 403 and 429 responses establish endpoint reachability under the repository rule but do not replace a content review."
+        "Detailed people percentages remain unsupported and must not be marked validated; the five former broad culture fields were either replaced by scoped claims or cleared on 2026-09-07.",
+        "All 27 country source JSON URLs returned an HTTP response below 500 on 2026-09-07; 403 and 429 responses establish endpoint reachability under the repository rule but do not replace a content review."
       ],
       "remaining": [
         "Select an enumerated scholarly people inventory as the canonical record-linkage baseline, or expose multiple non-additive scopes.",
         "Attach accepted sources to detailed people percentages or remove those percentages from validated display.",
-        "Add scoped sources for culture, religion, lifestyles, social organization, and regional relations.",
+        "Add people- and region-specific culture sources only when dedicated records or typed modules can carry their scope.",
         "Add field-level provenance to the country model or generate an equivalent auditable mapping.",
         "After an authorized database synchronization, run the repository source-URL health checker against the projected Supabase source rows."
       ]
