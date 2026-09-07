@@ -220,6 +220,14 @@ Two gates. `REQ-148 Kingdom time ranges` in `validateAfrikData.ts` holds the sha
 
 96 entries still violate it, held by `UNDATED_POLITY_CEILING`, a ratchet that fails in both directions like `DEAD_CODE_CEILINGS`. Each editorial pass lowers it in the same change; at zero the ratchet is deleted and the findings become errors. `scripts/afrik/backfillKingdomTimeRange.ts` (dry-run by default) prints the queue by country and **never invents a bound** — an entry whose label names an era rather than a date stays undated and visible to the gate.
 
+### Archive → JSON restoration
+
+The conversion of `dataset/source/afrik/archive/famille_linguistique/*.txt` into the live `famille_linguistique/*.json` **lost content on more than half the twenty-four families**. `FLG_BERBERE` had two entirely empty sections and no longer contained the word "Diop"; the sub-part carrying the three competing theories of Berber origins, the 1974 UNESCO colloquium in Cairo and the explicit divergence points had simply gone.
+
+A character ratio is a hint, not a measurement — the archive is markdown, the fiche is structured, and part of any gap is markup. `npx tsx scripts/afrik/diffFamilyArchive.ts` reports **named anchors** instead: years, proper-name pairs and author-year citations the archive holds and the fiche does not. `docs/editorial/family-restoration/` records one ledger per family somebody has started, and its `anchorBudget` is a descending ratchet — a family nobody has begun has no ledger and nothing to fail. Doctrine and running order: that directory's `README.md`.
+
+**A restored theory comes back with its divergence points.** Publishing Diop and Obenga without the reasons comparative linguistics does not follow them would turn an exposed debate into an asserted position — the failure `FLG_AFROASIATIQUE` currently exhibits in the other direction, stating the Obenga position with no contradictor.
+
 ### Reader-facing register
 
 Three fiche fields are published to the reader **verbatim**, with no sanitising layer: `gaps[].reason`, `sources[].title` and `sources[].notes` (nested under `names[].sources[]` on name fiches). Everything else, `_meta.directives` included, is authoring metadata nothing renders.
