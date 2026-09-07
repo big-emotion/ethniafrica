@@ -18,7 +18,7 @@ const en = {
     kind: {
       people: "People",
       country: "Country",
-      "language-family": "Linguistic family",
+      "language-family": "Language family",
       language: "Language",
       name: "Name borne",
     },
