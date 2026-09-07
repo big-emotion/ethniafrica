@@ -10,6 +10,97 @@ the `1.x` tags predate the changelog and were never accompanied by release notes
 
 ## [Unreleased]
 
+## [4.6.0] - 2026-09-07
+
+### Added
+
+- **The whole product is now bilingual English/French — and publication still
+  fails closed to French.** This is the release's centre of gravity: forty-odd
+  changes moved every reader-facing surface off hardcoded French and onto a
+  locale-keyed spine. `Language = "en" | "fr"` derives from `LOCALES`, English
+  URLs carry English slugs that the middleware rewrites onto the French route
+  folders (DEC-049), so a route rename is two slug entries and never a second
+  folder tree, and the resolved locale reaches the root layout as the `x-locale`
+  request header so `<html lang>` tells the truth. Four translation classes are
+  declared and enforced (ETNI-1827, #878); the bilingual foundation landed with
+  English by default behind the mode switch (ETNI-1832, ETNI-1824, ETNI-1833,
+  #883); the shared reader chrome (#912), fiche surfaces, atlas directories,
+  public editorial pages, interactive surfaces and editorial content banks were
+  localized in waves, then the remaining surfaces closed out (ETNI-1855).
+  **Shipping this version does not switch the site to English.**
+  `SITE_LOCALE_MODE` is absent by default and missing or invalid configuration
+  means `fr-only`, so unfinished English stays silent until the mode is set
+  deliberately (#893).
+- **Translation parity is a CI-blocking gate, symmetric in both directions.**
+  Content added or changed in either language must carry its counterpart or an
+  explicit deferral with a reason; French without English fails exactly as
+  English without French does, and a source field edited after its translation
+  was produced is reported as drifted rather than accepted (ETNI-1829, REQ-145).
+  Corpus translations never edit the French fiche — they are records under
+  `dataset/translations/<lang>/` with their own provenance, produced by one
+  command (ETNI-1826, ETNI-1830, #908). One bilingual glossary carries its own
+  gate (ETNI-1828, #879), and the English content banks — Saviez-vous (#887),
+  games, doctrine and email (#890), glossary and legal pages (#889), the Nommer
+  chapters (#888) — all record machine provenance rather than passing
+  themselves off as authored (ETNI-1856).
+- **Dossiers become a navigable surface instead of a flat list.** One dossier
+  template and the Réalités vertical (#891), thematic navigation with shared
+  fiche links, the shared Congo history dossiers (#896), and a filing under six
+  domain rubrics built to scale (#943) — now on one row, one reading each
+  (#946). Every reading but the anecdotes is frozen (#919).
+- **A fiche no longer ends in a dead end.** The « Poursuivre » chapter closes
+  each fiche with somewhere to go (#934), associated peoples are navigable from
+  the people fiche (ETNI-1879, #942), and the name fiche names the allied names
+  and bearers it already held but never surfaced (#877).
+- **Search gains a name pivot panel** — labelled naming system, clickable
+  countries and peoples, scrollable sources (ETNI-1859, #881) — and per-locale
+  English search is complete (ETNI-1857, #886).
+- **Every fiche is named in its own head.** Fiche metadata, structured data
+  declarations and interaction recording landed together (#930), alongside
+  locale alternates and an indexing policy (ETNI-1825, #909) and source
+  standing plus indexability on names (ETNI-1863, #882).
+- **Mercator stops serving one fixed session.** The round bank widened to the
+  latitudes where the projection actually lies (#948), the Africa/elsewhere
+  parallel became the rule of every round (#949), the bank widened again
+  (#945), and the home's globe mounts unpinned at the size it hides (#895).
+- **The atlas menu is curated to six decodable entry points** (#927), and the
+  three axes have an address again, with the footer carrying their names
+  (#947).
+- **Quiz generation is locale-aware** and produces English rounds (#940).
+
+### Changed
+
+- **AFRIK corpus — the DRC pass.** National language dossiers landed in three
+  waves (#935, #937, #938), followed by the first history wave (#931), scoped
+  culture fields (#933), a conservative reading of name origins (#926) and a
+  source cleanup (#925). The country's name is now Democratic Republic of the
+  Congo throughout (#944).
+- **The corpus got its historical depth back** (REQ-148, REQ-149, #920).
+  `content.kingdoms[]` entries carry `entryType` and machine time bounds where
+  the corpus can state them, while `period` stays the reader-facing label and is
+  never derived from those bounds. Two gates hold the shape and refuse the
+  asymmetry where a country dates its colonial administrations but leaves its
+  precolonial polities undated.
+- **Near-duplicate people identifiers were adjudicated** rather than left to
+  collide (ETNI-1834, #880).
+- **The site dictionary is split into per-surface copy modules** (ETNI-1855) —
+  a refactor that made the bilingual work reviewable one surface at a time.
+- **Tooling**: the curator skill is unified and gains a country-enrichment mode
+  (#897), and an audience-driven content pipeline joins the skill set (#929).
+
+### Fixed
+
+- **Madagascar's missing ethnic split — and the gate that never saw it** (#894).
+  The per-country `percentageInCountry` check was passing on a fiche that had no
+  split to check.
+- **The Tetela language code was wrong** and is corrected (#928).
+- **The quiz bank is swept on every data sync, production included** (#884) —
+  it previously drifted from the corpus it is generated against.
+- **Unfinished English is kept behind a publication gate** (#893), and recette's
+  copy is preserved through the dictionary split (ETNI-1855).
+- **Compare terminology is aligned with the glossary** rather than inventing its
+  own words.
+
 ## [4.5.0] - 2026-09-05
 
 ### Added
@@ -639,7 +730,8 @@ the public API, the data model, and the frontend were all replaced.
 - Duplicate migration prefixes (`008_`, `015_`) resolved.
 - Endonym now takes primacy over exonym in the country page names row.
 
-[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.5.0...HEAD
+[Unreleased]: https://github.com/big-emotion/ethniafrica/compare/v4.6.0...HEAD
+[4.6.0]: https://github.com/big-emotion/ethniafrica/compare/v4.5.0...v4.6.0
 [4.5.0]: https://github.com/big-emotion/ethniafrica/compare/v4.4.0...v4.5.0
 [4.4.0]: https://github.com/big-emotion/ethniafrica/compare/v4.3.1...v4.4.0
 [4.3.1]: https://github.com/big-emotion/ethniafrica/compare/v4.3.0...v4.3.1
