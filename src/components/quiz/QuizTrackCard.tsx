@@ -12,6 +12,9 @@ export interface QuizTrackCardProps {
   /** Where the track starts. Always a query on the quiz path, never a bare route. */
   href: string;
   labelFr: string;
+  /** False renders an inert preparation card rather than a dead-end link. */
+  available?: boolean;
+  unavailableHint?: string;
   /**
    * One line under the label. On a theme card this is a specimen of the
    * question the theme asks — the thing an `<option>` could never carry, and
@@ -48,36 +51,47 @@ export interface QuizTrackCardProps {
 export const QuizTrackCard = ({
   href,
   labelFr,
+  available = true,
+  unavailableHint,
   hintFr,
   testId,
   className,
   children,
   linkProps,
-}: QuizTrackCardProps) => (
-  <Card
-    data-testid={testId}
-    className={cn(
-      "relative flex min-h-11 flex-col gap-1 p-4",
-      CHARTER_HOVER_LIFT,
-      "focus-within:shadow-[var(--afh-ring-focus)]",
-      className
-    )}
-  >
-    <span className="font-afh-display text-afh-body font-semibold text-afh-text">
-      <Link
-        href={href}
-        className={cn(
-          "after:absolute after:inset-0 after:content-['']",
-          CHARTER_FOCUS_RING
+}: QuizTrackCardProps) => {
+  const hint = available ? hintFr : (unavailableHint ?? hintFr);
+
+  return (
+    <Card
+      data-testid={testId}
+      className={cn(
+        "relative flex min-h-11 flex-col gap-1 p-4",
+        available && CHARTER_HOVER_LIFT,
+        available && "focus-within:shadow-[var(--afh-ring-focus)]",
+        !available && "opacity-60",
+        className
+      )}
+    >
+      <span className="font-afh-display text-afh-body font-semibold text-afh-text">
+        {available ? (
+          <Link
+            href={href}
+            className={cn(
+              "after:absolute after:inset-0 after:content-['']",
+              CHARTER_FOCUS_RING
+            )}
+            {...linkProps}
+          >
+            {labelFr}
+          </Link>
+        ) : (
+          <span aria-disabled="true">{labelFr}</span>
         )}
-        {...linkProps}
-      >
-        {labelFr}
-      </Link>
-    </span>
-    {hintFr ? (
-      <span className="text-afh-small text-afh-text-soft">{hintFr}</span>
-    ) : null}
-    {children}
-  </Card>
-);
+      </span>
+      {hint ? (
+        <span className="text-afh-small text-afh-text-soft">{hint}</span>
+      ) : null}
+      {available ? children : null}
+    </Card>
+  );
+};

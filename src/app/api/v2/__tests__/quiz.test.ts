@@ -85,6 +85,26 @@ describe("GET /api/v2/quiz/scopes (route)", () => {
 
     expect(res.status).toBe(200);
     expect(body).toEqual(scopesEnvelope);
+    expect(getQuizScopesHandler).toHaveBeenCalledWith("fr");
+  });
+
+  // @req REQ-145
+  it("selects the requested scopes bank and rejects unknown locales", async () => {
+    (getQuizScopesHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+      scopesEnvelope
+    );
+
+    const english = await scopesGET(
+      new NextRequest("http://localhost/api/v2/quiz/scopes?lang=en")
+    );
+    const invalid = await scopesGET(
+      new NextRequest("http://localhost/api/v2/quiz/scopes?lang=de")
+    );
+
+    expect(english.status).toBe(200);
+    expect(getQuizScopesHandler).toHaveBeenCalledWith("en");
+    expect(invalid.status).toBe(400);
+    expect((await invalid.json()).errors[0].field).toBe("lang");
   });
 
   // @req REQ-103
@@ -181,11 +201,40 @@ describe("GET /api/v2/quiz/session (route)", () => {
     expect(res.status).toBe(200);
     expect(body).toEqual(sessionEnvelope);
     expect(composeQuizSessionHandler).toHaveBeenCalledWith({
+      lang: "fr",
       pays: "GHA",
       famille: undefined,
       mode: undefined,
       count: 8,
     });
+  });
+
+  // @req REQ-145
+  it("passes the requested question-bank locale to the handler", async () => {
+    (composeQuizSessionHandler as ReturnType<typeof vi.fn>).mockResolvedValue({
+      ok: true,
+      envelope: sessionEnvelope,
+    });
+
+    const res = await sessionGET(
+      new NextRequest("http://localhost/api/v2/quiz/session?lang=en")
+    );
+
+    expect(res.status).toBe(200);
+    expect(composeQuizSessionHandler).toHaveBeenCalledWith(
+      expect.objectContaining({ lang: "en" })
+    );
+  });
+
+  // @req REQ-145
+  it("rejects an unsupported question-bank locale", async () => {
+    const res = await sessionGET(
+      new NextRequest("http://localhost/api/v2/quiz/session?lang=de")
+    );
+
+    expect(res.status).toBe(400);
+    expect((await res.json()).errors[0].field).toBe("lang");
+    expect(composeQuizSessionHandler).not.toHaveBeenCalled();
   });
 
   // @req REQ-103

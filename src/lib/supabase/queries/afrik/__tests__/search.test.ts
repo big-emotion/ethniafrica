@@ -1196,6 +1196,24 @@ describe("ftsSearchEntities", () => {
     expect(rpc).toHaveBeenCalledTimes(1);
   });
 
+  // @req REQ-145
+  it("selects the quiz search bank by locale", async () => {
+    await ftsSearchEntities({
+      q: "kingdom",
+      limit: 20,
+      offset: 0,
+      lens: "quiz",
+      lang: "en",
+    });
+
+    expect(rpc).toHaveBeenCalledWith("afrik_search_quiz", {
+      p_q: "kingdom",
+      p_limit: 20,
+      p_offset: 0,
+      p_lang: "en",
+    });
+  });
+
   // @req REQ-121
   it("surfaces a quiz question through the name of the people it is about", async () => {
     quizPayload = {

@@ -298,6 +298,7 @@ async function fetchActiveQuestions(
         "id, template_id, entity_id, field_path, correct_option, options_fr, stimulus_fr"
       )
       .is("revoked_at", null)
+      .eq("locale", "fr")
       .range(from, to)
   );
   return data.map((row) => ({
@@ -323,6 +324,7 @@ async function fetchActiveQuestionsForAudit(
         "id, template_id, entity_id, field_path, correct_option, options_fr, stimulus_fr, generation_run_id"
       )
       .is("revoked_at", null)
+      .eq("locale", "fr")
       .range(from, to)
   );
   return data.map((row) => ({
@@ -375,6 +377,7 @@ async function insertQuestions(
 ): Promise<void> {
   if (records.length === 0) return;
   const rows = records.map((record) => ({
+    locale: "fr",
     template_id: record.templateId,
     audience: RETIRED_AUDIENCE_COLUMN_VALUE,
     difficulty: record.difficulty,

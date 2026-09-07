@@ -1035,6 +1035,17 @@
         "parameters": [
           {
             "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["en", "fr"],
+              "default": "fr"
+            },
+            "description": "Authored question-bank locale"
+          },
+          {
+            "in": "query",
             "name": "pays",
             "required": false,
             "schema": {
@@ -1179,6 +1190,19 @@
         "description": "Every country and every language family, each with the number of currently active questions its peoples hold, plus the two whole-corpus tracks (`mixed`, ordered by the difficulty ladder, and `random`, which is not). `playable` is false when a track cannot fill a session of eight — it is still listed and still counted, so the UI can be honest about what the corpus holds rather than hiding it. Counts change only on generation sweeps (Story 10.5).\n",
         "tags": ["API v2 - Quiz"],
         "security": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["en", "fr"],
+              "default": "fr"
+            },
+            "description": "Authored question-bank locale"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Scopes envelope",

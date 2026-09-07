@@ -4,7 +4,7 @@ import { QuizPlayHost } from "@/components/quiz/QuizPlayHost";
 import { QuizScopePicker } from "@/components/quiz/QuizScopePicker";
 import { describeScope, getQuizScopesHandler } from "@/api/v2/handlers/quiz";
 import { parseQuizScope } from "@/lib/quiz/quizScope";
-import { quizTrackLabelFr } from "@/lib/quiz/segmentPolicy";
+import { quizTrackLabel } from "@/lib/quiz/segmentPolicy";
 import { getLocalizedRoute } from "@/lib/routing";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { getTranslation } from "@/lib/translations";
@@ -74,7 +74,7 @@ export default async function QuizPage({
   const chose = Boolean(
     query.pays || query.famille || query.mode || query.theme
   );
-  const scope = chose ? await describeScope(asked) : null;
+  const scope = chose ? await describeScope(asked, language) : null;
 
   if (scope) {
     // The scope label and the theme reach this component through different
@@ -85,9 +85,10 @@ export default async function QuizPage({
     // the absence of narrowing, and printing it beside a theme reads as two
     // scopes rather than one track.
     const narrowedByPlace = Boolean(query.pays || query.famille || query.mode);
-    const trackLabelFr = quizTrackLabelFr(
+    const trackLabelFr = quizTrackLabel(
       narrowedByPlace ? scope.labelFr : null,
-      query.theme ?? null
+      query.theme ?? null,
+      language
     );
 
     return (
@@ -120,7 +121,7 @@ export default async function QuizPage({
   // honest empty state rather than a 404 on a route that exists. A query naming
   // a country the corpus does not hold falls through to the picker for the same
   // reason.
-  const envelope = await getQuizScopesHandler();
+  const envelope = await getQuizScopesHandler(language);
 
   return (
     <PageLayout

@@ -35,7 +35,7 @@ import {
 } from "@/lib/quiz/quizScope";
 import {
   QUIZ_THEME_IDS,
-  QUIZ_THEME_LABELS_FR,
+  QUIZ_THEME_LABELS,
   TEMPLATE_FIELD_PATHS,
   themeOfFieldPath,
   type QuizThemeId,
@@ -45,6 +45,7 @@ import type {
   QuizOptionValue,
   QuizTemplateId,
 } from "@/types/quiz";
+import type { Language } from "@/types/shared";
 
 /**
  * Rows per page when walking a table PostgREST would otherwise silently cap.
@@ -92,6 +93,8 @@ export interface QuizScopeCatalogue {
 export interface ComposeQuizSessionParams {
   scope: QuizScope;
   count: number;
+  /** Selects one authored question bank. French remains the safe default. */
+  language?: Language;
   /**
    * Narrows the draw to one domain of content. Orthogonal to `scope`, not a
    * fifth `QuizScopeKind`: the two compose, and « les croyances des peuples du
@@ -234,7 +237,9 @@ function addTheme(
  * pool a session actually draws from — which is a join, not a column.
  */
 // @req REQ-103
-export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
+export async function getQuizScopeCatalogue(
+  language: Language = "fr"
+): Promise<QuizScopeCatalogue> {
   const supabase = createServerClient();
 
   const [
@@ -252,6 +257,7 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
           .from("quiz_questions")
           .select("entity_id, field_path")
           .is("revoked_at", null)
+          .eq("locale", language)
           .range(f, t)
     ),
     // The answer key of the Territoire rounds, and of nothing else.
@@ -274,6 +280,7 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
         .from("quiz_questions")
         .select("entity_id, options_fr, correct_option")
         .is("revoked_at", null)
+        .eq("locale", language)
         .like("field_path", `${TEMPLATE_FIELD_PATHS.T3}%`)
         .range(f, t)
     ),
@@ -293,17 +300,20 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
           .select("people_id, country_id")
           .range(f, t)
     ),
-    readAllPages<{ id: string; name_fr: string }>(
+    readAllPages<{ id: string; name_fr: string; name_en: string | null }>(
       "scopeCatalogue.countries",
       (f, t) =>
-        supabase.from("afrik_countries").select("id, name_fr").range(f, t)
+        supabase
+          .from("afrik_countries")
+          .select("id, name_fr, name_en")
+          .range(f, t)
     ),
-    readAllPages<{ id: string; name_fr: string }>(
+    readAllPages<{ id: string; name_fr: string; name_en: string | null }>(
       "scopeCatalogue.families",
       (f, t) =>
         supabase
           .from("afrik_language_families")
-          .select("id, name_fr")
+          .select("id, name_fr, name_en")
           .range(f, t)
     ),
   ]);
@@ -341,7 +351,10 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
   const byCountry = new Map<string, number>();
   const themesByCountry = new Map<string, ThemeTally>();
   const countryNameById = new Map(
-    countryRows.map((row) => [row.id, row.name_fr])
+    countryRows.map((row) => [
+      row.id,
+      language === "en" ? (row.name_en ?? row.name_fr) : row.name_fr,
+    ])
   );
   for (const row of membershipRows) {
     const held = questionsBySubject.get(row.people_id) ?? 0;
@@ -407,7 +420,7 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
       .map((row) =>
         optionFor(
           row.id,
-          row.name_fr,
+          language === "en" ? (row.name_en ?? row.name_fr) : row.name_fr,
           byCountry.get(row.id),
           themesByCountry.get(row.id)
         )
@@ -417,7 +430,7 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
       .map((row) =>
         optionFor(
           row.id,
-          row.name_fr,
+          language === "en" ? (row.name_en ?? row.name_fr) : row.name_fr,
           byFamily.get(row.id),
           themesByFamily.get(row.id)
         )
@@ -428,7 +441,7 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
     // returning reader has to re-read.
     themes: QUIZ_THEME_IDS.map((id) => ({
       id,
-      labelFr: QUIZ_THEME_LABELS_FR[id],
+      labelFr: QUIZ_THEME_LABELS[language][id],
       activeQuestionCount: totalByTheme.get(id) ?? 0,
     })),
     totalActiveQuestionCount: questionRows.length,
@@ -446,7 +459,8 @@ export async function getQuizScopeCatalogue(): Promise<QuizScopeCatalogue> {
  */
 // @req REQ-103
 export async function getQuizScopeLabel(
-  scope: QuizScope
+  scope: QuizScope,
+  language: Language = "fr"
 ): Promise<string | null> {
   if (scope.kind === "mixed" || scope.kind === "random") return null;
   if (!scope.entityId) return null;
@@ -457,7 +471,7 @@ export async function getQuizScopeLabel(
 
   const { data, error } = await supabase
     .from(table)
-    .select("name_fr")
+    .select("name_fr, name_en")
     .eq("id", scope.entityId)
     .maybeSingle();
 
@@ -465,7 +479,11 @@ export async function getQuizScopeLabel(
     logger.error("quizService.getQuizScopeLabel failed", error);
     return null;
   }
-  return (data?.name_fr as string | undefined) ?? null;
+  const row = data as
+    { name_fr?: string; name_en?: string | null } | null | undefined;
+  return language === "en"
+    ? (row?.name_en ?? row?.name_fr ?? null)
+    : (row?.name_fr ?? null);
 }
 
 /**
@@ -512,7 +530,8 @@ async function resolveScopedSubjects(
 
 async function fetchCandidates(
   supabase: ReturnType<typeof createServerClient>,
-  subjectIds: string[] | null
+  subjectIds: string[] | null,
+  language: Language
 ): Promise<CandidateRow[]> {
   const columns = "id, entity_id, field_path, options_fr, correct_option";
 
@@ -522,6 +541,7 @@ async function fetchCandidates(
         .from("quiz_questions")
         .select(columns)
         .is("revoked_at", null)
+        .eq("locale", language)
         .range(f, t)
     );
   }
@@ -534,6 +554,7 @@ async function fetchCandidates(
           .from("quiz_questions")
           .select(columns)
           .is("revoked_at", null)
+          .eq("locale", language)
           .in("entity_id", idChunk)
           .range(f, t)
       )
@@ -706,14 +727,16 @@ export async function composeQuizSession(
   params: ComposeQuizSessionParams
 ): Promise<QuizSessionDraw> {
   const supabase = createServerClient();
-  const { scope, count, theme } = params;
+  const { scope, count, theme, language = "fr" } = params;
 
   const subjectIds = await resolveScopedSubjects(supabase, scope);
   if (subjectIds !== null && subjectIds.length === 0) return EMPTY_DRAW;
 
   const [candidates, countryNameFr] = await Promise.all([
-    fetchCandidates(supabase, subjectIds),
-    scope.kind === "country" ? getQuizScopeLabel(scope) : Promise.resolve(null),
+    fetchCandidates(supabase, subjectIds, language),
+    scope.kind === "country"
+      ? getQuizScopeLabel(scope, language)
+      : Promise.resolve(null),
   ]);
 
   const playable = shuffle(
@@ -755,6 +778,7 @@ export async function composeQuizSession(
   const { data, error } = await supabase
     .from("quiz_questions")
     .select(QUIZ_QUESTION_COLUMNS)
+    .eq("locale", language)
     .in(
       "id",
       ordered.map((candidate) => candidate.id)
