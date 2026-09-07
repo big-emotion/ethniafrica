@@ -308,7 +308,13 @@ export function AnecdoteCard({
           font-weight: 500;
           letter-spacing: 0.07em;
           text-transform: uppercase;
-          opacity: 0.72;
+          /* No opacity here, and removing it is the fix rather than lowering
+             it. Opacity multiplies the ink against whatever ends up behind it,
+             so it cannot be reasoned about from a token: at 0.72 this label
+             fell under 4.5:1 while the entity name beside it — same colour,
+             same element, full opacity — passed. The kind is already quieter
+             than the name by four signals: smaller, lighter, letter-spaced
+             and uppercase. It does not need a fifth that costs legibility. */
         }
         .anecdote-provenance {
           margin-top: 22px;
