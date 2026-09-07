@@ -1,6 +1,9 @@
 import type { Language } from "@/types/shared";
 
 const en = {
+  editorialCommonNames: {
+    COD: "Democratic Republic of the Congo",
+  } as Record<string, string>,
   title: {
     ficheCountry: "country fiche",
     reference: "ref.",
@@ -88,6 +91,9 @@ const en = {
 type CountryCopy = typeof en;
 
 const fr: CountryCopy = {
+  editorialCommonNames: {
+    COD: "République démocratique du Congo",
+  },
   title: { ficheCountry: "fiche pays", reference: "réf." },
   brief: {
     aria: (name) => `${name} en bref`,

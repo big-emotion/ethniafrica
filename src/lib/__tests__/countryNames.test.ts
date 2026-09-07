@@ -24,6 +24,13 @@ describe("getFrenchCountryCommonName", () => {
   });
 
   // @req REQ-001
+  it("uses the editorial country name when CLDR keeps a disambiguation label", () => {
+    expect(
+      getFrenchCountryCommonName("COD", "République démocratique du Congo")
+    ).toBe("République démocratique du Congo");
+  });
+
+  // @req REQ-001
   it("returns the official name for an unknown code", () => {
     expect(getFrenchCountryCommonName("XXX", "République de Test")).toBe(
       "République de Test"
@@ -49,6 +56,16 @@ describe("getCountryCommonName", () => {
   it("keeps the declared name when the atlas does not map the code", () => {
     expect(getCountryCommonName("en", "XXX", "Republic of Test")).toBe(
       "Republic of Test"
+    );
+  });
+
+  // @req REQ-140
+  it("prefers the editorial name over CLDR's city disambiguation", () => {
+    expect(getCountryCommonName("fr", "COD", "RDC")).toBe(
+      "République démocratique du Congo"
+    );
+    expect(getCountryCommonName("en", "COD", "DRC")).toBe(
+      "Democratic Republic of the Congo"
     );
   });
 

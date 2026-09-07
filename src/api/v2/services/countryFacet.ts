@@ -90,10 +90,9 @@ const getCachedFamilyIdsByCountry = unstable_cache(
  * name a country the map cannot.
  *
  * The cost is real and is accepted knowingly: CLDR writes "Nigeria" where the
- * fiche wrote "Nigéria", and "Congo-Kinshasa" for the RDC. That divergence is
- * already on screen — it is the country fiche's heading today — so a list that
- * followed the corpus instead would promise one name and open another.
- * Correcting it belongs on the fiche, once, not in a second table here.
+ * fiche wrote "Nigéria". Explicit editorial overrides in the shared resolver
+ * handle the rarer cases where CLDR's label is not acceptable for the fiche,
+ * such as "Congo-Kinshasa" for the RDC.
  */
 function countryLabel(id: string, corpusName: string): string {
   return getFrenchCountryCommonName(id, corpusName);
