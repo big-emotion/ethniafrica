@@ -1,7 +1,7 @@
 import type { BinaryRound } from "@/lib/games/gameKinds";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
 import {
-  isAfricanTerritory,
+  documentedHalf,
   territoryFootprint,
   type ComparedTerritory,
   type TerritoryFootprint,
@@ -149,21 +149,6 @@ function areaSentence(
   return `${territory.nameFr} : ${frenchNumber.format(Math.round(footprint.trueAreaKm2))} km², que la projection de Mercator agrandit ${frenchFactor.format(footprint.inflation)} fois.`;
 }
 
-/**
- * Where the reveal leads. The atlas has a fiche for an African country and
- * none for a silhouette borrowed from outside the continent, so a pair that
- * mixes the two leads to whichever half the atlas documents — and a pair with
- * no African half at all leads to the atlas itself rather than nowhere.
- */
-function destination(
-  a: ComparedTerritory,
-  b: ComparedTerritory
-): ComparedTerritory | null {
-  if (isAfricanTerritory(a)) return a;
-  if (isAfricanTerritory(b)) return b;
-  return null;
-}
-
 // @req REQ-120
 export function buildMercatorRound(
   a: ComparedTerritory,
@@ -180,7 +165,7 @@ export function buildMercatorRound(
   const correctIndex: 0 | 1 =
     footprintA.trueAreaKm2 > footprintB.trueAreaKm2 ? 0 : 1;
 
-  const leadsTo = destination(a, b);
+  const leadsTo = documentedHalf(a, b);
 
   return {
     kind: "binary",
