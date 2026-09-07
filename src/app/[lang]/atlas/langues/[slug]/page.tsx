@@ -4,6 +4,8 @@ import { parseVersionedSlug } from "@/lib/versioned-slug";
 import { ficheHead } from "@/lib/seo/ficheHead";
 import type { Language } from "@/types/shared";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
 import { LanguageFicheTitle } from "@/components/language/LanguageFicheTitle";
@@ -87,6 +89,9 @@ export default async function LanguesSlugPage({
         </FicheHeroHead>
       }
     >
+      <FicheJsonLd
+        graph={await ficheJsonLdFor("language", lang as Language, parsed.slug)}
+      />
       <FicheSequence
         language={lang as Language}
         entityType="language"

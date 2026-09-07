@@ -15,6 +15,8 @@ import {
   getRevisionSnapshot,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
@@ -238,6 +240,13 @@ export default async function FamillesSlugPage({
         </FicheHeroHead>
       }
     >
+      <FicheJsonLd
+        graph={await ficheJsonLdFor(
+          "language-family",
+          lang as Language,
+          parsed.slug
+        )}
+      />
       <FicheSequence
         language={lang as Language}
         entityType="language-family"

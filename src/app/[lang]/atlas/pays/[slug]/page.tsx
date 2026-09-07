@@ -15,6 +15,8 @@ import {
   getRevisionSnapshot,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
@@ -233,6 +235,13 @@ export default async function PaysSlugPage({
         </FicheHeroHead>
       }
     >
+      <FicheJsonLd
+        graph={await ficheJsonLdFor(
+          "country",
+          lang as Language,
+          countryDetail.id
+        )}
+      />
       <FicheSequence
         language={lang as Language}
         entityType="country"

@@ -21,6 +21,8 @@ import { buildPeopleFicheNotes } from "@/components/people/peopleFicheNotes";
 import { buildFicheSourceRegister } from "@/lib/fiche/ficheSourceRegister";
 import { ficheSourceEntries } from "@/lib/afrik/ficheSourceLabel";
 import { getFieldNotes } from "@/lib/supabase/queries/afrik/module-zero-batch";
+import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
@@ -237,6 +239,9 @@ export default async function PeoplesSlugPage({
         </FicheHeroHead>
       }
     >
+      <FicheJsonLd
+        graph={await ficheJsonLdFor("people", lang as Language, parsed.slug)}
+      />
       <FicheSequence
         language={lang as Language}
         entityType="people"

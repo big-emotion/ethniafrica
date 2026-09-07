@@ -53,7 +53,16 @@ function countryDisplayNames(
     .filter((name) => !ISO_ALPHA_3.test(name));
 }
 
-async function loadSubject(
+/**
+ * A fiche reduced to what a head or a graph needs.
+ *
+ * Exported because `FicheJsonLd` describes the same entity to a machine that
+ * the head describes to a search result, and two mappings of the five
+ * aggregates could disagree about what a fiche is called. The loaders beneath
+ * are request-cached, so the second caller costs no query.
+ */
+// @req REQ-091
+export async function ficheSubjectFor(
   kind: FicheKind,
   lang: Language,
   id: string
@@ -119,7 +128,7 @@ export async function ficheHead(
   if (!parsed) return ficheCanonical(kind, language, slug);
 
   try {
-    const subject = await loadSubject(kind, language, parsed.slug);
+    const subject = await ficheSubjectFor(kind, language, parsed.slug);
     if (!subject) return ficheCanonical(kind, language, slug);
     return ficheCanonical(
       kind,

@@ -6,6 +6,8 @@ import type { Language } from "@/types/shared";
 import { loadPatronymeFiche } from "@/lib/fiche/ficheExistence";
 import { readNameStanding } from "@/lib/patronymes/content";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
 import { PatronymeFicheTitle } from "@/components/patronymes/PatronymeFicheTitle";
@@ -107,6 +109,9 @@ export default async function AppellationsSlugPage({
         </FicheHeroHead>
       }
     >
+      <FicheJsonLd
+        graph={await ficheJsonLdFor("name", lang as Language, patronyme.id)}
+      />
       <FicheSequence
         language={lang as Language}
         entityType="name"
