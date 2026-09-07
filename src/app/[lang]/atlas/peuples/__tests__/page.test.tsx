@@ -32,6 +32,7 @@ vi.mock("@/api/v2/services/revisions", () => ({
 
 vi.mock("@/api/v2/services/peopleService", () => ({
   getPeopleById: (...args: unknown[]) => mockGetPeopleById(...args),
+  getPeopleNameIndex: () => Promise.resolve([]),
 }));
 
 vi.mock("@/lib/supabase/queries/afrik/flags", () => ({

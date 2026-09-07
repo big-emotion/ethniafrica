@@ -10,6 +10,7 @@ import { PeopleCultureGrid } from "./PeopleCultureGrid";
 import { PeopleRelatedPeoplesSection } from "./PeopleRelatedPeoplesSection";
 import { PeopleCountriesSection } from "./PeopleCountriesSection";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
+import type { AssociatedGroup } from "@/lib/people/associatedPeopleLinks";
 import type {
   PeopleHeroData,
   PeopleOriginData,
@@ -105,6 +106,13 @@ const relatedPeoples: PeopleRelatedData = {
     "Clans patrilinéaires (idile) organisés en quartiers (àdúgbò)",
   ageClassSystems: "Grades d'âge (ẹgbẹ) structurant la vie sociale et rituelle",
 };
+
+// One of the five names a fiche, which is roughly the corpus's own ratio. The
+// review this story exists for is that the navigable chip and the four inert
+// ones share a row without the inert ones reading as broken.
+const relatedGroups: AssociatedGroup[] = relatedPeoples.ethnicities.map(
+  (label) => (label === "Ọ̀yọ́" ? { label, peopleId: "PPL_OYO" } : { label })
+);
 
 const countries: PeopleCountriesData = {
   totalPopulation: 50000000,
@@ -403,7 +411,11 @@ export const Related_Mobile: Story = {
   parameters: { viewport: { defaultViewport: "mobile430" } },
   render: () => (
     <Card>
-      <PeopleRelatedPeoplesSection language="fr" data={relatedPeoples} />
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={relatedPeoples}
+        associatedGroups={relatedGroups}
+      />
     </Card>
   ),
 };

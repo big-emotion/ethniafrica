@@ -81,6 +81,7 @@ vi.mock("@/api/v2/services/peopleService", () => ({
   getPeoplesByLanguageFamily: (...args: unknown[]) =>
     getPeoplesByLanguageFamily(...args),
   getPeoplesByIds: (...args: unknown[]) => getPeoplesByIds(...args),
+  getPeopleNameIndex: () => Promise.resolve([]),
 }));
 
 vi.mock("@/api/v2/services/countryService", () => ({

@@ -3,7 +3,18 @@ import {
   getPeoples,
   getPeopleById,
   getPeoplesByLanguageFamily,
+  getPeopleNameIndex,
 } from "../peopleService";
+
+const fromMock = vi.fn();
+
+vi.mock("@/lib/supabase/server", () => ({
+  createServerClient: () => ({ from: fromMock }),
+}));
+
+vi.mock("@/lib/api/logger", () => ({
+  logger: { info: vi.fn(), error: vi.fn(), warn: vi.fn(), debug: vi.fn() },
+}));
 
 vi.mock("@/lib/supabase/queries/afrik/translations", () => ({
   getAfrikTranslation: vi.fn(),
@@ -155,6 +166,98 @@ describe("People Service", () => {
       expect(Array.isArray(peoples)).toBe(true);
       expect(peoples.length).toBe(1);
       expect(peoples[0].languageFamilyId).toBe("FLG_BANTU");
+    });
+  });
+
+  describe("getPeopleNameIndex", () => {
+    /**
+     * A PostgREST builder stub that resolves on `range()` — the index is read
+     * with an explicit window, so a stub resolving on `select()` would never
+     * be awaited by the code under test.
+     */
+    function indexTable(response: {
+      data?: Array<Record<string, unknown>> | null;
+      error?: { message: string } | null;
+    }) {
+      type RangeRead = (
+        start: number,
+        end: number
+      ) => Promise<{
+        data: Array<Record<string, unknown>> | null;
+        error: { message: string } | null;
+      }>;
+      const range = vi.fn<RangeRead>(() =>
+        Promise.resolve({
+          data: response.data ?? null,
+          error: response.error ?? null,
+        })
+      );
+      const select = vi.fn();
+      const builder = { select, range };
+      select.mockReturnValue(builder);
+      return builder;
+    }
+
+    // @req REQ-150
+    it("carries every people's id and name, and nothing else", async () => {
+      fromMock.mockReturnValue(
+        indexTable({
+          data: [
+            { id: "PPL_SHONA", name_main: "Shona" },
+            { id: "PPL_BAMANA", name_main: "Bamana" },
+          ],
+        })
+      );
+
+      const index = await getPeopleNameIndex();
+
+      expect(index).toEqual([
+        { id: "PPL_SHONA", nameMain: "Shona" },
+        { id: "PPL_BAMANA", nameMain: "Bamana" },
+      ]);
+    });
+
+    // @req REQ-150
+    it("skips a people whose name_main is missing or blank", async () => {
+      fromMock.mockReturnValue(
+        indexTable({
+          data: [
+            { id: "PPL_SHONA", name_main: "Shona" },
+            { id: "PPL_NAMELESS", name_main: null },
+            { id: "PPL_BLANK", name_main: "   " },
+          ],
+        })
+      );
+
+      const index = await getPeopleNameIndex();
+
+      expect(index.map((entry) => entry.id)).toEqual(["PPL_SHONA"]);
+    });
+
+    // @req REQ-150
+    it("reads a window wider than the silent 1000-row cap", async () => {
+      const table = indexTable({ data: [] });
+      fromMock.mockReturnValue(table);
+
+      await getPeopleNameIndex();
+
+      // Without an explicit range PostgREST truncates at 1000 rows and reports
+      // no error; the corpus holds 776 peoples today.
+      expect(table.range).toHaveBeenCalledTimes(1);
+      const [start, end] = table.range.mock.calls[0];
+      expect(start).toBe(0);
+      expect(end).toBeGreaterThan(1000);
+    });
+
+    // @req REQ-150
+    it("degrades to an empty index when the read fails", async () => {
+      fromMock.mockReturnValue(
+        indexTable({ data: null, error: { message: "connection reset" } })
+      );
+
+      // The fiche renders its chips as plain text without the index, so a
+      // failed read costs links rather than the chapter.
+      await expect(getPeopleNameIndex()).resolves.toEqual([]);
     });
   });
 });

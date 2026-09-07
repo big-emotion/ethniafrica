@@ -9,6 +9,11 @@ import type {
   PeopleRelatedData,
 } from "@/lib/peopleDataTransformer";
 import { getCountryRoute, getFamilyRoute } from "@/lib/routing";
+import { resolveAssociatedPeoples } from "@/lib/people/associatedPeopleLinks";
+
+/** The corpus entries of a fiche, none of which names a people the index holds. */
+const unmatchedGroups = (related: PeopleRelatedData) =>
+  resolveAssociatedPeoples(related.ethnicities, []);
 
 // ==========================================
 // PeopleCountriesSection — navigation links
@@ -105,7 +110,11 @@ describe("PeopleRelatedPeoplesSection — AutonymExonymHeading card style", () =
   it("returns null when all fields empty", () => {
     const empty: PeopleRelatedData = { ethnicities: [] };
     const { container } = render(
-      <PeopleRelatedPeoplesSection language="fr" data={empty} />
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={empty}
+        associatedGroups={unmatchedGroups(empty)}
+      />
     );
     expect(container.firstChild).toBeNull();
   });
@@ -114,7 +123,13 @@ describe("PeopleRelatedPeoplesSection — AutonymExonymHeading card style", () =
     const data: PeopleRelatedData = {
       ethnicities: ["Ìjẹ̀bú", "Ẹ̀gbá"],
     };
-    render(<PeopleRelatedPeoplesSection language="fr" data={data} />);
+    render(
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={data}
+        associatedGroups={unmatchedGroups(data)}
+      />
+    );
     expect(screen.getByText("Ìjẹ̀bú")).toBeTruthy();
     expect(screen.getByText("Ẹ̀gbá")).toBeTruthy();
   });
@@ -124,7 +139,11 @@ describe("PeopleRelatedPeoplesSection — AutonymExonymHeading card style", () =
       ethnicities: ["Ìjẹ̀bú"],
     };
     const { container } = render(
-      <PeopleRelatedPeoplesSection language="fr" data={data} />
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={data}
+        associatedGroups={unmatchedGroups(data)}
+      />
     );
     const cards = container.querySelectorAll("[data-ethnicity-card]");
     expect(cards.length).toBe(1);
@@ -136,7 +155,13 @@ describe("PeopleRelatedPeoplesSection — AutonymExonymHeading card style", () =
       politicalSystem: "Monarchie sous Oba",
       clanOrganization: "Clans patrilinéaires",
     };
-    render(<PeopleRelatedPeoplesSection language="fr" data={data} />);
+    render(
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={data}
+        associatedGroups={unmatchedGroups(data)}
+      />
+    );
     expect(screen.getByText("Monarchie sous Oba")).toBeTruthy();
     expect(screen.getByText("Clans patrilinéaires")).toBeTruthy();
   });
