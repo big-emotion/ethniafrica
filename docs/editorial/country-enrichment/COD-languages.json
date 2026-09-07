@@ -13,10 +13,10 @@
   },
   "summary": {
     "referenceEntries": 252,
-    "localLanguageDossiers": 25,
-    "referenceEntriesWithExactDossier": 1,
+    "localLanguageDossiers": 28,
+    "referenceEntriesWithExactDossier": 4,
     "referenceEntriesWithReviewedPeopleCode": 34,
-    "referenceEntriesWithAnyLocalSignal": 35,
+    "referenceEntriesWithAnyLocalSignal": 37,
     "reviewedPeopleIsoCodes": 45,
     "reviewedPeopleIsoCodesMatchedToReference": 34,
     "reviewedPeopleIsoCodesUnmatchedToReference": 11
@@ -119,6 +119,14 @@
       "matchedReferenceGlottocodes": []
     },
     {
+      "id": "ktu",
+      "nameFr": "Kituba de la République démocratique du Congo",
+      "iso639P3Code": "ktu",
+      "glottocode": "kitu1246",
+      "matchStatus": "exact_reference",
+      "matchedReferenceGlottocodes": ["kitu1246"]
+    },
+    {
       "id": "ktz",
       "nameFr": "Ju|'hoan",
       "iso639P3Code": "ktz",
@@ -133,6 +141,14 @@
       "glottocode": "ling1263",
       "matchStatus": "exact_reference",
       "matchedReferenceGlottocodes": ["ling1263"]
+    },
+    {
+      "id": "lua",
+      "nameFr": "Tshiluba",
+      "iso639P3Code": "lua",
+      "glottocode": "luba1249",
+      "matchStatus": "exact_reference",
+      "matchedReferenceGlottocodes": ["luba1249"]
     },
     {
       "id": "mos",
@@ -173,6 +189,14 @@
       "glottocode": "soma1255",
       "matchStatus": "outside_country_reference",
       "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "swc",
+      "nameFr": "Swahili du Congo",
+      "iso639P3Code": "swc",
+      "glottocode": "cong1236",
+      "matchStatus": "exact_reference",
+      "matchedReferenceGlottocodes": ["cong1236"]
     },
     {
       "id": "swh",

@@ -4549,7 +4549,9 @@ export function checkLanguageStrictSchema(
     }
 
     const ficheTopKeys = new Set(
-      Object.keys(data).filter((k) => k !== "_meta")
+      Object.keys(data).filter(
+        (key) => key !== "_meta" && key !== "_translation"
+      )
     );
     const missingTop = [...modelTopKeys].filter((k) => !ficheTopKeys.has(k));
     const extraTop = [...ficheTopKeys].filter((k) => !modelTopKeys.has(k));

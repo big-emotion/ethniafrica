@@ -120,7 +120,7 @@ describe("language fiche coverage (ETNI-1508)", () => {
 
       expect(
         Object.keys(fiche)
-          .filter((key) => key !== "_meta")
+          .filter((key) => key !== "_meta" && key !== "_translation")
           .sort(),
         `${file} top-level keys`
       ).toEqual(topKeys);

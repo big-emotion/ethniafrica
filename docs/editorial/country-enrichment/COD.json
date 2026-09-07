@@ -172,12 +172,12 @@
       "rawReferenceUpperBoundPercent": 29.8
     },
     "history": {
-      "historicalNameEntries": 3,
+      "historicalNameEntries": 4,
       "historicalNamePeriodsFilled": 5,
       "historicalNamePeriodsTotal": 5,
       "historicalFactPeriodsFilled": 6,
       "historicalFactPeriodsTotal": 6,
-      "declaredPoliticalEntities": 9
+      "declaredPoliticalEntities": 7
     },
     "patronyms": {
       "directCountryFiches": 35,
@@ -193,10 +193,10 @@
     },
     "sources": {
       "countryFiche": {
-        "total": 4,
-        "accepted": 4,
+        "total": 27,
+        "accepted": 27,
         "acceptedPercent": 100,
-        "withUrl": 4,
+        "withUrl": 27,
         "withUrlPercent": 100,
         "needsReview": 0
       },
@@ -394,31 +394,32 @@
     {
       "id": "COD-LANGUAGES",
       "priority": "P0",
-      "status": "surface_proposal_ready_dossiers_required",
+      "status": "three_national_language_dossiers_created_surface_approval_and_french_dossier_pending",
       "goal": "Expose verified DRC languages with stable ISO 639-3 and Glottocode links.",
       "findings": [
         "The country culture section has no mainLanguages entries, so the country fiche language bubbles are empty.",
         "Language names and codes can be inferred from people fiches, but the raw set contains contamination from macro-fiches.",
         "The dedicated language corpus is much smaller than the Glottolog country inventory.",
         "Article 1 of the Constitution establishes French as the official language and Kikongo, Lingala, Swahili, and Tshiluba as national languages, while protecting the country's other languages as cultural heritage.",
-        "The local language corpus contains Lingala (lin) and Swahili (swh) dossiers, but no dedicated French, Kikongo/Kituba, or Tshiluba dossier. The people-derived Swahili record uses swa while the language dossier uses swh, so naive exact-code matching is unsafe.",
+        "The local language corpus now contains exact Lingala (lin), Kituba (ktu), Congo Swahili (swc), and Tshiluba (lua) dossiers. The standardized Swahili dossier (swh) remains separate, and French is still missing because the corpus does not yet model an Indo-European family.",
         "The pinned Glottolog 5.3 CLDF export contains 252 CD-linked entries: 244 languages and 8 dialects. Of these, 235 carry an ISO 639-3 code and 17 require Glottocode-first reconciliation.",
         "The pinned inventory directly exposes Congo Swahili (swc), Kituba (Democratic Republic of Congo) (ktu), Luba-Katanga (lub), Luba-Lulua (lua), and Kinshasa Lingala (lin). French is absent from this country inventory, confirming that constitutional language roles and Glottolog geographic inventory membership must remain separate dimensions.",
-        "Exact reconciliation finds that only the Lingala dossier (lin; ling1263) directly matches the CD reference inventory. The other 23 local language dossiers remain globally valid but do not directly cover a pinned CD entry.",
-        "The retained people and subgroup proposals expose 45 unique ISO 639-3 codes: 33 match a CD reference entry and 12 do not. The unmatched codes are bfl, bqk, gba, gbp, iyx, kon, liy, lli, swa, teg, tet, and tyi; each requires semantic or geographic review rather than automatic deletion.",
-        "Across exact local dossier and retained-people code signals, 34 of the 252 reference entries have at least one local signal and 218 have none. This is a reconciliation workload measure, not reader-facing language completeness.",
-        "Semantic review resolves the 12 exact-code misses into scope problems. The Banda fiche uses bfl, bqk, and liy varieties located outside the DRC; its DRC-relevant reference candidates are bpd, bjo, lnl, and tor. The provisional Gbaya relation remains unsupported, and gbp is limited to the Central African Republic.",
+        "Exact reconciliation now finds four local dossiers that directly match the CD reference inventory: Lingala (lin; ling1263), Kituba (ktu; kitu1246), Congo Swahili (swc; cong1236), and Tshiluba (lua; luba1249). The other 24 local language dossiers remain globally valid but do not directly cover a pinned CD entry.",
+        "The retained people and subgroup proposals expose 45 unique ISO 639-3 codes: 34 match a CD reference entry and 11 do not. The unmatched codes are bfl, bqk, gba, gbp, iyx, kon, liy, lli, swa, teg, and tyi; each requires semantic or geographic review rather than automatic deletion.",
+        "Across exact local dossier and retained-people code signals, 37 of the 252 reference entries have at least one local signal and 215 have none. This is a reconciliation workload measure, not reader-facing language completeness.",
+        "Semantic review resolves the 11 exact-code misses into scope problems. The Banda fiche uses bfl, bqk, and liy varieties located outside the DRC; its DRC-relevant reference candidates are bpd, bjo, lnl, and tor. The provisional Gbaya relation remains unsupported, and gbp is limited to the Central African Republic.",
         "Within the Teke fiche, tek is present in the CD inventory but iyx, lli, teg, and tyi are not; DRC exposure must also assess ebo and ifm rather than inheriting every transborder code from the people fiche. The kon and swa macrolanguages require child-level country mappings instead of direct surface use.",
         "The Tetela language identifier was corrected from tet to tll on 2026-09-07 and now reconciles exactly to the pinned Glottolog Tetela record (tete1250); tet identifies Tetum in Indonesia and Timor-Leste.",
         "The constitutional Kikongo label is mapped provisionally to Kikongo ya Leta/Kituba (ktu; kitu1246) for the national-language surface, while Eastern Kikongo and community Kongo varieties remain separately discoverable. Glottolog explicitly records Kikongo ya Leta as an alternative name of the DRC Kituba entry and assigns it statutory national-identity status.",
         "The constitutional Kiswahili label is mapped provisionally to Congo Swahili (swc; cong1236) for DRC country exposure. The existing standardized Swahili dossier (swh; swah1253) remains related but is not a direct substitute, and the swa macrolanguage must not be used as a country-level endpoint.",
-        "A five-entry main-language surface proposal is ready: French as official; Kikongo ya Leta/Kituba, Lingala, Congo Swahili/Kiswahili, and Tshiluba as national languages; the four Congolese languages also carry regional vehicular roles where supported."
+        "A five-entry main-language surface proposal is ready: French as official; Kikongo ya Leta/Kituba, Lingala, Congo Swahili/Kiswahili, and Tshiluba as national languages; the four Congolese languages also carry regional vehicular roles where supported.",
+        "On 2026-09-07, exact source dossiers were created for Kituba (ktu), Congo Swahili (swc), and Tshiluba (lua). Their English counterparts remain explicitly deferred while the French country enrichment pass continues; no country surface or database synchronization is claimed."
       ],
       "remaining": [
         "Apply the remaining reviewed people-language corrections only after proposal approval: narrow Banda and Teke country exposure to DRC-relevant varieties, and keep broad Gbaya codes off the DRC surface until the people relation is verified.",
-        "Prioritize the 218 Glottolog entries without a local dossier or retained-people code signal by legal role, vehicular use, community relevance, and source quality rather than treating them as a flat creation queue.",
+        "Prioritize the 215 Glottolog entries without a local dossier or retained-people code signal by legal role, vehicular use, community relevance, and source quality rather than treating them as a flat creation queue.",
         "Approve or amend the five-entry country surface proposal before filling culture.mainLanguages.",
-        "Create missing French, Kituba (ktu), Congo Swahili (swc), and Tshiluba (lua) language dossiers before linking the approved surface; retain the existing Lingala dossier and keep standardized Swahili (swh) separate.",
+        "Create the missing French language dossier only after deciding how the corpus models its Indo-European family; retain Lingala (lin), Kituba (ktu), Congo Swahili (swc), and Tshiluba (lua), and keep standardized Swahili (swh) separate.",
         "Create further missing language dossiers in evidence-prioritized waves."
       ],
       "researchLeads": [
@@ -450,7 +451,8 @@
           "iso639P3Code": "ktu",
           "glottocode": "kitu1246",
           "roles": ["national", "vehicular"],
-          "dossierStatus": "missing",
+          "dossierStatus": "existing",
+          "dossierId": "ktu",
           "sourceUrl": "https://glottolog.org/resource/languoid/id/kitu1246",
           "caveat": "The Constitution says Kikongo; the proposed endpoint is the DRC Kituba record whose controlled aliases include Kikongo ya Leta. Community Kikongo varieties remain separate records."
         },
@@ -462,14 +464,15 @@
           "dossierStatus": "existing",
           "dossierId": "lin",
           "sourceUrl": "https://glottolog.org/resource/languoid/id/ling1263",
-          "caveat": "This is the only proposed national-language endpoint with an existing exact local dossier."
+          "caveat": "This is the pre-existing exact local dossier among the proposed national-language endpoints."
         },
         {
           "label": "Kiswahili / Congo Swahili",
           "iso639P3Code": "swc",
           "glottocode": "cong1236",
           "roles": ["national", "vehicular"],
-          "dossierStatus": "missing",
+          "dossierStatus": "existing",
+          "dossierId": "swc",
           "relatedDossierId": "swh",
           "sourceUrl": "https://glottolog.org/resource/languoid/id/cong1236",
           "caveat": "Use the DRC Congo Swahili endpoint for country exposure. Keep standardized Swahili (swh) as a related but distinct dossier and do not substitute the swa macrolanguage."
@@ -479,7 +482,8 @@
           "iso639P3Code": "lua",
           "glottocode": "luba1249",
           "roles": ["national", "vehicular"],
-          "dossierStatus": "missing",
+          "dossierStatus": "existing",
+          "dossierId": "lua",
           "sourceUrl": "https://glottolog.org/resource/languoid/id/luba1249",
           "caveat": "Glottolog uses Luba-Lulua as the primary name and lists Tshiluba, Ciluba, and Tchiluba among controlled alternatives."
         }
@@ -488,7 +492,7 @@
     {
       "id": "COD-HISTORY",
       "priority": "P1",
-      "status": "surface_proposal_ready_editorial_approval_required",
+      "status": "source_json_first_wave_applied_additional_research_pending",
       "goal": "Extend the timeline before the best-known kingdoms and represent historical entities accurately.",
       "findings": [
         "The kingdoms array currently mixes precolonial polities, colonial administrations, and the modern republic.",
@@ -501,15 +505,13 @@
         "Nine modern events now provide a sourced first-wave chronology from independence on 30 June 1960 through the first peaceful transfer of presidential power on 24 January 2019.",
         "The modern chronology separates independence, the Congo Crisis, Mobutu's regime and state-renaming programme, the two Congo wars, the 2002–2003 negotiated transition, the 2006 constitutional-electoral transition, and the 2019 transfer of power.",
         "Conflict ceasefires and political agreements are not treated as clean endpoints, and the 2019 peaceful-transfer label carries an explicit electoral-process caveat.",
-        "The proposal defines five distinct presentation sections and deliberately does not compute a global history-completeness percentage."
+        "The proposal defines five distinct presentation sections and deliberately does not compute a global history-completeness percentage.",
+        "The reviewed first-wave history was applied to the country source JSON on 2026-09-07 without claiming exhaustive national coverage or database synchronization."
       ],
       "remaining": [
-        "Approve or amend the taxonomy, geographic-fit decisions, and first-wave entries in COD-history.json before modifying production country data.",
         "Design and test a mobile-first country-history presentation that separates archaeology, political formations, colonial administrations, and independent-state periods.",
-        "Replace the production kingdoms array and compressed prose only after editorial approval, preserving field-level source links.",
         "Obtain a dedicated scholarly source for the broader Mangbetu chronology and a source for regional variation in Mongo political organization.",
         "Review additional regional formations in evidence-prioritized waves; the ten-row audit is a controlled first scope, not an exhaustive national inventory.",
-        "Approve or amend the nine modern-event rows and their caveats before modifying production country data.",
         "Review post-2019 developments as a separately versioned contemporary-history pass with an explicit cutoff date."
       ],
       "researchLeads": [
@@ -563,7 +565,7 @@
     {
       "id": "COD-CULTURE",
       "priority": "P1",
-      "status": "claim_review_complete_editorial_approval_required",
+      "status": "source_json_scoped_replacements_applied_additional_research_pending",
       "goal": "Replace national cultural generalizations with scoped, sourced claims and route people-specific knowledge to the correct records.",
       "findings": [
         "None of the five current country-level culture fields is ready as written.",
@@ -571,16 +573,14 @@
         "The current Catholic-majority wording is not supported by the 2013–2014 DHS respondent distribution and should be replaced with dated, population-specific survey context.",
         "The lifestyles field conflates regionally variable livelihoods with national economic sectors.",
         "The social-organization sentence should move to people fiches because no single descent, authority, or kinship system describes the country.",
-        "Regional relations and diaspora claims require typed relation records and dated bilateral migration data."
+        "Regional relations and diaspora claims require typed relation records and dated bilateral migration data.",
+        "The reviewed scoped culture replacements were applied to the country source JSON on 2026-09-07 without claiming national cultural completeness or database synchronization."
       ],
       "remaining": [
-        "Approve the proposed field actions in COD-culture-review.json.",
         "Select representative people- and region-specific cultural dossiers.",
-        "Decide how dated religious survey context should appear on the public country surface.",
         "Build region- or livelihood-specific modules only where accepted sources exist.",
         "Extract the UN DESA 2024 DRC origin-destination matrix before naming leading diaspora destinations.",
-        "Create typed cross-border relation records for named peoples and political entities.",
-        "Apply approved changes to the country source file only after explicit editorial approval."
+        "Create typed cross-border relation records for named peoples and political entities."
       ]
     },
     {
@@ -591,19 +591,22 @@
       "findings": [
         "The country fiche previously contained 10 source rows: 2 accepted exact sources and 8 generic needs_review rows.",
         "All 8 generic rows were reviewed, approved for removal, and removed from the source JSON on 2026-09-07; the 2 retained rows have exact URLs and accepted tiers.",
-        "Two exact name-origin references were added on 2026-09-07, bringing the current country source register to 4 accepted rows with resolvable URLs.",
+        "Two exact name-origin references were added on 2026-09-07, bringing the pre-history-application country source register to 4 accepted rows with resolvable URLs.",
+        "Seventeen accepted history references were added with the reviewed first-wave chronology on 2026-09-07, bringing the post-history country source register to 21 rows with explicit tiers and URLs.",
+        "Six accepted culture references were added with the scoped culture replacements on 2026-09-07, bringing the country source register to 27 rows; the UN DESA migration dataset remains in the review artifact until a bilateral matrix claim is extracted.",
         "The two CIA placeholders cannot be repaired as live current-country citations because The World Factbook was retired on 2026-02-04 and the former country URL redirects to the retirement notice.",
         "The vague Ethnologue row is not reproducible without an edition and license basis; the pinned Glottolog 5.3 inventory is proposed for language reconciliation instead.",
         "Official census-status documentation identifies 1984 as the latest completed national census, while the 2013–2014 DHS is a sample survey; neither validates a current exhaustive people denominator.",
         "The country-name origin can be stated conservatively: the country is named after the Congo River, whose Congo/Kongo name is historically connected to the Kongo kingdom; the deeper lexical derivation remains uncertain.",
-        "Detailed people percentages and broad cultural fields remain unsupported and must not be marked validated."
+        "Detailed people percentages remain unsupported and must not be marked validated; the five former broad culture fields were either replaced by scoped claims or cleared on 2026-09-07.",
+        "All 27 country source JSON URLs returned an HTTP response below 500 on 2026-09-07; 403 and 429 responses establish endpoint reachability under the repository rule but do not replace a content review."
       ],
       "remaining": [
         "Select an enumerated scholarly people inventory as the canonical record-linkage baseline, or expose multiple non-additive scopes.",
         "Attach accepted sources to detailed people percentages or remove those percentages from validated display.",
-        "Add scoped sources for culture, religion, lifestyles, social organization, and regional relations.",
+        "Add people- and region-specific culture sources only when dedicated records or typed modules can carry their scope.",
         "Add field-level provenance to the country model or generate an equivalent auditable mapping.",
-        "Run the repository URL validator after its pre-existing server-only runtime failure is repaired, then run the AFRIK data validators before publication."
+        "After an authorized database synchronization, run the repository source-URL health checker against the projected Supabase source rows."
       ]
     }
   ],
