@@ -16,13 +16,23 @@ import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
  * does not think Greenland outranks Africa, they think the gap is small. Only
  * a round that asks for a number can register how far off that is.
  *
+ * `list` is the third, and it exists because `binary` teaches a shortcut. Over
+ * a session of two-way choices the reader learns « pick the one that is not
+ * northern » — a heuristic that answers every round without ever using the
+ * rule the page is about. Four options, three of them drawn at least as large
+ * as the answer, cannot be won that way: the reader has to rank the
+ * exaggeration, which is the rule itself. It also drops the base rate from a
+ * half to a quarter, so a guess stops being worth half a point.
+ *
  * `quad` and `areaCompare` went with the eight games retired by the charter's
  * scope cut, and `globeTap` went with « Le pays d'avant » in the cut that
  * followed: a kind no game produces is a renderer shipping unexercised, which
  * `gameRegistry.test.ts` asserts against. All three are in git for whoever
- * rebuilds one of those games against the charter.
+ * rebuilds one of those games against the charter. `list` is not `quad`
+ * restored — `quad` was four options drawn from a corpus slice with no
+ * similarity rule, which is the padding §3 forbids.
  */
-export type GameKind = "binary" | "estimate";
+export type GameKind = "binary" | "estimate" | "list";
 
 /**
  * Which question a round asks — not to be confused with `GameKind`, which is
@@ -38,9 +48,11 @@ export type GameKind = "binary" | "estimate";
  * - `larger-area` — the ground really covered, where the flat map inverts it.
  * - `greater-inflation` — how much the projection enlarges each, from latitude.
  * - `fits-in-africa` — how many times a non-African shape fits in the continent.
+ * - `largest-of-list` — the same question as `larger-area`, asked of four, so
+ *   the answer cannot be reached by eliminating one northern country.
  */
 export type RoundTemplate =
-  "larger-area" | "greater-inflation" | "fits-in-africa";
+  "larger-area" | "greater-inflation" | "fits-in-africa" | "largest-of-list";
 
 /**
  * What the reader is shown after answering. `textFr` is copied verbatim from
@@ -107,6 +119,24 @@ interface GameRoundBase {
   template: RoundTemplate;
   /** The corpus entity the round is about — a people, a country, a family. */
   subjectId: string;
+  /**
+   * Every territory the round holds up against every other, in option order
+   * (REQ-120).
+   *
+   * `subjectId` names one of them and a two-option round has two, so a caller
+   * that wants to *show* what is being compared could not get there from the
+   * fields above — and the Mercator page needs exactly that, to mark the
+   * countries on the globe beside the question (atlas-charter §9.3: a map has
+   * a referent).
+   *
+   * Ids, never names: an option's label is prose the reader reads, and looking
+   * a country up by it would break the first time a name carried a qualifier —
+   * which one already does, « France métropolitaine ».
+   *
+   * Absent on a round that compares nothing to a place, such as the estimate
+   * of how many times a shape fits in the whole continent.
+   */
+  comparedIds?: string[];
   promptFr: string;
   promptEn?: string;
   /**
@@ -122,6 +152,21 @@ export interface BinaryRound extends GameRoundBase {
   kind: "binary";
   options: [GameOption, GameOption];
   correctIndex: 0 | 1;
+}
+
+/**
+ * A stacked list of options, one of them right.
+ *
+ * Same gesture as `binary` — one tap, no separate « valider » — and a
+ * different layout, which is why it is a kind of its own rather than a
+ * `BinaryRound` with a longer array. Two options sit side by side above
+ * 720 px; four never can, at any width the site supports, without cramming
+ * « République démocratique du Congo » into a quarter column.
+ */
+export interface ListRound extends GameRoundBase {
+  kind: "list";
+  options: GameOption[];
+  correctIndex: number;
 }
 
 /**
@@ -152,12 +197,20 @@ export interface EstimateRound extends GameRoundBase {
   toleranceRatio: number;
 }
 
-export type GameRound = BinaryRound | EstimateRound;
+export type GameRound = BinaryRound | EstimateRound | ListRound;
 
 /** Narrows a round to the options-bearing kinds without a cast. */
 // @req REQ-120
-export function isOptionRound(round: GameRound): round is BinaryRound {
-  return round.kind === "binary";
+export function isOptionRound(
+  round: GameRound
+): round is BinaryRound | ListRound {
+  return round.kind === "binary" || round.kind === "list";
+}
+
+/** Narrows a round to the stacked-list kind without a cast. */
+// @req REQ-120
+export function isListRound(round: GameRound): round is ListRound {
+  return round.kind === "list";
 }
 
 /** Narrows a round to the slider kind without a cast. */
@@ -181,6 +234,8 @@ export function isCorrectAnswer(
   answer: number | CountryId
 ): boolean {
   if (round.kind === "binary") return answer === round.correctIndex;
+
+  if (round.kind === "list") return answer === round.correctIndex;
 
   if (round.kind === "estimate") {
     if (typeof answer !== "number") return false;

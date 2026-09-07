@@ -40,7 +40,7 @@ const en = {
     blurb:
       "The testing axis: games and quizzes drawn from the fiches, each answer leading back to its own.",
     menuBlurb:
-      "A quiz drawn from the fiches, and a game on the true size of countries.",
+      "A quiz drawn from the fiches, and the Mercator projection cut down to size.",
     hubEntryName: "The games hub",
   },
   unavailableLabel: "Coming soon",
@@ -66,7 +66,7 @@ const en = {
     frise: "First migration landmarks",
     "regards-colonisation": "Colonial gaze: colonisation and resistance",
     quiz: "The quiz",
-    mercator: "The size they hid from you",
+    mercator: "The Mercator projection",
   } as Record<string, string>,
   // What the reader reads over a rubric of dossiers. One domain noun each,
   // taken from the vocabulary the country fiche already teaches — `country.ts`
@@ -171,7 +171,7 @@ const fr: HubsCopy = {
     blurb:
       "L'axe de la mise à l'épreuve : des jeux et des quiz tirés des fiches, dont chaque réponse renvoie à la sienne.",
     menuBlurb:
-      "Un quiz tiré des fiches, et un jeu sur la taille réelle des pays.",
+      "Un quiz tiré des fiches, et la projection de Mercator remise à sa juste taille.",
     hubEntryName: "Le hub des jeux",
   },
   unavailableLabel: "Bientôt",
@@ -198,7 +198,7 @@ const fr: HubsCopy = {
     frise: "Premiers repères de migrations",
     "regards-colonisation": "Regards : colonisation et résistances",
     quiz: "Le quiz",
-    mercator: "La taille qu'on vous a cachée",
+    mercator: "La projection de Mercator",
   },
   moduleGroupNames: {
     "dossiers-noms": "Noms",

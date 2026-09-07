@@ -569,7 +569,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   {
     id: "mercator",
     group: "jeux-pays",
-    name: "La taille qu'on vous a cachée",
+    name: "La projection de Mercator",
     accessMode: "jeux",
     page: null,
     gameSlug: "mercator",

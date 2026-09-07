@@ -245,3 +245,92 @@ Steps 2 and 3 are idempotent: re-running them produces byte-identical output.
   `USA` is compared against the contiguous-48 figure and `EUW` against the sum
   of its twelve members' mainland areas. If a re-run pushes any shape past
   ~20%, the simplification has destroyed it — back the percentage off.
+
+## Comparison countries (`worldAdmin0.ts`)
+
+`worldAdmin0.ts` holds the sixteen countries outside Africa the Mercator game
+may put on a button, keyed by ISO 3166-1 alpha-3 like `africaAdmin0.ts` and
+carrying the same `Admin0Country` shape.
+
+**Why a second world asset.** `worldCompare.ts` above holds the six shapes
+Africa is measured _whole_ against — five of them larger than every African
+country but the largest, which makes for a comparison with no tension in it.
+The rounds that teach are the near-ties across latitudes: mainland France
+against Madagascar, Norway against Côte d'Ivoire, Sweden against Cameroon.
+Those need countries at a size an African country can match, and the two sets
+are **disjoint by construction** so no country is ever measured twice —
+`src/lib/games/__tests__/territory.test.ts` asserts it.
+
+### Reproduction steps
+
+```bash
+# 1. Fetch the source data (same dataset as every asset above).
+curl -o /tmp/ne_50m_admin_0_countries.geojson \
+  https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector@master/geojson/ne_50m_admin_0_countries.geojson
+
+# 2. Keep the sixteen countries, tagged by ADM0_A3 — *not* ISO_A3, which
+#    Natural Earth sets to -99 for France and Norway. NAME_FR is the asset's
+#    French label; NAME_EN the English one.
+npx mapshaper -i /tmp/ne_50m_admin_0_countries.geojson \
+  -filter 'ADM0_A3=="FRA"||ADM0_A3=="DEU"||ADM0_A3=="ESP"||ADM0_A3=="ITA"||ADM0_A3=="POL"||ADM0_A3=="SWE"||ADM0_A3=="NOR"||ADM0_A3=="FIN"||ADM0_A3=="ISL"||ADM0_A3=="KAZ"||ADM0_A3=="MNG"||ADM0_A3=="TUR"||ADM0_A3=="IRN"||ADM0_A3=="MEX"||ADM0_A3=="ARG"||ADM0_A3=="AUS"' \
+  -each 'id=ADM0_A3, name=NAME_EN, fr=NAME_FR' \
+  -filter-fields id,name,fr \
+  -simplify 12% visvalingam keep-shapes \
+  -o format=geojson precision=0.01 /tmp/world-simplified.geojson
+
+# 3. Apply the mainland rule and emit the committed constant.
+node src/lib/atlas/assets/generate-world-admin0.mjs \
+  /tmp/world-simplified.geojson \
+  src/lib/atlas/assets/worldAdmin0.ts
+```
+
+### The mainland rule
+
+`generate-world-admin0.mjs` keeps only the polygons whose centroid sits within
+`MAINLAND_RADIUS_DEGREES` (12°) of the largest one. Natural Earth's France
+carries Guyane, Mayotte, la Réunion and the Antilles in the same feature; a
+reader told « France » and shown four shapes over three oceans is being shown
+something the option does not name, and the outlying polygons cost more payload
+than the mainland they surround. Twelve degrees keeps Corsica with France,
+Sicily and Sardinia with Italy, and drops the overseas departments and
+Svalbard.
+
+Where the rule changes what the name means, the name changes with it —
+`NAME_OVERRIDE_FR` renames `FRA` to « France métropolitaine », because its
+overseas departments are 89 000 km² against a 552 000 km² mainland and
+« France » unqualified would be 14 % short of the figure a reader looks up.
+
+### Which countries, and which are missing on purpose
+
+The list is an editorial choice, not a filter: a country earns a place by being
+one a French-speaking reader can picture, and by measuring within 3 % of its
+published area once simplified. Four candidates were cut for failing the
+second test, and the reason is the same in every case — an area carried by
+islands that no uniform simplification holds:
+
+| id  | measured | published | why it is not here                        |
+| --- | -------- | --------- | ----------------------------------------- |
+| GBR | −4.7%    | 244 376   | area carried by a chain of small islands  |
+| JPN | −3.8%    | 377 975   | Okinawa falls outside the mainland radius |
+| CAN | −18.2%   | 9 984 670 | the Arctic archipelago is most of it      |
+| CHL | −8.4%    | 756 102   | 4 000 km of fjords and islands            |
+
+`SAU` (−10.4%) and `UKR` are also absent: Natural Earth disagrees with the
+published figure over the Rub' al-Khali border and over Crimea respectively,
+and a game that prints an area should not settle a boundary dispute in passing.
+`RUS` is absent because a single centroid latitude is meaningless for a country
+spanning eleven time zones, which is what `mercatorInflation` reads.
+
+### Size budget
+
+- Committed size: ~24 KB raw / ~9 KB gzipped, for 16 countries.
+- It reaches the browser only on `/[lang]/jeux/[jeu]`. `src/lib/atlas/worldOutlines.ts`
+  exists for that reason alone: the lookup naturally belongs in `overlays.ts`,
+  and putting it there measured 17 KB gzipped added to the client chunk the
+  home shares with four atlas hubs, for outlines none of them draws.
+- `-simplify 12%` holds a mean absolute area error of **0.4 %** across the
+  sixteen, worst case Norway at −2.1 % — measured against the unsimplified
+  source geometry, not against published figures, so the number isolates what
+  the simplification costs. The African asset, for comparison, measures a mean
+  of 2.8 % with Gambia at +36 %: it is simplified uniformly, and a uniform
+  percentage destroys a country shaped like a river.

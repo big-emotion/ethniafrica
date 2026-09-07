@@ -1,6 +1,9 @@
 "use client";
 
+import { useMemo, useState } from "react";
+
 import { ContinentGlobeStage } from "@/components/atlas/ContinentGlobeStage";
+import { borrowedOutlines } from "@/lib/atlas/worldOutlines";
 import { GamePlayIsland } from "@/components/play/GamePlayIsland";
 import type { GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
@@ -91,6 +94,37 @@ export const MercatorSurface = ({
   const copy = gamesCopy[language];
   const trueSizeClaim =
     language === "en" ? (trueSizeClaimEn ?? trueSizeClaimFr) : trueSizeClaimFr;
+
+  /**
+   * The countries the standing round asks about, marked on the globe beside it
+   * (REQ-120).
+   *
+   * The page used to name two countries in its options and draw neither: a
+   * reader who does not already know the outline of Mauritania was being asked
+   * to compare two words against a continent, which is the referent atlas
+   * charter §9.3 requires and this page did not give.
+   *
+   * It lives here rather than inside either child because neither can reach
+   * the other — the round is the island's state and the frame is the stage's
+   * geometry, and this surface is the only thing that holds both.
+   */
+  const [countriesUnderQuestion, setCountriesUnderQuestion] = useState<
+    string[]
+  >([]);
+
+  /**
+   * The outlines of the ones the continent frame does not draw.
+   *
+   * Resolved here rather than inside the globe, because this is the only
+   * surface that ever needs them and the world assets are twenty-four
+   * kilobytes of coastline. Resolving them in `overlays.ts` — where the lookup
+   * naturally belongs — put them in the client chunk the home shares with four
+   * atlas hubs, measured at 17 kB gzipped that none of those pages draws.
+   */
+  const offContinentOutlines = useMemo(
+    () => borrowedOutlines(countriesUnderQuestion),
+    [countriesUnderQuestion]
+  );
   return (
     <div className="mercator-surface">
       {/*
@@ -108,18 +142,22 @@ export const MercatorSurface = ({
           language={language}
           facts={facts}
           corpusLimited={corpusLimited}
+          onComparedIdsChange={setCountriesUnderQuestion}
         />
       </div>
 
       <div className="mercator-stage">
-        {/* The home's own call, prop for prop: one visual object, mounted the
-            same way on both surfaces. Unpinned, so the morph bar is the
-            reader's throughout — moving it *is* the demonstration. */}
+        {/* The home's own call, prop for prop, plus the one thing this page
+            asks of it that the home does not: the round's two countries,
+            marked. Unpinned, so the morph bar is the reader's throughout —
+            moving it *is* the demonstration. */}
         <ContinentGlobeStage
           language={language}
           peopleCountsByCountry={peopleCountsByCountry}
           presentation="hero"
           autoRotate
+          countriesUnderQuestion={countriesUnderQuestion}
+          offContinentOutlines={offContinentOutlines}
         />
 
         <aside className="mercator-true-size" data-testid="mercator-true-size">

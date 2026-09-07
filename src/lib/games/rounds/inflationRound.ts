@@ -108,6 +108,7 @@ export function buildInflationRound(
     template: "greater-inflation",
     gameId: GAME.id,
     subjectId: a.id,
+    comparedIds: [a.id, b.id],
     promptFr: INFLATION_PROMPT_FR,
     promptEn: INFLATION_ROUND_EN.prompt,
     options: [

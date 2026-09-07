@@ -20,7 +20,7 @@ describe("GAME_DEFINITIONS", () => {
   // @req REQ-120
   it("uses only the surviving interaction primitives", () => {
     const kinds = new Set(GAME_DEFINITIONS.flatMap((game) => game.kinds));
-    expect([...kinds].sort()).toEqual(["binary", "estimate"]);
+    expect([...kinds].sort()).toEqual(["binary", "estimate", "list"]);
   });
 
   // The point of this test is not the count but the absence of dead engine

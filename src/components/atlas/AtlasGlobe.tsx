@@ -362,23 +362,40 @@ function AtlasGlobeFallback({
    * legend discharges it; here the areas survive only as targets.
    */
   if (overlay.kind === "continent-field") {
+    const underQuestion = new Set(overlay.highlightedCountryIds);
+
     return (
       <AfricaBasemap
         figureTransform={figureTransform}
         style={FALLBACK_BASEMAP_STYLE}
       >
-        {overlay.frame.flatMap((country) =>
-          country.rings.map((ring, index) => (
+        {overlay.frame.flatMap((country) => {
+          // The basemap is bounded on Africa, so a borrowed outline would be
+          // painted outside it rather than clipped — see `offContinent`. The
+          // round names both countries in its own options; this renderer
+          // locates the one it can and asserts nothing about the other.
+          if (country.offContinent) return [];
+
+          // A country a round is asking about takes the fiche outline's own
+          // encoding — accent fill, accent stroke — because that is already
+          // what « this country » looks like in this atlas. See
+          // `highlightFillOpacity` for why the frame's `fill: none` invariant
+          // is allowed to give way here and nowhere else.
+          const marked = underQuestion.has(country.countryId);
+
+          return country.rings.map((ring, index) => (
             <polygon
               key={`${country.countryId}-${index}`}
               points={ringToSvgPoints(ring)}
-              fill="none"
-              stroke="var(--afh-globe-stage-line)"
-              strokeWidth={1}
+              fill={marked ? "var(--accent)" : "none"}
+              fillOpacity={marked ? overlay.highlightFillOpacity : undefined}
+              stroke={marked ? "var(--accent)" : "var(--afh-globe-stage-line)"}
+              strokeWidth={marked ? 2.5 : 1}
+              strokeOpacity={underQuestion.size > 0 && !marked ? 0.4 : 1}
               vectorEffect="non-scaling-stroke"
             />
-          ))
-        )}
+          ));
+        })}
       </AfricaBasemap>
     );
   }

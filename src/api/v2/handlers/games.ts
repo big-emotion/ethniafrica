@@ -31,6 +31,11 @@ import {
 } from "@/lib/games/rounds/inflationRound";
 import { buildScaleEstimateRounds } from "@/lib/games/rounds/scaleEstimateRound";
 import {
+  LIST_OPTION_COUNT,
+  buildLargestOfListRound,
+  isMercatorTrapFor,
+} from "@/lib/games/rounds/largestOfListRound";
+import {
   NON_AFRICAN_SILHOUETTES,
   isAfricanTerritory,
   type ComparedTerritory,
@@ -233,6 +238,51 @@ function inflationGap(a: ComparedTerritory, b: ComparedTerritory): number {
   return Math.max(factorA, factorB) / Math.min(factorA, factorB);
 }
 
+/**
+ * The four-way comparisons: one African country against three territories the
+ * flat map draws at least as large.
+ *
+ * The anchor is always African and the candidates come from the whole pool,
+ * which is what makes the round hard in the right way — three northern
+ * countries against one equatorial one cannot be sorted by « which is not
+ * northern », only by how much each is inflated.
+ *
+ * Candidates are taken in pool order rather than picked by size. Sorting them
+ * would put the same three countries against every anchor, because the same
+ * dozen far-from-equator territories qualify for most of them; the rotation
+ * the pool arrives with is what keeps Norway from being in every list.
+ */
+function listRounds(corpus: GameCorpus, seed: number): GameRound[] {
+  const pool = rotate([...corpus.countries, ...NON_AFRICAN_SILHOUETTES], seed);
+  const { bandOf } = bandedPool(pool, (t) => t.id, trueAreaKm2);
+
+  const rounds: GameRound[] = [];
+  const anchored = new Set<string>();
+
+  for (const anchor of pool) {
+    if (!isAfricanTerritory(anchor)) continue;
+    if (anchored.has(anchor.id)) continue;
+
+    const candidates = pool
+      .filter(
+        (candidate) =>
+          candidate.id !== anchor.id && isMercatorTrapFor(anchor, candidate)
+      )
+      .slice(0, LIST_OPTION_COUNT - 1);
+
+    const round = buildLargestOfListRound(anchor, candidates);
+    if (!round) continue;
+
+    anchored.add(anchor.id);
+    // As hard as its least familiar member, the same rule the pair uses.
+    const band = Math.max(
+      ...round.comparedIds.map((id) => bandOf.get(id) ?? 3)
+    ) as DifficultyBand;
+    rounds.push({ ...round, difficultyBand: band });
+  }
+  return rounds;
+}
+
 function inflationRounds(corpus: GameCorpus, seed: number): GameRound[] {
   const pairs = pairOff(
     rotate(corpus.countries, seed),
@@ -323,6 +373,7 @@ function assembleRounds(
 ): GameRound[] {
   const byTemplate = [
     comparisonRounds(corpus, seed),
+    listRounds(corpus, seed),
     inflationRounds(corpus, seed),
     estimateRounds(),
   ];

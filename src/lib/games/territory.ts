@@ -1,6 +1,8 @@
 import type { CountryId, Ring } from "@/lib/games/gameKinds";
 import { WORLD_COMPARE } from "@/lib/atlas/assets/worldCompare";
+import { WORLD_ADMIN0 } from "@/lib/atlas/assets/worldAdmin0";
 import { getAdmin0Rings, getWorldCompareRings } from "@/lib/atlas/overlays";
+import { borrowedOutline } from "@/lib/atlas/worldOutlines";
 import {
   mercatorInflation,
   mercatorLatitude,
@@ -46,16 +48,29 @@ export interface TerritoryFootprint {
 }
 
 /**
- * The six silhouettes from outside the continent, as territories.
+ * Everything from outside the continent a round may hold an African country
+ * up against: the six silhouettes of `worldCompare`, plus the countries of
+ * `worldAdmin0`.
  *
- * `worldCompare` was generated for the retired « Vraie taille » and its keys
- * are the asset's own rather than ISO — `EUW` is a dissolved Western Europe
- * with no country code — which is why nothing here is typed as a `CountryId`.
+ * The second asset exists because the first could not carry the question.
+ * `worldCompare` was generated for the retired « Vraie taille » to be measured
+ * *whole* against Africa, so its six entries are the six largest things worth
+ * measuring that way — and five of them are bigger than every African country
+ * but the largest, which makes for a comparison with no tension in it. The
+ * pairs that teach are the near-ties across latitudes: mainland France against
+ * Côte d'Ivoire, Norway against Cameroon, Sweden against Madagascar. Those
+ * needed countries the reader's own map already holds, at a size an African
+ * country can match.
+ *
+ * Keys stay plain strings rather than `CountryId`: `EUW` is a dissolved
+ * Western Europe with no country code, and the atlas holds a fiche for none of
+ * these anyway.
  */
 // @req REQ-120
-export const NON_AFRICAN_SILHOUETTES: ComparedTerritory[] = Object.entries(
-  WORLD_COMPARE
-).map(([id, shape]) => ({ id, nameFr: shape.nameFr, nameEn: shape.name }));
+export const NON_AFRICAN_SILHOUETTES: ComparedTerritory[] = [
+  ...Object.entries(WORLD_COMPARE),
+  ...Object.entries(WORLD_ADMIN0),
+].map(([id, shape]) => ({ id, nameFr: shape.nameFr, nameEn: shape.name }));
 
 const NON_AFRICAN_IDS = new Set(NON_AFRICAN_SILHOUETTES.map(({ id }) => id));
 
@@ -90,6 +105,7 @@ function largestRing(rings: Ring[]): Ring {
 function ringsOf(territory: ComparedTerritory): Ring[] | null {
   const rings =
     getAdmin0Rings(territory.id as CountryId) ??
+    borrowedOutline(territory.id)?.rings ??
     getWorldCompareRings(territory.id);
   return rings && rings.length > 0 ? rings : null;
 }

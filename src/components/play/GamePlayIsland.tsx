@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { BinaryChoice } from "@/components/play/BinaryChoice";
 import { EstimateSlider } from "@/components/play/EstimateSlider";
+import { ListChoice } from "@/components/play/ListChoice";
 import { GameAnswerReveal } from "@/components/play/GameAnswerReveal";
 import { GameScoreCard } from "@/components/play/GameScoreCard";
 import { ScaleFactCard } from "@/components/play/ScaleFactCard";
@@ -12,7 +13,11 @@ import {
   useGameSession,
   type GameSessionStatus,
 } from "@/hooks/use-game-session";
-import { isEstimateRound, type GameRound } from "@/lib/games/gameKinds";
+import {
+  isEstimateRound,
+  isListRound,
+  type GameRound,
+} from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import type { ScaleFact } from "@/lib/games/scaleFacts";
 import { trackEvent } from "@/lib/analytics/trackEvent";
@@ -39,6 +44,16 @@ export interface GamePlayIslandProps {
    * open it on the reveal; it is optional because nothing else needs to know.
    */
   onPhaseChange?: (status: GameSessionStatus) => void;
+  /**
+   * The territories the standing round compares, so a caller can show them
+   * (REQ-120). Empty between sessions and on a round that compares nothing to
+   * a place.
+   *
+   * The island reports ids and stops there. Which of them a map can draw, and
+   * what marking one looks like, is the map's business — this component has no
+   * opinion about geography and should not acquire one.
+   */
+  onComparedIdsChange?: (comparedIds: string[]) => void;
   className?: string;
 }
 
@@ -62,6 +77,7 @@ export const GamePlayIsland = ({
   facts = [],
   corpusLimited = false,
   onPhaseChange,
+  onComparedIdsChange,
   className,
 }: GamePlayIslandProps) => {
   // Which session of the pool is being played. The pool arrives longer than
@@ -89,6 +105,18 @@ export const GamePlayIsland = ({
   useEffect(() => {
     onPhaseChange?.(status);
   }, [status, onPhaseChange]);
+
+  // The score card compares nothing, so the marks come off with the last
+  // round rather than being left on whatever the session ended on.
+  const comparedIds =
+    status === "finished" ? undefined : currentRound?.comparedIds;
+
+  useEffect(() => {
+    onComparedIdsChange?.(comparedIds ?? []);
+    // `comparedIds` is a new array on every render of the same round, so
+    // depending on it would fire this effect continuously. The round's own
+    // identity is what changes when the marks should.
+  }, [currentRound, status, onComparedIdsChange]); // eslint-disable-line react-hooks/exhaustive-deps
 
   /**
    * The pair that decides whether a game is worth keeping.
@@ -152,6 +180,12 @@ export const GamePlayIsland = ({
               <EstimateSlider
                 language={language}
                 key={currentRound.subjectId}
+                round={currentRound}
+                onAnswer={session.answer}
+              />
+            ) : isListRound(currentRound) ? (
+              <ListChoice
+                language={language}
                 round={currentRound}
                 onAnswer={session.answer}
               />

@@ -16,9 +16,9 @@ export interface GameWordingEn {
 // @req REQ-145
 export const GAME_DEFINITIONS_EN: Record<GameId, GameWordingEn> = {
   mercator: {
-    nameEn: "The size they hid from you",
+    nameEn: "The Mercator projection",
     promptEn:
-      "The Mercator projection inflates the north and shrinks Africa. Measure the gap.",
+      "The size they hid from you: the north inflated, Africa shrunk. Measure the gap.",
     provenance: "machine",
   },
 };
