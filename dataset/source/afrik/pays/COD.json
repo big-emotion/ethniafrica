@@ -3,9 +3,9 @@
   "nameFr": "République démocratique du Congo",
   "nameEn": "Democratic Republic of the Congo",
   "nameOfficial": "République démocratique du Congo (RDC)",
-  "summary": "La République démocratique du Congo porte le nom du royaume Kongo, que les Portugais ont transcrit puis appliqué au fleuve et au pays. Elle fut successivement propriété privée de Léopold II, Congo belge, puis Zaïre. Les empires Luba et Lunda, et quatre langues nationales — lingala, swahili, tshiluba, kikongo — en font l'un des espaces culturels les plus denses du continent.",
-  "etymology": "Le nom \"Congo\" vient du royaume Kongo (Kongo en kikongo), un royaume précolonial puissant. \"Congo\" est la forme portugaise de \"Kongo\". Le fleuve Congo a été nommé d'après ce royaume. \"Démocratique\" a été ajouté en 1964 pour se distinguer de la République du Congo (Brazzaville).",
-  "nameOriginActor": "Le nom vient du royaume Kongo historique. Les Portugais ont popularisé le terme \"Congo\" au XVe siècle. Le nom \"Zaïre\" (1971-1997) venait du fleuve Zaïre (nom portugais du fleuve Congo, dérivé du kikongo \"nzadi\" signifiant \"fleuve\").",
+  "summary": "La République démocratique du Congo tire son nom du fleuve Congo, dont l'appellation Congo/Kongo est historiquement liée au royaume Kongo. Son territoire a connu plusieurs États précoloniaux, la domination léopoldienne puis belge, le nom de Zaïre entre 1971 et 1997, et une grande diversité de peuples et de langues.",
+  "etymology": "La République démocratique du Congo tire son nom du fleuve Congo. Le nom Congo/Kongo du fleuve est historiquement lié au royaume Kongo. L'origine lexicale plus ancienne de Kongo demeure incertaine et ne peut être réduite à une signification unique.",
+  "nameOriginActor": "Le nom de l'État a été repris de celui du fleuve Congo, lui-même historiquement associé au royaume Kongo. Les sources disponibles ne permettent pas d'attribuer avec certitude l'origine lexicale de Kongo à un acteur ou à une traduction unique.",
   "content": {
     "historicalNames": {
       "formerNames": [
@@ -295,6 +295,18 @@
         "url": "https://unstats.un.org/unsd/methodology/m49/",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "Toponymic Factfile: Congo (Democratic Republic)",
+        "url": "https://assets.publishing.service.gov.uk/media/65a66847867cd8000d5ae933/Democratic_Republic_of_Congo_Toponymic_Factfile.pdf",
+        "tier": "official",
+        "notes": "Official toponymic reference supporting the country-to-river name relationship; it does not settle the lexical origin of Kongo."
+      },
+      {
+        "title": "Dictionary and Grammar of the Kongo Language",
+        "url": "https://tile.loc.gov/storage-services/service/gdc/gdclccn/44/01/76/16/44017616/44017616.pdf",
+        "tier": "referenced",
+        "notes": "Historical Kongo-language reference supporting the river-to-kingdom connection and explicitly retaining uncertainty about deeper derivation."
       }
     ],
     "demographics": {

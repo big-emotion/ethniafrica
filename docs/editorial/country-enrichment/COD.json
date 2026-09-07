@@ -193,10 +193,10 @@
     },
     "sources": {
       "countryFiche": {
-        "total": 2,
-        "accepted": 2,
+        "total": 4,
+        "accepted": 4,
         "acceptedPercent": 100,
-        "withUrl": 2,
+        "withUrl": 4,
         "withUrlPercent": 100,
         "needsReview": 0
       },
@@ -256,12 +256,14 @@
     {
       "id": "COD-IDENTITY",
       "priority": "P0",
-      "status": "implemented_locally",
+      "status": "source_json_identity_enriched_database_verification_pending",
       "goal": "Use République démocratique du Congo consistently as the reader-facing country name.",
       "findings": [
         "The source JSON already uses the requested name.",
         "The shared CLDR resolver replaced it with Congo-Kinshasa in the UI.",
-        "A shared editorial override and regression tests now preserve the requested name."
+        "A shared editorial override and regression tests now preserve the requested name.",
+        "The source JSON now states the country-to-river and river-to-Kongo-kingdom name relationships conservatively and leaves the deeper lexical derivation explicitly uncertain.",
+        "The name-origin claims now carry one official toponymic reference and one historical Kongo-language reference with resolvable URLs."
       ],
       "remaining": [
         "Verify the database row when Supabase credentials are available.",
@@ -589,6 +591,7 @@
       "findings": [
         "The country fiche previously contained 10 source rows: 2 accepted exact sources and 8 generic needs_review rows.",
         "All 8 generic rows were reviewed, approved for removal, and removed from the source JSON on 2026-09-07; the 2 retained rows have exact URLs and accepted tiers.",
+        "Two exact name-origin references were added on 2026-09-07, bringing the current country source register to 4 accepted rows with resolvable URLs.",
         "The two CIA placeholders cannot be repaired as live current-country citations because The World Factbook was retired on 2026-02-04 and the former country URL redirects to the retirement notice.",
         "The vague Ethnologue row is not reproducible without an edition and license basis; the pinned Glottolog 5.3 inventory is proposed for language reconciliation instead.",
         "Official census-status documentation identifies 1984 as the latest completed national census, while the 2013–2014 DHS is a sample survey; neither validates a current exhaustive people denominator.",
