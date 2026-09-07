@@ -13,13 +13,13 @@
   },
   "summary": {
     "referenceEntries": 252,
-    "localLanguageDossiers": 24,
+    "localLanguageDossiers": 25,
     "referenceEntriesWithExactDossier": 1,
-    "referenceEntriesWithReviewedPeopleCode": 33,
-    "referenceEntriesWithAnyLocalSignal": 34,
+    "referenceEntriesWithReviewedPeopleCode": 34,
+    "referenceEntriesWithAnyLocalSignal": 35,
     "reviewedPeopleIsoCodes": 45,
-    "reviewedPeopleIsoCodesMatchedToReference": 33,
-    "reviewedPeopleIsoCodesUnmatchedToReference": 12
+    "reviewedPeopleIsoCodesMatchedToReference": 34,
+    "reviewedPeopleIsoCodesUnmatchedToReference": 11
   },
   "localLanguageDossiers": [
     {
@@ -43,6 +43,14 @@
       "nameFr": "Bagirmi",
       "iso639P3Code": "bmi",
       "glottocode": "bagi1246",
+      "matchStatus": "outside_country_reference",
+      "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "cop",
+      "nameFr": "Copte",
+      "iso639P3Code": "cop",
+      "glottocode": "copt1239",
       "matchStatus": "outside_country_reference",
       "matchedReferenceGlottocodes": []
     },
@@ -380,7 +388,7 @@
     },
     {
       "iso639P3Code": "kmb",
-      "peopleIds": ["PPL_KIMBUNDU"],
+      "peopleIds": ["PPL_AMBUNDU"],
       "matchStatus": "exact_reference",
       "matchedReferenceEntries": [
         {
@@ -499,7 +507,7 @@
     },
     {
       "iso639P3Code": "lua",
-      "peopleIds": ["PPL_LUBA", "PPL_LUBA_KASAI", "PPL_LUBA_KASAI2"],
+      "peopleIds": ["PPL_LUBA", "PPL_LUBA_KASAI", "PPL_LULUA"],
       "matchStatus": "exact_reference",
       "matchedReferenceEntries": [
         {
@@ -642,10 +650,16 @@
       ]
     },
     {
-      "iso639P3Code": "tet",
+      "iso639P3Code": "tll",
       "peopleIds": ["PPL_TETELA"],
-      "matchStatus": "outside_country_reference",
-      "matchedReferenceEntries": []
+      "matchStatus": "exact_reference",
+      "matchedReferenceEntries": [
+        {
+          "glottocode": "tete1250",
+          "name": "Tetela",
+          "level": "language"
+        }
+      ]
     },
     {
       "iso639P3Code": "tyi",
@@ -690,5 +704,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-06"
+  "updatedAt": "2026-09-07"
 }

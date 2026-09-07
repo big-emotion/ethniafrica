@@ -201,10 +201,10 @@
         "needsReview": 0
       },
       "linkedPeopleFiches": {
-        "total": 425,
-        "accepted": 217,
-        "acceptedPercent": 51.1,
-        "withUrl": 385,
+        "total": 426,
+        "accepted": 218,
+        "acceptedPercent": 51.2,
+        "withUrl": 386,
         "withUrlPercent": 90.6,
         "needsReview": 49
       }
@@ -409,13 +409,13 @@
         "Across exact local dossier and retained-people code signals, 34 of the 252 reference entries have at least one local signal and 218 have none. This is a reconciliation workload measure, not reader-facing language completeness.",
         "Semantic review resolves the 12 exact-code misses into scope problems. The Banda fiche uses bfl, bqk, and liy varieties located outside the DRC; its DRC-relevant reference candidates are bpd, bjo, lnl, and tor. The provisional Gbaya relation remains unsupported, and gbp is limited to the Central African Republic.",
         "Within the Teke fiche, tek is present in the CD inventory but iyx, lli, teg, and tyi are not; DRC exposure must also assess ebo and ifm rather than inheriting every transborder code from the people fiche. The kon and swa macrolanguages require child-level country mappings instead of direct surface use.",
-        "The Tetela fiche contains a definite identifier error: tet is Tetum in Indonesia and Timor-Leste, while DRC Tetela is ISO 639-3 tll with Glottocode tete1250. This correction is proposed in the people review and must be applied before publication.",
+        "The Tetela language identifier was corrected from tet to tll on 2026-09-07 and now reconciles exactly to the pinned Glottolog Tetela record (tete1250); tet identifies Tetum in Indonesia and Timor-Leste.",
         "The constitutional Kikongo label is mapped provisionally to Kikongo ya Leta/Kituba (ktu; kitu1246) for the national-language surface, while Eastern Kikongo and community Kongo varieties remain separately discoverable. Glottolog explicitly records Kikongo ya Leta as an alternative name of the DRC Kituba entry and assigns it statutory national-identity status.",
         "The constitutional Kiswahili label is mapped provisionally to Congo Swahili (swc; cong1236) for DRC country exposure. The existing standardized Swahili dossier (swh; swah1253) remains related but is not a direct substitute, and the swa macrolanguage must not be used as a country-level endpoint.",
         "A five-entry main-language surface proposal is ready: French as official; Kikongo ya Leta/Kituba, Lingala, Congo Swahili/Kiswahili, and Tshiluba as national languages; the four Congolese languages also carry regional vehicular roles where supported."
       ],
       "remaining": [
-        "Apply the reviewed people-language corrections only after proposal approval: replace Tetela tet with tll, narrow Banda and Teke country exposure to DRC-relevant varieties, and keep broad Gbaya codes off the DRC surface until the people relation is verified.",
+        "Apply the remaining reviewed people-language corrections only after proposal approval: narrow Banda and Teke country exposure to DRC-relevant varieties, and keep broad Gbaya codes off the DRC surface until the people relation is verified.",
         "Prioritize the 218 Glottolog entries without a local dossier or retained-people code signal by legal role, vehicular use, community relevance, and source quality rather than treating them as a flat creation queue.",
         "Approve or amend the five-entry country surface proposal before filling culture.mainLanguages.",
         "Create missing French, Kituba (ktu), Congo Swahili (swc), and Tshiluba (lua) language dossiers before linking the approved surface; retain the existing Lingala dossier and keep standardized Swahili (swh) separate.",
