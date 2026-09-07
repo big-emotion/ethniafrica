@@ -171,6 +171,17 @@ individual modules directly. Dossiers instead offers published themes from
 user-approved architecture of 6 September 2026. A dossier keeps one canonical
 address across themes and fiche links; the primary theme determines its trail.
 
+**Each label is also an address again.** `/fr/atlas`, `/fr/dossiers` and
+`/fr/jeux` each serve an axis hub on the shared spread of `brand-charter.md`
+§8.6 — the axis's title, the sentence this header shows beside its tiles, and
+those same tiles. The label in the bar stays a disclosure: it opens the panel
+rather than navigating, and the panel's own title is what links through. What
+changes is everything downstream of the address existing — the trail's axis
+crumb carries an `href`, the sitemap publishes the three, and the plan du site
+names them as pages rather than as headings. Every one of those was written as
+"there is nowhere to lead to", which was a fact about ETNI-1555 and is no
+longer one.
+
 There are at most eight editorial themes. Below 768 px the header uses a drawer;
 from 768 px it uses a panel. Theme selection remains compact below 1200 px,
 with a native select, and becomes a four-column grid from 1200 px, capped at
@@ -213,7 +224,7 @@ module availability behavior stays governed by the rules below.
   offered in the header and on the hub grid because a reader would plausibly
   arrive _wanting to browse it_. One that answers a term the reader already
   holds — a lookup, not a walk — is declared `unlisted` in `moduleRegistry`,
-  and is reached from the footer directory and the plan du site instead. This
+  and is reached from the plan du site instead. This
   supersedes the former clause "a module absent from the menu is a module
   absent from the corpus", which had stood since the menu held three modules.
 
@@ -232,8 +243,13 @@ module availability behavior stays governed by the rules below.
   because a reader reads the whole set before choosing any of it.
 
   `unlisted` withholds a menu row and nothing else. The route stays built, the
-  trail keeps the axis crumb its URL promises, the sitemap keeps its line, the
-  footer directory names it. That is the whole distance between this field and
+  trail keeps the axis crumb its URL promises, the sitemap keeps its line, and
+  the plan du site names it. It used to say _the footer directory names it_,
+  and that stopped being true on 7 September 2026: the footer's Explorer column
+  now names the three axis hubs rather than the six corpus indexes, so a reader
+  meets the same three doors there as in the bar. The exhaustive index is the
+  plan du site alone — one surface rather than two, which is the honest count
+  and the one `siteTree.ts` has always actually held. That is the whole distance between this field and
   `NEXT_PUBLIC_FEATURE_QUIZ`, which made a finished page answer `notFound()` on
   one machine and serve on another — and it is why the clause above about
   reachability is untouched: unlisting is a statement about the menu, never

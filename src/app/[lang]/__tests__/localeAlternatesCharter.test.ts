@@ -194,6 +194,7 @@ const FIXTURES: Record<string, RouteFixture> = {
     expectation: { surface: "fiche" },
   },
   "atlas/recherche": { expectation: { surface: "search" } },
+  atlas: { expectation: { surface: "atlasHub" } },
   comparer: { expectation: { surface: "compare" } },
   "comparer/[entityType]/[...ids]": {
     params: { entityType: "peuples", ids: ["PPL_YORUBA", "PPL_ZULU"] },
@@ -227,6 +228,7 @@ const FIXTURES: Record<string, RouteFixture> = {
     expectation: { surface: "dossierThemes" as IndexedSurface },
   },
   glossaire: { expectation: { surface: "glossary" } },
+  jeux: { expectation: { surface: "jeuxHub" } },
   "jeux/[jeu]": {
     params: { jeu: "mercator" },
     expectation: { surface: "games" },

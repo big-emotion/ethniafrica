@@ -10,6 +10,9 @@ const en = {
   },
   corpus: {
     title: "The corpus, in AFRIK order",
+    // The rubric's own hub. Named for the axis rather than described, because
+    // the rubric's blurb above already says what the axis holds.
+    hub: ["The atlas", "The axis and its six ways in."],
     blurb:
       "Language family → language → people → country. This is the hierarchy of the corpus itself, and each fiche can be read from the level above. Designations and personal names cross it: they name, they do not locate.",
     families: [
@@ -58,6 +61,7 @@ const en = {
   },
   play: {
     title: "Play",
+    hub: ["Play", "The axis and its rounds."],
     blurb:
       "Every round is drawn from the corpus: winning means having learnt something, never having guessed.",
     quiz: "The quiz",
@@ -96,6 +100,7 @@ const fr: SiteTreeCopy = {
   },
   corpus: {
     title: "Le corpus, dans l'ordre AFRIK",
+    hub: ["L'atlas", "L'axe et ses six entrées."],
     blurb:
       "Famille linguistique → langue → peuple → pays. C'est la hiérarchie du corpus lui-même, et chaque fiche se lit depuis celle du dessus. Les appellations et les noms la traversent : ils nomment, ils ne situent pas.",
     families: [
@@ -144,6 +149,7 @@ const fr: SiteTreeCopy = {
   },
   play: {
     title: "Jouer",
+    hub: ["Jouer", "L'axe et ses parties."],
     blurb:
       "Chaque partie est tirée du corpus : gagner suppose d'avoir lu quelque chose, jamais d'avoir deviné.",
     quiz: "Le quiz",

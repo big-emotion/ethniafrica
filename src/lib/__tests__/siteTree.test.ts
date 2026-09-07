@@ -11,21 +11,23 @@ import { getSiteTree, getSiteTreePaths } from "@/lib/siteTree";
 import { NOMMER_CHAPTERS_EN } from "@/lib/dossiers/nommer/chapters/index.en";
 import { GAME_DEFINITIONS_EN } from "@/lib/games/gameRegistry.en";
 
-describe("getSiteTree — access modes are sections, not destinations", () => {
+describe("getSiteTree — access modes are sections and destinations", () => {
   /**
-   * The three axis landing pages were deleted with ETNI-1555: the reader picks
-   * a module, never an intermediate page. The tree feeds both `/fr/plan-du-site`
-   * and `sitemap.xml`, so a leftover entry does not merely dead-end a reader —
-   * it publishes a 404 to every crawler that reads the sitemap.
+   * The three axis hubs are pages again (brand charter §8.6), so each rubric
+   * opens on its own. This tree feeds both `/fr/plan-du-site` and
+   * `sitemap.xml`, and it is the sitemap's only source — a page absent here is
+   * a page no crawler is told about, which is the mirror of the fault the
+   * assertion this replaces was guarding: between ETNI-1555 and 7 September
+   * 2026 a leftover entry would have published a 404 instead.
    */
   // @req REQ-114
-  it("links to no retired axis landing page", () => {
+  it("opens each axis rubric on its own hub", () => {
     const hrefs = getSiteTree("fr").flatMap((section) =>
       section.links.map((link) => link.href)
     );
 
-    for (const page of ["atlasHub", "jeuxHub"] as const) {
-      expect(hrefs, page).not.toContain(getLocalizedRoute("fr", page));
+    for (const page of ["atlasHub", "dossiersHub", "jeuxHub"] as const) {
+      expect(hrefs, page).toContain(getLocalizedRoute("fr", page));
     }
   });
 

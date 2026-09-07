@@ -394,24 +394,15 @@ describe("every target is a route the app actually serves", () => {
    * that `/fr/regards/colonisation-et-resistances` keeps resolving — the tail
    * is the whole point of the entry, and the bare root 404s either way.
    *
-   * The three bare axis roots are the same shape, for the same reason
-   * ETNI-1555 gave them: an access mode is a non-navigating heading, never a
-   * destination, so it was never given a `page.tsx` of its own — before this
-   * rename or after. `explorer`/`comprendre`/`jouer` are single-segment keys
-   * in `RELOCATED_SEGMENTS` precisely so every *tail* below them keeps
-   * resolving in one hop; the bare root carries no tail and 404s either way.
-   *
-   * Named through the slug table so the set holds in both vocabularies.
+   * The three bare axis roots were listed here alongside it, for the reason
+   * ETNI-1555 gave them: an access mode had no `page.tsx`, so the bare root
+   * 404'd with or without the rename. That stopped being true on 7 September
+   * 2026 — each axis serves a hub again (brand charter §8.6) — so they are out
+   * of the exemption and back under the assertion, where a relocated
+   * `explorer`/`comprendre`/`jouer` root now has to land on something.
    */
   const containerOnly = (language: Language) =>
-    new Set(
-      [
-        RELOCATED_SEGMENTS[language].regards,
-        ...(["atlasHub", "dossiersHub", "jeuxHub"] as const).map((hub) =>
-          getLocalizedRoute(language, hub).slice(`/${language}/`.length)
-        ),
-      ].filter(Boolean)
-    );
+    new Set([RELOCATED_SEGMENTS[language].regards].filter(Boolean));
 
   // @req REQ-091
   it("has a page file behind every relocation target", () => {

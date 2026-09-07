@@ -15,12 +15,11 @@ const en = {
   sitemap: "Sitemap",
   directory: {
     explorerHeading: "Explore",
-    countries: "Countries",
-    peoples: "Peoples",
-    families: "Families",
-    languages: "Languages",
-    patronymes: "Names",
-    appellations: "Peoples' designations",
+    axes: {
+      atlas: "The atlas",
+      dossiers: "The dossiers",
+      jeux: "Play",
+    },
     participateHeading: "Take part",
     contribute: "Contribute",
     reportError: "Report an error",
@@ -55,25 +54,26 @@ const fr: FooterCopy = {
   cookieSettings: "Gestion des cookies",
   accessibility: "Accessibilité",
   sitemap: "Plan du site",
-  // The directory above the legal line. Its labels are the short forms —
-  // « Pays », not « Les pays d'Afrique » — because a footer column is
-  // read as a list of rubrics, not as a list of editorial titles.
+  // The directory above the legal line.
+  //
+  // Its Explorer column held the six corpus indexes — Pays, Peuples, Familles,
+  // Langues, Noms, Appellations des peuples — for as long as the three axes
+  // had no address of their own. ETNI-1555 had deleted `/fr/atlas` and
+  // `/fr/jeux`, so a column that meant to offer the ways in could only offer
+  // what sat under them. The hubs came back on 7 September 2026 (brand charter
+  // §8.6) and the column names them instead, so the reader meets the same
+  // three doors at the foot of a page as in the bar above it.
+  //
+  // The labels are the axes' own — `ACCESS_MODE_LABELS`, through the axes map
+  // below — rather than a second spelling of them. A footer that renamed the
+  // bar's three entries would be the same drift, one étage down.
   directory: {
     explorerHeading: "Explorer",
-    countries: "Pays",
-    peoples: "Peuples",
-    families: "Familles",
-    languages: "Langues",
-    // Same public-facing word as the trail label (TRAIL_PAGE_LABELS.patronymes
-    // in trail.ts), distinct from "Appellations" so the two corpus entities
-    // never read as one entry in a menu.
-    patronymes: "Noms",
-    // Where Appellations landed when it left the header on 7 September 2026
-    // (atlas-charter.md §3): the menu is curated, this directory is
-    // exhaustive. Spelled out here rather than shortened to « Appellations »
-    // like the trail does, because a footer column has no page title above it
-    // to say whose designations these are — and « Noms » sits two rows up.
-    appellations: "Appellations des peuples",
+    axes: {
+      atlas: "L'atlas",
+      dossiers: "Les dossiers",
+      jeux: "Jouer",
+    },
     participateHeading: "Participer",
     contribute: "Contribuer",
     reportError: "Signaler une erreur",

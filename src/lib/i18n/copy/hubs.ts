@@ -44,6 +44,11 @@ const en = {
     hubEntryName: "The games hub",
   },
   unavailableLabel: "Coming soon",
+  // What the second link of a hub plate's caption says. Brand charter §9 asks
+  // for the licence's URI rather than its initials, so the caption needs a
+  // word to hang the address on — the initials stay in the credit line beside
+  // it, where they name the terms this links to.
+  plateLicenceLabel: "Licence",
   menuLabel: "Three paths",
   facetsLabel: "Its facets",
   moduleNames: {
@@ -166,6 +171,7 @@ const fr: HubsCopy = {
     hubEntryName: "Le hub des jeux",
   },
   unavailableLabel: "Bientôt",
+  plateLicenceLabel: "Licence",
   menuLabel: "Trois chemins",
   // Names the row of facet links under the hub entry. The facets are
   // states of one page, so the menu says so rather than listing them
