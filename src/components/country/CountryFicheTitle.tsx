@@ -30,7 +30,7 @@ export function CountryFicheTitle({
   fromPeopleName?: string;
 }) {
   const copy = countryCopy[language].title;
-  const { hero } = transformCountryData(country);
+  const { hero } = transformCountryData(country, language);
   const hasPeoples = (country.demographics?.peoples?.length ?? 0) > 0;
   // The head names the country twice on purpose — the name of ordinary use,
   // then the protocol name under it — but only while they are two different

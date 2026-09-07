@@ -14,6 +14,7 @@ import { transformComparisonData } from "@/lib/comparisonDataTransformer";
 import { buildComparisonOgCard } from "@/lib/comparisonOgCard";
 import { CANONICAL_DOMAIN } from "@/lib/brand";
 import type { CompareEntityType } from "@/types/compare";
+import { isTranslationLocale } from "@/lib/i18n/translationLocale";
 
 // @req REQ-097
 export const runtime = "nodejs";
@@ -65,7 +66,8 @@ export async function GET(
     params: Promise<RouteParams>;
   }
 ) {
-  const { entityType } = await params;
+  const { entityType, lang } = await params;
+  const language = isTranslationLocale(lang) ? lang : "fr";
   const ids = new URL(request.url).searchParams.getAll("id");
 
   if (!hasValidSegmentShape(entityType, ids)) {
@@ -87,18 +89,21 @@ export async function GET(
     entities.map((item) => [item.id, item.confidence])
   );
 
-  const card = buildComparisonOgCard({
-    ...pageData,
-    columns: pageData.columns.map((column) => {
-      const confidence = confidenceById.get(column.id);
-      return {
-        ...column,
-        confidence: confidence
-          ? { score: confidence.score, sourceCount: confidence.sourceCount }
-          : null,
-      };
-    }),
-  });
+  const card = buildComparisonOgCard(
+    {
+      ...pageData,
+      columns: pageData.columns.map((column) => {
+        const confidence = confidenceById.get(column.id);
+        return {
+          ...column,
+          confidence: confidence
+            ? { score: confidence.score, sourceCount: confidence.sourceCount }
+            : null,
+        };
+      }),
+    },
+    language
+  );
 
   return new ImageResponse(
     <div
@@ -115,7 +120,7 @@ export async function GET(
       }}
     >
       <div style={{ display: "flex", fontSize: 24, opacity: 0.85 }}>
-        {card.entityTypeLabel} · Comparaison
+        {card.entityTypeLabel} · {card.comparisonLabel}
       </div>
       <div style={{ display: "flex", gap: 32, alignItems: "stretch" }}>
         {card.entities.map((entity) => (

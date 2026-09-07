@@ -17,6 +17,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { adminCopy } from "@/lib/i18n/copy/admin";
+import type { Language } from "@/types/shared";
 
 type RevisionPublishResult =
   | {
@@ -33,6 +35,7 @@ type RevisionPublishResult =
 
 interface RevisionPublishDialogProps {
   draftId: string;
+  language?: Language;
   onPublish: (
     draftId: string,
     reason: string
@@ -45,8 +48,10 @@ const MAX_REASON_LENGTH = 500;
 // @req REQ-016
 export function RevisionPublishDialog({
   draftId,
+  language = "fr",
   onPublish,
 }: RevisionPublishDialogProps) {
+  const copy = adminCopy[language].revision;
   const confirmationId = useId();
   const confirmationHintId = useId();
   const reasonId = useId();
@@ -65,7 +70,7 @@ export function RevisionPublishDialog({
 
   const trimmedReason = reason.trim();
   const reasonLength = trimmedReason.length;
-  const confirmationIsValid = confirmation === "PUBLIER";
+  const confirmationIsValid = confirmation === copy.confirmationWord;
   const reasonIsValid =
     reasonLength >= MIN_REASON_LENGTH && reasonLength <= MAX_REASON_LENGTH;
   const canPublish = confirmationIsValid && reasonIsValid && !pending;
@@ -109,7 +114,7 @@ export function RevisionPublishDialog({
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
-        <Button type="button">Publier</Button>
+        <Button type="button">{copy.publish}</Button>
       </DialogTrigger>
 
       <DialogContent
@@ -120,11 +125,8 @@ export function RevisionPublishDialog({
         }}
       >
         <DialogHeader className="pr-8 text-left">
-          <DialogTitle>Publier cette révision ?</DialogTitle>
-          <DialogDescription>
-            Cette action met immédiatement la fiche à jour et crée une version
-            publique immuable.
-          </DialogDescription>
+          <DialogTitle>{copy.title}</DialogTitle>
+          <DialogDescription>{copy.description}</DialogDescription>
         </DialogHeader>
 
         {published ? (
@@ -139,7 +141,9 @@ export function RevisionPublishDialog({
                 className="text-afh-flag-resolved"
               />
               <AlertDescription className="font-medium text-afh-text">
-                Révision v{published.version} publiée — fiche mise à jour
+                {copy.successBefore}
+                {published.version}
+                {copy.successAfter}
               </AlertDescription>
             </Alert>
 
@@ -154,7 +158,7 @@ export function RevisionPublishDialog({
                 {published.liveUrl && (
                   <Button asChild className="w-full" variant="outline">
                     <a href={published.liveUrl}>
-                      Voir la fiche mise à jour
+                      {copy.viewLive}
                       <ExternalLink aria-hidden="true" />
                     </a>
                   </Button>
@@ -162,7 +166,8 @@ export function RevisionPublishDialog({
                 {published.pinnedUrl && (
                   <Button asChild className="w-full" variant="outline">
                     <a href={published.pinnedUrl}>
-                      Voir la version v{published.version}
+                      {copy.viewVersion}
+                      {published.version}
                       <ExternalLink aria-hidden="true" />
                     </a>
                   </Button>
@@ -172,7 +177,7 @@ export function RevisionPublishDialog({
 
             <div className="flex justify-end">
               <DialogClose asChild>
-                <Button type="button">Fermer</Button>
+                <Button type="button">{copy.close}</Button>
               </DialogClose>
             </div>
           </div>
@@ -181,13 +186,13 @@ export function RevisionPublishDialog({
             {failed && (
               <Alert variant="destructive">
                 <AlertDescription className="font-medium">
-                  publication échouée — brouillon conservé
+                  {copy.failure}
                 </AlertDescription>
               </Alert>
             )}
 
             <div className="space-y-2">
-              <Label htmlFor={confirmationId}>Confirmation</Label>
+              <Label htmlFor={confirmationId}>{copy.confirmation}</Label>
               <Input
                 aria-describedby={confirmationHintId}
                 aria-invalid={confirmation.length > 0 && !confirmationIsValid}
@@ -203,13 +208,15 @@ export function RevisionPublishDialog({
                 className="text-afh-caption text-afh-fg-muted"
                 id={confirmationHintId}
               >
-                Saisissez exactement <strong>PUBLIER</strong>, en majuscules.
+                {copy.confirmationHintBefore}{" "}
+                <strong>{copy.confirmationWord}</strong>,{" "}
+                {copy.confirmationHintAfter}
               </p>
             </div>
 
             <div className="space-y-2">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <Label htmlFor={reasonId}>Raison de la publication</Label>
+                <Label htmlFor={reasonId}>{copy.reason}</Label>
                 <span
                   aria-live="polite"
                   className={
@@ -219,7 +226,7 @@ export function RevisionPublishDialog({
                   }
                   id={reasonCountId}
                 >
-                  {reasonLength} / {MAX_REASON_LENGTH} caractères
+                  {reasonLength} / {MAX_REASON_LENGTH} {copy.characters}
                 </span>
               </div>
               <Textarea
@@ -235,15 +242,16 @@ export function RevisionPublishDialog({
                 className="text-afh-caption text-afh-fg-muted"
                 id={reasonHintId}
               >
-                Entre {MIN_REASON_LENGTH} et {MAX_REASON_LENGTH} caractères,
-                espaces de début et de fin exclus.
+                {copy.reasonHintBefore} {MIN_REASON_LENGTH}{" "}
+                {copy.reasonHintMiddle} {MAX_REASON_LENGTH}{" "}
+                {copy.reasonHintAfter}
               </p>
             </div>
 
             <div className="flex flex-col-reverse gap-2 min-[720px]:flex-row min-[720px]:justify-end">
               <DialogClose asChild>
                 <Button disabled={pending} type="button" variant="outline">
-                  Annuler
+                  {copy.cancel}
                 </Button>
               </DialogClose>
               <Button disabled={!canPublish} type="submit">
@@ -253,7 +261,7 @@ export function RevisionPublishDialog({
                     className="animate-spin motion-reduce:animate-none"
                   />
                 )}
-                {pending ? "Publication…" : "Confirmer la publication"}
+                {pending ? copy.publishing : copy.confirm}
               </Button>
             </div>
           </form>

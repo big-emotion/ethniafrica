@@ -54,6 +54,7 @@ import {
 import { createApiError } from "@/api/v2/utils/response";
 import { corsOptionsResponse, jsonWithCors } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
+import { isTranslationLocale } from "@/lib/i18n/translationLocale";
 
 const NO_STORE_HEADERS = { "Cache-Control": "no-store" };
 
@@ -71,9 +72,11 @@ function respond(result: AntibotHandlerResult) {
 export const dynamic = "force-dynamic";
 
 // @req REQ-012
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    return respond(await handleAntibotChallenge());
+    const requested = new URL(request.url).searchParams.get("lang") ?? "";
+    const language = isTranslationLocale(requested) ? requested : "fr";
+    return respond(await handleAntibotChallenge({}, language));
   } catch (error) {
     logger.error("Error in GET /api/v2/antibot/challenge", error);
     return jsonWithCors(

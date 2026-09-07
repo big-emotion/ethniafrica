@@ -3,6 +3,9 @@
 import { headers } from "next/headers";
 
 import { isEmailAllowlisted } from "@/lib/auth/adminAllowlist";
+import { adminCopy } from "@/lib/i18n/copy/admin";
+import { isTranslationLocale } from "@/lib/i18n/translationLocale";
+import { getStaticPageRoute } from "@/lib/routing";
 import { createServerSupabaseClient } from "@/lib/supabase/auth-server";
 
 export type AdminSignInState = {
@@ -17,12 +20,6 @@ export type AdminSignInState = {
  * into a way to enumerate the moderators. So the only thing the page ever says
  * is that *if* the address can get in, a link is on its way.
  */
-const NEUTRAL_ANSWER: AdminSignInState = {
-  status: "sent",
-  message:
-    "Si cette adresse peut accéder à la modération, un lien vient de lui être envoyé.",
-};
-
 /** Deliberately loose: Supabase and the allowlist are the real checks. */
 const LOOKS_LIKE_AN_ADDRESS = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -51,20 +48,27 @@ export async function requestAdminSignInLink(
   formData: FormData
 ): Promise<AdminSignInState> {
   const email = String(formData.get("email") ?? "").trim();
+  const requestedLanguage = String(formData.get("language") ?? "");
+  const language = isTranslationLocale(requestedLanguage)
+    ? requestedLanguage
+    : "fr";
+  const copy = adminCopy[language].signIn;
+  const neutralAnswer: AdminSignInState = {
+    status: "sent",
+    message: copy.neutralAnswer,
+  };
 
   if (!LOOKS_LIKE_AN_ADDRESS.test(email)) {
     return {
       status: "invalid",
-      message: "Saisissez une adresse e-mail pour recevoir le lien.",
+      message: copy.invalidEmail,
     };
   }
 
-  if (!(await isEmailAllowlisted(email))) return NEUTRAL_ANSWER;
+  if (!(await isEmailAllowlisted(email))) return neutralAnswer;
 
   const supabase = await createServerSupabaseClient();
-  // Fixed on `/fr/admin`, like the auth callback it hands over to: the
-  // moderation surface is French-only until the product owner says otherwise.
-  const destination = `${await requestOrigin()}/api/auth/callback?redirect=${encodeURIComponent("/fr/admin")}`;
+  const destination = `${await requestOrigin()}/api/auth/callback?redirect=${encodeURIComponent(getStaticPageRoute(language, "admin"))}`;
 
   // A refusal from Supabase — a rate limit, an outage — is not reported back
   // either. It would be the one answer a stranger cannot provoke, and so the
@@ -74,5 +78,5 @@ export async function requestAdminSignInLink(
     options: { shouldCreateUser: true, emailRedirectTo: destination },
   });
 
-  return NEUTRAL_ANSWER;
+  return neutralAnswer;
 }

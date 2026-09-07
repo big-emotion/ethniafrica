@@ -252,7 +252,11 @@ export default async function PeoplesSlugPage({
     ficheSourceEntries(people.content?.sources),
     fieldNotes.flatMap((note) => note.sources)
   );
-  const notes = buildPeopleFicheNotes(fieldNotes, register.numberBySourceId);
+  const notes = buildPeopleFicheNotes(
+    fieldNotes,
+    register.numberBySourceId,
+    lang as Language
+  );
   const peopleFieldOverlay = buildPeopleFieldOverlay(
     peopleDetail.demography?.distributionByCountry
   );

@@ -100,6 +100,20 @@ afterEach(() => {
 /* -------------------------------------------------------------------------- */
 
 describe("RevisionDrawer", () => {
+  // @req REQ-140
+  // @req REQ-145
+  it("renders empty revision history copy in English", async () => {
+    mockFetch([]);
+    renderDrawer({ language: "en" });
+
+    expect(screen.getByText("Revision history")).toBeInTheDocument();
+    await waitFor(() => {
+      expect(
+        screen.getByText("No published revision — initial fiche")
+      ).toBeInTheDocument();
+    });
+  });
+
   it("renders a dialog with accessible title and description", async () => {
     mockFetch([revision1]);
     renderDrawer();

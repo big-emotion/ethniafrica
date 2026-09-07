@@ -152,5 +152,9 @@ describe("the Nommer chapter routes", () => {
         name: "Machine translation, not yet reviewed",
       })
     ).toBeInTheDocument();
+    expect(screen.queryByText(/exonyme dépréciatif attesté/)).toBeNull();
+    expect(screen.getAllByText(/attested derogatory exonym/)).not.toHaveLength(
+      0
+    );
   });
 });

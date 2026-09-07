@@ -16,9 +16,6 @@ import { chapterAnchorId } from "@/lib/ficheChapters";
  *
  * @req REQ-119
  */
-export const SOURCE_TIER_NOTE =
-  "Chaque source porte son palier — l'autorité qu'on peut lui accorder.";
-
 export interface FicheSectionProps {
   title: string;
   /**

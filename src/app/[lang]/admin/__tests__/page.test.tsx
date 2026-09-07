@@ -188,4 +188,17 @@ describe("ModerationQueuePage", () => {
       `${getStaticPageRoute("en", "admin")}?page=2`
     );
   });
+
+  // @req REQ-140
+  // @req REQ-145
+  it("renders the queue controls in English on the English route", async () => {
+    await renderQueue({}, "en");
+
+    expect(
+      screen.getByText(/Deciding on a report does not change the fiche/)
+    ).toBeTruthy();
+    expect(screen.getByLabelText("Status")).toBeTruthy();
+    expect(screen.getByLabelText("Report type")).toBeTruthy();
+    expect(screen.getByLabelText("Reported item")).toBeTruthy();
+  });
 });

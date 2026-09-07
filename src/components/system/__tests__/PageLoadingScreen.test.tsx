@@ -145,6 +145,23 @@ describe("PageLoadingScreen — the wait is in the page's locale (REQ-140)", () 
   });
 
   // @req REQ-140
+  // @req REQ-145
+  it("selects a localized loading label from the request locale", async () => {
+    vi.stubEnv("SITE_LOCALE_MODE", "bilingual-fr-default");
+    requestHeaders.set(LOCALE_HEADER, "en");
+    await loadingScreen({
+      label: {
+        en: "Loading the presentation",
+        fr: "Chargement de la présentation",
+      },
+    });
+
+    expect(screen.getAllByRole("status")[0]).toHaveTextContent(
+      "Loading the presentation"
+    );
+  });
+
+  // @req REQ-140
   it("falls back to the default locale when the header is absent", async () => {
     requestHeaders.clear();
     await loadingScreen({ label: "Chargement" });

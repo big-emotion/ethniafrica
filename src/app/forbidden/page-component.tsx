@@ -4,9 +4,19 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { StateMedallion } from "@/components/ui/StateMedallion";
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
+import { systemStatesCopy } from "@/lib/i18n/copy/systemStates";
+import { useRouteLanguage } from "@/hooks/use-language";
+import type { Language } from "@/types/shared";
 
 // @req REQ-099
-export default function ForbiddenPageComponent() {
+export default function ForbiddenPageComponent({
+  language,
+}: {
+  language?: Language;
+} = {}) {
+  const routeLanguage = useRouteLanguage();
+  const activeLanguage = language ?? routeLanguage;
+  const copy = systemStatesCopy[activeLanguage].forbidden;
   const handleSignOut = async () => {
     const supabase = createBrowserSupabaseClient();
     await supabase.auth.signOut();
@@ -19,24 +29,23 @@ export default function ForbiddenPageComponent() {
         <StateMedallion className="mx-auto" />
 
         <h1 className="text-afh-h2 font-display font-semibold text-afh-text">
-          Accès non autorisé
+          {copy.title}
         </h1>
 
         <p data-testid="state-copy" className="text-afh-text-soft">
-          Cette ressource nécessite un rôle que votre compte n&apos;a pas
-          encore.
+          {copy.body}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
           <Button asChild data-cta="primary">
-            <Link href="/">Retour à l&apos;accueil</Link>
+            <Link href={`/${activeLanguage}`}>{copy.home}</Link>
           </Button>
           <button
             type="button"
             onClick={handleSignOut}
             className="text-afh-small text-afh-text-soft underline underline-offset-2 hover:text-afh-text transition-colors"
           >
-            Se déconnecter
+            {copy.signOut}
           </button>
         </div>
       </div>

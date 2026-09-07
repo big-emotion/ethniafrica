@@ -21,27 +21,29 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { sourceTransparencyCopy } from "@/lib/i18n/copy/sourceTransparency";
+import type { Language } from "@/types/shared";
 
 export interface SourceVerifyBadgeProps {
   /** Optional reason shown as tooltip on hover / focus. */
   reason?: string;
   className?: string;
+  language?: Language;
 }
 
-const LABEL = "source à vérifier";
-const DEFAULT_REASON =
-  "URL de la source injoignable depuis au moins 7 jours consécutifs.";
-
+// @req REQ-019
 export function SourceVerifyBadge({
   reason,
   className,
+  language = "fr",
 }: SourceVerifyBadgeProps) {
-  const tooltipText = reason || DEFAULT_REASON;
+  const copy = sourceTransparencyCopy[language].verifyBadge;
+  const tooltipText = reason || copy.reason;
   const badge = (
     <Badge
       variant="outline"
       role="status"
-      aria-label={`${LABEL} — ${tooltipText}`}
+      aria-label={`${copy.label} — ${tooltipText}`}
       className={cn(
         "gap-1 border-transparent",
         "bg-[var(--country-colonial-bg)] text-[var(--country-colonial)]",
@@ -50,7 +52,7 @@ export function SourceVerifyBadge({
       )}
     >
       <AlertTriangle className="h-3 w-3" aria-hidden="true" />
-      {LABEL}
+      {copy.label}
     </Badge>
   );
 

@@ -368,6 +368,25 @@ describe("flag handlers", () => {
       expect(dependencies.createFlag).not.toHaveBeenCalled();
     });
 
+    // @req REQ-140
+    it("localizes anti-bot failures from the submitted route locale", async () => {
+      const dependencies = makeDependencies();
+      dependencies.verifyAntibotProof.mockResolvedValue("rejected");
+
+      const result = await handleFlagCreate(
+        validInput(),
+        { accessToken: null, language: "en" },
+        dependencies
+      );
+
+      expect(result.body.errors).toEqual([
+        {
+          code: "UNAUTHORIZED",
+          message: "Anti-bot verification failed",
+        },
+      ]);
+    });
+
     // @req REQ-012
     it("returns unavailable when the anti-bot control cannot verify, without inserting", async () => {
       const dependencies = makeDependencies();

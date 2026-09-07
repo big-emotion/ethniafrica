@@ -1,7 +1,9 @@
 import type { NamePair } from "@/lib/dossiers/nommer/types";
+import type { Language } from "@/types/shared";
 
 interface NamePairGridProps {
   pairs: NamePair[];
+  language?: Language;
 }
 
 /**
@@ -22,7 +24,7 @@ interface NamePairGridProps {
  * atlas charter §2 reserves terre for exactly this.
  */
 // @req REQ-113
-export const NamePairGrid = ({ pairs }: NamePairGridProps) => (
+export const NamePairGrid = ({ pairs, language = "fr" }: NamePairGridProps) => (
   <ul className="grid list-none grid-cols-1 gap-afh-lg p-0 sm:grid-cols-2">
     {pairs.map((pair) => (
       <li
@@ -50,7 +52,11 @@ export const NamePairGrid = ({ pairs }: NamePairGridProps) => (
         >
           {pair.exonym}
           {pair.pejorative ? (
-            <span className="not-italic"> · exonyme dépréciatif attesté</span>
+            <span className="not-italic">
+              {language === "en"
+                ? " · attested derogatory exonym"
+                : " · exonyme dépréciatif attesté"}
+            </span>
           ) : null}
         </p>
       </li>

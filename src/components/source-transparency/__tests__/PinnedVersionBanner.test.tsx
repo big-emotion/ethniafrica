@@ -6,6 +6,7 @@ import { getPeopleRoute } from "@/lib/routing";
 
 const LIVE_URL = getPeopleRoute("fr", "yoruba");
 const OTHER_LIVE_URL = getPeopleRoute("fr", "bambara");
+const ENGLISH_LIVE_URL = getPeopleRoute("en", "yoruba");
 const storageKey = (liveUrl: string) =>
   `pinned-version-banner:collapsed:${liveUrl}`;
 
@@ -40,6 +41,30 @@ describe("PinnedVersionBanner", () => {
     expect(
       screen.getByRole("link", { name: "voir la version vivante" })
     ).toHaveAttribute("href", LIVE_URL);
+  });
+
+  // @req REQ-140
+  // @req REQ-145
+  it("renders the banner controls and resolved-report note in English", () => {
+    render(
+      <PinnedVersionBanner
+        language="en"
+        pinnedAt="2025-09-21"
+        versionTag="v34"
+        liveUrl={ENGLISH_LIVE_URL}
+        resolvedFlagsCount={2}
+      />
+    );
+
+    expect(
+      screen.getByRole("region", { name: "pinned version indicator" })
+    ).toHaveTextContent("Pinned version dated 21 September 2025 (@v34)");
+    expect(screen.getByRole("region")).toHaveTextContent(
+      "Since this pinned version, 2 assertions have been corrected"
+    );
+    expect(
+      screen.getByRole("button", { name: "collapse pinned version indicator" })
+    ).toBeInTheDocument();
   });
 
   // @req REQ-019

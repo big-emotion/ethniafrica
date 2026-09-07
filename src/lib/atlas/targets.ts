@@ -8,6 +8,8 @@
  * reads an overlay, so a new encoding costs a case here and nothing else.
  */
 import type { CountryId } from "@/types/afrik";
+import type { Language } from "@/types/shared";
+import { getCountryCommonName } from "@/lib/countryNames";
 import {
   getAdmin0NameFr,
   getAdmin0Rings,
@@ -146,15 +148,19 @@ export function buildAtlasTargets(overlay: AtlasOverlay | null): AtlasTarget[] {
  * never people in a country.
  */
 // @req REQ-117
-export function continentTargetFacts(target: AtlasTarget): {
-  title: string;
-  description: string;
-} {
+export function continentTargetFacts(
+  target: AtlasTarget,
+  language: Language = "fr"
+): { title: string; description: string } {
   const count = target.documentedPeopleCount ?? 0;
   return {
-    title: target.nameFr,
+    title: getCountryCommonName(language, target.countryId, target.nameFr),
     description:
-      count === 1 ? "1 peuple documenté" : `${count} peuples documentés`,
+      language === "en"
+        ? `${count} documented ${count === 1 ? "people" : "peoples"}`
+        : count === 1
+          ? "1 peuple documenté"
+          : `${count} peuples documentés`,
   };
 }
 

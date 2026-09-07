@@ -21,6 +21,8 @@ import type {
   FicheSource,
 } from "@/types/afrik";
 import { flagFromISO3 as countryFlag, NEUTRAL_FLAG } from "@/lib/countryFlag";
+import { countryCopy } from "@/lib/i18n/copy/country";
+import type { Language } from "@/types/shared";
 
 // ==========================================
 // OUTPUT TYPES
@@ -303,9 +305,11 @@ export function transformHero(country: CountryDetail): HeroData {
 
 // @req REQ-001
 export function transformTimeline(
-  historicalNames?: HistoricalNamesSection
+  historicalNames?: HistoricalNamesSection,
+  language: Language = "fr"
 ): TimelineData {
   const items: TimelineItem[] = [];
+  const eras = countryCopy[language].generated.eras;
 
   if (!historicalNames) {
     return { items, gradientStops: { goldEnd: 100, colonialEnd: 100 } };
@@ -313,16 +317,18 @@ export function transformTimeline(
 
   // Parse each era
   if (historicalNames.middleAges) {
-    parseEraItems(historicalNames.middleAges, "kingdom", "Moyen Âge").forEach(
-      (i) => items.push(i)
-    );
+    parseEraItems(
+      historicalNames.middleAges,
+      "kingdom",
+      eras.middleAges
+    ).forEach((i) => items.push(i));
   }
 
   if (historicalNames.precolonial) {
     parseEraItems(
       historicalNames.precolonial,
       "kingdom",
-      "Époque précoloniale"
+      eras.precolonial
     ).forEach((i) => items.push(i));
   }
 
@@ -330,7 +336,7 @@ export function transformTimeline(
     parseEraItems(
       historicalNames.colonization,
       "colonial",
-      "Colonisation"
+      eras.colonization
     ).forEach((i) => items.push(i));
   }
 
@@ -338,7 +344,7 @@ export function transformTimeline(
     parseEraItems(
       historicalNames.contemporary,
       "sovereign",
-      "Période contemporaine"
+      eras.contemporary
     ).forEach((i) => items.push(i));
   }
 
@@ -404,7 +410,8 @@ function parseEraItems(
 // @req REQ-001
 export function transformPeoples(
   demographics?: DemographicsSection,
-  majorPeoples?: MajorPeopleEntry[]
+  majorPeoples?: MajorPeopleEntry[],
+  language: Language = "fr"
 ): PeoplesData {
   const totalPopulationIsNational =
     typeof demographics?.totalPopulation === "number" &&
@@ -515,7 +522,7 @@ export function transformPeoples(
   }
 
   // Group peoples with same percentage (3+ consecutive)
-  const groupedRows = groupSamePercentage(rows);
+  const groupedRows = groupSamePercentage(rows, language);
 
   return {
     totalPopulation,
@@ -532,7 +539,10 @@ export function transformPeoples(
   };
 }
 
-function groupSamePercentage(rows: PeopleRow[]): PeopleRow[] {
+function groupSamePercentage(
+  rows: PeopleRow[],
+  language: Language
+): PeopleRow[] {
   const result: PeopleRow[] = [];
   let i = 0;
 
@@ -565,7 +575,7 @@ function groupSamePercentage(rows: PeopleRow[]): PeopleRow[] {
         population: rows[i].population,
         populationFormatted:
           rows[i].population > 0
-            ? `${formatPopulation(rows[i].population)} chacun`
+            ? `${formatPopulation(rows[i].population)} ${countryCopy[language].generated.each}`
             : undefined,
         colorIndex: rows[i].colorIndex,
         groupedNames: names,
@@ -626,10 +636,14 @@ function inChronologicalOrder(kingdoms: Kingdom[]): Kingdom[] {
 }
 
 // @req REQ-001
-export function transformKingdoms(kingdoms?: Kingdom[]): KingdomsData {
+export function transformKingdoms(
+  kingdoms?: Kingdom[],
+  language: Language = "fr"
+): KingdomsData {
+  const titles = countryCopy[language].generated.kingdomTitles;
   if (!kingdoms || kingdoms.length === 0) {
     return {
-      title: "Entités politiques historiques",
+      title: titles.generic,
       cards: [],
       layout: "stack",
     };
@@ -676,13 +690,13 @@ export function transformKingdoms(kingdoms?: Kingdom[]): KingdomsData {
   const chefferieCount = names.filter((n) => n.includes("chefferie")).length;
 
   if (royaumeCount >= sultanatCount && royaumeCount >= chefferieCount) {
-    title = "Royaumes & Civilisations";
+    title = titles.kingdoms;
   } else if (sultanatCount > royaumeCount) {
-    title = "Sultanats & Chefferies";
+    title = titles.sultanates;
   } else if (chefferieCount > royaumeCount) {
-    title = "Chefferies & Entités";
+    title = titles.chiefdoms;
   } else {
-    title = "Entités politiques historiques";
+    title = titles.generic;
   }
 
   const layout = cards.length >= 3 ? "scroll" : "stack";
@@ -730,37 +744,41 @@ export function transformLanguages(culture?: CultureSection): LanguagesData {
 }
 
 // @req REQ-001
-export function transformCulture(culture?: CultureSection): CultureGridData {
+export function transformCulture(
+  culture?: CultureSection,
+  language: Language = "fr"
+): CultureGridData {
   if (!culture) {
     return { items: [] };
   }
 
   const capKeywords = (text: string) =>
     extractKeywords(text, 3).map((k) => k.charAt(0).toUpperCase() + k.slice(1));
+  const labels = countryCopy[language].generated.culture;
 
   const items: CultureGridItem[] = [
     {
       slot: "religion",
       icon: "☪️",
-      label: "Religions",
+      label: labels.religion,
       keywords: capKeywords(culture.dominantReligions || ""),
     },
     {
       slot: "economy",
       icon: "🌾",
-      label: "Économie",
+      label: labels.economy,
       keywords: capKeywords(culture.lifestyles || ""),
     },
     {
       slot: "social",
       icon: "👑",
-      label: "Organisation",
+      label: labels.social,
       keywords: capKeywords(culture.socialOrganization || ""),
     },
     {
       slot: "relations",
       icon: "🌍",
-      label: "Relations",
+      label: labels.relations,
       keywords: capKeywords(culture.regionalRelations || ""),
     },
   ];
@@ -775,19 +793,21 @@ export function transformSources(sources?: FicheSource[]): FicheSourceEntry[] {
 
 // @req REQ-001
 export function transformHistoricalFacts(
-  historicalFacts?: HistoricalFactsSection
+  historicalFacts?: HistoricalFactsSection,
+  language: Language = "fr"
 ): HistoricalFactsData | undefined {
   if (!historicalFacts) return undefined;
 
   const periods: Array<{ label: string; content: string }> = [];
 
+  const labels = countryCopy[language].generated.historicalPeriods;
   const mapping: Array<[keyof HistoricalFactsSection, string]> = [
-    ["ancientPeriods", "Périodes anciennes"],
-    ["middleAges", "Moyen Âge"],
-    ["precolonial", "Époque précoloniale"],
-    ["colonization", "Colonisation"],
-    ["independenceStruggle", "Lutte pour l'indépendance"],
-    ["postIndependence", "Période post-indépendance"],
+    ["ancientPeriods", labels.ancientPeriods],
+    ["middleAges", labels.middleAges],
+    ["precolonial", labels.precolonial],
+    ["colonization", labels.colonization],
+    ["independenceStruggle", labels.independenceStruggle],
+    ["postIndependence", labels.postIndependence],
   ];
 
   for (const [key, label] of mapping) {
@@ -805,15 +825,25 @@ export function transformHistoricalFacts(
 // ==========================================
 
 // @req REQ-001
-export function transformCountryData(country: CountryDetail): CountryPageData {
+export function transformCountryData(
+  country: CountryDetail,
+  language: Language = "fr"
+): CountryPageData {
   return {
     hero: transformHero(country),
-    timeline: transformTimeline(country.historicalNames),
-    peoples: transformPeoples(country.demographics, country.majorPeoples),
-    kingdoms: transformKingdoms(country.kingdoms),
-    historicalFacts: transformHistoricalFacts(country.historicalFacts),
+    timeline: transformTimeline(country.historicalNames, language),
+    peoples: transformPeoples(
+      country.demographics,
+      country.majorPeoples,
+      language
+    ),
+    kingdoms: transformKingdoms(country.kingdoms, language),
+    historicalFacts: transformHistoricalFacts(
+      country.historicalFacts,
+      language
+    ),
     languages: transformLanguages(country.culture),
-    culture: transformCulture(country.culture),
+    culture: transformCulture(country.culture, language),
     sources: transformSources(country.sources),
   };
 }

@@ -45,6 +45,8 @@ import {
 } from "@/lib/flags/reporterContact";
 import { logger } from "@/lib/api/logger";
 import * as Sentry from "@sentry/nextjs";
+import { serverCopy } from "@/lib/i18n/copy/server";
+import type { Language } from "@/types/shared";
 
 /**
  * The kinds that report on something the corpus already says.
@@ -171,6 +173,7 @@ export interface FlagHandlerDependencies {
 export interface FlagHandlerContext {
   accessToken: string | null;
   clientIp?: string;
+  language?: Language;
 }
 
 export interface FlagCursorPagination {
@@ -258,6 +261,7 @@ export async function handleFlagCreate(
 ): Promise<FlagHandlerResult<ApiEnvelope<CreatedFlag> | ApiEnvelope<null>>> {
   const dependencies = resolveDependencies(injectedDependencies);
   const accessToken = context.accessToken?.trim();
+  const copy = serverCopy[context.language ?? "fr"].flags;
 
   /**
    * The kind decides which contract the body is held to, so it is read before
@@ -312,7 +316,7 @@ export async function handleFlagCreate(
   ) {
     return {
       status: 403,
-      body: errorResponse("UNAUTHORIZED", "vérification anti-robot échouée"),
+      body: errorResponse("UNAUTHORIZED", copy.antibotFailed),
     };
   }
 
@@ -341,17 +345,14 @@ export async function handleFlagCreate(
   if (verdict === "rejected") {
     return {
       status: 403,
-      body: errorResponse("UNAUTHORIZED", "vérification anti-bot échouée"),
+      body: errorResponse("UNAUTHORIZED", copy.antibotFailed),
     };
   }
 
   if (verdict === "unavailable") {
     return {
       status: 503,
-      body: errorResponse(
-        "UNAVAILABLE",
-        "vérification anti-bot temporairement indisponible, veuillez réessayer plus tard"
-      ),
+      body: errorResponse("UNAVAILABLE", copy.antibotUnavailable),
     };
   }
 
@@ -373,7 +374,7 @@ export async function handleFlagCreate(
       status: 429,
       body: errorResponse(
         "RATE_LIMITED",
-        `Flag submission rate limit exceeded. Retry after ${limitResult.retryAfter} seconds.`
+        copy.rateLimited(limitResult.retryAfter)
       ),
       headers: rateLimitHeaders(limitResult),
     };
@@ -575,6 +576,7 @@ export async function handleFlagTransition(
     ...injectedDependencies,
   };
   const accessToken = context.accessToken?.trim();
+  const copy = serverCopy[context.language ?? "fr"].flags;
 
   // Refuse by default: no token, or a token that resolves to no moderator
   // role, are the same answer. Neither says why, so a probe learns nothing
@@ -613,10 +615,7 @@ export async function handleFlagTransition(
         }
       : {
           status: 409,
-          body: errorResponse(
-            "ILLEGAL_TRANSITION",
-            `Cette transition n'est pas permise depuis l'état courant.`
-          ),
+          body: errorResponse("ILLEGAL_TRANSITION", copy.illegalTransition),
         };
   }
 

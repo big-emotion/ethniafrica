@@ -54,7 +54,9 @@ export function ProofOfWorkGate({
 
     async function run() {
       try {
-        const response = await fetch("/api/v2/antibot/challenge");
+        const response = await fetch(
+          `/api/v2/antibot/challenge?lang=${language}`
+        );
         if (!response.ok) throw new Error("challenge unavailable");
         const { data } = (await response.json()) as { data: Challenge };
 
@@ -103,7 +105,7 @@ export function ProofOfWorkGate({
       // challenge simply expires unspent.
       worker?.terminate();
     };
-  }, []);
+  }, [language]);
 
   return (
     <p

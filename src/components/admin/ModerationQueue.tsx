@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { formatDate } from "@/lib/languageTag";
+import { adminCopy } from "@/lib/i18n/copy/admin";
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
 import type { Language } from "@/types/shared";
 
@@ -36,16 +37,9 @@ export interface ModerationQueueProps {
  * the right failure, but a screen that provokes it teaches its user to expect
  * errors.
  */
-const MOVES: Record<
-  string,
-  ReadonlyArray<{ status: string; label: string }>
-> = {
-  open: [{ status: "under_review", label: "Examiner" }],
-  under_review: [
-    { status: "accepted", label: "Accepter" },
-    { status: "rejected", label: "Rejeter" },
-    { status: "duplicate", label: "Doublon" },
-  ],
+const MOVES: Record<string, readonly string[]> = {
+  open: ["under_review"],
+  under_review: ["accepted", "rejected", "duplicate"],
 };
 
 /** States that close a report, and therefore require a stated reason. */
@@ -62,15 +56,6 @@ const TERMINAL = new Set(["accepted", "rejected", "duplicate"]);
  * the tables went with the console they lived on.
  */
 const CONTRIBUTION_KIND = "contribution";
-
-const STATUS_LABELS: Record<string, string> = {
-  open: "Ouvert",
-  under_review: "En cours d'examen",
-  accepted: "Accepté",
-  rejected: "Rejeté",
-  duplicate: "Doublon",
-  withdrawn: "Retiré",
-};
 
 const REPORT_DATE: Intl.DateTimeFormatOptions = {
   day: "numeric",
@@ -101,6 +86,21 @@ function QueueRow({
   const [note, setNote] = useState("");
   const [error, setError] = useState("");
   const [pending, setPending] = useState(false);
+  const copy = adminCopy[language].queue;
+  const statusLabels: Record<string, string> = {
+    open: copy.status.open,
+    under_review: copy.status.underReview,
+    accepted: copy.status.accepted,
+    rejected: copy.status.rejected,
+    duplicate: copy.status.duplicate,
+    withdrawn: copy.status.withdrawn,
+  };
+  const moveLabels: Record<string, string> = {
+    under_review: copy.moves.review,
+    accepted: copy.moves.accept,
+    rejected: copy.moves.reject,
+    duplicate: copy.moves.duplicate,
+  };
 
   const isContribution = report.flag_kind === CONTRIBUTION_KIND;
   const moves = isContribution ? [] : (MOVES[status] ?? []);
@@ -109,7 +109,7 @@ function QueueRow({
     // Charter §5: a terminal decision carries its reason. Closing in silence
     // tells the reporter their report was read and nothing more.
     if (TERMINAL.has(next) && !note.trim()) {
-      setError("Expliquez votre décision avant de clore ce signalement.");
+      setError(copy.explainDecision);
       return;
     }
 
@@ -127,6 +127,7 @@ function QueueRow({
         Authorization: `Bearer ${session?.access_token ?? ""}`,
       },
       body: JSON.stringify({
+        language,
         status: next,
         ...(note.trim() ? { moderator_notes: note.trim() } : {}),
       }),
@@ -138,7 +139,7 @@ function QueueRow({
     if (!response.ok) {
       // The API's own words, not a generic failure: a moderator who is told
       // "échec" cannot tell a refused transition from a lost connection.
-      setError(json?.errors?.[0]?.message ?? "La transition a échoué.");
+      setError(json?.errors?.[0]?.message ?? copy.transitionFailed);
       return;
     }
 
@@ -154,9 +155,9 @@ function QueueRow({
           className="rounded-afh-sm border border-afh-border px-2 py-0.5"
           data-testid="queue-row-type"
         >
-          {isContribution ? "Contribution" : "Signalement"}
+          {isContribution ? copy.contribution : copy.report}
         </span>
-        <span>{STATUS_LABELS[status] ?? status}</span>
+        <span>{statusLabels[status] ?? status}</span>
         <span>
           {formatDate(language, new Date(report.created_at), REPORT_DATE)}
         </span>
@@ -168,7 +169,7 @@ function QueueRow({
       {isContribution && report.contribution_payload && (
         <details className="mt-afh-md">
           <summary className="cursor-pointer text-afh-small text-afh-text-soft">
-            Proposition soumise
+            {copy.submittedProposal}
           </summary>
           <pre className="mt-afh-md overflow-x-auto rounded-afh-md border border-afh-border p-afh-md text-afh-caption">
             {JSON.stringify(report.contribution_payload, null, 2)}
@@ -179,7 +180,7 @@ function QueueRow({
       {moves.length > 0 && (
         <>
           <div className="mt-afh-md">
-            <Label htmlFor={noteId}>Note de modération</Label>
+            <Label htmlFor={noteId}>{copy.moderationNote}</Label>
             <Textarea
               id={noteId}
               maxLength={5000}
@@ -192,12 +193,12 @@ function QueueRow({
             {moves.map((move) => (
               <Button
                 disabled={pending}
-                key={move.status}
-                onClick={() => apply(move.status)}
+                key={move}
+                onClick={() => apply(move)}
                 type="button"
                 variant="outline"
               >
-                {move.label}
+                {moveLabels[move] ?? move}
               </Button>
             ))}
           </div>

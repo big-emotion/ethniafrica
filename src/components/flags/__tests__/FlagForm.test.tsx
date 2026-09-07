@@ -295,6 +295,7 @@ describe("FlagForm submission and anti-bot lifecycle", () => {
 
     await waitFor(() => expect(onSubmit).toHaveBeenCalledOnce());
     expect(onSubmit).toHaveBeenCalledWith({
+      language: "fr",
       target_type: "people",
       target_id: "PPL_YORUBA",
       target_field_path: "demographics.population",

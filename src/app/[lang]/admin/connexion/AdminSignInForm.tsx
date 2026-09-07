@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { FormFieldError } from "@/components/forms/FormFieldError";
+import { adminCopy } from "@/lib/i18n/copy/admin";
+import type { Language } from "@/types/shared";
 import { requestAdminSignInLink, type AdminSignInState } from "./actions";
 
 const INITIAL: AdminSignInState = { status: "idle", message: "" };
@@ -22,7 +24,8 @@ const INITIAL: AdminSignInState = { status: "idle", message: "" };
  * 18.3, where the latter does not exist.
  */
 // @req REQ-042
-export function AdminSignInForm() {
+export function AdminSignInForm({ language }: { language: Language }) {
+  const copy = adminCopy[language].signIn;
   const [state, setState] = useState<AdminSignInState>(INITIAL);
   const [pending, startTransition] = useTransition();
 
@@ -50,14 +53,15 @@ export function AdminSignInForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-afh-lg">
+      <input type="hidden" name="language" value={language} />
       <div className="space-y-afh-sm">
-        <Label htmlFor="email">Adresse e-mail</Label>
+        <Label htmlFor="email">{copy.emailLabel}</Label>
         <Input
           id="email"
           name="email"
           type="email"
           autoComplete="email"
-          placeholder="vous@exemple.org"
+          placeholder={copy.emailPlaceholder}
           aria-required="true"
           aria-invalid={state.status === "invalid" ? "true" : undefined}
         />
@@ -68,7 +72,7 @@ export function AdminSignInForm() {
       )}
 
       <Button type="submit" disabled={pending} className="w-full md:w-auto">
-        {pending ? "Envoi…" : "Recevoir un lien de connexion"}
+        {pending ? copy.sending : copy.submit}
       </Button>
     </form>
   );

@@ -4,6 +4,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { DidYouKnowLoader } from "@/components/system/DidYouKnowLoader";
 import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
 import { LOCALE_HEADER, resolveLocale } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 export interface PageLoadingScreenProps {
   /**
@@ -12,7 +13,7 @@ export interface PageLoadingScreenProps {
    * bare "loading" leaves its user with less than the sighted reader gets
    * from the surrounding page.
    */
-  label: string;
+  label: string | Record<Language, string>;
 }
 
 /**
@@ -57,6 +58,7 @@ export async function PageLoadingScreen({ label }: PageLoadingScreenProps) {
   const language = resolveLocale(
     requestHeaders.get(LOCALE_HEADER) ?? undefined
   );
+  const localizedLabel = typeof label === "string" ? label : label[language];
 
   return (
     <PageLayout language={language} hideHeader hideTrail>
@@ -70,7 +72,7 @@ export async function PageLoadingScreen({ label }: PageLoadingScreenProps) {
         <DidYouKnowLoader
           language={language}
           fact={pickDidYouKnowFact()}
-          label={label}
+          label={localizedLabel}
         />
       </div>
     </PageLayout>

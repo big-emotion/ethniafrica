@@ -6,6 +6,9 @@ import { getAllAfrikCountries } from "@/lib/supabase/queries/afrik/countries";
 import { getAllAfrikPeoples } from "@/lib/supabase/queries/afrik/peoples";
 import { getAllAfrikLanguageFamilies } from "@/lib/supabase/queries/afrik/languageFamilies";
 import { logger } from "@/lib/api/logger";
+import { serverCopy } from "@/lib/i18n/copy/server";
+import { isTranslationLocale } from "@/lib/i18n/translationLocale";
+import type { Language } from "@/types/shared";
 
 function escapeCSV(value: string | string[] | undefined | null): string {
   if (!value) return "";
@@ -90,7 +93,7 @@ async function generateCSVZip(): Promise<Buffer<ArrayBuffer>> {
   return Buffer.concat(chunks);
 }
 
-async function generateExcel(): Promise<Buffer<ArrayBuffer>> {
+async function generateExcel(language: Language): Promise<Buffer<ArrayBuffer>> {
   const [families, peoples, countries] = await Promise.all([
     getAllAfrikLanguageFamilies(),
     getAllAfrikPeoples(),
@@ -98,25 +101,26 @@ async function generateExcel(): Promise<Buffer<ArrayBuffer>> {
   ]);
 
   const workbook = new ExcelJS.Workbook();
+  const copy = serverCopy[language].download;
 
   // Résumé
-  const summarySheet = workbook.addWorksheet("Résumé");
+  const summarySheet = workbook.addWorksheet(copy.summarySheet);
   summarySheet.addRows([
-    ["Familles linguistiques", families.length],
-    ["Peuples", peoples.length],
-    ["Pays", countries.length],
+    [copy.languageFamilies, families.length],
+    [copy.peoples, peoples.length],
+    [copy.countries, countries.length],
   ]);
 
   // Familles
-  const familiesSheet = workbook.addWorksheet("Familles");
-  familiesSheet.addRow(["ID", "Nom (FR)", "Nom (EN)"]);
+  const familiesSheet = workbook.addWorksheet(copy.familiesSheet);
+  familiesSheet.addRow(["ID", `${copy.name} (FR)`, `${copy.name} (EN)`]);
   for (const f of families) {
     familiesSheet.addRow([f.id, f.nameFr, f.nameEn || ""]);
   }
 
   // Peuples
-  const peoplesSheet = workbook.addWorksheet("Peuples");
-  peoplesSheet.addRow(["ID", "Nom principal", "Famille linguistique", "Pays"]);
+  const peoplesSheet = workbook.addWorksheet(copy.peoplesSheet);
+  peoplesSheet.addRow(["ID", copy.mainName, copy.languageFamily, copy.country]);
   for (const p of peoples) {
     peoplesSheet.addRow([
       p.id,
@@ -127,15 +131,15 @@ async function generateExcel(): Promise<Buffer<ArrayBuffer>> {
   }
 
   // Pays
-  const countriesSheet = workbook.addWorksheet("Pays");
-  countriesSheet.addRow(["ID", "Nom (FR)", "Étymologie"]);
+  const countriesSheet = workbook.addWorksheet(copy.countriesSheet);
+  countriesSheet.addRow(["ID", `${copy.name} (FR)`, copy.etymology]);
   for (const c of countries) {
     countriesSheet.addRow([c.id, c.nameFr, c.etymology || ""]);
   }
 
   // Relations
-  const relationsSheet = workbook.addWorksheet("Relations");
-  relationsSheet.addRow(["Peuple ID", "Pays ID"]);
+  const relationsSheet = workbook.addWorksheet(copy.relationsSheet);
+  relationsSheet.addRow([copy.peopleId, copy.countryId]);
   for (const p of peoples) {
     for (const countryId of p.currentCountries) {
       relationsSheet.addRow([p.id, countryId]);
@@ -151,6 +155,10 @@ export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
     const format = searchParams.get("format") || "csv";
+    const requestedLanguage = searchParams.get("lang") ?? "";
+    const language = isTranslationLocale(requestedLanguage)
+      ? requestedLanguage
+      : "fr";
 
     if (format === "csv") {
       const buffer = await generateCSVZip();
@@ -165,7 +173,7 @@ export async function GET(request: NextRequest) {
         })
       );
     } else if (format === "excel") {
-      const buffer = await generateExcel();
+      const buffer = await generateExcel(language);
       return applyCorsHeaders(
         new NextResponse(buffer, {
           status: 200,

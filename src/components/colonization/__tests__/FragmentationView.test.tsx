@@ -69,6 +69,26 @@ describe("FragmentationView", () => {
   });
 
   describe("variant=fiche-section, >= 2 countries", () => {
+    // @req REQ-140
+    // @req REQ-145
+    it("renders its table and provenance wording in English", () => {
+      render(
+        <FragmentationView
+          fragmentation={twoCountryFragmentation}
+          variant="fiche-section"
+          language="en"
+        />
+      );
+
+      expect(
+        screen.getByRole("columnheader", { name: "Country" })
+      ).toBeTruthy();
+      expect(
+        screen.getByRole("columnheader", { name: "Population share" })
+      ).toBeTruthy();
+      expect(screen.getByText(/colonial partition border/)).toBeTruthy();
+    });
+
     // @req REQ-091
     it("renders a semantic table with a caption and scoped column headers", () => {
       render(

@@ -56,6 +56,7 @@ export function ColonizationModulePage({
                 <FragmentationView
                   fragmentation={entry.fragmentation}
                   variant="fiche-section"
+                  language={language}
                 />
               </li>
             ))}

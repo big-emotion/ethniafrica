@@ -365,6 +365,7 @@ export function PeopleDetailViewV2({
           <FragmentationView
             fragmentation={fragmentation}
             variant="fiche-section"
+            language={language}
           />
         </FicheSection>
       )}

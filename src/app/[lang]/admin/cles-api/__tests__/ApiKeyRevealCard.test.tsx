@@ -8,6 +8,27 @@ describe("ApiKeyRevealCard", () => {
     vi.restoreAllMocks();
   });
 
+  // @req REQ-140
+  // @req REQ-145
+  it("renders the one-time reveal instructions in English", () => {
+    render(
+      <ApiKeyRevealCard
+        label="Local dev"
+        apiKey="usr_abcdef123456" // gitleaks:allow
+        language="en"
+        onDismiss={vi.fn()}
+      />
+    );
+
+    expect(screen.getByLabelText("New API key")).toHaveValue(
+      "usr_abcdef123456"
+    );
+    expect(screen.getByRole("button", { name: "Copy" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "I have copied the key, hide it" })
+    ).toBeInTheDocument();
+  });
+
   // @req REQ-056
   it("shows the raw key exactly once, in full", () => {
     render(

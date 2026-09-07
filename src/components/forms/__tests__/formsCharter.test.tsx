@@ -28,6 +28,9 @@ import AdminConnexionPage from "@/app/[lang]/admin/connexion/page";
 import { ContributionForm } from "@/components/ContributionForm";
 import { ReferenceLibraryFlow } from "@/components/ReferenceLibraryFlow";
 
+const renderAdminConnexionPage = async () =>
+  render(await AdminConnexionPage({}));
+
 function withQueryClient(children: ReactNode) {
   const queryClient = new QueryClient({
     defaultOptions: { queries: { retry: false }, mutations: { retry: false } },
@@ -62,14 +65,14 @@ describe("AdminConnexionPage — charter", () => {
   beforeEach(() => vi.clearAllMocks());
 
   // @req REQ-045
-  it("wraps the card on a 16px radius", () => {
-    const { container } = render(<AdminConnexionPage />);
+  it("wraps the card on a 16px radius", async () => {
+    const { container } = await renderAdminConnexionPage();
     expect(container.querySelector(".rounded-afh-xl")).toBeTruthy();
   });
 
   // @req REQ-045
-  it("keeps the sign-in action full-width below 768px and constrained above", () => {
-    render(<AdminConnexionPage />);
+  it("keeps the sign-in action full-width below 768px and constrained above", async () => {
+    await renderAdminConnexionPage();
     const submit = screen.getByRole("button", {
       name: "Recevoir un lien de connexion",
     });
@@ -78,8 +81,8 @@ describe("AdminConnexionPage — charter", () => {
   });
 
   // @req REQ-045
-  it("offers no federated identity provider at all", () => {
-    render(<AdminConnexionPage />);
+  it("offers no federated identity provider at all", async () => {
+    await renderAdminConnexionPage();
     expect(screen.queryByRole("button", { name: /GitHub/ })).toBeNull();
     expect(screen.queryByRole("button", { name: /Google/ })).toBeNull();
   });

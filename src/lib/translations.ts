@@ -1,3 +1,4 @@
+import { adminCopy } from "@/lib/i18n/copy/admin";
 import { classificationCopy } from "@/lib/i18n/copy/classification";
 import { atlasCopy } from "@/lib/i18n/copy/atlas";
 import { anecdotesCopy } from "@/lib/i18n/copy/anecdotes";
@@ -25,6 +26,7 @@ import { peopleCopy } from "@/lib/i18n/copy/people";
 import { publicFlagsCopy } from "@/lib/i18n/copy/publicFlags";
 import { quizCopy } from "@/lib/i18n/copy/quiz";
 import { reportsCopy } from "@/lib/i18n/copy/reports";
+import { serverCopy } from "@/lib/i18n/copy/server";
 import { sourceTransparencyCopy } from "@/lib/i18n/copy/sourceTransparency";
 import { sitemapPageCopy } from "@/lib/i18n/copy/sitemapPage";
 import { systemCopy } from "@/lib/i18n/copy/system";
@@ -45,6 +47,8 @@ import type { Language } from "@/types/shared";
  * (`copyParity.test.ts`), not the compiler's to miss.
  */
 const en = {
+  admin: adminCopy.en,
+  server: serverCopy.en,
   anecdotes: anecdotesCopy.en,
   atlas: atlasCopy.en,
   ...commonCopy.en,
@@ -85,6 +89,8 @@ const en = {
 type UiDictionary = typeof en;
 
 const fr: UiDictionary = {
+  admin: adminCopy.fr,
+  server: serverCopy.fr,
   anecdotes: anecdotesCopy.fr,
   atlas: atlasCopy.fr,
   ...commonCopy.fr,

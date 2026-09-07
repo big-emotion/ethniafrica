@@ -9,17 +9,11 @@
 
 import type { ComparisonColumn, ComparisonPageData } from "@/types/compare";
 import { PRODUCT_NAME, ATTRIBUTION_STRING } from "@/lib/brand";
+import { compareCopy } from "@/lib/i18n/copy/compare";
+import type { Language } from "@/types/shared";
 
 // @req REQ-097
 export const AUTONYM_CHAR_BUDGET = 28;
-
-const UNAUDITED_LABEL = "fiche non auditée";
-
-const ENTITY_TYPE_LABELS: Record<ComparisonPageData["type"], string> = {
-  peuple: "Peuples",
-  pays: "Pays",
-  famille: "Familles linguistiques",
-};
 
 const AUTONYM_ROW_KEY_BY_TYPE: Partial<
   Record<ComparisonPageData["type"], string>
@@ -37,6 +31,7 @@ export interface OgCardEntity {
 
 export interface OgCardProps {
   entityTypeLabel: string;
+  comparisonLabel: string;
   entities: OgCardEntity[];
   productName: string;
   attribution: string;
@@ -86,26 +81,35 @@ function resolveAutonymExonym(
   };
 }
 
-function resolveConfidenceLabel(column: ComparisonColumn): string {
+function resolveConfidenceLabel(
+  column: ComparisonColumn,
+  language: Language
+): string {
+  const copy = compareCopy[language].og;
   const score = column.confidence?.score;
-  if (typeof score !== "number") return UNAUDITED_LABEL;
-  return `${Math.round(score * 100)} % de confiance`;
+  if (typeof score !== "number") return copy.unaudited;
+  return copy.confidence(Math.round(score * 100));
 }
 
 // @req REQ-097
-export function buildComparisonOgCard(data: ComparisonPageData): OgCardProps {
+export function buildComparisonOgCard(
+  data: ComparisonPageData,
+  language: Language = "fr"
+): OgCardProps {
+  const copy = compareCopy[language].og;
   const entities: OgCardEntity[] = data.columns.map((column) => {
     const { autonym, exonym } = resolveAutonymExonym(data, column);
     return {
       id: column.id,
       autonym: truncate(autonym, AUTONYM_CHAR_BUDGET),
       exonym,
-      confidenceLabel: resolveConfidenceLabel(column),
+      confidenceLabel: resolveConfidenceLabel(column, language),
     };
   });
 
   return {
-    entityTypeLabel: ENTITY_TYPE_LABELS[data.type],
+    entityTypeLabel: copy.entityTypes[data.type],
+    comparisonLabel: copy.comparison,
     entities,
     productName: PRODUCT_NAME,
     attribution: ATTRIBUTION_STRING,

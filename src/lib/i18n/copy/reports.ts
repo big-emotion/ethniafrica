@@ -73,6 +73,50 @@ const en = {
     description: "Report form for this item.",
     saved: "report submitted",
   },
+  detail: {
+    metadataDescription: "View an editorial report on the platform.",
+    report: "Report",
+    sectionName: "Reports",
+    targetTitle: "Reported item",
+    type: "Type",
+    identifier: "Identifier",
+    field: "Field",
+    detailsTitle: "Report details",
+    kind: {
+      inaccurate: "Inaccurate information",
+      missingSource: "Missing source",
+      brokenUrl: "Broken URL",
+      offensive: "Offensive content",
+      correctionProposal: "Correction proposal",
+      other: "Other",
+    },
+    counterSource: "Contradictory source",
+    proposedRewrite: "Suggested rewrite",
+    reportedOn: "Reported on",
+    resolvedOn: "Resolved on",
+    by: "By",
+  },
+  verification: {
+    metadataTitle: "Confirm your email address",
+    verified: {
+      title: "Email address confirmed",
+      body: "You will receive a message as soon as moderation has decided on your report.",
+    },
+    alreadyVerified: {
+      title: "Email address already confirmed",
+      body: "This link has already been used. There is nothing else to do: your email address is registered.",
+    },
+    expired: {
+      title: "Expired link",
+      body: "This confirmation link was valid for 24 hours. Your report is still registered and publicly available — only the email notification can no longer be sent.",
+    },
+    unknown: {
+      title: "Unknown link",
+      body: "This link does not match a pending confirmation. If you submitted a report, it is registered and available in the public register.",
+    },
+    viewReport: "View your report",
+    viewRegister: "View the report register",
+  },
 };
 
 type ReportsCopy = typeof en;
@@ -150,6 +194,51 @@ const fr: ReportsCopy = {
     title: "Signaler un problème",
     description: "Formulaire de signalement pour cet élément.",
     saved: "signalement enregistré",
+  },
+  detail: {
+    metadataDescription:
+      "Consultation d'un signalement éditorial sur la plateforme.",
+    report: "Signalement",
+    sectionName: "Signalements",
+    targetTitle: "Élément concerné",
+    type: "Type",
+    identifier: "Identifiant",
+    field: "Champ",
+    detailsTitle: "Détails du signalement",
+    kind: {
+      inaccurate: "Information inexacte",
+      missingSource: "Source manquante",
+      brokenUrl: "URL brisée",
+      offensive: "Contenu offensant",
+      correctionProposal: "Proposition de correction",
+      other: "Autre",
+    },
+    counterSource: "Source contradictoire",
+    proposedRewrite: "Proposition de réécriture",
+    reportedOn: "Signalé le",
+    resolvedOn: "Résolu le",
+    by: "Par",
+  },
+  verification: {
+    metadataTitle: "Confirmation de votre adresse",
+    verified: {
+      title: "Adresse confirmée",
+      body: "Vous recevrez un message dès que la modération aura tranché sur votre signalement.",
+    },
+    alreadyVerified: {
+      title: "Adresse déjà confirmée",
+      body: "Ce lien avait déjà été utilisé. Rien à faire de plus : votre adresse est bien enregistrée.",
+    },
+    expired: {
+      title: "Lien expiré",
+      body: "Ce lien de confirmation avait une validité de 24 heures. Votre signalement, lui, est toujours enregistré et consultable — seule la notification par e-mail ne pourra pas vous être envoyée.",
+    },
+    unknown: {
+      title: "Lien inconnu",
+      body: "Ce lien ne correspond à aucune confirmation en attente. Si vous avez envoyé un signalement, il est enregistré et consultable dans le registre public.",
+    },
+    viewReport: "Consulter votre signalement",
+    viewRegister: "Voir le registre des signalements",
   },
 };
 
