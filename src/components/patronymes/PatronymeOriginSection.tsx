@@ -7,9 +7,8 @@ import {
   type OriginAccount,
 } from "@/lib/patronymes/content";
 import { resolveChapter } from "@/lib/fieldProvenance";
-import { translations } from "@/lib/translations";
-
-const t = translations.fr.patronymes;
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * Where a name is said to come from.
@@ -31,9 +30,12 @@ const t = translations.fr.patronymes;
 // @req REQ-133
 export function PatronymeOriginSection({
   patronyme,
+  language,
 }: {
   patronyme: PublicPatronyme;
+  language: Language;
 }) {
+  const t = getTranslation(language).patronymes;
   const origin = readOrigin(patronyme.content);
   const gaps = readGaps(patronyme.content);
 
@@ -81,7 +83,11 @@ export function PatronymeOriginSection({
           </div>
         ))
       ) : (
-        <FieldProvenanceMarker state={chapter.state} reason={chapter.reason} />
+        <FieldProvenanceMarker
+          state={chapter.state}
+          reason={chapter.reason}
+          language={language}
+        />
       )}
       {origin.oralTraditions.length > 0 ? (
         <p className="afh-parchment-note">{t.griotOriginNote}</p>

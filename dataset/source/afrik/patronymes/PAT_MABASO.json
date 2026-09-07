@@ -62,7 +62,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Mabaso », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le témoignage « What's in a Name? » archivé par Wits et des recherches ciblées sur Mabaso dans les travaux sur les noms de clan zoulous, n'ont identifié aucune parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Mabaso », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le témoignage « What's in a Name? » archivé par Wits et des recherches ciblées sur Mabaso dans les travaux sur les noms de clan zoulous, n'ont identifié aucune parenté à plaisanterie documentée reliant ce nom à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

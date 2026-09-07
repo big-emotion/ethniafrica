@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **EthniAfrica** is a Next.js 16 App Router app publishing an open, sourced atlas of African peoples, languages, linguistic families and countries, organised by the **AFRIK methodology** in a decolonial editorial posture.
 
-The site is **French-only**: `Language = "fr"` in `src/types/shared.ts`, and `src/middleware.ts` redirects any other two-letter locale segment to `/fr`. The `[lang]` route segment survives from the multilingual V1 but only ever resolves to `fr` — do not reintroduce `en`/`es`/`pt` branches.
+The codebase is **bilingual — English and French — while publication fails closed to French-only** (ARCH-021, REQ-140). `Language = "en" | "fr"` is derived from `LOCALES` in `src/lib/locale.ts`, and `[lang]` resolves to either only when `SITE_LOCALE_MODE` publishes both. Missing or invalid configuration means `fr-only`; `bilingual-fr-default` publishes both while keeping `/` on French, and `bilingual-en-default` is the later explicit English-default launch. A reader's explicit choice is remembered in the `ethni-locale` cookie; only the language switcher writes that cookie. `/fr/*` resolves unchanged. English URLs carry **English slugs** (`/en/atlas/peoples/...`) that `src/middleware.ts` rewrites onto the French route folders under `src/app/[lang]/` (DEC-049), so a route rename is two slug entries in `src/lib/routing.ts`, never a second folder tree. There is no third locale: `es`/`pt` and any other two-letter segment 308 to the configured default. An `en` branch is expected wherever a locale is switched on; a `["fr"].includes(lang)` guard is the retired shape.
 
 The public REST API is **v2 only** (`/api/v2/*`). V1 (regions/ethnicities) was removed; anything referring to `regions` or `ethnicities` as entities is stale, including most of `README.md`.
 
@@ -65,7 +65,7 @@ src/lib/api/openapiV2.ts             # OpenAPI spec (openapi:diff gates breaking
 
 Shared: `src/api/v2/utils/{validation,response}.ts`, `src/api/v2/schemas/` (zod), `src/api/v2/serializers/`, `src/lib/api/cors.ts`.
 
-`src/middleware.ts` is load-bearing and does four unrelated jobs: CSP/security headers with a per-request nonce, locale canonicalization to `/fr`, API-key validation for `/api/v2/*` (PBKDF2-hashed keys in `api_keys`; same-origin requests are exempt so the frontend needs no embedded key), and Upstash rate limiting.
+`src/middleware.ts` is load-bearing and does four unrelated jobs: CSP/security headers with a per-request nonce, locale resolution (`SITE_LOCALE_MODE` failing closed to `fr-only`, the `ethni-locale` cookie for an explicit choice, English slugs rewritten onto the French route folders, the resolved locale passed down as the `x-locale` request header so the root layout can declare `<html lang>`), API-key validation for `/api/v2/*` (PBKDF2-hashed keys in `api_keys`; same-origin requests are exempt so the frontend needs no embedded key), and Upstash rate limiting.
 
 ### AFRIK data pipeline
 
@@ -83,7 +83,7 @@ Supabase tables: afrik_language_families, afrik_languages, afrik_peoples,
         ↓ src/api/v2/services/*
 ```
 
-Fiche shape is fixed by the strict models in `public/modele-*.json` (peuple, pays, linguistique, nom, relation, source, migration, récit-oral, frontière-coloniale). Never skip, rename, or invent a section.
+Fiche shape is fixed by the 17 strict models in `public/modele-*.json`: dossier, peuple, pays, linguistique, langue, media, relation, source, migration, recit-oral, frontiere-coloniale, and the six name models — nom and its five sub-models nom-jamu, nom-nisba, nom-patronyme, nom-patronymique, nom-totemique. Count the directory before quoting the number: this sentence once listed nine while sixteen were on disk, and `src/__tests__/agentInstructionsBilingual.test.ts` now holds it to the directory. Never skip, rename, or invent a section.
 
 Hierarchy: **linguistic family → language → people → country.** IDs: families `FLG_*`, languages ISO 639-3, peoples `PPL_*`, countries ISO 3166-1 alpha-3.
 
@@ -109,6 +109,46 @@ Migrations are numbered and sequential in `supabase/migrations/` (081 at last co
 - Design tokens are CSS custom properties in `src/styles/tokens/*.css` plus per-surface `country-tokens.css` / `people-tokens.css`. Colours belong in tokens, not literals — `src/styles/__tests__/colorTokens.test.ts` and the charter contract suite assert this.
 - Storybook uses **`@storybook/react-vite`, not `@storybook/nextjs`** — Next 16 dropped `next/config`, which `@storybook/nextjs` requires. Installs need `--legacy-peer-deps`.
 - Mobile-first is mandatory. Breakpoints: mobile 430px · tablet `md` 720px · desktop `xl` 800px (country container max-width).
+
+### Publishing — the audience, the plan, the video
+
+Four skills cover what happens after a fiche exists, and they run in one order.
+Nothing in this file describes them elsewhere, which is how three of them went
+unmentioned while being the only tools that answer "why is nobody reading this".
+
+- **Measure before planning — `/ethniafrica-audience-audit`.** It writes one
+  dated report to `docs/audience/`, and the two downstream skills refuse a report
+  older than 30 days. Every figure counts **consented sessions only**: Plausible
+  loads after the banner, so the number is a floor of unknown depth, never the
+  audience.
+- **Decide what ships — `/ethniafrica-content-strategist`.** Reads that report
+  and never proposes a subject without the comparable's numbers attached.
+- **Convert what already lands — `/ethniafrica-experience-optimizer`.** A page
+  the report marks a dead end already has the audience a new page would have to
+  earn.
+- **Anything about why a video or a post holds attention — invoke
+  `attention-architect` first, every time.** Writing a hook, judging a script
+  that explains well and still flattens, or filing a persuasion principle
+  somebody sent you. It ships in the `agent-comms` plugin
+  (`/plugin install agent-comms@big-emotion` from `big-emotion/agent-atelier`)
+  alongside `video-director`, `audience-audit` and `content-strategist` — the
+  generic counterparts of the three above, for use on any project.
+
+Its doctrine is measured on this project's own shorts, and two of its findings
+bind editorial copy here: **a video that opens no loop has no retention floor**
+(13 views against 632–861 on the same channel in the same week), and **every
+approved script carries exactly one reframe sentence** — the one that restates
+the hook's absurdity as a meaning, and the one readers quote.
+
+The ethical line is not optional on this surface. The mechanism that captivates
+is the mechanism that manipulates; only a paid debt separates them. **A hook whose
+question the corpus cannot answer is not a hook, it is bait** — and on a sourced
+atlas it is also a lie about the corpus. Rhetoric stays labelled as rhetoric: the
+most quoted sentence in the Bantu short is editorial emphasis, not a historical
+finding, and carrying it forward as fact is how the atlas loses what it sells.
+
+Social copy obeys the reader-facing register and the source-tier policy exactly
+as fiche text does.
 
 ## Non-obvious rules
 
@@ -212,6 +252,22 @@ A fiche sourced only at `unverified` is published and visibly marked low-confide
 
 Keep colonial-era names but explain why they are problematic, and always surface the autonym. `checkEditorialRules.ts` enforces: an autonym is required at `confidence >= medium`, and ≥2 sources when `classification_status` is `contested` or `colonial-legacy`.
 
+### Chronological symmetry (REQ-148)
+
+A `content.kingdoms[]` entry carries `entryType` (`polity | colonial | modern`) and, where the corpus can state them, machine bounds in `timeRange` — the same shape the migration model validates. **`period` stays the reader-facing label and is never derived from the bounds**: it holds nuance ("apogée", "déclin progressif") that integers do not.
+
+Two gates. `REQ-148 Kingdom time ranges` in `validateAfrikData.ts` holds the shape and refuses a range sharing no time with its own label. `chronology-symmetry` in `checkEditorialRules.ts` refuses the asymmetry that made this necessary: **a country that dates its colonial administrations must date its precolonial polities**, because the atlas was showing "1894 - 1962" for the protectorate and "Précolonial" for the five kingdoms above it. It is not a completeness check — a country that dates nothing passes.
+
+96 entries still violate it, held by `UNDATED_POLITY_CEILING`, a ratchet that fails in both directions like `DEAD_CODE_CEILINGS`. Each editorial pass lowers it in the same change; at zero the ratchet is deleted and the findings become errors. `scripts/afrik/backfillKingdomTimeRange.ts` (dry-run by default) prints the queue by country and **never invents a bound** — an entry whose label names an era rather than a date stays undated and visible to the gate.
+
+### Archive → JSON restoration
+
+The conversion of `dataset/source/afrik/archive/famille_linguistique/*.txt` into the live `famille_linguistique/*.json` **lost content on more than half the twenty-four families**. `FLG_BERBERE` had two entirely empty sections and no longer contained the word "Diop"; the sub-part carrying the three competing theories of Berber origins, the 1974 UNESCO colloquium in Cairo and the explicit divergence points had simply gone.
+
+A character ratio is a hint, not a measurement — the archive is markdown, the fiche is structured, and part of any gap is markup. `npx tsx scripts/afrik/diffFamilyArchive.ts` reports **named anchors** instead: years, proper-name pairs and author-year citations the archive holds and the fiche does not. `docs/editorial/family-restoration/` records one ledger per family somebody has started, and its `anchorBudget` is a descending ratchet — a family nobody has begun has no ledger and nothing to fail. Doctrine and running order: that directory's `README.md`.
+
+**A restored theory comes back with its divergence points.** Publishing Diop and Obenga without the reasons comparative linguistics does not follow them would turn an exposed debate into an asserted position — the failure `FLG_AFROASIATIQUE` currently exhibits in the other direction, stating the Obenga position with no contradictor.
+
 ### Reader-facing register
 
 Three fiche fields are published to the reader **verbatim**, with no sanitising layer: `gaps[].reason`, `sources[].title` and `sources[].notes` (nested under `names[].sources[]` on name fiches). Everything else, `_meta.directives` included, is authoring metadata nothing renders.
@@ -219,6 +275,22 @@ Three fiche fields are published to the reader **verbatim**, with no sanitising 
 So those three may carry no repository path, no JSON field path, no raw `PPL_`/`FLG_`/`PAT_` identifier, and none of the pipeline's own vocabulary — _file d'attente_, _la passe_, _protocole de recherche_, _revue claim-level_, _tier hérité_. That last class is the one that got through: it carries no path and no identifier, so it reads as ordinary French, and 774 name fiches told their visitors which queue they came from and which research protocol they awaited. **The reader is owed the silence itself, never the reason the workshop has not filled it yet.**
 
 `checkEditorialRules.ts` enforces this as `reader-facing-register` at error severity; the banned vocabulary is one exported constant, `INTERNAL_REGISTER_PATTERNS`. Doctrine, rewrite table and a paste-able prompt block for curation sessions: `docs/editorial/reader-facing-register.md`.
+
+### Bilingual content (`npm run check:translation-parity`, CI-blocking)
+
+Content added or changed in either language must carry its counterpart in the other, or an explicit deferral with a reason — a fiche field, a home fact, a UI string, a quiz template. The gate is symmetric: French without English fails exactly as English without French does, and a source field edited after its translation was produced is reported as drifted, not accepted (REQ-145).
+
+For a French corpus record, the only deferral form is a non-empty reason at
+`_translation.deferred.en` in the source record. The gate reports that reason
+as a notice. Empty reasons fail. UI dictionary keys cannot be deferred.
+
+Two kinds of content, two homes. **UI copy** lives in locale-keyed dictionaries — `src/lib/translations.ts` today, the `src/lib/i18n` modules as they land — and a keys-parity test holds `en` and `fr` to the same key set, so a string added under one locale fails the suite until the other has it. **Corpus translations** never edit the French fiche: they are records under `dataset/translations/<lang>/`, produced by `npm run translate:record`, and carry their own provenance.
+
+The rules themselves — which fields are never translated, the glossary, the English register — live in `.claude/skills/afrik-translator/` and are enforced by `scripts/ci/checkTranslationParity.ts`. This file does not restate them, because three copies of one doctrine are how it drifts: invoke the skill before translating anything and let the gate name what is missing.
+
+The parity gate controls content readiness, not publication. It never changes
+`SITE_LOCALE_MODE`; unfinished English therefore remains silent while the
+deployment stays on the default `fr-only` mode.
 
 ### TypeScript
 

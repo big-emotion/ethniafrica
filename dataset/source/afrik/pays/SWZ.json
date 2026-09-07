@@ -1,6 +1,7 @@
 {
   "id": "SWZ",
   "nameFr": "Eswatini",
+  "nameEn": "Eswatini",
   "nameOfficial": "Royaume d'Eswatini (Kingdom of Eswatini, Umbuso weSwatini)",
   "summary": "Eswatini signifie « pays des Swazi » en swati — le nom que le royaume se donne, repris officiellement en remplacement du colonial « Swaziland ». Fondé au XVIIIe siècle sous le roi Ngwane, il fut protectorat britannique de 1903 à 1968. L'Incwala et l'Umhlanga y rythment encore la vie royale.",
   "etymology": "Le nom \"Eswatini\" signifie \"pays des Swazi\" en langue swati. Il s'agit du nom traditionnel du royaume. Le nom \"Swaziland\" était le nom colonial britannique (combinaison de \"Swazi\" et \"land\"). Le pays a officiellement changé de nom de \"Swaziland\" à \"Eswatini\" en 2018 pour retrouver son appellation d'origine.",
@@ -18,6 +19,12 @@
       {
         "name": "Royaume swazi",
         "period": "XVIIIe siècle - présent",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1701,
+          "ongoing": true,
+          "precision": "century"
+        },
         "dominantPeoples": ["Swazi"],
         "politicalCenters": [
           "Lobamba (capitale royale)",
@@ -28,6 +35,12 @@
       {
         "name": "Protectorat britannique du Swaziland",
         "period": "1903 - 1968",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1903,
+          "endYear": 1968,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples swazi sous protectorat britannique"
         ],
@@ -154,7 +167,7 @@
       "peoples": [
         {
           "name": "Swazi",
-          "peopleId": "PPL_SWA",
+          "peopleId": "PPL_SWAZI",
           "percentageInCountry": 97
         },
         {

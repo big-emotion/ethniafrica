@@ -1,6 +1,7 @@
 {
   "id": "SEN",
   "nameFr": "Sénégal",
+  "nameEn": "Senegal",
   "nameOfficial": "République du Sénégal",
   "summary": "Le Sénégal doit peut-être son nom à « sunu gaal », « notre pirogue » en wolof, que des marins auraient répondu aux navigateurs portugais. Empire du Jolof, royaumes sérères et Fouta Toro s'y sont partagé le territoire. Wolof, Peuls, Sérères, Diola, Mandinka et Soninké y perpétuent la parole des griots.",
   "etymology": "Le nom \"Sénégal\" vient probablement de \"Sunugal\" (notre pirogue en wolof), expression wolof donnée par les navigateurs locaux aux Portugais au XVe siècle. Les Portugais ont ensuite nommé le fleuve \"Rio de Senega\" puis le territoire \"Senega\".",
@@ -21,6 +22,12 @@
       {
         "name": "Empire du Jolof",
         "period": "XIIIe - XVIe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1201,
+          "endYear": 1600,
+          "precision": "century"
+        },
         "dominantPeoples": ["Wolof"],
         "politicalCenters": ["Jolof (capitale)", "Cayor", "Baol", "Waalo"],
         "historicalRole": "Empire wolof puissant qui unifiait plusieurs royaumes. Commerce transsaharien et commerce côtier. Influence culturelle majeure."
@@ -28,6 +35,7 @@
       {
         "name": "Royaumes sérères",
         "period": "Précolonial - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Sérère"],
         "politicalCenters": ["Sine", "Saloum"],
         "historicalRole": "Royaumes sérères indépendants réputés pour leur résistance à l'islamisation et leur organisation politique."
@@ -35,6 +43,12 @@
       {
         "name": "Fouta Toro",
         "period": "XVIIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1701,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Peul (Toucouleurs)"],
         "politicalCenters": ["Fouta Toro (vallée du fleuve Sénégal)"],
         "historicalRole": "Théocratie peule islamisée, modèle politique et religieux pour la région."
@@ -42,6 +56,12 @@
       {
         "name": "Sénégal français",
         "period": "1895 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1895,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples sénégalais sous administration coloniale française"
         ],
@@ -51,6 +71,12 @@
       {
         "name": "République du Sénégal",
         "period": "1960 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1960,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples sénégalais"],
         "politicalCenters": ["Dakar (capitale)"],
         "historicalRole": "Indépendance en 1960. Histoire politique stable avec démocratie multipartite. Modèle de stabilité en Afrique de l'Ouest."
@@ -86,7 +112,7 @@
         "name": "Sérère",
         "selfAppellation": "Sérère",
         "exonyms": ["Sérère (terme utilisé par les Européens)"],
-        "peopleId": "PPL_SERERE",
+        "peopleId": "PPL_SERER",
         "mainRegion": "Centre-Ouest (Fatick, Kaolack)",
         "languages": ["Sérère", "français"],
         "languageFamily": "FLG_ATLANTIQUE",
@@ -225,7 +251,7 @@
           "name": "Sérère",
           "percentageInCountry": 16,
           "percentageInAfrica": 0.19,
-          "peopleId": "PPL_SERERE",
+          "peopleId": "PPL_SERER",
           "region": "Centre-Ouest (Fatick, Kaolack)",
           "languageFamily": "FLG_ATLANTIQUE"
         },

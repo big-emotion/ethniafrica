@@ -28,6 +28,22 @@ function expectNoSkippedHeadingLevels(levels: number[]) {
 }
 
 describe("AboutPageContent (REQ-132)", () => {
+  // @req REQ-145
+  it("renders the project overview and navigation in English", () => {
+    render(<AboutPageContent language="en" />);
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: "About" })
+    ).toBeInTheDocument();
+    expect(screen.getByTestId("about-overview")).toHaveTextContent(
+      /EthniAfrica is an editorial atlas/i
+    );
+    expect(
+      screen.getByRole("link", { name: "editorial doctrine" })
+    ).toHaveAttribute("href", getLocalizedRoute("en", "doctrine"));
+    expect(screen.getByText("Three ways into the atlas")).toBeInTheDocument();
+  });
+
   // @req REQ-132
   it("opens with a clear overview of EthniAfrica", () => {
     renderAbout();

@@ -10,10 +10,9 @@ import { QuizProgressDots } from "@/components/quiz/QuizProgressDots";
 import { QuizScoreScreen } from "@/components/quiz/QuizScoreScreen";
 import { QuizSessionExit } from "@/components/quiz/QuizSessionExit";
 import type { QuizScope } from "@/lib/quiz/quizScope";
-import { translations } from "@/lib/translations";
+import { quizCopy } from "@/lib/i18n/copy/quiz";
 import { cn } from "@/lib/utils";
-
-const t = translations.fr.quiz;
+import type { Language } from "@/types/shared";
 
 /**
  * Lazily, and the split is load-bearing rather than incidental: the wait
@@ -39,6 +38,7 @@ interface QuizPlayIslandProps {
   scopeLabelFr: string;
   /** Where leaving the session lands — the picker, with no track selected. */
   exitHref: string;
+  language: Language;
   className?: string;
 }
 
@@ -53,9 +53,11 @@ export const QuizPlayIsland = ({
   theme = null,
   scopeLabelFr,
   exitHref,
+  language,
   className,
 }: QuizPlayIslandProps) => {
-  const session = useQuizSession({ scope, theme });
+  const t = quizCopy[language];
+  const session = useQuizSession({ scope, theme, language });
 
   if (session.status === "loading") {
     // The session is fetched client-side, so this wait is the island's own —
@@ -71,7 +73,7 @@ export const QuizPlayIsland = ({
         className={className}
         style={{ minHeight: "min(52vh, 420px)" }}
       >
-        <LazyQuizSessionWait />
+        <LazyQuizSessionWait language={language} />
       </div>
     );
   }
@@ -95,6 +97,7 @@ export const QuizPlayIsland = ({
         correctCount={session.correctCount}
         totalQuestions={session.totalQuestions}
         exitHref={exitHref}
+        language={language}
         className={className}
       />
     );
@@ -127,6 +130,7 @@ export const QuizPlayIsland = ({
       <QuizProgressDots
         current={session.currentIndex + 1}
         total={session.totalQuestions}
+        language={language}
       />
       {session.status === "answering" ? (
         <QuizQuestionCard
@@ -134,6 +138,7 @@ export const QuizPlayIsland = ({
           selectedOption={session.selectedOption}
           onSelectOption={session.selectAnswer}
           onValidate={session.validate}
+          language={language}
         />
       ) : (
         <QuizAnswerReveal
@@ -141,6 +146,7 @@ export const QuizPlayIsland = ({
           isCorrect={session.verdict ?? false}
           isLastQuestion={isLastQuestion}
           onNext={session.next}
+          language={language}
         />
       )}
     </div>

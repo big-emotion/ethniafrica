@@ -60,7 +60,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Katana », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la liste officielle des candidats du TVET CDACC et des recherches ciblées dans les dépôts universitaires kenyans sur les noms mijikenda, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Katana », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la liste officielle des candidats du TVET CDACC et des recherches ciblées dans les dépôts universitaires kenyans sur les noms mijikenda, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

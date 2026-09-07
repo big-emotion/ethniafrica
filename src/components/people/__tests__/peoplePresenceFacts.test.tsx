@@ -20,9 +20,28 @@ const single: GlobalDemographySection = {
 };
 
 describe("buildPeoplePresenceFacts (REQ-117)", () => {
+  // @req REQ-145
+  it("renders the panel chrome and route in English", () => {
+    const facts = buildPeoplePresenceFacts({
+      language: "en",
+      peopleName: "Yoruba",
+      peopleId: "PPL_YORUBA",
+      demography: yoruba,
+    });
+    render(<>{facts.NGA?.body}</>);
+
+    expect(facts.NGA?.title).toBe("Yoruba in Nigeria");
+    expect(screen.getByText("Declared population")).toBeVisible();
+    expect(screen.getByText("What the halo means")).toBeVisible();
+    expect(
+      screen.getByRole("link", { name: "Read the full fiche" })
+    ).toBeVisible();
+  });
+
   // @req REQ-117
   it("titles the panel with the people and the country, not an ISO code", () => {
     const facts = buildPeoplePresenceFacts({
+      language: "fr",
       peopleName: "Yoruba",
       peopleId: "PPL_YORUBA",
       demography: yoruba,
@@ -42,6 +61,7 @@ describe("buildPeoplePresenceFacts (REQ-117)", () => {
   it("agrees the preposition with the country it names", () => {
     const titleFor = (country: string, population: number) =>
       buildPeoplePresenceFacts({
+        language: "fr",
         peopleName: "Aari",
         peopleId: "PPL_AARI",
         demography: {
@@ -69,6 +89,7 @@ describe("buildPeoplePresenceFacts (REQ-117)", () => {
   // @req REQ-117
   it("gives the declared population and the share of the whole people", () => {
     const facts = buildPeoplePresenceFacts({
+      language: "fr",
       peopleName: "Yoruba",
       peopleId: "PPL_YORUBA",
       demography: yoruba,
@@ -86,6 +107,7 @@ describe("buildPeoplePresenceFacts (REQ-117)", () => {
   // @req REQ-117
   it("carries the demography's own reference year, never an implicit one", () => {
     const facts = buildPeoplePresenceFacts({
+      language: "fr",
       peopleName: "Yoruba",
       peopleId: "PPL_YORUBA",
       demography: yoruba,
@@ -98,6 +120,7 @@ describe("buildPeoplePresenceFacts (REQ-117)", () => {
   // @req REQ-116
   it("says what the halo means, so it is not read as a territory", () => {
     const facts = buildPeoplePresenceFacts({
+      language: "fr",
       peopleName: "Yoruba",
       peopleId: "PPL_YORUBA",
       demography: yoruba,
@@ -113,6 +136,7 @@ describe("buildPeoplePresenceFacts (REQ-117)", () => {
   // @req REQ-117
   it("drops the share entirely for a people confined to one country", () => {
     const facts = buildPeoplePresenceFacts({
+      language: "fr",
       peopleName: "Yoruba",
       peopleId: "PPL_YORUBA",
       demography: single,
@@ -126,6 +150,7 @@ describe("buildPeoplePresenceFacts (REQ-117)", () => {
   // @req REQ-117
   it("anchors the way out on the fiche's own record section, not the top of the page", () => {
     const facts = buildPeoplePresenceFacts({
+      language: "fr",
       peopleName: "Yoruba",
       peopleId: "PPL_YORUBA",
       demography: yoruba,
@@ -141,6 +166,7 @@ describe("buildPeoplePresenceFacts (REQ-117)", () => {
   it("says nothing at all when the fiche declares no distribution", () => {
     expect(
       buildPeoplePresenceFacts({
+        language: "fr",
         peopleName: "Yoruba",
         peopleId: "PPL_YORUBA",
         demography: undefined,

@@ -10,6 +10,9 @@ import {
   type FlagStatus,
 } from "@/api/v2/services/flags";
 import { getModeratorSession } from "@/lib/supabase/moderator";
+import { adminCopy } from "@/lib/i18n/copy/admin";
+import { getStaticPageRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 /**
  * The moderator's queue.
@@ -32,10 +35,17 @@ import { getModeratorSession } from "@/lib/supabase/moderator";
  */
 
 // @req REQ-042
-export const metadata: Metadata = {
-  title: "Signalements",
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  return {
+    title: adminCopy[lang as Language].queue.metadataTitle,
+    robots: { index: false, follow: false },
+  };
+}
 
 // Reports are mutable and the queue must never be served stale to the person
 // deciding on them.
@@ -43,39 +53,6 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 const PAGE_SIZES = [25, 50, 100] as const;
-
-const STATUS_OPTIONS = [
-  { value: "open", label: "Ouvert" },
-  { value: "under_review", label: "En cours d'examen" },
-  { value: "accepted", label: "Accepté" },
-  { value: "rejected", label: "Rejeté" },
-  { value: "duplicate", label: "Doublon" },
-  { value: "withdrawn", label: "Retiré" },
-] as const;
-
-const KIND_OPTIONS = [
-  { value: "inaccurate", label: "Inexactitude" },
-  { value: "missing-source", label: "Source manquante" },
-  { value: "broken-url", label: "Lien cassé" },
-  { value: "offensive", label: "Contenu offensant" },
-  { value: "correction-proposal", label: "Proposition de correction" },
-  { value: "other", label: "Autre" },
-  // Not a report on an existing claim but a proposal for content the corpus
-  // does not hold — filed here since the /admin/contributions console was
-  // retired, and read-only: see ModerationQueue.
-  { value: "contribution", label: "Contribution" },
-] as const;
-
-const ENTITY_OPTIONS = [
-  { value: "people", label: "Peuple" },
-  { value: "country", label: "Pays" },
-  { value: "language_family", label: "Famille linguistique" },
-  { value: "fiche_section", label: "Section de fiche" },
-  { value: "assertion", label: "Assertion" },
-  { value: "source", label: "Source" },
-] as const;
-
-const SORT_OPTIONS = [{ value: "oldest", label: "Plus anciens d'abord" }];
 
 type SearchParams = Record<string, string | string[] | undefined>;
 
@@ -96,16 +73,48 @@ function pick<T extends string>(
 
 // @req REQ-042
 export default async function ModerationQueuePage({
+  params: routeParams,
   searchParams,
 }: {
+  params: Promise<{ lang: string }>;
   searchParams: Promise<SearchParams>;
 }) {
   await getModeratorSession();
 
+  const { lang } = await routeParams;
+  const language = lang as Language;
+  const copy = adminCopy[language].queue;
+  const statusOptions = [
+    { value: "open", label: copy.status.open },
+    { value: "under_review", label: copy.status.underReview },
+    { value: "accepted", label: copy.status.accepted },
+    { value: "rejected", label: copy.status.rejected },
+    { value: "duplicate", label: copy.status.duplicate },
+    { value: "withdrawn", label: copy.status.withdrawn },
+  ];
+  const kindOptions = [
+    { value: "inaccurate", label: copy.kind.inaccurate },
+    { value: "missing-source", label: copy.kind.missingSource },
+    { value: "broken-url", label: copy.kind.brokenUrl },
+    { value: "offensive", label: copy.kind.offensive },
+    { value: "correction-proposal", label: copy.kind.correctionProposal },
+    { value: "other", label: copy.kind.other },
+    { value: "contribution", label: copy.kind.contribution },
+  ];
+  const entityOptions = [
+    { value: "people", label: copy.entity.people },
+    { value: "country", label: copy.entity.country },
+    { value: "language_family", label: copy.entity.languageFamily },
+    { value: "fiche_section", label: copy.entity.ficheSection },
+    { value: "assertion", label: copy.entity.assertion },
+    { value: "source", label: copy.entity.source },
+  ];
+  const sortOptions = [{ value: "oldest", label: copy.oldestFirst }];
+  const queueRoute = getStaticPageRoute(language, "admin");
   const params = await searchParams;
-  const status = pick<FlagStatus>(one(params, "statut"), STATUS_OPTIONS);
-  const kind = pick<FlagKind>(one(params, "type"), KIND_OPTIONS);
-  const entityType = pick(one(params, "entite"), ENTITY_OPTIONS);
+  const status = pick<FlagStatus>(one(params, "statut"), statusOptions);
+  const kind = pick<FlagKind>(one(params, "type"), kindOptions);
+  const entityType = pick(one(params, "entite"), entityOptions);
   const sort = one(params, "tri") === "oldest" ? "oldest" : "recent";
 
   const requestedSize = Number(one(params, "taille"));
@@ -136,48 +145,45 @@ export default async function ModerationQueuePage({
     if (nextSize !== PAGE_SIZES[0]) query.set("taille", String(nextSize));
     if (nextPage > 1) query.set("page", String(nextPage));
     const suffix = query.toString();
-    return suffix ? `/fr/admin?${suffix}` : "/fr/admin";
+    return suffix ? `${queueRoute}?${suffix}` : queueRoute;
   }
 
   return (
-    <PageLayout language="fr" title="Signalements">
+    <PageLayout language={language} title={copy.title}>
       <div className="mx-auto w-full max-w-4xl space-y-afh-xl">
         <p className="max-w-3xl text-afh-small text-afh-text-soft">
-          Statuer sur un signalement ne modifie pas la fiche&nbsp;: la décision
-          dit ce que l&apos;atlas pense de la remarque, la correction du corpus
-          est un acte éditorial distinct. Une décision qui clôt un signalement
-          demande une note&nbsp;: elle est publiée avec lui.
+          {copy.guidance}
         </p>
 
         <FacetFilterBar
-          action="/fr/admin"
+          action={queueRoute}
           primaryField={{
             name: "statut",
-            label: "Statut",
-            anyLabel: "Tous les statuts",
-            options: STATUS_OPTIONS,
+            label: copy.statusFilter,
+            anyLabel: copy.allStatuses,
+            options: statusOptions,
             value: status ?? null,
           }}
           advancedFields={[
             {
               name: "type",
-              label: "Type de signalement",
-              anyLabel: "Tous les types",
-              options: KIND_OPTIONS,
+              label: copy.kindFilter,
+              anyLabel: copy.allKinds,
+              options: kindOptions,
               value: kind ?? null,
             },
             {
               name: "entite",
-              label: "Élément signalé",
-              anyLabel: "Tous les éléments",
-              options: ENTITY_OPTIONS,
+              label: copy.entityFilter,
+              anyLabel: copy.allEntities,
+              options: entityOptions,
               value: entityType ?? null,
             },
             {
               name: "tri",
-              label: "Ordre",
-              anyLabel: "Plus récents d'abord",
-              options: SORT_OPTIONS,
+              label: copy.orderFilter,
+              anyLabel: copy.newestFirst,
+              options: sortOptions,
               value: sort === "oldest" ? "oldest" : null,
             },
           ]}
@@ -187,12 +193,11 @@ export default async function ModerationQueuePage({
         />
 
         {total === 0 ? (
-          <p className="text-afh-small text-afh-text-soft">
-            Aucun signalement ne correspond à cette sélection.
-          </p>
+          <p className="text-afh-small text-afh-text-soft">{copy.empty}</p>
         ) : (
           <>
             <FacetPagination
+              language={language}
               position="top"
               page={page}
               pageCount={pageCount}
@@ -200,12 +205,13 @@ export default async function ModerationQueuePage({
               pageSize={pageSize}
               pageSizes={PAGE_SIZES}
               buildHref={buildHref}
-              unitLabel="signalements"
+              unitLabel={copy.unit}
             />
 
-            <ModerationQueue reports={items} />
+            <ModerationQueue language={language} reports={items} />
 
             <FacetPagination
+              language={language}
               position="bottom"
               page={page}
               pageCount={pageCount}
@@ -213,7 +219,7 @@ export default async function ModerationQueuePage({
               pageSize={pageSize}
               pageSizes={PAGE_SIZES}
               buildHref={buildHref}
-              unitLabel="signalements"
+              unitLabel={copy.unit}
             />
           </>
         )}

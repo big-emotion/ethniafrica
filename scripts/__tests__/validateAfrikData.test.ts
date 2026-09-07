@@ -7,14 +7,25 @@
 // @req REQ-032
 // @req REQ-130
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from "fs";
+import {
+  mkdirSync,
+  writeFileSync,
+  rmSync,
+  existsSync,
+  readdirSync,
+  readFileSync,
+} from "fs";
 import { join, resolve } from "path";
 import {
   checkFlgFolderMatch,
   checkPplDuplicates,
+  checkRetiredIdentifiers,
+  checkPeopleReferencesResolve,
+  RETIRED_IDENTIFIERS_LEDGER,
   checkExternalIdentifierFormats,
   checkPeopleGroupConsistency,
   checkPopulationSums,
+  checkPopulationSplitDeclared,
   checkIsoValidity,
   checkOrphanFiches,
   checkSourceUrls,
@@ -24,6 +35,8 @@ import {
   checkFamilyStructuralCompleteness,
   checkCountryCodesResolve,
   checkHistoricalAffiliationModel,
+  checkTranslationClassCoverage,
+  checkTranslationSidecars,
   OFF_MAP_COUNTRIES,
   checkSourceIdentity,
   AFRICAN_REFERENCE_COUNTRY_CODES,
@@ -284,6 +297,289 @@ describe("validateAfrikData – new integrity checks", () => {
     });
   });
 
+  // ── FR27 : checkRetiredIdentifiers ─────────────────────────────────────────
+
+  describe("checkRetiredIdentifiers (FR27)", () => {
+    const ledgerEntry = (
+      decision: "merged" | "renamed" | "kept-distinct",
+      retiredId: string,
+      successorId: string | null
+    ) => ({
+      decision,
+      retiredId,
+      successorId,
+      reason: "Adjudicated for the test fixture, with a reason long enough.",
+      decidedOn: "2026-09-05",
+    });
+
+    function writeLedger(root: string, entries: unknown[]) {
+      mkdirSync(root, { recursive: true });
+      writeFileSync(
+        join(root, RETIRED_IDENTIFIERS_LEDGER),
+        JSON.stringify(entries)
+      );
+    }
+
+    // @req REQ-027
+    it("returns ok:true when no ledger exists yet", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+
+      expect(checkRetiredIdentifiers(tmpDir).ok).toBe(true);
+    });
+
+    // @req REQ-027
+    it("accepts a ledger whose successors exist and whose retired ids have no fiche", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_SENGA");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_NSENGA");
+      writeLedger(tmpDir, [
+        ledgerEntry("merged", "PPL_ZOULOU", "PPL_ZULU"),
+        ledgerEntry("kept-distinct", "PPL_SENGA", null),
+      ]);
+
+      const result = checkRetiredIdentifiers(tmpDir);
+      expect(result.errors).toEqual([]);
+      expect(result.ok).toBe(true);
+    });
+
+    // @req REQ-027
+    it("fails when a retired id still exists as a fiche file", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZOULOU");
+      writeLedger(tmpDir, [ledgerEntry("merged", "PPL_ZOULOU", "PPL_ZULU")]);
+
+      const result = checkRetiredIdentifiers(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("PPL_ZOULOU"))).toBe(true);
+    });
+
+    // @req REQ-027
+    it("fails when a successor has no fiche or is itself retired", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+      writeLedger(tmpDir, [
+        ledgerEntry("merged", "PPL_ZOULOU", "PPL_AMAZULU"),
+        ledgerEntry("renamed", "PPL_AMAZULU", "PPL_ZULU"),
+      ]);
+
+      const result = checkRetiredIdentifiers(tmpDir);
+      expect(result.ok).toBe(false);
+      // PPL_ZOULOU points at a retired id: a redirect must land in one hop.
+      expect(result.errors.some((e) => e.includes("PPL_ZOULOU"))).toBe(true);
+    });
+
+    // @req REQ-027
+    it("fails when a kept-distinct id has no fiche, or a merge has no successor", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+      writeLedger(tmpDir, [
+        ledgerEntry("kept-distinct", "PPL_SENGA", null),
+        ledgerEntry("merged", "PPL_ZOULOU", null),
+      ]);
+
+      const result = checkRetiredIdentifiers(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("PPL_SENGA"))).toBe(true);
+      expect(result.errors.some((e) => e.includes("PPL_ZOULOU"))).toBe(true);
+    });
+
+    // @req REQ-027
+    it("warns when a country still names a retired id, and fails when nothing succeeds it", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+      writePaysWithPopulation(tmpDir, "ZAF", [
+        { name: "Zulu", population: 1, percentageInCountry: 100 },
+      ]);
+      writeFileSync(
+        join(tmpDir, "pays", "ZAF.json"),
+        JSON.stringify({
+          id: "ZAF",
+          content: {
+            majorPeoples: [{ peopleId: "PPL_ZOULOU" }],
+            demographics: { peoples: [{ peopleId: "PPL_XHOSA_OLD" }] },
+          },
+        })
+      );
+      writeLedger(tmpDir, [
+        ledgerEntry("merged", "PPL_ZOULOU", "PPL_ZULU"),
+        ledgerEntry("kept-distinct", "PPL_XHOSA_OLD", null),
+      ]);
+
+      const result = checkRetiredIdentifiers(tmpDir);
+      expect(
+        result.warnings.some(
+          (w) => w.includes("PPL_ZOULOU") && w.includes("PPL_ZULU")
+        )
+      ).toBe(true);
+      // A kept-distinct entry retires nothing, so its id must exist as a fiche.
+      expect(result.errors.some((e) => e.includes("PPL_XHOSA_OLD"))).toBe(true);
+    });
+  });
+
+  // ── FR27 : checkPeopleReferencesResolve ────────────────────────────────────
+
+  describe("checkPeopleReferencesResolve (FR27)", () => {
+    function writeReferencingCorpus(root: string) {
+      writeFLG(root, "FLG_BANTU");
+      writePPL(root, "FLG_BANTU", "PPL_ZULU");
+      writePPL(root, "FLG_BANTU", "PPL_XHOSA", { id: "PPL_XHOSA" });
+      writeFileSync(
+        join(root, "famille_linguistique", "FLG_BANTU.json"),
+        JSON.stringify({
+          id: "FLG_BANTU",
+          content: { associatedPeoples: [{ peopleId: "PPL_ZULU" }] },
+        })
+      );
+      mkdirSync(join(root, "pays"), { recursive: true });
+      writeFileSync(
+        join(root, "pays", "ZAF.json"),
+        JSON.stringify({
+          id: "ZAF",
+          content: {
+            majorPeoples: [{ peopleId: "PPL_ZULU" }],
+            demographics: { peoples: [{ peopleId: "PPL_XHOSA" }] },
+          },
+        })
+      );
+      mkdirSync(join(root, "relations"), { recursive: true });
+      writeFileSync(
+        join(root, "relations", "REL_TEST.json"),
+        JSON.stringify({
+          id: "REL_TEST",
+          peopleIdA: "PPL_ZULU",
+          peopleIdB: "PPL_XHOSA",
+        })
+      );
+      mkdirSync(join(root, "patronymes"), { recursive: true });
+      writeFileSync(
+        join(root, "patronymes", "PAT_TEST.json"),
+        JSON.stringify({
+          id: "PAT_TEST",
+          peoples: [{ peopleId: "PPL_ZULU", status: "attested" }],
+        })
+      );
+      mkdirSync(join(root, "migrations"), { recursive: true });
+      writeFileSync(
+        join(root, "migrations", "MGR_TEST.json"),
+        JSON.stringify({
+          id: "MGR_TEST",
+          peoplesInvolved: [{ id: "PPL_XHOSA", role: "origin" }],
+        })
+      );
+    }
+
+    // @req REQ-027
+    it("returns ok:true when every reference names an existing fiche", () => {
+      writeReferencingCorpus(tmpDir);
+
+      const result = checkPeopleReferencesResolve(tmpDir);
+      expect(result.errors).toEqual([]);
+      expect(result.ok).toBe(true);
+    });
+
+    // @req REQ-027
+    it("resolves a reference to a retired id through its successor", () => {
+      writeReferencingCorpus(tmpDir);
+      writeFileSync(
+        join(tmpDir, "pays", "ZAF.json"),
+        JSON.stringify({
+          id: "ZAF",
+          content: { majorPeoples: [{ peopleId: "PPL_ZOULOU" }] },
+        })
+      );
+      writeFileSync(
+        join(tmpDir, RETIRED_IDENTIFIERS_LEDGER),
+        JSON.stringify([
+          {
+            decision: "merged",
+            retiredId: "PPL_ZOULOU",
+            successorId: "PPL_ZULU",
+            reason: "Same people under two spellings, kept the endonym.",
+            decidedOn: "2026-09-05",
+          },
+        ])
+      );
+
+      expect(checkPeopleReferencesResolve(tmpDir).ok).toBe(true);
+    });
+
+    // @req REQ-027
+    it("fails on a country, family, relation, patronym or migration naming an unknown id", () => {
+      writeReferencingCorpus(tmpDir);
+      writeFileSync(
+        join(tmpDir, "pays", "ZAF.json"),
+        JSON.stringify({
+          id: "ZAF",
+          content: {
+            majorPeoples: [{ peopleId: "PPL_GHOST_MAJOR" }],
+            demographics: { peoples: [{ peopleId: "PPL_GHOST_DEMO" }] },
+          },
+        })
+      );
+      writeFileSync(
+        join(tmpDir, "famille_linguistique", "FLG_BANTU.json"),
+        JSON.stringify({
+          id: "FLG_BANTU",
+          content: { associatedPeoples: [{ peopleId: "PPL_GHOST_FAMILY" }] },
+        })
+      );
+      writeFileSync(
+        join(tmpDir, "relations", "REL_TEST.json"),
+        JSON.stringify({
+          id: "REL_TEST",
+          peopleIdA: "PPL_ZULU",
+          peopleIdB: "PPL_GHOST_REL",
+        })
+      );
+      writeFileSync(
+        join(tmpDir, "patronymes", "PAT_TEST.json"),
+        JSON.stringify({
+          id: "PAT_TEST",
+          peoples: [{ peopleId: "PPL_GHOST_PAT" }],
+        })
+      );
+      writeFileSync(
+        join(tmpDir, "migrations", "MGR_TEST.json"),
+        JSON.stringify({
+          id: "MGR_TEST",
+          peoplesInvolved: [{ id: "PPL_GHOST_MGR" }],
+        })
+      );
+
+      const result = checkPeopleReferencesResolve(tmpDir);
+      expect(result.ok).toBe(false);
+      for (const ghost of [
+        "PPL_GHOST_MAJOR",
+        "PPL_GHOST_DEMO",
+        "PPL_GHOST_FAMILY",
+        "PPL_GHOST_REL",
+        "PPL_GHOST_PAT",
+        "PPL_GHOST_MGR",
+      ]) {
+        expect(result.errors.some((e) => e.includes(ghost))).toBe(true);
+      }
+    });
+
+    // @req REQ-027
+    it("ignores curator worksheets and templates", () => {
+      writeReferencingCorpus(tmpDir);
+      writeFileSync(
+        join(tmpDir, "patronymes", "_candidates.json"),
+        JSON.stringify({ peopleIds: ["PPL_GHOST_WORKSHEET"] })
+      );
+      mkdirSync(join(tmpDir, "systemes_onomastiques"), { recursive: true });
+      writeFileSync(
+        join(tmpDir, "systemes_onomastiques", "ONS_TEMPLATE.json"),
+        JSON.stringify({ associatedPeoples: ["PPL_XXXXX"] })
+      );
+
+      expect(checkPeopleReferencesResolve(tmpDir).ok).toBe(true);
+    });
+  });
+
   // ── ETNI-1414 : checkExternalIdentifierFormats ─────────────────────────────
 
   describe("checkExternalIdentifierFormats (ETNI-1414)", () => {
@@ -506,6 +802,292 @@ describe("validateAfrikData – new integrity checks", () => {
     });
   });
 
+  // ── REQ-143 : checkTranslationClassCoverage ────────────────────────────────
+
+  describe("checkTranslationClassCoverage (REQ-143)", () => {
+    const realPublicRoot = resolve(__dirname, "../../public");
+
+    function copyModels(into: string) {
+      mkdirSync(into, { recursive: true });
+      for (const name of readdirSync(realPublicRoot)) {
+        if (!/^modele-.*\.json$/.test(name)) continue;
+        writeFileSync(
+          join(into, name),
+          readFileSync(join(realPublicRoot, name), "utf-8")
+        );
+      }
+    }
+
+    // @req REQ-143
+    it("passes on the committed models", () => {
+      const result = checkTranslationClassCoverage(realPublicRoot);
+      expect(result.errors).toEqual([]);
+      expect(result.ok).toBe(true);
+    });
+
+    // @req REQ-143
+    it("names the model and the leaf when a model gains a field the declaration lacks", () => {
+      const publicRoot = join(tmpDir, "public");
+      copyModels(publicRoot);
+      const modelPath = join(publicRoot, "modele-peuple.json");
+      const model = JSON.parse(readFileSync(modelPath, "utf-8"));
+      model.content.appellations.nickname = "<prose>";
+      writeFileSync(modelPath, JSON.stringify(model));
+
+      const result = checkTranslationClassCoverage(publicRoot);
+      expect(result.ok).toBe(false);
+      expect(result.errors).toEqual([
+        "REQ-143: modele-peuple.json: leaf content.appellations.nickname has no translation class (declare it in src/lib/i18n/translationClasses.ts)",
+      ]);
+    });
+
+    // @req REQ-143
+    it("fails on a declaration whose leaf the model no longer has", () => {
+      const publicRoot = join(tmpDir, "public");
+      copyModels(publicRoot);
+      const modelPath = join(publicRoot, "modele-relation.json");
+      const model = JSON.parse(readFileSync(modelPath, "utf-8"));
+      delete model.description;
+      writeFileSync(modelPath, JSON.stringify(model));
+
+      const result = checkTranslationClassCoverage(publicRoot);
+      expect(result.errors).toEqual([
+        "REQ-143: modele-relation.json: declared leaf description is not in the model (dead declaration)",
+      ]);
+    });
+
+    // @req REQ-143
+    it("fails on a model file the declaration does not know, and on one it expects but cannot find", () => {
+      const publicRoot = join(tmpDir, "public");
+      copyModels(publicRoot);
+      writeFileSync(join(publicRoot, "modele-toponyme.json"), "{}");
+      rmSync(join(publicRoot, "modele-media.json"));
+
+      const result = checkTranslationClassCoverage(publicRoot);
+      expect(result.errors).toEqual([
+        "REQ-143: modele-media.json is declared but missing from public/",
+        "REQ-143: modele-toponyme.json has no translation class declaration (add it to STRICT_MODEL_FILES)",
+      ]);
+    });
+  });
+
+  // ── TR-1 : checkTranslationSidecars (REQ-142, REQ-143) ─────────────────────
+
+  describe("checkTranslationSidecars (TR-1)", () => {
+    const asante = {
+      id: "PPL_ASANTE",
+      nameMain: "Asante",
+      languageFamilyId: "FLG_NIGERCONGO",
+      currentCountries: ["GHA"],
+      content: {
+        appellations: {
+          selfAppellation: "Asante / Asantefo",
+          exonyms: ["Ashanti (variante orthographique anglaise)"],
+          originOfExonyms: "Le terme Ashanti est une variante anglophone.",
+        },
+        origins: { ancientOrigins: "Les Asante font partie du groupe Akan." },
+        sources: [
+          {
+            title: "Un titre",
+            url: "https://x",
+            tier: "official",
+            notes: "N.",
+          },
+        ],
+      },
+    };
+    const block = {
+      kind: "machine",
+      translatedAt: "2026-09-05T10:00:00.000Z",
+      sourceHash: "a".repeat(64),
+      fieldHashes: {},
+      reviewRequired: ["content.appellations.originOfExonyms"],
+    };
+    const englishAsante = {
+      ...asante,
+      content: {
+        ...asante.content,
+        appellations: {
+          selfAppellation: "Asante / Asantefo",
+          exonyms: ["Ashanti (English spelling variant)"],
+          originOfExonyms: "The term Ashanti is an anglophone variant.",
+        },
+        origins: { ancientOrigins: "The Asante belong to the Akan group." },
+        sources: [
+          {
+            title: "Un titre",
+            url: "https://x",
+            tier: "official",
+            notes: "N.",
+          },
+        ],
+      },
+    };
+
+    function writeSource(root: string) {
+      const dir = join(root, "peuples", "FLG_NIGERCONGO");
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(join(dir, "PPL_ASANTE.json"), JSON.stringify(asante));
+    }
+
+    function writeSidecar(
+      root: string,
+      relPath: string,
+      sidecar: Record<string, unknown>
+    ): string {
+      const translations = join(root, "translations");
+      const file = join(translations, "en", relPath);
+      mkdirSync(join(file, ".."), { recursive: true });
+      writeFileSync(file, JSON.stringify(sidecar));
+      return translations;
+    }
+
+    // @req REQ-142
+    it("passes a faithful machine sidecar, class-3 translation included", () => {
+      writeSource(tmpDir);
+      const translations = writeSidecar(
+        tmpDir,
+        "peuples/FLG_NIGERCONGO/PPL_ASANTE.json",
+        { ...englishAsante, _translation: block }
+      );
+
+      const result = checkTranslationSidecars(tmpDir, translations);
+      expect(result.errors).toEqual([]);
+      expect(result.ok).toBe(true);
+    });
+
+    // Dossier translations predate the database-backed store and are sparse
+    // overlays validated by the dossier reader. TR-1 must validate that
+    // contract too, without pretending they are full stored records.
+    // @req REQ-143
+    it("accepts a valid file-served dossier translation", () => {
+      const source = readFileSync(
+        resolve("dataset/source/afrik/dossiers/DOS_KONGO.json"),
+        "utf8"
+      );
+      const translated = readFileSync(
+        resolve("dataset/translations/en/dossiers/DOS_KONGO.json"),
+        "utf8"
+      );
+      const sourceFile = join(tmpDir, "dossiers", "DOS_KONGO.json");
+      const translatedFile = join(
+        tmpDir,
+        "translations",
+        "en",
+        "dossiers",
+        "DOS_KONGO.json"
+      );
+      mkdirSync(join(sourceFile, ".."), { recursive: true });
+      mkdirSync(join(translatedFile, ".."), { recursive: true });
+      writeFileSync(sourceFile, source);
+      writeFileSync(translatedFile, translated);
+
+      const result = checkTranslationSidecars(
+        tmpDir,
+        join(tmpDir, "translations")
+      );
+
+      expect(result).toEqual({ ok: true, errors: [], warnings: [] });
+    });
+
+    // @req REQ-142
+    it("fails a sidecar whose translation kind is outside the three-value set, naming it", () => {
+      writeSource(tmpDir);
+      const translations = writeSidecar(
+        tmpDir,
+        "peuples/FLG_NIGERCONGO/PPL_ASANTE.json",
+        { ...englishAsante, _translation: { ...block, kind: "auto" } }
+      );
+
+      const result = checkTranslationSidecars(tmpDir, translations);
+      expect(result.ok).toBe(false);
+      expect(result.errors).toEqual([
+        expect.stringMatching(
+          /TR-1: en\/peuples\/FLG_NIGERCONGO\/PPL_ASANTE\.json: declares no valid translation kind/
+        ),
+      ]);
+    });
+
+    // @req REQ-146
+    it("fails an orphan sidecar with no source fiche at the mirrored path", () => {
+      writeSource(tmpDir);
+      const translations = writeSidecar(tmpDir, "pays/GHA.json", {
+        id: "GHA",
+        _translation: block,
+      });
+
+      const result = checkTranslationSidecars(tmpDir, translations);
+      expect(result.errors).toEqual([
+        "TR-1: en/pays/GHA.json: no source fiche at pays/GHA.json",
+      ]);
+    });
+
+    // @req REQ-143
+    it("fails when a class-1 leaf differs from the source", () => {
+      writeSource(tmpDir);
+      const renamed = structuredClone(englishAsante);
+      renamed.content.appellations.selfAppellation = "Ashantee";
+      const translations = writeSidecar(
+        tmpDir,
+        "peuples/FLG_NIGERCONGO/PPL_ASANTE.json",
+        { ...renamed, _translation: block }
+      );
+
+      const result = checkTranslationSidecars(tmpDir, translations);
+      expect(result.errors).toEqual([
+        expect.stringMatching(
+          /content\.appellations\.selfAppellation — .*carried over verbatim/
+        ),
+      ]);
+    });
+
+    // @req REQ-143
+    it("fails when a glossed invariant loses its name, and passes when only the gloss moved", () => {
+      writeSource(tmpDir);
+      const renamed = structuredClone(englishAsante);
+      renamed.content.appellations.exonyms = [
+        "Ashantee (English spelling variant)",
+      ];
+      const translations = writeSidecar(
+        tmpDir,
+        "peuples/FLG_NIGERCONGO/PPL_ASANTE.json",
+        { ...renamed, _translation: block }
+      );
+
+      const result = checkTranslationSidecars(tmpDir, translations);
+      expect(result.errors).toEqual([
+        expect.stringMatching(/content\.appellations\.exonyms\[0\]/),
+      ]);
+    });
+
+    // @req REQ-142
+    it("fails when the sidecar adds or drops a leaf the source has", () => {
+      writeSource(tmpDir);
+      const pruned = structuredClone(englishAsante) as Record<string, unknown>;
+      delete (pruned.content as { origins?: unknown }).origins;
+      const translations = writeSidecar(
+        tmpDir,
+        "peuples/FLG_NIGERCONGO/PPL_ASANTE.json",
+        { ...pruned, _translation: block }
+      );
+
+      const result = checkTranslationSidecars(tmpDir, translations);
+      expect(result.errors).toEqual([
+        expect.stringMatching(
+          /leaf paths differ.*missing: content\.origins\.ancientOrigins/
+        ),
+      ]);
+    });
+
+    // @req REQ-142
+    it("passes on an absent translations tree — no record is not a bad record", () => {
+      writeSource(tmpDir);
+      expect(
+        checkTranslationSidecars(tmpDir, join(tmpDir, "translations"))
+      ).toEqual({ ok: true, errors: [], warnings: [] });
+    });
+  });
+
   // ── FR111 : checkHistoricalAffiliationModel (REQ-127) ──────────────────────
 
   describe("checkHistoricalAffiliationModel (FR111, REQ-127)", () => {
@@ -708,6 +1290,57 @@ describe("validateAfrikData – new integrity checks", () => {
       );
 
       const result = checkPopulationSums(tmpDir);
+      expect(result.ok).toBe(true);
+    });
+  });
+
+  // ── FR28-declared : checkPopulationSplitDeclared ───────────────────────────
+
+  describe("checkPopulationSplitDeclared (FR28-declared)", () => {
+    // @req REQ-131
+    it("returns ok:false when a reference country declares an empty peoples list", () => {
+      writePays(tmpDir, "MDG", []);
+
+      const result = checkPopulationSplitDeclared(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("MDG"))).toBe(true);
+    });
+
+    // @req REQ-131
+    it("returns ok:false when a reference country carries no demographics block", () => {
+      const dir = join(tmpDir, "pays");
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(
+        join(dir, "MDG.json"),
+        JSON.stringify({ id: "MDG", content: {} })
+      );
+
+      const result = checkPopulationSplitDeclared(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("MDG"))).toBe(true);
+    });
+
+    // @req REQ-131
+    it("returns ok:true when a reference country declares at least one people", () => {
+      writePays(tmpDir, "MDG", [
+        {
+          peopleId: "PPL_MERINA",
+          languageFamily: "FLG_AUSTRONESIENNE",
+          percentageInCountry: 100,
+        },
+      ]);
+
+      const result = checkPopulationSplitDeclared(tmpDir);
+      expect(result.ok).toBe(true);
+    });
+
+    // REQ-131 scopes completeness to the 54-country reference set, so a fiche
+    // outside it owes no split at all.
+    // @req REQ-131
+    it("returns ok:true for a country outside the African reference set", () => {
+      writePays(tmpDir, "FRA", []);
+
+      const result = checkPopulationSplitDeclared(tmpDir);
       expect(result.ok).toBe(true);
     });
   });

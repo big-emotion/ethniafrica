@@ -57,6 +57,40 @@ describe("API v2 - Single People Route", () => {
       expect(data).toEqual(mockEnvelope);
     });
 
+    describe("?lang (REQ-142)", () => {
+      // @req REQ-142
+      it("forwards a supported locale to the handler", async () => {
+        vi.mocked(getPeopleHandler).mockResolvedValue({
+          data: { id: "PPL_SHONA", patronymes: [] },
+          meta: { license: "CC-BY-SA-4.0", attribution: API_ATTRIBUTION },
+          errors: [],
+        } as never);
+
+        const response = await GET(
+          new NextRequest("http://localhost/api/v2/peoples/PPL_SHONA?lang=en"),
+          { params: Promise.resolve({ id: "PPL_SHONA" }) }
+        );
+
+        expect(response.status).toBe(200);
+        expect(getPeopleHandler).toHaveBeenCalledWith("PPL_SHONA", "en");
+      });
+
+      // @req REQ-142
+      it("refuses an unsupported locale with a 400 naming the field", async () => {
+        const response = await GET(
+          new NextRequest("http://localhost/api/v2/peoples/PPL_SHONA?lang=de"),
+          { params: Promise.resolve({ id: "PPL_SHONA" }) }
+        );
+
+        expect(response.status).toBe(400);
+        expect(await response.json()).toMatchObject({
+          data: null,
+          errors: [{ code: "VALIDATION_ERROR", field: "lang" }],
+        });
+        expect(getPeopleHandler).not.toHaveBeenCalled();
+      });
+    });
+
     // @req REQ-084
     it("should return 400 for invalid ID format", async () => {
       const request = new NextRequest("http://localhost/api/v2/peoples/SHONA");

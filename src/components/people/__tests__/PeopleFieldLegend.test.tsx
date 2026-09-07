@@ -8,6 +8,18 @@ const legendFor = (distribution: CountryDistribution[]) =>
   render(<PeopleFieldLegend distribution={distribution} />);
 
 describe("PeopleFieldLegend (REQ-116/REQ-119)", () => {
+  // @req REQ-145
+  it("describes off-map presences in English", () => {
+    render(
+      <PeopleFieldLegend
+        language="en"
+        distribution={[{ country: "USA", population: 100 }]}
+      />
+    );
+    expect(screen.getByText("Decreasing density, no border")).toBeVisible();
+    expect(screen.getByText(/outside the map/i)).toHaveTextContent("USA");
+  });
+
   // The legend is where the halo stops being decoration: it states that the
   // gradient fades to nothing, which is the claim the encoding rests on.
   // @req REQ-116

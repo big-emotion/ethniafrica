@@ -6,26 +6,14 @@ import { CheckCircle2, XCircle } from "lucide-react";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { isEstimateRound, type GameRound } from "@/lib/games/gameKinds";
-import { frenchNumber } from "@/lib/games/format";
 import { revealProvenanceFr } from "@/lib/games/revealProvenance";
-import { sourceStandingLabelFr } from "@/types/sources";
+import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-
-const COPY_FR = {
-  correctVerdict: "Bonne réponse",
-  incorrectVerdict: "Ce n'est pas ça",
-  provenanceLabel: "D'après",
-  openFiche: "Lire la fiche",
-  // An estimate round is measured against a shape with no fiche in the atlas,
-  // so it leads to the atlas itself. Charter §7 asks the reveal to lead
-  // somewhere; it does not ask it to promise a page that does not exist.
-  openAtlas: "Ouvrir l'atlas",
-  confidenceAriaSuffix: "pour le sujet de cette manche",
-  yourEstimate: "Votre estimation :",
-  nextRound: "Tour suivant",
-  seeScore: "Voir le score",
-} as const;
+import { gamesCopy } from "@/lib/i18n/copy/games";
+import { revealProvenanceEn } from "@/lib/games/revealProvenance.en";
+import { formatNumber } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
 
 /**
  * Floor height of the panel. Exported so a caller can reserve the same space
@@ -36,6 +24,7 @@ export const GAME_REVEAL_MIN_HEIGHT_CLASS = "min-h-[18rem]";
 
 export interface GameAnswerRevealProps {
   round: GameRound;
+  language?: Language;
   isCorrect: boolean;
   isLastRound: boolean;
   /**
@@ -60,12 +49,14 @@ export interface GameAnswerRevealProps {
 // @req REQ-120
 export const GameAnswerReveal = ({
   round,
+  language = "fr",
   isCorrect,
   isLastRound,
   answer,
   onNext,
   className,
 }: GameAnswerRevealProps) => {
+  const copy = gamesCopy[language];
   const reducedMotion = usePrefersReducedMotion();
   const headingRef = React.useRef<HTMLHeadingElement>(null);
 
@@ -78,7 +69,14 @@ export const GameAnswerReveal = ({
   // runtime crash the compiler will not catch — and a crash here blanks the
   // whole game rather than one line. Same reason `ficheSourceLabel` exists.
   const sources = round.reveal.sources ?? [];
-  const provenanceFr = revealProvenanceFr(round.reveal.fieldPath ?? "");
+  const provenance =
+    language === "en"
+      ? revealProvenanceEn(round.reveal.fieldPath ?? "")
+      : revealProvenanceFr(round.reveal.fieldPath ?? "");
+  const revealText =
+    language === "en"
+      ? (round.reveal.textEn ?? round.reveal.textFr)
+      : round.reveal.textFr;
 
   return (
     <div
@@ -101,7 +99,7 @@ export const GameAnswerReveal = ({
           )}
         >
           <VerdictIcon aria-hidden="true" className="h-6 w-6" />
-          {isCorrect ? COPY_FR.correctVerdict : COPY_FR.incorrectVerdict}
+          {isCorrect ? copy.correctVerdict : copy.incorrectVerdict}
         </h2>
         {/*
           The estimate round's whole subject is the distance between what the
@@ -114,7 +112,8 @@ export const GameAnswerReveal = ({
             data-testid="game-reveal-estimate"
             className="mt-3 text-afh-body text-afh-text-soft"
           >
-            {COPY_FR.yourEstimate} {frenchNumber.format(answer)} {round.unitFr}.
+            {copy.yourEstimate} {formatNumber(language, answer)}{" "}
+            {language === "en" ? (round.unitEn ?? round.unitFr) : round.unitFr}.
           </p>
         ) : null}
 
@@ -122,7 +121,7 @@ export const GameAnswerReveal = ({
           data-testid="game-reveal-text"
           className="mt-3 text-afh-body text-afh-text"
         >
-          {round.reveal.textFr}
+          {revealText}
         </p>
       </div>
 
@@ -130,9 +129,9 @@ export const GameAnswerReveal = ({
         data-testid="game-reveal-provenance"
         className="flex flex-col gap-2 border-t border-afh-border pt-3 text-afh-small text-afh-text-soft"
       >
-        {provenanceFr ? (
+        {provenance ? (
           <p>
-            {COPY_FR.provenanceLabel} {provenanceFr}.
+            {copy.provenanceLabel} {provenance}.
           </p>
         ) : null}
 
@@ -150,7 +149,7 @@ export const GameAnswerReveal = ({
               >
                 <span>{source.label}</span>
                 <span className="rounded-full bg-afh-bg-warm px-2 py-0.5 text-afh-caption font-medium">
-                  {sourceStandingLabelFr(source.standing)}
+                  {sourceStandingLabel(source.standing, language)}
                 </span>
               </li>
             ))}
@@ -160,20 +159,25 @@ export const GameAnswerReveal = ({
         {round.reveal.confidence ? (
           <ConfidenceChip
             variant="inline"
+            language={language}
             id={`game-reveal-${round.subjectId}`}
             confidenceScore={round.reveal.confidence.score}
             sourceCount={round.reveal.confidence.sourceCount}
             lastHumanAuditAt={round.reveal.confidence.lastHumanAuditAt}
-            ariaSuffix={COPY_FR.confidenceAriaSuffix}
+            ariaSuffix={copy.confidenceAriaSuffix}
           />
         ) : null}
 
         <a
           data-testid="game-reveal-fiche-link"
-          href={round.reveal.ficheHref}
+          href={
+            language === "en"
+              ? (round.reveal.ficheHrefEn ?? round.reveal.ficheHref)
+              : round.reveal.ficheHref
+          }
           className="self-start font-medium underline underline-offset-2"
         >
-          {isEstimateRound(round) ? COPY_FR.openAtlas : COPY_FR.openFiche}
+          {isEstimateRound(round) ? copy.openAtlas : copy.openFiche}
         </a>
       </div>
 
@@ -183,7 +187,7 @@ export const GameAnswerReveal = ({
         onClick={onNext}
         className="mt-auto w-full"
       >
-        {isLastRound ? COPY_FR.seeScore : COPY_FR.nextRound}
+        {isLastRound ? copy.seeScore : copy.nextRound}
       </Button>
     </div>
   );

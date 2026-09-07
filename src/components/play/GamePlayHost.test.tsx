@@ -34,6 +34,7 @@ const GAME: GameDefinition = {
 
 const ROUND: BinaryRound = {
   kind: "binary",
+  template: "larger-area",
   gameId: "plus-ou-moins",
   subjectId: "PPL_A",
   promptFr: "Lequel est le plus nombreux",
@@ -51,7 +52,7 @@ const ROUND: BinaryRound = {
 describe("GamePlayHost (Jouer hub engine, REQ-120)", () => {
   // @req REQ-120
   it("lazily mounts the play island for the game it was given", async () => {
-    render(<GamePlayHost game={GAME} rounds={[ROUND]} />);
+    render(<GamePlayHost language="fr" game={GAME} rounds={[ROUND]} />);
 
     expect(await screen.findByTestId("game-play-island-mock")).toHaveAttribute(
       "data-game",
@@ -61,7 +62,7 @@ describe("GamePlayHost (Jouer hub engine, REQ-120)", () => {
 
   // @req REQ-120
   it("hands the server-resolved rounds down untouched", async () => {
-    render(<GamePlayHost game={GAME} rounds={[ROUND, ROUND]} />);
+    render(<GamePlayHost language="fr" game={GAME} rounds={[ROUND, ROUND]} />);
 
     expect(await screen.findByTestId("game-play-island-mock")).toHaveAttribute(
       "data-rounds",
@@ -71,7 +72,7 @@ describe("GamePlayHost (Jouer hub engine, REQ-120)", () => {
 
   // @req REQ-120
   it("mounts the island even with no round, so the shortfall gets stated", async () => {
-    render(<GamePlayHost game={GAME} rounds={[]} />);
+    render(<GamePlayHost language="fr" game={GAME} rounds={[]} />);
 
     expect(await screen.findByTestId("game-play-island-mock")).toHaveAttribute(
       "data-rounds",

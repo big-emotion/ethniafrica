@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { PeopleCountriesData } from "@/lib/peopleDataTransformer";
-import { getAdmin0NameFr } from "@/lib/atlas/overlays";
+import { getAdmin0Name } from "@/lib/atlas/overlays";
 import { getCountryRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
+import { peopleCopy } from "@/lib/i18n/copy/people";
 
 interface PeopleCountriesSectionProps {
   data: PeopleCountriesData;
+  language: Language;
   /** When provided, appended to country links so the country breadcrumb can show context. */
   fromPeopleId?: string;
   fromPeopleName?: string;
@@ -13,13 +16,15 @@ interface PeopleCountriesSectionProps {
 // @req REQ-115
 export function PeopleCountriesSection({
   data,
+  language,
   fromPeopleId,
   fromPeopleName,
 }: PeopleCountriesSectionProps) {
+  const copy = peopleCopy[language].countries;
   if (data.distributions.length === 0) return null;
 
   function countryHref(countryId: string): string {
-    const base = getCountryRoute("fr", countryId);
+    const base = getCountryRoute(language, countryId);
     if (!fromPeopleId) return base;
     const params = new URLSearchParams({ fromPeopleId });
     if (fromPeopleName) params.set("fromPeopleName", fromPeopleName);
@@ -38,12 +43,12 @@ export function PeopleCountriesSection({
         {data.distributions.map((row, i) => {
           // The same resolver the globe draws with, so a country the map
           // omits is marked here rather than silently listed as if drawn.
-          const nameFr = getAdmin0NameFr(row.country);
+          const countryName = getAdmin0Name(row.country, language);
           return (
             <div
               key={i}
               className="flex flex-col gap-[3px]"
-              data-off-map={nameFr ? undefined : "true"}
+              data-off-map={countryName ? undefined : "true"}
             >
               <div className="flex items-center gap-[10px]">
                 <Link
@@ -66,8 +71,10 @@ export function PeopleCountriesSection({
                   className="text-afh-caption shrink-0"
                   style={{ color: "var(--country-text)" }}
                 >
-                  {nameFr ?? (
-                    <span className="uppercase tracking-wide">hors carte</span>
+                  {countryName ?? (
+                    <span className="uppercase tracking-wide">
+                      {copy.offMap}
+                    </span>
                   )}
                 </span>
 
@@ -126,8 +133,10 @@ export function PeopleCountriesSection({
           className="text-afh-eyebrow mt-[10px]"
           style={{ color: "var(--country-text-soft)" }}
         >
-          {data.source ? `Source : ${data.source}` : "Source non renseignée"}
-          {data.referenceYear ? ` · réf. ${data.referenceYear}` : ""}
+          {data.source ? `${copy.source}: ${data.source}` : copy.sourceMissing}
+          {data.referenceYear
+            ? ` · ${copy.reference} ${data.referenceYear}`
+            : ""}
         </p>
       )}
     </div>

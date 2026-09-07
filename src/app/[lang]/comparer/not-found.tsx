@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { StateMedallion } from "@/components/ui/StateMedallion";
+import { FALLBACK_LOCALE, isLocale } from "@/lib/locale";
+import { getLocalizedRoute } from "@/lib/routing";
+import { compareCopy } from "@/lib/i18n/copy/compare";
 
 /**
  * Calm 404 for /[lang]/comparer/[entityType]/[...ids] (UX-DR31, FR62).
@@ -13,7 +16,9 @@ import { StateMedallion } from "@/components/ui/StateMedallion";
 // @req REQ-099
 export default function ComparerNotFound() {
   const params = useParams();
-  const lang = (params?.lang as string) || "fr";
+  const lang = isLocale(params?.lang) ? params.lang : FALLBACK_LOCALE;
+  const pickerRoute = getLocalizedRoute(lang, "compare");
+  const copy = compareCopy[lang];
 
   return (
     <div className="min-h-[60vh] flex flex-col items-center justify-center bg-afh-bg-warm px-4 py-12">
@@ -21,33 +26,31 @@ export default function ComparerNotFound() {
         <StateMedallion className="mx-auto" />
 
         <h1 className="text-afh-h1 font-display font-semibold text-afh-text">
-          Comparaison introuvable
+          {copy.notFoundTitle}
         </h1>
 
         <p data-testid="state-copy" className="text-afh-text-soft">
-          Cette comparaison n&apos;existe pas. Les URLs de comparaison suivent
-          le format{" "}
+          {copy.notFoundBeforePattern}{" "}
           <span className="font-mono text-afh-small bg-afh-bg px-1 rounded">
-            /{lang}/comparer/{"{type}"}/{"{id1}"}/{"{id2}"}
+            {pickerRoute}/{"{type}"}/{"{id1}"}/{"{id2}"}
           </span>{" "}
-          (2 à 3 identifiants du même type : peuples, pays ou familles
-          linguistiques, sans doublon).
+          {copy.notFoundAfterPattern}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
           <Link
-            href={`/${lang}/comparer`}
+            href={pickerRoute}
             data-cta="primary"
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-afh-text text-afh-bg-warm text-afh-small font-medium hover:opacity-90 transition-opacity"
           >
-            Commencer une comparaison
+            {copy.startComparison}
           </Link>
 
           <a
-            href="mailto:contact@ethniafrica.org?subject=URL+cassée"
+            href={`mailto:contact@ethniafrica.org?subject=${encodeURIComponent(copy.reportBrokenUrl)}`}
             className="inline-flex items-center justify-center px-5 py-2.5 text-afh-small text-afh-text-soft underline underline-offset-2 hover:text-afh-text transition-colors"
           >
-            Signaler une URL cassée
+            {copy.reportBrokenUrl}
           </a>
         </div>
       </div>

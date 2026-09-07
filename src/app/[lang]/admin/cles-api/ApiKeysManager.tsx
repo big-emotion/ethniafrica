@@ -18,7 +18,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FormFieldError } from "@/components/forms/FormFieldError";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { formatDate } from "@/lib/languageTag";
+import { adminCopy } from "@/lib/i18n/copy/admin";
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
+import type { Language } from "@/types/shared";
 import { ApiKeyRevealCard } from "./ApiKeyRevealCard";
 
 export interface ApiKeySummaryView {
@@ -38,16 +41,19 @@ interface CreatedApiKeyView extends ApiKeySummaryView {
 }
 
 export interface ApiKeysManagerProps {
+  language: Language;
   initialKeys: ApiKeySummaryView[];
 }
 
-function formatDate(value: string | null): string {
+const KEY_DATE: Intl.DateTimeFormatOptions = {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+};
+
+function formatKeyDate(language: Language, value: string | null): string {
   if (!value) return "—";
-  return new Intl.DateTimeFormat("fr-FR", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(value));
+  return formatDate(language, new Date(value), KEY_DATE);
 }
 
 async function sessionToken(): Promise<string> {
@@ -58,7 +64,8 @@ async function sessionToken(): Promise<string> {
 }
 
 // @req REQ-056
-export function ApiKeysManager({ initialKeys }: ApiKeysManagerProps) {
+export function ApiKeysManager({ language, initialKeys }: ApiKeysManagerProps) {
+  const copy = adminCopy[language].apiKeys;
   const [keys, setKeys] = React.useState(initialKeys);
   const [label, setLabel] = React.useState("");
   const [creating, setCreating] = React.useState(false);
@@ -88,9 +95,7 @@ export function ApiKeysManager({ initialKeys }: ApiKeysManagerProps) {
       const json = await response.json();
 
       if (!response.ok) {
-        setCreateError(
-          json?.errors?.[0]?.message ?? "La création de la clé a échoué."
-        );
+        setCreateError(json?.errors?.[0]?.message ?? copy.createFailed);
         return;
       }
 
@@ -110,7 +115,7 @@ export function ApiKeysManager({ initialKeys }: ApiKeysManagerProps) {
       setRevealed(created);
       setLabel("");
     } catch {
-      setCreateError("La création de la clé a échoué.");
+      setCreateError(copy.createFailed);
     } finally {
       setCreating(false);
     }
@@ -130,7 +135,7 @@ export function ApiKeysManager({ initialKeys }: ApiKeysManagerProps) {
       if (!response.ok) {
         setRevokeError((current) => ({
           ...current,
-          [id]: json?.errors?.[0]?.message ?? "La révocation a échoué.",
+          [id]: json?.errors?.[0]?.message ?? copy.revokeFailed,
         }));
         return;
       }
@@ -145,7 +150,7 @@ export function ApiKeysManager({ initialKeys }: ApiKeysManagerProps) {
     } catch {
       setRevokeError((current) => ({
         ...current,
-        [id]: "La révocation a échoué.",
+        [id]: copy.revokeFailed,
       }));
     } finally {
       setRevokingId(null);
@@ -156,15 +161,16 @@ export function ApiKeysManager({ initialKeys }: ApiKeysManagerProps) {
     <div className="space-y-6">
       {revealed ? (
         <ApiKeyRevealCard
-          label={revealed.label ?? "Sans nom"}
+          label={revealed.label ?? copy.unnamed}
           apiKey={revealed.key}
+          language={language}
           onDismiss={() => setRevealed(null)}
         />
       ) : null}
 
       <Card className="rounded-afh-xl">
         <CardHeader className="p-5 md:p-6">
-          <CardTitle className="text-afh-h2">Créer une clé</CardTitle>
+          <CardTitle className="text-afh-h2">{copy.createTitle}</CardTitle>
         </CardHeader>
         <CardContent className="p-5 pt-0 md:p-6 md:pt-0">
           <form
@@ -172,7 +178,7 @@ export function ApiKeysManager({ initialKeys }: ApiKeysManagerProps) {
             onSubmit={createKey}
           >
             <div className="flex-1 space-y-2">
-              <Label htmlFor="api-key-label">Nom de la clé</Label>
+              <Label htmlFor="api-key-label">{copy.keyName}</Label>
               <Input
                 id="api-key-label"
                 name="label"
@@ -183,7 +189,7 @@ export function ApiKeysManager({ initialKeys }: ApiKeysManagerProps) {
               />
             </div>
             <Button type="submit" disabled={creating}>
-              {creating ? "Création…" : "Créer une clé"}
+              {creating ? copy.creating : copy.create}
             </Button>
           </form>
           {createError ? (
@@ -196,13 +202,11 @@ export function ApiKeysManager({ initialKeys }: ApiKeysManagerProps) {
 
       <Card className="rounded-afh-xl">
         <CardHeader className="p-5 md:p-6">
-          <CardTitle className="text-afh-h2">Vos clés API</CardTitle>
+          <CardTitle className="text-afh-h2">{copy.listTitle}</CardTitle>
         </CardHeader>
         <CardContent className="p-5 pt-0 md:p-6 md:pt-0">
           {keys.length === 0 ? (
-            <p className="text-afh-small text-muted-foreground">
-              Vous n’avez pas encore de clé API.
-            </p>
+            <p className="text-afh-small text-muted-foreground">{copy.empty}</p>
           ) : (
             <ul className="flex flex-col gap-4">
               {keys.map((key) => (
@@ -212,7 +216,7 @@ export function ApiKeysManager({ initialKeys }: ApiKeysManagerProps) {
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div>
-                      <p className="font-medium">{key.label ?? "Sans nom"}</p>
+                      <p className="font-medium">{key.label ?? copy.unnamed}</p>
                       <p className="font-mono text-afh-caption text-muted-foreground">
                         {key.key_prefix}
                       </p>
@@ -226,38 +230,37 @@ export function ApiKeysManager({ initialKeys }: ApiKeysManagerProps) {
                             size="sm"
                             disabled={revokingId === key.id}
                           >
-                            Révoquer
+                            {copy.revoke}
                           </Button>
                         </AlertDialogTrigger>
                         <AlertDialogContent>
                           <AlertDialogHeader>
                             <AlertDialogTitle>
-                              Révoquer cette clé ?
+                              {copy.revokeTitle}
                             </AlertDialogTitle>
                             <AlertDialogDescription>
-                              cette action est irréversible — toute application
-                              qui utilise cette clé cessera immédiatement de
-                              fonctionner
+                              {copy.revokeDescription}
                             </AlertDialogDescription>
                           </AlertDialogHeader>
                           <AlertDialogFooter>
-                            <AlertDialogCancel>Annuler</AlertDialogCancel>
+                            <AlertDialogCancel>{copy.cancel}</AlertDialogCancel>
                             <AlertDialogAction
                               onClick={() => revokeKey(key.id)}
                             >
-                              Confirmer la révocation
+                              {copy.confirmRevoke}
                             </AlertDialogAction>
                           </AlertDialogFooter>
                         </AlertDialogContent>
                       </AlertDialog>
                     ) : (
                       <span className="text-afh-caption text-muted-foreground">
-                        Révoquée le {formatDate(key.revoked_at)}
+                        {copy.revokedOn}{" "}
+                        {formatKeyDate(language, key.revoked_at)}
                       </span>
                     )}
                   </div>
                   <p className="mt-2 text-afh-caption text-muted-foreground">
-                    Créée le {formatDate(key.created_at)}
+                    {copy.createdOn} {formatKeyDate(language, key.created_at)}
                   </p>
                   {revokeError[key.id] ? (
                     <div className="mt-2">

@@ -11,14 +11,21 @@
  *   - Supabase RLS on editorial_doctrine denies INSERT/UPDATE to anon
  *     (only service_role bypasses RLS).
  */
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypeSanitize from "rehype-sanitize";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { TranslationProvenanceMarker } from "@/components/fiche/TranslationProvenanceMarker";
+import { DOCTRINE_ENTRIES_EN } from "@/lib/doctrine/doctrineContent.en";
 import { fetchDoctrineEntry } from "@/lib/doctrine/fetchDoctrineEntry";
 import { formatVersionLabel } from "@/lib/doctrine/formatVersionLabel";
+import { doctrineCopy } from "@/lib/i18n/copy/doctrine";
+import { getLocalizedRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
+import type { Language } from "@/types/shared";
 
 const DEFAULT_CHANGELOG_URL =
   "https://github.com/big-emotion/ethniafrica/commits/HEAD/supabase/migrations/018_editorial_doctrine_seed.sql";
@@ -36,13 +43,40 @@ interface PageParams {
   slug: string;
 }
 
+/**
+ * The head of a doctrine article: its canonical, on the live article, and
+ * the locale it is indexed in. The title stays the root layout's — the
+ * entry is read once, by the body, and a second read for a title is not
+ * worth a database round trip on every request.
+ */
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { lang, slug } = await params;
+  const parsed = parseVersionedSlug(decodeURIComponent(slug));
+  // A 404 that claims a canonical is a 404 asking to be indexed.
+  if (!parsed || parsed.mode === "latest") return {};
+
+  // A pinned revision is an archived copy of the same article: its canonical
+  // is the live article, as it is for a fiche.
+  const article = encodeURIComponent(parsed.slug);
+  return surfaceHead(
+    lang as Language,
+    "doctrine",
+    (locale) => `${getLocalizedRoute(locale, "doctrine")}/${article}`
+  );
+}
+
 // @req REQ-091
 export default async function DoctrineSlugPage({
   params,
 }: {
   params: Promise<PageParams>;
 }) {
-  const { slug } = await params;
+  const { lang, slug } = await params;
 
   const parsed = parseVersionedSlug(decodeURIComponent(slug));
 
@@ -59,20 +93,48 @@ export default async function DoctrineSlugPage({
     notFound();
   }
 
-  const versionLabel = formatVersionLabel(entry.version, entry.publishedAt);
+  const language = lang as Language;
+  const copy = doctrineCopy[language].article;
+  const englishEntry =
+    language === "en" && parsed.mode === "live"
+      ? DOCTRINE_ENTRIES_EN[entry.slug]
+      : undefined;
+  const renderedEntry = englishEntry ?? entry;
+  const frenchFallback = language === "en" && !englishEntry;
+  const versionLabel = formatVersionLabel(
+    entry.version,
+    entry.publishedAt,
+    language
+  );
 
   return (
     <PageLayout
-      language="fr"
-      title={entry.title}
-      sectionName="Doctrine éditoriale"
+      language={language}
+      title={renderedEntry.title}
+      sectionName={copy.sectionName}
       hideHeader
-      trailLabel={entry.title}
+      trailLabel={renderedEntry.title}
     >
       <div className="container mx-auto space-y-6 px-4 py-8">
+        {frenchFallback ? (
+          <p role="status" aria-label={copy.fallback}>
+            {copy.fallback}
+          </p>
+        ) : (
+          <TranslationProvenanceMarker
+            translation={
+              englishEntry
+                ? { kind: englishEntry.provenance, stale: false }
+                : null
+            }
+          />
+        )}
         <article>
-          <header className="space-y-3 border-b pb-4">
-            <h1 className="text-afh-h1 font-bold">{entry.title}</h1>
+          <header
+            className="space-y-3 border-b pb-4"
+            lang={frenchFallback ? "fr" : undefined}
+          >
+            <h1 className="text-afh-h1 font-bold">{renderedEntry.title}</h1>
             <div className="flex flex-wrap items-center gap-3 text-afh-small text-muted-foreground">
               <span data-testid="version-label">{versionLabel}</span>
               <span aria-hidden="true">·</span>
@@ -83,7 +145,7 @@ export default async function DoctrineSlugPage({
                 rel="noopener noreferrer"
                 className="underline hover:no-underline"
               >
-                Voir l&apos;historique des modifications
+                {copy.changelog}
               </a>
             </div>
           </header>
@@ -91,9 +153,10 @@ export default async function DoctrineSlugPage({
           <div
             className="prose prose-neutral max-w-none mt-6"
             data-testid="doctrine-mdx"
+            lang={frenchFallback ? "fr" : undefined}
           >
             <MDXRemote
-              source={entry.mdxSource}
+              source={renderedEntry.mdxSource}
               components={MDX_COMPONENTS}
               options={{
                 mdxOptions: {

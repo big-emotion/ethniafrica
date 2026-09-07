@@ -4,7 +4,13 @@ import { getGameBySlug } from "@/lib/games/gameRegistry";
 import { getAdmin0Rings } from "@/lib/atlas/overlays";
 import { ringArea } from "@/lib/games/sphericalArea";
 import { frenchNumber } from "@/lib/games/format";
-import { buildMercatorRound, mercatorMisleads } from "../mercatorRound";
+import { NON_AFRICAN_SILHOUETTES } from "@/lib/games/territory";
+import {
+  COMPARISON_PROMPT_FR,
+  buildMercatorRound,
+  mercatorMisleads,
+} from "../mercatorRound";
+import { INFLATION_PROMPT_FR } from "../inflationRound";
 
 function countryFixture(
   id: string,
@@ -30,6 +36,7 @@ const kenya = countryFixture("KEN", "Kenya");
 const botswana = countryFixture("BWA", "Botswana");
 const senegal = countryFixture("SEN", "Sénégal");
 const tunisia = countryFixture("TUN", "Tunisie");
+const ivoryCoast = countryFixture("CIV", "Côte d'Ivoire");
 const undrawable = countryFixture("SHN", "Sainte-Hélène");
 
 /** Total spherical area of a country's committed outline, islands included. */
@@ -48,7 +55,7 @@ describe("buildMercatorRound", () => {
     expect(round.kind).toBe("binary");
     expect(round.gameId).toBe("mercator");
     expect(round.subjectId).toBe("DZA");
-    expect(round.promptFr).toBe(getGameBySlug("mercator").promptFr);
+    expect(round.promptFr).toBe(COMPARISON_PROMPT_FR);
     expect(round.options.map((option) => option.labelFr)).toEqual([
       "Algérie",
       "Tchad",
@@ -93,13 +100,51 @@ describe("buildMercatorRound", () => {
   });
 });
 
-describe("mercatorMisleads", () => {
-  // Senegal is larger than Tunisia, yet Mercator draws Tunisia bigger — the
-  // pair the game exists for.
+/**
+ * The registry's prompt is the line printed above every round. It held this
+ * game's one question while the game had one, and went on holding it after a
+ * second and a third shipped — announcing « lequel est le plus grand ? » above
+ * a slider.
+ */
+describe("the standing line and the stems", () => {
+  const standing = getGameBySlug("mercator").promptFr;
+
   // @req REQ-120
-  it("flags a pair where the larger country is drawn smaller", () => {
-    expect(mercatorMisleads(senegal, tunisia)).toBe(true);
-    expect(mercatorMisleads(tunisia, senegal)).toBe(true);
+  it("states the game's claim rather than one of its questions", () => {
+    expect(standing).not.toBe(COMPARISON_PROMPT_FR);
+    expect(standing).not.toBe(INFLATION_PROMPT_FR);
+    expect(standing).not.toContain("?");
+  });
+
+  // @req REQ-120
+  it("gives each question a stem of its own", () => {
+    expect(COMPARISON_PROMPT_FR).not.toBe(INFLATION_PROMPT_FR);
+  });
+});
+
+describe("mercatorMisleads", () => {
+  const norway = NON_AFRICAN_SILHOUETTES.find(({ id }) => id === "NOR");
+
+  // Côte d'Ivoire covers more ground than Norway, and the flat map draws
+  // Norway five times the larger — the pair the game exists for.
+  // @req REQ-120
+  it("flags a pair where the larger country is drawn much smaller", () => {
+    expect(mercatorMisleads(norway, ivoryCoast)).toBe(true);
+    expect(mercatorMisleads(ivoryCoast, norway)).toBe(true);
+  });
+
+  /**
+   * Senegal really is larger than Tunisia and the flat map really does invert
+   * them — by a tenth. Two shapes drawn a tenth apart are drawn the same at
+   * any size this page renders them, so the reader has nothing to look at and
+   * nothing to reason from: the games charter's kill test, failed. This pair
+   * was the game's own worked example while Africa was the whole pool, and it
+   * is refused now that the pool reaches the latitudes where the projection
+   * actually lies.
+   */
+  // @req REQ-120
+  it("refuses a pair the flat map inverts by too little to see", () => {
+    expect(mercatorMisleads(senegal, tunisia)).toBe(false);
   });
 
   // @req REQ-120
@@ -110,5 +155,46 @@ describe("mercatorMisleads", () => {
   // @req REQ-120
   it("does not flag a pair one of whose outlines is missing", () => {
     expect(mercatorMisleads(undrawable, tunisia)).toBe(false);
+  });
+});
+
+/**
+ * The comparison this page was built to make, and could not: Greenland lives
+ * in the `worldCompare` asset rather than in the corpus, so no round could
+ * name it. Inside Africa the projection barely lies — its factor runs from
+ * 1,00 to 1,46 — and the striking inversion sat one asset away.
+ */
+describe("a comparison that reaches outside the continent", () => {
+  const greenland = NON_AFRICAN_SILHOUETTES.find(({ id }) => id === "GRL");
+  const congo = countryFixture("COD", "République démocratique du Congo");
+
+  // @req REQ-120
+  it("flags Greenland against the Congo, which truly outranks it", () => {
+    expect(mercatorMisleads(greenland, congo)).toBe(true);
+  });
+
+  // @req REQ-120
+  it("answers with the Congo and states how far Mercator inflates Greenland", () => {
+    const round = buildMercatorRound(greenland, congo);
+
+    expect(round.correctIndex).toBe(1);
+    expect(round.reveal.textFr).toContain("Groenland");
+    // 14,3 times itself — the figure the whole page is an argument about.
+    expect(round.reveal.textFr).toContain("14,3");
+  });
+
+  /**
+   * A silhouette has no fiche. Routing the reveal to `/pays/GRL` would be a
+   * 404 behind an id that looks like an ISO code because, for Greenland, it
+   * is one.
+   */
+  // @req REQ-120
+  it("leads to the fiche of the African half, whichever side it was passed on", () => {
+    expect(buildMercatorRound(greenland, congo).reveal.ficheHref).toContain(
+      "COD"
+    );
+    expect(buildMercatorRound(congo, greenland).reveal.ficheHref).toContain(
+      "COD"
+    );
   });
 });

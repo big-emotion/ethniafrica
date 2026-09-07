@@ -20,8 +20,12 @@ import { FacetPagination } from "@/components/hubs/facets/FacetPagination";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
 import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getLanguageRoute, getLocalizedRoute } from "@/lib/routing";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import type { CountryId } from "@/types/afrik";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
+import { formatNumber } from "@/lib/languageTag";
+import { facetDirectoriesCopy } from "@/lib/i18n/copy/facetDirectories";
+import type { Language } from "@/types/shared";
 
 /**
  * The language facet of the atlas hub.
@@ -56,17 +60,29 @@ const PARAM = {
   size: PAGE_SIZE_PARAM,
 } as const;
 
-const t = translations.fr.languages;
-const countFormat = new Intl.NumberFormat("fr-FR");
+interface PageProps {
+  params: Promise<{ lang: string }>;
+  searchParams?: Promise<PageSearchParams>;
+}
 
 // @req REQ-139
-export const metadata: Metadata = {
-  title: t.pageTitle,
-  description: t.pageSubtitle,
-  alternates: {
-    canonical: getLocalizedRoute("fr", "languages"),
-  },
-};
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: Pick<PageProps, "params">): Promise<Metadata> {
+  const { lang } = await params;
+  const t = getTranslation(lang as Language).languages;
+  const copy = { title: t.pageTitle, description: t.pageSubtitle };
+  return {
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "languages",
+      (locale) => getLocalizedRoute(locale, "languages"),
+      copy
+    ),
+  };
+}
 
 /**
  * An address for this facet under a given selection.
@@ -75,6 +91,7 @@ export const metadata: Metadata = {
  * the next time the module moves this call site moves with it.
  */
 function facetHref(
+  language: Language,
   filters: LanguagesFacetFilters,
   page: number | null,
   pageSize: number
@@ -92,16 +109,20 @@ function facetHref(
   }
 
   const search = query.toString();
-  const path = getFacetRoute("fr", "languages");
+  const path = getFacetRoute(language, "languages");
   return search ? `${path}?${search}` : path;
 }
 
 // @req REQ-139 @req REQ-136
 export default async function LanguesHubPage({
+  params,
   searchParams,
-}: {
-  searchParams?: Promise<PageSearchParams>;
-}) {
+}: PageProps) {
+  const { lang } = await params;
+  const language = lang as Language;
+  const count = (value: number) => formatNumber(language, value);
+  const t = getTranslation(language).languages;
+  const copy = facetDirectoriesCopy[language].languages;
   const query = (await searchParams) ?? {};
 
   const chosenSearch = definedFilter(query[PARAM.search]);
@@ -163,10 +184,15 @@ export default async function LanguesHubPage({
       rows.push({
         id: row.id,
         label: row.name,
-        href: getLanguageRoute("fr", row.id),
+        href: getLanguageRoute(language, row.id),
       });
       countryIndex[key] = rows;
-      narrowing[key] ??= facetHref({ ...filters, countryId }, null, pageSize);
+      narrowing[key] ??= facetHref(
+        language,
+        { ...filters, countryId },
+        null,
+        pageSize
+      );
     }
   }
 
@@ -181,22 +207,33 @@ export default async function LanguesHubPage({
   const activeFilters: FacetActiveFilter[] = [];
   if (filters.familyId) {
     activeFilters.push({
-      label: `Famille : ${familyLabels.get(filters.familyId) ?? filters.familyId}`,
-      removeHref: facetHref({ ...filters, familyId: null }, null, pageSize),
+      label: `${copy.familyFilter}: ${familyLabels.get(filters.familyId) ?? filters.familyId}`,
+      removeHref: facetHref(
+        language,
+        { ...filters, familyId: null },
+        null,
+        pageSize
+      ),
     });
   }
   if (filters.letter) {
     activeFilters.push({
-      label: `Lettre : ${filters.letter}`,
-      removeHref: facetHref({ ...filters, letter: null }, null, pageSize),
+      label: `${copy.letterFilter}: ${filters.letter}`,
+      removeHref: facetHref(
+        language,
+        { ...filters, letter: null },
+        null,
+        pageSize
+      ),
     });
   }
 
   const pagerHref = (page: number, size: number) =>
-    facetHref(filters, page, size);
+    facetHref(language, filters, page, size);
 
   const pagination = (position: "top" | "bottom") => (
     <FacetPagination
+      language={language}
       position={position}
       page={reading.page}
       pageCount={reading.totalPages}
@@ -208,10 +245,7 @@ export default async function LanguesHubPage({
     />
   );
 
-  const lede =
-    `${countFormat.format(reading.total)} ` +
-    `${reading.total === 1 ? t.range.languagesSingular : t.range.languagesPlural} ` +
-    `dans cette sélection. Choisissez un pays sur le globe pour voir celles qu'on y parle.`;
+  const lede = copy.lede(count(reading.total), reading.total === 1);
 
   if (unavailable) {
     return (
@@ -243,18 +277,18 @@ export default async function LanguesHubPage({
             a reader narrowing 748 languages reaches for the country they know
             before the linguistic family they are here to learn. */}
         <FacetFilterBar
-          action={getFacetRoute("fr", "languages")}
+          action={getFacetRoute(language, "languages")}
           className="mt-4"
           searchField={{
             name: PARAM.search,
-            label: "Rechercher une langue",
-            placeholder: "Nom de la langue, code ISO 639-3",
+            label: copy.searchLabel,
+            placeholder: copy.searchPlaceholder,
             value: filters.search ?? null,
           }}
           primaryField={{
             name: PARAM.country,
-            label: "Pays",
-            anyLabel: "Tous les pays",
+            label: copy.country,
+            anyLabel: copy.allCountries,
             options: choices.countries.map((country) => ({
               value: country.id,
               label: country.label,
@@ -264,8 +298,8 @@ export default async function LanguesHubPage({
           advancedFields={[
             {
               name: PARAM.family,
-              label: "Famille linguistique",
-              anyLabel: "Toutes les familles",
+              label: copy.family,
+              anyLabel: copy.allFamilies,
               options: choices.families.map((family) => ({
                 value: family.id,
                 label: family.label,
@@ -276,9 +310,10 @@ export default async function LanguesHubPage({
           advancedSlot={{
             content: (
               <FacetLetterRail
+                language={language}
                 current={filters.letter}
                 hrefFor={(letter) =>
-                  facetHref({ ...filters, letter }, null, pageSize)
+                  facetHref(language, { ...filters, letter }, null, pageSize)
                 }
               />
             ),
@@ -296,9 +331,10 @@ export default async function LanguesHubPage({
 
         {reading.languages.length === 0 ? (
           <p data-testid="langues-facet-empty" className="mt-6">
-            Aucune langue du corpus ne répond à cette sélection.{" "}
+            {copy.empty}{" "}
             <Link
               href={facetHref(
+                language,
                 {
                   familyId: null,
                   countryId: null,
@@ -309,31 +345,31 @@ export default async function LanguesHubPage({
                 pageSize
               )}
             >
-              Revenir à toutes les langues
+              {copy.reset}
             </Link>
           </p>
         ) : (
           <>
             {pagination("top")}
             <ul
-              aria-label="Langues"
+              aria-label={copy.listLabel}
               className="mt-6 flex flex-col gap-2 p-0 md:grid md:grid-cols-2 xl:grid-cols-3"
             >
-              {reading.languages.map((language) => (
-                <li key={language.id} className="list-none">
+              {reading.languages.map((entry) => (
+                <li key={entry.id} className="list-none">
                   <Link
-                    href={getLanguageRoute("fr", language.id)}
+                    href={getLanguageRoute(language, entry.id)}
                     prefetch={false}
                     className="block h-full rounded-afh-xl border border-afh-border bg-afh-surface p-4 focus-visible:outline-none focus-visible:shadow-[var(--afh-ring-focus)]"
                   >
                     <span className="block text-afh-body font-semibold">
-                      {language.name}
+                      {entry.name}
                     </span>
                     {/* 748 languages for 532 distinct names — « Fulfulde »
                         names both fuf and fuv — so the family and the ISO code
                         are what tell two rows apart. */}
                     <span className="mt-2 block text-afh-small text-afh-text-soft">
-                      {language.family.name} · {language.id}
+                      {entry.family.name} · {entry.id}
                     </span>
                   </Link>
                 </li>

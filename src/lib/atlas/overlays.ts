@@ -12,6 +12,7 @@
 import type { CountryDistribution, CountryId } from "@/types/afrik";
 import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
 import { WORLD_COMPARE } from "@/lib/atlas/assets/worldCompare";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 import {
   BASEMAP_VIEWBOX,
   projectLonLat,
@@ -98,18 +99,33 @@ export function getAdmin0Rings(countryId: CountryId): Ring[] | undefined {
 }
 
 /**
- * The asset's own French name for a country, through the same alias as its
- * geometry.
+ * The asset's own name for a country in the reader's locale, through the same
+ * alias as its geometry.
  *
  * Reading `AFRICA_ADMIN0[countryId].nameFr` directly is what broke the moment
  * ISO codes started resolving: rings came back for SSD while the name did not,
  * so every fiche declaring a South Sudan presence read a property off
  * undefined. One resolver for both is the only arrangement where they cannot
  * disagree again.
+ *
+ * The English name is a class-4 string (REQ-143): Natural Earth ships it for
+ * all 58 entries and 35 of them differ from the French — Ivory Coast,
+ * Cameroon, Egypt — so it is read from the asset, never translated from
+ * `nameFr`.
  */
+// @req REQ-143
+export function getAdmin0Name(
+  countryId: CountryId,
+  locale: TranslationLocale
+): string | undefined {
+  const country = admin0Entry(countryId);
+  return locale === "fr" ? country?.nameFr : country?.name;
+}
+
+/** The French name, for the consumers that have no locale to hand yet. */
 // @req REQ-116
 export function getAdmin0NameFr(countryId: CountryId): string | undefined {
-  return admin0Entry(countryId)?.nameFr;
+  return getAdmin0Name(countryId, "fr");
 }
 
 /**
@@ -135,6 +151,25 @@ export function getWorldCompareRings(shapeId: string): Ring[] | undefined {
 export function getWorldCompareNameFr(shapeId: string): string | undefined {
   return WORLD_COMPARE[shapeId]?.nameFr;
 }
+
+/**
+ * The outlines of the countries outside Africa a round may name.
+ *
+ * Separate from `getWorldCompareRings` because the two assets answer different
+ * questions. `WORLD_COMPARE` holds the shapes Africa is *measured against* —
+ * six of them, one a dissolved region with no country code. `WORLD_ADMIN0`
+ * holds countries a round can put on a button and the globe can outline, keyed
+ * by ISO 3166-1 alpha-3 like the African asset. They are disjoint by
+ * construction so no country can be measured twice, which `territory.test.ts`
+ * holds.
+ *
+ * **It lives in its own module, and that is a payload decision.** This one is
+ * imported by `ContinentGlobeStage`, which the home mounts, so an import here
+ * would put twenty-four kilobytes of Norwegian and Argentinian coastline in
+ * the shared client chunk — measured at 17 kB gzipped, on the page whose
+ * Lighthouse budget the site actually cares about, for outlines that page
+ * never draws. See `lib/atlas/worldOutlines`.
+ */
 
 /**
  * Every African ring in the asset, as one flat list.
@@ -402,6 +437,18 @@ const MIN_STAGE_VIEWPORT: AtlasViewport = {
 export interface ContinentFrameCountry {
   countryId: CountryId;
   rings: Ring[];
+  /**
+   * True for a country borrowed from outside the continent because a round
+   * named it (REQ-120).
+   *
+   * The flag exists for the non-WebGL renderer, which draws into the committed
+   * Africa basemap — a plate carrée bounded at 25° W to 52° E and 35° S to
+   * 38° N. Norway's latitudes are simply not in that box, and the Mercator
+   * page mounts the stage with `overflow: visible`, so an unflagged outline
+   * would not be clipped, it would be painted across the page. That renderer
+   * skips these; the sphere, which has no bounds, draws them.
+   */
+  offContinent?: boolean;
 }
 
 /**
@@ -427,6 +474,35 @@ export interface ContinentFieldOverlay {
   /** Always CONTINENT_FRAME_FILL_OPACITY; carried on the overlay so the renderers read it rather than choose one. */
   fillOpacity: number;
   areas: ContinentFieldArea[];
+  /**
+   * The countries a round is currently asking about, drawn in the accent
+   * (REQ-120). Every id here is guaranteed to appear in `frame`, so a renderer
+   * can never mark a country it has not drawn.
+   *
+   * Empty on every surface but a live game round. It is a *view* state on the
+   * scene rather than a claim about the corpus — the outlines say nothing new,
+   * two of them are simply the ones being talked about.
+   */
+  highlightedCountryIds: string[];
+  /**
+   * What a country under question is filled at — `COUNTRY_FILL_OPACITY`, the
+   * same value `country-outline` uses.
+   *
+   * **This is the one place the frame's `fill: none` invariant gives way, and
+   * the reason it may.** That invariant exists so a country is never drawn as
+   * a filled area standing for the peoples counted inside it, which is what
+   * atlas-charter §1 forbids for a people. A country under question counts
+   * nothing: the fill says « this is the one the question names », which is
+   * exactly what the same fill means on a fiche's own outline.
+   *
+   * A stroke alone could not carry it. `LINE_LOOP` has no usable width on any
+   * driver, so the only variable left is colour — and the frame is already
+   * drawn in the accent, which leaves a marked country indistinguishable from
+   * its fifty-three neighbours. Measured on the shipped page: with the mark on
+   * the stroke alone, Gambia — a sliver along a river — was invisible at every
+   * zoom the globe offers.
+   */
+  highlightFillOpacity: number;
 }
 
 function projectedDistancePx(a: LonLat, b: LonLat): number {
@@ -446,10 +522,24 @@ function projectedDistancePx(a: LonLat, b: LonLat): number {
  * place a unit test can hold it. Sorting first means a collision is always
  * resolved in favour of the better-documented country; capping last means a
  * collision costs a country, not a slot.
+ *
+ * `countriesUnderQuestion` is the Mercator game's, and nothing else passes it
+ * (REQ-120). A country from outside the continent joins the frame when it is
+ * named, because a pair the reader is asked to compare has to be locatable on
+ * both halves — Norway against Côte d'Ivoire with only the Ivorian outline
+ * marked would be worse than marking neither.
+ *
+ * Those borrowed outlines arrive as `offContinentOutlines` rather than being
+ * looked up here, and the reason is payload rather than taste: a lookup in
+ * this module puts both world assets in the client chunk the home shares with
+ * four atlas hubs. See `lib/atlas/worldOutlines`.
  */
 // @req REQ-116
+// @req REQ-120
 export function buildContinentOverlay(
-  peopleCountsByCountry: Record<CountryId, number> | undefined
+  peopleCountsByCountry: Record<CountryId, number> | undefined,
+  countriesUnderQuestion: string[] = [],
+  offContinentOutlines: ContinentFrameCountry[] = []
 ): ContinentFieldOverlay | PeopleFieldMissingOverlay {
   const counted = Object.entries(peopleCountsByCountry ?? {})
     .map(([countryId, documentedPeopleCount]) => ({
@@ -499,11 +589,35 @@ export function buildContinentOverlay(
       rings: getAdmin0Rings(countryId) ?? [],
     }));
 
+  const framed = new Set(frame.map((country) => country.countryId));
+  const highlightedCountryIds: string[] = [];
+
+  for (const countryId of countriesUnderQuestion) {
+    if (framed.has(countryId)) {
+      highlightedCountryIds.push(countryId);
+      continue;
+    }
+
+    // Not on the continent, so the scene has not drawn it. The outline was
+    // resolved by the caller and joins the frame here, so the mark and the
+    // shape it marks can never come apart.
+    const borrowed = offContinentOutlines.find(
+      (outline) => outline.countryId === countryId
+    );
+    if (!borrowed || borrowed.rings.length === 0) continue;
+
+    frame.push(borrowed);
+    framed.add(countryId);
+    highlightedCountryIds.push(countryId);
+  }
+
   return {
     kind: "continent-field",
     frame,
     fillOpacity: CONTINENT_FRAME_FILL_OPACITY,
     areas,
+    highlightedCountryIds,
+    highlightFillOpacity: COUNTRY_FILL_OPACITY,
   };
 }
 

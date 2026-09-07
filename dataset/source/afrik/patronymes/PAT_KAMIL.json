@@ -71,7 +71,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "Les requêtes « Kamil Afar alliance/kinship » et les ressources de noms afars consultées ne signalent aucune alliance de parenté à plaisanterie avec un autre PAT_* existant."
+      "reason": "Les requêtes « Kamil Afar alliance/kinship » et les ressources de noms afars consultées ne signalent aucune alliance de parenté à plaisanterie avec un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

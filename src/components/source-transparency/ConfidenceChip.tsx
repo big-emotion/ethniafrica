@@ -1,7 +1,10 @@
 "use client";
 
 import * as React from "react";
+import { useRouteLanguage } from "@/hooks/use-language";
+import { formatDate } from "@/lib/languageTag";
 import { cn } from "@/lib/utils";
+import type { Language } from "@/types/shared";
 
 /**
  * ConfidenceChip — L3 component (ETNI-25)
@@ -32,13 +35,14 @@ export type ConfidenceChipProps = {
   onOpen?: () => void;
   ariaSuffix?: string;
   id?: string;
+  language?: Language;
 };
 
 function toIsoShortDate(value: string): string {
   return value.slice(0, 10);
 }
 
-function toLongFrenchDate(value: string): string {
+function toLongDate(language: Language, value: string): string {
   const isoDate = value.slice(0, 10);
   const parts = isoDate.split("-").map(Number);
   if (parts.length !== 3 || parts.some((n) => Number.isNaN(n))) {
@@ -49,7 +53,7 @@ function toLongFrenchDate(value: string): string {
   if (Number.isNaN(date.getTime())) {
     return value;
   }
-  return new Intl.DateTimeFormat("fr-FR", { dateStyle: "long" }).format(date);
+  return formatDate(language, date);
 }
 
 function readPulsedIds(): Set<string> {
@@ -109,7 +113,13 @@ export function ConfidenceChip({
   onOpen,
   ariaSuffix,
   id,
+  language: languageOverride,
 }: ConfidenceChipProps) {
+  // Read off the route rather than threaded: the chip sits at the end of an
+  // assertion on every fiche surface, and its dozen callers have no locale
+  // to hand it.
+  const routeLanguage = useRouteLanguage();
+  const language = languageOverride ?? routeLanguage;
   const hasAllData =
     confidenceScore !== null &&
     confidenceScore !== undefined &&
@@ -135,6 +145,7 @@ export function ConfidenceChip({
   }, [hasAllData, id]);
 
   if (!hasAllData) {
+    const sourceLink = language === "en" ? "view sources" : "voir les sources";
     return (
       <span className="inline-flex items-center p-1">
         <a
@@ -149,17 +160,23 @@ export function ConfidenceChip({
           // it owes the 44px target: it measured 110×24.
           className="inline-flex min-h-11 items-center text-afh-small underline underline-offset-2 text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))] hover:text-[color:var(--afh-text,var(--country-text,#2C2018))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[color:var(--afh-focus,var(--country-text,#2C2018))]"
         >
-          voir les sources
+          {sourceLink}
         </a>
       </span>
     );
   }
 
   const shortDate = toIsoShortDate(lastHumanAuditAt!);
-  const longFrDate = toLongFrenchDate(lastHumanAuditAt!);
-  const pillText = `${confidenceScore} % · ${sourceCount} sources · vérifié ${shortDate}`;
+  const longDate = toLongDate(language, lastHumanAuditAt!);
+  const pillText =
+    language === "en"
+      ? `${confidenceScore} % · ${sourceCount} sources · verified ${shortDate}`
+      : `${confidenceScore} % · ${sourceCount} sources · vérifié ${shortDate}`;
 
-  const baseAriaLabel = `ouvrir la chaîne de sources pour cette assertion (confiance ${confidenceScore} %, ${sourceCount} sources, vérifiée le ${longFrDate})`;
+  const baseAriaLabel =
+    language === "en"
+      ? `open the source chain for this assertion (confidence ${confidenceScore}%, ${sourceCount} sources, verified on ${longDate})`
+      : `ouvrir la chaîne de sources pour cette assertion (confiance ${confidenceScore} %, ${sourceCount} sources, vérifiée le ${longDate})`;
   const ariaLabel = ariaSuffix
     ? `${baseAriaLabel} ${ariaSuffix}`
     : baseAriaLabel;

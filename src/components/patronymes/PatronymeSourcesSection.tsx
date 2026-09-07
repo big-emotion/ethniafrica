@@ -1,15 +1,11 @@
 import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
-import {
-  FicheSection,
-  SOURCE_TIER_NOTE,
-} from "@/components/fiche/FicheSection";
+import { FicheSection } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { PatronymeSourceCitation } from "@/components/patronymes/PatronymeSourceCitation";
 import { readGaps, readPatronymeSources } from "@/lib/patronymes/content";
 import { resolveChapter } from "@/lib/fieldProvenance";
-import { translations } from "@/lib/translations";
-
-const t = translations.fr.patronymes;
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * What the fiche rests on.
@@ -25,9 +21,13 @@ const t = translations.fr.patronymes;
 // @req REQ-133
 export function PatronymeSourcesSection({
   patronyme,
+  language,
 }: {
   patronyme: PublicPatronyme;
+  language: Language;
 }) {
+  const t = getTranslation(language).patronymes;
+  const ficheCopy = getTranslation(language).fiche;
   const sources = readPatronymeSources(patronyme.content);
   const chapter = resolveChapter(
     "name",
@@ -39,7 +39,7 @@ export function PatronymeSourcesSection({
   return (
     <FicheSection
       title={t.sourcesTitle}
-      note={SOURCE_TIER_NOTE}
+      note={ficheCopy.sourceTierNote}
       as="footer"
       id="sources"
     >
@@ -61,7 +61,11 @@ export function PatronymeSourcesSection({
           ))}
         </ul>
       ) : (
-        <FieldProvenanceMarker state={chapter.state} reason={chapter.reason} />
+        <FieldProvenanceMarker
+          state={chapter.state}
+          reason={chapter.reason}
+          language={language}
+        />
       )}
     </FicheSection>
   );

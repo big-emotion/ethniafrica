@@ -1,6 +1,12 @@
-import { describe, it, expect, vi } from "vitest";
+import { beforeEach, describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import NotFound from "@/app/[lang]/not-found";
+import { getLocalizedRoute } from "@/lib/routing";
+
+const mockUsePathname = vi.fn(() => "/fr/introuvable");
+vi.mock("next/navigation", () => ({
+  usePathname: () => mockUsePathname(),
+}));
 
 vi.mock("next/link", () => ({
   __esModule: true,
@@ -19,6 +25,8 @@ vi.mock("next/link", () => ({
 }));
 
 describe("NotFound ([lang]/not-found)", () => {
+  beforeEach(() => mockUsePathname.mockReturnValue("/fr/introuvable"));
+
   it("renders the calm French heading Fiche introuvable", () => {
     render(<NotFound />);
     expect(
@@ -48,6 +56,21 @@ describe("NotFound ([lang]/not-found)", () => {
   it("renders Signaler une URL cassée CTA", () => {
     render(<NotFound />);
     expect(screen.getByText(/signaler une url cassée/i)).toBeTruthy();
+  });
+
+  // @req REQ-145
+  it("renders the English recovery path below /en", () => {
+    mockUsePathname.mockReturnValue("/en/missing");
+
+    render(<NotFound />);
+
+    expect(
+      screen.getByRole("heading", { name: "Fiche not found" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Search for a fiche" })
+    ).toHaveAttribute("href", getLocalizedRoute("en", "search"));
+    expect(screen.queryByText(/pas encore publiée/i)).not.toBeInTheDocument();
   });
 
   it("renders no emoji in the page", () => {

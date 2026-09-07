@@ -46,6 +46,44 @@ describe("ContactForm", () => {
     vi.unstubAllGlobals();
   });
 
+  // @req REQ-145
+  it("renders the reader-facing controls in English on the English route", () => {
+    render(<ContactForm language="en" />);
+
+    expect(screen.getByLabelText(/First name/)).toBeRequired();
+    expect(screen.getByLabelText(/Email address/)).toBeRequired();
+    expect(screen.getByLabelText(/Subject/)).toBeRequired();
+    expect(
+      screen.getByRole("button", { name: "Send message" })
+    ).toBeInTheDocument();
+    expect(screen.queryByText("Envoyer le message")).not.toBeInTheDocument();
+  });
+
+  // @req REQ-140
+  it("sends the route locale with the message", async () => {
+    render(<ContactForm language="en" />);
+
+    fireEvent.change(screen.getByLabelText(/First name/), {
+      target: { value: "Aminata" },
+    });
+    fireEvent.change(screen.getByLabelText(/Last name/), {
+      target: { value: "Diallo" },
+    });
+    fireEvent.change(screen.getByLabelText(/Email address/), {
+      target: { value: "aminata@example.org" },
+    });
+    fireEvent.change(screen.getByLabelText(/Subject/), {
+      target: { value: "correction" },
+    });
+    fireEvent.change(screen.getByLabelText(/Message/), {
+      target: { value: "The source is outdated." },
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Send message" }));
+
+    await waitFor(() => expect(global.fetch).toHaveBeenCalledTimes(1));
+    expect(postedBody()).toMatchObject({ language: "en" });
+  });
+
   // @req REQ-045
   it("marks the fields a reader must fill, and only those", () => {
     render(<ContactForm />);

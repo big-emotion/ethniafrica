@@ -8,7 +8,14 @@
     "appellations": {
       "mainName": "Ambundu",
       "selfAppellation": "Ambundu",
-      "exonyms": ["Mbundu", "Nord-Mbundu", "North Mbundu"],
+      "exonyms": [
+        "Mbundu",
+        "Nord-Mbundu",
+        "North Mbundu",
+        "Kimbundu",
+        "Mbundu du Nord",
+        "Ambakista"
+      ],
       "originOfExonyms": "Le terme Mbundu fut employe initialement par les Bakongo pour designer les populations parlant le kimbundu. Les colonisateurs portugais l'adopteren puis il fut repris dans la litterature scientifique sous la forme Mbundu ou Ambundu. La distinction Nord-Mbundu (Ambundu) versus Sud-Mbundu (Ovimbundu) permet d'eviter la confusion entre deux groupes distincts.",
       "whyProblematic": "La confusion entre Ambundu (Mbundu du nord, parlant le kimbundu) et Ovimbundu (Mbundu du sud, parlant l'umbundu) est frequente dans les sources non specialisees. Ces deux peuples sont culturellement et linguistiquement distincts malgre leur nom similaire.",
       "contemporaryUsage": "Le terme Ambundu est utilise dans les sources academiques et Mbundu dans le langage courant angolais. Les Ambundu sont historiquement lies a Luanda, capitale de l'Angola.",
@@ -25,21 +32,36 @@
       "Imbangala (Jaga) — groupe guerrier associe aux Ambundu",
       "Mbondo — groupe fonde par Kajinga ka Mbulu selon les traditions orales",
       "Songo et Hungu — sous-groupes de tradition orale commune",
-      "Kasanje — ancien royaume esclavagiste ambundu, important intermediaire commercial"
+      "Kasanje — ancien royaume esclavagiste ambundu, important intermediaire commercial",
+      "Ambundu",
+      "Mbundu",
+      "Ndongo",
+      "Pende",
+      "Hungu",
+      "Lenge",
+      "Songo"
     ],
     "origins": {
       "ancientOrigins": "Les Ambundu sont arrives dans la region angolaise depuis le nord au cours du Moyen Age, avec une immigration principale entre le 13e et le 16e siecle. Le kimbundu est une langue ouest-bantou dont l'expansion s'est faite depuis le nord plutot que depuis l'est, contrairement au schema classique des migrations bantoues. Les Bantous, dont font partie les Ambundu, apporterent l'agriculture et la metallurgie du fer, construisirent des villages permanents et commercerent avec les populations pygmees et khoisanides autochtones. Selon les traditions orales, cinq ancetres issus d'une grande eau (l'Atlantique, Luanda) — dont Zundu dya Mbulu (mere du Ndongo) et Kajinga ka Mbulu (fondateur du Mbondo) — sont a l'origine des clans ambundu.",
       "formationPeriod": "Jusqu'au 14e siecle, la societe ambundu etait organisee en communautes locales autonomes. La consolidation du royaume de Ndongo (dont le chef portait le titre ngola, origine du nom Angola) s'est effectuee entre le 14e et le 16e siecle. L'identite ambundu s'est renforcee en reaction a la pression coloniale portugaise a partir de 1556.",
       "migrationRoutes": [
         "Venue depuis le nord (bassin du Congo ou regions septentrionales) au cours des siecles mediaux",
-        "Etablissement dans la region entre le Kwanza et le Dande, s'etendant de Luanda vers l'est"
+        "Etablissement dans la region entre le Kwanza et le Dande, s'etendant de Luanda vers l'est",
+        "Migrations depuis le nord (probablement la region du Congo actuel) vers le nord-ouest de l'Angola",
+        "Deplacement de Ngola Kilanji depuis la region du Zambeze vers Luanda selon la tradition pende",
+        "Expansion vers l'est le long des rivières Dande, Kwanza et Lukala"
       ],
       "historicalSettlementZones": [
         "Province de Luanda — capitale historique et culturelle",
         "Province de Bengo — zone centrale ouest",
         "Province de Malanje — est du territoire",
         "Province de Cuanza Norte — zone intermediaire",
-        "Province de Cuanza Sul — limite meridionale"
+        "Province de Cuanza Sul — limite meridionale",
+        "Province de Luanda",
+        "Province du Bengo",
+        "Province du Malanje",
+        "Province du Cuanza Norte",
+        "Province du Cuanza Sul (peripherie nord)"
       ],
       "unificationsOrDivisions": "La societe ambundu etait originellement matrilineaire : la terre s'heritait par la mere, les garcons vivaient dans les villages de leurs oncles maternels. Le nom Mbundu fut d'abord utilise par les Bakongo pour designer ce groupe, qui l'adopta ensuite. L'expansion portugaise provoqua des divisions internes : certains groupes s'allerent avec les envahisseurs tandis que d'autres, comme le royaume de Ndongo, resistaient. La reineMere Njinga incarna cette resistance avant de devenir elle-meme une grande exportatrice d'esclaves.",
       "externalInfluences": "Contact et commerce avec les Bakongo du royaume du Kongo depuis le 14e siecle. Invasion et occupation portugaise progressive a partir de 1575 (fondation de Luanda). Traite negriere : l'Angola fut l'une des principales sources de captifs pour le Bresil. Evangelisation catholique depuis le 16e siecle. Guerre d'independance angolaise (1961-1975) menee notamment par le MPLA, organisation a fort ancrage ambundu. Depuis l'independance (1975), les Ambundu sont fortement representes dans l'appareil d'Etat et a Luanda.",
@@ -57,7 +79,9 @@
       "isoCodes": ["kmb"],
       "dialects": [
         "Akwaluanda (Ambundu de l'Ouest) — parle a Luanda et sur la cote, issu du kimbundu et d'autres apports linguistiques",
-        "Ambakista (Ambacca) — parle a l'est, issu du kimbundu et de la langue portugaise"
+        "Ambakista (Ambacca) — parle a l'est, issu du kimbundu et de la langue portugaise",
+        "Akwaluanda (Ambundu occidental, parle a Luanda et a l'ouest)",
+        "Ambakista (parle a l'est, autour d'Ambacca, influence par le portugais)"
       ],
       "vehicularRole": "Le kimbundu (ISO 639-3 : kmb) est la deuxieme langue bantou la plus parlee en Angola, avec 3,728 millions de locuteurs natifs (2024). Il est reconnu comme langue nationale officielle en Angola aux cotes du portugais. Concentre dans les provinces de Luanda, Bengo, Icolo e Bengo, Cuanza Norte, Cuanza Sul et Malanje. Le kimbundu a influence le portugais angolais et le Palenquero (langue creole de Colombie). Le madimba (xylophone a resonateurs) accompagne la musique chantee en kimbundu dans les ceremonies funeraires."
     },
@@ -82,6 +106,10 @@
           "country": "AGO",
           "population": 9700000,
           "note": "Provinces de Luanda, Bengo, Malanje, Cuanza Norte, Cuanza Sul — notamment en milieu urbain a Luanda"
+        },
+        {
+          "country": "COD",
+          "population": 30000
         }
       ]
     },
@@ -121,6 +149,24 @@
         "url": "https://glottolog.org/resource/languoid/id/kimb1241",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Kimbundu in Angola – Joshua Project",
+        "url": "https://m.joshuaproject.net/people_groups/print/13154/AO",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net, matched as a parent of m.joshuaproject.net."
+      },
+      {
+        "title": "ISO 639-3 : kmb (Kimbundu) – SIL International / Ethnologue",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA Angola Population 2025",
+        "url": "https://www.unfpa.org/data/world-population/AO",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
       }
     ]
   }

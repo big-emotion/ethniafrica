@@ -79,6 +79,7 @@ export interface CountryContent {
 export interface CountryRow {
   id: string;
   name_fr: string;
+  name_en?: string | null;
   name_official?: string | null;
   etymology: string | null;
   name_origin_actor: string | null;

@@ -9,6 +9,7 @@ import { describe, expect, it } from "vitest";
 import { getPeopleRoute } from "@/lib/routing";
 
 const citation: CitationFormatterInput = {
+  language: "fr",
   title: "Yorùbá (Èdè Yorùbá / Yoruba)",
   productName: "EthniAfrica",
   url: "https://ethniafrica.example/fr/peuples/yoruba?source=fiche#origines",

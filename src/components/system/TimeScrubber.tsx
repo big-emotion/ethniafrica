@@ -4,9 +4,13 @@ import * as SliderPrimitive from "@radix-ui/react-slider";
 import * as React from "react";
 
 import { formatYearFr } from "@/lib/atlas/formatYearFr";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getTranslation } from "@/lib/translations";
 import { cn } from "@/lib/utils";
+import type { Language } from "@/types/shared";
 
 export interface TimeScrubberProps {
+  language?: Language;
   min: number;
   max: number;
   value: number;
@@ -38,6 +42,7 @@ function clamp(value: number, min: number, max: number): number {
 
 // @req REQ-101
 export function TimeScrubber({
+  language = FALLBACK_LOCALE,
   min,
   max,
   value,
@@ -94,7 +99,7 @@ export function TimeScrubber({
         />
       </SliderPrimitive.Track>
       <SliderPrimitive.Thumb
-        aria-label="Année"
+        aria-label={getTranslation(language).system.year}
         aria-valuetext={formatYear(value)}
         className={cn(
           "flex h-11 w-11 items-center justify-center rounded-full",

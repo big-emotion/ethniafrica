@@ -68,7 +68,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Hamutenya », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la page « Kavango West Region » du ministère namibien de la Santé n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Hamutenya », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la consultation de la page « Kavango West Region » du ministère namibien de la Santé n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

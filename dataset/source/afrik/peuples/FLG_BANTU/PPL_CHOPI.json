@@ -7,7 +7,15 @@
     "appellations": {
       "mainName": "Chopi",
       "selfAppellation": "Vacopi",
-      "exonyms": ["Bacopi", "Chopi", "Tschopi", "Txopi", "Copi", "Ba-Chopi"],
+      "exonyms": [
+        "Bacopi",
+        "Chopi",
+        "Tschopi",
+        "Txopi",
+        "Copi",
+        "Ba-Chopi",
+        "Chope (graphie francisee utilisee dans les sources coloniales portugaises)"
+      ],
       "originOfExonyms": "Le nom Chopi (aussi ecrit Bacopi ou Vacopi dans leur propre langue) viendrait de l'utilisation d'arcs et de fleches, adoptee des peuples San avec lesquels ils furent les premiers Bantu a entrer en contact. Certaines sources indiquent que le nom est tres proche du xitsonga, refletant leur parente avec les Thonga. Les orthographes Tschopi et Txopi sont des transcriptions portugaises et allemandes.",
       "whyProblematic": null,
       "contemporaryUsage": "Le nom Chopi est aujourd'hui universel et utilise officiellement au Mozambique. Le terme Vacopi est employe dans la langue interne. La designation Ba-Chopi est une forme bantoue classique avec prefixe de classe.",
@@ -16,19 +24,42 @@
       "historicalRegion": "Province d'Inhambane, principalement district de Zavala, cote sud du Mozambique",
       "currentCountries": ["MOZ"]
     },
-    "ethnicities": ["Chopi"],
+    "ethnicities": [
+      "Chopi",
+      "Chopi du district de Zavala (Quissico) — noyau central de la culture timbila",
+      "Chopi de Bileni (Inhambane) — branche du nord",
+      "Chopi du district de Inharimme (frontiere sud d'Inhambane)",
+      "Chopi de Chidenguele (province de Gaza) — branche septentrionale",
+      "Chopi de Mapai (region du fleuve Limpopo) — ramification meridionale",
+      "Mondlane, Chivambu, Mbande, Mavila, Masingisa, Chirinda, Makwakwa — clans principaux attestes dans les sources historiques",
+      "Chopi de Zavala (Quissico) — noyau central et berceau de la culture timbila",
+      "Chopi d'Inharimme (frontiere meridionale d'Inhambane)",
+      "Clan Mondlane, clan Chivambu, clan Mbande, clan Mavila, clan Masingisa, clan Chirinda, clan Makwakwa — clans attestes par les sources historiques"
+    ],
     "origins": {
       "ancientOrigins": "Les Chopi font partie des premiers peuples Bantu a avoir migre depuis l'Afrique centrale, s'etablissant dans la region entre 100 et 200 apres J.-C. dans des zones couvrant la Tanzanie, le Malawi, la Zambie septentrionale et le Mozambique. Ils sont reputes avoir ete les premiers peuples Bantu a entrer en contact avec les San d'Afrique du Sud-Est, adopter leur arc et fleche, et fusionner certains elements culturels. Ils constituent une branche des premiers Thonga (Tonga) qui formerent diverses colonies en Afrique australe.",
       "formationPeriod": "L'identite Chopi distincte des autres groupes Thonga se consolida entre le XVe et le XVIIe siecle dans la region de Zavala, province d'Inhambane. Le contact avec les explorateurs portugais (XVe-XVIe siecle) et les chocs des invasions nguni au XIXe siecle accentuerent la cohesion identitaire Chopi.",
       "migrationRoutes": [
         "Migration depuis l'Afrique centrale (bassin du lac Tanganyika-Nyasa) vers le Mozambique meridional entre 100 et 200 ap. J.-C.",
         "Expansion graduelle le long de la cote orientale vers la province d'Inhambane",
-        "Groupes dissidents migrant vers l'Afrique du Sud dans les annees 1640 (fondation du royaume de N'wanati sous le roi Gunyule)"
+        "Groupes dissidents migrant vers l'Afrique du Sud dans les annees 1640 (fondation du royaume de N'wanati sous le roi Gunyule)",
+        "Migration bantoue originelle depuis l'Afrique centrale (bassin du Congo) vers le sud-est",
+        "Installation progressive sur la cote meridionale du Mozambique (Inhambane, Gaza)",
+        "Dissemination en 1640 vers l'Afrique du Sud (fondation du royaume N'wanati sous le chef Gunyule)",
+        "Migration bantoue depuis l'Afrique centrale (bassin du Congo) vers le Mozambique meridional",
+        "Dissemination vers l'Afrique du Sud en 1640 (groupe fonde par le chef Gunyule : royaume N'wanati)",
+        "Deplacements internes vers Maputo et autres villes du fait de la guerre civile (1977-1992)"
       ],
       "historicalSettlementZones": [
         "Province d'Inhambane, district de Zavala (centre historique, ville de Quissico)",
         "Zone cotiere entre Chidenguele (province de Gaza) et Inharimme (province d'Inhambane)",
-        "Territoire jusqu'au fleuve Limpopo (Mapai) pour les chefferies maintenues"
+        "Territoire jusqu'au fleuve Limpopo (Mapai) pour les chefferies maintenues",
+        "Province d'Inhambane, district de Zavala (centre : Quissico)",
+        "Province de Gaza, district de Chidenguele",
+        "Cote entre Chidenguele et Inharimme",
+        "Region du fleuve Limpopo (Mapai)",
+        "Bande cotiere entre Chidenguele et Inharimme",
+        "Region du Limpopo (Mapai, extremite meridionale)"
       ],
       "unificationsOrDivisions": "Les Chopi etaient organises en tribus distinctes sous des chefferies independantes. Les principales tribus incluent les Mondlane, Chivambu, Mbande, Mavila, Masingisa, Chirinda, Makwakwa et d'autres. Les invasions nguni des annees 1820 fragmenterent les structures traditionnelles. La chefferie traditionnelle survit encore aujourd'hui a Inhambane, Bileni et jusqu'au territoire de Mapai.",
       "externalInfluences": "Les Portugais etablirent des relations commerciales sur le territoire Chopi des le XVe-XVIe siecle ; le Pere Andre Fernandes (XVIe siecle) fut l'un des premiers Europeens a documenter leur musique. De nombreux Chopi furent enroles dans l'armee portugaise. Les invasions nguni (Mfecane, 1820s) sous Manukosi Soshangane (chef Gaza) soumirent une partie des Chopi. En 1888-1895, le Gaza-Nguni sous Nghunghunyana envahit leur territoire ; une alliance Chopi-Portugaise vainquit finalement Nghunghunyana en 1895. La guerre civile mozambicaine (1977-1992) devastha les orchestres de timbila.",
@@ -44,7 +75,15 @@
     "languages": {
       "mainLanguage": "Chichopi (Chopi)",
       "isoCodes": ["cce"],
-      "dialects": ["Lenge (dialecte possiblement eteint selon Maho, 2009)"],
+      "dialects": [
+        "Lenge (dialecte possiblement eteint selon Maho, 2009)",
+        "Lenge — dialecte potentiellement distinct (signale par Maho 2009 comme possiblement eteint ou en voie d'extinction)",
+        "Chopi du nord (Zavala) — dialecte de reference",
+        "Chopi du sud (Inharimme, Chidenguele) — variante meridionale",
+        "Lenge — dialecte potentiellement distinct ou eteint (Maho 2009)",
+        "Chopi de Zavala (nord) — dialecte principal de reference",
+        "Chopi d'Inharimme-Chidenguele (sud) — variante meridionale"
+      ],
       "vehicularRole": "Le Chichopi (code ISO 639-3 : cce) est une langue Bantu tonale, proche du chiTonga. La Bible complete est disponible en Chopi. De nombreux locuteurs, surtout les jeunes, parlent egalement le portugais (langue officielle du Mozambique) et parfois le chiTonga. Environ 1,1 million de locuteurs natifs (recensement 2017)."
     },
     "culture": {
@@ -101,6 +140,42 @@
         "url": "https://folkways.si.edu/music-from-mozambique-vol-2-chopi-timbila-two-orchestral-performances/world/album/smithsonian",
         "tier": "referenced",
         "notes": "Tier resolved from the domain ruling for folkways.si.edu."
+      },
+      {
+        "title": "UNESCO / Programme Routes de la Soie — Chopi Timbila",
+        "url": "https://en.unesco.org/silkroad/silk-road-themes/intangible-cultural-heritage/chopi-timbila",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of en.unesco.org."
+      },
+      {
+        "title": "UNESCO — Chopi Timbila (patrimoine immateriel)",
+        "url": "https://ich.unesco.org/en/RL/chopi-timbila-00158",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Ethnologue (SIL) — Chopi language (cce)",
+        "url": "https://www.ethnologue.com/language/cce/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Mozambique",
+        "url": "https://www.cia.gov/the-world-factbook/countries/mozambique/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Henri-Alexandre Junod, The Life of a South African Tribe. Neuchatel, 1913",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "UNESCO Archives multimedia — Chopi Timbila (2005 Proclamation)",
+        "url": "https://www.unesco.org/archives/multimedia/document-636",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\"."
       }
     ]
   }

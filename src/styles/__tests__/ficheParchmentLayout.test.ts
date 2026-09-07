@@ -56,6 +56,15 @@ function ruleBody(selector: string): string {
 }
 
 describe("parchment layout — one continuous document", () => {
+  // A patronyme is one corpus token, so `text-wrap` cannot help at 320px.
+  // Without an emergency wrap, Randriamampionona widens the whole document.
+  // @req REQ-147
+  it("keeps a long name inside the fiche head on narrow screens", () => {
+    expect(ruleBody(".afh-parchment-head h1")).toMatch(
+      /overflow-wrap:\s*anywhere/
+    );
+  });
+
   // A grid's default `align-items: stretch` is what tied the autonym's height
   // to the exonym list's. The two fields state different amounts and must be
   // free to be different heights.

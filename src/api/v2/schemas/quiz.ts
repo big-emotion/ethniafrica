@@ -55,8 +55,12 @@ const blankAsUndefined = z
     return trimmed ? trimmed : undefined;
   });
 
+// @req REQ-145
+export const quizLanguageSchema = z.enum(["en", "fr"]).default("fr");
+
 // @req REQ-103
 export const quizSessionQuerySchema = z.object({
+  lang: quizLanguageSchema,
   pays: blankAsUndefined.refine(
     (value) => value === undefined || COUNTRY_ID_PATTERN.test(value),
     { message: "pays must be an ISO 3166-1 alpha-3 country code" }
@@ -87,7 +91,16 @@ export const quizSessionQuerySchema = z.object({
     .default(DEFAULT_QUIZ_SESSION_COUNT),
 });
 
-export type QuizSessionQuery = z.infer<typeof quizSessionQuerySchema>;
+/**
+ * Handler input. Routes provide `lang` after parsing; internal callers may
+ * omit it and receive the same French default as the public API.
+ */
+export type QuizSessionQuery = Omit<
+  z.infer<typeof quizSessionQuerySchema>,
+  "lang"
+> & {
+  lang?: z.infer<typeof quizLanguageSchema>;
+};
 
 // @req REQ-103
 export const quizScopeOptionSchema = z.object({

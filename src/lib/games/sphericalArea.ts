@@ -39,19 +39,31 @@ export function ringArea(ring: Ring): number {
 }
 
 /**
+ * The latitude a ring is read at: its centroid's, clamped to ±85° — the
+ * latitude beyond which Mercator is conventionally cut, since the projection
+ * diverges at the poles and a game must not divide by zero.
+ *
+ * Exported because the inflation round states it to the reader. A factor of
+ * 1,5 against a factor of 1,0 is two numbers; « autour de 34° N » against
+ * « autour de 0° » is the reason for them, and the round exists to teach the
+ * reason. Deriving it a second time in the wording would let the sentence
+ * disagree with the answer it explains.
+ */
+// @req REQ-120
+export function mercatorLatitude(ring: Ring): number {
+  return Math.max(-85, Math.min(85, ringCentroid(ring).lat));
+}
+
+/**
  * How many times its true area a ring occupies on a Mercator map, taken at
  * the latitude of its centroid: the projection scales east-west by sec(lat)
  * and north-south by the same factor, so area grows as sec²(lat).
- *
- * Clamped to ±85°, the latitude beyond which Mercator is conventionally cut
- * — the factor diverges at the poles and a game must not divide by zero.
  */
 // @req REQ-120
 export function mercatorInflation(ring: Ring): number {
   if (ring.length < 3) return 1;
 
-  const latitude = Math.max(-85, Math.min(85, ringCentroid(ring).lat));
-  const cosine = Math.cos(toRadians(latitude));
+  const cosine = Math.cos(toRadians(mercatorLatitude(ring)));
   return 1 / (cosine * cosine);
 }
 

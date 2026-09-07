@@ -78,7 +78,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Lopes » associées au Cap-Vert, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Lopes à une autre fiche PAT_* existante."
+      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Lopes » associées au Cap-Vert, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Lopes à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

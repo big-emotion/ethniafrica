@@ -68,7 +68,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "La recherche web combinant « Bacar », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Bacar Surname Origin, Meaning & Last Name History » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Bacar à une autre fiche PAT_* existante."
+      "reason": "La recherche web combinant « Bacar », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Bacar Surname Origin, Meaning & Last Name History » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Bacar à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

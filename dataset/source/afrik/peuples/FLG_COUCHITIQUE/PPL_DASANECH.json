@@ -16,7 +16,13 @@
         "Reshiat",
         "Dassanetch",
         "Dasanech",
-        "Shangilla"
+        "Shangilla",
+        "Dassanech",
+        "Daasanach",
+        "Dasenech",
+        "Dassenech",
+        "Galeb",
+        "Gelubba"
       ],
       "originOfExonyms": "Geleb et Geleba sont les noms utilises par les Ethiopiens. Marille et Merille sont les noms utilises par les Kenyans. Reshiat est un terme exonyme d'origine incertaine. Shangilla est un terme generique parfois applique de maniere depreciative aux peuples du Rift.",
       "whyProblematic": "Le terme Shangilla est considere pejoratif. Marille et Geleb sont des exonymes ne reflétant pas le nom propre du groupe.",
@@ -34,7 +40,8 @@
       "Randal (partie nord-ouest du territoire)",
       "Elele (partie nord-ouest du territoire)",
       "Inkoria (rive nord-est du lac Turkana, cote kenyane, forme avec Inkabelo le Shiir)",
-      "Ngaritch (au nord d'Inkoria)"
+      "Ngaritch (au nord d'Inkoria)",
+      "Dassanech"
     ],
     "origins": {
       "ancientOrigins": "Les analyses genetiques indiquent que les Daasanach sont plus proches des populations nilo-sahariennes que de la plupart des populations couchitiques et semitiques d'Ethiopie. Ils partagent des origines communes avec les Pokot (Nilotes). Au XIXe siecle, leurs ancetres nilotiques ont commence des migrations separees, une branche se dirigeant vers le sud dans la region des Grands Lacs africains, l'autre s'etablissant dans le sud de l'Ethiopie. Ces premiers Nilotes Daasanach ont adopte une langue couchitique afro-asiatique au contact d'une population cushitique.",
@@ -43,13 +50,20 @@
         "Migration ancestrale nilotique vers le sud de l'Ethiopie au XIXe siecle",
         "L'oral tradition des Inkabelo et Inkoria (Shiir) indique une origine pres de la riviere Kerio (sud-ouest du lac Turkana) avant d'etre repousses vers le nord par les Turkana ou Kuoro au debut du XIXe siecle",
         "Les Randal et Kuoro seraient issus des Rendille et Samburu suite a des catastrophes naturelles a la fin du XIXe siecle",
-        "Migrations contemporaines vers les bords de l'Omo en raison des tensions sur les terres et du changement climatique"
+        "Migrations contemporaines vers les bords de l'Omo en raison des tensions sur les terres et du changement climatique",
+        "Migration nilotique depuis l'est de l'Afrique vers le sud de l'Éthiopie au XIXe siècle",
+        "Concentration dans le delta de l'Omo au nord du lac Turkana",
+        "Présence transfrontalière au nord du Kenya (Ileret, comté de Turkana) et au Soudan du Sud (Triangle de l'Ilemi)"
       ],
       "historicalSettlementZones": [
         "Zone Debub Omo (Ethiopie meridionale), principal foyer traditionnel adjacent au lac Turkana",
         "Delta de l'Omo, terres de la rive nord du lac Turkana",
         "Zones frontieres du Kenya (triangle d'Ilemi) et du Soudan du Sud",
-        "Rive nord-est du lac Turkana (Kenya, zone Inkoria)"
+        "Rive nord-est du lac Turkana (Kenya, zone Inkoria)",
+        "Delta du fleuve Omo, Zone du Debub Omo, Région d'Éthiopie du Sud",
+        "Rives nord du lac Turkana, Kenya (site d'Ileret)",
+        "Triangle de l'Ilemi, Soudan du Sud",
+        "Rive orientale de l'Omo, entre Omorate et le lac Turkana"
       ],
       "unificationsOrDivisions": "Les Daasanach sont organises en huit sections territoriales (emeto ou en) : Inkabelo, Oro, Kuoro, Riele, Randal, Elele, Inkoria et Ngaritch. Ces sections sont autonomes pour la gestion des ressources, les rituels religieux, les actions offensives et defensives et la resolution des conflits. Parallelement, le groupe est divise en huit clans exogames non territoriaux (turo) : Turinyerim, Fargar, Galbur, Turat, Ili, Mur, Edze et Tiyeme.",
       "externalInfluences": "Integration dans l'Empire ethiopien a la fin du XIXe siecle. Sous les administrateurs ethiopiens et italiens des annees 1900-1941, les Daasanach ont ete organises en unites de razzia. Introduction des fusils au debut du XXe siecle par des marchands ethiopiens. Proliferation des armes automatiques dans les annees 1970 suite aux conflits en Ouganda, Soudan, Somalie et Ethiopie. Construction du barrage Gibe III sur l'Omo qui perturbe les crues dont depend l'agriculture. Explorations petrolieres et expropriations foncieres recentes.",
@@ -141,6 +155,18 @@
         "url": "https://beginnorthadventures.com/daasanach-tribe/",
         "tier": "unverified",
         "notes": "Tier resolved from the domain ruling for beginnorthadventures.com."
+      },
+      {
+        "title": "Daasanach – Glottolog 5.2",
+        "url": "https://glottolog.org/resource/languoid/id/daas1238",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Daasanach of Ethiopia – Horn of Africa Evangelical Mission",
+        "url": "https://hornofafrica.org/wp-content/uploads/2019/12/Daasanach.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for hornofafrica.org."
       }
     ]
   }

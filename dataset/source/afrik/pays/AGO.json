@@ -1,6 +1,7 @@
 {
   "id": "AGO",
   "nameFr": "Angola",
+  "nameEn": "Angola",
   "nameOfficial": "République d'Angola (República de Angola)",
   "summary": "L'Angola est un pays d'Afrique australe façonné par les royaumes Kongo, Ndongo et Matamba, puis par quatre siècles de colonisation portugaise. Son nom vient de « ngola », le titre porté par les rois du Ndongo : les Portugais ont fait un pays d'un titre royal. Sa culture croise traditions bantoues, khoïsan et lusophones.",
   "etymology": "Le nom \"Angola\" dérive de \"Ngola\", titre des rois du royaume Ndongo. Les Portugais ont utilisé ce terme pour désigner la région qu'ils colonisaient à partir du XVIe siècle. \"Ngola\" était le titre royal du souverain du royaume Ndongo, l'un des royaumes précoloniaux les plus puissants de la région.",
@@ -21,6 +22,13 @@
       {
         "name": "Royaume Kongo",
         "period": "XIVe siècle - XVIIe siècle (apogée), déclin progressif jusqu'au XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1301,
+          "endYear": 1900,
+          "precision": "approximate",
+          "datingNote": "Le libellé couvre plusieurs périodes distinctes ; les bornes retenues encadrent l'ensemble."
+        },
         "dominantPeoples": ["Kongo (Bakongo)"],
         "politicalCenters": [
           "Mbanza Kongo (capitale historique",
@@ -32,6 +40,12 @@
       {
         "name": "Royaume Ndongo",
         "period": "XVe siècle - XVIIe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1401,
+          "endYear": 1700,
+          "precision": "century"
+        },
         "dominantPeoples": ["Ambundu (Mbundu)"],
         "politicalCenters": ["Kabasa (capitale)", "région de Luanda"],
         "historicalRole": "Royaume Ndongo puissant, résistance à la colonisation portugaise sous la reine Nzinga (Njinga Mbande, 1583-1663), guerre contre les Portugais, alliance avec le royaume Matamba, source du nom \"Angola\" (dérivé de \"Ngola\", titre royal)."
@@ -39,6 +53,12 @@
       {
         "name": "Royaume Matamba",
         "period": "XVIe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1501,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Ambundu", "populations locales"],
         "politicalCenters": ["Matamba (capitale)"],
         "historicalRole": "Royaume Matamba, refuge de la reine Nzinga après la chute du Ndongo, résistance à la colonisation portugaise, maintien de l'indépendance jusqu'au XIXe siècle."
@@ -46,6 +66,7 @@
       {
         "name": "Royaumes Ovimbundu",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Ovimbundu"],
         "politicalCenters": [
           "Hauts plateaux du centre-sud de l'Angola",
@@ -56,6 +77,12 @@
       {
         "name": "Empire Lunda",
         "period": "XVIe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1501,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Lunda", "Tshokwe (Chokwe)"],
         "politicalCenters": [
           "Mwata Yamvo (capitale)",
@@ -67,6 +94,12 @@
       {
         "name": "Colónia de Angola",
         "period": "1575 - 1975",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1575,
+          "endYear": 1975,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples angolais sous domination portugaise"
         ],
@@ -170,7 +203,7 @@
           "à éviter)",
           "Khoisan (terme académique)"
         ],
-        "peopleId": "PPL_SAN",
+        "peopleId": null,
         "mainRegion": "Sud de l'Angola, zones arides et semi-arides",
         "languages": ["Langues khoïsan (plusieurs langues)", "portugais"],
         "languageFamily": "FLG_KHOE",

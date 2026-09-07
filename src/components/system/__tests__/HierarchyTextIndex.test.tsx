@@ -17,6 +17,17 @@ const componentSourcePath = path.resolve(
 );
 
 describe("HierarchyTextIndex", () => {
+  // @req REQ-145
+  it("localizes the classification vocabulary in English", () => {
+    render(<HierarchyTextIndex language="en" nodes={hierarchyFixture} />);
+
+    expect(screen.getByRole("list", { name: "Classification" })).toBeVisible();
+    expect(screen.getByText("2 peoples")).toBeVisible();
+    expect(
+      screen.getByText("peoples without a referenced language (2)")
+    ).toBeVisible();
+  });
+
   // @req REQ-047
   it("renders a semantic nested ol/li structure with a real deep link per node", () => {
     render(<HierarchyTextIndex nodes={hierarchyFixture} />);

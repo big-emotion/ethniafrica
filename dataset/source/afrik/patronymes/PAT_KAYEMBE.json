@@ -60,7 +60,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Kayembe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le rapport « Scramble for the Congo: Anatomy of an Ugly War » et son annexe prosopographique sur les forces armées congolaises, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Kayembe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de le rapport « Scramble for the Congo: Anatomy of an Ugly War » et son annexe prosopographique sur les forces armées congolaises, n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant ce nom à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

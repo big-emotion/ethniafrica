@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { formatDistanceToNowStrict } from "date-fns";
-import { fr } from "date-fns/locale";
+import { enGB, fr } from "date-fns/locale";
 import { ChevronDown, RotateCcw } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -27,7 +27,11 @@ import {
   type PublicFlagStatus,
   type PublicFlagTargetType,
 } from "@/lib/supabase/queries/flags/publicFlagsPageQuery";
-import { getTranslation } from "@/lib/translations";
+import { publicFlagsCopy } from "@/lib/i18n/copy/publicFlags";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { formatDate } from "@/lib/languageTag";
+import { getLanguageFromRoute, getStaticPageRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
 
 interface PublicFlagsQueueProps {
   initialPage: PublicFlagsPage;
@@ -39,48 +43,29 @@ interface FilterOption<T extends string> {
   label: string;
 }
 
-const copy = getTranslation("fr").publicFlags;
-
-const STATUS_OPTIONS: FilterOption<PublicFlagStatus>[] = [
-  { value: "open", label: copy.statuses.open },
-  { value: "under_review", label: copy.statuses.under_review },
-  { value: "accepted", label: copy.statuses.accepted },
-  { value: "rejected", label: copy.statuses.rejected },
-  { value: "withdrawn", label: copy.statuses.withdrawn },
-  { value: "duplicate", label: copy.statuses.duplicate },
-];
-
-const KIND_OPTIONS: FilterOption<PublicFlagKind>[] = [
-  { value: "inaccurate", label: copy.kinds.inaccurate },
-  { value: "missing-source", label: copy.kinds["missing-source"] },
-  { value: "broken-url", label: copy.kinds["broken-url"] },
-  { value: "offensive", label: copy.kinds.offensive },
-  {
-    value: "correction-proposal",
-    label: copy.kinds["correction-proposal"],
-  },
-  { value: "other", label: copy.kinds.other },
-];
-
-const TARGET_OPTIONS: FilterOption<PublicFlagTargetType>[] = [
-  { value: "assertion", label: copy.targets.assertion },
-  { value: "source", label: copy.targets.source },
-  { value: "fiche_section", label: copy.targets.fiche_section },
-  { value: "classification", label: copy.targets.classification },
-  { value: "general", label: copy.targets.general },
-];
-
-const KIND_LABELS = Object.fromEntries(
-  KIND_OPTIONS.map(({ value, label }) => [value, label])
-) as Record<PublicFlagKind, string>;
-
-const TARGET_LABELS = Object.fromEntries(
-  TARGET_OPTIONS.map(({ value, label }) => [value, label])
-) as Record<PublicFlagTargetType, string>;
-
-const STATUS_VALUES = new Set(STATUS_OPTIONS.map(({ value }) => value));
-const KIND_VALUES = new Set(KIND_OPTIONS.map(({ value }) => value));
-const TARGET_VALUES = new Set(TARGET_OPTIONS.map(({ value }) => value));
+const STATUS_VALUES = new Set<PublicFlagStatus>([
+  "open",
+  "under_review",
+  "accepted",
+  "rejected",
+  "withdrawn",
+  "duplicate",
+]);
+const KIND_VALUES = new Set<PublicFlagKind>([
+  "inaccurate",
+  "missing-source",
+  "broken-url",
+  "offensive",
+  "correction-proposal",
+  "other",
+]);
+const TARGET_VALUES = new Set<PublicFlagTargetType>([
+  "assertion",
+  "source",
+  "fiche_section",
+  "classification",
+  "general",
+]);
 
 function isPublicFlagStatus(value: string): value is PublicFlagStatus {
   return STATUS_VALUES.has(value as PublicFlagStatus);
@@ -129,9 +114,12 @@ function truncateReason(reason: string): string {
     : `${codePoints.slice(0, 119).join("")}…`;
 }
 
-function getContributorName(contributorName: string): string {
+function getContributorName(
+  contributorName: string,
+  anonymousLabel: string
+): string {
   if (!contributorName.trim()) {
-    return copy.anonymous;
+    return anonymousLabel;
   }
 
   return contributorName;
@@ -141,20 +129,14 @@ function getTargetName(item: PublicFlagListItem): string {
   return item.target.label;
 }
 
-const ENTITY_LABELS: Record<string, string> = {
-  people: copy.entities.people,
-  country: copy.entities.country,
-  language: copy.entities.language,
-  language_family: copy.entities.language_family,
-  source: copy.entities.source,
-  fiche_section: copy.entities.fiche_section,
-  classification: copy.entities.classification,
-};
-
-function getEntityLabel(item: PublicFlagListItem): string {
+function getEntityLabel(
+  item: PublicFlagListItem,
+  entityLabels: Record<string, string>,
+  targetLabels: Record<PublicFlagTargetType, string>
+): string {
   return (
-    (item.target.entityType && ENTITY_LABELS[item.target.entityType]) ??
-    TARGET_LABELS[item.target.type]
+    (item.target.entityType && entityLabels[item.target.entityType]) ??
+    targetLabels[item.target.type]
   );
 }
 
@@ -211,14 +193,21 @@ function FilterMenu<T extends string>({
   );
 }
 
-function PublicFlagRow({ item }: { item: PublicFlagListItem }) {
+function PublicFlagRow({
+  item,
+  language,
+}: {
+  item: PublicFlagListItem;
+  language: Language;
+}) {
   const targetName = getTargetName(item);
   const reason = item.reasonText?.trim();
+  const copy = publicFlagsCopy[language];
 
   return (
     <article className="group border-b border-afh-border bg-afh-surface first:border-t">
       <Link
-        href={`/fr/signalements/${item.publicSlug}`}
+        href={`${getStaticPageRoute(language, "reports")}/${item.publicSlug}`}
         className="block min-w-0 outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-afh-earth md:grid md:grid-cols-[minmax(0,1fr)_13rem] xl:grid-cols-[minmax(0,1fr)_15rem] motion-reduce:transition-none"
       >
         <div className="flex min-w-0 items-start gap-3 px-4 py-5 md:px-6 md:py-6 xl:px-8">
@@ -229,9 +218,9 @@ function PublicFlagRow({ item }: { item: PublicFlagListItem }) {
           <div className="min-w-0 space-y-3">
             <div className="space-y-1">
               <p className="font-afh text-afh-caption font-bold uppercase tracking-[0.14em] text-afh-earth">
-                <span>{TARGET_LABELS[item.target.type]}</span>
+                <span>{copy.targets[item.target.type]}</span>
                 <span aria-hidden="true"> · </span>
-                <span>{getEntityLabel(item)}</span>
+                <span>{getEntityLabel(item, copy.entities, copy.targets)}</span>
               </p>
               <h2 className="break-words font-afh-display text-afh-h3 font-bold leading-tight text-afh-text group-hover:text-afh-terracotta">
                 {targetName}
@@ -254,22 +243,24 @@ function PublicFlagRow({ item }: { item: PublicFlagListItem }) {
 
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-afh text-afh-caption text-afh-text-soft">
               <span className="font-semibold text-afh-text">
-                {KIND_LABELS[item.kind]}
+                {copy.kinds[item.kind]}
               </span>
               <span aria-hidden="true">·</span>
-              <span>{getContributorName(item.contributorName)}</span>
+              <span>
+                {getContributorName(item.contributorName, copy.anonymous)}
+              </span>
               <span aria-hidden="true">·</span>
               <time
                 dateTime={item.createdAt}
                 suppressHydrationWarning
-                title={new Intl.DateTimeFormat("fr-FR", {
+                title={formatDate(language, new Date(item.createdAt), {
                   dateStyle: "long",
                   timeStyle: "short",
-                }).format(new Date(item.createdAt))}
+                })}
               >
                 {formatDistanceToNowStrict(new Date(item.createdAt), {
                   addSuffix: true,
-                  locale: fr,
+                  locale: language === "en" ? enGB : fr,
                 })}
               </time>
             </div>
@@ -277,7 +268,7 @@ function PublicFlagRow({ item }: { item: PublicFlagListItem }) {
         </div>
 
         <div className="flex items-center border-t border-afh-border bg-afh-bg px-4 py-3 md:border-l md:border-t-0 md:px-5">
-          <FlagPublicStatus status={item.status} />
+          <FlagPublicStatus status={item.status} language={language} />
         </div>
       </Link>
     </article>
@@ -291,6 +282,21 @@ export function PublicFlagsQueue({
 }: PublicFlagsQueueProps) {
   const router = useRouter();
   const pathname = usePathname();
+  // The queue's own address says which locale its permalinks belong to.
+  const language = getLanguageFromRoute(pathname) ?? FALLBACK_LOCALE;
+  const copy = publicFlagsCopy[language];
+  const statusOptions: FilterOption<PublicFlagStatus>[] = Array.from(
+    STATUS_VALUES,
+    (value) => ({ value, label: copy.statuses[value] })
+  );
+  const kindOptions: FilterOption<PublicFlagKind>[] = Array.from(
+    KIND_VALUES,
+    (value) => ({ value, label: copy.kinds[value] })
+  );
+  const targetOptions: FilterOption<PublicFlagTargetType>[] = Array.from(
+    TARGET_VALUES,
+    (value) => ({ value, label: copy.targets[value] })
+  );
   const sentinelRef = useRef<HTMLDivElement>(null);
   const latestSearchParamsRef = useRef(new URLSearchParams());
   const [filters, setFilters] = useState<PublicFlagFilters>(() =>
@@ -395,7 +401,7 @@ export function PublicFlagsQueue({
         <div className="grid gap-3 md:grid-cols-3">
           <FilterMenu
             label={copy.filters.statuses}
-            options={STATUS_OPTIONS}
+            options={statusOptions}
             selected={filters.statuses ?? []}
             onCheckedChange={(value, checked) =>
               updateFilter("status", value, checked)
@@ -403,7 +409,7 @@ export function PublicFlagsQueue({
           />
           <FilterMenu
             label={copy.filters.kinds}
-            options={KIND_OPTIONS}
+            options={kindOptions}
             selected={filters.kinds ?? []}
             onCheckedChange={(value, checked) =>
               updateFilter("kind", value, checked)
@@ -411,7 +417,7 @@ export function PublicFlagsQueue({
           />
           <FilterMenu
             label={copy.filters.targets}
-            options={TARGET_OPTIONS}
+            options={targetOptions}
             selected={filters.targetTypes ?? []}
             onCheckedChange={(value, checked) =>
               updateFilter("target", value, checked)
@@ -437,7 +443,7 @@ export function PublicFlagsQueue({
       ) : items.length > 0 ? (
         <div aria-live="polite">
           {items.map((item) => (
-            <PublicFlagRow key={item.id} item={item} />
+            <PublicFlagRow key={item.id} item={item} language={language} />
           ))}
         </div>
       ) : (

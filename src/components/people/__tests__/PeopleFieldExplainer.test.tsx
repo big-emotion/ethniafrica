@@ -9,6 +9,18 @@ const distribution = [
 ];
 
 describe("PeopleFieldExplainer (REQ-116)", () => {
+  // @req REQ-145
+  it("explains the map in English", () => {
+    render(<PeopleFieldExplainer distribution={distribution} language="en" />);
+    expect(
+      screen.getByText(
+        /no corpus source states where this people's presence ends/i
+      )
+    ).toBeVisible();
+    expect(screen.getByText(/2 populations by country/i)).toBeVisible();
+    expect(screen.getByText(/Decreasing density, no border/i)).toBeVisible();
+  });
+
   // This section is the only thing standing between the halo and being read
   // as a fuzzy territory. Without it the encoding is just a soft edge.
   // @req REQ-116

@@ -42,7 +42,7 @@
     },
     "languages": {
       "mainLanguage": "Otetela (Kitetela)",
-      "isoCodes": ["tet"],
+      "isoCodes": ["tll"],
       "dialects": ["Otetela", "Kitetela", "Kikitatela", "Sungu"],
       "vehicularRole": "L'otetela est la langue vernaculaire principale des provinces du Sankuru et du nord du Kasai-Oriental. Il est aussi utilise dans certaines zones du Maniema. Le swahili et le lingala sont utilises comme langues vehiculaires regionales plus larges en RDC."
     },
@@ -99,6 +99,12 @@
         "url": "https://afriprov.tangaza.ac.ke/wp-content/uploads/2008/11/ebooks_tetela.pdf",
         "tier": "referenced",
         "notes": "Tier resolved from the domain ruling for afriprov.tangaza.ac.ke."
+      },
+      {
+        "title": "Glottolog 5.3 — Tetela (tete1250)",
+        "url": "https://glottolog.org/resource/languoid/id/tete1250",
+        "tier": "official",
+        "notes": "Glottolog direct languoid record establishing the Tetela name, ISO 639-3 code tll, glottocode tete1250, and Democratic Republic of the Congo country association."
       }
     ]
   }

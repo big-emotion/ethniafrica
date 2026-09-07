@@ -12,9 +12,9 @@ name: Apply Migrations — Recette
 # ahead of the running preview until someone asks for a build, which is the safe
 # ordering of the two and the one the two-step rollout rule already assumes.
 #
-# Production stays deliberately manual — recette first, verify on the recette
-# application, then production — so this workflow never touches the production
-# project.
+# Production is applied by the `migrate` job of deploy-production.yml on a
+# published Release — recette first, verify on the recette application, then
+# production — so this workflow never touches the production stack.
 
 on:
   push:

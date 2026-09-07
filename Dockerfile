@@ -59,7 +59,12 @@ EXPOSE 3000
 
 # Traefik decides the container is healthy from this, so a failing build no longer
 # silently takes over the router.
+#
+# The root, not a locale: `/` answers 307 to whichever locale is the default
+# (REQ-140) and Node's fetch follows it, so the probe lands on the default home
+# without naming it. deploy-production.yml runs the same string after a rollout;
+# scripts/__tests__/deployHealthProbe.test.ts keeps the two identical.
 HEALTHCHECK --interval=30s --timeout=5s --start-period=40s --retries=3 \
-  CMD node -e "fetch('http://127.0.0.1:3000/fr').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+  CMD node -e "fetch('http://127.0.0.1:3000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
 
 CMD ["node", "server.js"]

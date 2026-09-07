@@ -1,5 +1,6 @@
 import type { PatronymeAggregate } from "@/api/v2/services/patronymes";
 import type {
+  PatronymeAllianceSummary,
   PatronymeBearerSummary,
   PatronymeCountrySummary,
   PatronymePeopleSummary,
@@ -52,6 +53,20 @@ function serializeBearer(
   };
 }
 
+/**
+ * Alliances keep the corpus's order: a curator lists the best-attested pact
+ * first, and that ranking is editorial, not alphabetical.
+ */
+function serializeAlliance(
+  alliance: PatronymeAllianceSummary
+): PatronymeAllianceSummary {
+  return {
+    targetId: alliance.targetId,
+    targetNameMain: alliance.targetNameMain,
+    allianceType: alliance.allianceType,
+  };
+}
+
 // @req REQ-133
 export function serializePatronyme(
   aggregate: PatronymeAggregate
@@ -67,5 +82,6 @@ export function serializePatronyme(
       compareCountries
     ),
     bearers: [...aggregate.bearers].sort(compareBearers).map(serializeBearer),
+    alliances: aggregate.alliances.map(serializeAlliance),
   };
 }

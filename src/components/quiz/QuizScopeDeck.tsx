@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 export interface QuizScopeDeckItem {
   id: string;
   labelFr: string;
+  playable?: boolean;
   /** The themes this track can fill. Empty means the card only ever navigates. */
   playableThemeIds: string[];
 }
@@ -36,6 +37,7 @@ export interface QuizScopeDeckProps {
   panelHintFr: string;
   wholeTrackLabelFr: string;
   closeLabelFr: string;
+  unavailableHint?: string;
   className?: string;
 }
 
@@ -69,6 +71,7 @@ export const QuizScopeDeck = ({
   panelHintFr,
   wholeTrackLabelFr,
   closeLabelFr,
+  unavailableHint,
   className,
 }: QuizScopeDeckProps) => {
   const domId = useId();
@@ -123,6 +126,8 @@ export const QuizScopeDeck = ({
             <QuizTrackCard
               href={trackHref(item.id)}
               labelFr={item.labelFr}
+              available={item.playable !== false}
+              unavailableHint={unavailableHint}
               testId={`quiz-scope-country-${item.id}`}
               linkProps={
                 offered.length === 0

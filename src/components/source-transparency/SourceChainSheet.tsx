@@ -12,14 +12,13 @@ import Link from "next/link";
 
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import { cn } from "@/lib/utils";
+import { useRouteLanguage } from "@/hooks/use-language";
+import { formatDate } from "@/lib/languageTag";
 import { getSourceRoute } from "@/lib/routing";
-import {
-  SOURCE_TIERS,
-  SOURCE_TIER_LABELS_FR,
-  sourceStandingLabelFr,
-  toSourceTier,
-  type SourceTier,
-} from "@/types/sources";
+import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
+import type { Language } from "@/types/shared";
+import { SOURCE_TIERS, toSourceTier, type SourceTier } from "@/types/sources";
+import { sourceTransparencyCopy } from "@/lib/i18n/copy/sourceTransparency";
 
 /* -------------------------------------------------------------------------- */
 /*  Types                                                                      */
@@ -72,6 +71,7 @@ export type PositionGroup = {
 };
 
 export type SourceChainSheetProps = {
+  language?: Language;
   open: boolean;
   onOpenChange: (open: boolean) => void;
   assertion: Assertion;
@@ -93,8 +93,6 @@ export type SourceChainSheetProps = {
 /* -------------------------------------------------------------------------- */
 /*  Constants                                                                  */
 /* -------------------------------------------------------------------------- */
-
-const TIER_LABELS = SOURCE_TIER_LABELS_FR;
 
 /**
  * Most authoritative first — the reading order of the groups.
@@ -267,17 +265,13 @@ export function safeUrl(raw: string | undefined | null): string | null {
   }
 }
 
-const FR_DATE_FORMATTER = new Intl.DateTimeFormat("fr-FR", {
-  dateStyle: "long",
-});
-
 /**
- * Formats an ISO date (YYYY-MM-DD) as a long French date. Uses a TZ-stable
- * parser to avoid off-by-one errors on date-only inputs. Returns the raw
- * input on parse failure.
+ * Formats an ISO date (YYYY-MM-DD) as a long date in the reader's locale.
+ * Uses a TZ-stable parser to avoid off-by-one errors on date-only inputs.
+ * Returns the raw input on parse failure.
  */
 // @req REQ-008
-export function formatBrokenDate(iso: string): string {
+export function formatBrokenDate(language: Language, iso: string): string {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
   if (!match) return iso;
   const [, yearStr, monthStr, dayStr] = match;
@@ -286,14 +280,21 @@ export function formatBrokenDate(iso: string): string {
   const day = Number(dayStr);
   const date = new Date(year, month - 1, day);
   if (Number.isNaN(date.getTime())) return iso;
-  return FR_DATE_FORMATTER.format(date);
+  return formatDate(language, date);
 }
 
 /* -------------------------------------------------------------------------- */
 /*  Sub-components                                                             */
 /* -------------------------------------------------------------------------- */
 
-function SourceItem({ source }: { source: Source }) {
+function SourceItem({
+  language,
+  source,
+}: {
+  language: Language;
+  source: Source;
+}) {
+  const copy = sourceTransparencyCopy[language].sourceChain;
   const isBroken = Boolean(source.brokenAt);
   const sanitizedUrl = safeUrl(source.url);
   const renderAsLink = !isBroken && sanitizedUrl !== null;
@@ -323,7 +324,7 @@ function SourceItem({ source }: { source: Source }) {
           data-testid={`source-tier-${source.id}`}
           className="shrink-0 rounded-full bg-[var(--afh-muted,var(--country-muted,#f3f4f6))] px-2 py-0.5 text-afh-caption font-medium text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]"
         >
-          {sourceStandingLabelFr(source.tier)}
+          {sourceStandingLabel(source.tier, language)}
         </span>
       </div>
       <p className="text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
@@ -334,12 +335,12 @@ function SourceItem({ source }: { source: Source }) {
           one goes to what the corpus knows about it. */}
       <p>
         <Link
-          href={getSourceRoute("fr", source.id)}
+          href={getSourceRoute(language, source.id)}
           prefetch={false}
           data-testid={`source-directory-${source.id}`}
           className="inline-block text-afh-caption underline underline-offset-2"
         >
-          Voir dans la bibliographie
+          {copy.viewInBibliography}
         </Link>
       </p>
       {source.url ? (
@@ -371,17 +372,18 @@ function SourceItem({ source }: { source: Source }) {
           data-testid={`source-broken-badge-${source.id}`}
           className="inline-flex items-center rounded-full bg-[var(--afh-warn-bg,#fef3c7)] px-2 py-0.5 text-afh-caption font-medium text-[var(--afh-warn-fg,#92400e)]"
         >
-          lien non résolu — signalé le {formatBrokenDate(source.brokenAt)}
+          {copy.brokenLink(formatBrokenDate(language, source.brokenAt))}
         </span>
       ) : null}
       <div data-testid={`source-flag-target-${source.id}`} className="pt-1">
         <FlagTarget
+          language={language}
           target={{
             type: "source",
             id: source.id,
             snapshotQuote: source.citation,
           }}
-          triggerLabel="Signaler cette source"
+          triggerLabel={copy.reportSource}
           className="w-auto text-afh-caption"
         />
       </div>
@@ -390,9 +392,11 @@ function SourceItem({ source }: { source: Source }) {
 }
 
 function TierGroup({
+  language,
   tier,
   sources,
 }: {
+  language: Language;
   tier: SourceStanding;
   sources: Source[];
 }) {
@@ -400,23 +404,34 @@ function TierGroup({
   return (
     <div data-testid={`tier-group-${tier}`} className="space-y-2">
       <h4 className="text-afh-eyebrow font-semibold uppercase tracking-wide text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
-        {sourceStandingLabelFr(tier)}
+        {sourceStandingLabel(tier, language)}
       </h4>
       <ul className="space-y-2">
         {sources.map((s) => (
-          <SourceItem key={s.id} source={s} />
+          <SourceItem key={s.id} language={language} source={s} />
         ))}
       </ul>
     </div>
   );
 }
 
-function SourceList({ sources }: { sources: Source[] }) {
+function SourceList({
+  language,
+  sources,
+}: {
+  language: Language;
+  sources: Source[];
+}) {
   const grouped = groupByTier(sources);
   return (
     <div className="space-y-4">
       {TIER_ORDER.map((tier) => (
-        <TierGroup key={tier} tier={tier} sources={grouped[tier]} />
+        <TierGroup
+          key={tier}
+          language={language}
+          tier={tier}
+          sources={grouped[tier]}
+        />
       ))}
     </div>
   );
@@ -427,6 +442,7 @@ function SourceList({ sources }: { sources: Source[] }) {
 /* -------------------------------------------------------------------------- */
 
 const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
+  language: languageOverride,
   open,
   onOpenChange,
   assertion,
@@ -438,6 +454,11 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
 }) => {
   const variant = useSheetVariant();
   const reducedMotion = usePrefersReducedMotion();
+  // The sheet opens from a chip on any fiche surface, from the quiz and from
+  // the relations list; none of those hand it a locale, so it reads the route.
+  const routeLanguage = useRouteLanguage();
+  const language = languageOverride ?? routeLanguage;
+  const copy = sourceTransparencyCopy[language].sourceChain;
   useUrlAnchorSync(open, anchorId, onOpenChange);
 
   // "Cite this assertion" appears after a 4 s dwell.
@@ -478,10 +499,9 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
         data-variant={variant}
       >
         {/* Visually hidden title/description for radix a11y */}
-        <SheetTitle className="sr-only">Chaîne des sources</SheetTitle>
+        <SheetTitle className="sr-only">{copy.title}</SheetTitle>
         <SheetDescription className="sr-only">
-          Détails de l&apos;assertion, niveau de confiance et sources
-          vérifiables.
+          {copy.description}
         </SheetDescription>
 
         {/* 1. Assertion */}
@@ -497,7 +517,7 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
           </h3>
           {assertion.position ? (
             <p className="mt-1 text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
-              Position : {assertion.position}
+              {copy.position} : {assertion.position}
             </p>
           ) : null}
         </section>
@@ -509,19 +529,17 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
         >
           <div className="flex items-baseline justify-between">
             <span className="text-afh-eyebrow font-semibold uppercase tracking-wide text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
-              Niveau de confiance
+              {copy.confidence}
             </span>
             <span className="text-afh-h3 font-semibold text-[var(--afh-fg,var(--country-fg,#111827))]">
               {Math.round(assertion.confidenceScore * 100)}%
             </span>
           </div>
           <p className="mt-1 text-afh-caption text-[var(--afh-fg-muted,var(--country-fg-muted,#6b7280))]">
-            Calculé à partir de {assertion.sourceCount} source
-            {assertion.sourceCount > 1 ? "s" : ""}
-            {assertion.lastHumanAuditAt
-              ? ` · dernier audit humain le ${assertion.lastHumanAuditAt}`
-              : " · jamais audité par un humain"}
-            .
+            {copy.confidenceSummary(
+              assertion.sourceCount,
+              assertion.lastHumanAuditAt
+            )}
           </p>
         </section>
 
@@ -532,15 +550,14 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
             role="status"
             className="rounded-md border border-[var(--afh-warn-fg,#92400e)]/30 bg-[var(--afh-warn-bg,#fef3c7)] p-3 text-afh-small text-[var(--afh-warn-fg,#92400e)]"
           >
-            {openFlagCount} signalement{openFlagCount > 1 ? "s" : ""} ouvert
-            {openFlagCount > 1 ? "s" : ""} sur cette assertion.
+            {copy.openReports(openFlagCount)}
           </section>
         ) : null}
 
         {/* 4. Sources */}
         <section data-testid="section-sources" className="space-y-4">
           <h3 className="text-afh-small font-semibold text-[var(--afh-fg,var(--country-fg,#111827))]">
-            Sources
+            {copy.sources}
           </h3>
           {positions && positions.length > 0 ? (
             <div className="space-y-4">
@@ -553,12 +570,12 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
                   <p className="text-afh-caption font-semibold text-[var(--afh-accent,var(--country-accent,#1d4ed8))]">
                     {pg.position}
                   </p>
-                  <SourceList sources={pg.sources} />
+                  <SourceList language={language} sources={pg.sources} />
                 </div>
               ))}
             </div>
           ) : (
-            <SourceList sources={sources} />
+            <SourceList language={language} sources={sources} />
           )}
         </section>
 
@@ -571,7 +588,7 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
               rel="noopener noreferrer"
               className="text-afh-caption underline underline-offset-2 text-[var(--afh-accent,var(--country-accent,#1d4ed8))]"
             >
-              Voir l&apos;historique des révisions
+              {copy.revisionHistory}
             </a>
           </section>
         ) : null}
@@ -582,13 +599,14 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
               target to report. Only the Turnstile half of the condition goes. */}
           {assertion.id ? (
             <FlagTarget
+              language={language}
               target={{
                 type: "assertion",
                 id: assertion.id,
                 fieldPath: assertion.fieldPath,
                 snapshotQuote: assertion.statement,
               }}
-              triggerLabel="Signaler un problème"
+              triggerLabel={copy.reportProblem}
             />
           ) : null}
         </section>
@@ -605,7 +623,7 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
               showCite ? "opacity-100" : "pointer-events-none opacity-0"
             )}
           >
-            Citer cette assertion
+            {copy.citeAssertion}
           </button>
         </section>
       </SheetContent>

@@ -55,6 +55,7 @@ function baseSession(overrides: Record<string, unknown> = {}) {
 function renderIsland(scope: QuizScope = GHANA, label = "Ghana") {
   return render(
     <QuizPlayIsland
+      language="fr"
       scope={scope}
       scopeLabelFr={label}
       exitHref={getLocalizedRoute("fr", "quiz")}
@@ -200,6 +201,7 @@ describe("QuizPlayIsland (Epic 10, Story 10.9, ETNI-1137)", () => {
     expect(mockUseQuizSession).toHaveBeenCalledWith({
       scope: GHANA,
       theme: null,
+      language: "fr",
     });
   });
 });

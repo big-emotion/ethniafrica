@@ -16,13 +16,32 @@ import * as path from "path";
 import { pathToFileURL } from "url";
 import { parse } from "csv-parse/sync";
 import { evaluateSourceUrl } from "@/lib/sources/authorized-source-catalog";
+import { parseKingdomPeriod } from "./afrik/parseKingdomPeriod";
 import { parseRelationFile } from "../src/lib/afrik/parsers/relationParser";
+import { parseDossierFile } from "../src/lib/afrik/parsers/dossierParser";
+import { applyDossierTranslation } from "../src/lib/dossiers/translation";
 import { parseNameRecordFile } from "../src/lib/afrik/parsers/nameRecordParser";
 import { parsePatronymeFile } from "../src/lib/afrik/parsers/patronymeParser";
 import type { SourceTier } from "../src/types/sources";
 // The same resolver the globe uses, so this gate and the rendering can never
 // disagree about which countries are drawable.
 import { getAdmin0Rings } from "../src/lib/atlas/overlays";
+// The same declaration the translation command reads, so the gate and the
+// classes cannot drift apart.
+import {
+  coverageGaps,
+  STRICT_MODEL_FILES,
+  type StrictModelFile,
+} from "../src/lib/i18n/translationClasses";
+import { translationViolations } from "../src/lib/afrik/translations/sidecarIntegrity";
+import { formatSegments, recordLeaves } from "../src/lib/i18n/modelLeafPaths";
+import {
+  ENTITY_TYPE_BY_CORPUS_DIRECTORY,
+  modelForEntity,
+  stripTranslationBlock,
+  translationBlockSchema,
+} from "../src/lib/afrik/translations/types";
+import { listTranslationSidecars } from "../src/lib/afrik/translations/sidecarPaths";
 
 // ─── Exported ValidationResult (FR26-FR31) ───────────────────────────────────
 
@@ -882,6 +901,472 @@ export function checkPplDuplicates(datasetRoot: string): ValidationResult {
   return { ok: errors.length === 0, errors, warnings };
 }
 
+/**
+ * The adjudication ledger of people identifiers that no longer exist as fiches.
+ *
+ * It sits at the corpus root, not under `peuples/`: every walker of that
+ * directory — `collectPplFiles`, the people loader, the classification-status
+ * contract suite — reads whatever `.json` it finds there and would parse the
+ * ledger as a fiche. The `_` prefix keeps it out of the editorial-rules gate
+ * the way the other curator worksheets are.
+ */
+export const RETIRED_IDENTIFIERS_LEDGER = "_retired-identifiers.json";
+
+const RETIREMENT_DECISIONS = new Set(["merged", "renamed", "kept-distinct"]);
+
+interface RetiredIdentifierEntry {
+  decision?: unknown;
+  retiredId?: unknown;
+  successorId?: unknown;
+  reason?: unknown;
+  decidedOn?: unknown;
+}
+
+function loadRetiredIdentifiers(datasetRoot: string): {
+  entries: RetiredIdentifierEntry[];
+  error: string | null;
+} {
+  const ledgerPath = path.join(datasetRoot, RETIRED_IDENTIFIERS_LEDGER);
+  if (!fs.existsSync(ledgerPath)) return { entries: [], error: null };
+  try {
+    const parsed = JSON.parse(fs.readFileSync(ledgerPath, "utf-8"));
+    if (!Array.isArray(parsed)) {
+      return {
+        entries: [],
+        error: `${RETIRED_IDENTIFIERS_LEDGER}: must be an array of decisions`,
+      };
+    }
+    return { entries: parsed as RetiredIdentifierEntry[], error: null };
+  } catch (err) {
+    return {
+      entries: [],
+      error: `${RETIRED_IDENTIFIERS_LEDGER}: could not parse JSON (${String(err)})`,
+    };
+  }
+}
+
+/** retired id → successor id, for the ledger's merged and renamed entries. */
+function retiredSuccessors(datasetRoot: string): Map<string, string> {
+  const successors = new Map<string, string>();
+  for (const entry of loadRetiredIdentifiers(datasetRoot).entries) {
+    if (
+      entry.decision !== "kept-distinct" &&
+      typeof entry.retiredId === "string" &&
+      typeof entry.successorId === "string"
+    ) {
+      successors.set(entry.retiredId, entry.successorId);
+    }
+  }
+  return successors;
+}
+
+function existingPeopleIds(datasetRoot: string): Set<string> {
+  return new Set(
+    collectPplFiles(datasetRoot).map(({ file }) => path.basename(file, ".json"))
+  );
+}
+
+interface PeopleReference {
+  file: string;
+  fieldPath: string;
+  peopleId: string;
+}
+
+/**
+ * Every place a class of the corpus names a people. Listed explicitly rather
+ * than found by scanning for `PPL_`-shaped strings: prose mentions and worksheet
+ * candidates are not references, and a scan would report them as broken links.
+ */
+function collectPeopleReferences(datasetRoot: string): PeopleReference[] {
+  const references: PeopleReference[] = [];
+
+  const readClass = (
+    dir: string,
+    visit: (data: Record<string, unknown>, file: string) => void
+  ) => {
+    const classDir = path.join(datasetRoot, dir);
+    if (!fs.existsSync(classDir)) return;
+    for (const file of fs.readdirSync(classDir).sort()) {
+      // `_`-prefixed files are curator worksheets and `*TEMPLATE*` files are
+      // blank models; neither declares a link the corpus relies on.
+      if (
+        !file.endsWith(".json") ||
+        file.startsWith("_") ||
+        file.includes("TEMPLATE")
+      ) {
+        continue;
+      }
+      let data: Record<string, unknown>;
+      try {
+        data = JSON.parse(
+          fs.readFileSync(path.join(classDir, file), "utf-8")
+        ) as Record<string, unknown>;
+      } catch {
+        continue;
+      }
+      visit(data, `${dir}/${file}`);
+    }
+  };
+
+  const push = (file: string, fieldPath: string, peopleId: unknown) => {
+    if (typeof peopleId === "string" && peopleId.length > 0) {
+      references.push({ file, fieldPath, peopleId });
+    }
+  };
+
+  const pushEach = (
+    file: string,
+    fieldPath: string,
+    list: unknown,
+    key: string
+  ) => {
+    if (!Array.isArray(list)) return;
+    list.forEach((item, index) => {
+      const value =
+        item && typeof item === "object"
+          ? (item as Record<string, unknown>)[key]
+          : item;
+      push(file, `${fieldPath}[${index}].${key}`, value);
+    });
+  };
+
+  readClass("pays", (data, file) => {
+    const content = (data.content ?? {}) as Record<string, unknown>;
+    pushEach(file, "content.majorPeoples", content.majorPeoples, "peopleId");
+    const demographics = (content.demographics ?? {}) as Record<
+      string,
+      unknown
+    >;
+    pushEach(
+      file,
+      "content.demographics.peoples",
+      demographics.peoples,
+      "peopleId"
+    );
+  });
+
+  readClass("famille_linguistique", (data, file) => {
+    const content = (data.content ?? {}) as Record<string, unknown>;
+    pushEach(
+      file,
+      "content.associatedPeoples",
+      content.associatedPeoples,
+      "peopleId"
+    );
+  });
+
+  readClass("relations", (data, file) => {
+    push(file, "peopleIdA", data.peopleIdA);
+    push(file, "peopleIdB", data.peopleIdB);
+  });
+
+  readClass("noms", (data, file) => {
+    push(file, "id", data.id);
+  });
+
+  readClass("migrations", (data, file) => {
+    pushEach(file, "peoplesInvolved", data.peoplesInvolved, "id");
+  });
+
+  readClass("patronymes", (data, file) => {
+    pushEach(file, "peoples", data.peoples, "peopleId");
+  });
+
+  readClass("systemes_onomastiques", (data, file) => {
+    const list = data.associatedPeoples;
+    if (!Array.isArray(list)) return;
+    list.forEach((item, index) => {
+      const value =
+        item && typeof item === "object"
+          ? (item as Record<string, unknown>).peopleId
+          : item;
+      push(file, `associatedPeoples[${index}]`, value);
+    });
+  });
+
+  return references;
+}
+
+/**
+ * FR27 – The retired-identifiers ledger is the only place a merge or rename of
+ * a people id is recorded, so it must describe the corpus as it is: a retired
+ * id has no fiche, its successor has one and is not itself retired (a redirect
+ * lands in one hop), and a kept-distinct pair still has both fiches, so the
+ * pair is not re-examined by the next duplicate scan.
+ */
+export function checkRetiredIdentifiers(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const { entries, error } = loadRetiredIdentifiers(datasetRoot);
+  if (error) return { ok: false, errors: [error], warnings };
+  if (entries.length === 0) return { ok: true, errors, warnings };
+
+  const fiches = existingPeopleIds(datasetRoot);
+  const retired = new Set<string>();
+
+  entries.forEach((entry, index) => {
+    const where = `${RETIRED_IDENTIFIERS_LEDGER}[${index}]`;
+    const { decision, retiredId, successorId, reason, decidedOn } = entry;
+
+    if (typeof retiredId !== "string" || !/^PPL_[A-Z0-9_]+$/.test(retiredId)) {
+      errors.push(`${where}: retiredId must be a PPL_ identifier`);
+      return;
+    }
+    if (typeof decision !== "string" || !RETIREMENT_DECISIONS.has(decision)) {
+      errors.push(
+        `${where} (${retiredId}): decision must be merged, renamed or kept-distinct`
+      );
+    }
+    if (typeof reason !== "string" || reason.trim().length < 20) {
+      errors.push(`${where} (${retiredId}): a decision needs a written reason`);
+    }
+    if (
+      typeof decidedOn !== "string" ||
+      !/^\d{4}-\d{2}-\d{2}$/.test(decidedOn)
+    ) {
+      errors.push(`${where} (${retiredId}): decidedOn must be an ISO date`);
+    }
+
+    if (decision === "kept-distinct") {
+      if (successorId !== null && successorId !== undefined) {
+        errors.push(
+          `${where} (${retiredId}): a kept-distinct decision has no successor`
+        );
+      }
+      if (!fiches.has(retiredId)) {
+        errors.push(
+          `${where}: ${retiredId} is kept distinct but has no fiche file`
+        );
+      }
+      return;
+    }
+
+    retired.add(retiredId);
+    if (fiches.has(retiredId)) {
+      errors.push(
+        `${where}: ${retiredId} is retired but still exists as a fiche file`
+      );
+    }
+    if (typeof successorId !== "string") {
+      errors.push(
+        `${where} (${retiredId}): a ${String(decision)} decision needs a successorId`
+      );
+      return;
+    }
+    if (!fiches.has(successorId)) {
+      errors.push(
+        `${where}: ${retiredId} → ${successorId}, but the successor has no fiche file`
+      );
+    }
+  });
+
+  const successors = retiredSuccessors(datasetRoot);
+  for (const [retiredId, successorId] of successors) {
+    if (successors.has(successorId)) {
+      errors.push(
+        `${RETIRED_IDENTIFIERS_LEDGER}: ${retiredId} → ${successorId}, but the successor is itself retired — a redirect must land in one hop`
+      );
+    }
+  }
+
+  for (const { file, fieldPath, peopleId } of collectPeopleReferences(
+    datasetRoot
+  )) {
+    if (successors.has(peopleId)) {
+      warnings.push(
+        `${file}: ${fieldPath} still names the retired id ${peopleId} — repoint it to ${successors.get(peopleId)}`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * FR27 – Every people reference the corpus declares resolves to a fiche, or to
+ * a retired id whose successor does. Countries, families, relations, name
+ * dossiers, migrations, patronyms and onomastic systems all name peoples, and
+ * until this check existed only three of those classes were resolved anywhere,
+ * so a country could point at a fiche that had been deleted for months.
+ */
+export function checkPeopleReferencesResolve(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const fiches = existingPeopleIds(datasetRoot);
+  const successors = retiredSuccessors(datasetRoot);
+
+  for (const { file, fieldPath, peopleId } of collectPeopleReferences(
+    datasetRoot
+  )) {
+    if (fiches.has(peopleId)) continue;
+    const successorId = successors.get(peopleId);
+    if (successorId && fiches.has(successorId)) continue;
+    errors.push(
+      `${file}: ${fieldPath} names ${peopleId}, which has no fiche and no successor`
+    );
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+const KINGDOM_ENTRY_TYPES = new Set(["polity", "colonial", "modern"]);
+const KINGDOM_PRECISIONS = new Set(["year", "century", "approximate"]);
+/**
+ * The corpus documents polities, not geology. The lower bound matches the one
+ * the migration model already enforces, so the two chronologies of the corpus
+ * answer to the same horizon.
+ */
+const EARLIEST_DESCRIBABLE_YEAR = -10000;
+
+/**
+ * REQ-148 – A `content.kingdoms[]` entry that carries machine bounds carries
+ * well-formed ones.
+ *
+ * This is deliberately silent about entries with no `timeRange`: whether the
+ * corpus *ought* to date a given polity is a question about symmetry, and it is
+ * answered by the `chronology-symmetry` editorial rule, which can weigh a
+ * country's colonial entries against its precolonial ones. Here the only
+ * question is whether what has been written is coherent.
+ *
+ * The last check is the interesting one. `period` and `timeRange` are two
+ * statements about the same entity, and `period` is the one the reader sees, so
+ * they may not describe disjoint stretches of time. They are allowed to differ:
+ * refining "XIVe siècle" to a sourced 1314 is the intended editorial work, and
+ * the intervals still overlap. Only a range with nothing in common with its own
+ * label is reported — a transposition, a copy-paste from the entry above.
+ */
+export function checkKingdomTimeRange(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const paysDir = path.join(datasetRoot, "pays");
+  if (!fs.existsSync(paysDir)) return { ok: true, errors, warnings };
+
+  const currentYear = new Date().getFullYear();
+
+  for (const file of fs.readdirSync(paysDir).sort()) {
+    if (!file.endsWith(".json") || file.startsWith("_")) continue;
+    let data: Record<string, unknown>;
+    try {
+      data = JSON.parse(
+        fs.readFileSync(path.join(paysDir, file), "utf-8")
+      ) as Record<string, unknown>;
+    } catch {
+      warnings.push(`pays/${file}: unreadable, skipped`);
+      continue;
+    }
+
+    const content = (data.content ?? {}) as Record<string, unknown>;
+    const kingdoms = content.kingdoms;
+    if (!Array.isArray(kingdoms)) continue;
+
+    kingdoms.forEach((raw, index) => {
+      if (!raw || typeof raw !== "object") return;
+      const entry = raw as Record<string, unknown>;
+      const where = `pays/${file}: content.kingdoms[${index}]`;
+
+      const entryType = entry.entryType;
+      if (
+        entryType !== undefined &&
+        !KINGDOM_ENTRY_TYPES.has(String(entryType))
+      ) {
+        errors.push(
+          `REQ-148: ${where}.entryType is "${String(entryType)}" — expected polity, colonial or modern`
+        );
+      }
+
+      const range = entry.timeRange;
+      if (range === undefined) return;
+      if (!range || typeof range !== "object" || Array.isArray(range)) {
+        errors.push(`REQ-148: ${where}.timeRange must be an object`);
+        return;
+      }
+      const { startYear, endYear, ongoing, precision, datingNote } =
+        range as Record<string, unknown>;
+
+      if (!Number.isInteger(startYear)) {
+        errors.push(
+          `REQ-148: ${where}.timeRange.startYear must be a whole year`
+        );
+        return;
+      }
+      const start = startYear as number;
+      if (start < EARLIEST_DESCRIBABLE_YEAR || start > currentYear) {
+        errors.push(
+          `REQ-148: ${where}.timeRange.startYear ${start} is outside [${EARLIEST_DESCRIBABLE_YEAR}, ${currentYear}]`
+        );
+      }
+
+      if (ongoing !== undefined && typeof ongoing !== "boolean") {
+        errors.push(`REQ-148: ${where}.timeRange.ongoing must be a boolean`);
+      }
+      if (ongoing === true && endYear !== undefined) {
+        errors.push(
+          `REQ-148: ${where}.timeRange declares both ongoing and an endYear — an entity that still stands has no end`
+        );
+      }
+
+      let end: number | null = null;
+      if (endYear !== undefined) {
+        if (!Number.isInteger(endYear)) {
+          errors.push(
+            `REQ-148: ${where}.timeRange.endYear must be a whole year`
+          );
+        } else {
+          end = endYear as number;
+          if (end < EARLIEST_DESCRIBABLE_YEAR || end > currentYear) {
+            errors.push(
+              `REQ-148: ${where}.timeRange.endYear ${end} is outside [${EARLIEST_DESCRIBABLE_YEAR}, ${currentYear}]`
+            );
+          }
+          if (end < start) {
+            errors.push(
+              `REQ-148: ${where}.timeRange ends before it starts (${start} → ${end})`
+            );
+          }
+        }
+      } else if (ongoing !== true) {
+        errors.push(
+          `REQ-148: ${where}.timeRange needs an endYear, or ongoing when the entity still stands`
+        );
+      }
+
+      if (!KINGDOM_PRECISIONS.has(String(precision))) {
+        errors.push(
+          `REQ-148: ${where}.timeRange.precision is "${String(precision)}" — expected year, century or approximate`
+        );
+      }
+      if (
+        precision === "approximate" &&
+        (typeof datingNote !== "string" || datingNote.trim() === "")
+      ) {
+        errors.push(
+          `REQ-148: ${where}.timeRange is approximate and owes a datingNote saying what the bounds smoothed over`
+        );
+      }
+
+      const label = typeof entry.period === "string" ? entry.period : "";
+      const fromLabel = parseKingdomPeriod(label);
+      if (!fromLabel) return;
+      const labelEnd = fromLabel.ongoing
+        ? currentYear
+        : (fromLabel.endYear ?? fromLabel.startYear);
+      const storedEnd = ongoing === true ? currentYear : (end ?? start);
+      const overlaps = start <= labelEnd && fromLabel.startYear <= storedEnd;
+      if (!overlaps) {
+        errors.push(
+          `REQ-148: ${where}.timeRange (${start}…${storedEnd}) shares no time with its own label "${label}"`
+        );
+      }
+    });
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
 const WIKIDATA_ID_PATTERN = /^Q[1-9][0-9]*$/;
 const GLOTTOCODE_PATTERN = /^[a-z]{4}[0-9]{4}$/;
 // ISO_639_3_PATTERN is declared once, near the top of the file, and reused here.
@@ -1284,6 +1769,60 @@ export function checkPopulationSumsStrict(
     if (sum < 99 || sum > 101) {
       errors.push(
         `${countryId}: population percentages sum to ${sum.toFixed(2)}% (strict target 99–101%)`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings: [] };
+}
+
+/**
+ * FR28-declared – Every country of the African reference set must declare an
+ * ethnic split at all.
+ *
+ * FR28 and FR28-strict weigh the *sum* of the declared shares, so they have
+ * nothing to weigh when a fiche declares none, and both skip an empty list.
+ * A fiche stating no split therefore had no wrong sum and passed in silence —
+ * which is how MDG reached the reader showing its national total above an
+ * empty chapter. The absence is the finding; this check is what states it.
+ *
+ * Scope (REQ-131): same African reference set as checkPopulationSums.
+ */
+export function checkPopulationSplitDeclared(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+
+  const paysDir = path.join(datasetRoot, "pays");
+  if (!fs.existsSync(paysDir)) {
+    return { ok: true, errors: [], warnings: [] };
+  }
+
+  const jsonFiles = fs.readdirSync(paysDir).filter((f) => f.endsWith(".json"));
+  for (const file of jsonFiles) {
+    const fullPath = path.join(paysDir, file);
+    let data: {
+      id?: string;
+      content?: {
+        demographics?: {
+          peoples?: unknown[];
+        };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      // FR28 already reports parse failures; stay silent here to avoid duplicates.
+      continue;
+    }
+
+    const countryId = data.id ?? path.basename(file, ".json");
+    if (!AFRICAN_REFERENCE_COUNTRY_CODES.has(countryId)) continue;
+
+    const peoples = data?.content?.demographics?.peoples;
+    if (!peoples || peoples.length === 0) {
+      errors.push(
+        `${countryId}: content.demographics.peoples declares no people — the fiche publishes its national total above an empty chapter; state the split, or record why it is unavailable`
       );
     }
   }
@@ -3399,6 +3938,62 @@ export function checkNameRecordModel(datasetRoot: string): ValidationResult {
 }
 
 /**
+ * DOS_* dossier fiches — strict shape plus the contradictoire rule.
+ *
+ * The parser holds the rules; this check is what makes CI run them over the
+ * dataset. Two things it adds on top: a slug must be unique across the corpus,
+ * because it is the URL segment the one dossier route resolves on, and a fiche
+ * whose filename disagrees with its identifier is refused rather than loaded
+ * under a name nothing can find it by.
+ */
+export function checkDossierFicheModel(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const dossierDir = path.join(datasetRoot, "dossiers");
+
+  if (!fs.existsSync(dossierDir)) return { ok: true, errors, warnings };
+
+  const seenSlugs = new Map<string, string>();
+
+  for (const file of fs
+    .readdirSync(dossierDir)
+    .filter((f) => f.endsWith(".json"))) {
+    const fullPath = path.join(dossierDir, file);
+    let raw: unknown;
+    try {
+      raw = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      errors.push(`REQ-114: ${file}: could not parse JSON`);
+      continue;
+    }
+
+    const parsed = parseDossierFile(raw);
+    if (!parsed.success || !parsed.data) {
+      for (const message of parsed.errors) {
+        errors.push(`REQ-114: ${file}: ${message}`);
+      }
+      continue;
+    }
+
+    const dossier = parsed.data;
+
+    if (file !== `${dossier.id}.json`) {
+      errors.push(`REQ-114: ${file}: file should be named ${dossier.id}.json`);
+    }
+
+    const claimedBy = seenSlugs.get(dossier.slug);
+    if (claimedBy) {
+      errors.push(
+        `REQ-114: ${file}: slug "${dossier.slug}" is already used by ${claimedBy} — a slug is the address the dossier route resolves on`
+      );
+    }
+    seenSlugs.set(dossier.slug, file);
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
  * True when a source carries publishable authority — the current-vocabulary
  * equivalent of the retired "Tier 1/2". `unverified` and the unadjudicated
  * `needs_review` are deliberately excluded: both are legal standings that
@@ -3954,7 +4549,9 @@ export function checkLanguageStrictSchema(
     }
 
     const ficheTopKeys = new Set(
-      Object.keys(data).filter((k) => k !== "_meta")
+      Object.keys(data).filter(
+        (key) => key !== "_meta" && key !== "_translation"
+      )
     );
     const missingTop = [...modelTopKeys].filter((k) => !ficheTopKeys.has(k));
     const extraTop = [...ficheTopKeys].filter((k) => !modelTopKeys.has(k));
@@ -3989,6 +4586,202 @@ export function checkLanguageStrictSchema(
   return { ok: errors.length === 0, errors, warnings };
 }
 
+/**
+ * REQ-143 — every leaf of every strict model carries a translation class.
+ *
+ * The class table is code, so a field added to a model with no class would
+ * otherwise be translated by whatever the command defaults to — and the
+ * default for a field nobody thought about is exactly what turned an
+ * exonym's gloss into a false statement. The gate walks the models on disk
+ * against the declaration both ways: an undeclared leaf fails, and so does a
+ * declaration for a leaf the model no longer has.
+ */
+// @req REQ-143
+export function checkTranslationClassCoverage(
+  publicRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const declared = new Set<string>(STRICT_MODEL_FILES);
+  const onDisk = fs.existsSync(publicRoot)
+    ? fs
+        .readdirSync(publicRoot)
+        .filter((name) => /^modele-.*\.json$/.test(name))
+    : [];
+
+  for (const model of STRICT_MODEL_FILES) {
+    const modelPath = path.join(publicRoot, model);
+    if (!fs.existsSync(modelPath)) {
+      errors.push(`REQ-143: ${model} is declared but missing from public/`);
+      continue;
+    }
+    let modelJson: unknown;
+    try {
+      modelJson = JSON.parse(fs.readFileSync(modelPath, "utf-8"));
+    } catch {
+      errors.push(`REQ-143: ${model}: could not parse JSON`);
+      continue;
+    }
+    const gaps = coverageGaps(model as StrictModelFile, modelJson);
+    for (const leaf of gaps.undeclared) {
+      errors.push(
+        `REQ-143: ${model}: leaf ${leaf} has no translation class (declare it in src/lib/i18n/translationClasses.ts)`
+      );
+    }
+    for (const leaf of gaps.dead) {
+      errors.push(
+        `REQ-143: ${model}: declared leaf ${leaf} is not in the model (dead declaration)`
+      );
+    }
+  }
+
+  for (const name of onDisk.sort()) {
+    if (declared.has(name)) continue;
+    errors.push(
+      `REQ-143: ${name} has no translation class declaration (add it to STRICT_MODEL_FILES)`
+    );
+  }
+
+  return { ok: errors.length === 0, errors, warnings: [] };
+}
+
+/**
+ * TR-1 — every translated record is a faithful sidecar of a fiche that exists
+ * (REQ-142 AC3, REQ-143 AC1).
+ *
+ * A sidecar lives outside the source tree, so no other check sees it. This
+ * one asks five things of each file under dataset/translations/<lang>/: a
+ * source fiche at the mirrored path, a `_translation` block whose kind is one
+ * of the three, the source's key set and leaf paths (the translation adds
+ * and drops nothing), class-1 leaves equal to the source's, and the name of
+ * a glossed invariant kept before its translated gloss.
+ *
+ * The class rules are the ones the translation command verifies before it
+ * writes (`translationViolations`), so a record the command produced is a
+ * record this gate accepts; a review-required leaf stored at machine
+ * provenance is deliberately not a finding in either.
+ */
+// @req REQ-142
+// @req REQ-143
+export function checkTranslationSidecars(
+  datasetRoot: string,
+  translationsRoot: string = path.join(datasetRoot, "..", "..", "translations")
+): ValidationResult {
+  const errors: string[] = [];
+  const locales = fs.existsSync(translationsRoot)
+    ? fs
+        .readdirSync(translationsRoot, { withFileTypes: true })
+        .filter((entry) => entry.isDirectory() && entry.name === "en")
+        .map((entry) => entry.name as "en")
+    : [];
+
+  for (const lang of locales) {
+    for (const relativePath of listTranslationSidecars(
+      translationsRoot,
+      lang
+    )) {
+      const label = `${lang}/${relativePath}`;
+      const [directory] = relativePath.split("/");
+      const entityType = ENTITY_TYPE_BY_CORPUS_DIRECTORY[directory];
+      if (!entityType && directory !== "dossiers") {
+        errors.push(`TR-1: ${label}: not under a corpus directory`);
+        continue;
+      }
+
+      const sourceFile = path.join(datasetRoot, relativePath);
+      if (!fs.existsSync(sourceFile)) {
+        errors.push(`TR-1: ${label}: no source fiche at ${relativePath}`);
+        continue;
+      }
+
+      let source: Record<string, unknown>;
+      let sidecar: Record<string, unknown>;
+      try {
+        source = JSON.parse(fs.readFileSync(sourceFile, "utf-8"));
+        sidecar = JSON.parse(
+          fs.readFileSync(
+            path.join(translationsRoot, lang, relativePath),
+            "utf-8"
+          )
+        );
+      } catch (error) {
+        errors.push(
+          `TR-1: ${label}: could not parse JSON (${error instanceof Error ? error.message : String(error)})`
+        );
+        continue;
+      }
+
+      // Dossiers were already shipped as sparse, file-served overlays before
+      // afrik_translations existed. Their reader owns that contract; asking
+      // the full-record store validator to reinterpret it would reject valid
+      // translations and make the recette loader try to persist partial rows.
+      if (directory === "dossiers") {
+        const parsedSource = parseDossierFile(source);
+        if (
+          !parsedSource.success ||
+          !parsedSource.data ||
+          !applyDossierTranslation(parsedSource.data, sidecar)
+        ) {
+          errors.push(`TR-1: ${label}: invalid dossier translation overlay`);
+        }
+        continue;
+      }
+
+      // The unsupported-directory branch above continued already. This guard
+      // keeps the narrowing explicit for TypeScript and future directories.
+      if (!entityType) continue;
+
+      const { block, content } = stripTranslationBlock(sidecar);
+      const parsedBlock = translationBlockSchema.safeParse(block);
+      if (!parsedBlock.success) {
+        const detail = parsedBlock.error.issues
+          .map(
+            (issue) =>
+              `${issue.path.join(".") || "_translation"}: ${issue.message}`
+          )
+          .join("; ");
+        errors.push(
+          `TR-1: ${label}: declares no valid translation kind — ${detail}`
+        );
+        continue;
+      }
+
+      const sourceKeys = Object.keys(source).join(",");
+      const sidecarKeys = Object.keys(content).join(",");
+      if (sourceKeys !== sidecarKeys) {
+        errors.push(
+          `TR-1: ${label}: top-level keys differ from the source (source: ${sourceKeys}; sidecar: ${sidecarKeys})`
+        );
+        continue;
+      }
+      const sourcePaths = new Set(
+        recordLeaves(source).map((leaf) => formatSegments(leaf.segments))
+      );
+      const sidecarPaths = new Set(
+        recordLeaves(content).map((leaf) => formatSegments(leaf.segments))
+      );
+      const missing = [...sourcePaths].filter((p) => !sidecarPaths.has(p));
+      const added = [...sidecarPaths].filter((p) => !sourcePaths.has(p));
+      if (missing.length > 0 || added.length > 0) {
+        errors.push(
+          `TR-1: ${label}: leaf paths differ from the source (missing: ${missing.slice(0, 5).join(", ") || "none"}; added: ${added.slice(0, 5).join(", ") || "none"})`
+        );
+        continue;
+      }
+
+      const model = modelForEntity(entityType, source);
+      for (const violation of translationViolations({
+        model,
+        source,
+        sidecar: content,
+      })) {
+        errors.push(`TR-1: ${label}: ${violation.path} — ${violation.message}`);
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings: [] };
+}
+
 // ─── Run summary ─────────────────────────────────────────────────────────────
 
 /**
@@ -3999,6 +4792,18 @@ export function checkLanguageStrictSchema(
  * once every country's percentageInCountry split landed inside [99, 101]:
  * softening a check is a deliberate, visible decision, not a flag buried in a
  * registration.
+ *
+ * FR27-references is advisory for the same reason FR28 once was: measured on
+ * 2026-09-05, the corpus already carried 43 references to ids that have no
+ * fiche — placeholders such as PPL_AUTRES_GROUPES that the percentage sums
+ * rely on, truncated ids such as PPL_MO, and family lists naming peoples never
+ * written. Retired ids are not in that tail: FR27 Retired identifiers stays a
+ * hard error, so a merge or rename cannot leave a link behind.
+
+ *
+ * FR28-declared was advisory for exactly one fiche — MDG, the only country of
+ * the 54 that had never declared an ethnic split. It left this set with that
+ * fiche, as announced, and is a hard error since.
  */
 export const SOFT_CHECK_NAMES: ReadonlySet<string> = new Set([
   "FR52-coverage People-to-language coverage",
@@ -4153,6 +4958,24 @@ async function main() {
     result: checkPplDuplicates(datasetRoot),
   });
 
+  console.log("FR27 – Retired identifiers ledger...");
+  newChecks.push({
+    name: "FR27 Retired identifiers",
+    result: checkRetiredIdentifiers(datasetRoot),
+  });
+
+  console.log("FR27 – People references resolve...");
+  newChecks.push({
+    name: "FR27-references People references resolve",
+    result: checkPeopleReferencesResolve(datasetRoot),
+  });
+
+  console.log("REQ-148 – Kingdom time ranges...");
+  newChecks.push({
+    name: "REQ-148 Kingdom time ranges",
+    result: checkKingdomTimeRange(datasetRoot),
+  });
+
   console.log("ETNI-1391 – People-group consistency...");
   newChecks.push({
     name: "ETNI-1391 People-group consistency",
@@ -4175,6 +4998,12 @@ async function main() {
   newChecks.push({
     name: "FR28-strict Population sums (target 99–101%)",
     result: checkPopulationSumsStrict(datasetRoot),
+  });
+
+  console.log("FR28-declared – Population split declared...");
+  newChecks.push({
+    name: "FR28-declared Population split declared",
+    result: checkPopulationSplitDeclared(datasetRoot),
   });
 
   console.log("FR29 – ISO validity...");
@@ -4357,6 +5186,14 @@ async function main() {
   });
 
   console.log(
+    "REQ-114 - Dossier fiche model (strict shape + both readings per chapter)..."
+  );
+  newChecks.push({
+    name: "REQ-114 Dossier fiche model",
+    result: checkDossierFicheModel(datasetRoot),
+  });
+
+  console.log(
     "ETNI-1460 – Naming-system model (subtype fields + undetermined)..."
   );
   newChecks.push({
@@ -4389,6 +5226,22 @@ async function main() {
   newChecks.push({
     name: "FR111 Historical-affiliation model",
     result: checkHistoricalAffiliationModel(datasetRoot),
+  });
+
+  console.log(
+    "REQ-143 – Translation class coverage (every strict-model leaf classed)..."
+  );
+  newChecks.push({
+    name: "REQ-143 Translation class coverage",
+    result: checkTranslationClassCoverage(PUBLIC_ROOT),
+  });
+
+  console.log(
+    "TR-1 – Translation sidecars (source counterpart, declared kind, invariants kept)..."
+  );
+  newChecks.push({
+    name: "TR-1 Translation sidecars",
+    result: checkTranslationSidecars(datasetRoot),
   });
 
   if (process.env.CHECK_SOURCE_URLS === "true") {

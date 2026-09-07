@@ -12,8 +12,19 @@ import { assembleComparison } from "@/api/v2/handlers/compare";
 import { transformComparisonData } from "@/lib/comparisonDataTransformer";
 import { ComparisonView } from "@/components/compare/ComparisonView";
 import { SiteTrail } from "@/components/layout/SiteTrail";
+import {
+  COMPARE_ENTITY_SEGMENTS,
+  getLocalizedRoute,
+  type CompareEntityKey,
+} from "@/lib/routing";
+import {
+  OG_LOCALE_BY_LANGUAGE,
+  pageAlternates,
+} from "@/lib/seo/localeAlternates";
 import type { CompareEntityPayload } from "@/types/compare";
+import type { Language } from "@/types/shared";
 import type { CompareEntityTypeParam } from "@/api/v2/schemas/compare";
+import { compareCopy } from "@/lib/i18n/copy/compare";
 
 // @req REQ-091
 export const revalidate = 3600;
@@ -33,6 +44,13 @@ const SLUG_TO_API_TYPE: Record<ComparerEntityTypeSlug, CompareEntityTypeParam> =
     pays: "countries",
     familles: "language-families",
   };
+
+/** The slug table's key for each French folder segment, to compose the canonical. */
+const COMPARE_KEY_BY_SLUG: Record<ComparerEntityTypeSlug, CompareEntityKey> = {
+  peuples: "peoples",
+  pays: "countries",
+  familles: "families",
+};
 
 function isComparerEntityTypeSlug(
   value: string
@@ -79,11 +97,23 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, entityType, ids } = await params;
   const data = await loadComparisonData(entityType, ids);
+  const language = lang as Language;
+  const copy = compareCopy[language];
 
   const labels = data.columns.map((column) => column.label);
-  const title = `Comparaison : ${labels.join(" · ")}`;
-  const description = `Comparaison de fiches AFRIK : ${labels.join(", ")}. Identité, langues, démographie et confiance éditoriale côte à côte.`;
-  const canonical = `/${lang}/comparer/${entityType}/${ids.join("/")}`;
+  const title = copy.metadataTitle(labels.join(" · "));
+  const description = copy.metadataDescription(labels.join(", "));
+  // The route folder is French under either locale; the address a crawler
+  // is told about is composed in the locale's own vocabulary. Combinatorial
+  // and indexed nowhere, so the head carries a canonical and no cluster.
+  const alternates = pageAlternates(
+    language,
+    (locale) =>
+      `${getLocalizedRoute(locale, "compare")}/${
+        COMPARE_ENTITY_SEGMENTS[locale][COMPARE_KEY_BY_SLUG[entityType]]
+      }/${ids.join("/")}`,
+    []
+  );
   const imageSearchParams = new URLSearchParams();
   ids.forEach((id) => imageSearchParams.append("id", id));
   const imageUrl = `/${lang}/comparer/${entityType}/opengraph-image?${imageSearchParams.toString()}`;
@@ -92,18 +122,19 @@ export async function generateMetadata({
     title,
     description,
     robots: { index: false, follow: true },
-    alternates: { canonical },
+    alternates,
     openGraph: {
       title,
       description,
-      url: canonical,
+      url: String(alternates.canonical),
+      locale: OG_LOCALE_BY_LANGUAGE[lang as Language],
       type: "website",
       images: [
         {
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: "Comparaison AFRIK",
+          alt: copy.metadataImageAlt,
         },
       ],
     },
@@ -122,10 +153,14 @@ export default async function ComparisonPage({
 }: {
   params: Promise<PageParams>;
 }) {
-  const { entityType, ids } = await params;
+  const { lang, entityType, ids } = await params;
   const data = await loadComparisonData(entityType, ids);
+  const language = lang as Language;
+  const copy = compareCopy[language];
 
-  const title = `Comparaison : ${data.columns.map((column) => column.label).join(" · ")}`;
+  const title = copy.metadataTitle(
+    data.columns.map((column) => column.label).join(" · ")
+  );
 
   // This route mounts no `PageLayout`, so it mounts the trail itself. The
   // label names the pair being compared, which is the one segment of
@@ -138,7 +173,7 @@ export default async function ComparisonPage({
         <SiteTrail entityLabel={title} />
       </div>
       <h1>{title}</h1>
-      <ComparisonView data={data} />
+      <ComparisonView data={data} language={language} />
     </>
   );
 }

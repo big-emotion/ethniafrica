@@ -1,6 +1,7 @@
 {
   "id": "ZWE",
   "nameFr": "Zimbabwe",
+  "nameEn": "Zimbabwe",
   "nameOfficial": "République du Zimbabwe (Republic of Zimbabwe)",
   "summary": "Le Zimbabwe porte le nom des « maisons de pierre » — dzimba-dza-mabwe en shona — c'est-à-dire des ruines du Grand Zimbabwe, centre commercial majeur du XIe au XVe siècle. Royaumes Mutapa, Rozvi puis Ndebele s'y sont succédé, avant la Rhodésie du Sud. Shona, Ndebele et Tonga y perpétuent la sculpture sur pierre et la peinture murale.",
   "etymology": "Le nom \"Zimbabwe\" vient du terme shona \"dzimba-dza-mabwe\", qui signifie \"maisons de pierre\" ou \"grandes maisons de pierre\". Ce terme fait référence aux ruines du Grand Zimbabwe, un site archéologique majeur construit entre le XIe et le XVe siècle.",
@@ -18,6 +19,12 @@
       {
         "name": "Royaume du Grand Zimbabwe",
         "period": "XIe siècle - XVe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1001,
+          "endYear": 1500,
+          "precision": "century"
+        },
         "dominantPeoples": ["Shona"],
         "politicalCenters": ["Grand Zimbabwe (ruines actuelles)"],
         "historicalRole": "Royaume puissant, centre commercial majeur, architecture en pierre sèche remarquable, déclin au XVe siècle."
@@ -25,6 +32,12 @@
       {
         "name": "Royaume Mutapa",
         "period": "XVe siècle - XVIIe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1401,
+          "endYear": 1700,
+          "precision": "century"
+        },
         "dominantPeoples": ["Shona"],
         "politicalCenters": ["Régions du nord et de l'est"],
         "historicalRole": "Successeur du Grand Zimbabwe, commerce avec les Portugais, déclin progressif."
@@ -32,6 +45,12 @@
       {
         "name": "Royaume Rozvi",
         "period": "XVIIe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1601,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Shona"],
         "politicalCenters": ["Régions centrales"],
         "historicalRole": "Royaume shona puissant, résistance aux Portugais, déclin face aux Ndebele et aux Britanniques."
@@ -39,6 +58,12 @@
       {
         "name": "Royaume Ndebele (Mthwakazi)",
         "period": "XIXe siècle - 1893",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1801,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Ndebele"],
         "politicalCenters": ["Bulawayo"],
         "historicalRole": "Royaume ndebele fondé par Mzilikazi, expansion territoriale, résistance à la colonisation britannique, défaite en 1893."
@@ -46,6 +71,12 @@
       {
         "name": "Rhodésie du Sud",
         "period": "1890-1980",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1890,
+          "endYear": 1980,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples zimbabwéens sous domination coloniale"
         ],
@@ -81,7 +112,7 @@
         "name": "Tonga (Zimbabwe)",
         "selfAppellation": "Tonga",
         "exonyms": ["Tonga (terme utilisé par les Européens)"],
-        "peopleId": "PPL_TONGA_ZIM",
+        "peopleId": "PPL_TONGA_ZAMBIA",
         "mainRegion": "Nord-ouest du Zimbabwe (vallée du Zambèze, Binga)",
         "languages": ["Tonga (tzl)"],
         "languageFamily": "FLG_BANTU",

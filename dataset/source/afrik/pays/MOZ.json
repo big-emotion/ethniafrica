@@ -1,6 +1,7 @@
 {
   "id": "MOZ",
   "nameFr": "Mozambique",
+  "nameEn": "Mozambique",
   "nameOfficial": "République du Mozambique (República de Moçambique)",
   "summary": "Le Mozambique porte le nom d'un sultan : Mussa bin Bique, qui régnait au XVe siècle sur l'île que les Portugais abordèrent les premiers. Cités-États swahilies, royaumes shona et chefferies bantoues s'y rencontraient avant cinq siècles de colonisation portugaise. Makua, Tsonga, Shona, Sena, Ndau et Makonde y composent la population.",
   "etymology": "Le nom \"Mozambique\" vient de \"Mozambique\", nom d'une île au large de la côte nord du pays. L'île a été nommée d'après le sultan Mussa bin Bique (ou Musa al-Biq), qui régnait sur l'île au XVe siècle. Les Portugais ont utilisé le nom de l'île pour désigner toute la colonie.",
@@ -21,6 +22,7 @@
       {
         "name": "Chefferies bantoues",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": [
           "Makua",
           "Tsonga",
@@ -38,6 +40,7 @@
       {
         "name": "Cités-États swahilies",
         "period": "Moyen Âge - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": [
           "Swahili",
           "Arabes",
@@ -54,6 +57,7 @@
       {
         "name": "Royaumes Shona",
         "period": "Précolonial",
+        "entryType": "polity",
         "dominantPeoples": ["Shona", "Ndau"],
         "politicalCenters": ["Royaumes shona (Zimbabwe", "Mozambique)"],
         "historicalRole": "Royaumes shona, héritage du Grand Zimbabwe, commerce régional, traditions shona."
@@ -61,6 +65,12 @@
       {
         "name": "Colonie portugaise du Mozambique",
         "period": "1498 - 1975",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1498,
+          "endYear": 1975,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples mozambicains sous domination coloniale portugaise"
         ],
@@ -165,7 +175,7 @@
         "name": "Tonga",
         "selfAppellation": "Tonga",
         "exonyms": ["Tonga (terme utilisé par les Européens)"],
-        "peopleId": "PPL_TONGA",
+        "peopleId": "PPL_TONGA_ZAMBIA",
         "mainRegion": "Centre du Mozambique",
         "languages": ["Tonga (toi", "ISO 639-3)", "portugais"],
         "languageFamily": "FLG_BANTU",

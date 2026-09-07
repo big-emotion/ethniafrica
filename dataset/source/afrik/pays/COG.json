@@ -1,6 +1,7 @@
 {
   "id": "COG",
   "nameFr": "Congo",
+  "nameEn": "Republic of the Congo",
   "nameOfficial": "République du Congo (République du Congo)",
   "summary": "La République du Congo partage son nom avec le royaume Kongo et avec le fleuve qui en porte la trace. Son territoire fut celui du royaume Tio et des chefferies mbochi avant de devenir colonie française. Le kikongo et le lingala y accompagnent le français, et la rumba congolaise y a trouvé l'un de ses foyers.",
   "etymology": "Le nom \"Congo\" vient du royaume Kongo (Kongo en kikongo), un royaume précolonial puissant. \"Congo\" est la forme portugaise de \"Kongo\". Le fleuve Congo a été nommé d'après ce royaume. Le pays est aussi appelé \"Congo-Brazzaville\" pour le distinguer de la République démocratique du Congo (Congo-Kinshasa).",
@@ -21,6 +22,12 @@
       {
         "name": "Royaume Kongo",
         "period": "XIVe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1301,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Kongo (Bakongo)"],
         "politicalCenters": [
           "Mbanza Kongo (capitale historique)",
@@ -31,6 +38,7 @@
       {
         "name": "Royaume Tio (Teke)",
         "period": "Précolonial - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Teke (Bateke)"],
         "politicalCenters": ["Région de la Cuvette", "Plateaux"],
         "historicalRole": "Royaume Tio puissant, organisation politique structurée, commerce avec les Européens. Résistance à la colonisation française."
@@ -38,6 +46,7 @@
       {
         "name": "Chefferies Mbochi",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Mbochi"],
         "politicalCenters": ["Cuvette", "Likouala"],
         "historicalRole": "Chefferies Mbochi, organisation lignagère, traditions forestières."
@@ -45,6 +54,12 @@
       {
         "name": "Colonie française du Congo",
         "period": "1880 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1880,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples congolais sous domination française"
         ],
@@ -56,6 +71,12 @@
       {
         "name": "République du Congo",
         "period": "1960 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1960,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples congolais"],
         "politicalCenters": ["Brazzaville (capitale)"],
         "historicalRole": "Indépendance en 1960. Histoire politique mouvementée : période socialiste (1969-1991), transition démocratique (1991), guerres civiles (1993-1999, 2016-2017), développement économique basé sur le pétrole."
@@ -79,7 +100,7 @@
           "Teke (terme utilisé par les Européens)",
           "Tio (nom du royaume historique)"
         ],
-        "peopleId": "PPL_TEKKE",
+        "peopleId": "PPL_TEKE",
         "mainRegion": "Plateaux, Cuvette",
         "languages": ["Teke (teg", "teo", "tbz)", "français", "lingala"],
         "languageFamily": "FLG_NIGERCONGO",
@@ -194,7 +215,7 @@
       "peoples": [
         {
           "name": "Kongo (Brazzaville)",
-          "peopleId": "PPL_KONGO_BRA",
+          "peopleId": "PPL_KONGO_BRAZZA",
           "percentageInCountry": 40
         },
         {

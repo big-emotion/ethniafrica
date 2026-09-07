@@ -20,6 +20,15 @@
  *       Counts change only on generation sweeps (Story 10.5).
  *     tags: ["API v2 - Quiz"]
  *     security: []
+ *     parameters:
+ *       - in: query
+ *         name: lang
+ *         required: false
+ *         schema:
+ *           type: string
+ *           enum: [en, fr]
+ *           default: fr
+ *         description: Authored question-bank locale
  *     responses:
  *       200:
  *         description: Scopes envelope
@@ -56,6 +65,7 @@
  */
 
 import { getQuizScopesHandler } from "@/api/v2/handlers/quiz";
+import { quizLanguageSchema } from "@/api/v2/schemas/quiz";
 import { createApiError } from "@/api/v2/utils/response";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { applyRateLimit } from "@/lib/api/rate-limit";
@@ -72,9 +82,23 @@ export async function GET(request: NextRequest) {
   if (rateLimitResponse) return rateLimitResponse;
 
   try {
-    logger.info("GET /api/v2/quiz/scopes");
+    const parsed = quizLanguageSchema.safeParse(
+      request.nextUrl.searchParams.get("lang") ?? undefined
+    );
+    if (!parsed.success) {
+      return jsonWithCors(
+        createApiError({
+          code: "VALIDATION_ERROR",
+          message: parsed.error.issues[0]?.message ?? "Invalid language",
+          field: "lang",
+        }),
+        { status: 400 }
+      );
+    }
 
-    const envelope = await getQuizScopesHandler();
+    logger.info("GET /api/v2/quiz/scopes", { lang: parsed.data });
+
+    const envelope = await getQuizScopesHandler(parsed.data);
     const response = jsonWithCors(envelope, {
       headers: { "Cache-Control": CACHE_CONTROL },
     });

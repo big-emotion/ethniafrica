@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "ngh",
+  "isoCode639_3": "ngh",
+  "glottocode": "nngg1234",
+  "nameFr": "Nǁng",
+  "nameEn": "N||ng",
+  "alternateNames": [],
+  "spellingAliases": [],
+  "familyId": "FLG_TUU",
+  "peoples": [],
+  "content": {
+    "vehicularRole": null,
+    "dialects": ["N|u", "||Ng!ke"],
+    "vitalityStatus": null,
+    "sources": [
+      {
+        "title": "Glottolog 5.3 — Nǁng (nngg1234)",
+        "url": "https://glottolog.org/resource/languoid/id/nngg1234",
+        "tier": "official",
+        "notes": "Glottolog name: N||ng; classification includes Tuu. The dialects listed are the sub-languoids that Glottolog attaches to nngg1234, excluding languoids that have their own ISO 639-3 code."
+      }
+    ]
+  },
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-05T22:10:40.230Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "efcbd642a4790052a838d2d2bb1562f892496e744f8a9700005d7b2bfdcc7a22",
+    "fieldHashes": { "content.sources[0].notes": "c74888794183070a" },
+    "reviewRequired": []
+  }
+}

@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   MEMBER_PEOPLES_SHOWN,
   rankFootprint,
+  rankFootprintFromCounts,
   rankMemberPeoplesByReach,
 } from "@/lib/familyFootprintRanking";
 import { buildFamilyFootprintOverlay } from "@/lib/atlas/overlays";
@@ -28,6 +29,22 @@ describe("rankFootprint", () => {
     const rows = rankFootprint(overlay!.countries);
 
     expect(rows.every((row) => row.flag.length > 0)).toBe(true);
+  });
+
+  // @req REQ-116
+  it("names South Sudan through the ISO alias instead of dropping it", () => {
+    // Natural Earth keys South Sudan SDS; the corpus writes SSD. Reading the
+    // asset by ISO code directly left the country tinted on the globe and
+    // absent from the ranking beside it.
+    const overlay = buildFamilyFootprintOverlay([["SSD", "SDN"]], 1);
+
+    expect(rankFootprint(overlay!.countries).map((r) => r.nameFr)).toEqual([
+      "Soudan",
+      "Soudan du Sud",
+    ]);
+    expect(
+      rankFootprintFromCounts({ SSD: 2, SDN: 1 }).map((r) => r.nameFr)
+    ).toEqual(["Soudan du Sud", "Soudan"]);
   });
 
   // @req REQ-116

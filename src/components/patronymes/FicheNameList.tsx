@@ -5,9 +5,8 @@ import type {
   PatronymeReachSummary,
 } from "@/api/v2/services/patronymeFicheLinks";
 import { getPatronymeRoute } from "@/lib/routing";
-import { translations } from "@/lib/translations";
-
-const t = translations.fr.patronymes;
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * A run of names on a fiche's parchment, one per line.
@@ -26,15 +25,18 @@ const t = translations.fr.patronymes;
 // @req REQ-133
 export function FicheNameList({
   names,
+  language,
 }: {
   names: readonly (PatronymeLinkSummary | PatronymeReachSummary)[];
+  language: Language;
 }) {
+  const t = getTranslation(language).patronymes;
   return (
     <ul className="afh-prose-list">
       {names.map((name) => (
         <li key={name.id}>
           <Link
-            href={getPatronymeRoute("fr", name.id)}
+            href={getPatronymeRoute(language, name.id)}
             className="font-semibold hover:underline"
             style={{ color: "var(--afh-text)" }}
           >

@@ -29,6 +29,9 @@ import {
   readFicheChapters,
   type FicheChapter,
 } from "@/lib/ficheChapters";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 const SUMMARY_ID = "fiche-chapter-summary";
 
@@ -53,13 +56,16 @@ export interface FicheChapterBarProps {
    */
   entityId?: string;
   entityName?: string;
+  language?: Language;
 }
 
 // @req REQ-091
 export function FicheChapterBar({
   entityId,
   entityName,
+  language = FALLBACK_LOCALE,
 }: FicheChapterBarProps = {}) {
+  const copy = ficheCopy[language].chapterBar;
   const railRef = useRef<HTMLElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const [chapters, setChapters] = useState<FicheChapter[]>([]);
@@ -179,7 +185,7 @@ export function FicheChapterBar({
     <nav
       ref={railRef}
       className="afh-chapter-bar"
-      aria-label="Chapitres de la fiche"
+      aria-label={copy.aria}
       data-testid="fiche-chapter-bar"
       data-open={summaryOpen ? "" : undefined}
       style={
@@ -201,7 +207,7 @@ export function FicheChapterBar({
           // The word "Sommaire" is dropped at narrow widths for room, so the
           // control states in full what it is rather than depending on a label
           // the layout is free to hide.
-          aria-label={`Sommaire de la fiche — chapitre ${position + 1} sur ${chapters.length} : ${current.title}`}
+          aria-label={copy.toggle(position + 1, chapters.length, current.title)}
           onClick={() => setSummaryOpen((open) => !open)}
         >
           <span
@@ -217,7 +223,7 @@ export function FicheChapterBar({
             {current.title}
           </span>
           <span className="afh-chapter-bar-cue" aria-hidden="true">
-            <span className="afh-chapter-bar-cue-label">Sommaire</span>
+            <span className="afh-chapter-bar-cue-label">{copy.summary}</span>
             <ChevronDown className="afh-chapter-bar-caret" />
           </span>
         </button>
@@ -237,6 +243,7 @@ export function FicheChapterBar({
         {entityId ? (
           <div className="afh-chapter-bar-report">
             <FlagTarget
+              language={language}
               target={{
                 type: "fiche_section",
                 id: entityId,
@@ -247,7 +254,7 @@ export function FicheChapterBar({
                 fieldPath: current.id,
                 fieldLabel: current.title,
               }}
-              triggerLabel="Signaler"
+              triggerLabel={copy.report}
               // h-11, not h-9: 36px is under the 44px floor the reading
               // surface owes a thumb, and the rail is 48px tall, so the
               // taller control still sits inside it.

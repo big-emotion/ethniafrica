@@ -2,11 +2,19 @@
 
 import Link from "next/link";
 
-import { FACETS, getFacetRoute, type FacetKey } from "@/lib/hubs/facets";
+import {
+  FACETS,
+  getFacet,
+  getFacetRoute,
+  type FacetKey,
+} from "@/lib/hubs/facets";
+import { getTranslation } from "@/lib/translations";
 import { cn } from "@/lib/utils";
+import type { Language } from "@/types/shared";
 
 export interface FacetSwitcherProps {
   active: FacetKey;
+  language: Language;
   className?: string;
 }
 
@@ -24,16 +32,22 @@ export interface FacetSwitcherProps {
  * of where they are.
  */
 // @req REQ-114
-export function FacetSwitcher({ active, className }: FacetSwitcherProps) {
+export function FacetSwitcher({
+  active,
+  language,
+  className,
+}: FacetSwitcherProps) {
+  const copy = getTranslation(language).facets;
   return (
-    <nav aria-label="Facettes de l'atlas" data-testid="facet-switcher">
+    <nav aria-label={copy.navigation} data-testid="facet-switcher">
       <ul className={cn("flex flex-wrap gap-2", className)}>
         {FACETS.map((facet) => {
+          const localizedFacet = getFacet(facet.key, language);
           const current = facet.key === active;
           return (
             <li key={facet.key}>
               <Link
-                href={getFacetRoute("fr", facet.key)}
+                href={getFacetRoute(language, facet.key)}
                 aria-current={current ? "page" : undefined}
                 data-facet={facet.key}
                 data-active={current ? "true" : "false"}
@@ -52,7 +66,7 @@ export function FacetSwitcher({ active, className }: FacetSwitcherProps) {
                     : undefined
                 }
               >
-                {facet.label}
+                {localizedFacet.label}
               </Link>
             </li>
           );

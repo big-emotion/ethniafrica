@@ -9,8 +9,12 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 const mockPush = vi.fn();
 
 vi.mock("next/navigation", () => ({
+  usePathname: () => "/fr",
   notFound: vi.fn(() => {
     throw new Error("NEXT_NOT_FOUND");
+  }),
+  redirect: vi.fn((url: string) => {
+    throw new Error(`NEXT_REDIRECT:${url}`);
   }),
   useRouter: () => ({ push: mockPush }),
 }));
@@ -55,9 +59,10 @@ vi.mock("@/components/layout/PageLayout", () => ({
 // ---------------------------------------------------------------------------
 // Import page AFTER mocks
 // ---------------------------------------------------------------------------
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import PeopleLinksPage, { generateMetadata } from "../page";
 import { RELATIONS } from "@/components/fiche/__tests__/ficheContextFixtures";
+import { CANONICAL_DOMAIN } from "@/lib/brand";
 import { getPeopleLinksRoute, getPeopleRoute } from "@/lib/routing";
 
 async function renderPage(slug: string, lang = "fr") {
@@ -91,11 +96,32 @@ describe("/[lang]/peuples/[slug]/liens page", () => {
     });
   });
 
+  // @req REQ-140
+  it("hands the shell the locale of the route", async () => {
+    await renderPage("PPL_YORUBA", "en");
+
+    expect(pageLayoutProps.current.language).toBe("en");
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Links for Yoruba" })
+    ).toBeInTheDocument();
+  });
+
   // @req REQ-097 FR72
   it("404s when the people does not exist", async () => {
     mockGetPeopleById.mockResolvedValue(null);
     await expect(callPage("PPL_UNKNOWN")).rejects.toThrow("NEXT_NOT_FOUND");
     expect(notFound).toHaveBeenCalled();
+  });
+
+  // @req REQ-027
+  it("redirects a retired id to the successor's links page", async () => {
+    await expect(callPage("PPL_SERERE")).rejects.toThrow(
+      `NEXT_REDIRECT:${getPeopleLinksRoute("fr", "PPL_SERER")}`
+    );
+    expect(redirect).toHaveBeenCalledWith(
+      getPeopleLinksRoute("fr", "PPL_SERER")
+    );
+    expect(mockGetPeopleById).not.toHaveBeenCalled();
   });
 
   /**
@@ -148,6 +174,34 @@ describe("/[lang]/peuples/[slug]/liens page", () => {
     });
     expect(metadata.title).toContain("Yoruba");
     expect(typeof metadata.description).toBe("string");
+  });
+
+  // @req REQ-145
+  it("builds English metadata for the people's links page", async () => {
+    const metadata = await generateMetadata({
+      params: Promise.resolve({ lang: "en", slug: "PPL_YORUBA" }),
+    });
+
+    expect(metadata.title).toBe("Links for Yoruba — EthniAfrica");
+    expect(metadata.description).toMatch(
+      /documented migratory, commercial and religious links/i
+    );
+  });
+
+  // The sitemap published every links page while the page itself declared
+  // no canonical — the one address the atlas offered without saying which
+  // address it was.
+  // @req REQ-141
+  it("declares its canonical absolute, in the locale it was served in", async () => {
+    const metadata = await generateMetadata({
+      params: Promise.resolve({ lang: "en", slug: "PPL_YORUBA" }),
+    });
+
+    expect(metadata.alternates?.canonical).toBe(
+      `https://${CANONICAL_DOMAIN}${getPeopleLinksRoute("en", "PPL_YORUBA")}`
+    );
+    // No English translation record yet: withheld from the English index.
+    expect(metadata.robots).toEqual({ index: false, follow: true });
   });
 
   // @req REQ-097 FR72

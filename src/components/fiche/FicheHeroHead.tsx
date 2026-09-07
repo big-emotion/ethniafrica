@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 
 import { ACCENT_CLASS_BY_ENTITY } from "@/components/fiche/FicheSequence";
+import { TranslationProvenanceMarker } from "@/components/fiche/TranslationProvenanceMarker";
+import type { TranslationProvenance } from "@/lib/afrik/translations/types";
 import type { FicheEntityType } from "@/types/fiche";
 
 /**
@@ -23,9 +25,11 @@ import type { FicheEntityType } from "@/types/fiche";
 // @req REQ-115
 export function FicheHeroHead({
   entityType,
+  translation = null,
   children,
 }: {
   entityType: FicheEntityType;
+  translation?: Pick<TranslationProvenance, "kind" | "stale"> | null;
   children: ReactNode;
 }) {
   return (
@@ -34,6 +38,7 @@ export function FicheHeroHead({
       className={ACCENT_CLASS_BY_ENTITY[entityType]}
     >
       {children}
+      <TranslationProvenanceMarker translation={translation} className="mt-3" />
     </div>
   );
 }

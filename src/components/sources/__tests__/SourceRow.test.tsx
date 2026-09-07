@@ -77,4 +77,15 @@ describe("SourceRow", () => {
     expect(screen.getByText(/SIL International/)).toBeInTheDocument();
     expect(screen.getByText(/2024/)).toBeInTheDocument();
   });
+
+  // @req REQ-141
+  it("uses the reader's locale for the route and standing", () => {
+    render(<SourceRow source={source} language="en" />);
+
+    expect(screen.getByText("Official")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Ethnologue/ })).toHaveAttribute(
+      "href",
+      `/en/sources/${source.id}`
+    );
+  });
 });

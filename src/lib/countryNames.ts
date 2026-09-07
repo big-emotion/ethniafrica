@@ -1,3 +1,7 @@
+import { countryCopy } from "@/lib/i18n/copy/country";
+import { displayCountryName } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
+
 const ISO_ALPHA_3_TO_ALPHA_2: Record<string, string> = {
   AGO: "AO",
   BDI: "BI",
@@ -55,34 +59,29 @@ const ISO_ALPHA_3_TO_ALPHA_2: Record<string, string> = {
   ZWE: "ZW",
 };
 
-function createFrenchRegionNames(): Intl.DisplayNames | null {
-  if (typeof Intl.DisplayNames !== "function") {
-    return null;
-  }
+/** The country's common name in the reader's locale, with corpus fallback. */
+// @req REQ-140
+export function getCountryCommonName(
+  lang: Language,
+  isoAlpha3: string,
+  officialName: string
+): string {
+  const normalizedIsoAlpha3 = isoAlpha3.trim().toUpperCase();
 
-  try {
-    return new Intl.DisplayNames(["fr"], { type: "region" });
-  } catch {
-    return null;
-  }
+  const editorialOverride =
+    countryCopy[lang].editorialCommonNames[normalizedIsoAlpha3];
+  if (editorialOverride) return editorialOverride;
+
+  const isoAlpha2 = ISO_ALPHA_3_TO_ALPHA_2[normalizedIsoAlpha3];
+  if (!isoAlpha2) return officialName;
+  return displayCountryName(lang, isoAlpha2) ?? officialName;
 }
 
-const frenchRegionNames = createFrenchRegionNames();
-
+/** French-only compatibility accessor for corpus-side callers. */
 // @req REQ-001
 export function getFrenchCountryCommonName(
   isoAlpha3: string,
   officialName: string
 ): string {
-  const isoAlpha2 = ISO_ALPHA_3_TO_ALPHA_2[isoAlpha3.trim().toUpperCase()];
-
-  if (!isoAlpha2 || !frenchRegionNames) {
-    return officialName;
-  }
-
-  try {
-    return frenchRegionNames.of(isoAlpha2) ?? officialName;
-  } catch {
-    return officialName;
-  }
+  return getCountryCommonName("fr", isoAlpha3, officialName);
 }

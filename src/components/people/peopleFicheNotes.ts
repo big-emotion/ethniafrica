@@ -2,6 +2,8 @@ import type {
   FieldNote,
   NoteSource,
 } from "@/lib/supabase/queries/afrik/module-zero-batch";
+import { peopleCopy } from "@/lib/i18n/copy/people";
+import type { Language } from "@/types/shared";
 
 /**
  * A people fiche's note callouts, allocated in reading order.
@@ -37,92 +39,97 @@ export const PEOPLE_NOTE_FIELDS = [
     path: "content.origins.ancientOrigins",
     section: "origin",
     key: "ancientOrigins",
-    label: "Origines anciennes",
   },
   {
     path: "content.origins.formationPeriod",
     section: "origin",
     key: "formationPeriod",
-    label: "Période de formation",
   },
   {
     path: "content.origins.unificationsOrDivisions",
     section: "origin",
     key: "unificationsOrDivisions",
-    label: "Unifications & divisions",
   },
   {
     path: "content.origins.externalInfluences",
     section: "origin",
     key: "externalInfluences",
-    label: "Influences extérieures",
   },
   {
     path: "content.origins.majorHistoricalEvents",
     section: "origin",
     key: "majorHistoricalEvents",
-    label: "Événements majeurs",
   },
   {
     path: "content.languages.vehicularRole",
     section: "language",
     key: "vehicularRole",
-    label: "Rôle véhiculaire",
   },
   {
     path: "content.historicalRole.kingdomsOrChiefdoms",
     section: "history",
     key: "kingdomsOrChiefdoms",
-    label: "Royaumes & chefferies",
   },
   {
     path: "content.historicalRole.relationsWithNeighbors",
     section: "history",
     key: "relationsWithNeighbors",
-    label: "Relations avec les voisins",
   },
   {
     path: "content.historicalRole.conflictsOrAlliances",
     section: "history",
     key: "conflictsOrAlliances",
-    label: "Conflits & alliances",
   },
   {
     path: "content.historicalRole.diaspora",
     section: "history",
     key: "diaspora",
-    label: "Diaspora",
   },
   {
     path: "content.culture.majorRites",
     section: "culture",
     key: "majorRites",
-    label: "Rites majeurs",
   },
   {
     path: "content.culture.symbols",
     section: "culture",
     key: "symbols",
-    label: "Symboles",
   },
   {
     path: "content.culture.artsAndMusic",
     section: "culture",
     key: "artsAndMusic",
-    label: "Arts & musique",
   },
   {
     path: "content.culture.spiritualities",
     section: "culture",
     key: "spiritualities",
-    label: "Spiritualités",
   },
 ] as const satisfies ReadonlyArray<{
   path: string;
   section: PeopleNoteSection;
   key: string;
-  label: string;
 }>;
+
+function noteLabels(language: Language) {
+  const copy = peopleCopy[language];
+  return {
+    ancientOrigins: copy.originFields.ancientOrigins,
+    formationPeriod: copy.originFields.formationPeriod,
+    unificationsOrDivisions: copy.originFields.unifications,
+    externalInfluences: copy.originFields.externalInfluences,
+    majorHistoricalEvents: copy.originFields.majorEvents,
+    vehicularRole: copy.languageFields.vehicularRole,
+    kingdomsOrChiefdoms: copy.historyFields.kingdoms,
+    relationsWithNeighbors: copy.historyFields.neighbours,
+    conflictsOrAlliances: copy.historyFields.conflicts,
+    diaspora: copy.historyFields.diaspora,
+    majorRites: copy.cultureFields.majorRites,
+    symbols: copy.cultureFields.symbols,
+    artsAndMusic: copy.cultureFields.artsAndMusic,
+    spiritualities: copy.cultureFields.spiritualities,
+  };
+}
 
 /**
  * The DOM id a shared `#chip-…` link lands on.
@@ -166,7 +173,8 @@ export interface PeopleFicheNotes {
 // @req REQ-019
 export function buildPeopleFicheNotes(
   notes: readonly FieldNote[],
-  numberBySourceId: Record<string, number>
+  numberBySourceId: Record<string, number>,
+  language: Language = "fr"
 ): PeopleFicheNotes {
   const byPath = new Map(notes.map((note) => [note.fieldPath, note]));
 
@@ -177,6 +185,7 @@ export function buildPeopleFicheNotes(
     culture: {},
     count: 0,
   };
+  const labels = noteLabels(language);
 
   for (const field of PEOPLE_NOTE_FIELDS) {
     const note = byPath.get(field.path);
@@ -188,7 +197,7 @@ export function buildPeopleFicheNotes(
     built[field.section][field.key] = {
       noteNumber: built.count,
       anchorId: noteAnchorId(field.path),
-      fieldLabel: field.label,
+      fieldLabel: labels[field.key],
       assertionId: note.assertionId,
       assertionStatement: note.statement,
       contested: note.confidenceLevel === "contested",

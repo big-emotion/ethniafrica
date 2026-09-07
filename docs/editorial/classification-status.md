@@ -180,10 +180,11 @@ authorship and belongs to a curator:
 
 - `FLG_BENOUECONGO` — `whyProblematic` is a bare heading, "PREUVES - Auteurs
   coloniaux problématiques :", with no body.
-- `PPL_WOLOF_BANTU` — `whyProblematic` is a maintenance note ("ERREUR DE
-  CLASSIFICATION": the fiche sits under `FLG_BANTU` and belongs under
-  `FLG_ATLANTIQUE`), not a claim about the name, which the same fiche calls
-  universally accepted.
+- `PPL_WOLOF_BANTU` — `whyProblematic` was a maintenance note ("ERREUR DE
+  CLASSIFICATION": the fiche sat under `FLG_BANTU` and belonged under
+  `FLG_ATLANTIQUE`), not a claim about the name, which the same fiche called
+  universally accepted. Retired on 2026-09-05 and merged into `PPL_WOLOF`; the
+  decision is recorded in `dataset/source/afrik/_retired-identifiers.json`.
 
 ## Not covered
 

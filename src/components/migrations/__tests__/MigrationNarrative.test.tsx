@@ -27,7 +27,7 @@ function makeEvent(
 describe("MigrationNarrative", () => {
   // @req REQ-101 FR81 FR82 FR78
   it("renders every event's name, period and peoples via MigrationEventCard", () => {
-    render(<MigrationNarrative events={[makeEvent()]} />);
+    render(<MigrationNarrative language="fr" events={[makeEvent()]} />);
     expect(
       screen.getByRole("heading", { name: "Expansion test" })
     ).toBeInTheDocument();
@@ -41,6 +41,7 @@ describe("MigrationNarrative", () => {
   it("renders every paragraph of the narrative text", () => {
     render(
       <MigrationNarrative
+        language="fr"
         events={[
           makeEvent({
             paragraphs: [
@@ -59,6 +60,7 @@ describe("MigrationNarrative", () => {
   it("degrades a paragraph's confidence indicator to a 'voir les sources' link when confidence is missing", () => {
     render(
       <MigrationNarrative
+        language="fr"
         events={[
           makeEvent({
             paragraphs: [{ text: "Sans confiance.", confidence: null }],
@@ -78,6 +80,7 @@ describe("MigrationNarrative", () => {
   it("renders the full confidence pill for a paragraph with complete confidence data", () => {
     render(
       <MigrationNarrative
+        language="fr"
         events={[
           makeEvent({
             paragraphs: [
@@ -104,6 +107,7 @@ describe("MigrationNarrative", () => {
   it("renders debate text for a contested event", () => {
     render(
       <MigrationNarrative
+        language="fr"
         events={[
           makeEvent({
             classificationStatus: "contested",
@@ -134,6 +138,7 @@ describe("MigrationNarrative", () => {
   it("opens each event at h2 so the page's h1 is not followed by an h3", () => {
     render(
       <MigrationNarrative
+        language="fr"
         events={[
           makeEvent({
             classificationStatus: "contested",
@@ -155,6 +160,7 @@ describe("MigrationNarrative", () => {
   it("renders no debate section for a consensual event, even if debate text is present", () => {
     render(
       <MigrationNarrative
+        language="fr"
         events={[
           makeEvent({
             classificationStatus: "consensual",
@@ -171,6 +177,7 @@ describe("MigrationNarrative", () => {
   it("renders no debate section for a contested event with no debate text", () => {
     render(
       <MigrationNarrative
+        language="fr"
         events={[
           makeEvent({ classificationStatus: "contested", debate: null }),
         ]}
@@ -183,6 +190,7 @@ describe("MigrationNarrative", () => {
   it("renders multiple events in the given order, complete without JS", () => {
     render(
       <MigrationNarrative
+        language="fr"
         events={[
           makeEvent({ id: "MGR_FIRST", nameMain: "Premier événement" }),
           makeEvent({ id: "MGR_SECOND", nameMain: "Second événement" }),
@@ -208,6 +216,7 @@ describe("MigrationNarrative", () => {
   it("gives the narrative paragraphs no measure of their own", () => {
     const { container } = render(
       <MigrationNarrative
+        language="fr"
         events={[
           makeEvent({
             classificationStatus: "contested",
@@ -224,7 +233,7 @@ describe("MigrationNarrative", () => {
 
   // @req REQ-101 FR81 FR82 FR78
   it("renders an empty state when there are no events", () => {
-    render(<MigrationNarrative events={[]} />);
+    render(<MigrationNarrative language="fr" events={[]} />);
     expect(
       screen.getByText("Aucune migration ne correspond à ce filtre.")
     ).toBeInTheDocument();

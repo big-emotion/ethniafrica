@@ -106,7 +106,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "Les textes consultés décrivent des coalitions et conflits politiques entre groupes historiques, mais aucune relation ne répond au modèle d’alliance nominale entre deux fiches PAT_* ; les recherches « Beni Ifren alliance » et « parenté à plaisanterie » sont restées négatives."
+      "reason": "Les textes consultés décrivent des coalitions et conflits politiques entre groupes historiques, mais aucune relation ne répond au modèle d’alliance nominale entre deux noms de l'atlas ; les recherches « Beni Ifren alliance » et « parenté à plaisanterie » sont restées négatives."
     },
     {
       "fieldPath": "casteOrSocialFunction",

@@ -7,6 +7,32 @@ afterEach(() => {
 });
 
 describe("MediaCreditSection", () => {
+  // @req REQ-145
+  it("renders media credit chrome in English", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          data: [
+            {
+              id: "en",
+              author: null,
+              licenceUri: "https://example.org/licence",
+              sourcePageUrl: "https://example.org/source",
+              period: null,
+              depictionTiming: "contemporary",
+            },
+          ],
+        }),
+      })
+    );
+    render(<MediaCreditSection peopleId="PPL_TEST" language="en" />);
+    expect(await screen.findByText("Media credits")).toBeVisible();
+    expect(screen.getByText("Unknown author")).toBeVisible();
+    expect(screen.getByRole("link", { name: "Source page" })).toBeVisible();
+  });
+
   // @req REQ-128
   it("renders the author, licence and source page beside a media entry", async () => {
     vi.stubGlobal(

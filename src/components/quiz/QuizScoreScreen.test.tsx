@@ -10,6 +10,7 @@ const GHANA: QuizScope = { kind: "country", entityId: "GHA" };
 function renderScreen(scope: QuizScope = GHANA, correct = 7) {
   return render(
     <QuizScoreScreen
+      language="fr"
       scope={scope}
       scopeLabelFr="Ghana"
       correctCount={correct}

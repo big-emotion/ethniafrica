@@ -9,9 +9,12 @@ import {
   QUIZ_SESSION_SIZE,
   type QuizScope,
 } from "@/lib/quiz/quizScope";
+import type { Language } from "@/types/shared";
 
 export interface UseQuizSessionOptions {
   scope: QuizScope;
+  /** Selects one authored question bank. French remains the safe default. */
+  language?: Language;
   /**
    * A content theme narrowing the track. Part of the query key, so switching
    * theme fetches a new session rather than replaying the cached one.
@@ -91,6 +94,7 @@ async function fetchQuizSession(
 ): Promise<QuizSessionQuestionView[]> {
   const params = quizScopeSearchParams(options.scope);
   if (options.theme) params.set("theme", options.theme);
+  params.set("lang", options.language ?? "fr");
   params.set("count", String(options.count ?? QUIZ_SESSION_SIZE));
 
   const res = await fetch(`/api/v2/quiz/session?${params.toString()}`);
@@ -125,6 +129,7 @@ export function useQuizSession(
     queryKey: [
       "quiz-session",
       quizScopeKey(options.scope),
+      options.language ?? "fr",
       options.theme ?? null,
       options.count,
     ],

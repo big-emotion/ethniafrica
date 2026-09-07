@@ -20,6 +20,7 @@ import { ReferenceLibraryFlow } from "./ReferenceLibraryFlow";
 import { Language } from "@/types/shared";
 import { getContributionSourceCitations } from "@/lib/validations/contribution";
 import { FormFieldError } from "@/components/forms/FormFieldError";
+import { contributeCopy } from "@/lib/i18n/copy/contribute";
 
 interface ContributionFormProps {
   language: Language;
@@ -41,31 +42,12 @@ const ANCHOR_TYPES: Record<string, string> = {
   update_language_family: "language_family",
 };
 
-/**
- * What the queue shows before anyone opens the proposal.
- *
- * `reason_text` is the flag's one free-text field and the column a moderator
- * scans, so a contribution states what it proposes there. It is also why these
- * are phrases and not bare labels: the server holds `reason_text` to ten
- * characters, and a contributor who leaves the notes blank must still produce
- * a line that reads.
- */
-const CONTRIBUTION_SUMMARIES: Record<string, string> = {
-  new_people: "Proposition d'un nouveau peuple",
-  update_people: "Proposition de correction sur un peuple",
-  new_country: "Proposition d'un nouveau pays",
-  update_country: "Proposition de correction sur un pays",
-  new_language_family: "Proposition d'une nouvelle famille linguistique",
-  update_language_family:
-    "Proposition de correction sur une famille linguistique",
-};
-
 // @req REQ-092
 export function ContributionForm({
-  language: _language,
+  language,
   renderVerification,
 }: ContributionFormProps) {
-  void _language;
+  const t = contributeCopy[language];
   const [type, setType] = useState<string>("");
   const [inputMode, setInputMode] = useState<"json" | "form">("form");
   const [payload, setPayload] = useState<string>("");
@@ -80,42 +62,6 @@ export function ContributionForm({
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  const t = {
-    title: "Soumettre une contribution",
-    type: "Type de contribution",
-    inputMode: "Mode de saisie",
-    jsonMode: "JSON",
-    formMode: "Formulaire",
-    payload: "Données (JSON)",
-    payloadPlaceholder:
-      '{"name_main": "...", "language_family_id": "FLG_...", ...}',
-    name: "Votre nom (optionnel)",
-    email: "Votre email (optionnel)",
-    notes: "Notes (optionnel)",
-    submit: "Soumettre la contribution",
-    submitting: "Envoi en cours...",
-    success: "Contribution soumise avec succès !",
-    error: "Erreur lors de la soumission",
-    invalidJson: "Format JSON invalide",
-    verification: "Vérification anti-robot",
-    notVerified:
-      "La vérification anti-robot n'est pas terminée. Patientez quelques instants, puis réessayez.",
-    verificationFailed:
-      "La vérification anti-robot n'a pas abouti. Rechargez la page pour réessayer.",
-    selectType: "Sélectionner un type",
-    newPeople: "Nouveau peuple",
-    updatePeople: "Modifier un peuple",
-    newCountry: "Nouveau pays",
-    updateCountry: "Modifier un pays",
-    newLanguageFamily: "Nouvelle famille linguistique",
-    updateLanguageFamily: "Modifier une famille linguistique",
-    requiredFields: "Veuillez remplir tous les champs obligatoires",
-    sourceUnverified:
-      "Cette source sera publiée avec la mention « Non vérifiée » : la " +
-      "contribution est acceptée, mais l'indice de confiance affiché sur la " +
-      "fiche en tiendra compte et sera plus bas.",
-  };
 
   const sourceCitations = (() => {
     if (inputMode === "form") return getContributionSourceCitations(formData);
@@ -180,7 +126,8 @@ export function ContributionForm({
       }
 
       const anchorId = parsedPayload.id;
-      const summary = CONTRIBUTION_SUMMARIES[type] ?? "Contribution";
+      const summary =
+        t.summaries[type as keyof typeof t.summaries] ?? t.summaries.fallback;
       const trimmedNotes = notes.trim();
 
       const response = await fetch("/api/v2/flags", {
@@ -313,13 +260,13 @@ export function ContributionForm({
           type && (
             <ContributionFormFields
               type={type}
-              language="fr"
+              language={language}
               onDataChange={setFormData}
             />
           )
         )}
 
-        {type && <ReferenceLibraryFlow />}
+        {type && <ReferenceLibraryFlow language={language} />}
 
         <div>
           <Label htmlFor="name">{t.name}</Label>
@@ -379,6 +326,7 @@ export function ContributionForm({
             })
           ) : (
             <ProofOfWorkGate
+              language={language}
               onSolved={(solved) => {
                 setProof(solved);
                 setVerificationError("");

@@ -3,8 +3,10 @@
  * components so the ranking a reader sees is the same fact the globe drew,
  * and so both can be tested without rendering anything.
  */
-import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
-import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
+import {
+  getAdmin0Name,
+  type FamilyFootprintCountry,
+} from "@/lib/atlas/overlays";
 import { flagFromISO3 } from "@/lib/countryFlag";
 import type { CountryId } from "@/types/afrik";
 
@@ -32,8 +34,9 @@ export function rankFootprint(
 ): FootprintRankingRow[] {
   return countries.map((country) => ({
     countryId: country.countryId,
-    // The admin-0 asset's own French name — the same one the picker shows.
-    nameFr: AFRICA_ADMIN0[country.countryId]?.nameFr ?? country.countryId,
+    // The admin-0 asset's own French name — the same one the picker shows,
+    // through the ISO alias the globe resolves (South Sudan is SDS there).
+    nameFr: getAdmin0Name(country.countryId, "fr") ?? country.countryId,
     flag: flagFromISO3(country.countryId),
     memberCount: country.memberCount,
     barWidthPercent: country.weight * 100,
@@ -57,7 +60,7 @@ export function rankFootprintFromCounts(
   countsByCountry: Readonly<Record<string, number>>
 ): FootprintRankingRow[] {
   const entries = Object.entries(countsByCountry).filter(
-    ([countryId]) => AFRICA_ADMIN0[countryId] !== undefined
+    ([countryId]) => getAdmin0Name(countryId, "fr") !== undefined
   );
   if (entries.length === 0) return [];
 
@@ -70,7 +73,7 @@ export function rankFootprintFromCounts(
     )
     .map(([countryId, memberCount]) => ({
       countryId,
-      nameFr: AFRICA_ADMIN0[countryId]?.nameFr ?? countryId,
+      nameFr: getAdmin0Name(countryId, "fr") ?? countryId,
       flag: flagFromISO3(countryId),
       memberCount,
       barWidthPercent: densest > 0 ? (memberCount / densest) * 100 : 0,

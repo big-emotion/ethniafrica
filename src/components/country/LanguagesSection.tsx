@@ -2,13 +2,19 @@ import type {
   LanguagesData,
   LanguageBubble,
 } from "@/lib/countryDataTransformer";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 interface LanguagesSectionProps {
   data: LanguagesData;
+  language?: Language;
 }
 
 // @req REQ-092
-export function LanguagesSection({ data }: LanguagesSectionProps) {
+export function LanguagesSection({
+  data,
+  language = FALLBACK_LOCALE,
+}: LanguagesSectionProps) {
   if (data.bubbles.length === 0) return null;
 
   return (
@@ -17,7 +23,9 @@ export function LanguagesSection({ data }: LanguagesSectionProps) {
         <LanguageBubbleItem key={i} bubble={bubble} />
       ))}
 
-      {data.overflowCount > 0 && <OverflowPill count={data.overflowCount} />}
+      {data.overflowCount > 0 && (
+        <OverflowPill count={data.overflowCount} language={language} />
+      )}
     </div>
   );
 }
@@ -93,7 +101,13 @@ function bubbleSizeClass(size: LanguageBubble["size"]): string {
 // OverflowPill
 // ==========================================
 
-function OverflowPill({ count }: { count: number }) {
+function OverflowPill({
+  count,
+  language,
+}: {
+  count: number;
+  language: Language;
+}) {
   return (
     <span
       className={[
@@ -108,7 +122,7 @@ function OverflowPill({ count }: { count: number }) {
         color: "var(--country-earth)",
       }}
     >
-      + {count} autres langues
+      + {count} {language === "en" ? "other languages" : "autres langues"}
     </span>
   );
 }

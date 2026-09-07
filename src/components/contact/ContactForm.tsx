@@ -9,12 +9,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { CONTACT_EMAIL } from "@/lib/brand";
+import { contactCopy } from "@/lib/i18n/copy/contact";
 import { cn } from "@/lib/utils";
 import {
   CONTACT_CIVILITIES,
-  CONTACT_CIVILITY_LABEL,
   CONTACT_SUBJECTS,
 } from "@/lib/validations/contact";
+import type { Language } from "@/types/shared";
 
 /**
  * A native `<select>` rather than the Radix primitive beside it.
@@ -58,7 +59,8 @@ const EMPTY_FORM = {
  * network without giving the field rules a second definition here.
  */
 // @req REQ-045
-export function ContactForm() {
+export function ContactForm({ language = "fr" }: { language?: Language }) {
+  const copy = contactCopy[language];
   const fieldId = useId();
   const [form, setForm] = useState(EMPTY_FORM);
   const [honeypot, setHoneypot] = useState("");
@@ -83,7 +85,7 @@ export function ContactForm() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, honeypot }),
+        body: JSON.stringify({ ...form, honeypot, language }),
       });
       const payload = await response.json();
 
@@ -91,9 +93,7 @@ export function ContactForm() {
         setFieldErrors(payload.fieldErrors ?? {});
         setSend({
           status: "failed",
-          message:
-            payload.message ??
-            `Votre message n'a pas pu être envoyé. Écrivez-nous directement à ${CONTACT_EMAIL}.`,
+          message: payload.message ?? copy.sendFailed(CONTACT_EMAIL),
         });
         return;
       }
@@ -105,7 +105,7 @@ export function ContactForm() {
     } catch {
       setSend({
         status: "failed",
-        message: `Votre message n'a pas pu être envoyé. Écrivez-nous directement à ${CONTACT_EMAIL}.`,
+        message: copy.sendFailed(CONTACT_EMAIL),
       });
     }
   };
@@ -129,21 +129,21 @@ export function ContactForm() {
     // the split-`dt`-from-`dd` failure the charter already records once.
     <form onSubmit={handleSubmit} className="space-y-5 text-left">
       <p className="text-afh-caption text-afh-text-soft">
-        Les champs marqués d&apos;un astérisque sont obligatoires.
+        {copy.requiredFields}
       </p>
 
       <div className="space-y-2">
-        <Label htmlFor={`${fieldId}-civility`}>Civilité</Label>
+        <Label htmlFor={`${fieldId}-civility`}>{copy.civility}</Label>
         <select
           {...fieldProps("civility")}
           className={cn(FIELD_CLASSES, CHARTER_FOCUS_RING)}
           value={form.civility}
           onChange={(event) => update("civility")(event.target.value)}
         >
-          <option value="">Sélectionnez…</option>
+          <option value="">{copy.selectCivility}</option>
           {CONTACT_CIVILITIES.map((civility) => (
             <option key={civility} value={civility}>
-              {CONTACT_CIVILITY_LABEL[civility]}
+              {copy.civilities[civility]}
             </option>
           ))}
         </select>
@@ -151,7 +151,7 @@ export function ContactForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label htmlFor={`${fieldId}-firstName`}>Prénom *</Label>
+          <Label htmlFor={`${fieldId}-firstName`}>{copy.firstName}</Label>
           <Input
             {...fieldProps("firstName")}
             required
@@ -165,7 +165,7 @@ export function ContactForm() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor={`${fieldId}-lastName`}>Nom *</Label>
+          <Label htmlFor={`${fieldId}-lastName`}>{copy.lastName}</Label>
           <Input
             {...fieldProps("lastName")}
             required
@@ -180,7 +180,7 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor={`${fieldId}-email`}>Adresse électronique *</Label>
+        <Label htmlFor={`${fieldId}-email`}>{copy.email}</Label>
         <Input
           {...fieldProps("email")}
           type="email"
@@ -195,7 +195,7 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor={`${fieldId}-subject`}>Objet *</Label>
+        <Label htmlFor={`${fieldId}-subject`}>{copy.subject}</Label>
         <select
           {...fieldProps("subject")}
           required
@@ -203,10 +203,10 @@ export function ContactForm() {
           value={form.subject}
           onChange={(event) => update("subject")(event.target.value)}
         >
-          <option value="">Sélectionnez un objet</option>
+          <option value="">{copy.selectSubject}</option>
           {CONTACT_SUBJECTS.map((subject) => (
             <option key={subject.value} value={subject.value}>
-              {subject.label}
+              {copy.subjects[subject.value]}
             </option>
           ))}
         </select>
@@ -216,12 +216,12 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor={`${fieldId}-message`}>Message *</Label>
+        <Label htmlFor={`${fieldId}-message`}>{copy.message}</Label>
         <Textarea
           {...fieldProps("message")}
           required
           rows={8}
-          placeholder="Décrivez votre demande…"
+          placeholder={copy.messagePlaceholder}
           value={form.message}
           onChange={(event) => update("message")(event.target.value)}
         />
@@ -237,9 +237,7 @@ export function ContactForm() {
         aria-hidden="true"
         className="absolute left-[-9999px] h-0 w-0 overflow-hidden"
       >
-        <label htmlFor={`${fieldId}-honeypot`}>
-          Ne remplissez pas ce champ
-        </label>
+        <label htmlFor={`${fieldId}-honeypot`}>{copy.honeypot}</label>
         <input
           id={`${fieldId}-honeypot`}
           name="honeypot"
@@ -257,7 +255,7 @@ export function ContactForm() {
           variant="accent"
           disabled={send.status === "sending"}
         >
-          {send.status === "sending" ? "Envoi en cours…" : "Envoyer le message"}
+          {send.status === "sending" ? copy.sending : copy.send}
         </Button>
 
         {send.status === "sent" && (
@@ -265,8 +263,7 @@ export function ContactForm() {
             role="status"
             className="rounded-afh-lg border border-afh-border bg-afh-bg-warm px-3 py-2 text-afh-small text-afh-text"
           >
-            Votre message est bien parti. Nous vous répondons à l&apos;adresse
-            que vous avez indiquée.
+            {copy.sent}
           </p>
         )}
 

@@ -7,7 +7,7 @@
     "appellations": {
       "mainName": "Wolof",
       "selfAppellation": "Wolof",
-      "exonyms": ["Jolof", "Djolof", "Ouolof"],
+      "exonyms": ["Jolof", "Djolof", "Ouolof", "Wollof", "Woloff"],
       "originOfExonyms": "Le terme Jolof ou Djolof derive du nom de l'Empire Jolof fonde au XIVe siecle au Senegal. Les Portugais, premiers Europeens a contacter ce peuple au XVe siecle, ont transcrit le nom en Jalof ou Ouolof.",
       "whyProblematic": null,
       "contemporaryUsage": "Le terme Wolof est universellement adopte aujourd'hui en francais et en anglais. Ouolof est encore utilise dans certains textes administratifs francais anciens.",
@@ -23,20 +23,35 @@
       "Waalo : fraction du nord, vallee du fleuve Senegal",
       "Sine : fraction serer-wolofisee, royaume du Sine",
       "Saloum : fraction meridionale, debouche sur la Gambie",
-      "Lebu : sous-groupe de la peninsule du Cap-Vert (Dakar), dialecte distinct"
+      "Lebu : sous-groupe de la peninsule du Cap-Vert (Dakar), dialecte distinct",
+      "Wolof du Cayor — province historique du Kayor, nord-ouest du Senegal",
+      "Wolof du Baol — province du Baol, centre du Senegal",
+      "Wolof du Walo — province du Walo, vallee du fleuve Senegal",
+      "Wolof de Gambie — environ 16% de la population gambienne, concentres a Banjul",
+      "Wolof de Mauritanie — environ 8% de la population mauritanienne, cote sud-ouest"
     ],
     "origins": {
       "ancientOrigins": "Les Wolof sont originaires de la region senegambienne. Selon une tradition orale liee au Waalo, un personnage mysterieux nomme Ndiadiane Ndiaye (Ndyadyane Ndyaye) serait emerge d'un lac, aurait arbitre un conflit entre villages et serait devenu le premier souverain wolof. Sa descendance, les Ndiayes, a fonde les familles royales wolof. Les traces archeologiques (poteries prehistoriques, pierres du VIIIe siecle, tumulus funeraires du XIVe siecle) au Senegal et en Gambie temoignent d'une presence ancienne, sans exclusive wolof. Une theorie associe la formation du peuple wolof a des migrations liees a la chute de l'Empire du Ghana vers 1076 et aux pressions des conquerants almoravides.",
       "formationPeriod": "XIe au XIVe siecle, avec consolidation de l'identite wolof sous l'Empire Jolof (vers 1350-1549).",
       "migrationRoutes": [
         "Migrations depuis le nord et l'est du Senegal vers la cote atlantique",
-        "Diffusion vers la Gambie et le sud de la Mauritanie"
+        "Diffusion vers la Gambie et le sud de la Mauritanie",
+        "Migration vers le nord-est du Senegal apres la chute de l'Empire du Ghana (vers 1076)",
+        "Etablissement progressif dans la vallee du fleuve Senegal (Walo)",
+        "Expansion vers les plateaux du Cayor et du Baol",
+        "Diffusion en Gambie le long du fleuve Gambie",
+        "Urbanisation moderne vers Dakar, Banjul et les villes ouest-africaines"
       ],
       "historicalSettlementZones": [
         "Bassin du fleuve Senegal (Waalo)",
         "Peninsule du Cap-Vert et region de Dakar (Lebu)",
         "Cayor et Baol (centre-nord du Senegal actuel)",
-        "Nord de la Gambie (region de Banjul)"
+        "Nord de la Gambie (region de Banjul)",
+        "Vallee du fleuve Senegal (Walo)",
+        "Plateau du Cayor (nord-ouest Senegal)",
+        "Region du Baol (centre Senegal)",
+        "Bassins du Sine et du Saloum",
+        "Plaines cotales senegalaises et gambiennes"
       ],
       "unificationsOrDivisions": "L'Empire Jolof (milieu XIVe siecle - 1549) a uni les etats wolof sous l'autorite du Buurba Jolof. La bataille de Danki en 1549 a provoque l'eclatement de l'empire en royaumes independants (Cayor, Baol, Waalo, Sine, Saloum). Ces royaumes ont perdure jusqu'a la colonisation francaise (1870-1890).",
       "externalInfluences": "Contacts avec les empires mandingues (Mali, Songhai) depuis le XIIIe siecle. Relations commerciales avec les Portugais des le XVe siecle (traite negriere). Islamisation progressive : influence des clercs musulmans toucouleurs, puis jihads peuls au XVIIIe siecle. Colonisation francaise (XIXe siecle) avec integration des Wolof dans l'administration coloniale.",
@@ -56,7 +71,11 @@
         "Wolof senegalais standard : dialecte de reference, base du Wolof officiel",
         "Dakar-Wolof (Urban Wolof) : melange de wolof, francais, arabe et anglais, parle dans les grandes villes",
         "Wolof gambien (wof) : dialecte distinct avec orthographe et emprunts en anglais, mutuellement intelligible avec le wolof senegalais",
-        "Lebu : dialecte du Cap-Vert, incomprehensible pour les locuteurs du wolof standard ; tous les locuteurs Lebu sont bilingues en wolof standard"
+        "Lebu : dialecte du Cap-Vert, incomprehensible pour les locuteurs du wolof standard ; tous les locuteurs Lebu sont bilingues en wolof standard",
+        "Dakar-Wolof : dialecte urbain melant wolof, francais et arabe, parle dans la capitale",
+        "Wolof rural du Cayor et du Baol : dialecte de reference, plus conservateur",
+        "Wolof de Gambie (Banjul-Wolof) : variante gambienne, legere influence anglaise",
+        "Lebu : dialecte distinct parle par les Lebu de la peninsule du Cap-Vert"
       ],
       "vehicularRole": "Le wolof est la langue vehiculaire principale du Senegal, parlee nativement par environ 40% de la population et comprise par environ 90% des Senegalais comme premiere ou deuxieme langue. Il sert de lingua franca dans les villes, les marches, les transports et les medias. Au niveau international, il est parle par les communautes de la diaspora senegalaise en Europe et en Amerique du Nord."
     },
@@ -118,6 +137,24 @@
         "url": "https://www.cia.gov/the-world-factbook/countries/senegal/",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Joshua Project — Wolof in Senegal (2025)",
+        "url": "https://joshuaproject.net/people_groups/15414/SG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Wolof Resources — The Wolof of Senegal",
+        "url": "http://wolofresources.org/wolof.htm",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers wolofresources.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Qiraat Africa — Wolof, a West African ethnic group (2025)",
+        "url": "https://qiraatafrican.com/en/14992/wolof-a-west-african-ethnic-group/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
       }
     ]
   }

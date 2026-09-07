@@ -207,6 +207,8 @@ export async function getPatronymesFacetChoices(): Promise<PatronymesFacetChoice
   const byFrenchLabel = (a: PatronymesFacetOption, b: PatronymesFacetOption) =>
     a.label.localeCompare(b.label, "fr");
 
+  // The facet's French labels are the API's authored contract; a `?lang=`
+  // overlay is ETNI-1826's, not a default this service should guess.
   const nameSystemLabels = translations.fr.patronymes.nameSystemLabels;
   const documented = new Set(
     (

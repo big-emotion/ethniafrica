@@ -1,20 +1,37 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-import {
-  NOMMER_PAGE_SUBTITLE,
-  NOMMER_PAGE_TITLE,
-  NommerPillarPage,
-} from "@/components/dossiers/nommer/NommerPillarPage";
+import { NommerPillarPage } from "@/components/dossiers/nommer/NommerPillarPage";
+import { isModulePublished } from "@/lib/hubs/moduleOffer";
+import { nommerCopy } from "@/lib/i18n/copy/nommer";
 import { getLocalizedRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
+import type { Language } from "@/types/shared";
 
-const CANONICAL_PATH = getLocalizedRoute("fr", "nommer");
+interface PageProps {
+  params: Promise<{ lang: string }>;
+}
 
 // @req REQ-113
-export const metadata: Metadata = {
-  title: NOMMER_PAGE_TITLE,
-  description: NOMMER_PAGE_SUBTITLE,
-  alternates: { canonical: CANONICAL_PATH },
-};
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { lang } = await params;
+  if (!isModulePublished("nommer")) return {};
+  const language = lang as Language;
+  const pageCopy = nommerCopy[language];
+  const copy = { title: pageCopy.title, description: pageCopy.subtitle };
+  return {
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "nommer",
+      (locale) => getLocalizedRoute(locale, "nommer"),
+      copy
+    ),
+  };
+}
 
 /**
  * The pillar of the founding dossier.
@@ -24,6 +41,8 @@ export const metadata: Metadata = {
  * the page cannot show a reader an empty dossier because a database was slow.
  */
 // @req REQ-113
-export default function NommerPage() {
-  return <NommerPillarPage />;
+export default async function NommerPage({ params }: PageProps) {
+  const { lang } = await params;
+  if (!isModulePublished("nommer")) notFound();
+  return <NommerPillarPage language={lang as Language} />;
 }

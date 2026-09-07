@@ -5,15 +5,21 @@ import LegalNoticePage from "@/app/[lang]/mentions-legales/page";
 import DataPolicyPage from "@/app/[lang]/politique-de-donnees/page";
 
 vi.mock("@/components/layout/PageLayout", () => ({
-  PageLayout: ({ children }: { children: React.ReactNode }) => (
-    <div>{children}</div>
-  ),
+  PageLayout: ({
+    children,
+    language,
+  }: {
+    children: React.ReactNode;
+    language: string;
+  }) => <div data-language={language}>{children}</div>,
 }));
+
+const routeParams = (lang: string) => Promise.resolve({ lang });
 
 describe("footer destination pages", () => {
   // @req REQ-088
-  it("identifies BIG EMOTION as EthniAfrica's publisher", () => {
-    render(<LegalNoticePage />);
+  it("identifies BIG EMOTION as EthniAfrica's publisher", async () => {
+    render(await LegalNoticePage({ params: routeParams("fr") }));
 
     expect(
       screen.getByRole("heading", { level: 1, name: "Mentions légales" })
@@ -38,8 +44,8 @@ describe("footer destination pages", () => {
   });
 
   // @req REQ-088
-  it("describes EthniAfrica's actual data-processing categories", () => {
-    render(<DataPolicyPage />);
+  it("describes EthniAfrica's actual data-processing categories", async () => {
+    render(await DataPolicyPage({ params: routeParams("fr") }));
 
     expect(
       screen.getByRole("heading", { level: 1, name: "Politique de données" })
@@ -50,8 +56,8 @@ describe("footer destination pages", () => {
   });
 
   // @req REQ-090
-  it("states accessibility status without claiming an unaudited score", () => {
-    render(<AccessibilityPage />);
+  it("states accessibility status without claiming an unaudited score", async () => {
+    render(await AccessibilityPage({ params: routeParams("fr") }));
 
     expect(
       screen.getByRole("heading", { level: 1, name: "Accessibilité" })
@@ -60,5 +66,21 @@ describe("footer destination pages", () => {
       screen.getByText(/n’a pas encore fait l’objet d’un audit/i)
     ).toBeInTheDocument();
     expect(screen.getByText(/contact@ethniafrica\.com/i)).toBeInTheDocument();
+  });
+
+  // The legal copy is French either way; the chrome around it must follow
+  // the route, or an English reader gets a French header on `/en/legal-notice`.
+  // @req REQ-140
+  it("hand the shell the locale of the route each was served under", async () => {
+    for (const Page of [LegalNoticePage, DataPolicyPage, AccessibilityPage]) {
+      const { container, unmount } = render(
+        await Page({ params: routeParams("en") })
+      );
+      expect(container.firstElementChild).toHaveAttribute(
+        "data-language",
+        "en"
+      );
+      unmount();
+    }
   });
 });

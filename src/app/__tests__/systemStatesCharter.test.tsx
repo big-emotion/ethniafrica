@@ -23,6 +23,7 @@ vi.mock("@/components/layout/PageLayout", () => ({
 
 vi.mock("next/navigation", () => ({
   useParams: () => ({ lang: "fr" }),
+  usePathname: () => "/fr",
 }));
 
 vi.mock("next/link", () => ({
@@ -139,6 +140,19 @@ describe("404 state ([lang]/not-found.tsx)", () => {
 });
 
 describe("403 state (forbidden/page-component.tsx)", () => {
+  // @req REQ-140
+  it("renders the forbidden state in English when requested", () => {
+    render(<ForbiddenPageComponent language="en" />);
+
+    expect(
+      screen.getByRole("heading", { name: "Access not authorized" })
+    ).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Back to home" })).toHaveAttribute(
+      "href",
+      "/en"
+    );
+  });
+
   // @req REQ-099
   it("renders exactly one medallion", () => {
     const { container } = render(<ForbiddenPageComponent />);

@@ -6,8 +6,19 @@ export default {
     "eslint --fix",
     "prettier --write",
     "tsx scripts/lintReqAnnotations.ts --staged",
+    // PROJECT-SPECIFIC: new reader-facing French belongs in a dictionary
+    // (REQ-145). Staged-scoped and grandfathered, so it blocks only the
+    // literals this commit adds.
+    "tsx scripts/ci/checkCopyLiterals.ts --staged",
+    // PROJECT-SPECIFIC: dictionary changes keep both locales on the same keys.
+    "tsx scripts/ci/checkTranslationParity.ts --staged",
   ],
-  "*.{css,md,json,mjs}": ["prettier --write"],
+  "*.{css,md,mjs}": ["prettier --write"],
+  "*.json": [
+    "prettier --write",
+    // PROJECT-SPECIFIC: a changed corpus record and its sidecar move together.
+    "tsx scripts/ci/checkTranslationParity.ts --staged",
+  ],
 
   // PROJECT-SPECIFIC: this repo also carries plain JS/JSX (scripts, config)
   // and YAML workflow definitions, both covered by the previous setup.

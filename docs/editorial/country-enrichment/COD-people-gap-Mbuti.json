@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "1.0",
+  "countryId": "COD",
+  "updatedAt": "2026-09-06",
+  "status": "entity_proposal_ready_for_editorial_review",
+  "scopePolicy": {
+    "proposalOnly": true,
+    "noProductionWrite": true,
+    "noPopulationEstimateWithoutCompatibleDenominator": true,
+    "noSingleLanguageOrIsoCodeInferredForUmbrella": true,
+    "parentAndChildRecordsAreNonAdditive": true,
+    "communitySpecificNamesPreferred": true
+  },
+  "gapDecision": {
+    "label": "Mbuti",
+    "evidenceStatus": "confirmed_gap",
+    "decision": "Prepare a dedicated Mbuti umbrella record for northeastern DRC, with separately reviewed child-community proposals.",
+    "reasoning": [
+      "Current regional and specialist sources identify Mbuti or Bambuti communities in the Ituri forest of northeastern DRC.",
+      "The local DRC people ledger contains no dedicated Mbuti record.",
+      "Mbuti is used across communities with different linguistic relationships, including Efe, Asua, and Sua or Basua labels.",
+      "A single languageFamilyId, ISO 639-3 code, population total, or undifferentiated culture description would therefore misrepresent the evidence."
+    ]
+  },
+  "proposedEntity": {
+    "provisionalId": "PPL_MBUTI",
+    "preferredLabel": "Mbuti",
+    "searchableLabels": ["Bambuti", "BaMbuti"],
+    "entityType": "umbrella_people",
+    "countryIds": ["COD"],
+    "geographicScope": "Ituri forest and adjacent northeastern DRC areas",
+    "languageFamilyId": null,
+    "isoCodes": [],
+    "population": null,
+    "populationPolicy": "Do not import the dated approximate totals found in advocacy directories as a current population value.",
+    "languagePolicy": "Represent language relationships at child-community or language-record level. Do not create a fictional Mbuti language or assign one family to the umbrella.",
+    "descriptionPolicy": "Keep the umbrella description limited to attested geographic and naming scope. Route livelihood, social organization, oral tradition, and historical experience to sourced child or thematic dossiers."
+  },
+  "childCommunityReviewQueue": [
+    {
+      "label": "Efe",
+      "variants": ["Efé"],
+      "status": "candidate_child_requires_record_level_review",
+      "evidence": "The African Commission report names Efe within Bambuti, and specialist research treats Mbuti and Efe communities in the Ituri forest as culturally diverse groups with distinct language relationships.",
+      "sourceIds": ["SRC-ACHPR-IWGIA-COD-2010", "SRC-TERASHIMA-ICHIKAWA-2003"],
+      "doNotInfer": "Do not treat the Efe ethnonym, speech variety, and every Efe-associated community as automatically identical."
+    },
+    {
+      "label": "Asua",
+      "variants": ["Asoa", "Asuae", "Asuati", "Aka as a neighbouring exonym"],
+      "status": "candidate_child_requires_name_and_language_reconciliation",
+      "evidence": "The African Commission report names Asua within Bambuti. Historical and linguistic sources also use Aka-related labels, creating a collision risk with western BaAka records.",
+      "sourceIds": ["SRC-ACHPR-IWGIA-COD-2010"],
+      "doNotInfer": "Do not merge Asua into the existing western PPL_AKA record from exact-name or exonym similarity."
+    },
+    {
+      "label": "Sua / Basua",
+      "variants": [
+        "Sua",
+        "Swa",
+        "Basua",
+        "BaSua",
+        "Tswa",
+        "Mbuti-Sua",
+        "Kango"
+      ],
+      "status": "candidate_cluster_requires_boundary_review",
+      "evidence": "Regional reports and specialist literature use overlapping Sua, Basua, and related labels for Ituri forest communities, but the sources do not justify treating every variant as one child identity without further reconciliation.",
+      "sourceIds": [
+        "SRC-ACHPR-IWGIA-COD-2010",
+        "SRC-CAMBRIDGE-HUNTING-GLOSSARY-2022",
+        "SRC-VAN-BULCK-1954-MBUTI"
+      ],
+      "doNotInfer": "Do not assign an ISO code from a neighbouring farmer language to the people record solely because a community uses that language."
+    }
+  ],
+  "proposedSources": [
+    {
+      "id": "SRC-IWGIA-COD-2024",
+      "title": "The Indigenous World 2024: Democratic Republic of the Congo",
+      "publisher": "International Work Group for Indigenous Affairs",
+      "url": "https://www.iwgia.org/en/news/iw-2024-drc",
+      "tier": "specialist_institutional",
+      "accessedAt": "2026-09-06",
+      "scope": "current thematic confirmation that Mbuti are named among Indigenous peoples in the DRC",
+      "caveat": "This thematic report is not an exhaustive national people inventory or a population census."
+    },
+    {
+      "id": "SRC-ACHPR-IWGIA-COD-2010",
+      "title": "Report of the African Commission's Working Group on Indigenous Populations/Communities: Research and Information Visit to the Democratic Republic of Congo",
+      "publisher": "African Commission on Human and Peoples' Rights and International Work Group for Indigenous Affairs",
+      "url": "https://www.iwgia.org/images/publications/0555_RDC-ENGELSK.pdf",
+      "tier": "regional_human_rights_body_report",
+      "accessedAt": "2026-09-06",
+      "scope": "regional inventory naming Bambuti, Basua, Efe, and Asua in eastern DRC",
+      "caveat": "The visit and much of its supporting information predate publication. Its group list is evidence for reconciliation, not a current population denominator."
+    },
+    {
+      "id": "SRC-MRGI-BATWA-BAMBUTI-2018",
+      "title": "World Directory of Minorities and Indigenous Peoples — Democratic Republic of the Congo: Batwa and Bambuti",
+      "publisher": "Minority Rights Group International",
+      "url": "https://www.refworld.org/reference/countryrep/mrgi/2018/en/121730",
+      "tier": "specialist_directory",
+      "accessedAt": "2026-09-06",
+      "scope": "Bambuti presence in the Ituri forest and distinction from Batwa contexts",
+      "caveat": "The directory's approximate population figure is attributed to another organization and is not proposed for the new record."
+    },
+    {
+      "id": "SRC-TERASHIMA-ICHIKAWA-2003",
+      "title": "A Comparative Ethnobotany of the Mbuti and Efe Hunter-Gatherers in the Ituri Forest, Democratic Republic of Congo",
+      "publisher": "African Study Monographs, Center for African Area Studies, Kyoto University",
+      "url": "https://doi.org/10.14989/68220",
+      "tier": "peer_reviewed",
+      "accessedAt": "2026-09-06",
+      "scope": "documented cultural diversity and inter-group differences among Ituri forest communities",
+      "caveat": "This study supports scoped community-level distinctions and must not be generalized into a complete contemporary Mbuti inventory."
+    },
+    {
+      "id": "SRC-CAMBRIDGE-HUNTING-GLOSSARY-2022",
+      "title": "Glossary — Hunting Wildlife in the Tropics and Subtropics",
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/books/hunting-wildlife-in-the-tropics-and-subtropics/glossary/FB9212E7A8D716662E43445AF8399E1A",
+      "tier": "scholarly_synthesis",
+      "accessedAt": "2026-09-06",
+      "scope": "Mbuti as an eastern DRC grouping and the Efe and Swa distinction",
+      "caveat": "Hunting technique is one comparative dimension and must not define group identity by itself."
+    },
+    {
+      "id": "SRC-VAN-BULCK-1954-MBUTI",
+      "title": "Van Bulck 1954 — historical Mbuti nomenclature occurrence",
+      "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+      "sourceOccurrenceId": "VB1954-P134-061",
+      "tier": "historical_scholarly",
+      "scope": "historical name reconciliation",
+      "caveat": "Colonial-era nomenclature is not a contemporary identity authority."
+    }
+  ],
+  "modelPrerequisites": [
+    "Allow an umbrella people record to omit a single languageFamilyId when its child communities have different language relationships.",
+    "Represent multiple language affiliations through explicit relations rather than one inferred ISO code on the umbrella.",
+    "Support typed parent-child relations that are excluded from additive country counts.",
+    "Support searchable aliases and exonyms with provenance and collision review.",
+    "Support immutable-ID redirects or retirement before consolidating any future duplicate child records."
+  ],
+  "acceptanceCriteria": [
+    "Editorial reviewers approve Mbuti as a DRC umbrella record and approve the preferred display label.",
+    "The record contains no fabricated single language, language family, ISO code, or current population figure.",
+    "Efe, Asua, and Sua or Basua remain separate review items until their names and language relationships are resolved.",
+    "Mbuti and Twa are not collapsed into one umbrella.",
+    "Asua is not merged into the western Aka record by name alone.",
+    "Country metrics expose the umbrella and any approved child records as non-additive layers.",
+    "No source or database record is created until explicit editorial approval is recorded."
+  ],
+  "remainingResearch": [
+    "Confirm the preferred self-designations and current community usage for Mbuti, Efe, Asua, and Sua or Basua with community-led or contemporary field sources.",
+    "Resolve whether Sua, Basua, Swa, Tswa, Kango, and Mbuti-Sua are aliases, overlapping labels, or distinct child communities in each documented location.",
+    "Map each child community's language relationships without converting speaker-language association into ethnic identity.",
+    "Identify a current, transparent population study before proposing any numerical field.",
+    "Review legal terminology under the DRC's Indigenous Pygmy Peoples protection framework without making the legal category the sole identity label."
+  ]
+}

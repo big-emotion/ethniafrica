@@ -78,6 +78,31 @@ describe("EgoNetworkGraph", () => {
     ).toHaveAttribute("aria-roledescription", "graphe de relations");
   });
 
+  // @req REQ-145
+  it("announces the graph and its edges in English", () => {
+    render(
+      <EgoNetworkGraph
+        center={CENTER}
+        edges={[FON_ITEM]}
+        language="en"
+        onEdgeActivate={vi.fn()}
+        onNodeActivate={vi.fn()}
+      />
+    );
+
+    const application = screen.getByRole("application", {
+      name: "Relations graph centred on Yoruba",
+    });
+    expect(application).toHaveAttribute(
+      "aria-roledescription",
+      "relations graph"
+    );
+    fireEvent.keyDown(application, { key: "ArrowRight" });
+    expect(screen.getByRole("status")).toHaveTextContent(
+      "Migratory link with Fon"
+    );
+  });
+
   // @req REQ-097
   it("renders one edge stop and one node stop per relation, positioned by array order", () => {
     render(

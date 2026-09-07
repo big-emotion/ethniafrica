@@ -45,6 +45,7 @@ export class GameCorpusUnavailableError extends Error {
 interface CountryRow {
   id: string;
   name_fr: string;
+  name_en: string | null;
   etymology: string | null;
   name_origin_actor: string | null;
   content: Record<string, unknown> | null;
@@ -144,7 +145,7 @@ async function loadCountries(
   const { data, error } = await supabase
     .from("afrik_countries")
     // etymology and name_origin_actor are top-level columns, not content keys.
-    .select("id, name_fr, etymology, name_origin_actor, content")
+    .select("id, name_fr, name_en, etymology, name_origin_actor, content")
     .order("id");
 
   if (error) {
@@ -163,6 +164,7 @@ async function loadCountries(
   return rows.map((row) => ({
     id: row.id,
     nameFr: row.name_fr,
+    nameEn: row.name_en ?? row.name_fr,
     etymology: row.etymology,
     nameOriginActor: row.name_origin_actor,
     historicalNames: mapHistoricalNames(row.content?.historicalNames),

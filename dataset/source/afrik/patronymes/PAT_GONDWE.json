@@ -62,7 +62,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Gondwe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « The Creation of Tribalism in Southern Africa » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Gondwe à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Gondwe », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « The Creation of Tribalism in Southern Africa » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Gondwe à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

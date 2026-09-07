@@ -1,6 +1,7 @@
 {
   "id": "SYC",
   "nameFr": "Seychelles",
+  "nameEn": "Seychelles",
   "nameOfficial": "République des Seychelles (Republic of Seychelles, Repiblik Sesel)",
   "summary": "Les Seychelles portent le nom de Jean Moreau de Séchelles, contrôleur général des finances de Louis XV. Les îles étaient inhabitées : leur population est née de la colonisation française puis britannique. Le créole seychellois y est langue officielle aux côtés du français et de l'anglais.",
   "etymology": "Le nom \"Seychelles\" vient de Jean Moreau de Séchelles, contrôleur général des finances de Louis XV, roi de France. Les îles ont été nommées \"Seychelles\" par les Français en 1756 en son honneur. Le nom créole \"Sesel\" est dérivé de \"Seychelles\". Auparavant, les îles étaient appelées \"Îles de la Ligne\" ou \"Îles de la Soif\" par les navigateurs.",
@@ -21,6 +22,7 @@
       {
         "name": "Îles déserte",
         "period": "Avant 1756",
+        "entryType": "polity",
         "dominantPeoples": ["Aucun (îles inhabitée)"],
         "politicalCenters": ["Aucun"],
         "historicalRole": "Les îles des Seychelles étaient inhabitée avant l'arrivée des Européens en 1756."
@@ -28,6 +30,12 @@
       {
         "name": "Colonie française des Seychelles",
         "period": "1756 - 1814",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1756,
+          "endYear": 1814,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Français",
           "esclaves africains et malgaches",
@@ -39,6 +47,12 @@
       {
         "name": "Colonie britannique des Seychelles",
         "period": "1814 - 1976",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1814,
+          "endYear": 1976,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Britanniques",
           "créoles seychellois",
@@ -125,7 +139,7 @@
         "name": "Autres groupes",
         "selfAppellation": "Variées selon les groupes",
         "exonyms": ["Variées selon les groupes"],
-        "peopleId": "PPL_AUTRES_GROUPES",
+        "peopleId": null,
         "mainRegion": "Toutes les îles des Seychelles",
         "languages": [
           "Langues diverses",
@@ -258,7 +272,7 @@
           "name": "Autres groupes",
           "population": 2000,
           "percentageInCountry": 2,
-          "peopleId": "PPL_AUTRES_GROUPES",
+          "peopleId": null,
           "region": "Toutes les îles des Seychelles"
         }
       ]

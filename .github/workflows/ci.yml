@@ -101,6 +101,14 @@ jobs:
         env:
           REQ_BASE: ${{ github.head_ref == 'recette' && 'recette' || github.base_ref }}
 
+      # New reader-facing French must land in a src/lib/i18n/copy dictionary
+      # (REQ-145). Same base as lint:req, for the same reason: the gate reads
+      # what the PR adds, and only a diff against the branch it lands on says
+      # what that is.
+      - run: npm run check:copy-literals -- --base "origin/$REQ_BASE"
+        env:
+          REQ_BASE: ${{ github.head_ref == 'recette' && 'recette' || github.base_ref }}
+
       - run: npm run check:jira-template
 
       - run: npm run check:action-pins
@@ -119,6 +127,14 @@ jobs:
       # accumulating. The ceilings live in scripts/ci/checkDeadCode.ts and can
       # only go down.
       - run: npm run check:dead
+
+      # A changed French record and its English sidecar move together, UI
+      # dictionaries keep the same keys, and translated content uses the one
+      # bilingual glossary (REQ-144, REQ-145). Bare runs survey the existing
+      # backlog; --base is the blocking PR gate.
+      - run: npm run check:translation-parity -- --base "origin/$REQ_BASE"
+        env:
+          REQ_BASE: ${{ github.head_ref == 'recette' && 'recette' || github.base_ref }}
 
       # Pre-merge, only what is knowable without a database: no two files
       # claiming the same version or name, no hole in the sequence. Whether a

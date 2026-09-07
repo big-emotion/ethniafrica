@@ -1,7 +1,11 @@
 "use client";
 
 import * as React from "react";
+import { useRouteLanguage } from "@/hooks/use-language";
+import { formatDate } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
 import type { RevisionItem } from "./RevisionDrawer";
+import { sourceTransparencyCopy } from "@/lib/i18n/copy/sourceTransparency";
 
 /* -------------------------------------------------------------------------- */
 /*  Types                                                                      */
@@ -9,6 +13,7 @@ import type { RevisionItem } from "./RevisionDrawer";
 
 interface HistoriqueSectionProps {
   peopleId: string;
+  language?: Language;
 }
 
 type SectionState =
@@ -20,14 +25,12 @@ type SectionState =
 /*  Helpers                                                                    */
 /* -------------------------------------------------------------------------- */
 
-const FR_LONG_DATE = new Intl.DateTimeFormat("fr-FR", { dateStyle: "long" });
-
-function formatLongFrenchDate(iso: string | null): string {
+function formatPublicationDate(language: Language, iso: string | null): string {
   if (!iso) return "—";
   try {
     const d = new Date(iso);
     if (isNaN(d.getTime())) return iso;
-    return FR_LONG_DATE.format(d);
+    return formatDate(language, d);
   } catch {
     return iso;
   }
@@ -45,7 +48,13 @@ async function fetchAllRevisions(peopleId: string): Promise<RevisionItem[]> {
 /* -------------------------------------------------------------------------- */
 
 // @req REQ-019
-export function HistoriqueSection({ peopleId }: HistoriqueSectionProps) {
+export function HistoriqueSection({
+  peopleId,
+  language: requestedLanguage,
+}: HistoriqueSectionProps) {
+  const routeLanguage = useRouteLanguage();
+  const language = requestedLanguage ?? routeLanguage;
+  const copy = sourceTransparencyCopy[language].revisionHistory;
   const [state, setState] = React.useState<SectionState>({ phase: "loading" });
   const fetchRef = React.useRef(0);
 
@@ -76,7 +85,7 @@ export function HistoriqueSection({ peopleId }: HistoriqueSectionProps) {
         id="historique-heading"
         className="text-afh-small font-semibold uppercase tracking-wide text-[var(--afh-fg-muted,#6b7280)]"
       >
-        Historique
+        {copy.sectionTitle}
       </h2>
 
       {state.phase === "loading" && (
@@ -85,7 +94,7 @@ export function HistoriqueSection({ peopleId }: HistoriqueSectionProps) {
           className="text-afh-small text-[var(--afh-fg-muted,#6b7280)]"
           aria-live="polite"
         >
-          Chargement…
+          {copy.loading}
         </p>
       )}
 
@@ -94,20 +103,20 @@ export function HistoriqueSection({ peopleId }: HistoriqueSectionProps) {
           className="space-y-2 rounded-md border border-[var(--afh-warn-fg,#92400e)]/30 bg-[var(--afh-warn-bg,#fef3c7)] p-3 text-afh-small text-[var(--afh-warn-fg,#92400e)]"
           role="alert"
         >
-          <p>Impossible de charger l&apos;historique.</p>
+          <p>{copy.loadError}</p>
           <button
             type="button"
             onClick={load}
             className="rounded bg-[var(--afh-warn-fg,#92400e)] px-3 py-1 text-afh-caption font-medium text-white"
           >
-            Réessayer
+            {copy.retry}
           </button>
         </div>
       )}
 
       {state.phase === "success" && state.revisions.length === 0 && (
         <p className="text-afh-small text-[var(--afh-fg-muted,#6b7280)]">
-          Aucune révision publiée — fiche initiale
+          {copy.empty}
         </p>
       )}
 
@@ -129,7 +138,7 @@ export function HistoriqueSection({ peopleId }: HistoriqueSectionProps) {
                 dateTime={rev.published_at ?? undefined}
                 className="text-[var(--afh-fg-muted,#6b7280)]"
               >
-                {formatLongFrenchDate(rev.published_at)}
+                {formatPublicationDate(language, rev.published_at)}
               </time>
               {rev.moderator_pseudonym && (
                 <span className="text-[var(--afh-fg-muted,#6b7280)]">

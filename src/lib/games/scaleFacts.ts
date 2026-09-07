@@ -38,8 +38,10 @@ export interface ScaleFact {
   id: string;
   /** The claim, as one sentence the reader can carry away. */
   headlineFr: string;
+  headlineEn?: string;
   /** What the projection did to their intuition, in two or three sentences. */
   bodyFr: string;
+  bodyEn?: string;
   /** Where the figures were measured — worded for the reader by `revealProvenance`. */
   fieldPath: string;
 }
@@ -63,12 +65,127 @@ const distanceKm = (fromId: string, toId: string): number =>
   greatCircleKm(LANDMARKS[fromId], LANDMARKS[toId]);
 
 /**
- * The bank, measured once per process.
+ * Every figure the facts state, in either language. Areas in km², distances
+ * in km, inflations as Mercator's factor over the true area.
+ */
+export interface ScaleFigures {
+  africa: number;
+  greenland: number;
+  congo: number;
+  westernEurope: number;
+  usa: number;
+  china: number;
+  india: number;
+  fourTogether: number;
+  remainder: number;
+  inflation: {
+    greenland: number;
+    usa: number;
+    china: number;
+    india: number;
+    westernEurope: number;
+    tunisia: number;
+  };
+  width: number;
+  height: number;
+  parisBeijing: number;
+  parisNewYork: number;
+  kinshasaGoma: number;
+  parisWarsaw: number;
+  cairoCapeTown: number;
+}
+
+/**
+ * The measurements, taken once and worded twice: `scaleFacts.en.ts` states
+ * the same facts in English, and two banks each measuring their own figures
+ * could drift apart on a rounding without either test noticing.
+ */
+// @req REQ-120
+export function measureScaleFigures(): ScaleFigures {
+  const africa = africaAreaKm2();
+  const westernEurope = worldArea("EUW");
+  const usa = worldArea("USA");
+  const china = worldArea("CHN");
+  const india = worldArea("IND");
+  const fourTogether = china + india + usa + westernEurope;
+
+  return {
+    africa,
+    greenland: worldArea("GRL"),
+    congo: africanArea("COD"),
+    westernEurope,
+    usa,
+    china,
+    india,
+    fourTogether,
+    remainder: africa - fourTogether,
+    inflation: {
+      greenland: worldInflation("GRL"),
+      usa: worldInflation("USA"),
+      china: worldInflation("CHN"),
+      india: worldInflation("IND"),
+      westernEurope: worldInflation("EUW"),
+      tunisia: africanInflation("TUN"),
+    },
+    width: distanceKm("ALMADIES", "RAS_HAFUN"),
+    height: distanceKm("BLANC", "AGULHAS"),
+    parisBeijing: distanceKm("PARIS", "PEKIN"),
+    parisNewYork: distanceKm("PARIS", "NEW_YORK"),
+    kinshasaGoma: distanceKm("KINSHASA", "GOMA"),
+    parisWarsaw: distanceKm("PARIS", "VARSOVIE"),
+    cairoCapeTown: distanceKm("LE_CAIRE", "LE_CAP"),
+  };
+}
+
+/**
+ * The measurements, taken once per process.
  *
  * The assets are static and the arithmetic runs over some twenty thousand
- * points, so recomputing it per request would be waste with no upside. It is
- * not memoised for correctness: calling `buildScaleFacts` twice must and does
- * yield the same sentences.
+ * points, so recomputing it per request would be waste with no upside. Two
+ * callers now — the bank and the globe's claim — and a sweep each would double
+ * that for nothing. Memoising is safe rather than merely cheap: the figures
+ * are a pure function of committed assets.
+ */
+let figures: ScaleFigures | null = null;
+function measuredFigures(): ScaleFigures {
+  figures ??= measureScaleFigures();
+  return figures;
+}
+
+/**
+ * The claim the globe stage carries, stated under the sphere itself.
+ *
+ * Deliberately **not** one of the facts below. The bank lands between rounds,
+ * one card at a time; this stands under the globe for the whole session, and
+ * the same sentence in both places would read as a caption stuck on the page.
+ * It obeys the module's one rule all the same: both figures are measured off
+ * the outlines the sphere beside it is drawn from.
+ *
+ * Built on the server and handed down as a prop, because the surface it lands
+ * on is a client island and `WORLD_COMPARE` has no business in its bundle.
+ *
+ * It states the **ratio** and not the area, deliberately: the globe's own
+ * projection readout prints Africa's area a few pixels above, and two figures
+ * for one continent on one screen is worse than either alone. The ratio is
+ * also the form the claim travels in — it is how the UN resolution states it.
+ */
+// @req REQ-120
+export function buildTrueSizeClaim(): string {
+  const { africa, greenland } = measuredFigures();
+
+  return (
+    `Ce que vous faites tourner est l'Afrique à ses vraies proportions : ` +
+    `${ratioFr(africa / greenland)} fois le Groenland. Poussez le curseur vers la ` +
+    `carte plate et regardez le nord enfler — la géographie n'a pas bougé, la ` +
+    `projection si.`
+  );
+}
+
+/**
+ * The bank, worded once per process.
+ *
+ * It is not memoised for correctness: calling `buildScaleFacts` twice must and
+ * does yield the same sentences.
  */
 let bank: ScaleFact[] | null = null;
 
@@ -76,46 +193,49 @@ let bank: ScaleFact[] | null = null;
 export function buildScaleFacts(): ScaleFact[] {
   if (bank) return bank;
 
-  const africa = africaAreaKm2();
-  const greenland = worldArea("GRL");
-  const congo = africanArea("COD");
-  const westernEurope = worldArea("EUW");
-
-  const fourTogether =
-    worldArea("CHN") + worldArea("IND") + worldArea("USA") + westernEurope;
-  const remainder = africa - fourTogether;
-
-  const width = distanceKm("ALMADIES", "RAS_HAFUN");
-  const height = distanceKm("BLANC", "AGULHAS");
-  const parisBeijing = distanceKm("PARIS", "PEKIN");
-  const parisNewYork = distanceKm("PARIS", "NEW_YORK");
-  const kinshasaGoma = distanceKm("KINSHASA", "GOMA");
-  const parisWarsaw = distanceKm("PARIS", "VARSOVIE");
-  const cairoCapeTown = distanceKm("LE_CAIRE", "LE_CAP");
+  const {
+    africa,
+    greenland,
+    congo,
+    westernEurope,
+    usa,
+    china,
+    india,
+    fourTogether,
+    remainder,
+    inflation,
+    width,
+    height,
+    parisBeijing,
+    parisNewYork,
+    kinshasaGoma,
+    parisWarsaw,
+    cairoCapeTown,
+  } = measuredFigures();
 
   bank = [
     {
       id: "afrique-groenland",
       headlineFr: `L'Afrique est ${ratioFr(africa / greenland)} fois plus grande que le Groenland.`,
-      bodyFr: `L'Afrique couvre ${millionsKm2Fr(africa)}, le Groenland ${millionsKm2Fr(greenland)}. Sur la carte de Mercator apprise à l'école, le Groenland est dessiné ${inflationFr(worldInflation("GRL"))} fois plus grand qu'il n'est : c'est pourquoi les deux vous semblaient comparables. Deux quatorze différents, et c'est ce qui rend l'illusion si complète.`,
+      bodyFr: `L'Afrique couvre ${millionsKm2Fr(africa)}, le Groenland ${millionsKm2Fr(greenland)}. Sur la carte de Mercator apprise à l'école, le Groenland est dessiné ${inflationFr(inflation.greenland)} fois plus grand qu'il n'est : c'est pourquoi les deux vous semblaient comparables. Deux quatorze différents, et c'est ce qui rend l'illusion si complète.`,
       fieldPath: MERCATOR_PROVENANCE_PATH,
     },
     {
       id: "afrique-etats-unis",
-      headlineFr: `Les États-Unis tiennent ${ratioFr(africa / worldArea("USA"))} fois dans l'Afrique.`,
-      bodyFr: `${millionsKm2Fr(worldArea("USA"))} pour les États-Unis contigus, ${millionsKm2Fr(africa)} pour l'Afrique. Mercator dessine les États-Unis ${inflationFr(worldInflation("USA"))} fois trop grands, et l'Afrique presque à sa taille exacte — l'écart que vous croyez voir est déjà corrigé de moitié avant que vous ayez compté.`,
+      headlineFr: `Les États-Unis tiennent ${ratioFr(africa / usa)} fois dans l'Afrique.`,
+      bodyFr: `${millionsKm2Fr(usa)} pour les États-Unis contigus, ${millionsKm2Fr(africa)} pour l'Afrique. Mercator dessine les États-Unis ${inflationFr(inflation.usa)} fois trop grands, et l'Afrique presque à sa taille exacte — l'écart que vous croyez voir est déjà corrigé de moitié avant que vous ayez compté.`,
       fieldPath: MERCATOR_PROVENANCE_PATH,
     },
     {
       id: "afrique-chine",
-      headlineFr: `La Chine tient ${ratioFr(africa / worldArea("CHN"))} fois dans l'Afrique.`,
-      bodyFr: `La Chine couvre ${millionsKm2Fr(worldArea("CHN"))} et Mercator l'agrandit ${inflationFr(worldInflation("CHN"))} fois. L'Afrique, à cheval sur l'équateur, n'y gagne presque rien : la projection ne la rétrécit pas, elle grossit tout ce qui l'entoure.`,
+      headlineFr: `La Chine tient ${ratioFr(africa / china)} fois dans l'Afrique.`,
+      bodyFr: `La Chine couvre ${millionsKm2Fr(china)} et Mercator l'agrandit ${inflationFr(inflation.china)} fois. L'Afrique, à cheval sur l'équateur, n'y gagne presque rien : la projection ne la rétrécit pas, elle grossit tout ce qui l'entoure.`,
       fieldPath: MERCATOR_PROVENANCE_PATH,
     },
     {
       id: "afrique-inde",
-      headlineFr: `L'Inde tient ${ratioFr(africa / worldArea("IND"))} fois dans l'Afrique.`,
-      bodyFr: `${millionsKm2Fr(worldArea("IND"))} contre ${millionsKm2Fr(africa)}. L'Inde est l'un des rares grands pays que Mercator traite presque honnêtement — ${inflationFr(worldInflation("IND"))} fois seulement — parce qu'elle est basse en latitude, comme l'Afrique.`,
+      headlineFr: `L'Inde tient ${ratioFr(africa / india)} fois dans l'Afrique.`,
+      bodyFr: `${millionsKm2Fr(india)} contre ${millionsKm2Fr(africa)}. L'Inde est l'un des rares grands pays que Mercator traite presque honnêtement — ${inflationFr(inflation.india)} fois seulement — parce qu'elle est basse en latitude, comme l'Afrique.`,
       fieldPath: MERCATOR_PROVENANCE_PATH,
     },
     {
@@ -127,12 +247,12 @@ export function buildScaleFacts(): ScaleFact[] {
     {
       id: "congo-europe",
       headlineFr: `La République démocratique du Congo dépasse l'Europe de l'Ouest de ${frenchNumber.format(Math.round((congo - westernEurope) / 1000) * 1000)} km².`,
-      bodyFr: `${frenchNumber.format(Math.round(congo))} km² contre ${frenchNumber.format(Math.round(westernEurope))} km². Sur une carte plate l'Europe de l'Ouest est dessinée ${inflationFr(worldInflation("EUW"))} fois trop grande et le Congo à sa taille exacte — la comparaison que vous avez en tête a été faussée deux fois, pas une.`,
+      bodyFr: `${frenchNumber.format(Math.round(congo))} km² contre ${frenchNumber.format(Math.round(westernEurope))} km². Sur une carte plate l'Europe de l'Ouest est dessinée ${inflationFr(inflation.westernEurope)} fois trop grande et le Congo à sa taille exacte — la comparaison que vous avez en tête a été faussée deux fois, pas une.`,
       fieldPath: MERCATOR_PROVENANCE_PATH,
     },
     {
       id: "tunisie-groenland",
-      headlineFr: `Le pays africain le plus déformé par Mercator est agrandi ${inflationFr(africanInflation("TUN"))} fois. Le Groenland, ${inflationFr(worldInflation("GRL"))}.`,
+      headlineFr: `Le pays africain le plus déformé par Mercator est agrandi ${inflationFr(inflation.tunisia)} fois. Le Groenland, ${inflationFr(inflation.greenland)}.`,
       bodyFr: `C'est la Tunisie, le pays le plus au nord du continent, et c'est le maximum que la projection inflige à l'Afrique. Partout ailleurs sur le continent elle fait moins. La déformation n'est pas répartie sur la carte : elle est concentrée au-dessus de l'Afrique, et c'est de là que vient l'impression.`,
       fieldPath: MERCATOR_PROVENANCE_PATH,
     },

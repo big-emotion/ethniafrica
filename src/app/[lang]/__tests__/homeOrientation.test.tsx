@@ -46,7 +46,8 @@ vi.mock("@/components/atlas/ContinentGlobeStage", () => ({
 
 import Home from "../page";
 
-const renderHome = async () => render(await Home());
+const renderHome = async () =>
+  render(await Home({ params: Promise.resolve({ lang: "fr" }) }));
 
 /** Document order of two nodes, as the reader scrolls them. */
 const precedes = (first: Element, second: Element) =>

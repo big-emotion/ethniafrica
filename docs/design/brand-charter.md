@@ -49,7 +49,7 @@ in `src/`.
 it makes the other four spellings wrong, which is the point.
 
 `Africa History` is retired, and with it `africahistory.org`. It was an English
-name on a product that exists only in French, and it survives today only in
+name on a product that then existed only in French, and it survives today only in
 places a reader reaches by accident: an API payload, a citation, a stylesheet
 header.
 
@@ -111,11 +111,21 @@ African media and publishers, and would conflict with that same media.
 
 ## 3. Voice
 
-French, `vouvoiement`, present tense. Declarative and specific — the surface
-states what the corpus holds and what it does not, and never advertises.
+Two languages, one voice. In French: `vouvoiement`, present tense. In English,
+which has no `vouvoiement`: present tense, declarative, British spelling, and
+**no contractions in editorial prose** — _does not_, never _doesn't_ — with the
+second person only where the French uses it. The French addresses the reader in
+error states, consent and the report dialogs, and nowhere in a fiche, so the
+English fiche never says _you_ either. Both registers are declarative and
+specific — the surface states what the corpus holds and what it does not, and
+never advertises. Ruled with ETNI-1831: a contraction reads as marketing copy
+on a page that must read as a record, and a second Voice section would be the
+place where the two registers drift apart, which is why there is one.
 
 Three habits carry the decolonial posture, and they are visual as much as
-editorial:
+editorial. They do not translate: an autonym is the same string in both
+locales and keeps its `lang`; the exonym's gloss is the one thing that changes
+language.
 
 - **The autonym leads, the exonym glosses it.** Enforced in components by
   `afh/no-bare-people-name`; enforced typographically by the rule that the
@@ -207,10 +217,13 @@ masthead's own axis buttons — a legend in the chrome, not the page speaking:
 | `/fr/atlas/peuples`, and both fiches sampled | 5        | 3        | 2              |
 | **`/fr`**                                    | **13**   | 3        | **10**         |
 
-The second row is kept as measured and no longer describes a live surface: the
-three axis landing pages were removed by ETNI-1555, so `/fr/atlas`,
-`/fr/dossiers` and `/fr/jeux` answer 404. Only their `/fr/<axis>/*` children
-remain, and the count above is what an axis page did while it existed.
+The second row describes a live surface again. ETNI-1555 removed the three
+axis landing pages; the dossier index came back on 6 September 2026 for theme
+discovery and search, and `/fr/atlas` and `/fr/jeux` came back on 7 September
+2026 with the rest of them, on the shared spread this charter's §8.2 now
+governs. The count above still records the _earlier_ surfaces — one wrapper,
+the axis's own — which is what the spread reinstates rather than a measurement
+taken of it.
 
 So the rule holds on every surface but the home, and the home's ten are not
 arbitrary either: the purpose rows carry the entity mapping (pays → teal,
@@ -436,6 +449,22 @@ its content plus its padding, floor included. Where a surface opts out of
 correction made to the shared unit is a correction to the doctrine, not to one
 file.
 
+**One exception, and it is measured, not asserted.** The axis hub's spread
+(§8.6) takes a viewport floor **from 768 px only**. What the rule above forbids
+is a height the content cannot fill, and the failure it names is arithmetic:
+135 px of copy in a 760 px band. A hub's text column carries a title, the
+sentence the header shows beside the same tiles, and five to seven tiles at
+44 px each — it fills a screen at the width where the floor applies, and the
+one place it would not is the phone, where the floor is not applied. Below
+768 px the two blocks stack and each takes its content's height, which is the
+same answer the rule gives everywhere else.
+
+The floor is therefore licensed by a count, and the count is the condition: a
+spread whose text column drops below four tiles has lost the thing that earned
+the height, and takes no floor. `axisHubSpreadCharter.test.ts` holds both
+halves — the floor is inside a `min-width` query, and every axis clears the
+count.
+
 ### 8.3 The atlas leads
 
 The site's strongest visual asset is the globe, and on the home it is the ninth
@@ -529,6 +558,47 @@ heading, is marked `is-untitled`, is sized at `small`, and is asserted never
 to reach a heading role) and `homeOrientation.test.tsx` (the home's document
 plan).
 
+### 8.6 The axis hub is a spread, and it says only what the header says
+
+ETNI-1555 deleted `/fr/atlas` and `/fr/jeux` for a reason that was true of the
+band they carried, not of the pages: the band was viewport-tall and
+bottom-aligned, so the reader met the masthead, a screen of empty parchment,
+and the title of the page they had asked for somewhere past the fold
+(`heroBandCharter.test.ts` records the measurement). The three axes then had no
+address of their own — the trail printed a crumb that led nowhere, the sitemap
+published nothing for them, and the footer had to name six corpus indexes
+because there were no three doors to name instead.
+
+**The rule.** An axis hub is a **spread**: two blocks side by side, the text on
+one side and an archival plate on the other, and nothing else. No hero, no
+band, no second section under it.
+
+Four clauses, each closing one of the ways the retired hubs went wrong.
+
+- **It repeats the header; it does not extend it.** The tiles are
+  `getNavModules(axis)` and no more — the same set, in the same order, wearing
+  the same glyph, label and **Bientôt** chip. A hub that lists what the menu
+  does not is a second navigation for one axis, which is the defect
+  `atlas-charter.md` §3 already names against the dossiers panel. The
+  description is the header's own sentence (`menuBlurb`), for the same reason:
+  the reader who opens the panel and the reader who lands on the page are owed
+  the same account of what the axis holds.
+- **The title names the axis, so it takes the gradient** (§5.3) and the page
+  takes that axis's accent, once, at its root (§5.2).
+- **Which side the text takes is drawn, per request, 50/50** — the same device
+  and the same injectable random as the home's visual (`drawHomeHeroVisual`).
+  What is drawn is the **painting order only**: the DOM is text then plate at
+  every width and in both draws, so a reader on a keyboard meets the tiles
+  first whatever the die said. A reading order that changes with a coin toss is
+  not a composition, it is a bug that reproduces half the time.
+- **The plate is an archive image, captioned as one** (§9). It is drawn from
+  the same pool as the home's, which means the same four registers and the same
+  obligation: the licence is published, not named.
+
+Gated by `axisHubSpreadCharter.test.ts` and, at the route level, by
+`axisHubCharter.test.ts` — which asserts the three pages exist, replacing
+`axisHubRemovalCharter.test.ts`, which asserted that two of them did not.
+
 ---
 
 ## 9. Imagery
@@ -599,3 +669,8 @@ its own decision about sourcing and rights.
 - **Anything a surface charter already governs.** Where this file and a surface
   charter disagree, the surface charter is more specific and wins — and the
   disagreement is a bug in one of them, to be closed rather than lived with.
+- **Translation classes and review.** Which field is invariant, translatable,
+  review-required or generated is DEC-047's, declared in
+  `src/lib/i18n/translationClasses.ts` and held by the `afrik-translator`
+  skill and the parity gate. §3 settles how the English reads, not what may be
+  translated.

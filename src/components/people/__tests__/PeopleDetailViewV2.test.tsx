@@ -67,6 +67,34 @@ const fragmentation: PeopleFragmentation = {
 describe("PeopleDetailViewV2", () => {
   afterEach(cleanup);
 
+  // @req REQ-145
+  it("renders the fiche's authored chrome in English", () => {
+    render(
+      <PeopleDetailViewV2
+        language="en"
+        people={ewe}
+        fragmentation={fragmentation}
+      />
+    );
+
+    expect(
+      screen.getByRole("heading", { name: "The name borne, the names imposed" })
+    ).toBeVisible();
+    expect(
+      screen.getByRole("heading", { name: "Origins and formation" })
+    ).toBeVisible();
+    expect(
+      screen.getByRole("heading", { name: "Culture and spirituality" })
+    ).toBeVisible();
+    expect(
+      screen.getByRole("heading", { name: "Geographic distribution" })
+    ).toBeVisible();
+    expect(screen.getByText("Self-designation")).toBeVisible();
+    expect(screen.getByText("Ancient origins")).toBeVisible();
+    expect(screen.getByText("Main language")).toBeVisible();
+    expect(screen.getByText(/Migrations depuis Notsé/)).toBeVisible();
+  });
+
   // Lighthouse scored the fiche 0.98 on accessibility for exactly one reason:
   // the parchment went from h1 straight to the h3 inside the naming block,
   // because a section's label was a <div>. It had been invisible while the
@@ -75,7 +103,11 @@ describe("PeopleDetailViewV2", () => {
   // @req REQ-115
   it("descends heading levels one at a time, skipping none", () => {
     const { container } = render(
-      <PeopleDetailViewV2 people={ewe} fragmentation={fragmentation} />
+      <PeopleDetailViewV2
+        language="fr"
+        people={ewe}
+        fragmentation={fragmentation}
+      />
     );
 
     const levels = Array.from(
@@ -96,7 +128,7 @@ describe("PeopleDetailViewV2", () => {
   // score, on a fiche measured by both. The route already awaits all of this.
   // @req REQ-091
   it("renders from the props it is handed, with no fetching of its own", () => {
-    render(<PeopleDetailViewV2 people={ewe} />);
+    render(<PeopleDetailViewV2 language="fr" people={ewe} />);
 
     expect(screen.getAllByText("Ewe").length).toBeGreaterThan(0);
     expect(screen.getByText(/Migrations depuis Notsé/)).toBeInTheDocument();
@@ -106,7 +138,7 @@ describe("PeopleDetailViewV2", () => {
   // fiche's editorial position, not a detail of its identity block.
   // @req REQ-115
   it("opens on the name borne and the names imposed", () => {
-    render(<PeopleDetailViewV2 people={ewe} />);
+    render(<PeopleDetailViewV2 language="fr" people={ewe} />);
 
     expect(
       screen.getByText("Le nom porté, les noms subis")
@@ -122,7 +154,7 @@ describe("PeopleDetailViewV2", () => {
 
   // @req REQ-116
   it("explains the globe's grammar rather than leaving the halo to be guessed at", () => {
-    render(<PeopleDetailViewV2 people={ewe} />);
+    render(<PeopleDetailViewV2 language="fr" people={ewe} />);
 
     expect(
       screen.getByText("Pourquoi la carte ne trace pas de frontière")
@@ -136,6 +168,7 @@ describe("PeopleDetailViewV2", () => {
   it("drops the parts of the naming section the fiche cannot fill", () => {
     render(
       <PeopleDetailViewV2
+        language="fr"
         people={{
           ...ewe,
           appellations: { mainName: "Ewe", selfAppellation: "Eʋeawo" },
@@ -154,7 +187,12 @@ describe("PeopleDetailViewV2", () => {
 
   // @req REQ-116
   it("omits the cartographic grammar for a fiche declaring no distribution", () => {
-    render(<PeopleDetailViewV2 people={{ ...ewe, demography: undefined }} />);
+    render(
+      <PeopleDetailViewV2
+        language="fr"
+        people={{ ...ewe, demography: undefined }}
+      />
+    );
 
     expect(
       screen.queryByText("Pourquoi la carte ne trace pas de frontière")
@@ -163,7 +201,7 @@ describe("PeopleDetailViewV2", () => {
 
   // @req REQ-092
   it("shows each source with the tier it carries", () => {
-    render(<PeopleDetailViewV2 people={ewe} />);
+    render(<PeopleDetailViewV2 language="fr" people={ewe} />);
 
     expect(screen.getByText("Officielle")).toBeInTheDocument();
     expect(screen.getByText("En attente d'examen")).toBeInTheDocument();
@@ -171,11 +209,17 @@ describe("PeopleDetailViewV2", () => {
 
   // @req REQ-091
   it("renders the colonial fragmentation the route resolved, and nothing when there is none", () => {
-    render(<PeopleDetailViewV2 people={ewe} fragmentation={fragmentation} />);
+    render(
+      <PeopleDetailViewV2
+        language="fr"
+        people={ewe}
+        fragmentation={fragmentation}
+      />
+    );
     expect(screen.getByText("Fragmentation coloniale")).toBeInTheDocument();
 
     cleanup();
-    render(<PeopleDetailViewV2 people={ewe} />);
+    render(<PeopleDetailViewV2 language="fr" people={ewe} />);
     expect(screen.queryByText("Fragmentation coloniale")).toBeNull();
   });
 
@@ -192,6 +236,7 @@ describe("PeopleDetailViewV2", () => {
   it("offers a live report control on the culture section", () => {
     render(
       <PeopleDetailViewV2
+        language="fr"
         people={{
           ...ewe,
           culture: { spiritualities: "Culte de Mawu" },
@@ -209,6 +254,7 @@ describe("PeopleDetailViewV2", () => {
   it("wires the live report control on the culture section once a Turnstile key is configured", () => {
     render(
       <PeopleDetailViewV2
+        language="fr"
         people={{
           ...ewe,
           culture: { spiritualities: "Culte de Mawu" },
@@ -231,6 +277,7 @@ describe("PeopleDetailViewV2", () => {
   it("prints the historical-affiliation section when the fiche carries one, and omits it otherwise", () => {
     render(
       <PeopleDetailViewV2
+        language="fr"
         people={{
           ...ewe,
           historicalAffiliation: {
@@ -255,7 +302,7 @@ describe("PeopleDetailViewV2", () => {
     ).toBeInTheDocument();
 
     cleanup();
-    render(<PeopleDetailViewV2 people={ewe} />);
+    render(<PeopleDetailViewV2 language="fr" people={ewe} />);
     expect(
       screen.queryByText(/formé par la traite transatlantique/)
     ).not.toBeInTheDocument();

@@ -2,11 +2,13 @@ import { describe, expect, it } from "vitest";
 
 import {
   readAlliances,
+  readCorpusBearers,
   readDesignatedSocialUnit,
   readGaps,
   readHomonyms,
   readNisbaSubtype,
   readOrigin,
+  readNameStanding,
   readPatronymeSources,
   readPermittedGivenNames,
   readSpellings,
@@ -66,6 +68,24 @@ describe("patronyme content readers (REQ-133)", () => {
   });
 
   // @req REQ-133
+  it("reads the bearers a dossier names by displayName, and skips the rest", () => {
+    expect(
+      readCorpusBearers({
+        bearers: [
+          {
+            status: "deceased",
+            displayName: "Soundiata Keïta",
+            sourceRefs: [],
+          },
+          { status: "deceased", personId: "PER_1", sourceRefs: [] },
+          { displayName: "   " },
+          "not an object",
+        ],
+      })
+    ).toEqual([{ displayName: "Soundiata Keïta" }]);
+  });
+
+  // @req REQ-133
   it("reads the gap notes an editor wrote for the fields left empty", () => {
     expect(
       readGaps({
@@ -102,6 +122,64 @@ describe("patronyme content readers (REQ-133)", () => {
         notes: "Passage clanique.",
       },
     ]);
+  });
+
+  // @req REQ-147
+  it("reads the standing as the best tier the dossier cites", () => {
+    expect(
+      readNameStanding({
+        sources: [
+          { title: "Blog", tier: "unverified" },
+          { title: "Histoire générale de l'Afrique", tier: "official" },
+          { title: "Bamadaba", tier: "referenced" },
+        ],
+      })
+    ).toEqual({ tier: "official", sourceCount: 3, aiGeneratedCount: 0 });
+  });
+
+  // @req REQ-147
+  it("counts the AI-generated sources without letting them change the tier", () => {
+    expect(
+      readNameStanding({
+        sources: [
+          { title: "Bamadaba", tier: "referenced" },
+          { title: "Relevé", tier: "unverified", source_kind: "ai_generated" },
+          { title: "Relevé", tier: "unverified", source_kind: "ai_generated" },
+        ],
+      })
+    ).toEqual({ tier: "referenced", sourceCount: 3, aiGeneratedCount: 2 });
+  });
+
+  // The thin-dossier case this feature has to label: one AI-written coverage
+  // survey and nothing else.
+  // @req REQ-147
+  it("reads a lone AI-generated survey as unverified, and says so", () => {
+    expect(
+      readNameStanding({
+        sources: [
+          { title: "Relevé", tier: "unverified", source_kind: "ai_generated" },
+        ],
+      })
+    ).toEqual({ tier: "unverified", sourceCount: 1, aiGeneratedCount: 1 });
+  });
+
+  // @req REQ-147
+  it("reports no standing when the dossier cites nothing readable", () => {
+    expect(readNameStanding({})).toBeNull();
+    expect(readNameStanding({ sources: [] })).toBeNull();
+    expect(readNameStanding({ sources: ["not an object"] })).toBeNull();
+  });
+
+  // An unrecognised provenance is not the AI one. `readSource` already floors
+  // an unknown tier at unverified; the marker has no such floor to fall to,
+  // and claiming it would mark a fiche the corpus never marked.
+  // @req REQ-147
+  it("does not mark a provenance the vocabulary does not carry", () => {
+    expect(
+      readNameStanding({
+        sources: [{ title: "X", tier: "referenced", source_kind: "invented" }],
+      })
+    ).toEqual({ tier: "referenced", sourceCount: 1, aiGeneratedCount: 0 });
   });
 
   // @req REQ-133

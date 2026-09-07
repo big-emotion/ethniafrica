@@ -1,6 +1,7 @@
 {
   "id": "SLE",
   "nameFr": "Sierra Leone",
+  "nameEn": "Sierra Leone",
   "nameOfficial": "République de Sierra Leone (Republic of Sierra Leone)",
   "summary": "La Sierra Leone porte un nom espagnol donné par un Portugais : « Sierra Leona », les montagnes du lion, que Pedro de Sintra crut y reconnaître en 1462. Freetown fut fondée en 1787 pour y installer des esclaves affranchis. Temne, Mende, Limba et Krio y font coexister traditions atlantiques, mandé et créoles.",
   "etymology": "Le nom \"Sierra Leone\" vient de l'espagnol \"Sierra Leona\" (montagnes du lion), donné par l'explorateur portugais Pedro de Sintra en 1462. Il aurait vu des montagnes qui ressemblaient à des lions rugissants, d'où le nom \"Serra Lyoa\" (montagnes du lion) en portugais, qui est devenu \"Sierra Leone\" en espagnol puis en anglais. Le nom a été conservé par les Britanniques lors de la colonisation.",
@@ -22,6 +23,12 @@
       {
         "name": "Chefferies Temne",
         "period": "XVe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1401,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Temne"],
         "politicalCenters": [
           "Chefferies indépendantes (Rokel",
@@ -33,6 +40,12 @@
       {
         "name": "Chefferies Mende",
         "period": "XVIe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1501,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Mende"],
         "politicalCenters": ["Chefferies indépendantes (Bo", "Kenema", "etc.)"],
         "historicalRole": "Organisation politique traditionnelle des Mende, chefferies indépendantes, sociétés initiatiques (Poro, Sande/Bundu), résistance à la colonisation britannique."
@@ -40,6 +53,12 @@
       {
         "name": "Colonie de Freetown",
         "period": "1787 - 1808",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1787,
+          "endYear": 1808,
+          "precision": "year"
+        },
         "dominantPeoples": ["Krio (esclaves libérés)", "Britanniques"],
         "politicalCenters": ["Freetown (capitale coloniale)"],
         "historicalRole": "Établissement de la colonie de Freetown pour les esclaves libérés (Nova Scotians, Maroons de Jamaïque), formation du peuple Krio, développement de la société créole."
@@ -47,6 +66,12 @@
       {
         "name": "Colonie britannique de Sierra Leone",
         "period": "1808 - 1961",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1808,
+          "endYear": 1961,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Britanniques",
           "Krio",
@@ -127,7 +152,7 @@
         "name": "Autres groupes",
         "selfAppellation": "Variées selon les groupes",
         "exonyms": ["Variées selon les groupes"],
-        "peopleId": "PPL_AUTRES_GROUPES",
+        "peopleId": null,
         "mainRegion": "Toutes les régions de la Sierra Leone",
         "languages": ["Langues diverses", "anglais", "krio"],
         "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
@@ -283,7 +308,7 @@
         {
           "name": "Autres groupes",
           "percentageInCountry": 20.8,
-          "peopleId": "PPL_AUTRES_GROUPES",
+          "peopleId": null,
           "region": "Toutes les régions de la Sierra Leone"
         }
       ]

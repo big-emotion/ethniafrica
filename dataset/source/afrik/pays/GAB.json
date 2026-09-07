@@ -1,6 +1,7 @@
 {
   "id": "GAB",
   "nameFr": "Gabon",
+  "nameEn": "Gabon",
   "nameOfficial": "République gabonaise (République gabonaise)",
   "summary": "Le Gabon doit son nom au portugais « Gabão », la gabardine, dont l'estuaire du Komo rappelait la forme aux navigateurs du XVe siècle. Peuplé par les migrations bantoues, il compte plus de quarante peuples — Fang, Punu, Nzebi, Teke, Myene, Mbete. Ses masques, dont le ngil fang, comptent parmi les plus connus d'Afrique centrale.",
   "etymology": "Le nom \"Gabon\" provient du portugais \"Gabão\" (gabardine, manteau), donné par les navigateurs portugais au XVe siècle en référence à l'estuaire du fleuve Komo qui ressemble à une gabardine. Le terme a été adapté en \"Gabon\" par les Français.",
@@ -21,6 +22,7 @@
       {
         "name": "Chefferies Fang",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Fang"],
         "politicalCenters": ["Chefferies lignagères traditionnelles"],
         "historicalRole": "Chefferies Fang puissantes, système lignager, traditions forestières, masques fang (notamment ngil), boîtes à reliques (byeri). Migration nord-sud depuis le Cameroun septentrional. Rôle politique majeur dans le Gabon contemporain."
@@ -28,6 +30,7 @@
       {
         "name": "Chefferies Punu",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Punu"],
         "politicalCenters": ["Chefferies traditionnelles"],
         "historicalRole": "Chefferies Punu, traditions artistiques réputées (masques blancs punu), structures lignagères. Traditions forestières."
@@ -35,6 +38,7 @@
       {
         "name": "Chefferies Nzebi",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Nzebi"],
         "politicalCenters": ["Chefferies traditionnelles"],
         "historicalRole": "Chefferies Nzebi, traditions forestières, structures lignagères."
@@ -42,6 +46,7 @@
       {
         "name": "Chefferies Teke",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Teke"],
         "politicalCenters": ["Chefferies traditionnelles"],
         "historicalRole": "Chefferies Teke, traditions forestières, structures lignagères. Relations avec les Teke du Congo."
@@ -49,6 +54,7 @@
       {
         "name": "Chefferies Myene",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Myene"],
         "politicalCenters": ["Chefferies traditionnelles côtières"],
         "historicalRole": "Chefferies Myene côtières, traditions maritimes, commerce côtier. Contacts avec les Européens."
@@ -56,6 +62,12 @@
       {
         "name": "Colonie française du Gabon",
         "period": "1885 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1885,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples gabonais sous domination française"
         ],
@@ -259,7 +271,7 @@
         },
         {
           "name": "Nzebi",
-          "peopleId": "PPL_N",
+          "peopleId": "PPL_NZEBI",
           "percentageInCountry": 9
         },
         {

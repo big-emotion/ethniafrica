@@ -1,6 +1,7 @@
 {
   "id": "GNB",
   "nameFr": "Guinée-Bissau",
+  "nameEn": "Guinea-Bissau",
   "nameOfficial": "République de Guinée-Bissau (República da Guiné-Bissau)",
   "summary": "La Guinée-Bissau associe le mot portugais « Guiné », employé pour la côte ouest-africaine, au nom de sa capitale. Elle fut le royaume mandinka de Kaabu et le territoire des peuples côtiers et bijagó, avant quatre siècles de présence portugaise. Balante, Fula, Mandinka, Papel et Manjak y parlent, outre le portugais, un créole largement répandu.",
   "etymology": "Le nom \"Guinée-Bissau\" combine \"Guinée\" (du portugais \"Guiné\", terme utilisé pour désigner la côte ouest-africaine) et \"Bissau\" (nom de la capitale, dérivé du nom d'un chef local ou d'un terme local). Le nom \"Bissau\" a été ajouté en 1973 lors de l'indépendance pour différencier le pays de la Guinée-Conakry (Guinée).",
@@ -21,6 +22,12 @@
       {
         "name": "Royaume mandinka de Kaabu",
         "period": "XIIe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1101,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Mandinka"],
         "politicalCenters": ["Kaabu (capitale historique)"],
         "historicalRole": "Grand royaume mandinka installé en Casamance et Guinée-Bissau, héritier de l'empire du Mali. État puissant et structuré, système monarchique, traditions mandé. Domination de la région jusqu'au XIXe siècle. Résistance à la colonisation portugaise."
@@ -28,6 +35,7 @@
       {
         "name": "Peuples côtiers",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Papel", "Manjak", "Mancanha"],
         "politicalCenters": ["Chefferies traditionnelles côtières"],
         "historicalRole": "Peuples côtiers et forestiers, rôle commercial important, traditions maritimes. Relations avec la Casamance (Sénégal). Résistance à la colonisation portugaise."
@@ -35,6 +43,7 @@
       {
         "name": "Peuples Bijagó",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Bijagó / Bidyogo"],
         "politicalCenters": ["Îles Bijagó (archipel)"],
         "historicalRole": "Peuple insulaire, société matrilinéaire, traditions maritimes, résistance à la colonisation portugaise. Organisation sociale unique (matrilinéaire)."
@@ -42,6 +51,12 @@
       {
         "name": "Colonie portugaise de Guinée",
         "period": "1879 - 1973",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1879,
+          "endYear": 1973,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples guinéens-bissau sous domination portugaise"
         ],

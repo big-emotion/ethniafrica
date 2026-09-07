@@ -1,6 +1,14 @@
 // @req REQ-006
 // @req REQ-011
 import { describe, it, expect, vi, beforeEach } from "vitest";
+
+// The chip formats its audit date in the route's locale; these assertions
+// are French, so the suite stands on a French route.
+const navigation = await vi.hoisted(async () => {
+  const { mockRouteLanguage } = await import("@/test/mockRouteLanguage");
+  return mockRouteLanguage("fr");
+});
+vi.mock("next/navigation", () => navigation);
 import { render, screen, fireEvent } from "@testing-library/react";
 import { ConfidenceChip } from "../ConfidenceChip";
 
@@ -10,6 +18,24 @@ describe("ConfidenceChip", () => {
       sessionStorage.clear();
     }
     document.getElementById("afh-chip-keyframes")?.remove();
+  });
+
+  // @req REQ-145
+  it("renders its source wording in English when requested", () => {
+    render(
+      <ConfidenceChip
+        language="en"
+        confidenceScore={87}
+        sourceCount={4}
+        lastHumanAuditAt="2025-09-21"
+      />
+    );
+    expect(
+      screen.getByText(/87 % · 4 sources · verified 2025-09-21/)
+    ).toBeVisible();
+    expect(
+      screen.getByRole("button", { name: /open the source chain/ })
+    ).toBeVisible();
   });
 
   describe("rendering with complete data", () => {

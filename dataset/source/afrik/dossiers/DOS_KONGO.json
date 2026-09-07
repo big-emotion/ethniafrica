@@ -1,0 +1,167 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "dossier",
+    "directives": "Source-cited editorial synthesis drafted with AI assistance. Origin traditions are distinguished from dated events. Country links are present-day discovery contexts, not reconstructed borders.",
+    "readerFacing": ["gaps[].reason", "sources[].title", "sources[].notes"]
+  },
+  "id": "DOS_KONGO",
+  "vertical": "histoires",
+  "rubric": "organisation",
+  "readiness": "draft",
+  "slug": "royaume-kongo",
+  "title": "Le royaume Kongo",
+  "question": "Comment suivre un royaume au-delà des frontières actuelles ?",
+  "standfirst": "Une capitale aujourd’hui angolaise, des échanges atlantiques et des pouvoirs rivaux : le royaume Kongo demande une lecture à plusieurs échelles.",
+  "publishedOn": "2026-09-06",
+  "thesis": {
+    "stepLabel": "Un repère",
+    "heading": "Un contact documenté, pas un commencement",
+    "figures": [
+      {
+        "figureKey": "royaume-kongo-repere",
+        "value": "1483",
+        "claim": "L’arrivée de Diogo Cão marque un contact diplomatique avec les Portugais.",
+        "provenance": "Le royaume existe déjà ; cette date ne désigne pas sa fondation.",
+        "year": 1483,
+        "sourceRefs": ["met-kongo"]
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "chapterKey": "capitale-et-reseaux",
+      "ordinal": 1,
+      "title": "Une capitale et ses réseaux",
+      "question": "Que représente Mbanza Kongo ?",
+      "standfirst": "La ville permet de situer le pouvoir sans dessiner un territoire immuable.",
+      "body": [
+        {
+          "text": "Mbanza Kongo, dans l’actuel Angola, est la capitale politique et spirituelle d’un royaume dont l’UNESCO situe l’activité du XIVe au XIXe siècle. Ses vestiges témoignent de fonctions royales, religieuses et urbaines.",
+          "sourceRefs": ["unesco-kongo"]
+        },
+        {
+          "text": "Le dossier d’exposition du Met distingue ce royaume de formations voisines comme Loango. Les œuvres kongo circulent entre plusieurs cours : une proximité culturelle ne suffit donc pas à établir une même souveraineté.",
+          "sourceRefs": ["met-kongo"]
+        }
+      ],
+      "illustration": {
+        "src": "/images/dossiers/kongo-crucifix.jpg",
+        "alt": "Crucifix en laiton avec un Christ central et plusieurs petites figures.",
+        "caption": "Crucifix kongo, XVIe–XVIIe siècle. Une œuvre de réinterprétation locale, pas un portrait royal.",
+        "author": "Kongo artist · The Metropolitan Museum of Art",
+        "year": "1500–1700",
+        "filePage": "https://www.metmuseum.org/art/collection/search/318323",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Le centre du pouvoir",
+          "body": "L’inscription patrimoniale documente la capitale et ses transformations. Le périmètre du site protégé ne représente pas les frontières historiques du royaume.",
+          "sourceRefs": ["unesco-kongo"]
+        },
+        {
+          "stance": "counter",
+          "label": "Des voix diplomatiques africaines",
+          "body": "Les lettres conservées des souverains kongo permettent aussi de lire les échanges depuis leurs préoccupations politiques et religieuses.",
+          "sourceRefs": ["met-kongo"]
+        }
+      ],
+      "figures": []
+    },
+    {
+      "chapterKey": "ruptures-et-transformations",
+      "ordinal": 2,
+      "title": "Ruptures et transformations",
+      "question": "La mort d’un roi met-elle fin à toute une société ?",
+      "standfirst": "L’histoire politique se poursuit à travers les changements de pouvoir.",
+      "body": [
+        {
+          "text": "En 1665, António I meurt à Mbwila, face aux forces portugaises. La chronologie du Met présente cette bataille comme une rupture de l’autorité centrale. Elle ne constitue pas une date de disparition des populations kongo.",
+          "sourceRefs": ["met-chronology"]
+        },
+        {
+          "text": "Cécile Fromont analyse ensemble les conflits internes et l’expansion de la traite atlantique. Réduire cette histoire à une cause unique efface leurs interactions et les choix, inégaux, des acteurs concernés.",
+          "sourceRefs": ["fromont"]
+        }
+      ],
+      "illustration": {
+        "src": "/images/dossiers/kongo-crucifix.jpg",
+        "alt": "Crucifix en laiton avec un Christ central et plusieurs petites figures.",
+        "caption": "Crucifix kongo, XVIe–XVIIe siècle. Une œuvre de réinterprétation locale, pas un portrait royal.",
+        "author": "Kongo artist · The Metropolitan Museum of Art",
+        "year": "1500–1700",
+        "filePage": "https://www.metmuseum.org/art/collection/search/318323",
+        "licence": "CC0",
+        "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Une rupture militaire",
+          "body": "La bataille fournit un repère daté pour comprendre la fragmentation politique, plutôt qu’une succession paisible de règnes.",
+          "sourceRefs": ["met-chronology"]
+        },
+        {
+          "stance": "counter",
+          "label": "Des transformations religieuses actives",
+          "body": "Le crucifix présenté ici montre un travail d’adaptation des formes chrétiennes par des artistes kongo. L’adoption ne se résume pas à la copie.",
+          "sourceRefs": ["met-cross"]
+        }
+      ],
+      "figures": []
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "unesco-kongo",
+      "title": "Mbanza Kongo, Vestiges of the Capital of the former Kingdom of Kongo",
+      "url": "https://whc.unesco.org/en/list/1511",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "UNESCO. Notice du patrimoine mondial ; consultée le 6 septembre 2026.",
+      "publicationYear": 2017
+    },
+    {
+      "sourceKey": "met-kongo",
+      "title": "Kongo: Power and Majesty",
+      "url": "https://www.metmuseum.org/fr/press-releases/kongo-2015-exhibitions",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "The Metropolitan Museum of Art. Présentation des recherches de l’exposition ; consultée le 6 septembre 2026.",
+      "publicationYear": 2015
+    },
+    {
+      "sourceKey": "met-chronology",
+      "title": "Central Africa, 1600–1800 A.D.",
+      "url": "https://82nd-and-fifth.metmuseum.org/toah/ht/09/afc.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "The Metropolitan Museum of Art. Chronologie ; consultée le 6 septembre 2026."
+    },
+    {
+      "sourceKey": "met-cross",
+      "title": "Crucifix",
+      "url": "https://www.metmuseum.org/art/collection/search/318323",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "The Metropolitan Museum of Art, collection 1999.295.7 ; consultée le 6 septembre 2026."
+    },
+    {
+      "sourceKey": "fromont",
+      "title": "Kongo Christianity: The Intersection of Two Worlds",
+      "url": "https://www.metmuseum.org/perspectives/kongo-christianity-intersection-two-worlds",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Entretien avec Cécile Fromont, The Metropolitan Museum of Art ; consulté le 6 septembre 2026."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "chapters",
+      "reason": "Ce dossier ne reconstitue pas les limites du royaume année par année ni une liste complète de ses souverains. Les rapprochements avec des pays actuels sont des repères de lecture."
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 {
   "id": "ERI",
   "nameFr": "Érythrée",
+  "nameEn": "Eritrea",
   "nameOfficial": "État d'Érythrée (State of Eritrea, Hagere Ertra)",
   "summary": "L'Érythrée porte un nom grec : « Erythraia », de la mer Rouge qui la borde, repris par la colonisation italienne en 1890. Le territoire relevait du royaume d'Aksoum, puis de chefferies tigrigna, beja et afar. Neuf peuples y sont reconnus, du Tigrinya des hauts plateaux aux Rashaida de la côte.",
   "etymology": "Le nom \"Érythrée\" vient du grec \"Erythraia\" (Ἐρυθραία), dérivé de \"Mare Erythraeum\" (mer Érythrée), nom donné par les Grecs à la mer Rouge. Le terme signifie \"rouge\" en grec, en référence à la couleur de la mer Rouge. Les Italiens ont adopté ce nom pour leur colonie en 1890.",
@@ -22,6 +23,7 @@
       {
         "name": "Royaume d'Aksoum",
         "period": "Antiquité - VIIe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Tigrinya", "Tigré", "autres peuples érythréens"],
         "politicalCenters": [
           "Aksoum (capitale historique",
@@ -32,6 +34,7 @@
       {
         "name": "Royaumes et chefferies tigrigna",
         "period": "Moyen Âge - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Tigrinya"],
         "politicalCenters": ["Hauts plateaux (Asmara", "Mendefera)"],
         "historicalRole": "Royaumes et chefferies tigrigna sur les hauts plateaux, héritiers d'Aksoum, christianisme orthodoxe, structures villageoises lignagères. Rôle central de l'Église Tewahedo."
@@ -39,6 +42,12 @@
       {
         "name": "Chefferies Beja",
         "period": "XVe siècle - présent",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1401,
+          "ongoing": true,
+          "precision": "century"
+        },
         "dominantPeoples": ["Beja (Bilen", "Hedareb", "Beni Amer)"],
         "politicalCenters": ["Keren", "régions centrales"],
         "historicalRole": "Chefferies Beja, organisation tribale, islam et christianisme mixte (Bilen). Relations avec le Soudan."
@@ -46,6 +55,7 @@
       {
         "name": "Peuples Afar",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Afar"],
         "politicalCenters": ["Littoral et sud-est"],
         "historicalRole": "Peuples Afar nomades pastoraux, sultanat d'Aussa, traditions couchitiques, pastoralisme de dromadaires."
@@ -53,6 +63,12 @@
       {
         "name": "Colonie italienne d'Érythrée",
         "period": "1890 - 1941",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1890,
+          "endYear": 1941,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples érythréens sous domination italienne"
         ],
@@ -62,6 +78,12 @@
       {
         "name": "Fédération Éthiopie-Érythrée",
         "period": "1952 - 1962",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1952,
+          "endYear": 1962,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples érythréens sous fédération éthiopienne"
         ],
@@ -71,6 +93,12 @@
       {
         "name": "Province éthiopienne",
         "period": "1962 - 1991",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1962,
+          "endYear": 1991,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples érythréens sous domination éthiopienne"
         ],

@@ -1,0 +1,133 @@
+{
+  "title": "Lunda: alliances and connections",
+  "question": "How does power extend through alliances and networks?",
+  "standfirst": "Lunda history intersects with Luba and Chokwe histories without merging into them. Origin traditions, relations between courts and exchanges require distinct readings.",
+  "thesis": {
+    "stepLabel": "A landmark",
+    "heading": "Trade as a landmark",
+    "figures": [
+      {
+        "claim": "Bortolot places Mwaant Yaav Naweej’s connections to the Atlantic coast around this period.",
+        "provenance": "An approximate date in a historical synthesis."
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "title": "Origins and legitimacy",
+      "question": "What does an origin tradition tell us?",
+      "standfirst": "A political genealogy is not a calendar.",
+      "body": [
+        {
+          "text": "Traditions reported by Bortolot connect Chibinda Ilunga, a hunter from the Luba world, to a Lunda marriage alliance. He presents an origin tradition, not a dated founding document."
+        },
+        {
+          "text": "This Chokwe sculpture evokes Chibinda Ilunga without providing a verifiable portrait."
+        }
+      ],
+      "readings": [
+        {
+          "label": "A memory of power",
+          "body": "The sanza accompanies historical recitations and praise songs."
+        },
+        {
+          "label": "Distinct societies",
+          "body": "A shared reference does not merge Chokwe and Lunda societies."
+        }
+      ],
+      "illustration": {
+        "alt": "Standing figure holding a sanza, with a broad carved headdress.",
+        "caption": "Chokwe mwanangana playing a sanza, before 1869. An evocation of Chibinda Ilunga."
+      }
+    },
+    {
+      "title": "Expansion and reorganisation",
+      "question": "Should we imagine a state with fixed borders?",
+      "standfirst": "Routes and relationships change alongside centres of power.",
+      "body": [
+        {
+          "text": "The Met chronology describes the emergence of Kazembe in the eighteenth century in present-day north-eastern Zambia. This eastern extension forms another political centre, connected to exchanges between the east coast and the interior."
+        },
+        {
+          "text": "Macola also uses Commonwealth for independent but interconnected states. This clarifies what empire can conceal: multiple centres and political autonomy."
+        }
+      ],
+      "readings": [
+        {
+          "label": "Following networks",
+          "body": "Political and trading connections link several territories. They do not imply identical administration everywhere."
+        },
+        {
+          "label": "Exchange involves violence",
+          "body": "The entry also recalls regional trade in ivory and enslaved people."
+        }
+      ],
+      "illustration": {
+        "alt": "Standing figure holding a sanza, with a broad carved headdress.",
+        "caption": "Chokwe mwanangana playing a sanza, before 1869. An evocation of Chibinda Ilunga."
+      }
+    }
+  ],
+  "gaps": [
+    {
+      "reason": "The dates of origin traditions remain debated. Present-day countries locate places; they do not define an empire that stayed unchanged through the centuries."
+    }
+  ],
+  "sources": [
+    {
+      "notes": "The Metropolitan Museum of Art. Chronology; accessed 6 September 2026."
+    },
+    {
+      "notes": "Alexander Ives Bortolot, The Metropolitan Museum of Art; accessed 6 September 2026."
+    },
+    {
+      "notes": "Giacomo Macola, The Encyclopedia of Empire. Abstract and article overview; accessed 6 September 2026."
+    },
+    {
+      "notes": "The Metropolitan Museum of Art, collection 1988.157; accessed 6 September 2026."
+    }
+  ],
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-06",
+    "model": "GPT-6",
+    "sourceHash": "843f888f8319133dc6a89ec8ca946116e2b09640a80f99975e288f497ce2e868",
+    "fieldHashes": {
+      "title": "527ff3a0f9d6670f91dcf3920d53a2639ae4d11b84e75eca9b522a11f7e6b678",
+      "question": "43ace8c17336ac2a3614e244a21ed68a5d62e111efa90d4e20c937f51991a708",
+      "standfirst": "74431f22f65144b262bcf834119a028976e6f27128b52ea1fbbff9e53813a425",
+      "thesis.stepLabel": "7a8bb60aeef2f867eccc15096190b35374f3fe34e84a7b729e83ca8c3b7d9b05",
+      "thesis.heading": "700c29bfe1abf366f432946536442fddbc40707c5b083c4fd978228343a10190",
+      "thesis.figures[0].claim": "961a5602f0b38c59621dbba8a5cc705ef7014437dc27a11878525eb48ac63af4",
+      "thesis.figures[0].provenance": "552158bb5b26879d98b4b2bf202ca6b566fc377366fe893c3bece8cb9a1028b2",
+      "chapters[0].title": "6dcc80613c176f86efbd3241f5cfc9474b869a7a2ce679d1f708fb0ea80bcca2",
+      "chapters[0].question": "1491abb450dd2a66fbd997f384736f2374698c35b952f1ebfdb8ff597b5d55c3",
+      "chapters[0].standfirst": "4159e9e8cff82c573a36043fc9629dc608a2705b22c9bf25cec989f958afa205",
+      "chapters[0].body[0].text": "4f2358bab6c2f513ce949bb55aef7e68c962d43ae6399fc3477d6fab04d4a967",
+      "chapters[0].body[1].text": "b10fee15766da35bc1568597d1ee832bf358eeb650657edf007927c5d8ac608c",
+      "chapters[0].readings[0].label": "0e630a15dd2d1133262fa433554ea754e136a4ad48ceca2a5758040679e8948a",
+      "chapters[0].readings[0].body": "7576abb460fb18c2a5d9a928767afb92a7dfadd98feb24e018e62a67e287292d",
+      "chapters[0].readings[1].label": "5cda6a8d722e4b0825b676c3a2af3ea2c4f10d5fc2453783de250712a74c9a59",
+      "chapters[0].readings[1].body": "bbf2ec1379eeacf188ece6319f0efde3eefc7e615a8568d49100e859de2d6d33",
+      "chapters[0].illustration.alt": "a9f9ab9587e24fe4e286c8c1a22b65a950d8273be74de7532e4734ca7a382274",
+      "chapters[0].illustration.caption": "76a4fd942ceeea1d7bd7ed3344382db3cfe65a0d994aab7ec9c66bbf87250c60",
+      "chapters[1].title": "6e66fbbb9927c3f14bf21832400d486425324d8d58b2cdd4bf07dce8bdff9c08",
+      "chapters[1].question": "3cdfd26f431fa2080a533e0f8b3adb59a2eb2376e5c0f8d604f0de752675819f",
+      "chapters[1].standfirst": "9f853a2d864e08704a6d054b2f42eef8863e3448ba2a999e2a6f86e344af3d97",
+      "chapters[1].body[0].text": "96b0cfa50ae5be631b5dc294373e97aae1212cba13d1d928480cef95efd0ead0",
+      "chapters[1].body[1].text": "f70fae7e74fe7b0f226233ca2e3b1ca06300cf648914b715179cca0462065600",
+      "chapters[1].readings[0].label": "db48711edcb91c03003752f64424962dac0cc9d2a9f0a936b5eae466e74d19ab",
+      "chapters[1].readings[0].body": "bfd2800250022489ce4abb0b90149c65d653df08ac252b19bbd54c80a3e0fcdb",
+      "chapters[1].readings[1].label": "a188eeadb76333ff86cae30e2f8b29ae81ceb84bad609e6018141ea5c760f333",
+      "chapters[1].readings[1].body": "ed097c60e5d6b8cad1a0f42254cbabcbaaf8822efcd617451b3d146f910958fc",
+      "chapters[1].illustration.alt": "a9f9ab9587e24fe4e286c8c1a22b65a950d8273be74de7532e4734ca7a382274",
+      "chapters[1].illustration.caption": "76a4fd942ceeea1d7bd7ed3344382db3cfe65a0d994aab7ec9c66bbf87250c60",
+      "gaps[0].reason": "65175dd0a36bc4aaddda7dacd219e59343864184ff7f8a936be532862764886b",
+      "sources[0].notes": "ff05bbe0b42b40537427fc7a530f5f548c8435a7dc8f20aa7297c1df79617bad",
+      "sources[1].notes": "5e140a7957c53b30daaac6d161944d70c446a57585c2f341b96e5833adbe12af",
+      "sources[2].notes": "63ed798ff842821ed91496b715583a3bed8f31d16755d66d8ebea1854d37aad8",
+      "sources[3].notes": "1133fd5217e46ea3e2363c7089b56ca9c7d8a2dfc0323dc8000b912231528492"
+    },
+    "reviewRequired": []
+  }
+}

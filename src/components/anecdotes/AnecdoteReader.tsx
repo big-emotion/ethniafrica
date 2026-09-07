@@ -17,6 +17,7 @@ import {
 } from "@/lib/home/anecdoteCards";
 import type { AnecdoteImageSide } from "@/lib/home/didYouKnowPresentation";
 import { accentForModule } from "@/lib/hubs/moduleRegistry";
+import { anecdotesCopy } from "@/lib/i18n/copy/anecdotes";
 import type { Language } from "@/types/shared";
 
 export interface AnecdoteReaderProps {
@@ -128,8 +129,9 @@ export function AnecdoteReader({
   deck,
   openingCard,
   openingImageSide = "end",
-  loadCards = loadAnecdoteCards,
+  loadCards,
 }: AnecdoteReaderProps) {
+  const copy = anecdotesCopy[language];
   const [order, setOrder] = useState<string[]>(deck);
   const [position, setPosition] = useState(0);
   // Seeded with the one card the server rendered. The rest join it the first
@@ -172,7 +174,9 @@ export function AnecdoteReader({
 
     if (!cards.has(nextId)) {
       try {
-        const bank = await loadCards();
+        const bank = await (loadCards
+          ? loadCards()
+          : loadAnecdoteCards(language));
         setCards((known) => new Map([...known, ...bank]));
       } catch {
         return;
@@ -181,7 +185,7 @@ export function AnecdoteReader({
 
     if (!walked) setOrder(nextOrder);
     setPosition(nextPosition);
-  }, [cards, fact, loadCards, order, position]);
+  }, [cards, fact, language, loadCards, order, position]);
 
   const toggleMark = useCallback(() => {
     if (!fact) return;
@@ -220,11 +224,7 @@ export function AnecdoteReader({
   // An empty bank is not an error state to dress; it is a page with nothing
   // to say, and saying so beats framing an empty card.
   if (!fact) {
-    return (
-      <p className="anecdote-empty">
-        Aucune anecdote n&apos;est publiée pour le moment.
-      </p>
-    );
+    return <p className="anecdote-empty">{copy.empty}</p>;
   }
 
   const isMarked = marked.includes(fact.id);
@@ -257,7 +257,7 @@ export function AnecdoteReader({
           without this the only thing announced is that focus is still where
           the reader left it. */}
       <p className="sr-only" aria-live="polite">
-        {`Anecdote suivante : ${fact.headline}`}
+        {copy.nextAnnouncement(fact.headline)}
       </p>
 
       <AnecdoteCard
@@ -269,7 +269,7 @@ export function AnecdoteReader({
 
       <div className="anecdote-controls">
         <button type="button" className="anecdote-next" onClick={goNext}>
-          Suivant
+          {copy.next}
         </button>
 
         <div className="anecdote-reactions">
@@ -279,7 +279,7 @@ export function AnecdoteReader({
             aria-pressed={isMarked}
             onClick={toggleMark}
           >
-            {isMarked ? "Anecdote retenue" : "Cette anecdote est intéressante"}
+            {isMarked ? copy.marked : copy.mark}
           </button>
 
           <button
@@ -288,7 +288,7 @@ export function AnecdoteReader({
             aria-expanded={isSharing}
             onClick={share}
           >
-            Partager
+            {copy.share}
           </button>
 
           {/* The objection is taken here, not somewhere else. It used to be a
@@ -300,6 +300,7 @@ export function AnecdoteReader({
               the page never did: it read the id out of a query string and
               handed it to a third party that had never heard of it. */}
           <FlagTarget
+            language={language}
             target={{
               type: "assertion",
               id: fact.id,
@@ -307,7 +308,7 @@ export function AnecdoteReader({
             }}
             renderTrigger={(open) => (
               <button type="button" className="anecdote-action" onClick={open}>
-                Je conteste cette anecdote
+                {copy.dispute}
               </button>
             )}
           />
@@ -321,7 +322,7 @@ export function AnecdoteReader({
                 className="anecdote-share-link"
                 onClick={copyLink}
               >
-                {isCopied ? "Lien copié" : "Copier le lien"}
+                {isCopied ? copy.linkCopied : copy.copyLink}
               </button>
             </li>
             <li>
@@ -373,9 +374,7 @@ export function AnecdoteReader({
             there. What survives is the reader's own trail, which they built
             and which says nothing about how much remains. */}
         {marked.length > 0 ? (
-          <p className="anecdote-progress">
-            {`${marked.length} anecdote${marked.length > 1 ? "s" : ""} retenue${marked.length > 1 ? "s" : ""} sur cet appareil`}
-          </p>
+          <p className="anecdote-progress">{copy.savedCount(marked.length)}</p>
         ) : null}
       </div>
 

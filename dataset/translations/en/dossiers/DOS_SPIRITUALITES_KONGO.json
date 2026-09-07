@@ -1,0 +1,133 @@
+{
+  "title": "Kongo spiritualities: objects and change",
+  "question": "How can we study spiritual practices without reducing them to a single religion?",
+  "standfirst": "Minkisi, ritual specialists and Kongo Christianities illuminate relations with power, protection and the spiritual world. Surviving objects do not encompass every practice.",
+  "thesis": {
+    "stepLabel": "A landmark",
+    "heading": "A turning point, not a uniform replacement",
+    "figures": [
+      {
+        "claim": "Nzinga Nkuwu is baptised and takes the name João.",
+        "provenance": "A royal event; it does not describe every inhabitant’s belief."
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "title": "Minkisi and community",
+      "question": "What does a ritual object do?",
+      "standfirst": "A figure’s meaning also depends on its uses.",
+      "body": [
+        {
+          "text": "A nkisi, plural minkisi, connects material form with ritual power. The Mangaaka entry describes collaboration between a sculptor and a nganga, the specialist involved in its activation."
+        },
+        {
+          "text": "This Mangaaka, dated around 1880–1900, helps protect the community and settle commitments. Its metal pieces record interventions rather than merely decorating the figure."
+        }
+      ],
+      "readings": [
+        {
+          "label": "A documented social role",
+          "body": "The entry connects the figure to oaths and agreements. Spiritual practice and the regulation of social relations meet in this use."
+        },
+        {
+          "label": "One figure cannot encompass a world",
+          "body": "Almeida distinguishes several forces, practices and mediators. Reading one object as a summary of all beliefs would generalise beyond it."
+        }
+      ],
+      "illustration": {
+        "alt": "Standing Mangaaka figure, hands on hips, with metal pieces covering its torso.",
+        "caption": "Mangaaka, around 1880–1900, Chiloango region. A ritual figure associated with community protection."
+      }
+    },
+    {
+      "title": "Kongo Christianities",
+      "question": "What happens to a religion as it travels?",
+      "standfirst": "Forms and meanings change together.",
+      "body": [
+        {
+          "text": "Almeida describes Christian rites spreading unevenly across places and social positions. Royal baptism does not establish a collective, immediate abandonment of earlier practices."
+        },
+        {
+          "text": "Fromont also describes multilingual Kongo participants learning, translating and discussing doctrine. Religious history involves their intellectual work and political ambitions."
+        }
+      ],
+      "readings": [
+        {
+          "label": "Material evidence",
+          "body": "The Met crucifix reworks a Christian model in a Kongo visual language. Its forms testify to local meaning-making."
+        },
+        {
+          "label": "Atlantic connections",
+          "body": "Fromont follows these references beyond Central Africa. This historical connection cannot establish a person’s religion from their origin."
+        }
+      ],
+      "illustration": {
+        "alt": "Brass crucifix with a central Christ and several smaller figures.",
+        "caption": "Kongo crucifix, sixteenth–seventeenth century. A local reinterpretation, not a royal portrait."
+      }
+    }
+  ],
+  "gaps": [
+    {
+      "reason": "This dossier concerns documented historical practices. It offers neither a complete pantheon, a measure of present beliefs, nor a general equivalence with vodun."
+    }
+  ],
+  "sources": [
+    {
+      "notes": "The Metropolitan Museum of Art, collection 1999.295.7; accessed 6 September 2026."
+    },
+    {
+      "notes": "The Metropolitan Museum of Art, collection 2008.30; accessed 6 September 2026."
+    },
+    {
+      "notes": "Carlos Almeida, The Metropolitan Museum of Art, 30 June 2026; accessed 6 September 2026."
+    },
+    {
+      "notes": "Interview with Cécile Fromont, The Metropolitan Museum of Art; accessed 6 September 2026."
+    }
+  ],
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-06",
+    "model": "GPT-6",
+    "sourceHash": "4742925aff631d4a2a474172b88df23f3073816a6aa3d41276073ea34fd6b315",
+    "fieldHashes": {
+      "title": "394a6744ff3f4b31c4267f19e71343a53d9fef979ed84395f5d2e43d8b995e35",
+      "question": "dbfba76e19133b688feddd96dc4209a09f2c351a6ee9625ef1eec8b070e590e3",
+      "standfirst": "2e3abaf33423b37d67589179447c08af89bbceee32479799a33ad453f77113c1",
+      "thesis.stepLabel": "7a8bb60aeef2f867eccc15096190b35374f3fe34e84a7b729e83ca8c3b7d9b05",
+      "thesis.heading": "dfc5093581eb9849c66524eeffe1fc59461bad27e74c04e9a6cefc2db3c6ddba",
+      "thesis.figures[0].claim": "4d86ae708983b070d80c2722683aebbd3f9688e943f7f339ce1a3a403aeee83c",
+      "thesis.figures[0].provenance": "f5b918559d8aa1e847371231b9b3c876f89e771386c4c99e1faed79b06df00a8",
+      "chapters[0].title": "c1a1a5608157e6b69f78113a099b5220e67dd609622efdcf2e666a5abdf2c35e",
+      "chapters[0].question": "587f4d770ac76618913d2e98f7a7fd5d77479b688f06246f287da5bc302fa7a2",
+      "chapters[0].standfirst": "d59bd549569cacae4614a417565148118f7f5d5bd85983181ab5500efd996ad1",
+      "chapters[0].body[0].text": "d5ef2ab086ab55437360955707cb9f4ce7920de7a277fba0f5381f54f2550c2b",
+      "chapters[0].body[1].text": "493b11c20ecad0e289d81eb2525dfb17d7551a5b0f44730e35819c1c92456eaa",
+      "chapters[0].readings[0].label": "b6601707d6a75ce6735bfd0763421da89cc8370173e4dd51012ed0c45f98beb6",
+      "chapters[0].readings[0].body": "1b850b204aa3abaa57771e5ef960e1e9174d5dc04dd0844e5b7d379705db7c5f",
+      "chapters[0].readings[1].label": "c9f0c83c696eaa5ea6639e7794ae266e9bb2f08926008250b8354a841cfdd89a",
+      "chapters[0].readings[1].body": "398c76d3c258bcc6fb2f4757460100e6136a6b58a77504408f319fd6347f5ba2",
+      "chapters[0].illustration.alt": "d099412a6f38982602e51b2904cf653de445555376082c90e5564e98f2f95530",
+      "chapters[0].illustration.caption": "5ce38b27fbf3cc9c51f3c896690fa90006398f2f231cb3caf0b367fe2e1e08e5",
+      "chapters[1].title": "4c2969481116128d6c122713043b16b80e7b14d14fda29ec98c7ae2dbb9ce951",
+      "chapters[1].question": "5f047a4f66d5c7f47a2e847287b5d0c70844d14ac0824139ed6d9e1fef792be8",
+      "chapters[1].standfirst": "08a5ac4dc21eca7417ddeecebf8ac99ebbbf76f3ae1c791ff8b0a0fcee0ee9a6",
+      "chapters[1].body[0].text": "967cc094bd83f3d57ccc1443b4e7fc0dfb9e088910f443bd8d584718ecef4892",
+      "chapters[1].body[1].text": "c71dd777dd56de568ceb5a4a55b2a339f1f3c122b05e95917e60e17c056441ee",
+      "chapters[1].readings[0].label": "78161a45063e71257c942076be9df48ca5ff40b7c4677d5f30f9d0b43e821005",
+      "chapters[1].readings[0].body": "ef5e994ecfc54e497f3b724b3f2bc503ac9e3acad56cfae7387b445ddb419d13",
+      "chapters[1].readings[1].label": "02f1f370b4436ee2420c38d3494fa2f6cc585aef3cb7079d76d74ad01bb004d3",
+      "chapters[1].readings[1].body": "b8d50c25bcb1a4c0680799ecb36b424d7f13eceb3077a8aa8a2d3f026a94e51c",
+      "chapters[1].illustration.alt": "010f431e3c311ff8ed8dbdd007c1f9e47c6d4df8cf20a29d9aac2fb963b44f9a",
+      "chapters[1].illustration.caption": "d8758c067b9453cb71871cc837d29db622da8a1cf9e7e83edf17545cf70ccc5c",
+      "gaps[0].reason": "a7cd5decbb85146fafc9373e23ee848756c20b905af25920d3b0268f9e49e79c",
+      "sources[0].notes": "7e3f8b796abe27acccce2f2998b5c552246c00650a7361556bc91ae039dfd988",
+      "sources[1].notes": "4ba3352fdd1d67a8684d99eb093f1e0a94370641795f215bd4307500ac7064b5",
+      "sources[2].notes": "d991c4ee6b4815cc188db5896e6f7adb17c50bb846731d2be0c051fd88e5696f",
+      "sources[3].notes": "e046f00d355f0b1a6d8bea77071f85c12320739371e9689dd8b02b14acad5465"
+    },
+    "reviewRequired": []
+  }
+}

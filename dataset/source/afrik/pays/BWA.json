@@ -1,6 +1,7 @@
 {
   "id": "BWA",
   "nameFr": "Botswana",
+  "nameEn": "Botswana",
   "nameOfficial": "République du Botswana (Republic of Botswana)",
   "summary": "Le Botswana tire son nom du peuple tswana : le préfixe « bo- » signifie « pays de » en setswana. Le territoire fut d'abord celui des peuples khoïsan, puis des chefferies tswana, avant de devenir le protectorat britannique du Bechuanaland. San, Kalanga, Herero et Mbukushu y vivent aux côtés des Tswana.",
   "etymology": "Le nom \"Botswana\" dérive de \"Tswana\", le nom du peuple majoritaire, avec le préfixe \"Bo-\" qui signifie \"pays de\" en setswana. \"Botswana\" signifie donc \"pays des Tswana\". Le nom a été adopté à l'indépendance en 1966 pour remplacer \"Bechuanaland\", nom colonial britannique.",
@@ -18,6 +19,7 @@
       {
         "name": "Chefferies Tswana",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Tswana (Batswana)"],
         "politicalCenters": [
           "Gaborone (capitale moderne)",
@@ -32,6 +34,12 @@
       {
         "name": "Protectorat du Bechuanaland",
         "period": "1885 - 1966",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1885,
+          "endYear": 1966,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples botswanais sous protectorat britannique"
         ],
@@ -79,7 +87,7 @@
           "parfois utilisé)",
           "\"Khoisan\" (terme académique)"
         ],
-        "peopleId": "PPL_SAN",
+        "peopleId": null,
         "mainRegion": "Désert du Kalahari (Botswana)",
         "languages": [
           "Langues khoïsan (plusieurs langues)",

@@ -77,6 +77,28 @@ export type PatronymeBearerSummary = z.infer<
   typeof patronymeBearerSummarySchema
 >;
 
+/**
+ * A name this name is allied with, resolved to something a reader can read.
+ *
+ * The corpus writes `alliances[].targetPatronymeId`. Forwarding the id alone
+ * put "PAT_COULIBALY" on the Keïta fiche as link text — the raw corpus
+ * identifier the reader-facing register forbids in prose, printed by the
+ * view instead of by a curator. The target's name is resolved here, once per
+ * fiche, so no surface has to look it up and none can fall back to the id.
+ */
+// Not exported: its type is, and nothing outside this file parses an
+// alliance on its own — an unused export is what the dead-code ratchet counts.
+const patronymeAllianceSummarySchema = z.object({
+  targetId: z.string(),
+  targetNameMain: z.string(),
+  /** The attested term (sanankuya, …), never a category of our own. */
+  allianceType: z.string().nullable(),
+});
+
+export type PatronymeAllianceSummary = z.infer<
+  typeof patronymeAllianceSummarySchema
+>;
+
 // @req REQ-133
 export const publicPatronymeSchema = z.object({
   id: z.string(),
@@ -87,6 +109,7 @@ export const publicPatronymeSchema = z.object({
   associatedPeoples: z.array(patronymePeopleSummarySchema),
   associatedCountries: z.array(patronymeCountrySummarySchema),
   bearers: z.array(patronymeBearerSummarySchema),
+  alliances: z.array(patronymeAllianceSummarySchema),
 });
 
 export type PublicPatronyme = z.infer<typeof publicPatronymeSchema>;

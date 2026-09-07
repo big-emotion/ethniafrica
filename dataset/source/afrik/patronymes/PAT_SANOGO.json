@@ -84,7 +84,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "Le répertoire provisoire cite plusieurs patronymes comme alliés de Sanogo, mais la recherche n'a pas trouvé de source réciproque assez précise permettant de modifier aussi une fiche PAT_* partenaire hors de ce lot."
+      "reason": "Le répertoire provisoire cite plusieurs patronymes comme alliés de Sanogo, mais la recherche n'a pas trouvé de source réciproque assez précise permettant de modifier aussi une nom de l'atlas partenaire hors de ce lot."
     },
     {
       "fieldPath": "casteOrSocialFunction",

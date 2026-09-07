@@ -1,0 +1,137 @@
+.directory {
+  display: grid;
+  gap: var(--afh-section-gap);
+  text-align: left;
+}
+
+.directory p,
+.directory h2 {
+  text-align: left;
+}
+
+.filters {
+  display: grid;
+  gap: var(--afh-space-lg);
+}
+
+.navigation {
+  width: 100%;
+  min-width: 0;
+  max-width: var(--afh-shell-max);
+  margin-inline: auto;
+}
+
+.control {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: var(--afh-space-lg);
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-md);
+  background: var(--afh-surface);
+  color: var(--afh-text);
+  font-size: var(--afh-text-small);
+}
+
+.control:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 2px;
+}
+
+.themeGrid {
+  display: none;
+}
+
+.results {
+  min-width: 0;
+}
+
+.status {
+  font-size: var(--afh-text-small);
+  color: var(--afh-text-soft);
+  margin-bottom: var(--afh-space-2xl);
+}
+
+.dossier {
+  border-top: 1px solid var(--afh-border);
+  padding-block: var(--afh-space-5xl);
+}
+
+/* Closes the list the way a dossier opens it, on the same rule, so the pager
+   reads as the end of the reading rather than as a control bolted under it. */
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--afh-space-md);
+  border-top: 1px solid var(--afh-border);
+  padding-block: var(--afh-space-2xl);
+  font-size: var(--afh-text-small);
+  /* Opts out of the mobile centring styles/mobile-text.css puts on the body
+     below 768px: the two controls are anchored to the edges of the list they
+     page through, and the count belongs between them. */
+  text-align: left;
+}
+
+.pager button {
+  min-height: 44px;
+  padding-inline: var(--afh-space-md);
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-sm);
+  background: var(--afh-surface);
+  color: var(--afh-text);
+  cursor: pointer;
+}
+
+.pager button:disabled {
+  /* Kept in place rather than removed: a control that disappears at the ends
+     of the list moves the one beside it under the reader's cursor. */
+  opacity: 0.45;
+  cursor: default;
+}
+
+.pager span {
+  color: var(--afh-text-soft);
+}
+
+.dossier h2 a {
+  font-weight: 700;
+  font-size: var(--afh-text-h2);
+  line-height: var(--afh-leading-h2);
+}
+
+.dossier p {
+  max-width: 65ch;
+}
+
+.eyebrow {
+  color: var(--accent-ink);
+  font-size: var(--afh-text-eyebrow);
+  text-transform: var(--afh-eyebrow-transform);
+  font-weight: var(--afh-eyebrow-weight);
+  letter-spacing: var(--afh-eyebrow-tracking);
+}
+
+.shortReads {
+  padding: var(--afh-space-5xl);
+  background: var(--afh-bg-warm);
+  border-radius: var(--afh-radius-md);
+}
+
+.shortReads h2 {
+  font-size: var(--afh-text-h3);
+  line-height: var(--afh-leading-h3);
+}
+
+@media (min-width: 1200px) {
+  .compactThemes {
+    display: none;
+  }
+
+  .themeGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--afh-space-lg) var(--afh-space-5xl);
+  }
+}

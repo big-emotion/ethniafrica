@@ -12,9 +12,8 @@ describe("quizSessionQuerySchema", () => {
     expect(result.success).toBe(true);
     if (result.success) {
       expect(result.data).toEqual({
+        lang: "fr",
         pays: "GHA",
-        famille: undefined,
-        mode: undefined,
         count: 6,
       });
     }

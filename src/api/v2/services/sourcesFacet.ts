@@ -2,10 +2,10 @@ import { mapRowToSource } from "@/api/v2/services/sourceMapper";
 import type { Source } from "@/api/v2/schemas/sources";
 import { createServerClient } from "@/lib/supabase/server";
 import { escapeSearchTerm } from "@/lib/supabase/searchTerm";
+import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
 import {
   SOURCE_KINDS,
   SOURCE_TIERS,
-  sourceStandingLabelFr,
   type SourceKind,
   type SourceTier,
 } from "@/types/sources";
@@ -354,7 +354,10 @@ export async function getSourcesFacetChoices(): Promise<SourcesFacetChoices> {
       .filter((standing) => standings.has(standing))
       .map((standing) => ({
         id: standing,
-        label: sourceStandingLabelFr(standing),
+        // French by contract: the endpoint has no locale parameter, and its
+        // consumers pin these values. Wiring a `lang` through is an API
+        // decision, not a label one.
+        label: sourceStandingLabel(standing, "fr"),
         count: standings.get(standing) ?? 0,
       })),
     sourceKinds: SOURCE_KINDS.filter((kind) => kinds.has(kind)).map((kind) => ({

@@ -73,6 +73,42 @@ describe("SearchPeopleGroupCard", () => {
     expect(screen.getByText(/2 fiches/i)).toBeInTheDocument();
   });
 
+  // @req REQ-140
+  it("renders English member names, labels, counts and routes", () => {
+    render(
+      <SearchPeopleGroupCard
+        group={{
+          ...fulaniGroup,
+          members: [
+            {
+              type: "people",
+              id: "PPL_FULANI",
+              name: "Peul",
+              nameEn: "Fulani",
+            },
+            {
+              type: "people",
+              id: "PPL_FULANI_MASSINA",
+              name: "Peul du Massina",
+              nameEn: "Massina Fulani",
+            },
+          ],
+        }}
+        language="en"
+      />
+    );
+
+    expect(screen.getByText("People")).toBeInTheDocument();
+    expect(screen.getByText("2 records")).toBeInTheDocument();
+    expect(
+      screen.getByRole("list", { name: "Group records" })
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Fulani" })).toHaveAttribute(
+      "href",
+      getPeopleRoute("en", "PPL_FULANI")
+    );
+  });
+
   // @req REQ-002
   it("notifies its host when a member link is activated", async () => {
     const onNavigate = vi.fn();

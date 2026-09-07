@@ -3,14 +3,13 @@
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import { translations } from "@/lib/translations";
+import { quizCopy } from "@/lib/i18n/copy/quiz";
 import { scoreCardSearchParams } from "@/lib/quiz/scoreCardParams";
 import { QuizSessionExit } from "@/components/quiz/QuizSessionExit";
 import type { QuizScope } from "@/lib/quiz/quizScope";
 import { getLocalizedRoute } from "@/lib/routing";
 import { Button } from "@/components/ui/button";
-
-const t = translations.fr.quiz;
+import type { Language } from "@/types/shared";
 
 interface QuizScoreScreenProps {
   scope: QuizScope;
@@ -19,6 +18,7 @@ interface QuizScoreScreenProps {
   totalQuestions: number;
   /** The picker, for choosing a different track. */
   exitHref: string;
+  language: Language;
   className?: string;
 }
 
@@ -39,9 +39,11 @@ export const QuizScoreScreen = ({
   correctCount,
   totalQuestions,
   exitHref,
+  language,
   className,
 }: QuizScoreScreenProps) => {
-  const shareHref = `${getLocalizedRoute("fr", "quiz")}/score?${scoreCardSearchParams(
+  const t = quizCopy[language];
+  const shareHref = `${getLocalizedRoute(language, "quiz")}/score?${scoreCardSearchParams(
     scope,
     correctCount,
     totalQuestions

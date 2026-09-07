@@ -70,7 +70,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "La recherche web combinant « Bahati », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Adaptation to land scarcity among small-scale farming households in South Kivu in the Democratic Republic of the Congo » et « Meaning, origin and history of the name Bahati » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Bahati à une autre fiche PAT_* existante."
+      "reason": "La recherche web combinant « Bahati », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Adaptation to land scarcity among small-scale farming households in South Kivu in the Democratic Republic of the Congo » et « Meaning, origin and history of the name Bahati » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Bahati à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

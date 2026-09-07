@@ -70,7 +70,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "La recherche web combinant « Babirye », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Meaning, origin and history of the name Babirye » et « Parliament of Uganda — Hon. Babalanda Milly Babirye » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Babirye à une autre fiche PAT_* existante."
+      "reason": "La recherche web combinant « Babirye », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Meaning, origin and history of the name Babirye » et « Parliament of Uganda — Hon. Babalanda Milly Babirye » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Babirye à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

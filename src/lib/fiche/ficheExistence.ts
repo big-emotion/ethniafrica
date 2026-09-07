@@ -3,7 +3,10 @@ import * as React from "react";
 import { logger } from "@/lib/api/logger";
 import { getCountryById } from "@/api/v2/services/countryService";
 import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
+import { getLanguageById } from "@/api/v2/services/languageService";
+import { getPatronymeById } from "@/api/v2/services/patronymes";
 import { getPeopleById } from "@/api/v2/services/peopleService";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 
 /**
  * Whether a fiche exists, decided early enough for the HTTP status to still be
@@ -41,18 +44,31 @@ const perRequest =
     .cache ?? (<F extends (...args: never[]) => unknown>(fn: F) => fn);
 
 /** @req REQ-019 */
-export const loadCountryFiche = perRequest(async (id: string) =>
-  getCountryById(id)
+export const loadCountryFiche = perRequest(
+  async (id: string, lang: TranslationLocale = "fr") => getCountryById(id, lang)
 );
 
 /** @req REQ-019 */
-export const loadPeopleFiche = perRequest(async (id: string) =>
-  getPeopleById(id)
+export const loadPeopleFiche = perRequest(
+  async (id: string, lang: TranslationLocale = "fr") => getPeopleById(id, lang)
 );
 
 /** @req REQ-019 */
-export const loadLanguageFamilyFiche = perRequest(async (id: string) =>
-  getLanguageFamilyById(id)
+export const loadLanguageFamilyFiche = perRequest(
+  async (id: string, lang: TranslationLocale = "fr") =>
+    getLanguageFamilyById(id, lang)
+);
+
+/** @req REQ-136 */
+export const loadLanguageFiche = perRequest(
+  async (id: string, lang: TranslationLocale = "fr") =>
+    getLanguageById(id, lang)
+);
+
+/** @req REQ-147 */
+export const loadPatronymeFiche = perRequest(
+  async (id: string, lang: TranslationLocale = "fr") =>
+    getPatronymeById(id, lang)
 );
 
 /**

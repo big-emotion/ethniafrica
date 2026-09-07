@@ -19,14 +19,19 @@ import {
   type ScoreCardParams,
 } from "@/lib/quiz/scoreCardParams";
 import { describeScope } from "@/api/v2/handlers/quiz";
-import { translations } from "@/lib/translations";
+import { getLocalizedRoute } from "@/lib/routing";
+import {
+  OG_LOCALE_BY_LANGUAGE,
+  pageAlternates,
+} from "@/lib/seo/localeAlternates";
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 import { QuizScoreSharePage } from "./QuizScoreSharePage";
-
-const t = translations.fr.quiz;
 
 type ScoreSearchParams = Record<string, string | string[] | undefined>;
 
 interface PageProps {
+  params: Promise<{ lang: string }>;
   searchParams: Promise<ScoreSearchParams>;
 }
 
@@ -40,7 +45,9 @@ function buildOgImageUrl(params: ScoreCardParams): string {
 }
 
 // @req REQ-103 FR70
+// @req REQ-141
 export async function generateMetadata({
+  params: routeParams,
   searchParams,
 }: PageProps): Promise<Metadata> {
   const params = parseScoreCardParams(await searchParams);
@@ -53,18 +60,35 @@ export async function generateMetadata({
     return {};
   }
 
+  const { lang } = await routeParams;
+  const t = getTranslation(lang as Language).quiz;
   const title = t.scoreHeading;
   const description = `${params.correct} ${t.scoreCardExactAnswersSeparator} ${params.total} — ${scope.labelFr}`;
   const imageUrl = buildOgImageUrl(params);
+  // Each card is its own shareable address, indexed nowhere: a canonical
+  // that keeps the query, and no hreflang cluster.
+  const cardSearch = scoreCardSearchParams(
+    scoreCardScope(params),
+    params.correct,
+    params.total
+  ).toString();
+  const alternates = pageAlternates(
+    lang as Language,
+    (locale) => `${getLocalizedRoute(locale, "quiz")}/score?${cardSearch}`,
+    []
+  );
 
   return {
     title,
     description,
     robots: { index: false, follow: true },
+    alternates,
     openGraph: {
       title,
       description,
       type: "website",
+      url: String(alternates.canonical),
+      locale: OG_LOCALE_BY_LANGUAGE[lang as Language],
       images: [{ url: imageUrl, width: 1200, height: 630, alt: title }],
     },
     twitter: {
@@ -77,7 +101,10 @@ export async function generateMetadata({
 }
 
 // @req REQ-103 FR70 AR39
-export default async function QuizScorePage({ searchParams }: PageProps) {
+export default async function QuizScorePage({
+  params: routeParams,
+  searchParams,
+}: PageProps) {
   const params = parseScoreCardParams(await searchParams);
   if (!params) {
     notFound();
@@ -89,9 +116,14 @@ export default async function QuizScorePage({ searchParams }: PageProps) {
     notFound();
   }
 
+  const { lang } = await routeParams;
+  const language = lang as Language;
+  const t = getTranslation(language).quiz;
+
   return (
-    <PageLayout language="fr" title={t.scoreHeading}>
+    <PageLayout language={language} title={t.scoreHeading}>
       <QuizScoreSharePage
+        language={language}
         scope={scope}
         scopeLabelFr={described.labelFr}
         correct={params.correct}

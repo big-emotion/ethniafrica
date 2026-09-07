@@ -1,6 +1,7 @@
 {
   "id": "GHA",
   "nameFr": "Ghana",
+  "nameEn": "Ghana",
   "nameOfficial": "République du Ghana (Republic of Ghana)",
   "summary": "Le Ghana a choisi en 1957 le nom d'un empire qui ne se trouvait pas sur son territoire : le Wagadu, situé plus au nord-ouest. Premier État d'Afrique subsaharienne à accéder à l'indépendance, il succède à la colonie britannique de la Côte-de-l'Or sur un sol qui fut celui des royaumes akan — Ashanti, Denkyira, Akwamu — et des peuples mole-dagbani, ewe et ga-dangme. Le kente et l'adinkra en sont les signatures visuelles.",
   "etymology": "Le nom \"Ghana\" a été choisi lors de l'indépendance en 1957 en référence à l'empire du Ghana (Wagadu), un ancien empire ouest-africain (IIIe-XIIIe siècles). Cependant, l'empire historique du Ghana était situé en Mauritanie et au Mali actuels, pas dans le territoire du Ghana moderne. Le nom est donc symbolique et ne correspond pas à l'ancienne localisation de l'empire.",
@@ -18,6 +19,12 @@
       {
         "name": "Royaumes Akan",
         "period": "XIIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1201,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Akan (Ashanti, Fante, Akyem, Akuapem, Denkyira)"],
         "politicalCenters": [
           "Kumasi (capitale Ashanti)",
@@ -29,6 +36,12 @@
       {
         "name": "Royaume Ashanti",
         "period": "XVIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1601,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Ashanti (Akan)"],
         "politicalCenters": ["Kumasi (capitale)"],
         "historicalRole": "Royaume Akan le plus puissant, expansion territoriale, commerce de l'or, résistance aux Britanniques. Guerres anglo-ashanti (XIXe siècle)."
@@ -36,6 +49,7 @@
       {
         "name": "Royaumes Ga-Dangme",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Ga", "Dangme"],
         "politicalCenters": ["Accra", "régions côtières"],
         "historicalRole": "Peuples côtiers, commerce avec les Européens, présence historique à Accra."
@@ -43,6 +57,7 @@
       {
         "name": "Royaumes gur",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Dagomba", "Mamprusi"],
         "politicalCenters": ["Nord"],
         "historicalRole": "Royaumes gur liés aux Mossi et aux Mandé, organisation politique traditionnelle."
@@ -50,6 +65,12 @@
       {
         "name": "Côte-de-l'Or",
         "period": "1874 - 1957",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1874,
+          "endYear": 1957,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples ghanéens sous administration coloniale britannique"
         ],
@@ -59,6 +80,12 @@
       {
         "name": "République du Ghana",
         "period": "1957 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1957,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples ghanéens"],
         "politicalCenters": ["Accra (capitale)"],
         "historicalRole": "Premier État indépendant d'Afrique subsaharienne (1957). Histoire politique avec alternance démocratique et régimes militaires. Développement économique, modèle de démocratie en Afrique."
@@ -132,16 +159,47 @@
     ],
     "culture": {
       "mainLanguages": [
-        { "name": "Anglais", "isoCode": "eng", "isPrimary": true },
-        { "name": "Akan", "isoCode": "aka" },
-        { "name": "Ewe", "isoCode": "ewe" },
-        { "name": "Ga", "isoCode": "gaa" },
-        { "name": "Dagbani", "isoCode": "dag" },
-        { "name": "Dagaare", "isoCode": "dga" },
-        { "name": "Dangme", "isoCode": "ada" },
-        { "name": "Gonja", "isoCode": "gjn" },
-        { "name": "Nzema", "isoCode": "nzi" },
-        { "name": "Kasem", "isoCode": "xsm" }
+        {
+          "name": "Anglais",
+          "isoCode": "eng",
+          "isPrimary": true
+        },
+        {
+          "name": "Akan",
+          "isoCode": "aka"
+        },
+        {
+          "name": "Ewe",
+          "isoCode": "ewe"
+        },
+        {
+          "name": "Ga",
+          "isoCode": "gaa"
+        },
+        {
+          "name": "Dagbani",
+          "isoCode": "dag"
+        },
+        {
+          "name": "Dagaare",
+          "isoCode": "dga"
+        },
+        {
+          "name": "Dangme",
+          "isoCode": "ada"
+        },
+        {
+          "name": "Gonja",
+          "isoCode": "gjn"
+        },
+        {
+          "name": "Nzema",
+          "isoCode": "nzi"
+        },
+        {
+          "name": "Kasem",
+          "isoCode": "xsm"
+        }
       ],
       "culturalTraditions": "Musique traditionnelle (highlife, hiplife), danse traditionnelle, poésie orale, artisanat (kente, adinkra), architecture traditionnelle, festivals (Homowo, Akwasidae)",
       "dominantReligions": "Christianisme (protestant majoritaire, catholique), islam (minorité, surtout au nord), croyances traditionnelles (syncrétisme)",

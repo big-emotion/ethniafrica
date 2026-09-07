@@ -86,7 +86,7 @@ const dataWithTimeline: ColonizationModuleData = {
 describe("ColonizationModulePage (Epic 13, Story 13.9, ETNI-533)", () => {
   // @req REQ-091 FR90
   it("renders the doctrine intro card linking the live heritage-colonial doctrine", () => {
-    render(<ColonizationModulePage data={emptyData} />);
+    render(<ColonizationModulePage language="fr" data={emptyData} />);
     expect(
       screen.getByRole("link", { name: "Lire la doctrine" })
     ).toHaveAttribute(
@@ -105,7 +105,7 @@ describe("ColonizationModulePage (Epic 13, Story 13.9, ETNI-533)", () => {
    */
   // @req REQ-115
   it("leaves the trail to the shell rather than mounting a second one", () => {
-    render(<ColonizationModulePage data={emptyData} />);
+    render(<ColonizationModulePage language="fr" data={emptyData} />);
     expect(
       screen.queryByRole("navigation", { name: "Fil d'ariane" })
     ).toBeNull();
@@ -113,7 +113,7 @@ describe("ColonizationModulePage (Epic 13, Story 13.9, ETNI-533)", () => {
 
   // @req REQ-091 FR90
   it("gracefully omits every section when the transformer reports no data", () => {
-    render(<ColonizationModulePage data={emptyData} />);
+    render(<ColonizationModulePage language="fr" data={emptyData} />);
     expect(
       screen.queryByText("Peuples fragmentés par les frontières coloniales")
     ).toBeNull();
@@ -122,7 +122,9 @@ describe("ColonizationModulePage (Epic 13, Story 13.9, ETNI-533)", () => {
 
   // @req REQ-091 FR90
   it("renders the fragmentation index section when fragmentation data is present", () => {
-    render(<ColonizationModulePage data={dataWithFragmentation} />);
+    render(
+      <ColonizationModulePage language="fr" data={dataWithFragmentation} />
+    );
     expect(
       screen.getByText("Peuples fragmentés par les frontières coloniales")
     ).toBeInTheDocument();
@@ -131,7 +133,9 @@ describe("ColonizationModulePage (Epic 13, Story 13.9, ETNI-533)", () => {
 
   // @req REQ-091 FR90
   it("renders the sources footer when source data is present", () => {
-    render(<ColonizationModulePage data={dataWithFragmentation} />);
+    render(
+      <ColonizationModulePage language="fr" data={dataWithFragmentation} />
+    );
     expect(screen.getByText("Sources")).toBeInTheDocument();
     expect(
       screen.getAllByRole("link", { name: "voir les sources" }).length
@@ -140,13 +144,13 @@ describe("ColonizationModulePage (Epic 13, Story 13.9, ETNI-533)", () => {
 
   // @req REQ-101 FR87
   it("omits the timeline section when the transformer reports no timeline", () => {
-    render(<ColonizationModulePage data={emptyData} />);
+    render(<ColonizationModulePage language="fr" data={emptyData} />);
     expect(screen.queryByText("Chronologie")).toBeNull();
   });
 
   // @req REQ-101 FR87
   it("renders both the marker layer and the chronology table when timeline data is present", () => {
-    render(<ColonizationModulePage data={dataWithTimeline} />);
+    render(<ColonizationModulePage language="fr" data={dataWithTimeline} />);
     expect(screen.getByText("Chronologie")).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: /événement résistance/ })

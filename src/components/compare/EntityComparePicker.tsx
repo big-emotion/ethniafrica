@@ -9,6 +9,7 @@ import { Card } from "@/components/ui/card";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { cn } from "@/lib/utils";
 import { search as searchCorpus } from "@/lib/afrikLoader";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 import type { SearchEntityType } from "@/types/afrik-frontend";
 import { useAutocomplete } from "@/hooks/use-autocomplete";
 import {
@@ -17,12 +18,7 @@ import {
   type CompareEntityType,
 } from "@/hooks/use-compare-selection";
 import { CompareStickyBar } from "./CompareStickyBar";
-
-const TYPE_LABELS: Record<CompareEntityType, string> = {
-  peoples: "peuples",
-  countries: "pays",
-  "language-families": "familles linguistiques",
-};
+import { compareCopy } from "@/lib/i18n/copy/compare";
 
 const TYPE_ORDER: CompareEntityType[] = [
   "peoples",
@@ -49,17 +45,20 @@ const SEARCH_KIND_BY_TYPE: Record<CompareEntityType, SearchEntityType> = {
  */
 async function defaultFetchSuggestions(
   type: CompareEntityType,
-  query: string
+  query: string,
+  language: TranslationLocale
 ): Promise<CompareCandidate[]> {
   const hits = await searchCorpus(query, {
     limit: MAX_SUGGESTIONS,
     type: SEARCH_KIND_BY_TYPE[type],
+    lang: language,
   });
 
   return hits.map((hit) => ({ id: hit.id, type, exonym: hit.name }));
 }
 
 export interface EntityComparePickerProps {
+  language: TranslationLocale;
   className?: string;
   onCompare?: (type: CompareEntityType, ids: string[]) => void;
   fetchSuggestions?: (
@@ -74,20 +73,23 @@ export interface EntityComparePickerProps {
  * UX-DR29, UX-DR32). Stacked cards, never a wide table.
  */
 export function EntityComparePicker({
+  language,
   className,
   onCompare,
-  fetchSuggestions = defaultFetchSuggestions,
+  fetchSuggestions,
 }: EntityComparePickerProps) {
-  const selection = useCompareSelection();
+  const copy = compareCopy[language];
+  const typeLabels = copy.entityTypes;
+  const selection = useCompareSelection(language);
   const [type, setType] = useState<CompareEntityType>("peoples");
   const inputRef = useRef<HTMLInputElement>(null);
   const inputId = useId();
 
   // Read through a ref so the fetcher's identity stays stable while still
   // seeing the current type and the current selection.
-  const context = useRef({ type, selection, fetchSuggestions });
+  const context = useRef({ type, selection, fetchSuggestions, language });
   useEffect(() => {
-    context.current = { type, selection, fetchSuggestions };
+    context.current = { type, selection, fetchSuggestions, language };
   });
 
   /**
@@ -100,9 +102,12 @@ export function EntityComparePicker({
       type: kind,
       selection: current,
       fetchSuggestions: fetch,
+      language: currentLanguage,
     } = context.current;
     const picked = new Set(current.selected.map((entity) => entity.id));
-    const candidates = await fetch(kind, query);
+    const candidates = await (fetch
+      ? fetch(kind, query)
+      : defaultFetchSuggestions(kind, query, currentLanguage));
     return candidates.filter((candidate) => !picked.has(candidate.id));
   }, []);
 
@@ -153,14 +158,14 @@ export function EntityComparePicker({
 
       <fieldset>
         <legend className="mb-2 text-afh-small font-medium text-afh-text">
-          Type d&apos;entité à comparer
+          {copy.entityTypeLegend}
         </legend>
         <RadioGroup
           value={type}
           onValueChange={(value) =>
             handleTypeChange(value as CompareEntityType)
           }
-          aria-label="Type d'entité à comparer"
+          aria-label={copy.entityTypeLegend}
           className="flex flex-wrap gap-4"
         >
           {TYPE_ORDER.map((candidateType) => (
@@ -175,7 +180,7 @@ export function EntityComparePicker({
                   selection.lockedType !== candidateType
                 }
               />
-              {TYPE_LABELS[candidateType]}
+              {typeLabels[candidateType]}
             </label>
           ))}
         </RadioGroup>
@@ -183,7 +188,7 @@ export function EntityComparePicker({
 
       <div className="relative">
         <label htmlFor={inputId} className="sr-only">
-          Rechercher {TYPE_LABELS[type]}
+          {copy.search(typeLabels[type])}
         </label>
         <Input
           id={inputId}
@@ -192,21 +197,23 @@ export function EntityComparePicker({
           aria-expanded={showListbox}
           disabled={selection.maxReached}
           value={query}
-          placeholder={`Rechercher ${TYPE_LABELS[type]}...`}
+          placeholder={copy.searchPlaceholder(typeLabels[type])}
           onChange={(event) => suggest.setQuery(event.target.value)}
           onFocus={suggest.reopen}
           onKeyDown={handleKeyDown}
         />
 
         {selection.maxReached && (
-          <p className="mt-1 text-afh-caption text-afh-text-soft">3 maximum</p>
+          <p className="mt-1 text-afh-caption text-afh-text-soft">
+            {copy.maximum(3)}
+          </p>
         )}
 
         {showListbox && (
           <ul
             id={suggest.listboxId}
             role="listbox"
-            aria-label={`Suggestions ${TYPE_LABELS[type]}`}
+            aria-label={copy.suggestions(typeLabels[type])}
             className="absolute z-10 mt-1 max-h-64 w-full overflow-auto rounded-afh-lg border border-afh-border bg-afh-surface shadow-afh-1"
           >
             {suggestions.map((candidate, index) => (
@@ -229,7 +236,7 @@ export function EntityComparePicker({
       </div>
 
       {selection.selected.length > 0 && (
-        <ul className="space-y-2" aria-label="Entités sélectionnées">
+        <ul className="space-y-2" aria-label={copy.selectedEntities}>
           {selection.selected.map((candidate) => {
             const displayName = candidate.autonym ?? candidate.exonym;
             return (
@@ -245,7 +252,7 @@ export function EntityComparePicker({
                     variant="ghost"
                     size="sm"
                     onClick={() => selection.remove(candidate.id)}
-                    aria-label={`retirer ${displayName}`}
+                    aria-label={copy.remove(displayName)}
                   >
                     <X className="h-4 w-4" aria-hidden="true" />
                   </Button>
@@ -256,7 +263,11 @@ export function EntityComparePicker({
         </ul>
       )}
 
-      <CompareStickyBar count={selection.count} onCompare={handleCompare} />
+      <CompareStickyBar
+        language={language}
+        count={selection.count}
+        onCompare={handleCompare}
+      />
     </div>
   );
 }

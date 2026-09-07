@@ -34,18 +34,25 @@ import type {
   PeopleNamesData,
   PeopleNameRecordViewData,
 } from "@/lib/peopleDataTransformer";
+import type { Language } from "@/types/shared";
+import { peopleCopy } from "@/lib/i18n/copy/people";
 
 export interface PeopleNamesSectionProps {
   data: PeopleNamesData | null;
+  language: Language;
 }
 
-function chipFor(entry: {
-  confidenceScore: number | null;
-  sourceCount: number;
-  lastHumanAuditAt: string | null;
-}) {
+function chipFor(
+  entry: {
+    confidenceScore: number | null;
+    sourceCount: number;
+    lastHumanAuditAt: string | null;
+  },
+  language: Language
+) {
   return (
     <ConfidenceChip
+      language={language}
       confidenceScore={entry.confidenceScore}
       sourceCount={entry.sourceCount}
       lastHumanAuditAt={entry.lastHumanAuditAt}
@@ -53,14 +60,28 @@ function chipFor(entry: {
   );
 }
 
-function NameEntry({ entry }: { entry: PeopleNameRecordViewData }) {
+function NameEntry({
+  entry,
+  language,
+}: {
+  entry: PeopleNameRecordViewData;
+  language: Language;
+}) {
   return (
-    <NameOriginCard record={entry.record} confidenceChip={chipFor(entry)} />
+    <NameOriginCard
+      record={entry.record}
+      confidenceChip={chipFor(entry, language)}
+      language={language}
+    />
   );
 }
 
 // @req REQ-054 REQ-056
-export function PeopleNamesSection({ data }: PeopleNamesSectionProps) {
+export function PeopleNamesSection({
+  data,
+  language,
+}: PeopleNamesSectionProps) {
+  const copy = peopleCopy[language].naming;
   const autonym = data?.autonym ?? null;
   const endonyms = data?.endonyms ?? [];
   const exonyms = data?.exonyms ?? [];
@@ -75,7 +96,7 @@ export function PeopleNamesSection({ data }: PeopleNamesSectionProps) {
   return (
     <section
       id="noms"
-      data-fiche-section="Noms & appellations"
+      data-fiche-section={copy.sectionTitle}
       aria-labelledby="noms-title"
       className="people-fade-in space-y-3 overflow-hidden rounded-[var(--country-radius-xl)] p-[18px] md:rounded-[20px] md:p-6 xl:rounded-[22px] xl:p-7"
       style={{
@@ -87,22 +108,31 @@ export function PeopleNamesSection({ data }: PeopleNamesSectionProps) {
         id="noms-title"
         className="text-afh-small font-bold text-[var(--country-text)]"
       >
-        Noms &amp; appellations
+        {copy.sectionTitle}
       </h2>
 
-      {isEmpty && <FieldProvenanceMarker state="missing" />}
+      {isEmpty && <FieldProvenanceMarker state="missing" language={language} />}
 
-      {autonym && <AutonymExonymHeading variant="card" autonym={autonym} />}
+      {autonym && (
+        <AutonymExonymHeading
+          variant="card"
+          autonym={autonym}
+          language={language}
+        />
+      )}
 
       {endonyms.map((entry, index) => (
-        <NameEntry key={`endonym-${index}`} entry={entry} />
+        <NameEntry key={`endonym-${index}`} entry={entry} language={language} />
       ))}
 
       {exonyms.map((entry, index) => (
         <div key={`exonym-${index}`} className="space-y-2">
-          <NameEntry entry={entry} />
+          <NameEntry entry={entry} language={language} />
           {entry.record.imposedBy && (
-            <DoctrineLinkCard slug="endonymes-vs-exonymes" />
+            <DoctrineLinkCard
+              slug="endonymes-vs-exonymes"
+              language={language}
+            />
           )}
         </div>
       ))}
@@ -111,7 +141,7 @@ export function PeopleNamesSection({ data }: PeopleNamesSectionProps) {
         spellings={spellingHistory.map((entry) => ({
           nameText: entry.nameText,
           periodLabel: entry.periodLabel,
-          confidenceChip: chipFor(entry),
+          confidenceChip: chipFor(entry, language),
         }))}
       />
     </section>

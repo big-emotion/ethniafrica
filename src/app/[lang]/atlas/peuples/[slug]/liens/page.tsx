@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { PageLayout } from "@/components/layout/PageLayout";
+import { RETIRED_PEOPLE_IDS } from "@/lib/afrik/retiredPeopleIds";
+import { getPeopleLinksRoute } from "@/lib/routing";
+import { ficheCanonical } from "@/lib/seo/ficheCanonical";
+import type { Language } from "@/types/shared";
 import { RelationsListWithSourceSheet } from "@/components/relations/RelationsListWithSourceSheet";
 import { getPeopleById } from "@/api/v2/services/peopleService";
 import { getEgoNetwork } from "@/api/v2/services/relations";
 import { transformRelationsToListItems } from "@/lib/relationsDataTransformer";
 import { logger } from "@/lib/api/logger";
+import { relationsCopy } from "@/lib/i18n/copy/relations";
 
 // @req REQ-097 FR72
 export const revalidate = 3600;
@@ -22,7 +27,12 @@ export async function generateMetadata({
 }: {
   params: Promise<PageParams>;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { lang, slug } = await params;
+  const language = lang as Language;
+  const copy = relationsCopy[language].page;
+  // The links page is a chapter of its people's fiche and shares its
+  // canonical treatment: it was in the sitemap with no canonical at all.
+  const head = await ficheCanonical("peopleLinks", language, slug);
 
   // A read that fails must still leave the document a title. Metadata settles
   // after this segment's Suspense shell — and its `200` — has been flushed, so
@@ -36,16 +46,26 @@ export async function generateMetadata({
     people = await getPeopleById(slug);
   } catch (error) {
     logger.error(`Links metadata read failed for ${slug}`, error);
-    return { title: "Liens — EthniAfrica" };
+    return { ...head, title: copy.fallbackTitle };
   }
 
   if (!people) {
-    return { title: "Liens introuvables — EthniAfrica" };
+    return { title: copy.missingTitle };
   }
 
+  // The card is rebuilt with the same copy as the title. `head` was composed
+  // before the people was read, so its Open Graph half still carried the
+  // site-wide card while the title named the fiche — a shared link showed the
+  // home page's title for this chapter.
+  const title = copy.metadataTitle(people.nameMain);
+  const description = copy.description(people.nameMain);
   return {
-    title: `Liens de ${people.nameMain} — EthniAfrica`,
-    description: `Liens migratoires, commerciaux et religieux documentés entre ${people.nameMain} et les peuples voisins, avec leurs sources.`,
+    ...(await ficheCanonical("peopleLinks", language, slug, {
+      title,
+      description,
+    })),
+    title,
+    description,
   };
 }
 
@@ -55,7 +75,16 @@ export default async function PeopleLinksPage({
 }: {
   params: Promise<PageParams>;
 }) {
-  const { slug } = await params;
+  const { lang, slug } = await params;
+  const language = lang as Language;
+  const copy = relationsCopy[language].page;
+
+  // The fiche page redirects a retired id to its successor; its links page
+  // must follow it there rather than 404 once the old row is pruned.
+  const successorId = RETIRED_PEOPLE_IDS[slug];
+  if (successorId) {
+    redirect(getPeopleLinksRoute(language, successorId));
+  }
 
   const [people, egoNetwork] = await Promise.all([
     getPeopleById(slug),
@@ -73,17 +102,18 @@ export default async function PeopleLinksPage({
 
   return (
     <PageLayout
-      language="fr"
-      sectionName="Peuples"
+      language={language}
+      sectionName={copy.section}
       trailLabel={people.nameMain}
     >
       <div className="container mx-auto max-w-4xl px-4 py-8">
         <h1 className="text-afh-h2 font-semibold mt-4 mb-6 text-afh-text">
-          Liens de {people.nameMain}
+          {copy.title(people.nameMain)}
         </h1>
         <RelationsListWithSourceSheet
           items={items}
           center={{ id: people.id, nameMain: people.nameMain }}
+          language={language}
         />
       </div>
     </PageLayout>

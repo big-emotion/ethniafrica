@@ -1,5 +1,8 @@
 import { getAdmin0NameFr } from "@/lib/atlas/overlays";
 import type { CountryDistribution } from "@/types/afrik";
+import { peopleCopy } from "@/lib/i18n/copy/people";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 /**
  * The key to the field, and what the field leaves out.
@@ -20,8 +23,10 @@ import type { CountryDistribution } from "@/types/afrik";
 // @req REQ-116
 export function PeopleFieldLegend({
   distribution,
+  language = FALLBACK_LOCALE,
 }: {
   distribution: CountryDistribution[] | undefined;
+  language?: Language;
 }) {
   if (!distribution || distribution.length === 0) return null;
 
@@ -39,7 +44,7 @@ export function PeopleFieldLegend({
             background: "linear-gradient(to right, var(--accent), transparent)",
           }}
         />
-        Densité décroissante, bord nul
+        {peopleCopy[language].field.legend}
       </p>
       {offMap.length > 0 && (
         <p
@@ -47,8 +52,8 @@ export function PeopleFieldLegend({
           className="text-afh-small text-afh-text-soft"
         >
           {offMap.length === 1
-            ? "Une présence déclarée est hors carte, l'atlas ne couvrant que l'Afrique :"
-            : `${offMap.length} présences déclarées sont hors carte, l'atlas ne couvrant que l'Afrique :`}{" "}
+            ? peopleCopy[language].field.offMapOne
+            : peopleCopy[language].field.offMapMany(offMap.length)}{" "}
           {offMap.join(", ")}.
         </p>
       )}

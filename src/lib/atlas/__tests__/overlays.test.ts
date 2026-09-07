@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import type { CountryDistribution } from "@/types/afrik";
 import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
+import { borrowedOutlines } from "@/lib/atlas/worldOutlines";
 
 import {
   buildContinentOverlay,
@@ -12,6 +13,8 @@ import {
   CONTINENT_FRAME_FILL_OPACITY,
   CONTINENT_MAX_AREAS,
   COUNTRY_FILL_OPACITY,
+  getAdmin0Name,
+  getAdmin0NameFr,
   getAdmin0Rings,
   ringCentroid,
   type ContinentFieldOverlay,
@@ -176,6 +179,28 @@ describe("ISO codes the admin-0 asset keys differently (REQ-116)", () => {
   // @req REQ-116
   it("does not alias Somaliland onto Somalia", () => {
     expect(getAdmin0Rings("SOL")).not.toEqual(getAdmin0Rings("SOM"));
+  });
+});
+
+describe("getAdmin0Name (REQ-143 class 4)", () => {
+  // @req REQ-143
+  it("reads the asset's English name, never a translation of the French one", () => {
+    expect(getAdmin0Name("CIV", "en")).toBe(AFRICA_ADMIN0.CIV.name);
+    expect(getAdmin0Name("CIV", "en")).toBe("Ivory Coast");
+    expect(getAdmin0Name("CIV", "fr")).toBe("Côte d'Ivoire");
+  });
+
+  // @req REQ-143
+  it("resolves the ISO alias for both locales, so a name and a ring never disagree", () => {
+    expect(getAdmin0Name("SSD", "fr")).toBe("Soudan du Sud");
+    expect(getAdmin0Name("SSD", "en")).toBe("South Sudan");
+    expect(getAdmin0NameFr("SSD")).toBe("Soudan du Sud");
+  });
+
+  // @req REQ-143
+  it("is undefined for a country the asset does not hold", () => {
+    expect(getAdmin0Name("XYZ", "en")).toBeUndefined();
+    expect(getAdmin0Name("XYZ", "fr")).toBeUndefined();
   });
 });
 
@@ -525,5 +550,76 @@ describe("buildContinentOverlay (REQ-116 AC1, continent scene)", () => {
     expect(buildContinentOverlay({ XXX: 40 }).kind).toBe(
       "people-field-missing"
     );
+  });
+});
+
+/**
+ * Locating the countries a round is asking about (REQ-120).
+ *
+ * A round names two countries and the globe beside it drew neither, so
+ * « Mauritanie ou Égypte ? » stood next to a continent with nothing on it —
+ * atlas-charter §9.3 asks a map to have a referent, and this one had none for
+ * the very thing being asked. The frame the scene already draws is what
+ * answers it: the same outlines, two of them in the accent.
+ *
+ * A country from outside the continent has to arrive too, or half of every
+ * widened pair would be located and the other half silently not.
+ */
+describe("buildContinentOverlay with countries under question (REQ-120)", () => {
+  const fieldOf = (highlighted: string[]): ContinentFieldOverlay => {
+    // The borrowed outlines arrive resolved, the way the Mercator surface
+    // hands them over — this module deliberately cannot look them up, so that
+    // the world assets stay out of the client chunk the home shares.
+    const overlay = buildContinentOverlay(
+      { NGA: 40 },
+      highlighted,
+      borrowedOutlines(highlighted)
+    );
+    if (overlay.kind !== "continent-field") {
+      throw new Error(`expected a continent field, got ${overlay.kind}`);
+    }
+    return overlay;
+  };
+
+  // @req REQ-120
+  it("marks nothing when no round is standing", () => {
+    expect(fieldOf([]).highlightedCountryIds).toEqual([]);
+  });
+
+  // @req REQ-120
+  it("marks the countries a round is asking about", () => {
+    expect(fieldOf(["CIV", "NOR"]).highlightedCountryIds).toEqual([
+      "CIV",
+      "NOR",
+    ]);
+  });
+
+  // @req REQ-120
+  it("adds the outline of a country the continent frame does not already draw", () => {
+    const overlay = fieldOf(["NOR"]);
+    const norway = overlay.frame.find((country) => country.countryId === "NOR");
+
+    expect(norway).toBeDefined();
+    expect(norway.rings[0].length).toBeGreaterThan(2);
+  });
+
+  // @req REQ-120
+  it("does not draw an African country twice when the round asks about it", () => {
+    const overlay = fieldOf(["CIV"]);
+    const drawn = overlay.frame.filter(
+      (country) => country.countryId === "CIV"
+    );
+
+    expect(drawn).toHaveLength(1);
+  });
+
+  /**
+   * A round can only name what an asset draws, so an id neither asset holds is
+   * a bug upstream — and marking it would leave the reader hunting an outline
+   * that is not there.
+   */
+  // @req REQ-120
+  it("drops an id no committed asset can draw rather than marking a country it did not add", () => {
+    expect(fieldOf(["XXX"]).highlightedCountryIds).toEqual([]);
   });
 });

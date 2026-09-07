@@ -12,7 +12,9 @@ import {
 } from "@/components/layout/SocialGlyphs";
 import { useConsent } from "@/hooks/use-consent";
 import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/brand";
-import { getLocalizedRoute } from "@/lib/routing";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
+import { ACCESS_MODES } from "@/lib/hubs/moduleRegistry";
+import { getLocalizedRoute, getStaticPageRoute } from "@/lib/routing";
 import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
 
@@ -83,38 +85,39 @@ export function SiteFooter({ language }: SiteFooterProps) {
   const year = new Date().getFullYear();
 
   const rubrics = [
+    /* The three axes, not the six corpus indexes.
+     *
+     * This column listed the indexes for as long as the axes had no addresses
+     * of their own — ETNI-1555 had deleted `/fr/atlas` and `/fr/jeux`, so the
+     * footer was naming the only destinations there were. The hubs came back
+     * on 7 September 2026 (brand charter §8.6), and the reader now meets the
+     * same three doors at the bottom of a page as in the bar at the top of it.
+     *
+     * What the column gives up is the exhaustive listing, and it gives it up
+     * knowingly: every index it dropped is one click further on, inside its
+     * own hub, and the plan du site still names all of them. That is the whole
+     * of the amendment to atlas-charter §3, which used to send the `unlisted`
+     * Appellations index here as well as there. */
     {
       id: "explorer",
       heading: directory.explorerHeading,
-      links: [
-        {
-          label: directory.countries,
-          href: getLocalizedRoute(language, "countries"),
-        },
-        {
-          label: directory.peoples,
-          href: getLocalizedRoute(language, "peoples"),
-        },
-        {
-          label: directory.families,
-          href: getLocalizedRoute(language, "families"),
-        },
-        {
-          label: directory.languages,
-          href: getLocalizedRoute(language, "languages"),
-        },
-        {
-          label: directory.patronymes,
-          href: getLocalizedRoute(language, "patronymes"),
-        },
-      ],
+      links: ACCESS_MODES.map((axis) => ({
+        label: directory.axes[axis],
+        href: getAxisHubRoute(language, axis),
+      })),
     },
     {
       id: "participer",
       heading: directory.participateHeading,
       links: [
-        { label: directory.contribute, href: `/${language}/contribute` },
-        { label: directory.reportError, href: `/${language}/report-error` },
+        {
+          label: directory.contribute,
+          href: getStaticPageRoute(language, "contribute"),
+        },
+        {
+          label: directory.reportError,
+          href: getStaticPageRoute(language, "reportError"),
+        },
       ],
     },
     // À propos and Sources describe the project, not the corpus, so the
@@ -145,7 +148,10 @@ export function SiteFooter({ language }: SiteFooterProps) {
         // Contact sits under the project rather than under Participer: the
         // two rubrics beside it are ways of correcting the corpus, and this
         // one is a way of reaching whoever publishes it.
-        { label: directory.contact, href: `/${language}/contact` },
+        {
+          label: directory.contact,
+          href: getStaticPageRoute(language, "contact"),
+        },
       ],
     },
   ];
@@ -324,7 +330,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
             <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
               <li>
                 <Link
-                  href={`/${language}/mentions-legales`}
+                  href={getStaticPageRoute(language, "legalNotice")}
                   className={FOOTER_LINK_CLASS}
                 >
                   {footer.legalNotice}
@@ -332,7 +338,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${language}/politique-de-donnees`}
+                  href={getStaticPageRoute(language, "dataPolicy")}
                   className={FOOTER_LINK_CLASS}
                 >
                   {footer.dataPolicy}
@@ -349,7 +355,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${language}/accessibilite`}
+                  href={getStaticPageRoute(language, "accessibility")}
                   className={FOOTER_LINK_CLASS}
                 >
                   {footer.accessibility}
@@ -357,7 +363,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
               </li>
               <li>
                 <Link
-                  href={`/${language}/plan-du-site`}
+                  href={getStaticPageRoute(language, "sitemap")}
                   className={FOOTER_LINK_CLASS}
                 >
                   {footer.sitemap}

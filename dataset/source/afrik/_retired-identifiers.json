@@ -1,0 +1,226 @@
+[
+  {
+    "decision": "merged",
+    "retiredId": "PPL_DASSANECH",
+    "successorId": "PPL_DASANECH",
+    "reason": "Same people (Daasanach, ISO dsh, ETH/KEN/SSD). The keeper carries the spelling Ethnologue and Glottolog recommend and the eight territorial sections; the retiree's exonyms and sources are folded in.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_KAMBATTA",
+    "successorId": "PPL_KAMBATA",
+    "reason": "Same people (ISO ktb, ETH). The keeper cites the 2007 Ethiopian census and two university theses and lists the fuller set of sub-groups; the retiree's Library of Congress and PeopleGroups sources are folded in.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_TEKKE",
+    "successorId": "PPL_TEKE",
+    "reason": "Same people (Bateke, COG/COD/GAB). Teke is the standard ethnonym and is what GAB.json, PAT_BONGO and the candidate worksheets already point at; the retiree's twelve sub-groups and CIA sources are folded in and COG.json repointed.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_RWENDAIS_TUTSI",
+    "successorId": "PPL_RWANDAIS_TUTSI",
+    "reason": "Same social category under a misspelt id. The keeper is what COD.json and RWA.json point at. It moves to FLG_BANTU, where the retiree already sat: Kinyarwanda is Bantu (Guthrie JD61, Ethnologue kin). The retiree's Tanzanian presence is folded in.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_RWENDAIS_HUTU",
+    "successorId": "PPL_RWANDAIS_HUTU",
+    "reason": "Same social category under a misspelt id. The keeper is what COD.json and RWA.json point at and moves to FLG_BANTU for the same reason as the Tutsi fiche: Kinyarwanda is Bantu (Guthrie JD61, Ethnologue kin).",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_SERERE",
+    "successorId": "PPL_SERER",
+    "reason": "Same people (Seereer, ISO srr, SEN/GMB/MRT). The keeper is closer to the autonym and is what GMB.json and the Diouf, Faye and Sarr dossiers point at. It moves to FLG_ATLANTIQUE, where the retiree sat and where Serer belongs (Atlantic branch of Niger-Congo per Ethnologue srr); SEN.json, FLG_ATLANTIQUE.json, the Lighthouse routes and the compare stories are repointed.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_KASEENA",
+    "successorId": "PPL_KASENA",
+    "reason": "Same people (Kasem, ISO xsm, GHA/BFA). The keeper carries the autonym spelling and moves to FLG_GUR, the retiree's directory: Kasem is Gur/Grusi (Glottolog kase1253). The UNESCO Tiébélé listing is folded in.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_KASEM",
+    "successorId": "PPL_KASENA",
+    "reason": "Third copy of the Kasena fiche: Kasem names the language, not the people, as the fiche's own appellations say. The home-page fact naming it is repointed.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_SILTIE",
+    "successorId": "PPL_SILTE",
+    "reason": "Same people (ISO stv, ETH). The keeper sits in FLG_SEMITIQUE, where an Ethio-Semitic (East Gurage) language belongs; the retiree was filed under Cushitic. Its Wolane code and German-language monograph are folded in.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_TONGA_ZAMB",
+    "successorId": "PPL_TONGA_ZAMBIA",
+    "reason": "Same people (ISO toi, ZMB/ZWE). The keeper is what ZMB.json points at; the retiree's seven sources, including eHRAF, are folded in.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_TONGA",
+    "successorId": "PPL_TONGA_ZAMBIA",
+    "reason": "Same people (ISO toi, ZMB/ZWE/MOZ). The bare id Tonga is the homonym the fiches themselves warn about (Malawi tog, Mozambique Gitonga), and MWI.json used it for the Lakeshore Tonga. MOZ.json is repointed to the keeper, whose language extends into Tete, and MWI.json to PPL_TONGA_MALA (tog). The Mozambican presence is folded in.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_TONGA_ZIM",
+    "successorId": "PPL_TONGA_ZAMBIA",
+    "reason": "The Zimbabwean side of the same cross-border people (ISO toi, Binga). The keeper already lists the BaTonga of Zimbabwe among its sub-groups; ZWE.json is repointed and the Kariba displacement sources are folded in.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_KAFFA",
+    "successorId": "PPL_KAFA",
+    "reason": "Same people (Kafficho, ISO kbr, ETH). The keeper sits in FLG_OMOTIQUE, where Kafa (North Omotic, Gonga) belongs; the retiree's own text placed it in the North Omotic branch while it sat under Cushitic. The home-page fact naming it is repointed.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_MALLE",
+    "successorId": "PPL_MALE",
+    "reason": "Same people: the retiree's claim to be distinct from the Maale is contradicted by its own ISO mdy and glottocode male1284, both shared with the keeper. The keeper moves to FLG_OMOTIQUE, the retiree's directory: Maale is North Omotic (Ometo).",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_MAATS",
+    "successorId": "PPL_MALE",
+    "reason": "Third copy of the Maale fiche (ISO mdy, male1284) under an archive spelling that is not an ethnonym. Donham's monographs, the best-sourced material of the three, are folded in.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_DIMME",
+    "successorId": "PPL_DIME",
+    "reason": "Same people (ISO dim, ETH). The keeper moves to FLG_OMOTIQUE: Dime is South Omotic (Aroid), as the retiree's ethnolinguistic group states and as Glottolog dime1235 and Ethnologue dim classify it, while the keeper sat under Cushitic and said nothing of its branch. The retiree's Leiden and SIL survey sources are folded in.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_KIMBUNDU",
+    "successorId": "PPL_AMBUNDU",
+    "reason": "Both fiches are named Ambundu (ISO kmb, AGO); Kimbundu names the language. The keeper is what AGO.json and the Kalandula, Ngola and Nzinga dossiers point at. The retiree's Congolese presence and UNFPA source are folded in.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_BUGANDA",
+    "successorId": "PPL_BAGANDA",
+    "reason": "Same people. The retiree declared itself a duplicate in a maintenance note. The keeper is what UGA.json, the patronym dossiers, the migrations and the relations point at.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_LUGANDA_ETHNO",
+    "successorId": "PPL_BAGANDA",
+    "reason": "Third copy of the Baganda fiche: Luganda names the language. Its UBOS projections and eHRAF summary are folded in.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_GANDA",
+    "successorId": "PPL_BAGANDA",
+    "reason": "Fourth copy: Ganda is the linguists' short form of the same ethnonym. Its clan passage is the evidence four totemic-clan dossiers cite (Ffumbe, Lugave, Ngonge, Njaza), so it is kept verbatim in the keeper and the dossiers, FLG_BANTU.json and the patronym manifest are repointed. The keeper inherits the colonial-legacy status with the retiree's explanation of the Buganda/Uganda confusion.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_CHOPE",
+    "successorId": "PPL_CHOPI",
+    "reason": "Same people (ISO cce, MOZ). The keeper carries the autonym spelling (Vacopi, Chopi) and is what MOZ.json points at; the retiree's UNESCO and Junod sources are folded in.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_CHOPE_MOZ",
+    "successorId": "PPL_CHOPI",
+    "reason": "Third copy whose id encoded a database disambiguation rather than an ethnonym, as its own appellations text admitted.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_RUNGU",
+    "successorId": "PPL_RUNGWA",
+    "reason": "Both fiches are named Rungwa (ISO rnw, TZA). The id Rungu collides with the Lungu of PPL_LUNGU; the retiree's Guthrie classification and dialects are folded in.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_SERAHULE_SONINKE",
+    "successorId": "PPL_SONINKE",
+    "reason": "Serahule is the Gambian exonym of the Soninke, which the retiree's own text explains. The keeper has ninety inbound files (FLG_MANDE, eight patronym dossiers, two relations); GMB.json is repointed.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "merged",
+    "retiredId": "PPL_WOLOF_BANTU",
+    "successorId": "PPL_WOLOF",
+    "reason": "The retiree's own text declared it a classification error (Wolof is Atlantic, not Bantu) kept only to document the anomaly. The keeper has 106 inbound files; the retiree's sources and sub-groups are folded in, its self-description is not.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "renamed",
+    "retiredId": "PPL_LUBA_KASAI2",
+    "successorId": "PPL_LULUA",
+    "reason": "A digit suffix is not an identifier. The fiche describes the Bena-Lulua, the western dialect group of the Luba-Kasai, and takes their ethnonym; the exonym that named the database designation is removed.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "renamed",
+    "retiredId": "PPL_NDEBELE_SUD2",
+    "successorId": "PPL_NDEBELE_MANALA",
+    "reason": "The fiche covers the Manala royal house of the Southern Ndebele; the digit suffix is replaced by the sub-group's name. PPL_NDEBELE_SA remains the umbrella fiche.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "renamed",
+    "retiredId": "PPL_NDEBELE_SUD",
+    "successorId": "PPL_NDEBELE_NDZUNDZA",
+    "reason": "The fiche covers the Ndzundza house; renamed alongside its pair so that neither sub-group carries the bare Southern Ndebele label that the umbrella PPL_NDEBELE_SA already covers.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "kept-distinct",
+    "retiredId": "PPL_SENGA",
+    "successorId": null,
+    "reason": "Not a duplicate of PPL_NSENGA. The Senga are a Tumbuka sub-group (ISO tum, ZMB/MWI, 213 000); the Nsenga an independent people with their own language (ISO nse, ZMB/MOZ/ZWE, 1 179 000). Both fiches say so, and Ethnologue agrees.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "kept-distinct",
+    "retiredId": "PPL_KISI",
+    "successorId": null,
+    "reason": "Not a duplicate of PPL_KISII. The Kisi of Tanzania (ISO kiz, 21 000) and the Abagusii of Kenya (ISO guz, 3 100 000) are unrelated peoples; the near-identical ids are a coincidence of transcription.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "kept-distinct",
+    "retiredId": "PPL_KINYARWANDA",
+    "successorId": null,
+    "reason": "Not a duplicate of PPL_RWANDAIS_TUTSI or PPL_RWANDAIS_HUTU. Banyarwanda is the ethnolinguistic whole; Hutu and Tutsi are social categories within it. Twelve patronym dossiers point at the umbrella because a Rwandan name is neither Hutu nor Tutsi.",
+    "decidedOn": "2026-09-05"
+  },
+  {
+    "decision": "kept-distinct",
+    "retiredId": "PPL_TOKALEYA",
+    "successorId": null,
+    "reason": "Not a duplicate of PPL_TONGA_ZAMBIA. Toka and Leya are named sub-groups with their own territory around Mosi-oa-Tunya and their own ethnonym; the corpus keeps sub-group fiches beside the whole, as it does for the Ndebele houses.",
+    "decidedOn": "2026-09-05"
+  }
+]

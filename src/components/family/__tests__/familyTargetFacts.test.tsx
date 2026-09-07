@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { buildFamilyTargetFacts } from "@/components/family/familyTargetFacts";
 
 const facts = buildFamilyTargetFacts({
+  language: "fr",
   familyNameFr: "Bénoué-Congo",
   memberPeopleCount: 60,
   peopleNamesByCountry: {
@@ -20,6 +21,27 @@ function renderFacts(countryId: string) {
 }
 
 describe("buildFamilyTargetFacts", () => {
+  // @req REQ-145
+  it("renders its panel copy in English", () => {
+    const english = buildFamilyTargetFacts({
+      language: "en",
+      familyNameFr: "Benue-Congo",
+      memberPeopleCount: 60,
+      peopleNamesByCountry: { NGA: ["Yoruba", "Igbo"] },
+      countryNamesFr: { NGA: "Nigeria" },
+    });
+
+    render(<>{english.NGA.body}</>);
+    expect(screen.getByText(/Benue-Congo peoples present/i)).toBeVisible();
+    expect(screen.getByText(/Of the family's 60 peoples/i)).toBeVisible();
+    expect(
+      screen.getByText(/Derived — not declared by the family fiche/i)
+    ).toBeVisible();
+    expect(
+      screen.getByRole("link", { name: /Read the full fiche/i })
+    ).toBeVisible();
+  });
+
   // @req REQ-117
   it("returns data, never a resolver, so it can cross to a client component", () => {
     // The family fiche is a server component and AtlasGlobe is a client one.

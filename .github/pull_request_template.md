@@ -9,7 +9,8 @@
 ## Quiz session — manual a11y pass (release PRs only)
 
 Only relevant if this PR is the release PR shipping Epic 10 (the quiz
-journey) or otherwise touches `/fr/quiz` and its session loop. See
+journey) or otherwise touches the quiz route (`/en/games/quiz`, `/fr/jeux/quiz`)
+and its session loop. See
 [`docs/a11y-manual-quiz.md`](../docs/a11y-manual-quiz.md) for the full
 procedure (FR71, NFR20, UX-DR43). Leave unchecked/N/A on unrelated PRs.
 

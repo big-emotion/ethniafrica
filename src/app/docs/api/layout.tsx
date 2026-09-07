@@ -6,6 +6,8 @@ import { PageLayout } from "@/components/layout/PageLayout";
 // @req REQ-099
 export default function ApiDocsLayout({ children }: { children: ReactNode }) {
   return (
+    // Fixed on French: the developer portal sits outside `[lang]` and its
+    // copy is written in French only.
     <PageLayout language="fr">
       <div data-testid="docs-api-shell" className="bg-afh-bg text-afh-text">
         {children}

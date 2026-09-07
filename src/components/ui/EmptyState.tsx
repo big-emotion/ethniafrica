@@ -1,17 +1,22 @@
 import Link from "next/link";
 import { StateMedallion } from "@/components/ui/StateMedallion";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getLocalizedRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
+import { systemStatesCopy } from "@/lib/i18n/copy/systemStates";
 
 // The way out of a fruitless search, worded once. The home's hero panel offers
 // the same escape in a space too small for this component's medallion, and two
 // hand-written copies of one sentence is how the site ended up with three
 // spellings of "no results" already.
 // @req REQ-002
-export const SEARCH_EMPTY_LINK_LABEL = "Parcourir les familles linguistiques";
+export const SEARCH_EMPTY_LINK_LABEL = systemStatesCopy.fr.empty.browseFamilies;
 
 interface EmptyStateProps {
   message: string;
   variant?: "default" | "search" | "failure";
-  lang?: string;
+  /** Only the search variant links out; a caller without a locale gets the site default. */
+  lang?: Language;
   retryHref?: string;
   retryLabel?: string;
   children?: React.ReactNode;
@@ -21,11 +26,12 @@ interface EmptyStateProps {
 export function EmptyState({
   message,
   variant,
-  lang = "fr",
+  lang = FALLBACK_LOCALE,
   retryHref,
   retryLabel,
   children,
 }: EmptyStateProps) {
+  const copy = systemStatesCopy[lang].empty;
   return (
     <div className="flex flex-col items-center justify-center min-h-[16rem] gap-4 px-6 py-10 bg-afh-bg-warm text-afh-text-soft text-center rounded-md">
       <StateMedallion />
@@ -36,15 +42,13 @@ export function EmptyState({
 
       {variant === "search" && (
         <div className="flex flex-col gap-2 text-afh-small text-afh-text-soft">
-          <p>
-            Vérifiez l&apos;orthographe ou parcourez par famille linguistique.
-          </p>
+          <p>{copy.searchHint}</p>
           <Link
-            href={`/${lang}/familles`}
+            href={getLocalizedRoute(lang, "families")}
             data-cta="primary"
             className="underline underline-offset-2 hover:text-afh-text transition-colors"
           >
-            {SEARCH_EMPTY_LINK_LABEL}
+            {copy.browseFamilies}
           </Link>
         </div>
       )}
@@ -56,7 +60,7 @@ export function EmptyState({
           data-cta="retry"
           className="underline underline-offset-2 hover:text-afh-text transition-colors"
         >
-          {retryLabel ?? "Réessayer"}
+          {retryLabel ?? copy.retry}
         </Link>
       )}
 

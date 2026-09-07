@@ -90,7 +90,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "La notice militaire et les requêtes « Guelleh/Geelle alliance » n'ont livré aucune parenté à plaisanterie entre deux noms dotés de fiches PAT_*."
+      "reason": "La notice militaire et les requêtes « Guelleh/Geelle alliance » n'ont livré aucune parenté à plaisanterie entre deux noms dotés de noms de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

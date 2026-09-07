@@ -1,0 +1,406 @@
+{
+  "schemaVersion": "1.0",
+  "countryId": "COD",
+  "updatedAt": "2026-09-06",
+  "summary": {
+    "directCountryFiches": 35,
+    "byCountryStatus": {
+      "attested": 33,
+      "supposed": 2
+    },
+    "byDepthStage": {
+      "queue-only": 4,
+      "unsourced-origin": 14,
+      "undeclared-transmission": 9,
+      "documented": 8
+    },
+    "documentedPercent": 22.9
+  },
+  "names": [
+    {
+      "id": "PAT_BAHATI",
+      "nameMain": "Bahati",
+      "nameSystem": "non_hereditary_patronymic",
+      "countryStatus": "attested",
+      "depthStage": "documented",
+      "peopleIds": ["PPL_SWAHILI"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 2,
+      "nextAction": "editorial_review_complete"
+    },
+    {
+      "id": "PAT_BEMBA",
+      "nameMain": "Bemba",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "queue-only",
+      "peopleIds": [],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 0,
+      "nextAction": "replace_candidate_queue_with_accepted_source"
+    },
+    {
+      "id": "PAT_ILUNGA",
+      "nameMain": "Ilunga",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "undeclared-transmission",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "resolve_transmission_mode"
+    },
+    {
+      "id": "PAT_KABILA",
+      "nameMain": "Kabila",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "queue-only",
+      "peopleIds": [],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 0,
+      "nextAction": "replace_candidate_queue_with_accepted_source"
+    },
+    {
+      "id": "PAT_KABONGO",
+      "nameMain": "Kabongo",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "undeclared-transmission",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "resolve_transmission_mode"
+    },
+    {
+      "id": "PAT_KALALA",
+      "nameMain": "Kalala",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "undeclared-transmission",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "resolve_transmission_mode"
+    },
+    {
+      "id": "PAT_KALONJI",
+      "nameMain": "Kalonji",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "undeclared-transmission",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 2,
+      "sourcesWithUrlCount": 2,
+      "nextAction": "resolve_transmission_mode"
+    },
+    {
+      "id": "PAT_KAMBALE",
+      "nameMain": "Kambale",
+      "nameSystem": "non_hereditary_patronymic",
+      "countryStatus": "attested",
+      "depthStage": "documented",
+      "peopleIds": ["PPL_NANDE"],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "editorial_review_complete"
+    },
+    {
+      "id": "PAT_KANYINDA",
+      "nameMain": "Kanyinda",
+      "nameSystem": "clan_name",
+      "countryStatus": "supposed",
+      "depthStage": "unsourced-origin",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "document_origin_claim"
+    },
+    {
+      "id": "PAT_KASEREKA",
+      "nameMain": "Kasereka",
+      "nameSystem": "non_hereditary_patronymic",
+      "countryStatus": "attested",
+      "depthStage": "documented",
+      "peopleIds": ["PPL_NANDE"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "editorial_review_complete"
+    },
+    {
+      "id": "PAT_KASONGO",
+      "nameMain": "Kasongo",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "queue-only",
+      "peopleIds": [],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 0,
+      "nextAction": "replace_candidate_queue_with_accepted_source"
+    },
+    {
+      "id": "PAT_KATENDE",
+      "nameMain": "Katende",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "undeclared-transmission",
+      "peopleIds": ["PPL_SENGA"],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "resolve_transmission_mode"
+    },
+    {
+      "id": "PAT_KAYEMBE",
+      "nameMain": "Kayembe",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "unsourced-origin",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "document_origin_claim"
+    },
+    {
+      "id": "PAT_KAZADI",
+      "nameMain": "Kazadi",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "undeclared-transmission",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 2,
+      "nextAction": "resolve_transmission_mode"
+    },
+    {
+      "id": "PAT_KIMBANGU",
+      "nameMain": "Kimbangu",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "undeclared-transmission",
+      "peopleIds": ["PPL_KONGO"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "resolve_transmission_mode"
+    },
+    {
+      "id": "PAT_LUMBALA",
+      "nameMain": "Lumbala",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "undeclared-transmission",
+      "peopleIds": ["PPL_MBUNDA"],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "resolve_transmission_mode"
+    },
+    {
+      "id": "PAT_LUMUMBA",
+      "nameMain": "Lumumba",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "unsourced-origin",
+      "peopleIds": ["PPL_TETELA"],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 0,
+      "nextAction": "document_origin_claim"
+    },
+    {
+      "id": "PAT_LUTULA",
+      "nameMain": "Lutula",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "unsourced-origin",
+      "peopleIds": ["PPL_TETELA"],
+      "acceptedSourceCount": 3,
+      "sourcesWithUrlCount": 0,
+      "nextAction": "document_origin_claim"
+    },
+    {
+      "id": "PAT_MBUYI",
+      "nameMain": "Mbuyi",
+      "nameSystem": "non_hereditary_patronymic",
+      "countryStatus": "attested",
+      "depthStage": "documented",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 2,
+      "nextAction": "editorial_review_complete"
+    },
+    {
+      "id": "PAT_MOBUTU",
+      "nameMain": "Mobutu",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "documented",
+      "peopleIds": ["PPL_NGBANDE"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 3,
+      "nextAction": "editorial_review_complete"
+    },
+    {
+      "id": "PAT_MPUTU",
+      "nameMain": "Mputu",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "unsourced-origin",
+      "peopleIds": ["PPL_KONGO"],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "document_origin_claim"
+    },
+    {
+      "id": "PAT_MUHINDO",
+      "nameMain": "Muhindo",
+      "nameSystem": "non_hereditary_patronymic",
+      "countryStatus": "attested",
+      "depthStage": "unsourced-origin",
+      "peopleIds": ["PPL_NANDE"],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "document_origin_claim"
+    },
+    {
+      "id": "PAT_MUKENDI",
+      "nameMain": "Mukendi",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "unsourced-origin",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "document_origin_claim"
+    },
+    {
+      "id": "PAT_MULUMBA",
+      "nameMain": "Mulumba",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "unsourced-origin",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "document_origin_claim"
+    },
+    {
+      "id": "PAT_MUTOMBO",
+      "nameMain": "Mutombo",
+      "nameSystem": "non_hereditary_patronymic",
+      "countryStatus": "attested",
+      "depthStage": "documented",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 2,
+      "nextAction": "editorial_review_complete"
+    },
+    {
+      "id": "PAT_MWAMBA",
+      "nameMain": "Mwamba",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "unsourced-origin",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "document_origin_claim"
+    },
+    {
+      "id": "PAT_NGOMA",
+      "nameMain": "Ngoma",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "unsourced-origin",
+      "peopleIds": ["PPL_KONGO"],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "document_origin_claim"
+    },
+    {
+      "id": "PAT_NGOY",
+      "nameMain": "Ngoy",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "unsourced-origin",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "document_origin_claim"
+    },
+    {
+      "id": "PAT_NKALA",
+      "nameMain": "Nkala",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "documented",
+      "peopleIds": ["PPL_KONGO"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 4,
+      "nextAction": "editorial_review_complete"
+    },
+    {
+      "id": "PAT_NKONGOLO",
+      "nameMain": "Nkongolo",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "undeclared-transmission",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 2,
+      "nextAction": "resolve_transmission_mode"
+    },
+    {
+      "id": "PAT_NONO",
+      "nameMain": "Nono",
+      "nameSystem": "non_hereditary_patronymic",
+      "countryStatus": "supposed",
+      "depthStage": "unsourced-origin",
+      "peopleIds": [],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "document_origin_claim"
+    },
+    {
+      "id": "PAT_NSIMBA",
+      "nameMain": "Nsimba",
+      "nameSystem": "non_hereditary_patronymic",
+      "countryStatus": "attested",
+      "depthStage": "documented",
+      "peopleIds": ["PPL_KONGO"],
+      "acceptedSourceCount": 1,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "editorial_review_complete"
+    },
+    {
+      "id": "PAT_NZUZI",
+      "nameMain": "Nzuzi",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "unsourced-origin",
+      "peopleIds": ["PPL_KONGO"],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "document_origin_claim"
+    },
+    {
+      "id": "PAT_TSHIBANGU",
+      "nameMain": "Tshibangu",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "queue-only",
+      "peopleIds": ["PPL_LUBA_KASAI"],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 0,
+      "nextAction": "replace_candidate_queue_with_accepted_source"
+    },
+    {
+      "id": "PAT_TSHISEKEDI",
+      "nameMain": "Tshisekedi",
+      "nameSystem": "clan_name",
+      "countryStatus": "attested",
+      "depthStage": "unsourced-origin",
+      "peopleIds": ["PPL_LUBA"],
+      "acceptedSourceCount": 0,
+      "sourcesWithUrlCount": 1,
+      "nextAction": "document_origin_claim"
+    }
+  ]
+}

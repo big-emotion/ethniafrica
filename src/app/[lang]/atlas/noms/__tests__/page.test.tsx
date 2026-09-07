@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import React from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -57,8 +57,13 @@ vi.mock("@/api/v2/services/patronymesFacet", () => ({
   getPatronymesFacetChoices: (...args: unknown[]) => mockGetChoices(...args),
 }));
 
-import NomsHubPage, { metadata } from "../page";
+import NomsHubPage, { generateMetadata } from "../page";
+
+const FR = Promise.resolve({ lang: "fr" });
+import { CANONICAL_DOMAIN } from "@/lib/brand";
 import { getLocalizedRoute, getPatronymeRoute } from "@/lib/routing";
+import type { PatronymesFacetFilters } from "@/api/v2/services/patronymesFacet";
+import type { PatronymeListItem } from "@/api/v2/services/patronymes";
 
 const KEITA = {
   id: "PAT_KEITA",
@@ -66,7 +71,10 @@ const KEITA = {
   nameSystem: "clan_name" as const,
 };
 
-function readingOf(patronymes = [KEITA]) {
+// Annotated rather than inferred from the default: inference pins the naming
+// system to KEITA's own literal, so a selection mixing two systems — which is
+// the ordinary case the axis serves — no longer type-checks.
+function readingOf(patronymes: PatronymeListItem[] = [KEITA]) {
   return {
     patronymes,
     page: 1,
@@ -91,7 +99,9 @@ beforeEach(() => {
 describe("the name facet page", () => {
   // @req REQ-139 @req REQ-133
   it("lists the names of the selection and links each to its fiche", async () => {
-    render(await NomsHubPage({ searchParams: Promise.resolve({}) }));
+    render(
+      await NomsHubPage({ params: FR, searchParams: Promise.resolve({}) })
+    );
 
     expect(screen.getByRole("link", { name: /^Keïta\s/ })).toHaveAttribute(
       "href",
@@ -103,6 +113,7 @@ describe("the name facet page", () => {
   it("carries the reader's narrowing to the service, not to the rendered page", async () => {
     render(
       await NomsHubPage({
+        params: FR,
         searchParams: Promise.resolve({ peuple: "PPL_BAMANA", pays: "MLI" }),
       })
     );
@@ -124,7 +135,9 @@ describe("the name facet page", () => {
    */
   // @req REQ-117
   it("publishes the selection's names to the shared globe", async () => {
-    render(await NomsHubPage({ searchParams: Promise.resolve({}) }));
+    render(
+      await NomsHubPage({ params: FR, searchParams: Promise.resolve({}) })
+    );
 
     const published = screen.getByTestId("published-country-index");
     const index = JSON.parse(published.getAttribute("data-index") ?? "{}");
@@ -150,7 +163,7 @@ describe("the name facet page", () => {
   // @req REQ-138
   it("counts noms, never the internal word", async () => {
     const { container } = render(
-      await NomsHubPage({ searchParams: Promise.resolve({}) })
+      await NomsHubPage({ params: FR, searchParams: Promise.resolve({}) })
     );
     const lede = container.querySelector(".afh-facet-reading-lede");
 
@@ -158,9 +171,74 @@ describe("the name facet page", () => {
     expect(lede?.textContent).not.toMatch(/patronyme/i);
   });
 
+  /**
+   * DEC-050 withholds a name resting only on unverified sources from the
+   * sitemap. That threshold is a crawler policy and nothing more: applying it
+   * to the hub would hide every unverified-only dossier from readers. The count
+   * above the list comes from the service's own total, so rows dropped after the
+   * read would leave the two disagreeing.
+   */
+  // @req REQ-147
+  it("lists every name of the selection, whatever its sources carry", async () => {
+    const selection = [
+      KEITA,
+      { id: "PAT_DIABY", nameMain: "Diaby", nameSystem: "clan_name" as const },
+      {
+        id: "PAT_NKALA",
+        nameMain: "Nkala",
+        nameSystem: "totemic_clan" as const,
+      },
+    ];
+    mockGetPage.mockResolvedValue(readingOf(selection));
+
+    const { container } = render(
+      await NomsHubPage({
+        params: Promise.resolve({ lang: "fr" }),
+        searchParams: Promise.resolve({}),
+      })
+    );
+
+    const listed = within(
+      screen.getByRole("list", { name: "Noms" })
+    ).getAllByRole("link");
+    expect(listed.map((link) => link.getAttribute("href"))).toEqual(
+      selection.map((patronyme) => getPatronymeRoute("fr", patronyme.id))
+    );
+    expect(
+      container.querySelector(".afh-facet-reading-lede")?.textContent
+    ).toMatch(/3 noms dans cette sélection/);
+  });
+
+  // The narrowings this axis offers are the reader's own — peuple, pays,
+  // système, lettre. A standing threshold slipped in among them would shrink
+  // the name dimension to its sourced quarter for everyone, not for crawlers.
+  // @req REQ-147
+  it("reads the whole selection when the reader has narrowed nothing", async () => {
+    render(
+      await NomsHubPage({
+        params: Promise.resolve({ lang: "fr" }),
+        searchParams: Promise.resolve({}),
+      })
+    );
+
+    const [, filters] = mockGetPage.mock.calls[0] as [
+      number,
+      PatronymesFacetFilters,
+      number,
+    ];
+    expect(
+      Object.entries(filters).filter(([, value]) => value !== null)
+    ).toEqual([]);
+  });
+
   // @req REQ-139
   it("asks the service for the page the URL names", async () => {
-    render(await NomsHubPage({ searchParams: Promise.resolve({ page: "2" }) }));
+    render(
+      await NomsHubPage({
+        params: FR,
+        searchParams: Promise.resolve({ page: "2" }),
+      })
+    );
 
     expect(mockGetPage).toHaveBeenCalledWith(2, expect.anything(), 24);
   });
@@ -171,7 +249,9 @@ describe("the name facet page", () => {
   it("states unavailability on a read failure rather than an empty corpus", async () => {
     mockGetPage.mockRejectedValueOnce(new Error("database unavailable"));
 
-    render(await NomsHubPage({ searchParams: Promise.resolve({}) }));
+    render(
+      await NomsHubPage({ params: FR, searchParams: Promise.resolve({}) })
+    );
 
     const alert = screen.getByRole("alert");
     expect(alert.textContent).not.toMatch(/aucun/i);
@@ -180,9 +260,37 @@ describe("the name facet page", () => {
   });
 
   // @req REQ-091
-  it("declares the canonical URL for the noms index", () => {
+  it("declares the canonical URL for the noms index", async () => {
+    const metadata = await generateMetadata({ params: FR });
+
     expect(metadata.alternates?.canonical).toBe(
-      getLocalizedRoute("fr", "patronymes")
+      `https://${CANONICAL_DOMAIN}${getLocalizedRoute("fr", "patronymes")}`
     );
+  });
+
+  // @req REQ-140
+  it("composes the canonical and the fiche links in the route's locale", async () => {
+    const metadata = await generateMetadata({
+      params: Promise.resolve({ lang: "en" }),
+    });
+    expect(metadata.alternates?.canonical).toBe(
+      `https://${CANONICAL_DOMAIN}${getLocalizedRoute("en", "patronymes")}`
+    );
+
+    render(
+      await NomsHubPage({
+        params: Promise.resolve({ lang: "en" }),
+        searchParams: Promise.resolve({}),
+      })
+    );
+    expect(screen.getByRole("link", { name: /^Keïta\s/ })).toHaveAttribute(
+      "href",
+      getPatronymeRoute("en", "PAT_KEITA")
+    );
+    expect(screen.getByText(/1 name in this selection/)).toBeInTheDocument();
+    expect(
+      screen.getByRole("searchbox", { name: "Search names" })
+    ).toHaveAttribute("placeholder", "Name or attested spelling");
+    expect(screen.getByRole("list", { name: "Names" })).toBeInTheDocument();
   });
 });

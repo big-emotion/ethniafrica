@@ -1,0 +1,388 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "dossier",
+    "directives": "Reader-facing dossier. Label every future value as a projection, keep residence distinct from ancestry, and expose the age of each census behind an estimate.",
+    "readerFacing": [
+      "Une projection décrit un scénario, pas un présent certain.",
+      "Un total de résidents ne mesure pas l'ascendance africaine dans le monde."
+    ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation deferred while the Realites readings are rewritten: the French source is expected to change before it is worth translating."
+    }
+  },
+  "id": "DOS_POPULATIONS",
+  "vertical": "realites",
+  "rubric": "populations",
+  "readiness": "draft",
+  "slug": "populations",
+  "title": "Les populations",
+  "question": "Que disent les grands chiffres démographiques, et sur quels dénombrements reposent-ils ?",
+  "standfirst": "L'Afrique rassemble 18,8 % de la population mondiale en 2025, pas un tiers. Le tiers appartient à une projection de fin de siècle. Entre les deux se trouvent des recensements inégaux, une population très jeune et une urbanisation rapide.",
+  "publishedOn": "2026-09-06",
+  "thesis": {
+    "stepLabel": "Trois repères",
+    "heading": "Le présent, la structure d'âge et l'avenir ne sont pas le même chiffre",
+    "figures": [
+      {
+        "figureKey": "africa-share-2025",
+        "value": "18,8 %",
+        "claim": "Part de la population mondiale vivant en Afrique au 1er juillet 2025.",
+        "provenance": "Nations unies, WPP 2024",
+        "year": 2025,
+        "sourceRefs": ["un-wpp"]
+      },
+      {
+        "figureKey": "median-age",
+        "value": "19,2 ans",
+        "claim": "Âge médian de la population africaine en 2024.",
+        "provenance": "Nations unies, WPP 2024",
+        "year": 2024,
+        "sourceRefs": ["un-wpp", "un-wpp-summary"]
+      },
+      {
+        "figureKey": "africa-share-2100",
+        "value": "37,5 %",
+        "claim": "Part projetée de l'Afrique dans la population mondiale selon le scénario médian.",
+        "provenance": "Nations unies, WPP 2024",
+        "year": 2100,
+        "sourceRefs": ["un-wpp", "un-wpp-summary"]
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "chapterKey": "poids-demographique",
+      "ordinal": 1,
+      "title": "Un habitant du monde sur cinq",
+      "question": "Quelle part de l'humanité vit aujourd'hui en Afrique ?",
+      "standfirst": "La révision 2024 des Perspectives de la population mondiale estime 1,55 milliard d'habitants en Afrique en 2025, sur 8,23 milliards dans le monde.",
+      "body": [
+        {
+          "text": "Le rapport entre ces deux estimations donne 18,8 %. Le même scénario médian projette 25,5 % en 2050 et 37,5 % en 2100. Dire aujourd'hui « un tiers » transforme donc une trajectoire possible de fin de siècle en constat présent.",
+          "sourceRefs": ["un-wpp", "un-wpp-summary"]
+        }
+      ],
+      "illustration": null,
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Une série mondiale comparable",
+          "body": "Les Nations unies publient une série annuelle harmonisée pour 237 pays et territoires, reconstruite à partir des recensements, enquêtes et systèmes d'état civil disponibles. Le scénario médian en est la trajectoire centrale.",
+          "sourceRefs": ["un-wpp", "un-wpp-methodology"]
+        },
+        {
+          "stance": "counter",
+          "label": "Résidence n'est pas ascendance",
+          "body": "Ces chiffres comptent les personnes là où elles résident. Ils ne mesurent pas les personnes d'ascendance africaine hors du continent, catégorie déclarative que les pays définissent et collectent de façons différentes — ou ne collectent pas du tout.",
+          "sourceRefs": ["un-wpp-methodology", "un-census-principles"]
+        }
+      ],
+      "figures": [
+        {
+          "figureKey": "population-africa-2025",
+          "label": "Population de l'Afrique",
+          "value": "1,55 milliard",
+          "year": 2025,
+          "note": "Estimation au 1er juillet dans le scénario médian.",
+          "sourceRefs": ["un-wpp"]
+        },
+        {
+          "figureKey": "share-africa-2100",
+          "label": "Part projetée en fin de siècle",
+          "value": "37,5 %",
+          "year": 2100,
+          "note": "Projection, et non mesure actuelle.",
+          "sourceRefs": ["un-wpp"]
+        }
+      ]
+    },
+    {
+      "chapterKey": "jeunesse",
+      "ordinal": 2,
+      "title": "Dix-neuf ans, deux récits",
+      "question": "Pourquoi la même pyramide des âges est-elle décrite comme un dividende ou une menace ?",
+      "standfirst": "En 2024, une personne sur deux en Afrique a moins de 19,2 ans et 58,7 % de la population a moins de 25 ans.",
+      "body": [
+        {
+          "text": "La structure d'âge ouvre une période où la population en âge de travailler peut croître plus vite que le reste. La Banque mondiale, l'Union africaine et l'UNFPA parlent de dividende démographique, mais chacune de ces institutions le conditionne à la santé, l'éducation, l'emploi et les droits.",
+          "sourceRefs": [
+            "un-wpp",
+            "world-bank-dividend",
+            "au-dividend-roadmap",
+            "unfpa-dividend"
+          ]
+        }
+      ],
+      "illustration": {
+        "src": "/images/dossiers/africa-population-pyramid-2023.png",
+        "alt": "Pyramide des âges de l'Afrique en 2023, hommes à gauche et femmes à droite",
+        "caption": "Pyramide des âges de l'Afrique en 2023, construite à partir des Perspectives de la population mondiale des Nations unies.",
+        "author": "Tweedle",
+        "licence": "CC BY-SA 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "filePage": "https://commons.wikimedia.org/wiki/File:Africa_population_pyramid_2023.svg",
+        "year": "2023"
+      },
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Une fenêtre conditionnelle",
+          "body": "Le dividende n'est pas un effet automatique du nombre de jeunes. Il peut apparaître lorsque la fécondité baisse, que la part relative des actifs augmente et que des investissements transforment cette structure en capacités et en emplois.",
+          "sourceRefs": [
+            "world-bank-dividend",
+            "au-dividend-roadmap",
+            "unfpa-dividend"
+          ]
+        },
+        {
+          "stance": "counter",
+          "label": "Une promesse qui peut masquer ses conditions",
+          "body": "Nommer la jeunesse « dividende » peut faire croire que le gain est déjà acquis ; la nommer « bombe » ajoute une menace que la pyramide ne mesure pas. Les deux métaphores sont des cadrages politiques, pas des indicateurs démographiques.",
+          "sourceRefs": [
+            "world-bank-dividend",
+            "unfpa-dividend",
+            "un-wpp-summary"
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "figureKey": "under-25",
+          "label": "Part des moins de 25 ans",
+          "value": "58,7 %",
+          "year": 2024,
+          "note": "Environ 889,6 millions de personnes selon WPP 2024.",
+          "sourceRefs": ["un-wpp"]
+        }
+      ]
+    },
+    {
+      "chapterKey": "concentrations",
+      "ordinal": 3,
+      "title": "Des populations concentrées, des records sensibles à la définition",
+      "question": "Quels pays et quelles villes portent l'essentiel de la croissance ?",
+      "standfirst": "Le Nigeria est le pays le plus peuplé d'Afrique ; Le Caire est sa plus grande agglomération dans la révision urbaine 2025. Ces rangs dépendent toutefois des périmètres retenus.",
+      "body": [
+        {
+          "text": "L'UNFPA estime la population nigériane à 237,5 millions en 2025. Les Perspectives de l'urbanisation mondiale donnent 25,57 millions d'habitants à l'agglomération du Caire au 1er juillet 2025, devant Lagos et Kinshasa selon leur nouvelle méthode harmonisée.",
+          "sourceRefs": ["unfpa-dashboard", "un-wup"]
+        }
+      ],
+      "illustration": null,
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Des périmètres harmonisés pour comparer",
+          "body": "Les séries internationales appliquent une méthode commune aux pays et aux villes afin de rendre les rangs comparables. Elles distinguent les limites administratives des continuités bâties et des zones fonctionnelles.",
+          "sourceRefs": ["un-wup", "un-wup-method"]
+        },
+        {
+          "stance": "counter",
+          "label": "Un rang change avec la frontière statistique",
+          "body": "Une municipalité, une agglomération morphologique et une aire métropolitaine ne couvrent pas le même espace. Le classement d'une ville n'est donc pas une propriété naturelle : il résulte d'une définition annoncée et d'une estimation datée.",
+          "sourceRefs": ["un-wup", "un-wup-method"]
+        }
+      ],
+      "figures": [
+        {
+          "figureKey": "nigeria-2025",
+          "label": "Population estimée du Nigeria",
+          "value": "237,5 M",
+          "year": 2025,
+          "note": "Le dernier recensement national publié date de 2006.",
+          "sourceRefs": ["unfpa-dashboard", "un-census-dates"]
+        },
+        {
+          "figureKey": "cairo-2025",
+          "label": "Agglomération du Caire",
+          "value": "25,57 M",
+          "year": 2025,
+          "note": "Estimation au 1er juillet selon WUP 2025.",
+          "sourceRefs": ["un-wup"]
+        }
+      ]
+    },
+    {
+      "chapterKey": "ce-que-le-compte-laisse-hors-champ",
+      "ordinal": 4,
+      "title": "Le chiffre et le compte",
+      "question": "Que sait-on lorsque le dernier recensement est ancien ?",
+      "standfirst": "Le Nigeria n'a pas publié de nouveau recensement depuis celui de mars 2006. Les totaux actuels sont donc des estimations construites à partir d'un dénombrement ancien et d'autres observations.",
+      "body": [
+        {
+          "text": "Le recensement nigérian de 2006 a dénombré 140,4 millions de personnes. Les Nations unies estimaient 230,3 millions en 2024. L'écart ne correspond pas à 90 millions de personnes directement comptées : il résulte d'un modèle alimenté par la fécondité, la mortalité, les migrations et les données disponibles.",
+          "sourceRefs": [
+            "nigeria-estimates",
+            "un-wpp-methodology",
+            "un-census-dates"
+          ]
+        }
+      ],
+      "illustration": null,
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Estimer entre deux recensements",
+          "body": "Les estimations intercensitaires permettent de suivre une population quand aucun dénombrement récent n'existe. Leur méthode doit rester explicite et les séries sont révisées quand de nouvelles données apparaissent.",
+          "sourceRefs": ["un-wpp-methodology", "nigeria-estimates"]
+        },
+        {
+          "stance": "counter",
+          "label": "Ce qui n'est pas demandé n'apparaît pas",
+          "body": "Les principes des Nations unies laissent aux pays le choix de collecter ou non l'appartenance ethnique. Le Kenya publie des appartenances autodéclarées très détaillées ; d'autres pays les excluent. Comparer ces colonnes comme si elles mesuraient partout le même objet créerait un faux total.",
+          "sourceRefs": ["un-census-principles", "kenya-census"]
+        }
+      ],
+      "figures": [
+        {
+          "figureKey": "nigeria-census-2006",
+          "label": "Population au dernier recensement nigérian",
+          "value": "140 431 790",
+          "year": 2006,
+          "note": "Dénombrement réalisé du 21 au 27 mars 2006.",
+          "sourceRefs": ["nigeria-estimates", "un-census-dates"]
+        },
+        {
+          "figureKey": "nigeria-un-2024",
+          "label": "Population estimée par les Nations unies",
+          "value": "230,3 M",
+          "year": 2024,
+          "note": "Estimation, pas nouveau recensement.",
+          "sourceRefs": ["un-wpp-summary"]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "un-wpp",
+      "title": "United Nations, World Population Prospects 2024 — data portal and downloads",
+      "url": "https://population.un.org/wpp/",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2024,
+      "notes": "Estimations et projections annuelles selon le scénario médian."
+    },
+    {
+      "sourceKey": "un-wpp-summary",
+      "title": "United Nations, World Population Prospects 2024: Summary of Results",
+      "url": "https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2024,
+      "notes": "Synthèse des résultats, hypothèses et principaux changements de la révision."
+    },
+    {
+      "sourceKey": "un-wpp-methodology",
+      "title": "United Nations, Methodology of the United Nations Population Estimates and Projections",
+      "url": "https://population.un.org/wpp/assets/Files/WPP2024_Methodology-Report_Final.pdf",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2024,
+      "notes": "Méthodes d'estimation, de projection et de révision des séries."
+    },
+    {
+      "sourceKey": "world-bank-dividend",
+      "title": "World Bank, Africa's Demographic Transition: Dividend or Disaster?",
+      "url": "https://documents1.worldbank.org/curated/en/802811468187135148/pdf/103549-BRI-Africas-Demographic-Transition-Knowledge-Brief-FINAL-PUBLIC.pdf",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2015,
+      "notes": "Définition du dividende démographique et conditions d'investissement."
+    },
+    {
+      "sourceKey": "au-dividend-roadmap",
+      "title": "African Union, Roadmap on Harnessing the Demographic Dividend through Investments in Youth",
+      "url": "https://library.au.int/au-roadmap-harnessing-demographic-dividend-through-investments-youth",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2017,
+      "notes": "Feuille de route continentale articulée autour de l'emploi, l'éducation, la santé et la gouvernance."
+    },
+    {
+      "sourceKey": "unfpa-dividend",
+      "title": "United Nations Population Fund, Demographic dividend",
+      "url": "https://www.unfpa.org/demographic-dividend",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2025,
+      "notes": "Présentation du mécanisme et de son caractère conditionnel."
+    },
+    {
+      "sourceKey": "unfpa-dashboard",
+      "title": "United Nations Population Fund, World Population Dashboard",
+      "url": "https://www.unfpa.org/data/world-population/NG",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2025,
+      "notes": "Fiche pays du Nigeria et indicateurs démographiques harmonisés."
+    },
+    {
+      "sourceKey": "un-wup",
+      "title": "United Nations, World Urbanization Prospects 2025: Summary of Results",
+      "url": "https://population.un.org/wup/assets/Publications/undesa_pd_2025_wup2025_summary_of_results_final.pdf",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2025,
+      "notes": "Estimations des agglomérations et tendances d'urbanisation."
+    },
+    {
+      "sourceKey": "un-wup-method",
+      "title": "United Nations, What's new in World Urbanization Prospects 2025?",
+      "url": "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2025_whatsnew_wup25.pdf",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2025,
+      "notes": "Définitions harmonisées des villes et agglomérations dans la révision 2025."
+    },
+    {
+      "sourceKey": "un-census-dates",
+      "title": "United Nations Statistics Division, Population and Housing Censuses — census dates by country",
+      "url": "https://unstats.un.org/unsd/demographic-social/census/censusdates/",
+      "tier": "official",
+      "source_kind": "official_statistics",
+      "publicationYear": 2026,
+      "notes": "Calendrier officiel des recensements nationaux, mis à jour le 3 février 2026."
+    },
+    {
+      "sourceKey": "nigeria-estimates",
+      "title": "Nigeria National Bureau of Statistics, National Population Estimates: Population Forecasts 2006–2016",
+      "url": "https://nigerianstat.gov.ng/download/474",
+      "tier": "official",
+      "source_kind": "official_statistics",
+      "publicationYear": 2016,
+      "notes": "Total du recensement de 2006 et projections nationales."
+    },
+    {
+      "sourceKey": "un-census-principles",
+      "title": "United Nations, Principles and Recommendations for Population and Housing Censuses, Revision 3",
+      "url": "https://unstats.un.org/unsd/demographic-social/Standards-and-Methods/files/Principles_and_Recommendations/Population-and-Housing-Censuses/Series_M67rev3-E.pdf",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2017,
+      "notes": "Norme internationale sur les sujets, définitions et limites des recensements."
+    },
+    {
+      "sourceKey": "kenya-census",
+      "title": "Kenya National Bureau of Statistics, 2019 Kenya Population and Housing Census, Volume IV",
+      "url": "https://www.knbs.or.ke/wp-content/uploads/2023/09/2019-Kenya-population-and-Housing-Census-Volume-4-Distribution-of-Population-by-Socio-Economic-Characteristics.pdf",
+      "tier": "official",
+      "source_kind": "official_statistics",
+      "publicationYear": 2019,
+      "notes": "Exemple de publication nationale détaillée des appartenances autodéclarées."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "chapters.poids-demographique.africanDescent",
+      "reason": "Aucune définition mondiale homogène ne permet d'ajouter au total des résidents du continent un nombre unique de personnes d'ascendance africaine vivant ailleurs."
+    },
+    {
+      "fieldPath": "chapters.concentrations.cityRank",
+      "reason": "Les classements urbains changent avec la frontière retenue ; ce dossier ne présente donc que le rang produit par la méthode WUP 2025."
+    }
+  ]
+}

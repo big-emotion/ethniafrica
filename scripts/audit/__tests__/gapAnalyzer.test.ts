@@ -14,7 +14,6 @@ import {
   analyzeFamilyDecolonialGap,
   analyzeCountryHistoricalFactsGap,
   analyzeCountryDemographicsGap,
-  analyzeEtymologyFragilityGap,
   analyzeDistributionTypeGap,
   analyzePeopleDemographyGap,
   analyzeAllGaps,
@@ -113,23 +112,6 @@ describe("Gap Analyzer", () => {
     });
   });
 
-  describe("analyzeEtymologyFragilityGap", () => {
-    it("should return a static gap about regex fragility", () => {
-      const gap = analyzeEtymologyFragilityGap();
-
-      expect(gap).toBeDefined();
-      expect(gap.layer).toBe("component-source");
-      expect(gap.entityType).toBe("country");
-      expect(gap.field).toBe("etymology");
-      expect(gap.severity).toBe("medium");
-    });
-
-    it("should mention regex patterns in the description", () => {
-      const gap = analyzeEtymologyFragilityGap();
-      expect(gap.description).toMatch(/regex|pattern|French/i);
-    });
-  });
-
   describe("analyzeDistributionTypeGap", () => {
     it("should return a static gap about type mismatch", () => {
       const gap = analyzeDistributionTypeGap();
@@ -174,13 +156,16 @@ describe("Gap Analyzer", () => {
       expect(gaps.length).toBeGreaterThan(0);
     });
 
-    it("should include gaps from parser-component and component-source layers", async () => {
+    // @req REQ-143
+    it("should include the parser-component layer, the only static layer left", async () => {
       const gaps = await analyzeAllGaps();
 
       const layers = new Set(gaps.map((g) => g.layer));
-      // source-parser gaps are resolved by JSON migration
+      // source-parser gaps are resolved by JSON migration; the one
+      // component-source gap (the French-regex etymology extractor) was
+      // deleted with the extractor (REQ-143).
       expect(layers.has("parser-component")).toBe(true);
-      expect(layers.has("component-source")).toBe(true);
+      expect(layers.has("component-source")).toBe(false);
     });
 
     it("should include gaps of multiple severity levels", async () => {
@@ -191,10 +176,11 @@ describe("Gap Analyzer", () => {
       expect(severities.has("medium")).toBe(true);
     });
 
-    it("should return at least 3 gaps (the known remaining structural issues)", async () => {
+    // @req REQ-143
+    it("should return at least 2 gaps (the known remaining structural issues)", async () => {
       const gaps = await analyzeAllGaps();
-      // Remaining: historicalFacts not displayed, etymology fragility, distribution type mismatch
-      expect(gaps.length).toBeGreaterThanOrEqual(3);
+      // Remaining: historicalFacts not displayed, distribution type mismatch
+      expect(gaps.length).toBeGreaterThanOrEqual(2);
     });
 
     it("should have valid structure for every gap", async () => {

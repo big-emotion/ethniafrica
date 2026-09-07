@@ -1,20 +1,38 @@
 import type { Metadata } from "next";
 
-import {
-  GLOSSARY_PAGE_SUBTITLE,
-  GLOSSARY_PAGE_TITLE,
-  GlossaryPage,
-} from "@/components/glossaire/GlossaryPage";
+import { GlossaryPage } from "@/components/glossaire/GlossaryPage";
+import { GLOSSARY_ENTRIES } from "@/lib/glossaire/entries";
+import { glossaryPageCopy } from "@/lib/i18n/copy/glossaryPage";
 import { getLocalizedRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
+import type { Language } from "@/types/shared";
 
-const CANONICAL_PATH = getLocalizedRoute("fr", "glossary");
+interface PageProps {
+  params: Promise<{ lang: string }>;
+}
 
 // @req REQ-144
-export const metadata: Metadata = {
-  title: GLOSSARY_PAGE_TITLE,
-  description: GLOSSARY_PAGE_SUBTITLE,
-  alternates: { canonical: CANONICAL_PATH },
-};
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { lang } = await params;
+  const language = lang as Language;
+  const pageCopy = glossaryPageCopy[language];
+  const copy = {
+    title: pageCopy.title,
+    description: pageCopy.subtitle(GLOSSARY_ENTRIES.length),
+  };
+  return {
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "glossary",
+      (locale) => getLocalizedRoute(locale, "glossary"),
+      copy
+    ),
+  };
+}
 
 /**
  * The glossary sits at the root, on no axis.
@@ -27,6 +45,7 @@ export const metadata: Metadata = {
  * rubric.
  */
 // @req REQ-144
-export default function GlossairePage() {
-  return <GlossaryPage />;
+export default async function GlossairePage({ params }: PageProps) {
+  const { lang } = await params;
+  return <GlossaryPage language={lang as Language} />;
 }

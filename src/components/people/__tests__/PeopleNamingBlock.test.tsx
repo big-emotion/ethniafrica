@@ -15,6 +15,14 @@ const yoruba = {
 };
 
 describe("PeopleNamingBlock (REQ-115)", () => {
+  // @req REQ-145
+  it("renders its field labels in English", () => {
+    render(<PeopleNamingBlock {...yoruba} language="en" />);
+    expect(screen.getByText("Self-designation")).toBeVisible();
+    expect(screen.getByText("Exonyms")).toBeVisible();
+    expect(screen.getByText(/Why these names are problematic/)).toBeVisible();
+  });
+
   // @req REQ-115
   it("puts the name borne and the names imposed face to face", () => {
     render(<PeopleNamingBlock {...yoruba} />);

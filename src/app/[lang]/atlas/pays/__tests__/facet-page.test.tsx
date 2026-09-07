@@ -75,9 +75,12 @@ import PaysHubPage from "../page";
 import { getCountryRoute, getLocalizedRoute } from "@/lib/routing";
 
 /** The route signature Next 16 hands a page: both bags arrive as promises. */
-function renderRoute(searchParams: Record<string, string | string[]>) {
+function renderRoute(
+  searchParams: Record<string, string | string[]>,
+  lang = "fr"
+) {
   return PaysHubPage({
-    params: Promise.resolve({ lang: "fr" }),
+    params: Promise.resolve({ lang }),
     searchParams: Promise.resolve(searchParams),
   });
 }
@@ -202,6 +205,20 @@ describe("the countries facet", () => {
 
     expect(publishedIndex().SSD).toHaveLength(1);
     expect(listedCountries()).toHaveLength(1);
+  });
+
+  // @req REQ-141
+  it("renders its reading and controls in English", async () => {
+    render(await renderRoute({}, "en"));
+
+    expect(screen.getByText(/54 countries in the corpus/)).toBeInTheDocument();
+    expect(
+      screen.getByRole("searchbox", { name: "Search countries" })
+    ).toHaveAttribute("placeholder", "Country name or identifier");
+    expect(
+      screen.getByRole("combobox", { name: "Language family" })
+    ).toBeInTheDocument();
+    expect(screen.queryByText(/54 pays au corpus/)).not.toBeInTheDocument();
   });
 });
 

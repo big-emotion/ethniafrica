@@ -21,6 +21,18 @@
  *           pattern: '^PPL_[A-Z_]+$'
  *         description: Identifiant du peuple (format PPL_*)
  *         example: "PPL_SHONA"
+ *       - in: query
+ *         name: lang
+ *         required: false
+ *         schema:
+ *           type: string
+ *           enum: [fr, en]
+ *           default: fr
+ *         description: >
+ *           Locale du contenu servi. `fr` est la langue d'auteur ; `en`
+ *           superpose l'enregistrement de traduction quand il existe et
+ *           déclare sa provenance dans `meta.translation` (REQ-142).
+ *         example: en
  *     responses:
  *       200:
  *         description: Détails du peuple
@@ -50,7 +62,7 @@
 
 import { NextRequest } from "next/server";
 import { getPeopleHandler } from "@/api/v2/handlers/peoples";
-import { validatePeopleId } from "@/api/v2/utils/validation";
+import { validateLang, validatePeopleId } from "@/api/v2/utils/validation";
 import { createApiError } from "@/api/v2/utils/response";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
@@ -79,7 +91,23 @@ export async function GET(
       );
     }
 
-    const envelope = await getPeopleHandler(id);
+    const lang = validateLang(request.nextUrl.searchParams.get("lang"));
+    if (lang === null) {
+      logger.warn("Unsupported lang requested", {
+        id,
+        lang: request.nextUrl.searchParams.get("lang"),
+      });
+      return jsonWithCors(
+        createApiError({
+          code: "VALIDATION_ERROR",
+          message: "Unsupported lang: expected fr or en",
+          field: "lang",
+        }),
+        { status: 400 }
+      );
+    }
+
+    const envelope = await getPeopleHandler(id, lang);
 
     if (!envelope) {
       logger.warn("People not found", { id });

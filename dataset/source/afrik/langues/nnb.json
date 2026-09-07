@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "nnb",
+  "isoCode639_3": "nnb",
+  "glottocode": "nand1264",
+  "nameFr": "Nande (kinande)",
+  "nameEn": "Nande",
+  "alternateNames": ["Kinande", "Kinandi", "Orundande"],
+  "spellingAliases": [],
+  "familyId": "FLG_BANTU",
+  "peoples": [{ "name": "Nande", "peopleId": "PPL_NANDE" }],
+  "content": {
+    "vehicularRole": "non_vehicular",
+    "dialects": [],
+    "vitalityStatus": {
+      "status": "Developing",
+      "scale": "EGIDS (Ethnologue)",
+      "asOf": 2025
+    },
+    "sources": [
+      {
+        "title": "Glottolog 5.3 — Nande (nand1264)",
+        "url": "https://glottolog.org/resource/languoid/id/nand1264",
+        "tier": "official",
+        "notes": "Notice directe pour le code ISO 639-3 nnb et le glottocode nand1264. Elle situe la langue en République démocratique du Congo et en Ouganda, atteste les variantes Kinande, Kinandi et Orundande et publie le statut EGIDS 5 en 2025. Aucun rôle véhiculaire régional n'est inféré de cette notice."
+      }
+    ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the French DRC country enrichment pass is stable."
+    }
+  }
+}

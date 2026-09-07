@@ -3,17 +3,38 @@ import type { GameRound } from "@/lib/games/gameKinds";
 /**
  * Cutting one session out of the round pool (REQ-120).
  *
- * The page's seed is derived from the game's slug, which is a constant, and
- * that is deliberate: a clock read during render is impure and would
- * desynchronise the server tree from the client one, and the route stays
- * cacheable without it. The cost is that every visitor was served the same
- * opening rounds — and, before the pool grew, the same seven rounds for good.
+ * Two things decide which eight rounds a reader meets, and for a long time
+ * only one of them moved. `takeSession` advances a window on replay, so a
+ * reader who taps « rejouer » gets the next eight. The seed decides which pool
+ * the window is cut from — and the page derived it from the game's slug, which
+ * is a constant, so every visitor on every reload was served the same opening
+ * session. Replaying was the only way to see a second one, and leaving the
+ * page undid it.
  *
- * The fix belongs on the client rather than in the seed. The pool travels
- * whole, the first session is the deterministic window the server could have
- * predicted, and each replay advances by a full session. Nothing about the
- * first render changes; only a reader who asks for another game gets one.
+ * The comment defending that constant named two costs a moving seed would
+ * incur, and neither survives inspection. A clock read in render was said to
+ * desynchronise the server tree from the client one: it cannot, because the
+ * rounds are built on the server and travel to the island as serialized props,
+ * so nothing re-derives them to disagree about. And the route was said to stay
+ * cacheable: it never was, the root layout awaiting `connection()` for the CSP
+ * nonce making every page under it dynamic.
+ *
+ * So the seed moves per request, and reproducibility stays where it belongs —
+ * it is a parameter, and every test passes its own.
  */
+
+/**
+ * A fresh window into the pool, one per request.
+ *
+ * Named rather than inlined at the one call site because it is a decision, not
+ * an expression: the page reads it in render, which is exactly what the
+ * constant it replaces was defending against, and the module comment above is
+ * the argument for why that defence was unnecessary here.
+ */
+// @req REQ-120
+export function requestSeed(): number {
+  return Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
+}
 
 /**
  * The `index`-th session of `size` rounds, wrapping around the pool.

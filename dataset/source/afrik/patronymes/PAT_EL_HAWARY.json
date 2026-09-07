@@ -104,7 +104,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "Les recherches combinant El Hawary ou al-Hawari avec « alliance », « Hawwara pacte » et « parenté à plaisanterie » n’ont pas fourni de relation nominale avec une autre fiche PAT_*."
+      "reason": "Les recherches combinant El Hawary ou al-Hawari avec « alliance », « Hawwara pacte » et « parenté à plaisanterie » n’ont pas fourni de relation nominale avec un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

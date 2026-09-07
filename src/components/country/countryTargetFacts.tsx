@@ -8,6 +8,9 @@ import type { CountryDetail } from "@/types/afrik-frontend";
 import { getCountryRoute } from "@/lib/routing";
 import { ActionLink } from "@/components/ui/ActionLink";
 import { deriveCountrySynthesisFromDetail } from "@/lib/home/countrySynthesis";
+import { formatNumber } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
+import { countryCopy } from "@/lib/i18n/copy/country";
 
 /**
  * What the globe's panel says when the reader picks the country the fiche is
@@ -89,15 +92,18 @@ const CHIP_STYLE: CSSProperties = {
  * and unlabelled they read as one number disagreeing with itself — which is
  * exactly how a panel saying five peoples sat beside a listing saying nine.
  */
-function ProvenanceChip({ declared }: { declared: boolean }) {
+function ProvenanceChip({
+  declared,
+  language,
+}: {
+  declared: boolean;
+  language: Language;
+}) {
+  const copy = countryCopy[language].targetFacts;
   return (
-    <span style={CHIP_STYLE}>
-      {declared ? "Fiche rédigée" : "Présence dérivée des fiches peuple"}
-    </span>
+    <span style={CHIP_STYLE}>{declared ? copy.written : copy.derived}</span>
   );
 }
-
-const countFr = new Intl.NumberFormat("fr-FR");
 
 export interface CountryAtlasBrief {
   population?: number;
@@ -120,7 +126,14 @@ function principalLanguages(languages: string[] | undefined): string[] {
     .slice(0, BRIEF_LANGUAGES_SHOWN);
 }
 
-function CountryBriefFacts({ brief }: { brief?: CountryAtlasBrief }) {
+function CountryBriefFacts({
+  language,
+  brief,
+}: {
+  language: Language;
+  brief?: CountryAtlasBrief;
+}) {
+  const copy = countryCopy[language].targetFacts;
   const population =
     typeof brief?.population === "number" &&
     Number.isFinite(brief.population) &&
@@ -143,18 +156,20 @@ function CountryBriefFacts({ brief }: { brief?: CountryAtlasBrief }) {
     <dl style={BRIEF_GRID_STYLE}>
       {hasDatedPopulation && (
         <div>
-          <dt style={LABEL_STYLE}>Population · réf. {referenceYear}</dt>
+          <dt style={LABEL_STYLE}>
+            {copy.population} · {copy.reference} {referenceYear}
+          </dt>
           <dd
             style={{ ...BRIEF_VALUE_STYLE, fontVariantNumeric: "tabular-nums" }}
           >
-            {countFr.format(population)}
+            {formatNumber(language, population)}
           </dd>
         </div>
       )}
 
       {languages.length > 0 && (
         <div>
-          <dt style={LABEL_STYLE}>Langues principales</dt>
+          <dt style={LABEL_STYLE}>{copy.languages}</dt>
           <dd style={BRIEF_VALUE_STYLE}>{languages.join(" · ")}</dd>
         </div>
       )}
@@ -164,8 +179,10 @@ function CountryBriefFacts({ brief }: { brief?: CountryAtlasBrief }) {
 
 // @req REQ-117
 export function buildCountryTargetFacts(
+  language: Language,
   country: CountryDetail
 ): Partial<Record<CountryId, AtlasTargetFacts>> {
+  const copy = countryCopy[language].targetFacts;
   const demographicPeoples = country.demographics?.peoples;
   const peoples =
     demographicPeoples && demographicPeoples.length > 0
@@ -178,17 +195,19 @@ export function buildCountryTargetFacts(
   return {
     [country.id]: {
       title: country.nameCommonFr || country.nameFr,
-      description: `${country.id} · frontière publiée, tracée à l'apparition`,
+      description: copy.boundary(country.id),
       body: (
         <div style={{ display: "grid", gap: 14 }}>
           <div>
-            <span style={LABEL_STYLE}>Peuples déclarés par la fiche</span>
-            <span style={NUMBER_STYLE}>{countFr.format(names.length)}</span>
+            <span style={LABEL_STYLE}>{copy.declaredPeoples}</span>
+            <span style={NUMBER_STYLE}>
+              {formatNumber(language, names.length)}
+            </span>
           </div>
 
           {names.length > 0 ? (
             <div style={{ display: "grid", gap: 6 }}>
-              <span style={LABEL_STYLE}>Premières entrées</span>
+              <span style={LABEL_STYLE}>{copy.firstEntries}</span>
               <span
                 style={{
                   fontSize: "var(--afh-text-small)",
@@ -207,7 +226,7 @@ export function buildCountryTargetFacts(
                 color: "var(--afh-text-soft)",
               }}
             >
-              Aucun peuple rattaché à ce pays dans le corpus.
+              {copy.none}
             </span>
           )}
         </div>
@@ -227,11 +246,22 @@ export function buildCountryTargetFacts(
  * reached here because the two links shared no code. ActionLink takes
  * --accent-ink for all of them at once.
  */
-function ReadTheFiche({ href }: { href: string }) {
-  return <ActionLink href={href}>Lire la fiche complète</ActionLink>;
+function ReadTheFiche({
+  href,
+  language,
+}: {
+  href: string;
+  language: Language;
+}) {
+  return (
+    <ActionLink href={href}>
+      {countryCopy[language].targetFacts.readFull}
+    </ActionLink>
+  );
 }
 
 export interface CountryAtlasFactsInput {
+  language: Language;
   /** The fiche's own country, which gets the full panel. */
   country: CountryDetail;
   /** Everything the picker offers, named as the picker names it. */
@@ -273,12 +303,13 @@ function placeOf(target: AtlasTarget): string {
 
 // @req REQ-117
 export function buildCountryAtlasFacts({
+  language,
   country,
   targets,
   peopleCounts,
   countryBriefs,
 }: CountryAtlasFactsInput): Partial<Record<CountryId, AtlasTargetFacts>> {
-  const own = buildCountryTargetFacts(country);
+  const own = buildCountryTargetFacts(language, country);
   const ownBrief = countryBriefs[country.id] ?? {
     population: country.demographics?.totalPopulation,
     referenceYear: country.demographics?.referenceYear,
@@ -300,10 +331,10 @@ export function buildCountryAtlasFacts({
             icon: flagFromISO3(target.countryId),
             body: (
               <div style={{ display: "grid", gap: 14 }}>
-                <CountryBriefFacts brief={ownBrief} />
+                <CountryBriefFacts language={language} brief={ownBrief} />
                 {ownFacts?.body}
-                <ProvenanceChip declared />
-                <ReadTheFiche href="#fiche" />
+                <ProvenanceChip declared language={language} />
+                <ReadTheFiche href="#fiche" language={language} />
               </div>
             ),
           },
@@ -327,11 +358,16 @@ export function buildCountryAtlasFacts({
             documented === null
               ? placeOf(target)
               : documented === 1
-                ? "1 peuple documenté"
-                : `${countFr.format(documented)} peuples documentés`,
+                ? countryCopy[language].targetFacts.documentedOne
+                : countryCopy[language].targetFacts.documentedMany(
+                    formatNumber(language, documented)
+                  ),
           body: (
             <div style={{ display: "grid", gap: 14 }}>
-              <CountryBriefFacts brief={countryBriefs[target.countryId]} />
+              <CountryBriefFacts
+                language={language}
+                brief={countryBriefs[target.countryId]}
+              />
               {documented === null && (
                 <span
                   style={{
@@ -340,11 +376,14 @@ export function buildCountryAtlasFacts({
                     color: "var(--afh-text-soft)",
                   }}
                 >
-                  Aucun peuple rattaché à ce pays dans le corpus.
+                  {countryCopy[language].targetFacts.none}
                 </span>
               )}
-              <ProvenanceChip declared={false} />
-              <ReadTheFiche href={getCountryRoute("fr", target.countryId)} />
+              <ProvenanceChip declared={false} language={language} />
+              <ReadTheFiche
+                href={getCountryRoute(language, target.countryId)}
+                language={language}
+              />
             </div>
           ),
         },

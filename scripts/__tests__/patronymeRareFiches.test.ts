@@ -109,7 +109,7 @@ describe("ETNI-1682 rare patronyme fiches", () => {
       const fiche = readFiche(id);
 
       expect(fiche.peoples).toEqual([
-        expect.objectContaining({ peopleId: "PPL_GANDA" }),
+        expect.objectContaining({ peopleId: "PPL_BAGANDA" }),
       ]);
       expect(fiche.countries).toEqual([
         expect.objectContaining({ countryId: "UGA" }),

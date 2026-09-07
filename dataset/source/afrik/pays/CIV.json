@@ -1,6 +1,7 @@
 {
   "id": "CIV",
   "nameFr": "Côte d'Ivoire",
+  "nameEn": "Côte d'Ivoire",
   "nameOfficial": "République de Côte d'Ivoire (République de Côte d'Ivoire)",
   "summary": "La Côte d'Ivoire porte le nom d'une marchandise : les navigateurs portugais désignaient ce littoral par ce qu'on y achetait, et le français a fixé l'appellation au XIXe siècle. Le pays réunit royaumes akan, peuples krou, mandé et voltaïques, soit une soixantaine de groupes. Le baoulé, l'agni et le dioula structurent le quotidien à côté du français.",
   "etymology": "Le nom \"Côte d'Ivoire\" provient du français et fait référence au commerce de l'ivoire qui se pratiquait le long de la côte atlantique depuis le XVe siècle. Les navigateurs portugais utilisaient le terme \"Costa do Marfim\" (Côte d'Ivoire en portugais) pour désigner cette région riche en éléphants et en ivoire. Le nom a été officialisé par les Français lors de la création de la colonie en 1893.",
@@ -21,6 +22,7 @@
       {
         "name": "Royaumes Akan",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Baoulé", "Agni", "Abron", "Attié"],
         "politicalCenters": [
           "Chefferies traditionnelles akan",
@@ -31,6 +33,7 @@
       {
         "name": "Peuples Krou",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Bété", "Wé", "Dida"],
         "politicalCenters": ["Chefferies traditionnelles krou"],
         "historicalRole": "Peuples Krou forestiers, traditions artistiques réputées (masques, sculptures), structures lignagères, chefferies locales. Résistance à la colonisation française."
@@ -38,6 +41,7 @@
       {
         "name": "Peuples Mandé du Nord",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Malinké", "Dioula", "Bambara"],
         "politicalCenters": ["Chefferies traditionnelles mandé"],
         "historicalRole": "Peuples Mandé du Nord liés historiquement à l'empire du Mali, tradition islamique, commerce transsaharien. Rôle majeur dans le commerce et l'islamisation de la région."
@@ -45,6 +49,7 @@
       {
         "name": "Peuples Mandé du Sud",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Dan (Yacouba)", "Gouro", "Wan"],
         "politicalCenters": ["Chefferies traditionnelles mandé"],
         "historicalRole": "Peuples Mandé du Sud, traditions forestières, masques et sculptures. Relations avec les peuples Krou voisins."
@@ -52,6 +57,7 @@
       {
         "name": "Peuples Voltaïques / Gur",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Sénoufo", "Lobi", "Koulango"],
         "politicalCenters": ["Chefferies traditionnelles gur"],
         "historicalRole": "Peuples voltaiques/gur, traditions agricoles, cérémonies d'initiation (Poro chez les Sénoufo). Résistance à la colonisation française."
@@ -59,6 +65,12 @@
       {
         "name": "Colonie de Côte d'Ivoire",
         "period": "1893 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1893,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples ivoiriens sous domination française"
         ],

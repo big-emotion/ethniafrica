@@ -1,6 +1,7 @@
 {
   "id": "CMR",
   "nameFr": "Cameroun",
+  "nameEn": "Cameroon",
   "nameOfficial": "République du Cameroun (Republic of Cameroon)",
   "summary": "Le Cameroun doit son nom aux crevettes du fleuve Wouri, que les Portugais nommèrent « Rio dos Camarões » au XVe siècle. Colonisé successivement par l'Allemagne, la France et la Grande-Bretagne, il en garde un bilinguisme officiel. Plus de 280 peuples s'y côtoient, du royaume Bamoun aux chefferies bamiléké, des Sawa côtiers aux peuples des forêts du Sud.",
   "etymology": "Le nom \"Cameroun\" dérive du portugais \"Rio dos Camarões\" (Rivière des crevettes), donné par les navigateurs portugais au XVe siècle en référence au fleuve Wouri, riche en crevettes. Le terme \"Camarões\" a été adapté en \"Cameroun\" par les Français et \"Cameroons\" par les Britanniques.",
@@ -22,6 +23,7 @@
       {
         "name": "Royaume Bamoun",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Bamoun"],
         "politicalCenters": ["Foumban (capitale du royaume)"],
         "historicalRole": "Royaume Bamoun puissant et structuré, système monarchique (sultan), résistance à la colonisation allemande et française. Traditions artistiques et culturelles riches (écriture bamoun, art royal). Autorité coutumière encore active aujourd'hui."
@@ -29,6 +31,7 @@
       {
         "name": "Chefferies Bamiléké",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Bamiléké"],
         "politicalCenters": [
           "Chefferies traditionnelles de l'Ouest (Grassfields)"
@@ -38,6 +41,7 @@
       {
         "name": "Royaumes Beti-Fang-Bulu",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Beti", "Fang", "Bulu", "Ewondo"],
         "politicalCenters": ["Chefferies traditionnelles du Centre-Sud"],
         "historicalRole": "Royaumes et chefferies Beti-Fang-Bulu, traditions forestières, culte des ancêtres, masques et sculptures. Rôle politique majeur dans le Cameroun contemporain."
@@ -45,6 +49,7 @@
       {
         "name": "Sultanats Mandara et Kotoko",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Mandara", "Kotoko", "peuples du Nord"],
         "politicalCenters": ["Maroua", "Garoua", "sultanats traditionnels"],
         "historicalRole": "Sultanats Mandara et Kotoko, influence islamique, commerce transsaharien. Traditions politiques et religieuses islamiques."
@@ -52,6 +57,12 @@
       {
         "name": "Colonie du Kamerun",
         "period": "1884 - 1916",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1884,
+          "endYear": 1916,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples camerounais sous domination allemande"
         ],
@@ -61,6 +72,13 @@
       {
         "name": "Cameroun français et Cameroons britanniques",
         "period": "1916 - 1960/1961",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1916,
+          "endYear": 1961,
+          "precision": "approximate",
+          "datingNote": "La fin est donnée à une année près dans les sources ; la borne retenue est la plus tardive."
+        },
         "dominantPeoples": [
           "Tous les peuples camerounais sous mandats français et britannique"
         ],

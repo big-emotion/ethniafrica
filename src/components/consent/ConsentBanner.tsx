@@ -2,9 +2,13 @@
 
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { useConsent } from "@/hooks/use-consent";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
+import { FALLBACK_LOCALE, isLocale } from "@/lib/locale";
+import { getStaticPageRoute } from "@/lib/routing";
+import { getTranslation } from "@/lib/translations";
 import { cn } from "@/lib/utils";
 import type { ConsentPreferences } from "@/types/consent";
 
@@ -14,6 +18,12 @@ const BANNER_TITLE_ID = "consent-banner-title";
 export function ConsentBanner() {
   const { showBanner, acceptAll, rejectAll, updatePreferences, consentState } =
     useConsent();
+  // Mounted from the root providers, above the `[lang]` segment, so the
+  // locale comes off the route params rather than a prop; outside the locale
+  // tree there are none, and the policy is offered in the default locale.
+  const { lang } = useParams<{ lang?: string }>() ?? {};
+  const language = isLocale(lang) ? lang : FALLBACK_LOCALE;
+  const copy = getTranslation(language).consent;
   const [showCustomize, setShowCustomize] = useState(false);
   // Track local overrides for preferences - null means use consentState
   const [localAnalytics, setLocalAnalytics] = useState<boolean | null>(null);
@@ -126,23 +136,20 @@ export function ConsentBanner() {
               id={BANNER_TITLE_ID}
               className="text-afh-h3 font-semibold text-foreground"
             >
-              Gestion des cookies
+              {copy.title}
             </h2>
             <p className="text-afh-small text-muted-foreground">
-              Nous utilisons des cookies pour améliorer votre expérience sur
-              notre site. Les cookies essentiels sont nécessaires au
-              fonctionnement du site. Les cookies analytiques et fonctionnels
-              nous aident à améliorer nos services.
+              {copy.description}
             </p>
             {/* The canonical privacy document, the one the footer and the site
                 tree both name. This used to point at `/fr/confidentialite`, a
                 hand-written page that restated it — so the banner sent the
                 reader to a copy nothing else maintained. */}
             <Link
-              href="/fr/politique-de-donnees"
+              href={getStaticPageRoute(language, "dataPolicy")}
               className="text-afh-small text-primary underline-offset-4 hover:underline w-fit"
             >
-              Politique de données
+              {copy.dataPolicy}
             </Link>
           </div>
 
@@ -156,15 +163,15 @@ export function ConsentBanner() {
                     htmlFor="essential-switch"
                     className="text-afh-small font-medium text-foreground"
                   >
-                    Cookies essentiels
+                    {copy.essential}
                   </label>
                   <span className="text-afh-caption text-muted-foreground">
-                    Requis - Nécessaires au fonctionnement du site
+                    {copy.essentialDescription}
                   </span>
                 </div>
                 <Switch
                   id="essential-switch"
-                  aria-label="Cookies essentiels"
+                  aria-label={copy.essential}
                   checked={true}
                   disabled
                 />
@@ -177,15 +184,15 @@ export function ConsentBanner() {
                     htmlFor="analytics-switch"
                     className="text-afh-small font-medium text-foreground"
                   >
-                    Cookies analytiques
+                    {copy.analytics}
                   </label>
                   <span className="text-afh-caption text-muted-foreground">
-                    Plausible - Statistiques anonymes de visite
+                    {copy.analyticsDescription}
                   </span>
                 </div>
                 <Switch
                   id="analytics-switch"
-                  aria-label="Cookies analytiques"
+                  aria-label={copy.analytics}
                   checked={preferences.analytics}
                   onCheckedChange={handleToggleAnalytics}
                 />
@@ -198,15 +205,15 @@ export function ConsentBanner() {
                     htmlFor="functional-switch"
                     className="text-afh-small font-medium text-foreground"
                   >
-                    Cookies fonctionnels
+                    {copy.functional}
                   </label>
                   <span className="text-afh-caption text-muted-foreground">
-                    Sentry - Rapport d&apos;erreurs pour améliorer le site
+                    {copy.functionalDescription}
                   </span>
                 </div>
                 <Switch
                   id="functional-switch"
-                  aria-label="Cookies fonctionnels"
+                  aria-label={copy.functional}
                   checked={preferences.functional}
                   onCheckedChange={handleToggleFunctional}
                 />
@@ -218,7 +225,7 @@ export function ConsentBanner() {
                 className="mt-2 w-full md:w-auto md:self-end"
                 onClick={handleSavePreferences}
               >
-                Enregistrer mes préférences
+                {copy.save}
               </Button>
             </div>
           )}
@@ -230,16 +237,16 @@ export function ConsentBanner() {
               variant="default"
               onClick={acceptAll}
             >
-              Accepter tout
+              {copy.acceptAll}
             </Button>
             <Button variant="outline" onClick={rejectAll}>
-              Refuser
+              {copy.reject}
             </Button>
             <Button
               variant="ghost"
               onClick={() => setShowCustomize(!showCustomize)}
             >
-              Personnaliser
+              {copy.customise}
             </Button>
           </div>
         </div>

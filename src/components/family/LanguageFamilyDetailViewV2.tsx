@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { transformFamilyData } from "@/lib/familyDataTransformer";
 import type { LanguageFamily } from "@/types/afrik";
 import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
@@ -7,6 +9,7 @@ import { FamilyParchment } from "@/components/family/FamilyParchment";
 import { FamilyHistorySection } from "@/components/family/FamilyHistorySection";
 import { FamilyDecolonialHeader } from "@/components/family/FamilyDecolonialHeader";
 import { FamilyLinguisticTraits } from "@/components/family/FamilyLinguisticTraits";
+import type { Language } from "@/types/shared";
 
 /**
  * The Record of a family fiche: the reading the globe band opens onto.
@@ -54,6 +57,7 @@ import { FamilyLinguisticTraits } from "@/components/family/FamilyLinguisticTrai
  */
 export interface LanguageFamilyDetailViewV2Props {
   family: LanguageFamily;
+  language: Language;
   /** Enables the live section FlagTarget on the history section (REQ-012 AC5). */
   /** The same countries, in the same order, the globe drew — so the ranking and the map cannot disagree. */
   footprintCountries?: readonly FamilyFootprintCountry[];
@@ -61,15 +65,19 @@ export interface LanguageFamilyDetailViewV2Props {
   memberPeopleCount?: number;
   /** Which rule built the footprint, so the parchment describes the one the page applied. */
   footprintProvenance?: FamilyFootprintProvenance;
+  /** The way out of the fiche, composed by the route and passed straight down. */
+  onward?: ReactNode;
 }
 
 // @req REQ-047
 export function LanguageFamilyDetailViewV2({
   family,
+  language,
   footprintCountries = [],
   memberPeoples = [],
   memberPeopleCount = 0,
   footprintProvenance = "member-peoples",
+  onward,
 }: LanguageFamilyDetailViewV2Props) {
   const data = transformFamilyData(family);
 
@@ -77,20 +85,32 @@ export function LanguageFamilyDetailViewV2({
   // sources footer, which made the fiche read as ending one chapter early.
   return (
     <FamilyParchment
+      language={language}
       data={data}
       footprintCountries={footprintCountries}
       memberPeoples={memberPeoples}
       memberPeopleCount={memberPeopleCount}
       footprintProvenance={footprintProvenance}
+      onward={onward}
     >
       <div className="afh-parchment-section">
-        <FamilyDecolonialHeader data={data.decolonialHeader} />
+        <FamilyDecolonialHeader
+          data={data.decolonialHeader}
+          language={language}
+        />
       </div>
       <div className="afh-parchment-section">
-        <FamilyLinguisticTraits data={data.linguisticTraits} />
+        <FamilyLinguisticTraits
+          data={data.linguisticTraits}
+          language={language}
+        />
       </div>
       <div className="afh-parchment-section">
-        <FamilyHistorySection data={data.history} familyId={data.hero.id} />
+        <FamilyHistorySection
+          data={data.history}
+          familyId={data.hero.id}
+          language={language}
+        />
       </div>
     </FamilyParchment>
   );

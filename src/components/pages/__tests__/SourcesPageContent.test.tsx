@@ -14,12 +14,45 @@ function headingLevels(container: HTMLElement): number[] {
 describe("SourcesPageContent (REQ-091)", () => {
   // @req REQ-091
   it("opens with the bibliography title and intro", () => {
-    render(<SourcesPageContent />);
+    render(<SourcesPageContent language="fr" />);
 
     expect(
       screen.getByRole("heading", { level: 1, name: "Sources" })
     ).toBeInTheDocument();
     expect(screen.getByText(/Bibliographie complète/i)).toBeInTheDocument();
+  });
+
+  // @req REQ-141
+  it("renders the bibliography structure and editorial note in English", () => {
+    render(<SourcesPageContent language="en" />);
+
+    expect(
+      screen.getByRole("heading", {
+        level: 2,
+        name: "Sources by region (official African institutes)",
+      })
+    ).toBeInTheDocument();
+    expect(screen.getByText("North Africa")).toBeInTheDocument();
+    expect(screen.getByText(/Wikipedia is not a source/)).toBeInTheDocument();
+    expect(screen.queryByText("Afrique du Nord")).not.toBeInTheDocument();
+  });
+
+  // The source annotations carry editorial claims and cannot silently use an
+  // unreviewed machine translation. Until their English review is complete,
+  // the English route must identify the French originals honestly.
+  // @req REQ-143
+  // @req REQ-145
+  it("labels the reviewed-language fallback for dossier source notes", () => {
+    const { container } = render(<SourcesPageContent language="en" />);
+
+    expect(
+      screen.getByRole("status", {
+        name: "Editorial notes for these works are awaiting English review. The French originals follow.",
+      })
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector('[data-dossier-source-note][lang="fr"]')
+    ).toBeInTheDocument();
   });
 
   // @req REQ-091

@@ -19,8 +19,10 @@ vi.mock("next/navigation", () => ({
 }));
 
 // ── hooks ────────────────────────────────────────────────────────────────────
+const locale = vi.hoisted(() => ({ language: "fr" as "fr" | "en" }));
+
 vi.mock("@/hooks/use-language", () => ({
-  useLanguage: () => ({ language: "fr", setLanguage: vi.fn() }),
+  useLanguage: () => ({ language: locale.language, setLanguage: vi.fn() }),
 }));
 
 // ── layout (avoid rendering nav, consent banners, etc.) ─────────────────────
@@ -110,6 +112,23 @@ const searchApiResponse = {
       },
     ],
     countries: [],
+    families: [],
+    total: 1,
+  },
+};
+const englishChadApiResponse = {
+  data: {
+    peoples: [],
+    countries: [
+      {
+        id: "TCD",
+        nameFr: "Tchad",
+        nameEn: "Chad",
+        relevance: 1,
+        exactMatch: true,
+        content: {},
+      },
+    ],
     families: [],
     total: 1,
   },
@@ -253,6 +272,7 @@ describe("the scope the SERP declares", () => {
 describe("RecherchePageContent", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    locale.language = "fr";
     vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
       new URLSearchParams() as ReturnType<typeof nextNavigation.useSearchParams>
     );
@@ -285,6 +305,43 @@ describe("RecherchePageContent", () => {
     expect(
       screen.getByRole("button", { name: /rechercher/i })
     ).toBeInTheDocument();
+  });
+
+  // @req REQ-140
+  it("renders the idle search surface in English", () => {
+    locale.language = "en";
+    render(<RecherchePageContent />);
+
+    expect(screen.getByRole("heading", { name: "Search" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("search", { name: "Search form" })
+    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Search" })).toBeInTheDocument();
+    expect(screen.getByRole("combobox")).toHaveAccessibleName(
+      "Search for a people, language, country, language family or surname"
+    );
+  });
+
+  // @req REQ-140
+  it("promotes and renders an exact English country name", async () => {
+    locale.language = "en";
+    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
+      new URLSearchParams("q=Chad") as ReturnType<
+        typeof nextNavigation.useSearchParams
+      >
+    );
+    mockFetch.mockResolvedValue(okJson(englishChadApiResponse));
+
+    await act(async () => {
+      render(<RecherchePageContent />);
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    });
+
+    expect(await screen.findByTestId("search-pivot")).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Chad" })
+    ).toBeInTheDocument();
+    expect(screen.getByText("Primary result")).toBeInTheDocument();
   });
 
   it("always renders the filter chip row (even with no active filters)", () => {
@@ -440,6 +497,43 @@ describe("RecherchePageContent", () => {
 
     expect(mockFetch).toHaveBeenCalledWith(
       expect.stringMatching(/\/api\/v2\/search\?.*limit=6/)
+    );
+  });
+
+  // @req REQ-140
+  it("sends the page locale with English suggestions", async () => {
+    locale.language = "en";
+    mockFetch.mockResolvedValue(okJson(suggestApiResponse));
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("combobox"), {
+        target: { value: "Yo" },
+      });
+      await new Promise((resolve) => setTimeout(resolve, 350));
+    });
+
+    expect(mockFetch).toHaveBeenCalledWith(
+      expect.stringMatching(/\/api\/v2\/search\?.*lang=en/)
+    );
+  });
+
+  // @req REQ-140
+  it("sends the page locale with an English committed search", async () => {
+    locale.language = "en";
+    mockFetch.mockResolvedValue(okJson(emptyApiResponse));
+    render(<RecherchePageContent />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("combobox"), {
+        target: { value: "Chad" },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /^search$/i }));
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    });
+
+    expect(mockFetch).toHaveBeenCalledWith(
+      expect.stringMatching(/\/api\/v2\/search\?.*limit=20.*lang=en/)
     );
   });
 
@@ -778,7 +872,7 @@ describe("RecherchePageContent", () => {
   // The page no longer builds the query itself — it calls the shared client
   // (ETNI-1415 AC2). The classification/confidence filters this once also
   // carried are retired (ETNI-1808); only the page limit and the query text
-  // reach the request now.
+  // reach the request now, together with the page locale.
   // @req REQ-002
   it("carries the page limit onto the request", async () => {
     vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
@@ -800,6 +894,7 @@ describe("RecherchePageContent", () => {
     expect(Object.fromEntries(requested.searchParams)).toEqual({
       q: "Zulu",
       limit: "20",
+      lang: "fr",
     });
   });
 

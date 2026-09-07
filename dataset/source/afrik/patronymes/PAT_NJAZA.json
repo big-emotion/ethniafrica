@@ -11,7 +11,10 @@
     {
       "spelling": "Njaza",
       "attestations": [
-        { "countryId": "UGA", "sourceRefs": ["buganda-history-2025"] }
+        {
+          "countryId": "UGA",
+          "sourceRefs": ["buganda-history-2025"]
+        }
       ]
     }
   ],
@@ -64,7 +67,7 @@
   },
   "peoples": [
     {
-      "peopleId": "PPL_GANDA",
+      "peopleId": "PPL_BAGANDA",
       "status": "attested",
       "sourceRefs": ["buganda-history-2025"]
     }

@@ -1,6 +1,10 @@
+import { headers } from "next/headers";
+
 import { PageLayout } from "@/components/layout/PageLayout";
 import { DidYouKnowLoader } from "@/components/system/DidYouKnowLoader";
 import { pickDidYouKnowFact } from "@/lib/home/didYouKnowFacts";
+import { LOCALE_HEADER, resolveLocale } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 export interface PageLoadingScreenProps {
   /**
@@ -9,7 +13,7 @@ export interface PageLoadingScreenProps {
    * bare "loading" leaves its user with less than the sighted reader gets
    * from the surrounding page.
    */
-  label: string;
+  label: string | Record<Language, string>;
 }
 
 /**
@@ -42,12 +46,22 @@ export interface PageLoadingScreenProps {
  * Nothing is painted for the first 300 ms; see `LOADER_REVEAL_DELAY_MS`. A
  * page that resolves quickly therefore shows no indicator at all, which is
  * the point: an indicator inside that window is a flash, not information.
+ *
+ * A `loading.tsx` receives no params, so the shell's locale comes off the
+ * `x-locale` request header the middleware sets — the same one the root
+ * layout reads for `<html lang>`. Absent, the default locale.
  */
 // @req REQ-098
 // @req REQ-104
-export function PageLoadingScreen({ label }: PageLoadingScreenProps) {
+export async function PageLoadingScreen({ label }: PageLoadingScreenProps) {
+  const requestHeaders = await headers();
+  const language = resolveLocale(
+    requestHeaders.get(LOCALE_HEADER) ?? undefined
+  );
+  const localizedLabel = typeof label === "string" ? label : label[language];
+
   return (
-    <PageLayout language="fr" hideHeader hideTrail>
+    <PageLayout language={language} hideHeader hideTrail>
       {/* The accent scope is not decoration here. `--accent` is declared twice
           under two incompatible meanings — shadcn's bare HSL triplet in
           index.css, a hex on the .afh-accent-* wrappers in color.css — and
@@ -55,7 +69,11 @@ export function PageLoadingScreen({ label }: PageLoadingScreenProps) {
           to nothing and the continent renders black. Ocre is the atlas's own
           ink, the same the eyebrow above it uses. */}
       <div data-testid="page-loading-band" className="afh-accent-ocre">
-        <DidYouKnowLoader fact={pickDidYouKnowFact()} label={label} />
+        <DidYouKnowLoader
+          language={language}
+          fact={pickDidYouKnowFact()}
+          label={localizedLabel}
+        />
       </div>
     </PageLayout>
   );

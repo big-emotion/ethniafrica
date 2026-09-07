@@ -2,12 +2,16 @@ import type { PeopleOriginData } from "@/lib/peopleDataTransformer";
 import type { ParagraphNoteData } from "@/components/people/peopleFicheNotes";
 import { ProseWithChip } from "./ProseWithChip";
 import type { OriginChips } from "./ProseWithChip";
+import { peopleCopy } from "@/lib/i18n/copy/people";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 interface PeopleOriginBlockProps {
   data: PeopleOriginData;
   chips?: OriginChips;
   /** One note callout per sourced field, keyed as `chips` is. */
   notes?: Partial<Record<string, ParagraphNoteData>>;
+  language?: Language;
 }
 
 // @req REQ-003
@@ -15,7 +19,9 @@ export function PeopleOriginBlock({
   data,
   chips,
   notes,
+  language = FALLBACK_LOCALE,
 }: PeopleOriginBlockProps) {
+  const copy = peopleCopy[language].originFields;
   const hasContent =
     data.ancientOrigins ||
     data.formationPeriod ||
@@ -31,9 +37,10 @@ export function PeopleOriginBlock({
     <dl className="afh-prose-fields space-y-[14px]">
       {data.ancientOrigins && (
         <div>
-          <dt className="people-section-label">Origines anciennes</dt>
+          <dt className="people-section-label">{copy.ancientOrigins}</dt>
           <dd className="afh-prose-def">
             <ProseWithChip
+              language={language}
               text={data.ancientOrigins}
               chip={chips?.ancientOrigins}
               note={notes?.ancientOrigins}
@@ -44,9 +51,10 @@ export function PeopleOriginBlock({
 
       {data.formationPeriod && (
         <div>
-          <dt className="people-section-label">Période de formation</dt>
+          <dt className="people-section-label">{copy.formationPeriod}</dt>
           <dd className="afh-prose-def">
             <ProseWithChip
+              language={language}
               text={data.formationPeriod}
               chip={chips?.formationPeriod}
               note={notes?.formationPeriod}
@@ -57,7 +65,7 @@ export function PeopleOriginBlock({
 
       {data.migrationRoutes.length > 0 && (
         <div>
-          <dt className="people-section-label">Routes migratoires</dt>
+          <dt className="people-section-label">{copy.migrationRoutes}</dt>
           <dd className="afh-prose-def">
             <ul className="space-y-[4px] mt-[4px]">
               {data.migrationRoutes.map((route, i) => (
@@ -73,7 +81,7 @@ export function PeopleOriginBlock({
 
       {data.historicalSettlementZones.length > 0 && (
         <div>
-          <dt className="people-section-label">Zones de peuplement</dt>
+          <dt className="people-section-label">{copy.settlementZones}</dt>
           <dd className="afh-prose-def">
             <div className="flex flex-wrap gap-[6px] mt-[6px]">
               {data.historicalSettlementZones.map((zone, i) => (
@@ -88,9 +96,10 @@ export function PeopleOriginBlock({
 
       {data.unificationsOrDivisions && (
         <div>
-          <dt className="people-section-label">Unifications &amp; divisions</dt>
+          <dt className="people-section-label">{copy.unifications}</dt>
           <dd className="afh-prose-def">
             <ProseWithChip
+              language={language}
               text={data.unificationsOrDivisions}
               chip={chips?.unificationsOrDivisions}
               note={notes?.unificationsOrDivisions}
@@ -101,9 +110,10 @@ export function PeopleOriginBlock({
 
       {data.externalInfluences && (
         <div>
-          <dt className="people-section-label">Influences extérieures</dt>
+          <dt className="people-section-label">{copy.externalInfluences}</dt>
           <dd className="afh-prose-def">
             <ProseWithChip
+              language={language}
               text={data.externalInfluences}
               chip={chips?.externalInfluences}
               note={notes?.externalInfluences}
@@ -114,9 +124,10 @@ export function PeopleOriginBlock({
 
       {data.majorHistoricalEvents && (
         <div>
-          <dt className="people-section-label">Événements majeurs</dt>
+          <dt className="people-section-label">{copy.majorEvents}</dt>
           <dd className="afh-prose-def">
             <ProseWithChip
+              language={language}
               text={data.majorHistoricalEvents}
               chip={chips?.majorHistoricalEvents}
               note={notes?.majorHistoricalEvents}

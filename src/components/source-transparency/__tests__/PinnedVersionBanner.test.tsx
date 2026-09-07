@@ -6,6 +6,7 @@ import { getPeopleRoute } from "@/lib/routing";
 
 const LIVE_URL = getPeopleRoute("fr", "yoruba");
 const OTHER_LIVE_URL = getPeopleRoute("fr", "bambara");
+const ENGLISH_LIVE_URL = getPeopleRoute("en", "yoruba");
 const storageKey = (liveUrl: string) =>
   `pinned-version-banner:collapsed:${liveUrl}`;
 
@@ -23,6 +24,7 @@ describe("PinnedVersionBanner", () => {
   it("renders the exact French copy, normalized version tag, and live link", () => {
     render(
       <PinnedVersionBanner
+        language="fr"
         pinnedAt="2025-09-21T18:30:00.000Z"
         versionTag="v34"
         liveUrl={LIVE_URL}
@@ -41,10 +43,35 @@ describe("PinnedVersionBanner", () => {
     ).toHaveAttribute("href", LIVE_URL);
   });
 
+  // @req REQ-140
+  // @req REQ-145
+  it("renders the banner controls and resolved-report note in English", () => {
+    render(
+      <PinnedVersionBanner
+        language="en"
+        pinnedAt="2025-09-21"
+        versionTag="v34"
+        liveUrl={ENGLISH_LIVE_URL}
+        resolvedFlagsCount={2}
+      />
+    );
+
+    expect(
+      screen.getByRole("region", { name: "pinned version indicator" })
+    ).toHaveTextContent("Pinned version dated 21 September 2025 (@v34)");
+    expect(screen.getByRole("region")).toHaveTextContent(
+      "Since this pinned version, 2 assertions have been corrected"
+    );
+    expect(
+      screen.getByRole("button", { name: "collapse pinned version indicator" })
+    ).toBeInTheDocument();
+  });
+
   // @req REQ-019
   it("does not duplicate the at-sign when versionTag is already normalized", () => {
     render(
       <PinnedVersionBanner
+        language="fr"
         pinnedAt="2025-09-21"
         versionTag="@v34"
         liveUrl={LIVE_URL}
@@ -61,6 +88,7 @@ describe("PinnedVersionBanner", () => {
     (pinnedAt) => {
       render(
         <PinnedVersionBanner
+          language="fr"
           pinnedAt={pinnedAt}
           versionTag="v34"
           liveUrl={LIVE_URL}
@@ -79,6 +107,7 @@ describe("PinnedVersionBanner", () => {
   it("uses the warm and calm design tokens", () => {
     render(
       <PinnedVersionBanner
+        language="fr"
         pinnedAt="2025-09-21"
         versionTag="v34"
         liveUrl={LIVE_URL}
@@ -96,6 +125,7 @@ describe("PinnedVersionBanner", () => {
   it("collapses to a compact version indicator while keeping the live link visible", () => {
     render(
       <PinnedVersionBanner
+        language="fr"
         pinnedAt="2025-09-21"
         versionTag="v34"
         liveUrl={LIVE_URL}
@@ -134,6 +164,7 @@ describe("PinnedVersionBanner", () => {
 
     render(
       <PinnedVersionBanner
+        language="fr"
         pinnedAt="2025-09-21"
         versionTag="v34"
         liveUrl={LIVE_URL}
@@ -156,6 +187,7 @@ describe("PinnedVersionBanner", () => {
     window.localStorage.setItem(storageKey(OTHER_LIVE_URL), "1");
     const { rerender } = render(
       <PinnedVersionBanner
+        language="fr"
         pinnedAt="2025-09-21"
         versionTag="v34"
         liveUrl={LIVE_URL}
@@ -170,6 +202,7 @@ describe("PinnedVersionBanner", () => {
 
     rerender(
       <PinnedVersionBanner
+        language="fr"
         pinnedAt="2025-09-21"
         versionTag="v35"
         liveUrl={OTHER_LIVE_URL}
@@ -198,6 +231,7 @@ describe("PinnedVersionBanner", () => {
     expect(() =>
       render(
         <PinnedVersionBanner
+          language="fr"
           pinnedAt="2025-09-21"
           versionTag="v34"
           liveUrl={LIVE_URL}
@@ -224,6 +258,7 @@ describe("PinnedVersionBanner", () => {
   ])("renders the resolved flag note for count %i", (count, expectedCopy) => {
     render(
       <PinnedVersionBanner
+        language="fr"
         pinnedAt="2025-09-21"
         versionTag="v34"
         liveUrl={LIVE_URL}
@@ -240,6 +275,7 @@ describe("PinnedVersionBanner", () => {
   it("does not render a resolved flag note for a non-positive count", () => {
     render(
       <PinnedVersionBanner
+        language="fr"
         pinnedAt="2025-09-21"
         versionTag="v34"
         liveUrl={LIVE_URL}

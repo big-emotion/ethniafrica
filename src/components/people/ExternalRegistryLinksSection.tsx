@@ -1,12 +1,14 @@
 import { chapterAnchorId } from "@/lib/ficheChapters";
 import { buildExternalRegistryLinks } from "@/lib/externalRegistryLinks";
 import type { ExternalIdentifiersSection } from "@/types/afrik";
+import { peopleCopy } from "@/lib/i18n/copy/people";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 /** The chapter this section is, in the fiche's reading rail. */
-const CHAPTER_TITLE = "Identifiants externes";
-
 export interface ExternalRegistryLinksSectionProps {
   identifiers?: ExternalIdentifiersSection | null;
+  language?: Language;
 }
 
 /**
@@ -19,15 +21,17 @@ export interface ExternalRegistryLinksSectionProps {
 // @req REQ-128
 export function ExternalRegistryLinksSection({
   identifiers,
+  language = FALLBACK_LOCALE,
 }: ExternalRegistryLinksSectionProps) {
+  const copy = peopleCopy[language].external;
   const links = buildExternalRegistryLinks(identifiers);
 
   if (links.length === 0) return null;
 
   return (
     <section
-      id={chapterAnchorId(CHAPTER_TITLE)}
-      data-fiche-section={CHAPTER_TITLE}
+      id={chapterAnchorId(copy.title)}
+      data-fiche-section={copy.title}
       aria-labelledby="external-registry-links-title"
       className="people-fade-in space-y-3 overflow-hidden rounded-[var(--country-radius-xl)] p-[18px] md:rounded-[20px] md:p-6 xl:rounded-[22px] xl:p-7"
       style={{
@@ -40,11 +44,10 @@ export function ExternalRegistryLinksSection({
           id="external-registry-links-title"
           className="text-afh-small font-bold text-[var(--country-text)]"
         >
-          {CHAPTER_TITLE}
+          {copy.title}
         </h2>
         <p className="mt-1 text-afh-small text-[var(--country-text-soft)]">
-          Les fiches correspondantes dans les registres externes référencés par
-          cette fiche.
+          {copy.description}
         </p>
       </div>
       <ul className="space-y-2">

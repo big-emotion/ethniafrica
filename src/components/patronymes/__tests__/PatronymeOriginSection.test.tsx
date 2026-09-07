@@ -13,12 +13,13 @@ const base: PublicPatronyme = {
   associatedPeoples: [],
   associatedCountries: [],
   bearers: [],
+  alliances: [],
 };
 
 describe("PatronymeOriginSection (REQ-133)", () => {
   // @req REQ-133
   it("keeps the chapter and marks it when the corpus documents no origin", () => {
-    render(<PatronymeOriginSection patronyme={base} />);
+    render(<PatronymeOriginSection language="fr" patronyme={base} />);
 
     // It used to return null here, which removed the chapter from the page
     // and from the rail — the rail reads its entries from the rendered DOM.
@@ -32,6 +33,7 @@ describe("PatronymeOriginSection (REQ-133)", () => {
   it("prints the editor's own reason where the dossier gives one", () => {
     render(
       <PatronymeOriginSection
+        language="fr"
         patronyme={{
           ...base,
           content: {
@@ -59,6 +61,7 @@ describe("PatronymeOriginSection (REQ-133)", () => {
   it("attributes an oral tradition to its griot rather than stating it flat", () => {
     render(
       <PatronymeOriginSection
+        language="fr"
         patronyme={{
           ...base,
           content: {
@@ -87,6 +90,7 @@ describe("PatronymeOriginSection (REQ-133)", () => {
   it("carries an oral tradition and a written chronicle side by side", () => {
     render(
       <PatronymeOriginSection
+        language="fr"
         patronyme={{
           ...base,
           content: {
@@ -110,6 +114,7 @@ describe("PatronymeOriginSection (REQ-133)", () => {
   it("omits the griot wording when no oral tradition is documented", () => {
     render(
       <PatronymeOriginSection
+        language="fr"
         patronyme={{
           ...base,
           content: {

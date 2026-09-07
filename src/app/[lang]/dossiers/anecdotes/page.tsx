@@ -8,24 +8,42 @@ import {
   findDidYouKnowFact,
 } from "@/lib/home/didYouKnowFacts";
 import { illustrationFor } from "@/lib/home/didYouKnowIllustrations";
+import {
+  localizeDidYouKnowFact,
+  localizeDidYouKnowIllustration,
+} from "@/lib/home/didYouKnowLocalization";
 import { drawAnecdoteImageSide } from "@/lib/home/didYouKnowPresentation";
+import { anecdotesCopy } from "@/lib/i18n/copy/anecdotes";
 import { getLocalizedRoute } from "@/lib/routing";
-
-const PAGE_TITLE = "Anecdotes";
-const PAGE_SUBTITLE =
-  "Des noms d'Afrique pris un par un : qui les a donnés, quand, et ce qu'ils recouvraient.";
-
-const BASE_PATH = getLocalizedRoute("fr", "anecdotes");
-
-// @req REQ-113
-export const metadata: Metadata = {
-  title: PAGE_TITLE,
-  description: PAGE_SUBTITLE,
-  alternates: { canonical: BASE_PATH },
-};
+import { surfaceHead } from "@/lib/seo/localeAlternates";
+import type { Language } from "@/types/shared";
 
 interface AnecdotesPageProps {
+  params: Promise<{ lang: string }>;
   searchParams: Promise<{ a?: string }>;
+}
+
+// @req REQ-113
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: Pick<AnecdotesPageProps, "params">): Promise<Metadata> {
+  const { lang } = await params;
+  const language = lang as Language;
+  const pageCopy = anecdotesCopy[language];
+  const copy = {
+    title: pageCopy.pageTitle,
+    description: pageCopy.pageSubtitle,
+  };
+  return {
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "anecdotes",
+      (locale) => getLocalizedRoute(locale, "anecdotes"),
+      copy
+    ),
+  };
 }
 
 /**
@@ -49,8 +67,11 @@ interface AnecdotesPageProps {
  */
 // @req REQ-113
 export default async function AnecdotesPage({
+  params,
   searchParams,
 }: AnecdotesPageProps) {
+  const { lang } = await params;
+  const language = lang as Language;
   const requested = (await searchParams).a ?? null;
   // A link naming a retired fact opens on a fresh draw rather than a 404:
   // the address still points at a page that has something to say.
@@ -66,9 +87,17 @@ export default async function AnecdotesPage({
   // Drawn here for the same reason the order is: a coin tossed in the client
   // would flip the band a frame after paint. The reader alternates from it.
   const openingImageSide = drawAnecdoteImageSide();
+  const copy = anecdotesCopy[language];
+  const localizedOpening = opening
+    ? localizeDidYouKnowFact(opening, language)
+    : undefined;
 
   return (
-    <PageLayout language="fr" title={PAGE_TITLE} subtitle={PAGE_SUBTITLE}>
+    <PageLayout
+      language={language}
+      title={copy.pageTitle}
+      subtitle={copy.pageSubtitle}
+    >
       <div className="anecdotes-page">
         {/* Not a count, and not reading instructions either. « 67 anecdotes »
             turns the page into an inventory to get through; « une à la fois,
@@ -76,24 +105,24 @@ export default async function AnecdotesPage({
             out from the button. The line states the claim every entry in the
             bank makes, and the only one true of all of them — an exonym, an
             endonym and a self-chosen name alike all had someone behind them. */}
-        <p className="anecdotes-count">
-          Chaque nom a été donné par quelqu&apos;un
-        </p>
+        <p className="anecdotes-count">{copy.pageKicker}</p>
 
-        {opening ? (
+        {localizedOpening && opening ? (
           <AnecdoteReader
-            language="fr"
+            language={language}
             deck={deck}
             openingCard={{
-              fact: opening,
-              illustration: illustrationFor(opening.id),
+              fact: localizedOpening,
+              illustration: localizeDidYouKnowIllustration(
+                opening.id,
+                illustrationFor(opening.id),
+                language
+              ),
             }}
             openingImageSide={openingImageSide}
           />
         ) : (
-          <p className="anecdote-empty">
-            Aucune anecdote n&apos;est publiée pour le moment.
-          </p>
+          <p className="anecdote-empty">{copy.empty}</p>
         )}
       </div>
 

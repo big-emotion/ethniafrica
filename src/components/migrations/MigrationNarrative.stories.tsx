@@ -61,19 +61,22 @@ const meta: Meta<typeof MigrationNarrative> = {
 export default meta;
 type Story = StoryObj<typeof MigrationNarrative>;
 
+// @req REQ-101
 export const FullNarrative: Story = {
   name: "Full narrative (multiple events)",
-  args: { events: [bantuPhase1, contestedEvent] },
+  args: { language: "fr", events: [bantuPhase1, contestedEvent] },
 };
 
+// @req REQ-101
 export const ContestedWithDebate: Story = {
   name: "Contested event with debate text",
-  args: { events: [contestedEvent] },
+  args: { language: "fr", events: [contestedEvent] },
 };
 
+// @req REQ-101
 export const EmptyState: Story = {
   name: "Empty state (no events)",
-  args: { events: [] },
+  args: { language: "fr", events: [] },
 };
 
 const Frame = ({
@@ -109,20 +112,22 @@ const Frame = ({
   </div>
 );
 
+// @req REQ-101
 export const Mobile430: Story = {
   name: "Breakpoint — Mobile (430px)",
   render: () => (
     <Frame width={430} label="Mobile">
-      <MigrationNarrative events={[bantuPhase1]} />
+      <MigrationNarrative language="fr" events={[bantuPhase1]} />
     </Frame>
   ),
 };
 
+// @req REQ-101
 export const Desktop800: Story = {
   name: "Breakpoint — Desktop (800px)",
   render: () => (
     <Frame width={800} label="Desktop (country max-width)">
-      <MigrationNarrative events={[bantuPhase1]} />
+      <MigrationNarrative language="fr" events={[bantuPhase1]} />
     </Frame>
   ),
 };

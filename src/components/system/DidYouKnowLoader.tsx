@@ -9,12 +9,11 @@ import {
   illustrationFor,
   illustrationSideFor,
 } from "@/lib/home/didYouKnowIllustrations";
-import {
-  DID_YOU_KNOW_ENTITY_ACCENT,
-  DID_YOU_KNOW_ENTITY_LABEL,
-  DID_YOU_KNOW_TIER_LABEL,
-} from "@/lib/home/didYouKnowPresentation";
+import { DID_YOU_KNOW_ENTITY_ACCENT } from "@/lib/home/didYouKnowPresentation";
 import { cn } from "@/lib/utils";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * How far apart two consecutive lines arrive.
@@ -32,6 +31,7 @@ const stepClass = (step: number) =>
   `afh-dykl-s${Math.min(step, MAX_STEPS - 1)}`;
 
 export interface DidYouKnowLoaderProps {
+  language?: Language;
   /**
    * What is being waited for, in the reader's words — "Chargement de la fiche
    * peuple", not "Chargement". This is the whole of what a screen reader is
@@ -77,10 +77,12 @@ export interface DidYouKnowLoaderProps {
 // @req REQ-104
 // @req REQ-113
 export function DidYouKnowLoader({
+  language = FALLBACK_LOCALE,
   label,
   fact,
   className,
 }: DidYouKnowLoaderProps) {
+  const copy = getTranslation(language).system;
   // Steps are handed out in reading order, so the sheet's stagger and the
   // order a reader's eye travels in cannot drift apart.
   let step = 0;
@@ -134,7 +136,7 @@ export function DidYouKnowLoader({
 
           <div className="afh-dykl-text">
             <p className={cn("afh-dykl-eyebrow", "afh-dykl-rise", nextStep())}>
-              Saviez-vous que
+              {copy.didYouKnow}
             </p>
 
             <p className={cn("afh-dykl-headline", "afh-dykl-rise", nextStep())}>
@@ -167,7 +169,7 @@ export function DidYouKnowLoader({
                   >
                     <span aria-hidden="true" className="afh-dykl-dot" />
                     <span className="afh-dykl-chip-kind">
-                      {DID_YOU_KNOW_ENTITY_LABEL[entity.kind]}
+                      {copy.didYouKnowEntity[entity.kind]}
                     </span>
                     {entity.label}
                   </li>
@@ -176,7 +178,7 @@ export function DidYouKnowLoader({
             )}
 
             <p className={cn("afh-dykl-tier", "afh-dykl-rise", nextStep())}>
-              {DID_YOU_KNOW_TIER_LABEL[fact.tier]}
+              {copy.sourceTier[fact.tier]}
             </p>
           </div>
         </div>

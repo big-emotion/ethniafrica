@@ -4,7 +4,9 @@
  * Data is processed in AFRIK hierarchy order:
  * language families → languages → peoples → people/language relations →
  * countries → people/country relations → persons → patronymes → migration
- * events (every normalized join is loaded only after its FK parents exist).
+ * events (every normalized join is loaded only after its FK parents exist),
+ * then the translation sidecars, last and smallest, once every entity they
+ * overlay has a row.
  */
 
 import { config } from "dotenv";
@@ -36,6 +38,11 @@ import {
   type PatronymeLoadReport,
 } from "@/lib/afrik/loaders/patronymeJsonLoader";
 import {
+  loadAllDossiers,
+  loadDossiers,
+  type DossierLoadReport,
+} from "@/lib/afrik/loaders/dossierJsonLoader";
+import {
   loadAllPersonDossiers,
   loadPersons,
 } from "@/lib/afrik/loaders/personJsonLoader";
@@ -47,6 +54,12 @@ import {
   loadAllMigrationFiles,
   loadMigrations,
 } from "@/lib/afrik/loaders/migrationJsonLoader";
+import {
+  emptyTranslationLoadReport,
+  loadAllTranslationSidecars,
+  loadTranslationSidecars,
+  type TranslationLoadReport,
+} from "@/lib/afrik/loaders/translationSidecarLoader";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { SUPABASE_BATCH_REQUEST_TIMEOUT_MS } from "@/lib/supabase/requestDeadline";
 import type { Country, LanguageFamily, People } from "@/types/afrik";
@@ -132,6 +145,8 @@ export interface MigrationReport {
   appellations: AppellationLoadReport;
   persons: MigrationSectionReport;
   patronymes: PatronymeLoadReport;
+  dossiers: DossierLoadReport;
+  translations: TranslationLoadReport;
   protectedDrift: {
     languageFamilies: ProtectedClassificationDrift[];
     peoples: ProtectedClassificationDrift[];
@@ -187,6 +202,7 @@ export function emptyMigrationReport(): MigrationReport {
     names: { total: 0, inserted: 0, errors: [] },
     appellations: emptyAppellationLoadReport(),
     persons: { total: 0, inserted: 0, errors: [] },
+    dossiers: { total: 0, inserted: 0, chapters: 0, errors: [] },
     patronymes: {
       total: 0,
       inserted: 0,
@@ -197,6 +213,7 @@ export function emptyMigrationReport(): MigrationReport {
       alliances: 0,
       errors: [],
     },
+    translations: emptyTranslationLoadReport(),
     protectedDrift: { languageFamilies: [], peoples: [] },
     corpusOrphans: {
       afrik_language_families: emptyOrphanReport(),
@@ -564,6 +581,7 @@ async function upsertCountries(
           // which is how the chapeau could have stayed in git forever, and
           // how the protocol name went missing for as long again (049).
           name_official: country.nameOfficial ?? null,
+          name_en: country.nameEn ?? null,
           summary: country.summary ?? null,
           etymology: country.etymology ?? null,
           name_origin_actor: country.nameOriginActor ?? null,
@@ -860,6 +878,9 @@ const EDITORIAL_STAGES = [
   "migrations",
   "names",
   "appellations",
+  // A sidecar the table refuses is one translation, not a broken corpus; a
+  // table that is absent altogether is a skip, and never an error here.
+  "translations",
   "persons",
 ] as const;
 
@@ -967,6 +988,14 @@ export async function migrateAfrikToDatabase(
   report.persons.total = personDossiers.length;
 
   const patronymeBatch = loadAllPatronymeDossiers();
+  const dossierBatch = loadAllDossiers();
+
+  // English only until the site publishes another locale; a third locale is
+  // one more call here.
+  const translationBatch = loadAllTranslationSidecars("en");
+  report.translations.total = translationBatch.rows.length;
+  report.translations.stale = translationBatch.stale;
+  report.translations.errors = [...translationBatch.errors];
 
   const sources = sourceSnapshot(languageFamilies, peoples, countries);
   report.verification.before = compareAfrikDrift(
@@ -1011,6 +1040,9 @@ export async function migrateAfrikToDatabase(
         patronymeIds: new Set(),
       },
     });
+    report.dossiers = await loadDossiers(supabase, dossierBatch, {
+      dryRun: true,
+    });
     logger.info("AFRIK synchronization preview completed", {
       target: syncTarget.environment,
       languageFamilies: report.languageFamilies.total,
@@ -1023,6 +1055,8 @@ export async function migrateAfrikToDatabase(
       migrations: report.migrations.total,
       persons: report.persons.total,
       patronymes: report.patronymes,
+      dossiers: report.dossiers,
+      translations: report.translations,
       protectedDrift: report.protectedDrift,
       corpusOrphans: report.corpusOrphans,
       drift: report.verification.before,
@@ -1065,6 +1099,7 @@ export async function migrateAfrikToDatabase(
   report.persons.errors = [...personsReport.errors, ...personsReport.dropped];
 
   report.patronymes = await loadPatronymes(supabase, patronymeBatch);
+  report.dossiers = await loadDossiers(supabase, dossierBatch);
 
   const migrationRecords = loadAllMigrationFiles();
   const migrationsReport = await loadMigrations(supabase, migrationRecords);
@@ -1094,6 +1129,18 @@ export async function migrateAfrikToDatabase(
     supabase,
     peopleRelationRecords
   );
+
+  // Last: every entity a sidecar overlays has its row by now, and a skip on
+  // an unmigrated project leaves the corpus itself fully loaded.
+  const translationsReport = await loadTranslationSidecars(
+    supabase,
+    translationBatch.rows
+  );
+  report.translations = {
+    ...translationsReport,
+    stale: translationBatch.stale,
+    errors: [...translationBatch.errors, ...translationsReport.errors],
+  };
 
   // After every upsert, so a fiche added on this very run is never mistaken
   // for a row the corpus dropped.
@@ -1159,6 +1206,8 @@ export async function migrateAfrikToDatabase(
       },
       persons: report.persons,
       patronymes: report.patronymes,
+      dossiers: report.dossiers,
+      translations: report.translations,
       protectedDrift: report.protectedDrift,
       corpusOrphans: report.corpusOrphans,
       driftBefore: report.verification.before,

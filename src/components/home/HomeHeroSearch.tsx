@@ -20,10 +20,12 @@ import { HomeHeroSeeds } from "./HomeHeroSeeds";
 import type { SeedWordsByKind } from "@/lib/home/seedWords";
 import { search as searchCorpus, searchWithLeads } from "@/lib/afrikLoader";
 import {
-  SEARCH_LABEL,
-  SEARCH_PLACEHOLDER,
-  SEARCH_RESULT_GROUPS,
+  getSearchLabel,
+  getSearchPlaceholder,
+  getSearchResultGroups,
 } from "@/lib/search/searchVocabulary";
+import { getLocalizedSearchResultName } from "@/lib/search/localizedResult";
+import { formatNumber } from "@/lib/languageTag";
 import {
   getCountryRoute,
   getFamilyRoute,
@@ -95,17 +97,6 @@ const PENDING_MIN_MS = 400;
 /** Enough to prove the kind exists without turning the band into a listing. */
 const MAX_PER_GROUP = 3;
 
-// Hoisted, not written inline as a default parameter: a fresh closure on every
-// render is a fresh dependency for the effect below, which resets state on its
-// way through and so re-renders — one unstable identity is an infinite loop.
-const fetchFromCorpus = (query: string) => searchCorpus(query);
-
-// REQ-125: a second, independent request rather than a `fetchResults` return
-// shape change — every existing caller and test injects `fetchResults` as
-// `(query) => Promise<SearchResult[]>`, and that contract stays untouched.
-const fetchLeadsFromCorpus = (query: string) =>
-  searchWithLeads(query).then((r) => r.leads);
-
 /**
  * A table rather than a chain of ifs, and typed `Record<SearchEntityType, …>`
  * so a seventh kind cannot be added to the union without a route for it.
@@ -133,7 +124,7 @@ function ficheHref(result: SearchResult, language: Language): string {
 }
 
 export interface HomeHeroSearchProps {
-  language?: Language;
+  language: Language;
   /** Injected by tests; defaults to the corpus search every other surface uses. */
   fetchResults?: (query: string) => Promise<SearchResult[]>;
   /** Injected by tests; defaults to the corpus's near-miss leads (REQ-125). */
@@ -144,12 +135,25 @@ export interface HomeHeroSearchProps {
 
 // @req REQ-002
 export function HomeHeroSearch({
-  language = "fr",
-  fetchResults = fetchFromCorpus,
-  fetchLeads = fetchLeadsFromCorpus,
+  language,
+  fetchResults,
+  fetchLeads,
   seedWords,
-}: HomeHeroSearchProps = {}) {
+}: HomeHeroSearchProps) {
   const router = useRouter();
+  const fetchResultsFromCorpus = useCallback(
+    (query: string) => searchCorpus(query, { lang: language }),
+    [language]
+  );
+  const fetchLeadsFromCorpus = useCallback(
+    (query: string) =>
+      searchWithLeads(query, { lang: language }).then(
+        (response) => response.leads
+      ),
+    [language]
+  );
+  const resolvedFetchResults = fetchResults ?? fetchResultsFromCorpus;
+  const resolvedFetchLeads = fetchLeads ?? fetchLeadsFromCorpus;
   const [leads, setLeads] = useState<SearchLead[]>([]);
   const [showPending, setShowPending] = useState(false);
   // The seed reels stop at the first sign of the reader. Hovering or tabbing
@@ -168,10 +172,10 @@ export function HomeHeroSearch({
    */
   const capPerGroup = useCallback(
     (found: SearchResult[]) =>
-      SEARCH_RESULT_GROUPS.flatMap(({ type }) =>
+      getSearchResultGroups(language).flatMap(({ type }) =>
         found.filter((result) => result.type === type).slice(0, MAX_PER_GROUP)
       ),
-    []
+    [language]
   );
 
   /**
@@ -186,11 +190,11 @@ export function HomeHeroSearch({
       setLeads([]);
       return;
     }
-    fetchLeads(forQuery).then(setLeads);
+    resolvedFetchLeads(forQuery).then(setLeads);
   };
 
   const suggest = useAutocomplete<SearchResult>({
-    fetchSuggestions: fetchResults,
+    fetchSuggestions: resolvedFetchResults,
     onSelect: (result) => router.push(ficheHref(result, language)),
     onResolved: handleResolved,
     minLength: MIN_QUERY_LENGTH,
@@ -228,13 +232,15 @@ export function HomeHeroSearch({
    */
   const groups = useMemo(() => {
     let cursor = 0;
-    return SEARCH_RESULT_GROUPS.map(({ type, heading }) => {
-      const options = flat
-        .filter((result) => result.type === type)
-        .map((result) => ({ result, index: cursor++ }));
-      return { type, heading, options };
-    }).filter((group) => group.options.length > 0);
-  }, [flat]);
+    return getSearchResultGroups(language)
+      .map(({ type, heading }) => {
+        const options = flat
+          .filter((result) => result.type === type)
+          .map((result) => ({ result, index: cursor++ }));
+        return { type, heading, options };
+      })
+      .filter((group) => group.options.length > 0);
+  }, [flat, language]);
 
   const open = suggest.isAnswered;
   const showListbox = suggest.isOpen;
@@ -301,7 +307,7 @@ export function HomeHeroSearch({
           onSubmit={dismissPanel}
         >
           <label htmlFor={inputId} className="home-hero-search-label">
-            {SEARCH_LABEL}
+            {getSearchLabel(language)}
           </label>
 
           <div className="home-hero-search-field">
@@ -325,7 +331,7 @@ export function HomeHeroSearch({
               name="q"
               aria-busy={pending}
               {...suggest.comboboxProps}
-              placeholder={SEARCH_PLACEHOLDER}
+              placeholder={getSearchPlaceholder(language)}
               type="search"
               inputMode="search"
               enterKeyHint="search"
@@ -346,7 +352,9 @@ export function HomeHeroSearch({
             {query && (
               <button
                 type="button"
-                aria-label="Effacer la recherche"
+                aria-label={
+                  language === "en" ? "Clear search" : "Effacer la recherche"
+                }
                 className="home-hero-search-clear"
                 onClick={clearQuery}
               >
@@ -360,7 +368,7 @@ export function HomeHeroSearch({
             variant="accent"
             className="home-hero-search-submit"
           >
-            Rechercher
+            {language === "en" ? "Search" : "Rechercher"}
           </Button>
         </form>
 
@@ -395,7 +403,7 @@ export function HomeHeroSearch({
                     onMouseEnter={() => suggest.highlight(index)}
                     onClick={dismissPanel}
                   >
-                    {result.name}
+                    {getLocalizedSearchResultName(result, language)}
                   </Link>
                 ))}
               </div>
@@ -406,14 +414,17 @@ export function HomeHeroSearch({
         {open && flat.length === 0 && (
           <div className="home-hero-search-panel home-hero-search-empty">
             <p data-testid="state-copy">
-              Aucune fiche pour «&nbsp;{trimmed}&nbsp;».
+              {language === "en" ? "No record for" : "Aucune fiche pour"}{" "}
+              «&nbsp;{trimmed}&nbsp;».
             </p>
             <NoResultsLeads leads={leads} language={language} />
             <Link
               href={getLocalizedRoute(language, "families")}
               onClick={dismissPanel}
             >
-              {SEARCH_EMPTY_LINK_LABEL}
+              {language === "en"
+                ? "Browse language families"
+                : SEARCH_EMPTY_LINK_LABEL}
             </Link>
           </div>
         )}
@@ -430,11 +441,19 @@ export function HomeHeroSearch({
           and what came back. */}
       <div role="status" aria-live="polite" className="sr-only">
         {showPending
-          ? "Recherche en cours…"
+          ? language === "en"
+            ? "Searching…"
+            : "Recherche en cours…"
           : open
             ? flat.length > 0
-              ? `${flat.length} suggestion${flat.length > 1 ? "s" : ""}`
-              : "Aucune suggestion"
+              ? `${formatNumber(language, flat.length)} ${
+                  language === "en"
+                    ? `suggestion${flat.length > 1 ? "s" : ""}`
+                    : `suggestion${flat.length > 1 ? "s" : ""}`
+                }`
+              : language === "en"
+                ? "No suggestions"
+                : "Aucune suggestion"
             : ""}
       </div>
 

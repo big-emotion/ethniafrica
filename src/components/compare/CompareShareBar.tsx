@@ -2,14 +2,22 @@
 
 import * as React from "react";
 import { Button } from "@/components/ui/button";
+import { compareCopy } from "@/lib/i18n/copy/compare";
+import type { Language } from "@/types/shared";
 
 export interface CompareShareBarProps {
   canonicalUrl: string;
   title: string;
+  language?: Language;
 }
 
 // @req REQ-100
-export function CompareShareBar({ canonicalUrl, title }: CompareShareBarProps) {
+export function CompareShareBar({
+  canonicalUrl,
+  title,
+  language = "fr",
+}: CompareShareBarProps) {
+  const copy = compareCopy[language];
   const fieldId = React.useId();
   const [announcement, setAnnouncement] = React.useState("");
   const [showManualField, setShowManualField] = React.useState(false);
@@ -24,10 +32,10 @@ export function CompareShareBar({ canonicalUrl, title }: CompareShareBarProps) {
     try {
       await navigator.clipboard.writeText(canonicalUrl);
       setShowManualField(false);
-      setAnnouncement("copié");
+      setAnnouncement(copy.copied);
     } catch {
       setShowManualField(true);
-      setAnnouncement("sélectionner manuellement");
+      setAnnouncement(copy.selectManually);
     }
   }
 
@@ -47,7 +55,7 @@ export function CompareShareBar({ canonicalUrl, title }: CompareShareBarProps) {
             onClick={handleShare}
             className="min-h-11 min-w-11"
           >
-            Partager
+            {copy.share}
           </Button>
         ) : null}
         <Button
@@ -56,7 +64,7 @@ export function CompareShareBar({ canonicalUrl, title }: CompareShareBarProps) {
           onClick={handleCopy}
           className="min-h-11 min-w-11"
         >
-          Copier le lien
+          {copy.copyLink}
         </Button>
       </div>
 
@@ -74,7 +82,7 @@ export function CompareShareBar({ canonicalUrl, title }: CompareShareBarProps) {
             htmlFor={fieldId}
             className="text-afh-caption text-afh-text-soft"
           >
-            sélectionner manuellement
+            {copy.selectManually}
           </label>
           <input
             ref={fieldRef}
@@ -82,7 +90,7 @@ export function CompareShareBar({ canonicalUrl, title }: CompareShareBarProps) {
             type="text"
             readOnly
             value={canonicalUrl}
-            aria-label="sélectionner manuellement"
+            aria-label={copy.selectManually}
             className="min-h-11 w-full rounded-afh-md border border-afh-border bg-afh-bg px-afh-lg text-afh-small text-afh-text outline-none focus-visible:ring-2 focus-visible:ring-afh-terracotta focus-visible:ring-offset-2"
             onFocus={(event) => event.currentTarget.select()}
           />

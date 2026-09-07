@@ -1,6 +1,7 @@
 {
   "id": "SDN",
   "nameFr": "Soudan",
+  "nameEn": "Sudan",
   "nameOfficial": "République du Soudan (Republic of the Sudan, جمهورية السودان)",
   "summary": "Le Soudan porte un nom donné de l'extérieur : « Bilād as-Sūdān », le pays des Noirs, chez les géographes arabes. Royaumes de Koush et de Méroé, royaumes chrétiens nubiens, sultanat de Sennar : son histoire est celle de la vallée du Nil en amont de l'Égypte. Arabes soudanais, Beja, Nubiens et Four y composent la population.",
   "etymology": "Le nom \"Soudan\" provient de l'arabe \"Bilād as-Sūdān\" (بلاد السودان), signifiant \"pays des Noirs\". Ce terme était historiquement utilisé par les géographes arabes pour désigner la région subsaharienne habitée par des populations noires africaines, par opposition au \"Bilād al-Bayḍā\" (pays des Blancs) qui désignait l'Afrique du Nord. Le nom \"Soudan\" a été officialisé par les colonisateurs britanniques et égyptiens au XIXe siècle.",
@@ -21,6 +22,12 @@
       {
         "name": "Royaume de Koush",
         "period": "VIIIe siècle av. J.-C. - IVe siècle apr. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -800,
+          "endYear": 400,
+          "precision": "century"
+        },
         "dominantPeoples": ["Nubiens"],
         "politicalCenters": ["Napata", "Méroé"],
         "historicalRole": "Royaume nubien puissant, rival de l'Égypte, développement de la civilisation méroïtique, contacts avec les civilisations méditerranéennes."
@@ -28,6 +35,12 @@
       {
         "name": "Royaume de Méroé",
         "period": "IVe siècle av. J.-C. - IVe siècle apr. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -400,
+          "endYear": 400,
+          "precision": "century"
+        },
         "dominantPeoples": ["Nubiens"],
         "politicalCenters": ["Méroé"],
         "historicalRole": "Royaume nubien puissant, développement de la civilisation méroïtique, contacts avec les civilisations méditerranéennes, déclin au IVe siècle."
@@ -35,6 +48,12 @@
       {
         "name": "Royaumes chrétiens nubiens",
         "period": "VIe siècle - XVe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 501,
+          "endYear": 1500,
+          "precision": "century"
+        },
         "dominantPeoples": ["Nubiens"],
         "politicalCenters": [
           "Dongola (Makurie)",
@@ -46,6 +65,12 @@
       {
         "name": "Sultanat de Sennar",
         "period": "XVIe siècle - 1821",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1501,
+          "endYear": 1821,
+          "precision": "century"
+        },
         "dominantPeoples": ["Arabes soudanais", "Nubiens", "Beja"],
         "politicalCenters": ["Sennar"],
         "historicalRole": "Sultanat islamique puissant, contrôle du commerce dans la vallée du Nil, résistance aux Ottomans, conquête égyptienne (1821)."
@@ -53,6 +78,12 @@
       {
         "name": "Sultanat de Darfour",
         "period": "XVIIe siècle - 1916",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1601,
+          "endYear": 1916,
+          "precision": "century"
+        },
         "dominantPeoples": ["Four", "Arabes soudanais", "autres groupes"],
         "politicalCenters": ["El Fasher"],
         "historicalRole": "Sultanat islamique, contrôle du commerce transsaharien, résistance à la colonisation britannique, conquête britannique (1916)."
@@ -60,6 +91,12 @@
       {
         "name": "Condominium anglo-égyptien",
         "period": "1899 - 1956",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1899,
+          "endYear": 1956,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Britanniques",
           "Égyptiens",
@@ -136,7 +173,7 @@
         "name": "Autres groupes",
         "selfAppellation": "Variées selon les groupes",
         "exonyms": ["Variées selon les groupes"],
-        "peopleId": "PPL_AUTRES_GROUPES",
+        "peopleId": null,
         "mainRegion": "Toutes les régions du Soudan",
         "languages": ["Langues diverses", "arabe soudanais"],
         "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
@@ -271,7 +308,7 @@
           "name": "Autres groupes",
           "population": 8250000,
           "percentageInCountry": 16.5,
-          "peopleId": "PPL_AUTRES_GROUPES",
+          "peopleId": null,
           "region": "Toutes les régions du Soudan"
         }
       ]

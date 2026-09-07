@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { CANONICAL_DOMAIN } from "@/lib/brand";
+import { getLocalePublicationMode } from "@/lib/locale";
 
 /**
  * `robots.txt`, generated rather than static.
@@ -18,7 +19,13 @@ import { CANONICAL_DOMAIN } from "@/lib/brand";
  */
 
 // @req REQ-110
+// @req REQ-141
 export default function robots(): MetadataRoute.Robots {
+  const localeMode = getLocalePublicationMode();
+  const disallow = ["/fr/admin/"];
+  if (localeMode === "fr-only") disallow.push("/en/");
+  else disallow.push("/en/admin/");
+
   return {
     rules: [
       {
@@ -28,7 +35,7 @@ export default function robots(): MetadataRoute.Robots {
         // listed beside them; they were deleted rather than hidden, which is
         // the stronger guarantee — a crawler can ignore a disallow line, it
         // cannot index a route that is gone.
-        disallow: ["/fr/admin/"],
+        disallow,
       },
     ],
     sitemap: `https://${CANONICAL_DOMAIN}/sitemap.xml`,

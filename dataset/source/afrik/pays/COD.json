@@ -1,93 +1,129 @@
 {
   "id": "COD",
   "nameFr": "République démocratique du Congo",
+  "nameEn": "Democratic Republic of the Congo",
   "nameOfficial": "République démocratique du Congo (RDC)",
-  "summary": "La République démocratique du Congo porte le nom du royaume Kongo, que les Portugais ont transcrit puis appliqué au fleuve et au pays. Elle fut successivement propriété privée de Léopold II, Congo belge, puis Zaïre. Les empires Luba et Lunda, et quatre langues nationales — lingala, swahili, tshiluba, kikongo — en font l'un des espaces culturels les plus denses du continent.",
-  "etymology": "Le nom \"Congo\" vient du royaume Kongo (Kongo en kikongo), un royaume précolonial puissant. \"Congo\" est la forme portugaise de \"Kongo\". Le fleuve Congo a été nommé d'après ce royaume. \"Démocratique\" a été ajouté en 1964 pour se distinguer de la République du Congo (Brazzaville).",
-  "nameOriginActor": "Le nom vient du royaume Kongo historique. Les Portugais ont popularisé le terme \"Congo\" au XVe siècle. Le nom \"Zaïre\" (1971-1997) venait du fleuve Zaïre (nom portugais du fleuve Congo, dérivé du kikongo \"nzadi\" signifiant \"fleuve\").",
+  "summary": "La République démocratique du Congo tire son nom du fleuve Congo, dont l'appellation Congo/Kongo est historiquement liée au royaume Kongo. Son territoire a connu plusieurs États précoloniaux, la domination léopoldienne puis belge, le nom de Zaïre entre 1971 et 1997, et une grande diversité de peuples et de langues.",
+  "etymology": "La République démocratique du Congo tire son nom du fleuve Congo. Le nom Congo/Kongo du fleuve est historiquement lié au royaume Kongo. L'origine lexicale plus ancienne de Kongo demeure incertaine et ne peut être réduite à une signification unique.",
+  "nameOriginActor": "Le nom de l'État a été repris de celui du fleuve Congo, lui-même historiquement associé au royaume Kongo. Les sources disponibles ne permettent pas d'attribuer avec certitude l'origine lexicale de Kongo à un acteur ou à une traduction unique.",
   "content": {
     "historicalNames": {
       "formerNames": [
         "État indépendant du Congo (1885-1908)",
         "Congo belge (1908-1960)",
-        "Zaïre (1971-1997)"
+        "République du Congo (Léopoldville) (30 juin 1960-31 juillet 1964)",
+        "République du Zaïre (27 octobre 1971-16 mai 1997)"
       ],
-      "antiquity": "Le territoire actuel de la RDC était peuplé de nombreuses entités politiques indépendantes sans nom unifié. Les royaumes précoloniaux (Luba, Lunda, Kongo, Mangbetu, Zande) dominaient différentes régions.",
-      "middleAges": "Développement des grands royaumes et empires (Royaume Kongo, Empire Luba, Empire Lunda) sans nom unifié pour l'ensemble du territoire.",
-      "precolonial": "Mosaïque de royaumes et chefferies indépendants : Empire Luba, Empire Lunda, Royaume Kongo, royaumes Mangbetu, sultanats Zande, chefferies Mongo, etc. Aucun nom unifié pour l'ensemble du territoire.",
-      "colonization": "1885-1908 : \"État indépendant du Congo\" (propriété privée du roi Léopold II de Belgique). 1908-1960 : \"Congo belge\" (colonie belge). Le nom \"Congo\" est imposé par les colonisateurs européens.",
-      "contemporary": "1960-1964 : \"République du Congo\" (Léopoldville, pour se distinguer de la République du Congo - Brazzaville). 1964-1971 : \"République démocratique du Congo\". 1971-1997 : \"Zaïre\" (sous Mobutu, nom du fleuve). Depuis 1997 : \"République démocratique du Congo\" (RDC)."
+      "antiquity": "Avant la création d'un territoire colonial unifié, les espaces compris dans la RDC actuelle ne portaient pas un nom politique commun. La dépression de l'Upemba, dans le sud du pays actuel, documente une séquence archéologique régionale de plus de deux millénaires ; elle ne constitue pas un récit d'origine pour l'ensemble du territoire.",
+      "middleAges": "Entre environ 1350 et 1600, plusieurs formations politiques se développent dans des régions aujourd'hui réparties entre plusieurs États. Le royaume Kongo est transfrontalier au regard des frontières actuelles et sa capitale historique, Mbanza Kongo, se trouve dans l'Angola actuel.",
+      "precolonial": "Du XVIIe au XIXe siècle, les espaces de la RDC actuelle recoupent notamment les sphères politiques luba et lunda, le royaume kuba, l'État yeke de Msiri, des chefferies chokwe et plusieurs royaumes zande. Ces formations diffèrent par leur organisation et dépassent parfois les frontières contemporaines ; elles ne formaient pas un État congolais unifié.",
+      "colonization": "1885-1908 : \"État indépendant du Congo\", régime colonial placé sous l'autorité personnelle de Léopold II. 1908-1960 : \"Congo belge\", colonie administrée par la Belgique.",
+      "contemporary": "30 juin 1960-31 juillet 1964 : \"République du Congo\", dite Congo-Léopoldville. 1er août 1964-26 octobre 1971 : \"République démocratique du Congo\". 27 octobre 1971-16 mai 1997 : \"République du Zaïre\". Depuis le 17 mai 1997 : \"République démocratique du Congo\"."
     },
     "kingdoms": [
       {
         "name": "Royaume Kongo",
-        "period": "XIVe - XIXe siècles",
-        "dominantPeoples": ["Kongo (Bakongo)"],
+        "period": "Fondé vers 1350-1400 ; fragmentation du royaume centralisé aux XVIIe-XVIIIe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1350,
+          "endYear": 1800,
+          "precision": "approximate",
+          "datingNote": "Les bornes résument la fondation estimée puis la fragmentation du royaume centralisé sans effacer les États successeurs."
+        },
+        "dominantPeoples": ["Kongo"],
+        "politicalCenters": ["Mbanza Kongo (dans l'Angola actuel)"],
+        "historicalRole": "Royaume transfrontalier dont l'espace recoupait l'Angola, la République du Congo et l'ouest de la RDC actuels. Sa capitale ne se trouvait pas dans la RDC actuelle."
+      },
+      {
+        "name": "État luba",
+        "period": "Fin du XVIe ou XVIIe siècle - milieu ou fin du XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1550,
+          "endYear": 1890,
+          "precision": "approximate",
+          "datingNote": "Les sources situent la formation entre la fin du XVIe et le XVIIe siècle et son terme entre le milieu et la fin du XIXe siècle."
+        },
+        "dominantPeoples": ["Luba et communautés intégrées à l'État luba"],
         "politicalCenters": [
-          "Mbanza Kongo (capitale historique)",
-          "Kongo Central"
+          "Dépression de l'Upemba et vallée du Lualaba, dans le sud de la RDC actuelle"
         ],
-        "historicalRole": "Royaume puissant qui a établi des relations avec les Portugais dès le XVe siècle. Influence majeure sur la région ouest de la RDC."
+        "historicalRole": "État multiethnique et sphère d'influence du sud et du centre-sud de la RDC actuelle. La séquence archéologique régionale de l'Upemba reste distincte des récits dynastiques postérieurs."
       },
       {
-        "name": "Empire Luba",
-        "period": "XVIe - XIXe siècles",
-        "dominantPeoples": ["Luba (Baluba)"],
-        "politicalCenters": ["Kasaï", "Katanga (Haut-Lomami", "Lualaba)"],
-        "historicalRole": "Grand empire bantou du centre-sud avec une forte tradition politique et artistique. Influence majeure sur la région du Kasaï et du Katanga."
+        "name": "État lunda",
+        "period": "Vers 1600 - milieu ou fin du XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1600,
+          "endYear": 1890,
+          "precision": "approximate",
+          "datingNote": "Les bornes encadrent la formation et le déclin d'un réseau politique dont les contours ont varié."
+        },
+        "dominantPeoples": ["Lunda"],
+        "politicalCenters": ["Sud de la RDC actuelle"],
+        "historicalRole": "État et réseau politique transfrontaliers dont l'influence recoupait le sud de la RDC ainsi que des régions des Angola et Zambie actuels. Ses États clients et successeurs ne sont pas confondus avec une seule entité."
       },
       {
-        "name": "Empire Lunda",
-        "period": "XVIIe - XIXe siècles",
-        "dominantPeoples": ["Lunda", "Tshokwe"],
-        "politicalCenters": ["Katanga", "frontières angolaises"],
-        "historicalRole": "Empire transfrontalier puissant réputé pour son art et son organisation politique. Influence sur le sud-est de la RDC."
+        "name": "Royaume kuba",
+        "period": "Vers 1625 - fin du XIXe siècle dans la chronologie examinée",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1625,
+          "endYear": 1890,
+          "precision": "approximate",
+          "datingNote": "La chronologie examinée documente la formation autour de 1625 et un apogée économique vers 1870-1890, sans fixer ici la fin de toute continuité institutionnelle."
+        },
+        "dominantPeoples": ["Kuba et communautés du royaume kuba"],
+        "politicalCenters": [
+          "Région du Kasaï, dans le centre-sud de la RDC actuelle"
+        ],
+        "historicalRole": "Royaume multiethnique directement lié à la région du Kasaï. La présente borne décrit la chronologie sourcée de cette première vague et non la disparition de toute institution kuba."
       },
       {
-        "name": "Chefferies Mongo",
-        "period": "Précolonial - présent",
-        "dominantPeoples": ["Mongo (Nkundo", "Ntomba", "Ekonda)"],
-        "politicalCenters": ["Cuvette centrale (Équateur", "Tshuapa)"],
-        "historicalRole": "Un des plus grands groupes forestiers bantous, organisés en chefferies dans la cuvette équatoriale."
+        "name": "État yeke ou garanganze sous Msiri",
+        "period": "Vers 1850-1891",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1850,
+          "endYear": 1891,
+          "precision": "approximate",
+          "datingNote": "La date initiale est approximative ; 1891 correspond à la mort de Msiri et à l'incorporation violente de son État dans l'État indépendant du Congo."
+        },
+        "dominantPeoples": [
+          "Yeke et populations intégrées au pouvoir de Msiri"
+        ],
+        "politicalCenters": ["Bunkeya, dans le Katanga actuel"],
+        "historicalRole": "État de conquête hétérogène du XIXe siècle, centré à Bunkeya et associé au pouvoir de Msiri entre le haut Lualaba et la Luapula."
       },
       {
-        "name": "Royaumes Mangbetu",
-        "period": "XVIIIe - XIXe siècles",
-        "dominantPeoples": ["Mangbetu"],
-        "politicalCenters": ["Nord-est (Haut-Uele)"],
-        "historicalRole": "Royaumes réputés pour leur art et leur organisation politique dans le nord-est."
+        "name": "Chefferies chokwe",
+        "period": "Vers 1830-1900",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1830,
+          "endYear": 1900,
+          "precision": "approximate",
+          "datingNote": "Les bornes décrivent l'expansion de plusieurs chefferies et réseaux commerciaux, non celle d'un empire chokwe unifié."
+        },
+        "dominantPeoples": ["Chokwe"],
+        "politicalCenters": [],
+        "historicalRole": "Plusieurs chefferies et réseaux commerciaux se sont étendus dans les savanes de l'Angola actuel et du sud de la RDC actuelle ; ils ne sont pas présentés comme un empire unique."
       },
       {
-        "name": "Sultanats Zande",
-        "period": "XVIIIe - XIXe siècles",
+        "name": "Royaumes zande",
+        "period": "Milieu du XVIIIe - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1750,
+          "endYear": 1900,
+          "precision": "approximate",
+          "datingNote": "Les bornes encadrent plusieurs royaumes reliés mais largement autonomes, et non un État zande unifié."
+        },
         "dominantPeoples": ["Zande"],
-        "politicalCenters": ["Nord-est (Haut-Uele", "Bas-Uele)"],
-        "historicalRole": "Sultanats puissants dans le nord-est, organisés en entités politiques structurées."
-      },
-      {
-        "name": "État indépendant du Congo",
-        "period": "1885 - 1908",
-        "dominantPeoples": [
-          "Tous les peuples congolais sous domination de Léopold II"
-        ],
-        "politicalCenters": ["Boma (capitale coloniale)"],
-        "historicalRole": "Propriété privée du roi Léopold II, marquée par une exploitation extrême (caoutchouc, ivoire) et des atrocités massives."
-      },
-      {
-        "name": "Congo belge",
-        "period": "1908 - 1960",
-        "dominantPeoples": [
-          "Tous les peuples congolais sous administration coloniale belge"
-        ],
-        "politicalCenters": ["Léopoldville (Kinshasa)"],
-        "historicalRole": "Colonie belge avec exploitation économique intensive. Résistance congolaise et mouvements nationalistes."
-      },
-      {
-        "name": "République démocratique du Congo",
-        "period": "1960 - présent",
-        "dominantPeoples": ["Tous les peuples congolais"],
-        "politicalCenters": ["Kinshasa (capitale)"],
-        "historicalRole": "Indépendance en 1960. Histoire politique mouvementée : crise du Katanga, régime Mobutu (Zaïre), guerres civiles, transition démocratique."
+        "politicalCenters": [],
+        "historicalRole": "Plusieurs royaumes zande reliés, gouvernés par des souverains avongara, occupaient des espaces aujourd'hui répartis entre le nord-est de la RDC, la République centrafricaine et le Soudan du Sud."
       }
     ],
     "majorPeoples": [
@@ -219,45 +255,21 @@
       }
     ],
     "culture": {
-      "culturalTraditions": "Art luba (sculptures, masques), art lunda et tshokwe (sculptures en bois), musique traditionnelle (rumba congolaise), danse traditionnelle, artisanat (vannerie, poterie, tissage), architecture traditionnelle",
-      "dominantReligions": "Christianisme (catholique majoritaire, protestant), croyances traditionnelles (syncrétisme), islam (minorité, surtout dans l'est)",
-      "lifestyles": "Vie principalement rurale, agriculture (manioc, maïs, riz, arachides), élevage (bovins, caprins), pêche (fleuves et lacs), exploitation minière (cuivre, cobalt, diamants, or), commerce",
-      "socialOrganization": "Système de chefferies traditionnelles, structure clanique (patrilinéaire ou matrilinéaire selon les groupes), organisation en familles étendues et lignages, importance des ancêtres, système de conseils d'anciens",
-      "regionalRelations": "Relations historiques avec les peuples d'Angola, de Zambie, du Congo, de la RCA, du Rwanda, du Burundi, de l'Ouganda. Diaspora importante en Belgique, France, et dans les pays occidentaux."
+      "culturalTraditions": "Les arts de cour luba et lunda se sont développés dans des contextes politiques et historiques propres aux savanes du sud de l'Afrique centrale. Un objet de prestige associé à l'autorité fournit un exemple documenté de l'art de cour chokwe. Inscrite par l'UNESCO en 2021, la rumba congolaise est une pratique urbaine partagée avec la République du Congo. Ces exemples situés ne résument pas les traditions de toutes les communautés de la RDC.",
+      "dominantReligions": "Dans l'enquête démographique et de santé de 2013-2014, menée auprès de femmes et hommes de 15 à 49 ans, les affiliations chrétiennes prédominaient parmi les personnes interrogées, réparties entre plusieurs catégories catholiques, protestantes, kimbanguistes, salutistes et autres chrétiennes. Des réponses musulmanes, animistes, sans religion et autres étaient également recensées. Cet échantillon ne constitue pas un recensement religieux de toute la population.",
+      "lifestyles": "Les moyens de subsistance agricoles et les conditions de sécurité alimentaire varient fortement selon les régions et sont affectés par les conflits, les déplacements, les marchés et les chocs climatiques. Le secteur extractif occupe une place majeure dans l'économie nationale, mais cet agrégat ne décrit pas à lui seul les moyens de subsistance des ménages.",
+      "socialOrganization": null,
+      "regionalRelations": null
     },
     "historicalFacts": {
-      "ancientPeriods": "Peuplement du territoire par des migrations bantoues depuis le premier millénaire. Développement de royaumes et empires puissants (Kongo, Luba, Lunda) avec des systèmes politiques sophistiqués.",
-      "middleAges": "Apogée des royaumes précoloniaux (XIVe-XIXe siècles). Royaume Kongo établit des relations avec les Portugais dès le XVe siècle. Empires Luba et Lunda dominent le centre et le sud-est.",
-      "precolonial": "Mosaïque de royaumes et chefferies indépendants. Royaumes Mangbetu et sultanats Zande dans le nord-est. Chefferies Mongo dans la cuvette équatoriale. Commerce transsaharien et commerce avec les côtes.",
-      "colonization": "1885 : Création de l'État indépendant du Congo (propriété privée de Léopold II). Exploitation extrême (caoutchouc, ivoire) avec atrocités massives. 1908 : Passage au Congo belge. Exploitation économique intensive (mines, plantations). Résistance congolaise.",
-      "independenceStruggle": "Mouvements nationalistes dans les années 1950. Indépendance obtenue en 1960. Crise du Katanga (sécession 1960-1963). Instabilité politique et interventions étrangères.",
-      "postIndependence": "Régime Mobutu (1965-1997) : Zaïre, dictature, corruption. Première guerre du Congo (1996-1997) : chute de Mobutu. Deuxième guerre du Congo (1998-2003) : \"guerre mondiale africaine\". Transition démocratique difficile. Défis de reconstruction et de stabilisation."
+      "ancientPeriods": "Dans la dépression de l'Upemba, au sud de la RDC actuelle, plus de quarante sites archéologiques et une séquence de plus de deux millénaires sont recensés, du Later Stone Age aux périodes luba récentes. Cette séquence régionale ne décrit ni tout le territoire national ni une origine unique de ses populations.",
+      "middleAges": "À partir d'environ 1350-1400 se forme le royaume Kongo, dont l'espace historique recoupe plusieurs États actuels. Entre la fin du XVIe et le XVIIe siècle se développent aussi les formations luba et lunda dans les savanes du centre et du sud ; leurs chronologies et territoires ont varié.",
+      "precolonial": "La première vague documentée distingue le royaume Kongo, les États luba et lunda, le royaume kuba, l'État yeke de Msiri, plusieurs chefferies chokwe et plusieurs royaumes zande. Elle ne transforme pas ces organisations différentes en une liste uniforme d'empires et ne les enferme pas dans les frontières contemporaines.",
+      "colonization": "L'État indépendant du Congo est établi en 1885 sous l'autorité personnelle de Léopold II. En 1908, la Belgique annexe le territoire, qui devient le Congo belge jusqu'à l'indépendance du 30 juin 1960. Ces deux périodes coloniales sont séparées des formations politiques précoloniales dans cette fiche.",
+      "independenceStruggle": "Le Congo belge devient indépendant le 30 juin 1960 sous le nom de République du Congo, avec Léopoldville pour capitale. Dès juillet, la crise du Congo associe autorités rivales, sécessions du Katanga et du Sud-Kasaï, interventions étrangères, assassinat de Patrice Lumumba en 1961 et opération des Nations unies. Le Katanga est réintégré en 1963 et l'ONUC se retire le 30 juin 1964.",
+      "postIndependence": "Mobutu prend le pouvoir le 25 novembre 1965 et son régime dure jusqu'en 1997. Le pays devient officiellement la République du Zaïre le 27 octobre 1971. La première guerre du Congo met fin au régime en mai 1997 et le nom République démocratique du Congo est rétabli le 17 mai. Une nouvelle guerre commence en 1998 ; l'accord de cessez-le-feu de Lusaka de 1999 et la création de la MONUC n'en constituent pas une fin nette. L'accord global et inclusif de 2002 puis les institutions de transition de 2003 ouvrent une transition politique ; la Constitution entre en vigueur en 2006. Après les élections de décembre 2018, l'investiture de Félix Tshisekedi le 24 janvier 2019 constitue la première transmission pacifique du pouvoir présidentiel, sans valider pour autant tous les aspects du processus électoral."
     },
     "sources": [
-      {
-        "title": "CIA World Factbook – Democratic Republic of the Congo",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "SIL Ethnologue – Languages of DRC",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "Recensements nationaux congolais",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "ONU – Données démographiques 2025",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
       {
         "title": "UNFPA – World Population Dashboard — République démocratique du Congo",
         "url": "https://www.unfpa.org/data/world-population/CD",
@@ -265,34 +277,160 @@
         "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
       },
       {
-        "title": "Études anthropologiques sur les peuples congolais",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "Études historiques sur les royaumes précoloniaux",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "Ethnologie du Congo",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "CIA World Factbook – Democratic Republic of the Congo (ethnic groups)",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
         "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
         "url": "https://unstats.un.org/unsd/methodology/m49/",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "Toponymic Factfile: Congo (Democratic Republic)",
+        "url": "https://assets.publishing.service.gov.uk/media/65a66847867cd8000d5ae933/Democratic_Republic_of_Congo_Toponymic_Factfile.pdf",
+        "tier": "official",
+        "notes": "Official toponymic reference supporting the country-to-river name relationship; it does not settle the lexical origin of Kongo."
+      },
+      {
+        "title": "Dictionary and Grammar of the Kongo Language",
+        "url": "https://tile.loc.gov/storage-services/service/gdc/gdclccn/44/01/76/16/44017616/44017616.pdf",
+        "tier": "referenced",
+        "notes": "Historical Kongo-language reference supporting the river-to-kingdom connection and explicitly retaining uncertainty about deeper derivation."
+      },
+      {
+        "title": "Upemba Depression",
+        "url": "https://whc.unesco.org/fr/listesindicatives/963/",
+        "tier": "official",
+        "notes": "Soumission de l'État partie à la liste indicative hébergée par l'UNESCO ; elle documente la séquence régionale de l'Upemba sans constituer une approbation du Comité du patrimoine mondial."
+      },
+      {
+        "title": "Central Africa, 1600-1800 A.D.",
+        "url": "https://82nd-and-fifth.metmuseum.org/toah/ht/09/afc.html",
+        "tier": "referenced",
+        "notes": "Chronologie institutionnelle de référence pour les formations luba, lunda, kuba et leurs contextes régionaux."
+      },
+      {
+        "title": "Central Africa, 1800-1900 A.D.",
+        "url": "https://82nd-and-fifth.metmuseum.org/toah/ht/10/afc.html",
+        "tier": "referenced",
+        "notes": "Chronologie institutionnelle de référence pour les formations politiques et réseaux du XIXe siècle en Afrique centrale."
+      },
+      {
+        "title": "Kingdoms of the Savanna: The Luba and Lunda Empires — The Metropolitan Museum of Art",
+        "url": "https://www.metmuseum.org/essays/kingdoms-of-the-savanna-the-luba-and-lunda-empires",
+        "tier": "referenced",
+        "notes": "Alexander Ives Bortolot, The Metropolitan Museum of Art ; consulté le 6 septembre 2026."
+      },
+      {
+        "title": "Kongo: Power and Majesty — Exhibition Galleries",
+        "url": "https://www.metmuseum.org/exhibitions/listings/2015/kongo/exhibition-galleries",
+        "tier": "referenced",
+        "notes": "Référence institutionnelle pour la chronologie et l'étendue transfrontalière du royaume Kongo."
+      },
+      {
+        "title": "The Yeke and the Congo Free State, from confrontation to collaboration",
+        "url": "https://www.africamuseum.be/en/discover/history_articles/the_yeke_and_the_congo_free_state",
+        "tier": "referenced",
+        "notes": "Recherche institutionnelle sur l'État yeke de Msiri, Bunkeya et son incorporation violente dans l'État indépendant du Congo."
+      },
+      {
+        "title": "This kingdom will not be like the kingdom(s) in the era of Gbudue: On the rebirth of the Azande Kingdom",
+        "url": "https://www.journals.uchicago.edu/doi/full/10.1086/732344",
+        "tier": "referenced",
+        "notes": "Article évalué par les pairs soutenant la représentation de royaumes zande reliés mais largement autonomes."
+      },
+      {
+        "title": "Zaire — United Nations authority record",
+        "url": "https://digitallibrary.un.org/record/878251",
+        "tier": "official",
+        "notes": "Notice d'autorité des Nations unies fournissant les dates exactes des changements de nom de 1964 et 1971."
+      },
+      {
+        "title": "Terminology Bulletin No. 347, Corrigendum 5",
+        "url": "https://digitallibrary.un.org/record/198733/files/ST_CS_SER-F_347-EN.pdf?ln=en",
+        "tier": "official",
+        "notes": "Bulletin terminologique du Secrétariat des Nations unies attestant le rétablissement du nom République démocratique du Congo en mai 1997."
+      },
+      {
+        "title": "Museum history",
+        "url": "https://www.africamuseum.be/en/discover/history",
+        "tier": "referenced",
+        "notes": "Référence institutionnelle sur l'État indépendant du Congo et l'administration du Congo belge."
+      },
+      {
+        "title": "United Nations Operation in the Congo — history and mandate",
+        "url": "https://peacekeeping.un.org/sites/default/files/past/onucB.htm",
+        "tier": "official",
+        "notes": "Chronologie officielle de l'indépendance, de la crise du Congo et du mandat de l'ONUC."
+      },
+      {
+        "title": "The Congo, Decolonization, and the Cold War, 1960-1965",
+        "url": "https://history.state.gov/milestones/1961-1968/congo-decolonization",
+        "tier": "official",
+        "notes": "Histoire institutionnelle américaine utilisée avec les sources des Nations unies ; elle documente aussi les intérêts et interventions des États-Unis."
+      },
+      {
+        "title": "Mobutu Sese Seko — former president biography",
+        "url": "https://www.presidence.cd/ancien-president-infos/5",
+        "tier": "official",
+        "notes": "Chronologie biographique officielle utilisée pour les dates du régime et non comme source unique d'évaluation de celui-ci."
+      },
+      {
+        "title": "MONUC background",
+        "url": "https://peacekeeping.un.org/sites/default/files/past/monuc/background.shtml",
+        "tier": "official",
+        "notes": "Chronologie officielle des guerres du Congo, du cessez-le-feu de Lusaka, de la MONUC et de la transition."
+      },
+      {
+        "title": "Inter-Congolese Negotiations: The Final Act (Sun City Agreement)",
+        "url": "https://peacemaker.un.org/sites/default/files/document/files/2024/05/cd030402suncityagreement.pdf",
+        "tier": "official",
+        "notes": "Texte de l'accord de Sun City conservé par les Nations unies et utilisé comme source primaire du cadre de transition."
+      },
+      {
+        "title": "Constitution of the Democratic Republic of the Congo",
+        "url": "https://presidence.cd/detail-texte-fondateur/1",
+        "tier": "official",
+        "notes": "Texte constitutionnel publié par la Présidence de la République démocratique du Congo."
+      },
+      {
+        "title": "Update of the Secretary-General on progress in the electoral process and implementation of the 31 December 2016 political agreement",
+        "url": "https://digitallibrary.un.org/record/3792221/files/S_2019_159-EN.pdf",
+        "tier": "official",
+        "notes": "Rapport des Nations unies sur le processus électoral de 2018-2019, la transmission pacifique du pouvoir et les limites du processus."
+      },
+      {
+        "title": "Congolese rumba — UNESCO Intangible Cultural Heritage",
+        "url": "https://ich.unesco.org/en/RL/congolese-rumba-01711?RL=01711",
+        "tier": "official",
+        "notes": "Inscription multinationale de 2021 documentant une pratique musicale et dansée urbaine partagée par les deux États du Congo ; elle ne rend pas la rumba représentative de toutes les communautés de la RDC."
+      },
+      {
+        "title": "Mwanangana (lord of the land) playing a sanza — The Metropolitan Museum of Art",
+        "url": "https://www.metmuseum.org/art/collection/search/316173",
+        "tier": "referenced",
+        "notes": "Notice d'objet utilisée comme exemple circonscrit d'art de cour chokwe, et non comme synthèse complète des arts chokwe."
+      },
+      {
+        "title": "Democratic Republic of the Congo Demographic and Health Survey 2013-2014 — DHS Program",
+        "url": "https://dhsprogram.com/pubs/pdf/FR300/FR300.pdf",
+        "tier": "official",
+        "notes": "Enquête officielle par échantillon ; la distribution religieuse concerne les femmes et hommes interrogés dans des classes d'âge définies et non un recensement de toute la population."
+      },
+      {
+        "title": "2023 Report on International Religious Freedom: Democratic Republic of the Congo — United States Department of State",
+        "url": "https://2021-2025.state.gov/reports/2023-report-on-international-religious-freedom/democratic-republic-of-the-congo/",
+        "tier": "official",
+        "notes": "Synthèse institutionnelle de contexte ; ses estimations démographiques sont attribuées à des sources tierces de dates et classifications différentes."
+      },
+      {
+        "title": "GIEWS Country Brief: Democratic Republic of the Congo — FAO",
+        "url": "https://www.fao.org/giews/countrybrief/country.jsp?code=COD&lang=en",
+        "tier": "official",
+        "notes": "Note conjoncturelle sur la production agricole et la sécurité alimentaire, utilisée pour leurs variations régionales et non comme ethnographie générale des modes de vie."
+      },
+      {
+        "title": "Democratic Republic of the Congo — Extractive Industries Transparency Initiative",
+        "url": "https://eiti.org/countries/democratic-republic-congo",
+        "tier": "referenced",
+        "notes": "Référence institutionnelle sur le poids et la gouvernance du secteur extractif ; les agrégats nationaux ne décrivent pas les moyens de subsistance des ménages."
       }
     ],
     "demographics": {
@@ -411,6 +549,11 @@
           "percentageInCountry": 34
         }
       ]
+    }
+  },
+  "_translation": {
+    "deferred": {
+      "en": "The DRC country fiche is still undergoing country-by-country editorial enrichment; translate the complete record after the French source has stabilised."
     }
   }
 }

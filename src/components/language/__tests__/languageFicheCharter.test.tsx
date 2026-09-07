@@ -86,7 +86,7 @@ describe("language fiche charter — the chapter list is the model's", () => {
 
   // @req REQ-136
   it("keeps every chapter of the model when the corpus fills none of them", () => {
-    render(<LanguageDetailViewV2 data={bare} />);
+    render(<LanguageDetailViewV2 language="fr" data={bare} />);
 
     for (const { title } of CHAPTER_TITLES) {
       expect(screen.getByRole("heading", { name: title })).toBeInTheDocument();
@@ -95,7 +95,7 @@ describe("language fiche charter — the chapter list is the model's", () => {
 
   // @req REQ-136
   it("marks each unfilled chapter rather than omitting it", () => {
-    render(<LanguageDetailViewV2 data={bare} />);
+    render(<LanguageDetailViewV2 language="fr" data={bare} />);
 
     // Attested names, speakers, dialects, vehicular role, vitality and
     // sources — the six the corpus leaves empty on 23 of the 24 fiches.
@@ -108,7 +108,7 @@ describe("language fiche charter — the chapter list is the model's", () => {
 describe("language fiche charter — what the service used to withhold", () => {
   // @req REQ-136
   it("prints the two identifiers the corpus fills on all 24 fiches", () => {
-    render(<LanguageDetailViewV2 data={filled} />);
+    render(<LanguageDetailViewV2 language="fr" data={filled} />);
 
     expect(screen.getByText("yor")).toBeInTheDocument();
     expect(screen.getByText("yoru1245")).toBeInTheDocument();
@@ -116,7 +116,7 @@ describe("language fiche charter — what the service used to withhold", () => {
 
   // @req REQ-136
   it("prints the identifiers even where every editorial chapter is empty", () => {
-    render(<LanguageDetailViewV2 data={bare} />);
+    render(<LanguageDetailViewV2 language="fr" data={bare} />);
 
     expect(screen.getByText("bmi")).toBeInTheDocument();
     expect(screen.getByText("bagi1246")).toBeInTheDocument();
@@ -124,7 +124,7 @@ describe("language fiche charter — what the service used to withhold", () => {
 
   // @req REQ-136
   it("gathers the English name, attested names and spellings in one chapter", () => {
-    render(<LanguageDetailViewV2 data={filled} />);
+    render(<LanguageDetailViewV2 language="fr" data={filled} />);
 
     for (const form of ["Yariba", "Yooba", "Yorouba"]) {
       expect(screen.getByText(form)).toBeInTheDocument();
@@ -133,7 +133,7 @@ describe("language fiche charter — what the service used to withhold", () => {
 
   // @req REQ-136
   it("states the tier rationale the service used to overwrite with null", () => {
-    render(<LanguageDetailViewV2 data={filled} />);
+    render(<LanguageDetailViewV2 language="fr" data={filled} />);
 
     expect(
       screen.getByText("Recensé par SIL, édition 2025.")

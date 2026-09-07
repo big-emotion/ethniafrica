@@ -41,10 +41,13 @@ import {
 } from "@/lib/email/flagNotification";
 import {
   createReporterContact,
-  getVerifiedReporterEmail,
+  getVerifiedReporterContact,
+  type VerifiedReporterContact,
 } from "@/lib/flags/reporterContact";
 import { logger } from "@/lib/api/logger";
 import * as Sentry from "@sentry/nextjs";
+import { serverCopy } from "@/lib/i18n/copy/server";
+import type { Language } from "@/types/shared";
 
 /**
  * The kinds that report on something the corpus already says.
@@ -161,7 +164,8 @@ export interface FlagHandlerDependencies {
   ) => { createdAt: string; id: string } | null;
   createReporterContact: (
     flagId: string,
-    email: string
+    email: string,
+    language?: Language
   ) => Promise<string | null>;
   sendFlagVerificationEmail: (
     input: FlagVerificationEmail
@@ -171,6 +175,7 @@ export interface FlagHandlerDependencies {
 export interface FlagHandlerContext {
   accessToken: string | null;
   clientIp?: string;
+  language?: Language;
 }
 
 export interface FlagCursorPagination {
@@ -258,6 +263,7 @@ export async function handleFlagCreate(
 ): Promise<FlagHandlerResult<ApiEnvelope<CreatedFlag> | ApiEnvelope<null>>> {
   const dependencies = resolveDependencies(injectedDependencies);
   const accessToken = context.accessToken?.trim();
+  const copy = serverCopy[context.language ?? "fr"].flags;
 
   /**
    * The kind decides which contract the body is held to, so it is read before
@@ -312,7 +318,7 @@ export async function handleFlagCreate(
   ) {
     return {
       status: 403,
-      body: errorResponse("UNAUTHORIZED", "vérification anti-robot échouée"),
+      body: errorResponse("UNAUTHORIZED", copy.antibotFailed),
     };
   }
 
@@ -341,17 +347,14 @@ export async function handleFlagCreate(
   if (verdict === "rejected") {
     return {
       status: 403,
-      body: errorResponse("UNAUTHORIZED", "vérification anti-bot échouée"),
+      body: errorResponse("UNAUTHORIZED", copy.antibotFailed),
     };
   }
 
   if (verdict === "unavailable") {
     return {
       status: 503,
-      body: errorResponse(
-        "UNAVAILABLE",
-        "vérification anti-bot temporairement indisponible, veuillez réessayer plus tard"
-      ),
+      body: errorResponse("UNAVAILABLE", copy.antibotUnavailable),
     };
   }
 
@@ -373,7 +376,7 @@ export async function handleFlagCreate(
       status: 429,
       body: errorResponse(
         "RATE_LIMITED",
-        `Flag submission rate limit exceeded. Retry after ${limitResult.retryAfter} seconds.`
+        copy.rateLimited(limitResult.retryAfter)
       ),
       headers: rateLimitHeaders(limitResult),
     };
@@ -391,13 +394,15 @@ export async function handleFlagCreate(
     try {
       const token = await dependencies.createReporterContact(
         flag.id,
-        parsed.data.reporter_email
+        parsed.data.reporter_email,
+        context.language ?? "fr"
       );
       if (token) {
         await dependencies.sendFlagVerificationEmail({
           email: parsed.data.reporter_email,
           token,
           publicSlug: flag.public_slug,
+          language: context.language ?? "fr",
         });
       }
     } catch (error) {
@@ -518,7 +523,9 @@ export interface FlagTransitionDependencies {
   >;
   writeAuditLog: (input: AuditLogInput) => Promise<void>;
   getContributorEmail: (contributorId: string) => Promise<string | null>;
-  getVerifiedReporterEmail: (flagId: string) => Promise<string | null>;
+  getVerifiedReporterContact: (
+    flagId: string
+  ) => Promise<VerifiedReporterContact | null>;
   sendFlagResolutionEmail: (
     flag: {
       public_slug: string;
@@ -536,7 +543,7 @@ const defaultTransitionDependencies: FlagTransitionDependencies = {
   transitionFlag,
   writeAuditLog: (input) => auditLog.write(input),
   getContributorEmail,
-  getVerifiedReporterEmail,
+  getVerifiedReporterContact,
   sendFlagResolutionEmail,
 };
 
@@ -575,6 +582,7 @@ export async function handleFlagTransition(
     ...injectedDependencies,
   };
   const accessToken = context.accessToken?.trim();
+  const copy = serverCopy[context.language ?? "fr"].flags;
 
   // Refuse by default: no token, or a token that resolves to no moderator
   // role, are the same answer. Neither says why, so a probe learns nothing
@@ -613,10 +621,7 @@ export async function handleFlagTransition(
         }
       : {
           status: 409,
-          body: errorResponse(
-            "ILLEGAL_TRANSITION",
-            `Cette transition n'est pas permise depuis l'état courant.`
-          ),
+          body: errorResponse("ILLEGAL_TRANSITION", copy.illegalTransition),
         };
   }
 
@@ -649,12 +654,12 @@ export async function handleFlagTransition(
        * and never proved is deliberately not used, because it may belong to
        * someone who never reported anything.
        */
-      const email =
-        contributorEmail ??
-        (await dependencies.getVerifiedReporterEmail(result.flag.id));
-      const recipient: FlagResolutionRecipient | null = email
-        ? { email }
-        : null;
+      const reporterContact = await dependencies.getVerifiedReporterContact(
+        result.flag.id
+      );
+      const recipient: FlagResolutionRecipient | null =
+        reporterContact ??
+        (contributorEmail ? { email: contributorEmail, language: "fr" } : null);
 
       await dependencies.sendFlagResolutionEmail(
         {

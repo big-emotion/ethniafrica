@@ -1,4 +1,7 @@
-import type { HubModuleDefinition } from "@/lib/hubs/moduleRegistry";
+import {
+  MODULE_DEFINITIONS,
+  type HubModuleDefinition,
+} from "@/lib/hubs/moduleRegistry";
 
 /**
  * Whether a module is *offered*, resolved synchronously from what the calling
@@ -35,6 +38,30 @@ type ReadinessInputs = Pick<HubModuleDefinition, "editorialReadiness">;
 // @req REQ-114
 export function isModuleDeclaredReady(definition: ReadinessInputs): boolean {
   return definition.editorialReadiness !== "draft";
+}
+
+/**
+ * Whether this module's own page may be served at all, by id.
+ *
+ * The same declaration the menu reads, asked by the route rather than by a
+ * surface listing it. Before this existed, `draft` only dimmed the entry: the
+ * page it pointed at answered 200 to anyone holding the URL, so a dossier its
+ * editor had withdrawn was still readable, indexable and shareable. A module
+ * the hub marks **Bientôt** now serves nothing, which is what that chip has
+ * always claimed.
+ *
+ * Declared only — never the measured half. A route cannot await a row count
+ * without turning every page load into a probe, and the freeze this answers is
+ * an editorial decision, not a corpus state.
+ */
+// @req REQ-114
+export function isModulePublished(moduleId: string): boolean {
+  const definition = MODULE_DEFINITIONS.find(
+    (candidate) => candidate.id === moduleId
+  );
+  // An id the registry cannot describe is withheld rather than trusted: it is
+  // a caller naming a module that was renamed or removed.
+  return definition ? isModuleDeclaredReady(definition) : false;
 }
 
 // @req REQ-106

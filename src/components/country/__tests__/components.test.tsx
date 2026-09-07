@@ -8,8 +8,6 @@ import { SourcesFooter } from "../SourcesFooter";
 import { HistoricalFactsSection } from "../HistoricalFactsSection";
 import type {
   HeroData,
-  EtymologyData,
-  OriginData,
   TimelineData,
   PeoplesData,
   KingdomsData,
@@ -98,6 +96,39 @@ describe("HistoryTimeline", () => {
 // ==========================================
 
 describe("PeoplesSection", () => {
+  // @req REQ-145
+  it("renders demographic chrome in English", () => {
+    const data: PeoplesData = {
+      totalPopulation: 100,
+      totalPopulationFormatted: "100",
+      everyPeopleDeclaresPopulation: true,
+      peopleCount: 2,
+      rows: [
+        {
+          name: "A",
+          percentage: 40,
+          population: 40,
+          populationFormatted: "40",
+          colorIndex: 1,
+        },
+        {
+          name: "B",
+          percentage: 40,
+          population: 40,
+          populationFormatted: "40",
+          colorIndex: 2,
+        },
+      ],
+    };
+    render(<PeoplesSection language="en" data={data} />);
+
+    expect(screen.getByText("inhabitants")).toBeVisible();
+    expect(screen.getByText("2+ peoples")).toBeVisible();
+    expect(
+      screen.getByText(/represent 80% of the country's population/)
+    ).toBeVisible();
+  });
+
   it("returns null when rows list is empty", () => {
     const data: PeoplesData = {
       totalPopulation: 0,
@@ -106,7 +137,7 @@ describe("PeoplesSection", () => {
       peopleCount: 0,
       rows: [],
     };
-    const { container } = render(<PeoplesSection data={data} />);
+    const { container } = render(<PeoplesSection language="fr" data={data} />);
     expect(container.firstChild).toBeNull();
   });
 
@@ -133,7 +164,7 @@ describe("PeoplesSection", () => {
         },
       ],
     };
-    render(<PeoplesSection data={data} />);
+    render(<PeoplesSection language="fr" data={data} />);
     expect(screen.getByText("Mossi")).toBeTruthy();
     expect(screen.getByText("52%")).toBeTruthy();
     expect(screen.getByText("Fulani")).toBeTruthy();
@@ -162,7 +193,7 @@ describe("PeoplesSection", () => {
       ],
     };
 
-    const { container } = render(<PeoplesSection data={data} />);
+    const { container } = render(<PeoplesSection language="fr" data={data} />);
 
     const exonym = screen.getByText("Fellata");
     expect(exonym.className).not.toMatch(/line-through/);
@@ -192,7 +223,7 @@ describe("PeoplesSection", () => {
         },
       ],
     };
-    const { container } = render(<PeoplesSection data={data} />);
+    const { container } = render(<PeoplesSection language="fr" data={data} />);
     // The DemoBar renders one div per row with a title attribute
     const barSegments = container.querySelectorAll("[title]");
     expect(barSegments.length).toBe(2);
@@ -214,7 +245,7 @@ describe("PeoplesSection", () => {
         },
       ],
     };
-    render(<PeoplesSection data={data} />);
+    render(<PeoplesSection language="fr" data={data} />);
     expect(screen.getByText("22M")).toBeTruthy();
   });
 
@@ -239,7 +270,7 @@ describe("PeoplesSection", () => {
         },
       ],
     };
-    render(<PeoplesSection data={data} />);
+    render(<PeoplesSection language="fr" data={data} />);
 
     const endonymEl = screen.getByText("Yorùbá");
     const exonymEl = screen.getByText("Yoruba");
@@ -276,7 +307,7 @@ describe("PeoplesSection", () => {
         },
       ],
     };
-    render(<PeoplesSection data={data} />);
+    render(<PeoplesSection language="fr" data={data} />);
 
     const endonymEl = screen.getByText("Yorùbá");
     expect(endonymEl).not.toHaveAttribute("lang");
@@ -332,6 +363,17 @@ describe("LanguagesSection", () => {
     };
     render(<LanguagesSection data={data} />);
     expect(screen.getByText(/\+ 4 autres langues/)).toBeTruthy();
+  });
+
+  // @req REQ-145
+  it("shows the overflow count in English", () => {
+    const data: LanguagesData = {
+      bubbles: [{ name: "French", isOfficial: true, size: "big" }],
+      totalCount: 16,
+      overflowCount: 4,
+    };
+    render(<LanguagesSection data={data} language="en" />);
+    expect(screen.getByText(/\+ 4 other languages/)).toBeVisible();
   });
 
   it("renders ISO code badge when code is provided", () => {
@@ -550,7 +592,7 @@ describe("PeoplesSection — what the bar admits (FR28)", () => {
   // @req REQ-092
   it("sizes each segment as a share of the country, not of the rendered rows", () => {
     const { container } = render(
-      <PeoplesSection data={peoples([30, 20]) as never} />
+      <PeoplesSection language="fr" data={peoples([30, 20]) as never} />
     );
 
     const segments = Array.from(
@@ -566,7 +608,7 @@ describe("PeoplesSection — what the bar admits (FR28)", () => {
   // @req REQ-092
   it("says how much of the country is accounted for when the splits fall short", () => {
     const { container } = render(
-      <PeoplesSection data={peoples([30, 20]) as never} />
+      <PeoplesSection language="fr" data={peoples([30, 20]) as never} />
     );
 
     const note = container.querySelector("[data-demo-coverage-note]");
@@ -577,7 +619,7 @@ describe("PeoplesSection — what the bar admits (FR28)", () => {
   // @req REQ-092
   it("stays quiet when the splits do account for the whole country", () => {
     const { container } = render(
-      <PeoplesSection data={peoples([60, 40]) as never} />
+      <PeoplesSection language="fr" data={peoples([60, 40]) as never} />
     );
 
     expect(container.querySelector("[data-demo-coverage-note]")).toBeNull();

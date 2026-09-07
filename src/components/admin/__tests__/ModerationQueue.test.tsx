@@ -64,7 +64,7 @@ describe("ModerationQueue", () => {
 
   // @req REQ-042
   it("shows each report by what it says, not by its identifier", () => {
-    render(<ModerationQueue reports={[openReport]} />);
+    render(<ModerationQueue language="fr" reports={[openReport]} />);
 
     expect(
       screen.getByText("Le nom du peuple est mal orthographié.")
@@ -81,7 +81,9 @@ describe("ModerationQueue", () => {
    */
   // @req REQ-042
   it("offers only the moves the state machine allows from each state", () => {
-    render(<ModerationQueue reports={[openReport, reviewedReport]} />);
+    render(
+      <ModerationQueue language="fr" reports={[openReport, reviewedReport]} />
+    );
 
     const rows = screen.getAllByRole("listitem");
     expect(
@@ -101,7 +103,7 @@ describe("ModerationQueue", () => {
   // @req REQ-042
   it("sends the transition to the API with the moderator's token", async () => {
     const fetchMock = stubFetch();
-    render(<ModerationQueue reports={[openReport]} />);
+    render(<ModerationQueue language="fr" reports={[openReport]} />);
 
     fireEvent.click(screen.getByRole("button", { name: /examiner/i }));
 
@@ -121,7 +123,7 @@ describe("ModerationQueue", () => {
   // @req REQ-042
   it("refuses to close a report without saying why", async () => {
     const fetchMock = stubFetch();
-    render(<ModerationQueue reports={[reviewedReport]} />);
+    render(<ModerationQueue language="fr" reports={[reviewedReport]} />);
 
     fireEvent.click(screen.getByRole("button", { name: /accepter/i }));
 
@@ -134,7 +136,7 @@ describe("ModerationQueue", () => {
   // @req REQ-042
   it("closes a report once the decision carries its reason", async () => {
     const fetchMock = stubFetch();
-    render(<ModerationQueue reports={[reviewedReport]} />);
+    render(<ModerationQueue language="fr" reports={[reviewedReport]} />);
 
     fireEvent.change(screen.getByLabelText(/note de modération/i), {
       target: { value: "Source vérifiée, correction appliquée." },
@@ -151,10 +153,23 @@ describe("ModerationQueue", () => {
   // @req REQ-042
   it("says so when the API refuses the move", async () => {
     stubFetch(false);
-    render(<ModerationQueue reports={[openReport]} />);
+    render(<ModerationQueue language="fr" reports={[openReport]} />);
 
     fireEvent.click(screen.getByRole("button", { name: /examiner/i }));
 
     expect(await screen.findByRole("alert")).toHaveTextContent(/refusé/i);
+  });
+
+  // @req REQ-140
+  // @req REQ-145
+  it("renders statuses, controls and validation in English", async () => {
+    render(<ModerationQueue language="en" reports={[reviewedReport]} />);
+
+    expect(screen.getByText("Under review")).toBeInTheDocument();
+    expect(screen.getByLabelText("Moderation note")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Accept" }));
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      "Explain your decision before closing this report."
+    );
   });
 });

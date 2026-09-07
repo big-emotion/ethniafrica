@@ -1,6 +1,7 @@
 {
   "id": "NGA",
   "nameFr": "Nigeria",
+  "nameEn": "Nigeria",
   "nameOfficial": "République fédérale du Nigeria (Federal Republic of Nigeria)",
   "summary": "Le Nigeria porte un nom proposé en 1897 par la journaliste Flora Shaw, à partir du fleuve Niger et du suffixe « -ia ». Califat de Sokoto, royaume d'Oyo, royaume du Bénin et sultanats haoussa s'y étaient épanouis avant l'unification coloniale. Hausa-Fulani, Yoruba, Igbo, Ijaw, Kanuri et Tiv font du pays le plus peuplé du continent l'un des plus divers.",
   "etymology": "Le nom « Nigeria » est proposé le 8 janvier 1897 par Flora Shaw, correspondante coloniale du Times de Londres, pour désigner d'un seul mot la « Niger Area » administrée par la Royal Niger Company : « Niger », le fleuve, et le suffixe latin « -ia », le pays. Il n'est officialisé que seize ans plus tard, en 1914, par Lord Lugard lors de l'unification des protectorats du Nord et du Sud. Des occurrences antérieures de « Nigerian » sont signalées chez William Cole (1862) et Richard Burton (1863), sans qu'il soit établi qu'elles soient contemporaines plutôt qu'ajoutées à l'édition.",
@@ -22,6 +23,7 @@
       {
         "name": "Sultanats haoussa",
         "period": "Premier millénaire - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Hausa"],
         "politicalCenters": ["Kano", "Katsina", "Zaria (Zazzau)"],
         "historicalRole": "Cités-États haoussa puissantes, centres commerciaux et intellectuels. Islamisation ancienne par les routes transsahariennes."
@@ -29,6 +31,12 @@
       {
         "name": "Califat de Sokoto",
         "period": "1804 - 1903",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1804,
+          "endYear": 1903,
+          "precision": "year"
+        },
         "dominantPeoples": ["Hausa", "Fulani"],
         "politicalCenters": ["Sokoto (capitale)", "Kano", "Katsina"],
         "historicalRole": "Califat islamique puissant fondé par Usman dan Fodio. Unification politique et religieuse du nord du Nigeria. Résistance à la colonisation britannique."
@@ -36,6 +44,12 @@
       {
         "name": "Royaume d'Oyo",
         "period": "XIVe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1301,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Yoruba"],
         "politicalCenters": ["Oyo (capitale)", "Ile-Ife"],
         "historicalRole": "Royaume yoruba puissant, expansion territoriale, commerce transsaharien. Influence culturelle majeure."
@@ -43,6 +57,12 @@
       {
         "name": "Royaume du Bénin",
         "period": "XIIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1201,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Edo (Bini)"],
         "politicalCenters": ["Bénin City (capitale)"],
         "historicalRole": "Royaume réputé pour ses bronzes et son art. Commerce avec les Européens. Résistance à la colonisation."
@@ -50,6 +70,12 @@
       {
         "name": "Empire Kanem-Bornou",
         "period": "VIIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 701,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Kanuri"],
         "politicalCenters": ["Kanem", "Bornou"],
         "historicalRole": "Empire puissant du Sahel, commerce transsaharien, centre intellectuel."
@@ -57,6 +83,12 @@
       {
         "name": "Nigeria colonial",
         "period": "1914 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1914,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples nigérians sous administration coloniale britannique"
         ],
@@ -66,6 +98,12 @@
       {
         "name": "République fédérale du Nigeria",
         "period": "1960 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1960,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples nigérians"],
         "politicalCenters": [
           "Abuja (capitale depuis 1991)",

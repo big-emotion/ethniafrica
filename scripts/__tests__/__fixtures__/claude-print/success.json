@@ -1,0 +1,45 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 2007,
+  "duration_api_ms": 1843,
+  "num_turns": 2,
+  "result": "{\"translations\":{\"content.origins.ancientOrigins\":\"The Asante belong to the Akan group.\"}}",
+  "structured_output": {
+    "translations": {
+      "content.origins.ancientOrigins": "The Asante belong to the Akan group."
+    }
+  },
+  "stop_reason": "tool_use",
+  "session_id": "00000000-0000-0000-0000-000000000000",
+  "total_cost_usd": 0.005971,
+  "usage": {
+    "input_tokens": 3,
+    "cache_creation_input_tokens": 1122,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 41
+  },
+  "modelUsage": {
+    "claude-sonnet-5": {
+      "inputTokens": 3,
+      "outputTokens": 41,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1122,
+      "webSearchRequests": 0,
+      "costUSD": 0.004985,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 899,
+      "outputTokens": 12,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.000986,
+      "contextWindow": 200000,
+      "maxOutputTokens": 64000
+    }
+  }
+}

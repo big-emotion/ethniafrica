@@ -1,18 +1,32 @@
-import type { GameCountryFixture } from "@/lib/games/corpus";
-import type { BinaryRound, Ring } from "@/lib/games/gameKinds";
+import type { BinaryRound } from "@/lib/games/gameKinds";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
-import { getAdmin0Rings } from "@/lib/atlas/overlays";
-import { mercatorInflation, ringArea } from "@/lib/games/sphericalArea";
+import {
+  documentedHalf,
+  territoryFootprint,
+  type ComparedTerritory,
+  type TerritoryFootprint,
+} from "@/lib/games/territory";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import { getCountryRoute } from "@/lib/routing";
+import {
+  MERCATOR_ROUND_EN,
+  mercatorRevealEn,
+} from "@/lib/games/rounds/mercatorRound.en";
 
 /**
- * « La taille qu'on vous a cachée » — which of two countries truly covers
- * more ground, and how differently Mercator draws them (REQ-120).
+ * « Lequel couvre la plus grande surface ? » — which of two territories truly
+ * covers more ground, and how differently Mercator draws them (REQ-120).
  *
  * The corpus holds no area column, so both figures come from the committed
- * admin-0 outlines. That is the source recorded in the reveal, and it is why
- * the outlines' simplification is a property of the game rather than a bug:
- * the round compares magnitudes, it does not survey.
+ * outlines. That is the source recorded in the reveal, and it is why the
+ * outlines' simplification is a property of the game rather than a bug: the
+ * round compares magnitudes, it does not survey.
+ *
+ * A territory is not necessarily an African country. Restricting the pair to
+ * the corpus kept the one comparison this page exists to make — Greenland
+ * against the Congo — out of the game that argues it, because Greenland is in
+ * a different committed asset. `lib/games/territory` is the seam that closed
+ * that gap; see it for why the game began that way.
  */
 
 const GAME = getGameBySlug("mercator");
@@ -27,15 +41,61 @@ const GAME = getGameBySlug("mercator");
 export const MERCATOR_PROVENANCE_PATH = "lib/atlas/assets/africaAdmin0";
 
 /**
- * Below this the two countries are indistinguishable at the corpus's own
- * precision, and asking would be a coin toss dressed as a question.
+ * How far apart the two true areas must be before the outlines can be trusted
+ * to rank them.
+ *
+ * **Raised from 1,02, which the assets never supported.** Both are simplified:
+ * the African outlines measure the continent about 1 % under its published
+ * area, and each country of the world asset lands within 4 % of its own. A
+ * round asked about a 2 % gap was therefore asked about a difference the
+ * simplification could have invented — the answer key itself could be wrong,
+ * which is worse than a hard question.
+ *
+ * This threshold is about *measurement*, and it is the only thing it is about.
+ * Whether a round is worth asking is a separate question, answered by
+ * MINIMUM_DRAWN_INVERSION below. Conflating the two is what made 1,02 look
+ * defensible: it was doing the second job badly instead of the first job at
+ * all.
  *
  * Exported because the Jouer hub's scene advertises this game and must not
  * assert a gap the game itself would refuse to ask about. One threshold, so
  * the shop window and the shop cannot disagree.
  */
 // @req REQ-120
-export const MINIMUM_AREA_RATIO = 1.02;
+export const MINIMUM_AREA_RATIO = 1.05;
+
+/**
+ * How much the flat map has to get the ranking wrong before the round has a
+ * lesson in it.
+ *
+ * A bare inversion is not enough. « Tchad ou Afrique du Sud ? » inverts by a
+ * fiftieth: the reader sees two shapes drawn all but identically, has nothing
+ * to reason from, and guesses — the games charter's kill test, failed. At a
+ * quarter over, the exaggeration is visible on the map the reader arrived
+ * holding, and the rule that resolves it — the projection swells the north, so
+ * the northern one is smaller than it looks — is the thing this page teaches.
+ *
+ * It is deliberately *not* folded into MINIMUM_AREA_RATIO. « Groenland ou
+ * RDC ? » is the comparison the page was built to make and its true gap is
+ * only 9 %, while the flat map draws Greenland thirteen times the larger. One
+ * threshold could not keep that round and drop the coin flips; two can, because
+ * they are measuring different things.
+ */
+// @req REQ-120
+export const MINIMUM_DRAWN_INVERSION = 1.25;
+
+/**
+ * The stem of this question.
+ *
+ * It used to be `GameDefinition.promptFr`, back when the game had one question
+ * and the registry could hold it. That field is the standing line printed above
+ * every round — the page's own subtitle — and once a second question shipped it
+ * was announcing one of the three as though it were all of them. It now carries
+ * the thesis, and each round carries its own stem.
+ */
+// @req REQ-120
+export const COMPARISON_PROMPT_FR =
+  "Lequel de ces deux pays couvre la plus grande surface ?";
 
 import { frenchNumber } from "@/lib/games/format";
 const frenchFactor = new Intl.NumberFormat("fr-FR", {
@@ -43,55 +103,34 @@ const frenchFactor = new Intl.NumberFormat("fr-FR", {
   maximumFractionDigits: 1,
 });
 
-interface CountryFootprint {
-  trueAreaKm2: number;
-  /** Area as Mercator draws it — the reader's mistaken impression, measured. */
-  drawnAreaKm2: number;
-  inflation: number;
-}
-
-/** The mainland: the ring carrying the most points, islands set aside. */
-function largestRing(rings: Ring[]): Ring {
-  return rings.reduce((largest, ring) =>
-    ring.length > largest.length ? ring : largest
-  );
-}
-
-function footprintOf(country: GameCountryFixture): CountryFootprint | null {
-  const rings = getAdmin0Rings(country.id);
-  if (!rings || rings.length === 0) return null;
-
-  const trueAreaKm2 = rings.reduce((total, ring) => total + ringArea(ring), 0);
-  // Inflation is read on the mainland alone: a distant island would move the
-  // centroid to a latitude the country is not mostly at.
-  const inflation = mercatorInflation(largestRing(rings));
-
-  return { trueAreaKm2, inflation, drawnAreaKm2: trueAreaKm2 * inflation };
-}
-
 /**
- * Ground a country really covers, islands included, read off the committed
+ * Ground a territory really covers, islands included, read off the committed
  * outlines — the corpus holds no area column. Exported because the session's
- * difficulty band ranks countries by magnitude and this module is where area
- * is defined; 0 for a country the asset cannot draw, which sorts it last.
+ * difficulty band ranks territories by magnitude and this module is where area
+ * is defined; 0 for one the assets cannot draw, which sorts it last.
  */
 // @req REQ-120
-export function trueAreaKm2(country: GameCountryFixture): number {
-  return footprintOf(country)?.trueAreaKm2 ?? 0;
+export function trueAreaKm2(territory: ComparedTerritory): number {
+  return territoryFootprint(territory)?.trueAreaKm2 ?? 0;
 }
 
 /**
- * Whether the projection actively misranks this pair: the country that truly
- * covers more ground is the one drawn smaller. These are the pairs the game
- * wants, so a caller can rank candidate pairs before building a round.
+ * Whether the projection misranks this pair by enough to be worth asking
+ * about: the territory that truly covers more ground is the one drawn smaller,
+ * and drawn smaller by at least MINIMUM_DRAWN_INVERSION.
+ *
+ * The size condition is not decoration. A pair inverted by a fiftieth is drawn
+ * as two all-but-identical shapes, and a reader looking at them has nothing to
+ * reason from; a pair inverted by a quarter or more shows the exaggeration
+ * plainly, which is what makes the rule behind it learnable.
  */
 // @req REQ-120
 export function mercatorMisleads(
-  a: GameCountryFixture,
-  b: GameCountryFixture
+  a: ComparedTerritory,
+  b: ComparedTerritory
 ): boolean {
-  const footprintA = footprintOf(a);
-  const footprintB = footprintOf(b);
+  const footprintA = territoryFootprint(a);
+  const footprintB = territoryFootprint(b);
   if (!footprintA || !footprintB) return false;
 
   const [larger, smaller] =
@@ -99,24 +138,24 @@ export function mercatorMisleads(
       ? [footprintA, footprintB]
       : [footprintB, footprintA];
 
-  return larger.drawnAreaKm2 < smaller.drawnAreaKm2;
+  return smaller.drawnAreaKm2 / larger.drawnAreaKm2 >= MINIMUM_DRAWN_INVERSION;
 }
 
-/** Verb-first so the sentence needs no gender agreement with the country. */
+/** Verb-first so the sentence needs no gender agreement with the territory. */
 function areaSentence(
-  country: GameCountryFixture,
-  footprint: CountryFootprint
+  territory: ComparedTerritory,
+  footprint: TerritoryFootprint
 ): string {
-  return `${country.nameFr} : ${frenchNumber.format(Math.round(footprint.trueAreaKm2))} km², que la projection de Mercator agrandit ${frenchFactor.format(footprint.inflation)} fois.`;
+  return `${territory.nameFr} : ${frenchNumber.format(Math.round(footprint.trueAreaKm2))} km², que la projection de Mercator agrandit ${frenchFactor.format(footprint.inflation)} fois.`;
 }
 
 // @req REQ-120
 export function buildMercatorRound(
-  a: GameCountryFixture,
-  b: GameCountryFixture
+  a: ComparedTerritory,
+  b: ComparedTerritory
 ): BinaryRound | null {
-  const footprintA = footprintOf(a);
-  const footprintB = footprintOf(b);
+  const footprintA = territoryFootprint(a);
+  const footprintB = territoryFootprint(b);
   if (!footprintA || !footprintB) return null;
 
   const larger = Math.max(footprintA.trueAreaKm2, footprintB.trueAreaKm2);
@@ -126,24 +165,56 @@ export function buildMercatorRound(
   const correctIndex: 0 | 1 =
     footprintA.trueAreaKm2 > footprintB.trueAreaKm2 ? 0 : 1;
 
+  const leadsTo = documentedHalf(a, b);
+
   return {
     kind: "binary",
+    template: "larger-area",
     gameId: GAME.id,
     subjectId: a.id,
-    promptFr: GAME.promptFr,
-    options: [{ labelFr: a.nameFr }, { labelFr: b.nameFr }],
+    comparedIds: [a.id, b.id],
+    promptFr: COMPARISON_PROMPT_FR,
+    promptEn: MERCATOR_ROUND_EN.prompt,
+    options: [
+      { labelFr: a.nameFr, labelEn: a.nameEn ?? a.nameFr },
+      { labelFr: b.nameFr, labelEn: b.nameEn ?? b.nameFr },
+    ],
     correctIndex,
     reveal: {
       textFr: `${areaSentence(a, footprintA)} ${areaSentence(b, footprintB)}`,
+      textEn: mercatorRevealEn(
+        {
+          id: a.id,
+          nameEn: a.nameEn ?? a.nameFr,
+          trueAreaKm2: footprintA.trueAreaKm2,
+          inflation: footprintA.inflation,
+        },
+        {
+          id: b.id,
+          nameEn: b.nameEn ?? b.nameFr,
+          trueAreaKm2: footprintB.trueAreaKm2,
+          inflation: footprintB.inflation,
+        }
+      ),
       fieldPath: MERCATOR_PROVENANCE_PATH,
       // Both figures are measured off the committed outlines, not read from a
       // fiche. Listing the countries' own sources would credit this claim to
       // documents that never made it, and the fiche's confidence score says
-      // nothing about an area this round computed itself. The field path
-      // above is the whole provenance, and it is already exact.
+      // nothing about an area this round computed itself.
+      //
+      // A pair that reaches outside the continent takes its second figure from
+      // the sibling `worldCompare` asset. The path stays the African one: it
+      // names where the round is anchored, and `revealProvenance` words both
+      // assets identically because to a reader they are one thing — the
+      // border outlines the atlas publishes.
       sources: [],
       confidence: null,
-      ficheHref: getCountryRoute("fr", a.id),
+      ficheHref: leadsTo
+        ? getCountryRoute("fr", leadsTo.id)
+        : getAxisHubRoute("fr", "atlas"),
+      ficheHrefEn: leadsTo
+        ? getCountryRoute("en", leadsTo.id)
+        : getAxisHubRoute("en", "atlas"),
     },
   };
 }

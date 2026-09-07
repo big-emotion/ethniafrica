@@ -139,6 +139,18 @@ describe("facet band — a fixed band, never an aspect ratio", () => {
 });
 
 describe("facet switcher — plain anchors, not a widget", () => {
+  // @req REQ-145
+  it("names every facet and its landmark in English", () => {
+    render(<FacetSwitcher language="en" active="peoples" />);
+
+    expect(
+      screen.getByRole("navigation", { name: "Atlas facets" })
+    ).toBeVisible();
+    expect(
+      screen.getAllByRole("link").map((link) => link.textContent?.trim())
+    ).toEqual(["Families", "Languages", "Peoples", "Countries", "Names"]);
+  });
+
   /**
    * The switcher and the hub's module list are two renderings of one running
    * order, and a reader crossing from one to the other reads them as the same
@@ -152,7 +164,7 @@ describe("facet switcher — plain anchors, not a widget", () => {
    */
   // @req REQ-114
   it("runs the corpus hierarchy, then the axis that cuts across it", () => {
-    render(<FacetSwitcher active="peoples" />);
+    render(<FacetSwitcher language="fr" active="peoples" />);
 
     const labels = screen
       .getAllByRole("link")
@@ -162,7 +174,7 @@ describe("facet switcher — plain anchors, not a widget", () => {
 
   // @req REQ-114
   it("offers all three facets as links, whichever one is being read", () => {
-    render(<FacetSwitcher active="peoples" />);
+    render(<FacetSwitcher language="fr" active="peoples" />);
 
     const links = screen.getAllByRole("link");
     expect(links).toHaveLength(FACETS.length);
@@ -176,7 +188,7 @@ describe("facet switcher — plain anchors, not a widget", () => {
 
   // @req REQ-114
   it("marks the facet being read, and leaves it a link", () => {
-    render(<FacetSwitcher active="families" />);
+    render(<FacetSwitcher language="fr" active="families" />);
 
     const current = screen.getByRole("link", { name: "Familles" });
     expect(current).toHaveAttribute("aria-current", "page");
@@ -193,7 +205,7 @@ describe("facet switcher — plain anchors, not a widget", () => {
    */
   // @req REQ-114
   it("offers no facet whose address does not resolve", () => {
-    render(<FacetSwitcher active="countries" />);
+    render(<FacetSwitcher language="fr" active="countries" />);
 
     for (const link of screen.getAllByRole("link")) {
       const href = link.getAttribute("href") ?? "";

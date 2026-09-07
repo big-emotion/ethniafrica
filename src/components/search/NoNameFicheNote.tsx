@@ -1,8 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import type { Language } from "@/types/shared";
 
 export interface NoNameFicheNoteProps {
   className?: string;
+  language?: Language;
 }
 
 /**
@@ -12,7 +14,10 @@ export interface NoNameFicheNoteProps {
  * applied to a whole missing result kind rather than one fiche field.
  */
 // @req REQ-135
-export function NoNameFicheNote({ className }: NoNameFicheNoteProps) {
+export function NoNameFicheNote({
+  className,
+  language = "fr",
+}: NoNameFicheNoteProps) {
   return (
     <div
       data-testid="no-name-fiche-note"
@@ -23,10 +28,12 @@ export function NoNameFicheNote({ className }: NoNameFicheNoteProps) {
       )}
     >
       <Badge variant="outline" className="text-afh-caption">
-        Nom absent
+        {language === "en" ? "Surname absent" : "Nom absent"}
       </Badge>
       <span>
-        Le corpus ne documente pas encore de fiche de nom pour cette recherche.
+        {language === "en"
+          ? "The corpus does not yet document a surname record for this search."
+          : "Le corpus ne documente pas encore de fiche de nom pour cette recherche."}
       </span>
     </div>
   );

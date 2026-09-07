@@ -10,13 +10,6 @@ import type { DidYouKnowEntityKind } from "@/lib/home/didYouKnowFacts";
  * and the reader would have no way of knowing the two are the same claim.
  */
 
-// @req REQ-113
-export const DID_YOU_KNOW_ENTITY_LABEL: Record<DidYouKnowEntityKind, string> = {
-  people: "Peuple",
-  country: "Pays",
-  family: "Famille linguistique",
-};
-
 // Atlas-charter §2: people ocre, country teal, family terre. Three
 // destinations must not look like one list.
 // @req REQ-113
@@ -45,6 +38,9 @@ export function drawAnecdoteImageSide(
   return random() < 0.5 ? "start" : "end";
 }
 
+// The tier vocabulary read in a sentence. Kept literal so the `as const`
+// type survives for its five consumers; the presentation test holds it to
+// `SOURCE_TIER_LABELS.fr` so it cannot become a third wording of the tiers.
 // @req REQ-113
 export const DID_YOU_KNOW_TIER_LABEL = {
   official: "Source officielle",

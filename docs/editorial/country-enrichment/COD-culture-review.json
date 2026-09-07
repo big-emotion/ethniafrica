@@ -1,0 +1,256 @@
+{
+  "schemaVersion": "1.0",
+  "countryId": "COD",
+  "updatedAt": "2026-09-06",
+  "status": "approved_and_applied_to_source_json",
+  "application": {
+    "sourceJsonAppliedAt": "2026-09-07",
+    "databaseSync": "not_performed",
+    "scope": "Three fields received scoped replacements. The unsupported country-level social-organization and regional-relations claims were removed. This does not establish national cultural completeness."
+  },
+  "scopePolicy": {
+    "proposalOnly": false,
+    "sourceJsonWriteApplied": true,
+    "noDatabaseWrite": true,
+    "avoidNationalGeneralizations": true,
+    "peopleAndRegionSpecificClaimsBelongInDedicatedRecords": true,
+    "datedStatisticsMustExposePopulationAndMethod": true
+  },
+  "reviewMetrics": {
+    "currentFieldsReviewed": 5,
+    "fieldsReadyAsWritten": 0,
+    "fieldsWithScopedReplacementClaims": 3,
+    "fieldsToMoveOutOfCountryLevel": 1,
+    "fieldsRequiringStructuredRelationOrMigrationData": 1,
+    "metricCaveat": "This audit measures whether the five existing country-level prose fields can be defended. It does not measure the completeness of DRC cultural documentation."
+  },
+  "currentFields": [
+    {
+      "field": "content.culture.culturalTraditions",
+      "decision": "replace_with_scoped_claims",
+      "finding": "The current sentence combines distinct Luba, Lunda, and Chokwe artistic traditions with Congolese rumba and several unsourced nationwide craft categories.",
+      "supportedClaims": [
+        {
+          "claim": "Luba and Lunda courtly arts developed within specific political and historical settings in the southern Central African savanna.",
+          "sourceIds": ["SRC-MET-LUBA-LUNDA"]
+        },
+        {
+          "claim": "Chokwe court art includes carved prestige objects associated with chiefly authority, ritual, and historical memory.",
+          "sourceIds": ["SRC-MET-CHOKWE-MWANANGANA"]
+        },
+        {
+          "claim": "Congolese rumba is a shared urban musical and dance tradition of the Democratic Republic of the Congo and the Republic of the Congo, inscribed by UNESCO in 2021.",
+          "sourceIds": ["SRC-UNESCO-CONGOLESE-RUMBA"]
+        }
+      ],
+      "removeOrRelocate": [
+        "Remove generic references to traditional dance, basketry, pottery, weaving, and traditional architecture unless each is tied to a named community, region, practice, and source.",
+        "Relocate people-specific artistic and ritual traditions to people fiches or thematic dossiers, retaining only a short sourced country overview."
+      ]
+    },
+    {
+      "field": "content.culture.dominantReligions",
+      "decision": "replace_inaccurate_summary_with_dated_survey_context",
+      "finding": "The phrase 'Catholic majority' is not supported by the 2013–2014 DHS respondent distribution. The same survey records several Christian categories, while later external estimates use different classifications.",
+      "supportedClaims": [
+        {
+          "claim": "In the 2013–2014 DHS sample of women and men aged 15–49, Christian affiliations predominated, but respondents were distributed among Catholic, Protestant, Kimbanguist, Salvation Army, and other Christian categories; Muslim, animist, unaffiliated, and other responses were also recorded.",
+          "sourceIds": ["SRC-DHS-COD-2013-14-FULL"]
+        },
+        {
+          "claim": "Religious-demography estimates vary by source, and some people combine traditional practices with Christian or other affiliations.",
+          "sourceIds": ["SRC-US-DOS-COD-RELIGION-2023"]
+        }
+      ],
+      "limitations": [
+        "The DHS table describes surveyed women and men in specified age ranges, not a full-population census.",
+        "The U.S. State Department report cites third-party estimates and should be used as contextual synthesis, not as the sole denominator.",
+        "Do not collapse Kimbanguist and other locally rooted Christian affiliations into an undefined 'traditional beliefs' bucket."
+      ]
+    },
+    {
+      "field": "content.culture.lifestyles",
+      "decision": "replace_national_lifestyle_with_scoped_livelihood_context",
+      "finding": "The current field presents rural life, farming, livestock, fishing, mining, and trade as one national lifestyle. These are economic activities with strong regional, urban-rural, gender, and conflict-related variation.",
+      "supportedClaims": [
+        {
+          "claim": "Agricultural livelihoods and food security conditions vary substantially by region and are affected by conflict, displacement, markets, and climate shocks.",
+          "sourceIds": ["SRC-FAO-COD-GIEWS-2026"]
+        },
+        {
+          "claim": "The extractive sector has a major role in the national economy, but aggregate export and revenue indicators do not describe the everyday livelihood of the population as a whole.",
+          "sourceIds": ["SRC-EITI-COD"]
+        }
+      ],
+      "removeOrRelocate": [
+        "Remove 'mainly rural' unless it is tied to a current, dated urbanization measure.",
+        "Move crop, livestock, fishing, mining, and trade descriptions into region- or livelihood-specific modules with separate sources.",
+        "Do not infer household livelihoods from national GDP, export, or government-revenue shares."
+      ]
+    },
+    {
+      "field": "content.culture.socialOrganization",
+      "decision": "remove_from_country_level_and_research_per_people",
+      "finding": "The current sentence asserts one system of chiefdoms, clans, descent, extended families, lineages, ancestors, and elder councils across a highly diverse country. The parenthetical acknowledgement of patrilineal or matrilineal variation does not make the generalization auditable.",
+      "supportedClaims": [],
+      "removeOrRelocate": [
+        "Remove the current country-level sentence from validated display.",
+        "Document descent, authority, kinship, and council systems in individual people fiches or comparative thematic dossiers.",
+        "Require a named community, place, observation period, and scholarly source for every replacement claim."
+      ]
+    },
+    {
+      "field": "content.culture.regionalRelations",
+      "decision": "split_into_typed_relations_and_migration_evidence",
+      "finding": "Listing every neighbouring country does not document a historical relation, and the statement that the diaspora is important in Belgium, France, and Western countries has no dated bilateral dataset attached.",
+      "supportedClaims": [
+        {
+          "claim": "The UN International Migrant Stock 2024 dataset provides a reproducible basis for measuring migrants of DRC origin and their destinations.",
+          "sourceIds": ["SRC-UN-DESA-MIGRANT-STOCK-2024"]
+        }
+      ],
+      "removeOrRelocate": [
+        "Replace generic neighbour-country relations with typed, dated, and sourced relation records between named peoples or political entities.",
+        "Do not identify Belgium, France, or any other country as a leading destination until the origin-destination matrix has been extracted and recorded with its reference year.",
+        "Keep migration-stock estimates distinct from ancestry, citizenship, refugee, and self-identified diaspora measures."
+      ]
+    }
+  ],
+  "proposedSources": [
+    {
+      "id": "SRC-UNESCO-CONGOLESE-RUMBA",
+      "title": "Congolese rumba",
+      "publisher": "UNESCO Intangible Cultural Heritage",
+      "url": "https://ich.unesco.org/en/RL/congolese-rumba-01711?RL=01711",
+      "tier": "official_multinational_nomination",
+      "accessedAt": "2026-09-06",
+      "scope": "urban musical and dance practice shared by the two Congo states",
+      "caveat": "UNESCO inscription does not make rumba representative of every community, region, or musical tradition in the DRC."
+    },
+    {
+      "id": "SRC-MET-LUBA-LUNDA",
+      "title": "Kingdoms of the Savanna: The Luba and Lunda Empires",
+      "publisher": "The Metropolitan Museum of Art, Heilbrunn Timeline of Art History",
+      "url": "https://www.metmuseum.org/essays/kingdoms-of-the-savanna-the-luba-and-lunda-empires",
+      "tier": "institutional_curatorial",
+      "accessedAt": "2026-09-06",
+      "scope": "Luba and Lunda political and artistic practices"
+    },
+    {
+      "id": "SRC-MET-CHOKWE-MWANANGANA",
+      "title": "Mwanangana (lord of the land) playing a sanza",
+      "publisher": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/316173",
+      "tier": "institutional_curatorial",
+      "accessedAt": "2026-09-06",
+      "scope": "one documented example of Chokwe court art",
+      "caveat": "An object record supports a scoped example, not a complete summary of Chokwe art across time and territory."
+    },
+    {
+      "id": "SRC-DHS-COD-2013-14-FULL",
+      "title": "Democratic Republic of the Congo Demographic and Health Survey 2013–2014",
+      "publisher": "DRC Ministry of Planning, DRC Ministry of Public Health, and ICF International",
+      "url": "https://dhsprogram.com/pubs/pdf/FR300/FR300.pdf",
+      "tier": "official_sample_survey",
+      "accessedAt": "2026-09-06",
+      "scope": "surveyed respondent characteristics, including declared religious affiliation",
+      "caveat": "The relevant table covers surveyed women and men in specified age ranges and must not be presented as a full-population religious census."
+    },
+    {
+      "id": "SRC-US-DOS-COD-RELIGION-2023",
+      "title": "2023 Report on International Religious Freedom: Democratic Republic of the Congo",
+      "publisher": "United States Department of State",
+      "url": "https://2021-2025.state.gov/reports/2023-report-on-international-religious-freedom/democratic-republic-of-the-congo/",
+      "tier": "official_contextual_synthesis",
+      "accessedAt": "2026-09-06",
+      "scope": "religious diversity, legal context, and comparison of third-party estimates",
+      "caveat": "Population shares in this report are attributed to external datasets with different reference years and classifications."
+    },
+    {
+      "id": "SRC-FAO-COD-GIEWS-2026",
+      "title": "GIEWS Country Brief: Democratic Republic of the Congo",
+      "publisher": "Food and Agriculture Organization of the United Nations",
+      "url": "https://www.fao.org/giews/countrybrief/country.jsp?code=COD&lang=en",
+      "tier": "official_current_brief",
+      "accessedAt": "2026-09-06",
+      "scope": "current agricultural production and food-security context",
+      "caveat": "This time-sensitive brief focuses on food security and conflict effects; it is not a general ethnography or exhaustive livelihood survey."
+    },
+    {
+      "id": "SRC-EITI-COD",
+      "title": "Democratic Republic of the Congo",
+      "publisher": "Extractive Industries Transparency Initiative",
+      "url": "https://eiti.org/countries/democratic-republic-congo",
+      "tier": "institutional_economic_reporting",
+      "accessedAt": "2026-09-06",
+      "scope": "extractive-sector contribution and governance",
+      "caveat": "National economic contribution does not establish how many people depend on mining or describe household lifestyles."
+    },
+    {
+      "id": "SRC-UN-DESA-MIGRANT-STOCK-2024",
+      "title": "International Migrant Stock 2024",
+      "publisher": "United Nations Department of Economic and Social Affairs, Population Division",
+      "url": "https://www.un.org/development/desa/pd/content/international-migrant-stock",
+      "tier": "official_statistical_dataset",
+      "accessedAt": "2026-09-06",
+      "scope": "international migrant stock by origin and destination",
+      "caveat": "Migrant stock is not equivalent to citizenship, ancestry, refugee status, or self-identified diaspora. Bilateral destination claims require extraction from the origin-destination table."
+    }
+  ],
+  "productionProposal": {
+    "applyOnlyAfterApproval": false,
+    "appliedAt": "2026-09-07",
+    "fieldActions": [
+      {
+        "field": "content.culture.culturalTraditions",
+        "action": "rewrite_as_scoped_examples"
+      },
+      {
+        "field": "content.culture.dominantReligions",
+        "action": "replace_catholic_majority_claim_with_dated_survey_context"
+      },
+      {
+        "field": "content.culture.lifestyles",
+        "action": "replace_with_regionally_scoped_livelihood_modules"
+      },
+      {
+        "field": "content.culture.socialOrganization",
+        "action": "remove_from_country_level"
+      },
+      {
+        "field": "content.culture.regionalRelations",
+        "action": "replace_with_typed_relations_and_bilateral_migration_data"
+      }
+    ],
+    "doNotInfer": [
+      "Do not treat one named tradition as representative of every DRC community.",
+      "Do not call Catholicism a population majority from the available DHS respondent table.",
+      "Do not describe national lifestyles from lists of economic sectors.",
+      "Do not assign one kinship or authority system to the whole country.",
+      "Do not equate neighbouring states with documented historical relations.",
+      "Do not equate migrant stock with the full diaspora."
+    ]
+  },
+  "remainingResearch": [
+    "Select representative people- and region-specific cultural dossiers instead of expanding one national traditions list.",
+    "Decide whether the public country surface should show dated survey distributions or a qualitative religious-diversity summary.",
+    "Create region- or livelihood-specific modules for agriculture, fishing, pastoralism, urban work, trade, and mining where accepted sources exist.",
+    "Move kinship, descent, chiefly authority, and council descriptions into people fiches with scholarly references.",
+    "Extract the DRC origin-destination matrix from UN DESA International Migrant Stock 2024 before naming leading diaspora destinations.",
+    "Create typed cross-border relation records for named peoples and political entities."
+  ],
+  "artifactReferences": [
+    {
+      "path": "docs/editorial/country-enrichment/COD-history.json",
+      "purpose": "Historical political formations and the complete source entry for Luba and Lunda history"
+    },
+    {
+      "path": "docs/editorial/country-enrichment/COD-peoples.json",
+      "purpose": "People reconciliation ledger for routing community-specific claims"
+    },
+    {
+      "path": "docs/editorial/country-enrichment/COD-source-review.json",
+      "purpose": "Country source-register cleanup and field-level coverage matrix"
+    }
+  ]
+}

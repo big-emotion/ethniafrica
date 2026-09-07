@@ -82,7 +82,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Banda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Gender, Religion and Migration: A Study of Malawian Chewa and Yawo Muslim Women in Durban, 1994–2017 » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Banda à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Banda », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Gender, Religion and Migration: A Study of Malawian Chewa and Yawo Muslim Women in Durban, 1994–2017 » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Banda à un autre nom de l'atlas."
     },
     {
       "fieldPath": "bearers",

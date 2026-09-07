@@ -8,8 +8,6 @@ import {
   shortenFamily,
   extractKeywords,
   transformHero,
-  transformEtymology,
-  transformOrigin,
   transformTimeline,
   transformPeoples,
   transformKingdoms,
@@ -327,17 +325,6 @@ describe("transformHero", () => {
     expect(hero.countryName).toBe("Burkina Faso");
     expect(hero.iso).toBe("BFA");
     expect(hero.flag).toBe("🇧🇫");
-    expect(hero.year).toBe("1984");
-    expect(hero.meaningQuote).toBe("Pays des hommes");
-    expect(hero.meaningHighlight).toBe("intègres");
-    expect(hero.isUncertain).toBe(false);
-  });
-
-  it("uses + separator and captures lang+family for meaningLangs", () => {
-    const hero = transformHero(bfaCountry);
-    expect(hero.meaningLangs).toContain(" + ");
-    expect(hero.meaningLangs).toContain("(Mossi)");
-    expect(hero.meaningLangs).toContain("(Mandé)");
   });
 
   // @req REQ-001
@@ -356,107 +343,6 @@ describe("transformHero", () => {
     expect(hero.nameOfficial).toBe(
       "République d'Afrique du Sud (Republic of South Africa, iNingizimu Afrika)"
     );
-  });
-});
-
-describe("transformEtymology", () => {
-  it("detects split bilingue variant for BFA", () => {
-    const result = transformEtymology(bfaCountry.etymology);
-    expect(result).toBeDefined();
-    expect(result!.variant).toBe("split");
-    expect(result!.words).toHaveLength(2);
-    expect(result!.words[0].word).toBe("Burkina");
-    expect(result!.words[0].lang).toBe("Mooré (Mossi)");
-    expect(result!.words[0].definition).toBe("Intègres");
-    expect(result!.words[1].word).toBe("Faso");
-    expect(result!.words[1].lang).toBe("Dioula (Mandé)");
-    expect(result!.words[1].definition).toBe("Pays");
-  });
-
-  it("detects uncertain variant", () => {
-    const result = transformEtymology(
-      'L\'origine du nom "Djibouti" est débattue. Hypothèse 1: du mot afar "gabouti" (plateau).'
-    );
-    expect(result).toBeDefined();
-    expect(result!.variant).toBe("uncertain");
-  });
-
-  it("returns undefined for empty etymology", () => {
-    expect(transformEtymology(undefined)).toBeUndefined();
-  });
-
-  it("returns rawText fallback when no structured pattern matches", () => {
-    const raw =
-      "The country name derives from an ancient geographical term with no clear linguistic origin.";
-    const result = transformEtymology(raw);
-    expect(result).toBeDefined();
-    expect(result!.variant).toBe("single");
-    expect(result!.rawText).toBe(raw);
-    expect(result!.words).toHaveLength(1);
-  });
-
-  it("handles curly/smart quotes in split pattern", () => {
-    const text =
-      "\u201CBurkina\u201D vient du moor\u00E9 et signifie \u201Cint\u00E8gres\u201D, \u201CFaso\u201D vient du dioula et signifie \u201Cpays\u201D";
-    const result = transformEtymology(text);
-    expect(result).toBeDefined();
-    expect(result!.variant).toBe("split");
-    expect(result!.words).toHaveLength(2);
-    expect(result!.words[0].word).toBe("Burkina");
-    expect(result!.words[1].word).toBe("Faso");
-  });
-
-  it("handles guillemets in single pattern", () => {
-    const text =
-      "\u00ABZimbabwe\u00BB vient du shona et signifie \u00ABmaisons de pierre\u00BB";
-    const result = transformEtymology(text);
-    expect(result).toBeDefined();
-    expect(result!.words[0].word).toBe("Zimbabwe");
-  });
-
-  it("never returns undefined when etymology text exists", () => {
-    const oddTexts = [
-      "An unknown origin for this name.",
-      "Le nom provient de sources multiples non identifiées.",
-      "Combination of local words meaning river and mountain.",
-    ];
-    for (const text of oddTexts) {
-      const result = transformEtymology(text);
-      expect(result).toBeDefined();
-      expect(result!.rawText).toBe(text);
-    }
-  });
-});
-
-describe("transformOrigin", () => {
-  it("extracts revolution tonality for BFA", () => {
-    const result = transformOrigin(
-      bfaCountry.nameOriginActor,
-      bfaCountry.etymology
-    );
-    expect(result).toBeDefined();
-    expect(result!.tonality).toBe("revolution");
-    expect(result!.personName).toContain("Thomas Sankara");
-    expect(result!.initials).toBe("TS");
-    expect(result!.oldName).toBe("Haute-Volta");
-    // Date is just year (no full date in nameOriginActor)
-    expect(result!.date).toBe("1984");
-    // Description cleaned of "lors de la" prefix
-    expect(result!.description).toMatch(/^Révolution/i);
-    expect(result!.description!.length).toBeLessThanOrEqual(140);
-  });
-
-  it("detects colonial tonality", () => {
-    const result = transformOrigin(
-      "Flora Shaw, journaliste britannique coloniale, a nommé le territoire en 1897.",
-      undefined
-    );
-    expect(result).toBeDefined();
-    expect(result!.tonality).toBe("colonial");
-  });
-
-  it("returns undefined when no origin actor", () => {
-    expect(transformOrigin(undefined, undefined)).toBeUndefined();
   });
 });
 
@@ -768,6 +654,7 @@ describe("transformKingdoms", () => {
     const result = transformKingdoms([
       {
         name: "Royaume Mossi",
+        period: "XIe siècle - XIXe siècle",
         politicalCenters: ["Ouagadougou", "Tenkodogo", "Fada", "Boussouma"],
       },
     ]);
@@ -809,6 +696,149 @@ describe("transformKingdoms", () => {
     for (const tag of mossi?.tags || []) {
       expect(tag).not.toMatch(/\(/);
     }
+  });
+
+  /**
+   * The reason `entryType` is stored rather than guessed from the name: the
+   * old `/colonie/i` filter let twenty-five colonial entries through, and
+   * these four are what a reader met inside a section titled "Royaumes".
+   */
+  // @req REQ-148
+  it("drops a colonial administration that never says colonie", () => {
+    const result = transformKingdoms([
+      {
+        name: "Sultanat d'Ajuran",
+        period: "XIIIe siècle - XVIIe siècle",
+        entryType: "polity",
+      },
+      {
+        name: "Somaliland britannique",
+        period: "1884 - 1960",
+        entryType: "colonial",
+      },
+      {
+        name: "Somalie italienne",
+        period: "1889 - 1960",
+        entryType: "colonial",
+      },
+      {
+        name: "République fédérale du Nigeria",
+        period: "1960 - présent",
+        entryType: "modern",
+      },
+    ]);
+    expect(result.cards.map((c) => c.name)).toEqual(["Sultanat d'Ajuran"]);
+  });
+
+  /**
+   * The name-based filter stays as a fallback while entries are being typed,
+   * so a fiche that has not been through the backfill does not regress.
+   */
+  // @req REQ-148
+  it("still drops an untyped entry whose name says colonie", () => {
+    const result = transformKingdoms([
+      { name: "Royaume Mossi", period: "XIe siècle - XIXe siècle" },
+      { name: "Colonie de Haute-Volta", period: "1919-1932, 1947-1960" },
+    ]);
+    expect(result.cards.map((c) => c.name)).toEqual(["Royaume Mossi"]);
+  });
+
+  // @req REQ-148
+  it("orders dated entries chronologically", () => {
+    const result = transformKingdoms([
+      {
+        name: "Sultanat d'Adal",
+        period: "XVe siècle - XVIe siècle",
+        entryType: "polity",
+        timeRange: { startYear: 1401, endYear: 1600, precision: "century" },
+      },
+      {
+        name: "Sultanat de Mogadiscio",
+        period: "Xe siècle - XIXe siècle",
+        entryType: "polity",
+        timeRange: { startYear: 901, endYear: 1900, precision: "century" },
+      },
+      {
+        name: "Sultanat d'Ajuran",
+        period: "XIIIe siècle - XVIIe siècle",
+        entryType: "polity",
+        timeRange: { startYear: 1201, endYear: 1700, precision: "century" },
+      },
+    ]);
+    expect(result.cards.map((c) => c.name)).toEqual([
+      "Sultanat de Mogadiscio",
+      "Sultanat d'Ajuran",
+      "Sultanat d'Adal",
+    ]);
+  });
+
+  /**
+   * A stable partial sort: undated entries hold their index while the dated
+   * ones order themselves around them. Sorting everything would shuffle the
+   * 95 still-undated polities unpredictably for the length of the burn-down.
+   */
+  // @req REQ-148
+  it("leaves an undated entry at its own index while dating sorts around it", () => {
+    const result = transformKingdoms([
+      {
+        name: "Royaume tardif",
+        period: "XVIIIe siècle",
+        entryType: "polity",
+        timeRange: { startYear: 1701, endYear: 1800, precision: "century" },
+      },
+      {
+        name: "Royaume non daté",
+        period: "Précolonial - présent",
+        entryType: "polity",
+      },
+      {
+        name: "Royaume ancien",
+        period: "Xe siècle",
+        entryType: "polity",
+        timeRange: { startYear: 901, endYear: 1000, precision: "century" },
+      },
+    ]);
+    expect(result.cards.map((c) => c.name)).toEqual([
+      "Royaume ancien",
+      "Royaume non daté",
+      "Royaume tardif",
+    ]);
+  });
+
+  // @req REQ-148
+  it("places a still-standing entity after a closed one that began the same year", () => {
+    const result = transformKingdoms([
+      {
+        name: "Toujours debout",
+        period: "XIVe siècle - présent",
+        entryType: "polity",
+        timeRange: { startYear: 1301, ongoing: true, precision: "century" },
+      },
+      {
+        name: "Achevé",
+        period: "XIVe siècle - XVe siècle",
+        entryType: "polity",
+        timeRange: { startYear: 1301, endYear: 1500, precision: "century" },
+      },
+    ]);
+    expect(result.cards.map((c) => c.name)).toEqual([
+      "Achevé",
+      "Toujours debout",
+    ]);
+  });
+
+  // @req REQ-148
+  it("carries the bounds onto the card without touching the label", () => {
+    const result = transformKingdoms([
+      {
+        name: "Royaume test",
+        period: "XIVe siècle",
+        entryType: "polity",
+        timeRange: { startYear: 1301, endYear: 1400, precision: "century" },
+      },
+    ]);
+    expect(result.cards[0].period).toBe("XIVe siècle");
+    expect(result.cards[0].timeRange?.startYear).toBe(1301);
   });
 });
 
@@ -966,11 +996,23 @@ describe("transformHistoricalFacts", () => {
 });
 
 describe("transformCountryData", () => {
+  // @req REQ-140
+  // @req REQ-145
+  it("localizes generated country-fiche labels in English", () => {
+    const result = transformCountryData(bfaCountry, "en");
+
+    expect(result.culture.items.map((item) => item.label)).toEqual([
+      "Religions",
+      "Economy",
+      "Organisation",
+      "Relations",
+    ]);
+    expect(result.kingdoms.title).toBe("Kingdoms & Civilisations");
+  });
+
   it("produces complete page data for BFA", () => {
     const result = transformCountryData(bfaCountry);
     expect(result.hero.countryName).toBe("Burkina Faso");
-    expect(result.etymology).toBeDefined();
-    expect(result.origin).toBeDefined();
     expect(result.timeline.items.length).toBeGreaterThan(0);
     expect(result.peoples.rows.length).toBeGreaterThan(0);
     expect(result.kingdoms.cards.length).toBeGreaterThan(0);

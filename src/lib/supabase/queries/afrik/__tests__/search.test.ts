@@ -12,8 +12,14 @@ vi.mock("../../../server", () => ({
   createServerClient: vi.fn(),
 }));
 
+vi.mock("../peoples", () => ({
+  getAfrikPeoplesByIds: vi.fn(),
+}));
+
 import { ftsSearchEntities } from "../search";
 import { createServerClient } from "../../../server";
+import { getAfrikPeoplesByIds } from "../peoples";
+import type { People } from "@/types/afrik";
 
 function peopleRow(
   id: string,
@@ -210,6 +216,7 @@ describe("ftsSearchEntities", () => {
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (createServerClient as any).mockReturnValue(mockSupabase);
+    vi.mocked(getAfrikPeoplesByIds).mockResolvedValue([]);
   });
 
   // @req REQ-002
@@ -502,6 +509,134 @@ describe("ftsSearchEntities", () => {
       p_limit: 20,
       p_offset: 0,
     });
+  });
+
+  // ETNI-1857: the four functions whose rows carry a locale-bound name take
+  // p_lang (migration 084). It is sent only when the request names a
+  // locale: against a database still on 069 a named parameter the function
+  // does not know answers PGRST202, while a call without it is served by the
+  // default on both definitions — so a French request survives the rollout
+  // window in either order.
+  // @req REQ-141
+  it("passes the locale as p_lang to every name-bearing ranking function", async () => {
+    await ftsSearchEntities({ q: "chad", limit: 20, offset: 0, lang: "en" });
+
+    for (const fn of [
+      "afrik_search_peoples",
+      "afrik_search_countries",
+      "afrik_search_language_families",
+      "afrik_search_languages",
+    ]) {
+      expect(rpc).toHaveBeenCalledWith(
+        fn,
+        expect.objectContaining({ p_q: "chad", p_lang: "en" })
+      );
+    }
+    for (const fn of ["afrik_search_persons", "afrik_search_patronymes"]) {
+      expect(rpc).toHaveBeenCalledWith(
+        fn,
+        expect.not.objectContaining({ p_lang: expect.anything() })
+      );
+    }
+  });
+
+  // @req REQ-141
+  it("sends no p_lang at all when the request names no locale", async () => {
+    await ftsSearchEntities({ q: "tchad", limit: 20, offset: 0 });
+
+    for (const call of rpc.mock.calls) {
+      expect(call[1]).not.toHaveProperty("p_lang");
+    }
+  });
+
+  // @req REQ-141
+  it("carries the family's English name on every people row", async () => {
+    peoplesPayload = {
+      total: 1,
+      rows: [
+        peopleRow("PPL_BETE", "Bété", {
+          languageFamilyName: "Krou",
+          languageFamilyNameEn: "Kru",
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({ q: "bété", limit: 20, offset: 0 });
+
+    expect(result.peoples[0].languageFamilyName).toBe("Krou");
+    expect(result.peoples[0].languageFamilyNameEn).toBe("Kru");
+  });
+
+  // @req REQ-141
+  it("reads a null family English name as null, never as the string 'null'", async () => {
+    peoplesPayload = {
+      total: 1,
+      rows: [peopleRow("PPL_BETE", "Bété", { languageFamilyNameEn: null })],
+    };
+
+    const result = await ftsSearchEntities({ q: "bété", limit: 20, offset: 0 });
+
+    expect(result.peoples[0].languageFamilyNameEn).toBeNull();
+  });
+
+  // @req REQ-143
+  it("carries the country's English name beside the French one", async () => {
+    countriesPayload = {
+      total: 1,
+      rows: [countryRow("TCD", "Tchad", { nameEn: "Chad" })],
+    };
+
+    const result = await ftsSearchEntities({ q: "chad", limit: 20, offset: 0 });
+
+    expect(result.countries[0].nameFr).toBe("Tchad");
+    expect(result.countries[0].nameEn).toBe("Chad");
+  });
+
+  // @req REQ-143
+  it("uses localized country and family names in the canonical English ranking", async () => {
+    countriesPayload = {
+      total: 1,
+      rows: [
+        countryRow("TCD", "Tchad", {
+          nameEn: "Chad",
+          normalizedScore: 1,
+        }),
+      ],
+    };
+    familiesPayload = {
+      total: 1,
+      rows: [
+        familyRow("FLG_CUSHITIC", "Couchitique", {
+          nameEn: "Cushitic",
+          normalizedScore: 0.9,
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "chad",
+      lang: "en",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.results.map((hit) => hit.name)).toEqual(["Chad", "Cushitic"]);
+  });
+
+  // @req REQ-143
+  it("leaves a country's nameEn undefined until the corpus reload fills the column", async () => {
+    countriesPayload = {
+      total: 1,
+      rows: [countryRow("TCD", "Tchad", { nameEn: null })],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "tchad",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.countries[0].nameEn).toBeUndefined();
   });
 
   // @req REQ-002
@@ -884,6 +1019,164 @@ describe("ftsSearchEntities", () => {
 
     expect(result.total).toBe(2);
   });
+
+  // ── associated peoples on a name hit (ETNI-1859) ──────────────────────────
+
+  function peopleFiche(id: string, nameMain: string): People {
+    return { id, nameMain } as People;
+  }
+
+  // @req REQ-124
+  it("resolves the peoples of every name hit in one de-duplicated lookup", async () => {
+    patronymesPayload = {
+      total: 2,
+      rows: [
+        patronymeRow("PATR_KEITA", "Keïta", {
+          content: {
+            peoples: [
+              { peopleId: "PPL_MANDINGUE", status: "attested" },
+              { peopleId: "PPL_BAMBARA", status: "supposed" },
+            ],
+          },
+        }),
+        patronymeRow("PATR_TRAORE", "Traoré", {
+          content: {
+            peoples: [
+              { peopleId: "PPL_BAMBARA", status: "attested" },
+              { peopleId: "PPL_SENOUFO", status: "attested" },
+            ],
+          },
+        }),
+      ],
+    };
+
+    await ftsSearchEntities({ q: "Keïta", limit: 20, offset: 0 });
+
+    expect(getAfrikPeoplesByIds).toHaveBeenCalledTimes(1);
+    expect(getAfrikPeoplesByIds).toHaveBeenCalledWith([
+      "PPL_MANDINGUE",
+      "PPL_BAMBARA",
+      "PPL_SENOUFO",
+    ]);
+  });
+
+  // @req REQ-124
+  it("lists each hit's peoples by main name, in the fiche's own order", async () => {
+    patronymesPayload = {
+      total: 2,
+      rows: [
+        patronymeRow("PATR_KEITA", "Keïta", {
+          content: {
+            peoples: [
+              { peopleId: "PPL_MANDINGUE" },
+              { peopleId: "PPL_BAMBARA" },
+            ],
+          },
+        }),
+        patronymeRow("PATR_TRAORE", "Traoré", {
+          content: {
+            peoples: [{ peopleId: "PPL_BAMBARA" }, { peopleId: "PPL_SENOUFO" }],
+          },
+        }),
+      ],
+    };
+    // The lookup orders by name_main, which is not the fiche's order — the
+    // hit must follow the fiche, not the database.
+    vi.mocked(getAfrikPeoplesByIds).mockResolvedValue([
+      peopleFiche("PPL_BAMBARA", "Bambara"),
+      peopleFiche("PPL_MANDINGUE", "Mandingue"),
+      peopleFiche("PPL_SENOUFO", "Sénoufo"),
+    ]);
+
+    const result = await ftsSearchEntities({
+      q: "Keïta",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.patronymes[0].associatedPeoples).toEqual([
+      { id: "PPL_MANDINGUE", name: "Mandingue" },
+      { id: "PPL_BAMBARA", name: "Bambara" },
+    ]);
+    expect(result.patronymes[1].associatedPeoples).toEqual([
+      { id: "PPL_BAMBARA", name: "Bambara" },
+      { id: "PPL_SENOUFO", name: "Sénoufo" },
+    ]);
+  });
+
+  // @req REQ-124
+  it("omits a declared people whose fiche the lookup does not return", async () => {
+    patronymesPayload = {
+      total: 1,
+      rows: [
+        patronymeRow("PATR_KEITA", "Keïta", {
+          content: {
+            peoples: [
+              { peopleId: "PPL_MANDINGUE" },
+              { peopleId: "PPL_NO_FICHE_YET" },
+            ],
+          },
+        }),
+      ],
+    };
+    vi.mocked(getAfrikPeoplesByIds).mockResolvedValue([
+      peopleFiche("PPL_MANDINGUE", "Mandingue"),
+    ]);
+
+    const [keita] = (
+      await ftsSearchEntities({ q: "Keïta", limit: 20, offset: 0 })
+    ).patronymes;
+
+    expect(keita.associatedPeoples).toEqual([
+      { id: "PPL_MANDINGUE", name: "Mandingue" },
+    ]);
+  });
+
+  // @req REQ-124
+  it("asks nothing of the peoples table when no name hit declares a people", async () => {
+    patronymesPayload = {
+      total: 2,
+      rows: [
+        patronymeRow("PATR_KEITA", "Keïta"),
+        patronymeRow("PATR_TRAORE", "Traoré", { content: { peoples: [] } }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Keïta",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(getAfrikPeoplesByIds).not.toHaveBeenCalled();
+    expect(result.patronymes[0].associatedPeoples).toBeUndefined();
+    expect(result.patronymes[1].associatedPeoples).toBeUndefined();
+  });
+
+  // @req REQ-124
+  it("keeps the name hits when the peoples lookup fails", async () => {
+    patronymesPayload = {
+      total: 1,
+      rows: [
+        patronymeRow("PATR_KEITA", "Keïta", {
+          content: { peoples: [{ peopleId: "PPL_MANDINGUE" }] },
+        }),
+      ],
+    };
+    vi.mocked(getAfrikPeoplesByIds).mockRejectedValue(
+      new Error("peoples boom")
+    );
+
+    const result = await ftsSearchEntities({
+      q: "Keïta",
+      limit: 20,
+      offset: 0,
+    });
+
+    expect(result.patronymes.map((p) => p.id)).toEqual(["PATR_KEITA"]);
+    expect(result.patronymes[0].associatedPeoples).toBeUndefined();
+  });
+
   // ── quiz (ETNI-1709) ──────────────────────────────────────────────────────
 
   // @req REQ-121
@@ -901,6 +1194,24 @@ describe("ftsSearchEntities", () => {
       p_offset: 0,
     });
     expect(rpc).toHaveBeenCalledTimes(1);
+  });
+
+  // @req REQ-145
+  it("selects the quiz search bank by locale", async () => {
+    await ftsSearchEntities({
+      q: "kingdom",
+      limit: 20,
+      offset: 0,
+      lens: "quiz",
+      lang: "en",
+    });
+
+    expect(rpc).toHaveBeenCalledWith("afrik_search_quiz", {
+      p_q: "kingdom",
+      p_limit: 20,
+      p_offset: 0,
+      p_lang: "en",
+    });
   });
 
   // @req REQ-121
@@ -1107,6 +1418,47 @@ describe("ftsSearchEntities", () => {
     );
   });
 
+  // @req REQ-141
+  it("carries the language's English name and its family's beside the French ones", async () => {
+    languagesPayload = {
+      total: 1,
+      rows: [
+        languageRow("arb", "Arabe standard moderne", {
+          nameEn: "Standard Arabic",
+          familyName: "Afro-asiatique",
+          familyNameEn: "Afroasiatic",
+        }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "arabic",
+      limit: 20,
+      offset: 0,
+      lang: "en",
+    });
+
+    expect(result.languages[0].name).toBe("Arabe standard moderne");
+    expect(result.languages[0].nameEn).toBe("Standard Arabic");
+    expect(result.languages[0].familyName).toBe("Afro-asiatique");
+    expect(result.languages[0].familyNameEn).toBe("Afroasiatic");
+  });
+
+  // @req REQ-141
+  it("leaves a language's English names null when the fiche carries none", async () => {
+    languagesPayload = {
+      total: 1,
+      rows: [
+        languageRow("swa", "Swahili", { nameEn: null, familyNameEn: null }),
+      ],
+    };
+
+    const result = await ftsSearchEntities({ q: "swa", limit: 20, offset: 0 });
+
+    expect(result.languages[0].nameEn).toBeNull();
+    expect(result.languages[0].familyNameEn).toBeNull();
+  });
+
   // @req REQ-136
   it("reports zero languages and an empty array when nothing matches", async () => {
     const result = await ftsSearchEntities({
@@ -1203,6 +1555,29 @@ describe("ftsSearchEntities", () => {
     expect(rpc).toHaveBeenCalledWith("afrik_search_leads", {
       p_q: "bamba",
       p_limit: 3,
+    });
+  });
+
+  // @req REQ-141
+  it("asks near-miss leads for names in the requested locale", async () => {
+    leadsPayload = {
+      rows: [{ kind: "country", id: "TCD", name: "Chad", similarity: 0.4 }],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "Chadd",
+      limit: 20,
+      offset: 0,
+      lang: "en",
+    });
+
+    expect(result.leads).toEqual([
+      { kind: "country", id: "TCD", name: "Chad", similarity: 0.4 },
+    ]);
+    expect(rpc).toHaveBeenCalledWith("afrik_search_leads", {
+      p_q: "Chadd",
+      p_limit: 3,
+      p_lang: "en",
     });
   });
 
@@ -1337,6 +1712,40 @@ describe("ftsSearchEntities", () => {
     };
 
     const result = await ftsSearchEntities({ q: "e", limit: 20, offset: 0 });
+
+    expect(result.results.map((hit) => hit.id)).toEqual([
+      "ELE",
+      "PPL_ELE_B",
+      "PPL_EPE",
+    ]);
+  });
+
+  // The tie-break collates in the locale the request was served in. ICU's
+  // English and French tailorings agree on every name in the corpus, so the
+  // observable contract under `lang: "en"` is the same deterministic order
+  // — what this guards is that the English path sorts at all, rather than
+  // falling back to a byte comparison that would put every accented name
+  // after "Z".
+  // @req REQ-141
+  it("keeps the tie-break deterministic and accent-aware under the English locale", async () => {
+    peoplesPayload = {
+      total: 2,
+      rows: [
+        peopleRow("PPL_EPE", "Epe", { normalizedScore: 0.7 }),
+        peopleRow("PPL_ELE_B", "Élé", { normalizedScore: 0.7 }),
+      ],
+    };
+    countriesPayload = {
+      total: 1,
+      rows: [countryRow("ELE", "Élé", { normalizedScore: 0.7 })],
+    };
+
+    const result = await ftsSearchEntities({
+      q: "e",
+      limit: 20,
+      offset: 0,
+      lang: "en",
+    });
 
     expect(result.results.map((hit) => hit.id)).toEqual([
       "ELE",

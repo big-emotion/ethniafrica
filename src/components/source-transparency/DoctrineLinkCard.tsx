@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { getLocalizedRoute } from "@/lib/routing";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 export type DoctrineSlug =
   | "endonymes-vs-exonymes"
@@ -24,9 +26,10 @@ export type DoctrineLinkCardProps = {
   slug: DoctrineSlug;
   /** When undefined, the link points to the live doctrine. */
   version?: number;
+  language?: Language;
 };
 
-const DOCTRINE_COPY: Record<DoctrineSlug, string> = {
+const FR_DOCTRINE_COPY: Record<DoctrineSlug, string> = {
   "endonymes-vs-exonymes":
     "Cette fiche utilise endonymes (auto-désignations) et exonymes (désignations extérieures). Lisez la doctrine pour comprendre nos choix.",
   "classifications-contestees":
@@ -37,13 +40,29 @@ const DOCTRINE_COPY: Record<DoctrineSlug, string> = {
     "Ce sujet est sensible. Notre doctrine éditoriale encadre la rédaction. Voir la doctrine.",
 };
 
+const EN_DOCTRINE_COPY: Record<DoctrineSlug, string> = {
+  "endonymes-vs-exonymes":
+    "This fiche uses endonyms (self-designations) and exonyms (names given by others). Read the doctrine to understand our choices.",
+  "classifications-contestees":
+    "This classification is subject to academic debate and editorial positions. See the doctrine.",
+  "heritage-colonial":
+    "This term comes from the colonial legacy. We retain it with an explanation. See the doctrine.",
+  "topics-sensibles":
+    "This is a sensitive subject. Our editorial doctrine guides its treatment. See the doctrine.",
+};
+
 // @req REQ-019
-export function DoctrineLinkCard({ slug, version }: DoctrineLinkCardProps) {
-  const copy = DOCTRINE_COPY[slug];
+export function DoctrineLinkCard({
+  slug,
+  version,
+  language = FALLBACK_LOCALE,
+}: DoctrineLinkCardProps) {
+  const copy =
+    language === "en" ? EN_DOCTRINE_COPY[slug] : FR_DOCTRINE_COPY[slug];
   const href =
     version !== undefined
-      ? `${getLocalizedRoute("fr", "doctrine")}/${slug}@v${version}`
-      : `${getLocalizedRoute("fr", "doctrine")}/${slug}`;
+      ? `${getLocalizedRoute(language, "doctrine")}/${slug}@v${version}`
+      : `${getLocalizedRoute(language, "doctrine")}/${slug}`;
 
   return (
     <aside
@@ -59,7 +78,7 @@ export function DoctrineLinkCard({ slug, version }: DoctrineLinkCardProps) {
         className="inline-block font-semibold underline underline-offset-2 hover:no-underline"
         style={{ color: "var(--country-earth, currentColor)" }}
       >
-        Lire la doctrine
+        {language === "en" ? "Read the doctrine" : "Lire la doctrine"}
       </Link>
     </aside>
   );

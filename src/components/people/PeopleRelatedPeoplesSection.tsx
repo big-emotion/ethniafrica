@@ -9,21 +9,47 @@ import {
   type PeopleRelationPreviewItem,
 } from "@/lib/peopleDataTransformer";
 import { RelationTypeBadge } from "@/components/relations/RelationTypeBadge";
-import { getPeopleLinksRoute } from "@/lib/routing";
+import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
+import { cn } from "@/lib/utils";
+import type { AssociatedGroup } from "@/lib/people/associatedPeopleLinks";
+import { getPeopleLinksRoute, getPeopleRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
+import { peopleCopy } from "@/lib/i18n/copy/people";
 
 interface PeopleRelatedPeoplesSectionProps {
   data: PeopleRelatedData;
+  language: Language;
   peopleId?: string;
   relationsPreview?: PeopleRelationPreviewItem[];
+  /**
+   * `data.ethnicities`, each entry already told whether the corpus holds a
+   * fiche under that name. Required rather than defaulted: an empty list next
+   * to a non-empty `ethnicities` would open the chapter and print nothing,
+   * because `hasRelatedContent` gates on the latter.
+   */
+  associatedGroups: AssociatedGroup[];
 }
+
+const GROUP_CHIP_CLASS =
+  "px-[10px] py-[6px] rounded-[var(--country-radius-md)] border";
+
+const GROUP_CHIP_STYLE = {
+  background: "var(--country-earth-bg)",
+  borderColor: "var(--country-border)",
+} as const;
+
+const GROUP_LABEL_CLASS = "text-afh-small font-semibold leading-tight";
 
 // @req REQ-097 FR72
 // @req REQ-097 FR75
 export function PeopleRelatedPeoplesSection({
   data,
+  language,
   peopleId,
   relationsPreview = [],
+  associatedGroups,
 }: PeopleRelatedPeoplesSectionProps) {
+  const copy = peopleCopy[language].relatedFields;
   const hasContent = hasRelatedContent(data) || relationsPreview.length > 0;
 
   if (!hasContent) return null;
@@ -32,7 +58,7 @@ export function PeopleRelatedPeoplesSection({
     <dl className="afh-prose-fields space-y-[14px]">
       {relationsPreview.length > 0 && peopleId && (
         <div>
-          <dt className="people-section-label">Liens</dt>
+          <dt className="people-section-label">{copy.links}</dt>
           <dd className="afh-prose-def">
             <div className="flex flex-col gap-[8px] mt-[8px]">
               {relationsPreview.slice(0, 3).map((relation) => (
@@ -56,41 +82,69 @@ export function PeopleRelatedPeoplesSection({
               inherited the surrounding ink. ActionLink reads --accent-ink
               directly. */}
             <ActionLink
-              href={getPeopleLinksRoute("fr", peopleId)}
+              href={getPeopleLinksRoute(language, peopleId)}
               className="mt-[4px]"
             >
-              Voir tous les liens
+              {copy.seeAll}
             </ActionLink>
           </dd>
         </div>
       )}
 
-      {data.ethnicities.length > 0 && (
+      {associatedGroups.length > 0 && (
         <div>
-          <dt className="people-section-label">Groupes associés</dt>
+          <dt className="people-section-label">{copy.associatedGroups}</dt>
           <dd className="afh-prose-def">
             <div className="flex flex-wrap gap-[8px] mt-[8px]">
-              {data.ethnicities.map((e, i) => (
-                <div
-                  key={i}
-                  data-ethnicity-card="true"
-                  className="px-[10px] py-[6px] rounded-[var(--country-radius-md)] border"
-                  style={{
-                    background: "var(--country-earth-bg)",
-                    borderColor: "var(--country-border)",
-                  }}
-                >
+              {/* The chip skin is kept and an anchor put in place of the div,
+                  rather than turning the row into ActionLink arrows: this is a
+                  chip that became navigable, and 3735 of the corpus's 4050
+                  entries stay inert beside it. Only the ink changes, to the
+                  accent ActionLink already reads — same skin, same padding,
+                  same weight — so the row keeps its wrap at 430px and an inert
+                  chip carries no mark of being inert. */}
+              {associatedGroups.map((group, index) => {
+                // The corpus entry whole, gloss included: the resolver's
+                // leading-name split is a matching device, not a trim.
+                const label = (
                   <span
-                    className="text-afh-small font-semibold leading-tight"
+                    className={GROUP_LABEL_CLASS}
                     style={{
                       fontFamily: "var(--country-font-body)",
-                      color: "var(--country-text)",
+                      color: group.peopleId
+                        ? "var(--accent-ink)"
+                        : "var(--country-text)",
                     }}
                   >
-                    {e}
+                    {group.label}
                   </span>
-                </div>
-              ))}
+                );
+
+                return group.peopleId ? (
+                  <Link
+                    key={index}
+                    href={getPeopleRoute(language, group.peopleId)}
+                    data-ethnicity-card="true"
+                    className={cn(
+                      GROUP_CHIP_CLASS,
+                      "no-underline hover:underline focus-visible:underline underline-offset-4",
+                      CHARTER_FOCUS_RING
+                    )}
+                    style={GROUP_CHIP_STYLE}
+                  >
+                    {label}
+                  </Link>
+                ) : (
+                  <div
+                    key={index}
+                    data-ethnicity-card="true"
+                    className={GROUP_CHIP_CLASS}
+                    style={GROUP_CHIP_STYLE}
+                  >
+                    {label}
+                  </div>
+                );
+              })}
             </div>
           </dd>
         </div>
@@ -98,11 +152,10 @@ export function PeopleRelatedPeoplesSection({
 
       {data.politicalSystem && (
         <div>
-          <dt className="people-section-label">
-            Système politique traditionnel
-          </dt>
+          <dt className="people-section-label">{copy.politicalSystem}</dt>
           <dd className="afh-prose-def">
             <FicheProse
+              language={language}
               text={data.politicalSystem}
               paragraphClassName="people-section-body"
             />
@@ -112,9 +165,10 @@ export function PeopleRelatedPeoplesSection({
 
       {data.clanOrganization && (
         <div>
-          <dt className="people-section-label">Organisation clanique</dt>
+          <dt className="people-section-label">{copy.clanOrganisation}</dt>
           <dd className="afh-prose-def">
             <FicheProse
+              language={language}
               text={data.clanOrganization}
               paragraphClassName="people-section-body"
             />
@@ -124,9 +178,10 @@ export function PeopleRelatedPeoplesSection({
 
       {data.ageClassSystems && (
         <div>
-          <dt className="people-section-label">Grades d&apos;âge</dt>
+          <dt className="people-section-label">{copy.ageGrades}</dt>
           <dd className="afh-prose-def">
             <FicheProse
+              language={language}
               text={data.ageClassSystems}
               paragraphClassName="people-section-body"
             />
@@ -139,9 +194,10 @@ export function PeopleRelatedPeoplesSection({
           three of its five. */}
       {data.roleOfLineages && (
         <div>
-          <dt className="people-section-label">Rôle des lignages</dt>
+          <dt className="people-section-label">{copy.lineages}</dt>
           <dd className="afh-prose-def">
             <FicheProse
+              language={language}
               text={data.roleOfLineages}
               paragraphClassName="people-section-body"
             />
@@ -151,9 +207,10 @@ export function PeopleRelatedPeoplesSection({
 
       {data.religiousAuthority && (
         <div>
-          <dt className="people-section-label">Autorité religieuse</dt>
+          <dt className="people-section-label">{copy.religiousAuthority}</dt>
           <dd className="afh-prose-def">
             <FicheProse
+              language={language}
               text={data.religiousAuthority}
               paragraphClassName="people-section-body"
             />

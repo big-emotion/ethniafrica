@@ -1,3 +1,4 @@
+import { DOSSIER_VERTICALS } from "@/lib/afrik/parsers/dossierTypes";
 import swaggerJsdoc from "swagger-jsdoc";
 
 import { OPENAPI_V2_TAGS } from "@/lib/api/openapiV2Tags";
@@ -8,11 +9,13 @@ const options: swaggerJsdoc.Options = {
     openapi: "3.1.0",
     info: {
       title: `${PRODUCT_NAME} API v2 - AFRIK`,
-      version: "2.2.0",
+      version: "2.3.0",
       description:
         "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.\n\n" +
         "## Response envelope\n\n" +
-        "Every `/api/v2/*` response uses the Module #0 envelope: `{ data, meta: { license, attribution, pagination?, confidence?, pinned_url? }, errors }`. License and attribution are always present (AR8); `errors` is empty on success and populated on non-2xx responses. List endpoints place their pagination values under `meta.pagination`.\n\n" +
+        "Every `/api/v2/*` response uses the Module #0 envelope: `{ data, meta: { license, attribution, pagination?, confidence?, pinned_url?, translation? }, errors }`. License and attribution are always present (AR8); `errors` is empty on success and populated on non-2xx responses. List endpoints place their pagination values under `meta.pagination`.\n\n" +
+        "## 2.3.0 — translated records (additive)\n\n" +
+        "The five single-entity endpoints accept `?lang=fr|en`. `fr` is the authored language and the default; `en` overlays the translation record when one exists and declares how it was produced in `meta.translation` — `human`, `machine_reviewed` or `machine` — with `stale: true` when the French moved on a field the reader is shown since it was translated. Fields whose subject is a word are withheld at `machine` provenance and served in French until a human has reviewed them (REQ-142, REQ-143). Lists, facets and search stay authored-French.\n\n" +
         "## 2.1.0 — one source-tier vocabulary (breaking)\n\n" +
         'Source authority is now one three-value scale — `official` | `referenced` | `unverified` — spoken identically by the database, the payloads and the UI. Provenance stays on the separate `source_kind` axis, so AI-generated text is `tier: "unverified"` + `source_kind: "ai_generated"` rather than a tier of its own.\n\n' +
         "Removed, all superseded by `tier`:\n\n" +
@@ -457,19 +460,19 @@ const options: swaggerJsdoc.Options = {
               type: "array",
               items: { $ref: "#/components/schemas/PeopleV2" },
               description:
-                "Matching peoples, ranked. Each carries relevance, exactMatch, normalizedScore, confidence, languageFamilyName and a snippet whose matched terms are wrapped in [[ ]].",
+                "Matching peoples, ranked. Each carries relevance, exactMatch, normalizedScore, confidence, languageFamilyName, languageFamilyNameEn (migration 084; null when the family has no English name) and a snippet whose matched terms are wrapped in [[ ]].",
             },
             countries: {
               type: "array",
               items: { $ref: "#/components/schemas/CountryV2" },
               description:
-                "Matching countries, ranked by ts_rank with name_fr outranking etymology. Each carries relevance, exactMatch, normalizedScore and a snippet. Empty when the request carries only a relation scope.",
+                "Matching countries, ranked by ts_rank with name_fr outranking etymology; with `lang=en` the accent-folded English name also matches (exact 1.0 > prefix 0.6 > substring 0.3, migration 084). Each carries nameEn beside nameFr, relevance, exactMatch, normalizedScore and a snippet. Empty when the request carries only a relation scope.",
             },
             families: {
               type: "array",
               items: { $ref: "#/components/schemas/LanguageFamilyV2" },
               description:
-                "Matching language families, ranked by afrik_search_language_families (migration 069): accent-insensitive exact (1.0) > prefix (0.6) > substring (0.3) on the French name, then a prose tier (0.1) through search_vector for a term that appears only in the decolonial text (DEC-028). Each carries relevance, exactMatch, normalizedScore and a snippet.",
+                "Matching language families, ranked by afrik_search_language_families (migration 069): accent-insensitive exact (1.0) > prefix (0.6) > substring (0.3) on the locale's name — name_fr, or name_en with `lang=en` (migration 084) — then a prose tier (0.1) through search_vector for a term that appears only in the decolonial text (DEC-028). Each carries nameEn beside nameFr, relevance, exactMatch, normalizedScore and a snippet.",
             },
             persons: {
               type: "array",
@@ -493,13 +496,13 @@ const options: swaggerJsdoc.Options = {
               type: "array",
               items: { $ref: "#/components/schemas/SearchHitV2" },
               description:
-                "Canonical page for the selected mode, ordered on normalizedScore descending, ties broken on the French collation of the name then on the id. Without `lens`, it merges the main stream and excludes quiz questions; with `lens=quiz`, it contains only quiz questions.",
+                "Canonical page for the selected mode, ordered on normalizedScore descending, ties broken on the name collated in the served locale (`lang`, French when absent) then on the id. Without `lens`, it merges the main stream and excludes quiz questions; with `lens=quiz`, it contains only quiz questions.",
             },
             languages: {
               type: "array",
               items: { $ref: "#/components/schemas/LanguageSearchResultV2" },
               description:
-                "Matching languages (REQ-136), ranked by afrik_search_languages (migration 068): exact match on the ISO 639-3 id or the name, then a prefix/accent-insensitive lexical match. Each carries relevance, exactMatch, familyName and a snippet.",
+                "Matching languages (REQ-136), ranked by afrik_search_languages (migration 068): exact match on the ISO 639-3 id or the name, then a prefix/accent-insensitive lexical match; with `lang=en` the fiche's English name also matches (migration 084). Each carries nameEn, familyName, familyNameEn, relevance, exactMatch and a snippet.",
             },
             peoplesTotal: {
               type: "integer",
@@ -670,7 +673,7 @@ const options: swaggerJsdoc.Options = {
             name: {
               type: "string",
               description:
-                "The hit's French display name — the question stem for a quiz row.",
+                "The hit's display name in the requested locale, with French fallback — the question stem for a quiz row.",
               example: "Wolof",
             },
             normalizedScore: {
@@ -856,6 +859,12 @@ const options: swaggerJsdoc.Options = {
               type: "string",
               example: "Zimbabwe",
             },
+            nameEn: {
+              type: "string",
+              description:
+                "English name of ordinary use, in the state's own English form (Chad, Côte d'Ivoire, Cabo Verde, The Gambia). Absent until the corpus reload fills migration 084's column.",
+              example: "Zimbabwe",
+            },
             nameOfficial: {
               type: "string",
               example: "Republic of Zimbabwe",
@@ -1000,6 +1009,19 @@ const options: swaggerJsdoc.Options = {
               type: "object",
               description: "Evolutionary JSONB content, forwarded opaquely.",
             },
+            associatedPeoples: {
+              type: "array",
+              description:
+                "Associated peoples whose fiche exists, resolved to their main name in fiche order — ETNI-1859. Absent when the name declares no people.",
+              items: {
+                type: "object",
+                properties: {
+                  id: { type: "string", example: "PPL_MANDINGUE" },
+                  name: { type: "string", example: "Mandingue" },
+                },
+                required: ["id", "name"],
+              },
+            },
             relevance: {
               type: "number",
               example: 0.82,
@@ -1048,12 +1070,22 @@ const options: swaggerJsdoc.Options = {
               type: "string",
               example: "Swahili",
             },
+            nameEn: {
+              type: ["string", "null"],
+              description:
+                "The fiche's English name (content.nameEn), matched under `lang=en` (migration 084); null when the fiche carries none.",
+              example: "Swahili",
+            },
             familyId: {
               type: "string",
               description: "Identifiant FLG_*",
               example: "FLG_NIGER_CONGO",
             },
             familyName: {
+              type: ["string", "null"],
+              example: "Niger-Congo",
+            },
+            familyNameEn: {
               type: ["string", "null"],
               example: "Niger-Congo",
             },
@@ -1300,6 +1332,27 @@ const options: swaggerJsdoc.Options = {
                 required: ["id", "fullName", "roleCategory"],
               },
             },
+            alliances: {
+              type: "array",
+              description:
+                "Names this name is allied with (joking-kinship pacts such as sanankuya), in the dossier's own order. The target is resolved to its name so a client never has to print a raw PAT_ id; allianceType is the attested term, or null when the dossier records the pact without naming it.",
+              items: {
+                type: "object",
+                properties: {
+                  targetId: {
+                    type: "string",
+                    pattern: "^PAT_[A-Z0-9_]+$",
+                    example: "PAT_COULIBALY",
+                  },
+                  targetNameMain: { type: "string", example: "Coulibaly" },
+                  allianceType: {
+                    type: ["string", "null"],
+                    example: "sanankuya",
+                  },
+                },
+                required: ["targetId", "targetNameMain", "allianceType"],
+              },
+            },
           },
           required: [
             "id",
@@ -1310,6 +1363,7 @@ const options: swaggerJsdoc.Options = {
             "associatedPeoples",
             "associatedCountries",
             "bearers",
+            "alliances",
           ],
         },
         Error: {
@@ -1346,8 +1400,35 @@ const options: swaggerJsdoc.Options = {
             pagination: {
               $ref: "#/components/schemas/PaginationMeta",
             },
+            translation: {
+              oneOf: [
+                { $ref: "#/components/schemas/TranslationProvenance" },
+                { type: "null" },
+              ],
+              description:
+                "Present once a locale other than the authored one was asked for; null when that locale has no record and the authored text is served.",
+            },
           },
           required: ["license", "attribution"],
+        },
+        TranslationProvenance: {
+          type: "object",
+          description:
+            "How the served record was translated (REQ-142). A separate axis from source tier and source_kind; never alters the confidence score.",
+          properties: {
+            kind: {
+              type: "string",
+              enum: ["human", "machine_reviewed", "machine"],
+            },
+            translatedAt: { type: "string", format: "date-time" },
+            reviewedBy: { type: ["string", "null"] },
+            stale: {
+              type: "boolean",
+              description:
+                "The authored text changed on a served field since the translation was produced.",
+            },
+          },
+          required: ["kind", "translatedAt", "reviewedBy", "stale"],
         },
         ApiErrorEntry: {
           type: "object",
@@ -1573,6 +1654,234 @@ const options: swaggerJsdoc.Options = {
                 { required: ["pagination"] },
               ],
             },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        DossierReadingV2: {
+          type: "object",
+          description:
+            "One reading of the chapter's subject. Comparative readings are optional; when present, both stances are published.",
+          properties: {
+            stance: { type: "string", enum: ["official", "counter"] },
+            label: { type: "string" },
+            body: { type: "string" },
+            sourceRefs: {
+              type: "array",
+              items: { type: "string" },
+              minItems: 1,
+              description: "Keys into the dossier's own sources array.",
+            },
+          },
+          required: ["stance", "label", "body", "sourceRefs"],
+        },
+        DossierChapterV2: {
+          type: "object",
+          properties: {
+            chapterKey: { type: "string" },
+            ordinal: { type: "integer" },
+            title: { type: "string" },
+            question: { type: "string" },
+            standfirst: { type: "string" },
+            body: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  text: { type: "string" },
+                  sourceRefs: { type: "array", items: { type: "string" } },
+                },
+                required: ["text", "sourceRefs"],
+              },
+            },
+            illustration: {
+              type: ["object", "null"],
+              description:
+                "Credits for the chapter's document. Where the licence requires attribution, author and licenceUrl are both present.",
+              properties: {
+                src: { type: "string" },
+                alt: { type: "string" },
+                caption: { type: "string" },
+                author: { type: ["string", "null"] },
+                licence: { type: "string" },
+                licenceUrl: { type: ["string", "null"] },
+                filePage: { type: ["string", "null"] },
+                year: { type: ["string", "null"] },
+              },
+              required: ["src", "alt", "caption", "licence"],
+            },
+            readings: {
+              type: "array",
+              items: { $ref: "#/components/schemas/DossierReadingV2" },
+              minItems: 0,
+            },
+            figures: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  figureKey: { type: "string" },
+                  label: { type: "string" },
+                  value: { type: "string" },
+                  year: { type: "integer" },
+                  note: { type: ["string", "null"] },
+                  sourceRefs: { type: "array", items: { type: "string" } },
+                },
+                required: ["figureKey", "label", "value", "year", "sourceRefs"],
+              },
+            },
+          },
+          required: [
+            "chapterKey",
+            "ordinal",
+            "title",
+            "question",
+            "standfirst",
+            "body",
+            "illustration",
+            "readings",
+            "figures",
+          ],
+        },
+        DossierV2: {
+          type: "object",
+          properties: {
+            id: { type: "string", example: "DOS_PROPORTIONS" },
+            vertical: { type: "string", enum: [...DOSSIER_VERTICALS] },
+            slug: { type: "string", example: "proportions" },
+            publishedOn: { type: "string", format: "date" },
+            title: { type: "string" },
+            question: { type: "string" },
+            standfirst: { type: "string" },
+            thesis: {
+              type: "object",
+              properties: {
+                stepLabel: { type: "string" },
+                heading: { type: "string" },
+                figures: {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    properties: {
+                      figureKey: { type: "string" },
+                      value: { type: "string" },
+                      claim: { type: "string" },
+                      provenance: { type: "string" },
+                      year: { type: "integer" },
+                      sourceRefs: { type: "array", items: { type: "string" } },
+                    },
+                    required: [
+                      "figureKey",
+                      "value",
+                      "claim",
+                      "provenance",
+                      "year",
+                      "sourceRefs",
+                    ],
+                  },
+                },
+              },
+              required: ["stepLabel", "heading", "figures"],
+            },
+            chapters: {
+              type: "array",
+              items: { $ref: "#/components/schemas/DossierChapterV2" },
+            },
+            sources: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  sourceKey: { type: "string" },
+                  title: { type: "string" },
+                  url: { type: ["string", "null"] },
+                  tier: {
+                    type: "string",
+                    enum: ["official", "referenced", "unverified"],
+                  },
+                  source_kind: { type: "string" },
+                  publicationYear: { type: "integer" },
+                  notes: { type: "string" },
+                },
+                required: ["sourceKey", "title", "url", "tier"],
+              },
+            },
+            gaps: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  fieldPath: { type: "string" },
+                  reason: { type: "string" },
+                },
+                required: ["fieldPath", "reason"],
+              },
+            },
+          },
+          required: [
+            "id",
+            "vertical",
+            "slug",
+            "publishedOn",
+            "title",
+            "question",
+            "standfirst",
+            "thesis",
+            "chapters",
+            "sources",
+            "gaps",
+          ],
+        },
+        DossierSummaryV2: {
+          type: "object",
+          properties: {
+            id: { type: "string" },
+            vertical: { type: "string", enum: [...DOSSIER_VERTICALS] },
+            slug: { type: "string" },
+            publishedOn: { type: "string", format: "date" },
+            title: { type: "string" },
+            question: { type: "string" },
+            standfirst: { type: "string" },
+            chapterCount: { type: "integer" },
+            sourceCount: { type: "integer" },
+          },
+          required: [
+            "id",
+            "vertical",
+            "slug",
+            "publishedOn",
+            "title",
+            "question",
+            "standfirst",
+            "chapterCount",
+            "sourceCount",
+          ],
+        },
+        DossierDetailEnvelope: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/DossierV2" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        DossierIndexEnvelope: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/DossierSummaryV2" },
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
             errors: {
               type: "array",
               items: { $ref: "#/components/schemas/ApiErrorEntry" },
@@ -3122,6 +3431,13 @@ const options: swaggerJsdoc.Options = {
               description:
                 "Optional reply address. The report is created and published whether or not it is supplied. A single-use link is e-mailed to confirm the address, and only a confirmed address ever receives the moderation decision. Never published, and never returned by any endpoint.",
             },
+            language: {
+              type: "string",
+              enum: ["en", "fr"],
+              default: "fr",
+              description:
+                "Locale used for reporter verification and moderation-decision e-mails. Missing or invalid values fail closed to French.",
+            },
             counter_source_url: {
               type: "string",
               format: "uri",
@@ -3177,6 +3493,7 @@ const options: swaggerJsdoc.Options = {
               "National Statistics Office, 2024 census, table 12.",
             proposed_rewrite:
               "Update the population figure using the 2024 census.",
+            language: "en",
             antibot: {
               salt: "9f2c1ab4d7e60358",
               nonce: "418209",

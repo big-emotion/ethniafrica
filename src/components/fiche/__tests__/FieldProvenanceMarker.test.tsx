@@ -5,7 +5,7 @@ import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker"
 describe("FieldProvenanceMarker (REQ-119)", () => {
   // @req REQ-119
   it("renders a visible missing marker for an empty structurally-expected field", () => {
-    render(<FieldProvenanceMarker state="missing" />);
+    render(<FieldProvenanceMarker state="missing" language="fr" />);
 
     expect(screen.getByText("Donnée manquante")).toBeInTheDocument();
   });
@@ -16,6 +16,7 @@ describe("FieldProvenanceMarker (REQ-119)", () => {
       <FieldProvenanceMarker
         state="derived"
         origin="peuples rattachés à la famille"
+        language="fr"
       />
     );
 
@@ -26,7 +27,9 @@ describe("FieldProvenanceMarker (REQ-119)", () => {
 
   // @req REQ-119
   it("renders no provenance marker for a declared value", () => {
-    const { container } = render(<FieldProvenanceMarker state="declared" />);
+    const { container } = render(
+      <FieldProvenanceMarker state="declared" language="fr" />
+    );
 
     expect(container).toBeEmptyDOMElement();
   });
@@ -37,6 +40,7 @@ describe("FieldProvenanceMarker (REQ-119)", () => {
       <FieldProvenanceMarker
         state="documented-gap"
         reason="Aucune alliance entre patronymes n'est documentée dans le passage."
+        language="fr"
       />
     );
 
@@ -50,7 +54,7 @@ describe("FieldProvenanceMarker (REQ-119)", () => {
 
   // @req REQ-119
   it("keeps the generic badge when a gap carries no wording", () => {
-    render(<FieldProvenanceMarker state="documented-gap" />);
+    render(<FieldProvenanceMarker state="documented-gap" language="fr" />);
 
     expect(screen.getByText("Donnée manquante")).toBeInTheDocument();
   });
@@ -58,9 +62,19 @@ describe("FieldProvenanceMarker (REQ-119)", () => {
   // @req REQ-119
   it("renders nothing for a field the class's model does not declare", () => {
     const { container } = render(
-      <FieldProvenanceMarker state="not-modelled" />
+      <FieldProvenanceMarker state="not-modelled" language="fr" />
     );
 
     expect(container).toBeEmptyDOMElement();
+  });
+
+  // The marker is the one wording for an absent field across every fiche,
+  // so it is the first place an English page would betray a French default.
+  // @req REQ-140
+  it("words the missing marker in the locale it is given", () => {
+    render(<FieldProvenanceMarker state="missing" language="en" />);
+
+    expect(screen.getByText("Missing data")).toBeInTheDocument();
+    expect(screen.queryByText("Donnée manquante")).not.toBeInTheDocument();
   });
 });

@@ -32,6 +32,7 @@ vi.mock("@/api/v2/services/revisions", () => ({
 
 vi.mock("@/api/v2/services/peopleService", () => ({
   getPeopleById: (...args: unknown[]) => mockGetPeopleById(...args),
+  getPeopleNameIndex: () => Promise.resolve([]),
 }));
 
 vi.mock("@/lib/supabase/queries/afrik/flags", () => ({
@@ -125,7 +126,7 @@ vi.mock("@/components/source-transparency/PinnedVersionBanner", () => ({
 // ---------------------------------------------------------------------------
 import { render } from "@testing-library/react";
 import { notFound, redirect } from "next/navigation";
-import PeoplesSlugPage from "../[slug]/page";
+import PeoplesSlugPage, { generateMetadata } from "../[slug]/page";
 import {
   RELATIONS,
   YORUBA_FRAGMENTATION,
@@ -237,7 +238,7 @@ describe("/[lang]/peuples/[slug] page", () => {
     const detail = getByTestId("people-detail-live");
     expect(detail.getAttribute("data-people-id")).toBe("PPL_BAKONGO");
     expect(detail.getAttribute("data-people-name")).toBe("Bakongo");
-    expect(mockGetPeopleById).toHaveBeenCalledWith("PPL_BAKONGO");
+    expect(mockGetPeopleById).toHaveBeenCalledWith("PPL_BAKONGO", "fr");
     expect(mockGetActiveSourceFlags).toHaveBeenCalledWith(
       "people",
       "PPL_BAKONGO"
@@ -268,6 +269,7 @@ describe("/[lang]/peuples/[slug] page", () => {
     expect(queryByTestId("people-detail-live")).toBeNull();
 
     expect(mockPinnedVersionBanner).toHaveBeenCalledWith({
+      language: "fr",
       pinnedAt: "2025-01-15T00:00:00Z",
       versionTag: "34",
       liveUrl: getPeopleRoute("fr", "PPL_BAKONGO"),
@@ -294,6 +296,39 @@ describe("/[lang]/peuples/[slug] page", () => {
     expect(redirect).toHaveBeenCalledWith(
       getPeopleRoute("fr", "PPL_BAKONGO@v5")
     );
+  });
+
+  // 3b. Retired identifier → the successor's route, in one hop, before any
+  // corpus read: the retired row may already have been pruned.
+  // @req REQ-027
+  it("retired id: redirects to the successor's route without reading the corpus", async () => {
+    await expect(callPage("PPL_SERERE")).rejects.toThrow(
+      `NEXT_REDIRECT:${getPeopleRoute("fr", "PPL_SERER")}`
+    );
+    expect(redirect).toHaveBeenCalledWith(getPeopleRoute("fr", "PPL_SERER"));
+    expect(mockGetPeopleById).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-027
+  it("retired id with a version suffix: still redirects to the successor's live route", async () => {
+    await expect(callPage("PPL_SERERE@v3")).rejects.toThrow(
+      `NEXT_REDIRECT:${getPeopleRoute("fr", "PPL_SERER")}`
+    );
+    expect(mockGetSnapshot).not.toHaveBeenCalled();
+  });
+
+  // The existence check runs in generateMetadata, before the shell flushes; a
+  // retired id must redirect there too, never 404.
+  // @req REQ-027
+  it("retired id: generateMetadata redirects instead of answering 404", async () => {
+    mockGetPeopleById.mockResolvedValue(null);
+
+    await expect(
+      generateMetadata({
+        params: Promise.resolve({ lang: "fr", slug: "PPL_SERERE" }),
+      })
+    ).rejects.toThrow(`NEXT_REDIRECT:${getPeopleRoute("fr", "PPL_SERER")}`);
+    expect(notFound).not.toHaveBeenCalled();
   });
 
   // 4. @latest with no revisions → 404

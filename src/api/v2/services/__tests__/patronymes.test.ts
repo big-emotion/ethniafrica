@@ -13,6 +13,11 @@ vi.mock("@/lib/api/logger", () => ({
   logger: { info: vi.fn(), error: vi.fn(), warn: vi.fn(), debug: vi.fn() },
 }));
 
+vi.mock("@/lib/supabase/queries/afrik/translations", () => ({
+  getAfrikTranslation: vi.fn(),
+}));
+
+import { getAfrikTranslation } from "@/lib/supabase/queries/afrik/translations";
 import { getPatronymeById, listPatronymes } from "../patronymes";
 
 type FakeQuery = Record<string, ReturnType<typeof vi.fn>>;
@@ -22,6 +27,16 @@ function buildMaybeSingleQuery(row: Record<string, unknown> | null): FakeQuery {
   query.select = vi.fn(() => query);
   query.eq = vi.fn(() => query);
   query.maybeSingle = vi.fn(() => Promise.resolve({ data: row, error: null }));
+  return query;
+}
+
+/** `afrik_patronymes` answers both the fiche row and the allied names lookup. */
+function buildPatronymeQuery(
+  row: Record<string, unknown> | null,
+  alliedRows: Array<Record<string, unknown>>
+): FakeQuery {
+  const query = buildMaybeSingleQuery(row);
+  query.in = vi.fn(() => Promise.resolve({ data: alliedRows, error: null }));
   return query;
 }
 
@@ -67,8 +82,10 @@ function mockTables({
   countries = [{ id: "MLI", name_fr: "Mali" }],
   patronymePersons = [{ patronyme_id: "PAT_KEITA", person_id: "PER_BEARER_1" }],
   persons = [makeBearerRow(1)],
+  alliedPatronymes = [],
 }: {
   patronyme?: Record<string, unknown> | null;
+  alliedPatronymes?: Array<Record<string, unknown>>;
   patronymePeoples?: Array<Record<string, unknown>>;
   peoples?: Array<Record<string, unknown>>;
   patronymeCountries?: Array<Record<string, unknown>>;
@@ -77,7 +94,8 @@ function mockTables({
   persons?: Array<Record<string, unknown>>;
 } = {}) {
   fromMock.mockImplementation((table: string) => {
-    if (table === "afrik_patronymes") return buildMaybeSingleQuery(patronyme);
+    if (table === "afrik_patronymes")
+      return buildPatronymeQuery(patronyme, alliedPatronymes);
     if (table === "afrik_patronyme_peoples")
       return buildInQuery(patronymePeoples);
     if (table === "afrik_peoples") return buildInQuery(peoples);
@@ -163,6 +181,106 @@ describe("patronymes service — getPatronymeById", () => {
       "id",
       "roleCategory",
     ]);
+  });
+
+  // @req REQ-133
+  it("resolves each declared alliance to the allied name, in the dossier's order", async () => {
+    mockTables({
+      patronyme: {
+        ...patronymeRow,
+        content: {
+          nameMain: "Keita",
+          alliances: [
+            { targetPatronymeId: "PAT_COULIBALY", allianceType: "sanankuya" },
+            { targetPatronymeId: "PAT_FOFANA", allianceType: null },
+          ],
+        },
+      },
+      alliedPatronymes: [
+        { id: "PAT_FOFANA", name_main: "Fofana" },
+        { id: "PAT_COULIBALY", name_main: "Coulibaly" },
+      ],
+    });
+
+    const result = await getPatronymeById("PAT_KEITA");
+
+    expect(result?.alliances).toEqual([
+      {
+        targetId: "PAT_COULIBALY",
+        targetNameMain: "Coulibaly",
+        allianceType: "sanankuya",
+      },
+      { targetId: "PAT_FOFANA", targetNameMain: "Fofana", allianceType: null },
+    ]);
+  });
+
+  // A dossier can cite a name whose row has not been loaded yet; the fiche
+  // must then show nothing for it rather than the raw identifier.
+  // @req REQ-133
+  it("drops an alliance whose target the database does not hold", async () => {
+    mockTables({
+      patronyme: {
+        ...patronymeRow,
+        content: {
+          nameMain: "Keita",
+          alliances: [
+            { targetPatronymeId: "PAT_NOT_LOADED", allianceType: "sanankuya" },
+          ],
+        },
+      },
+      alliedPatronymes: [],
+    });
+
+    const result = await getPatronymeById("PAT_KEITA");
+
+    expect(result?.alliances).toEqual([]);
+  });
+
+  // @req REQ-133
+  it("returns an empty alliances list without a lookup when the dossier declares none", async () => {
+    mockTables();
+
+    const result = await getPatronymeById("PAT_KEITA");
+
+    expect(result?.alliances).toEqual([]);
+  });
+
+  // @req REQ-142
+  it("overlays the English dossier prose and carries the provenance when asked for en", async () => {
+    mockTables({
+      patronyme: {
+        ...patronymeRow,
+        content: {
+          nameMain: "Keita",
+          gaps: [{ fieldPath: "origin", reason: "Non documenté." }],
+        },
+      },
+    });
+    vi.mocked(getAfrikTranslation).mockResolvedValue({
+      entityType: "patronyme",
+      entityId: "PAT_KEITA",
+      lang: "en",
+      content: { nameMain: "Keïta", gaps: [{ reason: "Not documented." }] },
+      translationKind: "machine",
+      translatedAt: "2026-09-05T10:00:00.000Z",
+      sourceHash: "d".repeat(64),
+      fieldHashes: {},
+      reviewRequired: [],
+    });
+
+    const result = await getPatronymeById("PAT_KEITA", "en");
+
+    expect(getAfrikTranslation).toHaveBeenCalledWith(
+      "patronyme",
+      "PAT_KEITA",
+      "en"
+    );
+    expect(result?.content.gaps).toEqual([
+      { fieldPath: "origin", reason: "Not documented." },
+    ]);
+    // nameMain is invariant: the record cannot rename the dossier.
+    expect(result?.nameMain).toBe("Keita");
+    expect(result?.translation).toMatchObject({ kind: "machine" });
   });
 
   // @req REQ-133

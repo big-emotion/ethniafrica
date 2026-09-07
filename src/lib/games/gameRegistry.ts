@@ -41,7 +41,15 @@ export interface GameDefinition {
    */
   kinds: GameKind[];
   dataSource: GameDataSource;
-  /** The standing question, shown above every round. */
+  /**
+   * The standing line shown above every round — the page's own subtitle and
+   * its meta description.
+   *
+   * A claim, not a question. It held one of the game's questions while the
+   * game had only one, and went on holding it after a second and a third
+   * shipped, which announced « lequel est le plus grand ? » above a slider.
+   * A round's own stem is a round's business; see `COMPARISON_PROMPT_FR`.
+   */
   promptFr: string;
   /** Rounds offered in one session. */
   roundsPerSession: number;
@@ -52,10 +60,22 @@ export const GAME_DEFINITIONS: GameDefinition[] = [
   {
     id: "mercator",
     slug: "mercator",
-    nameFr: "La taille qu'on vous a cachée",
-    kinds: ["binary", "estimate"],
+    /**
+     * The name is the projection; the promise is the subtitle.
+     *
+     * « La taille qu'on vous a cachée » was the whole name, and it named the
+     * effect rather than the thing — a reader arriving from the hub could not
+     * tell what the page was about until they were on it, and the tile, the
+     * trail and the tab title all carried a sentence where a name belongs. The
+     * subject has a name every reader has met on a wall map, so the page takes
+     * it, and the promise moves to the line under it where it still opens the
+     * page and no longer has to identify it.
+     */
+    nameFr: "La projection de Mercator",
+    kinds: ["binary", "estimate", "list"],
     dataSource: "countries",
-    promptFr: "Lequel de ces deux pays couvre la plus grande surface ?",
+    promptFr:
+      "La taille qu'on vous a cachée : le nord est gonflé, l'Afrique rapetissée. Mesurez l'écart.",
     roundsPerSession: 8,
   },
 ];

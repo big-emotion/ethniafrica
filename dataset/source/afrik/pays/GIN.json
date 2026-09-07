@@ -1,6 +1,7 @@
 {
   "id": "GIN",
   "nameFr": "Guinée",
+  "nameEn": "Guinea",
   "nameOfficial": "République de Guinée (République de Guinée)",
   "summary": "La Guinée porte un nom que les Portugais appliquaient au XVe siècle à toute la côte ouest-africaine. Le pays articule quatre ensembles : le Fouta-Djalon peul, la Haute-Guinée malinké héritée de l'empire du Mali, la Basse-Guinée soussou et les peuples forestiers. Griots, kora et balafon y portent une tradition orale continue.",
   "etymology": "Le nom \"Guinée\" provient du portugais \"Guiné\", terme utilisé par les navigateurs portugais au XVe siècle pour désigner la côte ouest-africaine au sud du Sénégal. L'origine du terme \"Guiné\" est incertaine, mais pourrait dériver du berbère \"Akal n-Iguinawen\" (terre des Noirs) ou d'un terme local. Les Français ont adapté ce nom pour leur colonie.",
@@ -18,6 +19,12 @@
       {
         "name": "Empire du Mali",
         "period": "XIIIe siècle - XVIe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1201,
+          "endYear": 1600,
+          "precision": "century"
+        },
         "dominantPeoples": ["Malinké", "autres peuples mandé"],
         "politicalCenters": [
           "Niani (capitale historique",
@@ -29,6 +36,12 @@
       {
         "name": "Théocratie peule du Fouta Djallon",
         "period": "XVIIIe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1701,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Peul / Fula"],
         "politicalCenters": ["Fouta Djallon (hauts plateaux)"],
         "historicalRole": "Théocratie peule du Fouta Djallon, l'un des plus importants États peuls d'Afrique de l'Ouest. État islamique structuré, système d'émirats, résistance à la colonisation française. Traditions peules et islamiques."
@@ -36,6 +49,7 @@
       {
         "name": "Royaumes Malinké",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Malinké"],
         "politicalCenters": [
           "Chefferies traditionnelles malinké (Haute-Guinée)"
@@ -45,6 +59,7 @@
       {
         "name": "Peuples forestiers",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Kissi", "Toma", "Guerzé / Kpelle"],
         "politicalCenters": ["Chefferies traditionnelles (Guinée forestière)"],
         "historicalRole": "Peuples forestiers de Guinée forestière, culturellement distincts du nord mandé et du Fouta Djallon. Traditions forestières, structures lignagères. Résistance à la colonisation."
@@ -52,6 +67,7 @@
       {
         "name": "Peuples Soussou",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Soussou"],
         "politicalCenters": [
           "Chefferies traditionnelles (Basse-Guinée",
@@ -62,6 +78,12 @@
       {
         "name": "Colonie française de Guinée",
         "period": "1891 - 1958",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1891,
+          "endYear": 1958,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples guinéens sous domination française"
         ],

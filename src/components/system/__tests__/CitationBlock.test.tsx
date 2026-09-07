@@ -15,6 +15,7 @@ function renderCitationBlock(
 ) {
   return render(
     <CitationBlock
+      language="fr"
       title="Fiche de référence (Nom autonome / Nom usuel)"
       liveUrl={LIVE_URL}
       accessedAt={ACCESSED_AT}
@@ -30,6 +31,24 @@ describe("CitationBlock", () => {
 
   afterEach(() => {
     vi.restoreAllMocks();
+  });
+
+  // @req REQ-145
+  it("renders the citation controls and access wording in English", () => {
+    renderCitationBlock({
+      language: "en",
+      title: "Reference fiche",
+      liveUrl: "https://example.org/en/fiche/reference",
+    });
+
+    expect(
+      screen.getByRole("heading", { name: "Cite this fiche" })
+    ).toBeVisible();
+    expect(screen.getByRole("button", { name: "Copy citation" })).toBeVisible();
+    expect(
+      screen.getByRole<HTMLTextAreaElement>("textbox", { name: "Citation" })
+        .value
+    ).toContain("Accessed 14 July 2026");
   });
 
   // @req REQ-021
@@ -191,6 +210,7 @@ describe("CitationBlock", () => {
 
     rerender(
       <CitationBlock
+        language="fr"
         title="Fiche de référence (Nom autonome / Nom usuel)"
         liveUrl={LIVE_URL}
         accessedAt={ACCESSED_AT}

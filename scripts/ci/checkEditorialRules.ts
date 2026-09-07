@@ -63,6 +63,7 @@ export type RuleName =
   | "doctrine-link-card-snapshot"
   | "source-ref-resolves"
   | "reader-facing-register"
+  | "chronology-symmetry"
   | "json-parse";
 
 export interface RuleResult {
@@ -86,6 +87,7 @@ export interface Fiche {
     appellations?: { selfAppellation?: string | null };
     decolonialHeader?: { selfAppellation?: string | null };
     sources?: unknown[];
+    kingdoms?: unknown[];
   };
   [key: string]: unknown;
 }
@@ -454,44 +456,27 @@ export function readerFacingProseFields(fiche: Fiche): ProseField[] {
 }
 
 /**
- * What marks a sentence as written for the curator rather than for the reader.
+ * The reader-facing register moved to `src/lib/editorial/readerRegister` when
+ * it gained a second caller with the opposite timing: this gate reads it at
+ * build time to refuse a fiche, and `lib/seo/ficheMetadata` reads it at request
+ * time to refuse a title it would otherwise print into a search result. Two
+ * copies of the vocabulary could disagree about what a reader may see, which is
+ * the one thing a single exported constant exists to prevent.
  *
- * Three kinds, and the third is the one worth naming. A repository path or a
- * raw `PPL_`/`FLG_`/`PAT_` identifier is obvious once seen. The pipeline's own
- * vocabulary is not: "la file d'attente des candidats", "le protocole de
- * recherche par fiche", "la revue claim-level reste requise" all read as
- * ordinary French, so they survived every review — while telling the visitor
- * about a work queue, a research backlog and an unresolved tier that describe
- * how the atlas is made, not what it knows.
- *
- * The reader is owed the silence itself ("l'atlas ne documente pas encore ce
- * point"), never the reason the workshop has not filled it yet.
+ * Re-exported here because this module is where CLAUDE.md and the rule's own
+ * tests say the vocabulary is found.
  */
-export const INTERNAL_REGISTER_PATTERNS: ReadonlyArray<{
-  label: string;
-  pattern: RegExp;
-}> = [
-  {
-    label: "repository path",
-    pattern: /\b(?:dataset|docs|scripts|src|public)\/[\w./-]+/,
-  },
-  { label: "file name", pattern: /\b[\w-]+\.json\b/ },
-  {
-    label: "JSON field path",
-    pattern:
-      /\b(?:content|_meta)\.\w+|\bfieldPath\b|\bsourceRefs\b|\bsourceKey\b|\bverificationLead\b|\btargetPatronymeId\b|\bclassificationStatus\b/,
-  },
-  {
-    label: "raw corpus identifier",
-    pattern: /\b(?:PPL|FLG|PAT)_[A-Z0-9_]+/,
-  },
-  {
-    label: "curation vocabulary",
-    pattern:
-      /file d'attente|passe de recherche|passe anthroponymique|protocole de recherche|claim-level|tier hérité|hors corpus|plan de couverture|vague \d+ du plan/i,
-  },
-  { label: "internal corpus label", pattern: /Corpus AFRIK\s*—/i },
-];
+import {
+  type RegisterPattern,
+  INTERNAL_REGISTER_PATTERNS,
+  INTERNAL_REGISTER_PATTERNS_EN,
+} from "@/lib/editorial/readerRegister";
+
+export {
+  type RegisterPattern,
+  INTERNAL_REGISTER_PATTERNS,
+  INTERNAL_REGISTER_PATTERNS_EN,
+};
 
 /**
  * `_`-prefixed files under the corpus are the curator's own worksheets — the
@@ -504,7 +489,8 @@ export function isCuratorWorksheet(relPath: string): boolean {
 
 export function checkReaderFacingRegister(
   fiche: Fiche,
-  file: string
+  file: string,
+  patterns: ReadonlyArray<RegisterPattern> = INTERNAL_REGISTER_PATTERNS
 ): RuleResult[] {
   if (isCuratorWorksheet(file)) return [];
 
@@ -512,7 +498,7 @@ export function checkReaderFacingRegister(
   const findings: RuleResult[] = [];
 
   for (const field of readerFacingProseFields(fiche)) {
-    for (const { label, pattern } of INTERNAL_REGISTER_PATTERNS) {
+    for (const { label, pattern } of patterns) {
       const hit = field.text.match(pattern);
       if (hit === null) continue;
       findings.push({
@@ -527,6 +513,108 @@ export function checkReaderFacingRegister(
   }
 
   return findings;
+}
+
+// ───── Rule 6: chronology symmetry ────────────────────────────────────────
+
+const CHRONOLOGY_RULE: RuleName = "chronology-symmetry";
+
+/**
+ * The number of precolonial polities still undated in a country that dates its
+ * colonial administrations, measured 2026-09-07 across the 54 country fiches.
+ *
+ * A ratchet with two edges, like `DEAD_CODE_CEILINGS`: above it is a
+ * regression, and **below it is also a failure**, because a ceiling left
+ * standing over the real count is a licence to climb back to it. Each editorial
+ * pass that sources a polity's dates lowers this constant in the same change,
+ * which is what makes the burn-down auditable rather than aspirational.
+ *
+ * It moved 95 → 96 once, in the change that retyped "Colónia de Angola" from
+ * polity to colonial. Nothing regressed: Angola's Ovimbundu kingdoms were
+ * always undated, and the misfiled colony was hiding them from this count. A
+ * ratchet that only ever falls would have made that correction unreportable,
+ * so the rule is that the number follows the measurement and the change says
+ * why.
+ *
+ * When it reaches 0, delete the ratchet and let the findings be errors: the
+ * rule becomes a plain gate and the asymmetry cannot return.
+ */
+export const UNDATED_POLITY_CEILING = 95;
+
+interface KingdomShape {
+  name?: unknown;
+  entryType?: unknown;
+  timeRange?: unknown;
+}
+
+/**
+ * Rule 6 – A country that dates its colonial administrations dates its
+ * precolonial polities too.
+ *
+ * This is not a completeness check. A country that dates nothing is merely
+ * unfinished; a country that dates only the coloniser has published a claim
+ * about whose history is precise, and that is the asymmetry the atlas showed
+ * on six of its pages — "1894 - 1962" for the protectorate, "Précolonial" for
+ * the five kingdoms above it.
+ *
+ * The grain is the entry, not the country: counting countries would let a
+ * single dated Ugandan kingdom clear the other four.
+ */
+export function checkChronologySymmetry(
+  fiche: Fiche,
+  file: string
+): RuleResult[] {
+  if (!isCountryFiche(file)) return [];
+  const kingdoms = fiche.content?.kingdoms;
+  if (!Array.isArray(kingdoms)) return [];
+
+  const entries = kingdoms.filter(
+    (k): k is KingdomShape => !!k && typeof k === "object"
+  );
+  const datedColonial = entries.find(
+    (k) =>
+      (k.entryType === "colonial" || k.entryType === "modern") && !!k.timeRange
+  );
+  if (!datedColonial) return [];
+
+  const witness =
+    typeof datedColonial.name === "string" ? datedColonial.name : "—";
+  const slug = path.basename(file, ".json");
+
+  return entries
+    .filter((k) => k.entryType === "polity" && !k.timeRange)
+    .map((k) => ({
+      rule: CHRONOLOGY_RULE,
+      severity: "warning" as Severity,
+      file,
+      slug,
+      message: `"${witness}" is dated but "${
+        typeof k.name === "string" ? k.name : "—"
+      }" is not — a country that dates its colonial administrations must date its precolonial polities.`,
+    }));
+}
+
+/**
+ * The ratchet finding. Returns null only when the corpus sits exactly on the
+ * recorded ceiling; both directions are errors, and the message names the
+ * measured number so the fix is to edit one line.
+ */
+export function checkUndatedPolityCeiling(
+  count: number,
+  ceiling: number
+): RuleResult | null {
+  if (count === ceiling) return null;
+  const direction =
+    count > ceiling
+      ? `rose to ${count} (ceiling ${ceiling}) — a polity lost its dates`
+      : `fell to ${count} (ceiling ${ceiling}) — lower UNDATED_POLITY_CEILING to ${count} in the same change`;
+  return {
+    rule: CHRONOLOGY_RULE,
+    severity: "error",
+    file: "scripts/ci/checkEditorialRules.ts",
+    slug: "UNDATED_POLITY_CEILING",
+    message: `Undated precolonial polities ${direction}.`,
+  };
 }
 
 // ───── Loader ─────────────────────────────────────────────────────────────
@@ -616,6 +704,15 @@ export function formatAnnotation(r: RuleResult): string {
 export interface RunOptions {
   repoRoot: string;
   afrikRoot?: string;
+  /** Defaults to `<repoRoot>/dataset/translations/en`. */
+  translationsRoot?: string;
+  /**
+   * The undated-polity ratchet counts *this repository's* corpus, so it is off
+   * unless a caller asks for it — a run pointed at a fixture would otherwise
+   * fail for containing the wrong number of countries. The CLI passes
+   * `UNDATED_POLITY_CEILING`; that call site is the arming.
+   */
+  undatedPolityCeiling?: number;
 }
 
 export function runEditorialRules(opts: RunOptions): RunResult {
@@ -668,6 +765,46 @@ export function runEditorialRules(opts: RunOptions): RunResult {
     findings.push(...checkPatronymeSourceRefs(fiche, relPath));
 
     findings.push(...checkReaderFacingRegister(fiche, relPath));
+
+    findings.push(...checkChronologySymmetry(fiche, relPath));
+  }
+
+  if (opts.undatedPolityCeiling !== undefined) {
+    const undatedPolities = findings.filter(
+      (f) => f.rule === CHRONOLOGY_RULE
+    ).length;
+    const ratchet = checkUndatedPolityCeiling(
+      undatedPolities,
+      opts.undatedPolityCeiling
+    );
+    if (ratchet) findings.push(ratchet);
+  }
+
+  // A translated record publishes the same three fields verbatim, in English.
+  // Only the register rule applies: invariants and sources are the source
+  // fiche's, and TR-1 in validateAfrikData holds the sidecar to them.
+  const translationsRoot =
+    opts.translationsRoot ??
+    path.join(repoRoot, "dataset", "translations", "en");
+  for (const fullPath of listFicheFiles(translationsRoot)) {
+    const { fiche, relPath, parseError } = loadFiche(fullPath, repoRoot);
+    if (parseError !== null || fiche === null) {
+      findings.push({
+        rule: "json-parse",
+        severity: "error",
+        file: relPath,
+        slug: path.basename(relPath, ".json"),
+        message: `Invalid JSON in ${relPath}: ${parseError}`,
+      });
+      continue;
+    }
+    findings.push(
+      ...checkReaderFacingRegister(
+        fiche,
+        relPath,
+        INTERNAL_REGISTER_PATTERNS_EN
+      )
+    );
   }
 
   const annotations = findings.map(formatAnnotation);
@@ -689,7 +826,10 @@ function summarize(findings: RuleResult[]): string {
 
 async function main(): Promise<void> {
   const repoRoot = process.cwd();
-  const result = runEditorialRules({ repoRoot });
+  const result = runEditorialRules({
+    repoRoot,
+    undatedPolityCeiling: UNDATED_POLITY_CEILING,
+  });
   for (const line of result.annotations) {
     // PR annotations must be written to stdout for GitHub Actions to pick
     // them up.

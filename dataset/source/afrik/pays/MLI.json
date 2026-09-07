@@ -1,6 +1,7 @@
 {
   "id": "MLI",
   "nameFr": "Mali",
+  "nameEn": "Mali",
   "nameOfficial": "République du Mali",
   "summary": "Le Mali porte le nom de l'empire qui domina l'Afrique de l'Ouest du XIIIe au XVIe siècle. Ghana, Mali, Songhaï : trois empires s'y sont succédé, et Djenné comme Tombouctou en gardent l'architecture. Bambara, Peuls, Dogons, Touaregs, Soninké et Songhaï y perpétuent l'épopée de Soundiata et l'art des griots.",
   "etymology": "Le nom \"Mali\" vient de l'empire du Mali (XIIIe-XVIe siècles), l'un des plus grands empires d'Afrique de l'Ouest. \"Mali\" signifie \"hippopotame\" en mandingue, ou \"lieu où vit le roi\" selon certaines interprétations. Le nom a été choisi lors de l'indépendance en référence à l'empire historique.",
@@ -21,6 +22,12 @@
       {
         "name": "Empire du Ghana",
         "period": "IIIe - XIIIe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 201,
+          "endYear": 1300,
+          "precision": "century"
+        },
         "dominantPeoples": ["Soninké"],
         "politicalCenters": ["Koumbi Saleh (capitale)"],
         "historicalRole": "Premier grand empire d'Afrique de l'Ouest, réputé pour son commerce de l'or. Modèle politique et économique pour les empires suivants."
@@ -28,6 +35,12 @@
       {
         "name": "Empire du Mali",
         "period": "XIIIe - XVIe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1201,
+          "endYear": 1600,
+          "precision": "century"
+        },
         "dominantPeoples": ["Malinké", "Bambara"],
         "politicalCenters": ["Niani (capitale)", "Kangaba"],
         "historicalRole": "Un des plus grands empires d'Afrique de l'Ouest, fondé par Soundiata Keïta. Commerce transsaharien, diffusion de l'islam, centre culturel majeur (Tombouctou)."
@@ -35,6 +48,12 @@
       {
         "name": "Empire Songhai",
         "period": "XVe - XVIe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1401,
+          "endYear": 1600,
+          "precision": "century"
+        },
         "dominantPeoples": ["Songhai"],
         "politicalCenters": ["Gao (capitale)", "Tombouctou", "Djenné"],
         "historicalRole": "Empire puissant qui a succédé au Mali. Centre intellectuel et commercial majeur. Conquête marocaine en 1591."
@@ -42,6 +61,12 @@
       {
         "name": "Royaumes bambara",
         "period": "XVIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1601,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Bambara"],
         "politicalCenters": ["Ségou", "Kaarta"],
         "historicalRole": "Royaumes bambara puissants qui ont résisté à l'expansion peule et touarègue."
@@ -49,6 +74,7 @@
       {
         "name": "Confédérations touarègues",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Touareg (Kel Tamasheq)"],
         "politicalCenters": ["Ahaggar", "Azawagh", "Air", "Adagh"],
         "historicalRole": "Confédérations nomades du Sahara, contrôle des routes transsahariennes."
@@ -56,6 +82,12 @@
       {
         "name": "Soudan français",
         "period": "1892 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1892,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples maliens sous administration coloniale française"
         ],
@@ -65,6 +97,12 @@
       {
         "name": "République du Mali",
         "period": "1960 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1960,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples maliens"],
         "politicalCenters": ["Bamako (capitale)"],
         "historicalRole": "Indépendance en 1960. Histoire politique mouvementée avec plusieurs coups d'État. Conflits avec les Touaregs. Transition démocratique et défis de développement."

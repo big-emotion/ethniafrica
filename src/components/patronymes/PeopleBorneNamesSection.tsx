@@ -2,9 +2,8 @@ import type { PatronymeLinkSummary } from "@/api/v2/services/patronymeFicheLinks
 import { FicheSection } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { FicheNameList } from "@/components/patronymes/FicheNameList";
-import { translations } from "@/lib/translations";
-
-const copy = translations.fr.patronymes.onFiche;
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 export interface PeopleBorneNamesSectionProps {
   /**
@@ -18,6 +17,7 @@ export interface PeopleBorneNamesSectionProps {
    * whole argument is provenance is the worse of the two failures.
    */
   patronymes: PatronymeLinkSummary[] | null;
+  language: Language;
 }
 
 /**
@@ -37,20 +37,24 @@ export interface PeopleBorneNamesSectionProps {
 // @req REQ-133
 export function PeopleBorneNamesSection({
   patronymes,
+  language,
 }: PeopleBorneNamesSectionProps) {
+  const copy = getTranslation(language).patronymes.onFiche;
   return (
     <FicheSection title={copy.peopleTitle}>
       {patronymes === null ? (
         <FieldProvenanceMarker
           state="documented-gap"
           reason={copy.peopleUnavailable}
+          language={language}
         />
       ) : patronymes.length > 0 ? (
-        <FicheNameList names={patronymes} />
+        <FicheNameList names={patronymes} language={language} />
       ) : (
         <FieldProvenanceMarker
           state="documented-gap"
           reason={copy.peopleEmpty}
+          language={language}
         />
       )}
     </FicheSection>

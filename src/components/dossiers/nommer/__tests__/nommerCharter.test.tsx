@@ -10,15 +10,18 @@ import { GlossaryPage } from "@/components/glossaire/GlossaryPage";
 import { ModuleAvailabilityProvider } from "@/components/hubs/ModuleAvailabilityProvider";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { NOMMER_CHAPTERS } from "@/lib/dossiers/nommer/chapters";
+import { isModulePublished } from "@/lib/hubs/moduleOffer";
 import {
   ACCESS_MODES,
   ACCESS_MODE_LABELS,
   getModulesForAccessMode,
+  getNavModules,
 } from "@/lib/hubs/moduleRegistry";
 import { NOMMER_CHAPTER_KEYS, NOMMER_CHAPTER_SLUGS } from "@/lib/routing";
 
 vi.mock("next/navigation", () => ({
   usePathname: () => "/fr",
+  useRouter: () => ({ push: vi.fn() }),
 }));
 
 vi.mock("@/components/layout/PageLayout", () => ({
@@ -52,7 +55,7 @@ describe("the Nommer dossier — charter contract", () => {
   // @req REQ-113
   it("scopes each of its pages to exactly one accent", () => {
     for (const Page of [NommerPillarPage, GlossaryPage]) {
-      const { container, unmount } = render(<Page />);
+      const { container, unmount } = render(<Page language="fr" />);
       expect(container.querySelectorAll("[class*='afh-accent-']")).toHaveLength(
         1
       );
@@ -65,7 +68,7 @@ describe("the Nommer dossier — charter contract", () => {
   // stretched anchor has already made.
   // @req REQ-113
   it("draws no arrow of its own on a chapter tile", () => {
-    render(<NommerPillarPage />);
+    render(<NommerPillarPage language="fr" />);
 
     for (const chapter of NOMMER_CHAPTERS) {
       expect(
@@ -78,7 +81,7 @@ describe("the Nommer dossier — charter contract", () => {
   // metadata — and "no fourth level. A card that needs one is a fiche."
   // @req REQ-113
   it("gives a chapter tile three levels and no fourth", () => {
-    render(<NommerPillarPage />);
+    render(<NommerPillarPage language="fr" />);
     const tile = screen.getByTestId("nommer-chapter-le-peuple");
     const chapter = NOMMER_CHAPTERS[0];
 
@@ -97,7 +100,7 @@ describe("the Nommer dossier — charter contract", () => {
   // declaration, three alignments" defect of brand charter §8.1.
   // @req REQ-113
   it("declares the alignment of every tile rather than inheriting it", () => {
-    render(<NommerPillarPage />);
+    render(<NommerPillarPage language="fr" />);
 
     for (const chapter of NOMMER_CHAPTERS) {
       expect(
@@ -122,17 +125,26 @@ describe("the Nommer dossier — charter contract", () => {
     expect(guarded).toContain("nommer-tile-in");
   });
 
-  // One boundary for the pillar and its five chapters, which
-  // `loaderCoverage` allows only while none of the six can answer 404.
+  /**
+   * The wait screen and the freeze are one switch, not two.
+   *
+   * `loaderCoverage` allows a boundary over the pillar and its five chapters
+   * only while none of the six can answer 404. Publication decides that: a
+   * withdrawn dossier guards every route and therefore may carry no wait
+   * screen, and restoring it restores the boundary. Written against
+   * `isModulePublished` rather than a hard-coded `true` so this holds in both
+   * states — and so the unfreeze has an executable checklist instead of a
+   * remembered one.
+   */
   // @req REQ-104
-  it("declares one wait screen, and keeps the chapters static", () => {
-    expect(existsSync(join(SEGMENT_ROOT, "loading.tsx"))).toBe(true);
+  it("couples the wait screen to publication, and keeps the chapters static", () => {
+    const published = isModulePublished("nommer");
 
     const loadingFiles = readdirSync(SEGMENT_ROOT, {
       recursive: true,
       encoding: "utf8",
     }).filter((entry) => entry.endsWith("loading.tsx"));
-    expect(loadingFiles).toEqual(["loading.tsx"]);
+    expect(loadingFiles).toEqual(published ? ["loading.tsx"] : []);
 
     for (const key of NOMMER_CHAPTER_KEYS) {
       const source = readFileSync(
@@ -140,7 +152,7 @@ describe("the Nommer dossier — charter contract", () => {
         "utf8"
       );
       expect(source, key).not.toContain("generateStaticParams");
-      expect(source, key).not.toContain("notFound");
+      expect(source.includes("notFound"), key).toBe(!published);
     }
   });
 
@@ -180,8 +192,11 @@ describe("the Nommer dossier — charter contract", () => {
         icon.getAttribute("class")?.split(/\s+/).includes("lucide-circle")
       );
 
+      // Counted against what the panel offers, not against the registry: an
+      // unlisted module has no row here to carry a glyph, and asking for one
+      // would make the panel owe an icon to a destination it never draws.
       expect(glyphs.length, mode).toBeGreaterThanOrEqual(
-        getModulesForAccessMode(mode).length
+        mode === "dossiers" ? 0 : getNavModules(mode).length
       );
       expect(
         blanks.map((icon) => icon.getAttribute("class")),

@@ -4,16 +4,15 @@ import { QuizPlayHost } from "@/components/quiz/QuizPlayHost";
 import { QuizScopePicker } from "@/components/quiz/QuizScopePicker";
 import { describeScope, getQuizScopesHandler } from "@/api/v2/handlers/quiz";
 import { parseQuizScope } from "@/lib/quiz/quizScope";
-import { quizTrackLabelFr } from "@/lib/quiz/segmentPolicy";
+import { quizTrackLabel } from "@/lib/quiz/segmentPolicy";
 import { getLocalizedRoute } from "@/lib/routing";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
-import { translations } from "@/lib/translations";
-
-const t = translations.fr.quiz;
-
-const QUIZ_PATH = getLocalizedRoute("fr", "quiz");
+import { getTranslation } from "@/lib/translations";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
+import type { Language } from "@/types/shared";
 
 interface QuizPageProps {
+  params: Promise<{ lang: string }>;
   /**
    * `?pays=GHA` · `?famille=FLG_…` · `?mode=aleatoire` — the track being
    * played — and `?theme=croyances`, which narrows any of them by domain of
@@ -28,13 +27,23 @@ interface QuizPageProps {
 }
 
 // @req REQ-103 FR66
-export const metadata: Metadata = {
-  title: t.pageTitle,
-  description: t.pageSubtitle,
-  alternates: {
-    canonical: QUIZ_PATH,
-  },
-};
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: Pick<QuizPageProps, "params">): Promise<Metadata> {
+  const { lang } = await params;
+  const t = getTranslation(lang as Language).quiz;
+  const copy = { title: t.pageTitle, description: t.pageSubtitle };
+  return {
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "quiz",
+      (locale) => getLocalizedRoute(locale, "quiz"),
+      copy
+    ),
+  };
+}
 
 /**
  * The picker when the URL names no track, the session when it does.
@@ -45,7 +54,14 @@ export const metadata: Metadata = {
  * with no parameters is both the entry point and the way out.
  */
 // @req REQ-103 FR66 FR43 AR39
-export default async function QuizPage({ searchParams }: QuizPageProps) {
+export default async function QuizPage({
+  params,
+  searchParams,
+}: QuizPageProps) {
+  const { lang } = await params;
+  const language = lang as Language;
+  const t = getTranslation(language).quiz;
+  const quizPath = getLocalizedRoute(language, "quiz");
   const query = await searchParams;
   const asked = parseQuizScope(query);
 
@@ -58,7 +74,7 @@ export default async function QuizPage({ searchParams }: QuizPageProps) {
   const chose = Boolean(
     query.pays || query.famille || query.mode || query.theme
   );
-  const scope = chose ? await describeScope(asked) : null;
+  const scope = chose ? await describeScope(asked, language) : null;
 
   if (scope) {
     // The scope label and the theme reach this component through different
@@ -69,13 +85,18 @@ export default async function QuizPage({ searchParams }: QuizPageProps) {
     // the absence of narrowing, and printing it beside a theme reads as two
     // scopes rather than one track.
     const narrowedByPlace = Boolean(query.pays || query.famille || query.mode);
-    const trackLabelFr = quizTrackLabelFr(
+    const trackLabelFr = quizTrackLabel(
       narrowedByPlace ? scope.labelFr : null,
-      query.theme ?? null
+      query.theme ?? null,
+      language
     );
 
     return (
-      <PageLayout language="fr" title={t.pageTitle} subtitle={trackLabelFr}>
+      <PageLayout
+        language={language}
+        title={t.pageTitle}
+        subtitle={trackLabelFr}
+      >
         {/* The axis accent, bound here for the reason spelled out in
             src/app/[lang]/jeux/[jeu]/page.tsx: a quiz page is not a hub, so
             nothing else on the route binds `--accent` and it fell through to
@@ -84,10 +105,11 @@ export default async function QuizPage({ searchParams }: QuizPageProps) {
             read it. */}
         <div className={ACCENT_BY_ACCESS_MODE.jeux}>
           <QuizPlayHost
+            language={language}
             scope={asked}
             theme={query.theme ?? null}
             scopeLabelFr={trackLabelFr}
-            exitHref={QUIZ_PATH}
+            exitHref={quizPath}
           />
         </div>
       </PageLayout>
@@ -99,12 +121,20 @@ export default async function QuizPage({ searchParams }: QuizPageProps) {
   // honest empty state rather than a 404 on a route that exists. A query naming
   // a country the corpus does not hold falls through to the picker for the same
   // reason.
-  const envelope = await getQuizScopesHandler();
+  const envelope = await getQuizScopesHandler(language);
 
   return (
-    <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
+    <PageLayout
+      language={language}
+      title={t.pageTitle}
+      subtitle={t.pageSubtitle}
+    >
       <div className={ACCENT_BY_ACCESS_MODE.jeux}>
-        <QuizScopePicker scopes={envelope.data} action={QUIZ_PATH} />
+        <QuizScopePicker
+          language={language}
+          scopes={envelope.data}
+          action={quizPath}
+        />
       </div>
     </PageLayout>
   );

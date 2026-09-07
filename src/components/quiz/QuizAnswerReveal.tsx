@@ -4,21 +4,21 @@ import * as React from "react";
 import { CheckCircle2, XCircle } from "lucide-react";
 
 import { LazySourceChainSheet } from "@/components/source-transparency/SourceChainSheet.lazy";
-import { SOURCE_TIER_LABELS_FR, toSourceTier } from "@/types/sources";
+import { SOURCE_TIER_LABELS } from "@/lib/glossaire/vocabularies";
+import { toSourceTier } from "@/types/sources";
 import { cn } from "@/lib/utils";
-import { translations } from "@/lib/translations";
+import { quizCopy } from "@/lib/i18n/copy/quiz";
 import type {
   QuizSessionQuestionView,
   QuizOptionValue,
 } from "@/api/v2/schemas/quiz";
 import { Button } from "@/components/ui/button";
-
-const t = translations.fr.quiz;
+import type { Language } from "@/types/shared";
 
 // @req REQ-103
 export const QUIZ_REVEAL_MIN_HEIGHT_CLASS = "min-h-[22rem]";
 
-const TIER_BADGE_LABELS = SOURCE_TIER_LABELS_FR;
+const TIER_BADGE_LABELS = SOURCE_TIER_LABELS.fr;
 
 function optionLabel(option: QuizOptionValue): string {
   return typeof option === "string" ? option : option.autonym;
@@ -44,6 +44,7 @@ interface QuizAnswerRevealProps {
   isCorrect: boolean;
   isLastQuestion: boolean;
   onNext: () => void;
+  language: Language;
   className?: string;
 }
 
@@ -61,8 +62,10 @@ export const QuizAnswerReveal = ({
   isCorrect,
   isLastQuestion,
   onNext,
+  language,
   className,
 }: QuizAnswerRevealProps) => {
+  const t = quizCopy[language];
   const reducedMotion = usePrefersReducedMotion();
   const headingRef = React.useRef<HTMLHeadingElement>(null);
   const [sheetOpen, setSheetOpen] = React.useState(false);

@@ -41,6 +41,84 @@ describe("buildSearchParams", () => {
     expect(params.get("classificationStatus")).toBeNull();
     expect(params.get("minConfidence")).toBeNull();
   });
+
+  // ETNI-1857: the served locale travels as `lang`, and only when a caller
+  // names one — the route reads an absent parameter as French.
+  // @req REQ-141
+  it("carries the locale as lang and omits it when none is given", () => {
+    expect(buildSearchParams("chad", { lang: "en" }).get("lang")).toBe("en");
+    expect(buildSearchParams("chad").get("lang")).toBeNull();
+  });
+});
+
+describe("mapSearchEnvelope — English names (ETNI-1857)", () => {
+  // @req REQ-141
+  it("carries the English name beside the French one on a country, a family and a language", () => {
+    const results = mapSearchEnvelope({
+      data: {
+        countries: [{ id: "TCD", nameFr: "Tchad", nameEn: "Chad" }],
+        families: [{ id: "FLG_KROU", nameFr: "Krou", nameEn: "Kru" }],
+        languages: [
+          {
+            id: "arb",
+            name: "Arabe standard moderne",
+            nameEn: "Standard Arabic",
+            familyId: "FLG_AFRO_ASIATIQUE",
+            familyName: "Afro-asiatique",
+            familyNameEn: "Afroasiatic",
+          },
+        ],
+      },
+    });
+    const byType = Object.fromEntries(results.map((r) => [r.type, r]));
+
+    expect(byType.country.name).toBe("Tchad");
+    expect(byType.country.nameEn).toBe("Chad");
+    expect(byType.languageFamily.name).toBe("Krou");
+    expect(byType.languageFamily.nameEn).toBe("Kru");
+    expect(byType.language.nameEn).toBe("Standard Arabic");
+    expect(byType.language.languageFamilyNameEn).toBe("Afroasiatic");
+  });
+
+  // @req REQ-141
+  it("carries the family's English name on a people row", () => {
+    const [people] = mapSearchEnvelope({
+      data: {
+        peoples: [
+          {
+            id: "PPL_BETE",
+            nameMain: "Bété",
+            languageFamilyId: "FLG_KROU",
+            languageFamilyName: "Krou",
+            languageFamilyNameEn: "Kru",
+          },
+        ],
+      },
+    });
+
+    expect(people.languageFamilyName).toBe("Krou");
+    expect(people.languageFamilyNameEn).toBe("Kru");
+  });
+
+  // The column is empty until the corpus reload: a blank must read as
+  // "no English name", never as an empty label a card would print.
+  // @req REQ-141
+  it("leaves the English names undefined when the API sends null or nothing", () => {
+    const results = mapSearchEnvelope({
+      data: {
+        peoples: [
+          { id: "PPL_BETE", nameMain: "Bété", languageFamilyNameEn: null },
+        ],
+        countries: [{ id: "TCD", nameFr: "Tchad", nameEn: null }],
+        families: [{ id: "FLG_KROU", nameFr: "Krou" }],
+      },
+    });
+
+    for (const result of results) {
+      expect(result.nameEn).toBeUndefined();
+      expect(result.languageFamilyNameEn).toBeUndefined();
+    }
+  });
 });
 
 describe("mapSearchEnvelope", () => {
@@ -455,6 +533,95 @@ describe("mapSearchEnvelope", () => {
     ]);
     expect(patronyme.attestedCountryIds).toEqual(["MLI"]);
     expect(patronyme.sourceCount).toBe(2);
+  });
+
+  // ETNI-1859: the API resolves the associated peoples to their main name
+  // so the panel can render a chip per people without printing an id.
+  // @req REQ-124
+  it("carries a patronyme's resolved associated peoples verbatim", () => {
+    const [patronyme] = mapSearchEnvelope({
+      data: {
+        patronymes: [
+          {
+            id: "PATR_KEITA",
+            nameMain: "Keïta",
+            associatedPeoples: [{ id: "PPL_DIOULA", name: "Dioula" }],
+          },
+        ],
+      },
+    });
+
+    expect(patronyme.associatedPeoples).toEqual([
+      { id: "PPL_DIOULA", name: "Dioula" },
+    ]);
+  });
+
+  // @req REQ-124
+  it("leaves associatedPeoples undefined when the API sends none", () => {
+    const [patronyme] = mapSearchEnvelope({
+      data: {
+        patronymes: [{ id: "PATR_KEITA", nameMain: "Keïta" }],
+      },
+    });
+
+    expect(patronyme.associatedPeoples).toBeUndefined();
+  });
+
+  // @req REQ-124
+  it("drops a malformed associated-people entry rather than rendering a nameless chip", () => {
+    const [patronyme] = mapSearchEnvelope({
+      data: {
+        patronymes: [
+          {
+            id: "PATR_KEITA",
+            nameMain: "Keïta",
+            associatedPeoples: [
+              { id: "PPL_DIOULA", name: "Dioula" },
+              { id: "PPL_NAMELESS" },
+              { id: 42, name: "Nombre" },
+              "PPL_STRING",
+              null,
+            ],
+          },
+        ],
+      },
+    });
+
+    expect(patronyme.associatedPeoples).toEqual([
+      { id: "PPL_DIOULA", name: "Dioula" },
+    ]);
+  });
+
+  // The panel states "N peuples" from the fiche's own count, and only the
+  // resolved ones become chips — a people without a fiche is counted, never
+  // named by its identifier.
+  // @req REQ-124
+  it("still counts every declared people id when fewer resolved to a name", () => {
+    const [patronyme] = mapSearchEnvelope({
+      data: {
+        patronymes: [
+          {
+            id: "PATR_KEITA",
+            nameMain: "Keïta",
+            content: {
+              peoples: [
+                { peopleId: "PPL_DIOULA" },
+                { peopleId: "PPL_NO_FICHE_YET" },
+              ],
+            },
+            associatedPeoples: [{ id: "PPL_DIOULA", name: "Dioula" }],
+          },
+        ],
+      },
+    });
+
+    expect(patronyme.associatedPeopleIds).toEqual([
+      "PPL_DIOULA",
+      "PPL_NO_FICHE_YET",
+    ]);
+    expect(patronyme.associatedPeoples).toEqual([
+      { id: "PPL_DIOULA", name: "Dioula" },
+    ]);
   });
 
   // ETNI-1463 AC2: a query with person hits but no name fiche must still

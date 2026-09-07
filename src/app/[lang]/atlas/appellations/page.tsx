@@ -8,23 +8,15 @@ import {
   type ListNameFormsResult,
 } from "@/api/v2/services/names";
 import { listNameFormsQuerySchema } from "@/api/v2/schemas/names";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import { getLocalizedRoute } from "@/lib/routing";
-
-const t = translations.fr.names;
+import { surfaceHead } from "@/lib/seo/localeAlternates";
+import type { Language } from "@/types/shared";
 
 const PER_PAGE = 48;
 
-// @req REQ-054 @req FR95
-export const metadata: Metadata = {
-  title: t.pageTitle,
-  description: t.pageSubtitle,
-  alternates: {
-    canonical: getLocalizedRoute("fr", "names"),
-  },
-};
-
 interface AppellationsPageProps {
+  params: Promise<{ lang: string }>;
   searchParams: Promise<{
     q?: string;
     nameType?: string;
@@ -33,10 +25,33 @@ interface AppellationsPageProps {
   }>;
 }
 
+// @req REQ-054 @req FR95
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: Pick<AppellationsPageProps, "params">): Promise<Metadata> {
+  const { lang } = await params;
+  const t = getTranslation(lang as Language).names;
+  const copy = { title: t.pageTitle, description: t.pageSubtitle };
+  return {
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "names",
+      (locale) => getLocalizedRoute(locale, "names"),
+      copy
+    ),
+  };
+}
+
 // @req REQ-054 @req FR53 @req FR55
 export default async function AppellationsPage({
+  params,
   searchParams,
 }: AppellationsPageProps) {
+  const { lang } = await params;
+  const language = lang as Language;
+  const t = getTranslation(language).names;
   const sp = await searchParams;
 
   // A hand-edited URL is the state of this page, so a bad value degrades to
@@ -69,7 +84,11 @@ export default async function AppellationsPage({
   }
 
   return (
-    <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
+    <PageLayout
+      language={language}
+      title={t.pageTitle}
+      subtitle={t.pageSubtitle}
+    >
       <div className="space-y-6 min-[720px]:space-y-8">
         {/* Not the deck again: `PageLayout` already prints `pageSubtitle` in
             the head band, and printing it a second time here left the page
@@ -85,6 +104,7 @@ export default async function AppellationsPage({
           {t.genealogyNote}
         </p>
         <NameNomenclature
+          language={language}
           forms={result.forms}
           total={result.total}
           page={query.page}

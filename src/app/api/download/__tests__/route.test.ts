@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { inflateRawSync } from "node:zlib";
 import { NextRequest } from "next/server";
+import ExcelJS from "exceljs";
 
 vi.mock("@/lib/supabase/queries/afrik/languageFamilies", () => ({
   getAllAfrikLanguageFamilies: vi.fn(),
@@ -209,5 +210,28 @@ describe("GET /api/download?format=csv", () => {
 
     expect(response.status).toBe(204);
     expect(response.headers.get("Access-Control-Allow-Origin")).not.toBeNull();
+  });
+
+  // @req REQ-140
+  it("localizes the Excel workbook for an English route", async () => {
+    const response = await GET(
+      new NextRequest("http://localhost/api/download?format=excel&lang=en")
+    );
+    const workbook = new ExcelJS.Workbook();
+    await workbook.xlsx.load(await response.arrayBuffer());
+
+    expect(workbook.worksheets.map((sheet) => sheet.name)).toEqual([
+      "Summary",
+      "Families",
+      "Peoples",
+      "Countries",
+      "Relations",
+    ]);
+    expect(workbook.getWorksheet("Countries")?.getRow(1).values).toEqual([
+      undefined,
+      "ID",
+      "Name (FR)",
+      "Etymology",
+    ]);
   });
 });

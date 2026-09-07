@@ -1,6 +1,7 @@
 {
   "id": "NER",
   "nameFr": "Niger",
+  "nameEn": "Niger",
   "nameOfficial": "République du Niger (République du Niger)",
   "summary": "Le Niger porte le nom du fleuve qui le traverse, d'un terme berbère ou touareg signifiant « la rivière des rivières ». Cités-États hausa, royaumes songhay et confédérations touarègues s'y sont partagé le territoire. Hausa, Zarma, Peuls, Touaregs, Kanuri et Toubou y articulent Sahel et Sahara.",
   "etymology": "Le nom \"Niger\" vient du fleuve Niger, qui traverse le pays. Le nom du fleuve vient du terme berbère \"n-igere-n\" (rivière des rivières) ou du terme touareg \"egerew n-igerewen\" (grande rivière). Le nom a été adopté lors de l'indépendance en 1960. Auparavant, le territoire était appelé \"Colonie du Niger\" pendant la colonisation française.",
@@ -18,6 +19,7 @@
       {
         "name": "Cités-États hausa",
         "period": "Moyen Âge - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Hausa"],
         "politicalCenters": [
           "Kano",
@@ -30,6 +32,7 @@
       {
         "name": "Royaumes songhay",
         "period": "Moyen Âge - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Songhay", "Zarma"],
         "politicalCenters": ["Gao", "Tombouctou", "autres centres songhay"],
         "historicalRole": "Royaumes songhay, empire songhay (XVe-XVIe siècles), commerce transsaharien, développement culturel et intellectuel. L'empire songhay a été l'un des plus grands empires d'Afrique de l'Ouest."
@@ -37,6 +40,7 @@
       {
         "name": "Chefferies peules",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Peul (Fulani)"],
         "politicalCenters": ["Chefferies traditionnelles"],
         "historicalRole": "Chefferies peules, pastoralisme, islam, résistance à la colonisation."
@@ -44,6 +48,7 @@
       {
         "name": "Confédérations touarègues",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Touareg"],
         "politicalCenters": ["Confédérations tribales touarègues"],
         "historicalRole": "Confédérations touarègues, nomadisme saharien, commerce transsaharien, résistance à la colonisation, rébellions touarègues (1990s-2010s)."
@@ -51,6 +56,7 @@
       {
         "name": "Royaume du Kanem-Bornou",
         "period": "Moyen Âge - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Kanuri"],
         "politicalCenters": ["Kanem", "Bornou"],
         "historicalRole": "Royaume du Kanem-Bornou, islamisation, commerce transsaharien, développement culturel."
@@ -58,6 +64,12 @@
       {
         "name": "Colonie française du Niger",
         "period": "1890 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1890,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples nigériens sous domination coloniale française"
         ],

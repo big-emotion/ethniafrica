@@ -1,6 +1,6 @@
 ---
 name: afrik-curator
-description: Editorial curator for the EthniAfrica AFRIK corpus — peoples, countries, linguistic families, languages, names (patronymes), ethnonyms, relations and migrations. Use when the user wants to enrich, critique, compare, synthesize or audit one or more fiches from any input (text, image, audio, video, URL, PDF). Resolves the target, loads the fiche and its database row, and emits a strict-model JSON proposal in which every claim carries a tiered source. Triggers include "enrichir la fiche", "critique cette fiche", "compare avec [source]", "audit AFRIK", "que sait-on de PPL_/FLG_/PAT_/[ISO3]/[ISO 639-3]".
+description: Editorial curator for the EthniAfrica AFRIK corpus — peoples, countries, linguistic families, languages, names (patronymes), ethnonyms, relations and migrations. Use when the user wants to enrich, critique, compare, synthesize or audit one or more fiches from any input (text, image, audio, video, URL, PDF). Resolves the target, loads the fiche and its database row, and emits a strict-model JSON proposal in which every claim carries a tiered source. Also runs a country-enrichment mode: a resumable, country-by-country pass over identity, peoples, languages, history, names, patronyms, sources, database synchronization and reader discoverability, tracked in docs/editorial/country-enrichment/. Triggers include "enrichir la fiche", "critique cette fiche", "compare avec [source]", "audit AFRIK", "que sait-on de PPL_/FLG_/PAT_/[ISO3]/[ISO 639-3]", "enrichir ce pays", "audit de complétude pays", "continuer le pays COD", "préparer le pays suivant", "enrichissement pays par pays", "inventaire peuples/langues/histoire de [pays]".
 ---
 
 # AFRIK Curator
@@ -15,8 +15,15 @@ already says, and produces a source-cited proposal — it never publishes.
 - **Compare** a fiche against an external source
 - **Synthesize** what the corpus currently knows about a target
 - **Audit** one or several fiches against the model and the editorial rules
+- **Enrich a whole country** — the resumable ten-workstream pass described in
+  `reference/country-enrichment.md`. Enter it on "enrichir ce pays", "audit de complétude
+  pays", "continuer le pays COD", "préparer le pays suivant", "enrichissement pays par
+  pays", "inventaire peuples/langues/histoire de [pays]".
 
 Product or interface work is a different skill. For the look of a page, `/afrik-art-director`.
+Putting a fiche into the other locale is `/afrik-translator`: the curator writes the French
+record, the translator its sidecar. The country pass may **record** a reader-discoverability
+gap; the visual answer to it is delegated, and judged mobile first.
 
 ## The eight corpus classes
 
@@ -157,6 +164,10 @@ access date. That becomes the citation, and it determines the tier.
 - **synthesize** — 300–600 words of French prose drawn only from the fiche and the given
   inputs, every factual claim cited.
 - **audit** — the model and the editorial rules, run per fiche: pass / warn / fail.
+- **country-enrichment** — one country, ten workstreams, six independent dimensions and no
+  global score. The workflow, the commands and the definition of a complete country are in
+  `reference/country-enrichment.md`; read it before starting, and resume from the tracker
+  rather than from memory.
 
 ### Phase 5 — Verify, then emit
 
@@ -198,3 +209,5 @@ this corpus cannot absorb.
 - `reference/source-tiers.md` — the tier doctrine and how to choose one
 - `reference/directives.md` — formatting and identifier rules
 - `reference/tools.md` — the query functions that exist, and how to call them
+- `reference/country-enrichment.md` — the country-by-country mode: workstreams, the six
+  independent dimensions, the trackers, and when a country counts as complete

@@ -106,7 +106,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "Les recherches combinant Zeroual ou Béni Zeroual avec « alliance », « pacte », « leff » et « parenté à plaisanterie » n’ont fourni aucune relation nominale avec une autre fiche PAT_*."
+      "reason": "Les recherches combinant Zeroual ou Béni Zeroual avec « alliance », « pacte », « leff » et « parenté à plaisanterie » n’ont fourni aucune relation nominale avec un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

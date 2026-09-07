@@ -26,6 +26,7 @@ describe("QuizPlayHost (Epic 10, Story 10.9, ETNI-1137)", () => {
   it("mounts the play island for the track the URL named", async () => {
     render(
       <QuizPlayHost
+        language="fr"
         scope={{ kind: "country", entityId: "GHA" }}
         theme={null}
         scopeLabelFr="Ghana"
@@ -45,6 +46,7 @@ describe("QuizPlayHost (Epic 10, Story 10.9, ETNI-1137)", () => {
   it("hands the island a way out of the session", async () => {
     render(
       <QuizPlayHost
+        language="fr"
         scope={{ kind: "mixed" }}
         theme={null}
         scopeLabelFr="Tout le continent"

@@ -66,6 +66,7 @@ const {
 }));
 
 vi.mock("next/navigation", () => ({
+  usePathname: () => "/fr",
   useRouter: () => ({ push: vi.fn() }),
   notFound: vi.fn(() => {
     throw new Error("NEXT_NOT_FOUND");
@@ -80,6 +81,7 @@ vi.mock("@/api/v2/services/peopleService", () => ({
   getPeoplesByLanguageFamily: (...args: unknown[]) =>
     getPeoplesByLanguageFamily(...args),
   getPeoplesByIds: (...args: unknown[]) => getPeoplesByIds(...args),
+  getPeopleNameIndex: () => Promise.resolve([]),
 }));
 
 vi.mock("@/api/v2/services/countryService", () => ({

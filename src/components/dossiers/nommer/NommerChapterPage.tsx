@@ -3,17 +3,22 @@ import { NamePairGrid } from "@/components/dossiers/nommer/NamePairGrid";
 import { SourcedTable } from "@/components/dossiers/nommer/SourcedTable";
 import { FicheChapterBar } from "@/components/fiche/FicheChapterBar";
 import { FicheSection } from "@/components/fiche/FicheSection";
+import { TranslationProvenanceMarker } from "@/components/fiche/TranslationProvenanceMarker";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { ActionLink } from "@/components/ui/ActionLink";
-import { NOMMER_CHAPTERS } from "@/lib/dossiers/nommer/chapters";
+import { NOMMER_CHAPTERS_EN } from "@/lib/dossiers/nommer/chapters/index.en";
+import {
+  getLocalizedNommerChapters,
+  localizeNommerChapter,
+} from "@/lib/dossiers/nommer/localizeChapter";
 import type { DossierChapter } from "@/lib/dossiers/nommer/types";
+import { nommerCopy } from "@/lib/i18n/copy/nommer";
 import { getLocalizedRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
-const LANGUAGE: Language = "fr";
-
 interface NommerChapterPageProps {
   chapter: DossierChapter;
+  language: Language;
 }
 
 /**
@@ -39,21 +44,39 @@ interface NommerChapterPageProps {
  * tiles navigate rather than deploy: the same component serves both surfaces.
  */
 // @req REQ-113
-export const NommerChapterPage = ({ chapter }: NommerChapterPageProps) => {
-  const others = NOMMER_CHAPTERS.filter((entry) => entry.key !== chapter.key);
-  const pillarHref = getLocalizedRoute(LANGUAGE, "nommer");
+export const NommerChapterPage = ({
+  chapter,
+  language,
+}: NommerChapterPageProps) => {
+  const renderedChapter = localizeNommerChapter(chapter, language);
+  const others = getLocalizedNommerChapters(language).filter(
+    (entry) => entry.key !== chapter.key
+  );
+  const pillarHref = getLocalizedRoute(language, "nommer");
+  const copy = nommerCopy[language];
 
   return (
     <PageLayout
-      language={LANGUAGE}
-      title={chapter.title}
-      subtitle={chapter.standfirst.text}
+      language={language}
+      title={renderedChapter.title}
+      subtitle={renderedChapter.standfirst.text}
     >
       <div className="afh-accent-teal flex flex-col gap-afh-6xl">
         <FicheChapterBar />
 
+        <TranslationProvenanceMarker
+          translation={
+            language === "en"
+              ? {
+                  kind: NOMMER_CHAPTERS_EN[chapter.key].provenance,
+                  stale: false,
+                }
+              : null
+          }
+        />
+
         <article className="afh-parchment">
-          {chapter.sections.map((section) => (
+          {renderedChapter.sections.map((section) => (
             <FicheSection
               key={section.id}
               id={section.id}
@@ -64,29 +87,31 @@ export const NommerChapterPage = ({ chapter }: NommerChapterPageProps) => {
                 <p key={block.text.slice(0, 48)}>{block.text}</p>
               ))}
               {section.table ? <SourcedTable table={section.table} /> : null}
-              {section.pairs ? <NamePairGrid pairs={section.pairs} /> : null}
+              {section.pairs ? (
+                <NamePairGrid pairs={section.pairs} language={language} />
+              ) : null}
             </FicheSection>
           ))}
         </article>
 
         <nav
-          aria-label="Les autres chapitres"
+          aria-label={copy.otherChapters}
           className="flex flex-col gap-afh-lg"
         >
           <p className="text-afh-eyebrow uppercase tracking-wide text-afh-text-soft">
-            Les autres chapitres
+            {copy.otherChapters}
           </p>
           <ol className="grid grid-cols-1 gap-afh-lg p-0 sm:grid-cols-2 lg:grid-cols-4">
             {others.map((entry, index) => (
               <ChapterTile
                 key={entry.key}
-                language={LANGUAGE}
+                language={language}
                 chapter={entry}
                 index={index}
               />
             ))}
           </ol>
-          <ActionLink href={pillarHref}>Revenir au dossier</ActionLink>
+          <ActionLink href={pillarHref}>{copy.backToDossier}</ActionLink>
         </nav>
       </div>
     </PageLayout>

@@ -89,7 +89,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "La recherche web combinant « Amadhila », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « The Anglicisation of Oshiwambo Names » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Amadhila à une autre fiche PAT_* existante."
+      "reason": "La recherche web combinant « Amadhila », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « The Anglicisation of Oshiwambo Names » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Amadhila à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

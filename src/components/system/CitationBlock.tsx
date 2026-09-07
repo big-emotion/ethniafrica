@@ -11,6 +11,7 @@ import {
   type CitationFormatterInput,
 } from "@/components/system/citation-formatters";
 import { PRODUCT_NAME } from "@/lib/brand";
+import { getTranslation } from "@/lib/translations";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -20,6 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import type { Language } from "@/types/shared";
 
 export type CitationFormat = "text" | "bibtex" | "markdown";
 export type CitationVariant = "live" | "pinned";
@@ -30,6 +32,7 @@ export interface CitationPinnedVersion {
 }
 
 export interface CitationBlockProps {
+  language: Language;
   title: string;
   liveUrl: string;
   pinned?: CitationPinnedVersion;
@@ -38,12 +41,6 @@ export interface CitationBlockProps {
   defaultFormat?: CitationFormat;
   defaultVariant?: CitationVariant;
 }
-
-const FORMAT_LABELS: Record<CitationFormat, string> = {
-  text: "Texte brut",
-  bibtex: "BibTeX",
-  markdown: "Markdown",
-};
 
 function formatCitation(
   format: CitationFormat,
@@ -64,6 +61,7 @@ function isCitationVariant(value: string): value is CitationVariant {
 
 // @req REQ-021
 export function CitationBlock({
+  language,
   title,
   liveUrl,
   pinned,
@@ -72,6 +70,12 @@ export function CitationBlock({
   defaultFormat = "text",
   defaultVariant = "live",
 }: CitationBlockProps) {
+  const copy = getTranslation(language).system.citation;
+  const formatLabels: Record<CitationFormat, string> = {
+    text: copy.textFormat,
+    bibtex: "BibTeX",
+    markdown: "Markdown",
+  };
   const previewRef = React.useRef<HTMLTextAreaElement>(null);
   const announcementTimerRef = React.useRef<number | null>(null);
   const titleId = React.useId();
@@ -86,6 +90,7 @@ export function CitationBlock({
     selectedVariant === "pinned" && pinned ? "pinned" : "live";
   const activeUrl = activeVariant === "pinned" && pinned ? pinned.url : liveUrl;
   const citation = formatCitation(format, {
+    language,
     title,
     productName,
     url: activeUrl,
@@ -102,7 +107,7 @@ export function CitationBlock({
   );
 
   function announceCopySuccess() {
-    setAnnouncement("copié");
+    setAnnouncement(copy.copied);
     if (announcementTimerRef.current !== null) {
       window.clearTimeout(announcementTimerRef.current);
     }
@@ -115,7 +120,7 @@ export function CitationBlock({
     const preview = previewRef.current;
     preview?.focus();
     preview?.select();
-    setAnnouncement("sélectionner manuellement");
+    setAnnouncement(copy.manualCopy);
   }
 
   async function copyCitation() {
@@ -144,17 +149,16 @@ export function CitationBlock({
       <div className="space-y-afh-4xl p-afh-3xl md:p-afh-5xl">
         <header className="border-b border-afh-border pb-afh-2xl">
           <p className="text-afh-eyebrow font-bold uppercase tracking-wider text-afh-terracotta">
-            Référence
+            {copy.eyebrow}
           </p>
           <h2
             id={titleId}
             className="mt-afh-xs font-afh-display text-afh-h2 font-semibold leading-snug text-afh-text"
           >
-            Citer cette fiche
+            {copy.title}
           </h2>
           <p className="mt-afh-md text-afh-small leading-relaxed text-afh-text-soft">
-            Une référence prête à copier, avec sa version et sa date de
-            consultation.
+            {copy.description}
           </p>
         </header>
 
@@ -165,30 +169,30 @@ export function CitationBlock({
           }}
         >
           <TabsList
-            aria-label="Version de la fiche"
+            aria-label={copy.versionLabel}
             className="h-auto w-full justify-start gap-afh-xs rounded-afh-md border border-afh-border bg-afh-bg-warm p-afh-xs"
           >
             <TabsTrigger
               value="live"
               className="min-h-10 flex-1 rounded-afh-sm px-afh-lg text-afh-small text-afh-text-soft data-[state=active]:bg-afh-surface data-[state=active]:text-afh-text data-[state=active]:shadow-afh-1"
             >
-              Version vivante
+              {copy.liveVersion}
             </TabsTrigger>
             {pinned ? (
               <TabsTrigger
                 value="pinned"
                 className="min-h-10 flex-1 rounded-afh-sm px-afh-lg text-afh-small text-afh-text-soft data-[state=active]:bg-afh-surface data-[state=active]:text-afh-text data-[state=active]:shadow-afh-1"
               >
-                Version figée @v{pinned.version}
+                {copy.pinnedVersion} @v{pinned.version}
               </TabsTrigger>
             ) : null}
           </TabsList>
           <TabsContent value="live" className="sr-only">
-            Citation de la version vivante.
+            {copy.liveDescription}
           </TabsContent>
           {pinned ? (
             <TabsContent value="pinned" className="sr-only">
-              Citation de la version figée @v{pinned.version}.
+              {copy.pinnedDescription} @v{pinned.version}.
             </TabsContent>
           ) : null}
         </Tabs>
@@ -198,7 +202,7 @@ export function CitationBlock({
             htmlFor={`${titleId}-format`}
             className="block text-afh-caption font-bold text-afh-text-soft"
           >
-            Format
+            {copy.format}
           </label>
           <Select
             value={format}
@@ -208,13 +212,13 @@ export function CitationBlock({
           >
             <SelectTrigger
               id={`${titleId}-format`}
-              aria-label="Format"
+              aria-label={copy.format}
               className="border-afh-border bg-afh-surface font-afh text-afh-small text-afh-text focus:ring-afh-terracotta"
             >
               <SelectValue />
             </SelectTrigger>
             <SelectContent className="border-afh-border bg-afh-surface font-afh text-afh-text">
-              {Object.entries(FORMAT_LABELS).map(([value, label]) => (
+              {Object.entries(formatLabels).map(([value, label]) => (
                 <SelectItem key={value} value={value}>
                   {label}
                 </SelectItem>
@@ -226,14 +230,14 @@ export function CitationBlock({
         <div className="relative">
           <textarea
             ref={previewRef}
-            aria-label="Citation"
+            aria-label={copy.preview}
             readOnly
             spellCheck={false}
             value={citation}
             className="min-h-36 w-full resize-y rounded-afh-md border border-afh-border bg-afh-bg px-afh-2xl py-afh-xl font-mono text-afh-small leading-relaxed text-afh-text outline-none focus-visible:ring-2 focus-visible:ring-afh-terracotta focus-visible:ring-offset-2"
           />
           <span className="pointer-events-none absolute bottom-afh-base right-afh-base text-afh-eyebrow font-bold uppercase tracking-wider text-afh-text-soft">
-            {FORMAT_LABELS[format]}
+            {formatLabels[format]}
           </span>
         </div>
 
@@ -247,7 +251,7 @@ export function CitationBlock({
             className="w-full bg-afh-earth font-afh text-afh-small text-afh-surface hover:bg-afh-terracotta md:w-auto"
           >
             <Copy aria-hidden="true" />
-            Copier la citation
+            {copy.copy}
           </Button>
           <Button
             asChild
@@ -260,7 +264,7 @@ export function CitationBlock({
               rel="noopener noreferrer"
             >
               <Printer aria-hidden="true" />
-              Version imprimable
+              {copy.printable}
             </a>
           </Button>
           <p
@@ -278,7 +282,7 @@ export function CitationBlock({
             aria-hidden="true"
           />
           <span>
-            Licence de partage&nbsp;:{" "}
+            {copy.sharingLicence}&nbsp;:{" "}
             <strong className="font-bold text-afh-text">CC-BY-SA 4.0</strong>
           </span>
         </footer>

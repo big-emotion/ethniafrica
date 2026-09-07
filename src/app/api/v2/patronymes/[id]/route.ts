@@ -21,6 +21,18 @@
  *           pattern: '^PAT_[A-Z0-9_]+$'
  *         description: Patronyme identifier
  *         example: "PAT_KEITA"
+ *       - in: query
+ *         name: lang
+ *         required: false
+ *         schema:
+ *           type: string
+ *           enum: [fr, en]
+ *           default: fr
+ *         description: >
+ *           Locale of the served content. `fr` is the authored language; `en`
+ *           overlays the translation record when one exists and declares its
+ *           provenance in `meta.translation` (REQ-142).
+ *         example: en
  *     responses:
  *       200:
  *         description: Patronyme detail envelope
@@ -58,6 +70,7 @@ import { NextRequest } from "next/server";
 import { getPatronymeHandler } from "@/api/v2/handlers/patronymes";
 import { patronymeIdParamSchema } from "@/api/v2/schemas/patronymes";
 import { createApiError } from "@/api/v2/utils/response";
+import { validateLang } from "@/api/v2/utils/validation";
 import { corsOptionsResponse, jsonWithCors } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
@@ -65,7 +78,7 @@ const CACHE_CONTROL = "s-maxage=3600";
 
 // @req REQ-133
 export async function GET(
-  _request: NextRequest,
+  request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   const startTime = Date.now();
@@ -86,7 +99,23 @@ export async function GET(
       );
     }
 
-    const result = await getPatronymeHandler(id);
+    const lang = validateLang(request.nextUrl.searchParams.get("lang"));
+    if (lang === null) {
+      logger.warn("Unsupported lang requested", {
+        id,
+        lang: request.nextUrl.searchParams.get("lang"),
+      });
+      return jsonWithCors(
+        createApiError({
+          code: "VALIDATION_ERROR",
+          message: "Unsupported lang: expected fr or en",
+          field: "lang",
+        }),
+        { status: 400 }
+      );
+    }
+
+    const result = await getPatronymeHandler(id, lang);
 
     if (result.ok === false) {
       logger.warn("Patronyme request rejected", { id, code: result.code });

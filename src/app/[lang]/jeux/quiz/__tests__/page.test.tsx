@@ -14,7 +14,8 @@ vi.mock("next/navigation", () => ({
 }));
 
 vi.mock("@/api/v2/handlers/quiz", () => ({
-  getQuizScopesHandler: () => mockGetQuizScopesHandler(),
+  getQuizScopesHandler: (...args: unknown[]) =>
+    mockGetQuizScopesHandler(...args),
   describeScope: (...args: unknown[]) => mockDescribeScope(...args),
 }));
 
@@ -41,21 +42,27 @@ vi.mock("@/components/quiz/QuizPlayHost", () => ({
   QuizPlayHost: ({
     scopeLabelFr,
     theme,
+    exitHref,
   }: {
     scopeLabelFr: string;
     theme: string | null;
+    exitHref: string;
   }) => (
     <div
       data-testid="quiz-play-host"
       data-label={scopeLabelFr}
       data-theme={theme ?? ""}
+      data-exit={exitHref}
     />
   ),
 }));
 
 import { notFound } from "next/navigation";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
+import { getLocalizedRoute } from "@/lib/routing";
 import QuizPage from "../page";
+
+const FR = Promise.resolve({ lang: "fr" });
 
 function scopesEnvelope() {
   return {
@@ -100,6 +107,20 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
     vi.clearAllMocks();
   });
 
+  // @req REQ-145
+  it("loads the picker from the page locale's question bank", async () => {
+    mockGetQuizScopesHandler.mockResolvedValue(scopesEnvelope());
+
+    render(
+      await QuizPage({
+        params: Promise.resolve({ lang: "en" }),
+        searchParams: Promise.resolve({}),
+      })
+    );
+
+    expect(mockGetQuizScopesHandler).toHaveBeenCalledWith("en");
+  });
+
   // The page used to answer notFound() unless NEXT_PUBLIC_FEATURE_QUIZ was
   // "true", so a built route returned 404 depending on where it was built.
   // @req REQ-103 AR39
@@ -107,7 +128,7 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
     delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
     mockGetQuizScopesHandler.mockResolvedValue(scopesEnvelope());
 
-    render(await QuizPage({ searchParams: Promise.resolve({}) }));
+    render(await QuizPage({ params: FR, searchParams: Promise.resolve({}) }));
 
     expect(screen.getByTestId("quiz-scope-picker")).toBeInTheDocument();
     expect(notFound).not.toHaveBeenCalled();
@@ -117,7 +138,7 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
   it("shows the track picker when the URL names no track", async () => {
     mockGetQuizScopesHandler.mockResolvedValue(scopesEnvelope());
 
-    render(await QuizPage({ searchParams: Promise.resolve({}) }));
+    render(await QuizPage({ params: FR, searchParams: Promise.resolve({}) }));
 
     expect(screen.getByTestId("quiz-scope-picker")).toHaveAttribute(
       "data-countries",
@@ -134,7 +155,12 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
       labelFr: "Ghana",
     });
 
-    render(await QuizPage({ searchParams: Promise.resolve({ pays: "GHA" }) }));
+    render(
+      await QuizPage({
+        params: FR,
+        searchParams: Promise.resolve({ pays: "GHA" }),
+      })
+    );
 
     expect(screen.getByTestId("quiz-play-host")).toHaveAttribute(
       "data-label",
@@ -157,7 +183,10 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
     });
 
     render(
-      await QuizPage({ searchParams: Promise.resolve({ theme: "croyances" }) })
+      await QuizPage({
+        params: FR,
+        searchParams: Promise.resolve({ theme: "croyances" }),
+      })
     );
 
     expect(screen.getByTestId("quiz-play-host")).toBeInTheDocument();
@@ -174,6 +203,7 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
 
     render(
       await QuizPage({
+        params: FR,
         searchParams: Promise.resolve({ pays: "ZAF", theme: "croyances" }),
       })
     );
@@ -199,6 +229,7 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
 
     render(
       await QuizPage({
+        params: FR,
         searchParams: Promise.resolve({ pays: "ZAF", theme: "langues" }),
       })
     );
@@ -221,12 +252,38 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
     });
 
     render(
-      await QuizPage({ searchParams: Promise.resolve({ theme: "croyances" }) })
+      await QuizPage({
+        params: FR,
+        searchParams: Promise.resolve({ theme: "croyances" }),
+      })
     );
 
     expect(screen.getByTestId("quiz-play-host")).toHaveAttribute(
       "data-label",
       "Croyances"
+    );
+  });
+
+  // The way out of a session is the quiz page of the locale the reader is
+  // in; a fixed French exit would drop an English reader onto `/fr`.
+  // @req REQ-140
+  it("composes the session's exit in the route's locale", async () => {
+    mockDescribeScope.mockResolvedValue({
+      kind: "country",
+      entityId: "GHA",
+      labelFr: "Ghana",
+    });
+
+    render(
+      await QuizPage({
+        params: Promise.resolve({ lang: "en" }),
+        searchParams: Promise.resolve({ pays: "GHA" }),
+      })
+    );
+
+    expect(screen.getByTestId("quiz-play-host")).toHaveAttribute(
+      "data-exit",
+      getLocalizedRoute("en", "quiz")
     );
   });
 
@@ -237,7 +294,12 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
     mockDescribeScope.mockResolvedValue(null);
     mockGetQuizScopesHandler.mockResolvedValue(scopesEnvelope());
 
-    render(await QuizPage({ searchParams: Promise.resolve({ pays: "ZZZ" }) }));
+    render(
+      await QuizPage({
+        params: FR,
+        searchParams: Promise.resolve({ pays: "ZZZ" }),
+      })
+    );
 
     expect(screen.getByTestId("quiz-scope-picker")).toBeInTheDocument();
     expect(notFound).not.toHaveBeenCalled();
@@ -251,7 +313,7 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
   it("paints both branches in the Jouer accent", async () => {
     mockGetQuizScopesHandler.mockResolvedValue(scopesEnvelope());
     const picker = render(
-      await QuizPage({ searchParams: Promise.resolve({}) })
+      await QuizPage({ params: FR, searchParams: Promise.resolve({}) })
     );
 
     expect(
@@ -266,7 +328,10 @@ describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
       labelFr: "Ghana",
     });
     const session = render(
-      await QuizPage({ searchParams: Promise.resolve({ pays: "GHA" }) })
+      await QuizPage({
+        params: FR,
+        searchParams: Promise.resolve({ pays: "GHA" }),
+      })
     );
 
     expect(

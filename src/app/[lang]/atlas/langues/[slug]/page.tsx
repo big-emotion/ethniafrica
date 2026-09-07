@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
-import { ficheCanonical } from "@/lib/seo/ficheCanonical";
+import { ficheHead } from "@/lib/seo/ficheHead";
 import type { Language } from "@/types/shared";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
+import { FicheOnward } from "@/components/fiche/FicheOnward";
+import { buildOnwardLinks } from "@/lib/fiche/onwardLinks";
+import { languageOnwardGroups } from "@/lib/fiche/onwardGroups";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
 import { LanguageFicheTitle } from "@/components/language/LanguageFicheTitle";
 import { LanguageDetailViewV2 } from "@/components/language/LanguageDetailViewV2";
@@ -27,7 +32,7 @@ export async function generateMetadata({
   params: Promise<PageParams>;
 }): Promise<Metadata> {
   const { lang, slug } = await params;
-  return ficheCanonical("language", lang as Language, slug);
+  return ficheHead("language", lang as Language, slug);
 }
 
 // ---------------------------------------------------------------------------
@@ -57,7 +62,7 @@ export default async function LanguesSlugPage({
 }: {
   params: Promise<PageParams>;
 }) {
-  const { slug } = await params;
+  const { lang, slug } = await params;
 
   const parsed = parseVersionedSlug(decodeURIComponent(slug));
   if (!parsed || parsed.mode !== "live") {
@@ -65,7 +70,7 @@ export default async function LanguesSlugPage({
   }
 
   const [language, sourceFlags] = await Promise.all([
-    getLanguageById(parsed.slug),
+    getLanguageById(parsed.slug, lang as Language),
     getActiveSourceFlags("language", parsed.slug),
   ]);
   if (!language) {
@@ -77,24 +82,43 @@ export default async function LanguesSlugPage({
   // Live version (revalidate = 3600 at segment level)
   return (
     <PageLayout
-      language="fr"
+      language={lang as Language}
       sectionName="Langues"
       flushTop
       trailLabel={data.name}
       heroHead={
-        <FicheHeroHead entityType="language">
-          <LanguageFicheTitle data={data} />
+        <FicheHeroHead entityType="language" translation={language.translation}>
+          <LanguageFicheTitle data={data} language={lang as Language} />
         </FicheHeroHead>
       }
     >
+      <FicheJsonLd
+        graph={await ficheJsonLdFor("language", lang as Language, parsed.slug)}
+      />
       <FicheSequence
+        language={lang as Language}
         entityType="language"
         entityId={parsed.slug}
         entityName={data.name}
         record={
           <LanguageDetailViewV2
+            language={lang as Language}
             data={data}
             hasSourceFlag={sourceFlags.length > 0}
+            onward={
+              <FicheOnward
+                from="language"
+                language={lang as Language}
+                links={buildOnwardLinks(
+                  languageOnwardGroups({
+                    family: data.family,
+                    speakingPeoples: data.speakingPeoples,
+                    language: lang as Language,
+                  }),
+                  lang as Language
+                )}
+              />
+            }
           />
         }
       />

@@ -1,3 +1,4 @@
+import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
 import { FicheFieldList, type FicheField } from "@/components/fiche/FicheProse";
 import { FicheSection } from "@/components/fiche/FicheSection";
@@ -12,9 +13,8 @@ import {
   readTransmissionMode,
 } from "@/lib/patronymes/content";
 import { resolveChapter } from "@/lib/fieldProvenance";
-import { translations } from "@/lib/translations";
-
-const t = translations.fr.patronymes;
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * AC1: states the naming system (in the header — `PatronymeFicheTitle`) and
@@ -27,9 +27,12 @@ const t = translations.fr.patronymes;
 // @req REQ-133
 export function PatronymeNamingSystemSection({
   patronyme,
+  language,
 }: {
   patronyme: PublicPatronyme;
+  language: Language;
 }) {
+  const t = getTranslation(language).patronymes;
   const { content, nameSystem, casteOrSocialFunction } = patronyme;
 
   const spellings = readSpellings(content);
@@ -41,7 +44,11 @@ export function PatronymeNamingSystemSection({
   const gapNode = (fieldPath: string) => {
     const chapter = resolveChapter("name", fieldPath, null, gaps);
     return chapter.state === "documented-gap" ? (
-      <FieldProvenanceMarker state={chapter.state} reason={chapter.reason} />
+      <FieldProvenanceMarker
+        state={chapter.state}
+        reason={chapter.reason}
+        language={language}
+      />
     ) : undefined;
   };
 
@@ -125,7 +132,13 @@ export function PatronymeNamingSystemSection({
 
   return (
     <FicheSection title={t.nameSystemSectionTitle}>
-      <FicheFieldList fields={fields} />
+      <FicheFieldList fields={fields} language={language} />
+      <DossierLinks
+        language={language}
+        kind="name"
+        id={patronyme.id}
+        section="naming-system"
+      />
     </FicheSection>
   );
 }

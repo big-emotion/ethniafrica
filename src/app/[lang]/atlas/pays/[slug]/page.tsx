@@ -7,7 +7,7 @@ import {
   loadCountryFiche,
 } from "@/lib/fiche/ficheExistence";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
-import { ficheCanonical } from "@/lib/seo/ficheCanonical";
+import { ficheHead } from "@/lib/seo/ficheHead";
 import { getCountryRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 import {
@@ -15,6 +15,12 @@ import {
   getRevisionSnapshot,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { FicheOnward } from "@/components/fiche/FicheOnward";
+import { buildOnwardLinks } from "@/lib/fiche/onwardLinks";
+import { countryOnwardGroups } from "@/lib/fiche/onwardGroups";
+import { getAfrikLanguageFamilyRoster } from "@/lib/supabase/queries/afrik/languageFamilies";
+import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
@@ -27,13 +33,17 @@ import {
   deriveCountrySynthesisFromDetail,
 } from "@/lib/home/countrySynthesis";
 import { buildCountryAtlasFacts } from "@/components/country/countryTargetFacts";
-import { buildCountryOutlineOverlay } from "@/lib/atlas/overlays";
+import {
+  buildCountryOutlineOverlay,
+  getAdmin0Name,
+} from "@/lib/atlas/overlays";
 import { buildCountryPickerTargets } from "@/lib/atlas/targets";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import { getCountryAtlasIndex } from "@/api/v2/services/countryService";
 import { getCountryPatronymes } from "@/api/v2/services/patronymeFicheLinks";
 import { mapCountryDetail } from "@/lib/afrikDetailMapper";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
+import { countryCopy } from "@/lib/i18n/copy/country";
 
 // @req REQ-019
 export const revalidate = 3600;
@@ -81,7 +91,7 @@ export async function generateMetadata({
     notFound();
   }
 
-  return ficheCanonical("country", lang as Language, slug);
+  return ficheHead("country", lang as Language, slug);
 }
 
 interface PageSearchParams {
@@ -132,7 +142,7 @@ export default async function PaysSlugPage({
     }
 
     return (
-      <PageLayout language="fr" sectionName="Pays">
+      <PageLayout language={lang as Language} sectionName="Pays">
         <div className="container mx-auto max-w-4xl px-4 py-8">
           <FicheSnapshotView
             kind="country"
@@ -149,26 +159,43 @@ export default async function PaysSlugPage({
     );
   }
 
-  const [country, sourceFlags, countryAtlasIndex, peopleCounts, patronymes] =
-    await Promise.all([
-      loadCountryFiche(parsed.slug),
-      getActiveSourceFlags("country", parsed.slug),
-      getCountryAtlasIndex(),
-      // The globe can now be aimed at any country, so the panel has to answer
-      // for any country. A failed count costs the other countries' subtitle,
-      // never the fiche.
-      getContinentPeopleCounts().catch(() => ({}) as Record<string, number>),
-      // Caught to `null` rather than to two empty lists: empty is the corpus
-      // saying no name reaches this country, which the chapter prints as a
-      // fact. A dropped query must not be able to make that claim.
-      getCountryPatronymes(parsed.slug).catch(() => null),
-    ]);
+  const [
+    country,
+    sourceFlags,
+    countryAtlasIndex,
+    peopleCounts,
+    patronymes,
+    familyRoster,
+  ] = await Promise.all([
+    loadCountryFiche(parsed.slug, lang as Language),
+    getActiveSourceFlags("country", parsed.slug),
+    getCountryAtlasIndex(),
+    // The globe can now be aimed at any country, so the panel has to answer
+    // for any country. A failed count costs the other countries' subtitle,
+    // never the fiche.
+    getContinentPeopleCounts().catch(() => ({}) as Record<string, number>),
+    // Caught to `null` rather than to two empty lists: empty is the corpus
+    // saying no name reaches this country, which the chapter prints as a
+    // fact. A dropped query must not be able to make that claim.
+    getCountryPatronymes(parsed.slug).catch(() => null),
+    // A country fiche files its peoples' families by identifier and carries
+    // no name beside them, so the roster is the only way this page can
+    // print "Nigéro-congolais" rather than FLG_NIGERCONGO. One query for the
+    // twenty-four of them, and an empty roster simply costs the block its
+    // family rows.
+    getAfrikLanguageFamilyRoster().catch(() => []),
+  ]);
   if (!country) {
     notFound();
   }
 
   const navigationContext = (await searchParams) ?? {};
   const countryDetail = mapCountryDetail(country);
+
+  /** The only place a country fiche's `FLG_*` identifiers get a name. */
+  const familyNamesById = new Map<string, string>(
+    familyRoster.map((family) => [family.id, family.nameFr] as const)
+  );
 
   // Ids from the corpus, geometry and name from the asset. The corpus decides
   // which countries have a fiche; the asset decides which can be drawn and
@@ -206,23 +233,38 @@ export default async function PaysSlugPage({
   // other chapters resolve to nothing too — country counterparts of the
   // identity, territory, fragmentation and voices panels belong to stories
   // 15.3–15.8. That narrowness is the FR98 invariant, not a gap to fill here.
+  const copy = countryCopy[lang as Language];
+  const atlasCountryName =
+    getAdmin0Name(countryDetail.id, lang as Language) ??
+    countryDetail.nameCommonFr ??
+    countryDetail.nameFr;
+
   return (
     <PageLayout
-      language="fr"
+      language={lang as Language}
       sectionName="Pays"
       flushTop
       trailLabel={countryDetail.nameFr}
       heroHead={
-        <FicheHeroHead entityType="country">
+        <FicheHeroHead entityType="country" translation={country.translation}>
           <CountryFicheTitle
             country={countryDetail}
+            language={lang as Language}
             fromPeopleId={navigationContext.fromPeopleId}
             fromPeopleName={navigationContext.fromPeopleName}
           />
         </FicheHeroHead>
       }
     >
+      <FicheJsonLd
+        graph={await ficheJsonLdFor(
+          "country",
+          lang as Language,
+          countryDetail.id
+        )}
+      />
       <FicheSequence
+        language={lang as Language}
         entityType="country"
         entityId={countryDetail.id}
         entityName={countryDetail.nameCommonFr || countryDetail.nameFr}
@@ -234,21 +276,23 @@ export default async function PaysSlugPage({
           // reaches both edges of the viewport.
           <FicheHeroBand>
             <AtlasGlobe
+              language={lang as Language}
               overlay={buildCountryOutlineOverlay(countryDetail.id)}
               targetPicker="list"
               pickerTargets={pickerTargets}
-              areaNoun="l'atlas"
+              areaNoun={copy.atlas.areaNoun}
               // Clearing the choice puts the fiche's own country back under
               // the line, so the button says that rather than "toute
               // l'empreinte", which a country fiche does not have.
-              wholeAreaLabel={`Revenir à ${countryDetail.nameCommonFr || countryDetail.nameFr}`}
+              wholeAreaLabel={copy.atlas.returnTo(atlasCountryName)}
               facts={buildCountryAtlasFacts({
+                language: lang as Language,
                 country: countryDetail,
                 targets: pickerTargets,
                 peopleCounts,
                 countryBriefs,
               })}
-              missingMessage={`Contour non disponible pour ${countryDetail.nameFr}`}
+              missingMessage={copy.atlas.missingOutline(atlasCountryName)}
             />
           </FicheHeroBand>
         }
@@ -257,13 +301,33 @@ export default async function PaysSlugPage({
             {/* The chapô goes in through `record` rather than through a new
                 FicheSequence slot: it is part of what the record says, and
                 the sequence already knows where the record belongs. */}
-            <CountrySynthesisBrief synthesis={currentSynthesis} />
+            <CountrySynthesisBrief
+              synthesis={currentSynthesis}
+              language={lang as Language}
+            />
             <CountryRecordView
               country={countryDetail}
+              language={lang as Language}
               hasSourceFlag={sourceFlags.length > 0}
               fromPeopleName={navigationContext.fromPeopleName}
               fromPeopleId={navigationContext.fromPeopleId}
               patronymes={patronymes}
+              onward={
+                <FicheOnward
+                  from="country"
+                  language={lang as Language}
+                  links={buildOnwardLinks(
+                    countryOnwardGroups({
+                      demographicPeoples:
+                        countryDetail.demographics?.peoples ?? [],
+                      majorPeoples: countryDetail.majorPeoples ?? [],
+                      familyNamesById,
+                      language: lang as Language,
+                    }),
+                    lang as Language
+                  )}
+                />
+              }
             />
           </>
         }

@@ -1,0 +1,137 @@
+{
+  "title": "The Kongo kingdom",
+  "question": "How can we follow a kingdom beyond present borders?",
+  "standfirst": "A capital now in Angola, Atlantic exchanges and rival powers: the Kongo kingdom requires a reading at several scales.",
+  "thesis": {
+    "stepLabel": "A landmark",
+    "heading": "A documented encounter, not a beginning",
+    "figures": [
+      {
+        "claim": "The arrival of Diogo Cão marks diplomatic contact with the Portuguese.",
+        "provenance": "The kingdom already exists; this date does not mark its foundation."
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "title": "A capital and its networks",
+      "question": "What does Mbanza Kongo represent?",
+      "standfirst": "The city locates power without drawing an unchanging territory.",
+      "body": [
+        {
+          "text": "Mbanza Kongo, in present-day Angola, is the political and spiritual capital of a kingdom UNESCO dates from the fourteenth to the nineteenth century. Its remains bear witness to royal, religious and urban functions."
+        },
+        {
+          "text": "The Met exhibition distinguishes the kingdom from neighbouring formations such as Loango. Kongo works circulate between courts: cultural proximity alone does not establish shared sovereignty."
+        }
+      ],
+      "readings": [
+        {
+          "label": "The centre of power",
+          "body": "The heritage designation documents the capital and its transformations. The protected site does not define the historical boundaries of the kingdom."
+        },
+        {
+          "label": "African diplomatic voices",
+          "body": "Surviving letters from Kongo rulers also let us read exchanges through their political and religious concerns."
+        }
+      ],
+      "illustration": {
+        "alt": "Brass crucifix with a central Christ and several smaller figures.",
+        "caption": "Kongo crucifix, sixteenth–seventeenth century. A local reinterpretation, not a royal portrait."
+      }
+    },
+    {
+      "title": "Ruptures and transformations",
+      "question": "Does the death of a king end an entire society?",
+      "standfirst": "Political history continues through changes of power.",
+      "body": [
+        {
+          "text": "In 1665, António I dies at Mbwila, facing Portuguese forces. The Met chronology presents the battle as a rupture in central authority. It does not mark the disappearance of Kongo populations."
+        },
+        {
+          "text": "Cécile Fromont considers internal conflicts alongside the expanding Atlantic slave trade. A single-cause account obscures their interactions and the unequal choices available to participants."
+        }
+      ],
+      "readings": [
+        {
+          "label": "A military rupture",
+          "body": "The battle provides a dated landmark for understanding political fragmentation rather than a peaceful succession of reigns."
+        },
+        {
+          "label": "Active religious transformations",
+          "body": "The crucifix shown here demonstrates Kongo artists adapting Christian forms. Adoption is more than copying."
+        }
+      ],
+      "illustration": {
+        "alt": "Brass crucifix with a central Christ and several smaller figures.",
+        "caption": "Kongo crucifix, sixteenth–seventeenth century. A local reinterpretation, not a royal portrait."
+      }
+    }
+  ],
+  "gaps": [
+    {
+      "reason": "This dossier does not reconstruct annual kingdom boundaries or a complete list of rulers. Connections to present-day countries are reading landmarks."
+    }
+  ],
+  "sources": [
+    {
+      "notes": "UNESCO. World Heritage entry; accessed 6 September 2026."
+    },
+    {
+      "notes": "The Metropolitan Museum of Art. Exhibition research overview; accessed 6 September 2026."
+    },
+    {
+      "notes": "The Metropolitan Museum of Art. Chronology; accessed 6 September 2026."
+    },
+    {
+      "notes": "The Metropolitan Museum of Art, collection 1999.295.7; accessed 6 September 2026."
+    },
+    {
+      "notes": "Interview with Cécile Fromont, The Metropolitan Museum of Art; accessed 6 September 2026."
+    }
+  ],
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-06",
+    "model": "GPT-6",
+    "sourceHash": "cdf4cb84b9994d6b2fbc30f7c8ea2e90bdab095bbd938213dc33c75eb905c83a",
+    "fieldHashes": {
+      "title": "f1ea386290d6448d9222ad02977164fb4058f550e02cb5f851c11411050eebd8",
+      "question": "47ce0152f306945bee1cfdd9978a729fa88a8c12e95733f83fbb7a32c81759f3",
+      "standfirst": "40d8ed227576541816044e32af3f4a1484926cc318577af717f55377e7978683",
+      "thesis.stepLabel": "7a8bb60aeef2f867eccc15096190b35374f3fe34e84a7b729e83ca8c3b7d9b05",
+      "thesis.heading": "367ea2c19e6aeb23c6bf3f59a8d258d91d9bd06829c61ca84b38427a25e749f5",
+      "thesis.figures[0].claim": "6ecc9514f71b7fe1dc882f5bc27e1c9f0d01825a9b8b663d30b7e5943d3786ba",
+      "thesis.figures[0].provenance": "387747e283e7a0e6e44e70a9678769e1b9fea8bc67acd1d64d2164333387e7ed",
+      "chapters[0].title": "7c0ae12ed6c65f426f045af1f947d5c02b2b00b7c7c4734dd9bb3923ce79b6ac",
+      "chapters[0].question": "73a7bb31899c932753be2749721fb5d9126132fd0d55009cec8d79253653d4c0",
+      "chapters[0].standfirst": "993f08237e74c108b3c827b3881bf535bd6b5cb4c8f6fb114a85ad54d5548d69",
+      "chapters[0].body[0].text": "344dd3f8c63de388148a5e7d5542547512e39a73d6f535af28ad5849aa3eafe9",
+      "chapters[0].body[1].text": "eaa8d2889c8eb02c0088dd007efc235b29d727163d28020e7c4052972699ce5b",
+      "chapters[0].readings[0].label": "82ca7945d1766caa781d9501a888cb1525fc29a72fe264a317c0b8ef0f74c98f",
+      "chapters[0].readings[0].body": "0148e68f2e787ec001d8e5e4319db4422d242292a9d99dab3a1e0d7234aa9e67",
+      "chapters[0].readings[1].label": "fa25468d63166fb48c2ebb75604c5a71cc1b8eed367a84a498678afcbfcc2ce9",
+      "chapters[0].readings[1].body": "9d652ed3008b101b0e11cb517c7c821b2478b9da39c285681d36b4f8c66597e4",
+      "chapters[0].illustration.alt": "010f431e3c311ff8ed8dbdd007c1f9e47c6d4df8cf20a29d9aac2fb963b44f9a",
+      "chapters[0].illustration.caption": "d8758c067b9453cb71871cc837d29db622da8a1cf9e7e83edf17545cf70ccc5c",
+      "chapters[1].title": "94cdc2be77955a9445bdb0107f6c2ced85cd60a51229b94ae866fd0029c9a41d",
+      "chapters[1].question": "9b714db96012b77c98dac47c347f720785b5ca6533f354670f1f8b197d55c120",
+      "chapters[1].standfirst": "3e6a8772e44daba02ce288821bc51489b2472213982d6aecd60c95a639a379e6",
+      "chapters[1].body[0].text": "07174a194af5f0eb00f8eb239f09742b60c94924060eee6a2af775fa1c7c6a8f",
+      "chapters[1].body[1].text": "52596998a555bee23a4aaadb0eaf7e2fbbcd594c65c19661d0250c32dbedbe02",
+      "chapters[1].readings[0].label": "bbabdb05faa97ba5b02c463badd68fdd400d692c0684c76b34d38ad487815353",
+      "chapters[1].readings[0].body": "b09c57b7d7df2cdf3f2c995318392025fc04f53a42cda66ad12e88f33d965844",
+      "chapters[1].readings[1].label": "da2d00aeaf3edde826cfdb368a484a195aa3962dd99c9714168f1a06c2a2118f",
+      "chapters[1].readings[1].body": "0785a407b0beb9cf3f422c5de2625fab55d69ebd11dd35eea89b8a420b6248fa",
+      "chapters[1].illustration.alt": "010f431e3c311ff8ed8dbdd007c1f9e47c6d4df8cf20a29d9aac2fb963b44f9a",
+      "chapters[1].illustration.caption": "d8758c067b9453cb71871cc837d29db622da8a1cf9e7e83edf17545cf70ccc5c",
+      "gaps[0].reason": "a481d4f9b94262246851d42066d29f543fa070dc5f00f84fb41059b42a9a7685",
+      "sources[0].notes": "0fe4dbca0b36844539ea0d9b212b7735c6a14f9249a27762ea4697ab364c0170",
+      "sources[1].notes": "ab3359d9ffb6aa8b2dd16d166f65e0592eac528cbe2ba67bdd1745437ef4acb3",
+      "sources[2].notes": "ff05bbe0b42b40537427fc7a530f5f548c8435a7dc8f20aa7297c1df79617bad",
+      "sources[3].notes": "7e3f8b796abe27acccce2f2998b5c552246c00650a7361556bc91ae039dfd988",
+      "sources[4].notes": "e046f00d355f0b1a6d8bea77071f85c12320739371e9689dd8b02b14acad5465"
+    },
+    "reviewRequired": []
+  }
+}

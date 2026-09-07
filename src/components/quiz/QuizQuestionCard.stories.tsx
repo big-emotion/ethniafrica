@@ -56,6 +56,7 @@ function InteractiveCard() {
   const [selected, setSelected] = useState<number | null>(null);
   return (
     <QuizQuestionCard
+      language="fr"
       question={QUESTION}
       selectedOption={selected}
       onSelectOption={setSelected}

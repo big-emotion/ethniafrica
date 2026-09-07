@@ -129,19 +129,21 @@ describe("flag handlers", () => {
 
       const result = await handleFlagCreate(
         { ...validInput(), reporter_email: "  lectrice@example.org " },
-        { accessToken: null },
+        { accessToken: null, language: "en" },
         dependencies
       );
 
       expect(result.status).toBe(201);
       expect(dependencies.createReporterContact).toHaveBeenCalledWith(
         createdFlag.id,
-        "lectrice@example.org"
+        "lectrice@example.org",
+        "en"
       );
       expect(dependencies.sendFlagVerificationEmail).toHaveBeenCalledWith({
         email: "lectrice@example.org",
         token: "verification-token",
         publicSlug: createdFlag.public_slug,
+        language: "en",
       });
     });
 
@@ -368,6 +370,25 @@ describe("flag handlers", () => {
       expect(dependencies.createFlag).not.toHaveBeenCalled();
     });
 
+    // @req REQ-140
+    it("localizes anti-bot failures from the submitted route locale", async () => {
+      const dependencies = makeDependencies();
+      dependencies.verifyAntibotProof.mockResolvedValue("rejected");
+
+      const result = await handleFlagCreate(
+        validInput(),
+        { accessToken: null, language: "en" },
+        dependencies
+      );
+
+      expect(result.body.errors).toEqual([
+        {
+          code: "UNAUTHORIZED",
+          message: "Anti-bot verification failed",
+        },
+      ]);
+    });
+
     // @req REQ-012
     it("returns unavailable when the anti-bot control cannot verify, without inserting", async () => {
       const dependencies = makeDependencies();
@@ -442,6 +463,7 @@ describe("flag handlers", () => {
         counter_source_url: "https://example.org/source",
         counter_source_citation: "Example source",
         proposed_rewrite: "Use the latest published estimate.",
+        contribution_payload: undefined,
       });
       expect(result).toEqual({
         status: 201,

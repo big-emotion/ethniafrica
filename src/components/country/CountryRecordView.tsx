@@ -1,3 +1,6 @@
+import type { ReactNode } from "react";
+
+import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import { CountryParchment } from "@/components/country/CountryParchment";
@@ -13,6 +16,8 @@ import { CountryAttestedNamesSection } from "@/components/patronymes/CountryAtte
 import { transformCountryData } from "@/lib/countryDataTransformer";
 import type { CountryPatronymes } from "@/api/v2/services/patronymeFicheLinks";
 import type { CountryDetail } from "@/types/afrik-frontend";
+import type { Language } from "@/types/shared";
+import { countryCopy } from "@/lib/i18n/copy/country";
 
 /**
  * The country fiche's dossier, server-rendered.
@@ -38,6 +43,7 @@ import type { CountryDetail } from "@/types/afrik-frontend";
 
 export interface CountryRecordViewProps {
   country: CountryDetail;
+  language: Language;
   hasSourceFlag?: boolean;
   /**
    * Set when the reader arrived from a people fiche. Provenance, not
@@ -52,47 +58,54 @@ export interface CountryRecordViewProps {
    * here, which the chapter states rather than hides.
    */
   patronymes?: CountryPatronymes | null;
+  /** The way out of the fiche, composed by the route and passed straight down. */
+  onward?: ReactNode;
   /** Cloudflare Turnstile public site key; without it the flag control is inert. */
 }
 
 // @req REQ-115
 export function CountryRecordView({
   country,
+  language,
   hasSourceFlag,
   fromPeopleName,
   fromPeopleId,
   patronymes = null,
+  onward,
 }: CountryRecordViewProps) {
-  const data = transformCountryData(country);
+  const copy = countryCopy[language];
+  const data = transformCountryData(country, language);
 
   return (
     <div data-testid="country-record-view">
       <CountryParchment
         data={data}
         country={country}
+        language={language}
         hasSourceFlag={hasSourceFlag}
+        onward={onward}
       >
-        <Section title="Noms à travers l'histoire">
+        <Section title={copy.sections.namesHistory}>
           {data.timeline.items.length > 0 ? (
             <HistoryTimeline data={data.timeline} />
           ) : (
-            <FieldProvenanceMarker state="missing" />
+            <FieldProvenanceMarker state="missing" language={language} />
           )}
         </Section>
 
-        <Section title="Faits historiques majeurs">
+        <Section title={copy.sections.historicalFacts}>
           {data.historicalFacts ? (
             <HistoricalFactsSection data={data.historicalFacts} />
           ) : (
-            <FieldProvenanceMarker state="missing" />
+            <FieldProvenanceMarker state="missing" language={language} />
           )}
         </Section>
 
-        <Section title="Langues">
+        <Section title={copy.sections.languages}>
           {data.languages.bubbles.length > 0 ? (
-            <LanguagesSection data={data.languages} />
+            <LanguagesSection data={data.languages} language={language} />
           ) : (
-            <FieldProvenanceMarker state="missing" />
+            <FieldProvenanceMarker state="missing" language={language} />
           )}
         </Section>
 
@@ -102,18 +115,28 @@ export function CountryRecordView({
             Adjacent, three chapters opening on "Nom" would read as a menu of
             one subject rather than three claims. Spoken here, then named
             here, then the rest of the culture. */}
-        <CountryAttestedNamesSection patronymes={patronymes} />
+        <CountryAttestedNamesSection
+          patronymes={patronymes}
+          language={language}
+        />
 
-        <Section title="Culture et société">
+        <Section title={copy.sections.culture}>
           <CultureGrid data={data.culture} />
+          <DossierLinks
+            kind="country"
+            id={country.id}
+            section="culture"
+            language={language}
+          />
           <div data-testid="section-flag-target-culture" className="mt-3">
             <FlagTarget
+              language={language}
               target={{
                 type: "fiche_section",
                 id: country.id,
                 fieldPath: "culture",
               }}
-              triggerLabel="Signaler cette section"
+              triggerLabel={copy.reportSection}
               className="w-auto text-afh-caption"
             />
           </div>

@@ -26,6 +26,14 @@
  *     security: []
  *     parameters:
  *       - in: query
+ *         name: lang
+ *         required: false
+ *         schema:
+ *           type: string
+ *           enum: [en, fr]
+ *           default: fr
+ *         description: Authored question-bank locale
+ *       - in: query
  *         name: pays
  *         required: false
  *         schema:
@@ -135,6 +143,7 @@ export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
     const parsed = quizSessionQuerySchema.safeParse({
+      lang: searchParams.get("lang") ?? undefined,
       pays: searchParams.get("pays") ?? undefined,
       famille: searchParams.get("famille") ?? undefined,
       mode: searchParams.get("mode") ?? undefined,

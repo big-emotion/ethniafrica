@@ -52,12 +52,6 @@ describe("brand", () => {
       const { OG_DESCRIPTION } = await import("../brand");
       expect(OG_DESCRIPTION.length).toBeGreaterThan(0);
     });
-
-    // @req REQ-019
-    it("should export SITE_LOCALE with default value", async () => {
-      const { SITE_LOCALE } = await import("../brand");
-      expect(SITE_LOCALE).toBe("fr");
-    });
   });
 
   describe("environment variable overrides", () => {
@@ -73,13 +67,6 @@ describe("brand", () => {
       process.env.NEXT_PUBLIC_CANONICAL_DOMAIN = "custom-domain.org";
       const { CANONICAL_DOMAIN } = await import("../brand");
       expect(CANONICAL_DOMAIN).toBe("custom-domain.org");
-    });
-
-    // @req REQ-019
-    it("should override SITE_LOCALE via NEXT_PUBLIC_SITE_LOCALE", async () => {
-      process.env.NEXT_PUBLIC_SITE_LOCALE = "en";
-      const { SITE_LOCALE } = await import("../brand");
-      expect(SITE_LOCALE).toBe("en");
     });
 
     // @req REQ-019

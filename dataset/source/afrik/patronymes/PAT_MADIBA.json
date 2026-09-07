@@ -87,7 +87,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Madiba », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la notice « Names », la biographie de la Nelson Mandela Foundation et le passage autobiographique où Mandela décrit son clan Madiba, n'ont identifié aucune parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Madiba », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la notice « Names », la biographie de la Nelson Mandela Foundation et le passage autobiographique où Mandela décrit son clan Madiba, n'ont identifié aucune parenté à plaisanterie documentée reliant ce nom à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

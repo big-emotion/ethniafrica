@@ -28,7 +28,7 @@ vi.mock("@/components/atlas/ContinentGlobeStage", () => ({
 describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // @req REQ-044
   it("renders no eyebrow and no standalone brand line", () => {
-    render(<HomeHero />);
+    render(<HomeHero language="fr" />);
     expect(screen.queryByText(PRODUCT_NAME)).not.toBeInTheDocument();
     expect(
       screen.queryByText("EXPLORER · COMPRENDRE · JOUER")
@@ -41,7 +41,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // displayed is exactly the arrangement this band spent a release in.
   // @req REQ-044
   it("renders a single H1 whose accessible name is the question it displays", () => {
-    render(<HomeHero />);
+    render(<HomeHero language="fr" />);
     const headings = screen.getAllByRole("heading", { level: 1 });
     expect(headings).toHaveLength(1);
 
@@ -61,7 +61,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // between the headline and the band.
   // @req REQ-044
   it("asks about the continent and leaves the totals to the tile band", () => {
-    render(<HomeHero />);
+    render(<HomeHero language="fr" />);
 
     const h1 = screen.getByRole("heading", { level: 1 });
     expect(h1.textContent).toMatch(/^Une question sur l'Afrique\s?\?$/);
@@ -84,7 +84,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // italicising a fragment of it would stress nothing.
   // @req REQ-044
   it("keeps the headline interrogative and carries no italic clause", () => {
-    render(<HomeHero />);
+    render(<HomeHero language="fr" />);
     const h1 = screen.getByRole("heading", { level: 1 });
 
     expect(h1.textContent?.trim().endsWith("?")).toBe(true);
@@ -103,7 +103,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // back into a description of a mechanism.
   // @req REQ-044
   it("answers the headline in one sentence, and offers something to do", () => {
-    render(<HomeHero />);
+    render(<HomeHero language="fr" />);
 
     const answer = screen.getByTestId("home-hero-answer");
     const sentences = answer
@@ -124,7 +124,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // the search, deliberately not a third register of prose.
   // @req REQ-044
   it("holds one paragraph, one tile band, and no separating rule", () => {
-    const { container } = render(<HomeHero />);
+    const { container } = render(<HomeHero language="fr" />);
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
@@ -145,7 +145,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // the hero states one thing rather than three.
   // @req REQ-044
   it("no longer carries the trust note it used to duplicate", () => {
-    render(<HomeHero />);
+    render(<HomeHero language="fr" />);
     expect(
       screen.queryByTestId("home-hero-trust-note")
     ).not.toBeInTheDocument();
@@ -155,7 +155,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // visual without restoring the retired featured-module wrapper.
   // @req REQ-115 @req ETNI-1404
   it("holds the shared globe directly, not the old module slot", () => {
-    const { container } = render(<HomeHero />);
+    const { container } = render(<HomeHero language="fr" />);
 
     expect(container.querySelector(".home-globe-holder")).toBeNull();
     expect(container.querySelector(".home-globe-stage")).not.toBeNull();
@@ -165,7 +165,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // panel was a hole punched through the page.
   // @req REQ-115
   it("stays on the page surface rather than pinning itself to night", () => {
-    const { container } = render(<HomeHero />);
+    const { container } = render(<HomeHero language="fr" />);
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
@@ -207,7 +207,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // caption under the headline rather than as its answer.
   // @req REQ-044
   it("sets the answer in the reading size and full ink", () => {
-    const { container } = render(<HomeHero />);
+    const { container } = render(<HomeHero language="fr" />);
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
@@ -226,7 +226,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // and the archive starts.
   // @req REQ-115
   it("closes the band on an accent seam rather than a gradient", () => {
-    const { container } = render(<HomeHero />);
+    const { container } = render(<HomeHero language="fr" />);
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
@@ -239,7 +239,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
 
   // @req REQ-044 @req ETNI-822
   it("labels the hero section as an accessible landmark, matched by e2e/home-visual.spec.ts", () => {
-    const { container } = render(<HomeHero />);
+    const { container } = render(<HomeHero language="fr" />);
     const section = container.querySelector("section");
 
     expect(section).toHaveAttribute("aria-label", PRODUCT_NAME);
@@ -259,7 +259,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
 
   // @req REQ-115 @req ETNI-1404
   it("draws the globe at every width, never hiding it on a phone", () => {
-    const { container } = render(<HomeHero />);
+    const { container } = render(<HomeHero language="fr" />);
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
@@ -270,7 +270,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
 
   // @req REQ-115 @req ETNI-1404
   it("retires the historical map from the interactive hero", () => {
-    render(<HomeHero />);
+    render(<HomeHero language="fr" />);
 
     expect(screen.queryByTestId("home-hero-figure")).toBeNull();
     expect(screen.queryByText(/al-Idrisi/i)).toBeNull();
@@ -284,7 +284,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
    */
   // @req REQ-115
   it("keeps the copy first in the band", () => {
-    const { container } = render(<HomeHero />);
+    const { container } = render(<HomeHero language="fr" />);
     const copy = container.querySelector(".home-hero-copy");
     const globe = container.querySelector(".home-hero-globe");
 
@@ -299,7 +299,7 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
   it("renders a drawn project image with its alt text and visible credit", () => {
     const image = HOME_HERO_IMAGES[0];
 
-    render(<HomeHero visual={{ kind: "image", image }} />);
+    render(<HomeHero language="fr" visual={{ kind: "image", image }} />);
 
     expect(screen.getByRole("img", { name: image.alt })).toBeInTheDocument();
     expect(screen.getByText(image.credit)).toBeInTheDocument();
@@ -308,18 +308,18 @@ describe("HomeHero — the band the home opens on (REQ-115)", () => {
 
   // @req REQ-115
   it("keeps the interactive globe as the default and as an explicit draw", () => {
-    const defaultView = render(<HomeHero />);
+    const defaultView = render(<HomeHero language="fr" />);
     expect(screen.getByTestId("home-hero-globe")).toBeInTheDocument();
     defaultView.unmount();
 
-    render(<HomeHero visual={{ kind: "globe" }} />);
+    render(<HomeHero language="fr" visual={{ kind: "globe" }} />);
     expect(screen.getByTestId("home-hero-globe")).toBeInTheDocument();
     expect(screen.queryByRole("img")).not.toBeInTheDocument();
   });
 
   // @req REQ-115
   it("opts the home globe into gentle autoplay", () => {
-    render(<HomeHero visual={{ kind: "globe" }} />);
+    render(<HomeHero language="fr" visual={{ kind: "globe" }} />);
 
     expect(screen.getByTestId("home-globe-stage")).toHaveAttribute(
       "data-autoplay",

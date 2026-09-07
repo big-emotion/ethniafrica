@@ -8,6 +8,7 @@ import {
   buildT12ContestedExonymTemplate,
   buildT13EtymologyTemplate,
   buildT16KingdomTemplate,
+  QUESTION_TEMPLATE_COPY,
   questionTemplateBuilders,
 } from "../questionTemplates";
 import { QUIZ_TEMPLATE_IDS } from "@/lib/quiz/segmentPolicy";
@@ -91,6 +92,84 @@ describe("buildT1LanguageFamilyTemplate", () => {
     const first = buildT1LanguageFamilyTemplate(fiche, pool);
     const second = buildT1LanguageFamilyTemplate(fiche, pool);
     expect(first).toEqual(second);
+  });
+});
+
+describe("English question template copy", () => {
+  // @req REQ-145
+  it("authors an English stem and explanation for every active template", () => {
+    expect(Object.keys(QUESTION_TEMPLATE_COPY.en)).toEqual(QUIZ_TEMPLATE_IDS);
+
+    for (const templateId of QUIZ_TEMPLATE_IDS) {
+      const copy = QUESTION_TEMPLATE_COPY.en[templateId];
+      expect(copy.prompt("Yorùbá")).toMatch(/[A-Za-z]/);
+      expect(copy.explanation("Yorùbá", "Nigeria")).toMatch(/[A-Za-z]/);
+    }
+  });
+
+  // @req REQ-145
+  it("builds the atomic templates with English prose when requested", () => {
+    const t1 = buildT1LanguageFamilyTemplate(
+      fiche,
+      ["Bantu", "Nilo-Saharan", "Afro-Asiatic"],
+      "en"
+    );
+    const t3 = buildT3MainCountryTemplate(
+      fiche,
+      ["Ghana", "Senegal", "Kenya"],
+      "en"
+    );
+
+    expect(t1?.promptFr).toBe(
+      "Which language family do the Yorùbá (Yoruba) people belong to?"
+    );
+    expect(t1?.explanationFr).toBe(
+      "The Yorùbá (Yoruba) people belong to the Niger-Congo language family."
+    );
+    expect(t3?.promptFr).toBe(
+      "In which country are the Yorùbá (Yoruba) people mainly found?"
+    );
+    expect(t3?.explanationFr).toBe(
+      "The Yorùbá (Yoruba) people are mainly found in Nigeria."
+    );
+  });
+
+  // @req REQ-145
+  it("builds inversion and kingdom templates with English prose", () => {
+    const inversion = buildT6RitesTemplate(
+      inversionFiche({
+        rubrics: {
+          ...fiche.rubrics,
+          T6: "Young women dance in single file and imitate a python's movements.",
+        },
+      }),
+      PEOPLE_POOL,
+      "en"
+    );
+    const country: QuizCountryFixture = {
+      id: "GIN",
+      subjectName: { autonym: "Guinea" },
+      selfAppellation: "Republic of Guinea",
+      exonyms: [],
+      rubrics: {},
+      kingdomNames: ["Mali Empire"],
+    };
+    const kingdom = buildT16KingdomTemplate(
+      country,
+      ["Ghana Empire", "Sosso Empire", "Wassoulou Empire"],
+      "en"
+    );
+
+    expect(inversion?.promptFr).toBe("Which people practise these rites?");
+    expect(inversion?.explanationFr).toBe(
+      "This passage describes the rites of the VhaVenda (Venda) people."
+    );
+    expect(kingdom?.promptFr).toBe(
+      "Which kingdom or sultanate developed in the territory of Guinea?"
+    );
+    expect(kingdom?.explanationFr).toBe(
+      "The Mali Empire developed in the territory of Guinea."
+    );
   });
 });
 

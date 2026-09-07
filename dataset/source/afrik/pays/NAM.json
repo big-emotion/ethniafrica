@@ -1,6 +1,7 @@
 {
   "id": "NAM",
   "nameFr": "Namibie",
+  "nameEn": "Namibia",
   "nameOfficial": "République de Namibie (Republic of Namibia, Republiek van Namibië)",
   "summary": "La Namibie porte le nom du désert du Namib, « le vaste lieu » en langue nama. Peuplée de longue date par les Khoïsan puis par les migrations bantoues, elle fut colonie allemande du Sud-Ouest africain avant l'administration sud-africaine. Ovambo, Kavango, Herero, Damara, Nama et Himba y composent la population.",
   "etymology": "Le nom \"Namibie\" vient du désert du Namib, qui borde la côte atlantique du pays. \"Namib\" signifie \"vaste lieu\" ou \"endroit vide\" en langue nama. Le nom a été adopté lors de l'indépendance en 1990. Auparavant, le territoire était appelé \"Afrique du Sud-Ouest\" (South West Africa, Suidwes-Afrika) pendant la colonisation sud-africaine.",
@@ -21,6 +22,7 @@
       {
         "name": "Peuples khoïsan",
         "period": "Préhistorique - présent",
+        "entryType": "polity",
         "dominantPeoples": ["San", "Nama"],
         "politicalCenters": ["Groupes nomades et semi-nomades"],
         "historicalRole": "Peuples autochtones de la Namibie, chasseurs-cueilleurs (San), pasteurs (Nama), résistance à la colonisation."
@@ -28,6 +30,7 @@
       {
         "name": "Chefferies Ovambo",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Ovambo"],
         "politicalCenters": ["Chefferies traditionnelles (nord de la Namibie)"],
         "historicalRole": "Chefferies Ovambo, agriculture et élevage, résistance à la colonisation, rôle majeur dans la lutte pour l'indépendance (SWAPO)."
@@ -35,6 +38,7 @@
       {
         "name": "Chefferies Herero",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Herero"],
         "politicalCenters": [
           "Chefferies traditionnelles (centre de la Namibie)"
@@ -44,6 +48,7 @@
       {
         "name": "Chefferies Kavango",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Kavango"],
         "politicalCenters": [
           "Chefferies traditionnelles (nord-est de la Namibie)"
@@ -53,6 +58,12 @@
       {
         "name": "Colonie allemande du Sud-Ouest africain",
         "period": "1884 - 1915",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1884,
+          "endYear": 1915,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples namibiens sous domination coloniale allemande"
         ],
@@ -62,6 +73,12 @@
       {
         "name": "Colonie sud-africaine (Afrique du Sud-Ouest)",
         "period": "1915 - 1990",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1915,
+          "endYear": 1990,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples namibiens sous domination coloniale sud-africaine"
         ],
@@ -151,7 +168,7 @@
           "peut être problématique)",
           "\"Basarwa\" (terme utilisé au Botswana)"
         ],
-        "peopleId": "PPL_SAN",
+        "peopleId": null,
         "mainRegion": "Est de la Namibie (désert du Kalahari)",
         "languages": [
           "Langues khoïsan (diverses",
@@ -169,7 +186,7 @@
           "peut être problématique)",
           "\"Colons\" (terme historique)"
         ],
-        "peopleId": "PPL_BLANCS_NAMIBIENS",
+        "peopleId": null,
         "mainRegion": "Toutes les régions de la Namibie, majoritairement urbains",
         "languages": ["Afrikaans", "allemand", "anglais"],
         "appellationRemarks": "Les Blancs namibiens sont descendants de colons allemands et afrikaners. Le terme \"Blanc\" peut être problématique et doit être utilisé avec précaution. Le terme \"Colon\" est historique et doit être contextualisé. Ils sont majoritairement chrétiens."

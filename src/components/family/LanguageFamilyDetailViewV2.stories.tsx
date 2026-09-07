@@ -32,7 +32,7 @@ const meta: Meta<typeof LanguageFamilyDetailViewV2> = {
     viewport: { viewports },
     a11y: { config: { rules: [{ id: "color-contrast", enabled: true }] } },
   },
-  args: { family: familyFixture },
+  args: { language: "fr", family: familyFixture },
 };
 
 export default meta;

@@ -3,6 +3,8 @@ import { describe, expect, it } from "vitest";
 
 import { NameNomenclature } from "@/components/names/NameNomenclature";
 import type { NameForm } from "@/api/v2/schemas/names";
+import { getPeopleRoute, getStaticPageRoute } from "@/lib/routing";
+import { getTranslation } from "@/lib/translations";
 
 const PANGWE: NameForm = {
   formKey: "pangwe",
@@ -25,6 +27,7 @@ function renderNomenclature(
 ) {
   return render(
     <NameNomenclature
+      language="fr"
       forms={[PANGWE]}
       total={3134}
       page={1}
@@ -129,5 +132,36 @@ describe("NameNomenclature", () => {
     expect(
       screen.getByText(/Désignation coloniale allemande/)
     ).toBeInTheDocument();
+  });
+
+  // The two ways out of the nomenclature — a bearer's fiche, the contribution
+  // form — were composed for French only, so an English reader crossed
+  // locales on either click.
+  // @req REQ-141
+  it("composes its outbound links in the page's locale", () => {
+    renderNomenclature({
+      language: "en",
+      forms: [],
+      total: 0,
+      query: "Pangwe",
+    });
+    const t = getTranslation("en").names;
+
+    expect(
+      screen.getByRole("link", { name: t.emptyState.reportMissing })
+    ).toHaveAttribute(
+      "href",
+      `${getStaticPageRoute("en", "contribute")}?q=Pangwe`
+    );
+  });
+
+  // @req REQ-141
+  it("links each bearer to its fiche in the page's locale", () => {
+    renderNomenclature({ language: "en" });
+
+    expect(screen.getByRole("link", { name: "Fang" })).toHaveAttribute(
+      "href",
+      `${getPeopleRoute("en", "PPL_FANG")}#noms`
+    );
   });
 });

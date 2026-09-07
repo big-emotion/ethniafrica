@@ -2,23 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { AnecdotePlate } from "@/components/anecdotes/AnecdotePlate";
-import type {
-  DidYouKnowEntity,
-  DidYouKnowFact,
-} from "@/lib/home/didYouKnowFacts";
+import { TranslationProvenanceMarker } from "@/components/fiche/TranslationProvenanceMarker";
+import type { DidYouKnowEntity } from "@/lib/home/didYouKnowFacts";
 import type { DidYouKnowIllustration } from "@/lib/home/didYouKnowIllustrations";
+import type { LocalizedDidYouKnowFact } from "@/lib/home/didYouKnowLocalization";
 import {
   DID_YOU_KNOW_ENTITY_ACCENT,
-  DID_YOU_KNOW_ENTITY_LABEL,
-  DID_YOU_KNOW_TIER_LABEL,
   type AnecdoteImageSide,
 } from "@/lib/home/didYouKnowPresentation";
+import { anecdotesCopy } from "@/lib/i18n/copy/anecdotes";
 import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 
 export interface AnecdoteCardProps {
   language: Language;
-  fact: DidYouKnowFact;
+  fact: LocalizedDidYouKnowFact;
   /**
    * Resolved by the caller rather than looked up here, so that rendering a
    * card does not oblige the surface to carry the whole illustration table.
@@ -75,6 +73,7 @@ export function AnecdoteCard({
   illustration,
   imageSide = "end",
 }: AnecdoteCardProps) {
+  const copy = anecdotesCopy[language];
   return (
     <article className="anecdote-card" id={fact.id}>
       <div className={`anecdote-split anecdote-split--image-${imageSide}`}>
@@ -103,7 +102,7 @@ export function AnecdoteCard({
                     rel="noreferrer noopener"
                     target="_blank"
                   >
-                    fichier
+                    {copy.file}
                   </a>
                 </>
               ) : null}
@@ -115,7 +114,7 @@ export function AnecdoteCard({
                     rel="noreferrer noopener license"
                     target="_blank"
                   >
-                    licence
+                    {copy.licence}
                   </a>
                 </>
               ) : null}
@@ -129,6 +128,14 @@ export function AnecdoteCard({
 
         <div className="anecdote-text">
           <h2 className="anecdote-headline">{fact.headline}</h2>
+
+          <TranslationProvenanceMarker
+            translation={
+              fact.translationKind
+                ? { kind: fact.translationKind, stale: false }
+                : null
+            }
+          />
 
           {fact.body.map((paragraph, index) => (
             <p
@@ -148,7 +155,7 @@ export function AnecdoteCard({
                 >
                   <span aria-hidden="true" className="anecdote-dot" />
                   <span className="anecdote-chip-kind">
-                    {DID_YOU_KNOW_ENTITY_LABEL[entity.kind]}
+                    {copy.entityLabels[entity.kind]}
                   </span>
                   {entity.label}
                 </Link>
@@ -164,8 +171,8 @@ export function AnecdoteCard({
             each source's, which is the authority of that one citation. Left
             unlabelled they read as one repeated badge. */}
         <p className="anecdote-tier">
-          <span className="anecdote-tier-label">Fiabilité du fait</span>
-          {DID_YOU_KNOW_TIER_LABEL[fact.tier]}
+          <span className="anecdote-tier-label">{copy.factReliability}</span>
+          {copy.tierLabels[fact.tier]}
         </p>
 
         {fact.sources?.length ? (
@@ -187,7 +194,7 @@ export function AnecdoteCard({
                   <cite className="anecdote-source-cite">{source.title}</cite>
                 )}
                 <span className="anecdote-source-tier">
-                  {DID_YOU_KNOW_TIER_LABEL[source.tier]}
+                  {copy.tierLabels[source.tier]}
                 </span>
                 {source.notes ? (
                   <span className="anecdote-source-note">{source.notes}</span>
@@ -199,9 +206,7 @@ export function AnecdoteCard({
           // Six facts predate the sources field. Saying so is the only
           // honest thing to print here: a tier over a blank space asserts a
           // provenance the reader cannot check.
-          <p className="anecdote-source-missing">
-            Provenance à documenter — ce fait est antérieur au champ de sources.
-          </p>
+          <p className="anecdote-source-missing">{copy.missingProvenance}</p>
         )}
       </footer>
 
@@ -303,7 +308,13 @@ export function AnecdoteCard({
           font-weight: 500;
           letter-spacing: 0.07em;
           text-transform: uppercase;
-          opacity: 0.72;
+          /* No opacity here, and removing it is the fix rather than lowering
+             it. Opacity multiplies the ink against whatever ends up behind it,
+             so it cannot be reasoned about from a token: at 0.72 this label
+             fell under 4.5:1 while the entity name beside it — same colour,
+             same element, full opacity — passed. The kind is already quieter
+             than the name by four signals: smaller, lighter, letter-spaced
+             and uppercase. It does not need a fifth that costs legibility. */
         }
         .anecdote-provenance {
           margin-top: 22px;

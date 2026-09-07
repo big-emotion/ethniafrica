@@ -9,6 +9,7 @@
 
 import type { SourceTier } from "@/types/sources";
 import type { PersonId, PersonPeopleLink } from "@/types/persons";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 
 // ==========================================
 // STABLE IDENTIFIERS (IMMUTABLE)
@@ -68,6 +69,12 @@ export type ClassificationStatus =
 export interface Country {
   id: CountryId; // ISO 3166-1 alpha-3 (IMMUTABLE)
   nameFr: string;
+  /**
+   * English name of ordinary use in the state's own English form ("Chad",
+   * "Côte d'Ivoire", "The Gambia") — docs/editorial/translation-classes.md.
+   * Optional only because the column is empty until the corpus is reloaded.
+   */
+  nameEn?: string;
   nameOfficial?: string;
   /**
    * The chapeau: what a reader takes away if they read nothing else.
@@ -363,9 +370,50 @@ export interface HistoricalNamesSection {
   contemporary?: string;
 }
 
+export type KingdomDatePrecision = "year" | "century" | "approximate";
+
+/**
+ * Machine-readable bounds for a historical entity.
+ *
+ * These never replace `Kingdom.period`, which stays the reader-facing label:
+ * "XIVe siècle - XVIIe siècle (apogée), déclin progressif jusqu'au XIXe siècle"
+ * carries editorial judgement that no pair of integers holds. The bounds exist
+ * so the corpus can be sorted and checked — in particular so a country that
+ * dates its colonial administrations cannot leave its precolonial polities
+ * undated, which is how the atlas came to show the coloniser with a year and
+ * the kingdom with a shrug.
+ *
+ * `precision` is not a confidence scale — the corpus already has three of those
+ * (source tier, classification status, confidence score). It says what kind of
+ * statement the bounds are: an exact year, the interval a named century
+ * encloses, or an estimate, which then owes the reader a `datingNote`.
+ */
+export interface KingdomTimeRange {
+  startYear: number;
+  endYear?: number;
+  /**
+   * Set instead of `endYear` for an entity that still stands. Storing the
+   * current year would be a fact that changes on its own every January.
+   */
+  ongoing?: boolean;
+  precision: KingdomDatePrecision;
+  datingNote?: string;
+}
+
+/**
+ * A precolonial polity, a colonial administration and a modern state are three
+ * different things sharing one array. The distinction used to be guessed at
+ * render time from the entry's name, which let twenty-five colonial entries —
+ * "Somaliland britannique", "Rhodésie du Nord", "Condominium anglo-égyptien" —
+ * through a filter that only tested for the word "colonie".
+ */
+export type KingdomEntryType = "polity" | "colonial" | "modern";
+
 export interface Kingdom {
   name: string;
-  period?: string;
+  period: string;
+  entryType?: KingdomEntryType;
+  timeRange?: KingdomTimeRange;
   dominantPeoples?: string[];
   politicalCenters?: string[];
   historicalRole?: string;
@@ -708,6 +756,13 @@ export interface FtsSearchParams {
   familyId?: string;
   /** Scope to the peoples present in one country (ISO 3166-1 alpha-3). */
   countryId?: string;
+  /**
+   * Locale the search is served in (ETNI-1857). Under `en` the ranking
+   * functions read the English names too (migration 084) and the cross-kind
+   * tie-break collates in English. Absent means French — the only locale
+   * the surface answered in before it had a second one.
+   */
+  lang?: TranslationLocale;
 }
 
 /**
@@ -722,6 +777,12 @@ export interface FtsSearchParams {
  */
 export interface RankedPeople extends People {
   languageFamilyName: string | null;
+  /**
+   * The family's English name (migration 084), so a card served in English
+   * can label the family chip without a second request. Null when the
+   * family has none or the people has no family.
+   */
+  languageFamilyNameEn: string | null;
   confidence: number | null;
   relevance: number;
   exactMatch: boolean;
@@ -773,6 +834,12 @@ export interface RankedPatronyme {
   nameSystem: string;
   casteOrSocialFunction: string | null;
   content: Record<string, unknown>;
+  /**
+   * The peoples of `content.peoples[]` whose fiche exists, resolved to their
+   * main name in one batched lookup after ranking (ETNI-1859). Absent when
+   * the hit declares no people; an id with no fiche is simply not listed.
+   */
+  associatedPeoples?: Array<{ id: string; name: string }>;
   relevance: number;
   exactMatch: boolean;
   normalizedScore: number;
@@ -832,8 +899,11 @@ export interface RankedSearchHit {
 export interface RankedLanguage {
   id: LanguageId;
   name: string;
+  /** The fiche's `content.nameEn`, projected by migration 084; null when absent. */
+  nameEn: string | null;
   familyId: LanguageFamilyId;
   familyName: string | null;
+  familyNameEn: string | null;
   content: LanguageContent;
   relevance: number;
   exactMatch: boolean;

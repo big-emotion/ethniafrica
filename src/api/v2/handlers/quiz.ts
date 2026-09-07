@@ -34,12 +34,16 @@ import type {
   QuizSourceRefView,
   QuizEntityLinkView,
 } from "@/api/v2/schemas/quiz";
+import type { Language } from "@/types/shared";
 
 /** The whole-corpus tracks, which have no entity and so no name in the corpus. */
-const CORPUS_SCOPE_LABELS_FR = {
-  mixed: "Tout le continent",
-  random: "Au hasard",
-} as const;
+const CORPUS_SCOPE_LABELS: Record<
+  Language,
+  Record<"mixed" | "random", string>
+> = {
+  en: { mixed: "Whole continent", random: "Random" },
+  fr: { mixed: "Tout le continent", random: "Au hasard" },
+};
 
 /**
  * A track is launchable when it can fill a session outright.
@@ -79,15 +83,13 @@ function toScopeOptionView(option: QuizScopeOption): QuizScopeOptionView {
 }
 
 // @req REQ-103
-export async function getQuizScopesHandler(): Promise<
-  ApiEnvelope<QuizScopesData>
-> {
-  const catalogue = await getQuizScopeCatalogue();
-  const corpusOption = (
-    id: keyof typeof CORPUS_SCOPE_LABELS_FR
-  ): QuizScopeOptionView => ({
+export async function getQuizScopesHandler(
+  language: Language = "fr"
+): Promise<ApiEnvelope<QuizScopesData>> {
+  const catalogue = await getQuizScopeCatalogue(language);
+  const corpusOption = (id: "mixed" | "random"): QuizScopeOptionView => ({
     id,
-    labelFr: CORPUS_SCOPE_LABELS_FR[id],
+    labelFr: CORPUS_SCOPE_LABELS[language][id],
     activeQuestionCount: catalogue.totalActiveQuestionCount,
     playable: isPlayableScope(catalogue.totalActiveQuestionCount),
     // A whole-corpus track can play whatever the corpus itself can play, so
@@ -281,17 +283,18 @@ function buildQuestionView(
  */
 // @req REQ-103
 export async function describeScope(
-  scope: QuizScope
+  scope: QuizScope,
+  language: Language = "fr"
 ): Promise<QuizScopeView | null> {
   if (scope.kind === "mixed" || scope.kind === "random") {
     return {
       kind: scope.kind,
       entityId: null,
-      labelFr: CORPUS_SCOPE_LABELS_FR[scope.kind],
+      labelFr: CORPUS_SCOPE_LABELS[language][scope.kind],
     };
   }
 
-  const labelFr = await getQuizScopeLabel(scope);
+  const labelFr = await getQuizScopeLabel(scope, language);
   if (!labelFr) return null;
 
   return { kind: scope.kind, entityId: scope.entityId ?? null, labelFr };
@@ -312,8 +315,9 @@ export type ComposeQuizSessionHandlerResult =
 export async function composeQuizSessionHandler(
   query: QuizSessionQuery
 ): Promise<ComposeQuizSessionHandlerResult> {
+  const language = query.lang ?? "fr";
   const scope = parseQuizScope(query);
-  const described = await describeScope(scope);
+  const described = await describeScope(scope, language);
 
   if (!described) {
     return {
@@ -327,6 +331,7 @@ export async function composeQuizSessionHandler(
     scope,
     count: query.count,
     theme: query.theme as QuizThemeId | undefined,
+    language,
   });
   const questions = draw.questions;
 

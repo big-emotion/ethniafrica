@@ -1,6 +1,7 @@
 {
   "id": "ZMB",
   "nameFr": "Zambie",
+  "nameEn": "Zambia",
   "nameOfficial": "République de Zambie (Republic of Zambia)",
   "summary": "La Zambie porte le nom du fleuve Zambèze, adopté en 1964 en remplacement de « Rhodésie du Nord ». Le Barotseland, le royaume Bemba et l'empire Lunda en composent l'histoire précoloniale. Bemba, Tonga, Lozi, Chewa et Lunda y perpétuent le Gule Wamkulu et les polyrythmes.",
   "etymology": "Le nom \"Zambie\" vient du fleuve Zambèze (Zambezi), qui traverse le pays. Le nom a été adopté lors de l'indépendance en 1964, remplaçant \"Rhodésie du Nord\" (Northern Rhodesia).",
@@ -18,6 +19,12 @@
       {
         "name": "Royaume Barotseland",
         "period": "XVIIIe siècle - 1964",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1701,
+          "endYear": 1964,
+          "precision": "century"
+        },
         "dominantPeoples": ["Lozi"],
         "politicalCenters": ["Lealui", "Mongu"],
         "historicalRole": "Royaume puissant de l'ouest de la Zambie, protectorat britannique séparé, intégration à la Zambie en 1964."
@@ -25,6 +32,12 @@
       {
         "name": "Royaume Bemba",
         "period": "XVIIIe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1701,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Bemba"],
         "politicalCenters": ["Kasama", "régions du nord"],
         "historicalRole": "Royaume bemba structuré, dirigé par le Chitimukulu, expansion territoriale, résistance à la colonisation."
@@ -32,6 +45,12 @@
       {
         "name": "Empire Lunda",
         "period": "XVIIe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1601,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Lunda"],
         "politicalCenters": [
           "Régions du nord-ouest (extension depuis l'Angola et la RDC)"
@@ -41,6 +60,7 @@
       {
         "name": "Chefferies Tonga",
         "period": "Précoloniale - coloniale",
+        "entryType": "polity",
         "dominantPeoples": ["Tonga"],
         "politicalCenters": ["Vallée du Zambèze", "Southern Province"],
         "historicalRole": "Chefferies décentralisées, déplacements forcés lors de la construction du barrage de Kariba (années 1950)."
@@ -48,6 +68,12 @@
       {
         "name": "Rhodésie du Nord",
         "period": "1890-1964",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1890,
+          "endYear": 1964,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples zambiens sous domination coloniale"
         ],
@@ -225,7 +251,7 @@
         },
         {
           "name": "Tonga",
-          "peopleId": "PPL_TONGA_",
+          "peopleId": "PPL_TONGA_ZAMBIA",
           "percentageInCountry": 13.6
         },
         {

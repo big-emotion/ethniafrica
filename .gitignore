@@ -60,8 +60,12 @@ build
 !.claude/skills/afrik-art-director/
 !.claude/skills/afrik-curator/
 !.claude/skills/afrik-game-designer/
+!.claude/skills/afrik-translator/
+!.claude/skills/ethniafrica-audience-audit/
 !.claude/skills/ethniafrica-audit/
 !.claude/skills/ethniafrica-bootstrap-confluence/
+!.claude/skills/ethniafrica-content-strategist/
+!.claude/skills/ethniafrica-experience-optimizer/
 !.claude/skills/ethniafrica-release/
 !.claude/skills/ethniafrica-spec/
 !.claude/skills/ethniafrica-ticket/
@@ -98,6 +102,9 @@ Thumbs.db
 dataset/*
 !dataset/source/
 !dataset/source/**/*
+# Translated records mirror the source tree per locale (REQ-146)
+!dataset/translations/
+!dataset/translations/**/*
 # Ignorer les fichiers système dans dataset
 dataset/**/.DS_Store
 dataset/**/*.DS_Store

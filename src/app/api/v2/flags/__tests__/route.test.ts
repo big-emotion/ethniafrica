@@ -108,6 +108,7 @@ describe("flags API routes", () => {
     expect(handleFlagCreate).toHaveBeenCalledWith(body, {
       accessToken: "access-token",
       clientIp: "203.0.113.10",
+      language: "fr",
     });
   });
 

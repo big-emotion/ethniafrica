@@ -5,6 +5,8 @@ import {
 } from "@/lib/countryDataTransformer";
 import { backLinkLabel } from "@/lib/navigation/deriveTrail";
 import { getPeopleRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
+import { countryCopy } from "@/lib/i18n/copy/country";
 
 /**
  * The band a country fiche opens on, above the globe.
@@ -17,15 +19,18 @@ import { getPeopleRoute } from "@/lib/routing";
 // @req REQ-091
 export function CountryFicheTitle({
   country,
+  language,
   fromPeopleId,
   fromPeopleName,
 }: {
   country: CountryDetail;
+  language: Language;
   /** The people fiche a reader arrived from. Provenance, never ancestry. */
   fromPeopleId?: string;
   fromPeopleName?: string;
 }) {
-  const { hero } = transformCountryData(country);
+  const copy = countryCopy[language].title;
+  const { hero } = transformCountryData(country, language);
   const hasPeoples = (country.demographics?.peoples?.length ?? 0) > 0;
   // The head names the country twice on purpose — the name of ordinary use,
   // then the protocol name under it — but only while they are two different
@@ -43,19 +48,19 @@ export function CountryFicheTitle({
       {fromPeopleId && (
         <p className="px-3 md:px-4 xl:px-5 text-afh-caption">
           <a
-            href={getPeopleRoute("fr", fromPeopleId)}
+            href={getPeopleRoute(language, fromPeopleId)}
             data-testid="country-back-to-people"
             className="hover:underline"
           >
-            ‹ {backLinkLabel(fromPeopleName ?? fromPeopleId)}
+            ‹ {backLinkLabel(language, fromPeopleName ?? fromPeopleId)}
           </a>
         </p>
       )}
 
       <header className="afh-parchment-head">
         <p className="afh-parchment-eyebrow">
-          {hero.iso} · fiche pays
-          {hasPeoples && ` · réf. ${DEMOGRAPHIC_REFERENCE_YEAR}`}
+          {hero.iso} · {copy.ficheCountry}
+          {hasPeoples && ` · ${copy.reference} ${DEMOGRAPHIC_REFERENCE_YEAR}`}
         </p>
         <h1>{hero.countryName}</h1>
         {statesTwoNames && (

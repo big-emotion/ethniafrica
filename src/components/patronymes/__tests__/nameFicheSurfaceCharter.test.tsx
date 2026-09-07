@@ -29,6 +29,13 @@ import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
 
 /** A dossier with every chapter filled, so each list branch actually renders. */
 const filled: PublicPatronyme = {
+  alliances: [
+    {
+      targetId: "PAT_COULIBALY",
+      targetNameMain: "Coulibaly",
+      allianceType: "sanankuya",
+    },
+  ],
   id: "PAT_KEITA",
   nameMain: "Keïta",
   nameSystem: "clan_name",
@@ -101,6 +108,7 @@ const filled: PublicPatronyme = {
 /** The same dossier with nothing documented and no editor's wording either. */
 const bare: PublicPatronyme = {
   ...filled,
+  alliances: [],
   casteOrSocialFunction: null,
   associatedPeoples: [],
   associatedCountries: [],
@@ -146,7 +154,9 @@ function declaredAfhClasses(): Set<string> {
 describe("name fiche surface — the parchment's own vocabulary", () => {
   // @req REQ-133
   it("gives every sub-heading the one prose heading level there is", () => {
-    const { container } = render(<PatronymeFicheView patronyme={filled} />);
+    const { container } = render(
+      <PatronymeFicheView language="fr" patronyme={filled} />
+    );
 
     const undressed = Array.from(container.querySelectorAll("h3")).filter(
       (heading) => !heading.classList.contains("afh-prose-heading")
@@ -157,7 +167,9 @@ describe("name fiche surface — the parchment's own vocabulary", () => {
 
   // @req REQ-133
   it("dresses every list the reader reads", () => {
-    const { container } = render(<PatronymeFicheView patronyme={filled} />);
+    const { container } = render(
+      <PatronymeFicheView language="fr" patronyme={filled} />
+    );
 
     const undressed = Array.from(container.querySelectorAll("ul")).filter(
       (list) =>
@@ -177,7 +189,9 @@ describe("name fiche surface — the parchment's own vocabulary", () => {
    */
   // @req REQ-133
   it("cites its sources through the atlas-wide row, standing included", () => {
-    const { container } = render(<PatronymeFicheView patronyme={filled} />);
+    const { container } = render(
+      <PatronymeFicheView language="fr" patronyme={filled} />
+    );
 
     const rows = container.querySelectorAll(".afh-sources .afh-source-row");
 
@@ -192,7 +206,9 @@ describe("name fiche surface — the parchment's own vocabulary", () => {
 
   // @req REQ-133
   it("renders no class no stylesheet defines", () => {
-    const { container } = render(<PatronymeFicheView patronyme={filled} />);
+    const { container } = render(
+      <PatronymeFicheView language="fr" patronyme={filled} />
+    );
     const declared = declaredAfhClasses();
 
     const inert = new Set<string>();
@@ -249,7 +265,9 @@ describe("name fiche surface — a source row fits the parchment", () => {
 describe("name fiche surface — a silence is marked, never left blank", () => {
   // @req REQ-119
   it("marks the peoples and countries a dossier does not document", () => {
-    const { container } = render(<PatronymeFicheView patronyme={bare} />);
+    const { container } = render(
+      <PatronymeFicheView language="fr" patronyme={bare} />
+    );
     const section = container.querySelector(
       '[data-fiche-section="Peuples et pays concernés"]'
     );
@@ -259,7 +277,9 @@ describe("name fiche surface — a silence is marked, never left blank", () => {
 
   // @req REQ-119
   it("marks the bearers a dossier does not document", () => {
-    const { container } = render(<PatronymeFicheView patronyme={bare} />);
+    const { container } = render(
+      <PatronymeFicheView language="fr" patronyme={bare} />
+    );
     const section = container.querySelector(
       '[data-fiche-section="Porteurs et porteuses"]'
     );

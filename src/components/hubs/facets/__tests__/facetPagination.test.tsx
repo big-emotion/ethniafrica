@@ -23,6 +23,7 @@ function href(page: number, size: number): string {
 function renderPager(overrides: Record<string, unknown> = {}) {
   return render(
     <FacetPagination
+      language="fr"
       position="top"
       page={1}
       pageCount={41}
@@ -192,5 +193,17 @@ describe("facet pagination", () => {
     for (const control of controls) {
       expect(control.className).toContain("afh-pager-page");
     }
+  });
+
+  // @req REQ-145
+  it("renders its navigation and extent in English", () => {
+    renderPager({ language: "en", page: 3, unitLabel: "peoples" });
+
+    expect(screen.getByTestId("facet-pagination-count")).toHaveTextContent(
+      "41 to 60 of 803"
+    );
+    expect(screen.getByRole("link", { name: "Previous page" })).toBeVisible();
+    expect(screen.getByRole("link", { name: "Next page" })).toBeVisible();
+    expect(screen.getByText("Per page")).toBeVisible();
   });
 });

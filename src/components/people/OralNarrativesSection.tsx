@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 
 import { chapterAnchorId } from "@/lib/ficheChapters";
+import { peopleCopy } from "@/lib/i18n/copy/people";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 /** The chapter this section is, in the fiche's reading rail. */
-const CHAPTER_TITLE = "Voix & récits";
-
 interface PublicOralNarrative {
   id: string;
   narratorDisplayName: string | null;
@@ -19,12 +20,15 @@ interface PublicOralNarrative {
 
 interface OralNarrativesSectionProps {
   peopleId: string;
+  language?: Language;
 }
 
 // @req REQ-095
 export function OralNarrativesSection({
   peopleId,
+  language = FALLBACK_LOCALE,
 }: OralNarrativesSectionProps) {
+  const copy = peopleCopy[language].oral;
   const [narratives, setNarratives] = useState<PublicOralNarrative[]>([]);
 
   useEffect(() => {
@@ -54,8 +58,8 @@ export function OralNarrativesSection({
 
   return (
     <section
-      id={chapterAnchorId(CHAPTER_TITLE)}
-      data-fiche-section={CHAPTER_TITLE}
+      id={chapterAnchorId(copy.title)}
+      data-fiche-section={copy.title}
       aria-labelledby="oral-narratives-title"
       className="people-fade-in space-y-3 overflow-hidden rounded-[var(--country-radius-xl)] p-[18px] md:rounded-[20px] md:p-6 xl:rounded-[22px] xl:p-7"
       style={{
@@ -68,11 +72,10 @@ export function OralNarrativesSection({
           id="oral-narratives-title"
           className="text-afh-small font-bold text-[var(--country-text)]"
         >
-          {CHAPTER_TITLE}
+          {copy.title}
         </h2>
         <p className="mt-1 text-afh-small text-[var(--country-text-soft)]">
-          Des récits attribués, présentés sans les confondre avec des faits
-          historiques établis.
+          {copy.description}
         </p>
       </div>
       <ul className="space-y-3">
@@ -83,13 +86,13 @@ export function OralNarrativesSection({
           >
             <p className="text-afh-small font-semibold text-[var(--country-text)]">
               {narrative.narratorDisplayName
-                ? `Récit attribué à ${narrative.narratorDisplayName}.`
-                : "Récit attribué à une personne ayant choisi de rester anonyme."}
+                ? copy.attributed(narrative.narratorDisplayName)
+                : copy.anonymous}
             </p>
             <p className="mt-1 text-afh-caption text-[var(--country-text-soft)]">
               {narrative.community} · {narrative.languageCode} ·{" "}
               {narrative.narrativeKind}
-              {narrative.variantOf ? " · Variante liée" : ""}
+              {narrative.variantOf ? ` · ${copy.linkedVariant}` : ""}
             </p>
             {narrative.summary && (
               <p className="mt-3 text-afh-small leading-6 text-[var(--country-text)]">

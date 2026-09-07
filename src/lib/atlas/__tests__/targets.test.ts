@@ -223,6 +223,16 @@ describe("buildAtlasTargets for the continent scene (REQ-117 AC1)", () => {
 
     expect(continentTargetFacts(target).description).toBe("1 peuple documenté");
   });
+
+  // @req REQ-140
+  it("localizes the continent target facts", () => {
+    const [target] = buildAtlasTargets(buildContinentOverlay({ NGA: 2 }));
+
+    expect(continentTargetFacts(target, "en")).toMatchObject({
+      title: "Nigeria",
+      description: "2 documented peoples",
+    });
+  });
 });
 
 /**

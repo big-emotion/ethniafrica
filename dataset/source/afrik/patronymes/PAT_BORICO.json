@@ -85,7 +85,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Boricó », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Borico Orígen de Apellido, Significado e Historia de Apellido » et « Surnames of the population — Borico » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Boricó à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Boricó », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage » et la lecture de « Borico Orígen de Apellido, Significado e Historia de Apellido » et « Surnames of the population — Borico » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Boricó à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

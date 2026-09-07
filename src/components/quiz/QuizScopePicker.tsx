@@ -1,16 +1,17 @@
 import { QuizScopeDeck } from "@/components/quiz/QuizScopeDeck";
 import { QuizTrackCard } from "@/components/quiz/QuizTrackCard";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import type { QuizScopesData } from "@/api/v2/schemas/quiz";
 import {
-  QUIZ_THEME_SPECIMENS_FR,
+  QUIZ_THEME_SPECIMENS,
   type QuizThemeId,
 } from "@/lib/quiz/segmentPolicy";
 import { cn } from "@/lib/utils";
-
-const t = translations.fr.quiz;
+import type { Language } from "@/types/shared";
 
 export interface QuizScopePickerProps {
+  /** The page's locale: the headings and the deck's close label follow it. */
+  language: Language;
   scopes: QuizScopesData;
   /** The quiz page's own path — every track is a query on it. */
   action: string;
@@ -40,10 +41,13 @@ export interface QuizScopePickerProps {
  */
 // @req REQ-103 REQ-121 FR66 FR43
 export const QuizScopePicker = ({
+  language,
   scopes,
   action,
   className,
 }: QuizScopePickerProps) => {
+  const dictionary = getTranslation(language);
+  const t = dictionary.quiz;
   const trackHref = (query: string) => `${action}?${query}`;
 
   // `QuizScopesData` comes from `z.infer`, and with `strictNullChecks: false`
@@ -52,6 +56,17 @@ export const QuizScopePicker = ({
   const themes = scopes.themes ?? [];
   const countries = scopes.countries ?? [];
   const families = scopes.families ?? [];
+
+  if (!scopes.mixed?.playable && !scopes.random?.playable) {
+    return (
+      <p
+        role="status"
+        className={cn("text-afh-body text-afh-text-soft", className)}
+      >
+        {t.comingSoon}
+      </p>
+    );
+  }
 
   return (
     <div
@@ -68,12 +83,16 @@ export const QuizScopePicker = ({
         <QuizTrackCard
           href={trackHref("mode=aleatoire")}
           labelFr={scopes.random?.labelFr ?? ""}
+          available={scopes.random?.playable}
+          unavailableHint={t.comingSoon}
           hintFr={t.scopeRandomHint}
           testId="quiz-scope-random"
         />
         <QuizTrackCard
           href={trackHref("mode=mixte")}
           labelFr={scopes.mixed?.labelFr ?? ""}
+          available={scopes.mixed?.playable}
+          unavailableHint={t.comingSoon}
           hintFr={t.scopeMixedHint}
           testId="quiz-scope-mixed"
         />
@@ -89,7 +108,9 @@ export const QuizScopePicker = ({
               <QuizTrackCard
                 href={trackHref(`theme=${theme.id}`)}
                 labelFr={theme.labelFr}
-                hintFr={QUIZ_THEME_SPECIMENS_FR[theme.id as QuizThemeId]}
+                hintFr={QUIZ_THEME_SPECIMENS[language][theme.id as QuizThemeId]}
+                available={theme.playable}
+                unavailableHint={t.comingSoon}
               />
             </li>
           ))}
@@ -110,6 +131,7 @@ export const QuizScopePicker = ({
           items={countries.map((country) => ({
             id: country.id,
             labelFr: country.labelFr,
+            playable: country.playable,
             playableThemeIds: country.playableThemeIds ?? [],
           }))}
           themes={themes.map((theme) => ({
@@ -119,7 +141,8 @@ export const QuizScopePicker = ({
           action={action}
           panelHintFr={t.scopeThemePanelHint}
           wholeTrackLabelFr={t.scopeThemePanelNoTheme}
-          closeLabelFr={translations.fr.close}
+          closeLabelFr={dictionary.close}
+          unavailableHint={t.comingSoon}
         />
       </section>
 
@@ -133,6 +156,8 @@ export const QuizScopePicker = ({
               <QuizTrackCard
                 href={trackHref(`famille=${family.id}`)}
                 labelFr={family.labelFr}
+                available={family.playable}
+                unavailableHint={t.comingSoon}
               />
             </li>
           ))}

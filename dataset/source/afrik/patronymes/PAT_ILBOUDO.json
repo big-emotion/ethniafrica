@@ -104,7 +104,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "Les relations mentionnées par le répertoire concernent des groupes ou localités ; aucune paire avec une fiche PAT_* déterminée n'a pu être validée."
+      "reason": "Les relations mentionnées par le répertoire concernent des groupes ou localités ; aucune paire avec un nom déterminé de l'atlas n'a pu être validée."
     },
     {
       "fieldPath": "casteOrSocialFunction",

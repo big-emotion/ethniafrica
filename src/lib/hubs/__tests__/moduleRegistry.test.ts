@@ -6,12 +6,13 @@ import {
   ACCESS_MODES,
   ACCENT_BY_ACCESS_MODE,
   MODULE_DEFINITIONS,
-  MODULE_GROUPS,
+  MODULE_GROUP_ORDER,
   accentForModule,
   getModulesForAccessMode,
   getNavModules,
 } from "@/lib/hubs/moduleRegistry";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
+import { DOSSIER_RUBRICS } from "@/lib/afrik/parsers/dossierTypes";
 import { getLocalizedRoute } from "@/lib/routing";
 
 const ORIGINAL_QUIZ_FLAG = process.env.NEXT_PUBLIC_FEATURE_QUIZ;
@@ -73,9 +74,53 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
       "peuples",
       "familles",
       "langues",
-      "noms",
       "patronymes",
       "recherche",
+      "noms",
+    ]);
+  });
+
+  /**
+   * Declaration order is display order, and it is also the accent walk —
+   * `accentForModule` cycles the four categorical accents by registry index.
+   * An unlisted module left mid-list would punch a hole in a colour sequence
+   * nobody can see it leaving, so `noms` sits after `recherche`: it is no
+   * longer a step in the reader's walk through the axis, so it no longer
+   * occupies a place in it.
+   */
+  // @req REQ-114
+  it("offers the atlas six entry points, the unlisted one after them", () => {
+    const ids = getNavModules("atlas").map((m) => m.id);
+    expect(ids).toEqual([
+      "pays",
+      "peuples",
+      "familles",
+      "langues",
+      "patronymes",
+      "recherche",
+    ]);
+  });
+
+  /**
+   * The whole point of the labels: a reader meeting this row for the first
+   * time should not need to know the corpus already to decode it.
+   *
+   * « L'arbre des familles » named a rendering metaphor rather than a content
+   * class — familles de quoi — and drew 1 visitor in the 30 days to
+   * 6 September 2026. « Noms » was the one singular-shaped odd-one-out beside
+   * four « Les X d'Afrique », and it named, in the reader's ear, the same
+   * thing as the Appellations row directly above it.
+   */
+  // @req REQ-114
+  it("names each atlas entry after the content class behind it", () => {
+    const names = getNavModules("atlas").map((m) => m.name);
+    expect(names).toEqual([
+      "Les pays d'Afrique",
+      "Les peuples d'Afrique",
+      "Les familles linguistiques",
+      "Les langues d'Afrique",
+      "Les noms d'Afrique",
+      "Recherche libre",
     ]);
   });
 
@@ -109,12 +154,18 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     });
     expect(patronymes?.id).not.toBe("noms");
     expect(patronymes?.name).not.toBe("Appellations");
+    expect(patronymes?.unlisted).toBeUndefined();
   });
 
   // The trap this guards against: a module keyed "noms" with page "names"
   // already exists for Appellations. Adding patronymes must not shadow it.
+  //
+  // Appellations is unlisted since the header amendment of 7 September 2026
+  // (atlas-charter.md §3). That is a statement about the menu and about
+  // nothing else: the entity, its route, its table and its readiness are
+  // exactly what they were.
   // @req REQ-139
-  it("leaves the pre-existing Appellations module unchanged", () => {
+  it("leaves the Appellations module intact behind an unlisted menu row", () => {
     const noms = MODULE_DEFINITIONS.find((m) => m.id === "noms");
 
     expect(noms).toMatchObject({
@@ -124,6 +175,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
       availability: "data",
       dataSource: "name_records",
       editorialReadiness: "ready",
+      unlisted: true,
     });
   });
 
@@ -301,10 +353,18 @@ describe("moduleRegistry — the list the header may show (REQ-114)", () => {
     expect(getNavModules("jeux").map((def) => def.id)).toContain("quiz");
   });
 
+  // The environment still has no say. `unlisted` is the only reason a module
+  // may be missing from the header, it is declared in this file, and it is
+  // the same on every machine — which is the whole distinction this suite and
+  // moduleVisibilityCharter.test.ts exist to hold.
   // @req REQ-106
-  it("hides no module from the header", () => {
+  it("hides from the header only what the registry declares unlisted", () => {
     for (const mode of ACCESS_MODES) {
-      expect(getNavModules(mode)).toEqual(getModulesForAccessMode(mode));
+      const hidden = getModulesForAccessMode(mode).filter(
+        (definition) => !getNavModules(mode).includes(definition)
+      );
+
+      expect(hidden.every((definition) => definition.unlisted)).toBe(true);
     }
   });
 
@@ -313,7 +373,9 @@ describe("moduleRegistry — the list the header may show (REQ-114)", () => {
     process.env.NEXT_PUBLIC_FEATURE_QUIZ = "true";
 
     expect(getNavModules("atlas").map((def) => def.id)).toEqual(
-      getModulesForAccessMode("atlas").map((def) => def.id)
+      getModulesForAccessMode("atlas")
+        .filter((def) => !def.unlisted)
+        .map((def) => def.id)
     );
   });
 });
@@ -353,6 +415,12 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
   // could have learnt is lost — and pinning an accent per module to avoid the
   // shift would introduce the one thing the charter does forbid, a component
   // choosing its own.
+  //
+  // Unlisting Appellations moved it behind `recherche`, which rotates exactly
+  // three entries — patronymes, recherche and noms itself — and leaves the
+  // dossiers and games blocks where they were, because the atlas still holds
+  // seven modules. The point of moving it was that the six a reader still sees
+  // keep an unbroken ocre · teal · terre · perv · ocre · teal walk.
   // @req REQ-114
   // @req REQ-139
   it("pins the accent every module wears after the regrouping", () => {
@@ -361,11 +429,16 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
       peuples: "afh-accent-teal",
       familles: "afh-accent-terre",
       langues: "afh-accent-perv",
-      noms: "afh-accent-ocre",
-      patronymes: "afh-accent-teal",
-      recherche: "afh-accent-terre",
+      patronymes: "afh-accent-ocre",
+      recherche: "afh-accent-teal",
+      noms: "afh-accent-terre",
       nommer: "afh-accent-perv",
       anecdotes: "afh-accent-ocre",
+      // The seven Réalités dossiers left the registry, so the walk closes up
+      // behind them: `frise` moves from ocre to teal and everything after it
+      // rotates one step. The dossiers of the corpus take their accent from
+      // their position in the menu instead (`SiteHeader.dossierAsEntry`),
+      // because a corpus that grows by a file cannot renumber this list.
       frise: "afh-accent-teal",
       "regards-colonisation": "afh-accent-terre",
       quiz: "afh-accent-perv",
@@ -380,24 +453,52 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
   });
 });
 
-describe("moduleRegistry — the shelf a jouer module sits on (REQ-120)", () => {
+describe("moduleRegistry — the shelf a module sits on (REQ-120)", () => {
   // @req REQ-120
   it("gives every game a shelf, so none can fall off the surface", () => {
     for (const def of getModulesForAccessMode("jeux")) {
       expect(def.group).toBeTruthy();
-      expect(MODULE_GROUPS[def.group]).toBeTruthy();
+      expect(MODULE_GROUP_ORDER).toContain(def.group);
     }
   });
 
-  // Grouping is a jouer concern: the other two axes hold few enough
-  // modules to read at once, and filing them would add a level for nothing.
+  // The dossiers axis is filed too, since it grew past what a flat row of
+  // eleven can be read as. Explorer is not: five entry points and a search
+  // read at once, and filing them would add a level for nothing.
   // @req REQ-120
-  it("leaves explorer and comprendre unfiled", () => {
-    for (const mode of ["atlas", "dossiers"] as const) {
-      for (const def of getModulesForAccessMode(mode)) {
-        expect(def.group).toBeUndefined();
-      }
+  it("gives every dossier a rubric the order knows", () => {
+    for (const def of getModulesForAccessMode("dossiers")) {
+      expect(def.group).toBeTruthy();
+      expect(MODULE_GROUP_ORDER).toContain(def.group);
     }
+  });
+
+  // @req REQ-120
+  it("leaves explorer unfiled", () => {
+    for (const def of getModulesForAccessMode("atlas")) {
+      expect(def.group).toBeUndefined();
+    }
+  });
+
+  // A rubric declared and never used is a heading the reader can never meet,
+  // and one used but undeclared crashes the order it is filtered through.
+  //
+  // Two things fill this order now: the modules that declare a shelf, and the
+  // six domain rubrics the dossier corpus files itself under. Checking only
+  // the modules is what this test did first, and it went red the moment the
+  // dossiers left the registry — which is the whole point of their leaving.
+  // @req REQ-120
+  it("declares exactly the rubrics the modules and the corpus use", () => {
+    const declaredByModules = MODULE_DEFINITIONS.map((def) => def.group).filter(
+      Boolean
+    );
+    const declaredByCorpus = DOSSIER_RUBRICS.map(
+      (rubric) => `dossiers-${rubric}`
+    );
+
+    expect(
+      [...new Set([...declaredByModules, ...declaredByCorpus])].sort()
+    ).toEqual([...MODULE_GROUP_ORDER].sort());
   });
 
   // The quiz questions the reader rather than the corpus, so it belongs on

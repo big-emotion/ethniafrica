@@ -30,7 +30,7 @@ import {
   getPeopleRoute,
 } from "@/lib/routing";
 import type { SearchLead, SearchResult } from "@/types/afrik-frontend";
-import { search as searchCorpus } from "@/lib/afrikLoader";
+import { search as searchCorpus, searchWithLeads } from "@/lib/afrikLoader";
 
 const push = vi.fn();
 
@@ -73,7 +73,11 @@ function renderSearch(
   fetchLeads?: (query: string) => Promise<SearchLead[]>
 ) {
   return render(
-    <HomeHeroSearch fetchResults={fetchResults} fetchLeads={fetchLeads} />
+    <HomeHeroSearch
+      language="fr"
+      fetchResults={fetchResults}
+      fetchLeads={fetchLeads}
+    />
   );
 }
 
@@ -94,7 +98,7 @@ describe("HomeHeroSearch", () => {
   // the only path the hero ever takes to the corpus (ETNI-1415 AC2).
   // @req REQ-108
   it("searches through the shared corpus client when no fetcher is injected", async () => {
-    render(<HomeHeroSearch />);
+    render(<HomeHeroSearch language="fr" />);
 
     await act(async () => {
       fireEvent.change(screen.getByRole("combobox"), {
@@ -103,7 +107,38 @@ describe("HomeHeroSearch", () => {
       await new Promise((r) => setTimeout(r, DEBOUNCE_MS + 50));
     });
 
-    expect(searchCorpus).toHaveBeenCalledWith("Yoruba");
+    expect(searchCorpus).toHaveBeenCalledWith("Yoruba", { lang: "fr" });
+  });
+
+  // @req REQ-140
+  it("uses the reader's locale for default result and near-miss requests", async () => {
+    vi.mocked(searchCorpus).mockResolvedValueOnce([]);
+    vi.mocked(searchWithLeads).mockResolvedValueOnce({
+      results: [],
+      leads: [],
+      counts: {
+        all: 0,
+        people: 0,
+        country: 0,
+        languageFamily: 0,
+        language: 0,
+        patronyme: 0,
+        person: 0,
+      },
+    });
+    render(<HomeHeroSearch language="en" />);
+
+    await act(async () => {
+      fireEvent.change(screen.getByRole("combobox"), {
+        target: { value: "Shona" },
+      });
+      await new Promise((r) => setTimeout(r, DEBOUNCE_MS + 50));
+    });
+
+    expect(searchCorpus).toHaveBeenCalledWith("Shona", { lang: "en" });
+    await waitFor(() =>
+      expect(searchWithLeads).toHaveBeenCalledWith("Shona", { lang: "en" })
+    );
   });
 
   // The accessible name has to survive a placeholder that the design may
@@ -114,6 +149,40 @@ describe("HomeHeroSearch", () => {
     renderSearch();
 
     expect(field()).toHaveAccessibleName(SEARCH_LABEL);
+  });
+
+  // @req REQ-140
+  it("renders English vocabulary, group headings and result names", async () => {
+    render(
+      <HomeHeroSearch
+        language="en"
+        fetchResults={async () => [
+          {
+            type: "country",
+            id: "TCD",
+            name: "Tchad",
+            nameEn: "Chad",
+            relevance: 1,
+          },
+        ]}
+      />
+    );
+
+    expect(field()).toHaveAccessibleName(
+      "Search for a people, language, country, language family or surname"
+    );
+    expect(field()).toHaveAttribute(
+      "placeholder",
+      "E.g. Bafut, Fulfulde, Namibia, Keita"
+    );
+
+    await type("chad");
+
+    const group = await screen.findByRole("group", { name: "Countries" });
+    expect(within(group).getByRole("option", { name: /Chad/ })).toHaveAttribute(
+      "href",
+      getCountryRoute("en", "TCD")
+    );
   });
 
   // The label used to be sr-only, so a sighted reader had only the

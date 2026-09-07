@@ -42,4 +42,11 @@ describe("formatVersionLabel", () => {
     const label = formatVersionLabel(42, "2026-05-14T00:00:00Z");
     expect(label.startsWith("v42 · publiée le ")).toBe(true);
   });
+
+  // @req REQ-145
+  it("formats the version label in British English", () => {
+    expect(formatVersionLabel(4, "2026-05-14T00:00:00Z", "en")).toBe(
+      "v4 · published 14 May 2026"
+    );
+  });
 });

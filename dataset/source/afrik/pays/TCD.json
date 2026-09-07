@@ -1,6 +1,7 @@
 {
   "id": "TCD",
   "nameFr": "Tchad",
+  "nameEn": "Chad",
   "nameOfficial": "République du Tchad (Republic of Chad, جمهورية تشاد)",
   "summary": "Le Tchad porte le nom de son lac, du kanembu « tsade », la grande étendue d'eau. Royaumes du Kanem et du Bornou, chefferies sara : son territoire articule Sahara, Sahel et savane. Sara, Arabes tchadiens, Kanembu et Toubou y font coexister traditions soudaniques et sahariennes.",
   "etymology": "Le nom \"Tchad\" vient du lac Tchad, qui occupe une position centrale dans la région. Le terme \"Tchad\" (ou \"Chad\" en anglais) est dérivé du mot kanembu \"tsade\" ou \"sade\", signifiant \"grande étendue d'eau\" ou \"lac\". Le lac Tchad était un centre important pour les royaumes historiques de la région (Kanem-Bornou). Le nom \"Tchad\" a été officialisé par les colonisateurs français au début du XXe siècle.",
@@ -18,6 +19,12 @@
       {
         "name": "Royaume du Kanem",
         "period": "VIIIe siècle - XIVe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 701,
+          "endYear": 1400,
+          "precision": "century"
+        },
         "dominantPeoples": ["Kanembu", "Kanuri"],
         "politicalCenters": ["Njimi (capitale du Kanem)"],
         "historicalRole": "Royaume saharien puissant, contrôle du commerce transsaharien, expansion de l'islam, développement de la civilisation kanembu."
@@ -25,6 +32,12 @@
       {
         "name": "Royaume du Bornou",
         "period": "XIVe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1301,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Kanembu", "Kanuri", "Arabes"],
         "politicalCenters": ["Ngazargamu (capitale du Bornou)"],
         "historicalRole": "Royaume saharien puissant, continuation du royaume du Kanem, contrôle du commerce transsaharien, expansion de l'islam, résistance aux colonisateurs."
@@ -32,6 +45,12 @@
       {
         "name": "Royaume du Kanem-Bornou",
         "period": "VIIIe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 701,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Kanembu", "Kanuri", "Arabes", "Toubou"],
         "politicalCenters": ["Njimi (Kanem)", "Ngazargamu (Bornou)"],
         "historicalRole": "Royaume saharien puissant, contrôle du commerce transsaharien, expansion de l'islam, développement de la civilisation kanembu, résistance aux colonisateurs."
@@ -39,6 +58,7 @@
       {
         "name": "Chefferies Sara",
         "period": "Depuis plusieurs siècles",
+        "entryType": "polity",
         "dominantPeoples": ["Sara"],
         "politicalCenters": ["Chefferies traditionnelles"],
         "historicalRole": "Organisation politique traditionnelle des Sara, chefferies territoriales, résistance aux colonisateurs."
@@ -46,6 +66,12 @@
       {
         "name": "Colonie française du Tchad",
         "period": "1900 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1900,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Français",
           "Sara",
@@ -111,7 +137,7 @@
         "name": "Autres groupes",
         "selfAppellation": "Variées selon les groupes",
         "exonyms": ["Variées selon les groupes"],
-        "peopleId": "PPL_AUTRES_GROUPES",
+        "peopleId": null,
         "mainRegion": "Toutes les régions du Tchad",
         "languages": ["Langues diverses", "français", "arabe"],
         "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
@@ -244,7 +270,7 @@
         {
           "name": "Autres groupes",
           "percentageInCountry": 60.7,
-          "peopleId": "PPL_AUTRES_GROUPES",
+          "peopleId": null,
           "region": "Toutes les régions du Tchad"
         }
       ]

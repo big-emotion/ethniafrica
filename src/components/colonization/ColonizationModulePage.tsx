@@ -3,13 +3,13 @@ import { DoctrineLinkCard } from "@/components/source-transparency/DoctrineLinkC
 import { FragmentationView } from "@/components/colonization/FragmentationView";
 import { EventTimelineMarkers } from "@/components/colonization/EventTimelineMarkers";
 import { EventChronologyTable } from "@/components/colonization/EventChronologyTable";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import type { ColonizationModuleData } from "@/lib/colonizationDataTransformer";
-
-const t = translations.fr.colonization;
+import type { Language } from "@/types/shared";
 
 export interface ColonizationModulePageProps {
   data: ColonizationModuleData;
+  language: Language;
 }
 
 /**
@@ -25,9 +25,18 @@ export interface ColonizationModulePageProps {
  */
 // @req FR90
 // @req REQ-101
-export function ColonizationModulePage({ data }: ColonizationModulePageProps) {
+export function ColonizationModulePage({
+  data,
+  language,
+}: ColonizationModulePageProps) {
+  const t = getTranslation(language).colonization;
+
   return (
-    <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
+    <PageLayout
+      language={language}
+      title={t.pageTitle}
+      subtitle={t.pageSubtitle}
+    >
       <DoctrineLinkCard slug={data.doctrine.slug} />
 
       {data.fragmentation && data.fragmentation.length > 0 && (
@@ -47,6 +56,7 @@ export function ColonizationModulePage({ data }: ColonizationModulePageProps) {
                 <FragmentationView
                   fragmentation={entry.fragmentation}
                   variant="fiche-section"
+                  language={language}
                 />
               </li>
             ))}
@@ -68,8 +78,9 @@ export function ColonizationModulePage({ data }: ColonizationModulePageProps) {
           <EventTimelineMarkers
             events={data.timeline}
             bounds={data.timelineBounds}
+            language={language}
           />
-          <EventChronologyTable events={data.timeline} />
+          <EventChronologyTable events={data.timeline} language={language} />
         </section>
       )}
 

@@ -90,7 +90,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "Les recherches combinant Meziane ou Ameziane avec « alliance », « leff », « pacte » et « parenté à plaisanterie » n’ont pas fourni de paire attestée avec une autre fiche PAT_*."
+      "reason": "Les recherches combinant Meziane ou Ameziane avec « alliance », « leff », « pacte » et « parenté à plaisanterie » n’ont pas fourni de paire attestée avec un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

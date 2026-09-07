@@ -2,15 +2,17 @@ import type { FamilyDecolonialHeaderData } from "@/lib/familyDataTransformer";
 import { FicheFieldList } from "@/components/fiche/FicheProse";
 import { DoctrineLinkCard } from "@/components/source-transparency/DoctrineLinkCard";
 import { bcp47LanguageTag } from "@/lib/languageTag";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { familyCopy } from "@/lib/i18n/copy/family";
+import type { Language } from "@/types/shared";
 
 import { chapterAnchorId } from "@/lib/ficheChapters";
 
 /** The chapter this section is, in the fiche's reading rail. */
-const CHAPTER_TITLE = "Appellations et décolonisation";
-
 export interface FamilyDecolonialHeaderProps {
   data: FamilyDecolonialHeaderData;
   selfAppellationLang?: string;
+  language?: Language;
 }
 
 /**
@@ -32,19 +34,20 @@ export interface FamilyDecolonialHeaderProps {
  *   reader can navigate to from the rail; a labelled line here said it again
  *   two chapters later.
  */
-const labelledFields = [
-  ["Nom français", "nameFr"],
-  ["Lien avec la famille", "linkWithFamily"],
-  ["Pourquoi ce terme est problématique", "whyProblematic"],
-  ["Auto-appellation", "selfAppellation"],
-  ["Usage contemporain", "contemporaryUsage"],
-] as const;
-
 // @req REQ-047
 export function FamilyDecolonialHeader({
   data,
   selfAppellationLang,
+  language = FALLBACK_LOCALE,
 }: FamilyDecolonialHeaderProps) {
+  const copy = familyCopy[language].decolonial;
+  const labelledFields = [
+    [copy.frenchName, "nameFr"],
+    [copy.familyLink, "linkWithFamily"],
+    [copy.problematic, "whyProblematic"],
+    [copy.selfDesignation, "selfAppellation"],
+    [copy.contemporaryUsage, "contemporaryUsage"],
+  ] as const;
   // Gated on what the section renders, never on what the data holds: counting
   // a field it does not print would open a heading over nothing.
   const hasContent =
@@ -56,16 +59,17 @@ export function FamilyDecolonialHeader({
   return (
     <section
       aria-labelledby="family-decolonial-heading"
-      id={chapterAnchorId(CHAPTER_TITLE)}
-      data-fiche-section={CHAPTER_TITLE}
+      id={chapterAnchorId(copy.title)}
+      data-fiche-section={copy.title}
     >
-      <h2 id="family-decolonial-heading">{CHAPTER_TITLE}</h2>
+      <h2 id="family-decolonial-heading">{copy.title}</h2>
       <FicheFieldList
+        language={language}
         fields={[
           ...(data.historicalAppellations.length > 0
             ? [
                 {
-                  label: "Appellations historiques",
+                  label: copy.historicalDesignations,
                   prose: data.historicalAppellations.join(" · "),
                 },
               ]
@@ -91,12 +95,12 @@ export function FamilyDecolonialHeader({
       />
       {data.selfAppellation && (
         <div className="mt-3">
-          <DoctrineLinkCard slug="endonymes-vs-exonymes" />
+          <DoctrineLinkCard slug="endonymes-vs-exonymes" language={language} />
         </div>
       )}
       {data.whyProblematic && (
         <div className="mt-3">
-          <DoctrineLinkCard slug="heritage-colonial" />
+          <DoctrineLinkCard slug="heritage-colonial" language={language} />
         </div>
       )}
     </section>

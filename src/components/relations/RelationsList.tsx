@@ -8,14 +8,14 @@ import { cn } from "@/lib/utils";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
-import {
-  RelationTypeBadge,
-  RELATION_TYPE_LABELS,
-} from "@/components/relations/RelationTypeBadge";
+import { RelationTypeBadge } from "@/components/relations/RelationTypeBadge";
+import { RELATION_TYPE_LABELS } from "@/lib/glossaire/vocabularies";
 import type {
   RelationBadgeType,
   RelationListItem,
 } from "@/lib/relationsDataTransformer";
+import { relationsCopy } from "@/lib/i18n/copy/relations";
+import type { Language } from "@/types/shared";
 
 const FILTERABLE_TYPES: RelationBadgeType[] = [
   "linguistic",
@@ -33,6 +33,7 @@ export interface RelationsListProps {
   /** Initial filter state, e.g. parsed by the page (RSC) from its `searchParams`. */
   initialActiveTypes?: RelationBadgeType[];
   className?: string;
+  language?: Language;
 }
 
 /**
@@ -57,15 +58,17 @@ function syncUrl(activeTypes: RelationBadgeType[]) {
   window.history.replaceState(window.history.state, "", url);
 }
 
-function rowAriaLabel(item: RelationListItem): string {
-  const parts = [RELATION_TYPE_LABELS[item.type], item.neighbor.nameMain];
+function rowAriaLabel(item: RelationListItem, language: Language): string {
+  const copy = relationsCopy[language];
+  const parts = [
+    RELATION_TYPE_LABELS[language][item.type],
+    item.neighbor.nameMain,
+  ];
   if (item.period?.label) parts.push(item.period.label);
   if (item.derived) {
-    parts.push(
-      "lien dérivé de la hiérarchie AFRIK, non sourcé individuellement"
-    );
+    parts.push(copy.graph.derived);
   } else if (item.confidence?.sourceCount != null) {
-    parts.push(`${item.confidence.sourceCount} sources`);
+    parts.push(copy.graph.sources(item.confidence.sourceCount));
   }
   return parts.join(", ");
 }
@@ -82,7 +85,9 @@ export function RelationsList({
   onOpenRelation,
   initialActiveTypes = [],
   className,
+  language = "fr",
 }: RelationsListProps) {
+  const copy = relationsCopy[language];
   const [activeTypes, setActiveTypes] =
     useState<RelationBadgeType[]>(initialActiveTypes);
 
@@ -116,7 +121,7 @@ export function RelationsList({
     <div className={cn("flex flex-col gap-afh-md", className)}>
       <div
         role="group"
-        aria-label="filtrer par type de lien"
+        aria-label={copy.list.filterGroup}
         className="flex flex-wrap items-center gap-2"
       >
         {FILTERABLE_TYPES.map((type) => {
@@ -134,7 +139,7 @@ export function RelationsList({
                   : "border-afh-border bg-afh-surface text-afh-text-soft"
               )}
             >
-              {RELATION_TYPE_LABELS[type]}
+              {RELATION_TYPE_LABELS[language][type]}
             </button>
           );
         })}
@@ -147,10 +152,12 @@ export function RelationsList({
               key={type}
               className="inline-flex items-center gap-1 rounded-full bg-afh-bg-warm px-2 py-0.5 text-afh-text-soft"
             >
-              {RELATION_TYPE_LABELS[type]}
+              {RELATION_TYPE_LABELS[language][type]}
               <button
                 type="button"
-                aria-label={`retirer le filtre ${RELATION_TYPE_LABELS[type]}`}
+                aria-label={copy.list.removeFilter(
+                  RELATION_TYPE_LABELS[language][type]
+                )}
                 onClick={() => toggleType(type)}
               >
                 <X className="h-3 w-3" aria-hidden />
@@ -162,19 +169,23 @@ export function RelationsList({
             onClick={clearFilters}
             className="text-afh-text-soft underline underline-offset-2 hover:text-afh-text"
           >
-            tout effacer
+            {copy.list.clearFilters}
           </button>
         </div>
       )}
 
       {filteredItems.length === 0 ? (
-        <EmptyState message="Aucune relation documentée pour le moment." />
+        <EmptyState message={copy.list.empty} lang={language} />
       ) : (
         <>
+          {copy.list.proseFallback ? (
+            <p role="status" aria-label={copy.list.proseFallback}>
+              {copy.list.proseFallback}
+            </p>
+          ) : null}
           {hasDerivedOnly && (
             <p className="text-afh-small text-afh-text-soft">
-              Seuls des liens de proximité linguistique, dérivés de la
-              hiérarchie AFRIK, sont disponibles pour l&apos;instant.
+              {copy.list.derivedOnly}
             </p>
           )}
           <ul className="flex flex-col gap-afh-sm">
@@ -182,28 +193,40 @@ export function RelationsList({
               <li
                 key={item.id}
                 className="flex flex-col gap-2 rounded-afh-lg border border-afh-border bg-afh-surface p-afh-sm"
-                aria-label={rowAriaLabel(item)}
+                aria-label={rowAriaLabel(item, language)}
               >
                 <div className="flex flex-wrap items-center gap-2">
-                  <RelationTypeBadge type={item.type} derived={item.derived} />
+                  <RelationTypeBadge
+                    type={item.type}
+                    derived={item.derived}
+                    language={language}
+                  />
                   <AutonymExonymHeading
                     autonym={item.neighbor.nameMain}
                     variant="inline"
                   />
                 </div>
                 {item.period?.label && (
-                  <p className="text-afh-caption text-afh-text-soft">
+                  <p
+                    className="text-afh-caption text-afh-text-soft"
+                    data-relation-prose
+                    lang={language === "en" ? "fr" : undefined}
+                  >
                     {item.period.label}
                   </p>
                 )}
                 {item.description && (
-                  <p className="text-afh-small text-afh-text">
+                  <p
+                    className="text-afh-small text-afh-text"
+                    data-relation-prose
+                    lang={language === "en" ? "fr" : undefined}
+                  >
                     {item.description}
                   </p>
                 )}
                 {item.derived ? (
                   <p className="text-afh-caption italic text-afh-text-soft">
-                    dérivé de la hiérarchie AFRIK
+                    {copy.list.derived}
                   </p>
                 ) : (
                   <ConfidenceChip
@@ -211,6 +234,7 @@ export function RelationsList({
                     sourceCount={item.confidence?.sourceCount ?? null}
                     lastHumanAuditAt={null}
                     onOpen={() => onOpenRelation(item.id)}
+                    language={language}
                   />
                 )}
               </li>

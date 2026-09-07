@@ -2,8 +2,10 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { OG_DESCRIPTION, OG_TITLE } from "@/lib/brand";
+import { CANONICAL_DOMAIN, OG_DESCRIPTION, OG_TITLE } from "@/lib/brand";
 import { CORPUS_CLASSES } from "@/lib/home/corpusClasses";
+import { DID_YOU_KNOW_FACTS } from "@/lib/home/didYouKnowFacts";
+import { DID_YOU_KNOW_FACTS_EN } from "@/lib/home/didYouKnowFacts.en";
 
 const {
   getCorpusCountsMock,
@@ -87,13 +89,16 @@ vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({
     children,
     flushBottom,
+    language,
   }: {
     children: React.ReactNode;
     flushBottom?: boolean;
+    language: string;
   }) => (
     <div
       data-testid="page-layout"
       data-flush-bottom={String(Boolean(flushBottom))}
+      data-language={language}
     >
       {children}
     </div>
@@ -104,9 +109,15 @@ vi.mock("@/components/atlas/ContinentGlobeStage", () => ({
   ContinentGlobeStage: () => <div data-testid="home-globe-stage" />,
 }));
 
-import Home, { metadata } from "../page";
+import Home, { generateMetadata } from "../page";
 
-const renderHome = async () => render(await Home());
+const routeParams = (lang: string) => Promise.resolve({ lang });
+
+const renderHome = async () =>
+  render(await Home({ params: routeParams("fr") }));
+
+const renderEnglishHome = async () =>
+  render(await Home({ params: routeParams("en") }));
 
 describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
   beforeEach(() => {
@@ -148,6 +159,29 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
         .querySelectorAll('[data-testid="home-dyk-official-source"]')
     ).toHaveLength(2);
     expect(screen.getAllByTestId("home-dyk-fact")).toHaveLength(2);
+  });
+
+  // @req REQ-145
+  it("reads the drawn facts from the English sidecar on the English home", async () => {
+    vi.spyOn(Math, "random").mockReturnValue(0);
+
+    await renderEnglishHome();
+
+    const cards = screen.getAllByTestId("home-dyk-fact");
+    expect(cards).toHaveLength(2);
+    for (const card of cards) {
+      const heading = card.querySelector("h2")?.textContent;
+      expect(heading).toBeTruthy();
+      expect(
+        Object.values(DID_YOU_KNOW_FACTS_EN).some(
+          (translation) => translation.headline === heading
+        )
+      ).toBe(true);
+      expect(DID_YOU_KNOW_FACTS.some((fact) => fact.headline === heading)).toBe(
+        false
+      );
+    }
+    expect(screen.getByText("Did you know")).toBeInTheDocument();
   });
 
   // The illustrated section is full bleed and is the final child of main, so
@@ -262,7 +296,10 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
     });
 
     await render(
-      await Home({ searchParams: Promise.resolve({ hero: "globe" }) })
+      await Home({
+        params: routeParams("fr"),
+        searchParams: Promise.resolve({ hero: "globe" }),
+      })
     );
 
     expect(screen.getByTestId("home-globe-stage")).toBeInTheDocument();
@@ -292,12 +329,38 @@ describe("home page — search, corpus scale and two facts (ETNI-1404)", () => {
   });
 
   // @req REQ-044
-  it("declares the canonical and OpenGraph metadata", () => {
-    expect(metadata.alternates?.canonical).toBe("/fr");
+  it("declares the canonical and OpenGraph metadata", async () => {
+    const metadata = await generateMetadata({ params: routeParams("fr") });
+
+    expect(metadata.alternates?.canonical).toBe(
+      `https://${CANONICAL_DOMAIN}/fr`
+    );
     expect(metadata.title).toBe(OG_TITLE);
     expect(metadata.description).toBe(OG_DESCRIPTION);
     expect(metadata.openGraph?.title).toBe(OG_TITLE);
     expect(metadata.openGraph?.description).toBe(OG_DESCRIPTION);
-    expect(metadata.openGraph?.url).toBe("/fr");
+    expect(metadata.openGraph?.url).toBe(`https://${CANONICAL_DOMAIN}/fr`);
+  });
+
+  // An English home declaring `/fr` canonical would tell every crawler the
+  // page is a duplicate of the French one.
+  // @req REQ-140
+  it("points the canonical at the locale the route was served in", async () => {
+    const metadata = await generateMetadata({ params: routeParams("en") });
+
+    expect(metadata.alternates?.canonical).toBe(
+      `https://${CANONICAL_DOMAIN}/en`
+    );
+    expect(metadata.openGraph?.url).toBe(`https://${CANONICAL_DOMAIN}/en`);
+  });
+
+  // @req REQ-140
+  it("hands the shell the route's locale rather than a fixed one", async () => {
+    render(await Home({ params: routeParams("en") }));
+
+    expect(screen.getByTestId("page-layout")).toHaveAttribute(
+      "data-language",
+      "en"
+    );
   });
 });

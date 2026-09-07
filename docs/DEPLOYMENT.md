@@ -131,6 +131,19 @@ Required for the app to run at all:
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY` — **server-only**, never expose it to the browser bundle
 
+Publication safety:
+
+- `SITE_LOCALE_MODE` — **server-only** and optional. Missing, empty, or invalid values fail
+  closed to `fr-only`: `/` and stale English cookies resolve to `/fr`, English URLs temporarily
+  redirect to their French counterpart, and the language switch is absent. Set
+  `bilingual-fr-default` to publish both languages while keeping `/fr` as the default, or
+  `bilingual-en-default` only for the final English-default launch.
+
+  Change it in the target environment and rebuild. The OVH release workflow verifies `/`,
+  `/fr`, `/en`, and the remembered-English-cookie path inside the new container before declaring
+  the deploy healthy. A misspelled non-empty value deliberately fails that deploy even though
+  the application itself remains safely French-only.
+
 Required for a reader to report an error:
 
 - `ANTIBOT_HMAC_SECRET` — **server-only**, any long random string. It signs the proof-of-work
@@ -299,9 +312,11 @@ exception.)
 
 ## First moderator
 
-Access to `/fr/admin` is an address on `admin_allowlist` — not a role, and not an
-account, because the atlas has no public accounts. Put the address on the list, then
-have the person request a link at `/fr/admin/connexion`:
+Access to the moderation console is an address on `admin_allowlist` — not a role, and not an
+account, because the atlas has no public accounts. During the French-only rollout, use
+`/fr/admin` and `/fr/admin/connexion`; the `/en/admin` surface becomes reachable only when a
+bilingual `SITE_LOCALE_MODE` is explicitly enabled. Put the address on the list, then have the
+person request a link at the published sign-in page:
 
 ```bash
 NEXT_PUBLIC_SUPABASE_URL=… SUPABASE_SERVICE_ROLE_KEY=… \
@@ -320,7 +335,9 @@ Roles live in `user_roles` (migration `008`) with values `reader`, `contributor`
 when contributions became flags (migration `081`), and they open no door in the moderation
 console — access there is membership of `admin_allowlist`. Nothing reads `user_roles` today.
 
-1. The person signs in once at `/fr/admin/connexion` so their auth account exists.
+1. The person signs in once at the published sign-in page (`/fr/admin/connexion` in
+   `fr-only`; `/en/admin/connexion` is also available in a bilingual mode) so their auth
+   account exists.
 2. Grant the role:
 
    ```bash
@@ -337,7 +354,11 @@ console — access there is membership of `admin_allowlist`. Nothing reads `user
 
 - [ ] The `deploy-production.yml` run concluded `success` and the site loads. A published
       Release with a failed deploy is not a shipped release.
-- [ ] `/fr` renders — the middleware canonicalizes every locale segment to `fr`.
+- [ ] Locale behaviour matches `SITE_LOCALE_MODE` (REQ-140): missing or `fr-only` sends `/`
+      and `/en` to `/fr` and shows no language switch; `bilingual-fr-default` renders both
+      locales while `/` resolves to `/fr`; only `bilingual-en-default` resolves `/` to `/en`.
+      A locale segment the site does not support (`/es/...`) is redirected to the configured
+      default with its path preserved.
 - [ ] A fiche route renders for each entity type: a country, a people, a language family.
       _A green axe check has previously masked an HTTP 500 on every fiche route for two
       releases. Load one for real._

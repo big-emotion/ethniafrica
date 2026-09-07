@@ -96,7 +96,7 @@ export function getQuizMinConfidence(): number {
  * a curator assigned fiche by fiche — that is what this now reads.
  *
  * The standing stays visible either way: the reveal renders each source's tier
- * through `SOURCE_TIER_LABELS_FR`, so a reader sees what an answer rests on.
+ * through `SOURCE_TIER_LABELS`, so a reader sees what an answer rests on.
  */
 function hasEligibleSource(sources: QuizAssertionSource[]): boolean {
   return sources.some(

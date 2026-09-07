@@ -67,6 +67,8 @@ import type { CountryId } from "@/types/afrik";
 import { useGlobeCamera } from "@/hooks/use-globe-camera";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
+import { atlasCopy } from "@/lib/i18n/copy/atlas";
+import type { Language } from "@/types/shared";
 
 const LazyAtlasGlobeCanvas = dynamic(
   () =>
@@ -360,23 +362,40 @@ function AtlasGlobeFallback({
    * legend discharges it; here the areas survive only as targets.
    */
   if (overlay.kind === "continent-field") {
+    const underQuestion = new Set(overlay.highlightedCountryIds);
+
     return (
       <AfricaBasemap
         figureTransform={figureTransform}
         style={FALLBACK_BASEMAP_STYLE}
       >
-        {overlay.frame.flatMap((country) =>
-          country.rings.map((ring, index) => (
+        {overlay.frame.flatMap((country) => {
+          // The basemap is bounded on Africa, so a borrowed outline would be
+          // painted outside it rather than clipped — see `offContinent`. The
+          // round names both countries in its own options; this renderer
+          // locates the one it can and asserts nothing about the other.
+          if (country.offContinent) return [];
+
+          // A country a round is asking about takes the fiche outline's own
+          // encoding — accent fill, accent stroke — because that is already
+          // what « this country » looks like in this atlas. See
+          // `highlightFillOpacity` for why the frame's `fill: none` invariant
+          // is allowed to give way here and nowhere else.
+          const marked = underQuestion.has(country.countryId);
+
+          return country.rings.map((ring, index) => (
             <polygon
               key={`${country.countryId}-${index}`}
               points={ringToSvgPoints(ring)}
-              fill="none"
-              stroke="var(--afh-globe-stage-line)"
-              strokeWidth={1}
+              fill={marked ? "var(--accent)" : "none"}
+              fillOpacity={marked ? overlay.highlightFillOpacity : undefined}
+              stroke={marked ? "var(--accent)" : "var(--afh-globe-stage-line)"}
+              strokeWidth={marked ? 2.5 : 1}
+              strokeOpacity={underQuestion.size > 0 && !marked ? 0.4 : 1}
               vectorEffect="non-scaling-stroke"
             />
-          ))
-        )}
+          ));
+        })}
       </AfricaBasemap>
     );
   }
@@ -622,6 +641,7 @@ function AtlasChoiceMark({
 }
 
 export interface AtlasGlobeProps {
+  language?: Language;
   overlay: AtlasOverlay | null;
   /** Shown by the REQ-119 missing placeholder; must name what is absent, not just say "missing". */
   missingMessage: string;
@@ -823,13 +843,16 @@ const TAP_TRAVEL_TOLERANCE_PX = 6;
  * surface actually has. A flat map cannot be turned, and announcing a turn there
  * sent a reader dragging for a rotation that was never going to happen.
  */
-function globeSurfaceLabel(turns: boolean, autoRotating = false): string {
+function globeSurfaceLabel(
+  turns: boolean,
+  autoRotating: boolean,
+  language: Language
+): string {
+  const copy = atlasCopy[language].surface;
   if (autoRotating) {
-    return "Globe de l'atlas. Interagissez avec le globe pour arrêter la rotation.";
+    return copy.autoRotating;
   }
-  return turns
-    ? "Globe de l'atlas. Glissez ou utilisez les flèches pour tourner."
-    : "Carte de l'atlas. Glissez ou utilisez les flèches pour déplacer.";
+  return turns ? copy.globe : copy.flatMap;
 }
 
 /**
@@ -870,10 +893,11 @@ const MORPH_BAR_STEPS = 100;
  * sighted reader gets from the bar is the shape they are watching, so that is
  * what the value has to carry.
  */
-function projectionSurfaceName(morph: number): string {
-  if (morph >= NEARLY_SPHERE_MORPH) return "Globe";
-  if (morph <= NEARLY_FLAT_MORPH) return "Carte plate";
-  return "Projection intermédiaire";
+function projectionSurfaceName(morph: number, language: Language): string {
+  const copy = atlasCopy[language].projectionNames;
+  if (morph >= NEARLY_SPHERE_MORPH) return copy.globe;
+  if (morph <= NEARLY_FLAT_MORPH) return copy.flatMap;
+  return copy.intermediate;
 }
 
 /**
@@ -885,22 +909,28 @@ function projectionSurfaceName(morph: number): string {
  * area; the exponent is Mercator's own scale factor, so the claim is checkable
  * rather than rhetorical.
  */
-function projectionReadout(morph: number): string {
+function projectionReadout(morph: number, language: Language): string {
+  const copy = atlasCopy[language].projectionReadout;
   if (morph >= NEARLY_SPHERE_MORPH) {
-    return "Globe — chaque pastille retrouve sa surface réelle. L'Afrique fait 30,4 M km².";
+    return copy.globe;
   }
   if (morph <= NEARLY_FLAT_MORPH) {
-    return "Carte plate — Mercator gonfle les surfaces de sec²(latitude) : ×4 à 60°, ×9 à 70°.";
+    return copy.flatMap;
   }
-  return "En cours de repli — regardez les pastilles reprendre la même taille.";
+  return copy.intermediate;
 }
 
-function globeLegendSentence(turns: boolean, marksCountries: boolean): string {
-  const gesture = turns ? "Glissez pour tourner" : "Glissez pour déplacer";
+function globeLegendSentence(
+  turns: boolean,
+  marksCountries: boolean,
+  language: Language
+): string {
+  const copy = atlasCopy[language];
+  const gesture = turns ? copy.gesture.rotate : copy.gesture.move;
   const offer = marksCountries
-    ? " ; appuyez sur un point pour ouvrir le pays."
+    ? `${language === "fr" ? " ; " : "; "}${copy.openCountry}`
     : ".";
-  return `Afrique à sa surface réelle. ${gesture}${offer}`;
+  return `${copy.legendStart} ${gesture}${offer}`;
 }
 
 /**
@@ -1041,14 +1071,15 @@ function usePanelAnchor(): PanelAnchor {
 // @req REQ-117
 // @req REQ-120
 export function AtlasGlobe({
+  language = "fr",
   overlay,
   missingMessage,
   targetFacts = defaultTargetFacts,
   onTargetChosen,
   facts,
   fallbackNote,
-  wholeAreaLabel = "Toute l'empreinte",
-  areaNoun = "l'empreinte",
+  wholeAreaLabel,
+  areaNoun,
   className,
   readingCountryId,
   targetPicker = "markers",
@@ -1064,6 +1095,9 @@ export function AtlasGlobe({
   viewScale = 1,
   autoRotate = false,
 }: AtlasGlobeProps) {
+  const copy = atlasCopy[language];
+  const resolvedWholeAreaLabel = wholeAreaLabel ?? copy.wholeArea;
+  const resolvedAreaNoun = areaNoun ?? copy.areaNoun;
   /**
    * Three states, not two: `undefined` is "not probed yet", and it is different
    * from "unsupported".
@@ -1633,7 +1667,11 @@ export function AtlasGlobe({
       <div
         data-atlas-surface=""
         role="application"
-        aria-label={globeSurfaceLabel(surfaceTurns, camera.autoRotating)}
+        aria-label={globeSurfaceLabel(
+          surfaceTurns,
+          camera.autoRotating,
+          language
+        )}
         tabIndex={0}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
@@ -1717,7 +1755,8 @@ export function AtlasGlobe({
               subtitleByCountry={subtitleByCountry}
               chosenCountryId={chosenCountryId}
               onChoose={chooseTarget}
-              areaNoun={areaNoun}
+              language={language}
+              areaNoun={resolvedAreaNoun}
             />
           </div>
         )}
@@ -1730,11 +1769,11 @@ export function AtlasGlobe({
           >
             {presentation === "editorial"
               ? camera.autoRotating
-                ? "Interagissez avec le globe pour arrêter la rotation."
+                ? copy.gesture.autoRotating
                 : surfaceTurns
-                  ? "Glissez pour tourner."
-                  : "Glissez pour déplacer."
-              : globeLegendSentence(surfaceTurns, marksCountries)}
+                  ? copy.gesture.rotateShort
+                  : copy.gesture.moveShort
+              : globeLegendSentence(surfaceTurns, marksCountries, language)}
           </p>
         )}
       </div>
@@ -1784,7 +1823,7 @@ export function AtlasGlobe({
                 aria-hidden="true"
                 className="whitespace-nowrap text-afh-caption"
               >
-                Carte plate
+                {copy.flatMap}
               </span>
               <input
                 type="range"
@@ -1792,8 +1831,8 @@ export function AtlasGlobe({
                 max={MORPH_BAR_STEPS}
                 step={1}
                 value={Math.round(morph * MORPH_BAR_STEPS)}
-                aria-label="Morphing de la carte plate vers le globe"
-                aria-valuetext={projectionSurfaceName(morph)}
+                aria-label={copy.morphLabel}
+                aria-valuetext={projectionSurfaceName(morph, language)}
                 onChange={(event) => {
                   camera.stopAutoRotation();
                   setReaderMorph(Number(event.target.value) / MORPH_BAR_STEPS);
@@ -1804,11 +1843,11 @@ export function AtlasGlobe({
                 aria-hidden="true"
                 className="whitespace-nowrap text-afh-caption"
               >
-                Globe
+                {copy.globe}
               </span>
             </div>
             <p data-atlas-morph-readout="" className="text-afh-caption">
-              {projectionReadout(morph)}
+              {projectionReadout(morph, language)}
             </p>
             <style>{`
               /* The track and the thumb are the one place a range can be
@@ -1885,7 +1924,7 @@ export function AtlasGlobe({
                 className={TOOLBAR_BUTTON_CLASS}
                 style={TOOLBAR_BUTTON_STYLE}
               >
-                {wholeAreaLabel}
+                {resolvedWholeAreaLabel}
               </button>
             )}
           {/* The bar and the button are two spellings of one control, so the
@@ -1907,9 +1946,7 @@ export function AtlasGlobe({
                     className={TOOLBAR_BUTTON_CLASS}
                     style={TOOLBAR_BUTTON_STYLE}
                   >
-                    {flat
-                      ? "Revenir au globe"
-                      : "Ce que la carte plate en fait"}
+                    {flat ? copy.returnToGlobe : copy.showFlatMap}
                   </button>
                 )
               : pinnedProjectionNote && (
@@ -1935,7 +1972,7 @@ export function AtlasGlobe({
               className={TOOLBAR_BUTTON_CLASS}
               style={TOOLBAR_BUTTON_STYLE}
             >
-              Pastilles
+              {copy.indicatrices}
             </button>
           )}
           {/* Held together in their own row so the two directions never wrap
@@ -1946,8 +1983,8 @@ export function AtlasGlobe({
           <div className="flex gap-1">
             <button
               type="button"
-              aria-label="Dézoomer"
-              title="Dézoomer"
+              aria-label={copy.zoomOut}
+              title={copy.zoomOut}
               disabled={atMinZoom}
               onClick={() => {
                 camera.stopAutoRotation();
@@ -1960,8 +1997,8 @@ export function AtlasGlobe({
             </button>
             <button
               type="button"
-              aria-label="Zoomer"
-              title="Zoomer"
+              aria-label={copy.zoomIn}
+              title={copy.zoomIn}
               disabled={atMaxZoom}
               onClick={() => {
                 camera.stopAutoRotation();
@@ -1984,8 +2021,8 @@ export function AtlasGlobe({
               style={TOOLBAR_BUTTON_STYLE}
             >
               {presentation === "editorial"
-                ? "Recentrer sur l’Afrique"
-                : "Recentrer"}
+                ? copy.recentreAfrica
+                : copy.recentre}
             </button>
           )}
         </div>
@@ -1993,6 +2030,7 @@ export function AtlasGlobe({
 
       {chosenFacts && (
         <AtlasFactsPanel
+          language={language}
           open
           anchor={anchor}
           container={stage}

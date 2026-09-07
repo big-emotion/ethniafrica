@@ -1,3 +1,6 @@
+import type { ReactNode } from "react";
+
+import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 import {
@@ -7,6 +10,10 @@ import {
   transformPeopleData,
   transformSourcedRelationsPreview,
 } from "@/lib/peopleDataTransformer";
+import {
+  resolveAssociatedPeoples,
+  type PeopleNameIndexEntry,
+} from "@/lib/people/associatedPeopleLinks";
 import type { SourcedRelation } from "@/types/relations";
 import {
   PeopleOriginBlock,
@@ -24,10 +31,7 @@ import { SourcesFooter } from "@/components/country/SourcesFooter";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PeopleNamingBlock } from "@/components/people/PeopleNamingBlock";
 import { PeopleFieldExplainer } from "@/components/people/PeopleFieldExplainer";
-import {
-  FicheSection,
-  SOURCE_TIER_NOTE,
-} from "@/components/fiche/FicheSection";
+import { FicheSection } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { FragmentationView } from "@/components/colonization/FragmentationView";
 import { OralNarrativesSection } from "@/components/people/OralNarrativesSection";
@@ -40,9 +44,13 @@ import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
 import type { PeopleNamesDossier } from "@/api/v2/schemas/names";
 import type { PeopleFicheNotes } from "@/components/people/peopleFicheNotes";
 import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
+import type { Language } from "@/types/shared";
+import { peopleCopy } from "@/lib/i18n/copy/people";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
 
 export interface PeopleDetailViewV2Props {
   people: PeopleDetail;
+  language: Language;
   namesDossier?: PeopleNamesDossier | null;
   fragmentation?: PeopleFragmentation | null;
   /** An open flag on this fiche's sourcing, resolved by the route. */
@@ -68,6 +76,26 @@ export interface PeopleDetailViewV2Props {
    * ordinary answer today and is printed as such.
    */
   borneNames?: PatronymeLinkSummary[] | null;
+  /**
+   * The way out of the fiche — `FicheOnward`, composed by the route.
+   *
+   * A node rather than the links themselves, because the block reads relations
+   * off awaited services. Resolved here instead, this parchment would become
+   * async, and an async node in the fiche tree resolves every synchronous
+   * render of it to an empty div — the failure `FicheJsonLd` records costing
+   * thirty-three tests across five files, none of whose messages named it.
+   */
+  onward?: ReactNode;
+  /**
+   * Every people the corpus holds a fiche for, by name, read by the route.
+   *
+   * The index rather than a resolved list, so the groups this fiche links can
+   * only ever be derived from the `ethnicities` it already prints — a list
+   * handed in from outside could disagree with the chapter's own gate. Absent,
+   * every group resolves to nothing, which is the answer for 3735 of the
+   * corpus's 4050 entries anyway and is rendered as the plain chip it was.
+   */
+  peopleNameIndex?: readonly PeopleNameIndexEntry[];
 }
 
 /**
@@ -111,6 +139,7 @@ export interface PeopleDetailViewV2Props {
 // @req REQ-091
 export function PeopleDetailViewV2({
   people,
+  language,
   namesDossier = null,
   fragmentation = null,
   hasSourceFlag = false,
@@ -118,7 +147,10 @@ export function PeopleDetailViewV2({
   notes,
   bibliography,
   borneNames = null,
+  onward,
+  peopleNameIndex,
 }: PeopleDetailViewV2Props) {
+  const copy = peopleCopy[language];
   const data = transformPeopleData(people, namesDossier);
   /**
    * The numbered bibliography when the route resolved one, the fiche's own
@@ -129,6 +161,13 @@ export function PeopleDetailViewV2({
   const sources = bibliography ?? data.sources;
   const distribution = people.demography?.distributionByCountry;
   const relationsPreview = transformSourcedRelationsPreview(relations);
+  // Self excluded: a fiche whose own name appears among its groups would
+  // otherwise offer the reader a link back to the page they are on.
+  const associatedGroups = resolveAssociatedPeoples(
+    data.relatedPeoples.ethnicities,
+    peopleNameIndex ?? [],
+    data.hero.peopleId
+  );
 
   return (
     <div className="afh-parchment" id="fiche">
@@ -141,17 +180,18 @@ export function PeopleDetailViewV2({
           that owns that anchor rather than in the band above it. */}
       <div className="afh-parchment-confidence">
         <ConfidenceChip
+          language={language}
           confidenceScore={null}
           sourceCount={data.sources.length || null}
           lastHumanAuditAt={null}
           variant="hero"
           id={data.hero.peopleId}
-          ariaSuffix={`pour la fiche ${data.hero.nameMain}`}
+          ariaSuffix={copy.ficheHead.sourceAria(data.hero.nameMain)}
         />
       </div>
 
       {/* 1. The name borne, the names imposed — first, before any figure. */}
-      <FicheSection title="Le nom porté, les noms subis">
+      <FicheSection title={copy.sections.naming}>
         <PeopleNamingBlock
           nameMain={data.hero.nameMain}
           selfAppellation={people.appellations?.selfAppellation}
@@ -160,35 +200,53 @@ export function PeopleDetailViewV2({
           whyProblematic={people.appellations?.whyProblematic}
           contemporaryUsage={data.hero.contemporaryUsage}
           isoCode={people.languages?.isoCodes?.[0]}
+          language={language}
+        />
+        <DossierLinks
+          language={language}
+          kind="people"
+          id={people.id}
+          section="appellations"
         />
       </FicheSection>
 
       {/* 2. Why the map draws no border — the globe's grammar, in prose. */}
       {distribution && distribution.length > 0 && (
         <FicheSection
-          title="Pourquoi la carte ne trace pas de frontière"
-          note="Dérivé de la répartition par pays"
+          title={copy.sections.mapGrammar}
+          note={copy.sections.mapDerivation}
         >
-          <PeopleFieldExplainer distribution={distribution} />
+          <PeopleFieldExplainer
+            distribution={distribution}
+            language={language}
+          />
         </FicheSection>
       )}
 
-      <FicheSection title="Origines & formation">
+      <FicheSection title={copy.sections.origins}>
         {hasOriginContent(data.origin) ? (
-          <PeopleOriginBlock data={data.origin} notes={notes?.origin} />
+          <PeopleOriginBlock
+            data={data.origin}
+            notes={notes?.origin}
+            language={language}
+          />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
-      <FicheSection title="Langue">
+      <FicheSection title={copy.sections.language}>
         {data.language.mainLanguage ||
         data.language.isoCodes.length > 0 ||
         data.language.dialects.length > 0 ||
         data.language.vehicularRole ? (
-          <PeopleLanguageSection data={data.language} notes={notes?.language} />
+          <PeopleLanguageSection
+            data={data.language}
+            notes={notes?.language}
+            language={language}
+          />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
@@ -200,46 +258,73 @@ export function PeopleDetailViewV2({
           missing marker — same doctrine as the globe's grammar section and
           colonial fragmentation below. */}
       {people.historicalAffiliation && (
-        <FicheSection title="Filiation historique">
+        <FicheSection title={copy.sections.historicalAffiliation}>
           <PeopleHistoricalAffiliationBlock
             data={people.historicalAffiliation}
+            language={language}
           />
         </FicheSection>
       )}
 
-      <FicheSection title="Rôle historique">
+      <FicheSection title={copy.sections.historicalRole}>
         {data.history.kingdomsOrChiefdoms ||
         data.history.relationsWithNeighbors ||
         data.history.conflictsOrAlliances ||
         data.history.diaspora ? (
-          <PeopleHistoryTimeline data={data.history} notes={notes?.history} />
+          <PeopleHistoryTimeline
+            data={data.history}
+            notes={notes?.history}
+            language={language}
+          />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
+        <DossierLinks
+          kind="people"
+          id={people.id}
+          section="history"
+          language={language}
+        />
       </FicheSection>
 
-      <OralNarrativesSection peopleId={data.hero.peopleId} />
+      <OralNarrativesSection
+        peopleId={data.hero.peopleId}
+        language={language}
+      />
 
-      <MediaCreditSection peopleId={data.hero.peopleId} />
+      <MediaCreditSection peopleId={data.hero.peopleId} language={language} />
 
-      <ExternalRegistryLinksSection identifiers={people.externalIdentifiers} />
+      <ExternalRegistryLinksSection
+        identifiers={people.externalIdentifiers}
+        language={language}
+      />
 
       {/* Noms & appellations (below the fold; chips hydrate second-wave, UX-DR18) */}
-      <PeopleNamesSection data={data.names} />
+      <PeopleNamesSection data={data.names} language={language} />
 
       {/* The second naming register, next to the first: the chapter above
           holds what this people is *called* — its ethnonyms, and the exonyms
           imposed on it — and this one what its members *bear*. Reading them
           apart is how "nom" came to mean two unrelated things in this
           codebase; on the page they answer each other. */}
-      <PeopleBorneNamesSection patronymes={borneNames} />
+      <PeopleBorneNamesSection patronymes={borneNames} language={language} />
 
-      <FicheSection title="Culture & spiritualité">
+      <FicheSection title={copy.sections.culture}>
         {hasCultureContent(data.culture) ? (
-          <PeopleCultureGrid data={data.culture} notes={notes?.culture} />
+          <PeopleCultureGrid
+            data={data.culture}
+            notes={notes?.culture}
+            language={language}
+          />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
+        <DossierLinks
+          kind="people"
+          id={people.id}
+          section="culture"
+          language={language}
+        />
         {/* The same report control the country fiche's culture section
             carries. It used to live only on the legacy tabbed people view;
             retiring that view without moving it here would have taken the
@@ -248,42 +333,46 @@ export function PeopleDetailViewV2({
             a reader has something to say about. */}
         <div data-testid="section-flag-target-culture" className="mt-3">
           <FlagTarget
+            language={language}
             target={{
               type: "fiche_section",
               id: people.id,
               fieldPath: "culture",
             }}
-            triggerLabel="Signaler cette section"
+            triggerLabel={copy.reportSection}
             className="w-auto text-afh-caption"
           />
         </div>
       </FicheSection>
 
-      <FicheSection title="Peuples voisins & organisation">
+      <FicheSection title={copy.sections.neighbours}>
         {hasRelatedContent(data.relatedPeoples) ||
         relationsPreview.length > 0 ? (
           <PeopleRelatedPeoplesSection
             data={data.relatedPeoples}
+            language={language}
             peopleId={data.hero.peopleId}
             relationsPreview={relationsPreview}
+            associatedGroups={associatedGroups}
           />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
       <FicheSection
-        title="Répartition géographique"
-        note="Année de référence : 2025"
+        title={copy.sections.distribution}
+        note={copy.sections.referenceYear}
       >
         {data.countries.distributions.length > 0 ? (
           <PeopleCountriesSection
             data={data.countries}
+            language={language}
             fromPeopleId={data.hero.peopleId}
             fromPeopleName={data.hero.nameMain}
           />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
@@ -293,22 +382,29 @@ export function PeopleDetailViewV2({
           a gap in the corpus, and it carries no missing marker. */}
       {fragmentation && (
         <FicheSection
-          title="Fragmentation coloniale"
-          note="Dérivé de la présence du peuple dans plusieurs pays"
+          title={copy.sections.fragmentation}
+          note={copy.sections.fragmentationNote}
         >
           <FragmentationView
             fragmentation={fragmentation}
             variant="fiche-section"
+            language={language}
           />
         </FicheSection>
       )}
+
+      {/* The way out sits before the bibliography, not after it. The reader
+          this block exists for is the one who finished the reading, and
+          almost none of them scroll past a source list to find out what to
+          read next. */}
+      {onward}
 
       {/* Deep links across the app point at #sources; until now the only such
           anchor in the tree belonged to the family fiche, so every citation
           chip on a people fiche resolved to nothing. */}
       <FicheSection
-        title="Sources"
-        note={SOURCE_TIER_NOTE}
+        title={copy.sections.sources}
+        note={ficheCopy[language].sourceTierNote}
         as="footer"
         id="sources"
       >
@@ -317,9 +413,10 @@ export function PeopleDetailViewV2({
             sources={[...sources]}
             hasSourceFlag={hasSourceFlag}
             variant="parchment"
+            language={language}
           />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
     </div>

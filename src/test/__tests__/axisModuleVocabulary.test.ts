@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 
+import { MODULE_DEFINITIONS } from "@/lib/hubs/moduleRegistry";
 import { modulesNamedIn } from "@/test/axisModuleVocabulary";
 
 /**
@@ -20,30 +21,42 @@ import { modulesNamedIn } from "@/test/axisModuleVocabulary";
  * own copy uses, so a substring match would have made the helper agree with
  * every sentence about the corpus.
  */
+/**
+ * The helper answers with module *names*, and this one grew an article in
+ * September 2026 (« Les noms d'Afrique »). Read from the registry rather than
+ * spelled out four times, so a later rename moves these assertions with it —
+ * what they are about is the three-letter word inside the name, not the name.
+ */
+const NOM_MODULE = MODULE_DEFINITIONS.find(
+  (module) => module.page === "patronymes"
+)!.name;
+
 describe("axis module vocabulary — a three-letter module name still counts", () => {
   // @req REQ-113
   it("recognises the Nom module in a sentence that names it", () => {
     expect(modulesNamedIn("atlas", "Les fiches de pays et de noms.")).toContain(
-      "Noms"
+      NOM_MODULE
     );
   });
 
   // @req REQ-113
   it("recognises it in the singular too", () => {
-    expect(modulesNamedIn("atlas", "L'origine d'un nom.")).toContain("Noms");
+    expect(modulesNamedIn("atlas", "L'origine d'un nom.")).toContain(
+      NOM_MODULE
+    );
   });
 
   // @req REQ-132
   it("does not let « nommage » stand for the Nom module", () => {
     expect(
       modulesNamedIn("atlas", "Les systèmes de nommage documentés.")
-    ).not.toContain("Noms");
+    ).not.toContain(NOM_MODULE);
   });
 
   // @req REQ-132
   it("does not let « nombre » stand for it either", () => {
     expect(modulesNamedIn("atlas", "Le nombre de fiches.")).not.toContain(
-      "Noms"
+      NOM_MODULE
     );
   });
 

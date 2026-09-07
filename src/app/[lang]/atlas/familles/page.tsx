@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { permanentRedirect } from "next/navigation";
 
@@ -16,6 +17,10 @@ import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { normalizeString } from "@/lib/normalize";
 import { getFamilyRoute, resolveFamilyDeepLink } from "@/lib/routing";
 import type { CountryId } from "@/types/afrik";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
+import { getTranslation } from "@/lib/translations";
+import { formatNumber } from "@/lib/languageTag";
+import { facetDirectoriesCopy } from "@/lib/i18n/copy/facetDirectories";
 import type { Language } from "@/types/shared";
 
 /**
@@ -68,8 +73,24 @@ function requestedPage(raw: string | string[] | undefined): number {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
 }
 
-const formatCount = (value: number): string =>
-  new Intl.NumberFormat("fr-FR").format(value);
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const title = getTranslation(lang as Language).languageFamilies;
+  return {
+    title,
+    ...surfaceHead(
+      lang as Language,
+      "families",
+      (locale) => getFacetRoute(locale, "families"),
+      { title }
+    ),
+  };
+}
 
 // @req REQ-114
 export default async function FamillesHubPage({
@@ -80,9 +101,12 @@ export default async function FamillesHubPage({
   searchParams?: Promise<PageSearchParams>;
 }) {
   const { lang } = await params;
+  const language = lang as Language;
+  const copy = facetDirectoriesCopy[language].families;
   const query = (await searchParams) ?? {};
+  const formatCount = (value: number): string => formatNumber(language, value);
 
-  const fiche = resolveFamilyDeepLink(lang as Language, query);
+  const fiche = resolveFamilyDeepLink(language, query);
   if (fiche) {
     permanentRedirect(fiche);
   }
@@ -131,7 +155,7 @@ export default async function FamillesHubPage({
         : {}
     );
 
-  const facetRoute = getFacetRoute("fr", "families");
+  const facetRoute = getFacetRoute(language, "families");
 
   const countryIndex: FacetCountryIndex = {};
   /**
@@ -144,7 +168,7 @@ export default async function FamillesHubPage({
     const row = {
       id: family.id,
       label: family.nameFr,
-      href: getFamilyRoute("fr", family.id),
+      href: getFamilyRoute(language, family.id),
     };
     for (const countryId of family.countryIds) {
       const key = countryId as CountryId;
@@ -163,7 +187,7 @@ export default async function FamillesHubPage({
   const countryOptions = countries
     .filter((country) => documentedCountries.has(country.id))
     .map((country) => ({ value: country.id, label: country.nameFr }))
-    .sort((left, right) => left.label.localeCompare(right.label, "fr"));
+    .sort((left, right) => left.label.localeCompare(right.label, language));
 
   const pageHref = (target: number, size: number): string => {
     const address = new URLSearchParams();
@@ -179,6 +203,7 @@ export default async function FamillesHubPage({
 
   const pagination = (position: "top" | "bottom") => (
     <FacetPagination
+      language={language}
       position={position}
       page={page}
       pageCount={pageCount}
@@ -186,13 +211,14 @@ export default async function FamillesHubPage({
       pageSize={pageSize}
       pageSizes={FAMILIES_PAGE_SIZES}
       buildHref={pageHref}
-      unitLabel="familles"
+      unitLabel={copy.plural}
     />
   );
 
   const chosenCountryName = countryOptions.find(
     (option) => option.value === chosenCountry
   )?.label;
+  const lede = copy.lede(formatCount(selection.length), chosenCountryName);
 
   const cardClass =
     "flex min-h-11 flex-col gap-1 rounded-afh-lg border border-afh-border bg-afh-surface p-4 hover:border-[color:var(--accent)]";
@@ -211,14 +237,7 @@ export default async function FamillesHubPage({
             the count, because it answers the filters directly below it and
             changes with them. */}
         <header className="afh-facet-reading-head">
-          <p className="afh-facet-reading-lede">
-            {formatCount(selection.length)} familles{" "}
-            {chosenCountryName
-              ? `documentées en ${chosenCountryName}`
-              : "au corpus"}
-            . Choisissez un pays sur le globe pour voir lesquelles s&apos;y
-            parlent.
-          </p>
+          <p className="afh-facet-reading-lede">{lede}</p>
         </header>
 
         <FacetFilterBar
@@ -226,8 +245,8 @@ export default async function FamillesHubPage({
           className="mt-6"
           searchField={{
             name: SEARCH_PARAM,
-            label: "Rechercher une famille linguistique",
-            placeholder: "Nom ou identifiant de la famille",
+            label: copy.searchLabel,
+            placeholder: copy.searchPlaceholder,
             value: chosenSearch,
           }}
           // A GET form submits its own controls only, so the size chosen above
@@ -240,8 +259,8 @@ export default async function FamillesHubPage({
           }}
           primaryField={{
             name: COUNTRY_PARAM,
-            label: "Pays",
-            anyLabel: "Tous les pays",
+            label: copy.country,
+            anyLabel: copy.allCountries,
             options: countryOptions,
             value: chosenCountry,
           }}
@@ -252,26 +271,30 @@ export default async function FamillesHubPage({
             data-testid="family-facet-empty"
             className="mt-6 text-afh-body text-afh-text-soft"
           >
-            Aucune famille linguistique ne répond à cette sélection.
+            {copy.empty}
           </p>
         ) : (
           <>
             {pagination("top")}
             <ul
+              aria-label={copy.listLabel}
               data-testid="family-facet-list"
               className="mt-6 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3"
             >
               {families.map((family) => (
                 <li key={family.id}>
                   <Link
-                    href={getFamilyRoute("fr", family.id)}
+                    href={getFamilyRoute(language, family.id)}
                     className={cardClass}
                   >
                     <span className="font-afh-display text-afh-h3 font-bold text-afh-text">
                       {family.nameFr}
                     </span>
                     <span className="text-afh-small text-afh-text-soft">
-                      {formatCount(family.peopleCount ?? 0)} peuples au corpus
+                      {copy.peopleCount(
+                        formatCount(family.peopleCount ?? 0),
+                        family.peopleCount === 1
+                      )}
                     </span>
                   </Link>
                 </li>
@@ -284,8 +307,7 @@ export default async function FamillesHubPage({
 
         {unclassifiedPeoplesCount > 0 && (
           <p className="mt-6 text-afh-caption text-afh-text-soft">
-            {formatCount(unclassifiedPeoplesCount)} peuples non classés dans une
-            famille linguistique publiée.
+            {copy.unclassified(formatCount(unclassifiedPeoplesCount))}
           </p>
         )}
       </div>

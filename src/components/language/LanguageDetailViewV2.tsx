@@ -1,18 +1,30 @@
+import type { ReactNode } from "react";
+
+import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import Link from "next/link";
 
 import type { LanguagePageData } from "@/lib/languageDataTransformer";
 import { getFamilyRoute, getPeopleRoute } from "@/lib/routing";
-import {
-  FicheSection,
-  SOURCE_TIER_NOTE,
-} from "@/components/fiche/FicheSection";
+import { FicheSection } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
+import type { Language } from "@/types/shared";
+import { languageFicheCopy } from "@/lib/i18n/copy/languageFiche";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
 
 export interface LanguageDetailViewV2Props {
   data: LanguagePageData;
+  language: Language;
   /** An open flag on this fiche's sourcing, resolved by the route. */
   hasSourceFlag?: boolean;
+  /**
+   * The way out of the fiche — `FicheOnward`, composed by the route.
+   *
+   * A node rather than the links themselves: resolving them here would make
+   * this parchment async, and an async node in the fiche tree resolves every
+   * synchronous render of it to an empty div. See `FicheJsonLd`.
+   */
+  onward?: ReactNode;
 }
 
 /**
@@ -33,8 +45,11 @@ export interface LanguageDetailViewV2Props {
 // @req REQ-136
 export function LanguageDetailViewV2({
   data,
+  language,
   hasSourceFlag = false,
+  onward,
 }: LanguageDetailViewV2Props) {
+  const copy = languageFicheCopy[language];
   // Defensive against a payload cached before these fields existed: the
   // segment revalidates hourly, so a stale ISR body outlives a deploy.
   const attestedNames = [
@@ -46,18 +61,20 @@ export function LanguageDetailViewV2({
 
   return (
     <div className="afh-parchment" id="fiche">
-      <FicheSection title="Identifiants">
+      <FicheSection title={copy.identifiers}>
         <dl className="afh-pairs">
           <dt>ISO 639-3</dt>
           <dd>{data.isoCode639_3}</dd>
           <dt>Glottocode</dt>
           <dd>
-            {data.glottocode ?? <FieldProvenanceMarker state="missing" />}
+            {data.glottocode ?? (
+              <FieldProvenanceMarker state="missing" language={language} />
+            )}
           </dd>
         </dl>
       </FicheSection>
 
-      <FicheSection title="Autres noms attestés">
+      <FicheSection title={copy.otherAttestedNames}>
         {attestedNames.length > 0 ? (
           <ul className="afh-rank">
             {attestedNames.map((form) => (
@@ -65,26 +82,32 @@ export function LanguageDetailViewV2({
             ))}
           </ul>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
+        <DossierLinks
+          language={language}
+          kind="language"
+          id={data.id}
+          section="appellations"
+        />
       </FicheSection>
 
-      <FicheSection title="Famille linguistique">
+      <FicheSection title={copy.languageFamily}>
         <Link
-          href={getFamilyRoute("fr", data.family.id)}
+          href={getFamilyRoute(language, data.family.id)}
           className="font-semibold hover:underline"
         >
           {data.family.name}
         </Link>
       </FicheSection>
 
-      <FicheSection title="Locuteurs">
+      <FicheSection title={copy.speakers}>
         {data.speakingPeoples.length > 0 ? (
           <ul className="afh-rank">
             {data.speakingPeoples.map((people) => (
               <li key={people.id}>
                 <Link
-                  href={getPeopleRoute("fr", people.id)}
+                  href={getPeopleRoute(language, people.id)}
                   className="hover:underline"
                 >
                   {people.name}
@@ -93,11 +116,11 @@ export function LanguageDetailViewV2({
             ))}
           </ul>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
-      <FicheSection title="Dialectes">
+      <FicheSection title={copy.dialects}>
         {dialects.length > 0 ? (
           <ul className="afh-rank">
             {dialects.map((dialect) => (
@@ -105,32 +128,37 @@ export function LanguageDetailViewV2({
             ))}
           </ul>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
-      <FicheSection title="Rôle véhiculaire">
+      <FicheSection title={copy.vehicularRole}>
         {data.vehicularRole ? (
           <p>{data.vehicularRole}</p>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
-      <FicheSection title="Vitalité">
+      <FicheSection title={copy.vitality}>
         {data.vitalityStatus ? (
           <p>
             {data.vitalityStatus.status} ({data.vitalityStatus.scale},{" "}
             {data.vitalityStatus.asOf})
           </p>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
 
+      {/* Before the bibliography, not after it: the reader this block exists
+          for is the one who finished the reading, and almost none of them
+          scroll past a source list to find out what to read next. */}
+      {onward}
+
       <FicheSection
-        title="Sources"
-        note={SOURCE_TIER_NOTE}
+        title={copy.sources}
+        note={ficheCopy[language].sourceTierNote}
         as="footer"
         id="sources"
       >
@@ -139,9 +167,10 @@ export function LanguageDetailViewV2({
             sources={data.sources}
             hasSourceFlag={hasSourceFlag}
             variant="parchment"
+            language={language}
           />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
     </div>

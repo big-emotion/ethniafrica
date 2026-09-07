@@ -74,10 +74,12 @@ the remedy. Standing the globe above the rounds cost the page its game: the
 stage floor is 560 px on a phone and 720 px on a desktop, so the rounds began
 below the fold and, at 1200 px and up, nothing of the game was visible at
 all — a straight breach of §9.1, which says the stage gives way and the
-options never do. The globe is now **bound to the round** and held at the
+options never do. ~~The globe is now **bound to the round** and held at the
 flat map while a question stands. A globe beside a live round only hands over
 the answer when it tells the truth; the flat map is the lie the round is asked
-against, so reading it gives the wrong answer.
+against, so reading it gives the wrong answer.~~ **Amended again,
+2026-09-06 — see §12.** The globe is the home's, unpinned, with the reader
+holding the slider throughout.
 
 ### Retired
 
@@ -480,3 +482,295 @@ not already ask?
 - **Shrinking the globe to obey §9.1.** It would have satisfied the rule by
   degrading the one thing the page is named after. Putting the round first in
   the document obeys it without touching the globe.
+
+---
+
+## 12. The pin is withdrawn (2026-09-06)
+
+§11 bound the projection to the round: flat while a question stood, closing
+into a sphere on the reveal. **That pin is removed.** `mercator` mounts the
+home's globe stage prop for prop — editorial presentation, arriving in motion,
+and the morph bar in the reader's hands from the first round to the last.
+
+### What the pin actually cost
+
+**It withdrew the demonstration.** A pinned projection hides the morph bar
+rather than disabling it — correctly, since a control that refuses to move
+reads as a broken page. But the bar _is_ the argument: the page exists so that
+a reader can push a sphere into a Mercator map and watch the north swell. Pinned,
+that gesture was available on one screen in eight, the reveal, and never while
+the reader had a reason to care.
+
+**It labelled the lie as the truth.** The globe's legend is written for the
+sphere — « Afrique à sa surface réelle » — and the pin did not change it. So
+the flat Mercator map, the thing the whole page is an argument against, carried
+a caption certifying it as area-true. That is worse than either end of the
+slider on its own, and it was on screen for seven eighths of every session.
+
+### Why the cheat it guarded against is narrower than it looked
+
+§11 feared a reader answering « Libye ou Soudan ? » by looking left. The scene
+this page mounts sets `targetPicker="none"` (atlas charter §1): no country is
+marked, none is named, and none opens. Reading the answer off the sphere
+therefore means recognising both outlines unaided — which is knowledge, and the
+kill test is about **eyesight**. A reader who can pick Sudan out of an unlabelled
+Africa has earned the point.
+
+The residue is real and accepted: on a widely-spaced pair the sphere does help.
+It is the price of the page having a working demonstration, and it is stated
+here rather than smuggled.
+
+### What stands in its place
+
+**The round still comes first in the document, in every phase.** §9.1 is met
+the way §11 met it — by source order, never by shrinking the globe. What goes
+is the reveal's painted reordering: it existed so the closing sphere could be
+watched, and there is no closing left to watch once the reader owns the slider.
+Reordering a page under someone mid-session was its cost, and nothing now buys
+it.
+
+**The globe gains a caption that measures it.** A sphere is a picture of a
+continent, not a measurement of one, so `buildTrueSizeClaim` states the ratio —
+Africa against Greenland, computed off the outlines the sphere is drawn from,
+never typed. It states the **ratio and not the area** because the globe's own
+projection readout prints the area a few pixels above; two figures for one
+continent on one screen reads as a mistake whichever is right.
+
+**And it names the vote.** On 4 September 2026 the UN General Assembly adopted,
+164 to 1, a resolution led by Togo for the African group and backed by the
+African Union, calling for the « minimisation symbolique » of the continent to
+be corrected and naming Equal Earth. The page has argued this on its own
+authority since it shipped; it can now cite states arguing it, and link the
+reader to the record. This is the one place a game may carry an outside source:
+it is the game's own thesis, not a fiche claim, and it earns the exception §11
+already granted this page.
+
+### Known, not fixed
+
+`AtlasGlobe`'s projection readout types Africa's area — « 30,4 M km² » — while
+the outlines it draws measure 30,1. Unpinning the bar puts that figure on this
+page for the first time. It is a typed figure in a repository whose scale
+module exists to forbid them, it is wrong on the home too, and it is left for
+its own change: the measurement lives under `lib/games/` and an atlas component
+reaching into it would invert the layering to fix a one-line defect.
+
+---
+
+## 13. The bank amendment (2026-09-07)
+
+A reader reported the defect this section answers: « ce sont toujours les mêmes
+questions, il y a 8 questions et il n'y a que ces questions-là ». Both halves
+were true, and they had different causes.
+
+### What the page actually served
+
+Measured against the committed outlines, not inferred:
+
+| Measurement                                           | Value                                                             |
+| ----------------------------------------------------- | ----------------------------------------------------------------- |
+| Rounds in the whole pool, for a session of 8          | **18** — 12 comparisons, 6 estimates                              |
+| Intra-African pairs where the projection inverts rank | 25                                                                |
+| …surviving `MINIMUM_AREA_RATIO` (1.02)                | 16                                                                |
+| …reachable by the handler's greedy pairing            | 12                                                                |
+| Pairs against the six `worldCompare` silhouettes      | **4** — Greenland and Western Europe, against the DRC and Algeria |
+| Distinct opening sessions a reader could be served    | **1** — the seed was the slug                                     |
+
+**The ceiling was the filter, not the corpus.** `mercatorMisleads` accepts only
+a pair whose _drawn_ ranking is inverted, which requires two territories of
+near-identical true area; `MINIMUM_AREA_RATIO` then rejects near-identical
+areas. No amount of curation moves that: a fifty-ninth African outline adds
+roughly one pair. §11 measured seven reachable pairs and the greedy rewrite
+took it to twelve, which was the whole runway that change bought.
+
+And the second half of the reader's sentence had nothing to do with the bank.
+`takeSession` advances a window on « rejouer », but the seed came from the
+game's slug — a constant — so leaving the page reset it and the opening eight
+were the same for every visitor, for ever.
+
+### The mechanism, asked instead of only asserted
+
+Every reveal on this page has stated since it shipped that Mercator inflates
+with distance from the equator. The page had never once **asked** it.
+
+`greater-inflation` does: _« Sur une carte de Mercator, lequel de ces deux pays
+est le plus agrandi ? »_ — Tunisie against Kenya, 1,46 against 1,00. It clears
+the kill test on every count. Not eyesight: an enlargement is invisible without
+knowing the true area, and the round hands over neither. Not arithmetic. Not a
+coin flip, at the threshold below. The reasoning path is the lesson itself —
+_the one further from the equator_ — and the reveal states the two latitudes so
+a wrong answer still lands it.
+
+It also lifts the ceiling outright. Any two territories at different latitudes
+make a round: **602 African pairs at a factor gap of 1,10 and 297 at 1,20**,
+from the outlines already committed. `MINIMUM_INFLATION_RATIO` is set at 1,20
+rather than lower, because the scarce resource here is no longer pairs — it is
+questions a reader can actually reason about.
+
+**Inside Africa only.** Greenland against Kenya is 14,3 against 1,0, an answer
+readable off the shape of the option. The comparison round is where a borrowed
+silhouette earns its place; this one is about reading a map.
+
+### The comparison reaches outside the continent
+
+`larger-area` now draws from the corpus **plus** the six `worldCompare`
+silhouettes, so « Groenland ou RDC ? » — the comparison this page exists to
+make — is finally in the game that argues it. Four pairs, and they are the four
+best questions on the surface.
+
+Two rules bound it. **At least one half of every pair is African**: Western
+Europe against India is a round on an atlas of African peoples that names no
+African anything, and an empty corpus is exactly when it would be served. And
+**a mixed pair leads to the fiche of its African half**, a silhouette having
+none — `/pays/GRL` is a 404 behind an id that looks like an ISO code because,
+for Greenland, it is one.
+
+### One pass was the other half of the ceiling
+
+Widening the question was not enough on its own, and the first measurement of
+the rebuilt handler is the reason this paragraph exists: it served **22 rounds**
+where the candidate bank held 297 pairs. The greedy pairing spends each
+territory once per walk, and every inflation pair needs one of the dozen
+countries far enough from the equator — so nine pairs exhausted the anchors and
+the walk ended.
+
+`POOL_PASSES` walks the pool three times, skipping pairs already emitted and
+starting each pass further into the list, since greedy pairing over one order is
+deterministic and a second identical pass yields nothing. Measured over the
+fifty-eight outlines, the assembled pool goes from 22 to **53** — 20
+comparisons, 27 inflation rounds, 6 estimates — which is six windows of eight,
+drawn fresh on every request.
+
+Three passes and not more: the same dozen anchors carry every inflation pair, so
+past three appearances Morocco starts being the answer often enough to be
+guessable. A bank grown that way teaches a reflex rather than the rule. Inside
+one pass a territory is still spent once, which is what keeps a run of
+consecutive rounds from asking about Tunisia four times over.
+
+### One game, three questions
+
+`GameDefinition.promptFr` held the game's one question while the game had one.
+It is the line printed above every round, so it was announcing « lequel est le
+plus grand ? » above a slider. It now carries the **thesis** — _la projection de
+Mercator gonfle le nord et rapetisse l'Afrique_ — and each round carries its own
+stem.
+
+`GameRound.template` is the field that came with that split. `kind` is the
+control a round is answered with; `template` is the question it asks, and two of
+the three share the same two buttons. The suite that read « the comparison
+rounds » by filtering on `kind` was silently reading every binary round the game
+builds.
+
+The three lists are wildly uneven — hundreds, a dozen, exactly six — so the
+alternation inside each band is **round-robin, never proportional**. A draw
+weighted by pool size hands a session of eight to the largest list and the
+reader meets one question all evening.
+
+### The seed moves
+
+Per request. The comment defending the constant named two costs, and neither
+survives inspection: a moving seed cannot desynchronise the trees, because the
+rounds are built on the server and travel as serialized props with nothing
+re-deriving them; and the route was never cacheable, the root layout awaiting
+`connection()` for the CSP nonce making every page under it dynamic.
+Reproducibility stays where it belongs — the seed is a parameter and every test
+passes its own.
+
+### What this amendment does not do
+
+It adds **no comparison shape**. Russia, Canada, Kazakhstan and the rest would
+take the estimate round from six to about fifteen, and were rejected: a French
+reader holds no wrong picture of Mongolia to correct, so the round could only be
+recalled, and half the ratios would land near Greenland's fourteen as
+duplicates. The estimate round stays at six until a shape earns its place by
+being one the audience already thinks it knows.
+
+---
+
+## 14. The parallel becomes the rule (2026-09-07)
+
+§13 widened the pool so a round _could_ reach outside the continent. It stayed
+optional, and the filter said so: `mercator` asked only that **at least one**
+side of a pair be African. A pool drawn from two assets satisfies that by
+accident, so the game kept serving what it had always served — « Liberia ou
+Tunisie ? », « Malawi ou Tunisie ? » — beside the crossed rounds it was widened
+for.
+
+**Every round of this game now sets Africa against what is not Africa.** One
+African country against one borrowed silhouette for both pair questions, one
+African anchor against three borrowed candidates for the four-way, and the
+continent itself against a borrowed shape for the estimate, which already did.
+
+### What it costs, measured
+
+Rounds the handler builds over the fifty-eight African outlines and the
+twenty-two borrowed silhouettes, at seed 0:
+
+| Question                        | Before | After  | Why it moved                                  |
+| ------------------------------- | ------ | ------ | --------------------------------------------- |
+| `larger-area`                   | 31     | 31     | unchanged — see below                         |
+| `largest-of-list`               | 26     | 26     | the same 26 anchors can field 3 crossed traps |
+| `greater-inflation`             | 27     | 21     | every pair recut, and the pool walked once    |
+| `fits-in-africa`                | 6      | 6      | it was already crossed                        |
+| **whole bank**                  | **90** | **84** |                                               |
+| …opposing two African countries | **27** | **0**  |                                               |
+
+`larger-area` does not move, and that is worth stating rather than rounding
+into a saving. Three intra-African pairs clear its filters — the DRC against
+Algeria, Kenya against Morocco, Somaliland against Tunisia — but the greedy
+pairing was spending both halves of each on a silhouette before it reached
+them, so refusing them costs nothing at this seed and guarantees they cannot
+surface at another. They would be no loss anyway: Mercator's factor runs from
+1,00 to 1,46 across the African outlines, so an inversion of rank between two
+of them needs two near-identical areas — the near-tie every threshold on this
+page has been raised against since it shipped.
+
+### The one question that resisted, and why it was crossed anyway
+
+`greater-inflation` was African-only on a real argument: Greenland against
+Kenya is 14,3 against 1,0, an answer readable off the option's own shape.
+Measured, crossing it is worse than that argument suggested — the borrowed
+territory is the answer in **1 041 of the 1 051** crossed pairs that clear
+`MINIMUM_INFLATION_RATIO`, and the ten exceptions are Brazil eight times. There
+is no selection of pairs that fixes it: the factor is a function of latitude,
+and every borrowed silhouette but Brazil sits further from the equator than
+every African country.
+
+It is asked crossed regardless, because **easy and unanswerable are not the
+same defect**. The kill test refuses eyesight, arithmetic and the coin flip. A
+reader who picks Norway over Chad has used the mechanism this page exists to
+install; a reader picking Tunisia over Malawi is recalling two latitudes, which
+is harder and teaches less. What the African-only version cost was the parallel
+itself, in four of every eight rounds.
+
+The tension a session needs lives in `largest-of-list`, where three of the four
+options are drawn at least as large as the answer and no rule about categories
+gets a reader through. That round is why this one may be easy.
+
+### Two defects the crossing opened, both fixed here
+
+**The reveal led nowhere.** `greater-inflation` linked to the _answer's_ fiche,
+sound while both options were African. Crossed, the answer is a silhouette in
+all but ten pairs and the link resolved to `/pays/NOR` — a 404 behind an id
+that looks like an ISO code because it is one. Both pair questions now lead to
+the pair's African half, through one `documentedHalf` in `lib/games/territory`
+rather than a copy each.
+
+**One question took the opening.** Crossed, nearly every African country
+differs enough in latitude from nearly every silhouette to be worth asking
+about, where `mercatorMisleads` still rejects most pairs a comparison could
+form. Three passes over the pool therefore built 62 inflation rounds against 31
+comparisons, and since each template bands its own rounds, its top decile grew
+with it: six of the first eight rounds, Greenland in three of them. The
+round-robin cannot fix that — it only alternates between the rounds a band
+holds. The inflation question walks the pool **once**; the scarce ones still
+walk it three times.
+
+### What is not settled
+
+In a crossed `larger-area` round the African country is the answer **122 times
+out of 122** — by construction, since the round exists to show a country drawn
+smaller than it is. Paired with `greater-inflation`, where the answer is the
+silhouette, a reader could in principle answer both without reading: « le plus
+grand, c'est l'africain ; le plus agrandi, c'est l'autre ». Nothing here
+prevents that. It is recorded rather than smoothed over, and the four-way round
+is the only thing standing against it today.

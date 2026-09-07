@@ -16,13 +16,17 @@
  */
 
 import { logger } from "@/lib/api/logger";
+import { readAlliances } from "@/lib/patronymes/content";
 import { createServerClient } from "@/lib/supabase/server";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 import type {
+  PatronymeAllianceSummary,
   PatronymeBearerSummary,
   PatronymeCountrySummary,
   PatronymeNameSystem,
   PatronymePeopleSummary,
 } from "@/api/v2/schemas/patronymes";
+import { withTranslation, type TranslatedEntity } from "./translations";
 
 export interface PatronymeAggregate {
   id: string;
@@ -33,6 +37,7 @@ export interface PatronymeAggregate {
   associatedPeoples: PatronymePeopleSummary[];
   associatedCountries: PatronymeCountrySummary[];
   bearers: PatronymeBearerSummary[];
+  alliances: PatronymeAllianceSummary[];
 }
 
 export interface PatronymeListItem {
@@ -491,10 +496,65 @@ export async function getPatronymeCountryIndex(
   return rows;
 }
 
+/**
+ * The names this name is allied with, each resolved to its `name_main`.
+ *
+ * One `in` query over the targets the dossier declares, so a fiche with three
+ * pacts costs one round trip and not three. A target the database does not
+ * hold is dropped rather than shown by its id: the corpus is loaded in two
+ * steps and a dossier can cite a name whose own row has not landed yet, and
+ * the one thing this list must never print is `PAT_COULIBALY`.
+ */
+async function getAlliances(
+  supabase: ReturnType<typeof createServerClient>,
+  content: Record<string, unknown>
+): Promise<PatronymeAllianceSummary[]> {
+  const declared = readAlliances(content);
+  if (declared.length === 0) return [];
+
+  const { data, error } = await supabase
+    .from("afrik_patronymes")
+    .select("id, name_main")
+    .in(
+      "id",
+      uniqueStrings(declared.map((alliance) => alliance.targetPatronymeId))
+    );
+
+  if (error) {
+    throw new Error(`Failed to load allied patronymes: ${error.message}`);
+  }
+
+  const nameById = new Map(
+    ((data ?? []) as Array<{ id: string; name_main: string }>).map((row) => [
+      row.id,
+      row.name_main,
+    ])
+  );
+
+  return declared.flatMap((alliance) => {
+    const targetNameMain = nameById.get(alliance.targetPatronymeId);
+    if (!targetNameMain) {
+      logger.warn(
+        `Alliance target ${alliance.targetPatronymeId} has no row yet — dropped from the fiche`
+      );
+      return [];
+    }
+    return [
+      {
+        targetId: alliance.targetPatronymeId,
+        targetNameMain,
+        allianceType: alliance.allianceType,
+      },
+    ];
+  });
+}
+
 // @req REQ-133
+// @req REQ-142
 export async function getPatronymeById(
-  id: string
-): Promise<PatronymeAggregate | null> {
+  id: string,
+  lang: TranslationLocale = "fr"
+): Promise<TranslatedEntity<PatronymeAggregate> | null> {
   const supabase = createServerClient();
 
   const { data: patronymeRow, error: patronymeError } = await supabase
@@ -516,15 +576,24 @@ export async function getPatronymeById(
     caste_or_social_function: string | null;
     content: Record<string, unknown> | null;
   };
-  const content = row.content ?? {};
+  // `content` is the dossier itself, so the overlay reads the fiche's own
+  // paths; the columns pulled to the top level stay as the corpus wrote them.
+  const { record: content, translation } = await withTranslation(
+    "patronyme",
+    id,
+    lang,
+    row.content ?? {}
+  );
 
-  const [associatedPeoples, associatedCountries, bearers] = await Promise.all([
-    getAssociatedPeoples(supabase, id),
-    getAssociatedCountries(supabase, id),
-    getBearers(supabase, id),
-  ]);
+  const [associatedPeoples, associatedCountries, bearers, alliances] =
+    await Promise.all([
+      getAssociatedPeoples(supabase, id),
+      getAssociatedCountries(supabase, id),
+      getBearers(supabase, id),
+      getAlliances(supabase, content),
+    ]);
 
-  return {
+  const aggregate: PatronymeAggregate = {
     id: row.id,
     nameMain: typeof content.nameMain === "string" ? content.nameMain : "",
     nameSystem: row.name_system,
@@ -533,5 +602,8 @@ export async function getPatronymeById(
     associatedPeoples,
     associatedCountries,
     bearers,
+    alliances,
   };
+
+  return lang === "fr" ? aggregate : { ...aggregate, translation };
 }

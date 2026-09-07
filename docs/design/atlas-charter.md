@@ -165,12 +165,36 @@ thing. **L'atlas** carries the identifier `atlas` and routes under
 redirected rather than reachable: every address published under them reaches
 its successor in one hop (`src/middleware.ts`, `RELOCATED_SEGMENTS`).
 
-The access-mode label is a non-navigating heading or disclosure; direct module
-links sit beneath it. A live module is exactly one click away from the global
-navigation: the reader selects that module, never an intermediate axis landing
-page first. The register uses a panel on desktop and a drawer on mobile
-(< 760 px). Both are driven by `src/lib/hubs/moduleRegistry.ts` — the menu is
-generated from it, never hand-listed.
+The access-mode labels remain disclosures in the header. Atlas and games offer
+individual modules directly. Dossiers instead offers published themes from
+`src/lib/dossiers/themes.ts` and an index at `/fr/dossiers`, restored by the
+user-approved architecture of 6 September 2026. A dossier keeps one canonical
+address across themes and fiche links; the primary theme determines its trail.
+
+**Each label is also an address again.** `/fr/atlas`, `/fr/dossiers` and
+`/fr/jeux` each serve an axis hub on the shared spread of `brand-charter.md`
+§8.6 — the axis's title, the sentence this header shows beside its tiles, and
+those same tiles. The label in the bar stays a disclosure: it opens the panel
+rather than navigating, and the panel's own title is what links through. What
+changes is everything downstream of the address existing — the trail's axis
+crumb carries an `href`, the sitemap publishes the three, and the plan du site
+names them as pages rather than as headings. Every one of those was written as
+"there is nowhere to lead to", which was a fact about ETNI-1555 and is no
+longer one.
+
+There are at most eight editorial themes. Below 768 px the header uses a drawer;
+from 768 px it uses a panel. Theme selection remains compact below 1200 px,
+with a native select, and becomes a four-column grid from 1200 px, capped at
+two rows by the bounded vocabulary. Search and theme selection occupy two
+control rows on the dossier index at mobile and tablet sizes. Enlarged text
+must remain readable; labels are not clipped to enforce density.
+
+Only themes containing published dossiers are offered. Draft dossiers retain
+their editorial state and routes but do not create empty theme invitations.
+Anecdotes are a reading format, reached from the directory, not a ninth theme.
+This clause supersedes the former ban on a dossier landing page and the
+requirement to list every dossier module in global navigation. Atlas and game
+module availability behavior stays governed by the rules below.
 
 - A module with **no resolvable route** renders as **Bientôt** and is not
   focusable. The menu never offers a route that does not resolve. Unavailable
@@ -184,8 +208,7 @@ generated from it, never hand-listed.
   `getModuleHref` (`src/lib/hubs/moduleHref.ts`), read by both surfaces, and
   the charter asks about its result rather than about one of its inputs.
 
-- The menu **names destinations; it never prints their addresses**. A module
-  absent from the menu is a module absent from the corpus.
+- The menu **names destinations; it never prints their addresses**.
 
   This used to read "the panel shows each destination's real route", and the
   panel duly printed `/fr/comprendre/regards/colonisation-et-resistances` —
@@ -196,6 +219,58 @@ generated from it, never hand-listed.
   where the browser's status bar, the crawler and the screen reader all agree
   to look for it; a URL long enough to wrap over two lines was never the thing
   that told a reader where a click lands.
+
+- **The menu is curated; the exhaustive index is elsewhere.** A module is
+  offered in the header and on the hub grid because a reader would plausibly
+  arrive _wanting to browse it_. One that answers a term the reader already
+  holds — a lookup, not a walk — is declared `unlisted` in `moduleRegistry`,
+  and is reached from the plan du site instead. This
+  supersedes the former clause "a module absent from the menu is a module
+  absent from the corpus", which had stood since the menu held three modules.
+
+  The failure it prevents is a row nobody clicks, and it was measured before it
+  was believed. **Appellations** — the index of attested name forms — held one
+  of seven atlas rows on every page of the site and drew **0 visits out of 219
+  pageviews in the 30 days to 6 September 2026**, a window in which 45 % of
+  visitors arrived from a single LinkedIn post and were therefore meeting the
+  menu for the first time. Over the same window `/fr/atlas/familles` drew 1 and
+  `/fr/atlas/noms` 2, while nine individual patronym fiches were read. The page
+  is not weak: its own reason for existing — turn a name heard elsewhere into
+  the people it designates — is a lookup that was never wired into the search
+  (`SEARCH_RESULT_GROUPS` indexes peoples, languages, countries, families and
+  patronyms, not name records), and it carries no inbound link from any fiche.
+  A menu row was the wrong organ for it, and it cost the six rows beside it,
+  because a reader reads the whole set before choosing any of it.
+
+  `unlisted` withholds a menu row and nothing else. The route stays built, the
+  trail keeps the axis crumb its URL promises, the sitemap keeps its line, and
+  the plan du site names it. It used to say _the footer directory names it_,
+  and that stopped being true on 7 September 2026: the footer's Explorer column
+  now names the three axis hubs rather than the six corpus indexes, so a reader
+  meets the same three doors there as in the bar. The exhaustive index is the
+  plan du site alone — one surface rather than two, which is the honest count
+  and the one `siteTree.ts` has always actually held. That is the whole distance between this field and
+  `NEXT_PUBLIC_FEATURE_QUIZ`, which made a finished page answer `notFound()` on
+  one machine and serve on another — and it is why the clause above about
+  reachability is untouched: unlisting is a statement about the menu, never
+  about the corpus.
+
+  Asserted by `moduleVisibilityCharter.test.ts` on three counts — the header
+  hides only what is declared `unlisted`, an unlisted module stays routed and
+  on its axis and in the plan du site, and the hub grid resolves exactly what
+  the header offers.
+
+- **An entry is named after the content class behind it, not after its
+  rendering.** A first-time reader decodes the row or does not use it. « L'arbre
+  des familles » named a tree and left the noun to the reader — familles de
+  quoi — while the class it holds was already written one line below it in the
+  registry, `Familles linguistiques`; it became **Les familles linguistiques**
+  on 7 September 2026. « Noms » became **Les noms d'Afrique** the same day, for
+  the reason the plural was settled before it: the row stands beside « Les pays
+  d'Afrique », « Les peuples d'Afrique » and « Les langues d'Afrique », and a
+  bare noun among them reads as a field on a form rather than as the fifth
+  index — the more so while a row named « Appellations » sat directly above it,
+  naming, to the reader's ear, the same thing.
 
 - **A facet is a direct destination, not a second navigation level.** Peoples,
   countries and families remain three facets of the Explorer surface, grouped
@@ -368,3 +443,37 @@ keyboard reader must arrive somewhere they can read from.
 from where the chapters start, so the globe keeps the screen to itself while it
 is the subject. It takes the parchment's measure, not the viewport's, and the
 ground on either side of it is the ground the document is printed on.
+
+**A fiche ends with a way out.** Measured on production 2026-09-07: the fiches
+hold a reader for 251 to 276 seconds — `PPL_BASSA_CAM` 274, `pays/COD` 276 —
+against 21 seconds on the listings that point at them. Ten of them nonetheless
+showed a **100 % exit rate**. The reading was never the problem. The foot of the
+document was: four minutes of attention ended against a bibliography and a
+browser's back button. Pages per visit sat at 3.09, and that ceiling was not
+interest, it was the absence of an outbound link.
+
+So the last chapter of a fiche is `Poursuivre`, and four rules hold it to what
+the corpus can actually justify:
+
+- **Derived, never recommended.** The links are read off relations the corpus
+  already declares — a family, a language, a country, a people of the same
+  family, a patronyme borne. Nothing scores or ranks. An atlas whose argument is
+  provenance cannot close its documents on a guess.
+- **Absent, never empty.** A fiche the corpus relates to nothing renders no
+  block. §4 above governs a _field_ of the fiche, where an absence is a fact
+  about the subject and is owed to the reader; this is navigation, and there is
+  no fact to report. §7's rule applies instead: a chapter the corpus does not
+  produce is not in the DOM, and therefore not in the rail.
+- **One accent, the page's.** The rows name no colour. Painting each in its
+  target entity's hue is the tempting move and it opens a **fourth**
+  entity-to-colour mapping inside one scroll — §2 already runs three at once,
+  and a reader cannot learn a code that means three things. What kind of thing a
+  link leads to is carried by a word.
+- **Five, and they are action links.** Past five rows the chapter stops reading
+  as an invitation and becomes a second listing, which is the shape these fiches
+  already out-read ten to one. Each row is form A of `actions-charter.md` — label
+  then arrow, no container. Cards would put four hundred pixels of chrome at the
+  foot of a fifteen-thousand-pixel document, competing with the one layer that
+  must look auditable.
+
+The contract is `src/components/fiche/__tests__/ficheOnwardCharter.test.tsx`.

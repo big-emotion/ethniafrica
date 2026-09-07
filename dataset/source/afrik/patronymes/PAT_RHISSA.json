@@ -73,7 +73,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "Un nom personnel non héréditaire ne suffit pas à porter une alliance entre patronymes ; les recherches « Rhissa alliance », « joking relationship » et « pacte touareg » n’ont fourni aucune paire avec une autre fiche PAT_*."
+      "reason": "Un nom personnel non héréditaire ne suffit pas à porter une alliance entre patronymes ; les recherches « Rhissa alliance », « joking relationship » et « pacte touareg » n’ont fourni aucune paire avec un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

@@ -1,0 +1,3799 @@
+{
+  "schemaVersion": 1,
+  "countryId": "COD",
+  "countryName": "République démocratique du Congo",
+  "updatedAt": "2026-09-07",
+  "purpose": "Record-level reconciliation of local people-country links. Automated flags are review prompts, not editorial conclusions.",
+  "regeneration": {
+    "command": "npx tsx scripts/afrik/updateCountryPeopleLedger.ts COD --write",
+    "preservedFields": ["entries[].review"]
+  },
+  "reviewVocabulary": {
+    "status": ["pending", "in_review", "resolved"],
+    "entityType": [
+      "unknown",
+      "people",
+      "subgroup",
+      "language_label",
+      "macro_category",
+      "duplicate",
+      "rejected_link"
+    ]
+  },
+  "summary": {
+    "totalEntries": 69,
+    "fullyLinkedEntries": 64,
+    "incompleteLinkEntries": 5,
+    "macroLikeEntries": 4,
+    "nameLanguageLabelMatches": 47,
+    "entriesWithoutAcceptedSource": 4,
+    "sharedIsoCodeClusters": 16,
+    "featuredFamilyMismatches": 9,
+    "entriesRequiringReview": 66,
+    "editorialReview": {
+      "totalRelations": 69,
+      "reviewedRelations": 69,
+      "pendingRelations": 0,
+      "reviewCompletionPercent": 100,
+      "reviewedByEntityType": {
+        "people": 35,
+        "duplicate": 10,
+        "macro_category": 6,
+        "subgroup": 9,
+        "language_label": 3,
+        "rejected_link": 6
+      }
+    }
+  },
+  "sharedIsoCodeClusters": [
+    {
+      "isoCode": "bem",
+      "peopleIds": ["PPL_BANTU", "PPL_BEMBA", "PPL_LUNDA_KAZEMBE"]
+    },
+    {
+      "isoCode": "cjk",
+      "peopleIds": ["PPL_CHOKWE", "PPL_LUNDA_CHOKWE", "PPL_TSHOKWE"]
+    },
+    {
+      "isoCode": "kin",
+      "peopleIds": [
+        "PPL_KINYARWANDA",
+        "PPL_KIRUNDI_HUTU",
+        "PPL_KIRUNDI_TUTSI",
+        "PPL_RWANDAIS_HUTU",
+        "PPL_RWANDAIS_TUTSI",
+        "PPL_TWA"
+      ]
+    },
+    {
+      "isoCode": "kng",
+      "peopleIds": [
+        "PPL_KIKONGO",
+        "PPL_KONGO_SUD",
+        "PPL_MANIANGA",
+        "PPL_SOLONGO"
+      ]
+    },
+    {
+      "isoCode": "kon",
+      "peopleIds": [
+        "PPL_BANTU",
+        "PPL_KIKONGO",
+        "PPL_KONGO",
+        "PPL_KONGO_SUD",
+        "PPL_MANIANGA",
+        "PPL_SOLONGO"
+      ]
+    },
+    {
+      "isoCode": "ldi",
+      "peopleIds": ["PPL_KIKONGO", "PPL_SCT_MACRO"]
+    },
+    {
+      "isoCode": "lgg",
+      "peopleIds": ["PPL_LUGBARA", "PPL_SCT_MACRO"]
+    },
+    {
+      "isoCode": "lin",
+      "peopleIds": ["PPL_BANTU", "PPL_LINGALA", "PPL_NGALA"]
+    },
+    {
+      "isoCode": "lua",
+      "peopleIds": ["PPL_LUBA", "PPL_LUBA_KASAI", "PPL_LULUA"]
+    },
+    {
+      "isoCode": "lub",
+      "peopleIds": ["PPL_LUBA", "PPL_LUBA_KATANGA"]
+    },
+    {
+      "isoCode": "lun",
+      "peopleIds": ["PPL_LUNDA", "PPL_LUNDA_CHOKWE", "PPL_LUNDA_NDEMBU"]
+    },
+    {
+      "isoCode": "ngb",
+      "peopleIds": ["PPL_NGBANDE", "PPL_SANGO"]
+    },
+    {
+      "isoCode": "run",
+      "peopleIds": [
+        "PPL_BANTU",
+        "PPL_HUTU_BURUNDI",
+        "PPL_KIRUNDI_HUTU",
+        "PPL_KIRUNDI_TUTSI",
+        "PPL_RUNDI",
+        "PPL_TWA"
+      ]
+    },
+    {
+      "isoCode": "sag",
+      "peopleIds": ["PPL_SANGO", "PPL_SANGO_SCT"]
+    },
+    {
+      "isoCode": "yom",
+      "peopleIds": ["PPL_KONGO_MAYOMBE", "PPL_YOMBE"]
+    },
+    {
+      "isoCode": "zne",
+      "peopleIds": ["PPL_AZANDE_SUD", "PPL_SCT_MACRO", "PPL_ZANDE"]
+    }
+  ],
+  "entries": [
+    {
+      "id": "PPL_ALUR",
+      "nameMain": "Alur",
+      "selfAppellation": "Alur",
+      "languageFamilyId": "FLG_NILOTIQUE",
+      "isoCodes": ["alz"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 5,
+        "needsReview": 0,
+        "unverified": 1,
+        "withUrl": 5
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_ALUR",
+        "parentPeopleId": null,
+        "decision": "Keep Alur as a DRC–Uganda cross-border people record.",
+        "notes": "Ethnographic and contemporary governance research identifies Alur as a distinct people with a major presence in Mahagi and wider Ituri. The fiche's 2025 totals are modeled estimates rather than census counts and require source-specific uncertainty before publication.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Alur",
+            "url": "https://glottolog.org/resource/languoid/id/alur1250",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Wageningen University — Public Private Cooperation in Fragile States: Ituri field research",
+            "url": "https://edepot.wur.nl/247871",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_AMBUNDU",
+      "nameMain": "Ambundu",
+      "selfAppellation": "Ambundu",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["kmb"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": false,
+        "appellationsCurrentCountries": false,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 9,
+        "accepted": 3,
+        "needsReview": 1,
+        "unverified": 5,
+        "withUrl": 8
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["incomplete_country_link"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_AMBUNDU",
+        "parentPeopleId": null,
+        "decision": "Keep the Ambundu/Loanda Mbundu link to the DRC, but treat the current population value as an estimate requiring source alignment.",
+        "notes": "Glottolog records Kimbundu in both Angola and the DRC, while PeopleGroups.org and Joshua Project independently list a small DRC diaspora population near 32,000–34,000. The fiche's 30,000 value is plausible but its top-level and appellation country fields remain inconsistent with its demography; reconcile those fields only after selecting and dating one population source.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Kimbundu",
+            "url": "https://glottolog.org/resource/languoid/id/kimb1241",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "PeopleGroups.org — Loanda Mbundu of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg014619/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Joshua Project — Kimbundu in the Democratic Republic of the Congo",
+            "url": "https://joshuaproject.net/pray/cards/single/13154/CG",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_AZANDE_SUD",
+      "nameMain": "Azande du Sud",
+      "selfAppellation": "Azande (singulier : Zande)",
+      "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+      "isoCodes": ["zne"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 3,
+        "needsReview": 1,
+        "unverified": 1,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "zne",
+          "peopleIds": ["PPL_SCT_MACRO", "PPL_ZANDE"]
+        }
+      ],
+      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "duplicate",
+        "canonicalPeopleId": "PPL_ZANDE",
+        "parentPeopleId": null,
+        "decision": "Proposed duplicate or unsupported regional-split record. Preserve Azande du Sud as a searchable label and retain this immutable ID until a redirect or retirement mechanism exists.",
+        "notes": "This fiche and PPL_ZANDE share the same three-country scope, self-designation, ISO 639-3 zne, historical region, and underlying sources. The consulted authorities treat Azande and Zande as names for one transborder community, not separate southern and general peoples. Population estimates must not be summed.",
+        "sources": [
+          {
+            "title": "British Museum — Azande",
+            "url": "https://www.britishmuseum.org/collection/term/x85270",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog 5.3 — Zande",
+            "url": "https://glottolog.org/resource/languoid/id/zand1248",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P136-007"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_BANDA",
+      "nameMain": "Banda",
+      "selfAppellation": "Banda",
+      "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+      "isoCodes": ["bfl", "bqk", "liy"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 1,
+        "needsReview": 1,
+        "unverified": 3,
+        "withUrl": 5
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_BANDA",
+        "parentPeopleId": null,
+        "decision": "Keep Banda as a broad transborder people identity represented in the DRC, while treating its named language communities as non-additive subgroups.",
+        "notes": "Controlled vocabulary and current specialist directories attest Banda communities in the DRC. The fiche spans several Banda language varieties and cannot support an exact 70,000 DRC total from its present citations; population and subgroup boundaries require a record-level source inventory. Its current bfl, bqk, and liy codes identify varieties that Glottolog places outside the DRC, while the pinned CD inventory instead includes Banda-Banda (bpd), Mid-Southern Banda (bjo), South Central Banda (lnl), and Togbo-Vara Banda (tor). Do not publish the current code list as DRC language coverage.",
+        "sources": [
+          {
+            "title": "Library of Congress Subject Headings — Banda (African people)",
+            "url": "https://www.loc.gov/aba/publications/Archived-LCSH37/B.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "PeopleGroups.org — Banda of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg043068/",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_BANTU",
+      "nameMain": "Bantou",
+      "selfAppellation": "Bantou",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": [
+        "bam",
+        "bem",
+        "kik",
+        "kon",
+        "lin",
+        "lug",
+        "nya",
+        "run",
+        "sna",
+        "swh",
+        "xho",
+        "zul"
+      ],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 3,
+        "needsReview": 1,
+        "unverified": 2,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "bem",
+          "peopleIds": ["PPL_BEMBA", "PPL_LUNDA_KAZEMBE"]
+        },
+        {
+          "isoCode": "kon",
+          "peopleIds": [
+            "PPL_KIKONGO",
+            "PPL_KONGO",
+            "PPL_KONGO_SUD",
+            "PPL_MANIANGA",
+            "PPL_SOLONGO"
+          ]
+        },
+        {
+          "isoCode": "lin",
+          "peopleIds": ["PPL_LINGALA", "PPL_NGALA"]
+        },
+        {
+          "isoCode": "run",
+          "peopleIds": [
+            "PPL_HUTU_BURUNDI",
+            "PPL_KIRUNDI_HUTU",
+            "PPL_KIRUNDI_TUTSI",
+            "PPL_RUNDI",
+            "PPL_TWA"
+          ]
+        }
+      ],
+      "automatedFlags": [
+        "macro_like",
+        "name_matches_language_label",
+        "shared_iso_code"
+      ],
+      "review": {
+        "status": "in_review",
+        "entityType": "macro_category",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Proposed macro-category classification. Keep as a taxonomy or editorial topic, but exclude it from the individual-people count and country selector.",
+        "notes": "The local fiche describes Bantu as an academic linguistic grouping covering hundreds of peoples and states that no group identifies spontaneously as Bantu. Its country links express geographic reach, not one individual people relation.",
+        "sources": [
+          {
+            "title": "Local source fiche — PPL_BANTU",
+            "localFile": "dataset/source/afrik/peuples/FLG_NIGERCONGO/PPL_BANTU.json"
+          },
+          {
+            "title": "Nature 2023 — The genetic legacy of the expansion of Bantu-speaking peoples in Africa",
+            "url": "https://www.nature.com/articles/s41586-023-06770-6"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_BEMBA",
+      "nameMain": "Bemba",
+      "selfAppellation": "Aɓemba (sg. Uɓemba ou Muɓemba)",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["bem"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 4,
+        "accepted": 2,
+        "needsReview": 0,
+        "unverified": 2,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "bem",
+          "peopleIds": ["PPL_BANTU", "PPL_LUNDA_KAZEMBE"]
+        }
+      ],
+      "automatedFlags": [
+        "featured_family_mismatch",
+        "name_matches_language_label",
+        "shared_iso_code"
+      ],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_BEMBA",
+        "parentPeopleId": null,
+        "decision": "Keep PPL_BEMBA as a distinct transborder Bemba identity; do not merge it with the Lunda-Kazembe record solely because both use ISO 639-3 bem.",
+        "notes": "The shared language code reflects the eastern Luba-Lunda/Kazembe history and language shift, not identity equivalence. The featured-family mismatch requires taxonomy normalization, and the DRC population estimate needs a directly compatible source.",
+        "sources": [
+          {
+            "title": "eHRAF World Cultures — Bemba",
+            "url": "https://ehrafworldcultures.yale.edu/cultures/fq05/documents/003",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P131-051"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_BEMBE",
+      "nameMain": "Bembe",
+      "selfAppellation": "Babembe",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["bmb"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 2,
+        "needsReview": 1,
+        "unverified": 3,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_BEMBE",
+        "parentPeopleId": null,
+        "decision": "Keep as the eastern Bembe/Babembe people of Fizi and the Lake Tanganyika corridor.",
+        "notes": "The ISO 639-3 bmb and direct geographic sources support the DRC relation. This identity must remain distinct from the Beembe/Bembe people of the Republic of the Congo in the Kongo cultural sphere, and the modeled DRC population requires a compatible demographic source.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Bembe",
+            "url": "https://glottolog.org/resource/languoid/id/bemb1255",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Smithsonian Institution — Bembe art",
+            "url": "https://www.si.edu/object/siris_sil_557444",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_BENOUECONGO_MACRO",
+      "nameMain": "Peuples Bénoué-Congo",
+      "selfAppellation": "Diverses selon les sous-groupes (chaque peuple possède son propre ethnonyme)",
+      "languageFamilyId": "FLG_BENOUECONGO",
+      "isoCodes": [],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 4,
+        "accepted": 2,
+        "needsReview": 0,
+        "unverified": 2,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["macro_like"],
+      "review": {
+        "status": "in_review",
+        "entityType": "macro_category",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Proposed macro-category classification. Keep as a linguistic taxonomy node, but exclude it from the individual-people count and country selector.",
+        "notes": "The local fiche explicitly defines Benue-Congo as an academic linguistic classification rather than a lived ethnic identity and records distinct self-designations for its constituent peoples.",
+        "sources": [
+          {
+            "title": "Local source fiche — PPL_BENOUECONGO_MACRO",
+            "localFile": "dataset/source/afrik/peuples/FLG_BENOUECONGO/PPL_BENOUECONGO_MACRO.json"
+          },
+          {
+            "title": "Ethnologue — Language families",
+            "url": "https://www.ethnologue.com/insights/family/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_CHOKWE",
+      "nameMain": "Chokwe",
+      "selfAppellation": "Chokwe",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["cjk"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 4,
+        "accepted": 0,
+        "needsReview": 0,
+        "unverified": 4,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "cjk",
+          "peopleIds": ["PPL_LUNDA_CHOKWE", "PPL_TSHOKWE"]
+        }
+      ],
+      "automatedFlags": [
+        "no_accepted_source",
+        "name_matches_language_label",
+        "shared_iso_code"
+      ],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_CHOKWE",
+        "parentPeopleId": null,
+        "decision": "Proposed canonical record for the Chokwe/Tshokwe identity. Merge the stronger sourced content from PPL_TSHOKWE before any retirement operation.",
+        "notes": "Glottolog and the British Museum each treat Tshokwe as an alternative name of Chokwe. Both local fiches use ISO 639-3 cjk and cover the same countries. PPL_LUNDA_CHOKWE remains outside this duplicate proposal pending a separate scope review.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Chokwe",
+            "url": "https://glottolog.org/resource/languoid/id/chok1245",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "British Museum — Chokwe",
+            "url": "https://www.britishmuseum.org/collection/term/x83452",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P135-016"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_FURU",
+      "nameMain": "Furu",
+      "selfAppellation": "Furu",
+      "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+      "isoCodes": ["fuu"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 3,
+        "needsReview": 0,
+        "unverified": 3,
+        "withUrl": 5
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_FURU",
+        "parentPeopleId": null,
+        "decision": "Keep Furu/Fulu as a DRC–Central African Republic cross-border people record.",
+        "notes": "Recent Ghent University fieldwork and linguistic catalogues directly attest Furu in Nord-Ubangi. The fiche's 12,000 DRC value is substantially below the current PeopleGroups.org estimate of about 44,000 and must be replaced or dated rather than presented as current precision.",
+        "sources": [
+          {
+            "title": "Ghent University CongUbangi — Linguistic and genetic fieldwork on Furu in Nord-Ubangi",
+            "url": "https://www.congubangi.ugent.be/2024/06/05/linguistic-and-genetic-fieldwork-on-furu-fuu-in-the-province-of-nord-ubangi-drc/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog 5.3 — Furu",
+            "url": "https://glottolog.org/resource/languoid/id/furu1242",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "PeopleGroups.org — Furu of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg014551/",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_GBAYA",
+      "nameMain": "Gbaya",
+      "selfAppellation": "Gbaya (terme utilise par le groupe lui-meme) ; aussi Gbeya ou Baya selon les sous-groupes",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["gba", "gbp"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 1,
+        "needsReview": 0,
+        "unverified": 5,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_GBAYA",
+        "parentPeopleId": null,
+        "decision": "Keep Gbaya provisionally as a broad people identity, but leave the DRC country relation unapproved until a direct contemporary source identifies the local community.",
+        "notes": "Ethnographic literature supports Gbaya as a people with multiple regional and linguistic branches, but the strongest sources reviewed focus on the Central African Republic and Cameroon. The local 20,000-person DRC estimate has no direct support, and Congo-Brazzaville references create an ambiguity risk. The broad gba code has no individual Glottolog CD row and Gbaya-Bossangoa (gbp) is placed in the Central African Republic only. Do not publish or count the DRC relation or its current codes as verified yet.",
+        "sources": [
+          {
+            "title": "ERIC — The Gbaya Language, Grammar, Texts, and Vocabularies",
+            "url": "https://eric.ed.gov/?id=ED012895",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Journal des Africanistes — La conception gbaya du corps humain",
+            "url": "https://www.persee.fr/doc/jafr_0399-0346_1980_num_50_1_1994",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_HAVU",
+      "nameMain": "Havu",
+      "selfAppellation": "Bahavu",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["hav"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 4,
+        "accepted": 2,
+        "needsReview": 0,
+        "unverified": 2,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_HAVU",
+        "parentPeopleId": null,
+        "decision": "Keep Havu/Bahavu as a DRC people record centered on Idjwi and Kalehe.",
+        "notes": "Historical scholarship distinguishes Havu people and their political communities in the Lake Kivu region. The local population field extrapolates a 2002 language figure and later territorial totals; it must be labeled as an estimate and not as a current ethnic census.",
+        "sources": [
+          {
+            "title": "David S. Newbury — Kings and Clans: Ijwi Island and the Lake Kivu Rift, 1780–1840",
+            "url": "https://archive.org/details/kingsclansijwiis0000newb",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Journal des Africanistes — Lake Kivu Regional Trade in the Nineteenth Century",
+            "url": "https://www.persee.fr/doc/jafr_0399-0346_1980_num_50_2_2001",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_HUNDE",
+      "nameMain": "Hunde",
+      "selfAppellation": "Bahunde",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["hke"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 2,
+        "needsReview": 2,
+        "unverified": 2,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": [
+        "featured_family_mismatch",
+        "name_matches_language_label"
+      ],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_HUNDE",
+        "parentPeopleId": null,
+        "decision": "Keep Hunde/Bahunde as a DRC people record centered on North Kivu.",
+        "notes": "Controlled vocabulary and historical scholarship explicitly identify Hunde as a people of the DRC and distinguish the ethnonym from Kihunde, its language. Correct the featured-family mismatch before surfacing the record, and treat the 950,000 population as an estimate pending a traceable demographic source.",
+        "sources": [
+          {
+            "title": "Bibliothèque nationale de France — Hunde (peuple d'Afrique)",
+            "url": "https://catalogue.bnf.fr/ark:/12148/cb15020443n",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Journal des Africanistes — Lake Kivu Regional Trade in the Nineteenth Century",
+            "url": "https://www.persee.fr/doc/jafr_0399-0346_1980_num_50_2_2001",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_HUTU_BURUNDI",
+      "nameMain": "Hutu du Burundi",
+      "selfAppellation": "Abahutu",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["run"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 3,
+        "needsReview": 1,
+        "unverified": 1,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "run",
+          "peopleIds": [
+            "PPL_BANTU",
+            "PPL_KIRUNDI_HUTU",
+            "PPL_KIRUNDI_TUTSI",
+            "PPL_RUNDI",
+            "PPL_TWA"
+          ]
+        }
+      ],
+      "automatedFlags": ["shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "duplicate",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Include this record in the four-record Hutu duplicate cluster. Count the cluster once and defer canonical-ID selection until a neutral PPL_HUTU record or equivalent redirect target is designed.",
+        "notes": "Despite its Burundi-qualified identifier, the fiche declares Burundi, Rwanda, Tanzania, Uganda, and the DRC and repeats the Abahutu identity represented by PPL_KIRUNDI_HUTU, PPL_RWANDAIS_HUTU, and PPL_RWENDAIS_HUTU. Conflicting population estimates must not be summed.",
+        "sources": [
+          {
+            "title": "Minority Rights Group — Banyarwanda in the Democratic Republic of the Congo",
+            "url": "https://minorityrights.org/communities/banyarwanda/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "United States Holocaust Memorial Museum — Divided by Ethnicity",
+            "url": "https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P132-016"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_KAKWA",
+      "nameMain": "Kakwa",
+      "selfAppellation": "Kakwa Salia Musala",
+      "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+      "isoCodes": ["keo"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 2,
+        "needsReview": 3,
+        "unverified": 1,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_KAKWA",
+        "parentPeopleId": null,
+        "decision": "Keep Kakwa as a transborder DRC–Uganda–South Sudan people record.",
+        "notes": "The cited conflict-research source supports the Kakwa as a border-straddling community, while the local 200,000 total ultimately relies on community and non-census estimates. Preserve the identity relation but require a direct country-level demographic source before publishing the 30,000 DRC figure.",
+        "sources": [
+          {
+            "title": "ACCORD — The Hidden Population: Kakwa across borders",
+            "url": "https://www.accord.org.za/conflict-trends/the-hidden-population/",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_KAONDE",
+      "nameMain": "Kaonde",
+      "selfAppellation": "BaKaonde",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["kqn"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 1,
+        "needsReview": 1,
+        "unverified": 5,
+        "withUrl": 7
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_KAONDE",
+        "parentPeopleId": null,
+        "decision": "Keep Kaonde as a DRC–Zambia cross-border people record.",
+        "notes": "Current specialist directories independently retain a Kaonde community in the DRC. The fiche's 50,000-person DRC value is older than the current PeopleGroups.org estimate of about 93,000 and should be redated or replaced before publication; it must not be presented as census precision.",
+        "sources": [
+          {
+            "title": "PeopleGroups.org — Kaonde of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg014580/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "University of Amsterdam — A general survey of the historical migration of the Kaonde clans from southern Congo into Zambia",
+            "url": "https://pure.uva.nl/ws/files/1687596/168316_ARTICLE_A_general_survey_of_the_historical_migration_of_the_Kaonde_clans_from_southern_Congo_into_Zambia_2_.pdf",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_KIKONGO",
+      "nameMain": "Bakongo",
+      "selfAppellation": "Bakongo",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["kng", "kon", "ldi"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 4,
+        "accepted": 2,
+        "needsReview": 1,
+        "unverified": 1,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "kng",
+          "peopleIds": ["PPL_KONGO_SUD", "PPL_MANIANGA", "PPL_SOLONGO"]
+        },
+        {
+          "isoCode": "kon",
+          "peopleIds": [
+            "PPL_BANTU",
+            "PPL_KONGO",
+            "PPL_KONGO_SUD",
+            "PPL_MANIANGA",
+            "PPL_SOLONGO"
+          ]
+        },
+        {
+          "isoCode": "ldi",
+          "peopleIds": ["PPL_SCT_MACRO"]
+        }
+      ],
+      "automatedFlags": ["shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "duplicate",
+        "canonicalPeopleId": "PPL_KONGO",
+        "parentPeopleId": null,
+        "decision": "Merge this Bakongo record into PPL_KONGO; do not count PPL_KIKONGO as a separate people.",
+        "notes": "The name Bakongo, self-appellation, four-country scope, Kongo language codes, and local PGRP_KONGO grouping duplicate PPL_KONGO. The identifier also risks confusing the Kikongo language with the Bakongo people.",
+        "sources": [
+          {
+            "title": "British Museum — Bakongo",
+            "url": "https://www.britishmuseum.org/collection/term/x84022",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P133-046"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_KINYARWANDA",
+      "nameMain": "Banyarwanda",
+      "selfAppellation": "Abanyarwanda",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["kin"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 4,
+        "needsReview": 2,
+        "unverified": 0,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "kin",
+          "peopleIds": [
+            "PPL_KIRUNDI_HUTU",
+            "PPL_KIRUNDI_TUTSI",
+            "PPL_RWANDAIS_HUTU",
+            "PPL_RWANDAIS_TUTSI",
+            "PPL_TWA"
+          ]
+        }
+      ],
+      "automatedFlags": ["shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "macro_category",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Retain Banyarwanda as a DRC-relevant ethnolinguistic umbrella, but exclude this record from the additive count of individual peoples.",
+        "notes": "Minority Rights Group describes DRC Banyarwanda collectively as Kinyarwanda-speaking Hutu, Tutsi, and Batwa. The record is therefore valuable for history, citizenship, and discoverability, but it overlaps its constituent identities and must not be counted in addition to them. Rename away from the language-coded PPL_KINYARWANDA identifier only through an immutable-ID redirect design.",
+        "sources": [
+          {
+            "title": "Minority Rights Group — Banyarwanda in the Democratic Republic of the Congo",
+            "url": "https://minorityrights.org/communities/banyarwanda/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Review of African Political Economy — Making use of the past: the Rwandophone question and the Balkanisation of the Congo",
+            "url": "https://www.scienceopen.com/hosted-document?doi=10.1080%2F03056244.2012.761603",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_KIRUNDI_HUTU",
+      "nameMain": "Hutu",
+      "selfAppellation": "Abahutu",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["kin", "run"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 4,
+        "needsReview": 0,
+        "unverified": 3,
+        "withUrl": 7
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "kin",
+          "peopleIds": [
+            "PPL_KINYARWANDA",
+            "PPL_KIRUNDI_TUTSI",
+            "PPL_RWANDAIS_HUTU",
+            "PPL_RWANDAIS_TUTSI",
+            "PPL_TWA"
+          ]
+        },
+        {
+          "isoCode": "run",
+          "peopleIds": [
+            "PPL_BANTU",
+            "PPL_HUTU_BURUNDI",
+            "PPL_KIRUNDI_TUTSI",
+            "PPL_RUNDI",
+            "PPL_TWA"
+          ]
+        }
+      ],
+      "automatedFlags": ["shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "duplicate",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Include this record in the four-record Hutu duplicate cluster. Count the cluster once and defer canonical-ID selection because every current ID encodes an overly narrow language or country qualifier.",
+        "notes": "PPL_KIRUNDI_HUTU, PPL_RWANDAIS_HUTU, PPL_RWENDAIS_HUTU, and PPL_HUTU_BURUNDI share the Abahutu identity, overlapping transborder scope, Rwanda-Rundi language codes, and substantially duplicated narratives. Conflicting population estimates must not be summed.",
+        "sources": [
+          {
+            "title": "Minority Rights Group — Banyarwanda in the Democratic Republic of the Congo",
+            "url": "https://minorityrights.org/communities/banyarwanda/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "United States Holocaust Memorial Museum — Divided by Ethnicity",
+            "url": "https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P132-016"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_KIRUNDI_TUTSI",
+      "nameMain": "Tutsi",
+      "selfAppellation": "Abatutsi",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["kin", "run"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 3,
+        "needsReview": 0,
+        "unverified": 4,
+        "withUrl": 7
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "kin",
+          "peopleIds": [
+            "PPL_KINYARWANDA",
+            "PPL_KIRUNDI_HUTU",
+            "PPL_RWANDAIS_HUTU",
+            "PPL_RWANDAIS_TUTSI",
+            "PPL_TWA"
+          ]
+        },
+        {
+          "isoCode": "run",
+          "peopleIds": [
+            "PPL_BANTU",
+            "PPL_HUTU_BURUNDI",
+            "PPL_KIRUNDI_HUTU",
+            "PPL_RUNDI",
+            "PPL_TWA"
+          ]
+        }
+      ],
+      "automatedFlags": ["shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "duplicate",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Include this record in the three-record Tutsi duplicate cluster. Count the cluster once and defer canonical-ID selection because every current ID encodes an overly narrow language or country qualifier.",
+        "notes": "PPL_KIRUNDI_TUTSI, PPL_RWANDAIS_TUTSI, and PPL_RWENDAIS_TUTSI share the Abatutsi identity, overlapping transborder scope, Rwanda-Rundi language codes, and substantially duplicated narratives. Conflicting population estimates must not be summed.",
+        "sources": [
+          {
+            "title": "Minority Rights Group — Banyarwanda in the Democratic Republic of the Congo",
+            "url": "https://minorityrights.org/communities/banyarwanda/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "UNHCR — Congolese refugee context",
+            "url": "https://www.unhcr.org/africa/sites/afr/files/legacy-pdf/558c0e039.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P135-035"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_KONGO",
+      "nameMain": "Kongo",
+      "selfAppellation": "Bakongo (pluriel) / Mukongo (singulier)",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["kon"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 2,
+        "needsReview": 3,
+        "unverified": 0,
+        "withUrl": 3
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "kon",
+          "peopleIds": [
+            "PPL_BANTU",
+            "PPL_KIKONGO",
+            "PPL_KONGO_SUD",
+            "PPL_MANIANGA",
+            "PPL_SOLONGO"
+          ]
+        }
+      ],
+      "automatedFlags": [
+        "featured_family_mismatch",
+        "name_matches_language_label",
+        "shared_iso_code"
+      ],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_KONGO",
+        "parentPeopleId": null,
+        "decision": "Keep PPL_KONGO as the canonical umbrella record for the Kongo/Bakongo identity.",
+        "notes": "Use this record as the parent of regional and named Kongo subgroups. Do not sum its population with Kongo (Sud), Yombe, Manianga, Solongo, or other child records. The FLG_BANTU versus FLG_NIGERCONGO assignments within the cluster require separate normalization. ISO 639-3 kon is a macrolanguage and is not itself a Glottolog CD inventory row; reader-facing DRC language coverage must instead resolve Eastern Kikongo and the relevant kng, kwy, and ktu records without treating them as interchangeable.",
+        "sources": [
+          {
+            "title": "British Museum — Bakongo",
+            "url": "https://www.britishmuseum.org/collection/term/x84022",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P133-046"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P133-049"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P133-052"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_KONGO_MAYOMBE",
+      "nameMain": "Kongo (Mayombe)",
+      "selfAppellation": "Bayombe (pluriel), Muyombe (singulier)",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["yom"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 3,
+        "needsReview": 2,
+        "unverified": 1,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "yom",
+          "peopleIds": ["PPL_YOMBE"]
+        }
+      ],
+      "automatedFlags": ["shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "duplicate",
+        "canonicalPeopleId": "PPL_YOMBE",
+        "parentPeopleId": null,
+        "decision": "Merge this record into PPL_YOMBE; retain the Kongo parent relationship on the canonical Yombe record.",
+        "notes": "PPL_KONGO_MAYOMBE and PPL_YOMBE share the Bayombe self-designation, yom code, and the same DRC–Congo–Angola scope. The cleaner PPL_YOMBE identifier is retained as canonical.",
+        "sources": [
+          {
+            "title": "British Museum — Bayombe",
+            "url": "https://www.britishmuseum.org/collection/term/x85248",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P133-046"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_KONGO_SUD",
+      "nameMain": "Kongo (Sud)",
+      "selfAppellation": "Bakongo (pluriel), Mukongo (singulier), Bisi Kongo",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["kng", "kon"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 3,
+        "needsReview": 0,
+        "unverified": 4,
+        "withUrl": 7
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "kng",
+          "peopleIds": ["PPL_KIKONGO", "PPL_MANIANGA", "PPL_SOLONGO"]
+        },
+        {
+          "isoCode": "kon",
+          "peopleIds": [
+            "PPL_BANTU",
+            "PPL_KIKONGO",
+            "PPL_KONGO",
+            "PPL_MANIANGA",
+            "PPL_SOLONGO"
+          ]
+        }
+      ],
+      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "subgroup",
+        "canonicalPeopleId": "PPL_KONGO_SUD",
+        "parentPeopleId": "PPL_KONGO",
+        "decision": "Keep provisionally as a southern/regional Kongo subgroup under PPL_KONGO.",
+        "notes": "The record is narrower than the umbrella Bakongo identity but its geographic scope needs clearer editorial definition before publication. Do not add its population to the Kongo parent total.",
+        "sources": [
+          {
+            "title": "British Museum — Bakongo",
+            "url": "https://www.britishmuseum.org/collection/term/x84022",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P133-046"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_KUBA",
+      "nameMain": "Kuba",
+      "selfAppellation": "Bakuba (pluriel) / Mukuba (singulier)",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["buf"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 1,
+        "needsReview": 2,
+        "unverified": 3,
+        "withUrl": 5
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": [],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_KUBA",
+        "parentPeopleId": null,
+        "decision": "Keep Kuba as a DRC umbrella people identity composed of historically distinct constituent groups.",
+        "notes": "Kuba is directly documented in the Kasai region, but it is a political and ethnocultural ensemble including Bushoong, Ngeende, Ngongo, Pyaang, Shoowa, and other groups. Its population must not be added to constituent populations, and ISO 639-3 buf identifies the Bushoong language rather than the entire Kuba ensemble.",
+        "sources": [
+          {
+            "title": "Metropolitan Museum of Art — Ceremonial Overskirt, Kuba peoples, Bushoong group",
+            "url": "https://www.metmuseum.org/art/collection/search/319473",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "National Museum of Colombia — Some peoples of the Democratic Republic of the Congo",
+            "url": "https://www.museonacional.gov.co/Publicaciones/exposiciones-temporales/Documents/Col_Bertrand_1era_1_14.pdf",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_LALA_BISA",
+      "nameMain": "Lala-Bisa",
+      "selfAppellation": "Bisa",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["leb"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 2,
+        "needsReview": 0,
+        "unverified": 4,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_LALA_BISA",
+        "parentPeopleId": null,
+        "decision": "Keep Lala-Bisa provisionally as the source-backed DRC people-group label, without collapsing it into PPL_BISA or PPL_LALA.",
+        "notes": "Glottolog confirms Lala-Bisa language presence in the DRC, and two current specialist inventories independently report a DRC Lala-Bisa population around 113,000–115,000. The local record also states that the label spans several dialect communities, so its boundary against the separate PPL_BISA and PPL_LALA records requires dedicated identity research before any merge or additive count.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Lala-Bisa",
+            "url": "https://glottolog.org/resource/languoid/id/lala1264",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "PeopleGroups.org — Lala-Bisa of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg014603/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Joshua Project — Lala-Bisa in the Democratic Republic of the Congo",
+            "url": "https://joshuaproject.net/people_groups/19057/CG",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_LALA_LAMBA",
+      "nameMain": "Lala-Lamba",
+      "selfAppellation": "Lamba",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["lam"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 3,
+        "needsReview": 0,
+        "unverified": 2,
+        "withUrl": 5
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_LALA_LAMBA",
+        "parentPeopleId": null,
+        "decision": "Keep the DRC relation as a Lamba people record, but replace the relational label Lala-Lamba through an immutable-ID redirect.",
+        "notes": "The scholarly source distinguishes Lala and Lamba while confirming that both straddle the Congolese and Zambian sides of the Shaba Pedicle; Glottolog also places Lamba in both countries. PPL_LALA_LAMBA therefore represents Lamba rather than a combined Lala-Lamba people. A future neutral identifier must avoid collision with the existing, unrelated Gur-family PPL_LAMBA record.",
+        "sources": [
+          {
+            "title": "History in Africa — Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory",
+            "url": "https://www.cambridge.org/core/journals/history-in-africa/article/abs/chipimpi-vulgar-clans-and-lalalamba-ethnohistory1/F2703E5825CAADDF2D7CE92E2F96ED38",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog 5.3 — Lamba",
+            "url": "https://glottolog.org/resource/languoid/id/lamb1271",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_LENGO",
+      "nameMain": "Lengo",
+      "selfAppellation": "Lengola",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["lej"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 4,
+        "accepted": 1,
+        "needsReview": 0,
+        "unverified": 3,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_LENGO",
+        "parentPeopleId": null,
+        "decision": "Keep Lengo/Lengola as a DRC people record, with Lengola retained as the preferred identity and language label for search.",
+        "notes": "The country presence is supported by linguistic and regional-history sources. The fiche's 241,000 value is a directory estimate projected from older speaker data, not a current ethnic census, and should retain its methodological caveat.",
+        "sources": [
+          {
+            "title": "OpenEdition — Paths in the eastern Congo rainforest: Vernacular histories",
+            "url": "https://journals.openedition.org/afriques/4465",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "PeopleGroups.org — Lengola of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg014611/",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_LINGALA",
+      "nameMain": "Lingala (locuteurs)",
+      "selfAppellation": "Bangala / Lingala",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["lin"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 4,
+        "needsReview": 0,
+        "unverified": 3,
+        "withUrl": 7
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "lin",
+          "peopleIds": ["PPL_BANTU", "PPL_NGALA"]
+        }
+      ],
+      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "language_label",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Exclude this record from the count of peoples and retain Lingala in the language layer.",
+        "notes": "The record explicitly describes speakers of Lingala rather than a homogeneous ethnic identity. Kinshasa Lingala is documented as a wider-communication language in the DRC.",
+        "sources": [
+          {
+            "title": "Glottolog — Kinshasa Lingala",
+            "url": "https://glottolog.org/resource/languoid/id/ling1263",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P134-089"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_LUBA",
+      "nameMain": "Luba",
+      "selfAppellation": "Baluba",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["lua", "lub"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 2,
+        "needsReview": 0,
+        "unverified": 3,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "lua",
+          "peopleIds": ["PPL_LUBA_KASAI", "PPL_LULUA"]
+        },
+        {
+          "isoCode": "lub",
+          "peopleIds": ["PPL_LUBA_KATANGA"]
+        }
+      ],
+      "automatedFlags": [
+        "featured_family_mismatch",
+        "name_matches_language_label",
+        "shared_iso_code"
+      ],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_LUBA",
+        "parentPeopleId": null,
+        "decision": "Keep PPL_LUBA as the umbrella Luba identity and canonical record for the cluster. Treat the Kasai, Lulua, and Katanga records as children rather than additional top-level peoples.",
+        "notes": "The record combines both Ciluba/Luba-Kasai (lua) and Kiluba/Luba-Katanga (lub). Its population must not be added to child-record populations. The FLG_BANTU versus FLG_NIGERCONGO family assignment across this cluster requires a separate taxonomy normalization.",
+        "sources": [
+          {
+            "title": "British Museum — Luba/Baluba",
+            "url": "https://www.britishmuseum.org/collection/term/x84146?page=2",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Royal Museum for Central Africa — Kasai-Oriental provincial monograph",
+            "url": "https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/monographies-provinces/kasai-oriental.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P133-027"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_LUBA_KASAI",
+      "nameMain": "Luba (Kasai)",
+      "selfAppellation": "Baluba (Kasai) / Bena-Lulua",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["lua"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 4,
+        "needsReview": 0,
+        "unverified": 2,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "lua",
+          "peopleIds": ["PPL_LUBA", "PPL_LULUA"]
+        }
+      ],
+      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "subgroup",
+        "canonicalPeopleId": "PPL_LUBA_KASAI",
+        "parentPeopleId": "PPL_LUBA",
+        "decision": "Keep as the Luba-Kasai subgroup under PPL_LUBA.",
+        "notes": "This is a child of the Luba umbrella, not an additive peer. Its lua language code distinguishes it from the lub-coded Luba-Katanga branch, while the current self-appellation overlaps the more specific Lulua record and should be editorially clarified.",
+        "sources": [
+          {
+            "title": "Royal Museum for Central Africa — Kasai-Oriental provincial monograph",
+            "url": "https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/monographies-provinces/kasai-oriental.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P133-027"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_LUBA_KATANGA",
+      "nameMain": "Luba (Katanga)",
+      "selfAppellation": "Baluba (Katanga) / Baluba wa Katanga",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["lub"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 2,
+        "needsReview": 0,
+        "unverified": 3,
+        "withUrl": 5
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "lub",
+          "peopleIds": ["PPL_LUBA"]
+        }
+      ],
+      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "subgroup",
+        "canonicalPeopleId": "PPL_LUBA_KATANGA",
+        "parentPeopleId": "PPL_LUBA",
+        "decision": "Keep as the Luba-Katanga subgroup under PPL_LUBA.",
+        "notes": "The lub language code and Katanga identity distinguish this child from the lua-coded Kasai branch. Do not add its population to the Luba umbrella total; normalize the language-family assignment separately.",
+        "sources": [
+          {
+            "title": "British Museum — Luba/Baluba",
+            "url": "https://www.britishmuseum.org/collection/term/x84146?page=2",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P133-027"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_LUGBARA",
+      "nameMain": "Lugbara",
+      "selfAppellation": "Lugbara",
+      "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+      "isoCodes": ["lgg"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 8,
+        "accepted": 5,
+        "needsReview": 0,
+        "unverified": 3,
+        "withUrl": 7
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "lgg",
+          "peopleIds": ["PPL_SCT_MACRO"]
+        }
+      ],
+      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_LUGBARA",
+        "parentPeopleId": null,
+        "decision": "Keep Lugbara as a DRC–Uganda cross-border people record.",
+        "notes": "Ethnographic and linguistic catalogues support Lugbara as a distinct people and language across the West Nile–Ituri border. The lgg code shared with the Central Sudanic macro fiche reflects contamination in that macro record, not a duplicate Lugbara people. The fiche's DRC population still needs a directly traceable estimate.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Lugbara",
+            "url": "https://glottolog.org/resource/languoid/id/lugb1240",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "John Middleton — The Lugbara of Uganda",
+            "url": "https://archive.org/details/lugbaraofuganda00midd",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Wageningen University — Public Private Cooperation in Fragile States: Ituri field research",
+            "url": "https://edepot.wur.nl/247871",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_LULUA",
+      "nameMain": "Lulua",
+      "selfAppellation": "Bena-Lulua / Luluwa",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["lua"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 3,
+        "needsReview": 0,
+        "unverified": 2,
+        "withUrl": 5
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "lua",
+          "peopleIds": ["PPL_LUBA", "PPL_LUBA_KASAI"]
+        }
+      ],
+      "automatedFlags": ["shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "subgroup",
+        "canonicalPeopleId": "PPL_LULUA",
+        "parentPeopleId": "PPL_LUBA_KASAI",
+        "decision": "Keep as the Lulua/Bena-Lulua subgroup under PPL_LUBA_KASAI rather than merging it automatically.",
+        "notes": "The local corpus and the provincial monograph support a historically and socially meaningful Lulua distinction, despite the shared lua code. The current identifier and label now use the attested Lulua identity. Do not sum its population with the Luba-Kasai parent.",
+        "sources": [
+          {
+            "title": "Royal Museum for Central Africa — Kasai-Oriental provincial monograph",
+            "url": "https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/monographies-provinces/kasai-oriental.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P133-027"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_LUNDA",
+      "nameMain": "Lunda",
+      "selfAppellation": "Balunda",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["lun"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 2,
+        "needsReview": 2,
+        "unverified": 2,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "lun",
+          "peopleIds": ["PPL_LUNDA_CHOKWE", "PPL_LUNDA_NDEMBU"]
+        }
+      ],
+      "automatedFlags": [
+        "featured_family_mismatch",
+        "name_matches_language_label",
+        "shared_iso_code"
+      ],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_LUNDA",
+        "parentPeopleId": null,
+        "decision": "Keep PPL_LUNDA as the canonical umbrella record for Lunda/Ruund identity in the DRC, Angola, and Zambia.",
+        "notes": "Use this record as the parent for carefully sourced Lunda branches. The Lunda-Chokwe administrative composite must not be treated as another individual people, and parent and child populations must not be summed.",
+        "sources": [
+          {
+            "title": "Country Studies — Angola: Lunda-Chokwe",
+            "url": "https://country-studies.com/angola/lunda-chokwe.html",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P133-048"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_LUNDA_CHOKWE",
+      "nameMain": "Lunda-Chokwe",
+      "selfAppellation": "Lunda-Chokwe",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["cjk", "lun"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 4,
+        "accepted": 1,
+        "needsReview": 0,
+        "unverified": 3,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "cjk",
+          "peopleIds": ["PPL_CHOKWE", "PPL_TSHOKWE"]
+        },
+        {
+          "isoCode": "lun",
+          "peopleIds": ["PPL_LUNDA", "PPL_LUNDA_NDEMBU"]
+        }
+      ],
+      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "macro_category",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Treat Lunda-Chokwe as a composite historical and administrative category, not as one individual people; exclude this record from the people count.",
+        "notes": "The source explicitly describes the hyphenated category as containing distinct Lunda/Ruund and Chokwe subsets with different origins, alongside mixed communities. Preserve the term for historical search and contextual display, but link readers to the canonical Lunda and Chokwe records.",
+        "sources": [
+          {
+            "title": "Country Studies — Angola: Lunda-Chokwe",
+            "url": "https://country-studies.com/angola/lunda-chokwe.html",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_LUNDA_KAZEMBE",
+      "nameMain": "Lunda-Kazembe",
+      "selfAppellation": "Luba-Lunda (ou Lunda de l'Est / Eastern Lunda)",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["bem"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 4,
+        "accepted": 0,
+        "needsReview": 0,
+        "unverified": 4,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "bem",
+          "peopleIds": ["PPL_BANTU", "PPL_BEMBA"]
+        }
+      ],
+      "automatedFlags": ["no_accepted_source", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "subgroup",
+        "canonicalPeopleId": "PPL_LUNDA_KAZEMBE",
+        "parentPeopleId": "PPL_LUNDA",
+        "decision": "Keep provisionally as an eastern Lunda/Kazembe branch under PPL_LUNDA, but separate the people identity from the Kazembe polity and title before publication.",
+        "notes": "The record's Luba-Lunda self-description and Bemba language code reflect the eastern Kazembe formation; they do not make it a duplicate of PPL_BEMBA. Its current sources are all unverified, so the subgroup decision remains in review and its population cannot be treated as validated.",
+        "sources": [
+          {
+            "title": "Encyclopaedia Britannica — Kazembe",
+            "url": "https://www.britannica.com/place/Kazembe",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Country Studies — Angola: Lunda-Chokwe",
+            "url": "https://country-studies.com/angola/lunda-chokwe.html",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_LUNDA_NDEMBU",
+      "nameMain": "Lunda-Ndembu",
+      "selfAppellation": "Ndembu",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["lun"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 1,
+        "needsReview": 1,
+        "unverified": 3,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "lun",
+          "peopleIds": ["PPL_LUNDA", "PPL_LUNDA_CHOKWE"]
+        }
+      ],
+      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "subgroup",
+        "canonicalPeopleId": "PPL_LUNDA_NDEMBU",
+        "parentPeopleId": "PPL_LUNDA",
+        "decision": "Keep PPL_LUNDA_NDEMBU as the Ndembu subgroup within the wider Lunda cultural and historical family.",
+        "notes": "Ethnographic sources treat Ndembu as a distinct named community descended from Lunda migration. Retain Ndembu as the main searchable identity and do not sum its population with the Lunda umbrella.",
+        "sources": [
+          {
+            "title": "Cambridge Core — The Spatial Separation of Generations in Ndembu Village Structure",
+            "url": "https://www.cambridge.org/core/journals/africa/article/abs/spatial-separation-of-generations-in-ndembu-village-structure1/9DF3A4C099F71EE9553BCA025DE553BE",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog bibliography — Turner 1957, Ndembu village life",
+            "url": "https://glottolog.org/resource/reference/id/40869",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_MANGBETU",
+      "nameMain": "Mangbetu",
+      "selfAppellation": "Nemangbetu (ou Amangbetu)",
+      "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+      "isoCodes": ["mdj"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 4,
+        "needsReview": 1,
+        "unverified": 2,
+        "withUrl": 7
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_MANGBETU",
+        "parentPeopleId": null,
+        "decision": "Keep Mangbetu as a DRC umbrella people identity, without summing it with constituent or historically incorporated communities.",
+        "notes": "Museum, historical, and linguistic sources directly attest Mangbetu peoples and the nineteenth-century Mangbetu polity in northeastern DRC. Scholarship also describes Mangbetu as an amalgam of related peoples, so the local 600,000 estimate and dialect list must not be treated as a leaf-level count.",
+        "sources": [
+          {
+            "title": "Metropolitan Museum of Art — Figurative Vessel, Mangbetu peoples",
+            "url": "https://www.metmuseum.org/art/collection/search/310063",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Smithsonian Libraries — Le pays des Mangbettus",
+            "url": "https://library.si.edu/digital-library/book/lepaysdesmangbet00chri",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "GIALens — Mangbetu Tales of Leopard and Azapane",
+            "url": "https://www.diu.edu/documents/gialens/Vol4-3/McKee-MangbetuTales.pdf",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_MANIANGA",
+      "nameMain": "Manianga",
+      "selfAppellation": "Ba-Sundi / Manianga",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["kng", "kon"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 3,
+        "accepted": 2,
+        "needsReview": 1,
+        "unverified": 0,
+        "withUrl": 3
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "kng",
+          "peopleIds": ["PPL_KIKONGO", "PPL_KONGO_SUD", "PPL_SOLONGO"]
+        },
+        {
+          "isoCode": "kon",
+          "peopleIds": [
+            "PPL_BANTU",
+            "PPL_KIKONGO",
+            "PPL_KONGO",
+            "PPL_KONGO_SUD",
+            "PPL_SOLONGO"
+          ]
+        }
+      ],
+      "automatedFlags": ["shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "subgroup",
+        "canonicalPeopleId": "PPL_MANIANGA",
+        "parentPeopleId": "PPL_KONGO",
+        "decision": "Keep PPL_MANIANGA as a Kongo subgroup and preserve Manianga/Manyanga and Ba-Sundi/Basundi as searchable forms.",
+        "notes": "The Library of Congress authority places Manyanga under Kongo (African people) and treats Manianga as an alternative form. The local fiche's geography and narrative agree, but its population estimate remains unsuitable for addition to the Kongo umbrella.",
+        "sources": [
+          {
+            "title": "Library of Congress Subject Headings — Manyanga (African people)",
+            "url": "https://www.loc.gov/aba/publications/Archived-LCSH34/M.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P135-062"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_MBETE",
+      "nameMain": "Mbete",
+      "selfAppellation": "Mbete",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["mdt"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": false
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 3,
+        "needsReview": 1,
+        "unverified": 2,
+        "withUrl": 2
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": [
+        "incomplete_country_link",
+        "name_matches_language_label"
+      ],
+      "review": {
+        "status": "in_review",
+        "entityType": "rejected_link",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Reject the PPL_MBETE country link to the DRC while retaining the fiche for Gabon and the Republic of the Congo.",
+        "notes": "The strongest controlled and linguistic references place the Mbete/Mbede/Mbere people and language in Gabon and Congo-Brazzaville, not Congo-Kinshasa. The current COD value appears to come from ambiguity in the word Congo. Remove only the DRC relation after editorial approval; do not delete or merge the people fiche.",
+        "sources": [
+          {
+            "title": "Library of Congress Subject Headings — Mbete (African people)",
+            "url": "https://www.loc.gov/aba/publications/Archived-LCSH39/M.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog 5.3 — Mbere",
+            "url": "https://glottolog.org/resource/languoid/id/mber1257",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "IRD — Ancestral art of Gabon from the collections of the Barbier-Mueller museum",
+            "url": "https://horizon.documentation.ird.fr/exl-doc/pleins_textes/divers18-08/23103.pdf",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_MBOCHI",
+      "nameMain": "Mbochi",
+      "selfAppellation": "Mbosi / Mbochi",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["mdw"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": false,
+        "appellationsCurrentCountries": false,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 3,
+        "needsReview": 1,
+        "unverified": 3,
+        "withUrl": 7
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["incomplete_country_link"],
+      "review": {
+        "status": "in_review",
+        "entityType": "rejected_link",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Reject the current DRC country link unless a reliable DRC-specific source is found; do not reject the Mbochi/Mbosi record outside this country audit.",
+        "notes": "The DRC link comes only from a small demographic row whose note refers to Bobangi, while the record's main country scope is the Republic of the Congo. Glottolog places Mbosi (mdw) in Congo (CG), not the DRC. Mbochi is not a synonym of Ngala.",
+        "sources": [
+          {
+            "title": "Glottolog — Mbosi",
+            "url": "https://glottolog.org/resource/languoid/id/mbos1242",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P134-089"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_MBUNDA",
+      "nameMain": "Mbunda",
+      "selfAppellation": "Vambunda",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["mck"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 4,
+        "accepted": 0,
+        "needsReview": 0,
+        "unverified": 4,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["no_accepted_source", "name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "rejected_link",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Reject only the DRC country relation while preserving the Mbunda/Vambunda fiche for Angola and Zambia.",
+        "notes": "Glottolog and Joshua Project both restrict Mbunda (mck) to Angola and Zambia. DRC references to Bunda, Ambuun, or Mbuun concern a different Idiofa-area people and are a likely source of name confusion; no direct contemporary source corroborates the current 5,000-person DRC entry.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Mbunda",
+            "url": "https://glottolog.org/resource/languoid/id/mbun1249",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Joshua Project — Mbunda language resources",
+            "url": "https://joshuaproject.net/languages/mck",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_MINUNGU",
+      "nameMain": "Minungu",
+      "selfAppellation": "Nyinungu",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": [],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 4,
+        "accepted": 3,
+        "needsReview": 1,
+        "unverified": 0,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": [],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_MINUNGU",
+        "parentPeopleId": null,
+        "decision": "Keep as the Minungu/Nyinungu people linked to the cross-border Kakumbi–Dilolo language area.",
+        "notes": "Linguistic research directly documents the Nyinungu of Dilolo in the DRC and the related Minungu variety of Kakumbi in Angola. The country relation is supported, but the fiche lacks an ISO identifier and its population estimate remains unsupported.",
+        "sources": [
+          {
+            "title": "Royal Museum for Central Africa — 2011 Annual Report",
+            "url": "https://www.africamuseum.be/sites/default/files/media/about-us/annual-reports/doc/annualreport2011fr.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Jacky Maniacky — Minungu of Kakumbi and Nyinungu of Dilolo",
+            "url": "https://www.uni-koeln.de/phil-fak/afrikanistik/wocal/schedule/abstracts/6-4-2%20Jacky%20Maniacky.pdf",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_MONGO",
+      "nameMain": "Mongo",
+      "selfAppellation": "Anamongo",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["lol"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 4,
+        "accepted": 3,
+        "needsReview": 0,
+        "unverified": 1,
+        "withUrl": 2
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": [
+        "featured_family_mismatch",
+        "name_matches_language_label"
+      ],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_MONGO",
+        "parentPeopleId": null,
+        "decision": "Keep Mongo/Anamongo as a broad DRC umbrella people identity.",
+        "notes": "Controlled ethnographic sources place the Mongo in the central Congo Basin and describe a diverse collection of constituent communities. The umbrella population must not be added to Tetela, Nkutshu, Ekonda, Nkundo, or other related records, and the featured-family mismatch requires taxonomy normalization.",
+        "sources": [
+          {
+            "title": "eHRAF World Cultures — Mongo culture summary",
+            "url": "https://ehrafworldcultures.yale.edu/cultures/fo32/documents/000",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Royal Museum for Central Africa — Mongo political history",
+            "url": "https://www.africamuseum.be/research/discover/publications/search/pubdetail?pubid=1756",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_NANDE",
+      "nameMain": "Nande",
+      "selfAppellation": "Yira (Bayira)",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["nnb"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 2,
+        "needsReview": 0,
+        "unverified": 3,
+        "withUrl": 5
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": [
+        "featured_family_mismatch",
+        "name_matches_language_label"
+      ],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_NANDE",
+        "parentPeopleId": null,
+        "decision": "Keep Nande/Bayira as a DRC people record and treat Bakonzo as the related Ugandan naming branch rather than a simple demographic extension.",
+        "notes": "Current scholarship identifies Bayira on both sides of the DRC–Uganda border, commonly named Banande in the DRC and Bakonzo in Uganda. The fiche's four-million total mixes Nande, language-speaker, diaspora, and Bakonzo estimates and must be decomposed before publication. Correct the featured-family mismatch independently.",
+        "sources": [
+          {
+            "title": "Rüdiger Köppe Verlag — The People of the Rwenzoris: The Bayira (Bakonzo/Banande) and Their Culture",
+            "url": "https://www.koeppe.de/titel_print_the-people-of-the-rwenzoris",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Global Press Journal — A Tribe Watches Its Language Languish",
+            "url": "https://globalpressjournal.com/africa/democratic-republic-of-congo/tribe-watches-language-languish/",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_NGALA",
+      "nameMain": "Ngala (Bangala)",
+      "selfAppellation": "Bangala / Mongala (singulier)",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["bxg", "lin"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 11,
+        "accepted": 7,
+        "needsReview": 0,
+        "unverified": 4,
+        "withUrl": 11
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "lin",
+          "peopleIds": ["PPL_BANTU", "PPL_LINGALA"]
+        }
+      ],
+      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "language_label",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Exclude PPL_NGALA from the count of distinct peoples and retain Bangala/Ngala as a historical linguistic and colonial label pending finer regional attribution.",
+        "notes": "Glottolog treats Bangala (alternative name Ngala, bxg) as a wider-communication language in the DRC. Recent historical-linguistic research reports that colonial surveys found no single Bangala or Bamangala tribe. The label may still describe contextual identities, but the current record is too collective and unstable to count as one people.",
+        "sources": [
+          {
+            "title": "Glottolog — Bangala",
+            "url": "https://glottolog.org/resource/languoid/id/bang1353",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Meeuwis — Language intervention in the colonial Congo",
+            "url": "https://www.tandfonline.com/doi/abs/10.1080/00083968.2024.2382715",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P134-089"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_NGBANDE",
+      "nameMain": "Ngbande",
+      "selfAppellation": "Ngbandi (ou Ngbande selon la translittération)",
+      "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+      "isoCodes": ["nbw", "ngb"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 3,
+        "needsReview": 1,
+        "unverified": 2,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "ngb",
+          "peopleIds": ["PPL_SANGO"]
+        }
+      ],
+      "automatedFlags": ["shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_NGBANDE",
+        "parentPeopleId": null,
+        "decision": "Keep the record as the Ngbandi people identity and plan an immutable-ID redirect from the nonstandard PPL_NGBANDE identifier.",
+        "notes": "Controlled vocabulary and scholarship use Ngbandi as the preferred label and list related spellings such as Gbande or Gbandi. The ngb code shared with PPL_SANGO reflects the latter record's language-label contamination and does not make Ngbandi a Sango duplicate. Population estimates remain broad and non-census-based.",
+        "sources": [
+          {
+            "title": "Bibliothèque nationale de France — Ngbandi (peuple d'Afrique)",
+            "url": "https://catalogue.bnf.fr/ark:/12148/cb11981438j",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Journal des Africanistes — Aspects de l'organisation du monde des Ngbandi",
+            "url": "https://www.persee.fr/doc/jafr_0037-9166_1971_num_41_1_1685",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "United States Department of Justice — Democratic Republic of the Congo: Ngbandi",
+            "url": "https://www.justice.gov/eoir/page/file/1026971/dl",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_NILOTIQUE_MACRO",
+      "nameMain": "Peuples Nilotiques (macro-groupe)",
+      "selfAppellation": "Designations propres a chaque groupe : Naath (Nuer), Jieng (Dinka), Cøllo (Shilluk), Lokop (Samburu), Ilmaasai (Maasai), etc.",
+      "languageFamilyId": "FLG_NILOTIQUE",
+      "isoCodes": [
+        "ach",
+        "dip",
+        "kln",
+        "luo",
+        "mas",
+        "mur",
+        "nus",
+        "rel",
+        "saq",
+        "shk",
+        "tuv"
+      ],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 8,
+        "accepted": 7,
+        "needsReview": 0,
+        "unverified": 1,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["macro_like"],
+      "review": {
+        "status": "in_review",
+        "entityType": "macro_category",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Proposed macro-category classification. Keep as an ethnolinguistic taxonomy or editorial topic, but exclude it from the individual-people count and country selector.",
+        "notes": "The local fiche defines Nilotic peoples as a multi-branch grouping whose constituent peoples have their own self-designations. The COD relation therefore cannot be counted as one additional individual people fiche.",
+        "sources": [
+          {
+            "title": "Local source fiche — PPL_NILOTIQUE_MACRO",
+            "localFile": "dataset/source/afrik/peuples/FLG_NILOTIQUE/PPL_NILOTIQUE_MACRO.json"
+          },
+          {
+            "title": "Glottolog — Nilotic",
+            "url": "https://glottolog.org/resource/languoid/id/nilo1247"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_RUNDI",
+      "nameMain": "Rundi (Barundi)",
+      "selfAppellation": "Barundi (pluriel) / Murundi (singulier)",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["run"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 8,
+        "accepted": 4,
+        "needsReview": 1,
+        "unverified": 3,
+        "withUrl": 8
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "run",
+          "peopleIds": [
+            "PPL_BANTU",
+            "PPL_HUTU_BURUNDI",
+            "PPL_KIRUNDI_HUTU",
+            "PPL_KIRUNDI_TUTSI",
+            "PPL_TWA"
+          ]
+        }
+      ],
+      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_RUNDI",
+        "parentPeopleId": null,
+        "decision": "Keep PPL_RUNDI as the canonical Barundi/Murundi collective identity and distinguish it from the Kirundi language dossier.",
+        "notes": "The ethnographic record supports Barundi as a named people identity sharing Kirundi across Hutu, Tutsi, and Twa social categories. The current 900,000-person DRC distribution is not directly supported by the cited sources and must be researched before publication; do not sum this umbrella population with Hutu, Tutsi, or Twa estimates.",
+        "sources": [
+          {
+            "title": "eHRAF World Cultures — Barundi",
+            "url": "https://ehrafworldcultures.yale.edu/cultures/fo58/summary",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Journal of Modern African Studies — The waxing and waning of ethnic boundaries in Burundi",
+            "url": "https://www.cambridge.org/core/journals/journal-of-modern-african-studies/article/waxing-and-waning-of-ethnic-boundaries-violence-peace-and-the-ubwoko-in-burundi/18A550C8631371C50424C6BA351558C5",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P135-085"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_RWANDAIS_HUTU",
+      "nameMain": "Rwandais (Hutu)",
+      "selfAppellation": "Hutu / Abahutu",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["kin"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 11,
+        "accepted": 9,
+        "needsReview": 2,
+        "unverified": 0,
+        "withUrl": 11
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "kin",
+          "peopleIds": [
+            "PPL_KINYARWANDA",
+            "PPL_KIRUNDI_HUTU",
+            "PPL_KIRUNDI_TUTSI",
+            "PPL_RWANDAIS_TUTSI",
+            "PPL_TWA"
+          ]
+        }
+      ],
+      "automatedFlags": ["featured_family_mismatch", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "duplicate",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Include this record in the four-record Hutu duplicate cluster. Count the cluster once and defer canonical-ID selection pending a neutral identity and redirect design.",
+        "notes": "The Rwandais qualifier is too narrow for a fiche that also declares Burundi, the DRC, and Uganda. Preserve this immutable ID until the shared Hutu record and aliases cover PPL_KIRUNDI_HUTU, PPL_RWENDAIS_HUTU, and PPL_HUTU_BURUNDI. Population estimates must not be summed.",
+        "sources": [
+          {
+            "title": "Minority Rights Group — Banyarwanda in the Democratic Republic of the Congo",
+            "url": "https://minorityrights.org/communities/banyarwanda/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "United States Holocaust Memorial Museum — Divided by Ethnicity",
+            "url": "https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P132-016"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_RWANDAIS_TUTSI",
+      "nameMain": "Rwandais (Tutsi)",
+      "selfAppellation": "Tutsi / Abatutsi",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["kin"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 10,
+        "accepted": 9,
+        "needsReview": 1,
+        "unverified": 0,
+        "withUrl": 10
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "kin",
+          "peopleIds": [
+            "PPL_KINYARWANDA",
+            "PPL_KIRUNDI_HUTU",
+            "PPL_KIRUNDI_TUTSI",
+            "PPL_RWANDAIS_HUTU",
+            "PPL_TWA"
+          ]
+        }
+      ],
+      "automatedFlags": ["featured_family_mismatch", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "duplicate",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Include this record in the three-record Tutsi duplicate cluster. Count the cluster once and defer canonical-ID selection pending a neutral identity and redirect design.",
+        "notes": "The Rwandais qualifier is too narrow for a fiche that also declares Burundi, the DRC, and Uganda. Preserve this immutable ID until the shared Tutsi record and aliases cover PPL_KIRUNDI_TUTSI and PPL_RWENDAIS_TUTSI. Population estimates must not be summed.",
+        "sources": [
+          {
+            "title": "Minority Rights Group — Banyarwanda in the Democratic Republic of the Congo",
+            "url": "https://minorityrights.org/communities/banyarwanda/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "UNHCR — Congolese refugee context",
+            "url": "https://www.unhcr.org/africa/sites/afr/files/legacy-pdf/558c0e039.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P135-035"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_SANGO",
+      "nameMain": "Sango (Bantou)",
+      "selfAppellation": "Sango / Basango (pluriel bantou)",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["ngb", "sag"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 4,
+        "needsReview": 1,
+        "unverified": 2,
+        "withUrl": 7
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "ngb",
+          "peopleIds": ["PPL_NGBANDE"]
+        },
+        {
+          "isoCode": "sag",
+          "peopleIds": ["PPL_SANGO_SCT"]
+        }
+      ],
+      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "language_label",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Proposed consolidation target for the two Sango records, but not yet a validated individual people fiche. Exclude it from the people count while the contested community identity is reviewed and prioritize a dedicated Sango language dossier.",
+        "notes": "Glottolog documents Sango primarily as a wider-communication language based on Ngbandi. A Royal Museum for Central Africa provincial monograph states that Sango is not a distinct ethnicity in the regional classification it reviews. The current FLG_BANTU placement conflicts with the fiche's own Ngbandi and Ubangian description.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Sango",
+            "url": "https://glottolog.org/resource/languoid/id/sang1328",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Royal Museum for Central Africa — Nord-Ubangi provincial monograph",
+            "url": "https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/monographies-provinces/nord-ubangi.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P135-121"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_SANGO_SCT",
+      "nameMain": "Sango",
+      "selfAppellation": "Basango / Bosango",
+      "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+      "isoCodes": ["sag"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 4,
+        "needsReview": 0,
+        "unverified": 2,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "sag",
+          "peopleIds": ["PPL_SANGO"]
+        }
+      ],
+      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "duplicate",
+        "canonicalPeopleId": "PPL_SANGO",
+        "parentPeopleId": null,
+        "decision": "Proposed duplicate of the contested Sango record. Retain this immutable ID until a redirect or retirement mechanism exists, but do not count it as a separate people.",
+        "notes": "Both local Sango fiches describe the same riverine and vehicular-language context and share ISO 639-3 sag. The FLG_SOUDANIQUECENTRAL placement is not supported by the cited Ngbandi and Ubangian classification. Consolidation must not silently convert language-speaker counts into ethnic-population counts.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Sango",
+            "url": "https://glottolog.org/resource/languoid/id/sang1328",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Royal Museum for Central Africa — Nord-Ubangi provincial monograph",
+            "url": "https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/monographies-provinces/nord-ubangi.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P135-121"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_SCT_MACRO",
+      "nameMain": "Peuples Soudaniques Centraux (macro-groupe)",
+      "selfAppellation": "Pas de denomination collective partagee ; chaque groupe se designe par son propre nom (Lugbara, Mangbetu, Sara, Azande, Banda, Madi, Moru, etc.)",
+      "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+      "isoCodes": ["ldi", "lgg", "mdu", "sba", "yul", "zne"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 7,
+        "needsReview": 0,
+        "unverified": 0,
+        "withUrl": 3
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "ldi",
+          "peopleIds": ["PPL_KIKONGO"]
+        },
+        {
+          "isoCode": "lgg",
+          "peopleIds": ["PPL_LUGBARA"]
+        },
+        {
+          "isoCode": "zne",
+          "peopleIds": ["PPL_AZANDE_SUD", "PPL_ZANDE"]
+        }
+      ],
+      "automatedFlags": ["macro_like", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "macro_category",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Proposed macro-category classification. Keep as a linguistic taxonomy or editorial topic, but exclude it from the individual-people count and country selector.",
+        "notes": "The local fiche explicitly says that Central Sudanic is a linguistic category without a shared collective self-designation. This also resolves the Banda and Mangbetu historical-name ambiguities as macro-overlap signals rather than duplicate people records.",
+        "sources": [
+          {
+            "title": "Local source fiche — PPL_SCT_MACRO",
+            "localFile": "dataset/source/afrik/peuples/FLG_SOUDANIQUECENTRAL/PPL_SCT_MACRO.json"
+          },
+          {
+            "title": "Glottolog — Central Sudanic",
+            "url": "https://glottolog.org/resource/languoid/id/cent2225"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_SOLONGO",
+      "nameMain": "Solongo",
+      "selfAppellation": "Solongo / Basolongo",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["kng", "kon"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": false,
+        "appellationsCurrentCountries": false,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 4,
+        "needsReview": 0,
+        "unverified": 1,
+        "withUrl": 5
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "kng",
+          "peopleIds": ["PPL_KIKONGO", "PPL_KONGO_SUD", "PPL_MANIANGA"]
+        },
+        {
+          "isoCode": "kon",
+          "peopleIds": [
+            "PPL_BANTU",
+            "PPL_KIKONGO",
+            "PPL_KONGO",
+            "PPL_KONGO_SUD",
+            "PPL_MANIANGA"
+          ]
+        }
+      ],
+      "automatedFlags": [
+        "incomplete_country_link",
+        "name_matches_language_label",
+        "shared_iso_code"
+      ],
+      "review": {
+        "status": "in_review",
+        "entityType": "subgroup",
+        "canonicalPeopleId": "PPL_SOLONGO",
+        "parentPeopleId": "PPL_KONGO",
+        "decision": "Keep PPL_SOLONGO as a Kongo subgroup, with Basolongo and historical Mussurongo forms retained as aliases.",
+        "notes": "Catalogue and scholarly evidence place Solongo among Kongo components and document a Basolongo community in Bas-Congo/DRC. The fiche's top-level countries still omit COD, so that link remains a synchronization correction to verify rather than evidence for a separate people.",
+        "sources": [
+          {
+            "title": "Bibliothèque nationale de France — Le rite du káandu chez les Basolongo du Bas-Congo, RDC",
+            "url": "https://catalogue.bnf.fr/ark:/12148/cb413247055",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Cahiers d'études africaines — L'unité culturelle Kongo à la fin du XIXe siècle",
+            "url": "https://www.persee.fr/doc/cea_0008-0055_1990_num_30_118_1618",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P135-047"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_SWAHILI",
+      "nameMain": "Swahili",
+      "selfAppellation": "Waswahili (pluriel), Mswahili (singulier) ; Waungwana (les gens civilises, terme d'auto-identification classe a Lamu)",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["swa"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 4,
+        "needsReview": 0,
+        "unverified": 1,
+        "withUrl": 5
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_SWAHILI",
+        "parentPeopleId": null,
+        "decision": "Keep PPL_SWAHILI as a Waswahili people record in the DRC, strictly separated from the much larger Kiswahili-speaking population.",
+        "notes": "The scholarly source supports Waswahili as an ethnic category, while current people-group directories report a comparatively small Muslim Swahili community in the DRC around 64,000–68,000. The fiche's 30,000 value should be updated or redated. Never use this record to represent all Congolese Kiswahili speakers. The swa macrolanguage is not a Glottolog CD row; the pinned inventory identifies Congo Swahili (swc), while the existing swh dossier represents standardized Swahili outside that country inventory. The constitutional Kiswahili label requires an explicit editorial mapping across these related levels.",
+        "sources": [
+          {
+            "title": "Africa — The Waswahili: The social history of an ethnic group",
+            "url": "https://www.cambridge.org/core/journals/africa/article/abs/waswahili-the-social-history-of-an-ethnic-group1/F2EDB57962908E8A2F81B10F0CA1BCB8",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "PeopleGroups.org — Central Swahili of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg014535-12/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Joshua Project — Swahili in the Democratic Republic of the Congo",
+            "url": "https://joshuaproject.net/people_groups/print/15145/CG",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_TABWA",
+      "nameMain": "Tabwa",
+      "selfAppellation": "Tabwa (aussi orthographié Taabwa)",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["tap"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 8,
+        "accepted": 4,
+        "needsReview": 1,
+        "unverified": 3,
+        "withUrl": 7
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": [],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_TABWA",
+        "parentPeopleId": null,
+        "decision": "Keep Tabwa/Taabwa as a DRC–Zambia cross-border people record.",
+        "notes": "Smithsonian sources explicitly place the Tabwa in southeastern DRC and northeastern Zambia, and Glottolog corroborates the same two-country distribution for Taabwa. The local 2025 population is an estimate assembled from heterogeneous secondary sources and requires source-specific dating before publication.",
+        "sources": [
+          {
+            "title": "Smithsonian Institution — Female figure with bowl, Tabwa",
+            "url": "https://www.si.edu/object/female-figure-bowl%3Anmafa_2015-16-3",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Smithsonian Libraries — Les arts du corps chez les Tabwa",
+            "url": "https://www.si.edu/object/siris_sil_519925",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog 5.3 — Taabwa",
+            "url": "https://glottolog.org/resource/languoid/id/taab1238",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_TEKE",
+      "nameMain": "Teke",
+      "selfAppellation": "Bateke",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["iyx", "lli", "teg", "tek", "tyi"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 9,
+        "accepted": 4,
+        "needsReview": 1,
+        "unverified": 4,
+        "withUrl": 7
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_TEKE",
+        "parentPeopleId": null,
+        "decision": "Proposed canonical record for the Teke/Bateke identity. Reconcile useful content from PPL_TEKKE before any retirement operation.",
+        "notes": "The two local fiches cover the same three countries and share ISO 639-3 tek. Contemporary museum terminology uses Bateke with Teke as an alternative name, while the scholarly reference uses Teke. The broader Teke language cluster still requires language-level reconciliation and must not be mistaken for multiple people records. Glottolog places tek in the DRC and the Republic of the Congo, but the fiche's iyx, lli, teg, and tyi records are outside the DRC; the CD inventory also includes Teke-Eboo-Nzikou (ebo) and Teke-Fuumu (ifm). Country language exposure must not inherit the entire five-code people list.",
+        "sources": [
+          {
+            "title": "British Museum — Bateke",
+            "url": "https://www.britishmuseum.org/collection/term/x91952",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Obenga 1988 — Le peuple Teke en Afrique centrale",
+            "url": "https://glottolog.org/resource/reference/id/70547",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Royal Museum for Central Africa ethnonym thesaurus — Tio to Teke",
+            "url": "https://societies.africamuseum.be/en/tp_ethnie?key=ethnonyme&letter=T",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceIds": ["VB1954-P135-083", "VB1954-P135-107"]
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_TEMBO",
+      "nameMain": "Tembo",
+      "selfAppellation": "Batembo (pluriel) / Mutembo (singulier) ; la langue se dit Chitembo ou Kitembo",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["tbt"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 2,
+        "needsReview": 1,
+        "unverified": 4,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_TEMBO",
+        "parentPeopleId": null,
+        "decision": "Keep Tembo/Batembo as a DRC people record in North and South Kivu.",
+        "notes": "Conflict and linguistic sources distinguish Batembo as a people and Chitembo/Kitembo as their language. The fiche combines population estimates ranging from 150,000 speakers to 700,000 people; retain the relation but do not publish the selected 400,000 value without a dated methodology.",
+        "sources": [
+          {
+            "title": "The Conversation — How DRC's colonial legacy forged a nexus between ethnicity, territory and conflict",
+            "url": "https://theconversation.com/how-drcs-colonial-legacy-forged-a-nexus-between-ethnicity-territory-and-conflict-153469",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Ethnologue — Tembo",
+            "url": "https://www.ethnologue.com/language/tbt/",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_TETELA",
+      "nameMain": "Tetela",
+      "selfAppellation": "Batetela (pluriel) ; Motetela (singulier) ; AnKutshu-Membele (ancestral)",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["tll"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 3,
+        "needsReview": 0,
+        "unverified": 3,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_TETELA",
+        "parentPeopleId": "PPL_MONGO",
+        "decision": "Keep as the Tetela/Batetela people and model it as a non-additive child of the broad Mongo identity.",
+        "notes": "The DRC identity is directly attested and has a distinct modern political identity, while controlled vocabularies and scholarship place Tetela within the wider Mongo/Nkutshu family. Parent and child population figures must not be summed, and the current modeled total requires a directly compatible source. The language identifier was corrected to tll (tete1250) on 2026-09-07; the former tet code identifies Tetum in Indonesia and Timor-Leste.",
+        "sources": [
+          {
+            "title": "Bibliothèque nationale de France — Tetela (African people)",
+            "url": "https://catalogue.bnf.fr/ark:/12148/cb11993727d",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Thomas Turner — Batetela, Baluba, Basonge: Ethnogenesis in Zaire",
+            "url": "https://doi.org/10.3406/cea.1993.1494",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_TSAO",
+      "nameMain": "Tsao",
+      "selfAppellation": "Batsao (pluriel) / Mutsao (singulier)",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": [],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 6,
+        "needsReview": 0,
+        "unverified": 1,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "rejected_link",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Reject the PPL_TSAO country link to the DRC until a source directly attests the claimed Batsao community.",
+        "notes": "The fiche has no language code, gives only approximate regional placement, and cites broad country or language-family pages that do not mention Tsao or Batsao. Focused searches found no corroborating DRC or Angolan ethnographic record. Preserve the fiche for investigation, but do not surface it as a verified DRC people relation or publish its 150,000 estimate.",
+        "sources": []
+      }
+    },
+    {
+      "id": "PPL_TSHOKWE",
+      "nameMain": "Tshokwe",
+      "selfAppellation": "Tshokwe / Chokwe",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["cjk"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 5,
+        "needsReview": 0,
+        "unverified": 2,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "cjk",
+          "peopleIds": ["PPL_CHOKWE", "PPL_LUNDA_CHOKWE"]
+        }
+      ],
+      "automatedFlags": ["shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "duplicate",
+        "canonicalPeopleId": "PPL_CHOKWE",
+        "parentPeopleId": null,
+        "decision": "Proposed duplicate or alias record. Preserve Tshokwe as an alias and retain this immutable ID until a redirect or retirement mechanism exists.",
+        "notes": "Do not count PPL_CHOKWE and PPL_TSHOKWE as separate peoples. Their conflicting population estimates must not be summed. Reconcile the accepted sources and richer content from this fiche into the proposed canonical record before implementation.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Chokwe",
+            "url": "https://glottolog.org/resource/languoid/id/chok1245",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "British Museum — Chokwe",
+            "url": "https://www.britishmuseum.org/collection/term/x83452",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P135-016"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_TWA",
+      "nameMain": "Twa",
+      "selfAppellation": "Batwa (pluriel), Mutwa (singulier)",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["kin", "run"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 8,
+        "accepted": 4,
+        "needsReview": 3,
+        "unverified": 1,
+        "withUrl": 8
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "kin",
+          "peopleIds": [
+            "PPL_KINYARWANDA",
+            "PPL_KIRUNDI_HUTU",
+            "PPL_KIRUNDI_TUTSI",
+            "PPL_RWANDAIS_HUTU",
+            "PPL_RWANDAIS_TUTSI"
+          ]
+        },
+        {
+          "isoCode": "run",
+          "peopleIds": [
+            "PPL_BANTU",
+            "PPL_HUTU_BURUNDI",
+            "PPL_KIRUNDI_HUTU",
+            "PPL_KIRUNDI_TUTSI",
+            "PPL_RUNDI"
+          ]
+        }
+      ],
+      "automatedFlags": ["shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_TWA",
+        "parentPeopleId": null,
+        "decision": "Keep PPL_TWA as the canonical record for the eastern Great Lakes Twa/Batwa identity represented by this fiche.",
+        "notes": "The current kin/run language codes and four-country scope describe the eastern Great Lakes context. Do not use this record as an umbrella for every DRC forest people: Mbuti/Bambuti and Cwa/Bacwa require separate records, and western Batwa terminology needs its own scope review.",
+        "sources": [
+          {
+            "title": "IWGIA — The Indigenous World 2024: Democratic Republic of the Congo",
+            "url": "https://www.iwgia.org/en/news/iw-2024-drc",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Minority Rights Group — Batwa and Bambuti in the Democratic Republic of the Congo",
+            "url": "https://www.refworld.org/reference/countryrep/mrgi/2018/en/121730",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P135-040"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_USHI",
+      "nameMain": "Ushi",
+      "selfAppellation": "Aushi",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["auh"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": false,
+        "appellationsCurrentCountries": false,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 0,
+        "needsReview": 2,
+        "unverified": 3,
+        "withUrl": 3
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": [
+        "incomplete_country_link",
+        "no_accepted_source",
+        "name_matches_language_label"
+      ],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_USHI",
+        "parentPeopleId": null,
+        "decision": "Keep the Ushi/Aushi link to the DRC and classify it as a people identity with a cross-border Zambia–Haut-Katanga presence.",
+        "notes": "A peer-reviewed linguistic study identifies the Aushi as a matrilineal ethnolinguistic group in Zambia's Luapula Province and the DRC's Haut-Katanga Province, and Glottolog independently lists both countries. The fiche's 5,000-person DRC estimate conflicts sharply with current specialist directories and has no accepted source; replace it before publication rather than treating it as validated.",
+        "sources": [
+          {
+            "title": "Studies in African Languages and Cultures 56 — A Descriptive Grammar of Ikyaushi",
+            "url": "https://wuw.pl/data/include/cms/Studies_in_African_2022_56.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog 5.3 — Aushi",
+            "url": "https://glottolog.org/resource/languoid/id/aush1241",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P131-050"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_VILI",
+      "nameMain": "Vili",
+      "selfAppellation": "Vili (singulier: Muvili)",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["vif"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 2,
+        "needsReview": 0,
+        "unverified": 5,
+        "withUrl": 7
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "rejected_link",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Reject only the DRC country relation while preserving the Vili fiche for Angola, the Republic of the Congo, and Gabon.",
+        "notes": "Glottolog lists Vili (vif) in Angola, the Republic of the Congo, and Gabon, and Joshua Project reports Vili people groups only in the Republic of the Congo and Gabon. The current 1,000-person DRC entry has no direct corroborating source and may conflate historical Kongo/Loango reach with contemporary country presence.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Vili",
+            "url": "https://glottolog.org/resource/languoid/id/vili1238",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Joshua Project — Vili language resources",
+            "url": "https://joshuaproject.net/languages/vif",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_WANDYA",
+      "nameMain": "Wandya",
+      "selfAppellation": "Wandya",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": [],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 2,
+        "needsReview": 1,
+        "unverified": 3,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "rejected_link",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": "Reject the PPL_WANDYA country link to the DRC pending any direct evidence of a current Congolese community.",
+        "notes": "The local fiche places Wandya in the DRC and Uganda without a language code or a direct source. The sources found instead document Wandya in Zambia and in the Malawi–Tanzania language corridor, often within a Lambya/Nyiha cluster. Historical migration through or claimed origin in the Congo does not establish current DRC presence. Preserve the fiche for later geographic repair, but remove only the DRC relation after approval.",
+        "sources": [
+          {
+            "title": "World Bank Microdata Library — Zambia DHS ethnicity classification",
+            "url": "https://microdata.worldbank.org/index.php/catalog/3139/variable/W/W_ETHNICITYZM?name=W_ETHNICITYZM",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Bantu Languages in the Corridor — The Senga Survey Report",
+            "url": "https://www.bilta.org/storage/135/The-Senga-Survey-Report.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog 5.3 — Johnston 1897 linguistic and ethnographic survey",
+            "url": "https://glottolog.org/resource/reference/id/50191",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_YAKA",
+      "nameMain": "Yaka",
+      "selfAppellation": "Yaka",
+      "languageFamilyId": "FLG_BANTU",
+      "isoCodes": ["yaf"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 11,
+        "accepted": 9,
+        "needsReview": 0,
+        "unverified": 2,
+        "withUrl": 11
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_YAKA",
+        "parentPeopleId": null,
+        "decision": "Keep as the Yaka people of southwestern DRC and neighboring Angola.",
+        "notes": "The DRC country relation is directly corroborated by linguistic and museum sources. Yaka remains distinct from Suku despite strong historical and cultural interaction; language-speaker counts and older art-historical population estimates must not be treated as a current ethnic census.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Yaka-Pelende-Lonzo",
+            "url": "https://glottolog.org/resource/languoid/id/yaka1269",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Metropolitan Museum of Art — Yikeki male figure, Yaka peoples",
+            "url": "https://www.metmuseum.org/art/collection/search/311113",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Queensborough Community College Art Gallery — The Art of the Yaka and Suku",
+            "url": "https://artgallery.qcc.cuny.edu/exhibits/the-dr-arthur-p-bourgeois-collection-2/",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_YOMBE",
+      "nameMain": "Yombe",
+      "selfAppellation": "Bayombe",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["yom"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 3,
+        "needsReview": 2,
+        "unverified": 2,
+        "withUrl": 7
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "yom",
+          "peopleIds": ["PPL_KONGO_MAYOMBE"]
+        }
+      ],
+      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "subgroup",
+        "canonicalPeopleId": "PPL_YOMBE",
+        "parentPeopleId": "PPL_KONGO",
+        "decision": "Keep PPL_YOMBE as the canonical Yombe/Bayombe subgroup under PPL_KONGO.",
+        "notes": "The British Museum identifies Yombe/Mayombe as a Kongo grouping. This record supersedes PPL_KONGO_MAYOMBE and must not be counted in addition to either that duplicate or the Kongo umbrella.",
+        "sources": [
+          {
+            "title": "British Museum — Bayombe",
+            "url": "https://www.britishmuseum.org/collection/term/x85248",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "British Museum — Bakongo",
+            "url": "https://www.britishmuseum.org/collection/term/x84022",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_ZANDE",
+      "nameMain": "Azande",
+      "selfAppellation": "Azande (singulier : Zande ou Manzande)",
+      "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+      "isoCodes": ["zne"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 5,
+        "needsReview": 2,
+        "unverified": 0,
+        "withUrl": 6
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "zne",
+          "peopleIds": ["PPL_AZANDE_SUD", "PPL_SCT_MACRO"]
+        }
+      ],
+      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_ZANDE",
+        "parentPeopleId": null,
+        "decision": "Proposed canonical record for the Azande/Zande transborder identity. Reconcile useful sourced content from PPL_AZANDE_SUD before any retirement operation.",
+        "notes": "The British Museum uses Azande as the controlled term and Zande as an alternative for one community spanning the DRC, Central African Republic, and South Sudan. Glottolog likewise lists Azande as an alternative language name for Zande, ISO 639-3 zne.",
+        "sources": [
+          {
+            "title": "British Museum — Azande",
+            "url": "https://www.britishmuseum.org/collection/term/x85270",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Glottolog 5.3 — Zande",
+            "url": "https://glottolog.org/resource/languoid/id/zand1248",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P136-007"
+          }
+        ]
+      }
+    }
+  ]
+}

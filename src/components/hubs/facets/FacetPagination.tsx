@@ -2,9 +2,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 import { buildPageWindow } from "@/lib/hubs/pagination";
+import { formatNumber } from "@/lib/languageTag";
+import { getTranslation } from "@/lib/translations";
 import { cn } from "@/lib/utils";
+import type { Language } from "@/types/shared";
 
 export interface FacetPaginationProps {
+  language: Language;
   /**
    * Where on the page this pager sits. The head carries the reading's extent
    * and how much of it is shown at a time; the foot carries the pages alone,
@@ -51,6 +55,7 @@ export interface FacetPaginationProps {
  */
 // @req REQ-108
 export function FacetPagination({
+  language,
   position,
   page,
   pageCount,
@@ -68,7 +73,8 @@ export function FacetPagination({
   // said how large the selection is.
   if (lastPage <= 1) return null;
 
-  const format = new Intl.NumberFormat("fr-FR");
+  const count = (value: number) => formatNumber(language, value);
+  const copy = getTranslation(language).facets;
   /**
    * The site pager's own dress — `.afh-pager-page` in `styles/pager.css`, the
    * same class the anecdotes feed renders. Two idioms for one control is what
@@ -83,9 +89,9 @@ export function FacetPagination({
 
   // Position, not quantity. The header owns the count.
   const extent =
-    `${format.format((current - 1) * pageSize + 1)} à ` +
-    `${format.format(Math.min(current * pageSize, total))} sur ` +
-    `${format.format(total)}`;
+    `${count((current - 1) * pageSize + 1)} ${copy.to} ` +
+    `${count(Math.min(current * pageSize, total))} ${copy.of} ` +
+    `${count(total)}`;
 
   const pages = (
     <ul className="flex flex-wrap items-center justify-center gap-1 p-0">
@@ -97,7 +103,7 @@ export function FacetPagination({
             className={controlClass}
           >
             <ChevronLeft aria-hidden className="afh-pager-chevron" />
-            <span className="sr-only">Page précédente</span>
+            <span className="sr-only">{copy.previousPage}</span>
           </Link>
         </li>
       )}
@@ -116,10 +122,10 @@ export function FacetPagination({
             <Link
               href={buildHref(slot, pageSize)}
               aria-current={slot === current ? "page" : undefined}
-              aria-label={`Page ${slot}`}
+              aria-label={`${copy.page} ${slot}`}
               className={controlClass}
             >
-              {format.format(slot)}
+              {count(slot)}
             </Link>
           </li>
         )
@@ -132,7 +138,7 @@ export function FacetPagination({
             rel="next"
             className={controlClass}
           >
-            <span className="sr-only">Page suivante</span>
+            <span className="sr-only">{copy.nextPage}</span>
             <ChevronRight aria-hidden className="afh-pager-chevron" />
           </Link>
         </li>
@@ -143,7 +149,7 @@ export function FacetPagination({
   if (position === "bottom") {
     return (
       <nav
-        aria-label={`Pagination des ${unitLabel}, en pied de liste`}
+        aria-label={`${copy.pagination} ${unitLabel}, ${copy.bottomOfList}`}
         data-testid="facet-pagination-bottom"
         className={cn("mt-6 flex justify-center", className)}
       >
@@ -154,7 +160,7 @@ export function FacetPagination({
 
   return (
     <nav
-      aria-label={`Pagination des ${unitLabel}, en tête de liste`}
+      aria-label={`${copy.pagination} ${unitLabel}, ${copy.topOfList}`}
       data-testid="facet-pagination-top"
       className={cn(
         "mt-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between",
@@ -174,9 +180,11 @@ export function FacetPagination({
           the smallest size, so every choice here changes something. The label
           sits outside the list — it is not one of the choices. */}
       <div className="flex flex-wrap items-center gap-1">
-        <span className="text-afh-small text-afh-text-soft">Par page</span>
+        <span className="text-afh-small text-afh-text-soft">
+          {copy.perPage}
+        </span>
         <ul
-          aria-label="Résultats par page"
+          aria-label={copy.resultsPerPage}
           className="flex flex-wrap items-center gap-1 p-0"
         >
           {pageSizes.map((size) => (
@@ -186,7 +194,7 @@ export function FacetPagination({
               <Link
                 href={buildHref(1, size)}
                 aria-current={size === pageSize ? true : undefined}
-                aria-label={`${size} par page`}
+                aria-label={`${size} ${copy.perPage.toLocaleLowerCase(language)}`}
                 className={controlClass}
               >
                 {size}

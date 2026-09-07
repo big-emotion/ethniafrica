@@ -57,7 +57,10 @@ vi.mock("@/api/v2/services/languagesFacet", () => ({
   getLanguagesFacetChoices: (...args: unknown[]) => mockGetChoices(...args),
 }));
 
-import LanguesHubPage, { metadata } from "../page";
+import LanguesHubPage, { generateMetadata } from "../page";
+
+const FR = Promise.resolve({ lang: "fr" });
+import { CANONICAL_DOMAIN } from "@/lib/brand";
 import { getLanguageRoute, getLocalizedRoute } from "@/lib/routing";
 
 /** Two languages sharing one name — the corpus holds 748 for 532 names. */
@@ -92,7 +95,9 @@ beforeEach(() => {
 describe("the language facet page", () => {
   // @req REQ-139 @req REQ-136
   it("lists the languages of the selection and links each to its fiche", async () => {
-    render(await LanguesHubPage({ searchParams: Promise.resolve({}) }));
+    render(
+      await LanguesHubPage({ params: FR, searchParams: Promise.resolve({}) })
+    );
 
     const links = screen.getAllByRole("link", { name: /Fulfulde/ });
     expect(links[0]).toHaveAttribute("href", getLanguageRoute("fr", "fuf"));
@@ -106,7 +111,7 @@ describe("the language facet page", () => {
   // @req REQ-136
   it("visibly distinguishes a homonym pair by family and id", async () => {
     const { container } = render(
-      await LanguesHubPage({ searchParams: Promise.resolve({}) })
+      await LanguesHubPage({ params: FR, searchParams: Promise.resolve({}) })
     );
 
     expect(container.textContent).toContain("Niger-Congo · fuf");
@@ -117,6 +122,7 @@ describe("the language facet page", () => {
   it("carries the reader's narrowing to the service, not to the rendered page", async () => {
     render(
       await LanguesHubPage({
+        params: FR,
         searchParams: Promise.resolve({
           pays: "MLI",
           famille: "FLG_NIGER_CONGO",
@@ -145,7 +151,9 @@ describe("the language facet page", () => {
    */
   // @req REQ-117
   it("publishes the selection's languages to the shared globe", async () => {
-    render(await LanguesHubPage({ searchParams: Promise.resolve({}) }));
+    render(
+      await LanguesHubPage({ params: FR, searchParams: Promise.resolve({}) })
+    );
 
     const published = screen.getByTestId("published-country-index");
     const index = JSON.parse(published.getAttribute("data-index") ?? "{}");
@@ -161,7 +169,9 @@ describe("the language facet page", () => {
   it("states unavailability on a read failure rather than an empty corpus", async () => {
     mockGetPage.mockRejectedValueOnce(new Error("database unavailable"));
 
-    render(await LanguesHubPage({ searchParams: Promise.resolve({}) }));
+    render(
+      await LanguesHubPage({ params: FR, searchParams: Promise.resolve({}) })
+    );
 
     const status = screen.getByRole("status");
     expect(status.textContent).not.toMatch(/aucune/i);
@@ -169,9 +179,37 @@ describe("the language facet page", () => {
   });
 
   // @req REQ-091
-  it("declares the canonical URL for the langues index", () => {
+  it("declares the canonical URL for the langues index", async () => {
+    const metadata = await generateMetadata({ params: FR });
+
     expect(metadata.alternates?.canonical).toBe(
-      getLocalizedRoute("fr", "languages")
+      `https://${CANONICAL_DOMAIN}${getLocalizedRoute("fr", "languages")}`
     );
+  });
+
+  // @req REQ-140
+  it("composes the canonical and the fiche links in the route's locale", async () => {
+    const metadata = await generateMetadata({
+      params: Promise.resolve({ lang: "en" }),
+    });
+    expect(metadata.alternates?.canonical).toBe(
+      `https://${CANONICAL_DOMAIN}${getLocalizedRoute("en", "languages")}`
+    );
+
+    render(
+      await LanguesHubPage({
+        params: Promise.resolve({ lang: "en" }),
+        searchParams: Promise.resolve({}),
+      })
+    );
+    const links = screen.getAllByRole("link", { name: /Fulfulde/ });
+    expect(links[0]).toHaveAttribute("href", getLanguageRoute("en", "fuf"));
+    expect(
+      screen.getByText(/2 languages in this selection/)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("searchbox", { name: "Search languages" })
+    ).toHaveAttribute("placeholder", "Language name or ISO 639-3 code");
+    expect(screen.getByRole("list", { name: "Languages" })).toBeInTheDocument();
   });
 });

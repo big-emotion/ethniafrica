@@ -3,13 +3,16 @@ import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker"
 import type { PeoplesData, PeopleRow } from "@/lib/countryDataTransformer";
 import { AutonymExonymHeading } from "./AutonymExonymHeading";
 import { getPeopleRoute } from "@/lib/routing";
+import type { Language } from "@/types/shared";
+import { countryCopy } from "@/lib/i18n/copy/country";
 
 interface PeoplesSectionProps {
   data: PeoplesData;
+  language: Language;
 }
 
 // @req REQ-092
-export function PeoplesSection({ data }: PeoplesSectionProps) {
+export function PeoplesSection({ data, language }: PeoplesSectionProps) {
   if (data.rows.length === 0 && !data.totalPopulationFormatted) return null;
 
   return (
@@ -32,11 +35,11 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
                 className="text-afh-caption mt-0.5"
                 style={{ color: "var(--country-text-soft)" }}
               >
-                {populationCaption(data)}
+                {populationCaption(data, language)}
               </div>
             </>
           ) : (
-            <FieldProvenanceMarker state="missing" />
+            <FieldProvenanceMarker state="missing" language={language} />
           )}
         </div>
         {data.rows.length > 0 ? (
@@ -47,10 +50,10 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
               color: "var(--country-text)",
             }}
           >
-            {data.peopleCount}+ peuples
+            {countryCopy[language].peoples.count(data.peopleCount)}
           </div>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </div>
 
@@ -58,12 +61,13 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
         <>
           {/* Visual demographic bar */}
           <DemoBar rows={data.rows} />
-          <CoverageNote rows={data.rows} />
+          <CoverageNote rows={data.rows} language={language} />
 
           {/* People rows */}
           <div className="mt-3 md:mt-4">
             {data.rows.map((row, i) => (
               <PeopleRowItem
+                language={language}
                 key={i}
                 row={row}
                 isLast={i === data.rows.length - 1}
@@ -85,11 +89,12 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
  * floor rather than the country's population. The year always follows the
  * figure itself; mixed-year row totals name no single snapshot.
  */
-function populationCaption(data: PeoplesData): string {
+function populationCaption(data: PeoplesData, language: Language): string {
+  const copy = countryCopy[language].peoples;
   const noun =
     data.totalPopulationIsNational || data.everyPeopleDeclaresPopulation
-      ? "habitants"
-      : "habitants documentés";
+      ? copy.inhabitants
+      : copy.documentedInhabitants;
 
   return data.populationReferenceYear
     ? `${noun} · ${data.populationReferenceYear}`
@@ -146,7 +151,13 @@ export function declaredShare(rows: PeopleRow[]): number {
  * splits are being re-sourced, so where the total falls short the page
  * says so rather than letting the bar imply full coverage.
  */
-function CoverageNote({ rows }: { rows: PeopleRow[] }) {
+function CoverageNote({
+  rows,
+  language,
+}: {
+  rows: PeopleRow[];
+  language: Language;
+}) {
   const declared = declaredShare(rows);
   if (declared >= 99) return null;
 
@@ -156,8 +167,7 @@ function CoverageNote({ rows }: { rows: PeopleRow[] }) {
       className="mt-[6px] text-afh-eyebrow"
       style={{ color: "var(--country-text-soft)" }}
     >
-      Les peuples documentés ici représentent {declared}&nbsp;% de la population
-      du pays. Le reste n&apos;est pas encore réparti dans le corpus.
+      {countryCopy[language].peoples.coverage(declared)}
     </p>
   );
 }
@@ -166,7 +176,15 @@ function CoverageNote({ rows }: { rows: PeopleRow[] }) {
 // PeopleRowItem
 // ==========================================
 
-function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
+function PeopleRowItem({
+  row,
+  isLast,
+  language,
+}: {
+  row: PeopleRow;
+  isLast: boolean;
+  language: Language;
+}) {
   const dotColor = getDemoColor(row.colorIndex);
 
   return (
@@ -192,12 +210,14 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
               exonym={row.name}
               lang={row.endonymLang}
               href={
-                row.peopleId ? getPeopleRoute("fr", row.peopleId) : undefined
+                row.peopleId
+                  ? getPeopleRoute(language, row.peopleId)
+                  : undefined
               }
             />
           ) : row.peopleId && !row.groupedNames ? (
             <Link
-              href={getPeopleRoute("fr", row.peopleId)}
+              href={getPeopleRoute(language, row.peopleId)}
               className="text-afh-small font-bold leading-snug hover:underline"
               style={{ fontFamily: "var(--country-font-body)" }}
             >
@@ -221,7 +241,9 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
           >
             {row.groupedNames ? (
               <>
-                {row.groupedNames.length} peuples
+                {countryCopy[language].peoples.groupedCount(
+                  row.groupedNames.length
+                )}
                 {row.populationFormatted ? ` · ${row.populationFormatted}` : ""}
               </>
             ) : (
@@ -233,8 +255,8 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
             className="text-afh-eyebrow mt-0.5"
             style={{ color: "var(--country-text-soft)" }}
           >
-            Diversité ethnolinguistique
-            <em> · non détaillée individuellement</em>
+            {countryCopy[language].peoples.diversity}
+            <em> · {countryCopy[language].peoples.notDetailed}</em>
           </div>
         )}
 

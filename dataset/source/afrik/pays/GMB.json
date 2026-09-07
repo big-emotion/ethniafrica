@@ -1,6 +1,7 @@
 {
   "id": "GMB",
   "nameFr": "Gambie",
+  "nameEn": "The Gambia",
   "nameOfficial": "République de Gambie (Republic of The Gambia)",
   "summary": "La Gambie tient son nom du fleuve qui la traverse et la définit — le pays épouse ses rives. Royaumes mandinka, chefferies wolof et peuples fula s'y côtoyaient avant la colonie britannique de 1888. Griots, kora et rites d'initiation kankurang y prolongent l'héritage mandé.",
   "etymology": "Le nom \"Gambie\" provient du fleuve Gambie qui traverse le pays. Le nom du fleuve vient probablement du portugais \"Gambia\" ou du terme local \"Kambra\" / \"Kambaa\". Les Britanniques ont adopté ce nom pour leur colonie. Le nom officiel inclut l'article \"The\" (La Gambie) pour le distinguer de la Zambie.",
@@ -18,6 +19,7 @@
       {
         "name": "Royaumes Mandinka",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Mandinka"],
         "politicalCenters": ["Chefferies traditionnelles mandinka"],
         "historicalRole": "Royaumes Mandinka, héritiers de l'empire du Mali (XIIIe-XVIe siècle), système lignager, castes artisanales (numu, djeli), importance des griots. Rôle majeur dans la diffusion culturelle mandé. Traditions islamiques."
@@ -25,6 +27,7 @@
       {
         "name": "Chefferies Wolof",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Wolof"],
         "politicalCenters": ["Chefferies traditionnelles wolof"],
         "historicalRole": "Chefferies Wolof, traditions islamiques, commerce régional. Relations avec les royaumes wolof du Sénégal."
@@ -32,6 +35,7 @@
       {
         "name": "Peuples Fula",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Fula / Peul"],
         "politicalCenters": ["Communautés pastorales"],
         "historicalRole": "Peuples Fula pasteurs nomades et sédentaires, traditions islamiques, pastoralisme. Commerce et migrations."
@@ -39,6 +43,12 @@
       {
         "name": "Colonie britannique de Gambie",
         "period": "1888 - 1965",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1888,
+          "endYear": 1965,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples gambiens sous domination britannique"
         ],
@@ -109,7 +119,7 @@
           "Soninke (terme utilisé au Mali",
           "Sénégal)"
         ],
-        "peopleId": "PPL_SERAHULE_SONINKE",
+        "peopleId": "PPL_SONINKE",
         "mainRegion": "Diverses régions de la Gambie",
         "languages": ["Soninke (snk", "ISO 639-3)", "anglais"],
         "languageFamily": "FLG_MANDE",

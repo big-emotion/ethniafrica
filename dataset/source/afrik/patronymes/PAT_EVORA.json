@@ -87,7 +87,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Évora » associées au Cap-Vert, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Évora à une autre fiche PAT_* existante."
+      "reason": "la notice exacte du Dictionary of American Family Names, les catalogues bibliographiques et les recherches « Évora » associées au Cap-Vert, complétés par les termes « alliance », « cousinage » et « joking relationship », n'ont fait apparaître aucune paire nommée et sourcée reliant Évora à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

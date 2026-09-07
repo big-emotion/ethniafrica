@@ -1,6 +1,7 @@
 {
   "id": "COM",
   "nameFr": "Comores",
+  "nameEn": "Comoros",
   "nameOfficial": "Union des Comores (Udzima wa Komori en comorien)",
   "summary": "Les Comores tiennent leur nom de l'arabe « Juzur al-Qamar », les îles de la lune. L'archipel, connu des navigateurs arabes et perses, s'organisa en sultanats indépendants avant le protectorat français de 1886. Sa culture croise l'Afrique de l'Est, le monde swahili et l'océan Indien.",
   "etymology": "Le nom \"Comores\" vient de l'arabe \"جزر القمر\" (Juzur al-Qamar), signifiant \"îles de la lune\". En comorien, le pays est appelé \"Komori\" ou \"Udzima wa Komori\" (Union des Comores).",
@@ -22,6 +23,12 @@
       {
         "name": "Sultanats des Comores",
         "period": "IXe siècle - 1886",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 801,
+          "endYear": 1886,
+          "precision": "century"
+        },
         "dominantPeoples": [
           "Comoriens (Shimasiwa)",
           "avec influences arabes",
@@ -37,6 +44,12 @@
       {
         "name": "Protectorat français des Comores",
         "period": "1886 - 1975",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1886,
+          "endYear": 1975,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Comoriens sous administration coloniale française"
         ],
@@ -46,6 +59,12 @@
       {
         "name": "Union des Comores",
         "period": "1975 - présent",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1975,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Comoriens (Shimasiwa)"],
         "politicalCenters": ["Moroni (capitale)"],
         "historicalRole": "État indépendant depuis 1975, avec une histoire politique mouvementée incluant plusieurs coups d'État. L'Union des Comores est membre de la Ligue arabe, de l'Organisation de la coopération islamique et de l'Union africaine."

@@ -41,7 +41,7 @@ function makeDependencies() {
     }),
     writeAuditLog: vi.fn().mockResolvedValue(undefined),
     getContributorEmail: vi.fn().mockResolvedValue(null),
-    getVerifiedReporterEmail: vi.fn().mockResolvedValue(null),
+    getVerifiedReporterContact: vi.fn().mockResolvedValue(null),
     sendFlagResolutionEmail: vi.fn().mockResolvedValue(undefined),
   };
 }
@@ -225,7 +225,7 @@ describe("handleFlagTransition", () => {
         target_type: "people",
         target_id: "PPL_YORUBA",
       },
-      { email: "reader@example.org" }
+      { email: "reader@example.org", language: "fr" }
     );
   });
 
@@ -242,9 +242,10 @@ describe("handleFlagTransition", () => {
       flag: { ...acceptedFlag, contributor_id: null },
       previousStatus: "under_review",
     });
-    dependencies.getVerifiedReporterEmail.mockResolvedValue(
-      "lectrice@example.org"
-    );
+    dependencies.getVerifiedReporterContact.mockResolvedValue({
+      email: "lectrice@example.org",
+      language: "en",
+    });
 
     await handleFlagTransition(
       "flag-1",
@@ -254,12 +255,12 @@ describe("handleFlagTransition", () => {
     );
 
     expect(dependencies.getContributorEmail).not.toHaveBeenCalled();
-    expect(dependencies.getVerifiedReporterEmail).toHaveBeenCalledWith(
+    expect(dependencies.getVerifiedReporterContact).toHaveBeenCalledWith(
       "flag-1"
     );
     expect(dependencies.sendFlagResolutionEmail).toHaveBeenCalledWith(
       expect.objectContaining({ status: "accepted" }),
-      { email: "lectrice@example.org" }
+      { email: "lectrice@example.org", language: "en" }
     );
   });
 

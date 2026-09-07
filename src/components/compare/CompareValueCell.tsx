@@ -15,11 +15,12 @@ import type { ReactNode } from "react";
 import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 import type { ComparisonColumn } from "@/types/compare";
 import type { Language } from "@/types/shared";
+import { compareCopy } from "@/lib/i18n/copy/compare";
 
 export interface CompareValueCellProps {
   value: unknown;
   entity: ComparisonColumn;
-  language?: Language;
+  language: Language;
   /** Set by CompareSectionRow for demography-shaped rows only (FR61). */
   showReferenceYear?: boolean;
 }
@@ -130,14 +131,15 @@ function renderValue(value: unknown, language: Language): ReactNode {
 export function CompareValueCell({
   value,
   entity,
-  language = "fr",
+  language,
   showReferenceYear = false,
 }: CompareValueCellProps) {
+  const copy = compareCopy[language];
   if (isEmptyValue(value)) {
     return (
       <span className="bg-afh-bg-warm px-1 text-afh-text-soft">
-        non renseigné
-        <span className="sr-only"> pour {entity.label}</span>
+        {copy.missing}
+        <span className="sr-only">{copy.missingFor(entity.label)}</span>
       </span>
     );
   }
@@ -146,7 +148,9 @@ export function CompareValueCell({
     <>
       {renderValue(value, language)}
       {showReferenceYear && (
-        <p className="mt-1 text-afh-caption text-afh-text-soft">réf. 2025</p>
+        <p className="mt-1 text-afh-caption text-afh-text-soft">
+          {copy.referenceYear}
+        </p>
       )}
     </>
   );

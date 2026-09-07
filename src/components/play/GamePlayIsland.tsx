@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { BinaryChoice } from "@/components/play/BinaryChoice";
 import { EstimateSlider } from "@/components/play/EstimateSlider";
+import { ListChoice } from "@/components/play/ListChoice";
 import { GameAnswerReveal } from "@/components/play/GameAnswerReveal";
 import { GameScoreCard } from "@/components/play/GameScoreCard";
 import { ScaleFactCard } from "@/components/play/ScaleFactCard";
@@ -12,16 +13,23 @@ import {
   useGameSession,
   type GameSessionStatus,
 } from "@/hooks/use-game-session";
-import { isEstimateRound, type GameRound } from "@/lib/games/gameKinds";
+import {
+  isEstimateRound,
+  isListRound,
+  type GameRound,
+} from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import type { ScaleFact } from "@/lib/games/scaleFacts";
+import { trackEvent } from "@/lib/analytics/trackEvent";
 import { takeSession } from "@/lib/games/session";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { cn } from "@/lib/utils";
+import type { Language } from "@/types/shared";
 
 export interface GamePlayIslandProps {
   game: GameDefinition;
   rounds: GameRound[];
+  language: Language;
   /**
    * The measured scale facts. One is stated on every other reveal, and the
    * whole bank is laid out on the score card — see `ScaleFactCard` for why
@@ -36,6 +44,16 @@ export interface GamePlayIslandProps {
    * open it on the reveal; it is optional because nothing else needs to know.
    */
   onPhaseChange?: (status: GameSessionStatus) => void;
+  /**
+   * The territories the standing round compares, so a caller can show them
+   * (REQ-120). Empty between sessions and on a round that compares nothing to
+   * a place.
+   *
+   * The island reports ids and stops there. Which of them a map can draw, and
+   * what marking one looks like, is the map's business — this component has no
+   * opinion about geography and should not acquire one.
+   */
+  onComparedIdsChange?: (comparedIds: string[]) => void;
   className?: string;
 }
 
@@ -55,9 +73,11 @@ const FACT_EVERY = 2;
 export const GamePlayIsland = ({
   game,
   rounds,
+  language,
   facts = [],
   corpusLimited = false,
   onPhaseChange,
+  onComparedIdsChange,
   className,
 }: GamePlayIslandProps) => {
   // Which session of the pool is being played. The pool arrives longer than
@@ -86,6 +106,41 @@ export const GamePlayIsland = ({
     onPhaseChange?.(status);
   }, [status, onPhaseChange]);
 
+  // The score card compares nothing, so the marks come off with the last
+  // round rather than being left on whatever the session ended on.
+  const comparedIds =
+    status === "finished" ? undefined : currentRound?.comparedIds;
+
+  useEffect(() => {
+    onComparedIdsChange?.(comparedIds ?? []);
+    // `comparedIds` is a new array on every render of the same round, so
+    // depending on it would fire this effect continuously. The round's own
+    // identity is what changes when the marks should.
+  }, [currentRound, status, onComparedIdsChange]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  /**
+   * The pair that decides whether a game is worth keeping.
+   *
+   * Measured 2026-09-07: `/fr/jeux/mercator` was the site's second entry point
+   * — 13 arrivals — at a 10-second visit and an 86.7% exit rate. Nothing
+   * recorded said whether the game failed to start on mobile or simply held
+   * nobody, and repairing the wrong one of those was the risk. `sessionIndex`
+   * is a dependency so a replay counts as a start: a reader who plays twice is
+   * the strongest signal this surface can produce.
+   */
+  useEffect(() => {
+    trackEvent("game:start", { game: game.id });
+  }, [game.id, sessionIndex]);
+
+  useEffect(() => {
+    if (status !== "finished") return;
+    trackEvent("game:complete", {
+      game: game.id,
+      correct: session.correctCount,
+      rounds: sessionRounds.length,
+    });
+  }, [status, game.id, session.correctCount, sessionRounds.length]);
+
   const factForReveal =
     facts.length > 0 && (session.currentIndex + 1) % FACT_EVERY === 0
       ? facts[Math.floor(session.currentIndex / FACT_EVERY) % facts.length]
@@ -102,6 +157,7 @@ export const GamePlayIsland = ({
     >
       {status === "finished" || !currentRound ? (
         <GameScoreCard
+          language={language}
           game={game}
           correct={session.correctCount}
           total={session.totalRounds}
@@ -114,6 +170,7 @@ export const GamePlayIsland = ({
           <QuizProgressDots
             current={session.currentIndex + 1}
             total={session.totalRounds}
+            language={language}
           />
           {status === "answering" ? (
             isEstimateRound(currentRound) ? (
@@ -121,23 +178,37 @@ export const GamePlayIsland = ({
               // slider holds the reader's value in state, and a reused
               // instance would open the next round already answered.
               <EstimateSlider
+                language={language}
                 key={currentRound.subjectId}
                 round={currentRound}
                 onAnswer={session.answer}
               />
+            ) : isListRound(currentRound) ? (
+              <ListChoice
+                language={language}
+                round={currentRound}
+                onAnswer={session.answer}
+              />
             ) : (
-              <BinaryChoice round={currentRound} onAnswer={session.answer} />
+              <BinaryChoice
+                language={language}
+                round={currentRound}
+                onAnswer={session.answer}
+              />
             )
           ) : (
             <>
               <GameAnswerReveal
+                language={language}
                 round={currentRound}
                 isCorrect={session.verdict ?? false}
                 isLastRound={session.currentIndex + 1 >= session.totalRounds}
                 answer={session.selectedAnswer}
                 onNext={session.next}
               />
-              {factForReveal ? <ScaleFactCard fact={factForReveal} /> : null}
+              {factForReveal ? (
+                <ScaleFactCard language={language} fact={factForReveal} />
+              ) : null}
             </>
           )}
         </>

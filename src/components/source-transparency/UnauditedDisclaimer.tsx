@@ -2,10 +2,15 @@
 
 import { useEffect, useState } from "react";
 
+import { formatDate } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
+
 const STALE_THRESHOLD_MONTHS = 18;
 const DISMISS_KEY_PREFIX = "unaudited-disclaimer:dismissed:";
 
 export type UnauditedDisclaimerProps = {
+  language: Language;
   /** ISO date string of the last human audit, or `null` if never audited. */
   lastHumanAuditAt: string | null;
   /** Fiche identifier (e.g. `PPL_YORUBA`, `FLG_BANTU`, `BFA`). Used as the
@@ -45,20 +50,22 @@ function monthsBetween(from: Date, to: Date): number {
   return years * 12 + months - (days < 0 ? 1 : 0);
 }
 
-function formatLongFrenchDate(iso: string): string {
-  const d = new Date(iso);
-  return new Intl.DateTimeFormat("fr-FR", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(d);
-}
+// Pinned to UTC: the audit stamp is date-only, and a reader west of
+// Greenwich would otherwise see the day before.
+const AUDIT_DATE: Intl.DateTimeFormatOptions = {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+};
 
 type Variant =
   { kind: "none" } | { kind: "never" } | { kind: "stale"; dateLabel: string };
 
-function resolveVariant(lastHumanAuditAt: string | null): Variant {
+function resolveVariant(
+  language: Language,
+  lastHumanAuditAt: string | null
+): Variant {
   if (lastHumanAuditAt === null) {
     return { kind: "never" };
   }
@@ -68,18 +75,22 @@ function resolveVariant(lastHumanAuditAt: string | null): Variant {
   }
   const months = monthsBetween(audited, new Date());
   if (months > STALE_THRESHOLD_MONTHS) {
-    return { kind: "stale", dateLabel: formatLongFrenchDate(lastHumanAuditAt) };
+    return {
+      kind: "stale",
+      dateLabel: formatDate(language, audited, AUDIT_DATE),
+    };
   }
   return { kind: "none" };
 }
 
 // @req REQ-019
 export function UnauditedDisclaimer({
+  language,
   lastHumanAuditAt,
   fiche,
   entityLabel,
 }: UnauditedDisclaimerProps) {
-  const variant = resolveVariant(lastHumanAuditAt);
+  const variant = resolveVariant(language, lastHumanAuditAt);
 
   // Initialise from localStorage synchronously so dismissed fiches never flash
   // the banner on mount.
@@ -95,11 +106,10 @@ export function UnauditedDisclaimer({
 
   if (variant.kind === "none") return null;
   if (dismissed) return null;
+  const copy = ficheCopy[language].auditDisclaimer;
 
   const message =
-    variant.kind === "never"
-      ? "fiche non auditée — lire avec précaution"
-      : `dernière vérification : ${variant.dateLabel} · à re-vérifier`;
+    variant.kind === "never" ? copy.never : copy.stale(variant.dateLabel);
 
   const handleDismiss = () => {
     writeDismissed(fiche);
@@ -107,8 +117,8 @@ export function UnauditedDisclaimer({
   };
 
   const regionLabel = entityLabel
-    ? `avertissement vérification — ${entityLabel}`
-    : "avertissement vérification";
+    ? `${copy.region} — ${entityLabel}`
+    : copy.region;
 
   return (
     <div
@@ -125,7 +135,7 @@ export function UnauditedDisclaimer({
       <button
         type="button"
         onClick={handleDismiss}
-        aria-label="fermer l'avertissement"
+        aria-label={copy.close}
         className="shrink-0 rounded p-1 text-afh-small leading-none hover:opacity-70 focus:outline-none focus-visible:ring-2"
         style={{ color: "var(--country-text-soft, #7A6B5D)" }}
       >

@@ -8,7 +8,11 @@ import {
   SheetTitle,
   SheetDescription,
 } from "@/components/ui/sheet";
+import { useRouteLanguage } from "@/hooks/use-language";
+import { formatDate } from "@/lib/languageTag";
 import { cn } from "@/lib/utils";
+import type { Language } from "@/types/shared";
+import { sourceTransparencyCopy } from "@/lib/i18n/copy/sourceTransparency";
 
 /* -------------------------------------------------------------------------- */
 /*  Types                                                                      */
@@ -26,6 +30,7 @@ export type RevisionDrawerProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   peopleId: string;
+  language?: Language;
 };
 
 type DrawerState =
@@ -98,14 +103,12 @@ function usePrefersReducedMotion(): boolean {
 /*  Helpers                                                                    */
 /* -------------------------------------------------------------------------- */
 
-const FR_LONG_DATE = new Intl.DateTimeFormat("fr-FR", { dateStyle: "long" });
-
-function formatLongFrenchDate(iso: string | null): string {
+function formatPublicationDate(language: Language, iso: string | null): string {
   if (!iso) return "—";
   try {
     const d = new Date(iso);
     if (isNaN(d.getTime())) return iso;
-    return FR_LONG_DATE.format(d);
+    return formatDate(language, d);
   } catch {
     return iso;
   }
@@ -131,7 +134,14 @@ async function fetchRevisionPage(
 /*  Sub-components                                                             */
 /* -------------------------------------------------------------------------- */
 
-function RevisionRow({ item }: { item: RevisionItem }) {
+function RevisionRow({
+  item,
+  language,
+}: {
+  item: RevisionItem;
+  language: Language;
+}) {
+  const copy = sourceTransparencyCopy[language].revisionHistory;
   const [expanded, setExpanded] = React.useState(false);
   const needsTrunc = Boolean(
     item.reason && item.reason.length > REASON_TRUNCATE_LEN
@@ -155,7 +165,7 @@ function RevisionRow({ item }: { item: RevisionItem }) {
           dateTime={item.published_at ?? undefined}
           className="text-[var(--afh-fg-muted,#6b7280)] font-normal"
         >
-          {formatLongFrenchDate(item.published_at)}
+          {formatPublicationDate(language, item.published_at)}
         </time>
         {item.moderator_pseudonym && (
           <span className="text-[var(--afh-fg-muted,#6b7280)] font-normal">
@@ -174,7 +184,7 @@ function RevisionRow({ item }: { item: RevisionItem }) {
                 onClick={() => setExpanded((v) => !v)}
                 className="text-[var(--afh-accent,#1d4ed8)] underline underline-offset-1"
               >
-                {expanded ? "Voir moins" : "Voir plus"}
+                {expanded ? copy.showLess : copy.showMore}
               </button>
             </>
           )}
@@ -192,7 +202,11 @@ const RevisionDrawer: React.FC<RevisionDrawerProps> = ({
   open,
   onOpenChange,
   peopleId,
+  language: requestedLanguage,
 }) => {
+  const routeLanguage = useRouteLanguage();
+  const language = requestedLanguage ?? routeLanguage;
+  const copy = sourceTransparencyCopy[language].revisionHistory;
   const variant = useSheetVariant();
   const reducedMotion = usePrefersReducedMotion();
 
@@ -229,10 +243,10 @@ const RevisionDrawer: React.FC<RevisionDrawerProps> = ({
         }));
       } catch {
         if (id !== fetchRef.current) return;
-        setState({ phase: "error", message: "Chargement impossible." });
+        setState({ phase: "error", message: copy.loadError });
       }
     },
-    [peopleId]
+    [copy.loadError, peopleId]
   );
 
   React.useEffect(() => {
@@ -263,10 +277,9 @@ const RevisionDrawer: React.FC<RevisionDrawerProps> = ({
         data-reduced-motion={reducedMotion ? "true" : "false"}
         data-variant={variant}
       >
-        <SheetTitle>Historique des révisions</SheetTitle>
+        <SheetTitle>{copy.title}</SheetTitle>
         <SheetDescription className="sr-only">
-          Liste de toutes les révisions publiées pour cette fiche, avec date,
-          modérateur et raison.
+          {copy.description}
         </SheetDescription>
 
         {state.phase === "loading" && (
@@ -275,7 +288,7 @@ const RevisionDrawer: React.FC<RevisionDrawerProps> = ({
             className="py-8 text-center text-afh-small text-[var(--afh-fg-muted,#6b7280)]"
             aria-live="polite"
           >
-            Chargement…
+            {copy.loading}
           </div>
         )}
 
@@ -284,13 +297,13 @@ const RevisionDrawer: React.FC<RevisionDrawerProps> = ({
             className="space-y-3 rounded-md border border-[var(--afh-warn-fg,#92400e)]/30 bg-[var(--afh-warn-bg,#fef3c7)] p-4 text-afh-small text-[var(--afh-warn-fg,#92400e)]"
             role="alert"
           >
-            <p>Impossible de charger l&apos;historique.</p>
+            <p>{copy.loadError}</p>
             <button
               type="button"
               onClick={() => load()}
               className="rounded bg-[var(--afh-warn-fg,#92400e)] px-3 py-1 text-afh-caption font-medium text-white"
             >
-              Réessayer
+              {copy.retry}
             </button>
           </div>
         )}
@@ -300,7 +313,7 @@ const RevisionDrawer: React.FC<RevisionDrawerProps> = ({
             data-testid="revision-empty"
             className="py-8 text-center text-afh-small text-[var(--afh-fg-muted,#6b7280)]"
           >
-            Aucune révision publiée — fiche initiale
+            {copy.empty}
           </p>
         )}
 
@@ -308,7 +321,7 @@ const RevisionDrawer: React.FC<RevisionDrawerProps> = ({
           <section className="space-y-3 overflow-y-auto flex-1">
             <ul className="space-y-2">
               {state.revisions.map((rev) => (
-                <RevisionRow key={rev.version} item={rev} />
+                <RevisionRow key={rev.version} item={rev} language={language} />
               ))}
             </ul>
 
@@ -327,7 +340,7 @@ const RevisionDrawer: React.FC<RevisionDrawerProps> = ({
                     state.loadingMore && "opacity-50 cursor-not-allowed"
                   )}
                 >
-                  {state.loadingMore ? "Chargement…" : "Charger plus"}
+                  {state.loadingMore ? copy.loading : copy.loadMore}
                 </button>
               </div>
             )}

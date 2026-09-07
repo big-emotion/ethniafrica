@@ -92,20 +92,20 @@ type Story = StoryObj<typeof meta>;
 // @req REQ-054 REQ-056
 export const Populated430: Story = {
   name: "Endonymes, exonyme imposé & graphie historique — 430 px",
-  args: { data: populatedNames },
+  args: { language: "fr", data: populatedNames },
   parameters: { viewport: { defaultViewport: "mobile430" } },
 };
 
 // @req REQ-054 REQ-056
 export const Populated720: Story = {
   name: "Endonymes, exonyme imposé & graphie historique — 720 px",
-  args: { data: populatedNames },
+  args: { language: "fr", data: populatedNames },
   parameters: { viewport: { defaultViewport: "tablet720" } },
 };
 
-// @req UX-DR31
+// @req REQ-119
 export const Empty800: Story = {
-  name: "Aucun nom publié — la section s'omet (UX-DR31) — 800 px",
-  args: { data: null },
+  name: "Aucun nom publié — donnée manquante (REQ-119) — 800 px",
+  args: { language: "fr", data: null },
   parameters: { viewport: { defaultViewport: "desktop800" } },
 };

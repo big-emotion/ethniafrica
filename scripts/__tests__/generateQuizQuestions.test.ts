@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { describe, expect, it } from "vitest";
+import { parseLocaleArgument } from "../lib/quizLocale";
 
 const migration = readFileSync(
   resolve(process.cwd(), "supabase/migrations/036_quiz_engine.sql"),
@@ -17,6 +18,44 @@ const indexMigration = readFileSync(
   resolve(process.cwd(), "supabase/migrations/047_quiz_bank_indexes.sql"),
   "utf8"
 );
+
+const generatorSource = readFileSync(
+  resolve(process.cwd(), "scripts/generateQuizQuestions.ts"),
+  "utf8"
+);
+
+describe("generateQuizQuestions locale contract", () => {
+  // @req REQ-145
+  it("accepts both locale flag forms and defaults to French", () => {
+    expect(parseLocaleArgument([])).toBe("fr");
+    expect(parseLocaleArgument(["--lang", "en"])).toBe("en");
+    expect(parseLocaleArgument(["--lang=fr"])).toBe("fr");
+    expect(() => parseLocaleArgument(["--lang", "de"])).toThrow(
+      "--lang must be en or fr"
+    );
+  });
+
+  // @req REQ-145
+  it("reads and writes the requested locale while defaulting to French", () => {
+    expect(generatorSource).toContain(
+      "const locale = parseLocaleArgument(process.argv.slice(2));"
+    );
+    expect(generatorSource.match(/\.eq\("locale", locale\)/g)).toHaveLength(2);
+    expect(generatorSource).toContain("locale,");
+    expect(generatorSource).not.toContain('.eq("locale", "fr")');
+  });
+
+  // @req REQ-145
+  it("preflights playability before revoking or inserting a localised bank", () => {
+    const preflight = generatorSource.indexOf("assertPlayableQuestionCount(");
+    const revoke = generatorSource.indexOf("await revokeQuestions(");
+    const insertRun = generatorSource.indexOf("await insertGenerationRun(");
+
+    expect(preflight).toBeGreaterThan(-1);
+    expect(preflight).toBeLessThan(revoke);
+    expect(preflight).toBeLessThan(insertRun);
+  });
+});
 
 describe("036_quiz_engine.sql schema contract (generateQuizQuestions compile target)", () => {
   // @req REQ-080

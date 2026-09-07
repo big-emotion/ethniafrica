@@ -68,7 +68,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "La recherche web combinant « Ateba », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Decree No. 2025/357 of 22 July 2025 to appoint Subdivisional Officers » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Ateba à une autre fiche PAT_* existante."
+      "reason": "La recherche web combinant « Ateba », « patronyme », « origine », « clan », « alliance », « caste », « obituary » et « homonyme » et la lecture de « Decree No. 2025/357 of 22 July 2025 to appoint Subdivisional Officers » n'ont identifié aucune paire d'alliance ou de parenté à plaisanterie reliant Ateba à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

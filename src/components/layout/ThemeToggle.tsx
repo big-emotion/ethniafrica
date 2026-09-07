@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getTranslation } from "@/lib/translations";
+import type { Language } from "@/types/shared";
 
 /**
  * The reader's choice between the parchment surface and the night one,
@@ -13,8 +16,13 @@ import { Moon, Sun } from "lucide-react";
  * it does, where a control labelled with the state it is already in is not.
  */
 // @req REQ-115
-export function ThemeToggle() {
+export function ThemeToggle({
+  language = FALLBACK_LOCALE,
+}: {
+  language?: Language;
+} = {}) {
   const { resolvedTheme, setTheme } = useTheme();
+  const copy = getTranslation(language).chrome.theme;
   // The server cannot know which surface this reader picked, but by the
   // time React hydrates, next-themes' blocking script already has — so
   // reading resolvedTheme on the first client render produces a button
@@ -44,8 +52,8 @@ export function ThemeToggle() {
       type="button"
       data-testid="theme-toggle"
       onClick={() => setTheme(isNight ? "light" : "dark")}
-      aria-label={isNight ? "Passer en mode parchemin" : "Passer en mode nuit"}
-      title={isNight ? "Mode parchemin" : "Mode nuit"}
+      aria-label={isNight ? copy.switchToParchment : copy.switchToNight}
+      title={isNight ? copy.parchment : copy.night}
       // The 44px box is the hit area; the 30px disc inside it is what the
       // header actually draws, so this control matches the search button
       // beside it instead of standing a third taller than the bar.

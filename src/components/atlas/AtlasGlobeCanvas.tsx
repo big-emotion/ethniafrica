@@ -16,7 +16,7 @@ import {
   footprintRevealEase,
   footprintStrokeOpacity,
 } from "@/lib/atlas/footprintStyle";
-import type { AtlasOverlay, PeopleFieldArea } from "@/lib/atlas/overlays";
+import type { AtlasOverlay, PeopleFieldArea, Ring } from "@/lib/atlas/overlays";
 import type { CountryId } from "@/types/afrik";
 import { buildRotationMatrix } from "@/lib/atlas/projection";
 import {
@@ -35,6 +35,17 @@ import {
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
 const MAX_DEVICE_PIXEL_RATIO = 2;
+
+/**
+ * What the continent frame drops to while a round marks two of its countries
+ * (REQ-120).
+ *
+ * Low enough that the two marked outlines are found at a glance, high enough
+ * that the rest of the continent is still a map rather than a blank ground —
+ * the reader has to be able to see *where* in Africa the country sits, which
+ * is the whole reason the mark is there.
+ */
+const FRAME_RECEDED_STROKE_OPACITY = 0.3;
 const REVEAL_DURATION_SECONDS = 0.9;
 const PEOPLE_BASE_POINT_SIZE_CSS_PX = 46;
 
@@ -557,16 +568,44 @@ export function AtlasGlobeCanvas({
       // draw a transparent area, it draws no area at all — skipping the pass
       // is what makes a per-country fill impossible rather than merely
       // invisible (atlas-charter §1). No fill drawn, so no fill triangulated either.
+      //
+      // The one exception is a country a round is asking about, which is
+      // triangulated so it can be filled: see `highlightFillOpacity` for why
+      // that one country may be, and why a stroke alone could not carry the
+      // mark on a platform with no line width.
       const fillsRings = isFamily || staticFillOpacity > 0;
+      const highlightFillOpacity =
+        overlay.kind === "continent-field" ? overlay.highlightFillOpacity : 0;
 
       // The continent frame is 51 reference outlines and carries no count of
       // its own, so it reaches this program as rings like any other boundary.
-      const ringSource =
+      //
+      // Paired with its country id rather than flattened, because a live game
+      // round marks two of them in the accent and a bare ring cannot be asked
+      // which country it belongs to (REQ-120).
+      const framedRings: { countryId: string | null; ring: Ring }[] =
         overlay.kind === "continent-field"
-          ? overlay.frame.flatMap((country) => country.rings)
+          ? overlay.frame.flatMap((country) =>
+              country.rings.map((ring) => ({
+                countryId: country.countryId,
+                ring,
+              }))
+            )
           : overlay.kind === "family-footprint"
             ? []
-            : overlay.rings;
+            : overlay.rings.map((ring) => ({
+                countryId:
+                  overlay.kind === "country-outline" ? overlay.countryId : null,
+                ring,
+              }));
+
+      // Which outlines a standing round is asking about. Read once here rather
+      // than per frame: the overlay is immutable for the life of this effect,
+      // and a new round arrives as a new overlay.
+      const underQuestion = new Set(
+        overlay.kind === "continent-field" ? overlay.highlightedCountryIds : []
+      );
+      const underQuestionCount = underQuestion.size;
 
       // One entry per ring, each carrying the paint its own country earned.
       // A single fillOpacity for the whole overlay can only draw a flat wash,
@@ -580,16 +619,20 @@ export function AtlasGlobeCanvas({
               dashRepeats: footprintDashRepeats(ring),
               fill: buildRingFill(ring),
               loop: buildRingLineLoop(ring),
+              underQuestion: false,
             }))
           )
-        : ringSource.map((ring) => ({
-            countryId:
-              overlay.kind === "country-outline" ? overlay.countryId : null,
-            weight: 1,
-            dashRepeats: 0,
-            fill: fillsRings ? buildRingFill(ring) : null,
-            loop: buildRingLineLoop(ring),
-          }));
+        : framedRings.map(({ countryId, ring }) => {
+            const marked = underQuestion.has(countryId);
+            return {
+              countryId,
+              weight: 1,
+              dashRepeats: 0,
+              fill: fillsRings || marked ? buildRingFill(ring) : null,
+              loop: buildRingLineLoop(ring),
+              underQuestion: marked,
+            };
+          });
 
       /**
        * Vertex data is immutable for the life of the overlay: the reveal moves
@@ -609,10 +652,11 @@ export function AtlasGlobeCanvas({
       };
 
       const ringLayers = shapes.map(
-        ({ countryId, weight, dashRepeats, fill, loop }) => ({
+        ({ countryId, weight, dashRepeats, fill, loop, underQuestion }) => ({
           countryId,
           weight,
           dashRepeats,
+          underQuestion,
           fill: fill
             ? {
                 vertexCount: fill.vertexCount,
@@ -658,50 +702,81 @@ export function AtlasGlobeCanvas({
         // and any future consumer read the same curve.
         const revealed = footprintRevealEase(progressRef.current);
 
-        ringLayers.forEach(({ countryId, weight, dashRepeats, fill, loop }) => {
-          const isFocused = focusedCountryId === countryId;
-          const dimmed = focusedCountryId !== null && !isFocused;
+        ringLayers.forEach(
+          ({ countryId, weight, dashRepeats, fill, loop, underQuestion }) => {
+            const isFocused = focusedCountryId === countryId;
+            const dimmed = focusedCountryId !== null && !isFocused;
 
-          const fillOpacity = isFamily
-            ? footprintFillOpacity({ weight, dimmed })
-            : staticFillOpacity;
-          const strokeOpacity = isFamily ? footprintStrokeOpacity(dimmed) : 1;
-          const [sr, sg, sb] = isFocused ? focusRgb : [r, g, b];
+            const fillOpacity = isFamily
+              ? footprintFillOpacity({ weight, dimmed })
+              : underQuestion
+                ? highlightFillOpacity
+                : staticFillOpacity;
 
-          if (fill) {
-            gl.bindBuffer(gl.ARRAY_BUFFER, fill.positions);
+            /**
+             * A standing round makes the rest of the continent recede.
+             *
+             * `LINE_LOOP` has no usable width on this platform — every driver
+             * clamps `lineWidth` to 1 — so a mark cannot be a thicker line and
+             * has to be a brighter one. Brightness alone is not enough either:
+             * the frame is already drawn in the accent, so an accented outline
+             * among fifty-three accented outlines is invisible. What separates
+             * them is the contrast between the two, which is the same idiom
+             * the family footprint above uses when one country holds the
+             * focus — the unmarked outlines drop back and the marked ones stay
+             * whole.
+             */
+            const roundIsStanding = underQuestionCount > 0;
+            const recedes = roundIsStanding && !underQuestion;
+
+            const strokeOpacity = isFamily
+              ? footprintStrokeOpacity(dimmed)
+              : recedes
+                ? FRAME_RECEDED_STROKE_OPACITY
+                : 1;
+            // A marked country keeps the accent rather than taking the tint.
+            // `--accent-tint` is a focus ring for the night globe — measured
+            // on this page it is #dce1f9, a near-white lavender, which on the
+            // parchment surface is *paler* than the frame it is meant to stand
+            // out from. The mark is carried by the fill and by the frame
+            // receding around it; the stroke's job is to stay the accent.
+            const [sr, sg, sb] = isFocused ? focusRgb : [r, g, b];
+
+            if (fill) {
+              gl.bindBuffer(gl.ARRAY_BUFFER, fill.positions);
+              gl.enableVertexAttribArray(aSpherePos);
+              gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
+              gl.bindBuffer(gl.ARRAY_BUFFER, fill.flatPositions);
+              gl.enableVertexAttribArray(aFlat);
+              gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
+              gl.disableVertexAttribArray(aArcFraction);
+              gl.vertexAttrib1f(aArcFraction, 0);
+              gl.uniform1f(uIsStroke, 0);
+              gl.uniform1f(uProgress, 1);
+              gl.uniform1f(uDashRepeats, 0);
+              gl.uniform4f(uColor, r, g, b, fillOpacity);
+              gl.drawArrays(gl.TRIANGLES, 0, fill.vertexCount);
+            }
+
+            gl.bindBuffer(gl.ARRAY_BUFFER, loop.positions);
             gl.enableVertexAttribArray(aSpherePos);
             gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
-            gl.bindBuffer(gl.ARRAY_BUFFER, fill.flatPositions);
+
+            gl.bindBuffer(gl.ARRAY_BUFFER, loop.flatPositions);
             gl.enableVertexAttribArray(aFlat);
             gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
-            gl.disableVertexAttribArray(aArcFraction);
-            gl.vertexAttrib1f(aArcFraction, 0);
-            gl.uniform1f(uIsStroke, 0);
-            gl.uniform1f(uProgress, 1);
-            gl.uniform1f(uDashRepeats, 0);
-            gl.uniform4f(uColor, r, g, b, fillOpacity);
-            gl.drawArrays(gl.TRIANGLES, 0, fill.vertexCount);
+
+            gl.bindBuffer(gl.ARRAY_BUFFER, loop.arcFractions);
+            gl.enableVertexAttribArray(aArcFraction);
+            gl.vertexAttribPointer(aArcFraction, 1, gl.FLOAT, false, 0, 0);
+
+            gl.uniform1f(uIsStroke, 1);
+            gl.uniform1f(uProgress, revealed);
+            gl.uniform1f(uDashRepeats, dashRepeats);
+            gl.uniform4f(uColor, sr, sg, sb, strokeOpacity);
+            gl.drawArrays(gl.LINE_LOOP, 0, loop.vertexCount);
           }
-
-          gl.bindBuffer(gl.ARRAY_BUFFER, loop.positions);
-          gl.enableVertexAttribArray(aSpherePos);
-          gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
-
-          gl.bindBuffer(gl.ARRAY_BUFFER, loop.flatPositions);
-          gl.enableVertexAttribArray(aFlat);
-          gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
-
-          gl.bindBuffer(gl.ARRAY_BUFFER, loop.arcFractions);
-          gl.enableVertexAttribArray(aArcFraction);
-          gl.vertexAttribPointer(aArcFraction, 1, gl.FLOAT, false, 0, 0);
-
-          gl.uniform1f(uIsStroke, 1);
-          gl.uniform1f(uProgress, revealed);
-          gl.uniform1f(uDashRepeats, dashRepeats);
-          gl.uniform4f(uColor, sr, sg, sb, strokeOpacity);
-          gl.drawArrays(gl.LINE_LOOP, 0, loop.vertexCount);
-        });
+        );
       };
     }
 

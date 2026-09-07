@@ -1,4 +1,11 @@
+"use client";
+
+import Link from "next/link";
+import type { Language } from "@/types/shared";
+import { getFicheDossiers } from "@/lib/dossiers/catalog";
+import { useModuleAvailability } from "@/components/hubs/ModuleAvailabilityProvider";
 import type { KingdomCard } from "@/lib/countryDataTransformer";
+import { countryCopy } from "@/lib/i18n/copy/country";
 
 /**
  * Historical political entities, as a chronology.
@@ -13,30 +20,62 @@ import type { KingdomCard } from "@/lib/countryDataTransformer";
 
 interface KingdomsTimelineProps {
   cards: KingdomCard[];
+  countryId?: string;
+  language?: Language;
 }
 
 // @req REQ-115
-export function KingdomsTimeline({ cards }: KingdomsTimelineProps) {
+export function KingdomsTimeline({
+  cards,
+  countryId,
+  language = "fr",
+}: KingdomsTimelineProps) {
+  const availability = useModuleAvailability();
+  const copy = countryCopy[language].generated;
   if (cards.length === 0) return null;
 
   return (
     <div className="afh-parchment-timeline">
-      {cards.map((card) => (
-        <article className="afh-tl-item" key={`${card.name}-${card.period}`}>
-          {/* An entity whose period the corpus does not state still gets its
+      {cards.map((card) => {
+        const dossier = countryId
+          ? getFicheDossiers(
+              {
+                kind: "country",
+                id: countryId,
+                section: `kingdom:${card.name}`,
+              },
+              availability,
+              language
+            )[0]
+          : undefined;
+        return (
+          <article className="afh-tl-item" key={`${card.name}-${card.period}`}>
+            {/* An entity whose period the corpus does not state still gets its
               column, so the names stay aligned down the chronology. */}
-          <span className="afh-tl-period">{card.period ?? "—"}</span>
-          <div>
-            <h3>{card.name}</h3>
-            {card.historicalRole && <p>{card.historicalRole}</p>}
-            {card.centers && card.centers.length > 0 && (
-              <span className="afh-tl-centers">
-                Centres · {card.centers.join(" · ")}
-              </span>
-            )}
-          </div>
-        </article>
-      ))}
+            <span className="afh-tl-period">{card.period ?? "—"}</span>
+            <div>
+              <h3>
+                {dossier ? (
+                  <Link
+                    href={dossier.href}
+                    className="underline decoration-[var(--afh-accent)] underline-offset-4"
+                  >
+                    {card.name}
+                  </Link>
+                ) : (
+                  card.name
+                )}
+              </h3>
+              {card.historicalRole && <p>{card.historicalRole}</p>}
+              {card.centers && card.centers.length > 0 && (
+                <span className="afh-tl-centers">
+                  {copy.centers} · {card.centers.join(" · ")}
+                </span>
+              )}
+            </div>
+          </article>
+        );
+      })}
     </div>
   );
 }

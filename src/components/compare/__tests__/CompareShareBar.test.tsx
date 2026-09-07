@@ -4,6 +4,7 @@ import userEvent from "@testing-library/user-event";
 import React from "react";
 
 import { CompareShareBar } from "../CompareShareBar";
+import { CANONICAL_DOMAIN } from "@/lib/brand";
 
 // ---------------------------------------------------------------------------
 // /[lang]/comparer/[entityType]/[...ids] page — not-found branches (9.4)
@@ -141,7 +142,7 @@ describe("generateMetadata for /[lang]/comparer/[entityType]/[...ids]", () => {
     expect(metadata.title).toBe("Comparaison : Yoruba · Zulu");
     expect(metadata.robots).toEqual({ index: false, follow: true });
     expect(metadata.alternates?.canonical).toBe(
-      "/fr/comparer/peuples/PPL_YORUBA/PPL_ZULU"
+      `https://${CANONICAL_DOMAIN}/fr/comparer/peuples/PPL_YORUBA/PPL_ZULU`
     );
     expect(metadata.openGraph?.title).toBe("Comparaison : Yoruba · Zulu");
     const imageUrl =

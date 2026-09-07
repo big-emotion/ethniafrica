@@ -23,7 +23,8 @@ import {
 } from "@/lib/hubs/moduleRegistry";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { isModuleOffered } from "@/lib/hubs/moduleOffer";
-import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
+import { getAxisForPage, getAxisHubRoute } from "@/lib/hubs/axisRoutes";
+import { getSiteTree } from "@/lib/siteTree";
 
 const SOURCE_ROOT = join(process.cwd(), "src");
 
@@ -66,10 +67,67 @@ describe("module visibility charter", () => {
     }
   });
 
+  /**
+   * The amendment of 7 September 2026 (atlas-charter.md §3). The header used
+   * to list the registry entire, on the reading that a module absent from the
+   * menu is a module absent from the corpus. Appellations disproved it: an
+   * index of attested name forms, offered on every page of the site, drew 0
+   * visits out of 219 pageviews in the 30 days to 6 September — because it
+   * answers a name the reader already holds instead of inviting them to
+   * browse, which is a lookup and not an entry point.
+   *
+   * So the menu is curated and the exhaustive indexes are elsewhere, and the
+   * one thing the registry may say about the difference is `unlisted`. It is a
+   * declaration like `editorialReadiness` and unlike `NEXT_PUBLIC_FEATURE_QUIZ`:
+   * the route stays built, the trail keeps its axis crumb, the crawler keeps
+   * its link. What it withholds is one row in one menu.
+   */
   // @req REQ-114
-  it("hides no module from the header", () => {
+  it("hides from the header only what the registry declares unlisted", () => {
     for (const mode of ACCESS_MODES) {
-      expect(getNavModules(mode)).toEqual(getModulesForAccessMode(mode));
+      expect(getNavModules(mode)).toEqual(
+        getModulesForAccessMode(mode).filter(
+          (definition) => !definition.unlisted
+        )
+      );
+    }
+  });
+
+  /**
+   * An unlisted module is relegated, never retired — otherwise `unlisted`
+   * becomes the feature flag this file exists to forbid, wearing a new word.
+   * It keeps its route, it keeps the axis crumb its URL promises, and it keeps
+   * a line in the exhaustive index a reader reaches when the menu did not
+   * offer what they were after.
+   */
+  // @req REQ-114
+  it("keeps an unlisted module routed, on its axis and in the site plan", () => {
+    const unlisted = MODULE_DEFINITIONS.filter(
+      (definition) => definition.unlisted
+    );
+
+    expect(
+      unlisted.length,
+      "no module exercises the unlisted state"
+    ).toBeGreaterThan(0);
+
+    const planned = new Set(
+      getSiteTree("fr").flatMap((section) =>
+        section.links.map((link) => link.href)
+      )
+    );
+
+    for (const definition of unlisted) {
+      const href = getModuleHref(definition, "fr");
+      expect(href, `${definition.id} is unlisted and unroutable`).toBeTruthy();
+      expect(
+        getAxisForPage(definition.page),
+        `${definition.id} lost the axis its URL promises`
+      ).toBe(definition.accessMode);
+      expect(
+        planned,
+        `${definition.id} is unlisted and absent from the site plan`
+      ).toContain(href);
     }
   });
 

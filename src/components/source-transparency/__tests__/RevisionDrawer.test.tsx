@@ -1,6 +1,14 @@
 // @req REQ-019
 // @req REQ-021
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+
+// Publication dates are formatted in the route's locale; the assertions are
+// French, so the suite stands on a French route.
+const navigation = await vi.hoisted(async () => {
+  const { mockRouteLanguage } = await import("@/test/mockRouteLanguage");
+  return mockRouteLanguage("fr");
+});
+vi.mock("next/navigation", () => navigation);
 import {
   render,
   screen,
@@ -92,6 +100,20 @@ afterEach(() => {
 /* -------------------------------------------------------------------------- */
 
 describe("RevisionDrawer", () => {
+  // @req REQ-140
+  // @req REQ-145
+  it("renders empty revision history copy in English", async () => {
+    mockFetch([]);
+    renderDrawer({ language: "en" });
+
+    expect(screen.getByText("Revision history")).toBeInTheDocument();
+    await waitFor(() => {
+      expect(
+        screen.getByText("No published revision — initial fiche")
+      ).toBeInTheDocument();
+    });
+  });
+
   it("renders a dialog with accessible title and description", async () => {
     mockFetch([revision1]);
     renderDrawer();

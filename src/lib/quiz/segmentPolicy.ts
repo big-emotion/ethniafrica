@@ -29,6 +29,7 @@
  */
 
 import type { QuizEntityType, QuizTemplateId } from "@/types/quiz";
+import type { Language } from "@/types/shared";
 
 // Re-exported so the many callers that read the union from here keep working;
 // `@/types/quiz` owns it, so the two can no longer drift apart.
@@ -225,6 +226,28 @@ export const QUIZ_THEME_LABELS_FR: Record<QuizThemeId, string> = {
   migrations: "Migrations",
 };
 
+// @req REQ-145
+export const QUIZ_THEME_LABELS_EN: Record<QuizThemeId, string> = {
+  "parente-linguistique": "Language relationships",
+  noms: "Names and appellations",
+  langues: "Languages",
+  territoire: "Territory",
+  "rites-et-culture": "Rites and culture",
+  croyances: "Beliefs",
+  "royaumes-et-histoire": "Kingdoms and history",
+  organisation: "Social organization",
+  migrations: "Migrations",
+};
+
+// @req REQ-145
+export const QUIZ_THEME_LABELS: Record<
+  Language,
+  Record<QuizThemeId, string>
+> = {
+  en: QUIZ_THEME_LABELS_EN,
+  fr: QUIZ_THEME_LABELS_FR,
+};
+
 /**
  * What a track is called once a scope and a theme have both been chosen.
  *
@@ -247,6 +270,18 @@ export function quizTrackLabelFr(
     theme && isQuizThemeId(theme) ? QUIZ_THEME_LABELS_FR[theme] : null;
 
   return [scopeLabelFr, themeLabel].filter(Boolean).join(" · ");
+}
+
+// @req REQ-145
+export function quizTrackLabel(
+  scopeLabel: string | null,
+  theme: string | null,
+  language: Language
+): string {
+  const themeLabel =
+    theme && isQuizThemeId(theme) ? QUIZ_THEME_LABELS[language][theme] : null;
+
+  return [scopeLabel, themeLabel].filter(Boolean).join(" · ");
 }
 
 /**
@@ -275,6 +310,28 @@ export const QUIZ_THEME_SPECIMENS_FR: Record<QuizThemeId, string> = {
   "royaumes-et-histoire": "Quel peuple a connu cette histoire ?",
   organisation: "Quel peuple s'organise ainsi ?",
   migrations: "Quel peuple a suivi ce chemin ?",
+};
+
+// @req REQ-145
+export const QUIZ_THEME_SPECIMENS_EN: Record<QuizThemeId, string> = {
+  noms: "What name does this people use for itself?",
+  langues: "What is this people's main language?",
+  "parente-linguistique": "Which language family does this people belong to?",
+  territoire: "In which country is this people mainly present?",
+  "rites-et-culture": "Which people practices these rites?",
+  croyances: "Which people holds these beliefs?",
+  "royaumes-et-histoire": "Which people lived through this history?",
+  organisation: "Which people is organized in this way?",
+  migrations: "Which people followed this path?",
+};
+
+// @req REQ-145
+export const QUIZ_THEME_SPECIMENS: Record<
+  Language,
+  Record<QuizThemeId, string>
+> = {
+  en: QUIZ_THEME_SPECIMENS_EN,
+  fr: QUIZ_THEME_SPECIMENS_FR,
 };
 
 /**

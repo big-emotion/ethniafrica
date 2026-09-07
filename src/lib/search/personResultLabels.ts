@@ -5,7 +5,7 @@
  * added once rather than wherever a card happens to render it:
  *
  * - `getPersonRoleLabel` — the role category (`ethnographer`, `head_of_state`,
- *   ...) in French. An unmapped slug falls back to itself rather than being
+ *   ...) in the requested language. An unmapped slug falls back to itself rather than being
  *   hidden, because the acceptance criterion is that the role is *always*
  *   visible — a missing translation must never regress into a missing field.
  * - `getPersonRelationLabel` — `membership` vs `observation`, worded so the
@@ -15,8 +15,9 @@
  */
 
 import type { PersonPeopleRelationLabel } from "@/types/persons";
+import type { Language } from "@/types/shared";
 
-const PERSON_ROLE_LABELS: Record<string, string> = {
+const PERSON_ROLE_LABELS_FR: Record<string, string> = {
   ethnographer: "Ethnographe",
   historian: "Historien·ne",
   missionary: "Missionnaire",
@@ -30,19 +31,46 @@ const PERSON_ROLE_LABELS: Record<string, string> = {
   journalist: "Journaliste",
 };
 
+const PERSON_ROLE_LABELS_EN: Record<string, string> = {
+  ethnographer: "Ethnographer",
+  historian: "Historian",
+  missionary: "Missionary",
+  explorer: "Explorer",
+  colonial_administrator: "Colonial administrator",
+  head_of_state: "Head of state",
+  author: "Author",
+  translator: "Translator",
+  informant: "Informant",
+  linguist: "Linguist",
+  journalist: "Journalist",
+};
+
 // @req REQ-126
-export function getPersonRoleLabel(roleCategory: string): string {
-  return PERSON_ROLE_LABELS[roleCategory] ?? roleCategory;
+export function getPersonRoleLabel(
+  roleCategory: string,
+  language: Language = "fr"
+): string {
+  const labels =
+    language === "en" ? PERSON_ROLE_LABELS_EN : PERSON_ROLE_LABELS_FR;
+  return labels[roleCategory] ?? roleCategory;
 }
 
-const PERSON_RELATION_LABELS: Record<PersonPeopleRelationLabel, string> = {
+const PERSON_RELATION_LABELS_FR: Record<PersonPeopleRelationLabel, string> = {
   membership: "Membre de",
   observation: "Observe / documente",
 };
 
+const PERSON_RELATION_LABELS_EN: Record<PersonPeopleRelationLabel, string> = {
+  membership: "Member of",
+  observation: "Observes / documents",
+};
+
 // @req REQ-126
 export function getPersonRelationLabel(
-  relationLabel: PersonPeopleRelationLabel
+  relationLabel: PersonPeopleRelationLabel,
+  language: Language = "fr"
 ): string {
-  return PERSON_RELATION_LABELS[relationLabel];
+  const labels =
+    language === "en" ? PERSON_RELATION_LABELS_EN : PERSON_RELATION_LABELS_FR;
+  return labels[relationLabel];
 }

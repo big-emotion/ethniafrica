@@ -6,6 +6,10 @@ import coteDIvoire from "../../dataset/source/afrik/pays/CIV.json";
 import { createAdminClient } from "@/lib/supabase/admin";
 import type { Country } from "@/types/afrik";
 import { loadAllCountries } from "@/lib/afrik/loaders/countryLoader";
+import {
+  loadAllDossiers,
+  loadDossiers,
+} from "@/lib/afrik/loaders/dossierJsonLoader";
 import { loadAllLanguageFamilies } from "@/lib/afrik/loaders/languageFamilyLoader";
 import { loadAllLanguages } from "@/lib/afrik/loaders/languageCsvLoader";
 import {
@@ -35,12 +39,21 @@ import {
   loadMigrations,
 } from "@/lib/afrik/loaders/migrationJsonLoader";
 import {
+  emptyTranslationLoadReport,
+  loadAllTranslationSidecars,
+  loadTranslationSidecars,
+  type TranslationRow,
+} from "@/lib/afrik/loaders/translationSidecarLoader";
+import {
   emptyProvenanceReport,
   writeFicheProvenance,
 } from "@/lib/afrik/loaders/provenanceWriter";
 import { classificationLabels } from "@/lib/translations";
 import { AFRIK_RECETTE_SUPABASE_URL } from "../lib/afrikSyncTarget";
-import { migrateAfrikToDatabase } from "../migrateAfrikToDatabase";
+import {
+  classifySyncOutcome,
+  migrateAfrikToDatabase,
+} from "../migrateAfrikToDatabase";
 import type { LanguageFamily, People } from "@/types/afrik";
 import type { LanguageRecord } from "@/lib/afrik/loaders/languageCsvLoader";
 import type { LanguageLoadReport } from "@/lib/afrik/loaders/languageProvenanceLoader";
@@ -52,12 +65,14 @@ vi.mock("@/lib/afrik/loaders/languageCsvLoader");
 vi.mock("@/lib/afrik/loaders/languageProvenanceLoader");
 vi.mock("@/lib/afrik/loaders/peopleLoader");
 vi.mock("@/lib/afrik/loaders/countryLoader");
+vi.mock("@/lib/afrik/loaders/dossierJsonLoader");
 vi.mock("@/lib/afrik/loaders/nameRecordJsonLoader");
 vi.mock("@/lib/afrik/loaders/peopleAppellationLoader");
 vi.mock("@/lib/afrik/loaders/patronymeJsonLoader");
 vi.mock("@/lib/afrik/loaders/personJsonLoader");
 vi.mock("@/lib/afrik/loaders/relationJsonLoader");
 vi.mock("@/lib/afrik/loaders/migrationJsonLoader");
+vi.mock("@/lib/afrik/loaders/translationSidecarLoader");
 vi.mock("@/lib/supabase/admin");
 // Mocked at a real seam rather than faked: `writeFicheProvenance` owns the
 // sources → fiche_revisions → assertions fabric and carries its own tests for
@@ -96,7 +111,8 @@ type TableName =
   | "afrik_peoples"
   | "afrik_countries"
   | "afrik_people_countries"
-  | "afrik_people_relations";
+  | "afrik_people_relations"
+  | "afrik_dossiers";
 
 interface DatabaseRow {
   id?: string;
@@ -135,6 +151,7 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
     afrik_countries: [...(options.rows?.afrik_countries ?? [])],
     afrik_people_countries: [...(options.rows?.afrik_people_countries ?? [])],
     afrik_people_relations: [...(options.rows?.afrik_people_relations ?? [])],
+    afrik_dossiers: [...(options.rows?.afrik_dossiers ?? [])],
   };
   const operations: UpsertOperation[] = [];
   const upsertCalls: UpsertCall[] = [];
@@ -260,6 +277,13 @@ describe("migrateAfrikToDatabase", () => {
     // A JSON import widens every string to `string`, so the fiche's
     // `sources[].tier` loses its literal type against FicheSource.
     vi.mocked(loadAllCountries).mockResolvedValue([coteDIvoire as Country]);
+    vi.mocked(loadAllDossiers).mockReturnValue({ dossiers: [], errors: [] });
+    vi.mocked(loadDossiers).mockResolvedValue({
+      total: 0,
+      inserted: 0,
+      chapters: 0,
+      errors: [],
+    });
     vi.mocked(loadAllRelationFiles).mockReturnValue([]);
     vi.mocked(loadRelations).mockResolvedValue({
       total: 0,
@@ -299,6 +323,132 @@ describe("migrateAfrikToDatabase", () => {
       alliances: 0,
       errors: [],
     });
+    vi.mocked(emptyTranslationLoadReport).mockImplementation(() => ({
+      total: 0,
+      inserted: 0,
+      skipped: null,
+      stale: [],
+      errors: [],
+    }));
+    vi.mocked(loadAllTranslationSidecars).mockReturnValue({
+      rows: [],
+      errors: [],
+      stale: [],
+    });
+    vi.mocked(loadTranslationSidecars).mockResolvedValue({
+      total: 0,
+      inserted: 0,
+      skipped: null,
+      stale: [],
+      errors: [],
+    });
+  });
+
+  const zuluTranslation: TranslationRow = {
+    entity_type: "people",
+    entity_id: "PPL_ZULU",
+    lang: "en",
+    content: {},
+    translation_kind: "machine",
+    translated_at: "2026-09-05T10:00:00.000Z",
+    reviewed_by: null,
+    model: "claude-sonnet-4-5",
+    source_hash: "a".repeat(64),
+    field_hashes: {},
+    review_required: [],
+  };
+
+  // @req REQ-146
+  it("counts the translation sidecars in a preview without loading them", async () => {
+    vi.mocked(loadAllTranslationSidecars).mockReturnValue({
+      rows: [zuluTranslation],
+      errors: [],
+      stale: ["people/PPL_ZULU"],
+    });
+    useSupabaseDouble();
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: true,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    expect(loadAllTranslationSidecars).toHaveBeenCalledWith("en");
+    expect(report.translations).toMatchObject({
+      total: 1,
+      inserted: 0,
+      stale: ["people/PPL_ZULU"],
+    });
+    expect(loadTranslationSidecars).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-146
+  it("loads the translation sidecars last, after the relations, and reports the loader's result", async () => {
+    const events: string[] = [];
+    vi.mocked(loadAllTranslationSidecars).mockReturnValue({
+      rows: [zuluTranslation],
+      errors: [],
+      stale: [],
+    });
+    vi.mocked(loadRelations).mockImplementation(async () => {
+      events.push("relations");
+      return { total: 0, inserted: 0, errors: [] };
+    });
+    vi.mocked(loadTranslationSidecars).mockImplementation(async () => {
+      events.push("translations");
+      return { total: 1, inserted: 1, skipped: null, stale: [], errors: [] };
+    });
+    useSupabaseDouble();
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    expect(loadTranslationSidecars).toHaveBeenCalledWith(expect.anything(), [
+      zuluTranslation,
+    ]);
+    expect(events).toEqual(["relations", "translations"]);
+    expect(report.translations).toMatchObject({ total: 1, inserted: 1 });
+  });
+
+  // @req REQ-146
+  it("keeps a load green when the translations table is absent, and says so in the report", async () => {
+    vi.mocked(loadAllTranslationSidecars).mockReturnValue({
+      rows: [zuluTranslation],
+      errors: [],
+      stale: [],
+    });
+    vi.mocked(loadTranslationSidecars).mockResolvedValue({
+      total: 1,
+      inserted: 0,
+      skipped:
+        "afrik_translations is absent — apply 085_afrik_translations.sql",
+      stale: [],
+      errors: [],
+    });
+    // The corpus itself lands cleanly and nothing is orphaned; only the
+    // translations table is behind.
+    useSupabaseDouble({
+      rows: {
+        afrik_language_families: [{ id: afroasiaticFamily.id, content: {} }],
+        afrik_peoples: [{ id: betePeople.id, content: {} }],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: recetteTarget,
+    });
+
+    expect(report.translations.skipped).toContain("085_afrik_translations");
+    expect(report.translations.errors).toEqual([]);
+    const outcome = classifySyncOutcome(report);
+    expect(outcome.structuralFailures).not.toContain("translations");
+    expect(outcome.editorialDefects).toBe(0);
   });
 
   // @req REQ-032
@@ -523,6 +673,10 @@ describe("migrateAfrikToDatabase", () => {
       ({ table }) => table === "afrik_countries"
     )!;
     expect(countryOperation.row.content).toEqual(coteDIvoire.content);
+    // An unmapped field never errors, it simply never arrives (049); the
+    // English name has to be asserted here or it can vanish the same way.
+    expect(countryOperation.row.name_en).toBe(coteDIvoire.nameEn);
+    expect(countryOperation.row.name_en).toBe("Côte d'Ivoire");
     expect(database.operations[0].row).not.toHaveProperty("created_at");
     expect(database.operations[1].row).not.toHaveProperty("created_at");
     expect(countryOperation.row).not.toHaveProperty("created_at");

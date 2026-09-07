@@ -1,0 +1,41 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "lub",
+  "isoCode639_3": "lub",
+  "glottocode": "luba1250",
+  "nameFr": "Kiluba (luba-katanga)",
+  "nameEn": "Luba-Katanga",
+  "alternateNames": ["Kiluba", "Luba-Shaba"],
+  "spellingAliases": [],
+  "familyId": "FLG_BANTU",
+  "peoples": [
+    { "name": "Luba", "peopleId": "PPL_LUBA" },
+    { "name": "Luba-Katanga", "peopleId": "PPL_LUBA_KATANGA" }
+  ],
+  "content": {
+    "vehicularRole": "non_vehicular",
+    "dialects": [],
+    "vitalityStatus": {
+      "status": "Threatened",
+      "scale": "EGIDS (Ethnologue)",
+      "asOf": 2025
+    },
+    "sources": [
+      {
+        "title": "Glottolog 5.3 — Luba-Katanga (luba1250)",
+        "url": "https://glottolog.org/resource/languoid/id/luba1250",
+        "tier": "official",
+        "notes": "Notice directe pour le code ISO 639-3 lub et le glottocode luba1250. Elle situe la langue en République démocratique du Congo, atteste notamment les variantes Kiluba et Luba-Shaba et publie le statut EGIDS 6b en 2025. Le statut constitutionnel du tshiluba ne doit pas être transféré au kiluba."
+      }
+    ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the French DRC country enrichment pass is stable."
+    }
+  }
+}

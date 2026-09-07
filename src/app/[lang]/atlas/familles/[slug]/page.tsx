@@ -7,7 +7,7 @@ import {
   loadLanguageFamilyFiche,
 } from "@/lib/fiche/ficheExistence";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
-import { ficheCanonical } from "@/lib/seo/ficheCanonical";
+import { ficheHead } from "@/lib/seo/ficheHead";
 import { getFamilyRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 import {
@@ -15,6 +15,13 @@ import {
   getRevisionSnapshot,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { FicheOnward } from "@/components/fiche/FicheOnward";
+import { buildOnwardLinks } from "@/lib/fiche/onwardLinks";
+import { familyOnwardGroups } from "@/lib/fiche/onwardGroups";
+import { rankMemberPeoplesByReach } from "@/lib/familyFootprintRanking";
+import { getAfrikLanguagesByFamily } from "@/lib/supabase/queries/afrik/languages";
+import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
@@ -23,8 +30,10 @@ import { FamilyFicheTitle } from "@/components/family/FamilyFicheTitle";
 import { FamilyFootprintLegend } from "@/components/family/FamilyFootprintLegend";
 import { buildFamilyTargetFacts } from "@/components/family/familyTargetFacts";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
-import { buildFamilyFootprintOverlay } from "@/lib/atlas/overlays";
-import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
+import {
+  buildFamilyFootprintOverlay,
+  getAdmin0Name,
+} from "@/lib/atlas/overlays";
 import { mapLanguageFamilyDetail } from "@/lib/afrikDetailMapper";
 import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
 import {
@@ -35,6 +44,7 @@ import {
   declaredAssociatedPeopleIds,
   resolveFootprintProvenance,
 } from "@/lib/familyFootprintSource";
+import { familyCopy } from "@/lib/i18n/copy/family";
 
 // @req REQ-019
 export const revalidate = 3600;
@@ -77,7 +87,7 @@ export async function generateMetadata({
   ) {
     notFound();
   }
-  return ficheCanonical("family", lang as Language, slug);
+  return ficheHead("family", lang as Language, slug);
 }
 
 // ---------------------------------------------------------------------------
@@ -121,7 +131,10 @@ export default async function FamillesSlugPage({
     }
 
     return (
-      <PageLayout language="fr" sectionName="Familles linguistiques">
+      <PageLayout
+        language={lang as Language}
+        sectionName="Familles linguistiques"
+      >
         <div className="container mx-auto max-w-4xl px-4 py-8">
           <FicheSnapshotView
             kind="languageFamily"
@@ -138,7 +151,7 @@ export default async function FamillesSlugPage({
     );
   }
 
-  const family = await loadLanguageFamilyFiche(parsed.slug);
+  const family = await loadLanguageFamilyFiche(parsed.slug, lang as Language);
   if (!family) {
     notFound();
   }
@@ -187,54 +200,106 @@ export default async function FamillesSlugPage({
   // Precomputed here, on the server, and handed over as data. AtlasGlobe is a
   // client component: a resolver function cannot cross that boundary.
   const familyTargetFacts = buildFamilyTargetFacts({
+    language: lang as Language,
     familyNameFr: familyDetail.nameFr,
     memberPeopleCount: memberPeoples.length,
     peopleNamesByCountry,
     countryNamesFr: Object.fromEntries(
       (familyOverlay?.countries ?? []).map((country) => [
         country.countryId,
-        AFRICA_ADMIN0[country.countryId]?.nameFr ?? country.countryId,
+        getAdmin0Name(country.countryId, "fr") ?? country.countryId,
       ])
     ),
   });
 
+  /**
+   * The family's own languages, which no other part of this route needs.
+   *
+   * `generalInfo.branches` looks like the answer and is not: it holds prose
+   * labels ("East Bantu", "Mbam-Bubi") that no field ties to a language, so it
+   * can name a branch but never address one. Caught rather than awaited bare —
+   * a fiche must not 500 over the block that closes it.
+   */
+  const familyLanguages = await getAfrikLanguagesByFamily(parsed.slug).catch(
+    () => []
+  );
+
   const recordView = (
     <LanguageFamilyDetailViewV2
+      language={lang as Language}
       family={family}
       footprintCountries={familyOverlay?.countries ?? []}
       memberPeoples={memberPeoples}
       memberPeopleCount={memberPeoples.length}
       footprintProvenance={footprintProvenance}
+      onward={
+        <FicheOnward
+          from="language-family"
+          language={lang as Language}
+          links={buildOnwardLinks(
+            familyOnwardGroups({
+              languages: familyLanguages,
+              // Widest reach first: the peoples the family gathers across the
+              // most countries are the ones a reader has most chance of
+              // having heard of, and the ranking is the fiche's own.
+              peoples: rankMemberPeoplesByReach(memberPeoples),
+              language: lang as Language,
+            }),
+            lang as Language
+          )}
+        />
+      }
     />
   );
 
   // Live version (revalidate = 3600 at segment level)
+  const copy = familyCopy[lang as Language];
+  const atlasFamilyName =
+    lang === "en"
+      ? familyDetail.nameEn || familyDetail.nameFr
+      : familyDetail.nameFr;
+
   return (
     <PageLayout
-      language="fr"
+      language={lang as Language}
       sectionName="Familles linguistiques"
       flushTop
       trailLabel={family.nameFr}
       heroHead={
-        <FicheHeroHead entityType="language-family">
-          <FamilyFicheTitle family={family} />
+        <FicheHeroHead
+          entityType="language-family"
+          translation={family.translation}
+        >
+          <FamilyFicheTitle family={family} language={lang as Language} />
         </FicheHeroHead>
       }
     >
+      <FicheJsonLd
+        graph={await ficheJsonLdFor(
+          "language-family",
+          lang as Language,
+          parsed.slug
+        )}
+      />
       <FicheSequence
+        language={lang as Language}
         entityType="language-family"
         entityId={parsed.slug}
         entityName={familyDetail.nameFr}
         globe={
           <FicheHeroBand>
             <AtlasGlobe
+              language={lang as Language}
               overlay={familyOverlay}
               targetPicker="list"
               facts={familyTargetFacts}
               legend={
-                <FamilyFootprintLegend provenance={footprintProvenance} />
+                <FamilyFootprintLegend
+                  provenance={footprintProvenance}
+                  language={lang as Language}
+                />
               }
-              missingMessage={`Empreinte géographique non disponible pour ${familyDetail.nameFr}`}
+              missingMessage={copy.atlas.missingFootprint(atlasFamilyName)}
             />
           </FicheHeroBand>
         }

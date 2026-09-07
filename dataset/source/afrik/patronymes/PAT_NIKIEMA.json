@@ -112,7 +112,7 @@
     },
     {
       "fieldPath": "alliances",
-      "reason": "Le répertoire cite des groupes et des ressortissants de localités comme partenaires à plaisanterie, mais aucun couple Nikiéma/PAT_* nominatif, réciproque et vérifiable n'a été établi."
+      "reason": "Le répertoire cite des groupes et des ressortissants de localités comme partenaires à plaisanterie, mais aucun couple Nikiéma/autre nom nominatif, réciproque et vérifiable n'a été établi."
     },
     {
       "fieldPath": "casteOrSocialFunction",

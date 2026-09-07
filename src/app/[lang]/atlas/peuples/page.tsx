@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { permanentRedirect } from "next/navigation";
 
@@ -23,6 +24,10 @@ import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
 import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getPeopleRoute, resolvePeopleDeepLink } from "@/lib/routing";
 import type { CountryId, People } from "@/types/afrik";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
+import { getTranslation } from "@/lib/translations";
+import { formatNumber } from "@/lib/languageTag";
+import { facetDirectoriesCopy } from "@/lib/i18n/copy/facetDirectories";
 import type { Language } from "@/types/shared";
 
 /**
@@ -65,8 +70,6 @@ const PARAM = {
   size: PAGE_SIZE_PARAM,
 } as const;
 
-const countFormat = new Intl.NumberFormat("fr-FR");
-
 /**
  * An address for this facet under a given selection.
  *
@@ -74,6 +77,7 @@ const countFormat = new Intl.NumberFormat("fr-FR");
  * the next time the module moves this call site moves with it.
  */
 function facetHref(
+  language: Language,
   filters: PeoplesFacetFilters,
   page: number | null,
   pageSize: number
@@ -91,13 +95,32 @@ function facetHref(
   }
 
   const search = query.toString();
-  const path = getFacetRoute("fr", "peoples");
+  const path = getFacetRoute(language, "peoples");
   return search ? `${path}?${search}` : path;
 }
 
 /** The autonym the fiche opens on, when the corpus records one. */
 function selfAppellationOf(people: People): string | undefined {
   return people.content?.appellations?.selfAppellation || undefined;
+}
+
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const title = getTranslation(lang as Language).peoples;
+  return {
+    title,
+    ...surfaceHead(
+      lang as Language,
+      "peoples",
+      (locale) => getFacetRoute(locale, "peoples"),
+      { title }
+    ),
+  };
 }
 
 // @req REQ-091
@@ -109,9 +132,12 @@ export default async function PeuplesHubPage({
   searchParams?: Promise<PageSearchParams>;
 }) {
   const { lang } = await params;
+  const language = lang as Language;
+  const copy = facetDirectoriesCopy[language].peoples;
+  const count = (value: number) => formatNumber(language, value);
   const query = (await searchParams) ?? {};
 
-  const fiche = resolvePeopleDeepLink(lang as Language, query);
+  const fiche = resolvePeopleDeepLink(language, query);
   if (fiche) {
     permanentRedirect(fiche);
   }
@@ -154,10 +180,15 @@ export default async function PeuplesHubPage({
       rows.push({
         id: row.id,
         label: row.nameMain,
-        href: getPeopleRoute("fr", row.id),
+        href: getPeopleRoute(language, row.id),
       });
       countryIndex[key] = rows;
-      narrowing[key] ??= facetHref({ ...filters, countryId }, null, pageSize);
+      narrowing[key] ??= facetHref(
+        language,
+        { ...filters, countryId },
+        null,
+        pageSize
+      );
     }
   }
 
@@ -173,23 +204,34 @@ export default async function PeuplesHubPage({
   const activeFilters: FacetActiveFilter[] = [];
   if (filters.familyId) {
     activeFilters.push({
-      label: `Famille : ${familyLabels.get(filters.familyId) ?? filters.familyId}`,
-      removeHref: facetHref({ ...filters, familyId: null }, null, pageSize),
+      label: `${copy.familyFilter}: ${familyLabels.get(filters.familyId) ?? filters.familyId}`,
+      removeHref: facetHref(
+        language,
+        { ...filters, familyId: null },
+        null,
+        pageSize
+      ),
     });
   }
   if (filters.letter) {
     activeFilters.push({
-      label: `Lettre : ${filters.letter}`,
-      removeHref: facetHref({ ...filters, letter: null }, null, pageSize),
+      label: `${copy.letterFilter}: ${filters.letter}`,
+      removeHref: facetHref(
+        language,
+        { ...filters, letter: null },
+        null,
+        pageSize
+      ),
     });
   }
 
   /** The pager's own address composer: same filters, only the page moves. */
   const pagerHref = (page: number, size: number) =>
-    facetHref(filters, page, size);
+    facetHref(language, filters, page, size);
 
   const pagination = (position: "top" | "bottom") => (
     <FacetPagination
+      language={language}
       position={position}
       page={reading.page}
       pageCount={reading.totalPages}
@@ -197,14 +239,11 @@ export default async function PeuplesHubPage({
       pageSize={pageSize}
       pageSizes={PEOPLES_FACET_PAGE_SIZES}
       buildHref={pagerHref}
-      unitLabel="peuples"
+      unitLabel={copy.plural}
     />
   );
 
-  const lede =
-    `${countFormat.format(reading.total)} ` +
-    `${reading.total === 1 ? "peuple" : "peuples"} dans cette sélection. ` +
-    `Choisissez un pays sur le globe pour voir ceux qu'il documente.`;
+  const lede = copy.lede(count(reading.total), reading.total === 1);
 
   return (
     <>
@@ -233,18 +272,18 @@ export default async function PeuplesHubPage({
             submits, and the select still earns the line — aiming at a shape
             needs WebGL and a script, and this needs neither. */}
         <FacetFilterBar
-          action={getFacetRoute("fr", "peoples")}
+          action={getFacetRoute(language, "peoples")}
           className="mt-4"
           searchField={{
             name: PARAM.search,
-            label: "Rechercher un peuple",
-            placeholder: "Nom du peuple",
+            label: copy.searchLabel,
+            placeholder: copy.searchPlaceholder,
             value: filters.search ?? null,
           }}
           primaryField={{
             name: PARAM.country,
-            label: "Pays",
-            anyLabel: "Tous les pays",
+            label: copy.country,
+            anyLabel: copy.allCountries,
             options: choices.countries.map((country) => ({
               value: country.id,
               label: country.label,
@@ -254,8 +293,8 @@ export default async function PeuplesHubPage({
           advancedFields={[
             {
               name: PARAM.family,
-              label: "Famille linguistique",
-              anyLabel: "Toutes les familles",
+              label: copy.family,
+              anyLabel: copy.allFamilies,
               options: choices.families.map((family) => ({
                 value: family.id,
                 label: family.label,
@@ -266,9 +305,10 @@ export default async function PeuplesHubPage({
           advancedSlot={{
             content: (
               <FacetLetterRail
+                language={language}
                 current={filters.letter}
                 hrefFor={(letter) =>
-                  facetHref({ ...filters, letter }, null, pageSize)
+                  facetHref(language, { ...filters, letter }, null, pageSize)
                 }
               />
             ),
@@ -289,22 +329,23 @@ export default async function PeuplesHubPage({
 
         {reading.peoples.length === 0 ? (
           <p data-testid="peoples-facet-empty" className="mt-6">
-            Aucun peuple du corpus ne répond à cette sélection.{" "}
+            {copy.empty}{" "}
             <Link
               href={facetHref(
+                language,
                 { familyId: null, countryId: null, letter: null },
                 null,
                 pageSize
               )}
             >
-              Revenir à tous les peuples
+              {copy.reset}
             </Link>
           </p>
         ) : (
           <>
             {pagination("top")}
             <ul
-              aria-label="Peuples"
+              aria-label={copy.listLabel}
               className="mt-6 flex flex-col gap-2 p-0 md:grid md:grid-cols-2 xl:grid-cols-3"
             >
               {reading.peoples.map((people) => (
@@ -313,7 +354,7 @@ export default async function PeuplesHubPage({
                     no keyboard and left the directory with zero followable
                     links to a fiche. */}
                   <Link
-                    href={getPeopleRoute("fr", people.id)}
+                    href={getPeopleRoute(language, people.id)}
                     prefetch={false}
                     className="block h-full rounded-afh-xl border border-afh-border bg-afh-surface p-4 focus-visible:outline-none focus-visible:shadow-[var(--afh-ring-focus)]"
                   >
@@ -326,6 +367,7 @@ export default async function PeuplesHubPage({
                       {people.classificationStatus && (
                         <ClassificationBadge
                           status={people.classificationStatus}
+                          language={language}
                         />
                       )}
                       {familyLabels.get(people.languageFamilyId) && (

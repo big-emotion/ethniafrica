@@ -25,10 +25,11 @@ import { CompareEntityHeader } from "@/components/compare/CompareEntityHeader";
 import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 import type { CompareEntityType, ComparisonPageData } from "@/types/compare";
 import type { Language } from "@/types/shared";
+import { compareCopy } from "@/lib/i18n/copy/compare";
 
 export interface ComparisonViewProps {
   data: ComparisonPageData;
-  language?: Language;
+  language: Language;
 }
 
 function entityRoute(
@@ -41,16 +42,22 @@ function entityRoute(
   return getFamilyRoute(language, id);
 }
 
-function joinLabels(labels: string[]): string {
+function joinLabels(labels: string[], joiner: string): string {
   if (labels.length === 0) return "";
   if (labels.length === 1) return labels[0];
-  return `${labels.slice(0, -1).join(", ")} et ${labels[labels.length - 1]}`;
+  return `${labels.slice(0, -1).join(", ")} ${joiner} ${labels[labels.length - 1]}`;
 }
 
 // @req REQ-097 REQ-098
-export function ComparisonView({ data, language = "fr" }: ComparisonViewProps) {
+export function ComparisonView({ data, language }: ComparisonViewProps) {
   const visibleRows = data.rows.filter((row) => !isRowEmpty(row));
-  const caption = `Comparaison de ${joinLabels(data.columns.map((column) => column.label))}`;
+  const copy = compareCopy[language];
+  const caption = copy.caption(
+    joinLabels(
+      data.columns.map((column) => column.label),
+      copy.listJoiner
+    )
+  );
 
   return (
     <div>
@@ -98,7 +105,7 @@ export function ComparisonView({ data, language = "fr" }: ComparisonViewProps) {
       {/* ≥ 800 px: semantic table, scrollable in its own region so the body never scrolls horizontally. */}
       <div
         role="region"
-        aria-label="Tableau de comparaison"
+        aria-label={copy.tableLabel}
         tabIndex={0}
         className="hidden max-w-[800px] overflow-x-auto min-[800px]:mx-auto min-[800px]:block"
       >
@@ -109,7 +116,7 @@ export function ComparisonView({ data, language = "fr" }: ComparisonViewProps) {
           <thead>
             <tr>
               <th scope="col" className="p-afh-sm text-left align-top">
-                <span className="sr-only">Attribut comparé</span>
+                <span className="sr-only">{copy.comparedAttribute}</span>
               </th>
               {data.columns.map((column) => (
                 <th
@@ -134,7 +141,7 @@ export function ComparisonView({ data, language = "fr" }: ComparisonViewProps) {
                   scope="row"
                   className="p-afh-sm text-left align-top font-semibold"
                 >
-                  {getRowLabel(data.type, row.key)}
+                  {getRowLabel(data.type, row.key, language)}
                 </th>
                 {data.columns.map((column) => (
                   <td key={column.id} className="p-afh-sm align-top">

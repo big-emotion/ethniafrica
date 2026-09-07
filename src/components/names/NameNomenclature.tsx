@@ -18,12 +18,11 @@
 import Link from "next/link";
 
 import { NameTypeBadge } from "@/components/names/NameTypeBadge";
-import { getPeopleRoute } from "@/lib/routing";
-import { translations } from "@/lib/translations";
+import { getPeopleRoute, getStaticPageRoute } from "@/lib/routing";
+import { getTranslation } from "@/lib/translations";
 import type { NameForm } from "@/api/v2/schemas/names";
 import type { NameRecordType } from "@/types/names";
-
-const t = translations.fr.names;
+import type { Language } from "@/types/shared";
 
 /** Filter chips, in corpus order. A type with no record is never rendered. */
 const TYPE_ORDER: NameRecordType[] = [
@@ -34,6 +33,7 @@ const TYPE_ORDER: NameRecordType[] = [
 ];
 
 export interface NameNomenclatureProps {
+  language: Language;
   forms: NameForm[];
   total: number;
   page: number;
@@ -67,6 +67,7 @@ const CHIP_CLASS =
 
 // @req REQ-054
 export function NameNomenclature({
+  language,
   forms,
   total,
   page,
@@ -78,6 +79,7 @@ export function NameNomenclature({
   typeCounts,
   imposedCount,
 }: NameNomenclatureProps) {
+  const t = getTranslation(language).names;
   const firstOnPage = total === 0 ? 0 : (page - 1) * perPage + 1;
   const lastOnPage = Math.min(page * perPage, total);
   const filtered = Boolean(query || nameType || imposedOnly);
@@ -185,7 +187,7 @@ export function NameNomenclature({
             </Link>
           )}
           <Link
-            href={`/fr/contribute?q=${encodeURIComponent(query ?? "")}`}
+            href={`${getStaticPageRoute(language, "contribute")}?q=${encodeURIComponent(query ?? "")}`}
             className="text-afh-small underline underline-offset-2"
           >
             {t.emptyState.reportMissing}
@@ -227,7 +229,7 @@ export function NameNomenclature({
                 {form.bearers.map((bearer) => (
                   <li key={bearer.id} className="text-afh-small">
                     <Link
-                      href={`${getPeopleRoute("fr", bearer.id)}#noms`}
+                      href={`${getPeopleRoute(language, bearer.id)}#noms`}
                       className="underline underline-offset-2 hover:no-underline"
                     >
                       {bearer.name}

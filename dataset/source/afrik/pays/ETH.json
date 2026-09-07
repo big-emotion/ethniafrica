@@ -1,6 +1,7 @@
 {
   "id": "ETH",
   "nameFr": "Éthiopie",
+  "nameEn": "Ethiopia",
   "nameOfficial": "République fédérale démocratique d'Éthiopie (የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ)",
   "summary": "L'Éthiopie est nommée par un mot grec, « Aithiopia », le pays des visages brûlés ; les Égyptiens l'appelaient Pount. Du royaume d'Axoum à l'Empire salomonien, son histoire étatique est ininterrompue, et elle n'a jamais été durablement colonisée — l'occupation italienne mise à part. Oromo, Amhara, Somali, Tigréens, Sidama et Gurage y composent une mosaïque sémitique et couchitique.",
   "etymology": "Le nom \"Éthiopie\" vient du grec \"Αἰθιοπία\" (Aithiopia), signifiant \"pays des visages brûlés\" ou \"pays des Noirs\". Le terme était utilisé par les Grecs anciens pour désigner les terres au sud de l'Égypte. Le nom amharique \"Ityop'iya\" (ኢትዮጵያ) est dérivé du grec.",
@@ -22,6 +23,12 @@
       {
         "name": "Royaume d'Axoum",
         "period": "Ier - VIIe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1,
+          "endYear": 700,
+          "precision": "century"
+        },
         "dominantPeoples": ["Habesha (précurseurs des Amhara et Tigréens)"],
         "politicalCenters": ["Axoum (capitale)"],
         "historicalRole": "Royaume puissant, christianisation (IVe siècle), commerce avec l'Arabie, l'Inde et la Méditerranée. Centre intellectuel et religieux."
@@ -29,6 +36,12 @@
       {
         "name": "Empire d'Éthiopie",
         "period": "XIIIe - XXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1201,
+          "endYear": 2000,
+          "precision": "century"
+        },
         "dominantPeoples": [
           "Amhara",
           "Tigréens",
@@ -41,6 +54,12 @@
       {
         "name": "République socialiste d'Éthiopie",
         "period": "1974 - 1991",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1974,
+          "endYear": 1991,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples éthiopiens sous régime socialiste"
         ],
@@ -50,6 +69,12 @@
       {
         "name": "République fédérale démocratique d'Éthiopie",
         "period": "1995 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1995,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples éthiopiens"],
         "politicalCenters": ["Addis-Abeba (capitale)"],
         "historicalRole": "Transition démocratique (1991), fédéralisme ethnique (1995), développement économique, défis de gouvernance et de stabilité."

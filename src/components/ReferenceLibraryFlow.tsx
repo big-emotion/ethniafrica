@@ -13,6 +13,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
+import { contributeCopy } from "@/lib/i18n/copy/contribute";
+import type { Language } from "@/types/shared";
 import type { SourceTier } from "@/types/sources";
 
 type SourceKind =
@@ -44,38 +46,42 @@ interface ReferenceLibraryResponse<T> {
 
 export interface ReferenceLibraryFlowProps {
   assertionId?: string;
+  language?: Language;
 }
 
-const SOURCE_KIND_LABELS: Record<SourceKind, string> = {
-  intergovernmental: "Organisation intergouvernementale",
-  government: "Institution publique",
-  official_statistics: "Statistiques officielles",
-  linguistic_reference: "Référence linguistique",
-  academic: "Publication académique",
-  community: "Organisation communautaire",
-  repository: "Dépôt documentaire",
-  archive: "Archive",
-};
+const SOURCE_KINDS: readonly SourceKind[] = [
+  "intergovernmental",
+  "government",
+  "official_statistics",
+  "linguistic_reference",
+  "academic",
+  "community",
+  "repository",
+  "archive",
+];
 
 function isSourceKind(value: string): value is SourceKind {
-  return value in SOURCE_KIND_LABELS;
+  return SOURCE_KINDS.includes(value as SourceKind);
 }
 
 function isAssetKind(value: string): value is "scan" | "ocr" {
   return value === "scan" || value === "ocr";
 }
 
-async function getAccessToken() {
+async function getAccessToken(authRequiredMessage: string) {
   const { data } = await createBrowserSupabaseClient().auth.getSession();
   const token = data.session?.access_token;
 
-  if (!token) throw new Error("Connectez-vous pour ajouter une référence.");
+  if (!token) throw new Error(authRequiredMessage);
   return token;
 }
 
-async function readResponse<T>(response: Response): Promise<T> {
+async function readResponse<T>(
+  response: Response,
+  requestErrorMessage: string
+): Promise<T> {
   const payload: ReferenceLibraryResponse<T> = await response.json();
-  if (!response.ok) throw new Error("La demande n’a pas pu être traitée.");
+  if (!response.ok) throw new Error(requestErrorMessage);
   return payload.data;
 }
 
@@ -94,7 +100,9 @@ function sourceKeyFrom(title: string, year: string) {
 // @req REQ-093
 export function ReferenceLibraryFlow({
   assertionId,
+  language = "fr",
 }: ReferenceLibraryFlowProps) {
+  const copy = contributeCopy[language].reference;
   const [mode, setMode] = useState<"search" | "offline">("search");
   const [searchInput, setSearchInput] = useState("");
   const [submittedSearch, setSubmittedSearch] = useState("");
@@ -116,19 +124,19 @@ export function ReferenceLibraryFlow({
   const search = useQuery({
     queryKey: ["reference-library", submittedSearch],
     queryFn: async () => {
-      const token = await getAccessToken();
+      const token = await getAccessToken(copy.authRequired);
       const response = await fetch(
         `/api/v2/reference-library?q=${encodeURIComponent(submittedSearch)}&limit=20`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      return readResponse<ReferenceSource[]>(response);
+      return readResponse<ReferenceSource[]>(response, copy.requestError);
     },
     enabled: Boolean(submittedSearch),
   });
 
   const createReference = useMutation({
     mutationFn: async () => {
-      const token = await getAccessToken();
+      const token = await getAccessToken(copy.authRequired);
       const response = await fetch("/api/v2/reference-library", {
         method: "POST",
         headers: {
@@ -153,22 +161,23 @@ export function ReferenceLibraryFlow({
           url: url.trim() || null,
         }),
       });
-      const result = await readResponse<{ source: ReferenceSource }>(response);
+      const result = await readResponse<{ source: ReferenceSource }>(
+        response,
+        copy.requestError
+      );
       return result.source;
     },
     onSuccess: (source) => {
       setSelectedSource(source);
-      setMessage(
-        "Référence enregistrée. Vous pouvez ajouter un repère ou un document privé."
-      );
+      setMessage(copy.saved);
     },
-    onError: () => setMessage("La référence n’a pas pu être enregistrée."),
+    onError: () => setMessage(copy.saveError),
   });
 
   const linkAssertion = useMutation({
     mutationFn: async () => {
       if (!assertionId || !selectedSource) return;
-      const token = await getAccessToken();
+      const token = await getAccessToken(copy.authRequired);
       const response = await fetch("/api/v2/reference-library/assertions", {
         method: "POST",
         headers: {
@@ -182,16 +191,16 @@ export function ReferenceLibraryFlow({
           locator_value: locator.trim(),
         }),
       });
-      await readResponse(response);
+      await readResponse(response, copy.requestError);
     },
-    onSuccess: () => setMessage("Référence liée à l’assertion."),
-    onError: () => setMessage("Le repère n’a pas pu être enregistré."),
+    onSuccess: () => setMessage(copy.linked),
+    onError: () => setMessage(copy.linkError),
   });
 
   const uploadAsset = useMutation({
     mutationFn: async () => {
       if (!selectedSource || !asset) return;
-      const token = await getAccessToken();
+      const token = await getAccessToken(copy.authRequired);
       const formData = new FormData();
       formData.set("sourceId", selectedSource.id);
       formData.set("assetKind", assetKind);
@@ -201,13 +210,13 @@ export function ReferenceLibraryFlow({
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
       });
-      await readResponse(response);
+      await readResponse(response, copy.requestError);
     },
     onSuccess: () => {
-      setMessage("Document privé enregistré.");
+      setMessage(copy.uploaded);
       setAsset(null);
     },
-    onError: () => setMessage("Le document privé n’a pas pu être enregistré."),
+    onError: () => setMessage(copy.uploadError),
   });
 
   function chooseSearch() {
@@ -235,65 +244,62 @@ export function ReferenceLibraryFlow({
     >
       <div className="space-y-1">
         <h3 id="reference-library-title" className="text-afh-h3 font-semibold">
-          Ajouter une référence
+          {copy.title}
         </h3>
         <p className="text-afh-small text-muted-foreground">
-          Recherchez une référence déjà vérifiée ou enregistrez un ouvrage que
-          vous consultez hors ligne.
+          {copy.introduction}
         </p>
       </div>
 
       <div
         className="flex flex-col gap-2 min-[720px]:flex-row"
-        aria-label="Mode de référence"
+        aria-label={copy.modeLabel}
       >
         <Button
           type="button"
           variant={mode === "search" ? "default" : "outline"}
           onClick={chooseSearch}
         >
-          Rechercher dans la bibliothèque
+          {copy.searchMode}
         </Button>
         <Button
           type="button"
           variant={mode === "offline" ? "default" : "outline"}
           onClick={chooseOffline}
         >
-          Enregistrer un ouvrage hors ligne
+          {copy.offlineMode}
         </Button>
       </div>
 
       {mode === "search" ? (
         <div className="space-y-3">
           <div className="space-y-2">
-            <Label htmlFor="reference-search">
-              Rechercher une référence existante
-            </Label>
+            <Label htmlFor="reference-search">{copy.searchLabel}</Label>
             <div className="flex flex-col gap-2 min-[720px]:flex-row">
               <Input
                 id="reference-search"
                 value={searchInput}
                 onChange={(event) => setSearchInput(event.target.value)}
-                placeholder="Titre, auteur, éditeur…"
+                placeholder={copy.searchPlaceholder}
               />
               <Button
                 type="button"
                 onClick={submitSearch}
                 disabled={!searchInput.trim()}
               >
-                Rechercher
+                {copy.search}
               </Button>
             </div>
           </div>
 
           {search.isLoading && (
             <p className="text-afh-small text-muted-foreground">
-              Recherche en cours…
+              {copy.searching}
             </p>
           )}
           {search.isError && (
             <p className="text-afh-small text-destructive">
-              La recherche n’a pas pu être effectuée.
+              {copy.searchError}
             </p>
           )}
           {search.data?.map((source) => (
@@ -304,7 +310,7 @@ export function ReferenceLibraryFlow({
               className="h-auto w-full justify-start whitespace-normal px-3 py-3 text-center md:text-left"
               onClick={() => {
                 setSelectedSource(source);
-                setMessage("Référence sélectionnée.");
+                setMessage(copy.selected);
               }}
             >
               <span>
@@ -319,7 +325,7 @@ export function ReferenceLibraryFlow({
       ) : (
         <div className="space-y-3">
           <div className="space-y-2">
-            <Label htmlFor="offline-title">Titre de l’ouvrage</Label>
+            <Label htmlFor="offline-title">{copy.offlineTitle}</Label>
             <Input
               id="offline-title"
               value={title}
@@ -328,17 +334,17 @@ export function ReferenceLibraryFlow({
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="offline-authors">Auteur(s)</Label>
+            <Label htmlFor="offline-authors">{copy.authors}</Label>
             <Input
               id="offline-authors"
               value={authors}
               onChange={(event) => setAuthors(event.target.value)}
-              placeholder="Séparez plusieurs auteurs par un point-virgule"
+              placeholder={copy.authorsPlaceholder}
               required
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="offline-year">Année de publication</Label>
+            <Label htmlFor="offline-year">{copy.year}</Label>
             <Input
               id="offline-year"
               type="number"
@@ -350,7 +356,7 @@ export function ReferenceLibraryFlow({
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="offline-kind">Type de source</Label>
+            <Label htmlFor="offline-kind">{copy.sourceKind}</Label>
             <Select
               value={sourceKind}
               onValueChange={(value) => {
@@ -361,7 +367,7 @@ export function ReferenceLibraryFlow({
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                {Object.entries(SOURCE_KIND_LABELS).map(([value, label]) => (
+                {Object.entries(copy.sourceKinds).map(([value, label]) => (
                   <SelectItem key={value} value={value}>
                     {label}
                   </SelectItem>
@@ -370,20 +376,16 @@ export function ReferenceLibraryFlow({
             </Select>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="offline-identifier">
-              Identifiant bibliographique (ISBN, DOI ou cote)
-            </Label>
+            <Label htmlFor="offline-identifier">{copy.identifier}</Label>
             <Input
               id="offline-identifier"
               value={identifier}
               onChange={(event) => setIdentifier(event.target.value)}
-              placeholder="Ex. ISBN 978-… ou cote ANC-1912-7"
+              placeholder={copy.identifierPlaceholder}
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="offline-publisher">
-              Éditeur ou institution (optionnel)
-            </Label>
+            <Label htmlFor="offline-publisher">{copy.publisher}</Label>
             <Input
               id="offline-publisher"
               value={publisher}
@@ -391,7 +393,7 @@ export function ReferenceLibraryFlow({
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="offline-url">URL (optionnelle)</Label>
+            <Label htmlFor="offline-url">{copy.url}</Label>
             <Input
               id="offline-url"
               type="url"
@@ -410,9 +412,7 @@ export function ReferenceLibraryFlow({
               createReference.isPending
             }
           >
-            {createReference.isPending
-              ? "Enregistrement…"
-              : "Enregistrer la référence"}
+            {createReference.isPending ? copy.saving : copy.save}
           </Button>
         </div>
       )}
@@ -420,19 +420,17 @@ export function ReferenceLibraryFlow({
       {selectedSource && (
         <div className="space-y-4 border-t pt-4 min-[720px]:space-y-5 min-[720px]:pt-6">
           <p className="text-afh-small font-medium">
-            Référence sélectionnée : {selectedSource.title}
+            {copy.selectedPrefix} {selectedSource.title}
           </p>
 
           {assertionId && (
             <div className="space-y-2">
-              <Label htmlFor="reference-locator">
-                Repère précis dans la source (optionnel)
-              </Label>
+              <Label htmlFor="reference-locator">{copy.locator}</Label>
               <Input
                 id="reference-locator"
                 value={locator}
                 onChange={(event) => setLocator(event.target.value)}
-                placeholder="Ex. p. 48, § 2 ou 01:32"
+                placeholder={copy.locatorPlaceholder}
               />
               <Button
                 type="button"
@@ -440,9 +438,7 @@ export function ReferenceLibraryFlow({
                 onClick={() => linkAssertion.mutate()}
                 disabled={!locator.trim() || linkAssertion.isPending}
               >
-                {linkAssertion.isPending
-                  ? "Association…"
-                  : "Lier à l’assertion"}
+                {linkAssertion.isPending ? copy.linking : copy.link}
               </Button>
             </div>
           )}
@@ -450,7 +446,7 @@ export function ReferenceLibraryFlow({
           <div className="space-y-3">
             <div className="space-y-1">
               <Label htmlFor="reference-asset-kind">
-                Type de document privé
+                {copy.privateDocumentType}
               </Label>
               <Select
                 value={assetKind}
@@ -462,15 +458,13 @@ export function ReferenceLibraryFlow({
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="scan">Scan</SelectItem>
-                  <SelectItem value="ocr">Texte OCR</SelectItem>
+                  <SelectItem value="scan">{copy.scan}</SelectItem>
+                  <SelectItem value="ocr">{copy.ocr}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="reference-asset">
-                Ajouter un scan ou un texte OCR
-              </Label>
+              <Label htmlFor="reference-asset">{copy.addDocument}</Label>
               <Input
                 id="reference-asset"
                 type="file"
@@ -479,8 +473,7 @@ export function ReferenceLibraryFlow({
               />
             </div>
             <p className="text-afh-small text-muted-foreground">
-              Le scan ou le texte OCR reste privé et ne sera pas publié sans
-              vérification des droits.
+              {copy.privateHelp}
             </p>
             <Button
               type="button"
@@ -488,7 +481,7 @@ export function ReferenceLibraryFlow({
               onClick={() => uploadAsset.mutate()}
               disabled={!asset || uploadAsset.isPending}
             >
-              {uploadAsset.isPending ? "Ajout…" : "Ajouter le document privé"}
+              {uploadAsset.isPending ? copy.uploading : copy.upload}
             </Button>
           </div>
         </div>

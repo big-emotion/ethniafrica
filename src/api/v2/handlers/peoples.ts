@@ -8,6 +8,7 @@ import {
   type PatronymeLinkSummary,
 } from "../services/patronymeFicheLinks";
 import type { PeopleQueryFilters } from "@/lib/supabase/queries/afrik/peoples";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 import type { People } from "@/types/afrik";
 import { createApiResponse, type ApiEnvelope } from "../utils/response";
 
@@ -57,12 +58,16 @@ export async function listPeoplesHandler(
  */
 // @req REQ-084
 // @req REQ-133
+// @req REQ-142
 export async function getPeopleHandler(
-  id: string
+  id: string,
+  lang: TranslationLocale = "fr"
 ): Promise<ApiEnvelope<PeopleWithPatronymes> | null> {
-  const people = await getPeopleById(id);
+  const people = await getPeopleById(id, lang);
   if (!people) return null;
 
+  // Provenance travels on the envelope, never inside the record it describes.
+  const { translation, ...entity } = people;
   const patronymes = await getPatronymesBorneByPeople(id);
-  return createApiResponse({ ...people, patronymes });
+  return createApiResponse({ ...entity, patronymes }, { translation });
 }

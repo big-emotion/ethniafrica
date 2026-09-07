@@ -1,0 +1,31 @@
+{
+  "type": "result",
+  "subtype": "error_max_budget_usd",
+  "is_error": true,
+  "duration_ms": 9412,
+  "duration_api_ms": 9106,
+  "num_turns": 1,
+  "result": "",
+  "terminal_reason": "budget_exhausted",
+  "stop_reason": null,
+  "session_id": "00000000-0000-0000-0000-000000000001",
+  "total_cost_usd": 0.5556,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 138888,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 0
+  },
+  "modelUsage": {
+    "claude-sonnet-5": {
+      "inputTokens": 4,
+      "outputTokens": 0,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 138888,
+      "webSearchRequests": 0,
+      "costUSD": 0.5556,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000
+    }
+  }
+}

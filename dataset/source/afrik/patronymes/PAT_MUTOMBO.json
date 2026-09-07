@@ -70,7 +70,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web et bibliographique combinant « Mutombo », « Luba », « la RDC », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « Anthroponyms We Live By: An Ecolinguistic Approach to Names in Ciluba » et la page Forebears propre au nom, consultées directement, n’a identifié aucune alliance ni parenté à plaisanterie documentée reliant Mutombo à une autre fiche PAT_* existante."
+      "reason": "la recherche web et bibliographique combinant « Mutombo », « Luba », « la RDC », « surname », « nom de famille », « anthroponymie », « étymologie », « clan », « transmission » et « obituary », ainsi que la source dédiée « Anthroponyms We Live By: An Ecolinguistic Approach to Names in Ciluba » et la page Forebears propre au nom, consultées directement, n’a identifié aucune alliance ni parenté à plaisanterie documentée reliant Mutombo à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

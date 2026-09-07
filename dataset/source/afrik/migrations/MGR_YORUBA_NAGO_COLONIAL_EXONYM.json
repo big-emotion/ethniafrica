@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "migration",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
   "id": "MGR_YORUBA_NAGO_COLONIAL_EXONYM",
   "nameMain": "Imposition de l'ethnonyme colonial « Nago » aux populations yoruba du Dahomey",
   "migrationGroup": null,

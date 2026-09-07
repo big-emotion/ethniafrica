@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 
 vi.mock("next/navigation", () => ({
+  usePathname: () => "/fr",
   useRouter: () => ({ push: vi.fn() }),
 }));
 

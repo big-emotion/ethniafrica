@@ -1,4 +1,6 @@
 import { NOMMER_FIGURES } from "@/lib/dossiers/nommer/figures";
+import { formatNumber } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
 
 /**
  * The three numbers the dossier rests on, stated as composition rather than
@@ -15,8 +17,8 @@ import { NOMMER_FIGURES } from "@/lib/dossiers/nommer/figures";
  * reads as decoration.
  *
  * The third measure is the one that matters most and is easiest to get wrong.
- * 460 of 800 is 57,5 %, and printing that percentage would let a reader infer
- * that the other 340 fiches were examined and found sound. 321 were never
+ * 445 of 775 is 57,4 %, and printing that percentage would let a reader infer
+ * that the other 330 fiches were examined and found sound. 311 were never
  * examined at all. So the band publishes the gap beside the finding, which is
  * what the atlas charter §4 asks of an absent value.
  */
@@ -32,7 +34,7 @@ interface Measure {
   provenance: string;
 }
 
-const measures = (): Measure[] => {
+const measures = (language: Language): Measure[] => {
   const exonyms = countedValue("corpus-exonyms");
   const autonyms = countedValue("corpus-autonyms");
   const contested = countedValue("status-contested-or-colonial");
@@ -41,12 +43,35 @@ const measures = (): Measure[] => {
   const africanChoice = countedValue("countries-african-choice");
   const countries = countedValue("corpus-countries");
 
+  if (language === "en") {
+    return [
+      {
+        value: `${Math.round(exonyms / autonyms)} to 1`,
+        claim:
+          "The corpus holds four names from outside for every name from within.",
+        provenance: `${formatNumber(language, exonyms)} exonyms against ${formatNumber(language, autonyms)} autonyms, counted in the records`,
+      },
+      {
+        value: `${contested} out of ${peoples}`,
+        claim:
+          "That many peoples declare their own name contested or inherited from colonisation.",
+        provenance: `and ${undeclared} records declare nothing at all — the figure a percentage would erase`,
+      },
+      {
+        value: `${africanChoice} out of ${countries}`,
+        claim: "That many countries bear a name chosen by Africans.",
+        provenance:
+          "a manual reading of the 54 etymologies, none of which the corpus yet supports with a source",
+      },
+    ];
+  }
+
   return [
     {
       value: `${Math.round(exonyms / autonyms)} pour 1`,
       claim:
         "Le corpus tient quatre noms venus du dehors pour un nom venu du dedans.",
-      provenance: `${exonyms.toLocaleString("fr-FR")} exonymes contre ${autonyms.toLocaleString("fr-FR")} autonymes, comptés sur les fiches`,
+      provenance: `${formatNumber(language, exonyms)} exonymes contre ${formatNumber(language, autonyms)} autonymes, comptés sur les fiches`,
     },
     {
       value: `${contested} sur ${peoples}`,
@@ -64,9 +89,9 @@ const measures = (): Measure[] => {
 };
 
 // @req REQ-113
-export const ThesisMeasures = () => (
+export const ThesisMeasures = ({ language }: { language: Language }) => (
   <ul className="grid list-none grid-cols-1 gap-afh-xl p-0 sm:grid-cols-3">
-    {measures().map((measure) => (
+    {measures(language).map((measure) => (
       <li key={measure.value} className="text-left">
         <p className="font-afh-display text-afh-h1 font-black leading-none text-[color:var(--accent-ink)]">
           {measure.value}

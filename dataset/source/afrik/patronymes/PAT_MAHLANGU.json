@@ -62,7 +62,7 @@
   "gaps": [
     {
       "fieldPath": "alliances",
-      "reason": "la recherche web combinant « Mahlangu », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la synthèse historique de South African History Online, une thèse sur les origines ndébélé et des requêtes ciblées sur le nom Mahlangu, n'ont identifié aucune parenté à plaisanterie documentée reliant ce nom à une autre fiche PAT_* existante."
+      "reason": "la recherche web combinant « Mahlangu », « patronyme », « origine », « clan », « alliance », « caste », « obituary », « homonyme », « transmission » et « héritage », ainsi que la consultation de la synthèse historique de South African History Online, une thèse sur les origines ndébélé et des requêtes ciblées sur le nom Mahlangu, n'ont identifié aucune parenté à plaisanterie documentée reliant ce nom à un autre nom de l'atlas."
     },
     {
       "fieldPath": "casteOrSocialFunction",

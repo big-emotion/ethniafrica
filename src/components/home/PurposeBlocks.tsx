@@ -9,6 +9,7 @@ import {
   getPeopleRoute,
 } from "@/lib/routing";
 import type { Language } from "@/types/shared";
+import { BOUET_WILLAUMEZ } from "@/lib/i18n/copy/purpose";
 
 export interface PurposeBlocksProps {
   language: Language;
@@ -48,7 +49,7 @@ interface PurposeBlock {
   image: { src: string; alt: string; credit: string; portrait?: boolean };
 }
 
-const BLOCKS: PurposeBlock[] = [
+const BLOCKS_FR: PurposeBlock[] = [
   {
     id: "country",
     accentClass: "afh-accent-teal",
@@ -138,8 +139,93 @@ const BLOCKS: PurposeBlock[] = [
   },
 ];
 
+const BLOCKS_EN: PurposeBlock[] = [
+  {
+    id: "country",
+    accentClass: "afh-accent-teal",
+    kicker: "A country",
+    title: "A country's name has a date and an author.",
+    claim: (
+      <>
+        “Ivory Coast” is not an Ivorian name. Fifteenth-century Portuguese
+        navigators named this coastline after its merchandise:{" "}
+        <em>Costa do Marfim</em>, the ivory coast. In 1839, naval officer{" "}
+        {BOUET_WILLAUMEZ} standardised the name now used in that language.
+      </>
+    ),
+    followUp:
+      "No country name is spontaneous: someone chose it, at a particular time, for a reason. The atlas restores all three when the sources establish them.",
+    cta: {
+      label: "Read the Ivory Coast fiche",
+      href: (language) => getCountryRoute(language, "CIV"),
+    },
+    image: {
+      src: "/images/home/guinea-ogilby-1670.jpg",
+      alt: "A 1670 engraved map of Guinea: the coast is named after its merchandise and the cartouche is held by an elephant tusk.",
+      credit: "John Ogilby, Guinea, 1670 — Wikimedia Commons, public domain",
+    },
+  },
+  {
+    id: "people",
+    accentClass: "afh-accent-ocre",
+    kicker: "A people",
+    title: "Some names are pejorative terms no longer heard as such.",
+    claim: (
+      <>
+        “Berber” traces back to the Greek <em>barbaros</em>, someone whose
+        language was not understood, then to the Latin <em>barbarus</em>, which
+        Romans applied to non-Latin peoples of North Africa. Medieval Arab
+        writers adopted it and the French colonial administration made it a
+        category. These peoples call themselves <strong>Amazigh</strong> —
+        Imazighen in the plural: “free people”.
+      </>
+    ),
+    followUp:
+      "An exonym is a name given from outside; an autonym is the name a people gives itself. The atlas provides both when known and marks contested names.",
+    cta: {
+      label: "Read the Amazigh fiche",
+      href: (language) => getPeopleRoute(language, "PPL_AMAZIGH_MACRO"),
+    },
+    image: {
+      src: "/images/home/tifinagh-algeria.jpg",
+      alt: "Tifinagh inscriptions carved into rock in Algeria.",
+      credit: "Tifinagh inscriptions, Algeria — Patrick Gruban, CC BY-SA 2.0",
+    },
+  },
+  {
+    id: "family",
+    accentClass: "afh-accent-terre",
+    kicker: "A language family",
+    title: "Sometimes what is called a people is a language family.",
+    claim: (
+      <>
+        “Bantu” does not designate a people. German philologist Wilhelm Bleek
+        coined the term in 1862 in{" "}
+        <em>A Comparative Grammar of South African Languages</em>, from{" "}
+        <em>ba-ntu</em>: <em>ba-</em>, the human plural prefix, and{" "}
+        <em>-ntu</em>, the person. It names a relationship among more than 500
+        languages, not an identity.
+      </>
+    ),
+    followUp:
+      "A language family, a people and a country are three distinct subjects that colonial administration confused. The atlas keeps them separate and states which one it describes.",
+    cta: {
+      label: "Explore language families",
+      href: (language) => getLocalizedRoute(language, "families"),
+    },
+    image: {
+      src: "/images/home/wilhelm-bleek.jpg",
+      alt: "Photographic portrait of Wilhelm Bleek, the German philologist who coined the term Bantu in 1862.",
+      credit: "Wilhelm Bleek (1827–1875) — Wikimedia Commons, public domain",
+      portrait: true,
+    },
+  },
+];
+
 // @req REQ-113
 export function PurposeBlocks({ language }: PurposeBlocksProps) {
+  const english = language === "en";
+  const blocks = english ? BLOCKS_EN : BLOCKS_FR;
   return (
     <section className="home-purpose" data-testid="home-purpose-blocks">
       {/* The three slices are one argument told three times — a country, a
@@ -161,12 +247,16 @@ export function PurposeBlocks({ language }: PurposeBlocksProps) {
           heading doubles as the section's table of contents, and it echoes
           the interrogative the hero now opens on. */}
       <SectionHeading
-        eyebrow="L'origine des noms"
-        title="Un pays, un peuple, une langue : qui les a nommés ?"
+        eyebrow={english ? "The origin of names" : "L'origine des noms"}
+        title={
+          english
+            ? "A country, a people, a language: who named them?"
+            : "Un pays, un peuple, une langue : qui les a nommés ?"
+        }
         testId="home-purpose-heading"
         className="home-purpose-heading"
       />
-      {BLOCKS.map((block, index) => (
+      {blocks.map((block, index) => (
         <div
           key={block.id}
           className={`home-purpose-row ${block.accentClass} ${

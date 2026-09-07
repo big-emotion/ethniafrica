@@ -13,6 +13,9 @@ import {
   pickNextDidYouKnowFact,
   type DidYouKnowFact,
 } from "@/lib/home/didYouKnowFacts";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import { getLanguageFromRoute } from "@/lib/routing";
+import { getTranslation } from "@/lib/translations";
 
 interface PendingNavigation {
   fact: DidYouKnowFact | null;
@@ -69,6 +72,8 @@ const headerBottom = () => {
 // @req REQ-113
 export function RouteTransitionLoader() {
   const pathname = usePathname();
+  const language = getLanguageFromRoute(pathname ?? "") ?? FALLBACK_LOCALE;
+  const copy = getTranslation(language).system;
   const [pending, setPending] = useState<PendingNavigation | null>(null);
   // The bank is small enough that a uniform draw repeats visibly. Carrying
   // the last id across navigations is what keeps the loader reading as a
@@ -143,8 +148,9 @@ export function RouteTransitionLoader() {
       style={{ top: `${pending.topOffset}px` }}
     >
       <DidYouKnowLoader
+        language={language}
         fact={pending.fact}
-        label="Chargement de la page demandée"
+        label={copy.loadingRequestedPage}
       />
       <style>{`
         .afh-rtl {

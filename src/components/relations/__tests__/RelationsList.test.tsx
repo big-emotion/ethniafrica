@@ -194,4 +194,30 @@ describe("RelationsList", () => {
       screen.getByText(/dérivés de la hiérarchie afrik, sont disponibles/i)
     ).toBeInTheDocument();
   });
+
+  // @req REQ-145
+  it("localises controls and identifies French corpus prose on /en", () => {
+    const { container } = render(
+      <RelationsList
+        items={[FON_ITEM]}
+        onOpenRelation={vi.fn()}
+        language="en"
+      />
+    );
+
+    expect(
+      screen.getByRole("group", { name: "Filter by link type" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Migratory" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("status", {
+        name: "Relation descriptions are awaiting English review. The French originals follow.",
+      })
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector('[data-relation-prose][lang="fr"]')
+    ).toBeInTheDocument();
+  });
 });

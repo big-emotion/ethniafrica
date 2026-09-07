@@ -16,7 +16,7 @@ vi.mock("@/lib/api/logger", () => ({
 
 import {
   createReporterContact,
-  getVerifiedReporterEmail,
+  getVerifiedReporterContact,
   verifyReporterContact,
 } from "../reporterContact";
 
@@ -93,6 +93,15 @@ describe("createReporterContact", () => {
     await createReporterContact(FLAG_ID, "  lectrice@example.org  ");
 
     expect(inserted[0].email).toBe("lectrice@example.org");
+  });
+
+  // @req REQ-145
+  it("records the route locale beside the private address", async () => {
+    const { inserted } = database({});
+
+    await createReporterContact(FLAG_ID, "reader@example.org", "en");
+
+    expect(inserted[0].locale).toBe("en");
   });
 });
 
@@ -172,7 +181,7 @@ describe("verifyReporterContact", () => {
   });
 });
 
-describe("getVerifiedReporterEmail", () => {
+describe("getVerifiedReporterContact", () => {
   beforeEach(() => vi.clearAllMocks());
 
   // @req REQ-042
@@ -180,13 +189,15 @@ describe("getVerifiedReporterEmail", () => {
     database({
       flag_reporter_contacts: {
         email: "lectrice@example.org",
+        locale: "en",
         verified_at: "2026-09-01T10:00:00.000Z",
       },
     });
 
-    await expect(getVerifiedReporterEmail(FLAG_ID)).resolves.toBe(
-      "lectrice@example.org"
-    );
+    await expect(getVerifiedReporterContact(FLAG_ID)).resolves.toEqual({
+      email: "lectrice@example.org",
+      language: "en",
+    });
   });
 
   // @req REQ-042
@@ -198,6 +209,6 @@ describe("getVerifiedReporterEmail", () => {
       },
     });
 
-    await expect(getVerifiedReporterEmail(FLAG_ID)).resolves.toBeNull();
+    await expect(getVerifiedReporterContact(FLAG_ID)).resolves.toBeNull();
   });
 });

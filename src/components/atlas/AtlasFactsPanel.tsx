@@ -10,8 +10,11 @@ import {
   type PanelAnchor,
 } from "@/lib/atlas/panelBias";
 import { cn } from "@/lib/utils";
+import { atlasCopy } from "@/lib/i18n/copy/atlas";
+import type { Language } from "@/types/shared";
 
 export interface AtlasFactsPanelProps {
+  language?: Language;
   open: boolean;
   anchor: PanelAnchor;
   title: string;
@@ -79,6 +82,7 @@ const PARCHMENT_PANEL_SURFACE: CSSProperties = {
  */
 // @req REQ-117
 export function AtlasFactsPanel({
+  language = "fr",
   open,
   anchor,
   title,
@@ -145,7 +149,7 @@ export function AtlasFactsPanel({
               ) : null}
             </div>
             <DialogPrimitive.Close
-              aria-label="Fermer"
+              aria-label={atlasCopy[language].close}
               className="rounded-full p-1 opacity-80 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
               style={{ color: "var(--afh-text-soft)" }}
             >

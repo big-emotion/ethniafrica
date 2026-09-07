@@ -18,6 +18,7 @@ import type {
   SearchResult,
 } from "@/types/afrik-frontend";
 import type { PersonPeopleLink } from "@/types/persons";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 
 export interface SearchQueryOptions {
   limit?: number;
@@ -27,6 +28,12 @@ export interface SearchQueryOptions {
   familyId?: string;
   /** Scope to the peoples present in one country (ISO 3166-1 alpha-3). */
   countryId?: string;
+  /**
+   * Locale the page is served in (ETNI-1857). Under `en` the API also
+   * matches English names and returns them; omitted, the route serves
+   * French.
+   */
+  lang?: TranslationLocale;
 }
 
 // @req REQ-002
@@ -38,6 +45,7 @@ export function buildSearchParams(
     minConfidence,
     familyId,
     countryId,
+    lang,
   }: SearchQueryOptions = {}
 ): URLSearchParams {
   const params = new URLSearchParams();
@@ -52,8 +60,17 @@ export function buildSearchParams(
   if (minConfidence) params.set("minConfidence", minConfidence);
   if (familyId) params.set("familyId", familyId);
   if (countryId) params.set("countryId", countryId);
+  if (lang) params.set("lang", lang);
 
   return params;
+}
+
+/**
+ * An English name is optional on every row until the corpus reload fills
+ * the column, and a blank one must never become an empty label on a card.
+ */
+function englishNameOf(value: unknown): string | undefined {
+  return typeof value === "string" && value !== "" ? value : undefined;
 }
 
 function asRows(value: unknown): Record<string, unknown>[] {
@@ -172,6 +189,22 @@ function patronymeAssociationsOf(content: unknown): {
 }
 
 /**
+ * The associated peoples the API resolved to a main name (ETNI-1859). An
+ * entry missing either string is dropped: a chip with no name, or one whose
+ * link would carry a non-string id, is worse than no chip.
+ */
+function resolvedPeoplesOf(value: unknown): SearchResult["associatedPeoples"] {
+  if (!Array.isArray(value)) return undefined;
+  return value.flatMap((entry) => {
+    if (!entry || typeof entry !== "object") return [];
+    const { id, name } = entry as Record<string, unknown>;
+    return typeof id === "string" && typeof name === "string"
+      ? [{ id, name }]
+      : [];
+  });
+}
+
+/**
  * The speaker peoples a language fiche declares (ETNI-1804), read off
  * `content.peoples` (`persistedContent` in `languageProvenanceLoader.ts`).
  * Only entries with a resolved `peopleId` count: the corpus also lists a
@@ -250,6 +283,7 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
       languageFamilyId:
         row.languageFamilyId as SearchResult["languageFamilyId"],
       languageFamilyName: (row.languageFamilyName as string) || undefined,
+      languageFamilyNameEn: englishNameOf(row.languageFamilyNameEn),
       countryIds: row.currentCountries as SearchResult["countryIds"],
       population: totalPopulationOf(row.content),
       ...appellationsOf(row.content),
@@ -265,6 +299,7 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
       type: "country",
       id: String(row.id),
       name: String(row.nameFr ?? ""),
+      nameEn: englishNameOf(row.nameEn),
       // The match excerpt says why this row surfaced; the etymology only
       // says what the country is. Prefer the former when the API sends it.
       snippet:
@@ -276,6 +311,7 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
       type: "languageFamily",
       id: String(row.id),
       name: String(row.nameFr ?? ""),
+      nameEn: englishNameOf(row.nameEn),
       relevance: numberOrUndefined(row.relevance),
       exactMatch: row.exactMatch === true,
     })),
@@ -304,6 +340,7 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
       casteOrSocialFunction:
         row.casteOrSocialFunction as SearchResult["casteOrSocialFunction"],
       ...patronymeAssociationsOf(row.content),
+      associatedPeoples: resolvedPeoplesOf(row.associatedPeoples),
       ...sourceMetadataOf(row.content),
       snippet: (row.snippet as string) || undefined,
       relevance: numberOrUndefined(row.relevance),
@@ -315,8 +352,10 @@ export function mapSearchEnvelope(envelope: unknown): SearchResult[] {
       type: "language",
       id: String(row.id),
       name: String(row.name ?? ""),
+      nameEn: englishNameOf(row.nameEn),
       languageFamilyId: row.familyId as SearchResult["languageFamilyId"],
       languageFamilyName: (row.familyName as string) || undefined,
+      languageFamilyNameEn: englishNameOf(row.familyNameEn),
       // `id` already is the ISO 639-3 code (afrik_languages is keyed on
       // it); duplicated under its own name so a consumer never has to know
       // that.

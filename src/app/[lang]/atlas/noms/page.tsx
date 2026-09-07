@@ -20,8 +20,12 @@ import { FacetPagination } from "@/components/hubs/facets/FacetPagination";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
 import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getLocalizedRoute, getPatronymeRoute } from "@/lib/routing";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import type { CountryId } from "@/types/afrik";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
+import { formatNumber } from "@/lib/languageTag";
+import { facetDirectoriesCopy } from "@/lib/i18n/copy/facetDirectories";
+import type { Language } from "@/types/shared";
 import type { PatronymeNameSystem } from "@/api/v2/schemas/patronymes";
 
 /**
@@ -56,29 +60,29 @@ const PARAM = {
   size: PAGE_SIZE_PARAM,
 } as const;
 
-const t = translations.fr.patronymes;
-const countFormat = new Intl.NumberFormat("fr-FR");
-
-/**
- * What the reading counts, in the reader's word.
- *
- * Written here rather than read from `t.index`, which the facet inherits from
- * the index this page replaces: those two keys still hold « patronyme » — the
- * internal identifier DEC-038 keeps out of the interface — and a facet is a
- * new surface to print it on. `peuples/page.tsx` states its own unit the same
- * way, for the same reason: the unit belongs to the facet, not to the copy of
- * whatever the facet grew out of.
- */
-const UNIT = { singular: "nom", plural: "noms" } as const;
+interface PageProps {
+  params: Promise<PageParams>;
+  searchParams?: Promise<PageSearchParams>;
+}
 
 // @req REQ-139
-export const metadata: Metadata = {
-  title: t.index.pageTitle,
-  description: t.index.pageSubtitle,
-  alternates: {
-    canonical: getLocalizedRoute("fr", "patronymes"),
-  },
-};
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: Pick<PageProps, "params">): Promise<Metadata> {
+  const { lang } = await params;
+  const t = getTranslation(lang as Language).patronymes;
+  const copy = { title: t.index.pageTitle, description: t.index.pageSubtitle };
+  return {
+    ...copy,
+    ...surfaceHead(
+      lang as Language,
+      "patronymes",
+      (locale) => getLocalizedRoute(locale, "patronymes"),
+      copy
+    ),
+  };
+}
 
 /**
  * An address for this facet under a given selection.
@@ -87,6 +91,7 @@ export const metadata: Metadata = {
  * the next time the module moves this call site moves with it.
  */
 function facetHref(
+  language: Language,
   filters: PatronymesFacetFilters,
   page: number | null,
   pageSize: number
@@ -105,17 +110,17 @@ function facetHref(
   }
 
   const search = query.toString();
-  const path = getFacetRoute("fr", "patronymes");
+  const path = getFacetRoute(language, "patronymes");
   return search ? `${path}?${search}` : path;
 }
 
 // @req REQ-139 @req REQ-133
-export default async function NomsHubPage({
-  searchParams,
-}: {
-  params?: Promise<PageParams>;
-  searchParams?: Promise<PageSearchParams>;
-}) {
+export default async function NomsHubPage({ params, searchParams }: PageProps) {
+  const { lang } = await params;
+  const language = lang as Language;
+  const count = (value: number) => formatNumber(language, value);
+  const t = getTranslation(language).patronymes;
+  const copy = facetDirectoriesCopy[language].names;
   const query = (await searchParams) ?? {};
 
   const chosenSearch = definedFilter(query[PARAM.search]);
@@ -175,10 +180,15 @@ export default async function NomsHubPage({
       rows.push({
         id: row.id,
         label: row.nameMain,
-        href: getPatronymeRoute("fr", row.id),
+        href: getPatronymeRoute(language, row.id),
       });
       countryIndex[key] = rows;
-      narrowing[key] ??= facetHref({ ...filters, countryId }, null, pageSize);
+      narrowing[key] ??= facetHref(
+        language,
+        { ...filters, countryId },
+        null,
+        pageSize
+      );
     }
   }
 
@@ -193,28 +203,44 @@ export default async function NomsHubPage({
   const activeFilters: FacetActiveFilter[] = [];
   if (filters.countryId) {
     activeFilters.push({
-      label: `Pays : ${filters.countryId}`,
-      removeHref: facetHref({ ...filters, countryId: null }, null, pageSize),
+      label: `${copy.countryFilter}: ${filters.countryId}`,
+      removeHref: facetHref(
+        language,
+        { ...filters, countryId: null },
+        null,
+        pageSize
+      ),
     });
   }
   if (filters.nameSystem) {
     activeFilters.push({
-      label: `Système : ${t.nameSystemLabels[filters.nameSystem]}`,
-      removeHref: facetHref({ ...filters, nameSystem: null }, null, pageSize),
+      label: `${copy.systemFilter}: ${t.nameSystemLabels[filters.nameSystem]}`,
+      removeHref: facetHref(
+        language,
+        { ...filters, nameSystem: null },
+        null,
+        pageSize
+      ),
     });
   }
   if (filters.letter) {
     activeFilters.push({
-      label: `Lettre : ${filters.letter}`,
-      removeHref: facetHref({ ...filters, letter: null }, null, pageSize),
+      label: `${copy.letterFilter}: ${filters.letter}`,
+      removeHref: facetHref(
+        language,
+        { ...filters, letter: null },
+        null,
+        pageSize
+      ),
     });
   }
 
   const pagerHref = (page: number, size: number) =>
-    facetHref(filters, page, size);
+    facetHref(language, filters, page, size);
 
   const pagination = (position: "top" | "bottom") => (
     <FacetPagination
+      language={language}
       position={position}
       page={reading.page}
       pageCount={reading.totalPages}
@@ -222,14 +248,11 @@ export default async function NomsHubPage({
       pageSize={pageSize}
       pageSizes={PATRONYMES_FACET_PAGE_SIZES}
       buildHref={pagerHref}
-      unitLabel={UNIT.plural}
+      unitLabel={copy.plural}
     />
   );
 
-  const lede =
-    `${countFormat.format(reading.total)} ` +
-    `${reading.total === 1 ? UNIT.singular : UNIT.plural} ` +
-    `dans cette sélection. Choisissez un pays sur le globe pour voir ceux qu'il atteste.`;
+  const lede = copy.lede(count(reading.total), reading.total === 1);
 
   if (unavailable) {
     return (
@@ -262,18 +285,18 @@ export default async function NomsHubPage({
             least one — and « quels noms portent les Bamana » is the question
             this axis exists for. */}
         <FacetFilterBar
-          action={getFacetRoute("fr", "patronymes")}
+          action={getFacetRoute(language, "patronymes")}
           className="mt-4"
           searchField={{
             name: PARAM.search,
-            label: "Rechercher un nom",
-            placeholder: "Nom, graphie attestée",
+            label: copy.searchLabel,
+            placeholder: copy.searchPlaceholder,
             value: filters.search ?? null,
           }}
           primaryField={{
             name: PARAM.people,
-            label: "Peuple",
-            anyLabel: "Tous les peuples",
+            label: copy.people,
+            anyLabel: copy.allPeoples,
             options: choices.peoples.map((people) => ({
               value: people.id,
               label: people.label,
@@ -283,8 +306,8 @@ export default async function NomsHubPage({
           advancedFields={[
             {
               name: PARAM.country,
-              label: "Pays",
-              anyLabel: "Tous les pays",
+              label: copy.country,
+              anyLabel: copy.allCountries,
               options: choices.countries.map((country) => ({
                 value: country.id,
                 label: country.label,
@@ -293,8 +316,8 @@ export default async function NomsHubPage({
             },
             {
               name: PARAM.system,
-              label: "Système de nommage",
-              anyLabel: "Tous les systèmes",
+              label: copy.system,
+              anyLabel: copy.allSystems,
               options: choices.nameSystems.map((system) => ({
                 value: system.id,
                 label: system.label,
@@ -305,9 +328,10 @@ export default async function NomsHubPage({
           advancedSlot={{
             content: (
               <FacetLetterRail
+                language={language}
                 current={filters.letter}
                 hrefFor={(letter) =>
-                  facetHref({ ...filters, letter }, null, pageSize)
+                  facetHref(language, { ...filters, letter }, null, pageSize)
                 }
               />
             ),
@@ -329,9 +353,10 @@ export default async function NomsHubPage({
                 name at all. Under a filter that is a different statement and a
                 false one: thirty are published, and this selection reaches
                 none of them. */}
-            Aucun nom du corpus ne répond à cette sélection.{" "}
+            {copy.empty}{" "}
             <Link
               href={facetHref(
+                language,
                 {
                   peopleId: null,
                   countryId: null,
@@ -342,20 +367,20 @@ export default async function NomsHubPage({
                 pageSize
               )}
             >
-              Revenir à tous les noms
+              {copy.reset}
             </Link>
           </p>
         ) : (
           <>
             {pagination("top")}
             <ul
-              aria-label="Noms"
+              aria-label={copy.listLabel}
               className="mt-6 flex flex-col gap-2 p-0 md:grid md:grid-cols-2 xl:grid-cols-3"
             >
               {reading.patronymes.map((patronyme) => (
                 <li key={patronyme.id} className="list-none">
                   <Link
-                    href={getPatronymeRoute("fr", patronyme.id)}
+                    href={getPatronymeRoute(language, patronyme.id)}
                     prefetch={false}
                     className="block h-full rounded-afh-xl border border-afh-border bg-afh-surface p-4 focus-visible:outline-none focus-visible:shadow-[var(--afh-ring-focus)]"
                   >

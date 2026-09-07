@@ -1,55 +1,40 @@
+import type { Metadata } from "next";
+
+import { getLocalizedRoute } from "@/lib/routing";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
+import type { Language } from "@/types/shared";
+import ComparerPickerPageClient from "@/app/[lang]/comparer/ComparerPickerPageClient";
+import { compareCopy } from "@/lib/i18n/copy/compare";
+
 /**
- * /[lang]/comparer — entity picker for a 2–3 fiche comparison (FR59).
- *
- * The picker is a client component (debounced search, selection state), and a
- * server page cannot hand it the `onCompare` callback, so the route itself is
- * the client boundary. Nothing here is server-rendered data: the picker fetches
- * its own suggestions from /api/v2/search.
- *
- * The result route owns the comparison; this page only builds its URL. The
- * French segment map is duplicated from
- * comparer/[entityType]/[...ids]/page.tsx on purpose — that route validates
- * untrusted segments, this one emits them, and coupling the two would make the
- * result route trust its caller.
+ * The route is a server component so it can declare its head; the picker
+ * is a client component (debounced search, selection state) and lives
+ * beside it. A `"use client"` file cannot export `generateMetadata`.
  */
-"use client";
 
-import { useParams, useRouter } from "next/navigation";
-import { PageLayout } from "@/components/layout/PageLayout";
-import { EntityComparePicker } from "@/components/compare/EntityComparePicker";
-import type { CompareEntityType } from "@/hooks/use-compare-selection";
+interface ComparerPickerPageProps {
+  params: Promise<{ lang: string }>;
+}
 
-const RESULT_ROUTE_SEGMENT: Record<CompareEntityType, string> = {
-  peoples: "peuples",
-  countries: "pays",
-  "language-families": "familles",
-};
+// @req REQ-141
+export async function generateMetadata({
+  params,
+}: ComparerPickerPageProps): Promise<Metadata> {
+  const { lang } = await params;
+  const language = lang as Language;
+  const title = compareCopy[language].title;
+  return {
+    title,
+    ...surfaceHead(
+      language,
+      "compare",
+      (locale) => getLocalizedRoute(locale, "compare"),
+      { title }
+    ),
+  };
+}
 
 // @req REQ-091
 export default function ComparerPickerPage() {
-  const router = useRouter();
-  const { lang } = useParams<{ lang: string }>();
-
-  const goToComparison = (type: CompareEntityType, ids: string[]) => {
-    router.push(
-      `/${lang}/comparer/${RESULT_ROUTE_SEGMENT[type]}/${ids.join("/")}`
-    );
-  };
-
-  return (
-    <PageLayout language="fr" sectionName="Comparer" hideHeader>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-afh-h1 font-display font-semibold text-afh-text">
-          Comparer
-        </h1>
-        {/* The two-entry minimum is otherwise discoverable only by finding
-            the compare button disabled, which reads as a broken control. */}
-        <p className="mt-2 max-w-[58ch] text-afh-fg-muted">
-          Choisissez deux ou trois fiches du même type, puis lancez la
-          comparaison.
-        </p>
-        <EntityComparePicker className="mt-6" onCompare={goToComparison} />
-      </div>
-    </PageLayout>
-  );
+  return <ComparerPickerPageClient />;
 }

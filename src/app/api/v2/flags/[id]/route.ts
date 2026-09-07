@@ -104,6 +104,8 @@ import {
 import { createApiError } from "@/api/v2/utils/response";
 import { corsOptionsResponse, jsonWithCors } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
+import { isTranslationLocale } from "@/lib/i18n/translationLocale";
+import type { Language } from "@/types/shared";
 
 const NO_STORE_HEADERS = { "Cache-Control": "no-store" };
 
@@ -116,6 +118,14 @@ function getClientIp(request: NextRequest): string | undefined {
   return (
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || undefined
   );
+}
+
+function bodyLanguage(body: unknown): Language {
+  if (body === null || typeof body !== "object" || !("language" in body)) {
+    return "fr";
+  }
+  const language = String(body.language);
+  return isTranslationLocale(language) ? language : "fr";
 }
 
 function responseFromHandler<T>(result: FlagHandlerResult<T>) {
@@ -210,6 +220,7 @@ export async function PATCH(
     const result = await handleFlagTransition(id, body, {
       accessToken: getAccessToken(request),
       clientIp: getClientIp(request),
+      language: bodyLanguage(body),
     });
     return responseFromHandler(result);
   } catch (error) {

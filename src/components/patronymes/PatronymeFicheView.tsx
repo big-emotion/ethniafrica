@@ -1,4 +1,7 @@
+import type { ReactNode } from "react";
+
 import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
+import type { Language } from "@/types/shared";
 import { PatronymeNamingSystemSection } from "@/components/patronymes/PatronymeNamingSystemSection";
 import { PatronymeOriginSection } from "@/components/patronymes/PatronymeOriginSection";
 import { PatronymeAssociationsSection } from "@/components/patronymes/PatronymeAssociationsSection";
@@ -26,18 +29,33 @@ import { PatronymeSourcesSection } from "@/components/patronymes/PatronymeSource
 // @req REQ-133
 export function PatronymeFicheView({
   patronyme,
+  language,
+  onward,
 }: {
   patronyme: PublicPatronyme;
+  language: Language;
+  /**
+   * The way out of the fiche — `FicheOnward`, composed by the route.
+   *
+   * A node rather than the links themselves: resolving them here would make
+   * this parchment async, and an async node in the fiche tree resolves every
+   * synchronous render of it to an empty div. See `FicheJsonLd`.
+   */
+  onward?: ReactNode;
 }) {
   return (
     <div className="afh-parchment" id="fiche">
-      <PatronymeNamingSystemSection patronyme={patronyme} />
-      <PatronymeOriginSection patronyme={patronyme} />
-      <PatronymeAssociationsSection patronyme={patronyme} />
-      <PatronymeAlliancesSection patronyme={patronyme} />
-      <PatronymeHomonymsSection patronyme={patronyme} />
-      <PatronymeBearersSection patronyme={patronyme} />
-      <PatronymeSourcesSection patronyme={patronyme} />
+      <PatronymeNamingSystemSection patronyme={patronyme} language={language} />
+      <PatronymeOriginSection patronyme={patronyme} language={language} />
+      <PatronymeAssociationsSection patronyme={patronyme} language={language} />
+      <PatronymeAlliancesSection patronyme={patronyme} language={language} />
+      <PatronymeHomonymsSection patronyme={patronyme} language={language} />
+      <PatronymeBearersSection patronyme={patronyme} language={language} />
+      {/* Before the bibliography, not after it: the reader this block exists
+          for is the one who finished the reading, and almost none of them
+          scroll past a source list to find out what to read next. */}
+      {onward}
+      <PatronymeSourcesSection patronyme={patronyme} language={language} />
     </div>
   );
 }

@@ -20,6 +20,7 @@ vi.mock("@/lib/api/logger", () => ({
 }));
 
 import { POST, OPTIONS } from "../route";
+import { LOCALES } from "@/lib/locale";
 import { getLocalizedRoute } from "@/lib/routing";
 
 function makeRequest(
@@ -133,6 +134,21 @@ describe("POST /api/internal/revalidate", () => {
       expect(mockRevalidatePath).toHaveBeenCalledWith(
         getLocalizedRoute("fr", "peoples")
       );
+    });
+
+    // Both locales serve the directory from the same corpus; a stale English
+    // directory beside a fresh French one is the failure this pins.
+    // @req REQ-141
+    it("revalidates the directory in every published locale", async () => {
+      const response = await POST(makeRequest(PEOPLE_PAYLOAD, AUTH));
+      const json = await response.json();
+
+      for (const locale of LOCALES) {
+        const path = getLocalizedRoute(locale, "peoples");
+        expect(mockRevalidatePath).toHaveBeenCalledWith(path);
+        expect(json.invalidated.paths).toContain(path);
+      }
+      expect(mockRevalidatePath).toHaveBeenCalledTimes(LOCALES.length);
     });
 
     it("includes invalidated tags in response", async () => {

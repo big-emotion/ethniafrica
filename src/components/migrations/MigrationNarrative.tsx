@@ -7,14 +7,14 @@
  */
 
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
-import { translations } from "@/lib/translations";
+import { getTranslation } from "@/lib/translations";
 import type { MigrationNarrativeEntry } from "@/lib/migrationDataTransformer";
+import type { Language } from "@/types/shared";
 import { MigrationEventCard } from "./MigrationEventCard";
-
-const t = translations.fr.migrations;
 
 export interface MigrationNarrativeProps {
   events: MigrationNarrativeEntry[];
+  language: Language;
   className?: string;
 }
 
@@ -22,8 +22,11 @@ export interface MigrationNarrativeProps {
 // @req REQ-101
 export function MigrationNarrative({
   events,
+  language,
   className,
 }: MigrationNarrativeProps) {
+  const t = getTranslation(language).migrations;
+
   if (events.length === 0) {
     return <p className={className}>{t.emptyState}</p>;
   }

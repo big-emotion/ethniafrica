@@ -31,9 +31,30 @@ const fullData: LanguagePageData = {
 };
 
 describe("LanguageDetailViewV2", () => {
+  // @req REQ-145
+  it("renders the fiche chrome in English without translating corpus values", () => {
+    render(<LanguageDetailViewV2 language="en" data={fullData} />);
+
+    expect(
+      screen.getByRole("heading", { name: "Other attested names" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Language family" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Vehicular role" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Vitality" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText("Langue véhiculaire au Nigeria du Sud-Ouest")
+    ).toBeInTheDocument();
+  });
+
   // @req REQ-136
   it("links the declared family and lists the speaking peoples", () => {
-    render(<LanguageDetailViewV2 data={fullData} />);
+    render(<LanguageDetailViewV2 language="fr" data={fullData} />);
 
     expect(screen.getByRole("link", { name: "Niger-Congo" })).toHaveAttribute(
       "href",
@@ -47,7 +68,7 @@ describe("LanguageDetailViewV2", () => {
 
   // @req REQ-136
   it("prints the vehicular role and vitality status when the corpus declares them", () => {
-    render(<LanguageDetailViewV2 data={fullData} />);
+    render(<LanguageDetailViewV2 language="fr" data={fullData} />);
 
     expect(
       screen.getByText("Langue véhiculaire au Nigeria du Sud-Ouest")
@@ -60,7 +81,10 @@ describe("LanguageDetailViewV2", () => {
   // @req REQ-136
   it("shows the absence of a vitality status explicitly rather than hiding the section (AC2)", () => {
     render(
-      <LanguageDetailViewV2 data={{ ...fullData, vitalityStatus: null }} />
+      <LanguageDetailViewV2
+        language="fr"
+        data={{ ...fullData, vitalityStatus: null }}
+      />
     );
 
     expect(
@@ -73,6 +97,7 @@ describe("LanguageDetailViewV2", () => {
   it("shows an explicit absence for an unfilled vehicular role and an empty speakers list", () => {
     render(
       <LanguageDetailViewV2
+        language="fr"
         data={{ ...fullData, vehicularRole: null, speakingPeoples: [] }}
       />
     );
@@ -83,7 +108,9 @@ describe("LanguageDetailViewV2", () => {
 
   // @req REQ-136
   it("shows an explicit absence for the sources section when the corpus cites none", () => {
-    render(<LanguageDetailViewV2 data={{ ...fullData, sources: [] }} />);
+    render(
+      <LanguageDetailViewV2 language="fr" data={{ ...fullData, sources: [] }} />
+    );
 
     expect(
       screen.getByRole("heading", { name: "Sources" })

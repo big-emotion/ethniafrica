@@ -168,6 +168,16 @@ describe("buildComparisonOgCard", () => {
     );
   });
 
+  // @req REQ-140
+  // @req REQ-145
+  it("localizes the card labels for an English comparison", () => {
+    const card = buildComparisonOgCard(peuplePageData, "en");
+
+    expect(card.entityTypeLabel).toBe("Peoples");
+    expect(card.entities[0].confidenceLabel).toBe("unaudited fiche");
+    expect(card.entities[1].confidenceLabel).toBe("82% confidence");
+  });
+
   // @req REQ-097
   it("produces exactly one card entity per column, nothing beyond fiche data", () => {
     const card = buildComparisonOgCard(peuplePageData);

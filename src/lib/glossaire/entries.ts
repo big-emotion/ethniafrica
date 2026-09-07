@@ -391,6 +391,19 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     sourceRefs: ["bantu-education-act-1953"],
   },
   {
+    id: "sanankuya",
+    fr: "Sanankuya",
+    en: "Sanankuya (Mande joking kinship)",
+    family: "effet",
+    definition:
+      "Parenté à plaisanterie mandingue : un pacte entre deux noms de clan dont les porteurs se doivent moquerie rituelle et assistance, et à qui le conflit est interdit. Le nom engage : porter l'un des deux, c'est hériter du pacte.",
+    corpusExample:
+      "Keïta et Coulibaly, dont le pacte est rapporté comme remontant à Soundiata.",
+    corpusPresence: "instantiated",
+    seeAlso: ["jamu"],
+    chapterRef: "la-personne",
+  },
+  {
     id: "tradition-inventee",
     fr: "Tradition inventée",
     en: "Invented tradition",

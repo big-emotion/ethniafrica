@@ -6,13 +6,25 @@ import { MercatorSurface } from "@/components/mercator/MercatorSurface";
 import { getGameRoundsHandler } from "@/api/v2/handlers/games";
 import { getContinentPeopleCounts } from "@/api/v2/services/continentPeopleCounts";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
-import { buildScaleFacts, pickScaleFacts } from "@/lib/games/scaleFacts";
+import {
+  buildScaleFacts,
+  buildTrueSizeClaim,
+  pickScaleFacts,
+} from "@/lib/games/scaleFacts";
+import { requestSeed } from "@/lib/games/session";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { OG_TITLE } from "@/lib/brand";
+import { surfaceHead } from "@/lib/seo/localeAlternates";
+import type { Language } from "@/types/shared";
+import { GAME_DEFINITIONS_EN } from "@/lib/games/gameRegistry.en";
+import {
+  buildScaleFactsEn,
+  buildTrueSizeClaimEn,
+} from "@/lib/games/scaleFacts.en";
 
 interface GamePageProps {
-  params: Promise<{ jeu: string }>;
+  params: Promise<{ lang: string; jeu: string }>;
 }
 
 /**
@@ -27,37 +39,53 @@ interface GamePageProps {
  * bought. See src/app/__tests__/staticParamsBan.test.ts.
  */
 // @req REQ-120
+// @req REQ-141
 export async function generateMetadata({
   params,
 }: GamePageProps): Promise<Metadata> {
-  const { jeu } = await params;
+  const { lang, jeu } = await params;
   const game = getGameBySlug(jeu);
   if (!game) return {};
+  const language = lang as Language;
+  const gameWording = GAME_DEFINITIONS_EN[game.id];
+  const name = language === "en" ? gameWording.nameEn : game.nameFr;
+  const prompt = language === "en" ? gameWording.promptEn : game.promptFr;
 
+  const copy = {
+    title: `${name} — ${OG_TITLE}`,
+    description: prompt,
+  };
   return {
-    title: `${game.nameFr} — ${OG_TITLE}`,
-    description: game.promptFr,
-    alternates: { canonical: `${getAxisHubRoute("fr", "jeux")}/${game.slug}` },
+    ...copy,
+    ...surfaceHead(
+      language,
+      "games",
+      (locale) => `${getAxisHubRoute(locale, "jeux")}/${game.slug}`,
+      copy
+    ),
   };
 }
 
 // @req REQ-120
 export default async function GamePage({ params }: GamePageProps) {
-  const { jeu } = await params;
+  const { lang, jeu } = await params;
   const game = getGameBySlug(jeu);
   if (!game) notFound();
+  const language = lang as Language;
+  const gameWording = GAME_DEFINITIONS_EN[game.id];
+  const gameName = language === "en" ? gameWording.nameEn : game.nameFr;
+  const gamePrompt = language === "en" ? gameWording.promptEn : game.promptFr;
 
   // The rounds are built here, in the server component, and handed to the
   // island as props — there is no public games endpoint to fetch from.
   //
-  // The seed is derived from the slug rather than from a clock: a time-based
-  // seed is impure in render, and a deterministic one keeps the page cacheable
-  // and the rounds reproducible in a test — the same discipline
-  // correctOptionIndex applies to answer placement.
-  const seed = [...game.slug].reduce(
-    (sum, char) => sum + char.charCodeAt(0),
-    0
-  );
+  // The seed rotates the pool before the pairs are formed, so it decides which
+  // session a reader is served. It used to be the slug's character sum, which
+  // is a constant, and the reasoning for that is answered in `lib/games/session`
+  // — briefly: nothing re-derives these rounds on the client, and this route
+  // was never cacheable. What the constant cost is that every visitor, on every
+  // reload, was handed the same eight rounds.
+  const seed = requestSeed();
 
   // The continent the Mercator stage draws. Caught the way the atlas hub
   // catches it: a failed count costs the per-country field, not the round.
@@ -71,35 +99,28 @@ export default async function GamePage({ params }: GamePageProps) {
   // there is no reason to spend them in the reader's browser. The whole bank
   // travels — the session states one fact every other reveal, and the score
   // card lays out all of them.
-  const facts = pickScaleFacts(buildScaleFacts().length, seed);
+  const englishFacts = buildScaleFactsEn();
+  const facts = pickScaleFacts(buildScaleFacts().length, seed).map((fact) => ({
+    ...fact,
+    headlineEn: englishFacts[fact.id]?.headlineEn,
+    bodyEn: englishFacts[fact.id]?.bodyEn,
+  }));
 
   return (
     <PageLayout
-      language="fr"
-      title={game.nameFr}
-      subtitle={game.promptFr}
-      trailLabel={game.nameFr}
+      language={language}
+      title={gameName}
+      subtitle={gamePrompt}
+      trailLabel={gameName}
     >
-      {/* The page is named after a projection, so it shows the projection:
-          the flat Mercator map, the slider that undoes the distortion, and
-          Tissot's indicatrices keeping the same real area throughout. This
-          replaces the home's globe, which stood in for it and argued about a
-          projection while showing none of it — reading about the distortion
-          and watching it undo itself are not the same lesson.
+      {/* The page is named after a projection, so it shows the projection —
+          on the home's own globe, mounted here prop for prop, with the morph
+          bar the reader moves from sphere to flat map and back while Tissot's
+          indicatrices hold their real area throughout.
 
-          The slider's far end is an equal-area *map*, not a sphere, which
-          departs from how this was first written down. Deliberately: putting
-          a globe at that end changes two things at once — the projection and
-          the dimensionality — so a reader could not tell whether the north
-          shrank because the stretch was removed or because curvature had
-          hidden half of it. Flat at both ends isolates the one variable the
-          game is about, which is also what makes the indicatrices legible.
-
-          It no longer merely stands above the rounds. `MercatorSurface` binds
-          the two, so the map is held flat while a question stands and closes
-          into a sphere on the reveal — see that component for why this obeys
-          charter §1 rather than breaking it, and how the fold rule of §9.1 is
-          met without shrinking the globe. */}
+          It is no longer pinned to the round. See `MercatorSurface` for why
+          the pin was withdrawn (charter §11, amended 2026-09-06) and how the
+          fold rule of §9.1 is still met without shrinking the globe. */}
       {/* The axis accent, bound here because nothing else on this route binds
           it. `AccessModeHub` carries it on the hub itself, but a game page is
           not a hub, so `--accent` fell through to the bare shadcn HSL triplet
@@ -110,10 +131,15 @@ export default async function GamePage({ params }: GamePageProps) {
           black-or-nothing rather than pervenche (atlas-charter §2). */}
       <div className={ACCENT_BY_ACCESS_MODE.jeux}>
         <MercatorSurface
+          language={lang as Language}
           game={game}
           rounds={envelope.data.rounds}
           facts={facts}
           corpusLimited={envelope.data.corpusLimited}
+          /* Measured here rather than in the island: the sweep reads the world
+             comparison outlines, which have no business in a browser bundle. */
+          trueSizeClaimFr={buildTrueSizeClaim()}
+          trueSizeClaimEn={buildTrueSizeClaimEn()}
           peopleCountsByCountry={peopleCountsByCountry}
         />
       </div>

@@ -67,6 +67,8 @@ const continentOverlay: ContinentFieldOverlay = {
       documentedPeopleCount: 40,
     },
   ],
+  highlightedCountryIds: [],
+  highlightFillOpacity: 0.34,
 };
 
 function createFakeGl() {

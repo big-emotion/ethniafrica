@@ -87,7 +87,7 @@ describe("GET /api/v2/languages/[id]", () => {
     expect(await response.json()).toEqual(validEnvelope);
     expect(response.headers.get("Cache-Control")).toBe("s-maxage=3600");
     expect(getLanguageHandler).toHaveBeenCalledOnce();
-    expect(getLanguageHandler).toHaveBeenCalledWith("yor");
+    expect(getLanguageHandler).toHaveBeenCalledWith("yor", "fr");
   });
 
   // @req REQ-136
@@ -182,5 +182,38 @@ describe("GET /api/v2/languages/[id]", () => {
 
     expect(response.status).toBe(204);
     expect(response.headers.get("Access-Control-Allow-Origin")).toBe("*");
+  });
+
+  describe("?lang (REQ-142)", () => {
+    // @req REQ-142
+    it("forwards a supported locale to the handler", async () => {
+      vi.mocked(getLanguageHandler).mockResolvedValue({
+        ok: true,
+        envelope: validEnvelope,
+      });
+
+      const response = await GET(
+        new NextRequest("http://localhost/api/v2/languages/yor?lang=en"),
+        { params: Promise.resolve({ id: "yor" }) }
+      );
+
+      expect(response.status).toBe(200);
+      expect(getLanguageHandler).toHaveBeenCalledWith("yor", "en");
+    });
+
+    // @req REQ-142
+    it("refuses an unsupported locale with a 400 naming the field", async () => {
+      const response = await GET(
+        new NextRequest("http://localhost/api/v2/languages/yor?lang=de"),
+        { params: Promise.resolve({ id: "yor" }) }
+      );
+
+      expect(response.status).toBe(400);
+      expect(await response.json()).toMatchObject({
+        data: null,
+        errors: [{ code: "VALIDATION_ERROR", field: "lang" }],
+      });
+      expect(getLanguageHandler).not.toHaveBeenCalled();
+    });
   });
 });

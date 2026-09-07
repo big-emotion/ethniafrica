@@ -23,6 +23,7 @@ export const CHAPITRE_LA_PERSONNE: DossierChapter = {
   question:
     "Le nom de famille se transmet, croit-on, depuis toujours. Depuis quand, exactement ?",
   standfirst: {
+    id: "standfirst",
     text: "Le nom de famille héréditaire n'est pas une survivance : c'est un artefact administratif. Le corpus documente des systèmes entiers où le nom ne se transmet pas.",
     sourceRefs: ["afrik-naming-taxonomy"],
     figureRefs: ["patronyme-non-hereditary", "patronyme-fiches"],
@@ -40,11 +41,13 @@ export const CHAPITRE_LA_PERSONNE: DossierChapter = {
       heading: "Ce que le corpus tient",
       blocks: [
         {
+          id: "trente-six-systemes",
           text: "L'atlas documente trente-six systèmes de nomination. Ils ne se ressemblent pas : un nom de clan, un nom de louange récité, un nom d'attribution géographique, un nom totémique assorti d'un interdit alimentaire. Ce que le mot « patronyme » recouvre en français est, ici, une demi-douzaine de choses différentes.",
           sourceRefs: ["afrik-naming-taxonomy"],
           figureRefs: ["patronyme-fiches"],
         },
         {
+          id: "quatre-systemes-non-hereditaires",
           text: "Le chiffre qui compte est le dernier de la colonne : quatre systèmes documentés où le nom ne se transmet pas. Ce n'est pas une curiosité marginale, c'est la démonstration. L'hérédité du nom n'est pas la règle dont ces systèmes seraient l'exception ; c'est une manière de faire parmi d'autres.",
           sourceRefs: [],
           figureRefs: ["patronyme-non-hereditary"],
@@ -109,16 +112,19 @@ export const CHAPITRE_LA_PERSONNE: DossierChapter = {
       heading: "L'état civil, ou le nom rendu héréditaire par l'écriture",
       blocks: [
         {
+          id: "le-nom-comme-outil-detat",
           text: "Le nom de famille obligatoire et transmissible est un outil d'État avant d'être un usage. James Scott range le nom de famille permanent parmi les instruments par lesquels un État se rend ses sujets lisibles, au même titre que le recensement, la langue unifiée et les unités de mesure standard : il faut pouvoir retrouver la même famille d'une génération à l'autre, et un nom qui change à chaque naissance ne le permet pas.",
           sourceRefs: ["civil-registration-surnames"],
           figureRefs: [],
         },
         {
+          id: "le-mecanisme-colonial",
           text: "Le mécanisme colonial est simple, et c'est ce qui le rend efficace. Entrer dans un registre — de naissance, de baptême, de propriété, de travail — exigeait un nom de forme européenne. Là où il n'en existait pas, l'agent en inscrivait un. Et il devenait héréditaire par le seul fait d'avoir été écrit : la génération suivante héritait de la ligne du registre avant d'hériter d'un usage.",
           sourceRefs: ["civil-registration-surnames"],
           figureRefs: [],
         },
         {
+          id: "le-meme-geste",
           text: "C'est le même geste que celui du chapitre premier, appliqué à une personne au lieu d'un peuple. Un nom cesse d'être une manière de désigner pour devenir une entrée d'état, et ce qui est inscrit ne se renégocie plus.",
           sourceRefs: [],
           figureRefs: [],
@@ -131,21 +137,25 @@ export const CHAPITRE_LA_PERSONNE: DossierChapter = {
       heading: "Le contre-mouvement, et sa date",
       blocks: [
         {
+          id: "le-recours-a-lauthenticite",
           text: "Le 27 octobre 1971, le régime de Mobutu proclame le recours à l'authenticité. Le 12 janvier 1972, la mesure atteint les noms : les prénoms chrétiens sont abandonnés au profit d'un postnom, et le chef de l'État change le sien le premier.",
           sourceRefs: ["zaire-authenticite-1972"],
           figureRefs: [],
         },
         {
+          id: "une-ordonnance-loi",
           text: "Ce n'était pas une exhortation. Une ordonnance-loi du 30 août 1972 introduit au Code pénal une sanction contre tout ministre du culte qui conférerait un prénom étranger lors d'un baptême. Décoloniser le nom passe ici par l'instrument même qui l'avait fixé : la loi, le registre, la peine.",
           sourceRefs: ["zaire-authenticite-1972"],
           figureRefs: [],
         },
         {
+          id: "ce-quil-en-reste",
           text: "Le fait qui vaut d'être retenu n'est pourtant pas le décret : c'est ce qu'il en reste. Le postnom se porte encore, un demi-siècle après la chute du régime qui l'avait imposé. Une politique du nom survit à la politique qui l'a faite, parce qu'elle a été inscrite au même endroit que la précédente.",
           sourceRefs: ["zaire-authenticite-1972"],
           figureRefs: [],
         },
         {
+          id: "les-instruments-empruntes",
           text: "Le contre-mouvement emprunte donc les instruments qu'il conteste : la contrainte, la date d'effet, l'état civil. C'est ce qui le rend efficace, et c'est aussi ce qui rend le geste discutable — décoloniser le nom par décret reste décider à la place des gens.",
           sourceRefs: [],
           figureRefs: [],
@@ -158,11 +168,13 @@ export const CHAPITRE_LA_PERSONNE: DossierChapter = {
       heading: "Ce qu'un nom ne dit pas d'une personne vivante",
       blocks: [
         {
+          id: "un-nom-ne-dit-pas-lorigine",
           text: "Un nom de famille n'indique pas l'origine d'une personne. Ce n'est pas une précaution juridique, c'est un fait historique : les systèmes de clan ont absorbé des lignées sans lien de sang, par alliance politique, par clientèle et par captivité de guerre. Une fiche peut dire qu'un nom est attesté chez un peuple ; elle ne dit jamais qu'un porteur en est.",
           sourceRefs: ["dec-040"],
           figureRefs: [],
         },
         {
+          id: "aucune-fonctionnalite",
           text: "L'atlas s'y tient dans son code autant que dans sa prose : aucune fonctionnalité de ce site ne prend un nom de famille et ne rend une origine ethnique. Construire l'inverse reviendrait à reproduire en logiciel le registre de l'administration indirecte, avec la même prétention à savoir qui est quoi.",
           sourceRefs: ["dec-040"],
           figureRefs: [],
@@ -201,11 +213,13 @@ export const CHAPITRE_LA_PERSONNE: DossierChapter = {
       heading: "Ce que la source ne dit pas",
       blocks: [
         {
+          id: "lhypothese-la-moins-etayee",
           text: "Que le nom de famille héréditaire soit une invention d'États européens exportée par la colonisation est l'affirmation la plus large de ce dossier, et la moins étayée. Ce que les sources tiennent, c'est le mécanisme : le registre exigeait un nom, et l'exigence a produit l'hérédité. La généalogie européenne de cette exigence reste, ici, une hypothèse de travail.",
           sourceRefs: ["civil-registration-surnames"],
           figureRefs: [],
         },
         {
+          id: "les-systemes-sans-fiche",
           text: "Trente-six fiches de nom, c'est peu au regard des systèmes qui existent. La chaîne somalie, l'abtirsi, n'a pas encore la sienne, et le corpus ne porte aucune fiche dont le système déclaré soit le postnom. Le glossaire les définit quand même, en disant qu'il les définit sans les instancier.",
           sourceRefs: [],
           figureRefs: ["patronyme-fiches"],

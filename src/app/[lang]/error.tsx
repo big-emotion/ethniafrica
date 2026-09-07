@@ -2,10 +2,12 @@
 
 import { useEffect, useId, useState } from "react";
 import { ErrorState } from "@/components/ui/ErrorState";
+import { useRouteLanguage } from "@/hooks/use-language";
 import {
   pickDidYouKnowFact,
   type DidYouKnowFact,
 } from "@/lib/home/didYouKnowFacts";
+import { localizeDidYouKnowFact } from "@/lib/home/didYouKnowLocalization";
 
 // @req REQ-099
 export default function Error({
@@ -20,12 +22,18 @@ export default function Error({
   }, [error]);
 
   const id = useId();
+  const language = useRouteLanguage();
   const errorRefId = error.digest ?? id.replace(/:/g, "").toUpperCase();
   const [anecdote] = useState<DidYouKnowFact | null>(() =>
     pickDidYouKnowFact()
   );
 
   return (
-    <ErrorState errorRef={errorRefId} onRetry={reset} anecdote={anecdote} />
+    <ErrorState
+      errorRef={errorRefId}
+      onRetry={reset}
+      anecdote={anecdote ? localizeDidYouKnowFact(anecdote, language) : null}
+      language={language}
+    />
   );
 }

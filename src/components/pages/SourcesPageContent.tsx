@@ -1,6 +1,12 @@
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
 import { SourceCitation } from "@/components/sources/SourceCitation";
 import { NOMMER_BIBLIOGRAPHY } from "@/lib/dossiers/nommer/bibliography";
+import {
+  englishCountryNames,
+  englishCountrySourceNotes,
+  sourcesBibliographyNote,
+} from "@/lib/i18n/copy/sourcesBibliography";
+import type { Language } from "@/types/shared";
 
 /**
  * /[lang]/sources content — editorial family (charter §4/§7, FR107).
@@ -514,6 +520,78 @@ const content = {
   },
 };
 
+const pageCopy = {
+  fr: {
+    intro: "Bibliographie complète — Populations & Ethnies d'Afrique",
+    steps: {
+      international: "01 · Sources internationales",
+      regional: "02 · Sources par région",
+      academic: "03 · Sources académiques",
+      complementary: "04 · Sources complémentaires",
+      dossiers: "05 · Dossiers éditoriaux",
+    },
+    headings: {
+      international: "Sources internationales (principales)",
+      regional: "Sources par région (instituts officiels africains)",
+      academic: "Sources académiques & linguistiques",
+      complementary: "Sources complémentaires (démographie & géopolitique)",
+      dossiers: "Sources des dossiers",
+    },
+    regions: [
+      "Afrique du Nord",
+      "Afrique de l'Ouest",
+      "Afrique Centrale",
+      "Afrique de l'Est",
+      "Afrique Australe",
+    ],
+    ciaDescription:
+      "Source centrale pour la répartition ethnique par pays (quand disponible).",
+    ciaExample: "(Exemple : Afrique du Sud)",
+    worldBank: "Banque Mondiale — World Bank",
+    unescoStatistics: "UNESCO / Institut de statistique",
+    ethnologueDescription: "Pour les correspondances ethnies ↔ langues",
+    joshuaDescription:
+      "Pour diversité ethnolinguistique (à utiliser avec prudence car orientation religieuse)",
+    dossierTitle: "Qui a donné ce nom ?",
+    dossierNotesFallback: "",
+  },
+  en: {
+    intro: "Complete bibliography — African Peoples and Populations",
+    steps: {
+      international: "01 · International sources",
+      regional: "02 · Sources by region",
+      academic: "03 · Academic sources",
+      complementary: "04 · Additional sources",
+      dossiers: "05 · Editorial dossiers",
+    },
+    headings: {
+      international: "Main international sources",
+      regional: "Sources by region (official African institutes)",
+      academic: "Academic and linguistic sources",
+      complementary: "Additional sources (demography and geopolitics)",
+      dossiers: "Dossier sources",
+    },
+    regions: [
+      "North Africa",
+      "West Africa",
+      "Central Africa",
+      "East Africa",
+      "Southern Africa",
+    ],
+    ciaDescription:
+      "A central source for the distribution of peoples by country, where available.",
+    ciaExample: "(Example: South Africa)",
+    worldBank: "World Bank",
+    unescoStatistics: "UNESCO Institute for Statistics",
+    ethnologueDescription: "For correspondences between peoples and languages",
+    joshuaDescription:
+      "For ethnolinguistic diversity; use with care because of its religious orientation",
+    dossierTitle: "Who gave this name?",
+    dossierNotesFallback:
+      "Editorial notes for these works are awaiting English review. The French originals follow.",
+  },
+} as const satisfies Record<Language, object>;
+
 // Helper function to render source link
 function renderSourceLink(name: string, url?: string, description?: string) {
   if (url) {
@@ -551,16 +629,26 @@ function renderCountrySources(
       name: string;
       item: { name: string; url?: string; description?: string };
     }
-  >
+  >,
+  language: Language
 ) {
   return Object.entries(countries).map(([key, country]) => (
     <div key={key} className="mb-3">
-      <strong className="font-semibold">{country.name}</strong>
+      <strong className="font-semibold">
+        {language === "en"
+          ? (englishCountryNames[key] ?? country.name)
+          : country.name}
+      </strong>
       <ul className="list-disc mt-1">
         {renderSourceLink(
-          country.item.name,
+          language === "en"
+            ? (englishCountrySourceNotes[key]?.name ?? country.item.name)
+            : country.item.name,
           country.item.url,
-          country.item.description
+          language === "en"
+            ? (englishCountrySourceNotes[key]?.description ??
+                country.item.description)
+            : country.item.description
         )}
       </ul>
     </div>
@@ -574,30 +662,28 @@ function renderCountrySources(
  * instead of reopening the component. Sorted by title, which is the order a
  * bibliography is scanned in.
  */
-const DOSSIER_BIBLIOGRAPHIES = [
-  {
-    title: "Qui a donné ce nom ?",
-    sources: Object.values(NOMMER_BIBLIOGRAPHY).sort((left, right) =>
-      left.title.localeCompare(right.title, "fr")
-    ),
-  },
-];
+const DOSSIER_SOURCES = Object.values(NOMMER_BIBLIOGRAPHY);
 
 // @req REQ-091
-export default function SourcesPageContent() {
+export default function SourcesPageContent({
+  language = "fr",
+}: {
+  language?: Language;
+}) {
   const t = content.fr;
+  const copy = pageCopy[language];
 
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4 py-8 text-afh-text">
       <header className="space-y-2">
         <h1 className="text-afh-h1 font-bold">{t.title}</h1>
-        <p className="text-muted-foreground italic">{t.intro}</p>
+        <p className="text-muted-foreground italic">{copy.intro}</p>
       </header>
 
       <section className="space-y-4">
         <ChapterHeading
-          stepLabel="01 · Sources internationales"
-          heading={t.international.title}
+          stepLabel={copy.steps.international}
+          heading={copy.headings.international}
         />
 
         {/* UN */}
@@ -620,7 +706,7 @@ export default function SourcesPageContent() {
         <div className="ml-4 space-y-2">
           <p className="font-semibold">{t.international.cia.title}</p>
           <p className="text-afh-small text-muted-foreground italic">
-            {t.international.cia.description}
+            {copy.ciaDescription}
           </p>
           <ul className="list-disc space-y-1">
             {renderSourceLink(
@@ -630,14 +716,14 @@ export default function SourcesPageContent() {
             {renderSourceLink(
               t.international.cia.item2.name,
               t.international.cia.item2.url,
-              t.international.cia.item2.description
+              copy.ciaExample
             )}
           </ul>
         </div>
 
         {/* World Bank */}
         <div className="ml-4 space-y-2">
-          <p className="font-semibold">{t.international.worldBank.title}</p>
+          <p className="font-semibold">{copy.worldBank}</p>
           <ul className="list-disc space-y-1">
             {renderSourceLink(
               t.international.worldBank.item1.name,
@@ -652,7 +738,7 @@ export default function SourcesPageContent() {
 
         {/* UNESCO */}
         <div className="ml-4 space-y-2">
-          <p className="font-semibold">{t.international.unesco.title}</p>
+          <p className="font-semibold">{copy.unescoStatistics}</p>
           <ul className="list-disc space-y-1">
             {renderSourceLink(
               t.international.unesco.item1.name,
@@ -664,63 +750,53 @@ export default function SourcesPageContent() {
 
       <section className="space-y-6">
         <ChapterHeading
-          stepLabel="02 · Sources par région"
-          heading={t.regional.title}
+          stepLabel={copy.steps.regional}
+          heading={copy.headings.regional}
         />
 
         <div className="ml-4 space-y-3">
-          <p className="text-afh-h3 font-semibold">
-            {t.regional.northAfrica.title}
-          </p>
-          {renderCountrySources(t.regional.northAfrica.countries)}
+          <p className="text-afh-h3 font-semibold">{copy.regions[0]}</p>
+          {renderCountrySources(t.regional.northAfrica.countries, language)}
         </div>
 
         <div className="ml-4 space-y-3">
-          <p className="text-afh-h3 font-semibold">
-            {t.regional.westAfrica.title}
-          </p>
-          {renderCountrySources(t.regional.westAfrica.countries)}
+          <p className="text-afh-h3 font-semibold">{copy.regions[1]}</p>
+          {renderCountrySources(t.regional.westAfrica.countries, language)}
         </div>
 
         <div className="ml-4 space-y-3">
-          <p className="text-afh-h3 font-semibold">
-            {t.regional.centralAfrica.title}
-          </p>
-          {renderCountrySources(t.regional.centralAfrica.countries)}
+          <p className="text-afh-h3 font-semibold">{copy.regions[2]}</p>
+          {renderCountrySources(t.regional.centralAfrica.countries, language)}
         </div>
 
         <div className="ml-4 space-y-3">
-          <p className="text-afh-h3 font-semibold">
-            {t.regional.eastAfrica.title}
-          </p>
-          {renderCountrySources(t.regional.eastAfrica.countries)}
+          <p className="text-afh-h3 font-semibold">{copy.regions[3]}</p>
+          {renderCountrySources(t.regional.eastAfrica.countries, language)}
         </div>
 
         <div className="ml-4 space-y-3">
-          <p className="text-afh-h3 font-semibold">
-            {t.regional.southernAfrica.title}
-          </p>
-          {renderCountrySources(t.regional.southernAfrica.countries)}
+          <p className="text-afh-h3 font-semibold">{copy.regions[4]}</p>
+          {renderCountrySources(t.regional.southernAfrica.countries, language)}
         </div>
       </section>
 
       <section className="space-y-4">
         <ChapterHeading
-          stepLabel="03 · Sources académiques"
-          heading={t.academic.title}
+          stepLabel={copy.steps.academic}
+          heading={copy.headings.academic}
         />
 
         <div className="ml-4 space-y-3">
           {renderSourceLink(
             t.academic.ethnologue.name,
             t.academic.ethnologue.url,
-            t.academic.ethnologue.description
+            copy.ethnologueDescription
           )}
 
           {renderSourceLink(
             t.academic.joshuaProject.name,
             t.academic.joshuaProject.url,
-            t.academic.joshuaProject.description
+            copy.joshuaDescription
           )}
 
           <div>
@@ -740,8 +816,8 @@ export default function SourcesPageContent() {
 
       <section className="space-y-4">
         <ChapterHeading
-          stepLabel="04 · Sources complémentaires"
-          heading={t.complementary.title}
+          stepLabel={copy.steps.complementary}
+          heading={copy.headings.complementary}
         />
 
         <ul className="list-disc space-y-1 ml-4">
@@ -775,39 +851,45 @@ export default function SourcesPageContent() {
       */}
       <section className="space-y-4">
         <ChapterHeading
-          stepLabel="05 · Dossiers éditoriaux"
-          heading="Sources des dossiers"
+          stepLabel={copy.steps.dossiers}
+          heading={copy.headings.dossiers}
         />
 
-        <p className="max-w-4xl">
-          Wikipédia n&apos;est pas une source. Une source primaire trouvée par
-          son intermédiaire est citée à son propre palier, par sa propre
-          adresse, et les versions linguistiques croisées sont notées. Les
-          entrées marquées « En attente d&apos;examen » sont celles dont ce
-          travail de remontée n&apos;est pas terminé.
-        </p>
+        <p className="max-w-4xl">{sourcesBibliographyNote[language]}</p>
 
-        {DOSSIER_BIBLIOGRAPHIES.map((dossier) => (
-          <div key={dossier.title} className="ml-4 space-y-3">
-            <p className="font-semibold">{dossier.title}</p>
-            <ul className="list-disc space-y-2">
-              {dossier.sources.map((source) => (
+        <div className="ml-4 space-y-3">
+          <p className="font-semibold">{copy.dossierTitle}</p>
+          {copy.dossierNotesFallback ? (
+            <p role="status" aria-label={copy.dossierNotesFallback}>
+              {copy.dossierNotesFallback}
+            </p>
+          ) : null}
+          <ul className="list-disc space-y-2">
+            {[...DOSSIER_SOURCES]
+              .sort((left, right) =>
+                left.title.localeCompare(right.title, language)
+              )
+              .map((source) => (
                 <li key={source.sourceKey} className="ml-4">
                   <SourceCitation
+                    language={language}
                     source={{
                       title: source.title,
                       url: source.url,
                       standing: source.standing,
                     }}
                   />
-                  <span className="block text-afh-caption text-afh-text-soft">
+                  <span
+                    className="block text-afh-caption text-afh-text-soft"
+                    data-dossier-source-note
+                    lang={language === "en" ? "fr" : undefined}
+                  >
                     {source.notes}
                   </span>
                 </li>
               ))}
-            </ul>
-          </div>
-        ))}
+          </ul>
+        </div>
       </section>
     </div>
   );

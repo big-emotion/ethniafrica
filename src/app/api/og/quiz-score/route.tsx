@@ -19,6 +19,8 @@ import { describeScope } from "@/api/v2/handlers/quiz";
 import { translations } from "@/lib/translations";
 import { CANONICAL_DOMAIN } from "@/lib/brand";
 
+// Deliberately French: one card is generated site-wide, and the route sits
+// outside `[lang]`. Per-locale cards are a follow-up.
 const t = translations.fr.quiz;
 
 // @req REQ-103 FR70

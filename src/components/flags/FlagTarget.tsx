@@ -10,9 +10,11 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useOptionalConsent } from "@/hooks/use-consent";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
+import { reportsCopy } from "@/lib/i18n/copy/reports";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 import {
   FlagForm,
   type FlagFormTarget,
@@ -20,17 +22,10 @@ import {
 } from "@/components/flags/FlagForm";
 import { ProofOfWorkGate } from "@/components/flags/ProofOfWorkGate";
 import { submitFlag } from "@/components/flags/submitFlag";
-
-declare global {
-  interface Window {
-    plausible?: (
-      event: string,
-      options?: { props?: Record<string, string> }
-    ) => void;
-  }
-}
+import { trackEvent } from "@/lib/analytics/trackEvent";
 
 export interface FlagTargetProps {
+  language?: Language;
   target: FlagFormTarget;
   triggerLabel?: string;
   className?: string;
@@ -51,29 +46,30 @@ export interface FlagTargetProps {
 
 // @req REQ-012
 export function FlagTarget({
+  language = FALLBACK_LOCALE,
   target,
-  triggerLabel = "Signaler",
+  triggerLabel,
   className,
   renderTrigger,
 }: FlagTargetProps) {
+  const copy = reportsCopy[language].dialog;
+  const resolvedTriggerLabel = triggerLabel ?? copy.trigger;
   const titleId = useId();
   const [open, setOpen] = useState(false);
   const { toast } = useToast();
-  const consent = useOptionalConsent();
 
   function handleOpenChange(next: boolean) {
+    // Opening is half the funnel. Without it a submission count cannot say
+    // whether the dialog is rarely opened or routinely abandoned.
+    if (next) trackEvent("report:open", { target_type: target.type });
     setOpen(next);
   }
 
   async function handleSubmit(payload: FlagSubmissionPayload) {
     const { public_slug: publicSlug } = await submitFlag(payload);
 
-    if (consent?.consentState.preferences.analytics) {
-      window.plausible?.("flag_submitted", {
-        props: { target_type: target.type },
-      });
-    }
-    toast({ description: "signalement enregistré" });
+    trackEvent("report:submit", { target_type: target.type });
+    toast({ description: copy.saved });
     setOpen(false);
 
     return { public_slug: publicSlug };
@@ -95,15 +91,15 @@ export function FlagTarget({
           className={cn("w-full", className)}
           onClick={() => handleOpenChange(true)}
         >
-          {triggerLabel}
+          {resolvedTriggerLabel}
         </Button>
       )}
       <Dialog open={open} onOpenChange={handleOpenChange}>
         <DialogContent aria-labelledby={titleId} className="max-w-lg">
           <DialogHeader>
-            <DialogTitle id={titleId}>Signaler un problème</DialogTitle>
+            <DialogTitle id={titleId}>{copy.title}</DialogTitle>
             <DialogDescription className="sr-only">
-              Formulaire de signalement pour cet élément.
+              {copy.description}
             </DialogDescription>
           </DialogHeader>
 
@@ -118,7 +114,11 @@ export function FlagTarget({
             onSubmit={handleSubmit}
             onCancel={() => setOpen(false)}
             renderVerification={({ onSolved, onFailed }) => (
-              <ProofOfWorkGate onSolved={onSolved} onFailed={onFailed} />
+              <ProofOfWorkGate
+                language={language}
+                onSolved={onSolved}
+                onFailed={onFailed}
+              />
             )}
           />
         </DialogContent>

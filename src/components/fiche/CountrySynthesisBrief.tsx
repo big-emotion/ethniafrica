@@ -1,7 +1,11 @@
 import type { CountrySynthesis } from "@/lib/home/countrySynthesis";
+import { countryCopy } from "@/lib/i18n/copy/country";
+import { FALLBACK_LOCALE } from "@/lib/locale";
+import type { Language } from "@/types/shared";
 
 export interface CountrySynthesisBriefProps {
   synthesis: CountrySynthesis;
+  language?: Language;
 }
 
 /**
@@ -29,7 +33,9 @@ export interface CountrySynthesisBriefProps {
 // @req REQ-113
 export function CountrySynthesisBrief({
   synthesis,
+  language = FALLBACK_LOCALE,
 }: CountrySynthesisBriefProps) {
+  const copy = countryCopy[language].brief;
   const { summary, formerNames } = synthesis;
 
   // Charter §4: a surface says what the corpus does not hold rather than
@@ -41,17 +47,17 @@ export function CountrySynthesisBrief({
     <section
       className="fiche-brief afh-accent-teal"
       data-testid="country-synthesis-brief"
-      aria-label={`${synthesis.nameFr} en bref`}
+      aria-label={copy.aria(synthesis.nameFr)}
     >
-      <p className="fiche-brief-eyebrow">En bref</p>
-      <h2>{synthesis.nameFr} — synthèse culturelle et historique</h2>
+      <p className="fiche-brief-eyebrow">{copy.eyebrow}</p>
+      <h2>{copy.title(synthesis.nameFr)}</h2>
 
       {summary ? <p className="fiche-brief-summary">{summary}</p> : null}
 
       <dl className="fiche-brief-facts">
         {formerNames.length > 0 ? (
           <div>
-            <dt>Anciens noms et appellations</dt>
+            <dt>{copy.formerNames}</dt>
             <dd>{formerNames.join(" · ")}</dd>
           </div>
         ) : null}

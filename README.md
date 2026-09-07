@@ -27,9 +27,11 @@ cp .env.example .env.local     # then fill in the three required values below
 npm run dev                    # http://localhost:3000
 ```
 
-The app redirects `/` to `/fr`. Without Supabase credentials the pages render but data-backed
-routes fail — the modules validate their configuration at import time and throw when it is
-missing.
+The app fails closed to French-only publication. `SITE_LOCALE_MODE` can explicitly publish both
+languages with either French or English as the default; a remembered `ethni-locale` choice is
+honoured only when that locale is published. Without Supabase credentials the pages render but
+data-backed routes fail — the modules validate their configuration at import time and throw when
+it is missing.
 
 Three variables are required to run:
 
@@ -66,9 +68,10 @@ dataset/source/afrik/
   afrik_countries · afrik_people_countries
 ```
 
-Each fiche's shape is fixed by a strict model in `public/modele-*.json` (peuple, pays,
-linguistique, nom, relation, source, migration, récit-oral, frontière-coloniale). Never skip,
-rename or invent a section.
+Each fiche's shape is fixed by one of the 16 strict models in `public/modele-*.json`: peuple,
+pays, linguistique, langue, media, relation, source, migration, recit-oral, frontiere-coloniale,
+and the six name models (nom, nom-jamu, nom-nisba, nom-patronyme, nom-patronymique,
+nom-totemique). Never skip, rename or invent a section.
 
 Every `sources` entry carries a tier, and `scripts/validateAfrikData.ts` enforces it. Editorial
 work on fiches has its own guidance in `.claude/skills/afrik-curator/`; the rules the validator
@@ -102,9 +105,13 @@ Requests from another origin need an API key; same-origin requests are exempt, s
 embeds no key. Rate limits apply per key tier. Bulk exports: `/api/download?format=csv` or
 `format=excel`.
 
-The site itself is **French-only**. The `[lang]` route segment survives from the multilingual
-V1 but only ever resolves to `fr` — `src/middleware.ts` redirects every other locale segment
-there. Do not reintroduce `en` / `es` / `pt` branches.
+The codebase supports **English and French**, while `SITE_LOCALE_MODE` controls what a deployment
+publishes. Its safe default, `fr-only`, keeps English URLs and controls silent;
+`bilingual-fr-default` publishes both without moving `/` away from French, and
+`bilingual-en-default` completes the planned English-default launch. English URLs carry English
+slugs that `src/middleware.ts` rewrites onto the French route folders, and `es` / `pt` stay
+closed. Content added in either language must carry its counterpart in the other, or an explicit
+deferral — see `CLAUDE.md`, section "Bilingual content".
 
 ---
 
@@ -154,7 +161,9 @@ Requirements, decisions and architecture live on **Confluence**, not in this rep
 `ETNI`.
 
 Data corrections are welcome as pull requests against the fiches in `dataset/source/afrik/`, or
-through the site: `/fr/contribute` to propose a change, `/fr/report-error` to flag one.
+through the published site: `/fr/contribute` to propose a change and `/fr/report-error` to flag
+one. Their `/en` counterparts become reachable when a bilingual `SITE_LOCALE_MODE` is explicitly
+enabled.
 
 ---
 

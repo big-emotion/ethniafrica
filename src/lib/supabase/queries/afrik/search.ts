@@ -11,6 +11,7 @@
 
 import { createServerClient } from "../../server";
 import { logger } from "@/lib/api/logger";
+import { getAfrikPeoplesByIds } from "./peoples";
 import type {
   FtsSearchParams,
   FtsSearchResponse,
@@ -29,6 +30,7 @@ import type {
   PersonPeopleLink,
   PersonPeopleRelationLabel,
 } from "@/types/persons";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 
 /**
  * Ranked search across the main atlas stream or the dedicated quiz lens.
@@ -71,11 +73,19 @@ export async function ftsSearchEntities(
     sinceVerifiedAfter,
     familyId,
     countryId,
+    lang,
   } = params;
 
   const supabase = createServerClient();
   const text = q?.trim() ?? "";
   const quizOnly = lens === "quiz";
+  // Sent only when the request names a locale. The locale-aware ranking and
+  // near-miss functions take `p_lang` since migration 084, with a default, so a call
+  // without it is served identically by the old and the new definition —
+  // whereas a named parameter the old definition does not know answers
+  // PGRST202. A French request therefore survives the rollout window in
+  // either order; only an English one needs the migration live first.
+  const locale = lang !== undefined ? { p_lang: lang } : {};
 
   const [
     peopleResult,
@@ -96,6 +106,7 @@ export async function ftsSearchEntities(
           p_since_verified_after: sinceVerifiedAfter ?? null,
           p_family_id: familyId ?? null,
           p_country_id: countryId ?? null,
+          ...locale,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
     !quizOnly && text
@@ -103,6 +114,7 @@ export async function ftsSearchEntities(
           p_q: text,
           p_limit: limit,
           p_offset: offset,
+          ...locale,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
     !quizOnly && text
@@ -124,6 +136,7 @@ export async function ftsSearchEntities(
           p_q: text,
           p_limit: limit,
           p_offset: offset,
+          ...locale,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
     quizOnly && text
@@ -131,6 +144,7 @@ export async function ftsSearchEntities(
           p_q: text,
           p_limit: limit,
           p_offset: offset,
+          ...locale,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
     !quizOnly && text
@@ -138,6 +152,7 @@ export async function ftsSearchEntities(
           p_q: text,
           p_limit: limit,
           p_offset: offset,
+          ...locale,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
   ]);
@@ -193,7 +208,9 @@ export async function ftsSearchEntities(
   const persons = personPayload.rows.map((row) =>
     toRankedPerson(row, personPeopleLinksById.get(row.id as string) ?? [])
   );
-  const patronymes = patronymePayload.rows.map(toRankedPatronyme);
+  const patronymes = await withAssociatedPeoples(
+    patronymePayload.rows.map(toRankedPatronyme)
+  );
   const languages = languagePayload.rows.map(toRankedLanguage);
 
   const total =
@@ -210,7 +227,7 @@ export async function ftsSearchEntities(
   // needs a near-miss.
   const leads =
     !quizOnly && text && total === 0
-      ? await fetchSearchLeads(supabase, text)
+      ? await fetchSearchLeads(supabase, text, lang)
       : [];
 
   return {
@@ -221,14 +238,17 @@ export async function ftsSearchEntities(
     patronymes,
     quizzes,
     languages,
-    results: mergeIntoOneRanking({
-      peoples,
-      countries,
-      families,
-      persons,
-      patronymes,
-      quizzes,
-    }),
+    results: mergeIntoOneRanking(
+      {
+        peoples,
+        countries,
+        families,
+        persons,
+        patronymes,
+        quizzes,
+      },
+      lang ?? "fr"
+    ),
     peoplesTotal: peoplePayload.total,
     countriesTotal: countryPayload.total,
     familiesTotal: familyPayload.total,
@@ -243,11 +263,13 @@ export async function ftsSearchEntities(
 
 async function fetchSearchLeads(
   supabase: ReturnType<typeof createServerClient>,
-  text: string
+  text: string,
+  lang?: FtsSearchParams["lang"]
 ): Promise<SearchLead[]> {
   const { data, error } = await supabase.rpc("afrik_search_leads", {
     p_q: text,
     p_limit: 3,
+    ...(lang !== undefined && { p_lang: lang }),
   });
 
   if (error) {
@@ -291,6 +313,7 @@ function toRankedPeople(row: Record<string, unknown>): RankedPeople {
     nameMain: row.nameMain as string,
     languageFamilyId: row.languageFamilyId as string,
     languageFamilyName: (row.languageFamilyName as string) ?? null,
+    languageFamilyNameEn: (row.languageFamilyNameEn as string) ?? null,
     currentCountries: (row.currentCountries as string[]) ?? [],
     classificationStatus:
       (row.classificationStatus as RankedPeople["classificationStatus"]) ??
@@ -310,6 +333,9 @@ function toRankedCountry(row: Record<string, unknown>): RankedCountry {
   return {
     id: row.id as string,
     nameFr: row.nameFr as string,
+    // Same idiom as the country query mappers: the column is NULL until the
+    // corpus reload, and a missing English name is an absence, not a label.
+    nameEn: (row.nameEn as string) || undefined,
     etymology: (row.etymology as string) || undefined,
     nameOriginActor: (row.nameOriginActor as string) || undefined,
     content: (row.content as Record<string, unknown>) || {},
@@ -387,6 +413,52 @@ function toRankedPatronyme(row: Record<string, unknown>): RankedPatronyme {
   };
 }
 
+/** The `content.peoples[].peopleId` a name fiche declares, in fiche order. */
+function declaredPeopleIdsOf(patronyme: RankedPatronyme): string[] {
+  const peoples = patronyme.content.peoples;
+  if (!Array.isArray(peoples)) return [];
+  return peoples
+    .map((entry) =>
+      entry && typeof entry === "object"
+        ? (entry as Record<string, unknown>).peopleId
+        : undefined
+    )
+    .filter((id): id is string => typeof id === "string");
+}
+
+/**
+ * Resolves the peoples each name hit declares to their main name, in one
+ * batched lookup for the page (ETNI-1859), so the results surface can name a
+ * people instead of printing its `PPL_*` id. The names are a decoration on
+ * the hit, not the hit itself: a failing lookup is logged and the names are
+ * left unresolved rather than turning a found name into a failed search.
+ */
+async function withAssociatedPeoples(
+  patronymes: RankedPatronyme[]
+): Promise<RankedPatronyme[]> {
+  const declaredIds = patronymes.map(declaredPeopleIdsOf);
+  const uniqueIds = [...new Set(declaredIds.flat())];
+  if (uniqueIds.length === 0) return patronymes;
+
+  let nameById: Map<string, string>;
+  try {
+    const peoples = await getAfrikPeoplesByIds(uniqueIds);
+    nameById = new Map(peoples.map((people) => [people.id, people.nameMain]));
+  } catch (error) {
+    logger.error("Error resolving associated peoples of name hits", error);
+    return patronymes;
+  }
+
+  return patronymes.map((patronyme, index) => {
+    if (declaredIds[index].length === 0) return patronyme;
+    const associatedPeoples = declaredIds[index].flatMap((id) => {
+      const name = nameById.get(id);
+      return name ? [{ id, name }] : [];
+    });
+    return { ...patronyme, associatedPeoples };
+  });
+}
+
 function toRankedLanguageFamily(
   row: Record<string, unknown>
 ): RankedLanguageFamily {
@@ -411,8 +483,10 @@ function toRankedLanguage(row: Record<string, unknown>): RankedLanguage {
   return {
     id: row.id as string,
     name: row.name as string,
+    nameEn: (row.nameEn as string) ?? null,
     familyId: row.familyId as string,
     familyName: (row.familyName as string) ?? null,
+    familyNameEn: (row.familyNameEn as string) ?? null,
     content: (row.content as RankedLanguage["content"]) || {},
     relevance: typeof row.relevance === "number" ? row.relevance : 0,
     exactMatch: row.exactMatch === true,
@@ -463,19 +537,33 @@ interface RankedGroups {
  * Ties are frequent by design — the score bands a match class, so two exact
  * hits of different kinds routinely land on the same value — and an unstable
  * tie-break would reshuffle a result page between two identical requests.
- * Name in French collation, then id, gives one deterministic order; "fr"
- * matters because a byte comparison sorts every accented name after "Z".
+ * Name in the served locale, then id, gives one deterministic order. Country
+ * and family rows expose an English display name; when it is absent the
+ * canonical list keeps the French value rather than emitting an empty label.
  */
-function mergeIntoOneRanking(groups: RankedGroups): RankedSearchHit[] {
+function mergeIntoOneRanking(
+  groups: RankedGroups,
+  collation: TranslationLocale
+): RankedSearchHit[] {
   const hits: RankedSearchHit[] = [
     ...groups.peoples.map((hit) =>
       toSearchHit("people", hit.id, hit.nameMain, hit)
     ),
     ...groups.countries.map((hit) =>
-      toSearchHit("country", hit.id, hit.nameFr, hit)
+      toSearchHit(
+        "country",
+        hit.id,
+        collation === "en" && hit.nameEn?.trim() ? hit.nameEn : hit.nameFr,
+        hit
+      )
     ),
     ...groups.families.map((hit) =>
-      toSearchHit("languageFamily", hit.id, hit.nameFr, hit)
+      toSearchHit(
+        "languageFamily",
+        hit.id,
+        collation === "en" && hit.nameEn?.trim() ? hit.nameEn : hit.nameFr,
+        hit
+      )
     ),
     ...groups.persons.map((hit) =>
       toSearchHit("person", hit.id, hit.fullName, hit)
@@ -491,7 +579,7 @@ function mergeIntoOneRanking(groups: RankedGroups): RankedSearchHit[] {
   return hits.sort(
     (a, b) =>
       b.normalizedScore - a.normalizedScore ||
-      a.name.localeCompare(b.name, "fr") ||
+      a.name.localeCompare(b.name, collation) ||
       a.id.localeCompare(b.id)
   );
 }

@@ -31,6 +31,13 @@ const ENVELOPE_META = {
 
 const NO_PATRONYMES = { attested: [], borneByPeoples: [] };
 
+const MACHINE_PROVENANCE = {
+  kind: "machine" as const,
+  translatedAt: "2026-09-05T10:00:00.000Z",
+  reviewedBy: null,
+  stale: false,
+};
+
 describe("Countries Handler", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -88,12 +95,26 @@ describe("Countries Handler", () => {
 
       const response = await getCountryHandler("ZWE");
 
-      expect(getCountryById).toHaveBeenCalledWith("ZWE");
+      expect(getCountryById).toHaveBeenCalledWith("ZWE", "fr");
       expect(response).toEqual({
         data: { ...ZIMBABWE, patronymes: NO_PATRONYMES },
         meta: ENVELOPE_META,
         errors: [],
       });
+    });
+
+    // @req REQ-142
+    it("forwards the locale and lifts the provenance out of the record onto meta", async () => {
+      vi.mocked(getCountryById).mockResolvedValue({
+        ...ZIMBABWE,
+        translation: MACHINE_PROVENANCE,
+      });
+
+      const response = await getCountryHandler("ZWE", "en");
+
+      expect(getCountryById).toHaveBeenCalledWith("ZWE", "en");
+      expect(response?.meta.translation).toEqual(MACHINE_PROVENANCE);
+      expect(response?.data).not.toHaveProperty("translation");
     });
 
     // @req REQ-084

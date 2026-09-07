@@ -52,6 +52,7 @@ describe("QuizQuestionCard (Epic 10, Story 10.9, ETNI-1133, FR67)", () => {
   it("renders a fieldset/legend radiogroup with the question as legend", () => {
     render(
       <QuizQuestionCard
+        language="fr"
         question={QUESTION}
         selectedOption={null}
         onSelectOption={vi.fn()}
@@ -73,6 +74,7 @@ describe("QuizQuestionCard (Epic 10, Story 10.9, ETNI-1133, FR67)", () => {
     const user = userEvent.setup();
     render(
       <QuizQuestionCard
+        language="fr"
         question={QUESTION}
         selectedOption={null}
         onSelectOption={onSelectOption}
@@ -93,6 +95,7 @@ describe("QuizQuestionCard (Epic 10, Story 10.9, ETNI-1133, FR67)", () => {
   it("disables « valider » until an option is selected", () => {
     render(
       <QuizQuestionCard
+        language="fr"
         question={QUESTION}
         selectedOption={null}
         onSelectOption={vi.fn()}
@@ -109,6 +112,7 @@ describe("QuizQuestionCard (Epic 10, Story 10.9, ETNI-1133, FR67)", () => {
     const user = userEvent.setup();
     render(
       <QuizQuestionCard
+        language="fr"
         question={QUESTION}
         selectedOption={2}
         onSelectOption={vi.fn()}
@@ -129,6 +133,7 @@ describe("QuizQuestionCard (Epic 10, Story 10.9, ETNI-1133, FR67)", () => {
   it("renders no timer and no auto-advance affordance anywhere in the card", () => {
     render(
       <QuizQuestionCard
+        language="fr"
         question={QUESTION}
         selectedOption={null}
         onSelectOption={vi.fn()}
@@ -144,6 +149,7 @@ describe("QuizQuestionCard (Epic 10, Story 10.9, ETNI-1133, FR67)", () => {
   it("renders structured autonym/exonym option values without collapsing to a bare string", () => {
     render(
       <QuizQuestionCard
+        language="fr"
         question={NAME_OPTIONS_QUESTION}
         selectedOption={null}
         onSelectOption={vi.fn()}
@@ -161,6 +167,7 @@ describe("QuizQuestionCard (Epic 10, Story 10.9, ETNI-1133, FR67)", () => {
   it("marks the currently selected option as checked", () => {
     render(
       <QuizQuestionCard
+        language="fr"
         question={QUESTION}
         selectedOption={1}
         onSelectOption={vi.fn()}
@@ -181,6 +188,7 @@ describe("QuizQuestionCard (Epic 10, Story 10.9, ETNI-1133, FR67)", () => {
   it("shows the stimulus and binds it to the question group", () => {
     render(
       <QuizQuestionCard
+        language="fr"
         question={INVERSION_QUESTION}
         selectedOption={null}
         onSelectOption={vi.fn()}
@@ -199,6 +207,7 @@ describe("QuizQuestionCard (Epic 10, Story 10.9, ETNI-1133, FR67)", () => {
   it("keeps the stem in the legend rather than folding the passage into it", () => {
     render(
       <QuizQuestionCard
+        language="fr"
         question={INVERSION_QUESTION}
         selectedOption={null}
         onSelectOption={vi.fn()}
@@ -217,6 +226,7 @@ describe("QuizQuestionCard (Epic 10, Story 10.9, ETNI-1133, FR67)", () => {
   it("renders no quote block on a round that sets nothing up", () => {
     render(
       <QuizQuestionCard
+        language="fr"
         question={QUESTION}
         selectedOption={null}
         onSelectOption={vi.fn()}

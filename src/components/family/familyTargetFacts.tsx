@@ -2,6 +2,9 @@ import type { CSSProperties } from "react";
 
 import type { AtlasTargetFacts } from "@/components/atlas/AtlasGlobe";
 import { ActionLink } from "@/components/ui/ActionLink";
+import { formatNumber } from "@/lib/languageTag";
+import type { Language } from "@/types/shared";
+import { familyCopy } from "@/lib/i18n/copy/family";
 
 /**
  * What the globe's panel says when a reader picks one country of a family's
@@ -22,6 +25,7 @@ import { ActionLink } from "@/components/ui/ActionLink";
  */
 
 export interface FamilyTargetFactsInput {
+  language: Language;
   familyNameFr: string;
   /** The family's own member count — never the sum of the per-country counts. */
   memberPeopleCount: number;
@@ -70,18 +74,20 @@ const CHIP_STYLE: CSSProperties = {
   color: "var(--afh-text-soft)",
 };
 
-const percentFr = new Intl.NumberFormat("fr-FR", {
+const ONE_DECIMAL: Intl.NumberFormatOptions = {
   minimumFractionDigits: 1,
   maximumFractionDigits: 1,
-});
+};
 
 // @req REQ-117
 export function buildFamilyTargetFacts({
+  language,
   familyNameFr,
   memberPeopleCount,
   peopleNamesByCountry,
   countryNamesFr,
 }: FamilyTargetFactsInput): Record<string, AtlasTargetFacts> {
+  const copy = familyCopy[language].targetFacts;
   const factsByCountry: Record<string, AtlasTargetFacts> = {};
 
   for (const countryId of Object.keys(peopleNamesByCountry)) {
@@ -91,20 +97,18 @@ export function buildFamilyTargetFacts({
 
     factsByCountry[countryId] = {
       title: countryNamesFr[countryId] ?? countryId,
-      description: `${countryId} · part de l'empreinte ${familyNameFr}`,
+      description: copy.description(countryId, familyNameFr),
       body: (
         <div style={{ display: "grid", gap: 14 }}>
           <div>
-            <span style={LABEL_STYLE}>Peuples {familyNameFr} présents</span>
+            <span style={LABEL_STYLE}>{copy.present(familyNameFr)}</span>
             <span style={{ ...NUMBER_STYLE, display: "block", marginTop: 4 }}>
               {present.length}
             </span>
           </div>
 
           <div style={{ display: "grid", gap: 6 }}>
-            <span style={LABEL_STYLE}>
-              Sur les {memberPeopleCount} de la famille
-            </span>
+            <span style={LABEL_STYLE}>{copy.total(memberPeopleCount)}</span>
             <span
               style={{
                 fontFamily: "var(--afh-font-mono)",
@@ -112,7 +116,7 @@ export function buildFamilyTargetFacts({
                 fontVariantNumeric: "tabular-nums",
               }}
             >
-              {percentFr.format(share)} %
+              {formatNumber(language, share, ONE_DECIMAL)} %
             </span>
             <span style={TRACK_STYLE}>
               <span
@@ -128,7 +132,7 @@ export function buildFamilyTargetFacts({
 
           {present.length > 0 && (
             <div style={{ display: "grid", gap: 4 }}>
-              <span style={LABEL_STYLE}>Parmi les plus répandus</span>
+              <span style={LABEL_STYLE}>{copy.widespread}</span>
               <span style={{ lineHeight: 1.65 }}>{present.join(" · ")}</span>
             </div>
           )}
@@ -143,14 +147,11 @@ export function buildFamilyTargetFacts({
                 background: "var(--accent)",
               }}
             />
-            Dérivé — non déclaré par la fiche famille
+            {copy.derived}
           </span>
 
-          <ActionLink
-            href="#fiche"
-            aria-label={`Lire la fiche complète de ${familyNameFr}`}
-          >
-            Lire la fiche complète
+          <ActionLink href="#fiche" aria-label={copy.readFullFor(familyNameFr)}>
+            {copy.readFull}
           </ActionLink>
         </div>
       ),

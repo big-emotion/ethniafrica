@@ -1,6 +1,16 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "./support/fixtures";
 import { getFamilyRoute } from "@/lib/routing";
+import { LOCALE } from "./support/locale";
+
+// English UI copy lands per translation wave (REQ-142 to REQ-146). Until it
+// does, the labels this spec reads are French, so the English matrix leg
+// skips it rather than fail on copy it was never asked to check — and the
+// leg's report says so, instead of counting the journey as covered.
+test.skip(
+  LOCALE !== "fr",
+  "English copy lands per wave — this spec reads French UI copy"
+);
 
 /**
  * Accessibility gate for the family fiche at the globe (REQ-116).
@@ -13,7 +23,7 @@ import { getFamilyRoute } from "@/lib/routing";
  * while it is closed passes nothing — it is the open state that introduces the
  * live region, the focus move and the dialog-adjacent semantics.
  */
-const FAMILY_URL = getFamilyRoute("fr", "FLG_BENOUECONGO");
+const FAMILY_URL = getFamilyRoute(LOCALE, "FLG_BENOUECONGO");
 
 const WCAG_TAGS = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"];
 

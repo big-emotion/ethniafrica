@@ -1,16 +1,17 @@
 import { Info } from "lucide-react";
+import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import type { ReactNode } from "react";
 
 import { KingdomsTimeline } from "@/components/country/KingdomsTimeline";
 import { PeoplesSection } from "@/components/country/PeoplesSection";
 import { SourcesFooter } from "@/components/country/SourcesFooter";
-import {
-  FicheSection as Section,
-  SOURCE_TIER_NOTE,
-} from "@/components/fiche/FicheSection";
+import { FicheSection as Section } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import type { CountryPageData } from "@/lib/countryDataTransformer";
 import type { CountryDetail } from "@/types/afrik-frontend";
+import type { Language } from "@/types/shared";
+import { countryCopy } from "@/lib/i18n/copy/country";
+import { ficheCopy } from "@/lib/i18n/copy/fiche";
 
 /**
  * The country fiche's reading: a head and four sections on parchment, below
@@ -34,6 +35,7 @@ import type { CountryDetail } from "@/types/afrik-frontend";
 
 export interface CountryParchmentProps {
   data: CountryPageData;
+  language: Language;
   /**
    * The two fields §1 reads straight from the corpus. The transformer parses
    * them into an etymology shape built for the card layout; the mockup prints
@@ -48,15 +50,32 @@ export interface CountryParchmentProps {
    * in the middle of the fiche.
    */
   children?: ReactNode;
+  /**
+   * The way out of the fiche — `FicheOnward`, composed by the route.
+   *
+   * Its own slot rather than one more thing in `children`: the chapters that
+   * arrive through `children` are the fiche's own, and this one is not about
+   * the country at all. It also has to sit last among them, which `children`
+   * cannot promise.
+   *
+   * A node rather than the links themselves, because the block reads relations
+   * off awaited services. Resolved here instead, this parchment would become
+   * async, and an async node in the fiche tree resolves every synchronous
+   * render of it to an empty div — see `FicheJsonLd`.
+   */
+  onward?: ReactNode;
 }
 
 // @req REQ-115
 export function CountryParchment({
   data,
+  language,
   country,
   hasSourceFlag,
   children,
+  onward,
 }: CountryParchmentProps) {
+  const copy = countryCopy[language];
   const etymology = country.etymology?.trim();
   const nameOriginActor = country.nameOriginActor?.trim();
   const hasPeoples =
@@ -69,7 +88,7 @@ export function CountryParchment({
           reader is told which country they opened before the band fills the
           screen. The parchment opens on its first chapter. */}
 
-      <Section title="Étymologie du nom">
+      <Section title={copy.sections.etymology}>
         {etymology || nameOriginActor ? (
           <>
             {etymology && <p>{etymology}</p>}
@@ -84,42 +103,63 @@ export function CountryParchment({
             )}
           </>
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
+        <DossierLinks
+          language={language}
+          kind="country"
+          id={country.id}
+          section="etymology"
+        />
       </Section>
 
-      <Section title="Peuples du pays">
+      <Section title={copy.sections.peoples}>
         {!hasPeoples ? (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         ) : (
           /* A shortfall in the declared shares is stated once, by
              PeoplesSection's own coverage note, in the reader's terms. The
              callout that stood here repeated that sentence and prefixed it
              with the identifier of the validation rule behind it — a number
              no visitor can act on. */
-          <PeoplesSection data={data.peoples} />
+          <PeoplesSection data={data.peoples} language={language} />
         )}
       </Section>
 
-      <Section title="Royaumes et formations politiques">
+      <Section title={copy.sections.kingdoms}>
         {data.kingdoms.cards.length > 0 ? (
-          <KingdomsTimeline cards={data.kingdoms.cards} />
+          <KingdomsTimeline
+            cards={data.kingdoms.cards}
+            countryId={country.id}
+            language={language}
+          />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </Section>
 
       {children}
 
-      <Section title="Sources" note={SOURCE_TIER_NOTE} as="footer" id="sources">
+      {/* Before the bibliography, not after it: the reader this block exists
+          for is the one who finished the reading, and almost none of them
+          scroll past a source list to find out what to read next. */}
+      {onward}
+
+      <Section
+        title={copy.sections.sources}
+        note={ficheCopy[language].sourceTierNote}
+        as="footer"
+        id="sources"
+      >
         {data.sources.length > 0 ? (
           <SourcesFooter
             sources={data.sources}
             hasSourceFlag={hasSourceFlag}
             variant="parchment"
+            language={language}
           />
         ) : (
-          <FieldProvenanceMarker state="missing" />
+          <FieldProvenanceMarker state="missing" language={language} />
         )}
       </Section>
     </div>

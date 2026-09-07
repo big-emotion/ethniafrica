@@ -1,0 +1,392 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "dossier",
+    "directives": "Reader-facing dossier. Name the commodity, indicator, geography, and year for every share. Keep extraction distinct from refining, manufacturing, reserves, and export value.",
+    "readerFacing": [
+      "Une part mondiale ne vaut que pour un produit, un indicateur et une année donnés.",
+      "Extraire une matière et capter la valeur de sa transformation sont deux mesures différentes."
+    ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation deferred while the Realites readings are rewritten: the French source is expected to change before it is worth translating."
+    }
+  },
+  "id": "DOS_RESSOURCES",
+  "vertical": "realites",
+  "rubric": "economie",
+  "readiness": "draft",
+  "slug": "ressources",
+  "title": "Les ressources et la valeur",
+  "question": "Que produit l'Afrique, et où la valeur de ces matières est-elle captée ?",
+  "standfirst": "Le continent domine certains marchés, pas « les ressources » en général. Cacao, cobalt, cuivre ou coton racontent des chaînes différentes : la part extraite ne dit ni qui transforme, ni qui fixe le prix, ni qui conserve la marge.",
+  "publishedOn": "2026-09-06",
+  "thesis": {
+    "stepLabel": "Trois chaînes",
+    "heading": "Produire beaucoup ne signifie pas transformer ni vendre au même endroit",
+    "figures": [
+      {
+        "figureKey": "cocoa-africa",
+        "value": "71,3 %",
+        "claim": "Part africaine de la production mondiale de fèves de cacao pendant la campagne 2023/24.",
+        "provenance": "Organisation internationale du cacao",
+        "year": 2024,
+        "sourceRefs": ["icco-cocoa"]
+      },
+      {
+        "figureKey": "drc-cobalt",
+        "value": "73 %",
+        "claim": "Part estimée de la RDC dans la production minière mondiale de cobalt.",
+        "provenance": "U.S. Geological Survey",
+        "year": 2025,
+        "sourceRefs": ["usgs-cobalt"]
+      },
+      {
+        "figureKey": "china-refining",
+        "value": "75 %",
+        "claim": "Part de la Chine dans le raffinage mondial du cobalt en 2023.",
+        "provenance": "Agence internationale de l'énergie",
+        "year": 2023,
+        "sourceRefs": ["iea-batteries"]
+      }
+    ]
+  },
+  "chapters": [
+    {
+      "chapterKey": "noms-de-marchandise",
+      "ordinal": 1,
+      "title": "Des côtes nommées comme des cargaisons",
+      "question": "Que racontent les anciennes Côte des Graines, Côte des Dents, Côte de l'Or et Côte des Esclaves ?",
+      "standfirst": "Les cartes et récits européens des XVIIe et XVIIIe siècles découpaient le littoral selon les marchandises recherchées par les navires : maniguette, ivoire, or et personnes réduites en esclavage.",
+      "body": [
+        {
+          "text": "Pieter de Marees aligne en 1602 les appellations Grain-custe, Tant-custe et Gout-custe. La carte de d'Anville de 1729 grave en français la Côte des Graines, la Côte des Dents ou de l'Ivoire et la Côte d'Or. Ces noms décrivent un commerce vu depuis la mer, pas les sociétés de l'intérieur.",
+          "sourceRefs": ["de-marees", "anville-map"]
+        }
+      ],
+      "illustration": null,
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Ce que les documents attestent",
+          "body": "Les appellations sont bien présentes dans les sources anciennes et correspondent aux marchandises mentionnées dans leurs titres, légendes et descriptions. Leur datation peut être établie document par document.",
+          "sourceRefs": ["de-marees", "anville-map"]
+        },
+        {
+          "stance": "counter",
+          "label": "Un inventaire tenu depuis le pont d'un navire",
+          "body": "La précision du littoral contraste avec le vide de l'arrière-pays sur ces cartes. Ce vocabulaire organise les lieux selon les besoins du négoce européen. En 1985, la Côte d'Ivoire a d'ailleurs demandé à l'ONU que son nom cesse d'être traité comme un terme géographique traduisible.",
+          "sourceRefs": ["anville-map", "un-cote-ivoire-name"]
+        }
+      ],
+      "figures": [
+        {
+          "figureKey": "ghana-gold",
+          "label": "Or extrait au Ghana",
+          "value": "149 t",
+          "year": 2024,
+          "note": "Production minière publiée par l'USGS.",
+          "sourceRefs": ["usgs-gold"]
+        },
+        {
+          "figureKey": "ivory-elephants",
+          "label": "Éléphants de forêt estimés en Côte d'Ivoire",
+          "value": "≈ 225",
+          "year": 2020,
+          "note": "Étude publiée en 2020 à partir de prospections conduites entre 2011 et 2017.",
+          "sourceRefs": ["plos-elephants"]
+        }
+      ]
+    },
+    {
+      "chapterKey": "scandale-geologique",
+      "ordinal": 2,
+      "title": "Le « scandale géologique » sans auteur certain",
+      "question": "Peut-on attribuer cette formule souvent associée au Congo ?",
+      "standfirst": "Les ressources minières du Congo sont abondamment documentées. L'attribution de la formule « scandale géologique » à Jules Cornet ne l'est pas avec la même solidité.",
+      "body": [
+        {
+          "text": "Jules Cornet a participé aux relevés géologiques du Katanga à partir de 1892. Les archives et notices consultées documentent son travail, mais la plus ancienne occurrence savante retrouvée de l'expression date de 1971 et ne la lui attribue pas.",
+          "sourceRefs": ["cornet-biography", "cornet-archives", "phrase-1971"]
+        }
+      ],
+      "illustration": null,
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Des productions minières mesurables",
+          "body": "L'USGS estime pour 2025 que la RDC fournit 230 000 tonnes de cobalt contenu, soit environ 73 % de la production minière mondiale, et 3,2 millions de tonnes de cuivre.",
+          "sourceRefs": ["usgs-cobalt", "usgs-copper"]
+        },
+        {
+          "stance": "counter",
+          "label": "Une formule répétée n'est pas une citation",
+          "body": "L'abondance géologique ne prouve ni les mots exacts ni leur auteur. Faute de texte primaire attribuable, le dossier présente « scandale géologique » comme une formule installée après coup, et non comme une citation de Cornet.",
+          "sourceRefs": ["cornet-biography", "cornet-archives", "phrase-1971"]
+        }
+      ],
+      "figures": [
+        {
+          "figureKey": "drc-cobalt-2025",
+          "label": "Part de la RDC dans l'extraction mondiale de cobalt",
+          "value": "73 %",
+          "year": 2025,
+          "note": "Estimation de 230 000 tonnes sur un total mondial de 310 000 tonnes.",
+          "sourceRefs": ["usgs-cobalt"]
+        },
+        {
+          "figureKey": "drc-copper-2025",
+          "label": "Cuivre extrait en RDC",
+          "value": "3,2 Mt",
+          "year": 2025,
+          "note": "Deuxième production nationale estimée derrière le Chili.",
+          "sourceRefs": ["usgs-copper"]
+        }
+      ]
+    },
+    {
+      "chapterKey": "parts-mondiales",
+      "ordinal": 3,
+      "title": "Trois quarts du cobalt, quatre pour cent du coton ?",
+      "question": "Comment comparer des parts mondiales sans fabriquer un palmarès trompeur ?",
+      "standfirst": "Chaque produit a son unité, sa campagne et son indicateur. Une part de l'extraction de cobalt ne se compare pas directement à une part de fèves de cacao ou de coton-fibre.",
+      "body": [
+        {
+          "text": "L'ICCO attribue à l'Afrique 71,3 % des fèves de cacao produites pendant la campagne 2023/24. L'USGS attribue à la RDC 76 % du cobalt minier en 2024. Le département américain de l'Agriculture attribue au Coton-4 — Bénin, Burkina Faso, Mali et Tchad — 2,6 % de la production mondiale de coton pendant la campagne 2024/25.",
+          "sourceRefs": ["icco-cocoa", "usgs-cobalt", "usda-cotton"]
+        }
+      ],
+      "illustration": null,
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Des parts calculables produit par produit",
+          "body": "Les organisations sectorielles publient des volumes nationaux et mondiaux comparables à l'intérieur d'une même série. Le numérateur et le dénominateur doivent porter sur la même campagne, le même stade de production et la même unité.",
+          "sourceRefs": ["icco-cocoa", "usgs-cobalt", "usda-cotton"]
+        },
+        {
+          "stance": "counter",
+          "label": "Aucune part unique des « ressources africaines »",
+          "body": "Additionner des fèves, des tonnes de métal contenu, des réserves et des exportations n'a pas de sens physique ou économique. Le continent peut dominer un produit et rester marginal dans un autre ; même pour un seul produit, extraction, raffinage et valeur exportée racontent des géographies différentes.",
+          "sourceRefs": ["unctad-critical-minerals", "iea-batteries"]
+        }
+      ],
+      "figures": [
+        {
+          "figureKey": "cocoa-share",
+          "label": "Part africaine des fèves de cacao",
+          "value": "71,3 %",
+          "year": 2024,
+          "note": "Campagne 2023/24 : 3,114 millions de tonnes sur 4,368 millions dans le monde.",
+          "sourceRefs": ["icco-cocoa"]
+        },
+        {
+          "figureKey": "cotton-four-share",
+          "label": "Part du Coton-4 dans le coton mondial",
+          "value": "2,6 %",
+          "year": 2024,
+          "note": "Campagne 2024/25 ; le chiffre ne représente pas toute l'Afrique.",
+          "sourceRefs": ["usda-cotton"]
+        }
+      ]
+    },
+    {
+      "chapterKey": "ou-va-la-valeur",
+      "ordinal": 4,
+      "title": "Où va la valeur ?",
+      "question": "Que reste-t-il entre la mine et la batterie ?",
+      "standfirst": "La RDC domine l'extraction du cobalt, tandis que la Chine domine son raffinage et la fabrication des composants de batteries. La géographie de la matière n'est pas celle de sa transformation.",
+      "body": [
+        {
+          "text": "L'Agence internationale de l'énergie estime qu'en 2023 la RDC a fourni près des deux tiers du cobalt minier mondial, alors que la Chine en a raffiné les trois quarts. En 2024, la Chine produisait aussi environ 80 % des cellules de batteries et l'essentiel des matériaux actifs de cathode et d'anode.",
+          "sourceRefs": ["iea-batteries"]
+        },
+        {
+          "text": "La CNUCED souligne que les matériaux transformés et raffinés ont une valeur supérieure aux minerais bruts et présente la transformation locale comme l'un des leviers de diversification. Cette montée en gamme exige toutefois énergie, capital, compétences, infrastructures et accès aux marchés.",
+          "sourceRefs": ["unctad-critical-minerals"]
+        }
+      ],
+      "illustration": {
+        "src": "/images/dossiers/mutanda-mine-satellite.jpg",
+        "alt": "Vue satellite en fausses couleurs de la mine de cuivre et de cobalt de Mutanda près de Kolwezi",
+        "caption": "Mine à ciel ouvert de Mutanda, cuivre et cobalt, près de Kolwezi en République démocratique du Congo ; image CBERS-4 en fausses couleurs.",
+        "author": "Coordenação-Geral de Observação da Terra / INPE",
+        "licence": "CC BY-SA 2.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+        "filePage": "https://commons.wikimedia.org/wiki/File:Mina_de_Mutanda_na_Rep%C3%BAblica_Democr%C3%A1tica_do_Congo.jpg",
+        "year": "2018"
+      },
+      "readings": [
+        {
+          "stance": "official",
+          "label": "Une chaîne mondiale spécialisée",
+          "body": "Les données décrivent une spécialisation nette : extraction concentrée en RDC, raffinage et fabrication de batteries concentrés en Chine. Chaque étape répond à des capacités industrielles différentes.",
+          "sourceRefs": ["iea-batteries", "usgs-cobalt"]
+        },
+        {
+          "stance": "counter",
+          "label": "La part extraite ne mesure pas la part captée",
+          "body": "Une tonne de minerai n'a ni le prix ni les usages d'un produit raffiné ou d'une cellule de batterie. Mesurer seulement l'extraction rend visible l'abondance du sous-sol mais laisse hors champ les marges, la technologie et le pouvoir de négociation accumulés aux étapes suivantes.",
+          "sourceRefs": ["unctad-critical-minerals", "iea-batteries"]
+        }
+      ],
+      "figures": [
+        {
+          "figureKey": "cobalt-mining-drc-2023",
+          "label": "Part de la RDC dans l'extraction du cobalt",
+          "value": "≈ ⅔",
+          "year": 2023,
+          "note": "Estimation de l'Agence internationale de l'énergie.",
+          "sourceRefs": ["iea-batteries"]
+        },
+        {
+          "figureKey": "cobalt-refining-china-2023",
+          "label": "Part de la Chine dans le raffinage du cobalt",
+          "value": "75 %",
+          "year": 2023,
+          "note": "Même source et même année que la part minière précédente.",
+          "sourceRefs": ["iea-batteries"]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "sourceKey": "de-marees",
+      "title": "Pieter de Marees, Beschryvinghe ende historische verhael van het Gout Koninckrijck van Gunea",
+      "url": "https://archive.org/details/beschryvingheend00mare",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "publicationYear": 1602,
+      "notes": "Édition numérisée du récit où figurent Grain-custe, Tant-custe et Gout-custe."
+    },
+    {
+      "sourceKey": "anville-map",
+      "title": "Jean-Baptiste Bourguignon d'Anville, Carte de la Côte de Guinée",
+      "url": "https://gallica.bnf.fr/ark:/12148/btv1b530834471",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "publicationYear": 1729,
+      "notes": "Carte numérisée par la Bibliothèque nationale de France."
+    },
+    {
+      "sourceKey": "un-cote-ivoire-name",
+      "title": "United Nations General Assembly, document A/40/860: note verbale from Côte d'Ivoire",
+      "url": "https://digitallibrary.un.org/record/108657",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 1985,
+      "notes": "Demande officielle de ne plus traduire la dénomination Côte d'Ivoire."
+    },
+    {
+      "sourceKey": "plos-elephants",
+      "title": "Jean-Louis Kouakou et al., Ivory Coast without ivory: Massive extinction of African forest elephants in Côte d'Ivoire",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0232993",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "publicationYear": 2020,
+      "notes": "Article évalué par les pairs fondé sur des prospections de 2011 à 2017."
+    },
+    {
+      "sourceKey": "cornet-biography",
+      "title": "Royal Academy for Overseas Sciences, biographical notice: Jules Cornet",
+      "url": "https://www.kaowarsom.be/en/notices_cornet_jules",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "publicationYear": 2020,
+      "notes": "Notice biographique documentant les expéditions et travaux de Cornet."
+    },
+    {
+      "sourceKey": "cornet-archives",
+      "title": "Royal Museum for Central Africa, Jules Cornet archival collection",
+      "url": "https://archives.africamuseum.be/agents/people/11",
+      "tier": "referenced",
+      "source_kind": "archive",
+      "publicationYear": 2021,
+      "notes": "Description du fonds d'archives, sans attestation de la formule recherchée."
+    },
+    {
+      "sourceKey": "phrase-1971",
+      "title": "Kalixte Mukendi Wa-Nsanga, review of Les villes minières du Haut-Katanga, Annales de géographie",
+      "url": "https://www.persee.fr/search?ta=article&q=%22scandale+g%C3%A9ologique%22",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "publicationYear": 1971,
+      "notes": "Plus ancienne occurrence savante retrouvée dans la recherche ; elle n'attribue la formule à personne."
+    },
+    {
+      "sourceKey": "usgs-cobalt",
+      "title": "U.S. Geological Survey, Mineral Commodity Summaries 2026 — Cobalt",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-cobalt.pdf",
+      "tier": "official",
+      "source_kind": "official_statistics",
+      "publicationYear": 2026,
+      "notes": "Production minière mondiale estimée et réserves déclarées."
+    },
+    {
+      "sourceKey": "usgs-copper",
+      "title": "U.S. Geological Survey, Mineral Commodity Summaries 2026 — Copper",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-copper.pdf",
+      "tier": "official",
+      "source_kind": "official_statistics",
+      "publicationYear": 2026,
+      "notes": "Production minière mondiale estimée par pays."
+    },
+    {
+      "sourceKey": "usgs-gold",
+      "title": "U.S. Geological Survey, Mineral Commodity Summaries 2026 — Gold",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-gold.pdf",
+      "tier": "official",
+      "source_kind": "official_statistics",
+      "publicationYear": 2026,
+      "notes": "Production minière mondiale et nationale."
+    },
+    {
+      "sourceKey": "icco-cocoa",
+      "title": "International Cocoa Organization, Quarterly Bulletin of Cocoa Statistics, volume LI, number 2",
+      "url": "https://www.icco.org/wp-content/uploads/Production_QBCS-LI-No.-2.pdf",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2025,
+      "notes": "Production de fèves par pays et total mondial pour la campagne 2023/24."
+    },
+    {
+      "sourceKey": "usda-cotton",
+      "title": "United States Department of Agriculture, Cotton: World Markets and Trade, August 2026",
+      "url": "https://apps.fas.usda.gov/psdonline/circulars/cotton.pdf",
+      "tier": "official",
+      "source_kind": "official_statistics",
+      "publicationYear": 2026,
+      "notes": "Séries de production par pays et campagne."
+    },
+    {
+      "sourceKey": "iea-batteries",
+      "title": "International Energy Agency, Global EV Outlook 2025 — Electric vehicle batteries",
+      "url": "https://www.iea.org/reports/global-ev-outlook-2025/electric-vehicle-batteries",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2025,
+      "notes": "Répartition de l'extraction, du raffinage et de la fabrication des batteries."
+    },
+    {
+      "sourceKey": "unctad-critical-minerals",
+      "title": "UN Trade and Development, Technical note on critical minerals",
+      "url": "https://unctad.org/publication/technical-note-critical-minerals",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "publicationYear": 2024,
+      "notes": "Analyse de la transformation locale, de la valeur ajoutée et de la diversification."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "chapters.scandale-geologique.attribution",
+      "reason": "Aucun texte primaire consulté ne permet d'attribuer sûrement la formule « scandale géologique » à Jules Cornet."
+    },
+    {
+      "fieldPath": "chapters.ou-va-la-valeur.marginDistribution",
+      "reason": "Les sources établissent la géographie des étapes industrielles, mais pas une répartition mondiale homogène des marges entre mine, raffinage, composants et batterie finale."
+    }
+  ]
+}
