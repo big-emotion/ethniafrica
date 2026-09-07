@@ -4,18 +4,13 @@ import { join, resolve } from "node:path";
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
-import { NOMMER_CHAPTERS } from "@/lib/dossiers/nommer/chapters";
+import { NommerChapterPage } from "@/components/dossiers/nommer/NommerChapterPage";
+import {
+  NOMMER_CHAPTERS,
+  getNommerChapter,
+} from "@/lib/dossiers/nommer/chapters";
 import { NOMMER_CHAPTERS_EN } from "@/lib/dossiers/nommer/chapters/index.en";
 import { NOMMER_CHAPTER_KEYS, NOMMER_CHAPTER_SLUGS } from "@/lib/routing";
-
-import LaChosePage from "../la-chose/page";
-import LaLanguePage from "../la-langue/page";
-import LaPersonnePage from "../la-personne/page";
-import LePaysPage from "../le-pays/page";
-import LePeuplePage from "../le-peuple/page";
-
-const FR = Promise.resolve({ lang: "fr" });
-const EN = Promise.resolve({ lang: "en" });
 
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({
@@ -41,6 +36,9 @@ vi.mock("@/components/fiche/FicheChapterBar", () => ({
 
 const SEGMENT_ROOT = resolve(process.cwd(), "src/app/[lang]/dossiers/nommer");
 
+const sourceOf = (slug: string) =>
+  readFileSync(join(SEGMENT_ROOT, slug, "page.tsx"), "utf8");
+
 describe("the Nommer chapter routes", () => {
   // A chapter declared in the content module and missing from disk would be a
   // tile linking to a 404 — and nothing else in the build would say so.
@@ -55,21 +53,40 @@ describe("the Nommer chapter routes", () => {
     }
   });
 
-  // The two bans that let one `loading.tsx` cover the whole dossier. Asserted
-  // here rather than trusted, because either would pass typecheck and build.
+  // Static in the sense that matters: no parameterised segment underneath, so
+  // the five slugs stay five files. `generateStaticParams` here would mean a
+  // chapter route resolving names it does not own.
   // @req REQ-113
-  it("keeps the chapters static and able to resolve", () => {
+  it("keeps the chapters static", () => {
     for (const key of NOMMER_CHAPTER_KEYS) {
       const slug = NOMMER_CHAPTER_SLUGS.fr[key];
-      const source = readFileSync(join(SEGMENT_ROOT, slug, "page.tsx"), "utf8");
-      expect(source, slug).not.toContain("generateStaticParams");
-      expect(source, slug).not.toContain("notFound");
+      expect(sourceOf(slug), slug).not.toContain("generateStaticParams");
     }
   });
 
+  // Each chapter asks the registry rather than trusting the pillar to have
+  // asked: five files is five doors, and a reader with a bookmark opens one
+  // of them directly.
   // @req REQ-113
-  it("declares exactly one wait screen, at the root of the segment", () => {
-    expect(existsSync(join(SEGMENT_ROOT, "loading.tsx"))).toBe(true);
+  it("makes every chapter answer to the freeze on its own", () => {
+    for (const key of NOMMER_CHAPTER_KEYS) {
+      const slug = NOMMER_CHAPTER_SLUGS.fr[key];
+      expect(sourceOf(slug), slug).toContain('isModulePublished("nommer")');
+    }
+  });
+
+  /**
+   * The segment carried one `loading.tsx` for the whole dossier, and it is
+   * gone with the freeze rather than by oversight.
+   *
+   * `loaderCoverage.test.ts` forbids a wait screen above a route that can
+   * answer 404, and every chapter can while `nommer` is withdrawn. A boundary
+   * left here would stream the frame of a page that is not coming, which a
+   * crawler reads as a soft 404. Restoring the dossier restores this file.
+   */
+  // @req REQ-113
+  it("declares no wait screen while the dossier is withdrawn", () => {
+    expect(existsSync(join(SEGMENT_ROOT, "loading.tsx"))).toBe(false);
     for (const key of NOMMER_CHAPTER_KEYS) {
       const slug = NOMMER_CHAPTER_SLUGS.fr[key];
       expect(
@@ -80,18 +97,11 @@ describe("the Nommer chapter routes", () => {
   });
 
   // @req REQ-113
-  it("renders each chapter under its own title", async () => {
-    const pages = [
-      [LePeuplePage, "le-peuple"],
-      [LePaysPage, "le-pays"],
-      [LaPersonnePage, "la-personne"],
-      [LaLanguePage, "la-langue"],
-      [LaChosePage, "la-chose"],
-    ] as const;
-
-    for (const [Page, key] of pages) {
-      const chapter = NOMMER_CHAPTERS.find((entry) => entry.key === key);
-      const { unmount } = render(await Page({ params: FR }));
+  it("renders each chapter under its own title", () => {
+    for (const chapter of NOMMER_CHAPTERS) {
+      const { unmount } = render(
+        <NommerChapterPage chapter={chapter} language="fr" />
+      );
       expect(
         screen.getByRole("heading", { level: 1, name: chapter.title })
       ).toBeInTheDocument();
@@ -102,8 +112,13 @@ describe("the Nommer chapter routes", () => {
   // The reader leaves through the other chapters rather than back through the
   // pillar — which is the whole reason the tiles navigate.
   // @req REQ-113
-  it("offers the four other chapters at the foot of a chapter", async () => {
-    render(await LaLanguePage({ params: FR }));
+  it("offers the four other chapters at the foot of a chapter", () => {
+    render(
+      <NommerChapterPage
+        chapter={getNommerChapter("la-langue")}
+        language="fr"
+      />
+    );
     const others = screen.getByRole("navigation", {
       name: "Les autres chapitres",
     });
@@ -116,9 +131,14 @@ describe("the Nommer chapter routes", () => {
   });
 
   // @req REQ-145
-  it("renders the English sidecar throughout an English chapter route", async () => {
+  it("renders the English sidecar throughout an English chapter", () => {
     const translation = NOMMER_CHAPTERS_EN["le-peuple"];
-    render(await LePeuplePage({ params: EN }));
+    render(
+      <NommerChapterPage
+        chapter={getNommerChapter("le-peuple")}
+        language="en"
+      />
+    );
 
     expect(
       screen.getByRole("heading", { level: 1, name: translation.title })

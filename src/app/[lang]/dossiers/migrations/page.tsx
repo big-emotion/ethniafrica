@@ -12,6 +12,7 @@
  */
 
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import { X } from "lucide-react";
 import { PageLayout } from "@/components/layout/PageLayout";
@@ -29,6 +30,7 @@ import {
   getMigrationById,
   MigrationsDataAccessError,
 } from "@/api/v2/services/migrations";
+import { isModulePublished } from "@/lib/hubs/moduleOffer";
 import { logger } from "@/lib/api/logger";
 import { getTranslation } from "@/lib/translations";
 import { getLocalizedRoute } from "@/lib/routing";
@@ -46,6 +48,7 @@ export async function generateMetadata({
   params,
 }: Pick<MigrationsPageProps, "params">): Promise<Metadata> {
   const { lang } = await params;
+  if (!isModulePublished("frise")) return {};
   const t = getTranslation(lang as Language).migrations;
   return {
     title: t.pageTitle,
@@ -126,6 +129,8 @@ export default async function MigrationsPage({
   searchParams,
 }: MigrationsPageProps) {
   const { lang } = await params;
+  // Before the loaders below: a withdrawn page owes the database nothing.
+  if (!isModulePublished("frise")) notFound();
   const language = lang as Language;
   const t = getTranslation(language).migrations;
   const migrationsRoute = getLocalizedRoute(language, "migrations");

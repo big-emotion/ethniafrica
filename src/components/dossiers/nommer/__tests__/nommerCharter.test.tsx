@@ -10,6 +10,7 @@ import { GlossaryPage } from "@/components/glossaire/GlossaryPage";
 import { ModuleAvailabilityProvider } from "@/components/hubs/ModuleAvailabilityProvider";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { NOMMER_CHAPTERS } from "@/lib/dossiers/nommer/chapters";
+import { isModulePublished } from "@/lib/hubs/moduleOffer";
 import {
   ACCESS_MODES,
   ACCESS_MODE_LABELS,
@@ -123,17 +124,26 @@ describe("the Nommer dossier — charter contract", () => {
     expect(guarded).toContain("nommer-tile-in");
   });
 
-  // One boundary for the pillar and its five chapters, which
-  // `loaderCoverage` allows only while none of the six can answer 404.
+  /**
+   * The wait screen and the freeze are one switch, not two.
+   *
+   * `loaderCoverage` allows a boundary over the pillar and its five chapters
+   * only while none of the six can answer 404. Publication decides that: a
+   * withdrawn dossier guards every route and therefore may carry no wait
+   * screen, and restoring it restores the boundary. Written against
+   * `isModulePublished` rather than a hard-coded `true` so this holds in both
+   * states — and so the unfreeze has an executable checklist instead of a
+   * remembered one.
+   */
   // @req REQ-104
-  it("declares one wait screen, and keeps the chapters static", () => {
-    expect(existsSync(join(SEGMENT_ROOT, "loading.tsx"))).toBe(true);
+  it("couples the wait screen to publication, and keeps the chapters static", () => {
+    const published = isModulePublished("nommer");
 
     const loadingFiles = readdirSync(SEGMENT_ROOT, {
       recursive: true,
       encoding: "utf8",
     }).filter((entry) => entry.endsWith("loading.tsx"));
-    expect(loadingFiles).toEqual(["loading.tsx"]);
+    expect(loadingFiles).toEqual(published ? ["loading.tsx"] : []);
 
     for (const key of NOMMER_CHAPTER_KEYS) {
       const source = readFileSync(
@@ -141,7 +151,7 @@ describe("the Nommer dossier — charter contract", () => {
         "utf8"
       );
       expect(source, key).not.toContain("generateStaticParams");
-      expect(source, key).not.toContain("notFound");
+      expect(source.includes("notFound"), key).toBe(!published);
     }
   });
 

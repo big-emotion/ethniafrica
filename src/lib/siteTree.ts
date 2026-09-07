@@ -1,5 +1,6 @@
 import { getLocalizedNommerChapters } from "@/lib/dossiers/nommer/localizeChapter";
 import { getDossiers, getPublishedThemes } from "@/lib/dossiers/catalog";
+import { isModulePublished } from "@/lib/hubs/moduleOffer";
 import { getDossierThemeHref } from "@/lib/dossiers/themes";
 import { GAME_DEFINITIONS } from "@/lib/games/gameRegistry";
 import { GAME_DEFINITIONS_EN } from "@/lib/games/gameRegistry.en";
@@ -153,20 +154,28 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
           href: getDossierThemeHref(theme.id, language),
           label: theme.label,
         })),
-        {
-          href: route("nommer"),
-          label: copy.dossiers.nommerTitle,
-          note: copy.dossiers.nommerNote,
-        },
-        // The five chapters are listed, against this file's own rule that the
-        // map offers doorways rather than every page. A chapter is a whole
+        // The pillar and its five chapters, listed only while published.
+        //
+        // Chapters are listed at all against this file's own rule that the map
+        // offers doorways rather than every page: a chapter is a whole
         // reading, not one of 890 fiches, and `getSiteTreePaths` is the sole
-        // feed of the sitemap: leaving them out would publish an editorial
-        // page no crawler is told about.
-        ...nommerChapters.map((chapter) => ({
-          href: nommerChapterRoute(chapter.key),
-          label: `${chapter.ordinal} · ${chapter.title}`,
-        })),
+        // feed of the sitemap, so omitting them would publish an editorial
+        // page no crawler is told about. The freeze inverts that reasoning
+        // exactly — listing a withdrawn chapter tells the crawler about a page
+        // that answers 404.
+        ...(isModulePublished("nommer")
+          ? [
+              {
+                href: route("nommer"),
+                label: copy.dossiers.nommerTitle,
+                note: copy.dossiers.nommerNote,
+              },
+              ...nommerChapters.map((chapter) => ({
+                href: nommerChapterRoute(chapter.key),
+                label: `${chapter.ordinal} · ${chapter.title}`,
+              })),
+            ]
+          : []),
         ...getDossiers({ language })
           .filter((dossier) => dossier.id !== "nommer")
           .map((dossier) => ({
@@ -174,20 +183,37 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
             label: dossier.title,
             note: dossier.summary,
           })),
+        // The anecdotes, read off the catalog like the dossiers above rather
+        // than written out. Neither the plan nor the sitemap listed them
+        // before the freeze — an omission that only became visible once they
+        // were the sole published reading on the axis.
+        ...getDossiers({ format: "anecdote", language }).map((dossier) => ({
+          href: dossier.href,
+          label: dossier.title,
+          note: dossier.summary,
+        })),
         {
           href: route("names"),
           label: copy.dossiers.names[0],
           note: copy.dossiers.names[1],
         },
-        {
-          href: route("migrations"),
-          label: copy.dossiers.migrations[0],
-          note: copy.dossiers.migrations[1],
-        },
-        {
-          href: route("colonization"),
-          label: copy.dossiers.colonization,
-        },
+        ...(isModulePublished("frise")
+          ? [
+              {
+                href: route("migrations"),
+                label: copy.dossiers.migrations[0],
+                note: copy.dossiers.migrations[1],
+              },
+            ]
+          : []),
+        ...(isModulePublished("regards-colonisation")
+          ? [
+              {
+                href: route("colonization"),
+                label: copy.dossiers.colonization,
+              },
+            ]
+          : []),
         {
           href: route("doctrine"),
           label: copy.dossiers.doctrine[0],
