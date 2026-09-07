@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import { getCountryRoute, getPeopleRoute } from "@/lib/routing";
 import { FlagTarget } from "@/components/flags/FlagTarget";
@@ -56,6 +58,8 @@ export interface CountryRecordViewProps {
    * here, which the chapter states rather than hides.
    */
   patronymes?: CountryPatronymes | null;
+  /** The way out of the fiche, composed by the route and passed straight down. */
+  onward?: ReactNode;
   /** Cloudflare Turnstile public site key; without it the flag control is inert. */
 }
 
@@ -67,6 +71,7 @@ export function CountryRecordView({
   fromPeopleName,
   fromPeopleId,
   patronymes = null,
+  onward,
 }: CountryRecordViewProps) {
   const copy = countryCopy[language];
   const data = transformCountryData(country);
@@ -78,6 +83,7 @@ export function CountryRecordView({
         country={country}
         language={language}
         hasSourceFlag={hasSourceFlag}
+        onward={onward}
       >
         <Section title={copy.sections.namesHistory}>
           {data.timeline.items.length > 0 ? (

@@ -73,6 +73,7 @@ export function CountryParchment({
   country,
   hasSourceFlag,
   children,
+  onward,
 }: CountryParchmentProps) {
   const copy = countryCopy[language];
   const etymology = country.etymology?.trim();
@@ -138,6 +139,11 @@ export function CountryParchment({
       </Section>
 
       {children}
+
+      {/* Before the bibliography, not after it: the reader this block exists
+          for is the one who finished the reading, and almost none of them
+          scroll past a source list to find out what to read next. */}
+      {onward}
 
       <Section
         title={copy.sections.sources}

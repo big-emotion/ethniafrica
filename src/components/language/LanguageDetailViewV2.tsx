@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import Link from "next/link";
 
@@ -15,6 +17,14 @@ export interface LanguageDetailViewV2Props {
   language: Language;
   /** An open flag on this fiche's sourcing, resolved by the route. */
   hasSourceFlag?: boolean;
+  /**
+   * The way out of the fiche — `FicheOnward`, composed by the route.
+   *
+   * A node rather than the links themselves: resolving them here would make
+   * this parchment async, and an async node in the fiche tree resolves every
+   * synchronous render of it to an empty div. See `FicheJsonLd`.
+   */
+  onward?: ReactNode;
 }
 
 /**
@@ -37,6 +47,7 @@ export function LanguageDetailViewV2({
   data,
   language,
   hasSourceFlag = false,
+  onward,
 }: LanguageDetailViewV2Props) {
   const copy = languageFicheCopy[language];
   // Defensive against a payload cached before these fields existed: the
@@ -139,6 +150,11 @@ export function LanguageDetailViewV2({
           <FieldProvenanceMarker state="missing" language={language} />
         )}
       </FicheSection>
+
+      {/* Before the bibliography, not after it: the reader this block exists
+          for is the one who finished the reading, and almost none of them
+          scroll past a source list to find out what to read next. */}
+      {onward}
 
       <FicheSection
         title={copy.sources}

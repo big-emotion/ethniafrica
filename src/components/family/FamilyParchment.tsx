@@ -69,6 +69,17 @@ export interface FamilyParchmentProps {
    * ended one chapter too early. Same slot, same reason, as CountryParchment.
    */
   children?: ReactNode;
+  /**
+   * The way out of the fiche — `FicheOnward`, composed by the route.
+   *
+   * Its own slot rather than one more thing in `children`, because it has to
+   * sit last among them and `children` cannot promise an order. A node rather
+   * than the links themselves, because the block reads relations off awaited
+   * services and resolving them here would make this parchment async — which
+   * resolves every synchronous render of the fiche tree to an empty div, the
+   * failure `FicheJsonLd` records.
+   */
+  onward?: ReactNode;
 }
 
 /**
@@ -179,6 +190,7 @@ export function FamilyParchment({
   memberPeopleCount,
   footprintProvenance = "member-peoples",
   children,
+  onward,
 }: FamilyParchmentProps) {
   const copy = familyCopy[language].parchment;
   const { hero, decolonialHeader, generalInfo, distribution } = data;
@@ -388,6 +400,11 @@ export function FamilyParchment({
       </Section>
 
       {children}
+
+      {/* Before the bibliography, not after it: the reader this block exists
+          for is the one who finished the reading, and almost none of them
+          scroll past a source list to find out what to read next. */}
+      {onward}
 
       {/* Printed whether or not the fiche declares a source. It used to be
           gated on there being one, so a family with no sources lost the

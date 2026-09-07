@@ -16,6 +16,10 @@ import {
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { FicheOnward } from "@/components/fiche/FicheOnward";
+import { buildOnwardLinks } from "@/lib/fiche/onwardLinks";
+import { countryOnwardGroups } from "@/lib/fiche/onwardGroups";
+import { getAfrikLanguageFamilyRoster } from "@/lib/supabase/queries/afrik/languageFamilies";
 import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
@@ -155,26 +159,73 @@ export default async function PaysSlugPage({
     );
   }
 
-  const [country, sourceFlags, countryAtlasIndex, peopleCounts, patronymes] =
-    await Promise.all([
-      loadCountryFiche(parsed.slug, lang as Language),
-      getActiveSourceFlags("country", parsed.slug),
-      getCountryAtlasIndex(),
-      // The globe can now be aimed at any country, so the panel has to answer
-      // for any country. A failed count costs the other countries' subtitle,
-      // never the fiche.
-      getContinentPeopleCounts().catch(() => ({}) as Record<string, number>),
-      // Caught to `null` rather than to two empty lists: empty is the corpus
-      // saying no name reaches this country, which the chapter prints as a
-      // fact. A dropped query must not be able to make that claim.
-      getCountryPatronymes(parsed.slug).catch(() => null),
-    ]);
+  const [
+    country,
+    sourceFlags,
+    countryAtlasIndex,
+    peopleCounts,
+    patronymes,
+    familyRoster,
+  ] = await Promise.all([
+    loadCountryFiche(parsed.slug, lang as Language),
+    getActiveSourceFlags("country", parsed.slug),
+    getCountryAtlasIndex(),
+    // The globe can now be aimed at any country, so the panel has to answer
+    // for any country. A failed count costs the other countries' subtitle,
+    // never the fiche.
+    getContinentPeopleCounts().catch(() => ({}) as Record<string, number>),
+    // Caught to `null` rather than to two empty lists: empty is the corpus
+    // saying no name reaches this country, which the chapter prints as a
+    // fact. A dropped query must not be able to make that claim.
+    getCountryPatronymes(parsed.slug).catch(() => null),
+    // A country fiche files its peoples' families by identifier and carries
+    // no name beside them, so the roster is the only way this page can
+    // print "Nigéro-congolais" rather than FLG_NIGERCONGO. One query for the
+    // twenty-four of them, and an empty roster simply costs the block its
+    // family rows.
+    getAfrikLanguageFamilyRoster().catch(() => []),
+  ]);
   if (!country) {
     notFound();
   }
 
   const navigationContext = (await searchParams) ?? {};
   const countryDetail = mapCountryDetail(country);
+
+  /**
+   * The peoples the fiche can actually send a reader to.
+   *
+   * `peopleId` is optional in the corpus and 49 of 275 demographic entries
+   * across the 53 country fiches leave it out, so a fifth of the rows name a
+   * people this page cannot address. They are dropped rather than printed
+   * unlinked — an inert row in a block whose entire purpose is departure.
+   */
+  const countryPeoples = (countryDetail.demographics?.peoples ?? []).map(
+    (people) => ({
+      id: people.peopleId ?? null,
+      name: people.name,
+      share: people.percentageInCountry,
+    })
+  );
+
+  /**
+   * The linguistic families those peoples sit in, named through the roster.
+   *
+   * Deduplicated in declaration order, so the family of the country's largest
+   * declared people comes first — the fiche's own emphasis, not a new one.
+   */
+  const familyNamesById = new Map<string, string>(
+    familyRoster.map((family) => [family.id, family.nameFr] as const)
+  );
+  const countryFamilies = [
+    ...new Set(
+      (countryDetail.demographics?.peoples ?? [])
+        .map((people) => people.languageFamily)
+        .filter((id): id is string => typeof id === "string" && id.length > 0)
+    ),
+  ]
+    .filter((id) => familyNamesById.has(id))
+    .map((id) => ({ id, name: familyNamesById.get(id) as string }));
 
   // Ids from the corpus, geometry and name from the asset. The corpus decides
   // which countries have a fiche; the asset decides which can be drawn and
@@ -291,6 +342,20 @@ export default async function PaysSlugPage({
               fromPeopleName={navigationContext.fromPeopleName}
               fromPeopleId={navigationContext.fromPeopleId}
               patronymes={patronymes}
+              onward={
+                <FicheOnward
+                  from="country"
+                  language={lang as Language}
+                  links={buildOnwardLinks(
+                    countryOnwardGroups({
+                      peoples: countryPeoples,
+                      families: countryFamilies,
+                      language: lang as Language,
+                    }),
+                    lang as Language
+                  )}
+                />
+              }
             />
           </>
         }
