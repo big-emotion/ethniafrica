@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "countryId": "EGY",
+  "countryName": "Égypte",
+  "status": "not_started",
+  "updatedAt": "2026-09-07",
+  "scorePolicy": "vector_only_no_global_score",
+  "databaseSync": {
+    "status": "not_verified",
+    "reason": "Initialization does not query the database. Verify the row and record the result."
+  },
+  "references": {
+    "peopleGroups": {
+      "count": null,
+      "denominatorKind": null,
+      "scope": null,
+      "source": null,
+      "url": null,
+      "accessedAt": null,
+      "caveat": "An approximate headline count yields a raw upper bound only. An exact coverage figure requires record-level reconciliation against an enumerated inventory."
+    },
+    "languages": {
+      "count": null,
+      "denominatorKind": null,
+      "scope": null,
+      "source": null,
+      "url": null,
+      "accessedAt": null,
+      "caveat": "Record which scope the count uses: all catalogued entries, living indigenous languages, or all languages currently in use."
+    },
+    "patronyms": {
+      "count": null,
+      "denominatorKind": null,
+      "scope": null,
+      "source": null,
+      "url": null,
+      "accessedAt": null,
+      "caveat": "An editorial breadth quota, not a measurement of the country's onomastic stock."
+    },
+    "population": {
+      "count": null,
+      "denominatorKind": null,
+      "scope": null,
+      "source": null,
+      "url": null,
+      "accessedAt": null,
+      "caveat": "Record the reference year and whether the figure is a census, a projection or an estimate."
+    }
+  },
+  "snapshot": {
+    "countryId": "EGY",
+    "identity": {
+      "nameFr": "Égypte",
+      "nameOfficial": "République arabe d'Égypte (Jumhūriyyat Miṣr al-ʻArabiyyah)"
+    },
+    "structural": {
+      "filledSections": 8,
+      "totalSections": 8,
+      "filledSectionsPercent": 100
+    },
+    "peoples": {
+      "linkedFiches": 8,
+      "macroLikeLinkedFiches": 1,
+      "featuredEntries": 4,
+      "demographicNamedEntries": 4,
+      "featuredVsLinkedPercent": 50,
+      "referenceCount": null,
+      "rawReferenceUpperBoundPercent": null,
+      "namedDemographicSharePercent": 100.1,
+      "catchAllDemographicSharePercent": 0,
+      "demographicPercentageSum": 100.1,
+      "demographicRowsWithPopulation": 2,
+      "featuredFamilyMismatches": 0,
+      "featuredFamilyMismatchIds": [],
+      "editorialReview": {
+        "totalRelations": 8,
+        "reviewedRelations": 0,
+        "pendingRelations": 8,
+        "reviewCompletionPercent": 0,
+        "reviewedByEntityType": {}
+      }
+    },
+    "languages": {
+      "declaredMainLanguages": 7,
+      "featuredLanguageLabels": 6,
+      "candidateIsoCodes": 27,
+      "candidateIsoCodesWithDossiers": 3,
+      "dossierCoverageOfCandidateCodesPercent": 11.1,
+      "referenceCount": null,
+      "rawReferenceUpperBoundPercent": null
+    },
+    "history": {
+      "historicalNameEntries": 3,
+      "historicalNamePeriodsFilled": 5,
+      "historicalNamePeriodsTotal": 5,
+      "historicalFactPeriodsFilled": 6,
+      "historicalFactPeriodsTotal": 6,
+      "declaredPoliticalEntities": 10
+    },
+    "patronyms": {
+      "directCountryFiches": 30,
+      "attested": 29,
+      "supposed": 1,
+      "quota": null,
+      "quotaCompletionPercent": null,
+      "queueOnly": 6,
+      "unsourcedOrigin": 2,
+      "undeclaredTransmission": 10,
+      "documented": 12,
+      "documentedPercent": 40
+    },
+    "sources": {
+      "countryFiche": {
+        "total": 9,
+        "accepted": 2,
+        "acceptedPercent": 22.2,
+        "withUrl": 2,
+        "withUrlPercent": 22.2,
+        "needsReview": 7
+      },
+      "linkedPeopleFiches": {
+        "total": 37,
+        "accepted": 26,
+        "acceptedPercent": 70.3,
+        "withUrl": 29,
+        "withUrlPercent": 78.4,
+        "needsReview": 4
+      }
+    },
+    "population": {
+      "total": 118400000,
+      "referenceYear": 2025,
+      "source": "UNFPA – World Population Dashboard"
+    }
+  },
+  "artifacts": {
+    "peopleReconciliationLedger": {
+      "path": "docs/editorial/country-enrichment/EGY-peoples.json",
+      "refreshCommand": "npx tsx scripts/afrik/updateCountryPeopleLedger.ts EGY --write",
+      "reviewFieldsPreservedOnRefresh": true
+    }
+  },
+  "workstreams": [
+    {
+      "id": "EGY-IDENTITY",
+      "priority": "P0",
+      "status": "not_started",
+      "goal": "Use one consistent reader-facing country name across source JSON, database and interface.",
+      "findings": [],
+      "remaining": [
+        "Confirm the common name, the official name and every alias against a primary source.",
+        "Check that the database row and the interface label match the source fiche.",
+        "Record any resolver or translation layer that substitutes its own label."
+      ]
+    },
+    {
+      "id": "EGY-PEOPLES",
+      "priority": "P0",
+      "status": "in_progress",
+      "goal": "Build a reconciled, individually navigable inventory of the peoples present in the country.",
+      "findings": [
+        "Les Coptes étaient décrits dans content.majorPeoples et content.demographics.peoples sans peopleId : mentionnés, non fichés, et donc ni navigables ni chargés en base. PPL_COPTES a été créée et les deux entrées y renvoient.",
+        "PPL_COPTES est rattachée à FLG_SEMITIQUE parce que languageFamilyId enregistre le rattachement linguistique courant et non la filiation : les Coptes parlent l'arabe égyptien, le copte est liturgique. Le précédent est PPL_GARIFUNA, classée FLG_CREOLE alors que sa langue est arawak, avec l'écart argumenté dans historicalAffiliation.",
+        "FLG_AFROASIATIQUE a été écartée pour un motif éditorial : cette fiche est colonial-legacy et soutient, suivant Obenga, qu'aucune proto-langue afro-asiatique n'a été reconstruite. Y déposer le seul peuple de la famille, et précisément celui dont le nom a servi à couper l'Égypte de l'Afrique, en aurait fait la pièce à conviction unique d'un regroupement que le corpus conteste.",
+        "classificationStatus vaut contested et non colonial-legacy : l'exonyme est gréco-arabe, antérieur à la colonisation, et revendiqué par la communauté. Ce qui est disputé est son extension, confessionnelle ou généalogique.",
+        "La population de 10 500 000 a été retirée de l'entrée démographique. Rapportée au dénominateur 2025 elle vaut 8,87 % quand l'entrée déclare 10 %, soit 1,13 point d'écart : FR32 bloque au-delà de 2 points, et corriger le nombre à la hausse sans toucher au pourcentage franchirait le seuil. Le remède documenté est de supprimer le nombre, jamais d'ajuster le pourcentage pour qu'il colle.",
+        "langues/cop.json a été créée pour que content.languages.isoCodes de PPL_COPTES résolve."
+      ],
+      "remaining": [
+        "Reconstruire l'inventaire réconcilié des peuples d'Égypte : sept fiches y sont rattachées (Rashaida, Arabes d'Afrique, Nubiens, Four, Beja, Amazigh, Siwi) et aucune référence énumérée n'a encore été choisie."
+      ]
+    },
+    {
+      "id": "EGY-LANGUAGES",
+      "priority": "P0",
+      "status": "not_started",
+      "goal": "Expose the country's languages with stable ISO 639-3 and Glottocode links.",
+      "findings": [],
+      "remaining": [
+        "Pin a language reference inventory and record which scope it counts.",
+        "Reconcile local ISO codes and aliases against that inventory.",
+        "Distinguish official, national, vehicular, community, sign, historical and immigrant roles from a primary legal or scholarly source.",
+        "Fill the country's mainLanguages only once those roles are separated."
+      ]
+    },
+    {
+      "id": "EGY-HISTORY",
+      "priority": "P1",
+      "status": "not_started",
+      "goal": "Give the deep past its own track instead of starting the account at the best-known kingdoms.",
+      "findings": [],
+      "remaining": [
+        "Add an archaeological sequence with its sites, periods and sources.",
+        "Attach an explicit source tier to every retained historical claim."
+      ]
+    },
+    {
+      "id": "EGY-HISTORICAL-NAMES",
+      "priority": "P1",
+      "status": "not_started",
+      "goal": "Source and periodize every historical name of the territory.",
+      "findings": [],
+      "remaining": [
+        "Give each former name its period, the actor who used it and its source.",
+        "Record why a colonial-era name is problematic rather than dropping it."
+      ]
+    },
+    {
+      "id": "EGY-POLITIES",
+      "priority": "P1",
+      "status": "not_started",
+      "goal": "Distinguish precolonial polities, colonial administrations and modern states.",
+      "findings": [],
+      "remaining": [
+        "Audit the geographic fit and periodization of every declared political entity.",
+        "Separate polities from colonial administrations and from modern state periods.",
+        "Record as an open question any conflation the current model forces."
+      ]
+    },
+    {
+      "id": "EGY-PATRONYMS",
+      "priority": "P1",
+      "status": "not_started",
+      "goal": "Report patronym breadth and documentation depth as two separate measurements.",
+      "findings": [],
+      "remaining": [
+        "Keep direct country attestations apart from country reach inferred through a people.",
+        "Complete source, origin and transmission research on the fiches that are not documented."
+      ]
+    },
+    {
+      "id": "EGY-SOURCES",
+      "priority": "P0",
+      "status": "not_started",
+      "goal": "Give every retained factual claim an explicit source tier.",
+      "findings": [
+        "PPL_COPTES ne cite que des sources dont le tier est dérivé du catalogue de domaines (Glottolog, Ethnologue, CIA World Factbook) : aucune entrée needs_review n'a été ajoutée."
+      ],
+      "remaining": [
+        "Rule on each needs_review entry individually rather than flattening the set to one tier.",
+        "Check that every online source URL still resolves.",
+        "Where no source can be found, empty the field and write its gap in reader-facing prose."
+      ]
+    },
+    {
+      "id": "EGY-DATABASE-SYNC",
+      "priority": "P1",
+      "status": "not_started",
+      "goal": "Know whether the database projection matches the source fiche.",
+      "findings": [],
+      "remaining": [
+        "Compare the database row against the source fiche and record the divergences.",
+        "Leave the status at not_verified while the comparison cannot be run."
+      ]
+    },
+    {
+      "id": "EGY-DISCOVERABILITY",
+      "priority": "P1",
+      "status": "not_started",
+      "goal": "Record which verified entities a reader cannot reach from the country surface.",
+      "findings": [],
+      "remaining": [
+        "List the verified peoples, languages and patronyms with no individually selectable path.",
+        "Check the reader paths at mobile, then tablet, then desktop widths.",
+        "Hand the visual and frontend answer to the design workflow; record the gap here rather than implementing it."
+      ]
+    }
+  ],
+  "openQuestions": [
+    "Which enumerated inventory should be the canonical record-linkage baseline for this country's peoples, and what is its scope?",
+    "Which language scope should the reader-facing count use: all catalogued entries, living indigenous languages, or all languages currently in use?",
+    "Which primary legal source establishes the official and national languages?",
+    "Is the current database row stale relative to the source fiche?",
+    "Quelle part de la population égyptienne les Coptes représentent-ils ? Les estimations publiées vont d'environ 10 % à des chiffres communautaires sensiblement plus élevés, et le recensement ne relève plus l'appartenance religieuse depuis 1986. Le corpus ne déclare aucun total tant que la question n'est pas tranchée.",
+    "Faut-il une fiche pour les Égyptiens anciens ? Le corpus n'en comporte aucune pour un peuple éteint : les 776 fiches déclarent toutes un currentCountries non vide et le modèle démographique décrit des populations vivantes. La filiation est portée par langues/egy.json et par historicalAffiliation de PPL_COPTES. Ouvrir cette fiche exigerait de trancher d'abord une doctrine du peuple disparu, qui affecterait tous les agrégats.",
+    "PPL_ARABES_AFRIQUE porte 90 % de la population égyptienne tout en étant une fiche panafricaine. Faut-il une fiche propre aux arabophones d'Égypte, ou le rattachement au macro-groupe est-il le bon niveau ?"
+  ]
+}

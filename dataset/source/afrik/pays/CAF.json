@@ -19,6 +19,7 @@
       {
         "name": "Chefferies Banda",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Banda"],
         "politicalCenters": ["Chefferies traditionnelles"],
         "historicalRole": "Chefferies Banda, organisation clanique, traditions culturelles."
@@ -26,6 +27,7 @@
       {
         "name": "Chefferies Gbaya",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Gbaya"],
         "politicalCenters": ["Chefferies traditionnelles"],
         "historicalRole": "Chefferies Gbaya, organisation clanique, traditions culturelles, résistance à la colonisation française."
@@ -33,6 +35,7 @@
       {
         "name": "Chefferies Ngbande",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Ngbande"],
         "politicalCenters": ["Chefferies traditionnelles"],
         "historicalRole": "Chefferies Ngbande, organisation clanique, traditions culturelles."
@@ -40,6 +43,7 @@
       {
         "name": "Chefferies Sango",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Sango"],
         "politicalCenters": ["Chefferies traditionnelles"],
         "historicalRole": "Chefferies Sango, développement du sango comme langue véhiculaire."
@@ -47,6 +51,7 @@
       {
         "name": "Peuples Aka",
         "period": "Préhistorique - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Aka (Pygmées)"],
         "politicalCenters": ["Groupes nomades et semi-nomades"],
         "historicalRole": "Peuples autochtones de la RCA, chasseurs-cueilleurs, traditions forestières, marginalisation historique."
@@ -54,6 +59,12 @@
       {
         "name": "Colonie française de l'Oubangui-Chari",
         "period": "1903 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1903,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples centrafricains sous domination coloniale française"
         ],

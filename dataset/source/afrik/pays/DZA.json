@@ -23,6 +23,12 @@
       {
         "name": "Royaumes numides",
         "period": "IIIe siècle av. J.-C. - Ier siècle apr. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -300,
+          "endYear": 100,
+          "precision": "century"
+        },
         "dominantPeoples": ["Numides (Berbères)"],
         "politicalCenters": ["Cirta (Constantine)", "Hippo Regius (Annaba)"],
         "historicalRole": "Royaumes numides puissants (Massinissa, Jugurtha), résistance à Rome, unification partielle de la Numidie."
@@ -30,6 +36,12 @@
       {
         "name": "Royaume de Massinissa",
         "period": "202-148 av. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -202,
+          "endYear": -148,
+          "precision": "year"
+        },
         "dominantPeoples": ["Numides"],
         "politicalCenters": ["Cirta"],
         "historicalRole": "Unification de la Numidie, alliance avec Rome contre Carthage, développement de l'agriculture et du commerce."
@@ -37,6 +49,12 @@
       {
         "name": "Royaume de Jugurtha",
         "period": "118-105 av. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -118,
+          "endYear": -105,
+          "precision": "year"
+        },
         "dominantPeoples": ["Numides"],
         "politicalCenters": ["Cirta"],
         "historicalRole": "Résistance à la domination romaine, guerre de Jugurtha (112-105 av. J.-C.)."
@@ -44,6 +62,12 @@
       {
         "name": "Maurétanie césarienne",
         "period": "Ier siècle av. J.-C. - Ve siècle apr. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -100,
+          "endYear": 500,
+          "precision": "century"
+        },
         "dominantPeoples": ["Berbères", "Romains"],
         "politicalCenters": ["Caesarea (Cherchell)", "Tipasa"],
         "historicalRole": "Province romaine, romanisation partielle, développement urbain et commercial."
@@ -51,6 +75,12 @@
       {
         "name": "Dynastie rustamide",
         "period": "776-909",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 776,
+          "endYear": 909,
+          "precision": "year"
+        },
         "dominantPeoples": ["Berbères ibadites"],
         "politicalCenters": ["Tahert (Tiaret)"],
         "historicalRole": "État berbère ibadite, centre intellectuel et commercial, résistance aux Fatimides."
@@ -58,6 +88,12 @@
       {
         "name": "Dynastie zianide",
         "period": "1235-1556",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1235,
+          "endYear": 1556,
+          "precision": "year"
+        },
         "dominantPeoples": ["Berbères zénètes"],
         "politicalCenters": ["Tlemcen"],
         "historicalRole": "Royaume berbère indépendant, résistance aux Mérinides et aux Hafsides, centre culturel et commercial."
@@ -65,6 +101,12 @@
       {
         "name": "Régence d'Alger",
         "period": "1516-1830",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1516,
+          "endYear": 1830,
+          "precision": "year"
+        },
         "dominantPeoples": ["Berbères", "Arabes", "Turcs ottomans"],
         "politicalCenters": ["Alger"],
         "historicalRole": "État ottoman semi-autonome, piraterie en Méditerranée, résistance aux puissances européennes."
@@ -72,6 +114,12 @@
       {
         "name": "Algérie française",
         "period": "1830-1962",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1830,
+          "endYear": 1962,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples algériens sous domination coloniale"
         ],
@@ -320,7 +368,7 @@
           "percentageInCountry": 1.4,
           "region": "Vallée du Mzab (Ghardaïa)",
           "languageFamily": "FLG_BERBERE",
-          "peopleId": "PPL_MO"
+          "peopleId": "PPL_MOZABITE"
         }
       ]
     }

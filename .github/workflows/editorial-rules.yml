@@ -32,12 +32,18 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      # Enforces three decolonial-posture rules on AFRIK fiches:
+      # Enforces six decolonial-posture rules on AFRIK fiches:
       #   1. autonym required at confidence >= medium (warning otherwise)
       #   2. >= 2 sources when classification_status is contested or
       #      colonial-legacy
       #   3. DoctrineLinkCard snapshot presence — graceful skip when ETNI-28
       #      is not yet merged
+      #   4. a patronyme's claims cite sources the fiche itself declares
+      #   5. reader-facing register — no repo path, field path, raw identifier
+      #      or pipeline vocabulary in the three fields published verbatim
+      #   6. chronology symmetry — a country that dates its colonial
+      #      administrations dates its precolonial polities, held by a
+      #      two-way ratchet on UNDATED_POLITY_CEILING
       # PR annotations are emitted on stdout in GitHub Actions
       # workflow-command format.
       - name: Run editorial-rules gate

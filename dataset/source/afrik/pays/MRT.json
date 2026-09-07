@@ -22,6 +22,12 @@
       {
         "name": "Empire Almoravide",
         "period": "VIIe siècle - XIIe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 601,
+          "endYear": 1200,
+          "precision": "century"
+        },
         "dominantPeoples": ["Berbères Sanhaja (Lemtouna", "Massufa", "Godala)"],
         "politicalCenters": ["Aoudaghost", "Marrakech (capitale de l'empire)"],
         "historicalRole": "Empire berbère puissant fondé par les Sanhaja du Sahara, expansion vers le Maghreb et l'Andalousie, islamisation, développement du commerce transsaharien. L'empire Almoravide a joué un rôle majeur dans l'histoire de la région."
@@ -29,6 +35,7 @@
       {
         "name": "Tribus Maures (Beidhane)",
         "period": "Moyen Âge - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Maures (Beidhane)", "arabophones hassaniya"],
         "politicalCenters": ["Tribus nomades", "confédérations tribales"],
         "historicalRole": "Tribus Maures nomades, société stratifiée (Hassane : nobles guerriers, Zawiya : lettrés religieux, Znaga : tributaires, Haratine : anciennement serviles). Héritiers des Sanhaja berbères, arabisation progressive. Organisation tribale et nomade."
@@ -36,6 +43,7 @@
       {
         "name": "Chefferies Halpulaar",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Halpulaar (Toucouleur et Peul)"],
         "politicalCenters": [
           "Chefferies traditionnelles (vallée du fleuve Sénégal)"
@@ -45,6 +53,7 @@
       {
         "name": "Chefferies Soninké",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Soninké"],
         "politicalCenters": [
           "Chefferies traditionnelles (vallée du fleuve Sénégal)"
@@ -54,6 +63,12 @@
       {
         "name": "Colonie française de Mauritanie",
         "period": "1904 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1904,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples mauritaniens sous domination coloniale"
         ],
@@ -152,7 +167,7 @@
         "name": "Autres groupes",
         "selfAppellation": "Variées selon les groupes",
         "exonyms": ["Variées selon les groupes"],
-        "peopleId": "PPL_AUTRES_GROUPES",
+        "peopleId": null,
         "mainRegion": "Diverses régions de la Mauritanie",
         "languages": ["Langues diverses", "français"],
         "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
@@ -320,7 +335,7 @@
           "name": "Autres groupes",
           "population": 190000,
           "percentageInCountry": 4,
-          "peopleId": "PPL_AUTRES_GROUPES",
+          "peopleId": null,
           "region": "Diverses régions de la Mauritanie"
         }
       ]

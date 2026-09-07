@@ -22,6 +22,12 @@
       {
         "name": "Royaume du Rwanda",
         "period": "XVe siècle - 1961",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1401,
+          "endYear": 1961,
+          "precision": "century"
+        },
         "dominantPeoples": [
           "Tutsi (noblesse)",
           "Hutu (majorité)",
@@ -33,6 +39,12 @@
       {
         "name": "Ruanda-Urundi",
         "period": "1916 - 1962",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1916,
+          "endYear": 1962,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples rwandais sous administration coloniale belge"
         ],
@@ -42,6 +54,12 @@
       {
         "name": "République du Rwanda",
         "period": "1962 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1962,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples rwandais"],
         "politicalCenters": ["Kigali (capitale)"],
         "historicalRole": "Indépendance en 1962. Première République (1962-1973) : tensions ethniques. Deuxième République (1973-1994) : régime Habyarimana. Génocide de 1994. Troisième République depuis 1994 : reconstruction, abolition des distinctions ethniques officielles."

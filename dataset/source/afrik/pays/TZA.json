@@ -23,6 +23,12 @@
       {
         "name": "Cités-États swahili",
         "period": "VIIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 701,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Swahili"],
         "politicalCenters": ["Kilwa", "Zanzibar", "Pemba", "Mombasa"],
         "historicalRole": "Cités-États swahili puissantes sur la côte, commerce avec les Arabes, les Indiens et les Européens. Civilisation swahili ancienne."
@@ -30,6 +36,12 @@
       {
         "name": "Sultanat de Zanzibar",
         "period": "XIXe - XXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1801,
+          "endYear": 2000,
+          "precision": "century"
+        },
         "dominantPeoples": ["Swahili", "Arabes"],
         "politicalCenters": ["Zanzibar (capitale)"],
         "historicalRole": "Sultanat puissant, commerce d'esclaves et d'épices. Influence sur la côte est-africaine."
@@ -37,6 +49,7 @@
       {
         "name": "Royaumes bantous",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Sukuma", "Chaga", "Nyamwezi", "Haya"],
         "politicalCenters": ["Régions centrales et occidentales"],
         "historicalRole": "Royaumes et chefferies bantous, organisation politique traditionnelle, agriculture."
@@ -44,6 +57,12 @@
       {
         "name": "Afrique orientale allemande",
         "period": "1885 - 1918",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1885,
+          "endYear": 1918,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples tanzaniens sous administration coloniale allemande"
         ],
@@ -53,6 +72,12 @@
       {
         "name": "Tanganyika",
         "period": "1919 - 1961",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1919,
+          "endYear": 1961,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples tanzaniens sous mandat britannique"
         ],
@@ -62,6 +87,12 @@
       {
         "name": "République unie de Tanzanie",
         "period": "1964 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1964,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples tanzaniens"],
         "politicalCenters": [
           "Dodoma (capitale depuis 1996)",
@@ -236,7 +267,7 @@
         },
         {
           "name": "Swahili (Tanzanie)",
-          "peopleId": "PPL_SWAHILI_TAN",
+          "peopleId": "PPL_SWAHILI_TANZANIE",
           "percentageInCountry": 5
         },
         {

@@ -63,6 +63,7 @@ export type RuleName =
   | "doctrine-link-card-snapshot"
   | "source-ref-resolves"
   | "reader-facing-register"
+  | "chronology-symmetry"
   | "json-parse";
 
 export interface RuleResult {
@@ -86,6 +87,7 @@ export interface Fiche {
     appellations?: { selfAppellation?: string | null };
     decolonialHeader?: { selfAppellation?: string | null };
     sources?: unknown[];
+    kingdoms?: unknown[];
   };
   [key: string]: unknown;
 }
@@ -554,6 +556,108 @@ export function checkReaderFacingRegister(
   return findings;
 }
 
+// ───── Rule 6: chronology symmetry ────────────────────────────────────────
+
+const CHRONOLOGY_RULE: RuleName = "chronology-symmetry";
+
+/**
+ * The number of precolonial polities still undated in a country that dates its
+ * colonial administrations, measured 2026-09-07 across the 54 country fiches.
+ *
+ * A ratchet with two edges, like `DEAD_CODE_CEILINGS`: above it is a
+ * regression, and **below it is also a failure**, because a ceiling left
+ * standing over the real count is a licence to climb back to it. Each editorial
+ * pass that sources a polity's dates lowers this constant in the same change,
+ * which is what makes the burn-down auditable rather than aspirational.
+ *
+ * It moved 95 → 96 once, in the change that retyped "Colónia de Angola" from
+ * polity to colonial. Nothing regressed: Angola's Ovimbundu kingdoms were
+ * always undated, and the misfiled colony was hiding them from this count. A
+ * ratchet that only ever falls would have made that correction unreportable,
+ * so the rule is that the number follows the measurement and the change says
+ * why.
+ *
+ * When it reaches 0, delete the ratchet and let the findings be errors: the
+ * rule becomes a plain gate and the asymmetry cannot return.
+ */
+export const UNDATED_POLITY_CEILING = 96;
+
+interface KingdomShape {
+  name?: unknown;
+  entryType?: unknown;
+  timeRange?: unknown;
+}
+
+/**
+ * Rule 6 – A country that dates its colonial administrations dates its
+ * precolonial polities too.
+ *
+ * This is not a completeness check. A country that dates nothing is merely
+ * unfinished; a country that dates only the coloniser has published a claim
+ * about whose history is precise, and that is the asymmetry the atlas showed
+ * on six of its pages — "1894 - 1962" for the protectorate, "Précolonial" for
+ * the five kingdoms above it.
+ *
+ * The grain is the entry, not the country: counting countries would let a
+ * single dated Ugandan kingdom clear the other four.
+ */
+export function checkChronologySymmetry(
+  fiche: Fiche,
+  file: string
+): RuleResult[] {
+  if (!isCountryFiche(file)) return [];
+  const kingdoms = fiche.content?.kingdoms;
+  if (!Array.isArray(kingdoms)) return [];
+
+  const entries = kingdoms.filter(
+    (k): k is KingdomShape => !!k && typeof k === "object"
+  );
+  const datedColonial = entries.find(
+    (k) =>
+      (k.entryType === "colonial" || k.entryType === "modern") && !!k.timeRange
+  );
+  if (!datedColonial) return [];
+
+  const witness =
+    typeof datedColonial.name === "string" ? datedColonial.name : "—";
+  const slug = path.basename(file, ".json");
+
+  return entries
+    .filter((k) => k.entryType === "polity" && !k.timeRange)
+    .map((k) => ({
+      rule: CHRONOLOGY_RULE,
+      severity: "warning" as Severity,
+      file,
+      slug,
+      message: `"${witness}" is dated but "${
+        typeof k.name === "string" ? k.name : "—"
+      }" is not — a country that dates its colonial administrations must date its precolonial polities.`,
+    }));
+}
+
+/**
+ * The ratchet finding. Returns null only when the corpus sits exactly on the
+ * recorded ceiling; both directions are errors, and the message names the
+ * measured number so the fix is to edit one line.
+ */
+export function checkUndatedPolityCeiling(
+  count: number,
+  ceiling: number
+): RuleResult | null {
+  if (count === ceiling) return null;
+  const direction =
+    count > ceiling
+      ? `rose to ${count} (ceiling ${ceiling}) — a polity lost its dates`
+      : `fell to ${count} (ceiling ${ceiling}) — lower UNDATED_POLITY_CEILING to ${count} in the same change`;
+  return {
+    rule: CHRONOLOGY_RULE,
+    severity: "error",
+    file: "scripts/ci/checkEditorialRules.ts",
+    slug: "UNDATED_POLITY_CEILING",
+    message: `Undated precolonial polities ${direction}.`,
+  };
+}
+
 // ───── Loader ─────────────────────────────────────────────────────────────
 
 interface LoadedFiche {
@@ -643,6 +747,13 @@ export interface RunOptions {
   afrikRoot?: string;
   /** Defaults to `<repoRoot>/dataset/translations/en`. */
   translationsRoot?: string;
+  /**
+   * The undated-polity ratchet counts *this repository's* corpus, so it is off
+   * unless a caller asks for it — a run pointed at a fixture would otherwise
+   * fail for containing the wrong number of countries. The CLI passes
+   * `UNDATED_POLITY_CEILING`; that call site is the arming.
+   */
+  undatedPolityCeiling?: number;
 }
 
 export function runEditorialRules(opts: RunOptions): RunResult {
@@ -695,6 +806,19 @@ export function runEditorialRules(opts: RunOptions): RunResult {
     findings.push(...checkPatronymeSourceRefs(fiche, relPath));
 
     findings.push(...checkReaderFacingRegister(fiche, relPath));
+
+    findings.push(...checkChronologySymmetry(fiche, relPath));
+  }
+
+  if (opts.undatedPolityCeiling !== undefined) {
+    const undatedPolities = findings.filter(
+      (f) => f.rule === CHRONOLOGY_RULE
+    ).length;
+    const ratchet = checkUndatedPolityCeiling(
+      undatedPolities,
+      opts.undatedPolityCeiling
+    );
+    if (ratchet) findings.push(ratchet);
   }
 
   // A translated record publishes the same three fields verbatim, in English.
@@ -743,7 +867,10 @@ function summarize(findings: RuleResult[]): string {
 
 async function main(): Promise<void> {
   const repoRoot = process.cwd();
-  const result = runEditorialRules({ repoRoot });
+  const result = runEditorialRules({
+    repoRoot,
+    undatedPolityCeiling: UNDATED_POLITY_CEILING,
+  });
   for (const line of result.annotations) {
     // PR annotations must be written to stdout for GitHub Actions to pick
     // them up.

@@ -375,6 +375,15 @@ export const TRANSLATION_CLASSES: Readonly<
     "content.historicalNames.contemporary": "translatable",
     "content.kingdoms[].name": "review_required",
     "content.kingdoms[].period": "translatable",
+    // The typed kind and the bounds are machine values: an enum the code
+    // switches on, and integers. Only the note that explains what an
+    // approximate range smoothed over is prose a reader meets.
+    "content.kingdoms[].entryType": "invariant",
+    "content.kingdoms[].timeRange.startYear": "invariant",
+    "content.kingdoms[].timeRange.endYear": "invariant",
+    "content.kingdoms[].timeRange.ongoing": "invariant",
+    "content.kingdoms[].timeRange.precision": "invariant",
+    "content.kingdoms[].timeRange.datingNote": "translatable",
     "content.kingdoms[].dominantPeoples[]": "invariant",
     "content.kingdoms[].politicalCenters[]": "invariant",
     "content.kingdoms[].historicalRole": "translatable",

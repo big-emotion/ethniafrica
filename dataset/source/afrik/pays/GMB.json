@@ -19,6 +19,7 @@
       {
         "name": "Royaumes Mandinka",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Mandinka"],
         "politicalCenters": ["Chefferies traditionnelles mandinka"],
         "historicalRole": "Royaumes Mandinka, héritiers de l'empire du Mali (XIIIe-XVIe siècle), système lignager, castes artisanales (numu, djeli), importance des griots. Rôle majeur dans la diffusion culturelle mandé. Traditions islamiques."
@@ -26,6 +27,7 @@
       {
         "name": "Chefferies Wolof",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Wolof"],
         "politicalCenters": ["Chefferies traditionnelles wolof"],
         "historicalRole": "Chefferies Wolof, traditions islamiques, commerce régional. Relations avec les royaumes wolof du Sénégal."
@@ -33,6 +35,7 @@
       {
         "name": "Peuples Fula",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Fula / Peul"],
         "politicalCenters": ["Communautés pastorales"],
         "historicalRole": "Peuples Fula pasteurs nomades et sédentaires, traditions islamiques, pastoralisme. Commerce et migrations."
@@ -40,6 +43,12 @@
       {
         "name": "Colonie britannique de Gambie",
         "period": "1888 - 1965",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1888,
+          "endYear": 1965,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples gambiens sous domination britannique"
         ],

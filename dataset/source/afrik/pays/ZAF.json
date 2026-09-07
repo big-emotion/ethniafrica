@@ -22,6 +22,7 @@
       {
         "name": "Royaumes Nguni",
         "period": "Précolonial - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Zulu", "Xhosa", "Swazi", "Ndebele"],
         "politicalCenters": ["KwaZulu-Natal", "Eastern Cape"],
         "historicalRole": "Royaumes Nguni puissants, expansion zouloue sous Shaka (début XIXe siècle), résistance à la colonisation."
@@ -29,6 +30,13 @@
       {
         "name": "Royaume zoulou",
         "period": "Début XIXe - fin XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1801,
+          "endYear": 1900,
+          "precision": "approximate",
+          "datingNote": "Le libellé distingue des phases d'intensité inégale ; les bornes retenues encadrent l'ensemble de la période."
+        },
         "dominantPeoples": ["Zulu"],
         "politicalCenters": ["KwaZulu-Natal"],
         "historicalRole": "Royaume zoulou puissant fondé par Shaka, expansion territoriale, résistance aux Britanniques (guerres anglo-zouloues, 1879)."
@@ -36,6 +44,7 @@
       {
         "name": "Chefferies Sotho-Tswana",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Sotho", "Tswana", "Pedi"],
         "politicalCenters": ["Lesotho", "provinces du nord"],
         "historicalRole": "Chefferies Sotho-Tswana, organisation politique traditionnelle, résistance à la colonisation."
@@ -43,6 +52,12 @@
       {
         "name": "Colonie du Cap",
         "period": "1652 - 1910",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1652,
+          "endYear": 1910,
+          "precision": "year"
+        },
         "dominantPeoples": ["Khoisan", "colons européens", "esclaves"],
         "politicalCenters": ["Le Cap (capitale coloniale)"],
         "historicalRole": "Colonie hollandaise puis britannique, développement de l'apartheid, résistance des peuples autochtones."
@@ -50,6 +65,12 @@
       {
         "name": "États boers",
         "period": "XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1801,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Boers (Afrikaners)", "peuples autochtones"],
         "politicalCenters": ["Transvaal", "Orange Free State"],
         "historicalRole": "Républiques boers indépendantes, guerres anglo-boers (1880-1881, 1899-1902)."
@@ -57,6 +78,12 @@
       {
         "name": "Union sud-africaine",
         "period": "1910 - 1961",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1910,
+          "endYear": 1961,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples sud-africains sous régime ségrégationniste"
         ],
@@ -66,6 +93,12 @@
       {
         "name": "République d'Afrique du Sud",
         "period": "1961 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1961,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples sud-africains"],
         "politicalCenters": [
           "Pretoria (capitale administrative)",

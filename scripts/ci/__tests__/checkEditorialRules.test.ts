@@ -4,8 +4,11 @@ import * as path from "path";
 import * as os from "os";
 import {
   checkAutonym,
+  checkChronologySymmetry,
   checkSourcesCount,
   checkDoctrineLinkCardSnapshot,
+  checkUndatedPolityCeiling,
+  UNDATED_POLITY_CEILING,
   escapeWorkflowCommand,
   extractAutonym,
   extractConfidence,
@@ -314,6 +317,178 @@ describe("checkDoctrineLinkCardSnapshot (Rule 3)", () => {
       tmpRepoRoot
     );
     expect(r).toBeNull();
+  });
+});
+
+describe("checkChronologySymmetry (Rule 6)", () => {
+  function countryFiche(kingdoms: unknown[]): Fiche {
+    return { id: "TST", content: { kingdoms } } as unknown as Fiche;
+  }
+
+  const datedColony = {
+    name: "Protectorat britannique",
+    period: "1894 - 1962",
+    entryType: "colonial",
+    timeRange: { startYear: 1894, endYear: 1962, precision: "year" },
+  };
+  const undatedPolity = {
+    name: "Royaume du Buganda",
+    period: "Précolonial - présent",
+    entryType: "polity",
+  };
+
+  // @req REQ-148
+  it("reports a polity left undated beside a dated colonial administration", () => {
+    const findings = checkChronologySymmetry(
+      countryFiche([undatedPolity, datedColony]),
+      "dataset/source/afrik/pays/TST.json"
+    );
+    expect(findings).toHaveLength(1);
+    expect(findings[0].severity).toBe("warning");
+    expect(findings[0].rule).toBe("chronology-symmetry");
+    expect(findings[0].message).toContain("Royaume du Buganda");
+    expect(findings[0].message).toContain("Protectorat britannique");
+  });
+
+  /**
+   * The rule is about asymmetry, not completeness. A country that dates
+   * nothing is incomplete; a country that dates only its coloniser is making
+   * a statement, and that is the one worth stopping.
+   */
+  // @req REQ-148
+  it("says nothing when the country dates none of its entries", () => {
+    expect(
+      checkChronologySymmetry(
+        countryFiche([
+          undatedPolity,
+          {
+            name: "Colonie test",
+            period: "Précolonial",
+            entryType: "colonial",
+          },
+        ]),
+        "dataset/source/afrik/pays/TST.json"
+      )
+    ).toEqual([]);
+  });
+
+  // @req REQ-148
+  it("says nothing when every polity is dated", () => {
+    expect(
+      checkChronologySymmetry(
+        countryFiche([
+          {
+            name: "Royaume du Buganda",
+            period: "XIVe siècle - présent",
+            entryType: "polity",
+            timeRange: { startYear: 1301, ongoing: true, precision: "century" },
+          },
+          datedColony,
+        ]),
+        "dataset/source/afrik/pays/TST.json"
+      )
+    ).toEqual([]);
+  });
+
+  // @req REQ-148
+  it("counts each undated polity, not each country", () => {
+    const findings = checkChronologySymmetry(
+      countryFiche([undatedPolity, { ...undatedPolity }, datedColony]),
+      "dataset/source/afrik/pays/TST.json"
+    );
+    expect(findings).toHaveLength(2);
+  });
+
+  // @req REQ-148
+  it("ignores an undated colonial entry — the rule measures the other side", () => {
+    expect(
+      checkChronologySymmetry(
+        countryFiche([
+          {
+            name: "Colonie sans date",
+            period: "Précolonial",
+            entryType: "colonial",
+          },
+          datedColony,
+        ]),
+        "dataset/source/afrik/pays/TST.json"
+      )
+    ).toEqual([]);
+  });
+
+  // @req REQ-148
+  it("does not apply to a fiche that is not a country", () => {
+    expect(
+      checkChronologySymmetry(
+        countryFiche([undatedPolity, datedColony]),
+        "dataset/source/afrik/peuples/FLG_BANTU/PPL_TEST.json"
+      )
+    ).toEqual([]);
+  });
+
+  // @req REQ-148
+  it("does not apply to a country without kingdoms", () => {
+    expect(
+      checkChronologySymmetry(
+        { id: "TST", content: {} } as unknown as Fiche,
+        "dataset/source/afrik/pays/TST.json"
+      )
+    ).toEqual([]);
+  });
+});
+
+describe("the ratchet on the real corpus", () => {
+  /**
+   * The assertion the constant exists for. Without it `UNDATED_POLITY_CEILING`
+   * would be a number in a file that nothing compares to anything, and the
+   * burn-down would be a claim rather than a measurement.
+   */
+  // @req REQ-148
+  it("sits exactly on the recorded ceiling", () => {
+    const result = runEditorialRules({
+      repoRoot: path.join(__dirname, "../../.."),
+      undatedPolityCeiling: UNDATED_POLITY_CEILING,
+    });
+    const ratchet = result.findings.filter(
+      (f) => f.slug === "UNDATED_POLITY_CEILING"
+    );
+    expect(ratchet.map((f) => f.message)).toEqual([]);
+  });
+
+  // @req REQ-148
+  it("is not armed for a caller that does not ask for it", () => {
+    const result = runEditorialRules({
+      repoRoot: path.join(__dirname, "../../.."),
+    });
+    expect(
+      result.findings.some((f) => f.slug === "UNDATED_POLITY_CEILING")
+    ).toBe(false);
+  });
+});
+
+describe("checkUndatedPolityCeiling (the ratchet)", () => {
+  // @req REQ-148
+  it("passes when the corpus sits exactly at the recorded ceiling", () => {
+    expect(checkUndatedPolityCeiling(77, 77)).toBeNull();
+  });
+
+  // @req REQ-148
+  it("fails when a pass reintroduces an undated polity", () => {
+    const finding = checkUndatedPolityCeiling(78, 77);
+    expect(finding?.severity).toBe("error");
+    expect(finding?.message).toMatch(/78/);
+  });
+
+  /**
+   * A ceiling left standing above the real count is a licence to climb back
+   * to it, so falling below it fails too — the editorial pass that closed an
+   * entry lowers the constant in the same change.
+   */
+  // @req REQ-148
+  it("fails when the ceiling is left above the real count", () => {
+    const finding = checkUndatedPolityCeiling(70, 77);
+    expect(finding?.severity).toBe("error");
+    expect(finding?.message).toMatch(/70/);
   });
 });
 

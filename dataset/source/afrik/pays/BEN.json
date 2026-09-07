@@ -23,6 +23,12 @@
       {
         "name": "Royaume du Dahomey",
         "period": "XVIIe siècle - 1894",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1601,
+          "endYear": 1894,
+          "precision": "century"
+        },
         "dominantPeoples": ["Fon"],
         "politicalCenters": ["Abomey (capitale)", "Allada", "Ouidah"],
         "historicalRole": "Royaume du Dahomey puissant et militarisé, célèbre pour son armée et ses Amazones (guerrières). Expansion territoriale, commerce avec les Européens (traite des esclaves), résistance à la colonisation française. Influence culturelle majeure (vodun, art royal). Conquête française en 1894."
@@ -30,6 +36,7 @@
       {
         "name": "Royaume de Nikki",
         "period": "Précolonial - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Bariba (Baatonu)"],
         "politicalCenters": ["Nikki (capitale)", "Parakou"],
         "historicalRole": "Royaume de Nikki, État bariba puissant dans le Borgou. Tradition de cavalerie, organisation politique centralisée. Résistance à la colonisation française."
@@ -37,6 +44,7 @@
       {
         "name": "Royaume de Kétou",
         "period": "Précolonial - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Yoruba (Nago)"],
         "politicalCenters": ["Kétou (capitale)"],
         "historicalRole": "Royaume de Kétou, État yoruba lié culturellement au Nigeria. Relations avec le royaume d'Oyo. Influence culturelle yoruba (Ifá, masques Gẹ̀lẹ̀dẹ́)."
@@ -44,6 +52,7 @@
       {
         "name": "Royaumes Adja-Ewe",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Adja", "Ewe"],
         "politicalCenters": ["Tado (centre historique)", "chefferies locales"],
         "historicalRole": "Royaumes et chefferies Adja-Ewe, centre originel des migrations Gbe vers Abomey et le sud Togo. Traditions culturelles Gbe (masques, rites agraires)."
@@ -51,6 +60,12 @@
       {
         "name": "Colonie du Dahomey",
         "period": "1894 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1894,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples béninois sous domination française"
         ],

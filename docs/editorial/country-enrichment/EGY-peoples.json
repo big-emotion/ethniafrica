@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "countryId": "EGY",
+  "countryName": "Égypte",
+  "updatedAt": "2026-09-07",
+  "purpose": "Record-level reconciliation of local people-country links. Automated flags are review prompts, not editorial conclusions.",
+  "regeneration": {
+    "command": "npx tsx scripts/afrik/updateCountryPeopleLedger.ts EGY --write",
+    "preservedFields": ["entries[].review"]
+  },
+  "reviewVocabulary": {
+    "status": ["pending", "in_review", "resolved"],
+    "entityType": [
+      "unknown",
+      "people",
+      "subgroup",
+      "language_label",
+      "macro_category",
+      "duplicate",
+      "rejected_link"
+    ]
+  },
+  "summary": {
+    "totalEntries": 8,
+    "fullyLinkedEntries": 7,
+    "incompleteLinkEntries": 1,
+    "macroLikeEntries": 1,
+    "nameLanguageLabelMatches": 4,
+    "entriesWithoutAcceptedSource": 0,
+    "sharedIsoCodeClusters": 0,
+    "featuredFamilyMismatches": 0,
+    "entriesRequiringReview": 5,
+    "editorialReview": {
+      "totalRelations": 8,
+      "reviewedRelations": 0,
+      "pendingRelations": 8,
+      "reviewCompletionPercent": 0,
+      "reviewedByEntityType": {}
+    }
+  },
+  "sharedIsoCodeClusters": [],
+  "entries": [
+    {
+      "id": "PPL_AMAZIGH_MACRO",
+      "nameMain": "Amazigh (Berberes)",
+      "selfAppellation": "Imazighen (pluriel)",
+      "languageFamilyId": "FLG_BERBERE",
+      "isoCodes": [
+        "ber",
+        "cnu",
+        "kab",
+        "rif",
+        "shi",
+        "shy",
+        "tmh",
+        "tzm",
+        "zgh"
+      ],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 6,
+        "accepted": 3,
+        "needsReview": 2,
+        "unverified": 1,
+        "withUrl": 5
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["macro_like", "name_matches_language_label"],
+      "review": {
+        "status": "pending",
+        "entityType": "unknown",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": null,
+        "notes": null,
+        "sources": []
+      }
+    },
+    {
+      "id": "PPL_ARABES_AFRIQUE",
+      "nameMain": "Arabes d'Afrique",
+      "selfAppellation": "Al-Arab (العرب)",
+      "languageFamilyId": "FLG_SEMITIQUE",
+      "isoCodes": ["aao", "aeb", "apd", "arb", "arq", "ary", "ayl", "shu"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 7,
+        "accepted": 7,
+        "needsReview": 0,
+        "unverified": 0,
+        "withUrl": 5
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": [],
+      "review": {
+        "status": "pending",
+        "entityType": "unknown",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": null,
+        "notes": null,
+        "sources": []
+      }
+    },
+    {
+      "id": "PPL_BEJA",
+      "nameMain": "Beja",
+      "selfAppellation": "Bidhaawyeet / Tubdhaawi",
+      "languageFamilyId": "FLG_COUCHITIQUE",
+      "isoCodes": ["bej"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 3,
+        "accepted": 2,
+        "needsReview": 1,
+        "unverified": 0,
+        "withUrl": 3
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "pending",
+        "entityType": "unknown",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": null,
+        "notes": null,
+        "sources": []
+      }
+    },
+    {
+      "id": "PPL_COPTES",
+      "nameMain": "Coptes",
+      "selfAppellation": "Aqbāṭ (أقباط) ; ⲣⲉⲙⲛ̀ⲭⲏⲙⲓ (remenkhēmi, « les gens de Kemet »)",
+      "languageFamilyId": "FLG_SEMITIQUE",
+      "isoCodes": ["arz", "cop"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": false,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 3,
+        "accepted": 3,
+        "needsReview": 0,
+        "unverified": 0,
+        "withUrl": 3
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["incomplete_country_link"],
+      "review": {
+        "status": "pending",
+        "entityType": "unknown",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": null,
+        "notes": null,
+        "sources": []
+      }
+    },
+    {
+      "id": "PPL_FOUR",
+      "nameMain": "Four",
+      "selfAppellation": "Fora",
+      "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+      "isoCodes": ["fvr"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 4,
+        "accepted": 2,
+        "needsReview": 1,
+        "unverified": 1,
+        "withUrl": 3
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "pending",
+        "entityType": "unknown",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": null,
+        "notes": null,
+        "sources": []
+      }
+    },
+    {
+      "id": "PPL_NUBIENS",
+      "nameMain": "Nubiens",
+      "selfAppellation": "Noba",
+      "languageFamilyId": "FLG_NILOSAHARIENNE",
+      "isoCodes": ["dgl", "fia", "ktb"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 4,
+        "accepted": 4,
+        "needsReview": 0,
+        "unverified": 0,
+        "withUrl": 3
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": [],
+      "review": {
+        "status": "pending",
+        "entityType": "unknown",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": null,
+        "notes": null,
+        "sources": []
+      }
+    },
+    {
+      "id": "PPL_RASHAIDA",
+      "nameMain": "Rashaida",
+      "selfAppellation": "Bani Rasheed",
+      "languageFamilyId": "FLG_SEMITIQUE",
+      "isoCodes": ["afb", "ara"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 2,
+        "needsReview": 0,
+        "unverified": 3,
+        "withUrl": 4
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": [],
+      "review": {
+        "status": "pending",
+        "entityType": "unknown",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": null,
+        "notes": null,
+        "sources": []
+      }
+    },
+    {
+      "id": "PPL_SIWI",
+      "nameMain": "Siwi",
+      "selfAppellation": "Isiwan",
+      "languageFamilyId": "FLG_BERBERE",
+      "isoCodes": ["siz"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": true,
+        "demographic": true
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 3,
+        "needsReview": 0,
+        "unverified": 2,
+        "withUrl": 3
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
+      "review": {
+        "status": "pending",
+        "entityType": "unknown",
+        "canonicalPeopleId": null,
+        "parentPeopleId": null,
+        "decision": null,
+        "notes": null,
+        "sources": []
+      }
+    }
+  ]
+}

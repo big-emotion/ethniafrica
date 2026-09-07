@@ -22,6 +22,12 @@
       {
         "name": "Royaume Shilluk",
         "period": "XVe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1401,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Shilluk"],
         "politicalCenters": ["Fashoda (Kodok)"],
         "historicalRole": "Royaume shilluk puissant, contrôle du commerce dans la région du Nil Blanc, résistance aux Arabes et aux colonisateurs."
@@ -29,6 +35,12 @@
       {
         "name": "Royaume Zande",
         "period": "XVIIe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1601,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Zande"],
         "politicalCenters": ["Variés selon les périodes"],
         "historicalRole": "Royaume zande puissant, contrôle du commerce dans la région, résistance aux colonisateurs."
@@ -36,6 +48,7 @@
       {
         "name": "Chefferies Dinka",
         "period": "Depuis plusieurs siècles",
+        "entryType": "polity",
         "dominantPeoples": ["Dinka"],
         "politicalCenters": ["Chefferies territoriales (cieng)"],
         "historicalRole": "Organisation politique traditionnelle des Dinka, chefferies territoriales, résistance aux colonisateurs."
@@ -43,6 +56,7 @@
       {
         "name": "Chefferies Nuer",
         "period": "Depuis plusieurs siècles",
+        "entryType": "polity",
         "dominantPeoples": ["Nuer"],
         "politicalCenters": ["Groupes d'âge", "chefferies traditionnelles"],
         "historicalRole": "Organisation politique traditionnelle des Nuer, groupes d'âge, résistance aux colonisateurs."
@@ -50,6 +64,12 @@
       {
         "name": "Condominium anglo-égyptien",
         "period": "1899 - 1956",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1899,
+          "endYear": 1956,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Britanniques",
           "Égyptiens",
@@ -114,7 +134,7 @@
         "name": "Autres groupes",
         "selfAppellation": "Variées selon les groupes",
         "exonyms": ["Variées selon les groupes"],
-        "peopleId": "PPL_AUTRES_GROUPES",
+        "peopleId": null,
         "mainRegion": "Toutes les régions du Soudan du Sud",
         "languages": ["Langues diverses", "anglais", "arabe"],
         "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."

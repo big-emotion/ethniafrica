@@ -22,6 +22,7 @@
       {
         "name": "Chefferies bantoues",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": [
           "Makua",
           "Tsonga",
@@ -39,6 +40,7 @@
       {
         "name": "Cités-États swahilies",
         "period": "Moyen Âge - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": [
           "Swahili",
           "Arabes",
@@ -55,6 +57,7 @@
       {
         "name": "Royaumes Shona",
         "period": "Précolonial",
+        "entryType": "polity",
         "dominantPeoples": ["Shona", "Ndau"],
         "politicalCenters": ["Royaumes shona (Zimbabwe", "Mozambique)"],
         "historicalRole": "Royaumes shona, héritage du Grand Zimbabwe, commerce régional, traditions shona."
@@ -62,6 +65,12 @@
       {
         "name": "Colonie portugaise du Mozambique",
         "period": "1498 - 1975",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1498,
+          "endYear": 1975,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples mozambicains sous domination coloniale portugaise"
         ],

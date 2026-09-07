@@ -19,6 +19,12 @@
       {
         "name": "Royaume sotho",
         "period": "XIXe siècle - présent",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1801,
+          "ongoing": true,
+          "precision": "century"
+        },
         "dominantPeoples": ["Sotho / Basotho"],
         "politicalCenters": [
           "Maseru (capitale)",
@@ -29,6 +35,12 @@
       {
         "name": "Protectorat britannique du Basutoland",
         "period": "1868 - 1966",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1868,
+          "endYear": 1966,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples sotho sous protectorat britannique"
         ],

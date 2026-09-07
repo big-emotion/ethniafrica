@@ -370,9 +370,50 @@ export interface HistoricalNamesSection {
   contemporary?: string;
 }
 
+export type KingdomDatePrecision = "year" | "century" | "approximate";
+
+/**
+ * Machine-readable bounds for a historical entity.
+ *
+ * These never replace `Kingdom.period`, which stays the reader-facing label:
+ * "XIVe siècle - XVIIe siècle (apogée), déclin progressif jusqu'au XIXe siècle"
+ * carries editorial judgement that no pair of integers holds. The bounds exist
+ * so the corpus can be sorted and checked — in particular so a country that
+ * dates its colonial administrations cannot leave its precolonial polities
+ * undated, which is how the atlas came to show the coloniser with a year and
+ * the kingdom with a shrug.
+ *
+ * `precision` is not a confidence scale — the corpus already has three of those
+ * (source tier, classification status, confidence score). It says what kind of
+ * statement the bounds are: an exact year, the interval a named century
+ * encloses, or an estimate, which then owes the reader a `datingNote`.
+ */
+export interface KingdomTimeRange {
+  startYear: number;
+  endYear?: number;
+  /**
+   * Set instead of `endYear` for an entity that still stands. Storing the
+   * current year would be a fact that changes on its own every January.
+   */
+  ongoing?: boolean;
+  precision: KingdomDatePrecision;
+  datingNote?: string;
+}
+
+/**
+ * A precolonial polity, a colonial administration and a modern state are three
+ * different things sharing one array. The distinction used to be guessed at
+ * render time from the entry's name, which let twenty-five colonial entries —
+ * "Somaliland britannique", "Rhodésie du Nord", "Condominium anglo-égyptien" —
+ * through a filter that only tested for the word "colonie".
+ */
+export type KingdomEntryType = "polity" | "colonial" | "modern";
+
 export interface Kingdom {
   name: string;
-  period?: string;
+  period: string;
+  entryType?: KingdomEntryType;
+  timeRange?: KingdomTimeRange;
   dominantPeoples?: string[];
   politicalCenters?: string[];
   historicalRole?: string;

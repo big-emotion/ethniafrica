@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "migration",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
   "id": "MGR_BANTU_HOMELAND_DISPERSAL",
   "nameMain": "Dispersion initiale des Bantous depuis les confins Cameroun-Nigeria",
   "migrationGroup": "bantu-expansion",

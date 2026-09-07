@@ -22,6 +22,7 @@
       {
         "name": "Royaumes berbères antiques",
         "period": "Antiquité",
+        "entryType": "polity",
         "dominantPeoples": ["Berbères (Amazighs)"],
         "politicalCenters": ["Volubilis", "Lixus"],
         "historicalRole": "Royaumes berbères indépendants, résistance à Rome, développement du commerce transsaharien."
@@ -29,6 +30,12 @@
       {
         "name": "Dynastie idrisside",
         "period": "789-974",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 789,
+          "endYear": 974,
+          "precision": "year"
+        },
         "dominantPeoples": ["Berbères", "Arabes"],
         "politicalCenters": ["Fès"],
         "historicalRole": "Premier État musulman au Maroc, fondation de Fès, islamisation."
@@ -36,6 +43,12 @@
       {
         "name": "Dynastie almoravide",
         "period": "1040-1147",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1040,
+          "endYear": 1147,
+          "precision": "year"
+        },
         "dominantPeoples": ["Berbères sanhadja"],
         "politicalCenters": ["Marrakech"],
         "historicalRole": "Empire berbère puissant, unification du Maghreb et de l'Andalousie, fondation de Marrakech."
@@ -43,6 +56,12 @@
       {
         "name": "Dynastie almohade",
         "period": "1121-1269",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1121,
+          "endYear": 1269,
+          "precision": "year"
+        },
         "dominantPeoples": ["Berbères masmouda"],
         "politicalCenters": ["Marrakech", "Rabat"],
         "historicalRole": "Empire berbère le plus puissant, unification du Maghreb et de l'Andalousie, développement culturel."
@@ -50,6 +69,12 @@
       {
         "name": "Dynastie mérinide",
         "period": "1244-1465",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1244,
+          "endYear": 1465,
+          "precision": "year"
+        },
         "dominantPeoples": ["Berbères zénètes"],
         "politicalCenters": ["Fès"],
         "historicalRole": "Dynastie berbère, développement de Fès, architecture mérinide."
@@ -57,6 +82,12 @@
       {
         "name": "Dynastie alaouite",
         "period": "1666-présent",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1666,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples marocains"],
         "politicalCenters": ["Fès", "Meknès", "Rabat"],
         "historicalRole": "Dynastie régnante actuelle, unification du Maroc, résistance à la colonisation."
@@ -64,6 +95,12 @@
       {
         "name": "Protectorat français et espagnol",
         "period": "1912-1956",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1912,
+          "endYear": 1956,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples marocains sous domination coloniale"
         ],

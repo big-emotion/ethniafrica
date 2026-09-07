@@ -22,6 +22,12 @@
       {
         "name": "Royaume de Koush",
         "period": "VIIIe siècle av. J.-C. - IVe siècle apr. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -800,
+          "endYear": 400,
+          "precision": "century"
+        },
         "dominantPeoples": ["Nubiens"],
         "politicalCenters": ["Napata", "Méroé"],
         "historicalRole": "Royaume nubien puissant, rival de l'Égypte, développement de la civilisation méroïtique, contacts avec les civilisations méditerranéennes."
@@ -29,6 +35,12 @@
       {
         "name": "Royaume de Méroé",
         "period": "IVe siècle av. J.-C. - IVe siècle apr. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -400,
+          "endYear": 400,
+          "precision": "century"
+        },
         "dominantPeoples": ["Nubiens"],
         "politicalCenters": ["Méroé"],
         "historicalRole": "Royaume nubien puissant, développement de la civilisation méroïtique, contacts avec les civilisations méditerranéennes, déclin au IVe siècle."
@@ -36,6 +48,12 @@
       {
         "name": "Royaumes chrétiens nubiens",
         "period": "VIe siècle - XVe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 501,
+          "endYear": 1500,
+          "precision": "century"
+        },
         "dominantPeoples": ["Nubiens"],
         "politicalCenters": [
           "Dongola (Makurie)",
@@ -47,6 +65,12 @@
       {
         "name": "Sultanat de Sennar",
         "period": "XVIe siècle - 1821",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1501,
+          "endYear": 1821,
+          "precision": "century"
+        },
         "dominantPeoples": ["Arabes soudanais", "Nubiens", "Beja"],
         "politicalCenters": ["Sennar"],
         "historicalRole": "Sultanat islamique puissant, contrôle du commerce dans la vallée du Nil, résistance aux Ottomans, conquête égyptienne (1821)."
@@ -54,6 +78,12 @@
       {
         "name": "Sultanat de Darfour",
         "period": "XVIIe siècle - 1916",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1601,
+          "endYear": 1916,
+          "precision": "century"
+        },
         "dominantPeoples": ["Four", "Arabes soudanais", "autres groupes"],
         "politicalCenters": ["El Fasher"],
         "historicalRole": "Sultanat islamique, contrôle du commerce transsaharien, résistance à la colonisation britannique, conquête britannique (1916)."
@@ -61,6 +91,12 @@
       {
         "name": "Condominium anglo-égyptien",
         "period": "1899 - 1956",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1899,
+          "endYear": 1956,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Britanniques",
           "Égyptiens",
@@ -137,7 +173,7 @@
         "name": "Autres groupes",
         "selfAppellation": "Variées selon les groupes",
         "exonyms": ["Variées selon les groupes"],
-        "peopleId": "PPL_AUTRES_GROUPES",
+        "peopleId": null,
         "mainRegion": "Toutes les régions du Soudan",
         "languages": ["Langues diverses", "arabe soudanais"],
         "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
@@ -272,7 +308,7 @@
           "name": "Autres groupes",
           "population": 8250000,
           "percentageInCountry": 16.5,
-          "peopleId": "PPL_AUTRES_GROUPES",
+          "peopleId": null,
           "region": "Toutes les régions du Soudan"
         }
       ]
