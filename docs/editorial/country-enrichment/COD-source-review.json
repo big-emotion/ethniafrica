@@ -12,10 +12,13 @@
   },
   "application": {
     "sourceJsonAppliedAt": "2026-09-07",
+    "conservativeNameOriginAppliedAt": "2026-09-07",
     "databaseSync": "not_performed",
     "removedGenericRows": 8,
     "retainedExactRows": 2,
-    "caveat": "The cleanup improves the source register but does not validate unsupported people percentages or broad country-level cultural claims."
+    "addedNameOriginRows": 2,
+    "currentExactRows": 4,
+    "caveat": "The cleanup and conservative name-origin application improve the source register but do not validate unsupported people percentages or broad country-level cultural claims."
   },
   "reviewMetrics": {
     "currentCountrySourceRows": 10,
