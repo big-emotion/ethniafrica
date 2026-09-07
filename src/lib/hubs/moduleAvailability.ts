@@ -2,7 +2,7 @@ import { unstable_cache } from "next/cache";
 import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
 import {
-  getModulesForAccessMode,
+  getNavModules,
   MODULE_DEFINITIONS,
   type AccessMode,
   type HubModuleDefinition,
@@ -186,14 +186,16 @@ export async function isModuleAvailable(
 
 // @req REQ-114 @req REQ-106
 export async function getHubModules(mode: AccessMode): Promise<HubModule[]> {
-  // Every module the registry declares is listed, a module in preparation
-  // included. Nothing is dropped here: a module that could vanish from the
-  // hub is a module a reader cannot find, and neither the environment nor
+  // A module in preparation is still listed, and neither the environment nor
   // an editorial judgement has any say in what exists — only in what is
-  // offered.
+  // offered. The one thing dropped here is a module the registry declares
+  // `unlisted`, and it is dropped through `getNavModules` rather than through
+  // a second predicate of the hub's own: the grid and the header answer the
+  // same question about the same module, so they must not be able to answer
+  // it differently.
   const presence = await corpusPresence();
 
-  return getModulesForAccessMode(mode).map((definition) => ({
+  return getNavModules(mode).map((definition) => ({
     ...definition,
     available: isModuleLive(definition, presence),
   }));

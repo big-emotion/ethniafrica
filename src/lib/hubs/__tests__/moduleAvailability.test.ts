@@ -22,6 +22,7 @@ import {
 } from "@/lib/hubs/moduleAvailability";
 import {
   MODULE_DEFINITIONS,
+  getNavModules,
   type ModuleDataSource,
 } from "@/lib/hubs/moduleRegistry";
 
@@ -358,7 +359,38 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
 
     expect(comprendre.find((m) => m.id === "anecdotes")?.available).toBe(true);
     expect(comprendre.find((m) => m.id === "frise")?.available).toBe(false);
-    expect(explorer.find((m) => m.id === "noms")?.available).toBe(false);
+    // A data-backed atlas module reads its own emptiness the same way. `noms`
+    // used to stand for that case and no longer can — it is unlisted, so the
+    // grid never receives it — so `patronymes` carries the assertion.
+    expect(explorer.find((m) => m.id === "patronymes")?.available).toBe(false);
+  });
+
+  /**
+   * The grid asks the same question of a module as the header does, through
+   * the same function. Resolving availability for a module the reader is never
+   * offered would be a second, quieter answer to "is this module offered",
+   * which is the disagreement the charter forbids between two surfaces.
+   */
+  // @req REQ-106 @req REQ-114
+  it("never resolves a module the header does not offer", async () => {
+    createServerClientMock.mockReturnValue(
+      buildSupabaseMock({
+        [PRESENCE_VIEW]: {
+          data: DECLARED_DATA_SOURCES.map((source) => ({
+            data_source: source,
+            has_rows: true,
+          })),
+          error: null,
+        },
+      })
+    );
+
+    const explorer = await getHubModules("atlas");
+
+    expect(explorer.map((m) => m.id)).toEqual(
+      getNavModules("atlas").map((m) => m.id)
+    );
+    expect(explorer.find((m) => m.id === "noms")).toBeUndefined();
   });
 
   // The hub used to drop a module behind a dark flag, so the quiz was

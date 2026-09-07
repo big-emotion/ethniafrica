@@ -14,6 +14,7 @@ import {
   ACCESS_MODES,
   ACCESS_MODE_LABELS,
   getModulesForAccessMode,
+  getNavModules,
 } from "@/lib/hubs/moduleRegistry";
 import { NOMMER_CHAPTER_KEYS, NOMMER_CHAPTER_SLUGS } from "@/lib/routing";
 
@@ -181,8 +182,11 @@ describe("the Nommer dossier — charter contract", () => {
         icon.getAttribute("class")?.split(/\s+/).includes("lucide-circle")
       );
 
+      // Counted against what the panel offers, not against the registry: an
+      // unlisted module has no row here to carry a glyph, and asking for one
+      // would make the panel owe an icon to a destination it never draws.
       expect(glyphs.length, mode).toBeGreaterThanOrEqual(
-        mode === "dossiers" ? 0 : getModulesForAccessMode(mode).length
+        mode === "dossiers" ? 0 : getNavModules(mode).length
       );
       expect(
         blanks.map((icon) => icon.getAttribute("class")),

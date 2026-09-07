@@ -227,7 +227,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
             id: "atlas" as AccessMode,
             label: "L'atlas",
             description:
-              "Les fiches du site : familles, langues, peuples, pays, appellations et noms, plus la recherche libre.",
+              "Les fiches du site : familles linguistiques, langues, peuples, pays et noms, plus la recherche libre.",
             accentClass: "afh-accent-ocre",
           },
           {
