@@ -192,40 +192,10 @@ export default async function PaysSlugPage({
   const navigationContext = (await searchParams) ?? {};
   const countryDetail = mapCountryDetail(country);
 
-  /**
-   * The peoples the fiche can actually send a reader to.
-   *
-   * `peopleId` is optional in the corpus and 49 of 275 demographic entries
-   * across the 53 country fiches leave it out, so a fifth of the rows name a
-   * people this page cannot address. They are dropped rather than printed
-   * unlinked — an inert row in a block whose entire purpose is departure.
-   */
-  const countryPeoples = (countryDetail.demographics?.peoples ?? []).map(
-    (people) => ({
-      id: people.peopleId ?? null,
-      name: people.name,
-      share: people.percentageInCountry,
-    })
-  );
-
-  /**
-   * The linguistic families those peoples sit in, named through the roster.
-   *
-   * Deduplicated in declaration order, so the family of the country's largest
-   * declared people comes first — the fiche's own emphasis, not a new one.
-   */
+  /** The only place a country fiche's `FLG_*` identifiers get a name. */
   const familyNamesById = new Map<string, string>(
     familyRoster.map((family) => [family.id, family.nameFr] as const)
   );
-  const countryFamilies = [
-    ...new Set(
-      (countryDetail.demographics?.peoples ?? [])
-        .map((people) => people.languageFamily)
-        .filter((id): id is string => typeof id === "string" && id.length > 0)
-    ),
-  ]
-    .filter((id) => familyNamesById.has(id))
-    .map((id) => ({ id, name: familyNamesById.get(id) as string }));
 
   // Ids from the corpus, geometry and name from the asset. The corpus decides
   // which countries have a fiche; the asset decides which can be drawn and
@@ -348,8 +318,10 @@ export default async function PaysSlugPage({
                   language={lang as Language}
                   links={buildOnwardLinks(
                     countryOnwardGroups({
-                      peoples: countryPeoples,
-                      families: countryFamilies,
+                      demographicPeoples:
+                        countryDetail.demographics?.peoples ?? [],
+                      majorPeoples: countryDetail.majorPeoples ?? [],
+                      familyNamesById,
                       language: lang as Language,
                     }),
                     lang as Language

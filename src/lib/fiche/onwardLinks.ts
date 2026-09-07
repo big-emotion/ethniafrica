@@ -97,14 +97,30 @@ interface OnwardQueue {
 function takeNextUnclaimed(
   queue: OnwardQueue,
   language: Language,
-  claimed: ReadonlySet<string>
+  claimedHrefs: ReadonlySet<string>,
+  claimedNames: ReadonlySet<string>
 ): OnwardLink | null {
   let target = queue.remaining.shift();
 
   while (target) {
+    const name = target.name.trim();
     const href = ROUTE_BY_KIND[queue.kind](language, target.id);
-    if (!claimed.has(href)) {
-      return { kind: queue.kind, name: target.name.trim(), href };
+
+    /**
+     * A name already offered **for the same kind** is skipped, even when it
+     * addresses a different fiche. The Atlantique family declares two distinct
+     * languages both called Bainouk (`bab` and `bcb`): two rows reading the
+     * same word are indistinguishable to a reader, so the second reads as a
+     * defect and teaches nothing.
+     *
+     * Per kind, and not across them, because this corpus names a people and
+     * its language alike constantly — Yoruba the people, Yoruba the language.
+     * Those two rows are told apart by the word above them, which is the whole
+     * job the kind kicker does.
+     */
+    const claim = `${queue.kind}:${name.toLowerCase()}`;
+    if (!claimedHrefs.has(href) && !claimedNames.has(claim)) {
+      return { kind: queue.kind, name, href };
     }
     target = queue.remaining.shift();
   }
@@ -137,7 +153,8 @@ export function buildOnwardLinks(
   }));
 
   const links: OnwardLink[] = [];
-  const claimed = new Set<string>();
+  const claimedHrefs = new Set<string>();
+  const claimedNames = new Set<string>();
   const deepest = Math.max(0, ...queues.map((queue) => queue.max));
 
   for (
@@ -149,10 +166,16 @@ export function buildOnwardLinks(
       if (links.length >= ONWARD_MAX_LINKS) break;
       if (rank >= queue.max) continue;
 
-      const link = takeNextUnclaimed(queue, language, claimed);
+      const link = takeNextUnclaimed(
+        queue,
+        language,
+        claimedHrefs,
+        claimedNames
+      );
       if (!link) continue;
 
-      claimed.add(link.href);
+      claimedHrefs.add(link.href);
+      claimedNames.add(`${link.kind}:${link.name.toLowerCase()}`);
       links.push(link);
     }
   }

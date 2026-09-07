@@ -107,46 +107,72 @@ export function patronymeOnwardGroups(
   ];
 }
 
+/** A country fiche's people entry, as either of its two chapters declares one. */
+export interface CountryPeopleEntry {
+  name: string;
+  peopleId?: string | null;
+  languageFamily?: string | null;
+  percentageInCountry?: number;
+}
+
 export interface CountryOnwardInput {
-  /**
-   * The peoples the fiche declares, with the share it gives each.
-   *
-   * `id` is nullable because the corpus's own field is: 49 of 275 demographic
-   * entries name a people the country fiche cannot link to. Those are dropped
-   * — an unlinkable row here would be a label with nowhere to go.
-   */
-  peoples: readonly { id: string | null; name: string; share?: number }[];
-  families: readonly OnwardTarget[];
+  /** The demographic table, whose entries carry the share to order by. */
+  demographicPeoples: readonly CountryPeopleEntry[];
+  /** The fiche's named major peoples, which carry an identifier far more often. */
+  majorPeoples: readonly CountryPeopleEntry[];
+  /** The family roster, the only place a country fiche's `FLG_*` gets a name. */
+  familyNamesById: ReadonlyMap<string, string>;
   language: Language;
 }
 
 // @req REQ-091
 export function countryOnwardGroups(input: CountryOnwardInput): OnwardGroup[] {
   /**
-   * Ordered by declared share, largest first — which is the order the fiche's
-   * own demographic table already reads in, so the block agrees with the
-   * chapter above it.
+   * Both chapters, not just the demographic one.
    *
-   * It is a proxy, and worth naming as one: the pays route loads no confidence
-   * score, so "best documented" is read here as "carries an identifier and a
-   * declared share", which is what separates a sourced entry from a bare name
-   * in this corpus.
+   * The two fill `peopleId` in opposite places. South Africa's demographic
+   * table is five census categories — Africains noirs, Métis, Blancs — with no
+   * identifier and no family on any of them, while its `majorPeoples` names
+   * Zulu, Xhosa, Pedi and six more, every one addressable. Reading only the
+   * first left that fiche with no way out at all; `majorPeoples` is the list
+   * that answers on all 54.
+   *
+   * Demographic entries lead because they carry a share; the major peoples
+   * follow in the fiche's own order. "Best documented" is read here as
+   * "carries an identifier, largest declared share first" — the pays route
+   * loads no confidence score, and that is the line this corpus draws between
+   * a sourced entry and a bare name.
    */
-  const linkable = input.peoples
-    .filter(
-      (people): people is { id: string; name: string; share?: number } =>
-        typeof people.id === "string" && people.id.length > 0
-    )
-    .slice()
-    .sort((a, b) => (b.share ?? 0) - (a.share ?? 0));
+  const linkable = [
+    ...[...input.demographicPeoples].sort(
+      (a, b) => (b.percentageInCountry ?? 0) - (a.percentageInCountry ?? 0)
+    ),
+    ...input.majorPeoples,
+  ].filter(
+    (people): people is CountryPeopleEntry & { peopleId: string } =>
+      typeof people.peopleId === "string" && people.peopleId.length > 0
+  );
+
+  const families: OnwardTarget[] = [
+    ...new Set(
+      [...input.demographicPeoples, ...input.majorPeoples]
+        .map((people) => people.languageFamily)
+        .filter((id): id is string => typeof id === "string" && id.length > 0)
+    ),
+  ]
+    .filter((id) => input.familyNamesById.has(id))
+    .map((id) => ({ id, name: input.familyNamesById.get(id) as string }));
 
   return [
     {
       kind: "people",
       max: 3,
-      targets: linkable.map((people) => ({ id: people.id, name: people.name })),
+      targets: linkable.map((people) => ({
+        id: people.peopleId,
+        name: people.name,
+      })),
     },
-    { kind: "language-family", max: 2, targets: input.families },
+    { kind: "language-family", max: 2, targets: families },
   ];
 }
 

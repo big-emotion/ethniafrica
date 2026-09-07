@@ -107,6 +107,49 @@ describe("buildOnwardLinks", () => {
   });
 
   // @req REQ-091
+  it("offers one row per name, even when two fiches share it", () => {
+    // Measured on the Atlantique family: `bab` and `bcb` are two distinct
+    // languages, both called Bainouk. Two rows reading the same word tell the
+    // reader nothing and read as a defect.
+    const homonyms: OnwardGroup = {
+      kind: "language",
+      max: 4,
+      targets: [
+        { id: "bab", name: "Bainouk" },
+        { id: "bcb", name: "Bainouk" },
+        { id: "yor", name: "Yoruba" },
+      ],
+    };
+
+    expect(buildOnwardLinks([homonyms], "fr").map((link) => link.name)).toEqual(
+      ["Bainouk", "Yoruba"]
+    );
+  });
+
+  // @req REQ-091
+  it("still offers a people and a language that share a name", () => {
+    // This corpus names the two alike constantly. The kind above each row is
+    // what tells them apart, so neither has to give way.
+    const links = buildOnwardLinks(
+      [
+        {
+          kind: "language",
+          max: 1,
+          targets: [{ id: "yor", name: "Yoruba" }],
+        },
+        {
+          kind: "people",
+          max: 1,
+          targets: [{ id: "PPL_YORUBA", name: "Yoruba" }],
+        },
+      ],
+      "fr"
+    );
+
+    expect(links.map((link) => link.kind)).toEqual(["language", "people"]);
+  });
+
+  // @req REQ-091
   it("drops a target the corpus names only by its identifier", () => {
     const unnamed: OnwardGroup = {
       kind: "people",

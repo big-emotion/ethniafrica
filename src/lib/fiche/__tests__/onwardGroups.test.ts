@@ -94,14 +94,22 @@ describe("patronymeOnwardGroups", () => {
 });
 
 describe("countryOnwardGroups", () => {
+  const roster = new Map([["FLG_NIGERCONGO", "Nigéro-congolais"]]);
+
   // @req REQ-091
   it("leads to the peoples the fiche documents and the families they sit in", () => {
     const groups = countryOnwardGroups({
-      peoples: [
-        { id: "PPL_YORUBA", name: "Yoruba", share: 21 },
-        { id: "PPL_IGBO", name: "Igbo", share: 18 },
+      demographicPeoples: [
+        {
+          peopleId: "PPL_YORUBA",
+          name: "Yoruba",
+          percentageInCountry: 21,
+          languageFamily: "FLG_NIGERCONGO",
+        },
+        { peopleId: "PPL_IGBO", name: "Igbo", percentageInCountry: 18 },
       ],
-      families: [{ id: "FLG_NIGERO_CONGOLAIS", name: "Nigéro-congolais" }],
+      majorPeoples: [],
+      familyNamesById: roster,
       language: "fr",
     });
 
@@ -111,30 +119,66 @@ describe("countryOnwardGroups", () => {
   // @req REQ-091
   it("leads with the people the fiche gives the largest declared share", () => {
     const groups = countryOnwardGroups({
-      peoples: [
-        { id: "PPL_IGBO", name: "Igbo", share: 18 },
-        { id: "PPL_YORUBA", name: "Yoruba", share: 21 },
+      demographicPeoples: [
+        { peopleId: "PPL_IGBO", name: "Igbo", percentageInCountry: 18 },
+        { peopleId: "PPL_YORUBA", name: "Yoruba", percentageInCountry: 21 },
       ],
-      families: [],
+      majorPeoples: [],
+      familyNamesById: roster,
       language: "fr",
     });
 
     expect(buildOnwardLinks(groups, "fr")[0]?.name).toBe("Yoruba");
   });
 
+  /**
+   * South Africa, measured: its demographic table is five census categories
+   * with no identifier on any of them, and every linkable people it has lives
+   * in `majorPeoples`. Reading one chapter left that fiche with no way out.
+   */
   // @req REQ-091
-  it("drops a people the country fiche names without an identifier", () => {
+  it("falls through to the major peoples when the census table names none", () => {
     const groups = countryOnwardGroups({
-      peoples: [
-        { id: null, name: "Autres groupes ethniques", share: 40 },
-        { id: "PPL_YORUBA", name: "Yoruba", share: 21 },
+      demographicPeoples: [
+        { peopleId: null, name: "Africains noirs", percentageInCountry: 81.4 },
+        { peopleId: null, name: "Métis (Coloureds)", percentageInCountry: 8.2 },
       ],
-      families: [],
+      majorPeoples: [
+        {
+          peopleId: "PPL_ZULU",
+          name: "Zulu",
+          languageFamily: "FLG_NIGERCONGO",
+        },
+        { peopleId: "PPL_XHOSA", name: "Xhosa" },
+      ],
+      familyNamesById: roster,
       language: "fr",
     });
 
-    expect(buildOnwardLinks(groups, "fr").map((l) => l.name)).toEqual([
-      "Yoruba",
+    expect(buildOnwardLinks(groups, "fr").map((link) => link.name)).toEqual([
+      "Zulu",
+      "Nigéro-congolais",
+      "Xhosa",
+    ]);
+  });
+
+  // @req REQ-091
+  it("drops a family the roster cannot name", () => {
+    const groups = countryOnwardGroups({
+      demographicPeoples: [
+        {
+          peopleId: "PPL_YORUBA",
+          name: "Yoruba",
+          languageFamily: "FLG_UNKNOWN_TO_THE_ROSTER",
+        },
+      ],
+      majorPeoples: [],
+      familyNamesById: roster,
+      language: "fr",
+    });
+
+    expect(buildOnwardLinks(groups, "fr").map((link) => link.kind)).toEqual([
+      "people",
     ]);
   });
 });

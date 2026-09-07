@@ -743,7 +743,11 @@
 .afh-onward {
   display: grid;
   gap: 16px;
-  margin: 0;
+  /* The chapter heading is display type at h1 size on a wide parchment, and
+     the first kicker sat straight under it. One step of the ramp, not the
+     6px the sources note happens to carry — that is one of the odd steps the
+     brand charter deprecated in place. */
+  margin: 16px 0 0;
   padding: 0;
   list-style: none;
   text-align: start;
