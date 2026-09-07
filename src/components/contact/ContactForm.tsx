@@ -85,7 +85,7 @@ export function ContactForm({ language = "fr" }: { language?: Language }) {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, honeypot }),
+        body: JSON.stringify({ ...form, honeypot, language }),
       });
       const payload = await response.json();
 

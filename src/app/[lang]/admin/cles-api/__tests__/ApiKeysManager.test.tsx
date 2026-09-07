@@ -40,6 +40,23 @@ describe("ApiKeysManager", () => {
     vi.clearAllMocks();
   });
 
+  // @req REQ-140
+  // @req REQ-145
+  it("renders the API-key manager in English", () => {
+    render(<ApiKeysManager language="en" initialKeys={[]} />);
+
+    expect(
+      screen.getByRole("heading", { name: "Create a key" })
+    ).toBeInTheDocument();
+    expect(screen.getByLabelText("Key name")).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Your API keys" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText("You do not have an API key yet.")
+    ).toBeInTheDocument();
+  });
+
   // @req REQ-056
   it("tells the reader they have no keys yet", () => {
     render(<ApiKeysManager language="fr" initialKeys={[]} />);

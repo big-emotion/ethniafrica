@@ -87,7 +87,9 @@ export const NommerChapterPage = ({
                 <p key={block.text.slice(0, 48)}>{block.text}</p>
               ))}
               {section.table ? <SourcedTable table={section.table} /> : null}
-              {section.pairs ? <NamePairGrid pairs={section.pairs} /> : null}
+              {section.pairs ? (
+                <NamePairGrid pairs={section.pairs} language={language} />
+              ) : null}
             </FicheSection>
           ))}
         </article>

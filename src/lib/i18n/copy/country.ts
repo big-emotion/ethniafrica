@@ -53,6 +53,36 @@ const en = {
     returnTo: (name: string) => `Return to ${name}`,
     missingOutline: (name: string) => `Outline unavailable for ${name}`,
   },
+  generated: {
+    eras: {
+      middleAges: "Middle Ages",
+      precolonial: "Precolonial era",
+      colonization: "Colonization",
+      contemporary: "Contemporary era",
+    },
+    kingdomTitles: {
+      generic: "Historical political entities",
+      kingdoms: "Kingdoms & Civilisations",
+      sultanates: "Sultanates & Chiefdoms",
+      chiefdoms: "Chiefdoms & Entities",
+    },
+    culture: {
+      religion: "Religions",
+      economy: "Economy",
+      social: "Organisation",
+      relations: "Relations",
+    },
+    historicalPeriods: {
+      ancientPeriods: "Ancient periods",
+      middleAges: "Middle Ages",
+      precolonial: "Precolonial era",
+      colonization: "Colonization",
+      independenceStruggle: "Struggle for independence",
+      postIndependence: "Post-independence era",
+    },
+    each: "each",
+    centers: "Centres",
+  },
 };
 
 type CountryCopy = typeof en;
@@ -106,6 +136,36 @@ const fr: CountryCopy = {
     areaNoun: "l'atlas",
     returnTo: (name) => `Revenir à ${name}`,
     missingOutline: (name) => `Contour non disponible pour ${name}`,
+  },
+  generated: {
+    eras: {
+      middleAges: "Moyen Âge",
+      precolonial: "Époque précoloniale",
+      colonization: "Colonisation",
+      contemporary: "Période contemporaine",
+    },
+    kingdomTitles: {
+      generic: "Entités politiques historiques",
+      kingdoms: "Royaumes & Civilisations",
+      sultanates: "Sultanats & Chefferies",
+      chiefdoms: "Chefferies & Entités",
+    },
+    culture: {
+      religion: "Religions",
+      economy: "Économie",
+      social: "Organisation",
+      relations: "Relations",
+    },
+    historicalPeriods: {
+      ancientPeriods: "Périodes anciennes",
+      middleAges: "Moyen Âge",
+      precolonial: "Époque précoloniale",
+      colonization: "Colonisation",
+      independenceStruggle: "Lutte pour l'indépendance",
+      postIndependence: "Période post-indépendance",
+    },
+    each: "chacun",
+    centers: "Centres",
   },
 };
 

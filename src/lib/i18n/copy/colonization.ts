@@ -8,6 +8,16 @@ const en = {
     "Fragmentations, inherited borders, imposed names, displacements and resistances, documented people by people.",
   fragmentation: {
     title: "Peoples fragmented by colonial borders",
+    countryCount: (count: number) => `${count} countries`,
+    caption: (name: string) =>
+      `Distribution of ${name} by country, with confidence level`,
+    country: "Country",
+    populationShare: "Population share",
+    confidence: "Confidence",
+    colonialBorder: "colonial partition border",
+    shareAria: (country: string) => `for the population share in ${country}`,
+    shareStatement: (country: string, share: string) =>
+      `Population share in ${country}: ${share}`,
   },
   sources: {
     title: "Sources",
@@ -44,6 +54,16 @@ const fr: ColonizationCopy = {
     "Fragmentations, frontières héritées, noms imposés, déplacements et résistances documentés peuple par peuple.",
   fragmentation: {
     title: "Peuples fragmentés par les frontières coloniales",
+    countryCount: (count) => `${count} pays`,
+    caption: (name) =>
+      `Répartition de ${name} par pays, avec niveau de confiance`,
+    country: "Pays",
+    populationShare: "Part de la population",
+    confidence: "Confiance",
+    colonialBorder: "frontière issue du partage colonial",
+    shareAria: (country) => `pour la part de population en ${country}`,
+    shareStatement: (country, share) =>
+      `Part de la population en ${country} : ${share}`,
   },
   sources: {
     title: "Sources",

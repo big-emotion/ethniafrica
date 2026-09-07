@@ -2,13 +2,22 @@ import type { Metadata } from "next";
 
 import { Card } from "@/components/ui/card";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { adminCopy } from "@/lib/i18n/copy/admin";
+import type { Language } from "@/types/shared";
 import { AdminSignInForm } from "./AdminSignInForm";
 
 // @req REQ-042
-export const metadata: Metadata = {
-  title: "Accès à la modération",
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params?: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = (await params) ?? { lang: "fr" };
+  return {
+    title: adminCopy[lang as Language].signIn.metadataTitle,
+    robots: { index: false, follow: false },
+  };
+}
 
 /**
  * The only sign-in surface the atlas has left.
@@ -18,28 +27,24 @@ export const metadata: Metadata = {
  * has a reason to sign in, and a moderator is an address on `admin_allowlist`.
  */
 // @req REQ-042
-export default function AdminSignInPage() {
+export default async function AdminSignInPage({
+  params,
+}: {
+  params?: Promise<{ lang: string }>;
+}) {
+  const { lang } = (await params) ?? { lang: "fr" };
+  const language = lang as Language;
+  const copy = adminCopy[language].signIn;
   return (
-    // Deliberately French whatever the route: the sign-in flow lands every
-    // moderator on `/fr/admin` (auth callback, `actions.ts`), so the
-    // moderation surface is French-only until the product owner says
-    // otherwise.
-    <PageLayout language="fr" title="Accès à la modération">
+    <PageLayout language={language} title={copy.title}>
       <div className="mx-auto w-full max-w-md space-y-afh-xl py-afh-2xl">
-        <p className="text-afh-small text-afh-text-soft">
-          La modération est réservée aux adresses autorisées à l&apos;avance.
-          Saisissez la vôtre pour recevoir un lien de connexion — il n&apos;y a
-          ni mot de passe, ni compte à créer.
-        </p>
+        <p className="text-afh-small text-afh-text-soft">{copy.introduction}</p>
 
         <Card className="rounded-afh-xl p-afh-xl md:p-afh-2xl">
-          <AdminSignInForm />
+          <AdminSignInForm language={language} />
         </Card>
 
-        <p className="text-afh-caption text-afh-text-soft">
-          Vous vouliez signaler une erreur&nbsp;? C&apos;est possible depuis
-          n&apos;importe quelle fiche, sans compte.
-        </p>
+        <p className="text-afh-caption text-afh-text-soft">{copy.reportHint}</p>
       </div>
     </PageLayout>
   );

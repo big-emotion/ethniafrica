@@ -1,6 +1,18 @@
 import type { Language } from "@/types/shared";
 
 const en = {
+  loading: {
+    about: "Loading the presentation",
+    accessibility: "Loading the accessibility statement",
+    legalNotice: "Loading the legal notice",
+    dataPolicy: "Loading the data policy",
+  },
+  forbidden: {
+    title: "Access not authorized",
+    body: "This resource requires a role that your account does not have yet.",
+    home: "Back to home",
+    signOut: "Sign out",
+  },
   notFound: {
     title: "Fiche not found",
     body: "This address leads nowhere. The fiche may have been renamed, or may not have been published yet.",
@@ -26,6 +38,18 @@ const en = {
 type SystemStatesCopy = typeof en;
 
 const fr: SystemStatesCopy = {
+  loading: {
+    about: "Chargement de la présentation",
+    accessibility: "Chargement de la déclaration d'accessibilité",
+    legalNotice: "Chargement des mentions légales",
+    dataPolicy: "Chargement de la politique de données",
+  },
+  forbidden: {
+    title: "Accès non autorisé",
+    body: "Cette ressource nécessite un rôle que votre compte n'a pas encore.",
+    home: "Retour à l'accueil",
+    signOut: "Se déconnecter",
+  },
   notFound: {
     title: "Fiche introuvable",
     body: "Cette adresse ne mène à rien. La fiche a peut-être changé de nom, ou n'est pas encore publiée.",

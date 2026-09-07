@@ -69,7 +69,7 @@ export function CountryRecordView({
   patronymes = null,
 }: CountryRecordViewProps) {
   const copy = countryCopy[language];
-  const data = transformCountryData(country);
+  const data = transformCountryData(country, language);
 
   return (
     <div data-testid="country-record-view">

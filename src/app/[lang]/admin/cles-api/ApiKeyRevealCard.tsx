@@ -4,10 +4,13 @@ import { Copy } from "lucide-react";
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
+import { adminCopy } from "@/lib/i18n/copy/admin";
+import type { Language } from "@/types/shared";
 
 export interface ApiKeyRevealCardProps {
   label: string;
   apiKey: string;
+  language?: Language;
   onDismiss: () => void;
 }
 
@@ -21,15 +24,17 @@ export interface ApiKeyRevealCardProps {
 export function ApiKeyRevealCard({
   label,
   apiKey,
+  language = "fr",
   onDismiss,
 }: ApiKeyRevealCardProps) {
+  const copy = adminCopy[language].apiKeys.reveal;
   const inputRef = React.useRef<HTMLInputElement>(null);
   const [announcement, setAnnouncement] = React.useState("");
 
   function selectForManualCopy() {
     inputRef.current?.focus();
     inputRef.current?.select();
-    setAnnouncement("sélectionner manuellement");
+    setAnnouncement(copy.manualSelection);
   }
 
   async function copyKey() {
@@ -39,7 +44,7 @@ export function ApiKeyRevealCard({
         return;
       }
       await navigator.clipboard.writeText(apiKey);
-      setAnnouncement("copiée");
+      setAnnouncement(copy.copied);
     } catch {
       selectForManualCopy();
     }
@@ -48,27 +53,27 @@ export function ApiKeyRevealCard({
   return (
     <section
       data-testid="api-key-reveal"
-      aria-label={`Nouvelle clé ${label}`}
+      aria-label={`${copy.regionLabel} ${label}`}
       className="rounded-afh-md border border-afh-border bg-afh-bg-warm p-afh-lg"
     >
       <p className="text-afh-small font-semibold text-afh-text">
-        Nouvelle clé « {label} »
+        {copy.heading} {copy.quoteOpen} {label} {copy.quoteClose}
       </p>
       <p className="mt-afh-xs text-afh-caption text-afh-text-soft">
-        Copiez cette clé maintenant — elle ne sera plus jamais affichée.
+        {copy.warning}
       </p>
 
       <div className="mt-afh-md flex flex-col gap-afh-sm md:flex-row">
         <input
           ref={inputRef}
           readOnly
-          aria-label="Nouvelle clé API"
+          aria-label={copy.inputLabel}
           value={apiKey}
           className="w-full flex-1 rounded-afh-sm border border-afh-border bg-afh-surface px-afh-md py-afh-sm font-mono text-afh-small text-afh-text"
         />
         <Button type="button" onClick={copyKey}>
           <Copy aria-hidden="true" />
-          Copier
+          {copy.copy}
         </Button>
       </div>
 
@@ -86,7 +91,7 @@ export function ApiKeyRevealCard({
         className="mt-afh-md"
         onClick={onDismiss}
       >
-        J’ai copié la clé, la masquer
+        {copy.dismiss}
       </Button>
     </section>
   );

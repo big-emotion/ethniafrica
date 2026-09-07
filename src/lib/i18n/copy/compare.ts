@@ -78,6 +78,16 @@ const en = {
     "(2 to 3 identifiers of the same type: peoples, countries or language families, without duplicates).",
   startComparison: "Start a comparison",
   reportBrokenUrl: "Report a broken URL",
+  og: {
+    comparison: "Comparison",
+    entityTypes: {
+      peuple: "Peoples",
+      pays: "Countries",
+      famille: "Language families",
+    },
+    unaudited: "unaudited fiche",
+    confidence: (score: number) => `${score}% confidence`,
+  },
 };
 
 type CompareCopy = typeof en;
@@ -157,6 +167,16 @@ const fr: CompareCopy = {
     "(2 à 3 identifiants du même type : peuples, pays ou familles linguistiques, sans doublon).",
   startComparison: "Commencer une comparaison",
   reportBrokenUrl: "Signaler une URL cassée",
+  og: {
+    comparison: "Comparaison",
+    entityTypes: {
+      peuple: "Peuples",
+      pays: "Pays",
+      famille: "Familles linguistiques",
+    },
+    unaudited: "fiche non auditée",
+    confidence: (score) => `${score} % de confiance`,
+  },
 };
 
 // @req REQ-145

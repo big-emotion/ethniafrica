@@ -1,8 +1,5 @@
 import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
-import {
-  FicheSection,
-  SOURCE_TIER_NOTE,
-} from "@/components/fiche/FicheSection";
+import { FicheSection } from "@/components/fiche/FicheSection";
 import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
 import { PatronymeSourceCitation } from "@/components/patronymes/PatronymeSourceCitation";
 import { readGaps, readPatronymeSources } from "@/lib/patronymes/content";
@@ -30,6 +27,7 @@ export function PatronymeSourcesSection({
   language: Language;
 }) {
   const t = getTranslation(language).patronymes;
+  const ficheCopy = getTranslation(language).fiche;
   const sources = readPatronymeSources(patronyme.content);
   const chapter = resolveChapter(
     "name",
@@ -41,7 +39,7 @@ export function PatronymeSourcesSection({
   return (
     <FicheSection
       title={t.sourcesTitle}
-      note={SOURCE_TIER_NOTE}
+      note={ficheCopy.sourceTierNote}
       as="footer"
       id="sources"
     >

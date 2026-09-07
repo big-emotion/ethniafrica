@@ -49,19 +49,19 @@ export interface ReferenceLibraryFlowProps {
   language?: Language;
 }
 
-const SOURCE_KIND_LABELS: Record<SourceKind, string> = {
-  intergovernmental: "Organisation intergouvernementale",
-  government: "Institution publique",
-  official_statistics: "Statistiques officielles",
-  linguistic_reference: "Référence linguistique",
-  academic: "Publication académique",
-  community: "Organisation communautaire",
-  repository: "Dépôt documentaire",
-  archive: "Archive",
-};
+const SOURCE_KINDS: readonly SourceKind[] = [
+  "intergovernmental",
+  "government",
+  "official_statistics",
+  "linguistic_reference",
+  "academic",
+  "community",
+  "repository",
+  "archive",
+];
 
 function isSourceKind(value: string): value is SourceKind {
-  return value in SOURCE_KIND_LABELS;
+  return SOURCE_KINDS.includes(value as SourceKind);
 }
 
 function isAssetKind(value: string): value is "scan" | "ocr" {

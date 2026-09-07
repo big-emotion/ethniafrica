@@ -23,14 +23,11 @@ interface PeopleCultureGridProps {
  * what it makes, what it believes.
  */
 const FIELDS = [
-  { key: "majorRites", label: "Rites majeurs" },
-  { key: "symbols", label: "Symboles" },
-  { key: "artsAndMusic", label: "Arts & musique" },
-  { key: "spiritualities", label: "Spiritualités" },
-] as const satisfies ReadonlyArray<{
-  key: keyof PeopleCultureData;
-  label: string;
-}>;
+  "majorRites",
+  "symbols",
+  "artsAndMusic",
+  "spiritualities",
+] as const satisfies ReadonlyArray<keyof PeopleCultureData>;
 
 // @req REQ-003
 export function PeopleCultureGrid({
@@ -40,12 +37,12 @@ export function PeopleCultureGrid({
   language = FALLBACK_LOCALE,
 }: PeopleCultureGridProps) {
   if (!hasCultureContent(data)) return null;
-  const present = FIELDS.filter(({ key }) => Boolean(data[key]));
+  const present = FIELDS.filter((key) => Boolean(data[key]));
   const copy = peopleCopy[language].cultureFields;
 
   return (
     <dl className="afh-prose-fields space-y-[14px]">
-      {present.map(({ key }) => (
+      {present.map((key) => (
         <div key={key}>
           <dt className="people-section-label">{copy[key]}</dt>
           <dd className="afh-prose-def">

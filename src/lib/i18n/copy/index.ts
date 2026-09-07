@@ -1,3 +1,4 @@
+import { adminCopy } from "@/lib/i18n/copy/admin";
 import { classificationCopy } from "@/lib/i18n/copy/classification";
 import { atlasCopy } from "@/lib/i18n/copy/atlas";
 import { anecdotesCopy } from "@/lib/i18n/copy/anecdotes";
@@ -25,6 +26,7 @@ import { peopleCopy } from "@/lib/i18n/copy/people";
 import { publicFlagsCopy } from "@/lib/i18n/copy/publicFlags";
 import { quizCopy } from "@/lib/i18n/copy/quiz";
 import { reportsCopy } from "@/lib/i18n/copy/reports";
+import { serverCopy } from "@/lib/i18n/copy/server";
 import { sourceTransparencyCopy } from "@/lib/i18n/copy/sourceTransparency";
 import { sitemapPageCopy } from "@/lib/i18n/copy/sitemapPage";
 import { systemCopy } from "@/lib/i18n/copy/system";
@@ -42,6 +44,8 @@ import { trailCopy } from "@/lib/i18n/copy/trail";
  */
 // @req REQ-145
 export const COPY_MODULES = {
+  admin: adminCopy,
+  server: serverCopy,
   anecdotes: anecdotesCopy,
   atlas: atlasCopy,
   common: commonCopy,

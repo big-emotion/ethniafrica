@@ -143,6 +143,22 @@ describe("POST /api/contact", () => {
     expect(global.fetch).not.toHaveBeenCalled();
   });
 
+  // @req REQ-140
+  it("localizes reader-facing validation messages from the submitted locale", async () => {
+    const response = await POST(
+      postRequest({ ...validBody, language: "en", email: "nope" })
+    );
+
+    expect(response.status).toBe(400);
+    await expect(response.json()).resolves.toMatchObject({
+      error: "VALIDATION_ERROR",
+      message: "The form contains fields that need correcting.",
+      fieldErrors: {
+        email: ["Enter a valid email address."],
+      },
+    });
+  });
+
   /**
    * A bot that fills the hidden field is answered exactly as a reader is, so
    * it learns nothing — and nothing is mailed.

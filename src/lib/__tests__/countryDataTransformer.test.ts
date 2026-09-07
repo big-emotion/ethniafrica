@@ -996,6 +996,20 @@ describe("transformHistoricalFacts", () => {
 });
 
 describe("transformCountryData", () => {
+  // @req REQ-140
+  // @req REQ-145
+  it("localizes generated country-fiche labels in English", () => {
+    const result = transformCountryData(bfaCountry, "en");
+
+    expect(result.culture.items.map((item) => item.label)).toEqual([
+      "Religions",
+      "Economy",
+      "Organisation",
+      "Relations",
+    ]);
+    expect(result.kingdoms.title).toBe("Kingdoms & Civilisations");
+  });
+
   it("produces complete page data for BFA", () => {
     const result = transformCountryData(bfaCountry);
     expect(result.hero.countryName).toBe("Burkina Faso");

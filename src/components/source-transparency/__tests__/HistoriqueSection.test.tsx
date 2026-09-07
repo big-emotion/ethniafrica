@@ -1,6 +1,6 @@
 // @req REQ-009
 // @req REQ-020
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, vi, afterEach } from "vitest";
 
 // Publication dates are formatted in the route's locale; the assertions are
 // French, so the suite stands on a French route.
@@ -9,13 +9,7 @@ const navigation = await vi.hoisted(async () => {
   return mockRouteLanguage("fr");
 });
 vi.mock("next/navigation", () => navigation);
-import {
-  render,
-  screen,
-  fireEvent,
-  waitFor,
-  cleanup,
-} from "@testing-library/react";
+import { render, screen, waitFor, cleanup } from "@testing-library/react";
 import { HistoriqueSection } from "../HistoriqueSection";
 
 /* -------------------------------------------------------------------------- */
@@ -64,6 +58,22 @@ afterEach(() => {
 /* -------------------------------------------------------------------------- */
 
 describe("HistoriqueSection", () => {
+  // @req REQ-140
+  // @req REQ-145
+  it("renders its empty state in English", async () => {
+    mockFetch([]);
+    render(<HistoriqueSection peopleId="PPL_SEEREER" language="en" />);
+
+    expect(
+      screen.getByRole("heading", { name: "History" })
+    ).toBeInTheDocument();
+    await waitFor(() => {
+      expect(
+        screen.getByText("No published revision — initial fiche")
+      ).toBeInTheDocument();
+    });
+  });
+
   it("renders the 'Historique' heading", async () => {
     mockFetch([revision1]);
     render(<HistoriqueSection peopleId="PPL_SEEREER" />);

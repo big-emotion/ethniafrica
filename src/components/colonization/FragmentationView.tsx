@@ -8,6 +8,9 @@ import type {
   PeopleFragmentation,
   FragmentationCountry,
 } from "@/api/v2/schemas/peopleFragmentation";
+import { colonizationCopy } from "@/lib/i18n/copy/colonization";
+import { getCountryCommonName } from "@/lib/countryNames";
+import type { Language } from "@/types/shared";
 
 /**
  * FragmentationView — text-first fragmentation view for FR85 (Epic 13, Story 13.7).
@@ -27,32 +30,44 @@ export type FragmentationViewVariant = "fiche-section" | "module-index";
 export interface FragmentationViewProps {
   fragmentation: PeopleFragmentation;
   variant: FragmentationViewVariant;
+  language?: Language;
 }
-
-const COLONIAL_BORDER_LABEL = "frontière issue du partage colonial";
 
 function formatShare(share: number): string {
   return `${Math.round(share * 100)} %`;
 }
 
-function countryName(countries: FragmentationCountry[], iso3: string): string {
-  return countries.find((c) => c.iso3 === iso3)?.nameFr ?? iso3;
+function countryName(
+  countries: FragmentationCountry[],
+  iso3: string,
+  language: Language
+): string {
+  const fallback = countries.find((c) => c.iso3 === iso3)?.nameFr ?? iso3;
+  return getCountryCommonName(language, iso3, fallback);
 }
 
 function FragmentationRow({
   peopleId,
   country,
+  language,
 }: {
   peopleId: string;
   country: FragmentationCountry;
+  language: Language;
 }) {
   const [sheetOpen, setSheetOpen] = React.useState(false);
   const anchorId = `fragmentation-${peopleId}-${country.iso3}`;
+  const copy = colonizationCopy[language].fragmentation;
+  const localizedCountry = getCountryCommonName(
+    language,
+    country.iso3,
+    country.nameFr
+  );
 
   return (
     <tr>
       <td className="py-2 pr-4 text-afh-small text-[color:var(--afh-text,var(--country-text,#2C2018))]">
-        {country.nameFr}
+        {localizedCountry}
       </td>
       <td className="py-2 pr-4 text-afh-small tabular-nums text-[color:var(--afh-text,var(--country-text,#2C2018))]">
         {formatShare(country.populationShare)}
@@ -64,16 +79,18 @@ function FragmentationRow({
           sourceCount={null}
           lastHumanAuditAt={null}
           variant="inline"
-          ariaSuffix={`pour la part de population en ${country.nameFr}`}
+          language={language}
+          ariaSuffix={copy.shareAria(localizedCountry)}
           onOpen={() => setSheetOpen(true)}
         />
         <SourceChainSheet
           open={sheetOpen}
           onOpenChange={setSheetOpen}
           assertion={{
-            statement: `Part de la population en ${country.nameFr} : ${formatShare(
-              country.populationShare
-            )}`,
+            statement: copy.shareStatement(
+              localizedCountry,
+              formatShare(country.populationShare)
+            ),
             confidenceScore: 0,
             sourceCount: 0,
             lastHumanAuditAt: null,
@@ -90,7 +107,9 @@ function FragmentationRow({
 export function FragmentationView({
   fragmentation,
   variant,
+  language = "fr",
 }: FragmentationViewProps) {
+  const copy = colonizationCopy[language].fragmentation;
   if (fragmentation.countryCount < 2 || fragmentation.countries.length < 2) {
     return null;
   }
@@ -114,7 +133,7 @@ export function FragmentationView({
           variant="inline"
         />
         <p className="text-afh-caption text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))]">
-          {fragmentation.countryCount} pays
+          {copy.countryCount(fragmentation.countryCount)}
         </p>
       </div>
     );
@@ -129,7 +148,7 @@ export function FragmentationView({
       />
       <table className="w-full border-collapse">
         <caption className="text-left text-afh-caption mb-2 text-[color:var(--afh-text-soft,var(--country-text-soft,#7A6B5D))]">
-          Répartition de {headingAutonym} par pays, avec niveau de confiance
+          {copy.caption(headingAutonym)}
         </caption>
         <thead>
           <tr>
@@ -137,19 +156,19 @@ export function FragmentationView({
               scope="col"
               className="text-left text-afh-caption font-semibold pb-2 pr-4"
             >
-              Pays
+              {copy.country}
             </th>
             <th
               scope="col"
               className="text-left text-afh-caption font-semibold pb-2 pr-4"
             >
-              Part de la population
+              {copy.populationShare}
             </th>
             <th
               scope="col"
               className="text-left text-afh-caption font-semibold pb-2"
             >
-              Confiance
+              {copy.confidence}
             </th>
           </tr>
         </thead>
@@ -159,6 +178,7 @@ export function FragmentationView({
               key={country.iso3}
               peopleId={fragmentation.peopleId}
               country={country}
+              language={language}
             />
           ))}
         </tbody>
@@ -175,9 +195,9 @@ export function FragmentationView({
                 className="inline-block w-2 h-2 rounded-full shrink-0 bg-[color:var(--afh-color-colonial)]"
               />
               <span>
-                {countryName(fragmentation.countries, pair.a)} ↔{" "}
-                {countryName(fragmentation.countries, pair.b)} —{" "}
-                {COLONIAL_BORDER_LABEL}
+                {countryName(fragmentation.countries, pair.a, language)} ↔{" "}
+                {countryName(fragmentation.countries, pair.b, language)} —{" "}
+                {copy.colonialBorder}
               </span>
             </li>
           ))}

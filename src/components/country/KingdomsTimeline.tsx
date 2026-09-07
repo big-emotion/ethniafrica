@@ -5,6 +5,7 @@ import type { Language } from "@/types/shared";
 import { getFicheDossiers } from "@/lib/dossiers/catalog";
 import { useModuleAvailability } from "@/components/hubs/ModuleAvailabilityProvider";
 import type { KingdomCard } from "@/lib/countryDataTransformer";
+import { countryCopy } from "@/lib/i18n/copy/country";
 
 /**
  * Historical political entities, as a chronology.
@@ -30,6 +31,7 @@ export function KingdomsTimeline({
   language = "fr",
 }: KingdomsTimelineProps) {
   const availability = useModuleAvailability();
+  const copy = countryCopy[language].generated;
   if (cards.length === 0) return null;
 
   return (
@@ -67,7 +69,7 @@ export function KingdomsTimeline({
               {card.historicalRole && <p>{card.historicalRole}</p>}
               {card.centers && card.centers.length > 0 && (
                 <span className="afh-tl-centers">
-                  Centres · {card.centers.join(" · ")}
+                  {copy.centers} · {card.centers.join(" · ")}
                 </span>
               )}
             </div>

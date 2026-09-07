@@ -81,6 +81,18 @@ describe("buildPeopleFicheNotes", () => {
     expect(built.culture.majorRites?.fieldLabel).toBe("Rites majeurs");
   });
 
+  // @req REQ-140
+  // @req REQ-145
+  it("names note callouts in the fiche locale", () => {
+    const built = buildPeopleFicheNotes(
+      [note("content.culture.majorRites")],
+      {},
+      "en"
+    );
+
+    expect(built.culture.majorRites?.fieldLabel).toBe("Major rites");
+  });
+
   /**
    * The bridge between the two registers: the callout is numbered by reading
    * order, its sources by the fiche's bibliography, and the panel is where a

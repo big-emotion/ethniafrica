@@ -16,6 +16,26 @@ async function openDialog() {
 }
 
 describe("RevisionPublishDialog", () => {
+  // @req REQ-140
+  // @req REQ-145
+  it("uses the English confirmation contract on the English route", async () => {
+    const user = userEvent.setup();
+    render(
+      <RevisionPublishDialog
+        draftId="draft-70"
+        language="en"
+        onPublish={vi.fn()}
+      />
+    );
+
+    await user.click(screen.getByRole("button", { name: "Publish" }));
+    expect(
+      screen.getByRole("dialog", { name: "Publish this revision?" })
+    ).toBeInTheDocument();
+    expect(screen.getByText(/Enter exactly/)).toHaveTextContent("PUBLISH");
+    expect(screen.getByLabelText("Publication reason")).toBeInTheDocument();
+  });
+
   // @req REQ-016
   it("opens an accessible confirmation dialog and focuses the confirmation field", async () => {
     render(<RevisionPublishDialog draftId="draft-70" onPublish={vi.fn()} />);

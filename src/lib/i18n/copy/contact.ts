@@ -47,6 +47,22 @@ const en = {
   sent: "Your message has been sent. We will reply to the address you provided.",
   sendFailed: (email: string) =>
     `Your message could not be sent. Write to us directly at ${email}.`,
+  server: {
+    invalidJson: "The request could not be read.",
+    validationFailed: "The form contains fields that need correcting.",
+    transportUnavailable: (email: string) =>
+      `Sending is temporarily unavailable. Write to us directly at ${email}.`,
+    sendFailed: (email: string) =>
+      `Your message could not be sent. Write to us directly at ${email}.`,
+    fieldErrors: {
+      civility: "Select a valid title.",
+      firstName: "Enter your first name.",
+      lastName: "Enter your last name.",
+      email: "Enter a valid email address.",
+      subject: "Select a valid subject.",
+      message: "Describe your request in a few words.",
+    },
+  },
   emailEyebrow: "Email address",
   emailHelp:
     "The form writes to this address. We reply to the address you provide.",
@@ -104,6 +120,22 @@ const fr: ContactCopy = {
   sent: "Votre message est bien parti. Nous vous répondons à l'adresse que vous avez indiquée.",
   sendFailed: (email) =>
     `Votre message n'a pas pu être envoyé. Écrivez-nous directement à ${email}.`,
+  server: {
+    invalidJson: "Requête illisible.",
+    validationFailed: "Le formulaire comporte des champs à corriger.",
+    transportUnavailable: (email) =>
+      `L'envoi est momentanément indisponible. Écrivez-nous directement à ${email}.`,
+    sendFailed: (email) =>
+      `Votre message n'a pas pu être envoyé. Écrivez-nous directement à ${email}.`,
+    fieldErrors: {
+      civility: "Sélectionnez une civilité valide.",
+      firstName: "Indiquez votre prénom.",
+      lastName: "Indiquez votre nom.",
+      email: "Cette adresse électronique n'est pas valide.",
+      subject: "Sélectionnez un objet valide.",
+      message: "Décrivez votre demande en quelques mots.",
+    },
+  },
   emailEyebrow: "Adresse électronique",
   emailHelp:
     "Le formulaire écrit à cette adresse. Nous répondons à celle que vous indiquez.",

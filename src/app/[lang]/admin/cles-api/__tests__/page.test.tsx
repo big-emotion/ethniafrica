@@ -24,8 +24,8 @@ import { listUserApiKeys } from "@/api/v2/services/keyService";
 import { getModeratorSession } from "@/lib/supabase/moderator";
 import ApiKeysPage from "../page";
 
-async function renderPage() {
-  const ui = await ApiKeysPage({ params: Promise.resolve({ lang: "fr" }) });
+async function renderPage(lang = "fr") {
+  const ui = await ApiKeysPage({ params: Promise.resolve({ lang }) });
   return render(ui);
 }
 
@@ -70,5 +70,23 @@ describe("ApiKeysPage", () => {
 
     expect(listUserApiKeys).toHaveBeenCalledWith("user-123");
     expect(screen.getByText("CI pipeline")).toBeInTheDocument();
+  });
+
+  // @req REQ-140
+  // @req REQ-145
+  it("renders the page heading and introduction in English", async () => {
+    vi.mocked(getModeratorSession).mockResolvedValue({
+      user: { id: "user-123" },
+    } as never);
+    vi.mocked(listUserApiKeys).mockResolvedValue([]);
+
+    await renderPage("en");
+
+    expect(
+      screen.getByRole("heading", { name: "API keys" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Manage the keys used to query the API/)
+    ).toBeInTheDocument();
   });
 });

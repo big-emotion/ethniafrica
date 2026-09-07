@@ -25,7 +25,7 @@ export default function ContributePageClient() {
   const t = getTranslation(language).contribute.page;
 
   const handleDownload = (format: "csv" | "excel") => {
-    window.open(`/api/download?format=${format}`, "_blank");
+    window.open(`/api/download?format=${format}&lang=${language}`, "_blank");
   };
 
   return (

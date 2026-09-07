@@ -1,6 +1,7 @@
 import { listUserApiKeys } from "@/api/v2/services/keyService";
 import { SiteTrail } from "@/components/layout/SiteTrail";
 import { getModeratorSession } from "@/lib/supabase/moderator";
+import { adminCopy } from "@/lib/i18n/copy/admin";
 import type { Language } from "@/types/shared";
 import { ApiKeysManager } from "./ApiKeysManager";
 
@@ -21,6 +22,8 @@ export default async function ApiKeysPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
+  const language = lang as Language;
+  const copy = adminCopy[language].apiKeys;
   const { user } = await getModeratorSession();
 
   const keys = await listUserApiKeys(user.id);
@@ -29,15 +32,16 @@ export default async function ApiKeysPage({
     <main className="mx-auto w-full max-w-6xl px-4 py-8 md:px-8 md:py-10 xl:py-12">
       <SiteTrail />
       <header className="mb-6 space-y-2 md:mb-8">
-        <p className="text-afh-small font-medium text-primary">Votre compte</p>
-        <h1 className="text-afh-h1 font-bold tracking-tight">Clés API</h1>
+        <p className="text-afh-small font-medium text-primary">
+          {copy.accountEyebrow}
+        </p>
+        <h1 className="text-afh-h1 font-bold tracking-tight">{copy.title}</h1>
         <p className="max-w-2xl text-afh-small text-muted-foreground">
-          Gérez les clés utilisées pour interroger l’API depuis vos propres
-          outils.
+          {copy.introduction}
         </p>
       </header>
 
-      <ApiKeysManager language={lang as Language} initialKeys={keys} />
+      <ApiKeysManager language={language} initialKeys={keys} />
     </main>
   );
 }

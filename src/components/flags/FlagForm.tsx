@@ -43,6 +43,7 @@ export interface FlagFormTarget {
 }
 
 export interface FlagSubmissionPayload {
+  language: Language;
   target_type: string;
   target_id: string;
   target_field_path?: string;
@@ -254,6 +255,7 @@ export function FlagForm({
 
     try {
       const result = await onSubmit({
+        language,
         target_type: target.type,
         target_id: target.id,
         ...(target.fieldPath ? { target_field_path: target.fieldPath } : {}),

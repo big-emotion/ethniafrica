@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { formatDate } from "@/lib/languageTag";
 import type { Language } from "@/types/shared";
+import { sourceTransparencyCopy } from "@/lib/i18n/copy/sourceTransparency";
 
 const COLLAPSED_KEY_PREFIX = "pinned-version-banner:collapsed:";
 
@@ -79,6 +80,7 @@ export function PinnedVersionBanner({
   resolvedFlagsCount = 0,
 }: PinnedVersionBannerProps) {
   const normalizedVersionTag = normalizeVersionTag(versionTag);
+  const copy = sourceTransparencyCopy[language].pinnedVersion;
   const dateLabel = formatPinnedDate(language, pinnedAt);
   const hasResolvedFlags = resolvedFlagsCount > 0;
   const [collapsed, setCollapsed] = useState(false);
@@ -107,16 +109,14 @@ export function PinnedVersionBanner({
       href={liveUrl}
       className="rounded-sm font-semibold text-afh-earth underline decoration-afh-border underline-offset-4 hover:text-afh-text focus:outline-none focus-visible:ring-2 focus-visible:ring-afh-earth"
     >
-      {hasResolvedFlags && !collapsed
-        ? "voir version vivante"
-        : "voir la version vivante"}
+      {hasResolvedFlags && !collapsed ? copy.liveAfterCorrections : copy.live}
     </a>
   );
 
   return (
     <aside
       role="region"
-      aria-label="indicateur de version figée"
+      aria-label={copy.regionLabel}
       data-pinned-banner
       className={`rounded-afh-md border border-afh-border bg-afh-bg-warm font-afh text-afh-small text-afh-text ${
         collapsed ? "ml-auto w-fit max-w-full px-2 py-1" : "px-3 py-2"
@@ -138,22 +138,19 @@ export function PinnedVersionBanner({
             {hasResolvedFlags ? (
               <>
                 <p className="m-0">
-                  Version figée
-                  {dateLabel ? ` du ${dateLabel}` : ""} ({normalizedVersionTag})
+                  {copy.title}
+                  {dateLabel ? copy.dated(dateLabel) : ""} (
+                  {normalizedVersionTag})
                 </p>
                 <p className="m-0 mt-1 text-afh-text-soft">
-                  Depuis cette version figée, {resolvedFlagsCount}{" "}
-                  {resolvedFlagsCount === 1
-                    ? "assertion a été corrigée"
-                    : "assertions ont été corrigées"}{" "}
-                  — {liveLink}
+                  {copy.corrections(resolvedFlagsCount)} — {liveLink}
                 </p>
               </>
             ) : (
               <p className="m-0">
-                Version figée
-                {dateLabel ? ` du ${dateLabel}` : ""} ({normalizedVersionTag}) ·{" "}
-                {liveLink}
+                {copy.title}
+                {dateLabel ? copy.dated(dateLabel) : ""} ({normalizedVersionTag}
+                ) · {liveLink}
               </p>
             )}
           </div>
@@ -163,11 +160,7 @@ export function PinnedVersionBanner({
           type="button"
           onClick={toggleCollapsed}
           aria-expanded={!collapsed}
-          aria-label={
-            collapsed
-              ? "développer l’indicateur de version figée"
-              : "réduire l’indicateur de version figée"
-          }
+          aria-label={collapsed ? copy.expand : copy.collapse}
           className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-afh-sm text-afh-h2 leading-none text-afh-text-soft hover:bg-afh-surface hover:text-afh-text focus:outline-none focus-visible:ring-2 focus-visible:ring-afh-earth"
         >
           <span aria-hidden="true">{collapsed ? "+" : "−"}</span>

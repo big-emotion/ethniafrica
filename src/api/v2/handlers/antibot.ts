@@ -12,6 +12,8 @@ import {
   createApiResponse,
   type ApiEnvelope,
 } from "@/api/v2/utils/response";
+import { serverCopy } from "@/lib/i18n/copy/server";
+import type { Language } from "@/types/shared";
 
 /**
  * Hand out one anti-bot challenge (moderation charter §2).
@@ -41,9 +43,11 @@ export interface AntibotHandlerResult {
 
 // @req REQ-012
 export async function handleAntibotChallenge(
-  injectedDependencies: Partial<AntibotHandlerDependencies> = {}
+  injectedDependencies: Partial<AntibotHandlerDependencies> = {},
+  language: Language = "fr"
 ): Promise<AntibotHandlerResult> {
   const dependencies = { ...defaultDependencies, ...injectedDependencies };
+  const copy = serverCopy[language].flags;
 
   // Refuse early rather than at submission. Without the signing secret a
   // challenge can still be minted and solved — it is `verifyProof` that
@@ -54,8 +58,7 @@ export async function handleAntibotChallenge(
       status: 503,
       body: createApiError({
         code: "UNAVAILABLE",
-        message:
-          "vérification anti-robot temporairement indisponible, veuillez réessayer plus tard",
+        message: copy.antibotUnavailable,
       }),
     };
   }
@@ -74,8 +77,7 @@ export async function handleAntibotChallenge(
       status: 503,
       body: createApiError({
         code: "UNAVAILABLE",
-        message:
-          "vérification anti-robot temporairement indisponible, veuillez réessayer plus tard",
+        message: copy.antibotUnavailable,
       }),
     };
   }

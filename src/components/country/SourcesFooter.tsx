@@ -61,7 +61,7 @@ export function SourcesFooter({
       {isParchment ? (
         hasSourceFlag && (
           <p className="mb-[6px]">
-            <SourceVerifyBadge />
+            <SourceVerifyBadge language={language} />
           </p>
         )
       ) : (
@@ -73,7 +73,7 @@ export function SourcesFooter({
           }}
         >
           <span>{countryCopy[language].sourcesReferences}</span>
-          {hasSourceFlag && <SourceVerifyBadge />}
+          {hasSourceFlag && <SourceVerifyBadge language={language} />}
         </p>
       )}
       <ListTag className="flex flex-col gap-[6px]">

@@ -158,7 +158,7 @@ export function FacetGlobeIsland({
     } => {
       const countryId = target.countryId as CountryId;
       const rows = reading.index[countryId] ?? [];
-      const base = continentTargetFacts(target);
+      const base = continentTargetFacts(target, language);
       const narrowHref = reading.narrowing[countryId];
       const alreadyNarrowed = reading.focused === countryId;
 
@@ -214,6 +214,7 @@ export function FacetGlobeIsland({
       copy.alreadyNarrowed,
       copy.narrowToCountry,
       copy.selectionEmptyCountry,
+      language,
       reading,
     ]
   );

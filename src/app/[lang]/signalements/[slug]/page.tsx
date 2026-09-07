@@ -10,6 +10,7 @@ import { PRODUCT_NAME } from "@/lib/brand";
 import { getStaticPageRoute } from "@/lib/routing";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import { formatDate } from "@/lib/languageTag";
+import { reportsCopy } from "@/lib/i18n/copy/reports";
 import type { Language } from "@/types/shared";
 
 /**
@@ -34,19 +35,19 @@ export async function generateMetadata({
   params: Promise<PageParams>;
 }): Promise<Metadata> {
   const { lang, slug } = await params;
-  const copy = {
-    title: `Signalement ${slug} — ${PRODUCT_NAME}`,
-    description: `Consultation d'un signalement éditorial sur la plateforme ${PRODUCT_NAME}.`,
+  const language = lang as Language;
+  const detailCopy = reportsCopy[language].detail;
+  const metadataCopy = {
+    title: `${detailCopy.report} ${slug} — ${PRODUCT_NAME}`,
+    description: detailCopy.metadataDescription,
   };
-  // A report is moderated in French and stays canonical-French: indexed
-  // under `/fr` only, like the register it belongs to.
   return {
-    title: copy.title,
+    title: metadataCopy.title,
     ...surfaceHead(
       lang as Language,
       "reports",
       (locale) => `${getStaticPageRoute(locale, "reports")}/${slug}`,
-      copy
+      metadataCopy
     ),
   };
 }
@@ -67,15 +68,6 @@ function formatFlagTimestamp(language: Language, iso: string | null): string {
   return formatDate(language, new Date(iso), FLAG_TIMESTAMP);
 }
 
-const FLAG_KIND_LABELS: Record<string, string> = {
-  inaccurate: "Information inexacte",
-  "missing-source": "Source manquante",
-  "broken-url": "URL brisée",
-  offensive: "Contenu offensant",
-  "correction-proposal": "Proposition de correction",
-  other: "Autre",
-};
-
 // @req REQ-042
 export default async function SignalementsSlugPage({
   params,
@@ -83,6 +75,8 @@ export default async function SignalementsSlugPage({
   params: Promise<PageParams>;
 }) {
   const { lang, slug } = await params;
+  const language = lang as Language;
+  const copy = reportsCopy[language].detail;
   const record = await getFlagBySlug(slug);
 
   if (!record) {
@@ -98,17 +92,19 @@ export default async function SignalementsSlugPage({
 
   return (
     <PageLayout
-      language={lang as Language}
-      title={`Signalement ${slug}`}
-      sectionName="Signalements"
-      trailLabel={`Signalement ${slug}`}
+      language={language}
+      title={`${copy.report} ${slug}`}
+      sectionName={copy.sectionName}
+      trailLabel={`${copy.report} ${slug}`}
     >
       <article
         className="container mx-auto max-w-3xl px-4 py-8 space-y-8"
         data-testid="signalement-page"
       >
         <header className="space-y-3 border-b pb-4">
-          <h1 className="text-afh-h2 font-bold">Signalement {slug}</h1>
+          <h1 className="text-afh-h2 font-bold">
+            {copy.report} {slug}
+          </h1>
           <FlagPublicStatus
             status={flag.status}
             moderatorNotes={flag.moderator_notes}
@@ -117,23 +113,23 @@ export default async function SignalementsSlugPage({
 
         {/* Target */}
         <section className="space-y-2">
-          <h2 className="text-afh-h3 font-semibold">Entité concernée</h2>
+          <h2 className="text-afh-h3 font-semibold">{copy.targetTitle}</h2>
           <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-afh-small">
             {flag.entity_type && (
               <>
-                <dt className="text-muted-foreground">Type</dt>
+                <dt className="text-muted-foreground">{copy.type}</dt>
                 <dd data-testid="entity-type">{flag.entity_type}</dd>
               </>
             )}
             {flag.entity_id && (
               <>
-                <dt className="text-muted-foreground">Identifiant</dt>
+                <dt className="text-muted-foreground">{copy.identifier}</dt>
                 <dd data-testid="entity-id">{flag.entity_id}</dd>
               </>
             )}
             {fieldPath && (
               <>
-                <dt className="text-muted-foreground">Champ</dt>
+                <dt className="text-muted-foreground">{copy.field}</dt>
                 <dd data-testid="field-path">{fieldPath}</dd>
               </>
             )}
@@ -150,11 +146,18 @@ export default async function SignalementsSlugPage({
 
         {/* Flag details */}
         <section className="space-y-2">
-          <h2 className="text-afh-h3 font-semibold">Détails du signalement</h2>
+          <h2 className="text-afh-h3 font-semibold">{copy.detailsTitle}</h2>
           <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-afh-small">
-            <dt className="text-muted-foreground">Type</dt>
+            <dt className="text-muted-foreground">{copy.type}</dt>
             <dd data-testid="flag-kind">
-              {FLAG_KIND_LABELS[flag.flag_kind] ?? flag.flag_kind}
+              {{
+                inaccurate: copy.kind.inaccurate,
+                "missing-source": copy.kind.missingSource,
+                "broken-url": copy.kind.brokenUrl,
+                offensive: copy.kind.offensive,
+                "correction-proposal": copy.kind.correctionProposal,
+                other: copy.kind.other,
+              }[flag.flag_kind] ?? flag.flag_kind}
             </dd>
           </dl>
           {flag.reason_text && (
@@ -167,7 +170,7 @@ export default async function SignalementsSlugPage({
         {/* Counter source */}
         {flag.counter_source_url && (
           <section className="space-y-2">
-            <h2 className="text-afh-h3 font-semibold">Source contradictoire</h2>
+            <h2 className="text-afh-h3 font-semibold">{copy.counterSource}</h2>
             <a
               href={flag.counter_source_url}
               target="_blank"
@@ -192,7 +195,7 @@ export default async function SignalementsSlugPage({
         {flag.proposed_rewrite && (
           <section className="space-y-2">
             <h2 className="text-afh-h3 font-semibold">
-              Proposition de réécriture
+              {copy.proposedRewrite}
             </h2>
             <blockquote
               className="border-l-4 border-muted pl-4 text-afh-small italic"
@@ -206,21 +209,21 @@ export default async function SignalementsSlugPage({
         {/* Timestamps + contributor */}
         <footer className="border-t pt-4 space-y-1 text-afh-small text-muted-foreground">
           <p>
-            <span>Signalé le </span>
+            <span>{copy.reportedOn} </span>
             <time dateTime={flag.created_at} data-testid="created-at">
-              {formatFlagTimestamp(lang as Language, flag.created_at)}
+              {formatFlagTimestamp(language, flag.created_at)}
             </time>
           </p>
           {flag.resolved_at && (
             <p>
-              <span>Résolu le </span>
+              <span>{copy.resolvedOn} </span>
               <time dateTime={flag.resolved_at} data-testid="resolved-at">
-                {formatFlagTimestamp(lang as Language, flag.resolved_at)}
+                {formatFlagTimestamp(language, flag.resolved_at)}
               </time>
             </p>
           )}
           <p data-testid="contributor-name">
-            Par <span className="font-medium">{contributorName}</span>
+            {copy.by} <span className="font-medium">{contributorName}</span>
           </p>
         </footer>
       </article>

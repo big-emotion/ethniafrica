@@ -159,4 +159,17 @@ describe("ModerationQueue", () => {
 
     expect(await screen.findByRole("alert")).toHaveTextContent(/refusé/i);
   });
+
+  // @req REQ-140
+  // @req REQ-145
+  it("renders statuses, controls and validation in English", async () => {
+    render(<ModerationQueue language="en" reports={[reviewedReport]} />);
+
+    expect(screen.getByText("Under review")).toBeInTheDocument();
+    expect(screen.getByLabelText("Moderation note")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Accept" }));
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      "Explain your decision before closing this report."
+    );
+  });
 });
