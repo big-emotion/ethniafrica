@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "countryId": "COD",
   "countryName": "République démocratique du Congo",
-  "updatedAt": "2026-09-06",
+  "updatedAt": "2026-09-07",
   "purpose": "Record-level reconciliation of local people-country links. Automated flags are review prompts, not editorial conclusions.",
   "regeneration": {
     "command": "npx tsx scripts/afrik/updateCountryPeopleLedger.ts COD --write",
@@ -21,23 +21,23 @@
     ]
   },
   "summary": {
-    "totalEntries": 72,
-    "fullyLinkedEntries": 67,
+    "totalEntries": 69,
+    "fullyLinkedEntries": 64,
     "incompleteLinkEntries": 5,
     "macroLikeEntries": 4,
     "nameLanguageLabelMatches": 47,
     "entriesWithoutAcceptedSource": 4,
-    "sharedIsoCodeClusters": 17,
-    "featuredFamilyMismatches": 8,
-    "entriesRequiringReview": 69,
+    "sharedIsoCodeClusters": 16,
+    "featuredFamilyMismatches": 9,
+    "entriesRequiringReview": 66,
     "editorialReview": {
-      "totalRelations": 72,
-      "reviewedRelations": 72,
+      "totalRelations": 69,
+      "reviewedRelations": 69,
       "pendingRelations": 0,
       "reviewCompletionPercent": 100,
       "reviewedByEntityType": {
         "people": 35,
-        "duplicate": 13,
+        "duplicate": 10,
         "macro_category": 6,
         "subgroup": 9,
         "language_label": 3,
@@ -62,8 +62,6 @@
         "PPL_KIRUNDI_TUTSI",
         "PPL_RWANDAIS_HUTU",
         "PPL_RWANDAIS_TUTSI",
-        "PPL_RWENDAIS_HUTU",
-        "PPL_RWENDAIS_TUTSI",
         "PPL_TWA"
       ]
     },
@@ -101,7 +99,7 @@
     },
     {
       "isoCode": "lua",
-      "peopleIds": ["PPL_LUBA", "PPL_LUBA_KASAI", "PPL_LUBA_KASAI2"]
+      "peopleIds": ["PPL_LUBA", "PPL_LUBA_KASAI", "PPL_LULUA"]
     },
     {
       "isoCode": "lub",
@@ -129,10 +127,6 @@
     {
       "isoCode": "sag",
       "peopleIds": ["PPL_SANGO", "PPL_SANGO_SCT"]
-    },
-    {
-      "isoCode": "tek",
-      "peopleIds": ["PPL_TEKE", "PPL_TEKKE"]
     },
     {
       "isoCode": "yom",
@@ -184,6 +178,56 @@
           {
             "title": "Wageningen University — Public Private Cooperation in Fragile States: Ituri field research",
             "url": "https://edepot.wur.nl/247871",
+            "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_AMBUNDU",
+      "nameMain": "Ambundu",
+      "selfAppellation": "Ambundu",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["kmb"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": false,
+        "appellationsCurrentCountries": false,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 9,
+        "accepted": 3,
+        "needsReview": 1,
+        "unverified": 5,
+        "withUrl": 8
+      },
+      "sharedIsoCodes": [],
+      "automatedFlags": ["incomplete_country_link"],
+      "review": {
+        "status": "in_review",
+        "entityType": "people",
+        "canonicalPeopleId": "PPL_AMBUNDU",
+        "parentPeopleId": null,
+        "decision": "Keep the Ambundu/Loanda Mbundu link to the DRC, but treat the current population value as an estimate requiring source alignment.",
+        "notes": "Glottolog records Kimbundu in both Angola and the DRC, while PeopleGroups.org and Joshua Project independently list a small DRC diaspora population near 32,000–34,000. The fiche's 30,000 value is plausible but its top-level and appellation country fields remain inconsistent with its demography; reconcile those fields only after selecting and dating one population source.",
+        "sources": [
+          {
+            "title": "Glottolog 5.3 — Kimbundu",
+            "url": "https://glottolog.org/resource/languoid/id/kimb1241",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "PeopleGroups.org — Loanda Mbundu of the Democratic Republic of the Congo",
+            "url": "https://peoplegroups.org/people_groups/pg014619/",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "Joshua Project — Kimbundu in the Democratic Republic of the Congo",
+            "url": "https://joshuaproject.net/pray/cards/single/13154/CG",
             "accessedAt": "2026-09-06"
           }
         ]
@@ -978,56 +1022,6 @@
       }
     },
     {
-      "id": "PPL_KIMBUNDU",
-      "nameMain": "Ambundu",
-      "selfAppellation": "Ambundu",
-      "languageFamilyId": "FLG_NIGERCONGO",
-      "isoCodes": ["kmb"],
-      "linkEvidence": {
-        "topLevelCurrentCountries": false,
-        "appellationsCurrentCountries": false,
-        "demographyDistribution": true
-      },
-      "countrySurfaces": {
-        "featured": false,
-        "demographic": false
-      },
-      "sourceEvidence": {
-        "total": 5,
-        "accepted": 1,
-        "needsReview": 1,
-        "unverified": 3,
-        "withUrl": 4
-      },
-      "sharedIsoCodes": [],
-      "automatedFlags": ["incomplete_country_link"],
-      "review": {
-        "status": "in_review",
-        "entityType": "people",
-        "canonicalPeopleId": "PPL_KIMBUNDU",
-        "parentPeopleId": null,
-        "decision": "Keep the Ambundu/Loanda Mbundu link to the DRC, but treat the current population value as an estimate requiring source alignment.",
-        "notes": "Glottolog records Kimbundu in both Angola and the DRC, while PeopleGroups.org and Joshua Project independently list a small DRC diaspora population near 32,000–34,000. The fiche's 30,000 value is plausible but its top-level and appellation country fields remain inconsistent with its demography; reconcile those fields only after selecting and dating one population source.",
-        "sources": [
-          {
-            "title": "Glottolog 5.3 — Kimbundu",
-            "url": "https://glottolog.org/resource/languoid/id/kimb1241",
-            "accessedAt": "2026-09-06"
-          },
-          {
-            "title": "PeopleGroups.org — Loanda Mbundu of the Democratic Republic of the Congo",
-            "url": "https://peoplegroups.org/people_groups/pg014619/",
-            "accessedAt": "2026-09-06"
-          },
-          {
-            "title": "Joshua Project — Kimbundu in the Democratic Republic of the Congo",
-            "url": "https://joshuaproject.net/pray/cards/single/13154/CG",
-            "accessedAt": "2026-09-06"
-          }
-        ]
-      }
-    },
-    {
       "id": "PPL_KINYARWANDA",
       "nameMain": "Banyarwanda",
       "selfAppellation": "Abanyarwanda",
@@ -1057,8 +1051,6 @@
             "PPL_KIRUNDI_TUTSI",
             "PPL_RWANDAIS_HUTU",
             "PPL_RWANDAIS_TUTSI",
-            "PPL_RWENDAIS_HUTU",
-            "PPL_RWENDAIS_TUTSI",
             "PPL_TWA"
           ]
         }
@@ -1115,8 +1107,6 @@
             "PPL_KIRUNDI_TUTSI",
             "PPL_RWANDAIS_HUTU",
             "PPL_RWANDAIS_TUTSI",
-            "PPL_RWENDAIS_HUTU",
-            "PPL_RWENDAIS_TUTSI",
             "PPL_TWA"
           ]
         },
@@ -1188,8 +1178,6 @@
             "PPL_KIRUNDI_HUTU",
             "PPL_RWANDAIS_HUTU",
             "PPL_RWANDAIS_TUTSI",
-            "PPL_RWENDAIS_HUTU",
-            "PPL_RWENDAIS_TUTSI",
             "PPL_TWA"
           ]
         },
@@ -1671,7 +1659,7 @@
       "sharedIsoCodes": [
         {
           "isoCode": "lua",
-          "peopleIds": ["PPL_LUBA_KASAI", "PPL_LUBA_KASAI2"]
+          "peopleIds": ["PPL_LUBA_KASAI", "PPL_LULUA"]
         },
         {
           "isoCode": "lub",
@@ -1734,7 +1722,7 @@
       "sharedIsoCodes": [
         {
           "isoCode": "lua",
-          "peopleIds": ["PPL_LUBA", "PPL_LUBA_KASAI2"]
+          "peopleIds": ["PPL_LUBA", "PPL_LULUA"]
         }
       ],
       "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
@@ -1745,56 +1733,6 @@
         "parentPeopleId": "PPL_LUBA",
         "decision": "Keep as the Luba-Kasai subgroup under PPL_LUBA.",
         "notes": "This is a child of the Luba umbrella, not an additive peer. Its lua language code distinguishes it from the lub-coded Luba-Katanga branch, while the current self-appellation overlaps the more specific Lulua record and should be editorially clarified.",
-        "sources": [
-          {
-            "title": "Royal Museum for Central Africa — Kasai-Oriental provincial monograph",
-            "url": "https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/monographies-provinces/kasai-oriental.pdf",
-            "accessedAt": "2026-09-06"
-          },
-          {
-            "title": "van Bulck 1954 — List IV",
-            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
-            "sourceId": "VB1954-P133-027"
-          }
-        ]
-      }
-    },
-    {
-      "id": "PPL_LUBA_KASAI2",
-      "nameMain": "Luba (Kasai) — Variante Lulua",
-      "selfAppellation": "Bena-Lulua / Luluwa",
-      "languageFamilyId": "FLG_NIGERCONGO",
-      "isoCodes": ["lua"],
-      "linkEvidence": {
-        "topLevelCurrentCountries": true,
-        "appellationsCurrentCountries": true,
-        "demographyDistribution": true
-      },
-      "countrySurfaces": {
-        "featured": false,
-        "demographic": false
-      },
-      "sourceEvidence": {
-        "total": 5,
-        "accepted": 3,
-        "needsReview": 0,
-        "unverified": 2,
-        "withUrl": 5
-      },
-      "sharedIsoCodes": [
-        {
-          "isoCode": "lua",
-          "peopleIds": ["PPL_LUBA", "PPL_LUBA_KASAI"]
-        }
-      ],
-      "automatedFlags": ["shared_iso_code"],
-      "review": {
-        "status": "in_review",
-        "entityType": "subgroup",
-        "canonicalPeopleId": "PPL_LUBA_KASAI2",
-        "parentPeopleId": "PPL_LUBA_KASAI",
-        "decision": "Keep provisionally as the Lulua/Bena-Lulua subgroup under PPL_LUBA_KASAI rather than merging it automatically.",
-        "notes": "The local corpus and the provincial monograph support a historically and socially meaningful Lulua distinction, despite the shared lua code. Rename the record around the attested Lulua/Bena-Lulua identity before publication and do not sum its population with the Luba-Kasai parent.",
         "sources": [
           {
             "title": "Royal Museum for Central Africa — Kasai-Oriental provincial monograph",
@@ -1910,6 +1848,56 @@
             "title": "Wageningen University — Public Private Cooperation in Fragile States: Ituri field research",
             "url": "https://edepot.wur.nl/247871",
             "accessedAt": "2026-09-06"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PPL_LULUA",
+      "nameMain": "Lulua",
+      "selfAppellation": "Bena-Lulua / Luluwa",
+      "languageFamilyId": "FLG_NIGERCONGO",
+      "isoCodes": ["lua"],
+      "linkEvidence": {
+        "topLevelCurrentCountries": true,
+        "appellationsCurrentCountries": true,
+        "demographyDistribution": true
+      },
+      "countrySurfaces": {
+        "featured": false,
+        "demographic": false
+      },
+      "sourceEvidence": {
+        "total": 5,
+        "accepted": 3,
+        "needsReview": 0,
+        "unverified": 2,
+        "withUrl": 5
+      },
+      "sharedIsoCodes": [
+        {
+          "isoCode": "lua",
+          "peopleIds": ["PPL_LUBA", "PPL_LUBA_KASAI"]
+        }
+      ],
+      "automatedFlags": ["shared_iso_code"],
+      "review": {
+        "status": "in_review",
+        "entityType": "subgroup",
+        "canonicalPeopleId": "PPL_LULUA",
+        "parentPeopleId": "PPL_LUBA_KASAI",
+        "decision": "Keep as the Lulua/Bena-Lulua subgroup under PPL_LUBA_KASAI rather than merging it automatically.",
+        "notes": "The local corpus and the provincial monograph support a historically and socially meaningful Lulua distinction, despite the shared lua code. The current identifier and label now use the attested Lulua identity. Do not sum its population with the Luba-Kasai parent.",
+        "sources": [
+          {
+            "title": "Royal Museum for Central Africa — Kasai-Oriental provincial monograph",
+            "url": "https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/monographies-provinces/kasai-oriental.pdf",
+            "accessedAt": "2026-09-06"
+          },
+          {
+            "title": "van Bulck 1954 — List IV",
+            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
+            "sourceId": "VB1954-P133-027"
           }
         ]
       }
@@ -2741,7 +2729,7 @@
       "id": "PPL_RWANDAIS_HUTU",
       "nameMain": "Rwandais (Hutu)",
       "selfAppellation": "Hutu / Abahutu",
-      "languageFamilyId": "FLG_NIGERCONGO",
+      "languageFamilyId": "FLG_BANTU",
       "isoCodes": ["kin"],
       "linkEvidence": {
         "topLevelCurrentCountries": true,
@@ -2753,11 +2741,11 @@
         "demographic": true
       },
       "sourceEvidence": {
-        "total": 6,
-        "accepted": 4,
+        "total": 11,
+        "accepted": 9,
         "needsReview": 2,
         "unverified": 0,
-        "withUrl": 6
+        "withUrl": 11
       },
       "sharedIsoCodes": [
         {
@@ -2767,13 +2755,11 @@
             "PPL_KIRUNDI_HUTU",
             "PPL_KIRUNDI_TUTSI",
             "PPL_RWANDAIS_TUTSI",
-            "PPL_RWENDAIS_HUTU",
-            "PPL_RWENDAIS_TUTSI",
             "PPL_TWA"
           ]
         }
       ],
-      "automatedFlags": ["shared_iso_code"],
+      "automatedFlags": ["featured_family_mismatch", "shared_iso_code"],
       "review": {
         "status": "in_review",
         "entityType": "duplicate",
@@ -2804,7 +2790,7 @@
       "id": "PPL_RWANDAIS_TUTSI",
       "nameMain": "Rwandais (Tutsi)",
       "selfAppellation": "Tutsi / Abatutsi",
-      "languageFamilyId": "FLG_NIGERCONGO",
+      "languageFamilyId": "FLG_BANTU",
       "isoCodes": ["kin"],
       "linkEvidence": {
         "topLevelCurrentCountries": true,
@@ -2816,11 +2802,11 @@
         "demographic": true
       },
       "sourceEvidence": {
-        "total": 5,
-        "accepted": 4,
+        "total": 10,
+        "accepted": 9,
         "needsReview": 1,
         "unverified": 0,
-        "withUrl": 5
+        "withUrl": 10
       },
       "sharedIsoCodes": [
         {
@@ -2830,8 +2816,6 @@
             "PPL_KIRUNDI_HUTU",
             "PPL_KIRUNDI_TUTSI",
             "PPL_RWANDAIS_HUTU",
-            "PPL_RWENDAIS_HUTU",
-            "PPL_RWENDAIS_TUTSI",
             "PPL_TWA"
           ]
         }
@@ -2844,132 +2828,6 @@
         "parentPeopleId": null,
         "decision": "Include this record in the three-record Tutsi duplicate cluster. Count the cluster once and defer canonical-ID selection pending a neutral identity and redirect design.",
         "notes": "The Rwandais qualifier is too narrow for a fiche that also declares Burundi, the DRC, and Uganda. Preserve this immutable ID until the shared Tutsi record and aliases cover PPL_KIRUNDI_TUTSI and PPL_RWENDAIS_TUTSI. Population estimates must not be summed.",
-        "sources": [
-          {
-            "title": "Minority Rights Group — Banyarwanda in the Democratic Republic of the Congo",
-            "url": "https://minorityrights.org/communities/banyarwanda/",
-            "accessedAt": "2026-09-06"
-          },
-          {
-            "title": "UNHCR — Congolese refugee context",
-            "url": "https://www.unhcr.org/africa/sites/afr/files/legacy-pdf/558c0e039.pdf",
-            "accessedAt": "2026-09-06"
-          },
-          {
-            "title": "van Bulck 1954 — List IV",
-            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
-            "sourceId": "VB1954-P135-035"
-          }
-        ]
-      }
-    },
-    {
-      "id": "PPL_RWENDAIS_HUTU",
-      "nameMain": "Hutu du Rwanda",
-      "selfAppellation": "Abahutu (pluriel) — singulier : Umututu",
-      "languageFamilyId": "FLG_BANTU",
-      "isoCodes": ["kin"],
-      "linkEvidence": {
-        "topLevelCurrentCountries": true,
-        "appellationsCurrentCountries": true,
-        "demographyDistribution": true
-      },
-      "countrySurfaces": {
-        "featured": false,
-        "demographic": false
-      },
-      "sourceEvidence": {
-        "total": 6,
-        "accepted": 6,
-        "needsReview": 0,
-        "unverified": 0,
-        "withUrl": 6
-      },
-      "sharedIsoCodes": [
-        {
-          "isoCode": "kin",
-          "peopleIds": [
-            "PPL_KINYARWANDA",
-            "PPL_KIRUNDI_HUTU",
-            "PPL_KIRUNDI_TUTSI",
-            "PPL_RWANDAIS_HUTU",
-            "PPL_RWANDAIS_TUTSI",
-            "PPL_RWENDAIS_TUTSI",
-            "PPL_TWA"
-          ]
-        }
-      ],
-      "automatedFlags": ["shared_iso_code"],
-      "review": {
-        "status": "in_review",
-        "entityType": "duplicate",
-        "canonicalPeopleId": null,
-        "parentPeopleId": null,
-        "decision": "Include this misspelled legacy record in the four-record Hutu duplicate cluster. Count the cluster once and defer canonical-ID selection until a neutral redirect target is designed.",
-        "notes": "RWENDAIS is a legacy spelling error, while the fiche's Abahutu identity and five-country scope duplicate PPL_RWANDAIS_HUTU, PPL_KIRUNDI_HUTU, and PPL_HUTU_BURUNDI. Preserve the immutable ID only for redirection; do not sum population estimates.",
-        "sources": [
-          {
-            "title": "Minority Rights Group — Banyarwanda in the Democratic Republic of the Congo",
-            "url": "https://minorityrights.org/communities/banyarwanda/",
-            "accessedAt": "2026-09-06"
-          },
-          {
-            "title": "United States Holocaust Memorial Museum — Divided by Ethnicity",
-            "url": "https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
-            "accessedAt": "2026-09-06"
-          },
-          {
-            "title": "van Bulck 1954 — List IV",
-            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
-            "sourceId": "VB1954-P132-016"
-          }
-        ]
-      }
-    },
-    {
-      "id": "PPL_RWENDAIS_TUTSI",
-      "nameMain": "Tutsi du Rwanda",
-      "selfAppellation": "Abatutsi (pluriel) — singulier : Umututsi",
-      "languageFamilyId": "FLG_BANTU",
-      "isoCodes": ["kin"],
-      "linkEvidence": {
-        "topLevelCurrentCountries": true,
-        "appellationsCurrentCountries": true,
-        "demographyDistribution": true
-      },
-      "countrySurfaces": {
-        "featured": false,
-        "demographic": false
-      },
-      "sourceEvidence": {
-        "total": 6,
-        "accepted": 6,
-        "needsReview": 0,
-        "unverified": 0,
-        "withUrl": 6
-      },
-      "sharedIsoCodes": [
-        {
-          "isoCode": "kin",
-          "peopleIds": [
-            "PPL_KINYARWANDA",
-            "PPL_KIRUNDI_HUTU",
-            "PPL_KIRUNDI_TUTSI",
-            "PPL_RWANDAIS_HUTU",
-            "PPL_RWANDAIS_TUTSI",
-            "PPL_RWENDAIS_HUTU",
-            "PPL_TWA"
-          ]
-        }
-      ],
-      "automatedFlags": ["shared_iso_code"],
-      "review": {
-        "status": "in_review",
-        "entityType": "duplicate",
-        "canonicalPeopleId": null,
-        "parentPeopleId": null,
-        "decision": "Include this misspelled legacy record in the three-record Tutsi duplicate cluster. Count the cluster once and defer canonical-ID selection until a neutral redirect target is designed.",
-        "notes": "RWENDAIS is a legacy spelling error, while the fiche's Abatutsi identity and five-country scope duplicate PPL_RWANDAIS_TUTSI and PPL_KIRUNDI_TUTSI. Preserve the immutable ID only for redirection; do not sum population estimates.",
         "sources": [
           {
             "title": "Minority Rights Group — Banyarwanda in the Democratic Republic of the Congo",
@@ -3344,19 +3202,14 @@
         "demographic": false
       },
       "sourceEvidence": {
-        "total": 5,
-        "accepted": 2,
-        "needsReview": 0,
-        "unverified": 3,
-        "withUrl": 4
+        "total": 9,
+        "accepted": 4,
+        "needsReview": 1,
+        "unverified": 4,
+        "withUrl": 7
       },
-      "sharedIsoCodes": [
-        {
-          "isoCode": "tek",
-          "peopleIds": ["PPL_TEKKE"]
-        }
-      ],
-      "automatedFlags": ["name_matches_language_label", "shared_iso_code"],
+      "sharedIsoCodes": [],
+      "automatedFlags": ["name_matches_language_label"],
       "review": {
         "status": "in_review",
         "entityType": "people",
@@ -3364,66 +3217,6 @@
         "parentPeopleId": null,
         "decision": "Proposed canonical record for the Teke/Bateke identity. Reconcile useful content from PPL_TEKKE before any retirement operation.",
         "notes": "The two local fiches cover the same three countries and share ISO 639-3 tek. Contemporary museum terminology uses Bateke with Teke as an alternative name, while the scholarly reference uses Teke. The broader Teke language cluster still requires language-level reconciliation and must not be mistaken for multiple people records. Glottolog places tek in the DRC and the Republic of the Congo, but the fiche's iyx, lli, teg, and tyi records are outside the DRC; the CD inventory also includes Teke-Eboo-Nzikou (ebo) and Teke-Fuumu (ifm). Country language exposure must not inherit the entire five-code people list.",
-        "sources": [
-          {
-            "title": "British Museum — Bateke",
-            "url": "https://www.britishmuseum.org/collection/term/x91952",
-            "accessedAt": "2026-09-06"
-          },
-          {
-            "title": "Obenga 1988 — Le peuple Teke en Afrique centrale",
-            "url": "https://glottolog.org/resource/reference/id/70547",
-            "accessedAt": "2026-09-06"
-          },
-          {
-            "title": "Royal Museum for Central Africa ethnonym thesaurus — Tio to Teke",
-            "url": "https://societies.africamuseum.be/en/tp_ethnie?key=ethnonyme&letter=T",
-            "accessedAt": "2026-09-06"
-          },
-          {
-            "title": "van Bulck 1954 — List IV",
-            "artifact": "docs/editorial/country-enrichment/sources/COD-van-bulck-1954.json",
-            "sourceIds": ["VB1954-P135-083", "VB1954-P135-107"]
-          }
-        ]
-      }
-    },
-    {
-      "id": "PPL_TEKKE",
-      "nameMain": "Tekke",
-      "selfAppellation": "Bateke (pluriel), Moteke (singulier) ; aussi appeles Tio ou Tyo",
-      "languageFamilyId": "FLG_BANTU",
-      "isoCodes": ["tek"],
-      "linkEvidence": {
-        "topLevelCurrentCountries": true,
-        "appellationsCurrentCountries": true,
-        "demographyDistribution": true
-      },
-      "countrySurfaces": {
-        "featured": false,
-        "demographic": false
-      },
-      "sourceEvidence": {
-        "total": 5,
-        "accepted": 2,
-        "needsReview": 1,
-        "unverified": 2,
-        "withUrl": 4
-      },
-      "sharedIsoCodes": [
-        {
-          "isoCode": "tek",
-          "peopleIds": ["PPL_TEKE"]
-        }
-      ],
-      "automatedFlags": ["shared_iso_code"],
-      "review": {
-        "status": "in_review",
-        "entityType": "duplicate",
-        "canonicalPeopleId": "PPL_TEKE",
-        "parentPeopleId": null,
-        "decision": "Proposed duplicate or legacy-spelling record. Preserve Tekke as a searchable legacy label and retain this immutable ID until a redirect or retirement mechanism exists.",
-        "notes": "Do not count PPL_TEKE and PPL_TEKKE separately. Their population estimates conflict and must not be summed. No consulted DRC source supports Tekke as a distinct contemporary people from Teke/Bateke.",
         "sources": [
           {
             "title": "British Museum — Bateke",
@@ -3657,9 +3450,7 @@
             "PPL_KIRUNDI_HUTU",
             "PPL_KIRUNDI_TUTSI",
             "PPL_RWANDAIS_HUTU",
-            "PPL_RWANDAIS_TUTSI",
-            "PPL_RWENDAIS_HUTU",
-            "PPL_RWENDAIS_TUTSI"
+            "PPL_RWANDAIS_TUTSI"
           ]
         },
         {

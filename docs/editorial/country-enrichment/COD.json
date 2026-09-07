@@ -3,7 +3,7 @@
   "countryId": "COD",
   "countryName": "Democratic Republic of the Congo",
   "status": "in_progress",
-  "updatedAt": "2026-09-06",
+  "updatedAt": "2026-09-07",
   "scorePolicy": "vector_only_no_global_score",
   "databaseSync": {
     "status": "not_verified",
@@ -124,18 +124,18 @@
       "filledSectionsPercent": 100
     },
     "peoples": {
-      "linkedFiches": 72,
+      "linkedFiches": 69,
       "macroLikeLinkedFiches": 4,
       "featuredEntries": 12,
       "demographicNamedEntries": 12,
-      "featuredVsLinkedPercent": 16.7,
+      "featuredVsLinkedPercent": 17.4,
       "referenceCount": 250,
-      "rawReferenceUpperBoundPercent": 28.8,
+      "rawReferenceUpperBoundPercent": 27.6,
       "namedDemographicSharePercent": 66,
       "catchAllDemographicSharePercent": 34,
       "demographicPercentageSum": 100,
       "demographicRowsWithPopulation": 8,
-      "featuredFamilyMismatches": 8,
+      "featuredFamilyMismatches": 9,
       "featuredFamilyMismatchIds": [
         "PPL_LUBA",
         "PPL_KONGO",
@@ -143,17 +143,18 @@
         "PPL_LUNDA",
         "PPL_NANDE",
         "PPL_HUNDE",
+        "PPL_RWANDAIS_HUTU",
         "PPL_RWANDAIS_TUTSI",
         "PPL_BEMBA"
       ],
       "editorialReview": {
-        "totalRelations": 72,
-        "reviewedRelations": 72,
+        "totalRelations": 69,
+        "reviewedRelations": 69,
         "pendingRelations": 0,
         "reviewCompletionPercent": 100,
         "reviewedByEntityType": {
           "people": 35,
-          "duplicate": 13,
+          "duplicate": 10,
           "macro_category": 6,
           "subgroup": 9,
           "language_label": 3,
@@ -192,18 +193,18 @@
     },
     "sources": {
       "countryFiche": {
-        "total": 10,
-        "accepted": 2,
-        "acceptedPercent": 20,
-        "withUrl": 2,
-        "withUrlPercent": 20,
-        "needsReview": 8
+        "total": 4,
+        "accepted": 4,
+        "acceptedPercent": 100,
+        "withUrl": 4,
+        "withUrlPercent": 100,
+        "needsReview": 0
       },
       "linkedPeopleFiches": {
-        "total": 424,
+        "total": 425,
         "accepted": 217,
-        "acceptedPercent": 51.2,
-        "withUrl": 384,
+        "acceptedPercent": 51.1,
+        "withUrl": 385,
         "withUrlPercent": 90.6,
         "needsReview": 49
       }
@@ -255,12 +256,14 @@
     {
       "id": "COD-IDENTITY",
       "priority": "P0",
-      "status": "implemented_locally",
+      "status": "source_json_identity_enriched_database_verification_pending",
       "goal": "Use République démocratique du Congo consistently as the reader-facing country name.",
       "findings": [
         "The source JSON already uses the requested name.",
         "The shared CLDR resolver replaced it with Congo-Kinshasa in the UI.",
-        "A shared editorial override and regression tests now preserve the requested name."
+        "A shared editorial override and regression tests now preserve the requested name.",
+        "The source JSON now states the country-to-river and river-to-Kongo-kingdom name relationships conservatively and leaves the deeper lexical derivation explicitly uncertain.",
+        "The name-origin claims now carry one official toponymic reference and one historical Kongo-language reference with resolvable URLs."
       ],
       "remaining": [
         "Verify the database row when Supabase credentials are available.",
@@ -583,11 +586,12 @@
     {
       "id": "COD-SOURCES",
       "priority": "P0",
-      "status": "review_complete_proposal_ready_approval_required",
+      "status": "source_json_cleanup_applied_field_level_enrichment_pending",
       "goal": "Replace vague and review-pending citations with traceable accepted sources.",
       "findings": [
-        "The country fiche currently contains 10 source rows: 2 accepted exact sources and 8 generic needs_review rows.",
-        "All 8 needs_review rows have been reviewed and are proposed for removal; exact field-level replacements are documented where available.",
+        "The country fiche previously contained 10 source rows: 2 accepted exact sources and 8 generic needs_review rows.",
+        "All 8 generic rows were reviewed, approved for removal, and removed from the source JSON on 2026-09-07; the 2 retained rows have exact URLs and accepted tiers.",
+        "Two exact name-origin references were added on 2026-09-07, bringing the current country source register to 4 accepted rows with resolvable URLs.",
         "The two CIA placeholders cannot be repaired as live current-country citations because The World Factbook was retired on 2026-02-04 and the former country URL redirects to the retirement notice.",
         "The vague Ethnologue row is not reproducible without an edition and license basis; the pinned Glottolog 5.3 inventory is proposed for language reconciliation instead.",
         "Official census-status documentation identifies 1984 as the latest completed national census, while the 2013–2014 DHS is a sample survey; neither validates a current exhaustive people denominator.",
@@ -595,12 +599,10 @@
         "Detailed people percentages and broad cultural fields remain unsupported and must not be marked validated."
       ],
       "remaining": [
-        "Approve or reject the proposed removal of the 8 generic source rows and the exact replacement registry.",
         "Select an enumerated scholarly people inventory as the canonical record-linkage baseline, or expose multiple non-additive scopes.",
         "Attach accepted sources to detailed people percentages or remove those percentages from validated display.",
         "Add scoped sources for culture, religion, lifestyles, social organization, and regional relations.",
         "Add field-level provenance to the country model or generate an equivalent auditable mapping.",
-        "Apply the approved cleanup to dataset/source/afrik/pays/COD.json only after explicit editorial approval.",
         "Run the repository URL validator after its pre-existing server-only runtime failure is repaired, then run the AFRIK data validators before publication."
       ]
     }

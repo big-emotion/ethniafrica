@@ -485,8 +485,17 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
     expect(entry.tagName).not.toBe("A");
   };
 
+  /**
+   * A withdrawn dossier is *listed and inert*, not hidden.
+   *
+   * The panel used to drop draft modules and show a theme directory in their
+   * place, which told the reader nothing about what the axis holds — a
+   * withdrawn dossier and one that never existed looked the same, which is to
+   * say invisible. Listing it under the Bientôt chip is the promise the chip
+   * makes: there is a reading here, and it is not ready.
+   */
   // @req REQ-106
-  it("withholds the invitation from every module declared in preparation", () => {
+  it("lists every module declared in preparation, inert, under Bientôt", () => {
     renderHeader();
 
     const drafts = getNavModules("dossiers").filter(
@@ -496,13 +505,13 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
 
     fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
     for (const navModule of drafts) {
-      expect(
-        screen.queryByTestId(`site-nav-module-${navModule.id}`)
-      ).not.toBeInTheDocument();
+      expectInert(entryFor(navModule.id));
     }
-    expect(
-      within(panel()).getByRole("link", { name: "Noms et identités" })
-    ).toHaveAttribute("href", getDossierThemeHref("noms"));
+    // The one reading still offered keeps its link, in the same grid.
+    expect(entryFor("anecdotes").tagName).toBe("A");
+    expect(entryFor("anecdotes")).not.toHaveTextContent(
+      t.hubs.unavailableLabel
+    );
     expect(
       within(panel()).getByRole("link", { name: "Les dossiers" })
     ).toHaveAttribute("href", getLocalizedRoute("fr", "dossiersHub"));
@@ -784,11 +793,9 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
       ).not.toHaveAttribute("href");
       const contracts = contractsFor(panel());
       expect(contracts.map(({ testId }) => testId)).toEqual(
-        axis === "dossiers"
-          ? []
-          : getNavModules(axis).map(
-              (navModule) => `site-nav-module-${navModule.id}`
-            )
+        getNavModules(axis).map(
+          (navModule) => `site-nav-module-${navModule.id}`
+        )
       );
       panelContracts.set(axis, contracts);
     }

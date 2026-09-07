@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 import { NommerPillarPage } from "@/components/dossiers/nommer/NommerPillarPage";
+import { isModulePublished } from "@/lib/hubs/moduleOffer";
 import { nommerCopy } from "@/lib/i18n/copy/nommer";
 import { getLocalizedRoute } from "@/lib/routing";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
@@ -16,6 +18,7 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { lang } = await params;
+  if (!isModulePublished("nommer")) return {};
   const language = lang as Language;
   const pageCopy = nommerCopy[language];
   const copy = { title: pageCopy.title, description: pageCopy.subtitle };
@@ -40,5 +43,6 @@ export async function generateMetadata({
 // @req REQ-113
 export default async function NommerPage({ params }: PageProps) {
   const { lang } = await params;
+  if (!isModulePublished("nommer")) notFound();
   return <NommerPillarPage language={lang as Language} />;
 }

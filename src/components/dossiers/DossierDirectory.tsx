@@ -7,6 +7,7 @@ import { ActionLink } from "@/components/ui/ActionLink";
 import { DossierNavigation } from "@/components/dossiers/DossierNavigation";
 import { getDossiers } from "@/lib/dossiers/catalog";
 import { getDossierThemes } from "@/lib/dossiers/themes";
+import { getTranslation } from "@/lib/translations";
 import styles from "./dossiers.module.css";
 
 // @req REQ-114
@@ -26,32 +27,50 @@ export function DossierDirectory({
     { theme, format: "anecdote", language },
     availability
   );
+
+  /**
+   * Whether there is a catalogue here at all.
+   *
+   * Read off the unfiltered set, not off `dossiers`: an empty result under a
+   * query is a search that found nothing, and an empty result under no query
+   * is an axis with nothing in it. The two owe the reader different sentences
+   * — "aucun dossier ne correspond" sends them back to refine a search that
+   * cannot succeed — and telling them apart is what the freeze needs.
+   */
+  const catalogueIsEmpty = getDossiers({ language }, availability).length === 0;
+
   return (
     <div className={`${styles.directory} afh-accent-teal`}>
-      <div className={styles.filters}>
-        <label htmlFor={id} className="sr-only">
-          {english ? "Search dossiers" : "Rechercher dans les dossiers"}
-        </label>
-        <input
-          id={id}
-          type="search"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          placeholder={english ? "Search a subject…" : "Rechercher un sujet…"}
-          className={styles.control}
-        />
-        <DossierNavigation selectedTheme={theme} language={language} />
-      </div>
+      {/* A search field and a theme list over an empty catalogue are two
+          controls that can only fail. They come back with the readings. */}
+      {catalogueIsEmpty ? null : (
+        <div className={styles.filters}>
+          <label htmlFor={id} className="sr-only">
+            {english ? "Search dossiers" : "Rechercher dans les dossiers"}
+          </label>
+          <input
+            id={id}
+            type="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder={english ? "Search a subject…" : "Rechercher un sujet…"}
+            className={styles.control}
+          />
+          <DossierNavigation selectedTheme={theme} language={language} />
+        </div>
+      )}
       <section
         aria-label={english ? "Dossiers to read" : "Dossiers à lire"}
         className={styles.results}
       >
         <p role="status" className={styles.status}>
-          {dossiers.length === 0
-            ? english
-              ? "No dossiers match this search."
-              : "Aucun dossier ne correspond à cette recherche."
-            : `${dossiers.length} dossier${dossiers.length > 1 ? "s" : ""} ${english ? "to read" : "à lire"}`}
+          {catalogueIsEmpty
+            ? getTranslation(language).hubs.dossiers.frozenStatus
+            : dossiers.length === 0
+              ? english
+                ? "No dossiers match this search."
+                : "Aucun dossier ne correspond à cette recherche."
+              : `${dossiers.length} dossier${dossiers.length > 1 ? "s" : ""} ${english ? "to read" : "à lire"}`}
         </p>
         {dossiers.map((dossier) => (
           <article key={dossier.id} className={styles.dossier}>

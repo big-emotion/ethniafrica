@@ -14,6 +14,7 @@ import {
   PUBLISHED_LOCALES,
 } from "@/lib/routing";
 import { getDefaultLocale } from "@/lib/locale";
+import { isModulePublished } from "@/lib/hubs/moduleOffer";
 import { resolveRelocatedPath, resolveRenamedModulePath } from "@/middleware";
 import { LIVE_ROUTES } from "../a11yRoutes";
 
@@ -75,7 +76,14 @@ const representativeSubset = (locale: Language) => [
   ...Object.values(representativeFicheRoutes(locale)),
   getLocalizedRoute(locale, "peoples"),
   getLocalizedRoute(locale, "quiz"),
-  getLocalizedRoute(locale, "migrations"),
+  // One reading off the dossiers axis, whichever one is published. The subset
+  // exists so no axis goes unmeasured, and naming `migrations` outright made
+  // that guarantee lapse the moment the module was withdrawn — `lhci collect`
+  // aborts on the first URL that fails to load, so the dead address would have
+  // cost every measurement after it rather than its own.
+  isModulePublished("frise")
+    ? getLocalizedRoute(locale, "migrations")
+    : getLocalizedRoute(locale, "anecdotes"),
   getLocalizedRoute(locale, "doctrine"),
   getLocalizedRoute(locale, "compare"),
   getLocalizedRoute(locale, "glossary"),
@@ -364,8 +372,18 @@ describe("browser quality-gate routes", () => {
     for (const routes of perLocale) {
       expect(routes).toHaveLength(perLocale[0].length);
     }
-    // Nineteen per locale: the wall clock of the one required check.
-    expect(axeRoutes.length).toBe(19 * PUBLISHED_LOCALES.length);
+    // Sixteen per locale while the dossiers are withdrawn; twenty when they
+    // return. The number is the wall clock of the one required check, and it
+    // is written out rather than derived so that adding a route is a decision
+    // taken here — a count computed from the list under test would agree with
+    // whatever that list happened to say.
+    const perLocaleRoutes =
+      16 +
+      (isModulePublished("nommer") ? 2 : 0) +
+      (isModulePublished("frise") ? 1 : 0) +
+      (isModulePublished("regards-colonisation") ? 1 : 0);
+
+    expect(axeRoutes.length).toBe(perLocaleRoutes * PUBLISHED_LOCALES.length);
   });
 
   // @req REQ-103 FR71 (Epic 10, Story 10.11 · ETNI-500)

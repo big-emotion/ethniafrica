@@ -7,9 +7,9 @@ const en = {
     title: TRAIL_PAGE_LABELS.en.atlasHub,
     pageTitle: "Explore the peoples of Africa",
     blurb:
-      "The fiche axis: language families, languages, peoples, countries, ethnonyms and names, each under its own.",
+      "The fiche axis: language families, languages, peoples, countries and names, each under its own.",
     menuBlurb:
-      "The fiches of families, languages, peoples, countries, ethnonyms and names, plus the search.",
+      "The fiches of language families, languages, peoples, countries and names, plus the search.",
     hubEntryName: "The exploration hub",
   },
   dossiers: {
@@ -19,6 +19,10 @@ const en = {
       "The relations axis: where a name comes from, where the peoples passed, and which sources the atlas rests on.",
     menuBlurb: "Read by theme, across peoples, territories and eras.",
     hubEntryName: "The reading hub",
+    // What the hub says while every long reading is withdrawn. It states the
+    // rework and promises the return, and deliberately does not read as a
+    // search that found nothing — the reader has done nothing to correct.
+    frozenStatus: "The dossiers are being rewritten. They will be back.",
   },
   jeux: {
     title: TRAIL_PAGE_LABELS.en.jeuxHub,
@@ -35,10 +39,12 @@ const en = {
   moduleNames: {
     pays: "The countries of Africa",
     peuples: "The peoples of Africa",
-    familles: "The family tree",
+    familles: "The language families",
     langues: "The languages of Africa",
+    // Unlisted, not retired — the header no longer renders it. Kept so the
+    // label stays a decision rather than a fallback to the registry's.
     noms: "Ethnonyms",
-    patronymes: "Names",
+    patronymes: "The names of Africa",
     recherche: "Free search",
     nommer: "Who gave this name?",
     anecdotes: "Anecdotes",
@@ -113,6 +119,7 @@ const fr: HubsCopy = {
     menuBlurb:
       "Des lectures par thème, à travers les peuples, les territoires et les époques.",
     hubEntryName: "Le hub de lecture",
+    frozenStatus: "Les dossiers sont en cours de réécriture. Ils reviendront.",
   },
   jeux: {
     title: ACCESS_MODE_LABELS.jeux,

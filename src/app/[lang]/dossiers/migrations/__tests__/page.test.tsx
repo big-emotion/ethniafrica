@@ -37,6 +37,24 @@ vi.mock("@/lib/api/logger", () => ({
   },
 }));
 
+/**
+ * The freeze, lifted for this suite alone.
+ *
+ * `frise` is withdrawn, so the route answers 404 before it renders anything —
+ * which `dossiers/__tests__/frozenRoutes.test.tsx` is what asserts. This
+ * suite describes the page the reader gets back when it is restored, and the
+ * cheapest way to keep describing it is to answer the one question the guard
+ * asks. Deleting these nine tests instead would mean restoring the module one
+ * day with nothing left saying what it owes.
+ *
+ * Narrow on purpose: only the publication switch is faked. Every service, every
+ * transform and every panel below it is the real one.
+ */
+vi.mock("@/lib/hubs/moduleOffer", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/hubs/moduleOffer")>()),
+  isModulePublished: () => true,
+}));
+
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({ children }: { children: React.ReactNode }) => (
     <div>{children}</div>

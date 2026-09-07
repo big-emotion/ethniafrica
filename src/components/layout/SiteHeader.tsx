@@ -15,13 +15,17 @@ import {
 import {
   ArrowUpDown,
   BookUser,
+  Castle,
   ChevronDown,
   Circle,
   Crown,
+  Drum,
   Eye,
+  Flame,
   FolderTree,
   Gem,
   Globe,
+  Handshake,
   HelpCircle,
   History,
   Landmark,
@@ -48,9 +52,7 @@ import {
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
-import { DossierNavigation } from "@/components/dossiers/DossierNavigation";
 import { ActionLink } from "@/components/ui/ActionLink";
-import { getPublishedThemes } from "@/lib/dossiers/catalog";
 import { useHeaderReveal } from "@/hooks/use-header-reveal";
 import { PRODUCT_NAME } from "@/lib/brand";
 import { cn } from "@/lib/utils";
@@ -124,6 +126,14 @@ const MODULE_GLYPHS: Record<string, LucideIcon> = {
   "dossier-proportions": Ruler,
   "dossier-populations": ChartNoAxesColumnIncreasing,
   "dossier-ressources": Gem,
+  // The four Congo histories shipped without a glyph and reached the `Circle`
+  // fallback in silence: the dossiers panel drew a theme directory rather than
+  // module cards, so no surface ever rendered them and no gate ever looked.
+  // Giving the panel the same cards as the other two axes is what surfaced it.
+  "dossier-kongo": Castle,
+  "dossier-luba": Drum,
+  "dossier-lunda": Handshake,
+  "dossier-spiritualites-kongo": Flame,
   frise: History,
   "regards-colonisation": Eye,
   quiz: HelpCircle,
@@ -441,16 +451,18 @@ export function SiteHeader({
             </h2>
             <p className="sh-panel-blurb">{t.hubs[openAxis].menuBlurb}</p>
           </div>
-          {openAxis === "dossiers" ? (
-            <DossierNavigation
-              language={language}
-              onNavigate={() => setOpenAxis(null)}
-            />
-          ) : (
-            <div className="sh-grid">
-              {getNavModules(openAxis).map(moduleEntry)}
-            </div>
-          )}
+          {/* One panel shape for the three axes.
+
+              Dossiers used to render a theme directory here instead — eight
+              bare text links with an arrow, beside two axes drawing module
+              cards. A reader crossing the bar met two different navigations
+              under one bar, and the axis that reads as unfinished is the one
+              that looks unlike its neighbours. It also had nowhere to put
+              **Bientôt**, so a withdrawn dossier and a published one were
+              spelled identically. */}
+          <div className="sh-grid">
+            {getNavModules(openAxis).map(moduleEntry)}
+          </div>
         </div>
       ) : null}
 
@@ -477,11 +489,7 @@ export function SiteHeader({
                   >
                     <span className="sh-seed" aria-hidden="true" />
                     {axisLabel(axis)}
-                    <span className="sh-fold-count">
-                      {axis === "dossiers"
-                        ? getPublishedThemes(moduleAvailability).length
-                        : modules.length}
-                    </span>
+                    <span className="sh-fold-count">{modules.length}</span>
                     <ChevronDown
                       className="sh-caret"
                       size={13}
@@ -492,21 +500,14 @@ export function SiteHeader({
                 {expanded ? (
                   <div id={`sh-fold-${axis}`} className="sh-fold-body">
                     {axis === "dossiers" ? (
-                      <>
-                        <ActionLink
-                          href={getLocalizedRoute(language, "dossiersHub")}
-                          onClick={() => setTrayOpen(false)}
-                        >
-                          {t.chrome.allDossiers}
-                        </ActionLink>
-                        <DossierNavigation
-                          language={language}
-                          onNavigate={() => setTrayOpen(false)}
-                        />
-                      </>
-                    ) : (
-                      modules.map(moduleEntry)
-                    )}
+                      <ActionLink
+                        href={getLocalizedRoute(language, "dossiersHub")}
+                        onClick={() => setTrayOpen(false)}
+                      >
+                        {t.chrome.allDossiers}
+                      </ActionLink>
+                    ) : null}
+                    {modules.map(moduleEntry)}
                   </div>
                 ) : null}
               </div>
@@ -882,6 +883,15 @@ export function SiteHeader({
         }
         .sh-entry-text {
           min-width: 0;
+          /* Opts out of the mobile centring that styles/mobile-text.css puts
+             on the body below 768px, the way that file says a component
+             should. A menu entry is a destination in a list, not composition:
+             the glyph sets the reading edge, and every name has to start on
+             it. It only ever showed on a name long enough to wrap — the atlas
+             and the games have none, and the dossiers axis drew no cards at
+             all until this file stopped special-casing it, so "Lunda :
+             alliances et circulations" was the first entry to reveal it. */
+          text-align: left;
         }
         .sh-entry-name {
           display: block;
