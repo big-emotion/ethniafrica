@@ -90,6 +90,26 @@ export function isAfricanTerritory(territory: ComparedTerritory): boolean {
   return !NON_AFRICAN_IDS.has(territory.id);
 }
 
+/**
+ * The half of a pair the atlas actually holds a fiche for, or null when it
+ * holds neither.
+ *
+ * Every round on this page now sets an African country against a borrowed
+ * silhouette, and only one of those two has a fiche. A reveal that leads to
+ * the other one is a 404 behind an id that looks like an ISO code because,
+ * for Greenland and Norway, it is one — so the destination is a property of
+ * the *pair*, never of whichever side happens to be the answer.
+ */
+// @req REQ-120
+export function documentedHalf(
+  a: ComparedTerritory,
+  b: ComparedTerritory
+): ComparedTerritory | null {
+  if (isAfricanTerritory(a)) return a;
+  if (isAfricanTerritory(b)) return b;
+  return null;
+}
+
 /** The mainland: the ring carrying the most points, islands set aside. */
 function largestRing(rings: Ring[]): Ring {
   return rings.reduce((largest, ring) =>

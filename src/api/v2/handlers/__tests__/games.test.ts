@@ -76,6 +76,15 @@ const byName = (nameFr: string): ComparedTerritory =>
     (entry) => entry.nameFr === nameFr
   );
 
+/**
+ * Which side of the continent's edge an option sits on, read off the label the
+ * reader is shown. Deliberately not `isAfricanTerritory(byName(label))`: the
+ * suites that assert the parallel run over the whole admin-0 corpus, and
+ * `byName` only knows the six fixtures.
+ */
+const isBorrowedLabel = (labelFr: string): boolean =>
+  NON_AFRICAN_SILHOUETTES.some((silhouette) => silhouette.nameFr === labelFr);
+
 const mercator = () => getGameBySlug("mercator");
 
 /**
@@ -198,6 +207,40 @@ describe("a comparison may reach outside the continent", () => {
   });
 
   /**
+   * The parallel is the whole question, so both halves of it are required —
+   * not merely one African half.
+   *
+   * Admitting an African pair as well was the widening's own leftover: the
+   * silhouettes joined the pool and the filter kept asking only that *one*
+   * side be African, which is what a pool of two sources satisfies by
+   * accident. Measured over the eighty outlines, that let three intra-African
+   * pairs through against a hundred and twenty-two crossed ones — and the
+   * three are the near-ties this page has been narrowing its thresholds
+   * against since it shipped, because Mercator's factor only runs from 1,00
+   * to 1,46 across Africa. The lesson needs the two sides of the edge.
+   */
+  // @req REQ-120
+  it("never sets two African countries against each other", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: Object.entries(AFRICA_ADMIN0).map(([id, shape]) =>
+        country(id, shape.nameFr)
+      ),
+    });
+
+    const envelope = await getGameRoundsHandler(mercator(), 0);
+    const pairRounds = comparisons(envelope.data.rounds);
+
+    expect(pairRounds.length).toBeGreaterThan(0);
+    for (const round of pairRounds) {
+      const african = round.options.filter(
+        (option) => !isBorrowedLabel(option.labelFr)
+      );
+      expect(african).toHaveLength(1);
+    }
+  });
+
+  /**
    * A silhouette has no fiche, so the reveal of a mixed pair leads to the
    * African half — never to `/pays/GRL`, which is a 404 behind an id that
    * looks like an ISO code because, for Greenland, it is one.
@@ -251,12 +294,74 @@ describe("the game also asks which country the projection enlarges more", () => 
   });
 
   /**
-   * Greenland against Kenya is 14,3 against 1,0 — an answer readable off the
-   * shape of the option, which is the eyesight the charter's kill test
-   * refuses. This question stays inside the continent.
+   * This question used to stay inside the continent, on the argument that
+   * Greenland against Kenya — 14,3 against 1,0 — is an answer readable off the
+   * option's own shape. It is: the round is easy crossed, and the measurement
+   * says so outright, the borrowed territory being the answer in 1 041 of the
+   * 1 051 crossed pairs.
+   *
+   * It is asked crossed all the same, because easy and unanswerable are not
+   * the same defect. A reader who picks Norway over Chad has applied the rule
+   * this page exists to install — distance from the equator is the whole
+   * mechanism — where a reader picking Tunisia over Malawi is recalling two
+   * latitudes. The parallel is what the page argues, and a session that draws
+   * it in one question and abandons it in the next argues it half the time.
+   * The tension the session needs is `largest-of-list`'s, where every option
+   * is drawn at least as large as the answer.
    */
   // @req REQ-120
-  it("never borrows a silhouette from outside the continent", async () => {
+  it("never sets two African countries against each other", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: Object.entries(AFRICA_ADMIN0).map(([id, shape]) =>
+        country(id, shape.nameFr)
+      ),
+    });
+
+    const envelope = await getGameRoundsHandler(mercator(), 0);
+    const rounds = withTemplate(envelope.data.rounds, "greater-inflation");
+
+    expect(rounds.length).toBeGreaterThan(0);
+    for (const round of rounds) {
+      const african = round.options.filter(
+        (option) => !isBorrowedLabel(option.labelFr)
+      );
+      expect(african).toHaveLength(1);
+    }
+  });
+
+  /**
+   * The reveal used to lead to the *answer's* fiche, on the argument that the
+   * answer is the country the reader was just surprised by. Crossed, the
+   * answer is the borrowed territory in 1 041 pairs out of 1 051 — so that
+   * link became `/pays/NOR`, a 404 behind an id that looks like an ISO code
+   * because it is one. It leads to the African half instead, the same rule the
+   * comparison round already follows.
+   */
+  // @req REQ-120
+  it("leads to the fiche of its African half, not of its answer", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: [country("TCD", "Tchad")],
+    });
+
+    const envelope = await getGameRoundsHandler(mercator(), 0);
+    const rounds = withTemplate(envelope.data.rounds, "greater-inflation");
+
+    expect(rounds.length).toBeGreaterThan(0);
+    for (const round of rounds) {
+      expect(round.reveal.ficheHref).toContain("TCD");
+    }
+  });
+
+  /**
+   * Two borrowed silhouettes against each other is a round on an atlas of
+   * African peoples that mentions no African anything — and an empty corpus is
+   * exactly when it would be served, the silhouettes being the only pool left
+   * standing.
+   */
+  // @req REQ-120
+  it("never sets two borrowed silhouettes against each other", async () => {
     loadGameCorpus.mockResolvedValue(emptyCorpus);
 
     const envelope = await getGameRoundsHandler(mercator(), 0);
@@ -297,6 +402,49 @@ describe("the game also asks which country the projection enlarges more", () => 
         withTemplate(rounds, template).length,
         `${template} bank`
       ).toBeGreaterThan(game.roundsPerSession);
+    }
+  });
+});
+
+/**
+ * The four-way round makes the same parallel as the pair, three times over.
+ */
+describe("a four-way round ranks one African country against the north", () => {
+  beforeEach(() => {
+    loadGameCorpus.mockReset();
+  });
+
+  /**
+   * One African anchor, three borrowed candidates — never a second African
+   * country among them.
+   *
+   * The anchor was already required to be African and the candidates were
+   * drawn from the whole pool, so a round could rank Cameroon against Congo
+   * and two northern countries. That is not a worse round than the pair it
+   * replaces, but it is a different lesson: the reader has to hold the
+   * continent's edge in view for the exaggeration to mean anything. Measured
+   * over the eighty outlines it costs nothing — twenty-six of the fifty-eight
+   * African countries can field three traps from outside the continent, which
+   * is the same twenty-six that can field three from the whole pool.
+   */
+  // @req REQ-120
+  it("draws every candidate from outside the continent", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: Object.entries(AFRICA_ADMIN0).map(([id, shape]) =>
+        country(id, shape.nameFr)
+      ),
+    });
+
+    const envelope = await getGameRoundsHandler(mercator(), 0);
+    const listRounds = withTemplate(envelope.data.rounds, "largest-of-list");
+
+    expect(listRounds.length).toBeGreaterThan(0);
+    for (const round of listRounds) {
+      const african = round.options.filter(
+        (option) => !isBorrowedLabel(option.labelFr)
+      );
+      expect(african).toHaveLength(1);
     }
   });
 });
@@ -355,6 +503,44 @@ describe("a session opens on more than one question", () => {
     expect(
       new Set(session.map((round) => round.template)).size
     ).toBeGreaterThanOrEqual(3);
+  });
+
+  /**
+   * No question may take the session's opening on its own.
+   *
+   * The three questions do not have banks of comparable size and cannot:
+   * crossing the continent's edge, almost every pair differs enough in
+   * latitude to be worth asking about, while very few are misranked by the
+   * flat map. So the inflation bank is naturally twice the comparison's, and
+   * because bands are computed inside each template, its top decile is twice
+   * as large too — which handed it six of the first eight rounds, Greenland
+   * three times among them. Round-robin alternation cannot fix that on its
+   * own: it only alternates between the rounds a band actually holds.
+   */
+  // @req REQ-120
+  it("never lets one question take more than half the opening session", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: Object.entries(AFRICA_ADMIN0).map(([id, shape]) =>
+        country(id, shape.nameFr)
+      ),
+    });
+
+    const game = mercator();
+    const envelope = await getGameRoundsHandler(game, 0);
+    const session = envelope.data.rounds.slice(0, game.roundsPerSession);
+
+    const perTemplate = new Map<string, number>();
+    for (const round of session) {
+      perTemplate.set(
+        round.template,
+        (perTemplate.get(round.template) ?? 0) + 1
+      );
+    }
+
+    for (const count of perTemplate.values()) {
+      expect(count).toBeLessThanOrEqual(game.roundsPerSession / 2);
+    }
   });
 });
 

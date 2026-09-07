@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import type { GameCountryFixture } from "@/lib/games/corpus";
+import type { ComparedTerritory } from "@/lib/games/territory";
 import {
   MINIMUM_INFLATION_RATIO,
   buildInflationRound,
@@ -25,6 +26,13 @@ const kenya = countryFixture("KEN", "Kenya");
 const gabon = countryFixture("GAB", "Gabon");
 const morocco = countryFixture("MAR", "Maroc");
 const undrawable = countryFixture("SHN", "Sainte-Hélène");
+
+/**
+ * A silhouette from outside the continent, which is what every pair the
+ * handler builds now holds one of. Not a `GameCountryFixture`: the atlas has
+ * no fiche for it, and that is the whole point of the destination rule below.
+ */
+const norway: ComparedTerritory = { id: "NOR", nameFr: "Norvège" };
 
 describe("buildInflationRound", () => {
   /**
@@ -113,13 +121,20 @@ describe("buildInflationRound", () => {
   });
 
   /**
-   * The reveal leads to the fiche of the country the round answers with, the
-   * way every reveal on this surface leads somewhere.
+   * The reveal leads to the African half of the pair — never to the answer
+   * when the answer is a borrowed silhouette.
+   *
+   * It used to lead to the answer, which was sound while both options were
+   * African. Every pair crosses the continent's edge now, and the answer is
+   * the borrowed territory in all but ten of them, so that rule was resolving
+   * to `/pays/NOR` — a 404 behind an id that looks like an ISO code because it
+   * is one.
    */
   // @req REQ-120
-  it("leads to the fiche of the country it answers with", () => {
-    expect(buildInflationRound(kenya, tunisia).reveal.ficheHref).toContain(
-      "TUN"
-    );
+  it("leads to the fiche of its African half, not of its answer", () => {
+    const round = buildInflationRound(kenya, norway);
+
+    expect(round.correctIndex).toBe(1);
+    expect(round.reveal.ficheHref).toContain("KEN");
   });
 });

@@ -3,10 +3,12 @@ import { getGameBySlug } from "@/lib/games/gameRegistry";
 import { inflationFr, latitudeFr } from "@/lib/games/format";
 import { MERCATOR_PROVENANCE_PATH } from "@/lib/games/rounds/mercatorRound";
 import {
+  documentedHalf,
   territoryFootprint,
   type ComparedTerritory,
   type TerritoryFootprint,
 } from "@/lib/games/territory";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import { getCountryRoute } from "@/lib/routing";
 import {
   INFLATION_ROUND_EN,
@@ -101,7 +103,7 @@ export function buildInflationRound(
 
   const correctIndex: 0 | 1 =
     footprintA.inflation > footprintB.inflation ? 0 : 1;
-  const answer = correctIndex === 0 ? a : b;
+  const leadsTo = documentedHalf(a, b);
 
   return {
     kind: "binary",
@@ -138,11 +140,19 @@ export function buildInflationRound(
       fieldPath: MERCATOR_PROVENANCE_PATH,
       sources: [],
       confidence: null,
-      // The answer's fiche rather than the first option's: this round has a
-      // subject — the country the projection distorts most — and it is the
-      // one the reader has just been surprised by.
-      ficheHref: getCountryRoute("fr", answer.id),
-      ficheHrefEn: getCountryRoute("en", answer.id),
+      // The African half rather than the answer's fiche. It used to be the
+      // answer, on the argument that this round has a subject — the country
+      // the projection distorts most — and that it is the one the reader was
+      // just surprised by. That held while both options were African. Now
+      // that every pair crosses the continent's edge, the answer is the
+      // borrowed territory in all but ten of the pairs, and its fiche does not
+      // exist: the link was resolving to `/pays/NOR`.
+      ficheHref: leadsTo
+        ? getCountryRoute("fr", leadsTo.id)
+        : getAxisHubRoute("fr", "atlas"),
+      ficheHrefEn: leadsTo
+        ? getCountryRoute("en", leadsTo.id)
+        : getAxisHubRoute("en", "atlas"),
     },
   };
 }

@@ -87,6 +87,23 @@ function rotate<T>(items: T[], seed: number): T[] {
 const POOL_PASSES = 3;
 
 /**
+ * The inflation question walks the pool once, and only it.
+ *
+ * Three passes were the answer to a scarce bank. Crossing the continent's edge
+ * ended the scarcity for this question alone: nearly every African country
+ * differs enough in latitude from nearly every borrowed silhouette to be worth
+ * asking about, where `mercatorMisleads` still rejects most pairs the
+ * comparison could form. Three passes therefore built sixty-two inflation
+ * rounds against thirty-one comparisons — and since each template bands its
+ * own rounds, that doubled its top decile too, which is how it took six of the
+ * first eight rounds with Greenland in three of them.
+ *
+ * One pass leaves it the size of the questions it alternates with, which is
+ * what the round-robin in `interleave` assumes and cannot enforce by itself.
+ */
+const INFLATION_POOL_PASSES = 1;
+
+/**
  * Pairs a pool off against itself, keeping only the pairs `worthAsking`
  * accepts and never emitting the same pair twice.
  *
@@ -103,19 +120,17 @@ const POOL_PASSES = 3;
  */
 function pairOff<T extends ComparedTerritory>(
   pool: T[],
-  worthAsking: (a: T, b: T) => boolean
+  worthAsking: (a: T, b: T) => boolean,
+  passes: number = POOL_PASSES
 ): [T, T][] {
   const out: [T, T][] = [];
   const emitted = new Set<string>();
 
-  for (let pass = 0; pass < POOL_PASSES; pass++) {
+  for (let pass = 0; pass < passes; pass++) {
     // Each pass starts further into the list, so the greedy walk meets a
     // different first partner. Without it every pass is the same pass:
     // greedy pairing over one order is deterministic.
-    const ordered = rotate(
-      pool,
-      Math.floor((pool.length * pass) / POOL_PASSES)
-    );
+    const ordered = rotate(pool, Math.floor((pool.length * pass) / passes));
     const spent = new Set<string>();
 
     for (let i = 0; i < ordered.length; i++) {
@@ -178,14 +193,41 @@ function bandedPool<T>(
 }
 
 /**
+ * One African country against one territory from outside the continent, and
+ * the flat map has to misrepresent which of them is larger.
+ *
+ * **Exactly one African side, not at least one.** The rule used to be « at
+ * least », which a pool drawn from two assets satisfies by accident, and it
+ * let intra-African pairs through: measured over the eighty committed
+ * outlines, three of them against a hundred and twenty-two crossed ones. Those
+ * three are not a bonus. Mercator's factor runs from 1,00 to 1,46 across
+ * Africa, so an inversion of rank between two African countries needs two
+ * near-identical areas, and it is the near-ties this page has been narrowing
+ * `MINIMUM_AREA_RATIO` and `MINIMUM_DRAWN_INVERSION` against since it shipped.
+ * The parallel the reader is here for has two sides, and only a crossed pair
+ * has both.
+ *
+ * The other half of the rule is unchanged and matters as much: two borrowed
+ * silhouettes set against each other would be a round about Europe and India
+ * on an atlas of African peoples, and an empty corpus is precisely when that
+ * happens — the silhouettes are the only pool left standing.
+ */
+function crossesTheContinentsEdge(
+  a: ComparedTerritory,
+  b: ComparedTerritory
+): boolean {
+  return (
+    isAfricanTerritory(a) !== isAfricanTerritory(b) && mercatorMisleads(a, b)
+  );
+}
+
+/**
  * The comparisons of one territory against another.
  *
- * The pool is the corpus plus the six silhouettes from outside the continent,
- * because the pairs worth asking are mostly not inside Africa. Mercator's
- * factor runs from 1,00 to 1,46 across the African outlines, so an inversion
- * of rank there needs two countries of near-identical area — sixteen pairs
- * clear both filters, and « Groenland ou RDC ? », the comparison this page was
- * built to make, was not among them for want of a second asset.
+ * The pool is the corpus plus the silhouettes from outside the continent,
+ * because the pairs worth asking are not inside Africa at all — « Groenland ou
+ * RDC ? », the comparison this page was built to make, was unreachable for
+ * want of a second asset.
  *
  * A session that cannot be filled with misleading pairs is served short:
  * padding it with honest comparisons would quietly undo the filter, and
@@ -198,15 +240,8 @@ function comparisonRounds(corpus: GameCorpus, seed: number): GameRound[] {
     trueAreaKm2
   );
 
-  // At least one half of every pair is African. Two borrowed silhouettes set
-  // against each other would be a round about Europe and India on an atlas of
-  // African peoples, and an empty corpus is precisely when that happens: the
-  // six silhouettes are the only pool left standing.
-  const aboutAfrica = (a: ComparedTerritory, b: ComparedTerritory) =>
-    (isAfricanTerritory(a) || isAfricanTerritory(b)) && mercatorMisleads(a, b);
-
   const rounds: GameRound[] = [];
-  for (const [a, b] of pairOff(ordered, aboutAfrica)) {
+  for (const [a, b] of pairOff(ordered, crossesTheContinentsEdge)) {
     const round = buildMercatorRound(a, b);
     if (!round) continue;
 
@@ -223,10 +258,25 @@ function comparisonRounds(corpus: GameCorpus, seed: number): GameRound[] {
  * The rounds about the projection itself: which of two countries it enlarges
  * more.
  *
- * African outlines only — a silhouette from outside the continent would make
- * the answer readable off the option's own shape, which is the eyesight the
- * charter's kill test refuses. See `inflationRound` for the rest of that
- * argument, and for why this question exists at all.
+ * One African country against one territory from outside it, like every other
+ * round this game serves.
+ *
+ * This question was African-only until the parallel became the page's rule
+ * rather than one of its questions, and the argument for keeping it inside was
+ * a real one: crossed, the borrowed territory is the answer in 1 041 of the
+ * 1 051 pairs that clear the threshold, so « Tchad ou Norvège ? » is easy.
+ *
+ * Easy is not the defect the kill test names. It refuses eyesight, arithmetic
+ * and the coin flip; a reader who picks Norway has used the mechanism — the
+ * further from the equator, the more the map enlarges — which is the one thing
+ * this page is for. What it cost to keep the question inside Africa was the
+ * parallel itself: « Liberia ou Tunisie ? » asks the reader to recall two
+ * latitudes, and four of every eight rounds were doing that while the game
+ * around them argued Africa against the north.
+ *
+ * The session's tension lives in `largest-of-list`, where three of the four
+ * options are drawn at least as large as the answer and no rule about
+ * categories gets a reader through.
  *
  * Difficulty is the gap between the two factors, not the size of either: 1,46
  * against 1,00 is a judgement a reader can make from where the two countries
@@ -242,10 +292,18 @@ function inflationGap(a: ComparedTerritory, b: ComparedTerritory): number {
  * The four-way comparisons: one African country against three territories the
  * flat map draws at least as large.
  *
- * The anchor is always African and the candidates come from the whole pool,
- * which is what makes the round hard in the right way — three northern
- * countries against one equatorial one cannot be sorted by « which is not
- * northern », only by how much each is inflated.
+ * The anchor is African and every candidate comes from outside the continent —
+ * the same parallel the pair makes, drawn three times over. The candidates
+ * used to be taken from the whole pool, which let a second African country
+ * stand among them; that is not a worse round, it is a different lesson, and
+ * this one is about the edge. It costs nothing: twenty-six of the fifty-eight
+ * African outlines can field three traps from outside the continent, the same
+ * twenty-six that could field three from the whole pool.
+ *
+ * The round is still not sortable by « which is not northern » — that shortcut
+ * needs a non-northern option to point at, and here every candidate is one the
+ * flat map draws at least as large as the answer. Ruling one out means ranking
+ * the exaggeration, which is the rule the page teaches.
  *
  * Candidates are taken in pool order rather than picked by size. Sorting them
  * would put the same three countries against every anchor, because the same
@@ -266,7 +324,7 @@ function listRounds(corpus: GameCorpus, seed: number): GameRound[] {
     const candidates = pool
       .filter(
         (candidate) =>
-          candidate.id !== anchor.id && isMercatorTrapFor(anchor, candidate)
+          !isAfricanTerritory(candidate) && isMercatorTrapFor(anchor, candidate)
       )
       .slice(0, LIST_OPTION_COUNT - 1);
 
@@ -285,8 +343,11 @@ function listRounds(corpus: GameCorpus, seed: number): GameRound[] {
 
 function inflationRounds(corpus: GameCorpus, seed: number): GameRound[] {
   const pairs = pairOff(
-    rotate(corpus.countries, seed),
-    (a, b) => inflationGap(a, b) >= MINIMUM_INFLATION_RATIO
+    rotate([...corpus.countries, ...NON_AFRICAN_SILHOUETTES], seed),
+    (a, b) =>
+      isAfricanTerritory(a) !== isAfricanTerritory(b) &&
+      inflationGap(a, b) >= MINIMUM_INFLATION_RATIO,
+    INFLATION_POOL_PASSES
   );
 
   const built = pairs

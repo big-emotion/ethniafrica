@@ -683,3 +683,94 @@ reader holds no wrong picture of Mongolia to correct, so the round could only be
 recalled, and half the ratios would land near Greenland's fourteen as
 duplicates. The estimate round stays at six until a shape earns its place by
 being one the audience already thinks it knows.
+
+---
+
+## 14. The parallel becomes the rule (2026-09-07)
+
+§13 widened the pool so a round _could_ reach outside the continent. It stayed
+optional, and the filter said so: `mercator` asked only that **at least one**
+side of a pair be African. A pool drawn from two assets satisfies that by
+accident, so the game kept serving what it had always served — « Liberia ou
+Tunisie ? », « Malawi ou Tunisie ? » — beside the crossed rounds it was widened
+for.
+
+**Every round of this game now sets Africa against what is not Africa.** One
+African country against one borrowed silhouette for both pair questions, one
+African anchor against three borrowed candidates for the four-way, and the
+continent itself against a borrowed shape for the estimate, which already did.
+
+### What it costs, measured
+
+Rounds the handler builds over the fifty-eight African outlines and the
+twenty-two borrowed silhouettes, at seed 0:
+
+| Question                        | Before | After  | Why it moved                                  |
+| ------------------------------- | ------ | ------ | --------------------------------------------- |
+| `larger-area`                   | 31     | 31     | unchanged — see below                         |
+| `largest-of-list`               | 26     | 26     | the same 26 anchors can field 3 crossed traps |
+| `greater-inflation`             | 27     | 21     | every pair recut, and the pool walked once    |
+| `fits-in-africa`                | 6      | 6      | it was already crossed                        |
+| **whole bank**                  | **90** | **84** |                                               |
+| …opposing two African countries | **27** | **0**  |                                               |
+
+`larger-area` does not move, and that is worth stating rather than rounding
+into a saving. Three intra-African pairs clear its filters — the DRC against
+Algeria, Kenya against Morocco, Somaliland against Tunisia — but the greedy
+pairing was spending both halves of each on a silhouette before it reached
+them, so refusing them costs nothing at this seed and guarantees they cannot
+surface at another. They would be no loss anyway: Mercator's factor runs from
+1,00 to 1,46 across the African outlines, so an inversion of rank between two
+of them needs two near-identical areas — the near-tie every threshold on this
+page has been raised against since it shipped.
+
+### The one question that resisted, and why it was crossed anyway
+
+`greater-inflation` was African-only on a real argument: Greenland against
+Kenya is 14,3 against 1,0, an answer readable off the option's own shape.
+Measured, crossing it is worse than that argument suggested — the borrowed
+territory is the answer in **1 041 of the 1 051** crossed pairs that clear
+`MINIMUM_INFLATION_RATIO`, and the ten exceptions are Brazil eight times. There
+is no selection of pairs that fixes it: the factor is a function of latitude,
+and every borrowed silhouette but Brazil sits further from the equator than
+every African country.
+
+It is asked crossed regardless, because **easy and unanswerable are not the
+same defect**. The kill test refuses eyesight, arithmetic and the coin flip. A
+reader who picks Norway over Chad has used the mechanism this page exists to
+install; a reader picking Tunisia over Malawi is recalling two latitudes, which
+is harder and teaches less. What the African-only version cost was the parallel
+itself, in four of every eight rounds.
+
+The tension a session needs lives in `largest-of-list`, where three of the four
+options are drawn at least as large as the answer and no rule about categories
+gets a reader through. That round is why this one may be easy.
+
+### Two defects the crossing opened, both fixed here
+
+**The reveal led nowhere.** `greater-inflation` linked to the _answer's_ fiche,
+sound while both options were African. Crossed, the answer is a silhouette in
+all but ten pairs and the link resolved to `/pays/NOR` — a 404 behind an id
+that looks like an ISO code because it is one. Both pair questions now lead to
+the pair's African half, through one `documentedHalf` in `lib/games/territory`
+rather than a copy each.
+
+**One question took the opening.** Crossed, nearly every African country
+differs enough in latitude from nearly every silhouette to be worth asking
+about, where `mercatorMisleads` still rejects most pairs a comparison could
+form. Three passes over the pool therefore built 62 inflation rounds against 31
+comparisons, and since each template bands its own rounds, its top decile grew
+with it: six of the first eight rounds, Greenland in three of them. The
+round-robin cannot fix that — it only alternates between the rounds a band
+holds. The inflation question walks the pool **once**; the scarce ones still
+walk it three times.
+
+### What is not settled
+
+In a crossed `larger-area` round the African country is the answer **122 times
+out of 122** — by construction, since the round exists to show a country drawn
+smaller than it is. Paired with `greater-inflation`, where the answer is the
+silhouette, a reader could in principle answer both without reading: « le plus
+grand, c'est l'africain ; le plus agrandi, c'est l'autre ». Nothing here
+prevents that. It is recorded rather than smoothed over, and the four-way round
+is the only thing standing against it today.
