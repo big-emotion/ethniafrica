@@ -10,6 +10,10 @@ import {
   transformPeopleData,
   transformSourcedRelationsPreview,
 } from "@/lib/peopleDataTransformer";
+import {
+  resolveAssociatedPeoples,
+  type PeopleNameIndexEntry,
+} from "@/lib/people/associatedPeopleLinks";
 import type { SourcedRelation } from "@/types/relations";
 import {
   PeopleOriginBlock,
@@ -82,6 +86,16 @@ export interface PeopleDetailViewV2Props {
    * thirty-three tests across five files, none of whose messages named it.
    */
   onward?: ReactNode;
+  /**
+   * Every people the corpus holds a fiche for, by name, read by the route.
+   *
+   * The index rather than a resolved list, so the groups this fiche links can
+   * only ever be derived from the `ethnicities` it already prints — a list
+   * handed in from outside could disagree with the chapter's own gate. Absent,
+   * every group resolves to nothing, which is the answer for 3735 of the
+   * corpus's 4050 entries anyway and is rendered as the plain chip it was.
+   */
+  peopleNameIndex?: readonly PeopleNameIndexEntry[];
 }
 
 /**
@@ -134,6 +148,7 @@ export function PeopleDetailViewV2({
   bibliography,
   borneNames = null,
   onward,
+  peopleNameIndex,
 }: PeopleDetailViewV2Props) {
   const copy = peopleCopy[language];
   const data = transformPeopleData(people, namesDossier);
@@ -146,6 +161,13 @@ export function PeopleDetailViewV2({
   const sources = bibliography ?? data.sources;
   const distribution = people.demography?.distributionByCountry;
   const relationsPreview = transformSourcedRelationsPreview(relations);
+  // Self excluded: a fiche whose own name appears among its groups would
+  // otherwise offer the reader a link back to the page they are on.
+  const associatedGroups = resolveAssociatedPeoples(
+    data.relatedPeoples.ethnicities,
+    peopleNameIndex ?? [],
+    data.hero.peopleId
+  );
 
   return (
     <div className="afh-parchment" id="fiche">
@@ -331,6 +353,7 @@ export function PeopleDetailViewV2({
             language={language}
             peopleId={data.hero.peopleId}
             relationsPreview={relationsPreview}
+            associatedGroups={associatedGroups}
           />
         ) : (
           <FieldProvenanceMarker state="missing" language={language} />

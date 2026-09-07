@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 
 import { PeopleRelatedPeoplesSection } from "../PeopleRelatedPeoplesSection";
 import type { PeopleRelatedData } from "@/lib/peopleDataTransformer";
-import { getPeopleLinksRoute } from "@/lib/routing";
+import { getPeopleLinksRoute, getPeopleRoute } from "@/lib/routing";
 
 const EMPTY_DATA: PeopleRelatedData = {
   ethnicities: [],
@@ -16,6 +16,7 @@ describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)
       <PeopleRelatedPeoplesSection
         language="en"
         data={{ ethnicities: ["Oyo"], roleOfLineages: "Texte du corpus" }}
+        associatedGroups={[{ label: "Oyo" }]}
       />
     );
     expect(screen.getByText("Associated groups")).toBeVisible();
@@ -29,6 +30,7 @@ describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)
       <PeopleRelatedPeoplesSection
         language="fr"
         data={EMPTY_DATA}
+        associatedGroups={[]}
         peopleId="PPL_YORUBA"
         relationsPreview={[
           {
@@ -77,6 +79,7 @@ describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)
       <PeopleRelatedPeoplesSection
         language="fr"
         data={EMPTY_DATA}
+        associatedGroups={[]}
         peopleId="PPL_YORUBA"
         relationsPreview={[]}
       />
@@ -93,6 +96,7 @@ describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)
       <PeopleRelatedPeoplesSection
         language="fr"
         data={{ ethnicities: ["Oyo"] }}
+        associatedGroups={[{ label: "Oyo" }]}
         peopleId="PPL_YORUBA"
         relationsPreview={[]}
       />
@@ -110,6 +114,7 @@ describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)
       <PeopleRelatedPeoplesSection
         language="fr"
         data={EMPTY_DATA}
+        associatedGroups={[]}
         relationsPreview={[]}
       />
     );
@@ -129,6 +134,7 @@ describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)
           roleOfLineages: "Rôle central des lignages dans la vie sociale.",
           religiousAuthority: "Alaafin d'Oyo, Ooni d'Ife.",
         }}
+        associatedGroups={[]}
         peopleId="PPL_YORUBA"
         relationsPreview={[]}
       />
@@ -138,5 +144,79 @@ describe("PeopleRelatedPeoplesSection — relations preview (Epic 11, FR72/FR75)
     expect(screen.getByText(/vie sociale/)).toBeInTheDocument();
     expect(screen.getByText("Autorité religieuse")).toBeInTheDocument();
     expect(screen.getByText(/Alaafin/)).toBeInTheDocument();
+  });
+});
+
+describe("PeopleRelatedPeoplesSection — associated groups that name a fiche", () => {
+  const GLOSSED_RESOLVED =
+    "Karanga — sous-groupe dominant du centre-sud du Zimbabwe";
+  const GLOSSED_UNRESOLVED = "Rozvi — confédération dissoute au XIXe siècle";
+
+  // @req REQ-150
+  it("links a group the corpus holds a fiche for to that fiche", () => {
+    render(
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={{ ethnicities: [GLOSSED_RESOLVED] }}
+        associatedGroups={[
+          { label: GLOSSED_RESOLVED, peopleId: "PPL_KARANGA" },
+        ]}
+        peopleId="PPL_SHONA"
+      />
+    );
+
+    const chip = screen.getByRole("link", { name: GLOSSED_RESOLVED });
+    expect(chip).toHaveAttribute("href", getPeopleRoute("fr", "PPL_KARANGA"));
+  });
+
+  // @req REQ-150
+  it("leaves a group no fiche carries as plain text", () => {
+    render(
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={{ ethnicities: [GLOSSED_UNRESOLVED] }}
+        associatedGroups={[{ label: GLOSSED_UNRESOLVED }]}
+        peopleId="PPL_SHONA"
+      />
+    );
+
+    expect(screen.getByText(GLOSSED_UNRESOLVED)).toBeInTheDocument();
+    expect(screen.queryByRole("link")).not.toBeInTheDocument();
+  });
+
+  // The leading-name split is a matching device inside the resolver; the
+  // reader is owed the corpus entry whole, linked or not.
+  // @req REQ-150
+  it("prints the whole corpus entry, gloss included, whether or not it links", () => {
+    render(
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={{ ethnicities: [GLOSSED_RESOLVED, GLOSSED_UNRESOLVED] }}
+        associatedGroups={[
+          { label: GLOSSED_RESOLVED, peopleId: "PPL_KARANGA" },
+          { label: GLOSSED_UNRESOLVED },
+        ]}
+        peopleId="PPL_SHONA"
+      />
+    );
+
+    expect(screen.getByText(GLOSSED_RESOLVED)).toBeInTheDocument();
+    expect(screen.getByText(GLOSSED_UNRESOLVED)).toBeInTheDocument();
+  });
+
+  // @req REQ-150
+  it("renders no groups block at all for a fiche that declares none", () => {
+    const { container } = render(
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={{ ethnicities: [], politicalSystem: "Monarchie sous Oba" }}
+        associatedGroups={[]}
+        peopleId="PPL_SHONA"
+      />
+    );
+
+    expect(screen.getByText("Monarchie sous Oba")).toBeInTheDocument();
+    expect(screen.queryByText("Groupes associés")).not.toBeInTheDocument();
+    expect(container.querySelectorAll("[data-ethnicity-card]")).toHaveLength(0);
   });
 });

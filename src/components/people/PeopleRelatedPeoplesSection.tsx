@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { FicheProse } from "@/components/fiche/FicheProse";
 import { ActionLink } from "@/components/ui/ActionLink";
 
@@ -7,7 +9,10 @@ import {
   type PeopleRelationPreviewItem,
 } from "@/lib/peopleDataTransformer";
 import { RelationTypeBadge } from "@/components/relations/RelationTypeBadge";
-import { getPeopleLinksRoute } from "@/lib/routing";
+import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
+import { cn } from "@/lib/utils";
+import type { AssociatedGroup } from "@/lib/people/associatedPeopleLinks";
+import { getPeopleLinksRoute, getPeopleRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 import { peopleCopy } from "@/lib/i18n/copy/people";
 
@@ -16,7 +21,24 @@ interface PeopleRelatedPeoplesSectionProps {
   language: Language;
   peopleId?: string;
   relationsPreview?: PeopleRelationPreviewItem[];
+  /**
+   * `data.ethnicities`, each entry already told whether the corpus holds a
+   * fiche under that name. Required rather than defaulted: an empty list next
+   * to a non-empty `ethnicities` would open the chapter and print nothing,
+   * because `hasRelatedContent` gates on the latter.
+   */
+  associatedGroups: AssociatedGroup[];
 }
+
+const GROUP_CHIP_CLASS =
+  "px-[10px] py-[6px] rounded-[var(--country-radius-md)] border";
+
+const GROUP_CHIP_STYLE = {
+  background: "var(--country-earth-bg)",
+  borderColor: "var(--country-border)",
+} as const;
+
+const GROUP_LABEL_CLASS = "text-afh-small font-semibold leading-tight";
 
 // @req REQ-097 FR72
 // @req REQ-097 FR75
@@ -25,6 +47,7 @@ export function PeopleRelatedPeoplesSection({
   language,
   peopleId,
   relationsPreview = [],
+  associatedGroups,
 }: PeopleRelatedPeoplesSectionProps) {
   const copy = peopleCopy[language].relatedFields;
   const hasContent = hasRelatedContent(data) || relationsPreview.length > 0;
@@ -68,32 +91,60 @@ export function PeopleRelatedPeoplesSection({
         </div>
       )}
 
-      {data.ethnicities.length > 0 && (
+      {associatedGroups.length > 0 && (
         <div>
           <dt className="people-section-label">{copy.associatedGroups}</dt>
           <dd className="afh-prose-def">
             <div className="flex flex-wrap gap-[8px] mt-[8px]">
-              {data.ethnicities.map((e, i) => (
-                <div
-                  key={i}
-                  data-ethnicity-card="true"
-                  className="px-[10px] py-[6px] rounded-[var(--country-radius-md)] border"
-                  style={{
-                    background: "var(--country-earth-bg)",
-                    borderColor: "var(--country-border)",
-                  }}
-                >
+              {/* The chip skin is kept and an anchor put in place of the div,
+                  rather than turning the row into ActionLink arrows: this is a
+                  chip that became navigable, and 3735 of the corpus's 4050
+                  entries stay inert beside it. Only the ink changes, to the
+                  accent ActionLink already reads — same skin, same padding,
+                  same weight — so the row keeps its wrap at 430px and an inert
+                  chip carries no mark of being inert. */}
+              {associatedGroups.map((group, index) => {
+                // The corpus entry whole, gloss included: the resolver's
+                // leading-name split is a matching device, not a trim.
+                const label = (
                   <span
-                    className="text-afh-small font-semibold leading-tight"
+                    className={GROUP_LABEL_CLASS}
                     style={{
                       fontFamily: "var(--country-font-body)",
-                      color: "var(--country-text)",
+                      color: group.peopleId
+                        ? "var(--accent-ink)"
+                        : "var(--country-text)",
                     }}
                   >
-                    {e}
+                    {group.label}
                   </span>
-                </div>
-              ))}
+                );
+
+                return group.peopleId ? (
+                  <Link
+                    key={index}
+                    href={getPeopleRoute(language, group.peopleId)}
+                    data-ethnicity-card="true"
+                    className={cn(
+                      GROUP_CHIP_CLASS,
+                      "no-underline hover:underline focus-visible:underline underline-offset-4",
+                      CHARTER_FOCUS_RING
+                    )}
+                    style={GROUP_CHIP_STYLE}
+                  >
+                    {label}
+                  </Link>
+                ) : (
+                  <div
+                    key={index}
+                    data-ethnicity-card="true"
+                    className={GROUP_CHIP_CLASS}
+                    style={GROUP_CHIP_STYLE}
+                  >
+                    {label}
+                  </div>
+                );
+              })}
             </div>
           </dd>
         </div>

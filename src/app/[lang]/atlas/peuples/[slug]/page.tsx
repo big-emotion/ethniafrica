@@ -36,7 +36,10 @@ import { PeopleFicheTitle } from "@/components/people/PeopleFicheTitle";
 import { buildPeopleFieldOverlay } from "@/lib/atlas/overlays";
 import { buildPeoplePresenceFacts } from "@/components/people/peoplePresenceFacts";
 import { peopleFallbackNote } from "@/components/people/peopleFallbackNote";
-import { getPeopleById } from "@/api/v2/services/peopleService";
+import {
+  getPeopleById,
+  getPeopleNameIndex,
+} from "@/api/v2/services/peopleService";
 import { getPeopleNamesDossier } from "@/api/v2/services/names";
 import { getPatronymesBorneByPeople } from "@/api/v2/services/patronymeFicheLinks";
 import { getPeopleFragmentation } from "@/api/v2/services/peopleFragmentation";
@@ -189,6 +192,7 @@ export default async function PeoplesSlugPage({
     egoNetwork,
     fieldNotes,
     borneNames,
+    peopleNameIndex,
   ] = await Promise.all([
     loadPeopleFiche(parsed.slug, lang as Language),
     getActiveSourceFlags("people", parsed.slug),
@@ -202,6 +206,10 @@ export default async function PeoplesSlugPage({
     // saying this people carries no name, which is the ordinary answer and
     // one the chapter prints. A failed read must not be able to say that.
     getPatronymesBorneByPeople(parsed.slug).catch(() => null),
+    // Which of this fiche's "groupes associés" the corpus holds a fiche for.
+    // The service already answers `[]` when the read fails, and an empty index
+    // costs links rather than the chips themselves.
+    getPeopleNameIndex(),
   ]);
   if (!people) {
     notFound();
@@ -346,6 +354,7 @@ export default async function PeoplesSlugPage({
             relations={egoNetwork.sourced}
             notes={notes}
             borneNames={borneNames}
+            peopleNameIndex={peopleNameIndex}
             // Only when something cites it: a bibliography numbered for
             // nobody promises an anchor that does not exist.
             bibliography={notes.count > 0 ? register.entries : undefined}

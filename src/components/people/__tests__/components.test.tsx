@@ -15,6 +15,11 @@ import type {
   PeopleRelatedData,
   PeopleCountriesData,
 } from "@/lib/peopleDataTransformer";
+import { resolveAssociatedPeoples } from "@/lib/people/associatedPeopleLinks";
+
+/** The corpus entries of a fiche, none of which names a people the index holds. */
+const unmatchedGroups = (related: PeopleRelatedData) =>
+  resolveAssociatedPeoples(related.ethnicities, []);
 
 // ==========================================
 // PeopleFicheHead replaced PeopleHero: the mockup's fiche head is an
@@ -253,7 +258,11 @@ describe("PeopleRelatedPeoplesSection", () => {
       ethnicities: [],
     };
     const { container } = render(
-      <PeopleRelatedPeoplesSection language="fr" data={empty} />
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={empty}
+        associatedGroups={unmatchedGroups(empty)}
+      />
     );
     expect(container.firstChild).toBeNull();
   });
@@ -262,7 +271,13 @@ describe("PeopleRelatedPeoplesSection", () => {
     const data: PeopleRelatedData = {
       ethnicities: ["Ìjẹ̀bú", "Ẹ̀gbá", "Ọ̀yọ́"],
     };
-    render(<PeopleRelatedPeoplesSection language="fr" data={data} />);
+    render(
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={data}
+        associatedGroups={unmatchedGroups(data)}
+      />
+    );
     expect(screen.getByText("Ìjẹ̀bú")).toBeTruthy();
     expect(screen.getByText("Ẹ̀gbá")).toBeTruthy();
     expect(screen.getByText("Ọ̀yọ́")).toBeTruthy();
@@ -273,7 +288,13 @@ describe("PeopleRelatedPeoplesSection", () => {
       ethnicities: [],
       politicalSystem: "Monarchie constitutionnelle sous un Oba",
     };
-    render(<PeopleRelatedPeoplesSection language="fr" data={data} />);
+    render(
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={data}
+        associatedGroups={unmatchedGroups(data)}
+      />
+    );
     expect(
       screen.getByText("Monarchie constitutionnelle sous un Oba")
     ).toBeTruthy();
@@ -284,7 +305,13 @@ describe("PeopleRelatedPeoplesSection", () => {
       ethnicities: [],
       clanOrganization: "Clans patrilinéaires (idile)",
     };
-    render(<PeopleRelatedPeoplesSection language="fr" data={data} />);
+    render(
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={data}
+        associatedGroups={unmatchedGroups(data)}
+      />
+    );
     expect(screen.getByText("Clans patrilinéaires (idile)")).toBeTruthy();
   });
 
@@ -293,7 +320,13 @@ describe("PeopleRelatedPeoplesSection", () => {
       ethnicities: [],
       ageClassSystems: "Système des grades d'âge (ẹgbẹ)",
     };
-    render(<PeopleRelatedPeoplesSection language="fr" data={data} />);
+    render(
+      <PeopleRelatedPeoplesSection
+        language="fr"
+        data={data}
+        associatedGroups={unmatchedGroups(data)}
+      />
+    );
     expect(screen.getByText("Système des grades d'âge (ẹgbẹ)")).toBeTruthy();
   });
 });
