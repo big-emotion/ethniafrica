@@ -56,6 +56,19 @@ vi.mock("@/api/v2/services/languageFamilyService", async (importOriginal) => ({
   getLanguageFamilyById: async (id: string) => ({ id, nameFr: id }),
 }));
 
+// The language fiche joined them when its head started naming the fiche
+// (REQ-091): its `generateMetadata` read nothing before, so it was the one
+// route here that reached Supabase for real.
+vi.mock("@/api/v2/services/languageService", async (importOriginal) => ({
+  ...(await importOriginal<object>()),
+  getLanguageById: async (id: string) => ({
+    id,
+    name: id,
+    family: { id: "FLG_TEST", name: "Bantou" },
+    speakingPeoples: [],
+  }),
+}));
+
 vi.mock("@/api/v2/services/patronymes", async (importOriginal) => ({
   ...(await importOriginal<object>()),
   getPatronymeById: async (id: string) => ({

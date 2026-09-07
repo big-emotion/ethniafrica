@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { ficheCanonical } from "@/lib/seo/ficheCanonical";
+import { ficheHead } from "@/lib/seo/ficheHead";
 import type { Language } from "@/types/shared";
 import { loadPatronymeFiche } from "@/lib/fiche/ficheExistence";
 import { readNameStanding } from "@/lib/patronymes/content";
@@ -44,8 +44,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, slug } = await params;
 
-  const canonical = await ficheCanonical("name", lang as Language, slug);
-  // An unparseable slug gets no metadata from `ficheCanonical`, and a robots
+  const canonical = await ficheHead("name", lang as Language, slug);
+  // An unparseable slug gets no metadata from `ficheHead`, and a robots
   // directive on a 404 would be the same mistake in another field.
   if (!canonical.alternates) return canonical;
 

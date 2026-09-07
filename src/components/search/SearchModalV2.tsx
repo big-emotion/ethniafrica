@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { Language } from "@/types/shared";
 import { search } from "@/lib/afrikLoader";
+import { trackEvent } from "@/lib/analytics/trackEvent";
 import { ficheHrefFor } from "@/components/search/SearchResultCard";
 import {
   SearchEntityMark,
@@ -98,6 +99,14 @@ export const SearchModalV2 = ({
     event.preventDefault();
     const trimmed = suggest.query.trim();
     if (!trimmed) return;
+    // The suggestion count, never the query itself: a search term is what the
+    // visitor was looking for, and this surface is cookie-less by design. What
+    // the plan needs to know is how often a search runs against nothing, which
+    // the count answers and the term does not.
+    trackEvent("search:submit", {
+      surface: "modal",
+      suggestions: suggest.options.length,
+    });
     router.push(
       `${getLocalizedRoute(language, "search")}?${new URLSearchParams({ q: trimmed })}`
     );

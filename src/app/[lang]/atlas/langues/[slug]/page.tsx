@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
-import { ficheCanonical } from "@/lib/seo/ficheCanonical";
+import { ficheHead } from "@/lib/seo/ficheHead";
 import type { Language } from "@/types/shared";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
@@ -27,7 +27,7 @@ export async function generateMetadata({
   params: Promise<PageParams>;
 }): Promise<Metadata> {
   const { lang, slug } = await params;
-  return ficheCanonical("language", lang as Language, slug);
+  return ficheHead("language", lang as Language, slug);
 }
 
 // ---------------------------------------------------------------------------

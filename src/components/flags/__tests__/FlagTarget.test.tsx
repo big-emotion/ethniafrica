@@ -224,7 +224,7 @@ describe("FlagTarget", () => {
         expect.objectContaining({ description: "signalement enregistré" })
       );
       expect(window.plausible).toHaveBeenCalledWith(
-        "flag_submitted",
+        "report:submit",
         expect.objectContaining({
           props: expect.objectContaining({ target_type: "assertion" }),
         })

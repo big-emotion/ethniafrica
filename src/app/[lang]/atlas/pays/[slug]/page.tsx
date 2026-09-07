@@ -7,7 +7,7 @@ import {
   loadCountryFiche,
 } from "@/lib/fiche/ficheExistence";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
-import { ficheCanonical } from "@/lib/seo/ficheCanonical";
+import { ficheHead } from "@/lib/seo/ficheHead";
 import { getCountryRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 import {
@@ -85,7 +85,7 @@ export async function generateMetadata({
     notFound();
   }
 
-  return ficheCanonical("country", lang as Language, slug);
+  return ficheHead("country", lang as Language, slug);
 }
 
 interface PageSearchParams {

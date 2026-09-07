@@ -15,6 +15,7 @@ import {
 import { isEstimateRound, type GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import type { ScaleFact } from "@/lib/games/scaleFacts";
+import { trackEvent } from "@/lib/analytics/trackEvent";
 import { takeSession } from "@/lib/games/session";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { cn } from "@/lib/utils";
@@ -88,6 +89,29 @@ export const GamePlayIsland = ({
   useEffect(() => {
     onPhaseChange?.(status);
   }, [status, onPhaseChange]);
+
+  /**
+   * The pair that decides whether a game is worth keeping.
+   *
+   * Measured 2026-09-07: `/fr/jeux/mercator` was the site's second entry point
+   * — 13 arrivals — at a 10-second visit and an 86.7% exit rate. Nothing
+   * recorded said whether the game failed to start on mobile or simply held
+   * nobody, and repairing the wrong one of those was the risk. `sessionIndex`
+   * is a dependency so a replay counts as a start: a reader who plays twice is
+   * the strongest signal this surface can produce.
+   */
+  useEffect(() => {
+    trackEvent("game:start", { game: game.id });
+  }, [game.id, sessionIndex]);
+
+  useEffect(() => {
+    if (status !== "finished") return;
+    trackEvent("game:complete", {
+      game: game.id,
+      correct: session.correctCount,
+      rounds: sessionRounds.length,
+    });
+  }, [status, game.id, session.correctCount, sessionRounds.length]);
 
   const factForReveal =
     facts.length > 0 && (session.currentIndex + 1) % FACT_EVERY === 0

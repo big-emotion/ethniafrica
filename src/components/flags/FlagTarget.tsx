@@ -10,7 +10,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useOptionalConsent } from "@/hooks/use-consent";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { reportsCopy } from "@/lib/i18n/copy/reports";
@@ -23,15 +22,7 @@ import {
 } from "@/components/flags/FlagForm";
 import { ProofOfWorkGate } from "@/components/flags/ProofOfWorkGate";
 import { submitFlag } from "@/components/flags/submitFlag";
-
-declare global {
-  interface Window {
-    plausible?: (
-      event: string,
-      options?: { props?: Record<string, string> }
-    ) => void;
-  }
-}
+import { trackEvent } from "@/lib/analytics/trackEvent";
 
 export interface FlagTargetProps {
   language?: Language;
@@ -66,20 +57,18 @@ export function FlagTarget({
   const titleId = useId();
   const [open, setOpen] = useState(false);
   const { toast } = useToast();
-  const consent = useOptionalConsent();
 
   function handleOpenChange(next: boolean) {
+    // Opening is half the funnel. Without it a submission count cannot say
+    // whether the dialog is rarely opened or routinely abandoned.
+    if (next) trackEvent("report:open", { target_type: target.type });
     setOpen(next);
   }
 
   async function handleSubmit(payload: FlagSubmissionPayload) {
     const { public_slug: publicSlug } = await submitFlag(payload);
 
-    if (consent?.consentState.preferences.analytics) {
-      window.plausible?.("flag_submitted", {
-        props: { target_type: target.type },
-      });
-    }
+    trackEvent("report:submit", { target_type: target.type });
     toast({ description: copy.saved });
     setOpen(false);
 

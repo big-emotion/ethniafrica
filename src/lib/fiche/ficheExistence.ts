@@ -3,6 +3,7 @@ import * as React from "react";
 import { logger } from "@/lib/api/logger";
 import { getCountryById } from "@/api/v2/services/countryService";
 import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
+import { getLanguageById } from "@/api/v2/services/languageService";
 import { getPatronymeById } from "@/api/v2/services/patronymes";
 import { getPeopleById } from "@/api/v2/services/peopleService";
 import type { TranslationLocale } from "@/lib/i18n/translationLocale";
@@ -56,6 +57,12 @@ export const loadPeopleFiche = perRequest(
 export const loadLanguageFamilyFiche = perRequest(
   async (id: string, lang: TranslationLocale = "fr") =>
     getLanguageFamilyById(id, lang)
+);
+
+/** @req REQ-136 */
+export const loadLanguageFiche = perRequest(
+  async (id: string, lang: TranslationLocale = "fr") =>
+    getLanguageById(id, lang)
 );
 
 /** @req REQ-147 */

@@ -46,6 +46,13 @@ import type { Language } from "@/types/shared";
 export type FicheKind =
   "country" | "people" | "family" | "language" | "name" | "peopleLinks";
 
+/** What the fiche calls itself, when the caller has loaded enough to know. */
+// @req REQ-091
+export interface FicheHeadCopy {
+  title?: string;
+  description?: string;
+}
+
 const ROUTE_BY_KIND: Record<
   FicheKind,
   (language: Language, id: string) => string
@@ -67,7 +74,8 @@ const ROUTE_BY_KIND: Record<
 export async function ficheCanonical(
   kind: FicheKind,
   language: Language,
-  slug: string
+  slug: string,
+  copy: FicheHeadCopy = {}
 ): Promise<Metadata> {
   const parsed = parseVersionedSlug(decodeURIComponent(slug));
   if (!parsed) return {};
@@ -79,5 +87,20 @@ export async function ficheCanonical(
     parsed.slug
   );
   const id = encodeURIComponent(parsed.slug);
-  return localeHead(language, (lang) => ROUTE_BY_KIND[kind](lang, id), indexed);
+  const head = localeHead(
+    language,
+    (lang) => ROUTE_BY_KIND[kind](lang, id),
+    indexed,
+    copy
+  );
+
+  // `localeHead` carries the copy into the Open Graph card; the document's own
+  // `<title>` and `<meta name="description">` are separate keys, and leaving
+  // them unset is what let 3 242 fiches inherit the root layout's title while
+  // their canonical, hreflang and robots were all correct.
+  return {
+    ...(copy.title ? { title: copy.title } : {}),
+    ...(copy.description ? { description: copy.description } : {}),
+    ...head,
+  };
 }

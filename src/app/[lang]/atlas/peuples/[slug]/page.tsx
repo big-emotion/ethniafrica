@@ -7,7 +7,7 @@ import {
   loadPeopleFiche,
 } from "@/lib/fiche/ficheExistence";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
-import { ficheCanonical } from "@/lib/seo/ficheCanonical";
+import { ficheHead } from "@/lib/seo/ficheHead";
 import { getPeopleRoute } from "@/lib/routing";
 import { RETIRED_PEOPLE_IDS } from "@/lib/afrik/retiredPeopleIds";
 import type { Language } from "@/types/shared";
@@ -97,7 +97,7 @@ export async function generateMetadata({
   ) {
     notFound();
   }
-  return ficheCanonical("people", lang as Language, slug);
+  return ficheHead("people", lang as Language, slug);
 }
 
 // ---------------------------------------------------------------------------
