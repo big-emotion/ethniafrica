@@ -35,33 +35,48 @@ Markdown file.
 
 ## Preconditions
 
-- Chrome with an authenticated session on `stats.ethniafrica.com` (the Plausible
-  instance is not public). Load the browser tools in **one** `ToolSearch` call.
+- Network access to `stats.ethniafrica.com`. **No authentication and no browser
+  are required** — see Step 1.
 - Run from the repository root. A worktree is not required — this skill writes
   one file — but a background session must still isolate itself before writing.
 
 ---
 
-## Step 1 — Read Plausible
+## Step 1 — Read Plausible over its JSON API
 
-The dashboard root renders only the headline tiles as text. **The breakdown
-tables exist only on the detail routes**, so `get_page_text` on
-`/ethniafrica.com` alone returns headings and no data — a silent empty read that
-looks like a quiet month. Always navigate the detail routes:
+The instance's internal stats API answers **unauthenticated**. Use it: it is
+scriptable, exact, and immune to the dashboard's rendering quirks.
 
-| Route                           | What it answers                                                                        |
-| ------------------------------- | -------------------------------------------------------------------------------------- |
-| `/ethniafrica.com?period=30d`   | Headline: unique visitors, visits, pageviews, views/visit, bounce rate, visit duration |
-| `/ethniafrica.com/pages`        | Every URL with visitors, pageviews, bounce rate, time on page, **scroll depth**        |
-| `/ethniafrica.com/entry-pages`  | Where sessions actually begin — the acquisition surface                                |
-| `/ethniafrica.com/exit-pages`   | Where sessions die                                                                     |
-| `/ethniafrica.com/sources`      | Referrers, with per-source bounce and duration                                         |
-| `/ethniafrica.com/screen-sizes` | Mobile / desktop split, each with its own bounce and duration                          |
-| `/ethniafrica.com/countries`    | Geography — relevant when the corpus is African and the audience may not be            |
+```bash
+BASE=https://stats.ethniafrica.com/api/stats/ethniafrica.com
 
-Append `?period=30d` to each. **`period=6mo` and `period=12mo` return zero** on
-this instance; for anything longer than 30 days use
-`?period=custom&from=YYYY-MM-DD&to=YYYY-MM-DD`.
+curl -s "$BASE/top-stats?period=30d"
+curl -s "$BASE/pages?period=30d&detailed=true&limit=200"
+curl -s "$BASE/entry-pages?period=30d&detailed=true&limit=100"
+curl -s "$BASE/exit-pages?period=30d&detailed=true&limit=100"
+curl -s "$BASE/sources?period=30d&detailed=true"
+curl -s "$BASE/screen-sizes?period=30d&detailed=true"
+curl -s "$BASE/countries?period=30d"
+```
+
+**`detailed=true` is what makes this audit possible.** Without it the breakdown
+endpoints return only `visitors` and `percentage`; with it every row carries
+`bounce_rate`, `time_on_page`, `scroll_depth` and `pageviews` — and bounce
+crossed with scroll depth is the entire diagnosis in Step 3. A run that forgets
+the flag produces a page list with no verdict behind it.
+
+`limit` defaults low. Pass it explicitly, or the long tail is silently
+truncated and corpus coverage in Step 2 is overstated.
+
+**`period=6mo` and `period=12mo` return zero** on this instance while `30d`
+returns data. For any longer window use
+`period=custom&from=YYYY-MM-DD&to=YYYY-MM-DD`.
+
+If the API is ever closed off, the dashboard is the fallback — but its root
+renders only the headline tiles as text. The breakdown tables exist solely on
+the detail routes (`/pages`, `/sources`, `/screen-sizes`, …), so reading
+`stats.ethniafrica.com/ethniafrica.com` alone returns headings and no data: a
+silent empty read that looks like a quiet month.
 
 ### The measurement is a floor, not a total
 
