@@ -1,0 +1,34 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "cop",
+  "isoCode639_3": "cop",
+  "glottocode": "copt1239",
+  "nameFr": "Copte",
+  "nameEn": "Coptic",
+  "alternateNames": ["Égyptien copte"],
+  "spellingAliases": [],
+  "familyId": "FLG_AFROASIATIQUE",
+  "peoples": [
+    {
+      "name": "Coptes",
+      "peopleId": "PPL_COPTES"
+    }
+  ],
+  "content": {
+    "vehicularRole": "non_vehicular",
+    "dialects": ["Bohaïrique", "Sahidique", "Fayoumique", "Akhmimique"],
+    "vitalityStatus": null,
+    "sources": [
+      {
+        "title": "Glottolog 5.3 — Coptic",
+        "url": "https://glottolog.org/resource/languoid/id/copt1239",
+        "tier": "official",
+        "notes": "Glottolog direct official languoid record ; source du nom et du glottocode. Le copte est le dernier état de l'égyptien ancien (egy, glottocode egyp1246), écrit dans un alphabet dérivé du grec."
+      }
+    ]
+  }
+}

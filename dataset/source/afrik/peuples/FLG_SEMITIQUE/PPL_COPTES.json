@@ -1,0 +1,126 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les regles de redaction completes."
+  },
+  "id": "PPL_COPTES",
+  "nameMain": "Coptes",
+  "languageFamilyId": "FLG_SEMITIQUE",
+  "currentCountries": ["EGY"],
+  "classificationStatus": "contested",
+  "content": {
+    "appellations": {
+      "mainName": "Coptes",
+      "selfAppellation": "Aqbāṭ (أقباط) ; ⲣⲉⲙⲛ̀ⲭⲏⲙⲓ (remenkhēmi, « les gens de Kemet »)",
+      "exonyms": [
+        "Coptes (français)",
+        "Copts (anglais)",
+        "Égyptiens chrétiens",
+        "Qibṭ (قبط, arabe)"
+      ],
+      "spellingAliases": ["Qibt", "Aqbat", "Kopte"],
+      "originOfExonyms": "Le mot vient du grec « Aigyptios » (Αἰγύπτιος), « Égyptien », emprunté par l'arabe sous la forme « qibṭ » (قبط) au moment de la conquête de 641, puis repris par les langues européennes. Il ne comportait à l'origine aucune valeur religieuse : il désignait l'habitant de l'Égypte, quelle que fût sa croyance. C'est le même mot qui a donné le nom du pays en français.",
+      "whyProblematic": "Le glissement de sens est le problème. Un terme qui nommait l'ensemble de la population égyptienne en est venu, après l'arabisation progressive du pays, à ne plus désigner que la minorité restée chrétienne : le mot a cessé de dire un peuple pour dire une confession. Ce que « copte » recouvre aujourd'hui est disputé — une appartenance religieuse pour les uns, une ascendance égyptienne préarabe pour les autres — et les deux lectures ont des conséquences politiques en Égypte, où les recensements ne désagrègent pas la population par religion depuis 1986. La désignation reste par ailleurs revendiquée par les intéressés eux-mêmes, ce qui la distingue d'un exonyme colonial imposé.",
+      "contemporaryUsage": "Le terme est employé par la communauté elle-même, notamment par l'Église copte orthodoxe d'Alexandrie, et par les organisations de la diaspora. Il est d'usage courant en Égypte et dans la littérature scientifique. L'auto-appellation arabe « Aqbāṭ » est la forme vivante ; la forme copte « remenkhēmi » appartient à la langue liturgique.",
+      "peopleGroupId": null,
+      "peopleGroupLabel": null
+    },
+    "ethnicities": [
+      "Coptes orthodoxes (Église copte orthodoxe d'Alexandrie)",
+      "Coptes catholiques (Église catholique copte)",
+      "Coptes évangéliques"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Coptes se rattachent à la population de l'Égypte ancienne, christianisée à partir du Ier siècle et demeurée chrétienne après la conquête arabe de 641. Cette continuité est revendiquée par la communauté et lisible dans la langue : le copte est le dernier état de l'égyptien ancien, écrit dans un alphabet dérivé du grec.",
+      "formationPeriod": "Ier - VIe siècles : christianisation de l'Égypte, puis constitution d'une Église autonome après le concile de Chalcédoine (451).",
+      "migrationRoutes": [],
+      "historicalSettlementZones": [
+        "Haute-Égypte (gouvernorats d'Assiout, Minya, Sohag)",
+        "Le Caire et sa région",
+        "Alexandrie",
+        "Vallée du Nil"
+      ],
+      "unificationsOrDivisions": "Le concile de Chalcédoine (451) sépare l'Église d'Alexandrie de l'Église byzantine sur la question de la nature du Christ. Cette rupture fonde l'autonomie de l'Église copte orthodoxe et, avec elle, l'identité collective qui portera le nom de copte après la conquête arabe. Des divisions ultérieures donnent l'Église catholique copte (union avec Rome, XVIIIe siècle) et des Églises évangéliques (XIXe siècle).",
+      "externalInfluences": "Hellénisation sous les Ptolémées et sous Rome, dont l'alphabet copte garde la trace. Conquête arabe de 641, suivie d'une arabisation linguistique qui fait reculer le copte comme langue parlée à partir du Xe siècle et le confine, à partir du XVIIe siècle environ, à l'usage liturgique.",
+      "majorHistoricalEvents": "Christianisation à partir du Ier siècle ; concile de Chalcédoine (451) ; conquête arabe (641) ; arabisation progressive de la langue ; réformes du XIXe siècle et essor d'une élite copte administrative et intellectuelle ; renouveau monastique et essor de la diaspora à partir des années 1960."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": null,
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": null,
+      "religiousAuthority": "Le patriarcat copte orthodoxe d'Alexandrie, dont le titulaire porte le titre de pape d'Alexandrie et patriarche du siège de saint Marc, est l'autorité de référence de la majorité des Coptes. Le monachisme égyptien, dont la tradition remonte aux Pères du désert, garde un rôle structurant : les monastères du Ouadi Natroun et de la mer Rouge sont des centres de formation du clergé."
+    },
+    "languages": {
+      "mainLanguage": "Arabe égyptien",
+      "isoCodes": ["arz", "cop"],
+      "dialects": [
+        "Copte bohaïrique (dialecte liturgique en usage)",
+        "Copte sahidique (dialecte littéraire de l'Antiquité tardive)"
+      ],
+      "vehicularRole": "Les Coptes sont arabophones : l'arabe égyptien (arz) est leur langue quotidienne, comme celle du reste de la population du pays. Le copte (cop) n'est plus une langue parlée au sens courant ; il subsiste comme langue liturgique, principalement dans sa forme bohaïrique, et fait l'objet d'un enseignement communautaire."
+    },
+    "historicalAffiliation": {
+      "description": "La fiche est rattachée à FLG_SEMITIQUE parce que le champ languageFamilyId enregistre le rattachement linguistique courant, non la filiation historique : les Coptes parlent l'arabe égyptien, langue sémitique. Leur filiation propre est ailleurs. Le copte est le dernier état de l'égyptien ancien (egy, glottocode egyp1246), branche égyptienne de l'ensemble afro-asiatique, et c'est cette langue qui porte la continuité revendiquée avec l'Égypte pharaonique — le nom que la langue donnait au pays, Kemet, « la terre noire », survit dans l'auto-appellation remenkhēmi. Le corpus documente cette filiation par la fiche de langue plutôt que par une fiche de peuple : il ne comporte aucune fiche de peuple éteint, et son modèle démographique décrit des populations vivantes.",
+      "sources": [
+        {
+          "title": "Glottolog 5.3 — Coptic",
+          "url": "https://glottolog.org/resource/languoid/id/copt1239",
+          "tier": "official",
+          "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\". Rattache le copte à la branche égyptienne et non au sémitique."
+        },
+        {
+          "title": "Glottolog 5.3 — Egyptian (Ancient)",
+          "url": "https://glottolog.org/resource/languoid/id/egyp1246",
+          "tier": "official",
+          "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\". Établit la continuité entre l'égyptien ancien et le copte, sur laquelle repose la filiation décrite ci-dessus."
+        }
+      ]
+    },
+    "culture": {
+      "majorRites": "Calendrier liturgique copte, dont l'année commence à la fête de Nayrouz (1er Thout) et compte les années « des martyrs » à partir de 284. Jeûnes nombreux et longs, dont le Grand Carême et le jeûne de la Nativité. Baptême, mariage et funérailles suivent un rite propre. Pèlerinages aux monastères et aux sanctuaires mariaux.",
+      "symbols": "La croix copte, à branches égales terminées par trois points, portée aussi en tatouage au poignet — un signe d'appartenance visible, dont l'usage est ancien. L'ânkh de l'Égypte ancienne, réinterprété en croix ansée dans l'art chrétien copte.",
+      "artsAndMusic": "Chant liturgique copte, transmis oralement et tenu pour l'une des plus anciennes traditions musicales chrétiennes conservées. Icônes de facture copte. Tissage et art textile de l'Antiquité tardive, dont les pièces dites coptes sont conservées dans de nombreux musées.",
+      "spiritualities": "Christianisme orthodoxe oriental (miaphysite), minoritairement catholique et évangélique. Le monachisme, né en Égypte avec Antoine et Pacôme aux IIIe et IVe siècles, y garde une place centrale."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Les Coptes partagent la langue, l'espace et une large part de la culture quotidienne avec la majorité musulmane égyptienne ; la distinction est confessionnelle, non linguistique. Des liens ecclésiaux anciens unissent l'Église copte à l'Église éthiopienne orthodoxe täwaḥədo, longtemps placée sous la juridiction du patriarcat d'Alexandrie, et à l'Église érythréenne.",
+      "conflictsOrAlliances": "La condition de minorité religieuse a connu des périodes de tolérance et des périodes de discrimination, depuis le statut de dhimmi jusqu'aux tensions contemporaines. Le corpus ne tranche pas ces débats et renvoie aux travaux spécialisés.",
+      "diaspora": "Une diaspora s'est constituée à partir des années 1960, principalement aux États-Unis, au Canada, en Australie et en Europe, avec ses propres diocèses et églises. Elle n'est pas comptabilisée dans la répartition ci-dessous, faute de chiffrage désagrégé."
+    },
+    "demography": {
+      "totalPopulation": null,
+      "referenceYear": 2025,
+      "source": "Aucun chiffre n'est déclaré : le recensement égyptien ne relève plus l'appartenance religieuse depuis 1986, et les estimations publiées vont d'environ 10 % de la population, chiffre retenu par le CIA World Factbook pour l'ensemble des chrétiens d'Égypte, à des estimations communautaires sensiblement plus élevées. Déclarer une valeur unique reviendrait à trancher un désaccord que les sources n'ont pas tranché.",
+      "distributionByCountry": [
+        {
+          "country": "EGY",
+          "population": null,
+          "note": "Concentration en Haute-Égypte (Assiout, Minya, Sohag), au Caire et à Alexandrie. Le CIA World Factbook donne environ 10 % de chrétiens pour l'Égypte, sans distinguer les Coptes des autres confessions chrétiennes."
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "Glottolog 5.3 — Coptic",
+        "url": "https://glottolog.org/resource/languoid/id/copt1239",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\". Source du glottocode, du rattachement à la branche égyptienne et de la liste des dialectes."
+      },
+      {
+        "title": "SIL Ethnologue — Coptic (cop)",
+        "url": "https://www.ethnologue.com/language/cop/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\". Source du statut liturgique de la langue et de son code ISO 639-3."
+      },
+      {
+        "title": "CIA World Factbook — Egypt",
+        "url": "https://www.cia.gov/the-world-factbook/countries/egypt/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\". Source de la part chrétienne de la population égyptienne, donnée pour l'ensemble des confessions chrétiennes et non pour les seuls Coptes."
+      }
+    ]
+  }
+}
