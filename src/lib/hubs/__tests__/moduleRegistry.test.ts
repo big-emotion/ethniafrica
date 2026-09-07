@@ -12,6 +12,7 @@ import {
   getNavModules,
 } from "@/lib/hubs/moduleRegistry";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
+import { DOSSIER_RUBRICS } from "@/lib/afrik/parsers/dossierTypes";
 import { getLocalizedRoute } from "@/lib/routing";
 
 const ORIGINAL_QUIZ_FLAG = process.env.NEXT_PUBLIC_FEATURE_QUIZ;
@@ -189,13 +190,6 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(ids).toEqual([
       "nommer",
       "anecdotes",
-      "dossier-proportions",
-      "dossier-populations",
-      "dossier-ressources",
-      "dossier-kongo",
-      "dossier-luba",
-      "dossier-lunda",
-      "dossier-spiritualites-kongo",
       "frise",
       "regards-colonisation",
     ]);
@@ -314,13 +308,6 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
       "recherche",
       "nommer",
       "anecdotes",
-      "dossier-proportions",
-      "dossier-populations",
-      "dossier-ressources",
-      "dossier-kongo",
-      "dossier-luba",
-      "dossier-lunda",
-      "dossier-spiritualites-kongo",
       "regards-colonisation",
     ]);
     for (const def of staticModules) {
@@ -447,13 +434,15 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
       noms: "afh-accent-terre",
       nommer: "afh-accent-perv",
       anecdotes: "afh-accent-ocre",
-      "dossier-proportions": "afh-accent-teal",
-      "dossier-populations": "afh-accent-terre",
-      "dossier-ressources": "afh-accent-perv",
-      frise: "afh-accent-ocre",
-      "regards-colonisation": "afh-accent-teal",
-      quiz: "afh-accent-terre",
-      mercator: "afh-accent-perv",
+      // The seven Réalités dossiers left the registry, so the walk closes up
+      // behind them: `frise` moves from ocre to teal and everything after it
+      // rotates one step. The dossiers of the corpus take their accent from
+      // their position in the menu instead (`SiteHeader.dossierAsEntry`),
+      // because a corpus that grows by a file cannot renumber this list.
+      frise: "afh-accent-teal",
+      "regards-colonisation": "afh-accent-terre",
+      quiz: "afh-accent-perv",
+      mercator: "afh-accent-ocre",
     } as const);
 
     for (const [id, accent] of Object.entries(expectedAccents)) {
@@ -493,13 +482,23 @@ describe("moduleRegistry — the shelf a module sits on (REQ-120)", () => {
 
   // A rubric declared and never used is a heading the reader can never meet,
   // and one used but undeclared crashes the order it is filtered through.
+  //
+  // Two things fill this order now: the modules that declare a shelf, and the
+  // six domain rubrics the dossier corpus files itself under. Checking only
+  // the modules is what this test did first, and it went red the moment the
+  // dossiers left the registry — which is the whole point of their leaving.
   // @req REQ-120
-  it("declares exactly the rubrics the modules use", () => {
-    const used = new Set(
-      MODULE_DEFINITIONS.map((def) => def.group).filter(Boolean)
+  it("declares exactly the rubrics the modules and the corpus use", () => {
+    const declaredByModules = MODULE_DEFINITIONS.map((def) => def.group).filter(
+      Boolean
+    );
+    const declaredByCorpus = DOSSIER_RUBRICS.map(
+      (rubric) => `dossiers-${rubric}`
     );
 
-    expect([...used].sort()).toEqual([...MODULE_GROUP_ORDER].sort());
+    expect(
+      [...new Set([...declaredByModules, ...declaredByCorpus])].sort()
+    ).toEqual([...MODULE_GROUP_ORDER].sort());
   });
 
   // The quiz questions the reader rather than the corpus, so it belongs on

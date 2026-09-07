@@ -67,35 +67,31 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
    * Pinned member by member rather than counted, because a dossier silently
    * landing in the wrong rubric is the failure a count cannot see.
    */
+  /**
+   * The four surfaces of the dossiers axis, filed by domain.
+   *
+   * Four, not eleven: the seven Réalités dossiers left the registry for the
+   * corpus, so what remains here is a pillar, a bank, a map and a static page.
+   * The corpus half of the same filing is pinned in `dossiers/__tests__/menu`.
+   */
   // @req REQ-120
-  it("files every dossier under a domain rubric, in registry order", () => {
+  it("files the axis's own surfaces under domain rubrics, in order", () => {
     const shelves = getGroupedModules(liveModules("dossiers"));
 
     expect(
       shelves.map((shelf) => [shelf.id, shelf.modules.map((m) => m.id)])
     ).toEqual([
       ["dossiers-noms", ["nommer", "anecdotes"]],
-      [
-        "dossiers-organisation",
-        [
-          "dossier-kongo",
-          "dossier-luba",
-          "dossier-lunda",
-          "regards-colonisation",
-        ],
-      ],
-      ["dossiers-religions", ["dossier-spiritualites-kongo"]],
-      ["dossiers-territoires", ["dossier-proportions"]],
-      ["dossiers-populations", ["dossier-populations", "frise"]],
-      ["dossiers-economie", ["dossier-ressources"]],
+      ["dossiers-organisation", ["regards-colonisation"]],
+      ["dossiers-populations", ["frise"]],
     ]);
   });
 
-  // Every dossier is filed. A module that carries no rubric would vanish from
-  // a filed panel entirely, which is a worse failure than the flat row this
-  // replaced — the reader would never learn the dossier exists.
+  // Every module of the axis is filed. One carrying no rubric would vanish
+  // from a filed panel entirely, which is a worse failure than the flat row
+  // this replaced — the reader would never learn the surface exists.
   // @req REQ-120
-  it("leaves no dossier without a rubric", () => {
+  it("leaves no dossier-axis module without a rubric", () => {
     const unfiled = getModulesForAccessMode("dossiers").filter(
       (definition) => !definition.group
     );

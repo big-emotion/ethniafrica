@@ -8,8 +8,15 @@
       "Une distance géométrique ne décrit pas à elle seule un trajet possible."
     ]
   },
+  "_translation": {
+    "deferred": {
+      "en": "English translation deferred while the Realites readings are rewritten: the French source is expected to change before it is worth translating."
+    }
+  },
   "id": "DOS_PROPORTIONS",
   "vertical": "realites",
+  "rubric": "territoires",
+  "readiness": "draft",
   "slug": "proportions",
   "title": "Les vraies proportions",
   "question": "Que devient l'Afrique quand on distingue la carte, la mesure et le trajet ?",

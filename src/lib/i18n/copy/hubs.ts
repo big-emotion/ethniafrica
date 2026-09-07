@@ -51,13 +51,6 @@ const en = {
     recherche: "Free search",
     nommer: "Who gave this name?",
     anecdotes: "Anecdotes",
-    "dossier-proportions": "True proportions",
-    "dossier-populations": "Real weight",
-    "dossier-ressources": "A geological scandal",
-    "dossier-kongo": "The Kongo kingdom",
-    "dossier-luba": "Luba: power and memory",
-    "dossier-lunda": "Lunda: alliances and connections",
-    "dossier-spiritualites-kongo": "Kongo spiritualities: objects and change",
     frise: "First migration landmarks",
     "regards-colonisation": "Colonial gaze: colonisation and resistance",
     quiz: "The quiz",
@@ -82,6 +75,13 @@ const en = {
     "jeux-pays": "Countries",
     "jeux-quiz": "The quiz",
   } satisfies Record<ModuleGroupId, string>,
+  // Closes a rubric that holds more readings than the menu lists. It counts
+  // what is *not* shown rather than the whole rubric: "+ 96 more" beside four
+  // cards is a promise of ninety-six unseen readings, where "100 dossiers"
+  // beside them would have the reader wondering which four of the hundred
+  // these are.
+  moreInRubric: (count: number) =>
+    count === 1 ? "+ 1 more" : `+ ${count} more`,
 };
 
 type HubsCopy = typeof en;
@@ -172,14 +172,6 @@ const fr: HubsCopy = {
     recherche: "Recherche libre",
     nommer: "Qui a donné ce nom ?",
     anecdotes: "Anecdotes",
-    "dossier-proportions": "Les vraies proportions",
-    "dossier-populations": "Le poids réel",
-    "dossier-ressources": "Un scandale géologique",
-    "dossier-kongo": "Le royaume Kongo",
-    "dossier-luba": "Luba : pouvoir et mémoire",
-    "dossier-lunda": "Lunda : alliances et circulations",
-    "dossier-spiritualites-kongo":
-      "Spiritualités kongo : objets et transformations",
     frise: "Premiers repères de migrations",
     "regards-colonisation": "Regards : colonisation et résistances",
     quiz: "Le quiz",
@@ -195,6 +187,8 @@ const fr: HubsCopy = {
     "jeux-pays": "Les pays",
     "jeux-quiz": "Le quiz",
   },
+  moreInRubric: (count: number) =>
+    count === 1 ? "+ 1 autre" : `+ ${count} autres`,
 };
 
 // @req REQ-145

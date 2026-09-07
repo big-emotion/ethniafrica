@@ -15,6 +15,45 @@ export const DOSSIER_VERTICALS = [
 ] as const;
 export type DossierVertical = (typeof DOSSIER_VERTICALS)[number];
 
+/**
+ * The domain a dossier is filed under for the reader, in menu order.
+ *
+ * One word each, from the vocabulary the fiches already teach — the country
+ * fiche's culture block reads Religions · Économie · Organisation · Relations.
+ * A dossier declares its own, so publishing one is a file in this directory
+ * rather than an entry in the module registry, a PageType, two slugs, a glyph
+ * and two menu labels.
+ *
+ * The third classification this corpus carries, and deliberately the only one
+ * a reader meets in the menu. `vertical` above is internal, as its own comment
+ * says. The eight entries in `lib/dossiers/themes.ts` are the hub's filter and
+ * are pairs of words — good for a filter, prose in a heading. They disagree
+ * with this list in at least one place (« Les vraies proportions » is filed
+ * under `pouvoirs` there and belongs to `territoires` here), which is a reason
+ * to retire that list rather than to derive this one from it.
+ */
+// @req REQ-120
+export const DOSSIER_RUBRICS = [
+  "noms",
+  "organisation",
+  "religions",
+  "territoires",
+  "populations",
+  "economie",
+] as const;
+export type DossierRubric = (typeof DOSSIER_RUBRICS)[number];
+
+/**
+ * Whether this dossier is offered to a reader, declared per dossier.
+ *
+ * The freeze used to live on the module registry, which meant an editor
+ * withdrawing a reading edited a TypeScript file describing menus. It is a
+ * property of the dossier, so it sits in the dossier.
+ */
+// @req REQ-114
+export const DOSSIER_READINESS = ["ready", "draft"] as const;
+export type DossierReadiness = (typeof DOSSIER_READINESS)[number];
+
 export type DossierId = `DOS_${string}`;
 
 export interface DossierSource {
@@ -110,6 +149,8 @@ export interface Dossier {
   _meta: DossierFicheMeta;
   id: DossierId;
   vertical: DossierVertical;
+  rubric: DossierRubric;
+  readiness: DossierReadiness;
   slug: string;
   title: string;
   question: string;

@@ -22,6 +22,8 @@ function validDossier() {
     },
     id: "DOS_PROPORTIONS",
     vertical: "realites",
+    rubric: "territoires",
+    readiness: "draft",
     slug: "proportions",
     title: "Les vraies proportions",
     question: "De quelle taille est l'Afrique ?",

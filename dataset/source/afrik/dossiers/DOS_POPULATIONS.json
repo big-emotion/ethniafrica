@@ -8,8 +8,15 @@
       "Un total de résidents ne mesure pas l'ascendance africaine dans le monde."
     ]
   },
+  "_translation": {
+    "deferred": {
+      "en": "English translation deferred while the Realites readings are rewritten: the French source is expected to change before it is worth translating."
+    }
+  },
   "id": "DOS_POPULATIONS",
   "vertical": "realites",
+  "rubric": "populations",
+  "readiness": "draft",
   "slug": "populations",
   "title": "Les populations",
   "question": "Que disent les grands chiffres démographiques, et sur quels dénombrements reposent-ils ?",

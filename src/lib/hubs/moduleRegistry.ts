@@ -142,6 +142,22 @@ export const MODULE_GROUP_ORDER: readonly ModuleGroupId[] = [
 // @req REQ-120
 export const RUBRIC_FILED_AXES: readonly AccessMode[] = ["dossiers"];
 
+/**
+ * How many readings a rubric lists in the menu before it starts counting.
+ *
+ * A menu is not an index. The corpus behind a rubric is expected to reach the
+ * hundreds — the atlas already holds 804 peoples behind one menu row — and a
+ * panel that prints every record would put that list into the markup of every
+ * page on the site.
+ *
+ * Four rather than three or five because four is what the tallest rubric holds
+ * today, so the cap is armed and tested without changing what a reader
+ * currently sees; and because the flowed columns of the panel are balanced
+ * against a rubric of four (`sh-grid-filed`).
+ */
+// @req REQ-120
+export const RUBRIC_MENU_LIMIT = 4;
+
 // Every module the registry declares is listed and linked. What a module
 // waits on is its corpus, never a switch:
 //
@@ -469,79 +485,24 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "static",
     editorialReadiness: "ready",
   },
-  // Réalités — seven dossiers on what is measured about Africa, on the Kongo,
-  // Luba and Lunda polities, and on kongo spiritualities. All withdrawn under
-  // the freeze above: they are the pages whose uniform structure prompted it.
+  // The seven Realites dossiers are NOT here, and that is the point.
   //
-  // `static` for the same reason as `nommer` and `anecdotes`: the fiches are
-  // files in the repository, read at build. They are also loaded into
-  // afrik_dossiers by the AFRIK pipeline and served at /api/v2/dossiers, but
-  // the availability probe counts rows to decide whether a trip is worth a
-  // reader's time, and a dossier is worth it whether or not a migration has
-  // reached an environment yet.
-  {
-    id: "dossier-proportions",
-    group: "dossiers-territoires",
-    name: "Les vraies proportions",
-    accessMode: "dossiers",
-    page: "dossierProportions",
-    availability: "static",
-    editorialReadiness: "draft",
-  },
-  {
-    id: "dossier-populations",
-    group: "dossiers-populations",
-    name: "Le poids réel",
-    accessMode: "dossiers",
-    page: "dossierPopulations",
-    availability: "static",
-    editorialReadiness: "draft",
-  },
-  {
-    id: "dossier-ressources",
-    group: "dossiers-economie",
-    name: "Un scandale géologique",
-    accessMode: "dossiers",
-    page: "dossierRessources",
-    availability: "static",
-    editorialReadiness: "draft",
-  },
-  {
-    id: "dossier-kongo",
-    group: "dossiers-organisation",
-    name: "Le royaume Kongo",
-    accessMode: "dossiers",
-    page: "dossierKongo",
-    availability: "static",
-    editorialReadiness: "draft",
-  },
-  {
-    id: "dossier-luba",
-    group: "dossiers-organisation",
-    name: "Luba : pouvoir et mémoire",
-    accessMode: "dossiers",
-    page: "dossierLuba",
-    availability: "static",
-    editorialReadiness: "draft",
-  },
-  {
-    id: "dossier-lunda",
-    group: "dossiers-organisation",
-    name: "Lunda : alliances et circulations",
-    accessMode: "dossiers",
-    page: "dossierLunda",
-    availability: "static",
-    editorialReadiness: "draft",
-  },
-  {
-    id: "dossier-spiritualites-kongo",
-    group: "dossiers-religions",
-    name: "Spiritualités kongo : objets et transformations",
-    accessMode: "dossiers",
-    page: "dossierSpiritualitesKongo",
-    availability: "static",
-    editorialReadiness: "draft",
-  },
+  // Each used to be a module: an entry in this list, a PageType, two slugs, a
+  // glyph, two menu labels and two catalogue entries — nine edits across five
+  // files to publish one reading, and a menu that grew a row per dossier. A
+  // module is a *surface* of the axis; a dossier is a record of the corpus,
+  // like a people or a country. The atlas already draws that line: one menu row
+  // for `peuples`, and 804 peoples behind it.
+  //
+  // They now live only in dataset/source/afrik/dossiers, declare their own
+  // rubric and readiness, and reach the menu through `getDossierMenuEntries`.
+  // What stays declared outside the corpus is the fr/en slug pair in
+  // routing.ts, because middleware runs on the edge and cannot read the corpus
+  // off disk to translate an address.
+  //
+  // The four entries around this comment are the axis's real surfaces: a
+  // pillar with five routes of its own, a bank rendered from code, a map of
+  // sourced events, and a static page.
   {
     // Named for what the corpus actually holds — six sourced events, not a
     // three-millennia timeline (ETNI-1198).

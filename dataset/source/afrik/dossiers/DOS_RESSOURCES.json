@@ -8,8 +8,15 @@
       "Extraire une matière et capter la valeur de sa transformation sont deux mesures différentes."
     ]
   },
+  "_translation": {
+    "deferred": {
+      "en": "English translation deferred while the Realites readings are rewritten: the French source is expected to change before it is worth translating."
+    }
+  },
   "id": "DOS_RESSOURCES",
   "vertical": "realites",
+  "rubric": "economie",
+  "readiness": "draft",
   "slug": "ressources",
   "title": "Les ressources et la valeur",
   "question": "Que produit l'Afrique, et où la valeur de ces matières est-elle captée ?",
