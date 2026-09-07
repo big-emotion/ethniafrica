@@ -4,6 +4,11 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 interface CountryFiche {
+  _translation?: {
+    deferred?: {
+      en?: string;
+    };
+  };
   content: {
     culture: {
       culturalTraditions: string | null;
@@ -60,6 +65,13 @@ const cultureReview = JSON.parse(
 ) as CultureReview;
 
 describe("DRC country culture application", () => {
+  // @req REQ-145
+  it("records why English translation waits for the French country pass to stabilise", () => {
+    expect(country._translation?.deferred?.en).toBe(
+      "The DRC country fiche is still undergoing country-by-country editorial enrichment; translate the complete record after the French source has stabilised."
+    );
+  });
+
   // @req REQ-032
   it("publishes only scoped cultural examples at country level", () => {
     expect(country.content.culture.culturalTraditions).toContain(

@@ -550,5 +550,10 @@
         }
       ]
     }
+  },
+  "_translation": {
+    "deferred": {
+      "en": "The DRC country fiche is still undergoing country-by-country editorial enrichment; translate the complete record after the French source has stabilised."
+    }
   }
 }
