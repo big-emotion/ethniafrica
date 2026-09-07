@@ -143,20 +143,34 @@ export const MODULE_GROUP_ORDER: readonly ModuleGroupId[] = [
 export const RUBRIC_FILED_AXES: readonly AccessMode[] = ["dossiers"];
 
 /**
- * How many readings a rubric lists in the menu before it starts counting.
+ * How many readings a rubric lists in the tray before it starts counting.
  *
  * A menu is not an index. The corpus behind a rubric is expected to reach the
  * hundreds — the atlas already holds 804 peoples behind one menu row — and a
- * panel that prints every record would put that list into the markup of every
+ * tray that printed every record would put that list into the markup of every
  * page on the site.
  *
  * Four rather than three or five because four is what the tallest rubric holds
  * today, so the cap is armed and tested without changing what a reader
- * currently sees; and because the flowed columns of the panel are balanced
- * against a rubric of four (`sh-grid-filed`).
+ * currently sees.
  */
 // @req REQ-120
 export const RUBRIC_MENU_LIMIT = 4;
+
+/**
+ * How many readings a rubric lists in the panel.
+ *
+ * One, because the panel's constraint is height, not length: it hangs off a
+ * pinned bar and every card it adds is a card the reader has to scroll a menu
+ * to pass. At four it stood five card-heights tall and the six rubrics could
+ * not sit abreast — the last two fell under the first four.
+ *
+ * A rubric is therefore a heading and a single reading, and the panel is one
+ * row of them. What a rubric holds beyond that is the hub's to list; the tray,
+ * which scrolls and is the phone's whole navigation, keeps `RUBRIC_MENU_LIMIT`.
+ */
+// @req REQ-120
+export const RUBRIC_PANEL_LIMIT = 1;
 
 // Every module the registry declares is listed and linked. What a module
 // waits on is its corpus, never a switch:

@@ -89,6 +89,10 @@ const en = {
   // these are.
   moreInRubric: (count: number) =>
     count === 1 ? "+ 1 more" : `+ ${count} more`,
+  // The panel's way out of a rubric, where the count would be noise: a rubric
+  // there shows one reading, so the only question left is whether there are
+  // others, and the hub is the surface that answers it.
+  seeMoreInRubric: "See more",
 };
 
 type HubsCopy = typeof en;
@@ -202,6 +206,7 @@ const fr: HubsCopy = {
   },
   moreInRubric: (count: number) =>
     count === 1 ? "+ 1 autre" : `+ ${count} autres`,
+  seeMoreInRubric: "Voir plus",
 };
 
 // @req REQ-145
