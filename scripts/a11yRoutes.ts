@@ -10,6 +10,7 @@ import {
   getStaticPageRoute,
   PUBLISHED_LOCALES,
 } from "@/lib/routing";
+import { isModulePublished } from "@/lib/hubs/moduleOffer";
 
 /**
  * The live Next.js routes the axe gate audits, in one importable module.
@@ -87,14 +88,28 @@ const liveRoutesFor = (locale: Language): string[] => [
   getLocalizedRoute(locale, "compare"),
   `${getLocalizedRoute(locale, "compare")}/${COMPARE_ENTITY_SEGMENTS[locale].families}/FLG_BANTU/FLG_MANDE`,
   getPeopleLinksRoute(locale, "PPL_WOLOF"),
-  getLocalizedRoute(locale, "migrations"),
+  ...(isModulePublished("frise")
+    ? [getLocalizedRoute(locale, "migrations")]
+    : []),
   getLocalizedRoute(locale, "quiz"),
-  getLocalizedRoute(locale, "colonization"),
-  getLocalizedRoute(locale, "nommer"),
-  // One chapter, not five: they share a renderer, so auditing the fifth would
-  // audit the same tree four more times. `la-langue` is the one carrying a
-  // table and a set of name pairs, which is where the accessibility work is.
-  getNommerChapterRoute(locale, "la-langue"),
+  ...(isModulePublished("regards-colonisation")
+    ? [getLocalizedRoute(locale, "colonization")]
+    : []),
+  ...(isModulePublished("nommer")
+    ? [
+        getLocalizedRoute(locale, "nommer"),
+        // One chapter, not five: they share a renderer, so auditing the fifth
+        // would audit the same tree four more times. `la-langue` is the one
+        // carrying a table and a set of name pairs, which is where the
+        // accessibility work is.
+        getNommerChapterRoute(locale, "la-langue"),
+      ]
+    : []),
+  // The one reading the freeze leaves standing, so withdrawing the dossiers
+  // does not withdraw the axis from this gate as well. The hub is deliberately
+  // not here: `qualityGateRoutes.test.ts` keeps every axis landing page out of
+  // both browser gates, and that rule does not bend for a freeze.
+  getLocalizedRoute(locale, "anecdotes"),
   getLocalizedRoute(locale, "doctrine"),
   `${getLocalizedRoute(locale, "doctrine")}/classifications-contestees`,
 ];

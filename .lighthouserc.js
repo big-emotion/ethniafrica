@@ -84,15 +84,17 @@ module.exports = {
         // are scoped in assert.assertMatrix below.
         "http://localhost:3000/fr/comparer",
         "http://localhost:3000/fr/comparer/peuples/PPL_WOLOF/PPL_SERER",
-        // Epic 13, Story 13.12 (ETNI-536) — the colonization module's
-        // timeline (EventTimelineMarkers + EventChronologyTable) must not
-        // regress the base mobile Performance ≥ 85 / Accessibility = 100
-        // budgets enforced by the catch-all assertMatrix entry below.
-        "http://localhost:3000/fr/dossiers/regards/colonisation-et-resistances",
-        // Epic 12, Story 12.9 (ETNI-522/1104) — the migrations atlas, back in
-        // the list for the same reason as /fr/atlas/appellations above. Its tighter CLS/INP
-        // budgets are in assert.assertMatrix below and are no longer inert.
-        "http://localhost:3000/fr/dossiers/migrations",
+        // The dossiers axis, measured through the two surfaces the freeze
+        // leaves standing.
+        //
+        // The colonization timeline (ETNI-536) and the migrations atlas
+        // (ETNI-522/1104) were listed here and are withdrawn: their routes
+        // answer 404, and `collect` aborts the whole run on the first URL that
+        // fails to load, so leaving them would cost every budget in this file
+        // rather than just their own. They come back with the readings — the
+        // assertMatrix entry holding the atlas's CLS/INP budgets is kept below,
+        // inert, so restoring the route restores its budget too.
+        "http://localhost:3000/fr/dossiers/anecdotes",
         // ETNI-1622 — every doctrine detail page 500'd on a built server
         // ("A React Element from an older version of React was rendered",
         // from next-mdx-remote's React resolution racing Next's own
@@ -117,7 +119,7 @@ module.exports = {
         "http://localhost:3000/en/atlas/families/FLG_BANTU",
         "http://localhost:3000/en/atlas/peoples",
         "http://localhost:3000/en/games/quiz",
-        "http://localhost:3000/en/dossiers/migrations",
+        "http://localhost:3000/en/dossiers/anecdotes",
         "http://localhost:3000/en/doctrine",
         "http://localhost:3000/en/compare",
         "http://localhost:3000/en/glossary",

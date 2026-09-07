@@ -4,6 +4,7 @@ import { getSiteTree, getSiteTreePaths } from "@/lib/siteTree";
 import { getLocalizedRoute, getNommerChapterRoute } from "@/lib/routing";
 import { NOMMER_CHAPTER_KEYS } from "@/lib/routing";
 import { LOCALES } from "@/lib/locale";
+import { LIVE_ROUTES } from "../../../scripts/a11yRoutes";
 
 /**
  * Everywhere the site can still *name* a withdrawn dossier.
@@ -69,4 +70,48 @@ describe("no surface advertises a withdrawn dossier", () => {
       expect(paths).toContain(getLocalizedRoute(language, "anecdotes"));
     });
   }
+
+  /**
+   * The quality gate's own route list is a surface too, and the one this suite
+   * originally missed.
+   *
+   * `scripts/a11yRoutes.ts` names four dossier routes by hand, and the axe job
+   * fails a route on any status >= 400 before it will trust an audit. So the
+   * freeze turned a required check red — not because the branch broke
+   * accessibility, but because a gate was still asking for pages the branch had
+   * withdrawn. It read exactly like the known pre-existing axe failure, which
+   * is what makes it worth a test rather than a memory.
+   */
+  // @req REQ-110
+  it("asks the accessibility gate for no withdrawn route", () => {
+    expect(LIVE_ROUTES.length).toBeGreaterThan(0);
+
+    for (const language of LOCALES) {
+      for (const page of WITHDRAWN_PAGES) {
+        expect(LIVE_ROUTES, page).not.toContain(
+          getLocalizedRoute(language, page)
+        );
+      }
+      for (const key of NOMMER_CHAPTER_KEYS) {
+        expect(LIVE_ROUTES, key).not.toContain(
+          getNommerChapterRoute(language, key)
+        );
+      }
+    }
+  });
+
+  /**
+   * The axis keeps its accessibility coverage through the freeze.
+   *
+   * The anecdotes, not the hub: `qualityGateRoutes.test.ts` keeps every axis
+   * landing page out of both browser gates, and a freeze is not a reason to
+   * bend that. What matters here is that withdrawing the readings does not
+   * quietly withdraw the whole rubric from the gate.
+   */
+  // @req REQ-110
+  it("keeps auditing the reading the freeze leaves standing", () => {
+    for (const language of LOCALES) {
+      expect(LIVE_ROUTES).toContain(getLocalizedRoute(language, "anecdotes"));
+    }
+  });
 });
