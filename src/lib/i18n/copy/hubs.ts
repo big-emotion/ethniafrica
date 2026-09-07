@@ -19,6 +19,10 @@ const en = {
       "The relations axis: where a name comes from, where the peoples passed, and which sources the atlas rests on.",
     menuBlurb: "Read by theme, across peoples, territories and eras.",
     hubEntryName: "The reading hub",
+    // What the hub says while every long reading is withdrawn. It states the
+    // rework and promises the return, and deliberately does not read as a
+    // search that found nothing — the reader has done nothing to correct.
+    frozenStatus: "The dossiers are being rewritten. They will be back.",
   },
   jeux: {
     title: TRAIL_PAGE_LABELS.en.jeuxHub,
@@ -109,6 +113,7 @@ const fr: HubsCopy = {
     menuBlurb:
       "Des lectures par thème, à travers les peuples, les territoires et les époques.",
     hubEntryName: "Le hub de lecture",
+    frozenStatus: "Les dossiers sont en cours de réécriture. Ils reviendront.",
   },
   jeux: {
     title: ACCESS_MODE_LABELS.jeux,

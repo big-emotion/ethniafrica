@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 
 import { DossierPage } from "@/components/dossiers/DossierPage";
 import { getDossierBySlug, getDossierTranslation } from "@/lib/dossiers/corpus";
+import { isDossierSlugPublished } from "@/lib/dossiers/publication";
 import { getPublishedLocales, isLocale } from "@/lib/locale";
 import { localeHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
@@ -36,6 +37,7 @@ export async function generateMetadata({
 }: DossierRouteProps): Promise<Metadata> {
   const { lang, dossier: slug } = await params;
   if (!isLocale(lang)) return {};
+  if (!isDossierSlugPublished(slug)) return {};
   const source = getDossierBySlug(slug);
   const translated = getDossierTranslation(slug);
   const dossier = lang === "en" ? (translated?.dossier ?? source) : source;
@@ -59,6 +61,7 @@ export async function generateMetadata({
 // @req REQ-113
 export default async function DossierRoute({ params }: DossierRouteProps) {
   const { lang, dossier: slug } = await params;
+  if (!isDossierSlugPublished(slug)) notFound();
   const translated = lang === "en" ? getDossierTranslation(slug) : null;
   const dossier = translated?.dossier ?? getDossierBySlug(slug);
 

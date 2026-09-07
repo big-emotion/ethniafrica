@@ -7,7 +7,7 @@ import { AXIS_HUB_PAGE, getAxisForPage } from "@/lib/hubs/axisRoutes";
 import { translations } from "@/lib/translations";
 import type { Language } from "@/types/shared";
 import { getDossierThemes, getDossierThemeHref } from "@/lib/dossiers/themes";
-import { getDossiers } from "@/lib/dossiers/catalog";
+import { getDossiers, getPublishedThemes } from "@/lib/dossiers/catalog";
 
 /**
  * One crumb. Structurally the `BreadcrumbItem` `AfrikBreadcrumbs` renders,
@@ -125,7 +125,10 @@ export function deriveTrail(
             pathname === candidate.href ||
             pathname.startsWith(`${candidate.href}/`)
         );
-        const theme = getDossierThemes(language).find(
+        // Published themes, not declared ones. A theme with every dossier
+        // under it withdrawn has no page left to open, and a crumb linking
+        // to it would send a reader off a live page into a 404.
+        const theme = getPublishedThemes(undefined, language).find(
           (candidate) => candidate.id === dossier?.primaryTheme
         );
         if (theme)

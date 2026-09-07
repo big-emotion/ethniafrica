@@ -106,6 +106,30 @@ const ROUTES_ROOT = resolve(__dirname, "..");
 /** Routes outside the contract: authenticated, or a one-shot token page. */
 const OUTSIDE = [/^admin(\/|$)/, /^signalements\/verifier$/];
 
+/**
+ * Routes withdrawn with the dossiers freeze.
+ *
+ * They are outside the *indexing* contract because they are outside indexing
+ * altogether: each answers 404 while its module is `draft`, and a canonical
+ * on a page that does not resolve is an instruction to index a 404.
+ *
+ * Listed rather than pattern-matched, and asserted rather than merely skipped
+ * — `withdrawn routes declare no head` below holds each one to emptiness. A
+ * skip list nothing checks is how a route slips out of a contract for good.
+ */
+const WITHDRAWN = [
+  "dossiers/[dossier]",
+  "dossiers/migrations",
+  "dossiers/nommer",
+  "dossiers/nommer/la-chose",
+  "dossiers/nommer/la-langue",
+  "dossiers/nommer/la-personne",
+  "dossiers/nommer/le-pays",
+  "dossiers/nommer/le-peuple",
+  "dossiers/regards/colonisation-et-resistances",
+  "dossiers/themes/[theme]",
+];
+
 type Expectation =
   | { surface: IndexedSurface }
   // Indexed once a translation record exists for the entity — none today.
@@ -227,9 +251,11 @@ function pageRoutes(directory = ROUTES_ROOT, found: string[] = []): string[] {
   return found.sort();
 }
 
-const ROUTES = pageRoutes().filter(
+const ALL_ROUTES = pageRoutes().filter(
   (route) => !OUTSIDE.some((pattern) => pattern.test(route))
 );
+
+const ROUTES = ALL_ROUTES.filter((route) => !WITHDRAWN.includes(route));
 
 const BASE = `https://${CANONICAL_DOMAIN}`;
 
@@ -276,10 +302,43 @@ function indexedLocalesOf(expectation: Expectation): Language[] {
 }
 
 describe("locale alternates — every public page", () => {
+  // Measured over every route, withdrawn ones included: their fixtures stay
+  // in the map on purpose, recording the head each one owes on the day it is
+  // restored. Dropping them would make the restore a rediscovery.
   // @req REQ-141
   it("knows every page under [lang], so a new route cannot ship without a head", () => {
-    expect(ROUTES).toEqual(Object.keys(FIXTURES).sort());
+    expect(ALL_ROUTES).toEqual(Object.keys(FIXTURES).sort());
   });
+
+  // The withdrawal list is a list of real routes, not of typos. A stale entry
+  // would quietly excuse a route that no longer exists while some other one
+  // ships headless.
+  // @req REQ-141
+  it("withdraws only routes that exist", () => {
+    for (const route of WITHDRAWN) {
+      expect(ALL_ROUTES, route).toContain(route);
+    }
+  });
+
+  /**
+   * A withdrawn route declares nothing: no canonical, no cluster, no title.
+   *
+   * Its `generateMetadata` either returns an empty head or calls `notFound()`
+   * — which throws — and both are accepted here, because both mean the same
+   * thing to a crawler. What is not accepted is a canonical, which would ask
+   * the index to record a URL that answers 404.
+   */
+  // @req REQ-141
+  it("gives a withdrawn route no head at all", async () => {
+    for (const route of WITHDRAWN) {
+      for (const lang of LOCALES) {
+        const head = await headOf(route, lang).catch(() => null);
+        if (head === null) continue;
+        expect(head.alternates?.canonical, `${route} @${lang}`).toBeUndefined();
+        expect(head.alternates?.languages, `${route} @${lang}`).toBeUndefined();
+      }
+    }
+  }, 15_000);
 
   // Translation artifacts can be deployed before launch, but none of the 46
   // public routes may announce an English alternate while the gate is closed.

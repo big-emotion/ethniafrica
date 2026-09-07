@@ -5,10 +5,7 @@ import { NOMMER_CHAPTERS } from "@/lib/dossiers/nommer/chapters";
 import { NOMMER_CHAPTERS_EN } from "@/lib/dossiers/nommer/chapters/index.en";
 import { getNommerChapterRoute } from "@/lib/routing";
 
-import NommerPage from "../page";
-
-const FR = Promise.resolve({ lang: "fr" });
-const EN = Promise.resolve({ lang: "en" });
+import { NommerPillarPage } from "@/components/dossiers/nommer/NommerPillarPage";
 
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({
@@ -28,10 +25,10 @@ vi.mock("@/components/layout/PageLayout", () => ({
   ),
 }));
 
-describe("the Nommer pillar page", () => {
+describe("the Nommer pillar", () => {
   // @req REQ-113
-  it("asks its question once, as the page's only h1", async () => {
-    render(await NommerPage({ params: FR }));
+  it("asks its question once, as the page's only h1", () => {
+    render(<NommerPillarPage language="fr" />);
     const headings = screen.getAllByRole("heading", { level: 1 });
     expect(headings).toHaveLength(1);
     expect(headings[0]).toHaveTextContent("Qui a donné ce nom ?");
@@ -41,8 +38,8 @@ describe("the Nommer pillar page", () => {
   // — a chapter declared in the array and missing from the pillar would be a
   // page nothing links to.
   // @req REQ-113
-  it("links every chapter, at the route the slug map composes", async () => {
-    render(await NommerPage({ params: FR }));
+  it("links every chapter, at the route the slug map composes", () => {
+    render(<NommerPillarPage language="fr" />);
 
     for (const chapter of NOMMER_CHAPTERS) {
       const link = screen.getByRole("link", { name: chapter.title });
@@ -56,8 +53,8 @@ describe("the Nommer pillar page", () => {
   // Three levels, and the third is the measure. Asserted through the rendered
   // tile rather than the constant, because the point is that a reader sees it.
   // @req REQ-113
-  it("prints each chapter's ordinal and measure on its tile", async () => {
-    render(await NommerPage({ params: FR }));
+  it("prints each chapter's ordinal and measure on its tile", () => {
+    render(<NommerPillarPage language="fr" />);
 
     for (const chapter of NOMMER_CHAPTERS) {
       const tile = screen.getByTestId(`nommer-chapter-${chapter.key}`);
@@ -70,8 +67,8 @@ describe("the Nommer pillar page", () => {
   // The three numbers that replace a percentage: the gap is published beside
   // the finding, which is the whole reason the band exists.
   // @req REQ-113
-  it("states the undeclared fiches beside the contested ones", async () => {
-    render(await NommerPage({ params: FR }));
+  it("states the undeclared fiches beside the contested ones", () => {
+    render(<NommerPillarPage language="fr" />);
 
     expect(screen.getByText(/445 sur 775/)).toBeInTheDocument();
     expect(
@@ -83,8 +80,8 @@ describe("the Nommer pillar page", () => {
   });
 
   // @req REQ-113
-  it("scopes the page to the Dossiers accent exactly once", async () => {
-    const { container } = render(await NommerPage({ params: FR }));
+  it("scopes the page to the Dossiers accent exactly once", () => {
+    const { container } = render(<NommerPillarPage language="fr" />);
     expect(container.querySelectorAll("[class*='afh-accent-']")).toHaveLength(
       1
     );
@@ -92,8 +89,8 @@ describe("the Nommer pillar page", () => {
   });
 
   // @req REQ-145
-  it("renders the English pillar and English chapter doorways on /en", async () => {
-    render(await NommerPage({ params: EN }));
+  it("renders the English pillar and English chapter doorways on /en", () => {
+    render(<NommerPillarPage language="en" />);
 
     expect(
       screen.getByRole("heading", { level: 1, name: "Who gave this name?" })

@@ -325,14 +325,36 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "static",
     editorialReadiness: "ready",
   },
-  // Comprendre runs from the most concrete question to the method that
-  // answers it: what the corpus turned up, where they came from, who says so.
-  // The anecdotes are the only Comprendre module whose corpus is the repo
+  // ── THE DOSSIERS FREEZE ────────────────────────────────────────────────
+  //
+  // Every module on this axis but `anecdotes` is `draft`, and none of them is
+  // half-written: they are withdrawn while their editorial is reworked. What
+  // was reviewed and rejected is the *shape* of the reading — pages that
+  // arrive at a subject through a uniform scaffold of headings rather than
+  // through the subject itself, which is a structure no reader asked for.
+  //
+  // Two things follow, and they are one decision, not two:
+  //
+  //   · the hub and the menu list each module as the inert **Bientôt** card;
+  //   · the route behind it serves nothing (`isModulePublished`, moduleOffer).
+  //
+  // The second half is the one that did not exist before. `draft` used to dim
+  // an entry and leave its page readable by URL, so a dossier its editor had
+  // withdrawn was still served in full, indexed, and linkable from a fiche.
+  // A chip that says "Bientôt" over a page that answers 200 is a chip that
+  // lies, so readiness now governs the route as well as the row.
+  //
+  // Unfreezing a dossier is one word here — "draft" back to "ready" — and
+  // nothing else: the routes, the sitemap, the fiche cross-links and the two
+  // menus all read this field rather than a list of their own.
+  //
+  // ───────────────────────────────────────────────────────────────────────
+  //
+  // The anecdotes are the only module on this axis whose corpus is the repo
   // rather than the database: the bank is a TypeScript constant, so there is
   // no table for the availability probe to count and "static" is the honest
-  // answer. Readiness is "ready" because the surface is complete on the day
-  // it ships — every fact it holds is written and cited, which is not
-  // something the modules around it can say yet.
+  // answer. They stay `ready` through the freeze — short, sourced, and
+  // structurally unlike the long dossiers being reworked.
   // First of the rubric, and not by seniority: it is the question the other
   // three presuppose. The anecdotes bank is already onomastic by contract —
   // "every fact here is about a *name*: who gave it, when, and what it was
@@ -348,10 +370,10 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "dossiers",
     page: "nommer",
     availability: "static",
-    // Written and sourced on the day it ships. What is still open is the
-    // walk-back from Wikipedia to the primary works, which the dossier's own
-    // suite tracks by name — see AWAITING_PRIMARY_SOURCE.
-    editorialReadiness: "ready",
+    // Withdrawn with the rest of the axis — see THE DOSSIERS FREEZE above.
+    // The five chapters are written and cited; what is being reworked is the
+    // shape of the reading, not its sourcing.
+    editorialReadiness: "draft",
   },
   {
     id: "anecdotes",
@@ -361,10 +383,9 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     availability: "static",
     editorialReadiness: "ready",
   },
-  // Réalités — three dossiers on what is measured about Africa and what the
-  // measurement leaves out. They sit above the two modules still in
-  // preparation because a menu that lists what is ready after what is not
-  // tells a reader the corpus is thinner than it is (brand charter §3).
+  // Réalités — seven dossiers on what is measured about Africa, on the Kongo,
+  // Luba and Lunda polities, and on kongo spiritualities. All withdrawn under
+  // the freeze above: they are the pages whose uniform structure prompted it.
   //
   // `static` for the same reason as `nommer` and `anecdotes`: the fiches are
   // files in the repository, read at build. They are also loaded into
@@ -378,7 +399,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "dossiers",
     page: "dossierProportions",
     availability: "static",
-    editorialReadiness: "ready",
+    editorialReadiness: "draft",
   },
   {
     id: "dossier-populations",
@@ -386,7 +407,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "dossiers",
     page: "dossierPopulations",
     availability: "static",
-    editorialReadiness: "ready",
+    editorialReadiness: "draft",
   },
   {
     id: "dossier-ressources",
@@ -394,7 +415,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "dossiers",
     page: "dossierRessources",
     availability: "static",
-    editorialReadiness: "ready",
+    editorialReadiness: "draft",
   },
   {
     id: "dossier-kongo",
@@ -402,7 +423,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "dossiers",
     page: "dossierKongo",
     availability: "static",
-    editorialReadiness: "ready",
+    editorialReadiness: "draft",
   },
   {
     id: "dossier-luba",
@@ -410,7 +431,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "dossiers",
     page: "dossierLuba",
     availability: "static",
-    editorialReadiness: "ready",
+    editorialReadiness: "draft",
   },
   {
     id: "dossier-lunda",
@@ -418,7 +439,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "dossiers",
     page: "dossierLunda",
     availability: "static",
-    editorialReadiness: "ready",
+    editorialReadiness: "draft",
   },
   {
     id: "dossier-spiritualites-kongo",
@@ -426,7 +447,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     accessMode: "dossiers",
     page: "dossierSpiritualitesKongo",
     availability: "static",
-    editorialReadiness: "ready",
+    editorialReadiness: "draft",
   },
   {
     // Named for what the corpus actually holds — six sourced events, not a

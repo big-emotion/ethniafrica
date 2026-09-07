@@ -1,7 +1,6 @@
 import { recordLeaves, valueAt } from "@/lib/i18n/modelLeafPaths";
 import { classOf } from "@/lib/i18n/translationClasses";
 import { getSiteTreePaths } from "@/lib/siteTree";
-import { deriveTrail } from "@/lib/navigation/deriveTrail";
 import { describe, expect, it } from "vitest";
 import { readDossierCorpus, getDossierBySlug } from "../corpus";
 import { getDossiers, getFicheDossiers } from "../catalog";
@@ -62,50 +61,47 @@ describe("Congo history dossiers", () => {
     }
   });
   // @req REQ-114
-  it("links the same history to explicitly associated countries and peoples only", () => {
+  /**
+   * The four histories are written, sourced and illustrated — the tests above
+   * still read them straight from the corpus. What the freeze withdraws is
+   * every way in, and these three hold that the withdrawal is total: no fiche
+   * offers them, no theme opens on them, no sitemap advertises them.
+   */
+  // @req REQ-114
+  it("links no fiche to a withdrawn history", () => {
     const links = (kind: "country" | "people", id: string, section: string) =>
       getFicheDossiers({ kind, id, section });
-    expect(links("country", "COD", "kingdom:Royaume Kongo")[0]?.href).toBe(
-      getLocalizedRoute("fr", "dossierKongo")
-    );
-    expect(links("country", "AGO", "kingdom:Royaume Kongo")[0]?.id).toBe(
-      "dossier-kongo"
-    );
-    expect(links("country", "ZMB", "kingdom:Royaume Kongo")).toEqual([]);
-    expect(links("country", "COD", "kingdom:Kongo imaginaire")).toEqual([]);
-    expect(links("people", "PPL_KONGO", "history")[0]?.id).toBe(
-      "dossier-kongo"
-    );
-    expect(links("people", "PPL_LUBA", "culture")).toEqual([]);
-    expect(links("people", "PPL_KONGO", "culture")[0]?.id).toBe(
-      "dossier-spiritualites-kongo"
-    );
+
+    expect(links("country", "COD", "kingdom:Royaume Kongo")).toEqual([]);
+    expect(links("country", "AGO", "kingdom:Royaume Kongo")).toEqual([]);
+    expect(links("people", "PPL_KONGO", "history")).toEqual([]);
+    expect(links("people", "PPL_KONGO", "culture")).toEqual([]);
   });
+
   // @req REQ-114
-  it("opens the spiritualities theme and keeps unpublished formations unlinked", () => {
-    expect(
-      getDossiers({ theme: "spiritualites" }).map((entry) => entry.id)
-    ).toContain("dossier-spiritualites-kongo");
-    expect(
-      getFicheDossiers({
-        kind: "country",
-        id: "COD",
-        section: "kingdom:Chefferies Mongo",
-      })
-    ).toEqual([]);
+  it("opens no theme on a withdrawn history", () => {
+    expect(getDossiers({ theme: "spiritualites" })).toEqual([]);
+    expect(getDossiers({ theme: "pouvoirs" })).toEqual([]);
   });
+
+  /**
+   * Stated over the corpus rather than over `getDossiers()`, which the freeze
+   * empties: iterating an empty list would pass this without checking a
+   * single address, and a green that asserts nothing is the one failure a
+   * suite cannot report.
+   */
   // @req REQ-114 @req REQ-140
-  it("lists each locale route in the sitemap and returns through its primary theme", () => {
+  it("advertises no withdrawn dossier in either locale's sitemap", () => {
+    const withdrawn = readDossierCorpus().dossiers.map(
+      (dossier) => dossier.slug
+    );
+    expect(withdrawn.length).toBeGreaterThan(0);
+
     for (const language of ["fr", "en"] as const) {
-      for (const entry of getDossiers({ language }).filter((d) =>
-        d.id.startsWith("dossier-")
-      )) {
-        expect(getSiteTreePaths(language)).toContain(entry.href);
-        expect(
-          deriveTrail(entry.href).some((crumb) =>
-            crumb.href?.endsWith(`/themes/${entry.primaryTheme}`)
-          )
-        ).toBe(true);
+      const paths = getSiteTreePaths(language);
+      const hub = getLocalizedRoute(language, "dossiersHub");
+      for (const slug of withdrawn) {
+        expect(paths, `${language}/${slug}`).not.toContain(`${hub}/${slug}`);
       }
     }
   });

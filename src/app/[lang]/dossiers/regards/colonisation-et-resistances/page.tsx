@@ -19,6 +19,7 @@
  */
 
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { ColonizationModulePage } from "@/components/colonization/ColonizationModulePage";
 import {
   transformColonizationModuleData,
@@ -29,6 +30,7 @@ import { listPeopleFragmentations } from "@/api/v2/services/peopleFragmentation"
 import { listMigrations, getMigrationById } from "@/api/v2/services/migrations";
 import { getPeopleNamesDossier } from "@/api/v2/services/names";
 import { COLONIAL_EVENT_TYPES } from "@/lib/afrik/migrationEventTypes";
+import { isModulePublished } from "@/lib/hubs/moduleOffer";
 import { getTranslation } from "@/lib/translations";
 import { getLocalizedRoute } from "@/lib/routing";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
@@ -45,6 +47,7 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { lang } = await params;
+  if (!isModulePublished("regards-colonisation")) return {};
   const t = getTranslation(lang as Language).colonization;
   const copy = { title: t.pageTitle, description: t.pageSubtitle };
   return {
@@ -134,6 +137,8 @@ async function loadColonizationPageData() {
 // @req REQ-141 FR90
 export default async function ColonizationPage({ params }: PageProps) {
   const { lang } = await params;
+  // Before the loaders below: a withdrawn page owes the database nothing.
+  if (!isModulePublished("regards-colonisation")) notFound();
   const language = lang as Language;
   const t = getTranslation(language).colonization;
   const data = await loadColonizationPageData();

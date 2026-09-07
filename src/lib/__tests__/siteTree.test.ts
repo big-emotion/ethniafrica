@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
+import { isModulePublished } from "@/lib/hubs/moduleOffer";
 import {
   NOMMER_CHAPTER_KEYS,
   getLocalizedRoute,
@@ -53,8 +54,12 @@ describe("getSiteTree — English reader copy", () => {
     expect(tree.find((section) => section.id === "corpus")?.title).toBe(
       "The corpus, in AFRIK order"
     );
-    for (const chapter of Object.values(NOMMER_CHAPTERS_EN)) {
-      expect(text).toContain(chapter.title);
+    // Only while the dossier is published: the freeze takes the chapters out
+    // of the plan entirely, in both locales.
+    if (isModulePublished("nommer")) {
+      for (const chapter of Object.values(NOMMER_CHAPTERS_EN)) {
+        expect(text).toContain(chapter.title);
+      }
     }
     expect(text).toContain(GAME_DEFINITIONS_EN.mercator.nameEn);
     expect(text).not.toContain("Qui a donné ce nom ?");
@@ -106,11 +111,19 @@ describe("getSiteTree — the corpus section lists languages and patronymes", ()
   });
 });
 
-// The dossier is the first doorway of its rubric, and its five chapters are
-// listed under it. That is a deliberate exception to this file's own rule —
-// "the reader wants the ways in" — because `getSiteTreePaths` is the sole feed
-// of the sitemap, and a chapter left out is an editorial page no crawler is
-// ever told about.
+/**
+ * The dossier is the first doorway of its rubric, and its five chapters are
+ * listed under it. That is a deliberate exception to this file's own rule —
+ * "the reader wants the ways in" — because `getSiteTreePaths` is the sole feed
+ * of the sitemap, and a chapter left out is an editorial page no crawler is
+ * ever told about.
+ *
+ * The freeze reverses the exception rather than cancelling it: while `nommer`
+ * is withdrawn, listing a chapter tells the crawler about a page that answers
+ * 404, which is the same argument pointing the other way. Both tests below
+ * read publication rather than a fixed expectation, so they hold in either
+ * state and say, on the day the dossier returns, what returning owes.
+ */
 describe("getSiteTree — the Nommer dossier and its chapters", () => {
   // @req REQ-110
   it("opens the dossiers rubric on its theme directory", () => {
@@ -124,7 +137,7 @@ describe("getSiteTree — the Nommer dossier and its chapters", () => {
   });
 
   // @req REQ-110
-  it("lists the five chapters, in reading order, right under it", () => {
+  it("lists the five chapters in reading order, or none at all", () => {
     const dossiers = getSiteTree("fr").find(
       (section) => section.id === "dossiers"
     );
@@ -134,6 +147,12 @@ describe("getSiteTree — the Nommer dossier and its chapters", () => {
       getNommerChapterRoute("fr", key)
     );
 
+    if (!isModulePublished("nommer")) {
+      expect(hrefs).not.toContain(getLocalizedRoute("fr", "nommer"));
+      expect(hrefs.filter((href) => chapterHrefs.includes(href))).toEqual([]);
+      return;
+    }
+
     const start = hrefs.indexOf(getLocalizedRoute("fr", "nommer")) + 1;
     expect(hrefs.slice(start, start + chapterHrefs.length)).toEqual(
       chapterHrefs
@@ -141,11 +160,14 @@ describe("getSiteTree — the Nommer dossier and its chapters", () => {
   });
 
   // @req REQ-110
-  it("puts every chapter in the paths the sitemap is built from", () => {
+  it("feeds the sitemap every chapter it lists, and no other", () => {
     const paths = getSiteTreePaths("fr");
+    const published = isModulePublished("nommer");
 
     for (const key of NOMMER_CHAPTER_KEYS) {
-      expect(paths).toContain(getNommerChapterRoute("fr", key));
+      expect(paths.includes(getNommerChapterRoute("fr", key)), key).toBe(
+        published
+      );
     }
   });
 });
