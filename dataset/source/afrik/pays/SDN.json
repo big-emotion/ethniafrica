@@ -173,7 +173,7 @@
         "name": "Autres groupes",
         "selfAppellation": "Variées selon les groupes",
         "exonyms": ["Variées selon les groupes"],
-        "peopleId": "PPL_AUTRES_GROUPES",
+        "peopleId": null,
         "mainRegion": "Toutes les régions du Soudan",
         "languages": ["Langues diverses", "arabe soudanais"],
         "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
@@ -308,7 +308,7 @@
           "name": "Autres groupes",
           "population": 8250000,
           "percentageInCountry": 16.5,
-          "peopleId": "PPL_AUTRES_GROUPES",
+          "peopleId": null,
           "region": "Toutes les régions du Soudan"
         }
       ]

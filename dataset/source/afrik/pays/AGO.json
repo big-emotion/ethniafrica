@@ -94,7 +94,7 @@
       {
         "name": "Colónia de Angola",
         "period": "1575 - 1975",
-        "entryType": "polity",
+        "entryType": "colonial",
         "timeRange": {
           "startYear": 1575,
           "endYear": 1975,
@@ -203,7 +203,7 @@
           "à éviter)",
           "Khoisan (terme académique)"
         ],
-        "peopleId": "PPL_SAN",
+        "peopleId": null,
         "mainRegion": "Sud de l'Angola, zones arides et semi-arides",
         "languages": ["Langues khoïsan (plusieurs langues)", "portugais"],
         "languageFamily": "FLG_KHOE",

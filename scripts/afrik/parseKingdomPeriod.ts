@@ -248,7 +248,7 @@ export function parseKingdomPeriod(rawLabel: string): KingdomTimeRange | null {
  * et formations politiques".
  */
 const COLONIAL_NAME_PATTERN =
-  /colonie|coloniale?\b|protectorat|condominium|\bmandat\b|britannique|fran[çc]ais|belge|italien|allemand|portugais|espagnol|n[ée]erlandais|rhod[ée]sie|somaliland|c[ôo]te-de-l|oubangui|kamerun|cameroons|anglo-|afrique[- ](?:orientale|occidentale|[ée]quatoriale)|[îi]le de france|haute-volta/i;
+  /colonie|col[óo]nia|coloniale?\b|protectorat|condominium|\bmandat\b|britannique|fran[çc]ais|belge|italien|allemand|portugais|espagnol|n[ée]erlandais|rhod[ée]sie|somaliland|c[ôo]te-de-l|oubangui|kamerun|cameroons|anglo-|afrique[- ](?:orientale|occidentale|[ée]quatoriale)|[îi]le de france|haute-volta/i;
 
 /**
  * A modern sovereign state. Anchored at the start so "Royaume du Bénin" — a

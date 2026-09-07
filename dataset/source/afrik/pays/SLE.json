@@ -152,7 +152,7 @@
         "name": "Autres groupes",
         "selfAppellation": "Variées selon les groupes",
         "exonyms": ["Variées selon les groupes"],
-        "peopleId": "PPL_AUTRES_GROUPES",
+        "peopleId": null,
         "mainRegion": "Toutes les régions de la Sierra Leone",
         "languages": ["Langues diverses", "anglais", "krio"],
         "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
@@ -308,7 +308,7 @@
         {
           "name": "Autres groupes",
           "percentageInCountry": 20.8,
-          "peopleId": "PPL_AUTRES_GROUPES",
+          "peopleId": null,
           "region": "Toutes les régions de la Sierra Leone"
         }
       ]

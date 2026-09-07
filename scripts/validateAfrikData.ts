@@ -4805,7 +4805,6 @@ export function checkTranslationSidecars(
  */
 export const SOFT_CHECK_NAMES: ReadonlySet<string> = new Set([
   "FR52-coverage People-to-language coverage",
-  "FR27-references People references resolve",
 ]);
 
 export interface IntegrityCheck {

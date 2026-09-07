@@ -167,7 +167,7 @@
         "name": "Autres groupes",
         "selfAppellation": "Variées selon les groupes",
         "exonyms": ["Variées selon les groupes"],
-        "peopleId": "PPL_AUTRES_GROUPES",
+        "peopleId": null,
         "mainRegion": "Diverses régions de la Mauritanie",
         "languages": ["Langues diverses", "français"],
         "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
@@ -335,7 +335,7 @@
           "name": "Autres groupes",
           "population": 190000,
           "percentageInCountry": 4,
-          "peopleId": "PPL_AUTRES_GROUPES",
+          "peopleId": null,
           "region": "Diverses régions de la Mauritanie"
         }
       ]

@@ -212,6 +212,14 @@ A fiche sourced only at `unverified` is published and visibly marked low-confide
 
 Keep colonial-era names but explain why they are problematic, and always surface the autonym. `checkEditorialRules.ts` enforces: an autonym is required at `confidence >= medium`, and ≥2 sources when `classification_status` is `contested` or `colonial-legacy`.
 
+### Chronological symmetry (REQ-148)
+
+A `content.kingdoms[]` entry carries `entryType` (`polity | colonial | modern`) and, where the corpus can state them, machine bounds in `timeRange` — the same shape the migration model validates. **`period` stays the reader-facing label and is never derived from the bounds**: it holds nuance ("apogée", "déclin progressif") that integers do not.
+
+Two gates. `REQ-148 Kingdom time ranges` in `validateAfrikData.ts` holds the shape and refuses a range sharing no time with its own label. `chronology-symmetry` in `checkEditorialRules.ts` refuses the asymmetry that made this necessary: **a country that dates its colonial administrations must date its precolonial polities**, because the atlas was showing "1894 - 1962" for the protectorate and "Précolonial" for the five kingdoms above it. It is not a completeness check — a country that dates nothing passes.
+
+96 entries still violate it, held by `UNDATED_POLITY_CEILING`, a ratchet that fails in both directions like `DEAD_CODE_CEILINGS`. Each editorial pass lowers it in the same change; at zero the ratchet is deleted and the findings become errors. `scripts/afrik/backfillKingdomTimeRange.ts` (dry-run by default) prints the queue by country and **never invents a bound** — an entry whose label names an era rather than a date stays undated and visible to the gate.
+
 ### Reader-facing register
 
 Three fiche fields are published to the reader **verbatim**, with no sanitising layer: `gaps[].reason`, `sources[].title` and `sources[].notes` (nested under `names[].sources[]` on name fiches). Everything else, `_meta.directives` included, is authoring metadata nothing renders.

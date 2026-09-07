@@ -236,6 +236,23 @@ describe("classifyKingdomEntry", () => {
   });
 
   // @req REQ-148
+  it("recognises a colony named in the coloniser's own spelling", () => {
+    expect(classifyKingdomEntry("Colónia de Angola")).toBe("colonial");
+  });
+
+  /**
+   * Three colonial administrations in the corpus carry no marker at all —
+   * "Ruanda-Urundi" and "Tanganyika" are proper names. No pattern can reach
+   * them, which is the point of storing the type rather than deriving it: an
+   * editor writes what the machine cannot infer.
+   */
+  // @req REQ-148
+  it("cannot infer a mandate that is named only by its territory", () => {
+    expect(classifyKingdomEntry("Ruanda-Urundi")).toBe("polity");
+    expect(classifyKingdomEntry("Tanganyika")).toBe("polity");
+  });
+
+  // @req REQ-148
   it("recognises a modern sovereign state", () => {
     expect(classifyKingdomEntry("République du Congo")).toBe("modern");
     expect(classifyKingdomEntry("République fédérale du Nigeria")).toBe(

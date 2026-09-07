@@ -100,7 +100,7 @@
           "\"Portugais\" (terme générique)",
           "\"Colons\" (terme historique)"
         ],
-        "peopleId": "PPL_PORTUGAIS_SANTOMEENS",
+        "peopleId": null,
         "mainRegion": "Toutes les îles de São Tomé-et-Príncipe, majoritairement urbains",
         "languages": ["Portugais", "créoles locaux"],
         "appellationRemarks": "Les Portugais santoméens sont descendants de colons portugais. Le terme \"Colon\" est historique et doit être contextualisé. Ils sont majoritairement catholiques."
@@ -109,7 +109,7 @@
         "name": "Autres groupes",
         "selfAppellation": "Variées selon les groupes",
         "exonyms": ["Variées selon les groupes"],
-        "peopleId": "PPL_AUTRES_GROUPES",
+        "peopleId": null,
         "mainRegion": "Toutes les îles de São Tomé-et-Príncipe",
         "languages": ["Langues diverses", "portugais"],
         "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."

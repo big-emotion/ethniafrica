@@ -570,10 +570,17 @@ const CHRONOLOGY_RULE: RuleName = "chronology-symmetry";
  * pass that sources a polity's dates lowers this constant in the same change,
  * which is what makes the burn-down auditable rather than aspirational.
  *
+ * It moved 95 → 96 once, in the change that retyped "Colónia de Angola" from
+ * polity to colonial. Nothing regressed: Angola's Ovimbundu kingdoms were
+ * always undated, and the misfiled colony was hiding them from this count. A
+ * ratchet that only ever falls would have made that correction unreportable,
+ * so the rule is that the number follows the measurement and the change says
+ * why.
+ *
  * When it reaches 0, delete the ratchet and let the findings be errors: the
  * rule becomes a plain gate and the asymmetry cannot return.
  */
-export const UNDATED_POLITY_CEILING = 95;
+export const UNDATED_POLITY_CEILING = 96;
 
 interface KingdomShape {
   name?: unknown;

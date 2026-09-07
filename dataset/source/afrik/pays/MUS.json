@@ -159,7 +159,7 @@
         "name": "Autres groupes",
         "selfAppellation": "Variées selon les groupes",
         "exonyms": ["Variées selon les groupes"],
-        "peopleId": "PPL_AUTRES_GROUPES",
+        "peopleId": null,
         "mainRegion": "Toutes les régions de Maurice",
         "languages": [
           "Créole mauricien",
@@ -328,7 +328,7 @@
           "name": "Autres groupes",
           "population": 100000,
           "percentageInCountry": 7.7,
-          "peopleId": "PPL_AUTRES_GROUPES",
+          "peopleId": null,
           "region": "Toutes les régions de Maurice"
         }
       ]

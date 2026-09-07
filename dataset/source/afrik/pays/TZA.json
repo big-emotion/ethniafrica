@@ -72,7 +72,7 @@
       {
         "name": "Tanganyika",
         "period": "1919 - 1961",
-        "entryType": "polity",
+        "entryType": "colonial",
         "timeRange": {
           "startYear": 1919,
           "endYear": 1961,
@@ -267,7 +267,7 @@
         },
         {
           "name": "Swahili (Tanzanie)",
-          "peopleId": "PPL_SWAHILI_TAN",
+          "peopleId": "PPL_SWAHILI_TANZANIE",
           "percentageInCountry": 5
         },
         {

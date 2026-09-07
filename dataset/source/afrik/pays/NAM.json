@@ -168,7 +168,7 @@
           "peut être problématique)",
           "\"Basarwa\" (terme utilisé au Botswana)"
         ],
-        "peopleId": "PPL_SAN",
+        "peopleId": null,
         "mainRegion": "Est de la Namibie (désert du Kalahari)",
         "languages": [
           "Langues khoïsan (diverses",
@@ -186,7 +186,7 @@
           "peut être problématique)",
           "\"Colons\" (terme historique)"
         ],
-        "peopleId": "PPL_BLANCS_NAMIBIENS",
+        "peopleId": null,
         "mainRegion": "Toutes les régions de la Namibie, majoritairement urbains",
         "languages": ["Afrikaans", "allemand", "anglais"],
         "appellationRemarks": "Les Blancs namibiens sont descendants de colons allemands et afrikaners. Le terme \"Blanc\" peut être problématique et doit être utilisé avec précaution. Le terme \"Colon\" est historique et doit être contextualisé. Ils sont majoritairement chrétiens."

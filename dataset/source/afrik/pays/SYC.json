@@ -139,7 +139,7 @@
         "name": "Autres groupes",
         "selfAppellation": "Variées selon les groupes",
         "exonyms": ["Variées selon les groupes"],
-        "peopleId": "PPL_AUTRES_GROUPES",
+        "peopleId": null,
         "mainRegion": "Toutes les îles des Seychelles",
         "languages": [
           "Langues diverses",
@@ -272,7 +272,7 @@
           "name": "Autres groupes",
           "population": 2000,
           "percentageInCountry": 2,
-          "peopleId": "PPL_AUTRES_GROUPES",
+          "peopleId": null,
           "region": "Toutes les îles des Seychelles"
         }
       ]
