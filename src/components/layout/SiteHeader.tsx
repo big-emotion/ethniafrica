@@ -883,6 +883,15 @@ export function SiteHeader({
         }
         .sh-entry-text {
           min-width: 0;
+          /* Opts out of the mobile centring that styles/mobile-text.css puts
+             on the body below 768px, the way that file says a component
+             should. A menu entry is a destination in a list, not composition:
+             the glyph sets the reading edge, and every name has to start on
+             it. It only ever showed on a name long enough to wrap — the atlas
+             and the games have none, and the dossiers axis drew no cards at
+             all until this file stopped special-casing it, so "Lunda :
+             alliances et circulations" was the first entry to reveal it. */
+          text-align: left;
         }
         .sh-entry-name {
           display: block;
