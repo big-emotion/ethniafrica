@@ -255,11 +255,11 @@
       }
     ],
     "culture": {
-      "culturalTraditions": "Art luba (sculptures, masques), art lunda et tshokwe (sculptures en bois), musique traditionnelle (rumba congolaise), danse traditionnelle, artisanat (vannerie, poterie, tissage), architecture traditionnelle",
-      "dominantReligions": "Christianisme (catholique majoritaire, protestant), croyances traditionnelles (syncrétisme), islam (minorité, surtout dans l'est)",
-      "lifestyles": "Vie principalement rurale, agriculture (manioc, maïs, riz, arachides), élevage (bovins, caprins), pêche (fleuves et lacs), exploitation minière (cuivre, cobalt, diamants, or), commerce",
-      "socialOrganization": "Système de chefferies traditionnelles, structure clanique (patrilinéaire ou matrilinéaire selon les groupes), organisation en familles étendues et lignages, importance des ancêtres, système de conseils d'anciens",
-      "regionalRelations": "Relations historiques avec les peuples d'Angola, de Zambie, du Congo, de la RCA, du Rwanda, du Burundi, de l'Ouganda. Diaspora importante en Belgique, France, et dans les pays occidentaux."
+      "culturalTraditions": "Les arts de cour luba et lunda se sont développés dans des contextes politiques et historiques propres aux savanes du sud de l'Afrique centrale. Un objet de prestige associé à l'autorité fournit un exemple documenté de l'art de cour chokwe. Inscrite par l'UNESCO en 2021, la rumba congolaise est une pratique urbaine partagée avec la République du Congo. Ces exemples situés ne résument pas les traditions de toutes les communautés de la RDC.",
+      "dominantReligions": "Dans l'enquête démographique et de santé de 2013-2014, menée auprès de femmes et hommes de 15 à 49 ans, les affiliations chrétiennes prédominaient parmi les personnes interrogées, réparties entre plusieurs catégories catholiques, protestantes, kimbanguistes, salutistes et autres chrétiennes. Des réponses musulmanes, animistes, sans religion et autres étaient également recensées. Cet échantillon ne constitue pas un recensement religieux de toute la population.",
+      "lifestyles": "Les moyens de subsistance agricoles et les conditions de sécurité alimentaire varient fortement selon les régions et sont affectés par les conflits, les déplacements, les marchés et les chocs climatiques. Le secteur extractif occupe une place majeure dans l'économie nationale, mais cet agrégat ne décrit pas à lui seul les moyens de subsistance des ménages.",
+      "socialOrganization": null,
+      "regionalRelations": null
     },
     "historicalFacts": {
       "ancientPeriods": "Dans la dépression de l'Upemba, au sud de la RDC actuelle, plus de quarante sites archéologiques et une séquence de plus de deux millénaires sont recensés, du Later Stone Age aux périodes luba récentes. Cette séquence régionale ne décrit ni tout le territoire national ni une origine unique de ses populations.",
@@ -395,6 +395,42 @@
         "url": "https://digitallibrary.un.org/record/3792221/files/S_2019_159-EN.pdf",
         "tier": "official",
         "notes": "Rapport des Nations unies sur le processus électoral de 2018-2019, la transmission pacifique du pouvoir et les limites du processus."
+      },
+      {
+        "title": "Congolese rumba — UNESCO Intangible Cultural Heritage",
+        "url": "https://ich.unesco.org/en/RL/congolese-rumba-01711?RL=01711",
+        "tier": "official",
+        "notes": "Inscription multinationale de 2021 documentant une pratique musicale et dansée urbaine partagée par les deux États du Congo ; elle ne rend pas la rumba représentative de toutes les communautés de la RDC."
+      },
+      {
+        "title": "Mwanangana (lord of the land) playing a sanza — The Metropolitan Museum of Art",
+        "url": "https://www.metmuseum.org/art/collection/search/316173",
+        "tier": "referenced",
+        "notes": "Notice d'objet utilisée comme exemple circonscrit d'art de cour chokwe, et non comme synthèse complète des arts chokwe."
+      },
+      {
+        "title": "Democratic Republic of the Congo Demographic and Health Survey 2013-2014 — DHS Program",
+        "url": "https://dhsprogram.com/pubs/pdf/FR300/FR300.pdf",
+        "tier": "official",
+        "notes": "Enquête officielle par échantillon ; la distribution religieuse concerne les femmes et hommes interrogés dans des classes d'âge définies et non un recensement de toute la population."
+      },
+      {
+        "title": "2023 Report on International Religious Freedom: Democratic Republic of the Congo — United States Department of State",
+        "url": "https://2021-2025.state.gov/reports/2023-report-on-international-religious-freedom/democratic-republic-of-the-congo/",
+        "tier": "official",
+        "notes": "Synthèse institutionnelle de contexte ; ses estimations démographiques sont attribuées à des sources tierces de dates et classifications différentes."
+      },
+      {
+        "title": "GIEWS Country Brief: Democratic Republic of the Congo — FAO",
+        "url": "https://www.fao.org/giews/countrybrief/country.jsp?code=COD&lang=en",
+        "tier": "official",
+        "notes": "Note conjoncturelle sur la production agricole et la sécurité alimentaire, utilisée pour leurs variations régionales et non comme ethnographie générale des modes de vie."
+      },
+      {
+        "title": "Democratic Republic of the Congo — Extractive Industries Transparency Initiative",
+        "url": "https://eiti.org/countries/democratic-republic-congo",
+        "tier": "referenced",
+        "notes": "Référence institutionnelle sur le poids et la gouvernance du secteur extractif ; les agrégats nationaux ne décrivent pas les moyens de subsistance des ménages."
       }
     ],
     "demographics": {
@@ -513,6 +549,11 @@
           "percentageInCountry": 34
         }
       ]
+    }
+  },
+  "_translation": {
+    "deferred": {
+      "en": "The DRC country fiche is still undergoing country-by-country editorial enrichment; translate the complete record after the French source has stabilised."
     }
   }
 }

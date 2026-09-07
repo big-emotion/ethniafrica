@@ -2,10 +2,16 @@
   "schemaVersion": "1.0",
   "countryId": "COD",
   "updatedAt": "2026-09-06",
-  "status": "proposal_ready_for_editorial_approval",
+  "status": "approved_and_applied_to_source_json",
+  "application": {
+    "sourceJsonAppliedAt": "2026-09-07",
+    "databaseSync": "not_performed",
+    "scope": "Three fields received scoped replacements. The unsupported country-level social-organization and regional-relations claims were removed. This does not establish national cultural completeness."
+  },
   "scopePolicy": {
-    "proposalOnly": true,
-    "noProductionWrite": true,
+    "proposalOnly": false,
+    "sourceJsonWriteApplied": true,
+    "noDatabaseWrite": true,
     "avoidNationalGeneralizations": true,
     "peopleAndRegionSpecificClaimsBelongInDedicatedRecords": true,
     "datedStatisticsMustExposePopulationAndMethod": true
@@ -192,7 +198,8 @@
     }
   ],
   "productionProposal": {
-    "applyOnlyAfterApproval": true,
+    "applyOnlyAfterApproval": false,
+    "appliedAt": "2026-09-07",
     "fieldActions": [
       {
         "field": "content.culture.culturalTraditions",
