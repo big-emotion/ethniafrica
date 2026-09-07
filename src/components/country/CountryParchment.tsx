@@ -50,6 +50,20 @@ export interface CountryParchmentProps {
    * in the middle of the fiche.
    */
   children?: ReactNode;
+  /**
+   * The way out of the fiche — `FicheOnward`, composed by the route.
+   *
+   * Its own slot rather than one more thing in `children`: the chapters that
+   * arrive through `children` are the fiche's own, and this one is not about
+   * the country at all. It also has to sit last among them, which `children`
+   * cannot promise.
+   *
+   * A node rather than the links themselves, because the block reads relations
+   * off awaited services. Resolved here instead, this parchment would become
+   * async, and an async node in the fiche tree resolves every synchronous
+   * render of it to an empty div — see `FicheJsonLd`.
+   */
+  onward?: ReactNode;
 }
 
 // @req REQ-115

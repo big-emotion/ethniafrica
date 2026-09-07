@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { DossierLinks } from "@/components/dossiers/DossierLinks";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import type { PeopleDetail } from "@/types/afrik-frontend";
@@ -70,6 +72,16 @@ export interface PeopleDetailViewV2Props {
    * ordinary answer today and is printed as such.
    */
   borneNames?: PatronymeLinkSummary[] | null;
+  /**
+   * The way out of the fiche — `FicheOnward`, composed by the route.
+   *
+   * A node rather than the links themselves, because the block reads relations
+   * off awaited services. Resolved here instead, this parchment would become
+   * async, and an async node in the fiche tree resolves every synchronous
+   * render of it to an empty div — the failure `FicheJsonLd` records costing
+   * thirty-three tests across five files, none of whose messages named it.
+   */
+  onward?: ReactNode;
 }
 
 /**
@@ -121,6 +133,7 @@ export function PeopleDetailViewV2({
   notes,
   bibliography,
   borneNames = null,
+  onward,
 }: PeopleDetailViewV2Props) {
   const copy = peopleCopy[language];
   const data = transformPeopleData(people, namesDossier);
@@ -355,6 +368,12 @@ export function PeopleDetailViewV2({
           />
         </FicheSection>
       )}
+
+      {/* The way out sits before the bibliography, not after it. The reader
+          this block exists for is the one who finished the reading, and
+          almost none of them scroll past a source list to find out what to
+          read next. */}
+      {onward}
 
       {/* Deep links across the app point at #sources; until now the only such
           anchor in the tree belonged to the family fiche, so every citation
