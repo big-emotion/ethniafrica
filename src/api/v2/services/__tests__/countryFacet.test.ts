@@ -92,17 +92,16 @@ describe("the countries facet's selection", () => {
    * A second name table here is exactly how a list, a panel and a fiche come
    * to call one country three things.
    *
-   * It does diverge from the corpus: CLDR writes "Nigeria" where the fiche
-   * wrote "Nigéria", and "Congo-Kinshasa" for the RDC. The divergence is
-   * already on screen today — it is the fiche's own heading — so following it
-   * keeps one answer in the app instead of adding a second.
+   * It can diverge from the corpus: CLDR writes "Nigeria" where the fiche
+   * wrote "Nigéria". Editorial overrides resolve cases such as the RDC, where
+   * CLDR's disambiguation label is not the country name the fiche declares.
    */
   // @req REQ-116
   it("labels a country with the name its fiche heads itself with", async () => {
     const { rows } = await getCountryFacetSelection(unfiltered);
     const labels = Object.fromEntries(rows.map((row) => [row.id, row.label]));
 
-    expect(labels.COD).toBe("Congo-Kinshasa");
+    expect(labels.COD).toBe("République démocratique du Congo");
     expect(labels.NGA).toBe("Nigeria");
   });
 
@@ -117,9 +116,7 @@ describe("the countries facet's selection", () => {
   it("orders by the displayed name, not by the one stored under it", async () => {
     const { rows } = await getCountryFacetSelection(unfiltered);
 
-    // "Congo-Kinshasa" sorts after "Bénin" and before "Nigéria"; the corpus
-    // name it replaces ("République…") would have sorted last.
-    expect(rows.map((row) => row.id)).toEqual(["BEN", "COD", "NGA", "ZZZ"]);
+    expect(rows.map((row) => row.id)).toEqual(["BEN", "NGA", "ZZZ", "COD"]);
   });
 
   // @req REQ-116

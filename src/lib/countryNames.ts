@@ -1,3 +1,4 @@
+import { countryCopy } from "@/lib/i18n/copy/country";
 import { displayCountryName } from "@/lib/languageTag";
 import type { Language } from "@/types/shared";
 
@@ -65,7 +66,13 @@ export function getCountryCommonName(
   isoAlpha3: string,
   officialName: string
 ): string {
-  const isoAlpha2 = ISO_ALPHA_3_TO_ALPHA_2[isoAlpha3.trim().toUpperCase()];
+  const normalizedIsoAlpha3 = isoAlpha3.trim().toUpperCase();
+
+  const editorialOverride =
+    countryCopy[lang].editorialCommonNames[normalizedIsoAlpha3];
+  if (editorialOverride) return editorialOverride;
+
+  const isoAlpha2 = ISO_ALPHA_3_TO_ALPHA_2[normalizedIsoAlpha3];
   if (!isoAlpha2) return officialName;
   return displayCountryName(lang, isoAlpha2) ?? officialName;
 }
