@@ -16,6 +16,7 @@ import * as path from "path";
 import { pathToFileURL } from "url";
 import { parse } from "csv-parse/sync";
 import { evaluateSourceUrl } from "@/lib/sources/authorized-source-catalog";
+import { parseKingdomPeriod } from "./afrik/parseKingdomPeriod";
 import { parseRelationFile } from "../src/lib/afrik/parsers/relationParser";
 import { parseDossierFile } from "../src/lib/afrik/parsers/dossierParser";
 import { applyDossierTranslation } from "../src/lib/dossiers/translation";
@@ -1207,6 +1208,160 @@ export function checkPeopleReferencesResolve(
     errors.push(
       `${file}: ${fieldPath} names ${peopleId}, which has no fiche and no successor`
     );
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+const KINGDOM_ENTRY_TYPES = new Set(["polity", "colonial", "modern"]);
+const KINGDOM_PRECISIONS = new Set(["year", "century", "approximate"]);
+/**
+ * The corpus documents polities, not geology. The lower bound matches the one
+ * the migration model already enforces, so the two chronologies of the corpus
+ * answer to the same horizon.
+ */
+const EARLIEST_DESCRIBABLE_YEAR = -10000;
+
+/**
+ * REQ-148 – A `content.kingdoms[]` entry that carries machine bounds carries
+ * well-formed ones.
+ *
+ * This is deliberately silent about entries with no `timeRange`: whether the
+ * corpus *ought* to date a given polity is a question about symmetry, and it is
+ * answered by the `chronology-symmetry` editorial rule, which can weigh a
+ * country's colonial entries against its precolonial ones. Here the only
+ * question is whether what has been written is coherent.
+ *
+ * The last check is the interesting one. `period` and `timeRange` are two
+ * statements about the same entity, and `period` is the one the reader sees, so
+ * they may not describe disjoint stretches of time. They are allowed to differ:
+ * refining "XIVe siècle" to a sourced 1314 is the intended editorial work, and
+ * the intervals still overlap. Only a range with nothing in common with its own
+ * label is reported — a transposition, a copy-paste from the entry above.
+ */
+export function checkKingdomTimeRange(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const paysDir = path.join(datasetRoot, "pays");
+  if (!fs.existsSync(paysDir)) return { ok: true, errors, warnings };
+
+  const currentYear = new Date().getFullYear();
+
+  for (const file of fs.readdirSync(paysDir).sort()) {
+    if (!file.endsWith(".json") || file.startsWith("_")) continue;
+    let data: Record<string, unknown>;
+    try {
+      data = JSON.parse(
+        fs.readFileSync(path.join(paysDir, file), "utf-8")
+      ) as Record<string, unknown>;
+    } catch {
+      warnings.push(`pays/${file}: unreadable, skipped`);
+      continue;
+    }
+
+    const content = (data.content ?? {}) as Record<string, unknown>;
+    const kingdoms = content.kingdoms;
+    if (!Array.isArray(kingdoms)) continue;
+
+    kingdoms.forEach((raw, index) => {
+      if (!raw || typeof raw !== "object") return;
+      const entry = raw as Record<string, unknown>;
+      const where = `pays/${file}: content.kingdoms[${index}]`;
+
+      const entryType = entry.entryType;
+      if (
+        entryType !== undefined &&
+        !KINGDOM_ENTRY_TYPES.has(String(entryType))
+      ) {
+        errors.push(
+          `REQ-148: ${where}.entryType is "${String(entryType)}" — expected polity, colonial or modern`
+        );
+      }
+
+      const range = entry.timeRange;
+      if (range === undefined) return;
+      if (!range || typeof range !== "object" || Array.isArray(range)) {
+        errors.push(`REQ-148: ${where}.timeRange must be an object`);
+        return;
+      }
+      const { startYear, endYear, ongoing, precision, datingNote } =
+        range as Record<string, unknown>;
+
+      if (!Number.isInteger(startYear)) {
+        errors.push(
+          `REQ-148: ${where}.timeRange.startYear must be a whole year`
+        );
+        return;
+      }
+      const start = startYear as number;
+      if (start < EARLIEST_DESCRIBABLE_YEAR || start > currentYear) {
+        errors.push(
+          `REQ-148: ${where}.timeRange.startYear ${start} is outside [${EARLIEST_DESCRIBABLE_YEAR}, ${currentYear}]`
+        );
+      }
+
+      if (ongoing !== undefined && typeof ongoing !== "boolean") {
+        errors.push(`REQ-148: ${where}.timeRange.ongoing must be a boolean`);
+      }
+      if (ongoing === true && endYear !== undefined) {
+        errors.push(
+          `REQ-148: ${where}.timeRange declares both ongoing and an endYear — an entity that still stands has no end`
+        );
+      }
+
+      let end: number | null = null;
+      if (endYear !== undefined) {
+        if (!Number.isInteger(endYear)) {
+          errors.push(
+            `REQ-148: ${where}.timeRange.endYear must be a whole year`
+          );
+        } else {
+          end = endYear as number;
+          if (end < EARLIEST_DESCRIBABLE_YEAR || end > currentYear) {
+            errors.push(
+              `REQ-148: ${where}.timeRange.endYear ${end} is outside [${EARLIEST_DESCRIBABLE_YEAR}, ${currentYear}]`
+            );
+          }
+          if (end < start) {
+            errors.push(
+              `REQ-148: ${where}.timeRange ends before it starts (${start} → ${end})`
+            );
+          }
+        }
+      } else if (ongoing !== true) {
+        errors.push(
+          `REQ-148: ${where}.timeRange needs an endYear, or ongoing when the entity still stands`
+        );
+      }
+
+      if (!KINGDOM_PRECISIONS.has(String(precision))) {
+        errors.push(
+          `REQ-148: ${where}.timeRange.precision is "${String(precision)}" — expected year, century or approximate`
+        );
+      }
+      if (
+        precision === "approximate" &&
+        (typeof datingNote !== "string" || datingNote.trim() === "")
+      ) {
+        errors.push(
+          `REQ-148: ${where}.timeRange is approximate and owes a datingNote saying what the bounds smoothed over`
+        );
+      }
+
+      const label = typeof entry.period === "string" ? entry.period : "";
+      const fromLabel = parseKingdomPeriod(label);
+      if (!fromLabel) return;
+      const labelEnd = fromLabel.ongoing
+        ? currentYear
+        : (fromLabel.endYear ?? fromLabel.startYear);
+      const storedEnd = ongoing === true ? currentYear : (end ?? start);
+      const overlaps = start <= labelEnd && fromLabel.startYear <= storedEnd;
+      if (!overlaps) {
+        errors.push(
+          `REQ-148: ${where}.timeRange (${start}…${storedEnd}) shares no time with its own label "${label}"`
+        );
+      }
+    });
   }
 
   return { ok: errors.length === 0, errors, warnings };
@@ -4812,6 +4967,12 @@ async function main() {
   newChecks.push({
     name: "FR27-references People references resolve",
     result: checkPeopleReferencesResolve(datasetRoot),
+  });
+
+  console.log("REQ-148 – Kingdom time ranges...");
+  newChecks.push({
+    name: "REQ-148 Kingdom time ranges",
+    result: checkKingdomTimeRange(datasetRoot),
   });
 
   console.log("ETNI-1391 – People-group consistency...");
