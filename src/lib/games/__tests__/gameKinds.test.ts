@@ -19,6 +19,7 @@ const REVEAL = {
 
 const binary: BinaryRound = {
   kind: "binary",
+  template: "larger-area",
   gameId: "mercator",
   subjectId: "DZA",
   promptFr: "Lequel de ces deux pays couvre la plus grande surface ?",
@@ -29,6 +30,7 @@ const binary: BinaryRound = {
 
 const estimate: EstimateRound = {
   kind: "estimate",
+  template: "fits-in-africa",
   gameId: "mercator",
   subjectId: "GRL",
   promptFr: "Combien de fois le Groenland tient-il dans l'Afrique ?",

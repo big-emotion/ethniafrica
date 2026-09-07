@@ -25,6 +25,24 @@ import type { FicheSourceEntry } from "@/lib/afrik/ficheSourceLabel";
 export type GameKind = "binary" | "estimate";
 
 /**
+ * Which question a round asks — not to be confused with `GameKind`, which is
+ * the control it asks it with.
+ *
+ * The two came apart the day « lequel des deux Mercator agrandit-il le
+ * plus ? » shipped: it is the same two buttons as « lequel des deux est le
+ * plus grand ? » and a different lesson, so `kind` could no longer tell the
+ * assembly which list a round belonged to, nor a test which contract to hold
+ * it to. The reader sees the difference in the prompt; everything upstream of
+ * the prompt reads it here.
+ *
+ * - `larger-area` — the ground really covered, where the flat map inverts it.
+ * - `greater-inflation` — how much the projection enlarges each, from latitude.
+ * - `fits-in-africa` — how many times a non-African shape fits in the continent.
+ */
+export type RoundTemplate =
+  "larger-area" | "greater-inflation" | "fits-in-africa";
+
+/**
  * What the reader is shown after answering. `textFr` is copied verbatim from
  * the corpus — FR65/FR66 forbid a paraphrase as much as they forbid an
  * invented option — and `fieldPath` records where it was read so the claim
@@ -85,6 +103,8 @@ export type DifficultyBand = 1 | 2 | 3;
 
 interface GameRoundBase {
   gameId: string;
+  /** Which of the game's questions this round asks. */
+  template: RoundTemplate;
   /** The corpus entity the round is about — a people, a country, a family. */
   subjectId: string;
   promptFr: string;

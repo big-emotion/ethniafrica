@@ -8,6 +8,7 @@ import { getPeopleRoute } from "@/lib/routing";
 
 const ROUND: BinaryRound = {
   kind: "binary",
+  template: "larger-area",
   gameId: "appellations",
   subjectId: "PPL_YORUBA",
   promptFr: "Lequel de ces deux noms ce peuple se donne-t-il",

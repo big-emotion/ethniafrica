@@ -17,7 +17,8 @@ export interface GameWordingEn {
 export const GAME_DEFINITIONS_EN: Record<GameId, GameWordingEn> = {
   mercator: {
     nameEn: "The size they hid from you",
-    promptEn: "Which of these two countries covers the larger area?",
+    promptEn:
+      "The Mercator projection inflates the north and shrinks Africa. Measure the gap.",
     provenance: "machine",
   },
 };

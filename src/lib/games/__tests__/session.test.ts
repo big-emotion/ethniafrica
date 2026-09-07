@@ -3,10 +3,11 @@ import { describe, expect, it } from "vitest";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 
 import type { GameRound } from "@/lib/games/gameKinds";
-import { takeSession } from "@/lib/games/session";
+import { requestSeed, takeSession } from "@/lib/games/session";
 
 const round = (subjectId: string): GameRound => ({
   kind: "binary",
+  template: "larger-area",
   gameId: "mercator",
   subjectId,
   promptFr: "Lequel de ces deux pays couvre la plus grande surface ?",
@@ -58,5 +59,29 @@ describe("takeSession", () => {
   it("returns nothing rather than throwing on an empty pool", () => {
     expect(takeSession([], 8, 3)).toEqual([]);
     expect(takeSession(pool, 0, 0)).toEqual([]);
+  });
+});
+
+/**
+ * The defect a reader actually reported: eight questions, always the same
+ * eight. `takeSession` advanced on replay and the page's seed never moved, so
+ * leaving the page reset it and the opening session was the same for everyone.
+ */
+describe("requestSeed", () => {
+  // @req REQ-120
+  it("hands a different pool rotation to different requests", () => {
+    const seeds = new Set(Array.from({ length: 50 }, () => requestSeed()));
+
+    expect(seeds.size).toBeGreaterThan(1);
+  });
+
+  // `rotate` and `takeSession` both index an array with it.
+  // @req REQ-120
+  it("is a non-negative integer, which is what indexes a pool", () => {
+    for (let attempt = 0; attempt < 50; attempt++) {
+      const seed = requestSeed();
+      expect(Number.isSafeInteger(seed)).toBe(true);
+      expect(seed).toBeGreaterThanOrEqual(0);
+    }
   });
 });

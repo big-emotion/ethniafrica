@@ -3,8 +3,22 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
 import type { GameCorpus, GameCountryFixture } from "@/lib/games/corpus";
 import { mercatorMisleads } from "@/lib/games/rounds/mercatorRound";
-import { isEstimateRound, isOptionRound } from "@/lib/games/gameKinds";
+import {
+  MINIMUM_INFLATION_RATIO,
+  mercatorInflationOf,
+} from "@/lib/games/rounds/inflationRound";
+import {
+  isEstimateRound,
+  isOptionRound,
+  type BinaryRound,
+  type GameRound,
+  type RoundTemplate,
+} from "@/lib/games/gameKinds";
 import { getGameBySlug } from "@/lib/games/gameRegistry";
+import {
+  NON_AFRICAN_SILHOUETTES,
+  type ComparedTerritory,
+} from "@/lib/games/territory";
 
 const { loadGameCorpus } = vi.hoisted(() => ({
   loadGameCorpus: vi.fn(),
@@ -51,10 +65,32 @@ const MERCATOR_COUNTRIES = [
   country("BWA", "Botswana"),
 ];
 
-const byName = (nameFr: string): GameCountryFixture =>
-  MERCATOR_COUNTRIES.find((entry) => entry.nameFr === nameFr);
+/**
+ * A comparison round may now hold a silhouette from outside the corpus, so
+ * resolving an option's label has to look in both pools — the way the handler
+ * itself does when it builds the pair.
+ */
+const byName = (nameFr: string): ComparedTerritory =>
+  [...MERCATOR_COUNTRIES, ...NON_AFRICAN_SILHOUETTES].find(
+    (entry) => entry.nameFr === nameFr
+  );
 
 const mercator = () => getGameBySlug("mercator");
+
+/**
+ * `kind` is the control a round is answered with and `template` is the
+ * question it asks; two of the three templates share the same two buttons, so
+ * a suite that filtered on `kind` was reading « the comparison rounds » and
+ * getting every binary round the game builds.
+ */
+const withTemplate = (
+  rounds: GameRound[],
+  template: RoundTemplate
+): BinaryRound[] =>
+  rounds.filter(isOptionRound).filter((round) => round.template === template);
+
+const comparisons = (rounds: GameRound[]): BinaryRound[] =>
+  withTemplate(rounds, "larger-area");
 
 describe("mercator only asks where the flat map lies", () => {
   beforeEach(() => {
@@ -67,14 +103,14 @@ describe("mercator only asks where the flat map lies", () => {
   // corpus two at a time. mercatorMisleads shipped exported and tested and
   // was never called.
   // @req REQ-120
-  it("builds every round from a pair the projection misrepresents", async () => {
+  it("builds every comparison round from a pair the projection misrepresents", async () => {
     loadGameCorpus.mockResolvedValue({
       ...emptyCorpus,
       countries: MERCATOR_COUNTRIES,
     });
 
     const envelope = await getGameRoundsHandler(mercator(), 0);
-    const pairRounds = envelope.data.rounds.filter(isOptionRound);
+    const pairRounds = comparisons(envelope.data.rounds);
 
     expect(pairRounds.length).toBeGreaterThan(0);
     for (const round of pairRounds) {
@@ -84,10 +120,10 @@ describe("mercator only asks where the flat map lies", () => {
   });
 
   // Padding a short session with honest pairs would quietly undo the filter
-  // above. The session is topped up with estimate rounds instead, which are
-  // measured off the committed outlines and misrepresent nothing.
+  // above. The session is topped up with the other two questions instead,
+  // which are measured off the committed outlines and misrepresent nothing.
   // @req REQ-120
-  it("shortens the pair rounds rather than padding them with honest pairs", async () => {
+  it("shortens the comparison rounds rather than padding them with honest pairs", async () => {
     loadGameCorpus.mockResolvedValue({
       ...emptyCorpus,
       countries: [country("SEN", "Sénégal"), country("TUN", "Tunisie")],
@@ -95,7 +131,223 @@ describe("mercator only asks where the flat map lies", () => {
 
     const envelope = await getGameRoundsHandler(mercator(), 0);
 
-    expect(envelope.data.rounds.filter(isOptionRound)).toHaveLength(1);
+    expect(comparisons(envelope.data.rounds)).toHaveLength(1);
+  });
+});
+
+/**
+ * Proposal B of the round-bank widening: the comparison this page exists to
+ * make was not in the game that argues it. Greenland is 2,15 M km² and only
+ * two African countries outrank it, so an inversion of rank against the
+ * continent is rare — and it lived in a second committed asset the round
+ * could not reach.
+ */
+describe("a comparison may reach outside the continent", () => {
+  beforeEach(() => {
+    loadGameCorpus.mockReset();
+  });
+
+  // @req REQ-120
+  it("sets a borrowed silhouette against the African country that outranks it", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: [country("COD", "République démocratique du Congo")],
+    });
+
+    const envelope = await getGameRoundsHandler(mercator(), 0);
+    const labels = comparisons(envelope.data.rounds).flatMap((round) =>
+      round.options.map((option) => option.labelFr)
+    );
+    const borrowed = NON_AFRICAN_SILHOUETTES.map(
+      (silhouette) => silhouette.nameFr
+    );
+
+    expect(labels).toContain("République démocratique du Congo");
+    expect(labels.some((label) => borrowed.includes(label))).toBe(true);
+  });
+
+  /**
+   * Western Europe against India is a round on an atlas of African peoples
+   * that mentions no African anything. An empty corpus is exactly when it
+   * would be served, the six silhouettes being the only pool left standing.
+   */
+  // @req REQ-120
+  it("never sets two borrowed silhouettes against each other", async () => {
+    loadGameCorpus.mockResolvedValue(emptyCorpus);
+
+    const envelope = await getGameRoundsHandler(mercator(), 0);
+
+    expect(comparisons(envelope.data.rounds)).toEqual([]);
+  });
+
+  /**
+   * A silhouette has no fiche, so the reveal of a mixed pair leads to the
+   * African half — never to `/pays/GRL`, which is a 404 behind an id that
+   * looks like an ISO code because, for Greenland, it is one.
+   */
+  // @req REQ-120
+  it("leads a mixed pair to the fiche of its African half", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: [country("COD", "République démocratique du Congo")],
+    });
+
+    const envelope = await getGameRoundsHandler(mercator(), 0);
+
+    for (const round of comparisons(envelope.data.rounds)) {
+      expect(round.reveal.ficheHref).toContain("COD");
+    }
+  });
+});
+
+/**
+ * Proposal A: the page asserted the mechanism in every reveal for a year and
+ * never asked it. `mercatorMisleads` only accepts an inverted ranking, which
+ * needs two near-identical areas, and the minimum ratio then throws those
+ * out — twelve reachable pairs against a session of eight. Asking about the
+ * factor instead of the ground lifts the ceiling to hundreds.
+ */
+describe("the game also asks which country the projection enlarges more", () => {
+  beforeEach(() => {
+    loadGameCorpus.mockReset();
+  });
+
+  // @req REQ-120
+  it("pairs countries the projection treats differently enough to reason about", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: MERCATOR_COUNTRIES,
+    });
+
+    const envelope = await getGameRoundsHandler(mercator(), 0);
+    const rounds = withTemplate(envelope.data.rounds, "greater-inflation");
+
+    expect(rounds.length).toBeGreaterThan(0);
+    for (const round of rounds) {
+      const [a, b] = round.options.map((option) =>
+        mercatorInflationOf(byName(option.labelFr))
+      );
+      expect(Math.max(a, b) / Math.min(a, b)).toBeGreaterThanOrEqual(
+        MINIMUM_INFLATION_RATIO
+      );
+    }
+  });
+
+  /**
+   * Greenland against Kenya is 14,3 against 1,0 — an answer readable off the
+   * shape of the option, which is the eyesight the charter's kill test
+   * refuses. This question stays inside the continent.
+   */
+  // @req REQ-120
+  it("never borrows a silhouette from outside the continent", async () => {
+    loadGameCorpus.mockResolvedValue(emptyCorpus);
+
+    const envelope = await getGameRoundsHandler(mercator(), 0);
+
+    expect(withTemplate(envelope.data.rounds, "greater-inflation")).toEqual([]);
+  });
+
+  /**
+   * The reason the bank was widened this way rather than by curating more
+   * countries: the ceiling was the filter, not the corpus.
+   */
+  // @req REQ-120
+  it("carries the whole continent far past what the comparison alone could", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: Object.entries(AFRICA_ADMIN0).map(([id, shape]) =>
+        country(id, shape.nameFr)
+      ),
+    });
+
+    const envelope = await getGameRoundsHandler(mercator(), 0);
+    const rounds = envelope.data.rounds;
+
+    expect(
+      withTemplate(rounds, "greater-inflation").length
+    ).toBeGreaterThanOrEqual(withTemplate(rounds, "larger-area").length);
+  });
+});
+
+/**
+ * A reader who meets the same question eight times has met one game, whatever
+ * the bank holds behind it. The three lists are wildly uneven — hundreds of
+ * inflation pairs, a dozen comparisons, exactly six estimates — so the
+ * alternation has to be round-robin rather than proportional.
+ */
+describe("a session opens on more than one question", () => {
+  beforeEach(() => {
+    loadGameCorpus.mockReset();
+  });
+
+  /**
+   * Six windows of eight, drawn fresh on every request. The number is worth
+   * pinning: the pool was eighteen when a reader wrote in to say the game had
+   * eight questions and only those, and a regression here would put it back
+   * without failing anything else.
+   */
+  // @req REQ-120
+  it("holds several sessions' worth of rounds", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: Object.entries(AFRICA_ADMIN0).map(([id, shape]) =>
+        country(id, shape.nameFr)
+      ),
+    });
+
+    const game = mercator();
+    const envelope = await getGameRoundsHandler(game, 0);
+
+    expect(envelope.data.rounds.length).toBeGreaterThanOrEqual(
+      game.roundsPerSession * 4
+    );
+  });
+
+  // @req REQ-120
+  it("serves all three questions inside the first session", async () => {
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: Object.entries(AFRICA_ADMIN0).map(([id, shape]) =>
+        country(id, shape.nameFr)
+      ),
+    });
+
+    const game = mercator();
+    const envelope = await getGameRoundsHandler(game, 0);
+    const session = envelope.data.rounds.slice(0, game.roundsPerSession);
+
+    expect(new Set(session.map((round) => round.template))).toEqual(
+      new Set(["larger-area", "greater-inflation", "fits-in-africa"])
+    );
+  });
+});
+
+/**
+ * The seed rotates the pool before pairing, so two requests do not hand back
+ * the same session. Until the page stopped deriving it from its own slug this
+ * was reachable in principle and constant in practice — see the page.
+ */
+describe("the seed decides which pairs form", () => {
+  beforeEach(() => {
+    loadGameCorpus.mockReset();
+    loadGameCorpus.mockResolvedValue({
+      ...emptyCorpus,
+      countries: Object.entries(AFRICA_ADMIN0).map(([id, shape]) =>
+        country(id, shape.nameFr)
+      ),
+    });
+  });
+
+  // @req REQ-120
+  it("serves a different session for a different seed", async () => {
+    const game = mercator();
+    const opening = async (seed: number) =>
+      (await getGameRoundsHandler(game, seed)).data.rounds
+        .slice(0, game.roundsPerSession)
+        .map((round) => `${round.template}:${round.subjectId}`)
+        .join("|");
+
+    expect(await opening(0)).not.toBe(await opening(17));
   });
 });
 

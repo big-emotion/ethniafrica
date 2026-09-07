@@ -56,3 +56,18 @@ export function millionsKm2Fr(areaKm2: number): string {
 export function distanceFr(km: number): string {
   return `${frenchNumber.format(Math.round(km / 10) * 10)} km`;
 }
+
+/**
+ * « 34° N », « 26° S », « 0° » — a latitude the reader can place on a globe.
+ *
+ * Whole degrees, and no hemisphere letter on the equator: the inflation round
+ * prints this beside a factor to show where the factor comes from, and
+ * « 0° N » would undercut the very point that the equator has no north to be
+ * on.
+ */
+// @req REQ-120
+export function latitudeFr(latitude: number): string {
+  const degrees = Math.round(Math.abs(latitude));
+  if (degrees === 0) return "0°";
+  return `${degrees}° ${latitude > 0 ? "N" : "S"}`;
+}

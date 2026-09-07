@@ -102,6 +102,23 @@ export const ESTIMATE_SHAPE_IDS = [
   "GRL",
 ] as const;
 
+/**
+ * The subject, ready to open a sentence.
+ *
+ * The reveal used to interpolate `shape.nameFr`, which is the bare name the
+ * asset carries, and produced « Chine couvre 9,4 millions de km² » — no
+ * article — and « États-Unis (contigus) couvre », which also fails the number
+ * agreement. `SUBJECT_BY_SHAPE` already writes the article out for the stem, so
+ * the reveal reads it there instead and only has to raise the first letter.
+ *
+ * The sentence is built on a colon rather than a verb for the same reason the
+ * other two reveals are: no verb, no agreement to get wrong in one shape out of
+ * six.
+ */
+function sentenceOpener(subjectFr: string): string {
+  return subjectFr.charAt(0).toUpperCase() + subjectFr.slice(1);
+}
+
 // @req REQ-120
 export function buildScaleEstimateRound(shapeId: string): EstimateRound | null {
   const shape = WORLD_COMPARE[shapeId];
@@ -130,6 +147,7 @@ export function buildScaleEstimateRound(shapeId: string): EstimateRound | null {
 
   return {
     kind: "estimate",
+    template: "fits-in-africa",
     gameId: GAME.id,
     subjectId: shapeId,
     promptFr: `Combien de fois ${subject.subjectFr} ${subject.fitsFr} dans l'Afrique ?`,
@@ -144,7 +162,7 @@ export function buildScaleEstimateRound(shapeId: string): EstimateRound | null {
     correctValue: ratio,
     toleranceRatio: TOLERANCE_RATIO,
     reveal: {
-      textFr: `${ratioFr(ratio)} fois. ${shape.nameFr} couvre ${millionsKm2Fr(shapeArea)}, l'Afrique ${millionsKm2Fr(africa)}. Sur une carte plate la projection l'agrandit ${inflationFr(inflation)} fois — c'est de là que vient l'écart avec votre estimation.`,
+      textFr: `${ratioFr(ratio)} fois. ${sentenceOpener(subject.subjectFr)} : ${millionsKm2Fr(shapeArea)}. L'Afrique : ${millionsKm2Fr(africa)}. Sur une carte plate la projection l'agrandit ${inflationFr(inflation)} fois — c'est de là que vient l'écart avec votre estimation.`,
       textEn: revealEn ?? undefined,
       fieldPath: WORLD_COMPARE_PROVENANCE_PATH,
       // Measured off the committed outlines, like every Mercator round. No

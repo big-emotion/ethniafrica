@@ -47,3 +47,11 @@ export function millionsKm2En(areaKm2: number): string {
 export function distanceEn(km: number): string {
   return `${englishNumber.format(Math.round(km / 10) * 10)} km`;
 }
+
+/** "34° N", "26° S", "0°" — the French rule, one locale over. */
+// @req REQ-145
+export function latitudeEn(latitude: number): string {
+  const degrees = Math.round(Math.abs(latitude));
+  if (degrees === 0) return "0°";
+  return `${degrees}° ${latitude > 0 ? "N" : "S"}`;
+}

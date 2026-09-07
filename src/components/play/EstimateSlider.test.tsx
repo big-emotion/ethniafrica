@@ -9,6 +9,7 @@ import type { EstimateRound } from "@/lib/games/gameKinds";
 
 const ROUND: EstimateRound = {
   kind: "estimate",
+  template: "fits-in-africa",
   gameId: "mercator",
   subjectId: "GRL",
   promptFr: "Combien de fois le Groenland tient-il dans l'Afrique ?",
