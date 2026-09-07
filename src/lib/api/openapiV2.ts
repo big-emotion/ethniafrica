@@ -3431,6 +3431,13 @@ const options: swaggerJsdoc.Options = {
               description:
                 "Optional reply address. The report is created and published whether or not it is supplied. A single-use link is e-mailed to confirm the address, and only a confirmed address ever receives the moderation decision. Never published, and never returned by any endpoint.",
             },
+            language: {
+              type: "string",
+              enum: ["en", "fr"],
+              default: "fr",
+              description:
+                "Locale used for reporter verification and moderation-decision e-mails. Missing or invalid values fail closed to French.",
+            },
             counter_source_url: {
               type: "string",
               format: "uri",
@@ -3486,6 +3493,7 @@ const options: swaggerJsdoc.Options = {
               "National Statistics Office, 2024 census, table 12.",
             proposed_rewrite:
               "Update the population figure using the 2024 census.",
+            language: "en",
             antibot: {
               salt: "9f2c1ab4d7e60358",
               nonce: "418209",

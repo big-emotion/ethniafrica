@@ -114,8 +114,10 @@
  *       reporter_email buys the reader the moderation decision by e-mail and
  *       nothing else: the report is created and published whether or not one is
  *       supplied, a single-use link confirms the address, and only a confirmed
- *       address is ever written to. The address is never published and never
- *       returned. Responses are mutable and use Cache-Control no-store.
+ *       address is ever written to. The request language is stored to localize
+ *       verification and resolution e-mails; missing or invalid values default
+ *       to French. The address is never published and never returned. Responses
+ *       are mutable and use Cache-Control no-store.
  *     tags: [API v2 - Flags]
  *     security:
  *       - SupabaseJwtAuth: []
@@ -135,6 +137,7 @@
  *             counter_source_url: https://example.org/census/2024
  *             counter_source_citation: National Statistics Office, 2024 census, table 12.
  *             proposed_rewrite: Update the population figure using the 2024 census.
+ *             language: en
  *             antibot:
  *               salt: 9f2c1ab4d7e60358
  *               nonce: "418209"

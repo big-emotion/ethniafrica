@@ -41,7 +41,8 @@ import {
 } from "@/lib/email/flagNotification";
 import {
   createReporterContact,
-  getVerifiedReporterEmail,
+  getVerifiedReporterContact,
+  type VerifiedReporterContact,
 } from "@/lib/flags/reporterContact";
 import { logger } from "@/lib/api/logger";
 import * as Sentry from "@sentry/nextjs";
@@ -163,7 +164,8 @@ export interface FlagHandlerDependencies {
   ) => { createdAt: string; id: string } | null;
   createReporterContact: (
     flagId: string,
-    email: string
+    email: string,
+    language?: Language
   ) => Promise<string | null>;
   sendFlagVerificationEmail: (
     input: FlagVerificationEmail
@@ -392,13 +394,15 @@ export async function handleFlagCreate(
     try {
       const token = await dependencies.createReporterContact(
         flag.id,
-        parsed.data.reporter_email
+        parsed.data.reporter_email,
+        context.language ?? "fr"
       );
       if (token) {
         await dependencies.sendFlagVerificationEmail({
           email: parsed.data.reporter_email,
           token,
           publicSlug: flag.public_slug,
+          language: context.language ?? "fr",
         });
       }
     } catch (error) {
@@ -519,7 +523,9 @@ export interface FlagTransitionDependencies {
   >;
   writeAuditLog: (input: AuditLogInput) => Promise<void>;
   getContributorEmail: (contributorId: string) => Promise<string | null>;
-  getVerifiedReporterEmail: (flagId: string) => Promise<string | null>;
+  getVerifiedReporterContact: (
+    flagId: string
+  ) => Promise<VerifiedReporterContact | null>;
   sendFlagResolutionEmail: (
     flag: {
       public_slug: string;
@@ -537,7 +543,7 @@ const defaultTransitionDependencies: FlagTransitionDependencies = {
   transitionFlag,
   writeAuditLog: (input) => auditLog.write(input),
   getContributorEmail,
-  getVerifiedReporterEmail,
+  getVerifiedReporterContact,
   sendFlagResolutionEmail,
 };
 
@@ -648,12 +654,12 @@ export async function handleFlagTransition(
        * and never proved is deliberately not used, because it may belong to
        * someone who never reported anything.
        */
-      const email =
-        contributorEmail ??
-        (await dependencies.getVerifiedReporterEmail(result.flag.id));
-      const recipient: FlagResolutionRecipient | null = email
-        ? { email }
-        : null;
+      const reporterContact = await dependencies.getVerifiedReporterContact(
+        result.flag.id
+      );
+      const recipient: FlagResolutionRecipient | null =
+        reporterContact ??
+        (contributorEmail ? { email: contributorEmail, language: "fr" } : null);
 
       await dependencies.sendFlagResolutionEmail(
         {
