@@ -52,7 +52,7 @@ const fullCountry: CompareCountryEntity = {
   id: "XX1",
   label: "Pays Illustratif Un",
   historicalNames: { antiquity: "Nom antique illustratif" },
-  kingdoms: [{ name: "Royaume Illustratif" }],
+  kingdoms: [{ name: "Royaume Illustratif", period: "XVe - XVIIe siècles" }],
   majorPeoples: [{ name: "Peuple Illustratif" }],
   culture: { mainLanguages: [{ name: "Langue illustrative" }] },
   historicalFacts: { colonization: "Faits illustratifs" },

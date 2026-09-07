@@ -212,6 +212,22 @@ A fiche sourced only at `unverified` is published and visibly marked low-confide
 
 Keep colonial-era names but explain why they are problematic, and always surface the autonym. `checkEditorialRules.ts` enforces: an autonym is required at `confidence >= medium`, and ≥2 sources when `classification_status` is `contested` or `colonial-legacy`.
 
+### Chronological symmetry (REQ-148)
+
+A `content.kingdoms[]` entry carries `entryType` (`polity | colonial | modern`) and, where the corpus can state them, machine bounds in `timeRange` — the same shape the migration model validates. **`period` stays the reader-facing label and is never derived from the bounds**: it holds nuance ("apogée", "déclin progressif") that integers do not.
+
+Two gates. `REQ-148 Kingdom time ranges` in `validateAfrikData.ts` holds the shape and refuses a range sharing no time with its own label. `chronology-symmetry` in `checkEditorialRules.ts` refuses the asymmetry that made this necessary: **a country that dates its colonial administrations must date its precolonial polities**, because the atlas was showing "1894 - 1962" for the protectorate and "Précolonial" for the five kingdoms above it. It is not a completeness check — a country that dates nothing passes.
+
+96 entries still violate it, held by `UNDATED_POLITY_CEILING`, a ratchet that fails in both directions like `DEAD_CODE_CEILINGS`. Each editorial pass lowers it in the same change; at zero the ratchet is deleted and the findings become errors. `scripts/afrik/backfillKingdomTimeRange.ts` (dry-run by default) prints the queue by country and **never invents a bound** — an entry whose label names an era rather than a date stays undated and visible to the gate.
+
+### Archive → JSON restoration
+
+The conversion of `dataset/source/afrik/archive/famille_linguistique/*.txt` into the live `famille_linguistique/*.json` **lost content on more than half the twenty-four families**. `FLG_BERBERE` had two entirely empty sections and no longer contained the word "Diop"; the sub-part carrying the three competing theories of Berber origins, the 1974 UNESCO colloquium in Cairo and the explicit divergence points had simply gone.
+
+A character ratio is a hint, not a measurement — the archive is markdown, the fiche is structured, and part of any gap is markup. `npx tsx scripts/afrik/diffFamilyArchive.ts` reports **named anchors** instead: years, proper-name pairs and author-year citations the archive holds and the fiche does not. `docs/editorial/family-restoration/` records one ledger per family somebody has started, and its `anchorBudget` is a descending ratchet — a family nobody has begun has no ledger and nothing to fail. Doctrine and running order: that directory's `README.md`.
+
+**A restored theory comes back with its divergence points.** Publishing Diop and Obenga without the reasons comparative linguistics does not follow them would turn an exposed debate into an asserted position — the failure `FLG_AFROASIATIQUE` currently exhibits in the other direction, stating the Obenga position with no contradictor.
+
 ### Reader-facing register
 
 Three fiche fields are published to the reader **verbatim**, with no sanitising layer: `gaps[].reason`, `sources[].title` and `sources[].notes` (nested under `names[].sources[]` on name fiches). Everything else, `_meta.directives` included, is authoring metadata nothing renders.

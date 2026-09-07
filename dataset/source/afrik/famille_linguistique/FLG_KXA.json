@@ -27,11 +27,11 @@
       },
       {
         "name": "ǂHoan",
-        "peopleId": "PPL_HOAN"
+        "peopleId": "PPL_HOA"
       },
       {
         "name": "Autres groupes ju minoritaires",
-        "peopleId": "PPL_SAN"
+        "peopleId": null
       }
     ],
     "linguisticCharacteristics": {

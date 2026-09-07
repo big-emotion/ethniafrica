@@ -23,6 +23,12 @@
       {
         "name": "Sultanats des Comores",
         "period": "IXe siècle - 1886",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 801,
+          "endYear": 1886,
+          "precision": "century"
+        },
         "dominantPeoples": [
           "Comoriens (Shimasiwa)",
           "avec influences arabes",
@@ -38,6 +44,12 @@
       {
         "name": "Protectorat français des Comores",
         "period": "1886 - 1975",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1886,
+          "endYear": 1975,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Comoriens sous administration coloniale française"
         ],
@@ -47,6 +59,12 @@
       {
         "name": "Union des Comores",
         "period": "1975 - présent",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1975,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Comoriens (Shimasiwa)"],
         "politicalCenters": ["Moroni (capitale)"],
         "historicalRole": "État indépendant depuis 1975, avec une histoire politique mouvementée incluant plusieurs coups d'État. L'Union des Comores est membre de la Ligue arabe, de l'Organisation de la coopération islamique et de l'Union africaine."

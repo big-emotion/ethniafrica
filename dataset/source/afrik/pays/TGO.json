@@ -22,6 +22,12 @@
       {
         "name": "Royaume de Notsé",
         "period": "XVe siècle - XVIIIe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1401,
+          "endYear": 1800,
+          "precision": "century"
+        },
         "dominantPeoples": ["Ewe"],
         "politicalCenters": ["Notsé"],
         "historicalRole": "Royaume ewe puissant, centre de migration des Ewe, développement de la civilisation ewe, résistance aux colonisateurs."
@@ -29,6 +35,7 @@
       {
         "name": "Chefferies Ewe",
         "period": "Depuis plusieurs siècles",
+        "entryType": "polity",
         "dominantPeoples": ["Ewe"],
         "politicalCenters": ["Chefferies locales"],
         "historicalRole": "Organisation politique traditionnelle des Ewe, chefferies territoriales, résistance aux colonisateurs."
@@ -36,6 +43,12 @@
       {
         "name": "Protectorat allemand du Togoland",
         "period": "1884 - 1914",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1884,
+          "endYear": 1914,
+          "precision": "year"
+        },
         "dominantPeoples": ["Allemands", "Ewe", "autres groupes"],
         "politicalCenters": ["Lomé (capitale coloniale)"],
         "historicalRole": "Colonisation allemande, développement de l'économie de plantation (café, cacao, coton), exploitation minière (phosphates), mouvements nationalistes (XXe siècle)."
@@ -43,6 +56,12 @@
       {
         "name": "Mandat puis tutelle française du Togo",
         "period": "1914 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1914,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": ["Français", "Ewe", "autres groupes"],
         "politicalCenters": ["Lomé (capitale coloniale)"],
         "historicalRole": "Colonisation française, développement de l'économie de plantation (café, cacao, coton), exploitation minière (phosphates), mouvements nationalistes (XXe siècle)."
@@ -86,7 +105,7 @@
         "name": "Autres groupes",
         "selfAppellation": "Variées selon les groupes",
         "exonyms": ["Variées selon les groupes"],
-        "peopleId": "PPL_AUTRES_GROUPES",
+        "peopleId": null,
         "mainRegion": "Toutes les régions du Togo",
         "languages": ["Langues diverses", "français"],
         "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
@@ -206,7 +225,7 @@
         {
           "name": "Autres groupes",
           "percentageInCountry": 34,
-          "peopleId": "PPL_AUTRES_GROUPES",
+          "peopleId": null,
           "region": "Toutes les régions du Togo"
         }
       ]

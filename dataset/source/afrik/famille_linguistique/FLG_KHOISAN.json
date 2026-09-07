@@ -36,11 +36,11 @@
       },
       {
         "name": "Khwe",
-        "peopleId": "PPL_KHWE"
+        "peopleId": "PPL_KXOE"
       },
       {
         "name": "Naro",
-        "peopleId": "PPL_NARO"
+        "peopleId": null
       }
     ],
     "linguisticCharacteristics": {

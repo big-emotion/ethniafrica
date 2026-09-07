@@ -19,6 +19,7 @@
       {
         "name": "Chefferies Fang",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Fang"],
         "politicalCenters": [
           "Chefferies lignagères traditionnelles (Río Muni",
@@ -29,6 +30,7 @@
       {
         "name": "Royaume Bubi",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Bubi"],
         "politicalCenters": ["Île de Bioko (Fernando Póo)"],
         "historicalRole": "Royaume Bubi sur l'île de Bioko, système monarchique traditionnel, traditions insulaires. Résistance à la colonisation espagnole. Organisation sociale unique."
@@ -36,6 +38,7 @@
       {
         "name": "Peuples Ndowe",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Ndowe"],
         "politicalCenters": ["Chefferies traditionnelles (littoral)"],
         "historicalRole": "Peuples Ndowe du littoral, traditions côtières, commerce côtier. Contacts avec les Européens."
@@ -43,6 +46,7 @@
       {
         "name": "Peuples Annobon",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Annobon"],
         "politicalCenters": ["Île d'Annobón"],
         "historicalRole": "Peuples Annobon de l'île d'Annobón, traditions insulaires, société créole (métissage afro-portugais). Contacts avec les Portugais et les Espagnols."
@@ -50,6 +54,12 @@
       {
         "name": "Colonie espagnole de Guinée équatoriale",
         "period": "1778 - 1968",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1778,
+          "endYear": 1968,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples équato-guinéens sous domination espagnole"
         ],

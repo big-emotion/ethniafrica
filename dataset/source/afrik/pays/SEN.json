@@ -22,6 +22,12 @@
       {
         "name": "Empire du Jolof",
         "period": "XIIIe - XVIe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1201,
+          "endYear": 1600,
+          "precision": "century"
+        },
         "dominantPeoples": ["Wolof"],
         "politicalCenters": ["Jolof (capitale)", "Cayor", "Baol", "Waalo"],
         "historicalRole": "Empire wolof puissant qui unifiait plusieurs royaumes. Commerce transsaharien et commerce côtier. Influence culturelle majeure."
@@ -29,6 +35,7 @@
       {
         "name": "Royaumes sérères",
         "period": "Précolonial - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Sérère"],
         "politicalCenters": ["Sine", "Saloum"],
         "historicalRole": "Royaumes sérères indépendants réputés pour leur résistance à l'islamisation et leur organisation politique."
@@ -36,6 +43,12 @@
       {
         "name": "Fouta Toro",
         "period": "XVIIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1701,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Peul (Toucouleurs)"],
         "politicalCenters": ["Fouta Toro (vallée du fleuve Sénégal)"],
         "historicalRole": "Théocratie peule islamisée, modèle politique et religieux pour la région."
@@ -43,6 +56,12 @@
       {
         "name": "Sénégal français",
         "period": "1895 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1895,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples sénégalais sous administration coloniale française"
         ],
@@ -52,6 +71,12 @@
       {
         "name": "République du Sénégal",
         "period": "1960 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1960,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples sénégalais"],
         "politicalCenters": ["Dakar (capitale)"],
         "historicalRole": "Indépendance en 1960. Histoire politique stable avec démocratie multipartite. Modèle de stabilité en Afrique de l'Ouest."

@@ -19,6 +19,7 @@
       {
         "name": "Chefferies Kpelle",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Kpelle"],
         "politicalCenters": ["Chefferies traditionnelles (intérieur)"],
         "historicalRole": "Chefferies Kpelle puissantes, système lignager, traditions forestières. Résistance à la colonisation américaine. Rôle politique majeur dans le Libéria contemporain."
@@ -26,6 +27,7 @@
       {
         "name": "Chefferies Bassa",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Bassa"],
         "politicalCenters": [
           "Chefferies traditionnelles (côte",
@@ -36,6 +38,7 @@
       {
         "name": "Chefferies Grebo",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Grebo"],
         "politicalCenters": ["Chefferies traditionnelles (côte sud-est)"],
         "historicalRole": "Chefferies Grebo, traditions côtières, résistance à la colonisation américaine."
@@ -43,6 +46,7 @@
       {
         "name": "Chefferies Gio",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Gio"],
         "politicalCenters": ["Chefferies traditionnelles (nord)"],
         "historicalRole": "Chefferies Gio, traditions forestières, structures lignagères."
@@ -50,6 +54,7 @@
       {
         "name": "Chefferies Mano",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Mano"],
         "politicalCenters": ["Chefferies traditionnelles (nord)"],
         "historicalRole": "Chefferies Mano, traditions forestières, structures lignagères."
@@ -57,6 +62,7 @@
       {
         "name": "Chefferies Krahn",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Krahn"],
         "politicalCenters": ["Chefferies traditionnelles (est)"],
         "historicalRole": "Chefferies Krahn, traditions forestières, structures lignagères."
@@ -64,6 +70,7 @@
       {
         "name": "Chefferies Gola",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Gola"],
         "politicalCenters": ["Chefferies traditionnelles (ouest)"],
         "historicalRole": "Chefferies Gola, traditions forestières, structures lignagères."
@@ -71,6 +78,12 @@
       {
         "name": "Colonie de l'American Colonization Society",
         "period": "1822 - 1847",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1822,
+          "endYear": 1847,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Afro-Américains (Américano-Libériens)",
           "peuples autochtones sous domination"

@@ -23,6 +23,12 @@
       {
         "name": "Royaume Kongo",
         "period": "XIVe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1301,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Kongo (Bakongo)"],
         "politicalCenters": [
           "Mbanza Kongo (capitale historique)",
@@ -33,6 +39,12 @@
       {
         "name": "Empire Luba",
         "period": "XVIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1501,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Luba (Baluba)"],
         "politicalCenters": ["Kasaï", "Katanga (Haut-Lomami", "Lualaba)"],
         "historicalRole": "Grand empire bantou du centre-sud avec une forte tradition politique et artistique. Influence majeure sur la région du Kasaï et du Katanga."
@@ -40,6 +52,12 @@
       {
         "name": "Empire Lunda",
         "period": "XVIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1601,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Lunda", "Tshokwe"],
         "politicalCenters": ["Katanga", "frontières angolaises"],
         "historicalRole": "Empire transfrontalier puissant réputé pour son art et son organisation politique. Influence sur le sud-est de la RDC."
@@ -47,6 +65,7 @@
       {
         "name": "Chefferies Mongo",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Mongo (Nkundo", "Ntomba", "Ekonda)"],
         "politicalCenters": ["Cuvette centrale (Équateur", "Tshuapa)"],
         "historicalRole": "Un des plus grands groupes forestiers bantous, organisés en chefferies dans la cuvette équatoriale."
@@ -54,6 +73,12 @@
       {
         "name": "Royaumes Mangbetu",
         "period": "XVIIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1701,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Mangbetu"],
         "politicalCenters": ["Nord-est (Haut-Uele)"],
         "historicalRole": "Royaumes réputés pour leur art et leur organisation politique dans le nord-est."
@@ -61,6 +86,12 @@
       {
         "name": "Sultanats Zande",
         "period": "XVIIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1701,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Zande"],
         "politicalCenters": ["Nord-est (Haut-Uele", "Bas-Uele)"],
         "historicalRole": "Sultanats puissants dans le nord-est, organisés en entités politiques structurées."
@@ -68,6 +99,12 @@
       {
         "name": "État indépendant du Congo",
         "period": "1885 - 1908",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1885,
+          "endYear": 1908,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples congolais sous domination de Léopold II"
         ],
@@ -77,6 +114,12 @@
       {
         "name": "Congo belge",
         "period": "1908 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1908,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples congolais sous administration coloniale belge"
         ],
@@ -86,6 +129,12 @@
       {
         "name": "République démocratique du Congo",
         "period": "1960 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1960,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples congolais"],
         "politicalCenters": ["Kinshasa (capitale)"],
         "historicalRole": "Indépendance en 1960. Histoire politique mouvementée : crise du Katanga, régime Mobutu (Zaïre), guerres civiles, transition démocratique."

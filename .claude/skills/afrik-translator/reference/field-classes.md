@@ -451,6 +451,12 @@ contract test is what keeps them equal to it, row for row and model for model.
 | `content.historicalNames.contemporary`               | `translatable`    |                   |
 | `content.kingdoms[].name`                            | `review_required` |                   |
 | `content.kingdoms[].period`                          | `translatable`    |                   |
+| `content.kingdoms[].entryType`                       | `invariant`       |                   |
+| `content.kingdoms[].timeRange.startYear`             | `invariant`       |                   |
+| `content.kingdoms[].timeRange.endYear`               | `invariant`       |                   |
+| `content.kingdoms[].timeRange.ongoing`               | `invariant`       |                   |
+| `content.kingdoms[].timeRange.precision`             | `invariant`       |                   |
+| `content.kingdoms[].timeRange.datingNote`            | `translatable`    |                   |
 | `content.kingdoms[].dominantPeoples[]`               | `invariant`       | glossed invariant |
 | `content.kingdoms[].politicalCenters[]`              | `invariant`       |                   |
 | `content.kingdoms[].historicalRole`                  | `translatable`    |                   |

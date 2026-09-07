@@ -495,6 +495,11 @@
     "rationale": "« Les termes exonymes ne refletent pas la diversite interne des Comoriens (Ngazidja, Ndzuani, Mwali, Maorais) » : label englobant discute au nom des identites insulaires, sans auteur colonial."
   },
   {
+    "id": "PPL_COPTES",
+    "status": "contested",
+    "rationale": "Ce que « copte » recouvre aujourd'hui est disputé — « une appartenance religieuse pour les uns, une ascendance égyptienne préarabe pour les autres » —, un terme « qui nommait l'ensemble de la population égyptienne » ayant fini par « ne plus désigner que la minorité restée chrétienne ». La désignation « reste par ailleurs revendiquée par les intéressés eux-mêmes, ce qui la distingue d'un exonyme colonial imposé »."
+  },
+  {
     "id": "PPL_CREOLE_CABOVERDIEN",
     "status": "colonial-legacy",
     "rationale": "Le terme « derive du portugais crioulo, designant originellement les esclaves africains nes dans les colonies portugaises » ; la fiche ajoute seulement qu'il est percu comme reducteur."

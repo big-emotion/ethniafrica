@@ -19,6 +19,12 @@
       {
         "name": "Royaume swazi",
         "period": "XVIIIe siècle - présent",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1701,
+          "ongoing": true,
+          "precision": "century"
+        },
         "dominantPeoples": ["Swazi"],
         "politicalCenters": [
           "Lobamba (capitale royale)",
@@ -29,6 +35,12 @@
       {
         "name": "Protectorat britannique du Swaziland",
         "period": "1903 - 1968",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1903,
+          "endYear": 1968,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples swazi sous protectorat britannique"
         ],
@@ -155,7 +167,7 @@
       "peoples": [
         {
           "name": "Swazi",
-          "peopleId": "PPL_SWA",
+          "peopleId": "PPL_SWAZI",
           "percentageInCountry": 97
         },
         {

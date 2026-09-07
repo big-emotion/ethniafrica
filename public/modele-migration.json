@@ -3,7 +3,7 @@
     "format": "AFRIK JSON v2",
     "entity": "migration",
     "directives": [
-      "Never invent dates, paths, or peoples — every claim cites a Tier 1/2 source or is dropped",
+      "Never invent dates, paths, or peoples — every claim cites a source that carries an explicit tier, or is dropped",
       "classificationStatus is mandatory; contested events cite at least 2 sources",
       "Years are astronomical integers: negative values are BCE (e.g. -1500), positive values are CE",
       "Geometry is schematic (corridor-level), never a claim of precise historical borders"
@@ -33,13 +33,24 @@
     "type": "LineString",
     "coordinates": []
   },
-  "peoplesInvolved": [{ "id": "PPL_XXXXX", "role": "origin" }],
+  "peoplesInvolved": [
+    {
+      "id": "PPL_XXXXX",
+      "role": "origin"
+    }
+  ],
   "content": {
     "summary": "<Résumé bref de l'événement migratoire>",
     "narrative": "<Récit chronologique en prose, une affirmation sourcée par paragraphe>",
     "debate": null,
     "sources": [
-      { "title": "<Titre>", "url": "<URL>", "year": 0, "tier": 1, "notes": "" }
+      {
+        "title": "<Titre de la source, tel que cité>",
+        "url": "<URL résolvable, ou null pour une œuvre hors ligne>",
+        "year": 0,
+        "tier": "official | referenced | unverified",
+        "notes": "<Provenance du tier>"
+      }
     ]
   }
 }

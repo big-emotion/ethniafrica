@@ -34,11 +34,23 @@
       },
       {
         "name": "Zenaga (Mauritanie)",
-        "peopleId": "PPL_ZENAGA"
+        "peopleId": null
       }
     ],
-    "linguisticCharacteristics": {},
-    "historyAndOrigins": {},
+    "linguisticCharacteristics": {
+      "typology": "Langue flexionnelle, de type fusio-agglutinant, bâtie sur une racine consonantique. La morphologie fonctionne par racine et schème, sur des racines bilitères ou trilitères : de la racine R-W (enfanter) viennent aru (accoucher), tarwa (progéniture) et arraw (fils) ; de K-R-Z (labourer), yekrez (il a labouré), takrza (le labour) et amkraz (le laboureur) ; de F-S-R (répandre), yufser, tafesra et amfasar. Le berbère a emprunté des racines arabes qu'il fait fonctionner sur le même principe. Le genre et le nombre sont marqués par circonfixe, autour du mot et non à sa seule fin : argaz (homme) donne irgazen, tamgart (femme) donne timgarin.",
+      "phonologicalFeatures": "Système consonantique riche, comportant des emphatiques (ḍ, ṭ, ẓ, ṣ) et des labio-vélarisées (gw, kw). Système vocalique réduit à trois voyelles fondamentales (a, i, u) auxquelles s'ajoute un schwa neutre. Dans les parlers du Nord, une spirantisation adoucit les occlusives, le t se réalisant comme une fricative interdentale.",
+      "relationsWithNeighbors": "Cognats avec les autres branches afro-asiatiques — sémitique, couchitique, égyptien ancien, tchadique : ilès (langue) en regard de l'arabe lissan, isem (nom) en regard de ism. Emprunts au latin, comme aɣyul (âne) issu d'asinus, et à l'arabe, principalement dans le lexique religieux, comme tazallit (prière) issu de salat. Les routes transsahariennes ont produit des emprunts mutuels avec le songhay et le haoussa dans le vocabulaire pastoral, commercial et artisanal.",
+      "keyInnovations": "L'état d'annexion, qui modifie la voyelle initiale du nom selon sa fonction syntaxique : aman (l'eau, sujet) devient waman en complément. L'écriture tifinagh, alphabet géométrique autochtone descendant du libyque, conservée par les Touaregs et réintroduite au Nord au XXe siècle."
+    },
+    "historyAndOrigins": {
+      "probableOrigin": "L'appartenance du berbère à la famille afro-asiatique est établie par Marcel Cohen (1947), qui le premier dresse systématiquement les correspondances phonétiques avec le sémitique, l'égyptien et le couchitique, puis confirmée par Joseph Greenberg (1963) ; Lionel Bender et Christopher Ehret situent ensuite le berbère parmi les branches précocement divergentes. Sur le foyer d'origine, trois théories s'opposent et le corpus les expose plutôt qu'il n'arbitre. La théorie nord-africaine, majoritaire dans l'école occidentale, suit Gabriel Camps (1987) qui associe les locuteurs proto-berbères aux populations du Néolithique capsien (9000-4500 av. J.-C.) en Afrique du Nord centrale, en s'appuyant sur la continuité culturelle entre le Capsien et les cultures néolithiques maghrébines. La théorie du Sahara oriental, minoritaire, suit Christopher Ehret (2002) qui propose une origine saharienne ou nilotique du proto-afro-asiatique, avec une migration berbère vers l'ouest lors de l'assèchement du Sahara (6000-4000 av. J.-C.). La théorie afrocentrique de l'unité égyptienne-berbère, portée par Cheikh Anta Diop (Nations nègres et culture, 1954 ; Parenté génétique de l'égyptien pharaonique et des langues négro-africaines, 1977), conteste la séparation entre Afrique du Nord et Afrique subsaharienne : elle propose une continuité culturelle et linguistique entre l'Égypte pharaonique, les Berbères et les populations subsahariennes, tient le terme afro-asiatique pour une construction visant à détacher l'Afrique du Nord de son africanité, identifie des cognats entre l'égyptien ancien, le berbère et des langues d'Afrique de l'Ouest (wolof, sérère, peul), et situe les Berbères dans une migration sud-nord depuis le Sahara et la vallée du Nil. Théophile Obenga (L'origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes, 1993), collaborateur de Diop, affine l'hypothèse d'un ensemble négro-égyptien incluant le berbère comme branche périphérique et conteste la méthodologie comparatiste de Greenberg. Ces travaux ont été fondateurs pour l'historiographie africaine postcoloniale et restent enseignés dans les universités africaines ; le colloque de l'UNESCO au Caire en 1974 a été le lieu d'un débat public entre Diop et les linguistes occidentaux sur la classification de l'égyptien. Les points de divergence avec le consensus académique sont explicites : la parenté berbère-égyptien-subsaharien n'est pas confirmée par la linguistique comparée moderne, qui juge les correspondances phonétiques insuffisantes, et l'hypothèse d'une migration sud-nord est contredite par les données archéologiques et génétiques actuelles. La synthèse aujourd'hui dominante retient un développement in situ au Maghreb depuis le Paléolithique supérieur, avec la culture ibéromaurusienne (22000-9000 av. J.-C.), complété par des apports néolithiques venus du Proche-Orient et du Sahara.",
+      "emergencePeriod": "La séparation d'avec le proto-afro-asiatique est estimée par glottochronologie entre 12000 et 8000 av. J.-C., à la fin de la dernière glaciation. Les premières attestations écrites sont indirectes puis directes : les textes égyptiens mentionnent des populations libyennes dès l'Ancien Empire, vers 2300 av. J.-C., sous les noms de Tjehenu, Tjemehu et Lebu ; les premières inscriptions en alphabet libyque, ancêtre du tifinagh, datent du IIIe siècle av. J.-C. en Numidie ; les sources puniques et grecques mentionnent les royaumes berbères (Massyles, Masaesyles, Maures) dès le IVe siècle av. J.-C.",
+      "diffusion": "Entre 6000 et 2000 av. J.-C., pendant la phase humide du Sahara néolithique, une expansion vers le Sahara installe les ancêtres des Touaregs dans le Sahara central et méridional ; l'art rupestre du Tassili n'Ajjer et du Tibesti en garde la trace pastorale. Les zones montagneuses de l'Atlas et du Rif sont occupées sans discontinuité depuis le Néolithique, et le littoral méditerranéen connaît un contact précoce avec les navigateurs phéniciens, Carthage étant fondée en 814 av. J.-C. Après l'assèchement du Sahara, vers 2000 av. J.-C., le peuplement se replie sur les zones refuges : montagnes de l'Atlas, oasis sahariennes, littoral.",
+      "historicalBreaks": "L'arabisation, engagée à partir du VIIe siècle, est la rupture principale. Les invasions hilaliennes du XIe siècle provoquent un bouleversement linguistique et l'arabisation massive des plaines fertiles, tandis que le berbère se maintient dans les zones refuges : montagnes kabyle, rifaine et atlasique, déserts touaregs, oasis isolées. L'emprunt à l'arabe est massif dans le vocabulaire religieux, administratif et quotidien.",
+      "contactZones": "Durant l'Antiquité, du IXe siècle av. J.-C. au Ve siècle apr. J.-C., les contacts phéniciens et puniques laissent des emprunts commerciaux et maritimes, notamment dans la toponymie côtière ; les contacts romains, du IIe siècle av. J.-C. au Ve siècle apr. J.-C., laissent des emprunts administratifs et techniques ; les contacts grecs restent limités, principalement via Cyrène. Au Moyen Âge, l'arabe devient la langue de contact dominante. Du XIe au XIXe siècle, les routes transsahariennes mettent le berbère en contact avec le songhay et le haoussa.",
+      "majorEvents": "Antiquité : royaumes numides de Massinissa, roi des Massyles (202-148 av. J.-C.), et de Jugurtha, dont la guerre contre Rome court de 112 à 105 av. J.-C. ; royaumes maures de Juba II (25 av. J.-C. - 23 apr. J.-C.) et Maurétanies Tingitane et Césarienne ; romanisation partielle, avec des villes berbères romanisées comme Timgad et Cuicul, mais maintien du berbère dans les campagnes. Moyen Âge : islamisation à partir de 647, avec des résistances dont celle de la Kahina (695-702) ; dynasties berbères almoravide (1040-1147), almohade (1121-1269) et mérinide (1244-1465), qui emploient le berbère dans l'administration et l'armée ; conversion à l'islam sans disparition de la langue. Périodes coloniale et contemporaine : résistance de Fatma N'Soumer en Kabylie (1830-1857) et d'Abd el-Krim dans le Rif (1920-1926) ; renouveau culturel amazigh au XXe siècle, avec le Printemps berbère de 1980 en Algérie, la reconnaissance constitutionnelle de la langue au Maroc en 2011 et en Algérie en 2016, et son travail de standardisation."
+    },
     "distribution": {
       "totalSpeakers": 35000000,
       "distributionByCountry": {
@@ -87,6 +99,42 @@
         "url": "https://www.hcp.ma/file/244434/",
         "tier": "official",
         "notes": "Tier resolved from the domain ruling for hcp.ma. Original entry: \"Haut-Commissariat au Plan du Maroc – Recensement Général de la Population et de l'Habitat (RGPH) 2024, note \\\"Les expressions linguistiques de la langue Amazighe utilisées par la population\\\" (23 décembre 2024) : 24,8 % de la population utilise l'amazigh au quotidien (33,3 % en milieu rural, 19,9 % en milieu urbain). https://www.hcp.ma/file/244434/ ; taux appliqué à la population totale du Maroc (38 081 173 en 2024, World Bank – SP.POP.TOTL) pour estimer ~9,44 millions de locuteurs. https://data.worldbank.org/indicator/SP.POP.TOTL?locations=MA\""
+      },
+      {
+        "title": "Cohen, Marcel (1947) — Essai comparatif sur le vocabulaire et la phonétique du chamito-sémitique. Paris : Champion",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Monographie d'auteur nommé avec année, établissant les correspondances phonétiques entre le berbère et les autres branches afro-asiatiques."
+      },
+      {
+        "title": "Greenberg, Joseph (1963) — The Languages of Africa. Bloomington : Indiana University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Monographie d'auteur nommé avec année ; source de la classification interne dans laquelle le berbère constitue une branche distincte."
+      },
+      {
+        "title": "Ehret, Christopher (2002) — The Civilizations of Africa: A History to 1800. Charlottesville : University Press of Virginia",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Monographie d'auteur nommé avec année ; source de la théorie minoritaire d'une origine saharienne ou nilotique du proto-afro-asiatique."
+      },
+      {
+        "title": "Diop, Cheikh Anta (1954) — Nations nègres et culture. Paris : Présence Africaine",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Monographie d'auteur nommé avec année ; source de la thèse de continuité entre l'Égypte pharaonique et les populations subsahariennes, exposée avec ses points de divergence."
+      },
+      {
+        "title": "Diop, Cheikh Anta (1977) — Parenté génétique de l'égyptien pharaonique et des langues négro-africaines. Dakar : NEA",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Monographie d'auteur nommé avec année ; source des cognats proposés entre l'égyptien ancien, le berbère et des langues d'Afrique de l'Ouest."
+      },
+      {
+        "title": "Obenga, Théophile (1993) — L'origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes. Paris : L'Harmattan",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Monographie d'auteur nommé avec année ; source de l'hypothèse d'un ensemble négro-égyptien incluant le berbère comme branche périphérique."
       }
     ]
   }

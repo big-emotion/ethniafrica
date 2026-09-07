@@ -23,6 +23,12 @@
       {
         "name": "Royaume du Burundi",
         "period": "XVIe siècle - 1966",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1501,
+          "endYear": 1966,
+          "precision": "century"
+        },
         "dominantPeoples": [
           "Tutsi (noblesse)",
           "Hutu (majorité)",
@@ -34,6 +40,12 @@
       {
         "name": "Ruanda-Urundi",
         "period": "1916 - 1962",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1916,
+          "endYear": 1962,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples burundais sous administration coloniale belge"
         ],
@@ -43,6 +55,12 @@
       {
         "name": "République du Burundi",
         "period": "1966 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1966,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples burundais"],
         "politicalCenters": ["Bujumbura (capitale)"],
         "historicalRole": "Indépendance en 1962 (monarchie). Coup d'État de 1966 : abolition de la monarchie, proclamation de la République. Histoire politique mouvementée avec plusieurs coups d'État et périodes de violences ethniques (1972, 1993, 2015)."

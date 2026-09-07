@@ -402,4 +402,40 @@ describe("validateMigrationEvents (FR80, real pilot corpus, Story 12.2)", () => 
     expect(result.errors).toEqual([]);
     expect(result.ok).toBe(true);
   });
+
+  /**
+   * The model is what an author copies. It kept a numeric `tier: 1` and told
+   * them to cite "a Tier 1/2 source" for a year after migration 041 replaced
+   * that scale with three standings — so the one file whose job is to teach the
+   * shape was teaching a vocabulary the validator rejects.
+   */
+  // @req REQ-080
+  it("teaches the tier vocabulary the corpus actually uses", () => {
+    const model = JSON.parse(readFileSync(realModelPath, "utf-8"));
+    expect(model.content.sources[0].tier).toBe(
+      "official | referenced | unverified"
+    );
+    expect(JSON.stringify(model._meta.directives)).not.toMatch(/Tier 1/);
+  });
+
+  /**
+   * Every relation fiche carries `_meta`; no migration fiche did. The block
+   * names the model an editor must open, which is the one thing a fiche cannot
+   * afford to leave implicit.
+   */
+  // @req REQ-080
+  it("gives every migration fiche the _meta block its class declares", () => {
+    const migrationsDir = join(realDatasetRoot, "migrations");
+    const files = readdirSync(migrationsDir).filter((f) => f.endsWith(".json"));
+    expect(files.length).toBeGreaterThan(0);
+    for (const file of files) {
+      const fiche = JSON.parse(
+        readFileSync(join(migrationsDir, file), "utf-8")
+      );
+      expect(fiche._meta, file).toMatchObject({
+        format: "AFRIK JSON v2",
+        entity: "migration",
+      });
+    }
+  });
 });

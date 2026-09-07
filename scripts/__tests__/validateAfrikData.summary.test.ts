@@ -89,6 +89,31 @@ describe("FR28 demographics gate", () => {
       SOFT_CHECK_NAMES.has("FR28-strict Population sums (target 99–101%)")
     ).toBe(false);
   });
+
+  /**
+   * FR27-references was advisory while 43 declared people references pointed at
+   * nothing. That queue is empty, so the check gates. A fiche that names a
+   * people the corpus does not document now fails the build instead of
+   * rendering an unreachable line.
+   */
+  // @req REQ-149
+  it("gates the build on people references resolving", () => {
+    expect(
+      SOFT_CHECK_NAMES.has("FR27-references People references resolve")
+    ).toBe(false);
+  });
+
+  /**
+   * The whole advisory list, pinned. CLAUDE.md states that FR52-coverage is the
+   * only check still in it; a second entry added quietly would make that
+   * sentence false and nothing else would notice.
+   */
+  // @req REQ-149
+  it("keeps FR52-coverage as the only advisory check", () => {
+    expect([...SOFT_CHECK_NAMES]).toEqual([
+      "FR52-coverage People-to-language coverage",
+    ]);
+  });
 });
 
 describe("FR28/FR28-strict scope to the 54-country African reference set (REQ-131)", () => {
