@@ -22,6 +22,7 @@ import { getTranslation } from "@/lib/translations";
 import {
   ACCESS_MODE_LABELS,
   ACCESS_MODES,
+  RUBRIC_FILED_AXES,
   getNavModules,
 } from "@/lib/hubs/moduleRegistry";
 import {
@@ -518,15 +519,33 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
     );
     expect(drafts.length).toBeGreaterThan(0);
 
-    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
-    for (const navModule of drafts) {
-      expectInert(entryFor(navModule.id));
-    }
-    // The one reading still offered keeps its link, in the same grid.
-    expect(entryFor("anecdotes").tagName).toBe("A");
-    expect(entryFor("anecdotes")).not.toHaveTextContent(
-      t.hubs.unavailableLabel
+    // Read off the tray, not the panel. The panel lists one reading per
+    // rubric and prefers one the reader can open, so the surface that owes
+    // the axis in full is the fold below the burger.
+    fireEvent.click(screen.getByTestId(BURGER));
+    const tray = screen.getByRole("dialog");
+    fireEvent.click(
+      within(tray).getByRole("button", {
+        name: new RegExp(ACCESS_MODE_LABELS.dossiers),
+      })
     );
+
+    for (const navModule of drafts) {
+      expectInert(within(tray).getByTestId(`site-nav-module-${navModule.id}`));
+    }
+    // The one reading still offered keeps its link, in the same fold.
+    const anecdotes = within(tray).getByTestId("site-nav-module-anecdotes");
+    expect(anecdotes.tagName).toBe("A");
+    expect(anecdotes).not.toHaveTextContent(t.hubs.unavailableLabel);
+  });
+
+  // The panel's own title is the way to the hub, whatever the rubrics below
+  // it happen to be showing.
+  // @req REQ-114
+  it("opens the dossiers hub from the panel title", () => {
+    renderHeader();
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
+
     expect(
       within(panel()).getByRole("link", { name: "Les dossiers" })
     ).toHaveAttribute("href", getLocalizedRoute("fr", "dossiersHub"));
@@ -575,70 +594,208 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
   });
 
   // Each dossier sits under its own rubric rather than merely somewhere in
-  // the panel: a card filed under the wrong domain still renders, and only
-  // the containment says which heading it answers to.
+  // the menu: a card filed under the wrong domain still renders, and only
+  // the containment says which heading it answers to. Read off the tray,
+  // which is where every reading of the axis is listed.
   // @req REQ-120
   it("puts the four Congo dossiers under Organisation and Religions", () => {
     renderHeader();
-    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
+    fireEvent.click(screen.getByTestId(BURGER));
+    const tray = screen.getByRole("dialog");
+    fireEvent.click(
+      within(tray).getByRole("button", {
+        name: new RegExp(ACCESS_MODE_LABELS.dossiers),
+      })
+    );
 
     const rubricNamed = (name: string) =>
-      within(panel()).getByRole("heading", { level: 3, name }).parentElement!;
+      within(tray).getByRole("heading", { level: 4, name }).parentElement!;
 
     for (const id of ["DOS_KONGO", "DOS_LUBA", "DOS_LUNDA"]) {
-      expect(rubricNamed("Organisation")).toContainElement(entryFor(id));
+      expect(rubricNamed("Organisation")).toContainElement(
+        within(tray).getByTestId(`site-nav-module-${id}`)
+      );
     }
     expect(rubricNamed("Religions")).toContainElement(
-      entryFor("DOS_SPIRITUALITES_KONGO")
+      within(tray).getByTestId("site-nav-module-DOS_SPIRITUALITES_KONGO")
     );
   });
 
-  /**
-   * A menu is not an index (REQ-120).
-   *
-   * The corpus is expected to reach the hundreds — the atlas already holds 804
-   * peoples behind one menu row — and a panel that printed every record would
-   * put that list into the markup of every page on the site. Past the cap the
-   * rubric stops listing and starts counting.
-   *
-   * Exercised on a corpus this test builds, because the real one has no rubric
-   * over the cap yet: a cap that only engages after an editorial wave is a cap
-   * nobody has ever seen work.
-   */
-  // @req REQ-120
-  it("stops listing a rubric past the cap and counts the rest", () => {
-    const crowded = Array.from({ length: 9 }, (_, index) => ({
-      id: `DOS_TEST_${index}`,
-      href: `${getLocalizedRoute("fr", "dossiersHub")}/test-${index}`,
-      title: `Dossier ${index}`,
-      rubric: "religions" as const,
-      offered: true,
-      publishedOn: `2026-01-0${index + 1}`,
-    }));
-
+  const renderWithDossiers = (
+    dossiers: ReturnType<typeof getDossierMenuEntries>
+  ) =>
     render(
       <ThemeProvider attribute="class">
         <LocalePublicationProvider value="bilingual-en-default">
           <ModuleAvailabilityProvider value={null}>
-            <DossierMenuProvider value={crowded}>
+            <DossierMenuProvider value={dossiers}>
               <SiteHeader language="fr" />
             </DossierMenuProvider>
           </ModuleAvailabilityProvider>
         </LocalePublicationProvider>
       </ThemeProvider>
     );
+
+  const panelRubric = (name: string) =>
+    within(panel()).getByRole("heading", { level: 3, name }).parentElement!;
+
+  /**
+   * The panel is a row of rubrics, and a rubric is one reading tall (REQ-120).
+   *
+   * It listed up to four, and the rubrics were laid out as flowed columns so
+   * that a rubric of four pushed the two after it down the page: the panel
+   * stood five card-heights tall and the reader had to scroll a menu. Height
+   * is the constraint the bar owes — a heading and one reading under it, six
+   * rubrics abreast.
+   */
+  // @req REQ-120
+  it("shows one reading per rubric in the panel", () => {
+    renderHeader();
     fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
 
-    const religions = within(panel()).getByRole("heading", {
+    for (const heading of within(panel()).getAllByRole("heading", {
       level: 3,
+    })) {
+      expect(
+        within(heading.parentElement!).getAllByTestId(/^site-nav-module-/)
+      ).toHaveLength(1);
+    }
+  });
+
+  /**
+   * And that one is a reading the click opens.
+   *
+   * Noms holds two: « Qui a donné ce nom ? », in preparation, and the
+   * anecdotes, published. Showing the first would spend the rubric's only
+   * card on a **Bientôt** chip while a reading sat behind it, unlisted.
+   */
+  // @req REQ-120
+  it("shows the open reading of a rubric rather than the first", () => {
+    renderHeader();
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
+
+    const noms = panelRubric("Noms");
+    expect(within(noms).getByTestId("site-nav-module-anecdotes")).toBeTruthy();
+    expect(within(noms).queryByTestId("site-nav-module-nommer")).toBeNull();
+  });
+
+  /**
+   * A rubric whose readings are all in preparation still shows one.
+   *
+   * The alternative is a heading over nothing: five of the six rubrics have
+   * no open reading today, and dropping their card would leave the row a set
+   * of bare words. The chip is what the reader is owed there — there is a
+   * reading here, and it is not ready.
+   */
+  // @req REQ-106 @req REQ-120
+  it("shows a reading in preparation when a rubric has no open one", () => {
+    renderHeader();
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
+
+    const economie = panelRubric("Économie");
+    const [entry] = within(economie).getAllByTestId(/^site-nav-module-/);
+    expectInert(entry);
+  });
+
+  /**
+   * Past one open reading the rubric stops listing and offers a way out.
+   *
+   * The count is of open readings, not of everything filed: a rubric holding
+   * one published dossier and four in preparation has nothing more to open,
+   * and a « Voir plus » there would send the reader to the hub for a list
+   * they have already seen.
+   */
+  // @req REQ-120
+  it("offers a way to the hub when a rubric holds more than one open reading", () => {
+    renderWithDossiers(
+      Array.from({ length: 3 }, (_, index) => ({
+        id: `DOS_TEST_${index}`,
+        href: `${getLocalizedRoute("fr", "dossiersHub")}/test-${index}`,
+        title: `Dossier ${index}`,
+        rubric: "religions" as const,
+        offered: true,
+        // Already newest-first, the order `getDossierMenuEntries` guarantees.
+        publishedOn: `2026-01-0${3 - index}`,
+      }))
+    );
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
+
+    const religions = panelRubric("Religions");
+    // The most recent of the rubric, so which one survives the cut is a
+    // property of the corpus and not of a directory's read order.
+    expect(
+      within(religions).getByTestId("site-nav-module-DOS_TEST_0")
+    ).toBeTruthy();
+
+    const more = within(religions).getByTestId(
+      "site-nav-rubric-more-dossiers-religions"
+    );
+    expect(more).toHaveTextContent(t.hubs.seeMoreInRubric);
+    expect(more).toHaveAttribute(
+      "href",
+      getLocalizedRoute("fr", "dossiersHub")
+    );
+  });
+
+  // One open reading is the whole of what the rubric can open, so there is
+  // nothing to see more of.
+  // @req REQ-120
+  it("offers no way out of a rubric with a single open reading", () => {
+    renderHeader();
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
+
+    expect(
+      within(panelRubric("Noms")).queryByTestId(
+        "site-nav-rubric-more-dossiers-noms"
+      )
+    ).toBeNull();
+  });
+
+  /**
+   * The tray is the surface that lists the axis, and it keeps the cap it had
+   * (REQ-120).
+   *
+   * A menu is not an index — the corpus is expected to reach the hundreds, and
+   * a tray that printed every record would put that list into the markup of
+   * every page on the site. Past the cap the rubric stops listing and starts
+   * counting. Exercised on a corpus this test builds, because the real one has
+   * no rubric over the cap yet.
+   */
+  // @req REQ-120
+  it("stops listing a rubric past the cap in the tray and counts the rest", () => {
+    renderWithDossiers(
+      Array.from({ length: 9 }, (_, index) => ({
+        id: `DOS_TEST_${index}`,
+        href: `${getLocalizedRoute("fr", "dossiersHub")}/test-${index}`,
+        title: `Dossier ${index}`,
+        rubric: "religions" as const,
+        offered: true,
+        publishedOn: `2026-01-0${9 - index}`,
+      }))
+    );
+    fireEvent.click(screen.getByTestId(BURGER));
+    const tray = screen.getByRole("dialog");
+    fireEvent.click(
+      within(tray).getByRole("button", {
+        name: new RegExp(ACCESS_MODE_LABELS.dossiers),
+      })
+    );
+
+    const religions = within(tray).getByRole("heading", {
+      level: 4,
       name: "Religions",
     }).parentElement!;
 
     expect(within(religions).getAllByTestId(/^site-nav-module-/)).toHaveLength(
       4
     );
-    // Counts what is withheld, not the whole rubric: five unseen readings, not
-    // "9 dossiers" beside four cards.
+    // The newest four, and a count of what is withheld rather than of the
+    // whole rubric: five unseen readings, not "9 dossiers" beside four cards.
+    for (const index of [0, 1, 2, 3]) {
+      expect(
+        within(religions).getByTestId(`site-nav-module-DOS_TEST_${index}`)
+      ).toBeTruthy();
+    }
     const more = within(religions).getByTestId(
       "site-nav-rubric-more-dossiers-religions"
     );
@@ -647,43 +804,6 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
       "href",
       getLocalizedRoute("fr", "dossiersHub")
     );
-  });
-
-  // The newest first, so which four the cap keeps is a property of the corpus
-  // rather than of the order a directory happened to be read in.
-  // @req REQ-120
-  it("keeps the most recent readings when it caps a rubric", () => {
-    const crowded = Array.from({ length: 6 }, (_, index) => ({
-      id: `DOS_TEST_${index}`,
-      href: `${getLocalizedRoute("fr", "dossiersHub")}/test-${index}`,
-      title: `Dossier ${index}`,
-      rubric: "economie" as const,
-      offered: true,
-      // Already newest-first, the order `getDossierMenuEntries` guarantees.
-      publishedOn: `2026-01-0${6 - index}`,
-    }));
-
-    render(
-      <ThemeProvider attribute="class">
-        <LocalePublicationProvider value="bilingual-en-default">
-          <ModuleAvailabilityProvider value={null}>
-            <DossierMenuProvider value={crowded}>
-              <SiteHeader language="fr" />
-            </DossierMenuProvider>
-          </ModuleAvailabilityProvider>
-        </LocalePublicationProvider>
-      </ThemeProvider>
-    );
-    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
-
-    for (const index of [0, 1, 2, 3]) {
-      expect(entryFor(`DOS_TEST_${index}`)).toBeInTheDocument();
-    }
-    for (const index of [4, 5]) {
-      expect(
-        screen.queryByTestId(`site-nav-module-DOS_TEST_${index}`)
-      ).toBeNull();
-    }
   });
 
   /**
@@ -1000,21 +1120,32 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
         })
       ).not.toHaveAttribute("href");
       const contracts = contractsFor(panel());
-      // Compared as a set: the panel must offer every entry of the axis and no
-      // other. Reading order is no longer the registry's on an axis filed
-      // under rubrics (REQ-120), and it is pinned there, by rubric, rather
-      // than smuggled into this assertion about destinations.
+      // Compared as a set: reading order is no longer the registry's on an
+      // axis filed under rubrics (REQ-120), and it is pinned there, by rubric,
+      // rather than smuggled into this assertion about destinations.
       //
       // Two things fill the dossiers axis — the four surfaces the registry
       // declares, and the corpus the provider carries — so the expectation
       // names both. It named only the registry until the dossiers left it.
-      const expected = [
-        ...getNavModules(axis).map((navModule) => navModule.id),
-        ...(axis === "dossiers" ? dossierMenu.map((entry) => entry.id) : []),
-      ];
-      expect(contracts.map(({ testId }) => testId).sort()).toEqual(
-        expected.map((id) => `site-nav-module-${id}`).sort()
-      );
+      //
+      // A subset on a filed axis, and the whole of it everywhere else: the
+      // panel shows one reading per rubric, so what it must never do is offer
+      // an entry the axis does not hold. That it shows the *right* one is the
+      // rubric suite's assertion, not this one.
+      const declared = new Set([
+        ...getNavModules(axis).map(
+          (navModule) => `site-nav-module-${navModule.id}`
+        ),
+        ...(axis === "dossiers"
+          ? dossierMenu.map((entry) => `site-nav-module-${entry.id}`)
+          : []),
+      ]);
+      const shown = contracts.map(({ testId }) => testId!);
+      expect(shown.length).toBeGreaterThan(0);
+      for (const testId of shown) expect(declared).toContain(testId);
+      if (!RUBRIC_FILED_AXES.includes(axis)) {
+        expect(shown.sort()).toEqual([...declared].sort());
+      }
       panelContracts.set(axis, contracts);
     }
     fireEvent.click(trigger(ACCESS_MODE_LABELS.jeux));
@@ -1032,7 +1163,14 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
           name: new RegExp(ACCESS_MODE_LABELS[axis]),
         })
       );
-      expect(contractsFor(tray)).toEqual(panelContracts.get(axis));
+      // The tray lists the axis in full, so the panel's entries are a subset
+      // of it — and each one carries the same destination and the same inert
+      // state on both surfaces. Two surfaces disagreeing about whether a
+      // module is reachable is the failure this holds shut.
+      const trayContracts = contractsFor(tray);
+      for (const contract of panelContracts.get(axis)!) {
+        expect(trayContracts).toContainEqual(contract);
+      }
     }
   });
 });
@@ -1060,6 +1198,27 @@ describe("SiteHeader — the panel opens over the page, not through it", () => {
     fireEvent.click(trigger(ACCESS_MODE_LABELS.atlas));
 
     expect(declarationsFor("\\.sh-panel")).toMatch(/position:\s*absolute/);
+  });
+
+  /**
+   * The rubrics sit abreast, across the width of the bar.
+   *
+   * They were laid out as flowed CSS columns, which is what put Territoires
+   * and Économie under Organisation instead of beside it: a flowed column
+   * fills to its own height before starting the next, so the panel grew as
+   * tall as its tallest rubric and the last two rubrics fell below the first
+   * four. A grid of equal tracks has no such order — six rubrics, six tracks,
+   * one row — and now that a rubric is one card tall the rows it would wrap
+   * into on a narrow desktop cost a card-height each, not four.
+   */
+  // @req REQ-120
+  it("lays the rubrics out as one row of equal tracks", () => {
+    renderHeader();
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
+
+    const filed = declarationsFor("\\.sh-grid-filed");
+    expect(filed).toMatch(/grid-template-columns:\s*repeat\(auto-fit,/);
+    expect(filed).not.toMatch(/column-width/);
   });
 });
 

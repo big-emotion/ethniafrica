@@ -63,6 +63,7 @@ import {
   ACCESS_MODES,
   RUBRIC_FILED_AXES,
   RUBRIC_MENU_LIMIT,
+  RUBRIC_PANEL_LIMIT,
   accentForModule,
   getNavModules,
   type AccessMode,
@@ -400,10 +401,18 @@ export function SiteHeader({
    * `axis === "dossiers"` written in this file is what once gave that axis a
    * navigation unlike its two neighbours.
    *
-   * `headingLevel` because the same rubric sits under an `h2` in the panel and
-   * under an `h3` in the tray; the label is the same, the rank is not.
+   * The panel and the tray file the same rubrics and cut them differently.
+   * The panel hangs off a pinned bar, so its constraint is height: one reading
+   * per rubric (`RUBRIC_PANEL_LIMIT`), six rubrics abreast, and a way out to
+   * the hub when the rubric can open more than that one. The tray scrolls and
+   * is the whole of the phone's navigation, so it lists the axis down to
+   * `RUBRIC_MENU_LIMIT` and counts what it withholds — which is also why a
+   * dossier in preparation is still listed there, inert, rather than dropped.
+   *
+   * The heading rank follows: `h3` under the panel's `h2`, `h4` under the
+   * tray's `h3`. Same label, different rank.
    */
-  const axisModules = (axis: AccessMode, headingLevel: "h3" | "h4") => {
+  const axisModules = (axis: AccessMode, surface: "panel" | "tray") => {
     const modules = getNavModules(axis).map(moduleAsEntry);
     if (!RUBRIC_FILED_AXES.includes(axis)) return modules.map(navEntry);
 
@@ -416,10 +425,31 @@ export function SiteHeader({
       ),
     ];
 
-    const Heading = headingLevel;
+    const Heading = surface === "panel" ? "h3" : "h4";
     return getGroupedModules(entries).map((rubric) => {
-      const shown = rubric.modules.slice(0, RUBRIC_MENU_LIMIT);
-      const withheld = rubric.modules.length - shown.length;
+      const open = rubric.modules.filter((entry) => entry.offered);
+
+      // The panel spends its one card on a reading the click opens, and falls
+      // back to the first in preparation when the rubric has none: five of the
+      // six rubrics have no open reading today, and dropping their card would
+      // leave the row a set of bare headings. The chip is what a reader is owed
+      // there — there is a reading here, and it is not ready.
+      const shown =
+        surface === "panel"
+          ? (open.length > 0 ? open : rubric.modules).slice(
+              0,
+              RUBRIC_PANEL_LIMIT
+            )
+          : rubric.modules.slice(0, RUBRIC_MENU_LIMIT);
+
+      // What the way out is worth reaching for. The panel counts *open*
+      // readings, because the hub holds nothing more it can open once the
+      // rubric's only published dossier is already on the card; the tray
+      // counts everything it withheld, listed or not.
+      const withheld =
+        surface === "panel"
+          ? open.length - RUBRIC_PANEL_LIMIT
+          : rubric.modules.length - shown.length;
 
       return (
         <section key={rubric.id} className="sh-rubric">
@@ -429,17 +459,18 @@ export function SiteHeader({
           <div className="sh-rubric-entries">
             {shown.map(navEntry)}
             {/* A menu is not an index. Past the cap the rubric stops listing
-                and starts counting, and the count is a link to the hub, which
-                is the surface that owes a reader every dossier. Without this
-                a rubric holding a hundred readings would print a hundred
-                cards into every page of the site. */}
+                and points at the hub, which is the surface that owes a reader
+                every dossier. Without this a rubric holding a hundred readings
+                would print a hundred cards into every page of the site. */}
             {withheld > 0 ? (
               <Link
                 href={getLocalizedRoute(language, "dossiersHub")}
                 data-testid={`site-nav-rubric-more-${rubric.id}`}
                 className="sh-rubric-more"
               >
-                {t.hubs.moreInRubric(withheld)}
+                {surface === "panel"
+                  ? t.hubs.seeMoreInRubric
+                  : t.hubs.moreInRubric(withheld)}
               </Link>
             ) : null}
           </div>
@@ -595,7 +626,7 @@ export function SiteHeader({
               RUBRIC_FILED_AXES.includes(openAxis) && "sh-grid-filed"
             )}
           >
-            {axisModules(openAxis, "h3")}
+            {axisModules(openAxis, "panel")}
           </div>
         </div>
       ) : null}
@@ -647,7 +678,7 @@ export function SiteHeader({
                         {t.chrome.allDossiers}
                       </ActionLink>
                     ) : null}
-                    {axisModules(axis, "h4")}
+                    {axisModules(axis, "tray")}
                   </div>
                 ) : null}
               </div>
@@ -973,33 +1004,41 @@ export function SiteHeader({
           max-width: var(--afh-shell-max);
           margin: 0 auto;
         }
-        /* A rubric is a column, not a band, and the columns flow rather than
-           sit on a grid.
+        /* The six rubrics abreast, across the width of the bar.
 
-           Two shapes were measured before this one. Full-width bands, one per
-           rubric, pushed the last two rubrics below the fold and left three
-           empty columns beside every rubric holding a single dossier. An
-           auto-fill grid of columns fixed the height but not the holes: six
-           rubrics into five tracks wraps the sixth onto a second row that
-           starts below the tallest of the first, so a 240px void opened in
-           the middle of the panel.
+           Three shapes were measured before this one. Full-width bands, one
+           per rubric, pushed the last two rubrics below the fold. An auto-fill
+           grid of columns fixed the height but not the holes: six rubrics into
+           five tracks wraps the sixth onto a second row that starts below the
+           tallest of the first, so a 240px void opened in the middle. Flowed
+           CSS columns closed the void and cost the row — a flowed column fills
+           to its own height before starting the next, which is what put
+           Territoires and Économie *under* Organisation rather than beside it.
 
-           Flowed columns have no rows to align to, so a short rubric is
-           followed by the next one instead of by a hole, and the browser
-           balances the heights. Rubrics stay in reading order — down a
-           column, then across. */
+           None of the three was survivable while a rubric was four cards tall.
+           Now that it is one (RUBRIC_PANEL_LIMIT), equal grid tracks hold: the
+           rubrics are the same height, so there is no void to balance, and the
+           narrow desktop widths where six tracks will not fit wrap into a
+           second row that costs one card-height instead of four.
+
+           auto-fit rather than a literal repeat(6, ...): the rubrics come from
+           MODULE_GROUP_ORDER and an empty one is dropped, so their number is a
+           property of the corpus.
+
+           172px is the floor a rubric name needs, not a round number: a name
+           is a single word under 0.16em of tracking, so it has nowhere to wrap
+           and a narrower track lets it run out over its neighbour — measured
+           at 900px, where ORGANISATION (166px of ink) sat across RELIGIONS. It
+           still admits six tracks at the 1200px desktop reference. */
         .sh-grid-filed {
-          display: block;
-          column-width: 196px;
-          column-gap: 12px;
+          grid-template-columns: repeat(auto-fit, minmax(172px, 1fr));
+          gap: 9px 12px;
         }
-        /* A rubric split across a column break would put a heading over some
-           of its dossiers and the rest under the next heading. */
         .sh-rubric {
+          /* Kept from the flowed-column layout it replaces: a rubric that
+             split across a break would put a heading over some of its
+             dossiers and the rest under the next heading. */
           break-inside: avoid;
-          /* Flowed columns have no gap property between items; the space
-             between two rubrics is this padding. */
-          padding-bottom: 14px;
         }
         .sh-rubric-entries {
           display: grid;
