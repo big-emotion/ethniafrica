@@ -3,6 +3,11 @@ import { logger } from "@/lib/api/logger";
 import { graphConfigured, sendViaGraph } from "@/lib/email/graph";
 import type { Language } from "@/types/shared";
 import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
+import { getStaticPageRoute } from "@/lib/routing";
+import {
+  buildFlagResolutionEmailEn,
+  buildFlagVerificationEmailEn,
+} from "@/lib/email/flagNotification.en";
 
 const FR: Language = "fr";
 
@@ -26,14 +31,15 @@ export interface FlagResolutionInput {
  */
 export interface FlagResolutionRecipient {
   email: string;
+  language?: Language;
 }
 
 function siteUrl(): string {
   return process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 }
 
-function flagPageUrl(publicSlug: string): string {
-  return `${siteUrl()}/fr/signalements/${publicSlug}`;
+function flagPageUrl(publicSlug: string, language: Language = FR): string {
+  return `${siteUrl()}${getStaticPageRoute(language, "reports")}/${publicSlug}`;
 }
 
 /**
@@ -44,16 +50,17 @@ function flagPageUrl(publicSlug: string): string {
  */
 function ficheUrl(
   targetType: string | null,
-  targetId: string | null
+  targetId: string | null,
+  language: Language = FR
 ): string | null {
   if (!targetType || !targetId) return null;
   switch (targetType) {
     case "people":
-      return `${siteUrl()}${getPeopleRoute(FR, targetId)}`;
+      return `${siteUrl()}${getPeopleRoute(language, targetId)}`;
     case "country":
-      return `${siteUrl()}${getCountryRoute(FR, targetId)}`;
+      return `${siteUrl()}${getCountryRoute(language, targetId)}`;
     case "language_family":
-      return `${siteUrl()}${getFamilyRoute(FR, targetId)}`;
+      return `${siteUrl()}${getFamilyRoute(language, targetId)}`;
     default:
       return null;
   }
@@ -148,7 +155,17 @@ export async function sendFlagResolutionEmail(
       return;
     }
 
-    const content = buildEmailContent(flag);
+    const language = recipient.language ?? FR;
+    const content =
+      language === "en"
+        ? buildFlagResolutionEmailEn({
+            publicSlug: flag.public_slug,
+            status: flag.status,
+            moderatorNotes: flag.moderator_notes,
+            flagLink: flagPageUrl(flag.public_slug, language),
+            ficheLink: ficheUrl(flag.target_type, flag.target_id, language),
+          })
+        : buildEmailContent(flag);
     const sent = await sendNotification(recipient.email, content);
     if (sent) {
       logger.info("Flag resolution email sent", {
@@ -170,6 +187,7 @@ export interface FlagVerificationEmail {
   email: string;
   token: string;
   publicSlug: string;
+  language?: Language;
 }
 
 /**
@@ -188,6 +206,7 @@ export async function sendFlagVerificationEmail({
   email,
   token,
   publicSlug,
+  language = FR,
 }: FlagVerificationEmail): Promise<boolean> {
   if (!graphConfigured()) {
     logger.warn(
@@ -197,13 +216,22 @@ export async function sendFlagVerificationEmail({
     return false;
   }
 
-  const verificationLink = `${siteUrl()}/fr/signalements/verifier?token=${encodeURIComponent(token)}`;
+  const reportsRoute = getStaticPageRoute(language, "reports");
+  const verificationLink = `${siteUrl()}${reportsRoute}/verifier?token=${encodeURIComponent(token)}`;
+
+  if (language === "en") {
+    const content = buildFlagVerificationEmailEn({
+      flagLink: flagPageUrl(publicSlug, language),
+      verificationLink,
+    });
+    return sendNotification(email, content);
+  }
 
   return sendNotification(email, {
     subject: "Confirmez votre adresse pour suivre votre signalement",
     text: [
       "Votre signalement est bien enregistré et déjà consultable :",
-      flagPageUrl(publicSlug),
+      flagPageUrl(publicSlug, language),
       "Pour recevoir la décision de la modération par e-mail, confirmez cette adresse :",
       verificationLink,
       "Ce lien est valable 24 heures et ne fonctionne qu'une fois. Si vous n'avez rien signalé, ignorez ce message : sans confirmation, cette adresse ne sera plus utilisée.",

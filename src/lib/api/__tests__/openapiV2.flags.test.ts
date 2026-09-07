@@ -149,6 +149,7 @@ describe("OpenAPI v2 flags contract", () => {
         "counter_source_citation",
         "counter_source_url",
         "flag_kind",
+        "language",
         "proposed_rewrite",
         "reason_text",
         // Optional, and the only personal datum a report can carry. It is
@@ -166,6 +167,7 @@ describe("OpenAPI v2 flags contract", () => {
       target_type: "people",
       target_id: "PPL_YORUBA",
       flag_kind: "inaccurate",
+      language: "en",
       antibot: expect.objectContaining({ salt: expect.any(String) }),
     });
   });

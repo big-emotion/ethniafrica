@@ -43,6 +43,23 @@ beforeEach(() => {
 });
 
 describe("getQuizScopesHandler", () => {
+  // @req REQ-145
+  it("requests the bank for the served locale", async () => {
+    getQuizScopeCatalogueMock.mockResolvedValue({
+      countries: [],
+      families: [],
+      themes: [],
+      totalActiveQuestionCount: 0,
+    });
+
+    await getQuizScopesHandler("en");
+
+    expect(getQuizScopeCatalogueMock).toHaveBeenCalledWith("en");
+    expect((await getQuizScopesHandler("en")).data.random.labelFr).toBe(
+      "Random"
+    );
+  });
+
   // @req REQ-103
   it("marks a track playable only when it can fill a session of eight", async () => {
     getQuizScopeCatalogueMock.mockResolvedValue({
@@ -190,6 +207,17 @@ describe("getQuizScopesHandler", () => {
 });
 
 describe("composeQuizSessionHandler", () => {
+  // @req REQ-145
+  it("composes from the requested locale's bank", async () => {
+    composeQuizSessionMock.mockResolvedValue({ poolSize: 0, questions: [] });
+
+    await composeQuizSessionHandler({ count: 8, lang: "en" });
+
+    expect(composeQuizSessionMock).toHaveBeenCalledWith(
+      expect.objectContaining({ language: "en" })
+    );
+  });
+
   // @req REQ-103
   it("returns SEMANTIC_ERROR when the scope names a country the corpus does not hold", async () => {
     getQuizScopeLabelMock.mockResolvedValue(null);

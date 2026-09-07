@@ -3,7 +3,7 @@ import { QuizTrackCard } from "@/components/quiz/QuizTrackCard";
 import { getTranslation } from "@/lib/translations";
 import type { QuizScopesData } from "@/api/v2/schemas/quiz";
 import {
-  QUIZ_THEME_SPECIMENS_FR,
+  QUIZ_THEME_SPECIMENS,
   type QuizThemeId,
 } from "@/lib/quiz/segmentPolicy";
 import { cn } from "@/lib/utils";
@@ -57,6 +57,17 @@ export const QuizScopePicker = ({
   const countries = scopes.countries ?? [];
   const families = scopes.families ?? [];
 
+  if (!scopes.mixed?.playable && !scopes.random?.playable) {
+    return (
+      <p
+        role="status"
+        className={cn("text-afh-body text-afh-text-soft", className)}
+      >
+        {t.comingSoon}
+      </p>
+    );
+  }
+
   return (
     <div
       className={cn("flex flex-col gap-8", className)}
@@ -72,12 +83,16 @@ export const QuizScopePicker = ({
         <QuizTrackCard
           href={trackHref("mode=aleatoire")}
           labelFr={scopes.random?.labelFr ?? ""}
+          available={scopes.random?.playable}
+          unavailableHint={t.comingSoon}
           hintFr={t.scopeRandomHint}
           testId="quiz-scope-random"
         />
         <QuizTrackCard
           href={trackHref("mode=mixte")}
           labelFr={scopes.mixed?.labelFr ?? ""}
+          available={scopes.mixed?.playable}
+          unavailableHint={t.comingSoon}
           hintFr={t.scopeMixedHint}
           testId="quiz-scope-mixed"
         />
@@ -93,7 +108,9 @@ export const QuizScopePicker = ({
               <QuizTrackCard
                 href={trackHref(`theme=${theme.id}`)}
                 labelFr={theme.labelFr}
-                hintFr={QUIZ_THEME_SPECIMENS_FR[theme.id as QuizThemeId]}
+                hintFr={QUIZ_THEME_SPECIMENS[language][theme.id as QuizThemeId]}
+                available={theme.playable}
+                unavailableHint={t.comingSoon}
               />
             </li>
           ))}
@@ -114,6 +131,7 @@ export const QuizScopePicker = ({
           items={countries.map((country) => ({
             id: country.id,
             labelFr: country.labelFr,
+            playable: country.playable,
             playableThemeIds: country.playableThemeIds ?? [],
           }))}
           themes={themes.map((theme) => ({
@@ -124,6 +142,7 @@ export const QuizScopePicker = ({
           panelHintFr={t.scopeThemePanelHint}
           wholeTrackLabelFr={t.scopeThemePanelNoTheme}
           closeLabelFr={dictionary.close}
+          unavailableHint={t.comingSoon}
         />
       </section>
 
@@ -137,6 +156,8 @@ export const QuizScopePicker = ({
               <QuizTrackCard
                 href={trackHref(`famille=${family.id}`)}
                 labelFr={family.labelFr}
+                available={family.playable}
+                unavailableHint={t.comingSoon}
               />
             </li>
           ))}

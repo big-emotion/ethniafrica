@@ -18,6 +18,19 @@ const indexMigration = readFileSync(
   "utf8"
 );
 
+const generatorSource = readFileSync(
+  resolve(process.cwd(), "scripts/generateQuizQuestions.ts"),
+  "utf8"
+);
+
+describe("generateQuizQuestions locale contract", () => {
+  // @req REQ-145
+  it("reads and writes only the French bank until English generation exists", () => {
+    expect(generatorSource.match(/\.eq\("locale", "fr"\)/g)).toHaveLength(2);
+    expect(generatorSource).toContain('locale: "fr"');
+  });
+});
+
 describe("036_quiz_engine.sql schema contract (generateQuizQuestions compile target)", () => {
   // @req REQ-080
   it("declares the quiz_audience enum idempotently with the five MVP segments", () => {

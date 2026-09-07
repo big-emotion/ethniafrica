@@ -2,6 +2,7 @@ import { createHash, randomBytes } from "node:crypto";
 
 import { logger } from "@/lib/api/logger";
 import { createAdminClient } from "@/lib/supabase/admin";
+import type { Language } from "@/types/shared";
 
 /**
  * How long a verification link stays good.
@@ -52,7 +53,8 @@ async function publicSlugOf(flagId: string): Promise<string> {
 // @req REQ-012
 export async function createReporterContact(
   flagId: string,
-  email: string | null | undefined
+  email: string | null | undefined,
+  language: Language = "fr"
 ): Promise<string | null> {
   const address = email?.trim();
   if (!address) return null;
@@ -64,6 +66,7 @@ export async function createReporterContact(
     flag_id: flagId,
     email: address,
     token_hash: hashToken(token),
+    locale: language,
     expires_at: new Date(Date.now() + VERIFICATION_TTL_MS).toISOString(),
   });
 
@@ -143,13 +146,19 @@ export async function verifyReporterContact(
  * message — the verification they can ignore — and nothing else.
  */
 // @req REQ-042
-export async function getVerifiedReporterEmail(
+export interface VerifiedReporterContact {
+  email: string;
+  language: Language;
+}
+
+// @req REQ-145
+export async function getVerifiedReporterContact(
   flagId: string
-): Promise<string | null> {
+): Promise<VerifiedReporterContact | null> {
   const supabase = createAdminClient();
   const { data, error } = await supabase
     .from("flag_reporter_contacts")
-    .select("email, verified_at")
+    .select("email, locale, verified_at")
     .eq("flag_id", flagId)
     .maybeSingle();
 
@@ -158,5 +167,9 @@ export async function getVerifiedReporterEmail(
     return null;
   }
 
-  return data?.verified_at ? (data.email as string) : null;
+  if (!data?.verified_at) return null;
+  return {
+    email: data.email as string,
+    language: data.locale === "en" ? "en" : "fr",
+  };
 }

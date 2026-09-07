@@ -1035,6 +1035,17 @@
         "parameters": [
           {
             "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["en", "fr"],
+              "default": "fr"
+            },
+            "description": "Authored question-bank locale"
+          },
+          {
+            "in": "query",
             "name": "pays",
             "required": false,
             "schema": {
@@ -1179,6 +1190,19 @@
         "description": "Every country and every language family, each with the number of currently active questions its peoples hold, plus the two whole-corpus tracks (`mixed`, ordered by the difficulty ladder, and `random`, which is not). `playable` is false when a track cannot fill a session of eight — it is still listed and still counted, so the UI can be honest about what the corpus holds rather than hiding it. Counts change only on generation sweeps (Story 10.5).\n",
         "tags": ["API v2 - Quiz"],
         "security": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["en", "fr"],
+              "default": "fr"
+            },
+            "description": "Authored question-bank locale"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Scopes envelope",
@@ -3171,7 +3195,7 @@
       },
       "post": {
         "summary": "Submit a report on an AFRIK entity",
-        "description": "Anyone may submit a report for editorial review, subject to anti-bot verification. No account is required or offered. An optional reporter_email buys the reader the moderation decision by e-mail and nothing else: the report is created and published whether or not one is supplied, a single-use link confirms the address, and only a confirmed address is ever written to. The address is never published and never returned. Responses are mutable and use Cache-Control no-store.",
+        "description": "Anyone may submit a report for editorial review, subject to anti-bot verification. No account is required or offered. An optional reporter_email buys the reader the moderation decision by e-mail and nothing else: the report is created and published whether or not one is supplied, a single-use link confirms the address, and only a confirmed address is ever written to. The request language is stored to localize verification and resolution e-mails; missing or invalid values default to French. The address is never published and never returned. Responses are mutable and use Cache-Control no-store.",
         "tags": ["API v2 - Flags"],
         "security": [
           {
@@ -3195,6 +3219,7 @@
                 "counter_source_url": "https://example.org/census/2024",
                 "counter_source_citation": "National Statistics Office, 2024 census, table 12.",
                 "proposed_rewrite": "Update the population figure using the 2024 census.",
+                "language": "en",
                 "antibot": {
                   "salt": "9f2c1ab4d7e60358",
                   "nonce": "418209",
@@ -8127,6 +8152,12 @@
             "example": "lectrice@example.org",
             "description": "Optional reply address. The report is created and published whether or not it is supplied. A single-use link is e-mailed to confirm the address, and only a confirmed address ever receives the moderation decision. Never published, and never returned by any endpoint."
           },
+          "language": {
+            "type": "string",
+            "enum": ["en", "fr"],
+            "default": "fr",
+            "description": "Locale used for reporter verification and moderation-decision e-mails. Missing or invalid values fail closed to French."
+          },
           "counter_source_url": {
             "type": "string",
             "format": "uri",
@@ -8192,6 +8223,7 @@
           "counter_source_url": "https://example.org/census/2024",
           "counter_source_citation": "National Statistics Office, 2024 census, table 12.",
           "proposed_rewrite": "Update the population figure using the 2024 census.",
+          "language": "en",
           "antibot": {
             "salt": "9f2c1ab4d7e60358",
             "nonce": "418209",

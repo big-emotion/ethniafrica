@@ -14,7 +14,8 @@ vi.mock("next/navigation", () => ({
 }));
 
 vi.mock("@/api/v2/handlers/quiz", () => ({
-  getQuizScopesHandler: () => mockGetQuizScopesHandler(),
+  getQuizScopesHandler: (...args: unknown[]) =>
+    mockGetQuizScopesHandler(...args),
   describeScope: (...args: unknown[]) => mockDescribeScope(...args),
 }));
 
@@ -104,6 +105,20 @@ function scopesEnvelope() {
 describe("/[lang]/quiz page (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+  });
+
+  // @req REQ-145
+  it("loads the picker from the page locale's question bank", async () => {
+    mockGetQuizScopesHandler.mockResolvedValue(scopesEnvelope());
+
+    render(
+      await QuizPage({
+        params: Promise.resolve({ lang: "en" }),
+        searchParams: Promise.resolve({}),
+      })
+    );
+
+    expect(mockGetQuizScopesHandler).toHaveBeenCalledWith("en");
   });
 
   // The page used to answer notFound() unless NEXT_PUBLIC_FEATURE_QUIZ was

@@ -71,6 +71,24 @@ describe("useQuizSession (Epic 10, Story 10.9, ETNI-1132, FR67)", () => {
     delete (global as any).fetch;
   });
 
+  // @req REQ-145
+  it("requests the bank in the page locale", async () => {
+    const fetchMock = mockFetchOnce([]);
+    global.fetch = fetchMock;
+
+    renderHook(
+      () =>
+        useQuizSession({
+          scope: { kind: "mixed" },
+          language: "en",
+        }),
+      { wrapper: createWrapper() }
+    );
+
+    await waitFor(() => expect(fetchMock).toHaveBeenCalled());
+    expect(fetchMock.mock.calls[0][0]).toContain("lang=en");
+  });
+
   // @req REQ-103 FR67
   it("issues exactly one fetch on mount and never fetches again during play", async () => {
     const fetchMock = mockFetchOnce(TWO_QUESTIONS);

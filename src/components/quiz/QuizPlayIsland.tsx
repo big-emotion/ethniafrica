@@ -57,7 +57,7 @@ export const QuizPlayIsland = ({
   className,
 }: QuizPlayIslandProps) => {
   const t = quizCopy[language];
-  const session = useQuizSession({ scope, theme });
+  const session = useQuizSession({ scope, theme, language });
 
   if (session.status === "loading") {
     // The session is fetched client-side, so this wait is the island's own —

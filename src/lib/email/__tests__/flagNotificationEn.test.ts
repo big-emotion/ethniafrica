@@ -87,14 +87,14 @@ describe("the English flag e-mails", () => {
           target_type: "people",
           target_id: "PPL_YORUBA",
         },
-        recipient
+        { ...recipient, language: "en" }
       );
-      const french = sentMail();
-      const links = urlsIn(french.text);
-      const flagLink = links.find((url) => url.includes("/signalements/"));
+      const english = sentMail();
+      const links = urlsIn(english.text);
+      const flagLink = links.find((url) => url.includes("/reports/"));
       const ficheLink = links.find((url) => url.includes("/atlas/")) ?? null;
 
-      const english = buildFlagResolutionEmailEn({
+      const expected = buildFlagResolutionEmailEn({
         publicSlug: SLUG,
         status,
         moderatorNotes: NOTES,
@@ -106,11 +106,15 @@ describe("the English flag e-mails", () => {
       expect(english.subject).toContain(SLUG);
       expect(english.text).toContain(SLUG);
       expect(english.text).toContain(NOTES);
-      expect(english.subject).not.toBe(french.subject);
+      expect(english).toEqual({
+        subject: expected.subject,
+        text: expected.text,
+      });
+      expect(english.text).toContain("/en/");
       expect(frenchResidue(english.subject)).toBeNull();
       expect(frenchResidue(english.text)).toBeNull();
       expect(glossaryBreaches(english.text)).toEqual([]);
-      expect(english.provenance).toBe("machine");
+      expect(expected.provenance).toBe("machine");
     }
   );
 
@@ -137,23 +141,24 @@ describe("the English flag e-mails", () => {
       email: recipient.email,
       token: "tok/en+1",
       publicSlug: SLUG,
+      language: "en",
     });
-    const french = sentMail();
-    const links = urlsIn(french.text);
+    const sent = sentMail();
+    const links = urlsIn(sent.text);
     expect(links).toHaveLength(2);
 
-    const english = buildFlagVerificationEmailEn({
+    const expected = buildFlagVerificationEmailEn({
       flagLink: links.find((url) => !url.includes("verifier")),
       verificationLink: links.find((url) => url.includes("verifier")),
     });
 
-    expect(urlsIn(english.text)).toEqual(links);
-    expect(english.text).toContain("24 hours");
-    expect(english.text).toContain("EthniAfrica");
-    expect(english.subject).not.toBe(french.subject);
-    expect(frenchResidue(english.subject)).toBeNull();
-    expect(frenchResidue(english.text)).toBeNull();
-    expect(glossaryBreaches(english.text)).toEqual([]);
-    expect(english.provenance).toBe("machine");
+    expect(sent).toEqual({ subject: expected.subject, text: expected.text });
+    expect(sent.text).toContain("24 hours");
+    expect(sent.text).toContain("EthniAfrica");
+    expect(sent.text).toContain("/en/");
+    expect(frenchResidue(sent.subject)).toBeNull();
+    expect(frenchResidue(sent.text)).toBeNull();
+    expect(glossaryBreaches(sent.text)).toEqual([]);
+    expect(expected.provenance).toBe("machine");
   });
 });

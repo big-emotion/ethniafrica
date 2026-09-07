@@ -144,6 +144,7 @@ export async function ftsSearchEntities(
           p_q: text,
           p_limit: limit,
           p_offset: offset,
+          ...locale,
         })
       : Promise.resolve({ data: EMPTY_RANKED_PAYLOAD, error: null }),
     !quizOnly && text
