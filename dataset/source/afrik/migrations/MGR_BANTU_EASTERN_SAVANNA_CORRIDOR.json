@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "migration",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
   "id": "MGR_BANTU_EASTERN_SAVANNA_CORRIDOR",
   "nameMain": "Expansion orientale à travers le corridor savanicole vers les Grands Lacs",
   "migrationGroup": "bantu-expansion",
