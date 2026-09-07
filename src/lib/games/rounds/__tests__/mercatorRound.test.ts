@@ -36,6 +36,7 @@ const kenya = countryFixture("KEN", "Kenya");
 const botswana = countryFixture("BWA", "Botswana");
 const senegal = countryFixture("SEN", "Sénégal");
 const tunisia = countryFixture("TUN", "Tunisie");
+const ivoryCoast = countryFixture("CIV", "Côte d'Ivoire");
 const undrawable = countryFixture("SHN", "Sainte-Hélène");
 
 /** Total spherical area of a country's committed outline, islands included. */
@@ -122,12 +123,28 @@ describe("the standing line and the stems", () => {
 });
 
 describe("mercatorMisleads", () => {
-  // Senegal is larger than Tunisia, yet Mercator draws Tunisia bigger — the
-  // pair the game exists for.
+  const norway = NON_AFRICAN_SILHOUETTES.find(({ id }) => id === "NOR");
+
+  // Côte d'Ivoire covers more ground than Norway, and the flat map draws
+  // Norway five times the larger — the pair the game exists for.
   // @req REQ-120
-  it("flags a pair where the larger country is drawn smaller", () => {
-    expect(mercatorMisleads(senegal, tunisia)).toBe(true);
-    expect(mercatorMisleads(tunisia, senegal)).toBe(true);
+  it("flags a pair where the larger country is drawn much smaller", () => {
+    expect(mercatorMisleads(norway, ivoryCoast)).toBe(true);
+    expect(mercatorMisleads(ivoryCoast, norway)).toBe(true);
+  });
+
+  /**
+   * Senegal really is larger than Tunisia and the flat map really does invert
+   * them — by a tenth. Two shapes drawn a tenth apart are drawn the same at
+   * any size this page renders them, so the reader has nothing to look at and
+   * nothing to reason from: the games charter's kill test, failed. This pair
+   * was the game's own worked example while Africa was the whole pool, and it
+   * is refused now that the pool reaches the latitudes where the projection
+   * actually lies.
+   */
+  // @req REQ-120
+  it("refuses a pair the flat map inverts by too little to see", () => {
+    expect(mercatorMisleads(senegal, tunisia)).toBe(false);
   });
 
   // @req REQ-120

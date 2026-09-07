@@ -41,15 +41,48 @@ const GAME = getGameBySlug("mercator");
 export const MERCATOR_PROVENANCE_PATH = "lib/atlas/assets/africaAdmin0";
 
 /**
- * Below this the two countries are indistinguishable at the corpus's own
- * precision, and asking would be a coin toss dressed as a question.
+ * How far apart the two true areas must be before the outlines can be trusted
+ * to rank them.
+ *
+ * **Raised from 1,02, which the assets never supported.** Both are simplified:
+ * the African outlines measure the continent about 1 % under its published
+ * area, and each country of the world asset lands within 4 % of its own. A
+ * round asked about a 2 % gap was therefore asked about a difference the
+ * simplification could have invented — the answer key itself could be wrong,
+ * which is worse than a hard question.
+ *
+ * This threshold is about *measurement*, and it is the only thing it is about.
+ * Whether a round is worth asking is a separate question, answered by
+ * MINIMUM_DRAWN_INVERSION below. Conflating the two is what made 1,02 look
+ * defensible: it was doing the second job badly instead of the first job at
+ * all.
  *
  * Exported because the Jouer hub's scene advertises this game and must not
  * assert a gap the game itself would refuse to ask about. One threshold, so
  * the shop window and the shop cannot disagree.
  */
 // @req REQ-120
-export const MINIMUM_AREA_RATIO = 1.02;
+export const MINIMUM_AREA_RATIO = 1.05;
+
+/**
+ * How much the flat map has to get the ranking wrong before the round has a
+ * lesson in it.
+ *
+ * A bare inversion is not enough. « Tchad ou Afrique du Sud ? » inverts by a
+ * fiftieth: the reader sees two shapes drawn all but identically, has nothing
+ * to reason from, and guesses — the games charter's kill test, failed. At a
+ * quarter over, the exaggeration is visible on the map the reader arrived
+ * holding, and the rule that resolves it — the projection swells the north, so
+ * the northern one is smaller than it looks — is the thing this page teaches.
+ *
+ * It is deliberately *not* folded into MINIMUM_AREA_RATIO. « Groenland ou
+ * RDC ? » is the comparison the page was built to make and its true gap is
+ * only 9 %, while the flat map draws Greenland thirteen times the larger. One
+ * threshold could not keep that round and drop the coin flips; two can, because
+ * they are measuring different things.
+ */
+// @req REQ-120
+export const MINIMUM_DRAWN_INVERSION = 1.25;
 
 /**
  * The stem of this question.
@@ -82,9 +115,14 @@ export function trueAreaKm2(territory: ComparedTerritory): number {
 }
 
 /**
- * Whether the projection actively misranks this pair: the territory that truly
- * covers more ground is the one drawn smaller. These are the pairs the game
- * wants, so a caller can rank candidate pairs before building a round.
+ * Whether the projection misranks this pair by enough to be worth asking
+ * about: the territory that truly covers more ground is the one drawn smaller,
+ * and drawn smaller by at least MINIMUM_DRAWN_INVERSION.
+ *
+ * The size condition is not decoration. A pair inverted by a fiftieth is drawn
+ * as two all-but-identical shapes, and a reader looking at them has nothing to
+ * reason from; a pair inverted by a quarter or more shows the exaggeration
+ * plainly, which is what makes the rule behind it learnable.
  */
 // @req REQ-120
 export function mercatorMisleads(
@@ -100,7 +138,7 @@ export function mercatorMisleads(
       ? [footprintA, footprintB]
       : [footprintB, footprintA];
 
-  return larger.drawnAreaKm2 < smaller.drawnAreaKm2;
+  return smaller.drawnAreaKm2 / larger.drawnAreaKm2 >= MINIMUM_DRAWN_INVERSION;
 }
 
 /** Verb-first so the sentence needs no gender agreement with the territory. */
@@ -149,6 +187,7 @@ export function buildMercatorRound(
     template: "larger-area",
     gameId: GAME.id,
     subjectId: a.id,
+    comparedIds: [a.id, b.id],
     promptFr: COMPARISON_PROMPT_FR,
     promptEn: MERCATOR_ROUND_EN.prompt,
     options: [

@@ -60,11 +60,22 @@ export const GAME_DEFINITIONS: GameDefinition[] = [
   {
     id: "mercator",
     slug: "mercator",
-    nameFr: "La taille qu'on vous a cachée",
-    kinds: ["binary", "estimate"],
+    /**
+     * The name is the projection; the promise is the subtitle.
+     *
+     * « La taille qu'on vous a cachée » was the whole name, and it named the
+     * effect rather than the thing — a reader arriving from the hub could not
+     * tell what the page was about until they were on it, and the tile, the
+     * trail and the tab title all carried a sentence where a name belongs. The
+     * subject has a name every reader has met on a wall map, so the page takes
+     * it, and the promise moves to the line under it where it still opens the
+     * page and no longer has to identify it.
+     */
+    nameFr: "La projection de Mercator",
+    kinds: ["binary", "estimate", "list"],
     dataSource: "countries",
     promptFr:
-      "La projection de Mercator gonfle le nord et rapetisse l'Afrique. Mesurez l'écart.",
+      "La taille qu'on vous a cachée : le nord est gonflé, l'Afrique rapetissée. Mesurez l'écart.",
     roundsPerSession: 8,
   },
 ];

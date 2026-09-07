@@ -11,6 +11,7 @@ import {
   isEstimateRound,
   isOptionRound,
   type BinaryRound,
+  type ListRound,
   type GameRound,
   type RoundTemplate,
 } from "@/lib/games/gameKinds";
@@ -86,10 +87,10 @@ const mercator = () => getGameBySlug("mercator");
 const withTemplate = (
   rounds: GameRound[],
   template: RoundTemplate
-): BinaryRound[] =>
+): (BinaryRound | ListRound)[] =>
   rounds.filter(isOptionRound).filter((round) => round.template === template);
 
-const comparisons = (rounds: GameRound[]): BinaryRound[] =>
+const comparisons = (rounds: GameRound[]): (BinaryRound | ListRound)[] =>
   withTemplate(rounds, "larger-area");
 
 describe("mercator only asks where the flat map lies", () => {
@@ -119,19 +120,35 @@ describe("mercator only asks where the flat map lies", () => {
     }
   });
 
-  // Padding a short session with honest pairs would quietly undo the filter
-  // above. The session is topped up with the other two questions instead,
-  // which are measured off the committed outlines and misrepresent nothing.
+  /**
+   * Padding a short session with honest pairs would quietly undo the filter
+   * above. The session is topped up with the other questions instead, which
+   * are measured off the committed outlines and misrepresent nothing.
+   *
+   * Senegal and Tunisia used to be the worked example *of a pair worth
+   * asking* — the flat map does invert them. It inverts them by a tenth,
+   * which is below `MINIMUM_DRAWN_INVERSION`: two shapes drawn a tenth apart
+   * are drawn the same at any size this page renders them, so the reader has
+   * nothing to look at. The pair is refused now, and this test asserts the
+   * refusal rather than counting rounds — the count moved when the world
+   * asset joined the pool, and a count is not what the rule is about.
+   */
   // @req REQ-120
-  it("shortens the comparison rounds rather than padding them with honest pairs", async () => {
+  it("refuses a pair the flat map inverts by too little to see", async () => {
     loadGameCorpus.mockResolvedValue({
       ...emptyCorpus,
       countries: [country("SEN", "Sénégal"), country("TUN", "Tunisie")],
     });
 
     const envelope = await getGameRoundsHandler(mercator(), 0);
+    const labelPairs = comparisons(envelope.data.rounds).map((round) =>
+      round.options
+        .map((option) => option.labelFr)
+        .sort()
+        .join("|")
+    );
 
-    expect(comparisons(envelope.data.rounds)).toHaveLength(1);
+    expect(labelPairs).not.toContain("Sénégal|Tunisie");
   });
 });
 
@@ -250,9 +267,16 @@ describe("the game also asks which country the projection enlarges more", () => 
   /**
    * The reason the bank was widened this way rather than by curating more
    * countries: the ceiling was the filter, not the corpus.
+   *
+   * This used to rank the two binary questions — inflation was expected to
+   * carry at least as many rounds as the comparison, because the comparison
+   * could only reach pairs *inside* Africa and there were sixteen of them.
+   * That ranking inverted the day the world asset landed, and it was never the
+   * point: what matters is that neither question is one session deep. Ranking
+   * them again would only pin whichever happens to be ahead this week.
    */
   // @req REQ-120
-  it("carries the whole continent far past what the comparison alone could", async () => {
+  it("carries every question far past a single session", async () => {
     loadGameCorpus.mockResolvedValue({
       ...emptyCorpus,
       countries: Object.entries(AFRICA_ADMIN0).map(([id, shape]) =>
@@ -260,12 +284,20 @@ describe("the game also asks which country the projection enlarges more", () => 
       ),
     });
 
-    const envelope = await getGameRoundsHandler(mercator(), 0);
+    const game = mercator();
+    const envelope = await getGameRoundsHandler(game, 0);
     const rounds = envelope.data.rounds;
 
-    expect(
-      withTemplate(rounds, "greater-inflation").length
-    ).toBeGreaterThanOrEqual(withTemplate(rounds, "larger-area").length);
+    for (const template of [
+      "larger-area",
+      "greater-inflation",
+      "largest-of-list",
+    ] as const) {
+      expect(
+        withTemplate(rounds, template).length,
+        `${template} bank`
+      ).toBeGreaterThan(game.roundsPerSession);
+    }
   });
 });
 
@@ -304,7 +336,7 @@ describe("a session opens on more than one question", () => {
   });
 
   // @req REQ-120
-  it("serves all three questions inside the first session", async () => {
+  it("serves several different questions inside the first session", async () => {
     loadGameCorpus.mockResolvedValue({
       ...emptyCorpus,
       countries: Object.entries(AFRICA_ADMIN0).map(([id, shape]) =>
@@ -316,9 +348,13 @@ describe("a session opens on more than one question", () => {
     const envelope = await getGameRoundsHandler(game, 0);
     const session = envelope.data.rounds.slice(0, game.roundsPerSession);
 
-    expect(new Set(session.map((round) => round.template))).toEqual(
-      new Set(["larger-area", "greater-inflation", "fits-in-africa"])
-    );
+    // Not an exact set: which templates land in the first eight is a
+    // consequence of the bands, and pinning it would make adding a question
+    // a red test rather than a new question. What the reader is owed is that
+    // the session is not eight of the same thing.
+    expect(
+      new Set(session.map((round) => round.template)).size
+    ).toBeGreaterThanOrEqual(3);
   });
 });
 

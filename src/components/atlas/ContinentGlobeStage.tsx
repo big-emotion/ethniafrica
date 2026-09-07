@@ -1,11 +1,14 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import type { GlobeSurface } from "@/lib/atlas/globePalette";
-import { buildContinentOverlay } from "@/lib/atlas/overlays";
+import {
+  buildContinentOverlay,
+  type ContinentFrameCountry,
+} from "@/lib/atlas/overlays";
 import { canCreateWebglContext } from "@/lib/home/webglSupport";
 import { gamesCopy } from "@/lib/i18n/copy/games";
 import type { Language } from "@/types/shared";
@@ -46,7 +49,36 @@ export interface ContinentGlobeStageProps {
   presentation?: "standard" | "hero";
   /** Enables the homepage's gentle arrival motion; disabled for shared scenes by default. */
   autoRotate?: boolean;
+  /**
+   * The countries a standing game round is asking about (REQ-120). Their
+   * outlines are drawn in the accent and the rest of the continent recedes, so
+   * a reader told « Norvège ou Côte d'Ivoire ? » can see which two shapes the
+   * question is about.
+   *
+   * Empty everywhere but the Mercator game: the home's module asks nothing, so
+   * it marks nothing.
+   */
+  countriesUnderQuestion?: string[];
+  /**
+   * The outlines of those of them the continent frame does not draw, resolved
+   * by the caller (REQ-120).
+   *
+   * Data rather than a lookup this component performs, and the reason is
+   * payload: the world assets are twenty-four kilobytes of coastline this
+   * stage would then carry onto the home and four atlas hubs, none of which
+   * marks anything. `lib/atlas/worldOutlines` resolves them for the one
+   * surface that does.
+   */
+  offContinentOutlines?: ContinentFrameCountry[];
 }
+
+/**
+ * The default for `countriesUnderQuestion`, hoisted out of the signature: a
+ * fresh `[]` on every render is a new prop value, and this one reaches
+ * `buildContinentOverlay`, which rebuilds fifty-four outlines when it changes.
+ */
+const NOTHING_UNDER_QUESTION: string[] = [];
+const NO_BORROWED_OUTLINES: ContinentFrameCountry[] = [];
 
 /**
  * Capability gate (ARCH-014): the globe is a client island that only mounts
@@ -76,6 +108,8 @@ export function ContinentGlobeStage({
   pinnedProjectionNote,
   presentation = "standard",
   autoRotate = false,
+  countriesUnderQuestion = NOTHING_UNDER_QUESTION,
+  offContinentOutlines = NO_BORROWED_OUTLINES,
 }: ContinentGlobeStageProps) {
   const [webglSupported, setWebglSupported] = useState<boolean | null>(null);
 
@@ -100,7 +134,26 @@ export function ContinentGlobeStage({
     setWebglSupported(canCreateWebglContext());
   }, []);
 
-  const overlay = buildContinentOverlay(peopleCountsByCountry);
+  /**
+   * Memoised because the identity of this object is what drives the WebGL
+   * effect, and a new one costs a full rebuild: `AtlasGlobeCanvas` depends on
+   * `overlay`, so every fresh object re-triangulates fifty-four outlines and
+   * re-uploads their buffers to the GPU.
+   *
+   * Built inline, that happened on *every* render of this stage rather than
+   * on every change to what it draws — and the Mercator page renders it twice
+   * per round, once for the round and once for the marks. The cost was always
+   * there; the marks are what made it worth measuring.
+   */
+  const overlay = useMemo(
+    () =>
+      buildContinentOverlay(
+        peopleCountsByCountry,
+        countriesUnderQuestion,
+        offContinentOutlines
+      ),
+    [peopleCountsByCountry, countriesUnderQuestion, offContinentOutlines]
+  );
   const copy = gamesCopy[language].continentGlobe;
 
   return (

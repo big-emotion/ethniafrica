@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 import { PurposeBlocks } from "@/components/home/PurposeBlocks";
-import { MODULE_DEFINITIONS, type AccessMode } from "@/lib/hubs/moduleRegistry";
+import { MODULE_DEFINITIONS } from "@/lib/hubs/moduleRegistry";
+import { accessModeCards } from "@/lib/i18n/copy/about";
 import { getLocalizedRoute, type PageType } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
@@ -115,29 +116,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         title: "Three ways into the atlas",
         intro:
           "The same corpus can be explored according to the reader's intent: find a fiche, investigate a question or test their bearings.",
-        items: [
-          {
-            id: "atlas" as AccessMode,
-            label: "The atlas",
-            description:
-              "The site's fiches: families, languages, peoples, countries, designations and names, plus free search.",
-            accentClass: "afh-accent-ocre",
-          },
-          {
-            id: "dossiers" as AccessMode,
-            label: "Dossiers",
-            description:
-              "Sourced anecdotes, initial migration landmarks and a dossier on colonisation.",
-            accentClass: "afh-accent-teal",
-          },
-          {
-            id: "jeux" as AccessMode,
-            label: "Play",
-            description:
-              "A quiz drawn from the fiches, and a game that restores countries to their true size.",
-            accentClass: "afh-accent-perv",
-          },
-        ],
+        items: accessModeCards.en,
       },
     },
     fr: {
@@ -222,29 +201,12 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         // not opened the menu meets the three axes here first, and the
         // previous wording stated the intention behind an axis without ever
         // saying what was behind it.
-        items: [
-          {
-            id: "atlas" as AccessMode,
-            label: "L'atlas",
-            description:
-              "Les fiches du site : familles linguistiques, langues, peuples, pays et noms, plus la recherche libre.",
-            accentClass: "afh-accent-ocre",
-          },
-          {
-            id: "dossiers" as AccessMode,
-            label: "Les dossiers",
-            description:
-              "Des anecdotes sourcées, les premiers repères de migrations et un dossier sur la colonisation.",
-            accentClass: "afh-accent-teal",
-          },
-          {
-            id: "jeux" as AccessMode,
-            label: "Jouer",
-            description:
-              "Un quiz tiré des fiches, et un jeu qui rend aux pays leur taille réelle.",
-            accentClass: "afh-accent-perv",
-          },
-        ],
+        //
+        // The cards themselves live in `lib/i18n/copy/about` — they had to
+        // change when the Mercator game was renamed, and reader-facing copy
+        // that changes belongs in a dictionary where the parity gate can see
+        // both locales. The rest of this file's copy is a later slice.
+        items: accessModeCards.fr,
       },
     },
   };
