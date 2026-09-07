@@ -8,7 +8,7 @@
 import { describe, expect, it } from "vitest";
 import type { QuizCountryFixture, QuizPeopleFixture } from "@/types/quiz";
 import type { QuizEligibilityInput } from "@/lib/quiz/eligibility";
-import { QUIZ_TEMPLATE_IDS, templatesFor } from "@/lib/quiz/segmentPolicy";
+import { templatesFor } from "@/lib/quiz/segmentPolicy";
 import {
   assertPlayableQuestionCount,
   auditActiveBank,
@@ -168,6 +168,25 @@ describe("evaluateCandidate", () => {
     expect(result.record.difficulty).toBe(1); // the template's own baseline, unclamped
     expect(result.record.assertionId).toBe("assertion-languageFamilyId");
     expect(result.record.confidenceAtGeneration).toBe(90);
+  });
+
+  // @req REQ-145
+  it("generates English template prose for an English sweep", () => {
+    const result = evaluateCandidate(
+      yoruba,
+      "T1",
+      binding("languageFamilyId"),
+      pools,
+      "en"
+    );
+    if (result.outcome !== "generated") throw new Error("expected generated");
+
+    expect(result.record.promptFr).toBe(
+      "Which language family do the Yorùbá (Yoruba) people belong to?"
+    );
+    expect(result.record.explanationFr).toBe(
+      "The Yorùbá (Yoruba) people belong to the Niger-Congo language family."
+    );
   });
 
   // @req REQ-103

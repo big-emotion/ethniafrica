@@ -192,4 +192,6 @@ jobs:
       # decision a human takes after reading a preview. See
       # docs/runbooks/quiz-bank-regeneration.md.
       - name: Generate the production quiz question bank
+        # The omitted --lang deliberately defaults to French. English is a
+        # separate explicit corpus gate; it must never ride a production sync.
         run: npx tsx --conditions=react-server scripts/generateQuizQuestions.ts

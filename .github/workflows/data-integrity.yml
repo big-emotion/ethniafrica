@@ -95,6 +95,8 @@ jobs:
 
       # Enforced QZ-1..QZ-5 gate (FR65/FR69/AR20). Read-only — mutates nothing.
       - name: Run quiz bank integrity check (--check)
+        # Default French bank only. English is audited explicitly after its
+        # translated corpus has produced a playable bank.
         run: npx tsx scripts/generateQuizQuestions.ts --check
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}

@@ -7,6 +7,7 @@ import type {
   QuizQuestionCandidate,
   QuizTemplateId,
 } from "@/types/quiz";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 import {
   assembleOptions,
   correctOptionIndex,
@@ -27,6 +28,207 @@ function displayName(name: AutonymExonymName): string {
   return name.exonym && name.exonym !== name.autonym
     ? `${name.autonym} (${name.exonym})`
     : name.autonym;
+}
+
+interface QuestionTemplateCopy {
+  prompt: (subjectName: string) => string;
+  explanation: (subjectName: string, answer: string) => string;
+}
+
+/**
+ * Authored prose for every active quiz template.
+ *
+ * The database columns retain their historical `*_fr` names, but migration
+ * 087 made each row locale-scoped. This registry is therefore the language
+ * boundary: the generator selects one complete locale and never mixes static
+ * French stems with an English translated corpus.
+ */
+// @req REQ-145
+export const QUESTION_TEMPLATE_COPY: Record<
+  TranslationLocale,
+  Record<QuizTemplateId, QuestionTemplateCopy>
+> = {
+  fr: {
+    T1: {
+      prompt: (name) =>
+        `À quelle famille linguistique appartient le peuple ${name} ?`,
+      explanation: (name, answer) =>
+        `Le peuple ${name} appartient à la famille linguistique ${answer}.`,
+    },
+    T2: {
+      prompt: (name) =>
+        `Quel est le nom que se donne (autonyme) le peuple appelé ${name} ?`,
+      explanation: (name, answer) =>
+        `Le peuple ${name} se nomme lui-même « ${answer} ».`,
+    },
+    T3: {
+      prompt: (name) =>
+        `Dans quel pays le peuple ${name} est-il principalement présent ?`,
+      explanation: (name, answer) =>
+        `Le peuple ${name} est principalement présent en ${answer}.`,
+    },
+    T4: {
+      prompt: (name) => `Quelle est la langue principale du peuple ${name} ?`,
+      explanation: (name, answer) =>
+        `La langue principale du peuple ${name} est ${answer}.`,
+    },
+    T6: {
+      prompt: () => "Quel peuple pratique ces rites ?",
+      explanation: (name) => `Ce passage décrit les rites du peuple ${name}.`,
+    },
+    T7: {
+      prompt: () => "Quel peuple a ces croyances ?",
+      explanation: (name) =>
+        `Ce passage décrit les croyances du peuple ${name}.`,
+    },
+    T8: {
+      prompt: () => "Quel peuple se reconnaît dans ces symboles ?",
+      explanation: (name) =>
+        `Ce passage décrit les symboles du peuple ${name}.`,
+    },
+    T9: {
+      prompt: () => "Quel peuple a connu cette histoire ?",
+      explanation: (name) =>
+        `Ce passage décrit l'histoire politique du peuple ${name}.`,
+    },
+    T10: {
+      prompt: () => "Quel peuple s'organise ainsi ?",
+      explanation: (name) =>
+        `Ce passage décrit l'organisation traditionnelle du peuple ${name}.`,
+    },
+    T11: {
+      prompt: () => "Quel peuple a suivi ce chemin ?",
+      explanation: (name) =>
+        `Ce passage décrit les déplacements du peuple ${name}.`,
+    },
+    T12: {
+      prompt: (name) =>
+        `Parmi ces noms donnés au peuple ${name}, lequel est jugé inexact ou offensant ?`,
+      explanation: (_name, answer) => answer,
+    },
+    T13: {
+      prompt: () => "De quel pays ce nom raconte-t-il l'origine ?",
+      explanation: (name) => `Cette étymologie est celle du nom « ${name} ».`,
+    },
+    T14: {
+      prompt: () => "Quel pays doit son nom à ceux-ci ?",
+      explanation: (name) =>
+        `Ce sont eux qui ont nommé ce qu'on appelle aujourd'hui ${name}.`,
+    },
+    T15: {
+      prompt: () => "Quel pays portait ce nom sous la colonisation ?",
+      explanation: (name) =>
+        `Ce nom fut porté par le territoire devenu ${name}.`,
+    },
+    T16: {
+      prompt: (name) =>
+        `Quel royaume ou sultanat s'est développé sur le territoire de ${name} ?`,
+      explanation: (name, answer) =>
+        `${answer} s'est développé sur le territoire de ${name}.`,
+    },
+    T17: {
+      prompt: () => "Sur quel territoire cette histoire s'est-elle déroulée ?",
+      explanation: (name) =>
+        `Cette histoire est celle du territoire devenu ${name}.`,
+    },
+    T18: {
+      prompt: () => "De quel pays ce paysage religieux est-il celui ?",
+      explanation: (name) =>
+        `Ce paysage religieux est celui de ${name} aujourd'hui.`,
+    },
+  },
+  en: {
+    T1: {
+      prompt: (name) =>
+        `Which language family do the ${name} people belong to?`,
+      explanation: (name, answer) =>
+        `The ${name} people belong to the ${answer} language family.`,
+    },
+    T2: {
+      prompt: (name) =>
+        `What autonym do the ${name} people use for themselves?`,
+      explanation: (name, answer) =>
+        `The ${name} people call themselves “${answer}”.`,
+    },
+    T3: {
+      prompt: (name) => `In which country are the ${name} people mainly found?`,
+      explanation: (name, answer) =>
+        `The ${name} people are mainly found in ${answer}.`,
+    },
+    T4: {
+      prompt: (name) => `What is the main language of the ${name} people?`,
+      explanation: (name, answer) =>
+        `The main language of the ${name} people is ${answer}.`,
+    },
+    T6: {
+      prompt: () => "Which people practise these rites?",
+      explanation: (name) =>
+        `This passage describes the rites of the ${name} people.`,
+    },
+    T7: {
+      prompt: () => "Which people hold these beliefs?",
+      explanation: (name) =>
+        `This passage describes the beliefs of the ${name} people.`,
+    },
+    T8: {
+      prompt: () => "Which people identify with these symbols?",
+      explanation: (name) =>
+        `This passage describes the symbols of the ${name} people.`,
+    },
+    T9: {
+      prompt: () => "Which people lived this political history?",
+      explanation: (name) =>
+        `This passage describes the political history of the ${name} people.`,
+    },
+    T10: {
+      prompt: () => "Which people have this traditional organisation?",
+      explanation: (name) =>
+        `This passage describes the traditional organisation of the ${name} people.`,
+    },
+    T11: {
+      prompt: () => "Which people followed this migration path?",
+      explanation: (name) =>
+        `This passage describes the migrations of the ${name} people.`,
+    },
+    T12: {
+      prompt: (name) =>
+        `Which of these names given to the ${name} people is considered inaccurate or offensive?`,
+      explanation: (_name, answer) => answer,
+    },
+    T13: {
+      prompt: () => "Which country's name has this origin?",
+      explanation: (name) => `This is the etymology of the name “${name}”.`,
+    },
+    T14: {
+      prompt: () => "Which country was named by the actors described here?",
+      explanation: (name) => `They named what is known today as ${name}.`,
+    },
+    T15: {
+      prompt: () => "Which country bore this name under colonial rule?",
+      explanation: (name) =>
+        `This name was used by the territory that became ${name}.`,
+    },
+    T16: {
+      prompt: (name) =>
+        `Which kingdom or sultanate developed in the territory of ${name}?`,
+      explanation: (name, answer) =>
+        `The ${answer} developed in the territory of ${name}.`,
+    },
+    T17: {
+      prompt: () => "In which territory did this history unfold?",
+      explanation: (name) =>
+        `This is the history of the territory that became ${name}.`,
+    },
+    T18: {
+      prompt: () => "Which country has this religious landscape today?",
+      explanation: (name) =>
+        `This is the religious landscape of ${name} today.`,
+    },
+  },
+};
+
+function copyFor(locale: TranslationLocale, templateId: QuizTemplateId) {
+  return QUESTION_TEMPLATE_COPY[locale][templateId];
 }
 
 // Re-exported for the callers that imported it from here before the option
@@ -51,7 +253,8 @@ export function mainCountryOf(fiche: QuizPeopleFixture): QuizCountryShare {
 // @req REQ-080
 export function buildT1LanguageFamilyTemplate(
   fiche: QuizPeopleFixture,
-  familyNamePool: string[]
+  familyNamePool: string[],
+  locale: TranslationLocale = "fr"
 ): QuizQuestionCandidate | null {
   const distractors = selectDistractors(
     fiche.languageFamilyNameFr,
@@ -61,12 +264,13 @@ export function buildT1LanguageFamilyTemplate(
 
   const correctOption = correctOptionIndex(fiche.id, "T1");
   const name = displayName(fiche.subjectName);
+  const copy = copyFor(locale, "T1");
   return {
     templateId: "T1",
     entityType: "people",
     entityId: fiche.id,
     fieldPath: "languageFamilyId",
-    promptFr: `À quelle famille linguistique appartient le peuple ${name} ?`,
+    promptFr: copy.prompt(name),
     stimulusFr: null,
     subjectName: fiche.subjectName,
     optionsFr: assembleOptions(
@@ -75,7 +279,7 @@ export function buildT1LanguageFamilyTemplate(
       correctOption
     ),
     correctOption,
-    explanationFr: `Le peuple ${name} appartient à la famille linguistique ${fiche.languageFamilyNameFr}.`,
+    explanationFr: copy.explanation(name, fiche.languageFamilyNameFr),
     baselineDifficulty: 1,
   };
 }
@@ -83,19 +287,21 @@ export function buildT1LanguageFamilyTemplate(
 // @req REQ-080
 export function buildT2AutonymTemplate(
   fiche: QuizPeopleFixture,
-  autonymPool: string[]
+  autonymPool: string[],
+  locale: TranslationLocale = "fr"
 ): QuizQuestionCandidate | null {
   const distractors = selectDistractors(fiche.selfAppellation, autonymPool);
   if (!distractors) return null;
 
   const correctOption = correctOptionIndex(fiche.id, "T2");
   const name = displayName(fiche.subjectName);
+  const copy = copyFor(locale, "T2");
   return {
     templateId: "T2",
     entityType: "people",
     entityId: fiche.id,
     fieldPath: "content.appellations.selfAppellation",
-    promptFr: `Quel est le nom que se donne (autonyme) le peuple appelé ${name} ?`,
+    promptFr: copy.prompt(name),
     stimulusFr: null,
     subjectName: fiche.subjectName,
     optionsFr: assembleOptions(
@@ -104,7 +310,7 @@ export function buildT2AutonymTemplate(
       correctOption
     ),
     correctOption,
-    explanationFr: `Le peuple ${name} se nomme lui-même « ${fiche.selfAppellation} ».`,
+    explanationFr: copy.explanation(name, fiche.selfAppellation),
     baselineDifficulty: 2,
   };
 }
@@ -112,7 +318,8 @@ export function buildT2AutonymTemplate(
 // @req REQ-080
 export function buildT3MainCountryTemplate(
   fiche: QuizPeopleFixture,
-  countryNamePool: string[]
+  countryNamePool: string[],
+  locale: TranslationLocale = "fr"
 ): QuizQuestionCandidate | null {
   if (fiche.distributionByCountry.length === 0) return null;
 
@@ -125,12 +332,13 @@ export function buildT3MainCountryTemplate(
 
   const correctOption = correctOptionIndex(fiche.id, "T3");
   const name = displayName(fiche.subjectName);
+  const copy = copyFor(locale, "T3");
   return {
     templateId: "T3",
     entityType: "people",
     entityId: fiche.id,
     fieldPath: "content.demography.distributionByCountry",
-    promptFr: `Dans quel pays le peuple ${name} est-il principalement présent ?`,
+    promptFr: copy.prompt(name),
     stimulusFr: null,
     subjectName: fiche.subjectName,
     optionsFr: assembleOptions(
@@ -139,7 +347,7 @@ export function buildT3MainCountryTemplate(
       correctOption
     ),
     correctOption,
-    explanationFr: `Le peuple ${name} est principalement présent en ${mainCountry.countryNameFr}.`,
+    explanationFr: copy.explanation(name, mainCountry.countryNameFr),
     baselineDifficulty: 1,
   };
 }
@@ -147,24 +355,26 @@ export function buildT3MainCountryTemplate(
 // @req REQ-080
 export function buildT4MainLanguageTemplate(
   fiche: QuizPeopleFixture,
-  languagePool: AutonymExonymName[]
+  languagePool: AutonymExonymName[],
+  locale: TranslationLocale = "fr"
 ): QuizQuestionCandidate | null {
   const distractors = selectDistractors(fiche.mainLanguage, languagePool);
   if (!distractors) return null;
 
   const correctOption = correctOptionIndex(fiche.id, "T4");
   const name = displayName(fiche.subjectName);
+  const copy = copyFor(locale, "T4");
   return {
     templateId: "T4",
     entityType: "people",
     entityId: fiche.id,
     fieldPath: "content.languages.mainLanguage",
-    promptFr: `Quelle est la langue principale du peuple ${name} ?`,
+    promptFr: copy.prompt(name),
     stimulusFr: null,
     subjectName: fiche.subjectName,
     optionsFr: assembleOptions(fiche.mainLanguage, distractors, correctOption),
     correctOption,
-    explanationFr: `La langue principale du peuple ${name} est ${displayName(fiche.mainLanguage)}.`,
+    explanationFr: copy.explanation(name, displayName(fiche.mainLanguage)),
     baselineDifficulty: 2,
   };
 }
@@ -186,13 +396,12 @@ export function buildT4MainLanguageTemplate(
  */
 function buildInversionTemplate(
   templateId: QuizTemplateId,
-  explain: (subjectName: string) => string,
-  stemFr: string,
   baselineDifficulty: number
 ) {
   return (
     fiche: QuizInversionSubject,
-    subjectNamePool: AutonymExonymName[]
+    subjectNamePool: AutonymExonymName[],
+    locale: TranslationLocale = "fr"
   ): QuizQuestionCandidate | null => {
     const stimulus = selectVerbatimFragment(
       fiche.rubrics[templateId],
@@ -204,70 +413,41 @@ function buildInversionTemplate(
     if (!distractors) return null;
 
     const correctOption = correctOptionIndex(fiche.id, templateId);
+    const copy = copyFor(locale, templateId);
+    const name = displayName(fiche.subjectName);
     return {
       templateId,
       entityType: TEMPLATE_ENTITY_TYPES[templateId],
       entityId: fiche.id,
       fieldPath: TEMPLATE_FIELD_PATHS[templateId],
-      promptFr: stemFr,
+      promptFr: copy.prompt(name),
       stimulusFr: stimulus,
       subjectName: fiche.subjectName,
       optionsFr: assembleOptions(fiche.subjectName, distractors, correctOption),
       correctOption,
-      explanationFr: explain(displayName(fiche.subjectName)),
+      explanationFr: copy.explanation(name, name),
       baselineDifficulty,
     };
   };
 }
 
 // @req REQ-121
-export const buildT6RitesTemplate = buildInversionTemplate(
-  "T6",
-  (name) => `Ce passage décrit les rites du peuple ${name}.`,
-  "Quel peuple pratique ces rites ?",
-  3
-);
+export const buildT6RitesTemplate = buildInversionTemplate("T6", 3);
 
 // @req REQ-121
-export const buildT7SpiritualitiesTemplate = buildInversionTemplate(
-  "T7",
-  (name) => `Ce passage décrit les croyances du peuple ${name}.`,
-  "Quel peuple a ces croyances ?",
-  3
-);
+export const buildT7SpiritualitiesTemplate = buildInversionTemplate("T7", 3);
 
 // @req REQ-121
-export const buildT8SymbolsTemplate = buildInversionTemplate(
-  "T8",
-  (name) => `Ce passage décrit les symboles du peuple ${name}.`,
-  "Quel peuple se reconnaît dans ces symboles ?",
-  3
-);
+export const buildT8SymbolsTemplate = buildInversionTemplate("T8", 3);
 
 // @req REQ-121
-export const buildT9KingdomsTemplate = buildInversionTemplate(
-  "T9",
-  (name) => `Ce passage décrit l'histoire politique du peuple ${name}.`,
-  "Quel peuple a connu cette histoire ?",
-  4
-);
+export const buildT9KingdomsTemplate = buildInversionTemplate("T9", 4);
 
 // @req REQ-121
-export const buildT10OrganizationTemplate = buildInversionTemplate(
-  "T10",
-  (name) =>
-    `Ce passage décrit l'organisation traditionnelle du peuple ${name}.`,
-  "Quel peuple s'organise ainsi ?",
-  4
-);
+export const buildT10OrganizationTemplate = buildInversionTemplate("T10", 4);
 
 // @req REQ-121
-export const buildT11MigrationTemplate = buildInversionTemplate(
-  "T11",
-  (name) => `Ce passage décrit les déplacements du peuple ${name}.`,
-  "Quel peuple a suivi ce chemin ?",
-  4
-);
+export const buildT11MigrationTemplate = buildInversionTemplate("T11", 4);
 
 /**
  * Which of a people's own names it is reproached with.
@@ -280,7 +460,8 @@ export const buildT11MigrationTemplate = buildInversionTemplate(
  */
 // @req REQ-121
 export function buildT12ContestedExonymTemplate(
-  fiche: QuizPeopleFixture
+  fiche: QuizPeopleFixture,
+  locale: TranslationLocale = "fr"
 ): QuizQuestionCandidate | null {
   const contested = namedExonym(fiche.whyProblematic, fiche.exonyms);
   if (!contested) return null;
@@ -290,12 +471,13 @@ export function buildT12ContestedExonymTemplate(
 
   const correctOption = correctOptionIndex(fiche.id, "T12");
   const name = displayName(fiche.subjectName);
+  const copy = copyFor(locale, "T12");
   return {
     templateId: "T12",
     entityType: "people",
     entityId: fiche.id,
     fieldPath: TEMPLATE_FIELD_PATHS.T12,
-    promptFr: `Parmi ces noms donnés au peuple ${name}, lequel est jugé inexact ou offensant ?`,
+    promptFr: copy.prompt(name),
     stimulusFr: null,
     subjectName: fiche.subjectName,
     optionsFr: assembleOptions(contested, distractors, correctOption),
@@ -306,44 +488,19 @@ export function buildT12ContestedExonymTemplate(
 }
 
 // @req REQ-121
-export const buildT13EtymologyTemplate = buildInversionTemplate(
-  "T13",
-  (name) => `Cette étymologie est celle du nom « ${name} ».`,
-  "De quel pays ce nom raconte-t-il l'origine ?",
-  4
-);
+export const buildT13EtymologyTemplate = buildInversionTemplate("T13", 4);
 
 // @req REQ-121
-export const buildT14NameOriginActorTemplate = buildInversionTemplate(
-  "T14",
-  (name) => `Ce sont eux qui ont nommé ce qu'on appelle aujourd'hui ${name}.`,
-  "Quel pays doit son nom à ceux-ci ?",
-  4
-);
+export const buildT14NameOriginActorTemplate = buildInversionTemplate("T14", 4);
 
 // @req REQ-121
-export const buildT15ColonialNameTemplate = buildInversionTemplate(
-  "T15",
-  (name) => `Ce nom fut porté par le territoire devenu ${name}.`,
-  "Quel pays portait ce nom sous la colonisation ?",
-  4
-);
+export const buildT15ColonialNameTemplate = buildInversionTemplate("T15", 4);
 
 // @req REQ-121
-export const buildT17PrecolonialTemplate = buildInversionTemplate(
-  "T17",
-  (name) => `Cette histoire est celle du territoire devenu ${name}.`,
-  "Sur quel territoire cette histoire s'est-elle déroulée ?",
-  5
-);
+export const buildT17PrecolonialTemplate = buildInversionTemplate("T17", 5);
 
 // @req REQ-121
-export const buildT18ReligionsTemplate = buildInversionTemplate(
-  "T18",
-  (name) => `Ce paysage religieux est celui de ${name} aujourd'hui.`,
-  "De quel pays ce paysage religieux est-il celui ?",
-  4
-);
+export const buildT18ReligionsTemplate = buildInversionTemplate("T18", 4);
 
 /**
  * Which country a kingdom stood on — the one country template whose answer is
@@ -356,7 +513,8 @@ export const buildT18ReligionsTemplate = buildInversionTemplate(
 // @req REQ-121
 export function buildT16KingdomTemplate(
   fiche: QuizCountryFixture,
-  kingdomNamePool: string[]
+  kingdomNamePool: string[],
+  locale: TranslationLocale = "fr"
 ): QuizQuestionCandidate | null {
   const kingdom = fiche.kingdomNames[0];
   if (!kingdom) return null;
@@ -370,17 +528,18 @@ export function buildT16KingdomTemplate(
 
   const correctOption = correctOptionIndex(fiche.id, "T16");
   const name = displayName(fiche.subjectName);
+  const copy = copyFor(locale, "T16");
   return {
     templateId: "T16",
     entityType: "country",
     entityId: fiche.id,
     fieldPath: TEMPLATE_FIELD_PATHS.T16,
-    promptFr: `Quel royaume ou sultanat s'est développé sur le territoire de ${name} ?`,
+    promptFr: copy.prompt(name),
     stimulusFr: null,
     subjectName: fiche.subjectName,
     optionsFr: assembleOptions(kingdom, distractors, correctOption),
     correctOption,
-    explanationFr: `${kingdom} s'est développé sur le territoire de ${name}.`,
+    explanationFr: copy.explanation(name, kingdom),
     baselineDifficulty: 4,
   };
 }
