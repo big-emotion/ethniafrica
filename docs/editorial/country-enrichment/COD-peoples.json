@@ -3291,7 +3291,7 @@
       "nameMain": "Tetela",
       "selfAppellation": "Batetela (pluriel) ; Motetela (singulier) ; AnKutshu-Membele (ancestral)",
       "languageFamilyId": "FLG_NIGERCONGO",
-      "isoCodes": ["tet"],
+      "isoCodes": ["tll"],
       "linkEvidence": {
         "topLevelCurrentCountries": true,
         "appellationsCurrentCountries": true,
@@ -3302,11 +3302,11 @@
         "demographic": true
       },
       "sourceEvidence": {
-        "total": 5,
-        "accepted": 2,
+        "total": 6,
+        "accepted": 3,
         "needsReview": 0,
         "unverified": 3,
-        "withUrl": 5
+        "withUrl": 6
       },
       "sharedIsoCodes": [],
       "automatedFlags": ["name_matches_language_label"],
@@ -3316,7 +3316,7 @@
         "canonicalPeopleId": "PPL_TETELA",
         "parentPeopleId": "PPL_MONGO",
         "decision": "Keep as the Tetela/Batetela people and model it as a non-additive child of the broad Mongo identity.",
-        "notes": "The DRC identity is directly attested and has a distinct modern political identity, while controlled vocabularies and scholarship place Tetela within the wider Mongo/Nkutshu family. Parent and child population figures must not be summed, and the current modeled total requires a directly compatible source. The fiche's tet code is erroneous: ISO 639-3 tet is Tetum in Indonesia and Timor-Leste, while Glottolog identifies the DRC Tetela language as tll (tete1250). Replace the code before publication.",
+        "notes": "The DRC identity is directly attested and has a distinct modern political identity, while controlled vocabularies and scholarship place Tetela within the wider Mongo/Nkutshu family. Parent and child population figures must not be summed, and the current modeled total requires a directly compatible source. The language identifier was corrected to tll (tete1250) on 2026-09-07; the former tet code identifies Tetum in Indonesia and Timor-Leste.",
         "sources": [
           {
             "title": "Bibliothèque nationale de France — Tetela (African people)",
