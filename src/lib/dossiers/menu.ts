@@ -60,3 +60,39 @@ export function getDossierMenuEntries(
     })
     .sort((a, b) => b.publishedOn.localeCompare(a.publishedOn));
 }
+
+/** A menu entry plus the sentence the hub prints under the title. */
+export interface DossierIndexEntry extends DossierMenuEntry {
+  summary: string;
+}
+
+/**
+ * The same dossiers, for the hub rather than the menu.
+ *
+ * Separate from `getDossierMenuEntries` because of where each one ends up: the
+ * menu travels through a provider into the markup of *every* page, so it
+ * carries no prose, while the hub is the one page that owes the reader a line
+ * about each reading. One sentence times a hundred dossiers is a paragraph on
+ * the index and forty kilobytes on every fiche.
+ */
+// @req REQ-114
+export function getDossierIndexEntries(
+  language: Language = "fr"
+): DossierIndexEntry[] {
+  const { dossiers } = readDossierCorpus();
+  const summaries = new Map<string, string>(
+    dossiers.map((dossier) => {
+      const translated =
+        language === "en" ? getDossierTranslation(dossier.slug) : null;
+      return [
+        dossier.id,
+        translated?.dossier.standfirst ?? dossier.standfirst,
+      ] as const;
+    })
+  );
+
+  return getDossierMenuEntries(language).map((entry) => ({
+    ...entry,
+    summary: summaries.get(entry.id) ?? "",
+  }));
+}

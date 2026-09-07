@@ -3,6 +3,7 @@ import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { DossierDirectory } from "@/components/dossiers/DossierDirectory";
+import { getDossierIndexEntries } from "@/lib/dossiers/menu";
 import { isLocale } from "@/lib/locale";
 import { notFound } from "next/navigation";
 
@@ -43,7 +44,12 @@ export default async function DossiersPage({ params }: Props) {
   const page = await resolvePage(params);
   return (
     <PageLayout {...page}>
-      <DossierDirectory language={page.language} />
+      {/* Read here and handed down: the directory is a client component and
+          the dossiers are files on disk. */}
+      <DossierDirectory
+        language={page.language}
+        corpus={getDossierIndexEntries(page.language)}
+      />
     </PageLayout>
   );
 }

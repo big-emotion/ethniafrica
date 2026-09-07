@@ -26,6 +26,13 @@ const en = {
     // rework and promises the return, and deliberately does not read as a
     // search that found nothing — the reader has done nothing to correct.
     frozenStatus: "The dossiers are being rewritten. They will be back.",
+    // The hub shows one page of readings at a time; these are its controls.
+    pager: {
+      label: "Pages of dossiers",
+      previous: "Previous",
+      next: "Next",
+      position: (page: number, count: number) => `Page ${page} of ${count}`,
+    },
   },
   jeux: {
     title: TRAIL_PAGE_LABELS.en.jeuxHub,
@@ -142,6 +149,12 @@ const fr: HubsCopy = {
       "Des lectures par thème, à travers les peuples, les territoires et les époques.",
     hubEntryName: "Le hub de lecture",
     frozenStatus: "Les dossiers sont en cours de réécriture. Ils reviendront.",
+    pager: {
+      label: "Pages de dossiers",
+      previous: "Précédent",
+      next: "Suivant",
+      position: (page: number, count: number) => `Page ${page} sur ${count}`,
+    },
   },
   jeux: {
     title: ACCESS_MODE_LABELS.jeux,
