@@ -182,6 +182,24 @@ describe("checkLanguageStrictSchema (ETNI-1503)", () => {
     expect(result.errors).toEqual([]);
   });
 
+  // @req REQ-145
+  it("accepts the source translation deferral authoring block", () => {
+    writeLanguageFiche(
+      tmpDir,
+      "yor.json",
+      validFiche({
+        _translation: {
+          deferred: {
+            en: "Translation waits for editorial review.",
+          },
+        },
+      })
+    );
+    const result = checkLanguageStrictSchema(tmpDir, modelPath);
+    expect(result.ok).toBe(true);
+    expect(result.errors).toEqual([]);
+  });
+
   // AC2: a language fiche using a field that belongs to the family model is rejected.
   // @req REQ-136
   it("rejects a fiche carrying a family-only top-level field", () => {
