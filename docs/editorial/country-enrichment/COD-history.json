@@ -3,7 +3,12 @@
   "countryId": "COD",
   "countryName": "Democratic Republic of the Congo",
   "updatedAt": "2026-09-06",
-  "status": "proposal_ready_for_editorial_approval",
+  "status": "approved_and_applied_to_source_json",
+  "application": {
+    "sourceJsonAppliedAt": "2026-09-07",
+    "databaseSync": "not_performed",
+    "scope": "The reviewed first wave was applied to the country source JSON. The ten-row formation audit and nine modern events remain a controlled first scope, not an exhaustive DRC history inventory."
+  },
   "scopePolicy": {
     "territorialFrame": "Use the present-day DRC only as a geographic overlay. Do not imply that its borders, name, or political unity existed before colonization.",
     "chronology": [
@@ -28,27 +33,32 @@
     "metricCaveat": "These figures measure review decisions in this proposal. They are not a completeness score for DRC history."
   },
   "currentDataAudit": {
-    "status": "replacement_required_after_approval",
+    "status": "replacement_applied_to_source_json",
     "issues": [
       {
         "field": "content.kingdoms",
-        "issue": "The array mixes precolonial polities, colonial administrations, and the modern republic."
+        "issue": "The array mixes precolonial polities, colonial administrations, and the modern republic.",
+        "resolution": "Resolved in source JSON: the array now contains only the seven reviewed first-wave political formations; colonial administrations and modern state periods remain in the dedicated chronology prose."
       },
       {
         "field": "content.kingdoms[].politicalCenters and content.kingdoms[].dominantPeoples",
-        "issue": "Several values were split at commas inside parenthetical phrases, producing malformed list items such as Katanga (Haut-Lomami / Lualaba) and Mongo (Nkundo / Ntomba / Ekonda)."
+        "issue": "Several values were split at commas inside parenthetical phrases, producing malformed list items such as Katanga (Haut-Lomami / Lualaba) and Mongo (Nkundo / Ntomba / Ekonda).",
+        "resolution": "Resolved in source JSON: every retained list value is structurally intact, and the unsupported Mongo polity row was removed."
       },
       {
         "field": "content.historicalNames.antiquity and content.historicalFacts.ancientPeriods",
-        "issue": "The current text begins with an unsourced broad migration claim and omits the dated Upemba archaeological sequence."
+        "issue": "The current text begins with an unsourced broad migration claim and omits the dated Upemba archaeological sequence.",
+        "resolution": "Resolved in source JSON: the unsupported migration sentence was removed and replaced by the sourced, explicitly regional Upemba sequence."
       },
       {
         "field": "content.historicalNames.middleAges",
-        "issue": "A European period label is applied to formations whose chronology and evidence should be stated directly."
+        "issue": "A European period label is applied to formations whose chronology and evidence should be stated directly.",
+        "resolution": "Resolved in source JSON: the field now states the reviewed chronology directly without using a European period label in the prose."
       },
       {
         "field": "content.historicalFacts.precolonial",
-        "issue": "Mongo political organization, Mangbetu courts, Zande kingdoms, and long-distance trade are compressed into unsourced generalizations."
+        "issue": "Mongo political organization, Mangbetu courts, Zande kingdoms, and long-distance trade are compressed into unsourced generalizations.",
+        "resolution": "Resolved for the first wave: unsupported Mongo, broad Mangbetu, and trade claims were removed; plural Zande kingdoms and the other retained formations now follow the reviewed evidence."
       }
     ]
   },
@@ -415,11 +425,6 @@
     ]
   },
   "remainingResearch": [
-    {
-      "priority": "P0",
-      "topic": "Editorial approval",
-      "action": "Approve or amend the taxonomy, geographic-fit decisions, and first-wave entries before editing the production country fiche."
-    },
     {
       "priority": "P0",
       "topic": "Production schema and presentation",
