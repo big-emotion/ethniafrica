@@ -285,58 +285,10 @@
     },
     "sources": [
       {
-        "title": "CIA World Factbook – Democratic Republic of the Congo",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "SIL Ethnologue – Languages of DRC",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "Recensements nationaux congolais",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "ONU – Données démographiques 2025",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
         "title": "UNFPA – World Population Dashboard — République démocratique du Congo",
         "url": "https://www.unfpa.org/data/world-population/CD",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
-      },
-      {
-        "title": "Études anthropologiques sur les peuples congolais",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "Études historiques sur les royaumes précoloniaux",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "Ethnologie du Congo",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
-      },
-      {
-        "title": "CIA World Factbook – Democratic Republic of the Congo (ethnic groups)",
-        "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
       },
       {
         "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",

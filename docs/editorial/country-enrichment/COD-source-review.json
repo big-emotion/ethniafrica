@@ -1,13 +1,21 @@
 {
   "schemaVersion": "1.0",
   "countryId": "COD",
-  "updatedAt": "2026-09-06",
-  "status": "proposal_ready_for_editorial_approval",
+  "updatedAt": "2026-09-07",
+  "status": "approved_and_applied_to_source_json",
   "scopePolicy": {
-    "proposalOnly": true,
-    "noProductionWrite": true,
+    "proposalOnly": false,
+    "sourceJsonWriteApproved": true,
+    "databaseWriteApproved": false,
     "fieldLevelProvenanceRequired": true,
     "genericSourceTitlesDoNotSupportClaims": true
+  },
+  "application": {
+    "sourceJsonAppliedAt": "2026-09-07",
+    "databaseSync": "not_performed",
+    "removedGenericRows": 8,
+    "retainedExactRows": 2,
+    "caveat": "The cleanup improves the source register but does not validate unsupported people percentages or broad country-level cultural claims."
   },
   "reviewMetrics": {
     "currentCountrySourceRows": 10,
@@ -375,7 +383,6 @@
     "Attach accepted sources to every detailed people percentage or remove the unsupported percentages from validated display.",
     "Replace broad culture, religion, lifestyles, social-organization, and regional-relations prose with scoped claims and exact sources.",
     "Add a field-level source-reference mechanism to the country data model or generate an equivalent auditable mapping.",
-    "Apply the approved cleanup to dataset/source/afrik/pays/COD.json only after explicit editorial approval.",
     "Run the repository URL validator after its pre-existing server-only runtime failure is repaired."
   ],
   "artifactReferences": [
