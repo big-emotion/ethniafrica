@@ -26,6 +26,8 @@ import { SOURCE_KINDS, SOURCE_TIERS } from "@/types/sources";
 
 import {
   DOSSIER_READING_STANCES,
+  DOSSIER_READINESS,
+  DOSSIER_RUBRICS,
   DOSSIER_VERTICALS,
   type Dossier,
 } from "./dossierTypes";
@@ -140,10 +142,24 @@ const dossierGapSchema = z
 const dossierSchema = z
   .object({
     _meta: dossierMetaSchema,
+    /**
+     * Authoring metadata for the translation gate, not part of the fiche.
+     *
+     * `checkTranslationParity` reads `_translation.deferred.<lang>` and accepts
+     * a non-empty reason in place of a missing counterpart. The corpus's other
+     * models already carry it (see `dataset/source/afrik/langues/*.json`); this
+     * schema is `.strict()`, so a dossier could not state a deferral at all —
+     * which meant a dossier with no English sidecar had no way to say why.
+     */
+    _translation: z
+      .object({ deferred: z.record(z.string(), z.string()) })
+      .optional(),
     id: z.string().regex(/^DOS_[A-Z0-9_]+$/, {
       message: "id must match DOS_[A-Z0-9_]+",
     }),
     vertical: z.enum(DOSSIER_VERTICALS),
+    rubric: z.enum(DOSSIER_RUBRICS),
+    readiness: z.enum(DOSSIER_READINESS),
     slug: z.string().regex(/^[a-z0-9-]+$/, {
       message: "slug must be lowercase kebab-case",
     }),

@@ -81,23 +81,82 @@ export type ModuleDataSource =
 // `jeux-peuples` went with « Eux, ou les autres ? », the only game that ever
 // stood on it (charter §1). An empty shelf is a heading with nothing under
 // it, so the shelf is removed rather than left declared.
-export type ModuleGroupId = "jeux-pays" | "jeux-quiz";
+//
+// The dossiers axis then grew from three modules to eleven without ever being
+// filed, and the header panel drew all eleven as one flat row — ten of them
+// wearing **Bientôt**, four of them about one country. A reader met the Congo
+// as the shape of the axis rather than as four of its readings.
+//
+// Its rubrics are the domain vocabulary the fiches already use on the reader —
+// `country.ts`'s culture block says Religions · Économie · Organisation ·
+// Relations — because a reader who has read one country fiche has already been
+// taught these words. The eight entries in `dossiers/themes.ts` are a
+// different organ and stay one: pairs of words (« Pouvoirs et territoires »)
+// that work as a filter on the hub and read as prose in a menu heading.
+export type ModuleGroupId =
+  | "dossiers-noms"
+  | "dossiers-organisation"
+  | "dossiers-religions"
+  | "dossiers-territoires"
+  | "dossiers-populations"
+  | "dossiers-economie"
+  | "jeux-pays"
+  | "jeux-quiz";
 
-export interface ModuleGroup {
-  id: ModuleGroupId;
-  /** What the reader reads on the shelf. */
-  label: string;
-}
-
-// Declaration order is the order the shelves appear.
+/**
+ * The order the shelves appear, and the whole of what the registry declares
+ * about them.
+ *
+ * A shelf carries no label here. It used to, and the labels were French
+ * literals in a file `check:copy-literals` does not exempt — tolerated only
+ * because they predate the gate. Rubric names are reader-facing copy, so they
+ * live where reader-facing copy lives, `i18n/copy/hubs.ts`, in both locales.
+ * Modules keep a registry `name` *and* a dictionary entry because theirs
+ * predates the i18n move; a rubric is new, so it starts with one home and
+ * cannot drift between two.
+ */
 // @req REQ-120
-export const MODULE_GROUPS: Record<ModuleGroupId, ModuleGroup> = {
-  "jeux-pays": { id: "jeux-pays", label: "Les pays" },
+export const MODULE_GROUP_ORDER: readonly ModuleGroupId[] = [
+  "dossiers-noms",
+  "dossiers-organisation",
+  "dossiers-religions",
+  "dossiers-territoires",
+  "dossiers-populations",
+  "dossiers-economie",
+  "jeux-pays",
   // The quiz questions the reader rather than the corpus, so it sits on no
-  // entity's shelf. It is alone there, which the panel reads as "render the
-  // module, not a shelf".
-  "jeux-quiz": { id: "jeux-quiz", label: "Le quiz" },
-};
+  // entity's shelf.
+  "jeux-quiz",
+];
+
+/**
+ * The axes whose panel is filed under rubric headings.
+ *
+ * Declared rather than inferred from "does this axis have shelves", because
+ * Jouer's two shelves hold one module each since the charter's scope cuts and
+ * filing them would put a heading over a single card on a surface nobody asked
+ * to change. Declared rather than written as `axis === "dossiers"` in the
+ * header, because special-casing that axis in that file is exactly what left
+ * it drawing a different navigation from its two neighbours.
+ */
+// @req REQ-120
+export const RUBRIC_FILED_AXES: readonly AccessMode[] = ["dossiers"];
+
+/**
+ * How many readings a rubric lists in the menu before it starts counting.
+ *
+ * A menu is not an index. The corpus behind a rubric is expected to reach the
+ * hundreds — the atlas already holds 804 peoples behind one menu row — and a
+ * panel that prints every record would put that list into the markup of every
+ * page on the site.
+ *
+ * Four rather than three or five because four is what the tallest rubric holds
+ * today, so the cap is armed and tested without changing what a reader
+ * currently sees; and because the flowed columns of the panel are balanced
+ * against a rubric of four (`sh-grid-filed`).
+ */
+// @req REQ-120
+export const RUBRIC_MENU_LIMIT = 4;
 
 // Every module the registry declares is listed and linked. What a module
 // waits on is its corpus, never a switch:
@@ -200,7 +259,7 @@ export interface HubModuleDefinition {
   unlisted?: boolean;
   /** A game under the Jouer hub, addressed as /fr/jeux/<gameSlug> rather than by PageType. Keeps PageType a closed union instead of growing a variant per game. */
   gameSlug?: string;
-  /** Which shelf the module sits on. Jouer only — see ModuleGroupId. */
+  /** Which shelf or rubric the module sits under — see ModuleGroupId. */
   group?: ModuleGroupId;
   /**
    * How this module fills the home's hero slot, or absent if it cannot
@@ -407,6 +466,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   // probe to count and "static" is the honest answer.
   {
     id: "nommer",
+    group: "dossiers-noms",
     name: "Qui a donné ce nom ?",
     accessMode: "dossiers",
     page: "nommer",
@@ -418,82 +478,36 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "anecdotes",
+    group: "dossiers-noms",
     name: "Anecdotes",
     accessMode: "dossiers",
     page: "anecdotes",
     availability: "static",
     editorialReadiness: "ready",
   },
-  // Réalités — seven dossiers on what is measured about Africa, on the Kongo,
-  // Luba and Lunda polities, and on kongo spiritualities. All withdrawn under
-  // the freeze above: they are the pages whose uniform structure prompted it.
+  // The seven Realites dossiers are NOT here, and that is the point.
   //
-  // `static` for the same reason as `nommer` and `anecdotes`: the fiches are
-  // files in the repository, read at build. They are also loaded into
-  // afrik_dossiers by the AFRIK pipeline and served at /api/v2/dossiers, but
-  // the availability probe counts rows to decide whether a trip is worth a
-  // reader's time, and a dossier is worth it whether or not a migration has
-  // reached an environment yet.
-  {
-    id: "dossier-proportions",
-    name: "Les vraies proportions",
-    accessMode: "dossiers",
-    page: "dossierProportions",
-    availability: "static",
-    editorialReadiness: "draft",
-  },
-  {
-    id: "dossier-populations",
-    name: "Le poids réel",
-    accessMode: "dossiers",
-    page: "dossierPopulations",
-    availability: "static",
-    editorialReadiness: "draft",
-  },
-  {
-    id: "dossier-ressources",
-    name: "Un scandale géologique",
-    accessMode: "dossiers",
-    page: "dossierRessources",
-    availability: "static",
-    editorialReadiness: "draft",
-  },
-  {
-    id: "dossier-kongo",
-    name: "Le royaume Kongo",
-    accessMode: "dossiers",
-    page: "dossierKongo",
-    availability: "static",
-    editorialReadiness: "draft",
-  },
-  {
-    id: "dossier-luba",
-    name: "Luba : pouvoir et mémoire",
-    accessMode: "dossiers",
-    page: "dossierLuba",
-    availability: "static",
-    editorialReadiness: "draft",
-  },
-  {
-    id: "dossier-lunda",
-    name: "Lunda : alliances et circulations",
-    accessMode: "dossiers",
-    page: "dossierLunda",
-    availability: "static",
-    editorialReadiness: "draft",
-  },
-  {
-    id: "dossier-spiritualites-kongo",
-    name: "Spiritualités kongo : objets et transformations",
-    accessMode: "dossiers",
-    page: "dossierSpiritualitesKongo",
-    availability: "static",
-    editorialReadiness: "draft",
-  },
+  // Each used to be a module: an entry in this list, a PageType, two slugs, a
+  // glyph, two menu labels and two catalogue entries — nine edits across five
+  // files to publish one reading, and a menu that grew a row per dossier. A
+  // module is a *surface* of the axis; a dossier is a record of the corpus,
+  // like a people or a country. The atlas already draws that line: one menu row
+  // for `peuples`, and 804 peoples behind it.
+  //
+  // They now live only in dataset/source/afrik/dossiers, declare their own
+  // rubric and readiness, and reach the menu through `getDossierMenuEntries`.
+  // What stays declared outside the corpus is the fr/en slug pair in
+  // routing.ts, because middleware runs on the edge and cannot read the corpus
+  // off disk to translate an address.
+  //
+  // The four entries around this comment are the axis's real surfaces: a
+  // pillar with five routes of its own, a bank rendered from code, a map of
+  // sourced events, and a static page.
   {
     // Named for what the corpus actually holds — six sourced events, not a
     // three-millennia timeline (ETNI-1198).
     id: "frise",
+    group: "dossiers-populations",
     name: "Premiers repères de migrations",
     accessMode: "dossiers",
     page: "migrations",
@@ -511,6 +525,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     // which is Comprendre's filing rule, so it belongs on the axis rather
     // than in a utility row beside it.
     id: "regards-colonisation",
+    group: "dossiers-organisation",
     name: "Regards : colonisation et résistances",
     accessMode: "dossiers",
     page: "colonization",

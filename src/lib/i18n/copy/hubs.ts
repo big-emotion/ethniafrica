@@ -1,4 +1,7 @@
-import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
+import {
+  ACCESS_MODE_LABELS,
+  type ModuleGroupId,
+} from "@/lib/hubs/moduleRegistry";
 import { TRAIL_PAGE_LABELS } from "@/lib/i18n/copy/trail";
 import type { Language } from "@/types/shared";
 
@@ -23,6 +26,13 @@ const en = {
     // rework and promises the return, and deliberately does not read as a
     // search that found nothing — the reader has done nothing to correct.
     frozenStatus: "The dossiers are being rewritten. They will be back.",
+    // The hub shows one page of readings at a time; these are its controls.
+    pager: {
+      label: "Pages of dossiers",
+      previous: "Previous",
+      next: "Next",
+      position: (page: number, count: number) => `Page ${page} of ${count}`,
+    },
   },
   jeux: {
     title: TRAIL_PAGE_LABELS.en.jeuxHub,
@@ -48,18 +58,37 @@ const en = {
     recherche: "Free search",
     nommer: "Who gave this name?",
     anecdotes: "Anecdotes",
-    "dossier-proportions": "True proportions",
-    "dossier-populations": "Real weight",
-    "dossier-ressources": "A geological scandal",
-    "dossier-kongo": "The Kongo kingdom",
-    "dossier-luba": "Luba: power and memory",
-    "dossier-lunda": "Lunda: alliances and connections",
-    "dossier-spiritualites-kongo": "Kongo spiritualities: objects and change",
     frise: "First migration landmarks",
     "regards-colonisation": "Colonial gaze: colonisation and resistance",
     quiz: "The quiz",
     mercator: "The size they hid from you",
   } as Record<string, string>,
+  // What the reader reads over a rubric of dossiers. One domain noun each,
+  // taken from the vocabulary the country fiche already teaches — `country.ts`
+  // renders Religions · Economy · Organisation · Relations over its culture
+  // block — so a reader who has read one fiche has met these words before.
+  //
+  // Phrases were tried first and rejected in review: « Ce qu'on mesure » and
+  // « Pouvoirs et territoires » read as sentences where the surface needs a
+  // label, and a heading that is a sentence competes with the dossier titles
+  // under it instead of filing them.
+  moduleGroupNames: {
+    "dossiers-noms": "Names",
+    "dossiers-organisation": "Organisation",
+    "dossiers-religions": "Religions",
+    "dossiers-territoires": "Territories",
+    "dossiers-populations": "Populations",
+    "dossiers-economie": "Economy",
+    "jeux-pays": "Countries",
+    "jeux-quiz": "The quiz",
+  } satisfies Record<ModuleGroupId, string>,
+  // Closes a rubric that holds more readings than the menu lists. It counts
+  // what is *not* shown rather than the whole rubric: "+ 96 more" beside four
+  // cards is a promise of ninety-six unseen readings, where "100 dossiers"
+  // beside them would have the reader wondering which four of the hundred
+  // these are.
+  moreInRubric: (count: number) =>
+    count === 1 ? "+ 1 more" : `+ ${count} more`,
 };
 
 type HubsCopy = typeof en;
@@ -120,6 +149,12 @@ const fr: HubsCopy = {
       "Des lectures par thème, à travers les peuples, les territoires et les époques.",
     hubEntryName: "Le hub de lecture",
     frozenStatus: "Les dossiers sont en cours de réécriture. Ils reviendront.",
+    pager: {
+      label: "Pages de dossiers",
+      previous: "Précédent",
+      next: "Suivant",
+      position: (page: number, count: number) => `Page ${page} sur ${count}`,
+    },
   },
   jeux: {
     title: ACCESS_MODE_LABELS.jeux,
@@ -150,19 +185,23 @@ const fr: HubsCopy = {
     recherche: "Recherche libre",
     nommer: "Qui a donné ce nom ?",
     anecdotes: "Anecdotes",
-    "dossier-proportions": "Les vraies proportions",
-    "dossier-populations": "Le poids réel",
-    "dossier-ressources": "Un scandale géologique",
-    "dossier-kongo": "Le royaume Kongo",
-    "dossier-luba": "Luba : pouvoir et mémoire",
-    "dossier-lunda": "Lunda : alliances et circulations",
-    "dossier-spiritualites-kongo":
-      "Spiritualités kongo : objets et transformations",
     frise: "Premiers repères de migrations",
     "regards-colonisation": "Regards : colonisation et résistances",
     quiz: "Le quiz",
     mercator: "La taille qu'on vous a cachée",
   },
+  moduleGroupNames: {
+    "dossiers-noms": "Noms",
+    "dossiers-organisation": "Organisation",
+    "dossiers-religions": "Religions",
+    "dossiers-territoires": "Territoires",
+    "dossiers-populations": "Populations",
+    "dossiers-economie": "Économie",
+    "jeux-pays": "Les pays",
+    "jeux-quiz": "Le quiz",
+  },
+  moreInRubric: (count: number) =>
+    count === 1 ? "+ 1 autre" : `+ ${count} autres`,
 };
 
 // @req REQ-145

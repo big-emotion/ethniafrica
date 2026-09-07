@@ -107,6 +107,11 @@ export const TRANSLATION_CLASSES: Readonly<
     "_meta.*": "invariant",
     id: "invariant",
     vertical: "invariant",
+    // The rubric is filing, not prose: its reader-facing word is the menu's
+    // (`i18n/copy/hubs.ts`), in both locales, and what the dossier declares
+    // here is which of the six it belongs to.
+    rubric: "invariant",
+    readiness: "invariant",
     slug: "invariant",
     title: "translatable",
     question: "translatable",

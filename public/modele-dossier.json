@@ -7,6 +7,8 @@
   },
   "id": "DOS_EXEMPLE",
   "vertical": "realites",
+  "rubric": "organisation",
+  "readiness": "draft",
   "slug": "exemple",
   "title": "<Titre du dossier, nominal et spécifique>",
   "question": "<La question à laquelle le dossier entier répond, une phrase>",

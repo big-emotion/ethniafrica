@@ -59,12 +59,20 @@ import { cn } from "@/lib/utils";
 import { getTranslation } from "@/lib/translations";
 import {
   ACCENT_BY_ACCESS_MODE,
+  ACCENT_CYCLE,
   ACCESS_MODES,
+  RUBRIC_FILED_AXES,
+  RUBRIC_MENU_LIMIT,
   accentForModule,
   getNavModules,
   type AccessMode,
   type HubModuleDefinition,
+  type ModuleGroupId,
 } from "@/lib/hubs/moduleRegistry";
+import { getGroupedModules } from "@/lib/hubs/moduleGroups";
+import { useDossierMenu } from "@/components/dossiers/DossierMenuProvider";
+import type { DossierMenuEntry } from "@/lib/dossiers/menu";
+import type { DossierRubric } from "@/lib/afrik/parsers/dossierTypes";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { isModuleOffered } from "@/lib/hubs/moduleOffer";
 import { useModuleAvailability } from "@/components/hubs/ModuleAvailabilityProvider";
@@ -123,17 +131,6 @@ const MODULE_GLYPHS: Record<string, LucideIcon> = {
   patronymes: BookUser,
   nommer: Signature,
   anecdotes: Sparkles,
-  "dossier-proportions": Ruler,
-  "dossier-populations": ChartNoAxesColumnIncreasing,
-  "dossier-ressources": Gem,
-  // The four Congo histories shipped without a glyph and reached the `Circle`
-  // fallback in silence: the dossiers panel drew a theme directory rather than
-  // module cards, so no surface ever rendered them and no gate ever looked.
-  // Giving the panel the same cards as the other two axes is what surfaced it.
-  "dossier-kongo": Castle,
-  "dossier-luba": Drum,
-  "dossier-lunda": Handshake,
-  "dossier-spiritualites-kongo": Flame,
   frise: History,
   "regards-colonisation": Eye,
   quiz: HelpCircle,
@@ -149,6 +146,36 @@ const MODULE_GLYPHS: Record<string, LucideIcon> = {
   "jeu-familles": FolderTree,
   frontieres: Scissors,
 };
+
+/**
+ * A glyph per rubric, not per dossier.
+ *
+ * Seven dossiers used to carry one each, and four of them shipped without: they
+ * wore the blank `Circle` fallback beside twenty modules carrying a sign, which
+ * no test could see and no diff showed. A corpus that grows by a file cannot
+ * also grow by an icon import, so the sign belongs to the domain — every
+ * dossier under Organisation shows the same castle, which is what a rubric
+ * means.
+ */
+const RUBRIC_GLYPHS: Record<DossierRubric, LucideIcon> = {
+  noms: Signature,
+  organisation: Castle,
+  religions: Flame,
+  territoires: Ruler,
+  populations: ChartNoAxesColumnIncreasing,
+  economie: Gem,
+};
+
+/** What a card of the menu needs, whether a module or a dossier declared it. */
+interface MenuEntry {
+  id: string;
+  href: string | null;
+  label: string;
+  offered: boolean;
+  glyph: LucideIcon;
+  accent: string;
+  group?: ModuleGroupId;
+}
 
 const isCurrentRoute = (pathname: string, href: string) =>
   pathname === href || pathname.startsWith(`${href}/`);
@@ -176,6 +203,7 @@ export function SiteHeader({
   // Resolved once per request by the `[lang]` layout; `null` on any surface
   // rendered without it, which `isModuleOffered` reads as "declared half only".
   const moduleAvailability = useModuleAvailability();
+  const dossierMenu = useDossierMenu();
 
   const [openAxis, setOpenAxis] = useState<AccessMode | null>(null);
   const [trayOpen, setTrayOpen] = useState(false);
@@ -261,17 +289,17 @@ export function SiteHeader({
     setOpenAxis((current) => (current === null ? null : next));
   }, []);
 
-  const moduleEntry = (definition: HubModuleDefinition) => {
-    const href = getModuleHref(definition, language);
-    const Glyph = MODULE_GLYPHS[definition.id] ?? Circle;
-    const testId = `site-nav-module-${definition.id}`;
-
-    // Two questions, and the menu used to ask only the first (charter §3):
-    // the route has to exist, *and* what sits behind it has to be worth the
-    // trip. Asking only "does this resolve" is what had the header linking
-    // modules the home and the hub were both marking Bientôt.
-    const offered =
-      href !== null && isModuleOffered(definition, moduleAvailability);
+  /**
+   * One card of the menu, whatever declared it.
+   *
+   * Two things reach this now: a module, which is a surface of the axis, and a
+   * dossier, which is a record of the corpus. They render identically because
+   * a reader choosing between them is choosing between two readings, not
+   * between two kinds of declaration.
+   */
+  const navEntry = (entry: MenuEntry) => {
+    const Glyph = entry.glyph;
+    const testId = `site-nav-module-${entry.id}`;
 
     const body = (
       <>
@@ -279,10 +307,8 @@ export function SiteHeader({
           <Glyph size={15} strokeWidth={1.9} />
         </span>
         <span className="sh-entry-text">
-          <span className="sh-entry-name">
-            {t.hubs.moduleNames[definition.id] ?? definition.name}
-          </span>
-          {offered ? null : (
+          <span className="sh-entry-name">{entry.label}</span>
+          {entry.offered ? null : (
             <span className="sh-chip">
               <span className="sh-chip-dot" aria-hidden="true" />
               {t.hubs.unavailableLabel}
@@ -294,17 +320,17 @@ export function SiteHeader({
 
     // No anchor at all, and no focus stop: the reader is told there is
     // nothing worth reading here yet, and the charter owes no account of
-    // which of the two questions produced that. An unbuilt route and a module
+    // which of the two questions produced that. An unbuilt route and a reading
     // in preparation get the same row deliberately — an anchor without an
     // href would still be a link the keyboard could reach.
-    if (!offered) {
+    if (!entry.offered || entry.href === null) {
       return (
         <span
-          key={definition.id}
+          key={entry.id}
           data-testid={testId}
           aria-disabled="true"
           tabIndex={-1}
-          className={cn("sh-entry", accentForModule(definition))}
+          className={cn("sh-entry", entry.accent)}
         >
           {body}
         </span>
@@ -313,15 +339,113 @@ export function SiteHeader({
 
     return (
       <Link
-        key={definition.id}
-        href={href}
+        key={entry.id}
+        href={entry.href}
         data-testid={testId}
-        aria-current={isCurrentRoute(pathname, href) ? "page" : undefined}
-        className={cn("sh-entry", accentForModule(definition))}
+        aria-current={isCurrentRoute(pathname, entry.href) ? "page" : undefined}
+        className={cn("sh-entry", entry.accent)}
       >
         {body}
       </Link>
     );
+  };
+
+  const moduleAsEntry = (definition: HubModuleDefinition): MenuEntry => {
+    const href = getModuleHref(definition, language);
+    return {
+      id: definition.id,
+      href,
+      label: t.hubs.moduleNames[definition.id] ?? definition.name,
+      // Two questions, and the menu used to ask only the first (charter §3):
+      // the route has to exist, *and* what sits behind it has to be worth the
+      // trip. Asking only "does this resolve" is what had the header linking
+      // modules the home and the hub were both marking Bientôt.
+      offered: href !== null && isModuleOffered(definition, moduleAvailability),
+      glyph: MODULE_GLYPHS[definition.id] ?? Circle,
+      accent: accentForModule(definition),
+      group: definition.group,
+    };
+  };
+
+  /**
+   * A dossier of the corpus as a card.
+   *
+   * Its glyph comes from its rubric, not from itself: a per-dossier glyph is
+   * one more file to edit per publication, and it is what let four dossiers
+   * ship wearing the blank fallback disc without any gate noticing. Its accent
+   * cycles by position for the same reason — declared per entry, it is a
+   * chance per entry to file a duplicate beside its neighbour.
+   */
+  const dossierAsEntry = (
+    dossier: DossierMenuEntry,
+    index: number
+  ): MenuEntry => ({
+    id: dossier.id,
+    href: dossier.href,
+    label: dossier.title,
+    offered: dossier.offered,
+    glyph: RUBRIC_GLYPHS[dossier.rubric] ?? Circle,
+    accent: ACCENT_CYCLE[index % ACCENT_CYCLE.length],
+    group: `dossiers-${dossier.rubric}` as ModuleGroupId,
+  });
+
+  /**
+   * An axis's modules, filed under rubric headings where the axis declares
+   * them (`RUBRIC_FILED_AXES`) and flat where it does not.
+   *
+   * The dossiers axis grew to eleven modules and the panel still drew one row
+   * of eleven cards, four of them about the Congo — so the reader met a wave
+   * of publication where the axis meant to show a set of subjects. Filing is
+   * declared on the registry rather than tested for here, because
+   * `axis === "dossiers"` written in this file is what once gave that axis a
+   * navigation unlike its two neighbours.
+   *
+   * `headingLevel` because the same rubric sits under an `h2` in the panel and
+   * under an `h3` in the tray; the label is the same, the rank is not.
+   */
+  const axisModules = (axis: AccessMode, headingLevel: "h3" | "h4") => {
+    const modules = getNavModules(axis).map(moduleAsEntry);
+    if (!RUBRIC_FILED_AXES.includes(axis)) return modules.map(navEntry);
+
+    // The axis's surfaces and its corpus, in one list. The dossiers arrive
+    // newest first (`getDossierMenuEntries`), which is the order the cap keeps.
+    const entries = [
+      ...modules,
+      ...dossierMenu.map((dossier, index) =>
+        dossierAsEntry(dossier, modules.length + index)
+      ),
+    ];
+
+    const Heading = headingLevel;
+    return getGroupedModules(entries).map((rubric) => {
+      const shown = rubric.modules.slice(0, RUBRIC_MENU_LIMIT);
+      const withheld = rubric.modules.length - shown.length;
+
+      return (
+        <section key={rubric.id} className="sh-rubric">
+          <Heading className="sh-rubric-name">
+            {t.hubs.moduleGroupNames[rubric.id]}
+          </Heading>
+          <div className="sh-rubric-entries">
+            {shown.map(navEntry)}
+            {/* A menu is not an index. Past the cap the rubric stops listing
+                and starts counting, and the count is a link to the hub, which
+                is the surface that owes a reader every dossier. Without this
+                a rubric holding a hundred readings would print a hundred
+                cards into every page of the site. */}
+            {withheld > 0 ? (
+              <Link
+                href={getLocalizedRoute(language, "dossiersHub")}
+                data-testid={`site-nav-rubric-more-${rubric.id}`}
+                className="sh-rubric-more"
+              >
+                {t.hubs.moreInRubric(withheld)}
+              </Link>
+            ) : null}
+          </div>
+        </section>
+      );
+    });
   };
 
   return (
@@ -459,9 +583,19 @@ export function SiteHeader({
               under one bar, and the axis that reads as unfinished is the one
               that looks unlike its neighbours. It also had nowhere to put
               **Bientôt**, so a withdrawn dossier and a published one were
-              spelled identically. */}
-          <div className="sh-grid">
-            {getNavModules(openAxis).map(moduleEntry)}
+              spelled identically.
+
+              The theme directory came back as headings rather than as links:
+              filing eleven dossiers under six domain rubrics gives the reader
+              the subjects without promising six pages the editorial has not
+              written. */}
+          <div
+            className={cn(
+              "sh-grid",
+              RUBRIC_FILED_AXES.includes(openAxis) && "sh-grid-filed"
+            )}
+          >
+            {axisModules(openAxis, "h3")}
           </div>
         </div>
       ) : null}
@@ -471,7 +605,13 @@ export function SiteHeader({
           <SheetTitle className="sh-tray-title">{t.hubs.menuLabel}</SheetTitle>
           <LanguageSwitcher language={language} appearance="row" />
           {ACCESS_MODES.map((axis) => {
-            const modules = getNavModules(axis);
+            // Everything the fold opens onto, not everything the registry
+            // declares: the dossiers axis also carries its corpus, and a
+            // badge reading 4 over eleven entries is a count that contradicts
+            // the list under it.
+            const entryCount =
+              getNavModules(axis).length +
+              (RUBRIC_FILED_AXES.includes(axis) ? dossierMenu.length : 0);
             const expanded = openTrayAxis === axis;
 
             return (
@@ -489,7 +629,7 @@ export function SiteHeader({
                   >
                     <span className="sh-seed" aria-hidden="true" />
                     {axisLabel(axis)}
-                    <span className="sh-fold-count">{modules.length}</span>
+                    <span className="sh-fold-count">{entryCount}</span>
                     <ChevronDown
                       className="sh-caret"
                       size={13}
@@ -507,7 +647,7 @@ export function SiteHeader({
                         {t.chrome.allDossiers}
                       </ActionLink>
                     ) : null}
-                    {modules.map(moduleEntry)}
+                    {axisModules(axis, "h4")}
                   </div>
                 ) : null}
               </div>
@@ -833,6 +973,75 @@ export function SiteHeader({
           max-width: var(--afh-shell-max);
           margin: 0 auto;
         }
+        /* A rubric is a column, not a band, and the columns flow rather than
+           sit on a grid.
+
+           Two shapes were measured before this one. Full-width bands, one per
+           rubric, pushed the last two rubrics below the fold and left three
+           empty columns beside every rubric holding a single dossier. An
+           auto-fill grid of columns fixed the height but not the holes: six
+           rubrics into five tracks wraps the sixth onto a second row that
+           starts below the tallest of the first, so a 240px void opened in
+           the middle of the panel.
+
+           Flowed columns have no rows to align to, so a short rubric is
+           followed by the next one instead of by a hole, and the browser
+           balances the heights. Rubrics stay in reading order — down a
+           column, then across. */
+        .sh-grid-filed {
+          display: block;
+          column-width: 196px;
+          column-gap: 12px;
+        }
+        /* A rubric split across a column break would put a heading over some
+           of its dossiers and the rest under the next heading. */
+        .sh-rubric {
+          break-inside: avoid;
+          /* Flowed columns have no gap property between items; the space
+             between two rubrics is this padding. */
+          padding-bottom: 14px;
+        }
+        .sh-rubric-entries {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr);
+          gap: 9px;
+        }
+        /* Deliberately not a card: it is a way out of the rubric, not one more
+           reading in it, and a reader scanning four cards must not take the
+           count for a fifth. */
+        .sh-rubric-more {
+          font-size: var(--afh-text-small);
+          color: var(--afh-fg-muted);
+          text-decoration: none;
+          padding: 4px 2px;
+          min-height: 44px;
+          display: flex;
+          align-items: center;
+          text-align: left;
+        }
+        .sh-rubric-more:hover,
+        .sh-rubric-more:focus-visible {
+          color: var(--afh-text);
+          text-decoration: underline;
+        }
+        .sh-rubric-name {
+          margin: 0 0 7px;
+          /* Sized at --afh-text-small rather than at the kicker's 12px:
+             brand-charter.md §8.5 — a label that keeps only its tracking and
+             loses its size stops filing the block and reads as a caption
+             between cards. It carries no colour of its own so it does not
+             compete with the per-module accents on the tiles below it. */
+          font-size: var(--afh-text-small);
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.16em;
+          color: var(--afh-fg-muted);
+          /* Opts out of the mobile centring styles/mobile-text.css puts on
+             the body below 768px, the way that file says a component should:
+             a rubric files the cards under it, so it has to start on the same
+             reading edge they do. */
+          text-align: left;
+        }
 
         .sh-entry {
           display: flex;
@@ -1002,6 +1211,11 @@ export function SiteHeader({
           grid-template-columns: minmax(0, 1fr);
           gap: 8px;
           padding: 0 18px 15px;
+        }
+        /* The fold's own 8px separates two cards; two rubrics are two
+           subjects and need to read as further apart than that. */
+        .sh-fold-body .sh-rubric + .sh-rubric {
+          margin-top: 7px;
         }
 
         /* Mobile first: the phone gets the burger and the tray, and the

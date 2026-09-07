@@ -94,7 +94,7 @@
     "kind": "machine",
     "translatedAt": "2026-09-06",
     "model": "GPT-6",
-    "sourceHash": "ddb2381f8a73d06f67118aea60e46b5ec4f1a1194ba1db00faf1e160c0d5e9df",
+    "sourceHash": "a6453aded926158d0edb44548eda9bb57107f157b493de4eb85da8ecf3aec571",
     "fieldHashes": {
       "title": "ce53b93b2921fd4a94b5a7e6f3bbb89e79511fd653fda19f799e28a1e27a6760",
       "question": "bde7e254f26e9db72741adae48a9f01e45fd31cdcd561cbcd8405af47ef27ddf",
