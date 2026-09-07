@@ -1,196 +1,157 @@
 ---
 name: ethniafrica-content-strategist
-description: Decides what EthniAfrica should publish next — site pages and social content — from measured audience evidence and the real publishing history. Consumes the dated report written by ethniafrica-audience-audit, reads the media library's publication state, collects per-post performance from YouTube, TikTok, Instagram, Meta Business Suite and LinkedIn via Chrome, and maintains a performance ledger so no topic is ever proposed twice without its predecessor's numbers. Use when the user asks "quoi publier", "quelle vidéo ensuite", "plan éditorial", "calendrier de contenu", "quel contenu marche", "stratégie de contenu", or invokes /ethniafrica-content-strategist.
+description: Decides what EthniAfrica should publish next — site pages and social content — from measured audience evidence and the real publishing history. Consumes the dated report written by ethniafrica-audience-audit, carries the launch plan, the publication record and the per-platform doctrine as its own knowledge, collects per-post performance from YouTube, LinkedIn, Instagram, Facebook and TikTok, and answers what to post on which network, how often, and for which audience. Use when the user asks "quoi publier", "quelle vidéo ensuite", "sur quel réseau", "à quelle fréquence", "quel public", "plan éditorial", "calendrier de contenu", "quel contenu marche", "stratégie de contenu", or invokes /ethniafrica-content-strategist.
 metadata:
   author: Big Emotion
-  version: "1.0.0"
+  version: "2.0.0"
   argument-hint: "[--site | --social | --both] [--collect-metrics]"
 ---
 
 # EthniAfrica Content Strategist
 
-Decides **what to publish next, and why that rather than something else** —
-across the site and the four social channels. It is a **consumer** in the
-three-skill pipeline; its evidence comes from `docs/audience/`, written by
-`/ethniafrica-audience-audit`.
+Decides **what to publish next, on which channel, how often, and for whom.**
 
-```
-/ethniafrica-audience-audit  →  docs/audience/audit-YYYY-MM-DD.md  →  this skill
-                                                                        ↕
-                                              media library: publication state + performance ledger
-```
+It is a **consumer** in the three-skill pipeline; its audience evidence comes
+from `docs/audience/`, written by `/ethniafrica-audience-audit`.
+
+## Who this answers to
+
+**The operator is the decision-maker, not a social media specialist.** They asked
+for advice and directives that are simple and clear, and they meant it.
+
+So: every output is a directive with its reason attached — _publish this, there,
+this often, because this number says so_. Never a menu of options with the choice
+handed back. Never platform jargon without the plain meaning beside it. When a
+decision is genuinely theirs — which of two cuts ships, whether a permission is
+cleared — put it as one question with a recommendation, not as an open field.
+
+## What this skill already knows
+
+Three reference files carry the substance, so the skill reasons from knowledge
+rather than pointing at folders:
+
+- `reference/platforms.md` — what each channel is for, which audience it reaches,
+  what to post there, how often, and which metric judges it.
+- `reference/launch-plan.md` — the operator's own launch plan, already running:
+  four pillars in rotation, three videos a week, the phased channel sequence, the
+  metric ranking, and the two places measurement now contradicts it.
+- `reference/published-state.md` — the five cuts that exist, what shipped where,
+  what it measured, the caption register, the production method, and the two
+  decisions still open.
+
+**Read all three before answering anything.** They are the difference between a
+plan and a guess.
 
 ## The rule that makes this skill worth invoking
 
 **Never propose a topic without stating how the comparable published content
-performed.** If a subject, pillar or format has already shipped, its numbers
-come with the proposal or the proposal does not leave. If the numbers were never
-collected, say that instead of implying success. A content plan that cannot
-distinguish "this worked" from "we did this" is a wish list.
+performed.** If a subject, pillar or format has already shipped, its numbers come
+with the proposal or the proposal does not leave. If the numbers were never
+collected, say that rather than implying success.
 
-## Step 1 — Load the two states
-
-### The audience report
+## Step 1 — Load the audience report
 
 Read the most recent file in `docs/audience/`. **No report, or one older than 30
 days → stop and run `/ethniafrica-audience-audit` first.** Read its
 `## Handoffs → For /ethniafrica-content-strategist` section, the page verdicts,
 and the acquisition table.
 
-### The media library
+## Step 2 — Refresh the platform numbers
 
-Default location: `/Users/jnk/Documents/BIG_EMOTION/06-Projets/EthniAfrica`
-(local to the operator; ask if it has moved). It already holds the publishing
-state — do not rebuild it, read it:
+Run with `--collect-metrics`, or whenever `reference/published-state.md` is more
+than a week stale. All five sessions are authenticated in the operator's Chrome;
+load the browser tools in **one** `ToolSearch` call.
 
-| File                                      | What it settles                                                                 |
-| ----------------------------------------- | ------------------------------------------------------------------------------- |
-| `03-Social-plan/PUBLISHING-STATUS.md`     | What is published, where, with post URLs; what is approved but blocked, and why |
-| `03-Social-plan/publication-calendar.csv` | Planned slots, pillar rotation, which slots have no topic                       |
-| `03-Social-plan/performance-ledger.csv`   | Per-post measured performance (this skill maintains it — see Step 2)            |
-| `02-Videos/Approved/`                     | The cuts that exist and are viewing-approved                                    |
-| `04-Production/Guides/`                   | How a video was actually made, including its source map                         |
-| `inventory.json`                          | Provenance and checksum of every asset                                          |
+| Channel   | Where the numbers are                                                                    | Reliability                                                                           |
+| --------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| YouTube   | the channel's Shorts tab shows per-video view counts directly; Studio for retention      | Works. Canvas-heavy — screenshot rather than `get_page_text`                          |
+| LinkedIn  | company page → Analytics → Content. Impressions, views, clicks, CTR, engagement per post | Works, returns clean text                                                             |
+| Instagram | the profile shows post count and followers; per-post insights need the post view         | Works via screenshot                                                                  |
+| Facebook  | the page shows followers; Business Suite for post insights                               | Slow; the renderer times out on screenshots — use `get_page_text`                     |
+| TikTok    | the public profile                                                                       | **Unreliable** — bot detection stalls the page. Two attempts, then move on and say so |
 
-Two blockers live in that state and must not be re-litigated silently: the Bantu
-V5 cut opens on a LinkedIn excerpt whose author's permission was never recorded,
-and the two Nigeria cuts are both approved with neither designated as the
-publishing version.
+Record what you collected and what you could not. **An unavailable metric is
+empty, never zero** — a fabricated zero poisons every later comparison.
 
-## Step 2 — Collect performance, then write it down
+### On a proper API
 
-Run with `--collect-metrics`, or whenever the ledger's newest row is more than a
-week old. Load the Chrome tools in **one** `ToolSearch` call, then read each
-back-office. All five sessions are authenticated in the operator's Chrome.
-
-| Channel         | Where the numbers are                                |
-| --------------- | ---------------------------------------------------- |
-| YouTube Shorts  | YouTube Studio → Content → each Short's analytics    |
-| TikTok          | TikTok Studio → Analytics → Content                  |
-| Instagram Reels | the post's Insights, or Meta Business Suite          |
-| Facebook        | Meta Business Suite (`business_id=3547853358709530`) |
-| LinkedIn        | the company page's admin analytics                   |
-
-Record per post, in `03-Social-plan/performance-ledger.csv`:
-
-```csv
-measured_at,published_at,topic,pillar,platform,post_url,views,hook_rate_3s,avg_view_duration_s,retention_pct,likes,comments,shares,saves,profile_visits,link_clicks,notes
-```
-
-Rules for the ledger:
-
-- **Append, never overwrite.** A second measurement of the same post is a new
-  row; the series is how you learn whether a Short keeps earning views.
-- **An unavailable metric is empty, never zero.** Platforms differ in what they
-  expose, and a fabricated zero poisons every later comparison.
-- Record the post URL. `PUBLISHING-STATUS.md` records that Afrique, Lingala and
-  the Nigeria Codex cut were posted to TikTok and Instagram manually on
-  2026-09-05 **without their URLs being captured** — recover them while
-  collecting, or the ledger cannot join to the platform.
+Browser collection is the fallback, not the destination. Each platform has an
+official API — YouTube Data API, Meta Graph API for Instagram and Facebook,
+LinkedIn Marketing API, TikTok Display API — and each requires registering an app
+and completing an approval that ranges from an afternoon to weeks. YouTube's is
+the cheapest by far and covers the channel that carries the reach. **When the
+operator asks about connecting the platforms, recommend the YouTube Data API
+first and alone**; proposing four integrations at once to a solo operator is how
+none of them get done.
 
 ### Which numbers actually decide
 
 Views are the least useful figure on the list. Rank a short-form video by:
 
-1. **Hook rate** — the share still watching at ~3 seconds. Everything downstream
-   is conditional on this.
-2. **Average view duration as a fraction of length** — a 35-second video watched
-   for 20 seconds beat a 60-second one watched for 25.
-3. **Saves and shares** over likes — they signal the content was worth keeping
-   or worth someone else's reputation.
-4. **Profile visits and link clicks** — the only metrics that connect to the
-   site, and the reason any of this is being done.
+1. **Hook rate** — the share still watching at ~3 seconds. Everything downstream is conditional on it.
+2. **Average view duration as a fraction of length** — a 35-second video watched for 20 beat a 60-second one watched for 25.
+3. **Saves and shares** over likes — worth keeping, or worth someone else's reputation.
+4. **Profile visits and link clicks** — the only metrics that reach the site.
 
-The launch plan's 70 % retention-at-three-seconds figure is that plan's working
-target, not a verified benchmark. Treat it as an internal goal and say so.
+**Never compare a view across platforms.** A YouTube Shorts view, a LinkedIn
+video view and an Instagram Reels view count different things.
 
-## Step 3 — Decide the site plan
+## Step 3 — Decide the social plan
 
-The corpus is roughly 1 700 fiches and the audit measures a few dozen visited
-URLs. The bottleneck is not production; it is that almost nothing published is
-reachable by anyone who is not already looking for it.
+Work from `reference/platforms.md`. The cadence is settled — three videos a week,
+fixed days, Sunday batch — and is not re-proposed without a measured reason. What
+varies per channel is the **cut, the caption, and whether video is the right
+format there at all**.
 
-Work in this order:
+Per proposed piece, state: the pillar and the slot it fills; the single claim it
+makes and where the corpus sources it; the hook, written out; the channels and
+what changes between them; and the comparable that justifies it, with numbers.
 
-1. **Convert dead ends before creating pages.** A page the report marks as a
-   dead end already has the audience a new page would have to earn. That
-   conversion is `/ethniafrica-experience-optimizer`'s to design — hand it over
+A video whose claim is not already in a fiche is a research request first — hand
+it to `/afrik-curator` before scripting.
+
+## Step 4 — Decide the site plan
+
+The corpus is roughly 1 700 fiches against a few dozen visited URLs. The
+bottleneck is not production; it is that almost nothing published is reachable by
+someone not already looking for it.
+
+1. **Convert dead ends before creating pages.** A page the report marks as a dead
+   end already has the audience a new page would have to earn. Designing that
+   conversion belongs to `/ethniafrica-experience-optimizer` — hand it over
    rather than answering it with more content.
-2. **Build the cluster around demand that already lands.** Where the report
-   shows an entry page with real visitors, the pages that answer the _next_
-   question belong around it, linked both ways. One pillar page, its satellites,
-   reciprocal links.
-3. **Exploit the corpus as a template, not as 1 700 decisions.** Fiche families
-   are structurally identical, which is exactly the condition under which
-   programmatic pages work: one well-designed template improves every fiche of
-   that type at once. Propose template changes with a per-type reach figure.
-4. **Only then propose new subjects**, and only where the report shows the
-   intent arriving and the corpus failing to answer it.
-
-Anything that adds or changes a claim on a fiche is handed to `/afrik-curator`,
-which writes it with tiered sources. This skill decides the subject; it does not
-author sourced content.
-
-## Step 4 — Decide the social plan
-
-The four rotating pillars are fixed by the launch plan and are good: **Le vrai
-nom · Ce que ce nom veut dire · La carte cachée · Mythe déconstruit.** Fill
-slots by rotation; do not invent a fifth pillar without saying what it replaces.
-
-Per proposed piece, state:
-
-- The pillar, and the calendar slot it fills.
-- The single claim the video makes, and where in the corpus it is sourced. A
-  video whose claim is not in a fiche is a research request first — hand it to
-  `/afrik-curator` before scripting.
-- The hook, written out. The first three seconds are the whole decision.
-- The channels, and what changes between them. The existing captions show the
-  established register: TikTok short and interrogative, Instagram longer with
-  the sourced detail, both hashtagged.
-- The comparable that justifies it, with numbers from the ledger.
-
-### Channel weighting follows the measurement, not the plan
-
-The 2026-09-07 audit found LinkedIn carrying **45 % of all site traffic** while
-the launch plan schedules LinkedIn for Phase 3, and found TikTok, Instagram and
-YouTube contributing **no attributable traffic at all** despite three Shorts
-published two days earlier. Before concluding the video channels fail, check
-whether outbound links carry UTM parameters — untagged social referrers land in
-Direct, and the whole video-to-site link is then simply unmeasured. Fix the
-instrumentation before re-planning the channel mix; recommend the tagging as a
-prerequisite, not as an afterthought.
+2. **Build the cluster around demand that already lands**, linked both ways.
+3. **Exploit the corpus as a template, not as 1 700 decisions.** One template
+   change improves every fiche of that type at once. Give the per-type reach.
+4. **Only then propose new subjects**, where the report shows intent arriving and
+   the corpus failing to answer it.
 
 ## Step 5 — Deliver, and never publish unasked
 
-Output one plan per session:
-
-- **Site**: ranked, each item with its measured justification and its owner skill.
-- **Social**: the next slots filled, each with pillar, claim, source, hook,
-  channels and comparable.
-- **Instrumentation**: anything blocking measurement, first, because it makes
-  every later number honest.
-- **Ledger delta**: what was collected this session and what could not be.
+Output one plan: the social slots filled, the site items ranked, anything
+blocking measurement first, and what was collected this session versus what could
+not be.
 
 **Publishing, posting, scheduling and sending are never done from this skill
-without the user's explicit approval for that specific post.** Draft the copy,
-show it, and stop. The library's own record is clear that automated video upload
-to TikTok and Instagram does not work in this environment — the file registers
-and the composer never advances — so those two remain manual regardless.
+without the operator's explicit approval for that specific post.** Draft the copy,
+show it, stop. Automated video upload to TikTok and Instagram does not work in
+this environment — the file registers and the composer never advances — so those
+two are manual regardless.
 
 ## Editorial constraints that bind published copy
 
-- **Source tiers**: every claim carries its source and its tier
-  (`official` / `referenced` / `unverified`). Nothing is excluded for being
-  weak; everything is labelled. Wikipedia is not a source — cite what it led to.
+- **Source tiers**: every claim carries its source and tier (`official` /
+  `referenced` / `unverified`). Nothing is excluded for being weak; everything is
+  labelled. Wikipedia is not a source — cite what it led to.
 - **Reader-facing register**: never let the workshop's vocabulary reach the
-  reader. No file paths, no `PPL_`/`FLG_`/`PAT_` identifiers, no _file
-  d'attente_, _la passe_, _protocole de recherche_. This binds social copy as
-  much as fiche text.
+  reader. No file paths, no `PPL_`/`FLG_`/`PAT_` identifiers, no _file d'attente_,
+  _la passe_, _protocole de recherche_. This binds social copy as much as fiche
+  text.
 - **Colonial terminology**: keep the colonial-era name, explain why it is
-  problematic, and always surface the autonym. Half the pillar rotation is built
-  on exactly this move.
-- All documentation and commit messages in **English**; reader-facing and social
-  copy in **French**, which is the site's only language.
+  problematic, always surface the autonym. Half the pillar rotation is built on
+  exactly this move.
+- Documentation and commits in **English**; reader-facing and social copy in
+  **French**, the site's only language.
 
 ## Boundaries
 
@@ -200,5 +161,5 @@ and the composer never advances — so those two remain manual regardless.
 - Writing or sourcing fiche claims → `/afrik-curator`.
 - Filing the work as tickets → `/ethniafrica-spec`.
 
-This skill chooses subjects and channels. It does not write fiches, design
-pages, or post.
+This skill chooses subjects and channels. It does not write fiches, design pages,
+or post.
