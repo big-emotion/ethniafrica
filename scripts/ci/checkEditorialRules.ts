@@ -539,7 +539,7 @@ const CHRONOLOGY_RULE: RuleName = "chronology-symmetry";
  * When it reaches 0, delete the ratchet and let the findings be errors: the
  * rule becomes a plain gate and the asymmetry cannot return.
  */
-export const UNDATED_POLITY_CEILING = 96;
+export const UNDATED_POLITY_CEILING = 95;
 
 interface KingdomShape {
   name?: unknown;

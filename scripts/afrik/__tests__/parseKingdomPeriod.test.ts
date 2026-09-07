@@ -206,7 +206,7 @@ describe("parseKingdomPeriod", () => {
   it("derives bounds for the datable share of the real corpus", () => {
     const labels = corpusPeriodLabels();
     const parsed = labels.filter((l) => parseKingdomPeriod(l) !== null);
-    expect(labels).toHaveLength(281);
+    expect(labels).toHaveLength(279);
     expect(parsed.length).toBeGreaterThanOrEqual(180);
   });
 });

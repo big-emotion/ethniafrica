@@ -172,12 +172,12 @@
       "rawReferenceUpperBoundPercent": 29.8
     },
     "history": {
-      "historicalNameEntries": 3,
+      "historicalNameEntries": 4,
       "historicalNamePeriodsFilled": 5,
       "historicalNamePeriodsTotal": 5,
       "historicalFactPeriodsFilled": 6,
       "historicalFactPeriodsTotal": 6,
-      "declaredPoliticalEntities": 9
+      "declaredPoliticalEntities": 7
     },
     "patronyms": {
       "directCountryFiches": 35,
@@ -193,10 +193,10 @@
     },
     "sources": {
       "countryFiche": {
-        "total": 4,
-        "accepted": 4,
+        "total": 21,
+        "accepted": 21,
         "acceptedPercent": 100,
-        "withUrl": 4,
+        "withUrl": 21,
         "withUrlPercent": 100,
         "needsReview": 0
       },
@@ -488,7 +488,7 @@
     {
       "id": "COD-HISTORY",
       "priority": "P1",
-      "status": "surface_proposal_ready_editorial_approval_required",
+      "status": "source_json_first_wave_applied_additional_research_pending",
       "goal": "Extend the timeline before the best-known kingdoms and represent historical entities accurately.",
       "findings": [
         "The kingdoms array currently mixes precolonial polities, colonial administrations, and the modern republic.",
@@ -501,15 +501,13 @@
         "Nine modern events now provide a sourced first-wave chronology from independence on 30 June 1960 through the first peaceful transfer of presidential power on 24 January 2019.",
         "The modern chronology separates independence, the Congo Crisis, Mobutu's regime and state-renaming programme, the two Congo wars, the 2002–2003 negotiated transition, the 2006 constitutional-electoral transition, and the 2019 transfer of power.",
         "Conflict ceasefires and political agreements are not treated as clean endpoints, and the 2019 peaceful-transfer label carries an explicit electoral-process caveat.",
-        "The proposal defines five distinct presentation sections and deliberately does not compute a global history-completeness percentage."
+        "The proposal defines five distinct presentation sections and deliberately does not compute a global history-completeness percentage.",
+        "The reviewed first-wave history was applied to the country source JSON on 2026-09-07 without claiming exhaustive national coverage or database synchronization."
       ],
       "remaining": [
-        "Approve or amend the taxonomy, geographic-fit decisions, and first-wave entries in COD-history.json before modifying production country data.",
         "Design and test a mobile-first country-history presentation that separates archaeology, political formations, colonial administrations, and independent-state periods.",
-        "Replace the production kingdoms array and compressed prose only after editorial approval, preserving field-level source links.",
         "Obtain a dedicated scholarly source for the broader Mangbetu chronology and a source for regional variation in Mongo political organization.",
         "Review additional regional formations in evidence-prioritized waves; the ten-row audit is a controlled first scope, not an exhaustive national inventory.",
-        "Approve or amend the nine modern-event rows and their caveats before modifying production country data.",
         "Review post-2019 developments as a separately versioned contemporary-history pass with an explicit cutoff date."
       ],
       "researchLeads": [
@@ -591,19 +589,21 @@
       "findings": [
         "The country fiche previously contained 10 source rows: 2 accepted exact sources and 8 generic needs_review rows.",
         "All 8 generic rows were reviewed, approved for removal, and removed from the source JSON on 2026-09-07; the 2 retained rows have exact URLs and accepted tiers.",
-        "Two exact name-origin references were added on 2026-09-07, bringing the current country source register to 4 accepted rows with resolvable URLs.",
+        "Two exact name-origin references were added on 2026-09-07, bringing the pre-history-application country source register to 4 accepted rows with resolvable URLs.",
+        "Seventeen accepted history references were added with the reviewed first-wave chronology on 2026-09-07, bringing the country source register to 21 rows with explicit tiers and URLs; this does not supply the unsupported people percentages or broad culture fields.",
         "The two CIA placeholders cannot be repaired as live current-country citations because The World Factbook was retired on 2026-02-04 and the former country URL redirects to the retirement notice.",
         "The vague Ethnologue row is not reproducible without an edition and license basis; the pinned Glottolog 5.3 inventory is proposed for language reconciliation instead.",
         "Official census-status documentation identifies 1984 as the latest completed national census, while the 2013–2014 DHS is a sample survey; neither validates a current exhaustive people denominator.",
         "The country-name origin can be stated conservatively: the country is named after the Congo River, whose Congo/Kongo name is historically connected to the Kongo kingdom; the deeper lexical derivation remains uncertain.",
-        "Detailed people percentages and broad cultural fields remain unsupported and must not be marked validated."
+        "Detailed people percentages and broad cultural fields remain unsupported and must not be marked validated.",
+        "All 21 country source JSON URLs returned an HTTP response below 500 on 2026-09-07; 403 and 429 responses establish endpoint reachability under the repository rule but do not replace a content review."
       ],
       "remaining": [
         "Select an enumerated scholarly people inventory as the canonical record-linkage baseline, or expose multiple non-additive scopes.",
         "Attach accepted sources to detailed people percentages or remove those percentages from validated display.",
         "Add scoped sources for culture, religion, lifestyles, social organization, and regional relations.",
         "Add field-level provenance to the country model or generate an equivalent auditable mapping.",
-        "Run the repository URL validator after its pre-existing server-only runtime failure is repaired, then run the AFRIK data validators before publication."
+        "After an authorized database synchronization, run the repository source-URL health checker against the projected Supabase source rows."
       ]
     }
   ],
