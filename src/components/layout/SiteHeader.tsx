@@ -605,7 +605,13 @@ export function SiteHeader({
           <SheetTitle className="sh-tray-title">{t.hubs.menuLabel}</SheetTitle>
           <LanguageSwitcher language={language} appearance="row" />
           {ACCESS_MODES.map((axis) => {
-            const modules = getNavModules(axis);
+            // Everything the fold opens onto, not everything the registry
+            // declares: the dossiers axis also carries its corpus, and a
+            // badge reading 4 over eleven entries is a count that contradicts
+            // the list under it.
+            const entryCount =
+              getNavModules(axis).length +
+              (RUBRIC_FILED_AXES.includes(axis) ? dossierMenu.length : 0);
             const expanded = openTrayAxis === axis;
 
             return (
@@ -623,7 +629,7 @@ export function SiteHeader({
                   >
                     <span className="sh-seed" aria-hidden="true" />
                     {axisLabel(axis)}
-                    <span className="sh-fold-count">{modules.length}</span>
+                    <span className="sh-fold-count">{entryCount}</span>
                     <ChevronDown
                       className="sh-caret"
                       size={13}

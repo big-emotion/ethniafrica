@@ -686,6 +686,31 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
     }
   });
 
+  /**
+   * The tray badge counts what the fold opens onto.
+   *
+   * It read `getNavModules(axis).length` and said 4 over eleven entries the
+   * moment the dossiers left the registry — a number that contradicted the
+   * list directly under it, and one no unit test was looking at because the
+   * count and the list came from the same call until they did not.
+   */
+  // @req REQ-114 @req REQ-120
+  it("counts the corpus in the tray badge, not just the registry", () => {
+    renderHeader();
+    fireEvent.click(screen.getByTestId(BURGER));
+    const tray = screen.getByRole("dialog");
+
+    const fold = within(tray).getByRole("button", {
+      name: new RegExp(ACCESS_MODE_LABELS.dossiers),
+    });
+    fireEvent.click(fold);
+
+    const listed = within(tray).getAllByTestId(/^site-nav-module-/);
+
+    expect(fold).toHaveTextContent(String(listed.length));
+    expect(listed.length).toBeGreaterThan(getNavModules("dossiers").length);
+  });
+
   // Jouer and the atlas are untouched: both declare no rubric filing, so the
   // panel that shipped for them is the panel they keep.
   // @req REQ-120
