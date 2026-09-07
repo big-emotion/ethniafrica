@@ -13,39 +13,16 @@ import {
   type RefObject,
 } from "react";
 import {
-  ArrowUpDown,
-  BookUser,
   Castle,
   ChevronDown,
   Circle,
-  Crown,
-  Drum,
-  Eye,
   Flame,
-  FolderTree,
   Gem,
-  Globe,
-  Handshake,
-  HelpCircle,
-  History,
-  Landmark,
-  Languages,
-  Link2,
-  Maximize2,
-  MapPin,
   Menu,
-  Network,
-  Route,
   Ruler,
-  Scale,
-  Scissors,
   Search,
   Signature,
-  Sparkles,
   ChartNoAxesColumnIncreasing,
-  Tag,
-  Tags,
-  Users,
   type LucideIcon,
 } from "lucide-react";
 
@@ -71,6 +48,7 @@ import {
   type ModuleGroupId,
 } from "@/lib/hubs/moduleRegistry";
 import { getGroupedModules } from "@/lib/hubs/moduleGroups";
+import { glyphForModule } from "@/lib/hubs/moduleGlyphs";
 import { useDossierMenu } from "@/components/dossiers/DossierMenuProvider";
 import type { DossierMenuEntry } from "@/lib/dossiers/menu";
 import type { DossierRubric } from "@/lib/afrik/parsers/dossierTypes";
@@ -106,47 +84,6 @@ import type { Language } from "@/types/shared";
 // The charter's own figure, and the width `FicheHeroBand` already switches
 // its band at, so the header and the band below it change shape together.
 const NAV_BREAKPOINT_PX = 768;
-
-/**
- * One glyph per module, from the library rather than the mockup's hand-drawn
- * set: half hand-drawn and half library would read as two different stroke
- * weights side by side. Sized 15px at stroke 1.9 — the mockup's own metrics.
- *
- * Keyed loosely rather than by `HubModuleDefinition["id"]`, so the map may
- * hold a key the registry no longer files — the fallback below is `Circle`,
- * and a module with no glyph is a smaller failure than a build that breaks
- * because a game was retired.
- */
-const MODULE_GLYPHS: Record<string, LucideIcon> = {
-  peuples: Users,
-  pays: Globe,
-  familles: Network,
-  recherche: Search,
-  noms: Tag,
-  // Three modules had been reaching the fallback in silence — `anecdotes`
-  // since the bank shipped, `langues` and `patronymes` since ETNI-1801 added
-  // them. Each was wearing a blank disc beside twenty modules carrying a sign,
-  // which no test could see and no diff showed. The contract suite of the
-  // Nommer dossier now holds this map.
-  langues: Languages,
-  patronymes: BookUser,
-  nommer: Signature,
-  anecdotes: Sparkles,
-  frise: History,
-  "regards-colonisation": Eye,
-  quiz: HelpCircle,
-  appellations: Tags,
-  "plus-ou-moins": ArrowUpDown,
-  mercator: Maximize2,
-  comparer: Scale,
-  repartition: MapPin,
-  "pays-davant": Landmark,
-  royaumes: Crown,
-  migrations: Route,
-  liens: Link2,
-  "jeu-familles": FolderTree,
-  frontieres: Scissors,
-};
 
 /**
  * A glyph per rubric, not per dossier.
@@ -362,7 +299,7 @@ export function SiteHeader({
       // trip. Asking only "does this resolve" is what had the header linking
       // modules the home and the hub were both marking Bientôt.
       offered: href !== null && isModuleOffered(definition, moduleAvailability),
-      glyph: MODULE_GLYPHS[definition.id] ?? Circle,
+      glyph: glyphForModule(definition.id),
       accent: accentForModule(definition),
       group: definition.group,
     };

@@ -138,19 +138,20 @@ describe("sitemap.xml", () => {
   });
 
   /**
-   * The three axis landing pages are gone (ETNI-1555). Asserted on the exact
-   * URL rather than as a fragment, because `/fr/atlas` is a prefix of the
-   * three facet routes the sitemap must keep publishing.
+   * The three axis hubs are pages again (brand charter §8.6). Asserted on the
+   * exact URL rather than as a fragment, because `/fr/atlas` is a prefix of
+   * the facet routes the sitemap also publishes — a `toContain` on the
+   * fragment would pass on `/fr/atlas/peuples` alone and say nothing about the
+   * hub. The three arrive through `getSiteTreePaths`, which is this file's
+   * only feed.
    */
   // @req REQ-114
-  it("publishes none of the retired axis landing pages", async () => {
+  it("publishes each axis hub", async () => {
     const all = await urls();
     const base = `https://${CANONICAL_DOMAIN}`;
 
-    for (const page of ["atlasHub", "jeuxHub"] as const) {
-      expect(all, page).not.toContain(
-        `${base}${getLocalizedRoute("fr", page)}`
-      );
+    for (const page of ["atlasHub", "dossiersHub", "jeuxHub"] as const) {
+      expect(all, page).toContain(`${base}${getLocalizedRoute("fr", page)}`);
     }
   });
 

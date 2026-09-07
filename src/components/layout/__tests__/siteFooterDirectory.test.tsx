@@ -4,7 +4,10 @@ import { describe, expect, it, vi } from "vitest";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { getTranslation } from "@/lib/translations";
 import { PRODUCT_NAME, PRODUCT_TAGLINE } from "@/lib/brand";
+import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
+import { ACCESS_MODES } from "@/lib/hubs/moduleRegistry";
 import { getLocalizedRoute } from "@/lib/routing";
+import { getSiteTree } from "@/lib/siteTree";
 
 vi.mock("@/hooks/use-consent", () => ({
   useConsent: () => ({ setShowBanner: vi.fn() }),
@@ -43,67 +46,64 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
     expect(within(brand).queryByRole("link")).toBeNull();
   });
 
+  /**
+   * The Explorer column is the three axes, and only the three.
+   *
+   * It listed the six corpus indexes — pays, peuples, familles, langues,
+   * patronymes and the unlisted appellations — for as long as ETNI-1555 left
+   * the axes without addresses of their own. The hubs came back on
+   * 7 September 2026 (brand charter §8.6) and the column names them, so the
+   * bar at the top of a page and the column at the foot of it now offer the
+   * reader the same three doors instead of two different navigations.
+   */
   // @req REQ-046
-  it("opens the three explorer rubrics", () => {
+  it("opens the three axis hubs, and nothing beside them", () => {
     render(<SiteFooter language="fr" />);
 
     const explorer = screen.getByRole("navigation", {
       name: footer.directory.explorerHeading,
     });
 
-    expect(
-      within(explorer).getByRole("link", { name: footer.directory.countries })
-    ).toHaveAttribute("href", getLocalizedRoute("fr", "countries"));
-    expect(
-      within(explorer).getByRole("link", { name: footer.directory.peoples })
-    ).toHaveAttribute("href", getLocalizedRoute("fr", "peoples"));
-    expect(
-      within(explorer).getByRole("link", { name: footer.directory.families })
-    ).toHaveAttribute("href", getLocalizedRoute("fr", "families"));
-  });
+    for (const axis of ACCESS_MODES) {
+      expect(
+        within(explorer).getByRole("link", {
+          name: footer.directory.axes[axis],
+        })
+      ).toHaveAttribute("href", getAxisHubRoute("fr", axis));
+    }
 
-  // The languages and patronymes index pages (ETNI-1795) ship in the same
-  // rubric as pays/peuples/familles — a page nobody can navigate to is not
-  // browsable (ETNI-1801).
-  // @req REQ-139
-  it("adds the languages and patronymes index pages to the explorer rubric", () => {
-    render(<SiteFooter language="fr" />);
-
-    const explorer = screen.getByRole("navigation", {
-      name: footer.directory.explorerHeading,
-    });
-
-    expect(
-      within(explorer).getByRole("link", { name: footer.directory.languages })
-    ).toHaveAttribute("href", getLocalizedRoute("fr", "languages"));
-    expect(
-      within(explorer).getByRole("link", {
-        name: footer.directory.patronymes,
-      })
-    ).toHaveAttribute("href", getLocalizedRoute("fr", "patronymes"));
+    expect(within(explorer).getAllByRole("link")).toHaveLength(
+      ACCESS_MODES.length
+    );
   });
 
   /**
-   * Where Appellations landed when the header stopped offering it
-   * (atlas-charter.md §3, 7 September 2026). The menu is curated — six rows a
-   * first-time reader can decode — and this directory is exhaustive, which is
-   * the trade that makes unlisting a module a relegation rather than a burial.
-   * Delete this link and `unlisted` becomes the feature flag the module
-   * charter forbids, wearing a new word.
+   * The corpus indexes did not become unreachable; they became one click
+   * further on. Each is offered inside its own hub, and the plan du site keeps
+   * naming every one of them — which is the guarantee the assertion this
+   * replaces was actually protecting.
+   *
+   * Appellations is the case that matters, because it is `unlisted`: the
+   * header withholds its row deliberately (atlas-charter §3), so the plan is
+   * now the one surface that names it. Delete it from there and `unlisted`
+   * becomes the feature flag the module charter forbids, wearing a new word.
    */
   // @req REQ-114
-  it("keeps the unlisted appellations index reachable from the directory", () => {
-    render(<SiteFooter language="fr" />);
+  it("keeps every index it stopped listing named by the plan du site", () => {
+    const planned = getSiteTree("fr").flatMap((section) =>
+      section.links.map((link) => link.href)
+    );
 
-    const explorer = screen.getByRole("navigation", {
-      name: footer.directory.explorerHeading,
-    });
-
-    expect(
-      within(explorer).getByRole("link", {
-        name: footer.directory.appellations,
-      })
-    ).toHaveAttribute("href", getLocalizedRoute("fr", "names"));
+    for (const page of [
+      "countries",
+      "peoples",
+      "families",
+      "languages",
+      "patronymes",
+      "names",
+    ] as const) {
+      expect(planned, page).toContain(getLocalizedRoute("fr", page));
+    }
   });
 
   /**

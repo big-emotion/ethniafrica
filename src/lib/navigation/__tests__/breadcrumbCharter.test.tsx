@@ -32,17 +32,22 @@ import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
 
 describe("deriveTrail — the trail comes from the route", () => {
   /**
-   * The axis crumb names the access mode the page sits under and links
-   * nowhere. It once pointed at the axis landing page; ETNI-1555 deleted the
-   * three of them, because the reader picks a module and never lands on an
-   * intermediate page — so the crumb is what the atlas charter already called
-   * it, a non-navigating heading.
+   * The axis crumb names the access mode the page sits under and opens it.
+   *
+   * It pointed nowhere between ETNI-1555 and 7 September 2026, while the three
+   * axis landing pages did not exist — the atlas charter called it a
+   * non-navigating heading for exactly as long as that was true. The hubs came
+   * back on the spread of brand charter §8.6, and a crumb that names a page
+   * the site serves and refuses to open it is the worse of the two shapes.
    */
   // @req REQ-114
-  it("opens on the home and names the axis without linking to it", () => {
+  it("opens on the home and links the axis to its hub", () => {
     expect(deriveTrail(getLocalizedRoute("fr", "countries"))).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: ACCESS_MODE_LABELS.atlas },
+      {
+        label: ACCESS_MODE_LABELS.atlas,
+        href: getLocalizedRoute("fr", "atlasHub"),
+      },
       { label: "Pays" },
     ]);
   });
@@ -93,14 +98,20 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("opens a fiche's trail on its own hub, at the route the slug table gives", () => {
     expect(deriveTrail(getCountryRoute("fr", "BEN"), "Bénin")).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: ACCESS_MODE_LABELS.atlas },
+      {
+        label: ACCESS_MODE_LABELS.atlas,
+        href: getLocalizedRoute("fr", "atlasHub"),
+      },
       { label: "Pays", href: getLocalizedRoute("fr", "countries") },
       { label: "Bénin" },
     ]);
     expect(deriveTrail(getFamilyRoute("fr", "FLG_KHOE"), "Khoe-Kwadi")).toEqual(
       [
         { label: "Accueil", href: "/fr" },
-        { label: ACCESS_MODE_LABELS.atlas },
+        {
+          label: ACCESS_MODE_LABELS.atlas,
+          href: getLocalizedRoute("fr", "atlasHub"),
+        },
         { label: "Familles", href: getLocalizedRoute("fr", "families") },
         { label: "Khoe-Kwadi" },
       ]
@@ -113,7 +124,10 @@ describe("deriveTrail — the trail comes from the route", () => {
       deriveTrail(getPeopleLinksRoute("fr", "PPL_YORUBA"), "Yoruba")
     ).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: ACCESS_MODE_LABELS.atlas },
+      {
+        label: ACCESS_MODE_LABELS.atlas,
+        href: getLocalizedRoute("fr", "atlasHub"),
+      },
       { label: "Peuples", href: getLocalizedRoute("fr", "peoples") },
       { label: "Yoruba", href: getPeopleRoute("fr", "PPL_YORUBA") },
       { label: "Liens" },
@@ -126,7 +140,10 @@ describe("deriveTrail — the trail comes from the route", () => {
 
     expect(trail).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: ACCESS_MODE_LABELS.atlas },
+      {
+        label: ACCESS_MODE_LABELS.atlas,
+        href: getLocalizedRoute("fr", "atlasHub"),
+      },
       { label: "Pays", href: getLocalizedRoute("fr", "countries") },
     ]);
     expect(JSON.stringify(trail)).not.toContain("BEN");
@@ -227,7 +244,10 @@ describe("deriveTrail — the trail comes from the route", () => {
       )
     ).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: ACCESS_MODE_LABELS.jeux },
+      {
+        label: ACCESS_MODE_LABELS.jeux,
+        href: getLocalizedRoute("fr", "jeuxHub"),
+      },
       { label: "La taille qu'on vous a cachée" },
     ]);
   });
@@ -241,7 +261,10 @@ describe("deriveTrail — the trail comes from the route", () => {
   it("names a known sub-route from the table rather than the entity label", () => {
     expect(deriveTrail(`${getLocalizedRoute("fr", "quiz")}/score`)).toEqual([
       { label: "Accueil", href: "/fr" },
-      { label: ACCESS_MODE_LABELS.jeux },
+      {
+        label: ACCESS_MODE_LABELS.jeux,
+        href: getLocalizedRoute("fr", "jeuxHub"),
+      },
       { label: "Quiz", href: getLocalizedRoute("fr", "quiz") },
       { label: "Score" },
     ]);
@@ -273,25 +296,31 @@ describe("the trail a fiche renders", () => {
   });
 
   /**
-   * Two crumbs now render without an href, and they mean opposite things: the
-   * last one is where the reader stands, the axis one is a heading the reader
-   * cannot go to. Only the last may claim `aria-current`, or a screen reader
-   * is told the page is in two places at once.
+   * Exactly one crumb renders without an href, and it is the one the reader
+   * stands on. The axis crumb was the second such crumb until 7 September 2026
+   * and meant the opposite thing — a heading with nowhere to go — which is why
+   * `aria-current` had to be withheld from it by name. It is a link again, so
+   * the rule reduces to its real form: `aria-current` belongs to the last
+   * crumb and to no other, or a screen reader is told the page is in two
+   * places at once.
    */
   // @req REQ-114
-  it("marks only the reader's own crumb as current, never the axis heading", () => {
+  it("marks only the reader's own crumb as current", () => {
     render(
       <AfrikBreadcrumbs
         items={deriveTrail(getCountryRoute("fr", "BEN"), "Bénin")}
       />
     );
 
-    const axis = screen.getByText(ACCESS_MODE_LABELS.atlas);
+    const axis = screen.getByRole("link", { name: ACCESS_MODE_LABELS.atlas });
+    expect(axis).toHaveAttribute("href", getLocalizedRoute("fr", "atlasHub"));
     expect(axis.getAttribute("aria-current")).toBeNull();
-    expect(axis.closest("a")).toBeNull();
-    expect(
-      screen.queryByRole("link", { name: ACCESS_MODE_LABELS.atlas })
-    ).toBeNull();
+
+    const current = screen
+      .getByRole("navigation")
+      .querySelectorAll('[aria-current="page"]');
+    expect(current).toHaveLength(1);
+    expect(current[0]).toHaveTextContent("Bénin");
   });
 
   /**

@@ -81,11 +81,15 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
 
   return [
     /**
-     * The three access modes were listed here as destinations of their own.
-     * They are not pages: ETNI-1555 deleted the axis landing pages, because
-     * the reader picks a module and never stops on an intermediate level.
-     * What is left is the accueil, where the three axes deploy their modules
-     * in place — and the three rubrics below, which are those axes.
+     * The three access modes are destinations again. ETNI-1555 had deleted
+     * their landing pages, so each axis was a rubric heading with no address
+     * of its own; the hubs came back on 7 September 2026 on the spread of
+     * brand charter §8.6, and each rubric below now opens on its own hub link.
+     *
+     * This feed is the sitemap's only source (`getSiteTreePaths`), so a page
+     * absent from here is a page no crawler is told about. That is why the
+     * three links are added here rather than in the sitemap: one list, one
+     * decision about what the site publishes.
      */
     {
       id: "accueil",
@@ -104,6 +108,11 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
       title: copy.corpus.title,
       blurb: copy.corpus.blurb,
       links: [
+        {
+          href: route("atlasHub"),
+          label: copy.corpus.hub[0],
+          note: copy.corpus.hub[1],
+        },
         {
           href: route("families"),
           label: copy.corpus.families[0],
@@ -226,6 +235,11 @@ export function getSiteTree(language: Language): SiteTreeSection[] {
       title: copy.play.title,
       blurb: copy.play.blurb,
       links: [
+        {
+          href: route("jeuxHub"),
+          label: copy.play.hub[0],
+          note: copy.play.hub[1],
+        },
         {
           href: route("quiz"),
           // Read off the registry rather than transcribed: the line below

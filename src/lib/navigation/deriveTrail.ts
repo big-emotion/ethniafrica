@@ -78,11 +78,12 @@ export function deriveTrail(
    * being an escape hatch rather than a hierarchy, because inventing a parent
    * for the legal pages would be inventing a claim about the site's shape.
    *
-   * The axis crumb carries no href. It names the access mode the page sits
-   * under; it does not lead anywhere, because there is nowhere to lead to —
-   * ETNI-1555 deleted the three axis landing pages, since a level offering no
-   * choice is not a level. The atlas charter had already called this crumb a
-   * non-navigating heading.
+   * The axis crumb carries an href. It used to carry none, and the reason was
+   * true at the time: ETNI-1555 had deleted the three axis landing pages, so
+   * there was nowhere to lead to. The three came back on 7 September 2026 on
+   * the spread of brand charter §8.6, and the crumb leads to the axis's hub —
+   * which is the level the URL has been promising since the routes nested
+   * under it.
    *
    * The axis crumb is skipped on the axis hub itself, for the same reason
    * under a different name: `Accueil › Explorer › Explorer` would name the
@@ -108,14 +109,15 @@ export function deriveTrail(
     const isAxisHub = axis !== null && AXIS_HUB_PAGE[axis] === page;
 
     if (axis && !isAxisHub) {
-      crumbs.push(
-        axis === "dossiers"
-          ? {
-              label: t.pages.dossiersHub,
-              href: getLocalizedRoute(language, "dossiersHub"),
-            }
-          : { label: t.pages[AXIS_HUB_PAGE[axis]] }
-      );
+      // Every axis crumb leads somewhere now. Dossiers was the special case
+      // only because it was the one axis ETNI-1555 left an address; the two
+      // others came back on 7 September 2026, and a crumb that names a page
+      // the site serves and refuses to open it is a worse escape hatch than
+      // no crumb at all.
+      crumbs.push({
+        label: t.pages[AXIS_HUB_PAGE[axis]],
+        href: getLocalizedRoute(language, AXIS_HUB_PAGE[axis]),
+      });
       if (axis === "dossiers") {
         const dossier = [
           ...getDossiers({ language }),
@@ -141,15 +143,13 @@ export function deriveTrail(
 
     base = getLocalizedRoute(language, page);
 
-    // A game — `/fr/jeux/mercator` — has no `PageType` of its own, so the
-    // slug table answers with the axis hub and the axis arrives here as the
-    // page rather than above it. It is the same crumb and owes the same
-    // silence: `base` still opens the walk below it, but nothing links to it.
-    crumbs.push(
-      isAxisHub
-        ? { label: t.pages[page] }
-        : { label: t.pages[page], href: base }
-    );
+    // A game — `/fr/jeux/mercator` — has no `PageType` of its own, so the slug
+    // table answers with the axis hub and the axis arrives here as the page
+    // rather than above it. It used to be silenced along with the hub itself,
+    // which meant the one crumb between the home and a game led nowhere. Both
+    // now carry the address; the hub *page* still ends up hrefless, because
+    // the rule below strips the last crumb's, and on that route this is it.
+    crumbs.push({ label: t.pages[page], href: base });
   }
 
   const tail = pathname.slice(base.length).split("/").filter(Boolean);
