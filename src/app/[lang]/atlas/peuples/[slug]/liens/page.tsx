@@ -53,10 +53,19 @@ export async function generateMetadata({
     return { title: copy.missingTitle };
   }
 
+  // The card is rebuilt with the same copy as the title. `head` was composed
+  // before the people was read, so its Open Graph half still carried the
+  // site-wide card while the title named the fiche — a shared link showed the
+  // home page's title for this chapter.
+  const title = copy.metadataTitle(people.nameMain);
+  const description = copy.description(people.nameMain);
   return {
-    ...head,
-    title: copy.metadataTitle(people.nameMain),
-    description: copy.description(people.nameMain),
+    ...(await ficheCanonical("peopleLinks", language, slug, {
+      title,
+      description,
+    })),
+    title,
+    description,
   };
 }
 

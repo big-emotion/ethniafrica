@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
-import { ficheCanonical } from "@/lib/seo/ficheCanonical";
+import { ficheHead } from "@/lib/seo/ficheHead";
 import type { Language } from "@/types/shared";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
 import { LanguageFicheTitle } from "@/components/language/LanguageFicheTitle";
@@ -27,7 +29,7 @@ export async function generateMetadata({
   params: Promise<PageParams>;
 }): Promise<Metadata> {
   const { lang, slug } = await params;
-  return ficheCanonical("language", lang as Language, slug);
+  return ficheHead("language", lang as Language, slug);
 }
 
 // ---------------------------------------------------------------------------
@@ -87,6 +89,9 @@ export default async function LanguesSlugPage({
         </FicheHeroHead>
       }
     >
+      <FicheJsonLd
+        graph={await ficheJsonLdFor("language", lang as Language, parsed.slug)}
+      />
       <FicheSequence
         language={lang as Language}
         entityType="language"

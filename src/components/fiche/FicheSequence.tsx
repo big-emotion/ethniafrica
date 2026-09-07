@@ -19,6 +19,7 @@
 
 import type { ReactNode } from "react";
 
+import { ReadingDepthProbe } from "@/components/analytics/ReadingDepthProbe";
 import { FicheChapterBar } from "@/components/fiche/FicheChapterBar";
 import { FICHE_RECORD_ANCHOR } from "@/lib/ficheChapters";
 import type { FicheEntityType } from "@/types/fiche";
@@ -119,6 +120,10 @@ export function FicheSequence({
           measure, and a column here would apply a second, wider one on top of
           it. The anchor stays because the globe's facts panel links to it. */}
       {record ? <section id={FICHE_RECORD_ANCHOR}>{record}</section> : null}
+      {/* Mounted in the shell rather than in each of the five routes: reading
+          depth is a property of a fiche, and a route that forgot the probe
+          would go missing from the histogram rather than fail visibly. */}
+      <ReadingDepthProbe surface={entityType} />
     </div>
   );
 }

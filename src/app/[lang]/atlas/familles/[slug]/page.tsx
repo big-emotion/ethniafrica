@@ -7,7 +7,7 @@ import {
   loadLanguageFamilyFiche,
 } from "@/lib/fiche/ficheExistence";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
-import { ficheCanonical } from "@/lib/seo/ficheCanonical";
+import { ficheHead } from "@/lib/seo/ficheHead";
 import { getFamilyRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 import {
@@ -15,6 +15,8 @@ import {
   getRevisionSnapshot,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
@@ -80,7 +82,7 @@ export async function generateMetadata({
   ) {
     notFound();
   }
-  return ficheCanonical("family", lang as Language, slug);
+  return ficheHead("family", lang as Language, slug);
 }
 
 // ---------------------------------------------------------------------------
@@ -238,6 +240,13 @@ export default async function FamillesSlugPage({
         </FicheHeroHead>
       }
     >
+      <FicheJsonLd
+        graph={await ficheJsonLdFor(
+          "language-family",
+          lang as Language,
+          parsed.slug
+        )}
+      />
       <FicheSequence
         language={lang as Language}
         entityType="language-family"

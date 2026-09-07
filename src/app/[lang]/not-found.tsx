@@ -1,7 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { StateMedallion } from "@/components/ui/StateMedallion";
+import { trackEvent } from "@/lib/analytics/trackEvent";
 import type { Language } from "@/types/shared";
 import { getLocalizedRoute } from "@/lib/routing";
 import { useRouteLanguage } from "@/hooks/use-language";
@@ -18,6 +20,14 @@ import { systemStatesCopy } from "@/lib/i18n/copy/systemStates";
 export default function NotFound() {
   const lang: Language = useRouteLanguage();
   const copy = systemStatesCopy[lang].notFound;
+
+  // A 404 was invisible: Plausible records the pageview under the path that
+  // failed, with nothing marking it as a failure, so a dead inbound link and a
+  // real page read the same in the dashboard. The path is already the event's
+  // page, so this only has to say that it was not found.
+  useEffect(() => {
+    trackEvent("page:not_found");
+  }, []);
 
   return (
     <div className="min-h-[60vh] flex flex-col items-center justify-center bg-afh-bg-warm px-4 py-12">

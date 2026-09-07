@@ -456,68 +456,27 @@ export function readerFacingProseFields(fiche: Fiche): ProseField[] {
 }
 
 /**
- * What marks a sentence as written for the curator rather than for the reader.
+ * The reader-facing register moved to `src/lib/editorial/readerRegister` when
+ * it gained a second caller with the opposite timing: this gate reads it at
+ * build time to refuse a fiche, and `lib/seo/ficheMetadata` reads it at request
+ * time to refuse a title it would otherwise print into a search result. Two
+ * copies of the vocabulary could disagree about what a reader may see, which is
+ * the one thing a single exported constant exists to prevent.
  *
- * Three kinds, and the third is the one worth naming. A repository path or a
- * raw `PPL_`/`FLG_`/`PAT_` identifier is obvious once seen. The pipeline's own
- * vocabulary is not: "la file d'attente des candidats", "le protocole de
- * recherche par fiche", "la revue claim-level reste requise" all read as
- * ordinary French, so they survived every review — while telling the visitor
- * about a work queue, a research backlog and an unresolved tier that describe
- * how the atlas is made, not what it knows.
- *
- * The reader is owed the silence itself ("l'atlas ne documente pas encore ce
- * point"), never the reason the workshop has not filled it yet.
+ * Re-exported here because this module is where CLAUDE.md and the rule's own
+ * tests say the vocabulary is found.
  */
-export interface RegisterPattern {
-  label: string;
-  pattern: RegExp;
-}
+import {
+  type RegisterPattern,
+  INTERNAL_REGISTER_PATTERNS,
+  INTERNAL_REGISTER_PATTERNS_EN,
+} from "@/lib/editorial/readerRegister";
 
-/** The leaks that are the same in any language: paths, filenames, identifiers. */
-const LANGUAGE_NEUTRAL_REGISTER_PATTERNS: ReadonlyArray<RegisterPattern> = [
-  {
-    label: "repository path",
-    pattern: /\b(?:dataset|docs|scripts|src|public)\/[\w./-]+/,
-  },
-  { label: "file name", pattern: /\b[\w-]+\.json\b/ },
-  {
-    label: "JSON field path",
-    pattern:
-      /\b(?:content|_meta)\.\w+|\bfieldPath\b|\bsourceRefs\b|\bsourceKey\b|\bverificationLead\b|\btargetPatronymeId\b|\bclassificationStatus\b/,
-  },
-  {
-    // The wildcard form matters as much as a full id: 468 alliance gap
-    // reasons told the reader no pact was found "avec une autre fiche
-    // PAT_* existante", and `PAT_*` is not a word any reader has.
-    label: "raw corpus identifier",
-    pattern: /\b(?:PPL|FLG|PAT)_(?:[A-Z0-9_]+|\*)/,
-  },
-  { label: "internal corpus label", pattern: /Corpus AFRIK\s*—/i },
-];
-
-export const INTERNAL_REGISTER_PATTERNS: ReadonlyArray<RegisterPattern> = [
-  ...LANGUAGE_NEUTRAL_REGISTER_PATTERNS,
-  {
-    label: "curation vocabulary",
-    pattern:
-      /file d'attente|passe de recherche|passe anthroponymique|protocole de recherche|claim-level|tier hérité|hors corpus|plan de couverture|vague \d+ du plan/i,
-  },
-];
-
-/**
- * The same leak, translated. A machine translation of "attend le protocole de
- * recherche par fiche" is "awaits the per-record research protocol", which
- * reads as ordinary English and passes the French list unseen.
- */
-export const INTERNAL_REGISTER_PATTERNS_EN: ReadonlyArray<RegisterPattern> = [
-  ...LANGUAGE_NEUTRAL_REGISTER_PATTERNS,
-  {
-    label: "curation vocabulary",
-    pattern:
-      /(?:candidate|work|research) queue|research (?:pass|protocol)|anthroponym pass|claim-level|inherited tier|out(?:side)? (?:of )?(?:the )?corpus|coverage plan|wave \d+ of the plan/i,
-  },
-];
+export {
+  type RegisterPattern,
+  INTERNAL_REGISTER_PATTERNS,
+  INTERNAL_REGISTER_PATTERNS_EN,
+};
 
 /**
  * `_`-prefixed files under the corpus are the curator's own worksheets — the

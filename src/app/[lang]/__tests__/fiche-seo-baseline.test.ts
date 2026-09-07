@@ -9,14 +9,17 @@
  * window in which the duplicate gets indexed instead of the original.
  *
  * So the assertions have flipped for `generateMetadata` and stayed put for
- * everything else. Each route declares what `ficheCanonical` composes and
- * nothing more: the canonical, and since REQ-141 the hreflang cluster, the
- * robots directive and the Open Graph card that follow the locales the fiche
- * is indexed in — no per-entity title, no JSON-LD, the rest of the <head>
- * still inherited from the static `metadata` in src/app/layout.tsx. Titles
- * and structured data remain legitimate later work, and remain the kind of
- * change that must rewrite this baseline deliberately rather than discover
- * it went red.
+ * everything else. Each route declares what `ficheCanonical` composes: the
+ * canonical, and since REQ-141 the hreflang cluster, the robots directive and
+ * the Open Graph card that follow the locales the fiche is indexed in.
+ *
+ * The per-entity title and the structured data this file used to hold open as
+ * "later work" arrived on 2026-09-07, and rewrote the two assertions that were
+ * guarding the decision — which is what those assertions were for. Production
+ * had been serving the root layout's title on all 3 242 sitemap URLs, and
+ * Google had sent 12 visitors in the site's lifetime. `ficheHead` composes the
+ * title now; `FicheJsonLd` emits the graph from the shell rather than from
+ * each route, so a route cannot forget it.
  *
  * What the head says is `ficheCanonical`'s business, and its own suite's
  * (src/lib/seo/__tests__/ficheCanonical.test.ts) — including the part that
@@ -168,21 +171,49 @@ describe("fiche routes — the crawler-facing surface", () => {
         expect(english.alternates?.languages).not.toHaveProperty("en");
       });
 
-      // The rest of the <head> is still the root layout's. A per-entity
-      // title is later work; asserting its absence is what makes adding one
-      // a decision rather than a side effect.
+      // The head is still composed per request, never declared statically: a
+      // static `metadata` export cannot name the entity the slug resolves to.
       // @req REQ-019
       it("adds no static metadata beside the canonical", () => {
         expect(Object.keys(routeModule)).not.toContain("metadata");
       });
 
-      // @req REQ-019
-      it("emits no structured data", () => {
+      /**
+       * The decision this baseline was holding open. Until 2026-09-07 the
+       * assertion here was that the head named nothing — all 3 242 sitemap
+       * URLs served the root layout's title, and Google had sent 12 visitors
+       * in the site's lifetime. `ficheHead` now composes a title from the
+       * fiche; what this pins is that it can never silently go back to the
+       * site-wide one.
+       */
+      // @req REQ-091
+      it("names the fiche rather than inheriting the site-wide title", async () => {
+        const metadata = await routeModule.generateMetadata({
+          params: Promise.resolve({ lang: "fr", slug }),
+        });
+
+        expect(typeof metadata.title).toBe("string");
+        expect(metadata.title).not.toBe(rootLayoutMetadata.title);
+        expect(metadata.description).not.toBe(rootLayoutMetadata.description);
+      });
+
+      /**
+       * `FicheJsonLd` is awaited, so it cannot be mounted in `FicheSequence`:
+       * an async child would make the shared shell async and every synchronous
+       * render of it — the accent-scope and one-globe-one-parchment suites
+       * included — resolve to nothing. The routes are already async server
+       * components, so the mount lives there and this assertion is what stops
+       * one of the five from quietly going missing from the graph.
+       */
+      // @req REQ-091
+      it("mounts the structured data its shell cannot", () => {
         const routeSource = readFileSync(
           resolve(process.cwd(), sourcePath),
           "utf8"
         );
 
+        expect(routeSource).toContain("<FicheJsonLd");
+        // The markup itself stays in the component, not inlined per route.
         expect(routeSource).not.toContain("ld+json");
       });
 

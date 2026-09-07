@@ -2,6 +2,8 @@ import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { render } from "@testing-library/react";
 import React from "react";
 
+import { PLAUSIBLE_SCRIPT_PATH } from "@/lib/plausible";
+
 type CrossOriginValue =
   React.ScriptHTMLAttributes<HTMLScriptElement>["crossOrigin"];
 
@@ -118,7 +120,7 @@ describe("PlausibleScript", () => {
       render(<PlausibleScript />);
       const script = document.querySelector("script");
       expect(script?.getAttribute("src")).toBe(
-        "https://plausible.io/js/script.js"
+        `https://plausible.io${PLAUSIBLE_SCRIPT_PATH}`
       );
     });
 
@@ -143,7 +145,7 @@ describe("PlausibleScript", () => {
       render(<PlausibleScript />);
       const script = document.querySelector("script");
       expect(script?.getAttribute("src")).toBe(
-        "https://stats.mysite.com/js/script.js"
+        `https://stats.mysite.com${PLAUSIBLE_SCRIPT_PATH}`
       );
     });
   });

@@ -7,7 +7,7 @@ import {
   loadCountryFiche,
 } from "@/lib/fiche/ficheExistence";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
-import { ficheCanonical } from "@/lib/seo/ficheCanonical";
+import { ficheHead } from "@/lib/seo/ficheHead";
 import { getCountryRoute } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 import {
@@ -15,6 +15,8 @@ import {
   getRevisionSnapshot,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
@@ -85,7 +87,7 @@ export async function generateMetadata({
     notFound();
   }
 
-  return ficheCanonical("country", lang as Language, slug);
+  return ficheHead("country", lang as Language, slug);
 }
 
 interface PageSearchParams {
@@ -233,6 +235,13 @@ export default async function PaysSlugPage({
         </FicheHeroHead>
       }
     >
+      <FicheJsonLd
+        graph={await ficheJsonLdFor(
+          "country",
+          lang as Language,
+          countryDetail.id
+        )}
+      />
       <FicheSequence
         language={lang as Language}
         entityType="country"
