@@ -518,6 +518,81 @@ describe("SiteHeader — reachable and mature are two questions (atlas charter �
   });
 
   /**
+   * The dossiers panel is filed under domain rubrics; the other two axes are
+   * not (REQ-120).
+   *
+   * Eleven dossiers were drawn as one flat row, ten of them **Bientôt** and
+   * four of them about the Congo, so the axis read as a site about one
+   * country. The rubrics are the fiche's own domain vocabulary, and they are
+   * headings rather than links: the editorial behind a rubric page does not
+   * exist, and a heading promises nothing a click has to honour.
+   */
+  // @req REQ-120
+  it("files the dossiers panel under domain rubrics, in registry order", () => {
+    renderHeader();
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
+
+    const rubrics = within(panel()).getAllByRole("heading", { level: 3 });
+
+    expect(rubrics.map((heading) => heading.textContent)).toEqual([
+      "Noms",
+      "Organisation",
+      "Religions",
+      "Territoires",
+      "Populations",
+      "Économie",
+    ]);
+  });
+
+  // A rubric heading is not a destination. Creating six routes the editorial
+  // has not written is the failure this avoids — the previous theme directory
+  // did exactly that, and the pages behind it are empty under the freeze.
+  // @req REQ-120
+  it("gives a rubric no link of its own", () => {
+    renderHeader();
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
+
+    for (const heading of within(panel()).getAllByRole("heading", {
+      level: 3,
+    })) {
+      expect(within(heading).queryByRole("link")).toBeNull();
+    }
+  });
+
+  // Each dossier sits under its own rubric rather than merely somewhere in
+  // the panel: a card filed under the wrong domain still renders, and only
+  // the containment says which heading it answers to.
+  // @req REQ-120
+  it("puts the four Congo dossiers under Organisation and Religions", () => {
+    renderHeader();
+    fireEvent.click(trigger(ACCESS_MODE_LABELS.dossiers));
+
+    const rubricNamed = (name: string) =>
+      within(panel()).getByRole("heading", { level: 3, name }).parentElement!;
+
+    for (const id of ["dossier-kongo", "dossier-luba", "dossier-lunda"]) {
+      expect(rubricNamed("Organisation")).toContainElement(entryFor(id));
+    }
+    expect(rubricNamed("Religions")).toContainElement(
+      entryFor("dossier-spiritualites-kongo")
+    );
+  });
+
+  // Jouer and the atlas are untouched: both declare no rubric filing, so the
+  // panel that shipped for them is the panel they keep.
+  // @req REQ-120
+  it("leaves the atlas and jouer panels flat", () => {
+    renderHeader();
+
+    for (const axis of ["atlas", "jeux"] as const) {
+      fireEvent.click(trigger(ACCESS_MODE_LABELS[axis]));
+      expect(
+        within(panel()).queryAllByRole("heading", { level: 3 })
+      ).toHaveLength(0);
+    }
+  });
+
+  /**
    * The half the header could not reach on its own — only the resolved map
    * knows whether a table answered. Exercised on `quiz`, the one module that
    * is both declared ready and backed by a table: every Comprendre module
@@ -792,10 +867,14 @@ describe("SiteHeader — the mobile tray (atlas charter §3)", () => {
         })
       ).not.toHaveAttribute("href");
       const contracts = contractsFor(panel());
-      expect(contracts.map(({ testId }) => testId)).toEqual(
-        getNavModules(axis).map(
-          (navModule) => `site-nav-module-${navModule.id}`
-        )
+      // Compared as a set: the panel must offer every module of the axis and
+      // no other. Reading order is no longer the registry's on an axis filed
+      // under rubrics (REQ-120), and it is pinned there, by rubric, rather
+      // than smuggled into this assertion about destinations.
+      expect(contracts.map(({ testId }) => testId).sort()).toEqual(
+        getNavModules(axis)
+          .map((navModule) => `site-nav-module-${navModule.id}`)
+          .sort()
       );
       panelContracts.set(axis, contracts);
     }

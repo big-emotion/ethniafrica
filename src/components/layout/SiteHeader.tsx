@@ -60,11 +60,13 @@ import { getTranslation } from "@/lib/translations";
 import {
   ACCENT_BY_ACCESS_MODE,
   ACCESS_MODES,
+  RUBRIC_FILED_AXES,
   accentForModule,
   getNavModules,
   type AccessMode,
   type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
+import { getGroupedModules } from "@/lib/hubs/moduleGroups";
 import { getModuleHref } from "@/lib/hubs/moduleHref";
 import { isModuleOffered } from "@/lib/hubs/moduleOffer";
 import { useModuleAvailability } from "@/components/hubs/ModuleAvailabilityProvider";
@@ -324,6 +326,37 @@ export function SiteHeader({
     );
   };
 
+  /**
+   * An axis's modules, filed under rubric headings where the axis declares
+   * them (`RUBRIC_FILED_AXES`) and flat where it does not.
+   *
+   * The dossiers axis grew to eleven modules and the panel still drew one row
+   * of eleven cards, four of them about the Congo — so the reader met a wave
+   * of publication where the axis meant to show a set of subjects. Filing is
+   * declared on the registry rather than tested for here, because
+   * `axis === "dossiers"` written in this file is what once gave that axis a
+   * navigation unlike its two neighbours.
+   *
+   * `headingLevel` because the same rubric sits under an `h2` in the panel and
+   * under an `h3` in the tray; the label is the same, the rank is not.
+   */
+  const axisModules = (axis: AccessMode, headingLevel: "h3" | "h4") => {
+    const modules = getNavModules(axis);
+    if (!RUBRIC_FILED_AXES.includes(axis)) return modules.map(moduleEntry);
+
+    const Heading = headingLevel;
+    return getGroupedModules(modules).map((rubric) => (
+      <section key={rubric.id} className="sh-rubric">
+        <Heading className="sh-rubric-name">
+          {t.hubs.moduleGroupNames[rubric.id]}
+        </Heading>
+        <div className="sh-rubric-entries">
+          {rubric.modules.map(moduleEntry)}
+        </div>
+      </section>
+    ));
+  };
+
   return (
     <header
       // Where the back-to-top control sends the reader — and, because a
@@ -459,9 +492,19 @@ export function SiteHeader({
               under one bar, and the axis that reads as unfinished is the one
               that looks unlike its neighbours. It also had nowhere to put
               **Bientôt**, so a withdrawn dossier and a published one were
-              spelled identically. */}
-          <div className="sh-grid">
-            {getNavModules(openAxis).map(moduleEntry)}
+              spelled identically.
+
+              The theme directory came back as headings rather than as links:
+              filing eleven dossiers under six domain rubrics gives the reader
+              the subjects without promising six pages the editorial has not
+              written. */}
+          <div
+            className={cn(
+              "sh-grid",
+              RUBRIC_FILED_AXES.includes(openAxis) && "sh-grid-filed"
+            )}
+          >
+            {axisModules(openAxis, "h3")}
           </div>
         </div>
       ) : null}
@@ -507,7 +550,7 @@ export function SiteHeader({
                         {t.chrome.allDossiers}
                       </ActionLink>
                     ) : null}
-                    {modules.map(moduleEntry)}
+                    {axisModules(axis, "h4")}
                   </div>
                 ) : null}
               </div>
@@ -833,6 +876,57 @@ export function SiteHeader({
           max-width: var(--afh-shell-max);
           margin: 0 auto;
         }
+        /* A rubric is a column, not a band, and the columns flow rather than
+           sit on a grid.
+
+           Two shapes were measured before this one. Full-width bands, one per
+           rubric, pushed the last two rubrics below the fold and left three
+           empty columns beside every rubric holding a single dossier. An
+           auto-fill grid of columns fixed the height but not the holes: six
+           rubrics into five tracks wraps the sixth onto a second row that
+           starts below the tallest of the first, so a 240px void opened in
+           the middle of the panel.
+
+           Flowed columns have no rows to align to, so a short rubric is
+           followed by the next one instead of by a hole, and the browser
+           balances the heights. Rubrics stay in reading order — down a
+           column, then across. */
+        .sh-grid-filed {
+          display: block;
+          column-width: 196px;
+          column-gap: 12px;
+        }
+        /* A rubric split across a column break would put a heading over some
+           of its dossiers and the rest under the next heading. */
+        .sh-rubric {
+          break-inside: avoid;
+          /* Flowed columns have no gap property between items; the space
+             between two rubrics is this padding. */
+          padding-bottom: 14px;
+        }
+        .sh-rubric-entries {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr);
+          gap: 9px;
+        }
+        .sh-rubric-name {
+          margin: 0 0 7px;
+          /* Sized at --afh-text-small rather than at the kicker's 12px:
+             brand-charter.md §8.5 — a label that keeps only its tracking and
+             loses its size stops filing the block and reads as a caption
+             between cards. It carries no colour of its own so it does not
+             compete with the per-module accents on the tiles below it. */
+          font-size: var(--afh-text-small);
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.16em;
+          color: var(--afh-fg-muted);
+          /* Opts out of the mobile centring styles/mobile-text.css puts on
+             the body below 768px, the way that file says a component should:
+             a rubric files the cards under it, so it has to start on the same
+             reading edge they do. */
+          text-align: left;
+        }
 
         .sh-entry {
           display: flex;
@@ -1002,6 +1096,11 @@ export function SiteHeader({
           grid-template-columns: minmax(0, 1fr);
           gap: 8px;
           padding: 0 18px 15px;
+        }
+        /* The fold's own 8px separates two cards; two rubrics are two
+           subjects and need to read as further apart than that. */
+        .sh-fold-body .sh-rubric + .sh-rubric {
+          margin-top: 7px;
         }
 
         /* Mobile first: the phone gets the burger and the tray, and the

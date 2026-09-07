@@ -1,4 +1,7 @@
-import { ACCESS_MODE_LABELS } from "@/lib/hubs/moduleRegistry";
+import {
+  ACCESS_MODE_LABELS,
+  type ModuleGroupId,
+} from "@/lib/hubs/moduleRegistry";
 import { TRAIL_PAGE_LABELS } from "@/lib/i18n/copy/trail";
 import type { Language } from "@/types/shared";
 
@@ -60,6 +63,25 @@ const en = {
     quiz: "The quiz",
     mercator: "The size they hid from you",
   } as Record<string, string>,
+  // What the reader reads over a rubric of dossiers. One domain noun each,
+  // taken from the vocabulary the country fiche already teaches — `country.ts`
+  // renders Religions · Economy · Organisation · Relations over its culture
+  // block — so a reader who has read one fiche has met these words before.
+  //
+  // Phrases were tried first and rejected in review: « Ce qu'on mesure » and
+  // « Pouvoirs et territoires » read as sentences where the surface needs a
+  // label, and a heading that is a sentence competes with the dossier titles
+  // under it instead of filing them.
+  moduleGroupNames: {
+    "dossiers-noms": "Names",
+    "dossiers-organisation": "Organisation",
+    "dossiers-religions": "Religions",
+    "dossiers-territoires": "Territories",
+    "dossiers-populations": "Populations",
+    "dossiers-economie": "Economy",
+    "jeux-pays": "Countries",
+    "jeux-quiz": "The quiz",
+  } satisfies Record<ModuleGroupId, string>,
 };
 
 type HubsCopy = typeof en;
@@ -162,6 +184,16 @@ const fr: HubsCopy = {
     "regards-colonisation": "Regards : colonisation et résistances",
     quiz: "Le quiz",
     mercator: "La taille qu'on vous a cachée",
+  },
+  moduleGroupNames: {
+    "dossiers-noms": "Noms",
+    "dossiers-organisation": "Organisation",
+    "dossiers-religions": "Religions",
+    "dossiers-territoires": "Territoires",
+    "dossiers-populations": "Populations",
+    "dossiers-economie": "Économie",
+    "jeux-pays": "Les pays",
+    "jeux-quiz": "Le quiz",
   },
 };
 

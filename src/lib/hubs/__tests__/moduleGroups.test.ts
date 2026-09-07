@@ -2,11 +2,13 @@ import { describe, expect, it } from "vitest";
 
 import { getGroupedModules } from "@/lib/hubs/moduleGroups";
 import {
-  MODULE_GROUPS,
+  MODULE_GROUP_ORDER,
   getModulesForAccessMode,
   type AccessMode,
   type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
+import { hubsCopy } from "@/lib/i18n/copy/hubs";
+import { LOCALES } from "@/lib/locale";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 
 const asModules = (definitions: HubModuleDefinition[]): HubModule[] =>
@@ -28,7 +30,7 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
   it("files every jouer module onto a shelf, in registry order", () => {
     const shelves = getGroupedModules(liveModules("jeux"));
 
-    expect(shelves.map((shelf) => shelf.group.id)).toEqual([
+    expect(shelves.map((shelf) => shelf.id)).toEqual([
       "jeux-pays",
       "jeux-quiz",
     ]);
@@ -38,27 +40,74 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
     ]);
   });
 
-  // A shelf holding one module is not a shelf: opening it would cost a
-  // click and offer no choice. The panel renders it as its module instead.
-  // Since the second cut both Jouer shelves hold one, which is why the hub
-  // reads as a flat row of cards.
+  // A shelf holding one module is not a shelf *where opening it costs a click*.
+  // Both Jouer shelves hold one since the charter's second cut, which is why
+  // that hub reads as a flat row of cards. The header panel does not consult
+  // this flag — see ModuleShelf.singleton.
   // @req REQ-120
   it("marks a shelf that holds a single module as one to skip past", () => {
     const shelves = getGroupedModules(liveModules("jeux"));
     const bySize = Object.fromEntries(
-      shelves.map((shelf) => [shelf.group.id, shelf.singleton])
+      shelves.map((shelf) => [shelf.id, shelf.singleton])
     );
 
     expect(bySize["jeux-pays"]).toBe(true);
     expect(bySize["jeux-quiz"]).toBe(true);
   });
 
-  // Explorer and Comprendre hold four and three: few enough to read at
-  // once, so nothing is filed and both surfaces stay flat.
+  /**
+   * The rubrics of the dossiers axis, and the reason this file changed.
+   *
+   * Eleven dossiers were drawn as one flat row — ten of them **Bientôt**, four
+   * of them about the Congo — so the axis read as a site about one country.
+   * Filing by domain scatters those four across Organisation and Religions,
+   * which is what a rubric is for: the reader meets a subject, not a wave of
+   * publication.
+   *
+   * Pinned member by member rather than counted, because a dossier silently
+   * landing in the wrong rubric is the failure a count cannot see.
+   */
+  // @req REQ-120
+  it("files every dossier under a domain rubric, in registry order", () => {
+    const shelves = getGroupedModules(liveModules("dossiers"));
+
+    expect(
+      shelves.map((shelf) => [shelf.id, shelf.modules.map((m) => m.id)])
+    ).toEqual([
+      ["dossiers-noms", ["nommer", "anecdotes"]],
+      [
+        "dossiers-organisation",
+        [
+          "dossier-kongo",
+          "dossier-luba",
+          "dossier-lunda",
+          "regards-colonisation",
+        ],
+      ],
+      ["dossiers-religions", ["dossier-spiritualites-kongo"]],
+      ["dossiers-territoires", ["dossier-proportions"]],
+      ["dossiers-populations", ["dossier-populations", "frise"]],
+      ["dossiers-economie", ["dossier-ressources"]],
+    ]);
+  });
+
+  // Every dossier is filed. A module that carries no rubric would vanish from
+  // a filed panel entirely, which is a worse failure than the flat row this
+  // replaced — the reader would never learn the dossier exists.
+  // @req REQ-120
+  it("leaves no dossier without a rubric", () => {
+    const unfiled = getModulesForAccessMode("dossiers").filter(
+      (definition) => !definition.group
+    );
+
+    expect(unfiled.map((definition) => definition.id)).toEqual([]);
+  });
+
+  // Explorer holds five entry points and a search: few enough to read at once,
+  // so nothing is filed and that surface stays flat.
   // @req REQ-120
   it("leaves an axis whose modules carry no shelf ungrouped", () => {
     expect(getGroupedModules(liveModules("atlas"))).toEqual([]);
-    expect(getGroupedModules(liveModules("dossiers"))).toEqual([]);
   });
 
   // A shelf whose modules were all dropped upstream — a dark feature flag,
@@ -69,16 +118,23 @@ describe("moduleGroups — the shelf a module sits on (REQ-120)", () => {
       getModulesForAccessMode("jeux").filter((m) => m.id === "quiz")
     );
 
-    expect(getGroupedModules(onlyTheQuiz).map((s) => s.group.id)).toEqual([
+    expect(getGroupedModules(onlyTheQuiz).map((s) => s.id)).toEqual([
       "jeux-quiz",
     ]);
   });
 
-  // @req REQ-120
-  it("names every shelf for the reader, not for the table behind it", () => {
-    for (const group of Object.values(MODULE_GROUPS)) {
-      expect(group.label).toMatch(/^\S/);
-      expect(group.label.length).toBeGreaterThan(2);
+  // Asserted in both locales, which the French-only label on the registry
+  // could not do: a rubric heading is reader-facing copy, and an English
+  // reader met a French heading over English dossier titles.
+  // @req REQ-120 @req REQ-145
+  it("names every shelf for the reader, in every published locale", () => {
+    for (const language of LOCALES) {
+      for (const id of MODULE_GROUP_ORDER) {
+        const label = hubsCopy[language].moduleGroupNames[id];
+
+        expect(label).toMatch(/^\S/);
+        expect(label.length).toBeGreaterThan(2);
+      }
     }
   });
 });

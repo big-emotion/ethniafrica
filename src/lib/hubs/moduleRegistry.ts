@@ -81,23 +81,66 @@ export type ModuleDataSource =
 // `jeux-peuples` went with « Eux, ou les autres ? », the only game that ever
 // stood on it (charter §1). An empty shelf is a heading with nothing under
 // it, so the shelf is removed rather than left declared.
-export type ModuleGroupId = "jeux-pays" | "jeux-quiz";
+//
+// The dossiers axis then grew from three modules to eleven without ever being
+// filed, and the header panel drew all eleven as one flat row — ten of them
+// wearing **Bientôt**, four of them about one country. A reader met the Congo
+// as the shape of the axis rather than as four of its readings.
+//
+// Its rubrics are the domain vocabulary the fiches already use on the reader —
+// `country.ts`'s culture block says Religions · Économie · Organisation ·
+// Relations — because a reader who has read one country fiche has already been
+// taught these words. The eight entries in `dossiers/themes.ts` are a
+// different organ and stay one: pairs of words (« Pouvoirs et territoires »)
+// that work as a filter on the hub and read as prose in a menu heading.
+export type ModuleGroupId =
+  | "dossiers-noms"
+  | "dossiers-organisation"
+  | "dossiers-religions"
+  | "dossiers-territoires"
+  | "dossiers-populations"
+  | "dossiers-economie"
+  | "jeux-pays"
+  | "jeux-quiz";
 
-export interface ModuleGroup {
-  id: ModuleGroupId;
-  /** What the reader reads on the shelf. */
-  label: string;
-}
-
-// Declaration order is the order the shelves appear.
+/**
+ * The order the shelves appear, and the whole of what the registry declares
+ * about them.
+ *
+ * A shelf carries no label here. It used to, and the labels were French
+ * literals in a file `check:copy-literals` does not exempt — tolerated only
+ * because they predate the gate. Rubric names are reader-facing copy, so they
+ * live where reader-facing copy lives, `i18n/copy/hubs.ts`, in both locales.
+ * Modules keep a registry `name` *and* a dictionary entry because theirs
+ * predates the i18n move; a rubric is new, so it starts with one home and
+ * cannot drift between two.
+ */
 // @req REQ-120
-export const MODULE_GROUPS: Record<ModuleGroupId, ModuleGroup> = {
-  "jeux-pays": { id: "jeux-pays", label: "Les pays" },
+export const MODULE_GROUP_ORDER: readonly ModuleGroupId[] = [
+  "dossiers-noms",
+  "dossiers-organisation",
+  "dossiers-religions",
+  "dossiers-territoires",
+  "dossiers-populations",
+  "dossiers-economie",
+  "jeux-pays",
   // The quiz questions the reader rather than the corpus, so it sits on no
-  // entity's shelf. It is alone there, which the panel reads as "render the
-  // module, not a shelf".
-  "jeux-quiz": { id: "jeux-quiz", label: "Le quiz" },
-};
+  // entity's shelf.
+  "jeux-quiz",
+];
+
+/**
+ * The axes whose panel is filed under rubric headings.
+ *
+ * Declared rather than inferred from "does this axis have shelves", because
+ * Jouer's two shelves hold one module each since the charter's scope cuts and
+ * filing them would put a heading over a single card on a surface nobody asked
+ * to change. Declared rather than written as `axis === "dossiers"` in the
+ * header, because special-casing that axis in that file is exactly what left
+ * it drawing a different navigation from its two neighbours.
+ */
+// @req REQ-120
+export const RUBRIC_FILED_AXES: readonly AccessMode[] = ["dossiers"];
 
 // Every module the registry declares is listed and linked. What a module
 // waits on is its corpus, never a switch:
@@ -200,7 +243,7 @@ export interface HubModuleDefinition {
   unlisted?: boolean;
   /** A game under the Jouer hub, addressed as /fr/jeux/<gameSlug> rather than by PageType. Keeps PageType a closed union instead of growing a variant per game. */
   gameSlug?: string;
-  /** Which shelf the module sits on. Jouer only — see ModuleGroupId. */
+  /** Which shelf or rubric the module sits under — see ModuleGroupId. */
   group?: ModuleGroupId;
   /**
    * How this module fills the home's hero slot, or absent if it cannot
@@ -407,6 +450,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   // probe to count and "static" is the honest answer.
   {
     id: "nommer",
+    group: "dossiers-noms",
     name: "Qui a donné ce nom ?",
     accessMode: "dossiers",
     page: "nommer",
@@ -418,6 +462,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "anecdotes",
+    group: "dossiers-noms",
     name: "Anecdotes",
     accessMode: "dossiers",
     page: "anecdotes",
@@ -436,6 +481,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   // reached an environment yet.
   {
     id: "dossier-proportions",
+    group: "dossiers-territoires",
     name: "Les vraies proportions",
     accessMode: "dossiers",
     page: "dossierProportions",
@@ -444,6 +490,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "dossier-populations",
+    group: "dossiers-populations",
     name: "Le poids réel",
     accessMode: "dossiers",
     page: "dossierPopulations",
@@ -452,6 +499,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "dossier-ressources",
+    group: "dossiers-economie",
     name: "Un scandale géologique",
     accessMode: "dossiers",
     page: "dossierRessources",
@@ -460,6 +508,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "dossier-kongo",
+    group: "dossiers-organisation",
     name: "Le royaume Kongo",
     accessMode: "dossiers",
     page: "dossierKongo",
@@ -468,6 +517,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "dossier-luba",
+    group: "dossiers-organisation",
     name: "Luba : pouvoir et mémoire",
     accessMode: "dossiers",
     page: "dossierLuba",
@@ -476,6 +526,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "dossier-lunda",
+    group: "dossiers-organisation",
     name: "Lunda : alliances et circulations",
     accessMode: "dossiers",
     page: "dossierLunda",
@@ -484,6 +535,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
   },
   {
     id: "dossier-spiritualites-kongo",
+    group: "dossiers-religions",
     name: "Spiritualités kongo : objets et transformations",
     accessMode: "dossiers",
     page: "dossierSpiritualitesKongo",
@@ -494,6 +546,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     // Named for what the corpus actually holds — six sourced events, not a
     // three-millennia timeline (ETNI-1198).
     id: "frise",
+    group: "dossiers-populations",
     name: "Premiers repères de migrations",
     accessMode: "dossiers",
     page: "migrations",
@@ -511,6 +564,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     // which is Comprendre's filing rule, so it belongs on the axis rather
     // than in a utility row beside it.
     id: "regards-colonisation",
+    group: "dossiers-organisation",
     name: "Regards : colonisation et résistances",
     accessMode: "dossiers",
     page: "colonization",

@@ -6,7 +6,7 @@ import {
   ACCESS_MODES,
   ACCENT_BY_ACCESS_MODE,
   MODULE_DEFINITIONS,
-  MODULE_GROUPS,
+  MODULE_GROUP_ORDER,
   accentForModule,
   getModulesForAccessMode,
   getNavModules,
@@ -464,24 +464,42 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
   });
 });
 
-describe("moduleRegistry — the shelf a jouer module sits on (REQ-120)", () => {
+describe("moduleRegistry — the shelf a module sits on (REQ-120)", () => {
   // @req REQ-120
   it("gives every game a shelf, so none can fall off the surface", () => {
     for (const def of getModulesForAccessMode("jeux")) {
       expect(def.group).toBeTruthy();
-      expect(MODULE_GROUPS[def.group]).toBeTruthy();
+      expect(MODULE_GROUP_ORDER).toContain(def.group);
     }
   });
 
-  // Grouping is a jouer concern: the other two axes hold few enough
-  // modules to read at once, and filing them would add a level for nothing.
+  // The dossiers axis is filed too, since it grew past what a flat row of
+  // eleven can be read as. Explorer is not: five entry points and a search
+  // read at once, and filing them would add a level for nothing.
   // @req REQ-120
-  it("leaves explorer and comprendre unfiled", () => {
-    for (const mode of ["atlas", "dossiers"] as const) {
-      for (const def of getModulesForAccessMode(mode)) {
-        expect(def.group).toBeUndefined();
-      }
+  it("gives every dossier a rubric the order knows", () => {
+    for (const def of getModulesForAccessMode("dossiers")) {
+      expect(def.group).toBeTruthy();
+      expect(MODULE_GROUP_ORDER).toContain(def.group);
     }
+  });
+
+  // @req REQ-120
+  it("leaves explorer unfiled", () => {
+    for (const def of getModulesForAccessMode("atlas")) {
+      expect(def.group).toBeUndefined();
+    }
+  });
+
+  // A rubric declared and never used is a heading the reader can never meet,
+  // and one used but undeclared crashes the order it is filtered through.
+  // @req REQ-120
+  it("declares exactly the rubrics the modules use", () => {
+    const used = new Set(
+      MODULE_DEFINITIONS.map((def) => def.group).filter(Boolean)
+    );
+
+    expect([...used].sort()).toEqual([...MODULE_GROUP_ORDER].sort());
   });
 
   // The quiz questions the reader rather than the corpus, so it belongs on
