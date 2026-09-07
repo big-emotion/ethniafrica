@@ -127,7 +127,8 @@ jobs:
       # Idempotent: `computeSweepPlan` skips any (fiche, template) pair that already
       # has an active question, so it can only add and revoke, never replace. A
       # change to how questions are *built* still needs the manual `--rebuild` in
-      # docs/runbooks/quiz-bank-regeneration.md.
+      # docs/runbooks/quiz-bank-regeneration.md. The omitted --lang deliberately
+      # defaults to French; English remains a separate explicit corpus gate.
       - name: Generate the recette quiz question bank
         run: npx tsx --conditions=react-server scripts/generateQuizQuestions.ts
 

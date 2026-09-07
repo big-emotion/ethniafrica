@@ -19,6 +19,7 @@ import type {
   QuizSubjectFixture,
   QuizTemplateId,
 } from "@/types/quiz";
+import type { TranslationLocale } from "@/lib/i18n/translationLocale";
 import {
   namedExonym,
   selectVerbatimFragment,
@@ -31,7 +32,6 @@ import {
 } from "@/lib/quiz/eligibility";
 import {
   isInversionTemplate,
-  QUIZ_TEMPLATE_IDS,
   TEMPLATE_FIELD_PATHS,
   templatesFor,
 } from "@/lib/quiz/segmentPolicy";
@@ -152,6 +152,8 @@ export interface SweepInput {
   countryEntries: CountryFicheEntry[];
   pools: QuizCandidatePools;
   activeQuestions: ActiveQuestionRow[];
+  /** Locale of both the corpus fixtures and the active bank supplied here. */
+  locale?: TranslationLocale;
   /**
    * Revokes every healthy active question so the sweep rebuilds it.
    *
@@ -274,7 +276,8 @@ export function resolveCurrentStimulus(
 function buildCandidate(
   templateId: QuizTemplateId,
   fiche: QuizSubjectFixture,
-  pools: QuizCandidatePools
+  pools: QuizCandidatePools,
+  locale: TranslationLocale
 ): QuizQuestionCandidate | null {
   // Same invariant as `resolveCurrentAnswer`: the template id decides which
   // kind of fiche this is, and the sweep only ever pairs the two correctly.
@@ -283,42 +286,42 @@ function buildCandidate(
 
   switch (templateId) {
     case "T1":
-      return questionTemplateBuilders.T1(people, pools.familyNames);
+      return questionTemplateBuilders.T1(people, pools.familyNames, locale);
     case "T2":
-      return questionTemplateBuilders.T2(people, pools.autonyms);
+      return questionTemplateBuilders.T2(people, pools.autonyms, locale);
     case "T3":
-      return questionTemplateBuilders.T3(people, pools.countryNames);
+      return questionTemplateBuilders.T3(people, pools.countryNames, locale);
     case "T4":
-      return questionTemplateBuilders.T4(people, pools.languages);
+      return questionTemplateBuilders.T4(people, pools.languages, locale);
     case "T6":
-      return questionTemplateBuilders.T6(people, pools.peopleNames);
+      return questionTemplateBuilders.T6(people, pools.peopleNames, locale);
     case "T7":
-      return questionTemplateBuilders.T7(people, pools.peopleNames);
+      return questionTemplateBuilders.T7(people, pools.peopleNames, locale);
     case "T8":
-      return questionTemplateBuilders.T8(people, pools.peopleNames);
+      return questionTemplateBuilders.T8(people, pools.peopleNames, locale);
     case "T9":
-      return questionTemplateBuilders.T9(people, pools.peopleNames);
+      return questionTemplateBuilders.T9(people, pools.peopleNames, locale);
     case "T10":
-      return questionTemplateBuilders.T10(people, pools.peopleNames);
+      return questionTemplateBuilders.T10(people, pools.peopleNames, locale);
     case "T11":
-      return questionTemplateBuilders.T11(people, pools.peopleNames);
+      return questionTemplateBuilders.T11(people, pools.peopleNames, locale);
     // Its options are the subject's own exonyms, so it needs no corpus pool.
     case "T12":
-      return questionTemplateBuilders.T12(people);
+      return questionTemplateBuilders.T12(people, locale);
     // Below: the country templates. Same invariant as `resolveCurrentAnswer` —
     // the template id is the discriminator the type system cannot read.
     case "T13":
-      return questionTemplateBuilders.T13(fiche, pools.countryOwnNames);
+      return questionTemplateBuilders.T13(fiche, pools.countryOwnNames, locale);
     case "T14":
-      return questionTemplateBuilders.T14(fiche, pools.countryOwnNames);
+      return questionTemplateBuilders.T14(fiche, pools.countryOwnNames, locale);
     case "T15":
-      return questionTemplateBuilders.T15(fiche, pools.countryOwnNames);
+      return questionTemplateBuilders.T15(fiche, pools.countryOwnNames, locale);
     case "T16":
-      return questionTemplateBuilders.T16(country, pools.kingdomNames);
+      return questionTemplateBuilders.T16(country, pools.kingdomNames, locale);
     case "T17":
-      return questionTemplateBuilders.T17(fiche, pools.countryOwnNames);
+      return questionTemplateBuilders.T17(fiche, pools.countryOwnNames, locale);
     case "T18":
-      return questionTemplateBuilders.T18(fiche, pools.countryOwnNames);
+      return questionTemplateBuilders.T18(fiche, pools.countryOwnNames, locale);
   }
 }
 
@@ -475,7 +478,8 @@ export function evaluateCandidate(
   fiche: QuizSubjectFixture,
   templateId: QuizTemplateId,
   assertion: AssertionBinding | undefined,
-  pools: QuizCandidatePools
+  pools: QuizCandidatePools,
+  locale: TranslationLocale = "fr"
 ): CandidateEvaluation {
   if (!assertion) {
     return { templateId, outcome: "rejected", reason: "no_assertion" };
@@ -488,7 +492,7 @@ export function evaluateCandidate(
       reason: `gate_failed:${gate.reason}`,
     };
   }
-  const candidate = buildCandidate(templateId, fiche, pools);
+  const candidate = buildCandidate(templateId, fiche, pools, locale);
   if (!candidate) {
     return {
       templateId,
@@ -567,6 +571,7 @@ export function decideRevocation(
  */
 export function computeSweepPlan(input: SweepInput): SweepPlan {
   const countryEntries = input.countryEntries;
+  const locale = input.locale ?? "fr";
   // One map over both corpora. A people id is `PPL_*` and a country id is an
   // ISO 3166-1 alpha-3, so they cannot collide, and revocation needs to find a
   // question's subject without first knowing which kind it is.
@@ -642,7 +647,8 @@ export function computeSweepPlan(input: SweepInput): SweepPlan {
           entry.fiche,
           templateId,
           assertion,
-          nearestFirst
+          nearestFirst,
+          locale
         );
         if (evaluation.outcome === "generated") {
           toInsert.push(evaluation.record);

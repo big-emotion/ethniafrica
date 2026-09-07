@@ -26,6 +26,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import { createAdminClient } from "../src/lib/supabase/admin";
 import { logger } from "../src/lib/api/logger";
 import { getQuizMinConfidence } from "../src/lib/quiz/eligibility";
+import type { TranslationLocale } from "../src/lib/i18n/translationLocale";
 import type { AutonymExonymName } from "../src/types/quiz";
 import {
   buildAssertionBindings,
@@ -51,6 +52,12 @@ import {
   type QuizQuestionRecord,
   type RevocationDecision,
 } from "./lib/quizGeneration";
+import { parseLocaleArgument } from "./lib/quizLocale";
+import {
+  localizeCountryRows,
+  localizePeopleRows,
+  type QuizTranslationRow,
+} from "./lib/quizTranslationCorpus";
 import {
   chunkForUrl,
   fetchAllPages,
@@ -182,9 +189,10 @@ async function fetchProvenance(
 
 /** Loads every people fiche + its FR65-eligible assertion bindings, and the candidate pools templates draw distractors from. */
 async function buildFicheEntries(
-  supabase: SupabaseClient
+  supabase: SupabaseClient,
+  locale: TranslationLocale
 ): Promise<BuiltCorpus> {
-  const peopleRows = await fetchAllPages<PeopleRow>((from, to) =>
+  const authoredPeopleRows = await fetchAllPages<PeopleRow>((from, to) =>
     supabase
       .from("afrik_peoples")
       .select("id, name_main, language_family_id, content")
@@ -193,19 +201,60 @@ async function buildFicheEntries(
 
   const { data: familyRows, error: familyErr } = await supabase
     .from("afrik_language_families")
-    .select("id, name_fr");
+    .select("id, name_fr, name_en");
   if (familyErr) throw familyErr;
 
   const { data: countryRows, error: countryErr } = await supabase
     .from("afrik_countries")
-    .select("id, name_fr");
+    .select("id, name_fr, name_en");
   if (countryErr) throw countryErr;
 
   const familyNameById = new Map(
-    (familyRows || []).map((row) => [row.id as string, row.name_fr as string])
+    (familyRows || [])
+      .map(
+        (row) =>
+          [
+            row.id as string,
+            (locale === "fr" ? row.name_fr : row.name_en) as string | null,
+          ] as const
+      )
+      .filter(
+        (entry): entry is readonly [string, string] =>
+          typeof entry[1] === "string" && entry[1].trim().length > 0
+      )
   );
   const countryNameById = new Map(
-    (countryRows || []).map((row) => [row.id as string, row.name_fr as string])
+    (countryRows || [])
+      .map(
+        (row) =>
+          [
+            row.id as string,
+            (locale === "fr" ? row.name_fr : row.name_en) as string | null,
+          ] as const
+      )
+      .filter(
+        (entry): entry is readonly [string, string] =>
+          typeof entry[1] === "string" && entry[1].trim().length > 0
+      )
+  );
+
+  const translationRows =
+    locale === "fr"
+      ? []
+      : await fetchAllPages<QuizTranslationRow>((from, to) =>
+          supabase
+            .from("afrik_translations")
+            .select(
+              "entity_type, entity_id, lang, content, translation_kind, translated_at, reviewed_by, model, source_hash, field_hashes, review_required"
+            )
+            .eq("lang", locale)
+            .in("entity_type", [PEOPLE_ENTITY_TYPE, COUNTRY_ENTITY_TYPE])
+            .range(from, to)
+        );
+  const peopleRows = localizePeopleRows(
+    authoredPeopleRows,
+    translationRows,
+    locale
   );
 
   const peopleProvenance = await fetchProvenance(
@@ -232,13 +281,20 @@ async function buildFicheEntries(
   }
 
   // The country corpus is read a second time, with its own columns. The first
-  // read above takes `id, name_fr` only, to resolve a people's countries by
-  // name; the templates need the fiche body as well.
-  const countryFicheRows = await fetchAllPages<CountryRow>((from, to) =>
+  // read above takes names only, to resolve a people's countries by locale;
+  // the templates need the fiche body as well.
+  const authoredCountryFicheRows = await fetchAllPages<CountryRow>((from, to) =>
     supabase
       .from("afrik_countries")
-      .select("id, name_fr, etymology, name_origin_actor, content")
+      .select(
+        "id, name_fr, name_en, name_official, etymology, name_origin_actor, content"
+      )
       .range(from, to)
+  );
+  const countryFicheRows = localizeCountryRows(
+    authoredCountryFicheRows,
+    translationRows,
+    locale
   );
 
   const countryProvenance = await fetchProvenance(
@@ -286,7 +342,8 @@ async function buildFicheEntries(
 }
 
 async function fetchActiveQuestions(
-  supabase: SupabaseClient
+  supabase: SupabaseClient,
+  locale: TranslationLocale
 ): Promise<ActiveQuestionRow[]> {
   // Paged: the bank passed 1000 rows the day the rule change let it fill, and
   // an unpaged read would have told the next sweep that 10 879 of its own
@@ -298,7 +355,7 @@ async function fetchActiveQuestions(
         "id, template_id, entity_id, field_path, correct_option, options_fr, stimulus_fr"
       )
       .is("revoked_at", null)
-      .eq("locale", "fr")
+      .eq("locale", locale)
       .range(from, to)
   );
   return data.map((row) => ({
@@ -313,7 +370,8 @@ async function fetchActiveQuestions(
 }
 
 async function fetchActiveQuestionsForAudit(
-  supabase: SupabaseClient
+  supabase: SupabaseClient,
+  locale: TranslationLocale
 ): Promise<AuditableQuestion[]> {
   // Paged for the same reason: an audit that reads 1000 of 11 879 questions
   // and reports "passed" is the failure it exists to prevent.
@@ -324,7 +382,7 @@ async function fetchActiveQuestionsForAudit(
         "id, template_id, entity_id, field_path, correct_option, options_fr, stimulus_fr, generation_run_id"
       )
       .is("revoked_at", null)
-      .eq("locale", "fr")
+      .eq("locale", locale)
       .range(from, to)
   );
   return data.map((row) => ({
@@ -373,11 +431,12 @@ async function insertGenerationRun(
 async function insertQuestions(
   supabase: SupabaseClient,
   records: QuizQuestionRecord[],
-  generationRunId: string
+  generationRunId: string,
+  locale: TranslationLocale
 ): Promise<void> {
   if (records.length === 0) return;
   const rows = records.map((record) => ({
-    locale: "fr",
+    locale,
     template_id: record.templateId,
     audience: RETIRED_AUDIENCE_COLUMN_VALUE,
     difficulty: record.difficulty,
@@ -429,10 +488,14 @@ async function revokeQuestions(
 
 async function runGenerationSweep(
   supabase: SupabaseClient,
-  rebuildAll: boolean
+  rebuildAll: boolean,
+  locale: TranslationLocale
 ): Promise<void> {
-  const { entries, countryEntries, pools } = await buildFicheEntries(supabase);
-  const activeQuestions = await fetchActiveQuestions(supabase);
+  const { entries, countryEntries, pools } = await buildFicheEntries(
+    supabase,
+    locale
+  );
+  const activeQuestions = await fetchActiveQuestions(supabase, locale);
 
   const plan = computeSweepPlan({
     entries,
@@ -440,7 +503,14 @@ async function runGenerationSweep(
     pools,
     activeQuestions,
     rebuildAll,
+    locale,
   });
+
+  // This guard runs before every write. A partial translated corpus must not
+  // revoke a healthy bank or leave an unplayable new one behind.
+  const projectedActiveCount =
+    activeQuestions.length - plan.revokedCount + plan.generatedCount;
+  assertPlayableQuestionCount(projectedActiveCount);
 
   if (plan.toRevoke.length > 0) {
     await revokeQuestions(supabase, plan.toRevoke);
@@ -452,12 +522,12 @@ async function runGenerationSweep(
     candidatesRejected: plan.rejectedCount,
   });
 
-  await insertQuestions(supabase, plan.toInsert, generationRunId);
+  await insertQuestions(supabase, plan.toInsert, generationRunId, locale);
 
   // A successful insert is not the outcome the workflow promises. The bank
   // must contain enough active questions to serve one complete session, or a
   // green run would leave the hub greyed out or expose an unusable quiz.
-  const finalActiveQuestions = await fetchActiveQuestions(supabase);
+  const finalActiveQuestions = await fetchActiveQuestions(supabase, locale);
   assertPlayableQuestionCount(finalActiveQuestions.length);
 
   logger.info("Quiz generation sweep completed", {
@@ -467,12 +537,16 @@ async function runGenerationSweep(
     questions_revoked: plan.revokedCount,
     candidates_rejected: plan.rejectedCount,
     active_question_count: finalActiveQuestions.length,
+    locale,
   });
 }
 
-async function runCheckMode(supabase: SupabaseClient): Promise<void> {
-  const { entries, countryEntries } = await buildFicheEntries(supabase);
-  const activeQuestions = await fetchActiveQuestionsForAudit(supabase);
+async function runCheckMode(
+  supabase: SupabaseClient,
+  locale: TranslationLocale
+): Promise<void> {
+  const { entries, countryEntries } = await buildFicheEntries(supabase, locale);
+  const activeQuestions = await fetchActiveQuestionsForAudit(supabase, locale);
   const knownGenerationRunIds = await fetchGenerationRunIds(supabase);
 
   assertPlayableQuestionCount(activeQuestions.length);
@@ -490,6 +564,7 @@ async function runCheckMode(supabase: SupabaseClient): Promise<void> {
       mode: "check",
       violation_count: violations.length,
       violations,
+      locale,
     });
     process.exitCode = 1;
     return;
@@ -499,11 +574,13 @@ async function runCheckMode(supabase: SupabaseClient): Promise<void> {
     script: "generateQuizQuestions",
     mode: "check",
     active_question_count: activeQuestions.length,
+    locale,
   });
 }
 
 export async function main(): Promise<void> {
   const checkMode = process.argv.includes("--check");
+  const locale = parseLocaleArgument(process.argv.slice(2));
   // Revokes and rebuilds the healthy part of the bank. Needed after a change
   // to how questions are built — the sweep alone is idempotent and would
   // leave every existing question exactly as it is. Never the default: it
@@ -516,7 +593,11 @@ export async function main(): Promise<void> {
   ) {
     logger.warn(
       "DRY RUN: Supabase env vars missing — skipping quiz generation sweep",
-      { script: "generateQuizQuestions", mode: checkMode ? "check" : "sweep" }
+      {
+        script: "generateQuizQuestions",
+        mode: checkMode ? "check" : "sweep",
+        locale,
+      }
     );
     return;
   }
@@ -524,9 +605,9 @@ export async function main(): Promise<void> {
   const supabase = createAdminClient();
 
   if (checkMode) {
-    await runCheckMode(supabase);
+    await runCheckMode(supabase, locale);
   } else {
-    await runGenerationSweep(supabase, rebuildAll);
+    await runGenerationSweep(supabase, rebuildAll, locale);
   }
 }
 

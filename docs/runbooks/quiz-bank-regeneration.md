@@ -21,6 +21,31 @@ audit trail.
 Run this when the generator's output changes — new or reordered distractor
 pools, a new template, a changed prompt. Not otherwise: it rewrites the bank.
 
+## Locale safety
+
+The command defaults to `--lang fr`, including every existing CI workflow.
+French and English are separate banks: reads, revocations, inserts and audits
+are always scoped to the selected `quiz_questions.locale`.
+
+English generation is explicit:
+
+```bash
+npx tsx scripts/generateQuizQuestions.ts --lang en
+```
+
+It consumes only people and countries that have a current English translation
+record. Missing or stale translations are excluded. Machine-only translations
+also exclude quiz fields whose translation doctrine requires human review.
+Before making any database write, the sweep verifies that the projected bank
+can fill a complete session. An incomplete English corpus therefore fails
+closed: it cannot alter the French bank and cannot publish a partial English
+bank. Regenerating English after the corpus translation wave is tracked
+separately from adding the generator support.
+
+The column names `prompt_fr`, `stimulus_fr`, `options_fr` and
+`explanation_fr` are retained for migration compatibility. The row's `locale`,
+not those historical names, defines the language of their content.
+
 ## What is automatic, and what this runbook is still for
 
 The **ordinary sweep** now runs on both environments without anyone asking:
@@ -122,11 +147,12 @@ null`; a duplicate already in the bank makes it fail to build, and the
 ### 1. Record what is there now
 
 ```sql
-select count(*) from quiz_questions where revoked_at is null;
-select template_id, count(*) from quiz_questions
-  where revoked_at is null group by template_id order by template_id;
-select entity_type, count(*) from quiz_questions
-  where revoked_at is null group by entity_type;
+select locale, count(*) from quiz_questions
+  where revoked_at is null group by locale order by locale;
+select locale, template_id, count(*) from quiz_questions
+  where revoked_at is null group by locale, template_id order by locale, template_id;
+select locale, entity_type, count(*) from quiz_questions
+  where revoked_at is null group by locale, entity_type order by locale, entity_type;
 ```
 
 Keep both numbers. They are the only way to notice that a rebuild came back
@@ -140,7 +166,7 @@ the column survives only because dropping it needs a migration. Group by
 ### 2. Audit the bank before touching it
 
 ```bash
-npx tsx scripts/generateQuizQuestions.ts --check
+npx tsx scripts/generateQuizQuestions.ts --check --lang fr
 ```
 
 Read-only, and exits non-zero on any QZ-1..QZ-5 violation. A bank that is
@@ -150,7 +176,7 @@ otherwise be blamed for what it inherited.
 ### 3. Rebuild
 
 ```bash
-npx tsx scripts/generateQuizQuestions.ts --rebuild
+npx tsx scripts/generateQuizQuestions.ts --rebuild --lang fr
 ```
 
 One `quiz_generation_runs` row is written per sweep. Note its id: it is what
@@ -198,9 +224,10 @@ select revoked_reason, count(*) from quiz_questions
 ```
 
 The active count should be at or near what step 1 recorded — with the one
-documented exception above. Then play a full session at `/fr/jeux/quiz` (the
-questions are French; `/en/games/quiz` serves the same bank) and read four or
-five questions. Three things to look at:
+documented exception above. Then play a full session at `/fr/jeux/quiz` and
+read four or five questions. The English route stays in its coming-soon state
+until a separately generated English bank can fill a session. Three things to
+look at:
 
 - the distractors are peoples of the subject's own family _and_ of a country it
   shares, not the same three names on every question;
