@@ -19,6 +19,12 @@
       {
         "name": "Royaume de Maravi",
         "period": "XVIe siècle - XVIIe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1501,
+          "endYear": 1700,
+          "precision": "century"
+        },
         "dominantPeoples": ["Chewa", "autres peuples bantous"],
         "politicalCenters": ["Centres autour du lac Malawi"],
         "historicalRole": "Royaume de Maravi puissant, système matrilinéaire, développement du commerce régional, relations avec les Portugais. Le royaume était centré sur le lac Malawi (lac Nyasa). Fondation du royaume par les Chewa."
@@ -26,6 +32,7 @@
       {
         "name": "Chefferies Chewa",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Chewa"],
         "politicalCenters": ["Chefferies traditionnelles (centre du Malawi)"],
         "historicalRole": "Chefferies Chewa, système matrilinéaire, traditions culturelles (masques Gule Wamkulu, rituel initiatique majeur), agriculture (maïs). Héritiers du royaume de Maravi."
@@ -33,6 +40,7 @@
       {
         "name": "Chefferies Tumbuka",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Tumbuka"],
         "politicalCenters": ["Chefferies traditionnelles (nord du Malawi)"],
         "historicalRole": "Chefferies Tumbuka, traditions culturelles, structures lignagères patrilinéaires."
@@ -40,6 +48,7 @@
       {
         "name": "Chefferies Yao",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Yao"],
         "politicalCenters": ["Chefferies traditionnelles (sud du Malawi)"],
         "historicalRole": "Chefferies Yao, traditions islamiques, commerce régional, résistance à la colonisation britannique."
@@ -47,6 +56,12 @@
       {
         "name": "Protectorat britannique du Nyasaland",
         "period": "1891 - 1964",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1891,
+          "endYear": 1964,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples malawiens sous protectorat britannique"
         ],

@@ -654,6 +654,7 @@ describe("transformKingdoms", () => {
     const result = transformKingdoms([
       {
         name: "Royaume Mossi",
+        period: "XIe siècle - XIXe siècle",
         politicalCenters: ["Ouagadougou", "Tenkodogo", "Fada", "Boussouma"],
       },
     ]);

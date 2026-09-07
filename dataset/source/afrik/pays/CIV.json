@@ -22,6 +22,7 @@
       {
         "name": "Royaumes Akan",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Baoulé", "Agni", "Abron", "Attié"],
         "politicalCenters": [
           "Chefferies traditionnelles akan",
@@ -32,6 +33,7 @@
       {
         "name": "Peuples Krou",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Bété", "Wé", "Dida"],
         "politicalCenters": ["Chefferies traditionnelles krou"],
         "historicalRole": "Peuples Krou forestiers, traditions artistiques réputées (masques, sculptures), structures lignagères, chefferies locales. Résistance à la colonisation française."
@@ -39,6 +41,7 @@
       {
         "name": "Peuples Mandé du Nord",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Malinké", "Dioula", "Bambara"],
         "politicalCenters": ["Chefferies traditionnelles mandé"],
         "historicalRole": "Peuples Mandé du Nord liés historiquement à l'empire du Mali, tradition islamique, commerce transsaharien. Rôle majeur dans le commerce et l'islamisation de la région."
@@ -46,6 +49,7 @@
       {
         "name": "Peuples Mandé du Sud",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Dan (Yacouba)", "Gouro", "Wan"],
         "politicalCenters": ["Chefferies traditionnelles mandé"],
         "historicalRole": "Peuples Mandé du Sud, traditions forestières, masques et sculptures. Relations avec les peuples Krou voisins."
@@ -53,6 +57,7 @@
       {
         "name": "Peuples Voltaïques / Gur",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Sénoufo", "Lobi", "Koulango"],
         "politicalCenters": ["Chefferies traditionnelles gur"],
         "historicalRole": "Peuples voltaiques/gur, traditions agricoles, cérémonies d'initiation (Poro chez les Sénoufo). Résistance à la colonisation française."
@@ -60,6 +65,12 @@
       {
         "name": "Colonie de Côte d'Ivoire",
         "period": "1893 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1893,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples ivoiriens sous domination française"
         ],

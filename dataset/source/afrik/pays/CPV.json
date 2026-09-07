@@ -22,6 +22,12 @@
       {
         "name": "Colonie portugaise du Cap-Vert",
         "period": "1462 - 1975",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1462,
+          "endYear": 1975,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Créoles cap-verdiens (métissage afro-européen)",
           "colons portugais",

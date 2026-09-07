@@ -26,6 +26,14 @@
       {
         "name": "<Nom du royaume / empire>",
         "period": "<Période — ex: XVIIe siècle - 1894>",
+        "entryType": "<Type d’entité — polity | colonial | modern>",
+        "timeRange": {
+          "startYear": "<Année de début, négative avant J.-C. — ex: 1301, -814>",
+          "endYear": "<Année de fin — absente si ongoing>",
+          "ongoing": "<true si l’entité subsiste ; alors pas de endYear>",
+          "precision": "<year | century | approximate>",
+          "datingNote": "<Obligatoire si precision vaut approximate : ce que les bornes lissent>"
+        },
         "dominantPeoples": ["<Peuple dominant>"],
         "politicalCenters": ["<Capitale ou centre politique>"],
         "historicalRole": "<Rôle historique du royaume>"

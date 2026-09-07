@@ -22,6 +22,12 @@
       {
         "name": "Royaume Kongo",
         "period": "XIVe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1301,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Kongo (Bakongo)"],
         "politicalCenters": [
           "Mbanza Kongo (capitale historique)",
@@ -32,6 +38,7 @@
       {
         "name": "Royaume Tio (Teke)",
         "period": "Précolonial - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Teke (Bateke)"],
         "politicalCenters": ["Région de la Cuvette", "Plateaux"],
         "historicalRole": "Royaume Tio puissant, organisation politique structurée, commerce avec les Européens. Résistance à la colonisation française."
@@ -39,6 +46,7 @@
       {
         "name": "Chefferies Mbochi",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Mbochi"],
         "politicalCenters": ["Cuvette", "Likouala"],
         "historicalRole": "Chefferies Mbochi, organisation lignagère, traditions forestières."
@@ -46,6 +54,12 @@
       {
         "name": "Colonie française du Congo",
         "period": "1880 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1880,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples congolais sous domination française"
         ],
@@ -57,6 +71,12 @@
       {
         "name": "République du Congo",
         "period": "1960 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1960,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples congolais"],
         "politicalCenters": ["Brazzaville (capitale)"],
         "historicalRole": "Indépendance en 1960. Histoire politique mouvementée : période socialiste (1969-1991), transition démocratique (1991), guerres civiles (1993-1999, 2016-2017), développement économique basé sur le pétrole."

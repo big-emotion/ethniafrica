@@ -19,6 +19,12 @@
       {
         "name": "Royaumes Akan",
         "period": "XIIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1201,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Akan (Ashanti, Fante, Akyem, Akuapem, Denkyira)"],
         "politicalCenters": [
           "Kumasi (capitale Ashanti)",
@@ -30,6 +36,12 @@
       {
         "name": "Royaume Ashanti",
         "period": "XVIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1601,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Ashanti (Akan)"],
         "politicalCenters": ["Kumasi (capitale)"],
         "historicalRole": "Royaume Akan le plus puissant, expansion territoriale, commerce de l'or, résistance aux Britanniques. Guerres anglo-ashanti (XIXe siècle)."
@@ -37,6 +49,7 @@
       {
         "name": "Royaumes Ga-Dangme",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Ga", "Dangme"],
         "politicalCenters": ["Accra", "régions côtières"],
         "historicalRole": "Peuples côtiers, commerce avec les Européens, présence historique à Accra."
@@ -44,6 +57,7 @@
       {
         "name": "Royaumes gur",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Dagomba", "Mamprusi"],
         "politicalCenters": ["Nord"],
         "historicalRole": "Royaumes gur liés aux Mossi et aux Mandé, organisation politique traditionnelle."
@@ -51,6 +65,12 @@
       {
         "name": "Côte-de-l'Or",
         "period": "1874 - 1957",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1874,
+          "endYear": 1957,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples ghanéens sous administration coloniale britannique"
         ],
@@ -60,6 +80,12 @@
       {
         "name": "République du Ghana",
         "period": "1957 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1957,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples ghanéens"],
         "politicalCenters": ["Accra (capitale)"],
         "historicalRole": "Premier État indépendant d'Afrique subsaharienne (1957). Histoire politique avec alternance démocratique et régimes militaires. Développement économique, modèle de démocratie en Afrique."

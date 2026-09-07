@@ -19,6 +19,7 @@
       {
         "name": "Cités-États hausa",
         "period": "Moyen Âge - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Hausa"],
         "politicalCenters": [
           "Kano",
@@ -31,6 +32,7 @@
       {
         "name": "Royaumes songhay",
         "period": "Moyen Âge - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Songhay", "Zarma"],
         "politicalCenters": ["Gao", "Tombouctou", "autres centres songhay"],
         "historicalRole": "Royaumes songhay, empire songhay (XVe-XVIe siècles), commerce transsaharien, développement culturel et intellectuel. L'empire songhay a été l'un des plus grands empires d'Afrique de l'Ouest."
@@ -38,6 +40,7 @@
       {
         "name": "Chefferies peules",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Peul (Fulani)"],
         "politicalCenters": ["Chefferies traditionnelles"],
         "historicalRole": "Chefferies peules, pastoralisme, islam, résistance à la colonisation."
@@ -45,6 +48,7 @@
       {
         "name": "Confédérations touarègues",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Touareg"],
         "politicalCenters": ["Confédérations tribales touarègues"],
         "historicalRole": "Confédérations touarègues, nomadisme saharien, commerce transsaharien, résistance à la colonisation, rébellions touarègues (1990s-2010s)."
@@ -52,6 +56,7 @@
       {
         "name": "Royaume du Kanem-Bornou",
         "period": "Moyen Âge - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Kanuri"],
         "politicalCenters": ["Kanem", "Bornou"],
         "historicalRole": "Royaume du Kanem-Bornou, islamisation, commerce transsaharien, développement culturel."
@@ -59,6 +64,12 @@
       {
         "name": "Colonie française du Niger",
         "period": "1890 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1890,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples nigériens sous domination coloniale française"
         ],

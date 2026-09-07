@@ -23,6 +23,7 @@
       {
         "name": "Sultanats haoussa",
         "period": "Premier millénaire - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Hausa"],
         "politicalCenters": ["Kano", "Katsina", "Zaria (Zazzau)"],
         "historicalRole": "Cités-États haoussa puissantes, centres commerciaux et intellectuels. Islamisation ancienne par les routes transsahariennes."
@@ -30,6 +31,12 @@
       {
         "name": "Califat de Sokoto",
         "period": "1804 - 1903",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1804,
+          "endYear": 1903,
+          "precision": "year"
+        },
         "dominantPeoples": ["Hausa", "Fulani"],
         "politicalCenters": ["Sokoto (capitale)", "Kano", "Katsina"],
         "historicalRole": "Califat islamique puissant fondé par Usman dan Fodio. Unification politique et religieuse du nord du Nigeria. Résistance à la colonisation britannique."
@@ -37,6 +44,12 @@
       {
         "name": "Royaume d'Oyo",
         "period": "XIVe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1301,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Yoruba"],
         "politicalCenters": ["Oyo (capitale)", "Ile-Ife"],
         "historicalRole": "Royaume yoruba puissant, expansion territoriale, commerce transsaharien. Influence culturelle majeure."
@@ -44,6 +57,12 @@
       {
         "name": "Royaume du Bénin",
         "period": "XIIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1201,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Edo (Bini)"],
         "politicalCenters": ["Bénin City (capitale)"],
         "historicalRole": "Royaume réputé pour ses bronzes et son art. Commerce avec les Européens. Résistance à la colonisation."
@@ -51,6 +70,12 @@
       {
         "name": "Empire Kanem-Bornou",
         "period": "VIIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 701,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Kanuri"],
         "politicalCenters": ["Kanem", "Bornou"],
         "historicalRole": "Empire puissant du Sahel, commerce transsaharien, centre intellectuel."
@@ -58,6 +83,12 @@
       {
         "name": "Nigeria colonial",
         "period": "1914 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1914,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples nigérians sous administration coloniale britannique"
         ],
@@ -67,6 +98,12 @@
       {
         "name": "République fédérale du Nigeria",
         "period": "1960 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1960,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples nigérians"],
         "politicalCenters": [
           "Abuja (capitale depuis 1991)",

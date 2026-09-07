@@ -22,6 +22,12 @@
       {
         "name": "Sultanat d'Ajuran",
         "period": "XIIIe siècle - XVIIe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1201,
+          "endYear": 1700,
+          "precision": "century"
+        },
         "dominantPeoples": ["Somali (clans Hawiye", "Darod)"],
         "politicalCenters": ["Mogadiscio", "Merca", "Barawa"],
         "historicalRole": "Sultanat somali puissant, contrôle du commerce dans la Corne de l'Afrique, résistance aux Portugais, développement de l'islam."
@@ -29,6 +35,12 @@
       {
         "name": "Sultanat d'Ifat",
         "period": "XIIIe siècle - XVe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1201,
+          "endYear": 1500,
+          "precision": "century"
+        },
         "dominantPeoples": ["Somali (clans Dir", "Hawiye)"],
         "politicalCenters": ["Ifat (Éthiopie actuelle)"],
         "historicalRole": "Sultanat somali, expansion vers l'Éthiopie, conflits avec l'empire d'Éthiopie, développement de l'islam."
@@ -36,6 +48,12 @@
       {
         "name": "Sultanat d'Adal",
         "period": "XVe siècle - XVIe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1401,
+          "endYear": 1600,
+          "precision": "century"
+        },
         "dominantPeoples": ["Somali (clans Dir", "Hawiye", "Darod)"],
         "politicalCenters": ["Zeila", "Harar"],
         "historicalRole": "Sultanat somali puissant, expansion vers l'Éthiopie, guerre avec l'empire d'Éthiopie, développement de l'islam."
@@ -43,6 +61,12 @@
       {
         "name": "Sultanat de Mogadiscio",
         "period": "Xe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 901,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Somali (clans Hawiye)", "Arabes", "Persans"],
         "politicalCenters": ["Mogadiscio"],
         "historicalRole": "Sultanat somali, centre commercial important, contacts avec les commerçants arabes et persans, développement de l'islam."
@@ -50,6 +74,12 @@
       {
         "name": "Somaliland britannique",
         "period": "1884 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1884,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Britanniques",
           "Somali (clans Isaaq",
@@ -62,6 +92,12 @@
       {
         "name": "Somalie italienne",
         "period": "1889 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1889,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Italiens",
           "Somali (clans Hawiye",

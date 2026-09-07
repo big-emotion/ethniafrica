@@ -22,6 +22,7 @@
       {
         "name": "Peuples khoïsan",
         "period": "Préhistorique - présent",
+        "entryType": "polity",
         "dominantPeoples": ["San", "Nama"],
         "politicalCenters": ["Groupes nomades et semi-nomades"],
         "historicalRole": "Peuples autochtones de la Namibie, chasseurs-cueilleurs (San), pasteurs (Nama), résistance à la colonisation."
@@ -29,6 +30,7 @@
       {
         "name": "Chefferies Ovambo",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Ovambo"],
         "politicalCenters": ["Chefferies traditionnelles (nord de la Namibie)"],
         "historicalRole": "Chefferies Ovambo, agriculture et élevage, résistance à la colonisation, rôle majeur dans la lutte pour l'indépendance (SWAPO)."
@@ -36,6 +38,7 @@
       {
         "name": "Chefferies Herero",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Herero"],
         "politicalCenters": [
           "Chefferies traditionnelles (centre de la Namibie)"
@@ -45,6 +48,7 @@
       {
         "name": "Chefferies Kavango",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Kavango"],
         "politicalCenters": [
           "Chefferies traditionnelles (nord-est de la Namibie)"
@@ -54,6 +58,12 @@
       {
         "name": "Colonie allemande du Sud-Ouest africain",
         "period": "1884 - 1915",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1884,
+          "endYear": 1915,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples namibiens sous domination coloniale allemande"
         ],
@@ -63,6 +73,12 @@
       {
         "name": "Colonie sud-africaine (Afrique du Sud-Ouest)",
         "period": "1915 - 1990",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1915,
+          "endYear": 1990,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples namibiens sous domination coloniale sud-africaine"
         ],

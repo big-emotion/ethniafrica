@@ -22,6 +22,13 @@
       {
         "name": "Royaumes Mossi",
         "period": "XIe siècle - XIXe siècle (apogée), maintien jusqu'à la colonisation",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1001,
+          "endYear": 1900,
+          "precision": "approximate",
+          "datingNote": "Le libellé couvre plusieurs périodes distinctes ; les bornes retenues encadrent l'ensemble."
+        },
         "dominantPeoples": ["Mossi (Moose)"],
         "politicalCenters": [
           "Ouagadougou (Wogodogo",
@@ -35,6 +42,7 @@
       {
         "name": "Royaume de Fada N'Gourma",
         "period": "Précolonial - XIXe siècle",
+        "entryType": "polity",
         "dominantPeoples": ["Gourmantché"],
         "politicalCenters": ["Fada N'Gourma (capitale)"],
         "historicalRole": "Royaume de Fada N'Gourma, État gourmantché puissant dans l'est du Burkina Faso. Résistance à la colonisation française."
@@ -42,6 +50,7 @@
       {
         "name": "Chefferies Gur",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Bobo", "Gourounsi", "Dagara", "Lobi", "Birifor"],
         "politicalCenters": ["Chefferies traditionnelles locales"],
         "historicalRole": "Chefferies gur organisées en structures politiques traditionnelles. Traditions agricoles et artisanales. Résistance à la colonisation."
@@ -49,6 +58,13 @@
       {
         "name": "Colonie de Haute-Volta",
         "period": "1919-1932, 1947-1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1919,
+          "endYear": 1960,
+          "precision": "approximate",
+          "datingNote": "Le libellé couvre plusieurs périodes distinctes ; les bornes retenues encadrent l'ensemble."
+        },
         "dominantPeoples": [
           "Tous les peuples burkinabés sous domination française"
         ],

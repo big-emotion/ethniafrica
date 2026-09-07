@@ -23,6 +23,7 @@
       {
         "name": "Royaumes berbères antiques",
         "period": "Antiquité",
+        "entryType": "polity",
         "dominantPeoples": ["Berbères (Libyens)"],
         "politicalCenters": ["Divers centres tribaux"],
         "historicalRole": "Royaumes berbères indépendants, résistance à Rome, développement du commerce transsaharien."
@@ -30,6 +31,12 @@
       {
         "name": "Cyrénaïque grecque",
         "period": "631 av. J.-C. - 96 av. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -631,
+          "endYear": -96,
+          "precision": "year"
+        },
         "dominantPeoples": ["Grecs", "Berbères"],
         "politicalCenters": ["Cyrène", "Apollonia"],
         "historicalRole": "Colonie grecque prospère, développement de la culture grecque en Afrique du Nord."
@@ -37,6 +44,12 @@
       {
         "name": "Tripolitaine romaine",
         "period": "146 av. J.-C. - 439 apr. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -146,
+          "endYear": 439,
+          "precision": "year"
+        },
         "dominantPeoples": ["Romains", "Berbères", "Phéniciens"],
         "politicalCenters": ["Leptis Magna", "Sabratha", "Oea (Tripoli)"],
         "historicalRole": "Province romaine prospère, développement urbain et commercial, art romain."
@@ -44,6 +57,12 @@
       {
         "name": "Califat omeyyade et abbasside",
         "period": "643-909",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 643,
+          "endYear": 909,
+          "precision": "year"
+        },
         "dominantPeoples": ["Arabes", "Berbères"],
         "politicalCenters": ["Barqa", "Tripoli"],
         "historicalRole": "Conquête arabe, islamisation, développement du commerce transsaharien."
@@ -51,6 +70,12 @@
       {
         "name": "Régence de Tripoli",
         "period": "1551-1911",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1551,
+          "endYear": 1911,
+          "precision": "year"
+        },
         "dominantPeoples": ["Turcs ottomans", "Arabes", "Berbères"],
         "politicalCenters": ["Tripoli"],
         "historicalRole": "État ottoman semi-autonome, piraterie en Méditerranée, résistance aux puissances européennes."
@@ -58,6 +83,12 @@
       {
         "name": "Colonie italienne",
         "period": "1911-1951",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1911,
+          "endYear": 1951,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples libyens sous domination coloniale"
         ],

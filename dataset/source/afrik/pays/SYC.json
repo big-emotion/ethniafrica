@@ -22,6 +22,7 @@
       {
         "name": "Îles déserte",
         "period": "Avant 1756",
+        "entryType": "polity",
         "dominantPeoples": ["Aucun (îles inhabitée)"],
         "politicalCenters": ["Aucun"],
         "historicalRole": "Les îles des Seychelles étaient inhabitée avant l'arrivée des Européens en 1756."
@@ -29,6 +30,12 @@
       {
         "name": "Colonie française des Seychelles",
         "period": "1756 - 1814",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1756,
+          "endYear": 1814,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Français",
           "esclaves africains et malgaches",
@@ -40,6 +47,12 @@
       {
         "name": "Colonie britannique des Seychelles",
         "period": "1814 - 1976",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1814,
+          "endYear": 1976,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Britanniques",
           "créoles seychellois",

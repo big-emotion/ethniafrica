@@ -23,6 +23,12 @@
       {
         "name": "Chefferies Temne",
         "period": "XVe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1401,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Temne"],
         "politicalCenters": [
           "Chefferies indépendantes (Rokel",
@@ -34,6 +40,12 @@
       {
         "name": "Chefferies Mende",
         "period": "XVIe siècle - XIXe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1501,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Mende"],
         "politicalCenters": ["Chefferies indépendantes (Bo", "Kenema", "etc.)"],
         "historicalRole": "Organisation politique traditionnelle des Mende, chefferies indépendantes, sociétés initiatiques (Poro, Sande/Bundu), résistance à la colonisation britannique."
@@ -41,6 +53,12 @@
       {
         "name": "Colonie de Freetown",
         "period": "1787 - 1808",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1787,
+          "endYear": 1808,
+          "precision": "year"
+        },
         "dominantPeoples": ["Krio (esclaves libérés)", "Britanniques"],
         "politicalCenters": ["Freetown (capitale coloniale)"],
         "historicalRole": "Établissement de la colonie de Freetown pour les esclaves libérés (Nova Scotians, Maroons de Jamaïque), formation du peuple Krio, développement de la société créole."
@@ -48,6 +66,12 @@
       {
         "name": "Colonie britannique de Sierra Leone",
         "period": "1808 - 1961",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1808,
+          "endYear": 1961,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Britanniques",
           "Krio",

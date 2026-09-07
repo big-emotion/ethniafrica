@@ -23,6 +23,12 @@
       {
         "name": "Ancien Empire égyptien",
         "period": "2686-2181 av. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -2686,
+          "endYear": -2181,
+          "precision": "year"
+        },
         "dominantPeoples": ["Égyptiens anciens"],
         "politicalCenters": ["Memphis"],
         "historicalRole": "Construction des pyramides, développement de l'écriture hiéroglyphique, centralisation du pouvoir pharaonique."
@@ -30,6 +36,12 @@
       {
         "name": "Moyen Empire égyptien",
         "period": "2055-1650 av. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -2055,
+          "endYear": -1650,
+          "precision": "year"
+        },
         "dominantPeoples": ["Égyptiens anciens"],
         "politicalCenters": ["Thèbes"],
         "historicalRole": "Expansion territoriale, développement de la littérature et des arts, période de prospérité."
@@ -37,6 +49,12 @@
       {
         "name": "Nouvel Empire égyptien",
         "period": "1550-1069 av. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -1550,
+          "endYear": -1069,
+          "precision": "year"
+        },
         "dominantPeoples": ["Égyptiens anciens"],
         "politicalCenters": ["Thèbes", "Memphis"],
         "historicalRole": "Apogée de la puissance égyptienne, expansion en Nubie et au Levant, règnes de Thoutmosis III, Akhenaton, Ramsès II."
@@ -44,6 +62,12 @@
       {
         "name": "Royaume ptolémaïque",
         "period": "305-30 av. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -305,
+          "endYear": -30,
+          "precision": "year"
+        },
         "dominantPeoples": ["Grecs", "Égyptiens"],
         "politicalCenters": ["Alexandrie"],
         "historicalRole": "Dynastie grecque, hellénisation de l'Égypte, développement d'Alexandrie comme centre culturel."
@@ -51,6 +75,12 @@
       {
         "name": "Égypte romaine et byzantine",
         "period": "30 av. J.-C. - 641 apr. J.-C.",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": -30,
+          "endYear": 641,
+          "precision": "year"
+        },
         "dominantPeoples": ["Romains", "Grecs", "Égyptiens", "Coptes"],
         "politicalCenters": ["Alexandrie"],
         "historicalRole": "Province romaine puis byzantine, christianisation, développement du copte."
@@ -58,6 +88,12 @@
       {
         "name": "Califat omeyyade et abbasside",
         "period": "641-969",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 641,
+          "endYear": 969,
+          "precision": "year"
+        },
         "dominantPeoples": ["Arabes", "Égyptiens", "Coptes"],
         "politicalCenters": ["Fostat (Le Caire)"],
         "historicalRole": "Conquête arabe, islamisation progressive, arabisation linguistique."
@@ -65,6 +101,12 @@
       {
         "name": "Califat fatimide",
         "period": "969-1171",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 969,
+          "endYear": 1171,
+          "precision": "year"
+        },
         "dominantPeoples": ["Arabes", "Berbères", "Égyptiens", "Coptes"],
         "politicalCenters": ["Le Caire"],
         "historicalRole": "Dynastie chiite ismaélienne, fondation du Caire, développement culturel et commercial."
@@ -72,6 +114,12 @@
       {
         "name": "Sultanat mamelouk",
         "period": "1250-1517",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1250,
+          "endYear": 1517,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Mamelouks (Turcs",
           "Circassiens)",
@@ -85,6 +133,12 @@
       {
         "name": "Égypte ottomane",
         "period": "1517-1882",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1517,
+          "endYear": 1882,
+          "precision": "year"
+        },
         "dominantPeoples": ["Turcs ottomans", "Arabes", "Égyptiens", "Coptes"],
         "politicalCenters": ["Le Caire"],
         "historicalRole": "Province ottomane, autonomie croissante sous les Mamelouks, modernisation sous Méhémet Ali (1805-1848)."
@@ -92,6 +146,12 @@
       {
         "name": "Protectorat britannique",
         "period": "1882-1922",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1882,
+          "endYear": 1922,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples égyptiens sous domination britannique"
         ],

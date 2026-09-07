@@ -23,6 +23,12 @@
       {
         "name": "Royaume Merina",
         "period": "XVIe siècle - 1896",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1501,
+          "endYear": 1896,
+          "precision": "century"
+        },
         "dominantPeoples": ["Merina (Hova", "Andriana)"],
         "politicalCenters": ["Antananarivo (capitale du royaume)"],
         "historicalRole": "Le royaume Merina a unifié une grande partie de Madagascar au XIXe siècle sous les règnes de Radama I et Ranavalona I. Il a résisté à la colonisation française jusqu'en 1896."
@@ -30,6 +36,12 @@
       {
         "name": "Royaumes Sakalava",
         "period": "XVIIe - XIXe siècles",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1601,
+          "endYear": 1900,
+          "precision": "century"
+        },
         "dominantPeoples": ["Sakalava (Menabe", "Boina)"],
         "politicalCenters": ["Morondava (Menabe)", "Mahajanga (Boina)"],
         "historicalRole": "Les royaumes Sakalava étaient des puissances maritimes qui contrôlaient le commerce sur la côte ouest. Ils ont résisté à l'expansion merina."
@@ -37,6 +49,12 @@
       {
         "name": "Confédération Betsimisaraka",
         "period": "XVIIIe siècle",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1701,
+          "endYear": 1800,
+          "precision": "century"
+        },
         "dominantPeoples": ["Betsimisaraka"],
         "politicalCenters": ["Toamasina (Tamatave)"],
         "historicalRole": "Confédération formée au XVIIIe siècle par Ratsimilaho, unifiant les peuples de la côte est pour résister aux raids malgaches et européens."
@@ -44,6 +62,12 @@
       {
         "name": "Colonie française de Madagascar",
         "period": "1896 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1896,
+          "endYear": 1960,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples malgaches sous administration coloniale française"
         ],
@@ -53,6 +77,12 @@
       {
         "name": "République de Madagascar",
         "period": "1960 - présent",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1960,
+          "ongoing": true,
+          "precision": "year"
+        },
         "dominantPeoples": ["Tous les peuples malgaches"],
         "politicalCenters": ["Antananarivo (capitale)"],
         "historicalRole": "État indépendant depuis 1960, avec une histoire politique mouvementée incluant plusieurs coups d'État et périodes de transition."

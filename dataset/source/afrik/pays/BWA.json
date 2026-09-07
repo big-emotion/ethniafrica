@@ -19,6 +19,7 @@
       {
         "name": "Chefferies Tswana",
         "period": "Précolonial - présent",
+        "entryType": "polity",
         "dominantPeoples": ["Tswana (Batswana)"],
         "politicalCenters": [
           "Gaborone (capitale moderne)",
@@ -33,6 +34,12 @@
       {
         "name": "Protectorat du Bechuanaland",
         "period": "1885 - 1966",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1885,
+          "endYear": 1966,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Tous les peuples botswanais sous protectorat britannique"
         ],

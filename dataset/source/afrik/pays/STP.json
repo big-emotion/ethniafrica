@@ -19,6 +19,7 @@
       {
         "name": "Îles déserte",
         "period": "Avant 1470",
+        "entryType": "polity",
         "dominantPeoples": ["Aucun (îles inhabitée)"],
         "politicalCenters": ["Aucun"],
         "historicalRole": "Les îles de São Tomé-et-Príncipe étaient inhabitée avant l'arrivée des Portugais en 1470."
@@ -26,6 +27,12 @@
       {
         "name": "Colonie portugaise de São Tomé-et-Príncipe",
         "period": "1470 - 1975",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1470,
+          "endYear": 1975,
+          "precision": "year"
+        },
         "dominantPeoples": [
           "Portugais",
           "esclaves africains",
