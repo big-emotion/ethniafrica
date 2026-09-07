@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "lua",
+  "isoCode639_3": "lua",
+  "glottocode": "luba1249",
+  "nameFr": "Tshiluba",
+  "nameEn": "Luba-Lulua",
+  "alternateNames": ["Ciluba", "Luba-Kasai", "Luba-Lulua"],
+  "spellingAliases": [],
+  "familyId": "FLG_BANTU",
+  "peoples": [
+    {
+      "name": "Luba",
+      "peopleId": "PPL_LUBA"
+    },
+    {
+      "name": "Luba-Kasaï",
+      "peopleId": "PPL_LUBA_KASAI"
+    },
+    {
+      "name": "Lulua",
+      "peopleId": "PPL_LULUA"
+    }
+  ],
+  "content": {
+    "vehicularRole": "regional_lingua_franca",
+    "dialects": [],
+    "vitalityStatus": {
+      "status": "Wider communication",
+      "scale": "EGIDS (Ethnologue)",
+      "asOf": 2025
+    },
+    "sources": [
+      {
+        "title": "Glottolog 5.3 — Luba-Lulua (luba1249)",
+        "url": "https://glottolog.org/resource/languoid/id/luba1249",
+        "tier": "official",
+        "notes": "Notice directe pour le code ISO 639-3 lua et le glottocode luba1249. Elle documente Tshiluba, Ciluba, Luba-Kasai et Luba-Lulua comme formes de nom, ainsi que le statut EGIDS 3 en 2025 et le statut légal de langue d'identité nationale en RDC. Les liens aux peuples sont limités aux correspondances de code documentées pour la RDC."
+      }
+    ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the French DRC country enrichment pass is stable."
+    }
+  }
+}

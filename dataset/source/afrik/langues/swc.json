@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "swc",
+  "isoCode639_3": "swc",
+  "glottocode": "cong1236",
+  "nameFr": "Swahili du Congo",
+  "nameEn": "Congo Swahili",
+  "alternateNames": ["Swahili, Congo", "Zaïre Swahili"],
+  "spellingAliases": [],
+  "familyId": "FLG_BANTU",
+  "peoples": [],
+  "content": {
+    "vehicularRole": "regional_lingua_franca",
+    "dialects": [],
+    "vitalityStatus": {
+      "status": "Wider communication",
+      "scale": "EGIDS (Ethnologue)",
+      "asOf": 2025
+    },
+    "sources": [
+      {
+        "title": "Glottolog 5.3 — Congo Swahili (cong1236)",
+        "url": "https://glottolog.org/resource/languoid/id/cong1236",
+        "tier": "official",
+        "notes": "Notice directe pour le code ISO 639-3 swc et le glottocode cong1236. Elle distingue cette langue du swahili standardisé, documente le statut EGIDS 3 en 2025, son rôle de langue véhiculaire et son statut légal de langue d'identité nationale en RDC."
+      }
+    ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the French DRC country enrichment pass is stable."
+    }
+  }
+}
