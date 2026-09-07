@@ -1,6 +1,7 @@
 # Interface copy
 
-The site publishes two locales, English by default (REQ-140). Every string a
+The code supports two locales while publication fails closed to `fr-only`
+(REQ-140). Every string a
 reader sees in the chrome — a label, a hint, an empty state, a pager — exists
 in both, and one gate holds the two sides together. This page says where the
 copy lives, what the gate checks, and how a directory of inline French moves

@@ -22,6 +22,7 @@
     "check:skill-parity": "tsx scripts/ci/checkSkillParity.ts",
     "skills:link": "tsx scripts/setupAgentSkillLinks.ts",
     "check:glossary": "tsx scripts/ci/checkGlossary.ts",
+    "check:translation-parity": "tsx scripts/ci/checkTranslationParity.ts",
     "translate:record": "tsx scripts/translateRecord.ts",
     "check:env-example": "tsx scripts/checkEnvExample.ts",
     "check:afrik-loader": "tsx scripts/ci/checkAfrikLoaderPreflight.ts",
