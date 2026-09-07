@@ -1,6 +1,6 @@
 ---
 name: afrik-translator
-description: Translation counterpart for the EthniAfrica AFRIK corpus and its editorial strings, between the two locales (fr ⇄ en, English default). Use when a fiche, a dossier, a home fact or a reader-facing note must exist in the other locale — it classifies every field before translating any of it, carries invariants over deliberately, translates class 2, flags class 3 for human review and refuses machine provenance for it, glosses from the source language the record names, keeps the English register of the brand charter, and never contradicts the bilingual glossary. Emits a sidecar proposal; never publishes. Triggers include "traduire la fiche", "traduis PPL_/FLG_/PAT_/[ISO3]", "translate this fiche", "version anglaise", "classe de traduction", "glossaire bilingue", "revue de traduction", "translation review".
+description: Translation counterpart for the EthniAfrica AFRIK corpus and its editorial strings, between the two supported locales (fr ⇄ en; publication fails closed to French-only). Use when a fiche, a dossier, a home fact or a reader-facing note must exist in the other locale — it classifies every field before translating any of it, carries invariants over deliberately, translates class 2, flags class 3 for human review and refuses machine provenance for it, glosses from the source language the record names, keeps the English register of the brand charter, and never contradicts the bilingual glossary. Emits a sidecar proposal; never publishes. Triggers include "traduire la fiche", "traduis PPL_/FLG_/PAT_/[ISO3]", "translate this fiche", "version anglaise", "classe de traduction", "glossaire bilingue", "revue de traduction", "translation review".
 ---
 
 # AFRIK Translator
@@ -106,9 +106,11 @@ dataset/translations/<lang>/<same relative path as the source>/<ID>.json
 dataset/translations/en/peuples/FLG_NIGERCONGO/PPL_ASANTE.json
 ```
 
-It is a **partial overlay**: it carries the leaves it translates and nothing
-else — an invariant it repeats must be byte-identical, an invariant it omits
-is read from the source. It ends with a `_translation` block:
+It is a **full record** with the same field shape as the French source. Every
+invariant is carried byte-identically, every translatable leaf is replaced by
+its target-language value, and the record ends with a `_translation` block.
+The older dossier files are the sole exception: their reader owns a sparse
+overlay contract and the parity gate checks only that both files exist.
 
 | Field            | Value                                                                                                                                              |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -153,7 +155,7 @@ record names. Every glossary term used is noted as it is used.
 ```bash
 npx vitest run src/lib/i18n                     # the declaration and the sidecar rules
 npx tsx scripts/ci/checkEditorialRules.ts       # the French gate still holds on the source
-npm run check:glossary                          # the sidecars under dataset/translations/en/ against GLOSSARY_TERMS
+npm run check:translation-parity -- --staged    # pair shape, drift, UI keys and glossary
 ```
 
 Run `sidecarViolations` over the pair and confirm by hand: no invariant

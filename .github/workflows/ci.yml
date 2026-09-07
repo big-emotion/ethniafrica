@@ -128,11 +128,13 @@ jobs:
       # only go down.
       - run: npm run check:dead
 
-      # Translated content uses the one bilingual glossary (REQ-144): a people
-      # is never rendered as a tribe, a French term never survives in English.
-      # Here rather than in editorial-rules.yml because the UI dictionary is
-      # code, and that workflow only wakes on dataset paths.
-      - run: npm run check:glossary
+      # A changed French record and its English sidecar move together, UI
+      # dictionaries keep the same keys, and translated content uses the one
+      # bilingual glossary (REQ-144, REQ-145). Bare runs survey the existing
+      # backlog; --base is the blocking PR gate.
+      - run: npm run check:translation-parity -- --base "origin/$REQ_BASE"
+        env:
+          REQ_BASE: ${{ github.head_ref == 'recette' && 'recette' || github.base_ref }}
 
       # Pre-merge, only what is knowable without a database: no two files
       # claiming the same version or name, no hole in the sequence. Whether a
