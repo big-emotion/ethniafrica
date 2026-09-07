@@ -13,8 +13,8 @@
   },
   "summary": {
     "referenceEntries": 252,
-    "localLanguageDossiers": 31,
-    "referenceEntriesWithExactDossier": 7,
+    "localLanguageDossiers": 34,
+    "referenceEntriesWithExactDossier": 10,
     "referenceEntriesWithReviewedPeopleCode": 34,
     "referenceEntriesWithAnyLocalSignal": 37,
     "reviewedPeopleIsoCodes": 45,
@@ -103,6 +103,22 @@
       "matchedReferenceGlottocodes": []
     },
     {
+      "id": "hav",
+      "nameFr": "Havu (kihavu)",
+      "iso639P3Code": "hav",
+      "glottocode": "havu1238",
+      "matchStatus": "exact_reference",
+      "matchedReferenceGlottocodes": ["havu1238"]
+    },
+    {
+      "id": "hke",
+      "nameFr": "Hunde (kihunde)",
+      "iso639P3Code": "hke",
+      "glottocode": "hund1239",
+      "matchStatus": "exact_reference",
+      "matchedReferenceGlottocodes": ["hund1239"]
+    },
+    {
       "id": "hts",
       "nameFr": "Hadza",
       "iso639P3Code": "hts",
@@ -189,6 +205,14 @@
       "glottocode": "nngg1234",
       "matchStatus": "outside_country_reference",
       "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "nnb",
+      "nameFr": "Nande (kinande)",
+      "iso639P3Code": "nnb",
+      "glottocode": "nand1264",
+      "matchStatus": "exact_reference",
+      "matchedReferenceGlottocodes": ["nand1264"]
     },
     {
       "id": "plt",

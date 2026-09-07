@@ -10,19 +10,17 @@ type LanguageDossier = {
   nameFr: string;
   nameEn: string;
   alternateNames: string[];
-  spellingAliases: string[];
   familyId: string;
   peoples: Array<{ name: string; peopleId: string }>;
   content: {
     vehicularRole: string;
-    dialects: string[];
     vitalityStatus: { status: string; scale: string; asOf: number };
     sources: Array<{ url: string | null; tier: string }>;
   };
   _translation?: { deferred?: { en?: string } };
 };
 
-type LanguageReconciliation = {
+type Reconciliation = {
   summary: {
     localLanguageDossiers: number;
     referenceEntriesWithExactDossier: number;
@@ -35,7 +33,7 @@ type LanguageReconciliation = {
   }>;
 };
 
-type CountryTracker = {
+type Tracker = {
   workstreams: Array<{
     id: string;
     status: string;
@@ -48,38 +46,29 @@ const projectRoot = process.cwd();
 const deferralReason =
   "English translation is deferred until the French DRC country enrichment pass is stable.";
 const expected = {
-  lub: {
-    glottocode: "luba1250",
-    nameFr: "Kiluba (luba-katanga)",
-    nameEn: "Luba-Katanga",
-    alternateNames: ["Kiluba", "Luba-Shaba"],
-    familyId: "FLG_BANTU",
-    role: "non_vehicular",
-    vitality: "Threatened",
-    peopleLinks: [
-      { name: "Luba", peopleId: "PPL_LUBA" },
-      { name: "Luba-Katanga", peopleId: "PPL_LUBA_KATANGA" },
-    ],
-  },
-  tll: {
-    glottocode: "tete1250",
-    nameFr: "Otetela",
-    nameEn: "Tetela",
-    alternateNames: ["Kitetela", "Sungu"],
-    familyId: "FLG_BANTU",
-    role: "non_vehicular",
+  hav: {
+    glottocode: "havu1238",
+    nameFr: "Havu (kihavu)",
+    nameEn: "Havu",
+    alternateNames: ["Haavu", "Kihavu"],
     vitality: "Vigorous",
-    peopleLinks: [{ name: "Tetela", peopleId: "PPL_TETELA" }],
+    people: { name: "Havu", peopleId: "PPL_HAVU" },
   },
-  alz: {
-    glottocode: "alur1250",
-    nameFr: "Alur",
-    nameEn: "Alur",
-    alternateNames: ["Dho Alur", "Aloro"],
-    familyId: "FLG_NILOTIQUE",
-    role: "non_vehicular",
+  hke: {
+    glottocode: "hund1239",
+    nameFr: "Hunde (kihunde)",
+    nameEn: "Hunde",
+    alternateNames: ["Kihunde", "Kobi", "Rukobi"],
+    vitality: "Vigorous",
+    people: { name: "Hunde", peopleId: "PPL_HUNDE" },
+  },
+  nnb: {
+    glottocode: "nand1264",
+    nameFr: "Nande (kinande)",
+    nameEn: "Nande",
+    alternateNames: ["Kinande", "Kinandi", "Orundande"],
     vitality: "Developing",
-    peopleLinks: [{ name: "Alur", peopleId: "PPL_ALUR" }],
+    people: { name: "Nande", peopleId: "PPL_NANDE" },
   },
 } as const;
 
@@ -90,22 +79,19 @@ function readJson<T>(relativePath: string): T {
 }
 
 function readDossier(id: keyof typeof expected): LanguageDossier | null {
-  const path = resolve(projectRoot, `dataset/source/afrik/langues/${id}.json`);
-  return existsSync(path)
-    ? (JSON.parse(readFileSync(path, "utf8")) as LanguageDossier)
+  const file = resolve(projectRoot, `dataset/source/afrik/langues/${id}.json`);
+  return existsSync(file)
+    ? (JSON.parse(readFileSync(file, "utf8")) as LanguageDossier)
     : null;
 }
 
-describe("DRC evidence-prioritized language dossier wave 2", () => {
+describe("DRC evidence-prioritized language dossier wave 3", () => {
   // @req REQ-136
   it.each(Object.keys(expected) as Array<keyof typeof expected>)(
-    "creates the exact %s dossier with conservative language metadata",
+    "creates the conservative %s language dossier",
     (id) => {
-      const dossier = readDossier(id);
       const record = expected[id];
-
-      expect(dossier).not.toBeNull();
-      expect(dossier).toMatchObject({
+      expect(readDossier(id)).toMatchObject({
         id,
         isoCode639_3: id,
         glottocode: record.glottocode,
@@ -113,10 +99,10 @@ describe("DRC evidence-prioritized language dossier wave 2", () => {
         nameEn: record.nameEn,
         alternateNames: record.alternateNames,
         spellingAliases: [],
-        familyId: record.familyId,
-        peoples: record.peopleLinks,
+        familyId: "FLG_BANTU",
+        peoples: [record.people],
         content: {
-          vehicularRole: record.role,
+          vehicularRole: "non_vehicular",
           dialects: [],
           vitalityStatus: {
             status: record.vitality,
@@ -130,7 +116,7 @@ describe("DRC evidence-prioritized language dossier wave 2", () => {
 
   // @req REQ-136
   it.each(Object.keys(expected) as Array<keyof typeof expected>)(
-    "cites the exact official Glottolog record for %s",
+    "cites the exact Glottolog record for %s",
     (id) => {
       expect(readDossier(id)?.content.sources).toEqual(
         expect.arrayContaining([
@@ -152,20 +138,16 @@ describe("DRC evidence-prioritized language dossier wave 2", () => {
   );
 
   // @req REQ-032
-  it("regenerates the DRC reconciliation without inflating the any-signal count", () => {
-    const reconciliation = readJson<LanguageReconciliation>(
+  it("regenerates ten exact dossiers without changing the any-signal count", () => {
+    const reconciliation = readJson<Reconciliation>(
       "docs/editorial/country-enrichment/COD-languages.json"
     );
 
-    expect(reconciliation.summary.localLanguageDossiers).toBeGreaterThanOrEqual(
-      31
-    );
-    expect(
-      reconciliation.summary.referenceEntriesWithExactDossier
-    ).toBeGreaterThanOrEqual(7);
-    expect(
-      reconciliation.summary.referenceEntriesWithAnyLocalSignal
-    ).toBeGreaterThanOrEqual(37);
+    expect(reconciliation.summary).toMatchObject({
+      localLanguageDossiers: 34,
+      referenceEntriesWithExactDossier: 10,
+      referenceEntriesWithAnyLocalSignal: 37,
+    });
     for (const [id, record] of Object.entries(expected)) {
       expect(
         reconciliation.localLanguageDossiers.find((entry) => entry.id === id)
@@ -177,8 +159,8 @@ describe("DRC evidence-prioritized language dossier wave 2", () => {
   });
 
   // @req REQ-032
-  it("tracks the second wave while preserving the French and surface blockers", () => {
-    const tracker = readJson<CountryTracker>(
+  it("tracks the third wave without clearing the French or surface blockers", () => {
+    const tracker = readJson<Tracker>(
       "docs/editorial/country-enrichment/COD.json"
     );
     const workstream = tracker.workstreams.find(
@@ -187,13 +169,12 @@ describe("DRC evidence-prioritized language dossier wave 2", () => {
     const findings = workstream?.findings.join(" ") ?? "";
     const remaining = workstream?.remaining.join(" ") ?? "";
 
-    expect(workstream?.status).toContain("surface_approval");
-    expect(workstream?.status).toContain("french_taxonomy");
-    expect(findings).toContain(
-      "Luba-Katanga (lub), Tetela (tll), and Alur (alz)"
+    expect(workstream?.status).toBe(
+      "third_language_dossier_wave_created_surface_approval_and_french_taxonomy_pending"
     );
+    expect(findings).toContain("Havu (hav), Hunde (hke), and Nande (nnb)");
     expect(findings).toContain(
-      "seven exact local dossiers while the any-local-signal count remains 37"
+      "ten exact local dossiers while the any-local-signal count remains 37"
     );
     expect(remaining).toContain("215 Glottolog entries");
     expect(remaining).toContain("missing French language dossier");
