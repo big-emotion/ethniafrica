@@ -697,6 +697,149 @@ describe("transformKingdoms", () => {
       expect(tag).not.toMatch(/\(/);
     }
   });
+
+  /**
+   * The reason `entryType` is stored rather than guessed from the name: the
+   * old `/colonie/i` filter let twenty-five colonial entries through, and
+   * these four are what a reader met inside a section titled "Royaumes".
+   */
+  // @req REQ-148
+  it("drops a colonial administration that never says colonie", () => {
+    const result = transformKingdoms([
+      {
+        name: "Sultanat d'Ajuran",
+        period: "XIIIe siècle - XVIIe siècle",
+        entryType: "polity",
+      },
+      {
+        name: "Somaliland britannique",
+        period: "1884 - 1960",
+        entryType: "colonial",
+      },
+      {
+        name: "Somalie italienne",
+        period: "1889 - 1960",
+        entryType: "colonial",
+      },
+      {
+        name: "République fédérale du Nigeria",
+        period: "1960 - présent",
+        entryType: "modern",
+      },
+    ]);
+    expect(result.cards.map((c) => c.name)).toEqual(["Sultanat d'Ajuran"]);
+  });
+
+  /**
+   * The name-based filter stays as a fallback while entries are being typed,
+   * so a fiche that has not been through the backfill does not regress.
+   */
+  // @req REQ-148
+  it("still drops an untyped entry whose name says colonie", () => {
+    const result = transformKingdoms([
+      { name: "Royaume Mossi", period: "XIe siècle - XIXe siècle" },
+      { name: "Colonie de Haute-Volta", period: "1919-1932, 1947-1960" },
+    ]);
+    expect(result.cards.map((c) => c.name)).toEqual(["Royaume Mossi"]);
+  });
+
+  // @req REQ-148
+  it("orders dated entries chronologically", () => {
+    const result = transformKingdoms([
+      {
+        name: "Sultanat d'Adal",
+        period: "XVe siècle - XVIe siècle",
+        entryType: "polity",
+        timeRange: { startYear: 1401, endYear: 1600, precision: "century" },
+      },
+      {
+        name: "Sultanat de Mogadiscio",
+        period: "Xe siècle - XIXe siècle",
+        entryType: "polity",
+        timeRange: { startYear: 901, endYear: 1900, precision: "century" },
+      },
+      {
+        name: "Sultanat d'Ajuran",
+        period: "XIIIe siècle - XVIIe siècle",
+        entryType: "polity",
+        timeRange: { startYear: 1201, endYear: 1700, precision: "century" },
+      },
+    ]);
+    expect(result.cards.map((c) => c.name)).toEqual([
+      "Sultanat de Mogadiscio",
+      "Sultanat d'Ajuran",
+      "Sultanat d'Adal",
+    ]);
+  });
+
+  /**
+   * A stable partial sort: undated entries hold their index while the dated
+   * ones order themselves around them. Sorting everything would shuffle the
+   * 95 still-undated polities unpredictably for the length of the burn-down.
+   */
+  // @req REQ-148
+  it("leaves an undated entry at its own index while dating sorts around it", () => {
+    const result = transformKingdoms([
+      {
+        name: "Royaume tardif",
+        period: "XVIIIe siècle",
+        entryType: "polity",
+        timeRange: { startYear: 1701, endYear: 1800, precision: "century" },
+      },
+      {
+        name: "Royaume non daté",
+        period: "Précolonial - présent",
+        entryType: "polity",
+      },
+      {
+        name: "Royaume ancien",
+        period: "Xe siècle",
+        entryType: "polity",
+        timeRange: { startYear: 901, endYear: 1000, precision: "century" },
+      },
+    ]);
+    expect(result.cards.map((c) => c.name)).toEqual([
+      "Royaume ancien",
+      "Royaume non daté",
+      "Royaume tardif",
+    ]);
+  });
+
+  // @req REQ-148
+  it("places a still-standing entity after a closed one that began the same year", () => {
+    const result = transformKingdoms([
+      {
+        name: "Toujours debout",
+        period: "XIVe siècle - présent",
+        entryType: "polity",
+        timeRange: { startYear: 1301, ongoing: true, precision: "century" },
+      },
+      {
+        name: "Achevé",
+        period: "XIVe siècle - XVe siècle",
+        entryType: "polity",
+        timeRange: { startYear: 1301, endYear: 1500, precision: "century" },
+      },
+    ]);
+    expect(result.cards.map((c) => c.name)).toEqual([
+      "Achevé",
+      "Toujours debout",
+    ]);
+  });
+
+  // @req REQ-148
+  it("carries the bounds onto the card without touching the label", () => {
+    const result = transformKingdoms([
+      {
+        name: "Royaume test",
+        period: "XIVe siècle",
+        entryType: "polity",
+        timeRange: { startYear: 1301, endYear: 1400, precision: "century" },
+      },
+    ]);
+    expect(result.cards[0].period).toBe("XIVe siècle");
+    expect(result.cards[0].timeRange?.startYear).toBe(1301);
+  });
 });
 
 describe("transformLanguages", () => {

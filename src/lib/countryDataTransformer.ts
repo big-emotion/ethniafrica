@@ -12,6 +12,7 @@ import {
 import type { CountryDetail } from "@/types/afrik-frontend";
 import type {
   Kingdom,
+  KingdomTimeRange,
   MajorPeopleEntry,
   CultureSection,
   HistoricalNamesSection,
@@ -100,6 +101,11 @@ export interface PeoplesData {
 export interface KingdomCard {
   name: string;
   period?: string;
+  /**
+   * The machine bounds, carried through so the timeline can order itself.
+   * `period` remains what is rendered — the bounds are never printed.
+   */
+  timeRange?: KingdomTimeRange;
   peoples?: string;
   /** What the entity was, as the corpus states it. */
   historicalRole?: string;
@@ -577,6 +583,48 @@ function groupSamePercentage(rows: PeopleRow[]): PeopleRow[] {
   return result;
 }
 
+/**
+ * Orders the dated entries among themselves and puts them back at the indices
+ * they occupied, leaving undated ones where the fiche placed them.
+ *
+ * A plain `sort` is wrong for the length of the burn-down: 95 polities carry no
+ * bounds yet, and any comparator would have to invent a key for them, shuffling
+ * entries an editor deliberately sequenced. This converges on a fully
+ * chronological order as the dates arrive, and moves nothing else meanwhile.
+ *
+ * A still-standing entity sorts after a closed one that began the same year —
+ * it is the one that has not finished.
+ */
+function inChronologicalOrder(kingdoms: Kingdom[]): Kingdom[] {
+  const datedIndices: number[] = [];
+  kingdoms.forEach((kingdom, index) => {
+    if (kingdom.timeRange) datedIndices.push(index);
+  });
+  if (datedIndices.length < 2) return kingdoms;
+
+  const closingYear = (range: KingdomTimeRange): number =>
+    range.ongoing
+      ? Number.POSITIVE_INFINITY
+      : (range.endYear ?? range.startYear);
+
+  const sorted = datedIndices
+    .map((index) => kingdoms[index])
+    .sort((a, b) => {
+      const left = a.timeRange as KingdomTimeRange;
+      const right = b.timeRange as KingdomTimeRange;
+      return (
+        left.startYear - right.startYear ||
+        closingYear(left) - closingYear(right)
+      );
+    });
+
+  const ordered = [...kingdoms];
+  datedIndices.forEach((index, rank) => {
+    ordered[index] = sorted[rank];
+  });
+  return ordered;
+}
+
 // @req REQ-001
 export function transformKingdoms(kingdoms?: Kingdom[]): KingdomsData {
   if (!kingdoms || kingdoms.length === 0) {
@@ -587,11 +635,20 @@ export function transformKingdoms(kingdoms?: Kingdom[]): KingdomsData {
     };
   }
 
-  // Filter out colonies
-  const filtered = kingdoms.filter((k) => !/colonie/i.test(k.name));
+  // This section is the precolonial one; colonial administrations and modern
+  // states are shown by the history timeline further down the page. The typed
+  // kind decides, because the name cannot: "Somaliland britannique", "Rhodésie
+  // du Nord" and "Condominium anglo-égyptien" all passed the name test that
+  // used to stand here. The name test survives as a fallback for entries the
+  // backfill has not typed yet.
+  const filtered = kingdoms.filter((k) =>
+    k.entryType ? k.entryType === "polity" : !/colonie/i.test(k.name)
+  );
+
+  const ordered = inChronologicalOrder(filtered);
 
   // Build cards
-  const cards: KingdomCard[] = filtered.map((k) => {
+  const cards: KingdomCard[] = ordered.map((k) => {
     const tags: string[] = [];
     if (k.politicalCenters) {
       tags.push(
@@ -603,6 +660,7 @@ export function transformKingdoms(kingdoms?: Kingdom[]): KingdomsData {
     return {
       name: k.name.replace(/^\[|\]$/g, ""),
       period: k.period,
+      timeRange: k.timeRange,
       peoples: k.dominantPeoples?.join(", "),
       historicalRole: k.historicalRole,
       centers: k.politicalCenters,
