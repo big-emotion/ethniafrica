@@ -553,3 +553,133 @@ page for the first time. It is a typed figure in a repository whose scale
 module exists to forbid them, it is wrong on the home too, and it is left for
 its own change: the measurement lives under `lib/games/` and an atlas component
 reaching into it would invert the layering to fix a one-line defect.
+
+---
+
+## 13. The bank amendment (2026-09-07)
+
+A reader reported the defect this section answers: « ce sont toujours les mêmes
+questions, il y a 8 questions et il n'y a que ces questions-là ». Both halves
+were true, and they had different causes.
+
+### What the page actually served
+
+Measured against the committed outlines, not inferred:
+
+| Measurement                                           | Value                                                             |
+| ----------------------------------------------------- | ----------------------------------------------------------------- |
+| Rounds in the whole pool, for a session of 8          | **18** — 12 comparisons, 6 estimates                              |
+| Intra-African pairs where the projection inverts rank | 25                                                                |
+| …surviving `MINIMUM_AREA_RATIO` (1.02)                | 16                                                                |
+| …reachable by the handler's greedy pairing            | 12                                                                |
+| Pairs against the six `worldCompare` silhouettes      | **4** — Greenland and Western Europe, against the DRC and Algeria |
+| Distinct opening sessions a reader could be served    | **1** — the seed was the slug                                     |
+
+**The ceiling was the filter, not the corpus.** `mercatorMisleads` accepts only
+a pair whose _drawn_ ranking is inverted, which requires two territories of
+near-identical true area; `MINIMUM_AREA_RATIO` then rejects near-identical
+areas. No amount of curation moves that: a fifty-ninth African outline adds
+roughly one pair. §11 measured seven reachable pairs and the greedy rewrite
+took it to twelve, which was the whole runway that change bought.
+
+And the second half of the reader's sentence had nothing to do with the bank.
+`takeSession` advances a window on « rejouer », but the seed came from the
+game's slug — a constant — so leaving the page reset it and the opening eight
+were the same for every visitor, for ever.
+
+### The mechanism, asked instead of only asserted
+
+Every reveal on this page has stated since it shipped that Mercator inflates
+with distance from the equator. The page had never once **asked** it.
+
+`greater-inflation` does: _« Sur une carte de Mercator, lequel de ces deux pays
+est le plus agrandi ? »_ — Tunisie against Kenya, 1,46 against 1,00. It clears
+the kill test on every count. Not eyesight: an enlargement is invisible without
+knowing the true area, and the round hands over neither. Not arithmetic. Not a
+coin flip, at the threshold below. The reasoning path is the lesson itself —
+_the one further from the equator_ — and the reveal states the two latitudes so
+a wrong answer still lands it.
+
+It also lifts the ceiling outright. Any two territories at different latitudes
+make a round: **602 African pairs at a factor gap of 1,10 and 297 at 1,20**,
+from the outlines already committed. `MINIMUM_INFLATION_RATIO` is set at 1,20
+rather than lower, because the scarce resource here is no longer pairs — it is
+questions a reader can actually reason about.
+
+**Inside Africa only.** Greenland against Kenya is 14,3 against 1,0, an answer
+readable off the shape of the option. The comparison round is where a borrowed
+silhouette earns its place; this one is about reading a map.
+
+### The comparison reaches outside the continent
+
+`larger-area` now draws from the corpus **plus** the six `worldCompare`
+silhouettes, so « Groenland ou RDC ? » — the comparison this page exists to
+make — is finally in the game that argues it. Four pairs, and they are the four
+best questions on the surface.
+
+Two rules bound it. **At least one half of every pair is African**: Western
+Europe against India is a round on an atlas of African peoples that names no
+African anything, and an empty corpus is exactly when it would be served. And
+**a mixed pair leads to the fiche of its African half**, a silhouette having
+none — `/pays/GRL` is a 404 behind an id that looks like an ISO code because,
+for Greenland, it is one.
+
+### One pass was the other half of the ceiling
+
+Widening the question was not enough on its own, and the first measurement of
+the rebuilt handler is the reason this paragraph exists: it served **22 rounds**
+where the candidate bank held 297 pairs. The greedy pairing spends each
+territory once per walk, and every inflation pair needs one of the dozen
+countries far enough from the equator — so nine pairs exhausted the anchors and
+the walk ended.
+
+`POOL_PASSES` walks the pool three times, skipping pairs already emitted and
+starting each pass further into the list, since greedy pairing over one order is
+deterministic and a second identical pass yields nothing. Measured over the
+fifty-eight outlines, the assembled pool goes from 22 to **53** — 20
+comparisons, 27 inflation rounds, 6 estimates — which is six windows of eight,
+drawn fresh on every request.
+
+Three passes and not more: the same dozen anchors carry every inflation pair, so
+past three appearances Morocco starts being the answer often enough to be
+guessable. A bank grown that way teaches a reflex rather than the rule. Inside
+one pass a territory is still spent once, which is what keeps a run of
+consecutive rounds from asking about Tunisia four times over.
+
+### One game, three questions
+
+`GameDefinition.promptFr` held the game's one question while the game had one.
+It is the line printed above every round, so it was announcing « lequel est le
+plus grand ? » above a slider. It now carries the **thesis** — _la projection de
+Mercator gonfle le nord et rapetisse l'Afrique_ — and each round carries its own
+stem.
+
+`GameRound.template` is the field that came with that split. `kind` is the
+control a round is answered with; `template` is the question it asks, and two of
+the three share the same two buttons. The suite that read « the comparison
+rounds » by filtering on `kind` was silently reading every binary round the game
+builds.
+
+The three lists are wildly uneven — hundreds, a dozen, exactly six — so the
+alternation inside each band is **round-robin, never proportional**. A draw
+weighted by pool size hands a session of eight to the largest list and the
+reader meets one question all evening.
+
+### The seed moves
+
+Per request. The comment defending the constant named two costs, and neither
+survives inspection: a moving seed cannot desynchronise the trees, because the
+rounds are built on the server and travel as serialized props with nothing
+re-deriving them; and the route was never cacheable, the root layout awaiting
+`connection()` for the CSP nonce making every page under it dynamic.
+Reproducibility stays where it belongs — the seed is a parameter and every test
+passes its own.
+
+### What this amendment does not do
+
+It adds **no comparison shape**. Russia, Canada, Kazakhstan and the rest would
+take the estimate round from six to about fifteen, and were rejected: a French
+reader holds no wrong picture of Mongolia to correct, so the round could only be
+recalled, and half the ratios would land near Greenland's fourteen as
+duplicates. The estimate round stays at six until a shape earns its place by
+being one the audience already thinks it knows.

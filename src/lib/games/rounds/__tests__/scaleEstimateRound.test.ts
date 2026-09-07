@@ -64,6 +64,31 @@ describe("buildScaleEstimateRound", () => {
     expect(round.reveal.ficheHref).toBeTruthy();
   });
 
+  /**
+   * The reveal named the shape by the asset's bare label, so five of the six
+   * read « Chine couvre 9,4 millions de km² » with no article and « États-Unis
+   * (contigus) couvre » with no number agreement either. `SUBJECT_BY_SHAPE`
+   * already writes the article out for the stem; the reveal reads it from
+   * there.
+   */
+  // @req REQ-120
+  it("names each shape in French, article and all", () => {
+    expect(buildScaleEstimateRound("CHN").reveal.textFr).toContain(
+      "La Chine :"
+    );
+    expect(buildScaleEstimateRound("USA").reveal.textFr).toContain(
+      "Les États-Unis contigus :"
+    );
+    expect(buildScaleEstimateRound("EUW").reveal.textFr).toContain(
+      "L'Europe de l'Ouest :"
+    );
+    for (const shapeId of ESTIMATE_SHAPE_IDS) {
+      expect(buildScaleEstimateRound(shapeId).reveal.textFr).not.toMatch(
+        /\scouvre\s/
+      );
+    }
+  });
+
   // FR65/FR66: a round that cannot be filled is not generated.
   // @req REQ-120
   it("returns null for a shape the asset does not hold", () => {

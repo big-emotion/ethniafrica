@@ -11,6 +11,7 @@ import {
   buildTrueSizeClaim,
   pickScaleFacts,
 } from "@/lib/games/scaleFacts";
+import { requestSeed } from "@/lib/games/session";
 import { getAxisHubRoute } from "@/lib/hubs/axisRoutes";
 import { ACCENT_BY_ACCESS_MODE } from "@/lib/hubs/moduleRegistry";
 import { OG_TITLE } from "@/lib/brand";
@@ -78,14 +79,13 @@ export default async function GamePage({ params }: GamePageProps) {
   // The rounds are built here, in the server component, and handed to the
   // island as props — there is no public games endpoint to fetch from.
   //
-  // The seed is derived from the slug rather than from a clock: a time-based
-  // seed is impure in render, and a deterministic one keeps the page cacheable
-  // and the rounds reproducible in a test — the same discipline
-  // correctOptionIndex applies to answer placement.
-  const seed = [...game.slug].reduce(
-    (sum, char) => sum + char.charCodeAt(0),
-    0
-  );
+  // The seed rotates the pool before the pairs are formed, so it decides which
+  // session a reader is served. It used to be the slug's character sum, which
+  // is a constant, and the reasoning for that is answered in `lib/games/session`
+  // — briefly: nothing re-derives these rounds on the client, and this route
+  // was never cacheable. What the constant cost is that every visitor, on every
+  // reload, was handed the same eight rounds.
+  const seed = requestSeed();
 
   // The continent the Mercator stage draws. Caught the way the atlas hub
   // catches it: a failed count costs the per-country field, not the round.

@@ -19,6 +19,7 @@ const GAME: GameDefinition = {
 
 const ROUND = {
   kind: "binary",
+  template: "larger-area",
   gameId: "mercator",
   subjectId: "DZA",
   promptFr: "Lequel couvre la plus grande surface ?",

@@ -7,6 +7,10 @@ import {
   mercatorRevealEn,
 } from "@/lib/games/rounds/mercatorRound.en";
 import {
+  INFLATION_ROUND_EN,
+  inflationRevealEn,
+} from "@/lib/games/rounds/inflationRound.en";
+import {
   ESTIMATE_SHAPE_IDS,
   buildScaleEstimateRound,
 } from "@/lib/games/rounds/scaleEstimateRound";
@@ -44,12 +48,54 @@ describe("the English Mercator round", () => {
     expect(frenchResidue(reveal)).toBeNull();
   });
 
+  /**
+   * The stem is the round's own, not the registry's: `promptEn` became the
+   * game's standing claim once a second and a third question shipped under it.
+   */
   // @req REQ-145
-  it("asks the registered game's standing question in English", () => {
-    expect(MERCATOR_ROUND_EN.prompt).toBe(
+  it("asks its own question rather than repeating the game's standing line", () => {
+    expect(MERCATOR_ROUND_EN.prompt).not.toBe(
       GAME_DEFINITIONS_EN.mercator.promptEn
     );
+    expect(MERCATOR_ROUND_EN.prompt).toContain("?");
+    expect(frenchResidue(MERCATOR_ROUND_EN.prompt)).toBeNull();
     expect(MERCATOR_ROUND_EN.provenance).toBe("machine");
+  });
+});
+
+/**
+ * The English wording of the question the page spent a year asserting in its
+ * reveals without ever asking.
+ */
+describe("the English inflation round", () => {
+  // @req REQ-145
+  it("asks about the projection, in English, and marks itself machine-authored", () => {
+    expect(INFLATION_ROUND_EN.prompt).toContain("Mercator");
+    expect(INFLATION_ROUND_EN.prompt).toContain("?");
+    expect(frenchResidue(INFLATION_ROUND_EN.prompt)).toBeNull();
+    expect(INFLATION_ROUND_EN.provenance).toBe("machine");
+  });
+
+  /**
+   * A wrong answer has to leave with the mechanism, so the reveal states both
+   * latitudes and the rule — the same contract the French one is held to.
+   */
+  // @req REQ-145
+  it("states both factors, both latitudes and the rule behind them", () => {
+    const reveal = inflationRevealEn(
+      { nameEn: "Tunisia", inflation: 1.461, latitude: 34.1 },
+      { nameEn: "Kenya", inflation: 1.0, latitude: 0.3 }
+    );
+
+    expect(reveal).toContain("Tunisia");
+    expect(reveal).toContain("Kenya");
+    expect(reveal).toContain("1.5");
+    expect(reveal).toContain("1.0");
+    expect(reveal).toContain("34° N");
+    expect(reveal).toContain("0°");
+    expect(reveal).toContain("latitude");
+    expect(reveal).toContain("equator");
+    expect(frenchResidue(reveal)).toBeNull();
   });
 });
 

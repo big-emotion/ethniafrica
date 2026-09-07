@@ -34,6 +34,7 @@ const GAME: GameDefinition = {
 
 const ROUND: BinaryRound = {
   kind: "binary",
+  template: "larger-area",
   gameId: "plus-ou-moins",
   subjectId: "PPL_A",
   promptFr: "Lequel est le plus nombreux",

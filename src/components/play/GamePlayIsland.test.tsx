@@ -21,6 +21,7 @@ const GAME: GameDefinition = {
 function binaryRound(subjectId: string): BinaryRound {
   return {
     kind: "binary",
+    template: "larger-area",
     gameId: "mercator",
     subjectId,
     promptFr: `Lequel couvre la plus grande surface, ${subjectId}`,

@@ -42,6 +42,7 @@ const GAME: GameDefinition = {
 
 const round = (subjectId: string): GameRound => ({
   kind: "binary",
+  template: "larger-area",
   gameId: "mercator",
   subjectId,
   promptFr: "Lequel de ces deux pays couvre la plus grande surface ?",

@@ -18,13 +18,23 @@ import { createApiResponse, type ApiEnvelope } from "@/api/v2/utils/response";
 import type { DifficultyBand, GameRound } from "@/lib/games/gameKinds";
 import type { GameDefinition } from "@/lib/games/gameRegistry";
 import { loadGameCorpus } from "@/api/v2/services/gamesService";
-import type { GameCorpus, GameCountryFixture } from "@/lib/games/corpus";
+import type { GameCorpus } from "@/lib/games/corpus";
 import {
   buildMercatorRound,
   mercatorMisleads,
   trueAreaKm2,
 } from "@/lib/games/rounds/mercatorRound";
+import {
+  MINIMUM_INFLATION_RATIO,
+  buildInflationRound,
+  mercatorInflationOf,
+} from "@/lib/games/rounds/inflationRound";
 import { buildScaleEstimateRounds } from "@/lib/games/rounds/scaleEstimateRound";
+import {
+  NON_AFRICAN_SILHOUETTES,
+  isAfricanTerritory,
+  type ComparedTerritory,
+} from "@/lib/games/territory";
 
 export interface GameRoundsData {
   /**
@@ -53,31 +63,69 @@ function rotate<T>(items: T[], seed: number): T[] {
 }
 
 /**
- * Pairs where Mercator lies about which country is bigger, each country used
- * at most once.
+ * How many times the pool is walked, and so how many pairs a territory may
+ * appear in.
  *
- * Consecutive pairing cannot express this. Two countries mislead only when
- * they sit at different latitudes, and neighbours in the corpus are usually
- * neighbours on the map — so walking the list two at a time served mostly
- * honest comparisons, in the one game whose entire subject is the lie. Every
- * candidate pair is considered, greedily, so a country left over by one
- * pairing can still be spent on another.
+ * One pass is what the handler used to do, and it caps the bank at half the
+ * pool however many pairs the question could offer: the inflation round has
+ * 297 candidate pairs across the African outlines and a single pass yielded
+ * nine, because every one of them needs one of the dozen countries far enough
+ * from the equator and each was spent immediately.
+ *
+ * Three because a reader who replays twice must not meet a round twice. The
+ * island advances a window of eight on each « rejouer », so three passes over
+ * both binary questions put the pool comfortably past three windows. It is not
+ * larger because the same dozen anchors carry every inflation pair: past three
+ * appearances Morocco starts being the answer often enough to be guessable,
+ * and a bank grown that way teaches a reflex rather than the rule.
  */
-function misleadingPairs(
-  countries: GameCountryFixture[]
-): [GameCountryFixture, GameCountryFixture][] {
-  const out: [GameCountryFixture, GameCountryFixture][] = [];
-  const spent = new Set<string>();
+const POOL_PASSES = 3;
 
-  for (let i = 0; i < countries.length; i++) {
-    if (spent.has(countries[i].id)) continue;
-    for (let j = i + 1; j < countries.length; j++) {
-      if (spent.has(countries[j].id)) continue;
-      if (!mercatorMisleads(countries[i], countries[j])) continue;
-      out.push([countries[i], countries[j]]);
-      spent.add(countries[i].id);
-      spent.add(countries[j].id);
-      break;
+/**
+ * Pairs a pool off against itself, keeping only the pairs `worthAsking`
+ * accepts and never emitting the same pair twice.
+ *
+ * Consecutive pairing cannot express either question this feeds. Two countries
+ * mislead about area, or differ in how much they are inflated, only when they
+ * sit at different latitudes — and neighbours in the corpus are usually
+ * neighbours on the map, so walking the list two at a time served mostly
+ * honest comparisons in the one game whose entire subject is the lie. Every
+ * candidate pair is considered, greedily, so a territory left over by one
+ * pairing can still be spent on another.
+ *
+ * Inside one pass a territory is spent once, which is what keeps a run of
+ * consecutive rounds from asking about Tunisia four times over.
+ */
+function pairOff<T extends ComparedTerritory>(
+  pool: T[],
+  worthAsking: (a: T, b: T) => boolean
+): [T, T][] {
+  const out: [T, T][] = [];
+  const emitted = new Set<string>();
+
+  for (let pass = 0; pass < POOL_PASSES; pass++) {
+    // Each pass starts further into the list, so the greedy walk meets a
+    // different first partner. Without it every pass is the same pass:
+    // greedy pairing over one order is deterministic.
+    const ordered = rotate(
+      pool,
+      Math.floor((pool.length * pass) / POOL_PASSES)
+    );
+    const spent = new Set<string>();
+
+    for (let i = 0; i < ordered.length; i++) {
+      if (spent.has(ordered[i].id)) continue;
+      for (let j = i + 1; j < ordered.length; j++) {
+        if (spent.has(ordered[j].id)) continue;
+        const key = [ordered[i].id, ordered[j].id].sort().join("|");
+        if (emitted.has(key)) continue;
+        if (!worthAsking(ordered[i], ordered[j])) continue;
+        out.push([ordered[i], ordered[j]]);
+        emitted.add(key);
+        spent.add(ordered[i].id);
+        spent.add(ordered[j].id);
+        break;
+      }
     }
   }
   return out;
@@ -125,21 +173,35 @@ function bandedPool<T>(
 }
 
 /**
- * The comparisons of a country against a country.
+ * The comparisons of one territory against another.
+ *
+ * The pool is the corpus plus the six silhouettes from outside the continent,
+ * because the pairs worth asking are mostly not inside Africa. Mercator's
+ * factor runs from 1,00 to 1,46 across the African outlines, so an inversion
+ * of rank there needs two countries of near-identical area — sixteen pairs
+ * clear both filters, and « Groenland ou RDC ? », the comparison this page was
+ * built to make, was not among them for want of a second asset.
  *
  * A session that cannot be filled with misleading pairs is served short:
  * padding it with honest comparisons would quietly undo the filter, and
  * `corpusLimited` already states the shortfall on screen.
  */
-function binaryRounds(corpus: GameCorpus, seed: number): GameRound[] {
+function comparisonRounds(corpus: GameCorpus, seed: number): GameRound[] {
   const { ordered, bandOf } = bandedPool(
-    rotate(corpus.countries, seed),
-    (country) => country.id,
+    rotate([...corpus.countries, ...NON_AFRICAN_SILHOUETTES], seed),
+    (territory) => territory.id,
     trueAreaKm2
   );
 
+  // At least one half of every pair is African. Two borrowed silhouettes set
+  // against each other would be a round about Europe and India on an atlas of
+  // African peoples, and an empty corpus is precisely when that happens: the
+  // six silhouettes are the only pool left standing.
+  const aboutAfrica = (a: ComparedTerritory, b: ComparedTerritory) =>
+    (isAfricanTerritory(a) || isAfricanTerritory(b)) && mercatorMisleads(a, b);
+
   const rounds: GameRound[] = [];
-  for (const [a, b] of misleadingPairs(ordered)) {
+  for (const [a, b] of pairOff(ordered, aboutAfrica)) {
     const round = buildMercatorRound(a, b);
     if (!round) continue;
 
@@ -150,6 +212,50 @@ function binaryRounds(corpus: GameCorpus, seed: number): GameRound[] {
     rounds.push({ ...round, difficultyBand: band });
   }
   return rounds;
+}
+
+/**
+ * The rounds about the projection itself: which of two countries it enlarges
+ * more.
+ *
+ * African outlines only — a silhouette from outside the continent would make
+ * the answer readable off the option's own shape, which is the eyesight the
+ * charter's kill test refuses. See `inflationRound` for the rest of that
+ * argument, and for why this question exists at all.
+ *
+ * Difficulty is the gap between the two factors, not the size of either: 1,46
+ * against 1,00 is a judgement a reader can make from where the two countries
+ * sit, and 1,33 against 1,10 is one they mostly cannot.
+ */
+function inflationGap(a: ComparedTerritory, b: ComparedTerritory): number {
+  const factorA = mercatorInflationOf(a);
+  const factorB = mercatorInflationOf(b);
+  return Math.max(factorA, factorB) / Math.min(factorA, factorB);
+}
+
+function inflationRounds(corpus: GameCorpus, seed: number): GameRound[] {
+  const pairs = pairOff(
+    rotate(corpus.countries, seed),
+    (a, b) => inflationGap(a, b) >= MINIMUM_INFLATION_RATIO
+  );
+
+  const built = pairs
+    .map(([a, b]) => ({
+      round: buildInflationRound(a, b),
+      gap: inflationGap(a, b),
+    }))
+    .filter((entry) => entry.round !== null);
+
+  const { bandOf } = bandedPool(
+    built,
+    (entry) => entry.round.subjectId,
+    (entry) => entry.gap
+  );
+
+  return built.map((entry) => ({
+    ...entry.round,
+    difficultyBand: bandOf.get(entry.round.subjectId),
+  }));
 }
 
 /**
@@ -179,12 +285,25 @@ function estimateRounds(): GameRound[] {
   }));
 }
 
-/** Takes from each list in turn, so neither gesture runs in a block. */
-function interleave(left: GameRound[], right: GameRound[]): GameRound[] {
+/**
+ * Takes from each list in turn, so no one question runs in a block.
+ *
+ * Round-robin rather than a proportional draw, and that matters now that the
+ * three lists are wildly uneven: the inflation question can offer hundreds of
+ * pairs where the comparison offers a dozen and the estimate exactly six. A
+ * draw weighted by pool size would hand a session of eight to the largest list
+ * and the reader would meet one question all evening. Taking one from each in
+ * turn keeps the opening of every session mixed, which is the part anyone
+ * plays.
+ */
+function interleave(lists: GameRound[][]): GameRound[] {
+  const longest = Math.max(0, ...lists.map((list) => list.length));
   const merged: GameRound[] = [];
-  for (let i = 0; i < Math.max(left.length, right.length); i++) {
-    if (i < left.length) merged.push(left[i]);
-    if (i < right.length) merged.push(right[i]);
+
+  for (let i = 0; i < longest; i++) {
+    for (const list of lists) {
+      if (i < list.length) merged.push(list[i]);
+    }
   }
   return merged;
 }
@@ -202,22 +321,26 @@ function assembleRounds(
   corpus: GameCorpus,
   seed: number
 ): GameRound[] {
-  const binary = binaryRounds(corpus, seed);
-  const estimate = estimateRounds();
+  const byTemplate = [
+    comparisonRounds(corpus, seed),
+    inflationRounds(corpus, seed),
+    estimateRounds(),
+  ];
 
   // Two rules meet here and neither may be dropped. Charter §4 wants the
   // session ordered by ascending difficulty; a session of eight identical
-  // gestures is a worse session than a mixed one. Sorting globally would
-  // block the two kinds; interleaving globally would scramble the bands.
+  // questions is a worse session than a mixed one. Sorting globally would
+  // block the three templates; interleaving globally would scramble the bands.
   //
   // So the bands are the outer order and the alternation happens inside each
   // one: the reader still meets an easy round before a hard one, and still
-  // never taps the same control eight times running.
+  // never answers the same question eight times running.
   const bands: DifficultyBand[] = [1, 2, 3];
   return bands.flatMap((band) =>
     interleave(
-      binary.filter((round) => round.difficultyBand === band),
-      estimate.filter((round) => round.difficultyBand === band)
+      byTemplate.map((rounds) =>
+        rounds.filter((round) => round.difficultyBand === band)
+      )
     )
   );
 }

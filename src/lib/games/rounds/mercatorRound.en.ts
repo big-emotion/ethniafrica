@@ -1,7 +1,5 @@
 import { englishNumber, inflationEn } from "@/lib/games/format.en";
-import { GAME_DEFINITIONS_EN } from "@/lib/games/gameRegistry.en";
 import type { TranslationKind } from "@/lib/i18n/translationSidecarRules";
-import type { CountryId } from "@/types/afrik";
 
 /**
  * The English wording of « La taille qu'on vous a cachée » — the sidecar of
@@ -17,17 +15,27 @@ import type { CountryId } from "@/types/afrik";
  * Agent-authored under DEC-048, hence `machine`.
  */
 export interface CountryFootprintEn {
-  id: CountryId;
-  /** The country's English name — a corpus field, not something this module words. */
+  /**
+   * Not a `CountryId`: a comparison may now hold a `worldCompare` silhouette,
+   * whose keys are the asset's own — `EUW` is a dissolved Western Europe with
+   * no country code.
+   */
+  id: string;
+  /** The territory's English name — a corpus field, not something this module words. */
   nameEn: string;
   trueAreaKm2: number;
   /** Mercator's factor over the true area, as `mercatorInflation` measures it. */
   inflation: number;
 }
 
+/**
+ * The stem, no longer the registry's `promptEn`: that field became the game's
+ * standing thesis when a second question shipped, and a round has to word the
+ * question it actually asks.
+ */
 // @req REQ-145
 export const MERCATOR_ROUND_EN = {
-  prompt: GAME_DEFINITIONS_EN.mercator.promptEn,
+  prompt: "Which of these two countries covers the larger area?",
   provenance: "machine" as Extract<TranslationKind, "machine">,
 };
 

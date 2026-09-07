@@ -8,6 +8,7 @@ import { getCountryRoute } from "@/lib/routing";
 function binaryRound(subjectId: string, correctIndex: 0 | 1 = 0): BinaryRound {
   return {
     kind: "binary",
+    template: "larger-area",
     gameId: "mercator",
     subjectId,
     promptFr: `Lequel couvre la plus grande surface, ${subjectId}`,
