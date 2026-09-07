@@ -13,6 +13,16 @@ const en = {
     region: "verification warning",
     close: "close the warning",
   },
+  onward: {
+    title: "Continue",
+    kind: {
+      people: "People",
+      country: "Country",
+      "language-family": "Language family",
+      language: "Language",
+      name: "Name borne",
+    },
+  },
   chapterBar: {
     aria: "Fiche chapters",
     summary: "Contents",
@@ -36,6 +46,16 @@ const fr: FicheCopy = {
     stale: (date) => `dernière vérification : ${date} · à re-vérifier`,
     region: "avertissement vérification",
     close: "fermer l'avertissement",
+  },
+  onward: {
+    title: "Poursuivre",
+    kind: {
+      people: "Peuple",
+      country: "Pays",
+      "language-family": "Famille linguistique",
+      language: "Langue",
+      name: "Patronyme",
+    },
   },
   chapterBar: {
     aria: "Chapitres de la fiche",

@@ -16,6 +16,10 @@ import {
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { FicheOnward } from "@/components/fiche/FicheOnward";
+import { buildOnwardLinks } from "@/lib/fiche/onwardLinks";
+import { countryOnwardGroups } from "@/lib/fiche/onwardGroups";
+import { getAfrikLanguageFamilyRoster } from "@/lib/supabase/queries/afrik/languageFamilies";
 import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
@@ -155,26 +159,43 @@ export default async function PaysSlugPage({
     );
   }
 
-  const [country, sourceFlags, countryAtlasIndex, peopleCounts, patronymes] =
-    await Promise.all([
-      loadCountryFiche(parsed.slug, lang as Language),
-      getActiveSourceFlags("country", parsed.slug),
-      getCountryAtlasIndex(),
-      // The globe can now be aimed at any country, so the panel has to answer
-      // for any country. A failed count costs the other countries' subtitle,
-      // never the fiche.
-      getContinentPeopleCounts().catch(() => ({}) as Record<string, number>),
-      // Caught to `null` rather than to two empty lists: empty is the corpus
-      // saying no name reaches this country, which the chapter prints as a
-      // fact. A dropped query must not be able to make that claim.
-      getCountryPatronymes(parsed.slug).catch(() => null),
-    ]);
+  const [
+    country,
+    sourceFlags,
+    countryAtlasIndex,
+    peopleCounts,
+    patronymes,
+    familyRoster,
+  ] = await Promise.all([
+    loadCountryFiche(parsed.slug, lang as Language),
+    getActiveSourceFlags("country", parsed.slug),
+    getCountryAtlasIndex(),
+    // The globe can now be aimed at any country, so the panel has to answer
+    // for any country. A failed count costs the other countries' subtitle,
+    // never the fiche.
+    getContinentPeopleCounts().catch(() => ({}) as Record<string, number>),
+    // Caught to `null` rather than to two empty lists: empty is the corpus
+    // saying no name reaches this country, which the chapter prints as a
+    // fact. A dropped query must not be able to make that claim.
+    getCountryPatronymes(parsed.slug).catch(() => null),
+    // A country fiche files its peoples' families by identifier and carries
+    // no name beside them, so the roster is the only way this page can
+    // print "Nigéro-congolais" rather than FLG_NIGERCONGO. One query for the
+    // twenty-four of them, and an empty roster simply costs the block its
+    // family rows.
+    getAfrikLanguageFamilyRoster().catch(() => []),
+  ]);
   if (!country) {
     notFound();
   }
 
   const navigationContext = (await searchParams) ?? {};
   const countryDetail = mapCountryDetail(country);
+
+  /** The only place a country fiche's `FLG_*` identifiers get a name. */
+  const familyNamesById = new Map<string, string>(
+    familyRoster.map((family) => [family.id, family.nameFr] as const)
+  );
 
   // Ids from the corpus, geometry and name from the asset. The corpus decides
   // which countries have a fiche; the asset decides which can be drawn and
@@ -291,6 +312,22 @@ export default async function PaysSlugPage({
               fromPeopleName={navigationContext.fromPeopleName}
               fromPeopleId={navigationContext.fromPeopleId}
               patronymes={patronymes}
+              onward={
+                <FicheOnward
+                  from="country"
+                  language={lang as Language}
+                  links={buildOnwardLinks(
+                    countryOnwardGroups({
+                      demographicPeoples:
+                        countryDetail.demographics?.peoples ?? [],
+                      majorPeoples: countryDetail.majorPeoples ?? [],
+                      familyNamesById,
+                      language: lang as Language,
+                    }),
+                    lang as Language
+                  )}
+                />
+              }
             />
           </>
         }

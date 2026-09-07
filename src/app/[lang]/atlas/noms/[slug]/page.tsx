@@ -7,6 +7,13 @@ import { loadPatronymeFiche } from "@/lib/fiche/ficheExistence";
 import { readNameStanding } from "@/lib/patronymes/content";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { FicheOnward } from "@/components/fiche/FicheOnward";
+import { buildOnwardLinks } from "@/lib/fiche/onwardLinks";
+import {
+  countryTargets,
+  patronymeOnwardGroups,
+} from "@/lib/fiche/onwardGroups";
+import { listPatronymes } from "@/api/v2/services/patronymes";
 import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
@@ -94,6 +101,23 @@ export default async function AppellationsSlugPage({
     notFound();
   }
 
+  /**
+   * Names filed under the same onomastic system.
+   *
+   * The system itself is not a fiche — `systemes_onomastiques/` holds a
+   * template and nothing else — so the kinship is expressed by the names it
+   * gathers rather than by a link to the system. Three are read for two slots:
+   * this fiche is one of them and `buildOnwardLinks` drops it, so asking for
+   * exactly two would sometimes deliver one.
+   */
+  const sameSystemNames = await listPatronymes({
+    page: 1,
+    perPage: 3,
+    filters: { nameSystem: patronyme.nameSystem },
+  })
+    .then((result) => result.data)
+    .catch(() => []);
+
   return (
     <PageLayout
       language={lang as Language}
@@ -121,6 +145,30 @@ export default async function AppellationsSlugPage({
           <PatronymeFicheView
             patronyme={patronyme}
             language={lang as Language}
+            onward={
+              <FicheOnward
+                from="name"
+                language={lang as Language}
+                links={buildOnwardLinks(
+                  patronymeOnwardGroups({
+                    bearerPeoples: patronyme.associatedPeoples,
+                    // The corpus column, resolved through the same admin-0
+                    // asset the rest of the atlas names countries with, so the
+                    // block and the globe agree on how a country is spelt.
+                    countries: countryTargets(
+                      patronyme.associatedCountries.map(
+                        (country) => country.id
+                      ),
+                      lang as Language
+                    ),
+                    sameSystemNames,
+                    language: lang as Language,
+                  }),
+                  lang as Language,
+                  { kind: "name", id: patronyme.id }
+                )}
+              />
+            }
           />
         }
       />

@@ -427,3 +427,37 @@ keyboard reader must arrive somewhere they can read from.
 from where the chapters start, so the globe keeps the screen to itself while it
 is the subject. It takes the parchment's measure, not the viewport's, and the
 ground on either side of it is the ground the document is printed on.
+
+**A fiche ends with a way out.** Measured on production 2026-09-07: the fiches
+hold a reader for 251 to 276 seconds — `PPL_BASSA_CAM` 274, `pays/COD` 276 —
+against 21 seconds on the listings that point at them. Ten of them nonetheless
+showed a **100 % exit rate**. The reading was never the problem. The foot of the
+document was: four minutes of attention ended against a bibliography and a
+browser's back button. Pages per visit sat at 3.09, and that ceiling was not
+interest, it was the absence of an outbound link.
+
+So the last chapter of a fiche is `Poursuivre`, and four rules hold it to what
+the corpus can actually justify:
+
+- **Derived, never recommended.** The links are read off relations the corpus
+  already declares — a family, a language, a country, a people of the same
+  family, a patronyme borne. Nothing scores or ranks. An atlas whose argument is
+  provenance cannot close its documents on a guess.
+- **Absent, never empty.** A fiche the corpus relates to nothing renders no
+  block. §4 above governs a _field_ of the fiche, where an absence is a fact
+  about the subject and is owed to the reader; this is navigation, and there is
+  no fact to report. §7's rule applies instead: a chapter the corpus does not
+  produce is not in the DOM, and therefore not in the rail.
+- **One accent, the page's.** The rows name no colour. Painting each in its
+  target entity's hue is the tempting move and it opens a **fourth**
+  entity-to-colour mapping inside one scroll — §2 already runs three at once,
+  and a reader cannot learn a code that means three things. What kind of thing a
+  link leads to is carried by a word.
+- **Five, and they are action links.** Past five rows the chapter stops reading
+  as an invitation and becomes a second listing, which is the shape these fiches
+  already out-read ten to one. Each row is form A of `actions-charter.md` — label
+  then arrow, no container. Cards would put four hundred pixels of chrome at the
+  foot of a fifteen-thousand-pixel document, competing with the one layer that
+  must look auditable.
+
+The contract is `src/components/fiche/__tests__/ficheOnwardCharter.test.tsx`.

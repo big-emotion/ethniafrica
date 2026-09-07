@@ -7,6 +7,9 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
 import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
+import { FicheOnward } from "@/components/fiche/FicheOnward";
+import { buildOnwardLinks } from "@/lib/fiche/onwardLinks";
+import { languageOnwardGroups } from "@/lib/fiche/onwardGroups";
 import { FicheHeroHead } from "@/components/fiche/FicheHeroHead";
 import { LanguageFicheTitle } from "@/components/language/LanguageFicheTitle";
 import { LanguageDetailViewV2 } from "@/components/language/LanguageDetailViewV2";
@@ -102,6 +105,20 @@ export default async function LanguesSlugPage({
             language={lang as Language}
             data={data}
             hasSourceFlag={sourceFlags.length > 0}
+            onward={
+              <FicheOnward
+                from="language"
+                language={lang as Language}
+                links={buildOnwardLinks(
+                  languageOnwardGroups({
+                    family: data.family,
+                    speakingPeoples: data.speakingPeoples,
+                    language: lang as Language,
+                  }),
+                  lang as Language
+                )}
+              />
+            }
           />
         }
       />

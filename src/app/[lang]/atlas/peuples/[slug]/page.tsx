@@ -22,6 +22,11 @@ import { buildFicheSourceRegister } from "@/lib/fiche/ficheSourceRegister";
 import { ficheSourceEntries } from "@/lib/afrik/ficheSourceLabel";
 import { getFieldNotes } from "@/lib/supabase/queries/afrik/module-zero-batch";
 import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { FicheOnward } from "@/components/fiche/FicheOnward";
+import { buildOnwardLinks } from "@/lib/fiche/onwardLinks";
+import { peopleOnwardGroups } from "@/lib/fiche/onwardGroups";
+import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
+import { listAfrikLanguages } from "@/lib/supabase/queries/afrik/languages";
 import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
@@ -205,6 +210,38 @@ export default async function PeoplesSlugPage({
   const peopleDetail = mapPeopleDetail(people);
 
   /**
+   * The family and the languages, named.
+   *
+   * A people carries its family as an identifier and its languages as bare
+   * ISO 639-3 codes; neither has a name beside it, and `mainLanguage` is prose
+   * that cannot be split per code — "Kriolu capverdien (langue vehiculaire
+   * locale) ; portugais" for two codes. Without these two reads the block
+   * would print `FLG_BENOUECONGO` and `yor`, which is the corpus's filing
+   * rather than anything a reader can use.
+   *
+   * Both are caught: a fiche must not 500 over the chapter that closes it.
+   */
+  const isoCodes = peopleDetail.languages?.isoCodes ?? [];
+  const [languageFamily, spokenLanguages] = await Promise.all([
+    getLanguageFamilyById(peopleDetail.languageFamilyId, lang as Language)
+      .then((family) =>
+        family
+          ? {
+              id: family.id,
+              name:
+                lang === "en"
+                  ? (family.nameEn ?? family.nameFr)
+                  : family.nameFr,
+            }
+          : null
+      )
+      .catch(() => null),
+    listAfrikLanguages({ filters: { ids: [...isoCodes] }, perPage: 4 })
+      .then((result) => result.languages)
+      .catch(() => []),
+  ]);
+
+  /**
    * The fiche's bibliography, and the callouts that index it.
    *
    * The register is built from both lists — what the fiche declares and what
@@ -308,6 +345,30 @@ export default async function PeoplesSlugPage({
             // Only when something cites it: a bibliography numbered for
             // nobody promises an anchor that does not exist.
             bibliography={notes.count > 0 ? register.entries : undefined}
+            onward={
+              <FicheOnward
+                from="people"
+                language={lang as Language}
+                links={buildOnwardLinks(
+                  peopleOnwardGroups({
+                    family: languageFamily,
+                    languages: spokenLanguages,
+                    countryCodes: peopleDetail.currentCountries,
+                    // The half of the ego network the fiche throws away: the
+                    // sourced relations already have a chapter of their own,
+                    // and these are the peoples sharing this one's family,
+                    // ordered by name and disjoint from them by construction.
+                    sameFamilyPeoples: egoNetwork.derived.map(
+                      (link) => link.neighbor
+                    ),
+                    borneNames: borneNames ?? [],
+                    language: lang as Language,
+                  }),
+                  lang as Language,
+                  { kind: "people", id: peopleDetail.id }
+                )}
+              />
+            }
           />
         }
       />

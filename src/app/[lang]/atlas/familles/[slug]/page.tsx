@@ -16,6 +16,11 @@ import {
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
+import { FicheOnward } from "@/components/fiche/FicheOnward";
+import { buildOnwardLinks } from "@/lib/fiche/onwardLinks";
+import { familyOnwardGroups } from "@/lib/fiche/onwardGroups";
+import { rankMemberPeoplesByReach } from "@/lib/familyFootprintRanking";
+import { getAfrikLanguagesByFamily } from "@/lib/supabase/queries/afrik/languages";
 import { ficheJsonLdFor } from "@/lib/seo/ficheJsonLd";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { FicheSnapshotView } from "@/components/fiche/FicheSnapshotView";
@@ -207,6 +212,18 @@ export default async function FamillesSlugPage({
     ),
   });
 
+  /**
+   * The family's own languages, which no other part of this route needs.
+   *
+   * `generalInfo.branches` looks like the answer and is not: it holds prose
+   * labels ("East Bantu", "Mbam-Bubi") that no field ties to a language, so it
+   * can name a branch but never address one. Caught rather than awaited bare —
+   * a fiche must not 500 over the block that closes it.
+   */
+  const familyLanguages = await getAfrikLanguagesByFamily(parsed.slug).catch(
+    () => []
+  );
+
   const recordView = (
     <LanguageFamilyDetailViewV2
       language={lang as Language}
@@ -215,6 +232,23 @@ export default async function FamillesSlugPage({
       memberPeoples={memberPeoples}
       memberPeopleCount={memberPeoples.length}
       footprintProvenance={footprintProvenance}
+      onward={
+        <FicheOnward
+          from="language-family"
+          language={lang as Language}
+          links={buildOnwardLinks(
+            familyOnwardGroups({
+              languages: familyLanguages,
+              // Widest reach first: the peoples the family gathers across the
+              // most countries are the ones a reader has most chance of
+              // having heard of, and the ranking is the fiche's own.
+              peoples: rankMemberPeoplesByReach(memberPeoples),
+              language: lang as Language,
+            }),
+            lang as Language
+          )}
+        />
+      }
     />
   );
 

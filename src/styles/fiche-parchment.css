@@ -723,3 +723,48 @@
     font-size: var(--afh-text-h1);
   }
 }
+
+/* ── The way out ──────────────────────────────────────────────────────
+   Measured on production 2026-09-07: a fiche holds a reader for 251 to
+   276 seconds against 21 on the listing that points at it, and ten
+   fiches still ended at a 100 % exit rate. The document held and then
+   stopped without pointing anywhere.
+
+   One column on a phone, two once the parchment has room for two
+   measures — the same 760px the chapters change padding at, so the
+   block breathes with the document rather than against it.
+
+   `text-align: left` is a decision, not an inheritance. mobile-text.css
+   centres the body below 768px, and every row here is a shrink-to-fit
+   inline-flex link: centred, five rows start at five different x and
+   their arrows land in five places, so there is no column to scan and
+   no return edge. Brand charter §8.1 — one alignment per block, and
+   this block chooses ragged-right. */
+.afh-onward {
+  display: grid;
+  gap: 16px;
+  /* The chapter heading is display type at h1 size on a wide parchment, and
+     the first kicker sat straight under it. One step of the ramp, not the
+     6px the sources note happens to carry — that is one of the odd steps the
+     brand charter deprecated in place. */
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: start;
+}
+
+/* The parchment's own eyebrow, at this row's margin: the kind of thing
+   a link leads to is carried by a word, never by a hue. Painting each
+   row in its target's accent would open a fourth entity-to-colour
+   mapping inside one scroll (atlas charter §2 already runs three). */
+.afh-onward-kind {
+  display: block;
+  margin-bottom: 4px;
+}
+
+@container (min-width: 760px) {
+  .afh-onward {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 24px;
+  }
+}

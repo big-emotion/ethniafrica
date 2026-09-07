@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { transformFamilyData } from "@/lib/familyDataTransformer";
 import type { LanguageFamily } from "@/types/afrik";
 import type { FamilyFootprintCountry } from "@/lib/atlas/overlays";
@@ -63,6 +65,8 @@ export interface LanguageFamilyDetailViewV2Props {
   memberPeopleCount?: number;
   /** Which rule built the footprint, so the parchment describes the one the page applied. */
   footprintProvenance?: FamilyFootprintProvenance;
+  /** The way out of the fiche, composed by the route and passed straight down. */
+  onward?: ReactNode;
 }
 
 // @req REQ-047
@@ -73,6 +77,7 @@ export function LanguageFamilyDetailViewV2({
   memberPeoples = [],
   memberPeopleCount = 0,
   footprintProvenance = "member-peoples",
+  onward,
 }: LanguageFamilyDetailViewV2Props) {
   const data = transformFamilyData(family);
 
@@ -86,6 +91,7 @@ export function LanguageFamilyDetailViewV2({
       memberPeoples={memberPeoples}
       memberPeopleCount={memberPeopleCount}
       footprintProvenance={footprintProvenance}
+      onward={onward}
     >
       <div className="afh-parchment-section">
         <FamilyDecolonialHeader
