@@ -13,8 +13,8 @@
   },
   "summary": {
     "referenceEntries": 252,
-    "localLanguageDossiers": 28,
-    "referenceEntriesWithExactDossier": 4,
+    "localLanguageDossiers": 31,
+    "referenceEntriesWithExactDossier": 7,
     "referenceEntriesWithReviewedPeopleCode": 34,
     "referenceEntriesWithAnyLocalSignal": 37,
     "reviewedPeopleIsoCodes": 45,
@@ -22,6 +22,14 @@
     "reviewedPeopleIsoCodesUnmatchedToReference": 11
   },
   "localLanguageDossiers": [
+    {
+      "id": "alz",
+      "nameFr": "Alur",
+      "iso639P3Code": "alz",
+      "glottocode": "alur1250",
+      "matchStatus": "exact_reference",
+      "matchedReferenceGlottocodes": ["alur1250"]
+    },
     {
       "id": "arb",
       "nameFr": "Arabe standard moderne",
@@ -151,6 +159,14 @@
       "matchedReferenceGlottocodes": ["luba1249"]
     },
     {
+      "id": "lub",
+      "nameFr": "Kiluba (luba-katanga)",
+      "iso639P3Code": "lub",
+      "glottocode": "luba1250",
+      "matchStatus": "exact_reference",
+      "matchedReferenceGlottocodes": ["luba1250"]
+    },
+    {
       "id": "mos",
       "nameFr": "Mossi",
       "iso639P3Code": "mos",
@@ -205,6 +221,14 @@
       "glottocode": "swah1253",
       "matchStatus": "outside_country_reference",
       "matchedReferenceGlottocodes": []
+    },
+    {
+      "id": "tll",
+      "nameFr": "Otetela",
+      "iso639P3Code": "tll",
+      "glottocode": "tete1250",
+      "matchStatus": "exact_reference",
+      "matchedReferenceGlottocodes": ["tete1250"]
     },
     {
       "id": "tuq",

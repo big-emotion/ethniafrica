@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "langue",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "tll",
+  "isoCode639_3": "tll",
+  "glottocode": "tete1250",
+  "nameFr": "Otetela",
+  "nameEn": "Tetela",
+  "alternateNames": ["Kitetela", "Sungu"],
+  "spellingAliases": [],
+  "familyId": "FLG_BANTU",
+  "peoples": [{ "name": "Tetela", "peopleId": "PPL_TETELA" }],
+  "content": {
+    "vehicularRole": "non_vehicular",
+    "dialects": [],
+    "vitalityStatus": {
+      "status": "Vigorous",
+      "scale": "EGIDS (Ethnologue)",
+      "asOf": 2025
+    },
+    "sources": [
+      {
+        "title": "Glottolog 5.3 — Tetela (tete1250)",
+        "url": "https://glottolog.org/resource/languoid/id/tete1250",
+        "tier": "official",
+        "notes": "Notice directe pour le code ISO 639-3 tll et le glottocode tete1250. Elle situe la langue en République démocratique du Congo, atteste notamment les variantes Otetela et Sungu et publie le statut EGIDS 6a en 2025. Kitetela est conservé comme variante déjà déclarée par la fiche peuple réconciliée."
+      }
+    ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred until the French DRC country enrichment pass is stable."
+    }
+  }
+}

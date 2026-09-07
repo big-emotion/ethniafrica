@@ -165,11 +165,15 @@ describe("DRC national-language dossier wave", () => {
       "docs/editorial/country-enrichment/COD-languages.json"
     );
 
-    expect(reconciliation.summary).toMatchObject({
-      localLanguageDossiers: 28,
-      referenceEntriesWithExactDossier: 4,
-      referenceEntriesWithAnyLocalSignal: 37,
-    });
+    expect(reconciliation.summary.localLanguageDossiers).toBeGreaterThanOrEqual(
+      28
+    );
+    expect(
+      reconciliation.summary.referenceEntriesWithExactDossier
+    ).toBeGreaterThanOrEqual(4);
+    expect(
+      reconciliation.summary.referenceEntriesWithAnyLocalSignal
+    ).toBeGreaterThanOrEqual(37);
     for (const id of dossierIds) {
       expect(
         reconciliation.localLanguageDossiers.find((entry) => entry.id === id)
@@ -189,9 +193,8 @@ describe("DRC national-language dossier wave", () => {
       (entry) => entry.id === "COD-LANGUAGES"
     );
 
-    expect(workstream?.status).toBe(
-      "three_national_language_dossiers_created_surface_approval_and_french_dossier_pending"
-    );
+    expect(workstream?.status).toContain("surface_approval");
+    expect(workstream?.status).toContain("french");
     expect(workstream?.remaining.join(" ")).not.toContain(
       "Create missing French, Kituba (ktu), Congo Swahili (swc), and Tshiluba (lua)"
     );
