@@ -166,8 +166,8 @@
       "declaredMainLanguages": 0,
       "featuredLanguageLabels": 13,
       "candidateIsoCodes": 75,
-      "candidateIsoCodesWithDossiers": 3,
-      "dossierCoverageOfCandidateCodesPercent": 4,
+      "candidateIsoCodesWithDossiers": 6,
+      "dossierCoverageOfCandidateCodesPercent": 8,
       "referenceCount": 252,
       "rawReferenceUpperBoundPercent": 29.8
     },
@@ -394,7 +394,7 @@
     {
       "id": "COD-LANGUAGES",
       "priority": "P0",
-      "status": "three_national_language_dossiers_created_surface_approval_and_french_dossier_pending",
+      "status": "second_language_dossier_wave_created_surface_approval_and_french_taxonomy_pending",
       "goal": "Expose verified DRC languages with stable ISO 639-3 and Glottocode links.",
       "findings": [
         "The country culture section has no mainLanguages entries, so the country fiche language bubbles are empty.",
@@ -404,7 +404,7 @@
         "The local language corpus now contains exact Lingala (lin), Kituba (ktu), Congo Swahili (swc), and Tshiluba (lua) dossiers. The standardized Swahili dossier (swh) remains separate, and French is still missing because the corpus does not yet model an Indo-European family.",
         "The pinned Glottolog 5.3 CLDF export contains 252 CD-linked entries: 244 languages and 8 dialects. Of these, 235 carry an ISO 639-3 code and 17 require Glottocode-first reconciliation.",
         "The pinned inventory directly exposes Congo Swahili (swc), Kituba (Democratic Republic of Congo) (ktu), Luba-Katanga (lub), Luba-Lulua (lua), and Kinshasa Lingala (lin). French is absent from this country inventory, confirming that constitutional language roles and Glottolog geographic inventory membership must remain separate dimensions.",
-        "Exact reconciliation now finds four local dossiers that directly match the CD reference inventory: Lingala (lin; ling1263), Kituba (ktu; kitu1246), Congo Swahili (swc; cong1236), and Tshiluba (lua; luba1249). The other 24 local language dossiers remain globally valid but do not directly cover a pinned CD entry.",
+        "Exact reconciliation now finds seven local dossiers that directly match the CD reference inventory: Lingala (lin; ling1263), Kituba (ktu; kitu1246), Congo Swahili (swc; cong1236), Tshiluba (lua; luba1249), Luba-Katanga (lub; luba1250), Tetela (tll; tete1250), and Alur (alz; alur1250). The other 24 local language dossiers remain globally valid but do not directly cover a pinned CD entry.",
         "The retained people and subgroup proposals expose 45 unique ISO 639-3 codes: 34 match a CD reference entry and 11 do not. The unmatched codes are bfl, bqk, gba, gbp, iyx, kon, liy, lli, swa, teg, and tyi; each requires semantic or geographic review rather than automatic deletion.",
         "Across exact local dossier and retained-people code signals, 37 of the 252 reference entries have at least one local signal and 215 have none. This is a reconciliation workload measure, not reader-facing language completeness.",
         "Semantic review resolves the 11 exact-code misses into scope problems. The Banda fiche uses bfl, bqk, and liy varieties located outside the DRC; its DRC-relevant reference candidates are bpd, bjo, lnl, and tor. The provisional Gbaya relation remains unsupported, and gbp is limited to the Central African Republic.",
@@ -413,7 +413,8 @@
         "The constitutional Kikongo label is mapped provisionally to Kikongo ya Leta/Kituba (ktu; kitu1246) for the national-language surface, while Eastern Kikongo and community Kongo varieties remain separately discoverable. Glottolog explicitly records Kikongo ya Leta as an alternative name of the DRC Kituba entry and assigns it statutory national-identity status.",
         "The constitutional Kiswahili label is mapped provisionally to Congo Swahili (swc; cong1236) for DRC country exposure. The existing standardized Swahili dossier (swh; swah1253) remains related but is not a direct substitute, and the swa macrolanguage must not be used as a country-level endpoint.",
         "A five-entry main-language surface proposal is ready: French as official; Kikongo ya Leta/Kituba, Lingala, Congo Swahili/Kiswahili, and Tshiluba as national languages; the four Congolese languages also carry regional vehicular roles where supported.",
-        "On 2026-09-07, exact source dossiers were created for Kituba (ktu), Congo Swahili (swc), and Tshiluba (lua). Their English counterparts remain explicitly deferred while the French country enrichment pass continues; no country surface or database synchronization is claimed."
+        "On 2026-09-07, exact source dossiers were created for Kituba (ktu), Congo Swahili (swc), and Tshiluba (lua). Their English counterparts remain explicitly deferred while the French country enrichment pass continues; no country surface or database synchronization is claimed.",
+        "The second evidence-prioritized wave created exact dossiers for Luba-Katanga (lub), Tetela (tll), and Alur (alz). Reconciliation now exposes seven exact local dossiers while the any-local-signal count remains 37 because all three codes were already present in reviewed people records; this improves dossier depth without inflating the broader workload measure."
       ],
       "remaining": [
         "Apply the remaining reviewed people-language corrections only after proposal approval: narrow Banda and Teke country exposure to DRC-relevant varieties, and keep broad Gbaya codes off the DRC surface until the people relation is verified.",
