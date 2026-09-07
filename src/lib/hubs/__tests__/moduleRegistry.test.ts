@@ -73,9 +73,53 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
       "peuples",
       "familles",
       "langues",
-      "noms",
       "patronymes",
       "recherche",
+      "noms",
+    ]);
+  });
+
+  /**
+   * Declaration order is display order, and it is also the accent walk —
+   * `accentForModule` cycles the four categorical accents by registry index.
+   * An unlisted module left mid-list would punch a hole in a colour sequence
+   * nobody can see it leaving, so `noms` sits after `recherche`: it is no
+   * longer a step in the reader's walk through the axis, so it no longer
+   * occupies a place in it.
+   */
+  // @req REQ-114
+  it("offers the atlas six entry points, the unlisted one after them", () => {
+    const ids = getNavModules("atlas").map((m) => m.id);
+    expect(ids).toEqual([
+      "pays",
+      "peuples",
+      "familles",
+      "langues",
+      "patronymes",
+      "recherche",
+    ]);
+  });
+
+  /**
+   * The whole point of the labels: a reader meeting this row for the first
+   * time should not need to know the corpus already to decode it.
+   *
+   * « L'arbre des familles » named a rendering metaphor rather than a content
+   * class — familles de quoi — and drew 1 visitor in the 30 days to
+   * 6 September 2026. « Noms » was the one singular-shaped odd-one-out beside
+   * four « Les X d'Afrique », and it named, in the reader's ear, the same
+   * thing as the Appellations row directly above it.
+   */
+  // @req REQ-114
+  it("names each atlas entry after the content class behind it", () => {
+    const names = getNavModules("atlas").map((m) => m.name);
+    expect(names).toEqual([
+      "Les pays d'Afrique",
+      "Les peuples d'Afrique",
+      "Les familles linguistiques",
+      "Les langues d'Afrique",
+      "Les noms d'Afrique",
+      "Recherche libre",
     ]);
   });
 
@@ -109,12 +153,18 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     });
     expect(patronymes?.id).not.toBe("noms");
     expect(patronymes?.name).not.toBe("Appellations");
+    expect(patronymes?.unlisted).toBeUndefined();
   });
 
   // The trap this guards against: a module keyed "noms" with page "names"
   // already exists for Appellations. Adding patronymes must not shadow it.
+  //
+  // Appellations is unlisted since the header amendment of 7 September 2026
+  // (atlas-charter.md §3). That is a statement about the menu and about
+  // nothing else: the entity, its route, its table and its readiness are
+  // exactly what they were.
   // @req REQ-139
-  it("leaves the pre-existing Appellations module unchanged", () => {
+  it("leaves the Appellations module intact behind an unlisted menu row", () => {
     const noms = MODULE_DEFINITIONS.find((m) => m.id === "noms");
 
     expect(noms).toMatchObject({
@@ -124,6 +174,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
       availability: "data",
       dataSource: "name_records",
       editorialReadiness: "ready",
+      unlisted: true,
     });
   });
 
@@ -315,10 +366,18 @@ describe("moduleRegistry — the list the header may show (REQ-114)", () => {
     expect(getNavModules("jeux").map((def) => def.id)).toContain("quiz");
   });
 
+  // The environment still has no say. `unlisted` is the only reason a module
+  // may be missing from the header, it is declared in this file, and it is
+  // the same on every machine — which is the whole distinction this suite and
+  // moduleVisibilityCharter.test.ts exist to hold.
   // @req REQ-106
-  it("hides no module from the header", () => {
+  it("hides from the header only what the registry declares unlisted", () => {
     for (const mode of ACCESS_MODES) {
-      expect(getNavModules(mode)).toEqual(getModulesForAccessMode(mode));
+      const hidden = getModulesForAccessMode(mode).filter(
+        (definition) => !getNavModules(mode).includes(definition)
+      );
+
+      expect(hidden.every((definition) => definition.unlisted)).toBe(true);
     }
   });
 
@@ -327,7 +386,9 @@ describe("moduleRegistry — the list the header may show (REQ-114)", () => {
     process.env.NEXT_PUBLIC_FEATURE_QUIZ = "true";
 
     expect(getNavModules("atlas").map((def) => def.id)).toEqual(
-      getModulesForAccessMode("atlas").map((def) => def.id)
+      getModulesForAccessMode("atlas")
+        .filter((def) => !def.unlisted)
+        .map((def) => def.id)
     );
   });
 });
@@ -367,6 +428,12 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
   // could have learnt is lost — and pinning an accent per module to avoid the
   // shift would introduce the one thing the charter does forbid, a component
   // choosing its own.
+  //
+  // Unlisting Appellations moved it behind `recherche`, which rotates exactly
+  // three entries — patronymes, recherche and noms itself — and leaves the
+  // dossiers and games blocks where they were, because the atlas still holds
+  // seven modules. The point of moving it was that the six a reader still sees
+  // keep an unbroken ocre · teal · terre · perv · ocre · teal walk.
   // @req REQ-114
   // @req REQ-139
   it("pins the accent every module wears after the regrouping", () => {
@@ -375,9 +442,9 @@ describe("moduleRegistry — per-module accent (atlas charter §2)", () => {
       peuples: "afh-accent-teal",
       familles: "afh-accent-terre",
       langues: "afh-accent-perv",
-      noms: "afh-accent-ocre",
-      patronymes: "afh-accent-teal",
-      recherche: "afh-accent-terre",
+      patronymes: "afh-accent-ocre",
+      recherche: "afh-accent-teal",
+      noms: "afh-accent-terre",
       nommer: "afh-accent-perv",
       anecdotes: "afh-accent-ocre",
       "dossier-proportions": "afh-accent-teal",

@@ -7,9 +7,9 @@ const en = {
     title: TRAIL_PAGE_LABELS.en.atlasHub,
     pageTitle: "Explore the peoples of Africa",
     blurb:
-      "The fiche axis: language families, languages, peoples, countries, ethnonyms and names, each under its own.",
+      "The fiche axis: language families, languages, peoples, countries and names, each under its own.",
     menuBlurb:
-      "The fiches of families, languages, peoples, countries, ethnonyms and names, plus the search.",
+      "The fiches of language families, languages, peoples, countries and names, plus the search.",
     hubEntryName: "The exploration hub",
   },
   dossiers: {
@@ -39,10 +39,12 @@ const en = {
   moduleNames: {
     pays: "The countries of Africa",
     peuples: "The peoples of Africa",
-    familles: "The family tree",
+    familles: "The language families",
     langues: "The languages of Africa",
+    // Unlisted, not retired — the header no longer renders it. Kept so the
+    // label stays a decision rather than a fallback to the registry's.
     noms: "Ethnonyms",
-    patronymes: "Names",
+    patronymes: "The names of Africa",
     recherche: "Free search",
     nommer: "Who gave this name?",
     anecdotes: "Anecdotes",
@@ -95,14 +97,18 @@ const fr: HubsCopy = {
     // (ETNI-857) — so the menu that is supposed to say where a click
     // lands was written in the vocabulary of the people who built it.
     // Ordered by the corpus's own hierarchy — famille → langue → peuple →
-    // pays — then the two axes that name rather than place. Both sentences
+    // pays — then the axis that names rather than places. Both sentences once
     // listed four of six classes, each omitting a different pair, so a
     // reader met a different atlas depending on whether they read the menu
     // or the page under it.
+    //
+    // They now name five, not six: appellations left the menu on 7 September
+    // 2026 (atlas-charter.md §3), and a sentence that promises what the row
+    // below it does not offer is the same defect in the other direction.
     blurb:
-      "L'axe des fiches : familles linguistiques, langues, peuples, pays, appellations et noms, chacun sous la sienne.",
+      "L'axe des fiches : familles linguistiques, langues, peuples, pays et noms, chacun sous la sienne.",
     menuBlurb:
-      "Les fiches de familles, langues, peuples, pays, appellations et noms, plus la recherche.",
+      "Les fiches de familles linguistiques, langues, peuples, pays et noms, plus la recherche.",
     hubEntryName: "Le hub d'exploration",
   },
   dossiers: {
@@ -134,10 +140,13 @@ const fr: HubsCopy = {
   moduleNames: {
     pays: "Les pays d'Afrique",
     peuples: "Les peuples d'Afrique",
-    familles: "L'arbre des familles",
+    familles: "Les familles linguistiques",
     langues: "Les langues d'Afrique",
+    // Kept although the header no longer renders it: the entry is unlisted,
+    // not retired, and a label deleted here would fall back to the registry's
+    // — which is the same string, but by accident rather than by decision.
     noms: "Appellations",
-    patronymes: "Noms",
+    patronymes: "Les noms d'Afrique",
     recherche: "Recherche libre",
     nommer: "Qui a donné ce nom ?",
     anecdotes: "Anecdotes",

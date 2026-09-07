@@ -84,6 +84,29 @@ describe("the footer directory — the site's rubrics under the fiche (REQ-046)"
   });
 
   /**
+   * Where Appellations landed when the header stopped offering it
+   * (atlas-charter.md §3, 7 September 2026). The menu is curated — six rows a
+   * first-time reader can decode — and this directory is exhaustive, which is
+   * the trade that makes unlisting a module a relegation rather than a burial.
+   * Delete this link and `unlisted` becomes the feature flag the module
+   * charter forbids, wearing a new word.
+   */
+  // @req REQ-114
+  it("keeps the unlisted appellations index reachable from the directory", () => {
+    render(<SiteFooter language="fr" />);
+
+    const explorer = screen.getByRole("navigation", {
+      name: footer.directory.explorerHeading,
+    });
+
+    expect(
+      within(explorer).getByRole("link", {
+        name: footer.directory.appellations,
+      })
+    ).toHaveAttribute("href", getLocalizedRoute("fr", "names"));
+  });
+
+  /**
    * À propos and Sources describe the project, not the corpus, so no access
    * mode lists them. The footer is where a page about the project belongs
    * and the source bibliography is reachable from the chrome. Doctrine is

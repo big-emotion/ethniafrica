@@ -33,13 +33,23 @@ import { getTranslation } from "@/lib/translations";
 const NAME_AXIS_ROUTE = getLocalizedRoute("fr", "patronymes");
 
 describe("DEC-038 — the reader meets the name axis as « Nom »", () => {
+  /**
+   * The decision constrains the word, not the article in front of it. The
+   * menu entry grew to « Les noms d'Afrique » on 7 September 2026 for the
+   * reason the number was settled above: it sits in a row of « Les pays
+   * d'Afrique », « Les peuples d'Afrique », « Les langues d'Afrique », and a
+   * bare « Noms » among them read as a form field rather than as the fifth
+   * index. The phrase is not invented for the menu — it is already the title
+   * of the page the entry opens (`facets.ts`).
+   */
   // @req REQ-138
-  it("names the atlas menu entry « Noms »", () => {
+  it("names the atlas menu entry with the reader's word for it", () => {
     const entry = MODULE_DEFINITIONS.find(
       (module) => module.page === "patronymes"
     );
 
-    expect(entry?.name).toBe("Noms");
+    expect(entry?.name).toBe("Les noms d'Afrique");
+    expect(entry?.name).not.toMatch(/patronyme/i);
   });
 
   // @req REQ-138

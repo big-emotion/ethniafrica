@@ -20,6 +20,7 @@ const en = {
     families: "Families",
     languages: "Languages",
     patronymes: "Names",
+    appellations: "Peoples' designations",
     participateHeading: "Take part",
     contribute: "Contribute",
     reportError: "Report an error",
@@ -67,6 +68,12 @@ const fr: FooterCopy = {
     // in trail.ts), distinct from "Appellations" so the two corpus entities
     // never read as one entry in a menu.
     patronymes: "Noms",
+    // Where Appellations landed when it left the header on 7 September 2026
+    // (atlas-charter.md §3): the menu is curated, this directory is
+    // exhaustive. Spelled out here rather than shortened to « Appellations »
+    // like the trail does, because a footer column has no page title above it
+    // to say whose designations these are — and « Noms » sits two rows up.
+    appellations: "Appellations des peuples",
     participateHeading: "Participer",
     contribute: "Contribuer",
     reportError: "Signaler une erreur",

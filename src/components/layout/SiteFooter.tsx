@@ -107,6 +107,10 @@ export function SiteFooter({ language }: SiteFooterProps) {
           label: directory.patronymes,
           href: getLocalizedRoute(language, "patronymes"),
         },
+        {
+          label: directory.appellations,
+          href: getLocalizedRoute(language, "names"),
+        },
       ],
     },
     {

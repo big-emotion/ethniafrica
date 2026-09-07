@@ -175,6 +175,29 @@ export interface HubModuleDefinition {
    * claim, so prose names all six and the census counts five.
    */
   corpusNoun?: string;
+  /**
+   * Kept out of the header and the hub grid, and out of nothing else.
+   *
+   * The third question the registry answers about a module, after "can it be
+   * reached" (`availability`) and "is it worth the trip" (`editorialReadiness`):
+   * would a reader ever arrive *wanting to browse this*. Some corpus surfaces
+   * are lookups — you reach them holding the term you came for — and a menu
+   * row is the wrong organ for them, because a menu invites a walk.
+   *
+   * Measured before it was believed. Appellations occupied one of seven atlas
+   * rows on every page of the site and took 0 visits out of 219 pageviews in
+   * the 30 days to 6 September 2026, while its own reason for existing — turn a
+   * name heard elsewhere into the people it designates — was never wired into
+   * the search that would have asked it. A row nobody clicks costs the six
+   * beside it, since a reader reads the whole set before choosing any of it.
+   *
+   * This withholds a menu row and nothing more: the route stays built, the
+   * trail keeps its axis crumb, the site plan keeps its line, the crawler keeps
+   * its link. That is the whole difference between this field and
+   * `NEXT_PUBLIC_FEATURE_QUIZ`, which made a finished page answer notFound() on
+   * one machine and serve on another.
+   */
+  unlisted?: boolean;
   /** A game under the Jouer hub, addressed as /fr/jeux/<gameSlug> rather than by PageType. Keeps PageType a closed union instead of growing a variant per game. */
   gameSlug?: string;
   /** Which shelf the module sits on. Jouer only — see ModuleGroupId. */
@@ -243,9 +266,13 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     dataSource: "afrik_peoples",
     corpusNoun: "Peuples",
   },
+  // Named after what it holds, like its four neighbours. "L'arbre des
+  // familles" named the *rendering* — a tree — and left the reader to supply
+  // the noun: familles de quoi. The corpus had the answer written down all
+  // along, one line below in `corpusNoun`.
   {
     id: "familles",
-    name: "L'arbre des familles",
+    name: "Les familles linguistiques",
     accessMode: "atlas",
     page: "families",
     availability: "data",
@@ -268,46 +295,32 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     dataSource: "afrik_languages",
     corpusNoun: "Langues",
   },
-  // The fourth nominal entry point. A reader who arrives holding a name the
-  // corpus files as an appellation — an exonym, a colonial-era spelling —
-  // arrives the same way as one holding a country's, and ETNI-1453 gives
-  // that name a fiche of its own to land on.
-  {
-    id: "noms",
-    name: "Appellations",
-    accessMode: "atlas",
-    page: "names",
-    availability: "data",
-    // The published people fiches now feed the index directly: their autonyms,
-    // exonyms and attested variants give this route corpus-wide coverage, while
-    // ambiguous prose remains refused rather than guessed. The invitation can
-    // therefore follow the route that was already public.
-    editorialReadiness: "ready",
-    dataSource: "name_records",
-    corpusNoun: "Appellations",
-  },
-  // Distinct from "noms"/Appellations: a patronyme is the naming *system* a
-  // person is named under, not a people's autonym/exonym. Filed beside it
-  // because both take a name and return a fiche, which is Explorer's rule,
-  // but kept a separate id so neither shadows the other (ETNI-1801).
+  // The fifth nominal entry point: a patronyme is the naming *system* a person
+  // is named under, distinct from the autonyms and exonyms a people carries
+  // (the `noms` module below). Filed on the same axis because both take a name
+  // and return a fiche, which is the atlas's rule, but kept on a separate id so
+  // neither shadows the other (ETNI-1801).
   //
   // The id stays `patronymes` and the reader-facing word is `nom`, which is
   // DEC-038's split rather than an inconsistency: the public label is the word
   // a francophone types, and the internal word is what keeps this entity apart
-  // from the two other things the repository calls "nom" — the ethnonym
-  // dossier above and ARCH-018's person. This entry said "Patronymes" for the
-  // whole of ETNI-1803, so the menu named the axis one way while the trail,
-  // the footer and the URL named it another.
+  // from the two other things the repository calls "nom" — the appellations
+  // index and ARCH-018's person. This entry said "Patronymes" for the whole of
+  // ETNI-1803, so the menu named the axis one way while the trail, the footer
+  // and the URL named it another.
   //
-  // Plural, like every module beside it. A menu entry names a destination
-  // holding many fiches, and « Nom » was the one singular in a row reading
-  // Familles · Langues · Peuples · Pays · Appellations — which made it read as
-  // a field on a form rather than as an index. The singular survives where it
-  // is right: above one fiche (`patronymes.eyebrow`) and on one search hit
-  // (`SEARCH_ENTITY_ACCENT.patronyme`).
+  // « Les noms d'Afrique » rather than « Noms » since the header amendment of
+  // 7 September 2026, for the reason the plural was settled first: the entry
+  // stands in a row of « Les pays d'Afrique », « Les peuples d'Afrique »,
+  // « Les langues d'Afrique », and a bare noun among them reads as a field on
+  // a form rather than as the fifth index. The phrase is not written for the
+  // menu — it is already the title of the page the entry opens (`facets.ts`).
+  // The short forms survive where they are right: the trail, the footer
+  // directory, the plan du site, and the singular above one fiche
+  // (`patronymes.eyebrow`).
   {
     id: "patronymes",
-    name: "Noms",
+    name: "Les noms d'Afrique",
     accessMode: "atlas",
     page: "patronymes",
     availability: "data",
@@ -315,7 +328,7 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     dataSource: "afrik_patronymes",
     corpusNoun: "Noms",
   },
-  // Recherche closes Explorer: it is where a reader goes once naming the
+  // Recherche closes the atlas: it is where a reader goes once naming the
   // entity has not been enough.
   {
     id: "recherche",
@@ -324,6 +337,34 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     page: "search",
     availability: "static",
     editorialReadiness: "ready",
+  },
+  // Last, and out of the menu — see `unlisted` on HubModuleDefinition for the
+  // measurement that put it there.
+  //
+  // A reader does not arrive wanting to browse three thousand attested name
+  // forms; they arrive holding one form and wanting the people behind it. That
+  // is a lookup, and the organ for a lookup is the search field, not a menu row
+  // — except that the search does not index name records either
+  // (`SEARCH_RESULT_GROUPS`), which is the ticket this entry is waiting on and
+  // the thing that would make it useful. Until then it is reached from the plan
+  // du site and from the footer directory, as the glossary is.
+  //
+  // Its position is after `recherche` rather than beside the other name module
+  // because declaration order is also the accent walk: mid-list, it would leave
+  // a gap in a colour sequence no reader can see it leaving.
+  {
+    id: "noms",
+    name: "Appellations",
+    accessMode: "atlas",
+    page: "names",
+    availability: "data",
+    // The published people fiches feed the index directly: their autonyms,
+    // exonyms and attested variants give this route corpus-wide coverage, while
+    // ambiguous prose remains refused rather than guessed.
+    editorialReadiness: "ready",
+    dataSource: "name_records",
+    corpusNoun: "Appellations",
+    unlisted: true,
   },
   // ── THE DOSSIERS FREEZE ────────────────────────────────────────────────
   //
@@ -521,18 +562,26 @@ export const getModulesForAccessMode = (
   MODULE_DEFINITIONS.filter((def) => def.accessMode === mode);
 
 /**
- * What the header lists for an access mode: every module of that mode.
+ * What a reader is offered for an access mode: every module of that mode
+ * except the ones declared `unlisted`.
  *
- * There is nothing left to filter. The header renders inside PageLayout, a
- * client component some fifty pages mount, so it cannot run the hub's
- * Supabase probe — but the probe only ever answers "is this module's corpus
- * empty", never "does this module exist". A reader following a header link
- * to a module whose table is empty lands on that module's own empty state,
- * which is a smaller failure than a link that was never shown.
+ * Availability is still not filtered here, and that half of the old comment
+ * stands: the header renders inside PageLayout, a client component some fifty
+ * pages mount, so it cannot run the hub's Supabase probe — but the probe only
+ * ever answers "is this module's corpus empty", never "does this module
+ * exist". A reader following a header link to a module whose table is empty
+ * lands on that module's own empty state, which is a smaller failure than a
+ * link that was never shown.
+ *
+ * `unlisted` is a different question and the only one this filter asks: not
+ * "is there anything behind the door" but "would a reader ever have come
+ * looking for it in a menu". Read by the header *and* by the hub grid
+ * (`getHubModules`), because the charter's rule that a page states one
+ * availability rather than one per surface applies to being offered at all.
  */
 // @req REQ-114 @req REQ-106
 export const getNavModules = (mode: AccessMode): HubModuleDefinition[] =>
-  getModulesForAccessMode(mode);
+  getModulesForAccessMode(mode).filter((definition) => !definition.unlisted);
 
 /**
  * The four CVD-validated categorical accents, in the order the menu walks

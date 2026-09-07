@@ -197,8 +197,7 @@ module availability behavior stays governed by the rules below.
   `getModuleHref` (`src/lib/hubs/moduleHref.ts`), read by both surfaces, and
   the charter asks about its result rather than about one of its inputs.
 
-- The menu **names destinations; it never prints their addresses**. A module
-  absent from the menu is a module absent from the corpus.
+- The menu **names destinations; it never prints their addresses**.
 
   This used to read "the panel shows each destination's real route", and the
   panel duly printed `/fr/comprendre/regards/colonisation-et-resistances` —
@@ -209,6 +208,53 @@ module availability behavior stays governed by the rules below.
   where the browser's status bar, the crawler and the screen reader all agree
   to look for it; a URL long enough to wrap over two lines was never the thing
   that told a reader where a click lands.
+
+- **The menu is curated; the exhaustive index is elsewhere.** A module is
+  offered in the header and on the hub grid because a reader would plausibly
+  arrive _wanting to browse it_. One that answers a term the reader already
+  holds — a lookup, not a walk — is declared `unlisted` in `moduleRegistry`,
+  and is reached from the footer directory and the plan du site instead. This
+  supersedes the former clause "a module absent from the menu is a module
+  absent from the corpus", which had stood since the menu held three modules.
+
+  The failure it prevents is a row nobody clicks, and it was measured before it
+  was believed. **Appellations** — the index of attested name forms — held one
+  of seven atlas rows on every page of the site and drew **0 visits out of 219
+  pageviews in the 30 days to 6 September 2026**, a window in which 45 % of
+  visitors arrived from a single LinkedIn post and were therefore meeting the
+  menu for the first time. Over the same window `/fr/atlas/familles` drew 1 and
+  `/fr/atlas/noms` 2, while nine individual patronym fiches were read. The page
+  is not weak: its own reason for existing — turn a name heard elsewhere into
+  the people it designates — is a lookup that was never wired into the search
+  (`SEARCH_RESULT_GROUPS` indexes peoples, languages, countries, families and
+  patronyms, not name records), and it carries no inbound link from any fiche.
+  A menu row was the wrong organ for it, and it cost the six rows beside it,
+  because a reader reads the whole set before choosing any of it.
+
+  `unlisted` withholds a menu row and nothing else. The route stays built, the
+  trail keeps the axis crumb its URL promises, the sitemap keeps its line, the
+  footer directory names it. That is the whole distance between this field and
+  `NEXT_PUBLIC_FEATURE_QUIZ`, which made a finished page answer `notFound()` on
+  one machine and serve on another — and it is why the clause above about
+  reachability is untouched: unlisting is a statement about the menu, never
+  about the corpus.
+
+  Asserted by `moduleVisibilityCharter.test.ts` on three counts — the header
+  hides only what is declared `unlisted`, an unlisted module stays routed and
+  on its axis and in the plan du site, and the hub grid resolves exactly what
+  the header offers.
+
+- **An entry is named after the content class behind it, not after its
+  rendering.** A first-time reader decodes the row or does not use it. « L'arbre
+  des familles » named a tree and left the noun to the reader — familles de
+  quoi — while the class it holds was already written one line below it in the
+  registry, `Familles linguistiques`; it became **Les familles linguistiques**
+  on 7 September 2026. « Noms » became **Les noms d'Afrique** the same day, for
+  the reason the plural was settled before it: the row stands beside « Les pays
+  d'Afrique », « Les peuples d'Afrique » and « Les langues d'Afrique », and a
+  bare noun among them reads as a field on a form rather than as the fifth
+  index — the more so while a row named « Appellations » sat directly above it,
+  naming, to the reader's ear, the same thing.
 
 - **A facet is a direct destination, not a second navigation level.** Peoples,
   countries and families remain three facets of the Explorer surface, grouped
