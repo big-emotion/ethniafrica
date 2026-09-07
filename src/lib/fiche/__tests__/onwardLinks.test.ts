@@ -5,6 +5,7 @@ import {
   buildOnwardLinks,
   type OnwardGroup,
 } from "@/lib/fiche/onwardLinks";
+import { getCountryRoute, getFamilyRoute } from "@/lib/routing";
 
 const family: OnwardGroup = {
   kind: "language-family",
@@ -49,12 +50,12 @@ describe("buildOnwardLinks", () => {
     expect(links).toContainEqual({
       kind: "language-family",
       name: "Nigéro-congolais",
-      href: "/fr/atlas/familles/FLG_NIGERO_CONGOLAIS",
+      href: getFamilyRoute("fr", "FLG_NIGERO_CONGOLAIS"),
     });
     expect(links).toContainEqual({
       kind: "country",
       name: "Nigeria",
-      href: "/fr/atlas/pays/NGA",
+      href: getCountryRoute("fr", "NGA"),
     });
   });
 
@@ -86,7 +87,9 @@ describe("buildOnwardLinks", () => {
       id: "NGA",
     });
 
-    expect(links.map((link) => link.href)).toEqual(["/fr/atlas/pays/BEN"]);
+    expect(links.map((link) => link.href)).toEqual([
+      getCountryRoute("fr", "BEN"),
+    ]);
   });
 
   // @req REQ-091

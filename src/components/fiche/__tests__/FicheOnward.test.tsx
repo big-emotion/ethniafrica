@@ -14,18 +14,18 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { FicheOnward } from "@/components/fiche/FicheOnward";
 import { trackEvent } from "@/lib/analytics/trackEvent";
 import type { OnwardLink } from "@/lib/fiche/onwardLinks";
+import { getCountryRoute, getFamilyRoute } from "@/lib/routing";
 
 vi.mock("@/lib/analytics/trackEvent", () => ({
   trackEvent: vi.fn(),
 }));
 
+const familyHref = getFamilyRoute("fr", "FLG_NIGERO_CONGOLAIS");
+const countryHref = getCountryRoute("fr", "NGA");
+
 const links: OnwardLink[] = [
-  {
-    kind: "language-family",
-    name: "Nigéro-congolais",
-    href: "/fr/atlas/familles/FLG_NIGERO_CONGOLAIS",
-  },
-  { kind: "country", name: "Nigeria", href: "/fr/atlas/pays/NGA" },
+  { kind: "language-family", name: "Nigéro-congolais", href: familyHref },
+  { kind: "country", name: "Nigeria", href: countryHref },
 ];
 
 describe("FicheOnward", () => {
@@ -39,10 +39,10 @@ describe("FicheOnward", () => {
 
     expect(
       screen.getByRole("link", { name: /Nigéro-congolais/ })
-    ).toHaveAttribute("href", "/fr/atlas/familles/FLG_NIGERO_CONGOLAIS");
+    ).toHaveAttribute("href", familyHref);
     expect(screen.getByRole("link", { name: /Nigeria/ })).toHaveAttribute(
       "href",
-      "/fr/atlas/pays/NGA"
+      countryHref
     );
   });
 
