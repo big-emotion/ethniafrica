@@ -110,6 +110,46 @@ Migrations are numbered and sequential in `supabase/migrations/` (081 at last co
 - Storybook uses **`@storybook/react-vite`, not `@storybook/nextjs`** — Next 16 dropped `next/config`, which `@storybook/nextjs` requires. Installs need `--legacy-peer-deps`.
 - Mobile-first is mandatory. Breakpoints: mobile 430px · tablet `md` 720px · desktop `xl` 800px (country container max-width).
 
+### Publishing — the audience, the plan, the video
+
+Four skills cover what happens after a fiche exists, and they run in one order.
+Nothing in this file describes them elsewhere, which is how three of them went
+unmentioned while being the only tools that answer "why is nobody reading this".
+
+- **Measure before planning — `/ethniafrica-audience-audit`.** It writes one
+  dated report to `docs/audience/`, and the two downstream skills refuse a report
+  older than 30 days. Every figure counts **consented sessions only**: Plausible
+  loads after the banner, so the number is a floor of unknown depth, never the
+  audience.
+- **Decide what ships — `/ethniafrica-content-strategist`.** Reads that report
+  and never proposes a subject without the comparable's numbers attached.
+- **Convert what already lands — `/ethniafrica-experience-optimizer`.** A page
+  the report marks a dead end already has the audience a new page would have to
+  earn.
+- **Anything about why a video or a post holds attention — invoke
+  `attention-architect` first, every time.** Writing a hook, judging a script
+  that explains well and still flattens, or filing a persuasion principle
+  somebody sent you. It ships in the `agent-comms` plugin
+  (`/plugin install agent-comms@big-emotion` from `big-emotion/agent-atelier`)
+  alongside `video-director`, `audience-audit` and `content-strategist` — the
+  generic counterparts of the three above, for use on any project.
+
+Its doctrine is measured on this project's own shorts, and two of its findings
+bind editorial copy here: **a video that opens no loop has no retention floor**
+(13 views against 632–861 on the same channel in the same week), and **every
+approved script carries exactly one reframe sentence** — the one that restates
+the hook's absurdity as a meaning, and the one readers quote.
+
+The ethical line is not optional on this surface. The mechanism that captivates
+is the mechanism that manipulates; only a paid debt separates them. **A hook whose
+question the corpus cannot answer is not a hook, it is bait** — and on a sourced
+atlas it is also a lie about the corpus. Rhetoric stays labelled as rhetoric: the
+most quoted sentence in the Bantu short is editorial emphasis, not a historical
+finding, and carrying it forward as fact is how the atlas loses what it sells.
+
+Social copy obeys the reader-facing register and the source-tier policy exactly
+as fiche text does.
+
 ## Non-obvious rules
 
 ### `@req` traceability (`npm run lint:req`, CI-blocking)
