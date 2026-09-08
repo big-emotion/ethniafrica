@@ -22,10 +22,3 @@ _bmad-output/planning-artifacts/module-specs/assets/reference-prototype.html
 # the sources breaks that equivalence. Ignored in eslint.config.mjs for the same
 # reason — they are design references, never imported by src/.
 docs/design/mockups
-
-# Media renders and agent scratch produced in the checkout. Gitignored too, but
-# Prettier reads this file, not .gitignore — without these lines `format:check`
-# is red from files no source change caused.
-output/
-Claude outputs/
-skills-lock.json
