@@ -120,3 +120,8 @@ dataset/source/afrik/logs/
 # Agent runtime mirrors (local skill caches, not project source)
 .agents/
 .codex/
+# Media renders and agent scratch produced in the checkout, never project
+# source. The approved media library lives outside the repository.
+output/
+Claude outputs/
+skills-lock.json
