@@ -83,3 +83,21 @@ Machine output remains `kind: "machine"`. Every path listed in
 `machine_reviewed`. Follow `.claude/skills/afrik-translator/` for classification,
 glossary and register rules. Neither the command nor the skill writes to
 Supabase or changes locale publication.
+
+Collect those paths into one readable package rather than opening both trees
+side by side:
+
+```bash
+npx tsx scripts/afrik/buildReviewPackage.ts --lang en
+npx tsx scripts/afrik/buildReviewPackage.ts --lang en --id NGA --id PPL_HAUSA
+npx tsx scripts/afrik/buildReviewPackage.ts --lang en --out docs/editorial/review/wave-1.md
+```
+
+It prints the French source and the English proposal adjacent on every
+`reviewRequired` path, with the provenance the reviewer signs off against. It
+reads only: it cannot set `machine_reviewed`, and it names no reviewer, because
+a tool able to promote provenance would make the human step unverifiable.
+
+A path the package marks **unresolved** is absent from the French source. That
+is a stale review list, not a translation to read — report it rather than
+approving it.

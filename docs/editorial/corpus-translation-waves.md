@@ -119,3 +119,31 @@ Filled in after the wave runs. Left empty on purpose until then.
 | Actual provider cost                  | —     |
 | Parity result for changed pairs       | —     |
 | Review paths inspected                | —     |
+
+## Finding — the five existing sidecars cannot be reviewed
+
+Running `scripts/afrik/buildReviewPackage.ts --lang en` against the corpus as
+it stands returns **five records and zero review paths**:
+
+| Record                  | Kind      | Model           | Translated |
+| ----------------------- | --------- | --------------- | ---------- |
+| DOS_KONGO               | `machine` | GPT-6           | 2026-09-06 |
+| DOS_LUBA                | `machine` | GPT-6           | 2026-09-06 |
+| DOS_LUNDA               | `machine` | GPT-6           | 2026-09-06 |
+| DOS_SPIRITUALITES_KONGO | `machine` | GPT-6           | 2026-09-06 |
+| ngh                     | `machine` | claude-sonnet-5 | 2026-09-05 |
+
+All five are `kind: "machine"` and none has a reviewer. The four dossiers were
+produced by a different provider from the one `translate:record` uses, and all
+five declare `reviewRequired: []`.
+
+An empty review list on machine output is not the same claim as a reviewed
+translation, but it reads like one to any tool that counts review paths: there
+is nothing to present to a reviewer, so the records can never leave `machine`
+provenance through the ETNI-1878 route. Wave 1's records will not have this
+shape — `translate:record` populated 88 paths across the same kind of content
+in dry-run — which is what makes the four dossiers worth re-examining rather
+than inheriting.
+
+They are out of scope for wave 1. Recorded here so the discrepancy is not
+rediscovered as a surprise when ETNI-1878 opens.
