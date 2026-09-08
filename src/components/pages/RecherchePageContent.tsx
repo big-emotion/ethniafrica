@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
+import { trackEvent } from "@/lib/analytics/trackEvent";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { SearchResultCard } from "@/components/search/SearchResultCard";
 import { SearchPeopleGroupCard } from "@/components/search/SearchPeopleGroupCard";
@@ -148,6 +149,7 @@ export function RecherchePageContent() {
           results: hits,
           leads: nearMisses,
           counts: lensCounts,
+          answered,
         } = await searchWithLeads(q, {
           limit: RESULTS_PER_SEARCH,
           lang: language,
@@ -156,6 +158,23 @@ export function RecherchePageContent() {
         setResults(hits);
         setLeads(nearMisses);
         setCounts(lensCounts);
+        // Reported here rather than from the submit handler, so a query that
+        // arrives by URL — a shared link, a bookmark — counts as the search it
+        // is. Only the modal used to report, which left every such arrival out.
+        //
+        // The count is the point: a query returning nothing is what the corpus
+        // was asked for and does not hold. The query itself is deliberately
+        // absent, on this surface as on the modal.
+        //
+        // `answered` gates it because the loader degrades every failure to an
+        // empty envelope, so a zero here is otherwise indistinguishable from
+        // an outage.
+        if (answered) {
+          trackEvent("search:submit", {
+            surface: "serp",
+            results: hits.length,
+          });
+        }
       } catch {
         setResults([]);
         setLeads([]);
@@ -237,6 +256,17 @@ export function RecherchePageContent() {
     performSearch(name, relation);
   }
 
+  /**
+   * A search that ran and a search that led somewhere used to be the same
+   * event. The rank is what separates them usefully: it says how far down the
+   * reader had to go before the page answered, which is the difference between
+   * a working ranking and one that buries its own best result.
+   *
+   * A position and a kind, never the query.
+   */
+  const trackResultClick = (type: string, rank: number) =>
+    trackEvent("search:result_click", { surface: "serp", type, rank });
+
   // ── derived state ───────────────────────────────────────────────────────────
 
   const hasActiveFilters = Boolean(relation);
@@ -259,6 +289,11 @@ export function RecherchePageContent() {
   const listResults = pivot
     ? sortedResults.filter((r) => r !== pivot)
     : sortedResults;
+
+  // The pivot is the answer the page leads with, so it holds the first rank
+  // and the grid starts below it. Counting it among the cards would put the
+  // dominant answer and the runner-up at the same position.
+  const firstListRank = pivot ? 2 : 1;
 
   // A name imposed from outside never stands alone where the self-appellation
   // exists — the same rule `SearchPivotCard` applies to its own heading.
@@ -332,11 +367,19 @@ export function RecherchePageContent() {
       {groupPeopleResults(listResults).map((entry, i) =>
         entry.type === "peopleGroup" ? (
           <li key={`peopleGroup-${entry.peopleGroupId}-${i}`}>
-            <SearchPeopleGroupCard group={entry} language={language} />
+            <SearchPeopleGroupCard
+              group={entry}
+              language={language}
+              onNavigate={() => trackResultClick(entry.type, firstListRank + i)}
+            />
           </li>
         ) : (
           <li key={`${entry.type}-${entry.id}-${i}`}>
-            <SearchResultCard result={entry} language={language} />
+            <SearchResultCard
+              result={entry}
+              language={language}
+              onNavigate={() => trackResultClick(entry.type, firstListRank + i)}
+            />
           </li>
         )
       )}
@@ -502,7 +545,11 @@ export function RecherchePageContent() {
                 data-testid="search-results-main"
                 className="min-w-0 space-y-afh-5xl"
               >
-                <SearchPivotCard result={pivot} language={language} />
+                <SearchPivotCard
+                  result={pivot}
+                  language={language}
+                  onNavigate={() => trackResultClick(pivot.type, 1)}
+                />
                 <SourcedHighlightBlock result={pivot} language={language} />
                 {refinements}
                 {resultsList}

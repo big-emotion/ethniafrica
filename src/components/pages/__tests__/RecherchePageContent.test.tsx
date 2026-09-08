@@ -1332,3 +1332,146 @@ describe("RecherchePageContent", () => {
     ).not.toBeInTheDocument();
   });
 });
+
+/**
+ * What the SERP reports about a search.
+ *
+ * Two blind spots motivated these. A search reaching this page by URL emitted
+ * nothing at all — only the modal's submit handler reported — and no event
+ * ever carried how many results came back, so a query the corpus cannot
+ * answer was indistinguishable from one it answers well.
+ *
+ * Nothing here carries the query text. These events are counts, ranks and
+ * entity kinds; the words a visitor types stay out of the payload, which is
+ * what keeps the measurement inside the wording the privacy page carries.
+ */
+describe("what the SERP reports about a search", () => {
+  const plausible = vi.fn();
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
+      new URLSearchParams() as ReturnType<typeof nextNavigation.useSearchParams>
+    );
+    vi.mocked(nextNavigation.useRouter).mockReturnValue({
+      replace: vi.fn(),
+      push: vi.fn(),
+    } as unknown as ReturnType<typeof nextNavigation.useRouter>);
+    mockFetch.mockResolvedValue(okJson(emptyApiResponse));
+    window.plausible = plausible;
+  });
+
+  const submissions = () =>
+    plausible.mock.calls.filter(([name]) => name === "search:submit");
+
+  const resultClicks = () =>
+    plausible.mock.calls.filter(([name]) => name === "search:result_click");
+
+  async function submit(query: string) {
+    render(<RecherchePageContent />);
+    await act(async () => {
+      fireEvent.change(screen.getByRole("combobox"), {
+        target: { value: query },
+      });
+      fireEvent.click(screen.getByRole("button", { name: /rechercher/i }));
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    });
+  }
+
+  // @req REQ-046
+  it("counts the results a search returned", async () => {
+    mockFetch.mockResolvedValue(okJson(searchApiResponse));
+
+    await submit("Zulu");
+
+    await waitFor(() => expect(submissions()).toHaveLength(1));
+    expect(submissions()[0][1].props).toMatchObject({
+      surface: "serp",
+      results: 1,
+    });
+  });
+
+  // A query the corpus cannot answer is the whole point of the count: it is
+  // the list of what readers came for and the atlas does not hold.
+  // @req REQ-046
+  it("reports zero when a search found nothing", async () => {
+    await submit("qqqqqq");
+
+    await waitFor(() => expect(submissions()).toHaveLength(1));
+    expect(submissions()[0][1].props).toMatchObject({ results: 0 });
+  });
+
+  // A fetch that threw is not a search that found nothing. Folding the two
+  // would file network failures under the corpus's own gaps.
+  // @req REQ-046
+  it("stays silent when the search itself failed", async () => {
+    mockFetch.mockRejectedValue(new Error("network down"));
+
+    await submit("Zulu");
+
+    await waitFor(() =>
+      expect(screen.getAllByText(/aucun résultat/i).length).toBeGreaterThan(0)
+    );
+    expect(submissions()).toHaveLength(0);
+  });
+
+  // Arriving on ?q= from a link or a bookmark is a search like any other; it
+  // reported nothing because only the modal's submit handler was wired.
+  // @req REQ-046
+  it("reports a search that arrived by URL", async () => {
+    mockFetch.mockResolvedValue(okJson(searchApiResponse));
+    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
+      new URLSearchParams("q=Zulu") as ReturnType<
+        typeof nextNavigation.useSearchParams
+      >
+    );
+
+    await act(async () => {
+      render(<RecherchePageContent />);
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    });
+
+    await waitFor(() => expect(submissions()).toHaveLength(1));
+    expect(submissions()[0][1].props).toMatchObject({
+      surface: "serp",
+      results: 1,
+    });
+  });
+
+  // A search that ran and a search that led somewhere were the same event.
+  // @req REQ-046
+  it("reports which rank of result the reader opened", async () => {
+    await renderPivotWithRelatedResults();
+
+    fireEvent.click(screen.getAllByTestId("search-result-card")[0]);
+
+    expect(resultClicks()).toHaveLength(1);
+    expect(resultClicks()[0][1].props).toMatchObject({
+      surface: "serp",
+      rank: 2,
+    });
+  });
+
+  // The pivot is the answer the page leads with, so it holds the first rank —
+  // counting it among the cards below would put the dominant answer and the
+  // runner-up at the same position.
+  // @req REQ-046
+  it("gives the dominant answer the first rank", async () => {
+    await renderPivotWithRelatedResults();
+
+    fireEvent.click(screen.getByTestId("search-pivot"));
+
+    expect(resultClicks()).toHaveLength(1);
+    expect(resultClicks()[0][1].props).toMatchObject({ rank: 1 });
+  });
+
+  // @req REQ-046
+  it("never carries the words the visitor typed", async () => {
+    mockFetch.mockResolvedValue(okJson(searchApiResponse));
+
+    await submit("Zulu");
+
+    await waitFor(() => expect(submissions()).toHaveLength(1));
+    expect(JSON.stringify(plausible.mock.calls)).not.toContain("Zulu");
+  });
+});
