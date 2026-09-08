@@ -116,6 +116,7 @@ describe("HomeHeroSearch", () => {
     vi.mocked(searchWithLeads).mockResolvedValueOnce({
       results: [],
       leads: [],
+      answered: true,
       counts: {
         all: 0,
         people: 0,
