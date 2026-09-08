@@ -105,8 +105,9 @@ are 87 files, sequential, no duplicate prefix, `check:migration-files` green.
 The trap is D4-1: a fresh checkout that acquires any generated output — and the media production
 workflow writes `output/` directly into the repo — turns `format:check` red with **457 offenders,
 of which zero are tracked files**. A contributor running `make check` sees a red gate that CI never
-sees and that no source file caused. `.gitignore` alone does not fix this, because Prettier reads
-`.prettierignore`.
+sees and that no source file caused. A `.gitignore` entry is enough to fix it — Prettier resolves
+ignores from `.gitignore` as well as `.prettierignore`, which is why `.agents/` (gitignored only)
+never appears among the offenders.
 
 ### 2.4 What is the security posture?
 
@@ -196,7 +197,9 @@ provenance data as stored.
   the untracked `src/components/dossiers/__tests__/DossierNavigation.test.tsx`, written against a
   `DossierDirectory` that now renders _"Les dossiers sont en cours de réécriture."_ Excluding it,
   the suite is 8 983 pass / 0 fail. A gate that is permanently red for irrelevant reasons is a gate
-  developers learn to ignore. The fix needs **`.prettierignore`**, not only `.gitignore`.
+  developers learn to ignore. A `.gitignore` entry is sufficient: Prettier honours `.gitignore`
+  alongside `.prettierignore`, verified against `.agents/`, which is gitignored only and is
+  absent from the offender list.
 
 ### Domain 8 — AFRIK data integrity & Source Tier
 
@@ -302,16 +305,16 @@ scored on configuration and recorded CI evidence only.
 
 ## 11. Prioritized action list
 
-| #   | Pri | Action                                                                                                                                                                                       |
-| --- | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | P1  | **D8-2** — extend `INTERNAL_REGISTER_PATTERNS` to the English workshop phrasing ("domain ruling", "awaits editorial review"), then rewrite the 1 010 occurrences. The gate must fail first.  |
-| 2   | P1  | **D8-1** — one migration: widen `sources_tier_check` to admit `needs_review`, and give `recompute_confidence()` an `ELSE` so an unclassified source weighs low instead of nothing.           |
-| 3   | P1  | **D4-1** — add `output/`, `Claude outputs/`, `skills-lock.json` to **`.prettierignore`** as well as `.gitignore`; decide whether the stale `DossierNavigation.test.tsx` is fixed or dropped. |
-| 4   | P1  | **D10-1** — run a restore drill against recette and record it; the standing record predates most of the schema.                                                                              |
-| 5   | P2  | **D10-3** — refresh `.claude/skills/ethniafrica-audit/SKILL.md`: the deploy model and the Source Tier scale it describes are both retired.                                                   |
-| 6   | P2  | **D10-2** — correct the three drifted counts in `CLAUDE.md`.                                                                                                                                 |
-| 7   | P2  | **D1-1** — add the deny-all intent comment to `search_query_log` and `antibot_challenges`.                                                                                                   |
-| 8   | P2  | Resolve the 10 moderate advisories from `npm audit`.                                                                                                                                         |
+| #   | Pri | Action                                                                                                                                                                                                              |
+| --- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | P1  | **D8-2** — extend `INTERNAL_REGISTER_PATTERNS` to the English workshop phrasing ("domain ruling", "awaits editorial review"), then rewrite the 1 010 occurrences. The gate must fail first.                         |
+| 2   | P1  | **D8-1** — one migration: widen `sources_tier_check` to admit `needs_review`, and give `recompute_confidence()` an `ELSE` so an unclassified source weighs low instead of nothing.                                  |
+| 3   | P1  | **D4-1** — gitignore `output/`, `Claude outputs/` and `skills-lock.json`, which clears both the dirty status and the Prettier offenders; decide whether the stale `DossierNavigation.test.tsx` is fixed or dropped. |
+| 4   | P1  | **D10-1** — run a restore drill against recette and record it; the standing record predates most of the schema.                                                                                                     |
+| 5   | P2  | **D10-3** — refresh `.claude/skills/ethniafrica-audit/SKILL.md`: the deploy model and the Source Tier scale it describes are both retired.                                                                          |
+| 6   | P2  | **D10-2** — correct the three drifted counts in `CLAUDE.md`.                                                                                                                                                        |
+| 7   | P2  | **D1-1** — add the deny-all intent comment to `search_query_log` and `antibot_challenges`.                                                                                                                          |
+| 8   | P2  | Resolve the 10 moderate advisories from `npm audit`.                                                                                                                                                                |
 
 ---
 
