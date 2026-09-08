@@ -1,6 +1,7 @@
 # Runbook — self-hosted Plausible Analytics
 
-How `stats.ethniafrica.com` runs, and how it feeds the app's own analytics toggle.
+How the shared collector runs, and how it feeds the app's own analytics toggle. It measures
+two properties — `ethniafrica.com` and `big-emotion.com` — so a change here affects both.
 
 ---
 
@@ -15,7 +16,7 @@ address, port and the `proxy` network convention. Plausible is its own compose p
 | ---------------- | -------------------------------------------------------------------------------------------- |
 | Compose file     | [`infra/plausible/docker-compose.yml`](../../infra/plausible/docker-compose.yml) (this repo) |
 | Deploy directory | `/srv/plausible` — not a git clone, just the compose file, `clickhouse/` config, and `.env`  |
-| Public URL       | `https://stats.ethniafrica.com`                                                              |
+| Public URLs      | `https://stats.ethniafrica.com` (canonical, `BASE_URL`) and `https://stats.big-emotion.com`  |
 | Upstream         | [plausible/hosting](https://github.com/plausible/hosting), Community Edition v3.2.1          |
 
 `docker-compose.yml` and `clickhouse/*.xml` are vendored from upstream as-is; the only
@@ -30,6 +31,41 @@ on this host).
 over from before `vercel.json` disabled auto-deploys) still answers for any subdomain
 without its own record — the specific record above overrides it for `stats`, but nothing
 else needs touching.
+
+`stats.big-emotion.com` needs the **same A record to `51.195.82.98`**, in the
+`big-emotion.com` zone (OVH, nameservers `ns200/dns200.anycast.me`).
+
+**Order matters.** Traefik's `certresolver` requests a certificate per hostname on the
+first request, so the DNS record must resolve _before_ the compose change is applied.
+Applying it first means the ACME HTTP challenge fails on every retry, with Let's Encrypt
+rate limits waiting at the end of enough of them.
+
+Mind the spelling: the zone is **`big-emotion.com`**, hyphenated. `bigemotion.com` without
+the hyphen is a different, parked domain on Media Temple nameservers, owned by someone
+else — no subdomain can be created under it.
+
+## One instance, two brands
+
+This collector measures **`ethniafrica.com`** and **`big-emotion.com`** as two properties
+of the same Plausible instance. Adding a property is a dashboard action (Sites → Add a
+website), not an infrastructure change: a property is keyed by the domain being measured,
+never by the hostname the dashboard answers on.
+
+Both hostnames route to it, and both are kept deliberately — `stats.ethniafrica.com` is
+what this runbook, the app's `NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN` and every existing
+invite link already say, while BIG EMOTION's public page source has to name a BIG EMOTION
+host rather than another brand's.
+
+`BASE_URL` stays `https://stats.ethniafrica.com`. It is a single value that Plausible uses
+to build invite emails and self-links, so it names one canonical host; the second hostname
+serves the dashboard and the script endpoint perfectly well without it. Flipping it to
+`stats.big-emotion.com` is a deliberate later step, and only once that host resolves and
+holds a certificate — flipping it first would point the dashboard's own links at a name
+that does not answer.
+
+BIG EMOTION's side of the wiring — the `<script>` tag, the `PLAUSIBLE_DOMAIN` /
+`PLAUSIBLE_HOST` build args and why it sits outside that site's consent manager — lives in
+`big-emotion/website`, ADR 0011.
 
 ## Deploying / updating
 
