@@ -4,7 +4,7 @@
   "nameEn": "Malawi",
   "nameOfficial": "Republic of Malawi (Republic of Malawi, Dziko la Malaŵi)",
   "summary": "The name \"Malawi\", readopted in 1964 from the Maravi kingdom, is said to have been chosen by Hastings Kamuzu Banda after he saw it on an eighteenth-century French map; the meaning of \"flames\" often attributed to it exists in Chichewa, but no scholarship establishes that the kingdom took its name from this. A British protectorate under the name Nyasaland until 1964, the country then readopted this older name. There, the Chewa, Tumbuka, Lomwe and Yao peoples continue the Gule Wamkulu, a great masked ritual.",
-  "etymology": "The name reuses that of the Maravi kingdom, which dominated the region in the sixteenth and seventeenth centuries, and whose form circulated in Europe well before 1964: Livingstone reports in 1865 a \"Lake Maravi\" known from Portuguese sources, and d'Anville's map of Africa, published in Paris in 1749, carries a Lac Maravi. It was on a French map of this kind that Hastings Kamuzu Banda, according to his biographers, settled on his choice at independence, for the shape and sound of the word.\n\nThe meaning attributed to it is less certain. Jan Vermeullen's Chinyanja dictionary does give, under the root lawi, the form malawi for \"flame of fire\". But the great Mang'anja dictionary of David Clement Scott, published in Blantyre in 1892, does not know this root: it gives chirangali and kwiri for flame, and glosses \"Malawi\" as the Yao word meaning \"tomorrow\". No identified work links the kingdom's name to this word, and the reference article on the early Maravi, published by Malyn Newitt in 1982, does not address the origin of the name. The explanation by the sun's reflections on the lake circulates widely; no source carrying this reading has been found.\n\nThe colonial name, for its part, illustrates a documented mechanism. Livingstone reports in 1865 that \"nyanja or nyanza generally denotes a marsh, a lake, a river, or even a mere stream\", and recounts that his companions, asking to be led to the \"Nyanja Mukulu\", the great lake, were taken to a marsh that bore that name for their guide. The traveller asks for a proper noun, and is answered with a common noun.",
+  "etymology": "The name derives from that of the Maravi kingdom, which dominated the region during the sixteenth and seventeenth centuries, and whose form circulated in Europe well before 1964: Livingstone reports in 1865 a \"Lake Maravi\" known from Portuguese sources, and d'Anville's map of Africa, published in Paris in 1749, carries a Lac Maravi. It was on a French map of this kind that Hastings Kamuzu Banda is said, according to his biographers, to have settled on his choice at independence, for the form and the sound of the word.\n\nThe meaning attributed to it is less certain. Jan Vermeullen's Chinyanja dictionary does give, under the root lawi, the form malawi for \"flame of fire\". But David Clement Scott's major Mang'anja dictionary, published in Edinburgh in 1892, does not know this root: it gives chirangali and kwiri for flame, and glosses \"Malawi\" as the Yao word meaning \"tomorrow\". No identified work links the name of the kingdom to this word, and the reference article on the beginnings of Maravi, published by Malyn Newitt in 1982, does not address the origin of the name. The explanation by the sun's reflections on the lake circulates widely; no source carrying this reading has been found.\n\nThe colonial name, for its part, illustrates a documented mechanism. Livingstone reports in 1865 that \"nyanja or nyanza generally designates a marsh, a lake, a river, or even a simple stream\", and recounts that his companions, asking to be led to the \"Nyanja Mukulu\", the great lake, were taken to a marsh that bore that name for their guide. The traveller asks for a proper name, and is answered with a common noun.",
   "nameOriginActor": "The name \"Malawi\" was made official at independence, in 1964, by the government of Hastings Kamuzu Banda, who took it from an old European map bearing a Lac Maravi. \"Nyasaland\" was the name of the British protectorate, formed on a word that Livingstone himself gives as a common noun denoting any body of water. Who named the Maravi kingdom, and on what basis, is not established.",
   "content": {
     "historicalNames": {
@@ -297,13 +297,13 @@
   },
   "_translation": {
     "kind": "machine",
-    "translatedAt": "2026-09-09T08:58:09.235Z",
+    "translatedAt": "2026-09-09T09:27:56.733Z",
     "model": "claude-sonnet-5",
-    "sourceHash": "7aa53c0af4e98283e442c812d39ac3c024cdf3f041b8d666862fe60dc6b02893",
+    "sourceHash": "08392572173a6d6d06bbd92704cdf87082cc0624328b6c673e1bb530291222bf",
     "fieldHashes": {
       "nameOfficial": "275f310d41a58004",
       "summary": "bacf6735dcf0680b",
-      "etymology": "36b3a47c7e7d3e4a",
+      "etymology": "8dbfbe563efef034",
       "nameOriginActor": "7825cf5a20600138",
       "content.historicalNames.formerNames[0]": "3382f1bc9b8be993",
       "content.historicalNames.antiquity": "a17ff47ccf98a615",
