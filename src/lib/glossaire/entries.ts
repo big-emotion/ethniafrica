@@ -396,12 +396,18 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     en: "Sanankuya (Mande joking kinship)",
     family: "effet",
     definition:
-      "Parenté à plaisanterie mandingue : un pacte entre deux noms de clan dont les porteurs se doivent moquerie rituelle et assistance, et à qui le conflit est interdit. Le nom engage : porter l'un des deux, c'est hériter du pacte.",
+      "Parenté à plaisanterie mandingue : un pacte entre deux noms de clan qui lie toute leur descendance. Cécile Canut en relève trois traits — la relation vaut à perpétuité pour les deux lignées, le mariage entre elles est prohibé, l'entraide y est due sans réserve — la moquerie rituelle en étant la face visible. Le nom engage : porter l'un des deux, c'est hériter du pacte.",
     corpusExample:
-      "Keïta et Coulibaly, dont le pacte est rapporté comme remontant à Soundiata.",
+      "Keïta et Coulibaly, dont la tradition fait remonter le pacte à Soundiata.",
     corpusPresence: "instantiated",
     seeAlso: ["jamu"],
     chapterRef: "la-personne",
+    sourceRefs: [
+      "canut-2002-senankuya",
+      "canut-2006-mali-senankuya",
+      "canut-smith-2006-pactes",
+      "unesco-charte-manden-00290",
+    ],
   },
   {
     id: "tradition-inventee",

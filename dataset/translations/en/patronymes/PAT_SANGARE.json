@@ -1,0 +1,287 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
+  },
+  "id": "PAT_SANGARE",
+  "nameMain": "Sangaré",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Sangaré",
+      "attestations": [
+        {
+          "countryId": "MLI",
+          "sourceRefs": [
+            "bensignor-1997-oumou-sangare",
+            "iffono-wassoulou-tradition"
+          ]
+        },
+        {
+          "countryId": "GIN",
+          "sourceRefs": [
+            "rainer-trebbi-2012-political-power",
+            "iffono-wassoulou-tradition"
+          ]
+        },
+        {
+          "countryId": "CIV",
+          "sourceRefs": ["bensignor-1997-oumou-sangare", "forebears-sangare"]
+        },
+        { "countryId": "BFA", "sourceRefs": ["diallo-2006-plaisanterie-peuls"] }
+      ]
+    },
+    {
+      "spelling": "Sangare",
+      "attestations": [
+        { "countryId": "MLI", "sourceRefs": ["forebears-sangare"] },
+        { "countryId": "SEN", "sourceRefs": ["forebears-sangare"] }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [
+      {
+        "claim": "In their study of Guinean government elites, Rainer and Trebbi describe bearers of Sangaré as originating from the Wassoulou: their consultant classifies them as Fulani linguistically and culturally integrated into the Malinke, while sources diverge between the two affiliations.",
+        "claimStatus": "contested",
+        "sourceRefs": ["rainer-trebbi-2012-political-power"]
+      },
+      {
+        "claim": "Guinean historian Aly Gilbert Iffono reports a tradition on the founding of Wassoulou, a region straddling Mali, Guinea and Côte d'Ivoire: Fulani migrants from Fouta Djalon, led by the brothers Kali and Pathé Diallo, are said to have settled there under the protection of a Mandinka chief and then to have lost the use of Fulani, notably after it was banned by the conqueror Samori Touré. According to this same account, Sangaré ranks, along with Diallo, Sidibé and Diakité, among the four emblematic Fulani family names of Wassoulou, and Mandinka lineages are said to have in turn adopted these Fulani names through contact with their neighbours or their former masters. The source itself presents this last hypothesis as one of several competing explanations for the disappearance of Fulani in the region, alongside intermarriage through marital alliances.",
+        "claimStatus": "contested",
+        "sourceRefs": ["iffono-wassoulou-tradition"]
+      },
+      {
+        "claim": "The Fulani Wassoulou rejected the caste system characteristic of Mandinka societies: traditional Wassoulounke society has no griots, unlike its Malinke and Bambara neighbours.",
+        "claimStatus": "established",
+        "sourceRefs": ["bensignor-1997-oumou-sangare"]
+      },
+      {
+        "claim": "A study of the Fulani of western Burkina Faso ranks Sangaré among the four main Fulani clans, alongside Diallo, Diakité and Sidibé, and describes the Sidibé/Sangaré pair as one of the two founding pairs of Fulani identity, united by a joking relationship on account of this mythical kinship.",
+        "claimStatus": "claimed",
+        "sourceRefs": ["diallo-2006-plaisanterie-peuls"]
+      }
+    ],
+    "linguisticReconstructions": [
+      {
+        "claim": "The jamu is a patrilineal clan name: it denotes membership of a descent group, not individual filiation to the father.",
+        "claimStatus": "established",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      },
+      {
+        "claim": "The electronic dictionary of Bambara clan names does not list Sangaré as a standalone entry: the name appears only as cited as a joking partner by five other clan names (Bagayogo, Dansoko, Janka, Sidibé, So) and, once, as an equivalent Fulani variant under the entry Bari.",
+        "claimStatus": "established",
+        "sourceRefs": ["bamadaba-jamuw"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_FULA",
+      "status": "attested",
+      "sourceRefs": [
+        "rainer-trebbi-2012-political-power",
+        "bensignor-1997-oumou-sangare",
+        "iffono-wassoulou-tradition",
+        "diallo-2006-plaisanterie-peuls"
+      ]
+    },
+    {
+      "peopleId": "PPL_MALINKE",
+      "status": "attested",
+      "sourceRefs": [
+        "rainer-trebbi-2012-political-power",
+        "bensignor-1997-oumou-sangare",
+        "iffono-wassoulou-tradition"
+      ]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": [
+        "bensignor-1997-oumou-sangare",
+        "iffono-wassoulou-tradition"
+      ]
+    },
+    {
+      "countryId": "GIN",
+      "status": "attested",
+      "sourceRefs": [
+        "rainer-trebbi-2012-political-power",
+        "iffono-wassoulou-tradition"
+      ]
+    },
+    {
+      "countryId": "CIV",
+      "status": "attested",
+      "sourceRefs": ["bensignor-1997-oumou-sangare", "forebears-sangare"]
+    },
+    {
+      "countryId": "BFA",
+      "status": "attested",
+      "sourceRefs": ["diallo-2006-plaisanterie-peuls"]
+    },
+    {
+      "countryId": "SEN",
+      "status": "supposed",
+      "sourceRefs": ["forebears-sangare"]
+    }
+  ],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_SIDIBE",
+      "allianceType": "sanankuya",
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "diallo-2006-plaisanterie-peuls",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
+    },
+    {
+      "targetPatronymeId": "PAT_BAGAYOKO",
+      "allianceType": "sanankuya",
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
+    },
+    {
+      "targetPatronymeId": "PAT_SOW",
+      "allianceType": "sanankuya",
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
+    }
+  ],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "rainer-trebbi-2012-political-power",
+      "title": "New Tools for the Analysis of Political Power in Africa",
+      "url": "https://www.nber.org/papers/w18424.pdf",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Ilia Rainer and Francesco Trebbi, NBER Working Paper 18424, September 2012. The appendix on Guinea, p. 43, separately explains the classification of Diakite, Sidibe and Sangare: originating from Wassoulou, described as Fulani integrated into Malinke populations, they are coded by the authors as equal parts Fulani and Malinke. The document states that it has not been peer-reviewed."
+    },
+    {
+      "sourceKey": "iffono-wassoulou-tradition",
+      "title": "Histoire du Wassoulou : ce qu'il faut retenir",
+      "url": "https://guineeconakry.online/2024/05/07/histoire-du-wassoulou-ce-quil-faut-retenir/",
+      "tier": "unverified",
+      "source_kind": "community",
+      "notes": "Online Guinean news article, not peer-reviewed, which reports an account attributed to historian Aly Gilbert Iffono (Lexique historique de la Guinée-Conakry, L'Harmattan, 1992) on the founding of Wassoulou and the adoption of Fulani family names by Mandinka lineages. Iffono's work itself was not consulted directly; the record therefore relies on this second-hand account, not on the original text."
+    },
+    {
+      "sourceKey": "bensignor-1997-oumou-sangare",
+      "title": "Oumou Sangaré : malienne, femme et artiste",
+      "url": "https://www.persee.fr/doc/homig_1142-852x_1997_num_1206_1_2939",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "François Bensignor, Hommes & Migrations, no. 1206, March-April 1997, p. 137-139 (Persée). Describes Wassoulou as a predominantly Fulani territory in south-eastern Mali, bordering Guinea, Côte d'Ivoire and Burkina Faso, whose society rejected the Mandinka caste system (absence of griots)."
+    },
+    {
+      "sourceKey": "forebears-sangare",
+      "title": "Sangare — origine, signification et répartition du nom",
+      "url": "https://forebears.io/fr/surnames/sangare",
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Aggregator website of family-name statistics, with no verifiable independent editorial review. Cited only for the name's stated distribution by country (Mali, Côte d'Ivoire, Guinea, Senegal), for information only and not as evidence of ethnic origin."
+    },
+    {
+      "sourceKey": "diallo-2006-plaisanterie-peuls",
+      "title": "Identités et relations de plaisanterie chez les Peuls de l'ouest du Burkina Faso",
+      "url": "https://journals.openedition.org/etudesafricaines/15399",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Youssouf Diallo, Cahiers d'études africaines, vol. 46, no. 184, 2006, p. 779-794 (DOI 10.4000/etudesafricaines.15399). Peer-reviewed journal; the author was at the time affiliated with the Max-Planck-Institut für ethnologische Forschung. The article places Sangaré among the four main Fulani clans (Diallo, Diakité, Sidibé, Sangaré) and describes the Sidibé/Sangaré pair as counterparts within the mythical core of Fulani identity, maintaining as such joking relationships (dendiraagu); the fieldwork covers the Fulani of western Burkina Faso, which attests the name in that country."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Onomastic appendix of the Bamadaba, an electronic Bambara-French dictionary supplementing the Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA); the clan-name appendix is identified as such by Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. 375 entries in MDF format, consulted from the complete file. Sangaré has no entry of its own there: the name is only cited as a joking partner (marker \\sn, read senankun) by the entries Bagayogo, Dansoko, Janka, Sidibe and So, and once as an equivalent variant (marker \\eq) under the entry Bari, itself marked as of Fulani distribution. The \\sn links are not systematically reciprocal from one entry to another: each pair is therefore cited according to the entry that carries it."
+    },
+    {
+      "sourceKey": "jansen-sunjata-paradigm",
+      "title": "Beyond the Mali Empire — A New Paradigm for the Sunjata Epic",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jansen, Jan, Universiteit Leiden. Critical work on the transmission of the Mandinka epic and on the jamu as a social institution; used here for the patrilineal nature of the jamu as a descent category, an institution to which Wassoulounke family names of Fulani origin are linked according to the other sources cited in this record."
+    },
+    {
+      "sourceKey": "canut-2002-senankuya",
+      "title": "Pouvoir, places et filiation : les senankuya au Mali",
+      "url": "https://journals.openedition.org/praxematique/2307",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, Cahiers de praxématique, no. 38, 2002, p. 175-197. Fieldwork in Mali. She sets out what the pact requires: the relationship holds in perpetuity for the entire descent of the two lineages, marriage between them is prohibited — variously applied today, she notes — and mutual assistance is owed there without reservation. Cited for the obligation itself; it does not name the pair in this record, which is carried by the entries cited alongside it."
+    },
+    {
+      "sourceKey": "canut-smith-2006-pactes",
+      "title": "Pactes, alliances et plaisanteries. Pratiques locales, discours global",
+      "url": "https://doi.org/10.4000/etudesafricaines.6198",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, and Smith, Étienne, Cahiers d'études africaines, no. 184, 2006, p. 687 ff. Cited for the caution it raises: the idea that joking kinship soothes conflicts is treated there as a hypothesis inherited from Radcliffe-Brown and taken up by conflict-resolution studies, hence as a discourse to be analysed rather than a measured effect. The start page is verified, the end page is not."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "The Fulani Wassoulou, of which Sangaré is one of the emblematic family names, is described as a society without a hereditary griot-type caste, unlike its Mandinka neighbours. No hereditary social or craft function specific to this name has otherwise been documented."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "A widely known contemporary bearer of this name is well documented by the press and by research, but no statement of her own on her lineage origin has been found; in the absence of such a statement in her own words, no living bearer is named here."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "No homonymous entity of distinct origin has been found for this name at the conclusion of the research conducted."
+    }
+  ],
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T09:28:22.334Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "035fa04b3a41b0cb554ad6b547861851f353c9f91aa0a70c0a7132d662ebc760",
+    "fieldHashes": {
+      "origin.writtenChronicles[0].claim": "939f7ca056bfb9ef",
+      "origin.writtenChronicles[1].claim": "25e300441ef39dd3",
+      "origin.writtenChronicles[2].claim": "35ef37b8ed6e55c1",
+      "origin.writtenChronicles[3].claim": "83f58e7387fd318a",
+      "origin.linguisticReconstructions[0].claim": "14f92c91d5d99f18",
+      "origin.linguisticReconstructions[1].claim": "02febb54f2c6cd83",
+      "sources[0].notes": "2587e7528589510e",
+      "sources[1].notes": "d688328801cd7bec",
+      "sources[2].notes": "727c992adb261959",
+      "sources[3].notes": "762b148ae92a7e5f",
+      "sources[4].notes": "19ea3962355fcc15",
+      "sources[5].notes": "656711ff9f8f53a2",
+      "sources[6].notes": "5c799852f4ca1e95",
+      "sources[7].notes": "2c14e48c42d56e18",
+      "sources[8].notes": "79986afda62f44db",
+      "gaps[0].reason": "97fb56c2cfa7d8e4",
+      "gaps[1].reason": "e64a1c2b499e70ca",
+      "gaps[2].reason": "69b013b4c2e8f44d"
+    },
+    "reviewRequired": [
+      "origin.linguisticReconstructions[0].claim",
+      "origin.linguisticReconstructions[1].claim"
+    ]
+  }
+}

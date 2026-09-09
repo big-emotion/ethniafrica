@@ -3,9 +3,9 @@
   "nameFr": "Malawi",
   "nameEn": "Malawi",
   "nameOfficial": "République du Malawi (Republic of Malawi, Dziko la Malaŵi)",
-  "summary": "Le Malawi tire son nom de Maravi, royaume des XVIe et XVIIe siècles dont le nom évoque en chewa les flammes ou les reflets. Protectorat britannique du Nyasaland jusqu'en 1964, il reprit alors ce nom ancien. Chewa, Tumbuka, Lomwe et Yao y perpétuent le Gule Wamkulu, grand rituel masqué.",
-  "etymology": "Le nom \"Malawi\" vient du mot \"Maravi\", nom d'un ancien royaume qui dominait la région aux XVIe-XVIIe siècles. \"Maravi\" signifie \"flammes\" ou \"reflets\" en langue chewa, en référence aux reflets du soleil sur le lac Malawi. Le nom a été officialisé lors de l'indépendance en 1964.",
-  "nameOriginActor": "Le nom \"Malawi\" vient de l'ancien royaume de Maravi. Le nom \"Nyasaland\" (pays du Nyasa, du nom du lac) était utilisé pendant la colonisation britannique. Le nom \"Malawi\" a été officialisé à l'indépendance en 1964 par le président Hastings Kamuzu Banda.",
+  "summary": "Le nom « Malawi », repris en 1964 du royaume Maravi, aurait été choisi par Hastings Kamuzu Banda en le voyant sur une carte française du XVIIIe siècle ; le sens de « flammes » qu'on lui prête existe en chichewa, mais aucun travail n'établit que le royaume tire de là son nom. Protectorat britannique du Nyasaland jusqu'en 1964, le pays reprit alors ce nom ancien. Chewa, Tumbuka, Lomwe et Yao y perpétuent le Gule Wamkulu, grand rituel masqué.",
+  "etymology": "Le nom reprend celui du royaume Maravi, qui domina la région aux XVIe et XVIIe siècles, et dont la forme circulait en Europe bien avant 1964 : Livingstone signale en 1865 un « lac Maravi » connu des sources portugaises, et la carte d'Afrique de d'Anville, publiée à Paris en 1749, porte un Lac Maravi. C'est sur une carte française de ce type que Hastings Kamuzu Banda aurait, selon ses biographes, arrêté son choix à l'indépendance, pour la forme et la sonorité du mot.\n\nLe sens qu'on lui prête est moins assuré. Le dictionnaire chinyanja de Jan Vermeullen donne bien, sous la racine lawi, la forme malawi pour « flamme de feu ». Mais le grand dictionnaire mang'anja de David Clement Scott, publié à Édimbourg en 1892, ne connaît pas cette racine : il donne chirangali et kwiri pour la flamme, et glose « Malawi » comme le mot yao signifiant « demain ». Aucun travail identifié ne relie le nom du royaume à ce mot, et l'article de référence sur les débuts du Maravi, publié par Malyn Newitt en 1982, ne traite pas de l'origine du nom. L'explication par les reflets du soleil sur le lac circule largement ; aucune source portant cette lecture n'a été trouvée.\n\nLe nom colonial, lui, illustre un mécanisme documenté. Livingstone rapporte en 1865 que « nyanja ou nyanza désigne en général un marais, un lac, une rivière, voire un simple ruisseau », et raconte que ses compagnons, demandant qu'on les mène au « Nyanja Mukulu », le grand lac, furent conduits à un marécage qui portait ce nom-là pour leur guide. Le voyageur demande un nom propre, on lui répond par un nom commun.",
+  "nameOriginActor": "Le nom « Malawi » a été officialisé à l'indépendance, en 1964, par le gouvernement de Hastings Kamuzu Banda, qui l'a repris d'une carte européenne ancienne portant un Lac Maravi. « Nyasaland » était le nom du protectorat britannique, formé sur un mot que Livingstone lui-même donne pour un nom commun désignant toute étendue d'eau. Qui a nommé le royaume Maravi, et d'après quoi, n'est pas établi.",
   "content": {
     "historicalNames": {
       "formerNames": ["Nyasaland (1891-1964)"],
@@ -262,6 +262,42 @@
         "url": "https://unstats.un.org/unsd/methodology/m49/",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "David et Charles Livingstone, Narrative of an Expedition to the Zambesi and its Tributaries, Londres, John Murray, 1865",
+        "url": "https://archive.org/details/narrativeofexpe00livi",
+        "tier": "referenced",
+        "notes": "Donne « nyanja ou nyanza » pour un nom commun désignant un marais, un lac, une rivière ou un ruisseau, et rapporte l'épisode où la troupe, demandant le grand lac, est menée à un marécage qui porte ce nom pour le guide. Mentionne par ailleurs un lac Maravi connu des sources portugaises. Volume lu en fac-similé le 9 septembre 2026."
+      },
+      {
+        "title": "Jean-Baptiste Bourguignon d'Anville, Afrique, publiée sous les auspices de Monseigneur le Duc d'Orléans, gravé par Guillaume Delahaye, Paris, 1749",
+        "url": "https://gallica.bnf.fr/ark:/12148/btv1b53053165w",
+        "tier": "official",
+        "notes": "Carte conservée et numérisée par la Bibliothèque nationale de France. C'est le type de carte sur lequel les biographes de Banda situent le choix du nom. L'exemplaire numérisé a été localisé le 9 septembre 2026 ; le libellé Lac Maravi n'a pas été lu sur l'image elle-même."
+      },
+      {
+        "title": "Philip Short, Banda, Londres, Routledge & Kegan Paul, 1974",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Biographie d'où provient le récit du choix du nom sur une carte française ancienne. L'imprimé est vérifié au catalogue ; le passage n'a pas été lu, il est repris de comptes rendus qui s'y réfèrent."
+      },
+      {
+        "title": "David Clement Scott, A Cyclopaedic Dictionary of the Mang'anja Language Spoken in British Central Africa, Édimbourg, Foreign Mission Committee of the Church of Scotland, 1892",
+        "url": "https://archive.org/details/acyclopdicdicti00commgoog",
+        "tier": "referenced",
+        "notes": "Ne connaît pas la racine lawi. Donne chirangali et kwiri pour la flamme de feu, et glose « Malawi » comme le mot yao signifiant demain, le mang'anja disant mawa. Entrées lues en fac-similé le 9 septembre 2026."
+      },
+      {
+        "title": "Jan Vermeullen, Chinyanja (Chicewa) – English Dictionary, Lusaka, Missionnaires d'Afrique, 1979, révision de 1999",
+        "url": "https://www.fenza.org/docs/various/vermeullen_chewa_dictionary.pdf",
+        "tier": "referenced",
+        "notes": "Donne, sous la racine lawi, la forme malawi pour « flamme de feu ». C'est l'attestation lexicale du sens que l'on prête au nom du pays, dans un état de la langue postérieur de près d'un siècle au dictionnaire de Scott. Entrée lue le 9 septembre 2026."
+      },
+      {
+        "title": "Malyn Newitt, « The Early History of the Maravi », The Journal of African History, volume 23, numéro 2, 1982, p. 145-162",
+        "url": "https://doi.org/10.1017/S0021853700020508",
+        "tier": "referenced",
+        "notes": "Article de référence sur la formation des chefferies maravi. Il est cité ici pour ce qu'il ne fait pas : il ne traite pas de l'origine ni du sens du nom Maravi. Notice et résumé lus le 9 septembre 2026 ; le texte intégral est payant."
       }
     ],
     "demographics": {

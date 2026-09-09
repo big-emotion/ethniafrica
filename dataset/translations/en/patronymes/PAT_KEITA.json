@@ -59,7 +59,7 @@
   "origin": {
     "oralTraditions": [
       {
-        "claim": "Le clan Keïta est celui de Soundiata et de la dynastie impériale du Mali ; la geste lui donne le lion pour ancêtre-totem, d'où l'épithète « fils du Lion ».",
+        "claim": "The Keïta clan is that of Soundiata and the imperial dynasty of Mali; the epic gives it the lion as ancestor-totem, hence the epithet \"son of the Lion\".",
         "claimStatus": "claimed",
         "griot": "Djeli Mamadou Kouyaté (Djeliba Koro, Siguiri)",
         "transcription": "Niane, Djibril Tamsir, Soundjata ou l'épopée mandingue, 1960",
@@ -69,7 +69,7 @@
     "writtenChronicles": [],
     "linguisticReconstructions": [
       {
-        "claim": "Le jamu est un nom de clan patrilinéaire : il désigne l'appartenance à un groupe de descendance, et non une filiation individuelle au père.",
+        "claim": "The jamu is a patrilineal clan name: it designates membership in a descent group, not individual filiation to the father.",
         "claimStatus": "established",
         "sourceRefs": ["jansen-sunjata-paradigm"]
       }
@@ -171,7 +171,7 @@
       "url": null,
       "tier": "unverified",
       "source_kind": "repository",
-      "notes": "Reprise du chapitre « Organisation clanique » de la fiche du peuple Malinké."
+      "notes": "Taken from the \"Clan organisation\" chapter of the Malinké people's fiche."
     },
     {
       "sourceKey": "niane-1960",
@@ -179,7 +179,7 @@
       "url": "https://books.google.com/books/about/Soundjata.html?id=PtJyAAAAMAAJ",
       "tier": "referenced",
       "source_kind": "academic",
-      "notes": "Niane, Djibril Tamsir, Présence Africaine, 1960. Transcription du récit du griot Djeli Mamadou Kouyaté de Djeliba Koro (Siguiri). Source de référence pour la geste de Soundiata et les lignages qu'elle fonde ; c'est une mise par écrit d'une tradition orale, pas un document d'archive."
+      "notes": "Niane, Djibril Tamsir, Présence Africaine, 1960. Transcription of the account of the griot Djeli Mamadou Kouyaté of Djeliba Koro (Siguiri). Reference source for the epic of Soundiata and the lineages it founds; it is a written record of an oral tradition, not an archival document."
     },
     {
       "sourceKey": "jansen-sunjata-paradigm",
@@ -187,7 +187,7 @@
       "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
       "tier": "referenced",
       "source_kind": "academic",
-      "notes": "Jansen, Jan, Universiteit Leiden. Travail critique sur la transmission de l'épopée et sur le jamu comme institution sociale plutôt que comme mémoire historique ; utilisé ici pour la nature du jamu, non pour dater un ancêtre."
+      "notes": "Jansen, Jan, Universiteit Leiden. Critical work on the transmission of the epic and on the jamu as a social institution rather than as historical memory; used here for the nature of the jamu, not to date an ancestor."
     },
     {
       "sourceKey": "gha-v-16-18",
@@ -195,7 +195,7 @@
       "url": "https://archive.org/details/unesco_general_history_africa_v",
       "tier": "official",
       "source_kind": "intergovernmental",
-      "notes": "UNESCO, Histoire générale de l'Afrique, vol. V, dir. B. A. Ogot, 1992 ; consulté sur le texte intégral. Chapitre 12, « From the Niger to the Volta » (M. Izard et J. Ki-Zerbo) : le sanankunya entre les Kulibali (Kurubari) et les Keita ou les Ture, donné comme indice de relations anciennes entre Bambara et Malinké (p. 330) ; l'étymologie kulu « pirogue » + bali privatif, tirée de la traversée du fleuve sans pirogue, assortie par la source elle-même de la mention qu'il en existe d'autres (p. 330 n. 7) ; la généalogie de Mamari Kulibali dit Biton (1712-1755), arrière-petit-fils de Baramangolo par Kaladian, Danfassari et Soma (p. 330-333). Chapitre 13, « The states and cultures of the Upper Guinean coast » (C. Wondji) : la migration des Kongo-Vai depuis le haut Niger sous la conduite du clan Camara, vers Bopolou puis les rivières Mano et Moa, et le déplacement corrélé des Kono et des Vai vers les côtes du Liberia et de la Sierra Leone (p. 375-377)."
+      "notes": "UNESCO, Histoire générale de l'Afrique, vol. V, dir. B. A. Ogot, 1992; consulted on the full text. Chapter 12, \"From the Niger to the Volta\" (M. Izard and J. Ki-Zerbo): the sanankunya between the Kulibali (Kurubari) and the Keita or the Ture, given as evidence of ancient relations between Bambara and Malinké (p. 330); the etymology kulu \"canoe\" + privative bali, drawn from crossing the river without a canoe, accompanied by the source's own mention that other etymologies exist (p. 330 n. 7); the genealogy of Mamari Kulibali known as Biton (1712-1755), great-grandson of Baramangolo through Kaladian, Danfassari and Soma (p. 330-333). Chapter 13, \"The states and cultures of the Upper Guinean coast\" (C. Wondji): the migration of the Kongo-Vai from the upper Niger under the leadership of the Camara clan, towards Bopolou then the Mano and Moa rivers, and the correlated displacement of the Kono and the Vai towards the coasts of Liberia and Sierra Leone (p. 375-377)."
     },
     {
       "sourceKey": "bamadaba-jamuw",
@@ -203,7 +203,7 @@
       "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
       "tier": "referenced",
       "source_kind": "linguistic_reference",
-      "notes": "Annexe onomastique du Bamadaba, dictionnaire électronique bambara-français supplément du Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA) ; l'annexe des noms claniques est signalée comme telle par Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, p. 89-110. 375 entrées au format MDF, consultées sur le fichier complet. Le fichier ne livre aucune légende de ses marqueurs, et la lecture retenue est celle que le fichier impose : \\ca porte les termes de statut mandingues eux-mêmes (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere) ; \\sn se lit senankun parce que l'entrée Kúyate annote sa propre ligne « \\sn Keyita » d'une réserve disant que cette relation-là est une entente amicale et non un senankuya. Les liens \\sn ne sont pas systématiquement réciproques d'une entrée à l'autre : chaque paire est donc citée d'après l'entrée qui la porte, nommée dans le claim ou le gap."
+      "notes": "Onomastic appendix of the Bamadaba, the Bambara-French electronic dictionary supplement to the Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA); the clan-name appendix is identified as such by Vydrin, \"Vers une lexicographie mandingue sur la base de grands corpus annotés\", Mandenkan 63, 2020, p. 89-110. 375 entries in MDF format, consulted on the complete file. The file provides no legend for its markers, and the reading adopted is the one the file imposes: \\ca carries the Mandingo status terms themselves (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere); \\sn reads senankun because the Kúyate entry annotates its own line \"\\sn Keyita\" with a caveat stating that this particular relation is a friendly agreement and not a senankuya. The \\sn links are not systematically reciprocal from one entry to another: each pair is therefore cited according to the entry that carries it, named in the claim or the gap."
     },
     {
       "sourceKey": "canut-2002-senankuya",
@@ -211,7 +211,7 @@
       "url": "https://journals.openedition.org/praxematique/2307",
       "tier": "referenced",
       "source_kind": "academic",
-      "notes": "Canut, Cécile, Cahiers de praxématique, numéro 38, 2002, p. 175-197. Enquête de terrain au Mali. Elle énonce ce que le pacte oblige : la relation vaut à perpétuité pour toute la descendance des deux lignées, le mariage entre elles est prohibé — diversement appliqué aujourd'hui, précise-t-elle — et l'entraide y est due sans réserve. Citée pour l'obligation elle-même ; elle ne nomme pas la paire de cette fiche, que portent les entrées citées à côté d'elle."
+      "notes": "Canut, Cécile, Cahiers de praxématique, issue 38, 2002, p. 175-197. Fieldwork in Mali. She states what the pact requires: the relationship holds in perpetuity for the entire descent of both lineages, marriage between them is prohibited — variably applied today, she specifies — and mutual aid is owed without reservation. Cited for the obligation itself; it does not name the pair in this fiche, which is carried by the entries cited alongside it."
     },
     {
       "sourceKey": "canut-smith-2006-pactes",
@@ -219,17 +219,41 @@
       "url": "https://doi.org/10.4000/etudesafricaines.6198",
       "tier": "referenced",
       "source_kind": "academic",
-      "notes": "Canut, Cécile, et Smith, Étienne, Cahiers d'études africaines, numéro 184, 2006, p. 687 et suivantes. Citée pour la mise en garde qu'elle porte : l'idée que la parenté à plaisanterie apaiserait les conflits y est traitée comme une hypothèse héritée de Radcliffe-Brown et reprise par les études sur la résolution des conflits, donc comme un discours à analyser et non comme un effet mesuré. La page de début est vérifiée, la page de fin ne l'est pas."
+      "notes": "Canut, Cécile, and Smith, Étienne, Cahiers d'études africaines, issue 184, 2006, p. 687 ff. Cited for the caution it raises: the idea that joking kinship would ease conflicts is treated there as a hypothesis inherited from Radcliffe-Brown and taken up by conflict-resolution studies, and so as a discourse to be analysed rather than a measured effect. The starting page is verified, the ending page is not."
     }
   ],
   "gaps": [
     {
       "fieldPath": "casteOrSocialFunction",
-      "reason": "Charry range nommément Keita parmi les jamuw horon, c'est-à-dire les noms de statut noble et non artisan. Le dictionnaire des jamuw va dans le même sens par son silence : l'entrée Kéyità est l'une des rares du bloc mandé à ne porter aucun marqueur de statut, là où Traoré, Coulibaly, Camara, Diabaté, Kouyaté, Bamba et Fofana en portent tous au moins un. L'absence de fonction héréditaire est donc un résultat établi et non une recherche infructueuse : la royauté n'est pas une caste au sens de ce champ."
+      "reason": "Charry explicitly lists Keita among the jamuw horon, that is, the noble-status names rather than the craft-status ones. The dictionary of jamuw points the same way through its silence: the Kéyità entry is one of the rare ones in the Mande block to carry no status marker, whereas Traoré, Coulibaly, Camara, Diabaté, Kouyaté, Bamba and Fofana all carry at least one. The absence of a hereditary function is therefore an established result, not an unsuccessful search: royalty is not a caste in the sense of this field."
     },
     {
       "fieldPath": "homonyms",
-      "reason": "Aucune lignée homonyme d'origine distincte n'a été trouvée. Le jamu est porté bien au-delà de la descendance dynastique, par affiliation et par adoption, mais c'est là une extension du même nom et non une seconde origine. Le dictionnaire des jamuw réunit de même Kéyità, Kétà et Kɛ́yità sous une entrée unique et range Souma, Koné et Beawɔgi parmi ses équivalences."
+      "reason": "No homonymous lineage of distinct origin has been found. The jamu is carried well beyond the dynastic descent, through affiliation and adoption, but this is an extension of the same name, not a second origin. The dictionary of jamuw likewise groups Kéyità, Kétà and Kɛ́yità under a single entry and lists Souma, Koné and Beawɔgi among its equivalents."
     }
-  ]
+  ],
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T09:27:10.820Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "2c06fae66222c9d0a16da2299dafdb0aa1604f7eab60cdd5f81f56ea206f9537",
+    "fieldHashes": {
+      "origin.oralTraditions[0].claim": "e96b0dc94c6a80c3",
+      "origin.oralTraditions[0].transcription": "d753a01648ff3240",
+      "origin.linguisticReconstructions[0].claim": "14f92c91d5d99f18",
+      "sources[0].notes": "29012643eb034ff2",
+      "sources[1].notes": "fc0dbc4dd8f99c38",
+      "sources[2].notes": "4e75f41a563c53c3",
+      "sources[3].notes": "3a5b80d26c30b0b6",
+      "sources[4].notes": "b80adb343411bfb9",
+      "sources[5].notes": "2c14e48c42d56e18",
+      "sources[6].notes": "79986afda62f44db",
+      "gaps[0].reason": "6f0e3c41d59bf256",
+      "gaps[1].reason": "d39d08d11a9f5b36"
+    },
+    "reviewRequired": [
+      "origin.oralTraditions[0].transcription",
+      "origin.linguisticReconstructions[0].claim"
+    ]
+  }
 }

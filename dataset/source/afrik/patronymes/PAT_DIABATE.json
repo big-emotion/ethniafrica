@@ -15,7 +15,10 @@
           "countryId": "BFA",
           "sourceRefs": ["corpus-ppl-dafing-organisation"]
         },
-        { "countryId": "MLI", "sourceRefs": ["corpus-ppl-dafing-organisation"] }
+        {
+          "countryId": "MLI",
+          "sourceRefs": ["corpus-ppl-dafing-organisation"]
+        }
       ]
     }
   ],
@@ -60,7 +63,11 @@
     {
       "targetPatronymeId": "PAT_DIARRA",
       "allianceType": "sanankuya",
-      "sourceRefs": ["bamadaba-jamuw"]
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
     }
   ],
   "casteOrSocialFunction": {
@@ -145,6 +152,22 @@
       "tier": "referenced",
       "source_kind": "academic",
       "notes": "Nichols, Eliza, African Studies Review 63(2), Cambridge University Press, 2020. Donne les dates de Massa Makan Diabaté (1938-1988), son ascendance de griots et le fait qu'il fut le seul écrivain de sa génération à conserver le patronyme qui le rattache à la caste des généalogistes — soit une source portant sur le nom lui-même, et non sur la seule homonymie de patronyme."
+    },
+    {
+      "sourceKey": "canut-2002-senankuya",
+      "title": "Pouvoir, places et filiation : les senankuya au Mali",
+      "url": "https://journals.openedition.org/praxematique/2307",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, Cahiers de praxématique, numéro 38, 2002, p. 175-197. Enquête de terrain au Mali. Elle énonce ce que le pacte oblige : la relation vaut à perpétuité pour toute la descendance des deux lignées, le mariage entre elles est prohibé — diversement appliqué aujourd'hui, précise-t-elle — et l'entraide y est due sans réserve. Citée pour l'obligation elle-même ; elle ne nomme pas la paire de cette fiche, que portent les entrées citées à côté d'elle."
+    },
+    {
+      "sourceKey": "canut-smith-2006-pactes",
+      "title": "Pactes, alliances et plaisanteries. Pratiques locales, discours global",
+      "url": "https://doi.org/10.4000/etudesafricaines.6198",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, et Smith, Étienne, Cahiers d'études africaines, numéro 184, 2006, p. 687 et suivantes. Citée pour la mise en garde qu'elle porte : l'idée que la parenté à plaisanterie apaiserait les conflits y est traitée comme une hypothèse héritée de Radcliffe-Brown et reprise par les études sur la résolution des conflits, donc comme un discours à analyser et non comme un effet mesuré. La page de début est vérifiée, la page de fin ne l'est pas."
     }
   ],
   "gaps": [

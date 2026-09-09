@@ -3,9 +3,9 @@
   "nameFr": "Tchad",
   "nameEn": "Chad",
   "nameOfficial": "République du Tchad (Republic of Chad, جمهورية تشاد)",
-  "summary": "Le Tchad porte le nom de son lac, du kanembu « tsade », la grande étendue d'eau. Royaumes du Kanem et du Bornou, chefferies sara : son territoire articule Sahara, Sahel et savane. Sara, Arabes tchadiens, Kanembu et Toubou y font coexister traditions soudaniques et sahariennes.",
-  "etymology": "Le nom \"Tchad\" vient du lac Tchad, qui occupe une position centrale dans la région. Le terme \"Tchad\" (ou \"Chad\" en anglais) est dérivé du mot kanembu \"tsade\" ou \"sade\", signifiant \"grande étendue d'eau\" ou \"lac\". Le lac Tchad était un centre important pour les royaumes historiques de la région (Kanem-Bornou). Le nom \"Tchad\" a été officialisé par les colonisateurs français au début du XXe siècle.",
-  "nameOriginActor": "Le nom \"Tchad\" vient du lac Tchad, nommé par les peuples locaux (Kanembu). Le nom \"Tchad\" a été officialisé par les colonisateurs français au début du XXe siècle lors de la création de la colonie du Tchad.",
+  "summary": "Le Tchad porte le nom de son lac, et ce que ce nom signifiait n'est pas établi : le kanouri l'emploie comme nom propre et dispose d'autres mots pour dire « lac », et Nachtigal le rapportait non au kanembu mais au boudouma, la langue des îles. Royaumes du Kanem et du Bornou, chefferies sara : son territoire articule Sahara, Sahel et savane. Sara, Arabes tchadiens, Kanembu et Toubou y font coexister traditions soudaniques et sahariennes.",
+  "etymology": "Le pays porte le nom du lac Tchad, autour duquel se sont construits le Kanem puis le Bornou. Ce que le mot désignait avant de désigner ce lac n'est pas établi, et l'explication couramment donnée — un mot kanembu signifiant « grande étendue d'eau » — ne se retrouve dans aucune des sources consultées.\n\nLes premiers Européens à atteindre le lac, Dixon Denham et Hugh Clapperton, emploient en 1826 la forme « Tchad » sans jamais la traduire. Sigismund Koelle, premier lexicographe du kanouri, écrit en 1854 que Tsade est « le lac d'eau douce bien connu, que d'autres peuples appellent aussi Tsad » : il en fait un nom propre et ne lui donne pas de sens. Le dictionnaire anglais-kanouri de Norbert Cyffer, en 1994, garde Sáde pour le lac Tchad mais rend « lac » par kulúwu ou njî kúra, littéralement la grande eau — autrement dit, le kanouri ne se sert pas de ce mot-là pour dire un lac. Gustav Nachtigal, qui séjourne dans la région dans les années 1870, rapportait le terme au boudouma, la langue des habitants des îles, avec le sens d'une grande accumulation d'eau : ce n'est ni la même langue ni le même peuple que le kanembu.\n\nLe mécanisme souvent invoqué, celui du voyageur qui demande le nom d'un lieu et à qui l'on répond ce que la chose est, n'est documenté par aucun des auteurs lus ici pour le lac Tchad. Denham ne rapporte pas d'échange de ce genre. Le présenter comme l'histoire du nom serait une reconstruction.",
+  "nameOriginActor": "Le nom est celui du lac, repris par l'administration coloniale française pour désigner le territoire au début du XXe siècle, puis conservé à l'indépendance. Qui a nommé le lac, et dans quelle langue, reste discuté : le kanouri emploie le mot comme nom propre sans le traduire, Nachtigal le rapportait au boudouma, et aucune source consultée ne l'attribue au kanembu.",
   "content": {
     "historicalNames": {
       "formerNames": ["Colonie française du Tchad (1900-1960)"],
@@ -230,6 +230,36 @@
         "url": "https://www.unfpa.org/data/world-population/TD",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
+      },
+      {
+        "title": "Dixon Denham, Hugh Clapperton et Walter Oudney, Narrative of Travels and Discoveries in Northern and Central Africa in the Years 1822, 1823 and 1824, Londres, John Murray, 1826",
+        "url": "https://archive.org/details/narrativetravel00browgoog",
+        "tier": "referenced",
+        "notes": "Premier récit européen du lac. La forme « Tchad » y est employée d'un bout à l'autre sans jamais être traduite, et aucun échange sur l'origine du nom n'y est rapporté. Volume lu en fac-similé le 9 septembre 2026."
+      },
+      {
+        "title": "Sigismund Wilhelm Koelle, African Native Literature, or Proverbs, Tales, Fables and Historical Fragments in the Kanuri or Bornu Language, Londres, Church Missionary House, 1854",
+        "url": "https://archive.org/details/africannativelit00koel",
+        "tier": "referenced",
+        "notes": "Décrit Tsade comme le lac d'eau douce bien connu, que d'autres peuples appellent aussi Tsad. Le mot y est traité en nom propre et ne reçoit aucune traduction ; le vocabulaire ne comporte pas d'entrée le glosant. Note et vocabulaire lus en fac-similé le 9 septembre 2026."
+      },
+      {
+        "title": "Norbert Cyffer, English–Kanuri Dictionary, Cologne, 1994",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Donne Sáde pour le lac Tchad, et kulúwu ou njî kúra pour le nom commun « lac ». L'ouvrage est vérifié au catalogue ; ces deux entrées sont reprises d'une discussion de linguistes qui les cite, le dictionnaire lui-même n'ayant pas été consulté."
+      },
+      {
+        "title": "Gustav Nachtigal, Saharâ und Sûdân. Ergebnisse sechsjähriger Reisen in Afrika, Berlin, Weidmann, à partir de 1879",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Rapporte le nom du lac au boudouma, la langue des habitants des îles, avec le sens d'une grande accumulation d'eau. L'ouvrage est vérifié au catalogue ; le passage n'a pas été lu, il est rapporté par une discussion de linguistes."
+      },
+      {
+        "title": "« Lake Chad », Language Hat, 5 décembre 2017, et ses commentaires",
+        "url": "https://languagehat.com/lake-chad/",
+        "tier": "unverified",
+        "notes": "Discussion de linguistes. Elle est l'origine des entrées citées ici du dictionnaire de Cyffer et de l'attribution au boudouma chez Nachtigal, et signale aussi la forme cádù relevée par Roger Blench en kanouri manga. Elle conclut que personne ne sait avec certitude ce que le mot désignait. Page lue le 9 septembre 2026."
       }
     ],
     "demographics": {

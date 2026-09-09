@@ -1,0 +1,127 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche générée depuis la file d'attente des candidats (vague 1 du plan de couverture anthroponymique). Elle ne porte aucune recherche : ne pas étendre ses affirmations sans appliquer le protocole docs/runbooks/anthroponym-fiche-research.md."
+  },
+  "id": "PAT_BAGAYOKO",
+  "nameMain": "Bagayoko",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Bagayoko",
+      "attestations": [
+        { "countryId": "MLI", "sourceRefs": ["afrik-candidate-queue"] }
+      ]
+    }
+  ],
+  "transmissionMode": "other",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_BAMBARA",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_SANGARE",
+      "allianceType": "sanankuya",
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
+    }
+  ],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "This name appears on the atlas's list of names to document: it has been identified as a name requiring documentation, but no dedicated source has yet been consulted. The entry exists to record the name, not to make a claim about it. Future verification will draw on electoral registers, national statistical institutes and the onomastic scholarship of the country concerned."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Onomastic annex of the Bamadaba, the Bambara-French electronic dictionary supplementing the Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA); the clan-name annex is identified as such by Vydrin, « Vers une lexicographie mandingue sur la base de grands corpus annotés », Mandenkan 63, 2020, pp. 89-110. The entry Bagayogo, a spelling close to the Bagayoko used here, carries a joking-partner marker (senankun) toward Sangaré; links of this kind are not systematically reciprocal from one entry to another, but this one is carried by the Bagayogo entry itself."
+    },
+    {
+      "sourceKey": "canut-2002-senankuya",
+      "title": "Pouvoir, places et filiation : les senankuya au Mali",
+      "url": "https://journals.openedition.org/praxematique/2307",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, Cahiers de praxématique, number 38, 2002, pp. 175-197. Fieldwork in Mali. She states what the pact requires: the relationship holds in perpetuity for the whole descent of both lineages, marriage between them is forbidden — variably applied today, she notes — and mutual aid is owed without reserve. Cited for the obligation itself; it does not name the pair in this entry, which is carried by the entries cited alongside it."
+    },
+    {
+      "sourceKey": "canut-smith-2006-pactes",
+      "title": "Pactes, alliances et plaisanteries. Pratiques locales, discours global",
+      "url": "https://doi.org/10.4000/etudesafricaines.6198",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, and Smith, Étienne, Cahiers d'études africaines, number 184, 2006, p. 687 and following. Cited for the caution it raises: the idea that joking kinship pacifies conflict is treated there as a hypothesis inherited from Radcliffe-Brown and taken up by conflict-resolution studies, hence as a discourse to be analysed rather than as a measured effect. The starting page is verified; the closing page is not."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "The atlas does not yet document this point for this name: no dedicated source has been consulted to date."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "The atlas does not yet document this point for this name: no dedicated source has been consulted to date."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "The atlas does not yet document this point for this name: no dedicated source has been consulted to date."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "The atlas does not yet document this point for this name: no dedicated source has been consulted to date."
+    },
+    {
+      "fieldPath": "transmissionMode",
+      "reason": "The clan name alone does not determine the mode of transmission: the atlas does not yet document this for this name."
+    }
+  ],
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T09:33:26.322Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "df43c3eff9b7c2ec9864191766ab3f68a286089cc73f0334494b41e0a22c8f89",
+    "fieldHashes": {
+      "sources[0].notes": "78128286f23912b9",
+      "sources[1].notes": "513bce19234bc315",
+      "sources[2].notes": "2c14e48c42d56e18",
+      "sources[3].notes": "79986afda62f44db",
+      "gaps[0].reason": "dd2f14fbf2d6fc09",
+      "gaps[1].reason": "dd2f14fbf2d6fc09",
+      "gaps[2].reason": "dd2f14fbf2d6fc09",
+      "gaps[3].reason": "dd2f14fbf2d6fc09",
+      "gaps[4].reason": "e28bcf8ccd2ff766"
+    },
+    "reviewRequired": []
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Dossier court fondé sur le passage du corpus AFRIK référencé ; ne pas étendre les affirmations sans source dédiée."
+  },
+  "id": "PAT_CAMARA",
+  "nameMain": "Camara",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Camara",
+      "attestations": [
+        { "countryId": "LBR", "sourceRefs": ["corpus-ppl-vai-organisation"] },
+        { "countryId": "SLE", "sourceRefs": ["corpus-ppl-vai-organisation"] }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": [
+      {
+        "claim": "The jamu is a patrilineal clan name: it designates membership in a descent group, not individual filiation to the father.",
+        "claimStatus": "established",
+        "sourceRefs": ["jansen-sunjata-paradigm"]
+      },
+      {
+        "claim": "The nyamakalaw — endogamous groups of artisans and musicians — are attested among the Malinke by around 1300 at the latest and are found among more than fifteen West African peoples. The status is transmitted with the jamu, which makes the clan name the vehicle of social position as much as of descent.",
+        "claimStatus": "established",
+        "sourceRefs": ["tamari-1991-caste"]
+      }
+    ]
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_VAI",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-vai-organisation", "gha-v-16-18"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "LBR",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-vai-organisation", "gha-v-16-18"]
+    },
+    {
+      "countryId": "SLE",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-vai-organisation", "gha-v-16-18"]
+    },
+    {
+      "countryId": "GMB",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "MLI",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "GIN",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    },
+    {
+      "countryId": "GNB",
+      "status": "attested",
+      "sourceRefs": ["afrik-candidate-queue"]
+    }
+  ],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_FOFANA",
+      "allianceType": "sanankuya",
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
+    }
+  ],
+  "casteOrSocialFunction": {
+    "value": "Lineage of blacksmiths (numu): Charry names the jamu explicitly among the numu lineages, alongside Kanté. The jamuw dictionary, however, gives three statuses for the same Kàmara entry — hɔ̀rɔn, finɛ and nùmu in Wassoulou — so the blacksmith function holds for part of the jamu and not for everyone who bears it.",
+    "sourceRefs": ["charry-1996-jembe", "tamari-1991-caste", "bamadaba-jamuw"]
+  },
+  "bearers": [
+    {
+      "status": "deceased",
+      "displayName": "Kamadian Camara, de Sibi",
+      "sourceRefs": ["gha-iv-mali", "gha-v-16-18"]
+    }
+  ],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-vai-organisation",
+      "title": "EthniAfrica — fiche du peuple Vai, organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Taken from the \"Clan organisation\" chapter of the Vai people's fiche."
+    },
+    {
+      "sourceKey": "jansen-sunjata-paradigm",
+      "title": "Beyond the Mali Empire — A New Paradigm for the Sunjata Epic",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item:2952645/download",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Jansen, Jan, Universiteit Leiden. Critical work on the transmission of the epic and on the jamu as a social institution rather than as historical memory; used here for the nature of the jamu, not to date an ancestor."
+    },
+    {
+      "sourceKey": "charry-1996-jembe",
+      "title": "A Guide to the Jembe",
+      "url": "https://echarry.web.wesleyan.edu/jembearticle/article.html",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Charry, Eric, Percussive Notes 34(2), April 1996, pp. 66-72; the author is the ethnomusicologist of Mande Music (University of Chicago Press, 2000). Article from a specialist journal, not a peer-reviewed journal: cited here for the attribution of jamuw to Mande social statuses (numu, jeli, horon), which he states by name clan by clan, and not for the history of the jembe."
+    },
+    {
+      "sourceKey": "tamari-1991-caste",
+      "title": "The Development of Caste Systems in West Africa",
+      "url": "https://shs.hal.science/halshs-00690180v1",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Tamari, Tal, The Journal of African History 32(2), 1991, pp. 221-250; open repository HAL-SHS. Establishes that endogamous groups of artisans and musicians are found among more than fifteen West African peoples and that they are attested among the Malinke by around 1300 at the latest. Used for the institution of the caste, never to attach a named clan to a caste: that attribution comes from another source."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Onomastic annex of the Bamadaba, electronic Bambara-French dictionary, supplement to the Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA); the annex of clan names is identified as such by Vydrin, \"Vers une lexicographie mandingue sur la base de grands corpus annotés,\" Mandenkan 63, 2020, pp. 89-110. 375 entries in MDF format, consulted from the complete file. The file provides no legend for its markers, and the reading adopted is the one the file imposes: \\ca carries the Mande status terms themselves (nùmu, jèli, hɔ́rɔn, garanke, finɛ, tontigi, wage, gesere); \\sn is read as senankun because the Kúyate entry annotates its own line \"\\sn Keyita\" with a caveat stating that this particular relation is a friendly understanding and not a senankuya. The \\sn links are not systematically reciprocal from one entry to another: each pair is therefore cited according to the entry that carries it, named in the claim or the gap."
+    },
+    {
+      "sourceKey": "gha-iv-mali",
+      "title": "General History of Africa, IV: Africa from the Twelfth to the Sixteenth Century",
+      "url": "https://archive.org/details/unesco_general_history_africa_iv",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "UNESCO, General History of Africa, vol. IV, ed. D. T. Niane, 1984; consulted on the full text of the digitised copy, not on an index. Chapter 6, \"Mali and the second Mandingo expansion\" (D. T. Niane, pp. 117-171), gives, lineage by lineage, the settlement of the Malinke clans: the Kamara holding Sibi and Tabon and the Traore the Gangaran (p. 127), the two Camara branches led by Tabon-Wana and Kamadian Camara of Sibi (p. 131), Tiramaghan Traore founder of Gabu (p. 127 n. 28, p. 133), the correspondence of clan names from one people to another — a Traore is received as a brother by the Diop in Wolof country and may take their name (p. 134 n. 43) —, the Diabate griots of Keyla and the seven-yearly renewal of the Kamablon of Kangaba (p. 127 n. 28), and the mansa's griot always chosen from the Kouyate clan (p. 160). The work is a scholarly synthesis, not a chronicle: the claims it carries here are therefore classed outside writtenChronicles."
+    },
+    {
+      "sourceKey": "gha-v-16-18",
+      "title": "General History of Africa, V: Africa from the Sixteenth to the Eighteenth Century",
+      "url": "https://archive.org/details/unesco_general_history_africa_v",
+      "tier": "official",
+      "source_kind": "intergovernmental",
+      "notes": "UNESCO, General History of Africa, vol. V, ed. B. A. Ogot, 1992; consulted on the full text. Chapter 12, \"From the Niger to the Volta\" (M. Izard and J. Ki-Zerbo): the sanankunya between the Kulibali (Kurubari) and the Keita or the Ture, given as evidence of long-standing relations between Bambara and Malinke (p. 330); the etymology kulu \"canoe\" + privative bali, drawn from crossing the river without a canoe, accompanied by the source's own note that other etymologies exist (p. 330 n. 7); the genealogy of Mamari Kulibali known as Biton (1712-1755), great-grandson of Baramangolo through Kaladian, Danfassari and Soma (p. 330-333). Chapter 13, \"The states and cultures of the Upper Guinean coast\" (C. Wondji): the migration of the Kongo-Vai from the upper Niger under the leadership of the Camara clan, towards Bopolou and then the Mano and Moa rivers, and the correlated displacement of the Kono and the Vai towards the coasts of Liberia and Sierra Leone (p. 375-377)."
+    },
+    {
+      "sourceKey": "afrik-candidate-queue",
+      "title": "Relevé de couverture anthroponymique EthniAfrica",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "ai_generated",
+      "notes": "This name appears among those the atlas has identified for documentation: it has been selected as a name to document, but no dedicated source has yet been consulted. The fiche therefore exists to record the name, not for what it states about it. Future verification will draw on electoral registers, national statistical institutes and onomastic scholarship for the country concerned."
+    },
+    {
+      "sourceKey": "canut-2002-senankuya",
+      "title": "Pouvoir, places et filiation : les senankuya au Mali",
+      "url": "https://journals.openedition.org/praxematique/2307",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, Cahiers de praxématique, number 38, 2002, pp. 175-197. Field survey in Mali. She sets out what the pact obliges: the relationship holds in perpetuity for the entire descent of the two lineages, marriage between them is prohibited — variably applied today, she notes — and mutual aid is owed without reservation. Cited for the obligation itself; it does not name the pair in this fiche, which is carried by the entries cited alongside it."
+    },
+    {
+      "sourceKey": "canut-smith-2006-pactes",
+      "title": "Pactes, alliances et plaisanteries. Pratiques locales, discours global",
+      "url": "https://doi.org/10.4000/etudesafricaines.6198",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, and Smith, Étienne, Cahiers d'études africaines, number 184, 2006, p. 687 and following. Cited for the caution it carries: the idea that joking kinship would defuse conflicts is treated there as a hypothesis inherited from Radcliffe-Brown and taken up by conflict-resolution studies, hence as a discourse to be analysed rather than as a measured effect. The starting page is verified, the ending page is not."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "homonyms",
+      "reason": "The spelling Camara is the Francophone transcription of Kamara; the jamuw dictionary adds Kámala, and lists Koiwogi — among the Loma — as well as Dansogo, Fofana and Magasa among its equivalences, clan names of other peoples held to be the same. These are spellings and correspondences, not two lineages: they are therefore not treated as homonyms."
+    }
+  ],
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T09:35:08.319Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "1691602c020a0b80960723fbb94151ee487c3f976d3162558a24f50e2ea3ad44",
+    "fieldHashes": {
+      "origin.linguisticReconstructions[0].claim": "14f92c91d5d99f18",
+      "origin.linguisticReconstructions[1].claim": "77da92e5bff5b48d",
+      "casteOrSocialFunction.value": "696ddc1f839db0ba",
+      "sources[0].notes": "ab51999e890feb22",
+      "sources[1].notes": "4e75f41a563c53c3",
+      "sources[2].notes": "3cb50137a59120fd",
+      "sources[3].notes": "6c2eae881a0321de",
+      "sources[4].notes": "b80adb343411bfb9",
+      "sources[5].notes": "16bdc28ca53255a6",
+      "sources[6].notes": "3a5b80d26c30b0b6",
+      "sources[7].notes": "78128286f23912b9",
+      "sources[8].notes": "2c14e48c42d56e18",
+      "sources[9].notes": "79986afda62f44db",
+      "gaps[0].reason": "707e7e4ce5e2cd86"
+    },
+    "reviewRequired": [
+      "origin.linguisticReconstructions[0].claim",
+      "origin.linguisticReconstructions[1].claim"
+    ]
+  }
+}

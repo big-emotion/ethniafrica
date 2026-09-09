@@ -1,0 +1,155 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "patronyme",
+    "directives": "Fiche approfondie selon le protocole de recherche anthroponymique ; chaque affirmation positive renvoie à une source dédiée et les absences sont déclarées dans gaps."
+  },
+  "id": "PAT_SOW",
+  "nameMain": "Sow",
+  "nameSystem": "clan_name",
+  "spellings": [
+    {
+      "spelling": "Sow",
+      "attestations": [
+        {
+          "countryId": "SEN",
+          "sourceRefs": [
+            "corpus-ppl-wolof-organisation",
+            "familysearch-sow-dafn"
+          ]
+        },
+        { "countryId": "GMB", "sourceRefs": ["corpus-ppl-wolof-organisation"] },
+        {
+          "countryId": "MRT",
+          "sourceRefs": [
+            "corpus-ppl-wolof-organisation",
+            "familysearch-sow-dafn"
+          ]
+        }
+      ]
+    }
+  ],
+  "transmissionMode": "patrilineal",
+  "designatedSocialUnit": "clan",
+  "origin": {
+    "oralTraditions": [],
+    "writtenChronicles": [],
+    "linguisticReconstructions": []
+  },
+  "peoples": [
+    {
+      "peopleId": "PPL_WOLOF",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-wolof-organisation"]
+    }
+  ],
+  "countries": [
+    {
+      "countryId": "SEN",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-wolof-organisation"]
+    },
+    {
+      "countryId": "GMB",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-wolof-organisation"]
+    },
+    {
+      "countryId": "MRT",
+      "status": "attested",
+      "sourceRefs": ["corpus-ppl-wolof-organisation"]
+    }
+  ],
+  "alliances": [
+    {
+      "targetPatronymeId": "PAT_SANGARE",
+      "allianceType": "sanankuya",
+      "sourceRefs": [
+        "bamadaba-jamuw",
+        "canut-2002-senankuya",
+        "canut-smith-2006-pactes"
+      ]
+    }
+  ],
+  "casteOrSocialFunction": null,
+  "bearers": [],
+  "homonyms": [],
+  "sources": [
+    {
+      "sourceKey": "corpus-ppl-wolof-organisation",
+      "title": "Fiche des Wolof de l'atlas — organisation clanique",
+      "url": null,
+      "tier": "unverified",
+      "source_kind": "repository",
+      "notes": "Taken from the \"Clan organisation\" chapter of the Wolof people's fiche. The Wolof association and the countries Senegal, Gambia and Mauritania remain at the unverified tier until a source dedicated to this name confirms them."
+    },
+    {
+      "sourceKey": "familysearch-sow-dafn",
+      "title": "Sow Name Meaning — Dictionary of American Family Names",
+      "url": "https://www.familysearch.org/en/surname?surname=sow",
+      "tier": "referenced",
+      "source_kind": "repository",
+      "notes": "Entry from the Dictionary of American Family Names (Patrick Hanks, 2003/2006), consulted directly on FamilySearch. It attests Sow in Senegal and Mauritania, but attributes it to the Fulani and Tukulor groups, not to the Wolof; it therefore cannot establish the origin of the Wolof association retained from the corpus."
+    },
+    {
+      "sourceKey": "bamadaba-jamuw",
+      "title": "Bamadaba — dictionnaire des noms claniques (jamuw)",
+      "url": "http://cormand.huma-num.fr/dicos/jamuw.zip",
+      "tier": "referenced",
+      "source_kind": "linguistic_reference",
+      "notes": "Onomastic appendix of the Bamadaba, an electronic Bambara-French dictionary supplementing the Corpus bambara de référence (Bailleul, Davydov, Erman, Maslinsky, Méric, Vydrin, 2011-2020, CC BY-NC-SA); the appendix of clan names is identified as such by Vydrin, \"Vers une lexicographie mandingue sur la base de grands corpus annotés\", Mandenkan 63, 2020, p. 89-110. The entry So, a spelling close to Sow retained here, carries a joking-partner marker (senankun) towards Sangaré; links of this kind are not systematically reciprocal from one entry to another, but this one is carried by the So entry itself."
+    },
+    {
+      "sourceKey": "canut-2002-senankuya",
+      "title": "Pouvoir, places et filiation : les senankuya au Mali",
+      "url": "https://journals.openedition.org/praxematique/2307",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, Cahiers de praxématique, number 38, 2002, p. 175-197. Field survey in Mali. It states what the pact obliges: the relationship holds in perpetuity for the entire descent of the two lineages, marriage between them is prohibited — variously applied today, she specifies — and mutual aid is owed there without reservation. Cited for the obligation itself; it does not name the pair in this fiche, which the entries cited alongside it carry."
+    },
+    {
+      "sourceKey": "canut-smith-2006-pactes",
+      "title": "Pactes, alliances et plaisanteries. Pratiques locales, discours global",
+      "url": "https://doi.org/10.4000/etudesafricaines.6198",
+      "tier": "referenced",
+      "source_kind": "academic",
+      "notes": "Canut, Cécile, and Smith, Étienne, Cahiers d'études africaines, number 184, 2006, p. 687 and following. Cited for the caution it carries: the idea that joking kinship would ease conflicts is treated there as a hypothesis inherited from Radcliffe-Brown and taken up by conflict-resolution studies, therefore as a discourse to be analysed rather than a measured effect. The start page is verified, the end page is not."
+    }
+  ],
+  "gaps": [
+    {
+      "fieldPath": "origin",
+      "reason": "The FamilySearch/Dictionary of American Family Names entry and the bibliographic reference of M'Bodj, Becker and Martin, \"Notes sur les patronymes wolof\" (1980), have been searched for a Wolof origin of Sow. The former attributes the name rather to the Fulani and Tukulor, while the full text of the latter has not been found; no origin specific to the Wolof association in this fiche is therefore affirmed."
+    },
+    {
+      "fieldPath": "casteOrSocialFunction",
+      "reason": "The FamilySearch entry and the bibliographic reference of M'Bodj, Becker and Martin have been searched for a social function or hereditary occupation specific to the Wolof Sow; no verifiable function has been found."
+    },
+    {
+      "fieldPath": "bearers",
+      "reason": "The FamilySearch entry has been searched for a deceased bearer whose identification with the Wolof lineage would be documented; it provides no individual bearer meeting these criteria."
+    },
+    {
+      "fieldPath": "homonyms",
+      "reason": "The FamilySearch entry attributes Sow to the Fulani and Tukulor, while this fiche's source retains an unverified Wolof association. This divergence has been researched as a possible case of homonymy, but no dedicated source establishes two distinct etymologies."
+    }
+  ],
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T09:30:11.059Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "5173452962391dcf334a175f666499abaefb20f82d28273a5f759a6d1bd829c4",
+    "fieldHashes": {
+      "sources[0].notes": "d6b32ea03d5ee7c2",
+      "sources[1].notes": "64ef65508fc45d25",
+      "sources[2].notes": "e46e6db1697741d4",
+      "sources[3].notes": "2c14e48c42d56e18",
+      "sources[4].notes": "79986afda62f44db",
+      "gaps[0].reason": "5a0b399079eddc02",
+      "gaps[1].reason": "ecbde379fffd388f",
+      "gaps[2].reason": "6f6628f8b672b848",
+      "gaps[3].reason": "8ad83ea3fea074d2"
+    },
+    "reviewRequired": []
+  }
+}
