@@ -1,0 +1,395 @@
+{
+  "id": "NER",
+  "nameFr": "Niger",
+  "nameEn": "Niger",
+  "nameOfficial": "Republic of Niger (Republic of Niger)",
+  "summary": "The origin of the name \"Niger\" is not established: the country carries the name of the river, which reference works connect to the Tuareg egerew n-igerewen, \"the river of rivers\", though who first formulated this reading is unknown, and no riverine language calls the river by this name — Mandingo says Joliba, \"the great water\", and Yoruba says Ọpo Ọya, after a deity's name. Hausa city-states, Songhay kingdoms and Tuareg confederations shared the territory. Hausa, Zarma, Fulani, Tuareg, Kanuri and Toubou people articulate Sahel and Sahara there.",
+  "etymology": "The country carries the name of the river, and the origin of the river's name remains disputed. The word circulated in Europe well before a local etymology was proposed for it: in 1799, James Rennell, reading Pliny and Ptolemy, took it for granted that the Ancients knew under this name a river distinct from the Senegal and the Gambia, judged the term Roman and translated it as \"river of the black peoples\". Whether that river of the Ancients is today's river is not established. Modern reference works set aside the Latin and connect the name to the Tuareg egerew n-igerewen, \"the river of rivers\", used around Timbuktu; the Tuareg author Yusuf ag Herrel attributes this reading to Leo Africanus, but the Arabic original this explanation presupposes does not survive — the transmitted text is the Italian of 1526 printed by Ramusio in 1550 — and no identified work carries its first formulation.\n\nThe riverine languages, for their part, do not name the river thus, and what they name is not always a watercourse. Mungo Park notes in 1799 that it is called Joliba, \"the great water\", in Mandingo country. Samuel Johnson writes in 1921 that the river is consecrated to Ọya, deified wife of Ṣàngó, and that the Yoruba country calls it for this reason Ọpo Ọya: the outside describes a river, the local reading names a deity. Sigismund Koelle's Kanuri vocabulary shows in 1854 the form Koara. Rennell also reports the names given to it by Arabs and Moors, Neel Abeed and Neel Kebeer, and, reading al-Idrisi, a form Guin or Fin. For Songhay, Zarma, Hausa, Fulani and Igbo, no source carrying the name these languages give to the river has been found.",
+  "nameOriginActor": "The name is first that of the river, carried by European geographers and cartographers well before colonisation, then given to the territory by the French administration when the colony of Niger was created, and kept at independence in 1960. Who coined it first remains disputed: a Roman term according to Rennell in 1799, a Tuareg expression according to modern reference works, with no identified author. Neither attribution is established, and no riverine language calls the river Niger.",
+  "content": {
+    "historicalNames": {
+      "formerNames": ["Colony of Niger (1890-1960)"],
+      "antiquity": "The present-day territory of Niger was inhabited by diverse societies (Hausa, Zarma, Fulani, Tuareg, Kanuri). The indigenous peoples had their own names for their territories.",
+      "middleAges": "Development of the Hausa city-states (Kano, Katsina, Zaria), Songhay kingdoms, Fulani chieftaincies, Tuareg confederations. Trans-Saharan trade. No unified name for the territory as a whole.",
+      "precolonial": "Consolidation of the Hausa city-states, Songhay kingdoms, Fulani chieftaincies, Tuareg confederations. Trans-Saharan trade. Europeans used the term \"Niger\" to designate the region of the Niger River.",
+      "colonization": "1890-1960: French Colony of Niger (Colony of Niger). The French established a protectorate and then a colony over the territory. The name \"Niger\" was made official by the French.",
+      "contemporary": "1960: Independence (3 August 1960), proclamation of the Republic of Niger. The name \"Niger\" is official."
+    },
+    "kingdoms": [
+      {
+        "name": "Hausa city-states",
+        "period": "Middle Ages - present",
+        "entryType": "polity",
+        "dominantPeoples": ["Hausa"],
+        "politicalCenters": [
+          "Kano",
+          "Katsina",
+          "Zaria (Zazzau)",
+          "autres cités-États"
+        ],
+        "historicalRole": "Hausa city-states, early Islamisation, trans-Saharan trade, urban development, Hausa emirates. The Hausa city-states played a major role in the region's history."
+      },
+      {
+        "name": "Songhay kingdoms",
+        "period": "Middle Ages - nineteenth century",
+        "entryType": "polity",
+        "dominantPeoples": ["Songhay", "Zarma"],
+        "politicalCenters": ["Gao", "Tombouctou", "autres centres songhay"],
+        "historicalRole": "Songhay kingdoms, Songhay empire (fifteenth-sixteenth centuries), trans-Saharan trade, cultural and intellectual development. The Songhay empire was one of the greatest empires of West Africa."
+      },
+      {
+        "name": "Fulani chieftaincies",
+        "period": "Precolonial - present",
+        "entryType": "polity",
+        "dominantPeoples": ["Peul (Fulani)"],
+        "politicalCenters": ["Chefferies traditionnelles"],
+        "historicalRole": "Fulani chieftaincies, pastoralism, Islam, resistance to colonisation."
+      },
+      {
+        "name": "Tuareg confederations",
+        "period": "Precolonial - present",
+        "entryType": "polity",
+        "dominantPeoples": ["Touareg"],
+        "politicalCenters": ["Confédérations tribales touarègues"],
+        "historicalRole": "Tuareg confederations, Saharan nomadism, trans-Saharan trade, resistance to colonisation, Tuareg rebellions (1990s-2010s)."
+      },
+      {
+        "name": "Kingdom of Kanem-Bornu",
+        "period": "Middle Ages - nineteenth century",
+        "entryType": "polity",
+        "dominantPeoples": ["Kanuri"],
+        "politicalCenters": ["Kanem", "Bornou"],
+        "historicalRole": "Kingdom of Kanem-Bornu, Islamisation, trans-Saharan trade, cultural development."
+      },
+      {
+        "name": "French Colony of Niger",
+        "period": "1890 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1890,
+          "endYear": 1960,
+          "precision": "year"
+        },
+        "dominantPeoples": [
+          "Tous les peuples nigériens sous domination coloniale française"
+        ],
+        "politicalCenters": ["Niamey (capitale coloniale)"],
+        "historicalRole": "French colonisation, resistance by indigenous peoples, development of the colonial administration, nationalist movements (twentieth century)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Hausa",
+        "selfAppellation": "Hausawa",
+        "exonyms": [
+          "\"Haoussa\" (French colonial transcription)",
+          "\"Al-Sūdān\" (ancienne appellation arabo-islamique large",
+          "non spécifique)"
+        ],
+        "peopleId": "PPL_HAUSA",
+        "mainRegion": "Southern Niger",
+        "languages": ["Hausa (hau", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_TCHADIQUE",
+        "appellationRemarks": "\"Hausawa\" is the self-name. \"Haoussa\" is the French colonial transcription. No known pejorative term. Majority group, Hausa city-states, early Islamisation."
+      },
+      {
+        "name": "Zarma",
+        "selfAppellation": "Zarma",
+        "exonyms": ["Zarma (term used by Europeans)", "\"Djerma\" (variant)"],
+        "peopleId": "PPL_ZARMA",
+        "mainRegion": "Western Niger (Niger River)",
+        "languages": ["Zarma (dje", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_SONGHAY",
+        "appellationRemarks": "\"Zarma\" is the self-name. \"Djerma\" is a less-used variant. No known pejorative term. Heirs of the Songhay kingdoms, a lingua franca in Niger."
+      },
+      {
+        "name": "Peul",
+        "selfAppellation": "Fulɓe",
+        "exonyms": [
+          "\"Peul\" (French term)",
+          "\"Fulani\" (English term)",
+          "\"Fellata\" (terme historique",
+          "peut avoir une connotation péjorative)"
+        ],
+        "peopleId": "PPL_FULANI",
+        "mainRegion": "All regions of Niger",
+        "languages": ["Fulfulde (ful", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Fulɓe\" is the self-name. \"Peul\" and \"Fulani\" are accepted exonyms. \"Fellata\" can carry a pejorative connotation in some contexts and should be avoided. Muslim pastoralists and traders."
+      },
+      {
+        "name": "Touareg",
+        "selfAppellation": "Kel Tamasheq, Imuhagh",
+        "exonyms": [
+          "\"Touareg\" (French term)",
+          "\"Tuareg\" (English term)",
+          "\"Berbères du Sahara\" (descriptive term)"
+        ],
+        "peopleId": "PPL_TUAREG",
+        "mainRegion": "Northern Niger (Sahara)",
+        "languages": ["Tamasheq (tmh", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_BERBERE",
+        "appellationRemarks": "\"Kel Tamasheq\" or \"Imuhagh\" are the self-names. \"Touareg\" is the most common exonym. \"Berber\" is a descriptive term but can be problematic in some contexts. Saharan nomads, trans-Saharan trade, Tuareg rebellions (1990s-2010s)."
+      },
+      {
+        "name": "Kanuri",
+        "selfAppellation": "Kanuri",
+        "exonyms": ["Kanuri (term used by Europeans)"],
+        "peopleId": "PPL_KANURI",
+        "mainRegion": "Southeastern Niger",
+        "languages": ["Kanuri (kau", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_SAHARIEN",
+        "appellationRemarks": "\"Kanuri\" is the self-name. No known pejorative term. Heirs of the Kanem-Bornu kingdom."
+      },
+      {
+        "name": "Toubou",
+        "selfAppellation": "Toubou",
+        "exonyms": ["Toubou (term used by Europeans)", "\"Teda\" (subgroup)"],
+        "peopleId": "PPL_TOUBOU",
+        "mainRegion": "Northeastern Niger (Sahara)",
+        "languages": ["Toubou (tuv", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_SAHARIEN",
+        "appellationRemarks": "\"Toubou\" is the self-name. No known pejorative term. Saharan nomads."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "mainRegion": "Various regions of Niger",
+        "languages": ["Langues diverses", "français"],
+        "appellationRemarks": "Each group has its own self-name. No known pejorative term."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        { "name": "Français", "isoCode": "fra", "isPrimary": true },
+        { "name": "hausa" },
+        { "name": "zarma", "isoCode": "dje" },
+        { "name": "fulfulde", "isoCode": "ful" },
+        { "name": "tamasheq", "isoCode": "tmh" },
+        { "name": "kanuri", "isoCode": "kau" },
+        { "name": "toubou", "isoCode": "tuv" }
+      ],
+      "culturalTraditions": "Significant cultural diversity reflecting Niger's ethnic mosaic. Hausa traditions: Hausa city-states, emirates, early Islamisation, trans-Saharan trade, Hausa architecture, Hausa poetry. Songhay traditions: heritage of the Songhay empire, trans-Saharan trade, intellectual traditions. Fulani traditions: pastoralism, Fulani poetry, Islamic traditions. Tuareg traditions: Saharan nomadism, trans-Saharan trade, Tuareg poetry, Tuareg music (guitar, singing), Tuareg craftwork (jewellery, leather). Kanuri traditions: heritage of the Kanem-Bornu kingdom, Islamic traditions. Varied traditional music and dance. Rite-of-passage ceremonies, initiation rites, traditional festivals. Tuareg poetry is internationally renowned.",
+      "dominantReligions": "Islam (majority Sunni, Maliki school), all communities are majority Muslim",
+      "lifestyles": "Agriculture (south, Hausa, Zarma, Kanuri, millet, sorghum, food crops), pastoralism (Fulani, Tuareg, Toubou, cattle, goat and camel herding), trans-Saharan trade (Tuareg, Hausa), trade and urban activities (urban areas, Niamey, Zinder, Maradi). Moderate urbanisation. Economy based on agriculture, livestock farming, mining (uranium, gold), and trade. Niger is one of the poorest countries in Africa, with significant development challenges.",
+      "socialOrganization": "Organisation into Hausa city-states (emirates), traditional chieftaincies (Zarma, Fulani, Kanuri), Tuareg confederations (nomadic peoples). Patrilineal clan structures (most groups). Importance of lineages and extended families. Role of councils of elders. Initiation traditions and rites of passage to adulthood. Patrilineal system (most groups).",
+      "regionalRelations": "Historical relations with Nigeria (trade, migrations, cross-border peoples, border), Mali (trade, border), Algeria (trade, border), Libya (trade, border), Chad (trade, border), Burkina Faso (trade, border), Benin (trade, border). Integration into ECOWAS (Economic Community of West African States). Cross-border trade and cultural relations. Niger is a transit country for regional and trans-Saharan trade."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Presence of the Hausa, Songhay, Fulani, Tuareg and Kanuri peoples. Development of local political structures.",
+      "middleAges": "Development of the Hausa city-states (Kano, Katsina, Zaria), early Islamisation, trans-Saharan trade. Songhay empire (fifteenth-sixteenth centuries), cultural and intellectual development. Kingdom of Kanem-Bornu, Islamisation. Development of the Fulani chieftaincies and Tuareg confederations.",
+      "precolonial": "Consolidation of the Hausa city-states, Songhay kingdoms, Fulani chieftaincies, Tuareg confederations. Intensive trans-Saharan trade. Development of cultural traditions.",
+      "colonization": "1890-1960: French Colony of Niger. Resistance by indigenous peoples (notably Tuareg resistance). Development of the colonial administration. Twentieth century: development of the independence movement.",
+      "independenceStruggle": "1950s-1960: Independence movement, Hamani Diori, independence (3 August 1960), proclamation of the Republic of Niger. Hamani Diori becomes first president.",
+      "postIndependence": "Republic of Niger (1960), presidency of Hamani Diori (1960-1974), coups d'état (1974, 1996, 1999, 2010), Tuareg rebellions (1990s-2010s), democratic transition (since 1999), presidency of Mamadou Tandja (1999-2010), Mahamadou Issoufou (2011-2021), Mohamed Bazoum (2021-2023), coup d'état (2023), Abdourahamane Tiani (since 2023). Challenges: poverty, economic development, security (terrorism, Tuareg rebellions), climate change (desertification). Niger is one of the poorest countries in Africa, with significant development challenges."
+    },
+    "sources": [
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Niger",
+        "url": "https://www.cia.gov/the-world-factbook/countries/niger/",
+        "tier": "official",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Niger",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nigériens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Niger",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur les cités-États hausa, l'empire songhay, le royaume du Kanem-Bornou",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Niger (ethnic groups, 2006 census)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "UNFPA – World Population Dashboard — Niger",
+        "url": "https://www.unfpa.org/data/world-population/NE",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
+      },
+      {
+        "title": "Mungo Park, Travels in the Interior Districts of Africa, Londres, W. Bulmer, 1799, chapitre XV et appendice de James Rennell",
+        "url": "https://archive.org/details/travelsininteri00park",
+        "tier": "referenced",
+        "notes": "Chapter XV gives the Mandingo name of the river, Joliba, translated \"the great water\". James Rennell's appendix takes \"Niger\" to be a Roman term meaning the river of the black peoples, reports the Arabic and Moorish names Neel Abeed and Neel Kebeer, and a form Guin or Fin that he reads in al-Idrisi. 1799 edition read in facsimile on 9 September 2026; page numbers are not given, as the digitised volume carries no legible pagination at these points."
+      },
+      {
+        "title": "Samuel Johnson, The History of the Yorubas, Londres, George Routledge & Sons, 1921",
+        "url": "https://archive.org/details/the-history-of-the-yorubas-from-the-earliest-times-to-the-beginning-of-the-british-protectorate",
+        "tier": "referenced",
+        "notes": "Written by a Yoruba pastor. The chapter on religion establishes that the river is consecrated to Ọya, deified wife of Ṣàngó, and that it therefore bears the name Ọpo Ọya throughout Yoruba country. Passage read in facsimile on 9 September 2026."
+      },
+      {
+        "title": "Sigismund Wilhelm Koelle, African Native Literature, or Proverbs, Tales, Fables and Historical Fragments in the Kanuri or Bornu Language, Londres, Church Missionary House, 1854",
+        "url": "https://archive.org/details/africannativelit00koel",
+        "tier": "referenced",
+        "notes": "The Kanuri-English vocabulary glosses \"si Koarabe\" as a tributary of the Niger, which gives the Kanuri form Koara for the river. The form appears only once and has no entry of its own. Volume read in facsimile on 9 September 2026."
+      },
+      {
+        "title": "Yusuf ag Herrel, « Egerew n-igeruwen », Tamajaq.com",
+        "url": "https://www.tamajaq.com/egerew-n-igeruwen/",
+        "tier": "unverified",
+        "notes": "A signed Tuareg reading of the name, published on a website devoted to the Tamajaq language. It attributes the name to Leo Africanus, who is said to have translated the expression into Arabic as nahr al-anhur, and cites no published work in support. Page read on 9 September 2026."
+      },
+      {
+        "title": "Natalie Zemon Davis, Trickster Travels: A Sixteenth-Century Muslim Between Worlds, New York, Hill and Wang, 2006",
+        "url": null,
+        "tier": "referenced",
+        "notes": "A reference study on Leo Africanus, cited here for the transmission of his text: what survives is the Italian manuscript of 1526, printed by Ramusio in 1550. The work is verified in the catalogue; the argument on transmission was not read directly in it."
+      }
+    ],
+    "demographics": {
+      "totalPopulation": 27900000,
+      "referenceYear": 2025,
+      "source": "UNFPA – World Population Dashboard",
+      "peoples": [
+        {
+          "name": "Hausa",
+          "percentageInCountry": 53.1,
+          "peopleId": "PPL_HAUSA",
+          "region": "Southern Niger",
+          "languageFamily": "FLG_TCHADIQUE"
+        },
+        { "name": "Autres peuples", "percentageInCountry": 46.5 }
+      ]
+    }
+  },
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T08:55:53.090Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "287f093e3ca5b4fe32fccc92681c4f3e10220b358cb3dbc571b61933b822408f",
+    "fieldHashes": {
+      "nameOfficial": "925e9a2799825579",
+      "summary": "0b05bf293980d6d0",
+      "etymology": "8e9841c9a0971727",
+      "nameOriginActor": "a195e342540cb1c2",
+      "content.historicalNames.formerNames[0]": "b7cd151cd752b904",
+      "content.historicalNames.antiquity": "5d8b3b72f2d72b3e",
+      "content.historicalNames.middleAges": "3b4f7468ab0e9a05",
+      "content.historicalNames.precolonial": "27fb97ac8f9ddaf5",
+      "content.historicalNames.colonization": "037dab06981095fe",
+      "content.historicalNames.contemporary": "d5259fb5665aef1d",
+      "content.kingdoms[0].name": "e4eff1bbc2d11847",
+      "content.kingdoms[0].period": "8d7a77bf8709fa00",
+      "content.kingdoms[0].historicalRole": "91a482aa1f26e18d",
+      "content.kingdoms[1].name": "d1200bad2a3d5d63",
+      "content.kingdoms[1].period": "21163433ec9b78d1",
+      "content.kingdoms[1].historicalRole": "fd15e0a8e42fb9c3",
+      "content.kingdoms[2].name": "6794114cc343494b",
+      "content.kingdoms[2].period": "30ec12efb265311f",
+      "content.kingdoms[2].dominantPeoples[0]": "4e9273570bd11558",
+      "content.kingdoms[2].historicalRole": "e5600b4485f0bf86",
+      "content.kingdoms[3].name": "60a2f40957170c66",
+      "content.kingdoms[3].period": "30ec12efb265311f",
+      "content.kingdoms[3].historicalRole": "8c6dfaf59f2ee82c",
+      "content.kingdoms[4].name": "03c87831de1c59e7",
+      "content.kingdoms[4].period": "21163433ec9b78d1",
+      "content.kingdoms[4].historicalRole": "d13516ae4b577e69",
+      "content.kingdoms[5].name": "8305342fea09db6f",
+      "content.kingdoms[5].period": "aedfb5db1e217e67",
+      "content.kingdoms[5].historicalRole": "b1d9a8122bac9847",
+      "content.majorPeoples[0].exonyms[0]": "5ba84dd1bb82c978",
+      "content.majorPeoples[0].mainRegion": "ccd572091ccad633",
+      "content.majorPeoples[0].appellationRemarks": "4d0abf462656fa2f",
+      "content.majorPeoples[1].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[1].exonyms[1]": "26c068e9829847d4",
+      "content.majorPeoples[1].mainRegion": "dc64782d07f3fc06",
+      "content.majorPeoples[1].appellationRemarks": "f83def8c35134289",
+      "content.majorPeoples[2].exonyms[0]": "34d16259a0f24cb2",
+      "content.majorPeoples[2].exonyms[1]": "7f06a5e498e0aeb9",
+      "content.majorPeoples[2].mainRegion": "0d473b657847f26a",
+      "content.majorPeoples[2].appellationRemarks": "e3ccf7722f5479b2",
+      "content.majorPeoples[3].exonyms[0]": "34d16259a0f24cb2",
+      "content.majorPeoples[3].exonyms[1]": "7f06a5e498e0aeb9",
+      "content.majorPeoples[3].exonyms[2]": "b264b5908c59e391",
+      "content.majorPeoples[3].mainRegion": "9487a12d78207a79",
+      "content.majorPeoples[3].appellationRemarks": "4f70b133cd27159a",
+      "content.majorPeoples[4].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[4].mainRegion": "5b42ea57f357d564",
+      "content.majorPeoples[4].appellationRemarks": "651db4f4d59b573e",
+      "content.majorPeoples[5].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[5].exonyms[1]": "d408cf52a21ed0a6",
+      "content.majorPeoples[5].mainRegion": "768672fc6f4469c3",
+      "content.majorPeoples[5].appellationRemarks": "421ccb16931f46b3",
+      "content.majorPeoples[6].mainRegion": "9aa09d2dbbdc224b",
+      "content.majorPeoples[6].appellationRemarks": "46e5bea2d42f1807",
+      "content.culture.culturalTraditions": "70dc0052ff302b7e",
+      "content.culture.dominantReligions": "07412a0013b2f677",
+      "content.culture.lifestyles": "58fd2a579fb1aadc",
+      "content.culture.socialOrganization": "c985f3431b58ec53",
+      "content.culture.regionalRelations": "e91b2df8ca2a67b2",
+      "content.historicalFacts.ancientPeriods": "999bdb746620ef63",
+      "content.historicalFacts.middleAges": "9a9b0c76c4d0f405",
+      "content.historicalFacts.precolonial": "1d9fa9e2c3a3a73f",
+      "content.historicalFacts.colonization": "53b87aa606e92181",
+      "content.historicalFacts.independenceStruggle": "8f0603611284c3e6",
+      "content.historicalFacts.postIndependence": "20f042f076ee8dd6",
+      "content.sources[0].notes": "6b52475b40d94130",
+      "content.sources[1].notes": "6b52475b40d94130",
+      "content.sources[2].notes": "6b52475b40d94130",
+      "content.sources[3].notes": "6b52475b40d94130",
+      "content.sources[4].notes": "6b52475b40d94130",
+      "content.sources[5].notes": "6b52475b40d94130",
+      "content.sources[6].notes": "6b52475b40d94130",
+      "content.sources[7].notes": "5f85c6028609b720",
+      "content.sources[8].notes": "5b01fa636848b75c",
+      "content.sources[9].notes": "d0f814a97e1cf98e",
+      "content.sources[10].notes": "0abce04c12523acb",
+      "content.sources[11].notes": "3725f23ef222d622",
+      "content.sources[12].notes": "bb22c1adae40d8a9",
+      "content.sources[13].notes": "ce3df58ed818805a",
+      "content.demographics.peoples[0].region": "ccd572091ccad633"
+    },
+    "reviewRequired": [
+      "nameOfficial",
+      "etymology",
+      "content.historicalNames.formerNames[0]",
+      "content.kingdoms[0].name",
+      "content.kingdoms[1].name",
+      "content.kingdoms[2].name",
+      "content.kingdoms[3].name",
+      "content.kingdoms[4].name",
+      "content.kingdoms[5].name",
+      "content.majorPeoples[0].appellationRemarks",
+      "content.majorPeoples[1].appellationRemarks",
+      "content.majorPeoples[2].appellationRemarks",
+      "content.majorPeoples[3].appellationRemarks",
+      "content.majorPeoples[4].appellationRemarks",
+      "content.majorPeoples[5].appellationRemarks",
+      "content.majorPeoples[6].appellationRemarks"
+    ]
+  }
+}

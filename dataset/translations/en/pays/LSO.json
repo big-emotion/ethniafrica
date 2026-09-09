@@ -1,0 +1,272 @@
+{
+  "id": "LSO",
+  "nameFr": "Lesotho",
+  "nameEn": "Lesotho",
+  "nameOfficial": "Kingdom of Lesotho (Kingdom of Lesotho, Muso oa Lesotho)",
+  "summary": "Lesotho means \"country of the Sotho\" in Sesotho, and this was indeed the name the kingdom gave itself before colonisation: the Cape administration acknowledges in 1883 having replaced Lesuto with Basutoland. What the root \"Sotho\" designates, however, is agreed on neither by historians nor by the Basotho, who put forward at least five readings. Founded in the nineteenth century under King Moshoeshoe, it took back its name in 1966; it is one of the continent's few states built around a single people and a single language.",
+  "etymology": "\"Lesotho\" reads without difficulty in Sesotho: on the root Sotho, the prefix le- forms the name of the country, as mo- forms that of a person, ba- that of the people and se- that of the language. Eugène Casalis gives the whole series in 1859 and translates Lessouto as \"the country of the Mossouto\"; Paulus Mohome repeats it in 1972. The name was not forged at independence: it is attested well before, and George McCall Theal writes in 1883, in the archives of the Cape administration, that the country \"was called the Lesuto, which we have changed to Basutoland.\" The British independence law of 1966 therefore did not create the name; it restored to the kingdom the one that had been taken from it.\n\nWhat the root Sotho itself designates is disputed, and Sesotho-language public radio says so plainly in 2016: there is no agreement, either among the Basotho or among historians. Five readings circulate. Ellenberger and Macgregor report in 1912, drawing on forty-five years of oral traditions collected at Leribe, a Swazi nickname — Abashunto, from the Nguni verb uku shunta, \"to tie a knot\", mocking the knotted loincloth of the Bapedi, later reclaimed with pride. The Dictionary of South African English retains the adjective sootho, \"brown\", hence \"the brown ones\"; it also records a link to the Usutu river, and the hypothesis of an avoidance substitute for motho, \"human being\". A fifth reading, put forward by the Mosotho researcher William Moruti Tšiu, starts from lesôtô, the tanned-leather strap used to tie the thari. An 1835 record already notes that the Ndebele applied the term to all peoples other than their own, which would make it a name given from outside before being adopted by those who bear it. The explanation by a braided hairstyle, often repeated, has not been found in any source: the knot Ellenberger speaks of is that of a garment, and he describes the hairstyle on the same page without deriving the name from it.",
+  "nameOriginActor": "The name of the country is the one the Basotho already gave it before colonisation. \"Basutoland\" is the form the British administration substituted for it, as the Cape archives acknowledge in 1883, and the independence law that took effect on 4 October 1966 restores the name to the kingdom without inventing it. King Moshoeshoe I is held to be the founder of the kingdom, in the 1820s, though sources do not agree on the exact year. Who formed the root Sotho remains open: several sources see it as a name given by neighbours, Swazi or Ndebele, before being adopted by those who bear it.",
+  "content": {
+    "historicalNames": {
+      "formerNames": ["Basutoland (1868-1966)"],
+      "antiquity": "The present-day territory of Lesotho was inhabited by Khoisan peoples with no unified name. The indigenous peoples had their own names for their territories.",
+      "middleAges": "Bantu migrations into the region. Development of local chiefdoms. No unified name for the territory as a whole.",
+      "precolonial": "Formation of the Sotho kingdom in the nineteenth century under King Moshoeshoe I. The kingdom was known by the traditional name \"Lesotho\" (country of the Sotho). Expansion of the Sotho kingdom, resistance to the Zulu and the Boers. Consolidation of the traditional kingdom.",
+      "colonization": "1868-1966: British protectorate of Basutoland. The British established a protectorate over Basutoland in 1868. The name \"Basutoland\" (country of the Basotho) was made official by the British. The territory was administered as a British protectorate until independence in 1966.",
+      "contemporary": "1966: Independence of Basutoland (4 October 1966), proclamation of the Kingdom of Lesotho. The traditional name \"Lesotho\" was restored at independence."
+    },
+    "kingdoms": [
+      {
+        "name": "Sotho Kingdom",
+        "period": "19th century - present",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1801,
+          "ongoing": true,
+          "precision": "century"
+        },
+        "dominantPeoples": ["Sotho / Basotho"],
+        "politicalCenters": [
+          "Maseru (capitale)",
+          "Thaba Bosiu (forteresse historique)"
+        ],
+        "historicalRole": "Traditional Sotho kingdom, constitutional monarchical system, Sotho cultural traditions. The kingdom resisted colonisation and maintained its relative independence under British protectorate rule. King Moshoeshoe I is regarded as the founder of the modern kingdom. Thaba Bosiu was the kingdom's historic fortress."
+      },
+      {
+        "name": "British Protectorate of Basutoland",
+        "period": "1868 - 1966",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1868,
+          "endYear": 1966,
+          "precision": "year"
+        },
+        "dominantPeoples": [
+          "Tous les peuples sotho sous protectorat britannique"
+        ],
+        "politicalCenters": ["Maseru (capitale administrative)"],
+        "historicalRole": "British protectorate, development of the colonial administration, relative preservation of the Sotho kingdom's autonomy. Resistance to colonial pressures. Development of the independence movement in the twentieth century."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Sotho / Basotho",
+        "selfAppellation": "Basotho (plural), Mosotho (singular)",
+        "exonyms": [
+          "Sotho (term used by Europeans)",
+          "Basotho (accepted alternative term)"
+        ],
+        "peopleId": "PPL_SOTHO",
+        "mainRegion": "All regions of Lesotho",
+        "languages": [
+          "Sesotho / Sotho du Sud (sot",
+          "ISO 639-3)",
+          "anglais",
+          "afrikaans"
+        ],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Basotho\" (plural) or \"Mosotho\" (singular) is the self-name. \"Sotho\" is the most common and accepted exonym. No known pejorative term."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes d'origine",
+        "exonyms": ["Variées selon les groupes"],
+        "mainRegion": "Urban areas, border regions",
+        "languages": ["Langues d'origine", "sesotho", "anglais"],
+        "appellationRemarks": "Each group has its own self-name according to its origin (Zulu, Xhosa, other Bantu peoples, etc.). No known pejorative term."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        { "name": "Sesotho / Sotho du Sud" },
+        { "name": "Anglais", "isPrimary": true },
+        { "name": "Afrikaans", "isoCode": "afr" }
+      ],
+      "culturalTraditions": "Rich and preserved Sotho cultural traditions. Traditional royal ceremonies, initiation traditions. Traditional Sotho music and dance. Traditional crafts (basket-weaving, pottery, weaving). Traditional architecture (round huts). Constitutional monarchical system with ancestral traditions. Thaba Bosiu (historic fortress) is an important symbol of Sotho identity.",
+      "dominantReligions": "Christianity (majority Protestantism, Catholicism, independent African churches), traditional African religions (frequent syncretism, ancestor worship, traditional beliefs)",
+      "lifestyles": "Agriculture (maize, sorghum, wheat, subsistence crops), livestock farming (cattle, sheep, the symbolic importance of livestock), trade and urban activities (urban areas, Maseru). Moderate urbanisation. Economy based on agriculture, livestock farming, water exploitation (exports to South Africa), and services. Significant economic dependence on South Africa. Lesotho is landlocked within South Africa.",
+      "socialOrganization": "Organisation as a traditional kingdom (constitutional monarchical system), patrilineal clan structures. Importance of lineages and extended families. Central role of the king (Morena) and the queen mother (Mofumahali). System of traditional councils. Initiation and coming-of-age traditions.",
+      "regionalRelations": "Historical relations with South Africa (trade, migration, economic dependence, border), Botswana (trade, border). Integration into SADC (Southern African Development Community). Cross-border trade and cultural relations. Significant economic dependence on South Africa. Lesotho is entirely landlocked within South Africa."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Initial settlement by Khoisan peoples. Bantu migrations into the region. Development of local chiefdoms.",
+      "middleAges": "Continued Bantu migrations. Development of local political structures. Contacts with neighbouring peoples.",
+      "precolonial": "Nineteenth century: Formation of the Sotho kingdom under King Moshoeshoe I. Expansion of the Sotho kingdom. Resistance to the Zulu and the Boers. Consolidation of the traditional kingdom. Thaba Bosiu was the kingdom's historic fortress. Development of Sotho cultural traditions.",
+      "colonization": "1868: Establishment of the British protectorate of Basutoland. British colonial period (1868-1966), development of the colonial administration, relative preservation of the Sotho kingdom's autonomy. Resistance to colonial pressures. Twentieth century: Development of the independence movement.",
+      "independenceStruggle": "1950s-1960s: Independence movement led by Sotho leaders. 1966: Independence of Basutoland (4 October 1966), proclamation of the Kingdom of Lesotho. King Moshoeshoe II becomes constitutional monarch.",
+      "postIndependence": "1966-1990: Period of relative political stability, the presidency of Leabua Jonathan (1966-1986), followed by coups. 1990-present: Democratic transition, political instability, recurrent coups. Challenges: poverty, economic dependence on South Africa, HIV/AIDS, economic development. Lesotho is one of the poorest countries in Africa. The kingdom is a state landlocked within South Africa."
+    },
+    "sources": [
+      {
+        "title": "SIL Ethnologue – Languages of Lesotho",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Lesotho",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – World Population Dashboard — Lesotho",
+        "url": "https://www.unfpa.org/data/world-population/LS",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
+      },
+      {
+        "title": "Recensements lesothans",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples sotho",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur le royaume du Lesotho et Moshoeshoe Ier",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "Eugène Casalis, Les Bassoutos, ou vingt-trois années de séjour et d'observations au sud de l'Afrique, Paris, Meyrueis, 1859",
+        "url": "https://archive.org/details/lesbassoutosouvi00casa",
+        "tier": "referenced",
+        "notes": "Gives in a footnote the series Mossouto, Bassoutos, Lessouto for the country, Sessouto for the language, and repeats it further on, translating \"Lessouto, the country of the Mossouto\". The author offers no etymology for the Sotho root itself: the word appears outside compounds only once. Volume read in facsimile on 9 September 2026."
+      },
+      {
+        "title": "George McCall Theal, Basutoland Records, volume I, Le Cap, W. A. Richards & Sons, 1883",
+        "url": "https://archive.org/details/basutolandrecor00theagoog",
+        "tier": "referenced",
+        "notes": "The introduction writes that the five groups \"were called the Basuto, and the country they occupied was called the Lesuto, which we have changed to Basutoland.\" This colonial name substitution is thus acknowledged by the administration's own archival series. Passage read in facsimile on 9 September 2026."
+      },
+      {
+        "title": "Lesotho Independence Act 1966, Royaume-Uni, 1966 chapitre 24, article 1",
+        "url": "https://www.legislation.gov.uk/ukpga/1966/24/enacted",
+        "tier": "official",
+        "notes": "Provides that the territory constituting \"the Colony of Basutoland\" becomes, on 4 October 1966, an independent kingdom \"under the name of Lesotho\". The law makes the name official; it does not create it, since it is attested as early as 1859. Text read on 9 September 2026."
+      },
+      {
+        "title": "D. Frédéric Ellenberger et J. C. Macgregor, History of the Basuto, Ancient and Modern, Londres, Caxton, 1912",
+        "url": "https://emandulo.apc.uct.ac.za/collection/FHYA%20Depot/Ellenberger_F_History_of_the_Basuto_Ancient_and_Modern_1912.pdf",
+        "tier": "referenced",
+        "notes": "Links the name to a Swazi nickname, Abashunto, from the verb uku shunta, \"to tie a knot\", referring to the knotted loincloth of the Bapedi and later reclaimed with pride. The work draws on forty-five years of oral traditions collected at Leribe. The knot here is that of a garment, not a hairstyle. Digitisation read on 9 September 2026."
+      },
+      {
+        "title": "Dictionary of South African English on Historical Principles, entrées « Sotho » et « Mosotho »",
+        "url": "https://dsae.co.za/entry/sotho/e06714",
+        "tier": "referenced",
+        "notes": "Records three competing derivations of the root: the adjective sootho, \"brown\"; the Usutu river; and an avoidance substitute for motho, \"human being\". Each is dated and accompanied by a citation, including an 1835 record noting that the Ndebele applied the term to all peoples other than their own. Entries read on 9 September 2026."
+      },
+      {
+        "title": "« The Origin of the Basotho Nation » / « Tlholeho ya Setjhaba sa Basotho », Lesedi FM, radio publique sud-africaine de langue sesotho, 28 janvier 2016",
+        "url": "http://www.nmtdeploy.co.za/sabc/home/lesedifm/notices/details?id=5e9055d2-b7c8-4615-a839-c16d6cb1c77a",
+        "tier": "referenced",
+        "notes": "Published in Sesotho and English, with notes. States that there is no agreement between the Basotho and historians on the origin of the term, then sets out four readings, including that of lesôtô, which no European source carries. The station's original domain no longer serves the article; it is this address that was read, on 9 September 2026."
+      },
+      {
+        "title": "William Moruti Tšiu, Basotho Family Odes (Diboko) and Oral Tradition, mémoire de master, University of South Africa, 2001",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Source of the reading via lesôtô, the tanned-leather strap, and of the prefix argument that accompanies it. The dissertation was not read: the university repository was down and the accessible copy contains only front matter with no text. What the fiche reports of it passes through the Lesedi FM article that cites it."
+      },
+      {
+        "title": "Paulus M. Mohome, « Naming in Sesotho: Its Sociocultural and Linguistic Basis », Names, volume 20, numéro 3, 1972, p. 171-185",
+        "url": "https://ans-names.pitt.edu/ans/article/download/715/714/1432",
+        "tier": "referenced",
+        "notes": "Repeats in an opening note the series of prefixes and translates Lesotho as \"country of the Basotho\". The author taught at the University of Botswana, Lesotho and Swaziland. Article read on 9 September 2026."
+      }
+    ],
+    "demographics": {
+      "totalPopulation": 2400000,
+      "referenceYear": 2025,
+      "source": "UNFPA – World Population Dashboard",
+      "peoples": [
+        {
+          "name": "Sotho / Basotho",
+          "percentageInCountry": 99,
+          "peopleId": "PPL_SOTHO",
+          "region": "All regions of Lesotho"
+        }
+      ]
+    }
+  },
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T09:05:55.742Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "3854d83cffe80a73e9a193782635c68255968ae9f02075293e99c4e4c0183381",
+    "fieldHashes": {
+      "nameOfficial": "371006a2dc21ee3f",
+      "summary": "36257cc81257a4dc",
+      "etymology": "f92c9ebb934e07d0",
+      "nameOriginActor": "0968d79856a77281",
+      "content.historicalNames.formerNames[0]": "22b4b7b0671170f5",
+      "content.historicalNames.antiquity": "7e301f577d791021",
+      "content.historicalNames.middleAges": "941ef9f4d0a609df",
+      "content.historicalNames.precolonial": "4afc74f8bc99ba48",
+      "content.historicalNames.colonization": "51464faa354a8afa",
+      "content.historicalNames.contemporary": "c25f967c56da44a6",
+      "content.kingdoms[0].name": "dd1401697ccaaa5e",
+      "content.kingdoms[0].period": "55870a77c14c43ef",
+      "content.kingdoms[0].historicalRole": "219a5abe3bef3319",
+      "content.kingdoms[1].name": "49ff209b65a4232b",
+      "content.kingdoms[1].period": "f235c611f2ed6acd",
+      "content.kingdoms[1].historicalRole": "5005b4b7e7059097",
+      "content.majorPeoples[0].selfAppellation": "d05297d6e22c38aa",
+      "content.majorPeoples[0].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[0].exonyms[1]": "736d0ce128c89e37",
+      "content.majorPeoples[0].mainRegion": "c2f7842a9d8920ba",
+      "content.majorPeoples[0].appellationRemarks": "5a29e5c82211809e",
+      "content.majorPeoples[1].mainRegion": "44f29b5b0d8e9468",
+      "content.majorPeoples[1].appellationRemarks": "188b0f53bbb2d4cf",
+      "content.culture.culturalTraditions": "9b94ebde911ccb00",
+      "content.culture.dominantReligions": "c81434d9feb5595c",
+      "content.culture.lifestyles": "7230d5d1f38f4601",
+      "content.culture.socialOrganization": "e04993c77b7c70e0",
+      "content.culture.regionalRelations": "849a02ebe05fd7b9",
+      "content.historicalFacts.ancientPeriods": "65b2e48a2b51aa67",
+      "content.historicalFacts.middleAges": "20a9668814ae8491",
+      "content.historicalFacts.precolonial": "42df6a617d05199e",
+      "content.historicalFacts.colonization": "ae4bb25f62771cca",
+      "content.historicalFacts.independenceStruggle": "8ff0e530cda84141",
+      "content.historicalFacts.postIndependence": "66466ec291778033",
+      "content.sources[0].notes": "6b52475b40d94130",
+      "content.sources[1].notes": "6b52475b40d94130",
+      "content.sources[2].notes": "5b01fa636848b75c",
+      "content.sources[3].notes": "6b52475b40d94130",
+      "content.sources[4].notes": "6b52475b40d94130",
+      "content.sources[5].notes": "6b52475b40d94130",
+      "content.sources[6].notes": "5f85c6028609b720",
+      "content.sources[7].notes": "44f2eb89cd5e6293",
+      "content.sources[8].notes": "e825d9ee955a502e",
+      "content.sources[9].notes": "84fa33cd8b5d90b0",
+      "content.sources[10].notes": "0e566fc2d9d8ab17",
+      "content.sources[11].notes": "2a59fd633cb6f9e0",
+      "content.sources[12].notes": "33740182cc43bd49",
+      "content.sources[13].notes": "21f6360e89eb1d72",
+      "content.sources[14].notes": "2e21236990e942ec",
+      "content.demographics.peoples[0].region": "c2f7842a9d8920ba"
+    },
+    "reviewRequired": [
+      "nameOfficial",
+      "etymology",
+      "content.historicalNames.formerNames[0]",
+      "content.kingdoms[0].name",
+      "content.kingdoms[1].name",
+      "content.majorPeoples[0].appellationRemarks",
+      "content.majorPeoples[1].appellationRemarks"
+    ]
+  }
+}
