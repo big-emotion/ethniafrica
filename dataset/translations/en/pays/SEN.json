@@ -1,0 +1,417 @@
+{
+  "id": "SEN",
+  "nameFr": "Sénégal",
+  "nameEn": "Senegal",
+  "nameOfficial": "Republic of Senegal",
+  "summary": "The origin of the name \"Senegal\" is debated and no hypothesis is authoritative: the link to the Sanhaja, a Berber confederation that French calls Zenaga, is the most widespread; the Wolof explanation \"sunu gaal\", \"our pirogue\", goes back to Abbé Boilat in 1853; and both have their challengers. The Jolof Empire, the Serer kingdoms and Fouta Toro shared the territory among them. Wolof, Fulani, Serer, Jola, Mandinka and Soninké peoples carry on the griots' word.",
+  "etymology": "The origin of the name \"Senegal\" is not established and remains disputed. The most widespread hypothesis links it to the Sanhaja, a Berber confederation of the western Sahara that French and Portuguese call Zenaga; Théodore Monod and Raymond Mauny defend it in 1960 against the Wolof explanation. It has long been contested. In the first edition of the Encyclopaedia of Islam, Maurice Delafosse notes that most modern authors accept it, yet judges the connection coincidental, and proposes another source: a kingdom of the lower valley of the river, which early texts name Sanghana in al-Bakri in the eleventh century, Senegany on a portolan chart of 1351, then Sanaga and Senega among fifteenth-century navigators. The Wolof explanation \"sunu gaal\", \"our pirogue\", is later and of a single origin: Abbé Boilat puts it forward in his Esquisses sénégalaises in 1853, and nothing attests it before him. Paul Marty opposes it in 1917 with the Hassaniya term Singhane, by which the Moors designated Cayor, and holds the Berber etymologies to be fanciful. Saliou Kandji rejects all of them in 2006.",
+  "nameOriginActor": "The name is first that of the river, carried by European navigators and cartographers from the fifteenth century, then extended to the territory. What they transcribed remains disputed: a Berber name, that of a kingdom of the lower valley, a Hassaniya term or a Wolof phrase, according to different authors. None of these attributions is established.",
+  "content": {
+    "historicalNames": {
+      "formerNames": [
+        "Senega (Portuguese, fifteenth century)",
+        "Senegal (AOF, 1895-1960)"
+      ],
+      "antiquity": "The territory was inhabited by Wolof, Serer, Fula, Mandinka and Jola groups with no unified name. Regional empires (Ghana, Mali, Songhai) influenced the region.",
+      "middleAges": "Thirteenth-sixteenth centuries: Jolof Empire (Wolof) with vassal kingdoms (Cayor, Baol, Waalo, Sine, Saloum). Fouta Toro (Fula theocracy).",
+      "precolonial": "Wolof kingdoms (Jolof, Cayor, Baol, Waalo), Serer kingdoms (Sine, Saloum), Fula theocracy of Fouta Toro, Jola kingdoms of Casamance. Trans-Saharan trade and coastal trade.",
+      "colonization": "Fifteenth century: first Portuguese contacts (name \"Senega\"). 1659: founding of Saint-Louis by the French. 1895: integration into French West Africa (AOF). The territory is called \"Senegal\" by the colonisers.",
+      "contemporary": "Independence in 1960 under the name \"Republic of Senegal\". The official name in French is \"République du Sénégal\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Jolof Empire",
+        "period": "Thirteenth - sixteenth centuries",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1201,
+          "endYear": 1600,
+          "precision": "century"
+        },
+        "dominantPeoples": ["Wolof"],
+        "politicalCenters": ["Jolof (capitale)", "Cayor", "Baol", "Waalo"],
+        "historicalRole": "Powerful Wolof empire that unified several kingdoms. Trans-Saharan trade and coastal trade. Major cultural influence."
+      },
+      {
+        "name": "Serer kingdoms",
+        "period": "Precolonial - nineteenth century",
+        "entryType": "polity",
+        "dominantPeoples": ["Sérère"],
+        "politicalCenters": ["Sine", "Saloum"],
+        "historicalRole": "Independent Serer kingdoms known for their resistance to Islamisation and their political organisation."
+      },
+      {
+        "name": "Fouta Toro",
+        "period": "Eighteenth - nineteenth centuries",
+        "entryType": "polity",
+        "timeRange": {
+          "startYear": 1701,
+          "endYear": 1900,
+          "precision": "century"
+        },
+        "dominantPeoples": ["Peul (Toucouleurs)"],
+        "politicalCenters": ["Fouta Toro (vallée du fleuve Sénégal)"],
+        "historicalRole": "Islamised Fula theocracy, a political and religious model for the region."
+      },
+      {
+        "name": "French Senegal",
+        "period": "1895 - 1960",
+        "entryType": "colonial",
+        "timeRange": {
+          "startYear": 1895,
+          "endYear": 1960,
+          "precision": "year"
+        },
+        "dominantPeoples": [
+          "Tous les peuples sénégalais sous administration coloniale française"
+        ],
+        "politicalCenters": ["Saint-Louis (capitale coloniale)", "Dakar"],
+        "historicalRole": "French colony integrated into French West Africa (AOF). Development of Dakar as the administrative capital. Senegalese resistance and nationalist movements."
+      },
+      {
+        "name": "Republic of Senegal",
+        "period": "1960 - present",
+        "entryType": "modern",
+        "timeRange": {
+          "startYear": 1960,
+          "ongoing": true,
+          "precision": "year"
+        },
+        "dominantPeoples": ["Tous les peuples sénégalais"],
+        "politicalCenters": ["Dakar (capitale)"],
+        "historicalRole": "Independence in 1960. Stable political history with multi-party democracy. A model of stability in West Africa."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Wolof",
+        "selfAppellation": "Wolof",
+        "exonyms": ["Wolof (term used by Europeans)"],
+        "peopleId": "PPL_WOLOF",
+        "mainRegion": "Dakar, Thiès, Saint-Louis",
+        "languages": ["Wolof", "français"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "The term \"Wolof\" is neutral and accepted."
+      },
+      {
+        "name": "Peul / Fulani",
+        "selfAppellation": "Fulɓe (plural), Pullo (singular)",
+        "exonyms": [
+          "Peul (French term)",
+          "Fulani (Hausa term)",
+          "\"Fellata\" (terme haoussa",
+          "parfois péjoratif - éviter)"
+        ],
+        "peopleId": "PPL_FULA",
+        "mainRegion": "North, Senegal River valley (Fouta Toro)",
+        "languages": ["Pulaar", "français"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "The term \"Fellata\" can be pejorative. The self-given name \"Fulɓe\" is preferred. \"Peul\" and \"Fulani\" are accepted."
+      },
+      {
+        "name": "Sérère",
+        "selfAppellation": "Sérère",
+        "exonyms": ["Sérère (term used by Europeans)"],
+        "peopleId": "PPL_SERER",
+        "mainRegion": "Centre-West (Fatick, Kaolack)",
+        "languages": ["Sérère", "français"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "The term \"Sérère\" is neutral and accepted."
+      },
+      {
+        "name": "Diola / Jola",
+        "selfAppellation": "Joola / Ajamat",
+        "exonyms": ["Diola (French term)", "Jola (local term)"],
+        "peopleId": "PPL_DIOLA",
+        "mainRegion": "Casamance (Ziguinchor)",
+        "languages": ["Jola", "français"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "The terms \"Diola\" and \"Jola\" are neutral and accepted. The self-given name \"Joola\" is preferred."
+      },
+      {
+        "name": "Mandinka / Mandingue",
+        "selfAppellation": "Mandinka",
+        "exonyms": [
+          "Mandinka (term used by Europeans)",
+          "Mandingue (French term)"
+        ],
+        "peopleId": "PPL_MALINKE",
+        "mainRegion": "East (Tambacounda, Kédougou)",
+        "languages": ["Mandinka", "français"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "The term \"Mandinka\" is neutral and accepted."
+      },
+      {
+        "name": "Soninké",
+        "selfAppellation": "Soninké",
+        "exonyms": [
+          "Soninké (term used by Europeans)",
+          "Sarakolé (alternative term)"
+        ],
+        "peopleId": "PPL_SONINKE",
+        "mainRegion": "Senegal River valley, East",
+        "languages": ["Soninké", "français"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "The term \"Soninké\" is neutral and accepted. \"Sarakolé\" is an accepted variant."
+      }
+    ],
+    "culture": {
+      "culturalTraditions": "Traditional music (sabar, mbalax), traditional dance, oral poetry (griot), crafts (basket weaving, pottery, weaving), traditional architecture, Senegalese wrestling",
+      "dominantReligions": "Islam (majority Sufi: Tijaniyya, Muridiyya), Christianity (minority), traditional beliefs (syncretism)",
+      "lifestyles": "Predominantly rural life, agriculture (groundnuts, millet, sorghum, rice), livestock farming (cattle, goats), fishing (coasts and rivers), trade, growing urbanisation",
+      "socialOrganization": "System of traditional chieftaincies, patrilineal clan structure, organisation into extended families and lineages, importance of griots (keepers of oral tradition), system of Sufi brotherhoods",
+      "regionalRelations": "Historical relations with the peoples of Gambia, Mauritania, Mali and Guinea. A significant diaspora in France, Italy and other Western countries."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Settlement of the territory by Wolof, Serer, Fula, Mandinka and Jola groups. Influence of regional empires (Ghana, Mali, Songhai).",
+      "middleAges": "Development of the Jolof Empire (thirteenth-sixteenth centuries). Serer kingdoms of Sine and Saloum. Fula theocracy of Fouta Toro. Trans-Saharan trade and coastal trade.",
+      "precolonial": "Height of the Wolof and Serer kingdoms. Trade with Europeans (gold, ivory, slaves). Resistance to Islamisation among some groups (Serer).",
+      "colonization": "Fifteenth century: first Portuguese contacts. 1659: founding of Saint-Louis by the French. 1895: integration into French West Africa (AOF). Development of Dakar as the administrative capital. Senegalese resistance.",
+      "independenceStruggle": "Nationalist movements in the 1950s. Independence achieved in 1960. Léopold Sédar Senghor becomes the first president.",
+      "postIndependence": "First Republic (1960-1980): Senghor's presidency, political stability. Second Republic (1981-2000): presidency of Abdou Diouf. Third Republic since 2000: democratic alternation, political stability, economic development."
+    },
+    "sources": [
+      {
+        "title": "CIA World Factbook – Senegal",
+        "url": "https://www.cia.gov/the-world-factbook/countries/senegal/",
+        "tier": "official",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Senegal",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux sénégalais (ANSD)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – World Population Dashboard — Sénégal",
+        "url": "https://www.unfpa.org/data/world-population/SN",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry for UNFPA."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples sénégalais",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur l'empire du Jolof",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Senegal (ethnic groups, 2019 est.)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "Maurice Delafosse, « Senegal », Encyclopaedia of Islam, première édition, Brill",
+        "url": "https://doi.org/10.1163/2214-871X_ei1_SIM_5235",
+        "tier": "referenced",
+        "notes": "Notes that most modern authors link the name to the Sanhaja, judges this connection coincidental, and proposes a kingdom of the lower valley, Sanghana. The entry was consulted on 9 September 2026; its beginning is freely accessible, the rest is paywalled."
+      },
+      {
+        "title": "Gomes Eanes de Zurara, Chronique de Guinée, traduction de Léon Bourdon, édition scientifique de Théodore Monod et Raymond Mauny, IFAN, Dakar, 1960",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Edition in which Monod and Mauny set aside the Wolof explanation in favour of the Berber connection. The printed work is verified in the catalogue of the Bibliothèque nationale de France; the passage itself has not been read, and is reported via a presentation of Saliou Kandji's book."
+      },
+      {
+        "title": "P.-David Boilat, Esquisses sénégalaises, Paris, P. Bertrand, 1853",
+        "url": "https://gallica.bnf.fr/ark:/12148/bpt6k103361c",
+        "tier": "referenced",
+        "notes": "Earliest known formulation of the Wolof explanation \"sunu gaal\". The edition is verified in the catalogue of the Bibliothèque nationale de France, where the date of 1850 often cited does not correspond to any printing. The page carrying the passage has not been located in the digitised volume, so no page number is given."
+      },
+      {
+        "title": "Paul Marty, Études sur l'Islam au Sénégal, Paris, Ernest Leroux, 1917, 2 volumes",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Proposes the Hassaniya term Singhane, the Moorish name for Cayor, and sets aside the Berber etymologies. The work is verified in the catalogue of the Bibliothèque nationale de France; the passage does not appear in the only digitised volume and has not been read."
+      },
+      {
+        "title": "Saliou Kandji, Sénégal n'est pas Sunugal, ou De l'étymologie du toponyme Sénégal, Presses universitaires de Dakar, 2006, 56 pages",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Rejects both the Wolof explanation and the Berber connections. The work does not appear in the catalogue of the Bibliothèque nationale de France; title, publisher, year and pagination are taken from a press presentation."
+      },
+      {
+        "title": "Présentation de « Sénégal n'est pas Sunugal », de Saliou Kandji, Seneweb",
+        "url": "http://www.seneweb.com/news/Immigration/s-n-gal-n-est-pas-sunugal-ou-de-l-tymologie-du-toponyme-s-n-gal_n_5047.html",
+        "tier": "unverified",
+        "notes": "Unsigned presentation. It is the source of the attribution of the term Singhane to Paul Marty and of the disagreement between Monod and Mauny and Boilat. It dates the Esquisses sénégalaises to 1850, which is inaccurate."
+      }
+    ],
+    "demographics": {
+      "totalPopulation": 18900000,
+      "referenceYear": 2025,
+      "source": "UNFPA – World Population Dashboard",
+      "peoples": [
+        {
+          "name": "Wolof",
+          "percentageInCountry": 39.7,
+          "percentageInAfrica": 0.52,
+          "peopleId": "PPL_WOLOF",
+          "region": "Dakar, Thiès, Saint-Louis",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Peul / Fulani",
+          "percentageInCountry": 27.5,
+          "percentageInAfrica": 0.31,
+          "peopleId": "PPL_FULA",
+          "region": "North, Senegal River valley (Fouta Toro)",
+          "languageFamily": "FLG_ATLANTIQUE"
+        },
+        {
+          "name": "Sérère",
+          "percentageInCountry": 16,
+          "percentageInAfrica": 0.19,
+          "peopleId": "PPL_SERER",
+          "region": "Centre-West (Fatick, Kaolack)",
+          "languageFamily": "FLG_ATLANTIQUE"
+        },
+        {
+          "name": "Diola / Jola",
+          "percentageInCountry": 4.2,
+          "percentageInAfrica": 0.06,
+          "peopleId": "PPL_DIOLA",
+          "region": "Casamance ("
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Various",
+          "languageFamily": null,
+          "percentageInCountry": 12.6
+        }
+      ]
+    }
+  },
+  "_translation": {
+    "kind": "machine",
+    "translatedAt": "2026-09-09T08:06:10.338Z",
+    "model": "claude-sonnet-5",
+    "sourceHash": "023926bdc2aff99662d7f70e45a1c6b93c2ca2ea66407d6caebbb605c4ee7546",
+    "fieldHashes": {
+      "nameOfficial": "68f0ecbae22f84cc",
+      "summary": "7398d32fa37abc5a",
+      "etymology": "ba1e85b1140c7680",
+      "nameOriginActor": "c48d0caf2ae3d38d",
+      "content.historicalNames.formerNames[0]": "23e6990c68269ba7",
+      "content.historicalNames.formerNames[1]": "21817841432b771e",
+      "content.historicalNames.antiquity": "19ccb7c1a3e90f0c",
+      "content.historicalNames.middleAges": "9387f10af081fac0",
+      "content.historicalNames.precolonial": "82d4113ab8262bd1",
+      "content.historicalNames.colonization": "54b65f272ba0be3b",
+      "content.historicalNames.contemporary": "63b008c857cc9421",
+      "content.kingdoms[0].name": "30be95d510eb62be",
+      "content.kingdoms[0].period": "ddcb87f2a06b111a",
+      "content.kingdoms[0].historicalRole": "5ba37c216a07c973",
+      "content.kingdoms[1].name": "40e013c546f08a75",
+      "content.kingdoms[1].period": "211262744abeb1d8",
+      "content.kingdoms[1].historicalRole": "3ed73d733f258c19",
+      "content.kingdoms[2].name": "81e76b96fd39c0a5",
+      "content.kingdoms[2].period": "27a2ec9d5e9a5444",
+      "content.kingdoms[2].dominantPeoples[0]": "c8f3b3695fb032f4",
+      "content.kingdoms[2].historicalRole": "85cb766e00f5a2ea",
+      "content.kingdoms[3].name": "0257c356fec7afd0",
+      "content.kingdoms[3].period": "02bebd48bcc2ce6c",
+      "content.kingdoms[3].historicalRole": "6d1eac82671f0304",
+      "content.kingdoms[4].name": "68f0ecbae22f84cc",
+      "content.kingdoms[4].period": "d72e7a3458299c9c",
+      "content.kingdoms[4].historicalRole": "0d8b2bfed618cda9",
+      "content.majorPeoples[0].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[0].mainRegion": "c0d8b3648fd18fad",
+      "content.majorPeoples[0].appellationRemarks": "b1a0bcc88a49ae5a",
+      "content.majorPeoples[1].selfAppellation": "8115a94a0224d64a",
+      "content.majorPeoples[1].exonyms[0]": "34d16259a0f24cb2",
+      "content.majorPeoples[1].exonyms[1]": "699aaae8ac4fc9e8",
+      "content.majorPeoples[1].mainRegion": "26a99218b3fb427d",
+      "content.majorPeoples[1].appellationRemarks": "94f7efad2717c084",
+      "content.majorPeoples[2].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[2].mainRegion": "2cc40b7c73e006e6",
+      "content.majorPeoples[2].appellationRemarks": "837dbd787a84d4d1",
+      "content.majorPeoples[3].exonyms[0]": "34d16259a0f24cb2",
+      "content.majorPeoples[3].exonyms[1]": "21fb0ccc401d57a3",
+      "content.majorPeoples[3].mainRegion": "471c5b1238d80738",
+      "content.majorPeoples[3].appellationRemarks": "5338be2be11764a4",
+      "content.majorPeoples[4].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[4].exonyms[1]": "34d16259a0f24cb2",
+      "content.majorPeoples[4].mainRegion": "0457fa429f7e2969",
+      "content.majorPeoples[4].appellationRemarks": "cbf72a624017ab6c",
+      "content.majorPeoples[5].exonyms[0]": "4cc233431e3a2ba3",
+      "content.majorPeoples[5].exonyms[1]": "928125acce626226",
+      "content.majorPeoples[5].mainRegion": "cde038e9a8c23945",
+      "content.majorPeoples[5].appellationRemarks": "f14b6a67a32b5cbf",
+      "content.culture.culturalTraditions": "0e0c7f2f7a32b31e",
+      "content.culture.dominantReligions": "62713ee68a23f56b",
+      "content.culture.lifestyles": "003d08b1353630f9",
+      "content.culture.socialOrganization": "5d23837386fc1fc0",
+      "content.culture.regionalRelations": "9a39d2a79d60145f",
+      "content.historicalFacts.ancientPeriods": "75fccab20af3fe1c",
+      "content.historicalFacts.middleAges": "d4baf97145feebf6",
+      "content.historicalFacts.precolonial": "5d6a37012926fb70",
+      "content.historicalFacts.colonization": "874aba5da1143671",
+      "content.historicalFacts.independenceStruggle": "6c68b674193c994e",
+      "content.historicalFacts.postIndependence": "6a9b10fbc9d9fff3",
+      "content.sources[0].notes": "6b52475b40d94130",
+      "content.sources[1].notes": "6b52475b40d94130",
+      "content.sources[2].notes": "6b52475b40d94130",
+      "content.sources[3].notes": "6b52475b40d94130",
+      "content.sources[4].notes": "5b01fa636848b75c",
+      "content.sources[5].notes": "6b52475b40d94130",
+      "content.sources[6].notes": "6b52475b40d94130",
+      "content.sources[7].notes": "6b52475b40d94130",
+      "content.sources[8].notes": "5f85c6028609b720",
+      "content.sources[9].notes": "099ed1b87e148324",
+      "content.sources[10].notes": "9507d9ea8b4b206d",
+      "content.sources[11].notes": "1e4769163ba66b9a",
+      "content.sources[12].notes": "89de167982ab19b2",
+      "content.sources[13].notes": "3246ef166f5b4b55",
+      "content.sources[14].notes": "e98adfe8697f4fe0",
+      "content.demographics.peoples[0].region": "c0d8b3648fd18fad",
+      "content.demographics.peoples[1].region": "26a99218b3fb427d",
+      "content.demographics.peoples[2].region": "2cc40b7c73e006e6",
+      "content.demographics.peoples[3].region": "107e36b7405f4860",
+      "content.demographics.peoples[4].region": "f16444f595e1ad20"
+    },
+    "reviewRequired": [
+      "nameOfficial",
+      "etymology",
+      "content.historicalNames.formerNames[0]",
+      "content.historicalNames.formerNames[1]",
+      "content.kingdoms[0].name",
+      "content.kingdoms[1].name",
+      "content.kingdoms[2].name",
+      "content.kingdoms[3].name",
+      "content.kingdoms[4].name",
+      "content.majorPeoples[0].appellationRemarks",
+      "content.majorPeoples[1].appellationRemarks",
+      "content.majorPeoples[2].appellationRemarks",
+      "content.majorPeoples[3].appellationRemarks",
+      "content.majorPeoples[4].appellationRemarks",
+      "content.majorPeoples[5].appellationRemarks"
+    ]
+  }
+}

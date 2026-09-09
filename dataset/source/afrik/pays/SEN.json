@@ -3,9 +3,9 @@
   "nameFr": "Sénégal",
   "nameEn": "Senegal",
   "nameOfficial": "République du Sénégal",
-  "summary": "Le Sénégal doit peut-être son nom à « sunu gaal », « notre pirogue » en wolof, que des marins auraient répondu aux navigateurs portugais. Empire du Jolof, royaumes sérères et Fouta Toro s'y sont partagé le territoire. Wolof, Peuls, Sérères, Diola, Mandinka et Soninké y perpétuent la parole des griots.",
-  "etymology": "Le nom \"Sénégal\" vient probablement de \"Sunugal\" (notre pirogue en wolof), expression wolof donnée par les navigateurs locaux aux Portugais au XVe siècle. Les Portugais ont ensuite nommé le fleuve \"Rio de Senega\" puis le territoire \"Senega\".",
-  "nameOriginActor": "Le nom a été donné par les Portugais au XVe siècle, probablement dérivé de l'expression wolof \"Sunugal\" (notre pirogue). Le fleuve Sénégal a été nommé en premier, puis le territoire.",
+  "summary": "L'origine du nom « Sénégal » est débattue et aucune hypothèse ne fait autorité : le rattachement aux Sanhaja, confédération berbère que le français nomme Zenaga, est le plus répandu, l'explication wolof « sunu gaal », « notre pirogue », remonte à l'abbé Boilat en 1853, et l'une comme l'autre ont leurs contradicteurs. Empire du Jolof, royaumes sérères et Fouta Toro s'y sont partagé le territoire. Wolof, Peuls, Sérères, Diola, Mandinka et Soninké y perpétuent la parole des griots.",
+  "etymology": "L'origine du nom « Sénégal » n'est pas établie et reste discutée. L'hypothèse la plus répandue le rattache aux Sanhaja, confédération berbère du Sahara occidental que le français et le portugais nomment Zenaga ; Théodore Monod et Raymond Mauny la défendent en 1960 contre l'explication wolof. Elle est contestée de longue date. Dans la première édition de l'Encyclopédie de l'Islam, Maurice Delafosse constate que la majorité des auteurs modernes s'y rallient, juge pourtant le rapprochement fortuit, et propose une autre source : un royaume de la basse vallée du fleuve, que les textes anciens nomment Sanghana chez al-Bakri au XIe siècle, Senegany sur un portulan de 1351, puis Sanaga et Senega chez les navigateurs du XVe siècle. L'explication wolof « sunu gaal », « notre pirogue », est plus tardive et d'origine unique : l'abbé Boilat l'avance dans ses Esquisses sénégalaises en 1853, et rien ne l'atteste avant lui. Paul Marty lui oppose en 1917 le terme hassanya Singhane, par lequel les Maures désignaient le Cayor, et tient les étymologies berbères pour fantaisistes. Saliou Kandji les récuse toutes en 2006.",
+  "nameOriginActor": "Le nom est d'abord celui du fleuve, porté par les navigateurs et les cartographes européens à partir du XVe siècle, puis étendu au territoire. Ce qu'ils ont transcrit reste discuté : un nom berbère, celui d'un royaume de la basse vallée, un terme hassanya ou une phrase wolof, selon les auteurs. Aucune de ces attributions n'est établie.",
   "content": {
     "historicalNames": {
       "formerNames": [
@@ -224,6 +224,42 @@
         "url": "https://unstats.un.org/unsd/methodology/m49/",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      },
+      {
+        "title": "Maurice Delafosse, « Senegal », Encyclopaedia of Islam, première édition, Brill",
+        "url": "https://doi.org/10.1163/2214-871X_ei1_SIM_5235",
+        "tier": "referenced",
+        "notes": "Constate que la majorité des auteurs modernes rattachent le nom aux Sanhaja, juge ce rapprochement fortuit et propose un royaume de la basse vallée, Sanghana. L'entrée a été lue le 9 septembre 2026 ; son début est en accès libre, la suite est payante."
+      },
+      {
+        "title": "Gomes Eanes de Zurara, Chronique de Guinée, traduction de Léon Bourdon, édition scientifique de Théodore Monod et Raymond Mauny, IFAN, Dakar, 1960",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Édition où Monod et Mauny écartent l'explication wolof au profit du rattachement berbère. L'imprimé est vérifié au catalogue de la Bibliothèque nationale de France ; le passage lui-même n'a pas été lu, il est rapporté par une présentation de l'ouvrage de Saliou Kandji."
+      },
+      {
+        "title": "P.-David Boilat, Esquisses sénégalaises, Paris, P. Bertrand, 1853",
+        "url": "https://gallica.bnf.fr/ark:/12148/bpt6k103361c",
+        "tier": "referenced",
+        "notes": "Première formulation connue de l'explication wolof « sunu gaal ». L'édition est vérifiée au catalogue de la Bibliothèque nationale de France, où la date de 1850 souvent citée ne correspond à aucun tirage. La page portant le passage n'a pas été localisée dans le volume numérisé, aucun numéro n'est donc donné."
+      },
+      {
+        "title": "Paul Marty, Études sur l'Islam au Sénégal, Paris, Ernest Leroux, 1917, 2 volumes",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Propose le terme hassanya Singhane, nom maure du Cayor, et écarte les étymologies berbères. L'ouvrage est vérifié au catalogue de la Bibliothèque nationale de France ; le passage ne figure pas dans le seul volume numérisé et n'a pas été lu."
+      },
+      {
+        "title": "Saliou Kandji, Sénégal n'est pas Sunugal, ou De l'étymologie du toponyme Sénégal, Presses universitaires de Dakar, 2006, 56 pages",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Récuse aussi bien l'explication wolof que les rattachements berbères. L'ouvrage ne figure pas au catalogue de la Bibliothèque nationale de France ; titre, éditeur, année et pagination sont repris d'une présentation de presse."
+      },
+      {
+        "title": "Présentation de « Sénégal n'est pas Sunugal », de Saliou Kandji, Seneweb",
+        "url": "http://www.seneweb.com/news/Immigration/s-n-gal-n-est-pas-sunugal-ou-de-l-tymologie-du-toponyme-s-n-gal_n_5047.html",
+        "tier": "unverified",
+        "notes": "Présentation non signée. Elle est l'origine de l'attribution du terme Singhane à Paul Marty et du désaccord de Monod et Mauny avec Boilat. Elle date les Esquisses sénégalaises de 1850, ce qui est inexact."
       }
     ],
     "demographics": {
