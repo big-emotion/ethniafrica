@@ -374,6 +374,19 @@ const singleQueryValue = (query: DeepLinkQuery, key: string): string | null => {
 };
 
 /**
+ * The query keys a deep-link redirect spends on its way to a fiche. They are
+ * the identifier the target already states in its path, so forwarding them
+ * would hand the fiche a second copy the directory it replaced would act on.
+ *
+ * Everything *else* the reader arrived with survives the hop — campaign
+ * tagging above all. A `?country=BEN&utm_source=youtube` dropped whole sends
+ * the visit into Plausible's "Direct / None", where a video that converted
+ * cannot be told from one that did not.
+ */
+// @req REQ-091
+export const DEEP_LINK_QUERY_KEYS = ["country", "people", "family"] as const;
+
+/**
  * The one place a directory query becomes a fiche href, and so the one place
  * the identifier is **encoded**. Left raw, a `?country=//host` turns the
  * redirect into an open one, because a browser reads two leading slashes as

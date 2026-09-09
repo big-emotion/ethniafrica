@@ -504,7 +504,7 @@ describe("a deep link reaches its fiche in one hop", () => {
       );
       expect(country).toEqual({
         path: getCountryRoute(language, "BEN"),
-        keepQuery: false,
+        spentDeepLink: true,
       });
 
       const people = resolveRelocatedPath(
@@ -634,7 +634,7 @@ describe("a deep link reaches its fiche in one hop", () => {
 
       expect(listing).toEqual({
         path: getLocalizedRoute(language, "peoples"),
-        keepQuery: true,
+        spentDeepLink: false,
       });
     }
   });
@@ -650,7 +650,7 @@ describe("a deep link reaches its fiche in one hop", () => {
 
       expect(deep).toEqual({
         path: getPeopleRoute(language, "PPL_YORUBA"),
-        keepQuery: true,
+        spentDeepLink: false,
       });
     }
   });
