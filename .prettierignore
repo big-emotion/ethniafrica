@@ -22,3 +22,8 @@ _bmad-output/planning-artifacts/module-specs/assets/reference-prototype.html
 # the sources breaks that equivalence. Ignored in eslint.config.mjs for the same
 # reason — they are design references, never imported by src/.
 docs/design/mockups
+
+# Derived copies of the social gabarit spec and its tokens. They are generated
+# from the private production workspace and must stay byte-faithful to it;
+# reformatting them here would make the two diverge on whitespace alone.
+docs/design/gabarits-social/

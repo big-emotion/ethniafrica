@@ -9,7 +9,7 @@
       "mainName": "Bassa",
       "selfAppellation": "Bassa",
       "exonyms": ["Bassa", "Gboboh", "Adbassa", "Bambog-Mbog"],
-      "originOfExonyms": "Le nom Bassa derive selon la tradition orale de Bassa Sooh Nyombe signifiant les gens du Pere Pierre. Les premiers commercants europeens n'ayant pu prononcer la phrase complete, la forme abregee Bassa s'est imposee dans la litterature occidentale. Les variantes Gboboh et Adbassa sont des designations internes.",
+      "originOfExonyms": "Aucune des sources consultées ne rapporte d'explication du nom venue des voyageurs, des missionnaires ou des linguistes européens : ceux-ci l'ont transcrit sans le gloser. La seule explication publiée est une tradition orale bassa. L'historien bassa Joseph Gbadyu, ancien superintendant du comté de Grand Bassa, la rapporte ainsi : Ɓǎ Sɔ́ɔ́ était un chef et un commerçant réputé, et ceux qui dépendaient de lui se disaient Ɓǎ Sɔ́ɔ́ nyɔ ɓě, « les gens de Ɓǎ Sɔ́ɔ́ » ; les marchands européens n'ayant pu prononcer la formule entière, la forme abrégée Bassa s'est imposée. Le dictionnaire bassa-anglais publié au Liberia confirme chaque élément de la formule : ɓǎ, « père » ; sɔ́ɔ́, « roche » ; nyɔ, « personne » ; ɓě, marque du pluriel — et il donne Ɓǎsɔ́ɔ̀-nyɔ̀ pour « un Bassa ». Sɔ́ɔ́ désigne la pierre minérale, jamais un prénom : la formule nomme un homme dit « Père Roche », et non un Père Pierre. La version anglaise la plus reprise, « Father Stone's people », vient d'une encyclopédie parue en 2009 qui traite sous une entrée unique les Bassa du Liberia, du Cameroun, du Nigeria, du Togo, du Congo et du Sénégal, et leur applique la classification bantoue des Bassa du Cameroun. C'est de cette même entrée que viennent les formes Gboboh, Adbassa et Bambog-Mbog portées ici, la dernière renvoyant au mbombog, qui est une institution des Bassa du Cameroun. Aucune source consultée ne les atteste indépendamment pour les Bassa du Liberia.",
       "whyProblematic": "Le terme Bassa est parfois confondu avec le peuple Bassa du Cameroun, dont la langue appartient au groupe bantou de la famille Niger-Congo. Il s'agit d'une entité distincte des Bassa du Liberia, dont la langue bassa (bsq) appartient à la famille krou.",
       "contemporaryUsage": "Le terme Bassa est universellement utilise au Liberia pour designer ce peuple. Ils se designent eux-memes comme Bassa et parlent le bassa (bsq). Ils constituent le deuxieme groupe ethnique du Liberia.",
       "linguisticFamily": "FLG_KROU",
@@ -119,7 +119,7 @@
         "title": "West Africa Democracy Radio — The Bassa Tribe of Liberia (2023)",
         "url": "https://wadr.org/the-bassa-tribe-of-liberia/",
         "tier": "referenced",
-        "notes": "Resolved from \"needs_review\": WADR is a named, editorially staffed West African regional public radio outlet; a byline article on its own site is press coverage, which the corpus's tier table places at referenced."
+        "notes": "Resolved from \"needs_review\": WADR is a named, editorially staffed West African regional public radio outlet; a byline article on its own site is press coverage, which the corpus's tier table places at referenced. Le corps de l'article a disparu du site ; la version archivée le 21 septembre 2023 tient en deux paragraphes sur la population et les scarifications, et ne dit rien de l'origine du nom."
       },
       {
         "title": "Minority Rights Group — Liberia",
@@ -131,7 +131,7 @@
         "title": "Sage Reference — Encyclopedia of African Religion, Bassa",
         "url": "https://sk.sagepub.com/ency/edvol/africanreligion/chpt/bassa",
         "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sk.sagepub.com."
+        "notes": "Entrée « Bassa » signée Emmanuel Kombem Ngwainmbi, pages 108-110. Elle porte la formule Baah Sooh Nyombe et sa traduction « Father Stone's people », lues le 10 septembre 2026 dans l'exemplaire numérisé par Internet Archive. La même entrée traite comme un seul peuple les Bassa du Liberia, du Cameroun, du Nigeria, du Togo, du Congo et du Sénégal, leur donne une origine égyptienne et la classification bantoue des Bassa du Cameroun ; elle est aussi la source des formes Gboboh, Adbassa et Bambog-Mbog. Elle est citée pour ce qu'elle affirme, non comme description des seuls Bassa du Liberia."
       },
       {
         "title": "Liberia Institute of Statistics and Geo-Information Services (LISGIS) — 2022 Population and Housing Census, Final Results Report",
@@ -173,8 +173,31 @@
         "title": "\"The Egyptian Origins of the Bassa of Liberia\", Everything Liberia blog (2013)",
         "url": "https://othnieldf.wordpress.com/2013/09/18/the-egyptian-origins-of-the-bassa-of-liberia/",
         "tier": "unverified",
-        "notes": "Blog reproducing oral tradition; newly added to source origins.ancientOrigins's Nile-valley/\"Adbassa Empire\" narrative, which previously carried no citation. Cited to establish that the narrative is a genuinely documented oral tradition (consistent with the fiche's own \"la tradition orale... suggere\" framing), not to assert its historicity."
+        "notes": "Blog reproduisant la tradition orale ; cité pour le récit d'origine nilotique de la fiche et pour l'explication du nom, qu'il attribue explicitement à Joseph Gbadyu et cite entre guillemets. Il nomme aussi Abayomi Karnga, Basil Davidson et A. Doris Banks Henries. Consulté le 10 septembre 2026. Cité pour établir que ces récits sont documentés, non pour trancher leur historicité."
+      },
+      {
+        "title": "Joseph Munter Nana Gbadyu, The Bassaman and the Expansion of the Liberian State, 1847-1912",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Ouvrage d'un historien bassa du Liberia, ancien superintendant du comté de Grand Bassa. Il est l'auteur du récit rattachant le nom Bassa à Ɓǎ Sɔ́ɔ́. L'ouvrage n'a pas été lu : il est cité d'après les passages qu'en reproduit le blog Everything Liberia, et ni son éditeur ni son année n'ont pu être vérifiés dans un catalogue de bibliothèque."
+      },
+      {
+        "title": "Syrulwa Somah, « Tribute to Rev. Joseph Munter Nana Gbadyu, a Veteran Bassa Historian », FrontPage Africa, 23 mai 2017",
+        "url": "https://frontpageafricaonline.com/opinion/tribute-to-rev-joseph-munter-nana-gbadyu-a-veteran-bassa-historian/",
+        "tier": "referenced",
+        "notes": "Hommage signé, paru dans un quotidien liberien identifiable. Il donne les dates de Gbadyu (10 juillet 1933 - 14 mai 2017), ses fonctions — journaliste de radio, superintendant du comté de Grand Bassa de 1976 à 1980, vice-ministre — et nomme son ouvrage. Il ne dit rien de l'origine du nom Bassa."
+      },
+      {
+        "title": "Bassa-English Dictionary, Christian Education Foundation of Liberia",
+        "url": "https://cefliberia.org/wp-content/uploads/2016/12/BassaDict.pdf",
+        "tier": "referenced",
+        "notes": "Lexique bassa-anglais de 88 pages publié au Liberia, consulté le 10 septembre 2026. Il donne ɓǎ « father », sɔ́ɔ́ « rock », nyɔ « person », ɓě comme marque du pluriel, et Ɓǎsɔ́ɔ̀-nyɔ̀ « Bassa person ». Les composés sɔ́ɔ́-gbò « stone house », sɔ́ɔ́-kpò « rock » et sɔ́ɔ́-tòɖò « rock mountain, cliff » confirment que sɔ́ɔ́ nomme la pierre et rien d'autre."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

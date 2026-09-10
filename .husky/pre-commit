@@ -14,4 +14,11 @@ npx lint-staged || {
   exit 1
 }
 
+# Un dépôt public ne porte aucun chemin local. Contrôle, pas bonne intention.
+echo "🔒 Checking for local paths..."
+npx tsx scripts/ci/checkLocalPaths.ts --staged || {
+  echo "❌ A local path would be committed to a public repository"
+  exit 1
+}
+
 echo "✅ All pre-commit checks passed!"

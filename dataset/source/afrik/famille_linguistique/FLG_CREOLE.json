@@ -38,7 +38,7 @@
     "linguisticCharacteristics": {
       "typology": " Langues isolantes à morphologie analytique. Structure SVO (Sujet-Verbe-Objet) dominante. Exemples concrets (créole cap-verdien / Kriolu) : - *N ka kume funchi* « Je mange du funchi » – structure SVO, *ka* marque l'aspect progressif",
       "phonologicalFeatures": " Détails précis :",
-      "relationsWithNeighbors": "Exemples concrets d'emprunts aux langues bantoues : le créole angolais fossile muxima, « cœur », vient du kimbundu muxima ; le créole haïtien zonbi, qui a donné « zombie » au français puis à l'anglais, vient d'une racine bantoue d'Afrique centrale que les sources ne tranchent pas. Trois candidats sont proposés et ils ne veulent pas dire la même chose : le kikongo zumbi, « fétiche bienfaisant », le kimbundu nzumbi, « âme d'un mort qui revient en paix », et le kikongo nzambi, « Être suprême ». Le désaccord porte sur la racine, non sur son aire : elle est bantoue, et d'Afrique centrale.",
+      "relationsWithNeighbors": " Exemples concrets d'emprunts : - Bantoues (Angola, Congo) : le créole haïtien zonbi se rattache à une famille de formes bantoues d'Afrique centrale dont le sens diverge selon la langue. En kikongo, nzambi désigne l'Être Suprême et zumbi un fétiche bienfaisant ; en kimbundu, nzumbi désigne l'âme d'un mort qui revient en paix, par opposition à celle qui poursuit les vivants. Les sources divergent sur laquelle de ces formes est la racine, et le sens de mort-vivant n'appartient à aucune d'elles : il apparaît en Haïti, puis passe à l'anglais en 1929.",
       "keyInnovations": " Traits spécifiques avec exemples :"
     },
     "historyAndOrigins": {
@@ -145,13 +145,13 @@
         "title": "René Butaye, Dictionnaire kikongo-français, français-kikongo, 1910",
         "url": "https://archive.org/details/dictionnaire-butaye",
         "tier": "referenced",
-        "notes": "Dictionnaire publié, auteur identifié, consultable en ligne. Lexicographie missionnaire de la période coloniale : la description est extérieure à la société qu'elle décrit. Donne nzambi comme Être suprême, zumbi comme fétiche bienfaisant et mvumbi comme cadavre."
+        "notes": "Dictionnaire publié, auteur identifié, consultable en ligne le 10 septembre 2026. Lexicographie missionnaire de la période coloniale, donc une description extérieure à la société décrite. Donne nzambi comme Être Suprême, zumbi comme fétiche bienfaisant et mvumbi comme cadavre."
       },
       {
         "title": "J. D. Cordeiro da Matta, Ensaio de diccionario kimbúndu-portuguez, 1893",
         "url": "https://archive.org/details/ensaiodediccion00mattgoog",
         "tier": "referenced",
-        "notes": "Dictionnaire du kimbundu par un auteur angolais, publié à Lisbonne en 1893. Donne nzumbi comme l'âme d'un mort qui revient en paix, par opposition à celle qui poursuit les vivants."
+        "notes": "Dictionnaire du kimbundu par un auteur angolais, publié à Lisbonne en 1893, consulté le 10 septembre 2026. Donne nzumbi comme l'âme d'un mort qui revient en paix, par opposition à celle qui poursuit les vivants."
       },
       {
         "title": "Floribert Patrick C. Endong, « The Westernization of the African Zombie in Nollywood Films », International Journal of Modern Anthropology, 2022",
@@ -163,13 +163,13 @@
         "title": "Hans-W. Ackermann et Jeanine Gauthier, « The Ways and Nature of the Zombi », The Journal of American Folklore, 1991",
         "url": "https://doi.org/10.2307/541551",
         "tier": "referenced",
-        "notes": "Article de référence sur les racines bantoues du mot, revue universitaire à comité de lecture. Accès fermé : la référence est vérifiée, son contenu ne l'est pas."
+        "notes": "Article de revue universitaire à comité de lecture consacré aux racines bantoues du mot. Accès fermé : la référence est vérifiée, son contenu ne l'est pas."
       }
     ]
   },
   "_translation": {
     "deferred": {
-      "en": "English translation deferred: five subsections of this family fiche lost their content in the conversion from the archive and still hold only an orphaned lead-in sentence, so the French source is expected to change substantially before it is worth translating."
+      "en": "English translation is deferred: none of the 24 linguistic family records has an English sidecar, so translating this one alone would make it the atlas's only English family record. translate:record accepts this record (30 leaves, 3 review-required), so this is a sequencing choice, not a pipeline refusal. It follows the family corpus's first translation pass."
     }
   }
 }

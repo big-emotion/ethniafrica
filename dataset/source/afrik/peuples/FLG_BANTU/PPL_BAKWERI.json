@@ -65,7 +65,7 @@
       "majorRites": "Rites liés à la terre et à la fertilité agricole : cérémonies avant les plantations de taro, de maïs et de manioc sur les pentes fertiles du Fako. Rites de passage : naissance (imposition du nom lors d'une cérémonie communautaire), mariage (dot, négociation entre lignages, cérémonie villageoise), funérailles (veillée et inhumation selon les coutumes claniques). Initiations aux sociétés secrètes (Liengu, Maalé, Mbwaya, Nganya) : accès progressif réservé aux hommes. Anciennement, ordalie par le poison (ebô) comme mode de justice ; interdite par les Allemands en 1891, ce qui provoqua une rébellion. Festival Ngondo (commémoration avec les autres peuples Sawa, en décembre : combat, beauté, courses de pirogues, lutte traditionnelle). Festival Mpo'o (à Edéa, avec Bakoko et Limba, en décembre).",
       "symbols": "Le Mont Cameroun (Fako, 4 095 m, plus haute montagne d'Afrique de l'Ouest) est le symbole identitaire majeur des Bakweri qui en sont les occupants historiques des pentes. La mer et la forêt équatoriale des pentes du Fako sont des espaces sacrés structurant la cosmologie bakweri. Le langage de tambours (transmission de nouvelles de clan en clan) et le langage de corne (specifique aux Bakweri) sont des systèmes symboliques distinctifs. La pirogue (utilisée lors des festivals sawa) est un symbole de l'unité maritime côtière.",
       "artsAndMusic": "Tissage de chapeaux et de chemises en fibres végétales (compétence artisanale reconnue). Fabrication de meubles (armoires, chaises, tables) en bois des forêts du Fako. Danse Maalé (Danse de l'Éléphant) exécutée lors des cérémonies de la société secrète du même nom. Percussions rituelles accompagnant les initiations et les funérailles. Festivals Ngondo et Mpo'o (décembre) rassemblant les peuples Sawa pour des compétitions et des rituels collectifs. Littérature orale : récits des origines, chants de cour des chefs, proverbes bakweri.",
-      "spiritualities": "Fortement christianisés depuis les années 1970, notamment par les Eglises baptistes évangéliques qui dominent la région. Subsistance de la vénération des ancêtres sous une forme syncrétique. La société secrète Liengu est associée aux esprits aquatiques (sirènes, mami wata) et à la mer. Les festivals Ngondo et Mpo'o expriment une spiritualité ancestrale collective liée à la communication avec les ancêtres pour leur guidance et leur protection. La forêt du Mont Cameroun est perçue comme un espace habité par des forces spirituelles."
+      "spiritualities": "Fortement christianisés depuis les années 1970, notamment par les Eglises baptistes évangéliques qui dominent la région. Subsistance de la vénération des ancêtres sous une forme syncrétique. La société secrète Liengu est associée aux esprits aquatiques et à la mer. Ces esprits portent leurs propres noms et ne se confondent pas avec Mami Wata : cette figure régionale tient son nom de l'anglais approximatif parlé dans les comptoirs de la côte, mammy water, « la mère des eaux », et son culte est attesté dans une vingtaine de pays africains ainsi que dans les diasporas atlantiques. Les festivals Ngondo et Mpo'o expriment une spiritualité ancestrale collective liée à la communication avec les ancêtres pour leur guidance et leur protection. La forêt du Mont Cameroun est perçue comme un espace habité par des forces spirituelles."
     },
     "historicalRole": {
       "kingdomsOrChiefdoms": "Les Bakweri n'ont pas constitué un royaume centralisé mais un ensemble de chefferies villageoises autonomes intégrées dans l'aire culturelle sawa (peuples côtiers du Cameroun). Sous le régime colonial britannique (indirect rule), les chefs bakweri de Buea reçurent des pouvoirs accrus. Le Dr. E. M. L. Endeley, premier Premier ministre du Cameroun méridional britannique (1954-1959), est le personnage politique bakweri le plus célèbre.",
@@ -120,7 +120,24 @@
         "url": null,
         "tier": "referenced",
         "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Henry John Drewal, Mami Wata: Arts for Water Spirits in Africa and Its Diasporas",
+        "url": "https://fowler.ucla.edu/exhibitions/mami-wata-arts-for-water-spirits-in-africa-and-its-diasporas/",
+        "tier": "referenced",
+        "notes": "Monographie et exposition du Fowler Museum, UCLA, 2008, commissaire invité Henry John Drewal ; consultée le 10 septembre 2026."
+      },
+      {
+        "title": "Alex van Stipriaan, Watramama/Mami Wata: Three Centuries of Creolization of a Water Spirit in West Africa, Suriname and Europe",
+        "url": "https://brill.com/abstract/journals/mata/27/1/article-p321_321.xml",
+        "tier": "referenced",
+        "notes": "Revue Matatu, volumes 27-28, 2003 ; travail universitaire indépendant de celui de Drewal, consulté le 10 septembre 2026."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

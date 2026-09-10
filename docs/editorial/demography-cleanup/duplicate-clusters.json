@@ -1,0 +1,1316 @@
+[
+  {
+    "stem": "fula",
+    "proposedPrincipal": "PPL_FULA",
+    "richestText": "PPL_FULA_SAHEL",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_FULA",
+        "name": "Fula (Fulbe / Peul)",
+        "totalPopulation": 40000000,
+        "languageFamilyId": "FLG_ATLANTIQUE",
+        "countries": [
+          "BFA",
+          "CAF",
+          "CMR",
+          "GIN",
+          "MLI",
+          "MRT",
+          "NER",
+          "NGA",
+          "SDN",
+          "SEN",
+          "SLE",
+          "TCD"
+        ],
+        "contentChars": 10792,
+        "sources": 6,
+        "officialSources": 3,
+        "selfAppellation": "Fulbe (pluriel), Pullo (singulier)"
+      },
+      {
+        "id": "PPL_FULANI",
+        "name": "Fulbe (Fula / Peul)",
+        "totalPopulation": 35000000,
+        "languageFamilyId": "FLG_ATLANTIQUE",
+        "countries": ["BFA", "CMR", "GIN", "MLI", "NER", "NGA", "SEN", "TCD"],
+        "contentChars": 10722,
+        "sources": 5,
+        "officialSources": 2,
+        "selfAppellation": "Fulbe (pluriel), Pullo (singulier)"
+      },
+      {
+        "id": "PPL_FULA_SAHEL",
+        "name": "Fula (Sahel)",
+        "totalPopulation": 30000000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["BFA", "CMR", "MLI", "MRT", "NER", "NGA", "SEN", "TCD"],
+        "contentChars": 14809,
+        "sources": 5,
+        "officialSources": 2,
+        "selfAppellation": "Fulbe (pluriel), Pullo (singulier)"
+      },
+      {
+        "id": "PPL_FULA_NOMADES",
+        "name": "Fula (Nomades)",
+        "totalPopulation": 4000000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["CAF", "CMR", "NER", "NGA", "TCD"],
+        "contentChars": 13171,
+        "sources": 5,
+        "officialSources": 1,
+        "selfAppellation": "Fulbe (pluriel), Pullo (singulier)"
+      },
+      {
+        "id": "PPL_FULA_FORET",
+        "name": "Fula (Foret)",
+        "totalPopulation": 2000000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["CIV", "CMR", "GAB", "GIN"],
+        "contentChars": 12416,
+        "sources": 7,
+        "officialSources": 5,
+        "selfAppellation": "Fulbe (pluriel), Pullo (singulier)"
+      },
+      {
+        "id": "PPL_FULANI_MASSINA",
+        "name": "Fulbe du Massina (Peuls du Massina / Macina)",
+        "totalPopulation": 2000000,
+        "languageFamilyId": "FLG_ATLANTIQUE",
+        "countries": ["BFA", "CIV", "GHA", "MLI"],
+        "contentChars": 11023,
+        "sources": 5,
+        "officialSources": 1,
+        "selfAppellation": "Fulbe Maasina (pluriel), Pullo Maasina (singulier)"
+      }
+    ]
+  },
+  {
+    "stem": "hutu",
+    "proposedPrincipal": "PPL_HUTU_BURUNDI",
+    "richestText": "PPL_KIRUNDI_HUTU",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_KIRUNDI_HUTU",
+        "name": "Hutu",
+        "totalPopulation": 22200000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["BDI", "COD", "RWA", "UGA"],
+        "contentChars": 12940,
+        "sources": 7,
+        "officialSources": 3,
+        "selfAppellation": "Abahutu"
+      },
+      {
+        "id": "PPL_HUTU_BURUNDI",
+        "name": "Hutu du Burundi",
+        "totalPopulation": 10500000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["BDI", "COD", "RWA", "TZA", "UGA"],
+        "contentChars": 10564,
+        "sources": 5,
+        "officialSources": 3,
+        "selfAppellation": "Abahutu"
+      }
+    ]
+  },
+  {
+    "stem": "luba",
+    "proposedPrincipal": "PPL_LUBA_KATANGA",
+    "richestText": "PPL_LUBA_KATANGA",
+    "textConflict": false,
+    "members": [
+      {
+        "id": "PPL_LUBA",
+        "name": "Luba",
+        "totalPopulation": 13000000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["COD"],
+        "contentChars": 11116,
+        "sources": 5,
+        "officialSources": 1,
+        "selfAppellation": "Baluba"
+      },
+      {
+        "id": "PPL_LUBA_KASAI",
+        "name": "Luba (Kasai)",
+        "totalPopulation": 7500000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["COD"],
+        "contentChars": 11804,
+        "sources": 6,
+        "officialSources": 1,
+        "selfAppellation": "Baluba (Kasai) / Bena-Lulua"
+      },
+      {
+        "id": "PPL_LUBA_KATANGA",
+        "name": "Luba (Katanga)",
+        "totalPopulation": 5000000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["COD"],
+        "contentChars": 13204,
+        "sources": 5,
+        "officialSources": 1,
+        "selfAppellation": "Baluba (Katanga) / Baluba wa Katanga"
+      }
+    ]
+  },
+  {
+    "stem": "rwandai",
+    "proposedPrincipal": "PPL_RWANDAIS_TUTSI",
+    "richestText": "PPL_RWANDAIS_TUTSI",
+    "textConflict": false,
+    "members": [
+      {
+        "id": "PPL_RWANDAIS_HUTU",
+        "name": "Rwandais (Hutu)",
+        "totalPopulation": 12000000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["BDI", "COD", "RWA", "TZA", "UGA"],
+        "contentChars": 14474,
+        "sources": 11,
+        "officialSources": 4,
+        "selfAppellation": "Hutu / Abahutu"
+      },
+      {
+        "id": "PPL_RWANDAIS_TUTSI",
+        "name": "Rwandais (Tutsi)",
+        "totalPopulation": 3200000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["BDI", "COD", "RWA", "TZA", "UGA"],
+        "contentChars": 15682,
+        "sources": 10,
+        "officialSources": 4,
+        "selfAppellation": "Tutsi / Abatutsi"
+      }
+    ]
+  },
+  {
+    "stem": "kongo",
+    "proposedPrincipal": "PPL_KONGO",
+    "richestText": "PPL_KONGO_SUD",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_KONGO",
+        "name": "Kongo",
+        "totalPopulation": 11000000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["AGO", "COD", "COG", "GAB"],
+        "contentChars": 12694,
+        "sources": 5,
+        "officialSources": 2,
+        "selfAppellation": "Bakongo (pluriel) / Mukongo (singulier)"
+      },
+      {
+        "id": "PPL_KIKONGO",
+        "name": "Bakongo",
+        "totalPopulation": 10000000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["AGO", "COD", "COG", "GAB"],
+        "contentChars": 8448,
+        "sources": 4,
+        "officialSources": 2,
+        "selfAppellation": "Bakongo"
+      },
+      {
+        "id": "PPL_KONGO_SUD",
+        "name": "Kongo (Sud)",
+        "totalPopulation": 5500000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["COD"],
+        "contentChars": 16338,
+        "sources": 7,
+        "officialSources": 1,
+        "selfAppellation": "Bakongo (pluriel), Mukongo (singulier), Bisi Kongo"
+      },
+      {
+        "id": "PPL_KONGO_BRAZZA",
+        "name": "Kongo (Brazzaville)",
+        "totalPopulation": 2600000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["COG"],
+        "contentChars": 14267,
+        "sources": 7,
+        "officialSources": 1,
+        "selfAppellation": "Bakongo (pluriel), Mukongo (singulier)"
+      },
+      {
+        "id": "PPL_KONGO_CABINDA",
+        "name": "Kongo (Cabinda)",
+        "totalPopulation": 750000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["AGO"],
+        "contentChars": 14372,
+        "sources": 8,
+        "officialSources": 2,
+        "selfAppellation": "Bakongo (pluriel), Cabindais (en reference a l'enclave)"
+      },
+      {
+        "id": "PPL_KONGO_MAYOMBE",
+        "name": "Kongo (Mayombe)",
+        "totalPopulation": 600000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["AGO", "COD", "COG"],
+        "contentChars": 14242,
+        "sources": 6,
+        "officialSources": 1,
+        "selfAppellation": "Bayombe (pluriel), Muyombe (singulier)"
+      }
+    ]
+  },
+  {
+    "stem": "xhosa",
+    "proposedPrincipal": "PPL_XHOSA",
+    "richestText": "PPL_XHOSA_CISKEI",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_XHOSA",
+        "name": "Xhosa",
+        "totalPopulation": 10200000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["LSO", "ZAF", "ZWE"],
+        "contentChars": 11734,
+        "sources": 5,
+        "officialSources": 2,
+        "selfAppellation": "amaXhosa"
+      },
+      {
+        "id": "PPL_XHOSA_CISKEI",
+        "name": "Xhosa (Ciskei)",
+        "totalPopulation": 1500000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["ZAF"],
+        "contentChars": 13734,
+        "sources": 5,
+        "officialSources": 3,
+        "selfAppellation": "amaXhosa"
+      }
+    ]
+  },
+  {
+    "stem": "luo",
+    "proposedPrincipal": "PPL_LUO_BANTU",
+    "richestText": "PPL_LUO_PAGU",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_LUO_BANTU",
+        "name": "Luo (Bantou)",
+        "totalPopulation": 8000000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["KEN", "TZA", "UGA"],
+        "contentChars": 12840,
+        "sources": 4,
+        "officialSources": 3,
+        "selfAppellation": "Joluo / Abaluo (groupes bantouisés) ; Banyoro (groupe Babiito de Bunyoro)"
+      },
+      {
+        "id": "PPL_LUO_PAGU",
+        "name": "Luo (Kenya et Tanzanie)",
+        "totalPopulation": 6500000,
+        "languageFamilyId": "FLG_NILOTIQUE",
+        "countries": ["KEN", "TZA"],
+        "contentChars": 13222,
+        "sources": 4,
+        "officialSources": 2,
+        "selfAppellation": "Joluo (au pluriel) ou Jaluo (au singulier)"
+      },
+      {
+        "id": "PPL_LUO",
+        "name": "Luo",
+        "totalPopulation": 5500000,
+        "languageFamilyId": "FLG_NILOTIQUE",
+        "countries": ["KEN", "TZA"],
+        "contentChars": 12149,
+        "sources": 6,
+        "officialSources": 2,
+        "selfAppellation": "Joluo (pluriel) ; Jaluo (singulier) ; Joramogi ou Nyikwaramogi (heritiers de Ramogi, ancetre mythique fondateur)"
+      }
+    ]
+  },
+  {
+    "stem": "sotho",
+    "proposedPrincipal": "PPL_SOTHO",
+    "richestText": "PPL_SOTHO_NORD",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_SOTHO_SUD",
+        "name": "Sotho (Sud)",
+        "totalPopulation": 7254315,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["LSO", "ZAF"],
+        "contentChars": 12934,
+        "sources": 5,
+        "officialSources": 1,
+        "selfAppellation": "Basotho (pluriel) / Mosotho (singulier)"
+      },
+      {
+        "id": "PPL_SOTHO",
+        "name": "Sotho",
+        "totalPopulation": 6000000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["BWA", "LSO", "ZAF", "ZMB"],
+        "contentChars": 10796,
+        "sources": 6,
+        "officialSources": 3,
+        "selfAppellation": "Basotho (sing. Mosotho)"
+      },
+      {
+        "id": "PPL_SOTHO_NORD",
+        "name": "Sotho (Nord)",
+        "totalPopulation": 6000000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["ZAF"],
+        "contentChars": 13957,
+        "sources": 7,
+        "officialSources": 2,
+        "selfAppellation": "Bapedi / Basotho ba Lebowa"
+      }
+    ]
+  },
+  {
+    "stem": "lomwe",
+    "proposedPrincipal": "PPL_LOMWE",
+    "richestText": "PPL_LOMWE_MOZ",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_LOMWE",
+        "name": "Lomwe",
+        "totalPopulation": 5000000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ", "MWI"],
+        "contentChars": 14494,
+        "sources": 7,
+        "officialSources": 3,
+        "selfAppellation": "Alomwe / M'Lomwe"
+      },
+      {
+        "id": "PPL_LOMWE_MALA",
+        "name": "Lomwe (Malawi)",
+        "totalPopulation": 3800000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MWI"],
+        "contentChars": 14174,
+        "sources": 6,
+        "officialSources": 2,
+        "selfAppellation": "Alomwe / Lomwe"
+      },
+      {
+        "id": "PPL_LOMWE_MOZ",
+        "name": "Lomwe (Mozambique)",
+        "totalPopulation": 1900000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ"],
+        "contentChars": 14807,
+        "sources": 7,
+        "officialSources": 2,
+        "selfAppellation": "Alomwe / Elomwe"
+      }
+    ]
+  },
+  {
+    "stem": "tutsi",
+    "proposedPrincipal": "PPL_KIRUNDI_TUTSI",
+    "richestText": "PPL_KIRUNDI_TUTSI",
+    "textConflict": false,
+    "members": [
+      {
+        "id": "PPL_KIRUNDI_TUTSI",
+        "name": "Tutsi",
+        "totalPopulation": 4600000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["BDI", "COD", "RWA", "UGA"],
+        "contentChars": 14534,
+        "sources": 7,
+        "officialSources": 3,
+        "selfAppellation": "Abatutsi"
+      },
+      {
+        "id": "PPL_TUTSI_BURUNDI",
+        "name": "Tutsi du Burundi",
+        "totalPopulation": 1700000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["BDI"],
+        "contentChars": 13228,
+        "sources": 7,
+        "officialSources": 1,
+        "selfAppellation": "Abatutsi (pl.), Umututsi (sg.)"
+      }
+    ]
+  },
+  {
+    "stem": "ndebele",
+    "proposedPrincipal": "PPL_NDEBELE_MACRO",
+    "richestText": "PPL_NDEBELE_NORD",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_NDEBELE_MACRO",
+        "name": "Ndebele (Macro)",
+        "totalPopulation": 4400000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["BWA", "MOZ", "ZAF", "ZWE"],
+        "contentChars": 14741,
+        "sources": 5,
+        "officialSources": 2,
+        "selfAppellation": "AmaNdebele"
+      },
+      {
+        "id": "PPL_NDEBELE_NORD",
+        "name": "Ndebele du Nord (Zimbabwe)",
+        "totalPopulation": 2900000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["BWA", "ZAF", "ZWE"],
+        "contentChars": 16967,
+        "sources": 6,
+        "officialSources": 1,
+        "selfAppellation": "AmaNdebele / amaMthwakazi"
+      },
+      {
+        "id": "PPL_NDEBELE_ZIM",
+        "name": "Ndebele du Zimbabwe (Matabele)",
+        "totalPopulation": 2600000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["BWA", "ZAF", "ZWE"],
+        "contentChars": 11803,
+        "sources": 4,
+        "officialSources": 1,
+        "selfAppellation": "AmaNdebele / Mthwakazi"
+      },
+      {
+        "id": "PPL_NDEBELE",
+        "name": "Ndebele",
+        "totalPopulation": 2200000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["ZAF", "ZWE"],
+        "contentChars": 10032,
+        "sources": 5,
+        "officialSources": 3,
+        "selfAppellation": "AmaNdebele"
+      },
+      {
+        "id": "PPL_NDEBELE_NDZUNDZA",
+        "name": "Ndebele du Sud (Ndzundza)",
+        "totalPopulation": 1348000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["ZAF"],
+        "contentChars": 12946,
+        "sources": 6,
+        "officialSources": 2,
+        "selfAppellation": "AmaNdebele / abakwaNdzundza"
+      },
+      {
+        "id": "PPL_NDEBELE_SA",
+        "name": "Ndebele d'Afrique du Sud",
+        "totalPopulation": 1100000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["ZAF"],
+        "contentChars": 11302,
+        "sources": 5,
+        "officialSources": 1,
+        "selfAppellation": "AmaNdebele (isiKhethu)"
+      },
+      {
+        "id": "PPL_NDEBELE_MANALA",
+        "name": "Ndebele du Sud (Manala)",
+        "totalPopulation": 250000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["ZAF"],
+        "contentChars": 11145,
+        "sources": 5,
+        "officialSources": 2,
+        "selfAppellation": "AmaNdebele / abakwaManala"
+      },
+      {
+        "id": "PPL_NDEBELE_MZ",
+        "name": "Ndebele (Mozambique)",
+        "totalPopulation": 50000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ"],
+        "contentChars": 12825,
+        "sources": 2,
+        "officialSources": 1,
+        "selfAppellation": "AmaNdebele / VaNdebele"
+      }
+    ]
+  },
+  {
+    "stem": "karanga",
+    "proposedPrincipal": "PPL_KARANGA_ZIM",
+    "richestText": "PPL_KARANGA_ZIM",
+    "textConflict": false,
+    "members": [
+      {
+        "id": "PPL_KARANGA",
+        "name": "Karanga",
+        "totalPopulation": 4105000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["ZWE"],
+        "contentChars": 12396,
+        "sources": 6,
+        "officialSources": 1,
+        "selfAppellation": "Karanga"
+      },
+      {
+        "id": "PPL_KARANGA_ZIM",
+        "name": "Karanga (Zimbabwe)",
+        "totalPopulation": 4105000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["ZWE"],
+        "contentChars": 13372,
+        "sources": 6,
+        "officialSources": 1,
+        "selfAppellation": "vaKaranga"
+      }
+    ]
+  },
+  {
+    "stem": "yao",
+    "proposedPrincipal": "PPL_YAO",
+    "richestText": "PPL_YAO_MALAWI",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_YAO",
+        "name": "Yao",
+        "totalPopulation": 3900000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["MOZ", "MWI", "TZA", "ZMB"],
+        "contentChars": 11974,
+        "sources": 5,
+        "officialSources": 1,
+        "selfAppellation": "Wayao"
+      },
+      {
+        "id": "PPL_YAO_MALAWI",
+        "name": "Yao (Malawi)",
+        "totalPopulation": 1700000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MWI"],
+        "contentChars": 17070,
+        "sources": 6,
+        "officialSources": 2,
+        "selfAppellation": "Wayao"
+      },
+      {
+        "id": "PPL_YAO_MOZ",
+        "name": "Yao (Mozambique)",
+        "totalPopulation": 500000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ"],
+        "contentChars": 15876,
+        "sources": 5,
+        "officialSources": 2,
+        "selfAppellation": "Wayao"
+      }
+    ]
+  },
+  {
+    "stem": "ndau",
+    "proposedPrincipal": "PPL_NDAU",
+    "richestText": "PPL_NDAU_MOZ",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_NDAU",
+        "name": "Ndau",
+        "totalPopulation": 2500000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ", "MWI", "ZAF", "ZWE"],
+        "contentChars": 14511,
+        "sources": 6,
+        "officialSources": 1,
+        "selfAppellation": "Ndau / VaNdau"
+      },
+      {
+        "id": "PPL_NDAU_MOZ",
+        "name": "Ndau (Mozambique)",
+        "totalPopulation": 1200000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ"],
+        "contentChars": 14520,
+        "sources": 5,
+        "officialSources": 2,
+        "selfAppellation": "VaNdau / Ndau"
+      },
+      {
+        "id": "PPL_NDAU_ZIM",
+        "name": "Ndau (Zimbabwe)",
+        "totalPopulation": 800000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ", "ZWE"],
+        "contentChars": 13750,
+        "sources": 5,
+        "officialSources": 1,
+        "selfAppellation": "VaNdau / ChiNdau"
+      }
+    ]
+  },
+  {
+    "stem": "sena",
+    "proposedPrincipal": "PPL_SENA",
+    "richestText": "PPL_SENA_MOZ",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_SENA",
+        "name": "Sena",
+        "totalPopulation": 2500000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ", "MWI", "ZWE"],
+        "contentChars": 13849,
+        "sources": 7,
+        "officialSources": 3,
+        "selfAppellation": "Sena / Asena"
+      },
+      {
+        "id": "PPL_SENA_MOZ",
+        "name": "Sena (Mozambique)",
+        "totalPopulation": 1800000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ"],
+        "contentChars": 15983,
+        "sources": 7,
+        "officialSources": 3,
+        "selfAppellation": "Sena / Asena"
+      },
+      {
+        "id": "PPL_SENA_ZAMB",
+        "name": "Sena (Zambie)",
+        "totalPopulation": 230000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["ZMB"],
+        "contentChars": 8871,
+        "sources": 5,
+        "officialSources": 2,
+        "selfAppellation": "Sena"
+      }
+    ]
+  },
+  {
+    "stem": "fang",
+    "proposedPrincipal": "PPL_FANG",
+    "richestText": "PPL_FANG_GABON",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_FANG",
+        "name": "Fang",
+        "totalPopulation": 2295900,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["CMR", "COG", "GAB", "GNQ"],
+        "contentChars": 10837,
+        "sources": 6,
+        "officialSources": 0,
+        "selfAppellation": "Fan"
+      },
+      {
+        "id": "PPL_FANG_EQGUINEE",
+        "name": "Fang (Guinee equatoriale)",
+        "totalPopulation": 1575000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["GNQ"],
+        "contentChars": 13422,
+        "sources": 7,
+        "officialSources": 2,
+        "selfAppellation": "Fan / Fang (en langue fang) ; se definissent comme appartenant a l'ensemble be-ti ('les seigneurs')"
+      },
+      {
+        "id": "PPL_FANG_GABON",
+        "name": "Fang (Gabon)",
+        "totalPopulation": 1200000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["CMR", "GAB", "GNQ"],
+        "contentChars": 14037,
+        "sources": 6,
+        "officialSources": 1,
+        "selfAppellation": "Fan / Fang"
+      }
+    ]
+  },
+  {
+    "stem": "azande",
+    "proposedPrincipal": "PPL_ZANDE",
+    "richestText": "PPL_ZANDE",
+    "textConflict": false,
+    "members": [
+      {
+        "id": "PPL_ZANDE",
+        "name": "Azande",
+        "totalPopulation": 2000000,
+        "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+        "countries": ["CAF", "COD", "SSD"],
+        "contentChars": 14165,
+        "sources": 7,
+        "officialSources": 2,
+        "selfAppellation": "Azande (singulier : Zande ou Manzande)"
+      },
+      {
+        "id": "PPL_AZANDE_SUD",
+        "name": "Azande du Sud",
+        "totalPopulation": 1200000,
+        "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+        "countries": ["CAF", "COD", "SSD"],
+        "contentChars": 12143,
+        "sources": 5,
+        "officialSources": 2,
+        "selfAppellation": "Azande (singulier : Zande)"
+      }
+    ]
+  },
+  {
+    "stem": "swahili",
+    "proposedPrincipal": "PPL_SWAHILI",
+    "richestText": "PPL_SWAHILI_KENYA",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_SWAHILI",
+        "name": "Swahili",
+        "totalPopulation": 2000000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["COD", "COM", "KEN", "MOZ", "TZA", "UGA"],
+        "contentChars": 12683,
+        "sources": 5,
+        "officialSources": 4,
+        "selfAppellation": "Waswahili (pluriel), Mswahili (singulier) ; Waungwana (les gens civilises, terme d'auto-identification classe a Lamu)"
+      },
+      {
+        "id": "PPL_SWAHILI_YEMEN",
+        "name": "Swahili (Yemen)",
+        "totalPopulation": 1500000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["YEM"],
+        "contentChars": 14261,
+        "sources": 6,
+        "officialSources": 1,
+        "selfAppellation": "Akhdam (Al-Akhdame) / Al-Muwalladeen"
+      },
+      {
+        "id": "PPL_SWAHILI_TANZANIE",
+        "name": "Swahili (Tanzanie)",
+        "totalPopulation": 1200000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["TZA"],
+        "contentChars": 13925,
+        "sources": 6,
+        "officialSources": 2,
+        "selfAppellation": "Waswahili / Waungwana"
+      },
+      {
+        "id": "PPL_SWAHILI_KENYA",
+        "name": "Swahili (Kenya)",
+        "totalPopulation": 70000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["KEN"],
+        "contentChars": 14364,
+        "sources": 6,
+        "officialSources": 2,
+        "selfAppellation": "Waswahili (pluriel) / Mswahili (singulier)"
+      },
+      {
+        "id": "PPL_SWAHILI_OMAN",
+        "name": "Swahili (Oman)",
+        "totalPopulation": 50000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["OMN"],
+        "contentChars": 12418,
+        "sources": 7,
+        "officialSources": 0,
+        "selfAppellation": "Waswahili / Zanzibari"
+      },
+      {
+        "id": "PPL_SWAHILI_SOMALIE",
+        "name": "Swahili (Somalie)",
+        "totalPopulation": 25000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["KEN", "SOM"],
+        "contentChars": 12576,
+        "sources": 4,
+        "officialSources": 1,
+        "selfAppellation": "Wabajuni / Wabarawa / Waswahili"
+      },
+      {
+        "id": "PPL_SWAHILI_MOZAMBIQUE",
+        "name": "Swahili (Mozambique)",
+        "totalPopulation": 20000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ"],
+        "contentChars": 11454,
+        "sources": 7,
+        "officialSources": 2,
+        "selfAppellation": "Mwani / Waswahili"
+      }
+    ]
+  },
+  {
+    "stem": "teke",
+    "proposedPrincipal": "PPL_TEKE",
+    "richestText": "PPL_TEKE_NORD",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_TEKE",
+        "name": "Teke",
+        "totalPopulation": 2000000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["COD", "COG", "GAB"],
+        "contentChars": 11203,
+        "sources": 9,
+        "officialSources": 2,
+        "selfAppellation": "Bateke"
+      },
+      {
+        "id": "PPL_TEKE_NORD",
+        "name": "Teke (Nord)",
+        "totalPopulation": 200000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["COG", "GAB"],
+        "contentChars": 12106,
+        "sources": 6,
+        "officialSources": 2,
+        "selfAppellation": "BaTeke (pluriel) / MuTeke (singulier)"
+      }
+    ]
+  },
+  {
+    "stem": "makonde",
+    "proposedPrincipal": "PPL_MAKONDE",
+    "richestText": "PPL_MAKONDE_TANZ",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_MAKONDE",
+        "name": "Makonde",
+        "totalPopulation": 1800000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["MOZ", "TZA"],
+        "contentChars": 11906,
+        "sources": 5,
+        "officialSources": 5,
+        "selfAppellation": "Makonde"
+      },
+      {
+        "id": "PPL_MAKONDE_TANZ",
+        "name": "Makonde (Tanzanie)",
+        "totalPopulation": 1200000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["TZA"],
+        "contentChars": 13828,
+        "sources": 6,
+        "officialSources": 2,
+        "selfAppellation": "Makonde / WaMakonde"
+      },
+      {
+        "id": "PPL_MAKONDE_MOZ",
+        "name": "Makonde (Mozambique)",
+        "totalPopulation": 300000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ"],
+        "contentChars": 13369,
+        "sources": 6,
+        "officialSources": 2,
+        "selfAppellation": "Maconde / WaMakonde"
+      }
+    ]
+  },
+  {
+    "stem": "tonga",
+    "proposedPrincipal": "PPL_TONGA_ZAMBIA",
+    "richestText": "PPL_TONGA_LAC",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_TONGA_ZAMBIA",
+        "name": "Batonga / Tonga",
+        "totalPopulation": 1800000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["MOZ", "ZMB", "ZWE"],
+        "contentChars": 15229,
+        "sources": 20,
+        "officialSources": 1,
+        "selfAppellation": "Batonga (sg. Mutonga) ; se disent aussi Basilwizi (les gens du grand fleuve)"
+      },
+      {
+        "id": "PPL_TONGA_MALA",
+        "name": "Tonga (Malawi)",
+        "totalPopulation": 250000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MWI", "ZWE"],
+        "contentChars": 17302,
+        "sources": 5,
+        "officialSources": 1,
+        "selfAppellation": "Atonga (Batonga)"
+      },
+      {
+        "id": "PPL_TONGA_LAC",
+        "name": "Tonga (Lac)",
+        "totalPopulation": 200000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MWI", "ZWE"],
+        "contentChars": 18086,
+        "sources": 5,
+        "officialSources": 1,
+        "selfAppellation": "Atonga (Chitonga : Batonga)"
+      },
+      {
+        "id": "PPL_TONGAS",
+        "name": "Tongas",
+        "totalPopulation": 15000,
+        "languageFamilyId": "FLG_CREOLE",
+        "countries": ["STP"],
+        "contentChars": 9228,
+        "sources": 4,
+        "officialSources": 0,
+        "selfAppellation": "Tongas (terme adopté comme auto-désignation communautaire à São Tomé-et-Príncipe)"
+      }
+    ]
+  },
+  {
+    "stem": "korekore",
+    "proposedPrincipal": "PPL_KOREKORE_ZIM",
+    "richestText": "PPL_KOREKORE_ZIM",
+    "textConflict": false,
+    "members": [
+      {
+        "id": "PPL_KOREKORE",
+        "name": "Korekore",
+        "totalPopulation": 1600000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["ZWE"],
+        "contentChars": 10797,
+        "sources": 4,
+        "officialSources": 1,
+        "selfAppellation": "Korekore"
+      },
+      {
+        "id": "PPL_KOREKORE_ZIM",
+        "name": "Korekore (Zimbabwe)",
+        "totalPopulation": 1600000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["ZWE"],
+        "contentChars": 11776,
+        "sources": 4,
+        "officialSources": 1,
+        "selfAppellation": "Korekore"
+      }
+    ]
+  },
+  {
+    "stem": "tswa",
+    "proposedPrincipal": "PPL_TSWA_MOZ",
+    "richestText": "PPL_TSWA_MOZ",
+    "textConflict": false,
+    "members": [
+      {
+        "id": "PPL_TSWA_CALANGA",
+        "name": "Tswa (Calanga)",
+        "totalPopulation": 1500000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["BWA", "MOZ", "ZWE"],
+        "contentChars": 16742,
+        "sources": 5,
+        "officialSources": 1,
+        "selfAppellation": "Vatswa / BaKalanga"
+      },
+      {
+        "id": "PPL_TSWA",
+        "name": "Tswa",
+        "totalPopulation": 1414000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ", "ZAF", "ZWE"],
+        "contentChars": 11938,
+        "sources": 6,
+        "officialSources": 1,
+        "selfAppellation": "Vatswa (pluriel) / Mutswa (singulier)"
+      },
+      {
+        "id": "PPL_TSWA_MOZ",
+        "name": "Tswa (Mozambique)",
+        "totalPopulation": 1350000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ", "ZAF", "ZWE"],
+        "contentChars": 18943,
+        "sources": 6,
+        "officialSources": 2,
+        "selfAppellation": "Vatswa (pluriel) / Mutswa (singulier)"
+      }
+    ]
+  },
+  {
+    "stem": "bissa",
+    "proposedPrincipal": "PPL_BISSA",
+    "richestText": "PPL_BUSSA",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_BISSA",
+        "name": "Bissa",
+        "totalPopulation": 1206000,
+        "languageFamilyId": "FLG_MANDE",
+        "countries": ["BFA", "CIV", "GHA", "NGA", "TGO"],
+        "contentChars": 7037,
+        "sources": 4,
+        "officialSources": 1,
+        "selfAppellation": "Bissa ou Bisa (forme utilisee par le peuple pour se designer en langue propre)"
+      },
+      {
+        "id": "PPL_BUSSA",
+        "name": "Bissa / Bisa",
+        "totalPopulation": 1100000,
+        "languageFamilyId": "FLG_GUR",
+        "countries": ["BFA", "GHA", "TGO"],
+        "contentChars": 12148,
+        "sources": 5,
+        "officialSources": 1,
+        "selfAppellation": "Bissa (singulier : Bisa ; pluriel : Bisan ou Bissanno)"
+      }
+    ]
+  },
+  {
+    "stem": "lunda",
+    "proposedPrincipal": "PPL_LUNDA",
+    "richestText": "PPL_LUNDA_NORTE",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_LUNDA",
+        "name": "Lunda",
+        "totalPopulation": 1175000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["AGO", "COD", "ZMB"],
+        "contentChars": 11291,
+        "sources": 6,
+        "officialSources": 2,
+        "selfAppellation": "Balunda"
+      },
+      {
+        "id": "PPL_LUNDA_NORTE",
+        "name": "Lunda (Norte)",
+        "totalPopulation": 300000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["AGO"],
+        "contentChars": 12094,
+        "sources": 5,
+        "officialSources": 2,
+        "selfAppellation": "Aluunda / Ruund (groupe Lunda central) ; Balunda (terme courant)"
+      }
+    ]
+  },
+  {
+    "stem": "ronga",
+    "proposedPrincipal": "PPL_RONGA",
+    "richestText": "PPL_RONGA_MOZ",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_RONGA",
+        "name": "Ronga",
+        "totalPopulation": 1000000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ", "ZAF"],
+        "contentChars": 15363,
+        "sources": 6,
+        "officialSources": 1,
+        "selfAppellation": "Varhonga / Varonga"
+      },
+      {
+        "id": "PPL_RONGA_MOZ",
+        "name": "Ronga (Mozambique)",
+        "totalPopulation": 800000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ"],
+        "contentChars": 15830,
+        "sources": 6,
+        "officialSources": 1,
+        "selfAppellation": "Varhonga"
+      }
+    ]
+  },
+  {
+    "stem": "bassa",
+    "proposedPrincipal": "PPL_BASSA",
+    "richestText": "PPL_BASSA",
+    "textConflict": false,
+    "members": [
+      {
+        "id": "PPL_BASSA",
+        "name": "Bassa",
+        "totalPopulation": 841000,
+        "languageFamilyId": "FLG_KROU",
+        "countries": ["CIV", "LBR", "SLE"],
+        "contentChars": 14400,
+        "sources": 12,
+        "officialSources": 4,
+        "selfAppellation": "Bassa"
+      },
+      {
+        "id": "PPL_BASSA_CAM",
+        "name": "Bassa du Cameroun",
+        "totalPopulation": 800000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["CMR"],
+        "contentChars": 12506,
+        "sources": 6,
+        "officialSources": 2,
+        "selfAppellation": "Basaa (Bàsáa)"
+      }
+    ]
+  },
+  {
+    "stem": "lobi",
+    "proposedPrincipal": "PPL_LOBI",
+    "richestText": "PPL_LOBI",
+    "textConflict": false,
+    "members": [
+      {
+        "id": "PPL_LOBI_BIRIFOR",
+        "name": "Lobi / Birifor",
+        "totalPopulation": 817000,
+        "languageFamilyId": "FLG_GUR",
+        "countries": ["BFA", "CIV", "GHA"],
+        "contentChars": 10184,
+        "sources": 6,
+        "officialSources": 0,
+        "selfAppellation": "Lober (Lobi) ; Birifo / Malba (Birifor)"
+      },
+      {
+        "id": "PPL_LOBI",
+        "name": "Lobi",
+        "totalPopulation": 617000,
+        "languageFamilyId": "FLG_GUR",
+        "countries": ["BFA", "CIV", "GHA"],
+        "contentChars": 14475,
+        "sources": 6,
+        "officialSources": 2,
+        "selfAppellation": "Lobiri / Lobi"
+      }
+    ]
+  },
+  {
+    "stem": "manyika",
+    "proposedPrincipal": "PPL_MANYIKA",
+    "richestText": "PPL_MANYIKA_ZIM",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_MANYIKA",
+        "name": "Manyika",
+        "totalPopulation": 662000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["MOZ", "ZWE"],
+        "contentChars": 18125,
+        "sources": 7,
+        "officialSources": 2,
+        "selfAppellation": "VaManyika / WanaSaManyika"
+      },
+      {
+        "id": "PPL_MANYIKA_ZIM",
+        "name": "Manyika (Zimbabwe)",
+        "totalPopulation": 501000,
+        "languageFamilyId": "FLG_NIGERCONGO",
+        "countries": ["ZWE"],
+        "contentChars": 18256,
+        "sources": 8,
+        "officialSources": 2,
+        "selfAppellation": "VaManyika / WanaSaManyika"
+      }
+    ]
+  },
+  {
+    "stem": "manjak",
+    "proposedPrincipal": "PPL_MANJAK_BAINUK",
+    "richestText": "PPL_MANJAK_BAINUK",
+    "textConflict": false,
+    "members": [
+      {
+        "id": "PPL_MANJAK",
+        "name": "Manjak",
+        "totalPopulation": 522000,
+        "languageFamilyId": "FLG_ATLANTIQUE",
+        "countries": ["GMB", "GNB", "SEN"],
+        "contentChars": 8195,
+        "sources": 3,
+        "officialSources": 2,
+        "selfAppellation": "Manjaku"
+      },
+      {
+        "id": "PPL_MANJAK_BAINUK",
+        "name": "Manjak / Bainuk",
+        "totalPopulation": 366000,
+        "languageFamilyId": "FLG_ATLANTIQUE",
+        "countries": ["GMB", "GNB", "SEN"],
+        "contentChars": 11314,
+        "sources": 5,
+        "officialSources": 1,
+        "selfAppellation": "Manjaku (autoappellation des Manjak); Elomay / Elunay ou Nun (autoappellation des Bainuk)"
+      }
+    ]
+  },
+  {
+    "stem": "sango",
+    "proposedPrincipal": "PPL_SANGO_SCT",
+    "richestText": "PPL_SANGO",
+    "textConflict": true,
+    "members": [
+      {
+        "id": "PPL_SANGO_SCT",
+        "name": "Sango",
+        "totalPopulation": 500000,
+        "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+        "countries": ["CAF", "COD", "COG"],
+        "contentChars": 10577,
+        "sources": 6,
+        "officialSources": 2,
+        "selfAppellation": "Basango / Bosango"
+      },
+      {
+        "id": "PPL_SANGO",
+        "name": "Sango (Bantou)",
+        "totalPopulation": 450000,
+        "languageFamilyId": "FLG_BANTU",
+        "countries": ["CAF", "COD"],
+        "contentChars": 10950,
+        "sources": 7,
+        "officialSources": 3,
+        "selfAppellation": "Sango / Basango (pluriel bantou)"
+      }
+    ]
+  },
+  {
+    "stem": "bijago",
+    "proposedPrincipal": "PPL_BIJAOGO",
+    "richestText": "PPL_BIJAOGO",
+    "textConflict": false,
+    "members": [
+      {
+        "id": "PPL_BIJAGO_BIDYOGO",
+        "name": "Bijago / Bidyogo",
+        "totalPopulation": 43000,
+        "languageFamilyId": "FLG_ATLANTIQUE",
+        "countries": ["GNB"],
+        "contentChars": 10400,
+        "sources": 5,
+        "officialSources": 0,
+        "selfAppellation": "Bijago (ou Bidyogo selon les dialectes)"
+      },
+      {
+        "id": "PPL_BIJAOGO",
+        "name": "Bijago",
+        "totalPopulation": 43000,
+        "languageFamilyId": "FLG_ATLANTIQUE",
+        "countries": ["GNB"],
+        "contentChars": 13916,
+        "sources": 4,
+        "officialSources": 1,
+        "selfAppellation": "Bidyogo / Bijago"
+      }
+    ]
+  }
+]

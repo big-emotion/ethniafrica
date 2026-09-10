@@ -1,6 +1,6 @@
 ---
 name: ethniafrica-experience-optimizer
-description: Turns the audience audit into navigation and experience fixes for EthniAfrica, mobile first. Consumes the dated report written by ethniafrica-audience-audit and proposes prioritised changes to information architecture, entry and exit paths, next-step design, internal linking as navigation, empty states and mobile ergonomics — each one anchored to a measured number. Judges from the rendered page at 430px, never from the code alone. Use when the user asks "pourquoi ça rebondit", "améliorer la navigation", "le mobile ne va pas", "UX du site", "que faire de cette page", or invokes /ethniafrica-experience-optimizer.
+description: Turns the audience audit into navigation and experience fixes for EthniAfrica, mobile first. Consumes the dated report written by audience-audit and proposes prioritised changes to information architecture, entry and exit paths, next-step design, internal linking as navigation, empty states and mobile ergonomics — each one anchored to a measured number. Judges from the rendered page at 430px, never from the code alone. Use when the user asks "pourquoi ça rebondit", "améliorer la navigation", "le mobile ne va pas", "UX du site", "que faire de cette page", or invokes /ethniafrica-experience-optimizer.
 metadata:
   author: Big Emotion
   version: "1.0.0"
@@ -13,17 +13,17 @@ Consumes the audience audit and answers one question: **why does the measured
 behaviour differ from the intended behaviour, and what change closes the gap?**
 
 It is a **consumer** in the three-skill pipeline. Its evidence comes from
-`docs/audience/`, written by `/ethniafrica-audience-audit`.
+`docs/audience/`, written by `audience-audit`.
 
 ```
-/ethniafrica-audience-audit  →  docs/audience/audit-YYYY-MM-DD.md  →  this skill
+audience-audit  →  docs/audience/audit-YYYY-MM-DD.md  →  this skill
 ```
 
 ## Step 1 — Load the evidence, or stop
 
 Read the most recent file in `docs/audience/`.
 
-- **No report** → do not proceed. Say so and run `/ethniafrica-audience-audit`
+- **No report** → do not proceed. Say so and run `audience-audit`
   first. A UX opinion with no measurement is a preference, and this skill exists
   precisely because preferences were already available for free.
 - **Report older than 30 days** → say so, offer to refresh, and proceed only if
@@ -122,7 +122,7 @@ Four measured behaviours that look like design problems and are not:
   accent, stop and hand it over.
 - Game mechanics and quiz items → `/afrik-game-designer`. This skill may say the
   Mercator game is a dead end; it may not redesign the game.
-- What to publish next → `/ethniafrica-content-strategist`.
+- What to publish next → `content-strategist`.
 - Fiche content and sourcing → `/afrik-curator`.
 
 This skill proposes. It does not implement, and it does not merge.

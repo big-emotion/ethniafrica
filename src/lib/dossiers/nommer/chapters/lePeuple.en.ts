@@ -92,7 +92,7 @@ export const CHAPITRE_LE_PEUPLE_EN: DossierChapterTranslation = {
           ],
           [
             "missionn- (‘mission-’)",
-            "25",
+            "26",
             "Naming in order to evangelise, then in order to teach literacy",
           ],
         ],

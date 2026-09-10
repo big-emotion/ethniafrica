@@ -107,6 +107,27 @@
       "matchDomains": ["ipums.org"]
     },
     {
+      "key": "brill",
+      "name": "Brill",
+      "tier": "referenced",
+      "sourceKind": "academic",
+      "matchDomains": ["brill.com"]
+    },
+    {
+      "key": "fowler-museum",
+      "name": "Fowler Museum at UCLA",
+      "tier": "referenced",
+      "sourceKind": "academic",
+      "matchDomains": ["fowler.ucla.edu"]
+    },
+    {
+      "key": "us-state-historian",
+      "name": "Office of the Historian, U.S. Department of State",
+      "tier": "official",
+      "sourceKind": "government",
+      "matchDomains": ["history.state.gov"]
+    },
+    {
       "key": "jstor",
       "name": "JSTOR",
       "tier": "referenced",

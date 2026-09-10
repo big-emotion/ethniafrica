@@ -13,7 +13,7 @@
         "Basa",
         "Bassa-Bakoko (etiquette coloniale allemande aggregant artificielement Bassa et Bakoko)"
       ],
-      "originOfExonyms": "Bassa est une transcription coloniale du terme endonyme bàsáa. Bassa-Bakoko est une classification coloniale allemande regroupant artificiellement les Bassa et les Bakoko, deux peuples distincts, pour des raisons administratives de simplification. Les Bassa se designent eux-memes comme Bàsáa (avec marques tonales) et leur langue comme Hɔp ɓasàa.",
+      "originOfExonyms": "Bassa est une transcription coloniale du terme endonyme bàsáa. Bassa-Bakoko est une classification coloniale allemande regroupant artificiellement les Bassa et les Bakoko, deux peuples distincts, pour des raisons administratives de simplification. Les Bassa se désignent eux-mêmes comme Bàsáa (avec marques tonales) et leur langue comme Hɔp ɓasàa. Aucune source consultée n'établit ce que Bàsáa signifie. Une lecture circule dans les publications communautaires bassa : Bassa serait le pluriel de nsa, « la rétribution, le partage », et viendrait d'une querelle entre les fils de l'ancêtre Mban sur le partage d'un serpent rapporté de la chasse, d'où le sens de « ravisseurs ». Le site Li'ten Li Bassa la rapporte ainsi en 2016 sans nommer de source, et aucun dictionnaire ni travail linguistique consulté ne la confirme. Ce qui est documenté n'est pas le sens de l'ethnonyme mais la façon dont les Bassa se disent : Bon ba Ngog Lituba, les enfants de la grotte d'où la tradition les fait sortir, que Louis-Marie Pouka, lui-même bassa, glose « pierre à trou » dès 1950 et qu'Athanase Bopda documente en 2001 comme le récit fondateur commun aux Bassa, aux Bakoko, aux Babimbi et aux Douala.",
       "whyProblematic": "Bassa-Bakoko est reducteur car il amalgame deux peuples distincts sous une meme etiquette coloniale, niant leurs specificites culturelles respectives. Le terme a aussi ete utilise pour justifier des politiques de travail force sur le chemin de fer Douala-Yaounde.",
       "contemporaryUsage": "Basaa ou Bàsáa est universellement accepte dans les contextes contemporains. Bàsáa (avec tons marques) est prefere dans les contextes linguistiques et academiques. Le terme Hɔp ɓasàa designe la langue elle-meme.",
       "linguisticFamily": "FLG_BANTU",
@@ -79,7 +79,7 @@
       "majorRites": "Rites d'initiation (ceremonies de passage a l'age adulte, distinctes pour les garcons et les filles). Ceremonies funeraires elaborees avec utilisation de masques sculptes, de statues en bois et de rites de purification. Ceremonies agricoles et de benediction des recoltes. Rites du Nyambéisme : ceremonies de communication avec les ancetres, invocations des Jengu (esprits des eaux). Rites de mariage impliquant la negociation de la dot (nkap) et des ceremonies de benediction familiale.",
       "symbols": "Ngog Lituba (le rocher perce) est le symbole identitaire fondamental du peuple Bassa, lieu de rassemblement et reference mythique de l'unite. Les masques (en bois sculpte, a valeur ceremonielle et spirituelle), les statues ancestrales et les sculptures figurent parmi les symboles culturels majeurs. Les Jengu (esprits de l'eau) sont representes dans l'art rituel cotier.",
       "artsAndMusic": "L'Assiko est la danse et musique urbaine Bassa la plus connue, nee a Edea et rayonnant dans tout le Cameroun. La N'gola et la Ma-Kune sont d'autres styles musicaux Bassa. La musique rurale utilise des tambours (ngul), des xylophones (mendzang), des flutes et des cloches. Les Bassa sont reconnus pour leurs chants epiques (bikutsi vocal propre au peuple), leur poesie orale et la richesse de leur tradition narrative (griots). L'artisanat comprend la sculpture sur bois (masques, statues rituelles), la ceramique et le travail du raphia. La cuisine traditionnelle inclut la sauce Bongo'o et la Mintoumba (pain de manioc cuit dans des feuilles de bananier).",
-      "spiritualities": "Le Nyambéisme est la tradition spirituelle originelle des Bassa, centree sur le culte des ancetres et la communication avec les esprits de la nature. Les Jengu (Miengu) sont des esprits de l'eau et de la cote adores par les Bassa cotiers. L'animisme et la croyance en la coexistence du monde spirituel et du monde physique perdurent. Les anciens transmettent la sagesse et l'histoire par la narration orale. Depuis le XIXe siecle, le christianisme protestant (Presbyteriens, Eglise Evangelique du Cameroun) est majoritaire, avec une presence catholique importante."
+      "spiritualities": "Le Nyambéisme est la tradition spirituelle originelle des Bassa, centree sur le culte des ancetres et la communication avec les esprits de la nature. Les Jengu (Miengu) sont des esprits de l'eau et de la cote adores par les Bassa cotiers. L'animisme et la croyance en la coexistence du monde spirituel et du monde physique perdurent. Les anciens transmettent la sagesse et l'histoire par la narration orale. Depuis le XIXe siecle, le christianisme protestant (Presbyteriens, Eglise Evangelique du Cameroun) est majoritaire, avec une presence catholique importante. Les Jengu, ou Miengu, portent leur nom propre et ne se confondent pas avec Mami Wata : cette figure régionale, plus tardive, tient son nom de l'anglais approximatif parlé dans les comptoirs de la côte, mammy water, « la mère des eaux »."
     },
     "historicalRole": {
       "kingdomsOrChiefdoms": "Les Bassa n'ont pas developpe de royaume centralise. Leur organisation politique etait fondee sur des groupes de lignages autonomes (mvog) reunis par une origine et une culture communes. Pendant la colonisation allemande, un systeme de chefferies administratives a ete impose. Des chefs comme Mahop ma Mbom et Matip ma Matip ont negocie avec l'administration coloniale.",
@@ -136,7 +136,48 @@
         "url": "https://www.justiceinfo.net/en/82062-cameroon-um-nyobe-hero-symbol-french-colonial-crimes.html",
         "tier": "referenced",
         "notes": "Identifiable transitional-justice press outlet. Corroborates the 1948 founding of the UPC, the 13 September 1958 assassination, and the 2007 memorial at Eseka."
+      },
+      {
+        "title": "Henry John Drewal, Mami Wata: Arts for Water Spirits in Africa and Its Diasporas",
+        "url": "https://fowler.ucla.edu/exhibitions/mami-wata-arts-for-water-spirits-in-africa-and-its-diasporas/",
+        "tier": "referenced",
+        "notes": "Monographie et exposition du Fowler Museum, UCLA, 2008, commissaire invité Henry John Drewal ; consultée le 10 septembre 2026."
+      },
+      {
+        "title": "Alex van Stipriaan, Watramama/Mami Wata: Three Centuries of Creolization of a Water Spirit in West Africa, Suriname and Europe",
+        "url": "https://brill.com/abstract/journals/mata/27/1/article-p321_321.xml",
+        "tier": "referenced",
+        "notes": "Revue Matatu, volumes 27-28, 2003 ; travail universitaire indépendant de celui de Drewal, consulté le 10 septembre 2026."
+      },
+      {
+        "title": "« L'histoire des origines du peuple Bassa du Cameroun », Li'ten Li Bassa, 12 janvier 2016",
+        "url": "https://web.archive.org/web/20170430212955/http://www.litenlibassa.com/index.php/culture/hist/636-lhistoire-des-origines-du-peuple-bassa-du-cameroun.html",
+        "tier": "unverified",
+        "notes": "Site communautaire bassa, article signé d'un pseudonyme et sans source. Il porte la lecture faisant de Bassa le pluriel de nsa et le récit de la querelle entre les fils de Mban, et glose Ngog Lituba « la pierre ouverte ». Le site n'est plus en ligne ; la page est citée d'après la copie archivée le 30 avril 2017, consultée le 10 septembre 2026. Citée pour établir que cette lecture circule, non pour l'accréditer."
+      },
+      {
+        "title": "Louis-Marie Pouka, « Les Bassa du Cameroun », Les Cahiers d'Outre-Mer, 1950, tome 3, n° 10, p. 153-166",
+        "url": "https://www.persee.fr/doc/caoum_0373-5834_1950_num_3_10_1676",
+        "tier": "referenced",
+        "notes": "Article d'un auteur bassa dans une revue académique française. Il situe l'origine du peuple au nord-est et son passage par Ngok-litoupa, qu'il glose « pierre à trou », et nomme les clans restés sur place, dont les Babimbi et les Basso ba Likol. Seule la première page est lisible en accès libre ; elle porte le passage cité, lu le 10 septembre 2026."
+      },
+      {
+        "title": "Athanase Bopda, « De l'usage des fonds mythiques dans les remaniements territoriaux en Afrique et au Cameroun », Cahiers de géographie du Québec, vol. 45, n° 126, 2001, p. 451-478",
+        "url": "https://www.erudit.org/fr/revues/cgq/2001-v45-n126-cgq2698/023003ar.pdf",
+        "tier": "referenced",
+        "notes": "Article de revue universitaire en accès libre, lu le 10 septembre 2026. Il documente le mythe de la sortie de Ngog Lituba comme central dans le fonctionnement des territoires de la côte camerounaise, de l'embouchure du Nyong à celle du Moungo, et pour les Bassa comme pour les Bakoko, les Babimbi, les Douala, les Pongo et les Banen. Il ne glose pas le nom du lieu et ne traite pas de l'ethnonyme."
+      },
+      {
+        "title": "Emmanuel Kombem Ngwainmbi, « Bassa », dans Molefi Kete Asante et Ama Mazama (dir.), Encyclopedia of African Religion, SAGE, 2009, p. 108-110",
+        "url": "https://sk.sagepub.com/ency/edvol/africanreligion/chpt/bassa",
+        "tier": "referenced",
+        "notes": "Entrée d'encyclopédie de référence, lue le 10 septembre 2026 dans l'exemplaire numérisé par Internet Archive. Elle donne les autodésignations Bon ba Ngock « Children of the Rock » et Bon ba Mbog Liaa « Children of the Tradition of the Rock », ainsi que Hilolombi et les confréries du Mbog. Elle traite en revanche sous une entrée unique les Bassa du Cameroun, du Liberia, du Nigeria, du Togo, du Congo et du Sénégal comme un seul peuple d'origine égyptienne, ce qu'aucune classification linguistique ne soutient."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

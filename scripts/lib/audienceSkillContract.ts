@@ -17,12 +17,28 @@ import { parseSkillName } from "./skillParity";
  */
 export const AUDIENCE_REPORT_DIR = "docs/audience";
 
-export const AUDIENCE_PRODUCER = "ethniafrica-audience-audit";
+/**
+ * The producer's name, not a skill this repository holds.
+ *
+ * `audience-audit` moved to the private production workspace on 2026-09-10,
+ * along with `content-strategist`, because a public repository carries no
+ * production skills. The report it writes stays here — it is built from this
+ * repository's own URL inventory — so the handoff still crosses this directory
+ * and is still worth guarding.
+ *
+ * What this contract can no longer check: that the producer exists, is named
+ * correctly, and actually writes a dated report. That half of the guarantee now
+ * lives in the workspace. Saying so here is the point; a contract that quietly
+ * checks less than its name suggests is worse than one that checks nothing.
+ */
+export const AUDIENCE_PRODUCER = "audience-audit";
 
-export const AUDIENCE_CONSUMERS = [
-  "ethniafrica-experience-optimizer",
-  "ethniafrica-content-strategist",
-] as const;
+/**
+ * Consumers that live in this repository. `content-strategist` was the second
+ * entry and moved out with the producer; `experience-optimizer` acts on the
+ * site's own pages, so it stayed.
+ */
+export const AUDIENCE_CONSUMERS = ["ethniafrica-experience-optimizer"] as const;
 
 export interface SkillContractIssue {
   skill: string;
@@ -43,21 +59,13 @@ function skillMarkdown(
   return existsSync(path) ? readFileSync(path, "utf8") : null;
 }
 
-/**
- * A dated report filename, not merely the directory: a skill that mentions
- * `docs/audience` in passing has not committed to producing anything.
- */
-const DATED_REPORT = new RegExp(
-  `${AUDIENCE_REPORT_DIR}/audit-(?:YYYY-MM-DD|\\d{4}-\\d{2}-\\d{2})\\.md`
-);
-
 export function checkAudienceSkillContract(
   projectRoot: string,
   overrides: SkillMarkdownOverrides = {}
 ): SkillContractIssue[] {
   const issues: SkillContractIssue[] = [];
 
-  for (const skill of [AUDIENCE_PRODUCER, ...AUDIENCE_CONSUMERS]) {
+  for (const skill of AUDIENCE_CONSUMERS) {
     const markdown = skillMarkdown(projectRoot, skill, overrides);
 
     if (markdown === null) {
@@ -71,16 +79,6 @@ export function checkAudienceSkillContract(
         skill,
         detail: `frontmatter name is ${JSON.stringify(declaredName)}, expected ${JSON.stringify(skill)}`,
       });
-    }
-
-    if (skill === AUDIENCE_PRODUCER) {
-      if (!DATED_REPORT.test(markdown)) {
-        issues.push({
-          skill,
-          detail: `does not write a dated report into ${AUDIENCE_REPORT_DIR}/`,
-        });
-      }
-      continue;
     }
 
     if (!markdown.includes(`${AUDIENCE_REPORT_DIR}/`)) {

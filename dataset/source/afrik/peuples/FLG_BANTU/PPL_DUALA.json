@@ -70,7 +70,7 @@
       "majorRites": "Ngondo: assemblée annuelle oraculaire sur l'estuaire du Wouri, inscrite au patrimoine culturel immatériel de l'UNESCO en 2024. Cérémonies d'invocation des Jengu (esprits de l'eau). Rites funéraires élaborés avec veillées et chants. Rites d'initiation dans les sociétés secrètes (Ekongolo, Losango, Munji). Cérémonies maritimes de bénédiction des pirogues et des pecheurs.",
       "symbols": "L'estuaire du Wouri (territoire ancestral et espace sacré), les pirogues (mobilité et identité maritime), les totems lignagers, les chefs en tenue de gala lors du Ngondo, le fleuve Wouri comme lien avec les ancêtres et les esprits Jengu.",
       "artsAndMusic": "Musique et danse Sawa lors du Ngondo et des fêtes maritimes. Chants de pirogue traditionnels. Sculpture sur bois à représentation maritime. Architecture traditionnelle sur pilotis en bord d'estuaire. Tenues cérémonielles élaborées des chefs lors des fêtes Sawa. Traditions orales (contes, généalogies des lignages).",
-      "spiritualities": "Culte des Jengu (esprits de l'eau, miengu): protecteurs des Duala, maîtres des rivières et de la mer, invoqués lors du Ngondo. Croyances en ancêtres (liamba) comme intercesseurs. Sociétés secrètes à fonction religieuse et sociale (Ekongolo, Losango, Munji). Christianisme (protestantisme Basel Mission, catholicisme) majoritaire depuis le XIXe siècle. Syncrétisme courant entre christianisme et cultes ancestraux et des esprits de l'eau."
+      "spiritualities": "Culte des Jengu (esprits de l'eau, miengu): protecteurs des Duala, maîtres des rivières et de la mer, invoqués lors du Ngondo. Croyances en ancêtres (liamba) comme intercesseurs. Sociétés secrètes à fonction religieuse et sociale (Ekongolo, Losango, Munji). Christianisme (protestantisme Basel Mission, catholicisme) majoritaire depuis le XIXe siècle. Syncrétisme courant entre christianisme et cultes ancestraux et des esprits de l'eau. Les Jengu portent leur nom propre et ne se confondent pas avec Mami Wata : cette figure régionale, plus tardive, tient son nom de l'anglais approximatif parlé dans les comptoirs de la côte, mammy water, « la mère des eaux »."
     },
     "historicalRole": {
       "kingdomsOrChiefdoms": "Pas de royauté centralisée mais des chefferies lignagères puissantes: famille Bell (Bonanjo), famille Akwa (Bonaku), famille Deido (Bonabela). Ndumb'a Lobe de la lignée Bell se proclama Roi Bell au XIXe siècle. Ngando Mpondo se nomma Roi Akwa (1814). Jim Ekwalla prit le titre de Roi Deido. Ces titres royaux étaient liés au commerce avec les Européens.",
@@ -119,7 +119,24 @@
         "url": "https://qiraatafrican.com/en/13435/the-duala-people-of-cameroon/",
         "tier": "unverified",
         "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "Henry John Drewal, Mami Wata: Arts for Water Spirits in Africa and Its Diasporas",
+        "url": "https://fowler.ucla.edu/exhibitions/mami-wata-arts-for-water-spirits-in-africa-and-its-diasporas/",
+        "tier": "referenced",
+        "notes": "Monographie et exposition du Fowler Museum, UCLA, 2008, commissaire invité Henry John Drewal ; consultée le 10 septembre 2026."
+      },
+      {
+        "title": "Alex van Stipriaan, Watramama/Mami Wata: Three Centuries of Creolization of a Water Spirit in West Africa, Suriname and Europe",
+        "url": "https://brill.com/abstract/journals/mata/27/1/article-p321_321.xml",
+        "tier": "referenced",
+        "notes": "Revue Matatu, volumes 27-28, 2003 ; travail universitaire indépendant de celui de Drewal, consulté le 10 septembre 2026."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

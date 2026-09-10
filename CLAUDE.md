@@ -43,6 +43,7 @@ npm run check:jira-template         # docs/templates/jira-ticket-template.md mus
 npm run check:action-pins           # every third-party GitHub Action must be SHA-pinned
 npm run check:workflow-shell        # every workflow `run:` block must parse under `bash -n`
 npm run check:env-example           # .env.example and the code agree, both directions
+npm run check:local-paths           # no local filesystem path in a public repo
 npm run check:migration-files       # no duplicate version or name, no hole in the sequence
 npm run check:dead                  # knip: unreferenced files, exports, dependencies (ratcheted ceilings)
 npm run test:charter-contracts      # aggregated design-charter contract suite
@@ -112,20 +113,30 @@ Migrations are numbered and sequential in `supabase/migrations/` (081 at last co
 
 ### Publishing — the audience, the plan, the video
 
-Four skills cover what happens after a fiche exists, and they run in one order.
-Nothing in this file describes them elsewhere, which is how three of them went
-unmentioned while being the only tools that answer "why is nobody reading this".
+The publishing chain runs in one order, and **it no longer lives entirely in this
+repository.** On 2026-09-10 the two production skills moved to the private
+workspace, because a public repository carries no production skills. What stayed
+here is the one that acts on this site's own pages, and the report the chain hands
+along.
 
-- **Measure before planning — `/ethniafrica-audience-audit`.** It writes one
-  dated report to `docs/audience/`, and the two downstream skills refuse a report
-  older than 30 days. Every figure counts **consented sessions only**: Plausible
-  loads after the banner, so the number is a floor of unknown depth, never the
-  audience.
-- **Decide what ships — `/ethniafrica-content-strategist`.** Reads that report
-  and never proposes a subject without the comparable's numbers attached.
-- **Convert what already lands — `/ethniafrica-experience-optimizer`.** A page
-  the report marks a dead end already has the audience a new page would have to
-  earn.
+- **Measure before planning — `audience-audit`, in the private workspace.** It
+  writes one dated report to `docs/audience/` _here_, because it is built from
+  this repository's URL inventory, and the downstream skills refuse a report older
+  than 30 days. Every figure counts **consented sessions only**: Plausible loads
+  after the banner, so the number is a floor of unknown depth, never the audience.
+- **Decide what ships — `content-strategist`, in the private workspace.** Reads
+  that report and never proposes a subject without the comparable's numbers
+  attached.
+- **Convert what already lands — `/ethniafrica-experience-optimizer`, here.** A
+  page the report marks a dead end already has the audience a new page would have
+  to earn.
+
+`scripts/lib/audienceSkillContract.ts` guards the half of that handoff this
+repository can still see: that the consumer living here still reads the dated
+report and still names its producer. It deliberately does **not** look for the
+producer on disk. Putting it back in the loop makes a correct repository fail, and
+the obvious fix would be to copy a production skill back into a public repository.
+
 - **Anything about why a video or a post holds attention — invoke
   `attention-architect` first, every time.** Writing a hook, judging a script
   that explains well and still flattens, or filing a persuasion principle
@@ -157,6 +168,45 @@ as fiche text does.
 Every `test()`/`it()` call needs `// @req REQ-NNN` within the 3 lines above it, and any exported symbol annotated `@req REQ-NNN` must have a test annotated with the same ID. IDs are validated against `docs/confluence-spec/req-catalog.json`. Pre-existing tests are grandfathered by diffing against the previous file content, so _new or renamed_ tests are the ones that fail.
 
 **Never delete `docs/confluence-spec/*.json` or `docs/templates/jira-ticket-template.md`.** With the catalog missing, `lintReqAnnotations.ts` returns early and reports OK while checking nothing — a silently disarmed gate, which is worse than a red one.
+
+### No local paths (`npm run check:local-paths`, CI-blocking)
+
+This repository is public, so an absolute workstation path publishes the author's
+machine and usually the private production workspace sitting beside the checkout.
+Three such lines were already committed before the gate existed: an absolute
+memory path in `ethniafrica-audit`, a private-workspace shelf listing in a
+demography note, and an agent-config path in a lint helper. A fourth was sitting
+uncommitted in a working copy, which is what the pre-commit half of this gate is
+for.
+
+Six patterns are refused: two absolute home prefixes, the tilde shortcut, and the
+three directory names that identify the private workspace and the local checkout.
+**The exact list lives in `scripts/ci/checkLocalPaths.ts` and nowhere else** —
+this section deliberately does not restate it, because a gate that greps every
+tracked file greps its own documentation too, and a second copy of the list would
+fail the build for describing it.
+
+**Server paths are not local paths.** Production's Supabase stack really does live
+under a deploy user's home on the VPS and the runbooks have to say so, so that one
+prefix is allowed by name, as are the SSH and cache paths in workflow `run:`
+blocks.
+
+The Linux pattern is anchored to the start of a path token on purpose. The first
+version was not, matched every `src/lib/home/...` import in the codebase, and
+buried the three real leaks under 84 files of noise. `--selftest` holds ten
+fixture lines, half of them the false positives that made that version unusable.
+
+### The social gabarit spec is a derived copy
+
+`docs/design/gabarits-social/` carries `GABARITS-SOCIAL.md` and the two token
+files that the social carousel and reel templates are built from. The spec is
+here because it documents the product's own style; the tokens because the
+application uses them.
+
+**It is generated, never edited here.** The source lives in the private
+production workspace, and a sync script rewrites this copy with the workspace's
+own shelf names stripped. Editing this copy makes the two diverge silently, and
+the workspace is the one that wins. Fix the source, re-sync.
 
 ### Dead code (`npm run check:dead`, CI-blocking)
 

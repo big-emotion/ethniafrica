@@ -4,11 +4,6 @@
     "entity": "peuple",
     "directives": "Voir DIRECTIVES-AFRIK.md pour les regles de redaction completes."
   },
-  "_translation": {
-    "deferred": {
-      "en": "English translation deferred: the etymological chain behind zonbi rests in part on references that are verified bibliographically but not yet read, so the French source is expected to gain precision before it is worth translating."
-    }
-  },
   "id": "PPL_AYISYEN",
   "nameMain": "Ayisyen",
   "languageFamilyId": "FLG_CREOLE",
@@ -40,7 +35,7 @@
         "Ancienne colonie française de Saint-Domingue (partie occidentale de l'île d'Hispaniola), actuel territoire de la République d'Haïti"
       ],
       "unificationsOrDivisions": null,
-      "externalInfluences": "Colonisation française (XVIIe siècle-1804) ; occupation américaine (1915-1934). C'est pendant cette occupation que la figure du zonbi quitte Haïti : un récit de voyage américain publié en 1929 rapporte que des morts auraient été mis au travail dans les champs de canne d'une compagnie sucrière américaine installée près de Port-au-Prince, et le premier long métrage de zombies, sorti aux États-Unis en 1932, en tire son scénario. L'auteur du récit présente l'épisode comme un témoignage qu'on lui rapporte, et conclut lui-même que les zonbi qu'on lui a montrés étaient des malades qu'on faisait travailler.",
+      "externalInfluences": "Colonisation française (XVIIe siècle-1804) ; occupation américaine (1915-1934).",
       "majorHistoricalEvents": "14 août 1791 : cérémonie du Bois Caïman, rituel vodou qui scelle un pacte de résistance parmi les insurgés. 22-23 août 1791 : début de l'insurrection générale des esclaves du Nord. 1791-1804 : guerre d'indépendance haïtienne. 1er janvier 1804 : proclamation de l'indépendance d'Haïti, premier État moderne né d'une révolte d'esclaves et première république noire indépendante."
     },
     "organization": {
@@ -83,12 +78,12 @@
       "majorRites": "Le vodou haïtien structure de nombreux rites majeurs : cérémonies d'invocation des lwa, rites funéraires, initiations.",
       "symbols": "Les vèvè, dessins rituels tracés au sol lors des cérémonies vodou pour invoquer un lwa particulier.",
       "artsAndMusic": null,
-      "spiritualities": "Le vodou haïtien, syncrétisme entre le vodun ouest-africain (fon, éwé), des apports kongo et yoruba, et le catholicisme colonial ; il coexiste avec le christianisme (catholique et protestant) largement pratiqué dans le pays. Le mot zonbi relève de la part kongo de cet assemblage et non de sa part fon-éwé : vodun est un mot gbe, tandis que zonbi remonte à une racine bantoue d'Afrique centrale. Le zonbi est double dans la tradition : un corps que l'on a vidé de son âme, et une âme que l'on retient loin des siens."
+      "spiritualities": "Le vodou haïtien, syncrétisme entre le vodun ouest-africain (fon, éwé), des apports kongo et yoruba, et le catholicisme colonial ; il coexiste avec le christianisme (catholique et protestant) largement pratiqué dans le pays. Le mot zonbi vient de la part kongo de cet assemblage et non de sa part fon-éwé : vodun est un mot gbe qui signifie esprit, tandis que zonbi se rattache aux formes bantoues d'Afrique centrale. Le récit de voyage qui fait entrer le mot en anglais, en 1929, le définit comme un corps humain sans âme, tiré de sa tombe et doté par sorcellerie d'une apparence mécanique de vie."
     },
     "historicalRole": {
       "kingdomsOrChiefdoms": null,
       "relationsWithNeighbors": "Haïti occupe la partie occidentale de l'île d'Hispaniola, partagée avec la République dominicaine, avec laquelle les relations sont marquées par une histoire de tensions (dont le massacre de 1937) et une importante migration transfrontalière contemporaine.",
-      "conflictsOrAlliances": "Guerre d'indépendance contre la France (1791-1804), aboutissant à la première défaite d'une puissance coloniale européenne par une armée composée majoritairement d'anciens esclaves.",
+      "conflictsOrAlliances": "Guerre d'indépendance contre la France (1791-1804), aboutissant à la première défaite d'une puissance coloniale européenne par une armée composée majoritairement d'anciens esclaves. Occupation militaire par les États-Unis de 1915 à 1934. C'est de cette période que sort la figure mondiale du zombie : le récit de voyage de William Seabrook, en 1929, rapporte ce qu'un habitant lui dit de morts mis au travail pour une compagnie sucrière américaine, et le premier long métrage du genre, White Zombie, sort en 1932, dix-septième année de l'occupation.",
       "diaspora": "Diaspora importante, notamment aux États-Unis, en République dominicaine, au Canada, en France et aux Bahamas, formée par plusieurs vagues d'émigration depuis le XXe siècle."
     },
     "demography": {
@@ -133,13 +128,13 @@
         "title": "William Seabrook, The Magic Island, 1929",
         "url": "https://archive.org/details/magicisland00seab",
         "tier": "referenced",
-        "notes": "Récit de voyage publié, par lequel le sens de mort-vivant entre en anglais. L'épisode de la compagnie sucrière est un témoignage oral rapporté par l'auteur, non une observation : il le présente comme le récit que lui fait un interlocuteur haïtien, et conclut lui-même que les zonbi qu'on lui a montrés étaient des malades qu'on faisait travailler."
+        "notes": "Récit de voyage publié, consulté le 10 septembre 2026, par lequel le sens de mort-vivant entre en anglais. L'épisode de la compagnie sucrière est un témoignage que l'auteur dit tenir d'un habitant, non une observation directe, et il conclut lui-même que les zonbi qu'on lui a montrés étaient des malades qu'on faisait travailler."
       },
       {
-        "title": "Occupation des États-Unis en Haïti, 1915-1934 — Office of the Historian, département d'État",
+        "title": "Occupation des États-Unis en Haïti, 1915-1934, Office of the Historian, département d'État",
         "url": "https://history.state.gov/milestones/1914-1920/haiti",
         "tier": "official",
-        "notes": "Service historique officiel du département d'État américain. Donne les bornes de l'occupation."
+        "notes": "Service historique officiel du département d'État des États-Unis, consulté le 10 septembre 2026. Donne les bornes de l'occupation."
       },
       {
         "title": "Floribert Patrick C. Endong, « The Westernization of the African Zombie in Nollywood Films », International Journal of Modern Anthropology, 2022",
@@ -148,5 +143,10 @@
         "notes": "Article de revue à comité de lecture, université de Dschang, Cameroun. Donne l'origine du mot comme controversée et énumère les racines bantoues proposées."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

@@ -1,0 +1,344 @@
+/* ============================================================
+   EthniAfrica — Colour tokens
+   Lifted from src/styles/tokens/color.css (ETNI-21 · UX-DR1).
+
+   Two layers, and a token belongs to exactly one tier:
+     L1 — raw palette (--afh-color-*, --afh-night-*, --afh-cat-*)
+          readable by the semantic tier only
+     L2 — semantic aliases (surface / text / confidence /
+          classification / source / flag-state / accent)
+          readable by any component
+
+   Brand charter §4: --afh-* is the spine. A component that needs
+   an ink asks for --afh-text; one that needs the surface accent
+   asks for --accent-ink or --accent-tint. No component names an
+   --afh-cat-* token or a hex literal.
+   ============================================================ */
+
+:root {
+  /* ─── L1 · Raw palette ─────────────────────────────────────── */
+  /* The ground is parchment. That is the brand (charter §5.1) — it is
+     never traded for a neutral grey. */
+  --afh-color-bg: #fbf7f2;
+  --afh-color-bg-warm: #f5ede0;
+  --afh-color-card: #ffffff;
+  --afh-color-border: #e8dfd3;
+
+  --afh-color-text: #2c2018;
+  --afh-color-text-soft: #746557; /* AA on every warm surface */
+  --afh-color-text-muted: #9b8b7d; /* decorative only — fails AA at caption size */
+
+  --afh-color-gold: #7a5a00;
+  --afh-color-gold-bg: #fdf5e1;
+  --afh-color-green: #2b6b42;
+  --afh-color-green-bg: #e8f5ed;
+  --afh-color-terracotta: #b64e27;
+  --afh-color-terracotta-bg: #fceee8;
+  --afh-color-earth: #7e603e;
+  --afh-color-earth-bg: #f3ebe0;
+  --afh-color-colonial: #9b3030;
+  --afh-color-colonial-bg: #fce8e8;
+
+  --afh-color-amber: #d4a843;
+  --afh-color-azure: #5b8db8;
+  --afh-color-sage: #6baf8d;
+  --afh-color-clay: #b87d5b;
+  --afh-color-slate: #5b6b7b;
+
+  /* Error palette — reserved for Error / Invalid / Broken UI only. */
+  --afh-color-error: #9b3030;
+  --afh-color-error-bg: #fce8e8;
+  --afh-color-error-border: #e5b8b8;
+
+  /* Night surface. Licensed for the atlas stage — the globe band on a
+     fiche — plus the reader's explicit night choice. It is not a second
+     brand ground (charter §5.1). */
+  --afh-night-ground: #120e0a;
+  --afh-night-surface: #1d1710;
+  --afh-night-surface-2: #271e14;
+  --afh-night-line: #3a2e1f;
+  --afh-night-ink: #f1e7d8;
+  --afh-night-ink-2: #c9b99f;
+  --afh-night-ink-3: #8f7f66;
+  --afh-night-ocre: #c9821f;
+  --afh-night-ocre-soft: #e8b96a;
+  --afh-night-teal: #33a390;
+  --afh-night-terre: #c4573f;
+  --afh-night-perv: #7a8ce8;
+  --afh-night-colonial: #d98a7a;
+
+  /* ─── The brand mark's two stops ─────────────────────────────
+     Mark colours, not accents: no surface takes them, no component
+     reads them. Only --afh-gradient-brand does. Allowed on the
+     masthead lockup, the footer lockup, a share card, and the title
+     of a page that names an axis rather than a subject (§5.3). */
+  --afh-brand-flame: #da622f;
+  --afh-brand-gold: #f2ba36;
+  --afh-gradient-brand: linear-gradient(
+    135deg,
+    var(--afh-brand-flame),
+    var(--afh-brand-gold)
+  );
+  --gradient-warm: var(--afh-gradient-brand);
+  --gradient-earth: linear-gradient(180deg, #fbf7f2, #f2e9db); /* @kind color */
+
+  /* ─── Four categorical accents (CVD-validated) ───────────────
+     Each with a -tint (its pale ground) and an -ink (itself as text
+     on that tint — the base hexes are fills and measure 2.28:1 to
+     3.09:1 on their own tint). */
+  --afh-cat-ocre: #c9821f;
+  --afh-cat-ocre-tint: #f1d9ae;
+  --afh-cat-teal: #33a390;
+  --afh-cat-teal-tint: #cbe7df;
+  --afh-cat-terre: #c4573f;
+  --afh-cat-terre-tint: #f0d2c8;
+  --afh-cat-perv: #7a8ce8;
+  --afh-cat-perv-tint: #dce1f9;
+
+  --afh-cat-ocre-ink: #835514;
+  --afh-cat-teal-ink: #226d60;
+  --afh-cat-terre-ink: #974331;
+  --afh-cat-perv-ink: #535f9e;
+
+  /* The night half of the same pair: on a dark card the readable
+     direction is the other one, so only terre needs a lift. */
+  --afh-cat-ocre-ink-night: var(--afh-cat-ocre);
+  --afh-cat-teal-ink-night: var(--afh-cat-teal);
+  --afh-cat-terre-ink-night: #cd725e;
+  --afh-cat-perv-ink-night: var(--afh-cat-perv);
+
+  /* ─── L2 · Semantic aliases ────────────────────────────────── */
+
+  /* Surface */
+  --afh-bg: var(--afh-color-bg);
+  --afh-bg-warm: var(--afh-color-bg-warm);
+  --afh-surface: var(--afh-color-card);
+  --afh-border: var(--afh-color-border);
+
+  /* Text */
+  --afh-text: var(--afh-color-text);
+  --afh-text-soft: var(--afh-color-text-soft);
+  --afh-text-muted: var(--afh-color-text-muted);
+
+  /* The readable colonial tone: the imposed-exonym marker, the
+     unverified-source chip. */
+  --afh-colonial-ink: var(--afh-color-colonial);
+
+  /* Muted surface + foreground pair, AA for normal text. */
+  --afh-muted: var(--afh-color-bg);
+  --afh-fg-muted: var(--afh-color-text-soft);
+
+  /* Accents kept from the V1 country palette */
+  --afh-earth: var(--afh-color-earth);
+  --afh-terracotta: var(--afh-color-terracotta);
+  --afh-gold: var(--afh-color-gold);
+
+  /* Confidence tier — data-lineage badges, sources.
+     high 95–100 % primary · mid 70–94 % mixed · low < 70 % */
+  --afh-conf-high: var(--afh-color-green);
+  --afh-conf-high-bg: var(--afh-color-green-bg);
+  --afh-conf-mid: var(--afh-color-amber);
+  --afh-conf-mid-bg: var(--afh-color-gold-bg);
+  --afh-conf-low: var(--afh-color-clay);
+  --afh-conf-low-bg: var(--afh-color-earth-bg);
+  /* Marks take the fill, type takes the ink: clay reads 3.22:1 on the
+     page ground, so a « Bientôt » chip takes this instead. */
+  --afh-conf-low-ink: var(--afh-color-earth);
+
+  /* Classification state — fiche-level editorial status */
+  --afh-classification-stable: var(--afh-color-green);
+  --afh-classification-stable-bg: var(--afh-color-green-bg);
+  --afh-classification-contested: var(--afh-color-amber);
+  --afh-classification-contested-bg: var(--afh-color-gold-bg);
+  --afh-classification-disputed: var(--afh-color-colonial);
+  --afh-classification-disputed-bg: var(--afh-color-colonial-bg);
+
+  /* Source tier — authority signal for citations */
+  --afh-source-primary: var(--afh-color-green);
+  --afh-source-primary-bg: var(--afh-color-green-bg);
+  --afh-source-secondary: var(--afh-color-azure);
+  --afh-source-secondary-bg: #e6f0f7;
+  --afh-source-ai-flagged: var(--afh-color-clay);
+  --afh-source-ai-flagged-bg: var(--afh-color-earth-bg);
+
+  /* Flag state — moderation / report-error / open-issue */
+  --afh-flag-open: var(--afh-color-terracotta);
+  --afh-flag-open-bg: var(--afh-color-terracotta-bg);
+  --afh-flag-resolved: var(--afh-color-green);
+  --afh-flag-resolved-bg: var(--afh-color-green-bg);
+
+  /* Error — reserved */
+  --afh-error: var(--afh-color-error);
+  --afh-error-bg: var(--afh-color-error-bg);
+  --afh-error-border: var(--afh-color-error-border);
+
+  /* Relation type — RelationTypeBadge, ego-network edges. No red. */
+  --afh-relation-linguistic: var(--afh-color-green);
+  --afh-relation-migratory: var(--afh-color-earth);
+  --afh-relation-commercial: var(--afh-color-gold);
+  --afh-relation-religious: var(--afh-color-terracotta);
+  --afh-relation-derived-dash: 4 3; /* @kind other */
+
+  /* Atlas — basemap and migration overlays */
+  --afh-atlas-land: var(--afh-color-earth-bg);
+  --afh-atlas-coastline: var(--afh-color-earth);
+  --afh-atlas-path-inactive: var(--afh-color-text-muted);
+  --afh-atlas-path-active: var(--afh-color-terracotta);
+  --afh-atlas-path-selected: var(--afh-color-gold);
+
+  /* Atlas — the shared textured sphere, night stage */
+  --afh-globe-ocean: #120e0a;
+  --afh-globe-graticule: #42341f;
+  --afh-globe-graticule-major: #5d4a2e;
+  --afh-globe-land: #6b4a22;
+  --afh-globe-land-far: rgba(241, 231, 216, 0.4);
+  --afh-globe-coast: var(--afh-night-ocre-soft);
+  --afh-globe-equator: var(--afh-cat-perv);
+  --afh-globe-tissot: rgba(51, 163, 144, 0.3);
+  --afh-globe-tissot-edge: var(--afh-cat-teal);
+  --afh-globe-border: rgba(232, 185, 106, 0.28);
+
+  /* Atlas — the same sphere on parchment. Role for role with the night
+     group, so nothing downstream learns which surface it paints. */
+  --afh-globe-parchment-ocean: #e6dcc7;
+  --afh-globe-parchment-graticule: #cdbc9f;
+  --afh-globe-parchment-graticule-major: #b09a78;
+  --afh-globe-parchment-land: var(--afh-color-terracotta);
+  --afh-globe-parchment-land-far: rgba(44, 32, 24, 0.16);
+  --afh-globe-parchment-coast: #6b3a1c;
+  --afh-globe-parchment-equator: var(--afh-cat-perv);
+  --afh-globe-parchment-tissot: rgba(51, 163, 144, 0.28);
+  --afh-globe-parchment-tissot-edge: var(--afh-cat-teal);
+  --afh-globe-parchment-border: rgba(107, 58, 28, 0.26);
+
+  /* ─── Accent scoping — the ONLY path to an accent colour ─────
+     A page or route wrapper scopes an accent by overriding --accent
+     and --accent-tint to one of the --afh-cat-* pairs. Components
+     consume var(--accent) / var(--accent-tint) / var(--accent-ink)
+     and never reference an --afh-cat-* token directly.
+
+     --accent-foreground is text on the full-strength fill, and it is
+     the dark ink, not white: white measures 3.10–3.14:1 on every
+     accent fill in the product. */
+  --accent: var(--afh-cat-ocre);
+  --accent-tint: var(--afh-cat-ocre-tint);
+  --accent-ink: var(--afh-cat-ocre-ink);
+  --accent-foreground: #1a1208;
+
+  /* Display type carries its accent as text, not as a fill. */
+  --afh-display-accent: var(--afh-cat-ocre-ink);
+
+  /* ─── The shadcn layer ───────────────────────────────────────
+     An implementation detail of the ui/ primitives, and each entry is
+     an alias onto an --afh-* token, never an independent value
+     (charter §4). Nothing outside a primitive reads one. */
+  --radius: 0.75rem; /* @kind radius */
+  --ui-accent: 42 88% 58%; /* @kind color */
+  --ui-accent-foreground: 25 25% 15%; /* @kind color */
+}
+
+/* ─── Night theme ─────────────────────────────────────────────────
+   The reader's choice between parchment and night, applied site-wide
+   by `.dark` on <html>. `.afh-on-night` is the same swap scoped to a
+   subtree — the home's hero band is night whatever the reader chose,
+   because a lit globe only reads as a body against a dark sky.
+
+   Only the L2 aliases are rebound. Nothing below learns which theme
+   it is under. */
+.dark,
+.afh-on-night {
+  --afh-bg: var(--afh-night-ground);
+  --afh-bg-warm: var(--afh-night-surface);
+  --afh-surface: var(--afh-night-surface-2);
+  --afh-border: var(--afh-night-line);
+
+  --afh-text: var(--afh-night-ink);
+  --afh-text-soft: var(--afh-night-ink-2);
+  --afh-text-muted: var(--afh-night-ink-3);
+
+  --afh-colonial-ink: var(--afh-night-colonial);
+
+  --afh-muted: var(--afh-night-surface);
+  --afh-fg-muted: var(--afh-night-ink-2);
+
+  --accent-foreground: #1a1208;
+  --afh-display-accent: var(--afh-night-ocre-soft);
+  --gradient-earth: linear-gradient(180deg, #120e0a, #0d0a07); /* @kind color */
+
+  /* `color` resolves once on body and is then inherited, so a night
+     subtree needs the ink stated here or anything that never set a
+     colour of its own stays parchment-dark. */
+  color: var(--afh-text);
+}
+
+/* ─── Accent scope wrappers ───────────────────────────────────────
+   The sanctioned way to put a page or a subtree on a different accent.
+   Scoping lives here rather than in components, so a route changes its
+   accent by swapping one class. A page has one accent (charter §5.2).
+
+   The axis mapping: L'atlas → ocre · Les dossiers → teal · Jouer → perv. */
+.afh-accent-ocre {
+  --accent: var(--afh-cat-ocre);
+  --accent-tint: var(--afh-cat-ocre-tint);
+  --accent-ink: var(--afh-cat-ocre-ink);
+}
+
+.afh-accent-teal {
+  --accent: var(--afh-cat-teal);
+  --accent-tint: var(--afh-cat-teal-tint);
+  --accent-ink: var(--afh-cat-teal-ink);
+}
+
+/* Terre doubles as the fiche's imposed-exonym accent — available, but
+   not for a whole-page scope. */
+.afh-accent-terre {
+  --accent: var(--afh-cat-terre);
+  --accent-tint: var(--afh-cat-terre-tint);
+  --accent-ink: var(--afh-cat-terre-ink);
+  --accent-foreground: #000;
+}
+
+.afh-accent-perv {
+  --accent: var(--afh-cat-perv);
+  --accent-tint: var(--afh-cat-perv-tint);
+  --accent-ink: var(--afh-cat-perv-ink);
+}
+
+/* A person is not a fifth peer of the four cartographic entity kinds,
+   so a person result takes the site's own achromatic palette rather
+   than a fifth hue. */
+.afh-accent-neutral {
+  --accent: var(--afh-text-muted);
+  --accent-tint: var(--afh-bg-warm);
+  --accent-ink: var(--afh-text-soft);
+}
+
+/* The ink half of each pair flips with the surface, so a component
+   still only ever reads --accent-ink. */
+.dark .afh-accent-ocre,
+.afh-on-night .afh-accent-ocre,
+.afh-accent-ocre.dark,
+.afh-accent-ocre.afh-on-night {
+  --accent-ink: var(--afh-cat-ocre-ink-night);
+}
+
+.dark .afh-accent-teal,
+.afh-on-night .afh-accent-teal,
+.afh-accent-teal.dark,
+.afh-accent-teal.afh-on-night {
+  --accent-ink: var(--afh-cat-teal-ink-night);
+}
+
+.dark .afh-accent-terre,
+.afh-on-night .afh-accent-terre,
+.afh-accent-terre.dark,
+.afh-accent-terre.afh-on-night {
+  --accent-ink: var(--afh-cat-terre-ink-night);
+}
+
+.dark .afh-accent-perv,
+.afh-on-night .afh-accent-perv,
+.afh-accent-perv.dark,
+.afh-accent-perv.afh-on-night {
+  --accent-ink: var(--afh-cat-perv-ink-night);
+}
