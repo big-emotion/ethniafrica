@@ -78,12 +78,12 @@
       "majorRites": "Le vodou haïtien structure de nombreux rites majeurs : cérémonies d'invocation des lwa, rites funéraires, initiations.",
       "symbols": "Les vèvè, dessins rituels tracés au sol lors des cérémonies vodou pour invoquer un lwa particulier.",
       "artsAndMusic": null,
-      "spiritualities": "Le vodou haïtien, syncrétisme entre le vodun ouest-africain (fon, éwé), des apports kongo et yoruba, et le catholicisme colonial ; il coexiste avec le christianisme (catholique et protestant) largement pratiqué dans le pays."
+      "spiritualities": "Le vodou haïtien, syncrétisme entre le vodun ouest-africain (fon, éwé), des apports kongo et yoruba, et le catholicisme colonial ; il coexiste avec le christianisme (catholique et protestant) largement pratiqué dans le pays. Le mot zonbi vient de la part kongo de cet assemblage et non de sa part fon-éwé : vodun est un mot gbe qui signifie esprit, tandis que zonbi se rattache aux formes bantoues d'Afrique centrale. Le récit de voyage qui fait entrer le mot en anglais, en 1929, le définit comme un corps humain sans âme, tiré de sa tombe et doté par sorcellerie d'une apparence mécanique de vie."
     },
     "historicalRole": {
       "kingdomsOrChiefdoms": null,
       "relationsWithNeighbors": "Haïti occupe la partie occidentale de l'île d'Hispaniola, partagée avec la République dominicaine, avec laquelle les relations sont marquées par une histoire de tensions (dont le massacre de 1937) et une importante migration transfrontalière contemporaine.",
-      "conflictsOrAlliances": "Guerre d'indépendance contre la France (1791-1804), aboutissant à la première défaite d'une puissance coloniale européenne par une armée composée majoritairement d'anciens esclaves.",
+      "conflictsOrAlliances": "Guerre d'indépendance contre la France (1791-1804), aboutissant à la première défaite d'une puissance coloniale européenne par une armée composée majoritairement d'anciens esclaves. Occupation militaire par les États-Unis de 1915 à 1934. C'est de cette période que sort la figure mondiale du zombie : le récit de voyage de William Seabrook, en 1929, rapporte ce qu'un habitant lui dit de morts mis au travail pour une compagnie sucrière américaine, et le premier long métrage du genre, White Zombie, sort en 1932, dix-septième année de l'occupation.",
       "diaspora": "Diaspora importante, notamment aux États-Unis, en République dominicaine, au Canada, en France et aux Bahamas, formée par plusieurs vagues d'émigration depuis le XXe siècle."
     },
     "demography": {
@@ -123,7 +123,24 @@
         "url": "https://www.britannica.com/topic/Vodou",
         "tier": "referenced",
         "notes": "Encyclopedic reference work avec auteurs identifiés, utilisé pour le contexte religieux et culturel général."
+      },
+      {
+        "title": "William Seabrook, The Magic Island, 1929",
+        "url": "https://archive.org/details/magicisland00seab",
+        "tier": "referenced",
+        "notes": "Récit de voyage publié, consulté le 10 septembre 2026, par lequel le sens de mort-vivant entre en anglais. L'épisode de la compagnie sucrière est un témoignage que l'auteur dit tenir d'un habitant, non une observation directe."
+      },
+      {
+        "title": "Occupation des États-Unis en Haïti, 1915-1934, Office of the Historian, département d'État",
+        "url": "https://history.state.gov/milestones/1914-1920/haiti",
+        "tier": "official",
+        "notes": "Service historique officiel du département d'État des États-Unis, consulté le 10 septembre 2026. Donne les bornes de l'occupation."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }
