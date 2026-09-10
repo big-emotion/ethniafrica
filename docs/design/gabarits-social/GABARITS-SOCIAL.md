@@ -151,13 +151,22 @@ dans le calcul de contraste : c'est le voile qui doit atteindre 4,5:1.
 ### C — Cartouche
 *Chiffre, ou corps de plus de 110 signes. L'image ne porte aucun texte.*
 
-- Bande d'image en haut : **42 %** (carrousel paramétrable) ou **49 %** (reel),
-  aucun texte dessus hormis le bandeau.
+- Bande d'image en haut : **49 % de la hauteur de la carte**, dans les deux formats.
+  Aucun texte dessus hormis le bandeau. Quand la bande de sous-titre est active en
+  9:16, elle descend à **30 %** — le texte prime sur l'image, jamais l'inverse.
 - Aplat de fond en dessous, texte dedans : titre Anton 110–124 → précision 34–38 →
   filet supérieur 2 px `rgba(232,185,106,.35)` → corps 42–46 / 800.
 - Crédit + logo épinglés en bas.
-- **C absorbe la différence de hauteur entre 4:5 et 9:16** : l'image ne bouge pas,
-  seul l'aplat grandit. C'est la disposition la plus stable entre formats.
+- **C absorbe la différence de hauteur entre 4:5 et 9:16** : la bande garde sa
+  proportion, et tout le surplus de hauteur va à l'aplat, qui n'a aucune contrainte
+  de composition. Le cadrage de l'image est identique dans les deux formats — c'est
+  la carte qui s'allonge, pas la photographie qui se recompose. C'est la disposition
+  la plus stable entre formats.
+
+> **Une bande se mesure en pourcentage de la carte, jamais en pixels fixes.** Une
+> hauteur fixe donnerait 42 % en 4:5 et 29 % en 9:16 : la même carte ne se
+> reconnaîtrait pas d'un format à l'autre, ce qui annule la raison d'être d'un
+> système unique. B tient 37 % pour le même motif.
 
 ---
 
@@ -262,10 +271,12 @@ ethniafrica.com · @ethniafrica
         "fichier": "01-couverture-carte-murale-bacon-recadree.jpg",
         "w": 3200, "h": 4000,
         "cadrage": "50% 40%",
+        "identite": "une carte murale du monde en projection de Mercator, édition scolaire britannique",
         "credit": "G. W. Bacon, Londres, v. 1906",
         "depot": "Bibliothèque nationale du pays de Galles",
         "licence": "domaine public"
       },
+      "coupe": null,
       "disposition": "auto"
     }
   ]
@@ -273,6 +284,15 @@ ethniafrica.com · @ethniafrica
 ```
 
 `disposition` accepte `auto`, `A`, `B`, `C`. `auto` applique §6.
+
+`image.identite` **décrit ce que l'image montre**, en une phrase, sans nommer son
+auteur ni sa licence. C'est ce que la porte 2 compare au crédit : sans lui, la porte
+la plus utile du lot s'abstient. Champ obligatoire pour tout nouveau sujet.
+
+`coupe` force les retours à la ligne d'un titre. `null` laisse le moteur couper sur la
+mesure. Ne l'employer que là où la coupe **porte du sens** — une énumération dont les
+groupes ne doivent pas se mélanger. Une coupe posée pour l'esthétique se périme au
+premier changement de format.
 
 ---
 
