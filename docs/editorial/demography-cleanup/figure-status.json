@@ -1,0 +1,6986 @@
+[
+  {
+    "id": "PPL_AARI",
+    "totalPopulation": 380000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ABE",
+    "totalPopulation": 350000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ABIDJI",
+    "totalPopulation": 111000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ABOURE",
+    "totalPopulation": 121000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ABRON",
+    "totalPopulation": 1500000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ACHOLI",
+    "totalPopulation": 2000000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ADELE",
+    "totalPopulation": 37400,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ADIOUKROU",
+    "totalPopulation": 155000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ADJA",
+    "totalPopulation": 1300000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AFAR",
+    "totalPopulation": 3350000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AFEMAI",
+    "totalPopulation": 2000000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AFRICAINS_D_ORIGINE_RECENTE",
+    "totalPopulation": 10869,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_AGAW",
+    "totalPopulation": 1100000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AGNI",
+    "totalPopulation": 1280000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AHANTA",
+    "totalPopulation": 200000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_AIT_ATTA",
+    "totalPopulation": 500000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AIT_HDZ",
+    "totalPopulation": 50000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AIZI",
+    "totalPopulation": 32800,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AKA",
+    "totalPopulation": 30000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AKAN",
+    "totalPopulation": 25000000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AKUAPEM",
+    "totalPopulation": 860000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AKYE",
+    "totalPopulation": 838000,
+    "signals": ["aggregated-estimate", "projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AKYEM",
+    "totalPopulation": 1128000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ALABA",
+    "totalPopulation": 448000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ALAGO",
+    "totalPopulation": 115000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ALAGWA",
+    "totalPopulation": 66000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ALLADIAN",
+    "totalPopulation": 53000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ALUR",
+    "totalPopulation": 1800000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_AMAZIGH_MACRO",
+    "totalPopulation": 35000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_AMBO",
+    "totalPopulation": 4000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AMBUNDU",
+    "totalPopulation": 9700000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_AMERICANO_LIBERIENS",
+    "totalPopulation": 150000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AMHARA",
+    "totalPopulation": 23000000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ANAFRO_CRIOULO",
+    "totalPopulation": 20000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ANAGO",
+    "totalPopulation": 950000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ANGOLAR",
+    "totalPopulation": 16000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ANLO",
+    "totalPopulation": 900000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ANNANG",
+    "totalPopulation": 3294000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ANNOBON",
+    "totalPopulation": 9200,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ANTAKARANA",
+    "totalPopulation": 420000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ANTAMBAHOAKA",
+    "totalPopulation": 125000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ANTANDROY",
+    "totalPopulation": 1300000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ANTSALOVA",
+    "totalPopulation": 120000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ANUAK",
+    "totalPopulation": 250000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ANUM",
+    "totalPopulation": 83000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ANYI",
+    "totalPopulation": 1970000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AOWIN",
+    "totalPopulation": 250000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ARABES_AFRIQUE",
+    "totalPopulation": 185000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ARABES_SOMALIENS",
+    "totalPopulation": 7800,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ARBORE",
+    "totalPopulation": 11000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ARGOBBA",
+    "totalPopulation": 210000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ARI",
+    "totalPopulation": 465000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ARINGA",
+    "totalPopulation": 550000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ARSII",
+    "totalPopulation": 7435000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ASANTE",
+    "totalPopulation": 11000000,
+    "signals": ["census", "aggregated-estimate", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ASHANTI",
+    "totalPopulation": 10000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ASSIN",
+    "totalPopulation": 350000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ATLANTIQUE_MACRO",
+    "totalPopulation": 30000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ATTIE",
+    "totalPopulation": 838000,
+    "signals": ["census"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_AUSTRO_MACRO",
+    "totalPopulation": 29600000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AUTRES_PEUPLES_BANTOUS",
+    "totalPopulation": 800000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AVATIME",
+    "totalPopulation": 31000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_AYISYEN",
+    "totalPopulation": 11900000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_AZANDE_SUD",
+    "totalPopulation": 1200000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BABUR",
+    "totalPopulation": 300000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BADE",
+    "totalPopulation": 380000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BAFUTA",
+    "totalPopulation": 151000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BAGA",
+    "totalPopulation": 80000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BAGANDA",
+    "totalPopulation": 7000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BAGGAR",
+    "totalPopulation": 6500000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BAINOUK",
+    "totalPopulation": 75000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BAKIGA",
+    "totalPopulation": 3200000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BAKOSSI",
+    "totalPopulation": 199000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BAKWE",
+    "totalPopulation": 24000,
+    "signals": ["aggregated-estimate", "projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BAKWERI",
+    "totalPopulation": 230000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BALANTA",
+    "totalPopulation": 600000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BAMBARA",
+    "totalPopulation": 7787000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BAMILEKE",
+    "totalPopulation": 3500000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BANDA",
+    "totalPopulation": 1500000,
+    "signals": ["aggregated-estimate", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BANTOUS_SOMALIENS",
+    "totalPopulation": 1200000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BANTU",
+    "totalPopulation": 420000000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BANYANKOLE",
+    "totalPopulation": 4200000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BANYORO",
+    "totalPopulation": 1469000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BAOULE",
+    "totalPopulation": 5000000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BARIBA",
+    "totalPopulation": 1100000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BARMA",
+    "totalPopulation": 90000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BASKETO",
+    "totalPopulation": 110000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BASOGA",
+    "totalPopulation": 3500000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BASSA",
+    "totalPopulation": 841000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BASSA_CAM",
+    "totalPopulation": 800000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BASSA_NIGERIA",
+    "totalPopulation": 175000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BASSARI",
+    "totalPopulation": 22000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BATOORO",
+    "totalPopulation": 1200000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BEJA",
+    "totalPopulation": 2900000,
+    "signals": ["aggregated-estimate", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BELANDA",
+    "totalPopulation": 60000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BELLE",
+    "totalPopulation": 13000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BEMBA",
+    "totalPopulation": 6600000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BEMBE",
+    "totalPopulation": 900000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BENA",
+    "totalPopulation": 1474000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BENCH",
+    "totalPopulation": 500000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BENDE",
+    "totalPopulation": 63000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BENOUECONGO_MACRO",
+    "totalPopulation": 500000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BERI",
+    "totalPopulation": 550000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BEROM",
+    "totalPopulation": 1508000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BERTA",
+    "totalPopulation": 430000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BETE",
+    "totalPopulation": 994000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BETI",
+    "totalPopulation": 8000000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BETI_FANG",
+    "totalPopulation": 3500000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BETSILEO",
+    "totalPopulation": 2100000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BETSIMISARAKA",
+    "totalPopulation": 3900000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BEZANOZANO",
+    "totalPopulation": 270000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BIDEYAT",
+    "totalPopulation": 30000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BIDYOGO",
+    "totalPopulation": 40000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BIJAGO_BIDYOGO",
+    "totalPopulation": 43000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BIJAOGO",
+    "totalPopulation": 43000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BILEN",
+    "totalPopulation": 186000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BILLE",
+    "totalPopulation": 85000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BIMOBA",
+    "totalPopulation": 756000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BISA",
+    "totalPopulation": 436000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BISSA",
+    "totalPopulation": 1206000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BOBO",
+    "totalPopulation": 230000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BODI",
+    "totalPopulation": 222000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BOLIWA",
+    "totalPopulation": 280000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BONDEI",
+    "totalPopulation": 183000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BONGO",
+    "totalPopulation": 21000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BONO",
+    "totalPopulation": 1500000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BORANA",
+    "totalPopulation": 1200000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BOSO",
+    "totalPopulation": 247000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BRONG",
+    "totalPopulation": 1300000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BUBI",
+    "totalPopulation": 136000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BUDUMA",
+    "totalPopulation": 155000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BUGAKWE",
+    "totalPopulation": 3500,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BULSA",
+    "totalPopulation": 267575,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BULU",
+    "totalPopulation": 1390000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BURA",
+    "totalPopulation": 500000,
+    "signals": ["census", "aggregated-estimate", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BURJI",
+    "totalPopulation": 165000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BURUNGE",
+    "totalPopulation": 35000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_BUSANSI",
+    "totalPopulation": 600000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BUSSA",
+    "totalPopulation": 1100000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_BWABA",
+    "totalPopulation": 300000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_CHAGA",
+    "totalPopulation": 2000000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_CHAOUI",
+    "totalPopulation": 2870000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_CHARA",
+    "totalPopulation": 20000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_CHENOUA",
+    "totalPopulation": 111000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_CHEWA",
+    "totalPopulation": 12000000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_CHLEUH",
+    "totalPopulation": 8000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_CHOKWE",
+    "totalPopulation": 4162000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_CHOPI",
+    "totalPopulation": 1521000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_CHUMBURUNG",
+    "totalPopulation": 69000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_COMORIEN",
+    "totalPopulation": 1200000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_COPTES",
+    "totalPopulation": null,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_CREOLE_CABOVERDIEN",
+    "totalPopulation": 2000000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_CREOLE_GUADELOUPE",
+    "totalPopulation": 380400,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_CREOLE_MACRO",
+    "totalPopulation": 4000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_CREOLE_MAURICE",
+    "totalPopulation": 370000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_CREOLE_REUNION",
+    "totalPopulation": 896000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_CREOLE_SEYCHELLES",
+    "totalPopulation": 100600,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DAFING",
+    "totalPopulation": 120000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_DAGAABA",
+    "totalPopulation": 1200000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_DAGARA",
+    "totalPopulation": 1850000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_DAGOMBA",
+    "totalPopulation": 3200000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DAMARA",
+    "totalPopulation": 169254,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_DAN",
+    "totalPopulation": 2230000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DANGME",
+    "totalPopulation": 1401000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DASANECH",
+    "totalPopulation": 117000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DATOGA",
+    "totalPopulation": 150000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DAWRO",
+    "totalPopulation": 700000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DAZA",
+    "totalPopulation": 820000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_DEI",
+    "totalPopulation": 15000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DENDI",
+    "totalPopulation": 440000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DENKYIRA",
+    "totalPopulation": 200000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_DIDA",
+    "totalPopulation": 457000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_DIGO",
+    "totalPopulation": 500000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DIME",
+    "totalPopulation": 7000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_DINKA",
+    "totalPopulation": 4500000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_DIOLA",
+    "totalPopulation": 700000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DIOULA",
+    "totalPopulation": 4937000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DIZI",
+    "totalPopulation": 42000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DOE",
+    "totalPopulation": 40000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DOGON",
+    "totalPopulation": 1380000,
+    "signals": ["aggregated-estimate", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DORZE",
+    "totalPopulation": 45000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_DUALA",
+    "totalPopulation": 350000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_DYULA",
+    "totalPopulation": 5000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_EBIRA",
+    "totalPopulation": 2700000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_EBRIE",
+    "totalPopulation": 150000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_EDO",
+    "totalPopulation": 2500000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_EFIK",
+    "totalPopulation": 820000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_EHOTILE",
+    "totalPopulation": 10000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_EKET",
+    "totalPopulation": 505000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_EKPEYE",
+    "totalPopulation": 260000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_EL_MOLO",
+    "totalPopulation": 1200,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_EMBU",
+    "totalPopulation": 404801,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ESAN",
+    "totalPopulation": 1400000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_EWE",
+    "totalPopulation": 7000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_EWONDO",
+    "totalPopulation": 2050000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_FADASHI",
+    "totalPopulation": 12000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_FANG",
+    "totalPopulation": 2295900,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_FANG_EQGUINEE",
+    "totalPopulation": 1575000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_FANG_GABON",
+    "totalPopulation": 1200000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_FANTE",
+    "totalPopulation": 4500000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_FIPA",
+    "totalPopulation": 423000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_FON",
+    "totalPopulation": 4000000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_FORROS",
+    "totalPopulation": 86000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_FOUR",
+    "totalPopulation": 6500000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_FRAFRA",
+    "totalPopulation": 1050000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_FRANCO_MAURICIENS",
+    "totalPopulation": 25000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_FRANCO_SEYCHELLOIS",
+    "totalPopulation": 17000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_FULA",
+    "totalPopulation": 40000000,
+    "signals": ["census", "aggregated-estimate", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_FULA_FORET",
+    "totalPopulation": 2000000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_FULA_NOMADES",
+    "totalPopulation": 4000000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_FULA_SAHEL",
+    "totalPopulation": 30000000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_FULANI",
+    "totalPopulation": 35000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_FULANI_MASSINA",
+    "totalPopulation": 2000000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_FURU",
+    "totalPopulation": 15000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GA",
+    "totalPopulation": 1500000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GA_DANGME",
+    "totalPopulation": 2800000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GABRA",
+    "totalPopulation": 214000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GAMO",
+    "totalPopulation": 2128000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GARIFUNA",
+    "totalPopulation": 222000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GAWWADA",
+    "totalPopulation": 50000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GBAGYI",
+    "totalPopulation": 4000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GBAN",
+    "totalPopulation": 85000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GBANDI",
+    "totalPopulation": 180000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GBAYA",
+    "totalPopulation": 1200000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GBELE",
+    "totalPopulation": 22000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GBODJIBO",
+    "totalPopulation": 20000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GEDEO",
+    "totalPopulation": 1897000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GHOMARA",
+    "totalPopulation": 54000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GIDOLE",
+    "totalPopulation": 117000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GIO",
+    "totalPopulation": 700000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GIZIGA",
+    "totalPopulation": 270000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GODIE",
+    "totalPopulation": 61000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GOFA",
+    "totalPopulation": 430000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GOGO",
+    "totalPopulation": 3035000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GOLA",
+    "totalPopulation": 310000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GONA",
+    "totalPopulation": 4000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GONJA",
+    "totalPopulation": 384000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GOROWA",
+    "totalPopulation": 145000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GOURMANTCHE",
+    "totalPopulation": 1805000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GOURO",
+    "totalPopulation": 800000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GOUROUNSI",
+    "totalPopulation": 4700000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GOVA",
+    "totalPopulation": 64500,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GREBO",
+    "totalPopulation": 528000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GUAN",
+    "totalPopulation": 1260000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GUERE",
+    "totalPopulation": 700000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GULLAH",
+    "totalPopulation": 200000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GUMUZ",
+    "totalPopulation": 250000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GUR_MACRO",
+    "totalPopulation": 30000000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GURAGE",
+    "totalPopulation": 4000000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GURMA",
+    "totalPopulation": 3500000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_GUWA",
+    "totalPopulation": 5000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_GWANDARA",
+    "totalPopulation": 200000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_HA",
+    "totalPopulation": 1850000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_HABESHA",
+    "totalPopulation": 40000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_HADIMU",
+    "totalPopulation": 200000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_HADIYA",
+    "totalPopulation": 1800000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_HADZA",
+    "totalPopulation": 1400,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_HAIOM",
+    "totalPopulation": 55000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_HALPULAAR",
+    "totalPopulation": 1150000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_HAMMER",
+    "totalPopulation": 56000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_HARARI",
+    "totalPopulation": 60000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_HARATINE",
+    "totalPopulation": 1800000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_HAUSA",
+    "totalPopulation": 86000000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_HAVU",
+    "totalPopulation": 510000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_HAYA",
+    "totalPopulation": 1700000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_HEHE",
+    "totalPopulation": 1650000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_HERERO",
+    "totalPopulation": 330000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_HIMBA",
+    "totalPopulation": 55000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_HOA",
+    "totalPopulation": 300,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_HOBA",
+    "totalPopulation": 80000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_HUMBE",
+    "totalPopulation": 834000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_HUNDE",
+    "totalPopulation": 950000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_HUTU_BURUNDI",
+    "totalPopulation": 10500000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_IBIBIO",
+    "totalPopulation": 6000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_IDOMA",
+    "totalPopulation": 3500000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_IGALA",
+    "totalPopulation": 4000000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_IGBO",
+    "totalPopulation": 39365000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_IGEDE",
+    "totalPopulation": 526000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_IJAW",
+    "totalPopulation": 15000000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ILA",
+    "totalPopulation": 215000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_INDO_MAURICIENS",
+    "totalPopulation": 850000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_INDO_SEYCHELLOIS",
+    "totalPopulation": 12000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_IRAMBA",
+    "totalPopulation": 955000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_IRAQW",
+    "totalPopulation": 1000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_IROB",
+    "totalPopulation": 202000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ISANZU",
+    "totalPopulation": 106000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ISOKO",
+    "totalPopulation": 700000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ITESO",
+    "totalPopulation": 4461000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ITSEKIRI",
+    "totalPopulation": 1100000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_IWA",
+    "totalPopulation": 9300,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_JAHANKA",
+    "totalPopulation": 60000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_JAMAICAN_MAROON",
+    "totalPopulation": 8000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_JARAWA",
+    "totalPopulation": 500000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_JIE",
+    "totalPopulation": 180000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_JIE_SUD",
+    "totalPopulation": 12000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_JITA",
+    "totalPopulation": 414000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_JOLA",
+    "totalPopulation": 900000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_JOPADHOLA",
+    "totalPopulation": 750000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_JUHOANSI",
+    "totalPopulation": 15000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_JUKUN",
+    "totalPopulation": 250000,
+    "signals": ["aggregated-estimate", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KABYE",
+    "totalPopulation": 800000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KABYLE",
+    "totalPopulation": 10000000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KACHAMA",
+    "totalPopulation": 9000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KAFA",
+    "totalPopulation": 1390000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KAGURU",
+    "totalPopulation": 468000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KAKWA",
+    "totalPopulation": 200000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KALAIBARI",
+    "totalPopulation": 632000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KALANGA",
+    "totalPopulation": 1550000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KALENJIN",
+    "totalPopulation": 7000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KAMBA",
+    "totalPopulation": 4900000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KAMBATA",
+    "totalPopulation": 989000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KAMIR",
+    "totalPopulation": 213000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KANEMBU",
+    "totalPopulation": 1815270,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KANURI",
+    "totalPopulation": 9700000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KAONDE",
+    "totalPopulation": 454000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KARA",
+    "totalPopulation": 282000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KARAMOJONG",
+    "totalPopulation": 700000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KARANGA",
+    "totalPopulation": 4105000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KARANGA_ZIM",
+    "totalPopulation": 4105000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KARO",
+    "totalPopulation": 2800,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KASENA",
+    "totalPopulation": 250000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KAVANGO",
+    "totalPopulation": 360000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KENGA",
+    "totalPopulation": 139000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KERA",
+    "totalPopulation": 147000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KEREWE",
+    "totalPopulation": 241000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KGALAGADI",
+    "totalPopulation": 85000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KHAINAI",
+    "totalPopulation": 1300,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KHOE_MACRO",
+    "totalPopulation": 430000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KHOIKHOI",
+    "totalPopulation": 1000000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KHOISAN_CREOLE",
+    "totalPopulation": 300000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KIKONGO",
+    "totalPopulation": 10000000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KIKUYU",
+    "totalPopulation": 8500000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KIMBU",
+    "totalPopulation": 256000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KINGA",
+    "totalPopulation": 296000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KINYARWANDA",
+    "totalPopulation": 14600000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KIRDI",
+    "totalPopulation": 3500000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KIRUNDI_HUTU",
+    "totalPopulation": 22200000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KIRUNDI_TUTSI",
+    "totalPopulation": 4600000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KISI",
+    "totalPopulation": 21000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KISII",
+    "totalPopulation": 3100000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KISSI",
+    "totalPopulation": 1224545,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KLAO",
+    "totalPopulation": 280000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KODIA_KROU",
+    "totalPopulation": 2000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KONGO",
+    "totalPopulation": 11000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KONGO_BRAZZA",
+    "totalPopulation": 2600000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KONGO_CABINDA",
+    "totalPopulation": 750000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KONGO_MAYOMBE",
+    "totalPopulation": 600000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KONGO_SUD",
+    "totalPopulation": 5500000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KONKOMBA",
+    "totalPopulation": 1265000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KONO",
+    "totalPopulation": 400000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KONONGO",
+    "totalPopulation": 167000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KONSO",
+    "totalPopulation": 350000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KOORETE",
+    "totalPopulation": 100000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KOREKORE",
+    "totalPopulation": 1600000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KOREKORE_ZIM",
+    "totalPopulation": 1600000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KOTA",
+    "totalPopulation": 50000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KOULANGO",
+    "totalPopulation": 364000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KOULOUGO",
+    "totalPopulation": 315000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KOUYA",
+    "totalPopulation": 12000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KOUYOU",
+    "totalPopulation": 10000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KOUZIE",
+    "totalPopulation": 4200,
+    "signals": ["census"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KOYRA",
+    "totalPopulation": 20000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KOYRA_BORO_SEYO",
+    "totalPopulation": 1340000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KOYRA_CHIINI",
+    "totalPopulation": 250000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KPANA",
+    "totalPopulation": 20000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KPELLE",
+    "totalPopulation": 1200000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KRACHI",
+    "totalPopulation": 200000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KRAHN",
+    "totalPopulation": 450000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KREDA",
+    "totalPopulation": 100000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KRESH",
+    "totalPopulation": 80000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KRIO",
+    "totalPopulation": 500000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KROBO",
+    "totalPopulation": 400000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KROU_MACRO",
+    "totalPopulation": 8000000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KROUMEN",
+    "totalPopulation": 65000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KRU",
+    "totalPopulation": 447000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KUBA",
+    "totalPopulation": 250000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KULLO",
+    "totalPopulation": 1044000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KUMAM",
+    "totalPopulation": 720000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KUNAMA",
+    "totalPopulation": 270000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KUNDA",
+    "totalPopulation": 250000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KUNG",
+    "totalPopulation": 45000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KURANKO",
+    "totalPopulation": 597000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KURTEY",
+    "totalPopulation": 45000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KUSASI",
+    "totalPopulation": 780000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KUSSI",
+    "totalPopulation": 900,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KUTAEB",
+    "totalPopulation": 620000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KUTU",
+    "totalPopulation": 119000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KWA",
+    "totalPopulation": 12000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KWADI",
+    "totalPopulation": 200,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KWANDI",
+    "totalPopulation": 15000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KWANGWA",
+    "totalPopulation": 2400,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KWANYAMA",
+    "totalPopulation": 700000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KWERE",
+    "totalPopulation": 150000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_KXA_MACRO",
+    "totalPopulation": 50000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_KXOE",
+    "totalPopulation": 9400,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LAGWAN",
+    "totalPopulation": 90000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LALA",
+    "totalPopulation": 635000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_LALA_AMBO",
+    "totalPopulation": 5400,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LALA_BISA",
+    "totalPopulation": 864000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LALA_LAMBA",
+    "totalPopulation": 481000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_LALA_LENJE",
+    "totalPopulation": 275000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_LALA_SOLI",
+    "totalPopulation": 150000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LALA_SWAKA",
+    "totalPopulation": 127000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LALA_UNGA",
+    "totalPopulation": 50000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LAMBA",
+    "totalPopulation": 451000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LAMBYA",
+    "totalPopulation": 200000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_LANGI",
+    "totalPopulation": 2884000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LANGO",
+    "totalPopulation": 2900000,
+    "signals": ["census", "aggregated-estimate", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LARTEH",
+    "totalPopulation": 130000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LEBOU",
+    "totalPopulation": 120000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LENGO",
+    "totalPopulation": 241000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_LENJE",
+    "totalPopulation": 395000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LEYA",
+    "totalPopulation": 21000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_LIBIDO",
+    "totalPopulation": 228400,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LIMBA",
+    "totalPopulation": 579200,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LINGALA",
+    "totalPopulation": 40000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LOBI",
+    "totalPopulation": 617000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LOBI_BIRIFOR",
+    "totalPopulation": 817000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LOGBA",
+    "totalPopulation": 8000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LOMWE",
+    "totalPopulation": 5000000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LOMWE_MALA",
+    "totalPopulation": 3800000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LOMWE_MOZ",
+    "totalPopulation": 1900000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LOZI",
+    "totalPopulation": 1615000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LUBA",
+    "totalPopulation": 13000000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_LUBA_KASAI",
+    "totalPopulation": 7500000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_LUBA_KATANGA",
+    "totalPopulation": 5000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LUCHAZI",
+    "totalPopulation": 820000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LUGBARA",
+    "totalPopulation": 2100000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_LUGURU",
+    "totalPopulation": 1542000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LUHYA",
+    "totalPopulation": 8300000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LULUA",
+    "totalPopulation": 3000000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LUNDA",
+    "totalPopulation": 1175000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LUNDA_CHOKWE",
+    "totalPopulation": 5500000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LUNDA_KAZEMBE",
+    "totalPopulation": 262000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LUNDA_NDEMBU",
+    "totalPopulation": 21000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LUNDA_NORTE",
+    "totalPopulation": 300000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LUNGU",
+    "totalPopulation": 1100000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LUO",
+    "totalPopulation": 5500000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_LUO_BANTU",
+    "totalPopulation": 8000000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LUO_PAGU",
+    "totalPopulation": 6500000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LUVALE",
+    "totalPopulation": 570000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_LUYANA",
+    "totalPopulation": 5700,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_LWENA",
+    "totalPopulation": 560000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_LWIMBI",
+    "totalPopulation": 128000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MAASAI",
+    "totalPopulation": 1500000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MABAN",
+    "totalPopulation": 115000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MACHINGA",
+    "totalPopulation": 55000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MADI",
+    "totalPopulation": 450000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MAFA",
+    "totalPopulation": 1300000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MAHN",
+    "totalPopulation": 499000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MAHOUKA",
+    "totalPopulation": 260000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MAJANG",
+    "totalPopulation": 70000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MAKONDE",
+    "totalPopulation": 1800000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MAKONDE_MOZ",
+    "totalPopulation": 300000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MAKONDE_TANZ",
+    "totalPopulation": 1200000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MAKUA",
+    "totalPopulation": 7000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MALE",
+    "totalPopulation": 168000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MALINKE",
+    "totalPopulation": 13000000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MAMBWE",
+    "totalPopulation": 430000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MAMPRUSI",
+    "totalPopulation": 454000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MANCANHA",
+    "totalPopulation": 117000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MANDA",
+    "totalPopulation": 28000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MANDARA",
+    "totalPopulation": 95500,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MANDE_DU_SUD",
+    "totalPopulation": 3500000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MANDE_MACRO",
+    "totalPopulation": 60000000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MANGA",
+    "totalPopulation": 700000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MANGBETU",
+    "totalPopulation": 600000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MANIANGA",
+    "totalPopulation": 300000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MANJA",
+    "totalPopulation": 354000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MANJAK",
+    "totalPopulation": 522000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MANJAK_BAINUK",
+    "totalPopulation": 366000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MANKANYA",
+    "totalPopulation": 116600,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MANO",
+    "totalPopulation": 499000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MANYIKA",
+    "totalPopulation": 662000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MANYIKA_ZIM",
+    "totalPopulation": 501000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MAO",
+    "totalPopulation": 31400,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MARAKA",
+    "totalPopulation": 525000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MARGI",
+    "totalPopulation": 360000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MASA",
+    "totalPopulation": 400000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MASHI",
+    "totalPopulation": 47300,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MATUMBI",
+    "totalPopulation": 224000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MBETE",
+    "totalPopulation": 260000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MBOCHI",
+    "totalPopulation": 655000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MBOGO",
+    "totalPopulation": 15000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MBUGWE",
+    "totalPopulation": 55000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MBUKUSHU",
+    "totalPopulation": 120000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MBUNDA",
+    "totalPopulation": 563000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MEEN",
+    "totalPopulation": 200000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MELO",
+    "totalPopulation": 29000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MENDE",
+    "totalPopulation": 2785000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MERINA",
+    "totalPopulation": 7000000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MERU",
+    "totalPopulation": 1900000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MIJIKENDA",
+    "totalPopulation": 3000000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MIKEA",
+    "totalPopulation": 3000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MINA",
+    "totalPopulation": 740000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MINUNGU",
+    "totalPopulation": 15000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MINYANKA",
+    "totalPopulation": null,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MOBE",
+    "totalPopulation": 15000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MOCHA",
+    "totalPopulation": 149000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MOFU",
+    "totalPopulation": 195000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MONGO",
+    "totalPopulation": 12000000,
+    "signals": ["aggregated-estimate", "projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MORU",
+    "totalPopulation": 200000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MOSIYE",
+    "totalPopulation": 38000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MOSSI",
+    "totalPopulation": 14000000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MOUSGOUM",
+    "totalPopulation": 164400,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MOZABITE",
+    "totalPopulation": 250000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MPOTO",
+    "totalPopulation": 104000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MUCAHONA",
+    "totalPopulation": 7000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MUCUBAL",
+    "totalPopulation": 70000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MUCUISSI",
+    "totalPopulation": 600,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MUCUVAL",
+    "totalPopulation": 106000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MUKULU",
+    "totalPopulation": 40500,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MURLE",
+    "totalPopulation": 350000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MURSI",
+    "totalPopulation": 14000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MUSGU",
+    "totalPopulation": 164400,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MWANGA",
+    "totalPopulation": 502000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_MWERA",
+    "totalPopulation": 700000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_MYENE",
+    "totalPopulation": 90000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NABDAM",
+    "totalPopulation": 55000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NABT",
+    "totalPopulation": 100000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NAFUSI",
+    "totalPopulation": 200000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NALU",
+    "totalPopulation": 25000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NAMA",
+    "totalPopulation": 200000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NAMWANGA",
+    "totalPopulation": 502000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NANDE",
+    "totalPopulation": 4000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NANKANA",
+    "totalPopulation": 994500,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NANUMBA",
+    "totalPopulation": 250000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NAO",
+    "totalPopulation": 19000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NCHUMURU",
+    "totalPopulation": 85000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NDAI",
+    "totalPopulation": 50,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NDAMBA",
+    "totalPopulation": 350000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NDAU",
+    "totalPopulation": 2500000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NDAU_MOZ",
+    "totalPopulation": 1200000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NDAU_ZIM",
+    "totalPopulation": 800000,
+    "signals": ["census", "aggregated-estimate", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NDEBELE",
+    "totalPopulation": 2200000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NDEBELE_MACRO",
+    "totalPopulation": 4400000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NDEBELE_MANALA",
+    "totalPopulation": 250000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NDEBELE_MZ",
+    "totalPopulation": 50000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NDEBELE_NDZUNDZA",
+    "totalPopulation": 1348000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NDEBELE_NORD",
+    "totalPopulation": 2900000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NDEBELE_SA",
+    "totalPopulation": 1100000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NDEBELE_ZIM",
+    "totalPopulation": 2600000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NDENGEREKO",
+    "totalPopulation": 290000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NDOWE",
+    "totalPopulation": 115000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NEMBE",
+    "totalPopulation": 300000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NEYO",
+    "totalPopulation": 19500,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NGALA",
+    "totalPopulation": 400000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NGANGUELA",
+    "totalPopulation": 1200000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NGBANDE",
+    "totalPopulation": 500000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NGINDO",
+    "totalPopulation": 620000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NGIZIM",
+    "totalPopulation": 150000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NGONDE",
+    "totalPopulation": 750000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NGONI",
+    "totalPopulation": 2000000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NGUNI",
+    "totalPopulation": 28800000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NIABOUA",
+    "totalPopulation": 98000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NILOTIQUE_MACRO",
+    "totalPopulation": 50000000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NKHUMBI",
+    "totalPopulation": 180000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NKONYA",
+    "totalPopulation": 28000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NKOYA",
+    "totalPopulation": 77000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NSENGA",
+    "totalPopulation": 1179000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NUBIENS",
+    "totalPopulation": 5000000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NUER",
+    "totalPopulation": 2500000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NUPE",
+    "totalPopulation": 5500000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NUU",
+    "totalPopulation": 800,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NYABWA",
+    "totalPopulation": 70000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NYAKYUSA",
+    "totalPopulation": 1923000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NYAMWEZI",
+    "totalPopulation": 2000000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NYANEKA_NKHUMBI",
+    "totalPopulation": 2101000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_NYANGATOM",
+    "totalPopulation": 46500,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NYANJA",
+    "totalPopulation": 15000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NYASA",
+    "totalPopulation": 600000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NYATURU",
+    "totalPopulation": 1100000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NYIKA",
+    "totalPopulation": 80000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NZEBI",
+    "totalPopulation": 227500,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_NZEMA",
+    "totalPopulation": 658000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_OGBRI",
+    "totalPopulation": 450000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_OGONI",
+    "totalPopulation": 2000000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_OKANISI",
+    "totalPopulation": 90000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_OMOTIQUE_MACRO",
+    "totalPopulation": 7900000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_OROMO",
+    "totalPopulation": 42000000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ORON",
+    "totalPopulation": 750000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_OTAMARI_SOMBA",
+    "totalPopulation": 220000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_OVAMBO",
+    "totalPopulation": 2100000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_OVIMBUNDU",
+    "totalPopulation": 8700000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_OYDA",
+    "totalPopulation": 87000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_PALENQUERO",
+    "totalPopulation": 6637,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_PANGWA",
+    "totalPopulation": 130000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_PAPEL",
+    "totalPopulation": 200000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_PAPELO",
+    "totalPopulation": 250000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_PARE",
+    "totalPopulation": 800000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_PEDI",
+    "totalPopulation": 4600000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_PEUPLES_FORESTIERS_DU_SUD_ET_DE_L_EST",
+    "totalPopulation": 300000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_PIMBWE",
+    "totalPopulation": 104000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_PODOKO",
+    "totalPopulation": 65000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_PUNU",
+    "totalPopulation": 450000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_PYGMEES_AUTOCHTONES",
+    "totalPopulation": 100000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_QABENA",
+    "totalPopulation": 85000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_QEMANT",
+    "totalPopulation": 172000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_QUILOMBOLA",
+    "totalPopulation": 1330186,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_RAIZAL",
+    "totalPopulation": 25515,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_RANGI",
+    "totalPopulation": 880000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_RASHAIDA",
+    "totalPopulation": 300000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_RENDILLE",
+    "totalPopulation": 65000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_RIFAIN",
+    "totalPopulation": 5000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_RONGA",
+    "totalPopulation": 1000000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_RONGA_MOZ",
+    "totalPopulation": 800000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_RUFIJI",
+    "totalPopulation": 250000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_RUNDI",
+    "totalPopulation": 15000000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_RUNGWA",
+    "totalPopulation": 59000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_RWANDAIS_HUTU",
+    "totalPopulation": 12000000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_RWANDAIS_TUTSI",
+    "totalPopulation": 3200000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SAAMAKA",
+    "totalPopulation": 90000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SAFWA",
+    "totalPopulation": 518000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SAGALA",
+    "totalPopulation": 223000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SAHARIEN_MACRO",
+    "totalPopulation": 11500000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SAHO",
+    "totalPopulation": 265000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SAKALAVA",
+    "totalPopulation": 2200000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SAMBURU",
+    "totalPopulation": 403000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SANDAWE",
+    "totalPopulation": 90000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SANGO",
+    "totalPopulation": 450000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SANGO_SCT",
+    "totalPopulation": 500000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SARA",
+    "totalPopulation": 3800000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SAWA",
+    "totalPopulation": 3204840,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SCT_MACRO",
+    "totalPopulation": 15000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SEBATBET",
+    "totalPopulation": 1500000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SEFWI",
+    "totalPopulation": 880231,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SEGEJU",
+    "totalPopulation": 37000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SENA",
+    "totalPopulation": 2500000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SENA_MOZ",
+    "totalPopulation": 1800000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SENA_ZAMB",
+    "totalPopulation": 230000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SENGA",
+    "totalPopulation": 213000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SENUFO",
+    "totalPopulation": 4000000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SERER",
+    "totalPopulation": 3100000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SESOTHO_NATL",
+    "totalPopulation": 6200000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SETSWANA_NATL",
+    "totalPopulation": 9000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SHAMBAA",
+    "totalPopulation": 1461000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SHEKO",
+    "totalPopulation": 55000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SHILLUK",
+    "totalPopulation": 800000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SHINASHA",
+    "totalPopulation": 139000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SHIRAZI",
+    "totalPopulation": 993000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SHONA",
+    "totalPopulation": 15000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SHUA",
+    "totalPopulation": 6000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SIDAMA",
+    "totalPopulation": 5702000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SILTE",
+    "totalPopulation": 1100000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SINO_MAURICIENS",
+    "totalPopulation": 10000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SINO_SEYCHELLOIS",
+    "totalPopulation": 1500,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SISALA",
+    "totalPopulation": 338000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SIWI",
+    "totalPopulation": 28000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SIWU",
+    "totalPopulation": 103000,
+    "signals": ["aggregated-estimate", "projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SOKORO",
+    "totalPopulation": 11000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SOLI",
+    "totalPopulation": 155000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SOLONGO",
+    "totalPopulation": 250000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SOMALI",
+    "totalPopulation": 26000000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SONGHAI",
+    "totalPopulation": 8400000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SONGHAY_GURMA",
+    "totalPopulation": 90000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SONGHAY_MACRO",
+    "totalPopulation": 7000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SONGHAY_NIGERIEN",
+    "totalPopulation": 700000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SONGO",
+    "totalPopulation": 268000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SONINKE",
+    "totalPopulation": 3197000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SOTHO",
+    "totalPopulation": 6000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SOTHO_NORD",
+    "totalPopulation": 6000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SOTHO_SUD",
+    "totalPopulation": 7254315,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SOTHO_TSWANA",
+    "totalPopulation": 20000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SOUSSOU",
+    "totalPopulation": 3200000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SUBIYA",
+    "totalPopulation": 44800,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SUKUMA",
+    "totalPopulation": 11800000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SUMBWA",
+    "totalPopulation": 626000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SURI",
+    "totalPopulation": 35000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_SURMA",
+    "totalPopulation": 45000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SUSU",
+    "totalPopulation": 2858000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SWAHILI",
+    "totalPopulation": 2000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SWAHILI_KENYA",
+    "totalPopulation": 70000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SWAHILI_MOZAMBIQUE",
+    "totalPopulation": 20000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SWAHILI_OMAN",
+    "totalPopulation": 50000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SWAHILI_SOMALIE",
+    "totalPopulation": 25000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SWAHILI_TANZANIE",
+    "totalPopulation": 1200000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SWAHILI_YEMEN",
+    "totalPopulation": 1500000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SWAKA",
+    "totalPopulation": 83000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_SWAZI",
+    "totalPopulation": 3500000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TAA",
+    "totalPopulation": 3000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TAAL",
+    "totalPopulation": 15000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TABWA",
+    "totalPopulation": 1000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TAFI",
+    "totalPopulation": 8000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TAIZI",
+    "totalPopulation": 15000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TALENSI",
+    "totalPopulation": 97000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TANOSY",
+    "totalPopulation": 700000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TEDA",
+    "totalPopulation": 160700,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TEKE",
+    "totalPopulation": 2000000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TEKE_NORD",
+    "totalPopulation": 200000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TEMBO",
+    "totalPopulation": 400000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TEMNE",
+    "totalPopulation": 3100000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TERA",
+    "totalPopulation": 187000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TETELA",
+    "totalPopulation": 2350000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TIGRAY",
+    "totalPopulation": 8500000,
+    "signals": ["census", "aggregated-estimate", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TIGRE",
+    "totalPopulation": 1200000,
+    "signals": ["census", "aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TIMBARO",
+    "totalPopulation": 190000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TIV",
+    "totalPopulation": 5300000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TOKALEYA",
+    "totalPopulation": 80000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TOMA_LOMA",
+    "totalPopulation": 560000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TONGA_ILA",
+    "totalPopulation": 170000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TONGA_LAC",
+    "totalPopulation": 200000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TONGA_MALA",
+    "totalPopulation": 250000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TONGA_ZAMBIA",
+    "totalPopulation": 1800000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TONGAS",
+    "totalPopulation": 15000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TONGU",
+    "totalPopulation": 350000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TONGWE",
+    "totalPopulation": 71000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TOPOSA",
+    "totalPopulation": 800000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TOTELA",
+    "totalPopulation": 12000,
+    "signals": ["census", "aggregated-estimate", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TOUBOU",
+    "totalPopulation": 5745000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TOURA",
+    "totalPopulation": 50000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TSAMAY",
+    "totalPopulation": 32000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TSAO",
+    "totalPopulation": 200000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TSAO_KXA",
+    "totalPopulation": 400,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TSHOKWE",
+    "totalPopulation": 3980000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TSHUWA",
+    "totalPopulation": 5000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TSIMIHETY",
+    "totalPopulation": 2610000,
+    "signals": ["aggregated-estimate", "projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TSONGA",
+    "totalPopulation": 7600000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TSWA",
+    "totalPopulation": 1414000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TSWA_CALANGA",
+    "totalPopulation": 1500000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TSWA_MOZ",
+    "totalPopulation": 1350000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TSWANA",
+    "totalPopulation": 8200000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TUAREG",
+    "totalPopulation": 3000000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TUMBATU",
+    "totalPopulation": 15000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TUMBUKA",
+    "totalPopulation": 10346000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TURKANA",
+    "totalPopulation": 1200000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TUTRUGBU",
+    "totalPopulation": 11000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TUTSI_BURUNDI",
+    "totalPopulation": 1700000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TUU_MACRO",
+    "totalPopulation": 2500,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_TWA",
+    "totalPopulation": 120000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_TWIFO",
+    "totalPopulation": 150000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_UMBUNDU",
+    "totalPopulation": 14400000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_UNGA",
+    "totalPopulation": 55000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_URHOBO",
+    "totalPopulation": 4500000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_USHI",
+    "totalPopulation": 100000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_VAI",
+    "totalPopulation": 235000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_VENDA",
+    "totalPopulation": 1200000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_VEZO",
+    "totalPopulation": 407000,
+    "signals": ["aggregated-estimate"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_VIDUNDA",
+    "totalPopulation": 90000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_VILI",
+    "totalPopulation": 100000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_WALA",
+    "totalPopulation": 120000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_WAN",
+    "totalPopulation": 75000,
+    "signals": ["aggregated-estimate", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_WANDYA",
+    "totalPopulation": 100000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_WANE",
+    "totalPopulation": 5800,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_WASSA",
+    "totalPopulation": 800000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_WE",
+    "totalPopulation": 550000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_WEST_TAA",
+    "totalPopulation": 500,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_WIYANA",
+    "totalPopulation": 25000,
+    "signals": ["projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_WOGO",
+    "totalPopulation": 12000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_WOLAYTA",
+    "totalPopulation": 6500000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_WOLOF",
+    "totalPopulation": 6500000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_WONNIN",
+    "totalPopulation": 61000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_XHOSA",
+    "totalPopulation": 10200000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_XHOSA_CISKEI",
+    "totalPopulation": 1500000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_YAKA",
+    "totalPopulation": 1800000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_YALUNKA",
+    "totalPopulation": 220000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_YAO",
+    "totalPopulation": 3900000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_YAO_MALAWI",
+    "totalPopulation": 1700000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_YAO_MOZ",
+    "totalPopulation": 500000,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_YEM",
+    "totalPopulation": 257000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_YERIMA",
+    "totalPopulation": 50000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_YEYI",
+    "totalPopulation": 68400,
+    "signals": [],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_YOHOURE",
+    "totalPopulation": 52000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_YOMBE",
+    "totalPopulation": 1000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_YORUBA",
+    "totalPopulation": 48482000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_YULI",
+    "totalPopulation": 15000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_YUNGUR",
+    "totalPopulation": 209000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ZAGHAWA",
+    "totalPopulation": 450000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ZANDE",
+    "totalPopulation": 2000000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ZARAMO",
+    "totalPopulation": 1290000,
+    "signals": [],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": true,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ZARMA",
+    "totalPopulation": 5500000,
+    "signals": ["projection"],
+    "speakerCountOnly": true,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ZAYSE",
+    "totalPopulation": 25000,
+    "signals": ["census", "projection"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": false
+  },
+  {
+    "id": "PPL_ZENATA",
+    "totalPopulation": 5000000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ZIGUA",
+    "totalPopulation": 631000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ZINZA",
+    "totalPopulation": 453000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": true,
+    "citesWikipedia": false,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ZULU",
+    "totalPopulation": 15800000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": true,
+    "derivable": true
+  },
+  {
+    "id": "PPL_ZULU_KWA_ZULU",
+    "totalPopulation": 10500000,
+    "signals": ["census"],
+    "speakerCountOnly": false,
+    "citesJoshuaProject": false,
+    "citesWikipedia": false,
+    "derivable": true
+  }
+]

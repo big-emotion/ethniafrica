@@ -1,0 +1,30 @@
+[
+  {
+    "id": "PPL_CREOLE_MACRO",
+    "country": "CPV",
+    "population": 570000,
+    "reason": "exceeds-country-population",
+    "ceiling": 500000
+  },
+  {
+    "id": "PPL_HUTU_BURUNDI",
+    "country": "BDI",
+    "population": 12200000,
+    "reason": "exceeds-own-total",
+    "ceiling": 10500000
+  },
+  {
+    "id": "PPL_LUNDA_NDEMBU",
+    "country": "ZMB",
+    "population": 60000,
+    "reason": "exceeds-own-total",
+    "ceiling": 21000
+  },
+  {
+    "id": "PPL_NDAU_ZIM",
+    "country": "MOZ",
+    "population": 1600000,
+    "reason": "exceeds-own-total",
+    "ceiling": 800000
+  }
+]

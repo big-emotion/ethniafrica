@@ -1,0 +1,644 @@
+[
+  {
+    "id": "PPL_BENOUECONGO_MACRO",
+    "name": "Peuples Bénoué-Congo",
+    "totalPopulation": 500000000,
+    "alsoFlaggedAsMacroGroup": true,
+    "contains": [
+      "PPL_EBIRA",
+      "PPL_EFIK",
+      "PPL_EKPEYE",
+      "PPL_GBAGYI",
+      "PPL_IGALA",
+      "PPL_IGEDE",
+      "PPL_ISOKO",
+      "PPL_ITSEKIRI",
+      "PPL_KIKUYU",
+      "PPL_KONGO",
+      "PPL_KONGO_BRAZZA",
+      "PPL_KONGO_CABINDA",
+      "PPL_KONGO_MAYOMBE",
+      "PPL_KONGO_SUD",
+      "PPL_LINGALA",
+      "PPL_OGONI",
+      "PPL_SHONA",
+      "PPL_SOTHO",
+      "PPL_SOTHO_NORD",
+      "PPL_SOTHO_SUD",
+      "PPL_SWAHILI",
+      "PPL_SWAHILI_KENYA",
+      "PPL_SWAHILI_MOZAMBIQUE",
+      "PPL_SWAHILI_OMAN",
+      "PPL_SWAHILI_SOMALIE",
+      "PPL_SWAHILI_TANZANIE",
+      "PPL_SWAHILI_YEMEN",
+      "PPL_TSWANA",
+      "PPL_URHOBO",
+      "PPL_XHOSA",
+      "PPL_XHOSA_CISKEI",
+      "PPL_YORUBA",
+      "PPL_ZULU_KWA_ZULU"
+    ]
+  },
+  {
+    "id": "PPL_BANTU",
+    "name": "Bantou",
+    "totalPopulation": 420000000,
+    "alsoFlaggedAsMacroGroup": true,
+    "contains": [
+      "PPL_BEMBA",
+      "PPL_COMORIEN",
+      "PPL_KIKONGO",
+      "PPL_KIKUYU",
+      "PPL_KIRUNDI_HUTU",
+      "PPL_KONGO",
+      "PPL_KONGO_BRAZZA",
+      "PPL_KONGO_CABINDA",
+      "PPL_KONGO_MAYOMBE",
+      "PPL_KONGO_SUD",
+      "PPL_LUBA",
+      "PPL_LUBA_KASAI",
+      "PPL_LUBA_KATANGA",
+      "PPL_MAKUA",
+      "PPL_MONGO",
+      "PPL_NGUNI",
+      "PPL_OVIMBUNDU",
+      "PPL_SHONA",
+      "PPL_SOTHO_TSWANA",
+      "PPL_SUKUMA",
+      "PPL_SWAHILI",
+      "PPL_SWAHILI_KENYA",
+      "PPL_SWAHILI_MOZAMBIQUE",
+      "PPL_SWAHILI_OMAN",
+      "PPL_SWAHILI_SOMALIE",
+      "PPL_SWAHILI_TANZANIE",
+      "PPL_SWAHILI_YEMEN",
+      "PPL_SWAZI",
+      "PPL_XHOSA",
+      "PPL_XHOSA_CISKEI",
+      "PPL_ZULU"
+    ]
+  },
+  {
+    "id": "PPL_MANDE_MACRO",
+    "name": "Peuples Mandé (macro-groupe)",
+    "totalPopulation": 60000000,
+    "alsoFlaggedAsMacroGroup": true,
+    "contains": [
+      "PPL_BAMBARA",
+      "PPL_BISSA",
+      "PPL_BOSO",
+      "PPL_DIOULA",
+      "PPL_GBANDI",
+      "PPL_KPELLE",
+      "PPL_MALINKE",
+      "PPL_MENDE",
+      "PPL_SONINKE",
+      "PPL_SOUSSOU",
+      "PPL_SUSU",
+      "PPL_YALUNKA"
+    ]
+  },
+  {
+    "id": "PPL_NILOTIQUE_MACRO",
+    "name": "Peuples Nilotiques (macro-groupe)",
+    "totalPopulation": 50000000,
+    "alsoFlaggedAsMacroGroup": true,
+    "contains": [
+      "PPL_ACHOLI",
+      "PPL_ALUR",
+      "PPL_ANUAK",
+      "PPL_DATOGA",
+      "PPL_DINKA",
+      "PPL_ITESO",
+      "PPL_JOPADHOLA",
+      "PPL_KARAMOJONG",
+      "PPL_KUMAM",
+      "PPL_LANGI",
+      "PPL_LANGO",
+      "PPL_MAASAI",
+      "PPL_MABAN",
+      "PPL_MURLE",
+      "PPL_NUER",
+      "PPL_SAMBURU",
+      "PPL_SHILLUK",
+      "PPL_TURKANA"
+    ]
+  },
+  {
+    "id": "PPL_OROMO",
+    "name": "Oromo",
+    "totalPopulation": 42000000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_ARSII", "PPL_BORANA"]
+  },
+  {
+    "id": "PPL_HABESHA",
+    "name": "Habesha",
+    "totalPopulation": 40000000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_HARARI", "PPL_TIGRE"]
+  },
+  {
+    "id": "PPL_ATLANTIQUE_MACRO",
+    "name": "Peuples atlantiques",
+    "totalPopulation": 30000000,
+    "alsoFlaggedAsMacroGroup": true,
+    "contains": [
+      "PPL_BAINOUK",
+      "PPL_BIDYOGO",
+      "PPL_BIJAOGO",
+      "PPL_DIOLA",
+      "PPL_FULA",
+      "PPL_FULANI",
+      "PPL_FULA_FORET",
+      "PPL_FULA_NOMADES",
+      "PPL_FULA_SAHEL",
+      "PPL_JOLA",
+      "PPL_KISI",
+      "PPL_KISSI"
+    ]
+  },
+  {
+    "id": "PPL_GUR_MACRO",
+    "name": "Peuples Gur",
+    "totalPopulation": 30000000,
+    "alsoFlaggedAsMacroGroup": true,
+    "contains": [
+      "PPL_DAGAABA",
+      "PPL_DAGARA",
+      "PPL_DAGOMBA",
+      "PPL_FRAFRA",
+      "PPL_GOURMANTCHE",
+      "PPL_GURMA",
+      "PPL_MAMPRUSI",
+      "PPL_MOSSI"
+    ]
+  },
+  {
+    "id": "PPL_AKAN",
+    "name": "Akan",
+    "totalPopulation": 25000000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": [
+      "PPL_AGNI",
+      "PPL_ANYI",
+      "PPL_ASANTE",
+      "PPL_ASHANTI",
+      "PPL_BAOULE",
+      "PPL_BONO",
+      "PPL_BRONG",
+      "PPL_FANTE"
+    ]
+  },
+  {
+    "id": "PPL_RUNDI",
+    "name": "Rundi (Barundi)",
+    "totalPopulation": 15000000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_KIRUNDI_HUTU", "PPL_KIRUNDI_TUTSI"]
+  },
+  {
+    "id": "PPL_SCT_MACRO",
+    "name": "Peuples Soudaniques Centraux (macro-groupe)",
+    "totalPopulation": 15000000,
+    "alsoFlaggedAsMacroGroup": true,
+    "contains": [
+      "PPL_BANDA",
+      "PPL_BARMA",
+      "PPL_BONGO",
+      "PPL_KRESH",
+      "PPL_LUGBARA",
+      "PPL_MADI",
+      "PPL_MANGBETU",
+      "PPL_MORU",
+      "PPL_SARA",
+      "PPL_YULI",
+      "PPL_ZANDE"
+    ]
+  },
+  {
+    "id": "PPL_KINYARWANDA",
+    "name": "Banyarwanda",
+    "totalPopulation": 14600000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_KIRUNDI_HUTU", "PPL_KIRUNDI_TUTSI"]
+  },
+  {
+    "id": "PPL_CHEWA",
+    "name": "Chewa",
+    "totalPopulation": 12000000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_BANDA", "PPL_KUNDA", "PPL_NSENGA", "PPL_NYANJA"]
+  },
+  {
+    "id": "PPL_SAHARIEN_MACRO",
+    "name": "Peuples Sahariens (macro-groupe)",
+    "totalPopulation": 11500000,
+    "alsoFlaggedAsMacroGroup": true,
+    "contains": [
+      "PPL_BUDUMA",
+      "PPL_DAZA",
+      "PPL_KANEMBU",
+      "PPL_KANURI",
+      "PPL_KREDA",
+      "PPL_TEDA",
+      "PPL_YERIMA",
+      "PPL_ZAGHAWA"
+    ]
+  },
+  {
+    "id": "PPL_KONGO",
+    "name": "Kongo",
+    "totalPopulation": 11000000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_SOLONGO", "PPL_VILI", "PPL_YOMBE"]
+  },
+  {
+    "id": "PPL_TUMBUKA",
+    "name": "Tumbuka",
+    "totalPopulation": 10346000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": [
+      "PPL_NYIKA",
+      "PPL_SENGA",
+      "PPL_TONGA_LAC",
+      "PPL_TONGA_MALA",
+      "PPL_YOMBE"
+    ]
+  },
+  {
+    "id": "PPL_KIKONGO",
+    "name": "Bakongo",
+    "totalPopulation": 10000000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_VILI", "PPL_YOMBE"]
+  },
+  {
+    "id": "PPL_SONGHAI",
+    "name": "Songhai",
+    "totalPopulation": 8400000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_DENDI", "PPL_KURTEY", "PPL_WOGO", "PPL_ZARMA"]
+  },
+  {
+    "id": "PPL_BETI",
+    "name": "Béti",
+    "totalPopulation": 8000000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": [
+      "PPL_EWONDO",
+      "PPL_FANG",
+      "PPL_FANG_EQGUINEE",
+      "PPL_FANG_GABON"
+    ]
+  },
+  {
+    "id": "PPL_KROU_MACRO",
+    "name": "Krou (macro-groupe)",
+    "totalPopulation": 8000000,
+    "alsoFlaggedAsMacroGroup": true,
+    "contains": [
+      "PPL_AIZI",
+      "PPL_BAKWE",
+      "PPL_BASSA",
+      "PPL_BETE",
+      "PPL_DIDA",
+      "PPL_GODIE",
+      "PPL_GREBO",
+      "PPL_GUERE",
+      "PPL_KLAO",
+      "PPL_KRAHN",
+      "PPL_KROUMEN",
+      "PPL_NEYO",
+      "PPL_NYABWA",
+      "PPL_WANE"
+    ]
+  },
+  {
+    "id": "PPL_OMOTIQUE_MACRO",
+    "name": "Peuples Omotiques (macro-groupe)",
+    "totalPopulation": 7900000,
+    "alsoFlaggedAsMacroGroup": true,
+    "contains": [
+      "PPL_BASKETO",
+      "PPL_CHARA",
+      "PPL_KAFA",
+      "PPL_MALE",
+      "PPL_SHINASHA"
+    ]
+  },
+  {
+    "id": "PPL_TSONGA",
+    "name": "Tsonga",
+    "totalPopulation": 7600000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_RONGA", "PPL_RONGA_MOZ"]
+  },
+  {
+    "id": "PPL_IBIBIO",
+    "name": "Ibibio",
+    "totalPopulation": 6000000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_ANNANG", "PPL_EKET"]
+  },
+  {
+    "id": "PPL_TOUBOU",
+    "name": "Toubou",
+    "totalPopulation": 5745000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_DAZA", "PPL_KREDA", "PPL_TEDA"]
+  },
+  {
+    "id": "PPL_KONGO_SUD",
+    "name": "Kongo (Sud)",
+    "totalPopulation": 5500000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_MANIANGA", "PPL_SOLONGO"]
+  },
+  {
+    "id": "PPL_LUNDA_CHOKWE",
+    "name": "Lunda-Chokwe",
+    "totalPopulation": 5500000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_CHOKWE", "PPL_LUNDA", "PPL_LUNDA_NORTE", "PPL_MINUNGU"]
+  },
+  {
+    "id": "PPL_GOUROUNSI",
+    "name": "Gourounsi",
+    "totalPopulation": 4700000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_FRAFRA", "PPL_TALENSI"]
+  },
+  {
+    "id": "PPL_FANTE",
+    "name": "Fante",
+    "totalPopulation": 4500000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_AKAN", "PPL_GUAN"]
+  },
+  {
+    "id": "PPL_CREOLE_MACRO",
+    "name": "Peuples Créoles (macro-groupe)",
+    "totalPopulation": 4000000,
+    "alsoFlaggedAsMacroGroup": true,
+    "contains": [
+      "PPL_CREOLE_MAURICE",
+      "PPL_CREOLE_REUNION",
+      "PPL_CREOLE_SEYCHELLES"
+    ]
+  },
+  {
+    "id": "PPL_GURAGE",
+    "name": "Gurage",
+    "totalPopulation": 4000000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_SEBATBET", "PPL_SILTE"]
+  },
+  {
+    "id": "PPL_KIRDI",
+    "name": "Kirdi",
+    "totalPopulation": 3500000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_GIZIGA", "PPL_MAFA", "PPL_MOFU", "PPL_PODOKO"]
+  },
+  {
+    "id": "PPL_MANDE_DU_SUD",
+    "name": "Mande du Sud",
+    "totalPopulation": 3500000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_GBAN", "PPL_GOURO", "PPL_MANO", "PPL_TOURA"]
+  },
+  {
+    "id": "PPL_SAWA",
+    "name": "Sawa",
+    "totalPopulation": 3204840,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_BAKOSSI", "PPL_BAKWERI", "PPL_BASSA"]
+  },
+  {
+    "id": "PPL_KONGO_BRAZZA",
+    "name": "Kongo (Brazzaville)",
+    "totalPopulation": 2600000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_KAMBA", "PPL_VILI", "PPL_YOMBE"]
+  },
+  {
+    "id": "PPL_NDEBELE_ZIM",
+    "name": "Ndebele du Zimbabwe (Matabele)",
+    "totalPopulation": 2600000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_PEDI", "PPL_TSWANA"]
+  },
+  {
+    "id": "PPL_EDO",
+    "name": "Edo",
+    "totalPopulation": 2500000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_AFEMAI", "PPL_ESAN"]
+  },
+  {
+    "id": "PPL_NYANEKA_NKHUMBI",
+    "name": "Nyaneka-Nkhumbi",
+    "totalPopulation": 2101000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_HUMBE", "PPL_NKHUMBI"]
+  },
+  {
+    "id": "PPL_NYAMWEZI",
+    "name": "Nyamwezi",
+    "totalPopulation": 2000000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_KIMBU", "PPL_KONONGO", "PPL_RUNGWA", "PPL_SUMBWA"]
+  },
+  {
+    "id": "PPL_TONGA_ZAMBIA",
+    "name": "Batonga / Tonga",
+    "totalPopulation": 1800000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_KOREKORE", "PPL_KOREKORE_ZIM", "PPL_TOKALEYA"]
+  },
+  {
+    "id": "PPL_BONO",
+    "name": "Bono",
+    "totalPopulation": 1500000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_ABRON", "PPL_BRONG"]
+  },
+  {
+    "id": "PPL_GUAN",
+    "name": "Guan",
+    "totalPopulation": 1260000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": [
+      "PPL_ANUM",
+      "PPL_AVATIME",
+      "PPL_GONJA",
+      "PPL_KRACHI",
+      "PPL_LARTEH",
+      "PPL_LOGBA",
+      "PPL_NKONYA",
+      "PPL_TAFI"
+    ]
+  },
+  {
+    "id": "PPL_BANTOUS_SOMALIENS",
+    "name": "Bantous somaliens",
+    "totalPopulation": 1200000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": [
+      "PPL_MAKUA",
+      "PPL_MWERA",
+      "PPL_NGINDO",
+      "PPL_NYAMWEZI",
+      "PPL_NYASA",
+      "PPL_ZARAMO"
+    ]
+  },
+  {
+    "id": "PPL_NGANGUELA",
+    "name": "Nganguela",
+    "totalPopulation": 1200000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": [
+      "PPL_LUCHAZI",
+      "PPL_LUVALE",
+      "PPL_LWENA",
+      "PPL_LWIMBI",
+      "PPL_MBUNDA"
+    ]
+  },
+  {
+    "id": "PPL_KHOIKHOI",
+    "name": "Khoikhoi",
+    "totalPopulation": 1000000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_DAMARA", "PPL_NAMA"]
+  },
+  {
+    "id": "PPL_AKUAPEM",
+    "name": "Akuapem",
+    "totalPopulation": 860000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_AKAN", "PPL_GUAN"]
+  },
+  {
+    "id": "PPL_HUMBE",
+    "name": "Humbe",
+    "totalPopulation": 834000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_NKHUMBI", "PPL_NYANEKA_NKHUMBI"]
+  },
+  {
+    "id": "PPL_AUTRES_PEUPLES_BANTOUS",
+    "name": "Autres peuples bantous du Gabon",
+    "totalPopulation": 800000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": [
+      "PPL_BUBI",
+      "PPL_KOTA",
+      "PPL_MYENE",
+      "PPL_TEKE",
+      "PPL_TEKE_NORD",
+      "PPL_VILI"
+    ]
+  },
+  {
+    "id": "PPL_MBUNDA",
+    "name": "Mbunda",
+    "totalPopulation": 563000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_SANGO", "PPL_SANGO_SCT"]
+  },
+  {
+    "id": "PPL_KRIO",
+    "name": "Krio",
+    "totalPopulation": 500000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": [
+      "PPL_AKAN",
+      "PPL_HAUSA",
+      "PPL_IGBO",
+      "PPL_KIKONGO",
+      "PPL_MENDE",
+      "PPL_TEMNE"
+    ]
+  },
+  {
+    "id": "PPL_DIDA",
+    "name": "Dida",
+    "totalPopulation": 457000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_ADIOUKROU", "PPL_EBRIE"]
+  },
+  {
+    "id": "PPL_KHOE_MACRO",
+    "name": "Peuples Khoe (macro-groupe)",
+    "totalPopulation": 430000,
+    "alsoFlaggedAsMacroGroup": true,
+    "contains": ["PPL_DAMARA", "PPL_GONA", "PPL_KWADI", "PPL_KXOE", "PPL_NAMA"]
+  },
+  {
+    "id": "PPL_HERERO",
+    "name": "Herero",
+    "totalPopulation": 330000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_HIMBA", "PPL_MUCUBAL"]
+  },
+  {
+    "id": "PPL_LUNDA_NORTE",
+    "name": "Lunda (Norte)",
+    "totalPopulation": 300000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_CHOKWE", "PPL_MINUNGU"]
+  },
+  {
+    "id": "PPL_SENA_ZAMB",
+    "name": "Sena (Zambie)",
+    "totalPopulation": 230000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_CHEWA", "PPL_TUMBUKA"]
+  },
+  {
+    "id": "PPL_YUNGUR",
+    "name": "Yungur",
+    "totalPopulation": 209000,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_BENA", "PPL_LALA"]
+  },
+  {
+    "id": "PPL_CREOLE_SEYCHELLES",
+    "name": "Créoles Seychellois",
+    "totalPopulation": 100600,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": ["PPL_INDO_SEYCHELLOIS", "PPL_SINO_SEYCHELLOIS"]
+  },
+  {
+    "id": "PPL_KXA_MACRO",
+    "name": "Peuples Kx'a (macro-groupe)",
+    "totalPopulation": 50000,
+    "alsoFlaggedAsMacroGroup": true,
+    "contains": ["PPL_BUGAKWE", "PPL_HOA", "PPL_JUHOANSI", "PPL_KUNG"]
+  },
+  {
+    "id": "PPL_AFRICAINS_D_ORIGINE_RECENTE",
+    "name": "Africains d'origine recente (Cap-Vert)",
+    "totalPopulation": 10869,
+    "alsoFlaggedAsMacroGroup": false,
+    "contains": [
+      "PPL_BALANTA",
+      "PPL_BAMBARA",
+      "PPL_DIOLA",
+      "PPL_FULA",
+      "PPL_FULA_FORET",
+      "PPL_FULA_NOMADES",
+      "PPL_FULA_SAHEL",
+      "PPL_MALINKE",
+      "PPL_MENDE",
+      "PPL_PAPEL",
+      "PPL_SONGHAI",
+      "PPL_SOUSSOU",
+      "PPL_TEMNE"
+    ]
+  }
+]
