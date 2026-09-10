@@ -113,20 +113,30 @@ Migrations are numbered and sequential in `supabase/migrations/` (081 at last co
 
 ### Publishing — the audience, the plan, the video
 
-Four skills cover what happens after a fiche exists, and they run in one order.
-Nothing in this file describes them elsewhere, which is how three of them went
-unmentioned while being the only tools that answer "why is nobody reading this".
+The publishing chain runs in one order, and **it no longer lives entirely in this
+repository.** On 2026-09-10 the two production skills moved to the private
+workspace, because a public repository carries no production skills. What stayed
+here is the one that acts on this site's own pages, and the report the chain hands
+along.
 
-- **Measure before planning — `/ethniafrica-audience-audit`.** It writes one
-  dated report to `docs/audience/`, and the two downstream skills refuse a report
-  older than 30 days. Every figure counts **consented sessions only**: Plausible
-  loads after the banner, so the number is a floor of unknown depth, never the
-  audience.
-- **Decide what ships — `/ethniafrica-content-strategist`.** Reads that report
-  and never proposes a subject without the comparable's numbers attached.
-- **Convert what already lands — `/ethniafrica-experience-optimizer`.** A page
-  the report marks a dead end already has the audience a new page would have to
-  earn.
+- **Measure before planning — `audience-audit`, in the private workspace.** It
+  writes one dated report to `docs/audience/` _here_, because it is built from
+  this repository's URL inventory, and the downstream skills refuse a report older
+  than 30 days. Every figure counts **consented sessions only**: Plausible loads
+  after the banner, so the number is a floor of unknown depth, never the audience.
+- **Decide what ships — `content-strategist`, in the private workspace.** Reads
+  that report and never proposes a subject without the comparable's numbers
+  attached.
+- **Convert what already lands — `/ethniafrica-experience-optimizer`, here.** A
+  page the report marks a dead end already has the audience a new page would have
+  to earn.
+
+`scripts/lib/audienceSkillContract.ts` guards the half of that handoff this
+repository can still see: that the consumer living here still reads the dated
+report and still names its producer. It deliberately does **not** look for the
+producer on disk. Putting it back in the loop makes a correct repository fail, and
+the obvious fix would be to copy a production skill back into a public repository.
+
 - **Anything about why a video or a post holds attention — invoke
   `attention-architect` first, every time.** Writing a hook, judging a script
   that explains well and still flattens, or filing a persuasion principle
