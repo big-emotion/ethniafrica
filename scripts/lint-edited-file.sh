@@ -16,7 +16,7 @@ file=$(jq -r '.tool_response.filePath // .tool_input.file_path // empty')
 [ -n "$file" ] || exit 0
 [ -f "$file" ] || exit 0
 
-# Claude also edits ~/.claude, scratch dirs and worktrees of other projects;
+# Claude also edits agent config, scratch dirs and worktrees of other projects;
 # linting those with this repo's config is meaningless at best.
 case "$file" in
 "$PWD"/*) ;;

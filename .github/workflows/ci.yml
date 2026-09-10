@@ -120,6 +120,12 @@ jobs:
 
       - run: npm run check:env-example
 
+      # This repository is public, so an absolute workstation path publishes the
+      # author's machine and the private production workspace beside it. Three
+      # such lines were already committed before this gate existed. The
+      # pre-commit hook catches them locally; this catches what bypasses it.
+      - run: npm run check:local-paths
+
       # The one question none of the gates above asks: does anything still
       # import this? Ten checks watched traceability, action pins, the env
       # example, the migration sequence and the charters, and none of them
