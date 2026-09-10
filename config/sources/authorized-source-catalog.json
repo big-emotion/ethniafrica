@@ -107,6 +107,20 @@
       "matchDomains": ["ipums.org"]
     },
     {
+      "key": "brill",
+      "name": "Brill",
+      "tier": "referenced",
+      "sourceKind": "academic",
+      "matchDomains": ["brill.com"]
+    },
+    {
+      "key": "fowler-museum",
+      "name": "Fowler Museum at UCLA",
+      "tier": "referenced",
+      "sourceKind": "academic",
+      "matchDomains": ["fowler.ucla.edu"]
+    },
+    {
       "key": "jstor",
       "name": "JSTOR",
       "tier": "referenced",
