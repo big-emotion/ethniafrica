@@ -69,7 +69,7 @@
       "majorRites": "Ekpo : société secrète ouverte à tous les hommes adultes, active de juin à décembre. Les membres masqués incarnent les esprits ancestraux, assurent le maintien de l'ordre social et policent la communauté. Rites d'initiation (entrée dans l'Ekpo), rites de passage (naissance, puberté, mariage, mort). New Yam Festival : célébration de la récolte de l'igname. Engraissement rituel des jeunes femmes avant le mariage (pratique traditionnelle). Idiong : divination par les spécialistes Mbia Idiong pour le destin, la santé et la résolution des conflits.",
       "symbols": "Masques Ekpo (visages distordus, mâchoire inférieure articulée, masculins sombres et laids, féminins clairs et délicats). Ukpong : âme individuelle, concept central de la spiritualité ibibio. Akai : forêts sacrées inviolables, lieux de sépulture, de culte et de sociétés secrètes. Corps peints à l'Odung (pour mariages, naissances, initiations) et à l'Iduot (camwood rouge, fertilité).",
       "artsAndMusic": "La sculpture sur bois est l'art le plus célèbre des Ibibio : masques Ekpo aux proportions distordues (yeux proéminents, mâchoires articulées, représentant la maladie et la mort) ; statues ancestrales. Coiffures élaborées (tresses complexes symbolisant statut, âge, événement). Peintures corporelles rituelles (Odung, dure 3 mois ; Iduot, pigment rouge camwood). Vannerie (raffia), poterie. Musique de percussions (tambours) lors des cérémonies Ekpo, des funérailles et des festivals. Danse traditionnelle lors des cérémonies de sociétés secrètes. Centre artisanal d'Ikot Ekpene (marketplace of crafts).",
-      "spiritualities": "Religion traditionnelle Inam : culte d'Abasi Enyong (Dieu du Ciel), Abasi Isong (Dieu de la Terre) et Abasi Ibom (Etre Suprême), servis par l'Ikpaisong (grand prêtre-roi). Entités spirituelles me Ndem (invisibles, bienfaisantes ou maléfiques). Ukpong Ikot (âme-animal de brousse, were-animal). Croyance en la réincarnation et en une vie après la mort identique à la vie terrestre. Influence croissante du christianisme (protestants majoritaires, notamment la Qua Iboe Mission ; aussi catholiques et pentecôtistes). Islam très minoritaire."
+      "spiritualities": "Religion traditionnelle Inam : culte d'Abasi Enyong (Dieu du Ciel), Abasi Isong (Dieu de la Terre) et Abasi Ibom (Etre Suprême), servis par l'Ikpaisong (grand prêtre-roi). Entités spirituelles me Ndem (invisibles, bienfaisantes ou maléfiques). Ukpong Ikot (âme-animal de brousse, were-animal). Croyance en la réincarnation et en une vie après la mort identique à la vie terrestre. Influence croissante du christianisme (protestants majoritaires, notamment la Qua Iboe Mission ; aussi catholiques et pentecôtistes). Islam très minoritaire. Les Ndem portent leur nom propre et ne se confondent pas avec Mami Wata : cette figure régionale, plus tardive, tient son nom de l'anglais approximatif parlé dans les comptoirs de la côte, mammy water, « la mère des eaux »."
     },
     "historicalRole": {
       "kingdomsOrChiefdoms": "Royaume d'Ibom (Arochukwu) : premier État Ibibio dans la région nord. Chefferies indépendantes (Ikpaisong) dans toute l'Ibibioland. Relations étroites avec le royaume d'Old Calabar (Efik). Les Ibibio faisaient partie du Bight of Biafra, zone d'intense commerce atlantique (huile de palme, ivoire, puis esclaves).",
@@ -124,7 +124,24 @@
         "url": "https://www.cia.gov/the-world-factbook/countries/nigeria/",
         "tier": "official",
         "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Henry John Drewal, Mami Wata: Arts for Water Spirits in Africa and Its Diasporas",
+        "url": "https://fowler.ucla.edu/exhibitions/mami-wata-arts-for-water-spirits-in-africa-and-its-diasporas/",
+        "tier": "referenced",
+        "notes": "Monographie et exposition du Fowler Museum, UCLA, 2008, commissaire invité Henry John Drewal ; consultée le 10 septembre 2026."
+      },
+      {
+        "title": "Alex van Stipriaan, Watramama/Mami Wata: Three Centuries of Creolization of a Water Spirit in West Africa, Suriname and Europe",
+        "url": "https://brill.com/abstract/journals/mata/27/1/article-p321_321.xml",
+        "tier": "referenced",
+        "notes": "Revue Matatu, volumes 27-28, 2003 ; travail universitaire indépendant de celui de Drewal, consulté le 10 septembre 2026."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: no peuple fiche carries an English sidecar yet, so translating this one alone would make it the atlas's only English people record. It follows the peuple corpus's first translation pass."
+    }
   }
 }

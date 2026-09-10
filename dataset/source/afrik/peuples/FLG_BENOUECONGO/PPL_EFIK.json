@@ -72,7 +72,7 @@
       "majorRites": "La societe secrete Ekpe (Leopard) etait le coeur de la vie rituelle et gouvernementale efik. Elle regulait le commerce, rendait la justice, percevait les amendes et pouvait condamner ou gracier. Transformee en Abakua (Cuba), Bonko (Bioko) et Abakuya (Guinee equatoriale) par les esclaves efik deportes. La ceremonie de grossissement (fattening room) preparait les jeunes femmes au mariage. Le Nsibidi (systeme d'ecriture symbolique) etait utilise lors de ceremonies initiatiques secretes. Les funerailles royales (Obong) etaient des evenements collectifs majeurs impliquant toute la communaute.",
       "symbols": "L'esprit Leopard (Ekpe) represente par le masque Idem Iquo en costume Esịk est le symbole central de l'autorite et de la cohesion efik. Le Nsibidi (systeme d'ecriture ideographique) est un heritage culturel distinctif. La pirogue de commerce (Ekpe) symbolise la puissance marchande d'Old Calabar. Les ornements en laiton et en ivoire (Mme) signalaient le statut social.",
       "artsAndMusic": "La cuisine efik est celebree dans tout le Nigeria : Ekpang nkukwo (ignames rapees cuites en feuilles), Edikang Ikong (soupe aux feuilles), Afia efere (soupe de mouton blanc). Le vetement ceremoniel feminin Onyonyo (robe victorienne modifiee avec perles de corail) est un heritage de l'ere coloniale. La musique traditionnelle comprend les tambours, les chants Ekpe et les harmonies collectives lors des ceremonies. Le tissage en raphia et la fabrication de parures en laiton constituent les arts visuels traditionnels.",
-      "spiritualities": "Religion traditionnelle centree sur le culte d'Atakpor Uruan Inyang et les esprits ancestraux. L'Ekpe representait une force spirituelle autant que politique. Le christianisme presbytérien s'est impose massivement apres 1846 : aujourd'hui 99 % des Efik du Nigeria sont chretiens (Joshua Project 2025). Le vin de palme (Mmin Efik) et la gin traditionnelle (Ufofop) sont associes aux rituels festifs et aux ceremonies."
+      "spiritualities": "Religion traditionnelle centree sur le culte d'Atakpor Uruan Inyang et les esprits ancestraux. L'Ekpe representait une force spirituelle autant que politique. Le christianisme presbytérien s'est impose massivement apres 1846 : aujourd'hui 99 % des Efik du Nigeria sont chretiens (Joshua Project 2025). Le vin de palme (Mmin Efik) et la gin traditionnelle (Ufofop) sont associes aux rituels festifs et aux ceremonies. Les Ndem sont les esprits des eaux, habitant les rivières, les lacs et l'océan ; ambivalents, ils apportent la pêche abondante et le commerce prospère comme la noyade et la tempête, et des prêtres ndem font la médiation avec eux par des offrandes jetées à l'eau. Ils portent leur nom propre et ne se confondent pas avec Mami Wata : cette figure régionale tient son nom de l'anglais approximatif parlé dans les comptoirs de la côte, mammy water, « la mère des eaux »."
     },
     "historicalRole": {
       "kingdomsOrChiefdoms": "Old Calabar (Efik) etait un systeme de cites-Etats marchandes, non un royaume unifie. Les deux principales cites — Duke Town et Creek Town — partageaient l'autorite sous les Obongs respectifs. L'Obong de Calabar etait titre supreme: Eyo Honesty II (Creek Town), Eyamba V (Duke Town) signerent l'abolition de la traite en 1841. L'Obong actuel est Ekpo Okon Abasi Otu V (depuis 2008).",
@@ -139,7 +139,24 @@
         "url": null,
         "tier": "referenced",
         "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Henry John Drewal, Mami Wata: Arts for Water Spirits in Africa and Its Diasporas",
+        "url": "https://fowler.ucla.edu/exhibitions/mami-wata-arts-for-water-spirits-in-africa-and-its-diasporas/",
+        "tier": "referenced",
+        "notes": "Monographie et exposition du Fowler Museum, UCLA, 2008, commissaire invité Henry John Drewal ; consultée le 10 septembre 2026."
+      },
+      {
+        "title": "Alex van Stipriaan, Watramama/Mami Wata: Three Centuries of Creolization of a Water Spirit in West Africa, Suriname and Europe",
+        "url": "https://brill.com/abstract/journals/mata/27/1/article-p321_321.xml",
+        "tier": "referenced",
+        "notes": "Revue Matatu, volumes 27-28, 2003 ; travail universitaire indépendant de celui de Drewal, consulté le 10 septembre 2026."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: no peuple fiche carries an English sidecar yet, so translating this one alone would make it the atlas's only English people record. It follows the peuple corpus's first translation pass."
+    }
   }
 }

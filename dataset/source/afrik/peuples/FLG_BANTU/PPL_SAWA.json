@@ -82,7 +82,7 @@
       "majorRites": "Ngondo : grande assemblee traditionnelle annuelle des peuples Sawa, celebree le premier dimanche de decembre sur les rives du Wouri a Douala. Fondee au XIXe siecle, elle reunit les chefs de clans pour honorer les ancetres et consulter les esprits de l'eau. Comprend des courses de pirogues, des danses traditionnelles, des concours de lutte sawa, des offrandes et consultations spirituelles. Jengu (culte du genie de l'eau) : initiation et ceremonies d'alliance avec les esprits de l'eau, pratiquees par des initie(e)s. Ceremonies de mariage avec dot. Rites de naissance et de nomination. Funerailles avec veillees et ceremonies commemoratives.",
       "symbols": "Le Jengu (genie de l'eau) est le symbole central de la spiritualite sawa. La pirogue symbolise la maitrise de l'eau et la tradition maritime. Le ndole (plat a base de feuilles ameres, viande ou poisson et crevettes) est le symbole culinaire des Sawa, connu dans tout le Cameroun. La robe Kaba portee lors du Ngondo et le vetement traditionnel sanja. Nyambe, Loba, Njambe : nom du dieu createur suprême.",
       "artsAndMusic": "Musique makossa (generalement chantee en duala) : genre musical urbain cree par les artistes douala, celebre dans tout le Cameroun et l'Afrique centrale (artiste emblematique : Manu Dibango). Danses traditionnelles : essewè, sekele. Danse des peuples Sawa avec accessoires de danse traditionnels. Instruments de musique traditionnels (balafon, tam-tam, hochets). Artisanat : sculpture, pirogue, objets en bois. Cuisine traditionnelle : ndole, poisson fume, crustaces. Architecture traditionnelle en torchis avec toits de chaume le long des rives.",
-      "spiritualities": "Culte du dieu createur supreme Nyambe (aussi Loba, Njambe) : createur du monde, de l'ocean, des fleuves et des hommes, source de fertilite et de prosperite, juge supreme. Culte du Jengu (genie de l'eau, Ndimsi) : etre invisible intervenant dans la vie humaine, protecteur des pecheurs et des navigateurs quand propice. Autels domestiques avec offrandes regulieres aux ancetres (libations de vin de palme, d'eau, sang animal). Fetes commemoratives annuelles pour les defunts. Noms ancestraux portes par les enfants (reinvarnation partielle). Christianisme protestant et catholique dominant depuis le XIXe siecle."
+      "spiritualities": "Culte du dieu createur supreme Nyambe (aussi Loba, Njambe) : createur du monde, de l'ocean, des fleuves et des hommes, source de fertilite et de prosperite, juge supreme. Culte du Jengu (genie de l'eau, Ndimsi) : etre invisible intervenant dans la vie humaine, protecteur des pecheurs et des navigateurs quand propice. Autels domestiques avec offrandes regulieres aux ancetres (libations de vin de palme, d'eau, sang animal). Fetes commemoratives annuelles pour les defunts. Noms ancestraux portes par les enfants (reinvarnation partielle). Christianisme protestant et catholique dominant depuis le XIXe siecle. Les Jengu portent leur nom propre et ne se confondent pas avec Mami Wata : cette figure régionale, plus tardive, tient son nom de l'anglais approximatif parlé dans les comptoirs de la côte, mammy water, « la mère des eaux »."
     },
     "historicalRole": {
       "kingdomsOrChiefdoms": "Les Douala (principale composante sawa) emergerent comme chefferie commercante dominante des le XVIe siecle. Principales chefferies superieures (Kinge de premier degre) : Akwa, Bell, Belle Belle, Deido (Douala), Bakoko Wouri, Bankon (Abo), Bakweri, Pongo. Les chefs Douala signerent le traite de protectorat avec l'Allemagne en 1884 (chefs Bell et Akwa). Le chef Rudolf Manga Bell fut pendu par les Allemands en 1914 pour avoir proteste contre les expropriations.",
@@ -143,7 +143,24 @@
         "url": "https://journals.openedition.org/vertigo/2685",
         "tier": "referenced",
         "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of journals.openedition.org."
+      },
+      {
+        "title": "Henry John Drewal, Mami Wata: Arts for Water Spirits in Africa and Its Diasporas",
+        "url": "https://fowler.ucla.edu/exhibitions/mami-wata-arts-for-water-spirits-in-africa-and-its-diasporas/",
+        "tier": "referenced",
+        "notes": "Monographie et exposition du Fowler Museum, UCLA, 2008, commissaire invité Henry John Drewal ; consultée le 10 septembre 2026."
+      },
+      {
+        "title": "Alex van Stipriaan, Watramama/Mami Wata: Three Centuries of Creolization of a Water Spirit in West Africa, Suriname and Europe",
+        "url": "https://brill.com/abstract/journals/mata/27/1/article-p321_321.xml",
+        "tier": "referenced",
+        "notes": "Revue Matatu, volumes 27-28, 2003 ; travail universitaire indépendant de celui de Drewal, consulté le 10 septembre 2026."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: no peuple fiche carries an English sidecar yet, so translating this one alone would make it the atlas's only English people record. It follows the peuple corpus's first translation pass."
+    }
   }
 }

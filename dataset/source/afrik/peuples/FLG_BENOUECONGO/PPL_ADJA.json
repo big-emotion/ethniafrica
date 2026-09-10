@@ -66,7 +66,7 @@
       "majorRites": "Rites vodun liés aux divinités locales (Sakpata, dieu de la terre et de la variole; Legba, dieu des carrefours; Mami Wata, déesse des eaux). Cérémonies funéraires élaborées associant deuil communautaire et invocations aux ancêtres. Rites agricoles de bénédiction des semailles et de thanksgiving après la récolte. Pratiques divinatoires traditionnelles (Fa/Ifa hérité des échanges avec les Yoruba via Kétou).",
       "symbols": "Le tabouret royal à cinq pieds (symbole d'autorité royale, commun au trône de Tado et à celui des Anlo du Ghana); le serpent royal (Dan Ayido Houedo), associé à la prospérité et à la continuité du pouvoir dans la tradition Gbe.",
       "artsAndMusic": "Chants et danses rituels vodun associant percussions (tambours acouvain et sato), flûtes et grelots. Broderies et tissages de pagnes traditionnels à motifs géométriques. Art de la poterie, notamment pour les offrandes rituelles. Tradition orale riche : proverbes, contes (hwanô) et chants épiques relatant la fondation de Tado et les migrations.",
-      "spiritualities": "Animisme-vodun syncrétique : croyance en un panthéon de divinités (vodun), en des esprits ancestraux (togbui) et en des forces naturelles. L'islam et le christianisme sont présents mais le vodun demeure central dans la vie rituelle. Les traditions adja ont profondément influencé les religions afro-américaines (vaudou haïtien, candomblé brésilien)."
+      "spiritualities": "Animisme-vodun syncrétique : croyance en un panthéon de divinités (vodun), en des esprits ancestraux (togbui) et en des forces naturelles. L'islam et le christianisme sont présents mais le vodun demeure central dans la vie rituelle. Les traditions adja ont profondément influencé les religions afro-américaines (vaudou haïtien, candomblé brésilien). Mami Wata, citée ici parmi les divinités, est une figure régionale et non une divinité proprement adja : elle tient son nom de l'anglais approximatif parlé dans les comptoirs de la côte, mammy water, « la mère des eaux », et son culte est attesté dans une vingtaine de pays africains ainsi que dans les diasporas atlantiques."
     },
     "historicalRole": {
       "kingdomsOrChiefdoms": "Royaume de Tado (v. 1000-XIXe siècle) : confédération de cités-États couvrant à son apogée du fleuve Volta au Kouffo; décrit par le Jésuite Alonso de Sandoval en 1627 comme un puissant royaume. Royaume d'Allada (Grande Ardra), fondé v. 1600, conquis par le Dahomey en 1724. Petite Ardra (Ajatché, future Porto-Novo), fondée v. 1600 par Te-Agbanlin.",
@@ -127,7 +127,24 @@
         "url": null,
         "tier": "referenced",
         "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Henry John Drewal, Mami Wata: Arts for Water Spirits in Africa and Its Diasporas",
+        "url": "https://fowler.ucla.edu/exhibitions/mami-wata-arts-for-water-spirits-in-africa-and-its-diasporas/",
+        "tier": "referenced",
+        "notes": "Monographie et exposition du Fowler Museum, UCLA, 2008, commissaire invité Henry John Drewal ; consultée le 10 septembre 2026."
+      },
+      {
+        "title": "Alex van Stipriaan, Watramama/Mami Wata: Three Centuries of Creolization of a Water Spirit in West Africa, Suriname and Europe",
+        "url": "https://brill.com/abstract/journals/mata/27/1/article-p321_321.xml",
+        "tier": "referenced",
+        "notes": "Revue Matatu, volumes 27-28, 2003 ; travail universitaire indépendant de celui de Drewal, consulté le 10 septembre 2026."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: no peuple fiche carries an English sidecar yet, so translating this one alone would make it the atlas's only English people record. It follows the peuple corpus's first translation pass."
+    }
   }
 }

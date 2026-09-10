@@ -79,7 +79,7 @@
       "majorRites": "Rites d'initiation (ceremonies de passage a l'age adulte, distinctes pour les garcons et les filles). Ceremonies funeraires elaborees avec utilisation de masques sculptes, de statues en bois et de rites de purification. Ceremonies agricoles et de benediction des recoltes. Rites du Nyambéisme : ceremonies de communication avec les ancetres, invocations des Jengu (esprits des eaux). Rites de mariage impliquant la negociation de la dot (nkap) et des ceremonies de benediction familiale.",
       "symbols": "Ngog Lituba (le rocher perce) est le symbole identitaire fondamental du peuple Bassa, lieu de rassemblement et reference mythique de l'unite. Les masques (en bois sculpte, a valeur ceremonielle et spirituelle), les statues ancestrales et les sculptures figurent parmi les symboles culturels majeurs. Les Jengu (esprits de l'eau) sont representes dans l'art rituel cotier.",
       "artsAndMusic": "L'Assiko est la danse et musique urbaine Bassa la plus connue, nee a Edea et rayonnant dans tout le Cameroun. La N'gola et la Ma-Kune sont d'autres styles musicaux Bassa. La musique rurale utilise des tambours (ngul), des xylophones (mendzang), des flutes et des cloches. Les Bassa sont reconnus pour leurs chants epiques (bikutsi vocal propre au peuple), leur poesie orale et la richesse de leur tradition narrative (griots). L'artisanat comprend la sculpture sur bois (masques, statues rituelles), la ceramique et le travail du raphia. La cuisine traditionnelle inclut la sauce Bongo'o et la Mintoumba (pain de manioc cuit dans des feuilles de bananier).",
-      "spiritualities": "Le Nyambéisme est la tradition spirituelle originelle des Bassa, centree sur le culte des ancetres et la communication avec les esprits de la nature. Les Jengu (Miengu) sont des esprits de l'eau et de la cote adores par les Bassa cotiers. L'animisme et la croyance en la coexistence du monde spirituel et du monde physique perdurent. Les anciens transmettent la sagesse et l'histoire par la narration orale. Depuis le XIXe siecle, le christianisme protestant (Presbyteriens, Eglise Evangelique du Cameroun) est majoritaire, avec une presence catholique importante."
+      "spiritualities": "Le Nyambéisme est la tradition spirituelle originelle des Bassa, centree sur le culte des ancetres et la communication avec les esprits de la nature. Les Jengu (Miengu) sont des esprits de l'eau et de la cote adores par les Bassa cotiers. L'animisme et la croyance en la coexistence du monde spirituel et du monde physique perdurent. Les anciens transmettent la sagesse et l'histoire par la narration orale. Depuis le XIXe siecle, le christianisme protestant (Presbyteriens, Eglise Evangelique du Cameroun) est majoritaire, avec une presence catholique importante. Les Jengu, ou Miengu, portent leur nom propre et ne se confondent pas avec Mami Wata : cette figure régionale, plus tardive, tient son nom de l'anglais approximatif parlé dans les comptoirs de la côte, mammy water, « la mère des eaux »."
     },
     "historicalRole": {
       "kingdomsOrChiefdoms": "Les Bassa n'ont pas developpe de royaume centralise. Leur organisation politique etait fondee sur des groupes de lignages autonomes (mvog) reunis par une origine et une culture communes. Pendant la colonisation allemande, un systeme de chefferies administratives a ete impose. Des chefs comme Mahop ma Mbom et Matip ma Matip ont negocie avec l'administration coloniale.",
@@ -136,7 +136,24 @@
         "url": "https://www.justiceinfo.net/en/82062-cameroon-um-nyobe-hero-symbol-french-colonial-crimes.html",
         "tier": "referenced",
         "notes": "Identifiable transitional-justice press outlet. Corroborates the 1948 founding of the UPC, the 13 September 1958 assassination, and the 2007 memorial at Eseka."
+      },
+      {
+        "title": "Henry John Drewal, Mami Wata: Arts for Water Spirits in Africa and Its Diasporas",
+        "url": "https://fowler.ucla.edu/exhibitions/mami-wata-arts-for-water-spirits-in-africa-and-its-diasporas/",
+        "tier": "referenced",
+        "notes": "Monographie et exposition du Fowler Museum, UCLA, 2008, commissaire invité Henry John Drewal ; consultée le 10 septembre 2026."
+      },
+      {
+        "title": "Alex van Stipriaan, Watramama/Mami Wata: Three Centuries of Creolization of a Water Spirit in West Africa, Suriname and Europe",
+        "url": "https://brill.com/abstract/journals/mata/27/1/article-p321_321.xml",
+        "tier": "referenced",
+        "notes": "Revue Matatu, volumes 27-28, 2003 ; travail universitaire indépendant de celui de Drewal, consulté le 10 septembre 2026."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: no peuple fiche carries an English sidecar yet, so translating this one alone would make it the atlas's only English people record. It follows the peuple corpus's first translation pass."
+    }
   }
 }
