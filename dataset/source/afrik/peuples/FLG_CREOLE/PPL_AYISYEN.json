@@ -128,13 +128,19 @@
         "title": "William Seabrook, The Magic Island, 1929",
         "url": "https://archive.org/details/magicisland00seab",
         "tier": "referenced",
-        "notes": "Récit de voyage publié, consulté le 10 septembre 2026, par lequel le sens de mort-vivant entre en anglais. L'épisode de la compagnie sucrière est un témoignage que l'auteur dit tenir d'un habitant, non une observation directe."
+        "notes": "Récit de voyage publié, consulté le 10 septembre 2026, par lequel le sens de mort-vivant entre en anglais. L'épisode de la compagnie sucrière est un témoignage que l'auteur dit tenir d'un habitant, non une observation directe, et il conclut lui-même que les zonbi qu'on lui a montrés étaient des malades qu'on faisait travailler."
       },
       {
         "title": "Occupation des États-Unis en Haïti, 1915-1934, Office of the Historian, département d'État",
         "url": "https://history.state.gov/milestones/1914-1920/haiti",
         "tier": "official",
         "notes": "Service historique officiel du département d'État des États-Unis, consulté le 10 septembre 2026. Donne les bornes de l'occupation."
+      },
+      {
+        "title": "Floribert Patrick C. Endong, « The Westernization of the African Zombie in Nollywood Films », International Journal of Modern Anthropology, 2022",
+        "url": "https://doi.org/10.4314/ijma.v2i17.2",
+        "tier": "referenced",
+        "notes": "Article de revue à comité de lecture, université de Dschang, Cameroun. Donne l'origine du mot comme controversée et énumère les racines bantoues proposées."
       }
     ]
   },
