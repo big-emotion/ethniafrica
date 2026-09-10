@@ -123,6 +123,79 @@ describe("AboutPageContent (REQ-132)", () => {
     ).toHaveLength(1);
   });
 
+  /**
+   * A reader told the project on 9 September 2026 that its goal was not
+   * perceptible: the page described what the corpus holds and never said what
+   * it sets out to change. The purpose chapter answers that, and it opens the
+   * page — a statement of contents is not a statement of intent.
+   */
+  // @req REQ-132
+  it("opens the chapters with what the atlas sets out to change", () => {
+    renderAbout();
+
+    const purposeChapter = screen.getByTestId("about-purpose");
+    const corpus = screen.getByTestId("about-content-families");
+
+    expect(purposeChapter).toHaveTextContent(
+      /Ce peuple n’a pas été divisé\. C’est la carte qui a été dessinée par-dessus\./
+    );
+    expect(
+      purposeChapter.compareDocumentPosition(corpus) &
+        Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+  });
+
+  /**
+   * The claim is editorial emphasis, not a finding the corpus establishes, and
+   * an atlas that sells its provenance cannot print it unlabelled. Same
+   * doctrine as the Source Tier policy: nothing is forbidden, everything is
+   * labelled.
+   */
+  // @req REQ-132
+  it("marks the central claim as the project's position rather than a corpus finding", () => {
+    renderAbout();
+
+    const status = screen.getByTestId("about-purpose-claim-status");
+
+    expect(status).toHaveTextContent(/position d’EthniAfrica/i);
+    expect(status).toHaveTextContent(/corpus ne l’établit pas/i);
+  });
+
+  /**
+   * Each scale answers "for whose benefit" with something the corpus can be
+   * held to, not with an intention. The figures were measured from
+   * `distributionByCountry` on 11 September 2026, macro-groups excluded.
+   */
+  // @req REQ-132
+  it("grounds each scale of the purpose in a figure or a rule the corpus carries", () => {
+    renderAbout();
+
+    const purposeChapter = screen.getByTestId("about-purpose");
+
+    expect(purposeChapter).toHaveTextContent(/le nom que le peuple se donne/i);
+    expect(purposeChapter).toHaveTextContent(/La Tanzanie en documente 95/);
+    expect(purposeChapter).toHaveTextContent(
+      /France parmi les pays de répartition/i
+    );
+    expect(purposeChapter).toHaveTextContent(/191 peuples/);
+    expect(purposeChapter).toHaveTextContent(/macro-groupes exclus/i);
+  });
+
+  // @req REQ-145
+  it("carries the purpose chapter in English too", () => {
+    render(<AboutPageContent language="en" />);
+
+    const purposeChapter = screen.getByTestId("about-purpose");
+
+    expect(purposeChapter).toHaveTextContent(
+      /This people was not divided\. The map was drawn over it\./
+    );
+    expect(screen.getByTestId("about-purpose-claim-status")).toHaveTextContent(
+      /EthniAfrica’s position/i
+    );
+    expect(purposeChapter).toHaveTextContent(/191 peoples/);
+  });
+
   // Trimmed 2026-09-01: the example-country cards ("Ce que contient une
   // fiche"), the interactive access cards ("Par où commencer") and the
   // About/Doctrine distinction ("03 · La méthode") each duplicated a block
