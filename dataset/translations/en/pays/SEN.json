@@ -4,7 +4,7 @@
   "nameEn": "Senegal",
   "nameOfficial": "Republic of Senegal",
   "summary": "The origin of the name \"Senegal\" is debated and no hypothesis is authoritative: the link to the Sanhaja, a Berber confederation that French calls Zenaga, is the most widespread; the Wolof explanation \"sunu gaal\", \"our pirogue\", goes back to Abbé Boilat in 1853; and both have their challengers. The Jolof Empire, the Serer kingdoms and Fouta Toro shared the territory among them. Wolof, Fulani, Serer, Jola, Mandinka and Soninké peoples carry on the griots' word.",
-  "etymology": "The origin of the name \"Senegal\" is not established and remains disputed. The most widespread hypothesis links it to the Sanhaja, a Berber confederation of the western Sahara that French and Portuguese call Zenaga; Théodore Monod and Raymond Mauny defend it in 1960 against the Wolof explanation. It has long been contested. In the first edition of the Encyclopaedia of Islam, Maurice Delafosse notes that most modern authors accept it, yet judges the connection coincidental, and proposes another source: a kingdom of the lower valley of the river, which early texts name Sanghana in al-Bakri in the eleventh century, Senegany on a portolan chart of 1351, then Sanaga and Senega among fifteenth-century navigators. The Wolof explanation \"sunu gaal\", \"our pirogue\", is later and of a single origin: Abbé Boilat puts it forward in his Esquisses sénégalaises in 1853, and nothing attests it before him. Paul Marty opposes it in 1917 with the Hassaniya term Singhane, by which the Moors designated Cayor, and holds the Berber etymologies to be fanciful. Saliou Kandji rejects all of them in 2006.",
+  "etymology": "The origin of the name \"Senegal\" is not established and remains disputed. The most widespread hypothesis links it to the Sanhaja, a Berber confederation of the western Sahara whom French and Portuguese name Zenaga; Théodore Monod and Raymond Mauny defend it in 1960 against the Wolof explanation. It has long been disputed. In the first edition of the Encyclopaedia of Islam, Maurice Delafosse notes that most modern authors rally to it, yet judges the connection fortuitous, and proposes another source: a kingdom of the lower valley of the river, which ancient texts name Sanghana in al-Bakri in the eleventh century, Senegany on a portolan chart of 1351, then Sanaga and Senega among fifteenth-century navigators. The Wolof explanation \"sunu gaal\", \"our pirogue\", is later and of a single origin: Abbé Boilat puts it forward in his Esquisses sénégalaises in 1853, and nothing attests to it before him. Paul Marty opposes it in 1917 with the Hassaniya term Singhane, by which the Moors designated Cayor, and holds the Berber etymologies to be fanciful. Saliou Kandji rejects them all in 2006. One question remains that these readings do not raise: what did the peoples of the river call it? In 1573, the Spanish geographer Luis del Mármol Carvajal records two answers. The Toucouleurs say Mayo, which simply means \"the river\" in Pulaar. The Soninke of Ngalam say Colle. Neither of these two names survived on maps, and the one that prevailed is foreign to them.",
   "nameOriginActor": "The name is first that of the river, carried by European navigators and cartographers from the fifteenth century, then extended to the territory. What they transcribed remains disputed: a Berber name, that of a kingdom of the lower valley, a Hassaniya term or a Wolof phrase, according to different authors. None of these attributions is established.",
   "content": {
     "historicalNames": {
@@ -260,6 +260,12 @@
         "url": "http://www.seneweb.com/news/Immigration/s-n-gal-n-est-pas-sunugal-ou-de-l-tymologie-du-toponyme-s-n-gal_n_5047.html",
         "tier": "unverified",
         "notes": "Unsigned presentation. It is the source of the attribution of the term Singhane to Paul Marty and of the disagreement between Monod and Mauny and Boilat. It dates the Esquisses sénégalaises to 1850, which is inaccurate."
+      },
+      {
+        "title": "Luis del Mármol Carvajal, Primera parte de la descripción general de Áffrica, Grenade, René Rabut, 1573",
+        "url": "https://bvpb.mcu.es/es/consulta/registro.cmd?id=406911",
+        "tier": "referenced",
+        "notes": "Gives two names of the river among the peoples of its banks: Mayo among the Toucouleurs, Colle among the Soninke of Ngalam. The printed work is digitised by the Biblioteca Virtual del Patrimonio Bibliográfico. The passage is located in book VIII, chapter 3; it has not been read in the original, and the reference was found via the English version of Wikipedia, consulted on 9 September 2026."
       }
     ],
     "demographics": {
@@ -310,13 +316,13 @@
   },
   "_translation": {
     "kind": "machine",
-    "translatedAt": "2026-09-09T08:06:10.338Z",
+    "translatedAt": "2026-09-09T15:13:40.691Z",
     "model": "claude-sonnet-5",
-    "sourceHash": "023926bdc2aff99662d7f70e45a1c6b93c2ca2ea66407d6caebbb605c4ee7546",
+    "sourceHash": "05e9a6432ef736e04eb1d8ccadc309d2102daf259a9d51042d1ade711bee3eea",
     "fieldHashes": {
       "nameOfficial": "68f0ecbae22f84cc",
       "summary": "7398d32fa37abc5a",
-      "etymology": "ba1e85b1140c7680",
+      "etymology": "93d20955c38c8f57",
       "nameOriginActor": "c48d0caf2ae3d38d",
       "content.historicalNames.formerNames[0]": "23e6990c68269ba7",
       "content.historicalNames.formerNames[1]": "21817841432b771e",
@@ -390,6 +396,7 @@
       "content.sources[12].notes": "89de167982ab19b2",
       "content.sources[13].notes": "3246ef166f5b4b55",
       "content.sources[14].notes": "e98adfe8697f4fe0",
+      "content.sources[15].notes": "fb8051930c6fb791",
       "content.demographics.peoples[0].region": "c0d8b3648fd18fad",
       "content.demographics.peoples[1].region": "26a99218b3fb427d",
       "content.demographics.peoples[2].region": "2cc40b7c73e006e6",
