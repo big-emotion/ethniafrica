@@ -121,6 +121,13 @@
       "matchDomains": ["fowler.ucla.edu"]
     },
     {
+      "key": "us-state-historian",
+      "name": "Office of the Historian, U.S. Department of State",
+      "tier": "official",
+      "sourceKind": "government",
+      "matchDomains": ["history.state.gov"]
+    },
+    {
       "key": "jstor",
       "name": "JSTOR",
       "tier": "referenced",
