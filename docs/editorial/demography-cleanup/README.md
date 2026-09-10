@@ -1,8 +1,8 @@
 # Demographic cleanup — arbitration note
 
-Measured 10 September 2026 against the corpus in `dataset/source/afrik`, on the
-instruction in `04-Atelier/Guides/prompts-production-2026-09-09.md` § 12 and the
-measurement in `Guides/serie-population-2026-09-10.md`.
+Measured 10 September 2026 against the corpus in `dataset/source/afrik`, on an
+instruction and a population measurement that live in the private production
+workspace, outside this repository.
 
 **Nothing has been modified.** Every decision below is editorial and belongs to
 the operator. This note exists so the ruling can be made on measurements rather
