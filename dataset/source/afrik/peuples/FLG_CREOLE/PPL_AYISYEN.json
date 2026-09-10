@@ -4,6 +4,11 @@
     "entity": "peuple",
     "directives": "Voir DIRECTIVES-AFRIK.md pour les regles de redaction completes."
   },
+  "_translation": {
+    "deferred": {
+      "en": "English translation deferred: the etymological chain behind zonbi rests in part on references that are verified bibliographically but not yet read, so the French source is expected to gain precision before it is worth translating."
+    }
+  },
   "id": "PPL_AYISYEN",
   "nameMain": "Ayisyen",
   "languageFamilyId": "FLG_CREOLE",
@@ -35,7 +40,7 @@
         "Ancienne colonie française de Saint-Domingue (partie occidentale de l'île d'Hispaniola), actuel territoire de la République d'Haïti"
       ],
       "unificationsOrDivisions": null,
-      "externalInfluences": "Colonisation française (XVIIe siècle-1804) ; occupation américaine (1915-1934).",
+      "externalInfluences": "Colonisation française (XVIIe siècle-1804) ; occupation américaine (1915-1934). C'est pendant cette occupation que la figure du zonbi quitte Haïti : un récit de voyage américain publié en 1929 rapporte que des morts auraient été mis au travail dans les champs de canne d'une compagnie sucrière américaine installée près de Port-au-Prince, et le premier long métrage de zombies, sorti aux États-Unis en 1932, en tire son scénario. L'auteur du récit présente l'épisode comme un témoignage qu'on lui rapporte, et conclut lui-même que les zonbi qu'on lui a montrés étaient des malades qu'on faisait travailler.",
       "majorHistoricalEvents": "14 août 1791 : cérémonie du Bois Caïman, rituel vodou qui scelle un pacte de résistance parmi les insurgés. 22-23 août 1791 : début de l'insurrection générale des esclaves du Nord. 1791-1804 : guerre d'indépendance haïtienne. 1er janvier 1804 : proclamation de l'indépendance d'Haïti, premier État moderne né d'une révolte d'esclaves et première république noire indépendante."
     },
     "organization": {
@@ -78,7 +83,7 @@
       "majorRites": "Le vodou haïtien structure de nombreux rites majeurs : cérémonies d'invocation des lwa, rites funéraires, initiations.",
       "symbols": "Les vèvè, dessins rituels tracés au sol lors des cérémonies vodou pour invoquer un lwa particulier.",
       "artsAndMusic": null,
-      "spiritualities": "Le vodou haïtien, syncrétisme entre le vodun ouest-africain (fon, éwé), des apports kongo et yoruba, et le catholicisme colonial ; il coexiste avec le christianisme (catholique et protestant) largement pratiqué dans le pays."
+      "spiritualities": "Le vodou haïtien, syncrétisme entre le vodun ouest-africain (fon, éwé), des apports kongo et yoruba, et le catholicisme colonial ; il coexiste avec le christianisme (catholique et protestant) largement pratiqué dans le pays. Le mot zonbi relève de la part kongo de cet assemblage et non de sa part fon-éwé : vodun est un mot gbe, tandis que zonbi remonte à une racine bantoue d'Afrique centrale. Le zonbi est double dans la tradition : un corps que l'on a vidé de son âme, et une âme que l'on retient loin des siens."
     },
     "historicalRole": {
       "kingdomsOrChiefdoms": null,
@@ -123,6 +128,24 @@
         "url": "https://www.britannica.com/topic/Vodou",
         "tier": "referenced",
         "notes": "Encyclopedic reference work avec auteurs identifiés, utilisé pour le contexte religieux et culturel général."
+      },
+      {
+        "title": "William Seabrook, The Magic Island, 1929",
+        "url": "https://archive.org/details/magicisland00seab",
+        "tier": "referenced",
+        "notes": "Récit de voyage publié, par lequel le sens de mort-vivant entre en anglais. L'épisode de la compagnie sucrière est un témoignage oral rapporté par l'auteur, non une observation : il le présente comme le récit que lui fait un interlocuteur haïtien, et conclut lui-même que les zonbi qu'on lui a montrés étaient des malades qu'on faisait travailler."
+      },
+      {
+        "title": "Occupation des États-Unis en Haïti, 1915-1934 — Office of the Historian, département d'État",
+        "url": "https://history.state.gov/milestones/1914-1920/haiti",
+        "tier": "official",
+        "notes": "Service historique officiel du département d'État américain. Donne les bornes de l'occupation."
+      },
+      {
+        "title": "Floribert Patrick C. Endong, « The Westernization of the African Zombie in Nollywood Films », International Journal of Modern Anthropology, 2022",
+        "url": "https://doi.org/10.4314/ijma.v2i17.2",
+        "tier": "referenced",
+        "notes": "Article de revue à comité de lecture, université de Dschang, Cameroun. Donne l'origine du mot comme controversée et énumère les racines bantoues proposées."
       }
     ]
   }
