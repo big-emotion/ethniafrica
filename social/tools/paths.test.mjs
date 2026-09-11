@@ -42,14 +42,14 @@ function withEnv(vars, run) {
 
 // @req REQ-032
 test("la racine des productions vient de la variable", () => {
-  withEnv({ ETHNIAFRICA_SOCIAL_OUTPUT: "/tmp/atelier-projets" }, () => {
+  withEnv({ ETHNIAFRICA_SOCIAL_PROJECTS: "/tmp/atelier-projets" }, () => {
     assert.equal(productionsRoot(), path.resolve("/tmp/atelier-projets"));
   });
 });
 
 // @req REQ-032
 test("sans variable, les productions retombent dans le dépôt", () => {
-  withEnv({ ETHNIAFRICA_SOCIAL_OUTPUT: null }, () => {
+  withEnv({ ETHNIAFRICA_SOCIAL_PROJECTS: null }, () => {
     assert.equal(productionsRoot(), path.join(repoRoot(), "output", "social"));
   });
 });
@@ -58,15 +58,9 @@ test("sans variable, les productions retombent dans le dépôt", () => {
 test("la racine des publications vient de sa propre variable", () => {
   // Two shelves, two variables. Deriving one from the other is what tied these
   // tools to a directory layout the repository is not allowed to describe.
-  withEnv(
-    { ETHNIAFRICA_SOCIAL_PUBLICATIONS: "/tmp/biblio-publications" },
-    () => {
-      assert.equal(
-        publicationsRoot(),
-        path.resolve("/tmp/biblio-publications")
-      );
-    }
-  );
+  withEnv({ ETHNIAFRICA_SOCIAL_POSTS: "/tmp/biblio-publications" }, () => {
+    assert.equal(publicationsRoot(), path.resolve("/tmp/biblio-publications"));
+  });
 });
 
 // @req REQ-032
@@ -74,7 +68,7 @@ test("sans variable, les publications sont absentes plutôt qu'inventées", () =
   // Null, not a fallback path: a tool that walks published posts has nothing
   // sensible to walk in a fresh checkout, and must say so instead of reporting
   // an empty library as a complete one.
-  withEnv({ ETHNIAFRICA_SOCIAL_PUBLICATIONS: null }, () => {
+  withEnv({ ETHNIAFRICA_SOCIAL_POSTS: null }, () => {
     assert.equal(publicationsRoot(), null);
   });
 });

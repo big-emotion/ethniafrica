@@ -9,10 +9,15 @@ line, once, and no one noticed for a month.
 So the destination is resolved here instead of in each script.
 
 The engine used to sit beside the productions, which let one constant answer two
-questions at once: where this file lives, and where a render goes. Versioning the
-engine split them. `ETHNIAFRICA_SOCIAL_OUTPUT` now names the directory holding one
-subdirectory per subject — normally the production library, outside this
-repository, because productions are large and git is not a media store.
+questions at once: where this file lives, and where a subject lives. Versioning
+the engine split them. `ETHNIAFRICA_SOCIAL_PROJECTS` now names the workshop — one
+subdirectory per subject, holding its `cards.json`, its verified assets, its
+narration and its scratch `work/`. It sits in the production library, outside
+this repository, because productions are large and git is not a media store.
+
+It is not where the finished images go: a deck carries its own `outDir`, and the
+shelf a post is filed on is derived from the post's own status. Aiming a render
+by moving this variable would file every lot in the same bucket.
 
 Unset, a render lands under the checkout's own `output/`. That is deliberate: a
 fresh clone must be able to render without configuring anything. `output/` is
@@ -30,7 +35,7 @@ import os
 import pathlib
 import sys
 
-ENV_VAR = "ETHNIAFRICA_SOCIAL_OUTPUT"
+ENV_VAR = "ETHNIAFRICA_SOCIAL_PROJECTS"
 
 HARNESS = pathlib.Path(__file__).resolve().parent
 REPO = HARNESS.parents[1]
@@ -45,7 +50,7 @@ def productions_root():
     the variable is invisible to it, and a variable the gate cannot see is one
     that can neither be documented nor missed.
     """
-    declared = os.environ.get("ETHNIAFRICA_SOCIAL_OUTPUT", "").strip()
+    declared = os.environ.get("ETHNIAFRICA_SOCIAL_PROJECTS", "").strip()
     if declared:
         return pathlib.Path(declared).expanduser().resolve()
     return FALLBACK

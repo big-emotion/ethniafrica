@@ -25,15 +25,20 @@ point: the mark, the type scale and the plaque on a video frame and on a post
 image have to be the same things, and two implementations of one thing are two
 implementations that drift.
 
-A bare subject name resolves under the productions root, so the short form is
-both the easiest to type and the only one that cannot land somewhere else. An
-explicit path still works for a one-off.
+A bare subject name resolves under the workshop root, so the short form is both
+the easiest to type and the only one that cannot land somewhere else. An explicit
+path still works for a one-off.
 
-**`ETHNIAFRICA_SOCIAL_OUTPUT` names that root** — the directory holding one
-subdirectory per subject. Point it at the production library, which lives outside
-this repository: productions are large, and git is not a media store. Left unset,
-a render lands under this checkout's own gitignored `output/`, so a fresh clone
-renders without configuring anything and loses the files with the worktree.
+**`ETHNIAFRICA_SOCIAL_PROJECTS` names that root** — one subdirectory per subject,
+holding its `cards.json`, its verified assets, its narration and its scratch
+`work/`. Point it at the production library, which lives outside this repository:
+productions are large, and git is not a media store. Left unset, a subject
+resolves under this checkout's own gitignored `output/`, so a fresh clone renders
+without configuring anything and loses the files with the worktree.
+
+**It is not where the finished images go.** A deck carries its own `outDir`, and
+which status shelf a post is filed on follows from the post's own header. Moving
+this variable to aim a render would file every lot in one bucket.
 
 **Any other destination inside a git checkout is refused** (`ethni_paths.py`).
 This is not a hypothetical: 1,2 Go of masters and rushes were rendered into a

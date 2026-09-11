@@ -9,9 +9,9 @@
  *
  * Two shelves, two variables, neither computed from the other:
  *
- * - `ETHNIAFRICA_SOCIAL_OUTPUT` — one subdirectory per subject in production.
+ * - `ETHNIAFRICA_SOCIAL_PROJECTS` — one subdirectory per subject in production.
  *   The Python engine reads the same variable; see `social/harness/ethni_paths.py`.
- * - `ETHNIAFRICA_SOCIAL_PUBLICATIONS` — posts that have shipped or are waiting to.
+ * - `ETHNIAFRICA_SOCIAL_POSTS` — posts that have shipped or are waiting to.
  *
  * The gabarit spec is the exception: it is versioned with the engine that reads
  * it, so it resolves from the repository and needs no configuration at all.
@@ -35,7 +35,7 @@ export function repoRoot() {
  * worktree — which is the argument for setting the variable, not a defect.
  */
 export function productionsRoot() {
-  const declared = (process.env.ETHNIAFRICA_SOCIAL_OUTPUT ?? "").trim();
+  const declared = (process.env.ETHNIAFRICA_SOCIAL_PROJECTS ?? "").trim();
   if (declared) return path.resolve(declared);
   return path.join(repoRoot(), "output", "social");
 }
@@ -48,7 +48,7 @@ export function productionsRoot() {
  * instead of admitting it was never told where to look.
  */
 export function publicationsRoot() {
-  const declared = (process.env.ETHNIAFRICA_SOCIAL_PUBLICATIONS ?? "").trim();
+  const declared = (process.env.ETHNIAFRICA_SOCIAL_POSTS ?? "").trim();
   return declared ? path.resolve(declared) : null;
 }
 

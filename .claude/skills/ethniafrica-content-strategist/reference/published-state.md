@@ -14,7 +14,7 @@ one visual language — and `docs/design/gabarits-social/` is the spec they read
 
 **The productions are not**, and never will be. They live in the production
 library, outside version control, at whatever path
-`ETHNIAFRICA_SOCIAL_OUTPUT` points to on this machine. So do the publication
+`ETHNIAFRICA_SOCIAL_PROJECTS` points to on this machine. So do the publication
 index, the dated editorial guides and the pipeline state.
 
 Two consequences worth stating, because both have already caused a wrong answer:

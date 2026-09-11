@@ -74,11 +74,16 @@ illisible sur les fonds clairs.
 
 ## Où ça s'écrit
 
-`<Sujet>` est un nom nu, et il se résout sous `ETHNIAFRICA_SOCIAL_OUTPUT` — la
-bibliothèque de production, hors dépôt. **Si la variable n'est pas posée, le
-rendu part dans `output/social/` du dépôt**, qui est ignoré par git et disparaît
-avec la copie de travail. C'est un dépannage, pas une destination : dis-le à
-l'opérateur plutôt que de livrer un lot qui sera perdu.
+`<Sujet>` est un nom nu, et il se résout sous `ETHNIAFRICA_SOCIAL_PROJECTS` —
+l'atelier, hors dépôt, où vivent le `cards.json`, les `assets/` vérifiés et le
+`work/`. **Si la variable n'est pas posée, le sujet est cherché dans
+`output/social/` du dépôt**, qui est ignoré par git et disparaît avec la copie de
+travail. C'est un dépannage, pas une adresse : dis-le à l'opérateur plutôt que de
+livrer un lot qui sera perdu.
+
+**Ce n'est pas là que partent les images finies.** Chaque deck porte son propre
+`outDir`, et le bac de statut d'un post se déduit de son en-tête. Ne déplace
+jamais un dossier à la main pour changer son bac.
 
 Le moteur refuse toute autre écriture sous un dépôt git. Ce n'est pas une
 précaution théorique : 1,2 Go de masters ont fini une fois dans un `output/`

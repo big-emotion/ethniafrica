@@ -23,7 +23,7 @@ const PROJETS = productionsRoot();
  * elsewhere.
  */
 const SANS_CORPUS = !fs.existsSync(PROJETS)
-  ? { skip: "aucun corpus : ETHNIAFRICA_SOCIAL_OUTPUT n'est pas renseigné" }
+  ? { skip: "aucun corpus : ETHNIAFRICA_SOCIAL_PROJECTS n'est pas renseigné" }
   : {};
 
 function assets(limite = 40) {

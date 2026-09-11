@@ -34,7 +34,7 @@ NEEDS_CORPUS = {
 
 def main():
     suites = sorted(p.name for p in HARNESS.glob("test_*.py"))
-    root = os.environ.get("ETHNIAFRICA_SOCIAL_OUTPUT", "").strip()
+    root = os.environ.get("ETHNIAFRICA_SOCIAL_PROJECTS", "").strip()
     corpus = bool(root) and pathlib.Path(root).expanduser().is_dir()
 
     failed, skipped = [], []
@@ -49,7 +49,7 @@ def main():
     if skipped:
         print(
             f"\n{len(skipped)} suite(s) non exécutée(s), faute de corpus — "
-            "renseigne ETHNIAFRICA_SOCIAL_OUTPUT :",
+            "renseigne ETHNIAFRICA_SOCIAL_PROJECTS :",
             flush=True,
         )
         for suite in skipped:

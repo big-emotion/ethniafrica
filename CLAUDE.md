@@ -122,15 +122,23 @@ tokens it reads — it used to be a derived copy of a file in the private
 workspace, marked "do not edit here", and it was a section behind its source
 within a day.
 
-**The code is versioned; the productions are not, and the split is one variable.**
-`ETHNIAFRICA_SOCIAL_OUTPUT` names the directory holding one subdirectory per
-subject — normally the production library, outside this repository, because
-masters and rushes are large and git is not a media store. Unset, a render lands
-under the checkout's gitignored `output/social/`, so a fresh clone renders
-without configuring anything and loses the files with the worktree.
-`ETHNIAFRICA_SOCIAL_PUBLICATIONS` names the second shelf, where posts that have
-shipped or are waiting to live; `build-etat.mjs` exits rather than report an
-unconfigured library as one with zero subjects.
+**The code is versioned; the productions are not, and two variables draw the
+line.** Both name a directory outright, because deriving either one is what tied
+the engine to a layout this repository is not allowed to describe.
+
+- **`ETHNIAFRICA_SOCIAL_PROJECTS`** — one subdirectory per subject _in the
+  workshop_: its `cards.json`, its verified `assets/`, its narration, its scratch
+  `work/`. A bare subject name on a render command resolves here. Unset, it falls
+  back to the checkout's gitignored `output/social/`, so a fresh clone renders
+  with nothing configured and loses the files with the worktree.
+- **`ETHNIAFRICA_SOCIAL_POSTS`** — the finished posts, filed by status. No
+  fallback, on purpose: `build-etat.mjs` exits rather than report an
+  unconfigured library as one with zero subjects.
+
+**A render is not aimed by either of them.** Each `cards.json` carries its own
+`outDir`, and which status bucket a post sits in is derived from the post's own
+header by the library's filing tool — never chosen by the engine, and never by
+moving a folder in the Finder.
 
 **Any other destination inside a git checkout is refused** (`ethni_paths.py`,
 `assert_writable`). Not hypothetical: 1,2 Go of masters were once rendered into a

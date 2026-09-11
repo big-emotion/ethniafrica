@@ -31,10 +31,10 @@ describe("collectReferences", () => {
       collectReferences([
         {
           path: "social/harness/ethni_paths.py",
-          source: 'os.environ.get("ETHNIAFRICA_SOCIAL_OUTPUT", "")',
+          source: 'os.environ.get("ETHNIAFRICA_SOCIAL_PROJECTS", "")',
         },
       ])
-    ).toEqual(new Set(["ETHNIAFRICA_SOCIAL_OUTPUT"]));
+    ).toEqual(new Set(["ETHNIAFRICA_SOCIAL_PROJECTS"]));
   });
 
   // @req REQ-032

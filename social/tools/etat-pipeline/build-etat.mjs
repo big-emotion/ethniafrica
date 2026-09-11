@@ -111,7 +111,7 @@ function collecter() {
   // three skills read to answer « où j'en suis ».
   if (LIBRAIRIE === null) {
     console.error(
-      "ETHNIAFRICA_SOCIAL_PUBLICATIONS n'est pas renseignée — " +
+      "ETHNIAFRICA_SOCIAL_POSTS n'est pas renseignée — " +
         "impossible de dire où en sont les sujets publiés."
     );
     process.exit(1);

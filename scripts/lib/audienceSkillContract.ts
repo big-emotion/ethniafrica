@@ -25,7 +25,7 @@ export const AUDIENCE_REPORT_DIR = "docs/audience";
  * rule was reversed: an engine and a chain nobody can read the history of are an
  * engine and a chain nobody can repair. What did *not* come back is the output —
  * renders, per-subject cards and sources stay in the library, addressed by
- * `ETHNIAFRICA_SOCIAL_OUTPUT`.
+ * `ETHNIAFRICA_SOCIAL_PROJECTS`.
  *
  * So the contract can check the whole handoff again, producer included, rather
  * than half of it.

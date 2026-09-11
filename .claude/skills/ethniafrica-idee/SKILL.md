@@ -20,7 +20,7 @@ est richement documenté et jamais publié.
 
 ## Sortie
 
-Un fichier unique : `$ETHNIAFRICA_SOCIAL_OUTPUT/_idees/{slug}.md`.
+Un fichier unique : `$ETHNIAFRICA_SOCIAL_PROJECTS/_idees/{slug}.md`.
 
 ```markdown
 # {titre de travail}

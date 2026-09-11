@@ -7,7 +7,7 @@ description: Écrire le contenu d'une publication EthniAfrica à partir d'un rap
 
 Deuxième étape. `idee` vient avant, `produire` vient après.
 
-Si aucun rapport de sujet n'existe dans `$ETHNIAFRICA_SOCIAL_OUTPUT/_idees/`, dis-le et
+Si aucun rapport de sujet n'existe dans `$ETHNIAFRICA_SOCIAL_PROJECTS/_idees/`, dis-le et
 propose de lancer `idee`. Ne saute pas l'étape.
 
 ## Entrée
@@ -16,7 +16,7 @@ Le rapport de sujet écrit par `idee`.
 
 ## Sorties
 
-Dans `$ETHNIAFRICA_SOCIAL_OUTPUT/{Sujet}/` :
+Dans `$ETHNIAFRICA_SOCIAL_PROJECTS/{Sujet}/` :
 
 | Fichier            | Ce qu'il porte                                                                |
 | ------------------ | ----------------------------------------------------------------------------- |
