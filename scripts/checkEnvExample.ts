@@ -46,6 +46,12 @@ const SKIP_DIRS = new Set([
   ".claude",
   "dist",
   "build",
+  // The render engine's virtualenv is `node_modules` for Python, and scanning it
+  // reported some four hundred variables that its *dependencies* read — WORLD_SIZE,
+  // the whole XDG set — as things this repository must document.
+  "venv",
+  ".venv",
+  "__pycache__",
 ]);
 
 /**
@@ -59,7 +65,20 @@ const SKIP_DIRS = new Set([
  * need TEST_SUPABASE_* and TEST_JWT_* set to run, so those entries belong in the
  * file, and ignoring tests would make the check demand their deletion.
  */
-const TEST_PATH = /(^|[\\/])(__tests__)[\\/]|\.(test|spec)\.[tj]sx?$/;
+const TEST_PATH =
+  /(^|[\\/])(__tests__)[\\/]|\.(test|spec)\.([tj]sx?|mjs|cjs)$|(^|[\\/])test_[^\\/]+\.py$/;
+
+/**
+ * Three languages, three spellings of "this is a suite".
+ *
+ * The pattern knew only the TypeScript one, so the render engine's `.mjs` and
+ * Python suites were read as production code. Their fixture variables were then
+ * demanded in `.env.example` — where, being read by nothing a deployment runs,
+ * the reverse direction would have reported them as dead on the next run.
+ */
+export function isTestFile(path: string): boolean {
+  return TEST_PATH.test(path);
+}
 const ENV_FILE = ".env.example";
 
 /** Supplied by the runtime, never by us. */
@@ -197,7 +216,7 @@ function main(): void {
   }));
 
   const referenced = collectReferences(
-    files.filter((file) => !TEST_PATH.test(file.path))
+    files.filter((file) => !isTestFile(file.path))
   );
   const referencedIncludingTests = collectReferences(files);
   const documented = collectDocumented(

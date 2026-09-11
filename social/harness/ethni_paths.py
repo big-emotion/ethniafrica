@@ -35,6 +35,14 @@ import os
 import pathlib
 import sys
 
+import ethni_env
+
+# `.env.local` is this repository's own convention and the first place anyone
+# looks, but only Next parses it. Without this the two directories below would
+# have to be declared a second time in a shell profile. The environment still
+# wins, so a one-off override on the command line is unaffected.
+ethni_env.load_into_environ()
+
 ENV_VAR = "ETHNIAFRICA_SOCIAL_PROJECTS"
 
 HARNESS = pathlib.Path(__file__).resolve().parent

@@ -16,16 +16,57 @@
  * The gabarit spec is the exception: it is versioned with the engine that reads
  * it, so it resolves from the repository and needs no configuration at all.
  */
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 
+/**
+ * Read the repository's `.env.local`, which only Next otherwise parses.
+ *
+ * These tools run under plain `node`, so `process.env` knows nothing about that
+ * file. Skipping it would mean declaring the same two directories a second time
+ * in a shell profile, and the two copies would disagree the first time one
+ * moved.
+ *
+ * The environment wins and an empty value is not a value — `.env.example` ships
+ * every key empty, and read as a setting it would turn "not configured" into
+ * "configured to nothing". Mirrors `social/harness/ethni_env.py`.
+ */
+export function loadEnvLocal(file = path.join(repoRoot(), ".env.local")) {
+  let text;
+  try {
+    text = readFileSync(file, "utf8");
+  } catch {
+    return;
+  }
+  for (const raw of text.split("\n")) {
+    const line = raw.trim().replace(/^export\s+/, "");
+    if (!line || line.startsWith("#")) continue;
+    const at = line.indexOf("=");
+    if (at <= 0) continue;
+    const name = line.slice(0, at).trim();
+    let value = line.slice(at + 1).trim();
+    if (
+      value.length >= 2 &&
+      value[0] === value.at(-1) &&
+      /["']/.test(value[0])
+    ) {
+      value = value.slice(1, -1);
+    }
+    if (name && value && process.env[name] === undefined)
+      process.env[name] = value;
+  }
+}
+
 /** `social/tools` → the repository. */
 export function repoRoot() {
   return path.resolve(HERE, "../..");
 }
+
+loadEnvLocal();
 
 /**
  * Where a subject in production lives.

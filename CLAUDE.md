@@ -306,6 +306,14 @@ production image optimizer), `puppeteer` (`@lhci/utils` does not depend on it �
 `.lighthouserc.js`'s `puppeteerScript` resolves it from the project) and
 `@storybook/blocks` (imported by `.mdx` stories knip does not parse).
 
+`ignoreBinaries` holds one entry, `python3`: the render engine is Python and
+`test:social-engine` has to invoke an interpreter knip has no package for. That
+script names `python3` rather than the venv's own path on purpose — spelling
+`social/harness/venv/bin/python` out made the gate report an unlisted binary
+_and_ failed with a bare "no such file" on a machine that had never built the
+venv. The runner re-execs itself under the venv when one exists, and prints the
+two commands to create it when one does not.
+
 ### Custom ESLint rules (`eslint/rules/`, plugin `afh`)
 
 - `afh/no-bare-people-name` — people/language names in `components/people/**` and `components/country/**` must render through `<AutonymExonymHeading>` so autonyms keep their exonyms and `lang` attribute.

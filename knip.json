@@ -25,5 +25,6 @@
     "e2e/**/*.ts"
   ],
   "ignoreDependencies": ["sharp", "puppeteer", "@storybook/blocks"],
+  "ignoreBinaries": ["python3"],
   "ignoreExportsUsedInFile": true
 }

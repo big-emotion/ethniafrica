@@ -19,6 +19,14 @@ import subprocess
 import sys
 
 HARNESS = pathlib.Path(__file__).resolve().parent
+sys.path.insert(0, str(HARNESS))
+
+import ethni_env  # noqa: E402 — the path above is what makes it importable
+
+# The suites resolve their own roots, but this driver decides which of them can
+# run at all. Reading `os.environ` alone, it declared six suites unrunnable on a
+# machine that had the workshop configured in `.env.local` all along.
+ethni_env.load_into_environ()
 
 # Suites that assert against the corpus. Without a productions root they have
 # nothing to read, and saying so is the point.
@@ -32,7 +40,44 @@ NEEDS_CORPUS = {
 }
 
 
+def _rebind_to_the_venv():
+    """Re-exec under the engine's own interpreter, or say why it cannot.
+
+    The npm script used to spell `social/harness/venv/bin/python` out, which made
+    the dead-code gate report an unlisted binary — and, worse, failed with a bare
+    "no such file" on a machine that had never built the venv. Bootstrapping here
+    keeps the entry point one file and lets the message name the fix.
+    """
+    venv = HARNESS / "venv"
+    interpreter = venv / "bin" / "python"
+    if not interpreter.exists():
+        print(
+            "aucun environnement virtuel dans social/harness/venv.\n"
+            "  python3 -m venv social/harness/venv\n"
+            "  social/harness/venv/bin/python -m pip install -r "
+            "social/harness/requirements.txt",
+            flush=True,
+        )
+        return False
+
+    # `sys.prefix`, not the interpreter's path. A venv's `bin/python` is a symlink
+    # to the system interpreter, so comparing resolved binaries says "already
+    # there" from *outside* the venv — the exec never happened, every suite ran
+    # against the system packages, and two of them failed on a missing numpy
+    # while eight passed because they import nothing. `sys.prefix` is the one
+    # value a venv actually changes.
+    if pathlib.Path(sys.prefix).resolve() != venv.resolve():
+        os.execv(
+            str(interpreter),
+            [str(interpreter), str(HARNESS / "run-tests.py"), *sys.argv[1:]],
+        )
+    return True
+
+
 def main():
+    if not _rebind_to_the_venv():
+        return 1
+
     suites = sorted(p.name for p in HARNESS.glob("test_*.py"))
     root = os.environ.get("ETHNIAFRICA_SOCIAL_PROJECTS", "").strip()
     corpus = bool(root) and pathlib.Path(root).expanduser().is_dir()
