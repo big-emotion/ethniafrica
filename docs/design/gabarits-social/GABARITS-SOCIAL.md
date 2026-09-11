@@ -76,24 +76,127 @@ Une carte a un seul accent.
 Anton (affichage, social uniquement) et Nunito Sans (tout le reste).
 Toutes les valeurs sont en pixels à k = 1 ; multiplier par k.
 
+### Cinq rangs, et l'ordre ne se négocie pas
+
+Une carte porte deux choses que le lecteur doit emporter, et trois qui ne servent qu'à
+les créditer. Le rang décide de la taille, du contraste et de la place ; il ne se
+déduit pas de la longueur du texte.
+
+| Rang | Ce qui y vit | Taille | Encre |
+| --- | --- | --- | --- |
+| **1 · le message** | titre, chiffre, mot d'accent | 96–216 | accent |
+| **2 · la preuve** | la paire de noms, la précision | 34–56 | encre 1 |
+| **3 · l'explication** | le corps | 32 | encre 2 |
+| **4 · le repère** | pilier, rang, appel à l'action | 22–27 | encre 1 / accent |
+| **5 · l'annexe** | source, crédit, licence | 18–20 | **encre 2**, opacité .88 |
+
+**Invariant :** le corps est au moins **1,6 fois** le crédit. Une explication plus
+petite que sa mention légale inverse la hiérarchie — le lecteur lit d'abord ce qui
+compte le moins. C'est un test, pas une intention.
+
+**Le rang 5 est une annexe, pas un pied de page décoratif.** Il doit être lisible pour
+qui le cherche et discret pour qui ne le cherche pas — mais **sa discrétion vient de sa
+taille et de sa place, jamais d'un contraste raté.**
+
+> **Plafond mesuré : `--afh-night-ink-3` #8f7f66 plafonne à 4,94:1 sur le fond de nuit
+> #120e0a, à alpha 1,0.** C'est l'asymptote : aucun renforcement de voile ne peut
+> l'amener au-dessus. Dès qu'une luminance d'image survit au voile, la ligne
+> d'attribution tombe à 4,2–4,3:1 — sous le seuil, sur le seul bloc que tout
+> l'appareil de portes existe pour protéger. L'annexe prend donc **l'encre 2**
+> `#c9b99f` (10:1 sur le fond), à opacité 0,88–0,92 et à 18–20 px. Même famille de
+> faute que `--afh-color-text-muted` en §2, sur le thème de nuit au lieu du parchemin.
+> L'encre 3 reste pour ce qui n'est pas du texte : filets, filigrane, séparateurs.
+
 | Rôle | Police | Corps | Interligne | Graisse | Casse | Couleur |
 | --- | --- | --- | --- | --- | --- | --- |
 | Bandeau (pilier) | Nunito | 25 | — | 700 | maj., interlettre .20em | encre 1 |
 | Rang « 01/05 » | Nunito | 22 | — | 700 | interlettre .14em | accent |
 | Chiffre / mot d'accent | Anton | 216 | 0,84 | — | — | accent |
 | Titre de couverture | Anton | 120–126 | 0,96 | — | maj. | accent |
+| Titre de série | Anton | 96–118 | 0,98 | — | maj. | accent |
+| Paire — terme | Anton | 56 | 1,0 | — | — | encre 1 / accent |
+| Paire — glose | Nunito | 28 | 1,35 | 400 | — | encre 2 |
 | Précision (sous le chiffre) | Nunito | 36 | 1,32 | 600 | — | encre 1 |
 | Punchline | Anton | 60–64 | 1,06 | — | maj. | encre 1 |
-| Corps | Nunito | 30 | 1,55 | 400 | — | encre 2 |
-| Source | Nunito | 20 | — | 700 | maj., interlettre .09em | encre 3 |
-| Crédit | Nunito | 19 | 1,55 | 400 | — | encre 3 |
+| **Corps** | Nunito | **32** | 1,55 | 400 | — | encre 2 |
+| Source | Nunito | 20 | — | 700 | maj., interlettre .09em | encre 2, op. .92 |
+| **Crédit** | Nunito | **18** | 1,5 | 400 | — | encre 2, op. .88 |
 | Sous-titre narration | Nunito | 44–46 | 1,30 | 800 | — | encre 1 |
 
 **Mesures maximales** (rag maîtrisé) : précision 800 px · punchline 880 px ·
-corps 740 px · crédit 820 px.
+corps 740 px · crédit 760 px.
 
 **Filet séparateur** entre le bloc chiffre et la punchline : 76 × 3 px, accent,
-opacité 0,55, marge verticale 48.
+opacité 0,55, marge verticale 48. **Il est horizontal et autonome** — jamais un filet
+vertical qui longe une colonne : un filet de pleine hauteur touche le titre dès que la
+colonne grandit, et il ne dit rien que la gouttière ne dise déjà.
+
+**Interligne des titres d'affichage : 1,08 minimum.** À 0,96–0,98 les accents d'une
+ligne touchent les jambages de la précédente — « Brésilien » sur « angolais ». Anton
+n'a aucune réserve verticale ; c'est l'interligne qui la fournit.
+
+**Halo sur tout texte d'affichage posé sur une image :**
+`text-shadow: 0 2px 20px rgba(18,14,10,.85), 0 0 6px rgba(18,14,10,.6)`. Il ne compte
+pas dans la mesure de contraste — c'est le voile qui doit atteindre le seuil — mais il
+sauve le détail d'un glyphe qui tombe sur une zone claire du document.
+
+---
+
+## 3 bis. Le bloc de paire
+
+Deux noms pour une même chose — l'autonyme et l'exonyme, le mot d'origine et le mot
+repris — sont **le sujet de l'atlas**. Le bloc doit faire voir l'équivalence, pas
+empiler deux mots.
+
+**Une seule forme : l'horizontale.**
+
+**Horizontale** — deux colonnes côte à côte, **chaque terme au-dessus de
+sa propre glose**, la flèche `→` en accent dans la gouttière :
+
+```
+kilombo              →     Quilombolas
+un campement de            au Brésil
+guerre, en Angola
+```
+
+L'équivalence se lit d'un coup : deux objets de même nature, posés au même niveau.
+Mesure de chaque colonne : 330 px. Dans une disposition centrée, le couple entier est
+centré et chaque colonne reste alignée à gauche — c'est l'alignement interne qui fait
+lire la paire, pas le centrage.
+
+**L'horizontale coûte 170 px, la verticale 279.** Sur un aplat où rien ne peut se
+comprimer, ces 109 px sont la différence entre un crédit visible et un crédit hors du
+cadre. C'est la raison principale pour laquelle l'horizontale est la forme unique.
+
+**Verticale centrée** — repli, et repli seulement, quand un terme ne tient pas dans sa
+colonne. Terme et glose empilés et centrés, la flèche `↓` entre les deux groupes :
+
+```
+        kilombo
+  un campement de guerre,
+        en Angola
+           ↓
+      Quilombolas
+       au Brésil
+```
+
+**La glose est centrée sous son terme, jamais étalée sur toute la largeur.** Une glose
+qui occupe la mesure complète pendant que son terme fait trois centimètres donne à
+l'annexe le poids du sujet.
+
+**Dans les deux formes :**
+
+- **La flèche est obligatoire**, en accent, Anton 50–56 — `→` à l'horizontale, `↓` à
+  la verticale. Elle dit la dérivation : ce mot est devenu cet autre. Sans elle, deux
+  mots posés ne sont que deux mots posés.
+- **Le premier terme porte l'encre 1, le second l'accent.** Et le titre nomme les deux
+  camps dans le même ordre — « un mot **angolais** devenu **brésilien** », angolais en
+  encre 1, brésilien en accent. La couleur devient une clé de lecture au lieu d'une
+  décoration.
+- **Chaque glose appartient à son terme.** Jamais deux gloses fondues sur une ligne
+  séparées d'un middot : « un campement de guerre, en Angola · au Brésil » demande au
+  lecteur de redistribuer lui-même ce que la grille peut montrer.
+- Deux à quatre rangs. Au-delà, la carte se coupe en deux.
 
 ---
 
@@ -102,10 +205,45 @@ opacité 0,55, marge verticale 48.
 Trois couches, dans cet ordre, au-dessus de l'image :
 
 1. **Voile de bandeau, ancré sur la carte** — obligatoire, indépendant de la bande d'image.
-   `top:0`, hauteur 250 px en 4:5 / 320 px en 9:16,
-   `linear-gradient(180deg, rgba(18,14,10,.80) 0%, rgba(18,14,10,.58) 40%, rgba(18,14,10,.18) 78%, transparent 100%)`
-2. **Radial de lisibilité** (plein cadre seulement)
-   `radial-gradient(120% 62% at 50% 44%, rgba(18,14,10,.86) 0%, rgba(18,14,10,.62) 46%, rgba(18,14,10,.18) 100%)`
+   `top:0`, hauteur 268 px en 4:5 / 340 px en 9:16,
+   `linear-gradient(180deg, rgba(18,14,10,.92) 0%, rgba(18,14,10,.78) 38%, rgba(18,14,10,.34) 74%, transparent 100%)`.
+   Le bandeau **et le rang** sont du texte de corps : 4,5:1, mesuré aux deux extrémités
+   du cadre. Une rampe plus douce tombe à 3,05:1 sur le rang, à droite, sur un fond pâle.
+2. **Voile local de colonne** (plein cadre seulement) — un dégradé **calé sur le
+   premier bloc de la colonne**, pas sur le bas de la carte et pas centré sur elle.
+   Sa rampe est décrite en fractions de sa propre hauteur, et **elle atteint 0,62 à
+   mi-hauteur du premier bloc** (le chiffre, ou la première ligne du titre) et 0,86
+   sous sa base :
+
+   ```
+   bottom: 0; height: 58%   /* bloc court : chiffre + 3 lignes */
+   linear-gradient(180deg, transparent 0%, rgba(18,14,10,.08) 26%,
+     rgba(18,14,10,.30) 36%, rgba(18,14,10,.62) 44%, rgba(18,14,10,.86) 56%,
+     rgba(18,14,10,.92) 74%, rgba(18,14,10,.95) 100%)
+   ```
+
+   Bloc plus haut (titre sur deux lignes + paire) : `height: 72%`, mêmes alphas aux
+   fractions 18 / 26 / 33 / 44 / 70 / 100 %. **La rampe se recale sur la hauteur du
+   bloc, elle ne se recopie pas d'une carte à l'autre.**
+
+   **Deux pièges mesurés.** Un voile dont l'extrémité sombre est épinglée au bas du
+   cadre met toute sa force là où ne vit que le crédit et laisse le titre dans la
+   partie transparente — 1,56:1 sur un parchemin pâle. Et une rampe trop courte
+   produit une ligne de coupure visible : il faut au moins 400 px entre le premier
+   palier et le plafond. Un radial centré sur la carte produit en plus un halo gris
+   autour du sujet. **Un voile qu'on voit comme une forme est un échec**, même si le
+   contraste est atteint.
+
+   **Les deux rampes validées** — à recaler sur la hauteur réelle du bloc, jamais à
+   recopier telles quelles :
+
+   | Premier bloc | 4:5 | 9:16 | Fractions |
+   | --- | --- | --- | --- |
+   | chiffre + 3 lignes | `height:58%` | `height:81%` | 26 / 36 / 44 / 56 / 74 / 100 % |
+   | titre 2 lignes + paire | `height:72%` | `height:75%` | 18 / 26 / 33 / 44 / 70 / 100 % |
+
+   Alphas, dans l'ordre des fractions : .08 · .30 · .62 · .86 · .92 · .95.
+
 3. **Dégradé vertical**
    `linear-gradient(180deg, .90 0%, .30 10%, .06 22%, .10 40%, .82 62%, .96 78%, #120e0a 100%)`
 
@@ -132,11 +270,17 @@ dans le calcul de contraste : c'est le voile qui doit atteindre 4,5:1.
 - Bandeau centré, `top = 84k` (4:5) / `130` (9:16).
 - Bloc bas : `left/right = 96`, `bottom = 84` (4:5) / `330` (9:16),
   colonne alignée à gauche, gouttière 30–34.
-  Ordre : titre Anton 112–118 → précision 38–40 → plaque de narration → crédit + logo.
-- Plaque de narration : fond `rgba(18,14,10,.80)`, rayon 16, filet gauche 6 px accent,
-  padding 26/32, corps 44–46 / 800.
-- **Le crédit est dans la même colonne flex** que la plaque, gouttière 20 —
+  Ordre : titre Anton 96–118 → paire ou précision → corps → source → crédit + filigrane.
+- **Aucune plaque, aucune boîte.** Le texte se pose sur l'image, tenu par le voile
+  local de §4 et rien d'autre. Un aplat arrondi sur une photographie déjà voilée
+  assombrit deux fois et se lit comme une fenêtre collée sur l'image : la charte dit
+  que les apartés sont des filets, pas des boîtes. Si le texte n'est pas lisible sans
+  plaque, c'est le voile qui est mal réglé — ou l'image qui ne convient pas.
+- **Le crédit est dans la même colonne flex** que le corps, gouttière 20 —
   jamais deux ancrages absolus indépendants (ils se télescopent).
+- **A est la disposition par défaut**, et celle qui doit dominer une série : c'est la
+  seule où l'image occupe tout le cadre. Un carrousel où l'image est réduite à une
+  bande carte après carte n'est plus un carrousel d'images.
 
 ### B — Mot plein cadre
 *Ouverture et bascule. Le mot frappe, la ligne explique.*
@@ -149,11 +293,26 @@ dans le calcul de contraste : c'est le voile qui doit atteindre 4,5:1.
 - Crédit + logo épinglés en bas.
 
 ### C — Cartouche
-*Chiffre, ou corps de plus de 110 signes. L'image ne porte aucun texte.*
+*Le repli. Corps de plus de 190 signes, image trop petite pour le plein cadre, ou
+sujet détouré sur blanc. L'image ne porte aucun texte. **Un chiffre ne suffit
+pas** — voir §6.*
 
 - Bande d'image en haut : **49 % de la hauteur de la carte**, dans les deux formats.
-  Aucun texte dessus hormis le bandeau. Quand la bande de sous-titre est active en
-  9:16, elle descend à **30 %** — le texte prime sur l'image, jamais l'inverse.
+  Aucun texte dessus hormis le bandeau. Elle descend à **42 %** quand la carte porte
+  un bloc de paire, et à **30 %** quand la bande de sous-titre est active en 9:16 :
+  **le texte prime sur l'image, jamais l'inverse.**
+
+> **La bande est la seule variable d'ajustement de C.** Dans un aplat, aucun enfant ne
+> peut se comprimer : tout est `flex: 0 1 auto` avec `min-height: auto`, et l'espaceur
+> `flex:1` est déjà à zéro dès que le contenu remplit. Un bloc sur-souscrit ne se
+> serre pas, il déborde — et ce qui tombe du cadre est le bloc de crédit, qui est en
+> dernier. La hauteur de bande se calcule donc **sur la hauteur du contenu**, pas sur
+> une proportion choisie à l'avance.
+>
+> **Test manquant le plus coûteux :** vérifier que le contenu tient entre le bas de la
+> bande et le pied épinglé, pour chaque disposition × format × forme de paire. Une
+> assertion sur le pied ne suffit pas : le bloc peut être correctement épinglé à 1266
+> tandis que ses enfants débordent à 1436 sans que rien ne le signale.
 - Aplat de fond en dessous, texte dedans : titre Anton 110–124 → précision 34–38 →
   filet supérieur 2 px `rgba(232,185,106,.35)` → corps 42–46 / 800.
 - Crédit + logo épinglés en bas.
@@ -173,38 +332,61 @@ dans le calcul de contraste : c'est le voile qui doit atteindre 4,5:1.
 ## 6. Règle de choix automatique
 
 ```python
-CORPS_LONG   = 110   # signes
+CORPS_LONG   = 190   # signes — au-delà, le texte ne tient plus sur l'image
 SUR_ECH_MAX  = 2.0   # facteur d'agrandissement maximal en plein cadre
 
 def choisir(carte, image):
     sur_ech = max(1080 / image.w, hauteur_cadre / image.h)
+    image_faible = sur_ech > SUR_ECH_MAX
 
-    if carte.role in ("ouverture", "bascule"):
+    # B est réservé au mot qui porte seul : pas de corps, pas de paire
+    if carte.role in ("ouverture", "bascule") and not carte.corps and not carte.paires:
         return "B"
-    if carte.chiffre:
+
+    # C demande une vraie raison : l'image ne supporte pas le plein cadre,
+    # ou le texte est trop long pour se poser dessus
+    if image_faible:
         return "C"
-    if len(carte.corps) > CORPS_LONG:
+    if len(carte.corps or "") > CORPS_LONG:
         return "C"
 
-    # carte de série → A, sauf si l'image ne supporte pas le plein cadre
-    if sur_ech > SUR_ECH_MAX:
-        return "C"        # repli : la bande respecte la résolution native
     return "A"
 ```
 
+**A est le défaut, C est le repli, B est l'exception.** Un chiffre ne justifie plus C à
+lui seul : un chiffre se pose très bien sur une image, et c'est même là qu'il frappe
+le plus. Le seuil de corps est à 190 signes pour la même raison — à 110, la moindre
+phrase d'explication envoyait la carte en cartouche.
+
+### Quota de disposition, à l'échelle du lot
+
+**Un carrousel est un carrousel d'images.** La règle ci-dessus se choisit carte par
+carte, mais elle se vérifie sur le lot :
+
+| | Part des cartes |
+| --- | --- |
+| **A — tiers bas ancré** | **au moins 60 %**, et la majorité dans tous les cas |
+| C — cartouche | au plus 30 % |
+| B — mot plein cadre | au plus 2 cartes, et seulement en ouverture ou bascule |
+
+Un lot hors quota **sort en épreuve** avec le motif, et le rapport de rendu nomme les
+cartes tombées en C et pourquoi. Ce n'est jamais une faute de composition : c'est le
+signe que les images du lot sont trop petites pour du plein cadre, ou que les textes
+sont trop longs. Les deux se corrigent dans `structure`, pas dans le moteur.
+
 **Le repli sur résolution est la règle la plus importante du lot.** Une image de
-900 px de large en plein cadre 1080 × 1920 est agrandie ×3,6 : le document devient
-une texture, et l'argument de la carte disparaît avec lui. Vérifier
-`naturalWidth/naturalHeight`, jamais le nom de fichier.
+900 px de large en plein cadre 1080 × 1920 est agrandie ×3,6 : le document devient une
+texture, et l'argument de la carte disparaît avec lui. Vérifier `naturalWidth` /
+`naturalHeight` sur le fichier, jamais une dimension déclarée dans le JSON.
 
-Hauteurs de bande à viser pour rester sous ×1,3 :
-`hauteur_bande ≈ image.h × 1.2` — soit ≈ 660 px pour un asset de 550 px de haut.
-
----
+**Corollaire pour `structure` :** une carte destinée à A demande une image d'au moins
+**2160 × 2700** (4:5) ou **2160 × 3840** (9:16). En deçà, la carte tombera en cartouche
+quoi qu'en dise le `cards.json` — et le quota se dégradera à l'échelle du lot. Le choix
+d'image est donc éditorial avant d'être technique.
 
 ## 7. Crédits et licences
 
-Bloc de trois lignes, corps 19, encre 3, centré (dispositions centrées) ou aligné à
+Bloc de trois lignes, corps 18, encre 3, centré (dispositions centrées) ou aligné à
 gauche (A) :
 
 ```
@@ -221,6 +403,28 @@ ethniafrica.com · @ethniafrica
   ils ne s'impriment pas. Si la licence n'est pas connue, la carte ne sort pas.
 - En 9:16 le bloc est au-dessus de y = 1620, sinon l'obligation d'attribution
   est masquée par l'interface.
+
+---
+
+## 7 bis. Le filigrane
+
+**C'est un filigrane, pas une signature.** Il sert à reconnaître la marque quand la
+carte circule hors contexte, et à rien d'autre. Il n'a aucun rôle de composition.
+
+| | |
+| --- | --- |
+| Hauteur | **30 px** à k = 1 (la moitié de l'ancienne) |
+| Couleur | **monochrome**, encre 3 — jamais le lockup en couleurs |
+| Opacité | 0,55 |
+| Place | **sous** le bloc de crédit, **toujours centré sur la largeur du bloc**, gouttière 16 |
+
+**Il n'est jamais à côté du crédit.** Un lockup posé en regard force le crédit à se
+serrer sur la moitié gauche du cadre, et la marque — rang 5 — se retrouve au rang 1
+par la seule taille. Sous le crédit, le bloc d'annexe retrouve toute la largeur, se
+recentre, et le filigrane ferme la carte au lieu de la disputer.
+
+Le lockup en couleurs de marque est réservé à la bannière de chaîne et aux outros
+vidéo, là où la marque **est** le sujet.
 
 ---
 
@@ -300,9 +504,23 @@ premier changement de format.
 
 - [ ] Une seule police d'affichage sur la carte.
 - [ ] Un seul élément en accent.
+- [ ] **Le corps est au moins 1,6 fois le crédit.**
+- [ ] **Le filigrane est monochrome, à 30 px, sous le crédit — pas à côté.**
+- [ ] **Aucune plaque ni boîte sur une image** : le voile tient le texte, ou l'image
+      ne convient pas.
+- [ ] **Aucun voile visible comme une forme** — halo, disque, tache.
+- [ ] **Le voile atteint 0,62 à mi-hauteur du premier bloc**, pas au bas du cadre,
+      et sa rampe s'étale sur au moins 400 px.
+- [ ] **Aucun filet vertical de pleine hauteur** le long d'une colonne.
+- [ ] **Une paire porte son `→` et une glose par terme.**
+- [ ] **Au moins 60 % des cartes du lot en A**, au plus 30 % en C, au plus 2 en B.
+- [ ] **Le contenu tient entre le bas de la bande et le pied** — mesuré sur les
+      enfants, pas sur le bloc (§5C).
 - [ ] Le contenu occupe le cadre ; le pied est épinglé.
 - [ ] Aucune image agrandie plus de ×2 ; sinon repli sur C.
-- [ ] Contraste ≥ 4,5:1 mesuré **sur les pixels réels** sous le voile, pas estimé.
+- [ ] Contraste ≥ 4,5:1 mesuré **sur les pixels réels** sous le voile, pas estimé —
+      **y compris sur la ligne de crédit**, qui est celle qui passe le moins.
+- [ ] **L'annexe est en encre 2, pas en encre 3** (plafond 4,94:1, voir §3).
 - [ ] En 9:16, rien de lisible sous y = 1620.
 - [ ] La licence de sortie est celle du lot, calculée et non recopiée.
 - [ ] Aucune note interne visible sur l'image.
