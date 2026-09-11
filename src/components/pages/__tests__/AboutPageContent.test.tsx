@@ -36,12 +36,13 @@ describe("AboutPageContent (REQ-132)", () => {
       screen.getByRole("heading", { level: 1, name: "About" })
     ).toBeInTheDocument();
     expect(screen.getByTestId("about-overview")).toHaveTextContent(
-      /EthniAfrica is an editorial atlas/i
+      /EthniAfrica tells the story of Africa’s peoples/i
     );
-    expect(
-      screen.getByRole("link", { name: "editorial doctrine" })
-    ).toHaveAttribute("href", getLocalizedRoute("en", "doctrine"));
-    expect(screen.getByText("Three ways into the atlas")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "how we write" })).toHaveAttribute(
+      "href",
+      getLocalizedRoute("en", "doctrine")
+    );
+    expect(screen.getByText("Three ways in")).toBeInTheDocument();
   });
 
   // @req REQ-132
@@ -52,7 +53,7 @@ describe("AboutPageContent (REQ-132)", () => {
       screen.getByRole("heading", { level: 1, name: "À propos" })
     ).toBeTruthy();
     expect(screen.getByTestId("about-overview")).toHaveTextContent(
-      /EthniAfrica est un atlas éditorial/i
+      /EthniAfrica raconte les peuples d’Afrique/i
     );
   });
 
@@ -99,28 +100,52 @@ describe("AboutPageContent (REQ-132)", () => {
     const overview = screen.getByTestId("about-overview");
 
     expect(
-      within(overview).getByRole("link", { name: "doctrine éditoriale" })
+      within(overview).getByRole("link", { name: "comment on écrit" })
     ).toHaveAttribute("href", getLocalizedRoute("fr", "doctrine"));
   });
 
+  /**
+   * "Fiche" and "corpus" are workshop words. A visitor does not know what
+   * either means, and neither was load-bearing — it was the workshop talking
+   * to itself in front of the reader. Asserted rather than trusted, because
+   * one careless sentence puts them back.
+   */
   // @req REQ-132
-  it("renders the existing purpose argument after the overview", () => {
+  // @req REQ-145
+  it("says nothing to the reader in the workshop's own vocabulary", () => {
+    for (const language of ["fr", "en"] as const) {
+      const { container, unmount } = render(
+        <AboutPageContent language={language} />
+      );
+
+      expect(container.textContent).not.toMatch(/fiches?\b/i);
+      expect(container.textContent).not.toMatch(/corpus/i);
+      expect(container.textContent).not.toMatch(/autonyme?s?\b|exonyme?s?\b/i);
+
+      unmount();
+    }
+  });
+
+  /**
+   * The three-block naming argument was the longest stretch of prose on the
+   * page and it sat between two chapters. Cut on 11 September 2026: the page
+   * asked for more reading than a visitor gives it, and the three numbered
+   * chapters carry the same job in a quarter of the words.
+   */
+  // @req REQ-132
+  it("runs the three chapters back to back, with no prose block between them", () => {
     const { container } = renderAbout();
 
     const overview = screen.getByTestId("about-overview");
-    const purpose = screen.getByTestId("home-purpose-blocks");
-    const corpus = screen.getByTestId("about-content-families");
+    const chapters = screen.getByTestId("about-content-families");
 
     expect(
-      overview.compareDocumentPosition(purpose) &
+      overview.compareDocumentPosition(chapters) &
         Node.DOCUMENT_POSITION_FOLLOWING
     ).toBeTruthy();
     expect(
-      purpose.compareDocumentPosition(corpus) & Node.DOCUMENT_POSITION_FOLLOWING
-    ).toBeTruthy();
-    expect(
       container.querySelectorAll('[data-testid="home-purpose-blocks"]')
-    ).toHaveLength(1);
+    ).toHaveLength(0);
   });
 
   /**
@@ -157,8 +182,8 @@ describe("AboutPageContent (REQ-132)", () => {
 
     const status = screen.getByTestId("about-purpose-claim-status");
 
-    expect(status).toHaveTextContent(/position d’EthniAfrica/i);
-    expect(status).toHaveTextContent(/corpus ne l’établit pas/i);
+    expect(status).toHaveTextContent(/ce que nous pensons/i);
+    expect(status).toHaveTextContent(/pas un fait que l’atlas démontre/i);
   });
 
   /**
@@ -172,13 +197,13 @@ describe("AboutPageContent (REQ-132)", () => {
 
     const purposeChapter = screen.getByTestId("about-purpose");
 
-    expect(purposeChapter).toHaveTextContent(/le nom que le peuple se donne/i);
-    expect(purposeChapter).toHaveTextContent(/La Tanzanie en documente 95/);
+    expect(purposeChapter).toHaveTextContent(/le nom qu’il se donne/i);
+    expect(purposeChapter).toHaveTextContent(/La Tanzanie en compte 95/);
     expect(purposeChapter).toHaveTextContent(
-      /France parmi les pays de répartition/i
+      /la France est déjà dans la liste de leurs pays/i
     );
     expect(purposeChapter).toHaveTextContent(/191 peuples/);
-    expect(purposeChapter).toHaveTextContent(/macro-groupes exclus/i);
+    expect(purposeChapter).toHaveTextContent(/Compté le 11 septembre 2026/i);
   });
 
   // @req REQ-145
@@ -191,7 +216,7 @@ describe("AboutPageContent (REQ-132)", () => {
       /This people was not divided\. The map was drawn over it\./
     );
     expect(screen.getByTestId("about-purpose-claim-status")).toHaveTextContent(
-      /EthniAfrica’s position/i
+      /what we think/i
     );
     expect(purposeChapter).toHaveTextContent(/191 peoples/);
   });
@@ -209,12 +234,12 @@ describe("AboutPageContent (REQ-132)", () => {
     expect(
       screen.getByRole("heading", {
         level: 2,
-        name: "Trois manières d’entrer dans l’atlas",
+        name: "Trois manières d’entrer",
       })
     ).toBeInTheDocument();
     expect(
       screen.getByText(
-        "Le même corpus se parcourt selon l’intention du moment : chercher une fiche, approfondir une question ou mettre ses repères à l’épreuve.",
+        "Chercher quelque chose de précis, lire une histoire, ou jouer.",
         { exact: true }
       )
     ).toBeInTheDocument();

@@ -2,7 +2,6 @@ import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { DidYouKnow } from "@/components/home/DidYouKnow";
-import { PurposeBlocks } from "@/components/home/PurposeBlocks";
 import type { DidYouKnowFact } from "@/lib/home/didYouKnowFacts";
 import {
   getCountryRoute,
@@ -164,75 +163,6 @@ describe("DidYouKnow — the anecdote that leads somewhere (REQ-113)", () => {
       "Partager",
     ]) {
       expect(screen.queryByRole("button", { name })).toBeNull();
-    }
-  });
-});
-
-describe("PurposeBlocks — arguing by example (REQ-113)", () => {
-  // @req REQ-145
-  it("tells the naming argument in English", () => {
-    render(<PurposeBlocks language="en" />);
-
-    expect(screen.getByText("A country")).toBeInTheDocument();
-    expect(screen.getByText("A people")).toBeInTheDocument();
-    expect(screen.getByText("A language family")).toBeInTheDocument();
-    expect(screen.getByTestId("home-purpose-heading")).toHaveTextContent(
-      /a country, a people, a language/i
-    );
-    expect(
-      screen.getByRole("link", { name: "Read the Ivory Coast fiche" })
-    ).toHaveAttribute("href", getCountryRoute("en", "CIV"));
-  });
-
-  // @req REQ-113
-  it("walks the reader through country, people and language family", () => {
-    render(<PurposeBlocks language="fr" />);
-
-    expect(screen.getByText("Un pays")).toBeInTheDocument();
-    expect(screen.getByText("Un peuple")).toBeInTheDocument();
-    expect(screen.getByText("Une famille de langues")).toBeInTheDocument();
-  });
-
-  // The heading led on « Autonyme, exonyme », two terms the section itself
-  // only defines three blocks lower — so the first line of the one section
-  // written to explain something to a reader who knows nothing assumed the
-  // vocabulary it exists to teach. The games charter §8 states the rule for
-  // quiz stems ("no term the fiche itself does not gloss"); it holds at
-  // least as hard for a section title, which is read before the gloss and
-  // cannot be skipped.
-  //
-  // The replacement names the three blocks in their own order, so the
-  // heading is also the section's table of contents.
-  // @req REQ-113
-  it("opens on plain words rather than on the vocabulary it teaches below", () => {
-    render(<PurposeBlocks language="fr" />);
-
-    const heading = screen.getByTestId("home-purpose-heading");
-
-    expect(heading.textContent).not.toMatch(/autonyme|exonyme/i);
-    expect(heading).toHaveTextContent(/un pays, un peuple, une langue/i);
-  });
-
-  // CC BY-SA obliges the credit to travel with the image, not to sit in a
-  // repo file the reader never opens.
-  // @req REQ-113
-  it("prints the licence credit under the image that requires one", () => {
-    const { container } = render(<PurposeBlocks language="fr" />);
-    const figures = container.querySelectorAll("figure");
-
-    expect(
-      Array.from(figures).some((figure) =>
-        within(figure as HTMLElement).queryByText(/CC BY-SA 2\.0/)
-      )
-    ).toBe(true);
-  });
-
-  // @req REQ-113
-  it("gives every illustration an alt that says what it shows", () => {
-    const { container } = render(<PurposeBlocks language="fr" />);
-
-    for (const image of Array.from(container.querySelectorAll("img"))) {
-      expect(image.getAttribute("alt")?.length ?? 0).toBeGreaterThan(20);
     }
   });
 });
