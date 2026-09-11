@@ -58,13 +58,13 @@ describe("GameScoreCard (Jouer hub engine, REQ-120)", () => {
   });
 
   // @req REQ-120
-  it("says plainly that the corpus holds too little rather than showing an empty screen", () => {
+  it("says plainly that the atlas holds too little rather than showing an empty screen", () => {
     render(
       <GameScoreCard game={GAME} correct={0} total={0} onPlayAgain={vi.fn()} />
     );
 
     expect(screen.getByTestId("game-score-empty")).toHaveTextContent(
-      "Le corpus ne contient pas encore assez de fiches pour composer un tour de ce jeu."
+      "L’atlas ne contient pas encore assez de pages pour composer un tour de ce jeu."
     );
     expect(screen.queryByTestId("game-score-value")).not.toBeInTheDocument();
   });

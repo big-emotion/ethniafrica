@@ -12,13 +12,13 @@ import { deriveTrail } from "@/lib/navigation/deriveTrail";
 /**
  * The country fiche's reading, against its mockup.
  *
- * The fiche merged before the shared parchment existed and kept the card
+ * The page merged before the shared parchment existed and kept the card
  * layout it shipped with in May. What the mockup asks for is one continuous
  * document: a head that names the country, then étymologie, peuples, royaumes
- * and sources — every one of them present, and the ones the corpus leaves
+ * and sources — every one of them present, and the ones the atlas leaves
  * empty marked as empty rather than dropped (charter §4).
  *
- * The regimes below are the ones the corpus really has — kingdoms or none, a
+ * The regimes below are the ones the atlas really has — kingdoms or none, a
  * declared share that reaches 100 % or falls short, a name whose author is
  * recorded or is not.
  */
@@ -87,7 +87,7 @@ describe("country fiche charter", () => {
     const { rerender } = render(
       <CountryFicheTitle language="en" country={country} />
     );
-    expect(screen.getByText(/country fiche/)).toBeVisible();
+    expect(screen.getByText(/country page/)).toBeVisible();
     expect(screen.getByRole("heading", { name: "Nigéria" })).toBeVisible();
 
     rerender(<CountryRecordView language="en" country={country} />);
@@ -104,7 +104,7 @@ describe("country fiche charter", () => {
   });
 
   // A missing people breakdown does not erase the independently sourced
-  // national population. Madagascar is the corpus case for this distinction.
+  // national population. Madagascar is the atlas case for this distinction.
   // @req REQ-115
   it("keeps the national total visible when no people rows are available", () => {
     const { container } = renderParchment(
@@ -196,8 +196,8 @@ describe("country fiche charter", () => {
     expect(screen.getByText(/Flora Shaw/)).toBeInTheDocument();
   });
 
-  // Charter §4: an empty field is information about the state of the corpus,
-  // and dropping the chapter deletes that information. The fiche used to argue
+  // Charter §4: an empty field is information about the state of the atlas,
+  // and dropping the chapter deletes that information. The page used to argue
   // the opposite — that a heading over nothing states the silence less
   // honestly than the absence does — which reads the silence as a defect
   // rather than as a fact worth publishing.
@@ -233,7 +233,7 @@ describe("country fiche charter", () => {
     const gaps = screen.getAllByText("Donnée manquante");
     expect(gaps).toHaveLength(2);
 
-    // The chapter the corpus does fill carries no marker: a marker beside a
+    // The chapter the atlas does fill carries no marker: a marker beside a
     // declared value would report a gap that is not there.
     const peoples = document.querySelector(
       '[data-fiche-section="Peuples du pays"]'
@@ -256,7 +256,7 @@ describe("country fiche charter", () => {
     expect(coverage).toBeDefined();
     expect(coverage?.textContent).toMatch(/50\s%/);
     expect(coverage?.textContent).toContain("pas encore réparti");
-    // The mockup blames a top-eight cut-off. This fiche lists every people it
+    // The mockup blames a top-eight cut-off. This page lists every people it
     // has, so that sentence would be false here.
     expect(container.textContent).not.toMatch(/huit premiers/i);
     expect(container.querySelectorAll(".afh-parchment-callout")).toHaveLength(
@@ -292,9 +292,9 @@ describe("country fiche charter", () => {
 });
 
 /**
- * Two things the fiche shipped without, both visible on the mockup's parchment.
+ * Two things the page shipped without, both visible on the mockup's parchment.
  *
- * The sources closing the fiche is not a matter of taste: the record view adds
+ * The sources closing the page is not a matter of taste: the record view adds
  * three more chapters after the parchment, so "sources last" held inside
  * CountryParchment while the page put Noms, Faits and Culture after them. The
  * reader met the bibliography in the middle of the reading.
@@ -307,18 +307,18 @@ describe("country fiche parchment — head and closing", () => {
     const { container } = renderTitle(countryFixture());
 
     expect(container.querySelector(".afh-parchment-eyebrow")).toHaveTextContent(
-      "NGA · fiche pays · réf. 2025"
+      "NGA · page du pays · réf. 2025"
     );
   });
 
   // @req REQ-115
-  it("dates nothing when the corpus gives the country no demographics", () => {
+  it("dates nothing when the atlas gives the country no demographics", () => {
     const { container } = renderTitle(
       countryFixture({ demographics: undefined, majorPeoples: undefined })
     );
 
     const eyebrow = container.querySelector(".afh-parchment-eyebrow");
-    expect(eyebrow).toHaveTextContent("NGA · fiche pays");
+    expect(eyebrow).toHaveTextContent("NGA · page du pays");
     expect(eyebrow?.textContent).not.toMatch(/réf\./);
   });
 
@@ -367,7 +367,7 @@ describe("country fiche — a note only where it adds something", () => {
   const MODEL_RUBRIC = /rubriques?\s+«/i;
 
   // @req REQ-119
-  it("names neither a field path nor a rubric of the fiche model", () => {
+  it("names neither a field path nor a rubric of the page model", () => {
     const { container } = renderParchment(countryFixture());
 
     const notes = Array.from(
@@ -414,7 +414,7 @@ describe("country record view — the chapters the page adds", () => {
 
   /**
    * Each of the four repeated its own heading back as a rubric — "Rubrique
-   * « faits historiques » de la fiche" under "Faits historiques majeurs". None
+   * « faits historiques » de la page" under "Faits historiques majeurs". None
    * of them states a reference year or a derivation, so none of them has a
    * note left to print.
    */
@@ -505,7 +505,7 @@ describe("country record view — the chapters the page adds", () => {
  *
  * The fiche printed the identifier of the validation rule behind a demographic
  * shortfall ("la règle FR28 porte sur…") and a label announcing the fiche's own
- * editorial posture ("Ce que la fiche refuse de taire"). Neither addresses the
+ * editorial posture ("Ce que la page refuse de taire"). Neither addresses the
  * reader: a visitor cannot act on a requirement number, and the callout's
  * accent rule is what already sets the passage apart. What the reader is owed
  * is the claim itself — who named the country, and how much of its population

@@ -3,9 +3,9 @@ import type { Language } from "@/types/shared";
 const en = {
   pageTitle: "Languages",
   pageSubtitle:
-    "The attested languages of Africa, classified by language family. The corpus lists 748 languages for 532 distinct names — several languages share the same name (for instance “Fulfulde”, which designates both fuf and fuv), hence the family and the ISO 639-3 identifier shown on every row.",
+    "The attested languages of Africa, classified by language family. The atlas lists 748 languages for 532 distinct names — several languages share the same name (for instance “Fulfulde”, which designates both fuf and fuv), hence the family and the ISO 639-3 identifier shown on every row.",
   unavailable:
-    "The corpus's languages are temporarily unavailable. Try again in a moment.",
+    "The atlas's languages are temporarily unavailable. Try again in a moment.",
   range: {
     none: "No language",
     of: "of",
@@ -29,9 +29,9 @@ type LanguagesCopy = typeof en;
 const fr: LanguagesCopy = {
   pageTitle: "Langues",
   pageSubtitle:
-    "Les langues attestées d'Afrique, classées par famille linguistique. Le corpus recense 748 langues pour 532 noms distincts — plusieurs langues partagent un même nom (par exemple « Fulfulde », qui désigne à la fois le fuf et le fuv), d'où la famille et l'identifiant ISO 639-3 affichés sur chaque ligne.",
+    "Les langues attestées d'Afrique, classées par famille linguistique. L’atlas recense 748 langues pour 532 noms distincts — plusieurs langues partagent un même nom (par exemple « Fulfulde », qui désigne à la fois le fuf et le fuv), d'où la famille et l'identifiant ISO 639-3 affichés sur chaque ligne.",
   unavailable:
-    "Les langues du corpus sont momentanément indisponibles. Réessayez dans un instant.",
+    "Les langues de l’atlas sont momentanément indisponibles. Réessayez dans un instant.",
   range: {
     none: "Aucune langue",
     of: "sur",

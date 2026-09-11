@@ -15,7 +15,7 @@ const en = {
   eyebrow: "Write to the atlas",
   title: "Contact us",
   introduction:
-    "An error in a fiche, a source to add to the corpus, or a use of the data to discuss: write to us. Every message reaches the same inbox, and your chosen subject sorts it.",
+    "An error in a page, a source to add to the atlas, or a use of the data to discuss: write to us. Every message reaches the same inbox, and your chosen subject sorts it.",
   formTitle: "Send a message",
   requiredFields: "Fields marked with an asterisk are required.",
   civility: "Title",
@@ -88,7 +88,7 @@ const fr: ContactCopy = {
   eyebrow: "Écrire à l'atlas",
   title: "Contactez-nous",
   introduction:
-    "Une erreur sur une fiche, une source à verser au corpus, une réutilisation des données à discuter : écrivez-nous. Chaque message arrive dans la même boîte, et l'objet que vous choisissez est ce qui la trie.",
+    "Une erreur sur une page, une source à verser à l’atlas, une réutilisation des données à discuter : écrivez-nous. Chaque message arrive dans la même boîte, et l'objet que vous choisissez est ce qui la trie.",
   formTitle: "Envoyer un message",
   requiredFields: "Les champs marqués d'un astérisque sont obligatoires.",
   civility: "Civilité",

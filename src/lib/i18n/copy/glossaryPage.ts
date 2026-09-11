@@ -4,7 +4,7 @@ import type { Language } from "@/types/shared";
 const en = {
   title: "Glossary",
   subtitle: (count: number) =>
-    `The words the atlas uses to name. ${count} terms, each with an example from the corpus — or the reason why the corpus has none.`,
+    `The words the atlas uses to name. ${count} terms, each with an example from the atlas — or the reason why the atlas has none.`,
   familiesLabel: "The three families",
   familyCount: (count: number) => `${count} terms`,
   families: [
@@ -22,7 +22,7 @@ type GlossaryPageCopy = typeof en;
 const fr: GlossaryPageCopy = {
   title: "Glossaire",
   subtitle: (count) =>
-    `Les mots avec lesquels l'atlas nomme. ${count} termes, chacun avec un exemple pris dans le corpus — ou avec la raison pour laquelle le corpus n'en a pas.`,
+    `Les mots avec lesquels l'atlas nomme. ${count} termes, chacun avec un exemple pris dans l’atlas — ou avec la raison pour laquelle l’atlas n'en a pas.`,
   familiesLabel: "Les trois familles",
   familyCount: (count) => `${count} termes`,
   families: [

@@ -177,12 +177,12 @@ describe("SiteFooter", () => {
   // "tous droits réservés" contradicted the citation block above it. Brand
   // charter §2.
   // @req REQ-087
-  it("states the corpus licence in the copyright line, without a data-source claim", () => {
+  it("states the atlas licence in the copyright line, without a data-source claim", () => {
     render(<SiteFooter language="fr" />);
 
     expect(
       screen.getByText(
-        `© ${new Date().getFullYear()} EthniAfrica — corpus sous licence CC BY-SA 4.0.`
+        `© ${new Date().getFullYear()} EthniAfrica — atlas sous licence CC BY-SA 4.0.`
       )
     ).toBeInTheDocument();
     expect(screen.queryByText(/Data sources/i)).not.toBeInTheDocument();

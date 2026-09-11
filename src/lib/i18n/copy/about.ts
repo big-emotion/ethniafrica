@@ -212,8 +212,8 @@ export interface AboutPageCopy {
  * Rewritten on 11 September 2026 against the plain-language doctrine the
  * project already applies to its social cards. Two rules did most of the work.
  *
- * **The reader does not know what a "fiche" is.** It is a workshop word, and
- * so is "corpus". Both are gone from this surface: a people has a page, and
+ * **The reader does not know what a "page" is.** It is a workshop word, and
+ * so is "atlas". Both are gone from this surface: a people has a page, and
  * the thing that holds them all is the atlas. Nothing about the vocabulary was
  * load-bearing — it was the workshop talking to itself in front of a visitor.
  *

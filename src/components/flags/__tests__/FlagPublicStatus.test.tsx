@@ -80,7 +80,7 @@ describe("FlagPublicStatus", () => {
     render(<FlagPublicStatus status="accepted" language="en" />);
 
     expect(screen.getByTestId("flag-status-badge")).toHaveTextContent(
-      "accepted · fiche updated"
+      "accepted · page updated"
     );
   });
 });

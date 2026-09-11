@@ -32,7 +32,7 @@ const en = {
   },
   field: {
     explanation: (count: number) =>
-      `On a country fiche, the line closes because an administrative boundary is published and dated. Nothing comparable exists here: no corpus source states where this people's presence ends. What the corpus declares is ${count} populations by country. The map follows exactly that — one halo per country, whose area follows the population and whose border is zero. A closed outline would assert an inside and an outside that nobody can source.`,
+      `On a country page, the line closes because an administrative boundary is published and dated. Nothing comparable exists here: no atlas source states where this people's presence ends. What the atlas declares is ${count} populations by country. The map follows exactly that — one halo per country, whose area follows the population and whose border is zero. A closed outline would assert an inside and an outside that nobody can source.`,
     legend: "Decreasing density, no border",
     offMapOne:
       "One declared presence is outside the map, as the atlas covers only Africa:",
@@ -80,7 +80,7 @@ const en = {
   external: {
     title: "External identifiers",
     description:
-      "The corresponding records in the external registries referenced by this fiche.",
+      "The corresponding records in the external registries referenced by this page.",
   },
   countries: {
     offMap: "outside the map",
@@ -99,7 +99,7 @@ const en = {
   media: {
     title: "Media credits",
     description:
-      "Author, licence and source page for each image or video attached to this fiche.",
+      "Author, licence and source page for each image or video attached to this page.",
     unknownAuthor: "Unknown author",
     licence: "Licence",
     sourcePage: "Source page",
@@ -109,7 +109,7 @@ const en = {
     reference: "ref.",
     presenceCountries: (count: number) =>
       `${count} ${count === 1 ? "country" : "countries"} of presence`,
-    sourceAria: (name: string) => `for the ${name} fiche`,
+    sourceAria: (name: string) => `for the ${name} page`,
   },
   presenceFacts: {
     description: (id: string) =>
@@ -120,7 +120,7 @@ const en = {
     haloBody:
       "The radius follows the square root of the population, so the area follows the population. The border is zero: there is no boundary to read.",
     reference: "Ref.",
-    readFull: "Read the full fiche",
+    readFull: "Read the full page",
   },
   atlas: {
     missingDistribution: (name: string) =>
@@ -165,7 +165,7 @@ const fr: PeopleCopy = {
   },
   field: {
     explanation: (count) =>
-      `Sur la fiche d'un pays, le trait se referme parce qu'une frontière administrative est publiée et datée. Ici, rien de tel n'existe : aucune source du corpus ne dit où la présence de ce peuple s'arrête. Ce que le corpus déclare, ce sont ${count} populations par pays. La carte s'en tient exactement à cela — un halo par pays, dont l'aire suit la population et dont le bord vaut zéro. Un tracé fermé aurait affirmé un dedans et un dehors que personne ne peut sourcer.`,
+      `Sur la page d'un pays, le trait se referme parce qu'une frontière administrative est publiée et datée. Ici, rien de tel n'existe : aucune source de l’atlas ne dit où la présence de ce peuple s'arrête. Ce que l’atlas déclare, ce sont ${count} populations par pays. La carte s'en tient exactement à cela — un halo par pays, dont l'aire suit la population et dont le bord vaut zéro. Un tracé fermé aurait affirmé un dedans et un dehors que personne ne peut sourcer.`,
     legend: "Densité décroissante, bord nul",
     offMapOne:
       "Une présence déclarée est hors carte, l'atlas ne couvrant que l'Afrique :",
@@ -213,7 +213,7 @@ const fr: PeopleCopy = {
   external: {
     title: "Identifiants externes",
     description:
-      "Les fiches correspondantes dans les registres externes référencés par cette fiche.",
+      "Les entrées correspondantes dans les registres extérieurs auxquels cette page renvoie.",
   },
   countries: {
     offMap: "hors carte",
@@ -232,7 +232,7 @@ const fr: PeopleCopy = {
   media: {
     title: "Crédits médias",
     description:
-      "Auteur, licence et page d'origine de chaque image ou vidéo attachée à cette fiche.",
+      "Auteur, licence et page d'origine de chaque image ou vidéo attachée à cette page.",
     unknownAuthor: "Auteur inconnu",
     licence: "Licence",
     sourcePage: "Page source",
@@ -241,7 +241,7 @@ const fr: PeopleCopy = {
     people: "personnes",
     reference: "réf.",
     presenceCountries: (count) => `${count} pays de présence`,
-    sourceAria: (name) => `pour la fiche ${name}`,
+    sourceAria: (name) => `pour la page ${name}`,
   },
   presenceFacts: {
     description: (id) => `${id} · présence déclarée, sans tracé de limite`,
@@ -251,7 +251,7 @@ const fr: PeopleCopy = {
     haloBody:
       "Le rayon suit la racine de la population, donc l'aire suit la population. Le bord vaut zéro : il n'y a pas de limite à lire.",
     reference: "Réf.",
-    readFull: "Lire la fiche complète",
+    readFull: "Lire la page complète",
   },
   atlas: {
     missingDistribution: (name) =>

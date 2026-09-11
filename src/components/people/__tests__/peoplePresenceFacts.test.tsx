@@ -34,7 +34,7 @@ describe("buildPeoplePresenceFacts (REQ-117)", () => {
     expect(screen.getByText("Declared population")).toBeVisible();
     expect(screen.getByText("What the halo means")).toBeVisible();
     expect(
-      screen.getByRole("link", { name: "Read the full fiche" })
+      screen.getByRole("link", { name: "Read the full page" })
     ).toBeVisible();
   });
 
@@ -148,7 +148,7 @@ describe("buildPeoplePresenceFacts (REQ-117)", () => {
   });
 
   // @req REQ-117
-  it("anchors the way out on the fiche's own record section, not the top of the page", () => {
+  it("anchors the way out on the page's own record section, not the top of the page", () => {
     const facts = buildPeoplePresenceFacts({
       language: "fr",
       peopleName: "Yoruba",
@@ -157,13 +157,13 @@ describe("buildPeoplePresenceFacts (REQ-117)", () => {
     });
     render(<>{facts.NGA?.body}</>);
 
-    const link = screen.getByRole("link", { name: /Lire la fiche complète/ });
+    const link = screen.getByRole("link", { name: /Lire la page complète/ });
     expect(link.getAttribute("href")).toMatch(/^#.+/);
     expect(link.getAttribute("href")).not.toBe("#");
   });
 
   // @req REQ-119
-  it("says nothing at all when the fiche declares no distribution", () => {
+  it("says nothing at all when the page declares no distribution", () => {
     expect(
       buildPeoplePresenceFacts({
         language: "fr",

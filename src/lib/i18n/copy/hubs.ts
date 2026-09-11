@@ -10,9 +10,9 @@ const en = {
     title: TRAIL_PAGE_LABELS.en.atlasHub,
     pageTitle: "Explore the peoples of Africa",
     blurb:
-      "The fiche axis: language families, languages, peoples, countries and names, each under its own.",
+      "The page axis: language families, languages, peoples, countries and names, each under its own.",
     menuBlurb:
-      "The fiches of language families, languages, peoples, countries and names, plus the search.",
+      "The pages of language families, languages, peoples, countries and names, plus the search.",
     hubEntryName: "The exploration hub",
   },
   dossiers: {
@@ -38,9 +38,9 @@ const en = {
     title: TRAIL_PAGE_LABELS.en.jeuxHub,
     pageTitle: "Play with the peoples of Africa",
     blurb:
-      "The testing axis: games and quizzes drawn from the fiches, each answer leading back to its own.",
+      "The testing axis: games and quizzes drawn from the pages, each answer leading back to its own.",
     menuBlurb:
-      "A quiz drawn from the fiches, and the Mercator projection cut down to size.",
+      "A quiz drawn from the pages, and the Mercator projection cut down to size.",
     hubEntryName: "The games hub",
   },
   unavailableLabel: "Coming soon",
@@ -69,9 +69,9 @@ const en = {
     mercator: "The Mercator projection",
   } as Record<string, string>,
   // What the reader reads over a rubric of dossiers. One domain noun each,
-  // taken from the vocabulary the country fiche already teaches — `country.ts`
+  // taken from the vocabulary the country page already teaches — `country.ts`
   // renders Religions · Economy · Organisation · Relations over its culture
-  // block — so a reader who has read one fiche has met these words before.
+  // block — so a reader who has read one page has met these words before.
   //
   // Phrases were tried first and rejected in review: « Ce qu'on mesure » and
   // « Pouvoirs et territoires » read as sentences where the surface needs a
@@ -116,7 +116,7 @@ type HubsCopy = typeof en;
 // `modulesNamedIn` keeps it honest as the registry changes.
 //
 // Each blurb used to open on the reader's own trajectory — « Il arrive
-// avec un nom, il repart avec une fiche » — before naming the contents.
+// avec un nom, il repart avec une page » — before naming the contents.
 // It read as a figure of speech where a hub page owes a description,
 // and it was the first sentence of three pages and their three meta
 // descriptions. The clause is gone; what the axis actually holds, which
@@ -134,7 +134,7 @@ const fr: HubsCopy = {
     // inside, and neither is glossed anywhere a reader passes through
     // (ETNI-857) — so the menu that is supposed to say where a click
     // lands was written in the vocabulary of the people who built it.
-    // Ordered by the corpus's own hierarchy — famille → langue → peuple →
+    // Ordered by the atlas's own hierarchy — famille → langue → peuple →
     // pays — then the axis that names rather than places. Both sentences once
     // listed four of six classes, each omitting a different pair, so a
     // reader met a different atlas depending on whether they read the menu
@@ -144,9 +144,9 @@ const fr: HubsCopy = {
     // 2026 (atlas-charter.md §3), and a sentence that promises what the row
     // below it does not offer is the same defect in the other direction.
     blurb:
-      "L'axe des fiches : familles linguistiques, langues, peuples, pays et noms, chacun sous la sienne.",
+      "L'axe des pages : familles linguistiques, langues, peuples, pays et noms, chacun sous la sienne.",
     menuBlurb:
-      "Les fiches de familles linguistiques, langues, peuples, pays et noms, plus la recherche.",
+      "Les pages de familles linguistiques, langues, peuples, pays et noms, plus la recherche.",
     hubEntryName: "Le hub d'exploration",
   },
   dossiers: {
@@ -169,9 +169,9 @@ const fr: HubsCopy = {
     title: ACCESS_MODE_LABELS.jeux,
     pageTitle: "Jouer avec les peuples d'Afrique",
     blurb:
-      "L'axe de la mise à l'épreuve : des jeux et des quiz tirés des fiches, dont chaque réponse renvoie à la sienne.",
+      "L'axe de la mise à l'épreuve : des jeux et des quiz tirés des pages, dont chaque réponse renvoie à la sienne.",
     menuBlurb:
-      "Un quiz tiré des fiches, et la projection de Mercator remise à sa juste taille.",
+      "Un quiz tiré des pages, et la projection de Mercator remise à sa juste taille.",
     hubEntryName: "Le hub des jeux",
   },
   unavailableLabel: "Bientôt",

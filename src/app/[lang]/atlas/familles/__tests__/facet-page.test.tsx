@@ -143,7 +143,7 @@ describe("the families facet", () => {
   });
 
   // @req REQ-091
-  it("sends a ?family= deep link to that family's fiche", async () => {
+  it("sends a ?family= deep link to that family's page", async () => {
     await expect(renderRoute({ family: "FLG_BANTU" })).rejects.toThrow(
       `NEXT_REDIRECT:${getFamilyRoute("fr", "FLG_BANTU")}`
     );
@@ -187,11 +187,11 @@ describe("the families facet", () => {
   it("renders its reading and controls in English", async () => {
     render(await renderRoute({}, "en"));
 
-    expect(screen.getByText(/16 families in the corpus/)).toBeInTheDocument();
+    expect(screen.getByText(/16 families in the atlas/)).toBeInTheDocument();
     expect(
       screen.getByRole("searchbox", { name: "Search language families" })
     ).toHaveAttribute("placeholder", "Family name or identifier");
-    expect(screen.getByText(/320 peoples in the corpus/)).toBeInTheDocument();
+    expect(screen.getByText(/320 peoples in the atlas/)).toBeInTheDocument();
   });
 
   // @req REQ-117
@@ -383,7 +383,7 @@ describe("the families facet", () => {
   });
 
   // @req REQ-114
-  it("offers only the countries the corpus documents a family in", async () => {
+  it("offers only the countries the atlas documents a family in", async () => {
     render(await renderRoute({}));
 
     const select = screen.getByLabelText("Pays") as HTMLSelectElement;
@@ -438,7 +438,7 @@ describe("the families facet", () => {
 
   // A list row opens the fiche. Only the map opens the globe's panel.
   // @req REQ-091
-  it("opens each row straight onto its fiche", async () => {
+  it("opens each row straight onto its page", async () => {
     render(await renderRoute({}));
 
     const list = screen.getByTestId("family-facet-list");
@@ -458,7 +458,7 @@ describe("the families facet", () => {
   });
 
   // @req REQ-108
-  it("says nothing about unclassified peoples when the corpus leaves none", async () => {
+  it("says nothing about unclassified peoples when the atlas leaves none", async () => {
     mockGetLanguageFamilies.mockResolvedValue({
       data: [],
       total: 0,

@@ -4,7 +4,7 @@ import type { Language } from "@/types/shared";
 const en = {
   title: "Editorial doctrine",
   intro:
-    "This page defines the epistemic status assigned to each classification of a people or language family. The badge shown on each fiche links to the corresponding definition below.",
+    "This page defines the epistemic status assigned to each classification of a people or language family. The badge shown on each page links to the corresponding definition below.",
   stepLabel: "Editorial status",
   descriptions: {
     consensual:
@@ -29,7 +29,7 @@ type DoctrineCopy = typeof en;
 const fr: DoctrineCopy = {
   title: "Doctrine éditoriale",
   intro:
-    "Cette page définit le statut épistémique attribué à chaque classification de peuple et de famille linguistique. Le badge affiché sur les fiches renvoie vers la définition correspondante ci-dessous.",
+    "Cette page définit le statut épistémique attribué à chaque classification de peuple et de famille linguistique. Le badge affiché sur les pages renvoie vers la définition correspondante ci-dessous.",
   stepLabel: "Statut éditorial",
   descriptions: {
     consensual:
