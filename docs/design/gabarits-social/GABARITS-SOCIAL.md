@@ -293,9 +293,7 @@ dans le calcul de contraste : c'est le voile qui doit atteindre 4,5:1.
 - Crédit + logo épinglés en bas.
 
 ### C — Cartouche
-*Le repli. Corps de plus de 190 signes, image trop petite pour le plein cadre, ou
-sujet détouré sur blanc. L'image ne porte aucun texte. **Un chiffre ne suffit
-pas** — voir §6.*
+*Chiffre, ou corps de plus de 110 signes. L'image ne porte aucun texte.*
 
 - Bande d'image en haut : **49 % de la hauteur de la carte**, dans les deux formats.
   Aucun texte dessus hormis le bandeau. Elle descend à **42 %** quand la carte porte
@@ -332,31 +330,46 @@ pas** — voir §6.*
 ## 6. Règle de choix automatique
 
 ```python
-CORPS_LONG   = 190   # signes — au-delà, le texte ne tient plus sur l'image
-SUR_ECH_MAX  = 2.0   # facteur d'agrandissement maximal en plein cadre
+SUR_ECH_MAX = 2.0   # agrandissement maximal en plein cadre
+CORPS_COURT = 90    # signes — au-delà, le mot ne porte plus seul
 
 def choisir(carte, image):
     sur_ech = max(1080 / image.w, hauteur_cadre / image.h)
-    image_faible = sur_ech > SUR_ECH_MAX
 
-    # B est réservé au mot qui porte seul : pas de corps, pas de paire
-    if carte.role in ("ouverture", "bascule") and not carte.corps and not carte.paires:
+    # B : le mot porte, une ligne l'explique. Pas de paire.
+    if carte.role in ("ouverture", "bascule") \
+       and not carte.paires \
+       and len(carte.corps or "") <= CORPS_COURT:
         return "B"
 
-    # C demande une vraie raison : l'image ne supporte pas le plein cadre,
-    # ou le texte est trop long pour se poser dessus
-    if image_faible:
+    # C : repli. L'image ne supporte pas le plein cadre,
+    #     ou la colonne composée ne tient pas au-dessus du crédit.
+    if sur_ech > SUR_ECH_MAX:
         return "C"
-    if len(carte.corps or "") > CORPS_LONG:
+    if not colonne_A_tient(carte, image):
         return "C"
 
     return "A"
 ```
 
-**A est le défaut, C est le repli, B est l'exception.** Un chiffre ne justifie plus C à
-lui seul : un chiffre se pose très bien sur une image, et c'est même là qu'il frappe
-le plus. Le seuil de corps est à 190 signes pour la même raison — à 110, la moindre
-phrase d'explication envoyait la carte en cartouche.
+**`colonne_A_tient()` mesure, elle ne compte pas.** Elle compose la colonne A —
+titre, paire, corps, source, crédit, filigrane — avec la police qui va la dessiner, et
+vérifie que le tout tient entre le voile et la marge basse **et** que chaque bloc garde
+son seuil de contraste. Un compte de signes est une approximation de cette mesure, et
+une mauvaise : 199 signes en deux lignes courtes tiennent là où 185 signes en quatre
+lignes ne tiennent pas. Même famille de faute que le plafond de sous-titre compté en
+caractères au lieu d'être mesuré en pixels.
+
+
+**A est le défaut, C est le repli, B est l'exception.** Un chiffre ne justifie pas C à
+lui seul : un chiffre se pose très bien sur une image, et c'est même là qu'il frappe le
+plus.
+
+**B accepte une ligne d'explication, jusqu'à 90 signes.** Sans ce seuil, B n'existe
+pas : toute carte d'ouverture porte un corps, donc aucune ne remplit jamais la
+condition, et le plafond de deux se tient à zéro — une exception que la règle a rendue
+impossible. Ce que B refuse, c'est la paire : un mot plein cadre et un tableau de deux
+termes se disputent le même centre.
 
 ### Quota de disposition, à l'échelle du lot
 
@@ -480,6 +493,8 @@ vidéo, là où la marque **est** le sujet.
         "depot": "Bibliothèque nationale du pays de Galles",
         "licence": "domaine public"
       },
+      "paires": null,
+      "titre_camps": null,
       "coupe": null,
       "disposition": "auto"
     }
@@ -492,6 +507,17 @@ vidéo, là où la marque **est** le sujet.
 `image.identite` **décrit ce que l'image montre**, en une phrase, sans nommer son
 auteur ni sa licence. C'est ce que la porte 2 compare au crédit : sans lui, la porte
 la plus utile du lot s'abstient. Champ obligatoire pour tout nouveau sujet.
+
+`paires` porte le bloc de §3 bis : une liste de couples `{terme, glose}`, deux à quatre.
+`null` quand la carte n'en a pas. **Le champ `accent` d'un terme n'existe pas** : la
+couleur est positionnelle — premier terme en encre 1, second en accent. Une carte ne
+porte jamais `corps` et `paires` à la fois.
+
+`titre_camps` nomme les deux camps du titre pour les colorer comme la paire —
+`{"un": "angolais", "deux": "brésilien"}`. Les mots ne se déduisent pas du titre : ils
+sont écrits dans `structure`. **Champ facultatif, jamais bloquant** : sans lui le titre
+reste en encre 1, ce qui est correct, seulement moins parlant. Il se remplit deck par
+deck au moment de rendre, comme `image.identite`.
 
 `coupe` force les retours à la ligne d'un titre. `null` laisse le moteur couper sur la
 mesure. Ne l'employer que là où la coupe **porte du sens** — une énumération dont les
@@ -514,6 +540,7 @@ premier changement de format.
 - [ ] **Aucun filet vertical de pleine hauteur** le long d'une colonne.
 - [ ] **Une paire porte son `→` et une glose par terme.**
 - [ ] **Au moins 60 % des cartes du lot en A**, au plus 30 % en C, au plus 2 en B.
+- [ ] **Le choix de A repose sur une colonne mesurée**, pas sur un compte de signes.
 - [ ] **Le contenu tient entre le bas de la bande et le pied** — mesuré sur les
       enfants, pas sur le bloc (§5C).
 - [ ] Le contenu occupe le cadre ; le pied est épinglé.
