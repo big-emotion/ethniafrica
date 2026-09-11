@@ -930,6 +930,7 @@ sous-titre, transitions entre séquences. §9 et le brief vidéo portent la cade
         "licence": "domaine public"
       },
       "paires": null,
+      "pivot": null,
       "titre_camps": null,
       "coupe": null,
       "disposition": "auto"
@@ -953,6 +954,13 @@ montre l'équivalence, le corps dit d'où elle vient. Les 41 cartes à paire en 
 les deux. L'exclusion mutuelle écrite plus haut était une erreur de ma part, reprise de
 la contrainte `corps_paires` de la vidéo, où le tableau *remplace* le corps parce qu'il
 n'y a pas la place pour les deux. En image fixe, il y a la place.
+
+`pivot` est le mot — ou le membre de phrase — qu'une plaque passe en accent : la
+plaque de sous-titre sur une scène vidéo, la plaque de vision sur une clôture.
+**Un seul par carte.** Le moteur ne le déduit jamais : aucune règle ne dit quel
+mot d'une phrase porte son basculement. `null` est une réponse valide et veut dire
+« aucun accent sur cette carte », pas « à décider plus tard ». Obligatoire sur
+toute scène vidéo.
 
 `titre_camps` nomme les deux camps du titre pour les colorer comme la paire —
 `{"un": "angolais", "deux": "brésilien"}`. Les mots ne se déduisent pas du titre : ils
