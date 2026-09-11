@@ -818,30 +818,61 @@ pas le nombre.
 lignes (96 px) = 375 px, emplacement à `top: 890` sur 380. La rampe du voile se recale
 d'autant — `top: 590`.
 
-### La dernière image est la clôture, et rien après
+### La carte de fin suit la clôture, et n'arrive que sur la phrase qui l'appelle
 
-**La carte d'outro héritée est retirée.** `ethni_render.py` porte une carte de sortie
-sur fond parchemin — logo, sous-titre de série, mur d'icônes sociales — et elle ne
-s'ajoutait pas à la clôture : **elle la remplaçait**. Un montage se terminait donc sur
-une adresse et cinq identifiants, jamais sur l'argument.
+La carte de fin — logo animé, identifiants de réseaux — a été **retirée une fois, et
+c'était l'ordre qui était faux, pas la carte.** Elle était placée sur un dégagement
+calculé contre la bande de légende, donc elle tombait sur la clôture : elle ne s'y
+ajoutait pas, **elle la remplaçait**, et un montage se terminait sur une adresse.
 
-C'est la dernière image qui décide ce que le spectateur emporte. Elle porte la doctrine
-ou elle ne sert à rien.
+Remise dans le bon ordre, elle a sa place. Ce qui la gouverne tient en trois règles :
 
-| | Retiré | Pourquoi |
-| --- | --- | --- |
-| Fond parchemin | oui | rompt le thème de nuit sur la seule image qui doit rester en mémoire |
-| Mur de cinq icônes sociales | oui | cinq identifiants en 9:16 sont illisibles, et un abonné qui regarde sur TikTok n'a pas besoin qu'on lui dise où est TikTok |
-| « Le vrai nom de chaque peuple » | oui | c'est un slogan, pas la vision ; §7 ter fixe la ligne de vision mot pour mot |
-| Lockup en couleurs de marque | oui | réservé à la bannière de chaîne et aux cartes de titre, pas à une image clé |
+1. **Elle suit la clôture.** Jamais pendant, jamais à sa place. L'argument passe en
+   entier avant elle. Une garde le vérifie : son repère ne peut pas précéder le début
+   de la scène de clôture.
+2. **Son repère est une phrase, pas un calcul.** Elle entre sur la **dernière phrase
+   parlée** — celle qui dit où aller. Le dégagement calculé n'a plus d'objet : une
+   clôture ne réserve aucune bande de légende, elle porte sa vision composée.
+3. **Elle dure ce que son animation demande**, et rien de plus. C'est le seul endroit
+   du gabarit où le logo est en couleurs de marque et où les identifiants de réseaux
+   paraissent.
 
-**Les identifiants de réseaux vivent dans la description de la publication**, où ils sont
-cliquables, jamais gravés dans l'image, où ils ne le sont pas.
+**Les identifiants restent aussi dans la description de la publication**, où ils sont
+cliquables. Gravés dans l'image ils ne le sont pas : la carte de fin dit qu'il y a un
+ailleurs, elle n'y emmène personne.
 
-**Corollaire pour `structure` :** le script de narration se termine lui aussi sur la
-doctrine. « Sur EthniAfrica on documente d'où viennent les noms » est une adresse ; la
-dernière phrase parlée doit être le renversement et la vision, comme la dernière image.
-Un montage dont l'image dit la doctrine et dont la voix dit l'adresse se contredit.
+> **Réserve consignée.** L'actif approuvé est sur fond parchemin, quand le film est en
+> thème de nuit, et il porte « Le vrai nom de chaque peuple », qui est un slogan là où
+> §7 ter fixe la ligne de vision mot pour mot. C'est accepté parce que la carte arrive
+> **après** que la doctrine a été dite et montrée : elle signe, elle n'argumente plus.
+> Une version en thème de nuit reste le bon objectif.
+
+### La voix finit où l'image finit
+
+**Le script de narration se termine sur la doctrine, pas sur une adresse.** « Sur
+EthniAfrica on documente d'où viennent les noms » est une adresse ; un montage dont
+l'image dit la doctrine et dont la voix dit l'adresse se contredit sur sa dernière
+seconde.
+
+La fin parlée reprend donc la carte de clôture, dans son ordre : le renversement, sa
+datation, la vision, puis la sortie qui appelle la carte de fin.
+
+> Une frontière ne contient pas un peuple. Elle le traverse.
+> Ces frontières ont été tracées à la conférence de Berlin, en 1884. Les noms, eux,
+> sont mille ans plus vieux.
+> Sur EthniAfrica, on cherche à nommer un peuple aussi facilement qu'un pays.
+> Retrouvez l'histoire du nom des peuples sur EthniAfrica. Et bientôt, celle des lieux.
+
+**La clôture ne porte pas de légende, et c'est pour cette raison.** L'image dit déjà
+mot pour mot ce que la voix dit : une légende par-dessus serait la troisième copie de
+la même phrase. Partout ailleurs la légende est due, parce que l'image ne dit pas ce
+qui se dit.
+
+**Une scène commence où son paragraphe se dit.** `scene-starts.json` porte la mesure,
+un point par bloc séparé par une ligne vide ; le moteur la lit et ne la devine pas.
+Répartis à parts égales sur les légendes, les huit plans de Libreville affichaient la
+clôture à 44,10 s quand sa première phrase se dit à 50,88 s — six secondes de doctrine
+posées sur un récit qui n'avait pas fini.
 
 ---
 
