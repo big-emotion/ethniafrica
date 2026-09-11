@@ -41,7 +41,7 @@ export const accessModeCards: Record<Language, AccessModeCardCopy[]> = {
       id: "atlas",
       label: "The atlas",
       description:
-        "The site's fiches: families, languages, peoples, countries, designations and names, plus free search.",
+        "Everything the atlas holds: families, languages, peoples, countries and names, plus free search.",
       accentClass: ACCENT_CLASS.atlas,
     },
     {
@@ -55,7 +55,7 @@ export const accessModeCards: Record<Language, AccessModeCardCopy[]> = {
       id: "jeux",
       label: "Play",
       description:
-        "A quiz drawn from the fiches, and the Mercator projection cut down to size.",
+        "A quiz drawn from the atlas, and the Mercator projection cut down to size.",
       accentClass: ACCENT_CLASS.jeux,
     },
   ],
@@ -64,7 +64,7 @@ export const accessModeCards: Record<Language, AccessModeCardCopy[]> = {
       id: "atlas",
       label: "L'atlas",
       description:
-        "Les fiches du site : familles linguistiques, langues, peuples, pays et noms, plus la recherche libre.",
+        "Tout ce que l’atlas contient : familles de langues, langues, peuples, pays et noms, plus la recherche libre.",
       accentClass: ACCENT_CLASS.atlas,
     },
     {
@@ -78,7 +78,7 @@ export const accessModeCards: Record<Language, AccessModeCardCopy[]> = {
       id: "jeux",
       label: "Jouer",
       description:
-        "Un quiz tiré des fiches, et la projection de Mercator remise à sa juste taille.",
+        "Un quiz tiré de l’atlas, et la projection de Mercator remise à sa juste taille.",
       accentClass: ACCENT_CLASS.jeux,
     },
   ],
@@ -123,23 +123,23 @@ export const purposeChapter: Record<Language, PurposeChapterCopy> = {
     title: "What this atlas sets out to change",
     claim: "This people was not divided. The map was drawn over it.",
     claimStatus:
-      "That sentence is EthniAfrica’s position. The corpus does not establish it; it carries what the position rests on, and that follows here.",
+      "That is what we think, not a fact the atlas proves. Here is what it rests on.",
     scales: [
       {
         title: "For a people",
-        body: "Every fiche leads with the name a people gives itself. The name others gave it follows, with its context, and is never quietly dropped. Any fiche accepts a correction report from the people it describes.",
+        body: "It leads with the name it gives itself. The name others give it comes after. And if we get it wrong, anyone can tell us.",
       },
       {
         title: "For a country",
-        body: "A country fiche lists those who live there rather than summarising a nation. Tanzania documents 95 of them, Ethiopia 82, Ghana 80, Côte d’Ivoire and Nigeria 68 each.",
+        body: "A country is not a flag. It is the list of those who live there. Tanzania counts 95, Ethiopia 82, Ghana 80.",
       },
       {
         title: "For a diaspora",
-        body: "The corpus already counts France among the countries of distribution for the Soninke, the Kabyles and the Comorians. The atlas does not point its readers somewhere else.",
+        body: "For the Soninke, the Kabyles and the Comorians, France is already on the list of their countries. We are not talking about somewhere else.",
       },
     ],
     closing:
-      "A colonial border is a hundred and forty years old: the Berlin conference opens in 1884, and most independences date from 1960. The belongings those lines cut across are older, and 191 peoples in the corpus live today in three countries or more — the Fula in twelve, the Soninke in eleven. Measured on 11 September 2026, macro-groups excluded.",
+      "Africa’s borders are a hundred and forty years old. Berlin, 1884. Independence, 1960. What they cut across is far older: 191 peoples live today in three countries or more. The Fula in twelve. The Soninke in eleven. Counted on 11 September 2026.",
   },
   fr: {
     stepLabel: "01 · Le propos",
@@ -147,23 +147,23 @@ export const purposeChapter: Record<Language, PurposeChapterCopy> = {
     claim:
       "Ce peuple n’a pas été divisé. C’est la carte qui a été dessinée par-dessus.",
     claimStatus:
-      "Cette phrase est la position d’EthniAfrica. Le corpus ne l’établit pas ; il en porte les éléments, et les voici.",
+      "C’est ce que nous pensons, pas un fait que l’atlas démontre. Voici sur quoi ça repose.",
     scales: [
       {
         title: "Pour un peuple",
-        body: "Chaque fiche porte d’abord le nom que le peuple se donne. Le nom que d’autres lui ont donné vient ensuite, avec son contexte, et n’est jamais supprimé en silence. Toute fiche accepte un signalement de la part de ceux qu’elle décrit.",
+        body: "Il porte d’abord le nom qu’il se donne. Celui que les autres lui donnent vient après. Et si on se trompe, n’importe qui peut nous le dire.",
       },
       {
         title: "Pour un pays",
-        body: "Une fiche pays énumère ceux qui l’habitent plutôt qu’elle ne résume une nation. La Tanzanie en documente 95, l’Éthiopie 82, le Ghana 80, la Côte d’Ivoire et le Nigeria 68 chacun.",
+        body: "Un pays, ce n’est pas un drapeau. C’est la liste de ceux qui y vivent. La Tanzanie en compte 95, l’Éthiopie 82, le Ghana 80.",
       },
       {
         title: "Pour une diaspora",
-        body: "Le corpus compte déjà la France parmi les pays de répartition des Soninké, des Kabyles et des Comoriens. L’atlas ne renvoie pas ses lecteurs vers un ailleurs.",
+        body: "Pour les Soninké, les Kabyles et les Comoriens, la France est déjà dans la liste de leurs pays. On ne parle pas d’un ailleurs.",
       },
     ],
     closing:
-      "Un tracé colonial a cent quarante ans : la conférence de Berlin s’ouvre en 1884, et la plupart des indépendances datent de 1960. Les appartenances que ces lignes coupent sont plus anciennes, et 191 peuples du corpus vivent aujourd’hui dans trois pays ou plus — les Peul dans douze, les Soninké dans onze. Relevé du 11 septembre 2026, macro-groupes exclus.",
+      "Les frontières de l’Afrique ont cent quarante ans. Berlin, 1884. Les indépendances, 1960. Ce qu’elles coupent est bien plus vieux : 191 peuples vivent aujourd’hui dans trois pays ou plus. Les Peul dans douze. Les Soninké dans onze. Compté le 11 septembre 2026.",
   },
 };
 
@@ -180,6 +180,230 @@ export const chapterSteps: Record<
   Language,
   { corpus: string; accessModes: string }
 > = {
-  en: { corpus: "02 · The corpus", accessModes: "03 · Ways in" },
-  fr: { corpus: "02 · Le corpus", accessModes: "03 · Les accès" },
+  en: { corpus: "02 · Contents", accessModes: "03 · Ways in" },
+  fr: { corpus: "02 · Le contenu", accessModes: "03 · Les accès" },
+};
+
+export interface SubjectCopy {
+  description: string;
+  linkLabel: string;
+}
+
+export interface AboutPageCopy {
+  title: string;
+  overview: {
+    eyebrow: string;
+    lead: string;
+    asideLead: string;
+    asideNote: string;
+    doctrineLinkLabel: string;
+  };
+  contents: {
+    title: string;
+    intro: string;
+    subjects: Record<string, SubjectCopy>;
+  };
+  accessModes: { title: string; intro: string };
+}
+
+/**
+ * The About page's own words.
+ *
+ * Rewritten on 11 September 2026 against the plain-language doctrine the
+ * project already applies to its social cards. Two rules did most of the work.
+ *
+ * **The reader does not know what a "fiche" is.** It is a workshop word, and
+ * so is "corpus". Both are gone from this surface: a people has a page, and
+ * the thing that holds them all is the atlas. Nothing about the vocabulary was
+ * load-bearing — it was the workshop talking to itself in front of a visitor.
+ *
+ * **Scholarly words subtract readers from a sourced fact, they do not add
+ * rigour to it.** So "autonyme" becomes the name a people gives itself, and
+ * "exonyme" the name others give it. The figures, the dates and the proper
+ * names all stay: it is the abstraction that goes, never the precision.
+ *
+ * The link to the editorial doctrine says what the page is for rather than
+ * repeating its title, which is a scholarly phrase a visitor will not open.
+ */
+// @req REQ-132
+// @req REQ-145
+export const aboutPage: Record<Language, AboutPageCopy> = {
+  en: {
+    title: "About",
+    overview: {
+      eyebrow: "The project",
+      lead: "EthniAfrica tells the story of Africa’s peoples: where they live, the languages they speak, and where their names come from.",
+      asideLead:
+        "Everything written here comes from a source, and the source is shown.",
+      asideNote:
+        "When we do not know, that is written too. Our rules are here:",
+      doctrineLinkLabel: "how we write",
+    },
+    contents: {
+      title: "What you will find",
+      intro: "Six subjects. Each one points to the others.",
+      subjects: {
+        peoples: {
+          description:
+            "Who they are, where they live, and the names they are given.",
+          linkLabel: "See the peoples",
+        },
+        languages: {
+          description:
+            "Every language has its page, linked to the peoples who speak it.",
+          linkLabel: "See the languages",
+        },
+        families: {
+          description:
+            "Related languages, grouped. A family of languages is not a people.",
+          linkLabel: "See the families",
+        },
+        countries: {
+          description:
+            "The peoples who live there, and the story of the country’s name.",
+          linkLabel: "See the countries",
+        },
+        names: {
+          description:
+            "The name a people gives itself, and the name others give it.",
+          linkLabel: "See the names of peoples",
+        },
+        patronymes: {
+          description:
+            "Family names, and where they come from. They do not all work the way European ones do.",
+          linkLabel: "See the family names",
+        },
+      },
+    },
+    accessModes: {
+      title: "Three ways in",
+      intro: "Look something up, read a story, or play.",
+    },
+  },
+  fr: {
+    title: "À propos",
+    overview: {
+      eyebrow: "Le projet",
+      lead: "EthniAfrica raconte les peuples d’Afrique : où ils vivent, quelles langues ils parlent, et d’où viennent leurs noms.",
+      asideLead:
+        "Tout ce qui est écrit ici vient d’une source, et la source est affichée.",
+      asideNote:
+        "Quand on ne sait pas, c’est écrit aussi. Nos règles sont ici :",
+      doctrineLinkLabel: "comment on écrit",
+    },
+    contents: {
+      title: "Ce qu’on y trouve",
+      intro: "Six sujets. Chacun renvoie vers les autres.",
+      subjects: {
+        peoples: {
+          description:
+            "Qui ils sont, où ils vivent, et les noms qu’on leur donne.",
+          linkLabel: "Voir les peuples",
+        },
+        languages: {
+          description:
+            "Chaque langue a sa page, reliée aux peuples qui la parlent.",
+          linkLabel: "Voir les langues",
+        },
+        families: {
+          description:
+            "Des langues parentes, regroupées. Une famille de langues n’est pas un peuple.",
+          linkLabel: "Voir les familles",
+        },
+        countries: {
+          description:
+            "Les peuples qui y vivent, et l’histoire du nom du pays.",
+          linkLabel: "Voir les pays",
+        },
+        names: {
+          description:
+            "Le nom qu’un peuple se donne, et celui que les autres lui donnent.",
+          linkLabel: "Voir les noms de peuples",
+        },
+        patronymes: {
+          description:
+            "Les noms de famille, et d’où ils viennent. Ils ne marchent pas tous comme en Europe.",
+          linkLabel: "Voir les noms de famille",
+        },
+      },
+    },
+    accessModes: {
+      title: "Trois manières d’entrer",
+      intro: "Chercher quelque chose de précis, lire une histoire, ou jouer.",
+    },
+  },
+};
+
+export interface PlateCopy {
+  alt: string;
+  /** One short sentence saying what the picture argues. Never decoration. */
+  caption: string;
+  /** Author, work and date, as the reader should see them. */
+  credit: string;
+  sourceLabel: string;
+  /** Only where the licence requires a visible notice. */
+  licenceLabel?: string;
+}
+
+/**
+ * The three plates that open the chapters.
+ *
+ * Each one is a document the chapter is *about*, not an illustration of it —
+ * a generic photograph of the continent would substitute for none of them.
+ * Together they carry three registers, which is what the brand charter asks
+ * of any surface holding more than one image: the colonial document, a
+ * people's own record, and a map drawn from inside Africa.
+ *
+ * The captions argue in one sentence and then get out of the way. The credit
+ * line is not editorial discretion: where a licence requires attribution, the
+ * rendered page carries the author and the licence's own address, because a
+ * notice a reader cannot reach is not a notice.
+ */
+// @req REQ-132
+// @req REQ-145
+export const aboutPlates: Record<Language, Record<string, PlateCopy>> = {
+  en: {
+    ogilby: {
+      alt: "A 1670 engraved map of the West African coast, its shoreline labelled by the goods taken from it.",
+      caption:
+        "The West African coast in 1670, named after what was taken from it.",
+      credit: "John Ogilby, Guinea, 1670. Public domain.",
+      sourceLabel: "Wikimedia Commons",
+    },
+    tifinagh: {
+      alt: "Tifinagh letters carved into rock in Algeria, photographed in 2006.",
+      caption: "Their own writing, cut into the rock.",
+      credit: "Tifinagh inscriptions, Algeria, 2006. Patrick Gruban.",
+      sourceLabel: "Wikimedia Commons",
+      licenceLabel: "CC BY-SA 2.0",
+    },
+    idrisi: {
+      alt: "Al-Idrisi's world map of 1154, drawn with south at the top, Africa filling the upper half.",
+      caption: "Africa seen from the inside, in 1154. South is at the top.",
+      credit: "Al-Idrisi, Tabula Rogeriana, 1154. Public domain.",
+      sourceLabel: "Wikimedia Commons",
+    },
+  },
+  fr: {
+    ogilby: {
+      alt: "Une carte gravée de 1670 de la côte ouest-africaine, dont le littoral est nommé d’après les marchandises qu’on y prenait.",
+      caption:
+        "La côte ouest-africaine en 1670, nommée d’après ce qu’on y prenait.",
+      credit: "John Ogilby, Guinea, 1670. Domaine public.",
+      sourceLabel: "Wikimedia Commons",
+    },
+    tifinagh: {
+      alt: "Des lettres tifinagh gravées dans la roche en Algérie, photographiées en 2006.",
+      caption: "Leur propre écriture, gravée dans la roche.",
+      credit: "Inscriptions tifinagh, Algérie, 2006. Patrick Gruban.",
+      sourceLabel: "Wikimedia Commons",
+      licenceLabel: "CC BY-SA 2.0",
+    },
+    idrisi: {
+      alt: "La carte du monde d’al-Idrisi de 1154, dessinée le sud en haut, l’Afrique occupant la moitié supérieure.",
+      caption: "L’Afrique vue de l’intérieur, en 1154. Le sud est en haut.",
+      credit: "Al-Idrisi, Tabula Rogeriana, 1154. Domaine public.",
+      sourceLabel: "Wikimedia Commons",
+    },
+  },
 };
