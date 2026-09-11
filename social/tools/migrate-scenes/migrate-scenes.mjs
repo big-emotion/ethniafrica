@@ -27,12 +27,11 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 
 import { imageSize } from "../migrate-cards/image-size.mjs";
+import { productionsRoot } from "../paths.mjs";
 
-const ICI = path.dirname(fileURLToPath(import.meta.url));
-const PROJETS = path.resolve(ICI, "../../Projects");
+const PROJETS = productionsRoot();
 
 const LICENCE =
   /(CC0|CC BY-SA \d(?:\.\d)?|CC BY-ND[\w.\- ]*|CC BY-NC[\w.\- ]*|CC BY \d(?:\.\d)?|domaine public|public domain|licence ouverte|open licence)/i;

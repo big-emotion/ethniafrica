@@ -38,8 +38,14 @@ FALLBACK = REPO / "output" / "social"
 
 
 def productions_root():
-    """The directory holding one subdirectory per subject."""
-    declared = os.environ.get(ENV_VAR, "").strip()
+    """The directory holding one subdirectory per subject.
+
+    The name is spelled out rather than read through `ENV_VAR` because the
+    repository's `.env.example` gate greps for a literal. Behind an indirection
+    the variable is invisible to it, and a variable the gate cannot see is one
+    that can neither be documented nor missed.
+    """
+    declared = os.environ.get("ETHNIAFRICA_SOCIAL_OUTPUT", "").strip()
     if declared:
         return pathlib.Path(declared).expanduser().resolve()
     return FALLBACK

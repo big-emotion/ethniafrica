@@ -20,6 +20,32 @@ describe("collectReferences", () => {
       collectReferences([{ path: "a.ts", source: "process.envelope.thing" }])
     ).toEqual(new Set());
   });
+
+  // @req REQ-032
+  it("finds a Python env read", () => {
+    // The render engine is Python and reads its output root from the
+    // environment. Seen only through `process.env`, that variable would be
+    // undocumentable: adding it to `.env.example` would fail the gate as unread,
+    // and leaving it out would hide it from whoever configures a machine.
+    expect(
+      collectReferences([
+        {
+          path: "social/harness/ethni_paths.py",
+          source: 'os.environ.get("ETHNIAFRICA_SOCIAL_OUTPUT", "")',
+        },
+      ])
+    ).toEqual(new Set(["ETHNIAFRICA_SOCIAL_OUTPUT"]));
+  });
+
+  // @req REQ-032
+  it("finds a Python env read through subscript and getenv", () => {
+    expect(
+      collectReferences([
+        { path: "a.py", source: 'os.environ["HF_WORKFLOWS"]' },
+        { path: "b.py", source: "os.getenv('SOME_FLAG')" },
+      ])
+    ).toEqual(new Set(["HF_WORKFLOWS", "SOME_FLAG"]));
+  });
 });
 
 describe("collectDocumented", () => {

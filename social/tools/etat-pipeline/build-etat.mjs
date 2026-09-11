@@ -15,11 +15,11 @@
  * next to the work. This tool only aggregates; it invents nothing, and a subject
  * whose marker it cannot read is reported as unreadable rather than guessed.
  *
- * Paths are resolved from this file upward, so nothing here names a machine.
+ * Both shelves it touches are named by environment variables rather than found
+ * relative to this file, so nothing here describes a machine's directory layout.
  */
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 
 import {
   ETATS,
@@ -30,12 +30,14 @@ import {
   lireTitre,
   normaliser,
 } from "./etat.mjs";
+import { productionsRoot, publicationsRoot } from "../paths.mjs";
 
-const ICI = path.dirname(fileURLToPath(import.meta.url));
-const ATELIER = path.resolve(ICI, "../..");
-const ESPACE = path.resolve(ATELIER, "..");
-const LIBRAIRIE = path.join(ESPACE, "02-Reseaux-sociaux");
-const SORTIE = path.join(ATELIER, "etat-du-pipeline.md");
+// Two shelves, two variables, nothing derived from this file's own location.
+// The tool used to compute both from `../..`, which stopped being true the day
+// it was versioned — and stopped being true *silently*, because walking a
+// directory that does not exist reports zero subjects rather than an error.
+const LIBRAIRIE = publicationsRoot();
+const SORTIE = path.join(productionsRoot(), "etat-du-pipeline.md");
 
 const migrer = process.argv.includes("--migrer");
 
@@ -104,14 +106,27 @@ function prochaineAction(cle, blocageTexte) {
 }
 
 function collecter() {
-  if (!fs.existsSync(LIBRAIRIE)) return { sujets: [], illisibles: [] };
+  // Say it rather than return an empty tally. A state file listing zero subjects
+  // is indistinguishable from a library with nothing in it, and it is the file
+  // three skills read to answer « où j'en suis ».
+  if (LIBRAIRIE === null) {
+    console.error(
+      "ETHNIAFRICA_SOCIAL_PUBLICATIONS n'est pas renseignée — " +
+        "impossible de dire où en sont les sujets publiés."
+    );
+    process.exit(1);
+  }
+  if (!fs.existsSync(LIBRAIRIE)) {
+    console.error(`introuvable : ${LIBRAIRIE}`);
+    process.exit(1);
+  }
   const sujets = [];
   const illisibles = [];
 
   for (const fichier of postsMd(LIBRAIRIE)) {
     const texte = fs.readFileSync(fichier, "utf8");
     const cle = lireEtat(texte);
-    const relatif = path.relative(ESPACE, path.dirname(fichier));
+    const relatif = path.relative(LIBRAIRIE, path.dirname(fichier));
 
     if (!cle) {
       illisibles.push(relatif);
@@ -200,7 +215,7 @@ fs.writeFileSync(SORTIE, rendre(releve));
 
 const compte = (cle) => releve.sujets.filter((s) => s.cle === cle).length;
 console.log(
-  `${releve.sujets.length} sujets → ${path.relative(ESPACE, SORTIE)}\n` +
+  `${releve.sujets.length} sujets → ${SORTIE}\n` +
     ETATS.map((e) => `  ${e.marqueur} ${e.libelle} : ${compte(e.cle)}`).join(
       "\n"
     ) +

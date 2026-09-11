@@ -11,13 +11,19 @@
     "eslint/**/*.js",
 
     "scripts/**/*.{ts,mjs,cjs}",
+    "social/tools/**/*.mjs",
     "e2e/**/*.ts",
     "src/test/server-only-stub.ts",
     "src/lib/atlas/assets/generate-*.mjs",
     "supabase/functions/**/index.ts",
     "docs/design/mockups/**/*.{js,css}"
   ],
-  "project": ["src/**/*.{ts,tsx}", "scripts/**/*.{ts,mjs}", "e2e/**/*.ts"],
+  "project": [
+    "src/**/*.{ts,tsx}",
+    "scripts/**/*.{ts,mjs}",
+    "social/tools/**/*.mjs",
+    "e2e/**/*.ts"
+  ],
   "ignoreDependencies": ["sharp", "puppeteer", "@storybook/blocks"],
   "ignoreExportsUsedInFile": true
 }

@@ -13,13 +13,11 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 
 import { imageSize } from "./image-size.mjs";
+import { productionsRoot } from "../paths.mjs";
 
-const ICI = path.dirname(fileURLToPath(import.meta.url));
-const ATELIER = path.resolve(ICI, "../..");
-const PROJETS = path.join(ATELIER, "Projects");
+const PROJETS = productionsRoot();
 
 /**
  * The retired roles, and what §5 calls the same thing.

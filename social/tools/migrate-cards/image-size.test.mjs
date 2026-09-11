@@ -9,15 +9,22 @@ import { strict as assert } from "node:assert";
 import fs from "node:fs";
 import path from "node:path";
 import { test } from "node:test";
-import { fileURLToPath } from "node:url";
 
 import { imageSize } from "./image-size.mjs";
+import { gabarits, productionsRoot } from "../paths.mjs";
 
-const ATELIER = path.resolve(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "../.."
-);
-const PROJETS = path.join(ATELIER, "Projects");
+const PROJETS = productionsRoot();
+
+/**
+ * The corpus is not in this repository, so on a fresh clone there is nothing to
+ * measure. The two tests that need it skip **by name**: a corpus test that
+ * quietly passed on an empty directory would report green while measuring
+ * nothing, which is the failure mode this project has already paid for
+ * elsewhere.
+ */
+const SANS_CORPUS = !fs.existsSync(PROJETS)
+  ? { skip: "aucun corpus : ETHNIAFRICA_SOCIAL_OUTPUT n'est pas renseigné" }
+  : {};
 
 function assets(limite = 40) {
   const trouves = [];
@@ -32,7 +39,7 @@ function assets(limite = 40) {
   return trouves;
 }
 
-test("lit les dimensions de tout le corpus d'images", () => {
+test("lit les dimensions de tout le corpus d'images", SANS_CORPUS, () => {
   const fichiers = assets();
   assert.ok(
     fichiers.length > 10,
@@ -68,6 +75,7 @@ test("un fichier absent lève, il ne renvoie pas une valeur par défaut", () => 
 });
 
 test("un fichier qui n'est pas une image lève", () => {
-  const md = path.join(ATELIER, "Gabarits", "GABARITS-SOCIAL.md");
+  // The spec is versioned with the engine, so this one needs no corpus.
+  const md = path.join(gabarits(), "GABARITS-SOCIAL.md");
   assert.throws(() => imageSize(md), /illisibles/);
 });

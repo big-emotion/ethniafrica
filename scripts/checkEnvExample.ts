@@ -24,7 +24,7 @@
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
 
-const ROOTS = ["src", "scripts", "e2e", "supabase"];
+const ROOTS = ["src", "scripts", "e2e", "supabase", "social"];
 
 /** Env reads live here too, and used to go unseen. */
 const ROOT_FILES = [
@@ -39,7 +39,7 @@ const ROOT_FILES = [
   "sentry.edge.config.ts",
 ];
 
-const EXTS = new Set([".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"]);
+const EXTS = new Set([".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".py"]);
 const SKIP_DIRS = new Set([
   "node_modules",
   ".next",
@@ -63,7 +63,17 @@ const TEST_PATH = /(^|[\\/])(__tests__)[\\/]|\.(test|spec)\.[tj]sx?$/;
 const ENV_FILE = ".env.example";
 
 /** Supplied by the runtime, never by us. */
-const ALWAYS_DEFINED = new Set(["NODE_ENV", "CI", "VERCEL", "VERCEL_URL"]);
+const ALWAYS_DEFINED = new Set([
+  "NODE_ENV",
+  "CI",
+  "VERCEL",
+  "VERCEL_URL",
+  // Not supplied by a deployment: the render engine sets it on the environment
+  // of its own caption subprocess, one line before that subprocess reads it.
+  // Documenting it in `.env.example` would invite somebody to set it by hand and
+  // point the burn-in step at the wrong scripts.
+  "HF_WORKFLOWS",
+]);
 
 /**
  * Documented on purpose while nothing reads it. Each entry needs a reason,
@@ -101,12 +111,28 @@ function walk(dir: string, out: string[] = []): string[] {
   return out;
 }
 
+/**
+ * Two languages read the environment here, so two shapes are recognised.
+ *
+ * The render engine under `social/harness/` is Python. Matched against
+ * `process.env` alone, the variable naming its output root was invisible: adding
+ * it to `.env.example` would have failed the gate as unread, and leaving it out
+ * would have hidden it from whoever configures a machine. Either way the gate
+ * would have argued against documenting a real variable.
+ */
+const ENV_PATTERNS = [
+  /process\.env\.([A-Z][A-Z0-9_]*)/g,
+  /os\.(?:environ\.get|getenv)\(\s*["']([A-Z][A-Z0-9_]*)["']/g,
+  /os\.environ\[\s*["']([A-Z][A-Z0-9_]*)["']\s*\]/g,
+];
+
 export function collectReferences(files: SourceFile[]): Set<string> {
-  const pattern = /process\.env\.([A-Z][A-Z0-9_]*)/g;
   const references = new Set<string>();
   for (const file of files) {
-    for (const match of file.source.matchAll(pattern)) {
-      references.add(match[1]);
+    for (const pattern of ENV_PATTERNS) {
+      for (const match of file.source.matchAll(pattern)) {
+        references.add(match[1]);
+      }
     }
   }
   return references;

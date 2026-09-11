@@ -10,6 +10,7 @@ import {
 } from "../lib/audienceSkillContract";
 
 const projectRoot = resolve(import.meta.dirname, "../..");
+const [firstConsumer] = AUDIENCE_CONSUMERS;
 
 describe("audience skill contract", () => {
   // @req REQ-032
@@ -18,34 +19,50 @@ describe("audience skill contract", () => {
   });
 
   // @req REQ-032
-  it("names the producer that moved out, and the consumer that stayed", () => {
-    // The producer is a name here, not a directory: it moved to the private
-    // production workspace on 2026-09-10 and this repository can no longer read
-    // its SKILL.md. The report it writes still lands in this repository, which
-    // is why the handoff is still worth guarding from this side.
-    expect(AUDIENCE_PRODUCER).toBe("audience-audit");
-    expect(AUDIENCE_CONSUMERS).toEqual(["ethniafrica-experience-optimizer"]);
+  it("guards all three skills of the chain, producer included", () => {
+    // The producer spent a day in the private workspace, and the contract could
+    // then only guard the consumer half. Both halves are here again, so the
+    // assertion is that nothing in the chain is checked on trust.
+    expect(AUDIENCE_PRODUCER).toBe("ethniafrica-audience-audit");
+    expect(AUDIENCE_CONSUMERS).toEqual([
+      "ethniafrica-content-strategist",
+      "ethniafrica-experience-optimizer",
+    ]);
   });
 
   // @req REQ-032
-  it("does not look for the relocated producer on disk", () => {
-    // The regression this guards: reinstating the producer in the loop makes the
-    // contract fail on a repository that is correct, and the obvious fix would
-    // be to copy the skill back into a public repository.
-    const issues = checkAudienceSkillContract(projectRoot);
+  it("flags a producer that no longer writes to the report directory", () => {
+    // The failure this catches: a producer edited until it stops writing the
+    // dated report leaves both consumers reading a directory nobody fills, and
+    // they degrade to guessing without erroring.
+    const issues = checkAudienceSkillContract(projectRoot, {
+      [AUDIENCE_PRODUCER]: `---\nname: ${AUDIENCE_PRODUCER}\n---\nMeasures things and keeps them to itself.`,
+    });
 
-    expect(issues.map((issue) => issue.skill)).not.toContain(AUDIENCE_PRODUCER);
+    expect(issues).toContainEqual({
+      skill: AUDIENCE_PRODUCER,
+      detail: `does not write the audit report to ${AUDIENCE_REPORT_DIR}/`,
+    });
+  });
+
+  // @req REQ-032
+  it("flags a producer whose SKILL.md has gone missing", () => {
+    const issues = checkAudienceSkillContract(resolve(projectRoot, "docs"));
+
+    expect(issues).toContainEqual({
+      skill: AUDIENCE_PRODUCER,
+      detail: "SKILL.md is missing",
+    });
   });
 
   // @req REQ-032
   it("flags a consumer that no longer points at the report directory", () => {
     const issues = checkAudienceSkillContract(projectRoot, {
-      [AUDIENCE_CONSUMERS[0]]:
-        "---\nname: ethniafrica-experience-optimizer\n---\nNo handoff here.",
+      [firstConsumer]: `---\nname: ${firstConsumer}\n---\nNo handoff here.`,
     });
 
     expect(issues).toContainEqual({
-      skill: AUDIENCE_CONSUMERS[0],
+      skill: firstConsumer,
       detail: `does not read the audit report from ${AUDIENCE_REPORT_DIR}/`,
     });
   });
@@ -53,11 +70,11 @@ describe("audience skill contract", () => {
   // @req REQ-032
   it("flags a consumer that no longer names the producer", () => {
     const issues = checkAudienceSkillContract(projectRoot, {
-      [AUDIENCE_CONSUMERS[0]]: `---\nname: ethniafrica-experience-optimizer\n---\nReads ${AUDIENCE_REPORT_DIR}/ and nothing else.`,
+      [firstConsumer]: `---\nname: ${firstConsumer}\n---\nReads ${AUDIENCE_REPORT_DIR}/ and nothing else.`,
     });
 
     expect(issues).toContainEqual({
-      skill: AUDIENCE_CONSUMERS[0],
+      skill: firstConsumer,
       detail: `does not name its producer skill ${AUDIENCE_PRODUCER}`,
     });
   });
@@ -65,13 +82,12 @@ describe("audience skill contract", () => {
   // @req REQ-032
   it("flags a consumer whose frontmatter name drifts from its directory", () => {
     const issues = checkAudienceSkillContract(projectRoot, {
-      [AUDIENCE_CONSUMERS[0]]: `---\nname: renamed-by-accident\n---\nReads ${AUDIENCE_REPORT_DIR}/ written by ${AUDIENCE_PRODUCER}`,
+      [firstConsumer]: `---\nname: renamed-by-accident\n---\nReads ${AUDIENCE_REPORT_DIR}/ written by ${AUDIENCE_PRODUCER}`,
     });
 
     expect(issues).toContainEqual({
-      skill: AUDIENCE_CONSUMERS[0],
-      detail:
-        'frontmatter name is "renamed-by-accident", expected "ethniafrica-experience-optimizer"',
+      skill: firstConsumer,
+      detail: `frontmatter name is "renamed-by-accident", expected ${JSON.stringify(firstConsumer)}`,
     });
   });
 
@@ -80,7 +96,7 @@ describe("audience skill contract", () => {
     const issues = checkAudienceSkillContract(resolve(projectRoot, "docs"));
 
     expect(issues).toContainEqual({
-      skill: AUDIENCE_CONSUMERS[0],
+      skill: firstConsumer,
       detail: "SKILL.md is missing",
     });
   });
