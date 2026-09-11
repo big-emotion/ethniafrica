@@ -29,6 +29,7 @@ export type PageType =
   | "dossierLunda"
   | "dossierSpiritualitesKongo"
   | "glossary"
+  | "wallpapers"
   | "atlasHub"
   | "dossiersHub"
   | "jeuxHub";
@@ -90,6 +91,7 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     dossierLunda: "dossiers/lunda-empire",
     dossierSpiritualitesKongo: "dossiers/kongo-spiritualities",
     glossary: "glossary",
+    wallpapers: "wallpapers",
     // `dossiers` is kept as an English word on purpose: the retired module
     // paths keyed `dossiers/…` in `middleware.ts` then work in both locales.
     atlasHub: "atlas",
@@ -148,6 +150,10 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     // the games as much as the dossiers, and it is reached from the footer's
     // "Le projet" rubric.
     glossary: "glossaire",
+    // The scale ladder's download surface. No axis lists it either, and
+    // it describes the project rather than the corpus, so it joins
+    // `about`, `doctrine` and `sources` in carrying no prefix.
+    wallpapers: "fonds-decran",
     // REQ-114/REQ-138: one hub route per access mode. The slug is the verb
     // the reader arrived with, which is what keeps it from colliding with
     // the resource pages (peuples/pays/familles) it now holds.

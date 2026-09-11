@@ -227,6 +227,7 @@ const FIXTURES: Record<string, RouteFixture> = {
     params: { theme: "pouvoirs" },
     expectation: { surface: "dossierThemes" as IndexedSurface },
   },
+  "fonds-decran": { expectation: { surface: "wallpapers" } },
   glossaire: { expectation: { surface: "glossary" } },
   jeux: { expectation: { surface: "jeuxHub" } },
   "jeux/[jeu]": {
