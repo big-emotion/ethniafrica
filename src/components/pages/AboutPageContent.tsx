@@ -2,7 +2,11 @@ import Link from "next/link";
 
 import { PurposeBlocks } from "@/components/home/PurposeBlocks";
 import { MODULE_DEFINITIONS } from "@/lib/hubs/moduleRegistry";
-import { accessModeCards } from "@/lib/i18n/copy/about";
+import {
+  accessModeCards,
+  chapterSteps,
+  purposeChapter,
+} from "@/lib/i18n/copy/about";
 import { getLocalizedRoute, type PageType } from "@/lib/routing";
 import type { Language } from "@/types/shared";
 import { ChapterHeading } from "@/components/pages/ChapterHeading";
@@ -56,7 +60,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         doctrineLinkLabel: "editorial doctrine",
       },
       contentFamilies: {
-        stepLabel: "01 · The corpus",
+        stepLabel: chapterSteps.en.corpus,
         title: "What EthniAfrica contains",
         intro:
           "Six distinct subjects structure the corpus. Each fiche can link to the others when the relationship is documented.",
@@ -112,7 +116,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         ],
       },
       accessModes: {
-        stepLabel: "02 · Ways in",
+        stepLabel: chapterSteps.en.accessModes,
         title: "Three ways into the atlas",
         intro:
           "The same corpus can be explored according to the reader's intent: find a fiche, investigate a question or test their bearings.",
@@ -129,7 +133,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         doctrineLinkLabel: "doctrine éditoriale",
       },
       contentFamilies: {
-        stepLabel: "01 · Le corpus",
+        stepLabel: chapterSteps.fr.corpus,
         title: "Ce que contient EthniAfrica",
         intro:
           "Six objets distincts structurent le corpus. Chaque fiche peut renvoyer vers les autres lorsque la relation est documentée.",
@@ -192,7 +196,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         ],
       },
       accessModes: {
-        stepLabel: "02 · Les accès",
+        stepLabel: chapterSteps.fr.accessModes,
         title: "Trois manières d’entrer dans l’atlas",
         intro:
           "Le même corpus se parcourt selon l’intention du moment : chercher une fiche, approfondir une question ou mettre ses repères à l’épreuve.",
@@ -212,6 +216,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
   };
 
   const t = content[language];
+  const purpose = purposeChapter[language];
 
   return (
     <div className="mx-auto space-y-afh-6xl text-afh-text">
@@ -241,6 +246,50 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
           .
         </p>
       </header>
+
+      <section
+        data-testid="about-purpose"
+        className="space-y-afh-xl"
+        aria-labelledby="about-purpose-title"
+      >
+        <ChapterHeading
+          id="about-purpose-title"
+          stepLabel={purpose.stepLabel}
+          heading={purpose.title}
+        />
+        <div className="space-y-afh-sm border-l-2 border-afh-gold pl-afh-md">
+          <p className="font-afh-display text-afh-h2 font-black leading-tight">
+            {purpose.claim}
+          </p>
+          <p
+            data-testid="about-purpose-claim-status"
+            className="text-afh-small leading-relaxed text-afh-text-soft"
+          >
+            {purpose.claimStatus}
+          </p>
+        </div>
+        <ul
+          className="grid grid-cols-1 gap-afh-md min-[720px]:grid-cols-3"
+          role="list"
+        >
+          {purpose.scales.map((scale) => (
+            <li
+              key={scale.title}
+              className="flex min-h-full flex-col border-t-2 border-[var(--accent)] bg-afh-bg-warm px-afh-md py-afh-lg"
+            >
+              <h3 className="font-afh-display text-afh-h3 font-black">
+                {scale.title}
+              </h3>
+              <p className="mt-afh-sm flex-1 text-afh-small leading-relaxed text-afh-text-soft">
+                {scale.body}
+              </p>
+            </li>
+          ))}
+        </ul>
+        <p className="text-afh-small leading-relaxed text-afh-text-soft">
+          {purpose.closing}
+        </p>
+      </section>
 
       <PurposeBlocks language={language} />
 
