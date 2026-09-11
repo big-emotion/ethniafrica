@@ -1,8 +1,13 @@
 import Link from "next/link";
 
+import {
+  ChapterPlate,
+  type PlateSource,
+} from "@/components/pages/ChapterPlate";
 import { MODULE_DEFINITIONS } from "@/lib/hubs/moduleRegistry";
 import {
   aboutPage,
+  aboutPlates,
   accessModeCards,
   chapterSteps,
   purposeChapter,
@@ -30,9 +35,9 @@ interface AboutPageContentProps {
  *
  * The second (2026-09-11) cut the three-block naming argument that sat between
  * chapters 01 and 02. It was the longest stretch of prose on the surface, and
- * nothing else imported it, so the component went with it. Its four cleared
- * images stay in `public/images/home/` — two of them still carry the home
- * hero — and this page's own imagery is a separate decision.
+ * nothing else imported it, so the component went with it. Three of its four
+ * cleared images came back the same day as chapter plates: the argument they
+ * carried was worth keeping, the three screens of prose around them were not.
  *
  * Every word now lives in `lib/i18n/copy/about.ts`, which is the slice that
  * file's own comment left for a later change.
@@ -53,6 +58,42 @@ const corpusNoun = (page: PageType): string =>
   )?.corpusNoun ?? "";
 
 /**
+ * The plate that opens each chapter, and where its original lives. Three
+ * registers on one surface, which is what the brand charter asks of any page
+ * carrying more than one image: the colonial document, a people's own record,
+ * and a map drawn from inside Africa.
+ *
+ * Provenance and the licence, read from the Commons API rather than assumed,
+ * are kept for a maintainer in `public/images/home/CREDITS.md`.
+ */
+const PLATES: Record<string, PlateSource> = {
+  ogilby: {
+    id: "ogilby",
+    src: "/images/home/guinea-ogilby-1670.jpg",
+    width: 900,
+    height: 595,
+    sourceHref:
+      "https://commons.wikimedia.org/wiki/File:1670_Ogilby_Map_of_West_Africa_(_Gold_Coast,_Slave_Coast,_Ivory_Coast_)_-_Geographicus_-_Guinea-ogilby-1670.jpg",
+  },
+  tifinagh: {
+    id: "tifinagh",
+    src: "/images/home/tifinagh-algeria.jpg",
+    width: 900,
+    height: 529,
+    sourceHref: "https://commons.wikimedia.org/wiki/File:Tifinagh_Algeria.jpg",
+    licenceHref: "https://creativecommons.org/licenses/by-sa/2.0/",
+  },
+  idrisi: {
+    id: "idrisi",
+    src: "/images/home/al-idrisi-1154.jpg",
+    width: 960,
+    height: 1046,
+    sourceHref:
+      "https://commons.wikimedia.org/wiki/File:Al-Idrisi%27s_world_map.JPG",
+  },
+};
+
+/**
  * Which subject wears which accent, and where its link goes. Structure only —
  * every word is in the dictionary, so a copy change never reaches this file.
  */
@@ -70,6 +111,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
   const t = aboutPage[language];
   const purpose = purposeChapter[language];
   const steps = chapterSteps[language];
+  const plates = aboutPlates[language];
 
   return (
     <div className="mx-auto space-y-afh-6xl text-afh-text">
@@ -105,6 +147,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         className="space-y-afh-xl"
         aria-labelledby="about-purpose-title"
       >
+        <ChapterPlate plate={PLATES.ogilby} copy={plates.ogilby} />
         <ChapterHeading
           id="about-purpose-title"
           stepLabel={purpose.stepLabel}
@@ -145,6 +188,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
       </section>
 
       <section className="space-y-afh-xl" aria-labelledby="about-content-title">
+        <ChapterPlate plate={PLATES.tifinagh} copy={plates.tifinagh} />
         <div className="space-y-afh-md">
           <ChapterHeading
             id="about-content-title"
@@ -188,6 +232,7 @@ export default function AboutPageContent({ language }: AboutPageContentProps) {
         aria-labelledby="about-access-title"
       >
         <div className="mx-auto max-w-[1140px] space-y-afh-xl">
+          <ChapterPlate plate={PLATES.idrisi} copy={plates.idrisi} />
           <div className="space-y-afh-md">
             <ChapterHeading
               id="about-access-title"

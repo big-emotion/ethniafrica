@@ -105,6 +105,57 @@ describe("AboutPageContent (REQ-132)", () => {
   });
 
   /**
+   * The page carried no picture at all once the naming argument was cut, and
+   * a page of nothing but prose is what the operator asked to stop. Each
+   * chapter now opens on a document it is about — never a stock photograph of
+   * the continent, which would substitute for none of them.
+   */
+  // @req REQ-132
+  it("opens each chapter with a plate, and describes it for a reader who cannot see it", () => {
+    const { container } = renderAbout();
+
+    const plates = Array.from(container.querySelectorAll("figure"));
+
+    expect(plates).toHaveLength(3);
+    for (const plate of plates) {
+      const image = within(plate as HTMLElement).getByRole("img");
+      expect(image.getAttribute("alt")?.length ?? 0).toBeGreaterThan(30);
+    }
+    expect(
+      new Set(
+        plates.map((plate) => plate.querySelector("img")?.getAttribute("src"))
+      ).size
+    ).toBe(3);
+  });
+
+  /**
+   * "A licence is published, not named" (brand charter §9). The tifinagh
+   * photograph is CC BY-SA 2.0, whose §4(a) asks for the licence's own URI —
+   * and a notice a reader cannot reach is not a notice. This is the one line
+   * on the page that is not editorial discretion.
+   */
+  // @req REQ-132
+  it("publishes the licence of the one plate that requires attribution", () => {
+    renderAbout();
+
+    const credit = screen.getByTestId("plate-credit-tifinagh");
+
+    expect(credit).toHaveTextContent("Patrick Gruban");
+    expect(
+      within(credit).getByRole("link", { name: "CC BY-SA 2.0" })
+    ).toHaveAttribute(
+      "href",
+      "https://creativecommons.org/licenses/by-sa/2.0/"
+    );
+    expect(
+      within(credit).getByRole("link", { name: "Wikimedia Commons" })
+    ).toHaveAttribute(
+      "href",
+      "https://commons.wikimedia.org/wiki/File:Tifinagh_Algeria.jpg"
+    );
+  });
+
+  /**
    * "Fiche" and "corpus" are workshop words. A visitor does not know what
    * either means, and neither was load-bearing — it was the workshop talking
    * to itself in front of the reader. Asserted rather than trusted, because

@@ -333,3 +333,77 @@ export const aboutPage: Record<Language, AboutPageCopy> = {
     },
   },
 };
+
+export interface PlateCopy {
+  alt: string;
+  /** One short sentence saying what the picture argues. Never decoration. */
+  caption: string;
+  /** Author, work and date, as the reader should see them. */
+  credit: string;
+  sourceLabel: string;
+  /** Only where the licence requires a visible notice. */
+  licenceLabel?: string;
+}
+
+/**
+ * The three plates that open the chapters.
+ *
+ * Each one is a document the chapter is *about*, not an illustration of it —
+ * a generic photograph of the continent would substitute for none of them.
+ * Together they carry three registers, which is what the brand charter asks
+ * of any surface holding more than one image: the colonial document, a
+ * people's own record, and a map drawn from inside Africa.
+ *
+ * The captions argue in one sentence and then get out of the way. The credit
+ * line is not editorial discretion: where a licence requires attribution, the
+ * rendered page carries the author and the licence's own address, because a
+ * notice a reader cannot reach is not a notice.
+ */
+// @req REQ-132
+// @req REQ-145
+export const aboutPlates: Record<Language, Record<string, PlateCopy>> = {
+  en: {
+    ogilby: {
+      alt: "A 1670 engraved map of the West African coast, its shoreline labelled by the goods taken from it.",
+      caption:
+        "The West African coast in 1670, named after what was taken from it.",
+      credit: "John Ogilby, Guinea, 1670. Public domain.",
+      sourceLabel: "Wikimedia Commons",
+    },
+    tifinagh: {
+      alt: "Tifinagh letters carved into rock in Algeria, photographed in 2006.",
+      caption: "Their own writing, cut into the rock.",
+      credit: "Tifinagh inscriptions, Algeria, 2006. Patrick Gruban.",
+      sourceLabel: "Wikimedia Commons",
+      licenceLabel: "CC BY-SA 2.0",
+    },
+    idrisi: {
+      alt: "Al-Idrisi's world map of 1154, drawn with south at the top, Africa filling the upper half.",
+      caption: "Africa seen from the inside, in 1154. South is at the top.",
+      credit: "Al-Idrisi, Tabula Rogeriana, 1154. Public domain.",
+      sourceLabel: "Wikimedia Commons",
+    },
+  },
+  fr: {
+    ogilby: {
+      alt: "Une carte gravée de 1670 de la côte ouest-africaine, dont le littoral est nommé d’après les marchandises qu’on y prenait.",
+      caption:
+        "La côte ouest-africaine en 1670, nommée d’après ce qu’on y prenait.",
+      credit: "John Ogilby, Guinea, 1670. Domaine public.",
+      sourceLabel: "Wikimedia Commons",
+    },
+    tifinagh: {
+      alt: "Des lettres tifinagh gravées dans la roche en Algérie, photographiées en 2006.",
+      caption: "Leur propre écriture, gravée dans la roche.",
+      credit: "Inscriptions tifinagh, Algérie, 2006. Patrick Gruban.",
+      sourceLabel: "Wikimedia Commons",
+      licenceLabel: "CC BY-SA 2.0",
+    },
+    idrisi: {
+      alt: "La carte du monde d’al-Idrisi de 1154, dessinée le sud en haut, l’Afrique occupant la moitié supérieure.",
+      caption: "L’Afrique vue de l’intérieur, en 1154. Le sud est en haut.",
+      credit: "Al-Idrisi, Tabula Rogeriana, 1154. Domaine public.",
+      sourceLabel: "Wikimedia Commons",
+    },
+  },
+};
