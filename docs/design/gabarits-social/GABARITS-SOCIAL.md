@@ -818,6 +818,33 @@ pas le nombre.
 lignes (96 px) = 375 px, emplacement à `top: 890` sur 380. La rampe du voile se recale
 d'autant — `top: 590`.
 
+### La dernière image est la clôture, et rien après
+
+**La carte d'outro héritée est retirée.** `ethni_render.py` porte une carte de sortie
+sur fond parchemin — logo, sous-titre de série, mur d'icônes sociales — et elle ne
+s'ajoutait pas à la clôture : **elle la remplaçait**. Un montage se terminait donc sur
+une adresse et cinq identifiants, jamais sur l'argument.
+
+C'est la dernière image qui décide ce que le spectateur emporte. Elle porte la doctrine
+ou elle ne sert à rien.
+
+| | Retiré | Pourquoi |
+| --- | --- | --- |
+| Fond parchemin | oui | rompt le thème de nuit sur la seule image qui doit rester en mémoire |
+| Mur de cinq icônes sociales | oui | cinq identifiants en 9:16 sont illisibles, et un abonné qui regarde sur TikTok n'a pas besoin qu'on lui dise où est TikTok |
+| « Le vrai nom de chaque peuple » | oui | c'est un slogan, pas la vision ; §7 ter fixe la ligne de vision mot pour mot |
+| Lockup en couleurs de marque | oui | réservé à la bannière de chaîne et aux cartes de titre, pas à une image clé |
+
+**Les identifiants de réseaux vivent dans la description de la publication**, où ils sont
+cliquables, jamais gravés dans l'image, où ils ne le sont pas.
+
+**Corollaire pour `structure` :** le script de narration se termine lui aussi sur la
+doctrine. « Sur EthniAfrica on documente d'où viennent les noms » est une adresse ; la
+dernière phrase parlée doit être le renversement et la vision, comme la dernière image.
+Un montage dont l'image dit la doctrine et dont la voix dit l'adresse se contredit.
+
+---
+
 ### Réserve assumée sur le crédit
 
 Le crédit est épinglé à `bottom: 44`, donc **sous l'interface de TikTok et de Reels**.
@@ -942,3 +969,5 @@ premier changement de format.
 - [ ] **B n'est jamais une ouverture.**
 - [ ] **La clôture porte le renversement d'agent et la ligne de vision**, pas un appel
       à l'action seul.
+- [ ] **Vidéo : la dernière image EST la clôture.** Aucune carte d'outro, aucun mur
+      d'icônes, aucun fond parchemin après elle.
