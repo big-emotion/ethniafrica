@@ -20,19 +20,19 @@ export interface FicheMetadataCopy {
     language: (name: string, context: string | null) => string;
     name: (name: string) => string;
   };
-  /** Used only when the corpus fills no summary of its own. */
+  /** Used only when the atlas fills no summary of its own. */
   lead: Record<
     "people" | "peopleLinks" | "country" | "family" | "language" | "name",
     string
   >;
-  /** Facts the corpus actually holds, appended to the lead as clauses. */
+  /** Facts the atlas actually holds, appended to the lead as clauses. */
   clause: {
     family: (familyName: string) => string;
     presence: (countryNames: string) => string;
     peopleCount: (count: number) => string;
     speakers: (peopleNames: string) => string;
   };
-  /** The promise every fiche makes, and the one differentiator worth repeating. */
+  /** The promise every page makes, and the one differentiator worth repeating. */
   trailer: string;
   /** Joins a list of names inside a title's parenthesis or a clause. */
   listSeparator: string;

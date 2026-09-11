@@ -99,9 +99,9 @@ function renderParchment(data: FamilyPageData = undeclaredFamily()) {
   );
 }
 
-describe("FamilyParchment — what the fiche declares", () => {
+describe("FamilyParchment — what the page declares", () => {
   // @req REQ-145
-  it("renders the family fiche frame in English", () => {
+  it("renders the family page frame in English", () => {
     render(
       <FamilyParchment
         language="en"
@@ -124,7 +124,7 @@ describe("FamilyParchment — what the fiche declares", () => {
       screen.getByRole("heading", { name: "Attached peoples" })
     ).toBeVisible();
     expect(
-      screen.getByText(/This fiche declares neither its branches/)
+      screen.getByText(/This page gives neither its branches/)
     ).toBeVisible();
     expect(screen.getByText(/The area drawn above is not read/)).toBeVisible();
     expect(screen.getByRole("link", { name: /Nigeria/ })).toBeVisible();
@@ -161,7 +161,7 @@ describe("FamilyParchment — what the fiche declares", () => {
   });
 
   // @req REQ-119
-  it("reads « vide » for a field the fiche does not declare", () => {
+  it("reads « vide » for a field the page does not declare", () => {
     renderParchment();
 
     const branches = screen.getByTestId("stat-card-branches");
@@ -170,7 +170,7 @@ describe("FamilyParchment — what the fiche declares", () => {
   });
 
   // @req REQ-119
-  it("reads the real count for a field the fiche does declare", () => {
+  it("reads the real count for a field the page does declare", () => {
     // This is the test the whole card exists for, and the day it was written
     // for has arrived. The mockup hard-codes "vide"; that was true of the
     // recette database and false of the corpus, where all 24 fiches already
@@ -218,7 +218,7 @@ describe("FamilyParchment — what the fiche declares", () => {
   });
 
   // @req REQ-116
-  it("states the scale the fiche does declare", () => {
+  it("states the scale the page does declare", () => {
     renderParchment();
 
     expect(screen.getByTestId("stat-card-langues")).toHaveTextContent("900");
@@ -259,7 +259,7 @@ describe("FamilyParchment — the footprint", () => {
   });
 
   // @req REQ-116
-  it("says the area is calculated, not read from the fiche", () => {
+  it("says the area is calculated, not read from the page", () => {
     renderParchment();
 
     expect(screen.getByText(/calculée/i)).toBeInTheDocument();
@@ -280,18 +280,18 @@ describe("FamilyParchment — the footprint", () => {
     // which both branches render.
     expect(container.textContent).toContain("rattachés à cette famille");
     expect(container.textContent).not.toContain(
-      "la seule liste que la fiche assume"
+      "la seule liste que la page assume"
     );
     expect(container.querySelector("code")).toBeNull();
   });
 
   /**
    * A macro-family (Afro-asiatique) has no people carrying its own id, so the
-   * area comes from the peoples the fiche names instead. Saying "peuples
+   * area comes from the peoples the page names instead. Saying "peuples
    * rattachés" there would describe a rule the page did not apply.
    */
   // @req REQ-116
-  it("names the fiche's own declaration when that is where it looked instead", () => {
+  it("names the page's own declaration when that is where it looked instead", () => {
     const { container } = render(
       <FamilyParchment
         language="fr"
@@ -304,7 +304,7 @@ describe("FamilyParchment — the footprint", () => {
     );
 
     expect(container.textContent).toContain(
-      "la seule liste que la fiche assume"
+      "la seule liste que la page assume"
     );
     expect(container.textContent).toContain("peuples que la fiche nomme");
     expect(screen.getByText(/sous-familles/i)).toBeInTheDocument();
@@ -384,7 +384,7 @@ describe("FamilyParchment — the trail", () => {
 describe("FamilyParchment — the sources", () => {
   // A family declaring no source lost the section outright — and with it
   // #sources, the landmark deep links across the app point at, so those links
-  // scrolled nowhere on exactly the fiches whose sourcing a reader would most
+  // scrolled nowhere on exactly the pages whose sourcing a reader would most
   // want to check. The people and country parchments print the section with a
   // missing marker instead, which is charter §4: state the gap, never hide it.
   // @req REQ-116
@@ -439,8 +439,8 @@ describe("FamilyParchment — the sources", () => {
 
   // @req REQ-116
   it("escapes HTML in a source instead of rendering it", () => {
-    // Sources come from the corpus, which is edited as JSON by contributors.
-    // Rendering their text as markup would make a fiche an injection vector.
+    // Sources come from the atlas, which is edited as JSON by contributors.
+    // Rendering their text as markup would make a page an injection vector.
     const withSources = undeclaredFamily();
     withSources.sources = [
       {
@@ -460,8 +460,8 @@ describe("FamilyParchment — the sources", () => {
 /**
  * Who the provenance lines are written for.
  *
- * The family fiche was the first surface to say where each figure comes from,
- * and it said it in the corpus's own key names — "generalInfo.totalSpeakers"
+ * The family page was the first surface to say where each figure comes from,
+ * and it said it in the atlas's own key names — "generalInfo.totalSpeakers"
  * under a card headed "Locuteurs". Translating those into the model's French
  * rubric names moved the sentence out of JSON without moving it towards the
  * reader: "Rubriques « informations générales » et « répartition » de la
@@ -522,9 +522,9 @@ describe("FamilyParchment — provenance addressed to the reader", () => {
     const gap = document.querySelector(".afh-parchment-gap");
     expect(gap).not.toBeNull();
     expect(gap?.textContent).toMatch(/branches/i);
-    expect(gap?.textContent).toMatch(/répartition/i);
+    expect(gap?.textContent).toMatch(/les pays où elle est présente/i);
     expect(gap?.textContent).toMatch(/reconstruite/i);
-    expect(gap?.textContent).not.toMatch(/plutôt que|l'état du corpus/i);
+    expect(gap?.textContent).not.toMatch(/plutôt que|l'état de l’atlas/i);
     expect(gap?.querySelector("h3")).toBeNull();
     expect(gap?.querySelector("code")).toBeNull();
   });

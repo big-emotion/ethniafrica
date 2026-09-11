@@ -402,7 +402,7 @@ describe("CompareEntityHeader", () => {
   // @req REQ-097
   it("shows the Epic 1 unaudited treatment when there is no confidence_scores row — the slot is never empty", () => {
     render(<CompareEntityHeader language="fr" column={unauditedColumn} />);
-    expect(screen.getByText(/fiche non auditée/i)).toBeInTheDocument();
+    expect(screen.getByText(/page non auditée/i)).toBeInTheDocument();
   });
 
   // @req REQ-097

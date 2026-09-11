@@ -20,12 +20,12 @@ const en = {
   scopeThemePanelHint: "Choose a topic, or play the whole country.",
   scopeThemePanelNoTheme: "Play without a theme",
   scopeMixedHint:
-    "Eight questions drawn from the whole corpus, from the best-known peoples to the least documented.",
+    "Eight questions drawn from the whole atlas, from the best-known peoples to the least documented.",
   scopeRandomHint: "Eight questions at random, in no order of difficulty.",
   leaveSession: "Leave the quiz",
   seeScoreCard: "See the score card",
   comingSoon:
-    "the questions for this selection are on their way — the corresponding fiches are being verified",
+    "the questions for this selection are on their way — the corresponding pages are being verified",
   validate: "Confirm",
   questionProgressPrefix: "question",
   questionProgressSeparator: "of",
@@ -43,7 +43,7 @@ const en = {
   scoreFractionSeparator: "correct answers out of",
   playAgain: "Play again",
   scoreCardExactAnswersSeparator: "exact answers out of",
-  fichesEncounteredLabel: "Fiches encountered",
+  fichesEncounteredLabel: "Pages encountered",
   shareScoreLabel: "Share the score",
   copiedFeedback: "copied",
   ogSourcedLine: "every answer is sourced",

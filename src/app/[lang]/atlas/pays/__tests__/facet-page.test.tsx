@@ -7,7 +7,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
  *
  * It opened a detail pane of its own once, with no globe, and that pane is what
  * a reader comparing the page to its mockup was looking at. The pane's
- * `?country=` links are answered with a redirect to the fiche rather than being
+ * `?country=` links are answered with a redirect to the page rather than being
  * rendered a second time.
  *
  * The globe it then grew has since moved up to the Explorer layout, where one
@@ -116,7 +116,7 @@ describe("the countries facet", () => {
   });
 
   // @req REQ-091
-  it("sends a ?country= deep link to that country's fiche", async () => {
+  it("sends a ?country= deep link to that country's page", async () => {
     await expect(renderRoute({ country: "NGA" })).rejects.toThrow(
       `NEXT_REDIRECT:${getCountryRoute("fr", "NGA")}`
     );
@@ -186,7 +186,7 @@ describe("the countries facet", () => {
     render(await renderRoute({}));
 
     expect(screen.queryAllByRole("heading", { level: 1 })).toHaveLength(0);
-    expect(screen.getByText(/54 pays au corpus/)).toBeInTheDocument();
+    expect(screen.getByText(/54 pays à l’atlas/)).toBeInTheDocument();
   });
 
   /**
@@ -211,14 +211,14 @@ describe("the countries facet", () => {
   it("renders its reading and controls in English", async () => {
     render(await renderRoute({}, "en"));
 
-    expect(screen.getByText(/54 countries in the corpus/)).toBeInTheDocument();
+    expect(screen.getByText(/54 countries in the atlas/)).toBeInTheDocument();
     expect(
       screen.getByRole("searchbox", { name: "Search countries" })
     ).toHaveAttribute("placeholder", "Country name or identifier");
     expect(
       screen.getByRole("combobox", { name: "Language family" })
     ).toBeInTheDocument();
-    expect(screen.queryByText(/54 pays au corpus/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/54 pays au atlas/)).not.toBeInTheDocument();
   });
 });
 
@@ -266,7 +266,7 @@ describe("the countries facet's list", () => {
   });
 
   // @req REQ-116
-  it("says how many peoples the corpus documents in each country", async () => {
+  it("says how many peoples the atlas documents in each country", async () => {
     render(await renderRoute({}));
 
     expect(listedCountries()[1].textContent).toContain("40");
@@ -278,7 +278,7 @@ describe("the countries facet's list", () => {
    * it was clicked from.
    */
   // @req REQ-116
-  it("publishes the selection it lists, not the corpus behind it", async () => {
+  it("publishes the selection it lists, not the atlas behind it", async () => {
     mockGetCountryFacetSelection.mockResolvedValue({
       ...SELECTION,
       rows: [{ id: "KEN", label: "Kenya", documentedPeopleCount: 12 }],
@@ -330,7 +330,7 @@ describe("the countries facet's filters", () => {
   });
 
   // @req REQ-116
-  it("offers the families the corpus places somewhere, and an unfiltered option", async () => {
+  it("offers the families the atlas places somewhere, and an unfiltered option", async () => {
     render(await renderRoute({}));
 
     const family = screen.getByLabelText(/famille linguistique/i);

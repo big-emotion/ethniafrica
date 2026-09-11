@@ -69,7 +69,7 @@ describe("HistoriqueSection", () => {
     ).toBeInTheDocument();
     await waitFor(() => {
       expect(
-        screen.getByText("No published revision — initial fiche")
+        screen.getByText("No published revision — initial page")
       ).toBeInTheDocument();
     });
   });
@@ -107,7 +107,7 @@ describe("HistoriqueSection", () => {
     render(<HistoriqueSection peopleId="PPL_SEEREER" />);
     await waitFor(() => {
       expect(
-        screen.getByText("Aucune révision publiée — fiche initiale")
+        screen.getByText("Aucune révision publiée — page initiale")
       ).toBeInTheDocument();
     });
   });

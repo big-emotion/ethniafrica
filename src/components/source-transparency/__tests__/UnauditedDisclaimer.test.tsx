@@ -20,7 +20,8 @@ describe("UnauditedDisclaimer", () => {
   });
 
   describe("when lastHumanAuditAt is null", () => {
-    it('renders the "fiche non auditée" banner', () => {
+    // @req REQ-010
+    it('renders the "page non auditée" banner', () => {
       render(
         <UnauditedDisclaimer
           language="fr"
@@ -29,7 +30,7 @@ describe("UnauditedDisclaimer", () => {
         />
       );
       expect(
-        screen.getByText(/fiche non auditée — lire avec précaution/i)
+        screen.getByText(/page non auditée — lire avec précaution/i)
       ).toBeTruthy();
     });
 
@@ -96,7 +97,7 @@ describe("UnauditedDisclaimer", () => {
 
       expect(window.localStorage.getItem(DISMISS_KEY)).toBe("1");
       expect(
-        screen.queryByText(/fiche non auditée — lire avec précaution/i)
+        screen.queryByText(/page non auditée — lire avec précaution/i)
       ).toBeNull();
     });
 
@@ -112,7 +113,8 @@ describe("UnauditedDisclaimer", () => {
       expect(container.firstChild).toBeNull();
     });
 
-    it("scopes dismissal per fiche", () => {
+    // @req REQ-010
+    it("scopes dismissal per page", () => {
       window.localStorage.setItem("unaudited-disclaimer:dismissed:OTHER", "1");
       render(
         <UnauditedDisclaimer
@@ -122,7 +124,7 @@ describe("UnauditedDisclaimer", () => {
         />
       );
       expect(
-        screen.getByText(/fiche non auditée — lire avec précaution/i)
+        screen.getByText(/page non auditée — lire avec précaution/i)
       ).toBeTruthy();
     });
   });

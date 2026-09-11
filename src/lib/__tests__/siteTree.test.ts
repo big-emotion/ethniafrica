@@ -54,7 +54,7 @@ describe("getSiteTree — English reader copy", () => {
       "Home"
     );
     expect(tree.find((section) => section.id === "corpus")?.title).toBe(
-      "The corpus, in AFRIK order"
+      "The atlas, in AFRIK order"
     );
     // Only while the dossier is published: the freeze takes the chapters out
     // of the plan entirely, in both locales.
@@ -70,7 +70,7 @@ describe("getSiteTree — English reader copy", () => {
 });
 
 // The languages and patronymes index pages (ETNI-1795) ship in the same
-// corpus section as families/peoples/countries — a page nobody can navigate
+// atlas section as families/peoples/countries — a page nobody can navigate
 // to is not browsable (ETNI-1801).
 describe("getSiteTree — the corpus section lists languages and patronymes", () => {
   // @req REQ-139

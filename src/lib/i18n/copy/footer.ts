@@ -4,7 +4,7 @@ import type { Language } from "@/types/shared";
 const en = {
   attribution: ATTRIBUTION_STRING,
   partnerLogoAlt: "BIG EMOTION",
-  copyright: `${PRODUCT_NAME} — corpus published under the CC BY-SA 4.0 licence.`,
+  copyright: `${PRODUCT_NAME} — atlas published under the CC BY-SA 4.0 licence.`,
   about: "About",
   api: "API",
   legalNavigationLabel: "Legal information",
@@ -42,7 +42,7 @@ const fr: FooterCopy = {
   // emits declare CC BY-SA 4.0, so the footer was contradicting the corpus
   // four hundred pixels below the citation block that licenses it.
   // Brand charter §2.
-  copyright: `${PRODUCT_NAME} — corpus sous licence CC BY-SA 4.0.`,
+  copyright: `${PRODUCT_NAME} — atlas sous licence CC BY-SA 4.0.`,
   about: "À propos",
   // Left the header when it became three intentions rather than ten
   // destinations: the public API is a developer's entry, not a reading
@@ -56,7 +56,7 @@ const fr: FooterCopy = {
   sitemap: "Plan du site",
   // The directory above the legal line.
   //
-  // Its Explorer column held the six corpus indexes — Pays, Peuples, Familles,
+  // Its Explorer column held the six atlas indexes — Pays, Peuples, Familles,
   // Langues, Noms, Appellations des peuples — for as long as the three axes
   // had no address of their own. ETNI-1555 had deleted `/fr/atlas` and
   // `/fr/jeux`, so a column that meant to offer the ways in could only offer
@@ -77,8 +77,8 @@ const fr: FooterCopy = {
     participateHeading: "Participer",
     contribute: "Contribuer",
     reportError: "Signaler une erreur",
-    // The two pages that describe the project rather than the corpus.
-    // No access mode lists them — an axis is a way into the corpus — so
+    // The two pages that describe the project rather than the atlas.
+    // No access mode lists them — an axis is a way into the atlas — so
     // the footer is where a reader now finds them. Doctrine is reached
     // from here at one remove, through the link on the À propos page
     // itself, rather than as a fourth entry in this rubric.

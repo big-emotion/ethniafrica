@@ -25,7 +25,7 @@ const en = {
   statusDescriptions: {
     open: "in progress — editorial review",
     under_review: "in progress — editorial review",
-    accepted: "accepted · fiche updated",
+    accepted: "accepted · page updated",
     rejected: "rejected",
     duplicate: "duplicate",
     withdrawn: "withdrawn",
@@ -41,7 +41,7 @@ const en = {
   targets: {
     assertion: "Assertion",
     source: "Source",
-    fiche_section: "Fiche section",
+    fiche_section: "Page section",
     classification: "Classification",
     general: "General report",
   },
@@ -51,7 +51,7 @@ const en = {
     language: "Language",
     language_family: "Language family",
     source: "Source",
-    fiche_section: "Fiche section",
+    fiche_section: "Page section",
     classification: "Classification",
   },
   anonymous: "anonymous",
@@ -90,7 +90,7 @@ const fr: PublicFlagsCopy = {
   statusDescriptions: {
     open: "en cours — examen par l'équipe éditoriale",
     under_review: "en cours — examen par l'équipe éditoriale",
-    accepted: "acceptée · fiche mise à jour",
+    accepted: "acceptée · page mise à jour",
     rejected: "rejetée",
     duplicate: "doublon",
     withdrawn: "retirée",
@@ -106,7 +106,7 @@ const fr: PublicFlagsCopy = {
   targets: {
     assertion: "Assertion",
     source: "Source",
-    fiche_section: "Section de fiche",
+    fiche_section: "Section de page",
     classification: "Classification",
     general: "Signalement général",
   },
@@ -116,7 +116,7 @@ const fr: PublicFlagsCopy = {
     language: "Langue",
     language_family: "Famille linguistique",
     source: "Source",
-    fiche_section: "Section de fiche",
+    fiche_section: "Section de page",
     classification: "Classification",
   },
   anonymous: "anonyme",
