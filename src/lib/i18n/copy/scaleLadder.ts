@@ -194,6 +194,8 @@ export const scaleLadder: Record<Language, ScaleLadderCopy> = {
 
 export interface WallpaperLibraryCopy {
   eyebrow: string;
+  /** What the page is, as its h1. The ladder's sentence is the chapter's. */
+  pageTitle: string;
   /** What the badge on a rung the corpus does not carry says. */
   outsideCorpus: string;
   /** What the badge on a rung the corpus does carry says. */
@@ -216,6 +218,7 @@ export interface WallpaperLibraryCopy {
 export const wallpaperLibrary: Record<Language, WallpaperLibraryCopy> = {
   en: {
     eyebrow: "The project",
+    pageTitle: "Wallpapers",
     outsideCorpus: "Outside the corpus",
     inCorpus: "In the corpus",
     formats: {
@@ -230,6 +233,7 @@ export const wallpaperLibrary: Record<Language, WallpaperLibraryCopy> = {
   },
   fr: {
     eyebrow: "Le projet",
+    pageTitle: "Fonds d’écran",
     outsideCorpus: "Hors corpus",
     inCorpus: "Dans le corpus",
     formats: {

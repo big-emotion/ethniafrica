@@ -85,6 +85,25 @@ describe("WallpaperLibraryPage", () => {
     }
   });
 
+  /**
+   * The h1 and the chapter heading both printed the ladder's sentence, so the
+   * page said the same thing twice before saying anything.
+   */
+  // @req REQ-132
+  it("names the page in its h1 and leaves the argument to the chapter", () => {
+    render(<WallpaperLibraryPage language="fr" />);
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Fonds d’écran" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { level: 2, name: scaleLadder.fr.title })
+    ).toBeInTheDocument();
+    expect(
+      screen.queryAllByRole("heading", { name: scaleLadder.fr.title })
+    ).toHaveLength(1);
+  });
+
   // @req REQ-132
   it("closes on the sentence the ladder exists to make unavoidable", () => {
     render(<WallpaperLibraryPage language="fr" />);

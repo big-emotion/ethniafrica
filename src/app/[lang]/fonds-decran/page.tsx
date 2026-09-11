@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { WallpaperLibraryPage } from "@/components/pages/WallpaperLibraryPage";
-import { scaleLadder } from "@/lib/i18n/copy/scaleLadder";
+import { scaleLadder, wallpaperLibrary } from "@/lib/i18n/copy/scaleLadder";
 import { getLocalizedRoute } from "@/lib/routing";
 import { surfaceHead } from "@/lib/seo/localeAlternates";
 import type { Language } from "@/types/shared";
@@ -16,7 +16,12 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { lang } = await params;
   const ladder = scaleLadder[lang as Language];
-  const copy = { title: ladder.title, description: ladder.reframe };
+  // The tab and the card say what the page is; the ladder's own sentence is
+  // the description, where it does the work of making someone open it.
+  const copy = {
+    title: wallpaperLibrary[lang as Language].pageTitle,
+    description: `${ladder.title}. ${ladder.reframe}`,
+  };
 
   return {
     ...copy,

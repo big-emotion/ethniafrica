@@ -22,6 +22,10 @@ import type { Language } from "@/types/shared";
  * No state and no JavaScript: six rungs, six links each, every one a plain
  * anchor onto the image route. The route names the file it returns, so a
  * reader gets `ethniafrica-kongo-phone.png` rather than `route.png`.
+ *
+ * The h1 names the page and the chapter carries the argument, the way `/about`
+ * does. Both printed the ladder's own sentence at first, so the page said the
+ * same thing twice before saying anything.
  */
 // @req REQ-132
 export const WallpaperLibraryPage = ({ language }: { language: Language }) => {
@@ -36,7 +40,7 @@ export const WallpaperLibraryPage = ({ language }: { language: Language }) => {
             {chrome.eyebrow}
           </p>
           <h1 className="font-afh-display text-afh-hero font-black leading-none">
-            {ladder.title}
+            {chrome.pageTitle}
           </h1>
           <p className="text-afh-lead font-semibold leading-relaxed">
             {ladder.intro}
