@@ -44,6 +44,8 @@ npm run check:action-pins           # every third-party GitHub Action must be SH
 npm run check:workflow-shell        # every workflow `run:` block must parse under `bash -n`
 npm run check:env-example           # .env.example and the code agree, both directions
 npm run check:local-paths           # no local filesystem path in a public repo
+npm run test:social-tools           # the social/ Node utilities (in `make check`)
+npm run test:social-engine          # the ten Python suites of the render engine
 npm run check:migration-files       # no duplicate version or name, no hole in the sequence
 npm run check:dead                  # knip: unreferenced files, exports, dependencies (ratcheted ceilings)
 npm run test:charter-contracts      # aggregated design-charter contract suite
@@ -111,31 +113,96 @@ Migrations are numbered and sequential in `supabase/migrations/` (081 at last co
 - Storybook uses **`@storybook/react-vite`, not `@storybook/nextjs`** — Next 16 dropped `next/config`, which `@storybook/nextjs` requires. Installs need `--legacy-peer-deps`.
 - Mobile-first is mandatory. Breakpoints: mobile 430px · tablet `md` 720px · desktop `xl` 800px (country container max-width).
 
+### `social/` — the render engine, and where its output is not
+
+Every carousel and short the project publishes is drawn by Python under
+`social/harness`, with Node utilities beside it in `social/tools`. The spec they
+obey is `docs/design/gabarits-social/GABARITS-SOCIAL.md`, versioned here with the
+tokens it reads — it used to be a derived copy of a file in the private
+workspace, marked "do not edit here", and it was a section behind its source
+within a day.
+
+**The code is versioned; the productions are not, and the split is one variable.**
+`ETHNIAFRICA_SOCIAL_OUTPUT` names the directory holding one subdirectory per
+subject — normally the production library, outside this repository, because
+masters and rushes are large and git is not a media store. Unset, a render lands
+under the checkout's gitignored `output/social/`, so a fresh clone renders
+without configuring anything and loses the files with the worktree.
+`ETHNIAFRICA_SOCIAL_PUBLICATIONS` names the second shelf, where posts that have
+shipped or are waiting to live; `build-etat.mjs` exits rather than report an
+unconfigured library as one with zero subjects.
+
+**Any other destination inside a git checkout is refused** (`ethni_paths.py`,
+`assert_writable`). Not hypothetical: 1,2 Go of masters were once rendered into a
+site checkout's gitignored `output/`, backed up by nothing, because one command
+line was wrong. The engine now lives in a checkout itself, so the guard carries
+exactly one exemption — its own fallback.
+
+Nothing derives a root from its own file location any more, in either language.
+Seven Python files and four Node tools each did, which worked only while the code
+sat beside the productions, and failed **silently** once it did not: a walk over a
+directory that does not exist reports zero subjects, not an error.
+
+```bash
+make social-tools     # node --test, cheap, part of `make check`
+make social-engine    # the ten Python suites, needs the venv and the corpus
+```
+
+The engine's virtualenv is gitignored and rebuilt from
+`social/harness/requirements.txt`, which pins its three direct dependencies
+**exact** — Pillow decides glyph rasterisation and NumPy the compositing maths, so
+a minor bump silently re-renders the back catalogue. `ffmpeg` and `ffprobe` are
+called as binaries and installed separately.
+
+`src/styles/__tests__/gabaritsSocialTokenParity.test.ts` holds the engine's token
+copy to the design system, value by value. A font stack the site opens with the
+Next loader's `var(--font-*)` is compared with that entry dropped: Python
+rasterises from the `.ttf` files it ships and would resolve the loader variable to
+nothing.
+
+What stays in the private library: the renders, the per-subject `cards.json` and
+`SOURCES.md`, the render-verification shelves, the dated editorial guides, and the
+one tool that files folders onto the library's own shelves.
+
 ### Publishing — the audience, the plan, the video
 
-The publishing chain runs in one order, and **it no longer lives entirely in this
-repository.** On 2026-09-10 the two production skills moved to the private
-workspace, because a public repository carries no production skills. What stayed
-here is the one that acts on this site's own pages, and the report the chain hands
-along.
+The publishing chain runs in one order, and **all six of its skills live here**,
+under their `ethniafrica-` names. They left for the private workspace on
+2026-09-10, on the rule that a public repository carries no production skills, and
+came back on 2026-09-11 when that rule was reversed: an engine and a chain whose
+history nobody can read are an engine and a chain nobody can repair. What did not
+come back is the **output** — see `social/` below.
 
-- **Measure before planning — `audience-audit`, in the private workspace.** It
-  writes one dated report to `docs/audience/` _here_, because it is built from
-  this repository's URL inventory, and the downstream skills refuse a report older
-  than 30 days. Every figure counts **consented sessions only**: Plausible loads
-  after the banner, so the number is a floor of unknown depth, never the audience.
-- **Decide what ships — `content-strategist`, in the private workspace.** Reads
-  that report and never proposes a subject without the comparable's numbers
-  attached.
-- **Convert what already lands — `/ethniafrica-experience-optimizer`, here.** A
-  page the report marks a dead end already has the audience a new page would have
-  to earn.
+```
+audience-audit → content-strategist → idee → structure → produire → (fin)
+   la mesure        quoi publier                                      ↓
+                                                    publication : acte humain
+```
 
-`scripts/lib/audienceSkillContract.ts` guards the half of that handoff this
-repository can still see: that the consumer living here still reads the dated
-report and still names its producer. It deliberately does **not** look for the
-producer on disk. Putting it back in the loop makes a correct repository fail, and
-the obvious fix would be to copy a production skill back into a public repository.
+- **Measure before planning — `/ethniafrica-audience-audit`.** It writes one
+  dated report to `docs/audience/`, and the downstream skills refuse a report
+  older than 30 days. Every figure counts **consented sessions only**: Plausible
+  loads after the banner, so the number is a floor of unknown depth, never the
+  audience.
+- **Decide what ships — `/ethniafrica-content-strategist`.** Reads that report
+  and never proposes a subject without the comparable's numbers attached.
+- **Convert what already lands — `/ethniafrica-experience-optimizer`.** A page
+  the report marks a dead end already has the audience a new page would have to
+  earn.
+- **Then the three that make it — `/ethniafrica-idee`, `/ethniafrica-structure`,
+  `/ethniafrica-produire`.** A subject report, then the cards and their sources,
+  then the render. **Nothing comes after `produire`**: the operator posts, then
+  fills the Diffusion section of the subject's `post.md`. No skill publishes and
+  no skill schedules — do not invent a fourth step.
+
+The first two are optional and upstream; `idee` can start without them. But a
+plan written without the measurement is a plan written to taste.
+
+`scripts/lib/audienceSkillContract.ts` guards the whole handoff: that the
+producer writes the dated report, and that each consumer still opens it and names
+its producer. A consumer edited until it no longer reads the report keeps running
+and silently reverts to guessing, which is the failure the indirection exists to
+prevent.
 
 - **Anything about why a video or a post holds attention — invoke
   `attention-architect` first, every time.** Writing a hook, judging a script
