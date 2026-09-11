@@ -205,10 +205,17 @@ l'annexe le poids du sujet.
 
 Trois couches, dans cet ordre, au-dessus de l'image :
 
-**Une carte plein cadre porte UN voile, jamais deux.** La plaque de bandeau et le
-voile de colonne, écrits séparément, s'éteignent tous deux à 0 dans l'intervalle qui
-les sépare : leurs alphas s'annulent et l'image reparaît en pleine lumière sur toute
-la largeur. Mesuré sur l'ouverture 9:16 — alpha 0,95 à y = 0, **0,00 à y = 400**, 0,78
+**En carrousel, une carte plein cadre porte UN voile, jamais deux.** La plaque de bandeau
+et le voile de colonne, écrits séparément, s'éteignent tous deux à 0 dans l'intervalle
+qui les sépare : leurs alphas s'annulent et l'image reparaît en pleine lumière sur toute
+la largeur.
+
+> **Exception vidéo, et elle est délibérée.** §9 bis porte deux voiles : une plaque de
+> `0 → 340` pour le nom de série et un voile de `840 → 1920` pour le texte. Le profil
+> n'est donc pas monotone — 0,95 en haut, 0 au milieu, 0,93 en bas. C'est licite **parce
+> qu'aucun texte ne vit dans l'intervalle** : la bande claire y est l'image, qui est le
+> sujet. Le contrôle de monotonie de §11 ne s'applique qu'au carrousel ; en vidéo, le
+> contrôle est qu'aucun bloc de texte ne tombe dans l'intervalle. Mesuré sur l'ouverture 9:16 — alpha 0,95 à y = 0, **0,00 à y = 400**, 0,78
 à y = 700 ; la luminance de ligne monte à 225 puis retombe à 46. Une excursion de
 200 niveaux et retour n'est pas un dégradé, c'est une bande.
 
@@ -257,15 +264,30 @@ voile avec lequel entrer en collision.
 **Les alphas utiles, mesurés sur le document le plus pâle du corpus** (luminance 0,985 ;
 Ogilby monte à 0,999) :
 
-| Texte | Seuil | Alpha nécessaire |
-| --- | --- | --- |
-| Affichage (Anton ≥ 88 px) | 3:1 | **0,80** |
-| Corps, source, crédit | 4,5:1 | **0,88** |
-| Bandeau et rang sur gravure pâle | 3:1 | **0,92** |
+| Texte | Luminance | Seuil | Alpha nécessaire |
+| --- | --- | --- | --- |
+| Affichage en **encre 1** `#f1e7d8` | 0,818 | 3:1 | **0,80** |
+| Affichage en **accent** `#e8b96a` | **0,527** | 3:1 | **0,84** |
+| Corps, source, crédit (encre 1 ou 2) | 0,818 / 0,53 | 4,5:1 | **0,88** |
+| Bandeau et rang sur gravure pâle | 0,818 | 3:1 | **0,92** |
 
-**Le bandeau est une ligne unique.** `white-space: nowrap`, interlettre 0,16em, et le
-libellé raccourci si besoin : à 0,20em sur 872 px, « EthniAfrica · Atlas des peuples
-d'Afrique » passe à la ligne et devient une légende, ce que §3 interdit.
+**La table est indexée sur la LUMINANCE du texte, pas sur sa taille.** C'est l'erreur qui
+a produit trois fois le même défaut : un chiffre doré de 150 px tombait à 2,15:1 là où le
+même chiffre en encre 1 tenait 5,8:1 au même alpha. Le doré est une couleur de **fill**
+dans la charte, pas une couleur de texte sur photographie ; il vaut 0,527 contre 0,818
+pour l'encre 1, soit un tiers de luminance en moins à compenser par le voile.
+
+**Corollaire pour un voile allégé :** quand l'alpha descend sous 0,84, **le texte
+d'affichage passe en encre 1 et l'accent se réfugie dans la plaque**, qui a son propre
+fond opaque. On n'épaissit pas le voile pour garder un doré : on déplace le doré.
+
+**Le bandeau est une ligne unique, et le libellé ne se raccourcit jamais.**
+`white-space: nowrap`. Le libellé est la signature de la série : il se lit **mot pour
+mot identique sur toutes les cartes**, qualificatif inclus. Quand il ne tient pas, on
+règle le **corps et l'interlettre**, pas la chaîne — mesuré : « EthniAfrica · Atlas des
+peuples d'Afrique » fait 759 px à 25 px / 0,16em (785 disponibles en 4:5, il tient) et
+820 px à 27 px / 0,16em (766 disponibles en 9:16, il ne tient pas) ; à 24 px / 0,12em
+il tient. Raccourcir la chaîne avait produit deux libellés différents dans le même jeu.
 
 3. **Dégradé vertical**
    `linear-gradient(180deg, .90 0%, .30 10%, .06 22%, .10 40%, .82 62%, .96 78%, #120e0a 100%)`
@@ -362,8 +384,8 @@ CORPS_COURT = 90    # signes — au-delà, le mot ne porte plus seul
 def choisir(carte, image):
     sur_ech = max(1080 / image.w, hauteur_cadre / image.h)
 
-    # B : le mot porte, une ligne l'explique. Pas de paire.
-    if carte.role in ("ouverture", "bascule") \
+    # B : le mot porte, une ligne l'explique. Bascule seulement, pas de paire.
+    if carte.role == "bascule" \
        and not carte.paires \
        and len(carte.corps or "") <= CORPS_COURT:
         return "B"
@@ -391,11 +413,16 @@ caractères au lieu d'être mesuré en pixels.
 lui seul : un chiffre se pose très bien sur une image, et c'est même là qu'il frappe le
 plus.
 
-**B accepte une ligne d'explication, jusqu'à 90 signes.** Sans ce seuil, B n'existe
-pas : toute carte d'ouverture porte un corps, donc aucune ne remplit jamais la
-condition, et le plafond de deux se tient à zéro — une exception que la règle a rendue
-impossible. Ce que B refuse, c'est la paire : un mot plein cadre et un tableau de deux
-termes se disputent le même centre.
+**B est la disposition de la bascule, jamais de l'ouverture.** §7 ter fixe l'ouverture
+en A — elle porte la ligne de vision de 118 signes, qui dépasse le seuil de B par
+construction. Tant que `choisir()` proposait B aux ouvertures, aucune carte ne
+qualifiait et le plafond de deux se tenait à zéro : une exception que la règle rendait
+impossible. **La ligne de vision n'est pas l'argument de la carte**, c'est du mobilier
+constant ; elle ne devrait pas décider d'une disposition, et la restriction de B à la
+bascule est ce qui l'en empêche.
+
+B accepte une ligne d'explication jusqu'à 90 signes. Ce qu'il refuse, c'est la paire :
+un mot plein cadre et un tableau de deux termes se disputent le même centre.
 
 ### Quota de disposition, à l'échelle du lot
 
@@ -497,8 +524,14 @@ Une frontière ne contient pas un peuple, elle le traverse.
 
 | | Titre | Image | Ligne de vision |
 | --- | --- | --- | --- |
-| **Ouverture** | **propre au sujet** | **propre au sujet** | constante |
-| **Clôture** | constante | constante | constante |
+| **Ouverture** | propre au sujet | propre au sujet | **constante** |
+| **Clôture** | propre au sujet | propre au sujet | **constante** |
+
+**La constante du projet est la ligne de vision, et elle seule.** Ni l'image, ni le
+titre : une image de clôture unique obligerait à réécrire neuf crédits et neuf licences
+de sortie pour ne rien gagner, et un titre unique ment dès que le sujet n'est pas un
+peuple — « Ce peuple n'a pas été divisé » sur un carrousel de villes, de projection ou
+de nom de pays.
 
 **L'ouverture est la vignette**, et une vignette décide si quelqu'un regarde. Dix séries
 qui ouvrent sur la même phrase et la même image donnent dix fois la même vignette dans
@@ -520,16 +553,57 @@ Disposition **A**, image plein cadre. Quatre blocs :
 
    | Registre | Patron |
    | --- | --- |
-   | Durée et échelle | « Les frontières de l'Afrique ont 140 ans. Les noms en ont **mille**. » |
+   | Durée et échelle | « 140 ans de frontières. Mille ans de **noms**. » |
    | Renversement d'agent | « Ce peuple n'a pas été **divisé**. » |
    | Ce qui n'a jamais cessé | « Ils écrivaient **déjà**. » |
    | Le nom imposé | « Personne ne s'est jamais appelé **comme ça**. » |
    | Le chiffre absent | « Personne ne sait **combien** ils sont. » |
 
    Un seul mot en accent, le dernier de préférence — c'est la chute.
-3. **La ligne de vision**, au corps, **identique sur toutes les séries** : l'atlas nomme
-   les peuples un par un, sources à l'appui, pour qu'on puisse nommer un peuple aussi
-   facilement qu'un pays.
+
+   **Budget : deux lignes composées, mesurées — jamais un compte de caractères.** Le
+   nombre de caractères tenant sur une ligne dépend du corps et de la mesure : 18 à
+   106 px sur 888 px, 22 à 88 px. « 140 ans de frontières. Mille ans de noms. » fait
+   41 caractères et tient en deux lignes à 88 px ; un budget de 36 signes l'aurait
+   refusé à tort. Le moteur compose le titre et **compte les lignes rendues** ; s'il en
+   fait plus de deux, il descend d'un cran de corps jusqu'à 80 px, puis rend le titre
+   au rapport plutôt que de le dessiner sur quatre lignes.
+
+   Pourquoi deux lignes et pas trois : l'aplat de lisibilité couvre toute la colonne,
+   donc chaque ligne de titre en trop couvre une tranche de gravure. À quatre lignes, la
+   colonne remplit 74 % de la carte et A montre moins d'image que le repli en cartouche,
+   ce qui vide §6 de son objet. C'est la même leçon que `colonne_A_tient()` et que le
+   plafond de sous-titre : **on mesure le composé, on ne compte pas les signes.**
+
+   **Invariant mesurable — et il se mesure sur la partie VISIBLE de la carte.** La
+   colonne d'une carte A doit couvrir une fraction plus faible que la bande d'une
+   cartouche du même format, les deux rapportées à la **hauteur visible** : toute la
+   carte en 4:5, et **0 → 1620 en 9:16**. En deçà de cette ligne vit l'interface de la
+   plateforme : l'aplat qui s'y étend n'assombrit aucune surface de composition, et le
+   compter fait échouer un rendu approuvé.
+
+   **Corollaire de construction, en 9:16 : la colonne s'arrête à 1529**, pas à la base
+   de la carte. Un aplat plat `rgba(18,14,10,.95)` la prolonge de 1529 à 1920 pour
+   garder le profil monotone. Sans cela l'aplat de lisibilité se peint sur les 391 px
+   d'interface où aucun texte ne vit, et l'invariant ne garde plus qu'un point de
+   marge : une ligne de crédit de plus fait basculer l'ouverture en cartouche, ce qui
+   érode le quota que la règle existe pour protéger.
+
+   Mesuré sur les rendus de référence, base 1350 en 4:5 et **1620** en 9:16 :
+
+   | | Colonne A | Bande cartouche | Marge |
+   | --- | --- | --- | --- |
+   | 4:5 | 631 px · 46,7 % | 662 px · 49,0 % | 2,3 pts |
+   | 9:16 | 601 px · 37,1 % | 710 px · 43,8 % | 6,7 pts |
+3. **La ligne de vision**, au corps, tenant sur une ligne, et **reprise mot pour mot
+   partout** — ouverture comme clôture, carrousel comme vidéo :
+
+   > Nommer un peuple aussi facilement qu'un pays.
+
+   Une phrase dont le seul rôle est la répétition ne supporte aucune variante : « cet
+   atlas nomme un peuple aussi facilement qu'un pays » est déjà une autre phrase. Elle
+   se répète à chaque épisode — c'est ce qui la rend mémorable, donc elle est courte et
+   elle est figée.
 4. **L'indication de défilement** de §8 — carrousel uniquement.
 
 Pas de chiffre, pas de paire, pas de source : une ouverture n'a rien à prouver encore.
@@ -542,9 +616,20 @@ Pas de chiffre, pas de paire, pas de source : une ouverture n'a rien à prouver 
 
 Disposition **A** ou **B**. Le renversement d'agent, puis la vision, puis la sortie :
 
-1. **Le renversement**, au titre, **en une seule phrase** : « Ce peuple n'a pas été
-   **divisé**. », le dernier mot en accent. La seconde moitié — « c'est la carte qui a
-   été dessinée par-dessus » — descend au corps.
+1. **Le renversement**, au titre, **en une seule phrase**, le dernier mot en accent. Il
+   se décline selon ce dont parle le lot — un renversement d'agent n'est juste que si
+   son sujet est le bon :
+
+   | Le lot parle de | Titre de clôture |
+   | --- | --- |
+   | un peuple | « Ce peuple n'a pas été **divisé**. » |
+   | des villes, des lieux | « Cette ville n'a pas changé de **nom**. » |
+   | une projection, une carte | « La carte ne mentait pas. Elle ne disait pas **tout**. » |
+   | le nom d'un pays | « Ce pays ne s'est pas **renommé**. » |
+   | une langue, une famille | « Cette langue n'a pas **disparu**. » |
+
+   La seconde moitié du renversement descend au corps : « c'est la carte qui a été
+   dessinée par-dessus », « on l'a rebaptisée », « on l'a redessinée ».
 
    **Un panneau de cartouche est une boîte à hauteur fixe** : `top` et `bottom` posés,
    rien à comprimre. Deux phrases d'affichage y font cinq lignes, soit 572 px sur les
@@ -577,7 +662,17 @@ dit que « ethniafrica.com » a laissé le lecteur sans la raison d'y aller.
 - **Appel à l'action**, dernière carte uniquement : pastille cerclée, bordure 2 px
   accent, rayon 999, padding 20/38, texte 27 / 800 / maj.
 - Les deux repères sont volontairement distincts : l'un dit *continue*, l'autre *sors*.
-- **Rang** `01/05` en haut à droite, accent.
+- **Rang** `01/05`, accent, **sur toutes les cartes quelle que soit leur disposition.**
+  Une carte A le porte dans la première rangée de sa colonne ; une carte en bande le
+  porte dans son en-tête, qui a la **même forme** : `display:flex;
+  justify-content:space-between` à l'**encart de la colonne** (96 px en 4:5, 104 px en
+  9:16), libellé **ferré à gauche**, rang à droite. Un en-tête qui n'est qu'un libellé
+  centré n'a pas d'emplacement pour le rang, et la série se termine sans son `04/04`.
+
+  **Ni grille `1fr auto 1fr`, ni libellé centré.** La grille centre le libellé sur une
+  carte dont tout le reste est ferré à gauche : deux alignements sur une carte, ce que
+  la charte interdit — et elle laissait 8 px entre le libellé et le rang là où le
+  `space-between` en laisse 67.
 
 ---
 
@@ -589,6 +684,153 @@ dit que « ethniafrica.com » a laissé le lecteur sans la raison d'y aller.
   pas de contour noir sur une police d'affichage.
 - Bande réservée entre la colonne de contenu et le pied. Le pied remonte d'autant.
 - Le mot pivot de la phrase peut passer en accent dans la plaque : un seul par carte.
+
+---
+
+## 9 bis. Le gabarit vidéo — une seule disposition
+
+**La vidéo n'est pas un carrousel qui bouge.** Un carrousel est du contenu à lire, une
+vidéo est du contenu visuel avec une narration parlée. Le gabarit carrousel, porté tel
+quel en 9:16, produit neuf défauts recensés sur un montage réel : pagination inutile,
+crédit au milieu du cadre, nom de série sur chaque image, tout centré, voile écrasant,
+texte qui monte et descend selon le sous-titre, chiffre chevauchant sa légende, grands
+vides noirs, cartouche à séparation franche.
+
+### Ce que la vidéo retire
+
+| | Carrousel | Vidéo |
+| --- | --- | --- |
+| Dispositions | A · B · C | **A seule**, tiers bas ancré |
+| Rang `03/08` | sur chaque carte | **aucun** — on ne feuillette pas une vidéo |
+| Nom de série | sur chaque carte | **ouverture et clôture seulement** |
+| Alignement | ferré à gauche ou centré | **ferré à gauche**, toujours |
+| Crédit | dans la colonne | **épinglé au bas du cadre**, une ligne, 17 px |
+| Indication de défilement | oui | aucune |
+
+**Ni cartouche, ni mot plein cadre.** Une bande d'image avec un aplat sous elle crée une
+séparation franche qui, en mouvement, se lit comme une coupure de montage. L'image
+occupe tout le cadre sur toutes les images clés.
+
+### Les quatre emplacements, et ils sont fixes
+
+C'est la règle la plus importante du gabarit vidéo : **une position ne change jamais
+parce qu'un autre bloc apparaît ou disparaît.** Un titre qui descend quand le sous-titre
+s'efface se lit comme un défaut de rendu.
+
+| Emplacement | Ordonnée | Contenu |
+| --- | --- | --- |
+| Nom de série | `top: 131` | ouverture et clôture seulement |
+| Titre | `top: 1050`, hauteur **220**, ancré en bas | chiffre + précision, ou titre Anton **76 px** sur deux lignes |
+| Narration | `top: 1300`, hauteur **190** | la plaque de sous-titre, **réservé même vide** |
+| Crédit + filigrane | `bottom: 44` | 17 px, **une ou deux lignes**, filigrane à droite, opacité 0,72 |
+
+La clôture est la seule exception : titre à `top: 890` sur 380 px, et son emplacement bas
+fait 270 px pour porter la plaque **et** la pastille.
+
+> Le filigrane est à **0,72**, non à 0,55 comme en carrousel : posé sur un aplat de nuit
+> à 0,93 plutôt que sur une image, il s'éteint à l'opacité du carrousel.
+
+**L'emplacement de narration est réservé quand le sous-titre est absent.** Le moteur ne
+le supprime pas : il le laisse vide. Un emplacement vide ne coûte rien et garantit que
+rien ne bouge.
+
+**Un emplacement à hauteur fixe déborde vers le HAUT.** `justify-content: flex-end` plus
+un enfant à `min-height: auto` : rien ne se comprime, et le dépassement sort par le
+haut, dans la partie où le voile est encore en rampe. Mesuré : onze signes ajoutés à un
+titre d'ouverture l'ont fait passer de deux lignes composées à trois — 285 px dans un
+emplacement de 220 — et sa première ligne s'est retrouvée 65 px au-dessus, à alpha 0,43
+et 2,63:1. **Toute édition de copie se remesure**, et le contrôle est
+`slot.scrollHeight <= slot.clientHeight` **et** `titre.top >= slot.top`.
+
+> Le crédit peut courir sur **deux lignes**. Une attribution complète vaut mieux qu'une
+> ligne unique obtenue en coupant le dépôt ou la licence : à 17 px, deux lignes font
+> 49 px et restent du mobilier.
+
+### Le voile, et ce que « très allégé » veut dire
+
+Un voile allégé ne se fabrique pas en diluant l'alpha **sous** le texte — c'est la faute
+mesurée sur le premier mock : à alpha 0,22, le « 1670 » doré sur parchemin tombait à
+0,70:1, soit invisible. L'allègement vient de **la position de la rampe** : elle démarre
+à `y = 810`, donc **les 42 % hauts du cadre ne portent aucun voile du tout**.
+
+**Les alphas de la vidéo, et ce sont des planchers.** Ils sont sous ceux du carrousel
+parce que le texte y est plus gros et que l'image est le sujet — mais ils restent
+dérivés d'une mesure, pas d'un goût :
+
+| Ordonnée | Alpha | Ce qu'il tient |
+| --- | --- | --- |
+| 840 → 1050 | 0 → **0,72** | rien ; c'est la rampe |
+| 1050 | **0,72** | titre Anton ≥ 76 px, **en encre 1** |
+| 1198 | **0,82** | précision 34 px, en encre 1 |
+| 1450 | 0,88 | plaque de narration (qui a son propre fond) |
+| 1920 | **0,93** | crédit 17 px en encre 2 |
+
+Le 0,72 tient parce que la **luminance réelle** sous le bloc de titre est de 0,23 et non
+0,985 : le pire cas du corpus n'est pas le pire cas de chaque carte. C'est pourquoi cet
+alpha se vérifie **carte par carte, sur les pixels composés**, et non par une table.
+
+**À 0,72, tout le texte d'affichage de la vidéo est en encre 1** — chiffre inclus. Le
+doré ne survit pas sous 0,84 (§4) : il se réfugie dans la plaque de narration, où il
+marque un mot sur un fond opaque. La plaque du haut, elle, monte à **0,95 / 0,93 sur ses
+52 premiers pour cent**, parce que le nom de série est du texte de corps sur gravure pâle
+et qu'il lui faut 0,92.
+
+**Le 0,93 du bas n'est pas négociable** : le crédit est en encre 2 à 17 px, et à 0,90 il
+tombe à 3,78:1. C'est le bloc que tout l'appareil de portes existe pour protéger.
+
+**Ordre des couches en haut de carte : la plaque d'abord, le nom de série ensuite.** Une
+plaque déclarée après le libellé le peint par-dessus, et le libellé s'assombrit d'autant
+— défaut invisible à la relecture du code, évident à l'écran. Mais l'ordre ne règle que
+la couche : **le plateau de la plaque doit couvrir l'ordonnée du libellé**, 131 → 164,
+sinon c'est le fond sous lui qui manque de voile, et aucun z-index n'y change rien.
+
+### Le sous-titre
+
+§9 s'applique, avec deux ajouts :
+
+- **52 px**, gras 800, sur plaque `rgba(18,14,10,.9)`, rayon 16, deux lignes maximum.
+  À 44 px le sous-titre se lit mal sur un téléphone tenu à bout de bras.
+- **Un mot ou un membre de phrase passe en accent dans la plaque** — un seul par image
+  clé. C'est ce qui fait qu'un sous-titre parlé porte aussi une hiérarchie visuelle.
+
+### La clôture porte la doctrine, jamais un lien seul
+
+« Vous pouvez trouver les peuples sur EthniAfrica » n'est pas une clôture, c'est une
+adresse. La clôture dit, dans cet ordre : le renversement d'agent, sa datation, la
+ligne de vision, puis le lien.
+
+> **Une frontière ne contient pas un peuple. Elle le traverse.**
+> Tracées à la conférence de Berlin, en 1884. Les noms sont mille ans plus vieux.
+> Nommer un peuple aussi facilement qu'un pays.
+> 804 peuples · ethniafrica.com
+
+**Le renversement tient en une seule phrase d'affichage, les deux moitiés au même
+rang.** « Elle le traverse » est la chute : la reléguer au corps la fait lire comme une
+précision, alors que c'est l'argument. Elle passe donc en accent dans le titre, et le
+corps ne garde que la datation.
+
+**« La conférence de Berlin »**, jamais « Berlin » : la ville n'a rien fait, la
+conférence si. Et **« mille ans plus vieux »** plutôt que « plus de mille ans » — un
+écart se comprend d'un coup, une borne demande un calcul. La comparaison est l'argument,
+pas le nombre.
+
+**Budget de la clôture :** titre Anton 80 px sur trois lignes (259 px) + datation deux
+lignes (96 px) = 375 px, emplacement à `top: 890` sur 380. La rampe du voile se recale
+d'autant — `top: 590`.
+
+### Réserve assumée sur le crédit
+
+Le crédit est épinglé à `bottom: 44`, donc **sous l'interface de TikTok et de Reels**.
+C'est un choix de l'éditeur : le crédit est du mobilier légal, pas de la lecture, et le
+sortir de la composition vaut mieux que de l'y voir. L'attribution reste dans le
+fichier, dans la description de la publication, et visible sur les plateformes dont
+l'interface est plus basse. **Cette réserve est consignée pour ne pas être redécouverte
+comme un défaut.**
+
+### Ce qui reste à faire
+
+Les animations. Le mock ne fixe que les positions : entrée du titre, entrée du
+sous-titre, transitions entre séquences. §9 et le brief vidéo portent la cadence.
 
 ---
 
@@ -670,6 +912,12 @@ premier changement de format.
 - [ ] **Le voile est un enfant de la colonne** (`bottom:100%`), jamais une ordonnée
       estimée. Aucune cote de voile codée en dur.
 - [ ] **Une carte plein cadre porte un seul voile, et son alpha ne redescend jamais.**
+- [ ] **La colonne d'une carte A couvre moins que la bande d'une cartouche**, les deux
+      rapportées à la hauteur **visible** (toute la carte en 4:5, 0–1620 en 9:16).
+- [ ] **Titre d'ouverture : deux lignes composées**, comptées au rendu et non en signes.
+- [ ] **Le rang est présent sur chaque carte**, A comme cartouche comme B.
+- [ ] **Un seul alignement par carte** — bandeau, titre, corps, action et crédit
+      obéissent au même choix, ferré à gauche ou centré, jamais les deux.
 - [ ] **Profil de luminance de ligne monotone**, ou excursion sous 25 niveaux.
 - [ ] **Aucun filet vertical de pleine hauteur** le long d'une colonne.
 - [ ] **Une paire porte son `→` et une glose par terme.**
@@ -687,7 +935,10 @@ premier changement de format.
 - [ ] La licence de sortie est celle du lot, calculée et non recopiée.
 - [ ] Aucune note interne visible sur l'image.
 - [ ] Le crédit nomme le document réellement affiché.
-- [ ] **L'ouverture est propre au sujet** et son titre suit un registre de §7 ter ;
-      sa ligne de vision est celle de toutes les séries, mot pour mot.
+- [ ] **Ouverture et clôture sont propres au sujet** (titre et image) ; seule la ligne
+      de vision est constante, mot pour mot.
+- [ ] **Le titre de clôture renverse le bon sujet** — pas « ce peuple » sur un lot de
+      villes ou de projection.
+- [ ] **B n'est jamais une ouverture.**
 - [ ] **La clôture porte le renversement d'agent et la ligne de vision**, pas un appel
       à l'action seul.
