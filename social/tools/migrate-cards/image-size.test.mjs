@@ -39,6 +39,7 @@ function assets(limite = 40) {
   return trouves;
 }
 
+// @req REQ-032
 test("lit les dimensions de tout le corpus d'images", SANS_CORPUS, () => {
   const fichiers = assets();
   assert.ok(
@@ -65,6 +66,7 @@ test("lit les dimensions de tout le corpus d'images", SANS_CORPUS, () => {
   }
 });
 
+// @req REQ-032
 test("un fichier absent lève, il ne renvoie pas une valeur par défaut", () => {
   // The failure being prevented: a default would silently disable §6's
   // resolution fallback for exactly the cards whose asset went missing.
@@ -74,6 +76,7 @@ test("un fichier absent lève, il ne renvoie pas une valeur par défaut", () => 
   );
 });
 
+// @req REQ-032
 test("un fichier qui n'est pas une image lève", () => {
   // The spec is versioned with the engine, so this one needs no corpus.
   const md = path.join(gabarits(), "GABARITS-SOCIAL.md");
