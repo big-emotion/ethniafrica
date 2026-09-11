@@ -9,17 +9,21 @@ vi.mock("@/components/layout/PageLayout", () => ({
   ),
 }));
 
+vi.mock("next/image", () => ({
+  default: ({ src, alt }: { src: string; alt: string }) => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={src} alt={alt} />
+  ),
+}));
+
 import { WallpaperLibraryPage } from "../WallpaperLibraryPage";
 import { scaleLadder } from "@/lib/i18n/copy/scaleLadder";
-import { WALLPAPER_FORMATS } from "@/lib/wallpaper/formats";
 
 describe("WallpaperLibraryPage", () => {
   // @req REQ-132
   it("lists the six rungs in ladder order, oldest last", () => {
     render(<WallpaperLibraryPage language="fr" />);
 
-    // Direct children only: each rung nests a list of its own, one item per
-    // canvas, and those are not rungs.
     const rungs = Array.from(
       screen.getByTestId("scale-ladder").children
     ) as HTMLElement[];
@@ -33,75 +37,89 @@ describe("WallpaperLibraryPage", () => {
   });
 
   /**
-   * The image is the debt and the page is the payment. A magnitude offered as
-   * a download with no dated anchor beside it would be a slogan leaving the
-   * site, and on a sourced atlas a slogan is a lie about the corpus.
+   * The image is the page, not a caption over a blank ground. Every rung
+   * carries its own picture, and the picture is what a visitor came to take.
    */
   // @req REQ-132
-  it("prints the dated anchor and its provenance beside every download", () => {
+  it("gives every rung its own image, described for a reader who cannot see it", () => {
     render(<WallpaperLibraryPage language="fr" />);
 
     for (const rung of scaleLadder.fr.rungs) {
-      const card = screen.getByTestId(`ladder-rung-${rung.id}`);
+      const image = within(
+        screen.getByTestId(`ladder-rung-${rung.id}`)
+      ).getByRole("img");
 
-      expect(card).toHaveTextContent(rung.anchor);
-      expect(card).toHaveTextContent(rung.provenance);
-    }
-  });
-
-  // @req REQ-132
-  it("badges the two rungs the corpus does not itself carry", () => {
-    render(<WallpaperLibraryPage language="fr" />);
-
-    expect(screen.getByTestId("ladder-provenance-border")).toHaveTextContent(
-      "Hors corpus"
-    );
-    expect(screen.getByTestId("ladder-provenance-sapiens")).toHaveTextContent(
-      "Hors corpus"
-    );
-    expect(screen.getByTestId("ladder-provenance-kongo")).toHaveTextContent(
-      "Dans le corpus"
-    );
-  });
-
-  // @req REQ-132
-  it("offers every canvas for every rung, as a named download", () => {
-    render(<WallpaperLibraryPage language="fr" />);
-
-    const card = screen.getByTestId("ladder-rung-kongo");
-    const links = within(card).getAllByRole("link");
-
-    expect(links).toHaveLength(WALLPAPER_FORMATS.length);
-    for (const format of WALLPAPER_FORMATS) {
-      const link = links.find((anchor) =>
-        anchor.getAttribute("href")?.includes(`format=${format.id}`)
+      expect(image).toHaveAttribute(
+        "src",
+        `/images/wallpapers/${rung.id}-phone.jpg`
       );
-      expect(link).toBeDefined();
-      expect(link).toHaveAttribute(
-        "href",
-        `/api/og/ladder?rung=kongo&format=${format.id}&lang=fr`
-      );
-      expect(link).toHaveAttribute("download");
+      expect(image.getAttribute("alt")).toContain(rung.subject);
     }
   });
 
   /**
-   * The h1 and the chapter heading both printed the ladder's sentence, so the
-   * page said the same thing twice before saying anything.
+   * A wallpaper leaves the site and is re-shared. A magnitude offered with no
+   * dated anchor beside it would be a slogan leaving the site, and on a
+   * sourced atlas a slogan is a lie about what the atlas holds.
    */
   // @req REQ-132
-  it("names the page in its h1 and leaves the argument to the chapter", () => {
+  it("prints the dated anchor and where to check it beside every image", () => {
+    render(<WallpaperLibraryPage language="fr" />);
+
+    for (const rung of scaleLadder.fr.rungs) {
+      const band = screen.getByTestId(`ladder-rung-${rung.id}`);
+
+      expect(band).toHaveTextContent(rung.anchor);
+      expect(band).toHaveTextContent(rung.provenance);
+    }
+  });
+
+  // @req REQ-132
+  it("badges the two rungs the atlas does not itself carry", () => {
+    render(<WallpaperLibraryPage language="fr" />);
+
+    expect(screen.getByTestId("ladder-provenance-border")).toHaveTextContent(
+      "Hors de l’atlas"
+    );
+    expect(screen.getByTestId("ladder-provenance-sapiens")).toHaveTextContent(
+      "Hors de l’atlas"
+    );
+    expect(screen.getByTestId("ladder-provenance-kongo")).toHaveTextContent(
+      "Dans l’atlas"
+    );
+  });
+
+  /**
+   * One download per rung, straight at the file. The six format buttons the
+   * first version offered read as a download table and buried the picture.
+   */
+  // @req REQ-132
+  it("offers one named download per rung, pointing at the phone image", () => {
+    render(<WallpaperLibraryPage language="fr" />);
+
+    const band = screen.getByTestId("ladder-rung-kongo");
+    const links = within(band).getAllByRole("link");
+
+    expect(links).toHaveLength(1);
+    expect(links[0]).toHaveAttribute(
+      "href",
+      "/images/wallpapers/kongo-phone.jpg"
+    );
+    expect(links[0]).toHaveAttribute("download");
+    expect(links[0].getAttribute("aria-label")).toContain("royaume Kongo");
+  });
+
+  // @req REQ-132
+  it("names the page in its h1 and leaves the argument to the images", () => {
     render(<WallpaperLibraryPage language="fr" />);
 
     expect(
       screen.getByRole("heading", { level: 1, name: "Fonds d’écran" })
     ).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { level: 2, name: scaleLadder.fr.title })
-    ).toBeInTheDocument();
-    expect(
-      screen.queryAllByRole("heading", { name: scaleLadder.fr.title })
-    ).toHaveLength(1);
+    expect(screen.getByTestId("scale-ladder")).toHaveAttribute(
+      "aria-label",
+      scaleLadder.fr.title
+    );
   });
 
   // @req REQ-132
@@ -113,18 +131,34 @@ describe("WallpaperLibraryPage", () => {
     );
   });
 
+  /**
+   * The same rule the About page now obeys: "fiche" and "corpus" are words
+   * the workshop uses to itself, and a visitor knows neither.
+   */
+  // @req REQ-132
   // @req REQ-145
-  it("renders the library in English, pointing at the English images", () => {
+  it("says nothing to the reader in the workshop's own vocabulary", () => {
+    for (const language of ["fr", "en"] as const) {
+      const { container, unmount } = render(
+        <WallpaperLibraryPage language={language} />
+      );
+
+      expect(container.textContent).not.toMatch(/fiches?\b/i);
+      expect(container.textContent).not.toMatch(/corpus/i);
+
+      unmount();
+    }
+  });
+
+  // @req REQ-145
+  it("renders the library in English", () => {
     render(<WallpaperLibraryPage language="en" />);
 
     expect(screen.getByTestId("ladder-rung-kemet")).toHaveTextContent(
-      "The Egyptian Old Kingdom"
+      "Ancient Egypt"
     );
     expect(screen.getByTestId("ladder-provenance-sapiens")).toHaveTextContent(
-      "Outside the corpus"
+      "Outside the atlas"
     );
-    expect(
-      within(screen.getByTestId("ladder-rung-kongo")).getAllByRole("link")[0]
-    ).toHaveAttribute("href", expect.stringContaining("lang=en"));
   });
 });
