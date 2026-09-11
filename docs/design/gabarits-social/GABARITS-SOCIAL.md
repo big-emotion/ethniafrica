@@ -854,14 +854,23 @@ EthniAfrica on documente d'où viennent les noms » est une adresse ; un montage
 l'image dit la doctrine et dont la voix dit l'adresse se contredit sur sa dernière
 seconde.
 
-La fin parlée reprend donc la carte de clôture, dans son ordre : le renversement, sa
-datation, la vision, puis la sortie qui appelle la carte de fin.
+La fin parlée dit **le renversement, puis la sortie**. Rien d'autre.
 
 > Une frontière ne contient pas un peuple. Elle le traverse.
-> Ces frontières ont été tracées à la conférence de Berlin, en 1884. Les noms, eux,
-> sont mille ans plus vieux.
-> Sur EthniAfrica, on cherche à nommer un peuple aussi facilement qu'un pays.
 > Retrouvez l'histoire du nom des peuples sur EthniAfrica. Et bientôt, celle des lieux.
+
+**Ce qui est écrit sur la carte ne se redit pas à la voix.** La datation et la
+ligne de vision sont composées sur la clôture, mot pour mot ; les prononcer en
+plus, c'est publier trois fois la même phrase et immobiliser l'image le temps de
+le faire.
+
+| Fin parlée | Mots | Carte de clôture à l'écran |
+| --- | --- | --- |
+| renversement · datation · vision · sortie | 58 | **21,4 s** |
+| renversement · sortie | 23 | **7 s** |
+
+Vingt secondes sur une image fixe, c'est une image qu'on quitte. La clôture doit
+être aussi brève que l'ouverture.
 
 **La clôture ne porte pas de légende, et c'est pour cette raison.** L'image dit déjà
 mot pour mot ce que la voix dit : une légende par-dessus serait la troisième copie de
