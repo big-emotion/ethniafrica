@@ -84,7 +84,8 @@ déduit pas de la longueur du texte.
 
 | Rang | Ce qui y vit | Taille | Encre |
 | --- | --- | --- | --- |
-| **1 · le message** | titre, chiffre, mot d'accent | 96–216 | accent |
+| **1 · le message** | chiffre, mot d'accent | 96–216 | accent |
+| **1 · le message** | titre de carte | 96–126 | **encre 1**, un mot en accent |
 | **2 · la preuve** | la paire de noms, la précision | 34–56 | encre 1 |
 | **3 · l'explication** | le corps | 32 | encre 2 |
 | **4 · le repère** | pilier, rang, appel à l'action | 22–27 | encre 1 / accent |
@@ -112,8 +113,8 @@ taille et de sa place, jamais d'un contraste raté.**
 | Bandeau (pilier) | Nunito | 25 | — | 700 | maj., interlettre .20em | encre 1 |
 | Rang « 01/05 » | Nunito | 22 | — | 700 | interlettre .14em | accent |
 | Chiffre / mot d'accent | Anton | 216 | 0,84 | — | — | accent |
-| Titre de couverture | Anton | 120–126 | 0,96 | — | maj. | accent |
-| Titre de série | Anton | 96–118 | 0,98 | — | maj. | accent |
+| Titre de couverture | Anton | 120–126 | 1,08 | — | maj. | encre 1 |
+| Titre de série | Anton | 96–118 | 1,08 | — | maj. | encre 1 |
 | Paire — terme | Anton | 56 | 1,0 | — | — | encre 1 / accent |
 | Paire — glose | Nunito | 28 | 1,35 | 400 | — | encre 2 |
 | Précision (sous le chiffre) | Nunito | 36 | 1,32 | 600 | — | encre 1 |
@@ -204,45 +205,67 @@ l'annexe le poids du sujet.
 
 Trois couches, dans cet ordre, au-dessus de l'image :
 
-1. **Voile de bandeau, ancré sur la carte** — obligatoire, indépendant de la bande d'image.
-   `top:0`, hauteur 268 px en 4:5 / 340 px en 9:16,
-   `linear-gradient(180deg, rgba(18,14,10,.92) 0%, rgba(18,14,10,.78) 38%, rgba(18,14,10,.34) 74%, transparent 100%)`.
-   Le bandeau **et le rang** sont du texte de corps : 4,5:1, mesuré aux deux extrémités
-   du cadre. Une rampe plus douce tombe à 3,05:1 sur le rang, à droite, sur un fond pâle.
-2. **Voile local de colonne** (plein cadre seulement) — un dégradé **calé sur le
-   premier bloc de la colonne**, pas sur le bas de la carte et pas centré sur elle.
-   Sa rampe est décrite en fractions de sa propre hauteur, et **elle atteint 0,62 à
-   mi-hauteur du premier bloc** (le chiffre, ou la première ligne du titre) et 0,86
-   sous sa base :
+**Une carte plein cadre porte UN voile, jamais deux.** La plaque de bandeau et le
+voile de colonne, écrits séparément, s'éteignent tous deux à 0 dans l'intervalle qui
+les sépare : leurs alphas s'annulent et l'image reparaît en pleine lumière sur toute
+la largeur. Mesuré sur l'ouverture 9:16 — alpha 0,95 à y = 0, **0,00 à y = 400**, 0,78
+à y = 700 ; la luminance de ligne monte à 225 puis retombe à 46. Une excursion de
+200 niveaux et retour n'est pas un dégradé, c'est une bande.
 
-   ```
-   bottom: 0; height: 58%   /* bloc court : chiffre + 3 lignes */
-   linear-gradient(180deg, transparent 0%, rgba(18,14,10,.08) 26%,
-     rgba(18,14,10,.30) 36%, rgba(18,14,10,.62) 44%, rgba(18,14,10,.86) 56%,
-     rgba(18,14,10,.92) 74%, rgba(18,14,10,.95) 100%)
-   ```
+### Le voile unique — et il s'ancre sur la colonne, pas sur une ordonnée
 
-   Bloc plus haut (titre sur deux lignes + paire) : `height: 72%`, mêmes alphas aux
-   fractions 18 / 26 / 33 / 44 / 70 / 100 %. **La rampe se recale sur la hauteur du
-   bloc, elle ne se recopie pas d'une carte à l'autre.**
+**Aucune cote de voile ne se calcule à la main.** Le voile est **un enfant de la
+colonne de contenu**, ce qui le rend exact par construction quelle que soit la hauteur
+du contenu :
 
-   **Deux pièges mesurés.** Un voile dont l'extrémité sombre est épinglée au bas du
-   cadre met toute sa force là où ne vit que le crédit et laisse le titre dans la
-   partie transparente — 1,56:1 sur un parchemin pâle. Et une rampe trop courte
-   produit une ligne de coupure visible : il faut au moins 400 px entre le premier
-   palier et le plafond. Un radial centré sur la carte produit en plus un halo gris
-   autour du sujet. **Un voile qu'on voit comme une forme est un échec**, même si le
-   contraste est atteint.
+```html
+<!-- la colonne : aplat de lisibilité, plein bord à bord -->
+<div style="position:absolute;left:0;right:0;bottom:0;padding:0 96px 84px;
+            background:linear-gradient(180deg,rgba(18,14,10,.92) 0%,
+                       rgba(18,14,10,.94) 40%,rgba(18,14,10,.95) 100%);
+            display:flex;flex-direction:column;gap:34px">
 
-   **Les deux rampes validées** — à recaler sur la hauteur réelle du bloc, jamais à
-   recopier telles quelles :
+  <!-- la rampe : toujours 300 px AU-DESSUS du contenu réel -->
+  <div style="position:absolute;left:0;right:0;bottom:100%;height:300px;
+              background:linear-gradient(180deg,rgba(18,14,10,0) 0%,
+                         rgba(18,14,10,.06) 20%,rgba(18,14,10,.20) 55%,
+                         rgba(18,14,10,.50) 78%,rgba(18,14,10,.92) 100%)"></div>
+  …
+</div>
+```
 
-   | Premier bloc | 4:5 | 9:16 | Fractions |
-   | --- | --- | --- | --- |
-   | chiffre + 3 lignes | `height:58%` | `height:81%` | 26 / 36 / 44 / 56 / 74 / 100 % |
-   | titre 2 lignes + paire | `height:72%` | `height:75%` | 18 / 26 / 33 / 44 / 70 / 100 % |
+`bottom:100%` place la rampe juste au-dessus de la boîte de contenu. Elle suit donc la
+colonne quand celle-ci grandit — ce qu'une valeur estimée ne fait pas.
 
-   Alphas, dans l'ordre des fractions : .08 · .30 · .62 · .86 · .92 · .95.
+> **L'erreur mesurée, deux fois de suite.** J'ai d'abord ancré l'alpha utile sur la
+> **mi-hauteur** du premier bloc : correct pour un bloc d'une ligne, faux pour un titre
+> de trois à cinq lignes, dont la première ligne se retrouve 290 px plus haut, à alpha
+> ≈ 0,07 — 46 % de l'aire du titre sous 3:1. J'ai ensuite ancré sur un `contentTop`
+> **sommé à la main**, que la même édition a invalidé en ajoutant une rangée à la
+> colonne : erreur de 130 px en 4:5 et 278 px en 9:16, bandeau à 1,09:1. Les deux fois,
+> la faute était de décrire en ordonnées ce qui doit être décrit en relations.
+
+**L'alpha ne redescend jamais**, et l'aplat de colonne commence à 0,92 — donc le
+premier bloc est couvert quoi qu'il soit, bandeau comme titre. C'est ce qui rend la
+règle indépendante de l'ordre des blocs.
+
+**Vérification :** le profil de luminance de ligne doit être monotone décroissant, ou
+son excursion rester sous 25 niveaux. Une carte **en bande** (cartouche, mot plein
+cadre) garde sa plaque de bandeau : son texte est sur un aplat, il n'y a pas de second
+voile avec lequel entrer en collision.
+
+**Les alphas utiles, mesurés sur le document le plus pâle du corpus** (luminance 0,985 ;
+Ogilby monte à 0,999) :
+
+| Texte | Seuil | Alpha nécessaire |
+| --- | --- | --- |
+| Affichage (Anton ≥ 88 px) | 3:1 | **0,80** |
+| Corps, source, crédit | 4,5:1 | **0,88** |
+| Bandeau et rang sur gravure pâle | 3:1 | **0,92** |
+
+**Le bandeau est une ligne unique.** `white-space: nowrap`, interlettre 0,16em, et le
+libellé raccourci si besoin : à 0,20em sur 872 px, « EthniAfrica · Atlas des peuples
+d'Afrique » passe à la ligne et devient une légende, ce que §3 interdit.
 
 3. **Dégradé vertical**
    `linear-gradient(180deg, .90 0%, .30 10%, .06 22%, .10 40%, .82 62%, .96 78%, #120e0a 100%)`
@@ -267,10 +290,13 @@ dans le calcul de contraste : c'est le voile qui doit atteindre 4,5:1.
 *Carte de série. Image pleine, texte groupé en bas à gauche.*
 
 - Image plein cadre, `object-fit: cover`.
-- Bandeau centré, `top = 84k` (4:5) / `130` (9:16).
+- **Bandeau et rang dans la colonne de contenu**, première rangée, `space-between` :
+  pilier à gauche en encre 1, rang à droite en accent. Pas de plaque en haut de carte
+  (§4 : un seul voile, monotone).
 - Bloc bas : `left/right = 96`, `bottom = 84` (4:5) / `330` (9:16),
   colonne alignée à gauche, gouttière 30–34.
-  Ordre : titre Anton 96–118 → paire ou précision → corps → source → crédit + filigrane.
+  Ordre : bandeau + rang → titre Anton 96–118 → paire ou précision → corps → source →
+  crédit + filigrane.
 - **Aucune plaque, aucune boîte.** Le texte se pose sur l'image, tenu par le voile
   local de §4 et rien d'autre. Un aplat arrondi sur une photographie déjà voilée
   assombrit deux fois et se lit comme une fenêtre collée sur l'image : la charte dit
@@ -376,11 +402,18 @@ termes se disputent le même centre.
 **Un carrousel est un carrousel d'images.** La règle ci-dessus se choisit carte par
 carte, mais elle se vérifie sur le lot :
 
-| | Part des cartes |
+**Le quota porte sur les cartes de série**, pas sur le lot entier : une ouverture et une
+bascule sont structurellement B ou A, les compter dans le dénominateur fait qu'un deck
+de six cartes ne peut satisfaire « 60 % en A » et « au plus 2 en B » à la fois dès
+qu'une seule carte tombe en C.
+
+| | Part des cartes **de série** |
 | --- | --- |
 | **A — tiers bas ancré** | **au moins 60 %**, et la majorité dans tous les cas |
-| C — cartouche | au plus 30 % |
-| B — mot plein cadre | au plus 2 cartes, et seulement en ouverture ou bascule |
+| C — cartouche | au plus 40 % |
+
+B ne compte pas dans ce calcul : il est réservé à l'ouverture et à la bascule, donc
+**au plus 2 par deck** et jamais sur une carte de série.
 
 Un lot hors quota **sort en épreuve** avec le motif, et le rapport de rendu nomme les
 cartes tombées en C et pourquoi. Ce n'est jamais une faute de composition : c'est le
@@ -438,6 +471,100 @@ recentre, et le filigrane ferme la carte au lieu de la disputer.
 
 Le lockup en couleurs de marque est réservé à la bannière de chaîne et aux outros
 vidéo, là où la marque **est** le sujet.
+
+---
+
+## 7 ter. L'ouverture et la clôture de série
+
+**Toute série s'ouvre et se ferme sur le même couple de cartes.** Elles ne sont pas
+décoratives : elles portent la vision du projet, et c'est la seule chose que le lecteur
+emporte s'il ne lit rien d'autre.
+
+### Doctrine éditoriale — elle prime sur toute formulation locale
+
+| Ce qu'on écrit | Ce qu'on n'écrit plus | Pourquoi |
+| --- | --- | --- |
+| « Les frontières ont 140 ans. Les noms en ont mille. » | « Avant, on vivait en accord avec le continent. » | La force de l'argument vient de la **durée et de l'échelle**, pas de la douceur du passé. Un âge d'or n'a pas besoin d'être vrai pour être attaquable — et l'Afrique d'avant Berlin avait des empires, des conquêtes, des traites internes. |
+| « Reconnaître ce qui n'a jamais cessé. » | « Renouer avec le passé. » | Renouer met le sujet au passé et suppose la rupture consommée. |
+| « Ce peuple n'a pas été divisé. C'est la carte qui a été dessinée par-dessus. » | « Ce peuple a été divisé par les colons. » | Le registre de la réparation garde le colonisateur au centre de la phrase. Le renversement d'agent rend le peuple sujet. |
+| « Tracées sans référence à qui habitait là. » | « Les frontières sont arbitraires. » | À demi faux, donc attaquable — et l'atlas peut le montrer peuple par peuple. |
+| « Ce qui est resté. » | « Ce qui a été pris. » | Le contenu ne dénonce pas, il agrandit la carte. |
+
+**Deux dates, à citer plutôt qu'à paraphraser :** Berlin 1884, les indépendances 1960.
+Une frontière ne contient pas un peuple, elle le traverse.
+
+### Ouverture propre au sujet, clôture constante
+
+| | Titre | Image | Ligne de vision |
+| --- | --- | --- | --- |
+| **Ouverture** | **propre au sujet** | **propre au sujet** | constante |
+| **Clôture** | constante | constante | constante |
+
+**L'ouverture est la vignette**, et une vignette décide si quelqu'un regarde. Dix séries
+qui ouvrent sur la même phrase et la même image donnent dix fois la même vignette dans
+le fil : le lecteur qui a fait défiler la première croit avoir déjà vu les neuf autres.
+Une ouverture figée est donc une erreur de diffusion, pas une économie de production.
+
+**La clôture, elle, ne change pas.** C'est la signature : c'est en répétant la même
+phrase de vision épisode après épisode qu'on finit par l'associer au projet. Une
+clôture qui varie ne signe rien.
+
+### La carte d'ouverture
+
+Disposition **A**, image plein cadre. Quatre blocs :
+
+1. **Bandeau et rang**, première rangée de la colonne.
+2. **Le titre du sujet**, et il n'est pas libre : il s'écrit dans l'un des registres de
+   la doctrine ci-dessus. La banque de patrons est ce qui fait que dix ouvertures
+   différentes sonnent comme la même série :
+
+   | Registre | Patron |
+   | --- | --- |
+   | Durée et échelle | « Les frontières de l'Afrique ont 140 ans. Les noms en ont **mille**. » |
+   | Renversement d'agent | « Ce peuple n'a pas été **divisé**. » |
+   | Ce qui n'a jamais cessé | « Ils écrivaient **déjà**. » |
+   | Le nom imposé | « Personne ne s'est jamais appelé **comme ça**. » |
+   | Le chiffre absent | « Personne ne sait **combien** ils sont. » |
+
+   Un seul mot en accent, le dernier de préférence — c'est la chute.
+3. **La ligne de vision**, au corps, **identique sur toutes les séries** : l'atlas nomme
+   les peuples un par un, sources à l'appui, pour qu'on puisse nommer un peuple aussi
+   facilement qu'un pays.
+4. **L'indication de défilement** de §8 — carrousel uniquement.
+
+Pas de chiffre, pas de paire, pas de source : une ouverture n'a rien à prouver encore.
+
+> **Les ouvertures existantes sont périmées.** Elles annonçaient le sujet en le nommant
+> (« Les Peul vivent dans douze pays ») ; elles doivent porter la **chute** du sujet
+> dans un des registres. Le développement commence à la deuxième carte.
+
+### La carte de clôture
+
+Disposition **A** ou **B**. Le renversement d'agent, puis la vision, puis la sortie :
+
+1. **Le renversement**, au titre, **en une seule phrase** : « Ce peuple n'a pas été
+   **divisé**. », le dernier mot en accent. La seconde moitié — « c'est la carte qui a
+   été dessinée par-dessus » — descend au corps.
+
+   **Un panneau de cartouche est une boîte à hauteur fixe** : `top` et `bottom` posés,
+   rien à comprimre. Deux phrases d'affichage y font cinq lignes, soit 572 px sur les
+   747 disponibles, et le pied sort du cadre avec l'attribution. Le titre d'une clôture
+   en cartouche tient donc en une phrase, et le budget se **mesure** avant d'écrire.
+
+   > `flex:1; min-height:0` sur un intercalaire **ne comprime rien** : un élément vide
+   > mesure 0 et ne peut que pousser vers le bas. Pour épingler un pied dans une boîte
+   > à hauteur fixe, c'est `margin-top:auto` **sur le pied lui-même**.
+2. **La vision**, au corps, et c'est la seule phrase du lot qui parle du projet plutôt
+   que du sujet : nommer un peuple aussi facilement qu'un pays.
+
+   **Le corps ne redit jamais le titre.** Une clôture dont le titre énonce le
+   renversement et dont le corps le reformule — « une frontière ne contient pas un
+   peuple, elle le traverse » sous « c'est la carte qui a été dessinée par-dessus » —
+   a dépensé sa seule phrase de vision à répéter. Un énoncé du renversement par carte.
+3. **La pastille** de §8.
+
+**Ce qui est interdit sur une clôture :** un appel à l'action seul. Une clôture qui ne
+dit que « ethniafrica.com » a laissé le lecteur sans la raison d'y aller.
 
 ---
 
@@ -510,8 +637,13 @@ la plus utile du lot s'abstient. Champ obligatoire pour tout nouveau sujet.
 
 `paires` porte le bloc de §3 bis : une liste de couples `{terme, glose}`, deux à quatre.
 `null` quand la carte n'en a pas. **Le champ `accent` d'un terme n'existe pas** : la
-couleur est positionnelle — premier terme en encre 1, second en accent. Une carte ne
-porte jamais `corps` et `paires` à la fois.
+couleur est positionnelle — premier terme en encre 1, second en accent.
+
+**Une carte porte `corps` et `paires` ensemble, et c'est la forme normale** : la paire
+montre l'équivalence, le corps dit d'où elle vient. Les 41 cartes à paire en portent
+les deux. L'exclusion mutuelle écrite plus haut était une erreur de ma part, reprise de
+la contrainte `corps_paires` de la vidéo, où le tableau *remplace* le corps parce qu'il
+n'y a pas la place pour les deux. En image fixe, il y a la place.
 
 `titre_camps` nomme les deux camps du titre pour les colorer comme la paire —
 `{"un": "angolais", "deux": "brésilien"}`. Les mots ne se déduisent pas du titre : ils
@@ -535,11 +667,14 @@ premier changement de format.
 - [ ] **Aucune plaque ni boîte sur une image** : le voile tient le texte, ou l'image
       ne convient pas.
 - [ ] **Aucun voile visible comme une forme** — halo, disque, tache.
-- [ ] **Le voile atteint 0,62 à mi-hauteur du premier bloc**, pas au bas du cadre,
-      et sa rampe s'étale sur au moins 400 px.
+- [ ] **Le voile est un enfant de la colonne** (`bottom:100%`), jamais une ordonnée
+      estimée. Aucune cote de voile codée en dur.
+- [ ] **Une carte plein cadre porte un seul voile, et son alpha ne redescend jamais.**
+- [ ] **Profil de luminance de ligne monotone**, ou excursion sous 25 niveaux.
 - [ ] **Aucun filet vertical de pleine hauteur** le long d'une colonne.
 - [ ] **Une paire porte son `→` et une glose par terme.**
-- [ ] **Au moins 60 % des cartes du lot en A**, au plus 30 % en C, au plus 2 en B.
+- [ ] **Au moins 60 % des cartes de série en A**, au plus 40 % en C ; B au plus 2 par
+      deck et jamais sur une carte de série.
 - [ ] **Le choix de A repose sur une colonne mesurée**, pas sur un compte de signes.
 - [ ] **Le contenu tient entre le bas de la bande et le pied** — mesuré sur les
       enfants, pas sur le bloc (§5C).
@@ -552,3 +687,7 @@ premier changement de format.
 - [ ] La licence de sortie est celle du lot, calculée et non recopiée.
 - [ ] Aucune note interne visible sur l'image.
 - [ ] Le crédit nomme le document réellement affiché.
+- [ ] **L'ouverture est propre au sujet** et son titre suit un registre de §7 ter ;
+      sa ligne de vision est celle de toutes les séries, mot pour mot.
+- [ ] **La clôture porte le renversement d'agent et la ligne de vision**, pas un appel
+      à l'action seul.
