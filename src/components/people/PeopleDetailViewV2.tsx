@@ -26,7 +26,7 @@ import { PeopleNamingTiles } from "@/components/people/PeopleNamingTiles";
 import { FicheChronologyChapter } from "@/components/fiche/FicheChronologyChapter";
 import { peopleChronology } from "@/lib/fiche/chronology";
 import { PeopleCultureChapter } from "@/components/people/PeopleCultureChapter";
-import { PeopleNamesChapter } from "@/components/people/PeopleNamesChapter";
+import { FicheNamesChapter } from "@/components/fiche/FicheNamesChapter";
 import { PeopleFieldExplainer } from "@/components/people/PeopleFieldExplainer";
 import { FicheSection } from "@/components/fiche/FicheSection";
 import { FicheSummaryBrief } from "@/components/fiche/FicheSummaryBrief";
@@ -339,9 +339,11 @@ export function PeopleDetailViewV2({
         />
       </FicheSection>
 
-      <FicheSection title={copy.sections.borneNames}>
-        <PeopleNamesChapter borneNames={borneNames} language={language} />
-      </FicheSection>
+      <FicheNamesChapter
+        scope="people"
+        names={borneNames}
+        language={language}
+      />
 
       <FicheSection title={copy.sections.culture}>
         <PeopleCultureChapter

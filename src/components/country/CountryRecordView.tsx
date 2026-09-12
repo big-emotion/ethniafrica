@@ -5,7 +5,7 @@ import { FlagTarget } from "@/components/flags/FlagTarget";
 import { CountryParchment } from "@/components/country/CountryParchment";
 import { CultureGrid } from "@/components/country";
 import { FicheSection as Section } from "@/components/fiche/FicheSection";
-import { CountryAttestedNamesSection } from "@/components/patronymes/CountryAttestedNamesSection";
+import { FicheNamesChapter } from "@/components/fiche/FicheNamesChapter";
 import {
   transformCountryData,
   transformLanguages,
@@ -84,7 +84,8 @@ export function CountryRecordView({
             Adjacent, three chapters opening on "Nom" would read as a menu of
             one subject rather than three claims. Spoken here, then named
             here, then the rest of the culture. */}
-        <CountryAttestedNamesSection
+        <FicheNamesChapter
+          scope="country"
           patronymes={patronymes}
           language={language}
         />

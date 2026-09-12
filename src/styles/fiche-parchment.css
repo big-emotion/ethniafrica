@@ -940,6 +940,108 @@
   color: var(--afh-text-soft);
 }
 
+/* ── Names ─────────────────────────────────────────────────────────────
+   The names chapter both records share. A group per naming system on a
+   people, a register per provenance on a country, each a surface with its
+   count; the names themselves are pills that lead to their own record. */
+
+.afh-names {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.afh-names-group {
+  padding: 16px;
+  border: 1px solid var(--afh-border);
+  border-radius: var(--afh-radius-lg);
+  background: var(--afh-surface);
+  text-align: start;
+}
+
+.afh-names-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.afh-names-title {
+  margin: 0;
+  font-family: var(--afh-font-display);
+  font-weight: 700;
+  font-size: var(--afh-text-h3);
+  line-height: 1.25;
+  color: var(--afh-text);
+}
+
+.afh-names-tally {
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--accent-ink, var(--afh-text-soft));
+}
+
+.afh-names-systems {
+  margin: 12px 0 0;
+  font-family: var(--afh-font-mono);
+  font-size: var(--afh-text-caption);
+  color: var(--afh-text-soft);
+}
+
+.afh-name-pills > li {
+  padding: 0;
+}
+
+.afh-name-pills a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 4px 12px;
+  font-weight: 600;
+  color: var(--accent-ink, var(--afh-text));
+  text-decoration: none;
+}
+
+.afh-name-pills a:hover {
+  text-decoration: underline;
+}
+
+.afh-name-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0 0 12px;
+}
+
+.afh-name-index > [data-letter] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--afh-radius-lg);
+  font-size: var(--afh-text-body);
+}
+
+.afh-name-index > [data-letter="present"] {
+  border: 1px solid var(--accent);
+  font-weight: 600;
+  color: var(--accent-ink);
+  text-decoration: none;
+}
+
+.afh-name-index > [data-letter="absent"] {
+  border: 1px dashed var(--afh-border);
+  color: var(--afh-text-soft);
+}
+
+.afh-name-letter + .afh-name-letter {
+  margin-top: 12px;
+}
+
 /* ── Callout ──────────────────────────────────────────────────────────
    An aside the section cannot say in its own prose. A rule in the
    surface's accent, never a box, so it reads as part of the same

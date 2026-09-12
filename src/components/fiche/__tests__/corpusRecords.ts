@@ -63,3 +63,52 @@ export function peopleRecord(id: string): PeopleDetail {
     readJson(file) as Parameters<typeof mapPeopleDetail>[0]
   );
 }
+
+type NameSummary =
+  import("@/api/v2/services/patronymeFicheLinks").PatronymeLinkSummary;
+
+interface NameRecordFile {
+  id: string;
+  nameMain: string;
+  nameSystem: NameSummary["nameSystem"];
+  peoples?: Array<{ peopleId: string; status: string }>;
+  countries?: Array<{ countryId: string; status: string }>;
+}
+
+function nameRecords(): NameRecordFile[] {
+  const dir = join(AFRIK, "patronymes");
+  return readdirSync(dir)
+    .filter((name) => /^PAT_.*\.json$/.test(name))
+    .sort()
+    .map((name) => readJson(join(dir, name)) as NameRecordFile);
+}
+
+function summaryOf(record: NameRecordFile): NameSummary {
+  return {
+    id: record.id,
+    nameMain: record.nameMain,
+    nameSystem: record.nameSystem,
+  };
+}
+
+/** The names the corpus attaches to a people, as the route summarises them. */
+// @req REQ-133
+export function namesForPeople(peopleId: string): NameSummary[] {
+  return nameRecords()
+    .filter((record) =>
+      (record.peoples ?? []).some((entry) => entry.peopleId === peopleId)
+    )
+    .map(summaryOf);
+}
+
+/** The names a source attests in a country. */
+// @req REQ-133
+export function namesForCountry(iso3: string): NameSummary[] {
+  return nameRecords()
+    .filter((record) =>
+      (record.countries ?? []).some(
+        (entry) => entry.countryId === iso3 && entry.status === "attested"
+      )
+    )
+    .map(summaryOf);
+}

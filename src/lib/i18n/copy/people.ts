@@ -25,7 +25,6 @@ const en = {
     culture: "Culture and society",
     neighbours: "Neighbouring peoples and organisation",
     distribution: "Where this people lives",
-    borneNames: "Names borne",
     referenceYear: "Reference year: 2025",
     fragmentation: "Colonial fragmentation",
     fragmentationNote:
@@ -46,7 +45,6 @@ const en = {
       `${count} associated ${count === 1 ? "group" : "groups"}`,
     documentedRelations: (count: number) =>
       `${count} documented ${count === 1 ? "relation" : "relations"}`,
-    borneNamesIndex: "Alphabetical index of names borne",
   },
   reportSection: "Report this section",
   naming: {
@@ -192,7 +190,6 @@ const fr: PeopleCopy = {
     culture: "Culture et société",
     neighbours: "Peuples voisins & organisation",
     distribution: "Où vit ce peuple",
-    borneNames: "Noms portés",
     referenceYear: "Année de référence : 2025",
     fragmentation: "Fragmentation coloniale",
     fragmentationNote: "Dérivé de la présence du peuple dans plusieurs pays",
@@ -209,7 +206,6 @@ const fr: PeopleCopy = {
       `${count} ${count === 1 ? "groupe associé" : "groupes associés"}`,
     documentedRelations: (count) =>
       `${count} ${count === 1 ? "relation documentée" : "relations documentées"}`,
-    borneNamesIndex: "Index alphabétique des noms portés",
   },
   reportSection: "Signaler cette section",
   naming: {

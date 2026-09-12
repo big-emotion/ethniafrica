@@ -11,14 +11,12 @@ describe("counted fiche summary copy (REQ-151)", () => {
       historyUndated: "Non daté",
       historyRole: "Rôle historique",
       cultureRitesAndSymbols: "Rites & symboles",
-      borneNamesIndex: "Index alphabétique des noms portés",
     });
     expect(peopleCopy.en.chapterDetails).toMatchObject({
       historyChronology: "Historical chronology",
       historyUndated: "Undated",
       historyRole: "Historical role",
       cultureRitesAndSymbols: "Rites and symbols",
-      borneNamesIndex: "Alphabetical index of names borne",
     });
     expect(peopleCopy.fr.chapterDetails.associatedGroups(2)).toBe(
       "2 groupes associés"

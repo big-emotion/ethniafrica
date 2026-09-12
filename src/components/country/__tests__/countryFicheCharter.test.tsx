@@ -206,7 +206,7 @@ describe("country fiche charter", () => {
       "Peuples du pays",
       "Langues",
       "Histoire",
-      "Noms du pays",
+      "Noms de personnes rattachés à ce pays",
       "Culture et société",
       "Poursuivre",
       "Sources",
