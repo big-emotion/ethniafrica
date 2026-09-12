@@ -1,6 +1,6 @@
 import { logger } from "@/lib/api/logger";
 import { readNameStanding } from "@/lib/patronymes/content";
-import type { SourceTier } from "@/types/sources";
+import { isAuthoritativeSourceTier } from "@/types/sources";
 
 import { createServerClient } from "../../server";
 
@@ -138,8 +138,6 @@ async function idsInTable(
   return found;
 }
 
-const INDEXABLE_NAME_TIERS: readonly SourceTier[] = ["referenced", "official"];
-
 /**
  * A name fiche is submitted to search engines only when its best citation is
  * `referenced` or `official`. One resting solely on unverified sources — or
@@ -160,7 +158,7 @@ function nameCarriesIndexableStanding(row: SitemapRow): boolean {
     return false;
 
   const standing = readNameStanding(content as Record<string, unknown>);
-  return standing !== null && INDEXABLE_NAME_TIERS.includes(standing.tier);
+  return standing !== null && isAuthoritativeSourceTier(standing.tier);
 }
 
 /**

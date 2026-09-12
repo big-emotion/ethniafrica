@@ -5,6 +5,7 @@ import { ficheHead } from "@/lib/seo/ficheHead";
 import type { Language } from "@/types/shared";
 import { loadPatronymeFiche } from "@/lib/fiche/ficheExistence";
 import { readNameStanding } from "@/lib/patronymes/content";
+import { isAuthoritativeSourceTier } from "@/types/sources";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheJsonLd } from "@/components/fiche/FicheJsonLd";
 import { FicheOnward } from "@/components/fiche/FicheOnward";
@@ -74,7 +75,8 @@ export async function generateMetadata({
 
   // No readable citation is treated as the weakest reading rather than as an
   // unknown one — `readNameStanding` documents that floor.
-  if (standing !== null && standing.tier !== "unverified") return canonical;
+  if (standing !== null && isAuthoritativeSourceTier(standing.tier))
+    return canonical;
 
   return { ...canonical, robots: { index: false, follow: true } };
 }
