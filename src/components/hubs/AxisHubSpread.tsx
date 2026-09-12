@@ -54,26 +54,6 @@ export function AxisHubSpread({
   const hub = t.hubs[axis];
   const { plate } = spread;
 
-  /**
-   * The sentence an axis owes when most of it is withheld.
-   *
-   * Brand charter §3: a hub that lists four modules and marks three
-   * **Bientôt** is the interface telling a reader the corpus is thinner than
-   * it is — and the reader is owed the reason, not the count. The dossiers
-   * axis is the case: its readings are being rewritten, and the index that
-   * used to stand here said so in as many words.
-   *
-   * Derived from what the registry actually answered rather than from the
-   * axis's name, so the line disappears on its own when the readings come
-   * back, and so no axis is special-cased in this file — which is the drift
-   * that once gave the dossiers panel a navigation unlike its neighbours.
-   */
-  const withheld = modules.filter((module) => !module.available).length;
-  const status =
-    "frozenStatus" in hub && withheld > modules.length - withheld
-      ? hub.frozenStatus
-      : null;
-
   return (
     <section
       data-testid="hub-spread"
@@ -92,11 +72,6 @@ export function AxisHubSpread({
         <header data-testid="hub-spread-text" className="hub-spread-text">
           <h1 className="page-title-gradient hub-spread-title">{hub.title}</h1>
           <p className="hub-spread-blurb">{hub.menuBlurb}</p>
-          {status ? (
-            <p data-testid="hub-spread-status" className="hub-spread-status">
-              {status}
-            </p>
-          ) : null}
 
           <ul className="hub-spread-tiles">
             {modules.map((module) => (
@@ -165,19 +140,6 @@ export function AxisHubSpread({
           font-size: var(--afh-text-lead);
           color: var(--afh-text-soft);
           max-width: 46ch;
-        }
-
-        /* Reads as a note about the list below it, not as a second blurb: the
-           accent rule tells the reader it belongs to this axis, and the size
-           keeps it under the sentence it qualifies. */
-        .hub-spread-status {
-          margin: var(--afh-space-2xl) 0 0;
-          padding-left: var(--afh-space-lg);
-          border-left: 2px solid var(--accent);
-          font-size: var(--afh-text-small);
-          color: var(--afh-text-soft);
-          max-width: 46ch;
-          text-align: left;
         }
 
         .hub-spread-tiles {
