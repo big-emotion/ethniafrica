@@ -1,5 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import {
+  AppRouterContext,
+  type AppRouterInstance,
+} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { HomeHero } from "./HomeHero";
+
+const storyRouter: AppRouterInstance = {
+  back() {},
+  forward() {},
+  refresh() {},
+  push() {},
+  replace() {},
+  prefetch() {},
+  bfcacheId: "home-hero-story",
+};
 
 const viewports = {
   mobile430: {
@@ -21,6 +35,13 @@ const meta: Meta<typeof HomeHero> = {
   component: HomeHero,
   tags: ["autodocs"],
   args: { language: "fr" },
+  decorators: [
+    (Story) => (
+      <AppRouterContext.Provider value={storyRouter}>
+        <Story />
+      </AppRouterContext.Provider>
+    ),
+  ],
   parameters: {
     layout: "fullscreen",
     viewport: { viewports },
