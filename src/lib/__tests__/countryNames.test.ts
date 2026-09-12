@@ -1,9 +1,11 @@
 import { describe, expect, it } from "vitest";
 
+import { flagFromISO3, NEUTRAL_FLAG } from "@/lib/countryFlag";
 import {
   getCountryCommonName,
   getFrenchCountryCommonName,
 } from "@/lib/countryNames";
+import { ALPHA3_TO_ALPHA2 } from "@/lib/isoCountryCodes";
 
 describe("getFrenchCountryCommonName", () => {
   // @req REQ-001
@@ -67,6 +69,22 @@ describe("getCountryCommonName", () => {
     expect(getCountryCommonName("en", "COD", "DRC")).toBe(
       "Democratic Republic of the Congo"
     );
+  });
+
+  // Western Sahara, Mayotte and Réunion once had a flag and no localized name:
+  // the flag and the name read two copies of the ISO table, and only one of
+  // them had been extended. A flag with no name beside it is the drift.
+  // @req REQ-140
+  it("names every country that has a flag", () => {
+    const declared = "declared name";
+    const flaggedButUnnamed = Object.keys(ALPHA3_TO_ALPHA2).filter(
+      (isoAlpha3) =>
+        flagFromISO3(isoAlpha3) !== NEUTRAL_FLAG &&
+        (["fr", "en"] as const).some(
+          (lang) => getCountryCommonName(lang, isoAlpha3, declared) === declared
+        )
+    );
+    expect(flaggedButUnnamed).toEqual([]);
   });
 
   // @req REQ-140
