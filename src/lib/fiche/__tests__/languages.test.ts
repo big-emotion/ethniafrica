@@ -93,6 +93,9 @@ describe("countryLanguageTiles", () => {
       ["others", "Autres langues du pays", "8 langues"],
     ]);
     expect(tiles[0].preview).toBe("eng");
+    // Half a row beside a full-width tile left a hole at the chapter's first
+    // line; the preview draws the official language across the row.
+    expect(tiles.map((tile) => tile.wide)).toEqual([true, true]);
     expect(tiles[1].pills?.map((pill) => pill.label)).toEqual([
       "Ovambo",
       "Kavango",

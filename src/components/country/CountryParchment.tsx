@@ -92,18 +92,16 @@ export function CountryParchment({
 
   return (
     <div className="afh-parchment" id="fiche">
-      <section
-        className="afh-parchment-section"
-        data-fiche-section={copy.summary.title}
-        id={chapterAnchorId(copy.summary.title)}
-        aria-label={copy.summary.title}
-      >
+      {/* The chapter's own heading, as on the people record: the panel used
+          to open on an eyebrow and a second title repeating the name. */}
+      <Section title={copy.summary.title}>
         <FicheSummaryBrief
           kind="country"
           entityId={country.id}
           name={country.nameCommonFr || country.nameFr}
           language={language}
           figures={figures}
+          embedded
         />
         {country.summary?.trim() ? (
           <FicheTile
@@ -116,7 +114,7 @@ export function CountryParchment({
             <p className="afh-tile-prose">{country.summary.trim()}</p>
           </FicheTile>
         ) : null}
-      </section>
+      </Section>
 
       <Section title={copy.sections.peoples}>
         {!hasPeoples ? (

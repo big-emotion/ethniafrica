@@ -490,6 +490,20 @@ describe("country fiche charter", () => {
     );
   });
 
+  // The people record opens En bref on the chapter's own heading; the country
+  // opened it on an eyebrow and a second title repeating the country's name,
+  // one panel dressed two ways. Both now read as the preview draws them.
+  // @req REQ-151
+  it("opens En bref on the chapter heading, with no second title", () => {
+    const { container } = renderParchment(countryFixture());
+    const brief = container.querySelector('[data-fiche-section="En bref"]')!;
+
+    expect(
+      Array.from(brief.querySelectorAll("h2"), (heading) => heading.textContent)
+    ).toEqual(["En bref"]);
+    expect(brief.querySelector(".fiche-summary-brief__eyebrow")).toBeNull();
+  });
+
   // The country's summary is prose, and prose on a record folds behind its
   // first sentence like every other field (operator ruling, 2026-09-12).
   // @req REQ-151

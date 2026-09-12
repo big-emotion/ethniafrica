@@ -128,6 +128,8 @@ export function countryLanguageTiles(
         .filter(Boolean)
         .join(" · "),
       passages: [],
+      // Across the row: half of it beside the full-width list left a hole.
+      wide: true,
     });
   }
 

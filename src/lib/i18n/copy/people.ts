@@ -136,6 +136,8 @@ const en = {
     sourcePage: "Source page",
   },
   ficheHead: {
+    /** What the record is: the first word of the head's overline. */
+    kind: "People",
     people: "people",
     reference: "ref.",
     presenceCountries: (count: number) =>
@@ -297,6 +299,7 @@ const fr: PeopleCopy = {
     sourcePage: "Page source",
   },
   ficheHead: {
+    kind: "Peuple",
     people: "personnes",
     reference: "réf.",
     presenceCountries: (count) => `${count} pays de présence`,
