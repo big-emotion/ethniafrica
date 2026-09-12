@@ -7,11 +7,16 @@ Restores go to a **throwaway project**, never over a live one. You validate the 
 first, then decide whether to cut over. Restoring in place destroys the evidence you would need
 if the restore itself turns out to be wrong.
 
-Before you start, know which database you are recovering. Both Supabase projects label their
-environment "production" — a Supabase project has exactly one environment and Supabase names it
-that, so the label describes the project, not the application it serves.
-`shmrjtnfbqzceovroqjj` backs recette; a second project backs production. Identity table:
+Before you start, know which database you are recovering. A hosted Supabase project labels its
+only environment "production", so the label describes the project, not the application it serves.
+`shmrjtnfbqzceovroqjj` backs recette. Identity table:
 [`migration-state.md`](./migration-state.md).
+
+> **Production is not covered by the two paths below.** Both assume a hosted Supabase project —
+> a dashboard, PITR, scheduled backups, `supabase projects create`. Production is a self-hosted
+> stack on an OVH VPS, which has none of those, and this runbook does not yet say how its
+> database is backed up or restored. Treat a production restore as unrehearsed until a drill
+> against that stack is recorded here.
 
 ---
 
@@ -192,6 +197,14 @@ does not exist in the repository. Until someone adds it, the schedule is a manua
 treat an absent drill record as an absent drill.
 
 The only drill on record is [2025-07-14](./restore-drill-2025-07-14.md). Nothing since.
+
+**Next drill due: 2025-10-14 — overdue.** Derived, not scheduled: the last recorded drill plus one
+quarter. It stays overdue until a `restore-drill-<YYYY-MM-DD>.md` record lands, and the date above
+moves to that record plus one quarter in the same change.
+
+**Drill owner: `(owner — the operator must name a person here)`.** A quarterly loop with no named
+owner is how this one lapsed for more than a year. A drill is a human action — it creates a
+throwaway project and restores real data — and no agent session runs one.
 
 ---
 
