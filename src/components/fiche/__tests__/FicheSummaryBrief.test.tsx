@@ -62,7 +62,7 @@ describe("FicheSummaryBrief", () => {
     expect(screen.getByText("Test language")).toBeVisible();
     expect(screen.getByText("Language family")).toBeVisible();
     expect(screen.getByText("Test family")).toBeVisible();
-    expect(screen.getByText("Names referenced here")).toBeVisible();
+    expect(screen.getByText("Names borne and referenced here")).toBeVisible();
   });
 
   // @req REQ-151
