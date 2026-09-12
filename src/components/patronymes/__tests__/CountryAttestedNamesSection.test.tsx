@@ -105,6 +105,40 @@ describe("CountryAttestedNamesSection", () => {
     ).not.toBeInTheDocument();
   });
 
+  /**
+   * The index used to show only the letters that landed. Three pills told a
+   * reader the list was three letters long; they could not tell that from the
+   * twenty-three the corpus has nothing under. Showing the whole alphabet
+   * turns the silence into something visible — which is the fact the atlas
+   * exists to publish — and the absent letters are plainly not links, so
+   * nothing invites a reader to press one.
+   */
+  // @req REQ-154
+  it("shows the whole alphabet, so a gap reads as a gap and not as the end", () => {
+    render(
+      <CountryAttestedNamesSection
+        language="fr"
+        patronymes={{
+          attested: [name("PAT_ABA", "Aba"), name("PAT_KEITA", "Keïta")],
+          borneByPeoples: [],
+        }}
+      />
+    );
+
+    const index = screen.getAllByRole("navigation", {
+      name: /index alphabétique/i,
+    })[0];
+
+    expect(index.querySelectorAll("[data-letter]")).toHaveLength(26);
+    expect(
+      Array.from(index.querySelectorAll('[data-letter="present"]'), (pill) =>
+        pill.textContent?.trim()
+      )
+    ).toEqual(["A", "K"]);
+    expect(index.querySelectorAll('[data-letter="absent"]')).toHaveLength(24);
+    expect(index.querySelector('[data-letter="absent"]')?.tagName).toBe("SPAN");
+  });
+
   // @req REQ-154
   it("hides only an identical adjacent gloss while preserving a changed system and a different bearer", () => {
     render(
