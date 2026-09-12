@@ -10,16 +10,13 @@ import {
   type PeoplesFacetFilters,
 } from "@/api/v2/services/peoplesFacet";
 import { PublishFacetCountryIndex } from "@/components/hubs/facets/FacetCountryIndex";
-import type {
-  FacetCountryIndex,
-  FacetCountryNarrowing,
-} from "@/components/hubs/facets/FacetCountryIndex";
 import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
 import type { FacetActiveFilter } from "@/components/hubs/facets/FacetFilterBar";
 import { FacetLetterRail } from "@/components/hubs/facets/FacetLetterRail";
 import { FacetPagination } from "@/components/hubs/facets/FacetPagination";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
+import { buildFacetCountryIndex } from "@/lib/hubs/facetHub";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
 import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getPeopleRoute, resolvePeopleDeepLink } from "@/lib/routing";
@@ -164,33 +161,14 @@ export default async function PeuplesHubPage({
     getPeoplesFacetCountryIndex(filters),
   ]);
 
-  const countryIndex: FacetCountryIndex = {};
-  /**
-   * Built from the index's own keys, so the map can never offer a narrowing
-   * that lands on an empty list: a country is addressable here exactly when
-   * the current selection documents a peuple in it. The rest of the filters
-   * ride along — narrowing by country from the map keeps the family and the
-   * letter the reader had already set.
-   */
-  const narrowing: FacetCountryNarrowing = {};
-  for (const row of index) {
-    for (const countryId of row.countryIds) {
-      const key = countryId as CountryId;
-      const rows = countryIndex[key] ?? [];
-      rows.push({
-        id: row.id,
-        label: row.nameMain,
-        href: getPeopleRoute(language, row.id),
-      });
-      countryIndex[key] = rows;
-      narrowing[key] ??= facetHref(
-        language,
-        { ...filters, countryId },
-        null,
-        pageSize
-      );
-    }
-  }
+  // Narrowing by country from the map keeps the family and the letter the
+  // reader had already set: the rest of the filters ride along.
+  const { index: countryIndex, narrowing } = buildFacetCountryIndex(index, {
+    label: (row) => row.nameMain,
+    href: (row) => getPeopleRoute(language, row.id),
+    narrowHref: (countryId) =>
+      facetHref(language, { ...filters, countryId }, null, pageSize),
+  });
 
   const familyLabels = new Map(
     choices.families.map((family) => [family.id, family.label])

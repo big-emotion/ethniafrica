@@ -9,14 +9,11 @@ import {
   type PatronymesFacetFilters,
 } from "@/api/v2/services/patronymesFacet";
 import { PublishFacetCountryIndex } from "@/components/hubs/facets/FacetCountryIndex";
-import type {
-  FacetCountryIndex,
-  FacetCountryNarrowing,
-} from "@/components/hubs/facets/FacetCountryIndex";
 import { FacetFilterBar } from "@/components/hubs/facets/FacetFilterBar";
 import type { FacetActiveFilter } from "@/components/hubs/facets/FacetFilterBar";
 import { FacetLetterRail } from "@/components/hubs/facets/FacetLetterRail";
 import { FacetPagination } from "@/components/hubs/facets/FacetPagination";
+import { buildFacetCountryIndex, readFacet } from "@/lib/hubs/facetHub";
 import { definedFilter, getFacetRoute } from "@/lib/hubs/facets";
 import { PAGE_SIZE_PARAM, resolvePageSize } from "@/lib/hubs/pagination";
 import { getLocalizedRoute, getPatronymeRoute } from "@/lib/routing";
@@ -142,59 +139,33 @@ export default async function NomsHubPage({ params, searchParams }: PageProps) {
     PATRONYMES_FACET_PAGE_SIZES
   );
 
-  let choices = { peoples: [], countries: [], nameSystems: [] } as Awaited<
-    ReturnType<typeof getPatronymesFacetChoices>
-  >;
-  let reading = {
-    patronymes: [],
-    page: 1,
-    total: 0,
-    totalPages: 1,
-  } as Awaited<ReturnType<typeof getPatronymesFacetPage>>;
-  let index: Awaited<ReturnType<typeof getPatronymesFacetCountryIndex>> = [];
-  let unavailable = false;
-
-  try {
-    [choices, reading, index] = await Promise.all([
+  const facetReading = await readFacet(() =>
+    Promise.all([
       getPatronymesFacetChoices(),
       getPatronymesFacetPage(requestedPage, filters, pageSize),
       getPatronymesFacetCountryIndex(filters),
-    ]);
-  } catch {
-    // Thirty names are always published, so a read failure is never an empty
-    // corpus — say so explicitly rather than render "0 résultats".
-    unavailable = true;
-  }
-
-  const countryIndex: FacetCountryIndex = {};
-  /**
-   * Built from the index's own keys, so the map can never offer a narrowing
-   * that lands on an empty list: a country is addressable here exactly when
-   * the current selection attests a name in it.
-   */
-  const narrowing: FacetCountryNarrowing = {};
-  for (const row of index) {
-    for (const countryId of row.countryIds) {
-      const key = countryId as CountryId;
-      const rows = countryIndex[key] ?? [];
-      rows.push({
-        id: row.id,
-        label: row.nameMain,
-        href: getPatronymeRoute(language, row.id),
-      });
-      countryIndex[key] = rows;
-      narrowing[key] ??= facetHref(
-        language,
-        { ...filters, countryId },
-        null,
-        pageSize
-      );
-    }
-  }
-
-  const peopleLabels = new Map(
-    choices.peoples.map((people) => [people.id, people.label])
+    ])
   );
+
+  // Thirty names are always published, so a read failure is never an empty
+  // corpus — say so explicitly rather than render "0 résultats".
+  if (facetReading === null) {
+    return (
+      <div className="afh-facet-reading">
+        <p role="alert" className="afh-facet-reading-lede">
+          {t.index.unavailable}
+        </p>
+      </div>
+    );
+  }
+
+  const [choices, reading, index] = facetReading;
+  const { index: countryIndex, narrowing } = buildFacetCountryIndex(index, {
+    label: (row) => row.nameMain,
+    href: (row) => getPatronymeRoute(language, row.id),
+    narrowHref: (countryId) =>
+      facetHref(language, { ...filters, countryId }, null, pageSize),
+  });
 
   /**
    * What the fold owes back while it is shut. Peuple is not here: it is on the
@@ -253,16 +224,6 @@ export default async function NomsHubPage({ params, searchParams }: PageProps) {
   );
 
   const lede = copy.lede(count(reading.total), reading.total === 1);
-
-  if (unavailable) {
-    return (
-      <div className="afh-facet-reading">
-        <p role="alert" className="afh-facet-reading-lede">
-          {t.index.unavailable}
-        </p>
-      </div>
-    );
-  }
 
   return (
     <>
