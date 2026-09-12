@@ -36,7 +36,6 @@ import { FragmentationView } from "@/components/colonization/FragmentationView";
 import { OralNarrativesSection } from "@/components/people/OralNarrativesSection";
 import { MediaCreditSection } from "@/components/people/MediaCreditSection";
 import { ExternalRegistryLinksSection } from "@/components/people/ExternalRegistryLinksSection";
-import { PeopleNamesSection } from "@/components/names/PeopleNamesSection";
 import type { PatronymeLinkSummary } from "@/api/v2/services/patronymeFicheLinks";
 import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
 import type { PeopleNamesDossier } from "@/api/v2/schemas/names";
@@ -302,17 +301,22 @@ export function PeopleDetailViewV2({
       </FicheSection>
 
       <FicheSection title={copy.sections.naming}>
-        <PeopleNamingTiles
-          nameMain={data.hero.nameMain}
-          selfAppellation={people.appellations?.selfAppellation}
-          exonyms={people.appellations?.exonyms}
-          originOfExonyms={data.hero.originOfExonyms}
-          whyProblematic={people.appellations?.whyProblematic}
-          contemporaryUsage={data.hero.contemporaryUsage}
-          isoCode={people.languages?.isoCodes?.[0]}
-          language={language}
-        />
-        <PeopleNamesSection data={data.names} language={language} embedded />
+        {/* `#noms` is the anchor the name nomenclature and the imposed-names
+            view link to. It left with the embedded names section and stays
+            with the records it points at. */}
+        <div id="noms">
+          <PeopleNamingTiles
+            nameMain={data.hero.nameMain}
+            selfAppellation={people.appellations?.selfAppellation}
+            exonyms={people.appellations?.exonyms}
+            originOfExonyms={data.hero.originOfExonyms}
+            whyProblematic={people.appellations?.whyProblematic}
+            contemporaryUsage={data.hero.contemporaryUsage}
+            isoCode={people.languages?.isoCodes?.[0]}
+            records={data.names}
+            language={language}
+          />
+        </div>
         <DossierLinks
           language={language}
           kind="people"
