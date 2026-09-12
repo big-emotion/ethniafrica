@@ -1,4 +1,3 @@
-import { NextResponse } from "next/server";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 
 /**
@@ -12,6 +11,7 @@ import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
  *       301:
  *         description: Redirection vers la documentation v1
  */
+// @req REQ-099
 export async function GET() {
   // Rediriger vers v1 par défaut pour rétrocompatibilité
   return jsonWithCors(
@@ -27,6 +27,7 @@ export async function GET() {
   );
 }
 
+// @req REQ-099
 export function OPTIONS() {
   return corsOptionsResponse();
 }

@@ -58,10 +58,10 @@ import { getPeopleNamesHandler } from "@/api/v2/handlers/peopleNames";
 import { peopleNamesParamSchema } from "@/api/v2/schemas/names";
 import { createApiError } from "@/api/v2/utils/response";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
+import { CORPUS_CACHE_CONTROL as CACHE_CONTROL } from "@/api/v2/utils/corpusRoute";
 import { logger } from "@/lib/api/logger";
 
-const CACHE_CONTROL = "s-maxage=3600";
-
+// @req REQ-084
 export async function GET(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
@@ -120,6 +120,7 @@ export async function GET(
   }
 }
 
+// @req REQ-084
 export function OPTIONS() {
   return corsOptionsResponse();
 }

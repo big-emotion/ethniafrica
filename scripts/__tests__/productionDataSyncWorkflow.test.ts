@@ -136,6 +136,25 @@ describe("production AFRIK data sync workflow", () => {
     expect(workflow).toContain("if: env.PRODUCTION_REVALIDATE_SECRET != ''");
   });
 
+  // The sync job ends by asking production whether it serves what git holds,
+  // with the same production credentials and target guard the load used.
+  // @req REQ-032
+  it("ends the sync job by verifying production serves what git holds", () => {
+    const workflow = readWorkflow();
+    const syncJob = workflow.slice(0, workflow.search(/^\s{2}quiz-bank:/m));
+    const steps = syncJob.split(/^\s{6}- name: /m);
+    const lastStep = steps[steps.length - 1];
+
+    expect(syncJob.indexOf("verifyCorpusInDatabase.ts")).toBeGreaterThan(
+      syncJob.indexOf(
+        "scripts/migrateAfrikToDatabase.ts --target=production --apply"
+      )
+    );
+    expect(lastStep).toContain(
+      "npx tsx --conditions=react-server scripts/afrik/verifyCorpusInDatabase.ts --target=production"
+    );
+  });
+
   // Loading fiches writes no question. Nothing here ran the sweep, so the
   // production bank stayed at zero rows through every release and the hub
   // offered the reader an inert "Bientôt" on a route that was deployed and

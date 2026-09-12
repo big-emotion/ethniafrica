@@ -1,6 +1,7 @@
 import type { PublicPatronyme } from "@/api/v2/schemas/patronymes";
 import { sourceStandingLabel } from "@/lib/glossaire/vocabularies";
 import { readNameStanding, type NameStanding } from "@/lib/patronymes/content";
+import { isAuthoritativeSourceTier } from "@/types/sources";
 import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
 
@@ -53,7 +54,8 @@ export function PatronymeFicheTitle({
 }) {
   const t = getTranslation(language).patronymes;
   const standing = readNameStanding(patronyme.content);
-  const isAssembling = standing === null || standing.tier === "unverified";
+  const isAssembling =
+    standing === null || !isAuthoritativeSourceTier(standing.tier);
 
   return (
     <header className="afh-parchment-head">

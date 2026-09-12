@@ -1,4 +1,8 @@
 import type { ClanNameCandidate, LoadedPeopleFiche } from "./clanNameTypes";
+import {
+  detectProseCandidates,
+  normalizeCandidateName,
+} from "./peopleProseCandidates";
 
 const NAMING_CUE_SOURCE = [
   "clans?",
@@ -25,55 +29,8 @@ const LIST_INTRODUCER = new RegExp(
   "iu"
 );
 
-const NON_NARRATIVE_CONTENT_KEYS = new Set(["demography", "sources"]);
-
-interface StringValue {
-  sourcePath: string;
-  value: string;
-}
-
 /** Normalize identity only; the original spelling remains the display name. */
-export function normalizeClanName(name: string): string {
-  return name
-    .normalize("NFKD")
-    .replace(/\p{M}/gu, "")
-    .replace(/[’ʼ]/gu, "'")
-    .replace(/[‐‑‒–—―]/gu, "-")
-    .toLocaleLowerCase("fr")
-    .trim()
-    .replace(/\s+/gu, " ");
-}
-
-function collectStringValues(
-  value: unknown,
-  sourcePath: string,
-  values: StringValue[]
-): void {
-  if (typeof value === "string") {
-    values.push({ sourcePath, value });
-    return;
-  }
-
-  if (Array.isArray(value)) {
-    value.forEach((item, index) =>
-      collectStringValues(item, `${sourcePath}[${index}]`, values)
-    );
-    return;
-  }
-
-  if (value === null || typeof value !== "object") return;
-
-  for (const key of Object.keys(value).sort()) {
-    if (sourcePath === "content" && NON_NARRATIVE_CONTENT_KEYS.has(key)) {
-      continue;
-    }
-    collectStringValues(
-      (value as Record<string, unknown>)[key],
-      `${sourcePath}.${key}`,
-      values
-    );
-  }
-}
+export const normalizeClanName = normalizeCandidateName;
 
 function candidateNamesFromPassage(passage: string): string[] {
   const names: string[] = [];
@@ -151,16 +108,6 @@ function parseNameList(value: string): string[] {
   return names.filter(Boolean);
 }
 
-function makeCandidateId(
-  ficheId: string,
-  sourcePath: string,
-  normalizedName: string
-): string {
-  return [ficheId, sourcePath, normalizedName]
-    .map((part) => encodeURIComponent(part))
-    .join("::");
-}
-
 /**
  * Detect review candidates in prose while retaining occurrence provenance.
  * A repeated spelling variant is collapsed only inside the same fiche path.
@@ -168,36 +115,7 @@ function makeCandidateId(
 export function detectClanNameCandidates(
   fiche: LoadedPeopleFiche
 ): ClanNameCandidate[] {
-  const stringValues: StringValue[] = [];
-  collectStringValues(fiche.content, "content", stringValues);
-
-  const candidates: ClanNameCandidate[] = [];
-  for (const { sourcePath, value: verbatimPassage } of stringValues) {
-    const normalizedNamesAtPath = new Set<string>();
-
-    for (const name of candidateNamesFromPassage(verbatimPassage)) {
-      const normalizedName = normalizeClanName(name);
-      if (!normalizedName || normalizedNamesAtPath.has(normalizedName))
-        continue;
-      normalizedNamesAtPath.add(normalizedName);
-
-      candidates.push({
-        candidateId: makeCandidateId(fiche.id, sourcePath, normalizedName),
-        name,
-        normalizedName,
-        sourceFicheId: fiche.id,
-        linguisticFamilyId: fiche.languageFamilyId,
-        sourcePath,
-        verbatimPassage,
-        sourceCandidates: [],
-        inheritedTier: null,
-        sourceKind: null,
-        tierResolution: "review_required",
-        reviewFlags: [],
-        reviewStatus: "unreviewed",
-      });
-    }
-  }
-
-  return candidates;
+  return detectProseCandidates(fiche, (passage) =>
+    candidateNamesFromPassage(passage).map((name) => ({ name }))
+  );
 }

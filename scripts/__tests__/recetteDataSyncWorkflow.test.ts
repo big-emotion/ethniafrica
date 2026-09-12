@@ -103,6 +103,26 @@ describe("recette AFRIK data sync workflow", () => {
     expect(workflow).toContain("--conditions=react-server");
   });
 
+  // A load that never ran reports nothing, which is how recette once served a
+  // frozen corpus for days while git advanced. The verifier asks the database
+  // directly, with the credentials the load itself used.
+  // @req REQ-032
+  it("ends the sync job by verifying recette serves what git holds", () => {
+    const workflow = readWorkflow();
+    const applyIndex = workflow.indexOf(
+      "scripts/migrateAfrikToDatabase.ts --target=recette --apply"
+    );
+    const steps = workflow.split(/^\s{6}- name: /m);
+    const lastStep = steps[steps.length - 1];
+
+    expect(workflow.indexOf("verifyCorpusInDatabase.ts")).toBeGreaterThan(
+      applyIndex
+    );
+    expect(lastStep).toContain(
+      "npx tsx --conditions=react-server scripts/afrik/verifyCorpusInDatabase.ts --target=recette"
+    );
+  });
+
   // Node 20 lacks the native WebSocket the Supabase client reaches for.
   // @req REQ-032
   it("uses a Node.js runtime with native WebSocket support", () => {

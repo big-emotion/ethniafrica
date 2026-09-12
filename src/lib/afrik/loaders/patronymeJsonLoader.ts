@@ -9,6 +9,12 @@ import { join } from "path";
 import { logger } from "@/lib/api/logger";
 import { normalizeToKey } from "@/lib/normalize";
 import { parsePatronymeFile } from "@/lib/afrik/parsers/patronymeParser";
+import {
+  findOrCreateAssertion,
+  supabaseErrorMessage,
+  upsertSource,
+  upsertVersionOneRevision,
+} from "@/lib/afrik/loaders/provenanceWriter";
 import type {
   PatronymeAlliance,
   PatronymeDossier,
@@ -75,18 +81,6 @@ function isIllustrative(raw: unknown): boolean {
   );
 }
 
-function errorMessage(value: unknown): string {
-  if (
-    typeof value === "object" &&
-    value !== null &&
-    "message" in value &&
-    typeof value.message === "string"
-  ) {
-    return value.message;
-  }
-  return value instanceof Error ? value.message : "unknown Supabase error";
-}
-
 /**
  * Discover the canonical PAT_* corpus without hiding malformed dossiers.
  * Illustrative fixtures are skipped, while every other read/model/filename
@@ -116,7 +110,7 @@ export function loadAllPatronymeDossiers(
     try {
       raw = JSON.parse(readFileSync(join(directory, file), "utf-8"));
     } catch (error) {
-      const message = `${file}: invalid JSON — ${errorMessage(error)}`;
+      const message = `${file}: invalid JSON — ${supabaseErrorMessage(error)}`;
       logger.error(`Failed to read patronyme file ${file}`, error);
       errors.push(message);
       continue;
@@ -355,93 +349,6 @@ function plannedProjectionCounts(
   };
 }
 
-async function upsertSource(
-  supabase: AdminClient,
-  source: PatronymeSource
-): Promise<{ id: string } | { error: string }> {
-  const { data, error } = await supabase
-    .from("sources")
-    .upsert(
-      {
-        title: source.title,
-        url: source.url,
-        tier: source.tier,
-        source_kind: source.source_kind ?? null,
-        notes: source.notes ?? null,
-        added_at: new Date().toISOString(),
-      },
-      { onConflict: "title" }
-    )
-    .select("id")
-    .single();
-  if (error || !data) return { error: errorMessage(error) };
-  return { id: data.id as string };
-}
-
-async function upsertRevision(
-  supabase: AdminClient,
-  dossier: PatronymeDossier
-): Promise<{ id: string } | { error: string }> {
-  const { data, error } = await supabase
-    .from("fiche_revisions")
-    .upsert(
-      {
-        entity_type: "patronyme",
-        entity_id: dossier.id,
-        version: 1,
-        content_snapshot: dossier,
-        published_at: new Date().toISOString(),
-      },
-      { onConflict: "entity_type,entity_id,version" }
-    )
-    .select("id")
-    .single();
-  if (error || !data) return { error: errorMessage(error) };
-  return { id: data.id as string };
-}
-
-async function findOrCreateAssertion(
-  supabase: AdminClient,
-  dossierId: string,
-  fieldPath: string,
-  statement: string,
-  sourceIds: string[],
-  revisionId: string
-): Promise<{ id: string } | { error: string }> {
-  const { data: existing, error: selectError } = await supabase
-    .from("assertions")
-    .select("id")
-    .eq("entity_type", "patronyme")
-    .eq("entity_id", dossierId)
-    .eq("field_path", fieldPath)
-    .maybeSingle();
-  if (selectError) return { error: errorMessage(selectError) };
-
-  if (existing) {
-    const { error } = await supabase
-      .from("assertions")
-      .update({ statement, source_ids: sourceIds })
-      .eq("id", existing.id);
-    if (error) return { error: errorMessage(error) };
-    return { id: existing.id as string };
-  }
-
-  const { data, error } = await supabase
-    .from("assertions")
-    .insert({
-      entity_type: "patronyme",
-      entity_id: dossierId,
-      field_path: fieldPath,
-      statement,
-      source_ids: sourceIds,
-      fiche_revision_id: revisionId,
-    })
-    .select("id")
-    .single();
-  if (error || !data) return { error: errorMessage(error) };
-  return { id: data.id as string };
-}
-
 async function upsertSpelling(
   supabase: AdminClient,
   dossier: PatronymeDossier,
@@ -461,15 +368,14 @@ async function upsertSpelling(
     return `${dossier.id}/${spelling.spelling}: one or more source references were not persisted`;
   }
 
-  const fieldPath = `spellings.${spellingIndex}.${normalizeToKey(spelling.spelling)}`;
-  const assertion = await findOrCreateAssertion(
-    supabase,
-    dossier.id,
-    fieldPath,
-    spelling.spelling,
+  const assertion = await findOrCreateAssertion(supabase, {
+    entityType: "patronyme",
+    entityId: dossier.id,
+    fieldPath: `spellings.${spellingIndex}.${normalizeToKey(spelling.spelling)}`,
+    statement: spelling.spelling,
     sourceIds,
-    revisionId
-  );
+    ficheRevisionId: revisionId,
+  });
   if ("error" in assertion) {
     return `${dossier.id}/${spelling.spelling}: assertion — ${assertion.error}`;
   }
@@ -504,7 +410,7 @@ async function upsertJoin(
     const { error } = await supabase.from(table).upsert(row, { onConflict });
     return error ? error.message : null;
   } catch (error) {
-    return errorMessage(error);
+    return supabaseErrorMessage(error);
   }
 }
 
@@ -570,7 +476,7 @@ async function upsertAlliance(
       ? `${projection.nameIdA} ↔ ${projection.nameIdB}: ${error.message}`
       : null;
   } catch (error) {
-    return `${projection.nameIdA} ↔ ${projection.nameIdB}: ${errorMessage(error)}`;
+    return `${projection.nameIdA} ↔ ${projection.nameIdB}: ${supabaseErrorMessage(error)}`;
   }
 }
 
@@ -593,7 +499,7 @@ export async function loadPatronymes(
   try {
     references = await resolveReferenceIds(supabase, options.references);
   } catch (error) {
-    report.errors.push(errorMessage(error));
+    report.errors.push(supabaseErrorMessage(error));
     return report;
   }
 
@@ -622,7 +528,7 @@ export async function loadPatronymes(
       if (error) report.errors.push(`${dossier.id}: ${error.message}`);
       else report.inserted += 1;
     } catch (error) {
-      report.errors.push(`${dossier.id}: ${errorMessage(error)}`);
+      report.errors.push(`${dossier.id}: ${supabaseErrorMessage(error)}`);
     }
   }
   if (report.inserted !== report.total) return report;
@@ -633,7 +539,13 @@ export async function loadPatronymes(
     const sourceIds = new Map<string, string>();
     sourceIdsByDossier.set(dossier.id, sourceIds);
     for (const source of dossier.sources) {
-      const result = await upsertSource(supabase, source);
+      const result = await upsertSource(supabase, {
+        title: source.title,
+        url: source.url,
+        tier: source.tier,
+        source_kind: source.source_kind ?? null,
+        notes: source.notes ?? null,
+      });
       if ("error" in result) {
         report.errors.push(
           `${dossier.id}: source "${source.title}" — ${result.error}`
@@ -643,7 +555,12 @@ export async function loadPatronymes(
       }
     }
 
-    const revision = await upsertRevision(supabase, dossier);
+    const revision = await upsertVersionOneRevision(supabase, {
+      entityType: "patronyme",
+      entityId: dossier.id,
+      snapshot: dossier,
+      stampPublishedAt: true,
+    });
     if ("error" in revision) {
       report.errors.push(`${dossier.id}: fiche revision — ${revision.error}`);
     } else {

@@ -1,5 +1,6 @@
 import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
+import { walkRanges } from "@/lib/supabase/queries/walkRanges";
 
 /**
  * The two corpus-scale reads the families facet needs and no single-entity
@@ -13,9 +14,8 @@ import { logger } from "@/lib/api/logger";
  */
 
 /**
- * Rows per page when walking a corpus table. Kept well under PostgREST's
- * default 1000-row ceiling: a page the server truncated would be short, and a
- * short page is how the walk knows it has reached the end.
+ * Rows asked for per request when walking a corpus table. The server may
+ * answer fewer; `walkRanges` keeps reading until a page comes back empty.
  */
 // @req REQ-110
 export const FAMILY_FACET_PAGE_SIZE = 500;
@@ -37,29 +37,29 @@ const SAFE_IDENTIFIER = /^[\w-]+$/;
 
 async function walkTable<Row>(table: string, columns: string): Promise<Row[]> {
   const supabase = createServerClient();
-  const rows: Row[] = [];
 
-  for (let page = 0; page < FAMILY_FACET_MAX_PAGES; page++) {
-    const start = page * FAMILY_FACET_PAGE_SIZE;
-    const { data, error } = await supabase
-      .from(table)
-      .select(columns)
-      .range(start, start + FAMILY_FACET_PAGE_SIZE - 1);
+  const walk = await walkRanges(
+    async (from, to) => {
+      const { data, error } = await supabase
+        .from(table)
+        .select(columns)
+        .range(from, to);
 
-    if (error) {
-      logger.error(`Error walking ${table} for the families facet`, error);
-      throw error;
-    }
-
-    const batch = (data ?? []) as Row[];
-    rows.push(...batch);
-    if (batch.length < FAMILY_FACET_PAGE_SIZE) return rows;
-  }
-
-  logger.error(
-    `${table} exceeded ${FAMILY_FACET_MAX_PAGES} pages — the families facet is reading a truncated corpus`
+      if (error) {
+        logger.error(`Error walking ${table} for the families facet`, error);
+        throw error;
+      }
+      return (data ?? []) as Row[];
+    },
+    { pageSize: FAMILY_FACET_PAGE_SIZE, maxPages: FAMILY_FACET_MAX_PAGES }
   );
-  return rows;
+
+  if (walk.truncated) {
+    logger.error(
+      `${table} exceeded ${FAMILY_FACET_MAX_PAGES} pages — the families facet is reading a truncated corpus`
+    );
+  }
+  return walk.rows;
 }
 
 /**

@@ -1,5 +1,6 @@
 import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
+import { walkRanges } from "@/lib/supabase/queries/walkRanges";
 
 /**
  * The corpus-scale reads the languages facet needs and no single-language
@@ -13,9 +14,8 @@ import { logger } from "@/lib/api/logger";
  */
 
 /**
- * Rows per page when walking a corpus table. Kept well under PostgREST's
- * default 1000-row ceiling: a page the server truncated would be short, and a
- * short page is how the walk knows it has reached the end.
+ * Rows asked for per request when walking a corpus table. The server may
+ * answer fewer; `walkRanges` keeps reading until a page comes back empty.
  */
 // @req REQ-136
 export const LANGUAGE_FACET_PAGE_SIZE = 500;
@@ -36,29 +36,29 @@ export interface LanguageRelations {
 
 async function walkTable<Row>(table: string, columns: string): Promise<Row[]> {
   const supabase = createServerClient();
-  const rows: Row[] = [];
 
-  for (let page = 0; page < LANGUAGE_FACET_MAX_PAGES; page++) {
-    const start = page * LANGUAGE_FACET_PAGE_SIZE;
-    const { data, error } = await supabase
-      .from(table)
-      .select(columns)
-      .range(start, start + LANGUAGE_FACET_PAGE_SIZE - 1);
+  const walk = await walkRanges(
+    async (from, to) => {
+      const { data, error } = await supabase
+        .from(table)
+        .select(columns)
+        .range(from, to);
 
-    if (error) {
-      logger.error(`Error walking ${table} for the languages facet`, error);
-      throw error;
-    }
-
-    const batch = (data ?? []) as Row[];
-    rows.push(...batch);
-    if (batch.length < LANGUAGE_FACET_PAGE_SIZE) return rows;
-  }
-
-  logger.error(
-    `${table} exceeded ${LANGUAGE_FACET_MAX_PAGES} pages — the languages facet is reading a truncated corpus`
+      if (error) {
+        logger.error(`Error walking ${table} for the languages facet`, error);
+        throw error;
+      }
+      return (data ?? []) as Row[];
+    },
+    { pageSize: LANGUAGE_FACET_PAGE_SIZE, maxPages: LANGUAGE_FACET_MAX_PAGES }
   );
-  return rows;
+
+  if (walk.truncated) {
+    logger.error(
+      `${table} exceeded ${LANGUAGE_FACET_MAX_PAGES} pages — the languages facet is reading a truncated corpus`
+    );
+  }
+  return walk.rows;
 }
 
 /**

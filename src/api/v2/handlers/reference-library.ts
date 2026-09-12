@@ -1,3 +1,4 @@
+import { pageSizeSchema } from "@/api/v2/schemas/pagination";
 import { z } from "zod";
 import {
   createReference,
@@ -40,7 +41,7 @@ const uuid = z.uuid();
 // @req REQ-012
 export const referenceSearchSchema = z.object({
   q: requiredString.max(200),
-  limit: z.coerce.number().int().min(1).max(100).default(20),
+  limit: pageSizeSchema,
 });
 
 // @req REQ-012

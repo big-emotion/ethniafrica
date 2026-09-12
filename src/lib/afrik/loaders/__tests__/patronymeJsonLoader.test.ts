@@ -470,4 +470,34 @@ describe("patronymeJsonLoader", () => {
       expect.objectContaining({ alliance_type: "joking_kinship" })
     );
   });
+
+  // The loaders once carried private copies of the same writers; this pins
+  // the row the patronyme loader actually sends.
+  // @req REQ-133
+  it("sends source_kind but no author on the source and stamps its version-1 revision", async () => {
+    const database = createSupabaseDouble();
+    const keita = validPatronymeFiche() as PatronymeDossier;
+
+    await loadPatronymes(database.client as never, {
+      dossiers: [keita, secondDossier()],
+      errors: [],
+    });
+
+    expect(Object.keys(database.sources[0]).sort()).toEqual([
+      "added_at",
+      "id",
+      "notes",
+      "source_kind",
+      "tier",
+      "title",
+      "url",
+    ]);
+    expect(database.revisions[0]).toMatchObject({
+      entity_type: "patronyme",
+      entity_id: "PAT_KEITA",
+      version: 1,
+      content_snapshot: keita,
+    });
+    expect(database.revisions[0]).toHaveProperty("published_at");
+  });
 });

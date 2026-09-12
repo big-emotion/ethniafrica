@@ -9,16 +9,14 @@
 
 import { z } from "zod";
 
+// @req REQ-091
 export const peopleFragmentationParamSchema = z.object({
   id: z.string().regex(/^PPL_[A-Z0-9_]+$/, {
     message: "Invalid people id format (expected PPL_*)",
   }),
 });
 
-export type PeopleFragmentationParam = z.infer<
-  typeof peopleFragmentationParamSchema
->;
-
+// @req REQ-091
 export const fragmentationCountrySchema = z.object({
   iso3: z.string().length(3),
   nameFr: z.string(),
@@ -34,13 +32,13 @@ export const fragmentationCountrySchema = z.object({
 
 export type FragmentationCountry = z.infer<typeof fragmentationCountrySchema>;
 
+// @req REQ-091
 export const colonialOriginSchema = z.object({
   layerId: z.string(),
   sourceIds: z.array(z.string()),
 });
 
-export type ColonialOrigin = z.infer<typeof colonialOriginSchema>;
-
+// @req REQ-091
 export const borderPairSchema = z.object({
   a: z.string().length(3),
   b: z.string().length(3),
@@ -49,6 +47,7 @@ export const borderPairSchema = z.object({
 
 export type BorderPair = z.infer<typeof borderPairSchema>;
 
+// @req REQ-091
 export const peopleFragmentationSchema = z.object({
   peopleId: z.string(),
   autonym: z.string().nullable(),
