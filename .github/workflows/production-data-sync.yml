@@ -141,6 +141,14 @@ jobs:
             --data '{"tags":["afrik-language-families","afrik-peoples","afrik-countries"]}' \
             https://ethniafrica.com/api/admin/revalidate
 
+      # Read-only: row counts and a sampled hash for every table of the entity
+      # backbone, against the JSON loaders' output. The apply step verifies
+      # three tables' content and only when it completes; a load that stops
+      # short or never runs leaves production frozen behind git with nothing
+      # red. Same production credentials, and the same target guard, as the load.
+      - name: Verify production serves the corpus git holds
+        run: npx tsx --conditions=react-server scripts/afrik/verifyCorpusInDatabase.ts --target=production
+
   # A question a player sees is a row in `quiz_questions`, and this sweep is the only
   # thing that writes one — the corpus loader writes none. Nothing ran it here, so the
   # production bank stayed at zero through every release while recette's filled up, and

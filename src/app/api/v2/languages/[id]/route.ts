@@ -62,90 +62,25 @@
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 
-import { NextRequest } from "next/server";
 import { getLanguageHandler } from "@/api/v2/handlers/languages";
 import { languageIdParamSchema } from "@/api/v2/schemas/languages";
-import { createApiError } from "@/api/v2/utils/response";
-import { validateLang } from "@/api/v2/utils/validation";
-import { corsOptionsResponse, jsonWithCors } from "@/lib/api/cors";
-import { logger } from "@/lib/api/logger";
-
-const CACHE_CONTROL = "s-maxage=3600";
+import {
+  CORPUS_CACHE_CONTROL,
+  corpusDetailRoute,
+} from "@/api/v2/utils/corpusRoute";
+import { corsOptionsResponse } from "@/lib/api/cors";
 
 // @req REQ-136
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
-  const startTime = Date.now();
-  const { id } = await params;
-
-  try {
-    logger.info("GET /api/v2/languages/[id]", { id });
-
-    if (!languageIdParamSchema.safeParse({ id }).success) {
-      logger.warn("Invalid language ID format", { id });
-      return jsonWithCors(
-        createApiError({
-          code: "VALIDATION_ERROR",
-          message: "Invalid language ID format",
-          field: "id",
-        }),
-        { status: 400 }
-      );
-    }
-
-    const lang = validateLang(request.nextUrl.searchParams.get("lang"));
-    if (lang === null) {
-      logger.warn("Unsupported lang requested", {
-        id,
-        lang: request.nextUrl.searchParams.get("lang"),
-      });
-      return jsonWithCors(
-        createApiError({
-          code: "VALIDATION_ERROR",
-          message: "Unsupported lang: expected fr or en",
-          field: "lang",
-        }),
-        { status: 400 }
-      );
-    }
-
-    const result = await getLanguageHandler(id, lang);
-
-    if (result.ok === false) {
-      logger.warn("Language request rejected", { id, code: result.code });
-      return jsonWithCors(
-        createApiError({ code: result.code, message: result.message }),
-        { status: 404 }
-      );
-    }
-
-    const response = jsonWithCors(result.envelope, {
-      headers: { "Cache-Control": CACHE_CONTROL },
-    });
-
-    logger.info("GET /api/v2/languages/[id] completed", {
-      id,
-      duration: Date.now() - startTime,
-      status: 200,
-    });
-
-    return response;
-  } catch (error) {
-    logger.error(`Error in GET /api/v2/languages/${id}`, error, {
-      id,
-      duration: Date.now() - startTime,
-    });
-    return jsonWithCors(
-      createApiError({
-        code: "INTERNAL_ERROR",
-        message: "Internal server error",
-      }),
-      { status: 500 }
-    );
-  }
-}
+export const GET = corpusDetailRoute({
+  path: "/api/v2/languages/[id]",
+  param: "id",
+  isValidId: (id) => languageIdParamSchema.safeParse({ id }).success,
+  invalidIdMessage: "Invalid language ID format",
+  servesLang: true,
+  cacheControl: CORPUS_CACHE_CONTROL,
+  rejectedLog: "Language request rejected",
+  resolve: (id, lang) => getLanguageHandler(id, lang),
+});
 
 // @req REQ-136
 export function OPTIONS() {

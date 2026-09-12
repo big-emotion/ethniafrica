@@ -74,33 +74,33 @@
       {
         "title": "Cuis people – AFRICA 101 Last Tribes",
         "url": "https://www.101lasttribes.com/tribes/cuis.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Rull et al. – Genome-wide variation in the Angolan Namib Desert reveals unique Pre-Bantu ancestry, Science Advances (2023)",
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10516492/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+        "tier": "referenced"
       },
       {
         "title": "Barbieri et al. – The maternal genetic history of the Angolan Namib Desert, bioRxiv (2017)",
         "url": "https://www.biorxiv.org/content/10.1101/162230v1.full",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for biorxiv.org."
+        "tier": "referenced"
       },
       {
         "title": "Responsible Travel – Angola's tribal groups: The Mucuroca and Mucuis",
         "url": "https://www.responsiblevacation.com/vacations/angola/travel-guide/angolas-tribal-groups",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for responsiblevacation.com."
+        "tier": "unverified"
       },
       {
         "title": "World Directory of Minorities and Indigenous Peoples – Angola, UNHCR/Refworld",
         "url": "https://www.refworld.org/country,COI,,COUNTRYREP,ago,,49749d6232,0.html",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for refworld.org."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

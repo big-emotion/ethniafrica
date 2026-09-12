@@ -1,4 +1,4 @@
-import type { Event, EventHint } from "@sentry/nextjs";
+import type { Breadcrumb, Event } from "@sentry/nextjs";
 
 /**
  * Asserts that the provided Sentry DSN uses the EU data-region ingestion
@@ -8,6 +8,7 @@ import type { Event, EventHint } from "@sentry/nextjs";
  * Throws in production; logs a warning in other environments so local dev
  * is not blocked when NEXT_PUBLIC_SENTRY_DSN is unset.
  */
+// @req REQ-080
 export function assertEuDsn(dsn: string | undefined): void {
   if (!dsn) return; // SDK will skip init when DSN is absent; nothing to validate
   try {
@@ -32,44 +33,63 @@ export function assertEuDsn(dsn: string | undefined): void {
   }
 }
 
+const REDACTED = "[REDACTED]";
+
+// Compared lower-case: Sentry keeps whatever casing the runtime reported, and
+// `Authorization` and `authorization` both reach this hook.
+const CREDENTIAL_HEADERS = new Set([
+  "authorization",
+  "proxy-authorization",
+  "cookie",
+  "set-cookie",
+]);
+
+// Past this depth a value is redacted rather than walked. Sentry normalises
+// events to a shallow depth before this hook runs, so real payloads never get
+// here; the bound only guarantees the walk terminates.
+const MAX_SCRUB_DEPTH = 8;
+
 // Email regex pattern - matches common email formats
 const EMAIL_REGEX = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
 
-// IPv4 pattern
 const IPV4_REGEX = /^(\d{1,3}\.\d{1,3}\.\d{1,3})\.\d{1,3}$/;
 
-// IPv6 pattern (simplified - matches addresses with colons)
-const IPV6_REGEX = /^(.+):([0-9a-fA-F]+)$/;
+// An IPv6 address, as opposed to anything else with colons in it: hex digits
+// and colons only, and either compressed (`::`) or full (seven colons). A
+// looser pattern would truncate clock times like `00:00:00` in a Date header.
+const IPV6_REGEX = /^([0-9a-fA-F:]+):([0-9a-fA-F]{1,4})$/;
+const isIpv6 = (token: string) =>
+  IPV6_REGEX.test(token) &&
+  (token.includes("::") || token.split(":").length === 8);
 
 /**
  * Scrubs email addresses from a string by replacing them with [EMAIL_REDACTED]
  */
+// @req REQ-080
 export function scrubEmail(str: string): string {
   if (!str) return str;
   return str.replace(EMAIL_REGEX, "[EMAIL_REDACTED]");
 }
 
+function truncateSingleIp(token: string): string {
+  const ipv4Match = token.match(IPV4_REGEX);
+  if (ipv4Match) return `${ipv4Match[1]}.0`;
+  if (isIpv6(token)) return token.replace(IPV6_REGEX, "$1:0");
+  return token;
+}
+
 /**
  * Truncates an IPv4 address to /24 (replaces last octet with 0)
  * For IPv6, truncates the last segment to 0
+ *
+ * Works token by token, so an X-Forwarded-For chain is truncated hop by hop
+ * with its separators left as they were. Anchoring the pattern to the whole
+ * value used to leave a chain untouched — client address first.
  */
+// @req REQ-080
 export function truncateIpToSlash24(ip: string): string {
   if (!ip) return ip;
-
-  // Try IPv4 first
-  const ipv4Match = ip.match(IPV4_REGEX);
-  if (ipv4Match) {
-    return `${ipv4Match[1]}.0`;
-  }
-
-  // Try IPv6
-  const ipv6Match = ip.match(IPV6_REGEX);
-  if (ipv6Match) {
-    return `${ipv6Match[1]}:0`;
-  }
-
-  // Return original if not a recognized IP format
-  return ip;
+  return ip.replace(/[^,\s]+/g, truncateSingleIp);
 }
 
 /**
@@ -91,13 +111,76 @@ function scrubString(str: string): string {
   return result;
 }
 
+function scrubDeep(value: unknown, depth = 0): unknown {
+  if (typeof value === "string") return scrubString(value);
+  if (value === null || typeof value !== "object") return value;
+  if (depth >= MAX_SCRUB_DEPTH) return REDACTED;
+  if (Array.isArray(value)) {
+    return value.map((item) => scrubDeep(item, depth + 1));
+  }
+  return Object.fromEntries(
+    Object.entries(value).map(([key, nested]) => [
+      key,
+      scrubDeep(nested, depth + 1),
+    ])
+  );
+}
+
+function scrubHeaders(headers: Record<string, string>): Record<string, string> {
+  return Object.fromEntries(
+    Object.entries(headers).map(([name, value]) => {
+      if (typeof value !== "string") return [name, value];
+      if (CREDENTIAL_HEADERS.has(name.toLowerCase())) return [name, REDACTED];
+      return [name, truncateIpToSlash24(scrubString(value))];
+    })
+  );
+}
+
+/**
+ * The request as far as diagnosis needs it: method, path, headers minus
+ * credentials. Cookies carry session tokens, the body carries whatever a
+ * reader typed into a report form, and the query string of the auth callback
+ * carries a one-time sign-in code — so all three are redacted, and the URL
+ * loses its query for the same reason.
+ */
+function scrubRequest(request: Event["request"]): Event["request"] {
+  const scrubbed = { ...request };
+
+  if (scrubbed.url) {
+    scrubbed.url = scrubString(scrubbed.url.split(/[?#]/)[0]);
+  }
+  if (scrubbed.headers) {
+    scrubbed.headers = scrubHeaders(scrubbed.headers);
+  }
+  if (scrubbed.cookies) {
+    scrubbed.cookies = Object.fromEntries(
+      Object.keys(scrubbed.cookies).map((name) => [name, REDACTED])
+    );
+  }
+  if (scrubbed.data !== undefined) scrubbed.data = REDACTED;
+  if (scrubbed.query_string !== undefined) scrubbed.query_string = REDACTED;
+
+  return scrubbed;
+}
+
+function scrubBreadcrumb(breadcrumb: Breadcrumb): Breadcrumb {
+  const scrubbed = { ...breadcrumb };
+  if (scrubbed.message) scrubbed.message = scrubString(scrubbed.message);
+  if (scrubbed.data) {
+    scrubbed.data = scrubDeep(scrubbed.data) as Breadcrumb["data"];
+  }
+  return scrubbed;
+}
+
 /**
  * Sentry beforeSend hook that scrubs PII from events
  * - Scrubs email addresses from messages, breadcrumbs, and user data
  * - Truncates IP addresses to /24
- * - Scrubs request headers
+ * - Redacts credentials, cookies, bodies and query strings from the request
+ * - Scrubs every string nested in `extra`, `contexts` and breadcrumb `data`
  */
-export function beforeSend(event: Event, hint?: EventHint): Event | null {
+// @req REQ-080
+export function beforeSend(event: Event): Event | null {
   if (!event) return null;
 
   // Clone the event to avoid mutating the original
@@ -123,20 +206,18 @@ export function beforeSend(event: Event, hint?: EventHint): Event | null {
     }
   }
 
-  // Scrub request headers
-  if (scrubbedEvent.request?.headers) {
-    scrubbedEvent.request = { ...scrubbedEvent.request };
-    scrubbedEvent.request.headers = { ...scrubbedEvent.request.headers };
+  if (scrubbedEvent.request) {
+    scrubbedEvent.request = scrubRequest(scrubbedEvent.request);
+  }
 
-    for (const [key, value] of Object.entries(scrubbedEvent.request.headers)) {
-      if (typeof value === "string") {
-        // Scrub emails first
-        let scrubbedValue = scrubEmail(value);
-        // Then truncate IPs
-        scrubbedValue = truncateIpToSlash24(scrubbedValue);
-        scrubbedEvent.request.headers[key] = scrubbedValue;
-      }
-    }
+  if (scrubbedEvent.extra) {
+    scrubbedEvent.extra = scrubDeep(scrubbedEvent.extra) as Event["extra"];
+  }
+
+  if (scrubbedEvent.contexts) {
+    scrubbedEvent.contexts = scrubDeep(
+      scrubbedEvent.contexts
+    ) as Event["contexts"];
   }
 
   // Scrub exception values (error message strings)
@@ -155,17 +236,8 @@ export function beforeSend(event: Event, hint?: EventHint): Event | null {
     };
   }
 
-  // Scrub breadcrumbs
   if (scrubbedEvent.breadcrumbs && Array.isArray(scrubbedEvent.breadcrumbs)) {
-    scrubbedEvent.breadcrumbs = scrubbedEvent.breadcrumbs.map((breadcrumb) => {
-      if (breadcrumb.message) {
-        return {
-          ...breadcrumb,
-          message: scrubString(breadcrumb.message),
-        };
-      }
-      return breadcrumb;
-    });
+    scrubbedEvent.breadcrumbs = scrubbedEvent.breadcrumbs.map(scrubBreadcrumb);
   }
 
   return scrubbedEvent;

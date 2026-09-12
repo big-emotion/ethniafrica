@@ -104,27 +104,28 @@
       {
         "title": "Minority Rights Group – Coastal minorities including Benadiri, Bajuni and Bravans in Somalia , mis a jour novembre 2024",
         "url": "https://minorityrights.org/communities/benadiri/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Joshua Project – Arab in Somalia",
         "url": "https://joshuaproject.net/people_groups/10375/SO",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Ibn Battuta – Rihla (Voyages), XIV e siecle (description du Sultanat de Mogadiscio)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Cassanelli L.V. – The Origins and Development of Mogadishu AD 1000 to 1850, Universita Roma Tre, 2001",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

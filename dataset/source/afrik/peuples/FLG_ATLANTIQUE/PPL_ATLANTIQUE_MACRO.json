@@ -167,27 +167,28 @@
       {
         "title": "Britannica. African Atlantic languages",
         "url": "https://www.britannica.com/topic/African-Atlantic-languages",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Language Gulper. Atlantic. (2014)",
         "url": "https://languagesgulper.com/eng/Atlantic.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for languagesgulper.com."
+        "tier": "unverified"
       },
       {
         "title": "Ethnologue (SIL International). Guinea Languages",
         "url": "https://www.ethnologue.com/country/GN/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Creissels, Denis. Presentation de quelques langues ouest-africaines appartenant aux familles mande et atlantique. CNRS LGIDF, 2017",
         "url": "https://lgidf.cnrs.fr/sites/lgidf.cnrs.fr/files/images/Creissels.langues.afric.jan.%202017.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for lgidf.cnrs.fr."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

@@ -4,11 +4,14 @@
  * interfaces in `@/types/migrations` (MigrationSummary, MigrationDetailRecord).
  */
 
+import { pageSizeSchema } from "@/api/v2/schemas/pagination";
 import { z } from "zod";
 import { MIGRATION_EVENT_TYPES } from "@/lib/afrik/migrationEventTypes";
 
+// @req REQ-098
 export const migrationEventTypeSchema = z.enum(MIGRATION_EVENT_TYPES);
 
+// @req REQ-098
 export const migrationClassificationStatusSchema = z.enum([
   "consensual",
   "contested",
@@ -17,15 +20,15 @@ export const migrationClassificationStatusSchema = z.enum([
 ]);
 
 // GET /api/v2/migrations/{id}
+// @req REQ-098
 export const migrationDetailParamSchema = z.object({
   id: z.string().regex(/^MGR_[A-Z0-9_]+$/, {
     message: "Invalid migration id format (expected MGR_*)",
   }),
 });
 
-export type MigrationDetailParam = z.infer<typeof migrationDetailParamSchema>;
-
 // GET /api/v2/migrations
+// @req REQ-098
 export const listMigrationsQuerySchema = z
   .object({
     from: z.coerce.number().int().optional(),
@@ -39,7 +42,7 @@ export const listMigrationsQuerySchema = z
       .optional(),
     classificationStatus: migrationClassificationStatusSchema.optional(),
     group: z.string().optional(),
-    limit: z.coerce.number().int().min(1).max(100).default(20),
+    limit: pageSizeSchema,
     offset: z.coerce.number().int().min(0).default(0),
   })
   .refine(
@@ -50,5 +53,3 @@ export const listMigrationsQuerySchema = z
       path: ["from"],
     }
   );
-
-export type ListMigrationsQuery = z.infer<typeof listMigrationsQuerySchema>;

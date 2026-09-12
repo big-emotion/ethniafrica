@@ -87,14 +87,16 @@ describe("the peoples a country holds", () => {
     expect(ids[ids.length - 1]).toBe("PPL_Z");
   });
 
+  // A short page is also what a server whose max-rows sits below the page size
+  // answers every time, so only an empty page proves the end of the table.
   // @req REQ-110
-  it("stops at the first short page instead of reading past the end of the table", async () => {
+  it("stops at the first empty page instead of reading past the end of the table", async () => {
     const relations = builder([{ data: relationRows(["PPL_AKAN"]) }]);
     serveTables({ afrik_people_countries: relations });
 
     await getAfrikPeopleIdsInCountry("GHA");
 
-    expect(relations.range).toHaveBeenCalledTimes(1);
+    expect(relations.range).toHaveBeenCalledTimes(2);
   });
 });
 
@@ -187,7 +189,7 @@ describe("the country index the peoples facet publishes to the map", () => {
 
     const index = await getAfrikPeopleCountryIndex();
 
-    expect(peoples.range).toHaveBeenCalledTimes(2);
+    expect(peoples.range).toHaveBeenCalledTimes(3);
     expect(index).toHaveLength(PEOPLE_FACET_WALK_SIZE + 1);
     expect(index[index.length - 1]).toEqual({
       id: "PPL_ZULU",

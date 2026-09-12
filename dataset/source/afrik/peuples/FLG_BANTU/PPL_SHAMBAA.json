@@ -80,27 +80,28 @@
       {
         "title": "Shambala in Tanzania – Joshua Project",
         "url": "https://joshuaproject.net/people_groups/14890",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Shambaa – Encyclopedia.com",
         "url": "https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/shambaa",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for encyclopedia.com."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes – Shambaa people",
         "url": "http://www.101lasttribes.com/tribes/shambaa.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Omniglot – Shambala language",
         "url": "https://www.omniglot.com/writing/shambala.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for omniglot.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

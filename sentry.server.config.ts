@@ -24,6 +24,10 @@ Sentry.init({
   // Debug mode for development
   debug: process.env.NODE_ENV === "development",
 
+  // Stated rather than inherited: the SDK default has changed between majors,
+  // and an upgrade must not start attaching IPs, cookies and bodies.
+  sendDefaultPii: false,
+
   // PII scrubbing via beforeSend hook
   beforeSend: beforeSend as Parameters<typeof Sentry.init>[0]["beforeSend"],
 

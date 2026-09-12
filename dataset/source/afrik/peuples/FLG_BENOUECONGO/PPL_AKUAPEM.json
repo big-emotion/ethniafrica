@@ -79,27 +79,28 @@
       {
         "title": "Joshua Project – Akan-Akwapem in Ghana, 2025",
         "url": "https://joshuaproject.net/countries/gh",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "AkanArchives – Christaller Bible Translation 1870-1872",
         "url": "https://x.com/AkanArchives/status/1948756016897597836",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers x.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Trip Down Memory Lane – The Akuapem People, 2013",
         "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2013/09/the-akuapem-people-are-amalgamation-of.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+        "tier": "unverified"
       },
       {
         "title": "Visit Akuapem – Cultural Heritage",
         "url": "https://visitakuapem.com/heritage",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers visitakuapem.com; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

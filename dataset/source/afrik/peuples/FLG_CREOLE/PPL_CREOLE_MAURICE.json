@@ -101,33 +101,33 @@
       {
         "title": "SIL Ethnologue — Morisyen (mfe)",
         "url": "https://www.ethnologue.com/language/mfe/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Glottolog — Morisyen (mori1278)",
         "url": "https://glottolog.org/resource/languoid/id/mori1278",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "UNESCO — Sega Tipik Morisien (patrimoine immatériel, 2014)",
         "url": "https://ich.unesco.org/doc/src/26081-EN.pdf",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook — Mauritius",
         "url": "https://www.cia.gov/the-world-factbook/countries/mauritius/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "Creole Mauritius — The History of Mauritian Creole",
         "url": "https://creolemauritius.com/blog/the-history-of-mauritian-creole-from-past-to-present/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers creolemauritius.com; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

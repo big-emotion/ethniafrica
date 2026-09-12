@@ -85,33 +85,33 @@
       {
         "title": "Joshua Project — Belanda Bor in South Sudan",
         "url": "https://joshuaproject.net/people_groups/10773",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "SIL Ethnologue — Belanda Bor (bxb)",
         "url": "https://www.ethnologue.com/language/bxb/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue — Belanda Viri (bvi)",
         "url": "https://www.ethnologue.com/language/bvi/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Amnesty International — South Sudan: War crimes against Azande and Balanda Bviri (2021)",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "CIA World Factbook — South Sudan",
         "url": "https://www.cia.gov/the-world-factbook/countries/south-sudan/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

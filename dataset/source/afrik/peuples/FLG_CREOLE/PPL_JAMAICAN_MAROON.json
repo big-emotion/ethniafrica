@@ -61,13 +61,13 @@
           "title": "Queen Nanny of the Maroons (? - 1733)",
           "url": "https://blackpast.org/global-african-history/queen-nanny-maroons-1733/",
           "tier": "referenced",
-          "notes": "BlackPast.org : encyclopédie en ligne à comité éditorial et auteurs identifiés (fondée par un historien universitaire) ; source de l'origine ashanti attribuée à Nanny dans l'historiographie jamaïcaine. Plafonnée volontairement à « referenced » pour cette fiche (voir directive éditoriale ETNI-1388 : aucune source « official » n'est utilisée dans ce fichier)."
+          "notes": "BlackPast.org : encyclopédie en ligne à comité éditorial et auteurs identifiés (fondée par un historien universitaire) ; source de l'origine ashanti attribuée à Nanny dans l'historiographie jamaïcaine."
         },
         {
           "title": "Maroon heritage of Moore Town — Representative List of the Intangible Cultural Heritage of Humanity",
           "url": "https://ich.unesco.org/en/RL/maroon-heritage-of-moore-town-00053",
           "tier": "referenced",
-          "notes": "Fiche UNESCO du patrimoine culturel immatériel documentant les cérémonies Kromanti Play et leur langue rituelle d'origine akan. Bien que le catalogue de sources autorisées classe unesco.org en tier « official », cette fiche applique la directive éditoriale ETNI-1388 qui plafonne délibérément toutes les sources à « referenced »/« unverified », le ticket testant explicitement le chemin de publication sans source « official » disponible."
+          "notes": "Fiche UNESCO du patrimoine culturel immatériel documentant les cérémonies Kromanti Play et leur langue rituelle d'origine akan."
         },
         {
           "title": "The Maroon Treaty of 1739",
@@ -140,5 +140,10 @@
         "notes": "Page éducative sans auteur identifié ni source citée ; utilisée uniquement pour l'ordre de grandeur de la population totale (5 000 à 10 000 personnes), croisée avec les estimations par ville tirées de sources « referenced »."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
+    }
   }
 }

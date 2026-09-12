@@ -114,45 +114,43 @@
       {
         "title": "SIL Ethnologue - Tedaga (tuq)",
         "url": "https://www.ethnologue.com/language/tuq/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "SIL Ethnologue - Dazaga (dzg)",
         "url": "https://www.ethnologue.com/language/dzg/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Baroin, Catherine - Anarchie et Cohesion sociale chez les Toubou. Paris : MSH, 1985",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Minority Rights Group International - Chad: Toubou",
         "url": "https://minorityrights.org/country/chad/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Chapelle, Jean - Le Peuple tchadien : ses racines et sa vie quotidienne. L'Harmattan, 1980",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "CIA World Factbook - Chad, Niger, Libya",
         "url": "https://www.cia.gov/the-world-factbook/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "Africa Is a Country - A forsaken people (2021)",
         "url": "https://africasacountry.com/2021/04/a-forsaken-people",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for africasacountry.com."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

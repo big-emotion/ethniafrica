@@ -97,39 +97,38 @@
       {
         "title": "Dan, Da in Liberia – Joshua Project 2025",
         "url": "https://joshuaproject.net/people_groups/11485/LI",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Minority Rights Group – Liberia",
         "url": "https://minorityrights.org/country/liberia/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Daniel B. Reed, Dan Ge Performance: Masks and Music in Contemporary Cote d'Ivoire, Indiana University Press, 2003",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Hugo Zemp, Musique dan : la musique dans la pensee et la vie sociale d'une societe africaine, Mouton, La Haye, 1971",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Dan – Glottolog 5.3",
         "url": "https://glottolog.org/resource/languoid/id/dann1241",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "101 Last Tribes – The Dan",
         "url": "https://www.101lasttribes.com/tribes/dan.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

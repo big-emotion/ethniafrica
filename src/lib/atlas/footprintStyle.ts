@@ -33,10 +33,6 @@ export const FOOTPRINT_STROKE_OPACITY_DIMMED = 0.22;
 
 /** Line widths, in the units each renderer already uses for its strokes. */
 // @req REQ-116
-export const FOOTPRINT_STROKE_WIDTH = 1.8;
-// @req REQ-116
-export const FOOTPRINT_STROKE_WIDTH_FOCUSED = 2.8;
-// @req REQ-116
 export const FOOTPRINT_STROKE_WIDTH_SVG = 2;
 // @req REQ-116
 export const FOOTPRINT_STROKE_WIDTH_SVG_FOCUSED = 3.2;

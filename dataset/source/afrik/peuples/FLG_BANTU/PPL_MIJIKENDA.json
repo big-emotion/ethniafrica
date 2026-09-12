@@ -94,33 +94,33 @@
       {
         "title": "Traditions and practices associated with the Kayas – UNESCO ICH",
         "url": "https://ich.unesco.org/en/USL/traditions-and-practices-associated-with-the-kayas-in-the-sacred-forests-of-the-mijikenda-00313",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+        "tier": "official"
       },
       {
         "title": "Sacred Mijikenda Kaya Forests – UNESCO WHC decision 32 COM 8B.50",
         "url": "https://whc.unesco.org/en/decisions/4265/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+        "tier": "official"
       },
       {
         "title": "Githitho A.N., The Sacred Mijikenda Kaya Forests of Coastal Kenya and Biodiversity Conservation – Sacred Land Film Project",
         "url": "https://sacredland.org/wp-content/uploads/2017/07/Mijikenda_Kaya.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sacredland.org."
+        "tier": "referenced"
       },
       {
         "title": "Ethnic Affiliation Kenya – Kenya National Bureau of Statistics 2009",
         "url": "https://www.knbs.or.ke/ethnic-affiliation/",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for knbs.or.ke."
+        "tier": "official"
       },
       {
         "title": "History of the Mijikenda tribes – MSOLA Africa",
         "url": "https://www.msolafrica.org/2024/08/12/the-history-of-the-mijikenda-tribes-kenya/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers msolafrica.org; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

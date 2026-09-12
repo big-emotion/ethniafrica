@@ -66,90 +66,25 @@
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
  */
 
-import { NextRequest } from "next/server";
 import { getPatronymeHandler } from "@/api/v2/handlers/patronymes";
 import { patronymeIdParamSchema } from "@/api/v2/schemas/patronymes";
-import { createApiError } from "@/api/v2/utils/response";
-import { validateLang } from "@/api/v2/utils/validation";
-import { corsOptionsResponse, jsonWithCors } from "@/lib/api/cors";
-import { logger } from "@/lib/api/logger";
-
-const CACHE_CONTROL = "s-maxage=3600";
+import {
+  CORPUS_CACHE_CONTROL,
+  corpusDetailRoute,
+} from "@/api/v2/utils/corpusRoute";
+import { corsOptionsResponse } from "@/lib/api/cors";
 
 // @req REQ-133
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
-  const startTime = Date.now();
-  const { id } = await params;
-
-  try {
-    logger.info("GET /api/v2/patronymes/[id]", { id });
-
-    if (!patronymeIdParamSchema.safeParse({ id }).success) {
-      logger.warn("Invalid patronyme ID format", { id });
-      return jsonWithCors(
-        createApiError({
-          code: "VALIDATION_ERROR",
-          message: "Invalid patronyme ID format",
-          field: "id",
-        }),
-        { status: 400 }
-      );
-    }
-
-    const lang = validateLang(request.nextUrl.searchParams.get("lang"));
-    if (lang === null) {
-      logger.warn("Unsupported lang requested", {
-        id,
-        lang: request.nextUrl.searchParams.get("lang"),
-      });
-      return jsonWithCors(
-        createApiError({
-          code: "VALIDATION_ERROR",
-          message: "Unsupported lang: expected fr or en",
-          field: "lang",
-        }),
-        { status: 400 }
-      );
-    }
-
-    const result = await getPatronymeHandler(id, lang);
-
-    if (result.ok === false) {
-      logger.warn("Patronyme request rejected", { id, code: result.code });
-      return jsonWithCors(
-        createApiError({ code: result.code, message: result.message }),
-        { status: 404 }
-      );
-    }
-
-    const response = jsonWithCors(result.envelope, {
-      headers: { "Cache-Control": CACHE_CONTROL },
-    });
-
-    logger.info("GET /api/v2/patronymes/[id] completed", {
-      id,
-      duration: Date.now() - startTime,
-      status: 200,
-    });
-
-    return response;
-  } catch (error) {
-    logger.error(`Error in GET /api/v2/patronymes/${id}`, error, {
-      id,
-      duration: Date.now() - startTime,
-    });
-    return jsonWithCors(
-      createApiError({
-        code: "INTERNAL_ERROR",
-        message: "Internal server error",
-      }),
-      { status: 500 }
-    );
-  }
-}
+export const GET = corpusDetailRoute({
+  path: "/api/v2/patronymes/[id]",
+  param: "id",
+  isValidId: (id) => patronymeIdParamSchema.safeParse({ id }).success,
+  invalidIdMessage: "Invalid patronyme ID format",
+  servesLang: true,
+  cacheControl: CORPUS_CACHE_CONTROL,
+  rejectedLog: "Patronyme request rejected",
+  resolve: (id, lang) => getPatronymeHandler(id, lang),
+});
 
 // @req REQ-133
 export function OPTIONS() {

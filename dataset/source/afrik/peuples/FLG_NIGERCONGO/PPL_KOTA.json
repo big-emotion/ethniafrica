@@ -95,33 +95,33 @@
       {
         "title": "SIL Ethnologue — Kota language (koq)",
         "url": "https://www.ethnologue.com/language/koq/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Endangered Language Alliance — Ikota",
         "url": "https://www.elalliance.org/languages/kota",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers elalliance.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Smithsonian Institution — Reliquary guardian figure",
         "url": "https://www.si.edu/object/nmafa_78-14-12",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for si.edu."
+        "tier": "referenced"
       },
       {
         "title": "Barakat Gallery — Bakota Reliquary Guardian Figure",
         "url": "https://barakatgallery.eu/artworks/categories/889/95879-bakota-reliquary-guardian-figure-mbulu-ngulu-19th-early-20th-century/",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers barakatgallery.eu; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Kimbell Art Museum — Kota Reliquary Guardian Figure",
         "url": "https://kimbellart.org/news-and-stories/kimbell-reliquary-guardian-figure-and-kwele-mask",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers kimbellart.org; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

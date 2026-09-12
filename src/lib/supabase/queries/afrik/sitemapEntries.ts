@@ -1,6 +1,7 @@
 import { logger } from "@/lib/api/logger";
 import { readNameStanding } from "@/lib/patronymes/content";
-import type { SourceTier } from "@/types/sources";
+import { walkRanges, type RangeWalk } from "@/lib/supabase/queries/walkRanges";
+import { isAuthoritativeSourceTier } from "@/types/sources";
 
 import { createServerClient } from "../../server";
 
@@ -73,7 +74,8 @@ interface SitemapRow {
 async function pageOfIds(
   supabase: SupabaseClient,
   table: string,
-  start: number,
+  from: number,
+  to: number,
   columns: string
 ): Promise<{ data: SitemapRow[] | null; error: unknown }> {
   try {
@@ -84,7 +86,7 @@ async function pageOfIds(
     return (await supabase
       .from(table)
       .select(columns)
-      .range(start, start + SITEMAP_ID_PAGE_SIZE - 1)) as unknown as {
+      .range(from, to)) as unknown as {
       data: SitemapRow[] | null;
       error: unknown;
     };
@@ -112,33 +114,39 @@ async function idsInTable(
   table: string,
   { columns = "id", keeps }: TableWalk = {}
 ): Promise<string[]> {
-  const found: string[] = [];
-
-  for (let page = 0; page < SITEMAP_MAX_PAGES; page++) {
-    const start = page * SITEMAP_ID_PAGE_SIZE;
-    const { data, error } = await pageOfIds(supabase, table, start, columns);
-
-    if (error) {
-      logger.error(`Sitemap: could not read ids from ${table}`, error);
-      return [];
-    }
-
-    const rows = data || [];
-    for (const row of rows) {
-      if (!keeps || keeps(row)) found.push(row.id as string);
-    }
-    // The page is measured before the filter: a full page every row of which
-    // was dropped is still a full page, and the walk must ask for the next one.
-    if (rows.length < SITEMAP_ID_PAGE_SIZE) return found;
+  let walk: RangeWalk<SitemapRow>;
+  try {
+    walk = await walkRanges<SitemapRow>(
+      async (from, to) => {
+        const { data, error } = await pageOfIds(
+          supabase,
+          table,
+          from,
+          to,
+          columns
+        );
+        if (error) throw error;
+        return data || [];
+      },
+      { pageSize: SITEMAP_ID_PAGE_SIZE, maxPages: SITEMAP_MAX_PAGES }
+    );
+  } catch (error) {
+    logger.error(`Sitemap: could not read ids from ${table}`, error);
+    return [];
   }
 
-  logger.error(
-    `Sitemap: ${table} exceeded ${SITEMAP_MAX_PAGES} pages — ids are truncated`
-  );
-  return found;
-}
+  if (walk.truncated) {
+    logger.error(
+      `Sitemap: ${table} exceeded ${SITEMAP_MAX_PAGES} pages — ids are truncated`
+    );
+  }
 
-const INDEXABLE_NAME_TIERS: readonly SourceTier[] = ["referenced", "official"];
+  // Kept after the walk, never inside it: a page every row of which is
+  // dropped is still a page read, and must not end the walk.
+  return walk.rows
+    .filter((row) => !keeps || keeps(row))
+    .map((row) => row.id as string);
+}
 
 /**
  * A name fiche is submitted to search engines only when its best citation is
@@ -160,7 +168,7 @@ function nameCarriesIndexableStanding(row: SitemapRow): boolean {
     return false;
 
   const standing = readNameStanding(content as Record<string, unknown>);
-  return standing !== null && INDEXABLE_NAME_TIERS.includes(standing.tier);
+  return standing !== null && isAuthoritativeSourceTier(standing.tier);
 }
 
 /**

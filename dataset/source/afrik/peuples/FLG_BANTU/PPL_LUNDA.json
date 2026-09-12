@@ -105,39 +105,38 @@
       {
         "title": "SIL Ethnologue — Lunda (lun)",
         "url": "https://www.ethnologue.com/language/lun/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Lunda in Angola",
         "url": "https://joshuaproject.net/people_groups/13153/AO",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Lunda in DRC",
         "url": "https://joshuaproject.net/people_groups/13153/CG",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Victor Turner — The Ritual Process: Structure and Anti-Structure. Aldine, Chicago, 1969",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Victor Turner — The Forest of Symbols: Aspects of Ndembu Ritual. Cornell University Press, 1967",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Encyclopaedia Britannica — Lunda subgroup (Ethnologue free profile)",
         "url": "https://www.ethnologue.com/subgroup/4226/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

@@ -168,39 +168,38 @@
       {
         "title": "Encyclopaedia Britannica - Berber",
         "url": "https://www.britannica.com/topic/Berber",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "IWGIA - The Indigenous World 2025: Morocco",
         "url": "https://iwgia.org/en/morocco/5632-iw-2025-morocco.html",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+        "tier": "official"
       },
       {
         "title": "Ethnologue SIL International - Berber languages",
         "url": "https://www.ethnologue.com/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Peabody Museum Harvard - Imazighen! Beauty and Artisanship",
         "url": "https://peabody.harvard.edu/OE-imazighen",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers peabody.harvard.edu; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Encyclopedie berbere (CNRS/INALCO)",
         "url": "https://journals.openedition.org/encyclopedieberbere/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of journals.openedition.org."
+        "tier": "referenced"
       },
       {
         "title": "Ibn Khaldoun, Muqaddima (14e siecle), traductions modernes",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

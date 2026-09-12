@@ -2,6 +2,7 @@
 // @req REQ-059
 // @req REQ-061
 import { describe, it, expect, vi, beforeEach } from "vitest";
+import { createHash } from "node:crypto";
 import { NextRequest } from "next/server";
 
 // vi.hoisted runs before vi.mock factories, allowing shared references
@@ -48,6 +49,7 @@ import {
   getRateLimiter,
   applyRateLimit,
   applyIpRateLimit,
+  evaluateRateLimit,
   _resetLimitersForTest,
 } from "@/lib/api/rate-limit";
 import * as SentryMock from "@sentry/nextjs";
@@ -86,28 +88,38 @@ function restoreConstructorMocks() {
   } as any);
 }
 
+const sha256Hex = (value: string) =>
+  createHash("sha256").update(value).digest("hex");
+
 describe("getRateLimitIdentifier", () => {
-  it("returns ip identifier when no auth header", () => {
+  // @req REQ-059
+  it("returns ip identifier when no auth header", async () => {
     const req = makeRequest({ ip: "1.2.3.4" });
-    const result = getRateLimitIdentifier(req);
+    const result = await getRateLimitIdentifier(req);
     expect(result.identifier).toBe("ip:1.2.3.4");
     expect(result.apiKey).toBeNull();
   });
 
-  it("uses first IP from x-forwarded-for chain", () => {
+  // @req REQ-059
+  it("uses first IP from x-forwarded-for chain", async () => {
     const req = makeRequest({ ip: "1.2.3.4, 5.6.7.8" });
-    expect(getRateLimitIdentifier(req).identifier).toBe("ip:1.2.3.4");
+    expect((await getRateLimitIdentifier(req)).identifier).toBe("ip:1.2.3.4");
   });
 
-  it("returns ip:unknown when no x-forwarded-for and no auth", () => {
+  // @req REQ-059
+  it("returns ip:unknown when no x-forwarded-for and no auth", async () => {
     const req = makeRequest();
-    expect(getRateLimitIdentifier(req).identifier).toBe("ip:unknown");
+    expect((await getRateLimitIdentifier(req)).identifier).toBe("ip:unknown");
   });
 
-  it("returns key identifier from Bearer token", () => {
+  // The identifier is a Redis key name at Upstash: a raw key there is a
+  // live credential readable by anyone with access to the Redis instance.
+  // @req REQ-059
+  it("identifies a Bearer key by its SHA-256 digest, never the key itself", async () => {
     const req = makeRequest({ authHeader: "Bearer my-api-key" });
-    const result = getRateLimitIdentifier(req);
-    expect(result.identifier).toBe("key:my-api-key");
+    const result = await getRateLimitIdentifier(req);
+    expect(result.identifier).toBe(`key:${sha256Hex("my-api-key")}`);
+    expect(result.identifier).not.toContain("my-api-key");
     expect(result.apiKey).toBe("my-api-key");
   });
 });
@@ -243,7 +255,8 @@ describe("applyRateLimit", () => {
     expect(mockLimit).not.toHaveBeenCalled();
   });
 
-  it("calls limiter.limit with key: prefix for Bearer token requests", async () => {
+  // @req REQ-059
+  it("calls limiter.limit with the key digest for Bearer token requests", async () => {
     mockLimit.mockResolvedValue({
       success: true,
       limit: 600,
@@ -252,7 +265,7 @@ describe("applyRateLimit", () => {
     });
     const req = makeRequest({ authHeader: "Bearer public-key" });
     await applyRateLimit(req);
-    expect(mockLimit).toHaveBeenCalledWith("key:public-key");
+    expect(mockLimit).toHaveBeenCalledWith(`key:${sha256Hex("public-key")}`);
   });
 
   // @req REQ-034
@@ -278,7 +291,7 @@ describe("applyRateLimit", () => {
     });
     const req = makeRequest({ authHeader: "Bearer partner-key" });
     await applyRateLimit(req, "partner");
-    expect(mockLimit).toHaveBeenCalledWith("key:partner-key");
+    expect(mockLimit).toHaveBeenCalledWith(`key:${sha256Hex("partner-key")}`);
     expect(Ratelimit.slidingWindow).toHaveBeenCalledWith(6000, "1 m");
   });
 
@@ -356,6 +369,61 @@ describe("applyRateLimit", () => {
     const req = makeRequest({ ip: "1.2.3.4" });
     const result = await applyRateLimit(req);
     expect(result).toBeNull();
+  });
+});
+
+describe("evaluateRateLimit", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    _resetLimitersForTest();
+    restoreConstructorMocks();
+    vi.stubEnv("UPSTASH_REDIS_REST_URL", "https://example.upstash.io");
+    vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "test-token");
+  });
+
+  // A client can only pace itself against a quota it is told about; the 429
+  // alone tells it after the fact.
+  // @req REQ-059
+  it("hands back the quota headers of an allowed request", async () => {
+    mockLimit.mockResolvedValue({
+      success: true,
+      limit: 60,
+      remaining: 42,
+      reset: 1700000000000,
+    });
+
+    const decision = await evaluateRateLimit(makeRequest({ ip: "1.2.3.4" }));
+
+    expect(decision.rejection).toBeNull();
+    expect(decision.headers).toEqual({
+      "X-RateLimit-Limit": "60",
+      "X-RateLimit-Remaining": "42",
+      "X-RateLimit-Reset": "1700000000000",
+    });
+  });
+
+  // @req REQ-059
+  it("hands back the 429 of an exhausted bucket", async () => {
+    mockLimit.mockResolvedValue({
+      success: false,
+      limit: 60,
+      remaining: 0,
+      reset: Date.now() + 30000,
+    });
+
+    const decision = await evaluateRateLimit(makeRequest({ ip: "1.2.3.4" }));
+
+    expect(decision.rejection?.status).toBe(429);
+  });
+
+  // @req REQ-059
+  it("hands back no headers when limiting is skipped for an admin key", async () => {
+    const decision = await evaluateRateLimit(
+      makeRequest({ authHeader: "Bearer admin-key" }),
+      "admin"
+    );
+
+    expect(decision).toEqual({ rejection: null, headers: {} });
   });
 });
 

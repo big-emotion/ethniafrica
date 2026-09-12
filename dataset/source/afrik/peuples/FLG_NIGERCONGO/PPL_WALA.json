@@ -73,27 +73,28 @@
       {
         "title": "Wali Language (WLX) – Ethnologue, SIL International",
         "url": "https://www.ethnologue.com/language/wlx/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Wala in Ghana – Joshua Project, 2024",
         "url": "https://joshuaproject.net/people_groups/15833",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "The Waala Chieftaincy Institution: Its Origin and the Emergence of Disputes – Academia.edu, 2021",
         "url": "https://www.academia.edu/51545519",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for academia.edu."
+        "tier": "referenced"
       },
       {
         "title": "Wa and the Wala: Islam and Polity in Northwestern Ghana – Levtzion, Nehemia, Cambridge University Press",
         "url": "https://assets.cambridge.org/97805213/62108/sample/9780521362108ws.pdf",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for cambridge.org, matched as a parent of assets.cambridge.org."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

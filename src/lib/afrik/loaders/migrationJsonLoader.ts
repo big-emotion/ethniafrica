@@ -10,8 +10,15 @@ import { join } from "path";
 
 import { logger } from "@/lib/api/logger";
 import { parseMigrationFile } from "@/lib/afrik/parsers/migrationParser";
+import {
+  findOrCreateAssertion,
+  reseedConfidence,
+  supabaseErrorMessage,
+  upsertSource,
+  upsertVersionOneRevision,
+} from "@/lib/afrik/loaders/provenanceWriter";
 import { createAdminClient } from "@/lib/supabase/admin";
-import type { MigrationRecord, MigrationSource } from "@/types/migrations";
+import type { MigrationRecord } from "@/types/migrations";
 
 const AFRIK_ROOT = join(process.cwd(), "dataset/source/afrik");
 
@@ -25,10 +32,6 @@ export interface MigrationLoadReport {
 
 function createReport(): MigrationLoadReport {
   return { total: 0, inserted: 0, errors: [] };
-}
-
-function errorMessage(value: { message: string } | null | undefined): string {
-  return value?.message ?? "unknown Supabase error";
 }
 
 /**
@@ -82,120 +85,6 @@ export function loadAllMigrationFiles(
   return migrations;
 }
 
-async function upsertSource(
-  supabase: AdminClient,
-  source: MigrationSource
-): Promise<{ id: string } | { error: string }> {
-  const { data, error } = await supabase
-    .from("sources")
-    .upsert(
-      {
-        title: source.title,
-        year: source.year,
-        url: source.url,
-        tier: source.tier,
-        notes: source.notes ?? null,
-        added_at: new Date().toISOString(),
-      },
-      { onConflict: "title" }
-    )
-    .select("id")
-    .single();
-
-  if (error || !data) {
-    return { error: errorMessage(error) };
-  }
-  return { id: data.id as string };
-}
-
-/**
- * Migration 020 made `assertions.fiche_revision_id` a NOT NULL FK so every
- * assertion is traceable to a published snapshot (R-2 / ASR-4), and seeded
- * version-1 placeholder revisions for the assertions that already existed.
- * Nothing then taught the loaders to create one, so every assertion insert
- * failed against a real database. This publishes the fiche as version 1,
- * following that same precedent; the unique key (entity_type, entity_id,
- * version) makes the upsert idempotent across re-runs.
- */
-async function findOrCreateFicheRevision(
-  supabase: AdminClient,
-  migration: MigrationRecord
-): Promise<{ id: string } | { error: string }> {
-  const { data, error } = await supabase
-    .from("fiche_revisions")
-    .upsert(
-      {
-        entity_type: "migration",
-        entity_id: migration.id,
-        version: 1,
-        content_snapshot: migration,
-      },
-      { onConflict: "entity_type,entity_id,version" }
-    )
-    .select("id")
-    .single();
-
-  if (error || !data) {
-    return { error: errorMessage(error) };
-  }
-  return { id: data.id as string };
-}
-
-/**
- * assertions has no unique constraint on (entity_type, entity_id,
- * field_path), so idempotency on re-run is enforced here via
- * select-before-write rather than a database guarantee.
- */
-async function findOrCreateAssertion(
-  supabase: AdminClient,
-  migrationId: string,
-  statement: string,
-  sourceIds: string[],
-  ficheRevisionId: string
-): Promise<{ id: string } | { error: string }> {
-  const { data: existing, error: selectError } = await supabase
-    .from("assertions")
-    .select("id")
-    .eq("entity_type", "migration")
-    .eq("entity_id", migrationId)
-    .eq("field_path", "record")
-    .maybeSingle();
-
-  if (selectError) {
-    return { error: errorMessage(selectError) };
-  }
-
-  if (existing) {
-    const { error: updateError } = await supabase
-      .from("assertions")
-      .update({ statement, source_ids: sourceIds })
-      .eq("id", existing.id);
-
-    if (updateError) {
-      return { error: errorMessage(updateError) };
-    }
-    return { id: existing.id as string };
-  }
-
-  const { data: inserted, error: insertError } = await supabase
-    .from("assertions")
-    .insert({
-      entity_type: "migration",
-      entity_id: migrationId,
-      field_path: "record",
-      statement,
-      source_ids: sourceIds,
-      fiche_revision_id: ficheRevisionId,
-    })
-    .select("id")
-    .single();
-
-  if (insertError || !inserted) {
-    return { error: errorMessage(insertError) };
-  }
-  return { id: inserted.id as string };
-}
-
 /**
  * migration_event_peoples has no per-row identity beyond the composite PK,
  * so idempotency (including role changes and removed peoples) is enforced
@@ -212,7 +101,7 @@ async function replaceMigrationPeoples(
     .eq("migration_id", migrationId);
 
   if (deleteError) {
-    return { error: errorMessage(deleteError) };
+    return { error: supabaseErrorMessage(deleteError) };
   }
 
   if (peoples.length === 0) {
@@ -230,7 +119,7 @@ async function replaceMigrationPeoples(
     );
 
   if (insertError) {
-    return { error: errorMessage(insertError) };
+    return { error: supabaseErrorMessage(insertError) };
   }
   return null;
 }
@@ -244,7 +133,15 @@ async function upsertMigrationRecord(
 
   const sourceIds: string[] = [];
   for (const source of migration.content.sources) {
-    const result = await upsertSource(supabase, source);
+    // The migration model carries no author, so none is sent: an upsert would
+    // otherwise null the author another model recorded for the same title.
+    const result = await upsertSource(supabase, {
+      title: source.title,
+      year: source.year,
+      url: source.url,
+      tier: source.tier,
+      notes: source.notes ?? null,
+    });
     if ("error" in result) {
       report.errors.push(
         `${migration.id}: source "${source.title}" — ${result.error}`
@@ -254,19 +151,24 @@ async function upsertMigrationRecord(
     sourceIds.push(result.id);
   }
 
-  const revision = await findOrCreateFicheRevision(supabase, migration);
+  const revision = await upsertVersionOneRevision(supabase, {
+    entityType: "migration",
+    entityId: migration.id,
+    snapshot: migration,
+  });
   if ("error" in revision) {
     report.errors.push(`${migration.id}: fiche revision — ${revision.error}`);
     return;
   }
 
-  const assertion = await findOrCreateAssertion(
-    supabase,
-    migration.id,
-    migration.content.summary,
+  const assertion = await findOrCreateAssertion(supabase, {
+    entityType: "migration",
+    entityId: migration.id,
+    fieldPath: "record",
+    statement: migration.content.summary,
     sourceIds,
-    revision.id
-  );
+    ficheRevisionId: revision.id,
+  });
   if ("error" in assertion) {
     report.errors.push(`${migration.id}: assertion — ${assertion.error}`);
     return;
@@ -293,7 +195,7 @@ async function upsertMigrationRecord(
   );
 
   if (eventError) {
-    report.errors.push(`${migration.id}: ${errorMessage(eventError)}`);
+    report.errors.push(`${migration.id}: ${supabaseErrorMessage(eventError)}`);
     return;
   }
 
@@ -309,20 +211,8 @@ async function upsertMigrationRecord(
 
   report.inserted += 1;
 
-  // recompute_confidence is fully polymorphic across entity types (see
-  // supabase/migrations/035_migration_events.sql §6 fabric audit) — no
-  // automatic per-INSERT trigger exists, so the loader seeds
-  // confidence_scores explicitly. A failure here does not roll back the
-  // event write; it is logged so a human can re-run the recompute job.
-  const { error: confidenceError } = await supabase.rpc(
-    "recompute_confidence",
-    { p_entity_type: "migration", p_entity_id: migration.id }
-  );
-  if (confidenceError) {
-    logger.warn(`recompute_confidence failed for ${migration.id}`, {
-      reason: errorMessage(confidenceError),
-    });
-  }
+  // Reseeded only once the event and its peoples exist (see migration 035 §6).
+  await reseedConfidence(supabase, "migration", migration.id);
 }
 
 /**

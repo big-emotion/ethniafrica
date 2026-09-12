@@ -128,81 +128,73 @@
       {
         "title": "Kasem in Ghana – Joshua Project",
         "url": "https://joshuaproject.net/people_groups/12556/GH",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Kasem in Burkina Faso – Joshua Project",
         "url": "https://joshuaproject.net/people_groups/print/12556/UV",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Kasem – Glottolog 5.3, ISO 639-3 : xsm",
         "url": "https://glottolog.org/resource/languoid/id/kase1253",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Kassena Nankana Municipal – Composite Budget 2022-2025, Ministry of Finance Ghana",
         "url": "https://mofep.gov.gh/sites/default/files/composite-budget/2022/UE/Kasena-Nakana.pdf",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for mofep.gov.gh."
+        "tier": "official"
       },
       {
         "title": "Ann Cassiman, Stirring Life: Women's Paths and Places Among the Kasena of Northern Ghana, Museum Aan de Stroom (MAS), Antwerp",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "UNESCO World Heritage Centre — Royal Court of Tiebelé (inscrit 2024)",
         "url": "https://whc.unesco.org/en/list/1713/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+        "tier": "official"
       },
       {
         "title": "Ethnologue — Kasem Language (XSM)",
         "url": "https://www.ethnologue.com/language/xsm/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Right for Education Africa — The Kassena of Tiebelé Houses (2024)",
         "url": "https://rightforeducation.org/2024/07/29/the-kassena-of-tiebele-houses/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for rightforeducation.org."
+        "tier": "unverified"
       },
       {
         "title": "101 Last Tribes — Kassena people",
         "url": "https://www.101lasttribes.com/tribes/kassena.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Mabia VP — Kasem language introduction",
         "url": "http://mabia-vp.com/tiki-index.php?page=Kasem",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers mabia-vp.com; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Joshua Project — Kasem in Ghana",
         "url": "https://joshuaproject.net/people_groups/print/12556/GH",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "PeopleGroups.org — Kasena of Ghana",
         "url": "https://peoplegroups.org/people_groups/pg013342/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+        "tier": "unverified"
       },
       {
         "title": "WALS Online — Kasem language",
         "url": "https://wals.info/languoid/lect/wals_code_ksm",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"wals\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

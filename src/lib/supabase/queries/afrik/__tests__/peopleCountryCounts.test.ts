@@ -59,15 +59,40 @@ describe("getPeopleCountsByCountry", () => {
     expect(counts.get("KEN")).toBe(1);
   });
 
+  // A short page is not proof of the end: it is also what a server whose
+  // max-rows sits below the page size answers every time. Only an empty page is.
   // @req REQ-110
-  it("should stop at the first short page instead of querying past the end of the table", async () => {
+  it("should stop at the first empty page instead of querying past the end of the table", async () => {
     const chain = mockRelationPages([
       [{ country_id: "NGA" }, { country_id: "KEN" }],
     ]);
 
     await getPeopleCountsByCountry();
 
-    expect(chain.range).toHaveBeenCalledTimes(1);
+    expect(chain.range).toHaveBeenCalledTimes(2);
+  });
+
+  // @req REQ-110
+  it("should count every relation when the server caps a page below the size asked for", async () => {
+    const relations = Array.from({ length: 12 }, (_, index) => ({
+      country_id: index < 7 ? "NGA" : "KEN",
+    }));
+    const serverMaxRows = 5;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const chain: any = { select: vi.fn(), range: vi.fn() };
+    chain.select.mockReturnValue(chain);
+    chain.range.mockImplementation((from: number, to: number) =>
+      Promise.resolve({
+        data: relations.slice(from, Math.min(to + 1, from + serverMaxRows)),
+        error: null,
+      })
+    );
+    mockSupabase.from.mockReturnValue(chain);
+
+    const counts = await getPeopleCountsByCountry();
+
+    expect(counts.get("NGA")).toBe(7);
+    expect(counts.get("KEN")).toBe(5);
   });
 
   // @req REQ-116

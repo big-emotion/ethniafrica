@@ -90,39 +90,38 @@
       {
         "title": "101lasttribes — Frafra people",
         "url": "https://www.101lasttribes.com/tribes/frafra.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "101lasttribes — Gurenne people",
         "url": "https://www.101lasttribes.com/tribes/gurenne.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Gur, Farefare in Ghana",
         "url": "https://joshuaproject.net/people_groups/19121/GH",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "GhanaWeb — FraFra people",
         "url": "https://www.ghanaweb.com/GhanaHomePage/tribes/frafra.php",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ghanaweb.com."
+        "tier": "referenced"
       },
       {
         "title": "GhanaWeb — What you need to know about the Frafra people",
         "url": "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/What-you-need-to-know-about-the-Frafra-people-of-Ghana-West-Africa-1011064",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for ghanaweb.com."
+        "tier": "referenced"
       },
       {
         "title": "Folklore.ee — The Dagaaba-Frafra Joking Relationship",
         "url": "https://www.folklore.ee/folklore/vol14/dagaaba.htm",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for folklore.ee."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

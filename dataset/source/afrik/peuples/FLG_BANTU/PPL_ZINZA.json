@@ -75,33 +75,33 @@
       {
         "title": "Zinza in Tanzania – Joshua Project, 2024",
         "url": "https://joshuaproject.net/people_groups/16108",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Zinza of Tanzania – People Profile, Dr. Orville Jenkins, 2006",
         "url": "http://orvillejenkins.com/profiles/zinza.html",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for orvillejenkins.com."
+        "tier": "unverified"
       },
       {
         "title": "Zinza – Glottolog 5.3, zinz1238",
         "url": "https://glottolog.org/resource/languoid/id/zinz1238",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "The High God among the Zinza of Northwestern Tanzania – JSTOR",
         "url": "https://www.jstor.org/stable/3269748",
-        "tier": "referenced",
-        "notes": "Tier resolved from the authorized source catalogue entry \"jstor\"."
+        "tier": "referenced"
       },
       {
         "title": "Zinza – TanzaniaScripture.com",
         "url": "https://tanzaniascripture.com/languages/zinza/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for tanzaniascripture.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

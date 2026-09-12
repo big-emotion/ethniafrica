@@ -150,3 +150,12 @@ jobs:
           path: dataset/source/afrik/logs/migration_errors_*.json
           if-no-files-found: ignore
           retention-days: 14
+
+      # The loader checks the content of three tables after its own upserts,
+      # and only when it runs. A preview that failed once left recette serving a
+      # frozen corpus for days while git advanced, with nothing red anywhere.
+      # This asks the database directly — row counts and a sampled hash for every
+      # table of the entity backbone — read-only, with the credentials the load
+      # used. Last, so it judges what the whole job left behind.
+      - name: Verify recette serves the corpus git holds
+        run: npx tsx --conditions=react-server scripts/afrik/verifyCorpusInDatabase.ts --target=recette

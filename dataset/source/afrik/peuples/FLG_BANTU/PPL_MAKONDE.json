@@ -91,33 +91,33 @@
       {
         "title": "SIL Ethnologue — Makonde (kde)",
         "url": "https://www.ethnologue.com/language/kde/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Ethnologue Free — Makonde central group",
         "url": "https://www.ethnologue.com/subgroup/54/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook — Tanzania",
         "url": "https://www.cia.gov/the-world-factbook/countries/tanzania/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "CIA World Factbook — Mozambique",
         "url": "https://www.cia.gov/the-world-factbook/countries/mozambique/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+        "tier": "official"
       },
       {
         "title": "UNESCO — Patrimoine culturel de l'Afrique de l'Est",
         "url": "https://en.unesco.org/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of en.unesco.org."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

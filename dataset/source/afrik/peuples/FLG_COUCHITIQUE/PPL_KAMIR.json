@@ -79,39 +79,38 @@
       {
         "title": "Xamtanga language, alphabet and pronunciation – Omniglot, 2023",
         "url": "https://www.omniglot.com/writing/xamtanga.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for omniglot.com."
+        "tier": "unverified"
       },
       {
         "title": "Xamtanga Language (XAN) – Ethnologue, SIL International, 2025",
         "url": "https://www.ethnologue.com/language/xan/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Xamtanga – Glottolog 5.3",
         "url": "https://glottolog.org/resource/languoid/id/xamt1239",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Cushitic Language Groups Ethiopia – Country Studies, US Library of Congress",
         "url": "https://countrystudies.us/ethiopia/50.htm",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+        "tier": "referenced"
       },
       {
         "title": "Sociolinguistic Survey Report of the Khamir Language of Ethiopia – Academia.edu, 2015",
         "url": "https://www.academia.edu/10128423/Sociolinguistic_Survey_Report_of_the_Khamir_Language_of_Ethiopia",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for academia.edu."
+        "tier": "referenced"
       },
       {
         "title": "Agew People: History and Culture – Horn of Africa Evangelical Mission",
         "url": "https://hornofafrica.org/wp-content/uploads/2019/12/Agew.pdf",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for hornofafrica.org."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
+    }
   }
 }

@@ -49,6 +49,7 @@ interface RowFilter {
 function fakeFrom(table: string) {
   const filters: RowFilter[] = [];
   let single = false;
+  let range: { from: number; to: number } | null = null;
 
   const resolve = () => {
     const error = tableErrors.get(table) ?? null;
@@ -63,6 +64,9 @@ function fakeFrom(table: string) {
           : filter.values.includes(cell);
       });
     }
+    // Paged reads end on an empty page, so the double must answer the range
+    // it is asked for rather than every row to every range.
+    if (range) rows = rows.slice(range.from, range.to + 1);
     return single
       ? { data: rows[0] ?? null, error: null }
       : { data: rows, error: null };
@@ -71,7 +75,10 @@ function fakeFrom(table: string) {
   const query = {
     select: () => query,
     is: () => query,
-    range: () => query,
+    range: (from: number, to: number) => {
+      range = { from, to };
+      return query;
+    },
     eq: (column: string, value: unknown) => {
       filters.push({ column, values: [String(value)] });
       return query;

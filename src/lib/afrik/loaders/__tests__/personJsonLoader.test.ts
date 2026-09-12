@@ -445,4 +445,32 @@ describe("personJsonLoader", () => {
       expect(database.personPeoples).toHaveLength(1);
     });
   });
+
+  // The loaders once carried private copies of the same writers; these pin the
+  // row each one actually sends, so a shared writer cannot quietly widen or
+  // narrow a payload.
+  describe("provenance rows", () => {
+    // The missing revision is a known defect against migration 020's NOT NULL
+    // column, pinned here so a refactor cannot fix or worsen it unannounced.
+    // @req REQ-137
+    it("sends author and year on the source and inserts the assertion with no fiche revision", async () => {
+      const database = createSupabaseDouble();
+      const dossiers = [validPersonFile()] as unknown as PersonDossier[];
+
+      await loadPersons(database.client as never, dossiers);
+
+      expect(Object.keys(database.sources[0]).sort()).toEqual([
+        "added_at",
+        "author",
+        "id",
+        "notes",
+        "tier",
+        "title",
+        "url",
+        "year",
+      ]);
+      expect(database.assertions[0]).toMatchObject({ field_path: "person" });
+      expect(database.assertions[0]).not.toHaveProperty("fiche_revision_id");
+    });
+  });
 });

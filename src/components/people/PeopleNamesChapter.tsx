@@ -49,21 +49,28 @@ export function PeopleNamesChapter({
         />
       ) : (
         <div className="space-y-4">
+          {/* 44px cells rather than a gap: each letter is a tap target on a
+              phone, and the cell is what spaces the strip. The absent letters
+              take the same cell so the row does not comb. */}
           <nav
             aria-label={peopleCopy[language].chapterDetails.borneNamesIndex}
-            className="flex flex-wrap gap-2 text-afh-small"
+            className="flex flex-wrap text-afh-small"
           >
             {alphabet.map((letter) =>
               groups.has(letter) ? (
                 <a
                   key={letter}
                   href={`#noms-portes-${letter.toLowerCase()}`}
-                  className="font-semibold text-[var(--accent-ink)] underline-offset-4 hover:underline"
+                  className="inline-flex min-h-11 min-w-11 items-center justify-center font-semibold text-[var(--accent-ink)] underline-offset-4 hover:underline"
                 >
                   {letter}
                 </a>
               ) : (
-                <span key={letter} aria-disabled="true" className="opacity-40">
+                <span
+                  key={letter}
+                  aria-disabled="true"
+                  className="inline-flex min-h-11 min-w-11 items-center justify-center opacity-40"
+                >
                   {letter}
                 </span>
               )

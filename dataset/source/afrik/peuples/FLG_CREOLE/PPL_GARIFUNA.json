@@ -118,13 +118,13 @@
         "title": "SIL Ethnologue — Garifuna language (cab)",
         "url": "https://www.ethnologue.com/language/cab/",
         "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\". Confirme la classification arawak/maipuréenne (ta-maipuréenne, groupe iñeri) de la langue garifuna."
+        "notes": "Confirme la classification arawak/maipuréenne (ta-maipuréenne, groupe iñeri) de la langue garifuna."
       },
       {
         "title": "UNESCO — Language, dance and music of the Garifuna",
         "url": "https://ich.unesco.org/en/RL/language-dance-and-music-of-the-garifuna-00001",
         "tier": "official",
-        "notes": "Tier resolved from the domain ruling for unesco.org (sous-domaine ich.unesco.org). Fiche d'inscription sur la Liste représentative du patrimoine culturel immatériel de l'humanité (proclamation 2001, inscription 2008)."
+        "notes": "Fiche d'inscription sur la Liste représentative du patrimoine culturel immatériel de l'humanité (proclamation 2001, inscription 2008)."
       },
       {
         "title": "Minority Rights Group — Garifuna (Garinagu) in Belize",
@@ -145,5 +145,10 @@
         "notes": "Site associatif communautaire sans autorité éditoriale académique identifiée ; utilisé pour la symbolique des couleurs du drapeau garinagu (noir, blanc, jaune)."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
+    }
   }
 }

@@ -75,17 +75,16 @@ through a gloss is a translation of a translation.
 ## The reader-facing register, in English
 
 Three fields of a fiche are published to the reader verbatim, with no
-sanitising layer: `gaps[].reason`, `sources[].title`, `sources[].notes`
-(nested under `names[].sources[]` on name fiches). The doctrine is
-`docs/editorial/reader-facing-register.md`; the French gate is
-`INTERNAL_REGISTER_PATTERNS` in `scripts/ci/checkEditorialRules.ts`. That
-gate reads only the French source today, not `dataset/translations/`. Its
-path, filename, field-path and identifier patterns are language-neutral and
-will fire on an English sidecar the day it reads one; its curation vocabulary
-is French and will not. So **the skill is the only guard on an English
-sidecar's register until the gate learns it** (the natural owner is the parity
-gate, REQ-145). The governing sentence holds in both languages: the reader is
-owed the silence itself, never the reason the workshop has not filled it yet.
+sanitising layer: `gaps[].reason`, `sources[].title`, `sources[].notes` —
+wherever a fiche nests a `sources` array (`names[].sources[]`,
+`content.sources[]`, `content.historicalAffiliation.sources[]`). The doctrine
+is `docs/editorial/reader-facing-register.md`; the vocabulary is
+`INTERNAL_REGISTER_PATTERNS` and `INTERNAL_REGISTER_PATTERNS_EN` in
+`src/lib/editorial/readerRegister.ts`, and `scripts/ci/checkEditorialRules.ts`
+reads French fiches against both lists and English sidecars against the
+English one. The skill is still the guard for what no pattern names. The
+governing sentence holds in both languages: the reader is owed the silence
+itself, never the reason the workshop has not filled it yet.
 
 | Class of the gate     | Never in an English published field                                                                                                                                                                                                                                           |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -95,6 +94,8 @@ owed the silence itself, never the reason the workshop has not filled it yet.
 | raw corpus identifier | `PPL_ASANTE`, `FLG_KHOE`, `PAT_KEITA`, `PAT_*` — name the people, the country, the name                                                                                                                                                                                       |
 | curation vocabulary   | _queue_, _candidate queue_, _research pass_, _this pass_, _research protocol_, _claim-level review_, _inherited tier_, _outside the corpus_ / _out of corpus_, _coverage plan_, _wave N_, _sweep_, _Lead:_, _Research:_, _sidecar_, _translation class_, _machine provenance_ |
 | internal corpus label | _AFRIK corpus —_ as a source title                                                                                                                                                                                                                                            |
+| ticket identifier     | `ETNI-1388` or any other ticket number                                                                                                                                                                                                                                        |
+| tier provenance       | how a tier was decided — _domain ruling_, _citation shape_, _authorised source catalogue_, _awaits editorial review_, _needs_review_, _tier resolved as…_, _tiered referenced_; in French _tier inféré_, _tier résolu_, _tier fondé_, _catalogue de domaines officiels_       |
 
 The last row of the vocabulary is new to English: the translation pipeline's
 own words — _sidecar_, _class 3_, _machine_ — are as much workshop vocabulary

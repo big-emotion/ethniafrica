@@ -1,3 +1,7 @@
+import {
+  detectProseCandidates,
+  normalizeCandidateName,
+} from "./peopleProseCandidates";
 import type {
   LoadedPeopleFiche,
   PersonCandidate,
@@ -59,55 +63,8 @@ const NAME_AFTER_CUE = new RegExp(
   "u"
 );
 
-const NON_NARRATIVE_CONTENT_KEYS = new Set(["demography", "sources"]);
-
-interface StringValue {
-  sourcePath: string;
-  value: string;
-}
-
 /** Normalize identity only; the original spelling remains the display name. */
-export function normalizePersonName(name: string): string {
-  return name
-    .normalize("NFKD")
-    .replace(/\p{M}/gu, "")
-    .replace(/[’ʼ]/gu, "'")
-    .replace(/[‐‑‒–—―]/gu, "-")
-    .toLocaleLowerCase("fr")
-    .trim()
-    .replace(/\s+/gu, " ");
-}
-
-function collectStringValues(
-  value: unknown,
-  sourcePath: string,
-  values: StringValue[]
-): void {
-  if (typeof value === "string") {
-    values.push({ sourcePath, value });
-    return;
-  }
-
-  if (Array.isArray(value)) {
-    value.forEach((item, index) =>
-      collectStringValues(item, `${sourcePath}[${index}]`, values)
-    );
-    return;
-  }
-
-  if (value === null || typeof value !== "object") return;
-
-  for (const key of Object.keys(value).sort()) {
-    if (sourcePath === "content" && NON_NARRATIVE_CONTENT_KEYS.has(key)) {
-      continue;
-    }
-    collectStringValues(
-      (value as Record<string, unknown>)[key],
-      `${sourcePath}.${key}`,
-      values
-    );
-  }
-}
+export const normalizePersonName = normalizeCandidateName;
 
 interface PersonOccurrence {
   name: string;
@@ -130,16 +87,6 @@ function candidateOccurrencesFromPassage(passage: string): PersonOccurrence[] {
   return occurrences;
 }
 
-function makeCandidateId(
-  ficheId: string,
-  sourcePath: string,
-  normalizedName: string
-): string {
-  return [ficheId, sourcePath, normalizedName]
-    .map((part) => encodeURIComponent(part))
-    .join("::");
-}
-
 /**
  * Detect named-person review candidates while retaining occurrence provenance.
  * A candidate is only ever produced from a real sentence in the fiche prose —
@@ -148,39 +95,5 @@ function makeCandidateId(
 export function detectPersonCandidates(
   fiche: LoadedPeopleFiche
 ): PersonCandidate[] {
-  const stringValues: StringValue[] = [];
-  collectStringValues(fiche.content, "content", stringValues);
-
-  const candidates: PersonCandidate[] = [];
-  for (const { sourcePath, value: verbatimPassage } of stringValues) {
-    const normalizedNamesAtPath = new Set<string>();
-
-    for (const { name, roleCue } of candidateOccurrencesFromPassage(
-      verbatimPassage
-    )) {
-      const normalizedName = normalizePersonName(name);
-      if (!normalizedName || normalizedNamesAtPath.has(normalizedName))
-        continue;
-      normalizedNamesAtPath.add(normalizedName);
-
-      candidates.push({
-        candidateId: makeCandidateId(fiche.id, sourcePath, normalizedName),
-        name,
-        normalizedName,
-        roleCue,
-        sourceFicheId: fiche.id,
-        linguisticFamilyId: fiche.languageFamilyId,
-        sourcePath,
-        verbatimPassage,
-        sourceCandidates: [],
-        inheritedTier: null,
-        sourceKind: null,
-        tierResolution: "review_required",
-        reviewFlags: [],
-        reviewStatus: "unreviewed",
-      });
-    }
-  }
-
-  return candidates;
+  return detectProseCandidates(fiche, candidateOccurrencesFromPassage);
 }

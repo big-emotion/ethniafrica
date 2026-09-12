@@ -111,51 +111,48 @@
       {
         "title": "Ethnologue SIL — Jola-Fonyi (dyo)",
         "url": "https://www.ethnologue.com/subgroup/1247/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Minority Rights Group — Diola (Jola) in Senegal",
         "url": "https://minorityrights.org/communities/diola-jola/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Sage Reference — Encyclopedia of African Religion: Diola",
         "url": "https://sk.sagepub.com/ency/edvol/africanreligion/chpt/diola",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sk.sagepub.com."
+        "tier": "referenced"
       },
       {
         "title": "Academia.edu — Ritual and Masking Traditions in Jola Men's Initiation",
         "url": "https://www.academia.edu/63748523/Ritual_and_Masking_Traditions_in_Jola_Mens_Initiation",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for academia.edu."
+        "tier": "referenced"
       },
       {
         "title": "Public Intelligence — Senegal Cultural Field Guide",
         "url": "https://info.publicintelligence.net/MCIA-SenegalCultureGuide.pdf",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for info.publicintelligence.net."
+        "tier": "unverified"
       },
       {
         "title": "Glottolog — Jola",
         "url": "https://glottolog.org/resource/languoid/id/jola1264",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Baum, Robert M. — Shrines of the Slave Trade: Diola Religion and Society in Precolonial Senegambia. Oxford University Press, 1999",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Mark, Peter — A Cultural, Economic and Religious History of the Basse Casamance since 1500. Franz Steiner Verlag, 1985",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

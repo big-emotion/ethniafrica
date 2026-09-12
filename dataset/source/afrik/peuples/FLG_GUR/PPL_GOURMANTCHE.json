@@ -100,45 +100,43 @@
       {
         "title": "Gourma people group in all countries – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/12004",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Gourma in Burkina Faso – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/12004/UV",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Gurmantche language (gux) – Ethnologue / SIL Global, 2026",
         "url": "https://www.ethnologue.com/language/gux/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Gourmanchéma – Omniglot, 2022",
         "url": "https://www.omniglot.com/writing/gourmanchema.htm",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for omniglot.com."
+        "tier": "unverified"
       },
       {
         "title": "L'organisation politique dans le Gulma avant la pénétration coloniale – LeFaso.net, 2024",
         "url": "https://lefaso.net/spip.php?article132239",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for lefaso.net."
+        "tier": "referenced"
       },
       {
         "title": "Histoire et organisation du royaume Gourmantché – Scribd / auteur non précisé, 2026",
         "url": "https://fr.scribd.com/document/846146509/le-royaume-de-Gourmantche",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for scribd.com, matched as a parent of fr.scribd.com."
+        "tier": "unverified"
       },
       {
         "title": "Gourmantché Ethnoanthropology: A Theory of Human Being – Swanson R. A., 1985",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
+    }
   }
 }

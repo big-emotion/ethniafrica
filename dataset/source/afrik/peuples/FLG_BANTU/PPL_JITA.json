@@ -74,27 +74,28 @@
       {
         "title": "Jita in Tanzania – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/print/12363/TZ",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Jita Language – Ethnologue",
         "url": "https://www.ethnologue.com/language/jit/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Adventists and Jita Culture – ESDA Encyclopedia",
         "url": "https://encyclopedia.adventist.org/article?id=HF73",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers encyclopedia.adventist.org; the tier awaits editorial review."
+        "tier": "needs_review"
       },
       {
         "title": "Jita – TanzaniaScripture.com",
         "url": "https://tanzaniascripture.com/languages/jita/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for tanzaniascripture.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

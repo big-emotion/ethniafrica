@@ -85,33 +85,33 @@
       {
         "title": "SIL Ethnologue — Gbagyi language (gbr)",
         "url": "https://www.ethnologue.com/language/gbr/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Qiraat Africa — The Gbagyi People of Nigeria (2025)",
         "url": "https://qiraatafrican.com/en/16334/the-gbagyi-people-of-nigeria/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+        "tier": "unverified"
       },
       {
         "title": "CEDS — ISO 639-3 Language Codes (Gbagyi : gbr)",
         "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+        "tier": "official"
       },
       {
         "title": "Nkeyin TV — History, Culture and Tradition of the Gbagyi People (documentaire 2025)",
         "url": "https://www.youtube.com/watch?v=4IZ1VmvZDBc",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for youtube.com."
+        "tier": "unverified"
       },
       {
         "title": "Facebook Gbagyi Gone Global — population et distribution",
         "url": "https://www.facebook.com/story.php?story_fbid=326717266873790",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for facebook.com."
+        "tier": "unverified"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

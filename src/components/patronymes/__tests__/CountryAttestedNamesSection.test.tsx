@@ -113,6 +113,36 @@ describe("CountryAttestedNamesSection", () => {
    * exists to publish — and the absent letters are plainly not links, so
    * nothing invites a reader to press one.
    */
+  /**
+   * A name whose gloss is folded into the one above it is alone in its row:
+   * no sentence around it, so it is a control in a list and owes the full
+   * 44px. The e2e tap-target sweep counted 45 such names on the Comoros
+   * fiche at 23px tall. happy-dom lays nothing out, so the floor is asserted
+   * as the class that sets it, on every row — a row loses its gloss by data,
+   * not by design, and the target cannot depend on which one it drew.
+   */
+  // @req REQ-154
+  it("gives every name a 44px hit area, whether or not its gloss is shown", () => {
+    render(
+      <CountryAttestedNamesSection
+        language="fr"
+        patronymes={{
+          attested: [name("PAT_ALI", "Ali"), name("PAT_AHMED", "Ahmed")],
+          borneByPeoples: [],
+        }}
+      />
+    );
+
+    // Both axes: a three-letter name such as « Ali » is 22px wide at body
+    // size, so a height floor alone left it a sliver of a target.
+    for (const label of ["Ali", "Ahmed"]) {
+      expect(screen.getByRole("link", { name: label })).toHaveClass(
+        "min-h-11",
+        "min-w-11"
+      );
+    }
+  });
+
   // @req REQ-154
   it("shows the whole alphabet, so a gap reads as a gap and not as the end", () => {
     render(

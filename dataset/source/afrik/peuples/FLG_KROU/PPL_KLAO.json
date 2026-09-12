@@ -109,39 +109,38 @@
       {
         "title": "Encyclopaedia Britannica — Kru",
         "url": "https://www.britannica.com/topic/Kru",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for britannica.com."
+        "tier": "unverified"
       },
       {
         "title": "Minority Rights Group — Liberia",
         "url": "https://minorityrights.org/country/liberia/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+        "tier": "referenced"
       },
       {
         "title": "Qiraat Africa — The Kru/Kroo of West Africa",
         "url": "https://qiraatafrican.com/en/19895/the-kru-kroo-of-west-africa/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+        "tier": "unverified"
       },
       {
         "title": "Cambridge University Press — For King and Empire: The Changing Identities of Kru Mariners in Atlantic Africa",
         "url": "https://www.cambridge.org/core/journals/journal-of-african-history/article/for-king-and-empire-the-changing-political-economic-and-cultural-identities-of-kru-mariners-in-atlantic-africa-14601945/8FD9979C9404CDB26496AC92156C65AB",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for cambridge.org."
+        "tier": "referenced"
       },
       {
         "title": "US DOJ Immigration Court — Liberia Kru tribe report, 2013",
         "url": "https://www.justice.gov/sites/default/files/eoir/legacy/2013/06/11/LBR23755.pdf",
-        "tier": "official",
-        "notes": "Tier resolved from the domain ruling for justice.gov."
+        "tier": "official"
       },
       {
         "title": "ArcGIS StoryMaps — Virtual Timeline of Kru (Klao) History",
         "url": "https://storymaps.arcgis.com/stories/df1052231cdd43939a4b8f6025a46a01",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers storymaps.arcgis.com; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

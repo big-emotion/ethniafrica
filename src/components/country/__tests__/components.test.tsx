@@ -4,7 +4,6 @@ import { PeoplesSection } from "../PeoplesSection";
 import { LanguagesSection } from "../LanguagesSection";
 import { CultureGrid } from "../CultureGrid";
 import { SourcesFooter } from "../SourcesFooter";
-import { HistoricalFactsSection } from "../HistoricalFactsSection";
 import type {
   HeroData,
   TimelineData,
@@ -12,7 +11,6 @@ import type {
   KingdomsData,
   LanguagesData,
   CultureGridData,
-  HistoricalFactsData,
 } from "@/lib/countryDataTransformer";
 // ==========================================
 // PeoplesSection
@@ -391,51 +389,6 @@ describe("CultureGrid", () => {
 });
 
 // ==========================================
-// HistoricalFactsSection
-// ==========================================
-
-describe("HistoricalFactsSection", () => {
-  it("renders all period labels and content", () => {
-    const data: HistoricalFactsData = {
-      periods: [
-        { label: "Colonisation", content: "Colonisation française 1880-1960" },
-        {
-          label: "Période post-indépendance",
-          content: "Indépendance proclamée le 5 août 1960",
-        },
-      ],
-    };
-    render(<HistoricalFactsSection data={data} />);
-    expect(screen.getByText("Colonisation")).toBeTruthy();
-    expect(screen.getByText("Colonisation française 1880-1960")).toBeTruthy();
-    expect(screen.getByText("Période post-indépendance")).toBeTruthy();
-    expect(
-      screen.getByText("Indépendance proclamée le 5 août 1960")
-    ).toBeTruthy();
-  });
-
-  it("renders nothing when periods list is empty", () => {
-    const data: HistoricalFactsData = { periods: [] };
-    const { container } = render(<HistoricalFactsSection data={data} />);
-    expect(container.firstChild).toBeNull();
-  });
-
-  it("renders a single period correctly", () => {
-    const data: HistoricalFactsData = {
-      periods: [
-        {
-          label: "Périodes anciennes",
-          content: "Grandes migrations bantoues",
-        },
-      ],
-    };
-    render(<HistoricalFactsSection data={data} />);
-    expect(screen.getByText("Périodes anciennes")).toBeTruthy();
-    expect(screen.getByText("Grandes migrations bantoues")).toBeTruthy();
-  });
-});
-
-// ==========================================
 // SourcesFooter
 // ==========================================
 
@@ -560,11 +513,9 @@ describe("the country fiche keeps all eight sections", () => {
   it("still exports the four sections the mockup leaves out of frame", async () => {
     const country = await import("@/components/country");
 
-    // The history timeline is not among them any more. It was one of three
-    // renderings of one chronology, two of which were never wired to a page;
-    // what it encoded — a period inked by its regime — now lives in
-    // CountryChronology, which the parchment actually renders.
-    expect(country.HistoricalFactsSection).toBeDefined();
+    // Neither the history timeline nor the historical-facts card is among
+    // them any more: both rendered the chronology CountryChronology now owns,
+    // and neither was ever wired to a page.
     expect(country.LanguagesSection).toBeDefined();
     expect(country.CultureGrid).toBeDefined();
   });

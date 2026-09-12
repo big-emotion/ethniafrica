@@ -48,6 +48,25 @@ export const SOURCE_TIERS = ["official", "referenced", "unverified"] as const;
 
 export type SourceTier = (typeof SOURCE_TIERS)[number];
 
+/**
+ * The tiers that carry authority of their own: every tier above the
+ * `unverified` floor. A quiz answer, a name fiche's `robots` directive, its
+ * "being assembled" note and its sitemap entry all draw their line here.
+ *
+ * Derived rather than listed, because the line is "not the floor", not a
+ * membership: the four call sites that spelled it out by hand disagreed in
+ * form (`=== "official" || === "referenced"`, `!== "unverified"`) and would
+ * have disagreed in substance the day a tier was added.
+ */
+// @req REQ-092
+export const AUTHORITATIVE_SOURCE_TIERS: readonly SourceTier[] =
+  SOURCE_TIERS.filter((tier) => tier !== "unverified");
+
+// @req REQ-092
+export function isAuthoritativeSourceTier(tier: unknown): boolean {
+  return AUTHORITATIVE_SOURCE_TIERS.includes(tier as SourceTier);
+}
+
 // The reader-facing labels of the tiers, and of `needs_review` beside them,
 // are locale-keyed in `src/lib/glossaire/vocabularies.ts` — the bilingual
 // glossary's one owner file — and read through `sourceStandingLabel()`.

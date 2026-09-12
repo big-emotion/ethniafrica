@@ -84,27 +84,28 @@
       {
         "title": "Ethnologue - Adioukrou ADJ",
         "url": "https://www.ethnologue.com/language/adj/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project - Adjoukrou in Cote d'Ivoire",
         "url": "https://joshuaproject.net/people_groups/10162/IV",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Lebutu Socraf - Les Adjoukrou et la democratie",
         "url": "https://lebutusocraf.wordpress.com/2017/07/19/les-adjoukrou-et-la-democratie-lecon-dune-vie/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of lebutusocraf.wordpress.com."
+        "tier": "unverified"
       },
       {
         "title": "Isrra Journal - Cultural Identities and Food Habits in Adjoukrou Country",
         "url": "https://ijsscfrtjournal.isrra.org/Social_Science_Journal/article/download/1115/86/917",
-        "tier": "needs_review",
-        "notes": "No domain ruling covers ijsscfrtjournal.isrra.org; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

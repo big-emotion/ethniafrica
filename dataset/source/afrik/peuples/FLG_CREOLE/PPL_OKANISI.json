@@ -60,13 +60,13 @@
           "title": "Marcel van der Linden, « The Okanisi: A Surinamese Maroon Community, c.1712-2010 »",
           "url": "https://www.cambridge.org/core/journals/international-review-of-social-history/article/okanisi-a-surinamese-maroon-community-c17122010/FEB980D8422F82D4154CEFAE020DAA04",
           "tier": "referenced",
-          "notes": "Article academique publie dans International Review of Social History, vol. 60, n°3 (Cambridge University Press, 2015), retracant trois siecles d'histoire de la communaute okanisi et retenant l'auto-designation « Okanisi » plutot que les exonymes usuels. Tier fonde sur la nature academique et evaluee par les pairs de la publication."
+          "notes": "Article academique publie dans International Review of Social History, vol. 60, n°3 (Cambridge University Press, 2015), retracant trois siecles d'histoire de la communaute okanisi et retenant l'auto-designation « Okanisi » plutot que les exonymes usuels."
         },
         {
           "title": "Kenneth Bilby, « How the \"Older Heads\" Talk: A Jamaican Maroon Spirit Possession Language and Its Relationship to the Creoles of Suriname and Sierra Leone »",
           "url": "https://www.jstor.org/stable/41849105",
           "tier": "referenced",
-          "notes": "Tier resolu depuis le catalogue des sources autorisees (domaine jstor.org) ; etude academique documentant la parente entre les langues rituelles de possession des peuples marrons du Suriname et d'autres societes marronnes des Ameriques, temoin d'un heritage religieux africain commun."
+          "notes": "Etude academique documentant la parente entre les langues rituelles de possession des peuples marrons du Suriname et d'autres societes marronnes des Ameriques, temoin d'un heritage religieux africain commun."
         }
       ]
     },
@@ -108,20 +108,19 @@
       {
         "title": "SIL Ethnologue — Aukan language (djk)",
         "url": "https://www.ethnologue.com/language/djk/",
-        "tier": "official",
-        "notes": "Tier resolu depuis le catalogue des sources autorisees (entree « ethnologue »)."
+        "tier": "official"
       },
       {
         "title": "ISO 639-3 Registration Authority — djk",
         "url": "https://iso639-3.sil.org/code/djk",
         "tier": "official",
-        "notes": "Tier resolu depuis le catalogue des sources autorisees (domaine sil.org) ; confirme le code ISO 639-3 djk (Eastern Maroon Creole, anciennement « Aukan »)."
+        "notes": "Confirme le code ISO 639-3 djk (Eastern Maroon Creole, anciennement « Aukan »)."
       },
       {
         "title": "SIL International — A buku fu Okanisi anga Ingiisi wowtu (dictionnaire okanisi-anglais)",
         "url": "https://www.sil.org/resources/archives/13443",
         "tier": "official",
-        "notes": "Tier resolu depuis le catalogue des sources autorisees (domaine sil.org) ; dictionnaire de reference compile avec des locuteurs okanisi (Evert D. Koanting, Carlo T. Velanti), attestant l'auto-designation « Okanisi » des le titre de l'ouvrage."
+        "notes": "Dictionnaire de reference compile avec des locuteurs okanisi (Evert D. Koanting, Carlo T. Velanti), attestant l'auto-designation « Okanisi » des le titre de l'ouvrage."
       },
       {
         "title": "Minority Rights Group International — Maroons in Suriname",
@@ -136,5 +135,10 @@
         "notes": "Article academique evalue par les pairs, revue New West Indian Guide (Brill, 2013) ; source des chiffres demographiques."
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
+    }
   }
 }

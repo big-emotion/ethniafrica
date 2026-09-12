@@ -91,39 +91,38 @@
       {
         "title": "Qiraat Africa — Marka, people of Mali and Burkina Faso",
         "url": "https://qiraatafrican.com/en/18720/marka-people-of-mali-and-burkina-faso/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+        "tier": "unverified"
       },
       {
         "title": "Joshua Project — Marka, Dafing in Burkina Faso",
         "url": "https://joshuaproject.net/people_groups/13550/UV",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "SIL International — Ethnologue, Marka-Dafin subgroup",
         "url": "https://www.ethnologue.com/subgroup/497/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "ScriptSource — Burkina Faso languages, code rkm (Dafing)",
         "url": "https://www.scriptsource.org/cms/scripts/page.php?item_id=country_detail&key=BF",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for scriptsource.org."
+        "tier": "referenced"
       },
       {
         "title": "Roberts, Richard L. Warriors, Merchants and Slaves: The State and the Economy in the Middle Niger Valley 1700-1914. Stanford University Press, 1987",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "SIL International — Harrison, Byron & Anette, Sociolinguistic survey report for the Marka-Dafin language",
         "url": "https://www.sil.org",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

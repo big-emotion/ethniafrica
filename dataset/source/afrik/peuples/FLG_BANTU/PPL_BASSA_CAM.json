@@ -104,20 +104,18 @@
       {
         "title": "SIL Ethnologue — Basaa language (bas)",
         "url": "https://www.ethnologue.com/language/bas/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Glottolog — Basaa (basa1284)",
         "url": "https://glottolog.org/resource/languoid/id/basa1284",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+        "tier": "official"
       },
       {
         "title": "Joshua Project — Basaa, Cameroon people group profile",
         "url": "https://joshuaproject.net/people_groups/19155/CM",
         "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net. Replaces a previous entry (people_groups/10367) which resolved to an unrelated South American people group rather than the Bassa of Cameroon."
+        "notes": "Replaces a previous entry (people_groups/10367) which resolved to an unrelated South American people group rather than the Bassa of Cameroon."
       },
       {
         "title": "Larry M. Hyman — Basaá (A.43), reference chapter",

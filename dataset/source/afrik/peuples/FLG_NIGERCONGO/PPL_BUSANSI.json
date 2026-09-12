@@ -103,33 +103,33 @@
       {
         "title": "SIL Ethnologue — Bisa language [bib]",
         "url": "https://www.ethnologue.com/language/bib/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "YouTube — Who Are the Bissa (Busanga) People?",
         "url": "https://www.youtube.com/watch?v=bP0kGwHPQvk",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for youtube.com."
+        "tier": "unverified"
       },
       {
         "title": "Facebook — A Rich Cultural Heritage: The Bissa People",
         "url": "https://www.facebook.com/engrkogwuonyepatrick.patsallyonyeka/videos/949872800427144/",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for facebook.com."
+        "tier": "unverified"
       },
       {
         "title": "McFarland, Daniel. Historical Dictionary of Upper Volta (Burkina Faso). Metuchen, NJ: Scarecrow Press, 1978",
         "url": null,
-        "tier": "referenced",
-        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+        "tier": "referenced"
       },
       {
         "title": "Joshua Project — Bissa people group profile",
         "url": null,
-        "tier": "needs_review",
-        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+        "tier": "needs_review"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: translate:record refuses this record on content.appellations.ethnoLinguisticGroup, which modele-peuple.json does not declare and translationClasses.ts does not classify, so the pipeline carries its French verbatim and the glossary check rejects \"peuples\". Measured 2026-09-10: 743 of the 776 people records carry that field and none of the 776 has an English sidecar, so no people record can be translated until the declaration covers it. Both sonnet and opus refused twice."
+    }
   }
 }

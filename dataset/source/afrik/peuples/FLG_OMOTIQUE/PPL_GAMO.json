@@ -74,27 +74,28 @@
       {
         "title": "Gamo in Ethiopia – Joshua Project, 2025",
         "url": "https://joshuaproject.net/people_groups/11814/ET",
-        "tier": "unverified",
-        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+        "tier": "unverified"
       },
       {
         "title": "Gamo Language (GMV) – Ethnologue / SIL International, 2025",
         "url": "https://www.ethnologue.com/language/gmv/",
-        "tier": "official",
-        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+        "tier": "official"
       },
       {
         "title": "Gamo Highlands – Ethiopia – Sacred Land Film Project, 2009",
         "url": "https://sacredland.org/gamo-highlands-ethiopia/",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sacredland.org."
+        "tier": "referenced"
       },
       {
         "title": "Gamo's cultural forum – Dubussha as a tool for social change communication – Heliyon / ScienceDirect, 2024",
         "url": "https://www.sciencedirect.com/science/article/pii/S2405844024037058",
-        "tier": "referenced",
-        "notes": "Tier resolved from the domain ruling for sciencedirect.com."
+        "tier": "referenced"
       }
     ]
+  },
+  "_translation": {
+    "deferred": {
+      "en": "English translation is deferred: none of the 776 people records has an English sidecar, so translating this one alone would make it the atlas's only English people record. It follows the people corpus's first translation pass."
+    }
   }
 }
