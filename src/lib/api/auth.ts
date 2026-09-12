@@ -16,6 +16,7 @@ const PBKDF2_ITERATIONS = 600_000;
 const SALT_BYTES = 16;
 const KEY_PREFIX_LENGTH = 20;
 
+// @req REQ-034
 export function getKeyPrefix(rawKey: string): string {
   return rawKey.substring(0, KEY_PREFIX_LENGTH);
 }
@@ -46,6 +47,7 @@ async function pbkdf2Derive(
  * Hash a raw API key with PBKDF2-SHA256 + random salt.
  * Returns a self-describing string: "pbkdf2v1:{iterations}:{base64_salt}:{hex_hash}".
  */
+// @req REQ-034
 export async function hashApiKey(rawKey: string): Promise<string> {
   const salt = new Uint8Array(SALT_BYTES);
   crypto.getRandomValues(salt);
@@ -99,6 +101,7 @@ export type ValidateResult =
  * Validate an API key and update last_used_at if valid.
  * Looks up by key_prefix, then verifies with PBKDF2.
  */
+// @req REQ-034
 export async function validateApiKey(rawKey: string): Promise<ValidateResult> {
   if (!rawKey || rawKey.trim() === "") {
     return { valid: false, reason: "missing_api_key" };

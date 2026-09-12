@@ -33,6 +33,7 @@ async function sha256Hex(value: string): Promise<string> {
  * nothing; unsalted is fine here because the keys are long random secrets,
  * not guessable passwords.
  */
+// @req REQ-059
 export async function getRateLimitIdentifier(request: NextRequest): Promise<{
   identifier: string;
   apiKey: string | null;
@@ -92,6 +93,7 @@ function parseWindow(value: string | undefined): RateLimitWindow {
  * Reset the cached limiter bundle. Only intended for use in unit tests.
  * @internal
  */
+// @req REQ-059
 export function _resetLimitersForTest(): void {
   limiters = null;
 }
@@ -173,6 +175,7 @@ function isProductionDeployment(): boolean {
  * `tier` is the canonical api_keys.tier value from a validated DB record and defaults to
  * "public" when the caller has not (yet) resolved a tier, e.g. before key validation.
  */
+// @req REQ-059
 export function getRateLimiter(
   apiKey: string | null,
   tier: ApiKeyTier = "public"
@@ -295,6 +298,7 @@ async function runLimiter(
  * fail open; production answers 500. Fails open if Upstash is transiently
  * unreachable.
  */
+// @req REQ-059
 export async function evaluateRateLimit(
   request: NextRequest,
   tier?: ApiKeyTier
@@ -312,6 +316,7 @@ export async function evaluateRateLimit(
  * to return (429, or 500 on a misconfigured production). The quota headers of
  * an allowed request are only available through `evaluateRateLimit`.
  */
+// @req REQ-034 REQ-059
 export async function applyRateLimit(
   request: NextRequest,
   tier?: ApiKeyTier
@@ -326,6 +331,7 @@ export async function applyRateLimit(
  * single IP can't force unlimited validation attempts before a tier — and
  * therefore the real tier-based limit above — is known.
  */
+// @req REQ-059
 export async function applyIpRateLimit(
   request: NextRequest
 ): Promise<NextResponse | null> {

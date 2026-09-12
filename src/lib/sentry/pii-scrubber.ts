@@ -8,6 +8,7 @@ import type { Breadcrumb, Event } from "@sentry/nextjs";
  * Throws in production; logs a warning in other environments so local dev
  * is not blocked when NEXT_PUBLIC_SENTRY_DSN is unset.
  */
+// @req REQ-080
 export function assertEuDsn(dsn: string | undefined): void {
   if (!dsn) return; // SDK will skip init when DSN is absent; nothing to validate
   try {
@@ -64,6 +65,7 @@ const isIpv6 = (token: string) =>
 /**
  * Scrubs email addresses from a string by replacing them with [EMAIL_REDACTED]
  */
+// @req REQ-080
 export function scrubEmail(str: string): string {
   if (!str) return str;
   return str.replace(EMAIL_REGEX, "[EMAIL_REDACTED]");
@@ -84,6 +86,7 @@ function truncateSingleIp(token: string): string {
  * with its separators left as they were. Anchoring the pattern to the whole
  * value used to leave a chain untouched — client address first.
  */
+// @req REQ-080
 export function truncateIpToSlash24(ip: string): string {
   if (!ip) return ip;
   return ip.replace(/[^,\s]+/g, truncateSingleIp);
@@ -176,6 +179,7 @@ function scrubBreadcrumb(breadcrumb: Breadcrumb): Breadcrumb {
  * - Redacts credentials, cookies, bodies and query strings from the request
  * - Scrubs every string nested in `extra`, `contexts` and breadcrumb `data`
  */
+// @req REQ-080
 export function beforeSend(event: Event): Event | null {
   if (!event) return null;
 
